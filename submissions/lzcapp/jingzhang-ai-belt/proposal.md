@@ -45,6 +45,7 @@ bilingual_contract_version: "1"
 **五大功能 × 三区两翼**：以 AI 全栈自主创新、世界级 AI 创新生态、AI+ 场景赋能、智能化 AI 活力城市、AI 治理全球话语权为五大功能；以北京 AI 原点社区、众智园自主创新加速区、大钟寺 AI 产业集聚区为三核，叠加中关村科技服务翼与小月河场景赋能翼，形成"土地—空间—产业—资金—人才—算力—数据—场景"八要素协同回路（详见 `visual/assets/ecosystem_map.json`）。
 
 **核心原创点（AI 原生）**：把城市智能体运行回路（感知—建模—场景生成—人工复核—受控部署—效果评估）作为空间与治理的共同底座，而非给传统方案贴 AI 标签；所有 AI 场景均设隐私边界与人工复核闸门（详见 `visual/assets/scenarios.json`）。
+该定位与海淀真实产业基础一致：2024 年海淀区人工智能核心产业规模 2822 亿元（占全市 80%），AI 企业 1900 余家，公共算力汇聚京津冀蒙新超 8 万 P [source:LZCAPP-HD-AI-CORE-2024]；「AI 创新带」以既有全栈产业生态为锚点，而非概念空转。
 
 ### 差异化定位：为什么京张不是又一个"智慧城市园区"
 
@@ -300,6 +301,7 @@ agent.3 要求不少于 3 个产业测试验证场景。下表以"测试对象�
 4. **人工复核 Human-review**：每个面向公众或企业的场景都设人工复核闸门，敏感结论须由专业人员确认后方可推进（见 `visual/assets/scenarios.json` 的隐私与复核边界）。
 5. **受控部署 Controlled-deploy**：仅在公开空间与授权界面试运行，明确退出机制与责任主体。
 6. **效果评估 Evaluate**：以公共利益、可达性、包容性与安全为指标闭环回流，驱动下一轮感知。
+包容性设计的法定基线参照《中华人民共和国无障碍环境建设法》（第39条现场引导与人工服务要求）与国办发〔2020〕45号（智能服务与传统渠道并行）；海淀区常住人口 312.2 万 [source:LZCAPP-NBS-HD-POP-2024]，其中 2024 年 60 岁及以上常住老年人口 71.8 万、占 23%，已进入中度老龄化 [source:LZCAPP-REF-A0-BARRIER-FREE] [source:LZCAPP-REF-A0-ELDERLY-45] [source:LZCAPP-HD-ELDERLY-2024]。本方案的连续无障碍路径、非 AI 替代通道与人工复核闸门即对应上述要求，而非对既有设施合规状态的判定。
 
 该回路把"AI 创新生态、场景赋能、公共空间、治理合规"串成一条可审计、可迭代的主线，是规划创新性与 AI×城市规划创新性的核心抓手（概念建议，非工程结论）[source:SCENARIOS]、[source:ECOSYSTEM-MAP]。
 
@@ -449,6 +451,7 @@ agent.3 要求不少于 3 个产业测试验证场景。下表以"测试对象�
 **面积拓扑差异说明（约 16.9 ㎡）**：由提交几何复算的 `site_area_sqm` = 11,412,825.386 ㎡ 与 `phasing_area_sqm` = 11,412,842.304 ㎡ 相差 **16.918 ㎡（约 16.9 ㎡）**，源于 provisional 边界分区时的浮点舍入与拓扑容差（两图层外边界未完全对齐），**不代表真实面积误差**；该差异已在 `metrics.json` 的 `geometry_topology_note` 与 `visual/assets/renewal_projects.json` 的 `geometry_area_note_zh` 中登记。所有由提交几何复算的面积与比例指标精度仍受 provisional boundary 限制，官方 redline 发布后须整体重算（[metric:site_area_sqm]、[metric:phasing_area_sqm]）。
 
 另见 `metrics.json` 的 `boundary_offset_note`：提交几何（PROV-SITE-001，约 11.4 km²）相对 OSM 实测京张铁路遗址公园约偏移 **412.5 m**（上游 issue #846）；所有面积与比例指标均为 provisional 边界内部复算值，不代表与真实遗址公园对齐后的尺度，不得作为正式控规或红线依据，官方 redline 发布后须整体重算并对齐。
+临时几何面积以 OpenStreetMap 公开底图实测为 sanity-check 基准 [source:LZCAPP-OSM-BASEMAP]；权威范围以仓库登记的临时 polygon 为准 [source:BOUNDARY-SOURCE]。
 
 
 
@@ -618,7 +621,7 @@ agent.3 要求不少于 3 个产业测试验证场景。下表以"测试对象�
 - data/processed/missing_data_checklist.csv
 - 机器可读引用索引（按类型汇总；完整登记见 `sources.json` / `standard_matrix.json` / `design_depth_matrix.json` / `metrics.json`）：
 
-- 来源 [source]（26 条）：[source:SITE-PACKAGE] 任务书、[source:AGENT-TASKBOOK] 智能体任务书、[source:BOUNDARY-SOURCE] 边界来源、[source:KEY-AREA-SOURCE] 重点区来源、[source:ECOSYSTEM-MAP] 产业生态、[source:OPERATIONS] 运营路径 等，详见 `sources.json`。
+- 来源 [source]（35 条）：[source:SITE-PACKAGE] 任务书、[source:AGENT-TASKBOOK] 智能体任务书、[source:BOUNDARY-SOURCE] 边界来源、[source:KEY-AREA-SOURCE] 重点区来源、[source:ECOSYSTEM-MAP] 产业生态、[source:OPERATIONS] 运营路径，[source:LZCAPP-REF-A0-BARRIER-FREE] 无障碍环境建设法、[source:LZCAPP-REF-A0-ELDERLY-45] 国办发45号、[source:LZCAPP-HD-ELDERLY-2024] 海淀老龄统计、[source:LZCAPP-NBS-HD-POP-2024] 海淀常住人口、[source:LZCAPP-HD-AI-CORE-2024] 海淀AI核心产业、[source:LZCAPP-OSM-BASEMAP] OpenStreetMap 底图 等，详见 `sources.json`。
 
 - 标准 [standard]（6 条）：[standard:MOHURD-ARCH-DESIGN-DEPTH-2016] 成果深度、[standard:MOHURD-URBAN-DESIGN-MEASURES] 城市设计管理办法、[standard:MOHURD-CONTROL-DETAILED-PLANNING] 控规、[standard:MNR-LAND-USE-CLASSIFICATION-GUIDE] 用地分类、[standard:PROJECT-OFFICIAL-ANNOUNCEMENT] 公告、[standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK] 任务书，详见 `standard_matrix.json`。
 
