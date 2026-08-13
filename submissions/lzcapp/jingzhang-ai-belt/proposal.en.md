@@ -37,6 +37,7 @@ Honest statement: this figure specification is a methodological suggestion, not 
 **Positioning & naming**: Targeting the three fused belts — "Centennial Jing-Zhang cultural belt, urban AI living-experience belt, AI fusion-innovation belt" — the final name is **Jing-Zhang AI Symbiosis Belt** ("smart pulse" echoes the smart corridor and AI innovation chain; "symbiosis" stresses coexistence of history, innovation and public life). The visual motif is "linear light-band + rail-section" (see `visual/assets/logo_direction.svg`).
 
 **Five functions × three zones, two wings**: AI full-stack autonomy, world-class AI ecosystem, AI+ scenario empowerment, intelligent AI-vibrant city, and global AI-governance voice as five functions; Beijing AI Origin Community, Zhongzhiyuan Acceleration Area and Dazhongsi Cluster as three cores, plus the Zhongguancun tech-service wing and Xiaoyuehe scenario-empowerment wing, forming an eight-factor loop (land, space, industry, capital, talent, compute, data, scenario) — see `visual/assets/ecosystem_map.json`.
+This aligns with Haidian's real industry base: in 2024 its AI core-industry output reached RMB 282.2 billion (80% of the city), with 1,900+ AI firms and a public compute pool exceeding 80,000 P across Jing-Jin-Ji and beyond [source:LZCAPP-HD-AI-CORE-2024]. The 'AI innovation belt' is anchored in this full-stack ecosystem rather than a conceptual slogan.
 
 **Core originality (AI-native)**: A district agent operating loop — sense, model, scenario-generate, human-review, controlled-deploy, evaluate — is the shared base for space and governance, not a smart-city label pasted on a traditional plan; every AI scenario has a privacy boundary and human-review gate (see `visual/assets/scenarios.json`).
 
@@ -175,6 +176,7 @@ To avoid "pasting an AI label onto a traditional plan", this proposal treats a *
 4. **Human-review**: every public-facing or enterprise-facing scenario has a human-review gate; sensitive conclusions need professional confirmation before proceeding (see the privacy & review boundary in `visual/assets/scenarios.json`).
 5. **Controlled-deploy**: pilot only in public space and authorized scopes, with explicit exit mechanism and accountable operator.
 6. **Evaluate**: close the loop on public interest, accessibility, inclusivity and safety, feeding the next Sense round.
+The inclusivity baseline follows the Barrier-Free Environment Construction Law (Art. 39 on-site guidance and human-operated service) and GuoBanFa〔2020〕No.45 (parallel traditional channels alongside smart services). Haidian's permanent population is 3.122 million [source:LZCAPP-NBS-HD-POP-2024]; in 2024 residents aged 60+ reached 718,000 (23%), a moderately aged society [source:LZCAPP-REF-A0-BARRIER-FREE] [source:LZCAPP-REF-A0-ELDERLY-45] [source:LZCAPP-HD-ELDERLY-2024]. The continuous accessible path, non-AI fallback channels and human-review gates implement these requirements, without asserting the compliance status of existing facilities.
 
 This loop wires "AI ecosystem, scenario empowerment, public space, governance compliance" into one auditable, iterable spine — the core lever for planning innovation and AI×urban-planning innovation (concept suggestion, not an engineering conclusion) [source:SCENARIOS], [source:ECOSYSTEM-MAP].
 
@@ -316,6 +318,7 @@ The compliance matrix is the master file for task responsiveness: every announce
 
 
 See also `metrics.json`'s `boundary_offset_note`: the submitted geometry (PROV-SITE-001, ~11.4 km²) is offset from the OSM-mapped Jing-Zhang railway heritage park by about **412.5 m** (upstream issue #846); all area and ratio indicators are recalculation values internal to the provisional boundary, not scaled to the real heritage park, and must not be used as formal regulatory or redline basis — to be fully recalculated and aligned on official redline.
+The provisional geometry area uses the OpenStreetMap public basemap as a sanity-check reference [source:LZCAPP-OSM-BASEMAP]; the authoritative scope follows the repository's registered provisional polygon [source:BOUNDARY-SOURCE].
 
 ## Risk, Copyright, and Compliance
 
@@ -535,7 +538,7 @@ Annual activities by quarter (see `visual/assets/operations.json`): Q1 Open-Sour
 - data/processed/missing_data_checklist.csv
 **Machine-readable index** (traceable evidence markers used in this proposal):
 
-- Sources [source] (26): [source:SITE-PACKAGE] task book, [source:AGENT-TASKBOOK] agent task book, [source:BOUNDARY-SOURCE] boundary, [source:KEY-AREA-SOURCE] key areas, [source:ECOSYSTEM-MAP] industry ecosystem, [source:OPERATIONS] operating path, etc. — see `sources.json`.
+- Sources [source] (35): [source:SITE-PACKAGE] task book, [source:AGENT-TASKBOOK] agent task book, [source:BOUNDARY-SOURCE] boundary, [source:KEY-AREA-SOURCE] key areas, [source:ECOSYSTEM-MAP] industry ecosystem, [source:OPERATIONS] operating path, [source:LZCAPP-REF-A0-BARRIER-FREE] Barrier-Free Law, [source:LZCAPP-REF-A0-ELDERLY-45] GuoBanFa 2020-45, [source:LZCAPP-HD-ELDERLY-2024] Haidian elderly stat, [source:LZCAPP-NBS-HD-POP-2024] Haidian population, [source:LZCAPP-HD-AI-CORE-2024] Haidian AI core output, [source:LZCAPP-OSM-BASEMAP] OpenStreetMap basemap, etc. — see `sources.json`.
 
 - Standards [standard] (6): [standard:MOHURD-ARCH-DESIGN-DEPTH-2016] deliverable depth, [standard:MOHURD-URBAN-DESIGN-MEASURES] urban-design measures, [standard:MOHURD-CONTROL-DETAILED-PLANNING] regulatory plan, [standard:MNR-LAND-USE-CLASSIFICATION-GUIDE] land-use classification, [standard:PROJECT-OFFICIAL-ANNOUNCEMENT] announcement, [standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK] task book — see `standard_matrix.json`.
 
