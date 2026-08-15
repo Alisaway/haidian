@@ -175,7 +175,9 @@
 
 本项目的“底数”不是一个填满数字的表，而是一个带来源、时点、空间尺度、权利、状态、允许表达和复算触发器的资产登记。登记共 **25 项**：3 项任务/事实依据、2 项暂定空间索引、5 项 Sentinel-2 背景底图、3 项文化/地图背景、10 项生态—场景—运营—专业研究数据、2 项成果表达数据。它们支撑研究判断，但不把背景影像、模型推演或暂定多边形升级为法定底数。
 
-主报告使用七类底数：任务与法定文本、空间几何、遥感/地图背景、文化与权利、生态与案例、用户与场景、运营与专业。每项资产均在配套 `data_asset_register.csv` 中保留完整字段：`asset_id / source_or_path / source_level / acquired_or_accessed_at / spatial_scope / time_scope / content_description / current_status / quality / rights / allowed_expression / prohibited_inference / recompute_trigger`。
+主报告使用七类底数：任务与法定文本、空间几何、遥感/地图背景、文化与权利、生态与案例、用户与场景、运营与专业。每项资产均在配套 `visual/assets/data_asset_register.json` 中保留完整字段：`asset_id / source_or_path / source_level / acquired_or_accessed_at / spatial_scope / time_scope / content_description / current_status / quality / rights / allowed_expression / prohibited_inference / recompute_trigger`。
+
+机器可读的完整场景卡、文化节点与来源、七维人工评审证据导航分别见 `visual/assets/scenario_cards.json`、`visual/assets/culture_nodes.json`、`visual/assets/culture_sources.json` 和 `visual/assets/review_evidence_matrix.json`；它们用于复核和交接，不自填评分。
 
 ## 2. 证据等级与质量等级
 
@@ -413,7 +415,7 @@ These are not six parallel concepts: Agent.1 fixes identity, Agent.2 organizes e
 
 The project base is not a table filled with guessed numbers. It is a register with source, date, spatial scale, rights, state, allowed expression and recomputation trigger. It contains **25 assets**: three task/fact bases, two provisional spatial indexes, five Sentinel-2 background maps, three cultural/map background assets, ten ecosystem/scene/operations/professional research assets, and two deliverable-expression assets. They support research judgments without upgrading imagery, model inference or provisional polygons into statutory facts.
 
-The report uses seven data families: task and legal text, spatial geometry, remote-sensing/map background, culture and rights, ecosystem and cases, users and scenes, operations and professional depth. The paired `data_asset_register.csv` retains the full fields: `asset_id / source_or_path / source_level / acquired_or_accessed_at / spatial_scope / time_scope / content_description / current_status / quality / rights / allowed_expression / prohibited_inference / recompute_trigger`.
+The report uses seven data families: task and legal text, spatial geometry, remote-sensing/map background, culture and rights, ecosystem and cases, users and scenes, operations and professional depth. The paired `visual/assets/data_asset_register.json` retains the full fields: `asset_id / source_or_path / source_level / acquired_or_accessed_at / spatial_scope / time_scope / content_description / current_status / quality / rights / allowed_expression / prohibited_inference / recompute_trigger`. Full scenario cards, culture nodes/sources and the seven-dimension human-review navigator are packaged as `visual/assets/scenario_cards.json`, `visual/assets/culture_nodes.json`, `visual/assets/culture_sources.json` and `visual/assets/review_evidence_matrix.json`; they are review inputs, not self-scored points.
 
 ## 2. Evidence and quality levels
 

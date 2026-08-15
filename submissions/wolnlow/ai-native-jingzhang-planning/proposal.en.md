@@ -62,6 +62,8 @@ Roads, blue-green, and phasing are cross-checked through [data:geometry/roads.ge
 
 Global cases are mechanisms, not Haidian statistics. one-north/AI Singapore demonstrates neighboring carriers, time-bounded PoC, and governance testing; Mila and the Vector Institute connect research, talent, engineering, and venture conversion; Seoul AI Hub/Yangjae combines city support, compute, and business validation; Hub71+ AI releases resources by stage; STATION F/F/ai combines a semi-open front stage, controlled work, and public life; MassRobotics combines shared experiments, prototyping, and safe human takeover. Together they support a local conclusion: the belt needs a transferable middle layer, not a copied campus name. [source:SOURCE-USE-MATRIX] [standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK]
 
+Case-source navigation: Singapore `D2SRC-B2-001—005`; Mila `D2SRC-B2-006—008`; Vector `D2SRC-B2-009—010`; Seoul `D2SRC-B2-011—013`; Hub71 `D2SRC-B2-014—015`; STATION F `D2SRC-B2-016—019`; MassRobotics `D2SRC-B2-020—024`. These IDs point to itemized locators in the packaged `sources.json`; no case fact is extrapolated into a Haidian statistic.
+
 The local chain has eight nodes: a real issue card; research and open source; accountable compute/data; trusted testing; professional and ethics review; incubation and capital services; market/public application; and failure/knowledge settlement. Zhongzhiyuan is the trusted-test and full-stack anchor, the AI Origin Community is the open-source and research-to-market anchor, and Dazhongsi is the demand, product, content, and international-contact anchor. Institutions, funds, compute, and operators remain to be authorized; place names do not create commitments.
 
 ### Concept and identity system
@@ -125,7 +127,16 @@ For direct reader review, the formal package also includes six bilingual researc
 ![Eight user journeys and human downgrade](assets/figures/user-journey.en.png)  
 ![Three AI landmarks and twelve reversible components](assets/figures/landmark-components.en.png)
 
+To make the six tasks reviewable beyond a text summary, four additional research diagrams show the naming/logo candidates, four complete scenario cards, the three-culture/five-route correction loop, and the 15 professional-depth evidence contracts.
+
+![Naming tree and logo direction candidates](assets/figures/identity-brand.en.png)
+![Four complete scenario cards and 0–4 ladder](assets/figures/scenario-cards-detail.en.png)
+![Three cultures, five routes and correction loop](assets/figures/culture-narrative.en.png)
+![Fifteen professional-depth contract evidence interface](assets/figures/professional-evidence.en.png)
+
 These diagrams are generated from the canonical registry, B2 activity ledger, and B3 scenario/user data. They are research diagrams with provisional and not-deployed status; bilingual counterparts retain the same IDs, states, and information architecture. [data:visual/assets/canonical_registry.json] [data:visual/assets/data_asset_register.json]
+
+For card-level review, the full fields, eight user groups and stage gates for all 13 scenarios are packaged in [`visual/assets/scenario_cards.json`](visual/assets/scenario_cards.json). Railway–Zhongguancun–AI culture nodes and authoritative sources are packaged in [`visual/assets/culture_nodes.json`](visual/assets/culture_nodes.json) and [`visual/assets/culture_sources.json`](visual/assets/culture_sources.json). The seven dimensions have a no-self-scoring evidence navigator at [`visual/assets/review_evidence_matrix.json`](visual/assets/review_evidence_matrix.json); final points remain a human-review decision.
 
 ### How 13 scenarios enter the belt
 

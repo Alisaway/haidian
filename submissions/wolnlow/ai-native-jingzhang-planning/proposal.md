@@ -62,6 +62,8 @@ tracks: ["ai-traffic-walkability", "enterprise-services-ecosystem", "civic-agent
 
 全球案例不作为海淀现状统计，而用于比较机制：新加坡 one-north/AI Singapore 提供“近邻载体—限定周期 PoC—治理测试”；加拿大 Mila、Vector Institute 提供“研究—人才—工程—创业转化”；Seoul AI Hub/Yangjae 提供“城市支持—高性能计算—业务验证”；Hub71+ AI 提供分阶段资源释放；STATION F/F/ai 提供半开放前台、受控工作与公众生活；MassRobotics 提供共享实验、原型和安全接管。七个案例共同支持一个本地判断：创新带需要的是可交接的中层机制，而不是简单复制某个园区名称。[source:SOURCE-USE-MATRIX] [standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK]
 
+案例来源入口：Singapore `D2SRC-B2-001—005`；Mila `D2SRC-B2-006—008`；Vector `D2SRC-B2-009—010`；Seoul `D2SRC-B2-011—013`；Hub71 `D2SRC-B2-014—015`；STATION F `D2SRC-B2-016—019`；MassRobotics `D2SRC-B2-020—024`。这些 ID 指向随包 `sources.json` 的逐条定位，不把案例事实外推为海淀统计。
+
 本地生态链设置八个节点：真实问题卡、研究与开源、算力/数据责任、可信测试、专业与伦理复核、孵化与资本服务、市场/公共应用、失败与知识沉淀。众智园承担可信测试与接口台，北京 AI 原点社区承担开源和成果转化，大钟寺承担需求方和产品化验证；具体机构、资金、算力和运营主体均待授权，不从地名推导承诺。
 
 ### 概念与视觉系统
@@ -125,7 +127,16 @@ tracks: ["ai-traffic-walkability", "enterprise-services-ecosystem", "civic-agent
 ![八类用户共同旅程与人工退级](assets/figures/user-journey.png)  
 ![三个AI地标与十二类可逆组件](assets/figures/landmark-components.png)
 
+为避免六类任务只停留在文字概述，再补充四张可直接评审的研究图解：命名与Logo候选、四张完整场景卡、三文化五导览纠错回路、十五项专业深度证据合同。
+
+![命名树与Logo方向候选](assets/figures/identity-brand.png)
+![四张完整场景卡与0—4阶梯](assets/figures/scenario-cards-detail.png)
+![三文化五导览纠错回路](assets/figures/culture-narrative.png)
+![十五项专业深度合同证据界面](assets/figures/professional-evidence.png)
+
 这些图解由统一注册表、B2活动台账和B3场景/用户数据生成，全部标注为研究图解、暂定空间和未部署；中英对应图件保留同一ID、状态和信息架构。[data:visual/assets/canonical_registry.json] [data:visual/assets/data_asset_register.json]
+
+为便于逐卡复核，13张场景卡的完整字段、8类用户和阶段门随包保存在 [`visual/assets/scenario_cards.json`](visual/assets/scenario_cards.json)；铁路—中关村—AI文化节点与权威来源分别保存在 [`visual/assets/culture_nodes.json`](visual/assets/culture_nodes.json) 和 [`visual/assets/culture_sources.json`](visual/assets/culture_sources.json)。七个评分维度只提供不自评分的证据导航 [`visual/assets/review_evidence_matrix.json`](visual/assets/review_evidence_matrix.json)，最终分数由人工评审产生。
 
 ### 13 个场景的进入方式
 
