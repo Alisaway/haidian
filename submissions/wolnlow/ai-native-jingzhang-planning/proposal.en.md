@@ -107,12 +107,25 @@ All six points are research prototypes. No building, coordinate, tenant, station
 
 ### Substantive outputs of the six agent tasks
 
+The allowed package entry [`report/narrative.md`](report/narrative.md), Appendices A–D, makes the coordinator/specialist identities, inputs, outputs, quality gates, handoff workflow, 25 registered assets, acquisition dates, spatial scale, rights, allowed expression, prohibited inference, and recomputation triggers readable. The machine-readable register is [`visual/assets/data_asset_register.json`](visual/assets/data_asset_register.json). These entries describe research interfaces, not contracted institutions or completed field evidence.
+
 1. **Concept and identity agent:** the working concept, L0–L5 naming tree, neutral logo grammar, bilingual terminology, and brand-rights gate.
 2. **Ecosystem agent:** seven case mechanisms, the eight-node chain, Three Areas–Two Wings roles, 19 daily/weekly/quarterly/annual activities, and resource-release gates.
 3. **Scenario-space agent:** 13 scenario cards, eight user journeys, 12 public-space components, and four industry tests; each states AI action, human action, non-digital fallback, and stop rule.
 4. **Public-space agent:** three landmark candidates—developer walk, open-source results gallery, and agent-contribution wall—plus story stations, contribution boards, retractable wayfinding, human interpretation, and accessible alternatives.
 5. **Culture agent:** a non-causal railway–Zhongguancun–AI graph, five route types, bilingual working text, international-communication gate, and correction/withdrawal mechanism.
 6. **Operations agent:** daily/weekly/quarterly/annual activity system, six-step conversion chain, six pilot contracts, 15 indicators, and four-layer pause/restart events.
+
+For direct reader review, the formal package also includes six bilingual research diagrams:
+
+![Seven roles and evidence gates](assets/figures/agent-taskboard.en.png)  
+![Global mechanisms and local innovation chain](assets/figures/ecosystem-cases.en.png)  
+![Thirteen scenario cards](assets/figures/scenario-grid.en.png)  
+![Daily/weekly/quarterly/annual operations](assets/figures/operations-calendar.en.png)  
+![Eight user journeys and human downgrade](assets/figures/user-journey.en.png)  
+![Three AI landmarks and twelve reversible components](assets/figures/landmark-components.en.png)
+
+These diagrams are generated from the canonical registry, B2 activity ledger, and B3 scenario/user data. They are research diagrams with provisional and not-deployed status; bilingual counterparts retain the same IDs, states, and information architecture. [data:visual/assets/canonical_registry.json] [data:visual/assets/data_asset_register.json]
 
 ### How 13 scenarios enter the belt
 

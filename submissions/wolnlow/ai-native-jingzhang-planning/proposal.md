@@ -107,12 +107,25 @@ tracks: ["ai-traffic-walkability", "enterprise-services-ecosystem", "civic-agent
 
 ### 六类 Agent 任务的实质成果
 
+本次协作的角色、输入输出、质量门、验收字段、交接协议和统筹Agent八步工作流，见本包允许发布的 [`report/narrative.md`](report/narrative.md) 附录 A—D；25条数据资产的机器可读登记见 [`visual/assets/data_asset_register.json`](visual/assets/data_asset_register.json)。这两份入口共同说明方法论和资料边界，不把Agent角色写成已签约机构或把资料缺口写成事实。
+
 1. **概念与品牌 Agent：** 形成“京张智脉共生带”概念、L0—L5 命名树、Logo 构图语法、双语术语和品牌权利门。
 2. **生态 Agent：** 形成七案例机制表、八段创新接力、三区两翼职责、19 项日/周/季/年活动和资源释放闸门。
 3. **场景空间 Agent：** 形成 13 张场景卡、8 类用户/旅程、12 类公共空间组件和四类产业测试；所有场景写明 AI 做什么、人工做什么、非数字替代和停止条件。
 4. **公共空间 Agent：** 形成开发者散步道、开源成果展示廊、智能体贡献荣誉墙三个 AI 地标候选；形成故事站、贡献板、可撤导览、人工讲解和无障碍替代组件。
 5. **文化 Agent：** 形成铁路—中关村—AI 三文化非因果图谱、五类导览路线、双语工作译文、国际传播门和可纠错/撤回机制。
 6. **运营 Agent：** 形成日/周/季/年活动体系、六段转化链、六项试点合同、15 项指标和四层停复事件协议。
+
+为便于最终读者直接核对六类任务，正式包另附六张双语研究图解：
+
+![七个角色与证据闸门](assets/figures/agent-taskboard.png)  
+![全球案例机制与本地创新接力](assets/figures/ecosystem-cases.png)  
+![十三张场景卡总览](assets/figures/scenario-grid.png)  
+![日周季年活动与六段转化](assets/figures/operations-calendar.png)  
+![八类用户共同旅程与人工退级](assets/figures/user-journey.png)  
+![三个AI地标与十二类可逆组件](assets/figures/landmark-components.png)
+
+这些图解由统一注册表、B2活动台账和B3场景/用户数据生成，全部标注为研究图解、暂定空间和未部署；中英对应图件保留同一ID、状态和信息架构。[data:visual/assets/canonical_registry.json] [data:visual/assets/data_asset_register.json]
 
 ### 13 个场景的进入方式
 
