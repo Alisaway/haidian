@@ -1,0 +1,902 @@
+{
+  "schema_version": "0.1.0",
+  "items": [
+    {
+      "item_id": "existing_conditions_diagnosis",
+      "title_zh": "现状诊断图与资料缺口",
+      "professional_dimension": "规划",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "设计依据与资料清单",
+        "三层范围工作框架",
+        "风险、版权与合规说明"
+      ],
+      "drawing_refs": [
+        "assets/figures/site-overview.png",
+        "assets/figures/metrics-evidence.png"
+      ],
+      "geometry_refs": [
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson",
+        "geometry/land_use.geojson",
+        "geometry/buildings.geojson",
+        "geometry/roads.geojson",
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson",
+        "geometry/constraints.geojson"
+      ],
+      "metric_refs": [
+        "site_area_sqm",
+        "key_area_count",
+        "green_ratio",
+        "public_space_ratio",
+        "floor_area_ratio"
+      ],
+      "source_ids": [
+        "SITE-PACKAGE",
+        "SOURCE-REGISTRY",
+        "PROCESSED-FACT-PACK",
+        "BOUNDARY-SOURCE",
+        "KEY-AREA-SOURCE"
+      ],
+      "assumption_ids": [
+        "A-OFFICIAL-GEOMETRY-001",
+        "A-CONTROLS-001",
+        "A-HERITAGE-001"
+      ],
+      "self_check_ids": [
+        "BOUNDARY_TRUST",
+        "LAND_USE_TOPOLOGY",
+        "VISUAL_STATIC"
+      ],
+      "evidence_summary_zh": "以现状资料清单、五张证据图和九图层入口形成“已知—暂定—未知”诊断；正式边界、控规和文保事实仍未解除。",
+      "completeness_limited_by": [
+        "official survey/control attachments",
+        "heritage locator and rights clearance"
+      ],
+      "professional_completion_claim": false,
+      "completion_protocol": "complete + completeness_limited_by means the research contract is filled while external evidence remains explicit; it is not a claim of professional sign-off.",
+      "unknowns": [
+        "official boundary",
+        "FAR",
+        "heritage geometry"
+      ],
+      "recalculation_trigger": "official source or geometry version changes; rerun topology and area checks",
+      "human_gate_refs": [
+        "G-Fact",
+        "G-Space",
+        "G-Rights",
+        "G-Release"
+      ],
+      "evidence_state": "substantive_research_evidence_not_professional_signoff"
+    },
+    {
+      "item_id": "three_level_scope_framework",
+      "title_zh": "三层范围工作框架",
+      "professional_dimension": "规划",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "三层范围工作框架"
+      ],
+      "drawing_refs": [
+        "assets/figures/site-overview.png",
+        "assets/figures/key-areas.png"
+      ],
+      "geometry_refs": [
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson",
+        "geometry/phasing.geojson"
+      ],
+      "metric_refs": [
+        "site_area_sqm",
+        "key_area_count",
+        "key_area_area_sqm"
+      ],
+      "source_ids": [
+        "OFFICIAL-ANNOUNCEMENT",
+        "BOUNDARY-SOURCE",
+        "KEY-AREA-SOURCE"
+      ],
+      "assumption_ids": [
+        "A-OFFICIAL-GEOMETRY-001",
+        "A-KEY-AREA-ANCHOR-001"
+      ],
+      "self_check_ids": [
+        "BOUNDARY_TRUST",
+        "KEY_AREAS_TRUST"
+      ],
+      "evidence_summary_zh": "三层范围以项目级—总体设计级—重点区域级组织，面积只作为提交几何的暂定复算值，不作为红线依据。",
+      "completeness_limited_by": [
+        "official three-level polygons",
+        "verified key-area anchors"
+      ],
+      "professional_completion_claim": false,
+      "completion_protocol": "complete + completeness_limited_by means the research contract is filled while external evidence remains explicit; it is not a claim of professional sign-off.",
+      "unknowns": [
+        "legal boundary",
+        "exact key-area area"
+      ],
+      "recalculation_trigger": "official polygons with CRS replace provisional geometry",
+      "human_gate_refs": [
+        "G-Fact",
+        "G-Space",
+        "G-Rights",
+        "G-Release"
+      ],
+      "evidence_state": "substantive_research_evidence_not_professional_signoff"
+    },
+    {
+      "item_id": "overall_spatial_structure",
+      "title_zh": "总体空间结构",
+      "professional_dimension": "城市设计",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "总体设计范围城市更新与控规深度城市设计"
+      ],
+      "drawing_refs": [
+        "assets/figures/site-overview.png",
+        "assets/figures/land-use-structure.png"
+      ],
+      "geometry_refs": [
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson",
+        "geometry/land_use.geojson",
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson"
+      ],
+      "metric_refs": [
+        "site_area_sqm",
+        "key_area_count",
+        "green_ratio",
+        "public_space_ratio"
+      ],
+      "source_ids": [
+        "OFFICIAL-ANNOUNCEMENT",
+        "D2SRC-SHARED-001",
+        "D2SRC-SHARED-002",
+        "D2SRC-SHARED-003"
+      ],
+      "assumption_ids": [
+        "A-OFFICIAL-GEOMETRY-001",
+        "A-CONTROLS-001"
+      ],
+      "self_check_ids": [
+        "BOUNDARY_TRUST",
+        "LAND_USE_TOPOLOGY",
+        "VISUAL_STATIC"
+      ],
+      "evidence_summary_zh": "总体结构落实“一带三区两翼”和三层职责：稳定公共底座、可逆场景层、治理版本层；空间关系以图层和场景状态表达。",
+      "completeness_limited_by": [
+        "official control overlay",
+        "validated rail/heritage/public-space anchors"
+      ],
+      "professional_completion_claim": false,
+      "completion_protocol": "complete + completeness_limited_by means the research contract is filled while external evidence remains explicit; it is not a claim of professional sign-off.",
+      "unknowns": [
+        "statutory land-use control",
+        "rail engineering line"
+      ],
+      "recalculation_trigger": "control attachment or validated network topology changes",
+      "human_gate_refs": [
+        "G-Fact",
+        "G-Space",
+        "G-Rights",
+        "G-Release"
+      ],
+      "evidence_state": "substantive_research_evidence_not_professional_signoff"
+    },
+    {
+      "item_id": "land_use_layout",
+      "title_zh": "用地布局",
+      "professional_dimension": "规划",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "用地、建筑规模与拆改留方案"
+      ],
+      "drawing_refs": [
+        "assets/figures/land-use-structure.png",
+        "assets/figures/key-areas.png"
+      ],
+      "geometry_refs": [
+        "geometry/land_use.geojson",
+        "geometry/buildings.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "metric_refs": [
+        "building_footprint_area_sqm",
+        "site_area_sqm",
+        "floor_area_ratio"
+      ],
+      "source_ids": [
+        "D2SRC-SHARED-004",
+        "D2SRC-SHARED-005",
+        "SOURCE-REGISTRY"
+      ],
+      "assumption_ids": [
+        "A-CONTROLS-001",
+        "A-OFFICIAL-GEOMETRY-001"
+      ],
+      "self_check_ids": [
+        "LAND_USE_TOPOLOGY",
+        "VISUAL_STATIC"
+      ],
+      "evidence_summary_zh": "用地表达以现状/公共服务/创新场景三层叠合呈现；未取得法定控规前不生成可审批用地调整。",
+      "completeness_limited_by": [
+        "regulatory land-use map",
+        "parcel and ownership data"
+      ],
+      "professional_completion_claim": false,
+      "completion_protocol": "complete + completeness_limited_by means the research contract is filled while external evidence remains explicit; it is not a claim of professional sign-off.",
+      "unknowns": [
+        "FAR",
+        "parcel legal use"
+      ],
+      "recalculation_trigger": "land-use coding or official control attachment changes",
+      "human_gate_refs": [
+        "G-Fact",
+        "G-Space",
+        "G-Rights",
+        "G-Release"
+      ],
+      "evidence_state": "substantive_research_evidence_not_professional_signoff"
+    },
+    {
+      "item_id": "development_intensity_controls",
+      "title_zh": "开发强度或待确认控规条件",
+      "professional_dimension": "控规",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "用地、建筑规模与拆改留方案",
+        "指标体系、面积复算与合规矩阵"
+      ],
+      "drawing_refs": [
+        "assets/figures/land-use-structure.png",
+        "assets/figures/metrics-evidence.png"
+      ],
+      "geometry_refs": [
+        "geometry/land_use.geojson",
+        "geometry/buildings.geojson",
+        "geometry/constraints.geojson"
+      ],
+      "metric_refs": [
+        "floor_area_ratio",
+        "building_footprint_area_sqm",
+        "site_area_sqm"
+      ],
+      "source_ids": [
+        "SOURCE-REGISTRY",
+        "D2SRC-SHARED-006"
+      ],
+      "assumption_ids": [
+        "A-CONTROLS-001",
+        "A-RECALC-001"
+      ],
+      "self_check_ids": [
+        "LAND_USE_TOPOLOGY",
+        "VISUAL_STATIC"
+      ],
+      "evidence_summary_zh": "强度项明确将FAR、建筑量和容量列为unknown；当前只提供参数化复算接口与触发器，不给出法定数值。",
+      "completeness_limited_by": [
+        "official control indicators",
+        "capacity and ownership evidence"
+      ],
+      "professional_completion_claim": false,
+      "completion_protocol": "complete + completeness_limited_by means the research contract is filled while external evidence remains explicit; it is not a claim of professional sign-off.",
+      "unknowns": [
+        "FAR",
+        "height/setback control"
+      ],
+      "recalculation_trigger": "new control indicators or verified building footprints",
+      "human_gate_refs": [
+        "G-Fact",
+        "G-Space",
+        "G-Rights",
+        "G-Release"
+      ],
+      "evidence_state": "substantive_research_evidence_not_professional_signoff"
+    },
+    {
+      "item_id": "height_massing_character",
+      "title_zh": "建筑高度、体量与风貌控制",
+      "professional_dimension": "建筑",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "蓝绿空间、公共空间与城市风貌",
+        "用地、建筑规模与拆改留方案"
+      ],
+      "drawing_refs": [
+        "assets/figures/land-use-structure.png",
+        "assets/figures/key-areas.png"
+      ],
+      "geometry_refs": [
+        "geometry/buildings.geojson",
+        "geometry/land_use.geojson",
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson"
+      ],
+      "metric_refs": [
+        "building_footprint_area_sqm",
+        "floor_area_ratio",
+        "green_ratio"
+      ],
+      "source_ids": [
+        "D2SRC-B1-001",
+        "D2SRC-B1-002",
+        "SOURCE-REGISTRY"
+      ],
+      "assumption_ids": [
+        "A-CONTROLS-001",
+        "A-HERITAGE-001"
+      ],
+      "self_check_ids": [
+        "LAND_USE_TOPOLOGY",
+        "VISUAL_STATIC"
+      ],
+      "evidence_summary_zh": "风貌策略围绕铁路遗产可读性、公共界面和AI地标的可撤回原型；不把概念体量当作已批准高度。",
+      "completeness_limited_by": [
+        "heritage protection locator",
+        "height and skyline controls"
+      ],
+      "professional_completion_claim": false,
+      "completion_protocol": "complete + completeness_limited_by means the research contract is filled while external evidence remains explicit; it is not a claim of professional sign-off.",
+      "unknowns": [
+        "height limit",
+        "heritage grade"
+      ],
+      "recalculation_trigger": "heritage/control source and rights review changes",
+      "human_gate_refs": [
+        "G-Fact",
+        "G-Space",
+        "G-Rights",
+        "G-Release"
+      ],
+      "evidence_state": "substantive_research_evidence_not_professional_signoff"
+    },
+    {
+      "item_id": "retain_renovate_demolish",
+      "title_zh": "建筑拆改留分类",
+      "professional_dimension": "建筑",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "用地、建筑规模与拆改留方案",
+        "重点区域详细设计"
+      ],
+      "drawing_refs": [
+        "assets/figures/key-areas.png",
+        "assets/figures/land-use-structure.png"
+      ],
+      "geometry_refs": [
+        "geometry/buildings.geojson",
+        "geometry/key_areas.geojson",
+        "geometry/constraints.geojson"
+      ],
+      "metric_refs": [
+        "selected_detail_point_count",
+        "key_area_count",
+        "building_footprint_area_sqm"
+      ],
+      "source_ids": [
+        "D2SRC-B1-003",
+        "D2SRC-B1-004",
+        "D2SRC-SHARED-007"
+      ],
+      "assumption_ids": [
+        "A-CONTROLS-001",
+        "A-HERITAGE-001",
+        "A-KEY-AREA-ANCHOR-001"
+      ],
+      "self_check_ids": [
+        "KEY_AREAS_TRUST",
+        "LAND_USE_TOPOLOGY"
+      ],
+      "evidence_summary_zh": "拆改留采用“保留/可逆更新/待核验”三态，三重点区各两处首期点位仅为候选，不构成拆除或建设承诺。",
+      "completeness_limited_by": [
+        "building survey and heritage grading",
+        "ownership and safety appraisal"
+      ],
+      "professional_completion_claim": false,
+      "completion_protocol": "complete + completeness_limited_by means the research contract is filled while external evidence remains explicit; it is not a claim of professional sign-off.",
+      "unknowns": [
+        "demolition list",
+        "structural safety"
+      ],
+      "recalculation_trigger": "field survey, heritage and ownership evidence arrive",
+      "human_gate_refs": [
+        "G-Fact",
+        "G-Space",
+        "G-Rights",
+        "G-Release"
+      ],
+      "evidence_state": "substantive_research_evidence_not_professional_signoff"
+    },
+    {
+      "item_id": "traffic_rail_slow_parking",
+      "title_zh": "道路、轨道、慢行与停车组织",
+      "professional_dimension": "交通",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "交通、轨道、市政与公共服务设施"
+      ],
+      "drawing_refs": [
+        "assets/figures/mobility-bluegreen.png",
+        "assets/figures/site-overview.png"
+      ],
+      "geometry_refs": [
+        "geometry/roads.geojson",
+        "geometry/public_space.geojson",
+        "geometry/green_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "metric_refs": [
+        "public_space_ratio",
+        "site_area_sqm",
+        "runtime_instance_count"
+      ],
+      "source_ids": [
+        "D2SRC-SHARED-008",
+        "D2SRC-SHARED-009",
+        "SOURCE-REGISTRY"
+      ],
+      "assumption_ids": [
+        "A-CONTROLS-001",
+        "A-OFFICIAL-GEOMETRY-001"
+      ],
+      "self_check_ids": [
+        "BOUNDARY_TRUST",
+        "VISUAL_STATIC"
+      ],
+      "evidence_summary_zh": "交通策略以开发者散步道、慢行连续性和服务可达性为原型；轨道线位、道路红线和停车容量均保持unknown。",
+      "completeness_limited_by": [
+        "verified road/rail network",
+        "parking and accessibility survey"
+      ],
+      "professional_completion_claim": false,
+      "completion_protocol": "complete + completeness_limited_by means the research contract is filled while external evidence remains explicit; it is not a claim of professional sign-off.",
+      "unknowns": [
+        "rail alignment",
+        "parking capacity"
+      ],
+      "recalculation_trigger": "network/rights/field data changes",
+      "human_gate_refs": [
+        "G-Fact",
+        "G-Space",
+        "G-Rights",
+        "G-Release"
+      ],
+      "evidence_state": "substantive_research_evidence_not_professional_signoff"
+    },
+    {
+      "item_id": "municipal_new_infrastructure",
+      "title_zh": "市政与新型基础设施策略",
+      "professional_dimension": "市政",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "交通、轨道、市政与公共服务设施",
+        "更新项目清单、实施政策与分期计划"
+      ],
+      "drawing_refs": [
+        "assets/figures/mobility-bluegreen.png",
+        "assets/figures/metrics-evidence.png"
+      ],
+      "geometry_refs": [
+        "geometry/roads.geojson",
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson",
+        "geometry/constraints.geojson"
+      ],
+      "metric_refs": [
+        "runtime_instance_count",
+        "MET-OPS-01",
+        "MET-OPS-02",
+        "MET-RISK-01"
+      ],
+      "source_ids": [
+        "D2SRC-SHARED-010",
+        "D2SRC-SHARED-011",
+        "AGENT-TASKBOOK"
+      ],
+      "assumption_ids": [
+        "A-CONTROLS-001",
+        "A-B5-RUNTIME-001"
+      ],
+      "self_check_ids": [
+        "VISUAL_STATIC"
+      ],
+      "evidence_summary_zh": "新基建只定义数据责任、人工门和停复机制；当前无真实运行实例、容量或运营商承诺。",
+      "completeness_limited_by": [
+        "utility capacity",
+        "operator and data-owner confirmation"
+      ],
+      "professional_completion_claim": false,
+      "completion_protocol": "complete + completeness_limited_by means the research contract is filled while external evidence remains explicit; it is not a claim of professional sign-off.",
+      "unknowns": [
+        "utility capacity",
+        "runtime performance"
+      ],
+      "recalculation_trigger": "operator, capacity or privacy evidence changes",
+      "human_gate_refs": [
+        "G-Fact",
+        "G-Space",
+        "G-Rights",
+        "G-Release"
+      ],
+      "evidence_state": "substantive_research_evidence_not_professional_signoff"
+    },
+    {
+      "item_id": "blue_green_public_space",
+      "title_zh": "蓝绿系统与公共空间",
+      "professional_dimension": "景观",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "蓝绿空间、公共空间与城市风貌"
+      ],
+      "drawing_refs": [
+        "assets/figures/mobility-bluegreen.png",
+        "assets/figures/key-areas.png"
+      ],
+      "geometry_refs": [
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson",
+        "geometry/roads.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "metric_refs": [
+        "green_ratio",
+        "public_space_ratio",
+        "selected_detail_point_count"
+      ],
+      "source_ids": [
+        "D2SRC-SHARED-012",
+        "D2SRC-SHARED-013",
+        "D2SRC-B1-005"
+      ],
+      "assumption_ids": [
+        "A-CONTROLS-001",
+        "A-HERITAGE-001"
+      ],
+      "self_check_ids": [
+        "KEY_AREAS_TRUST",
+        "VISUAL_STATIC"
+      ],
+      "evidence_summary_zh": "蓝绿公共空间以可达、可停留、可学习和可撤回设施组成；面积比为提交几何的暂定复算，点位需现场与权利复核。",
+      "completeness_limited_by": [
+        "official green/public-space boundary",
+        "water/rail heritage clearance"
+      ],
+      "professional_completion_claim": false,
+      "completion_protocol": "complete + completeness_limited_by means the research contract is filled while external evidence remains explicit; it is not a claim of professional sign-off.",
+      "unknowns": [
+        "legally protected green ratio",
+        "water capacity"
+      ],
+      "recalculation_trigger": "official geometry or environmental constraints change",
+      "human_gate_refs": [
+        "G-Fact",
+        "G-Space",
+        "G-Rights",
+        "G-Release"
+      ],
+      "evidence_state": "substantive_research_evidence_not_professional_signoff"
+    },
+    {
+      "item_id": "three_key_area_detailed_design",
+      "title_zh": "三大重点片区详细设计",
+      "professional_dimension": "城市设计",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "重点区域详细设计",
+        "AI创新生态、人才画像与 AI+ 场景"
+      ],
+      "drawing_refs": [
+        "assets/figures/key-areas.png",
+        "assets/figures/site-overview.png"
+      ],
+      "geometry_refs": [
+        "geometry/key_areas.geojson",
+        "geometry/public_space.geojson",
+        "geometry/phasing.geojson"
+      ],
+      "metric_refs": [
+        "key_area_count",
+        "selected_detail_point_count",
+        "ai_scenario_card_count"
+      ],
+      "source_ids": [
+        "OFFICIAL-ANNOUNCEMENT",
+        "KEY-AREA-SOURCE",
+        "D2SRC-B2-001",
+        "AGENT-TASKBOOK"
+      ],
+      "assumption_ids": [
+        "A-KEY-AREA-ANCHOR-001",
+        "A-ACTOR-001",
+        "A-HERITAGE-001"
+      ],
+      "self_check_ids": [
+        "KEY_AREAS_TRUST",
+        "VISUAL_STATIC"
+      ],
+      "evidence_summary_zh": "三重点区分别配置两处可落地首期点：大钟寺“开发者散步道+开源展廊”、清河/西三旗“AI健康服务节点+教育实验街区”、中关村北区“算力数据工作站+夜间创新市集”；均以候选/待核验状态表达。",
+      "completeness_limited_by": [
+        "verified area anchors",
+        "venue/partner confirmation",
+        "heritage rights"
+      ],
+      "professional_completion_claim": false,
+      "completion_protocol": "complete + completeness_limited_by means the research contract is filled while external evidence remains explicit; it is not a claim of professional sign-off.",
+      "unknowns": [
+        "exact point coordinates",
+        "operator commitment"
+      ],
+      "recalculation_trigger": "anchor/partner/rights gates close",
+      "human_gate_refs": [
+        "G-Fact",
+        "G-Space",
+        "G-Rights",
+        "G-Release"
+      ],
+      "evidence_state": "substantive_research_evidence_not_professional_signoff"
+    },
+    {
+      "item_id": "renewal_project_list",
+      "title_zh": "更新项目清单",
+      "professional_dimension": "实施",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "更新项目清单、实施政策与分期计划"
+      ],
+      "drawing_refs": [
+        "assets/figures/key-areas.png",
+        "assets/figures/metrics-evidence.png"
+      ],
+      "geometry_refs": [
+        "geometry/key_areas.geojson",
+        "geometry/phasing.geojson",
+        "geometry/public_space.geojson"
+      ],
+      "metric_refs": [
+        "activity_ledger_count",
+        "selected_detail_point_count",
+        "runtime_instance_count"
+      ],
+      "source_ids": [
+        "D2SRC-B2-014",
+        "D2SRC-B2-015",
+        "AGENT-TASKBOOK"
+      ],
+      "assumption_ids": [
+        "A-ACTOR-001",
+        "A-B5-RUNTIME-001"
+      ],
+      "self_check_ids": [
+        "VISUAL_STATIC"
+      ],
+      "evidence_summary_zh": "项目库把六类Agent任务转译为候选项目、牵头角色、依赖、指标、停止/重启条件；活动和试点当前不是已签约实施。",
+      "completeness_limited_by": [
+        "named operator",
+        "venue, budget and permission evidence"
+      ],
+      "professional_completion_claim": false,
+      "completion_protocol": "complete + completeness_limited_by means the research contract is filled while external evidence remains explicit; it is not a claim of professional sign-off.",
+      "unknowns": [
+        "funding",
+        "implementation schedule"
+      ],
+      "recalculation_trigger": "operator and permission confirmation",
+      "human_gate_refs": [
+        "G-Fact",
+        "G-Space",
+        "G-Rights",
+        "G-Release"
+      ],
+      "evidence_state": "substantive_research_evidence_not_professional_signoff"
+    },
+    {
+      "item_id": "phasing_implementation",
+      "title_zh": "分期实施计划",
+      "professional_dimension": "实施",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "更新项目清单、实施政策与分期计划"
+      ],
+      "drawing_refs": [
+        "assets/figures/metrics-evidence.png",
+        "assets/figures/key-areas.png"
+      ],
+      "geometry_refs": [
+        "geometry/phasing.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "metric_refs": [
+        "activity_ledger_count",
+        "monitoring_parent_metric_count",
+        "runtime_instance_count"
+      ],
+      "source_ids": [
+        "D2SRC-B2-016",
+        "D2SRC-B2-017",
+        "D2SRC-B2-018"
+      ],
+      "assumption_ids": [
+        "A-ACTOR-001",
+        "A-B5-RUNTIME-001",
+        "A-RECALC-001"
+      ],
+      "self_check_ids": [
+        "VISUAL_STATIC"
+      ],
+      "evidence_summary_zh": "分期采用0资料补齐—1低保真试点—2扩展—3长期运营四层停复，不把时间表写成承诺日期。",
+      "completeness_limited_by": [
+        "baseline and target values",
+        "operator and governance sign-off"
+      ],
+      "professional_completion_claim": false,
+      "completion_protocol": "complete + completeness_limited_by means the research contract is filled while external evidence remains explicit; it is not a claim of professional sign-off.",
+      "unknowns": [
+        "start date",
+        "budget",
+        "target value"
+      ],
+      "recalculation_trigger": "gate evidence or pilot runtime changes",
+      "human_gate_refs": [
+        "G-Fact",
+        "G-Space",
+        "G-Rights",
+        "G-Release"
+      ],
+      "evidence_state": "substantive_research_evidence_not_professional_signoff"
+    },
+    {
+      "item_id": "metrics_recalculation",
+      "title_zh": "指标复算",
+      "professional_dimension": "校核",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "指标体系、面积复算与合规矩阵"
+      ],
+      "drawing_refs": [
+        "assets/figures/metrics-evidence.png",
+        "assets/figures/site-overview.png"
+      ],
+      "geometry_refs": [
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson",
+        "geometry/land_use.geojson",
+        "geometry/buildings.geojson",
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson",
+        "geometry/phasing.geojson"
+      ],
+      "metric_refs": [
+        "site_area_sqm",
+        "building_footprint_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "key_area_area_sqm",
+        "floor_area_ratio",
+        "monitoring_parent_metric_count"
+      ],
+      "source_ids": [
+        "BOUNDARY-SOURCE",
+        "KEY-AREA-SOURCE",
+        "SOURCE-REGISTRY",
+        "D2SRC-SHARED-019"
+      ],
+      "assumption_ids": [
+        "A-OFFICIAL-GEOMETRY-001",
+        "A-CONTROLS-001",
+        "A-RECALC-001"
+      ],
+      "self_check_ids": [
+        "BOUNDARY_TRUST",
+        "KEY_AREAS_TRUST",
+        "LAND_USE_TOPOLOGY",
+        "VISUAL_STATIC"
+      ],
+      "evidence_summary_zh": "指标链明确输入图层、公式、hash、状态和重算触发；现有面积指标标注provisional，FAR与运行指标保持unknown。",
+      "completeness_limited_by": [
+        "official geometry",
+        "control values",
+        "baseline/target data"
+      ],
+      "professional_completion_claim": false,
+      "completion_protocol": "complete + completeness_limited_by means the research contract is filled while external evidence remains explicit; it is not a claim of professional sign-off.",
+      "unknowns": [
+        "statutory metric values",
+        "monitoring baseline"
+      ],
+      "recalculation_trigger": "any input hash, control or metric owner changes",
+      "human_gate_refs": [
+        "G-Fact",
+        "G-Space",
+        "G-Rights",
+        "G-Release"
+      ],
+      "evidence_state": "substantive_research_evidence_not_professional_signoff"
+    },
+    {
+      "item_id": "risk_missing_data",
+      "title_zh": "风险与缺资料清单",
+      "professional_dimension": "合规",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "风险、版权与合规说明"
+      ],
+      "drawing_refs": [
+        "assets/figures/metrics-evidence.png",
+        "assets/figures/site-overview.png"
+      ],
+      "geometry_refs": [
+        "geometry/constraints.geojson",
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "metric_refs": [
+        "floor_area_ratio",
+        "runtime_instance_count",
+        "professional_signed_contract_count",
+        "MET-RISK-01",
+        "MET-RISK-02"
+      ],
+      "source_ids": [
+        "SOURCE-REGISTRY",
+        "MISSING-DATA-CHECKLIST",
+        "D2SRC-SHARED-020"
+      ],
+      "assumption_ids": [
+        "A-OFFICIAL-GEOMETRY-001",
+        "A-CONTROLS-001",
+        "A-HERITAGE-001",
+        "A-ACTOR-001",
+        "A-B5-RUNTIME-001",
+        "A-RIGHTS-001",
+        "A-B6-CONTRACT-001"
+      ],
+      "self_check_ids": [
+        "BOUNDARY_TRUST",
+        "KEY_AREAS_TRUST",
+        "LAND_USE_TOPOLOGY",
+        "VISUAL_STATIC"
+      ],
+      "evidence_summary_zh": "风险清单把事实、空间、权利、运营和专业签署分开，配四层人工闸与停复动作；没有用“PASS”替代外部核验。",
+      "completeness_limited_by": [
+        "official geometry",
+        "rights/partner/signature evidence",
+        "runtime audit"
+      ],
+      "professional_completion_claim": false,
+      "completion_protocol": "complete + completeness_limited_by means the research contract is filled while external evidence remains explicit; it is not a claim of professional sign-off.",
+      "unknowns": [
+        "approval",
+        "ownership",
+        "operator",
+        "professional sign-off"
+      ],
+      "recalculation_trigger": "any gate evidence or external review result changes",
+      "human_gate_refs": [
+        "G-Fact",
+        "G-Space",
+        "G-Rights",
+        "G-Release"
+      ],
+      "evidence_state": "substantive_research_evidence_not_professional_signoff"
+    }
+  ],
+  "generated_at": "2026-08-16",
+  "matrix_note": "Depth items are research-complete with explicit limitations; no professional completion is self-certified."
+}

@@ -1,0 +1,2396 @@
+{
+  "schema_version": "0.1.0",
+  "sources": [
+    {
+      "id": "SITE-PACKAGE",
+      "path": "brief/site-package/",
+      "source_type": "official_public",
+      "usage": "Project brief, enums, allowed design space, ranges, and schemas."
+    },
+    {
+      "id": "SOURCE-REGISTRY",
+      "path": "data/source_registry.json",
+      "source_type": "repository_public_registry",
+      "usage": "Public/cleared/provisional source usability registry; distinguishes formal-ready, background-only, provisional-only, and needs-review materials."
+    },
+    {
+      "id": "PROCESSED-FACT-PACK",
+      "path": "data/processed/agent_fact_pack.md",
+      "source_type": "repository_processed_reference",
+      "usage": "Agent-readable navigation layer for scopes, required tasks, source-use boundaries, and missing-data checklist; not a new authority source."
+    },
+    {
+      "id": "BOUNDARY-SOURCE",
+      "path": "brief/site-package/geometry/provisional_boundaries.geojson",
+      "source_type": "agent_inferred_from_public_data",
+      "usage": "Submitted site boundary geometry source (provisional)."
+    },
+    {
+      "id": "KEY-AREA-SOURCE",
+      "path": "brief/site-package/geometry/provisional_boundaries.geojson",
+      "source_type": "agent_inferred_from_public_data",
+      "usage": "Three required detailed-design key area boundaries (provisional)."
+    },
+    {
+      "id": "OFFICIAL-ANNOUNCEMENT",
+      "url": "https://ghzrzyw.beijing.gov.cn/zhengwuxinxi/tzgg/hd/202605/t20260509_4643047.html",
+      "source_type": "official_public",
+      "usage": "Official announcement tasks, scope levels, key areas, language, and deliverable context."
+    },
+    {
+      "id": "AGENT-TASKBOOK",
+      "path": "brief/site-package/agent_taskbook.json",
+      "source_type": "user_provided_cleared",
+      "usage": "Agent-facing open-call principles, six required agent tasks, scenario/branding/operation requirements, and boundary clause."
+    },
+    {
+      "id": "D2SRC-SHARED-001",
+      "formal_target_id": "OFFICIAL-ANNOUNCEMENT",
+      "title": "百年京张AI创新带城市设计国际方案征集资格预审公告",
+      "publisher": "北京市规划和自然资源委员会海淀分局",
+      "source_type": "F",
+      "status": "approved",
+      "path_or_url": "https://ghzrzyw.beijing.gov.cn/zhengwuxinxi/tzgg/hd/202605/t20260509_4643047.html",
+      "published_or_reference_date": "2026-05-09",
+      "accessed_date": "2026-06-03",
+      "temporal_scope": "dated_snapshot",
+      "spatial_scope": "official_announcement",
+      "spatial_use_allowed": "textual_scope_and_published_area_only",
+      "geometry_generation_allowed": "no",
+      "rights_status": "cleared_for_citation_with_attribution",
+      "license_or_reuse": "官方公开公告快照并保留出处",
+      "supports": [
+        "项目名称",
+        "组织方",
+        "文字范围",
+        "公告面积",
+        "设计任务",
+        "成果深度"
+      ],
+      "does_not_support": [
+        "精确官方polygon;道路红线;法定控制;公告外实施承诺",
+        "F仅在所列时点/尺度/定位符内成立"
+      ],
+      "locator": "https://ghzrzyw.beijing.gov.cn/zhengwuxinxi/tzgg/hd/202605/t20260509_4643047.html",
+      "gap_ids": [
+        "GAP-SPATIAL-001",
+        "GAP-CONTROL-001"
+      ],
+      "owner_role": "资料经理;对应章节专业负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Rights",
+        "G-Release"
+      ],
+      "confidence": "high",
+      "notes": "共享底座来源；formal只纳入正文或矩阵实际使用项"
+    },
+    {
+      "id": "D2SRC-SHARED-002",
+      "formal_target_id": "AGENT-TASKBOOK",
+      "title": "面向全球智能体开展百年京张AI创新带城市设计开源征集任务书摘录",
+      "publisher": "User-provided cleared document",
+      "source_type": "F",
+      "status": "approved",
+      "path_or_url": "brief/site-package/agent_taskbook.json",
+      "published_or_reference_date": "2026-05-18",
+      "accessed_date": "2026-06-05",
+      "temporal_scope": "dated_snapshot",
+      "spatial_scope": "cleared_user_document",
+      "spatial_use_allowed": "task_requirements_only",
+      "geometry_generation_allowed": "no",
+      "rights_status": "cleared_for_citation_with_attribution",
+      "license_or_reuse": "用户提供且已获仓库使用许可的资料",
+      "supports": [
+        "六类Agent任务",
+        "场景卡要求",
+        "品牌运营要求",
+        "公共合规边界"
+      ],
+      "does_not_support": [
+        "法定红线;控规条件;工程可行性;政府实施承诺",
+        "F仅在所列时点/尺度/定位符内成立"
+      ],
+      "locator": "brief/site-package/agent_taskbook.json",
+      "gap_ids": [
+        "GAP-SPATIAL-001",
+        "GAP-CONTROL-001"
+      ],
+      "owner_role": "资料经理;对应章节专业负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Rights",
+        "G-Release"
+      ],
+      "confidence": "high",
+      "notes": "共享底座来源；formal只纳入正文或矩阵实际使用项"
+    },
+    {
+      "id": "D2SRC-SHARED-003",
+      "formal_target_id": "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+      "title": "城市设计管理办法",
+      "publisher": "中华人民共和国住房和城乡建设部",
+      "source_type": "F",
+      "status": "approved",
+      "path_or_url": "https://www.mohurd.gov.cn/gongkai/zc/wjk/art/2023/art_17339_775476.html",
+      "published_or_reference_date": "2017-03-14",
+      "accessed_date": "2026-06-03",
+      "temporal_scope": "dated_snapshot",
+      "spatial_scope": "official_standard",
+      "spatial_use_allowed": "non_geometric_evidence_only",
+      "geometry_generation_allowed": "no",
+      "rights_status": "cleared_for_citation_with_attribution",
+      "license_or_reuse": "官方公开政策页面快照并保留出处",
+      "supports": [
+        "城市设计目的与范围",
+        "公共空间",
+        "城市风貌",
+        "建筑形态控制参照"
+      ],
+      "does_not_support": [
+        "项目审批结论;无官方附件的场地定量控制",
+        "F仅在所列时点/尺度/定位符内成立"
+      ],
+      "locator": "https://www.mohurd.gov.cn/gongkai/zc/wjk/art/2023/art_17339_775476.html",
+      "gap_ids": [],
+      "owner_role": "资料经理;对应章节专业负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Rights",
+        "G-Release"
+      ],
+      "confidence": "high",
+      "notes": "共享底座来源；formal只纳入正文或矩阵实际使用项"
+    },
+    {
+      "id": "D2SRC-SHARED-004",
+      "formal_target_id": "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+      "title": "城市镇控制性详细规划编制审批办法",
+      "publisher": "中华人民共和国住房和城乡建设部",
+      "source_type": "F",
+      "status": "approved",
+      "path_or_url": "https://www.gov.cn/zhengce/2022-01/25/content_5711967.htm",
+      "published_or_reference_date": "unknown",
+      "accessed_date": "2026-06-03",
+      "temporal_scope": "unknown_date",
+      "spatial_scope": "official_standard",
+      "spatial_use_allowed": "non_geometric_evidence_only",
+      "geometry_generation_allowed": "no",
+      "rights_status": "cleared_for_citation_with_attribution",
+      "license_or_reuse": "官方政府页面快照并保留出处",
+      "supports": [
+        "控规深度参照",
+        "规划许可与实施管理边界"
+      ],
+      "does_not_support": [
+        "声称项目已有控规;虚构容积率高度道路权属市政结论",
+        "F仅在所列时点/尺度/定位符内成立"
+      ],
+      "locator": "https://www.gov.cn/zhengce/2022-01/25/content_5711967.htm",
+      "gap_ids": [],
+      "owner_role": "资料经理;对应章节专业负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Rights",
+        "G-Release"
+      ],
+      "confidence": "high",
+      "notes": "共享底座来源；formal只纳入正文或矩阵实际使用项"
+    },
+    {
+      "id": "D2SRC-SHARED-005",
+      "formal_target_id": "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+      "title": "国土空间调查规划用途管制用地用海分类指南",
+      "publisher": "自然资源部",
+      "source_type": "F",
+      "status": "approved",
+      "path_or_url": "https://www.gov.cn/zhengce/zhengceku/202311/content_6917279.htm",
+      "published_or_reference_date": "2023-11-22",
+      "accessed_date": "2026-06-03",
+      "temporal_scope": "dated_snapshot",
+      "spatial_scope": "official_standard",
+      "spatial_use_allowed": "non_geometric_evidence_only",
+      "geometry_generation_allowed": "no",
+      "rights_status": "cleared_for_citation_with_attribution",
+      "license_or_reuse": "官方政府页面快照并保留出处",
+      "supports": [
+        "用地分类术语",
+        "GeoJSON和指标中的用地代码参照"
+      ],
+      "does_not_support": [
+        "项目具体用地审批;替代法定控规条件",
+        "F仅在所列时点/尺度/定位符内成立"
+      ],
+      "locator": "https://www.gov.cn/zhengce/zhengceku/202311/content_6917279.htm",
+      "gap_ids": [],
+      "owner_role": "资料经理;对应章节专业负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Rights",
+        "G-Release"
+      ],
+      "confidence": "high",
+      "notes": "共享底座来源；formal只纳入正文或矩阵实际使用项"
+    },
+    {
+      "id": "D2SRC-SHARED-006",
+      "formal_target_id": "BOUNDARY-SOURCE;KEY-AREA-SOURCE",
+      "title": "百年京张AI创新带三层范围与三处重点区临时粗略polygon",
+      "publisher": "Repository maintainers",
+      "source_type": "P",
+      "status": "approved_with_limitations",
+      "path_or_url": "brief/site-package/geometry/provisional_boundaries.geojson",
+      "published_or_reference_date": "2026-06-05",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "dated_snapshot",
+      "spatial_scope": "provisional_repository_data",
+      "spatial_use_allowed": "existing_repository_provisional_geometry_for_intake_only",
+      "geometry_generation_allowed": "existing_file_only_no_redraw_no_place_name_derivation",
+      "rights_status": "internal_or_provisional_restricted",
+      "license_or_reuse": "仓库维护的临时几何；必须显式标provisional",
+      "supports": [
+        "临时AI生成边界",
+        "离线展示",
+        "intake自检",
+        "清晰标注后的方案讨论"
+      ],
+      "does_not_support": [
+        "official红线;法定控制;精确面积;审批或实施依据;正式专业评分依据",
+        "不得把P级状态静默升级为F"
+      ],
+      "locator": "brief/site-package/geometry/provisional_boundaries.geojson",
+      "gap_ids": [
+        "GAP-SPATIAL-001",
+        "GAP-SPATIAL-002",
+        "GAP-SPATIAL-003"
+      ],
+      "owner_role": "资料经理;对应章节专业负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Rights",
+        "G-Release"
+      ],
+      "confidence": "low",
+      "notes": "共享底座来源；formal只纳入正文或矩阵实际使用项"
+    },
+    {
+      "id": "D2SRC-SHARED-007",
+      "formal_target_id": "LOCAL-SCENE-NODE-LIBRARY-V0.1",
+      "title": "场景节点库V0.1",
+      "publisher": "本项目内部概念研究",
+      "source_type": "P",
+      "status": "approved_with_limitations",
+      "path_or_url": "场景节点/场景节点库_v0.1.json",
+      "published_or_reference_date": "2026-08-15",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "dated_snapshot",
+      "spatial_scope": "internal_concept_seed",
+      "spatial_use_allowed": "non_geometric_evidence_only",
+      "geometry_generation_allowed": "no",
+      "rights_status": "internal_or_provisional_restricted",
+      "license_or_reuse": "参与者内部原创概念；正式使用须再做证据与权利审查",
+      "supports": [
+        "作为问题类型",
+        "候选动作",
+        "空间类型",
+        "后续核验任务的种子"
+      ],
+      "does_not_support": [
+        "证明现状需求;精确位置;可行性;主体承诺;正式方案结论",
+        "不得把P级状态静默升级为F"
+      ],
+      "locator": "场景节点/场景节点库_v0.1.json",
+      "gap_ids": [],
+      "owner_role": "资料经理;对应章节专业负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Rights",
+        "G-Release"
+      ],
+      "confidence": "low",
+      "notes": "共享底座来源；formal只纳入正文或矩阵实际使用项"
+    },
+    {
+      "id": "D2SRC-SHARED-008",
+      "formal_target_id": "LOCAL-SRC-RESEARCH-OUTLINE-V2",
+      "title": "项目研究总纲V2.0",
+      "publisher": "本项目研究组",
+      "source_type": "P",
+      "status": "approved_with_limitations",
+      "path_or_url": "项目研究总纲_v2.0.md",
+      "published_or_reference_date": "2026-08-15",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "dated_snapshot",
+      "spatial_scope": "internal_content_authority",
+      "spatial_use_allowed": "non_geometric_evidence_only",
+      "geometry_generation_allowed": "no",
+      "rights_status": "internal_or_provisional_restricted",
+      "license_or_reuse": "参与者内部原创研究主纲；sha256 034801b2585fdeef16a69ad3e148e289107aef07c9a91d443f60d2e245c789d6",
+      "supports": [
+        "作为五篇十五章内容主纲",
+        "研究命题",
+        "方法定义",
+        "任务接口",
+        "成果和边界"
+      ],
+      "does_not_support": [
+        "替代外部史料;证明场地事实;替代官方提交规则或专业审查",
+        "不得把P级状态静默升级为F"
+      ],
+      "locator": "项目研究总纲_v2.0.md",
+      "gap_ids": [],
+      "owner_role": "资料经理;对应章节专业负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Rights",
+        "G-Release"
+      ],
+      "confidence": "low",
+      "notes": "共享底座来源；formal只纳入正文或矩阵实际使用项"
+    },
+    {
+      "id": "D2SRC-SHARED-009",
+      "formal_target_id": "LOCAL-SRC-PUBLIC-BRIEF",
+      "title": "仓库公开任务说明",
+      "publisher": "open-city-ai/haidian repository",
+      "source_type": "B",
+      "status": "approved_with_limitations",
+      "path_or_url": "参考仓库/haidian-main/brief/public-brief.md",
+      "published_or_reference_date": "2026",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "living_or_periodic",
+      "spatial_scope": "repository_public_brief",
+      "spatial_use_allowed": "non_geometric_evidence_only",
+      "geometry_generation_allowed": "no",
+      "rights_status": "restricted_or_attribution_required",
+      "license_or_reuse": "仓库公开文件；sha256 fac835709479a7d7c4a90beaf41f69ab2c29984e2ca50cb66ef28ca2d3874994",
+      "supports": [
+        "公开任务语境",
+        "公众参与和地方性导向",
+        "与正式资料交叉核对"
+      ],
+      "does_not_support": [
+        "替代官方公告;证明精确空间/法定控制/历史事实;与formal registry冲突时优先",
+        "不得把B级状态静默升级为F"
+      ],
+      "locator": "参考仓库/haidian-main/brief/public-brief.md",
+      "gap_ids": [],
+      "owner_role": "资料经理;对应章节专业负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Rights",
+        "G-Release"
+      ],
+      "confidence": "medium",
+      "notes": "共享底座来源；formal只纳入正文或矩阵实际使用项"
+    },
+    {
+      "id": "D2SRC-SHARED-010",
+      "formal_target_id": "LOCAL-VISUAL-H0-REGISTRY",
+      "title": "H0概念图视觉资产登记",
+      "publisher": "本项目内部概念研究",
+      "source_type": "P",
+      "status": "approved_with_limitations",
+      "path_or_url": "研究模块/00_共享底座/视觉资产登记_v0.1.json",
+      "published_or_reference_date": "2026-08-15",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "dated_snapshot",
+      "spatial_scope": "internal_visual_registry",
+      "spatial_use_allowed": "none",
+      "geometry_generation_allowed": "no",
+      "rights_status": "internal_or_provisional_restricted",
+      "license_or_reuse": "内部概念资产；提示词模型输入来源链不完整故不得进入formal",
+      "supports": [
+        "登记H0概念图文件hash尺寸字节和限制",
+        "作为重新生成前的负面准入记录"
+      ],
+      "does_not_support": [
+        "证明现场现状;官方边界;工程方案;历史事实;正式投稿视觉来源链",
+        "不得把P级状态静默升级为F"
+      ],
+      "locator": "研究模块/00_共享底座/视觉资产登记_v0.1.json",
+      "gap_ids": [
+        "GAP-VISUAL-001"
+      ],
+      "owner_role": "资料经理;对应章节专业负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Rights",
+        "G-Release"
+      ],
+      "confidence": "low",
+      "notes": "共享底座来源；formal只纳入正文或矩阵实际使用项"
+    },
+    {
+      "id": "D2SRC-SHARED-011",
+      "formal_target_id": "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+      "title": "生成式人工智能服务管理暂行办法",
+      "publisher": "国家互联网信息办公室等七部门",
+      "source_type": "F",
+      "status": "approved",
+      "path_or_url": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm",
+      "published_or_reference_date": "2023-07-13",
+      "accessed_date": "2026-08-09",
+      "temporal_scope": "dated_snapshot",
+      "spatial_scope": "official_standard",
+      "spatial_use_allowed": "non_geometric_evidence_only",
+      "geometry_generation_allowed": "no",
+      "rights_status": "cleared_for_citation_with_attribution",
+      "license_or_reuse": "官方政府文本并保留出处；不得复用页面第三方内容",
+      "supports": [
+        "向境内公众提供生成内容服务的适用范围",
+        "投诉举报",
+        "特定服务安全评估备案参照"
+      ],
+      "does_not_support": [
+        "法律意见;推定已备案;泛化到所有AI应用;虚构退出权或响应期限",
+        "F仅在所列时点/尺度/定位符内成立"
+      ],
+      "locator": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm",
+      "gap_ids": [],
+      "owner_role": "资料经理;对应章节专业负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Rights",
+        "G-Release"
+      ],
+      "confidence": "high",
+      "notes": "共享底座来源；formal只纳入正文或矩阵实际使用项"
+    },
+    {
+      "id": "D2SRC-SHARED-012",
+      "formal_target_id": "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+      "title": "中华人民共和国无障碍环境建设法",
+      "publisher": "全国人民代表大会常务委员会",
+      "source_type": "F",
+      "status": "approved",
+      "path_or_url": "https://www.gov.cn/yaowen/liebiao/202306/content_6888910.htm",
+      "published_or_reference_date": "2023-06-28",
+      "accessed_date": "2026-08-09",
+      "temporal_scope": "dated_snapshot",
+      "spatial_scope": "official_standard",
+      "spatial_use_allowed": "non_geometric_evidence_only",
+      "geometry_generation_allowed": "no",
+      "rights_status": "cleared_for_citation_with_attribution",
+      "license_or_reuse": "官方法律文本并保留出处",
+      "supports": [
+        "法定无障碍原则",
+        "第39条列明服务场所的现场指导与人工办理基线"
+      ],
+      "does_not_support": [
+        "法律意见;推定既有设施合规;把第39条泛化到全部公共空间",
+        "F仅在所列时点/尺度/定位符内成立"
+      ],
+      "locator": "https://www.gov.cn/yaowen/liebiao/202306/content_6888910.htm",
+      "gap_ids": [],
+      "owner_role": "资料经理;对应章节专业负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Rights",
+        "G-Release"
+      ],
+      "confidence": "high",
+      "notes": "共享底座来源；formal只纳入正文或矩阵实际使用项"
+    },
+    {
+      "id": "D2SRC-SHARED-013",
+      "formal_target_id": "DATA-SRC-ELDERLY-SMART-TECH-PLAN-2020-45",
+      "title": "关于切实解决老年人运用智能技术困难实施方案",
+      "publisher": "国务院办公厅",
+      "source_type": "B",
+      "status": "approved_with_limitations",
+      "path_or_url": "https://www.gov.cn/zhengce/content/2020-11/24/content_5563804.htm",
+      "published_or_reference_date": "2020-11-24",
+      "accessed_date": "2026-08-09",
+      "temporal_scope": "dated_snapshot",
+      "spatial_scope": "official_standard",
+      "spatial_use_allowed": "non_geometric_evidence_only",
+      "geometry_generation_allowed": "no",
+      "rights_status": "restricted_or_attribution_required",
+      "license_or_reuse": "官方政策文本并保留出处",
+      "supports": [
+        "传统服务与智能服务并行的政策背景",
+        "老年人高频服务场景"
+      ],
+      "does_not_support": [
+        "具体机构合规判断;推定本地已实施;本地老年需求数字;场地法定控制",
+        "不得把B级状态静默升级为F"
+      ],
+      "locator": "https://www.gov.cn/zhengce/content/2020-11/24/content_5563804.htm",
+      "gap_ids": [],
+      "owner_role": "资料经理;对应章节专业负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Rights",
+        "G-Release"
+      ],
+      "confidence": "medium",
+      "notes": "共享底座来源；formal只纳入正文或矩阵实际使用项"
+    },
+    {
+      "id": "D2SRC-SHARED-014",
+      "formal_target_id": "DATA-SRC-SENTINEL2-20260715",
+      "title": "Sentinel-2 L2A真彩色卫星影像S2B_MSIL2A_20260715T030519_R075_T50TMK_20260715T060222",
+      "publisher": "European Union Copernicus programme via Microsoft Planetary Computer",
+      "source_type": "B",
+      "status": "approved_with_limitations",
+      "path_or_url": "现状底图/satellite-map-manifest.json",
+      "published_or_reference_date": "2026-07-15",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "dated_snapshot",
+      "spatial_scope": "remote_sensing_imagery",
+      "spatial_use_allowed": "10m_background_context_only",
+      "geometry_generation_allowed": "no_feature_extraction_for_formal",
+      "rights_status": "restricted_or_attribution_required",
+      "license_or_reuse": "Contains modified Copernicus Sentinel data 2026",
+      "supports": [
+        "10米级场地背景",
+        "三层范围和重点区相对位置展示",
+        "宏观蓝绿与建成环境背景"
+      ],
+      "does_not_support": [
+        "精细建筑识别;首层业态;交通流;权属;工程条件;正式规划底图",
+        "不得把B级状态静默升级为F"
+      ],
+      "locator": "现状底图/satellite-map-manifest.json",
+      "gap_ids": [
+        "GAP-SPATIAL-001",
+        "GAP-VISUAL-001"
+      ],
+      "owner_role": "资料经理;对应章节专业负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Rights",
+        "G-Release"
+      ],
+      "confidence": "medium",
+      "notes": "共享底座来源；formal只纳入正文或矩阵实际使用项"
+    },
+    {
+      "id": "D2SRC-SHARED-015",
+      "formal_target_id": "DATA-SRC-OSM-LANDMARKS-20260620",
+      "title": "OpenStreetMap地标与交通要素抽取",
+      "publisher": "OpenStreetMap contributors",
+      "source_type": "B",
+      "status": "approved_with_limitations",
+      "path_or_url": "工作底座/空间数据/osm_landmarks.json",
+      "published_or_reference_date": "2026-06-20",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "dated_snapshot",
+      "spatial_scope": "open_mapping",
+      "spatial_use_allowed": "background_locator_and_uncertainty_check_only",
+      "geometry_generation_allowed": "no_formal_geometry_no_range_derivation",
+      "rights_status": "restricted_or_attribution_required",
+      "license_or_reuse": "OpenStreetMap data ODbL and contributors attribution required",
+      "supports": [
+        "公开地名检索",
+        "背景定位",
+        "空间不确定性交叉核对"
+      ],
+      "does_not_support": [
+        "法定边界;完整资产清单;工程线位;现状精确结论;从点位反推设计范围",
+        "不得把B级状态静默升级为F"
+      ],
+      "locator": "工作底座/空间数据/osm_landmarks.json",
+      "gap_ids": [
+        "GAP-SPATIAL-001",
+        "GAP-TRANSPORT-001"
+      ],
+      "owner_role": "资料经理;对应章节专业负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Rights",
+        "G-Release"
+      ],
+      "confidence": "medium",
+      "notes": "共享底座来源；formal只纳入正文或矩阵实际使用项"
+    },
+    {
+      "id": "D2SRC-SHARED-016",
+      "formal_target_id": "EXT-ILO-GENAI-JOBS-20250520",
+      "title": "Generative AI and jobs a 2025 update",
+      "publisher": "International Labour Organization",
+      "source_type": "B",
+      "status": "approved_with_limitations",
+      "path_or_url": "https://www.ilo.org/publications/generative-ai-and-jobs-2025-update",
+      "published_or_reference_date": "2025-05-20",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "dated_snapshot",
+      "spatial_scope": "public_research",
+      "spatial_use_allowed": "non_geometric_evidence_only",
+      "geometry_generation_allowed": "no",
+      "rights_status": "restricted_or_attribution_required",
+      "license_or_reuse": "ILO公开研究页面；工作论文记录为CC BY 4.0",
+      "supports": [
+        "全球职业任务暴露与工作转型趋势",
+        "人类投入和社会对话的重要性"
+      ],
+      "does_not_support": [
+        "直接推断北京或海淀就业结构;把暴露等同失业;从全球数据推导场地面积需求",
+        "不得把B级状态静默升级为F"
+      ],
+      "locator": "https://www.ilo.org/publications/generative-ai-and-jobs-2025-update",
+      "gap_ids": [],
+      "owner_role": "资料经理;对应章节专业负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Rights",
+        "G-Release"
+      ],
+      "confidence": "medium",
+      "notes": "共享底座来源；formal只纳入正文或矩阵实际使用项"
+    },
+    {
+      "id": "D2SRC-SHARED-017",
+      "formal_target_id": "EXT-STANFORD-AI-INDEX-2026",
+      "title": "The 2026 AI Index Report Economy chapter",
+      "publisher": "Stanford Institute for Human-Centered AI",
+      "source_type": "B",
+      "status": "approved_with_limitations",
+      "path_or_url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/economy",
+      "published_or_reference_date": "2026",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "living_or_periodic",
+      "spatial_scope": "public_research",
+      "spatial_use_allowed": "non_geometric_evidence_only",
+      "geometry_generation_allowed": "no",
+      "rights_status": "restricted_or_attribution_required",
+      "license_or_reuse": "Stanford HAI公开研究页面并保留出处",
+      "supports": [
+        "组织AI采用与Agent采用阶段差异",
+        "生产率与就业影响的不均衡",
+        "产业趋势背景"
+      ],
+      "does_not_support": [
+        "直接推断海淀组织采用率;把全球调查值写成本地基线;从投资额推导项目承诺",
+        "不得把B级状态静默升级为F"
+      ],
+      "locator": "https://hai.stanford.edu/ai-index/2026-ai-index-report/economy",
+      "gap_ids": [],
+      "owner_role": "资料经理;对应章节专业负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Rights",
+        "G-Release"
+      ],
+      "confidence": "medium",
+      "notes": "共享底座来源；formal只纳入正文或矩阵实际使用项"
+    },
+    {
+      "id": "D2SRC-SHARED-018",
+      "formal_target_id": "EXT-UNHABITAT-RESP-AI-CITIES-2025",
+      "title": "Global assessment of Responsible AI in cities",
+      "publisher": "UN-Habitat",
+      "source_type": "B",
+      "status": "approved_with_limitations",
+      "path_or_url": "https://unhabitat.org/global-assessment-of-responsible-ai-in-cities-0",
+      "published_or_reference_date": "2025",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "dated_snapshot",
+      "spatial_scope": "international_policy_research",
+      "spatial_use_allowed": "non_geometric_evidence_only",
+      "geometry_generation_allowed": "no",
+      "rights_status": "restricted_or_attribution_required",
+      "license_or_reuse": "UN-Habitat公开报告并保留出处",
+      "supports": [
+        "城市AI的公共服务规划应用与隐私成本技能监管风险",
+        "以人为本治理和机构能力建设"
+      ],
+      "does_not_support": [
+        "替代中国法律或北京地方要求;直接证明本项目技术适用性;泛化案例效果",
+        "不得把B级状态静默升级为F"
+      ],
+      "locator": "https://unhabitat.org/global-assessment-of-responsible-ai-in-cities-0",
+      "gap_ids": [],
+      "owner_role": "资料经理;对应章节专业负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Rights",
+        "G-Release"
+      ],
+      "confidence": "medium",
+      "notes": "共享底座来源；formal只纳入正文或矩阵实际使用项"
+    },
+    {
+      "id": "D2SRC-SHARED-019",
+      "formal_target_id": "EXT-OECD-DGO-AI-GOV-2026",
+      "title": "Adopting and governing AI in government Digital Government Outlook 2026",
+      "publisher": "OECD",
+      "source_type": "B",
+      "status": "approved_with_limitations",
+      "path_or_url": "https://www.oecd.org/en/publications/2026/06/digital-government-outlook_4585678e/full-report/adopting-and-governing-ai-in-government_7ef312a9.html",
+      "published_or_reference_date": "2026-06",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "living_or_periodic",
+      "spatial_scope": "international_policy_research",
+      "spatial_use_allowed": "non_geometric_evidence_only",
+      "geometry_generation_allowed": "no",
+      "rights_status": "restricted_or_attribution_required",
+      "license_or_reuse": "OECD公开报告并保留出处",
+      "supports": [
+        "公共部门AI采用基础",
+        "高质量数据互操作基础设施技能治理影响测量用户反馈缺口"
+      ],
+      "does_not_support": [
+        "替代中国法律;直接推断北京政府采用状况;把跨国调查比例写成本地指标",
+        "不得把B级状态静默升级为F"
+      ],
+      "locator": "https://www.oecd.org/en/publications/2026/06/digital-government-outlook_4585678e/full-report/adopting-and-governing-ai-in-government_7ef312a9.html",
+      "gap_ids": [],
+      "owner_role": "资料经理;对应章节专业负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Rights",
+        "G-Release"
+      ],
+      "confidence": "medium",
+      "notes": "共享底座来源；formal只纳入正文或矩阵实际使用项"
+    },
+    {
+      "id": "D2SRC-SHARED-020",
+      "formal_target_id": "EXT-NATURE-CITIES-LLM-PLANNING-2025",
+      "title": "Large language models in urban planning",
+      "publisher": "Nature Cities",
+      "source_type": "B",
+      "status": "approved_with_limitations",
+      "path_or_url": "https://www.nature.com/articles/s44284-025-00261-7",
+      "published_or_reference_date": "2025-06-09",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "dated_snapshot",
+      "spatial_scope": "peer_reviewed_research",
+      "spatial_use_allowed": "non_geometric_evidence_only",
+      "geometry_generation_allowed": "no",
+      "rights_status": "restricted_or_attribution_required",
+      "license_or_reuse": "论文元数据和摘要公开；图表正文复用需另查许可",
+      "supports": [
+        "LLM在规划知识综合设计生成与评价中的研究机会",
+        "人机协作方法背景"
+      ],
+      "does_not_support": [
+        "证明本项目模型输出正确;替代专业审查;将研究前景写成成熟工程能力",
+        "不得把B级状态静默升级为F"
+      ],
+      "locator": "https://www.nature.com/articles/s44284-025-00261-7",
+      "gap_ids": [],
+      "owner_role": "资料经理;对应章节专业负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Rights",
+        "G-Release"
+      ],
+      "confidence": "medium",
+      "notes": "共享底座来源；formal只纳入正文或矩阵实际使用项"
+    },
+    {
+      "id": "D2SRC-B1-001",
+      "formal_target_id": "B1HC-F-001",
+      "title": "清华园车站旧址",
+      "publisher": "北京市文物局",
+      "source_type": "F",
+      "status": "admitted_minimum_fact",
+      "path_or_url": "https://wwj.beijing.gov.cn/bjww/362771/362780/bjsdjpsjwwbhdw/326024580/index.html | 页面字段：名称、年代、批次、所在地区（正文第107-116行）",
+      "published_or_reference_date": "2023-01-28",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "dated_snapshot_or_current_policy_context",
+      "spatial_scope": "单一文物点位的行政登记信息；无可直接用于项目的几何",
+      "spatial_use_allowed": "heritage_or_policy_narrative_only",
+      "geometry_generation_allowed": "no_text_or_place_name_geometry",
+      "rights_status": "citation_only_check_asset_rights_separately",
+      "license_or_reuse": "可摘引事实字段并注明来源；页面图片与网页截图不得视为自动授权，复用须另核权利",
+      "supports": [
+        "清华园车站旧址列入北京市第九批市级文物保护单位；年代字段为清；所在地区为海淀区"
+      ],
+      "does_not_support": [
+        "不支撑旧址精确坐标、建筑测绘、权属、开放时段、项目红线或其与竞赛范围的包含关系",
+        "不得将F级来源升级为超出定位符/时点/尺度的F事实",
+        "不得以地名或文字边界生成geometry"
+      ],
+      "locator": "https://wwj.beijing.gov.cn/bjww/362771/362780/bjsdjpsjwwbhdw/326024580/index.html | 页面字段：名称、年代、批次、所在地区（正文第107-116行）",
+      "gap_ids": [],
+      "owner_role": "文化历史负责人;资料经理;版权法务",
+      "human_gate": [
+        "G-Fact",
+        "G-Heritage",
+        "G-Rights"
+      ],
+      "confidence": "medium",
+      "notes": "需二次核验：空间设计前应取得保护档案、测绘图、权属资料并由文保主管部门/专业人员复核"
+    },
+    {
+      "id": "D2SRC-B1-002",
+      "formal_target_id": "B1HC-F-002",
+      "title": "北京市人民政府关于公布第十一批文物保护单位保护范围及建设控制地带的通知",
+      "publisher": "北京市人民政府（北京市文物局网站发布）",
+      "source_type": "F",
+      "status": "admitted_with_legal_spatial_gate",
+      "path_or_url": "https://wwj.beijing.gov.cn/bjww/362690/2024zcwj/743748025/index.html | 京政发〔2025〕3号；正文第107-132行；名单第185行第26项",
+      "published_or_reference_date": "2025-01-11",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "dated_snapshot_or_current_policy_context",
+      "spatial_scope": "市级名单与法定管控原则；不是项目边界",
+      "spatial_use_allowed": "heritage_or_policy_narrative_only",
+      "geometry_generation_allowed": "no_text_or_place_name_geometry",
+      "rights_status": "citation_only_check_asset_rights_separately",
+      "license_or_reuse": "政府文件文本可规范引用；另行印发图纸未取得前不得按文字自行制图；附件/图纸复用需核开放与使用条件",
+      "supports": [
+        "北京市政府已公布第十一批文物保护单位保护范围及建设控制地带；名单第26项为清华园车站旧址；保护第一、合理利用、最小干预为通知明确原则"
+      ],
+      "does_not_support": [
+        "不支撑将名单顺序理解为空间顺序",
+        "不支撑竞赛范围、工程可行性或任何未公开图纸坐标",
+        "不得把第十一批划界误写成清华园旧址是第十一批市保单位",
+        "不得将F级来源升级为超出定位符/时点/尺度的F事实",
+        "不得以地名或文字边界生成geometry"
+      ],
+      "locator": "https://wwj.beijing.gov.cn/bjww/362690/2024zcwj/743748025/index.html | 京政发〔2025〕3号；正文第107-132行；名单第185行第26项",
+      "gap_ids": [],
+      "owner_role": "文化历史负责人;资料经理;版权法务",
+      "human_gate": [
+        "G-Fact",
+        "G-Heritage",
+        "G-Rights"
+      ],
+      "confidence": "medium",
+      "notes": "需二次核验：须取得市文物局、市规划自然资源委另行印发的正式图纸，并完成文保与规划专业复核"
+    },
+    {
+      "id": "D2SRC-B1-003",
+      "formal_target_id": "B1HC-F-003",
+      "title": "清华园车站旧址（第十一批划定文保单位的保护范围及建控地带）",
+      "publisher": "北京市文物局",
+      "source_type": "F",
+      "status": "admitted_with_legal_spatial_gate",
+      "path_or_url": "https://wwj.beijing.gov.cn/bjww/362771/362782/743928533/743928745/index.html | 页面字段：批次、所在地区、保护范围、建设控制地带（正文第107-120行）",
+      "published_or_reference_date": "2026-02-14",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "dated_snapshot_or_current_policy_context",
+      "spatial_scope": "单一文物点位的法定保护/建控文字边界；明确不是11.4平方公里项目几何",
+      "spatial_use_allowed": "textual_heritage_control_presence_only_no_digitization",
+      "geometry_generation_allowed": "no_text_or_place_name_geometry",
+      "rights_status": "citation_only_check_asset_rights_separately",
+      "license_or_reuse": "仅可引用管控存在及原则；边界图、底图、照片不得无授权复制进品牌/商业传播；空间成果应引用正式图号与版本",
+      "supports": [
+        "清华园车站旧址已有公开的保护范围与建设控制地带文字说明；所在地区为海淀区"
+      ],
+      "does_not_support": [
+        "不支撑用网页文字反向绘制法定边界",
+        "不支撑项目总体范围、设计可建范围、地下工程安全边界或产权边界",
+        "不得将F级来源升级为超出定位符/时点/尺度的F事实",
+        "不得以地名或文字边界生成geometry"
+      ],
+      "locator": "https://wwj.beijing.gov.cn/bjww/362771/362782/743928533/743928745/index.html | 页面字段：批次、所在地区、保护范围、建设控制地带（正文第107-120行）",
+      "gap_ids": [],
+      "owner_role": "文化历史负责人;资料经理;版权法务",
+      "human_gate": [
+        "G-Fact",
+        "G-Heritage",
+        "G-Rights"
+      ],
+      "confidence": "medium",
+      "notes": "需二次核验：空间落位必须以正式图纸/CAD/GIS和主管部门解释为准，且需与最新法规、地下铁路安全和权属叠加核验"
+    },
+    {
+      "id": "D2SRC-B1-004",
+      "formal_target_id": "B1HC-F-004",
+      "title": "京张铁路南口段至八达岭段",
+      "publisher": "北京市文物局",
+      "source_type": "F",
+      "status": "admitted_minimum_fact_with_scope_warning",
+      "path_or_url": "https://wwj.beijing.gov.cn/bjww/362771/362779/dqpqgzdwwbhdw/523544/index.html | 页面字段：批次、地址、说明（正文第106-118行）",
+      "published_or_reference_date": "2017-10-27",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "dated_snapshot_or_current_policy_context",
+      "spatial_scope": "昌平南口至延庆八达岭的特定保护段，地理上不等于海淀项目场地",
+      "spatial_use_allowed": "heritage_or_policy_narrative_only",
+      "geometry_generation_allowed": "no_text_or_place_name_geometry",
+      "rights_status": "citation_only_check_asset_rights_separately",
+      "license_or_reuse": "可摘引登记文本；页面照片/遗产标志不得作为本项目视觉资产直接使用",
+      "supports": [
+        "京张铁路南口段至八达岭段为第七批全国重点文物保护单位；说明列举南口站、人字形铁路、青龙桥站等核心构成，并确认1905年开工、1909年建成通车及其早期工业遗存价值"
+      ],
+      "does_not_support": [
+        "不支撑把整条京张铁路、海淀段或清华园车站旧址统称为该全国重点文物保护单位",
+        "不支撑将该段保护边界外推至项目范围",
+        "不得将F级来源升级为超出定位符/时点/尺度的F事实",
+        "不得以地名或文字边界生成geometry"
+      ],
+      "locator": "https://wwj.beijing.gov.cn/bjww/362771/362779/dqpqgzdwwbhdw/523544/index.html | 页面字段：批次、地址、说明（正文第106-118行）",
+      "gap_ids": [],
+      "owner_role": "文化历史负责人;资料经理;版权法务",
+      "human_gate": [
+        "G-Fact",
+        "G-Heritage",
+        "G-Rights"
+      ],
+      "confidence": "medium",
+      "notes": "需二次核验：用于总叙事时须明确地域限定；如需全线遗产名录，另查国家文物局批复及分段保护档案"
+    },
+    {
+      "id": "D2SRC-B1-005",
+      "formal_target_id": "B1HC-B-005",
+      "title": "清华园车站与清华大学",
+      "publisher": "清华大学校史馆",
+      "source_type": "B",
+      "status": "context_only_pending_primary_sources",
+      "path_or_url": "https://xsg.tsinghua.edu.cn/info/1003/3296.htm | 栏目：清华园车站的设立（正文第11-23行）；结语（正文第105-106行）；作者署名刘沫",
+      "published_or_reference_date": "页面未标注；正文至少晚于2023-04-29",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "dated_snapshot_or_current_policy_context",
+      "spatial_scope": "旧站及其与清华园关系的历史叙事；页面地名不产生可用坐标",
+      "spatial_use_allowed": "heritage_or_policy_narrative_only",
+      "geometry_generation_allowed": "no_text_or_place_name_geometry",
+      "rights_status": "citation_only_check_asset_rights_separately",
+      "license_or_reuse": "正文应转述并署名机构/作者；文中历史地图、报纸彩印、第三方摄影等各有权利来源，不得直接下载复用",
+      "supports": [
+        "校史馆研究文章支持1910年增设清华园车站、詹天佑督建、站房形制与清华学校交通关系，以及1960年线路东移、2012/2021/2023保护状态等研究线索"
+      ],
+      "does_not_support": [
+        "单篇研究文章不能单独支撑全部精确日期、站场尺度、历史人物行动路线、保护边界或项目精确落位",
+        "其引用的历史文献需回到原件复核",
+        "不得将B级来源升级为超出定位符/时点/尺度的F事实",
+        "不得以地名或文字边界生成geometry"
+      ],
+      "locator": "https://xsg.tsinghua.edu.cn/info/1003/3296.htm | 栏目：清华园车站的设立（正文第11-23行）；结语（正文第105-106行）；作者署名刘沫",
+      "gap_ids": [
+        "GAP-HERITAGE-001"
+      ],
+      "owner_role": "文化历史负责人;资料经理;版权法务",
+      "human_gate": [
+        "G-Fact",
+        "G-Heritage",
+        "G-Rights"
+      ],
+      "confidence": "medium",
+      "notes": "需二次核验：重要日期、手迹、站房面积和历史路线须以所引原始档案/出版物或文保档案二次核验"
+    },
+    {
+      "id": "D2SRC-B1-006",
+      "formal_target_id": "B1HC-B-006",
+      "title": "见证进京‘赶考’历史的百年清华园车站",
+      "publisher": "清华大学校史馆（转自《百年潮》2023年第7期）",
+      "source_type": "B",
+      "status": "context_only_disputed_route",
+      "path_or_url": "https://xsg.tsinghua.edu.cn/info/1003/3329.htm | 栏目：建成通车（正文第13-23行）；成为中共中央抵达北平第一站（正文第37-74行）；来源说明第76-78行",
+      "published_or_reference_date": "2023-07（期刊期次）",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "dated_snapshot_or_current_policy_context",
+      "spatial_scope": "历史事件与旧站的文本关系；不是导览线或现状路线坐标",
+      "spatial_use_allowed": "heritage_or_policy_narrative_only",
+      "geometry_generation_allowed": "no_text_or_place_name_geometry",
+      "rights_status": "citation_only_check_asset_rights_separately",
+      "license_or_reuse": "正文仅做有限转述并保留争议标签；期刊文字、档案影印、照片和示意图需分别取得授权或使用许可",
+      "supports": [
+        "基于档案和相关史料的文章支持1909年9月京张铁路全线通车、1910年清华园车站建成，以及1949年3月25日清华园车站作为中共中央抵达北平第一站的叙事线索；文章主动登记涿县/高碑店上车说法存在争议"
+      ],
+      "does_not_support": [
+        "不能把作者论证中的具体行车路线、精确时刻与争议判断直接写成无争议定论",
+        "不能据文中示意图建立项目几何",
+        "不得将B级来源升级为超出定位符/时点/尺度的F事实",
+        "不得以地名或文字边界生成geometry"
+      ],
+      "locator": "https://xsg.tsinghua.edu.cn/info/1003/3329.htm | 栏目：建成通车（正文第13-23行）；成为中共中央抵达北平第一站（正文第37-74行）；来源说明第76-78行",
+      "gap_ids": [
+        "GAP-HERITAGE-001"
+      ],
+      "owner_role": "文化历史负责人;资料经理;版权法务",
+      "human_gate": [
+        "G-Fact",
+        "G-Heritage",
+        "G-Rights"
+      ],
+      "confidence": "medium",
+      "notes": "需二次核验：涉及1949路线、时刻和人物事件须核原始电文、年谱、档案馆藏号及党史专家意见"
+    },
+    {
+      "id": "D2SRC-B1-007",
+      "formal_target_id": "B1HC-F-007",
+      "title": "京张铁路遗址公园（一期）全面建成开放",
+      "publisher": "北京市园林绿化局（首都绿化委员会办公室）",
+      "source_type": "F",
+      "status": "admitted_as_of_date_with_geometry_warning",
+      "path_or_url": "https://yllhj.beijing.gov.cn/zwgk/zwxx/202306/t20230626_3145467.shtml | 正文第26-32行，尤其第30行日期/来源与第32行项目状态、范围文字及遗产要素",
+      "published_or_reference_date": "2023-06-26",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "dated_snapshot_or_current_policy_context",
+      "spatial_scope": "一期项目级文字范围和规模；不是可直接数字化的法定polygon，也不是本项目总体边界",
+      "spatial_use_allowed": "published_park_phase_and_scale_wording_only",
+      "geometry_generation_allowed": "no_text_or_place_name_geometry",
+      "rights_status": "citation_only_check_asset_rights_separately",
+      "license_or_reuse": "可引用官方状态和数值并标注时点；页面图片、交互装置设计和景观作品著作权需另核，不能作为Logo素材",
+      "supports": [
+        "截至2023-06-26，京张铁路遗址公园一期全面建成开放；官方文本给出清华东路至知春路、2.5公里、16.8公顷，并说明恢复老正线、保留清华园站站房及利用旧铁轨/道岔等元素"
+      ],
+      "does_not_support": [
+        "不支撑2026年现状无变化",
+        "不支撑二期/远期、竞赛11.4平方公里范围、法定用地边界、全部要素均为原物或可随意触碰使用",
+        "不得将F级来源升级为超出定位符/时点/尺度的F事实",
+        "不得以地名或文字边界生成geometry"
+      ],
+      "locator": "https://yllhj.beijing.gov.cn/zwgk/zwxx/202306/t20230626_3145467.shtml | 正文第26-32行，尤其第30行日期/来源与第32行项目状态、范围文字及遗产要素",
+      "gap_ids": [],
+      "owner_role": "文化历史负责人;资料经理;版权法务",
+      "human_gate": [
+        "G-Fact",
+        "G-Heritage",
+        "G-Rights"
+      ],
+      "confidence": "medium",
+      "notes": "需二次核验：设计深化须以竣工图、资产清单、现场核查、铁路地下安全与文保资料复核现存要素真伪/状态"
+    },
+    {
+      "id": "D2SRC-B1-008",
+      "formal_target_id": "B1HC-B-008",
+      "title": "京张铁路遗址公园年底开建",
+      "publisher": "北京市人民政府门户网站（来源：北京日报）",
+      "source_type": "B",
+      "status": "context_only_version_comparison",
+      "path_or_url": "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202110/t20211021_2517509.html | 原标题及首段；段落‘项目现状铁路文化资源丰富’；段落‘项目通过恢复部分老京张铁路正线及道口’",
+      "published_or_reference_date": "2021-10-14",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "dated_snapshot_or_current_policy_context",
+      "spatial_scope": "规划阶段的一期区段文字；与2023官方建成口径存在版本差异，不得混合为一个几何",
+      "spatial_use_allowed": "heritage_or_policy_narrative_only",
+      "geometry_generation_allowed": "no_text_or_place_name_geometry",
+      "rights_status": "citation_only_check_asset_rights_separately",
+      "license_or_reuse": "政府门户转载媒体稿仅作背景；照片、方案图和设计表达不得无授权复用",
+      "supports": [
+        "支持记录一期获批复、规划阶段2.4公里文字范围、铁路遗迹保护利用与东西缝合目标；可作为规划到建成的版本比较背景"
+      ],
+      "does_not_support": [
+        "不支撑将2021年拟建方案当作2023年竣工事实",
+        "不支撑所有提及构筑物现仍存在、权属已解决或节点可直接落位",
+        "不得将B级来源升级为超出定位符/时点/尺度的F事实",
+        "不得以地名或文字边界生成geometry"
+      ],
+      "locator": "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202110/t20211021_2517509.html | 原标题及首段；段落‘项目现状铁路文化资源丰富’；段落‘项目通过恢复部分老京张铁路正线及道口’",
+      "gap_ids": [
+        "GAP-HERITAGE-001"
+      ],
+      "owner_role": "文化历史负责人;资料经理;版权法务",
+      "human_gate": [
+        "G-Fact",
+        "G-Heritage",
+        "G-Rights"
+      ],
+      "confidence": "medium",
+      "notes": "需二次核验：须与B1HC-F-007、竣工资料和现场核查对照，标注planning/as-built版本"
+    },
+    {
+      "id": "D2SRC-B1-009",
+      "formal_target_id": "B1HC-B-009",
+      "title": "清华东路南侧公共空间改造提升项目获批复 ‘学院路会客厅’年内开建",
+      "publisher": "北京市人民政府门户网站（来源：北京日报）",
+      "source_type": "B",
+      "status": "context_only_future_connection",
+      "path_or_url": "https://www.beijing.gov.cn/ywdt/gzdt/202606/t20260602_4681460.html | 正文第17-24行；第30-37行",
+      "published_or_reference_date": "2026-06-02",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "dated_snapshot_or_current_policy_context",
+      "spatial_scope": "学院路街道项目级文字连接关系；不是本项目几何和现状实测",
+      "spatial_use_allowed": "heritage_or_policy_narrative_only",
+      "geometry_generation_allowed": "no_text_or_place_name_geometry",
+      "rights_status": "citation_only_check_asset_rights_separately",
+      "license_or_reuse": "转载稿可作时点背景；效果图、项目名称与设计图不得无授权用于本项目品牌或效果图",
+      "supports": [
+        "支持截至2026-06-02该公共空间项目已获批复，并计划西接京张铁路遗址公园、东至小月河绿廊，回应校城共生、慢行和公共活动需求"
+      ],
+      "does_not_support": [
+        "不支撑工程已建成、正式边界已公开、所有节点均在竞赛范围内或对文保/权属/地下安全审查已完成",
+        "不得将B级来源升级为超出定位符/时点/尺度的F事实",
+        "不得以地名或文字边界生成geometry"
+      ],
+      "locator": "https://www.beijing.gov.cn/ywdt/gzdt/202606/t20260602_4681460.html | 正文第17-24行；第30-37行",
+      "gap_ids": [
+        "GAP-HERITAGE-001"
+      ],
+      "owner_role": "文化历史负责人;资料经理;版权法务",
+      "human_gate": [
+        "G-Fact",
+        "G-Heritage",
+        "G-Rights"
+      ],
+      "confidence": "medium",
+      "notes": "需二次核验：须取得批复文件、设计范围图及最新开工/竣工状态；现场与交通/安全复核后方可用于导览落位"
+    },
+    {
+      "id": "D2SRC-B1-010",
+      "formal_target_id": "B1HC-F-010",
+      "title": "北京市人民政府关于发布《北京市新技术产业开发试验区暂行条例》的通知",
+      "publisher": "北京市人民政府",
+      "source_type": "F",
+      "status": "admitted_historical_policy_only",
+      "path_or_url": "https://www.beijing.gov.cn/zhengce/zfwj/zfwj/szfwj/201905/t20190523_71653.html | 京政发〔1988〕49号；国务院批复国函〔1988〕74号；条例第一至二条（正文第2-36行）",
+      "published_or_reference_date": "1988-05-20（国务院批准日期1988-05-10）",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "historical_period_only",
+      "spatial_scope": "1988年政策区的概括性行政描述；无当前可用精确边界",
+      "spatial_use_allowed": "heritage_or_policy_narrative_only",
+      "geometry_generation_allowed": "no_text_or_place_name_geometry",
+      "rights_status": "citation_only_check_asset_rights_separately",
+      "license_or_reuse": "政府规范性文件可按文号引用；不得把网页视觉或印章转为品牌图形",
+      "supports": [
+        "1988年国务院批准、北京市政府发布暂行条例；条例目标包括促进科学技术和生产直接结合；以中关村地区为中心在海淀划出约100平方公里试验区，具体范围由北京市政府规划"
+      ],
+      "does_not_support": [
+        "不支撑将1988年约100平方公里描述映射为今天中关村、海淀园或本项目边界",
+        "不支撑当年所有政策持续适用于当前项目",
+        "不得将F级来源升级为超出定位符/时点/尺度的F事实",
+        "不得以地名或文字边界生成geometry"
+      ],
+      "locator": "https://www.beijing.gov.cn/zhengce/zfwj/zfwj/szfwj/201905/t20190523_71653.html | 京政发〔1988〕49号；国务院批复国函〔1988〕74号；条例第一至二条（正文第2-36行）",
+      "gap_ids": [],
+      "owner_role": "文化历史负责人;资料经理;版权法务",
+      "human_gate": [
+        "G-Fact",
+        "G-Heritage",
+        "G-Rights"
+      ],
+      "confidence": "medium",
+      "notes": "需二次核验：如涉及当前政策空间和效力，须查最新法定规划、现行条例/废改情况及正式范围图"
+    },
+    {
+      "id": "D2SRC-B1-011",
+      "formal_target_id": "B1HC-B-011",
+      "title": "中关村示范区",
+      "publisher": "北京市科学技术委员会、中关村科技园区管理委员会",
+      "source_type": "B",
+      "status": "context_only_historical_overview",
+      "path_or_url": "https://kw.beijing.gov.cn/ztzl/rdzt/zgcsfq/index.html | 栏目：发展历程（正文第13-36行）；海淀园（正文第63-65行）",
+      "published_or_reference_date": "页面未标注",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "dated_snapshot_or_current_policy_context",
+      "spatial_scope": "示范区/海淀园的制度与历史概览；不是项目点位或现状路由",
+      "spatial_use_allowed": "heritage_or_policy_narrative_only",
+      "geometry_generation_allowed": "no_text_or_place_name_geometry",
+      "rights_status": "citation_only_check_asset_rights_separately",
+      "license_or_reuse": "可对历史阶段作带来源转述；页面图片、机构标识、企业名号和统计图不得默认复用",
+      "supports": [
+        "官方专题页支持中关村从20世纪80年代电子一条街、1988年试验区、1999年科技园区到2009年国家自主创新示范区的阶段性叙述，并记录1980年服务部与1987年F形电子一条街等线索"
+      ],
+      "does_not_support": [
+        "专题页非一手档案且无发布日期，不能单独支撑所有人物、企业、数量、精确地址或当前统计",
+        "不能把历史政策范围与竞赛范围相交后得到设计边界",
+        "不得将B级来源升级为超出定位符/时点/尺度的F事实",
+        "不得以地名或文字边界生成geometry"
+      ],
+      "locator": "https://kw.beijing.gov.cn/ztzl/rdzt/zgcsfq/index.html | 栏目：发展历程（正文第13-36行）；海淀园（正文第63-65行）",
+      "gap_ids": [
+        "GAP-HERITAGE-001"
+      ],
+      "owner_role": "文化历史负责人;资料经理;版权法务",
+      "human_gate": [
+        "G-Fact",
+        "G-Heritage",
+        "G-Rights"
+      ],
+      "confidence": "medium",
+      "notes": "需二次核验：早期人物与企业事件应回查工商档案、原始报刊、科协/科学院档案及海淀档案馆馆藏号"
+    },
+    {
+      "id": "D2SRC-B1-012",
+      "formal_target_id": "B1HC-B-012",
+      "title": "海淀档案馆关注中关村科技发展历程，研究陈春先档案资料征集及展览展示事宜",
+      "publisher": "海淀区档案局",
+      "source_type": "B",
+      "status": "context_only_archive_lead",
+      "path_or_url": "https://zyk.bjhd.gov.cn/jbdt/auto4562_51858/201810/t20181002_3157894_hd.shtml | 正文第0-7行；重点为第6行档案征集说明与第7行后续征集安排",
+      "published_or_reference_date": "2015-12-01",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "dated_snapshot_or_current_policy_context",
+      "spatial_scope": "人物/机构档案线索，地理粒度至海淀/中关村历史背景",
+      "spatial_use_allowed": "heritage_or_policy_narrative_only",
+      "geometry_generation_allowed": "no_text_or_place_name_geometry",
+      "rights_status": "citation_only_check_asset_rights_separately",
+      "license_or_reuse": "仅可引用机构对档案工作的说明；个人手稿、照片、办公用品、口述材料涉及档案开放、著作权、隐私与捐赠协议，未许可不得复制",
+      "supports": [
+        "海淀档案部门确认持续征集、整理陈春先相关档案，并将北京等离子体学会先进技术发展服务部描述为中关村电子一条街科技企业的早期雏形；可证明存在可继续追索的档案来源"
+      ],
+      "does_not_support": [
+        "不能替代具体档案原件、工商登记或同年报刊",
+        "不能据此确定办公地点精确坐标、活动范围或个人肖像/手稿可公开使用",
+        "不得将B级来源升级为超出定位符/时点/尺度的F事实",
+        "不得以地名或文字边界生成geometry"
+      ],
+      "locator": "https://zyk.bjhd.gov.cn/jbdt/auto4562_51858/201810/t20181002_3157894_hd.shtml | 正文第0-7行；重点为第6行档案征集说明与第7行后续征集安排",
+      "gap_ids": [
+        "GAP-HERITAGE-001"
+      ],
+      "owner_role": "文化历史负责人;资料经理;版权法务",
+      "human_gate": [
+        "G-Fact",
+        "G-Heritage",
+        "G-Rights"
+      ],
+      "confidence": "medium",
+      "notes": "需二次核验：需向海淀区档案馆申请馆藏目录、档号、开放条件，并与科协/科学院及工商档案交叉核验"
+    },
+    {
+      "id": "D2SRC-B1-013",
+      "formal_target_id": "B1HC-F-013",
+      "title": "关于完善中关村国家自主创新示范区高新技术企业认定管理试点工作的通知",
+      "publisher": "中华人民共和国科学技术部、财政部、国家税务总局",
+      "source_type": "F",
+      "status": "admitted_historical_policy_only",
+      "path_or_url": "https://most.gov.cn/xxgk/xinxifenlei/fdzdgknr/qtwj/qtwj2011/201103/t20110323_85595.html | 国科发火〔2011〕90号；元数据第2-5行；正文第13-16行",
+      "published_or_reference_date": "2011-03-02",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "historical_period_only",
+      "spatial_scope": "国家自主创新示范区制度层面；无项目空间几何",
+      "spatial_use_allowed": "heritage_or_policy_narrative_only",
+      "geometry_generation_allowed": "no_text_or_place_name_geometry",
+      "rights_status": "citation_only_check_asset_rights_separately",
+      "license_or_reuse": "按文号和成文/发布日期规范引用；附件内容用于现行判断前须查废改/替代文件",
+      "supports": [
+        "正式部委文件确认落实国函〔2009〕28号、在中关村国家自主创新示范区开展高新技术企业认定管理先行试点；可支撑中关村制度试验属性"
+      ],
+      "does_not_support": [
+        "不支撑试点政策在2026年仍有效、适用于竞赛项目或证明具体企业身份",
+        "不支撑示范区精确边界",
+        "不得将F级来源升级为超出定位符/时点/尺度的F事实",
+        "不得以地名或文字边界生成geometry"
+      ],
+      "locator": "https://most.gov.cn/xxgk/xinxifenlei/fdzdgknr/qtwj/qtwj2011/201103/t20110323_85595.html | 国科发火〔2011〕90号；元数据第2-5行；正文第13-16行",
+      "gap_ids": [],
+      "owner_role": "文化历史负责人;资料经理;版权法务",
+      "human_gate": [
+        "G-Fact",
+        "G-Heritage",
+        "G-Rights"
+      ],
+      "confidence": "medium",
+      "notes": "需二次核验：如用于当前政策设计，须完成现行有效性审查并查国函〔2009〕28号原件及最新示范区规则"
+    },
+    {
+      "id": "D2SRC-B1-014",
+      "formal_target_id": "B1HC-F-014",
+      "title": "中关村国家自主创新示范区发展规划纲要（2011—2020年）",
+      "publisher": "国家发展和改革委员会网站（文件编制/印发主体待由批复原件核定）",
+      "source_type": "F",
+      "status": "admitted_historical_plan_only",
+      "path_or_url": "https://www.ndrc.gov.cn/xxgk/zcfb/ghwb/201102/W020190905497636158051.pdf | PDF封面第0页；前言第1-3页；创新文化表述第5页；空间布局第27-28页；尤其PDF正文页1-5、25-28",
+      "published_or_reference_date": "2011-01",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "historical_period_only",
+      "spatial_scope": "2011—2020年示范区规划层面；其中中关村科学城轴线描述不等于本项目边界",
+      "spatial_use_allowed": "heritage_or_policy_narrative_only",
+      "geometry_generation_allowed": "no_text_or_place_name_geometry",
+      "rights_status": "citation_only_check_asset_rights_separately",
+      "license_or_reuse": "可引用规划文本并注明历史规划期；图表、版式和地图不得默认整页复用，需核政府信息复用规则与制作者权利",
+      "supports": [
+        "规划纲要确认中关村国家自主创新示范区的制度任务；将勇于变革、鼓励探索、宽容失败的创新文化列为自主创新基础；提出科技教育经济结合、开放合作和一区多园等历史阶段目标"
+      ],
+      "does_not_support": [
+        "规划期已结束，不支撑当前法定空间、现状数据或2026年政策效力",
+        "PDF链接/搜索标题可能出现2010—2020与封面2011—2020异文，引用以封面为准",
+        "不得将F级来源升级为超出定位符/时点/尺度的F事实",
+        "不得以地名或文字边界生成geometry"
+      ],
+      "locator": "https://www.ndrc.gov.cn/xxgk/zcfb/ghwb/201102/W020190905497636158051.pdf | PDF封面第0页；前言第1-3页；创新文化表述第5页；空间布局第27-28页；尤其PDF正文页1-5、25-28",
+      "gap_ids": [],
+      "owner_role": "文化历史负责人;资料经理;版权法务",
+      "human_gate": [
+        "G-Fact",
+        "G-Heritage",
+        "G-Rights"
+      ],
+      "confidence": "medium",
+      "notes": "需二次核验：当前方案须与2024—2027方案、最新国土空间规划和正式园区范围对照；统计数字不得沿用；编制/印发主体需由国函〔2011〕12号原件核定"
+    },
+    {
+      "id": "D2SRC-B1-015",
+      "formal_target_id": "B1HC-F-015",
+      "title": "工业和信息化部、科学技术部、北京市人民政府印发《中关村世界领先科技园区建设方案（2024—2027年）》",
+      "publisher": "工业和信息化部、科学技术部、北京市人民政府（科技部网站发布）",
+      "source_type": "F",
+      "status": "admitted_current_policy_context",
+      "path_or_url": "https://most.gov.cn/kjbgz/202404/t20240426_190778.html | 正文第6-27行；原始创新第29-50行；人才第51-75行；企业第76-95行",
+      "published_or_reference_date": "2024-04（页面未列精确成文日）",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "dated_snapshot_or_current_policy_context",
+      "spatial_scope": "中关村示范区全域政策层面；不是京张创新带边界",
+      "spatial_use_allowed": "heritage_or_policy_narrative_only",
+      "geometry_generation_allowed": "no_text_or_place_name_geometry",
+      "rights_status": "citation_only_check_asset_rights_separately",
+      "license_or_reuse": "政府方案文本可规范引用；官方标识、图解、企业商标及成果图像需另行授权，不得转作本项目VI",
+      "supports": [
+        "当前规划期内的方案将中关村定位为原始创新策源地、人才集聚地、创新型企业和开放创新生态的重要载体，并明确方案适用于中关村示范区全域；正文包含AI前沿研究与平台任务"
+      ],
+      "does_not_support": [
+        "不支撑这些目标已经实现",
+        "不支撑竞赛区属于方案中的任何精确地块、可获得特定政策或可以使用中关村官方标志",
+        "不得将F级来源升级为超出定位符/时点/尺度的F事实",
+        "不得以地名或文字边界生成geometry"
+      ],
+      "locator": "https://most.gov.cn/kjbgz/202404/t20240426_190778.html | 正文第6-27行；原始创新第29-50行；人才第51-75行；企业第76-95行",
+      "gap_ids": [],
+      "owner_role": "文化历史负责人;资料经理;版权法务",
+      "human_gate": [
+        "G-Fact",
+        "G-Heritage",
+        "G-Rights"
+      ],
+      "confidence": "medium",
+      "notes": "需二次核验：须与项目位置、海淀园正式范围、实施部门最新细则和年度评估交叉核验后再转化为空间/运营任务"
+    },
+    {
+      "id": "D2SRC-B1-016",
+      "formal_target_id": "",
+      "title": "百年京张 世纪经典",
+      "publisher": "国家铁路局",
+      "source_type": "X",
+      "status": "excluded_inaccessible",
+      "path_or_url": "https://www.nra.gov.cn/tlfc/tpsy/202204/t20220405_293018.shtml | 2026-08-15网络访问返回403/抓取超时；无可核正文定位符",
+      "published_or_reference_date": "URL路径显示2022-04-05，但未作为已核发布日期",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "inaccessible_unverified",
+      "spatial_scope": "未知；不得推定覆盖整条京张铁路或海淀段",
+      "spatial_use_allowed": "heritage_or_policy_narrative_only",
+      "geometry_generation_allowed": "no",
+      "rights_status": "unavailable_no_citation",
+      "license_or_reuse": "页面正文与图像均未取得，不得引用、截图或复用",
+      "supports": [
+        "none"
+      ],
+      "does_not_support": [
+        "不得根据搜索摘要或URL日期补写史实",
+        "不得把该条计入已核证据",
+        "页面恢复后仍需记录标题、发布日期、正文定位和权利条件",
+        "不得将X级来源升级为超出定位符/时点/尺度的F事实",
+        "不得以地名或文字边界生成geometry"
+      ],
+      "locator": "https://www.nra.gov.cn/tlfc/tpsy/202204/t20220405_293018.shtml | 2026-08-15网络访问返回403/抓取超时；无可核正文定位符",
+      "gap_ids": [
+        "GAP-HERITAGE-001"
+      ],
+      "owner_role": "文化历史负责人;资料经理;版权法务",
+      "human_gate": [
+        "G-Fact",
+        "G-Heritage",
+        "G-Rights"
+      ],
+      "confidence": "low",
+      "notes": "需二次核验：后续通过国家铁路局可访问存档、国家档案馆/铁路博物馆出版物或正式政府公报替代核验"
+    },
+    {
+      "id": "D2SRC-B2-001",
+      "formal_target_id": "S-SG-01",
+      "title": "One-North",
+      "publisher": "JTC",
+      "source_type": "B",
+      "status": "self_reported_current",
+      "path_or_url": "https://www.jtc.gov.sg/find-land/jtc-key-estates/one-north?estate=one-north",
+      "published_or_reference_date": "持续更新页面",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "living_page_or_period_snapshot",
+      "spatial_scope": "foreign_case/新加坡/CASE-SG",
+      "spatial_use_allowed": "mechanism_and_space_type_analogy_only_no_local_location",
+      "geometry_generation_allowed": "no_local_geometry_no_shape_transfer",
+      "rights_status": "citation_or_license_limited_follow_source_terms",
+      "license_or_reuse": "未见开放复用许可；仅事实性摘要和链接，不复制图片、地图、Logo或版式。",
+      "supports": [
+        "JTC页面称LaunchPad @ One-North已形成7个街区，并汇集孵化器、加速器和风险投资机构。；机制解释：创业空间不是单一办公楼，而是把孵化与资本接口放在近邻网络中。；迁移前提：仅迁移共享载体+专业接口+可步行协作关系；需由海淀正式空间、权属和主体核验。"
+      ],
+      "does_not_support": [
+        "机构自报且持续更新",
+        "数量具有时点性，不用于设定海淀目标。",
+        "B级案例不得升级为海淀本地事实、绩效、容量、主体承诺、空间控制或工程结论"
+      ],
+      "locator": "https://www.jtc.gov.sg/find-land/jtc-key-estates/one-north?estate=one-north",
+      "gap_ids": [
+        "GAP-ACTOR-001",
+        "GAP-SPATIAL-001"
+      ],
+      "owner_role": "产业生态负责人;资料经理;本地验证负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Transfer",
+        "G-Rights",
+        "G-Pilot"
+      ],
+      "confidence": "medium",
+      "notes": "evidence_strength=official_first_party；B2证据无论一手与否，对海淀转换一律为B"
+    },
+    {
+      "id": "D2SRC-B2-002",
+      "formal_target_id": "S-SG-02",
+      "title": "100 Experiments",
+      "publisher": "AI Singapore",
+      "source_type": "B",
+      "status": "self_reported_current",
+      "path_or_url": "https://aisingapore.org/innovation/100e/",
+      "published_or_reference_date": "持续更新页面",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "living_page_or_period_snapshot",
+      "spatial_scope": "foreign_case/新加坡/CASE-SG",
+      "spatial_use_allowed": "mechanism_and_space_type_analogy_only_no_local_location",
+      "geometry_generation_allowed": "no_local_geometry_no_shape_transfer",
+      "rights_status": "citation_or_license_limited_follow_source_terms",
+      "license_or_reuse": "未见开放复用许可；只摘要项目机制。",
+      "supports": [
+        "100 Experiments提供3个月PoC和6个月MVP路径，并说明问题界定、实施、交接与知识转移阶段。；机制解释：限定周期、工程团队、基线与交接文档共同构成研究到应用的中层能力。；迁移前提：海淀可迁移PoC阶段门、交付文档和知识转移；周期与资源规模需本地试运行校准。"
+      ],
+      "does_not_support": [
+        "项目效果和规模由机构自报",
+        "不复制资助额度，不推定海淀具备相同工程队。",
+        "B级案例不得升级为海淀本地事实、绩效、容量、主体承诺、空间控制或工程结论"
+      ],
+      "locator": "https://aisingapore.org/innovation/100e/",
+      "gap_ids": [
+        "GAP-ACTOR-001",
+        "GAP-SPATIAL-001"
+      ],
+      "owner_role": "产业生态负责人;资料经理;本地验证负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Transfer",
+        "G-Rights",
+        "G-Pilot"
+      ],
+      "confidence": "medium",
+      "notes": "evidence_strength=official_first_party；B2证据无论一手与否，对海淀转换一律为B"
+    },
+    {
+      "id": "D2SRC-B2-003",
+      "formal_target_id": "S-SG-03",
+      "title": "AI Verify",
+      "publisher": "IMDA",
+      "source_type": "B",
+      "status": "verified_primary",
+      "path_or_url": "https://www.imda.gov.sg/how-we-can-help/ai-verify",
+      "published_or_reference_date": "持续更新页面",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "living_page_or_period_snapshot",
+      "spatial_scope": "foreign_case/新加坡/CASE-SG",
+      "spatial_use_allowed": "mechanism_and_space_type_analogy_only_no_local_location",
+      "geometry_generation_allowed": "no_local_geometry_no_shape_transfer",
+      "rights_status": "citation_or_license_limited_follow_source_terms",
+      "license_or_reuse": "网页内容未见开放许可；事实摘要，不复制媒体资产。",
+      "supports": [
+        "IMDA页面介绍AI Verify Foundation、开源社区、AI治理测试与Global AI Assurance Sandbox。；机制解释：治理工具、测试者社群和沙盒可以成为生态链中的横向可信接口。；迁移前提：海淀可借鉴测试清单、插件化评估和多方沙盒；须使用本地法律、风险分类与人工审查。"
+      ],
+      "does_not_support": [
+        "测试框架不等于审批或安全认证",
+        "适用模型、数据和风险范围有限。",
+        "B级案例不得升级为海淀本地事实、绩效、容量、主体承诺、空间控制或工程结论"
+      ],
+      "locator": "https://www.imda.gov.sg/how-we-can-help/ai-verify",
+      "gap_ids": [
+        "GAP-ACTOR-001",
+        "GAP-SPATIAL-001"
+      ],
+      "owner_role": "产业生态负责人;资料经理;本地验证负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Transfer",
+        "G-Rights",
+        "G-Pilot"
+      ],
+      "confidence": "medium",
+      "notes": "evidence_strength=official_first_party；B2证据无论一手与否，对海淀转换一律为B"
+    },
+    {
+      "id": "D2SRC-B2-004",
+      "formal_target_id": "S-SG-04",
+      "title": "aiverify repository",
+      "publisher": "AI Verify Foundation",
+      "source_type": "B",
+      "status": "verified_primary",
+      "path_or_url": "https://github.com/aiverify-foundation/aiverify",
+      "published_or_reference_date": "持续更新仓库",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "living_page_or_period_snapshot",
+      "spatial_scope": "foreign_case/新加坡/CASE-SG",
+      "spatial_use_allowed": "mechanism_and_space_type_analogy_only_no_local_location",
+      "geometry_generation_allowed": "no_local_geometry_no_shape_transfer",
+      "rights_status": "citation_or_license_limited_follow_source_terms",
+      "license_or_reuse": "仓库代码Apache-2.0；须遵守LICENSE、NOTICE和依赖许可。",
+      "supports": [
+        "官方仓库说明AI Verify是标准化AI治理测试框架/工具包，并明确不能保证系统无风险、无偏或完全安全。；机制解释：开源测试资产必须同时公开适用边界和不能证明的事项。；迁移前提：海淀若复用代码须按项目风险重新验证，并把测试结果视为证据之一而非批准。"
+      ],
+      "does_not_support": [
+        "仓库与版本持续变化",
+        "具体工具能力须固定版本后复测。",
+        "B级案例不得升级为海淀本地事实、绩效、容量、主体承诺、空间控制或工程结论"
+      ],
+      "locator": "https://github.com/aiverify-foundation/aiverify",
+      "gap_ids": [
+        "GAP-ACTOR-001",
+        "GAP-SPATIAL-001"
+      ],
+      "owner_role": "产业生态负责人;资料经理;本地验证负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Transfer",
+        "G-Rights",
+        "G-Pilot"
+      ],
+      "confidence": "medium",
+      "notes": "evidence_strength=primary_open_source；B2证据无论一手与否，对海淀转换一律为B"
+    },
+    {
+      "id": "D2SRC-B2-005",
+      "formal_target_id": "S-SG-05",
+      "title": "Home",
+      "publisher": "SGInnovate",
+      "source_type": "B",
+      "status": "self_reported_current",
+      "path_or_url": "https://www.sginnovate.com/",
+      "published_or_reference_date": "持续更新页面",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "living_page_or_period_snapshot",
+      "spatial_scope": "foreign_case/新加坡/CASE-SG",
+      "spatial_use_allowed": "mechanism_and_space_type_analogy_only_no_local_location",
+      "geometry_generation_allowed": "no_local_geometry_no_shape_transfer",
+      "rights_status": "citation_or_license_limited_follow_source_terms",
+      "license_or_reuse": "未见开放复用许可；仅事实摘要。",
+      "supports": [
+        "SGInnovate将深科技投资、人才发展和社区建设列为主要工作。；机制解释：资本、人才和社区可以由专业平台持续运营，而不是在年度大会一次完成。；迁移前提：海淀只迁移角色分工和常态服务，不推定任何机构、基金或投资额度。"
+      ],
+      "does_not_support": [
+        "自报社区和活动数量具有营销与时点属性，不用于横向排名。",
+        "B级案例不得升级为海淀本地事实、绩效、容量、主体承诺、空间控制或工程结论"
+      ],
+      "locator": "https://www.sginnovate.com/",
+      "gap_ids": [
+        "GAP-ACTOR-001",
+        "GAP-SPATIAL-001"
+      ],
+      "owner_role": "产业生态负责人;资料经理;本地验证负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Transfer",
+        "G-Rights",
+        "G-Pilot"
+      ],
+      "confidence": "medium",
+      "notes": "evidence_strength=official_first_party；B2证据无论一手与否，对海淀转换一律为B"
+    },
+    {
+      "id": "D2SRC-B2-006",
+      "formal_target_id": "S-MTL-01",
+      "title": "Partnerships",
+      "publisher": "Mila",
+      "source_type": "B",
+      "status": "self_reported_current",
+      "path_or_url": "https://mila.quebec/en/industry/partnerships",
+      "published_or_reference_date": "持续更新页面",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "living_page_or_period_snapshot",
+      "spatial_scope": "foreign_case/加拿大·蒙特利尔/CASE-MTL",
+      "spatial_use_allowed": "mechanism_and_space_type_analogy_only_no_local_location",
+      "geometry_generation_allowed": "no_local_geometry_no_shape_transfer",
+      "rights_status": "citation_or_license_limited_follow_source_terms",
+      "license_or_reuse": "未见开放许可；只做事实摘要，不复用图片或品牌。",
+      "supports": [
+        "Mila页面称在Mile-Ex提供协作空间、行业伙伴网络、活动与科学培训，并开展基于开放科学的联合研究。；机制解释：科研、行业问题与社区在同一协作界面发生，有利于长期关系而非一次性对接。；迁移前提：AI原点社区需组合安静研究、开放协作、发布和服务空间；具体机构参与须书面确认。"
+      ],
+      "does_not_support": [
+        "伙伴数量为机构自报且可能更新",
+        "未证明城区公共生活或交通成效。",
+        "B级案例不得升级为海淀本地事实、绩效、容量、主体承诺、空间控制或工程结论"
+      ],
+      "locator": "https://mila.quebec/en/industry/partnerships",
+      "gap_ids": [
+        "GAP-ACTOR-001",
+        "GAP-SPATIAL-001"
+      ],
+      "owner_role": "产业生态负责人;资料经理;本地验证负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Transfer",
+        "G-Rights",
+        "G-Pilot"
+      ],
+      "confidence": "medium",
+      "notes": "evidence_strength=official_first_party；B2证据无论一手与否，对海淀转换一律为B"
+    },
+    {
+      "id": "D2SRC-B2-007",
+      "formal_target_id": "S-MTL-02",
+      "title": "Mila Ventures",
+      "publisher": "Mila",
+      "source_type": "B",
+      "status": "self_reported_current",
+      "path_or_url": "https://mila.quebec/en/industry/mila-ventures",
+      "published_or_reference_date": "持续更新页面",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "living_page_or_period_snapshot",
+      "spatial_scope": "foreign_case/加拿大·蒙特利尔/CASE-MTL",
+      "spatial_use_allowed": "mechanism_and_space_type_analogy_only_no_local_location",
+      "geometry_generation_allowed": "no_local_geometry_no_shape_transfer",
+      "rights_status": "citation_or_license_limited_follow_source_terms",
+      "license_or_reuse": "未见开放许可；仅摘要项目结构。",
+      "supports": [
+        "Mila Ventures将创业训练、孵化、加速、venture creation与资金/VC连接描述为相互衔接的系统。；机制解释：研究人才进入创业不是一步跳转，而是连续的能力与证据门。；迁移前提：海淀可按成熟度配置产品、团队、IP、资本服务；不得承诺融资或成功率。"
+      ],
+      "does_not_support": [
+        "项目与成果为机构自报",
+        "资格、资金和资本环境不可直接迁移。",
+        "B级案例不得升级为海淀本地事实、绩效、容量、主体承诺、空间控制或工程结论"
+      ],
+      "locator": "https://mila.quebec/en/industry/mila-ventures",
+      "gap_ids": [
+        "GAP-ACTOR-001",
+        "GAP-SPATIAL-001"
+      ],
+      "owner_role": "产业生态负责人;资料经理;本地验证负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Transfer",
+        "G-Rights",
+        "G-Pilot"
+      ],
+      "confidence": "medium",
+      "notes": "evidence_strength=official_first_party；B2证据无论一手与否，对海淀转换一律为B"
+    },
+    {
+      "id": "D2SRC-B2-008",
+      "formal_target_id": "S-MTL-03",
+      "title": "Impact Report 2024–2025",
+      "publisher": "Mila",
+      "source_type": "B",
+      "status": "self_reported_period",
+      "path_or_url": "https://mila.quebec/en/about/impact-reports/impact-report-2024-2025",
+      "published_or_reference_date": "报告期2024-2025",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "living_page_or_period_snapshot",
+      "spatial_scope": "foreign_case/加拿大·蒙特利尔/CASE-MTL",
+      "spatial_use_allowed": "mechanism_and_space_type_analogy_only_no_local_location",
+      "geometry_generation_allowed": "no_local_geometry_no_shape_transfer",
+      "rights_status": "citation_or_license_limited_follow_source_terms",
+      "license_or_reuse": "页面/报告未见开放许可；仅作事实摘要与链接。",
+      "supports": [
+        "影响报告描述研究基础设施、AI采用项目、创业实验室和负责任AI咨询等工作。；机制解释：研究、采用、创业与治理能够被同一机构体系持续记录。；迁移前提：海淀可迁移年度影响报告结构，且必须同时披露失败、限制和退出。"
+      ],
+      "does_not_support": [
+        "机构影响报告为自报材料",
+        "金额、数量和因果效果需独立核验。",
+        "B级案例不得升级为海淀本地事实、绩效、容量、主体承诺、空间控制或工程结论"
+      ],
+      "locator": "https://mila.quebec/en/about/impact-reports/impact-report-2024-2025",
+      "gap_ids": [
+        "GAP-ACTOR-001",
+        "GAP-SPATIAL-001"
+      ],
+      "owner_role": "产业生态负责人;资料经理;本地验证负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Transfer",
+        "G-Rights",
+        "G-Pilot"
+      ],
+      "confidence": "medium",
+      "notes": "evidence_strength=first_party_report；B2证据无论一手与否，对海淀转换一律为B"
+    },
+    {
+      "id": "D2SRC-B2-009",
+      "formal_target_id": "S-TOR-01",
+      "title": "About Vector Institute",
+      "publisher": "Vector Institute",
+      "source_type": "B",
+      "status": "self_reported_current",
+      "path_or_url": "https://vectorinstitute.ai/about/",
+      "published_or_reference_date": "持续更新页面",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "living_page_or_period_snapshot",
+      "spatial_scope": "foreign_case/加拿大·多伦多/CASE-TOR",
+      "spatial_use_allowed": "mechanism_and_space_type_analogy_only_no_local_location",
+      "geometry_generation_allowed": "no_local_geometry_no_shape_transfer",
+      "rights_status": "citation_or_license_limited_follow_source_terms",
+      "license_or_reuse": "未见开放复用许可；只摘要事实。",
+      "supports": [
+        "Vector自述连接前沿AI研究与实际采纳，并通过研究、人才、工程支持、培训和行业合作促进可信AI应用。；机制解释：专业中介机构可以把研究能力转成组织采纳能力。；迁移前提：海淀可设置研究到采纳的工程/产品中层；仍需三区两翼补齐空间、资本与公共生活。"
+      ],
+      "does_not_support": [
+        "机构自我描述",
+        "页面指标具有时点性，不推断城区整体生态绩效。",
+        "B级案例不得升级为海淀本地事实、绩效、容量、主体承诺、空间控制或工程结论"
+      ],
+      "locator": "https://vectorinstitute.ai/about/",
+      "gap_ids": [
+        "GAP-ACTOR-001",
+        "GAP-SPATIAL-001"
+      ],
+      "owner_role": "产业生态负责人;资料经理;本地验证负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Transfer",
+        "G-Rights",
+        "G-Pilot"
+      ],
+      "confidence": "medium",
+      "notes": "evidence_strength=official_first_party；B2证据无论一手与否，对海淀转换一律为B"
+    },
+    {
+      "id": "D2SRC-B2-010",
+      "formal_target_id": "S-TOR-02",
+      "title": "FastLane Program",
+      "publisher": "Vector Institute",
+      "source_type": "B",
+      "status": "self_reported_current",
+      "path_or_url": "https://vectorinstitute.ai/ai-adoption/startups/fastlane/",
+      "published_or_reference_date": "持续更新页面",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "living_page_or_period_snapshot",
+      "spatial_scope": "foreign_case/加拿大·多伦多/CASE-TOR",
+      "spatial_use_allowed": "mechanism_and_space_type_analogy_only_no_local_location",
+      "geometry_generation_allowed": "no_local_geometry_no_shape_transfer",
+      "rights_status": "citation_or_license_limited_follow_source_terms",
+      "license_or_reuse": "未见开放复用许可；仅摘要机制。",
+      "supports": [
+        "FastLane说明将初创企业与机器学习、工程和产品人员配对，在限定周期内为具体用例形成PoC。；机制解释：PoC需以具体问题、共同工程和可交接成果为核心。；迁移前提：海淀测试需固定问题基线、数据条件、人工复核、文档和交接责任。"
+      ],
+      "does_not_support": [
+        "页面案例与成果为机构自报，不能视为独立效果评估。",
+        "B级案例不得升级为海淀本地事实、绩效、容量、主体承诺、空间控制或工程结论"
+      ],
+      "locator": "https://vectorinstitute.ai/ai-adoption/startups/fastlane/",
+      "gap_ids": [
+        "GAP-ACTOR-001",
+        "GAP-SPATIAL-001"
+      ],
+      "owner_role": "产业生态负责人;资料经理;本地验证负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Transfer",
+        "G-Rights",
+        "G-Pilot"
+      ],
+      "confidence": "medium",
+      "notes": "evidence_strength=official_first_party；B2证据无论一手与否，对海淀转换一律为B"
+    },
+    {
+      "id": "D2SRC-B2-011",
+      "formal_target_id": "S-SEL-01",
+      "title": "Seoul AI Hub policy archive",
+      "publisher": "Seoul Metropolitan Government",
+      "source_type": "B",
+      "status": "verified_primary",
+      "path_or_url": "https://english.seoul.go.kr/seoul-policy-archive/seoul-ai-hub/",
+      "published_or_reference_date": "2025-07-10",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "living_page_or_period_snapshot",
+      "spatial_scope": "foreign_case/韩国·首尔/CASE-SEL",
+      "spatial_use_allowed": "mechanism_and_space_type_analogy_only_no_local_location",
+      "geometry_generation_allowed": "no_local_geometry_no_shape_transfer",
+      "rights_status": "citation_or_license_limited_follow_source_terms",
+      "license_or_reuse": "官方网页；具体公共许可未在所选页面明确，引用需按站点条款，仅事实摘要。",
+      "supports": [
+        "首尔市政策档案称Seoul AI Hub由城市建立、由研究机构共同运营，提供办公空间、人才培养、模型开发/PoC高性能计算、开放创新、业务验证和后续连接。；机制解释：城市可把空间、算力、人才、孵化和测试做成常设服务入口。；迁移前提：海淀可迁移服务目录、资格、排队和PoC接口；容量、额度、主体与空间必须本地核验。"
+      ],
+      "does_not_support": [
+        "政策档案为参考日快照",
+        "未来规划与资源数值不可视为现状或海淀承诺。",
+        "B级案例不得升级为海淀本地事实、绩效、容量、主体承诺、空间控制或工程结论"
+      ],
+      "locator": "https://english.seoul.go.kr/seoul-policy-archive/seoul-ai-hub/",
+      "gap_ids": [
+        "GAP-ACTOR-001",
+        "GAP-SPATIAL-001"
+      ],
+      "owner_role": "产业生态负责人;资料经理;本地验证负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Transfer",
+        "G-Rights",
+        "G-Pilot"
+      ],
+      "confidence": "medium",
+      "notes": "evidence_strength=government_primary；B2证据无论一手与否，对海淀转换一律为B"
+    },
+    {
+      "id": "D2SRC-B2-012",
+      "formal_target_id": "S-SEL-02",
+      "title": "English home",
+      "publisher": "Seoul AI Hub",
+      "source_type": "B",
+      "status": "self_reported_current",
+      "path_or_url": "https://www.seoulaihub.kr/eng1/index2.asp",
+      "published_or_reference_date": "持续更新页面",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "living_page_or_period_snapshot",
+      "spatial_scope": "foreign_case/韩国·首尔/CASE-SEL",
+      "spatial_use_allowed": "mechanism_and_space_type_analogy_only_no_local_location",
+      "geometry_generation_allowed": "no_local_geometry_no_shape_transfer",
+      "rights_status": "citation_or_license_limited_follow_source_terms",
+      "license_or_reuse": "页面标注All rights reserved；不复用图片、Logo或页面文本。",
+      "supports": [
+        "Seoul AI Hub将人才培养、AI企业成长、专家交流，以及工位、培训室、会议室和休息空间列为主要职能/设施。；机制解释：创新载体同时需要工作、学习、交流和日常停留空间。；迁移前提：海淀可迁移空间功能组合，不复制企业数量或设施规模。"
+      ],
+      "does_not_support": [
+        "数据由运营方自报并可能变化",
+        "不能证明全部公共可达性。",
+        "B级案例不得升级为海淀本地事实、绩效、容量、主体承诺、空间控制或工程结论"
+      ],
+      "locator": "https://www.seoulaihub.kr/eng1/index2.asp",
+      "gap_ids": [
+        "GAP-ACTOR-001",
+        "GAP-SPATIAL-001"
+      ],
+      "owner_role": "产业生态负责人;资料经理;本地验证负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Transfer",
+        "G-Rights",
+        "G-Pilot"
+      ],
+      "confidence": "medium",
+      "notes": "evidence_strength=official_first_party；B2证据无论一手与否，对海淀转换一律为B"
+    },
+    {
+      "id": "D2SRC-B2-013",
+      "formal_target_id": "S-SEL-03",
+      "title": "Seoul to Accelerate Industry Transition to AI",
+      "publisher": "Seoul Metropolitan Government",
+      "source_type": "B",
+      "status": "verified_primary",
+      "path_or_url": "https://english.seoul.go.kr/seoul-to-accelerate-industry-transition-to-ai-launching-ax-innovation-center-and-ai-graduate-school-committee/",
+      "published_or_reference_date": "2025-12-04",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "living_page_or_period_snapshot",
+      "spatial_scope": "foreign_case/韩国·首尔/CASE-SEL",
+      "spatial_use_allowed": "mechanism_and_space_type_analogy_only_no_local_location",
+      "geometry_generation_allowed": "no_local_geometry_no_shape_transfer",
+      "rights_status": "citation_or_license_limited_follow_source_terms",
+      "license_or_reuse": "官方新闻；未见开放许可，仅事实摘要。",
+      "supports": [
+        "首尔市新闻说明AX创新中心全年受理企业需求，并串联流程诊断、供需匹配、产学联盟、PoC、现场验证和扩散。；机制解释：从问题入口到试验和采用的常设流水线比单次路演更可转化。；迁移前提：大钟寺可做需求入口，众智园做可信评估，小月河做有限场景，三者共享项目ID。"
+      ],
+      "does_not_support": [
+        "为政策/机构自报，实际长期效果需后续独立评估。",
+        "B级案例不得升级为海淀本地事实、绩效、容量、主体承诺、空间控制或工程结论"
+      ],
+      "locator": "https://english.seoul.go.kr/seoul-to-accelerate-industry-transition-to-ai-launching-ax-innovation-center-and-ai-graduate-school-committee/",
+      "gap_ids": [
+        "GAP-ACTOR-001",
+        "GAP-SPATIAL-001"
+      ],
+      "owner_role": "产业生态负责人;资料经理;本地验证负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Transfer",
+        "G-Rights",
+        "G-Pilot"
+      ],
+      "confidence": "medium",
+      "notes": "evidence_strength=government_primary；B2证据无论一手与否，对海淀转换一律为B"
+    },
+    {
+      "id": "D2SRC-B2-014",
+      "formal_target_id": "S-AUH-01",
+      "title": "Impact Report 2025",
+      "publisher": "Hub71",
+      "source_type": "B",
+      "status": "self_reported_period",
+      "path_or_url": "https://www.hub71.com/impact/2025",
+      "published_or_reference_date": "报告期2025；页面版权2026",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "living_page_or_period_snapshot",
+      "spatial_scope": "foreign_case/阿联酋·阿布扎比/CASE-AUH",
+      "spatial_use_allowed": "mechanism_and_space_type_analogy_only_no_local_location",
+      "geometry_generation_allowed": "no_local_geometry_no_shape_transfer",
+      "rights_status": "citation_or_license_limited_follow_source_terms",
+      "license_or_reuse": "页面标注All rights reserved；仅摘要事实。",
+      "supports": [
+        "Hub71影响报告描述从venture creation到国际扩张的分阶段项目，并将Hub71+ AI定义为支持跨行业AI开发与部署的专项生态。；机制解释：按成熟度配置技术、资本、市场和人才资源，可减少过早对接。；迁移前提：中关村科技服务翼可依据证据成熟度分诊服务；不承诺资源、资本或市场结果。"
+      ],
+      "does_not_support": [
+        "机构自报影响报告",
+        "资金、收入、伙伴和因果效果不作海淀类比。",
+        "B级案例不得升级为海淀本地事实、绩效、容量、主体承诺、空间控制或工程结论"
+      ],
+      "locator": "https://www.hub71.com/impact/2025",
+      "gap_ids": [
+        "GAP-ACTOR-001",
+        "GAP-SPATIAL-001"
+      ],
+      "owner_role": "产业生态负责人;资料经理;本地验证负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Transfer",
+        "G-Rights",
+        "G-Pilot"
+      ],
+      "confidence": "medium",
+      "notes": "evidence_strength=first_party_report；B2证据无论一手与否，对海淀转换一律为B"
+    },
+    {
+      "id": "D2SRC-B2-015",
+      "formal_target_id": "S-AUH-02",
+      "title": "Hub71 welcomes record AI startups in latest cohort",
+      "publisher": "Hub71",
+      "source_type": "B",
+      "status": "self_reported_snapshot",
+      "path_or_url": "https://www.hub71.com/latest-news/press-release/hub71-welcomes-record-ai-startups-in-latest-cohort%2C-reinforcing-abu-dhabis-role-in-global-ai-innovation",
+      "published_or_reference_date": "2025-09-02",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "living_page_or_period_snapshot",
+      "spatial_scope": "foreign_case/阿联酋·阿布扎比/CASE-AUH",
+      "spatial_use_allowed": "mechanism_and_space_type_analogy_only_no_local_location",
+      "geometry_generation_allowed": "no_local_geometry_no_shape_transfer",
+      "rights_status": "citation_or_license_limited_follow_source_terms",
+      "license_or_reuse": "机构新闻稿；All rights reserved。",
+      "supports": [
+        "Hub71新闻稿称Hub71+ AI由AI、云和创业支持伙伴共同构成，并为AI初创连接基础设施、资本和市场。；机制解释：专项生态以资源联盟服务特定技术赛道。；迁移前提：海淀可迁移角色联盟和项目筛选，不复制伙伴、激励和融资。"
+      ],
+      "does_not_support": [
+        "带宣传属性、为单源自报",
+        "企业与融资数字不作绩效比较。",
+        "B级案例不得升级为海淀本地事实、绩效、容量、主体承诺、空间控制或工程结论"
+      ],
+      "locator": "https://www.hub71.com/latest-news/press-release/hub71-welcomes-record-ai-startups-in-latest-cohort%2C-reinforcing-abu-dhabis-role-in-global-ai-innovation",
+      "gap_ids": [
+        "GAP-ACTOR-001",
+        "GAP-SPATIAL-001"
+      ],
+      "owner_role": "产业生态负责人;资料经理;本地验证负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Transfer",
+        "G-Rights",
+        "G-Pilot"
+      ],
+      "confidence": "medium",
+      "notes": "evidence_strength=official_first_party_press；B2证据无论一手与否，对海淀转换一律为B"
+    },
+    {
+      "id": "D2SRC-B2-016",
+      "formal_target_id": "S-PAR-01",
+      "title": "STATION F launches F/ai",
+      "publisher": "STATION F",
+      "source_type": "B",
+      "status": "self_reported_new_program",
+      "path_or_url": "https://stationf.co/news/f-ai",
+      "published_or_reference_date": "2026-02-11",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "living_page_or_period_snapshot",
+      "spatial_scope": "foreign_case/法国·巴黎/CASE-PAR",
+      "spatial_use_allowed": "mechanism_and_space_type_analogy_only_no_local_location",
+      "geometry_generation_allowed": "no_local_geometry_no_shape_transfer",
+      "rights_status": "citation_or_license_limited_follow_source_terms",
+      "license_or_reuse": "页面标注All rights reserved；不复用品牌、图片或长段文字。",
+      "supports": [
+        "STATION F宣布F/ai将模型、云、芯片、开发工具和风险投资伙伴组织进面向早期AI企业的同一项目。；机制解释：复杂AI创业需要跨技术栈与资本的统一接入，而非逐家寻找。；迁移前提：海淀可迁移资源目录和分阶段接入；伙伴、推荐制与商业目标不迁移。"
+      ],
+      "does_not_support": [
+        "项目2026年启动，长期效果尚无充分证据",
+        "机构自报。",
+        "B级案例不得升级为海淀本地事实、绩效、容量、主体承诺、空间控制或工程结论"
+      ],
+      "locator": "https://stationf.co/news/f-ai",
+      "gap_ids": [
+        "GAP-ACTOR-001",
+        "GAP-SPATIAL-001"
+      ],
+      "owner_role": "产业生态负责人;资料经理;本地验证负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Transfer",
+        "G-Rights",
+        "G-Pilot"
+      ],
+      "confidence": "medium",
+      "notes": "evidence_strength=official_first_party_press；B2证据无论一手与否，对海淀转换一律为B"
+    },
+    {
+      "id": "D2SRC-B2-017",
+      "formal_target_id": "S-PAR-02",
+      "title": "How Is the STATION F Campus Organized?",
+      "publisher": "STATION F",
+      "source_type": "B",
+      "status": "verified_primary",
+      "path_or_url": "https://faq.stationf.co/hc/en-us/articles/115003119905-How-Is-the-STATION-F-Campus-Organized",
+      "published_or_reference_date": "2026-08-13",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "living_page_or_period_snapshot",
+      "spatial_scope": "foreign_case/法国·巴黎/CASE-PAR",
+      "spatial_use_allowed": "mechanism_and_space_type_analogy_only_no_local_location",
+      "geometry_generation_allowed": "no_local_geometry_no_shape_transfer",
+      "rights_status": "citation_or_license_limited_follow_source_terms",
+      "license_or_reuse": "页面未开放复用许可；仅事实摘要。",
+      "supports": [
+        "官方FAQ将校园分为SHARE共享服务区、CREATE创业工作区和CHILL公众生活区，并说明部分公共通道与差异化开放权限。；机制解释：以空间和权限梯度区分共享服务、受控开发与公共生活。；迁移前提：AI原点和大钟寺可迁移前台—受控空间—公共界面梯度；需本地消防、权属、无障碍核验。"
+      ],
+      "does_not_support": [
+        "自报空间组织",
+        "不证明其公共性、公平性或城市成效。",
+        "B级案例不得升级为海淀本地事实、绩效、容量、主体承诺、空间控制或工程结论"
+      ],
+      "locator": "https://faq.stationf.co/hc/en-us/articles/115003119905-How-Is-the-STATION-F-Campus-Organized",
+      "gap_ids": [
+        "GAP-ACTOR-001",
+        "GAP-SPATIAL-001"
+      ],
+      "owner_role": "产业生态负责人;资料经理;本地验证负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Transfer",
+        "G-Rights",
+        "G-Pilot"
+      ],
+      "confidence": "medium",
+      "notes": "evidence_strength=official_first_party；B2证据无论一手与否，对海淀转换一律为B"
+    },
+    {
+      "id": "D2SRC-B2-018",
+      "formal_target_id": "S-PAR-03",
+      "title": "What Is STATION F?",
+      "publisher": "STATION F",
+      "source_type": "B",
+      "status": "self_reported_current",
+      "path_or_url": "https://faq.stationf.co/hc/en-us/articles/115003119785-What-Is-STATION-F",
+      "published_or_reference_date": "2026-08-13",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "living_page_or_period_snapshot",
+      "spatial_scope": "foreign_case/法国·巴黎/CASE-PAR",
+      "spatial_use_allowed": "mechanism_and_space_type_analogy_only_no_local_location",
+      "geometry_generation_allowed": "no_local_geometry_no_shape_transfer",
+      "rights_status": "citation_or_license_limited_follow_source_terms",
+      "license_or_reuse": "页面未开放复用许可；仅摘要事实。",
+      "supports": [
+        "官方FAQ称园区常年组织大量科技、创新和创业活动，并以多个项目和导师办公接口支持早期企业。；机制解释：高频运营需依赖稳定空间、服务与社区机制。；迁移前提：海淀可迁移日周季年节奏和服务接口，不把活动数量当目标。"
+      ],
+      "does_not_support": [
+        "活动数量为机构自报且不能说明转化质量。",
+        "B级案例不得升级为海淀本地事实、绩效、容量、主体承诺、空间控制或工程结论"
+      ],
+      "locator": "https://faq.stationf.co/hc/en-us/articles/115003119785-What-Is-STATION-F",
+      "gap_ids": [
+        "GAP-ACTOR-001",
+        "GAP-SPATIAL-001"
+      ],
+      "owner_role": "产业生态负责人;资料经理;本地验证负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Transfer",
+        "G-Rights",
+        "G-Pilot"
+      ],
+      "confidence": "medium",
+      "notes": "evidence_strength=official_first_party；B2证据无论一手与否，对海淀转换一律为B"
+    },
+    {
+      "id": "D2SRC-B2-019",
+      "formal_target_id": "S-PAR-04",
+      "title": "Benefits for Investors",
+      "publisher": "STATION F",
+      "source_type": "B",
+      "status": "self_reported_current",
+      "path_or_url": "https://faq.stationf.co/hc/en-us/articles/360011153419-Benefits-for-Investors",
+      "published_or_reference_date": "2026-02-06",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "living_page_or_period_snapshot",
+      "spatial_scope": "foreign_case/法国·巴黎/CASE-PAR",
+      "spatial_use_allowed": "mechanism_and_space_type_analogy_only_no_local_location",
+      "geometry_generation_allowed": "no_local_geometry_no_shape_transfer",
+      "rights_status": "citation_or_license_limited_follow_source_terms",
+      "license_or_reuse": "页面未开放复用许可；仅事实摘要。",
+      "supports": [
+        "投资者社区页面列出月度信息、项目引介、Office Hours、Demo Day和投资者活动等接口。；机制解释：资本服务可常态化，但应在材料成熟后进入。；迁移前提：中关村科技服务翼可迁移办公时段和合格引介；不得承诺投资或回报。"
+      ],
+      "does_not_support": [
+        "会员规则、选择标准和效果由运营方控制",
+        "不可直接复制。",
+        "B级案例不得升级为海淀本地事实、绩效、容量、主体承诺、空间控制或工程结论"
+      ],
+      "locator": "https://faq.stationf.co/hc/en-us/articles/360011153419-Benefits-for-Investors",
+      "gap_ids": [
+        "GAP-ACTOR-001",
+        "GAP-SPATIAL-001"
+      ],
+      "owner_role": "产业生态负责人;资料经理;本地验证负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Transfer",
+        "G-Rights",
+        "G-Pilot"
+      ],
+      "confidence": "medium",
+      "notes": "evidence_strength=official_first_party；B2证据无论一手与否，对海淀转换一律为B"
+    },
+    {
+      "id": "D2SRC-B2-020",
+      "formal_target_id": "S-BOS-01",
+      "title": "Home",
+      "publisher": "MassRobotics",
+      "source_type": "B",
+      "status": "self_reported_current",
+      "path_or_url": "https://www.massrobotics.org/",
+      "published_or_reference_date": "持续更新页面",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "living_page_or_period_snapshot",
+      "spatial_scope": "foreign_case/美国·波士顿/CASE-BOS",
+      "spatial_use_allowed": "mechanism_and_space_type_analogy_only_no_local_location",
+      "geometry_generation_allowed": "no_local_geometry_no_shape_transfer",
+      "rights_status": "citation_or_license_limited_follow_source_terms",
+      "license_or_reuse": "©2026；未见开放网页许可，仅事实摘要。",
+      "supports": [
+        "MassRobotics称通过工作空间、资源、项目和连接支持机器人与Physical AI企业开发、原型、测试、商业化和采用。；机制解释：实体AI转化需要共享设施、项目、行业连接和采用接口。；迁移前提：众智园可迁移受控实验与产业支持组合；具体设施能力需专业设计和安全核验。"
+      ],
+      "does_not_support": [
+        "机构自报，不证明街道或公共空间可直接安全部署。",
+        "B级案例不得升级为海淀本地事实、绩效、容量、主体承诺、空间控制或工程结论"
+      ],
+      "locator": "https://www.massrobotics.org/",
+      "gap_ids": [
+        "GAP-ACTOR-001",
+        "GAP-SPATIAL-001"
+      ],
+      "owner_role": "产业生态负责人;资料经理;本地验证负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Transfer",
+        "G-Rights",
+        "G-Pilot"
+      ],
+      "confidence": "medium",
+      "notes": "evidence_strength=official_first_party；B2证据无论一手与否，对海淀转换一律为B"
+    },
+    {
+      "id": "D2SRC-B2-021",
+      "formal_target_id": "S-BOS-02",
+      "title": "Facility and Equipment",
+      "publisher": "MassRobotics",
+      "source_type": "B",
+      "status": "self_reported_current",
+      "path_or_url": "https://www.massrobotics.org/robotics-facility/",
+      "published_or_reference_date": "持续更新页面",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "living_page_or_period_snapshot",
+      "spatial_scope": "foreign_case/美国·波士顿/CASE-BOS",
+      "spatial_use_allowed": "mechanism_and_space_type_analogy_only_no_local_location",
+      "geometry_generation_allowed": "no_local_geometry_no_shape_transfer",
+      "rights_status": "citation_or_license_limited_follow_source_terms",
+      "license_or_reuse": "©2026；不复用图片和设备照片。",
+      "supports": [
+        "设施页列出共享工位、机械/电子/人机交互实验空间、原型设备、会议与活动空间。；机制解释：不同开发行为需不同安全、噪声、权限和设备条件。；迁移前提：海淀可迁移空间类型与权限分层，不复制具体设备清单或规模。"
+      ],
+      "does_not_support": [
+        "设备信息可能变化",
+        "需要现场和专业运维复核。",
+        "B级案例不得升级为海淀本地事实、绩效、容量、主体承诺、空间控制或工程结论"
+      ],
+      "locator": "https://www.massrobotics.org/robotics-facility/",
+      "gap_ids": [
+        "GAP-ACTOR-001",
+        "GAP-SPATIAL-001"
+      ],
+      "owner_role": "产业生态负责人;资料经理;本地验证负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Transfer",
+        "G-Rights",
+        "G-Pilot"
+      ],
+      "confidence": "medium",
+      "notes": "evidence_strength=official_first_party；B2证据无论一手与否，对海淀转换一律为B"
+    },
+    {
+      "id": "D2SRC-B2-022",
+      "formal_target_id": "S-BOS-03",
+      "title": "Reports and Studies: Robots in Public",
+      "publisher": "MassRobotics",
+      "source_type": "B",
+      "status": "verified_primary",
+      "path_or_url": "https://www.massrobotics.org/reports-and-studies/",
+      "published_or_reference_date": "2026",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "living_page_or_period_snapshot",
+      "spatial_scope": "foreign_case/美国·波士顿/CASE-BOS",
+      "spatial_use_allowed": "mechanism_and_space_type_analogy_only_no_local_location",
+      "geometry_generation_allowed": "no_local_geometry_no_shape_transfer",
+      "rights_status": "citation_or_license_limited_follow_source_terms",
+      "license_or_reuse": "报告未见开放许可；引用标题/事实并链接，不复制图表和长文。",
+      "supports": [
+        "《Robots in Public》将公共机器人识别、事故报告、第一响应者介入、无障碍、场景化运行规则和公众信任列为治理重点。；机制解释：公共空间测试必须把非自愿接触者、弱势群体和应急处置纳入设计。；迁移前提：小月河/公园测试可迁移可识别、事件日志、人工接管和时空限制；仍需本地法律与安全审查。"
+      ],
+      "does_not_support": [
+        "为工作组报告而非法定标准",
+        "本地适用性需独立验证。",
+        "B级案例不得升级为海淀本地事实、绩效、容量、主体承诺、空间控制或工程结论"
+      ],
+      "locator": "https://www.massrobotics.org/reports-and-studies/",
+      "gap_ids": [
+        "GAP-ACTOR-001",
+        "GAP-SPATIAL-001"
+      ],
+      "owner_role": "产业生态负责人;资料经理;本地验证负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Transfer",
+        "G-Rights",
+        "G-Pilot"
+      ],
+      "confidence": "medium",
+      "notes": "evidence_strength=first_party_report；B2证据无论一手与否，对海淀转换一律为B"
+    },
+    {
+      "id": "D2SRC-B2-023",
+      "formal_target_id": "S-BOS-04",
+      "title": "MassRobotics Accelerator",
+      "publisher": "MassRobotics",
+      "source_type": "B",
+      "status": "self_reported_program",
+      "path_or_url": "https://www.massrobotics.org/massrobotics-accelerator/",
+      "published_or_reference_date": "项目页覆盖2024-2025两期",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "living_page_or_period_snapshot",
+      "spatial_scope": "foreign_case/美国·波士顿/CASE-BOS",
+      "spatial_use_allowed": "mechanism_and_space_type_analogy_only_no_local_location",
+      "geometry_generation_allowed": "no_local_geometry_no_shape_transfer",
+      "rights_status": "citation_or_license_limited_follow_source_terms",
+      "license_or_reuse": "©2026；仅事实摘要。",
+      "supports": [
+        "加速项目将办公、原型实验、课程、导师、行业与投资者连接和Demo Day组合为限定周期支持。；机制解释：实体AI孵化需技术、制造、产品和资本多角色共同工作。；迁移前提：海淀可迁移阶段课程和实验/导师接口，不复制资助额或驻留要求。"
+      ],
+      "does_not_support": [
+        "机构自报项目结果",
+        "既有资助安排已结束/具时点性。",
+        "B级案例不得升级为海淀本地事实、绩效、容量、主体承诺、空间控制或工程结论"
+      ],
+      "locator": "https://www.massrobotics.org/massrobotics-accelerator/",
+      "gap_ids": [
+        "GAP-ACTOR-001",
+        "GAP-SPATIAL-001"
+      ],
+      "owner_role": "产业生态负责人;资料经理;本地验证负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Transfer",
+        "G-Rights",
+        "G-Pilot"
+      ],
+      "confidence": "medium",
+      "notes": "evidence_strength=official_first_party；B2证据无论一手与否，对海淀转换一律为B"
+    },
+    {
+      "id": "D2SRC-B2-024",
+      "formal_target_id": "S-BOS-05",
+      "title": "RoboBoston",
+      "publisher": "MassRobotics",
+      "source_type": "B",
+      "status": "future_schedule_as_of_access",
+      "path_or_url": "https://www.massrobotics.org/roboboston/",
+      "published_or_reference_date": "2026-09-26",
+      "accessed_date": "2026-08-15",
+      "temporal_scope": "future_schedule_as_of_access",
+      "spatial_scope": "foreign_case/美国·波士顿/CASE-BOS",
+      "spatial_use_allowed": "mechanism_and_space_type_analogy_only_no_local_location",
+      "geometry_generation_allowed": "no_local_geometry_no_shape_transfer",
+      "rights_status": "citation_or_license_limited_follow_source_terms",
+      "license_or_reuse": "©2026；不复用活动品牌、图片或文案。",
+      "supports": [
+        "2026活动页将RoboBoston描述为面向公众、包含展示和互动的年度机器人庆典。；机制解释：公众展示可成为技术解释、反馈和社区连接节点，但不能替代测试治理。；迁移前提：海淀可迁移年度公众试用+解释+反馈格式；活动是否举行和规模需逐年确认。"
+      ],
+      "does_not_support": [
+        "访问时为未来活动安排，可能变更",
+        "不作为已完成效果证据。",
+        "B级案例不得升级为海淀本地事实、绩效、容量、主体承诺、空间控制或工程结论"
+      ],
+      "locator": "https://www.massrobotics.org/roboboston/",
+      "gap_ids": [
+        "GAP-ACTOR-001",
+        "GAP-SPATIAL-001"
+      ],
+      "owner_role": "产业生态负责人;资料经理;本地验证负责人",
+      "human_gate": [
+        "G-Fact",
+        "G-Transfer",
+        "G-Rights",
+        "G-Pilot"
+      ],
+      "confidence": "medium",
+      "notes": "evidence_strength=official_first_party；B2证据无论一手与否，对海淀转换一律为B"
+    },
+    {
+      "id": "PROJECT-SCOPE-SUMMARY",
+      "path": "data/processed/project_scope_summary.csv",
+      "source_type": "repository_processed_reference",
+      "status": "registered_navigation_source",
+      "usage": "Three-level scope and announced area navigation; not geometry or legal control.",
+      "rights_status": "repository_public_navigation",
+      "geometry_generation_allowed": "no",
+      "supports": [
+        "Three-level scope and announced area navigation; not geometry or legal control."
+      ],
+      "does_not_support": [
+        "official boundary",
+        "statutory control",
+        "implementation commitment"
+      ],
+      "human_gate": [
+        "G-Fact",
+        "G-Rights",
+        "G-Release"
+      ]
+    },
+    {
+      "id": "AGENT-TASK-REQUIREMENTS",
+      "path": "data/processed/agent_task_requirements.csv",
+      "source_type": "repository_processed_reference",
+      "status": "registered_navigation_source",
+      "usage": "Six agent task mapping and deliverable navigation; not implementation commitment.",
+      "rights_status": "repository_public_navigation",
+      "geometry_generation_allowed": "no",
+      "supports": [
+        "Six agent task mapping and deliverable navigation; not implementation commitment."
+      ],
+      "does_not_support": [
+        "official boundary",
+        "statutory control",
+        "implementation commitment"
+      ],
+      "human_gate": [
+        "G-Fact",
+        "G-Rights",
+        "G-Release"
+      ]
+    },
+    {
+      "id": "SOURCE-USE-MATRIX",
+      "path": "data/processed/source_use_matrix.csv",
+      "source_type": "repository_processed_reference",
+      "status": "registered_navigation_source",
+      "usage": "Source use, rights and prohibited-upgrade navigation.",
+      "rights_status": "repository_public_navigation",
+      "geometry_generation_allowed": "no",
+      "supports": [
+        "Source use, rights and prohibited-upgrade navigation."
+      ],
+      "does_not_support": [
+        "official boundary",
+        "statutory control",
+        "implementation commitment"
+      ],
+      "human_gate": [
+        "G-Fact",
+        "G-Rights",
+        "G-Release"
+      ]
+    },
+    {
+      "id": "MISSING-DATA-CHECKLIST",
+      "path": "data/processed/missing_data_checklist.csv",
+      "source_type": "repository_processed_reference",
+      "status": "registered_navigation_source",
+      "usage": "Formal deepening gaps and recalculation triggers; not evidence that a gap is resolved.",
+      "rights_status": "repository_public_navigation",
+      "geometry_generation_allowed": "no",
+      "supports": [
+        "Formal deepening gaps and recalculation triggers; not evidence that a gap is resolved."
+      ],
+      "does_not_support": [
+        "official boundary",
+        "statutory control",
+        "implementation commitment"
+      ],
+      "human_gate": [
+        "G-Fact",
+        "G-Rights",
+        "G-Release"
+      ]
+    }
+  ],
+  "source_registry_note": "D2 candidates are serialized with evidence class, status, rights, scope, prohibited upgrades, gates, and locator. Candidate status is not a claim that the source is official or geometry-generating.",
+  "generated_at": "2026-08-16"
+}

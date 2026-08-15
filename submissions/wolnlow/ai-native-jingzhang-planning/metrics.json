@@ -1,0 +1,570 @@
+{
+  "schema_version": "0.1.0",
+  "units": {
+    "length": "m",
+    "area": "sqm"
+  },
+  "metrics": {
+    "site_area_sqm": {
+      "status": "known",
+      "value": 11412825.386,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "polygon_area(submitted_site_boundary)",
+      "confidence": "low_to_medium",
+      "assumptions": [
+        "A-OFFICIAL-GEOMETRY-001",
+        "A-CONTROLS-001"
+      ],
+      "geometry_version": "formal-provisional-v2.0",
+      "input_hashes": {
+        "geometry/site_boundary.geojson": "66b8ab3db46dca00224c0662890a69c1bc0244902aa3390574f1ec20bc4348ff"
+      },
+      "source_ids": [
+        "BOUNDARY-SOURCE",
+        "KEY-AREA-SOURCE"
+      ],
+      "owner_role": "GIS负责人/指标复算Agent",
+      "recompute_trigger": "official geometry or control attachment changes",
+      "status_qualifier": "provisional_recalculated_from_submitted_geometry",
+      "official_boundary": false,
+      "reason": "Current value is reproducible from the submitted design/provisional geometry, not an official control value."
+    },
+    "building_footprint_area_sqm": {
+      "status": "known",
+      "value": 310807.184,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "sum(polygon_area(building_footprints))",
+      "confidence": "low_to_medium",
+      "assumptions": [
+        "A-OFFICIAL-GEOMETRY-001",
+        "A-CONTROLS-001"
+      ],
+      "geometry_version": "formal-provisional-v2.0",
+      "input_hashes": {
+        "geometry/buildings.geojson": "48dfc663d6427423b7722181dce6b09a4b6515c3838ba536da75bdbc2b82651e"
+      },
+      "source_ids": [
+        "SITE-PACKAGE"
+      ],
+      "owner_role": "GIS负责人/指标复算Agent",
+      "recompute_trigger": "official geometry or control attachment changes",
+      "status_qualifier": "provisional_recalculated_from_submitted_geometry",
+      "official_boundary": false,
+      "reason": "Current value is reproducible from the submitted design/provisional geometry, not an official control value."
+    },
+    "green_ratio": {
+      "status": "known",
+      "value": 0.123423,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/green_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "green_space_area_sqm / site_area_sqm",
+      "confidence": "low_to_medium",
+      "assumptions": [
+        "A-OFFICIAL-GEOMETRY-001",
+        "A-CONTROLS-001"
+      ],
+      "geometry_version": "formal-provisional-v2.0",
+      "input_hashes": {
+        "geometry/site_boundary.geojson": "66b8ab3db46dca00224c0662890a69c1bc0244902aa3390574f1ec20bc4348ff",
+        "geometry/green_space.geojson": "4e73798cabef55dcfc25bb7464e2e583e1a31351828b098ac6aa28e0bbd3f0c9"
+      },
+      "source_ids": [
+        "SITE-PACKAGE"
+      ],
+      "owner_role": "GIS负责人/指标复算Agent",
+      "recompute_trigger": "official geometry or control attachment changes",
+      "status_qualifier": "provisional_recalculated_from_submitted_geometry",
+      "official_boundary": false,
+      "reason": "Current value is reproducible from the submitted design/provisional geometry, not an official control value."
+    },
+    "public_space_ratio": {
+      "status": "known",
+      "value": 0.073281,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "public_space_area_sqm / site_area_sqm",
+      "confidence": "low_to_medium",
+      "assumptions": [
+        "A-OFFICIAL-GEOMETRY-001",
+        "A-CONTROLS-001"
+      ],
+      "geometry_version": "formal-provisional-v2.0",
+      "input_hashes": {
+        "geometry/site_boundary.geojson": "66b8ab3db46dca00224c0662890a69c1bc0244902aa3390574f1ec20bc4348ff",
+        "geometry/public_space.geojson": "2db94ee82f46f8ce8aa4dd0edd8c58833c3e9b9636b86776b61b006360531cf5"
+      },
+      "source_ids": [
+        "SITE-PACKAGE"
+      ],
+      "owner_role": "GIS负责人/指标复算Agent",
+      "recompute_trigger": "official geometry or control attachment changes",
+      "status_qualifier": "provisional_recalculated_from_submitted_geometry",
+      "official_boundary": false,
+      "reason": "Current value is reproducible from the submitted design/provisional geometry, not an official control value."
+    },
+    "floor_area_ratio": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "brief/site-package/ranges/planning_limits.json"
+      ],
+      "formula": "total_floor_area_sqm / official_site_area_sqm",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "Approved FAR controls and official site boundary are not present in the public site package.",
+      "geometry_version": "formal-provisional-v2.0",
+      "input_hashes": {},
+      "source_ids": [
+        "SITE-PACKAGE"
+      ],
+      "owner_role": "GIS负责人/指标复算Agent",
+      "recompute_trigger": "official geometry or control attachment changes"
+    },
+    "key_area_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "count(key_detailed_design_areas)",
+      "confidence": "low_to_medium",
+      "assumptions": [
+        "A-OFFICIAL-GEOMETRY-001",
+        "A-CONTROLS-001"
+      ],
+      "geometry_version": "formal-provisional-v2.0",
+      "input_hashes": {
+        "geometry/key_areas.geojson": "566926817504a2938e081390879095fdc300a0df9328ddcbc6131b1e861718d3"
+      },
+      "source_ids": [
+        "BOUNDARY-SOURCE",
+        "KEY-AREA-SOURCE"
+      ],
+      "owner_role": "GIS负责人/指标复算Agent",
+      "recompute_trigger": "official geometry or control attachment changes",
+      "status_qualifier": "provisional_recalculated_from_submitted_geometry",
+      "official_boundary": false,
+      "reason": "Current value is reproducible from the submitted design/provisional geometry, not an official control value."
+    },
+    "key_area_area_sqm": {
+      "status": "known",
+      "status_qualifier": "provisional_recalculated_from_submitted_geometry",
+      "value": 4802597.813,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "sum(area_sqm_calculated for three provisional key areas)",
+      "confidence": "low",
+      "official_boundary": false,
+      "source_ids": [
+        "KEY-AREA-SOURCE"
+      ],
+      "assumptions": [
+        "A-KEY-AREA-ANCHOR-001"
+      ],
+      "owner_role": "GIS负责人/指标复算Agent",
+      "recompute_trigger": "official key-area polygons arrive",
+      "reason": "Working value only; not an official area basis."
+    },
+    "ai_scenario_card_count": {
+      "status": "known",
+      "value": 13,
+      "unit": "count",
+      "source_files": [
+        "研究模块/B3_场景空间/B3_场景卡_v0.1.json"
+      ],
+      "formula": "count(scene cards with required fields)",
+      "confidence": "high",
+      "source_ids": [
+        "AGENT-TASKBOOK"
+      ],
+      "owner_role": "场景Agent",
+      "recompute_trigger": "scenario registry or card schema changes"
+    },
+    "selected_detail_point_count": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(P-ZZY/P-ORI/P-DZS prototypes)",
+      "confidence": "high",
+      "source_ids": [
+        "AGENT-TASKBOOK"
+      ],
+      "owner_role": "统筹Agent",
+      "recompute_trigger": "selected point register changes"
+    },
+    "activity_ledger_count": {
+      "status": "known",
+      "value": 19,
+      "unit": "count",
+      "source_files": [
+        "研究模块/B2_生态运营/实施活动台账_v0.1.csv"
+      ],
+      "formula": "count(activity ledger rows)",
+      "confidence": "high",
+      "source_ids": [
+        "AGENT-TASKBOOK"
+      ],
+      "owner_role": "运营Agent",
+      "recompute_trigger": "activity ledger version changes"
+    },
+    "monitoring_parent_metric_count": {
+      "status": "known",
+      "value": 15,
+      "unit": "count",
+      "source_files": [
+        "研究模块/B5_实施监测/B5_六类指标与数据责任_v0.1.csv"
+      ],
+      "formula": "count(parent monitoring metrics)",
+      "confidence": "high",
+      "source_ids": [
+        "AGENT-TASKBOOK"
+      ],
+      "owner_role": "监测Agent",
+      "recompute_trigger": "monitoring contract changes"
+    },
+    "runtime_instance_count": {
+      "status": "unknown",
+      "value": null,
+      "unit": "count",
+      "source_files": [
+        "研究模块/B5_实施监测/B5_风险停复与版本事件_v0.1.json"
+      ],
+      "formula": "count(real opportunity_id/test_run_id instances)",
+      "confidence": "unknown",
+      "source_ids": [
+        "AGENT-TASKBOOK"
+      ],
+      "owner_role": "运营/试点负责人",
+      "recompute_trigger": "signed pilot gate and real runtime log",
+      "reason": "No real runtime instance has been created in this research package.",
+      "assumptions": [
+        "A-B5-RUNTIME-001"
+      ]
+    },
+    "professional_signed_contract_count": {
+      "status": "unknown",
+      "value": null,
+      "unit": "count",
+      "source_files": [
+        "研究模块/B6_专业设计深度/B6_15项深度交付合同_v0.1.csv"
+      ],
+      "formula": "count(depth items with professional sign-off)",
+      "confidence": "unknown",
+      "source_ids": [
+        "OFFICIAL-ANNOUNCEMENT"
+      ],
+      "owner_role": "各专业负责人",
+      "recompute_trigger": "professional signature ledger supplied",
+      "reason": "Contracts are research interfaces; no signed professional completion claim is present.",
+      "assumptions": [
+        "A-B6-CONTRACT-001"
+      ]
+    },
+    "MET-PV-01": {
+      "status": "unknown",
+      "value": null,
+      "unit": "index",
+      "source_files": [
+        "研究模块/B5_实施监测/B5_六类指标与数据责任_v0.1.csv"
+      ],
+      "formula": "see B5 metric contract; keep numerator/denominator and observation window explicit",
+      "confidence": "unknown",
+      "source_ids": [
+        "AGENT-TASKBOOK"
+      ],
+      "owner_role": "unassigned_pending_pilot",
+      "recompute_trigger": "real pilot baseline and named data owner",
+      "reason": "No runtime instance, baseline, target, or assigned data owner exists in this research package.",
+      "assumptions": [
+        "A-B5-RUNTIME-001"
+      ]
+    },
+    "MET-PV-02": {
+      "status": "unknown",
+      "value": null,
+      "unit": "index",
+      "source_files": [
+        "研究模块/B5_实施监测/B5_六类指标与数据责任_v0.1.csv"
+      ],
+      "formula": "see B5 metric contract; keep numerator/denominator and observation window explicit",
+      "confidence": "unknown",
+      "source_ids": [
+        "AGENT-TASKBOOK"
+      ],
+      "owner_role": "unassigned_pending_pilot",
+      "recompute_trigger": "real pilot baseline and named data owner",
+      "reason": "No runtime instance, baseline, target, or assigned data owner exists in this research package.",
+      "assumptions": [
+        "A-B5-RUNTIME-001"
+      ]
+    },
+    "MET-IN-01": {
+      "status": "unknown",
+      "value": null,
+      "unit": "index",
+      "source_files": [
+        "研究模块/B5_实施监测/B5_六类指标与数据责任_v0.1.csv"
+      ],
+      "formula": "see B5 metric contract; keep numerator/denominator and observation window explicit",
+      "confidence": "unknown",
+      "source_ids": [
+        "AGENT-TASKBOOK"
+      ],
+      "owner_role": "unassigned_pending_pilot",
+      "recompute_trigger": "real pilot baseline and named data owner",
+      "reason": "No runtime instance, baseline, target, or assigned data owner exists in this research package.",
+      "assumptions": [
+        "A-B5-RUNTIME-001"
+      ]
+    },
+    "MET-IN-02": {
+      "status": "unknown",
+      "value": null,
+      "unit": "index",
+      "source_files": [
+        "研究模块/B5_实施监测/B5_六类指标与数据责任_v0.1.csv"
+      ],
+      "formula": "see B5 metric contract; keep numerator/denominator and observation window explicit",
+      "confidence": "unknown",
+      "source_ids": [
+        "AGENT-TASKBOOK"
+      ],
+      "owner_role": "unassigned_pending_pilot",
+      "recompute_trigger": "real pilot baseline and named data owner",
+      "reason": "No runtime instance, baseline, target, or assigned data owner exists in this research package.",
+      "assumptions": [
+        "A-B5-RUNTIME-001"
+      ]
+    },
+    "MET-KN-01": {
+      "status": "unknown",
+      "value": null,
+      "unit": "index",
+      "source_files": [
+        "研究模块/B5_实施监测/B5_六类指标与数据责任_v0.1.csv"
+      ],
+      "formula": "see B5 metric contract; keep numerator/denominator and observation window explicit",
+      "confidence": "unknown",
+      "source_ids": [
+        "AGENT-TASKBOOK"
+      ],
+      "owner_role": "unassigned_pending_pilot",
+      "recompute_trigger": "real pilot baseline and named data owner",
+      "reason": "No runtime instance, baseline, target, or assigned data owner exists in this research package.",
+      "assumptions": [
+        "A-B5-RUNTIME-001"
+      ]
+    },
+    "MET-KN-02": {
+      "status": "unknown",
+      "value": null,
+      "unit": "index",
+      "source_files": [
+        "研究模块/B5_实施监测/B5_六类指标与数据责任_v0.1.csv"
+      ],
+      "formula": "see B5 metric contract; keep numerator/denominator and observation window explicit",
+      "confidence": "unknown",
+      "source_ids": [
+        "AGENT-TASKBOOK"
+      ],
+      "owner_role": "unassigned_pending_pilot",
+      "recompute_trigger": "real pilot baseline and named data owner",
+      "reason": "No runtime instance, baseline, target, or assigned data owner exists in this research package.",
+      "assumptions": [
+        "A-B5-RUNTIME-001"
+      ]
+    },
+    "MET-SP-01": {
+      "status": "unknown",
+      "value": null,
+      "unit": "index",
+      "source_files": [
+        "研究模块/B5_实施监测/B5_六类指标与数据责任_v0.1.csv"
+      ],
+      "formula": "see B5 metric contract; keep numerator/denominator and observation window explicit",
+      "confidence": "unknown",
+      "source_ids": [
+        "AGENT-TASKBOOK"
+      ],
+      "owner_role": "unassigned_pending_pilot",
+      "recompute_trigger": "real pilot baseline and named data owner",
+      "reason": "No runtime instance, baseline, target, or assigned data owner exists in this research package.",
+      "assumptions": [
+        "A-B5-RUNTIME-001"
+      ]
+    },
+    "MET-SP-02": {
+      "status": "unknown",
+      "value": null,
+      "unit": "index",
+      "source_files": [
+        "研究模块/B5_实施监测/B5_六类指标与数据责任_v0.1.csv"
+      ],
+      "formula": "see B5 metric contract; keep numerator/denominator and observation window explicit",
+      "confidence": "unknown",
+      "source_ids": [
+        "AGENT-TASKBOOK"
+      ],
+      "owner_role": "unassigned_pending_pilot",
+      "recompute_trigger": "real pilot baseline and named data owner",
+      "reason": "No runtime instance, baseline, target, or assigned data owner exists in this research package.",
+      "assumptions": [
+        "A-B5-RUNTIME-001"
+      ]
+    },
+    "MET-GV-01": {
+      "status": "unknown",
+      "value": null,
+      "unit": "index",
+      "source_files": [
+        "研究模块/B5_实施监测/B5_六类指标与数据责任_v0.1.csv"
+      ],
+      "formula": "see B5 metric contract; keep numerator/denominator and observation window explicit",
+      "confidence": "unknown",
+      "source_ids": [
+        "AGENT-TASKBOOK"
+      ],
+      "owner_role": "unassigned_pending_pilot",
+      "recompute_trigger": "real pilot baseline and named data owner",
+      "reason": "No runtime instance, baseline, target, or assigned data owner exists in this research package.",
+      "assumptions": [
+        "A-B5-RUNTIME-001"
+      ]
+    },
+    "MET-GV-02": {
+      "status": "unknown",
+      "value": null,
+      "unit": "index",
+      "source_files": [
+        "研究模块/B5_实施监测/B5_六类指标与数据责任_v0.1.csv"
+      ],
+      "formula": "see B5 metric contract; keep numerator/denominator and observation window explicit",
+      "confidence": "unknown",
+      "source_ids": [
+        "AGENT-TASKBOOK"
+      ],
+      "owner_role": "unassigned_pending_pilot",
+      "recompute_trigger": "real pilot baseline and named data owner",
+      "reason": "No runtime instance, baseline, target, or assigned data owner exists in this research package.",
+      "assumptions": [
+        "A-B5-RUNTIME-001"
+      ]
+    },
+    "MET-RISK-01": {
+      "status": "unknown",
+      "value": null,
+      "unit": "index",
+      "source_files": [
+        "研究模块/B5_实施监测/B5_六类指标与数据责任_v0.1.csv"
+      ],
+      "formula": "see B5 metric contract; keep numerator/denominator and observation window explicit",
+      "confidence": "unknown",
+      "source_ids": [
+        "AGENT-TASKBOOK"
+      ],
+      "owner_role": "unassigned_pending_pilot",
+      "recompute_trigger": "real pilot baseline and named data owner",
+      "reason": "No runtime instance, baseline, target, or assigned data owner exists in this research package.",
+      "assumptions": [
+        "A-B5-RUNTIME-001"
+      ]
+    },
+    "MET-RISK-02": {
+      "status": "unknown",
+      "value": null,
+      "unit": "index",
+      "source_files": [
+        "研究模块/B5_实施监测/B5_六类指标与数据责任_v0.1.csv"
+      ],
+      "formula": "see B5 metric contract; keep numerator/denominator and observation window explicit",
+      "confidence": "unknown",
+      "source_ids": [
+        "AGENT-TASKBOOK"
+      ],
+      "owner_role": "unassigned_pending_pilot",
+      "recompute_trigger": "real pilot baseline and named data owner",
+      "reason": "No runtime instance, baseline, target, or assigned data owner exists in this research package.",
+      "assumptions": [
+        "A-B5-RUNTIME-001"
+      ]
+    },
+    "MET-OPS-01": {
+      "status": "unknown",
+      "value": null,
+      "unit": "index",
+      "source_files": [
+        "研究模块/B5_实施监测/B5_六类指标与数据责任_v0.1.csv"
+      ],
+      "formula": "see B5 metric contract; keep numerator/denominator and observation window explicit",
+      "confidence": "unknown",
+      "source_ids": [
+        "AGENT-TASKBOOK"
+      ],
+      "owner_role": "unassigned_pending_pilot",
+      "recompute_trigger": "real pilot baseline and named data owner",
+      "reason": "No runtime instance, baseline, target, or assigned data owner exists in this research package.",
+      "assumptions": [
+        "A-B5-RUNTIME-001"
+      ]
+    },
+    "MET-OPS-02": {
+      "status": "unknown",
+      "value": null,
+      "unit": "index",
+      "source_files": [
+        "研究模块/B5_实施监测/B5_六类指标与数据责任_v0.1.csv"
+      ],
+      "formula": "see B5 metric contract; keep numerator/denominator and observation window explicit",
+      "confidence": "unknown",
+      "source_ids": [
+        "AGENT-TASKBOOK"
+      ],
+      "owner_role": "unassigned_pending_pilot",
+      "recompute_trigger": "real pilot baseline and named data owner",
+      "reason": "No runtime instance, baseline, target, or assigned data owner exists in this research package.",
+      "assumptions": [
+        "A-B5-RUNTIME-001"
+      ]
+    },
+    "MET-OPS-03": {
+      "status": "unknown",
+      "value": null,
+      "unit": "index",
+      "source_files": [
+        "研究模块/B5_实施监测/B5_六类指标与数据责任_v0.1.csv"
+      ],
+      "formula": "see B5 metric contract; keep numerator/denominator and observation window explicit",
+      "confidence": "unknown",
+      "source_ids": [
+        "AGENT-TASKBOOK"
+      ],
+      "owner_role": "unassigned_pending_pilot",
+      "recompute_trigger": "real pilot baseline and named data owner",
+      "reason": "No runtime instance, baseline, target, or assigned data owner exists in this research package.",
+      "assumptions": [
+        "A-B5-RUNTIME-001"
+      ]
+    }
+  },
+  "generated_at": "2026-08-16",
+  "metric_contract_note": "Known values are either reproducible from the submitted geometry or count research artifacts. Provisional geometry values are explicitly qualified; operational and professional values remain unknown/null until real evidence exists."
+}
