@@ -6,49 +6,43 @@
       "title_zh": "构建世界级AI创新生态体系",
       "mandatory": true,
       "report_sections": [
-        "三层范围工作框架",
         "统筹研究范围产业与未来城市研究",
-        "总体设计范围城市更新与控规深度城市设计",
-        "重点区域详细设计"
+        "AI 创新生态、人才画像与 AI+ 场景",
+        "更新项目清单、实施政策与分期计划"
       ],
       "geojson_layers": [
-        "geometry/site_boundary.geojson",
         "geometry/key_areas.geojson",
         "geometry/land_use.geojson",
-        "geometry/roads.geojson",
-        "geometry/green_space.geojson",
         "geometry/public_space.geojson",
         "geometry/phasing.geojson"
       ],
       "metrics": [
-        "site_area_sqm",
-        "green_ratio",
-        "public_space_ratio",
-        "key_area_count"
+        "ai_scenario_card_count",
+        "activity_ledger_count",
+        "monitoring_parent_metric_count"
       ],
       "drawings": [
-        "drawings/a3-booklet.pdf",
-        "drawings/a0-boards.pdf"
+        "assets/figures/site-overview.png",
+        "assets/figures/key-areas.png"
       ],
       "visual_sections": [
-        "总览地图",
         "任务覆盖",
-        "核心指标"
+        "重点区域",
+        "AI场景"
       ],
       "source_ids": [
-        "SITE-PACKAGE",
-        "SOURCE-REGISTRY",
-        "PROCESSED-FACT-PACK",
-        "OFFICIAL-ANNOUNCEMENT",
         "AGENT-TASKBOOK",
-        "BOUNDARY-SOURCE",
-        "KEY-AREA-SOURCE"
+        "D2SRC-B2-001",
+        "D2SRC-B2-007",
+        "D2SRC-B2-016"
       ],
       "assumption_ids": [
-        "A-CONTROLS-001"
+        "A-ACTOR-001",
+        "A-B5-RUNTIME-001"
       ],
       "self_check_ids": [
         "BOUNDARY_TRUST",
+        "DETERMINISTIC_VALIDATION",
         "KEY_AREAS_TRUST",
         "LAND_USE_TOPOLOGY",
         "VISUAL_STATIC"
@@ -69,61 +63,76 @@
         "G-Release"
       ],
       "completeness_limited_by": [
+        "named operators/real runtime where applicable",
+        "official boundary/anchor",
         "official geometry",
         "professional sign-off",
-        "named operators/real runtime where applicable"
+        "runtime baseline"
       ],
       "recalculation_trigger": "corresponding source, geometry, metric, rights or professional evidence changes",
-      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment."
+      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment.",
+      "agent_refs": [
+        "agent.2",
+        "agent.6"
+      ],
+      "scenario_refs": [
+        "SCN-B3-01",
+        "SCN-B3-12"
+      ],
+      "output_refs": [
+        "assets/figures/key-areas.png",
+        "assets/figures/site-overview.png",
+        "report/narrative.md"
+      ],
+      "point_refs": [
+        "P-ZZY-01",
+        "P-ORI-01",
+        "P-DZS-02"
+      ],
+      "evidence_summary_zh": "以八段生态接力、三区两翼职责和19项活动证明机制，不把案例统计外推为海淀基线。"
     },
     {
       "requirement_id": "1.3.2",
       "title_zh": "建设适配AI新质生产力的新型城市形态",
       "mandatory": true,
       "report_sections": [
-        "三层范围工作框架",
-        "统筹研究范围产业与未来城市研究",
         "总体设计范围城市更新与控规深度城市设计",
-        "重点区域详细设计"
+        "用地、建筑规模与拆改留方案",
+        "交通、轨道、市政与公共服务设施"
       ],
       "geojson_layers": [
-        "geometry/site_boundary.geojson",
-        "geometry/key_areas.geojson",
         "geometry/land_use.geojson",
+        "geometry/buildings.geojson",
         "geometry/roads.geojson",
-        "geometry/green_space.geojson",
-        "geometry/public_space.geojson",
-        "geometry/phasing.geojson"
+        "geometry/constraints.geojson"
       ],
       "metrics": [
-        "site_area_sqm",
-        "green_ratio",
-        "public_space_ratio",
-        "key_area_count"
+        "building_footprint_area_sqm",
+        "floor_area_ratio",
+        "runtime_instance_count"
       ],
       "drawings": [
-        "drawings/a3-booklet.pdf",
-        "drawings/a0-boards.pdf"
+        "assets/figures/land-use-structure.png",
+        "assets/figures/mobility-bluegreen.png"
       ],
       "visual_sections": [
-        "总览地图",
-        "任务覆盖",
-        "核心指标"
+        "用地分区",
+        "交通慢行",
+        "更新项目"
       ],
       "source_ids": [
-        "SITE-PACKAGE",
-        "SOURCE-REGISTRY",
-        "PROCESSED-FACT-PACK",
-        "OFFICIAL-ANNOUNCEMENT",
-        "AGENT-TASKBOOK",
-        "BOUNDARY-SOURCE",
-        "KEY-AREA-SOURCE"
+        "D2SRC-SHARED-003",
+        "D2SRC-SHARED-004",
+        "D2SRC-SHARED-008",
+        "MISSING-DATA-CHECKLIST"
       ],
       "assumption_ids": [
-        "A-CONTROLS-001"
+        "A-CONTROLS-001",
+        "A-DATA-PRIVACY-001"
       ],
       "self_check_ids": [
         "BOUNDARY_TRUST",
+        "DETERMINISTIC_VALIDATION",
         "KEY_AREAS_TRUST",
         "LAND_USE_TOPOLOGY",
         "VISUAL_STATIC"
@@ -143,61 +152,76 @@
         "G-Release"
       ],
       "completeness_limited_by": [
+        "named operators/real runtime where applicable",
+        "official boundary/anchor",
         "official geometry",
         "professional sign-off",
-        "named operators/real runtime where applicable"
+        "runtime baseline"
       ],
       "recalculation_trigger": "corresponding source, geometry, metric, rights or professional evidence changes",
-      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment."
+      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment.",
+      "agent_refs": [
+        "agent.3",
+        "agent.4"
+      ],
+      "scenario_refs": [
+        "SCN-B3-03",
+        "SCN-B3-09",
+        "SCN-B3-10"
+      ],
+      "output_refs": [
+        "assets/figures/land-use-structure.png",
+        "assets/figures/mobility-bluegreen.png",
+        "report/narrative.md"
+      ],
+      "point_refs": [
+        "P-ZZY-02",
+        "P-DZS-01"
+      ],
+      "evidence_summary_zh": "用地、建筑、交通和市政采用状态化图层；FAR、容量、工程线位保持unknown。"
     },
     {
       "requirement_id": "1.3.3",
       "title_zh": "打造全球AI创新人才向往的高品质城区",
       "mandatory": true,
       "report_sections": [
-        "三层范围工作框架",
         "统筹研究范围产业与未来城市研究",
-        "总体设计范围城市更新与控规深度城市设计",
-        "重点区域详细设计"
+        "蓝绿空间、公共空间与城市风貌",
+        "AI 创新生态、人才画像与 AI+ 场景"
       ],
       "geojson_layers": [
-        "geometry/site_boundary.geojson",
-        "geometry/key_areas.geojson",
-        "geometry/land_use.geojson",
-        "geometry/roads.geojson",
         "geometry/green_space.geojson",
         "geometry/public_space.geojson",
-        "geometry/phasing.geojson"
+        "geometry/roads.geojson"
       ],
       "metrics": [
-        "site_area_sqm",
         "green_ratio",
         "public_space_ratio",
-        "key_area_count"
+        "MET-SP-01",
+        "MET-GV-01"
       ],
       "drawings": [
-        "drawings/a3-booklet.pdf",
-        "drawings/a0-boards.pdf"
+        "assets/figures/mobility-bluegreen.png",
+        "assets/figures/site-overview.png"
       ],
       "visual_sections": [
-        "总览地图",
-        "任务覆盖",
-        "核心指标"
+        "蓝绿公共空间",
+        "分众成果",
+        "AI场景"
       ],
       "source_ids": [
-        "SITE-PACKAGE",
-        "SOURCE-REGISTRY",
-        "PROCESSED-FACT-PACK",
-        "OFFICIAL-ANNOUNCEMENT",
-        "AGENT-TASKBOOK",
-        "BOUNDARY-SOURCE",
-        "KEY-AREA-SOURCE"
+        "D2SRC-SHARED-011",
+        "D2SRC-B1-001",
+        "D2SRC-B1-010",
+        "AGENT-TASKBOOK"
       ],
       "assumption_ids": [
-        "A-CONTROLS-001"
+        "A-HERITAGE-001",
+        "A-DATA-PRIVACY-001"
       ],
       "self_check_ids": [
         "BOUNDARY_TRUST",
+        "DETERMINISTIC_VALIDATION",
         "KEY_AREAS_TRUST",
         "LAND_USE_TOPOLOGY",
         "VISUAL_STATIC"
@@ -217,61 +241,66 @@
         "G-Release"
       ],
       "completeness_limited_by": [
+        "named operators/real runtime where applicable",
+        "official boundary/anchor",
         "official geometry",
         "professional sign-off",
-        "named operators/real runtime where applicable"
+        "runtime baseline"
       ],
       "recalculation_trigger": "corresponding source, geometry, metric, rights or professional evidence changes",
-      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment."
+      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment.",
+      "agent_refs": [
+        "agent.3",
+        "agent.5"
+      ],
+      "scenario_refs": [
+        "SCN-B3-05",
+        "SCN-B3-07",
+        "SCN-B3-08"
+      ],
+      "output_refs": [
+        "assets/figures/mobility-bluegreen.png",
+        "assets/figures/site-overview.png",
+        "report/narrative.md"
+      ],
+      "point_refs": [
+        "P-ORI-01",
+        "P-DZS-01"
+      ],
+      "evidence_summary_zh": "以公共底盘、非数字通道和文化导览支撑高品质体验，避免把用户画像写成本地统计。"
     },
     {
       "requirement_id": "1.4.1",
       "title_zh": "统筹研究范围",
       "mandatory": true,
       "report_sections": [
-        "三层范围工作框架",
-        "统筹研究范围产业与未来城市研究",
-        "总体设计范围城市更新与控规深度城市设计",
-        "重点区域详细设计"
+        "设计依据与资料清单",
+        "三层范围工作框架"
       ],
       "geojson_layers": [
-        "geometry/site_boundary.geojson",
-        "geometry/key_areas.geojson",
-        "geometry/land_use.geojson",
-        "geometry/roads.geojson",
-        "geometry/green_space.geojson",
-        "geometry/public_space.geojson",
-        "geometry/phasing.geojson"
+        "geometry/site_boundary.geojson"
       ],
       "metrics": [
-        "site_area_sqm",
-        "green_ratio",
-        "public_space_ratio",
-        "key_area_count"
+        "site_area_sqm"
       ],
       "drawings": [
-        "drawings/a3-booklet.pdf",
-        "drawings/a0-boards.pdf"
+        "assets/figures/site-overview.png"
       ],
       "visual_sections": [
-        "总览地图",
-        "任务覆盖",
-        "核心指标"
+        "三层范围",
+        "总览地图"
       ],
       "source_ids": [
-        "SITE-PACKAGE",
-        "SOURCE-REGISTRY",
-        "PROCESSED-FACT-PACK",
         "OFFICIAL-ANNOUNCEMENT",
-        "AGENT-TASKBOOK",
-        "BOUNDARY-SOURCE",
-        "KEY-AREA-SOURCE"
+        "SITE-PACKAGE",
+        "BOUNDARY-SOURCE"
       ],
       "assumption_ids": [
-        "A-CONTROLS-001"
+        "A-OFFICIAL-GEOMETRY-001"
       ],
       "self_check_ids": [
         "BOUNDARY_TRUST",
+        "DETERMINISTIC_VALIDATION",
         "KEY_AREAS_TRUST",
         "LAND_USE_TOPOLOGY",
         "VISUAL_STATIC"
@@ -294,61 +323,67 @@
         "G-Release"
       ],
       "completeness_limited_by": [
+        "named operators/real runtime where applicable",
+        "official boundary/anchor",
         "official geometry",
         "professional sign-off",
-        "named operators/real runtime where applicable"
+        "runtime baseline"
       ],
       "recalculation_trigger": "corresponding source, geometry, metric, rights or professional evidence changes",
-      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment."
+      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment.",
+      "agent_refs": [
+        "orchestrator"
+      ],
+      "scenario_refs": [],
+      "output_refs": [
+        "assets/figures/site-overview.png",
+        "report/narrative.md"
+      ],
+      "point_refs": [],
+      "evidence_summary_zh": "三层任务面积来自公告/任务包；提交 polygon 为provisional，面积只作工作值。"
     },
     {
       "requirement_id": "1.4.2",
       "title_zh": "总体设计范围",
       "mandatory": true,
       "report_sections": [
-        "三层范围工作框架",
-        "统筹研究范围产业与未来城市研究",
         "总体设计范围城市更新与控规深度城市设计",
-        "重点区域详细设计"
+        "用地、建筑规模与拆改留方案",
+        "交通、轨道、市政与公共服务设施"
       ],
       "geojson_layers": [
-        "geometry/site_boundary.geojson",
-        "geometry/key_areas.geojson",
         "geometry/land_use.geojson",
+        "geometry/buildings.geojson",
         "geometry/roads.geojson",
         "geometry/green_space.geojson",
-        "geometry/public_space.geojson",
-        "geometry/phasing.geojson"
+        "geometry/public_space.geojson"
       ],
       "metrics": [
-        "site_area_sqm",
+        "building_footprint_area_sqm",
         "green_ratio",
         "public_space_ratio",
-        "key_area_count"
+        "floor_area_ratio"
       ],
       "drawings": [
-        "drawings/a3-booklet.pdf",
-        "drawings/a0-boards.pdf"
+        "assets/figures/land-use-structure.png",
+        "assets/figures/mobility-bluegreen.png"
       ],
       "visual_sections": [
-        "总览地图",
-        "任务覆盖",
-        "核心指标"
+        "用地分区",
+        "交通慢行",
+        "蓝绿公共空间"
       ],
       "source_ids": [
-        "SITE-PACKAGE",
-        "SOURCE-REGISTRY",
-        "PROCESSED-FACT-PACK",
-        "OFFICIAL-ANNOUNCEMENT",
-        "AGENT-TASKBOOK",
-        "BOUNDARY-SOURCE",
-        "KEY-AREA-SOURCE"
+        "D2SRC-SHARED-003",
+        "D2SRC-SHARED-004",
+        "D2SRC-SHARED-011"
       ],
       "assumption_ids": [
         "A-CONTROLS-001"
       ],
       "self_check_ids": [
         "BOUNDARY_TRUST",
+        "DETERMINISTIC_VALIDATION",
         "KEY_AREAS_TRUST",
         "LAND_USE_TOPOLOGY",
         "VISUAL_STATIC"
@@ -370,61 +405,72 @@
         "G-Release"
       ],
       "completeness_limited_by": [
+        "named operators/real runtime where applicable",
+        "official boundary/anchor",
         "official geometry",
         "professional sign-off",
-        "named operators/real runtime where applicable"
+        "runtime baseline"
       ],
       "recalculation_trigger": "corresponding source, geometry, metric, rights or professional evidence changes",
-      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment."
+      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment.",
+      "agent_refs": [
+        "orchestrator",
+        "agent.4"
+      ],
+      "scenario_refs": [
+        "SCN-B3-05",
+        "SCN-B3-10"
+      ],
+      "output_refs": [
+        "assets/figures/land-use-structure.png",
+        "assets/figures/mobility-bluegreen.png",
+        "report/narrative.md"
+      ],
+      "point_refs": [
+        "P-ZZY-01",
+        "P-DZS-01"
+      ],
+      "evidence_summary_zh": "总体层用地和公共空间图层可复核；控规强度、红线、容量待正式资料。"
     },
     {
       "requirement_id": "1.4.3",
       "title_zh": "重点区域范围",
       "mandatory": true,
       "report_sections": [
-        "三层范围工作框架",
-        "统筹研究范围产业与未来城市研究",
-        "总体设计范围城市更新与控规深度城市设计",
-        "重点区域详细设计"
+        "重点区域详细设计",
+        "更新项目清单、实施政策与分期计划"
       ],
       "geojson_layers": [
-        "geometry/site_boundary.geojson",
         "geometry/key_areas.geojson",
-        "geometry/land_use.geojson",
-        "geometry/roads.geojson",
-        "geometry/green_space.geojson",
         "geometry/public_space.geojson",
         "geometry/phasing.geojson"
       ],
       "metrics": [
-        "site_area_sqm",
-        "green_ratio",
-        "public_space_ratio",
-        "key_area_count"
+        "key_area_count",
+        "selected_detail_point_count",
+        "runtime_instance_count"
       ],
       "drawings": [
-        "drawings/a3-booklet.pdf",
-        "drawings/a0-boards.pdf"
+        "assets/figures/key-areas.png",
+        "assets/figures/metrics-evidence.png"
       ],
       "visual_sections": [
-        "总览地图",
-        "任务覆盖",
+        "重点区域",
+        "更新项目",
         "核心指标"
       ],
       "source_ids": [
-        "SITE-PACKAGE",
-        "SOURCE-REGISTRY",
-        "PROCESSED-FACT-PACK",
-        "OFFICIAL-ANNOUNCEMENT",
+        "KEY-AREA-SOURCE",
         "AGENT-TASKBOOK",
-        "BOUNDARY-SOURCE",
-        "KEY-AREA-SOURCE"
+        "D2SRC-B2-016"
       ],
       "assumption_ids": [
-        "A-CONTROLS-001"
+        "A-KEY-AREA-ANCHOR-001",
+        "A-ACTOR-001"
       ],
       "self_check_ids": [
         "BOUNDARY_TRUST",
+        "DETERMINISTIC_VALIDATION",
         "KEY_AREAS_TRUST",
         "LAND_USE_TOPOLOGY",
         "VISUAL_STATIC"
@@ -445,61 +491,79 @@
         "G-Release"
       ],
       "completeness_limited_by": [
+        "named operators/real runtime where applicable",
+        "official boundary/anchor",
         "official geometry",
         "professional sign-off",
-        "named operators/real runtime where applicable"
+        "runtime baseline"
       ],
       "recalculation_trigger": "corresponding source, geometry, metric, rights or professional evidence changes",
-      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment."
+      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment.",
+      "agent_refs": [
+        "agent.3",
+        "agent.4",
+        "agent.6"
+      ],
+      "scenario_refs": [
+        "SCN-B3-05",
+        "SCN-B3-09",
+        "SCN-B3-10"
+      ],
+      "output_refs": [
+        "assets/figures/key-areas.png",
+        "assets/figures/metrics-evidence.png",
+        "report/narrative.md"
+      ],
+      "point_refs": [
+        "P-ZZY-01",
+        "P-ZZY-02",
+        "P-ORI-01",
+        "P-ORI-02",
+        "P-DZS-01",
+        "P-DZS-02"
+      ],
+      "evidence_summary_zh": "三重点区各两处候选原型，保持text-only/anchor-pending，不升级为正式坐标。"
     },
     {
       "requirement_id": "1.5.1.1",
       "title_zh": "统筹研究范围：AI创新生态体系",
       "mandatory": true,
       "report_sections": [
-        "三层范围工作框架",
         "统筹研究范围产业与未来城市研究",
-        "总体设计范围城市更新与控规深度城市设计",
-        "重点区域详细设计"
+        "更新项目清单、实施政策与分期计划"
       ],
       "geojson_layers": [
-        "geometry/site_boundary.geojson",
         "geometry/key_areas.geojson",
-        "geometry/land_use.geojson",
-        "geometry/roads.geojson",
-        "geometry/green_space.geojson",
-        "geometry/public_space.geojson",
-        "geometry/phasing.geojson"
+        "geometry/phasing.geojson",
+        "geometry/public_space.geojson"
       ],
       "metrics": [
-        "site_area_sqm",
-        "green_ratio",
-        "public_space_ratio",
-        "key_area_count"
+        "activity_ledger_count",
+        "monitoring_parent_metric_count",
+        "runtime_instance_count"
       ],
       "drawings": [
-        "drawings/a3-booklet.pdf",
-        "drawings/a0-boards.pdf"
+        "assets/figures/site-overview.png",
+        "assets/figures/metrics-evidence.png"
       ],
       "visual_sections": [
-        "总览地图",
         "任务覆盖",
-        "核心指标"
+        "核心指标",
+        "运营闭环"
       ],
       "source_ids": [
-        "SITE-PACKAGE",
-        "SOURCE-REGISTRY",
-        "PROCESSED-FACT-PACK",
-        "OFFICIAL-ANNOUNCEMENT",
-        "AGENT-TASKBOOK",
-        "BOUNDARY-SOURCE",
-        "KEY-AREA-SOURCE"
+        "D2SRC-B2-001",
+        "D2SRC-B2-012",
+        "D2SRC-B2-020",
+        "D2SRC-B2-024"
       ],
       "assumption_ids": [
-        "A-CONTROLS-001"
+        "A-ACTOR-001",
+        "A-B5-RUNTIME-001"
       ],
       "self_check_ids": [
         "BOUNDARY_TRUST",
+        "DETERMINISTIC_VALIDATION",
         "KEY_AREAS_TRUST",
         "LAND_USE_TOPOLOGY",
         "VISUAL_STATIC"
@@ -520,61 +584,74 @@
         "G-Release"
       ],
       "completeness_limited_by": [
+        "named operators/real runtime where applicable",
+        "official boundary/anchor",
         "official geometry",
         "professional sign-off",
-        "named operators/real runtime where applicable"
+        "runtime baseline"
       ],
       "recalculation_trigger": "corresponding source, geometry, metric, rights or professional evidence changes",
-      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment."
+      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment.",
+      "agent_refs": [
+        "agent.2",
+        "agent.6"
+      ],
+      "scenario_refs": [
+        "SCN-B3-01",
+        "SCN-B3-13"
+      ],
+      "output_refs": [
+        "assets/figures/metrics-evidence.png",
+        "assets/figures/site-overview.png",
+        "report/narrative.md"
+      ],
+      "point_refs": [
+        "P-ZZY-02",
+        "P-ORI-02"
+      ],
+      "evidence_summary_zh": "八段生态接力与活动账本可追踪；主体、机会和运行事件未创建。"
     },
     {
       "requirement_id": "1.5.1.2",
       "title_zh": "统筹研究范围：适配人工智能的未来城市形态",
       "mandatory": true,
       "report_sections": [
-        "三层范围工作框架",
         "统筹研究范围产业与未来城市研究",
-        "总体设计范围城市更新与控规深度城市设计",
-        "重点区域详细设计"
+        "AI 创新生态、人才画像与 AI+ 场景",
+        "指标体系、面积复算与合规矩阵"
       ],
       "geojson_layers": [
-        "geometry/site_boundary.geojson",
-        "geometry/key_areas.geojson",
         "geometry/land_use.geojson",
         "geometry/roads.geojson",
-        "geometry/green_space.geojson",
-        "geometry/public_space.geojson",
-        "geometry/phasing.geojson"
+        "geometry/public_space.geojson"
       ],
       "metrics": [
-        "site_area_sqm",
-        "green_ratio",
-        "public_space_ratio",
-        "key_area_count"
+        "ai_scenario_card_count",
+        "runtime_instance_count",
+        "MET-RISK-01"
       ],
       "drawings": [
-        "drawings/a3-booklet.pdf",
-        "drawings/a0-boards.pdf"
+        "assets/figures/land-use-structure.png",
+        "assets/figures/mobility-bluegreen.png",
+        "assets/figures/metrics-evidence.png"
       ],
       "visual_sections": [
-        "总览地图",
-        "任务覆盖",
-        "核心指标"
+        "AI场景",
+        "交通慢行",
+        "自检状态"
       ],
       "source_ids": [
-        "SITE-PACKAGE",
-        "SOURCE-REGISTRY",
-        "PROCESSED-FACT-PACK",
-        "OFFICIAL-ANNOUNCEMENT",
         "AGENT-TASKBOOK",
-        "BOUNDARY-SOURCE",
-        "KEY-AREA-SOURCE"
+        "D2SRC-SHARED-006",
+        "D2SRC-SHARED-014"
       ],
       "assumption_ids": [
-        "A-CONTROLS-001"
+        "A-DATA-PRIVACY-001",
+        "A-B5-RUNTIME-001"
       ],
       "self_check_ids": [
         "BOUNDARY_TRUST",
+        "DETERMINISTIC_VALIDATION",
         "KEY_AREAS_TRUST",
         "LAND_USE_TOPOLOGY",
         "VISUAL_STATIC"
@@ -595,61 +672,72 @@
         "G-Release"
       ],
       "completeness_limited_by": [
+        "named operators/real runtime where applicable",
+        "official boundary/anchor",
         "official geometry",
         "professional sign-off",
-        "named operators/real runtime where applicable"
+        "runtime baseline"
       ],
       "recalculation_trigger": "corresponding source, geometry, metric, rights or professional evidence changes",
-      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment."
+      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment.",
+      "agent_refs": [
+        "agent.3",
+        "agent.6"
+      ],
+      "scenario_refs": [
+        "SCN-B3-07",
+        "SCN-B3-09",
+        "SCN-B3-10"
+      ],
+      "output_refs": [
+        "assets/figures/land-use-structure.png",
+        "assets/figures/metrics-evidence.png",
+        "assets/figures/mobility-bluegreen.png",
+        "report/narrative.md"
+      ],
+      "point_refs": [
+        "P-ORI-01",
+        "P-DZS-01"
+      ],
+      "evidence_summary_zh": "未来形态以稳定公共底盘+可逆场景+治理版本表达，AI不可用时保留普通服务。"
     },
     {
       "requirement_id": "1.5.2.1",
       "title_zh": "总体设计范围：产业目标与功能布局",
       "mandatory": true,
       "report_sections": [
-        "三层范围工作框架",
-        "统筹研究范围产业与未来城市研究",
         "总体设计范围城市更新与控规深度城市设计",
-        "重点区域详细设计"
+        "AI 创新生态、人才画像与 AI+ 场景"
       ],
       "geojson_layers": [
-        "geometry/site_boundary.geojson",
-        "geometry/key_areas.geojson",
         "geometry/land_use.geojson",
-        "geometry/roads.geojson",
-        "geometry/green_space.geojson",
-        "geometry/public_space.geojson",
-        "geometry/phasing.geojson"
+        "geometry/key_areas.geojson"
       ],
       "metrics": [
-        "site_area_sqm",
-        "green_ratio",
-        "public_space_ratio",
-        "key_area_count"
+        "key_area_count",
+        "ai_scenario_card_count"
       ],
       "drawings": [
-        "drawings/a3-booklet.pdf",
-        "drawings/a0-boards.pdf"
+        "assets/figures/land-use-structure.png",
+        "assets/figures/key-areas.png"
       ],
       "visual_sections": [
-        "总览地图",
-        "任务覆盖",
-        "核心指标"
+        "用地分区",
+        "重点区域",
+        "任务覆盖"
       ],
       "source_ids": [
-        "SITE-PACKAGE",
-        "SOURCE-REGISTRY",
-        "PROCESSED-FACT-PACK",
-        "OFFICIAL-ANNOUNCEMENT",
-        "AGENT-TASKBOOK",
-        "BOUNDARY-SOURCE",
-        "KEY-AREA-SOURCE"
+        "D2SRC-B1-001",
+        "D2SRC-B2-007",
+        "AGENT-TASKBOOK"
       ],
       "assumption_ids": [
-        "A-CONTROLS-001"
+        "A-CONTROLS-001",
+        "A-ACTOR-001"
       ],
       "self_check_ids": [
         "BOUNDARY_TRUST",
+        "DETERMINISTIC_VALIDATION",
         "KEY_AREAS_TRUST",
         "LAND_USE_TOPOLOGY",
         "VISUAL_STATIC"
@@ -669,61 +757,74 @@
         "G-Release"
       ],
       "completeness_limited_by": [
+        "named operators/real runtime where applicable",
+        "official boundary/anchor",
         "official geometry",
         "professional sign-off",
-        "named operators/real runtime where applicable"
+        "runtime baseline"
       ],
       "recalculation_trigger": "corresponding source, geometry, metric, rights or professional evidence changes",
-      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment."
+      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment.",
+      "agent_refs": [
+        "agent.1",
+        "agent.2"
+      ],
+      "scenario_refs": [
+        "SCN-B3-03",
+        "SCN-B3-09"
+      ],
+      "output_refs": [
+        "assets/figures/key-areas.png",
+        "assets/figures/land-use-structure.png",
+        "report/narrative.md"
+      ],
+      "point_refs": [
+        "P-ZZY-01",
+        "P-ORI-01",
+        "P-DZS-02"
+      ],
+      "evidence_summary_zh": "产业目标以三核分工和八段接力表达，不编招商规模、机构名单或投资承诺。"
     },
     {
       "requirement_id": "1.5.2.2",
       "title_zh": "总体设计范围：城市更新总体框架",
       "mandatory": true,
       "report_sections": [
-        "三层范围工作框架",
-        "统筹研究范围产业与未来城市研究",
         "总体设计范围城市更新与控规深度城市设计",
-        "重点区域详细设计"
+        "更新项目清单、实施政策与分期计划"
       ],
       "geojson_layers": [
-        "geometry/site_boundary.geojson",
-        "geometry/key_areas.geojson",
         "geometry/land_use.geojson",
-        "geometry/roads.geojson",
         "geometry/green_space.geojson",
         "geometry/public_space.geojson",
         "geometry/phasing.geojson"
       ],
       "metrics": [
-        "site_area_sqm",
-        "green_ratio",
-        "public_space_ratio",
-        "key_area_count"
+        "selected_detail_point_count",
+        "activity_ledger_count",
+        "MET-PV-01"
       ],
       "drawings": [
-        "drawings/a3-booklet.pdf",
-        "drawings/a0-boards.pdf"
+        "assets/figures/key-areas.png",
+        "assets/figures/metrics-evidence.png"
       ],
       "visual_sections": [
-        "总览地图",
-        "任务覆盖",
+        "更新项目",
+        "重点区域",
         "核心指标"
       ],
       "source_ids": [
-        "SITE-PACKAGE",
-        "SOURCE-REGISTRY",
-        "PROCESSED-FACT-PACK",
-        "OFFICIAL-ANNOUNCEMENT",
-        "AGENT-TASKBOOK",
-        "BOUNDARY-SOURCE",
-        "KEY-AREA-SOURCE"
+        "D2SRC-SHARED-011",
+        "D2SRC-SHARED-018",
+        "AGENT-TASKBOOK"
       ],
       "assumption_ids": [
-        "A-CONTROLS-001"
+        "A-OFFICIAL-GEOMETRY-001",
+        "A-ACTOR-001"
       ],
       "self_check_ids": [
         "BOUNDARY_TRUST",
+        "DETERMINISTIC_VALIDATION",
         "KEY_AREAS_TRUST",
         "LAND_USE_TOPOLOGY",
         "VISUAL_STATIC"
@@ -744,61 +845,75 @@
         "G-Release"
       ],
       "completeness_limited_by": [
+        "named operators/real runtime where applicable",
+        "official boundary/anchor",
         "official geometry",
         "professional sign-off",
-        "named operators/real runtime where applicable"
+        "runtime baseline"
       ],
       "recalculation_trigger": "corresponding source, geometry, metric, rights or professional evidence changes",
-      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment."
+      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment.",
+      "agent_refs": [
+        "agent.3",
+        "agent.6"
+      ],
+      "scenario_refs": [
+        "SCN-B3-04",
+        "SCN-B3-08",
+        "SCN-B3-12"
+      ],
+      "output_refs": [
+        "assets/figures/key-areas.png",
+        "assets/figures/metrics-evidence.png",
+        "report/narrative.md"
+      ],
+      "point_refs": [
+        "P-ZZY-02",
+        "P-ORI-02",
+        "P-DZS-01"
+      ],
+      "evidence_summary_zh": "更新先公共、先可逆、后载体；建设量、拆改、投资和权属保持unknown。"
     },
     {
       "requirement_id": "1.5.2.3",
       "title_zh": "总体设计范围：交通轨道市政配套设施",
       "mandatory": true,
       "report_sections": [
-        "三层范围工作框架",
-        "统筹研究范围产业与未来城市研究",
-        "总体设计范围城市更新与控规深度城市设计",
-        "重点区域详细设计"
+        "交通、轨道、市政与公共服务设施",
+        "用地、建筑规模与拆改留方案"
       ],
       "geojson_layers": [
-        "geometry/site_boundary.geojson",
-        "geometry/key_areas.geojson",
-        "geometry/land_use.geojson",
         "geometry/roads.geojson",
-        "geometry/green_space.geojson",
-        "geometry/public_space.geojson",
-        "geometry/phasing.geojson"
+        "geometry/constraints.geojson",
+        "geometry/public_space.geojson"
       ],
       "metrics": [
-        "site_area_sqm",
-        "green_ratio",
-        "public_space_ratio",
-        "key_area_count"
+        "floor_area_ratio",
+        "MET-SP-01",
+        "MET-OPS-01",
+        "runtime_instance_count"
       ],
       "drawings": [
-        "drawings/a3-booklet.pdf",
-        "drawings/a0-boards.pdf"
+        "assets/figures/mobility-bluegreen.png",
+        "assets/figures/metrics-evidence.png"
       ],
       "visual_sections": [
-        "总览地图",
-        "任务覆盖",
+        "交通慢行",
+        "蓝绿公共空间",
         "核心指标"
       ],
       "source_ids": [
-        "SITE-PACKAGE",
-        "SOURCE-REGISTRY",
-        "PROCESSED-FACT-PACK",
-        "OFFICIAL-ANNOUNCEMENT",
-        "AGENT-TASKBOOK",
-        "BOUNDARY-SOURCE",
-        "KEY-AREA-SOURCE"
+        "D2SRC-SHARED-004",
+        "D2SRC-SHARED-008",
+        "MISSING-DATA-CHECKLIST"
       ],
       "assumption_ids": [
-        "A-CONTROLS-001"
+        "A-CONTROLS-001",
+        "A-B5-RUNTIME-001"
       ],
       "self_check_ids": [
         "BOUNDARY_TRUST",
+        "DETERMINISTIC_VALIDATION",
         "KEY_AREAS_TRUST",
         "LAND_USE_TOPOLOGY",
         "VISUAL_STATIC"
@@ -818,61 +933,72 @@
         "G-Release"
       ],
       "completeness_limited_by": [
+        "named operators/real runtime where applicable",
+        "official boundary/anchor",
         "official geometry",
         "professional sign-off",
-        "named operators/real runtime where applicable"
+        "runtime baseline"
       ],
       "recalculation_trigger": "corresponding source, geometry, metric, rights or professional evidence changes",
-      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment."
+      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment.",
+      "agent_refs": [
+        "agent.3",
+        "agent.6"
+      ],
+      "scenario_refs": [
+        "SCN-B3-10",
+        "SCN-B3-12"
+      ],
+      "output_refs": [
+        "assets/figures/metrics-evidence.png",
+        "assets/figures/mobility-bluegreen.png",
+        "report/narrative.md"
+      ],
+      "point_refs": [
+        "P-DZS-01",
+        "P-DZS-02"
+      ],
+      "evidence_summary_zh": "先四象限核查和无障碍走查，后专业复核；不推断站口、红线、桥隧、停车容量。"
     },
     {
       "requirement_id": "1.5.2.4",
       "title_zh": "总体设计范围：京张遗址公园活力带",
       "mandatory": true,
       "report_sections": [
-        "三层范围工作框架",
-        "统筹研究范围产业与未来城市研究",
-        "总体设计范围城市更新与控规深度城市设计",
-        "重点区域详细设计"
+        "蓝绿空间、公共空间与城市风貌",
+        "交通、轨道、市政与公共服务设施"
       ],
       "geojson_layers": [
-        "geometry/site_boundary.geojson",
-        "geometry/key_areas.geojson",
-        "geometry/land_use.geojson",
-        "geometry/roads.geojson",
         "geometry/green_space.geojson",
         "geometry/public_space.geojson",
-        "geometry/phasing.geojson"
+        "geometry/key_areas.geojson"
       ],
       "metrics": [
-        "site_area_sqm",
         "green_ratio",
         "public_space_ratio",
-        "key_area_count"
+        "selected_detail_point_count"
       ],
       "drawings": [
-        "drawings/a3-booklet.pdf",
-        "drawings/a0-boards.pdf"
+        "assets/figures/mobility-bluegreen.png",
+        "assets/figures/key-areas.png"
       ],
       "visual_sections": [
-        "总览地图",
-        "任务覆盖",
-        "核心指标"
+        "蓝绿公共空间",
+        "重点区域",
+        "文化路线"
       ],
       "source_ids": [
-        "SITE-PACKAGE",
-        "SOURCE-REGISTRY",
-        "PROCESSED-FACT-PACK",
-        "OFFICIAL-ANNOUNCEMENT",
-        "AGENT-TASKBOOK",
-        "BOUNDARY-SOURCE",
-        "KEY-AREA-SOURCE"
+        "D2SRC-B1-001",
+        "D2SRC-B1-010",
+        "D2SRC-SHARED-011"
       ],
       "assumption_ids": [
-        "A-CONTROLS-001"
+        "A-HERITAGE-001",
+        "A-KEY-AREA-ANCHOR-001"
       ],
       "self_check_ids": [
         "BOUNDARY_TRUST",
+        "DETERMINISTIC_VALIDATION",
         "KEY_AREAS_TRUST",
         "LAND_USE_TOPOLOGY",
         "VISUAL_STATIC"
@@ -892,61 +1018,73 @@
         "G-Release"
       ],
       "completeness_limited_by": [
+        "named operators/real runtime where applicable",
+        "official boundary/anchor",
         "official geometry",
         "professional sign-off",
-        "named operators/real runtime where applicable"
+        "runtime baseline"
       ],
       "recalculation_trigger": "corresponding source, geometry, metric, rights or professional evidence changes",
-      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment."
+      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment.",
+      "agent_refs": [
+        "agent.4",
+        "agent.5"
+      ],
+      "scenario_refs": [
+        "SCN-B3-05",
+        "SCN-B3-06",
+        "SCN-B3-08"
+      ],
+      "output_refs": [
+        "assets/figures/key-areas.png",
+        "assets/figures/mobility-bluegreen.png",
+        "report/narrative.md"
+      ],
+      "point_refs": [
+        "P-ZZY-01",
+        "P-ORI-01"
+      ],
+      "evidence_summary_zh": "遗址公园为公共主轴；开发者散步道、展示廊和贡献墙均为可撤组件候选。"
     },
     {
       "requirement_id": "1.5.2.5",
       "title_zh": "总体设计范围：城市风貌",
       "mandatory": true,
       "report_sections": [
-        "三层范围工作框架",
-        "统筹研究范围产业与未来城市研究",
-        "总体设计范围城市更新与控规深度城市设计",
+        "蓝绿空间、公共空间与城市风貌",
         "重点区域详细设计"
       ],
       "geojson_layers": [
-        "geometry/site_boundary.geojson",
-        "geometry/key_areas.geojson",
-        "geometry/land_use.geojson",
-        "geometry/roads.geojson",
+        "geometry/buildings.geojson",
         "geometry/green_space.geojson",
-        "geometry/public_space.geojson",
-        "geometry/phasing.geojson"
+        "geometry/public_space.geojson"
       ],
       "metrics": [
-        "site_area_sqm",
+        "building_footprint_area_sqm",
         "green_ratio",
-        "public_space_ratio",
-        "key_area_count"
+        "public_space_ratio"
       ],
       "drawings": [
-        "drawings/a3-booklet.pdf",
-        "drawings/a0-boards.pdf"
+        "assets/figures/land-use-structure.png",
+        "assets/figures/mobility-bluegreen.png"
       ],
       "visual_sections": [
-        "总览地图",
-        "任务覆盖",
-        "核心指标"
+        "建筑",
+        "蓝绿公共空间",
+        "文化路线"
       ],
       "source_ids": [
-        "SITE-PACKAGE",
-        "SOURCE-REGISTRY",
-        "PROCESSED-FACT-PACK",
-        "OFFICIAL-ANNOUNCEMENT",
-        "AGENT-TASKBOOK",
-        "BOUNDARY-SOURCE",
-        "KEY-AREA-SOURCE"
+        "D2SRC-B1-002",
+        "D2SRC-B1-010",
+        "D2SRC-B1-016"
       ],
       "assumption_ids": [
-        "A-CONTROLS-001"
+        "A-HERITAGE-001",
+        "A-RIGHTS-001"
       ],
       "self_check_ids": [
         "BOUNDARY_TRUST",
+        "DETERMINISTIC_VALIDATION",
         "KEY_AREAS_TRUST",
         "LAND_USE_TOPOLOGY",
         "VISUAL_STATIC"
@@ -966,61 +1104,73 @@
         "G-Release"
       ],
       "completeness_limited_by": [
+        "named operators/real runtime where applicable",
+        "official boundary/anchor",
         "official geometry",
         "professional sign-off",
-        "named operators/real runtime where applicable"
+        "runtime baseline"
       ],
       "recalculation_trigger": "corresponding source, geometry, metric, rights or professional evidence changes",
-      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment."
+      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment.",
+      "agent_refs": [
+        "agent.1",
+        "agent.5"
+      ],
+      "scenario_refs": [
+        "SCN-B3-08",
+        "SCN-B3-11"
+      ],
+      "output_refs": [
+        "assets/figures/land-use-structure.png",
+        "assets/figures/mobility-bluegreen.png",
+        "report/narrative.md"
+      ],
+      "point_refs": [
+        "P-ORI-01",
+        "P-DZS-02"
+      ],
+      "evidence_summary_zh": "风貌表达强调历史、当代解释和争议纠错；不使用无授权历史图像或最终VI。"
     },
     {
       "requirement_id": "1.5.3.required",
       "title_zh": "重点区域范围详细设计必选项",
       "mandatory": true,
       "report_sections": [
-        "三层范围工作框架",
-        "统筹研究范围产业与未来城市研究",
-        "总体设计范围城市更新与控规深度城市设计",
-        "重点区域详细设计"
+        "重点区域详细设计",
+        "指标体系、面积复算与合规矩阵"
       ],
       "geojson_layers": [
-        "geometry/site_boundary.geojson",
         "geometry/key_areas.geojson",
-        "geometry/land_use.geojson",
-        "geometry/roads.geojson",
-        "geometry/green_space.geojson",
         "geometry/public_space.geojson",
         "geometry/phasing.geojson"
       ],
       "metrics": [
-        "site_area_sqm",
-        "green_ratio",
-        "public_space_ratio",
-        "key_area_count"
+        "selected_detail_point_count",
+        "activity_ledger_count",
+        "runtime_instance_count"
       ],
       "drawings": [
-        "drawings/a3-booklet.pdf",
-        "drawings/a0-boards.pdf"
+        "assets/figures/key-areas.png",
+        "assets/figures/metrics-evidence.png"
       ],
       "visual_sections": [
-        "总览地图",
-        "任务覆盖",
+        "重点区域",
+        "更新项目",
         "核心指标"
       ],
       "source_ids": [
-        "SITE-PACKAGE",
-        "SOURCE-REGISTRY",
-        "PROCESSED-FACT-PACK",
-        "OFFICIAL-ANNOUNCEMENT",
         "AGENT-TASKBOOK",
-        "BOUNDARY-SOURCE",
-        "KEY-AREA-SOURCE"
+        "D2SRC-B2-016",
+        "D2SRC-B2-024"
       ],
       "assumption_ids": [
-        "A-CONTROLS-001"
+        "A-KEY-AREA-ANCHOR-001",
+        "A-ACTOR-001",
+        "A-B5-RUNTIME-001"
       ],
       "self_check_ids": [
         "BOUNDARY_TRUST",
+        "DETERMINISTIC_VALIDATION",
         "KEY_AREAS_TRUST",
         "LAND_USE_TOPOLOGY",
         "VISUAL_STATIC"
@@ -1042,61 +1192,83 @@
         "G-Release"
       ],
       "completeness_limited_by": [
+        "named operators/real runtime where applicable",
+        "official boundary/anchor",
         "official geometry",
         "professional sign-off",
-        "named operators/real runtime where applicable"
+        "runtime baseline"
       ],
       "recalculation_trigger": "corresponding source, geometry, metric, rights or professional evidence changes",
-      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment."
+      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment.",
+      "agent_refs": [
+        "agent.3",
+        "agent.4",
+        "agent.5",
+        "agent.6"
+      ],
+      "scenario_refs": [
+        "SCN-B3-03",
+        "SCN-B3-05",
+        "SCN-B3-09",
+        "SCN-B3-10"
+      ],
+      "output_refs": [
+        "assets/figures/key-areas.png",
+        "assets/figures/metrics-evidence.png",
+        "report/narrative.md"
+      ],
+      "point_refs": [
+        "P-ZZY-01",
+        "P-ZZY-02",
+        "P-ORI-01",
+        "P-ORI-02",
+        "P-DZS-01",
+        "P-DZS-02"
+      ],
+      "evidence_summary_zh": "六个点位按同一状态0—4和停复规则表达，正式落位和实施条件待核。"
     },
     {
       "requirement_id": "1.5.3.1",
       "title_zh": "众智园AI自主创新加速区",
       "mandatory": true,
       "report_sections": [
-        "三层范围工作框架",
-        "统筹研究范围产业与未来城市研究",
-        "总体设计范围城市更新与控规深度城市设计",
-        "重点区域详细设计"
+        "重点区域详细设计",
+        "AI 创新生态、人才画像与 AI+ 场景",
+        "更新项目清单、实施政策与分期计划"
       ],
       "geojson_layers": [
-        "geometry/site_boundary.geojson",
         "geometry/key_areas.geojson",
         "geometry/land_use.geojson",
-        "geometry/roads.geojson",
-        "geometry/green_space.geojson",
         "geometry/public_space.geojson",
         "geometry/phasing.geojson"
       ],
       "metrics": [
-        "site_area_sqm",
-        "green_ratio",
-        "public_space_ratio",
-        "key_area_count"
+        "selected_detail_point_count",
+        "ai_scenario_card_count",
+        "activity_ledger_count"
       ],
       "drawings": [
-        "drawings/a3-booklet.pdf",
-        "drawings/a0-boards.pdf"
+        "assets/figures/key-areas.png",
+        "assets/figures/land-use-structure.png"
       ],
       "visual_sections": [
-        "总览地图",
-        "任务覆盖",
-        "核心指标"
+        "重点区域",
+        "AI场景",
+        "更新项目"
       ],
       "source_ids": [
-        "SITE-PACKAGE",
-        "SOURCE-REGISTRY",
-        "PROCESSED-FACT-PACK",
-        "OFFICIAL-ANNOUNCEMENT",
-        "AGENT-TASKBOOK",
-        "BOUNDARY-SOURCE",
-        "KEY-AREA-SOURCE"
+        "KEY-AREA-SOURCE",
+        "D2SRC-B2-007",
+        "D2SRC-B2-016"
       ],
       "assumption_ids": [
-        "A-CONTROLS-001"
+        "A-KEY-AREA-ANCHOR-001",
+        "A-ACTOR-001",
+        "A-B5-RUNTIME-001"
       ],
       "self_check_ids": [
         "BOUNDARY_TRUST",
+        "DETERMINISTIC_VALIDATION",
         "KEY_AREAS_TRUST",
         "LAND_USE_TOPOLOGY",
         "VISUAL_STATIC"
@@ -1116,61 +1288,77 @@
         "G-Release"
       ],
       "completeness_limited_by": [
+        "named operators/real runtime where applicable",
+        "official boundary/anchor",
         "official geometry",
         "professional sign-off",
-        "named operators/real runtime where applicable"
+        "runtime baseline"
       ],
       "recalculation_trigger": "corresponding source, geometry, metric, rights or professional evidence changes",
-      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment."
+      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment.",
+      "agent_refs": [
+        "agent.2",
+        "agent.3",
+        "agent.4",
+        "agent.6"
+      ],
+      "scenario_refs": [
+        "SCN-B3-01",
+        "SCN-B3-12"
+      ],
+      "output_refs": [
+        "assets/figures/key-areas.png",
+        "assets/figures/land-use-structure.png",
+        "report/narrative.md"
+      ],
+      "point_refs": [
+        "P-ZZY-01",
+        "P-ZZY-02"
+      ],
+      "evidence_summary_zh": "众智园两点围绕可信测试站和全栈接口台，先做可逆测试与项目卡。"
     },
     {
       "requirement_id": "1.5.3.2",
       "title_zh": "北京AI原点社区",
       "mandatory": true,
       "report_sections": [
-        "三层范围工作框架",
-        "统筹研究范围产业与未来城市研究",
-        "总体设计范围城市更新与控规深度城市设计",
-        "重点区域详细设计"
+        "重点区域详细设计",
+        "蓝绿空间、公共空间与城市风貌",
+        "更新项目清单、实施政策与分期计划"
       ],
       "geojson_layers": [
-        "geometry/site_boundary.geojson",
         "geometry/key_areas.geojson",
-        "geometry/land_use.geojson",
-        "geometry/roads.geojson",
-        "geometry/green_space.geojson",
         "geometry/public_space.geojson",
+        "geometry/green_space.geojson",
         "geometry/phasing.geojson"
       ],
       "metrics": [
-        "site_area_sqm",
-        "green_ratio",
-        "public_space_ratio",
-        "key_area_count"
+        "ai_scenario_card_count",
+        "activity_ledger_count",
+        "public_space_ratio"
       ],
       "drawings": [
-        "drawings/a3-booklet.pdf",
-        "drawings/a0-boards.pdf"
+        "assets/figures/key-areas.png",
+        "assets/figures/mobility-bluegreen.png"
       ],
       "visual_sections": [
-        "总览地图",
-        "任务覆盖",
-        "核心指标"
+        "重点区域",
+        "AI场景",
+        "蓝绿公共空间"
       ],
       "source_ids": [
-        "SITE-PACKAGE",
-        "SOURCE-REGISTRY",
-        "PROCESSED-FACT-PACK",
-        "OFFICIAL-ANNOUNCEMENT",
-        "AGENT-TASKBOOK",
-        "BOUNDARY-SOURCE",
-        "KEY-AREA-SOURCE"
+        "KEY-AREA-SOURCE",
+        "D2SRC-B1-010",
+        "D2SRC-B2-012"
       ],
       "assumption_ids": [
-        "A-CONTROLS-001"
+        "A-KEY-AREA-ANCHOR-001",
+        "A-HERITAGE-001",
+        "A-ACTOR-001"
       ],
       "self_check_ids": [
         "BOUNDARY_TRUST",
+        "DETERMINISTIC_VALIDATION",
         "KEY_AREAS_TRUST",
         "LAND_USE_TOPOLOGY",
         "VISUAL_STATIC"
@@ -1190,61 +1378,78 @@
         "G-Release"
       ],
       "completeness_limited_by": [
+        "named operators/real runtime where applicable",
+        "official boundary/anchor",
         "official geometry",
         "professional sign-off",
-        "named operators/real runtime where applicable"
+        "runtime baseline"
       ],
       "recalculation_trigger": "corresponding source, geometry, metric, rights or professional evidence changes",
-      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment."
+      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment.",
+      "agent_refs": [
+        "agent.1",
+        "agent.3",
+        "agent.5",
+        "agent.6"
+      ],
+      "scenario_refs": [
+        "SCN-B3-03",
+        "SCN-B3-05",
+        "SCN-B3-06"
+      ],
+      "output_refs": [
+        "assets/figures/key-areas.png",
+        "assets/figures/mobility-bluegreen.png",
+        "report/narrative.md"
+      ],
+      "point_refs": [
+        "P-ORI-01",
+        "P-ORI-02"
+      ],
+      "evidence_summary_zh": "AI原点社区两点围绕开源共创客厅和成果转化门诊，公共入口与权利复核先行。"
     },
     {
       "requirement_id": "1.5.3.3",
       "title_zh": "大钟寺AI产业聚集区",
       "mandatory": true,
       "report_sections": [
-        "三层范围工作框架",
-        "统筹研究范围产业与未来城市研究",
-        "总体设计范围城市更新与控规深度城市设计",
-        "重点区域详细设计"
+        "重点区域详细设计",
+        "交通、轨道、市政与公共服务设施",
+        "更新项目清单、实施政策与分期计划"
       ],
       "geojson_layers": [
-        "geometry/site_boundary.geojson",
         "geometry/key_areas.geojson",
-        "geometry/land_use.geojson",
         "geometry/roads.geojson",
-        "geometry/green_space.geojson",
         "geometry/public_space.geojson",
         "geometry/phasing.geojson"
       ],
       "metrics": [
-        "site_area_sqm",
-        "green_ratio",
-        "public_space_ratio",
-        "key_area_count"
+        "selected_detail_point_count",
+        "activity_ledger_count",
+        "runtime_instance_count"
       ],
       "drawings": [
-        "drawings/a3-booklet.pdf",
-        "drawings/a0-boards.pdf"
+        "assets/figures/key-areas.png",
+        "assets/figures/mobility-bluegreen.png"
       ],
       "visual_sections": [
-        "总览地图",
-        "任务覆盖",
-        "核心指标"
+        "重点区域",
+        "交通慢行",
+        "AI场景"
       ],
       "source_ids": [
-        "SITE-PACKAGE",
-        "SOURCE-REGISTRY",
-        "PROCESSED-FACT-PACK",
-        "OFFICIAL-ANNOUNCEMENT",
-        "AGENT-TASKBOOK",
-        "BOUNDARY-SOURCE",
-        "KEY-AREA-SOURCE"
+        "KEY-AREA-SOURCE",
+        "D2SRC-SHARED-004",
+        "D2SRC-B2-020"
       ],
       "assumption_ids": [
-        "A-CONTROLS-001"
+        "A-KEY-AREA-ANCHOR-001",
+        "A-ACTOR-001",
+        "A-DATA-PRIVACY-001"
       ],
       "self_check_ids": [
         "BOUNDARY_TRUST",
+        "DETERMINISTIC_VALIDATION",
         "KEY_AREAS_TRUST",
         "LAND_USE_TOPOLOGY",
         "VISUAL_STATIC"
@@ -1264,12 +1469,35 @@
         "G-Release"
       ],
       "completeness_limited_by": [
+        "named operators/real runtime where applicable",
+        "official boundary/anchor",
         "official geometry",
         "professional sign-off",
-        "named operators/real runtime where applicable"
+        "runtime baseline"
       ],
       "recalculation_trigger": "corresponding source, geometry, metric, rights or professional evidence changes",
-      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment."
+      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment.",
+      "agent_refs": [
+        "agent.2",
+        "agent.3",
+        "agent.4",
+        "agent.6"
+      ],
+      "scenario_refs": [
+        "SCN-B3-09",
+        "SCN-B3-10",
+        "SCN-B3-11"
+      ],
+      "output_refs": [
+        "assets/figures/key-areas.png",
+        "assets/figures/mobility-bluegreen.png",
+        "report/narrative.md"
+      ],
+      "point_refs": [
+        "P-DZS-01",
+        "P-DZS-02"
+      ],
+      "evidence_summary_zh": "大钟寺两点围绕智能原生试用廊和需求方评审厅，先核查慢行和需求方条件。"
     },
     {
       "requirement_id": "agent.1",
@@ -1277,48 +1505,38 @@
       "mandatory": true,
       "report_sections": [
         "三层范围工作框架",
-        "统筹研究范围产业与未来城市研究",
-        "总体设计范围城市更新与控规深度城市设计",
-        "重点区域详细设计"
+        "蓝绿空间、公共空间与城市风貌"
       ],
       "geojson_layers": [
         "geometry/site_boundary.geojson",
         "geometry/key_areas.geojson",
-        "geometry/land_use.geojson",
-        "geometry/roads.geojson",
-        "geometry/green_space.geojson",
-        "geometry/public_space.geojson",
-        "geometry/phasing.geojson"
+        "geometry/land_use.geojson"
       ],
       "metrics": [
-        "site_area_sqm",
-        "green_ratio",
-        "public_space_ratio",
         "key_area_count"
       ],
       "drawings": [
-        "drawings/a3-booklet.pdf",
-        "drawings/a0-boards.pdf"
+        "assets/figures/site-overview.png",
+        "assets/figures/key-areas.png"
       ],
       "visual_sections": [
         "总览地图",
-        "任务覆盖",
-        "核心指标"
+        "重点区域",
+        "任务覆盖"
       ],
       "source_ids": [
-        "SITE-PACKAGE",
-        "SOURCE-REGISTRY",
-        "PROCESSED-FACT-PACK",
-        "OFFICIAL-ANNOUNCEMENT",
         "AGENT-TASKBOOK",
-        "BOUNDARY-SOURCE",
-        "KEY-AREA-SOURCE"
+        "D2SRC-B1-001",
+        "D2SRC-B1-002",
+        "D2SRC-B1-016"
       ],
       "assumption_ids": [
-        "A-CONTROLS-001"
+        "A-HERITAGE-001",
+        "A-RIGHTS-001"
       ],
       "self_check_ids": [
         "BOUNDARY_TRUST",
+        "DETERMINISTIC_VALIDATION",
         "KEY_AREAS_TRUST",
         "LAND_USE_TOPOLOGY",
         "VISUAL_STATIC"
@@ -1339,61 +1557,71 @@
         "G-Release"
       ],
       "completeness_limited_by": [
+        "named operators/real runtime where applicable",
+        "official boundary/anchor",
         "official geometry",
         "professional sign-off",
-        "named operators/real runtime where applicable"
+        "runtime baseline"
       ],
       "recalculation_trigger": "corresponding source, geometry, metric, rights or professional evidence changes",
-      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment."
+      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment.",
+      "agent_refs": [
+        "agent.1"
+      ],
+      "scenario_refs": [
+        "SCN-B3-08"
+      ],
+      "output_refs": [
+        "assets/figures/key-areas.png",
+        "assets/figures/site-overview.png",
+        "report/narrative.md"
+      ],
+      "point_refs": [
+        "P-ZZY-01",
+        "P-ORI-01",
+        "P-DZS-02"
+      ],
+      "evidence_summary_zh": "锁定空间战略名、L0-L5和中性Logo语法；候选不等于注册或最终VI。"
     },
     {
       "requirement_id": "agent.2",
       "title_zh": "AI全栈自主创新体系与世界级AI创新生态设计",
       "mandatory": true,
       "report_sections": [
-        "三层范围工作框架",
         "统筹研究范围产业与未来城市研究",
-        "总体设计范围城市更新与控规深度城市设计",
-        "重点区域详细设计"
+        "更新项目清单、实施政策与分期计划"
       ],
       "geojson_layers": [
-        "geometry/site_boundary.geojson",
         "geometry/key_areas.geojson",
-        "geometry/land_use.geojson",
-        "geometry/roads.geojson",
-        "geometry/green_space.geojson",
-        "geometry/public_space.geojson",
-        "geometry/phasing.geojson"
+        "geometry/phasing.geojson",
+        "geometry/public_space.geojson"
       ],
       "metrics": [
-        "site_area_sqm",
-        "green_ratio",
-        "public_space_ratio",
-        "key_area_count"
+        "activity_ledger_count",
+        "monitoring_parent_metric_count",
+        "runtime_instance_count"
       ],
       "drawings": [
-        "drawings/a3-booklet.pdf",
-        "drawings/a0-boards.pdf"
+        "assets/figures/site-overview.png",
+        "assets/figures/metrics-evidence.png"
       ],
       "visual_sections": [
-        "总览地图",
         "任务覆盖",
+        "更新项目",
         "核心指标"
       ],
       "source_ids": [
-        "SITE-PACKAGE",
-        "SOURCE-REGISTRY",
-        "PROCESSED-FACT-PACK",
-        "OFFICIAL-ANNOUNCEMENT",
-        "AGENT-TASKBOOK",
-        "BOUNDARY-SOURCE",
-        "KEY-AREA-SOURCE"
+        "D2SRC-B2-001",
+        "D2SRC-B2-012",
+        "D2SRC-B2-024"
       ],
       "assumption_ids": [
-        "A-CONTROLS-001"
+        "A-ACTOR-001",
+        "A-B5-RUNTIME-001"
       ],
       "self_check_ids": [
         "BOUNDARY_TRUST",
+        "DETERMINISTIC_VALIDATION",
         "KEY_AREAS_TRUST",
         "LAND_USE_TOPOLOGY",
         "VISUAL_STATIC"
@@ -1414,61 +1642,73 @@
         "G-Release"
       ],
       "completeness_limited_by": [
+        "named operators/real runtime where applicable",
+        "official boundary/anchor",
         "official geometry",
         "professional sign-off",
-        "named operators/real runtime where applicable"
+        "runtime baseline"
       ],
       "recalculation_trigger": "corresponding source, geometry, metric, rights or professional evidence changes",
-      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment."
+      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment.",
+      "agent_refs": [
+        "agent.2"
+      ],
+      "scenario_refs": [
+        "SCN-B3-01",
+        "SCN-B3-13"
+      ],
+      "output_refs": [
+        "assets/figures/metrics-evidence.png",
+        "assets/figures/site-overview.png",
+        "report/narrative.md"
+      ],
+      "point_refs": [
+        "P-ZZY-01",
+        "P-ORI-02",
+        "P-DZS-02"
+      ],
+      "evidence_summary_zh": "七案例、八段接力和19项活动均注明迁移限制、依赖、停止和重启。"
     },
     {
       "requirement_id": "agent.3",
       "title_zh": "AI+场景赋能新范式与智能化AI活力城市设计",
       "mandatory": true,
       "report_sections": [
-        "三层范围工作框架",
-        "统筹研究范围产业与未来城市研究",
-        "总体设计范围城市更新与控规深度城市设计",
+        "AI 创新生态、人才画像与 AI+ 场景",
         "重点区域详细设计"
       ],
       "geojson_layers": [
-        "geometry/site_boundary.geojson",
-        "geometry/key_areas.geojson",
-        "geometry/land_use.geojson",
-        "geometry/roads.geojson",
-        "geometry/green_space.geojson",
         "geometry/public_space.geojson",
-        "geometry/phasing.geojson"
+        "geometry/green_space.geojson",
+        "geometry/key_areas.geojson"
       ],
       "metrics": [
-        "site_area_sqm",
-        "green_ratio",
-        "public_space_ratio",
-        "key_area_count"
+        "ai_scenario_card_count",
+        "selected_detail_point_count",
+        "MET-SP-01",
+        "MET-RISK-01"
       ],
       "drawings": [
-        "drawings/a3-booklet.pdf",
-        "drawings/a0-boards.pdf"
+        "assets/figures/key-areas.png",
+        "assets/figures/mobility-bluegreen.png"
       ],
       "visual_sections": [
-        "总览地图",
-        "任务覆盖",
-        "核心指标"
+        "AI场景",
+        "重点区域",
+        "蓝绿公共空间"
       ],
       "source_ids": [
-        "SITE-PACKAGE",
-        "SOURCE-REGISTRY",
-        "PROCESSED-FACT-PACK",
-        "OFFICIAL-ANNOUNCEMENT",
         "AGENT-TASKBOOK",
-        "BOUNDARY-SOURCE",
-        "KEY-AREA-SOURCE"
+        "D2SRC-SHARED-006",
+        "D2SRC-SHARED-014"
       ],
       "assumption_ids": [
-        "A-CONTROLS-001"
+        "A-DATA-PRIVACY-001",
+        "A-KEY-AREA-ANCHOR-001"
       ],
       "self_check_ids": [
         "BOUNDARY_TRUST",
+        "DETERMINISTIC_VALIDATION",
         "KEY_AREAS_TRUST",
         "LAND_USE_TOPOLOGY",
         "VISUAL_STATIC"
@@ -1488,61 +1728,75 @@
         "G-Release"
       ],
       "completeness_limited_by": [
+        "named operators/real runtime where applicable",
+        "official boundary/anchor",
         "official geometry",
         "professional sign-off",
-        "named operators/real runtime where applicable"
+        "runtime baseline"
       ],
       "recalculation_trigger": "corresponding source, geometry, metric, rights or professional evidence changes",
-      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment."
+      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment.",
+      "agent_refs": [
+        "agent.3"
+      ],
+      "scenario_refs": [
+        "SCN-B3-03",
+        "SCN-B3-07",
+        "SCN-B3-09",
+        "SCN-B3-10"
+      ],
+      "output_refs": [
+        "assets/figures/key-areas.png",
+        "assets/figures/mobility-bluegreen.png",
+        "report/narrative.md"
+      ],
+      "point_refs": [
+        "P-ZZY-01",
+        "P-ORI-01",
+        "P-DZS-01"
+      ],
+      "evidence_summary_zh": "13场景卡将AI边界、人工接管和非数字替代写成可验收字段。"
     },
     {
       "requirement_id": "agent.4",
       "title_zh": "AI公共空间、智能原生新业态与朝圣地标设计",
       "mandatory": true,
       "report_sections": [
-        "三层范围工作框架",
-        "统筹研究范围产业与未来城市研究",
-        "总体设计范围城市更新与控规深度城市设计",
+        "蓝绿空间、公共空间与城市风貌",
         "重点区域详细设计"
       ],
       "geojson_layers": [
-        "geometry/site_boundary.geojson",
-        "geometry/key_areas.geojson",
-        "geometry/land_use.geojson",
-        "geometry/roads.geojson",
         "geometry/green_space.geojson",
         "geometry/public_space.geojson",
-        "geometry/phasing.geojson"
+        "geometry/key_areas.geojson"
       ],
       "metrics": [
-        "site_area_sqm",
-        "green_ratio",
+        "selected_detail_point_count",
         "public_space_ratio",
-        "key_area_count"
+        "green_ratio"
       ],
       "drawings": [
-        "drawings/a3-booklet.pdf",
-        "drawings/a0-boards.pdf"
+        "assets/figures/key-areas.png",
+        "assets/figures/mobility-bluegreen.png"
       ],
       "visual_sections": [
-        "总览地图",
-        "任务覆盖",
-        "核心指标"
+        "蓝绿公共空间",
+        "重点区域",
+        "建筑"
       ],
       "source_ids": [
-        "SITE-PACKAGE",
-        "SOURCE-REGISTRY",
-        "PROCESSED-FACT-PACK",
-        "OFFICIAL-ANNOUNCEMENT",
-        "AGENT-TASKBOOK",
-        "BOUNDARY-SOURCE",
-        "KEY-AREA-SOURCE"
+        "D2SRC-B1-010",
+        "D2SRC-B1-011",
+        "D2SRC-SHARED-011"
       ],
       "assumption_ids": [
-        "A-CONTROLS-001"
+        "A-HERITAGE-001",
+        "A-KEY-AREA-ANCHOR-001",
+        "A-RIGHTS-001"
       ],
       "self_check_ids": [
         "BOUNDARY_TRUST",
+        "DETERMINISTIC_VALIDATION",
         "KEY_AREAS_TRUST",
         "LAND_USE_TOPOLOGY",
         "VISUAL_STATIC"
@@ -1562,61 +1816,72 @@
         "G-Release"
       ],
       "completeness_limited_by": [
+        "named operators/real runtime where applicable",
+        "official boundary/anchor",
         "official geometry",
         "professional sign-off",
-        "named operators/real runtime where applicable"
+        "runtime baseline"
       ],
       "recalculation_trigger": "corresponding source, geometry, metric, rights or professional evidence changes",
-      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment."
+      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment.",
+      "agent_refs": [
+        "agent.4"
+      ],
+      "scenario_refs": [
+        "SCN-B3-05",
+        "SCN-B3-06",
+        "SCN-B3-08"
+      ],
+      "output_refs": [
+        "assets/figures/key-areas.png",
+        "assets/figures/mobility-bluegreen.png",
+        "report/narrative.md"
+      ],
+      "point_refs": [
+        "P-ZZY-01",
+        "P-ORI-01"
+      ],
+      "evidence_summary_zh": "三地标和12组件均可撤、可纠错、有人工替代，禁止从暂定几何推导正式路线。"
     },
     {
       "requirement_id": "agent.5",
       "title_zh": "百年京张文化、中关村文化与AI新文化融合叙事设计",
       "mandatory": true,
       "report_sections": [
-        "三层范围工作框架",
-        "统筹研究范围产业与未来城市研究",
-        "总体设计范围城市更新与控规深度城市设计",
+        "蓝绿空间、公共空间与城市风貌",
+        "风险、版权与合规说明",
         "重点区域详细设计"
       ],
       "geojson_layers": [
-        "geometry/site_boundary.geojson",
-        "geometry/key_areas.geojson",
-        "geometry/land_use.geojson",
-        "geometry/roads.geojson",
-        "geometry/green_space.geojson",
         "geometry/public_space.geojson",
-        "geometry/phasing.geojson"
+        "geometry/green_space.geojson"
       ],
       "metrics": [
-        "site_area_sqm",
-        "green_ratio",
+        "activity_ledger_count",
         "public_space_ratio",
-        "key_area_count"
+        "MET-GV-01"
       ],
       "drawings": [
-        "drawings/a3-booklet.pdf",
-        "drawings/a0-boards.pdf"
+        "assets/figures/key-areas.png",
+        "assets/figures/site-overview.png"
       ],
       "visual_sections": [
-        "总览地图",
-        "任务覆盖",
-        "核心指标"
+        "文化路线",
+        "重点区域",
+        "任务覆盖"
       ],
       "source_ids": [
-        "SITE-PACKAGE",
-        "SOURCE-REGISTRY",
-        "PROCESSED-FACT-PACK",
-        "OFFICIAL-ANNOUNCEMENT",
-        "AGENT-TASKBOOK",
-        "BOUNDARY-SOURCE",
-        "KEY-AREA-SOURCE"
+        "D2SRC-B1-001",
+        "D2SRC-B1-010",
+        "D2SRC-B1-016"
       ],
       "assumption_ids": [
-        "A-CONTROLS-001"
+        "A-HERITAGE-001",
+        "A-RIGHTS-001"
       ],
       "self_check_ids": [
         "BOUNDARY_TRUST",
+        "DETERMINISTIC_VALIDATION",
         "KEY_AREAS_TRUST",
         "LAND_USE_TOPOLOGY",
         "VISUAL_STATIC"
@@ -1636,61 +1901,79 @@
         "G-Release"
       ],
       "completeness_limited_by": [
+        "named operators/real runtime where applicable",
+        "official boundary/anchor",
         "official geometry",
         "professional sign-off",
-        "named operators/real runtime where applicable"
+        "runtime baseline"
       ],
       "recalculation_trigger": "corresponding source, geometry, metric, rights or professional evidence changes",
-      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment."
+      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment.",
+      "agent_refs": [
+        "agent.5"
+      ],
+      "scenario_refs": [
+        "SCN-B3-08",
+        "SCN-B3-11",
+        "SCN-B3-13"
+      ],
+      "output_refs": [
+        "assets/figures/key-areas.png",
+        "assets/figures/site-overview.png",
+        "report/narrative.md"
+      ],
+      "point_refs": [
+        "P-ORI-01",
+        "P-DZS-02"
+      ],
+      "evidence_summary_zh": "三文化非因果图谱、五类导览和双语纠错门均可回读来源与权利状态。"
     },
     {
       "requirement_id": "agent.6",
       "title_zh": "一带全球AI创新活动体系与长期运营设计",
       "mandatory": true,
       "report_sections": [
-        "三层范围工作框架",
-        "统筹研究范围产业与未来城市研究",
-        "总体设计范围城市更新与控规深度城市设计",
-        "重点区域详细设计"
+        "更新项目清单、实施政策与分期计划",
+        "指标体系、面积复算与合规矩阵",
+        "风险、版权与合规说明"
       ],
       "geojson_layers": [
-        "geometry/site_boundary.geojson",
-        "geometry/key_areas.geojson",
-        "geometry/land_use.geojson",
-        "geometry/roads.geojson",
-        "geometry/green_space.geojson",
-        "geometry/public_space.geojson",
-        "geometry/phasing.geojson"
+        "geometry/phasing.geojson",
+        "geometry/constraints.geojson",
+        "geometry/roads.geojson"
       ],
       "metrics": [
-        "site_area_sqm",
-        "green_ratio",
-        "public_space_ratio",
-        "key_area_count"
+        "activity_ledger_count",
+        "monitoring_parent_metric_count",
+        "runtime_instance_count",
+        "professional_signed_contract_count",
+        "floor_area_ratio"
       ],
       "drawings": [
-        "drawings/a3-booklet.pdf",
-        "drawings/a0-boards.pdf"
+        "assets/figures/metrics-evidence.png",
+        "assets/figures/mobility-bluegreen.png"
       ],
       "visual_sections": [
-        "总览地图",
-        "任务覆盖",
-        "核心指标"
+        "更新项目",
+        "核心指标",
+        "交通慢行"
       ],
       "source_ids": [
-        "SITE-PACKAGE",
-        "SOURCE-REGISTRY",
-        "PROCESSED-FACT-PACK",
-        "OFFICIAL-ANNOUNCEMENT",
-        "AGENT-TASKBOOK",
-        "BOUNDARY-SOURCE",
-        "KEY-AREA-SOURCE"
+        "D2SRC-B2-012",
+        "D2SRC-B2-020",
+        "D2SRC-B2-024",
+        "MISSING-DATA-CHECKLIST"
       ],
       "assumption_ids": [
+        "A-ACTOR-001",
+        "A-B5-RUNTIME-001",
+        "A-B6-CONTRACT-001",
+        "A-RECALC-001",
         "A-CONTROLS-001"
       ],
       "self_check_ids": [
         "BOUNDARY_TRUST",
+        "DETERMINISTIC_VALIDATION",
         "KEY_AREAS_TRUST",
         "LAND_USE_TOPOLOGY",
         "VISUAL_STATIC"
@@ -1713,14 +1996,35 @@
         "G-Release"
       ],
       "completeness_limited_by": [
+        "named operators/real runtime where applicable",
+        "official boundary/anchor",
         "official geometry",
         "professional sign-off",
-        "named operators/real runtime where applicable"
+        "runtime baseline"
       ],
       "recalculation_trigger": "corresponding source, geometry, metric, rights or professional evidence changes",
-      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment."
+      "notes": "The matrix closes the evidence route for research review; it does not self-certify a score or implementation commitment.",
+      "agent_refs": [
+        "agent.6"
+      ],
+      "scenario_refs": [
+        "SCN-B3-01",
+        "SCN-B3-09",
+        "SCN-B3-13"
+      ],
+      "output_refs": [
+        "assets/figures/metrics-evidence.png",
+        "assets/figures/mobility-bluegreen.png",
+        "report/narrative.md"
+      ],
+      "point_refs": [
+        "P-ZZY-02",
+        "P-ORI-02",
+        "P-DZS-02"
+      ],
+      "evidence_summary_zh": "六项试点、15项父指标与专业深度合同均保留unknown/not_created和签署接口。"
     }
   ],
   "generated_at": "2026-08-16",
-  "matrix_note": "All official and agent requirements are mapped to substantive report sections, evidence layers and six selected detailed points; status is not an official score."
+  "matrix_note": "每项要求均以独立的章节、图层、指标、图件、场景/点位、Agent、来源和限制映射；unknown/provisional不升级为已批准或已运行。"
 }
