@@ -94,9 +94,9 @@
 ## 6. 交付文件索引
 
 - 研究主报告：`proposal.md`、`proposal.en.md`；
-- Agent 逐项成果卡：`evidence_data/agent_results.md`、`evidence_data/agent_results.en.md`；
-- 数据资产采集登记：`evidence_data/data_asset_register.md`、`evidence_data/data_asset_register.csv`；
-- 自检 ID 对照：`evidence_data/self_check_id_directory.md`；
+- Agent 逐项成果卡：见本文件“附录 B｜六个 Agent 实质成果卡”（中英双语同页）；
+- 数据资产采集登记：见本文件“附录 C｜25 条数据资产与证据表达登记”；
+- 自检 ID 对照：见本文件“附录 D｜机器可读 ID 与正式提交文件对照”；
 - 结构化证据：`sources.json`、`assumptions.json`、`metrics.json`、`standard_matrix.json`、`design_depth_matrix.json`、`compliance_matrix.json`。
 
 本契约证明协作过程和成果接口可审计，不证明官方边界、专业签章、真实运营主体、运行基线或官方人工评分已经取得。
@@ -332,9 +332,9 @@ If a gate fails, the artifact is downgraded to `research_contract`, `text_only` 
 ## 6. Deliverable index
 
 - Main report: `proposal.md`, `proposal.en.md`;
-- Agent result cards: `evidence_data/agent_results.md`, `evidence_data/agent_results.en.md`;
-- Data asset register: `evidence_data/data_asset_register.md`, `evidence_data/data_asset_register.csv`;
-- Self-check directory: `evidence_data/self_check_id_directory.md`;
+- Agent result cards: see “Appendix B | Six substantive Agent result cards” in this narrative (bilingual on the same page);
+- Data asset register: see “Appendix C | 25 data assets and evidence expression” in this narrative;
+- Self-check directory: see “Appendix D | Machine-readable IDs and formal submission files” in this narrative;
 - Structured evidence: `sources.json`, `assumptions.json`, `metrics.json`, `standard_matrix.json`, `design_depth_matrix.json`, `compliance_matrix.json`.
 
 This contract makes collaboration and deliverable interfaces auditable. It does not prove official geometry, professional sign-off, an operating entity, runtime baselines or an official human score.
