@@ -34,6 +34,10 @@ Data collection does not fill unknown fields with invented numbers. Every field 
 
 ![Evidence chain and submission package](assets/figures/site-overview.en.png)
 
+![Existing satellite basemap atlas](assets/figures/base-map-atlas.en.png)
+
+Five Sentinel-2 L2A images are used only for background observation and issue discovery. The annotated outlines are provisional research placeholders from the site package, not statutory redlines, ownership, road, station-entrance, or engineering-capacity evidence. Once official polygons arrive, recut and overlay all nine spatial layers and recompute every derived metric.[source:SENTINEL-2-BASEMAP-REGISTER] [data:visual/assets/base-map-manifest.json]
+
 ## Three-level scope framework
 
 The proposal works through three levels: the approximately 43.6 km² coordinating research area addresses Haidian AI ecosystem, cultural narrative, and future-city form; the approximately 11.4 km² overall design area addresses renewal, industry, mobility, municipal support, and character around the Jingzhang heritage park; the three key areas, approximately 368.4 ha in total, address uses, building renewal, public space, walking continuity, and implementation conditions. [standard:PROJECT-OFFICIAL-ANNOUNCEMENT] [depth:three_level_scope_framework] [depth:overall_spatial_structure]

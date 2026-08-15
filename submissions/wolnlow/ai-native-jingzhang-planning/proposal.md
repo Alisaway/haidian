@@ -34,6 +34,10 @@ tracks: ["ai-traffic-walkability", "enterprise-services-ecosystem", "civic-agent
 
 ![资料证据链与提交包关系图](assets/figures/site-overview.png)
 
+![现状遥感底图图册](assets/figures/base-map-atlas.png)
+
+五幅 Sentinel-2 L2A 影像仅作为背景观察和问题发现依据；图册中的标注边界为资料包的 provisional research placeholder，不是法定红线、权属、道路、站口或工程容量依据。正式多边形到位后，必须重裁、叠合九层空间数据并重算全部派生指标。[source:SENTINEL-2-BASEMAP-REGISTER] [data:visual/assets/base-map-manifest.json]
+
 ## 三层范围工作框架
 
 方案按三层推进：统筹研究范围约 43.6 平方公里，回答海淀 AI 创新生态、文化叙事和未来城市形态；总体设计范围约 11.4 平方公里，回答京张遗址公园周边城市更新、产业空间、交通市政和风貌控制；三处重点区合计约 368.4 公顷，回答功能业态、建筑更新、公共空间、慢行连通和实施条件。[standard:PROJECT-OFFICIAL-ANNOUNCEMENT] [depth:three_level_scope_framework] [depth:overall_spatial_structure]
