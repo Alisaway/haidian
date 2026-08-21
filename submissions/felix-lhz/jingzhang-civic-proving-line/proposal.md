@@ -29,7 +29,9 @@ scenarios: ["ai-traffic-walkability", "ai-health-service-navigation", "enterpris
 
 同一任务、用户、场地和硬门下，ALT-A 中央混合湾因切断公共十字并冲突消防/撤场而 reject_design；ALT-B 分散双湾保住路线但监督与撤场碎片化，返回 revise_design；ALT-C 单侧可逆湾是唯一 advance_design。设计备选状态不等同于现场 adopt / revise / stop，计算只证明几何规则自洽。[data:visual/assets/spatial-decision.json] [metric:spatial_alternative_count]
 
-ALT-C 的概念公共路线、单侧试验范围、可逆缓冲及岗位—急停距离均由同一局部米制审计生成；正式底图、站口、权属或专业条件变化时必须重算，图纸和文字服从结果。[metric:alt_c_public_route_length_m] [metric:alt_c_trial_area_sqm] [metric:alt_c_reversible_buffer_area_sqm] [metric:alt_c_max_estop_staff_distance_m]
+ALT-C 的概念公共路线和单侧试验范围由同一局部米制审计生成。[metric:alt_c_public_route_length_m] [metric:alt_c_trial_area_sqm]
+
+可逆缓冲及岗位—急停距离使用相同输入；正式底图、站口、权属或专业条件变化时必须重算，图纸和文字服从结果。[metric:alt_c_reversible_buffer_area_sqm] [metric:alt_c_max_estop_staff_distance_m]
 
 ## 当前实施门：G0 进入测绘与许可准备
 
@@ -44,6 +46,8 @@ ALT-C 的概念公共路线、单侧试验范围、可逆缓冲及岗位—急�
 这些事实是可信底图，不是方案主角。“一脊三站两翼”是嵌入绿带、对接大钟寺中心与创新发展轴的可停、可撤运营层；六条缝合只对接已建或已公布的慢行方向，不被画成拟建道路。官方 1668.2 公顷范围与本投稿 11.4 平方公里临时可复算几何分开登记，政府报道也不等于本团队踏勘、测绘、产权或工程验收。[data:visual/assets/spatial-atlas.json] [metric:official_planning_area_ha] [metric:submitted_provisional_area_sqm]
 
 ![正式背景上的京张双答运营叠加](assets/figures/site-overview.png)
+
+![大钟寺首层—公共空间—交通—蓝绿叠合](assets/figures/land-use-structure.png)
 
 ## 设计依据与资料清单
 

@@ -29,7 +29,9 @@ The reversible prototype palette is bolted galvanized steel, perforated-metal sh
 
 Under one task, users, site and hard gates, ALT-A central mixing is reject_design because it cuts the public cross and conflicts with fire/removal; ALT-B split bays retain routes but fragment supervision and removal, so revise_design; ALT-C one-sided reversible bay is the sole advance_design. These design-option states are not field adopt / revise / stop decisions; the computation tests geometric consistency only.[data:visual/assets/spatial-decision.json] [metric:spatial_alternative_count]
 
-ALT-C route, one-sided trial area, reversible buffer and staff-to-e-stop distance come from one local-metric audit. Any change in official base, entrances, title or specialist constraints requires a rerun; drawings and text must follow the result.[metric:alt_c_public_route_length_m] [metric:alt_c_trial_area_sqm] [metric:alt_c_reversible_buffer_area_sqm] [metric:alt_c_max_estop_staff_distance_m]
+ALT-C route and one-sided trial area come from one local-metric audit.[metric:alt_c_public_route_length_m] [metric:alt_c_trial_area_sqm]
+
+The reversible buffer and staff-to-e-stop distance use the same inputs. Any change in official base, entrances, title or specialist constraints requires a rerun; drawings and text must follow the result.[metric:alt_c_reversible_buffer_area_sqm] [metric:alt_c_max_estop_staff_distance_m]
 
 ## Current implementation gate: G0 survey and permit preparation
 
@@ -44,6 +46,8 @@ Published 2026 context records an approximately 1,668.2 ha neighbourhood-plannin
 These facts are the credible base, not the design protagonist. The spine/stations/wings form a stoppable, removable operating layer embedded in the green belt and aligned with Dazhongsi centre and the innovation axis; six stitches align with existing or published slow-mobility directions and are not proposed roads. The official 1,668.2 ha context and the submission's 11.4 sq km provisional geometry stay separate. Government reporting is not participant fieldwork, survey, title or acceptance evidence.[data:visual/assets/spatial-atlas.json] [metric:official_planning_area_ha] [metric:submitted_provisional_area_sqm]
 
 ![Jing-Zhang operating overlay on approved context](assets/figures/site-overview.en.png)
+
+![Dazhongsi ground interface—public space—transit—blue-green overlay](assets/figures/land-use-structure.en.png)
 
 ## Design Basis and Source List
 
