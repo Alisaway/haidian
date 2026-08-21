@@ -16,3 +16,5 @@
 - assets/media/receipt-porch-v15.webp / .jpg
 
 Generated with OpenAI built-in image generation on 2026-08-21. They communicate the Ring, Gate and Porch architectural prototypes only and are not site photographs, surveys, field evidence, consultation records or approvals. Text, dimensions, IDs and evidence status are added by local vector layers; professional judgement relies on the plans, sections, structured data and cited public sources.
+
+- `GENERATED-RECEIPT-PORCH-V17-DAY` and `GENERATED-RECEIPT-PORCH-V17-NIGHT`: OpenAI built-in image-generation edits, 2026-08-21. Competition-display use only. They communicate a same-camera concept state and are not site photographs, measured conditions, approvals or field results.

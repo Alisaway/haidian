@@ -151,6 +151,35 @@ function updateMetrics() {
   writeJson('metrics.json', data);
 }
 
+function updateSourcesAndRights() {
+  const data = readJson('sources.json');
+  const records = [
+    {
+      id:'GENERATED-RECEIPT-PORCH-V17-DAY', publisher:'OpenAI built-in image generation', date:'2026-08-21', source_type:'ai_generated_visual',
+      license:'Competition display only; subject to platform and competition terms', path:'assets/media/receipt-porch-v17-day.webp', companion_path:'assets/media/receipt-porch-v17-day.jpg',
+      usage:'S7 ordinary OPEN-day architectural experience only; not a photograph, survey, field result or approval evidence.',
+      limitations:'Same camera and design relationship as the V17 vector model; context, materials and people are illustrative and all dimensions require survey and professional review.',
+      prompt_summary:'Edited from the V15 Receipt Porch concept to a bright ordinary OPEN day preserving the public cross, one-sided reversible bay, staffed porch, blue-green edge and rear service yard; no text or logos.'
+    },
+    {
+      id:'GENERATED-RECEIPT-PORCH-V17-NIGHT', publisher:'OpenAI built-in image generation', date:'2026-08-21', source_type:'ai_generated_visual',
+      license:'Competition display only; subject to platform and competition terms', path:'assets/media/receipt-porch-v17-night.webp', companion_path:'assets/media/receipt-porch-v17-night.jpg',
+      usage:'S7 night PAUSE-state architectural experience only; not a photograph, survey, field result or approval evidence.',
+      limitations:'Same camera and permanent geometry as the V17 day image; lighting and people are illustrative and do not prove operations, safety or accessibility performance.',
+      prompt_summary:'Same-camera night PAUSE edit preserving the public cross and staffed porch while closing the one-sided bay with reversible boundary lights; no text or logos.'
+    }
+  ];
+  for (const record of records) {
+    const at = data.sources.findIndex(s => s.id === record.id);
+    if (at >= 0) data.sources[at] = record; else data.sources.push(record);
+  }
+  writeJson('sources.json', data);
+  const rightsRel='report/copyright_statement.md';
+  let rights=readText(rightsRel);
+  if(!rights.includes('GENERATED-RECEIPT-PORCH-V17-DAY')) rights += `\n- \`GENERATED-RECEIPT-PORCH-V17-DAY\` and \`GENERATED-RECEIPT-PORCH-V17-NIGHT\`: OpenAI built-in image-generation edits, 2026-08-21. Competition-display use only. They communicate a same-camera concept state and are not site photographs, measured conditions, approvals or field results.\n`;
+  writeText(rightsRel,rights);
+}
+
 function updateChangelog() {
   const rel = 'changelog.md';
   let text = readText(rel);
@@ -165,6 +194,7 @@ function run() {
   rebuildProposal('proposal.en.md','en');
   updateStructuredData();
   updateMetrics();
+  updateSourcesAndRights();
   updateChangelog();
   console.log('V17 canonical content and schema 1.14.0 written');
 }
