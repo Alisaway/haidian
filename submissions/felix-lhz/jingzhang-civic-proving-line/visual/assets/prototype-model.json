@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.13.0",
-  "dataset_id": "jingzhang-v15-buildable-civic-cross",
+  "schema_version": "1.14.0",
+  "dataset_id": "jingzhang-v17-one-route-four-states",
   "field_status": "not_field_run",
   "coordinate_basis": {
     "unit": "m",
@@ -9,8 +9,8 @@
     "legal_status": "prototype_design_assumption_pending_survey"
   },
   "core_claim": {
-    "zh": "把不牺牲公共路径建成一段可进入、可维护、可关闭、可恢复的城市空间。",
-    "en": "Build the unbroken public route as an enterable, maintainable, closable and recoverable civic space."
+    "zh": "大钟寺一条4米原型公共路径在四态中不断线；AI只占一侧，人工回执廊始终开放。",
+    "en": "A 4 m prototype public route remains unbroken across four states; AI occupies one side and the staffed Receipt Porch stays open."
   },
   "material_palette": [
     {
@@ -79,7 +79,33 @@
       "interface_condition": "open outer bypass / controlled inner courtyard",
       "climate_state": "shaded observation arcade",
       "adaptation_mode": "close inner test, retain public ring",
-      "field_status": "not_field_run"
+      "field_status": "not_field_run",
+      "canonical_view_refs": [
+        "T2-PLAN-500",
+        "T2-SEC-200"
+      ],
+      "context_feature_refs": [
+        "approved_green_belt"
+      ],
+      "existing_public_use_refs": [
+        "BEIJING-JZ-PHASE2-COMPLETE-20260714"
+      ],
+      "public_route_invariant": "uninterrupted_in_OPEN_TRIAL_PAUSE_RETIRE",
+      "state_geometry_refs": {
+        "OPEN": "LMK-01-OPEN",
+        "PAUSE": "LMK-01-PAUSE",
+        "RETIRE": "LMK-01-RETIRE"
+      },
+      "maintenance_route_refs": [
+        "T2-SERVICE-E"
+      ],
+      "experience_camera_ref": "LMK-01-CAM-01",
+      "visual_priority": "support",
+      "implementation_stage": "E1_concept_design",
+      "next_gate_requirements": [
+        "site_interface_survey",
+        "operator_confirmation"
+      ]
     },
     {
       "id": "LMK-02",
@@ -118,7 +144,33 @@
       "interface_condition": "three account-free through-routes / closable plug-in wall",
       "climate_state": "daylit sheltered hall",
       "adaptation_mode": "close plug-in wall, retain staffed public hall",
-      "field_status": "not_field_run"
+      "field_status": "not_field_run",
+      "canonical_view_refs": [
+        "S2-PLAN-500",
+        "S2-SEC-200"
+      ],
+      "context_feature_refs": [
+        "approved_green_belt"
+      ],
+      "existing_public_use_refs": [
+        "BEIJING-JZ-PHASE2-COMPLETE-20260714"
+      ],
+      "public_route_invariant": "uninterrupted_in_OPEN_TRIAL_PAUSE_RETIRE",
+      "state_geometry_refs": {
+        "OPEN": "LMK-02-OPEN",
+        "PAUSE": "LMK-02-PAUSE",
+        "RETIRE": "LMK-02-RETIRE"
+      },
+      "maintenance_route_refs": [
+        "S2-REAR-SERVICE"
+      ],
+      "experience_camera_ref": "LMK-02-CAM-01",
+      "visual_priority": "support",
+      "implementation_stage": "E1_concept_design",
+      "next_gate_requirements": [
+        "site_interface_survey",
+        "operator_confirmation"
+      ]
     },
     {
       "id": "LMK-03",
@@ -162,7 +214,41 @@
       "interface_condition": "unbroken public cross / one-sided reversible trial bay / staffed receipt porch",
       "climate_state": "shade, rain garden, permeable paving and night lighting",
       "adaptation_mode": "OPEN / TRIAL / PAUSE / RETIRE",
-      "field_status": "not_field_run"
+      "field_status": "not_field_run",
+      "canonical_view_refs": [
+        "S7-PLAN-500",
+        "S7-SEC-AA-200",
+        "S7-AXON-CUTAWAY"
+      ],
+      "context_feature_refs": [
+        "dazhongsi_centre",
+        "approved_green_belt",
+        "rail_directional_interface"
+      ],
+      "existing_public_use_refs": [
+        "BEIJING-JZ-PHASE2-COMPLETE-20260714"
+      ],
+      "public_route_invariant": "uninterrupted_in_OPEN_TRIAL_PAUSE_RETIRE",
+      "state_geometry_refs": {
+        "OPEN": "S7-STATE-OPEN",
+        "TRIAL": "S7-STATE-TRIAL",
+        "PAUSE": "S7-STATE-PAUSE",
+        "RETIRE": "S7-STATE-RETIRE"
+      },
+      "maintenance_route_refs": [
+        "S7-SERVICE-S",
+        "S7-RETIRE-E"
+      ],
+      "experience_camera_ref": "CAM-S7-NW-01",
+      "visual_priority": "hero",
+      "implementation_stage": "G0_survey_and_permit_preparation",
+      "next_gate_requirements": [
+        "survey_complete",
+        "title_and_interface_verified",
+        "permit_dependencies_closed",
+        "four_independent_posts",
+        "seven_ordinary_days"
+      ]
     }
   ],
   "s7": {
@@ -292,7 +378,19 @@
       "TRIAL": "one-side trial bay opens after all gates close",
       "PAUSE": "equipment isolated and staffed takeover active",
       "RETIRE": "equipment removed and trial bay restored to civic use"
-    }
+    },
+    "state_geometry_refs": {
+      "OPEN": "S7-STATE-OPEN",
+      "TRIAL": "S7-STATE-TRIAL",
+      "PAUSE": "S7-STATE-PAUSE",
+      "RETIRE": "S7-STATE-RETIRE"
+    },
+    "maintenance_route_refs": [
+      "S7-SERVICE-S",
+      "S7-RETIRE-E"
+    ],
+    "experience_camera_ref": "CAM-S7-NW-01",
+    "visual_priority": "hero"
   },
   "current_gate": {
     "gate_id": "G0-S7-PRETRIAL",
@@ -316,5 +414,39 @@
       "zh": "公开快照在大钟寺范围仅含1个建筑要素；现状界面不得据此认定，缺测处统一标为适配界面/待调查带。",
       "en": "The public crop contains one building feature at Dazhongsi; existing frontages cannot be inferred and gaps are shown as adaptation interfaces / survey-pending bands."
     }
-  }
+  },
+  "canonical_view_refs": {
+    "city_context": "FIG-SITE-OVERVIEW-V17",
+    "ground_interface": "FIG-LAND-USE-V17",
+    "landmark_family": "FIG-KEY-AREAS-V17",
+    "continuous_journey": "FIG-MOBILITY-V17",
+    "evidence_desk": "FIG-METRICS-V17"
+  },
+  "context_feature_refs": [
+    "approved_green_belt",
+    "innovation_axis",
+    "dazhongsi_centre",
+    "fishbone_slow_mobility"
+  ],
+  "existing_public_use_refs": [
+    "BEIJING-JZ-PHASE2-COMPLETE-20260714"
+  ],
+  "public_route_invariant": {
+    "clear_width_m": 4,
+    "states": [
+      "OPEN",
+      "TRIAL",
+      "PAUSE",
+      "RETIRE"
+    ],
+    "interruption_allowed": false
+  },
+  "implementation_stage": "G0_survey_and_permit_preparation",
+  "next_gate_requirements": [
+    "survey_complete",
+    "title_and_interface_verified",
+    "permit_dependencies_closed",
+    "four_independent_posts",
+    "seven_ordinary_days"
+  ]
 }

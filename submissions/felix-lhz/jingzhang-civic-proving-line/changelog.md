@@ -130,3 +130,10 @@
 - 运营绩效保持 unknown，仅把文档覆盖数登记为 known。
 - 案例拆分为官方/第一手来源；所有本地边界、权属、控规、市政和现场绩效缺口持续披露。
 - 未执行 git add、commit、push 或 PR。
+
+## 2026-08-21 · V17
+
+- Restored the buildable civic cross as primary evidence and demoted planning context to a verified base.
+- Established one canonical 4 m route invariant across OPEN / TRIAL / PAUSE / RETIRE.
+- Added canonical view, context, maintenance, camera, priority, stage and next-gate interfaces (schema 1.14.0).
+- Reordered both proposals around spatial conclusion, prototype, ALT decision, next gate and approved context.

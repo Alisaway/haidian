@@ -6,49 +6,44 @@ proposal_format_version: "2"
 bilingual_contract_version: "1"
 translation_file: "proposal.en.md"
 license: "COMMUNITY-DISPLAY-ONLY"
-summary: "把不牺牲公共路径建成可进入、可维护、可关闭、可恢复的公共十字；当前实施门仍为G0 NO-GO。"
+summary: "一条4米原型公共路径在OPEN、TRIAL、PAUSE、RETIRE四态不断线；AI只占一侧，人工回执廊始终开放。"
 tracks: ["ai-traffic-walkability", "ai-public-services", "civic-agent-governance"]
 scenarios: ["ai-traffic-walkability", "ai-health-service-navigation", "enterprise-service-copilot", "robot-delivery-low-speed"]
 ---
 
 # 京张双答 / JING-ZHANG TWO ANSWERS
 
+> **一条公共路径，四种城市状态。** 在大钟寺中心，一条 **4 米原型公共路径**在 OPEN、TRIAL、PAUSE、RETIRE 四态中始终连续；AI 只占一侧可逆试验湾，人工服务与回执廊始终开放。[data:visual/assets/prototype-model.json] [metric:s7_public_route_prototype_width_m]
 
-> **在已批空间结构上建立城市采纳层。** 2026年8月公开的街区控规背景明确约1668.2公顷、9公里京张绿带与“**一带一轴、两心多点**”，大钟寺被列为两处中心之一；二期配套工程已完工并形成鱼骨状慢行联系。[source:BEIJING-BLOCK-PLAN-APPROVED-20260812] [source:BEIJING-JZ-PHASE2-COMPLETE-20260714]
+普通答案不是备用方案，而是准入前提：常规接驳、轮椅与盲道路线、遮阴候车、静态导视和人工窗口必须先独立成立。AI 只有在同题、同人、同空间条件下证明增量，才可由人类委员会作出 adopt / revise / stop；停止后设备沿独立维护线撤出，公共层不借用试验空间。[data:visual/assets/two-answers.json] [depth:overall_spatial_structure]
 
-“一脊三站两翼”因此不再冒充另一套控规，而是嵌入京张绿带、对接大钟寺中心与创新发展轴的 **可选择、可停止、可撤除运营叠加层**。官方1668.2公顷街区范围与本投稿11.4平方公里临时几何分别登记，绝不互换。[data:visual/assets/spatial-atlas.json] [metric:official_planning_area_ha] [metric:submitted_provisional_area_sqm]
+![一路四态单页评审摘要](assets/figures/jury-summary.png)
 
-大钟寺回执廊适配“既有公园—轨道方向性接口—城市更新界面”，当前仍为 **G0 NO-GO**：已公布空间背景不等于本方案完成测绘、权属、许可、搭建或现场运行。政府门户报道的公共使用是公开背景，不是本团队踏勘。[data:visual/assets/e2-readiness.json]
+## S7 建筑—公共空间原型
 
-![已批空间结构与京张双答运营叠加层](assets/figures/site-overview.png)
+大钟寺旗舰样板由五个相互独立但可追踪的空间层组成：①南北与东西两条 4 米公共路线；②东南侧单侧试验湾与可逆缓冲；③西南侧有人值守的回执廊；④树池、雨水花园、遮阴候车和不受占用的疏散面；⑤控制、存储、维护、废弃物和设备撤场后场。1:500 平面、1:200 生活剖面、1:50/1:20 节点与同机位四态轴测使用同一组件 ID。[data:visual/assets/prototype-model.json] [depth:three_key_area_detailed_design]
 
-![已批规划背景下的连续首层、公共服务与临时试验界面](assets/figures/land-use-structure.png)
+材料采用可逆概念原型：螺栓连接镀锌钢框架、穿孔金属遮阳屏、干式预制压重基础、透水预制铺装和可更换证据面板。OPEN 仅运行公共层；TRIAL 在许可、岗位和普通基线齐全后限时开放一侧；PAUSE 隔离设备并由人工完成同题任务；RETIRE 拆除插件、复位铺装并保留公共服务与复盘面板。结构、消防、基础、排水与耐久仍待专业复核，价格保持 pending_market_quote。[data:visual/assets/e2-readiness.json]
 
-<!-- V11_DECISION_START -->
-## 一次真正的空间裁决
+## 三个备选，一次空间裁决
 
-城市采纳编译器不再把“全部通过”当作优秀。当前方案对 S7 的同一任务、同一用户和同一场地生成三个空间备选，再用同一组几何硬门审计：**ALT-A 中央混合湾被淘汰，ALT-B 分散双湾退回修改，ALT-C 单侧可逆湾进入深化。** 这里的 reject_design / revise_design / advance_design 是设计备选状态，不是现场采纳结论；现场仍只允许由人类委员会作出 adopt / revise / stop。[data:visual/assets/spatial-decision.json] [metric:spatial_alternative_count]
+同一任务、用户、场地和硬门下，ALT-A 中央混合湾因切断公共十字并冲突消防/撤场而 reject_design；ALT-B 分散双湾保住路线但监督与撤场碎片化，返回 revise_design；ALT-C 单侧可逆湾是唯一 advance_design。设计备选状态不等同于现场 adopt / revise / stop，计算只证明几何规则自洽。[data:visual/assets/spatial-decision.json] [metric:spatial_alternative_count]
 
-ALT-A 的试验边界切断公共十字，并与消防、撤场和人工急停可达性发生冲突，因此六道硬门失败；ALT-B 保住公共路线，但监督和撤场碎片化，退回修改。[metric:rejected_spatial_alternative_count] [metric:revised_spatial_alternative_count]
+ALT-C 的概念公共路线、单侧试验范围、可逆缓冲及岗位—急停距离均由同一局部米制审计生成；正式底图、站口、权属或专业条件变化时必须重算，图纸和文字服从结果。[metric:alt_c_public_route_length_m] [metric:alt_c_trial_area_sqm] [metric:alt_c_reversible_buffer_area_sqm] [metric:alt_c_max_estop_staff_distance_m]
 
-ALT-C 让 372 米概念公共路线在试验态保持原长，将 2,496 平方米试验范围和 3,840 平方米可逆缓冲集中在单侧。[metric:alt_c_public_route_length_m] [metric:alt_c_trial_area_sqm] [metric:alt_c_reversible_buffer_area_sqm]
+## 当前实施门：G0 进入测绘与许可准备
 
-ALT-C 同时把最远急停—人工岗位距离控制为 24.3 米的原型假设，是唯一进入深化的方案。[metric:alt_c_max_estop_staff_distance_m] [metric:advanced_spatial_alternative_count] [data:geometry/public_space.geojson#V11-ALT-C-TRIAL-1]
+当前不是“不可实施”，而是诚实位于 **G0：进入测绘与许可准备**。下一道门要求完成现场测绘、权属和轨道接口核验，关闭场地/消防/无障碍/临电/网络/交通组织/设备安全等许可依赖，落实场地负责人、普通服务、安全和数据记录四个独立岗位，再记录连续 7 个普通运行日。任一条件缺失，AI 试验不启动，但普通开放日仍可独立筹备。[data:visual/assets/e2-readiness.json] [metric:e2_permit_gate_count]
 
-这些数值来自以大钟寺原型中心建立的局部等距近似画布，只能审查设计几何是否自洽，不代表现状测绘、交通表现、消防审批或安全绩效。任何正式底图、站口、权属或专业条件变化，都必须重新运行审计；若计算结果变化，图纸和文字必须服从计算。[data:geometry/roads.geojson#V11-ALT-C-BASE-NS] [depth:three_key_area_detailed_design]
-<!-- V11_DECISION_END -->
+现场客流、安全、效率、满意度、能耗、价格和恢复时长继续为 unknown / not_field_run。12 份测量契约说明“如何验证”，不冒充验证结果。[metric:measurement_contract_count] [metric:field_verification_result_count]
 
-<!-- V12_MEASUREMENT_START -->
-## 入选之后再测量：三份英雄契约与十二项目录
+## 正式规划背景与运营叠加
 
-空间裁决回答“为什么选 ALT-C”，测量契约回答“建成后如何知道 AI 是否值得保留”。完整 12/12 契约继续登记在结构化数据中，但不再用十二行小字表格占据评审首屏；本节只展示三类可复制的英雄契约。[data:visual/assets/two-answers.json] [metric:measurement_contract_count]
+2026 年公开背景明确约 1668.2 公顷街区范围、9 公里京张绿带与“一带一轴、两心多点”，大钟寺是两处中心之一；二期配套工程已完工并形成鱼骨状慢行联系。[source:BEIJING-BLOCK-PLAN-APPROVED-20260812] [source:BEIJING-JZ-PHASE2-COMPLETE-20260714]
 
-- **T2 机器人通行**：普通与试验模式各 100 次同路线通行，按轮椅、视障、步行和昼夜分层；碰撞、公共旁路中断或急停失效立即停止。
-- **S2 国际人才抵达**：人工与 AI 辅助各 100 个同题请求，按语言、辅助需求和复杂度分层；无账户入口、人工双语台和复核后台始终开放。
-- **S7 轨道接驳**：先记录连续 7 个普通运行日，再在 8 类许可和 4 个独立岗位齐全后进行 100 次限时试验；公共路线中断、无人工接管或基础服务退化均为零容忍事件。
+这些事实是可信底图，不是方案主角。“一脊三站两翼”是嵌入绿带、对接大钟寺中心与创新发展轴的可停、可撤运营层；六条缝合只对接已建或已公布的慢行方向，不被画成拟建道路。官方 1668.2 公顷范围与本投稿 11.4 平方公里临时可复算几何分开登记，政府报道也不等于本团队踏勘、测绘、产权或工程验收。[data:visual/assets/spatial-atlas.json] [metric:official_planning_area_ha] [metric:submitted_provisional_area_sqm]
 
-当前仍为 **12 份契约 / 0 项现场结果**。缺失样本不得填补为成功，非安全阈值由现场基线建立后的场景委员会登记。[metric:field_verification_result_count]
-<!-- V12_MEASUREMENT_END -->
+![正式背景上的京张双答运营叠加](assets/figures/site-overview.png)
 
 ## 设计依据与资料清单
 
@@ -110,7 +105,7 @@ AI 准入同时满足五道门：普通答案独立成立；服务同一任务�
 
 S7 的 **设计完整 / 试验未准入文件包**由同一套几何生成五级审查尺度，并登记 16 项可复算构件。[data:visual/assets/spatial-atlas.json] [metric:s7_review_scale_count] [metric:s7_prototype_kit_item_count]
 
-文件包登记 8 类许可、4 个采购包和 5 类空白表单；当前 8 类许可全部待办，结论明确为 **G0 NO-GO**，不表示测绘、采购、搭建或现场运行已经发生。[metric:e2_permit_gate_count] [metric:e2_procurement_package_count] [metric:e2_printable_form_count]
+文件包登记 8 类许可、4 个采购包和 5 类空白表单；当前 8 类许可全部待办，结论明确为 **G0：进入测绘与许可准备**，不表示测绘、采购、搭建或现场运行已经发生。[metric:e2_permit_gate_count] [metric:e2_procurement_package_count] [metric:e2_printable_form_count]
 
 “编译器”对 `SCN-001—012` 各执行七类用例：普通基线、许可缺失、岗位缺失、公共服务退化、零容忍事件、人工恢复和设备退役。状态机只接受 `OPEN→TRIAL`、`TRIAL→PAUSE`、`PAUSE→OPEN`、`PAUSE→RETIRE`、`RETIRE→OPEN`；非法跃迁、许可/岗位不全、公共路线中断，或把现场未知冒充已知，都会使构建失败。本次脚本实际生成并通过 84/84 项，结果为 `synthetic_design_verification`，不是现场仿真或安全认证。[data:visual/assets/tabletop-results.json] [metric:synthetic_design_verification_case_count]
 
