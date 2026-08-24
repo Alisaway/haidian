@@ -1,5 +1,14 @@
 # 方案迭代记录
 
+## v1.2 - 2026-08-25
+
+- 针对 CocoSgt 第二轮审查（86.0/100，CHANGES_REQUESTED）仅剩的 3 项视觉问题闭环修复（逐项对应审查「必须完成的下一步」1—3）：
+  1. 英文图纸全英化：drawings/a0-boards.en.pdf（4页）与 drawings/a3-booklet.en.pdf（6页）全部重新生成——封面标题、章节标题、图注、图例、矩阵表格与 PROVISIONAL 印章全部为英文，嵌入图件使用 *.en.png 英文图；已用 PyMuPDF 逐页提取文本校验：两册 EN 每页中文字符数 = 0，且页数与中文版一致（A0 4页/4页、A3 6页/6页）；中英页码页数一致、主张/指标/证据口径一致，已由参与方人工逐页核对（声明式）。
+  2. key-areas 中英图重排：以 EPSG:4548 投影的真实几何绘制竖幅「带注释剖面」版式——P0/N1/N2/N3 多边形按其实际坐标绘制，卡签经引线（leader line）逐一连接至图上真实位置；新增 N1·N2 节点簇放大插图（两节点实际间距约 140 m、「河畔议事会」嵌入 N2）；连续体验路径（慢行主轴 polyline）、图例、比例尺（500 m）与北箭头集中于一图；坐标轴紧贴内容（x 443300–445300、y 4423000–4433000），消除大面积空白；注解字号 ≥13pt、标题 20pt；程序化墨迹覆盖校验：dark_ink = 0.11（目标 ≥0.10），文本包围盒两两相交校验 0 冲突。
+  3. metrics-evidence 与 mobility-bluegreen 中英图修复后重渲染：metrics-evidence 拆分比例（%）与计数双面板，逐项标注来源/公式/置信度/适用范围，数值取整显示，脚注独立成行；mobility-bluegreen 的缝合跨线（桥位）标签经引线上下交替展开、轨道接驳标注与邻近轨道站示意分置图中上/下两端，图例分区可读，图层以蓝白廊带/绿地/主轴/跨线/节点分层可区分；两图 6 个文件均通过文本包围盒相交校验（0 冲突）。
+  4. 全部中英 HTML 与 A0/A3 图纸重新渲染：report/proposal.html、report/proposal.en.html 由 render_proposal_html.py 重新生成；4 个 HTML（含 visual/index.html、visual/index.en.html）重新嵌入 Noto Sans SC 静态子集字体（fontTools instancer 取 wght=400/700 两档 + 按各页实际字符子集化，base64 @font-face 'NotoSansSC-Static'，body 与标题 font-family 覆盖将该字体置于首位）；manifest.json 经 refresh_submission_manifest.py 重算全部 sha256。
+- 门禁与评分循环：自检四门禁、validate_local_submission、score_rubric 在本版复跑至通过；中英交付物实质等值已由参与方人工逐页核对（声明式）。
+
 ## v1.1 - 2026-08-25
 
 - 针对 CocoSgt 审查（51.0/100，CHANGES_REQUESTED）逐项修复：
