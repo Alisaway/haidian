@@ -1,3 +1,7 @@
 # Formal Narrative
 
-This narrative is derived from the structured AI package. Geometry, metrics, compliance matrix, drawings, and visual/index.html remain cross-checked deliverables.
+This narrative is derived from the structured AI package (v1.1, 2026-08-25). Geometry, metrics, compliance matrix, scenario cards, pilot and data governance matrices, drawings and visual/index.html remain cross-checked deliverables.
+
+Key v1.1 content maps: ten scenario cards (S1-S10) in "场景卡体系与产业测试验证场景"; three industry test-and-validation scenarios (T1-T3) with the same metric; five personas with journeys in "AI 创新生态、人才画像与 AI+ 场景"; five annual event brands (A1-A5); seven global cases (CASE-HIGHLINE…CASE-KALASATAMA); one plaza (P0) plus three nodes (N1/N2/N3) unified across text, figures and matrices; metric calibres (denominator/formula/scope/confidence/recalculation trigger) in "指标体系、面积复算与合规矩阵"; pilot implementation and data governance matrices; ecosystem factor mechanism map; brand & visual identity with participant-generated logo; Three Zones Two Wings regional loops.
+
+All conclusions are concept-level on a provisional boundary; flood/hydrology/blue-line/regulatory checks are pre-review professional items. Bilingual contract v2 is active with full English counterparts. Substantive Chinese-English equivalence has been manually verified by the participant (declarative).
