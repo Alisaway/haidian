@@ -79,7 +79,7 @@ Near-term work makes the city legible; medium-term work makes it responsive thro
 
 ## Metrics, Area Recalculation, and Compliance Matrix
 
-Current geometry supports internal consistency checks only: approximately 11.41 km² of provisional design area, three key areas, 10 scenario nodes, and four urban instruments. Official controls remain pending.[metric:site_area_sqm] [metric:green_ratio] [metric:public_space_ratio]
+Current geometry supports internal consistency checks only: approximately 11.41 km² of provisional design area, three key areas, 10 scenario nodes, and four urban instruments. Recalculated in EPSG:4548 from the same provisional geometry, the conceptual green-space ratio is **12.0714%** and the conceptual public-space ratio is **14.2495%**. They are internal consistency checks only; verified geometry would trigger recalculation, while statutory controls remain pending.[metric:site_area_sqm] [metric:green_ratio] [metric:public_space_ratio]
 
 ![Metrics and evidence](assets/figures/metrics-evidence.en.png)
 
@@ -204,6 +204,22 @@ This crosswalk is also the next-iteration checklist. If a claim cannot return to
 When the organiser supplies exact boundaries, building surveys, road lines, rail conditions, water systems, municipal capacity, heritage controls, ownership and statutory parameters, this proposal must not merely replace its basemap. It requires a full recheck: the overall field must test continuity and stitch locations; key areas must adjust courtyards and thresholds to actual retained value, ground-floor conditions and ownership; mobility drawings must be tested against street sections, fire, accessibility and utilities; metrics must be recalculated in a common coordinate system; scenario cards must replace conceptual roles with real operating agreements.
 
 In this sense, “unfinished” is not a defect but an honest renewal position. Unknown data are not hidden behind polished images. Relationships that can already be proposed are tested through verifiable, discussable and reversible prototypes. Once formal data arrive, the logic can be calibrated rather than discarded.
+
+## Identity, Regional Synergy and Long-Term Operation: taskbook requirements as inspectable interfaces
+
+The naming system is **“未完成的城市 / The Unfinished City”**, with the subtitle “百年京张城市共智化实验带 / Centennial Jing-Zhang Urban Co-intelligence Testbed.” The visual identity does not turn AI into one central object: a revisable rose axis stands for public learning ground; green, blue and yellow gradient fields stand for open training, everyday learning and explainable service; violet marks the negotiable transitions between knowledge and life, and life and service. The mark uses an “unfinished ring + growing public axis” as a reusable composition across drawing numbers, City Week, open days, contribution displays and the online workbench. This is a conceptual identity guide, not an official logo or authorised city brand.[source:AGENT-TASKBOOK] [depth:overall_spatial_structure]
+
+Three positioning statements, five functions, three areas/two wings and external collaboration are organised as interfaces — where a capability originates, where it can be tested and how it returns to the city. North Latitude Community is a conceptual interface for public exchange and young communities; Future Science City for research and test-method exchange; Huairou Science City for major-science dialogue and long-horizon public communication; the Economic-Technological Development Area for industry validation and manufacturing-to-operation feedback; and the Jing-Jin-Ji region for annual review, case exchange and talent circulation. These are open collaboration propositions only and do not state participation commitments by any institution.
+
+| Taskbook requirement | Inspectable response in this proposal | Spatial host and review method |
+|---|---|---|
+| Three positioning statements | AI high ground, pilgrimage and high-quality district become open training, contribution display and accessible public ground | Zhongzhiyuan test court, Time Platform and day-night learning street; annual public review |
+| Five functions | Research, translation, display, service and daily life work as complementary fields rather than one segregated park | Three key-area scripts, ten scenario cards, service threshold and civic mirror |
+| Three areas and two wings | Three key areas are primary cores; technology-service and Xiaoyue River scene-enabling wings are lateral calibration interfaces | Six transverse stitches, blue-green feedback garden and capability ledger |
+| Regional synergy | External science and innovation districts are method, talent and case-exchange networks rather than invented project sponsors | City Week, co-making season and cross-city review; annual public record of scope, data boundary and outcomes |
+| agent.1—agent.6 | Overall concept, ecosystem, scenarios, public-space landmarks, cultural narrative and long-term operation have prose, drawings, scenario cards and matrix evidence | compliance_matrix.json, A3/A0, offline visual page and annual-operation ledger |
+
+Long-term operation uses a “city learning calendar,” not a one-off festival: spring co-making season opens low-risk prototypes; summer scenario open days test service thresholds and accessibility; autumn Unfinished City Week publishes proposals, objections, pauses and rollback outcomes; winter cross-city review retains reusable protocols. Each season requires a named operator, open resource and data boundary, non-digital participation, exit/handover conditions, and a decision to continue, modify or withdraw the next year. These are mechanisms for operating teams to develop, not funding or administrative commitments.[source:AGENT-TASKBOOK] [depth:phasing_implementation]
 
 ## Risk, Copyright, and Compliance
 

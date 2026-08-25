@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>未完成的城市：百年京张城市共智化实验带 - proposal report</title>
 <style>
+
+
 :root {
   --ink: #172033;
   --muted: #667085;
@@ -16,7 +18,7 @@
 * { box-sizing: border-box; }
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Noto Sans SC", "Microsoft YaHei", sans-serif;
   color: var(--ink);
   background: var(--bg);
   line-height: 1.75;
@@ -50,6 +52,12 @@ code {
   color: #1d4f7a;
   padding: 0.1em 0.35em;
   border-radius: 4px;
+}
+:not(pre) > code {
+  display: inline-block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .summary { color: var(--muted); font-size: 17px; }
 .translation-link a { color: var(--accent); font-weight: 700; }
@@ -113,7 +121,7 @@ code {
 <section class="hero">
 <h1>未完成的城市：百年京张城市共智化实验带</h1>
 <p class="summary">以城市共智化为核心，将百年京张的历史基础设施转译为一套可感知、可试验、可协商、可生长的城市更新条件。</p>
-<p class="translation-link"><a href="proposal.en.html">Read in English</a> · <a href="../visual/index.html">打开离线动态可视化页面</a></p>
+<p class="translation-link"><a href="proposal.en.html">Read in English</a></p>
 </section>
 <h1>未完成的城市：百年京张城市共智化实验带</h1>
 <blockquote><p><strong>这是一座未完成的城市。</strong></p><p>它并不因尚未被全部重建而“不够未来”；恰恰相反，它把未来留给下一次证据、下一次协商和下一位使用者。百年京张在这里不是一条被包装成景观的旧线，而是一种城市更新的工作方式：遗存可以被保留，日常可以被打断后重新缝合，技术可以被试用、被解释、被拒绝，也可以被暂停。</p><p>本方案提出的不是一个替代现实的终局图像，而是“城市共智化”的空间原型——让城市从一次性扩张的<strong>城市化</strong>，经由尊重既有生活的<strong>存量更新</strong>，走向能够持续学习、质疑与改写自身的<strong>共智化</strong>。图纸中的每一条线都应回到一个真实问题：它落在什么空间、被谁使用、由谁维护、出现争议时如何退回。<sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="AGENT-TASKBOOK" title="来源：AGENT-TASKBOOK">来源</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="overall_spatial_structure" title="深度：overall_spatial_structure">深度</sup></p></blockquote>
@@ -157,7 +165,7 @@ code {
 <p>近期先建立记忆缝、城市学习入口、少量校准场和人工服务接口；中期推进适应房、开放训练院、日常共学街区、城市部署场和服务阈值；远期形成跨区运营、年度城市学习节律和可回退的更新协议。每项建议均依赖权属、资金、专业审批和运营主体确认，不能被理解为既定实施安排。<sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/phasing.geojson#PHASE-01" title="空间数据：geometry/phasing.geojson#PHASE-01">空间数据</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="renewal_project_list" title="深度：renewal_project_list">深度</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="phasing_implementation" title="深度：phasing_implementation">深度</sup></p>
 <p>年度运营构想包括“未完成城市周”、开发者共作季、公众场景开放日与跨城复盘会。其转化路径是：公开问题—低风险试验—人工复盘—可复制方法—国际传播；不是招商或政策承诺。<sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="AGENT-TASKBOOK" title="来源：AGENT-TASKBOOK">来源</sup> <sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="PROJECT-OFFICIAL-ANNOUNCEMENT" title="标准：PROJECT-OFFICIAL-ANNOUNCEMENT">标准</sup></p>
 <h2>指标体系、面积复算与合规矩阵</h2>
-<p>当前可复算的指标来自提交几何：临时设计范围面积约 11.41 平方公里、三处重点区、10 个场景节点与四类城市设施。绿地、公共空间、建筑基底等数值用于概念层内部一致性校核，正式边界发布后必须重算；法定强度指标保持待确认。<sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="site_area_sqm" title="指标：site_area_sqm">指标</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="green_ratio" title="指标：green_ratio">指标</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="public_space_ratio" title="指标：public_space_ratio">指标</sup></p>
+<p>当前可复算的指标来自提交几何：临时设计范围面积约 11.41 平方公里、三处重点区、10 个场景节点与四类城市设施。按同一暂定几何在 EPSG:4548 下复算，概念绿地率为 <strong>12.0714%</strong>、概念公共空间率为 <strong>14.2495%</strong>；它们只用于内部一致性校核，正式边界发布后必须重算，法定强度指标保持待确认。<sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="site_area_sqm" title="指标：site_area_sqm">指标</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="green_ratio" title="指标：green_ratio">指标</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="public_space_ratio" title="指标：public_space_ratio">指标</sup></p>
 <p>指标体系把“数值”降回到它应有的位置：它不是为方案制造确定性，而是帮助审核者追踪设计关系。范围面积来自临时多边形的投影面积；绿地率与公共空间率来自概念图层在同一边界内的面积比；重点区、场景卡、测试场与城市设施为明确计数。它们在 metrics.json 中记录公式、来源文件、置信度与假设，能随边界、保留建筑、道路和水系资料更新而再次生成。容积率、建筑规模、停车配比、投资额、碳排与客流等缺少必要输入的指标一律标注为未知，不以估算值包装为控制结论。合规矩阵、标准矩阵和设计深度矩阵对应列出证据位置与待确认项。</p>
 <figure class="proposal-figure"><img src="../assets/figures/metrics-evidence.png" alt="指标、任务与证据关系"><figcaption>指标、任务与证据关系</figcaption></figure>
 <h2>故事如何变成空间：从“第二条铁路”到四种界面</h2>
@@ -211,6 +219,11 @@ code {
 <h2>资料更新后的重算与深化机制</h2>
 <p>当组织方补充精确边界、既有建筑测绘、道路红线、轨道条件、水系、市政容量、遗产保护、用地权属和法定控制后，方案不应仅仅替换一张底图，而应启动一次完整的再校核。总体图需要重新判断记忆缝的连续可达性和横向缝合位置；重点区需要根据真实建筑保留价值、首层条件与产权关系调整院落和服务阈值；交通图需要通过道路断面、消防、无障碍和市政条件检验服务分带；指标表需要在统一坐标系下重算面积、绿地、公共空间和建筑改造量；场景卡需要将运营责任人和数据边界由概念角色替换为真实协议。</p>
 <p>这意味着方案的“未完成”不是缺陷，而是一种对城市更新现实的诚实表达：对尚未获得的数据，不以精致图像假装已经解决；对已经可以提出的空间关系，则用可验证、可讨论、可退出的原型先行。正式资料到位后，本方案的逻辑可以被校准，而不必被推翻。</p>
+<h2>品牌、区域协同与长期运营：把任务书要求变成可检查的空间接口</h2>
+<p>本方案的名称系统为 <strong>“未完成的城市 / The Unfinished City”</strong>，副标题为“百年京张城市共智化实验带 / Centennial Jing-Zhang Urban Co-intelligence Testbed”。视觉识别不把 AI 画成单一中心：可被共同修订的玫红轴代表公共学习地基，绿色、蓝色、黄色三处渐变场分别代表开放训练、日常共学与可解释服务，紫色代表知识—生活、生活—服务之间可被协商的转换节点。标志使用“未闭合的环 + 可继续生长的公共轴”这一可复用构成，应用于图纸编号、城市周、开放日、贡献展示和线上工作台；这是一套概念性品牌规范，不构成官方 Logo 或已获授权的城市品牌。<sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="AGENT-TASKBOOK" title="来源：AGENT-TASKBOOK">来源</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="overall_spatial_structure" title="深度：overall_spatial_structure">深度</sup></p>
+<p>三大定位、五大功能、三区两翼与外部协同不以口号平铺，而以“能力从哪里来、在何处试验、怎样回到城市”的接口矩阵组织。北纬社区提供跨区域公共交流与青年社群接口；未来科学城提供科研—试验方法的互鉴接口；怀柔科学城提供大科学装置、科学传播与长期议题的对话接口；经开区提供产业验证、可解释服务和制造—运营反馈的对话接口；京津冀则作为年度复盘、案例互认与人才交流的协同尺度。上述均为开放合作的概念建议，不代表任何机构已承诺参与。</p>
+<div class="proposal-table"><table><thead><tr><th>任务书要求</th><th>本方案的可检查回应</th><th>落点与复核方式</th></tr></thead><tbody><tr><td>三大定位</td><td>AI 高地、朝圣地与高品质城区被转译为开放训练、贡献展示和可达的日常公共地基</td><td>众智园测试庭院、时间站台、昼夜学习街；年度公众复盘</td></tr><tr><td>五大功能</td><td>研发、转化、展示、服务、生活不按单一园区分隔，而在三处重点区形成互补</td><td>三处重点区脚本、十张场景卡、服务阈值与城市镜面</td></tr><tr><td>三区两翼</td><td>三处重点区为主核心；科技服务翼和小月河场景赋能翼为横向校准接口</td><td>六类横向缝合、蓝绿反馈花园、能力配置台账</td></tr><tr><td>区域协同</td><td>外部城市与科创片区不被虚构为项目主体，而作为方法、人才和案例的交换网络</td><td>城市周、共作季、跨城复盘会；每年公开记录参与范围、数据边界与成果去向</td></tr><tr><td>agent.1—agent.6</td><td>总体概念、生态、场景、公共空间地标、文化叙事、长期运营均有正文、图纸、场景卡与矩阵证据</td><td>compliance_matrix.json、A3/A0、离线网页与年度运营台账</td></tr></tbody></table></div>
+<p>长期运营采用“城市学习年历”而非一次性节庆：春季共作季开放低风险原型；夏季场景开放日让公众检验服务阈值与无障碍条件；秋季未完成城市周公布建议、异议、暂停与回退结果；冬季跨城复盘会沉淀可复用协议。每一季都必须有明确责任人、公开的资源与数据边界、非数字参与方式、退出或交接条件，以及面向下一年是否继续、修改或撤回的决定；这些是可供运营团队深化的机制建议，而非资金或行政承诺。<sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="AGENT-TASKBOOK" title="来源：AGENT-TASKBOOK">来源</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="phasing_implementation" title="深度：phasing_implementation">深度</sup></p>
 <h2>风险、版权与合规说明</h2>
 <p>方案使用公开或清权资料、提交方原创文字、原创代码和数据驱动图示。所有 AI 场景遵循数据最小化、可解释、人工复核、可暂停和不歧视原则；不使用个人隐私、内部数据、未授权图片、商标或人物肖像。临时边界、控规条件、遗产控制、工程可行性、权属与投资均被标为待专业确认。<sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="SOURCE-REGISTRY" title="来源：SOURCE-REGISTRY">来源</sup> <sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="BARRIER-FREE-ENVIRONMENT-LAW" title="标准：BARRIER-FREE-ENVIRONMENT-LAW">标准</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="risk_missing_data" title="深度：risk_missing_data">深度</sup></p>
 <p>风险并不因“智能”而消失，反而需要被设计为可见的公共议题。对于数据风险，场景优先处理匿名、聚合或用户主动提供的信息，并设置退出、纠错与人工说明；对于空间风险，机器人、临时装置和活动通过限速、限时、限区、可关闭方式控制；对于治理风险，城市镜面展示的是被允许公开的议题、证据与不同意见，而非对人的评分；对于更新风险，保留既有生活与经营的连续性优先于单次形象改造。引用的全球案例只作为方法坐标，不暗示合作、授权、落地或结果保证。所有图文的版权和生成方式在包内明示，供审核和后续协作使用。</p>

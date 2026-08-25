@@ -7,3 +7,5 @@ All narrative, diagrams, figures, PDF boards, and offline interactive code in th
 `assets/media/experience-public-ground-v5.png`, `assets/media/experience-unfinished-atlas-v5.png`, `assets/media/experience-human-threshold-v5.png`, `assets/media/experience-rail-public-ground-v1.png`, and `assets/media/experience-rail-aerial-v1.png` are original GPT image-generation outputs commissioned for this submission. They are supplementary, clearly labelled conceptual experience layers only. They do not depict surveyed conditions or approved construction and are not used to assert official geometry, area, building height, engineering feasibility, statutory controls, or approval status.
 
 The dynamic model is a locally authored Canvas simulation. It has no remote dependencies, tracking, map tiles, forms, or APIs.
+
+Noto Sans SC is used to make Chinese text readable in the offline report, visual page and embedded drawing PDFs. A glyph subset is embedded directly in each offline HTML file; the PDFs embed the required glyphs at export. Noto Sans SC is distributed under the SIL Open Font License 1.1. No remote font service is loaded.
