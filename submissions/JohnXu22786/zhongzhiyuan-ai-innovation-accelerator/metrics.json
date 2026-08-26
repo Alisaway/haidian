@@ -7,7 +7,7 @@
   "metrics": {
     "site_area_sqm": {
       "status": "known",
-      "value": 11412825.386,
+      "value": 11412825,
       "unit": "sqm",
       "source_files": [
         "geometry/site_boundary.geojson"
@@ -16,44 +16,58 @@
       "confidence": "medium",
       "assumptions": [
         "Provisional boundary, not an official redline."
-      ]
+      ],
+      "display_precision": "ten_thousand_sqm",
+      "recompute_trigger": "official boundary polygon published"
     },
     "green_space_area_sqm": {
       "status": "known",
-      "value": 2227303.501,
+      "value": 2227304,
       "unit": "sqm",
       "source_files": [
         "geometry/green_space.geojson"
       ],
       "formula": "union(conceptual green polygons, EPSG:4548)",
       "confidence": "low",
-      "assumptions": []
+      "assumptions": [
+        "Conceptual green overlay on provisional boundary."
+      ],
+      "display_precision": "ten_thousand_sqm",
+      "recompute_trigger": "official green-space data published"
     },
     "public_space_area_sqm": {
       "status": "known",
-      "value": 48250.0,
+      "value": 48250,
       "unit": "sqm",
       "source_files": [
         "geometry/public_space.geojson"
       ],
       "formula": "union(conceptual public-space polygons, EPSG:4548)",
       "confidence": "low",
-      "assumptions": []
+      "assumptions": [
+        "Conceptual node plazas on provisional boundary."
+      ],
+      "display_precision": "ten_thousand_sqm",
+      "recompute_trigger": "official land-use data published"
     },
     "building_footprint_area_sqm": {
       "status": "known",
-      "value": 111600.0,
+      "value": 111600,
       "unit": "sqm",
       "source_files": [
         "geometry/buildings.geojson"
       ],
       "formula": "union(conceptual reuse-first envelopes, EPSG:4548)",
       "confidence": "low",
-      "assumptions": []
+      "assumptions": [
+        "Conceptual reuse-first building envelopes only."
+      ],
+      "display_precision": "ten_thousand_sqm",
+      "recompute_trigger": "official building survey published"
     },
     "green_ratio": {
       "status": "known",
-      "value": 0.195158,
+      "value": 0.195,
       "unit": "ratio",
       "source_files": [
         "geometry/green_space.geojson",
@@ -61,11 +75,15 @@
       ],
       "formula": "green_space_area_sqm / site_area_sqm",
       "confidence": "low",
-      "assumptions": []
+      "assumptions": [
+        "Same as green area and site area."
+      ],
+      "display_precision": "3_significant_digits",
+      "recompute_trigger": "official data published"
     },
     "public_space_ratio": {
       "status": "known",
-      "value": 0.004228,
+      "value": 0.004,
       "unit": "ratio",
       "source_files": [
         "geometry/public_space.geojson",
@@ -73,18 +91,26 @@
       ],
       "formula": "public_space_area_sqm / site_area_sqm",
       "confidence": "low",
-      "assumptions": []
+      "assumptions": [
+        "Same as public space area and site area."
+      ],
+      "display_precision": "3_significant_digits",
+      "recompute_trigger": "official data published"
     },
     "road_network_length_m": {
       "status": "known",
-      "value": 10154.351,
+      "value": 10154,
       "unit": "m",
       "source_files": [
         "geometry/roads.geojson"
       ],
       "formula": "sum(conceptual paths, EPSG:4548)",
       "confidence": "low",
-      "assumptions": []
+      "assumptions": [
+        "Conceptual slow-traffic spine and links."
+      ],
+      "display_precision": "hundred_m",
+      "recompute_trigger": "official road network data published"
     },
     "key_area_count": {
       "status": "known",
@@ -95,7 +121,9 @@
       ],
       "formula": "count(area_id in key_areas.geojson)",
       "confidence": "medium",
-      "assumptions": []
+      "assumptions": [
+        "Three official text-based key areas."
+      ]
     },
     "land_use_zone_count": {
       "status": "known",
@@ -106,7 +134,9 @@
       ],
       "formula": "count(land_use.geojson features)",
       "confidence": "high",
-      "assumptions": []
+      "assumptions": [
+        "Concept land-use zones in package geometry."
+      ]
     },
     "building_unit_count": {
       "status": "known",
@@ -117,7 +147,9 @@
       ],
       "formula": "count(buildings.geojson features)",
       "confidence": "high",
-      "assumptions": []
+      "assumptions": [
+        "Concept reuse-first envelopes."
+      ]
     },
     "landmark_count": {
       "status": "known",
@@ -128,7 +160,9 @@
       ],
       "formula": "count(scenario_type == ai_landmark)",
       "confidence": "high",
-      "assumptions": []
+      "assumptions": [
+        "Three original concept nodes L1-L3."
+      ]
     },
     "scenario_node_count": {
       "status": "known",
@@ -139,7 +173,9 @@
       ],
       "formula": "count(public_space scenario nodes + landmarks)",
       "confidence": "high",
-      "assumptions": []
+      "assumptions": [
+        "Six scenario nodes plus three landmarks."
+      ]
     },
     "industry_test_scenario_count": {
       "status": "known",
@@ -148,9 +184,11 @@
       "source_files": [
         "proposal.md"
       ],
-      "formula": "count(industry_validation scenario cards)",
+      "formula": "count(industry_validation test protocol rows)",
       "confidence": "high",
-      "assumptions": []
+      "assumptions": [
+        "Three test protocols listed in the AI section."
+      ]
     },
     "persona_count": {
       "status": "known",
@@ -159,9 +197,11 @@
       "source_files": [
         "proposal.md"
       ],
-      "formula": "count(representative user groups)",
+      "formula": "count(representative persona groups)",
       "confidence": "high",
-      "assumptions": []
+      "assumptions": [
+        "Five persona groups listed in the AI section."
+      ]
     },
     "global_case_count": {
       "status": "known",
@@ -173,7 +213,9 @@
       ],
       "formula": "count(global ecosystem mechanism cases)",
       "confidence": "high",
-      "assumptions": []
+      "assumptions": [
+        "Five cases with per-case source entries in sources.json."
+      ]
     },
     "phase_count": {
       "status": "known",
@@ -184,7 +226,9 @@
       ],
       "formula": "count(phasing polygons)",
       "confidence": "high",
-      "assumptions": []
+      "assumptions": [
+        "Three phasing strips."
+      ]
     },
     "annual_program_count": {
       "status": "known",
@@ -193,9 +237,11 @@
       "source_files": [
         "proposal.md"
       ],
-      "formula": "count(annual event system)",
+      "formula": "count(annual program table rows)",
       "confidence": "high",
-      "assumptions": []
+      "assumptions": [
+        "Five annual programs listed in the phasing section."
+      ]
     }
   }
 }
