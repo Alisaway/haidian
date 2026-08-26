@@ -1,3 +1,3 @@
-# Formal Narrative
+# Narrative
 
-This narrative is derived from the structured AI package. Geometry, metrics, compliance matrix, drawings, and visual/index.html remain cross-checked deliverables.
+REPAIR ROUND-1 (2026-08-26): 本包按 proposal_format_version=2 双语合同完成整备——五张英文图件、A0/A3英文版、英文HTML与英文visual页面全部补齐；proposal.en.md 的 language=en / translation_of=proposal.md 及 manifest 对应映射已修正；所有 HTML 内嵌 OFL 许可的 Noto Sans SC 子集（逐页机器核验无缺字）；图件按"真实比例+语境地名+图例/比例尺/北箭头+双语 provisional 印章"重绘并通过机器 ink/裁切/文字重叠质检（记录于 self_check.json[figure_qc]）。内容层面：品牌层级（数轨京张 JINGRAIL→智治绿廊→三节点）与 Logo 方向、8环节生态图谱+5例全球案例表、12张场景卡+3项测试协议+5类人才画像、公共空间组件库、荣誉展示系统、文化导视与国际传播文案、年度活动体系、开发者社区与场景开放转化机制、"一廊五接口"区域协同矩阵（北纬社区/未来科学城/怀柔科学城/经开区/京津冀）、试点与活动实施/运营矩阵（牵头/协作、前置数据、许可与伦理、成本等级、周期、人工兜底、验收、申诉、退出、长期KPI）均已写入正文；指标复算口径（绿地率0.122与公园绿地28%分母区分）与品牌在先权利声明（内部工作代号）已落实。全部内容保持概念建议属性，不构成政府承诺或投资承诺。
