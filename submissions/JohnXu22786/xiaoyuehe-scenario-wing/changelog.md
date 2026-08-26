@@ -75,3 +75,88 @@ After the round-5 rebuild, the full machine loop was re-run; per-file results:
   formal-review-ready) + figure_qc evidence block.
 - Final machinery: score_rubric.py 97.0/100 (weighted, official rubric),
   reviewer_gaps=[] , mandatory_rejections=[], pass=true; validate PASS.
+
+## round-6 - 2026-08-27 (repair of CocoSgt 2026-08-26T12:48Z review, 67.0)
+
+Per-item status: (1) sources DONE; (2) agent.2/agent.4 outputs DONE; (3)
+agent.5/agent.6 outputs DONE; (4) copyright DONE; (5) key-areas/A0 layout
+DONE; (6) per-dimension repairs DONE (details below).
+
+- **proposal.md / proposal.en.md**: sources re-framed into verified-public vs
+  unverified-research-hypothesis (Beijing Master Plan + Haidian District Plan
+  official pages, Jingzhang Railway Heritage Park Phase-1 bureau notice +
+  Phase-2 news with published/accessed dates; Xueyuan Rd regulatory plan,
+  river special materials, street statistics, AI-enterprise distribution, site
+  survey demoted to unverified/self-declared with no factual claims). New
+  substantive outputs: five regional loops with input-platform-output-
+  responsible tables; eight-factor mechanism table (「要素八杠」) + seven-layer
+  full-stack dependency chain (模型/算力/数据/评测/应用/治理/转化) with
+  governance gates; 「展—演—贸」Dazhongsi linkage; east-west stitch bands +
+  north-south connection strategy anchored to the heritage park's public
+  reporting; three-landmark catalogue (L1-L3) + honour system + six-class
+  reversible component library (R-01-R-06); culture-carrier-signage-
+  international-communication four-layer system with 「水脉符号系统」; developer
+  six-step pipeline (participate-test-review-display-convert-exit) with
+  operation details (monthly schedule/booking rotation, annual equipment
+  renewal, suggested 5-working-day complaint reply, qualitative revenue model).
+  Copyright section: co-copyright claim with the organizer REMOVED (announcement
+  provides no verifiable clause); COMMUNITY-DISPLAY-ONLY scope and limits
+  defined in-proposal. Indicator section: 3 landmarks + 6 component classes
+  added to visible-text counts (consistent with metrics.json landmark_count=3).
+  Reference section re-listed by verified/unverified classes. Evidence-anchor
+  density kept within validator limits (max 8/block, <=3 consecutive).
+- **sources.json**: +4 verified entries (REF-BJ-MASTER-PLAN, REF-HAIDIAN-
+  DISTRICT-PLAN, REF-JZ-RAILWAY-PARK, REF-JZ-PARK-PHASE2-NEWS) +3 unverified
+  entries (UNVERIFIED-PLAN-MATERIALS / STATISTICS / SITE-OBSERVATION);
+  top-level source_registry_mapping block (30 rows: exact aliases for the 6
+  registry-known IDs, package_local_only for the rest) and license_policy
+  block defining COMMUNITY-DISPLAY-ONLY scope/limits/clause-priority.
+- **report/copyright_statement.md**: rewritten - rights-ledger overview (ASSET/
+  CASE/REF/UNVERIFIED classes), COMMUNITY-DISPLAY-ONLY scope and limits,
+  explicit no-co-copyright statement with official-clause priority.
+- **compliance_matrix.json**: agent.2/4/5/6 + 1.5.1.1 + 1.5.2.1 evidence
+  summaries rewritten to point at the new real content (eight-factor table,
+  seven-layer table, three-landmark catalogue, honour system, component
+  library, stitch/connect strategy, four-layer culture system, six-step
+  pipeline); report_sections updated accordingly.
+- **risk.json**: +R-COPYRIGHT row (rights/licence boundary risk).
+- **assets/figures/key-areas.png + .en.png (regenerated)**: new grid layout -
+  main map (site/water/green/roads/12 scenario bays/3 landmarks) + node role
+  card (P0/N1/N2/N3 with legend) + strictly separated bottom band (note row /
+  scale bar + north / red PROVISIONAL stamp row). No zoom boxes; labels placed
+  programmatically with pixel-space bbox checks (no label-polygon, label-
+  legend or text-text overlap); generation-time text-bbox assert passed for
+  both languages. 1800x1200 @150dpi; ink 0.296 (zh) / 0.299 (en) >= 0.08;
+  edge-clip 0.0. en variant 100% English labels.
+- **drawings/a0-boards.pdf + .en.pdf (regenerated)**: 2 pages; board title
+  62pt, subtitle 26pt (zh boards carry zh+en subtitles; en boards carry en
+  only - PyMuPDF page check: en boards CJK-free), per-panel captions 24pt,
+  single 3-line footnote block at bottom (no duplicate/squeezed micro-notes),
+  panels on a fixed grid; min text edge distance 10.8pt (A0), 15.5pt (A3 en
+  cover).
+- **drawings/a3-booklet.pdf + .en.pdf (regenerated)**: cover + 5 figure pages
+  embedding the updated key-areas; en booklet CJK-free; en pages use the
+  .en.png figure variants (no Chinese inside en boards/booklets).
+- **visual/assets/previews (16)**: regenerated via render_previews.py
+  (full-page HTML rasters + A0/A3 page-1 rasters from the current PDFs);
+  the eight fig-* previews are raw byte copies of the current figures
+  (sha256-identical); pdf-a3-*-p1.png pixel-exact vs current PDFs;
+  pdf-a0-*-p1.png 2200x1555 content-current (sub-visual MAD, not
+  pixel-reproducible).
+- **report/proposal.html + .en.html**: regenerated from the updated proposals
+  via render_proposal_html.py, fonts embedded LAST via embed_fonts.py (Noto
+  Sans SC subset data-URI); check_font_coverage: ALL_FONTS_OK (0 missing CJK);
+  en pages functional Chinese = 0 (quoted glosses excluded).
+- **self_check.json**: four gates re-run PASS (formal-review-ready) +
+  figure_qc block (ok=true, ink_ok=true, clip_clear=true, overlap_clear=
+  not_verified - post-hoc text overlap is not machine-verifiable; generation-
+  time text-bbox asserts recorded above).
+- **manifest.json**: hashes refreshed for all declared files; en counterpart
+  language/translation_of mappings unchanged and verified.
+- Final machinery this round: score_rubric.py 97.0/100, reviewer_gaps=[],
+  mandatory_rejections=[], pass=true; self_check 4 gates PASS;
+  validate_local_submission PASS.
+- Manual declarations: 中英实质等值已人工核对（13+13 headings, node ids,
+  numerals, evidence-anchor sets pairwise equal）; 品牌在先权利检索未完成前
+  按内部工作代号处理（TRADEMARK-WORKING-CODENAME）; key-areas ink zh 0.296 /
+  en 0.299, A0/A3 edge-clip and en-CJK checks via PyMuPDF (details above).
