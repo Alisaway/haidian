@@ -16,7 +16,9 @@
       "confidence": "medium",
       "assumptions": [
         "Provisional boundary, not an official redline."
-      ]
+      ],
+      "usage_limits_zh": "概念口径，仅用于本包展示与自检；不作为官方现状监测结果或法定规划结论。",
+      "recompute_trigger_zh": "官方正式边界、控规条件或主管口径数据发布后按同一公式整体复算。"
     },
     "green_space_area_sqm": {
       "status": "known",
@@ -27,7 +29,9 @@
       ],
       "formula": "union(conceptual green polygons, EPSG:4548)",
       "confidence": "low",
-      "assumptions": []
+      "assumptions": [],
+      "usage_limits_zh": "概念口径，仅用于本包展示与自检；不作为官方现状监测结果或法定规划结论。",
+      "recompute_trigger_zh": "官方正式边界、控规条件或主管口径数据发布后按同一公式整体复算。"
     },
     "public_space_area_sqm": {
       "status": "known",
@@ -38,7 +42,9 @@
       ],
       "formula": "union(conceptual public-space polygons, EPSG:4548)",
       "confidence": "low",
-      "assumptions": []
+      "assumptions": [],
+      "usage_limits_zh": "概念口径，仅用于本包展示与自检；不作为官方现状监测结果或法定规划结论。",
+      "recompute_trigger_zh": "官方正式边界、控规条件或主管口径数据发布后按同一公式整体复算。"
     },
     "building_footprint_area_sqm": {
       "status": "known",
@@ -49,7 +55,9 @@
       ],
       "formula": "union(conceptual reuse-first envelopes, EPSG:4548)",
       "confidence": "low",
-      "assumptions": []
+      "assumptions": [],
+      "usage_limits_zh": "概念口径，仅用于本包展示与自检；不作为官方现状监测结果或法定规划结论。",
+      "recompute_trigger_zh": "官方正式边界、控规条件或主管口径数据发布后按同一公式整体复算。"
     },
     "green_ratio": {
       "status": "known",
@@ -61,7 +69,9 @@
       ],
       "formula": "green_space_area_sqm / site_area_sqm",
       "confidence": "low",
-      "assumptions": []
+      "assumptions": [],
+      "usage_limits_zh": "概念口径，仅用于本包展示与自检；不作为官方现状监测结果或法定规划结论。",
+      "recompute_trigger_zh": "官方正式边界、控规条件或主管口径数据发布后按同一公式整体复算。"
     },
     "public_space_ratio": {
       "status": "known",
@@ -73,7 +83,9 @@
       ],
       "formula": "public_space_area_sqm / site_area_sqm",
       "confidence": "low",
-      "assumptions": []
+      "assumptions": [],
+      "usage_limits_zh": "概念口径，仅用于本包展示与自检；不作为官方现状监测结果或法定规划结论。",
+      "recompute_trigger_zh": "官方正式边界、控规条件或主管口径数据发布后按同一公式整体复算。"
     },
     "road_network_length_m": {
       "status": "known",
@@ -84,7 +96,9 @@
       ],
       "formula": "sum(conceptual paths, EPSG:4548)",
       "confidence": "low",
-      "assumptions": []
+      "assumptions": [],
+      "usage_limits_zh": "概念口径，仅用于本包展示与自检；不作为官方现状监测结果或法定规划结论。",
+      "recompute_trigger_zh": "官方正式边界、控规条件或主管口径数据发布后按同一公式整体复算。"
     },
     "key_area_count": {
       "status": "known",
@@ -95,7 +109,9 @@
       ],
       "formula": "count(area_id in key_areas.geojson)",
       "confidence": "medium",
-      "assumptions": []
+      "assumptions": [],
+      "usage_limits_zh": "概念口径，仅用于本包展示与自检；不作为官方现状监测结果或法定规划结论。",
+      "recompute_trigger_zh": "官方正式边界、控规条件或主管口径数据发布后按同一公式整体复算。"
     },
     "land_use_zone_count": {
       "status": "known",
@@ -106,7 +122,9 @@
       ],
       "formula": "count(land_use.geojson features)",
       "confidence": "high",
-      "assumptions": []
+      "assumptions": [],
+      "usage_limits_zh": "概念口径，仅用于本包展示与自检；不作为官方现状监测结果或法定规划结论。",
+      "recompute_trigger_zh": "官方正式边界、控规条件或主管口径数据发布后按同一公式整体复算。"
     },
     "building_unit_count": {
       "status": "known",
@@ -117,7 +135,9 @@
       ],
       "formula": "count(buildings.geojson features)",
       "confidence": "high",
-      "assumptions": []
+      "assumptions": [],
+      "usage_limits_zh": "概念口径，仅用于本包展示与自检；不作为官方现状监测结果或法定规划结论。",
+      "recompute_trigger_zh": "官方正式边界、控规条件或主管口径数据发布后按同一公式整体复算。"
     },
     "landmark_count": {
       "status": "known",
@@ -128,7 +148,9 @@
       ],
       "formula": "count(scenario_type == ai_landmark)",
       "confidence": "high",
-      "assumptions": []
+      "assumptions": [],
+      "usage_limits_zh": "概念口径，仅用于本包展示与自检；不作为官方现状监测结果或法定规划结论。",
+      "recompute_trigger_zh": "官方正式边界、控规条件或主管口径数据发布后按同一公式整体复算。"
     },
     "scenario_node_count": {
       "status": "known",
@@ -139,7 +161,9 @@
       ],
       "formula": "count(public_space scenario nodes + landmarks)",
       "confidence": "high",
-      "assumptions": []
+      "assumptions": [],
+      "usage_limits_zh": "概念口径，仅用于本包展示与自检；不作为官方现状监测结果或法定规划结论。",
+      "recompute_trigger_zh": "官方正式边界、控规条件或主管口径数据发布后按同一公式整体复算。"
     },
     "industry_test_scenario_count": {
       "status": "known",
@@ -150,7 +174,9 @@
       ],
       "formula": "count(industry_validation scenario cards)",
       "confidence": "high",
-      "assumptions": []
+      "assumptions": [],
+      "usage_limits_zh": "概念口径，仅用于本包展示与自检；不作为官方现状监测结果或法定规划结论。",
+      "recompute_trigger_zh": "官方正式边界、控规条件或主管口径数据发布后按同一公式整体复算。"
     },
     "persona_count": {
       "status": "known",
@@ -161,19 +187,23 @@
       ],
       "formula": "count(representative user groups)",
       "confidence": "high",
-      "assumptions": []
+      "assumptions": [],
+      "usage_limits_zh": "概念口径，仅用于本包展示与自检；不作为官方现状监测结果或法定规划结论。",
+      "recompute_trigger_zh": "官方正式边界、控规条件或主管口径数据发布后按同一公式整体复算。"
     },
     "global_case_count": {
       "status": "known",
-      "value": 4,
+      "value": 6,
       "unit": "count",
       "source_files": [
         "proposal.md",
         "sources.json"
       ],
-      "formula": "count(global ecosystem mechanism cases)",
+      "formula": "count(registered sourced global indicator-governance cases in proposal.md case table + sources.json)",
       "confidence": "high",
-      "assumptions": []
+      "assumptions": [],
+      "usage_limits_zh": "概念口径，仅用于本包展示与自检；不作为官方现状监测结果或法定规划结论。",
+      "recompute_trigger_zh": "官方正式边界、控规条件或主管口径数据发布后按同一公式整体复算。"
     },
     "phase_count": {
       "status": "known",
@@ -184,7 +214,9 @@
       ],
       "formula": "count(phasing polygons)",
       "confidence": "high",
-      "assumptions": []
+      "assumptions": [],
+      "usage_limits_zh": "概念口径，仅用于本包展示与自检；不作为官方现状监测结果或法定规划结论。",
+      "recompute_trigger_zh": "官方正式边界、控规条件或主管口径数据发布后按同一公式整体复算。"
     },
     "annual_program_count": {
       "status": "known",
@@ -195,7 +227,9 @@
       ],
       "formula": "count(annual event system)",
       "confidence": "high",
-      "assumptions": []
+      "assumptions": [],
+      "usage_limits_zh": "概念口径，仅用于本包展示与自检；不作为官方现状监测结果或法定规划结论。",
+      "recompute_trigger_zh": "官方正式边界、控规条件或主管口径数据发布后按同一公式整体复算。"
     }
   }
 }
