@@ -1,0 +1,22 @@
+{
+  "schema_version": "0.1.0",
+  "title_zh": "公共服务等价合同（逐场景无 AI 等价任务表）",
+  "title_en": "Public Service Equivalence Contract (no-AI equivalent tasks per scenario)",
+  "concept_statement_zh": "把公共底线（任何 AI 场景，智能层关闭后仍能获得同一项基础服务）拆成逐场景可核验任务。12/12 场景均须先存在一条无 AI 基础路线与至少两条人工渠道（有人窗口、纸本、电话或固定导视之一，现场不强制个人设备）；拒绝智能不得降低基本服务水平（同核心结果、同队列优先级、零额外费用、相同基础安全信息）。",
+  "status_note_zh": "本文件为设计层契约（fixture），非真实用户测试；真实参与观察与通过记录均为 0，待场地授权后由无障碍专业人员主持共测并逐项替换。",
+  "contracts": [
+    {"id": "S01", "name_zh": "开源发布厅", "no_ai_route_zh": "现场公告板 + 人工报名登记 + 发布会人工主持", "human_channels_zh": "管理台人工窗口、纸本签到、电话咨询", "core_outcome_zh": "活动报名与发布信息获取", "devices_required": false, "fixtures_met": ["non_visual", "mobility", "elderly", "multilingual", "no_smartphone", "refusing_algorithm"]},
+    {"id": "S02", "name_zh": "自主大模型评测场", "no_ai_route_zh": "纸面评测记录 + 人工登记 + 专家评审", "human_channels_zh": "评测平台人工受理、纸本申请、专家答辩", "core_outcome_zh": "评测基准知晓与结果复核", "devices_required": false, "fixtures_met": ["non_visual", "keyboard_only", "mobility", "no_smartphone"]},
+    {"id": "S03", "name_zh": "端侧算力驿站", "no_ai_route_zh": "电话/现场人工开卡 + 服务台值班", "human_channels_zh": "服务台人工窗口、电话、纸本说明", "core_outcome_zh": "算力使用时长的申请与缴付", "devices_required": false, "fixtures_met": ["elderly", "no_smartphone", "refusing_algorithm"]},
+    {"id": "S04", "name_zh": "AI 慢行导航", "no_ai_route_zh": "固定导视牌 + 人工问路 + 地图纸本", "human_channels_zh": "公园服务亭人工问询、纸本地图、电话", "core_outcome_zh": "到达目的地与路线信息", "devices_required": false, "fixtures_met": ["non_visual", "low_vision", "mobility", "multilingual", "no_smartphone"]},
+    {"id": "S05", "name_zh": "大钟寺国际路演客厅", "no_ai_route_zh": "纸质路演资料 + 人工接待 + 人工路演评审", "human_channels_zh": "会展人工服务台、纸本议程、人工翻译", "core_outcome_zh": "活动参与与商务接洽", "devices_required": false, "fixtures_met": ["multilingual", "no_smartphone", "mobility"]},
+    {"id": "S06", "name_zh": "清河低碳创新廊", "no_ai_route_zh": "人工抄表 + 环境数据公示牌", "human_channels_zh": "生态巡检员、公示栏、服务电话", "core_outcome_zh": "环境状态知晓", "devices_required": false, "fixtures_met": ["non_visual", "elderly", "no_smartphone"]},
+    {"id": "S07", "name_zh": "近校成果转化街", "no_ai_route_zh": "线下成果登记 + 转化专员人工对接", "human_channels_zh": "转化服务点人工窗口、纸本登记、电话", "core_outcome_zh": "成果登记与对接安排", "devices_required": false, "fixtures_met": ["no_smartphone", "refusing_algorithm"]},
+    {"id": "S08", "name_zh": "数据要素会客厅", "no_ai_route_zh": "线下合规登记 + 纸质撮合记录", "human_channels_zh": "合规服务台人工窗口、纸本材料、人工审查", "core_outcome_zh": "数据供需登记与合规咨询", "devices_required": false, "fixtures_met": ["keyboard_only", "no_smartphone", "refusing_algorithm"]},
+    {"id": "S09", "name_zh": "AI 生活服务样板街", "no_ai_route_zh": "社区服务站人工办理 + 人工客服兜底", "human_channels_zh": "社区服务站窗口、纸本办事单、电话", "core_outcome_zh": "基础生活服务办理", "devices_required": false, "fixtures_met": ["non_visual", "mobility", "elderly", "no_smartphone", "refusing_algorithm"]},
+    {"id": "S10", "name_zh": "智能体交通场景模拟", "no_ai_route_zh": "脱敏纸面仿真记录 + 交管人工评审", "human_channels_zh": "交管受理窗口、纸本申请、专家评审", "core_outcome_zh": "仿真场景申请与结果知晓", "devices_required": false, "fixtures_met": ["keyboard_only", "no_smartphone"]},
+    {"id": "S11", "name_zh": "AI 安全治理展示馆", "no_ai_route_zh": "纸质案例册 + 专家人工讲解", "human_channels_zh": "展馆人工服务台、纸本目录、人工导览", "core_outcome_zh": "治理案例信息获取", "devices_required": false, "fixtures_met": ["non_visual", "low_vision", "elderly", "multilingual"]},
+    {"id": "S12", "name_zh": "全球 AI 活动周路线", "no_ai_route_zh": "人工签到 + 活动服务台 + 人工路线指引", "human_channels_zh": "活动服务台、纸本手册、志愿者人工指引", "core_outcome_zh": "活动参与与路线指引", "devices_required": false, "fixtures_met": ["non_visual", "mobility", "multilingual", "no_smartphone"]}
+  ],
+  "equivalence_rules_zh": "同一核心结果、同队列优先级、零额外费用、相同基础安全信息；84 项等价检查（12 场景 × 7 维度：核心结果/排队/费用/安全信息/权限/停止/回执）为设计层断言，待共测后以观测值替换。"
+}
