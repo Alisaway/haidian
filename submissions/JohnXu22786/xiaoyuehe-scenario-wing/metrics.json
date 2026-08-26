@@ -104,9 +104,10 @@
       "source_files": [
         "geometry/land_use.geojson"
       ],
-      "formula": "count(land_use.geojson features)",
+      "formula": "count(land_use.geojson features) excluding the three district key-area overlays (LU-ZHON/LU-BEIJ/LU-DAZH)",
       "confidence": "high",
-      "assumptions": []
+      "assumptions": [],
+      "calibre_note": " (23 = features minus LU-ZHON/BEIJ/DAZH overlays)"
     },
     "building_unit_count": {
       "status": "known",
