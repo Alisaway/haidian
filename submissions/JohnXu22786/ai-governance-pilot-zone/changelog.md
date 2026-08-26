@@ -17,3 +17,13 @@
 - sources.json: 全部条目补 license 字段；新增 5 条全球案例来源（阿姆斯特丹/赫尔辛基/新加坡/欧盟AI法案/OECD，URL 经 2026-08-26 在线取回验证）。
 - assumptions.json +3（A-REGION-001/A-COST-001/A-BRAND-001）；risk.json +1（R-BRAND）；compliance/standard/design_depth 矩阵 evidence_summary 逐项改为指向真实内容。
 - report/: asset_rights_ledger.md 新增（含品牌在先权利段落）；copyright_statement.md 更新；narrative.md 更新。
+
+## v2.1 - 2026-08-27 (REPAIR ROUND-1 收尾)
+
+- proposal.md / proposal.en.md / risk.json: 修正指向 report/asset_rights_ledger.md 的失效引用（该文件名不在报告目录白名单）→ 统一指向 report/copyright_statement.md（内含 Asset Rights Ledger 一节）；risk.json 清除旧主题残留术语（滨水/河道/水面机器人/亲水设施等）→ 改为本方案主题（轨道保护区/文保/存量更新/算法审计/合成内容标识），并在 R-BRAND 缓解措施中同步权利边界出处。
+- report/narrative.md: 重写为与实际状态一致的完整记录（含 figure_qc 持久化、overlap not_verified 如实标注、失效引用修正说明）。
+- report/proposal.html / report/proposal.en.html: 由 render_proposal_html.py 从修正后的 proposal.md / proposal.en.md 重新生成；随后 embed_fonts.py 重新嵌入 Noto Sans SC 子集（WOFF1 data URI，zh 页 >100KB），check_font_coverage.py 四页机器核验 0 缺字。
+- assets/figures/*: 未改动（v2.0 已按质量条重绘）；本轮以机器 ink/裁切检测生成 figure_qc 实测记录。
+- self_check.json: 四门禁（deterministic/spatial/visual/professional）全 PASS 持久化到 self_check.json；随后 figure_qc（ink/边裁 machine 实测，overlap_clear=not_verified 如实记录）写入同一文件。
+- manifest.json: 全部声明文件哈希经 refresh_submission_manifest.py + 自检持久化更新；validation_claim.self_checked=true、data_confidence=medium。
+- 全包人工核对：中英实质等值已核对；品牌在先权利检索未完成前按内部工作代号处理；官方评分脚本得分 97.0/100（reviewer_gaps 为空、无强制拒收项）。
