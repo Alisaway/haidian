@@ -1,14 +1,127 @@
-# AGECARE LOOP (AGE.JZ): Aging-Friendly Renovation & Community Elder-Care Network (Concept)
+---
+title: "AGE Love Loop (AGE.JZ): Aging-Friendly Renovation & Community Elder-Care Network (Concept)"
+author_github: "JohnXu22786"
+language: "en"
+proposal_format_version: "2"
+bilingual_contract_version: "1"
+translation_of: "proposal.md"
+license: "COMMUNITY-DISPLAY-ONLY"
+summary: "AGE Love Loop (AGE.JZ) is an aging-friendly specialized concept along the Centennial Jingzhang AI Innovation Belt: a One-Corridor One-Courtyard One-Pavilion network (Yixinglang age-friendly slow corridor, Yiyangxiaoyuan community day-care court, Zhilingguan digital elder-care pavilion). It covers 5 persona groups, 10 scenario cards (fall-alert, medication-reminder, meal-ordering, digital-assistance, family-linking AI etc.), anonymized aggregation only, human review of key decisions, no over-monitoring; all element mechanisms are concept suggestions; 6 direction-only global cases; three formal core metrics recomputed from this package's geometry. All is provisional concept, no FAR/height/demolition/investment/capacity conclusions, no fabricated official data, recompute when official data is released."
+tracks: ["ai-traffic-walkability", "enterprise-services-ecosystem", "civic-agent-governance"]
+scenarios: ["ai-traffic-walkability", "enterprise-service-copilot", "public-safety-operations-review"]
+iteration: "v2.0-round3"
+---
 
-**English convenience summary** (full binding narrative is the Chinese proposal.md; this summary may lag the zh text).
+AGE Love Loop (AGE.JZ) is an aging-friendly renovation and community elder-care network concept proposed along the Centennial Jingzhang AI Innovation Belt in Haidian, responding to the taskbook's all-age-friendly living, public-service facilities and urban renewal dimensions as a livelihood application testbed of the AI-integrated innovation belt. It links three original nodes - Yixinglang (age-friendly slow corridor next to Zhongzhiyuan), Yiyangxiaoyuan (community elder-care courtyard next to the Beijing AI Origin Community) and Zhilingguan (digital elder-care pavilion next to Dazhongsi) - into a One-Corridor One-Courtyard One-Pavilion service network that chains mobility, care and digital capability into a perceivable care journey. This is a provisional concept: no planning approval, engineering feasibility or implementation commitment.
 
-以「颐养智环（AGE·JZ · 适老化改造与社区养老助老网络）」构建沿京张AI创新带的适老化专项概念（对应公开任务书全龄友好生活维度、公共服务设施维度与城市更新维度）：以「一廊一院一馆」组织适老化改造与助老服务网络，「颐行廊」为适老化慢行与无障碍连廊（众智园侧：连续坡道、休憩座椅、夜间照明与一键求助点）、「颐养小院」为社区养老服务驿站与日间照料复合点（AI原点社区侧：助餐分装、日间照护、健康检测与家属探视空间）、「智龄馆」为数字助老与智能适老体验馆（大钟寺侧：智能手机课堂、智能家居适老体验、防诈宣传与人工帮办），三节点沿京张绿带组织连续的适老服务动线；五类AI+场景（跌倒预警AI、用药提醒AI、助餐订餐AI、数字帮办AI、家属联动AI）仅处理匿名聚合数据、关键决策人工复核、禁止过度监控（不进行个体识别式追踪）；要素机制均为概念建议：适老化改造清单与标准、家庭适老改造补贴登记、养老驿站服务积分、数字助老志愿者结对、社区适老议事；对标案例（北京老旧小区适老化改造公开政策方向、上海适老化改造与一键通公开实践、日本社区综合照护体系公开经验、新加坡康养社区公开实践、住建部城市居家适老化改造公开政策方向）仅按公开渠道信息概述；交通慢行优先、蓝绿空间低干预融合布置，三项formal核心指标（site_area_sqm、green_ratio、public_space_ratio）以本包几何复算、面积以官方文本口径为底，分期实施+年度复算与公示计划。全部为概念建议、参考方案，不给出容积率、建筑高度、具体拆改留、户数、改造量、投资测算或工程实施结论，不编造任何官方数据、改造户数、床位、补贴或政策承诺，不把设想写成已确定安排，基于 provisional 边界，官方数据发布后复算。
+## Design Basis and Source List
+The design basis includes the public call-for-proposals taskbook (agent.1-6), the official seven-dimension review rubric and the submission organization template, plus public policy directions and professional documents. Documented sources are listed in Design Basis; actual referenced data are registered in `sources.json`; unacquired items are marked in assumptions and missing-data notes. Evidence anchors in this narrative use short IDs (date suffix omitted); the full IDs with publisher, published and accessed dates and reuse boundaries are in `sources.json`, e.g. `[source:DATA-SRC-AGENT-TASKBOOK]` corresponds to the taskbook excerpt. [source:DATA-SRC-OFFICIAL-ANNOUNCEMENT], [source:DATA-SRC-AGENT-TASKBOOK], [source:DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES], [source:DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING], [source:DATA-SRC-MNR-LAND-USE-CLASSIFICATION], [source:DATA-SRC-PROVISIONAL-BOUNDARIES] and [source:DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES] are cited where claims rest on them.
 
-## Outline
-- 一带总体概念：颐养智环——适老化改造与社区养老助老网络的总体统筹（含主名称、英文名称与命名体系）。
-- 适老化作为全龄友好要素一环：颐行廊、颐养小院与智龄馆构建「出行—照护—数字」协同回路；对标案例（北京老旧小区改造方向、上海一键通、日本综合照护、新加坡康养社区、住建部改造方向）仅按公开渠道信息概述。
-- 五类AI+场景：跌倒预警AI、用药提醒AI、助餐订餐AI、数字帮办AI、家属联动AI，全部数据匿名聚合+人工复核。
-- 适老公共空间：颐行廊全程无碍休憩节点、颐养小院日间照护与探视区、智龄馆课堂与帮办台，含人工服务兜底与意见复核机制。
-- 「颐养智环」叙事：一带的夕阳守护——铁路工业记忆与养老服务温度的叙事对话，以真实政策与生活事实为底、不歪曲（概念叙事）。
-- 助老服务运营体系：适老化改造清单与标准、家庭改造补贴登记、养老驿站服务积分、数字助老志愿者结对、社区适老议事、年度活动体系（银龄课堂季、居家安全周、代际共融日等概念活动），机制为概念建议。
-- Three formal core metrics (site_area_sqm, green_ratio, public_space_ratio) are recomputed from this package's geometry; all figures are concept suggestions on a provisional boundary; recompute when official data is published.
+## Three-Level Scope Framework
+Per the official announcement's textual scope: coordinated research area ~43.6 km2 (belt industry and future-city research) - overall design area ~11.4 km2 (urban renewal and regulatory-plan-level urban design) - key areas ~368.4 ha (three key-area detailed designs). This package is a participant provisional model specializing in the three aging-friendly nodes within the overall design area; it replaces no official geometry of any level. The three formal core metrics `site_area_sqm`, `green_ratio` and `public_space_ratio` are recomputed from this package's geometry, not quoted. Until official data (elder population distribution, meal and care demand, existing accessibility asset surveys) are published, values are flagged as assumptions with stated use boundaries and recompute triggers. [source:DATA-SRC-AGENT-TASKBOOK]
+
+## Coordinated Research Area: Industry and Future City Research
+Industry and future-city research identifies the livelihood-side combination of aging-friendly renovation with the innovation belt: smart age-tech equipment, rehabilitation aids and health-data services extend the industrial chain, exploring blocks where youth innovation and elderly living coexist. It links the Three Zones Two Wings loop - Zhongzhiyuan AI Accelerator, Beijing AI Origin Community and Dazhongsi AI Industry Cluster as the "three zones"; Zhongguancun Technology-Service Wing and XiaoYue River Scenario-Enabling Wing as the "two wings" - and establishes concept-level coordination with Beiwu community, Future Science City, Huairou Science City, Beijing E-Town and the Beijing-Tianjin-Hebei cluster (to be verified after official data release). Six direction-only global aging-friendly cases are summarized: Beijing old-community adaptation, Shanghai one-touch elder-care call services, Japan's community-based integrated care, Singapore's age-friendly housing, MOHURD home-adaptation orientation and the WHO age-friendly cities framework; each is registered in `sources.json` with "to be verified" status and is not conclusive case evidence. [source:DATA-SRC-PROVISIONAL-BOUNDARIES]
+
+| Case / direction | Region | Type | Lesson (direction only) | Source |
+|---|---|---|---|---|
+| Beijing old-community adaptation | Beijing | micro-renovation policy | government-led renovation, handrails, accessibility | [source:DATA-SRC-CASE-BEIJING] |
+| Shanghai one-touch elder care | Shanghai | community call help | telephone help, human fallback | [source:DATA-SRC-CASE-SHANGHAI] |
+| Japan community-based care | Japan | in-home community care | multi-actor local care network | [source:DATA-SRC-CASE-JAPAN] |
+| Singapore age-friendly housing | Singapore | housing & community | accessible public housing and care facilities | [source:DATA-SRC-CASE-SINGAPORE] |
+| MOHURD home adaptation | China | policy orientation | family care beds and home adaptation checklists | [source:DATA-SRC-CASE-MOHURD-HOME] |
+| WHO age-friendly cities | International | framework | eight-domain framework and assessment tools | [source:DATA-SRC-CASE-WHO] |
+
+## Overall Design Area: Urban Renewal and Regulatory-Plan-Level Urban Design
+The overall design organizes an age-friendly public-space environment around the relic-park green belt: the Yixinglang slow axis, restful nodes and accessible facilities, reversible growth, streets that can time-share display and science-popularization needs. It advocates renewal-first, keep-renovate-improve, micro-update over large demolition. Brand & visual identity (agent.1): primary identity "AGE Love Loop AGE.JZ", logo direction "loop graph" derived from rail imagery; color system of railroad brick red, dusk warm orange and digital cyan; sans-serif Chinese black type with geometric sans Latin; loop-sign wayfinding symbols and hub-dot icon system for guide signs, railing markers, pavement and nodal plaques. The name is an internal working codename; it will not be registered or used externally before prior-rights clearance. FAR, building height and other statutory-control-dependent content remain unknown pending official data. [source:DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING]
+
+![Overall design overview (provisional geometry)](assets/figures/site-overview.en.png)
+
+![Land-use structure (single caliber)](assets/figures/land-use-structure.en.png)
+
+## Detailed Design of Key Areas
+All node locations are concept points to be re-positioned after site survey, verification and public comment. Yixinglang: continuous ramps, barrier-free corridor and softened crossings form the slow main chain with rest seats, night lighting, one-touch help posts and honor-display walls. Yiyangxiaoyuan: existing buildings micro-adapted into a day-care, meal, health-check and silver-classroom courtyard with graded care and the "Silver Volunteer Star" honor-display system. Zhilingguan: a digital elder-care pavilion offering aid-device sharing, smart-terminal teaching, fraud-prevention publicity and human-assisted service desks. Every node deploys a Reversible Public-Space Component Library (modular seating, movable awnings, temporary accessible ramps, swappable sign components) to avoid one-time fixed construction. [source:DATA-SRC-PROVISIONAL-BOUNDARIES]
+
+![Three-node index and design tasks](assets/figures/key-areas.en.png)
+
+## AI Innovation Ecosystem, Personas, and AI+ Scenarios
+An AI innovation ecosystem atlas organizes AI across transport, industry, space, public services, culture and governance into perceivable scenario cards, with an industry-space mapping (age-tech equipment and rehab-aid industry, cultural content via experience pavilions and silver classrooms, governance guardrails via public services, mobility via the slow axis, spatial scenarios via the component library). Ten scenario cards are fixed (fall-alert, medication-reminder, meal-ordering, digital-assistance, family-linking, one-touch help, accessible-inspection, aid-sharing, silver-classroom and accessible-transit-dispatch AI). Five persona groups are structed (isolated elders, disabled/semi-disabled elders and their family caregivers, active young-old, dual-income caregiving families, community volunteers and carers), with service-journey barriers and non-digital fallback channels (human windows, hotline, children's agency, volunteer buddying). AI technical protocols cover model evaluation (benchmark testing on anonymous event samples), data quality (collection minimization, field completeness, lifecycle), error stratification (false-positive/negative rates by group, scenario, period) and runtime monitoring (weekly false-positive rate, response time, failure rate). Data are anonymized-aggregate only; key decisions are human-reviewed; no individual-identifying tracking or over-monitoring. [source:DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES]
+
+| Scenario card | Name | AI capability | Data & privacy boundary | Operator | Status |
+|---|---|---|---|---|---|
+| SC-01 | One-touch help AI | voice call, emergency dispatch, transit coordination | location & service record only, anonymized | government purchase + operator | pilot |
+| SC-02 | Fall-alert AI | posture anomaly alerts | anonymous event, human review | community + professionals | pilot |
+| SC-03 | Medication-reminder AI | reminder and missed-dose notice | daily record only, de-identified | community + volunteers | pilot |
+| SC-04 | Meal-ordering AI | ordering, portioning, delivery dispatch | minimalized booking, opt-out | merchants + community | scale-up |
+| SC-05 | Digital-assistance AI | phone teaching, service guidance | no imagery retained | universities + volunteers + human | scale-up |
+| SC-06 | Family-linking AI | booking, visiting, reminders | minimalized contacts, opt-out | family + community | pilot |
+| SC-07 | Accessibility-inspection AI | facility/lighting fault inspection | facility imagery only, no over-monitoring | operator + volunteers | pilot |
+| SC-08 | Aid-sharing AI | match, booking, rotation, disinfection | de-identified item records, human review | industry alliance + merchants | pilot |
+| SC-09 | Silver-classroom AI | course recommendation, interest match | anonymous interest tags, filing | universities + volunteers | scale-up |
+| SC-10 | Accessible-transit AI | real-time ride booking and dispatch | trip location & booking only, anonymized | transport + community | pilot |
+
+Three industry test-validation scenarios run in the pilot block first (call-emergency linkage, accessibility-inspection false-positive evaluation, aid-sharing match), with public comment channels and trial markings; they scale up only after validation. [source:DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES]
+
+## Land Use, Building Scale, and Retain-Renovate-Demolish Strategy
+Retain-renovate-demolish follows keep-first: preserve the relic-park fabric and historic remnants, functionally replace existing buildings with lightweight reversible aging-friendly functions, and demolish only occasionally, case-by-case, scattered buildings; no large new buildings. A single land-use caliber is used: the national land-classification framework with one recalculation from this package's `land_use.geojson` - research land 23.7%, park green (incl. relic-park vitality belt concept) 26.8%, residential 17.2%, commercial 14.0%, business/finance 11.6%, education-research-design 6.8% (approx. 100% after rounding), used identically in the proposal, figures, HTML and PDFs. Caliber note: this is the land-classification statistical layer; the ecological green-space layer metric `green_ratio` (~11.6%, recomputed from `green_space.geojson`) belongs to a different statistical layer - the two are not duplicated or competing calibers; formulas and confidence levels are in `metrics.json`, and everything is recalculated when official geometry is released. FAR, building height and demolition ratios are not concluded. [source:DATA-SRC-MNR-LAND-USE-CLASSIFICATION], [metric:green_ratio]
+
+## Transport, Rail, Municipal Infrastructure, and Public Services
+The transport concept is slow-traffic-first: the Yixinglang axis runs through all three nodes and opens barrier-free connections to rail stations and bus ends; rest nodes are spaced at concept intervals; time-shared and booking mechanisms manage facilities and vehicles with rotation at peak periods. Rail alignments, municipal pipelines and engineering content are not judged. Municipal utilities are concept-shared (green-power direct supply, waste-heat recovery, chilled-source sharing) as interface hints only, without load, capacity or engineering conclusions, and a future data-and-compute coordination mechanism (concept) is reserved. Public services are configured at district-node-building three levels, compounding meal points, day care, health checks, aid recycling with existing facilities to avoid duplication, and are uniformly connected to resident feedback, annual disclosure and annual community activities. [source:DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES], [metric:road_network_length_m]
+
+## Blue-Green Network, Public Space, and Urban Character
+A green-belt-as-axis, node-parks-as-pearls blue-green system runs along the relic-park belt; facilities integrate with parks in a low-intervention, light, transparent and reversible way without blocking historic remains or view corridors. The three nodes offer public science, experience and honor-display interfaces with human-service fallback. Urban character continues the Jingzhang railway industrial-memory vocabulary in a controlled dialogue with new accessible facilities; the Yixinglang corridor combines shade vegetation with rest seats and upgrades accessible signage, lighting and paving in a low-intervention way, shaping "human warmth + technology texture" rather than viral expression. [source:DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES]
+
+![Slow-mobility and blue-green analysis](assets/figures/mobility-bluegreen.en.png)
+
+## Renewal Projects, Implementation Policy, and Phasing
+The project list is organized in four categories (age-friendly slow-mobility completion, community-service mending, smart-scenario pilots, cultural-atmosphere building) with participants covering government, enterprises, universities, residents, communities, operators, volunteers, merchants and professionals, using a lead-collaborate (RACI) division: streets lead overall coordination, communities and professionals collaborate in implementation, resident councils join decisions and oversight, operators run daily operations; decisions, funding and statistics are disclosed through fixed channels. Implementation is phased and pilot-first: near term 1-3 years starts one pilot block and completes the Yixinglang demonstration section and Yiyangxiaoyuan prototype; mid term 3-5 years completes the three-node network and runs scenario tests; far term 5-10 years forms a replicable along-the-belt mechanism. Pilots define stop/exit conditions: start dismantling or adjustment when pilot KPIs are missed, a major service-quality or safety problem occurs, or a site survey shows an unsuitable location; dismantling follows the component list and booking records for return. An annual review system covers weekly theme days, monthly health days, quarterly results festivals and an annual community forum, with holiday elder-care weeks; all activities require filing. Complementary mechanisms include a developer community, scenario-open applications and evaluation, professional-service cooperation signing, international communication (bilingual copy for overseas universities and institutions), talent/company/developer conversion and an annual review-and-exit mechanism. [depth:phasing_implementation], [depth:renewal_project_list]
+
+| Annual programme / event brand | Frequency | Mechanism words | Operator |
+|---|---|---|---|
+| Silver Classroom Season | quarterly | booking, rotation | universities + volunteers |
+| Home Safety Week | yearly | disclosure, filing | community + professionals |
+| Intergenerational Day | monthly | points, buddying | volunteers + resident council |
+| Smart Elder-Care Festival | yearly | convention, volunteers | industry alliance + operators |
+| Developer Co-Creation Camp | quarterly | developer community | enterprises + universities |
+| Yixingloop Run Day | quarterly | booking, disclosure | operator + volunteers |
+
+## Metrics, Area Recalculation, and Compliance Matrix
+Suggested core indicators: accessible slow-corridor continuous length, accessibility-facility integrity rate, one-touch help average response time, daily meal-person count, aid-device turnover rate and public satisfaction; ratios and counts are shown separately and never share one axis (see the metrics-evidence figure). The three formal core metrics (`site_area_sqm`, `green_ratio`, `public_space_ratio`) are computed on the provisional boundary with stated source, formula, confidence level, use boundary and recompute trigger; recompute whenever official geometry is published. FAR and building height remain unknown with stated reasons; human-facing figures display only reduced-precision provisional values (e.g., green approx. 11.6%). The compliance matrix responds to agent.1-6: overall concept and brand/VI (agent.1), innovation-ecosystem atlas and factor mechanisms (agent.2), scenario cards and personas (agent.3), AI public space with honor display and component library (agent.4), Jingzhang-Zhongguancun-AI cultural narrative with bilingual international communication (agent.5), annual activity system, developer community and long-term operation (agent.6). [metric:green_ratio], [metric:public_space_ratio], [metric:site_area_sqm], [data:PACKAGE-GEOMETRY]
+
+![Core metrics evidence (ratio and count on separate axes)](assets/figures/metrics-evidence.en.png)
+
+## Risk, Copyright, and Compliance
+This concept is a research design, not an administrative approval basis, and reaches no FAR, height, capacity, load, retain-renovate-demolish or engineering-feasibility conclusion. Risks (boundary precision, demand forecasting, policy uncertainty, data and privacy boundary, prior-name rights, technical maturity, care qualification and public acceptance) are registered in `assumptions.json`, with response principles of anonymized aggregation, source marking, human review, feedback channels and statutory procedures. Privacy guardrails: every AI scenario keeps anonymized aggregation, human review of key decisions, and no over-monitoring (no individual-identifying tracking); personal-data scenarios require prior disclosure and filing, allow opt-out, and provide complaint and security-incident channels. Scenario-level data governance (emergency location, health checks, booking, family linking, service records) covers minimization, legal basis, permissions, retention, opt-out, human review, complaints and security-incident handling - anonymized aggregation does not replace compliant design of individual services. All cited public materials are marked with sources (see `sources.json`; case entries are direction-only and marked "to be verified"). Graphics, names and text are original or public-domain material; coincidental resemblance to existing marks is possible. The brand name is an internal working codename: no official prior-rights search has been completed at concept stage, and it is restricted from external use and registration until clearance. Material is not distorted; portraits, trademarks, fonts, images, papers or artwork are not used without authorization; multi-department joint review and public assessment are required before formal implementation. [source:DATA-SRC-OFFICIAL-ANNOUNCEMENT], [source:DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES]
+
+| Data-governance scenario | Minimization & legal basis | Retention & opt-out | Human review & complaint/incident |
+|---|---|---|---|
+| Emergency location | location & service record only; emergency-assistance basis | time-limited, deleted; opt-out | human review of responses; complaint and incident line |
+| Health checks | anonymous aggregates only; public-health basis | de-identified, retention-managed | human review of critical alerts; records kept |
+| Booking | necessary fields only; contract/consent basis | deleted at retention expiry; opt-out | anomaly checks; complaint channel disclosed |
+| Family linking | contact & visit booking only; consent basis | minimal retention; opt-out anytime | link data human-reviewed; incidents escalated |
+| Service records | service type & count only; record basis | de-identified archive, retention-managed | work-order human review; traceable complaints |
+
+## References
+References are archived by public/internal classification with acquisition dates and follow official versions: public Jingzhang railway history and relic-park materials (Zhan Tianyou and Jingzhang railway public-history caliber), Beijing master and district-planning public statements, urban-renewal special plans and implementation opinions and accompanying documents, taskbook agent.2 factor mechanisms and public collaboration norms, and aging-friendly domestic and international directions (Beijing old-community adaptation, Shanghai one-touch, Japan community-based care, Singapore age-friendly housing, MOHURD home-adaptation orientation), plus site-survey records and self-drawn analysis sketches (self-collected). `sources.json` includes only verifiable or explicitly "to be verified" entries; no fabricated official data, pages or links are used. [source:DATA-SRC-OFFICIAL-ANNOUNCEMENT]
+
+1. Public call-for-proposals taskbook excerpt: agent_taskbook.json
+2. Official seven-dimension review rubric: docs_review-rubric.md
+3. Submission organization template: PR_TEMPLATE.md
+4. Public Jingzhang cultural-belt historical materials and Haidian aging-friendly policy reports (sources and verification dates to be supplemented when used)
+
+### Three-Node Implementation Cards (agent.4 deepening)
+
+| Implementation card item | Yixinglang | Yiyangxiaoyuan | Zhilingguan |
+|---|---|---|---|
+| Site selection conditions | continuous belt segment, slope/crossing for slow-mobility; near rail & bus ends | in care service radius, clear property rights; near existing station/building | near Dazhongsi cultural space, accessible, regional digital-service window |
+| Existing-condition verification | slope, crossing, lighting, accessibility asset ledger; to be surveyed | building condition, available space, license, capacity, cost categories; to be verified | stock building, digital-capability baseline, existing cultural-facility use; to be verified |
+| Space components | ramps, softened crossings, rests, lighting, help posts, honor wall | day care, meal, health corner, silver classroom, family visiting, honor wall | teaching area, aid share, anti-fraud, help desk, developer corner |
+| Human fallback | hotline dispatch, volunteer patrol, maintenance log | day-care staff, manual meal serving, health-check review | help-desk duty, volunteer buddying, manual guidance review |
+| Licenses to verify | accessibility renovation design/construction, lighting & utility access | elder-care filing, meal sanitation, health-check compliance | aid-device business & disinfection, digital-service operation, data compliance |
+| Operation responsibility | street lead + operator + volunteers | community + professionals + resident council | industry alliance + merchants + universities + volunteers |
+| Pilot KPI | facility integrity, help response time, corridor length | daily meal count, day-care count, satisfaction | aid turnover, class attendance, help satisfaction |
+| Stop/adjustment condition | slope/property unsuitability, KPI miss, site-safety issue | capacity deficit, license issue, KPI miss | demand change, supply-chain issue, KPI miss |
+
+These implementation cards carry the site-selection, verification, component, human-fallback, license-to-verify, operation, pilot-KPI and stop/adjustment conditions requested by agent.4; all are concept suggestions. [depth:three_key_area_detailed_design], [standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK], [depth:renewal_project_list]
+
+Language note: this English narrative is a faithful summary of the binding Chinese `proposal.md`; statements, indicators, figures, evidence anchors and risk wording were manually cross-checked for substantive equivalence on the round-3 revision (see the pairwise equivalence declaration recorded in the changelog).

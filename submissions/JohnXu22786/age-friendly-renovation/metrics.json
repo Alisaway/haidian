@@ -14,6 +14,9 @@
       ],
       "formula": "polygon_area(provisional_site_boundary, EPSG:4548)",
       "confidence": "medium",
+      "data_source": "参与者临时模型数据（按公告约11.4平方公里的总体设计范围文字口径自算，非官方核发）",
+      "display_rule": "在人读文本与图件中仅显示约1141公顷（约1140万平方米）低精度形式",
+      "recompute_trigger": "官方总体边界几何发布后整体复算",
       "assumptions": [
         "Provisional boundary, not an official redline."
       ]
@@ -27,7 +30,10 @@
       ],
       "formula": "union(conceptual green polygons, EPSG:4548)",
       "confidence": "low",
-      "assumptions": []
+      "data_source": "参与者临时模型数据（非官方数据）",
+      "recompute_trigger": "官方几何发布后复算",
+      "assumptions": [],
+      "display_rule": "仅在人读图件中显示约整数（如约133公顷/约51千平方米/约11万平方米/约10公里）"
     },
     "public_space_area_sqm": {
       "status": "known",
@@ -38,7 +44,10 @@
       ],
       "formula": "union(conceptual public-space polygons, EPSG:4548)",
       "confidence": "low",
-      "assumptions": []
+      "data_source": "参与者临时模型数据（非官方数据）",
+      "recompute_trigger": "官方几何发布后复算",
+      "assumptions": [],
+      "display_rule": "仅在人读图件中显示约整数（如约133公顷/约51千平方米/约11万平方米/约10公里）"
     },
     "building_footprint_area_sqm": {
       "status": "known",
@@ -49,7 +58,10 @@
       ],
       "formula": "union(conceptual reuse-first envelopes, EPSG:4548)",
       "confidence": "low",
-      "assumptions": []
+      "data_source": "参与者临时模型数据（非官方数据）",
+      "recompute_trigger": "现状建筑底账核验后复算",
+      "assumptions": [],
+      "display_rule": "仅在人读图件中显示约整数（如约133公顷/约51千平方米/约11万平方米/约10公里）"
     },
     "green_ratio": {
       "status": "known",
@@ -60,7 +72,11 @@
         "geometry/site_boundary.geojson"
       ],
       "formula": "green_space_area_sqm / site_area_sqm",
-      "confidence": "low",
+      "confidence": "medium",
+      "data_source": "参与者临时模型数据（绿地生态层几何复算，非官方核发）",
+      "caliber_note": "绿地为绿地生态层口径（green_space.geojson 复算约11.6%），与用地分类统计层的公园绿地占比26.8%属不同统计层，二者不互斥；口径与公式见本文件",
+      "display_rule": "人读文本与图件显示约11.6%（低精度）",
+      "recompute_trigger": "官方几何发布后复算",
       "assumptions": []
     },
     "public_space_ratio": {
@@ -73,6 +89,9 @@
       ],
       "formula": "public_space_area_sqm / site_area_sqm",
       "confidence": "low",
+      "data_source": "参与者临时模型数据（非官方数据）",
+      "display_rule": "人读文本与图件显示约0.4%（低精度）",
+      "recompute_trigger": "官方几何发布后复算",
       "assumptions": []
     },
     "road_network_length_m": {
@@ -84,7 +103,10 @@
       ],
       "formula": "sum(conceptual paths, EPSG:4548)",
       "confidence": "low",
-      "assumptions": []
+      "data_source": "参与者临时模型数据（非官方数据）",
+      "recompute_trigger": "官方道路底账核验后复算",
+      "assumptions": [],
+      "display_rule": "仅在人读图件中显示约整数（如约133公顷/约51千平方米/约11万平方米/约10公里）"
     },
     "key_area_count": {
       "status": "known",
@@ -95,7 +117,10 @@
       ],
       "formula": "count(area_id in key_areas.geojson)",
       "confidence": "medium",
-      "assumptions": []
+      "assumptions": [],
+      "data_source": "本包几何/正文计数（参与者临时模型数据，非官方数据）",
+      "display_rule": "仅显示整数计数值",
+      "recompute_trigger": "正文与几何更新或官方数据发布后复算"
     },
     "land_use_zone_count": {
       "status": "known",
@@ -141,6 +166,19 @@
       "confidence": "high",
       "assumptions": []
     },
+    "scenario_card_count": {
+      "status": "known",
+      "value": 10,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(scenario card rows in proposal.md)",
+      "confidence": "high",
+      "assumptions": [
+        "10 scene cards（含5类核心AI+场景），与摘要及正文一致"
+      ]
+    },
     "industry_test_scenario_count": {
       "status": "known",
       "value": 3,
@@ -165,15 +203,20 @@
     },
     "global_case_count": {
       "status": "known",
-      "value": 5,
+      "value": 6,
       "unit": "count",
       "source_files": [
         "proposal.md",
         "sources.json"
       ],
-      "formula": "count(global ecosystem mechanism cases)",
-      "confidence": "high",
-      "assumptions": []
+      "formula": "count(global aging-friendly case rows)",
+      "confidence": "medium",
+      "assumptions": [
+        "均为方向性概述，逐项来源与可比性登记于 sources.json 并标注待核验"
+      ],
+      "data_source": "本包几何/正文计数（参与者临时模型数据，非官方数据）",
+      "display_rule": "仅显示整数计数值",
+      "recompute_trigger": "正文与几何更新或官方数据发布后复算"
     },
     "phase_count": {
       "status": "known",
@@ -188,12 +231,12 @@
     },
     "annual_program_count": {
       "status": "known",
-      "value": 3,
+      "value": 6,
       "unit": "count",
       "source_files": [
         "proposal.md"
       ],
-      "formula": "count(annual event system)",
+      "formula": "count(annual event system rows)",
       "confidence": "high",
       "assumptions": []
     }
