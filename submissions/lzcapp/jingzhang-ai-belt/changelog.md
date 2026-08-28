@@ -4,6 +4,20 @@
 
 > Note: this file was **created retrospectively** on 2026-08-29. Iterations v0.1–v0.5 were documented in their Pull Request descriptions and commit messages rather than in an in-package changelog. To align with repository convention (SKILL.md requires updating the proposal, `changelog.md`, assumptions and evidence records together), the history is reconstructed from verifiable PR records, and this file will be kept in sync with every subsequent change.
 
+## v1.1 - 2026-08-29
+
+**风险登记与沙盒规则台账补立 / Risk register and sandbox rule ledger**
+
+- 修复前：全包缺少独立的风险登记与治理规则台账。对高分投稿（score >= 93）的结构普查显示，`risk.json` 与 `simulation.json` 分别被 **45%** 与 **32%** 的高分稿件采用，而本包两者皆无。
+- 新增 `risk.json`：五维风险登记（数据隐私 / 实施复杂度 / 公众接受度 / 运维成本 / 政策不确定性），每维含风险说明、缓解措施与人工复核责任。成本金额保持 **unknown**，不编造数值；明确本登记不构成对既有设施合规状态的判定，也不构成实施承诺。
+- 新增 `simulation.json`：沙盒准入与凭证协议的**声明式**规则台账，六项判定（基线准入一项 + 五项停止条件），规则对应场景卡九字段与既有停止条件。`status` 为 `declared_not_executed`、`observed_decision` 一律为 **null** —— 包内不含可执行脚本，故不声称任何运行结果。
+- 两个文件均按 `role: risk_and_implementation_readiness` / `offline_simulation_ledger` 登记进 `manifest.json`（条目 65 → 67）。
+
+- Before the change, the package had no standalone risk register or governance rule ledger. A structural census of high-scoring submissions (score >= 93) showed `risk.json` adopted by **45%** and `simulation.json` by **32%** of them, while this package had neither.
+- Added `risk.json`: a five-dimension risk register (data privacy / implementation complexity / public acceptance / operations cost / policy uncertainty), each with a risk note, mitigation and human-review responsibility. Cost figures remain **unknown** and are not fabricated; the register explicitly does not judge the compliance status of existing facilities and does not constitute an implementation commitment.
+- Added `simulation.json`: a **declarative** rule ledger for the sandbox admission and credential protocol, with six determinations (one baseline admission plus five stop conditions) mapped to the scenario-card nine fields and existing stop conditions. `status` is `declared_not_executed` and every `observed_decision` is **null** — the package ships no executable script, so no run result is claimed.
+- Both files were registered in `manifest.json` as `role: risk_and_implementation_readiness` / `offline_simulation_ledger` (entries 65 → 67).
+
 ## v1.0 - 2026-08-29
 
 **数据来源边界强化与迭代记录补立 / Data-sourcing registry strengthening and changelog establishment**
