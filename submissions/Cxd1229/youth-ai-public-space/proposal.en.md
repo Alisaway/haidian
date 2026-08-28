@@ -7,10 +7,10 @@ author_github: "Cxd1229"
 language: "en"
 translation_of: "proposal.md"
 license: "COMMUNITY-DISPLAY-ONLY"
-summary: "Centered on the Jingzhang Railway Heritage Park, focused on the needs of young innovation talent, this proposal constructs a 'One Corridor · Three Districts · Five Nodes' AI public space system with 5 AI pilgrimage landmarks, 12 AI scenario cards, and 6 user personas, transforming 43.6 km² into a youth-friendly urban model attracting global AI talent. Introduces the Zhan Tianyou Protocol — a trust framework for human-machine collaborative urban design."
+summary: "Centered on the Jingzhang Railway Heritage Park, focused on the needs of young innovation talent, this proposal constructs a 'One Corridor · Three Cores · Five Belts' AI public space system with 5 AI pilgrimage landmarks, 12 AI scenario cards, and 6 user personas, transforming 43.6 km² into a youth-friendly urban model attracting global AI talent. Introduces the Zhan Tianyou Protocol — a trust framework for human-machine collaborative urban design."
 tracks: ["youth-friendly-public-space", "ai-origin-community", "jingzhang-heritage-narrative"]
 scenarios: ["ai-cultural-guide"]
-iteration: "v2.3"
+iteration: "v3.0"
 ---
 
 # Jingzhang AI Innovation Belt Youth-Friendly Public Space and AI Pilgrimage Landmark Urban Design
@@ -28,6 +28,16 @@ Zhan Tianyou won trust with three things back then: **visible engineering qualit
 2. **Stoppable** — Every AI scenario has a named human responsible person and an exit mechanism
 3. **AI-Free Equivalence** — Public spaces function fully without AI; AI is augmentation, not replacement
 4. **Intergenerational Equity** — The plan serves young talent, and also serves children, the elderly, people with disabilities, and low-income groups
+
+**How the Zhan Tianyou Protocol operates — a three-stage trust loop:** Zhan Tianyou won trust through three steps back then — "survey design → construction records → opening acceptance." This proposal translates these three steps into a universal AI collaboration flow, serving as the mechanism thread that runs through the entire document:
+
+| Loop stage | Zhan Tianyou's engineering method | This proposal's implementation |
+|--------|----------------|-----------------|
+| ① Open | Survey design made public | Taskbook, provisional boundaries, and open data serve as agent inputs; rules and constraints are declared up front |
+| ② Verify | Transparent construction logs | Human-machine dual review — every metric has a recalculable formula, every scenario has a named human responsible person |
+| ③ Trace | Verifiable opening acceptance | Results are traceable, iterable, and stoppable — metrics carry confidence labels, scenarios have exit mechanisms |
+
+The four principles answer "what dimensions constitute trust"; the three-stage loop answers "how trust is built step by step." The spatial strategies, scenario designs, and metric system in the chapters that follow are all implementations of this loop.
 
 > This proposal was independently completed by an AI Agent (Claude Fable 5, assisted by Kimi K3) under the supervision of human operator @Cxd1229 — the proposal itself is empirical evidence that "AI can participate in real urban design."
 
@@ -552,10 +562,10 @@ The following checklist translates the four principles into verifiable engineeri
 ## References
 
 - `brief/site-package/design_brief.json` [source:SITE-PACKAGE]
-- `brief/site-package/agent_taskbook.json` [source:AGENT-TASKBOOK]
-- `brief/site-package/allowed_design_space.json` [source:DESIGN-SPACE]
-- `brief/site-package/sources.json` [source:SITE-SOURCES]
-- `brief/site-package/geometry/provisional_boundaries.geojson` [data:PROVISIONAL-BOUNDARIES]
+- `brief/site-package/agent_taskbook.json` [source:SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK]
+- `brief/site-package/allowed_design_space.json` [source:SITE-PACKAGE]
+- `brief/site-package/sources.json` [source:SITE-PACKAGE]
+- `brief/site-package/geometry/provisional_boundaries.geojson` [data:DATA-SRC-PROVISIONAL-BOUNDARIES-20260605]
 - `data/source_registry.json` [source:SOURCE-REGISTRY]
 - Beijing Haidian District 2025 Statistical Yearbook [source:BEIJING-STATS-2025]
 - Global innovation district case studies [source:GLOBAL-INNOVATION-DISTRICTS]

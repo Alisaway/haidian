@@ -7,10 +7,10 @@ author_github: "Cxd1229"
 language: "zh"
 translation_file: "proposal.en.md"
 license: "COMMUNITY-DISPLAY-ONLY"
-summary: "以京张铁路遗址公园为轴，聚焦青年创新人才需求，构建'一廊·三区·五节点'的AI公共空间体系，提出5个AI朝圣地标、12张AI场景卡、6类用户画像，将43.6平方公里打造成全球AI人才向往的青年友好城市典范。"
+summary: "以京张铁路遗址公园为轴，聚焦青年创新人才需求，提出「詹天佑协议」人机协作信任框架，构建'一廊·三核·五带'的AI公共空间体系，含5个AI朝圣地标、12张AI场景卡、6类用户画像，将43.6平方公里打造成全球AI人才向往的青年友好城市典范。"
 tracks: ["youth-friendly-public-space", "ai-origin-community", "jingzhang-heritage-narrative"]
 scenarios: ["ai-cultural-guide"]
-iteration: "v1.0"
+iteration: "v3.0"
 ---
 
 # 京张AI创新带青年友好公共空间与AI朝圣地标城市设计
@@ -28,6 +28,16 @@ iteration: "v1.0"
 2. **可停止** — 每个AI场景有具名人类负责人和退出机制
 3. **无AI等价** — 公共空间在没有AI时完整运转，AI是增强不是替代
 4. **代际公平** — 方案服务青年人才，也服务儿童、老人、残障人士和低收入群体
+
+**「詹天佑协议」的运作方式——三阶信任回路：** 詹天佑当年用「勘测设计 → 施工记录 → 通车验收」三步赢得信任，本方案把这三步转译为 AI 协作的通用流程，作为贯穿全文的机制主线：
+
+| 回路阶 | 詹天佑工程方法 | 本方案的落地机制 |
+|--------|----------------|-----------------|
+| ① 开放 Open | 勘测设计公开 | 任务书、临时边界、开放数据作为智能体输入，规则与约束前置声明 |
+| ② 复核 Verify | 工程日志透明 | 人机双重校验——每个指标有公式可复算，每个场景有具名人类负责人 |
+| ③ 追溯 Trace | 通车验收可验证 | 结果可追溯、可迭代、可停止——指标标注置信度，场景有退出机制 |
+
+四项原则回答「信任由哪些维度构成」，三阶回路回答「信任如何逐级建立」。后文各章的空间策略、场景设计、指标体系，都是这个回路的落地。
 
 > 本方案由 AI Agent（Claude Fable 5，辅以 Kimi K3）在人类运营者 @Cxd1229 监督下独立完成——方案本身就是「AI 能参与真实城市设计」的实证。
 
@@ -148,8 +158,6 @@ iteration: "v1.0"
 8. **雨水花园模块**：下沉式绿地+渗透铺装+标识牌。材质：碎石+耐湿植物+混凝土边框。位置：道路两侧、停车场边缘
 9. **移动式路演舞台**：可折叠+LED背景屏+音响系统。材质：铝合金桁架+防滑台面。位置：原点广场（固定）+临时活动场地（移动）
 10. **临时市集摊位**：折叠顶棚+标准化电源接口+收纳箱。材质：防水帆布+钢管框架。位置：大钟寺下沉广场、周末市集区
-
-### 品牌视觉与Logo概念设计 [task:agent.1]
 
 ### 区域协同机制 [task:agent.2]
 
@@ -409,7 +417,7 @@ iteration: "v1.0"
 海淀区2024年能源消费755.5万吨标煤，万元GDP能耗0.0585吨标煤（四年累计下降25.2%），用电量185.3亿千瓦时（四年增长14.5%）[metric:haidian_energy_tce]。数据表明海淀正处于"总量稳中有降、电气化加速、能效快速提升"的绿色转型通道。AI产业的算力高能耗特性将给区域电网带来新的挑战——这正是本方案将分布式光伏、边缘计算和智能微电网纳入新型基础设施的实证依据：
 - AI算力中心的PUE目标≤1.2（参照北京市数据中心能效要求）
 - 分布式光伏覆盖公园路灯、公交站顶棚、建筑屋面，预计年发电量约500万kWh（概念估算）[metric:haidian_electricity_kwh]
-- 边缘计算节点就近消纳光伏电力，减少骨干网传输损耗"
+- 边缘计算节点就近消纳光伏电力，减少骨干网传输损耗
 
 ## 蓝绿空间、公共空间与城市风貌
 
@@ -553,10 +561,10 @@ iteration: "v1.0"
 ## 参考资料
 
 - `brief/site-package/design_brief.json` [source:SITE-PACKAGE]
-- `brief/site-package/agent_taskbook.json` [source:AGENT-TASKBOOK]
-- `brief/site-package/allowed_design_space.json` [source:DESIGN-SPACE]
-- `brief/site-package/sources.json` [source:SITE-SOURCES]
-- `brief/site-package/geometry/provisional_boundaries.geojson` [data:PROVISIONAL-BOUNDARIES]
+- `brief/site-package/agent_taskbook.json` [source:SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK]
+- `brief/site-package/allowed_design_space.json` [source:SITE-PACKAGE]
+- `brief/site-package/sources.json` [source:SITE-PACKAGE]
+- `brief/site-package/geometry/provisional_boundaries.geojson` [data:DATA-SRC-PROVISIONAL-BOUNDARIES-20260605]
 - `data/source_registry.json` [source:SOURCE-REGISTRY]
 - 北京市海淀区2025年统计年鉴 [source:BEIJING-STATS-2025]
 - 全球创新区案例研究 [source:GLOBAL-INNOVATION-DISTRICTS]
