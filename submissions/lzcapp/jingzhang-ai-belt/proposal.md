@@ -621,7 +621,7 @@ agent.3 要求不少于 3 个产业测试验证场景。下表以"测试对象�
 - data/processed/missing_data_checklist.csv
 - 机器可读引用索引（按类型汇总；完整登记见 `sources.json` / `standard_matrix.json` / `design_depth_matrix.json` / `metrics.json`）：
 
-- 来源 [source]（35 条）：[source:SITE-PACKAGE] 任务书、[source:AGENT-TASKBOOK] 智能体任务书、[source:BOUNDARY-SOURCE] 边界来源、[source:KEY-AREA-SOURCE] 重点区来源、[source:ECOSYSTEM-MAP] 产业生态、[source:OPERATIONS] 运营路径，[source:LZCAPP-REF-A0-BARRIER-FREE] 无障碍环境建设法、[source:LZCAPP-REF-A0-ELDERLY-45] 国办发45号、[source:LZCAPP-HD-ELDERLY-2024] 海淀老龄统计、[source:LZCAPP-NBS-HD-POP-2024] 海淀常住人口、[source:LZCAPP-HD-AI-CORE-2024] 海淀AI核心产业、[source:LZCAPP-OSM-BASEMAP] OpenStreetMap 底图 等，详见 `sources.json`。
+- 来源 [source]（35 条）：[source:SITE-PACKAGE] 任务书、[source:AGENT-TASKBOOK] 智能体任务书、[source:BOUNDARY-SOURCE] 边界来源、[source:KEY-AREA-SOURCE] 重点区来源、[source:ECOSYSTEM-MAP] 产业生态、[source:OPERATIONS] 运营路径 等；另含 2026-08-29 新增的 6 条权威公开与第三方来源（无障碍环境建设法、国办发〔2020〕45号、海淀老龄与常住统计、海淀 AI 核心产业统计、OpenStreetMap 公开底图），完整索引见 `sources.json`。
 
 - 标准 [standard]（6 条）：[standard:MOHURD-ARCH-DESIGN-DEPTH-2016] 成果深度、[standard:MOHURD-URBAN-DESIGN-MEASURES] 城市设计管理办法、[standard:MOHURD-CONTROL-DETAILED-PLANNING] 控规、[standard:MNR-LAND-USE-CLASSIFICATION-GUIDE] 用地分类、[standard:PROJECT-OFFICIAL-ANNOUNCEMENT] 公告、[standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK] 任务书，详见 `standard_matrix.json`。
 
