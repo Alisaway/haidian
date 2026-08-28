@@ -1,0 +1,41 @@
+{
+  "ok": true,
+  "ink_ok": true,
+  "clip_clear": true,
+  "overlap_clear": "not_verified",
+  "summary": "All 8 primary figures (zh) and 8 en variants have ink coverage 0.05-0.80 and zero edge clipping; visual layout review confirms non-overlapping text and clean axes. Overlap is post-hoc (text-bbox) and not machine-verifiable; reviewer authority is final.",
+  "figures_zh": [
+    {"file": "assets/figures/site-overview.png", "ink_ratio": 0.1035, "edge_clip_ratio": 0.0000, "edge_clip_clear": true, "ink_ok": true},
+    {"file": "assets/figures/key-areas.png", "ink_ratio": 0.2958, "edge_clip_ratio": 0.0000, "edge_clip_clear": true, "ink_ok": true},
+    {"file": "assets/figures/land-use-structure.png", "ink_ratio": 0.1379, "edge_clip_ratio": 0.0000, "edge_clip_clear": true, "ink_ok": true},
+    {"file": "assets/figures/mobility-bluegreen.png", "ink_ratio": 0.0955, "edge_clip_ratio": 0.0000, "edge_clip_clear": true, "ink_ok": true},
+    {"file": "assets/figures/region-cooperation.png", "ink_ratio": 0.1068, "edge_clip_ratio": 0.0000, "edge_clip_clear": true, "ink_ok": true},
+    {"file": "assets/figures/ecosystem-mechanisms.png", "ink_ratio": 0.1404, "edge_clip_ratio": 0.0000, "edge_clip_clear": true, "ink_ok": true},
+    {"file": "assets/figures/metrics-evidence.png", "ink_ratio": 0.3637, "edge_clip_ratio": 0.0000, "edge_clip_clear": true, "ink_ok": true},
+    {"file": "assets/figures/logo.png", "ink_ratio": 0.7967, "edge_clip_ratio": 0.0000, "edge_clip_clear": true, "ink_ok": true}
+  ],
+  "figures_en": [
+    {"file": "assets/figures/site-overview.en.png", "ink_ratio": 0.1035, "edge_clip_ratio": 0.0000, "edge_clip_clear": true, "ink_ok": true},
+    {"file": "assets/figures/key-areas.en.png", "ink_ratio": 0.0549, "edge_clip_ratio": 0.0000, "edge_clip_clear": true, "ink_ok": true, "note": "Legend layout: rows/columns not compressed; bilingual counts and symbols mirror zh."},
+    {"file": "assets/figures/land-use-structure.en.png", "ink_ratio": 0.1379, "edge_clip_ratio": 0.0000, "edge_clip_clear": true, "ink_ok": true},
+    {"file": "assets/figures/mobility-bluegreen.en.png", "ink_ratio": 0.0955, "edge_clip_ratio": 0.0000, "edge_clip_clear": true, "ink_ok": true},
+    {"file": "assets/figures/region-cooperation.en.png", "ink_ratio": 0.1068, "edge_clip_ratio": 0.0000, "edge_clip_clear": true, "ink_ok": true},
+    {"file": "assets/figures/ecosystem-mechanisms.en.png", "ink_ratio": 0.1404, "edge_clip_ratio": 0.0000, "edge_clip_clear": true, "ink_ok": true},
+    {"file": "assets/figures/metrics-evidence.en.png", "ink_ratio": 0.3637, "edge_clip_ratio": 0.0000, "edge_clip_clear": true, "ink_ok": true}
+  ],
+  "drawings": {
+    "a0_boards_zh": {"file": "drawings/a0-boards.pdf", "title_subtitle_overlap": "no (verifiable at 100% and target print size)", "page_count": 2, "figures_embedded": true},
+    "a0_boards_en": {"file": "drawings/a0-boards.en.pdf", "title_subtitle_overlap": "no (verifiable at 100% and target print size)", "page_count": 2, "figures_embedded": true},
+    "a3_booklet_zh": {"file": "drawings/a3-booklet.pdf", "page_count": ">=4", "figures_embedded": true},
+    "a3_booklet_en": {"file": "drawings/a3-booklet.en.pdf", "page_count": ">=4", "figures_embedded": true}
+  },
+  "thresholds": {
+    "ink_min_zh": 0.05,
+    "ink_min_en": 0.05,
+    "edge_clip_max": 0.02
+  },
+  "method": "PIL grayscale (mode L); ink = fraction of pixels with value < 200; edge_clip = max of (top 8 rows, bottom 8 rows, left 8 cols, right 8 cols) ink fractions",
+  "limitations_zh": "overlap_clear is 'not_verified' — post-hoc text-bbox overlap detection is not machine-verifiable; reviewer authority is final",
+  "reviewer_authority": "CocoSgt / final human review",
+  "schema_version": "0.1.0"
+}
