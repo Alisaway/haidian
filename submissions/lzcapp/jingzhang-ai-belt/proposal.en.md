@@ -538,7 +538,7 @@ Annual activities by quarter (see `visual/assets/operations.json`): Q1 Open-Sour
 - data/processed/missing_data_checklist.csv
 **Machine-readable index** (traceable evidence markers used in this proposal):
 
-- Sources [source] (35): [source:SITE-PACKAGE] task book, [source:AGENT-TASKBOOK] agent task book, [source:BOUNDARY-SOURCE] boundary, [source:KEY-AREA-SOURCE] key areas, [source:ECOSYSTEM-MAP] industry ecosystem, [source:OPERATIONS] operating path, [source:LZCAPP-REF-A0-BARRIER-FREE] Barrier-Free Law, [source:LZCAPP-REF-A0-ELDERLY-45] GuoBanFa 2020-45, [source:LZCAPP-HD-ELDERLY-2024] Haidian elderly stat, [source:LZCAPP-NBS-HD-POP-2024] Haidian population, [source:LZCAPP-HD-AI-CORE-2024] Haidian AI core output, [source:LZCAPP-OSM-BASEMAP] OpenStreetMap basemap, etc. — see `sources.json`.
+- Sources [source] (35): [source:SITE-PACKAGE] task book, [source:AGENT-TASKBOOK] agent task book, [source:BOUNDARY-SOURCE] boundary, [source:KEY-AREA-SOURCE] key areas, [source:ECOSYSTEM-MAP] industry ecosystem, [source:OPERATIONS] operating path, etc.; six authoritative public and third-party sources were added on 2026-08-29 (Barrier-Free Environment Construction Law, GuoBanFa〔2020〕No.45, Haidian elderly and population statistics, Haidian AI core-industry statistics, OpenStreetMap public basemap) — full index in `sources.json`.
 
 - Standards [standard] (6): [standard:MOHURD-ARCH-DESIGN-DEPTH-2016] deliverable depth, [standard:MOHURD-URBAN-DESIGN-MEASURES] urban-design measures, [standard:MOHURD-CONTROL-DETAILED-PLANNING] regulatory plan, [standard:MNR-LAND-USE-CLASSIFICATION-GUIDE] land-use classification, [standard:PROJECT-OFFICIAL-ANNOUNCEMENT] announcement, [standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK] task book — see `standard_matrix.json`.
 
