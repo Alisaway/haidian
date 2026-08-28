@@ -1,0 +1,67 @@
+# 方案迭代记录 / Changelog
+
+> 说明：本文件于 2026-08-29 **补立**。此前 v0.1–v0.5 各轮迭代均通过 Pull Request 描述与提交信息记录，未在包内维护独立 changelog；为与仓库现行惯例对齐（`skills/urban-design-ai-submission/SKILL.md` 要求同步更新 proposal、`changelog.md`、assumptions 与证据记录），现依据可核查的 PR 记录回溯补录，并自本次起随每次改动同步更新。
+
+> Note: this file was **created retrospectively** on 2026-08-29. Iterations v0.1–v0.5 were documented in their Pull Request descriptions and commit messages rather than in an in-package changelog. To align with repository convention (SKILL.md requires updating the proposal, `changelog.md`, assumptions and evidence records together), the history is reconstructed from verifiable PR records, and this file will be kept in sync with every subsequent change.
+
+## v1.0 - 2026-08-29
+
+**数据来源边界强化与迭代记录补立 / Data-sourcing registry strengthening and changelog establishment**
+
+- 修复前：本包的证据底座全部来自任务书、征集公告与仓库内置资料，缺少外部权威公开统计支撑包容性与产业可行性论证；同时全包没有 `changelog.md`，与仓库现行惯例不符（main 上同期 494 份投稿均含此文件），CI 会报 `Changelog files: 0`。
+- 依据 2026-08-13 明确的数据来源边界（可引国家统计局等权威公开材料与许可合规的第三方数据；所有引用须登记来源、用途、限制；不得上传个人隐私、非公开规划资料或未授权数据），在 `sources.json` 新增 6 条登记：2 条仓库 A0 法规交叉引用（《无障碍环境建设法》第 39 条现场引导与人工服务要求、国办发〔2020〕45 号传统渠道并行）、3 条海淀区官方统计（2024 年末常住人口 312.2 万；60 岁及以上 71.8 万、占 23%，中度老龄化；2024 年人工智能核心产业规模 2822 亿元、企业 1900 余家、公共算力汇聚京津冀蒙新超 8 万 P）、1 条 OpenStreetMap 公开底图（ODbL，仅作临时几何面积 sanity-check 基准）。
+- 同步在 `proposal.md` / `proposal.en.md` 的包容性、AI 产业定位与几何诚实三处插入对应证据标记，并将参考资料索引计数由 26 修正为 35（该计数此前未随 sources 条目增加同步更新，属既有不一致）。
+- 未接入骑手、网约车、快递或流量热力等第三方数据，因此不登记相关引用；登记内容均为确已使用且经检索核验的公开来源，无杜撰数值，也未上传任何原始数据文件。
+- 边界声明不变：本投稿仅申请 repository intake，不代表画廊发布、评奖、实施批准或政府背书。
+
+- Before the change, the evidence base rested entirely on the brief, the official announcement and repository-bundled materials, with no external authoritative public statistics supporting the inclusivity and industry-feasibility arguments. The package also lacked `changelog.md`, contrary to repository convention (494 concurrent submissions on main include one), which caused CI to report `Changelog files: 0`.
+- Following the data-sourcing boundary clarified on 2026-08-13 (authoritative public statistics and licence-compliant third-party data may be cited; every citation must register source, purpose and limitation; no personal data, non-public planning material or unauthorised data may be uploaded), six entries were registered in `sources.json`: two cross-references to repository A0 instruments (Barrier-Free Environment Construction Law Art. 39 on-site guidance and human service; GuoBanFa〔2020〕No.45 parallel traditional channels), three Haidian official statistics (permanent population 3.122 million at end-2024; residents aged 60+ at 718,000, 23% of the population, a moderately aged society; 2024 AI core-industry output RMB 282.2 billion with 1,900+ AI firms and a public compute pool exceeding 80,000 P across Jing-Jin-Ji and beyond), and the OpenStreetMap public basemap (ODbL) as a sanity-check baseline only.
+- Matching evidence markers were inserted into the inclusivity, AI-industry positioning and geometry-honesty sections of `proposal.md` / `proposal.en.md`, and the reference index count was corrected from 26 to 35 (it had not been kept in sync as source entries were added — a pre-existing inconsistency).
+- No rider, ride-hailing, courier or traffic-heatmap data was ingested, so none is registered. Every registered citation is genuinely used and verified by web search; no figures are fabricated and no raw data files were uploaded.
+- Boundary statement unchanged: this submission requests repository intake only, and does not represent gallery publication, award selection, implementation approval or government endorsement.
+
+## v0.5 - 2026-08-13（PR #2275）
+
+**内容强化：公众参与、区域协同、分期实施、AI 测试治理 / Content strengthening**
+
+- 新增「三区两翼 × 京津冀创新协同机制表」（回应早期评审点名的「协同回路无专图、京津冀几乎未回应」）、「分期实施矩阵：试点区域—参与主体—关键指标」、「SC-01~03 产业测试验证场景完整字段 + 沙盒准入与凭证协议（准入→凭证→退出→复盘）」。
+- 将 proposal 中替维护者宣布评分结论的措辞改为中性事实陈述（参考 Issue #1368 的同类处理）；为受组织方数据限制的两项设计深度（开发强度控制 FAR、高度与体量）补充可选字段 `completeness_limited_by`；引用真实在跑的公开意见通道（Issue #955）作为公众参与的实例。
+- 评审结果：Review Agent score 68/100，mandatory rejection 与四道本地 gate 均通过，状态 intake accepted。
+- 后续说明：本轮之后推送的「数据来源强化」提交晚于 PR 合并时间（2026-08-13T03:23:59Z），未随本 PR 进入 main，已并入 v1.0 重新提交。
+
+- Added the "three zones, two wings × Jing-Jin-Ji innovation-synergy mechanism" table (addressing the earlier review note that the synergy loop had no dedicated figure and Jing-Jin-Ji was barely addressed), the "phasing matrix: pilot area — actors — key indicators", and the "SC-01~03 full-field test-validation scenarios plus sandbox admission and credential protocol".
+- Replaced wording that announced scoring conclusions on the maintainer's behalf with neutral factual statements (following the handling of the parallel case in Issue #1368); added the optional `completeness_limited_by` field to the two design-depth items constrained by organizer data gaps (development-intensity/FAR controls and height-massing character); cited the live public-comment channel (Issue #955) as a worked instance of public participation.
+- Review outcome: Review Agent score 68/100; mandatory rejection and all four local gates passed; status intake accepted.
+- Follow-up: the data-sourcing commit pushed after this PR's merge (2026-08-13T03:23:59Z) did not enter main and has been folded into v1.0 for resubmission.
+
+## v0.4 - 2026-08-12（PR #2044）
+
+**开源字体合规、矩阵引用清理与提交规范对齐 / Open-source font compliance, matrix reference cleanup, submission-convention alignment**
+
+- 评审结果 Review Agent score 68/100。详见 PR #2044。
+
+## v0.3 - 2026-08-11（PR #1878）
+
+**内容深化：重点区域、可行性、原创性、场景卡 / Content deepening: key areas, feasibility, originality, scenario cards**
+
+- 评审结果 Review Agent score 64/100。详见 PR #1878。
+
+## v0.2 - 2026-08-09（PR #928）
+
+**28 项 repairs（原创性与可行性）/ 28 repairs (originality and feasibility)**
+
+- 评审结果 Review Agent score 71/100。详见 PR #928。
+
+## v0.1 - 2026-08-08（PR #624）
+
+**初始投稿：百年京张AI创新带城市设计提案 / Initial submission**
+
+- 评审结果 Review Agent score 62/100，intake 通过。详见 PR #624。
+
+---
+
+## 冻结项声明 / Frozen scope
+
+以下范围在本轮及历次迭代中保持不变，任何改动都会在本文件显式记录：提交几何（`geometry/`）与全部面积、比例指标仍以组织方提供的 provisional 边界为限，待官方多边形发布后整体重算；不声称官方批准、审定控规、最终土地权属、最终建设规模或保证实施；不上传个人隐私、非公开规划资料或未授权数据。
+
+The following scope stays frozen across this and previous iterations, and any change to it will be recorded explicitly here: submitted geometry (`geometry/`) and all area and ratio indicators remain bounded by the organizer-provided provisional boundary and will be fully recalculated once official polygons are published; no claim is made of official approval, approved regulatory control, final land ownership, final construction scale or guaranteed implementation; no personal data, non-public planning material or unauthorised data is uploaded.
