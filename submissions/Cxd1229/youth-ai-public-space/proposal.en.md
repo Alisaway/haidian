@@ -206,11 +206,13 @@ Functional zoning based on ~11.4 km² overall design area [data:geometry/land_us
 | AI R&D + Commercial Mixed-Use | 25% | 285 | Ground floor public and open, upper floors R&D offices |
 | University & Research Institutions | 20% | 228 | Retain existing, add industry-academia shared interfaces |
 | Residential (incl. Talent Housing) | 15% | 171 | Youth apartments + long-term rental + mixed community |
-| Green and Open Space | 12% | 136.8 | Jingzhang Heritage Park + pocket park network |
+| Green and Open Space | 12.5% | 142.9 | Jingzhang Heritage Park + pocket park network |
 | Public Service Facilities | 10% | 114 | 24h libraries, sports centers, community canteens |
 | Road and Transit | 8% | 91.2 | Densify secondary and branch road network |
 | Cultural Facilities & Heritage | 5% | 57 | Railway museum + innovation gallery + honor wall nodes |
 | Mixed Flexible Land | 5% | 57 | Reserved for AI test scenarios and temporary events |
+
+> The table above is a conceptual land-use zoning; the green and open space area uses `geometry/green_space.geojson` measured 142.9 ha as the authoritative figure (green ratio 12.5%). Zoning areas differ from the site_boundary measured 1142.7 ha due to conceptual classification, so spatial recalculation follows the GeoJSON [data:geometry/land_use.geojson].
 
 **Retain/Renovate/Demolish Strategy** (conceptual direction, to be deepened by professional teams):
 - Retain: University campuses, established quality communities, historic buildings, Jingzhang Railway heritage
@@ -526,22 +528,22 @@ Haidian District's 2024 energy consumption was 7.555 million tce, GDP energy int
 
 ## Zhan Tianyou Protocol Verification Checklist
 
-The following checklist translates the four principles into verifiable engineering facts, available for judges and professional teams to independently verify:
+The following checklist translates the four principles into verifiable engineering facts, available for judges and professional teams to independently verify. Status has two levels: **Verified** (auditable evidence exists in this package) and **Design target** (designed in this proposal, but confirmable only at implementation stage by professional teams and named responsible persons).
 
 | Principle | Verification Item | Evidence in This Proposal | Status |
 |-----------|-------------------|---------------------------|--------|
-| 1. Visibility | Are spatial layers complete and inspectable? | 9 GeoJSON files, 70 features | PASS |
-| 1. Visibility | Do metrics have formulas for recalculation? | metrics.json contains 17 metric formulas | PASS |
-| 1. Visibility | Is the proposal human-readable? | proposal.md 13 chapters; offline HTML visualization | PASS |
-| 2. Stoppable | Does each scenario have a named human responsible person? | SC1–SC12 all list operating entities | PASS |
-| 2. Stoppable | Does each scenario have an exit/alternative? | SC9 provides QR as alternative to face recognition; SC5–12 operable offline | PASS |
-| 2. Stoppable | Are human review trigger conditions defined? | Scenario governance appendix defines 4 trigger conditions | PASS |
-| 3. AI-Free Equivalence | Can public spaces function without AI? | All three tiers of public space network are based on physical infrastructure (parks/seating/paths), not AI-dependent | PASS |
-| 3. AI-Free Equivalence | Do offline alternatives exist? | Free WiFi device lending stations as non-AI alternatives to digital services | PASS |
-| 4. Intergenerational Equity | Are non-youth groups covered? | Inclusive design covers 6 groups: children, elderly, disabled, low-income, etc. | PASS |
-| 4. Intergenerational Equity | Is barrier-free design included? | Wheelchair ramps, tactile paving, voice navigation, tactile signage | PASS |
+| 1. Visibility | Are spatial layers complete and inspectable? | 9 GeoJSON files, 70 features | Verified |
+| 1. Visibility | Do metrics have formulas for recalculation? | metrics.json contains 26 metrics with formulas and confidence labels | Verified |
+| 1. Visibility | Is the proposal human-readable? | proposal.md 13 chapters; offline HTML visualization | Verified |
+| 2. Stoppable | Does each scenario have a responsible role and review trigger? | All 12 scenario cards list operating entities and human review triggers; named human responsible persons are to be assigned per scenario at implementation stage and cannot be replaced by institution names | Design target |
+| 2. Stoppable | Does each scenario have an exit/alternative? | SC9 provides QR as alternative to face recognition; each scenario lists a non-AI alternative path | Verified |
+| 2. Stoppable | Are human review trigger and stop conditions defined? | Appendix A defines review triggers and stop conditions per scenario | Verified |
+| 3. AI-Free Equivalence | Can public spaces function without AI? | All three tiers of public space network are based on physical infrastructure (parks/seating/paths), not AI-dependent | Design target |
+| 3. AI-Free Equivalence | Do offline alternatives exist? | Free WiFi device lending stations + per-scenario manual alternatives in Appendix A | Verified |
+| 4. Intergenerational Equity | Are non-youth groups covered? | Inclusive design covers children, elderly, disabled, low-income, and other groups | Verified |
+| 4. Intergenerational Equity | Is barrier-free design included? | Wheelchair ramps, tactile paving, voice navigation, tactile signage | Design target |
 
-> This verification checklist is the operational implementation of the Zhan Tianyou Protocol. Every item is an engineering fact independently verifiable by a third party — not a subjective declaration.
+> This verification checklist is the operational implementation of the Zhan Tianyou Protocol. Items marked "Verified" have auditable evidence in this package; items marked "Design target" do not claim to be completed engineering facts and require confirmation at implementation stage by named responsible persons and professional review.
 
 ## Risk, Copyright, and Compliance
 
@@ -573,15 +575,24 @@ The following checklist translates the four principles into verifiable engineeri
 
 ## Appendix A: Scenario Data Governance Framework [risk:privacy]
 
-| Scenario | Legal Basis | Data Fields (≤5) | Retention | Opt-Out Method | Human Review Trigger |
-|----------|-------------|-------------------|-----------|----------------|---------------------|
-| SC1 Autonomous Shuttle | Informed consent (boarding = consent) | Path trajectory, speed, timestamp, onboard video (de-identified) | 72h | Choose human-driven shuttle | Accident/violation/system alert |
-| SC2 Robot Delivery | Contractual necessity + informed consent | Path coordinates, delivery time, package dimensions (no content) | 30 days | Choose human delivery | Delivery failure/user complaint |
-| SC3 Environmental Sensor Network | Public interest (environmental monitoring) | Temperature, humidity, PM2.5, noise (dB), light | Permanent (aggregated, public) | Sensors contain no personal information; opt-out not applicable | Value anomaly/device offline |
-| SC4 AI Security Sandbox | Contractual necessity | Test code, execution logs, resource usage | Purged upon test completion | Contract-defined test scope | Security incident/resource anomaly |
-| SC5–12 Public Experience Scenarios | Informed consent | Interaction records (anonymous), usage frequency, scenario ID | 90 days | Non-participation / use offline mode | User feedback / content dispute |
+The table below specifies data governance essentials per scenario. All scenarios uniformly follow data minimization, default local processing, and no biometric collection (SC9 offers a QR-code alternative); the unified appeal channel is the Jingzhang AI Innovation Belt operating company's data compliance desk (phone/email/on-site), with the right to escalate to regulators preserved. Quarterly public release of privacy impact assessment summaries.
 
-All scenarios follow data minimization principles; default local processing; no biometric data collection (SC9 provides QR code alternative). Quarterly public release of privacy impact assessment summaries.
+| Scenario | Personal Info | Purpose | Explicit Choice | Data Fields (≤5) | Retention | Non-AI Alternative | Stop Condition |
+|----------|---------------|---------|-----------------|------------------|-----------|--------------------|----------------|
+| SC1 Autonomous Shuttle | Yes (trajectory/video) | Vehicle operation and safety | Active opt-in before boarding; may refuse | Path trajectory, speed, timestamp, onboard video (de-identified) | 72h | Human-driven shuttle | Accident/violation/system alert |
+| SC2 Robot Delivery | Yes (path) | Delivery fulfillment | Explicitly choose robot delivery at order time | Path coordinates, delivery time, package dimensions | 30 days | Human delivery | Delivery failure/complaint |
+| SC3 Environmental Sensor Network | No | Environmental monitoring (public interest) | No personal consent needed (no personal info) | Temperature, humidity, PM2.5, noise, light | Permanent (aggregated) | Not applicable (no personal data) | Value anomaly/offline |
+| SC4 AI Security Sandbox | Yes (code) | Security testing | Contract-defined test scope | Test code, execution logs, resource usage | Purged on completion | Offline sandbox | Security incident/anomaly |
+| SC5 AI Art Co-creation | Anonymizable | Art co-creation | Active use; content anonymous by default | Generated content, interaction records (anonymous) | 90 days | Offline art workshop | Content dispute/complaint |
+| SC6 Open-Source Contribution Visualization | Yes (public contributions) | Community display | Only public contributions shown; may opt out of display | GitHub public contributions, display settings | Real-time | Not displayed | User withdrawal/dispute |
+| SC7 AI Tutoring Study Room | Anonymizable | Learning support | Active use; login optional | Learning records (optional), preferences | 90 days | Human tutor / regular study room | User exit/feedback |
+| SC8 Smart Fitness Cabin | Anonymizable | Exercise guidance | Active use; activity data sharing optional | Activity data (optional), frequency | 90 days | Traditional gym equipment | User exit |
+| SC9 Unmanned Retail | Yes (settlement imagery) | Goods settlement | QR/swipe entry (non-biometric) | Settlement imagery (local processing) | Purged locally | Human cashier | User opt-out |
+| SC10 AI Music Co-creation | Anonymizable | Music co-creation | Active use | Generated audio, interaction records | 90 days | Offline band/rehearsal room | Content dispute |
+| SC11 Digital Heritage Tour | Anonymizable | Cultural tour | Active QR use | Tour location, usage frequency | 90 days | Physical signs / paper maps | User stops |
+| SC12 City Data Observatory | No | City operations display | No personal consent needed (aggregated public) | Aggregated city metrics (no personal) | Permanent (aggregated) | Offline boards | Data anomaly |
+
+> Note: SC1 onboard video, SC6 public contribution data, and SC9 settlement imagery involve personal information or identifiable content. Their legal basis, minimization, and opt-out mechanisms must be confirmed by professional data protection review before deployment; this proposal only designs the mechanisms and does not claim completed legal certification.
 
 ## Appendix B: Copyright and Rights Checklist
 
