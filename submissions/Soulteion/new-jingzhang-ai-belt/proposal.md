@@ -101,7 +101,7 @@ iteration: "v1.7"
 | 两翼分名 | 中关村科技服务翼、小月河场景赋能翼 | Zhongguancun Service Wing / Xiaoyuehe Scenario Wing | 服务与场景导向 |
 | 空间品牌 | 人形AI公共脊 | "Ren" (Human) AI Public Spine | 尊崇铁路"人"字形遗产 |
 
-Logo 方向：以京张铁路"人"字形铁轨为母题，将两条铁轨变形为两个相向而立的"人"形，中间以一条发光节点串联，象征"人的协作 × AI 的智能"。色彩采用京张铁路锈红（历史）与海淀创新蓝（AI 未来）双色渐变，配以"人本、共创、向未来"的传播语。Logo 及其字体、图形均为本方案自绘概念，不涉及第三方商标或字体授权 [source:AGENT-TASKBOOK] [depth:brand_identity_system]。
+Logo 方向：以京张铁路"人"字形铁轨为母题，将两条铁轨变形为两个相向而立的"人"形，中间以一条发光节点串联，象征"人的协作 × AI 的智能"。色彩采用京张铁路锈红（历史）与海淀创新蓝（AI 未来）双色渐变，配以"人本、共创、向未来"的传播语。Logo 图形为本方案自绘概念，不涉及第三方商标；排版使用系统字体 Microsoft YaHei（已在 sources.json 登记为 FONT-MICROSOFT-YAHEI，受 Microsoft EULA 限制，不打包或再分发字体文件） [source:AGENT-TASKBOOK] [depth:brand_identity_system]。
 
 ### 3.3 五大功能与三区两翼协同回路
 
@@ -389,7 +389,7 @@ Logo 方向：以京张铁路"人"字形铁轨为母题，将两条铁轨变形�
 - **代码层（中关村文化）**：中关村"敢于创新、宽容失败"的创业精神，以开源、共创、评测场景延续；
 - **人本层（AI 新文化）**：以"人"字形为母题，把 AI 美好生活、人机协作、普惠智能作为新文化主张。
 
-导视与符号系统：以"人形"图标为统一导视母题，区分历史（锈红）、创新（蓝）、生活（绿）三级色彩；国际传播语 "From the first railway to the first AI city"（从第一条铁路到第一座 AI 城市）[depth:signage_system_direction] [depth:spatial_storyline]。
+导视与符号系统：以"人形"图标为统一导视母题，区分历史（锈红）、创新（蓝）、生活（绿）三级色彩；国际传播语 "From the first railway to a human-centered AI city"（从第一条铁路到人本 AI 城市）[depth:signage_system_direction] [depth:spatial_storyline]。
 
 **Logo 系统与文化导视系统的边界**。为避免混淆一带整体品牌与文化空间导视 [source:AGENT-TASKBOOK]，本方案明确二者层级与适用范围：**一带整体 Logo 系统**（第 3.2 节，锈红—蓝双色"人"形 Logo）属品牌层，用于一带主名、三芯分名与传播物，承担对外识别与 IP 统一；**文化导视系统**（本节"人形"三级色彩图标、座凳导视柱等）属空间层，用于公园、街道、广场的现场方位与场景引导。二者共用"人"形母题但分属不同层级：品牌层固化一带身份，空间层服务现场寻路；导视图形为自绘概念，不照搬 Logo 字标，也不在公共空间挪用企业或第三方标识，确保文化标识系统与整体 Logo 系统各司其职、不互相替代 [depth:brand_identity_system] [depth:signage_system_direction]。
 
@@ -507,7 +507,7 @@ Logo 方向：以京张铁路"人"字形铁轨为母题，将两条铁轨变形�
 ## 风险、版权与合规说明
 
 - **资料合法性**：本方案仅使用公开来源与仓库登记材料，不包含非公开政府数据、企业专有数据或个人隐私数据 [source:SOURCE-REGISTRY] [depth:existing_conditions_diagnosis]；
-- **版权授权**：Logo、字体、图示均为自绘概念；引用的公告、标准、案例信息均注明来源；未使用未授权商标、人物肖像或版权图像 [source:AGENT-TASKBOOK]；
+- **版权授权**：Logo 图形为自绘概念，排版使用系统字体 Microsoft YaHei（受 EULA 限制，不打包/再分发）；图示均为自绘概念；引用的公告、标准、案例信息均注明来源；未使用未授权商标、人物肖像或版权图像 [source:AGENT-TASKBOOK]；
 - **AI 生成责任**：本方案由 AI 智能体生成，生成方法与来源在 `report/copyright_statement.md` 与 `sources.json` 中披露；
 - **官方批准/实施承诺禁用**：本方案全部空间结论为"概念建议/参考方案/可供专业团队深化研究"，不构成法定规划、政府审定、投资承诺或工程可行性结论 [depth:risk_missing_data]；
 - **待补资料**：官方边界、控规条件、现状建筑、权属、市政与文保数据到位后，需对面积型指标、用地分区与拆改留分类重算 [metric:site_area_sqm]；
