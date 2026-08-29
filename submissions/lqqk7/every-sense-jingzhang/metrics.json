@@ -28,7 +28,7 @@
   },
   "building_footprint_area_sqm": {
    "status": "known",
-   "value": 372890.97,
+   "value": 372890.968,
    "unit": "sqm",
    "source_files": [
     "geometry/buildings.geojson"
@@ -861,7 +861,8 @@
    "assumptions": [
     "The reading depends on three figure-convention constants this proposal sets for itself with no external basis: R_on = 300 m, R_off = 150 m, and a service-band half-width w = 40 m. Changing any one changes every reading in this family.",
     "The reachability envelopes are drawn at conceptual radii and represent neither measured walking time, gradient, crossing conditions, nor real service coverage; the difference area is an audit target zone, not a compliance claim.",
-    "The value is the four-summary reading recomputed for the A3 page 11 reachability ledger after the v8.0 densified-centreline rerun; the human-readable position of the same figure is 438,000 sqm at three significant digits."
+    "The value is the four-summary reading recomputed for the A3 page 11 reachability ledger after the v8.0 densified-centreline rerun; the human-readable position of the same figure is 438,000 sqm at three significant digits.",
+    "No replay script ships for this reading: recomputation means rebuilding the A3 page 11 figure caliber by hand, which places it on a lower reproducibility tier than the rest of the package's readings."
    ],
    "calculation_metadata": {
     "method_source": "PACKAGE-SPATIAL-RECALCULATION-METHOD",
@@ -889,7 +890,8 @@
    "assumptions": [
     "The reading depends on three figure-convention constants this proposal sets for itself with no external basis: R_on = 300 m, R_off = 150 m, and a service-band half-width w = 40 m. Changing any one changes every reading in this family.",
     "The reachability envelopes are drawn at conceptual radii and represent neither measured walking time, gradient, crossing conditions, nor real service coverage; the difference area is an audit target zone, not a compliance claim.",
-    "Which centrelines remain usable once AI is off is read from each feature's own design_role declaration, not judged by the computing tool."
+    "Which centrelines remain usable once AI is off is read from each feature's own design_role declaration, not judged by the computing tool.",
+    "No replay script ships for this reading: recomputation means rebuilding the A3 page 11 figure caliber by hand, which places it on a lower reproducibility tier than the rest of the package's readings."
    ],
    "calculation_metadata": {
     "method_source": "PACKAGE-SPATIAL-RECALCULATION-METHOD",
@@ -917,7 +919,8 @@
    "assumptions": [
     "The reading depends on three figure-convention constants this proposal sets for itself with no external basis: R_on = 300 m, R_off = 150 m, and a service-band half-width w = 40 m. Changing any one changes every reading in this family.",
     "The reachability envelopes are drawn at conceptual radii and represent neither measured walking time, gradient, crossing conditions, nor real service coverage; the difference area is an audit target zone, not a compliance claim.",
-    "The difference area marks where the audit should go first; it produces no reading whatsoever for ai_off_service_equivalence_gap, which stays unknown and is defined by paired task testing."
+    "The difference area marks where the audit should go first; it produces no reading whatsoever for ai_off_service_equivalence_gap, which stays unknown and is defined by paired task testing.",
+    "No replay script ships for this reading: recomputation means rebuilding the A3 page 11 figure caliber by hand, which places it on a lower reproducibility tier than the rest of the package's readings."
    ],
    "calculation_metadata": {
     "method_source": "PACKAGE-SPATIAL-RECALCULATION-METHOD",
@@ -1133,7 +1136,7 @@
     "visual/assets/osm-fabric/osm-fabric-readings.json",
     "geometry/site_boundary.geojson"
    ],
-   "formula": "FAB-02: intersections inside the site after clustering (1569) / site area (11.413 km2); the reading carries the unit intersections/km2, recorded here under the schema's index unit because that unit is not in the enumeration",
+   "formula": "FAB-02: intersections inside the site after clustering (1569) / site area (11.412825386 km2); the reading carries the unit intersections/km2, recorded here under the schema's index unit because that unit is not in the enumeration",
    "confidence": "medium",
    "assumptions": [
     "Snapshot convention: the value is computed at the timestamp of the 2026-08-15 bounded OpenStreetMap snapshot (status PROVISIONAL in the readings file). It is not a field measurement, not official survey or planning data, and constitutes no planning conclusion, design basis, or compliance determination.",
