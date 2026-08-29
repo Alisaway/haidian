@@ -1,5 +1,24 @@
 # 方案迭代记录
 
+## v1.6 - 2026-08-29
+
+### 改动摘要（按最新官方要求收敛）
+
+- 对齐最新 `docs/formal-submission-guide.md` 英文正式章节标题表：`proposal.en.md` 全部主章节改用官方英文标题（Design Basis and Source List / Regulatory-Plan-Level Urban Design / Detailed Design of Key Areas 等），使英文译稿可独立通过结构校验；中文正文章节与证据锚点不变。
+- 新增 `risk.json`：把第 13 章风险矩阵落为八个维度的 1–5 分结构化登记（政策不确定性 4、实施复杂度 4 均附人工复核路径），portal 可展示最高风险项；与正文表格口径一致，不新增任何承诺。
+- 新增 `spatial.json`：把「一脊三核双翼」落为 9 项概念节点/廊道/区域清单（disclaimer=concept-only，不含坐标与官方线位），并与任务书场景 ID 建立关联；正文第 2 章、第 13 章补充指向说明。
+- 正文双语同步：第 2 章补 `spatial.json` 指向段、第 13 章补 `risk.json` 指向段；front matter `iteration` 升级为 v1.6。
+- 按既有流水线完成：渲染双语 HTML → LF 归一 → 哈希全量重刷 → 官方四门 gate 自检 → 持久化 self_check.json → 哈希复核 → participant_preflight PASS。
+
+### 采纳反馈
+
+- 依据最新官方指南对英文正式章节标题的要求逐条对齐；新增两个官方 schema 支持的可选结构化工件，把已有判断的出处写实（结构化风险矩阵与概念空间清单），不增加伪精确承诺。
+
+### 暂未采纳或待复核事项
+
+- `simulation.json` 暂不提供：48 小时故障演练目前只有设计剧本（未执行），无可复算任务台账，待实际执行后再登记。
+- 同前：官方边界与控规指标缺失，待 official 数据发布后整包重算。
+
 ## v1.5 - 2026-08-11
 
 ### 改动摘要（v2 契约升级与 agent 披露更新）

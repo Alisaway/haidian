@@ -9,7 +9,7 @@ license: "COMMUNITY-DISPLAY-ONLY"
 summary: "以百年京张铁路信号体系为原型，提出 JINGZHANG BEACON 京张信标：用绿、黄、红三色信号语言把 AI 城市的运行状态变成人人可读的公共信号。一脊三核双翼的空间结构与信号格网，让三处重点区分别成为验证信标、开源信标与体验信标，形成可体验、可复核、可回滚的 AI 城市公共界面。"
 tracks: ["ai-traffic-walkability", "ai-origin-community", "enterprise-services-ecosystem"]
 scenarios: ["ai-cultural-guide", "ai-traffic-walkability", "enterprise-service-copilot", "public-safety-operations-review"]
-iteration: "v1.4"
+iteration: "v1.6"
 ---
 
 # 京张信标：把 AI 城市的运行状态变成公共信号语言
@@ -48,6 +48,8 @@ iteration: "v1.4"
 | 重点区域范围（约 368.4 公顷） | 三处片区如何达到详细设计深度 | 三座信标：验证（黄）/开源（绿）/体验（红蓝） | 每区给出定位、空间动作、AI 场景与实施依赖 | [data:geometry/key_areas.geojson#PROV-KEY-001]、[data:geometry/key_areas.geojson#PROV-KEY-002]、[data:geometry/key_areas.geojson#PROV-KEY-003] |
 
 边界与重点区当前均为 provisional：`geometry/site_boundary.geojson` 来自仓库维护者登记的粗略 polygon，公告文字四至为北五环、学院路/西土城路、西直门外大街、大钟寺东路/荷清路 [source:BOUNDARY-SOURCE]；三处重点区也是临时位置代理 [source:KEY-AREA-SOURCE]。临时边界面积复算为 [metric:site_area_sqm]，它只检查包内一致性，不替代公告约值或 official polygon；provisional 边界不得作为 official redline、审批、权属、征拆或精确面积依据。official polygons 到位后，须按 `allowed_design_space.json` 的顺序重算全部设计图层与指标 [depth:metrics_recalculation]。
+
+「一脊三核双翼」的空间骨架另以 `spatial.json` 作概念节点、廊道与区域的结构化登记（`disclaimer=concept-only`，不含坐标、官方线位或权属信息，portal 可按节点清单展示），与本层框架及第 5 章三处重点区逐项对应 [source:AGENT-TASKBOOK]。
 
 ## 3. 统筹研究范围产业与未来城市研究
 
@@ -306,6 +308,8 @@ AI 创新生态按"策源、验证、开源、体验、治理"五段组织，与
 | 控规指标缺失（容积率/高度/密度） | 保持 unknown 并登记原因 [metric:floor_area_ratio] | 依审定控规条件深化 | R-02 |
 | 道路红线、权属、文保、市政容量缺失 | 全部降级为方向性策略 [data:geometry/constraints.geojson#CONSTRAINT-01] | 工程与权属资料齐备后复核 | R-03 |
 | 外部数据许可与复用条款 | 只用公开/清权资料，逐条登记 [source:SITE-PACKAGE] | 持续核查并登记变更 | R-04 |
+
+风险矩阵的结构化登记见 `risk.json`（八个维度 1–5 分制，portal 展示最高风险项；score≥4 的维度均附人工复核路径），与本节表格口径一致。
 
 ### 故障演练设计：48 小时合成联调（桌面推演，未实际执行）
 
