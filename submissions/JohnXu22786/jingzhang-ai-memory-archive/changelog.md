@@ -1,5 +1,9 @@
 # 方案迭代记录
 
+## v1.0.1 - 2026-08-30
+
+- Audit repair: regenerated `drawings/a0-boards.pdf` and `drawings/a0-boards.en.pdf` with true A0 landscape page geometry; content and page count were preserved, then manifest hashes were refreshed.
+
 ## v1.0 - 2026-08-29
 
 - Rebuilt the residual memory-archive concept around the original Proof-Memory Loop mechanism.
