@@ -8,4 +8,4 @@ All narrative, diagrams, figures, PDF boards, and offline interactive code in th
 
 The dynamic model is a locally authored Canvas simulation. It has no remote dependencies, tracking, map tiles, forms, or APIs.
 
-Noto Sans SC is used to make Chinese text readable in the offline report, visual page and embedded drawing PDFs. A glyph subset is embedded directly in each offline HTML file; the PDFs embed the required glyphs at export. Noto Sans SC is distributed under the SIL Open Font License 1.1. No remote font service is loaded.
+The offline report and visual pages use a broad local system Chinese-font fallback stack (Microsoft YaHei, Noto Sans SC/CJK SC, Source Han Sans CN, WenQuanYi Zen Hei, SimHei and SimSun) so no remote font service is required. The drawing PDFs embed the required Chinese glyphs at export. No remote font or tracking service is fetched at runtime.
