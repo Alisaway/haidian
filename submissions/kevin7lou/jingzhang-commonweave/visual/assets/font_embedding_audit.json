@@ -1,16 +1,22 @@
 {
   "schema_version": "0.1.0",
-  "font_family": "Noto Sans SC",
-  "embedded_family_name": "JZReview",
-  "source": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+  "font_family": [
+    "Noto Sans SC",
+    "Noto Serif SC"
+  ],
+  "embedded_family_name": [
+    "JZReview",
+    "JZSerif"
+  ],
+  "source": [
+    "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+    "https://github.com/google/fonts/tree/main/ofl/notoserifsc"
+  ],
   "license": "SIL Open Font License 1.1",
-  "subset_unique_character_count": 970,
-  "woff2_subset_count": 1,
-  "woff2_bytes": 239716,
-  "woff2_combined_sha256": "e986b88e2185d92edc3668d4047f67ee60c557f9f96a4d43937d02c843be5d09",
-  "font_cmap_codepoints": 970,
-  "visible_codepoints_across_targets": 948,
-  "missing_visible_codepoints": 0,
+  "subset_unique_character_count": 986,
+  "woff2_subset_count": 2,
+  "woff2_bytes": 557156,
+  "woff2_combined_sha256": "1cb1065e41ba02f89be4a334ab8efe3d132b99452866aca09a8dfb34c9fdb8cc",
   "targets": [
     "report/proposal.html",
     "report/proposal.en.html",
@@ -18,20 +24,5 @@
     "visual/index.en.html"
   ],
   "offline_rule": "embedded data URI; no runtime network request",
-  "css_routing_controls": {
-    "report_inline_code": "JZReview, Arial, sans-serif",
-    "visual_monospace_fallback": "ui-monospace, SFMono-Regular, Menlo, JZReview, monospace",
-    "language_switch": "JZReview, Arial, sans-serif"
-  },
-  "organizer_renderer_equivalent_command": "chromium --headless --disable-gpu --no-sandbox --hide-scrollbars --window-size=1440,1600 --screenshot=... file:///...",
-  "browser_verification": {
-    "result": "pass",
-    "font_status": "loaded",
-    "jzreview_text_check": true,
-    "incomplete_images": 0,
-    "remote_requests": 0,
-    "page_errors": 0,
-    "horizontal_overflow": 0,
-    "manual_render_check": "four direct-command HTML screenshots plus bilingual slide 16 and A3/A0 land-use, AI and metrics pages checked; no missing-glyph boxes or clipping"
-  }
+  "browser_verification": "pending exact Chromium render and document.fonts check"
 }

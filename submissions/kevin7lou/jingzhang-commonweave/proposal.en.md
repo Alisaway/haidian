@@ -9,7 +9,7 @@ license: "COMMUNITY-DISPLAY-ONLY"
 summary: "One Jing-Zhang Life Corridor, seven 15-minute life-support circles and three public-institution landmarks repair transitions across a complete life; ecology becomes daily infrastructure, AI stays quiet in daily life, visible at decision nodes and optional end to end, while contemporary space connects railway spirit, Chinese civilization and global content technology."
 tracks: ["ai-traffic-walkability", "enterprise-services-ecosystem", "civic-agent-governance"]
 scenarios: ["ai-traffic-walkability", "enterprise-service-copilot", "public-safety-operations-review"]
-iteration: "v3.2-evidence-alignment"
+iteration: "v4.0-original-spatial-atlas"
 ---
 
 # JING-ZHANG FOR LIFE / 京张一生
@@ -18,7 +18,7 @@ iteration: "v3.2-evidence-alignment"
 
 This proposal moves the primary value of an “AI Innovation Belt” away from technology display and talent competition toward a harder and testable civic promise: a person can study, work, form a family, care for others, change direction, retire and grow old here without being forced to leave at every life transition. `CommonWeave` remains the implementation system, weaving space, time, operations and public rights into enforceable contracts rather than becoming another brand.[source:USER-DESIGN-CHARTER]
 
-![Overall concept: one Life Corridor, seven support circles and three civic landmarks](assets/figures/site-overview.en.png)
+![JZ–01 Site Evidence and Life-Problem Overlay: public facts, concept inference and testable hypotheses](assets/figures/site-overview.en.png)
 
 ## Design Basis and Source List
 
@@ -68,7 +68,7 @@ Housing is innovation infrastructure. Stable rental options, adaptable units, ne
 
 Renewal follows retain, repair, adaptive reuse, necessary new capacity and demolition only as a last resort. Fourteen building polygons are capacity-carrier samples for seven life supports, not an existing-building survey and not an acquisition or construction basis. Real decisions require ownership, structural, fire, daylight, heritage, carbon and resident-impact review.[data:geometry/buildings.geojson#BLDG-001] [depth:retain_renovate_demolish]
 
-![Seven life supports and the concept land-use structure](assets/figures/land-use-structure.en.png)
+![JZ–02 Time–Space Weave: seven life stages, seven supports and three civic missions](assets/figures/land-use-structure.en.png)
 
 ## Detailed Design of Key Areas
 
@@ -78,7 +78,7 @@ Renewal follows retain, repair, adaptive reuse, necessary new capacity and demol
 
 **Dazhongsi Civilization Content Forum** is the global gateway for content technology and Chinese civilization. A Beijing key-project list locates the ByteDance headquarters industrial-park project in Beixiaguan and connects it to Metro Lines 12 and 13. A Dazhongsi AI night school has already linked community space, universities and ByteDance volunteers. The proposal therefore suggests a public newsroom, multilingual civilization studio and annual content season, while claiming no corporate endorsement and allowing no company to define civic value.[source:BYTEDANCE-HQ-PROJECT] [source:DAZHONGSI-AI-NIGHT-SCHOOL]
 
-![Institutions, architecture and recurring events in the three key areas](assets/figures/key-areas.en.png)
+![JZ–04 Public-Mission Switchyards: three focus areas joining one public-value track](assets/figures/key-areas.en.png)
 
 ## AI Innovation Ecosystem, Personas, and AI+ Scenarios
 
@@ -94,7 +94,7 @@ Six public AI rights are the rights to know, to explanation, to choose, to an of
 
 The full stack is not a technology procurement list. It is a spatial conversion chain with public gates: **land and reversible space → compute and edge infrastructure → data and public rights → funds and patient capital → talent and complete life → R&D and open briefs → bounded validation → enterprise services and translation → public adoption and annual review**. Zhongzhiyuan hosts controlled validation, AI Origin embeds talent and R&D within complete-life support, and Dazhongsi hosts content-native business and international expression. The Zhongguancun wing provides IP, capital, compliance and enterprise services; the Xiaoyuehe wing provides public experience, blue-green space and scenario testing. Failure at a rights, safety, ecological or operating gate stops the flow.[data:visual/assets/ai_ecosystem_and_conversion.json#layers]
 
-![Full-stack AI ecosystem and two-wing transmission](assets/figures/ai-ecosystem.en.png)
+![JZ–05 AI Capability Train and Public-Value Signalling](assets/figures/ai-ecosystem.en.png)
 
 Scenario access follows seven steps: an open problem can also be submitted offline; the operator screens completeness; specialists review safety, privacy, accessibility and ecology; residents judge public value; a time- and place-bounded reversible pilot runs; a public summary and appeal channel open; then the pilot stops, changes or scales. This prevents both technology in search of a use and scenario review hidden inside a company.[data:visual/assets/ai_ecosystem_and_conversion.json#scenario_application_review]
 
@@ -122,13 +122,15 @@ The system combines space sharing and time sharing. Schools, campuses, communiti
 
 Culture enters spatial logic, materials and time rather than a pseudo-historical roof. Harmony with nature becomes four-season service; intergenerational continuity becomes shared courtyards and oral history; self-reliant innovation and craftsmanship become visible making, testing, repair and failure records. Contemporary Beijing brick, timber, metal and reused materials support restrained massing, open ground floors and low-disturbance night lighting.[standard:MOHURD-URBAN-DESIGN-MEASURES]
 
+![Original AI-generated axonometric concept scene for technology and Chinese cultural continuity; not a site photograph or factual evidence](assets/media/jingzhang-life-axonometric.png)
+
 ### Public-Space Components, Brand, and Signage
 
 Six reusable components turn principles into public interfaces: an 8/80 Rest Island, Offline Service Desk, All-Weather Resilience Walk, Public Validation Boundary, Oral-History and Repair Wall, and Life-Transition Information Post. They make seating/accessibility, staffed service, climate resilience, test responsibility/shutdown, source/withdrawal, and seven supports/annual calendar visible. They are not a construction standard and require site, fire, structural and accessibility development.[data:visual/assets/brand_and_public_realm_system.json#public_space_component_library]
 
 Four signage levels answer where the Life Corridor goes, what the current circle offers, when and by whom a specific service operates, and what AI does with data plus its human/appeal/shutdown paths. Chinese and English have equal prominence, high contrast, graphic-plus-text and tactile or audio support; a QR code can never be the only route. A “Contribution Growth Ring” at landmarks and service desks displays open briefs, resident contribution, repairs and failure reviews by evidence rather than sponsorship. Personal attribution is opt-in, anonymous or withdrawable.[data:visual/assets/brand_and_public_realm_system.json#signage_system]
 
-![Walking, ecological infrastructure and public-service network](assets/figures/mobility-bluegreen.en.png)
+![JZ–03 Mobility-Support Weave: 8/80 continuity, interchange and blue-green infrastructure](assets/figures/mobility-bluegreen.en.png)
 
 ## Renewal Projects, Implementation Policy, and Phasing
 
@@ -156,9 +158,9 @@ Metrics that must remain unknown include total floor area, FAR, BCR, height and 
 
 The compliance, standard and design-depth matrices connect every task to chapters, GeoJSON, metrics, drawings, assumptions and self-checks. A machine PASS proves package structure, traceability and internal consistency only. It proves neither design excellence nor official approval.[depth:metrics_recalculation]
 
-The substantive-equivalence audit compares the Chinese and English proposal, HTML, A3/A0 documents and five core figures for section order, controlled names, claims, numbers, source levels, provisional warnings and figure positions. It is a participant self-check and does not replace independent bilingual professional review; human sign-off remains required after final rendering.[data:visual/assets/bilingual_equivalence_audit.json#pairs]
+The substantive-equivalence audit compares the Chinese and English proposal, HTML, A3/A0 documents and six core figures for section order, controlled names, claims, numbers, source levels, provisional warnings and figure positions. It is a participant self-check and does not replace independent bilingual professional review; human sign-off remains required after final rendering.[data:visual/assets/bilingual_equivalence_audit.json#pairs]
 
-![Metrics, lived outcomes and seven red lines](assets/figures/metrics-evidence.en.png)
+![JZ–06 Delivery Dispatch and Falsifiable Signals](assets/figures/metrics-evidence.en.png)
 
 ## Risk, Copyright, and Compliance
 
@@ -166,7 +168,7 @@ The first risk is data precision: the overall and three key-area polygons are pr
 
 Seven non-negotiable red lines are: no resident displacement through renewal; no privatization of public space; no mandatory digitalization; no technology spectacle substituting for public service; no fake historic architecture; no ecology sacrificed for development; and no fabricated data or official endorsement. Company names appear only as sourced context. No logo or implied partnership is used.[source:DAZHONGSI-AI-NIGHT-SCHOOL]
 
-The text, diagrams, HTML and PDFs are original human–AI collaborative work. The concept hero was produced with OpenAI image generation from the disclosed prompt and is explicitly an imagination layer, not a site photograph, basemap or actual building design. Core figures derive from submitted GeoJSON and metrics. To prevent missing Chinese glyphs in offline Linux review, Chinese HTML embeds a Noto Sans SC subset reduced to the characters used in this package; its source and SIL Open Font License are recorded in `sources.json` and the copyright statement. No external case image is copied.[source:ASSET-GENERATION-METHOD] [source:FONT-NOTO-SANS-SC]
+The text, diagrams, HTML and PDFs are original human–AI collaborative work. The concept hero and axonometric scene were produced with OpenAI image generation from disclosed project prompts and are explicitly imagination layers, not site photographs, basemaps or actual building designs. The six core figures derive from submitted GeoJSON, metrics and structured public-value contracts. To prevent missing Chinese glyphs in offline Linux review, Chinese HTML embeds a Noto Sans SC subset reduced to the characters used in this package; its source and SIL Open Font License are recorded in `sources.json` and the copyright statement. No external case image is copied.[source:ASSET-GENERATION-METHOD] [source:FONT-NOTO-SANS-SC]
 
 ## References
 
