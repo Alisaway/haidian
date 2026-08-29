@@ -1,8 +1,8 @@
 {
   "file_id": "cjk-webfont-provenance",
   "schema_version": "0.1.0",
-  "version": "0.1.1",
-  "issued": "2026-08-28",
+  "version": "0.1.2",
+  "issued": "2026-08-30",
   "document_zh": "中文离线字体子集溯源与许可合规登记（visual/assets/cjk-webfont.css）",
   "document_en": "Provenance and licence-compliance register for the offline Chinese font subset (visual/assets/cjk-webfont.css)",
   "component": "Source Han Sans SC",
@@ -174,7 +174,7 @@
     "tool": "Haidian_OC_toolchain/wpe3/font_coverage_check.py",
     "assertions": 19,
     "failures": 0,
-    "run_date": "2026-08-25",
+    "run_date": "2026-08-30",
     "checks_zh": [
       "A 承载资产：CSS 内的 data URI 可 base64 解码、解码结果以 wOF2 魔数开头、可被 fontTools 打开、族名已改名、unicode-range 已声明",
       "B 覆盖：11 个来源文件的 1323 个唯一非 ASCII 字符全部在子集 cmap 内，缺字 0 个；四份 HTML 的 1301 个唯一非 ASCII 字符缺字 0 个",
@@ -193,13 +193,16 @@
     ],
     "browser_render_sweep": {
       "tool": "Haidian_OC_toolchain/wpe3/font_render_sweep.js (zero-dependency CDP client, Node 26 global WebSocket)",
-      "browser": "Chrome for Testing 151.0.7922.34, headless",
+      "browser": "Google Chrome 151.0.7922.172, headless（以独立 user-data-dir 启动，不使用任何用户配置）",
       "method_zh": "对四份 HTML 逐份加载，遍历全部可见文本节点，按元素的层叠 font-family 计算值分组，为每一条承载中文的字体栈建一个隐藏探针 span 并放入该栈下出现过的全部唯一非 ASCII 字符（不含 unicode-range 刻意排除的八个西文标点），再用 CDP `CSS.getPlatformFontsForNode` 读出渲染器实际用来绘制这些字符的字体与字形数",
       "method_en": "Load each of the four HTML files, walk every visible text node, group them by the element's computed font-family, create one hidden probe span per Chinese-bearing stack holding all unique non-ASCII characters that occur under it (excluding the eight Western punctuation marks deliberately left out of the unicode-range), and read back, via the CDP `CSS.getPlatformFontsForNode` command, which fonts the renderer actually used and how many glyphs each supplied",
-      "result_zh": "九条承载栈全部只用到一款字体且为 `ESJZ Sans Subset`，字形数与探针字符数逐条相等，回退 0 次：report/proposal.html 正文栈 1,263 字与等宽栈 309 字；report/proposal.en.html 正文栈 16 字与等宽栈 156 字；visual/index.html 三条栈 744／136／257 字；visual/index.en.html 两条栈 48／2 字。首轮扫查曾在两份报告页的等宽栈上报红（307／154 字由系统字体绘制），该缺陷由本轮补入的 UA 等宽族修正消除，修正后复扫全绿。",
-      "result_en": "All nine Chinese-bearing stacks resolve to exactly one font, `ESJZ Sans Subset`, with glyph counts equal to the probe character counts and zero fallbacks: the body stack of report/proposal.html at 1,263 characters and its monospace stack at 309; report/proposal.en.html at 16 and 156; the three stacks of visual/index.html at 744, 136 and 257; the two stacks of visual/index.en.html at 48 and 2. The first sweep failed on the monospace stack of both report pages, where 307 and 154 characters were drawn by a system font; the user-agent monospace override added this round removed that defect and the re-run is fully green.",
+      "result_zh": "2026-08-30 复扫：九条承载栈全部只用到一款字体且为 `ESJZ Sans Subset`，字形数与探针字符数逐条相等，回退 0 次——`report/proposal.html` 正文栈 1,265 字与等宽栈 309 字；`report/proposal.en.html` 正文栈 16 字与等宽栈 156 字；`visual/index.html` 三条栈 743／136／257 字；`visual/index.en.html` 两条栈 48／2 字。本轮同批更正本字段两处停留读数：其一，中文报告页正文栈自 v9.9 起即为 1,265 字，本字段仍写 1,263（v9.8 时点值），v9.9 把新读数写进了 `changelog.md` 而未回写本字段；其二，`visual/index.html` 正文栈本字段登记为 744 字，本轮以同一构建对该文件的 v9.9 出包版本（与当前版本在非 ASCII 字符集上逐字相同）复扫得 743 字，即 744 自登记时起即为误记。两处均按「登记读数与被判对象脱钩」一类如实更正，旧读数移入 `superseded_result`。",
+      "result_en": "Re-swept 2026-08-30: all nine Chinese-bearing stacks resolve to exactly one font, `ESJZ Sans Subset`, with glyph counts equal to the probe character counts and zero fallbacks — the body stack of `report/proposal.html` at 1,265 characters and its monospace stack at 309; `report/proposal.en.html` at 16 and 156; the three stacks of `visual/index.html` at 743, 136 and 257; the two stacks of `visual/index.en.html` at 48 and 2. Two stale readings in this field were corrected in the same batch. First, the body stack of the Chinese report page has measured 1,265 since v9.9 while this field still read 1,263, its v9.8 value: v9.9 wrote the new reading into `changelog.md` and never wrote it back here. Second, the body stack of `visual/index.html` was registered here as 744, whereas re-sweeping the v9.9 shipped copy of that file with the same browser build (a copy identical to the current one in its non-ASCII character set) yields 743 — so 744 was mis-registered from the outset. Both are corrected as instances of a register drifting from the thing it describes, and the old readings are moved to `superseded_result`.",
       "limitation_zh": "本扫查在装有中文系统字体的机器上进行。它证明的是「页面用来绘制汉字的是随包子集而不是系统字体」，这一结论与「在没有系统中文字体的机器上也能正常显示」等价，但不是在无字体机器上的直接实测。",
-      "limitation_en": "The sweep ran on a machine that does have Chinese system fonts. What it proves is that the pages draw Han characters with the bundled subset rather than with a system font, which is equivalent to rendering correctly on a machine with no Chinese font, but it is not a direct measurement on such a machine."
+      "limitation_en": "The sweep ran on a machine that does have Chinese system fonts. What it proves is that the pages draw Han characters with the bundled subset rather than with a system font, which is equivalent to rendering correctly on a machine with no Chinese font, but it is not a direct measurement on such a machine.",
+      "run_date": "2026-08-30",
+      "superseded_result_zh": "九条承载栈全部只用到一款字体且为 `ESJZ Sans Subset`，字形数与探针字符数逐条相等，回退 0 次：report/proposal.html 正文栈 1,263 字与等宽栈 309 字；report/proposal.en.html 正文栈 16 字与等宽栈 156 字；visual/index.html 三条栈 744／136／257 字；visual/index.en.html 两条栈 48／2 字。首轮扫查曾在两份报告页的等宽栈上报红（307／154 字由系统字体绘制），该缺陷由本轮补入的 UA 等宽族修正消除，修正后复扫全绿。",
+      "superseded_result_en": "All nine Chinese-bearing stacks resolve to exactly one font, `ESJZ Sans Subset`, with glyph counts equal to the probe character counts and zero fallbacks: the body stack of report/proposal.html at 1,263 characters and its monospace stack at 309; report/proposal.en.html at 16 and 156; the three stacks of visual/index.html at 744, 136 and 257; the two stacks of visual/index.en.html at 48 and 2. The first sweep failed on the monospace stack of both report pages, where 307 and 154 characters were drawn by a system font; the user-agent monospace override added this round removed that defect and the re-run is fully green."
     }
   },
   "limitations_zh": [
