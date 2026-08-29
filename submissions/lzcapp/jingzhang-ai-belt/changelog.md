@@ -4,6 +4,24 @@
 
 > Note: this file was **created retrospectively** on 2026-08-29. Iterations v0.1–v0.5 were documented in their Pull Request descriptions and commit messages rather than in an in-package changelog. To align with repository convention (SKILL.md requires updating the proposal, `changelog.md`, assumptions and evidence records together), the history is reconstructed from verifiable PR records, and this file will be kept in sync with every subsequent change.
 
+## v1.3 - 2026-08-29
+
+**图件重制与字体嵌入 / Figure regeneration and font embedding**
+
+- 修复前：中文 HTML 仅依赖系统字体（无 `@font-face`），评审环境无中文字体时出现方框字；5 组图件缺少图签栏、风玫瑰、元数据块、规划结构图例与密级；图面自评 5/5 与可见成果不符（v1.2 已如实下调为 2/5）。
+- **字体嵌入**：Noto Sans SC 子集化（1144 字符，其中 1027 个 CJK；8.1 MB OTF → **169 KB woff**，SIL OFL 1.1），上传至 `assets/media/noto-sans-sc-subset.woff` 并附 OFL 声明；`report/proposal.html`、`report/proposal.en.html`、`visual/index.html`、`visual/index.en.html` 四个文件注入 `@font-face` 并将该字体置为首选。
+- **图件重制**：5 组 × 中英 = **10 张 PNG** 全部基于 `geometry/*.geojson` 重绘（1815×1287），补齐图签栏（8 字段）、风玫瑰、元数据块（坐标系 / 投影 / 中央子午线 / 高程基准 / 资料来源）、双图例（用地分类 GB 50137-2011 八大类 + 规划结构 4 项）、比例尺 `0 ━━ 500 ━━ 1000 m`、密级与三行脚注。风玫瑰明确标注「示意（冬夏主导风向，非实测）」。
+- **PDF 重生成**：A3 图册与 A0 展板各中英 2 份（共 4 个 PDF），每份 5 页。
+- **自评回调**：`metrics.json` 的 `figure_layout_compliance` 自评由 **2/5 回调为 4/5**（图面元数据现已实际呈现；5/5 保留为经评审确认后的目标）。
+- **版式纪律**：每个图例区块使用独立 axes，按物理 inch 预算高度（字号 7.5pt、行距 1.45 倍），避免文字重叠。
+
+- Before the change: the Chinese HTML relied solely on system fonts (no `@font-face`), producing tofu boxes in font-less review environments; the five figure sets lacked a title block, wind rose, metadata block, structure legend and clearance marking; the 5/5 figure self-estimate contradicted the visible output (honestly lowered to 2/5 in v1.2).
+- **Font embedding**: Noto Sans SC subset (1,144 characters, 1,027 of them CJK; 8.1 MB OTF to a **169 KB woff**, SIL OFL 1.1) uploaded to `assets/media/noto-sans-sc-subset.woff` with the OFL notice; `@font-face` injected into `report/proposal.html`, `report/proposal.en.html`, `visual/index.html` and `visual/index.en.html`, with the font set as first choice.
+- **Figure regeneration**: all **10 PNGs** (5 variants x 2 languages, 1815x1287) redrawn from `geometry/*.geojson`, adding the title block (8 fields), wind rose, metadata block (datum / projection / central meridian / vertical datum / source), double legend (GB 50137-2011 land-use classes plus four structure items), scale bar `0 - 500 - 1000 m`, clearance marking and three footnotes. The wind rose is explicitly labelled "schematic (not measured)".
+- **PDF regeneration**: A3 booklet and A0 boards, two versions each in Chinese and English (4 PDFs total), five pages each.
+- **Self-estimate raised**: `figure_layout_compliance` in `metrics.json` raised from **2/5 to 4/5** (figure metadata is now actually presented; 5/5 retained as the target pending reviewer confirmation).
+- **Layout discipline**: each legend block uses its own axes with a physical-inch height budget (7.5 pt type, 1.45 line spacing) to prevent text overlap.
+
 ## v1.2 - 2026-08-29
 
 **合规声明与可见成果对齐 / Aligning compliance claims with visible output**
