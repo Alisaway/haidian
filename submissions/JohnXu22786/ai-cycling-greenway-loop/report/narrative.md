@@ -8,5 +8,6 @@
 - **compliance_matrix.json(23 项)**、**standard_matrix.json**、**design_depth_matrix.json(15 项)**:机器可读的证据锚点;
 - **assets/figures/ 14 张中英图件 + drawings/ 8 份 A0/A3 中英图册 + visual/index.html(+en) + report/proposal.html(+en)**:全部由包内真实几何、指标与配置数据确定性渲染,非编造图像;
 - **sources.json、assumptions.json、self_check.json**:可查证来源、假设与如实自检记录。
+- **visual/assets/repair_evidence.json**:对本轮官评修复的区域接口、拟验证协议、S01—S12 数据生命周期、节点概念卡与 agent.2/agent.6 转化路径作结构化留痕；该文件不表示已测试、已批准或已建立合作。
 
 诚实声明:本包全部内容为概念建议、参考方案,供专业团队深化研究;基于 provisional 边界,官方数据发布后整体复算。本包未编造任何验证结果、图像、指标或官方数据。
