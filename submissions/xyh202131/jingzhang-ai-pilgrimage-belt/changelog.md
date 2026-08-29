@@ -1,5 +1,17 @@
 # 方案迭代记录 / Changelog
 
+## v75.0 - 2026-08-30
+
+**原型深链焦点交接 / Prototype Deep-link Focus Transfer**
+
+- 修复前，七张角色卡已经能以精确片段标识跳到正确原型并显示落点提示，但键盘激活后焦点仍回落到页面主体；中英文 14 次角色路径测试均出现地址与视觉落点正确、辅助技术焦点未随行的问题。
+- 为中英文三处既有原型容器增加程序化焦点能力。浏览器处理片段导航时会将焦点交给 VERIFY、CO-CREATE 或 PUBLISH 的实际落点；实现保持零 JavaScript，沿用既有 `:target` 提示，并保留键盘、减少动态与打印兼容。
+- 本轮只修复深链焦点关系，不新增角色、任务、场景、空间裁决、来源、媒体、几何、指标、成熟度或现实结果；proposal、report、图件和四份 PDF 不受影响。12/8/3/36、G0/NO-GO、临时边界、现实结果 0、责任接受 0 和独立人工双语复核 0/8 保持冻结。
+
+- Before repair, all seven persona cards reached the correct prototype through an exact fragment and exposed a visible landing cue, but keyboard activation returned focus to the page body. Across 14 bilingual role-route trials, the URL and visual destination were correct while assistive-technology focus did not follow.
+- Made the three existing prototype containers in each visual language programmatically focusable. Native fragment navigation now transfers focus to the actual VERIFY, CO-CREATE or PUBLISH destination. The implementation remains zero-JavaScript, retains the existing `:target` cue, and preserves keyboard, reduced-motion and print behaviour.
+- This round repairs only the deep-link focus relationship. It adds no role, task, scene, spatial ruling, source, media, geometry, metric, maturity or real-world outcome; proposals, reports, figures and all four PDFs are unaffected. The 12/8/3/36 counts, G0/NO-GO, provisional boundaries, zero real outcomes, zero accepted duties and 0/8 independent human bilingual review remain frozen.
+
 ## v74.0 - 2026-08-30
 
 **角色卡精确落点 / Persona-card Exact Destinations**
