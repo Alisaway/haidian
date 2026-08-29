@@ -343,26 +343,30 @@
       ],
       "notes_zh": "参与方自产设计几何，标注 provisional。",
       "provenance": {
-        "generator": "deepseek-v4-flash via DeepSeek Harness + deterministic build script",
-        "generation_method": "concept prompting + geometry program",
+        "generator": "Codex terminal-assisted package repair",
+        "generation_method": "existing package geometry retained; deterministic local rendering and validation",
         "limitations": "low confidence conceptual envelopes"
       }
     },
     {
       "source_id": "ASSET-FONT-NOTO-SANS-SC",
-      "title": "Noto Sans SC（OFL 许可开源字体，本包嵌入子集）",
-      "publisher": "Google / Adobe (SIL Open Font License 1.1)",
+      "title": "Noto Sans SC（实际嵌入子集的可核验字体记录）",
+      "publisher": "Adobe / Google Noto CJK project",
       "source_kind": "open_source_asset",
-      "url": "https://fonts.google.com/noto/specimen/Noto+Sans+SC",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/notosanssc/NotoSansSC%5Bwght%5D.ttf",
+      "upstream_metadata_url": "https://github.com/google/fonts/blob/main/ofl/notosanssc/upstream_info.md",
+      "upstream_commit": "523d033d6cb47f4a80c58a35753646f5c3608a78",
+      "official_font_page": "https://fonts.google.com/noto/specimen/Noto+Sans+SC",
+      "license_url": "https://scripts.sil.org/OFL",
       "published_date": "2021-01-01",
-      "accessed_date": "2026-08-24",
+      "accessed_date": "2026-08-29",
       "file_type": "font",
       "authority_level": "OPEN_SOURCE",
       "timeliness_level": "T2",
       "public_access_status": "open_source",
-      "license": "SIL Open Font License 1.1 (subset embedding permitted with license notice)",
-      "license_summary": "OFL 1.1 font, subset-embedded into offline HTML surfaces; OFL notice retained in report/copyright_statement.md.",
-      "review_status": "approved",
+      "license": "SIL Open Font License 1.1; complete text retained at report/OFL-1.1.txt",
+      "license_summary": "The official source artifact is used under OFL 1.1; complete license text, source hash, upstream record and embedded-subset hashes are retained in report/copyright_statement.md section 6.",
+      "review_status": "evidence_recorded",
       "usable_for_formal": "yes",
       "allowed_uses": [
         "subset embedding into offline HTML",
@@ -376,8 +380,23 @@
         "font",
         "asset_license"
       ],
-      "local_paths": [],
-      "notes_zh": "本包 HTML 仅嵌入按实际可见字符裁剪的 woff 子集，OFL 许可允许此类嵌入；完整许可文本随发行方提供。"
+      "local_paths": [
+        "report/copyright_statement.md",
+        "report/copyright_statement.md"
+      ],
+      "font_family": "Noto Sans SC",
+      "font_version": "2.004",
+      "source_file_sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "license_text_sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+      "embedded_subset_format": "WOFF data URI",
+      "embedded_subset_sha256": {
+        "report/proposal.html": "a576d227d4c0794312004cf5741094d1b5961bfcd2e86c7df82bbf1a3f41d887",
+        "report/proposal.en.html": "d9331f53a8e81576391e9a22ef0002ebb78372bb3bcb02c857d535e305edaf1b",
+        "visual/index.html": "5b6c2f54c77f2705d58379e8a0a073c210d7403be6580a54c162d53a1a1ae6bf",
+        "visual/index.en.html": "3e9a7dd7902f2b7c17f8dcdbec545122396afd447b6979ba64742a11a7bc3b9c"
+      },
+      "embedding_basis": "OFL 1.1 permits embedding and redistribution of modified font software with the license notice retained; fontTools pyftsubset restricts each offline surface to its visible characters.",
+      "notes_zh": "实际源文件与四个 HTML 内嵌子集的 SHA-256、家族、版本、完整 OFL 文本和子集化依据见 report/copyright_statement.md 第6节；Arial 不嵌入，仅作为查看器系统 fallback，不作为字体权利或嵌入证据。"
     },
     {
       "source_id": "CASE-NYC-ONENYC",
@@ -566,6 +585,192 @@
       ],
       "local_paths": [],
       "notes_zh": "仅作城市级指标与年度监测报告制度的方法参考。"
+    },
+    {
+      "source_id": "ASSET-BRAND-METRIC-JZ-CONCEPT",
+      "title": "「指标智环 / METRIC·JZ」原创品牌概念与视觉系统（内部工作代号，商标检索未完成）",
+      "publisher": "本包原创概念（agent-codex-haidian repair record）",
+      "source_kind": "self_generated_brand_concept",
+      "url": "assets/figures/logo-metric-jz.png",
+      "published_date": "2026-08-24",
+      "accessed_date": "2026-08-24",
+      "file_type": "image",
+      "authority_level": "SELF_GENERATED",
+      "timeliness_level": "T2",
+      "public_access_status": "internal_working_codename",
+      "license": "COMMUNITY-DISPLAY-ONLY (display and review citation within this call-for-entries only; no external registration, formal publication or commercial use until prior-rights search is completed)",
+      "license_summary": "Self-generated brand concept treated as an internal working codename. Prior-rights search not yet completed; rights-clearance required before formal implementation, external registration or commercial use.",
+      "review_status": "pending_prior_rights_search",
+      "usable_for_formal": "no (concept-direction only; not a finished logo)",
+      "allowed_uses": [
+        "concept-level display within this submission",
+        "review citation of the brand direction (ring + three nodes + central axis)"
+      ],
+      "prohibited_uses": [
+        "external registration or formal publication of the name or mark",
+        "commercial use",
+        "claiming the concept direction as a finished logo deliverable"
+      ],
+      "topics": [
+        "brand",
+        "logo",
+        "concept",
+        "prior_rights"
+      ],
+      "local_paths": [
+        "assets/figures/logo-metric-jz.png"
+      ],
+      "notes_zh": "未完成官方商标检索；名称、标识与视觉系统均按内部工作代号处理，不用于外部注册、正式发布或商业使用。概念名包括「指标智环」「METRIC·JZ」「指标枢」「监测驿」「公示亭」「指标共治·JZ 公约」「指标开放积分制·JZ」「百年轨枕·数据刻度」等；正式实施前必须完成在先权利检索与权利清理。"
+    },
+    {
+      "source_id": "ASSET-FIGURE-CONCEPT-SET",
+      "title": "本包自产概念图件（site-overview / key-areas / ecosystem-atlas / mobility-bluegreen / metrics-evidence / land-use-structure，含中英双语）",
+      "publisher": "本包自产（AI 辅助生成 + matplotlib 渲染；本轮由 Codex 复核与重渲染）",
+      "source_kind": "self_generated_figures",
+      "url": "assets/figures/",
+      "published_date": "2026-08-24",
+      "accessed_date": "2026-08-24",
+      "file_type": "image",
+      "authority_level": "SELF_GENERATED",
+      "timeliness_level": "T2",
+      "public_access_status": "self_produced_concept",
+      "license": "COMMUNITY-DISPLAY-ONLY (display and review citation within this call-for-entries only; no commercial reuse)",
+      "license_summary": "Self-produced concept figures (zh + en) generated by AI assistance and matplotlib rendering; display and review citation only within this submission.",
+      "review_status": "approved",
+      "usable_for_formal": "yes (concept-direction figures; not surveyed output)",
+      "allowed_uses": [
+        "display within this submission (zh and en versions)",
+        "review citation of the figure direction"
+      ],
+      "prohibited_uses": [
+        "commercial reuse",
+        "claiming the figures as surveyed or official output",
+        "using the figures outside this call-for-entries context"
+      ],
+      "topics": [
+        "figure",
+        "concept",
+        "asset_license"
+      ],
+      "local_paths": [
+        "assets/figures/site-overview.png",
+        "assets/figures/site-overview.en.png",
+        "assets/figures/key-areas.png",
+        "assets/figures/key-areas.en.png",
+        "assets/figures/ecosystem-atlas.png",
+        "assets/figures/ecosystem-atlas.en.png",
+        "assets/figures/mobility-bluegreen.png",
+        "assets/figures/mobility-bluegreen.en.png",
+        "assets/figures/metrics-evidence.png",
+        "assets/figures/metrics-evidence.en.png",
+        "assets/figures/land-use-structure.png",
+        "assets/figures/land-use-structure.en.png",
+        "assets/figures/logo-metric-jz.png"
+      ],
+      "notes_zh": "本包自产概念图件，未引用未授权底图；图件覆盖方向、节点索引、生态图谱、慢行蓝绿、核心指标与用地结构六大主题，含中英双语版。中英文版均经过 ink 与边缘剪裁机器检查（self_check.json[figure_qc]）；text-overlap 在生成期以文本包围盒逐图测量并在 changelog 记录。"
+    },
+    {
+      "source_id": "ASSET-GEOMETRY-PROVISIONAL",
+      "title": "本包 provisional 设计几何（geometry/ 下所有 GeoJSON 层）",
+      "publisher": "本包自产（概念几何；本轮由 Codex 复核，非官方红线）",
+      "source_kind": "self_generated_geometry",
+      "url": "geometry/",
+      "published_date": "2026-08-24",
+      "accessed_date": "2026-08-24",
+      "file_type": "geojson",
+      "authority_level": "SELF_GENERATED",
+      "timeliness_level": "T2",
+      "public_access_status": "provisional_concept_geometry",
+      "license": "COMMUNITY-DISPLAY-ONLY (display and review citation within this call-for-entries only)",
+      "license_summary": "Self-produced provisional geometry, not an official redline, regulatory condition or statutory control. Recompute after official data release.",
+      "review_status": "approved (as provisional concept geometry only)",
+      "usable_for_formal": "no (concept skeleton only)",
+      "allowed_uses": [
+        "concept-level skeleton within this submission",
+        "machine recomputation of the three formal core metrics"
+      ],
+      "prohibited_uses": [
+        "use as an official redline or regulatory condition",
+        "use as a basis for any statutory planning control",
+        "use for precise-area or surveyed-output claims"
+      ],
+      "topics": [
+        "geometry",
+        "provisional_boundary",
+        "asset_license"
+      ],
+      "local_paths": [
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson",
+        "geometry/land_use.geojson",
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson",
+        "geometry/roads.geojson",
+        "geometry/buildings.geojson",
+        "geometry/constraints.geojson",
+        "geometry/phasing.geojson"
+      ],
+      "notes_zh": "全部为 provisional 概念几何；官方正式多边形、控规条件与现状测绘发布后按同一公式与几何整体复算；不作为官方红线、控规条件或法定控制依据。"
+    },
+    {
+      "source_id": "ASSET-OUTPUTS-3886-CODEX-20260829",
+      "title": "本包 PDF / HTML 输出文件级权利登记",
+      "publisher": "本包自产；Codex 本轮确定性重渲染与复核",
+      "source_kind": "self_generated_output",
+      "url": "drawings/ and report/ and visual/",
+      "published_date": "2026-08-29",
+      "accessed_date": "2026-08-29",
+      "file_type": "pdf_html",
+      "authority_level": "SELF_GENERATED",
+      "timeliness_level": "T0",
+      "public_access_status": "offline_local",
+      "license": "COMMUNITY-DISPLAY-ONLY",
+      "license_summary": "Repository/PR display and review citation only; no external publication, redistribution or commercial reuse is cleared.",
+      "review_status": "to_verify_visual_review",
+      "usable_for_formal": "yes (concept-direction only)",
+      "allowed_uses": ["display in this submission", "review citation"],
+      "prohibited_uses": ["external reuse", "commercial use", "official or surveyed claim"],
+      "topics": ["pdf", "html", "visualization", "asset_license"],
+      "local_paths": ["drawings/a0-boards.pdf", "drawings/a0-boards.en.pdf", "drawings/a3-booklet.pdf", "drawings/a3-booklet.en.pdf", "report/proposal.html", "report/proposal.en.html", "visual/index.html", "visual/index.en.html"],
+      "notes_zh": "输出使用本包文字、几何与图件；Noto Sans SC 子集的实际二进制证据见 ASSET-FONT-NOTO-SANS-SC。系统 fallback 不作为嵌入证据；品牌在先权利与官方几何仍待核实。"
+    },
+    {
+      "source_id": "ASSET-HTML-BUILD-SOURCES-3886",
+      "title": "HTML / visual 输出的构建来源与权利边界",
+      "publisher": "本包参与者原创内容；仓库本地构建工具仅作生成输入",
+      "source_kind": "build_provenance",
+      "url": "report/copyright_statement.md",
+      "published_date": "2026-08-29",
+      "accessed_date": "2026-08-29",
+      "file_type": "build_record",
+      "authority_level": "SELF_GENERATED",
+      "timeliness_level": "T0",
+      "public_access_status": "offline_local",
+      "license": "Output surfaces: COMMUNITY-DISPLAY-ONLY; repository build tools are not redistributed as package assets",
+      "license_summary": "Inline CSS, report markup and visual-index markup are package output authored for this submission. No third-party template, remote stylesheet, script bundle or external image is embedded. The repository-local renderer and figure builder are build-only inputs and are not claimed or redistributed by this package.",
+      "review_status": "evidence_recorded",
+      "usable_for_formal": "yes (output provenance only)",
+      "allowed_uses": ["display and review citation within this submission"],
+      "prohibited_uses": ["external reuse of output markup, code or brand assets without separate permission"],
+      "topics": ["html", "css", "renderer", "template", "script", "asset_license"],
+      "local_paths": [
+        "report/proposal.html",
+        "report/proposal.en.html",
+        "visual/index.html",
+        "visual/index.en.html",
+        "valroot/scripts/render_proposal_html.py",
+        "valroot/scripts/build_zjw_visual.py",
+        "work/regen_3886_visuals.py"
+      ],
+      "component_register": {
+        "inline_css": "participant-authored package presentation CSS; no external stylesheet",
+        "report_markup": "generated from proposal.md and proposal.en.md by repository-local renderer; output only is submitted",
+        "visual_markup": "participant-authored package index structure; no third-party template claimed",
+        "javascript": "none in report/proposal.html or report/proposal.en.html; visual/index pages contain no remote script dependency",
+        "renderer_author_license": "repository-local build utility; not redistributed in this package, and no independent license claim is made",
+        "figure_builder": "work/regen_3886_visuals.py; scratch build input, not part of the submitted package"
+      },
+      "notes_zh": "逐项区分了参与者原创输出、仓库构建工具和第三方材料：本包不嵌入第三方模板、远程 CSS、脚本包或图片；构建工具只用于本地生成，不作为包内代码再分发。"
     }
   ]
 }
