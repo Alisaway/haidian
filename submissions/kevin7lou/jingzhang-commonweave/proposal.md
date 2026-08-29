@@ -9,7 +9,7 @@ license: "COMMUNITY-DISPLAY-ONLY"
 summary: "以一条京张人生长廊、七个15分钟人生支持圈和三座公共制度地标，修复从童年到生命终章的人生转折；让生态成为日常基础设施，让AI日常隐身、节点可见、全程可选择，并以当代空间语言连接京张铁路精神、中华文明与全球内容科技。"
 tracks: ["ai-traffic-walkability", "enterprise-services-ecosystem", "civic-agent-governance"]
 scenarios: ["ai-traffic-walkability", "enterprise-service-copilot", "public-safety-operations-review"]
-iteration: "v3.2-evidence-alignment"
+iteration: "v4.0-original-spatial-atlas"
 ---
 
 # 京张一生 / JING-ZHANG FOR LIFE
@@ -18,7 +18,7 @@ iteration: "v3.2-evidence-alignment"
 
 本方案把“AI创新带”的首要价值，从技术展示和人才争夺，转向一种更难也更可检验的城市承诺：一个人可以在这里入学、工作、成家、照护、转型、退休和老去，而不必在每次人生变化时被迫离开。`CommonWeave 人生共织系统`保留为实施机制；它不是新品牌，而是把空间、时间、运营与公共权利编织成可执行合同的方法。[source:USER-DESIGN-CHARTER]
 
-![总体概念：一条人生长廊、七个支持圈、三座公共地标](assets/figures/site-overview.png)
+![JZ–01 场地证据与人生问题叠合图：公开事实、概念推演、待核查假设](assets/figures/site-overview.png)
 
 ## 设计依据与资料清单
 
@@ -68,7 +68,7 @@ iteration: "v3.2-evidence-alignment"
 
 城市更新遵循“保留—修缮—适应性复用—必要新建—审慎拆除”。现有 14 个建筑 polygon 只是七类服务载体的容量样本，不是现状建筑调查，也不用于征收或施工；真正的拆改留必须先完成权属、结构、消防、日照、文保、碳排和居民影响评估。[data:geometry/buildings.geojson#BLDG-001] [depth:retain_renovate_demolish]
 
-![七类人生支持与概念用地结构](assets/figures/land-use-structure.png)
+![JZ–02 时间—空间织合图：七段人生、七类支持与三处公共使命](assets/figures/land-use-structure.png)
 
 ## 重点区域详细设计
 
@@ -78,7 +78,7 @@ iteration: "v3.2-evidence-alignment"
 
 **大钟寺·文明内容钟场**定位“全球内容科技与中华文明传播门户”。北京市重点项目资料显示字节跳动总部产业园项目位于海淀北下关地区并与轨道 12、13 号线衔接；大钟寺 AI 夜校也已出现高校、社区和字节跳动志愿者共同授课的公共协作线索。本方案据此提出公共编辑室、多语内容工坊和年度文明内容季，但不声称企业背书，也不让企业定义城市价值。[source:BYTEDANCE-HQ-PROJECT] [source:DAZHONGSI-AI-NIGHT-SCHOOL]
 
-![三处重点区的制度、建筑与周期活动](assets/figures/key-areas.png)
+![JZ–04 公共使命转辙场：三处重点区进入同一公共价值轨道](assets/figures/key-areas.png)
 
 ## AI 创新生态、人才画像与 AI+ 场景
 
@@ -94,7 +94,7 @@ iteration: "v3.2-evidence-alignment"
 
 全栈不是一张技术采购清单，而是一条带公共门槛的空间转化链：**土地与可逆空间 → 算力与端侧设施 → 数据与公共权利 → 基金与耐心资本 → 人才与完整生活 → 研发与开放课题 → 受控验证 → 企业服务与转化 → 公共采用与年度复盘**。众智园承担可控验证，AI 原点把人才支持和研发嵌入完整生活，大钟寺承担内容新业态与国际表达；中关村翼提供知识产权、资本、合规和企业服务，小月河翼提供公众体验、蓝绿空间和场景测试。任何权利、安全、生态或运营门未通过即停止。[data:visual/assets/ai_ecosystem_and_conversion.json#layers]
 
-![AI全栈生态与两翼传导](assets/figures/ai-ecosystem.png)
+![JZ–05 AI能力列车与公共价值信号系统](assets/figures/ai-ecosystem.png)
 
 场景开放采用七步流程：非技术问题也可线下提交；运营者做完整性筛查；安全、隐私、无障碍和生态专业审查；居民判断公共价值；限时限地可逆试点；公开摘要并受理申诉；最终停止、修订或扩展。由此避免“有技术就找场景”，也避免场景评审只在企业内部完成。[data:visual/assets/ai_ecosystem_and_conversion.json#scenario_application_review]
 
@@ -122,13 +122,15 @@ iteration: "v3.2-evidence-alignment"
 
 文化不贴仿古屋顶，而进入空间逻辑、材料和时间：天人合一表现为四季自然服务；代际传承表现为共同院落和口述史；自主创新与工匠精神表现为可见的制作、验证、维修和失败档案。建筑采用当代北京的砖、木、金属和再生材料，体量克制、首层开放、夜景低扰动，让铁路遗存成为可触摸的记忆而非舞台布景。[standard:MOHURD-URBAN-DESIGN-MEASURES]
 
+![科技与中华传统文化交融的原创 AI 轴测概念场景；非现场照片，不作为事实证据](assets/media/jingzhang-life-axonometric.png)
+
 ### 公共空间组件、品牌与导视
 
 六类可复用组件把理念变成公共界面：8/80 休息岛、离线服务台、雨雪韧性廊、公开验证围栏、口述史与维修墙、人生转折公告柱。它们分别公开座椅与无障碍、人工服务、气候韧性、测试责任与急停、来源与撤回、七类服务与年度日历；组件不是标准图集，需在正式场地、消防、结构和无障碍复核后深化。[data:visual/assets/brand_and_public_realm_system.json#public_space_component_library]
 
 四级导视依次回答“人生长廊往哪走、所在支持圈有什么、具体服务何时由谁提供、AI 用什么数据及如何人工/申诉/急停”。中英文等显著、高对比、图形加文字并保留触觉或语音辅助，不能只给二维码。三地标与服务台设置“贡献年轮”，展示公开课题、居民贡献、维修和失败复盘，按证据而非赞助金额排序；个人可匿名、可撤回。[data:visual/assets/brand_and_public_realm_system.json#signage_system]
 
-![慢行、生态基础设施与公共服务复合网络](assets/figures/mobility-bluegreen.png)
+![JZ–03 慢行支持织网图：8/80 连续路线、换乘与蓝绿基础设施](assets/figures/mobility-bluegreen.png)
 
 ## 更新项目清单、实施政策与分期计划
 
@@ -156,9 +158,9 @@ JZ-01 至 JZ-08 和三座地标均已形成同字段实施矩阵：主体**类�
 
 合规、标准和设计深度矩阵把每项任务映射到章节、GeoJSON、指标、图纸、假设和自检。机器 PASS 只证明结构完整、证据可追溯和内部一致，不证明方案优秀，更不等于官方批准。[depth:metrics_recalculation]
 
-中英文实质等效审计逐对核验正文、HTML、A3/A0 和五组核心图的章节顺序、专名、主张、数字、来源等级、临时性警示和图位。记录只是参与者自检，不能替代独立双语专业复核；最终渲染后仍需人工签署。[data:visual/assets/bilingual_equivalence_audit.json#pairs]
+中英文实质等效审计逐对核验正文、HTML、A3/A0 和六组核心图的章节顺序、专名、主张、数字、来源等级、临时性警示和图位。记录只是参与者自检，不能替代独立双语专业复核；最终渲染后仍需人工签署。[data:visual/assets/bilingual_equivalence_audit.json#pairs]
 
-![指标、生活结果与七条红线](assets/figures/metrics-evidence.png)
+![JZ–06 实施调度与可证伪信号图](assets/figures/metrics-evidence.png)
 
 ## 风险、版权与合规说明
 
@@ -166,7 +168,7 @@ JZ-01 至 JZ-08 和三座地标均已形成同字段实施矩阵：主体**类�
 
 七条不可越过的红线是：不以更新驱逐居民；不把公共空间私有化；不强制数字化；不以科技奇观替代公共服务；不造仿古假历史；不为开发牺牲生态；不编造数据或官方背书。企业名称只用于有来源的背景判断，不使用 Logo，不暗示合作或认可。[source:DAZHONGSI-AI-NIGHT-SCHOOL]
 
-文本、图表、HTML 和 PDF 为本次人机协作原创。概念主视觉由 OpenAI image generation 按本方案提示生成，只作为想象层，明确不是现场照片、测绘底图或真实建筑方案；核心图件由提交 GeoJSON 和 metrics 派生。为保证 Linux 离线审阅不缺字，中文 HTML 内嵌经本稿字符集裁剪的 Noto Sans SC 子集，来源与 SIL Open Font License 记录在 `sources.json` 和版权说明中；未复制外部案例图片。[source:ASSET-GENERATION-METHOD] [source:FONT-NOTO-SANS-SC]
+文本、图表、HTML 和 PDF 为本次人机协作原创。概念主视觉与轴测场景由 OpenAI image generation 按本方案提示生成，只作为想象层，明确不是现场照片、测绘底图或真实建筑方案；六张核心图由提交 GeoJSON、metrics 和结构化公共价值合同派生。为保证 Linux 离线审阅不缺字，中文 HTML 内嵌经本稿字符集裁剪的 Noto Sans SC 子集，来源与 SIL Open Font License 记录在 `sources.json` 和版权说明中；未复制外部案例图片。[source:ASSET-GENERATION-METHOD] [source:FONT-NOTO-SANS-SC]
 
 ## 参考资料
 
