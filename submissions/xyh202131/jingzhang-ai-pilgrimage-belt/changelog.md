@@ -1,5 +1,17 @@
 # 方案迭代记录 / Changelog
 
+## v73.0 - 2026-08-30
+
+**角色到任务的快速入口 / Persona-to-task Quick Entry**
+
+- 修复前，方案正文已定义开源开发者、高校师生、创业团队、企业服务团队、周边居民、老年人与行动不便者、游客与国际访客七类角色，离线体验台也已展示三处原型和 12 个场景；但首屏只有统一的普通任务路径，不同读者仍需自行判断“我的任务先看哪里”。
+- 在中英文离线体验台增加七张角色入口卡。每张卡只复用既有角色、日常任务、三处不可互换原型、现有场景编号、完整非 AI 路径和停止条件；3 分钟入口与主导航均可键盘直达，桌面四列、1050 px 两列、760 px 单列、44 px 触控目标、减少动态和打印回退同步成立。
+- 角色不是权限等级，也不新增用户画像、个体数据、现场反馈或部署结果。本轮不改 proposal、report、图件、媒体、来源、几何、指标或四份 PDF；geometry、`metrics.json`、12/8/3/36、G0/NO-GO、临时边界、现实结果 0、责任接受 0、独立人工双语复核 0/8 和组件级权利边界保持冻结。
+
+- Before repair, the proposals already defined seven roles—open-source developers, university faculty and students, startup teams, enterprise service teams, nearby residents, older people and people with reduced mobility, and tourists and international visitors—and the offline workbench already exposed three prototypes and 12 scenes. Yet its first view offered only one generic ordinary-task route, leaving each reader to infer where their own task should start.
+- Added seven role-entry cards to both offline visual pages. Every card reuses only an existing role, everyday task, non-exchangeable prototype, scene ID, complete non-AI path and stop condition. The three-minute route and primary navigation are keyboard-reachable, with four desktop columns, two columns at 1050 px, single-column 760 px reflow, 44 px targets, reduced-motion behaviour and print fallback.
+- Roles are not permission tiers and add no user profiling, individual data, field feedback or deployment result. This round changes no proposal, report, figure, media, source, geometry, metric or PDF. Geometry, `metrics.json`, 12/8/3/36, G0/NO-GO, provisional boundaries, zero real outcomes, zero accepted duties, 0/8 independent human bilingual review and component-specific rights boundaries remain frozen.
+
 ## v72.0 - 2026-08-30
 
 **完整审阅包首屏入口 / First-view Complete Review Pack**
