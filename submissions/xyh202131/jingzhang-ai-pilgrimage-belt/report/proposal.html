@@ -84,6 +84,30 @@ code {
 }
 .summary { color: var(--muted); font-size: 17px; }
 .translation-link a { color: var(--accent); font-weight: 700; }
+.review-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0 0;
+}
+.review-toolbar a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+  background: #fff;
+}
+.review-toolbar a:hover,
+.review-toolbar a:focus-visible {
+  border-color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 .proposal-table { margin: 20px 0 26px; overflow-x: auto; }
 .proposal-table table {
   border-collapse: collapse;
@@ -149,6 +173,7 @@ h2[id] { scroll-margin-top: 18px; }
   main { padding: 26px 16px 52px; }
   h1 { font-size: 26px; }
   h2 { font-size: 21px; }
+  .review-toolbar a { flex: 1 1 100%; }
   .chapter-index ol { columns: 1; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -171,7 +196,7 @@ h2[id] { scroll-margin-top: 18px; }
 <section class="hero">
 <h1>双轨京张——连续日常轨与间歇验证轨</h1>
 <p class="summary">海淀的创新密度，只有在普通人无需账户、设备或专业身份也能使用、质疑和退出时，才会成为公共能力。双轨京张以连续日常轨保障普通任务，以间歇、可停止的 G0 验证轨承载概念测试；三种不可互换原型连接证据、风险与专业交接。边界仍为临时约束，现实结果、批准、现场执行和专业接责仍为 0。</p>
-<p class="translation-link"><a href="proposal.en.html">Read in English</a></p>
+<nav class="review-toolbar" aria-label="完整审阅包快捷入口"><a href="../visual/index.html">返回方案体验台</a><a href="../drawings/a3-booklet.pdf">打开 A3 文册</a><a href="../drawings/a0-boards.pdf">打开 A0 展板</a><a href="../visual/index.html#handoff">进入专业交接</a><a href="proposal.en.html" lang="en">Read in English</a></nav>
 </section>
 <nav class="chapter-index" aria-label="报告章节目录"><strong>章节目录 · 15 个稳定落点</strong><ol><li><a href="#chapter-ruling">方案总纲</a></li><li><a href="#chapter-spatial-decision">一次空间裁决</a></li><li><a href="#chapter-basis">设计依据与资料</a></li><li><a href="#chapter-scope-framework">三层范围框架</a></li><li><a href="#chapter-research">统筹研究范围</a></li><li><a href="#chapter-overall-design">总体设计范围</a></li><li><a href="#chapter-key-areas">重点区域详细设计</a></li><li><a href="#chapter-ai-ecosystem">AI 生态、人才与场景</a></li><li><a href="#chapter-land-use">用地、规模与拆改留</a></li><li><a href="#chapter-infrastructure">交通、市政与公服</a></li><li><a href="#chapter-blue-green">蓝绿、公共空间与风貌</a></li><li><a href="#chapter-implementation">项目、政策与分期</a></li><li><a href="#chapter-metrics">指标、复算与合规</a></li><li><a href="#chapter-risk">风险、版权与合规</a></li><li><a href="#chapter-references">参考资料</a></li></ol></nav>
 <h2 id="chapter-ruling">方案总纲</h2>
