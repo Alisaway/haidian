@@ -1,5 +1,17 @@
 # 方案迭代记录 / Changelog
 
+## v76.0 - 2026-08-30
+
+**首屏白话状态判读 / Plain-language First-view Status**
+
+- 修复前，中英文体验台已经在首屏披露 G0、临时粗略几何、非批准、未现场测试与现实结果 0，但三条压缩标签仍要求普通读者理解状态缩写并自行拼接“现在有什么、没有什么、为什么不能启动”。
+- 在两种语言首屏增加四格白话判读：可审阅成果、地图用途边界、现实零状态和当前 NO-GO 裁决。每格同时使用标题与完整句子，不依赖颜色传达意义；桌面四列、窄屏两列、移动端单列和打印均保持可读。
+- 本轮只改善既有状态的快速理解，不新增主张、来源、角色、任务、场景、项目、几何、指标、媒体或现实结果；proposal、report、图件和四份 PDF 不受影响。12/8/3/36、G0/NO-GO、临时边界、现实结果 0、责任接受 0 与独立人工双语复核 0/8 保持冻结。
+
+- Before repair, both workbenches already disclosed G0, provisional rough geometry, no approval, no field test and zero real-world results in the first view. Yet three compressed pills still required an ordinary reader to decode status shorthand and assemble what exists, what does not, and why launch remains forbidden.
+- Added a four-part plain-language reading to both first views: reviewable artefacts, the map-use boundary, real-world zero status and the current NO-GO ruling. Every item uses a heading and complete sentence, so meaning does not depend on colour. It remains readable in four desktop columns, two narrow columns, one mobile column and print.
+- This round improves only rapid understanding of existing status. It adds no claim, source, role, task, scene, project, geometry, metric, media or real-world result; proposals, reports, figures and all four PDFs are unaffected. The 12/8/3/36 counts, G0/NO-GO, provisional boundaries, zero real outcomes, zero accepted duties and 0/8 independent human bilingual review remain frozen.
+
 ## v75.0 - 2026-08-30
 
 **原型深链焦点交接 / Prototype Deep-link Focus Transfer**
