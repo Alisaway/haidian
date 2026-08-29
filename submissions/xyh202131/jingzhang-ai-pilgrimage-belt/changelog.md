@@ -1,5 +1,17 @@
 # 方案迭代记录 / Changelog
 
+## v77.0 - 2026-08-30
+
+**全页图纸审阅图谱 / All-page Drawing Review Atlas**
+
+- 修复前，离线体验台可以直接打开四份完整 PDF，但评审包只独立预览各自第一页；其余 40 页必须另开 PDF 才能确认页数、顺序、版式连续性和中英配对。
+- 从既有四份 PDF 确定性派生四张全页缩略图谱，并在中英文证据段分别展示 A3 14/14 页与 A0 8/8 板；每张图谱回链原尺寸 PDF，并明确小字以原 PDF 为准、图谱不新增设计证据。
+- 本轮不修改四份 PDF、既有设计图件、几何、规划指标或现实状态；proposal、report 与权利登记仅同步新增四个图谱路径后的 162/162 精确包处置事实，T-02 结果仅同步 `sources.json` 的确定性输入哈希。新增图谱仅提高审阅可达性；12/8/3/36、G0/NO-GO、临时边界、现实结果 0、责任接受 0 与独立人工双语复核 0/8 保持冻结。
+
+- Before repair, the offline workbench linked all four complete PDFs directly, but the review packet independently previewed only each first page. The remaining 40 pages required opening the PDFs before page count, order, publication continuity and bilingual pairing could be checked.
+- Deterministically derived four all-page atlases from the existing PDFs. The Chinese and English evidence sections now show their A3 14/14-page and A0 8/8-board sequences, link each atlas back to its full-size PDF, and state that small text remains authoritative only in the source PDF and the atlas adds no design evidence.
+- This round changes no PDF, existing design figure, geometry, planning metric or real-world status; proposal, report and rights registers only synchronize the 162/162 exact-package disposition after adding four atlas paths, while the T-02 result only synchronizes the deterministic input hash for `sources.json`. The atlases improve review reachability only; 12/8/3/36, G0/NO-GO, provisional boundaries, zero real outcomes, zero accepted duties and 0/8 independent human bilingual review remain frozen.
+
 ## v76.0 - 2026-08-30
 
 **首屏白话状态判读 / Plain-language First-view Status**
