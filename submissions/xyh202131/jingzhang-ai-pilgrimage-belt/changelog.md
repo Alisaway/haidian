@@ -1,5 +1,19 @@
 # 方案迭代记录 / Changelog
 
+## v79.0 - 2026-08-30
+
+**图文报告评审交接深链 / Illustrated-report Review-handoff Deep Link**
+
+- 已有能力：中英文体验台已有稳定的 `#handoff` 专业交接段，收束八问、合成回放和责任门；两份图文报告也保持离线、包内 CJK、零 JavaScript、语义表格和打印可读。
+- 真实缺口：修复前，权威正文中的两处 Markdown 链接没有被仓库报告渲染器转换；最终中英文报告各显示一段原样 `[文字](路径)`，不能点击。即使人工提取路径，报告位于 `report/`，原路径也缺少一级 `../`，且声明的 `#review-handoff` 片段不存在，因此“唯一后台入口”在最终报告中实际断开。
+- 必须冻结：visual、图件、四份 PDF、9 个几何文件、`metrics.json`、12/8/3/36、G0/NO-GO、临时边界、现实结果 0、责任接受 0 与独立人工双语复核 0/8 均不变。
+- 本轮实施：正文改用可审查的显式包内路径；两份最终报告将同一短语生成为真正的相对链接，分别指向既有的 `../visual/index.html#handoff` 与 `../visual/index.en.html#handoff`。只修复证据导航，不新增主张、来源、资产或现实状态。
+
+- Existing capability: both workbenches already have a stable `#handoff` professional-handoff section that converges the eight-question map, synthetic replay and duty gates; both illustrated reports remain offline, package-local CJK, zero-JavaScript, semantically tabulated and printable.
+- Real gap: before repair, the repository report renderer did not convert the two Markdown links in the authoritative proposals. Each final report displayed literal `[label](path)` text that could not be activated. Even a manually extracted path was one `../` short from the `report/` directory, and the claimed `#review-handoff` fragment did not exist, so the single back-stage entry was actually broken in the final report.
+- Must remain frozen: the visual pages, figures, all four PDFs, nine geometry files, `metrics.json`, 12/8/3/36, G0/NO-GO, provisional boundaries, zero real outcomes, zero accepted duties and 0/8 independent human bilingual review are unchanged.
+- Implemented this round: the proposals now expose auditable package-local paths, while each final report turns the same phrase into a real relative link to the existing `../visual/index.html#handoff` or `../visual/index.en.html#handoff` target. This repairs evidence navigation only and adds no claim, source, asset or real-world status.
+
 ## v78.0 - 2026-08-30
 
 **离线图文报告语义导航 / Offline Illustrated-report Semantic Navigation**
