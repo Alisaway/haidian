@@ -51,7 +51,7 @@ Review follows one anonymous ordinary task before it follows a system: **arrive 
 
 ![Twin-Track Jing-Zhang civic-ground structure: one continuous ordinary spine and six cross-links connect three non-interchangeable prototypes while side verification, staffed handoff, and failure objects stay off the ordinary path; G0, provisional, not to scale](assets/figures/site-overview.en.png)
 
-The eight-question map, synthetic replay, and handoff material have one back-stage entry: [review handoff](visual/index.en.html#review-handoff). It supports traceability only, not public feedback, expert opinion, field results, authorization, or maturity advancement. The proposal retains 12 scenarios, 8 projects, 3 key areas, and 36 conceptual land-use cells; all 13 formal chapters and their order remain unchanged.
+The eight-question map, synthetic replay, and handoff material have one back-stage entry: `visual/index.en.html#handoff` (review handoff). It supports traceability only, not public feedback, expert opinion, field results, authorization, or maturity advancement. The proposal retains 12 scenarios, 8 projects, 3 key areas, and 36 conceptual land-use cells; all 13 formal chapters and their order remain unchanged.
 
 ## Design Basis and Source List
 
