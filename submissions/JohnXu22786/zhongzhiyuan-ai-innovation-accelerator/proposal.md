@@ -18,11 +18,13 @@ iteration: "v2.0"
 
 ## 设计依据与资料清单
 
+证据索引：[source:DATA-SRC-OFFICIAL-ANNOUNCEMENT] [source:DATA-SRC-AGENT-TASKBOOK] [metric:site_area_sqm]
+
 资料清单所列总体规划、分区规划与街区踏勘等均为概念工作依据清单,并非本包已获取的数据;本包实际使用的全部数据见 `sources.json`,未获取项已在风险与缺失数据说明中如实标注。图件、PDF、Logo 与自产几何的逐项权属与复用边界登记于 `report/copyright_statement.md` 与 `report/asset_rights_ledger.md`,字体使用具备明确复用授权的开源字体(Noto Sans SC,OFL 许可)并按字符使用子集化内嵌于全部 HTML 预览。
 
-设计依据:(1)征集公告与任务书公开信息——三大定位、五大功能、三层范围与三区两翼及官方文本口径面积;(2)北京市及海淀区公开规划与工作报告中关于中关村科学城、京张铁路遗址公园的公开表述(概念引用,不作法定依据);(3)京张铁路历史文献、遗址公园公开资料与概念性现场踏勘记录;(4)组织方尚未发布官方边界多边形,现有几何均为 provisional,本方案不采用任何自拟精确坐标与面积。资料清单:任务书、官方口径面积文本、公开地图、遗址公园影像图集、踏勘记录与访谈纪要(概念层面),具体版本以组织方要求为准。补充登记:五个全球案例的来源逐项登记于 `sources.json` 的 `DATA-SRC-CASE-*` 条目,每条均含发布方、网址、访问日期、可迁移边界与复核状态,案例细节目前以公开门户信息为依据,正式引用前须对项目专页逐项复核。
+设计依据:(1)征集公告与任务书公开信息——三大定位、五大功能、三层范围与三区两翼及官方文本口径面积;(2)北京市及海淀区公开规划与工作报告中关于中关村科学城、京张铁路遗址公园的公开表述(概念引用,不作法定依据);(3)京张铁路历史文献、遗址公园公开资料与概念性现场踏勘记录;(4)组织方尚未发布官方边界多边形,现有几何均为 provisional,本方案不采用任何自拟精确坐标与面积。资料清单:任务书、官方口径面积文本、公开地图、遗址公园影像图集、踏勘记录与访谈纪要(概念层面),具体版本以组织方要求为准。补充登记:五个全球案例的来源逐项登记于 `sources.json` 的 `DATA-SRC-CASE-*` 条目,每条均含发布方、网址、访问日期、可迁移边界与复核状态,五案均已改为项目级专页核实；页面未写明的发布日期明确标为未标注，规模、合作与制度条件不迁移。
 
-> **证据锚点**:`[source:DATA-SRC-OFFICIAL-ANNOUNCEMENT]`、`[source:DATA-SRC-AGENT-TASKBOOK]`、`[source:DATA-SRC-CASE-SHENZHEN-BAY-SCI-TECH-PARK]`、`[source:DATA-SRC-CASE-ZHANGJIANG-AI-ISLAND]`、`[source:DATA-SRC-CASE-YUNQI-TOWN]`、`[source:DATA-SRC-CASE-ONE-NORTH]`、`[source:DATA-SRC-CASE-KINGS-CROSS-KNOWLEDGE-QUARTER]`。
+> **证据锚点**：五个全球案例均见表格与 `sources.json`，使用项目专页事实，不把案例写作本案合作或官方背书。
 
 ## 三层范围工作框架
 
@@ -221,7 +223,7 @@ iteration: "v2.0"
 
 目标—指标—校验三层概念指标体系进入 `metrics.json`;面积复算以本包 provisional 几何为底,官方数据到位后整体复算并标注复算版本。
 
-概念指标体系:研发孵化空间占比、共享设施可达率、慢行与接驳分担率、绿色建筑与可再生能源占比、无障碍覆盖、感知数据合规率(匿名聚合全覆盖、人工复核 100%,均为概念目标)等,数值待运营基线建立后复算。面积复算坚持官方文本口径:统筹研究范围 43.6 平方公里、总体设计范围 11.4 平方公里、重点区域合计 368.4 公顷、众智园约 192 公顷、北京 AI 原点社区约 104 公顷、大钟寺 AI 产业集聚区约 72 公顷,全部标注官方文本口径,不发布任何新增精确数值。指标口径如下表:全部 provisional 模型值按置信度降精度展示(面积取整到万平方米级、比率取 3 位有效数字),几何来源、公式、假设、置信等级、有效位数、用途限制与复算触发条件逐项列明;官方边界或官方用地数据发布后,整体复算并标注复算版本(复算触发条件:官方 polygon 发布、现状用地调查发布、控规指标公开任一事件发生即触发)。
+概念指标体系:研发孵化空间占比、共享设施可达率、慢行与接驳分担率、绿色建筑与可再生能源占比、无障碍覆盖、感知数据合规率(匿名聚合全覆盖、人工复核 100%,均为概念目标)等,数值待运营基线建立后复算。面积复算坚持官方文本口径:统筹研究范围 43.6 平方公里、总体设计范围 11.4 平方公里、重点区域合计 368.4 公顷、众智园约 192 公顷、北京 AI 原点社区约 104 公顷、大钟寺 AI 产业集聚区约 72 公顷,全部标注官方文本口径,不发布任何新增精确数值。指标口径如下表:全部 provisional 模型值按置信度降精度展示(面积按万平方米级降精度展示、比率取 3 位有效数字),几何来源、公式、假设、置信等级、有效位数、用途限制与复算触发条件逐项列明;官方边界或官方用地数据发布后,整体复算并标注复算版本(复算触发条件:官方 polygon 发布、现状用地调查发布、控规指标公开任一事件发生即触发)。
 
 | 指标 | 数据来源/公式 | 假设 | 置信等级 | 有效位数 | 用途限制 | 复算触发 |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -245,11 +247,13 @@ iteration: "v2.0"
 
 ## 参考资料
 
+机器可读来源索引：[source:DATA-SRC-OFFICIAL-ANNOUNCEMENT] [source:DATA-SRC-AGENT-TASKBOOK] [source:DATA-SRC-CASE-SINGAPORE-LAUNCHPAD-ONE-NORTH]
+
 参考资料以政府正式发布版本为准;本包 `sources.json` 仅收录可查证条目,未虚构任何官方数据或链接。
 
-1)征集公告与任务书公开信息(以组织方发布为准);2)京张铁路历史与京张铁路遗址公园公开资料(含规划建设公开报道);3)北京市国土空间规划及海淀区公开规划信息(公开渠道概述引用,不作法定依据);4)中关村科学城、上地软件园等公开材料;5)铁路遗产保护与城市更新领域公开学术文献;6)五个全球案例的来源逐案登记于 `sources.json` 的 `DATA-SRC-CASE-*` 条目,每条含发布方、网址、访问日期、可迁移边界与复核状态,目前以公开门户信息为依据,正式引用前须对项目专页逐项复核,案例细节作为研究假设而非已清权来源;7)概念性踏勘记录与访谈纪要。以上按类别列示,具体文件版本、编码与引用格式以组织方要求为准。
+1)征集公告与任务书公开信息(以组织方发布为准);2)京张铁路历史与京张铁路遗址公园公开资料(含规划建设公开报道);3)北京市国土空间规划及海淀区公开规划信息(公开渠道概述引用,不作法定依据);4)中关村科学城、上地软件园等公开材料;5)铁路遗产保护与城市更新领域公开学术文献;6)五个全球案例的来源逐案登记于 `sources.json` 的 `DATA-SRC-CASE-*` 条目,每条含发布方、网址、访问日期、可迁移边界与复核状态,均改用项目级专页并逐案记录访问日；页面事实仅作带署名转述，图片、logo、版式和合作关系不复用;7)概念性踏勘记录与访谈纪要。以上按类别列示,具体文件版本、编码与引用格式以组织方要求为准。
 
-> **证据锚点**:`[source:DATA-SRC-OFFICIAL-ANNOUNCEMENT]`、`[source:DATA-SRC-AGENT-TASKBOOK]`、`[source:DATA-SRC-CASE-SHENZHEN-BAY-SCI-TECH-PARK]`、`[source:DATA-SRC-CASE-ZHANGJIANG-AI-ISLAND]`、`[source:DATA-SRC-CASE-YUNQI-TOWN]`、`[source:DATA-SRC-CASE-ONE-NORTH]`、`[source:DATA-SRC-CASE-KINGS-CROSS-KNOWLEDGE-QUARTER]`。
+> **证据锚点**：五个全球案例均见表格与 `sources.json`，使用项目专页事实，不把案例写作本案合作或官方背书。
 # Asset Rights Ledger
 
 > Concept-stage working ledger; not a license grant. All assets below are reserved for repository display, review and evaluation under the package license `COMMUNITY-DISPLAY-ONLY`. Commercial use, external registration or redistribution outside OFL-1.1 terms is prohibited until each row is cleared.
@@ -309,4 +313,15 @@ Until each codename, mark, mechanism name and case is cleared: (a) no external r
 - Formal trademark search for "链驰谷 / ChainScape Valley" and the three node names (L1-L3).
 - Re-verification of each global benchmark case against its project-specific page (not just the portal) before formal reuse.
 - Noto Sans SC subset regeneration if the participant's full character set changes; the current subset covers the body text used in the four HTML previews only.
-- Re-confirmation that no third-party mark, aerial tile, brand typeface or registered color system has been embedded or re-drawn in any concept asset.
+- Re-confirmation that no third-party mark, aerial tile, brand typeface or registered color system has been embedded or re-drawn in any concept asset.### 五个全球案例项目级比较（仅机制启示）
+
+门户首页不支撑项目事实；本表只使用可定位的项目专页。五案均不构成合作、背书、权利许可或复制承诺。
+
+| 项目（来源 ID） | 权威项目专页 / 发布方 / 标题 / 发布日期 / 访问日期 | 已核实事实 | 许可 / 引用边界 | 不可迁移条件 | 对本案具体机制启示 |
+| --- | --- | --- | --- | --- | --- |
+| 新加坡 LaunchPad @ one-north `[source:DATA-SRC-CASE-SINGAPORE-LAUNCHPAD-ONE-NORTH]` | [LaunchPad @ one-north](https://www.jtc.gov.sg/find-land/jtc-key-estates/launchpad)；JTC Corporation；发布日期：未标注；页面更新 2026-03-26；访问：2026-08-30。 | 7 栋楼；2,400+ 初创；30+ 孵化器/加速器/VC；testbedding + 社群/展示 | 页面未授予图像、logo 或版式复用许可；仅作带署名的事实转述和机制比较，不暗示 JTC 认可。 | 新加坡土地/政策、园区规模与治理不可照搬 | L1-L3 形成入驻-中试-评测-展示回路 |
+| 芬兰 Maria 01 创业园区 `[source:DATA-SRC-CASE-HELSINKI-MARIA-01]` | [Maria 01 campus](https://maria.io/campus/)；Maria 01；发布日期：页面未标注；访问日 2026-08-30；访问：2026-08-30。 | 旧医院更新；6 栋；约 20,000㎡；约 1,500 名成员 | 仅引用项目页明确事实并署名；页面图片、logo、室内摄影和版式不复用，不把 Maria 01 当作合作方。 | 产权、会员模式、芬兰生态与分期不可照搬 | L2 先开共享/活动，再按基线分期扩展 |
+| 法国巴黎 STATION F 的 F/AI `[source:DATA-SRC-CASE-PARIS-STATION-F-AI]` | [F/AI - The New Hub for AI at STATION F](https://stationf.co/news/f-ai)；STATION F；发布日期：2026-02-11；访问：2026-08-30。 | 多方联盟；20 家 AI 初创首批；推荐制 | 仅作新闻页事实转述和概念机制比较；不复制 STATION F/F/AI 品牌、图片、合作方标识或宣传文案。 | 成员、推荐制、市场与容量不可照搬 | 资源先入测试，再入公开评测与人工复核 |
+| 加拿大多伦多 MaRS Centre `[source:DATA-SRC-CASE-TORONTO-MARS-CENTRE]` | [MaRS Centre](https://hubs.marsdd.com/location/mars-centre/)；MaRS Innovation Hubs；发布日期：页面未标注；访问日 2026-08-30；访问：2026-08-30。 | 四栋楼+共享中庭；约 120 租户；实验/办公/活动 | 页面未授予摄影、建筑图或 logo 的复用许可；只引用项目事实并署名，不暗示 MaRS 参与本案。 | 机构、租户、资本与交通条件不可照搬 | 以共享公共界面串研发-转化与遗产叙事 |
+| 加拿大蒙特利尔 Mila LaSalle 主权 AI 研究枢纽 `[source:DATA-SRC-CASE-MONTREAL-MILA-LASALLE-AI-HUB]` | [Mila, 5C and Hypertec announce $250 million LaSalle campus and Sovereign AI Research Hub](https://mila.quebec/en/news/mila-5c-and-hypertec-announce-250-million-lasalle-campus-and-sovereign-ai-research-hub-to)；Mila - Quebec AI Institute, 5C and Hypertec；发布日期：2025-09-24；访问：2026-08-30。 | 已宣布/规划；最高 3 MW；液冷/余热回收/实验测试方向 | 联合公告仅支持带署名的事实转述；不复用合作方 logo/图片，不把公告项目写成已落地或合作承诺。 | 规划状态、算力/电力/融资条件不可当成本案承诺 | L3 设算力-中试-评测-能效复盘接口，数值待官方 |
+
