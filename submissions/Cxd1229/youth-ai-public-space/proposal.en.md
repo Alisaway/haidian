@@ -206,13 +206,13 @@ Functional zoning based on ~11.4 km² overall design area [data:geometry/land_us
 | AI R&D + Commercial Mixed-Use | 25% | 285 | Ground floor public and open, upper floors R&D offices |
 | University & Research Institutions | 20% | 228 | Retain existing, add industry-academia shared interfaces |
 | Residential (incl. Talent Housing) | 15% | 171 | Youth apartments + long-term rental + mixed community |
-| Green and Open Space | 12.5% | 142.9 | Jingzhang Heritage Park + pocket park network |
+| Green and Open Space | 12.42% | 141.8 | Jingzhang Heritage Park + pocket park network |
 | Public Service Facilities | 10% | 114 | 24h libraries, sports centers, community canteens |
 | Road and Transit | 8% | 91.2 | Densify secondary and branch road network |
 | Cultural Facilities & Heritage | 5% | 57 | Railway museum + innovation gallery + honor wall nodes |
 | Mixed Flexible Land | 5% | 57 | Reserved for AI test scenarios and temporary events |
 
-> The table above is a conceptual land-use zoning; the green and open space area uses `geometry/green_space.geojson` measured 142.9 ha as the authoritative figure (green ratio 12.5%). Zoning areas differ from the site_boundary measured 1142.7 ha due to conceptual classification, so spatial recalculation follows the GeoJSON [data:geometry/land_use.geojson].
+> The table above is a conceptual land-use zoning; the green and open space area uses `geometry/green_space.geojson` measured 141.8 ha as the authoritative figure (green ratio 12.42%). Zoning areas differ from the site_boundary measured 1141.28 ha due to conceptual classification, so spatial recalculation follows the GeoJSON [data:geometry/land_use.geojson].
 
 **Retain/Renovate/Demolish Strategy** (conceptual direction, to be deepened by professional teams):
 - Retain: University campuses, established quality communities, historic buildings, Jingzhang Railway heritage
@@ -250,7 +250,7 @@ A three-tier network of "Linear Spine + Pocket Nodes + Perpendicular Seams":
 **Blue-Green System** [data:geometry/green_space.geojson]:
 - Jingzhang Heritage Park green belt (8 km × 50–200m) — primary ecological corridor
 - Connecting Qinghe River and Nancanghe River blue-green spaces
-- New community parks: 12 locations; green coverage ratio ~12.5% (measured green space 142.9 ha, via provisional boundary in EPSG:4548 projection)
+- New community parks: 12 locations; green coverage ratio ~12.42% (measured green space 141.8 ha, via provisional boundary in EPSG:4548 projection)
 - Embedded selected AI test scenarios (environmental sensor network, smart irrigation, drone inspection, etc.)
 
 ![Transportation, Slow Mobility and Blue-Green Composite System](assets/figures/mobility-bluegreen.png)
@@ -329,16 +329,16 @@ Six personas based on characteristics of Haidian university students, AI profess
 
 **Public Experience Scenarios (8)**:
 
-| Scenario | Spatial Location | Target Users | Experience Mode |
-|----------|-----------------|--------------|-----------------|
-| SC5 AI Art Co-creation Station | 5 nodes along Jingzhang Park | Citizens/visitors | Input prompt → AI-generated art → print/project |
-| SC6 Open Source Contribution Visualization | Origin Community AI Public Experience Gallery | Developers/public | Real-time GitHub contribution data 3D visualization |
-| SC7 AI-Tutored Smart Study Room | Origin Community + university periphery | Students | AI personalized learning path, human tutor optional |
-| SC8 Smart Fitness Pod | 6 nodes along Jingzhang Park | Fitness users | AI motion guidance, exercise data optionally shareable |
-| SC9 Unmanned Retail Experience Store | Dazhongsi + Origin Community | Citizens | QR/card entry (non-biometric option provided), computer vision checkout (local data processing, periodic purge, user opt-out anytime) |
-| SC10 AI Music Co-creation Space | Dazhongsi Sunken Plaza | Young people | AI composition assistance, weekend open-air performances |
-| SC11 Digital Heritage Guide | Jingzhang Railway heritage section | Visitors | AR recreation of Jingzhang Railway historical scenes |
-| SC12 City Data Observatory | Zhongzhiyuan vantage point | Public/researchers | Real-time urban operational data visualization screen |
+| Scenario | Spatial Location | Target Users | Experience Mode | Operator |
+|----------|-----------------|--------------|-----------------|----------|
+| SC5 AI Art Co-creation Station | 5 nodes along Jingzhang Park | Citizens/visitors | Input prompt → AI-generated art → print/project | Park operator + art institution |
+| SC6 Open Source Contribution Visualization | Origin Community AI Public Experience Gallery | Developers/public | Real-time GitHub contribution data 3D visualization | Origin Community operator + open-source community |
+| SC7 AI-Tutored Smart Study Room | Origin Community + university periphery | Students | AI personalized learning path, human tutor optional | Universities + education service provider |
+| SC8 Smart Fitness Pod | 6 nodes along Jingzhang Park | Fitness users | AI motion guidance, exercise data optionally shareable | Park operator + fitness service provider |
+| SC9 Unmanned Retail Experience Store | Dazhongsi + Origin Community | Citizens | QR/card entry (non-biometric option provided), computer vision checkout (local data processing, periodic purge, user opt-out anytime) | Retail enterprise + park operator |
+| SC10 AI Music Co-creation Space | Dazhongsi Sunken Plaza | Young people | AI composition assistance, weekend open-air performances | Dazhongsi operator + cultural institution |
+| SC11 Digital Heritage Guide | Jingzhang Railway heritage section | Visitors | AR recreation of Jingzhang Railway historical scenes | Park operator + cultural tourism institution |
+| SC12 City Data Observatory | Zhongzhiyuan vantage point | Public/researchers | Real-time urban operational data visualization screen | Park operator + data management department |
 
 ### AI Pilgrimage Landmarks (5) [task:agent.4]
 
@@ -493,8 +493,8 @@ Haidian District's 2024 energy consumption was 7.555 million tce, GDP energy int
 | Coordinated research area | 43.6 km² | Announcement text | Official |
 | Overall design area | 11.4 km² | Announcement text | Official |
 | Key areas total | 368.4 ha | Announcement text | Official |
-| Green ratio | 12.5% | Green measured 142.9 ha / design area measured 1,142.7 ha [data:geometry/green_space.geojson] | Medium (provisional boundary) |
-| Public space ratio | 3.0% | Public space measured 34.3 ha / design area measured 1,142.7 ha [data:geometry/public_space.geojson] | Medium |
+| Green ratio | 12.42% | Green measured 141.8 ha / design area measured 1,142.7 ha [data:geometry/green_space.geojson] | Medium (provisional boundary) |
+| Public space ratio | 3.0% | Public space measured 34.24 ha / design area measured 1,142.7 ha [data:geometry/public_space.geojson] | Medium |
 | Road network density (incl. existing) | 8.5 km/km² | Existing OSM ~81 km + new design 16 km = 97 km / 11.4 km² [data:geometry/roads.geojson] | Medium |
 | Transit coverage | 85% | 800m station buffer coverage ratio | Medium |
 | AI landmarks | 5 | L1–L5 [task:agent.4] | Confirmed (conceptual) |
@@ -504,7 +504,7 @@ Haidian District's 2024 energy consumption was 7.555 million tce, GDP energy int
 | Haidian GDP energy intensity | 0.0585 tce | Haidian 2024 Energy Report [source:HAIDIAN-ENERGY-2024] | Official |
 | Energy intensity 4-year decline | 25.2% | 2021–2024 Yearbook trend [metric:energy_intensity_trend_4yr] | Official |
 | Average FAR | Not obtained | Official regulatory planning data missing [metric:far_average] | Unknown |
-| Design area measured | 11.43 km² | Provisional boundary EPSG:4548 projection measurement [metric:site_area_sqm] | Medium |
+| Design area measured | 11.41 km² | Provisional boundary EPSG:4548 projection measurement [metric:site_area_sqm] | Medium |
 
 ![Core Metrics Evidence Chain](assets/figures/metrics-evidence.png)
 
@@ -610,9 +610,9 @@ The table below specifies data governance essentials per scenario. All scenarios
 ## Appendix C: Metric Reproduction Method
 
 Core metrics are based on shapely geometric computation (EPSG:4548 projection):
-- Green ratio = green_space Polygons area ÷ site_boundary area = 142.9 ÷ 1,142.7 = 12.5%
+- Green ratio = green_space Polygons area ÷ site_boundary area = 141.8 ÷ 1,142.7 = 12.42%
 - Public space ratio = public_space Polygons area ÷ site_boundary = 34.3 ÷ 1,142.7 = 3.0%
-- Road network density = (existing OSM ~81 km + new design 16 km) ÷ 11.43 km² ≈ 8.5 km/km²
+- Road network density = (existing OSM ~81 km + new design 16 km) ÷ 11.41 km² ≈ 8.5 km/km²
 - Building scale = land use zone area × conceptual FAR; confidence: low
 - Transparency statement: All metrics dependent on provisional boundaries or conceptual assumptions are marked with confidence levels in metrics.json and do not constitute engineering commitments
 

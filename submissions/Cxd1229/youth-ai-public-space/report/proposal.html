@@ -186,7 +186,7 @@ li{margin-bottom:0.3rem}
 <p>**蓝绿系统** <span class="evidence data">[data:geometry/green_space.geojson]</span>：</p>
 <li>京张遗址公园绿带（8km × 50-200m）——作为主要生态廊道</li>
 <li>连接清河与南长河蓝绿空间</li>
-<li>新增社区公园12处，绿地率约12.5%（绿地实测142.9ha，基于临时边界EPSG:4548投影实测）</li>
+<li>新增社区公园12处，绿地率约12.42%（绿地实测141.8ha，基于临时边界EPSG:4548投影实测）</li>
 <li>植入选定AI测试场景（环境传感器网络、智能灌溉、无人机巡检等）</li>
 <img src="../assets/figures/mobility-bluegreen.png" alt="交通慢行与蓝绿公共空间复合系统图" loading="lazy">
 <h2>重点区域详细设计</h2>
@@ -364,13 +364,13 @@ li{margin-bottom:0.3rem}
 <p>|------|------|-----------|--------|</p>
 <tr><td>海淀区常住人口</td><td>247.4 万人</td><td>2025年海淀统计年鉴 <span class="evidence source">[source:HAIDIAN-YEARBOOK-2021-2024]</span></td><td>官方统计</td></tr>
 <tr><td>海淀IT业在岗职工</td><td>53.5 万人</td><td>2025年海淀统计年鉴 <span class="evidence metric">[metric:haidian_it_workers]</span></td><td>官方统计</td></tr>
-<tr><td>IT业年均工资</td><td>34.3 万元</td><td>2025年海淀统计年鉴 表3-7 <span class="evidence metric">[metric:haidian_it_wage]</span></td><td>官方统计</td></tr>
+<tr><td>IT业年均工资</td><td>34.24 万元</td><td>2025年海淀统计年鉴 表3-7 <span class="evidence metric">[metric:haidian_it_wage]</span></td><td>官方统计</td></tr>
 <tr><td>海淀科研业在岗职工</td><td>20.0 万人</td><td>2025年海淀统计年鉴 <span class="evidence metric">[metric:haidian_rd_workers]</span></td><td>官方统计</td></tr>
 <tr><td>统筹研究范围面积</td><td>43.6 km²</td><td>公告文本</td><td>官方</td></tr>
 <tr><td>总体设计范围面积</td><td>11.4 km²</td><td>公告文本</td><td>官方</td></tr>
 <tr><td>重点区域总面积</td><td>368.4 ha</td><td>公告文本</td><td>官方</td></tr>
-<tr><td>绿地率</td><td>12.5%</td><td>绿地实测142.9ha/设计范围实测1142.7ha <span class="evidence data">[data:geometry/green_space.geojson]</span></td><td>中等（临时边界）</td></tr>
-<tr><td>公共空间占比</td><td>3.0%</td><td>公共空间实测34.3ha/设计范围实测1142.7ha <span class="evidence data">[data:geometry/public_space.geojson]</span></td><td>中等</td></tr>
+<tr><td>绿地率</td><td>12.42%</td><td>绿地实测141.8ha/设计范围实测1141.28ha <span class="evidence data">[data:geometry/green_space.geojson]</span></td><td>中等（临时边界）</td></tr>
+<tr><td>公共空间占比</td><td>3.0%</td><td>公共空间实测34.24ha/设计范围实测1141.28ha <span class="evidence data">[data:geometry/public_space.geojson]</span></td><td>中等</td></tr>
 <tr><td>路网密度（含既有）</td><td>8.5 km/km²</td><td>既有OSM路网约81km+设计新增16km=97km/11.4km² <span class="evidence data">[data:geometry/roads.geojson]</span></td><td>中等</td></tr>
 <tr><td>轨道覆盖率</td><td>85%</td><td>800m缓冲区覆盖比例</td><td>中等</td></tr>
 <tr><td>AI地标数量</td><td>5</td><td>L1-L5 <span class="evidence task">[task:agent.4]</span></td><td>确定（概念）</td></tr>
@@ -451,8 +451,8 @@ li{margin-bottom:0.3rem}
 <tr><td>8</td><td>Logo商标检索</td><td>概念阶段不涉及</td><td>待确认</td></tr>
 <h2>附录 C：指标复现方法</h2>
 <p>核心指标均基于shapely几何计算（EPSG:4548投影）：</p>
-<li>绿地率=green_space Polygons面积÷site_boundary面积=142.9÷1142.7=12.5%</li>
-<li>公共空间率=public_space Polygons面积÷site_boundary=34.3÷1142.7=3.0%</li>
+<li>绿地率=green_space Polygons面积÷site_boundary面积=141.8÷1141.28=12.42%</li>
+<li>公共空间率=public_space Polygons面积÷site_boundary=34.24÷1141.28=3.0%</li>
 <li>路网密度=(OSM既有约81km+设计新增16km)÷11.43km2≈8.5km/km2</li>
 <li>建筑规模=用地分区面积×概念容积率，置信度low</li>
 <li>透明度声明：所有依赖临时边界或概念假设的指标在metrics.json中标记confidence，不构成工程承诺</li>
