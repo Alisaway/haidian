@@ -5,11 +5,11 @@ language: "zh"
 proposal_format_version: "2"
 bilingual_contract_version: "1"
 translation_file: "proposal.en.md"
-license: "COMMUNITY-DISPLAY-ONLY"
+license: "CC-BY-SA-4.0"
 summary: "以百年京张铁路遗址廊道为城市主板，构建“一廊·六站·三区·两翼”的开源AI共同体：把9.7公里铁轨转化为开源步道主线，串联六个站厅级公共节点与三处重点区域，形成可复算、可验证、可供专业团队深化的概念性城市设计方案。"
 tracks: ["jingzhang-heritage-narrative", "ai-origin-community", "youth-friendly-public-space"]
 scenarios: ["ai-cultural-guide", "ai-health-service-navigation", "ai-traffic-walkability", "enterprise-service-copilot", "public-safety-operations-review", "robot-delivery-low-speed"]
-iteration: "v2.9"
+iteration: "v2.10"
 ---
 
 # 开源轨道 OPEN RAIL：京张AI共同体城市设计方案
@@ -21,7 +21,7 @@ iteration: "v2.9"
 > | 评审维度 | 本方案的回答 | 当前证据状态 |
 > | --- | --- | --- |
 > | 与任务书的相关性 | **「一廊·六站·三区·两翼」由公告三层范围逐级推导**；agent.1—agent.6 六项任务逐条映射；tracks 覆盖遗产叙事、AI 原点社区与青年友好公共空间 | ✓ `compliance_matrix.json` 23 条任务覆盖；三层范围面积与公告口径偏差 <0.5%（GeoJSON 复算） |
-> | 原创性 | **「开源轨道」把铁路语汇（主线/站厅/提交/合并）转译为开源城市治理语汇，本提交包自身即其可查证的首次运行**（PR/复审/changelog 与治理机制同构） | ✓ 概念叙事贯穿全部成果；两项社区开放标准以组件级采纳落地为机器可读治理合约；首次公开时间链见 `assets/media/priority-evidence.md` |
+> | 原创性 | **「开源轨道」把铁路语汇（主线/站厅/提交/合并）转译为开源城市治理语汇，本提交包自身即其可查证的首次运行**（PR/复审/changelog 与治理机制同构）；**成果以 CC-BY-SA-4.0 开放许可沉淀为公共资产**：全路径许可逐项披露、九项核心资产设四要素可核验的采用登记入口 | ✓ 概念叙事贯穿全部成果；两项社区开放标准以组件级采纳落地为机器可读治理合约；首次公开时间链见 `assets/media/priority-evidence.md`；`file-rights-inventory.json` 全路径披露（覆盖率 1.0）＋`open-asset-register.json` 资产登记（采用记录如实为 0） |
 > | AI 与规划创新 | **每个 AI 触点都带隐私边界、运营主体与关闭后等价路径**：13 张场景卡逐卡声明；端侧算力节点进公园；AI 治理沙箱以公开试验运行；本包自身即 AI 参与城市设计工作流的披露运行 | ✓ `seb-adoption.json`、`switchback-adoption.json`、`ai-workflow-pipeline.json` 随包可复核；含 3 张测试验证场景卡 |
 > | 可实施性 | **可公开复算的落地经济学为一等公民**：8 项更新项目五要素实施卡＋触发式排序方法论＋六类资金矩阵＋四环节可问责链＋全生命周期运营账本框架＋**运维资金缺口表（ROM，公开单价基准锚定，算术全机检）**；六项数据缺口（产权、具名主体、法定管控、市政承载力、成本、效益）全部配齐「触发即执行」的确定性解决路径 | ◐ 机制文件随包（`implementation-cards.json`、`sequencing-methodology.json`、`funding-matrix.json`、`lifecycle-om-framework.json`＋新增 `om-funding-gap.json`、`operator-qualification.json`、`statutory-reconciliation.json`、`capacity-preassessment.json`、`parametric-cost-model.json`）；效益数值一律待基线，不输出排序结论；已量化运维科目区间 3267.3–9399.9 万元/年，缺口如实登记为全区间（承诺覆盖率 0） |
 > | 公共利益与包容性 | **AI 关闭后人人仍可用**：每个 AI 服务点强制非数字化等价路径；六类画像覆盖长者、残障与低数字素养居民；P1—P5 配齐「实测即生效」承诺阈值与未达标处置；无障碍设计要素逐项映射 GB 55019-2021 要求领域（设计意图合规、待现场认证）；蓝绿骨架叠加海绵—热岛—碳气候科目；公开仪表盘静态再披露指标、预警、复审与自检 | ◐ SEB schema 强制 ai_off_path 字段；`baseline-protocols.json`、`commitment-thresholds.json`、`accessibility-mapping.json`、`climate-carbon-framework.json`、`dashboard-mockup.json` 随包；P1—P5 实测值如实标注「待基线」 |
@@ -37,6 +37,7 @@ iteration: "v2.9"
 > 5. **资金覆盖主张**：若 8 项更新项目中任一项在六类资金矩阵中找不到至少一条可路径化的资金类型，则资金矩阵的覆盖主张失效 [depth:phasing_implementation]。
 > 6. **可问责主张**：若任一场景卡的运营主体未按具名化转换协议（`operator-qualification.json`）在试点核准时落实为具名 accountable_operator，则「类别主体可问责」主张失效 [source:SWITCHBACK-PROTOCOL]。
 > 7. **包容性承诺主张**：若任一承诺阈值（`commitment-thresholds.json`）在对应实测基线建立后未达标，且未按未达标处置路径执行整改、降级或暂停，则「包容性承诺」主张失效 [source:SEB-SPEC]。
+> 8. **许可披露完整性主张**：若包内任一 manifest 登记路径在 `file-rights-inventory.json` 中缺失许可披露，或披露的许可/处置方式与实际不符（含内嵌字体子集、第三方组件的边界声明），则「全路径许可可核验」主张失效 [depth:open_sedimentation]。
 
 ## 设计依据与资料清单
 
@@ -506,6 +507,12 @@ iteration: "v2.9"
 ### 在先权利与反抄袭证据（v2.3 新增）
 
 本方案自首次提交起历次迭代的首次公开记录已汇编为 `assets/media/priority-evidence.md`（逐版本 commit/PR/日期与复核命令，可独立核验）；反抄袭立场与许可边界见 `report/copyright_statement.md`「反抄袭与在先权利」；如发现疑似抄袭，作者将依证据链与相似度巡检报告向组织方举证。本方案不主张任何早于 GitHub 公开时间戳的在先权利，也不对任何具体提交提出未经证实的抄袭指控。
+
+### 开放沉淀：许可升级与公共资产登记（v2.10 新增）
+
+「开源轨道」的诚实性要求宣称与许可一致：本方案自 v2.5 起主张「可公开复算的落地经济学」，但截至 v2.9 整包仍为 `COMMUNITY-DISPLAY-ONLY`——复算脚本、参数化成本模型、资金矩阵与几何图层在许可上不可复用，与宣称自相矛盾。本版把这一矛盾关闭：主许可升级为 **CC-BY-SA-4.0**（征集 schema 许可枚举的合法值，署名 BY ＋相同许可 ShareAlike），任何第三方在署名本方案并以相同许可分发衍生作品的前提下，可自由复用包内文本、图件、几何、结构化数据与复算脚本 [depth:open_sedimentation]。
+
+三项配套机制使开放可核验而非口号：**全路径逐项许可披露**（`visual/assets/file-rights-inventory.json`，以 manifest 为基准覆盖率 1.0 程序化断言，逐文件 sha256 绑定，含内嵌字体子集 OFL-1.1、SEB 与折返协议组件归原作者等边界声明）；**开放资产登记与采用入口**（`visual/assets/open-asset-register.json`，登记九项可复用资产——六类资金矩阵、参数化成本模型、运维资金缺口表、离线复算脚本、九个几何图层、反抄袭证据链方法、两份采纳声明示范、披露方法本身——每项含四要素采用登记法：canonical_path＋version＋exact_commit＋content_sha256，建议按场内惯例经 Issue 登记，先例为 SEB 规范 Issue #2549 与折返协议 Issue #1119）；**采用记录如实为零**（发布资产≠已被采用，本登记不虚构任何第三方采用——当前为 0，这是诚实状态而非缺陷）。许可升级不改变三类既有边界：内嵌字体子集仍归 SIL OFL-1.1、采纳的社区规范组件仍归原作者与其许可、系统字体与依赖库不随包分发（Three.js 按 MIT 许可头保留随包再分发）。开放与反抄袭同向：BY 条款本身要求署名，ShareAlike 要求衍生保持相同许可，合规复用有据可依，未署名挪用与洗稿在对照下更易识别 [depth:open_sedimentation]。
 
 ## 参考资料
 
