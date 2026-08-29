@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>双轨京张——连续日常轨与间歇验证轨 - proposal report</title>
+<link rel="stylesheet" href="../visual/assets/offline-cjk-font.css">
 <style>
 :root {
   --ink: #172033;
@@ -111,6 +112,16 @@ code {
   main { padding: 26px 16px 52px; }
   h1 { font-size: 26px; }
   h2 { font-size: 21px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+@media print {
+  @page { size: A4; margin: 12mm; }
+  body { background: #fff; }
+  main { max-width: none; margin: 0; padding: 0; box-shadow: none; }
+  a { color: inherit; text-decoration: underline; }
+  .proposal-figure, table { break-inside: avoid; }
 }
 </style>
 </head>

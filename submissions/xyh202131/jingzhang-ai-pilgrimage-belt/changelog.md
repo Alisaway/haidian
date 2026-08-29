@@ -1,5 +1,17 @@
 # 方案迭代记录 / Changelog
 
+## v77.1 - 2026-08-30
+
+**报告离线 CJK 回归修复 / Offline Report CJK Regression Repair**
+
+- PR #4225 exact-head 评审确认两份 report HTML 在本轮重渲后丢失包内 CJK 字体入口；无系统 CJK 字体的评审预览因此出现方框字。字体子集、OFL 声明与两份 visual 的加载链仍然存在，问题不是缺字或新增资产。
+- 在中英文报告中恢复同一个 `../visual/assets/offline-cjk-font.css`；并以 SHA-256 不变的既有 OFL 源字体将四个最终 HTML 的完整字符并集更新为 1162 个码点。两次新进程 WOFF2 构建字节一致，四面缺字为 0，且保持离线、零远程字体、零 JavaScript。修复不改变正文、图件、PDF、几何、指标或现实状态。
+- 12/8/3/36、G0/NO-GO、临时边界、现实结果 0、责任接受 0 与独立人工双语复核 0/8 保持冻结。
+
+- The PR #4225 exact-head review confirmed that the latest report render dropped the package-local CJK font entry from both report HTML files, producing tofu in a review environment without system CJK fonts. The subset, OFL notice and both visual-page loading paths remained present; this was not a missing-glyph or new-asset problem.
+- Restored the same `../visual/assets/offline-cjk-font.css` link in both reports and refreshed the four-final-HTML character union to 1162 code points from the same SHA-256-stable OFL source. Two fresh-process WOFF2 builds are byte-identical, all four surfaces have zero missing glyphs, and operation remains offline with zero remote font and zero JavaScript. The repair changes no proposal text, figure, PDF, geometry, metric or real-world status.
+- The 12/8/3/36 counts, G0/NO-GO, provisional boundaries, zero real outcomes, zero accepted duties and 0/8 independent human bilingual review remain frozen.
+
 ## v77.0 - 2026-08-30
 
 **全页图纸审阅图谱 / All-page Drawing Review Atlas**

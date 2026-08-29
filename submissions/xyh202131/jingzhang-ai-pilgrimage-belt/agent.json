@@ -448,6 +448,14 @@
       "new_media": false,
       "offline_cjk_subset_refresh": "Nine R66 policy-text glyphs added to the existing OFL Noto subset; 1156 code points, two fresh builds byte-identical, four final HTML surfaces with zero missing CJK glyphs."
     },
+    "review_repair_77_1": {
+      "reviewed_head": "4f4bf3fe3d6d20c48605b990271136f6a50f9c0d",
+      "finding": "The R77 report render dropped the package-local CJK stylesheet from both report HTML files; the current four-surface union also contained six glyphs added after the R66 subset refresh.",
+      "resolution": "Both reports again load the registered package-local OFL WOFF2; the subset now covers 1162 Unicode code points, two fresh builds are byte-identical, and all four final HTML surfaces have zero missing non-ASCII glyphs.",
+      "geometry_or_planning_metric_changed": false,
+      "new_media": false,
+      "new_font_or_license": false
+    },
     "spatial_and_metric_freeze": {
       "geometry_files": 9,
       "spatial_and_numeric_metrics_frozen": true,
