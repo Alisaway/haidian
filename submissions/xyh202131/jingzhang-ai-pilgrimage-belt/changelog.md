@@ -1,5 +1,19 @@
 # 方案迭代记录 / Changelog
 
+## v78.0 - 2026-08-30
+
+**离线图文报告语义导航 / Offline Illustrated-report Semantic Navigation**
+
+- 已有能力：中英文体验台已有语义导航、键盘路径与完整审阅包入口，两份图文报告也已恢复包内 CJK 字体并保持离线、零 JavaScript和打印可读。
+- 真实缺口：修复前，两份长报告各有 20 张数据表、76 个表头，但 20/20 表格均无可访问标题、76/76 表头均无显式列范围；页面也没有跳过封面直达正文的入口。视觉阅读可用，但屏幕阅读器必须线性穿过封面，且表格上下文依赖浏览器推断。
+- 必须冻结：proposal、visual、图件、四份 PDF、9 个几何文件、`metrics.json`、12/8/3/36、G0/NO-GO、临时边界、现实结果 0、责任接受 0 与独立人工双语复核 0/8 均不变。
+- 本轮实施：为两份报告增加键盘可见的正文跳转、可聚焦正文目标、20/20 隐藏表题和 76/76 `scope="col"` 列头；打印时隐藏跳转控件。修改只补语义关系，不新增主张、来源、资产或现实状态。
+
+- Existing capability: both workbenches already provide semantic navigation, keyboard routes and a complete-review-pack entry, while both illustrated reports retain package-local CJK rendering, offline operation, zero JavaScript and printable layout.
+- Real gap: before repair, each long report contained 20 data tables and 76 headers, yet 20/20 tables had no accessible caption and 76/76 headers had no explicit column scope. There was also no way to skip the cover and reach the report body. Visual reading worked, but screen-reader users had to traverse the cover linearly and table context depended on browser inference.
+- Must remain frozen: the proposals, visual pages, figures, all four PDFs, nine geometry files, `metrics.json`, 12/8/3/36, G0/NO-GO, provisional boundaries, zero real outcomes, zero accepted duties and 0/8 independent human bilingual review are unchanged.
+- Implemented this round: added a keyboard-visible skip link, a focusable main target, 20/20 hidden table captions and 76/76 `scope="col"` headers to each report; the skip control is suppressed in print. The change adds semantic relationships only, with no new claim, source, asset or real-world status.
+
 ## v77.1 - 2026-08-30
 
 **报告离线 CJK 回归修复 / Offline Report CJK Regression Repair**
