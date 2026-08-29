@@ -1,5 +1,11 @@
 # 方案迭代记录
 
+## v0.3.0 - 2026-08-30
+
+- 按 CocoSgt 81/100 复审逐项修正计数口径：统一为 12 张 AI 场景卡 + 3 个 AI 地标 = 15 个场景节点，并同步正文、指标、图表、HTML、PDF 与预览。
+- 增加 scenario_card_count=12 与 scenario_node_count=15 的显式指标登记；比例与计数在指标图中分组呈现，保留 provisional 几何与官方数据发布后整体复算边界。
+- 使用嵌入式 Noto Sans SC 处理英文 HTML 中的中文主名称，并用 CJK 字体重制双语指标图与同模板英文 A0/A3 输出；完成逐页可读性、剪裁与哈希复核。
+
 ## v0.2.0 - 2026-08-29
 
 - 接续 PR #4082 在 reviewed SHA `bea0817211b59af377affaca62480e30d8309978` 的 CocoSgt 70/100 CHANGES_REQUESTED；修复依据、原文、包 SHA 与逐项映射记录于 `visual/assets/repair_evidence.json`。

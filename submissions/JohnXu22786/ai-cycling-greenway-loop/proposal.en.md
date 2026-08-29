@@ -7,7 +7,7 @@ translation_of: "proposal.md"
 proposal_format_version: "2"
 translation_file: "proposal.en.md"
 bilingual_contract_version: "1"
-summary: "An original concept for the Centennial Jing-Zhang AI Innovation Belt: a cycling-and-walking greenway loop that links the three mandated areas (Zhongzhiyuan AI Acceleration Area, AI Origin Community, Dazhongsi AI Industry Cluster) and stitches the two wings (Zhongguancun Technology-Service Wing, Xiaoyuehe Scenario-Empowerment Wing) along the Jing-Zhang railway corridor, hosting shared stations and AI scenario nodes. All content is conceptual, based on a provisional boundary, and recalculated after official data is published. This English version is the substantively equivalent counterpart of proposal.md (manually cross-checked)."
+summary: "An original concept for the Centennial Jing-Zhang AI Innovation Belt: a cycling-and-walking greenway loop that links the three mandated areas (Zhongzhiyuan AI Acceleration Area, AI Origin Community, Dazhongsi AI Industry Cluster) and stitches the two wings (Zhongguancun Technology-Service Wing, Xiaoyuehe Scenario-Empowerment Wing) along the Jing-Zhang railway corridor, hosting 12 AI scenario cards plus 3 AI landmarks = 15 scenario nodes. All content is conceptual, based on a provisional boundary, and recalculated after official data is published. This English version is the substantively equivalent counterpart of proposal.md (manually cross-checked)."
 tracks: ["ai-traffic-walkability", "enterprise-services-ecosystem", "civic-agent-governance"]
 scenarios: ["ai-traffic-walkability", "enterprise-service-copilot", "public-safety-operations-review"]
 iteration: "v1.0"
@@ -18,7 +18,7 @@ iteration: "v1.0"
 # JINGZHANG AI CYCLING GREENWAY LOOP - Centennial Wheel Traces: A Slow-Traffic Loop Linking the Three Areas and Two Wings (RIDE·JZ LOOP)
 
 **Primary name (EN lock-up): RIDE·JZ LOOP / Jingzhang AI Cycling Greenway Loop**
-**Chinese counterpart: «京张AI骑行绿道环» (the Chinese master name, quoted gloss only).** This is an original concept: a cycling-and-walking greenway loop along the centennial Jing-Zhang railway corridor that links the three mandated areas (the Zhongzhiyuan AI Acceleration Area, the AI Origin Community, and the Dazhongsi AI Industry Cluster) and stitches the two wings (the Zhongguancun Technology-Service Wing and the Xiaoyuehe Scenario-Empowerment Wing) through two side arcs, hosting shared stations and AI scenario nodes along the ring. All content is a concept proposal / reference plan for professional teams to deepen; it is based on a provisional boundary and must be recomputed when official data is published.
+**Chinese counterpart: «京张AI骑行绿道环» (the Chinese master name, quoted gloss only).** This is an original concept: a cycling-and-walking greenway loop along the centennial Jing-Zhang railway corridor that links the three mandated areas (the Zhongzhiyuan AI Acceleration Area, the AI Origin Community, and the Dazhongsi AI Industry Cluster) and stitches the two wings (the Zhongguancun Technology-Service Wing and the Xiaoyuehe Scenario-Empowerment Wing) through two side arcs, hosting 12 AI scenario cards plus 3 AI landmarks = 15 scenario nodes along the ring. All content is a concept proposal / reference plan for professional teams to deepen; it is based on a provisional boundary and must be recomputed when official data is published.
 
 ## Design Basis and Source List
 
@@ -79,7 +79,7 @@ The heritage narrative starts from public historical sources on the 1909 opening
 
 ## AI Innovation Ecosystem, Personas, and AI+ Scenarios
 
-Twelve AI scenario cards sit along the loop (scenario-space-operation mapping): AI wayfinding, dock-scheduling, safety alerts, ride achievements, station services, rail interchange, cultural events, consumption experience, science explanation, data dashboard, emergency linkage and volunteer coordination; five persona groups are configured (daily commuter, campus student, family and elderly, visitor tourist, industry worker). All scenarios use anonymous aggregation only, human review for key decisions, and no individual-identification tracking or excessive surveillance. The mechanisms are concept suggestions and do not replace statutory duties.
+Twelve AI scenario cards plus three AI landmarks form 15 scenario nodes along the loop (scenario-space-operation mapping): AI wayfinding, dock-scheduling, safety alerts, ride achievements, station services, rail interchange, cultural events, consumption experience, science explanation, data dashboard, emergency linkage and volunteer coordination; five persona groups are configured (daily commuter, campus student, family and elderly, visitor tourist, industry worker). All scenarios use anonymous aggregation only, human review for key decisions, and no individual-identification tracking or excessive surveillance. The mechanisms are concept suggestions and do not replace statutory duties.
 
 ### Executable-but-not-yet-run validation protocols
 
@@ -155,7 +155,7 @@ Three conceptual project lists (loop segments / station-chain mechanisms / servi
 
 ## Metrics, Area Recalculation, and Compliance Matrix
 
-Concept indicators enter metrics.json: green_ratio, public_space_ratio, loop length (road_network_length_m), landmark and scenario-node counts, persona_count, global_case_count, annual_program_count, etc. The three formal core metrics (site_area_sqm, green_ratio, public_space_ratio) are recomputed from this package's geometry; the area recalculation is based on the official text caliber and the whole set is recomputed with a version note when official data arrives. Metrics that depend on unpublished official controls (FAR, height) remain unknown with reasons. The compliance matrix covers 23 required items.
+Concept indicators enter metrics.json: green_ratio, public_space_ratio, loop length (road_network_length_m), scenario_card_count=12, landmark_count=3 and scenario_node_count=15 (12 scenario cards + 3 landmarks), persona_count, global_case_count, annual_program_count, etc. The three formal core metrics (site_area_sqm, green_ratio, public_space_ratio) are recomputed from this package's geometry; the area recalculation is based on the official text caliber and the whole set is recomputed with a version note when official data arrives. Metrics that depend on unpublished official controls (FAR, height) remain unknown with reasons. The compliance matrix covers 23 required items.
 
 > **Evidence anchor:** [metric:green_ratio], [metric:public_space_ratio], [source:PACKAGE-GEOMETRY].
 
