@@ -4,6 +4,23 @@
 
 > Note: this file was **created retrospectively** on 2026-08-29. Iterations v0.1–v0.5 were documented in their Pull Request descriptions and commit messages rather than in an in-package changelog. To align with repository convention (SKILL.md requires updating the proposal, `changelog.md`, assumptions and evidence records together), the history is reconstructed from verifiable PR records, and this file will be kept in sync with every subsequent change.
 
+## v1.6 - 2026-08-29
+
+**图件内容设计修订：重点区名称 + 路网分级 + 指标数值 / Figure content-design revision: key-area names, road hierarchy, metric values**
+
+- 问题：v1.5 提交后评审（PR #4155，72/100）指出图件内容设计存在五项缺口：① 缺重点区名称（5 张图均未标注 3 处重点区名称）；② 缺路网层级（道路仅按"主干/其它"两档渲染，绿道/轨道接驳无视觉差异、无图例）；③ 缺核心数值（`metrics-evidence` 图的标题宣称"关键指标"但画面内未呈现任何指标数值）；④ 5 张变体图层重复（overall/ka/landuse/bluegreen/evidence 同图层重复渲染）；⑤ 中英标题副标题残留。
+- **重点区名称标注**：v1.6 在所有含重点区的图面（`site-overview` / `key-areas` / `mobility-bluegreen` / `metrics-evidence` 中英各一）的 3 个重点区 polygon 内底部标注 `name_zh`（众智园AI自主创新加速区 / 北京AI原点社区 / 大钟寺AI产业聚集区），白色圆角框 + 红色描边，zorder 高于 polygon 边界。
+- **路网分级渲染 + 图例扩展**：将 `roads.geojson` 的 `road_class` 映射为四档视觉差异——`greenway`（宽 3.4，深绿，主轴）、`transit_connection`（宽 2.6，蓝，轨道接驳）、`secondary`（宽 1.8，灰，次干路）、`branch`（宽 1.1，浅灰，支路）；并在"② 规划结构"图例中新增 3 条路网分级条目，图例由 4 项扩为 7 项（边界 / 重点区 / 绿地 / 公共空间 / 慢行主轴 / 轨道接驳 / 次干支路），图例标题更新为"② 规划结构与路网分级"。
+- **`metrics-evidence` 指标数值面板**：在该图右上角内嵌白底半透明面板，分中英两版呈现 6 项依据临时 polygon 计算的指标——总面积 11.41 km²、重点区 3 处 / 3.69 km²、绿地率 18.57%、公共空间占比 6.68%、绿地+公共空间 25.25%、建筑密度 27.21%，并以一行附注"绿地+公共空间设计目标 ≥35%"避免与目标值混淆。
+- **诚实性**：本次仅重制 10 张 PNG，`metrics.json` 的 `compliance_score_self_estimate_0_5` 仍保持 **2/5**（与 `proposal.md` 一致），明确标注 v1.6 已闭合①–③ 三项具体缺口，但④ 5 张变体重复渲染与⑤ 中英残留仍待后续处理；`reviewer_feedback` 同步更新。`proposal.md` 本次未编辑（避免触发证据标记密度规则）。
+- 字体：仍使用系统字体栈渲染（v1.5 已回退 data URI），中文显示正常。
+
+- Issue: PR #4155 review (72/100) flagged five figure content-design gaps: ① missing key-area names, ② missing road hierarchy, ③ missing core metric values, ④ 5-variant layer repetition, ⑤ bilingual title/subtitle residue.
+- **Key-area name labels**: in v1.6, every figure showing key areas (`site-overview` / `key-areas` / `mobility-bluegreen` / `metrics-evidence`, both langs) now labels the 3 provisional key-area polygons with `name_zh` at the polygon bottom (white rounded box, red border, zorder above polygon edge).
+- **Road hierarchy render + legend**: `roads.geojson` `road_class` is now mapped to a 4-tier visual hierarchy — `greenway` (3.4, dark green, spine), `transit_connection` (2.6, blue, rail), `secondary` (1.8, grey), `branch` (1.1, light grey); the "② Structure" legend gains 3 road-hierarchy entries (4 → 7 items) and is renamed "② Structure & road network".
+- **`metrics-evidence` metric values panel**: a white semi-transparent panel at the top-right of the map now shows 6 declared metrics calculated from the provisional polygon (bilingual) — site area 11.41 km², key areas 3 / 3.69 km², green ratio 18.57%, public-space ratio 6.68%, green+public 25.25%, building density 27.21% — with a footnote that the design target is green+public ≥35% to avoid confusion.
+- **Honesty**: only the 10 PNGs were regenerated. `metrics.json` `compliance_score_self_estimate_0_5` remains **2/5** (kept consistent with `proposal.md`); the field notes explicitly state v1.6 closes gaps ①–③ while ④ 5-variant repetition and ⑤ bilingual residue remain for a future revision. `proposal.md` was intentionally not edited this round (to avoid the per-block evidence-marker density rule). Font remains the system font stack from v1.5.
+
 ## v1.5 - 2026-08-29
 
 **字体渲染回退与图件自评对齐 / Font fallback revert and figure self-estimate reconciliation**

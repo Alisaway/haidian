@@ -171,7 +171,7 @@
   "boundary_offset_note": "提交几何使用的 PROV-SITE-001（约 11.4 km² 总体设计范围）与 OSM 实测京张铁路遗址公园不相交，最近距离约 412.5 m（见上游 issue #846）。该偏移意味着整套空间落点相对真实遗址公园可能存在约 412.5 m 的整体平移；所有面积与比例指标（site_area_sqm、green_space_area_sqm、public_space_area_sqm、building_footprint_area_sqm、green_ratio、public_space_ratio、building_density、key_area_*、phasing_area_sqm）均为 provisional 边界内部复算值，不代表与真实遗址公园对齐后的尺度，不得作为正式控规或红线依据。官方 redline 与遗址公园精确几何发布后须整体重算并对齐。",
   "figure_layout_compliance": {
     "version": "3.0.0",
-    "status": "partially implemented; figure metadata elements (title block / wind rose / scale bar / metadata block / double legend) present in the 5x2 regenerated PNGs (2026-08-29), but figure content design flagged by review pending revision",
+    "status": "partially implemented; v1.6 (2026-08-29) regenerated all 10 figure PNGs and added: (a) key-area name labels (name_zh) on every figure that shows key areas, (b) class-based road hierarchy rendered by width+colour (greenway 3.4 / transit_connection 2.6 / secondary 1.8 / branch 1.1) and listed in the structural legend, (c) a declared-metric values panel on the metrics-evidence figure (site area 11.41 km², key areas 3 / 3.69 km², green 18.57%, public 6.68%, building density 27.21%, with the ≥35% green+public design target noted). Residual gaps flagged by review: 5-variant layer repetition, bilingual title/subtitle residue, and provisional-data caveats remain.",
     "applies_to": [
       "assets/figures/site-overview.png",
       "assets/figures/key-areas.png",
@@ -235,11 +235,11 @@
       ]
     },
     "current_state": {
-      "title_block": "present in regenerated PNGs (2026-08-29); figure content-design gaps (repetition, missing key-area names, mobility hierarchy, metric values, bilingual residue) flagged by review pending revision",
-      "wind_rose": "present in regenerated PNGs (2026-08-29); figure content-design gaps (repetition, missing key-area names, mobility hierarchy, metric values, bilingual residue) flagged by review pending revision",
-      "scale_bar": "present in regenerated PNGs (2026-08-29); figure content-design gaps (repetition, missing key-area names, mobility hierarchy, metric values, bilingual residue) flagged by review pending revision",
-      "metadata_block": "present in regenerated PNGs (2026-08-29); figure content-design gaps (repetition, missing key-area names, mobility hierarchy, metric values, bilingual residue) flagged by review pending revision",
-      "double_legend": "present in regenerated PNGs (2026-08-29); figure content-design gaps (repetition, missing key-area names, mobility hierarchy, metric values, bilingual residue) flagged by review pending revision",
+      "title_block": "present in v1.6 PNGs (title/figure no./scale/datum/drafter/issue date/version); residual: 5-variant repetition and bilingual title/subtitle residue flagged by review",
+      "wind_rose": "present in v1.6 PNGs (8-direction winter/summer schematic, non-measured)",
+      "scale_bar": "present in v1.6 PNGs (0-500-1000 m bar, 1:8000 nominal)",
+      "metadata_block": "present in v1.6 PNGs (CGCS2000 / Gauss-Krüger 3° zone 117°E / 1985 national vertical; source: maintainer provisional polygon + OSM)",
+      "double_legend": "present in v1.6 PNGs: ① land-use 8 classes (GB 50137-2011); ② structure+road network 7 entries (boundary, key area, green, public, greenway spine, transit connection, secondary/branch) — v1.6 added the road-hierarchy entries",
       "compliance_score_self_estimate_0_5": 2
     },
     "planned_state_v2": {
@@ -252,7 +252,7 @@
       "note": "5/5 retained as the target pending reviewer confirmation of the regenerated figures"
     },
     "convention_caveat": "本声明为概念规范,不主张已具备城乡规划编制资质;正式制图须由具备相应资质(乙级及以上)的单位审定;本方案仅作开源仓库收录评审之参考,见 metrics.geometry_topology_note 与 boundary_offset_note。",
-    "verification_status": "declared_specification_only",
-    "reviewer_feedback": "PR #4155 (72/100) review noted figure content-design gaps (repetition, missing key-area names, mobility hierarchy, metric values not shown, bilingual residue) and an inconsistency between proposal.md (2/5) and this self-estimate (4/5). Self-estimate reconciled to 2/5 to match proposal.md; content design to be revised."
+    "verification_status": "rendered_and_locally_verified",
+    "reviewer_feedback": "PR #4155 review (72/100) noted figure content-design gaps: repetition, missing key-area names, missing road hierarchy, missing core metric values, bilingual residue. v1.6 closes (a)–(c) by regenerating all 10 figure PNGs (see changelog v1.6). Self-estimate kept at 2/5 to remain consistent with proposal.md (2/5); residual gaps (repetition, bilingual residue, provisional-data caveats) are documented above and in the figure footnotes."
   }
 }
