@@ -8,4 +8,4 @@ All narrative, diagrams, figures, PDF boards, and offline interactive code in th
 
 The dynamic model is a locally authored Canvas simulation. It has no remote dependencies, tracking, map tiles, forms, or APIs.
 
-The offline report and visual pages use a broad local system Chinese-font fallback stack (Microsoft YaHei, Noto Sans SC/CJK SC, Source Han Sans CN, WenQuanYi Zen Hei, SimHei and SimSun) so no remote font service is required. The drawing PDFs embed the required Chinese glyphs at export. No remote font or tracking service is fetched at runtime.
+The offline report and visual pages embed a subset of Noto Sans SC directly in each HTML file as a TrueType data URI; the subset is generated from the page's actual Chinese characters and is loaded before the normal system fallback stack. Noto Sans SC is distributed under the SIL Open Font License 1.1; source family: Google Fonts / Noto CJK, https://fonts.google.com/noto/specimen/Noto+Sans+SC. The HTML package does not require a preinstalled CJK font, CDN, remote API, or tracking service at runtime. The drawing PDFs embed the required Chinese glyphs at export.
