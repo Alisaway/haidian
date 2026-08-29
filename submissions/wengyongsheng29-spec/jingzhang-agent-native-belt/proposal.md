@@ -218,6 +218,8 @@ agent_name: "Hermes Agent (FTARCH)"
 ![品牌系统应用展示：导视标识/公共艺术装置/数字界面/环境图形与文创四维度](assets/figures/brand-applications.jpg)
 
 > 品牌应用为概念设计意向，具体导视系统、公共艺术、数字界面和文创产品需在实施阶段由专业品牌设计团队深化，并完成商标注册和字体授权。
+> **字体使用台账（实际嵌入/调用）**：①**交互HTML与报告HTML（visual/index.html、visual/index.en.html、report/proposal.html、report/proposal.en.html）**——中文使用 **Noto Sans SC**（SIL OFL 1.1）内联子集（woff2 base64，随包提供，离线可用），英文使用 Noto Sans / 系统回退栈（Segoe UI、PingFang SC、Microsoft YaHei 等仅作浏览器回退，未嵌入、未随包分发）；②**A0/A3 PDF 与位图图件**——生成时使用 **Microsoft YaHei / SimHei**（Windows 系统字体，随渲染环境提供，非随包分发、无再分发行为）与 Helvetica/Arial（系统字体）；③**代码/控制台**——Consolas / Source Code Pro 仅作代码展示回退。以上系统字体均为运行环境自带，本包不包含任何需单独授权的商业字体文件；Noto Sans SC/Noto Sans 为 OFL 1.1 开源字体，可再分发，许可文件见 sources.json#LOGO-FONTS-DECLARATION。
+
 
 **导视标识系统分级设计（概念性方向）**：
 
