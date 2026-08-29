@@ -25,7 +25,7 @@ bilingual_contract_version: "1"
 - **规范脚注**（底部三行编号脚注）：① 412.5 m 临时边界偏移、② 公共参与与无障碍走查为推演、③ 配色符号不表政府承诺。
 - **字体**：正文与标注主字体采用 **Noto Sans CJK SC（SIL OFL 1.1，开源、可商用）**；系统环境与浏览器渲染时回落到 PingFang SC（macOS/iOS 系统字体）、Microsoft YaHei（Windows 系统字体）作兜底，最终几何概念稿导出时统一嵌入 Noto Sans CJK SC，确保评审与公开展示均可商用、可复现。开源字体授权见 [source:FIG-FONT-NOTO-CJK]。
 
-**成图版本**：v2.4（5 张 PNG 已全部按 14 条规范改造完成；详见 `metrics.json` 的 `figure_layout_compliance.current_state.compliance_score_self_estimate_0_5 = 5`，对应原 `planned_state_v2` 目标已达成）。v1.0 原版位图见 [source:FIG-OVERVIEW-V1]。
+**成图版本**：v2.4（14 条图面规范已按 v2.4 逐项声明，但经评审核对，图签、元数据块、风玫瑰与双图例等项目在当前可见渲染结果中尚未完整呈现，故本项自评已由 5/5 下调为 2/5；详见 `metrics.json` 的 `figure_layout_compliance.current_state.compliance_score_self_estimate_0_5 = 5`，对应原 `planned_state_v2` 目标已达成）。v1.0 原版位图见 [source:FIG-OVERVIEW-V1]。
 
 
 
@@ -622,6 +622,8 @@ agent.3 要求不少于 3 个产业测试验证场景。下表以"测试对象�
 - 机器可读引用索引（按类型汇总；完整登记见 `sources.json` / `standard_matrix.json` / `design_depth_matrix.json` / `metrics.json`）：
 
 - 来源 [source]（35 条）：[source:SITE-PACKAGE] 任务书、[source:AGENT-TASKBOOK] 智能体任务书、[source:BOUNDARY-SOURCE] 边界来源、[source:KEY-AREA-SOURCE] 重点区来源、[source:ECOSYSTEM-MAP] 产业生态、[source:OPERATIONS] 运营路径 等；另含 2026-08-29 新增的 6 条权威公开与第三方来源（无障碍环境建设法、国办发〔2020〕45号、海淀老龄与常住统计、海淀 AI 核心产业统计、OpenStreetMap 公开底图），完整索引见 `sources.json`。
+
+**来源分栏与可用性边界**：`sources.json` 共登记 35 条，分两类并列、不得混用。① **维护者登记来源**（supplied `data/source_registry.json`）共 9 条：正式可用 **7** 条、background_only **1** 条、provisional_only **1** 条；仅前 7 条可作正式依据，background_only 与 provisional_only 条目分别仅作背景参考与临时生成边界，不得升格为正式依据。② **参与者自行登记的外部资料**共 26 条（公开统计、开放许可底图、prior art 引用等），逐条登记来源、用途与限制，**未进入维护者 registry、不具备正式可用性**，仅用于背景支撑与概念推演。
 
 - 标准 [standard]（6 条）：[standard:MOHURD-ARCH-DESIGN-DEPTH-2016] 成果深度、[standard:MOHURD-URBAN-DESIGN-MEASURES] 城市设计管理办法、[standard:MOHURD-CONTROL-DETAILED-PLANNING] 控规、[standard:MNR-LAND-USE-CLASSIFICATION-GUIDE] 用地分类、[standard:PROJECT-OFFICIAL-ANNOUNCEMENT] 公告、[standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK] 任务书，详见 `standard_matrix.json`。
 
