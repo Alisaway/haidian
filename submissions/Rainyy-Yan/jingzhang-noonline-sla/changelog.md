@@ -1,5 +1,11 @@
 # 方案迭代记录 / Iteration Changelog
 
+## v4.9.1 - 2026-08-30
+
+**Offline CJK report repair.** The two required report HTML files now explicitly load the already registered, OFL-licensed submission-local Noonline CJK subset and place it before all system fallbacks. This makes Chinese headings, summaries, body text, captions and the Chinese return link readable when a review environment has neither network access nor an installed Chinese system font.
+
+**Non-regression boundary.** This is a report-font delivery and integrity-record repair only. It changes no proposal claim, source, metric, geometry, scenario, appointed role, funding, permission, land right, approval, field condition or Verified SLA.
+
 ## v4.9 - 2026-08-30
 
 **Review-entry and spatial-narrative refinement.** This pass brings the already submitted human-scale triptych, three-area responsibilities, six conceptual work packages and Phase 0–3 gates to the first review screen. Paired Chinese and English pages now offer aligned 30-second, 3-minute and 15-minute reading paths, so a reviewer can begin with public experience before opening the complete spatial, evidence and delivery-control material.
