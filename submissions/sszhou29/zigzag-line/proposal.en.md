@@ -7,7 +7,7 @@ bilingual_contract_version: "1"
 translation_of: "proposal.md"
 license: "COMMUNITY-DISPLAY-ONLY"
 summary: "Formal AI urban design submission generated under a provisional boundary and structured self-check requirements; precision warnings and recalculation duties are preserved, but organizer data gaps do not block content scoring."
-tracks: ["ai-traffic-walkability", "enterprise-services-ecosystem", "civic-agent-governance"]
+tracks: ["jingzhang-heritage-narrative", "ai-origin-community", "ai-traffic-walkability"]
 scenarios: ["ai-traffic-walkability", "enterprise-service-copilot", "public-safety-operations-review"]
 ---
 
@@ -200,7 +200,7 @@ Failures and criticism are retained deliberately. **Linear-heritage conversion h
 | Case | Origin | Spatial move | Transferable | Costs and criticism |
 |---|---|---|---|---|
 | **Station F, Paris** | 1929 Austerlitz rail freight hall by Freyssinet, inventor of prestressed concrete; listed 2012 | Retains the 310 m vault; **no green corridor — converted wholesale into an industrial container**, divided create / share / chill | Technical heritage can carry new technology industry directly, without first becoming landscape; the full chain under one roof lowers founders' search costs | Called the "malling" of startup culture; scale brings anonymity that erodes small communities |
-| **King's Cross, London** | 67 acres of derelict railway lands | Architects' own word: stitching a lost piece of London back into the fabric; **40% of the site to parks, streets, public space**; 20 historic buildings restored, 20 new streets | **Cultural anchor before tech giants** — Central Saint Martins first, Google and Meta after; 40% affordable housing as institutional defence | The 40% figure differs between commitment and delivered readings; both are presented, neither adopted |
+| **King's Cross, London** | 67 acres of derelict railway lands | Architects' own word: stitching a lost piece of London back into the fabric; **40% of the site to parks, streets, public space**; 20 historic buildings restored, 20 new streets | **Cultural anchor before tech giants** — Central Saint Martins first, Google and Meta after; 40% affordable housing as institutional defence (Note: this 40% is a combined basis of parks, streets, and public space, not the single-item basis of this proposal's `public_space`; see §11.3) | The 40% figure differs between commitment and delivered readings; both are presented, neither adopted |
 | **22@Poblenou, Barcelona** | Former Poblenou industrial district, from 2000 | Land-use reclassification from industry to knowledge-intensive use | Reclassification as the ignition mechanism | **The heaviest lesson:** a former residents' association head states it erased most of the neighbourhood's small industry; prices rose nearly €3,000/m² over a decade |
 | **High Line, New York** | Disused elevated freight line, Manhattan West Side | Purely landscape-led conversion to an elevated garden | Principally **inverse** | Co-founder: the intention was to serve the neighbourhood, and in the end they failed |
 | **Hazelwood Green, Pittsburgh** | 178 acres of former steel works | **New buildings inserted within the mill's steel skeleton**; an 1887 roundhouse converted to an innovation hub | Insertion within an industrial frame; **robotics testing grounds must be reserved in land use**; a permanent history exhibit inside the research centre | Housing, retail, and sport came late — the industry-before-life sequencing problem |
@@ -331,6 +331,67 @@ Industrial-era urban form was determined by the radius of goods — factories, w
 
 This view also explains why lateral stitching outranks longitudinal continuity here: **when the factor of production is human encounter, two severed sides are wasted capacity.** That Xueyuan Road and Wudaokou differ by 42% in rent across a single road is the price of exactly that waste.
 
+### 3.6 Regional coordination: this belt's interfaces within the "three cities, one district"
+
+Regional coordination is a named review dimension. This section answers one specific question: **within Beijing's existing innovation geography, what does this belt carry, and what does it not.**
+
+#### 3.6.1 The existing framework and this belt's place in it
+
+Beijing's principal platform for its international science and technology innovation centre is the "three cities and one district," each with a role set out in official statements [source:AGENT-TASKBOOK]:
+
+| Platform | Official role | Relation to this belt |
+|---|---|---|
+| **Zhongguancun Science City** | Major original results and breakthroughs in key core technologies; the point of departure for innovation, the source of original innovation, and the main arena of self-reliant innovation | **This belt lies within it** — a spatial segment of Zhongguancun Science City, not a parallel platform |
+| **Huairou Science City** | Large scientific facilities and cross-disciplinary platforms, forming a cluster of major national research infrastructure; a world-class carrier of original innovation | Supplies major-facility capacity this belt does not have |
+| **Future Science City** | Future industries and the "two valleys, one park" build-out; a leading technology innovation hub. Sited at the junction of Zhongguancun and Huairou, it is the connective platform | The intermediate stage of technology innovation and result absorption |
+| **Beijing Economic-Technological Development Area** | Absorbing and commercialising original results from the three science cities; the core node of the industrial innovation system | Where this belt's output lands for scaled manufacturing |
+
+> **A judgement to state first:** this belt is not a fifth platform. It lies inside Zhongguancun Science City as a linear space of roughly nine kilometres. **Regional coordination here is not about allying with others but about identifying one's own segment within an existing division of labour.**
+
+#### 3.6.2 Coordination interfaces through the four flows
+
+The four-flow model of §3.2 has a second use here: it clarifies what this belt **exports and receives**.
+
+| Flow | This belt's role | Partner | Interface |
+|---|---|---|---|
+| **Talent** | **Net export and recirculation** | Future Science City, BDA | Talent density is highest here (the Origin Community), but the belt cannot carry all resulting employment. Teams forming here and migrating outward as they scale is normal, and should be designed for |
+| **Technology** | **Transfer and validation** | Huairou (upstream), BDA (downstream) | Huairou's large facilities produce fundamental results; this belt carries scenario validation and pilot production (Zhongzhiyuan); BDA takes volume production |
+| **Goods** | **No local closure; deliberate external dependence** | The city-wide compute network | Compute connects to Beijing's public dispatch platform; no independent pool is built here (§3.2, §7.2) |
+| **Capital** | **Entry point** | Jing-Jin-Ji venture networks | The Dazhongsi services segment carries the contact interface between capital and founders (§5.5) |
+
+**The talent row matters most.** Conventional practice treats outward talent movement as loss. This proposal does not: **the belt's spatial conditions — near-full occupancy, high rents, small parcels — suit incubation rather than carrying capacity.** Teams moving to Future Science City or the BDA as they grow is the normal outcome of the division of labour, not a failure.
+
+**This judgement has a spatial consequence:** the belt reserves no large parcels for scaled production, using land instead to raise the density of human encounter (§7.2).
+
+#### 3.6.3 Relation to the Zhongguancun AI North Latitude Community
+
+The North Latitude Community is a designated AI carrier space in Haidian, offering floor area and rent policy. **It and this belt are complementary, not competing:**
+
+| | North Latitude Community | This belt |
+|---|---|---|
+| Provides | Carrier space and policy incentives | Scenarios, testing conditions, public interface |
+| Spatial nature | Concentrated capacity | Linear, dispersed, embedded in the existing city |
+| Meaning for founders | Cost of landing | Opportunity to validate |
+
+**Interface design:** in the developer conversion pathway (visit → residency → registration → retention, §6.6), the registration stage connects explicitly to the North Latitude Community's existing capacity and policy, **with no parallel incentive scheme established within this belt.** This avoids duplicating policy and keeps the belt focused on what is genuinely scarce here — scenarios and validation conditions.
+
+#### 3.6.4 At the Jing-Jin-Ji scale
+
+At the regional scale this belt exports **rules**, not relocated industry.
+
+The basis is Zhongzhiyuan's role in §5.3: a regime of testing that can be vetoed — the five-step scenario-opening loop, the community veto, published veto records. **Once this protocol works, other cities in the region can adopt it directly rather than each working it out afresh.**
+
+Rules travel more readily than industry: relocation is constrained by land, cost, and supporting infrastructure, while exporting a rule requires only the text and a record of practice.
+
+#### 3.6.5 Boundary of this section
+
+**Everything above is coordination proposed at spatial and functional level and constitutes no agreed arrangement.**
+
+- Interfaces with Huairou, Future Science City, and the BDA are inferred from their published roles; **no party has been approached or has confirmed anything**
+- The policy connection with the North Latitude Community is a proposed mechanism; **no policy support or inclusion in any programme is claimed**
+- The "three cities, one district" roles cited here come from published policy documents and official releases; sources in §13
+- **No institution, company, or platform is asserted to have signed, moved in, or committed to participate**
+
 ## Overall Design Area: Urban Renewal and Regulatory-Plan-Level Urban Design
 
 The task across the 11.4 km² overall design scope is to answer what the belt itself becomes. This section organises its outputs to the urban design depth of regulatory detailed planning [standard:MOHURD-CONTROL-DETAILED-PLANNING] [depth:overall_spatial_structure], while keeping missing statutory control figures explicitly unknown rather than filling them by estimate.
@@ -419,8 +480,6 @@ Their separation is real — the eight Xueyuan Road universities are each walled
 
 This section reaches regulatory-plan urban design depth but **states no FAR, building height, road lines, or engineering implementation conclusions** [depth:risk_missing_data]. Official control figures are missing from public material and inventing them would be fabrication; control guidance appears in section 9, the level at which the official announcement expressly requires it.
 
-> Sections 4.6–4.11 below remain a bullet-point skeleton pending full prose (personas/scenario cards, urban character, metrics, and operating-mechanism content have not yet arrived as complete text); numbering continues from 4.5 rather than restarting at 3.x to avoid duplicating the numbering used above. The original skeleton's 3.2 Overall Urban Renewal Framework duplicated the real 4.2 content just added and has been removed.
-
 ### 4.6 Personas and Scenario-Card System
 - Two disciplines that precede every card: a scenario must land on a specific location (district/gradient belt/zigzag unit); a scenario must state where "human-in-the-loop" holds a veto or discretion
 - Six personas P1–P6: graduate researcher / early-stage founder / robotics test engineer / long-term resident / enterprise-services & capital professional / heritage & study visitor — each with representative group, activity radius, core needs, biggest fear
@@ -429,16 +488,12 @@ This section reaches regulatory-plan urban design depth but **states no FAR, bui
 - Coverage cross-check by persona and by district; known gap — P5 (services & capital) is covered by only 2 cards, sparser than the other personas
 
 ### 4.7 Urban Character
-- Urban tone: "self-reliance," a century-long relay — from the Jing-Zhang Railway's self-directed design to today's full-stack AI self-reliant innovation; neither retro nor futuristic, the "switchback" motion runs through it
-- Control-guidance table: height (5–7 storeys predominant; no more than 6 storeys within 200 m of the heritage line) / intensity (no floor-area-ratio cap set, official control figures not published) / material palette (brick, concrete, steel) / folded roof forms / massing (breaks encouraged along the heritage line to keep lateral sightlines open)
-- Qinghe River and Xiaoyue River landscape-character system: a "two-crossing-one-longitudinal" blue-green skeleton (the heritage line longitudinal, the two rivers lateral)
-- Use of Beijing Film Academy and other arts resources (a prior gap, addressed here): imagery as an AI scenario / a public-space imagery interface / imagery-based narrative
-- Reconciliation of landmark city-view nodes: south-end Exhibition Deck / north-end Qinghe Terrace / elevated Fifth Ring Road node / mid-line Zero Kilometre / Zigzag Bridge over Xueyuan Road
+This subsection duplicates section 9, "Blue-Green Network, Public Space, and Urban Character," and has been consolidated there rather than repeated here: urban tone at §9.2; the control-guidance table (height / intensity / material palette / roof form / massing) at §9.3; the Qing and Xiaoyue River blue-green frame at §9.1; use of the Beijing Film Academy and other arts resources at §9.6. The landmark city-view node list is at §1.5, Pilgrimage Landmarks; each node's detailed design is at §4.10.
 
 ### 4.8 Metrics System (Class-B Committed Metrics, Presented Together)
 - Class-A verified metrics (6 items, written to `metrics.json`; the prose does not repeat the values, only references them): `site_area_sqm` / `building_footprint_area_sqm` / `green_ratio` / `public_space_ratio` / `floor_area_ratio` (**status=unknown**, official control figures not published, see `assumptions.json:A-CONTROLS-001`) / `key_area_count` (fixed at 3)
 - Class-B committed metrics, five groups (written into this section's prose as public commitments, not machine-recomputed):
-  - Anti-displacement group — small-business 5-year retention rate ≥70% / talent/affordable-housing share ≥40% / rent increase cap ≤5% per year / public-space share ≥40%
+  - Anti-displacement group — small-business 5-year retention rate ≥70% / talent/affordable-housing share ≥40% / rent increase cap ≤5% per year (conceptual parameter, pending verification) / public space plus green space combined share ≥28% / public space alone ≥10%
   - Stitching group — ≥8 qualifying units / 100% qualification rate / 100% two-end visibility at the apex / ≤1.2 km average lateral spacing
   - Jobs-housing & density group — ≤15-minute median walk to the lab / 5–7 storeys predominant / ≥60% of R&D seats within the 15-minute isochrone / ≤800 m longest leg of the childcare-housing-lab walking triangle
   - Ecosystem & operations group — ≥5 institution types under one roof / ≥100 open days per year / ≥0.6 seasonal-balance index / ≥20 new Zero-Kilometre entries per year
@@ -670,8 +725,11 @@ The second rule carries a cost — it forces every card to answer an additional 
 | **P4 Long-standing resident** | Residents of existing communities along the railway, including former railway staff and families | Cultural and living belts; daily life inside the park | Not to be displaced; for the park to remain the park at their own door | A local repeat of 22@ and the High Line — costs rising, familiar shops disappearing |
 | **P5 Services and capital professional** | Investment funds, legal and tax advisers, algorithm consultants, IP practitioners | Dazhongsi (services belt) | A structure producing chance encounters with founders; a gradient of meeting settings | Physical separation from founders, leaving only scheduled meetings |
 | **P6 Study group and heritage visitor** | School groups, railway and engineering-history enthusiasts, professional visitors | The full cultural belt, centred on the former Qinghuayuan Station | A continuous thread making legible the relation between 1909 and today | Seeing only a restored station, with no sense of its relation to the laboratories beside it |
+| **P7 Constrained user** | People with mobility, visual, hearing, or cognitive constraints; older people; those who do not use smart devices | The full line, chiefly daily use of the cultural and living belts | Continuously accessible routes; service channels not dependent on smart devices; a person to find in an emergency | That space and service become "intelligent" together and exclude them — facilities built but unreachable, services offered but unusable |
 
 > **The proposal's position on P4.** The benchmark study concludes that no case avoided displacement through good design; only institutional defences worked. **P4 is not a constituency to be reassured; P4 is the criterion by which this proposal succeeds or fails.**
+
+> **This proposal's position on P7.** The Barrier-Free Environment Construction Law is among this proposal's bases (§1), but citing a law is not the same as delivering it. **The characteristic error of an AI-themed innovation belt is to treat "intelligent" as the only mode of service.** P7 exists to put the same question to every scenario: can a person who does not use a smart device still accomplish the same thing here?
 
 ### 6.3 Seventeen scenario cards
 
@@ -804,6 +862,7 @@ Visit → Residency → Registration → Retention
 | P4 Long-standing resident | S01, S02, S05, S10, S11, S13, S14, S16 | 8 |
 | P5 Services and capital | S08, S09, S17 | 3 |
 | P6 Heritage visitor | S03, S11, S12, S13, S15 | 5 |
+| P7 Constrained user | Laterally across all seventeen (see §6.9) | 17 |
 
 | Key area | Cards | Count |
 |---|---|---|
@@ -822,6 +881,59 @@ Visit → Residency → Registration → Retention
 No scenario here involves privacy intrusion, excessive surveillance, or anything beyond human review; no immature technology is presented as fully deployable; no non-public data, personal privacy, or named supplier is a precondition; no test scenario is presented as approved for operation. **All seventeen cards are design proposals and constitute no approved arrangement.**
 
 Binding of cards to numbered stitch units is incomplete — S01, S04, S06, S11, and S14 are bound; the rest await land data. Target values for the verifiable metrics are set uniformly in section 11 rather than card by card, preventing contradiction between them.
+
+### 6.9 Accessibility and digital inclusion review
+
+This section applies a lateral review across all seventeen scenario cards and the principal spatial outputs. **The review is not supplementary explanation but a condition of admission for every output.**
+
+#### 6.9.1 Five constraint types and their requirements
+
+| Constraint | Spatial requirement | Service requirement | Where it lands here |
+|---|---|---|---|
+| **Mobility** | Lateral crossings at stitch unit apexes must be step-free throughout or provide a ramp alternative; paths between the feet must be continuous | A passable alternative route must remain during temporary management of testing grounds | S01 and S14 temporary closures must publish a diversion route |
+| **Vision** | Detectable separation (material or level change) between the walking and device lanes; orientation cues at nodes | Audio interpretation; no purely visual information as sole guidance | S14 riverside lane separation, S15 experience route |
+| **Hearing** | Audible warnings must be accompanied by visual warnings | Written communication available at service points | Equipment operation warnings in S01, S14, S17 |
+| **Cognition** | Simple path and signage hierarchy; avoid dependence on complex decisions | Chainage numbers (N2.4) must be accompanied by everyday place names | §9.5 wayfinding must carry both |
+| **Non-smartphone users / older people** | Physical entrances and staffed counters at key service points | **Every public-facing AI service must have a non-digital equivalent** | See 6.9.2 |
+
+#### 6.9.2 Non-digital equivalents, item by item
+
+**This is the section's central requirement.** Every public-facing service proposed here must have an equivalent achievable without a smart device:
+
+| Scenario | Digital route | Non-digital equivalent |
+|---|---|---|
+| S09 Algorithm clinic | Online booking and screening | **Walk-in from the street, no access control, no appointment** (already a design requirement of this scenario) |
+| S13 Two reversals | Multilingual audio guide | Physical interpretation panels; scheduled guided talks |
+| S15 Public experience route | Live access information | Physical signage at junctions; staff at key nodes |
+| S07 Childcare scheduling | Online scheduling | Telephone and in-person registration; parents may opt out (already a requirement) |
+| S01/S14 Test slot notices | Published online | Physical notice boards on site, posted in advance |
+| S12 Inscription nominations | Online nomination | Paper nomination on site, with assisted entry |
+| Community decision on scenario opening | Online consultation | **On-site assembly as the primary route, online as secondary** — the veto must not be exercisable only online |
+
+**The last row is a matter of principle.** If the community veto can be exercised only online, residents who do not use smart devices are excluded from the decision, and **for them the right does not exist.**
+
+#### 6.9.3 Emergency assistance
+
+Public space along the line must provide a means of emergency assistance independent of personal devices (physical call points or staffed positions), included in the apex and line components of the component library (§9.4). **During operation of testing grounds (S01, S14, S17), responsibility for response rests with the applicant firm and must be written into the scenario-opening application.**
+
+#### 6.9.4 Verifiable metrics
+
+| Metric | Target |
+|---|---|
+| Step-free continuity of lateral crossings at stitch unit apexes | **100%** |
+| Share of public-facing AI services with a non-digital equivalent | **100%** |
+| Share of cultural belt wayfinding carrying both chainage and everyday place names | **100%** |
+| Share of temporary test closures publishing a diversion route | **100%** |
+| Walking time to an emergency assistance point in public space | **≤ 3 minutes** |
+
+> The first four are set at 100% for the same reason as the human-in-the-loop group: **once such requirements are allowed a discount, the discount falls precisely on those who need them most.**
+
+#### 6.9.5 Boundary of this section
+
+- This section does not replace professional accessibility design and acceptance; detailed provisions must follow current standards and undergo professional review
+- **No site survey of existing accessibility conditions has been carried out**; this is a set of design admission requirements, not an assessment of current conditions
+- The 3-minute walking time to emergency assistance is self-set, without external basis
+- Cognitive accessibility signage lacks an established domestic reference; only principles are offered here
 
 ## Land Use, Building Scale, and Retain-Renovate-Demolish Strategy
 
@@ -998,8 +1110,6 @@ No existing street network data is held (side-street density, break locations, r
 
 This section sets out the blue-green frame and public space system as required by the official announcement [depth:blue_green_public_space] [data:geometry/green_space.geojson#GREEN-001] [data:geometry/public_space.geojson#PUBLIC-001]. The city's key and the guidance on height and massing follow in 9.2 and 9.3 [depth:height_massing_character] [metric:green_ratio] [metric:public_space_ratio].
 
-> Note: this section overlaps in theme with §4.7 Urban Character (both drawn from `renewal-character.md`); it supplies the full blue-green frame + city key + control guidance + public-space component library text required by the official announcement, while §4.7 keeps its original skeleton. The two largely agree; if de-duplication is wanted later, §4.7 could be reduced to a short cross-reference. Both are kept as-is for now rather than trimming either unilaterally.
-
 ### 9.1 Blue-green frame: two horizontals, one vertical
 
 | Watercourse | Location | Role |
@@ -1023,13 +1133,15 @@ The principle: **neither historicist nor futurist; one gesture — the reversal 
 
 > **Level note.** The brief forbids stating building height or FAR at the conceptual level. What follows is **guidance at the urban character level**, which the official announcement expressly requires ("for areas with renewal potential, set out control and guidance requirements for building height, intensity, character, roof form, and massing"). There is no conflict.
 
+> **Every figure in this table is a conceptual-stage guidance parameter and scenario test value, requiring professional verification before use. None constitutes a regulatory detailed planning indicator, an approval condition, or any endorsed control requirement.** Official FAR, height limit, and site coverage figures are unpublished (§12.1), and nothing here may be cited as a substitute.
+
 | Element | Guidance | Basis |
 |---|---|---|
-| **Height** | Predominantly **5–7 storeys**; preferably not above 6 within 200 m of the line | Research across 50 innovation districts finds 5–7 storeys optimal — dense enough to concentrate people, low enough for human-scale interaction |
-| **Intensity** | **No uniform FAR ceiling** (official figures unpublished); massing controlled by storey count and frontage ratio together | Avoids inventing figures where data is absent |
+| **Height** | Predominantly **5–7 storeys**; preferably not above 6 within 200 m of the line (conceptual parameter, pending verification) | Research across 50 innovation districts finds 5–7 storeys optimal — dense enough to concentrate people, low enough for human-scale interaction |
+| **Intensity** | **No uniform FAR ceiling** (official figures unpublished); massing controlled by storey count and frontage ratio together (conceptual parameter, pending verification) | Avoids inventing figures where data is absent |
 | **Character** | Brick, concrete, and steel as the base palette, echoing railway industrial heritage; **no historicist pastiche or excessive tech styling** | The material fabric of the railway |
 | **Roof form** | Folded roofs (single or double) preferred either side of the line, echoing the zigzag; the fifth elevation brought under control | Graphic and space share one origin |
-| **Massing** | **Limit single-building frontage; encourage breaks along the line to form lateral view corridors** | Preserves the possibility of lateral stitching |
+| **Massing** | **Limit single-building frontage; encourage breaks along the line to form lateral view corridors** (conceptual parameter, pending verification) | Preserves the possibility of lateral stitching |
 
 **The massing clause is the critical one.** Continuous long-frontage buildings either side of the line would seal off lateral sightlines and make the Zigzag Bridge's acceptance test impossible.
 
@@ -1125,11 +1237,24 @@ The reason is deliverability. District-level implementation requires every condi
 |---|---|---|
 | **Anti-displacement** | Designate micro-enterprise retention zones with a rent-adjustment cap; retention committees must include incumbent operators | Five-year micro-enterprise retention |
 | **Housing** | Set a floor for talent/affordable housing among new homes | Talent housing share |
-| **Public space** | Set a floor for public space as a share of total land, as a condition of renewal | Public space share |
+| **Public space** | Hold the combined basis (public plus green) at no less than the current 28%; set a 10% net-increase target on the single basis, as a condition of renewal | Combined and single-basis public space shares |
 | **Scenario opening** | The five-step loop, with community veto over slot and segment | Veto record publication rate |
 | **Factor connection** | Compute connects to the existing public dispatch platform; funding connects to existing guidance funds and VC networks, with nothing new established | — |
 
 **A necessary honesty:** the **rent-cap instrument's viable pathway under domestic property rights and policy has not been verified.** The King's Cross and 22@ experience arises under different institutional conditions and direct transferability is unproven. **This is the proposal's weakest point at implementation level, and it is not concealed.**
+
+### 10.4.1 Alternative instruments where the preferred mechanism proves unworkable
+
+Both the rent cap and the community veto depend on legal and policy pathways that remain unverified. **This proposal does not assume they are workable, and provides for each an alternative requiring no new statutory authority.**
+
+| Preferred mechanism | Precondition | Alternative if the precondition fails | Basis of the alternative |
+|---|---|---|---|
+| **Rent cap in retention zones** | An instrument capable of capping private leases exists | **Voluntary undertaking plus disclosure**: the delivery body voluntarily commits to a rent-adjustment range in the project agreement, with actual rent movement entering annual public disclosure. Force comes from publicity and reputation, not statute | Requires no new authority; delivery bodies are typically state-owned or park platforms, for whom public undertakings are enforceable in practice |
+| **Community veto** | A governance framework can confer binding veto effect | **Prior consultation plus recorded objection**: test applications pass through a community process; community views carry no binding veto, but objections must be recorded in writing and published alongside test results. Three successive objections of the same kind trigger suspension and review for that segment | Builds on existing resident consultation and disclosure mechanisms; creates no new power |
+
+**Both alternatives trade enforceability for publicity.** They are weaker than the preferred mechanisms but can operate immediately within the current framework, and do not preclude upgrading once a preferred mechanism matures.
+
+**Trigger and exit**: a preferred mechanism takes effect once it acquires explicit basis in a policy pilot or cooperation agreement, at which point the alternative becomes a fallback. Either mechanism should be reviewed for effectiveness after two years of operation, judged on retention rates and objection records.
 
 ### 10.5 Long-term operations: connect, don't duplicate
 
@@ -1199,8 +1324,14 @@ These do not enter `metrics.json`. They appear in the text as public commitments
 |---|---|---|
 | Five-year retention of existing micro-enterprises | **≥ 70%** | 22@ failed by erasing most of its small industry; this is the core anti-displacement commitment |
 | Talent/affordable housing share of new homes | **≥ 40%** | From King's Cross (the figure differs between commitment and delivered readings; the commitment reading is adopted and noted) |
-| Annual rent-increase cap in retention zones | **≤ 5%** | Requires verification against domestic policy; a statement of principle at present |
-| Public space as a share of total land | **≥ 40%** | From King's Cross, where 40% goes to parks, streets, and public space |
+| Annual rent-increase cap in retention zones | **≤ 5% (conceptual parameter, pending legal and policy verification)** | A viable instrument under domestic property rights is unverified. Alternative tools if rent control proves unworkable: §10.4 |
+| Public space and green space combined | **≥ 28% (not below current)** | Recomputed at 28.36% (public space 7.94% + green 20.42%). In a built-up area, holding the existing stock is more realistic than pursuing increase |
+| Public space alone | **≥ 10%** (currently 7.94%) | Requires a net addition of about 235,000 m²; sources below |
+| Net public space added per qualifying stitch unit | **≥ 0.5 ha** | Eight units yield about 40,000 m²; the remainder comes from frontage released through adaptive reuse |
+
+> **Note on basis (a correction to an earlier version).** An earlier version of this proposal committed to "public space ≥40% of total land," citing King's Cross. On checking, that 40% covers parks, streets, and public space combined, which is not the same basis as `public_space_ratio` in this proposal's `metrics.json`. The two are not directly comparable.
+>
+> The commitment is now two-tier: hold 28% on the combined basis, and set a 10% net-increase target on the single basis. **These figures correspond one-to-one with recomputed values from the submitted geometry, are immediately verifiable, and rest on no future assumption.**
 
 > **This is the criterion group. If these four are not met, the proposal has failed by its own standard regardless of the quality of its spatial form.**
 
@@ -1244,15 +1375,25 @@ These do not enter `metrics.json`. They appear in the text as public commitments
 
 > **"Keeping people in the loop," if it does not become an auditable metric, is only a sentence.**
 
+#### Accessibility and digital inclusion — corresponding to §6.9
+
+| Metric | Target |
+|---|---|
+| Step-free continuity of lateral crossings at apexes | **100%** |
+| Share of public-facing AI services with a non-digital equivalent | **100%** |
+| Share of wayfinding carrying both chainage and everyday place names | **100%** |
+| Share of temporary test closures publishing a diversion route | **100%** |
+| Walking time to an emergency assistance point | **≤ 3 minutes** |
+
 ### 11.4 Grading the provenance of targets
 
 The proposal does not conceal differences in evidential strength:
 
 | Grade | Metrics | Source |
 |---|---|---|
-| **Case-derived** | 40% affordable housing, 40% public space | King's Cross |
+| **Case-derived** | 40% affordable housing | King's Cross |
 | **Inferred from failures** | 70% retention, 0.6 seasonal balance | 22@, Seoullo 7017 |
-| **Self-set, no external basis** | ≥8 stitch units, 60% workstation coverage, 800 m triangle edge, 100 programme days, 5 institution types, 5% rent cap, 20 annual entries | Derived from the proposal's own logic |
+| **Self-set, no external basis** | ≥8 stitch units, 60% workstation coverage, 800 m triangle edge, 100 programme days, 5 institution types, 5% rent cap, 20 annual entries, 28% combined floor, 10% single-basis target, 0.5 ha net addition per unit, 3-minute emergency access, four 100% accessibility targets | Derived from the proposal's own logic |
 
 **The third grade is the majority, and it is listed openly.** These figures are set so that the proposal's claims can be verified; no external standard is claimed for them.
 
@@ -1294,6 +1435,8 @@ The proposal does not conceal its weak points:
 | Risk | Explanation | Mitigation |
 |---|---|---|
 | **Anti-displacement metrics lack local basis** | The 70% retention and 5% rent cap derive from international cases, unchecked against Haidian conditions | Flagged in the text; recommend verification against local historical data before implementation |
+| **The public space commitment previously used the wrong basis** | An earlier version compared King's Cross's 40% (a combined basis) against this proposal's single-item `public_space`; corrected in this version to 28% combined / 10% single | Corrected; the new figures correspond one-to-one with recomputed geometry |
+| **Quantitative guidance parameters are unverified** | 5–7 storeys, no more than 6 within 200 m, and the 5% rent cap are conceptual parameters | Marked in place in §9.3 and §11.3; they constitute no regulatory or approval condition |
 | **Rent-control viability unverified** | Whether a workable instrument exists under domestic property rights is unchecked | As above |
 | **The ≥8 stitch units figure is an estimate** | Derived from dividing 9 km by walkable spacing, unverified against land conditions | To be adjusted once land data is available |
 | **Waste-heat recovery and shared corridors uncalculated** | Technical feasibility untested | Statements of principle only; no technical conclusions |
@@ -1326,7 +1469,7 @@ The proposal does not conceal its weak points:
 - Public policy documents and news reports are used in paraphrase; **no passage is reproduced verbatim**
 - Institution and company names in the ecosystem graph are objective references drawn from public information; no trademark graphics or visual identities are used
 
-**On AI participation:** this proposal was designed and written with artificial intelligence, and the model is declared truthfully in `agent.json`. **The proposal holds that this fact should be recorded rather than concealed** — the induction of agent contributors in the Zero Kilometre inscription (section 2.5, S12) is the spatial expression of that position.
+**On AI participation:** this proposal was designed and written with artificial intelligence, and the model is declared truthfully in `agent.json`. **The proposal holds that this fact should be recorded rather than concealed** — the induction of agent contributors in the Zero Kilometre inscription (section 2.5, S12) is the spatial expression of that position. Item-by-item source records and completeness grading appear in §13.1–13.5.
 
 ### 12.5 Limits of use
 
@@ -1336,43 +1479,78 @@ This is a conceptual and framework-level urban design output. It **does not cons
 
 ## References
 
-### Task and policy basis
+### 13.1 Note on source records
 
-1. Official announcement, Centennial Jing-Zhang AI Innovation Belt Urban Design [source:OFFICIAL-ANNOUNCEMENT]
-2. Agent-facing open-call taskbook [source:AGENT-TASKBOOK]
-3. Urban Design Administrative Measures (MOHURD)
-4. Regulatory detailed planning standards (MOHURD)
-5. Guide to land and sea use classification for territorial survey, planning, and use control (MNR)
-6. Interim Measures for the Management of Generative AI Services
-7. Barrier-Free Environment Construction Law
+Sources are recorded item by item as required. **Completeness is graded in three levels, marked honestly and not filled in retrospectively:**
 
-### Site and data
+| Level | Meaning | Usable for |
+|---|---|---|
+| **A · Complete** | Publisher, title, date, nature, and basis all present | Formal factual basis |
+| **B · Partial** | Publisher and content established, but precise URL or access date missing | Background evidence; not an endorsement of any single fact |
+| **C · Pending** | Relayed from secondary channels; original not verified | Directional reference only; may not be cited as fact |
 
-8. Site package and three-tier scope material for this call [source:SITE-PACKAGE]
-9. Processed fact pack and missing-data checklist [source:PROCESSED-FACT-PACK]
-10. Haidian sub-area rent and vacancy estimates — compiled from Savills, JLL, Cushman & Wakefield, and Colliers reports together with Anjuke and Sohu rental listings. **Regional estimates for comparative illustration, not building-level precise values**
+Retrieval took place during the design process, and precise access records were not retained for some sources. **Anything with an incomplete record is downgraded; no URL or date is fabricated.**
 
-### International benchmarks
+### 13.2 Task and policy basis (Level A)
 
-11. Station F, Paris — official materials and architectural criticism
-12. King's Cross, London — developer and architect public materials
-13. 22@Poblenou, Barcelona — social impact commentary and residents' association statements
-14. High Line / Hudson Yards, New York — co-founder interviews and architectural criticism
-15. Hazelwood Green / Robotics Row, Pittsburgh — Carnegie Mellon releases, project website, regional industry reporting
-16. Kendall Square, Boston — morphological research on innovation districts (building height and innovation activity)
-17. Seoullo 7017, Seoul — critical academic assessment, project documentation, maintenance reporting
+| # | Publisher | Title | Nature | Used in |
+|---|---|---|---|---|
+| 1 | Organiser | Official announcement, Centennial Jing-Zhang AI Innovation Belt Urban Design | Task basis | Throughout [source:OFFICIAL-ANNOUNCEMENT] |
+| 2 | Organiser | Agent-facing open-call taskbook | Task basis | Throughout [source:AGENT-TASKBOOK] |
+| 3 | MOHURD | Urban Design Administrative Measures | Departmental regulation | §1, §4 |
+| 4 | MOHURD | Regulatory detailed planning standards | Technical standard | §4 |
+| 5 | MNR | Guide to land and sea use classification | Technical standard | §7; codes verified against the repository's `enums/land_use_codes.json` |
+| 6 | CAC and others | Interim Measures for Generative AI Services | Departmental regulation | §6 compliance boundary |
+| 7 | NPC Standing Committee | Barrier-Free Environment Construction Law | Statute | §6.9 |
 
-### Existing local mechanisms
+### 13.3 Site and data
 
-18. Zhongguancun Forum and AI Theme Day, public information
-19. Beijing AI innovation district designations, public releases
-20. Beijing public AI computing dispatch platform, public information on construction
-21. Jing-Zhang Heritage Park phase one, public reporting
+| # | Source | Level | Basis and limits |
+|---|---|---|---|
+| 8 | Site package and three-tier scope material [source:SITE-PACKAGE] | A | Boundary is provisional, for generation and display only, not a statutory line (§12.1, `A-BOUNDARY-001`) |
+| 9 | Processed fact pack and missing-data checklist [source:PROCESSED-FACT-PACK] | A | As above |
+| 10 | Haidian sub-area rent and vacancy estimates | **B** | **Regional estimates, not building-level precision.** Compiled from published reports by Savills, JLL, Cushman & Wakefield, and Colliers together with Anjuke and Sohu listings. **Original report titles, publication dates, and access dates were not retained**, so this is downgraded to background evidence. Used for sub-area renewal potential ranking (§4.2) and the economic gradient judgement (§3.4); **may not descend to parcel or building decisions** |
 
-### This proposal's own outputs
+> **Item 10 warrants explanation.** This data supports three of the proposal's judgements: that Dazhongsi's adaptive reuse has a supply basis, that the Zigzag Bridge sits at the steepest value gradient, and that anti-displacement has a local anchor. **Given the incomplete record, the evidential strength of these three should be read at Level B** — directionally credible, but the figures are not a basis for decisions. At implementation stage they must be re-verified against authoritative property data.
 
-22. Global benchmark study (linear heritage × innovation districts, seven cases)
-23. Four-flow AI innovation ecosystem graph (compiled from public information)
-24. Drawing and diagram generation scripts — all drawings are produced by parametric scripts, with Chinese and English output from a single run; submission rules restrict the proposal directory to specified file types, so the scripts are not included in the package and can be supplied separately for verification on request
+### 13.4 International benchmarks
 
-> **Statement on citation method:** all third-party sources above are used in paraphrase. No passage, chart, layout, or visual identity is reproduced. Data sources are used for their figures and conclusions only. See 12.4 for the copyright and materials statement.
+All seven are compiled from public material. **Record completeness is marked honestly:**
+
+| # | Case | Level | Key facts used | Record status |
+|---|---|---|---|---|
+| 11 | Station F, Paris | **B** | 1929 Halle Freyssinet rail freight hall; designer Eugène Freyssinet invented prestressed concrete; listed 2012; opened 2017; 310 m vault; some 1,000 startups | Compiled from official material and architectural criticism; **specific report titles and dates not retained** |
+| 12 | King's Cross, London | **B** | 67 acres of railway lands; 40% to parks, streets, and public space; 20 historic buildings restored; 40% affordable among new homes; Central Saint Martins preceded tech firms | Compiled from developer and architect material. **The 40% affordable figure differs between commitment and delivered readings across sources; both are presented, neither adopted (§3.1)** |
+| 13 | 22@Poblenou, Barcelona | **C** | A former residents' association head states the programme erased most small industry; prices rose nearly €3,000/m² over a decade | **Relayed from secondary media; the original property research is unverified.** Basis (transaction versus asking price, district boundary) unclear. Used only to indicate the direction of gentrification risk, **not as quantitative evidence** |
+| 14 | High Line, New York | **B** | Co-founder Robert Hammond publicly acknowledged failing to serve the original neighbourhood | Widely reported in public interviews; **the specific interview and date not retained** |
+| 15 | Hazelwood Green / Robotics Row, Pittsburgh | **B** | 178 acres of former steel works; Mill 19 inserts buildings within a steel skeleton; CMU Robotics Innovation Center includes testing areas; robotics firms grew from fewer than five in 2010 to over 20 | Compiled from CMU releases, the project website, and regional reporting; **individual items not retained**. Employment figures are full-buildout projections, not realised |
+| 16 | Kendall Square, Boston | **B** | Morphological research across 50 innovation districts identifies 5–7 storeys as optimal for innovation activity | Compiled from Aretian research; **report title and date not retained**. This finding is downgraded here to a conceptual parameter pending verification (§9.3) |
+| 17 | Seoullo 7017, Seoul | **B** | 1970 Seoul Station overpass, converted 2017; 17 lateral walkways; 228 plant species in 645 planters; academic assessment notes seasonal programming disparity and limited local economic connection | Academic assessment appears in MDPI *Sustainability*; **volume, issue, pages, and DOI not retained**. Maintenance issues and demolition calls compiled from Korean media; **specific sources not retained** |
+
+### 13.5 Existing local mechanisms (Level B)
+
+| # | Subject | Facts used | Record status |
+|---|---|---|---|
+| 18 | Zhongguancun Forum and AI Theme Day | Held each March; convenes international academia and investors | Public information; **specific edition and dates not retained** |
+| 19 | Beijing AI innovation districts | The AI Origin Community was among the first designated | Public release; **document name and date not retained** |
+| 20 | Zhongguancun AI North Latitude Community | Over 100,000 m² of capacity; up to three years' rent exemption for qualifying firms | Public reporting; **source not retained** |
+| 21 | Beijing public AI computing dispatch platform | Under construction by multiple parties | Public information; **source not retained** |
+| 22 | Jing-Zhang Heritage Park phase one | Opened June 2023; 16.8 ha; about 2.5 km; official language includes stitching back a city that had been cut open and turning the city's back into its front; includes a tribute to the switchback gradient | Public reporting; **specific sources not retained**. **This item supports the core claim in §2.2 that the proposal is not original; its record completeness should be noted** |
+| 23 | Former Qinghuayuan Station | Built 1910; first station north of Xizhimen; nameplate written by Zhan Tianyou; entered the relics survey register in 2012; listed as revolutionary heritage in 2021; first station reached by the CPC Central Committee on entering Beijing | Public information; **sources not retained**. **This item directly supports the landmark constraint in §2.5 and must be verified against heritage authority records at implementation stage** |
+| 24 | "Three cities, one district" roles | Zhongguancun Science City as source of original innovation and main arena of self-reliant innovation; Huairou as world-class carrier of original innovation; Future Science City as technology innovation hub and connective point; the BDA absorbing and commercialising results | Compiled from published policy statements and official releases on Beijing's international science and technology innovation centre; **document names and dates not retained**. Used in §3.6 |
+
+### 13.6 This proposal's own outputs
+
+| # | Item | Note |
+|---|---|---|
+| 25 | Global benchmark study (seven cases) | Original synthesis; underlying facts in 13.4 |
+| 26 | Four-flow AI ecosystem graph | **Research into current industrial distribution and relationships**, compiled from public information. All named entities are publicly known; **no entity is asserted to have signed, moved in, or committed to move in**, and this is not an investment-attraction outcome |
+| 27 | Drawing and diagram generation scripts | All drawings are produced by parametric scripts with bilingual output from a single run. **Submission rules restrict the proposal directory to specified file types, so the scripts are not included; they can be supplied separately for verification on request** |
+
+### 13.7 Citation method and basis for reuse
+
+- All third-party sources above are **used in paraphrase; no passage, chart, layout, or visual identity is reproduced**
+- Data sources are used for their **figures and conclusions only**; no table format is copied
+- Policy documents and statutes are cited in summary, never reproduced at length
+- Institution and company names are objective references drawn from public information; **no trademark graphics or visual identities are used**
+- **Level B and C sources do not serve as formal factual endorsement** and are background or directional reference only. Should this proposal proceed to implementation, they must be re-verified against authoritative originals
