@@ -1,0 +1,166 @@
+{
+  "schema_note": "v2.8 statutory reconciliation rules responding to the implementability review gap 'statutory controls unresolved'. Defines the trigger (official regulatory-plan drawings or heritage-control boundaries formally released and entering approved_formal_sources), three conflict levels with bilingual dispositions, and a six-row element-by-control matrix. Every reconciliation is logged in a difference ledger disclosed with the 90-day public review; no control values are presumed before the official release.",
+  "version": "v2.8",
+  "status": "methodology_pending_official_statutory_release",
+  "trigger": {
+    "condition_zh": "官方控规图则或文保管控边界正式发布并进入 data/source_registry.json 的 approved_formal_sources 后启动校核。",
+    "condition_en": "Reconciliation starts once official regulatory-plan drawings or heritage-control boundaries are formally released and enter approved_formal_sources in data/source_registry.json."
+  },
+  "conflict_levels": [
+    {
+      "level": "L1",
+      "definition_zh": "局部参数偏离：设计模型值与图则管控值存在参数级差异，不改变要素功能。",
+      "definition_en": "Local parameter deviation: design-model values differ from statutory control values at parameter level without changing the element's function.",
+      "disposition_zh": "校核并更新设计模型值，差异记入台账。",
+      "disposition_en": "Check and update the design-model values; record the difference in the ledger."
+    },
+    {
+      "level": "L2",
+      "definition_zh": "功能冲突：管控要求使要素功能无法按原设计成立。",
+      "definition_en": "Functional conflict: control requirements render the element's function unworkable as designed.",
+      "disposition_zh": "要素降级为概念占位，待专项深化。",
+      "disposition_en": "Downgrade the element to a conceptual placeholder pending specialist deepening."
+    },
+    {
+      "level": "L3",
+      "definition_zh": "红线冲突：要素触及法定红线或文保保护红线。",
+      "definition_en": "Red-line conflict: the element touches a statutory red line or a heritage-protection red line.",
+      "disposition_zh": "撤回要素并登记差异台账，随 90 天公开复审公开。",
+      "disposition_en": "Withdraw the element, record it in the difference ledger and disclose it with the 90-day public review."
+    }
+  ],
+  "matrix": [
+    {
+      "element_zh": "概念建筑体量（1107 个基底）",
+      "element_en": "Conceptual building massing (1,107 footprints)",
+      "controls": [
+        {
+          "control_zh": "容积率",
+          "control_en": "Floor-area ratio"
+        },
+        {
+          "control_zh": "建筑高度",
+          "control_en": "Building height"
+        },
+        {
+          "control_zh": "退线",
+          "control_en": "Setback lines"
+        },
+        {
+          "control_zh": "用地性质",
+          "control_en": "Land-use designation"
+        }
+      ],
+      "check_rule_zh": "图则发布后逐地块比对容积率、建筑高度、退线与用地性质；参数级差异按 L1 处置，功能或红线冲突按 L2/L3 处置。",
+      "check_rule_en": "After the statutory drawings are released, compare floor-area ratio, building height, setbacks and land-use designation plot by plot; parameter-level deviations are handled as L1, functional or red-line conflicts as L2/L3.",
+      "conflict_disposition_zh": "L1 参数校核更新 / L2 降级概念占位 / L3 撤回并登记台账（处置细则见 conflict_levels）。",
+      "conflict_disposition_en": "L1 parameter check-and-update / L2 downgrade to conceptual placeholder / L3 withdrawal with ledger entry (see conflict_levels for dispositions)."
+    },
+    {
+      "element_zh": "六站厅节点",
+      "element_en": "Six hall nodes",
+      "controls": [
+        {
+          "control_zh": "用地边界",
+          "control_en": "Plot boundaries"
+        },
+        {
+          "control_zh": "接驳与道路红线",
+          "control_en": "Connections and road red lines"
+        },
+        {
+          "control_zh": "高度管控",
+          "control_en": "Height controls"
+        }
+      ],
+      "check_rule_zh": "图则发布后逐站厅比对用地边界、接驳与道路红线及高度管控；站厅节点与管控线的关系按 L1/L2/L3 分级校核。",
+      "check_rule_en": "After the statutory drawings are released, compare each hall's plot boundaries, connections, road red lines and height controls; the relation between hall nodes and control lines is checked and graded as L1/L2/L3.",
+      "conflict_disposition_zh": "L1 参数校核更新 / L2 降级概念占位 / L3 撤回并登记台账（处置细则见 conflict_levels）。",
+      "conflict_disposition_en": "L1 parameter check-and-update / L2 downgrade to conceptual placeholder / L3 withdrawal with ledger entry (see conflict_levels for dispositions)."
+    },
+    {
+      "element_zh": "开源主线贯通",
+      "element_en": "Open-source spine through-route",
+      "controls": [
+        {
+          "control_zh": "公园绿地边界",
+          "control_en": "Park and green-space boundaries"
+        },
+        {
+          "control_zh": "路权",
+          "control_en": "Right of way"
+        }
+      ],
+      "check_rule_zh": "图则与公园管理口径发布后，比对开源主线线位与公园绿地边界及路权；在不损失贯通性的前提下按 L1/L2/L3 分级处置。",
+      "check_rule_en": "After the statutory drawings and park-management provisions are released, compare the spine alignment with park/green-space boundaries and right of way; graded L1/L2/L3 dispositions apply without losing through-route continuity.",
+      "conflict_disposition_zh": "L1 参数校核更新 / L2 降级概念占位 / L3 撤回并登记台账（处置细则见 conflict_levels）。",
+      "conflict_disposition_en": "L1 parameter check-and-update / L2 downgrade to conceptual placeholder / L3 withdrawal with ledger entry (see conflict_levels for dispositions)."
+    },
+    {
+      "element_zh": "边缘算力节点",
+      "element_en": "Edge-compute nodes",
+      "controls": [
+        {
+          "control_zh": "市政廊道",
+          "control_en": "Utility corridors"
+        },
+        {
+          "control_zh": "供电容量",
+          "control_en": "Power-supply capacity"
+        },
+        {
+          "control_zh": "公园用地管制",
+          "control_en": "Park land-use controls"
+        }
+      ],
+      "check_rule_zh": "市政专项资料发布后，比对边缘算力节点选址与市政廊道、供电容量及公园用地管制；与管制冲突的选址按 L1/L2/L3 分级处置。",
+      "check_rule_en": "After utility special-plan data are released, compare edge-compute node siting against utility corridors, power-supply capacity and park land-use controls; siting conflicts are graded L1/L2/L3.",
+      "conflict_disposition_zh": "L1 参数校核更新 / L2 降级概念占位 / L3 撤回并登记台账（处置细则见 conflict_levels）。",
+      "conflict_disposition_en": "L1 parameter check-and-update / L2 downgrade to conceptual placeholder / L3 withdrawal with ledger entry (see conflict_levels for dispositions)."
+    },
+    {
+      "element_zh": "场景设施与组件库",
+      "element_en": "Scenario facilities and component library",
+      "controls": [
+        {
+          "control_zh": "公共空间管制",
+          "control_en": "Public-space controls"
+        },
+        {
+          "control_zh": "市容",
+          "control_en": "Cityscape and appearance"
+        }
+      ],
+      "check_rule_zh": "公共空间管制与市容口径明确后，比对场景设施与组件库布置和管制要求；占位类设施按 L1/L2/L3 分级处置。",
+      "check_rule_en": "Once public-space and cityscape provisions are clarified, compare the placement of scenario facilities and the component library against them; placeholder facilities are graded L1/L2/L3.",
+      "conflict_disposition_zh": "L1 参数校核更新 / L2 降级概念占位 / L3 撤回并登记台账（处置细则见 conflict_levels）。",
+      "conflict_disposition_en": "L1 parameter check-and-update / L2 downgrade to conceptual placeholder / L3 withdrawal with ledger entry (see conflict_levels for dispositions)."
+    },
+    {
+      "element_zh": "文保地段要素（清华园车站旧址周边）",
+      "element_en": "Heritage-section elements (around the Qinghuayuan Station site)",
+      "controls": [
+        {
+          "control_zh": "文物保护边界",
+          "control_en": "Heritage-protection boundaries"
+        },
+        {
+          "control_zh": "建控地带",
+          "control_en": "Construction-control zones"
+        }
+      ],
+      "check_rule_zh": "文物部门正式公布保护范围与建控地带后，比对文保地段要素与文物保护边界及建控地带；此类从严校核。",
+      "check_rule_en": "After the heritage authority formally publishes the protection scope and construction-control zones, compare heritage-section elements against them; this row is checked with heightened severity.",
+      "conflict_disposition_zh": "从严处置：触及文物保护红线即按 L3（撤回要素并登记差异台账、随 90 天公开复审公开）；出现 L2 功能冲突即撤回要素，不适用降级占位。",
+      "conflict_disposition_en": "Heightened severity: touching the heritage-protection red line is handled as L3 (withdrawal, difference-ledger entry and disclosure with the 90-day public review); an L2 functional conflict also withdraws the element, with no downgrade to placeholder."
+    }
+  ],
+  "ledger_discipline": {
+    "entry_fields_zh": "每次校核登记 before/after（校核前设计模型值与校核后更新值）、触发版本（进入 approved_formal_sources 的官方资料版本）与处置结果（L1/L2/L3 及对应动作）。",
+    "entry_fields_en": "Each reconciliation logs before/after (pre-check design-model values and post-check updated values), the trigger version (the official release that entered approved_formal_sources) and the disposition outcome (L1/L2/L3 with the corresponding action).",
+    "history_policy_zh": "台账不删历史；差异台账随 90 天公开复审公开。",
+    "history_policy_en": "The ledger never deletes history; the difference ledger is disclosed with the 90-day public review."
+  },
+  "boundary_zh": "规则为概念方法论：官方图则与文保管控边界尚未发布，本包不预设、不推断任何管控数值；全部校核与处置以正式发布资料与属地主管复核为准。",
+  "boundary_en": "Rules are a conceptual methodology: official statutory drawings and heritage-control boundaries remain unreleased, and this package presumes or infers no control values; all reconciliation and dispositions are subject to formally released materials and district-authority review."
+}

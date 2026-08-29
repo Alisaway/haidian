@@ -1,0 +1,123 @@
+{
+  "schema_note": "v2.8 municipal capacity pre-assessment methodology responding to the implementability review gap 'municipal capacity unresolved'. Four subjects (power, compute, water supply and drainage, heating) each carry a formula skeleton, dimension placeholders and a recheck trigger. Every dimension stays value_status=pending_baseline — the file contains no estimates or measured values; conclusions are jointly reviewed and published by the district authority and professional agencies after official special-plan data are released.",
+  "version": "v2.8",
+  "status": "methodology_only_no_field_data",
+  "subjects": [
+    {
+      "subject_zh": "电力",
+      "subject_en": "Power",
+      "formula": "P_demand = Σ(node_i_demand × coincidence_factor) + P_loss",
+      "dimensions": [
+        {
+          "name_zh": "边缘算力节点单点功率",
+          "name_en": "Per-node power demand of edge-compute nodes",
+          "unit": "kW",
+          "value_status": "pending_baseline"
+        },
+        {
+          "name_zh": "六站厅服务设施负荷",
+          "name_en": "Service-facility load of the six halls",
+          "unit": "kW",
+          "value_status": "pending_baseline"
+        },
+        {
+          "name_zh": "同时率",
+          "name_en": "Coincidence factor",
+          "unit": "ratio",
+          "value_status": "pending_baseline"
+        }
+      ],
+      "recheck_trigger_zh": "官方电力专项规划或供电部门容量资料发布。",
+      "recheck_trigger_en": "Release of the official power special plan or capacity data from the power-supply authority."
+    },
+    {
+      "subject_zh": "算力",
+      "subject_en": "Compute",
+      "formula": "C_demand = Σ(scenario_i_compute × duty_cycle)",
+      "dimensions": [
+        {
+          "name_zh": "场景算力需求",
+          "name_en": "Per-scenario compute demand",
+          "unit": "pending_definition",
+          "value_status": "pending_baseline"
+        },
+        {
+          "name_zh": "占空比",
+          "name_en": "Duty cycle",
+          "unit": "ratio",
+          "value_status": "pending_baseline"
+        },
+        {
+          "name_zh": "边缘节点容量",
+          "name_en": "Edge-node capacity",
+          "unit": "pending_definition",
+          "value_status": "pending_baseline"
+        }
+      ],
+      "recheck_trigger_zh": "算力专项资料或实测负荷发布。",
+      "recheck_trigger_en": "Release of compute special-plan data or measured loads."
+    },
+    {
+      "subject_zh": "给排水",
+      "subject_en": "Water supply and drainage",
+      "formula": "W_demand = Σ(unit_i_demand × scale_i); drainage checked by equivalent load and return period",
+      "dimensions": [
+        {
+          "name_zh": "单位需水量",
+          "name_en": "Unit water demand",
+          "unit": "pending_definition",
+          "value_status": "pending_baseline"
+        },
+        {
+          "name_zh": "规模",
+          "name_en": "Scale",
+          "unit": "pending_definition",
+          "value_status": "pending_baseline"
+        },
+        {
+          "name_zh": "重现期",
+          "name_en": "Return period",
+          "unit": "a",
+          "value_status": "pending_baseline"
+        }
+      ],
+      "recheck_trigger_zh": "水务专项资料发布。",
+      "recheck_trigger_en": "Release of water-authority special-plan data."
+    },
+    {
+      "subject_zh": "热力",
+      "subject_en": "Heating",
+      "formula": "H_demand = Σ(load_i × duration_factor)",
+      "dimensions": [
+        {
+          "name_zh": "热负荷",
+          "name_en": "Heating load",
+          "unit": "kW",
+          "value_status": "pending_baseline"
+        },
+        {
+          "name_zh": "持续时间因子",
+          "name_en": "Duration factor",
+          "unit": "ratio",
+          "value_status": "pending_baseline"
+        }
+      ],
+      "recheck_trigger_zh": "供热专项资料发布。",
+      "recheck_trigger_en": "Release of heating special-plan data."
+    }
+  ],
+  "discipline": {
+    "no_estimate_policy_zh": "全部参数为占位（pending_baseline），本文件不含任何估算值、实测值或假设值；公式仅为核算框架。",
+    "no_estimate_policy_en": "All parameters are placeholders (pending_baseline); this file contains no estimates, measured values or assumed values — the formulas are accounting frames only.",
+    "publication_policy_zh": "承载力结论仅在官方专项资料发布并完成核算后，由属地主管与专业机构联合复核发布。",
+    "publication_policy_en": "Capacity conclusions are published only after official special-plan data are released and the accounting is jointly reviewed by the district authority and professional agencies."
+  },
+  "linkage": {
+    "sequencing_methodology_zh": "挂接排序方法论环节①（S1-DATA 数据基线）：市政承载力属数据基线缺口，官方专项资料发布后进入复算（见 visual/assets/sequencing-methodology.json）。",
+    "sequencing_methodology_en": "Hooked to step ① of the sequencing methodology (S1-DATA data baseline): utility capacity is a data-baseline gap entering recomputation once official materials are released (see visual/assets/sequencing-methodology.json).",
+    "climate_carbon_zh": "电力与算力科目核算结果挂接 climate-carbon-framework.json 的碳/能源科目口径（见 visual/assets/climate-carbon-framework.json）。",
+    "climate_carbon_en": "Power and compute accounting feeds the carbon/energy subjects of climate-carbon-framework.json (see visual/assets/climate-carbon-framework.json)."
+  },
+  "boundary_zh": "方法论骨架（待官方资料）：不含任何数值结论，全部维度保持 pending_baseline；承载力判断以官方专项资料发布后的联合复核为准。",
+  "boundary_en": "Methodology skeleton pending official data: no numeric conclusions, all dimensions remain pending_baseline; capacity judgements rest on joint review after official special-plan release."
+}
