@@ -15,16 +15,16 @@
 </style>
 <style>
   /* Offline-safe CJK fallback: do not depend on the embedded preview font. */
-  html, body, body * { font-family: "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "Microsoft YaHei", "PingFang SC", "WenQuanYi Zen Hei", Arial, sans-serif !important; }
+html, body, body * { font-family: "SubmissionCJK", "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "Microsoft YaHei", "PingFang SC", "WenQuanYi Zen Hei", Arial, sans-serif !important; }
 </style>
 <script>
-  // Canvas labels also need the same fallback stack as normal HTML text.
+  // Canvas labels must retain the embedded offline CJK font as the first choice.
   (() => {
     const proto = window.CanvasRenderingContext2D && CanvasRenderingContext2D.prototype;
     const descriptor = proto && Object.getOwnPropertyDescriptor(proto, "font");
     if (!descriptor || !descriptor.set) return;
-    const fallback = '"Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "Microsoft YaHei", "PingFang SC", "WenQuanYi Zen Hei", Arial, sans-serif';
-    Object.defineProperty(proto, "font", { ...descriptor, set(value) { descriptor.set.call(this, String(value).replace(/SubmissionCJK/g, fallback)); } });
+    const fallback = '"SubmissionCJK", "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "Microsoft YaHei", "PingFang SC", "WenQuanYi Zen Hei", Arial, sans-serif';
+    Object.defineProperty(proto, "font", { ...descriptor, set(value) { const v = String(value); descriptor.set.call(this, v.includes("SubmissionCJK") ? v : v.replace(/sans-serif/g, fallback)); } });
   })();
 </script>
 </head>
