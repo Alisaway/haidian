@@ -247,6 +247,23 @@
       "confidence": "medium",
       "assumption_ids": [],
       "note": "重点区路网密度指标，概念性路网骨架密度评估。"
+    },
+    "ai_landing_nodes": {
+      "metric_id": "ai_landing_nodes",
+      "status": "known",
+      "value": 15,
+      "unit": "count",
+      "formula": "count of physically landable scenario nodes in demonstration segment (spatial layer, distinct from scenario-card count)",
+      "source_files": [
+        "proposal.md",
+        "assets/figures/mobility-bluegreen.png"
+      ],
+      "confidence": "medium",
+      "assumptions": [
+        "provisional boundary",
+        "concept layer vs landing layer distinction per proposal.md"
+      ],
+      "note": "空间落位层节点数，与 ai_scenario_nodes(18 场景卡)不等同；场景卡可在节点复合承载"
     }
   }
 }
