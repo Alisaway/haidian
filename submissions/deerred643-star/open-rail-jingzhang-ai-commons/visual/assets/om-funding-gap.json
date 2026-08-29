@@ -1,0 +1,159 @@
+{
+  "schema_note": "v2.9 O&M funding-gap table: the quantified companion of lifecycle-om-framework.json (six accounts) and funding-matrix.json (funding types). Responds to the field-wide gap that post-construction O&M funding is left unquantified while 'anti-abandonment' is narrowed to reversibility. Green-space and hard-surface upkeep are priced from the registered public Beijing standards (sources.json: OM-PRICE-STD-BJ2021, OM-PRICE-GP-CROSS); event curation from registered public procurement awards (OM-EVENT-GP-RANGE); accounts without a verifiable public unit price are explicitly placeholders. All arithmetic (sub-item products, account sums, reserve ratio, totals, gap identity) is machine-checked by visual/assets/recompute_metrics.js check 13.",
+  "version": "v2.9",
+  "status": "conceptual_rom_estimate",
+  "method_zh": "量纲基数取自本包可复算指标（metrics.json），单价区间取自已登记公开来源；年成本 ROM 区间 = 量纲 × 占比假设（如有）× 单价区间，四舍五入至 0.1 万元。区间端点各可溯源，不输出单点结论。",
+  "method_en": "Dimensional bases come from package-recomputable metrics.json values; unit-price intervals from registered public sources. Annual ROM cost = dimension x share assumption (if any) x unit-price interval, rounded to 0.1 wan CNY. Both interval endpoints are traceable; no point conclusions.",
+  "accounts": [
+    {
+      "account_zh": "空间养护",
+      "account_en": "Space upkeep",
+      "lifecycle_ref": "lifecycle-om-framework.json: 空间养护 / Space upkeep",
+      "funding_type_refs": ["city_district_fiscal_special", "operations_reinvestment"],
+      "status": "quantified_rom",
+      "sub_items": [
+        {
+          "id": "SU-1-green",
+          "name_zh": "绿地养护（官方投资标准口径）",
+          "name_en": "Green-space upkeep (official investment-standard calibre)",
+          "dimension": {
+            "value": 2466420.91,
+            "unit": "sqm/yr",
+            "metric_ref": "metrics.json:green_space_area_sqm (recomputed by recompute_metrics.js check 1)"
+          },
+          "unit_price": {
+            "low": 10.8,
+            "high": 30.0,
+            "unit": "CNY/sqm/yr",
+            "source_ref": "OM-PRICE-STD-BJ2021",
+            "composition_zh": "低端=二级成熟 9 元/㎡·年 × 中心城区系数 1.2；高端=特级新建 25 元/㎡·年 × 1.2。海淀属中心城区，系数为标准明文要求。",
+            "composition_en": "Low = grade-2 mature 9 CNY/sqm/yr x central-city factor 1.2; high = special-grade newly built 25 x 1.2. Haidian is central city; the factor is stated in the standard."
+          },
+          "divisor_to_wan": 10000,
+          "annual_cost_wan": { "low": 2663.7, "high": 7399.3 },
+          "calibre_note_zh": "官方口径含人工/水/农药/肥料/机械/运输/综合管理费，不含园林设施维护、花卉摆放、应急抢险与古树名木（后者由其他科目或既有城市科目承担）。",
+          "calibre_note_en": "The official calibre covers labour, water, chemicals, fertiliser, machinery, transport and overhead; it excludes fixture upkeep, seasonal floral display, emergency rescue and heritage trees."
+        },
+        {
+          "id": "SU-2-hard",
+          "name_zh": "硬质公共空间管护（政采全口径交叉参照）",
+          "name_en": "Hard-surface public-space care (procurement cross-reference)",
+          "dimension": {
+            "value": 1205675.657,
+            "unit": "sqm/yr",
+            "metric_ref": "metrics.json:public_space_area_sqm (recomputed by recompute_metrics.js check 4)"
+          },
+          "share_assumption": {
+            "low": 0.4,
+            "high": 0.6,
+            "note_zh": "ROM 假设：公共空间中硬质（非绿地）占比 40%–60%，为区间假设而非测量值；绿地与公共空间图层的复合重叠已在 metrics.json 声明，本假设仅用于量级拆分。",
+            "note_en": "ROM assumption: hard (non-green) share of public space 40%-60%, an interval assumption not a measurement; the green/public-space layer overlap is declared in metrics.json and this assumption only splits magnitude."
+          },
+          "unit_price": {
+            "low": 6.2,
+            "high": 9.0,
+            "unit": "CNY/sqm/yr",
+            "source_ref": "OM-PRICE-GP-CROSS",
+            "composition_zh": "低端取房山区 2026 城市园林绿地养护政采中标全口径（6.17–6.36 元/㎡·年，含保洁/设施/安保，12 个月）；高端取昌平回龙观郊野公园管护年化价（121.05 万元/17.93 万㎡，9 个月合同年化约 9.0 元/㎡·年）。",
+            "composition_en": "Low from the Fangshan 2026 citywide green-upkeep procurement all-in calibre (6.17-6.36 CNY/sqm/yr incl. cleaning/fixtures/security, 12 months); high from the Huilongguan country-park care award annualised (1.2105M CNY / 179,333 sqm, 9-month contract, about 9.0 CNY/sqm/yr)."
+          },
+          "divisor_to_wan": 10000,
+          "annual_cost_wan": { "low": 299.0, "high": 651.1 }
+        }
+      ],
+      "account_cost_wan": { "low": 2962.7, "high": 8050.4 },
+      "commitment_coverage_ratio": 0.0,
+      "gap_semantics_zh": "当前承诺覆盖率为 0（概念阶段无任何资金承诺），本科目缺口即全区间；关闭路径：低端由「市区两级财政与专项（城镇绿地养护为属地既有科目，官方投资标准即其预算口径）+ 运营收益反哺」组合承接，高端需专项申报与分区管养分级核定。",
+      "gap_semantics_en": "Current commitment coverage is 0 (concept stage, no funding commitment), so the gap equals the full interval; closure path: the low end is carried by city/district fiscal special funds (green upkeep is an existing district budget line whose calibre the official standard defines) plus operations reinvestment, while the high end needs special appropriation and per-zone grading confirmation."
+    },
+    {
+      "account_zh": "活动策展",
+      "account_en": "Event curation",
+      "lifecycle_ref": "lifecycle-om-framework.json: 活动策展 / Event curation",
+      "funding_type_refs": ["foundations_donations", "operations_reinvestment"],
+      "status": "quantified_rom",
+      "sub_items": [
+        {
+          "id": "EV-1-events",
+          "name_zh": "四季活动 + 展示廊年度策展",
+          "name_en": "Four-season events + gallery annual curation",
+          "dimension": {
+            "value": 5,
+            "unit": "events/yr",
+            "basis_zh": "四季活动 4 场（proposal.md「蓝绿空间、公共空间与城市风貌」章节）+ 展示廊年度策展 1 场（荣誉展示体系）。",
+            "basis_en": "Four seasonal events (proposal.md blue-green and public-space chapter) plus one gallery annual curation (honour display system)."
+          },
+          "unit_price": {
+            "low": 29.8,
+            "high": 99.0,
+            "unit": "wan CNY/event",
+            "source_ref": "OM-EVENT-GP-RANGE",
+            "composition_zh": "低端=丰台 2026「花开丰台」端午游园会成交 29.80 万元；高端=孔庙和国子监博物馆十三经主题展览 98.99 万元；区间内另有花开北京花卉文化活动 69.95、服贸会公园展区服务 80.23、服贸会文旅专题展 97 万元等公开案例。",
+            "composition_en": "Low = Fengtai 2026 Huakai Fengtai garden festival award, 298,000 CNY; high = Confucian Temple-Thirteen Classics exhibition, 989,900 CNY; interior public cases include the 2026 flower-culture event (699,500), CIFTIS park-zone service (802,300) and CIFTIS culture-tourism show (970,000)."
+          },
+          "divisor_to_wan": 1,
+          "annual_cost_wan": { "low": 149.0, "high": 495.0 }
+        }
+      ],
+      "account_cost_wan": { "low": 149.0, "high": 495.0 },
+      "commitment_coverage_ratio": 0.0,
+      "gap_semantics_zh": "当前承诺覆盖率 0，缺口即全区间；关闭路径：公益基金会与捐赠 + 运营收益反哺（策展章程与捐赠公示前置），与文保审查前置条件联动。",
+      "gap_semantics_en": "Coverage is 0, so the gap is the full interval; closure path: foundations and donations plus operations reinvestment (curatorial charter and disclosed donations first), linked to the heritage-review precondition."
+    },
+    {
+      "account_zh": "场景运营",
+      "account_en": "Scenario operation",
+      "lifecycle_ref": "lifecycle-om-framework.json: 场景运营 / Scenario operation",
+      "funding_type_refs": ["operations_reinvestment", "market_investment"],
+      "status": "placeholder_no_public_reference",
+      "dimension_note_zh": "量纲为 13 张场景卡对应服务点（点/年），但场景服务点异质（问询/展示/测试/服务台），无逐类可比的公开运营单价；按来源纪律保持占位，不编造。",
+      "dimension_note_en": "The dimension is the 13 scenario-card service points (points/yr), but they are heterogeneous (inquiry/display/testing/desk) with no comparable public unit price; held as a placeholder under the source discipline, no fabrication.",
+      "annual_cost_wan": { "low": null, "high": null }
+    },
+    {
+      "account_zh": "数据与算力",
+      "account_en": "Data & compute",
+      "lifecycle_ref": "lifecycle-om-framework.json: 数据与算力 / Data & compute",
+      "funding_type_refs": ["market_investment", "industry_funds_vc"],
+      "status": "placeholder_no_public_reference",
+      "dimension_note_zh": "端侧算力节点数量为概念阶段未定量纲，电价与设备口径虽公开但节点数未定，无法产出诚实的区间；保持占位。",
+      "dimension_note_en": "Edge-compute node counts are undetermined at concept stage; although power tariffs and equipment calibres are public, the node count is not, so no honest interval can be produced; held as placeholder.",
+      "annual_cost_wan": { "low": null, "high": null }
+    },
+    {
+      "account_zh": "复审与测量",
+      "account_en": "Review & measurement",
+      "lifecycle_ref": "lifecycle-om-framework.json: 复审与测量 / Review & measurement",
+      "funding_type_refs": ["city_district_fiscal_special"],
+      "status": "placeholder_no_public_reference",
+      "dimension_note_zh": "P1–P5 基线测量、90 天公开复审与第三方无障碍审计的服务采购无固定公开单价标准，频次与范围待属地主管与具名运营方复核后询价；保持占位。",
+      "dimension_note_en": "P1-P5 baseline measurement, 90-day public reviews and third-party accessibility audits have no fixed public unit-price standard; frequency and scope await district-and-operator scoping before quotation; held as placeholder.",
+      "annual_cost_wan": { "low": null, "high": null }
+    },
+    {
+      "account_zh": "应急折返储备",
+      "account_en": "Emergency switchback reserve",
+      "lifecycle_ref": "lifecycle-om-framework.json: 应急折返储备 / Emergency switchback reserve",
+      "funding_type_refs": ["city_district_fiscal_special", "operations_reinvestment"],
+      "status": "derived_rom",
+      "formula_zh": "已量化科目（空间养护＋活动策展）合计区间 × 5%–10% 储备率。",
+      "formula_en": "Sum interval of the quantified accounts (space upkeep + event curation) x a 5%-10% reserve ratio.",
+      "ratio": { "low": 0.05, "high": 0.1 },
+      "annual_cost_wan": { "low": 155.6, "high": 854.5 },
+      "commitment_coverage_ratio": 0.0,
+      "gap_semantics_zh": "覆盖率为 0，缺口即全区间；关闭路径：市区两级财政与专项 + 运营收益反哺双通道，与折返留痕档案联动（见资金矩阵边界）。",
+      "gap_semantics_en": "Coverage is 0, gap equals the full interval; closure path: city/district fiscal special funds plus operations reinvestment, tied to switchback archive records (see funding-matrix boundaries)."
+    }
+  ],
+  "totals": {
+    "quantified_accounts_wan": { "low": 3111.7, "high": 8545.4 },
+    "quantified_plus_reserve_wan": { "low": 3267.3, "high": 9399.9 },
+    "placeholder_accounts": ["场景运营", "数据与算力", "复审与测量"],
+    "coverage_ratio": 0.0,
+    "gap_wan": { "low": 3267.3, "high": 9399.9 },
+    "gap_identity_zh": "因当前承诺覆盖率为 0（概念阶段，无任何政府或资金方承诺），缺口恒等于已量化科目加储备的合计区间；三个占位科目使真实缺口只会大于该区间。缺口的关闭不是一次性事件而是年度复滚：随 90 天公开复审与具名运营方遴选逐科目更新覆盖率。",
+    "gap_identity_en": "Because current commitment coverage is 0 (concept stage, no government or funder commitment), the gap identically equals the quantified-plus-reserve interval; the three placeholder accounts make the true gap strictly larger. Closure is an annually rolling process, not a one-off: coverage per account updates with the 90-day public review and named-operator selection."
+  },
+  "boundary_zh": "本表为概念阶段 ROM 估算（rough order of magnitude），全部金额基于公开单价基准与显式假设推导，不构成政府或资金方承诺，不构成投资估算或预算文件；量纲来自概念性设计图层（provisional），官方边界与控规发布后须重新推导。单价来源仅锚定量级，不代表本方案获得任何采购或审批结论。",
+  "boundary_en": "This table is a conceptual ROM (rough order of magnitude) estimate; all amounts derive from public unit-price benchmarks and explicit assumptions, constitute no commitment by governments or funders, and are neither an investment estimate nor a budget document. Dimensions come from conceptual design layers (provisional) and must be re-derived once official boundaries and the regulatory plan are published. The price sources anchor magnitude only and imply no procurement or approval outcome for this proposal."
+}
