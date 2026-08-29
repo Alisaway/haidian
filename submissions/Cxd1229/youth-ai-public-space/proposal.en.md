@@ -25,7 +25,7 @@ Zhan Tianyou won trust with three things back then: **visible engineering qualit
 
 **The Zhan Tianyou Protocol — Four Principles:**
 1. **Visibility** — Every design judgment has a spatial layer to inspect; every metric has a formula to recalculate
-2. **Stoppable** — Every AI scenario has a named human responsible person and an exit mechanism
+2. **Stoppable** — Every AI scenario has a human responsibility role and an exit mechanism; named owners are assigned per scenario at implementation stage
 3. **AI-Free Equivalence** — Public spaces function fully without AI; AI is augmentation, not replacement
 4. **Intergenerational Equity** — The plan serves young talent, and also serves children, the elderly, people with disabilities, and low-income groups
 
@@ -34,7 +34,7 @@ Zhan Tianyou won trust with three things back then: **visible engineering qualit
 | Loop stage | Zhan Tianyou's engineering method | This proposal's implementation |
 |--------|----------------|-----------------|
 | ① Open | Survey design made public | Taskbook, provisional boundaries, and open data serve as agent inputs; rules and constraints are declared up front |
-| ② Verify | Transparent construction logs | Human-machine dual review — every metric has a recalculable formula, every scenario has a named human responsible person |
+| ② Verify | Transparent construction logs | Human-machine dual review — every metric has a recalculable formula, every scenario has a proposed responsibility role (named owners assigned before implementation) |
 | ③ Trace | Verifiable opening acceptance | Results are traceable, iterable, and stoppable — metrics carry confidence labels, scenarios have exit mechanisms |
 
 The four principles answer "what dimensions constitute trust"; the three-stage loop answers "how trust is built step by step." The spatial strategies, scenario designs, and metric system in the chapters that follow are all implementations of this loop.
@@ -47,9 +47,11 @@ The four principles answer "what dimensions constitute trust"; the three-stage l
 
 This proposal is prepared in accordance with the Haidian District Centennial Jingzhang AI Innovation Belt International Urban Design Competition Announcement (published May 9, 2026, by Beijing Municipal Commission of Planning and Natural Resources [source:SITE-PACKAGE]), and the Global Agent Open Call Taskbook [source:SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK].
 
+> **Source-ID alias note**: The Taskbook is uniformly referenced throughout this proposal by its source-registry ID `SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK`, which maps to the approved standard ID `PROJECT-AGENT-OPEN-CALL-TASKBOOK` in `standards.json` and to the site-package file `brief/site-package/agent_taskbook.json` — all three point to the same "Global Agent Open Call Taskbook". The former alias `AGENT-TASKBOOK` is no longer used in this proposal.
+
 Core data sources:
 - **Official Announcement**: Pre-qualification announcement text with three-level scope descriptions (coordinated research area 43.6 km², overall design area ~11.4 km², key areas 368.4 ha) [source:DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509]
-- **Taskbook**: Six design tasks and ten co-creation principles for AI agents [source:AGENT-TASKBOOK]
+- **Taskbook**: Six design tasks and ten co-creation principles for AI agents [source:SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK]
 - **Boundary Data**: Community-maintained provisional boundaries generated from announcement text descriptions, EPSG:4326 coordinate system, area verified in EPSG:4548 [source:DATA-SRC-PROVISIONAL-BOUNDARIES-20260605]
 - **Statistical Yearbook**: Haidian District 2025 Statistical Yearbook (2024 data) [source:HAIDIAN-YEARBOOK-2021-2024]:
   - Permanent resident population: 2.474 million (Table 1-1)
@@ -75,7 +77,7 @@ Supporting submissions:
 ### Coordinated Research Area (43.6 km²)
 Bounded by North 5th Ring Road to the north, Jingzang Expressway to the east, Xizhimenwai Street to the south, and Wanquan River Road to the west [data:geometry/site_boundary.geojson#SITE-BOUNDARY-001]. Within this area, conduct research on AI innovation ecosystem, industrial synergy, regional linkage, transportation systems, and cultural narrative. Establish a "One Belt · Three Zones · Two Wings" macro-cognitive framework.
 
-**Key Focus**: Identify spatial relationships between Haidian's 10+ universities (Peking University, Tsinghua University, Beihang University, BUPT, etc.) and AI industry (Zhongguancun Software Park, Hou Chang Chun, BAAI). Analyze young talent patterns (Haidian IT sector: 535,193 employees, R&D sector: 199,970 [source:HAIDIAN-YEARBOOK-2021-2024]; ~350,000 university students (conceptual inference based on Beijing education statistics and Haidian university distribution, not a project-scope measured value)). Propose regional-level public space and innovation service networks.
+**Key Focus**: Identify spatial relationships between Haidian's 10+ universities (Peking University, Tsinghua University, Beihang University, BUPT, etc.) and AI industry (Zhongguancun Software Park, Hou Chang Chun, BAAI). Analyze young talent patterns (Haidian IT sector: 535,193 employees, R&D sector: 199,970 [source:HAIDIAN-YEARBOOK-2021-2024]; ~350,000 university students (design assumption ASM-009 based on a rough projection from Beijing education statistics and Haidian university distribution; not a project-scope measured value and not used as formal evidence)). Propose regional-level public space and innovation service networks.
 
 ### Overall Design Area (~11.4 km²)
 A 1–2 km zone around the Jingzhang Heritage Park as the planning and design scope [data:geometry/site_boundary.geojson#SITE-BOUNDARY-001]. Work at a conceptual urban design depth, focusing on urban renewal, land use layout, public space systems, transportation and slow-mobility networks, municipal infrastructure, and urban character; this depth does not constitute a regulatory detailed planning conclusion [standard:AGENT-SUBMISSION-DISCLAIMER].
@@ -136,7 +138,7 @@ Six globally relevant innovation district public space cases:
 **Transferable Lessons** [depth:ecosystem_design]:
 1. **Informal exchange spaces are the physical foundation of innovation ecosystems** — every innovation node must have configurable, encounter-friendly public space within 300m
 2. **Linear heritage is a unique spatial asset** — the 8 km continuity of the Jingzhang Railway heritage is globally unique among innovation districts
-3. **Youth talent priority hierarchy**: 24h accessible facilities > social scenarios > sports space > green space > retail
+3. **Youth talent priority hierarchy (design assumption ASM-010 derived from transferable insights of global innovation-district cases, not a local survey conclusion)**: 24h accessible facilities > social scenarios > sports space > green space > retail
 
 **AI Innovation Ecosystem Map** [task:agent.2]:
 - **Fundamental Research Layer**: Tsinghua University, Peking University, Beihang, BUPT, Chinese Academy of Sciences, and other universities and research institutions → Spatial placement: Zhongzhiyuan AI Acceleration Area and surrounding university clusters
@@ -417,7 +419,7 @@ Conceptual land use layout based on ~11.4 km² overall design area [data:geometr
 **Energy Context and Green Strategy** [source:HAIDIAN-ENERGY-2024]:
 
 Haidian District's 2024 energy consumption was 7.555 million tce, GDP energy intensity 0.0585 tce per ¥10,000 GDP (cumulative 25.2% decline over four years), electricity consumption 185.3 billion kWh (14.5% growth over four years) [metric:haidian_energy_tce]. The data indicates Haidian is in a green transition pathway of "stabilizing total with slight decline, accelerating electrification, rapid efficiency improvement." The high energy demands of AI computing will present new challenges for the regional power grid — this is precisely the empirical basis for incorporating distributed solar, edge computing, and smart microgrids into the new infrastructure of this proposal:
-- AI computing center PUE target ≤1.2 (conceptual target referencing Beijing data center energy efficiency requirements, pending professional calculation, not a current commitment)
+- AI computing center PUE target ≤1.2 (design target referencing the "projects with annual energy consumption ≥20,000 tce must have PUE ≤1.2" threshold in the *Notice on Further Strengthening Energy Review of Data Center Projects* (Jing-Fa-Gai-Gui [2023] No.10) issued by the Beijing Municipal Development and Reform Commission [source:BEIJING-DC-ENERGY-REVIEW-2023]; a conceptual target — each project must be recalculated against then-applicable approval requirements; not a current commitment)
 - Distributed PV covering park streetlights, bus stop canopies, building rooftops; ~5 million kWh annual generation is a conceptual estimate pending energy professional calculation [metric:haidian_electricity_kwh]
 - Edge computing nodes locally consume PV power, reducing backbone network transmission losses
 
