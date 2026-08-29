@@ -157,3 +157,32 @@ N3街角Lab是城市可感知的展示与产业入口：建议设置街道侧成
 本包来源以sources.json为准，等级、发布者、URL、访问时间、许可、用途和限制均已登记。核心来源包括：组织方项目公告与AI创新带任务书；京张铁路与遗址公园公开历史资料；中关村创新文化公开史料；城市设计管理、控规编制、国土空间用途分类、生成式人工智能治理、无障碍环境建设等公开规范；Fab Foundation、Station F、Hacker Dojo、NUS Enterprise BLOCK71四个可核验案例页面。Chaihuo与2050相关条目保留为待核验研究线索，不作为正式事实证据。来源只支持边界、机制或历史叙事的相应范围，不支持本地合作、投资、规模、客流、效果、商标或审批结论。
 
 附：agent.1总体概念与功能统筹对应§2-§5；agent.2 AI全栈生态与产业支撑对应§4和§6；agent.3 AI+场景、画像、协议和人工边界对应§6；agent.4公共空间、智能原生业态和三处朝圣地标（N1“NORTH STAR”、N2“ORIGIN TABLE”、N3“STREET LENS”）对应§5和§9；agent.5京张、中关村与AI新文化叙事对应§1和§9；agent.6年度活动、开发者社区、开放运营与转化路径对应§10。六项均为概念建议，均由矩阵、图件、HTML和权利台账交叉指向。
+# Review closure addendum — mechanism, spatial-operation cards, and rights boundary
+
+## 全球机制案例（仅作机制参照）
+
+以下案例均为公开页面，访问日期为 2026-08-29；它们不证明海淀合作、审批、资金、容量、需求或绩效。转译边界是“借鉴机制、重新设计本地流程”，不复制 Logo、界面、商标、图像或运营承诺。
+
+|案例|URL / 访问日期|许可与可用范围|转译机制|边界|
+|---|---|---|---|---|
+|Fab Foundation / Fab Lab Network|https://fabfoundation.org/schools/；2026-08-29|公开网页，按发布者条款引用；不嵌图|分布式学习、共享设备、导师网络|不迁移规模、会员或本地合作|
+|Station F|https://stationf.co/campus；2026-08-29|公开网页，按发布者条款引用；不嵌图|创业服务组合与社区运营|不迁移租赁、投资或容量|
+|BLOCK71 Singapore|https://enterprise.nus.edu.sg/innovation/block71/；2026-08-29|公开机构页面，引用机制；不嵌品牌|高校—创业接口与空间共用|不宣称 NUS 合作或投资|
+|AI Verify Foundation|https://aiverifyfoundation.sg/；2026-08-29|公开机构页面，引用机制；不称认证完成|可审计测试、风险记录、人工复核|不作为海淀合规证明|
+|NIST AI RMF|https://www.nist.gov/itl/ai-risk-management-framework；2026-08-29|公开标准页面，按 NIST 条款引用|Govern—Map—Measure—Manage 风险闭环|不替代中国法定审查|
+|Barcelona Digital City|https://ajuntament.barcelona.cat/digital/en；2026-08-29|政府公开页面，引用政策机制；不复制资产|公共数字基础设施与市民权利|不迁移政策成效或授权|
+|Amsterdam Smart City|https://amsterdamsmartcity.com/；2026-08-29|公开平台页面，引用机制；不嵌素材|跨组织问题发布、试验与反馈|不宣称合作、资金或绩效|
+
+## 双向空间缝合策略
+
+东西缝合由“中关村科技服务翼—N1/N2创客主轴—小月河场景赋能翼”组成：西侧提供知识产权、法律、供应链和产业问题入口；中部把问题转成可制造原型，经过安全门和人工复核；东侧以公众场景、意见反馈和失败退出记录回流。南北贯通由“轨道接驳—慢行连续—蓝绿公共界面”组成：N1、N2、N3各设置可见入口、人工值守、无障碍替代路径和月度议事点；具体站点、断面、容量和红线在官方资料提供前均为 unknown/to_verify。
+
+## N1/N2/N3 双语空间—运营卡
+
+|卡片|空间 Space|运营 Operating|数据与边界 Data / boundary|
+|---|---|---|---|
+|N1 速造中枢 / Speed-Making Nexus|工具共享、原型工位、测试门；面积、设备数、日承载量：unknown|预约→安全培训→原型→人工复核→退出；责任接口：待核验|只收最小必要、匿名聚合；真实部署授权：unknown|
+|N2 原点工坊 / Origin Workshop|学习桌、居民共创、人工服务台；座席、无障碍覆盖率、活动容量：unknown|公开课→共创议事→低保真试验→公众反馈→月度公示；合作主体：to_verify|不以参与记录作个体画像；投诉与线下替代服务保留|
+|N3 街角Lab / Street Lab|街角展示、可逆设施、场景观察点；面积、客流、维护能力：unknown|展示→限时测试→人工接管→事件复盘→撤除；场地许可：to_verify|不作执法或审批判断；影像、定位和保存期限：unknown|
+
+三卡共享停止条件：安全、无障碍、隐私或公众投诉阈值未满足即暂停；任何容量、需求、预算、合作、审批和运营成效在本包中不作既成事实表述。

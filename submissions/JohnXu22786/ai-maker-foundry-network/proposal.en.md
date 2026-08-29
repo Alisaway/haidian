@@ -157,3 +157,32 @@ Risk response is “detect, pause, notify, review, exit.” When safety, privacy
 The authoritative package register is sources.json, including level, publisher, URL, access date, license, use, and limits. Core entries are the organizer announcement and AI belt taskbook; public Jing-Zhang Railway and heritage-park history; public Zhongguancun innovation history; public urban-design, detailed-planning, land-use, generative-AI governance, and accessibility guidance; and four verifiable mechanism pages from Fab Foundation, Station F, Hacker Dojo, and NUS Enterprise BLOCK71. Chaihuo and 2050 remain research leads pending page-level verification and are not formal factual evidence. Sources support only their stated boundary, mechanism, or history; they do not support local partnership, investment, scale, visitors, performance, trademark, or approval claims.
 
 Agent mapping: agent.1 overall concept and functions in §§2-5; agent.2 full-stack ecosystem and industry support in §§4 and 6; agent.3 AI scenes, personas, protocols, and human boundaries in §6; agent.4 public space, intelligent-native uses, and three concept pilgrimage landmarks (N1 NORTH STAR, N2 ORIGIN TABLE, N3 STREET LENS) in §§5 and 9; agent.5 Jing-Zhang, Zhongguancun, and AI culture narrative in §§1 and 9; agent.6 annual events, developer community, open operations, and conversion path in §10. All six are proposals and cross-referenced by matrices, drawings, HTML, and the rights ledger.
+# Review closure addendum — mechanisms, spatial-operation cards, and rights boundary
+
+## Global mechanism cases (mechanism references only)
+
+All cases below are public pages accessed 2026-08-29. They do not prove Haidian partnership, approval, funding, capacity, demand, or performance. The translation rule is “borrow a mechanism and redesign the local process”; no logo, interface, trademark, image, or operating promise is copied.
+
+|Case|URL / access date|Licence and use|Mechanism translated|Boundary|
+|---|---|---|---|---|
+|Fab Foundation / Fab Lab Network|https://fabfoundation.org/schools/; 2026-08-29|Public page, cite under publisher terms; no image embed|Distributed learning, shared equipment, mentors|No scale, membership, or local partnership transfer|
+|Station F|https://stationf.co/campus; 2026-08-29|Public page, mechanism citation only|Startup service bundle and community operations|No lease, investment, or capacity transfer|
+|BLOCK71 Singapore|https://enterprise.nus.edu.sg/innovation/block71/; 2026-08-29|Public institutional page, no brand reuse|University–startup interface and shared space|No NUS partnership or investment claim|
+|AI Verify Foundation|https://aiverifyfoundation.sg/; 2026-08-29|Public institutional page, no certification claim|Auditable tests, risk records, human review|Not proof of Haidian compliance|
+|NIST AI RMF|https://www.nist.gov/itl/ai-risk-management-framework; 2026-08-29|Public standards page, cited under NIST terms|Govern–Map–Measure–Manage risk loop|Does not replace Chinese statutory review|
+|Barcelona Digital City|https://ajuntament.barcelona.cat/digital/en; 2026-08-29|Public government page, policy mechanism only|Public digital infrastructure and civic rights|No policy-result or authorization transfer|
+|Amsterdam Smart City|https://amsterdamsmartcity.com/; 2026-08-29|Public platform page, mechanism citation only|Cross-organization problem calls, trials, feedback|No partnership, funding, or performance claim|
+
+## East–west stitching and north–south connection
+
+East–west stitching is “Zhongguancun Technology Service Wing — N1/N2 Maker Spine — Xiaoyuehe Scenario Enablement Wing”: the west provides IP, legal, supply-chain and industry problem inputs; the spine turns them into prototypes through a safety gate and human review; the east returns public-scene feedback and exit records. North–south connection is “rail interchange — continuous walking — blue-green public interface”: N1, N2 and N3 each provide visible access, staffed service, accessible alternatives and a monthly forum. Exact stations, sections, capacity and redlines remain unknown/to_verify until official data is supplied.
+
+## N1/N2/N3 bilingual spatial–operation cards
+
+|Card|Space 空间|Operations 运营|Data and boundary 数据/边界|
+|---|---|---|---|
+|N1 Speed-Making Nexus / 速造中枢|Shared tools, prototype bays, test gate; area, equipment count, daily capacity: unknown|Book → safety induction → prototype → human review → exit; accountable interface: to_verify|Minimum necessary, anonymous aggregation; deployment authorization: unknown|
+|N2 Origin Workshop / 原点工坊|Learning tables, resident co-creation, staffed desk; seats, accessibility coverage, event capacity: unknown|Class → co-create → low-fidelity trial → public feedback → monthly note; partner: to_verify|No individual profiling from participation; complaints and offline alternative retained|
+|N3 Street Lab / 街角Lab|Street exhibition, reversible kit, scene observation point; area, footfall, maintenance capacity: unknown|Exhibit → time-boxed test → human takeover → incident review → removal; venue permission: to_verify|No enforcement or approval judgement; imagery, location and retention: unknown|
+
+Shared stop rule: pause if safety, accessibility, privacy, or public-complaint thresholds are not met. Capacity, demand, budget, cooperation, approval, and operating outcomes are not stated as established facts.
