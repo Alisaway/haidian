@@ -75,10 +75,10 @@ Supporting submissions:
 ### Coordinated Research Area (43.6 km²)
 Bounded by North 5th Ring Road to the north, Jingzang Expressway to the east, Xizhimenwai Street to the south, and Wanquan River Road to the west [data:geometry/site_boundary.geojson#SITE-BOUNDARY-001]. Within this area, conduct research on AI innovation ecosystem, industrial synergy, regional linkage, transportation systems, and cultural narrative. Establish a "One Belt · Three Zones · Two Wings" macro-cognitive framework.
 
-**Key Focus**: Identify spatial relationships between Haidian's 10+ universities (Peking University, Tsinghua University, Beihang University, BUPT, etc.) and AI industry (Zhongguancun Software Park, Hou Chang Chun, BAAI). Analyze young talent patterns (Haidian IT sector: 535,193 employees, R&D sector: 199,970 [source:HAIDIAN-YEARBOOK-2021-2024]; ~350,000 university students from Beijing education statistics, Haidian hosts 10+ universities). Propose regional-level public space and innovation service networks.
+**Key Focus**: Identify spatial relationships between Haidian's 10+ universities (Peking University, Tsinghua University, Beihang University, BUPT, etc.) and AI industry (Zhongguancun Software Park, Hou Chang Chun, BAAI). Analyze young talent patterns (Haidian IT sector: 535,193 employees, R&D sector: 199,970 [source:HAIDIAN-YEARBOOK-2021-2024]; ~350,000 university students (conceptual inference based on Beijing education statistics and Haidian university distribution, not a project-scope measured value)). Propose regional-level public space and innovation service networks.
 
 ### Overall Design Area (~11.4 km²)
-A 1–2 km zone around the Jingzhang Heritage Park as the planning and design scope [data:geometry/site_boundary.geojson#SITE-BOUNDARY-001]. Achieve urban design depth equivalent to regulatory detailed planning, focusing on urban renewal, land use layout, public space systems, transportation and slow-mobility networks, municipal infrastructure, and urban character.
+A 1–2 km zone around the Jingzhang Heritage Park as the planning and design scope [data:geometry/site_boundary.geojson#SITE-BOUNDARY-001]. Work at a conceptual urban design depth, focusing on urban renewal, land use layout, public space systems, transportation and slow-mobility networks, municipal infrastructure, and urban character; this depth does not constitute a regulatory detailed planning conclusion [standard:AGENT-SUBMISSION-DISCLAIMER].
 
 **Core Strategy**: "One Corridor Connecting Three Districts" — the Jingzhang Railway Heritage Park serves as an 8 km public space spine, connecting the northern Zhongzhiyuan Acceleration Area, the central AI Origin Community, and the southern Dazhongsi Industry Cluster.
 
@@ -391,9 +391,9 @@ Conceptual land use layout based on ~11.4 km² overall design area [data:geometr
 - Total Building Scale: ~5.3 million m² (conceptual estimate)
 
 **Development Intensity** (directional concept [metric:far_average]):
-- Average FAR: Pending official regulatory planning data (conceptual direction ~2.0, marked as unknown in metrics.json)
-- Building Coverage: Pending existing building data (conceptual direction ~28%)
-- Building Height Zones: Low-rise zone (park edges ≤15m), mid/high-rise zone (peripheral parcels ≤60m)
+- Average FAR: Pending official regulatory planning data (conceptual indicative value ~2.0, not a statutory control, marked as unknown in metrics.json)
+- Building Coverage: Pending existing building data (conceptual indicative value ~28%, not a statutory control)
+- Building Height Zones: Low-rise zone (park edges ≤15m), mid/high-rise zone (peripheral parcels ≤60m) — conceptual indicative directions, not approval height metrics
 
 > Note: The above are directional concepts and do not constitute statutory planning metrics; FAR and coverage are marked as unknown in metrics.json [standard:AGENT-SUBMISSION-DISCLAIMER].
 
@@ -417,8 +417,8 @@ Conceptual land use layout based on ~11.4 km² overall design area [data:geometr
 **Energy Context and Green Strategy** [source:HAIDIAN-ENERGY-2024]:
 
 Haidian District's 2024 energy consumption was 7.555 million tce, GDP energy intensity 0.0585 tce per ¥10,000 GDP (cumulative 25.2% decline over four years), electricity consumption 185.3 billion kWh (14.5% growth over four years) [metric:haidian_energy_tce]. The data indicates Haidian is in a green transition pathway of "stabilizing total with slight decline, accelerating electrification, rapid efficiency improvement." The high energy demands of AI computing will present new challenges for the regional power grid — this is precisely the empirical basis for incorporating distributed solar, edge computing, and smart microgrids into the new infrastructure of this proposal:
-- AI computing center PUE target ≤1.2 (referencing Beijing data center energy efficiency requirements)
-- Distributed PV covering park streetlights, bus stop canopies, building rooftops; estimated annual generation ~5 million kWh (conceptual estimate) [metric:haidian_electricity_kwh]
+- AI computing center PUE target ≤1.2 (conceptual target referencing Beijing data center energy efficiency requirements, pending professional calculation, not a current commitment)
+- Distributed PV covering park streetlights, bus stop canopies, building rooftops; ~5 million kWh annual generation is a conceptual estimate pending energy professional calculation [metric:haidian_electricity_kwh]
 - Edge computing nodes locally consume PV power, reducing backbone network transmission losses
 
 ## Blue-Green Space, Public Space, and Urban Character
@@ -605,7 +605,7 @@ The table below specifies data governance essentials per scenario. All scenarios
 | 5 | AI-Generated Text (Claude/Kimi) | COMMUNITY-DISPLAY-ONLY | ✓ |
 | 6 | Haidian Statistical Yearbook / Energy Reports | Government public data | ✓ |
 | 7 | A3/A0 PDF | Programmatically generated, fonts embedded | ✓ |
-| 8 | Logo Trademark Search | Not applicable at conceptual stage | Pending |
+| 8 | Logo Trademark Search | Currently used only for competition concept display, not for commercial/long-term public use; if converted to commercial or long-term identity, a trademark similarity search and ownership confirmation must be completed first | Restriction declared |
 
 ## Appendix C: Metric Reproduction Method
 
