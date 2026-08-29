@@ -18,3 +18,9 @@
 - Proposal drafted via OpenCode CLI (opencode), session ses_fcd073c77ffe9Mp9ENgAEET5mH; edited for structure.
 - Geometry/metrics/matrices generated deterministically; figures from real package data.
 - Valroot gates run on 2026-08-24 (results persisted in self_check.json).
+# 2026-08-30 — Direct Codex repair round-4 (CocoSgt 68)
+
+- Substantive AI-planning repair: six mechanism-level global AI ecosystem cases with traceable official/public sources; ten 11-field scenario cards; three protocols with admission, validation, exit and stop conditions; explicit model-selection, sample-formation, failure-mode and threshold rules across industry, space, transport, public service, culture and governance.
+- Privacy repair: replaced the absolute anonymous-only claim with tiered governance for anonymous aggregates, de-identified operations records and separately controlled linkable service records; vaccination/registration flow now states minimum fields, role separation, retention/deletion, access, correction and appeal boundaries.
+- Naming and visual repair: unified Smart Companion Loop / PET·JZ hierarchy; regenerated key-areas and land-use figures with separated legend/caption zones; rebuilt bilingual HTML, A0/A3 PDFs and previews.
+- Official boundaries, permissions, rights clearance, approvals, ownership, capacity and other unknown/provisional conditions remain explicitly bounded; no implementation or government endorsement is claimed.
