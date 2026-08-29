@@ -168,6 +168,14 @@ code {
 .chapter-index ol { columns: 2; column-gap: 34px; margin: 0; padding-left: 22px; }
 .chapter-index li { break-inside: avoid; margin: 0 0 7px; }
 .chapter-index a { color: #315f87; text-underline-offset: 3px; }
+.mobile-table-note {
+  display: none;
+  margin: -18px 0 28px;
+  padding: 10px 12px;
+  border-left: 4px solid var(--accent);
+  color: var(--muted);
+  background: #f7fafc;
+}
 h2[id] { scroll-margin-top: 18px; }
 @media (max-width: 720px) {
   main { padding: 26px 16px 52px; }
@@ -175,6 +183,7 @@ h2[id] { scroll-margin-top: 18px; }
   h2 { font-size: 21px; }
   .review-toolbar a { flex: 1 1 100%; }
   .chapter-index ol { columns: 1; }
+  .mobile-table-note { display: block; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
@@ -187,6 +196,7 @@ h2[id] { scroll-margin-top: 18px; }
   .proposal-figure, table { break-inside: avoid; }
   .skip-link { display: none; }
   .chapter-index { break-inside: avoid; }
+  .mobile-table-note { display: none; }
 }
 </style>
 </head>
@@ -199,6 +209,7 @@ h2[id] { scroll-margin-top: 18px; }
 <nav class="review-toolbar" aria-label="完整审阅包快捷入口"><a href="../visual/index.html">返回方案体验台</a><a href="../drawings/a3-booklet.pdf">打开 A3 文册</a><a href="../drawings/a0-boards.pdf">打开 A0 展板</a><a href="../visual/index.html#handoff">进入专业交接</a><a href="proposal.en.html" lang="en">Read in English</a></nav>
 </section>
 <nav class="chapter-index" aria-label="报告章节目录"><strong>章节目录 · 15 个稳定落点</strong><ol><li><a href="#chapter-ruling">方案总纲</a></li><li><a href="#chapter-spatial-decision">一次空间裁决</a></li><li><a href="#chapter-basis">设计依据与资料</a></li><li><a href="#chapter-scope-framework">三层范围框架</a></li><li><a href="#chapter-research">统筹研究范围</a></li><li><a href="#chapter-overall-design">总体设计范围</a></li><li><a href="#chapter-key-areas">重点区域详细设计</a></li><li><a href="#chapter-ai-ecosystem">AI 生态、人才与场景</a></li><li><a href="#chapter-land-use">用地、规模与拆改留</a></li><li><a href="#chapter-infrastructure">交通、市政与公服</a></li><li><a href="#chapter-blue-green">蓝绿、公共空间与风貌</a></li><li><a href="#chapter-implementation">项目、政策与分期</a></li><li><a href="#chapter-metrics">指标、复算与合规</a></li><li><a href="#chapter-risk">风险、版权与合规</a></li><li><a href="#chapter-references">参考资料</a></li></ol></nav>
+<p class="mobile-table-note" role="note"><strong>小屏阅读提示：</strong>数据表保留全部列；请在表格内部横向滚动，页面其他部分保持纵向阅读。</p>
 <h2 id="chapter-ruling">方案总纲</h2>
 <ul>
 <li>英文名称：TWIN-TRACK JING-ZHANG</li>
