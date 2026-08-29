@@ -169,7 +169,7 @@ function main() {
   }
 
   const unknownOk = UNKNOWN_METRICS.every((m) => metrics[m].status === "unknown" && metrics[m].value == null);
-  if (!unknownOk) failures.push("floor_area_ratio / building_height_control 应保持 unknown（官方控规未发布）");
+  if (!unknownOk) failures.push("floor_area_ratio / building_height_control 应保持 unknown（地块级图则数值未发布：v3.0 已登记控规公开版街区层面基准，地块级容积率/高度需读图获取）");
 
   // ---------------- 第 13 项：运维资金缺口表算术一致性（om-funding-gap.json，v2.9） ----------------
   // 校验：① 逐子项「量纲 × 占比假设 × 单价区间」复算；② 科目小计 = 子项和；③ 储备科目 = 已量化科目合计 × 储备率；
@@ -301,7 +301,7 @@ function main() {
     all_pass: allPass,
     failures,
     results: rows,
-    note: "一键复算证据：全部 known 状态指标由包内 GeoJSON 在 EPSG:4548（CGCS2000 / 3-degree Gauss-Kruger CM 117E，脚本内联投影实现）下独立复算并与 metrics.json 对账；floor_area_ratio 与 building_height_control 因官方控规未发布保持 unknown，不以推测值冒充。复算口径与仓库评审脚本一致（EPSG:4326→4548 投影面积/长度）。第 13 项（v2.9）：om-funding-gap.json 运维资金缺口表全量算术一致性——子项乘积、科目小计、储备比例、总计、缺口恒等式、占位纪律与单价来源登记逐项机检。",
+    note: "一键复算证据：全部 known 状态指标由包内 GeoJSON 在 EPSG:4548（CGCS2000 / 3-degree Gauss-Kruger CM 117E，脚本内联投影实现）下独立复算并与 metrics.json 对账；floor_area_ratio 与 building_height_control 保持 unknown——v3.0 已登记 HD00-1601 等街区控规公开版街区层面基准强度/高度分区（statutory-reconciliation.json），地块级图则数值需读图获取，本包不以推测值冒充。复算口径与仓库评审脚本一致（EPSG:4326→4548 投影面积/长度）。第 13 项（v2.9）：om-funding-gap.json 运维资金缺口表全量算术一致性——子项乘积、科目小计、储备比例、总计、缺口恒等式、占位纪律与单价来源登记逐项机检。",
   };
   fs.writeFileSync(
     path.join(__dirname, "recompute-evidence.json"),
@@ -318,7 +318,7 @@ function main() {
       `  [${r.result}] ${r.metric.padEnd(40)} 复算 ${r.recomputed.toLocaleString("en-US", { minimumFractionDigits: 3 })}` +
       `  声明 ${r.claimed.toLocaleString("en-US", { minimumFractionDigits: 3 })}  偏差 ${r.abs_diff}（${r.tolerance}）`);
   }
-  console.log("  [INFO] floor_area_ratio / building_height_control 保持 unknown（官方控规未发布）");
+  console.log("  [INFO] floor_area_ratio / building_height_control 保持 unknown（地块级图则数值未发布；v3.0 已登记控规公开版街区层面基准）");
   console.log("-".repeat(78));
   console.log(`  第 13 项：运维资金缺口表（om-funding-gap.json，${omRows.length} 项机检 ${omAllPass ? "全部 PASS" : "存在 FAIL"}）`);
   for (const r of omRows) {
