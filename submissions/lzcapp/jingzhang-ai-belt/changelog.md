@@ -4,6 +4,20 @@
 
 > Note: this file was **created retrospectively** on 2026-08-29. Iterations v0.1–v0.5 were documented in their Pull Request descriptions and commit messages rather than in an in-package changelog. To align with repository convention (SKILL.md requires updating the proposal, `changelog.md`, assumptions and evidence records together), the history is reconstructed from verifiable PR records, and this file will be kept in sync with every subsequent change.
 
+## v1.4 - 2026-08-29
+
+**字体改为 data URI 内嵌 / Embed font as a data URI**
+
+- 起因：v1.3 将子集字体置于 `assets/fonts/`，CI 报错 `assets must use one of .gif, .jpeg, .jpg, .png, .svg, .webp` —— **`assets/` 目录树仅允许图片扩展名**，任何位置放字体文件都会被拒（此前置于 `assets/media/` 亦因同类白名单被拒）。
+- 处理：删除 `assets/fonts/` 下的两个文件，改将 169 KB 子集字体以 **base64 data URI 直接内嵌**进 4 个 HTML 的 `@font-face`，不再依赖任何字体文件与路径，彻底规避目录/扩展名白名单。
+- OFL 合规：SIL Open Font License 1.1 要求的版权与许可声明以 HTML 注释形式随内嵌字体保留，并在本条记录中载明。
+- 影响：4 个 HTML 体积各增加约 231 KB（base64），渲染效果与依赖外部字体文件时一致，中文不再依赖系统字体。
+
+- Cause: v1.3 placed the subset font under `assets/fonts/`, and CI rejected it with `assets must use one of .gif, .jpeg, .jpg, .png, .svg, .webp` — the **`assets/` tree permits image extensions only**, so a font file is rejected wherever it is placed (the earlier `assets/media/` attempt failed against the same allowlist).
+- Fix: removed the two files under `assets/fonts/` and instead **inlined the 169 KB subset font as a base64 data URI** directly in the `@font-face` rule of the four HTML files. No font file or path is required any more, fully avoiding the directory/extension allowlist.
+- OFL compliance: the copyright and licence notice required by the SIL Open Font License 1.1 is retained as an HTML comment alongside the embedded font and is restated in this entry.
+- Impact: each of the four HTML files grows by about 231 KB (base64); rendering is identical to the external-file approach and Chinese text no longer depends on system fonts.
+
 ## v1.3 - 2026-08-29
 
 **图件重制与字体嵌入 / Figure regeneration and font embedding**
