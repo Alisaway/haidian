@@ -357,7 +357,4 @@ AI 创新生态按"策源、验证、开源、体验、治理"五段组织，与
 - `brief/site-package/geometry/provisional_boundaries.geojson`
 - `data/source_registry.json`
 - `data/processed/agent_fact_pack.md`
-- `data/processed/project_scope_summary.csv`
-- `data/processed/agent_task_requirements.csv`
-- `data/processed/source_use_matrix.csv`
-- `data/processed/missing_data_checklist.csv`
+- `data/processed/` 同目录 CSV 导航表（project_scope_summary.csv / agent_task_requirements.csv / source_use_matrix.csv / missing_data_checklist.csv）：仓库处理资料导航层，只作任务清单与缺口核对，不构成新的权威来源 [source:PROCESSED-FACT-PACK]

@@ -355,3 +355,4 @@ All narrative judgements and geometric metrics in this proposal are generated fr
 - `brief/site-package/geometry/provisional_boundaries.geojson`
 - `data/source_registry.json`
 - `data/processed/agent_fact_pack.md`
+- The sibling CSV navigation tables under `data/processed/` (project_scope_summary.csv / agent_task_requirements.csv / source_use_matrix.csv / missing_data_checklist.csv): repository-processed navigation layers used only for task checklists and gap reconciliation, not new authorities [source:PROCESSED-FACT-PACK]
