@@ -30,10 +30,10 @@
 
 ## v1.3 - 2026-08-28 (CONTENT-DEPTH REPAIR ROUND-2, per CocoSgt review 2026-08-26)
 
-- **可实施性章节重写（CONTENT REWRITE，不是形式修补）**：把"试点要素×三阶段"的一张总表扩为「试点区域与参与主体」「分期每阶段任务/牵头/协作/准入/阶段门/停止条件/退出回滚」「牵头+协作 RACI 概念版」「场景开放与招引转化机制」「年度活动体系」「退出与回滚通用原则」六小节；试点区域显式锚定 geometry/key_areas.geojson（KEY-ZHON 与 KEY-BEIJ 连线两侧各延伸约 250 米、沿绿带中段约 1 公里概念区间）；八类参与主体（政府/企业/高校/居民与社区/运营团队/志愿者/商户/专业团队）按牵头—主协作—咨询—知会四角色登记；新增两个原创机制名「指标共治·JZ 公约」「指标开放积分制·JZ」。
+- **可实施性章节重写（CONTENT REWRITE，不是形式修补）**：把"试点要素×三阶段"的一张总表扩为「试点区域与参与主体」「分期每阶段任务/牵头/协作/准入/阶段门/停止条件/退出回滚」「牵头+协作 RACI 概念版」「场景开放与招引转化机制」「年度活动体系」「退出与回滚通用原则」六小节；试点区域显式锚定 geometry/key_areas.geojson（KEY-ZHON 与 KEY-BEIJ 连线两侧各延伸约 250 米、沿绿带中段约 1 公里概念区间）；八类参与主体（政府/企业/高校/居民与社区/运营团队/志愿者/商户/专业团队）按牵头—主协作—咨询—知会四角色登记；新增两个原创机制名「机制 M1：指标共治公约」「机制 M2：指标开放积分制」。
 - **指标体系章节重写**：把面积与比例的精度政策与"绿地与开敞空间用地 27.3% vs green_ratio 11.0% vs public_space_ratio 0.3%"的"分子收窄"关系做成正式交叉表（同一分母、三类分子、互不替代、不可相加比较），明确中英文 narrative、metrics.json、figures、HTML 四处一致：narrative 与 HTML 一律降精度、metrics.json 保留机器值契约、figures 坐标标签与 narrative 同精度；列出四种复算触发情形（官方边界发布、控规条件发布、主管口径数据发布、概念字典版本变更）。
 - **三区两翼 vs 五地协同网显式区分**：用 bullet 列出带内/带外两层（带内「三区两翼」= 任务书文本中的专有称谓与协同结构，不代表法定规划、官方红线或已批准控制；带外「五地协同网」= 本包自拟概念名、内部工作代号、仅作概念级关系性研判），中英文同步；明确"两类协同对象不互替、不重划"。
-- **品牌在先权利与版权台账**：「品牌在先权利与使用边界」节列出全部原创概念名（「指标智环」「METRIC·JZ」「指标枢」「监测驿」「公示亭」「指标共治·JZ 公约」「指标开放积分制·JZ」「百年轨枕·数据刻度」）并明确在先权利检索未完成前一律按内部工作代号处理；「版权与资产台账」按 8 类资产（字体/图像与图表/地图与几何/数据/案例材料/品牌与视觉/代码与库/生成图形）逐项登记来源、许可、复用边界；sources.json 追加 ASSET-BRAND-METRIC-JZ-CONCEPT、ASSET-FIGURE-CONCEPT-SET、ASSET-GEOMETRY-PROVISIONAL 三条登记。
+- **品牌在先权利与版权台账**：「品牌在先权利与使用边界」节列出全部原创概念名（「PACKAGE-3886」「PACKAGE-3886」「节点 A」「节点 B」「节点 C」「机制 M1：指标共治公约」「机制 M2：指标开放积分制」「机制 M3：数据刻度」）并明确在先权利检索未完成前一律按内部工作代号处理；「版权与资产台账」按 8 类资产（字体/图像与图表/地图与几何/数据/案例材料/品牌与视觉/代码与库/生成图形）逐项登记来源、许可、复用边界；sources.json 追加 ASSET-PACKAGE-MARKER-3886、ASSET-FIGURE-CONCEPT-SET、ASSET-GEOMETRY-PROVISIONAL 三条登记。
 - **visual/index.html 与 index.en.html 同步**：新增「用地分类与核心指标口径交叉表」与「更新项目与分期」两个 sheet，中英文版对照 metrics.json 与 proposal.md 同步降精度展示；data-value 属性仍为 metrics.json 机器值契约；HTML 不出现六位小数。
 - **figure QC 工件**：自检 self_check.json[figure_qc] 已用 gen_figure_qc.py 重写（ok=true, ink_ok=true, clip_clear=true, overlap_clear=not_verified，逐图 ink 0.11-0.34 全部≥0.06 阈值、edge_clip=0.0），summary 明示机器检查边界。
 - **中英文双语一致性**：proposal.en.md 与 proposal.md 同步重写同一六处（区域协同、可实施性、指标体系、品牌在先权利、版权台账、口径交叉表）；manifest 哈希刷新；figures 与 metrics.json 数值未变。
@@ -61,7 +61,7 @@
 
 - **中英配对 (v2 合同)**：proposal.en.md 改为全文实质翻译（front matter language=en、translation_of=proposal.md；zh 正文声明 bilingual_contract_version=1、translation_file=proposal.en.md）；补齐 6 张 *.en.png 图件、a0-boards.en.pdf、a3-booklet.en.pdf、report/proposal.en.html、visual/index.en.html，manifest 逐项登记 language/translation_of。
 - **字体**：四个 HTML 面（zh/en proposal + visual index）均内嵌 Noto Sans SC woff 子集（OFL），en 页面残留功能性中文为 0。
-- **agent.1–6 实质成果**：品牌与视觉识别节（「METRIC·JZ」视觉系统+logo-metric-jz.png，按内部工作代号处理）；6 个有来源国际案例表（全球案例5–8要求）+AI创新生态图谱图；10 张AI+场景卡+3 个产业验证测试场景（与 metrics 计数一致）；三节点地标目录+荣誉展示区+可逆组件库；文化/导视/国际传播系统；年度活动品牌+开发者社区+场景开放与招引转化机制。
+- **agent.1–6 实质成果**：品牌与视觉识别节（「PACKAGE-3886」视觉系统+package-marker-3886.png，按内部工作代号处理）；6 个有来源国际案例表（全球案例5–8要求）+AI创新生态图谱图；10 张AI+场景卡+3 个产业验证测试场景（与 metrics 计数一致）；三节点地标目录+荣誉展示区+可逆组件库；文化/导视/国际传播系统；年度活动品牌+开发者社区+场景开放与招引转化机制。
 - **空间与指标表达**：图件重做（figsize~12x8@150dpi，标题≥18pt、图例/标注≥13pt、constrained_layout、无裁剪）；所有空间图含图例/比例尺/指北针/双语 PROVISIONAL 戳（临时概念边界、非官方红线、官方数据发布后复算）；节点—三区两翼映射写入正文与图注；比率与数量分轴成图（metrics-evidence）；用地百分比给出公式与单一聚合口径（本包 provisional 边界为分母，官方数据发布后按同一公式复算）。
 - **分期深化**：试点计划表含责任类型与协作方、前置条件、数据字典与维护要求、资源区间（定性）、KPI 与决策门、退出/回滚与年度复算流程；「牵头+协作」RACI 概念版；明确不构成已获批准的政府安排。
 - **公众反馈AI数据治理**：自由文本先脱敏、最小收集、聚合阈值、日志与权限分级、保存删除流程、错误更正与申诉通道、事件响应预案、公开反馈闭环（受理—处理—回复—公示）。
