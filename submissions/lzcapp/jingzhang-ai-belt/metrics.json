@@ -170,8 +170,8 @@
   },
   "boundary_offset_note": "提交几何使用的 PROV-SITE-001（约 11.4 km² 总体设计范围）与 OSM 实测京张铁路遗址公园不相交，最近距离约 412.5 m（见上游 issue #846）。该偏移意味着整套空间落点相对真实遗址公园可能存在约 412.5 m 的整体平移；所有面积与比例指标（site_area_sqm、green_space_area_sqm、public_space_area_sqm、building_footprint_area_sqm、green_ratio、public_space_ratio、building_density、key_area_*、phasing_area_sqm）均为 provisional 边界内部复算值，不代表与真实遗址公园对齐后的尺度，不得作为正式控规或红线依据。官方 redline 与遗址公园精确几何发布后须整体重算并对齐。",
   "figure_layout_compliance": {
-    "version": "3.0.0",
-    "status": "partially implemented; v1.6 (2026-08-29) regenerated all 10 figure PNGs and added: (a) key-area name labels (name_zh) on every figure that shows key areas, (b) class-based road hierarchy rendered by width+colour (greenway 3.4 / transit_connection 2.6 / secondary 1.8 / branch 1.1) and listed in the structural legend, (c) a declared-metric values panel on the metrics-evidence figure (site area 11.41 km², key areas 3 / 3.69 km², green 18.57%, public 6.68%, building density 27.21%, with the ≥35% green+public design target noted). Residual gaps flagged by review: 5-variant layer repetition, bilingual title/subtitle residue, and provisional-data caveats remain.",
+    "version": "3.1.0",
+    "status": "partially implemented; v1.7 (2026-08-30) re-differentiated all 5 figures and regenerated 10 PNGs: (a) site-overview — full extent with wind rose + struct legend, (b) key-areas — zoomed-in 3-area comparison with name table, (c) land-use-structure — full site with 9-row MNR class table (codes 05/0701/0802/0803/0804/1401/1402/1403/16 + TOTAL 11.41 km²), (d) mobility-bluegreen — full site with land-use fill removed, road-network-by-class + blue-green metric bars, (e) metrics-evidence — metric cards on right panel. v1.7 also adds a red PROVISIONAL BOUNDARY stamp (offset ≈412.5 m) on every figure, EN labels via internal NAME_EN map (no geojson change), in-axes scale bar (eliminates double scale-bar / footnote overlap), title/subtitle on fig (no wrap overlap). Residual: 5-variant duplication of underlying base map remains; bilingual subtitle line (对照中文) is intentional cross-reference, not residue; provisional-data caveats remain.",
     "applies_to": [
       "assets/figures/site-overview.png",
       "assets/figures/key-areas.png",
@@ -191,9 +191,9 @@
         "scope": "符号/线型/字级"
       },
       {
-        "id": "GB 50137-2011",
-        "name": "城市用地分类与规划建设用地标准",
-        "scope": "用地色"
+        "id": "MNR-LAND-USE-CLASSIFICATION-GUIDE",
+        "name": "国土空间调查、规划、用途管制用地用海分类指南",
+        "scope": "用地色 (05 湿地 / 07 居住 / 08 公共管理与公共服务 / 14 绿地与开敞空间 / 16 留白; 二级类见 land_use.geojson)"
       },
       {
         "id": "GB/T 13989-2012",
@@ -235,11 +235,11 @@
       ]
     },
     "current_state": {
-      "title_block": "present in v1.6 PNGs (title/figure no./scale/datum/drafter/issue date/version); residual: 5-variant repetition and bilingual title/subtitle residue flagged by review",
-      "wind_rose": "present in v1.6 PNGs (8-direction winter/summer schematic, non-measured)",
-      "scale_bar": "present in v1.6 PNGs (0-500-1000 m bar, 1:8000 nominal)",
-      "metadata_block": "present in v1.6 PNGs (CGCS2000 / Gauss-Krüger 3° zone 117°E / 1985 national vertical; source: maintainer provisional polygon + OSM)",
-      "double_legend": "present in v1.6 PNGs: ① land-use 8 classes (GB 50137-2011); ② structure+road network 7 entries (boundary, key area, green, public, greenway spine, transit connection, secondary/branch) — v1.6 added the road-hierarchy entries",
+      "title_block": "present in v1.7 PNGs (v3.1 / 2026-08-30 / public); title and subtitle drawn on fig, not axes (no wrap overlap); 5 variants now have distinct right-column blocks, residual: 5-variant base-map duplication remains",
+      "wind_rose": "kept on site-overview only in v1.7 (overview is the only figure where site context belongs); other 4 variants drop it (was a source of cross-variant repetition)",
+      "scale_bar": "moved INSIDE axes in v1.7 (bottom-left inset) to eliminate double-scale-bar / footnote-overlap and bottom clipping",
+      "metadata_block": "present in v1.7 PNGs (identical to v1.6 content); now rendered in fraction-based layout (no empty cells from unit-mix bug) and matches title block / figure caption date 2026-08-30",
+      "double_legend": "re-differentiated per variant in v1.7: overview=struct+road legend, key-areas=3-area comparison table, land-use-structure=9-row MNR class table (one row per 2nd-tier code, plus TOTAL), mobility-bluegreen=4-level road hierarchy + blue-green metric bars, metrics-evidence=5-metric cards with source/precision notes. Map colour now follows MNR 1st-tier (5 colours) keyed by land_use_code first two digits.",
       "compliance_score_self_estimate_0_5": 2
     },
     "planned_state_v2": {

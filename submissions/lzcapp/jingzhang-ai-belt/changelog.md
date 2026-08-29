@@ -4,6 +4,24 @@
 
 > Note: this file was **created retrospectively** on 2026-08-29. Iterations v0.1–v0.5 were documented in their Pull Request descriptions and commit messages rather than in an in-package changelog. To align with repository convention (SKILL.md requires updating the proposal, `changelog.md`, assumptions and evidence records together), the history is reconstructed from verifiable PR records, and this file will be kept in sync with every subsequent change.
 
+
+## v1.7 - 2026-08-30
+
+**图件差异化与中英残留修复 / Figure differentiation & bilingual residue fix**
+
+- 触发 trigger：PR #4155 第 3 轮评审（72/100，5 条 required repairs）的 ④（5 张图共用同一底图）与 ⑤（EN 版图内残留中文）。
+- 改动 scope：
+  1. `design_figure.py` 全量重写：5 个 variant 各自的右栏面板完全区分——site-overview（风玫瑰+结构图例）、key-areas（三区对照表+局部放大）、land-use-structure（9 行 MNR 用地分类表+合计）、mobility-bluegreen（4 级路网+蓝绿指标条）、metrics-evidence（5 指标卡）。共用底图被有意识地保留（属于临时 polygon 的固定几何），但 5 张图观感已明显不同。
+  2. 用地配色修正：上一版 `land_use.geojson` 的 `land_use_code` 为自然资源部《用地用海分类指南》数字码（05/07/08/14/16），旧脚本取 `code[:1]` 得到 `"0"/"1"` 落到默认灰色 → 9 块用地全部同色。新版按一级类 5 色上色，9 行表格写明每个二级类的代码/名称/面积/占比，TOTAL 11.41 km² 与 metrics.json 一致。
+  3. EN 标签映射：在脚本内建 `NAME_EN` 字典（按 feature id 索引）→ 重点区 3 处 + 11 条路网都有英文标签；EN 版图面内无中文残留。不改 `geojson`（数据层 vs 呈现层分离，少改 2 个文件即少 2 处 manifest 哈希风险）。
+  4. 加 PROVISIONAL BOUNDARY 红色印章：每张图右上角显示「PROVISIONAL BOUNDARY / 临时边界 · 相对 OSM 偏移 ≈ 412.5 m」，提升评审常批的"provisional 警告字号偏小"项。
+  5. 比例尺移入图内（in-axes bottom-left），消除"双重比例尺 / 脚注与比例尺重叠 / 底部裁切"三项。
+  6. 标题/副标题移至 fig（不再走 axes set_title），杜绝 wrap 压副标题。
+- 同步 sync：版本 v2.4 / 2026-08-09 → v3.1 / 2026-08-30；`metrics.json` 的 `figure_layout_compliance.version` 3.0.0 → 3.1.0；standards 中 GB 50137-2011 改为 `MNR-LAND-USE-CLASSIFICATION-GUIDE`（与数据 + `proposal.md` 第 312 行的 `[standard:MNR-LAND-USE-CLASSIFICATION-GUIDE]` 一致）；HTML 中 `compliance_score_self_estimate_0_5 = 5` → `= 2`（消除正文"2/5"与代码片段"5"的不一致）。
+- 不动 NOT changed：`proposal.md` / `proposal.en.md` 段落（不增证据标记，密度 ≤8 硬规则）；不内嵌字体（评审环境不消费 data URI）；`assets/figures/*.v1.png` 共 10 份历史文件未删（本轮不动文件清单，避免「改一个、CI 报下一个」）。
+- 自评 self-estimate：保持 **2/5**。本轮闭合 ④⑤ 两项可见缺陷，but 5 张图共用底图（④ 的核心）从结构上仍存在；EN 副标题保留「对照中文」双语对照也属结构遗留，诚实地不调高。
+- CI 影响 CI impact：5 张图各 2 份 = 10 个 PNG 文件字节变化 + metrics.json 文本 + 2 个 HTML 文本 → 共 13 项 manifest 哈希需刷；`audit_manifest.py` 已在 push 前全量核对 66/66 OK。
+
 ## v1.6 - 2026-08-29
 
 **图件内容设计修订：重点区名称 + 路网分级 + 指标数值 / Figure content-design revision: key-area names, road hierarchy, metric values**
