@@ -1,9 +1,22 @@
 # 方案迭代记录
 
+## v1.7 - 2026-08-29（针对 CocoSgt review 5057164571 的第七轮收口）
+
+- 新增中英文 `east-west-north-south` 关系图，把“东西缝合—南北贯通”落到中关村科技服务翼、小月河场景赋能翼、众智园、大钟寺与三节点证据闭环；大钟寺 DZ-01/DZ-02 卡与十项场景卡均保留 provisional 概念边界、人工门与退出条件。
+- 新增 `visual/assets/resource_story_directory.json` 与 `visual/assets/kpi_protocols.json`，分别登记京张—中关村—AI 新文化分级资源和活动/场景/阶段 KPI 审查协议；协议逐项含公式、建议区间、`unknown/to_verify` 基线、核验频率、证据、R/A 与失败动作。
+- 更新来源/权利台账、compliance/design-depth 矩阵和 manifest，补登记新增图件、结构化证据及 visual 构建来源；所有派生 PNG、HTML、视觉索引和 9 页中英文 PDF 重新生成并刷新 hash。
+
+## v1.6 - 2026-08-29（针对 CocoSgt review 5057164571 的第六轮修复）
+
+- agent.4「东西缝合—南北贯通」关系图与 DZ-01/DZ-02 大钟寺概念卡新增卡片级证据契约：输入回执、授权/脱敏、模型版本、人工决定、公示回执和停止/回滚记录；缺证即阻断试点声称。
+- 中英文三阶段与 AP-01—AP-04 协议改为明确分子/分母公式，保留建议区间、`unknown/to_verify` 基线、频率、证据、R/A 与失败动作；矩阵证据锚点改正，不再声称不存在的 `metrics.json.annual_programs` 对象。
+- 英文摘要与视觉索引同步四层隐私边界：反馈入口自由文本在预处理前可能含个人信息，模型仅接收脱敏/公开/合格聚合材料，公示须人工复核并抑制低样本。
+- agent.5 分级目录继续降级未核验京张史实，中关村仅保留有来源的语境性表述，AI 新文化明确为本包原创概念并映射三节点/空间类型；未新增虚构史实或现状基线。
+
 ## v1.5 - 2026-08-29 (Codex bounded content and rights repair)
 
 - Added the formal taskbook agent.1–agent.6 crosswalk before the body, explicitly separating the taskbook Three Areas & Two Wings from the package's out-of-belt Five-Region Coordination Network.
-- Added four bilingual annual-program operating cards with frequency, audience, node, RACI, resource prerequisites, bilingual touchpoints, privacy/accessibility boundary, KPI, stage gate and cancellation/exit; `metrics.json` now carries the same four records as its canonical `annual_programs` source.
+- Added four bilingual annual-program operating cards with frequency, audience, node, RACI, resource prerequisites, bilingual touchpoints, privacy/accessibility boundary, KPI, stage gate and cancellation/exit; `metrics.json` records the synchronized `annual_program_count`, while the bilingual proposal cards remain the human-readable field source.
 - Re-rendered both proposal HTML surfaces, six bilingual figures and four bilingual PDF boards/booklets from the current package. Visual labels remain reduced-precision and provisional; official geometry and operational responsibilities remain `to_verify`.
 - Replaced the stale font evidence with the verified Google Fonts Noto Sans SC 2.004 artifact URL, upstream metadata/commit, source SHA-256, raw OFL SHA-256 and final embedded WOFF hashes; Arial is explicitly a non-embedded viewer fallback. The full OFL text and font provenance are retained in `report/copyright_statement.md` section 6, which is the validator-allowed rights record.
 - Re-ran the formal four-gate self-check, strict manifest/JSON/schema validation, visual review and PDF/font readability checks after the final manifest refresh. These local results are not a CocoSgt approval; the 70/100 review remains the authoritative pending review.

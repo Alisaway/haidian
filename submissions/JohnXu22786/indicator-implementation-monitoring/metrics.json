@@ -4,57 +4,6 @@
     "length": "m",
     "area": "sqm"
   },
-  "display_precision_rule_zh": "人类可读界面统一降精度显示：比例保留一位小数、面积取整公顷或一位小数；本文件 value 字段为完整机器值，是唯一权威口径。",
-  "calibrations": {
-    "land_use_classification_shares": {
-      "caliber_zh": "用地分类聚合口径：geometry/land_use.geojson 分区按自然资源部用地用海分类指南代码归类，分母为本包 provisional 总体设计范围（site_area_sqm），与核心指标 ground/green/节点口径区分。",
-      "denominator": "site_area_sqm (11412825.386, provisional union in EPSG:4548)",
-      "groups": {
-        "public_admin_public_service": {
-          "classification_zh": "公共管理与公共服务用地",
-          "codes": ["0802 科研用地", "0803 文化用地"],
-          "area_sqm": 3897870.397,
-          "share": 0.341534,
-          "confidence": "low"
-        },
-        "commercial_business_services": {
-          "classification_zh": "商业服务业用地",
-          "codes": ["0901 商业用地", "0902 商务金融用地"],
-          "area_sqm": 3399709.767,
-          "share": 0.297788,
-          "confidence": "low"
-        },
-        "green_open_space_land": {
-          "classification_zh": "绿地与开敞空间用地（1401 公园绿地）",
-          "codes": ["1401 公园绿地"],
-          "area_sqm": 3116095.041,
-          "share": 0.273035,
-          "confidence": "low"
-        },
-        "residential": {
-          "classification_zh": "居住用地（0701 城镇住宅用地）",
-          "codes": ["0701 城镇住宅用地"],
-          "area_sqm": 999150.180,
-          "share": 0.087545,
-          "confidence": "low"
-        }
-      },
-      "note_zh": "四类合计 share=1.0；道路与交通设施用地未在概念分区中单列（慢行主轴为线状要素，见 geometry/roads.geojson）。"
-    },
-    "core_metric_calibers": {
-      "green_ratio": {
-        "caliber_zh": "实绿几何口径：green_space.geojson 绿地多边形并集（union）面积 / site_area_sqm；与用地分类口径（27.3035%）为分子口径不同，不互为替代。",
-        "numerator_source": "geometry/green_space.geojson (unary_union, EPSG:4548)",
-        "union_area_sqm": 1255908.493
-      },
-      "public_space_ratio": {
-        "caliber_zh": "节点公共空间口径：public_space.geojson 三节点与场景节点微场地面积 / site_area_sqm；仅覆盖节点级微场地。",
-        "numerator_source": "geometry/public_space.geojson (EPSG:4548)",
-        "micro_parcel_area_sqm": 36150.0
-      }
-    },
-    "cross_table_zh": "用地分类聚合口径 27.3%（名义分类，含分区内广场/铺装/慢行路径）— 实绿几何口径 green_ratio 11.0%（植被并集）— 节点公共空间口径 public_space_ratio 0.3%（节点微场地，降精度显示；机器值 0.003167）；三者分母相同、分子尺度依次收窄，不可相加比较；官方边界发布后按同一几何复算并同步中英文与图件。"
-  },
   "metrics": {
     "site_area_sqm": {
       "status": "known",
@@ -86,7 +35,7 @@
     },
     "public_space_area_sqm": {
       "status": "known",
-      "value": 36150.0,
+      "value": 36150,
       "unit": "sqm",
       "source_files": [
         "geometry/public_space.geojson"
@@ -99,7 +48,7 @@
     },
     "building_footprint_area_sqm": {
       "status": "known",
-      "value": 111600.0,
+      "value": 111600,
       "unit": "sqm",
       "source_files": [
         "geometry/buildings.geojson"
@@ -286,11 +235,5 @@
       "usage_limits_zh": "概念口径，仅用于本包展示与自检；不作为官方现状监测结果或法定规划结论。",
       "recompute_trigger_zh": "官方正式边界、控规条件或主管口径数据发布后按同一公式整体复算。"
     }
-  },
-  "annual_programs": [
-    {"activity_id":"AP-01","brand_zh":"年度指标开放日","brand_en":"Annual Indicator Open Day","frequency":"once_per_year_to_verify","target_users":["developers","universities","residents","enterprises","public"],"spatial_node":"Indicator Hub + Disclosure Pavilion + open-data display point; venue to_verify","raci_owner":"R operations; A competent authority/operator to_verify; C universities/professional team; I community/enterprise/public","resource_prerequisites":["confirmed dictionary to_verify","de-identification and aggregation chain to_verify","accessible signage","venue/fire/event permissions to_verify"],"bilingual_touchpoints":["Chinese/English caliber cards","captions/handbook","static offline page"],"privacy_accessibility_boundary":"Entry may receive voluntarily submitted booking/free text; raw input is minimum-authorized and de-identified before model access; public output is human-reviewed and low-sample-suppressed; retention/deletion details to_verify","kpi":["on-time caliber release to_verify","public-question closure to_verify","accessible-touchpoint coverage to_verify"],"stage_gate":"Human review complete and resources verified","cancellation_exit":"Cancel public display when any prerequisite is unverified; archive and return to preparation"},
-    {"activity_id":"AP-02","brand_zh":"年度实施进度通报会","brand_en":"Annual Implementation Progress Briefing","frequency":"once_per_year_to_verify","target_users":["community representatives","competent authority","operator","enterprises","universities","public"],"spatial_node":"Disclosure Pavilion or community deliberation space or online alternative; location to_verify","raci_owner":"R competent authority/operator to_verify; A professional team; C community/universities; I enterprises/residents/public","resource_prerequisites":["annual recomputation record","versioned dictionary","response ledger","translation/accessibility service to_verify"],"bilingual_touchpoints":["bilingual summary","Q&A record","version number"],"privacy_accessibility_boundary":"Entry may receive free text before de-identification; model sees only de-identified text/aggregates; public release is human-reviewed, neighborhood-level and low-sample-suppressed; permissions, deletion and appeal flow to_verify","kpi":["traceable progress records to_verify","timely replies to_verify","bilingual-summary release to_verify"],"stage_gate":"Recomputation and human review complete","cancellation_exit":"Defer when data or review is missing; publish no unverified conclusion"},
-    {"activity_id":"AP-03","brand_zh":"监测驿体验周","brand_en":"Monitoring Post Experience Week","frequency":"one_week_per_year_to_verify","target_users":["students","volunteers","residents","developers","operators"],"spatial_node":"Monitoring Post + study terrace + slow-traffic observation points; locations to_verify","raci_owner":"R operations; A park/venue manager to_verify; C universities/professional team; I community/visitors","resource_prerequisites":["equipment safety check","booking flow","volunteer training","weather/emergency plan","accessible route to_verify"],"bilingual_touchpoints":["bilingual task cards","station notes","on-site interpretation"],"privacy_accessibility_boundary":"No individual identification or trajectory profiling; any free text follows entry/preprocessing/model/public-aggregation separation, with low-sample suppression; non-device task and assistance option to_verify","kpi":["booking completion to_verify","equipment-fault closure to_verify","accessible participation feedback to_verify"],"stage_gate":"Safety and human staffing verified","cancellation_exit":"Stop and retrieve equipment when safety, weather or accessibility fails"},
-    {"activity_id":"AP-04","brand_zh":"指标方法国际交流会","brand_en":"International Indicator Methods Exchange","frequency":"once_per_year_to_verify","target_users":["researchers","developers","planning/data professionals","international observers"],"spatial_node":"Indicator Hub + online meeting + Pavilion bilingual display point; venue to_verify","raci_owner":"R university/professional team to_verify; A operator; C competent authority/developer alliance; I community/enterprise/public","resource_prerequisites":["rights-cleared case material to_verify","bilingual review","de-identified demo data","online platform/interpretation to_verify"],"bilingual_touchpoints":["bilingual method note","case comparison","captions/transcript","downloadable version"],"privacy_accessibility_boundary":"Public or licensed materials only; demos de-identified before aggregation; raw input excluded from model/publication; captions/transcript; license and retention details to_verify","kpi":["bilingual-equivalence review to_verify","public-response rate to_verify","source-ledger completeness to_verify"],"stage_gate":"Rights, facts and human content review pass","cancellation_exit":"Remove material or cancel session and state reason when permission or facts cannot be verified"}
-  ]
+  }
 }
