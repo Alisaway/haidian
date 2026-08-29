@@ -84,6 +84,30 @@ code {
 }
 .summary { color: var(--muted); font-size: 17px; }
 .translation-link a { color: var(--accent); font-weight: 700; }
+.review-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0 0;
+}
+.review-toolbar a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+  background: #fff;
+}
+.review-toolbar a:hover,
+.review-toolbar a:focus-visible {
+  border-color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 .proposal-table { margin: 20px 0 26px; overflow-x: auto; }
 .proposal-table table {
   border-collapse: collapse;
@@ -149,6 +173,7 @@ h2[id] { scroll-margin-top: 18px; }
   main { padding: 26px 16px 52px; }
   h1 { font-size: 26px; }
   h2 { font-size: 21px; }
+  .review-toolbar a { flex: 1 1 100%; }
   .chapter-index ol { columns: 1; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -171,7 +196,7 @@ h2[id] { scroll-margin-top: 18px; }
 <section class="hero">
 <h1>Twin-Track Jing-Zhang — Continuous Civic Track and Intermittent Verification Track</h1>
 <p class="summary">Haidian&#x27;s innovation density becomes public capability only when people can use, question and exit without accounts, devices or professional identity. Twin-Track Jing-Zhang keeps ordinary tasks continuous and G0 verification intermittent and stoppable; three distinct prototypes connect evidence, risk and professional handoff. Boundaries remain provisional; outcomes, approvals, field execution and accepted professional duties remain zero.</p>
-<p class="translation-link"><a href="proposal.html">阅读中文版本</a></p>
+<nav class="review-toolbar" aria-label="Complete review-pack shortcuts"><a href="../visual/index.en.html">Return to proposal workbench</a><a href="../drawings/a3-booklet.en.pdf">Open A3 booklet</a><a href="../drawings/a0-boards.en.pdf">Open A0 boards</a><a href="../visual/index.en.html#handoff">Open professional handoff</a><a href="proposal.html" lang="zh-Hans">阅读中文版本</a></nav>
 </section>
 <nav class="chapter-index" aria-label="Report chapter index"><strong>Chapter index · 15 stable destinations</strong><ol><li><a href="#chapter-ruling">Proposal ruling</a></li><li><a href="#chapter-spatial-decision">One spatial decision</a></li><li><a href="#chapter-basis">Design basis and sources</a></li><li><a href="#chapter-scope-framework">Three-level scope</a></li><li><a href="#chapter-research">Coordinated research</a></li><li><a href="#chapter-overall-design">Overall design</a></li><li><a href="#chapter-key-areas">Key-area design</a></li><li><a href="#chapter-ai-ecosystem">AI ecosystem and scenes</a></li><li><a href="#chapter-land-use">Land use and building scale</a></li><li><a href="#chapter-infrastructure">Transport and public services</a></li><li><a href="#chapter-blue-green">Blue-green and public space</a></li><li><a href="#chapter-implementation">Projects, policy and phasing</a></li><li><a href="#chapter-metrics">Metrics and compliance</a></li><li><a href="#chapter-risk">Risk, copyright and compliance</a></li><li><a href="#chapter-references">References</a></li></ol></nav>
 <h2 id="chapter-ruling">Proposal ruling</h2>

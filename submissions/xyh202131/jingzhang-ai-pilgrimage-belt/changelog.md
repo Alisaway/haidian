@@ -1,5 +1,19 @@
 # 方案迭代记录 / Changelog
 
+## v81.0 - 2026-08-30
+
+**图文报告审阅工具栏 / Illustrated-report Review Toolbar**
+
+- 已有能力：中英文体验台首屏已经提供完整审阅包入口，两份图文报告也具备双语切换、15 项章节索引、专业交接深链、离线 CJK、键盘与打印回退。
+- 真实缺口：修复前，从体验台进入长报告后，封面附近只有语言切换；返回对应体验台、打开同语言 A3/A0、进入专业交接都需要滚动查找正文链接或依赖浏览器后退，完整审阅包形成单向入口。
+- 必须冻结：proposal、visual 内容、图件、四份 PDF、9 个几何文件、`metrics.json`、12/8/3/36、G0/NO-GO、临时边界、现实结果 0、责任接受 0 与独立人工双语复核 0/8 均不变。
+- 本轮实施：在两份报告摘要后增加同构语义工具栏，一跳返回对应语言体验台、打开 A3、打开 A0、进入既有专业交接或切换语言；44px 目标、键盘焦点、移动端单列、减少动态、离线和打印规则同步成立。只闭合审阅导航，不新增主张、来源、资产或现实状态。
+
+- Existing capability: both workbench first views already expose the complete review pack, while both illustrated reports provide language switching, a 15-item chapter index, a professional-handoff deep link, package-local CJK, keyboard access and print fallback.
+- Real gap: after entering a long report from the workbench, the area near the cover previously offered only a language switch. Returning to the matching workbench, opening the same-language A3/A0 publications or entering professional handoff required finding links later in the report or relying on browser history, leaving the complete review pack as a one-way entry.
+- Must remain frozen: the proposals, visual content, figures, all four PDFs, nine geometry files, `metrics.json`, 12/8/3/36, G0/NO-GO, provisional boundaries, zero real outcomes, zero accepted duties and 0/8 independent human bilingual review are unchanged.
+- Implemented this round: added a matching semantic toolbar after each report summary, providing one-step routes back to the language-matched workbench, A3 booklet, A0 boards, existing professional handoff and the other language. The controls preserve 44px targets, keyboard focus, single-column mobile reflow, reduced motion, offline operation and print behaviour. This closes review navigation only and adds no claim, source, asset or real-world status.
+
 ## v80.0 - 2026-08-30
 
 **图文报告章节索引 / Illustrated-report Chapter Index**
