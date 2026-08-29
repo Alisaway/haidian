@@ -4,6 +4,26 @@
 
 > Note: this file was **created retrospectively** on 2026-08-29. Iterations v0.1–v0.5 were documented in their Pull Request descriptions and commit messages rather than in an in-package changelog. To align with repository convention (SKILL.md requires updating the proposal, `changelog.md`, assumptions and evidence records together), the history is reconstructed from verifiable PR records, and this file will be kept in sync with every subsequent change.
 
+## v1.2 - 2026-08-29
+
+**合规声明与可见成果对齐 / Aligning compliance claims with visible output**
+
+- 修复前（PR #4155 评审指出，风险与合规意识 3/5 的两项阻断）：
+  1. 正文与自检中的来源数量与状态未与 supplied `data/source_registry.json` 对齐，且未区分维护者登记来源与参与者自登记资料；
+  2. `metrics.json` 与中英文 HTML 声明「5 张 PNG 已全部按 14 条规范改造完成」并自评 **5/5**，而评审在可见图面中未看到所声称的图签、元数据块、风玫瑰与双图例 —— 声明与事实不符。
+- 修复 1（来源分栏）：在 `proposal.md` / `proposal.en.md` 的参考资料节新增「来源分栏与可用性边界」段，明确登记 35 条分两类：① 维护者登记来源 9 条 —— 正式可用 **7**、background_only **1**、provisional_only **1**，仅前 7 条可作正式依据，后两类不得升格；② 参与者自行登记的外部资料 26 条，逐条登记来源/用途/限制，**未进入维护者 registry、不具备正式可用性**，仅作背景支撑。
+- 修复 2（下调图面自评）：`metrics.json` 的 `figure_layout_compliance` —— `status` 改为 `declared_specification_only`，新增 `verification_status: declared_not_verified_in_rendered_output`，`current_state` 五项由 `present` 改为 `declared in spec; NOT verified in rendered output`，自评 `compliance_score_self_estimate_0_5` 由 **5 下调为 2**；`planned_state_v2` 保留 5/5 作为**待实现目标**（需重生成 5 张 PNG 使图面元数据可见后复核）。
+- 同步修正 `proposal.md`、`proposal.en.md`、`report/proposal.html`、`report/proposal.en.html` 中的对应表述（改为「自评已由 5/5 下调为 2/5」）。
+- 说明：本次按评审给出的低成本路径处理 —— **如实下调自评并标注未验证**，而非重生成图件；图件重生成与字体嵌入列为后续独立任务。
+
+- Before the change (two blocking items flagged under Risk & Compliance, 3/5, in the PR #4155 review):
+  1. Source counts and usability states in the narrative and self-check did not match the supplied `data/source_registry.json`, and maintainer-registered sources were not separated from participant-registered material;
+  2. `metrics.json` and both HTML outputs claimed "all 5 PNGs normalized to the 14-point spec" with a self-estimate of **5/5**, while the reviewer could not see the claimed title block, metadata block, wind rose or double legend in the rendered figures — a claim inconsistent with the visible output.
+- Fix 1 (source tiers): added a "Source tiers and usability boundary" section to `proposal.md` / `proposal.en.md`, splitting the 35 registered sources into two tiers: ① 9 maintainer-registered sources — **7** formally usable, **1** background_only, **1** provisional_only, with only the first 7 usable as formal basis and the latter two explicitly not upgradable; ② 26 participant-registered external entries, each with source/purpose/limitation, **not in the maintainer registry and carrying no formal usability**, used only as background support.
+- Fix 2 (lowered figure self-estimate): in `metrics.json`'s `figure_layout_compliance`, `status` became `declared_specification_only`, a new `verification_status: declared_not_verified_in_rendered_output` was added, the five `current_state` items changed from `present` to `declared in spec; NOT verified in rendered output`, and `compliance_score_self_estimate_0_5` was lowered from **5 to 2**; `planned_state_v2` retains 5/5 as a **target** (requiring regeneration of all 5 PNGs with visible figure metadata, then re-verification).
+- Corresponding wording in `proposal.md`, `proposal.en.md`, `report/proposal.html` and `report/proposal.en.html` was updated to state that the self-estimate has been lowered from 5/5 to 2/5.
+- Note: this follows the low-cost path offered by the review — **lowering the self-estimate and marking items unverified** rather than regenerating figures; figure regeneration and font embedding remain separate follow-up tasks.
+
 ## v1.1 - 2026-08-29
 
 **风险登记与沙盒规则台账补立 / Risk register and sandbox rule ledger**
