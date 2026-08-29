@@ -1,19 +1,30 @@
 # 方案迭代记录
 
-## v1.2 - 2026-08-28
+## v2.3 - 2026-08-30
 
-- 按 PR #4108 维护者评审补齐区域协同接口矩阵：逐项覆盖北纬社区、未来科学城、怀柔科学城、经开区与京津冀，并明确建议连接、交换内容、空间/运营接口、任务书依据和待确认缺口；不主张协议、企业、资金或政府承诺已经落实。
-- 新增中英文 `regional-coordination-interfaces` 图件，并纳入正文、离线报告、可视化页面、A3 和 A0 页序。
-- 将 HTML、PNG 和 PDF 字体统一为离线、可复现的 Noto Sans CJK SC 子集：HTML 内嵌 WOFF2 数据，PNG/PDF 栅格化文字，并登记固定上游版本与 SIL Open Font License 1.1；英文交通图清除问号占位。
-- 完成四个 HTML、24 张双语核心图件和四份 PDF 的全量视觉等价复核；A3 每种语言 13 页，A0 每种语言 11 页，中英文页序一致且无重复图页。
+- Removed the redundant 1993 background sentence from public-facing narrative while retaining source records in the evidence layer.
+- Rebuilt the five-function strip, 8×8 address presentation, dual-path interaction, evidence section and footer after screenshot-based visual regression review.
+- Removed a redundant interactive layer and the duplicated visible metric strip.
 
-## v1.1 - 2026-08-27
+## v2.2 - 2026-08-29
 
-- 正式署名为双人共创团队 **H&S**，项目名称为“京张共用日常 / Jingzhang Everyday AI Commons”。
-- 公共服务机制为“共轨协议 / Co-Track Protocol”：共享服务底座、人工控制节点、阈值折返与可追溯退场共同构成人机共生场景；主图更新为两条连续编织路径。
-- 正式包包含中英文正文、离线报告、离线展示页、22 张双语核心图件、双语 A3 文册和双语 A0 展板；A3 每种语言 12 页，A0 每种语言 10 页，中英文页序一致且无重复图页。PDF 采用“一张完整 H&S 图件对应一页”的横版组版，不再叠加第二套页眉或缩略拼贴。
-- 空间结构采用“三区两翼—三站五段—协同网络”，并通过“场景—空间—责任主体—指标—停止条件”闭环表达概念动作、人工责任和退出条件。
-- S01 形成百日试点就绪设计、双路径状态机、24 例合成规则测试和 S01/S06/S07 迁移验证；规则结果与现场绩效严格分开。
-- 正式包只采用公开资料、官方资料包和包内可追溯派生件；临时边界、待核数据、未测量绩效、责任主体与实施授权均保持明确限制。
-- 视觉系统统一使用 H&S 图框、无衬线字体层级和米白—墨蓝—青绿—橙色体系；所有图件使用自适应文字容器，避免文字越界和字体缺字。
-- P2–P5 增量：新增三区空间锚点矩阵、S01/S06/S07 实施闭环、评委先看导航和动态维护清单；新增内容保持概念建议、待核数据和停止条件的边界声明，不宣称现场绩效。
+- Recast historical context and 8×8 language in positive public-facing prose; removed agent-facing rule wording from the formal narrative.
+- Added the five open-call functions as explicit 64K spatial translations for both languages.
+- Upgraded the visual direction to a lightweight logo corner mark, intentional future-address states and offline scene interaction.
+
+## v2.1 - 2026-08-29
+
+- Integrated the participant-supplied 64K × JINGZHANG identity mark into the bilingual visual page and proposal identity section.
+- Added safe concept-language cards for minimum viable unit, evolving 8×8 address table, and retain/translate/withdraw heritage layers.
+- Kept all additions explicitly conceptual; no new geometry, metric, matrix schema, official boundary or operating commitment was introduced.
+
+## v2.0 - 2026-08-29
+
+- Rebuilt the public narrative around the verified 1994 NCFC 64K full-function Internet milestone.
+- Separated historical facts from 64KB, 8×8, Demoscene and ROM / RAM / I/O design metaphors.
+- Rebuilt all public-facing figures, bilingual visual HTML, A3 booklet and A0 boards.
+- Kept the existing geometry, metrics values and matrix schemas.
+- Removed unverified or unused source claims and added official CAS and CNNIC historical sources.
+- Added explicit concept-visual, provisional-boundary and no-field-evidence labels.
+
+This revision has not been pushed from this workspace. Remote publication remains subject to participant review and approval.
