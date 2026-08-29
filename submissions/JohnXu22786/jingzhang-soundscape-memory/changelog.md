@@ -38,3 +38,7 @@ Round-3 repair per CocoSgt CHANGES_REQUESTED (2026-08-24, 61.0/100). Per-file su
 - manifest.json: hashes refreshed for all changed files; en counterpart mapping (language + translation_of) re-verified for all 12 en figures, 2 en PDFs, proposal.en.md, report/proposal.en.html, visual/index.en.html; validation_claim.self_checked=true with matching self_check.json sha256.
 
 Verification (this round, final state): score_rubric.py weighted_pct=97.0, mandatory_rejections=[], reviewer_gaps=[], pass=true; self_check four gates all PASS (deterministic, spatial, visual, professional); validate_local_submission PASS; check_font_coverage ALL_FONTS_OK; en HTML pages contain 0 CJK; drawings PDFs 0 clipped text spans.
+
+## v4.0 - 2026-08-30
+
+Final closeout for PR #3941: corrected the noise-law source binding with a dedicated official source entry marked needs_review; regenerated all bilingual core figures and A0/A3 PDFs with separated title/stamp bands, non-overlapping node labels, distinct ratio/count charts, and bounded English tables; regenerated both proposal HTML surfaces and embedded CJK-capable subsets last. Final self-check and manifest/hash refresh completed after output synchronization; remaining spatial notices are the documented provisional key-area warnings only.
