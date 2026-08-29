@@ -1,5 +1,17 @@
 # 方案迭代记录 / Changelog
 
+## v72.0 - 2026-08-30
+
+**完整审阅包首屏入口 / First-view Complete Review Pack**
+
+- 修复前，离线体验台首屏已提供 30 秒、3 分钟和 15 分钟渐进阅读路径，但完整图文报告与 A3/A0 出版物仍只存在于投稿目录或页尾证据区；截止前审阅者无法从首屏一跳进入完整出版工件。
+- 在中英文首屏分别增加完整审阅包入口，直达对应语言的图文报告、A3 手册、A0 展板和证据索引；同步补齐两种语言页尾的出版物链接。入口支持键盘聚焦、44 px 触控目标、390 px 单列回流、减少动态与打印回退。
+- 不新增正文主张、图件、媒体、来源、几何、指标或 PDF。geometry、`metrics.json`、12/8/3/36、G0/NO-GO、临时边界、现实结果 0、责任接受 0、独立人工双语复核 0/8、权利边界和四份 PDF 均保持冻结。
+
+- Before repair, the offline workbench hero already offered 30-second, three-minute and 15-minute progressive routes, but the complete illustrated report and A3/A0 publications remained reachable only through the package tree or the footer evidence area. A deadline reviewer could not enter the full publication set in one step from the first view.
+- Added a complete-review-pack entry to each language's hero, linking directly to the matching illustrated report, A3 booklet, A0 boards and evidence index; both evidence footers now expose the publication links as well. The entries retain keyboard focus, 44 px targets, 390 px single-column reflow, reduced motion and print fallback.
+- No proposal claim, figure, media, source, geometry, metric or PDF is added. Geometry, `metrics.json`, 12/8/3/36, G0/NO-GO, provisional boundaries, zero real outcomes, zero accepted duties, 0/8 independent human bilingual review, rights boundaries and all four PDFs remain frozen.
+
 ## v71.0 - 2026-08-29
 
 **渐进阅读入口 / Progressive Reading Routes**
