@@ -1,0 +1,54 @@
+{
+  "schema_version": "0.1.0",
+  "assumptions": [
+    {
+      "assumption_id": "A-BOUNDARY-001",
+      "statement_zh": "组织方尚未发布官方总体边界与重点区域 polygon，本方案全部几何为 provisional 临时粗略约束，仅用于内容设计与机器校验；官方图形发布后必须整体复算。",
+      "statement_en": "No official boundary or key-area polygons are published yet; all geometry here is provisional and must be recomputed when official data arrives.",
+      "category": "boundary",
+      "status": "accepted_limitation"
+    },
+    {
+      "assumption_id": "A-CONTROLS-001",
+      "statement_zh": "绿地蓝线、文物与建设控制等法定控制条件未知，本方案不给出任何容积率、高度、红线等具体数值结论，仅保留概念口径示意与校核建议。",
+      "statement_en": "Statutory control conditions (green/blue lines, heritage, construction controls) are unknown; no FAR, height or redline conclusions are given.",
+      "category": "statutory_control",
+      "status": "accepted_limitation"
+    },
+    {
+      "assumption_id": "A-DATA-001",
+      "statement_zh": "五类治理指标与三项formal核心指标均为概念口径：前者不作为现状监测结果，后者以本包几何复算为准；官方统计口径确认前不替代官方统计。",
+      "statement_en": "The five governance indicators are concept calibers, not current monitoring results; the three formal core metrics are recomputed from this package's geometry only.",
+      "category": "data_boundary",
+      "status": "accepted_limitation"
+    },
+    {
+      "assumption_id": "A-DESIGN-001",
+      "statement_zh": "节点 A、节点 B与节点 C三节点均为原创概念建议，模块化可逆，不构成建设承诺；品牌名称与标识在在先权利检索完成前按内部工作代号处理。",
+      "statement_en": "All three nodes are original reversible conceptual proposals, not construction commitments; brand names are internal working codenames until prior-rights clearance.",
+      "category": "design_proposal",
+      "status": "concept"
+    },
+    {
+      "assumption_id": "A-PRIVACY-001",
+      "statement_zh": "公众反馈AI采用入口—预处理/脱敏—模型—公示聚合四层链路：入口自由文本在脱敏前可能含个人信息，原始输入最小授权访问并记录日志，脱敏后才进入模型；公示实行最低样本抑制与人工复核，保存删除期限、纠错申诉和事件响应时限待运营方确认（to_verify），禁止过度监控。",
+      "statement_en": "Public-feedback AI uses a four-layer chain: the entry may receive free text containing personal information before de-identification; raw access is minimum-authorized and logged; only de-identified text/qualified aggregates reach the model; publication applies minimum-sample suppression and human review. Retention/deletion periods, correction/appeal route and incident timing remain to_verify.",
+      "category": "privacy",
+      "status": "concept"
+    },
+    {
+      "assumption_id": "A-EVENT-001",
+      "statement_zh": "年度指标开放日、年度实施进度通报会与节点 B体验周等均为建议性活动设计，不代表已确定的政府安排或投资承诺。",
+      "statement_en": "Annual programs (Indicator Open Day, progress briefing, Node B Experience Week) are design suggestions, not confirmed government or investment commitments.",
+      "category": "operation",
+      "status": "concept"
+    },
+    {
+      "assumption_id": "A-KPI-PROTOCOL-001",
+      "statement_zh": "活动卡、场景卡与三阶段的公式、建议区间、频率、证据记录、R/A 和失败动作是可审查的概念 KPI 协议；当前基线统一为 unknown/to_verify，不代表现状值，外部主体、许可和正式数据接口仍待确认。",
+      "statement_en": "Formulas, suggested ranges, frequencies, evidence records, R/A and failure actions for activity cards, scenario cards and phases are auditable concept KPI protocols; all current baselines are unknown/to_verify and do not assert existing values. External owners, permissions and official data interfaces remain to_verify.",
+      "category": "monitoring_protocol",
+      "status": "accepted_limitation"
+    }
+  ]
+}
