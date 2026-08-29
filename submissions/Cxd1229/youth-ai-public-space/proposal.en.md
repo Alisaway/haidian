@@ -206,9 +206,9 @@ Functional zoning based on ~11.4 km² overall design area [data:geometry/land_us
 | AI R&D + Commercial Mixed-Use | 25% | 285 | Ground floor public and open, upper floors R&D offices |
 | University & Research Institutions | 20% | 228 | Retain existing, add industry-academia shared interfaces |
 | Residential (incl. Talent Housing) | 15% | 171 | Youth apartments + long-term rental + mixed community |
-| Green and Open Space | 12.42% | 141.8 | Jingzhang Heritage Park + pocket park network |
+| Green and Open Space | 12% | 137 | Jingzhang Heritage Park + pocket park network |
 | Public Service Facilities | 10% | 114 | 24h libraries, sports centers, community canteens |
-| Road and Transit | 8% | 91.2 | Densify secondary and branch road network |
+| Road and Transit | 8% | 91 | Densify secondary and branch road network |
 | Cultural Facilities & Heritage | 5% | 57 | Railway museum + innovation gallery + honor wall nodes |
 | Mixed Flexible Land | 5% | 57 | Reserved for AI test scenarios and temporary events |
 
