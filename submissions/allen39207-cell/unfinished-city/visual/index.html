@@ -13,6 +13,20 @@
 .canvas-wrap canvas{height:100%;min-height:0}
 @media(max-width:620px){.canvas-wrap{height:480px}.canvas-wrap canvas{min-height:0}}
 </style>
+<style>
+  /* Offline-safe CJK fallback: do not depend on the embedded preview font. */
+  html, body, body * { font-family: "Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "Microsoft YaHei", "PingFang SC", "WenQuanYi Zen Hei", Arial, sans-serif !important; }
+</style>
+<script>
+  // Canvas labels also need the same fallback stack as normal HTML text.
+  (() => {
+    const proto = window.CanvasRenderingContext2D && CanvasRenderingContext2D.prototype;
+    const descriptor = proto && Object.getOwnPropertyDescriptor(proto, "font");
+    if (!descriptor || !descriptor.set) return;
+    const fallback = '"Noto Sans CJK SC", "Noto Sans SC", "Source Han Sans SC", "Microsoft YaHei", "PingFang SC", "WenQuanYi Zen Hei", Arial, sans-serif';
+    Object.defineProperty(proto, "font", { ...descriptor, set(value) { descriptor.set.call(this, String(value).replace(/SubmissionCJK/g, fallback)); } });
+  })();
+</script>
 </head>
 <body>
 <main>
