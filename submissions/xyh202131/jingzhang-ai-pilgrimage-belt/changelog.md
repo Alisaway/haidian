@@ -1,5 +1,19 @@
 # 方案迭代记录 / Changelog
 
+## v80.0 - 2026-08-30
+
+**图文报告章节索引 / Illustrated-report Chapter Index**
+
+- 已有能力：两份长报告已提供键盘可见的正文跳转、双语切换、语义表格、包内 CJK 字体、离线与打印回退，并可直达既有专业交接入口。
+- 真实缺口：修复前，两份报告各有 15 个二级章节，但除正文根节点外没有章节片段；普通读者、键盘用户与评审者只能线性滚动，无法从封面附近直接进入某一正式章节，也不能复制稳定章节链接。
+- 必须冻结：proposal、visual、图件、四份 PDF、9 个几何文件、`metrics.json`、12/8/3/36、G0/NO-GO、临时边界、现实结果 0、责任接受 0 与独立人工双语复核 0/8 均不变。
+- 本轮实施：在中英文报告封面后增加对应的 15 项语义目录，为每个二级章节配置一一对应的稳定片段，并同步两列桌面、单列移动端、键盘、减少动态与打印规则。只改善报告导航，不新增主张、来源、资产或现实状态。
+
+- Existing capability: both long reports already provide a keyboard-visible content skip, language switch, semantic tables, package-local CJK font, offline and print fallbacks, and a direct route to the existing professional handoff.
+- Real gap: before repair, each report had 15 second-level chapters but no chapter fragments beyond the document root. Ordinary readers, keyboard users and reviewers had to scroll linearly, could not enter a formal chapter directly from near the cover, and could not copy a stable chapter link.
+- Must remain frozen: the proposals, visual pages, figures, all four PDFs, nine geometry files, `metrics.json`, 12/8/3/36, G0/NO-GO, provisional boundaries, zero real outcomes, zero accepted duties and 0/8 independent human bilingual review are unchanged.
+- Implemented this round: added a matching 15-item semantic index after each report cover, assigned one stable fragment to every second-level chapter, and synchronized two-column desktop, one-column mobile, keyboard, reduced-motion and print behaviour. This improves report navigation only and adds no claim, source, asset or real-world status.
+
 ## v79.0 - 2026-08-30
 
 **图文报告评审交接深链 / Illustrated-report Review-handoff Deep Link**
