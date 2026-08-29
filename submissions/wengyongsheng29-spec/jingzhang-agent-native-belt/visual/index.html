@@ -294,9 +294,11 @@ html,body{height:100%;background:var(--bg);color:var(--text);
   box-shadow:0 0 8px rgba(107,92,231,.5)}
 .pg-label{font-size:13px;color:var(--muted);font-family: 'NotoSCSubset', ui-monospace,monospace;
   min-width:60px;text-align:center;font-weight:600}
+#ai-marker-badge{position:fixed;left:50%;bottom:6px;transform:translateX(-50%);z-index:9999;background:rgba(220,38,38,.92);color:#fff;font-size:11px;font-weight:600;padding:4px 12px;border-radius:14px;box-shadow:0 2px 8px rgba(0,0,0,.25);letter-spacing:.2px;pointer-events:none;max-width:96vw;text-align:center}
 </style>
 </head>
 <body>
+<div id="ai-marker-badge" role="note" aria-label="AI生成概念意向声明">⚠ AI生成概念意向 · 非现场照片 · 非现状证据 · 非建筑设计/审批成果 · 仅空间氛围表达</div>
 <div class="bg-layer">
   <div class="bg-grid"></div>
   <div class="bg-orb o1"></div>
@@ -387,9 +389,12 @@ const pages=[
     '<div class="metric-card compact"><div class="mc-label">统筹研究范围</div>'+
     '<div class="mc-value">43.61<span class="mc-unit">km²</span></div>'+
     '<div class="mc-desc">海淀片区全域研究范围</div></div>'+
-    '<div class="metric-card compact gold"><div class="mc-label">AI场景节点</div>'+
-    '<div class="mc-value">15<span class="mc-unit">个</span></div>'+
-    '<div class="mc-desc">含4项测试验证（红队/沙盒/配送/接驳）</div></div>'+
+    '<div class="metric-card compact gold"><div class="mc-label">AI场景卡</div>'+
+    '<div class="mc-value">18<span class="mc-unit">张</span></div>'+
+    '<div class="mc-desc">含7张测试验证（SC-03/04/08/09/16/17/18）· 叙事层</div></div>'+
+    '<div class="metric-card compact" style="border:1px dashed #c8922a"><div class="mc-label">物理落位节点</div>'+
+    '<div class="mc-value">15<span class="mc-unit">处</span></div>'+
+    '<div class="mc-desc">空间落位层（地图仅落位15处，与18场景卡非同一计数）</div></div>'+
     '<div class="metric-card compact teal"><div class="mc-label">朝圣地标</div>'+
     '<div class="mc-value">4<span class="mc-unit">处</span></div>'+
     '<div class="mc-desc">LM-01~04 · 原点碑/展示廊/散步道/里程碑亭</div></div>'+
