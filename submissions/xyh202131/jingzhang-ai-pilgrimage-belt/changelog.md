@@ -1,5 +1,17 @@
 # 方案迭代记录 / Changelog
 
+## v74.0 - 2026-08-30
+
+**角色卡精确落点 / Persona-card Exact Destinations**
+
+- 修复前，七张角色卡已经说明对应任务、原型、场景、非 AI 路径和停止条件，但所有“进入原型”按钮都跳到同一个三处体验节顶部；读者仍需再次辨认 VERIFY、CO-CREATE 或 PUBLISH，快速入口没有完成最后一跳。
+- 为中英文三处原型增加稳定的 `prototype-verify`、`prototype-cocreate`、`prototype-publish` 锚点，将七张角色卡分别直达正确原型，并用 `:target` 边框与阴影确认落点。页面保持零 JavaScript、离线、键盘可达、减少动态和打印兼容。
+- 本轮只修复导航关系，不新增角色、任务、场景、空间裁决、来源、媒体、几何、指标、成熟度或现实结果；proposal、report、图件和四份 PDF 不受影响。12/8/3/36、G0/NO-GO、临时边界、现实结果 0、责任接受 0 和独立人工双语复核 0/8 保持冻结。
+
+- Before repair, the seven persona cards already named their task, prototype, scene, non-AI route and stop condition, but every “enter prototype” control landed at the top of the same three-place section. Readers still had to identify VERIFY, CO-CREATE or PUBLISH again, so the quick entry did not complete its final jump.
+- Added stable `prototype-verify`, `prototype-cocreate` and `prototype-publish` destinations to both visual languages, routed all seven persona cards to the correct prototype, and used a `:target` border and shadow to confirm the landing point. The pages remain zero-JavaScript, offline, keyboard-reachable, reduced-motion aware and print-compatible.
+- This round changes navigation only. It adds no role, task, scene, spatial ruling, source, media, geometry, metric, maturity or real-world outcome; proposals, reports, figures and all four PDFs are unaffected. The 12/8/3/36 counts, G0/NO-GO, provisional boundaries, zero real outcomes, zero accepted duties and 0/8 independent human bilingual review remain frozen.
+
 ## v73.0 - 2026-08-30
 
 **角色到任务的快速入口 / Persona-to-task Quick Entry**
