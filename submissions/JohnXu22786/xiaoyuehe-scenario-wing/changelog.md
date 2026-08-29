@@ -1,5 +1,12 @@
 # 方案迭代记录
 
+## round-7 - 2026-08-30 (CocoSgt 79.0 CHANGES_REQUESTED repair)
+
+- **轨道接驳事实边界**：重绘 `mobility-bluegreen.png` 与英文对应图；站名、线路、位置、运营主体、站间距、班次和实测接驳时间均不作事实主张，轨道接驳统一登记为待核验概念对象，5—10 分钟仅保留为未实测概念时距假设。新增 `DATA-SRC-UNVERIFIED-RAIL-INTERFACE`，并同步正文、来源、矩阵、离线页面与报告 HTML。
+- **A0 Board 1**：中英文第一页均删除总览图/节点索引占位框，嵌入实际 `site-overview` 与 `key-areas` 图件；重新渲染 A0 PDF 与第一页预览，完成图像、字体、比例、裁切和可读性检查。
+- **全球案例口径**：`global_case_count` 统一为 7；metrics、双语正文、指标图、HTML、矩阵与持久化 self-check 均按七项全球案例表达，不与资产数混用。
+- **提交清理与门禁**：移除包内测试/中间产物 `assets/figure_qc.json`、`regen_key_areas.py`、`report/asset_rights_ledger.md`、`drawings/test-a0.pdf`；最终 manifest/hash 与四门 self-check 在推送前重跑并保持 provisional 边界声明。
+
 ## v0.1.0 - 2026-08-24
 
 - Initial assembly (concept package) for xiaoyuehe-scenario-wing.
