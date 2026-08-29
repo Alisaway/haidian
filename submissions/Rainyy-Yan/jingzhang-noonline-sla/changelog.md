@@ -1,5 +1,19 @@
 # 方案迭代记录 / Iteration Changelog
 
+## v4.8.1 - 2026-08-29
+
+**Offline CJK report rendering repair.** Both required report HTML files now load the OFL-licensed, submission-local Noonline CJK subset and set it before all system fallbacks. This restores the offline CJK delivery path used by the formal-review-ready V4.7 package, keeping Chinese headings, body text, captions, navigation and the English-page Chinese return label readable when the review environment has no installed Chinese font and no network access.
+
+**Non-regression boundary.** This repair changes only report font delivery and derived integrity records. It does not alter proposal claims, geometry, metrics, scenarios, implementation commitments, permissions, funding, land rights, approvals or Verified SLA status.
+
+## v4.8 - 2026-08-29
+
+**Human-scale spatial expression, without factual upgrades**
+
+- Adds one participant-authored, non-site-specific triptych to make the distinct public-space sequence of Zhongzhiyuan validation, AI Origin civic explanation and Dazhongsi arrival handover readable at eye level.
+- Shows the recurring Noonline SLA material and information language across walking, staying, asking, AI-OFF wayfinding and human handover rather than adding another abstract relationship diagram.
+- The triptych is a bilingual review aid only: it is not a site photograph, survey, material specification, construction drawing, approved installation, staffing record or implementation evidence. Every depicted component remains HOLD until authorised records and human field verification exist.
+
 ## v4.7 - 2026-08-29
 
 **Phase 0 evidence register, without factual upgrades**
