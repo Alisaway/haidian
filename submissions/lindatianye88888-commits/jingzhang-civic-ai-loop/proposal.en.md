@@ -199,17 +199,183 @@ Chinese and English proposals, figures, A3/A0 drawings and websites must keep se
 
 The following Chinese-English figure pairs are conceptual, non-scaled or pending professional development. They do not establish statutory planning, actual building area, retain-renovate-demolish decisions, engineering location or approval.
 
-![AI Origin Community Co-Intelligence Origin functional plan](assets/figures/origin-community-functional-plan.en.png)
-![Modern minimal design-language rendering for the two gateways](assets/figures/design-language-render.en.png)
-![Zhongzhiyuan Validation Lighthouse functional plan](assets/figures/zhongzhiyuan-validation-lighthouse.en.png)
-![Parallel validation fields at Xiaoyue River and the heritage park](assets/figures/parallel-validation-fields.en.png)
-![Modern minimal design-language control board](assets/figures/design-language-control.en.png)
-![Non-scaled functional relationship plan for the two gateways](assets/figures/dual-portals-functional-plan.en.png)
-![Functional-area proportion study: non-scaled and non-statutory](assets/figures/dual-portals-area-bubbles.en.png)
-![Six operating states for the two gateways](assets/figures/dual-portals-six-scenes.en.png)
-![Spatial prototype combinations for the two gateways](assets/figures/dual-portals-spatial-prototypes.en.png)
-![Zoning, flows and access controls for the two gateways](assets/figures/dual-portals-zoning-flows-gates.en.png)
-![Three core scenes: spatial, operating and governance controls](assets/figures/core-scenes-control-board.en.png)
-![Three AI pilgrimage landmarks and distributed honor system](assets/figures/three-ai-landmarks.en.png)
-![Public-space component library: combinable, bookable and stoppable](assets/figures/public-space-component-library.en.png)
-![Dazhongsi Return Common non-scaled functional plan](assets/figures/dazhongsi-return-common.en.png)
+![AI Origin Community Co-Intelligence Origin functional plan](assets/text-figures/453aa71fbf2880a4.webp)
+![Modern minimal design-language rendering for the two gateways](assets/text-figures/82856dc6f1d5ae99.webp)
+![Zhongzhiyuan Validation Lighthouse functional plan](assets/text-figures/9f6cd21a6983a06b.webp)
+![Parallel validation fields at Xiaoyue River and the heritage park](assets/text-figures/1ec15d6cb90be274.webp)
+![Modern minimal design-language control board](assets/text-figures/a3955ddff02250bd.webp)
+![Non-scaled functional relationship plan for the two gateways](assets/text-figures/453aa71fbf2880a4.webp)
+![Functional-area proportion study: non-scaled and non-statutory](assets/text-figures/ad0ae01d3b4b56f7.webp)
+![Six operating states for the two gateways](assets/text-figures/c46fd29c35c33e03.webp)
+![Spatial prototype combinations for the two gateways](assets/text-figures/1ec15d6cb90be274.webp)
+![Zoning, flows and access controls for the two gateways](assets/text-figures/453aa71fbf2880a4.webp)
+![Three core scenes: spatial, operating and governance controls](assets/text-figures/c46fd29c35c33e03.webp)
+![Three AI pilgrimage landmarks and distributed honor system](assets/text-figures/bac894cd28d4df32.webp)
+![Public-space component library: combinable, bookable and stoppable](assets/text-figures/a3955ddff02250bd.webp)
+![Dazhongsi Return Common non-scaled functional plan](assets/text-figures/737b3895da8da7cb.webp)
+
+<!-- FINAL_TEXT_FIGURE_SEQUENCE_START -->
+
+## Appendix: User-confirmed final text-figure sequence (40 figures)
+
+### 001 00COVER_Jing-Zhang_Civic_AI_Loop_Digital_Twin_Tech_EN_v4.png
+
+![00COVER_Jing-Zhang_Civic_AI_Loop_Digital_Twin_Tech_EN_v4.png](assets/text-figures/e1f9b735f3f4fa24.webp)
+
+### 002 COVER_Jing-Zhang_Civic_AI_Loop_Daytime_Tech_EN_v5.png
+
+![COVER_Jing-Zhang_Civic_AI_Loop_Daytime_Tech_EN_v5.png](assets/text-figures/f35b6c8db3192701.webp)
+
+### 003 FIG-00A_设计依据与设计资料来源说明_EN_v1.png
+
+![FIG-00A_设计依据与设计资料来源说明_EN_v1.png](assets/text-figures/9b7177f89c544a41.webp)
+
+### 004 FIG-19_AI原点社区_节点级设计鸟瞰_v1.png
+
+![FIG-19_AI原点社区_节点级设计鸟瞰_v1.png](assets/text-figures/14dbbbb2876412a4.webp)
+
+### 005 FIG-20_众智园_验证灯塔_节点级设计鸟瞰_无字底图_v1.png
+
+![FIG-20_众智园_验证灯塔_节点级设计鸟瞰_无字底图_v1.png](assets/text-figures/8a7f70551fe9c977.webp)
+
+### 006 FIG-21_大钟寺_回流公场_节点级设计鸟瞰_无字底图_v1.png
+
+![FIG-21_大钟寺_回流公场_节点级设计鸟瞰_无字底图_v1.png](assets/text-figures/9a4aa30335c93a95.webp)
+
+### 007 FIG-00_总体概念与空间结构_EN_v2.png
+
+![FIG-00_总体概念与空间结构_EN_v2.png](assets/text-figures/2020cf90c012d0ce.webp)
+
+### 008 FIG-01_现状问题与在地资源底盘总图_EN_v1.png
+
+![FIG-01_现状问题与在地资源底盘总图_EN_v1.png](assets/text-figures/4ff06815b3cc1f7f.webp)
+
+### 009 FIG-01_总体空间结构与全场景点位_分析图_EN_v6.png
+
+![FIG-01_总体空间结构与全场景点位_分析图_EN_v6.png](assets/text-figures/eab7522be29b8999.webp)
+
+### 010 FIG-01_总体正南北与三重点区场景点位_美化v4_EN.png
+
+![FIG-01_总体正南北与三重点区场景点位_美化v4_EN.png](assets/text-figures/57a7601aa24ba06a.webp)
+
+### 011 FIG-02_总体空间结构概念用地与城市更新_EN_v2.png
+
+![FIG-02_总体空间结构概念用地与城市更新_EN_v2.png](assets/text-figures/ce38d6ae58c69db8.webp)
+
+### 012 FIG-04_慢行蓝绿遗产空间底盘_EN_v7.png
+
+![FIG-04_慢行蓝绿遗产空间底盘_EN_v7.png](assets/text-figures/ffa9d68a076d6f5e.webp)
+
+### 013 FIG-05 四类更新动作_原始地形底图定位_EN_v2.png
+
+![FIG-05 四类更新动作_原始地形底图定位_EN_v2.png](assets/text-figures/b6bb41edd82890f9.webp)
+
+### 014 FIG-06四类更新动作_四列说明与空间意向_EN_v1.png
+
+![FIG-06四类更新动作_四列说明与空间意向_EN_v1.png](assets/text-figures/a3955ddff02250bd.webp)
+
+### 015 FIG-07_众智园—小月河片区_四类更新动作落位_EN_v1.png
+
+![FIG-07_众智园—小月河片区_四类更新动作落位_EN_v1.png](assets/text-figures/95ddb07fc393b6ee.webp)
+
+### 016 FIG-08_AI原点社区片区_四类更新动作落位_EN_v1.png
+
+![FIG-08_AI原点社区片区_四类更新动作落位_EN_v1.png](assets/text-figures/9e49cc7f0b805342.webp)
+
+### 017 FIG-09_大钟寺片区_四类更新动作落位_EN_v1.png
+
+![FIG-09_大钟寺片区_四类更新动作落位_EN_v1.png](assets/text-figures/176ffd930ea493b0.webp)
+
+### 018 FIG-19_AI_Origin_Community_Node_Aerial_Annotated_EN_v1.png
+
+![FIG-19_AI_Origin_Community_Node_Aerial_Annotated_EN_v1.png](assets/text-figures/82856dc6f1d5ae99.webp)
+
+### 019 FIG-20_Zhongzhiyuan_Validation_Lighthouse_Node_Aerial_Annotated_EN_v1.png
+
+![FIG-20_Zhongzhiyuan_Validation_Lighthouse_Node_Aerial_Annotated_EN_v1.png](assets/text-figures/bfac21b1a2893b7f.webp)
+
+### 020 FIG-21_Dazhongsi_Return_Commons_Node_Aerial_Annotated_EN_v1.png
+
+![FIG-21_Dazhongsi_Return_Commons_Node_Aerial_Annotated_EN_v1.png](assets/text-figures/c0a1deb03b6e77e5.webp)
+
+### 021 FIG-10_设计实施规模与经济测算_EN_v1.png
+
+![FIG-10_设计实施规模与经济测算_EN_v1.png](assets/text-figures/ad0ae01d3b4b56f7.webp)
+
+### 022 FIG-10处AI朝圣地标角色与荣誉体系_EN_v1.png
+
+![FIG-10处AI朝圣地标角色与荣誉体系_EN_v1.png](assets/text-figures/bac894cd28d4df32.webp)
+
+### 023 FIG-11双门户_分区流线与门槛控制_EN_v2.png
+
+![FIG-11双门户_分区流线与门槛控制_EN_v2.png](assets/text-figures/453aa71fbf2880a4.webp)
+
+### 024 FIG-12众智园_验证灯塔无比例功能平面_EN_v1.png
+
+![FIG-12众智园_验证灯塔无比例功能平面_EN_v1.png](assets/text-figures/9f6cd21a6983a06b.webp)
+
+### 025 FIG-13小月河与遗址公园_平行基本验证场空间原型_EN_v1.png
+
+![FIG-13小月河与遗址公园_平行基本验证场空间原型_EN_v1.png](assets/text-figures/1ec15d6cb90be274.webp)
+
+### 026 FIG-14大钟寺_回流公场无比例功能平面_EN_v1.png
+
+![FIG-14大钟寺_回流公场无比例功能平面_EN_v1.png](assets/text-figures/737b3895da8da7cb.webp)
+
+### 027 FIG-14十二场景_四阶段三层级总逻辑图_EN_v1.png
+
+![FIG-14十二场景_四阶段三层级总逻辑图_EN_v1.png](assets/text-figures/c46fd29c35c33e03.webp)
+
+### 028 FIG-15 PERSONA-01_六类共智者_正式横版_EN_v1.png
+
+![FIG-15 PERSONA-01_六类共智者_正式横版_EN_v1.png](assets/text-figures/9515af16eefc9ae7.webp)
+
+### 029 SCN-001_Bilingual_Edge_Layout_DRAFT.png
+
+![SCN-001_Bilingual_Edge_Layout_DRAFT.png](assets/text-figures/a55d076e7bb46293.webp)
+
+### 030 SCN-002_Bilingual_Edge_Layout_CANDIDATE.png
+
+![SCN-002_Bilingual_Edge_Layout_CANDIDATE.png](assets/text-figures/9a7d7d9af249974e.webp)
+
+### 031 SCN-003_Bilingual_Edge_Layout_DRAFT.png
+
+![SCN-003_Bilingual_Edge_Layout_DRAFT.png](assets/text-figures/7c67c839a5b19132.webp)
+
+### 032 SCN-004_Bilingual_Edge_Layout_FINAL.png
+
+![SCN-004_Bilingual_Edge_Layout_FINAL.png](assets/text-figures/82a1cf636999423a.webp)
+
+### 033 SCN-005_Bilingual_Edge_Layout_DRAFT.png
+
+![SCN-005_Bilingual_Edge_Layout_DRAFT.png](assets/text-figures/e897fc4e7025dd28.webp)
+
+### 034 SCN-006_Bilingual_Edge_Layout_DRAFT.png
+
+![SCN-006_Bilingual_Edge_Layout_DRAFT.png](assets/text-figures/4ef970462fda6e9d.webp)
+
+### 035 SCN-007_Bilingual_Edge_Layout_DRAFT.png
+
+![SCN-007_Bilingual_Edge_Layout_DRAFT.png](assets/text-figures/36fe13d8a057fdf0.webp)
+
+### 036 SCN-008_Bilingual_Edge_Layout_DRAFT.png
+
+![SCN-008_Bilingual_Edge_Layout_DRAFT.png](assets/text-figures/33926505f306de5d.webp)
+
+### 037 SCN-009_Bilingual_Edge_Layout_DRAFT.png
+
+![SCN-009_Bilingual_Edge_Layout_DRAFT.png](assets/text-figures/8247b24567b9a969.webp)
+
+### 038 SCN-010_Bilingual_Edge_Layout_FINAL.png
+
+![SCN-010_Bilingual_Edge_Layout_FINAL.png](assets/text-figures/dbcda0af14c20e8b.webp)
+
+### 039 SCN-011_Bilingual_Edge_Layout_DRAFT.png
+
+![SCN-011_Bilingual_Edge_Layout_DRAFT.png](assets/text-figures/124f3002df8fb0e4.webp)
+
+### 040 SCN-012_Bilingual_Edge_Layout_FINAL.png
+
+![SCN-012_Bilingual_Edge_Layout_FINAL.png](assets/text-figures/9308e5e3d569ba11.webp)
+
+<!-- FINAL_TEXT_FIGURE_SEQUENCE_END -->

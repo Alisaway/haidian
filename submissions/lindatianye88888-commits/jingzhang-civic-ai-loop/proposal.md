@@ -199,17 +199,183 @@ iteration: "v0.2"
 
 以下中英文配对图件均为概念性、无比例或待专业深化的解释层，不构成法定规划、真实建筑面积、拆改留、工程定位或审批结论。
 
-![AI原点社区“共智原点”无比例功能平面](assets/figures/origin-community-functional-plan.png)
-![双门户现代简约设计语言渲染](assets/figures/design-language-render.png)
-![众智园“验证灯塔”无比例功能平面](assets/figures/zhongzhiyuan-validation-lighthouse.png)
-![小月河与京张铁路遗址公园平行基本验证场](assets/figures/parallel-validation-fields.png)
-![双门户现代简约设计语言控制板](assets/figures/design-language-control.png)
-![双门户无比例功能关系平面](assets/figures/dual-portals-functional-plan.png)
-![双门户面积比例泡泡图：无比例、非规划指标](assets/figures/dual-portals-area-bubbles.png)
-![双门户六种场景切换](assets/figures/dual-portals-six-scenes.png)
-![双门户空间原型组合](assets/figures/dual-portals-spatial-prototypes.png)
-![双门户分区、流线与门槛控制](assets/figures/dual-portals-zoning-flows-gates.png)
-![三大核心场景空间、运营与治理控制板](assets/figures/core-scenes-control-board.png)
-![三处AI朝圣地标角色与分布式荣誉体系](assets/figures/three-ai-landmarks.png)
-![公共空间组件库：可组合、可预约、可停止](assets/figures/public-space-component-library.png)
-![大钟寺“回流公场”无比例功能平面](assets/figures/dazhongsi-return-common.png)
+![AI原点社区“共智原点”无比例功能平面](assets/text-figures/d89cb283c76dde2a.webp)
+![双门户现代简约设计语言渲染](assets/text-figures/ec9fdaccd836a277.webp)
+![众智园“验证灯塔”无比例功能平面](assets/text-figures/874ffe169b119b42.webp)
+![小月河与京张铁路遗址公园平行基本验证场](assets/text-figures/800922d0dd812566.webp)
+![双门户现代简约设计语言控制板](assets/text-figures/73803acade6b69c6.webp)
+![双门户无比例功能关系平面](assets/text-figures/d89cb283c76dde2a.webp)
+![双门户面积比例泡泡图：无比例、非规划指标](assets/text-figures/02cc0f080aeb6d86.webp)
+![双门户六种场景切换](assets/text-figures/e990c403759935e6.webp)
+![双门户空间原型组合](assets/text-figures/800922d0dd812566.webp)
+![双门户分区、流线与门槛控制](assets/text-figures/d89cb283c76dde2a.webp)
+![三大核心场景空间、运营与治理控制板](assets/text-figures/e990c403759935e6.webp)
+![三处AI朝圣地标角色与分布式荣誉体系](assets/text-figures/1da557e0cdb177f4.webp)
+![公共空间组件库：可组合、可预约、可停止](assets/text-figures/73803acade6b69c6.webp)
+![大钟寺“回流公场”无比例功能平面](assets/text-figures/81b9bf8ee8aa52bb.webp)
+
+<!-- FINAL_TEXT_FIGURE_SEQUENCE_START -->
+
+## 附录：用户最终确认的正式文本图件顺序（40 张）
+
+### 001 00COVER_鸟瞰全景_数字孪生科技版_v4.png
+
+![00COVER_鸟瞰全景_数字孪生科技版_v4.png](assets/text-figures/01556a5f0f7029a6.webp)
+
+### 002 COVER_鸟瞰全景_白天文字版_v5.png
+
+![COVER_鸟瞰全景_白天文字版_v5.png](assets/text-figures/60bf246c89689dc0.webp)
+
+### 003 FIG-00A_设计依据与设计资料来源说明_v1.png
+
+![FIG-00A_设计依据与设计资料来源说明_v1.png](assets/text-figures/73a18cd1ac55799c.webp)
+
+### 004 FIG-19_AI原点社区_节点级设计鸟瞰_v1.png
+
+![FIG-19_AI原点社区_节点级设计鸟瞰_v1.png](assets/text-figures/14dbbbb2876412a4.webp)
+
+### 005 FIG-20_众智园_验证灯塔_节点级设计鸟瞰_无字底图_v1.png
+
+![FIG-20_众智园_验证灯塔_节点级设计鸟瞰_无字底图_v1.png](assets/text-figures/8a7f70551fe9c977.webp)
+
+### 006 FIG-21_大钟寺_回流公场_节点级设计鸟瞰_无字底图_v1.png
+
+![FIG-21_大钟寺_回流公场_节点级设计鸟瞰_无字底图_v1.png](assets/text-figures/9a4aa30335c93a95.webp)
+
+### 007 FIG-00_总体概念与空间结构_v2.png
+
+![FIG-00_总体概念与空间结构_v2.png](assets/text-figures/523e55222f692bc8.webp)
+
+### 008 FIG-01_现状问题与在地资源底盘总图_v1.png
+
+![FIG-01_现状问题与在地资源底盘总图_v1.png](assets/text-figures/80d301457fb909d8.webp)
+
+### 009 FIG-01_总体空间结构与全场景点位_分析图_v6.png
+
+![FIG-01_总体空间结构与全场景点位_分析图_v6.png](assets/text-figures/9c52da8a8cdb2fde.webp)
+
+### 010 FIG-01_总体正南北与三重点区场景点位_美化v4.png
+
+![FIG-01_总体正南北与三重点区场景点位_美化v4.png](assets/text-figures/fc6ef83488c49700.webp)
+
+### 011 FIG-02_总体空间结构概念用地与城市更新_v2.png
+
+![FIG-02_总体空间结构概念用地与城市更新_v2.png](assets/text-figures/0b65a6d6a243c863.webp)
+
+### 012 FIG-04_慢行蓝绿遗产空间底盘_v7.png
+
+![FIG-04_慢行蓝绿遗产空间底盘_v7.png](assets/text-figures/e570e31e9e3ba894.webp)
+
+### 013 FIG-05 四类更新动作_原始地形底图定位_v2.png
+
+![FIG-05 四类更新动作_原始地形底图定位_v2.png](assets/text-figures/e7311f59c30430f0.webp)
+
+### 014 FIG-06四类更新动作_四列说明与空间意向_v1.png
+
+![FIG-06四类更新动作_四列说明与空间意向_v1.png](assets/text-figures/73803acade6b69c6.webp)
+
+### 015 FIG-07_众智园—小月河片区_四类更新动作落位_v1.png
+
+![FIG-07_众智园—小月河片区_四类更新动作落位_v1.png](assets/text-figures/ab89c85db7385bc1.webp)
+
+### 016 FIG-08_AI原点社区片区_四类更新动作落位_v1.png
+
+![FIG-08_AI原点社区片区_四类更新动作落位_v1.png](assets/text-figures/723d8495151fc085.webp)
+
+### 017 FIG-09_大钟寺片区_四类更新动作落位_v1.png
+
+![FIG-09_大钟寺片区_四类更新动作落位_v1.png](assets/text-figures/0650a791622ab8bf.webp)
+
+### 018 FIG-19_AI原点社区_节点级设计鸟瞰_直排文字_v2.png
+
+![FIG-19_AI原点社区_节点级设计鸟瞰_直排文字_v2.png](assets/text-figures/ec9fdaccd836a277.webp)
+
+### 019 FIG-20_众智园_验证灯塔_节点级设计鸟瞰_直排文字_v1.png
+
+![FIG-20_众智园_验证灯塔_节点级设计鸟瞰_直排文字_v1.png](assets/text-figures/ee7e180a5deaa29a.webp)
+
+### 020 FIG-21_大钟寺_回流公场_节点级设计鸟瞰_直排文字_v1.png
+
+![FIG-21_大钟寺_回流公场_节点级设计鸟瞰_直排文字_v1.png](assets/text-figures/5f0b8e219b8ccb13.webp)
+
+### 021 FIG-10_设计实施规模与经济测算_v1.png
+
+![FIG-10_设计实施规模与经济测算_v1.png](assets/text-figures/02cc0f080aeb6d86.webp)
+
+### 022 FIG-10处AI朝圣地标角色与荣誉体系_v1.png
+
+![FIG-10处AI朝圣地标角色与荣誉体系_v1.png](assets/text-figures/1da557e0cdb177f4.webp)
+
+### 023 FIG-11双门户_分区流线与门槛控制_v2.png
+
+![FIG-11双门户_分区流线与门槛控制_v2.png](assets/text-figures/d89cb283c76dde2a.webp)
+
+### 024 FIG-12众智园_验证灯塔无比例功能平面_v1.png
+
+![FIG-12众智园_验证灯塔无比例功能平面_v1.png](assets/text-figures/874ffe169b119b42.webp)
+
+### 025 FIG-13小月河与遗址公园_平行基本验证场空间原型_v1.png
+
+![FIG-13小月河与遗址公园_平行基本验证场空间原型_v1.png](assets/text-figures/800922d0dd812566.webp)
+
+### 026 FIG-14大钟寺_回流公场无比例功能平面_v1.png
+
+![FIG-14大钟寺_回流公场无比例功能平面_v1.png](assets/text-figures/81b9bf8ee8aa52bb.webp)
+
+### 027 FIG-14十二场景_四阶段三层级总逻辑图_v1.png
+
+![FIG-14十二场景_四阶段三层级总逻辑图_v1.png](assets/text-figures/e990c403759935e6.webp)
+
+### 028 FIG-15 PERSONA-01_六类共智者_正式横版_v1.png
+
+![FIG-15 PERSONA-01_六类共智者_正式横版_v1.png](assets/text-figures/15c16257799c3870.webp)
+
+### 029 SCN-001_Bilingual_Edge_Layout_DRAFT.png
+
+![SCN-001_Bilingual_Edge_Layout_DRAFT.png](assets/text-figures/a55d076e7bb46293.webp)
+
+### 030 SCN-002_Bilingual_Edge_Layout_CANDIDATE.png
+
+![SCN-002_Bilingual_Edge_Layout_CANDIDATE.png](assets/text-figures/9a7d7d9af249974e.webp)
+
+### 031 SCN-003_Bilingual_Edge_Layout_DRAFT.png
+
+![SCN-003_Bilingual_Edge_Layout_DRAFT.png](assets/text-figures/7c67c839a5b19132.webp)
+
+### 032 SCN-004_Bilingual_Edge_Layout_FINAL.png
+
+![SCN-004_Bilingual_Edge_Layout_FINAL.png](assets/text-figures/82a1cf636999423a.webp)
+
+### 033 SCN-005_Bilingual_Edge_Layout_DRAFT.png
+
+![SCN-005_Bilingual_Edge_Layout_DRAFT.png](assets/text-figures/e897fc4e7025dd28.webp)
+
+### 034 SCN-006_Bilingual_Edge_Layout_DRAFT.png
+
+![SCN-006_Bilingual_Edge_Layout_DRAFT.png](assets/text-figures/4ef970462fda6e9d.webp)
+
+### 035 SCN-007_Bilingual_Edge_Layout_DRAFT.png
+
+![SCN-007_Bilingual_Edge_Layout_DRAFT.png](assets/text-figures/36fe13d8a057fdf0.webp)
+
+### 036 SCN-008_Bilingual_Edge_Layout_DRAFT.png
+
+![SCN-008_Bilingual_Edge_Layout_DRAFT.png](assets/text-figures/33926505f306de5d.webp)
+
+### 037 SCN-009_Bilingual_Edge_Layout_DRAFT.png
+
+![SCN-009_Bilingual_Edge_Layout_DRAFT.png](assets/text-figures/8247b24567b9a969.webp)
+
+### 038 SCN-010_Bilingual_Edge_Layout_FINAL.png
+
+![SCN-010_Bilingual_Edge_Layout_FINAL.png](assets/text-figures/dbcda0af14c20e8b.webp)
+
+### 039 SCN-011_Bilingual_Edge_Layout_DRAFT.png
+
+![SCN-011_Bilingual_Edge_Layout_DRAFT.png](assets/text-figures/124f3002df8fb0e4.webp)
+
+### 040 SCN-012_Bilingual_Edge_Layout_FINAL.png
+
+![SCN-012_Bilingual_Edge_Layout_FINAL.png](assets/text-figures/9308e5e3d569ba11.webp)
+
+<!-- FINAL_TEXT_FIGURE_SEQUENCE_END -->

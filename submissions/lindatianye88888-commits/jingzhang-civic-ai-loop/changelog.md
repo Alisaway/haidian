@@ -1,5 +1,13 @@
 # 方案迭代记录
 
+## v1.2 - 2026-08-30
+
+- Replaced the previously submitted text-figure sets with the user-confirmed final Chinese and English sequences (40 figures per language).
+- Replaced the Chinese and English implementation-scale/economic-assessment figures with the latest cost-indicator versions supplied on 2026-08-30.
+- Corrected the English visual page's overall-framework and economic-assessment images, and synchronized the corresponding Chinese page assets.
+- Rebuilt both A3 reading booklets from the confirmed 40-figure sequences while preserving the approved Chinese and English A0 board PDFs.
+- Removed stale figure/media duplicates, retained only the confirmed visual sources, and regenerated the official rendered reports, manifest hashes, self-check and participant preflight.
+
 ## v1.1 - 2026-08-29
 
 - Rewrote the Chinese proposal from task instructions into a site-specific, human-readable design narrative and produced a section-aligned English counterpart.
