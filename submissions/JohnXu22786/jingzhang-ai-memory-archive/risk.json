@@ -1,0 +1,150 @@
+{
+  "version": 1,
+  "dimensions": [
+    {
+      "id": "data_privacy",
+      "label": "数据隐私",
+      "score": 4,
+      "note": "口述史、声音和投稿材料可能含个人或第三方信息；当前未启动真实数据采集。",
+      "mitigation": "只允许同意、去标识或合成测试输入，采用最小字段、访问分级、撤回隔离和删除演练。",
+      "human_review": "数据管理员类型、讲述者和独立隐私复核类型在任何现场试验前逐项确认。"
+    },
+    {
+      "id": "implementation_complexity",
+      "label": "实施复杂度",
+      "score": 3,
+      "note": "三节点、证忆环、双语服务、可逆组件和人工门需要跨专业交接；运营主体未任命。",
+      "mitigation": "先做纸面与离线影子测试，使用阶段门、RACI模板和单段可撤回样机。",
+      "human_review": "规划、档案、无障碍、消防、运维和社区代表类型在进入 G1 前联合复核。"
+    },
+    {
+      "id": "public_acceptance",
+      "label": "公众接受度",
+      "score": 3,
+      "note": "历史叙事、算法提示和公共展示可能引发误读、争议或不愿参与；现状分母未知。",
+      "mitigation": "纸面、电话、人工和非 AI 路径并行，公示来源与状态，保留异议和撤回入口。",
+      "human_review": "社区共创小组和独立申诉复议类型审阅首轮脚本、无障碍体验和少数意见留存。"
+    },
+    {
+      "id": "operations_cost",
+      "label": "运维成本",
+      "score": 3,
+      "note": "档案审核、展板维护、双语更新、可达性巡检和撤回响应的人员、预算与工作量尚未核验。",
+      "mitigation": "登记责任类型、维护频率、备件和退出动作；没有维护证据就暂停新内容。",
+      "human_review": "运营者类型、维护承包与预算边界在实施编程或采购前由专业团队复核。"
+    },
+    {
+      "id": "policy_uncertainty",
+      "label": "政策不确定性",
+      "score": 4,
+      "note": "正式边界、控规、权属、文保、道路、绿蓝线、许可和审批条件均为 unknown/to_verify。",
+      "mitigation": "所有空间保持 provisional，FAR、高度和法定用途不写数值；官方数据到位后统一替换和复算。",
+      "human_review": "规划、自然资源、园林、文保、交通、市政和消防主管接口类型在具体点位前联合确认。"
+    },
+    {
+      "id": "spatial_dispute",
+      "label": "空间争议",
+      "score": 4,
+      "note": "临时多边形只支撑概念表达，不能决定红线、面积、落位或既有空间的权属与使用。",
+      "mitigation": "图件和网页持续标明 provisional；节点采用可移动组件，冲突或条件不全时不落位并可撤回。",
+      "human_review": "权属、文保、无障碍、交通、安全和公众意见记录完成后，才允许选择现场测试段。"
+    },
+    {
+      "id": "technology_maturity",
+      "label": "技术成熟度",
+      "score": 4,
+      "note": "转写、翻译、标引、检索和排序的准确性、漂移、语言覆盖、离线能力与安全尚未实测。",
+      "mitigation": "先用脱敏或合成样例，记录模型版本、误差分群、数据质量、运行监测和人工放行；失败回到人工。",
+      "human_review": "技术评测者、领域策展人、双语审校与无障碍评审类型逐卡签署。"
+    },
+    {
+      "id": "equity_inclusion",
+      "label": "公平与包容性",
+      "score": 4,
+      "note": "老年人、残障人士、儿童、照护者和低数字能力人群的真实可达性与服务分母仍未知。",
+      "mitigation": "纸笔、电话、人工、大字、字幕、音频、替代路线和可跳过 AI 的入口并行。",
+      "human_review": "无障碍顾问类型与不同使用者共同完成陪走、听读、触达和申诉测试。"
+    }
+  ],
+  "schema_version": "0.1.0",
+  "risk_register": [
+    {
+      "risk_id": "R01",
+      "category": "provisional_boundary",
+      "description": "临时边界被误读为红线或精确面积",
+      "severity": "medium",
+      "control": "visible provisional stamp; use geometry-only metric recompute; replace after official data",
+      "assumption_id": "A-BOUNDARY-001",
+      "status": "open_until_verified"
+    },
+    {
+      "risk_id": "R02",
+      "category": "historical_accuracy",
+      "description": "未核验历史细节进入展陈",
+      "severity": "high",
+      "control": "curator source check; tag current lead; hold disputed item",
+      "assumption_id": "A-HISTORY-001",
+      "status": "open_until_verified"
+    },
+    {
+      "risk_id": "R03",
+      "category": "rights_and_consent",
+      "description": "影像/口述史/字体/标识无权利或撤回失效",
+      "severity": "high",
+      "control": "rights ledger in report/copyright_statement.md; consent receipt; takedown/quarantine drill; unverified items remain to_verify",
+      "assumption_id": "A-RIGHTS-001",
+      "status": "open_until_verified"
+    },
+    {
+      "risk_id": "R04",
+      "category": "privacy",
+      "description": "口述史含个人信息或个体画像",
+      "severity": "high",
+      "control": "consent/de-identification/synthetic test only; no individual profiling",
+      "assumption_id": "A-DATA-001",
+      "status": "open_until_verified"
+    },
+    {
+      "risk_id": "R05",
+      "category": "model_quality",
+      "description": "转写、翻译、标引错误或漂移",
+      "severity": "medium",
+      "control": "shadow evaluation, error strata, runtime monitoring, human release",
+      "assumption_id": "A-AI-001",
+      "status": "open_until_verified"
+    },
+    {
+      "risk_id": "R06",
+      "category": "public_safety_access",
+      "description": "节点、动线或无障碍接口不满足专业条件",
+      "severity": "high",
+      "control": "professional review, manual fallback, pilot stop gate",
+      "assumption_id": "A-OWNERSHIP-001",
+      "status": "open_until_verified"
+    },
+    {
+      "risk_id": "R07",
+      "category": "operations",
+      "description": "无人维护、申诉和年度公示无法持续",
+      "severity": "medium",
+      "control": "RACI role-type handoff; maintenance KPI; pause if owner absent",
+      "assumption_id": "A-OPERATIONS-001",
+      "status": "open_until_verified"
+    },
+    {
+      "risk_id": "R08",
+      "category": "brand_prior_rights",
+      "description": "概念名称、Logo或第三方标识冲突",
+      "severity": "medium",
+      "control": "trademark/domain search; replace mark; no third-party logo reuse",
+      "assumption_id": "A-BRAND-001",
+      "status": "open_until_verified"
+    }
+  ],
+  "mandatory_boundaries": [
+    "All spatial suggestions are concept suggestions and reference schemes.",
+    "No official approval, ownership, permit, funding, operation or partnership is claimed.",
+    "Only anonymized aggregation; key decisions require human review; excessive surveillance is prohibited.",
+    "AI-enhanced content is labelled and never presented as original historical footage."
+  ]
+}

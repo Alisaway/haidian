@@ -1,0 +1,415 @@
+{
+  "schema_version": "0.1.0",
+  "units": {
+    "length": "m",
+    "area": "sqm"
+  },
+  "metrics": {
+    "site_area_sqm": {
+      "status": "known",
+      "value": 11412825.386,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "area(union(site_boundary features) in EPSG:4548)",
+      "confidence": "low",
+      "assumptions": [
+        "A-BOUNDARY-001"
+      ],
+      "display_note": "Provisional participant model only; human display uses rounded value.",
+      "recompute_trigger": "Replace site_boundary with an official or cleared polygon, record version/CRS/conversion, then recalculate every dependent layer and surface."
+    },
+    "green_space_area_sqm": {
+      "status": "known",
+      "value": 3050345.452,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/green_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "area(union(green_space) intersect site_boundary) in EPSG:4548",
+      "confidence": "low",
+      "assumptions": [
+        "A-BOUNDARY-001"
+      ],
+      "recompute_trigger": "Replace provisional boundary and green/blue control geometry, then recompute."
+    },
+    "public_space_area_sqm": {
+      "status": "known",
+      "value": 57250.0,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "area(union(public_space) intersect site_boundary) in EPSG:4548",
+      "confidence": "low",
+      "assumptions": [
+        "A-BOUNDARY-001",
+        "A-OWNERSHIP-001"
+      ],
+      "recompute_trigger": "Verify access and ownership, replace geometry if needed, then recompute."
+    },
+    "green_ratio": {
+      "status": "known",
+      "value": 0.267273,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/green_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "green_space_area_sqm / site_area_sqm",
+      "confidence": "low",
+      "assumptions": [
+        "A-BOUNDARY-001"
+      ],
+      "range": "0..1",
+      "recompute_trigger": "Recompute after official boundary and green-space verification."
+    },
+    "public_space_ratio": {
+      "status": "known",
+      "value": 0.005016,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "public_space_area_sqm / site_area_sqm",
+      "confidence": "low",
+      "assumptions": [
+        "A-BOUNDARY-001",
+        "A-OWNERSHIP-001"
+      ],
+      "range": "0..1",
+      "recompute_trigger": "Recompute after official access/ownership geometry verification."
+    },
+    "building_footprint_area_sqm": {
+      "status": "known",
+      "value": 111600.0,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "area(union(conceptual building envelopes)) in EPSG:4548",
+      "confidence": "low",
+      "assumptions": [
+        "A-CONTROLS-001",
+        "A-OWNERSHIP-001"
+      ],
+      "use_limit": "Concept reuse-first envelope; not a building survey or approved floor area."
+    },
+    "land_use_zone_count": {
+      "status": "known",
+      "value": 18,
+      "unit": "count",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "count(land_use features)",
+      "confidence": "medium",
+      "assumptions": [
+        "A-BOUNDARY-001"
+      ],
+      "use_limit": "Concept partition count only; not a statutory land-use inventory."
+    },
+    "building_unit_count": {
+      "status": "known",
+      "value": 12,
+      "unit": "count",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "count(buildings features)",
+      "confidence": "low",
+      "assumptions": [
+        "A-BOUNDARY-001",
+        "A-OWNERSHIP-001"
+      ],
+      "use_limit": "Concept reuse-first envelope count only."
+    },
+    "road_network_length_m": {
+      "status": "known",
+      "value": 10154.351,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson"
+      ],
+      "formula": "sum(conceptual slow-route centerline lengths) in EPSG:4548",
+      "confidence": "low",
+      "assumptions": [
+        "A-CONTROLS-001"
+      ],
+      "use_limit": "Concept route length; not a road line, engineering alignment or travel-time promise."
+    },
+    "key_area_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "count(key_areas features)",
+      "confidence": "medium",
+      "assumptions": [
+        "A-BOUNDARY-001"
+      ],
+      "threshold": "=3 taskbook key areas"
+    },
+    "scenario_card_count": {
+      "status": "known",
+      "value": 12,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "proposal.en.md"
+      ],
+      "formula": "count(S01..S12 scenario cards)",
+      "confidence": "high",
+      "assumptions": [],
+      "threshold": ">=10 taskbook cards"
+    },
+    "industry_test_scenario_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "proposal.en.md"
+      ],
+      "formula": "count(T01..T03 bounded industry tests)",
+      "confidence": "high",
+      "assumptions": [],
+      "threshold": ">=3"
+    },
+    "persona_count": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "proposal.en.md"
+      ],
+      "formula": "count(P01..P06 user groups)",
+      "confidence": "high",
+      "assumptions": [],
+      "threshold": ">=5"
+    },
+    "global_case_count": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "sources.json"
+      ],
+      "formula": "count(SRC-CASE-* mechanism references)",
+      "confidence": "high",
+      "assumptions": [
+        "A-CASE-001"
+      ],
+      "threshold": "5..8 taskbook range"
+    },
+    "annual_program_count": {
+      "status": "known",
+      "value": 4,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "proposal.en.md"
+      ],
+      "formula": "count(annual programme rows)",
+      "confidence": "high",
+      "assumptions": [
+        "A-OPERATIONS-001"
+      ],
+      "threshold": ">=4 concept programmes"
+    },
+    "phase_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/phasing.geojson",
+        "proposal.md"
+      ],
+      "formula": "count(near/mid/long concept phases)",
+      "confidence": "high",
+      "assumptions": [
+        "A-OPERATIONS-001"
+      ],
+      "threshold": "3 phases"
+    },
+    "landmark_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "proposal.md"
+      ],
+      "formula": "count(scenario_type == ai_landmark)",
+      "confidence": "medium",
+      "assumptions": [
+        "A-OWNERSHIP-001"
+      ],
+      "threshold": ">=3 concept landmarks"
+    },
+    "scenario_node_count": {
+      "status": "known",
+      "value": 10,
+      "unit": "count",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "count(public-space scenario nodes and landmarks)",
+      "confidence": "low",
+      "assumptions": [
+        "A-BOUNDARY-001"
+      ],
+      "use_limit": "Concept interface count; not capacity or attendance."
+    },
+    "floor_area_ratio": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "total_floor_area_sqm / official_site_area_sqm",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-CONTROLS-001"
+      ],
+      "reason": "Official floor-area and control data are not available; keep null."
+    },
+    "building_height_m": {
+      "status": "unknown",
+      "value": null,
+      "unit": "m",
+      "source_files": [
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "not_available",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-CONTROLS-001"
+      ],
+      "reason": "Official height controls and survey are not available; no height conclusion is made."
+    },
+    "archive_provenance_completeness": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "reason": "No real archive records have been ingested or published; the numerator and denominator remain unknown until consented test data and ledger samples exist.",
+      "source_files": [
+        "sources.json",
+        "report/copyright_statement.md"
+      ],
+      "formula": "published_records_with_source_rights_consent_and_human_review / candidate_records",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-RIGHTS-001",
+        "A-DATA-001"
+      ],
+      "display_status": "target_only",
+      "baseline": "unknown_to_verify",
+      "target_range": "1.00 for publication; baseline must be established before pilot",
+      "frequency": "per record and monthly audit",
+      "evidence": "rights ledger, consent receipt, review log",
+      "responsibility": "archive curator type + data steward type",
+      "failure_action": "hold publication, quarantine record, manual review"
+    },
+    "consent_withdrawal_response_hours": {
+      "status": "unknown",
+      "value": null,
+      "unit": "none",
+      "reason": "No withdrawal drill timestamp is available because no real collection or publication has started; measure only after a consented test.",
+      "source_files": [
+        "report/copyright_statement.md",
+        "assumptions.json"
+      ],
+      "formula": "timestamp(removal_or_quarantine) - timestamp(withdrawal)",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-RIGHTS-001",
+        "A-DATA-001"
+      ],
+      "display_status": "target_only",
+      "baseline": "unknown_to_verify",
+      "target_range": "0..48 concept service target",
+      "frequency": "per withdrawal and quarterly drill",
+      "evidence": "withdrawal drill log",
+      "responsibility": "data steward type",
+      "failure_action": "pause intake, manual sweep, incident review"
+    },
+    "human_review_pass_rate": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "reason": "No human review sample has been run; the numerator and denominator remain unknown until a logged shadow evaluation exists.",
+      "source_files": [
+        "proposal.md",
+        "risk.json"
+      ],
+      "formula": "human_approved_outputs / outputs_sampled",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-AI-001"
+      ],
+      "display_status": "target_only",
+      "baseline": "unknown_to_verify",
+      "target_range": "0.90..1.00 depending on card risk",
+      "frequency": "per release and monthly sample",
+      "evidence": "review ledger and sampled source",
+      "responsibility": "named human reviewer type",
+      "failure_action": "do not publish; switch to manual path"
+    },
+    "accessibility_task_completion_rate": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "reason": "No consented user test has been conducted; no completion denominator is available.",
+      "source_files": [
+        "proposal.md",
+        "risk.json"
+      ],
+      "formula": "users_completing_route_or_interpretation_task / consented_test_users",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-BASELINE-001"
+      ],
+      "display_status": "target_only",
+      "baseline": "unknown_to_verify",
+      "target_range": "0.90..1.00 after calibration",
+      "frequency": "monthly pilot sample",
+      "evidence": "redacted observation sheet and assist log",
+      "responsibility": "accessibility reviewer type",
+      "failure_action": "provide human assistance and revise route/card"
+    },
+    "audit_record_completeness": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "reason": "No auditable record sample exists; completeness is unknown until provenance, formula, owner and failure-action fields are logged.",
+      "source_files": [
+        "sources.json",
+        "compliance_matrix.json",
+        "self_check.json"
+      ],
+      "formula": "records_with_provenance_formula_owner_and_failure_action / records_sampled",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-AI-001",
+        "A-RIGHTS-001"
+      ],
+      "display_status": "target_only",
+      "baseline": "unknown_to_verify",
+      "target_range": "1.00 for formal package records",
+      "frequency": "each package revision",
+      "evidence": "manifest, matrix, source and self-check crosswalk",
+      "responsibility": "package author type",
+      "failure_action": "block submission or release until repaired"
+    }
+  }
+}
