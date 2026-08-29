@@ -171,7 +171,7 @@
   "boundary_offset_note": "提交几何使用的 PROV-SITE-001（约 11.4 km² 总体设计范围）与 OSM 实测京张铁路遗址公园不相交，最近距离约 412.5 m（见上游 issue #846）。该偏移意味着整套空间落点相对真实遗址公园可能存在约 412.5 m 的整体平移；所有面积与比例指标（site_area_sqm、green_space_area_sqm、public_space_area_sqm、building_footprint_area_sqm、green_ratio、public_space_ratio、building_density、key_area_*、phasing_area_sqm）均为 provisional 边界内部复算值，不代表与真实遗址公园对齐后的尺度，不得作为正式控规或红线依据。官方 redline 与遗址公园精确几何发布后须整体重算并对齐。",
   "figure_layout_compliance": {
     "version": "3.0.0",
-    "status": "implemented; all 5 PNGs regenerated on 2026-08-29 to figure_layout v3.0 per CJJ/T 97-2003 + GB/T 20257-2017 + GB 50137-2011; title_block / wind_rose / scale_bar / metadata_block / double_legend now visibly presented in the rendered figures",
+    "status": "partially implemented; figure metadata elements (title block / wind rose / scale bar / metadata block / double legend) present in the 5x2 regenerated PNGs (2026-08-29), but figure content design flagged by review pending revision",
     "applies_to": [
       "assets/figures/site-overview.png",
       "assets/figures/key-areas.png",
@@ -235,12 +235,12 @@
       ]
     },
     "current_state": {
-      "title_block": "present in rendered output (regenerated 2026-08-29)",
-      "wind_rose": "present in rendered output (regenerated 2026-08-29)",
-      "scale_bar": "present in rendered output (regenerated 2026-08-29)",
-      "metadata_block": "present in rendered output (regenerated 2026-08-29)",
-      "double_legend": "present in rendered output (regenerated 2026-08-29)",
-      "compliance_score_self_estimate_0_5": 4
+      "title_block": "present in regenerated PNGs (2026-08-29); figure content-design gaps (repetition, missing key-area names, mobility hierarchy, metric values, bilingual residue) flagged by review pending revision",
+      "wind_rose": "present in regenerated PNGs (2026-08-29); figure content-design gaps (repetition, missing key-area names, mobility hierarchy, metric values, bilingual residue) flagged by review pending revision",
+      "scale_bar": "present in regenerated PNGs (2026-08-29); figure content-design gaps (repetition, missing key-area names, mobility hierarchy, metric values, bilingual residue) flagged by review pending revision",
+      "metadata_block": "present in regenerated PNGs (2026-08-29); figure content-design gaps (repetition, missing key-area names, mobility hierarchy, metric values, bilingual residue) flagged by review pending revision",
+      "double_legend": "present in regenerated PNGs (2026-08-29); figure content-design gaps (repetition, missing key-area names, mobility hierarchy, metric values, bilingual residue) flagged by review pending revision",
+      "compliance_score_self_estimate_0_5": 2
     },
     "planned_state_v2": {
       "title_block": "present (per typesetting_review.md §1)",
@@ -252,7 +252,7 @@
       "note": "5/5 retained as the target pending reviewer confirmation of the regenerated figures"
     },
     "convention_caveat": "本声明为概念规范,不主张已具备城乡规划编制资质;正式制图须由具备相应资质(乙级及以上)的单位审定;本方案仅作开源仓库收录评审之参考,见 metrics.geometry_topology_note 与 boundary_offset_note。",
-    "verification_status": "rendered_and_self_verified_pending_review",
-    "reviewer_feedback": "PR #4155 review: visible figures did not present the claimed figure metadata. Addressed by regenerating all figures with title block, metadata block, wind rose and double legend."
+    "verification_status": "declared_specification_only",
+    "reviewer_feedback": "PR #4155 (72/100) review noted figure content-design gaps (repetition, missing key-area names, mobility hierarchy, metric values not shown, bilingual residue) and an inconsistency between proposal.md (2/5) and this self-estimate (4/5). Self-estimate reconciled to 2/5 to match proposal.md; content design to be revised."
   }
 }

@@ -4,6 +4,20 @@
 
 > Note: this file was **created retrospectively** on 2026-08-29. Iterations v0.1–v0.5 were documented in their Pull Request descriptions and commit messages rather than in an in-package changelog. To align with repository convention (SKILL.md requires updating the proposal, `changelog.md`, assumptions and evidence records together), the history is reconstructed from verifiable PR records, and this file will be kept in sync with every subsequent change.
 
+## v1.5 - 2026-08-29
+
+**字体渲染回退与图件自评对齐 / Font fallback revert and figure self-estimate reconciliation**
+
+- 问题：v1.4 将 Noto Sans SC 子集以 data URI 内嵌进 4 个 HTML 并置为首选字体。但评审环境（headless 渲染）未加载该 data URI 字体，导致 `report/proposal.html` 与 `visual/index.html` 中文显示为方框字。对照 96 分投稿（scarletkc/jingzhang-neon-spine）完全不内嵌字体、仅用系统字体栈却无方框，证实评审环境自带系统中文。
+- **字体回退**：移除 4 个 HTML 中的 `@font-face` data URI 内嵌，改用系统字体栈（`-apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif`），与高分投稿一致；删除后包内不再含字体文件，也彻底规避 `assets/` 图片白名单。
+- **图件自评对齐**：`metrics.json` 的 `figure_layout_compliance` 自评由 **4/5 回调为 2/5**，与 `proposal.md`/`proposal.en.md`（早已为 2/5）一致，消除评审指出的「proposal/metrics/HTML 间自评冲突」；`status`/`verification_status`/`reviewer_feedback` 同步改为诚实表述（图件元数据元素已在重制 PNG 中呈现，但图件内容设计缺陷——重复、缺片区名、缺路线层级、缺核心数值、中英残留——待修订）。
+- 说明：图件 PNG 本身由本地字体渲染为位图，无方框字问题；方框字仅存在于 HTML 的 CSS 字体渲染路径。本版本仅解决字体回退与自评对齐，图件内容设计的实质性修订列为下一步。
+
+- Issue: in v1.4 the Noto Sans SC subset was embedded as a data URI into the 4 HTML files and set as the first-choice font. The review environment (headless render) did not load that data-URI font, so Chinese text in `report/proposal.html` and `visual/index.html` showed as tofu boxes. The 96-score submission (scarletkc/jingzhang-neon-spine) embeds no font at all and uses only a system font stack yet shows no tofu, confirming the review environment ships system CJK fonts.
+- **Font fallback revert**: removed the `@font-face` data-URI embedding from the 4 HTML files and switched to a system font stack (`-apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif`), matching the high-score submission. No font file remains in the package, which also fully avoids the `assets/` image allowlist.
+- **Figure self-estimate reconciliation**: `metrics.json` `figure_layout_compliance` self-estimate lowered from **4/5 back to 2/5** to match `proposal.md`/`proposal.en.md` (already 2/5), eliminating the proposal/metrics/HTML self-estimate inconsistency flagged by review; `status`/`verification_status`/`reviewer_feedback` updated to honest wording (figure metadata elements are present in the regenerated PNGs, but figure content-design gaps remain pending revision).
+- Note: the figure PNGs are rasterized with a local font and have no tofu issue; tofu appeared only in the HTML CSS font path. This version addresses font fallback and self-estimate alignment only; substantive figure content redesign is the next step.
+
 ## v1.4 - 2026-08-29
 
 **字体改为 data URI 内嵌 / Embed font as a data URI**
