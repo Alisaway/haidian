@@ -68,7 +68,7 @@ Renew stock retail into an "AI+consumption" experience field, differentiated fro
 
 ## Land Use, Building Scale, and Retain-Renovate-Demolish Strategy
 
-Land-use partition from provisional boundary in `geometry/land_use.geojson`; area metrics in `metrics.json` [data:geometry/land_use.geojson][metric:land_use_area_by_code]. Retain class = railway heritage + university edges; renovate class = inefficient plants; demolish class = only零散 dilapidated buildings with no cultural value [depth:retain_renovate_demolish]. **All areas recomputed after official redlines release** [assumption:area_recalculation].
+Land-use partition from provisional boundary in `geometry/land_use.geojson`; area metrics in `metrics.json` [data:geometry/land_use.geojson][metric:land_use_area_by_code]. Retain class = railway heritage + university edges; renovate class = inefficient plants; demolish class = onlyscattered dilapidated buildings with no cultural value [depth:retain_renovate_demolish]. **All areas recomputed after official redlines release** [assumption:area_recalculation].
 
 ## Transport, Rail, Municipal Infrastructure, and Public Services
 
@@ -99,6 +99,21 @@ All metrics and compliance responses in `metrics.json`, `compliance_matrix.json`
 
 ![Core metrics](assets/figures/metrics-evidence.png)
 
+## Implementation Baselines and Verification Paths (verifiable data boundaries)
+
+The package already provides near-, medium- and long-term stages, three pilot units, operating entities, entry criteria for the next stage, and fallback actions, and forms a transferable framework through [data:geometry/phasing.geojson], [metric:phasing_stage], the renewal project list and scenario responsibilities. To avoid presenting unverified content as conclusions, the six current-condition and cost baselines below are **all registered as pending verification (unknown)**, each with a verifiable path defined in metrics.json and assumptions.json.
+
+| Baseline | Current status | Verification path | Owner | Trigger |
+|---|---|---|---|---|
+| Traffic [metric:traffic_baseline_verified] | Unknown: no traffic counts, link capacity, signal timing or transit supply data | Replace the schematic network with official or surveyed road data; compute capacity and level of service from classified counts and signal cycles | participant (computation) / organizer or road authority (data) | Before engineering design, traffic impact assessment, or implementation appraisal |
+| Walkability [metric:walkability_baseline_verified] | Unknown: no pavement, crossing facility, barrier or pedestrian flow data | Build a real pedestrian topology; compute 500 m / 800 m catchment coverage for public services and public space; record railway and expressway barriers | participant (computation) / organizer or asset owner (data) | Before slow-traffic design, accessibility design, or station-area detailed design |
+| Industry service [metric:industry_service_baseline] | Unknown: no industrial land inventory, building stock, tenant mix or public-service capacity data | Build a stock inventory from parcel and building records; compute carrying capacity from leasable area and facility capacity; cross-check with service radii | participant (computation) / organizer or industry authority (data) | Before investment promotion, industry policy design, or operating-scale appraisal |
+| Land and building ownership [metric:land_ownership_verified] | Unknown: no ownership, building safety appraisal, heritage assessment or underground data | Verify ownership and use parcel by parcel; commission safety and heritage appraisals; complete underground and utility detection; then revise retention and phasing | shared (ownership authority, appraisal body, participant) | Before any parcel enters implementation, acquisition, renovation, or engineering design |
+| Municipal capacity [metric:municipal_capacity_baseline] | Unknown: no network diameters, residual capacity, or the floor-area and population base required by the standards | From approved floor area and population, compute water, drainage, power, telecom and gas loads under current municipal planning standards; compare with residual capacity and identify upgrades | participant (computation) / utility owners (capacity data) | Before municipal master planning, phased intensity fixing, or construction of any parcel |
+| Cost baseline [metric:cost_baseline_verified] | Unknown, and a **red line**: per README L233, investment estimates must not be presented as established conclusions | Apply current Beijing construction cost indices and comparable urban-regeneration settlement data as unit rates; estimate by phase across building, municipal, landscape and relocation quantities; state funding and responsible entities | participant (estimation) / cost consultant and funding entities (basis) | Before budgeting, investment decision, or financing; until then cost is a conceptual framework only |
+
+**Boundary statement**: none of the six items above carries a value in this package, and none may be used as a basis for budgeting, approval, engineering, or investment promotion. The three road centre-lines in roads.geojson are agent-inferred schematic geometry (source_type=agent_inferred_from_public_data, confidence=medium) and must not be used for traffic or walkability calculation. Severance of functions by the railway and expressways is registered as a design hypothesis ([assumption:urban_fragmentation_hypothesis]) and may be treated as fact only after an on-site survey or a reviewed baseline confirms it. Per the README, organizer geometry and data gaps do not block content scoring, and this package does not omit the disclosures above on account of those gaps.
+
 ## Risk, Copyright, and Compliance
 
 - **Nature of this proposal**: open co-creation suggestion, **not an approved conclusion**; engineering needs separate human deepening [standard:legal_boundary].
@@ -108,7 +123,7 @@ All metrics and compliance responses in `metrics.json`, `compliance_matrix.json`
 
 ## Brand Identity and Annual Operations Loop
 
-- **Brand identity**: "京张·原力轴 / Jingzhang Origin Axis" combines a CN/EN wordmark with an abstract heritage-track graphic; color, typeface, icon, and application rules are shown in Figure B [depth:branding].
+- **Brand identity**: "Jingzhang Origin Axis" combines a CN/EN wordmark with an abstract heritage-track graphic; color, typeface, icon, and application rules are shown in Figure B [depth:branding].
 
 ![Jingzhang Origin Axis brand identity and visual spec](assets/figures/fig-agent1-logo.png)
 
@@ -117,9 +132,21 @@ All metrics and compliance responses in `metrics.json`, `compliance_matrix.json`
 
 ![Annual operations and conversion loop](assets/figures/fig-agent6-ops.png)
 
+## Building AI Governance Discourse Power (fifth of the five task-book functions)
+
+The task book lists "AI governance global discourse power" as one of its five functions and assigns Zhongzhiyuan AI Acceleration Area the dual role of "full-stack AI innovation system and AI governance global discourse power" [source:SRC-PROJECT-TASKBOOK]. This proposal does not treat discourse power as a communications claim. It is decomposed into three operable, measurable mechanisms. All three are concept suggestions; none constitutes an official position, an international commitment, or an endorsement by any standards body.
+
+**Mechanism 1 — Open-source contribution that can be measured and traced.** The annual open-source results exhibition and the contributor honour wall turn contributions to projects in this belt into publicly verifiable records: contributors are listed annually, and the openly solicited "GitHub name inscription" mechanism lets contributor reputation persist on the railway heritage honour wall [metric:ai_pilgrimage_count]. The measurement basis, inclusion criteria and review method are maintained jointly by the developer community and the operator, with revision records published each year, so the reputation mechanism does not degrade into a one-off marketing campaign [depth:long_term_ops].
+
+**Mechanism 2 — Rules exported as open interfaces, not declared top-down.** For the twelve scenario cards, those covering health, children, elder care, autonomous mobility, compute booking and the compliance sandbox each specify data fields, human review, exit and appeal routes, stop thresholds and fallback actions, and are compiled into a scenario test checklist that third parties can reuse [metric:scenario_card_count]. The point of the compliance sandbox is that rules are tested and iterated in a controlled environment before being exported — not declared first and substantiated later.
+
+**Mechanism 3 — International communication built on bilingualism and honest benchmarking.** The bilingual proposal, bilingual visual system and paired figures form the external communication base. The six international cases in this package explicitly separate "transferable mechanisms" from "conditions that cannot be copied", and state that they are used only as textual mechanism benchmarks, with no reuse of their images or fonts [depth:branding_loop]. Stating plainly what cannot be copied is itself part of discourse power: credibility comes from honest boundaries, not from the volume of the claim.
+
+**Boundary statement**: none of the three mechanisms has been confirmed by any institution, international organisation or standards body. Until the relevant parties confirm them, external wording continues to use "proposed interface, not yet confirmed". The effect of the discourse-power mechanisms (inclusion scale, external reuse count, international citation and community feedback) must be verified year by year once the annual operations loop establishes a baseline; this package presupposes no results [depth:long_term_ops].
+
 ## Appendix: AI Agent Open-Call Task Response
 
-- **Naming & identity**: mark "京张·原力轴 / Jingzhang Origin Axis" with a CN/EN wordmark and abstract heritage-track graphic; visual spec in Figure B [depth:branding].
+- **Naming & identity**: mark "Jingzhang Origin Axis" with a CN/EN wordmark and abstract heritage-track graphic; visual spec in Figure B [depth:branding].
 - **5–8 AI ecosystem cases**: ①Zhongzhiyuan R&D HQ cluster ②AI Origin living lab ③Dazhongsi AI+retail ④railway-heritage AR tourism ⑤Zhongguancun compute-sharing network ⑥open-source honor wall (6 cases) [depth:cases].
 - **12 scenario cards**: see Ch.6 [metric:scenario_card_count].
 - **≥3 industry tests**: see Ch.6 [metric:industry_test_count].
