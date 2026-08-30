@@ -665,11 +665,15 @@
         "independent_file_audits": 0
       },
       "review_handoff_index": {
-        "contract_id": "JZ-REVIEW-HANDOFF-R93.0",
+        "contract_id": "JZ-REVIEW-HANDOFF-R97.0",
+        "target_index_id": "JZ-REVIEW-HANDOFF-R97.0",
+        "target_publication_revision": "97.0",
         "path": "visual/assets/review-handoff-index.json",
         "as_of": "2026-08-30",
-        "purpose": "Package-level review navigation and per-file status registry; navigation only, creates no evidence and changes no maturity or rights state.",
-        "inventory_note": "The index registry covers all 162 manifest path entries; the frozen geometry/metrics hashes and 12/8/3/36 counts recorded inside it must stay equal to this package_validation_contract."
+        "purpose": "Package-level review navigation and handoff summary only; it points to authorities but is not a per-file registry, hash ledger, rights inventory or external review result.",
+        "predecessor_review_binding": "PR #4272 / cc2a4d6ddc413712037bf90762e8399e2987afef / 96/100 / no blocking modification / merged to canonical main",
+        "mirror_consistency_rule": "contract_id and target_index_id must equal review-handoff-index.json index_id byte-for-byte; any mismatch is stale and fails the contributor-side mirror audit.",
+        "authority_note": "manifest.json is authoritative for 162 declared paths and 161 non-manifest Git blob hashes; visual/assets/file-rights-inventory.json is authoritative for 162/162 contributor path dispositions; geometry/*.geojson, metrics.json, compliance_matrix.json and named contracts remain authoritative for geometry, metrics and task counts. The navigation index does not duplicate those ledgers."
       },
       "browser_matrix_r22": {
         "contract_id": "JZ-BROWSER-MATRIX-R22",
@@ -898,7 +902,9 @@
       "evidence_integrity_r33": {
         "contract_id": "JZ-EVIDENCE-INTEGRITY-R33",
         "executed_at": "2026-08-15",
-        "method": "The review handoff index generator now enforces, on every regeneration, five machine-checkable invariants: every [source:…]/[assumption:…]/[metric:…] marker resolves to a record in sources.json/assumptions.json/metrics.json; every [data:…] marker resolves to a package file on disk (fragment ignored); zh/en marker value multisets are identical per kind; zh/en heading counts are equal; every reading-route entry-point anchor exists in both visual pages. Any violation fails regeneration.",
+        "record_semantics": "historical_execution_record",
+        "current_status": "superseded_by_focused_index_refactor",
+        "method": "At R33, the review handoff index generator enforced five machine-checkable invariants during that regeneration: every [source:…]/[assumption:…]/[metric:…] marker resolved to a record in sources.json/assumptions.json/metrics.json; every [data:…] marker resolved to a package file on disk (fragment ignored); zh/en marker value multisets were identical per kind; zh/en heading counts were equal; every reading-route entry-point anchor existed in both visual pages. This method statement is historical and is not a claim about the current generator or exact head.",
         "baseline_findings": {
           "source_markers_resolved": "50/50 per language",
           "assumption_markers_resolved": "23/23 per language",
@@ -911,7 +917,8 @@
           "ledger_parent_refs": "all resolve (bare names are ledger-directory-relative, fragments are JSON pointers)",
           "source_rights_evidence_mapping": "50/50 both directions"
         },
-        "result": "review-handoff-index.json now carries an evidence_integrity block recording these checks with generator_enforced=true; regeneration passed with 0 violations",
+        "result": "At R33, review-handoff-index.json carried an evidence_integrity block recording these checks with generator_enforced=true, and that regeneration passed with 0 violations. A later focused-index refactor removed the block; these counts are historical and do not describe the current exact head.",
+        "current_route": "visual/assets/review-handoff-index.json#/integrity_claim_status states the current fail-closed truth: no generator-enforced embedded integrity result is present, and separately executed checks must bind the final exact head.",
         "certification_note": "Structural machine checks only; they do not certify translation semantics, field evidence or rights clearance."
       },
       "html_publication_metadata_r33": {
@@ -958,6 +965,8 @@
       "rights_ledger_coherence_r35": {
         "contract_id": "JZ-RIGHTS-LEDGER-COHERENCE-R35",
         "executed_at": "2026-08-15",
+        "record_semantics": "historical_execution_record",
+        "current_status": "generator_enforcement_claim_superseded_by_focused_index_refactor",
         "method": "Full ledger-vs-disk digest audit over all 139 digest-bearing asset_records, plus git history inspection of the affected files",
         "baseline_findings": {
           "stale_digests": 13,
@@ -971,7 +980,7 @@
             "change": "all 13 stale content_identity digests re-synced to actual disk bytes with digest_status matches_final_manifest_after_refresh"
           }
         ],
-        "enforcement": "The review handoff index generator's evidence-integrity check now also verifies every ledger digest against disk on every regeneration (ledger_digest_coherence), failing generation on any mismatch",
+        "enforcement": "At R35, the review handoff index generator's evidence-integrity check also verified every ledger digest against disk during regeneration (ledger_digest_coherence). The later focused-index refactor removed that embedded generator-enforcement layer; this is historical method evidence, not a current-head enforcement claim.",
         "certification_note": "Digest coherence is a machine bookkeeping check; it grants no rights clearance and changes no file content or maturity state."
       },
       "freshness_audit_r35": {
@@ -994,6 +1003,8 @@
       "compliance_namespace_r36": {
         "contract_id": "JZ-COMPLIANCE-NAMESPACE-R36",
         "executed_at": "2026-08-15",
+        "record_semantics": "historical_execution_record",
+        "current_status": "generator_enforcement_claim_superseded_by_focused_index_refactor",
         "rule_layer_basis": "The formal-submission-guide and SKILL.md now require compliance_matrix.json to keep evidence namespaces separate: source_ids may only contain source-registry/package source IDs, while professional standard IDs belong in standard_ids and must also be declared in standard_matrix.json. The new brief/site-package/schemas/compliance_matrix.schema.json formalizes the row shape.",
         "baseline_findings": {
           "rows_mixing_standard_in_source_ids": 6,
@@ -1009,7 +1020,7 @@
             "change": "removed STD-URBAN-DESIGN from source_ids in the six rows (1.3.2, 1.4.2, 1.5.1.2, 1.5.2.2, 1.5.2.4, 1.5.2.5) and added standard_ids=[MOHURD-URBAN-DESIGN-MEASURES] to each; STD-URBAN-DESIGN remains registered in sources.json and remains the snapshot source of MOHURD-URBAN-DESIGN-MEASURES in standard_matrix.json"
           }
         ],
-        "result_after_fix": "0 rows mix standard ids into source_ids; 6 rows carry standard_ids; current self_check and strict scoring pass under the new rule layer; the presentation-contract regression guard (r24 contrast, r25 h2, r27 heading) is now also enforced by the index generator on every regeneration",
+        "result_after_fix": "At R36, 0 rows mixed standard ids into source_ids, 6 rows carried standard_ids, and self-check plus strict scoring passed under that rule layer. The presentation-contract regression guard was also enforced by the index generator during that regeneration; the later focused-index refactor removed that embedded enforcement layer, so this does not assert current-head generator enforcement.",
         "certification_note": "Namespace separation is a structural compliance check; it is not an approval or a rights grant."
       },
       "browser_matrix_r37": {

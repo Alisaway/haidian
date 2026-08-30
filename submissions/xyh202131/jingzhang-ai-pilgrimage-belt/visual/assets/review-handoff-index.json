@@ -1,14 +1,45 @@
 {
   "schema_version": "2.0",
-  "index_id": "JZ-REVIEW-HANDOFF-R94.0",
-  "publication_revision": "94.0",
+  "index_id": "JZ-REVIEW-HANDOFF-R97.0",
+  "publication_revision": "97.0",
   "as_of": "2026-08-30",
   "review_status_semantics": {
     "current_package_state_authority": "manifest.json and self_check.json on the current exact head",
     "external_review_binding": "Every external review conclusion applies only to its reviewed_head.",
-    "predecessor_review": "PR #4263 completed a 96/100 formal-review-ready review with no blocking modification on e4d7241e3787888d1b26ace6f32398ab85f55b29; after this package changes, that conclusion is predecessor history rather than a claim about the new head.",
+    "predecessor_review": "PR #4272 completed a 96/100 formal-review-ready review with no blocking modification on cc2a4d6ddc413712037bf90762e8399e2987afef; after this package changes, that conclusion is predecessor history rather than a claim about the new head.",
     "new_head_rule": "A new PR exact head remains unreviewed until an external review explicitly binds that head; contributor gates cannot prefill an external verdict.",
     "history_route": "visual/assets/data-gap-closure-register.json preserves completed review history and superseded action registers without labelling them current."
+  },
+  "embedded_mirror_contract": {
+    "pointer": "visual/assets/site-grounding-register.json#/jury_reading_contract/package_validation_contract/review_handoff_index",
+    "required_contract_id": "JZ-REVIEW-HANDOFF-R97.0",
+    "required_publication_revision": "97.0",
+    "comparison_rule": "The embedded pointer contract_id and target_index_id must equal this index_id byte-for-byte; any mismatch is stale and fails the contributor-side mirror audit.",
+    "content_rule": "The embedded object remains a pointer and must not duplicate this index body."
+  },
+  "integrity_claim_status": {
+    "status": "structural_audit_not_generator_enforced",
+    "historical_record": "visual/assets/site-grounding-register.json#/jury_reading_contract/evidence_integrity_r33 records a contributor-side structural audit executed on 2026-08-15. Its embedded evidence_integrity block was later removed when this handoff index was focused; the historical counts are not current-head results.",
+    "current_truth": "This index does not contain a generator-enforced evidence_integrity result. Current route, mirror, manifest-hash, bilingual-structure and T-02 checks are executed separately and must be bound to the final exact head.",
+    "fail_closed_rule": "Absence of a current embedded integrity result must never be read as PASS, external verification, semantic translation review, field evidence, rights clearance, approval or maturity. A new exact head remains unreviewed until the declared checks and an external review explicitly bind it."
+  },
+  "index_role_boundary": {
+    "role": "review_navigation_and_handoff_summary_only",
+    "not_a_role": [
+      "per_file_status_registry",
+      "manifest_hash_authority",
+      "rights_clearance_inventory",
+      "geometry_or_metric_freeze_ledger",
+      "external_review_result"
+    ],
+    "authoritative_routes": {
+      "package_paths_and_git_blob_hashes": "manifest.json (162 declared paths; 161 non-manifest SHA-256 records)",
+      "path_level_rights_disposition": "visual/assets/file-rights-inventory.json (162/162 contributor dispositions)",
+      "geometry_and_metric_values": "geometry/*.geojson and metrics.json",
+      "task_and_count_evidence": "compliance_matrix.json, metrics.json and the named structured contracts",
+      "current_external_review": "the review explicitly bound to the current PR exact head"
+    },
+    "fail_closed_rule": "Navigation may point to an authority but does not inherit or duplicate that authority. If a route, count or hash is absent here, do not infer PASS; resolve the named authoritative artifact on the final exact head."
   },
   "bilingual_review_routes": {
     "contract_version": "1.0",

@@ -317,7 +317,7 @@
       "formula": "count(CE-001 through CE-010)",
       "confidence": "high",
       "assumptions": [],
-      "interpretation_limit": "Counts unpriced evidence categories; it is not a quotation, approved budget, funding source or procurement result."
+      "interpretation_limit": "Counts cost-evidence categories at CM2 partial-public-comparator maturity. RailWeave remains project-unpriced at CM0: public comparators are not project quotations, the valid project-quote count is zero, and no approved budget, funding source, or confirmed total is established."
     },
     "operational_prototype_count": {
       "display_name_zh": "实施准备度概念原型规格数量",
@@ -469,12 +469,18 @@
       "unit": "index",
       "source_files": [
         "visual/assets/implementation_register.json",
-        "visual/assets/weave_contracts.json"
+        "visual/assets/weave_contracts.json",
+        "visual/assets/readiness_decision_receipt.json",
+        "visual/assets/cost_evidence_plan.json"
       ],
       "formula": "highest jointly passed weave-readiness, thread-admission and G0-G6 stage gate",
       "confidence": "unknown",
-      "assumptions": [],
-      "reason": "责任主体、场地、资金、采购和专业核验尚未依法确定；当前仅完成投稿协议结构。"
+      "assumptions": [
+        "A-OWNERSHIP-001",
+        "A-AI-ORIGIN-ADDRESS-001",
+        "A-S06-COST-001"
+      ],
+      "reason": "中关村东路8号原点大厦（原东升大厦）候选展厅的地址、1650平方米既有装修工程规模、既有装修招标人、施工许可、联合验收、一次‘展厅—北门—社区大街’参访链路和公开价格参照已有可复核记录；上述关系和链路只用于确定首轮对接与踏勘对象，公开价格参照也不是RailWeave或S06项目报价。项目仍为project-unpriced，有效项目报价数为0；场地授权、现场路线与无障碍及普通服务基线、责任接收、工程量、资金和采购均未确认，当前G0仍未通过。"
     },
     "reversible_public_interface_count": {
       "status": "known",

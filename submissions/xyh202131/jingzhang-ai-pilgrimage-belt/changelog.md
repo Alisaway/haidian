@@ -1,5 +1,75 @@
 # 方案迭代记录 / Changelog
 
+## v99.0 - 2026-08-30
+
+**证据日期与导航日期解耦 / Evidence-date and Navigation-date Separation**
+
+- 已有能力：R98 已把三区证据矩阵的包级导航回链精确绑定到 R97 索引；PR #4277 在 exact head `e785b672349bf6e6f42f0c26eb4341809e6b5fc5` 完成 96/100、无阻断项评审并以 merge SHA `64ece60dbba02fce3d3bfb3041c166657f5f6f18` 进入 canonical main。
+- 真实缺口：修复前，矩阵顶层只有 `as_of: 2026-08-14`，但 R98 已在 2026-08-30 更新导航绑定。单一日期既无法说明旧日期只约束证据内容，也无法说明新导航元数据何时绑定；审阅者可能把导航修复误读为证据刷新，或把当前导航误判为 8 月 14 日状态。自动 gate 不检查日期字段的作用域。
+- 必须冻结：冻结“双轨京张 / Twin-Track Jing-Zhang”、三种不可互换原型、JZ-AIOS、G0—G3、四轴、三载体、证据门、权利边界及 12/8/3/36；不改任何矩阵记录、proposal、report/visual 页面、图件、媒体、四份 PDF、geometry、metrics、来源判断、现实状态或 0/8 人工双语签署。
+- 本轮实施：保留 `2026-08-14` 作为已声明的证据内容快照日期，新增 `2026-08-30` 导航绑定日期，并明确后者只记录包级导航指针更新，不刷新记录、来源、现场证据、权利、批准、成熟度、专业接责或外部评审状态。官方几何、批准、现场基线与结果、现实责任、预算、恢复时间、公众反馈、独立法律/商标审查和人工双语签署继续为 unknown、0、未提供或 NO-GO。
+
+- Existing capability: R98 bound the key-area evidence matrix package-navigation backlink exactly to the R97 index. PR #4277 completed a 96/100 review with no blocker on exact head `e785b672349bf6e6f42f0c26eb4341809e6b5fc5` and entered canonical main as merge SHA `64ece60dbba02fce3d3bfb3041c166657f5f6f18`.
+- Real gap: before repair, the matrix exposed only `as_of: 2026-08-14`, although R98 updated its navigation binding on 2026-08-30. One unscoped date could neither show that the older date applies only to evidence content nor date the newer navigation metadata; reviewers could mistake a navigation repair for evidence refresh, or mistake the current navigation pointer for an August 14 state. Automated gates do not check date-field scope.
+- Frozen boundary: Twin-Track Jing-Zhang, the three non-interchangeable prototypes, JZ-AIOS, G0–G3, four axes, three carriers, evidence gates, rights boundaries and 12/8/3/36 remain frozen. Every matrix record, proposal, report/visual page, figure, medium, all four PDFs, geometry, metrics, source judgement, real-world status and the unsigned 0/8 human bilingual review are unchanged.
+- Implemented this round: retained `2026-08-14` as the declared evidence-content snapshot date, added the `2026-08-30` navigation-binding date, and stated that the latter records only a package-navigation pointer update. It refreshes no record, source, field evidence, right, approval, maturity, professional acceptance or external-review status. Official geometry, approvals, field baselines and outcomes, real accountability, budgets, recovery time, public feedback, independent legal/trademark review and human bilingual sign-off remain unknown, zero, not provided or NO-GO.
+
+## v98.0 - 2026-08-30
+
+**三区证据矩阵导航出处刷新 / Key-area Matrix Navigation-provenance Refresh**
+
+- 已有能力：R97 已把当前交接索引限定为审阅导航与交接摘要；PR #4275 在 exact head `1d29344705cd027472a2e54487d0b0f2312581be` 完成 96/100、无阻断项评审并以 merge SHA `674925fc9dae693c9cd99a7a442e0ac0353a00b3` 进入 canonical main。
+- 真实缺口：修复前，三区证据矩阵仍用现在时声称“Round 20 review handoff index”登记当前矩阵、日期与载体角色；实际当前索引为 R97。自动 gate 不比较矩阵回链文字与当前索引合同，因此旧轮次标签会让审阅者误判导航出处和时效性。
+- 必须冻结：冻结“双轨京张 / Twin-Track Jing-Zhang”、三种不可互换原型、JZ-AIOS、G0—G3、四轴、三载体、证据门、权利边界及 12/8/3/36；不改 proposal、report/visual 页面、图件、媒体、四份 PDF、geometry、metrics、来源判断、现实状态或 0/8 人工双语签署。
+- 本轮实施：把三区证据矩阵的导航回链精确绑定到 `JZ-REVIEW-HANDOFF-R97.0`，并将角色限定为“审阅导航与交接摘要”；明确该索引不建立矩阵证据、时效性、成熟度、哈希、权利、现场事实、批准或外部评审状态。官方几何、批准、现场基线与结果、现实责任、预算、恢复时间、公众反馈、独立法律/商标审查和人工双语签署继续为 unknown、0、未提供或 NO-GO。
+
+- Existing capability: R97 limited the current handoff index to review navigation and handoff summary. PR #4275 completed a 96/100 review with no blocker on exact head `1d29344705cd027472a2e54487d0b0f2312581be` and entered canonical main as merge SHA `674925fc9dae693c9cd99a7a442e0ac0353a00b3`.
+- Real gap: before repair, the key-area evidence matrix still claimed in present tense that the “Round 20 review handoff index” registered the current matrix, date and carrier role, while the actual current index is R97. Automated gates do not compare matrix backlink prose with the current index contract, so the obsolete round label could misstate navigation provenance and freshness.
+- Frozen boundary: Twin-Track Jing-Zhang, the three non-interchangeable prototypes, JZ-AIOS, G0–G3, four axes, three carriers, evidence gates, rights boundaries and 12/8/3/36 remain frozen. Proposals, report/visual pages, figures, media, all four PDFs, geometry, metrics, source judgements, real-world status and the unsigned 0/8 human bilingual review are unchanged.
+- Implemented this round: bound the key-area matrix navigation backlink exactly to `JZ-REVIEW-HANDOFF-R97.0` and limited its role to review navigation and handoff summary. The index explicitly establishes no matrix evidence, freshness, maturity, hashes, rights, field truth, approval or external-review status. Official geometry, approvals, field baselines and outcomes, real accountability, budgets, recovery time, public feedback, independent legal/trademark review and human bilingual sign-off remain unknown, zero, not provided or NO-GO.
+
+## v97.0 - 2026-08-30
+
+**审阅索引角色边界闭合 / Review-index Role-boundary Closure**
+
+- 已有能力：R96 已明确当前交接索引不存在生成器强制的内嵌完整性结果；PR #4272 在 exact head `cc2a4d6ddc413712037bf90762e8399e2987afef` 完成 96/100、无阻断项评审并进入 canonical main。
+- 真实缺口：修复前，包级指针仍把 `review-handoff-index.json` 称为“逐文件状态注册表”，并声称索引自身覆盖 162 个 manifest 路径、保存 geometry/metrics 哈希和 12/8/3/36 计数；当前索引没有逐文件清单、哈希台账或权利清单。R35 与 R36 两条历史记录也仍用现在时声称索引生成器每次重建都会强制校验。自动 gate 不比较这些角色声明与当前 JSON 结构。
+- 必须冻结：冻结“双轨京张 / Twin-Track Jing-Zhang”、三种不可互换原型、JZ-AIOS、G0—G3、四轴、三载体、证据门、权利边界及 12/8/3/36；不改 proposal、report/visual 页面、图件、媒体、四份 PDF、geometry、metrics、来源判断、现实状态或 0/8 人工双语签署。
+- 本轮实施：把 R97 索引限定为“审阅导航与交接摘要”，明确它不是逐文件注册表、manifest 哈希权威、权利清单、geometry/metrics 冻结台账或外部评审结果；分别指回 manifest 162 路径/161 哈希、file-rights-inventory 162/162 处置、geometry/metrics、合规矩阵和 exact-head 外部评审的真实权威位置。R35/R36 的持续生成器强制说法改为历史执行记录。官方几何、批准、现场基线与结果、现实责任、预算、恢复时间、公众反馈、独立法律/商标审查和人工双语签署继续为 unknown、0、未提供或 NO-GO。
+
+- Existing capability: R96 made explicit that the current handoff index has no generator-enforced embedded integrity result. PR #4272 completed a 96/100 review with no blocker on exact head `cc2a4d6ddc413712037bf90762e8399e2987afef` and entered canonical main.
+- Real gap: before repair, the package pointer still called `review-handoff-index.json` a per-file status registry and claimed that the index itself covered 162 manifest paths and stored geometry/metrics hashes plus the 12/8/3/36 counts. The current index contains no per-file list, hash ledger or rights inventory. Two historical R35/R36 records also still used present tense to claim that the index generator enforced checks on every regeneration. Automated gates do not compare those role claims with the current JSON structure.
+- Frozen boundary: Twin-Track Jing-Zhang, the three non-interchangeable prototypes, JZ-AIOS, G0–G3, four axes, three carriers, evidence gates, rights boundaries and 12/8/3/36 remain frozen. Proposals, report/visual pages, figures, media, all four PDFs, geometry, metrics, source judgements, real-world status and the unsigned 0/8 human bilingual review are unchanged.
+- Implemented this round: limited the R97 index to review navigation and handoff summary, explicitly excluding per-file registry, manifest-hash authority, rights inventory, geometry/metrics freeze ledger and external-review-result roles. It now points separately to the actual authorities for 162 manifest paths/161 hashes, 162/162 path dispositions, geometry/metrics, compliance evidence and exact-head external review. R35/R36 continuous-generator-enforcement wording is now historical execution evidence. Official geometry, approvals, field baselines and outcomes, real accountability, budgets, recovery time, public feedback, independent legal/trademark review and human bilingual sign-off remain unknown, zero, not provided or NO-GO.
+
+## v96.0 - 2026-08-30
+
+**审阅索引完整性声明修复 / Review-index Integrity-claim Repair**
+
+- 已有能力：R95 已把独立交接索引与包级镜像指针逐字对齐；PR #4269 在 exact head `3c102dafc50eaa804441fa9928aded890689d58a` 完成 96/100、无阻断项评审并进入 canonical main。
+- 真实缺口：修复前，R33 历史台账仍用现在时声称当前 `review-handoff-index.json` 内含 `evidence_integrity` 且由生成器强制执行；该块已在后续聚焦重构中移除。六道自动闸门不会比较这项叙述与当前索引结构，因此机器读者可能把历史计数误认为当前 exact-head PASS。
+- 必须冻结：冻结“双轨京张 / Twin-Track Jing-Zhang”、三种不可互换原型、JZ-AIOS、G0—G3、四轴、三载体、证据门、权利边界及 12/8/3/36；不改 proposal、report/visual 页面、图件、媒体、四份 PDF、geometry、metrics、来源判断、现实状态或 0/8 人工双语签署。
+- 本轮实施：把 R33 条目标明为历史执行记录和已被聚焦重构取代的结构状态，停止把旧计数表述为当前结果；在 R96 交接索引增加明确的 fail-closed 状态，说明当前不存在生成器强制的内嵌完整性结果，路线、镜像、manifest 哈希、双语结构与 T-02 必须分别执行并绑定最终 exact head，且不能替代外部评审。官方几何、批准、现场基线与结果、现实责任、预算、恢复时间、公众反馈、独立法律/商标审查和人工双语签署继续为 unknown、0、未提供或 NO-GO。
+
+- Existing capability: R95 aligned the standalone handoff index and package-level mirror pointer byte-for-byte. PR #4269 completed a 96/100 review with no blocker on exact head `3c102dafc50eaa804441fa9928aded890689d58a` and entered canonical main.
+- Real gap: before repair, the R33 historical register still used present-tense language claiming that the current `review-handoff-index.json` contained a generator-enforced `evidence_integrity` block. A later focused refactor removed that block. The six deterministic gates do not compare this narrative with the current index structure, so a machine reader could mistake historical counts for a current exact-head PASS.
+- Frozen boundary: Twin-Track Jing-Zhang, the three non-interchangeable prototypes, JZ-AIOS, G0–G3, four axes, three carriers, evidence gates, rights boundaries and 12/8/3/36 remain frozen. Proposals, report/visual pages, figures, media, all four PDFs, geometry, metrics, source judgements, real-world status and the unsigned 0/8 human bilingual review are unchanged.
+- Implemented this round: marked the R33 entry as a historical execution record whose embedded structure was superseded by the focused refactor, and stopped presenting its old counts as current results. The R96 handoff index now states fail-closed that no generator-enforced embedded integrity result is present; route, mirror, manifest-hash, bilingual-structure and T-02 checks must run separately and bind the final exact head, and cannot replace external review. Official geometry, approvals, field baselines and outcomes, real accountability, budgets, recovery time, public feedback, independent legal/trademark review and human bilingual sign-off remain unknown, zero, not provided or NO-GO.
+
+## v95.0 - 2026-08-30
+
+**交接镜像一致性闭合 / Handoff-mirror Coherence Closure**
+
+- 已有能力：R94 已为中英文审阅者建立精确的 30 秒、3 分钟、15 分钟、专业交接与证据路线；PR #4266 在 exact head `7ea7258264987fde5ca5d15374f55fa16a825604` 完成 96/100、无阻断项评审并进入 canonical main。
+- 真实缺口：修复前，独立 `review-handoff-index.json` 已是 R94，但 `site-grounding-register.json` 的包级验证合同仍把内嵌交接镜像声明为 R93。两者都指向同一路径，自动 gate 却不比较合同标识，因此机器读者无法确认内嵌指针是否对应当前索引。
+- 必须冻结：冻结“双轨京张 / Twin-Track Jing-Zhang”、三种不可互换原型、JZ-AIOS、G0—G3、四轴、三载体、证据门、权利边界及 12/8/3/36；不改 proposal、report/visual 页面、图件、媒体、四份 PDF、geometry、metrics、来源判断、现实状态或 0/8 人工双语签署。
+- 本轮实施：把独立索引与包级验证合同的内嵌指针统一升级为 R95，显式登记目标索引 ID、出版修订号和前序评审绑定，并加入“两个标识必须逐字相等”的 fail-closed 镜像规则；不复制索引正文，不增加事实、媒体或证据成熟度。官方几何、批准、现场基线与结果、现实责任、预算、恢复时间、公众反馈、独立法律/商标审查和人工双语签署继续为 unknown、0、未提供或 NO-GO。
+
+- Existing capability: R94 established exact Chinese and English 30-second, three-minute, 15-minute, professional-handoff and evidence routes. PR #4266 completed a 96/100 review with no blocker on exact head `7ea7258264987fde5ca5d15374f55fa16a825604` and entered canonical main.
+- Real gap: before repair, the standalone `review-handoff-index.json` was R94 while the package-validation contract in `site-grounding-register.json` still declared its embedded handoff mirror as R93. Both pointed to the same path, but automated gates did not compare their contract identifiers, so a machine reader could not prove that the embedded pointer described the current index.
+- Frozen boundary: Twin-Track Jing-Zhang, the three non-interchangeable prototypes, JZ-AIOS, G0–G3, four axes, three carriers, evidence gates, rights boundaries and 12/8/3/36 remain frozen. Proposals, report/visual pages, figures, media, all four PDFs, geometry, metrics, source judgements, real-world status and the unsigned 0/8 human bilingual review are unchanged.
+- Implemented this round: upgraded the standalone index and embedded package-validation pointer to R95, explicitly recorded the target index ID, publication revision and predecessor-review binding, and added a fail-closed rule requiring the two identifiers to match exactly. No index body is duplicated and no fact, media or evidence maturity is added. Official geometry, approvals, field baselines and outcomes, real accountability, budgets, recovery time, public feedback, independent legal/trademark review and human bilingual sign-off remain unknown, zero, not provided or NO-GO.
+
 ## v94.0 - 2026-08-30
 
 **双语精确审阅路由闭合 / Exact Bilingual Review-route Closure**

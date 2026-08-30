@@ -9,18 +9,22 @@
     "visual/assets/cost_evidence_plan.json",
     "visual/assets/verification_handoff_register.json"
   ],
-  "authority_boundary_zh": "本账本只汇编既有概念项目台账、成本取证计划和责任接续记录，不新增主体、预算、价格、场地、现场调查、采购、合作或实施事实。三个项目均停留在G0前置核验状态；所有角色均为待依法任命的原型。工程量、单价、预算资金、采购合同、场地权利、专业条件和现场绩效未确认前，不得转段或表述为已具备实施条件。",
-  "authority_boundary_en": "This ledger only compiles the existing conceptual project register, cost-evidence plan, and responsibility-handoff records. It adds no entity, budget, price, site, field-survey, procurement, partnership, or implementation fact. All three projects remain at the G0 prerequisite-verification stage, and every role is an archetype awaiting lawful appointment. No project may advance or be described as implementable until quantities, unit prices, budget funding, procurement contracts, site rights, professional conditions, and field performance are confirmed.",
+  "authority_boundary_zh": "本账本汇编概念项目台账、成本取证计划、责任接续记录及可公开核验的既有项目事实。AI原点首期候选载体的地址、1650平方米既有装修工程规模、既有装修招标人、施工许可、联合验收和一次‘展厅—北门—社区大街’参访链路已有公开记录；这些记录只用于确定首轮对接与踏勘线索，不构成RailWeave场地授权、现场或无障碍调查、责任接收、预算、采购、合作或实施事实。三个项目均停留在G0前置核验状态；所有角色均为待依法任命的原型。工程量、项目专项报价、预算资金、采购合同、场地权利、专业条件和现场绩效未确认前，不得转段或表述为已具备实施条件。",
+  "authority_boundary_en": "This ledger compiles the conceptual project register, cost-evidence plan, responsibility handoffs, and verifiable public facts about existing projects. Public records verify the address, the 1,650 m² scale of the existing fit-out project, existing-fit-out procuring entity, construction permit, joint acceptance, and one reported hall → north gate → community street visit to the preferred AI Origin candidate venue. Those records establish first-engagement and survey clues only; they constitute neither RailWeave site authorisation nor a field or accessibility survey, responsibility acceptance, budget, procurement, partnership, or implementation. All three projects remain at the G0 prerequisite-verification stage, and every role is an archetype awaiting lawful appointment. No project may advance or be described as implementable until quantities, project-specific quotations, budget funding, procurement contracts, site rights, professional conditions, and field performance are confirmed.",
   "global_confirmation_status": {
     "entity_assignment": "unassigned_role_archetypes_only",
     "budget": "not_approved_not_secured",
     "price": "not_confirmed",
-    "site_and_rights": "not_confirmed",
+    "cost_evidence_maturity": "CM2_partial_public_comparators",
+    "project_price_maturity": "CM0_no_project_specific_quote",
+    "valid_project_quote_count": 0,
+    "confirmed_total_cny": null,
+    "site_and_rights": "ai_origin_candidate_public_records_verified_project_rights_not_confirmed",
     "field_conditions": "not_verified",
     "procurement_or_contract": "not_confirmed",
     "implementation": "not_authorised_not_started",
-    "status_zh": "主体未任命，预算未批准或落实，价格未确认，场地与权利未核验，现场条件未调查，采购或合同未形成，项目未获实施授权且未启动。",
-    "status_en": "Entities are unassigned; budgets are neither approved nor secured; prices are unconfirmed; sites and rights are unverified; field conditions are not surveyed; no procurement or contract is confirmed; and implementation is neither authorised nor started."
+    "status_zh": "AI原点候选展厅的既有工程公开记录已核；主体仍未任命，RailWeave场地权利、预算、项目专项价格、现场条件、采购合同和实施授权均未确认，项目未启动。",
+    "status_en": "Public records for the existing AI Origin candidate hall have been verified. Entities remain unassigned, while RailWeave site rights, budget, project-specific prices, field conditions, procurement contracts, and implementation authorisation are unconfirmed; no project has started."
   },
   "role_archetype_catalog": [
     {
@@ -93,7 +97,7 @@
       "project_id": "RW-A01",
       "title_zh": "AI原点社区需求协同室",
       "title_en": "Beijing AI Origin Community Demand Coordination Room",
-      "project_status": "conceptual_recommendation_site_and_entity_to_be_verified",
+      "project_status": "preferred_candidate_venue_publicly_verified_authorisation_entity_and_field_baseline_pending",
       "current_gate": "G0",
       "current_gate_title_zh": "证据与场地核验",
       "current_gate_title_en": "Evidence and Site Verification",
@@ -104,8 +108,19 @@
         "VH-004",
         "VH-008"
       ],
-      "current_gate_note_zh": "正式范围、场地权利、连续开放与无障碍、共享首层条件及角色接收均未闭合，不进入G1或受控原型。",
-      "current_gate_note_en": "Official extent, site rights, continuous access and accessibility, shared-ground-floor conditions, and role acceptance remain open; the project does not enter G1 or a controlled prototype.",
+      "current_gate_note_zh": "中关村东路8号原点大厦（原东升大厦）裙房一层候选展厅的既有装修招标人、建设许可、联合验收和一次‘展厅—北门—社区大街’参访链路已有公开记录；上述关系和链路只作为首轮对接与踏勘线索。RailWeave场地权利、可用面积、路线实测、连续开放与无障碍、普通服务基线及角色接收仍未闭合，不进入G1或受控原型。",
+      "current_gate_note_en": "Public records verify the existing-fit-out procuring entity, construction permission, joint acceptance, and one reported hall → north gate → community street visit to the candidate ground-floor hall at Origin Building (formerly Dongsheng Building), 8 Zhongguancun East Road; those facts are first-engagement and survey clues only. RailWeave site rights, usable area, measured route, continuous access and accessibility, the ordinary-service baseline, and role acceptance remain open; the project does not enter G1 or a controlled prototype.",
+      "public_candidate_evidence": {
+        "candidate_venue_zh": "原点大厦（原东升大厦）裙房一层AI原点社区展厅",
+        "candidate_venue_en": "AI Origin Community exhibition hall, Ground Floor, Podium, Origin Building (formerly Dongsheng Building)",
+        "address_zh": "海淀区中关村东路8号",
+        "address_en": "8 Zhongguancun East Road, Haidian",
+        "existing_fitout_project_scale_sqm": 1650,
+        "construction_permit": "110108202606050403",
+        "joint_acceptance_notice": "京竣联验（海）字〔2026〕1380号",
+        "source_ids": ["AI-ORIGIN-EXHIBITION-TENDER", "AI-ORIGIN-CONSTRUCTION-PERMIT", "AI-ORIGIN-JOINT-ACCEPTANCE", "AI-ORIGIN-EXHIBITION-OPERATING", "AI-ORIGIN-BUILDING-RENAME"],
+        "status_boundary": "existing_project_fact_not_railweave_site_authorisation_or_s06_usable_area"
+      },
       "raci": {
         "source_ref": "visual/assets/implementation_register.json#/raci_matrix",
         "assignment_status": "unassigned_subject_to_lawful_appointment_or_agreement",
@@ -125,7 +140,7 @@
       "minimum_resource_package": {
         "status": "requirements_defined_resources_not_confirmed",
         "required_inputs_zh": [
-          "公开政策与规划资料",
+          "候选展厅公开许可、验收和使用记录",
           "用户问题陈述",
           "非AI服务基线",
           "场地条件",
@@ -133,7 +148,7 @@
           "权益风险"
         ],
         "required_inputs_en": [
-          "Public policy and planning sources",
+          "Public permit, acceptance, and use records for the candidate hall",
           "User problem statements",
           "Non-AI service baseline",
           "Site conditions",
@@ -146,13 +161,13 @@
         "resource_boundary_en": "These are minimum evidence and service categories; they do not prove that premises, personnel, equipment, data, funding, or service capacity are available."
       },
       "ce_cost_evidence_status": [
-        {"cost_item_id": "CE-001", "category_zh": "AI原点共享首层与需求协同服务", "category_en": "AI Origin shared ground floor and demand-coordination service", "quantity_status": "pending_field_and_rightsholder", "unit_price_status": "unpriced", "confirmation_status": "not_confirmed", "excluded_from_total_until_verified": true},
-        {"cost_item_id": "CE-005", "category_zh": "人员、项目管理与人工接管", "category_en": "Staffing, project management, and human takeover", "quantity_status": "pending_non_ai_baseline", "unit_price_status": "unpriced", "confirmation_status": "not_confirmed", "excluded_from_total_until_verified": true},
+        {"cost_item_id": "CE-001", "category_zh": "原点大厦裙房一层候选展厅与需求协同服务", "category_en": "Candidate exhibition hall at Origin Building podium level 1 and demand-coordination service", "quantity_status": "candidate_whole_hall_1650m2_publicly_verified_s06_usable_area_pending_field_and_rightsholder", "unit_price_status": "public_same_site_and_same_building_project_samples_only_no_s06_unit_price", "price_sample_records": ["PS-AI-ORIGIN-EXHIBITION-2026", "PS-AI-ORIGIN-RONGHUB-2026"], "public_comparable_status": "verified_scope_and_order_of_magnitude_only", "project_quote_status": "required", "valid_project_quote_count_contribution": 0, "included_in_confirmed_total": false, "confirmation_status": "not_confirmed", "excluded_from_total_until_verified": true},
+        {"cost_item_id": "CE-005", "category_zh": "人员、项目管理与人工接管", "category_en": "Staffing, project management, and human takeover", "quantity_status": "pending_non_ai_baseline", "unit_price_status": "public_service_project_samples_only_no_role_or_shift_price", "price_sample_records": ["PS-ACCESS-GUIDE-2026", "PS-ACCESS-MIXED-AUDIT-2026"], "public_comparable_status": "verified_service_package_references_with_scope_limits", "project_quote_status": "required", "valid_project_quote_count_contribution": 0, "included_in_confirmed_total": false, "confirmation_status": "not_confirmed", "excluded_from_total_until_verified": true},
         {"cost_item_id": "CE-006", "category_zh": "无障碍、普通服务等价与多渠道接入", "category_en": "Accessibility, ordinary-service equivalence, and multichannel access", "quantity_status": "pending_field_and_user_review", "unit_price_status": "public_project_level_samples_only_no_s06_unit_price", "confirmation_status": "not_confirmed", "excluded_from_total_until_verified": true},
-        {"cost_item_id": "CE-007", "category_zh": "独立验证、数据安全、法务与审计", "category_en": "Independent validation, data security, legal review, and audit", "quantity_status": "pending_risk_classification", "unit_price_status": "unpriced", "confirmation_status": "not_confirmed", "excluded_from_total_until_verified": true},
-        {"cost_item_id": "CE-008", "category_zh": "公众参与、信息公开与申诉处理", "category_en": "Public participation, information disclosure, and appeal handling", "quantity_status": "pending_participation_plan", "unit_price_status": "unpriced", "confirmation_status": "not_confirmed", "excluded_from_total_until_verified": true},
-        {"cost_item_id": "CE-009", "category_zh": "保险、应急与风险准备", "category_en": "Insurance, emergency response, and risk provision", "quantity_status": "pending_risk_and_responsibility_confirmation", "unit_price_status": "unpriced", "confirmation_status": "not_confirmed", "excluded_from_total_until_verified": true},
-        {"cost_item_id": "CE-010", "category_zh": "维护、更新、数据迁移与退出恢复", "category_en": "Maintenance, renewal, data migration, and exit restoration", "quantity_status": "pending_contract_and_asset_inventory", "unit_price_status": "unpriced", "confirmation_status": "not_confirmed", "excluded_from_total_until_verified": true}
+        {"cost_item_id": "CE-007", "category_zh": "独立验证、数据安全、法务与审计", "category_en": "Independent validation, data security, legal review, and audit", "quantity_status": "pending_risk_classification", "unit_price_status": "public_independent_evaluation_and_legal_samples_only_no_s06_unit_price", "price_sample_records": ["PS-ACCESS-EVALUATION-2026", "PS-LEGAL-COUNSEL-2026"], "public_comparable_status": "verified_project_level_references_quantity_and_scope_not_comparable", "project_quote_status": "required", "valid_project_quote_count_contribution": 0, "included_in_confirmed_total": false, "confirmation_status": "not_confirmed", "excluded_from_total_until_verified": true},
+        {"cost_item_id": "CE-008", "category_zh": "公众参与、信息公开与申诉处理", "category_en": "Public participation, information disclosure, and appeal handling", "quantity_status": "pending_participation_plan", "unit_price_status": "public_access_support_and_temporary_information_samples_only_no_s06_unit_price", "price_sample_records": ["PS-ACCESS-GUIDE-2026", "PS-TEMP-WAYFINDING-2026", "PS-TEMP-EXHIBIT-SEED-2026"], "public_comparable_status": "verified_work_package_headings_with_scope_limits", "project_quote_status": "required", "valid_project_quote_count_contribution": 0, "included_in_confirmed_total": false, "confirmation_status": "not_confirmed", "excluded_from_total_until_verified": true},
+        {"cost_item_id": "CE-009", "category_zh": "保险、应急与风险准备", "category_en": "Insurance, emergency response, and risk provision", "quantity_status": "pending_risk_and_responsibility_confirmation", "unit_price_status": "public_insurance_line_item_context_only_no_s06_premium", "price_sample_records": ["PS-PUBLIC-LIABILITY-INSURANCE-2026"], "public_comparable_status": "verified_need_for_separate_line_item_rate_not_comparable", "project_quote_status": "required", "valid_project_quote_count_contribution": 0, "included_in_confirmed_total": false, "confirmation_status": "not_confirmed", "excluded_from_total_until_verified": true},
+        {"cost_item_id": "CE-010", "category_zh": "维护、更新、数据迁移与退出恢复", "category_en": "Maintenance, renewal, data migration, and exit restoration", "quantity_status": "pending_contract_and_asset_inventory", "unit_price_status": "public_packages_include_maintenance_and_removal_headings_no_s06_exit_price", "price_sample_records": ["PS-AI-ORIGIN-RONGHUB-2026", "PS-TEMP-WAYFINDING-2026", "PS-TEMP-EXHIBIT-SEED-2026", "PS-TEMP-EXHIBIT-ACCESS-2026"], "public_comparable_status": "verified_maintenance_and_exit_headings_with_scope_limits", "project_quote_status": "required", "valid_project_quote_count_contribution": 0, "included_in_confirmed_total": false, "confirmation_status": "not_confirmed", "excluded_from_total_until_verified": true}
       ],
       "acceptance_artifacts_zh": [
         "完整需求简报",
@@ -253,12 +268,12 @@
       "ce_cost_evidence_status": [
         {"cost_item_id": "CE-002", "category_zh": "众智园受控测试空间与安全配置", "category_en": "Zhongzhiyuan controlled-testing premises and safety configuration", "quantity_status": "pending_field_and_professional_review", "unit_price_status": "unpriced", "confirmation_status": "not_confirmed", "excluded_from_total_until_verified": true},
         {"cost_item_id": "CE-003", "category_zh": "测试设备、算力、软件与版本更新", "category_en": "Test equipment, compute, software, and version renewal", "quantity_status": "pending_test_brief", "unit_price_status": "unpriced", "confirmation_status": "not_confirmed", "excluded_from_total_until_verified": true},
-        {"cost_item_id": "CE-005", "category_zh": "人员、项目管理与人工接管", "category_en": "Staffing, project management, and human takeover", "quantity_status": "pending_non_ai_baseline", "unit_price_status": "unpriced", "confirmation_status": "not_confirmed", "excluded_from_total_until_verified": true},
+        {"cost_item_id": "CE-005", "category_zh": "人员、项目管理与人工接管", "category_en": "Staffing, project management, and human takeover", "quantity_status": "pending_non_ai_baseline", "unit_price_status": "public_service_project_samples_only_no_role_or_shift_price", "price_sample_records": ["PS-ACCESS-GUIDE-2026", "PS-ACCESS-MIXED-AUDIT-2026"], "public_comparable_status": "verified_service_package_references_with_scope_limits", "project_quote_status": "required", "valid_project_quote_count_contribution": 0, "included_in_confirmed_total": false, "confirmation_status": "not_confirmed", "excluded_from_total_until_verified": true},
         {"cost_item_id": "CE-006", "category_zh": "无障碍、普通服务等价与多渠道接入", "category_en": "Accessibility, ordinary-service equivalence, and multichannel access", "quantity_status": "pending_field_and_user_review", "unit_price_status": "public_project_level_samples_only_no_s06_unit_price", "confirmation_status": "not_confirmed", "excluded_from_total_until_verified": true},
-        {"cost_item_id": "CE-007", "category_zh": "独立验证、数据安全、法务与审计", "category_en": "Independent validation, data security, legal review, and audit", "quantity_status": "pending_risk_classification", "unit_price_status": "unpriced", "confirmation_status": "not_confirmed", "excluded_from_total_until_verified": true},
-        {"cost_item_id": "CE-008", "category_zh": "公众参与、信息公开与申诉处理", "category_en": "Public participation, information disclosure, and appeal handling", "quantity_status": "pending_participation_plan", "unit_price_status": "unpriced", "confirmation_status": "not_confirmed", "excluded_from_total_until_verified": true},
-        {"cost_item_id": "CE-009", "category_zh": "保险、应急与风险准备", "category_en": "Insurance, emergency response, and risk provision", "quantity_status": "pending_risk_and_responsibility_confirmation", "unit_price_status": "unpriced", "confirmation_status": "not_confirmed", "excluded_from_total_until_verified": true},
-        {"cost_item_id": "CE-010", "category_zh": "维护、更新、数据迁移与退出恢复", "category_en": "Maintenance, renewal, data migration, and exit restoration", "quantity_status": "pending_contract_and_asset_inventory", "unit_price_status": "unpriced", "confirmation_status": "not_confirmed", "excluded_from_total_until_verified": true}
+        {"cost_item_id": "CE-007", "category_zh": "独立验证、数据安全、法务与审计", "category_en": "Independent validation, data security, legal review, and audit", "quantity_status": "pending_risk_classification", "unit_price_status": "public_independent_evaluation_and_legal_samples_only_no_s06_unit_price", "price_sample_records": ["PS-ACCESS-EVALUATION-2026", "PS-LEGAL-COUNSEL-2026"], "public_comparable_status": "verified_project_level_references_quantity_and_scope_not_comparable", "project_quote_status": "required", "valid_project_quote_count_contribution": 0, "included_in_confirmed_total": false, "confirmation_status": "not_confirmed", "excluded_from_total_until_verified": true},
+        {"cost_item_id": "CE-008", "category_zh": "公众参与、信息公开与申诉处理", "category_en": "Public participation, information disclosure, and appeal handling", "quantity_status": "pending_participation_plan", "unit_price_status": "public_access_support_and_temporary_information_samples_only_no_s06_unit_price", "price_sample_records": ["PS-ACCESS-GUIDE-2026", "PS-TEMP-WAYFINDING-2026", "PS-TEMP-EXHIBIT-SEED-2026"], "public_comparable_status": "verified_work_package_headings_with_scope_limits", "project_quote_status": "required", "valid_project_quote_count_contribution": 0, "included_in_confirmed_total": false, "confirmation_status": "not_confirmed", "excluded_from_total_until_verified": true},
+        {"cost_item_id": "CE-009", "category_zh": "保险、应急与风险准备", "category_en": "Insurance, emergency response, and risk provision", "quantity_status": "pending_risk_and_responsibility_confirmation", "unit_price_status": "public_insurance_line_item_context_only_no_s06_premium", "price_sample_records": ["PS-PUBLIC-LIABILITY-INSURANCE-2026"], "public_comparable_status": "verified_need_for_separate_line_item_rate_not_comparable", "project_quote_status": "required", "valid_project_quote_count_contribution": 0, "included_in_confirmed_total": false, "confirmation_status": "not_confirmed", "excluded_from_total_until_verified": true},
+        {"cost_item_id": "CE-010", "category_zh": "维护、更新、数据迁移与退出恢复", "category_en": "Maintenance, renewal, data migration, and exit restoration", "quantity_status": "pending_contract_and_asset_inventory", "unit_price_status": "public_packages_include_maintenance_and_removal_headings_no_s06_exit_price", "price_sample_records": ["PS-AI-ORIGIN-RONGHUB-2026", "PS-TEMP-WAYFINDING-2026", "PS-TEMP-EXHIBIT-SEED-2026", "PS-TEMP-EXHIBIT-ACCESS-2026"], "public_comparable_status": "verified_maintenance_and_exit_headings_with_scope_limits", "project_quote_status": "required", "valid_project_quote_count_contribution": 0, "included_in_confirmed_total": false, "confirmation_status": "not_confirmed", "excluded_from_total_until_verified": true}
       ],
       "acceptance_artifacts_zh": [
         "可复现测试包",
@@ -358,12 +373,12 @@
       },
       "ce_cost_evidence_status": [
         {"cost_item_id": "CE-004", "category_zh": "大钟寺需求发布、合规咨询与90/180日评价", "category_en": "Dazhongsi demand publication, compliance advice, and 90/180-day evaluation", "quantity_status": "pending_demand_owner_and_scope", "unit_price_status": "unpriced", "confirmation_status": "not_confirmed", "excluded_from_total_until_verified": true},
-        {"cost_item_id": "CE-005", "category_zh": "人员、项目管理与人工接管", "category_en": "Staffing, project management, and human takeover", "quantity_status": "pending_non_ai_baseline", "unit_price_status": "unpriced", "confirmation_status": "not_confirmed", "excluded_from_total_until_verified": true},
+        {"cost_item_id": "CE-005", "category_zh": "人员、项目管理与人工接管", "category_en": "Staffing, project management, and human takeover", "quantity_status": "pending_non_ai_baseline", "unit_price_status": "public_service_project_samples_only_no_role_or_shift_price", "price_sample_records": ["PS-ACCESS-GUIDE-2026", "PS-ACCESS-MIXED-AUDIT-2026"], "public_comparable_status": "verified_service_package_references_with_scope_limits", "project_quote_status": "required", "valid_project_quote_count_contribution": 0, "included_in_confirmed_total": false, "confirmation_status": "not_confirmed", "excluded_from_total_until_verified": true},
         {"cost_item_id": "CE-006", "category_zh": "无障碍、普通服务等价与多渠道接入", "category_en": "Accessibility, ordinary-service equivalence, and multichannel access", "quantity_status": "pending_field_and_user_review", "unit_price_status": "public_project_level_samples_only_no_s06_unit_price", "confirmation_status": "not_confirmed", "excluded_from_total_until_verified": true},
-        {"cost_item_id": "CE-007", "category_zh": "独立验证、数据安全、法务与审计", "category_en": "Independent validation, data security, legal review, and audit", "quantity_status": "pending_risk_classification", "unit_price_status": "unpriced", "confirmation_status": "not_confirmed", "excluded_from_total_until_verified": true},
-        {"cost_item_id": "CE-008", "category_zh": "公众参与、信息公开与申诉处理", "category_en": "Public participation, information disclosure, and appeal handling", "quantity_status": "pending_participation_plan", "unit_price_status": "unpriced", "confirmation_status": "not_confirmed", "excluded_from_total_until_verified": true},
-        {"cost_item_id": "CE-009", "category_zh": "保险、应急与风险准备", "category_en": "Insurance, emergency response, and risk provision", "quantity_status": "pending_risk_and_responsibility_confirmation", "unit_price_status": "unpriced", "confirmation_status": "not_confirmed", "excluded_from_total_until_verified": true},
-        {"cost_item_id": "CE-010", "category_zh": "维护、更新、数据迁移与退出恢复", "category_en": "Maintenance, renewal, data migration, and exit restoration", "quantity_status": "pending_contract_and_asset_inventory", "unit_price_status": "unpriced", "confirmation_status": "not_confirmed", "excluded_from_total_until_verified": true}
+        {"cost_item_id": "CE-007", "category_zh": "独立验证、数据安全、法务与审计", "category_en": "Independent validation, data security, legal review, and audit", "quantity_status": "pending_risk_classification", "unit_price_status": "public_independent_evaluation_and_legal_samples_only_no_s06_unit_price", "price_sample_records": ["PS-ACCESS-EVALUATION-2026", "PS-LEGAL-COUNSEL-2026"], "public_comparable_status": "verified_project_level_references_quantity_and_scope_not_comparable", "project_quote_status": "required", "valid_project_quote_count_contribution": 0, "included_in_confirmed_total": false, "confirmation_status": "not_confirmed", "excluded_from_total_until_verified": true},
+        {"cost_item_id": "CE-008", "category_zh": "公众参与、信息公开与申诉处理", "category_en": "Public participation, information disclosure, and appeal handling", "quantity_status": "pending_participation_plan", "unit_price_status": "public_access_support_and_temporary_information_samples_only_no_s06_unit_price", "price_sample_records": ["PS-ACCESS-GUIDE-2026", "PS-TEMP-WAYFINDING-2026", "PS-TEMP-EXHIBIT-SEED-2026"], "public_comparable_status": "verified_work_package_headings_with_scope_limits", "project_quote_status": "required", "valid_project_quote_count_contribution": 0, "included_in_confirmed_total": false, "confirmation_status": "not_confirmed", "excluded_from_total_until_verified": true},
+        {"cost_item_id": "CE-009", "category_zh": "保险、应急与风险准备", "category_en": "Insurance, emergency response, and risk provision", "quantity_status": "pending_risk_and_responsibility_confirmation", "unit_price_status": "public_insurance_line_item_context_only_no_s06_premium", "price_sample_records": ["PS-PUBLIC-LIABILITY-INSURANCE-2026"], "public_comparable_status": "verified_need_for_separate_line_item_rate_not_comparable", "project_quote_status": "required", "valid_project_quote_count_contribution": 0, "included_in_confirmed_total": false, "confirmation_status": "not_confirmed", "excluded_from_total_until_verified": true},
+        {"cost_item_id": "CE-010", "category_zh": "维护、更新、数据迁移与退出恢复", "category_en": "Maintenance, renewal, data migration, and exit restoration", "quantity_status": "pending_contract_and_asset_inventory", "unit_price_status": "public_packages_include_maintenance_and_removal_headings_no_s06_exit_price", "price_sample_records": ["PS-AI-ORIGIN-RONGHUB-2026", "PS-TEMP-WAYFINDING-2026", "PS-TEMP-EXHIBIT-SEED-2026", "PS-TEMP-EXHIBIT-ACCESS-2026"], "public_comparable_status": "verified_maintenance_and_exit_headings_with_scope_limits", "project_quote_status": "required", "valid_project_quote_count_contribution": 0, "included_in_confirmed_total": false, "confirmation_status": "not_confirmed", "excluded_from_total_until_verified": true}
       ],
       "acceptance_artifacts_zh": [
         "采购及合规文件",

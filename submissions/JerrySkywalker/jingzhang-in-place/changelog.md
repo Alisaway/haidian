@@ -1,5 +1,11 @@
 # 方案迭代记录
 
+## Final one-shot regional interface and spatial judgment - 2026-08-30
+
+- **一个图面闭合两项缺口**：将既有 FIG.01 双语总览升级为“京张空间判断 + 条件区域接口”；坐标几何部分明确北向、`EPSG:4548`、0–1 km 比例尺、数据状态与临时边界警示，三处真实尺寸未知的断面继续标为 `NTS / NOT TO SCALE / CONCEPT TYPOLOGY`。
+- **五节点条件协同机制**：北纬社区、未来科学城、怀柔科学城、经开区和京津冀逐行建立候选任务、建议接口、证据交换、返回京张、激活条件、当前状态与不承诺边界；全部保持 `UNCONTACTED / UNCONFIRMED`，不新增合作、资源、运营或政府承诺。
+- **评审路由修复**：修正任务书结构化资产中六个失效的 GitHub 标题片段，并将北纬社区的英文错拼校正为 `Beiwei Community`；不改变 accepted design core、几何、指标、15 个项目族、G0–G4 或实施证据等级。
+
 ## Trusted review blocker closeout - 2026-08-30
 
 - **中文离线交付可复现性**：为四个最终 HTML 表面加入包内 Noto Sans SC WOFF2 子集与 OFL 许可记录；字体子集从最终页面字符并集确定性构建，不依赖宿主 CJK 字体、网络或 CDN。

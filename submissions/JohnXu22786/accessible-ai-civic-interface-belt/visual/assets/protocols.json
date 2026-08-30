@@ -1,0 +1,61 @@
+{
+  "schema_version": "0.1.0",
+  "status": "proposed",
+  "protocols": [
+    {
+      "id": "itp-01-accessible-dialogue",
+      "name_zh": "无障碍多模态对话接口试验",
+      "name_en": "Accessible multimodal dialogue interface test",
+      "hypothesis": "同一公共信息若提供简明文本、语音、英文、大字和人工回退，首次任务完成率与可控感提高。",
+      "protocol": "招募不同能力与年龄的匿名参与者，使用虚拟公共服务表单完成三项任务；随机轮换模态顺序；人工观察员记录错误恢复与退出。",
+      "measurements": [
+        "完成率",
+        "错误恢复秒数",
+        "人工转接率",
+        "可控感1-5级"
+      ],
+      "data_scope": "只保存匿名指标与参与者主动提交的文字反馈，原始音频默认不存。",
+      "pass_rule": "相较纯文本基线，完成率提升且可控感不下降；具体阈值由预试确定。",
+      "stop_rule": "出现误导法定义务、无法退出、歧视性推荐或敏感信息输入。",
+      "owner": "provisional / to_verify",
+      "status": "proposed"
+    },
+    {
+      "id": "itp-02-civic-form-explainer",
+      "name_zh": "公共表单可理解性试验",
+      "name_en": "Public-form comprehension test",
+      "hypothesis": "AI 只做字段解释、人工保留法定判断，可减少误填而不制造“自动审批”错觉。",
+      "protocol": "用清权的虚拟表单设置对照组；参与者完成填写、检查与人工转接；专家盲评解释是否越界。",
+      "measurements": [
+        "字段误填率",
+        "理解测验分数",
+        "人工转接完成率",
+        "越界表达数"
+      ],
+      "data_scope": "虚拟数据、匿名答卷和专家编码；禁止真实证件、账户和私有接口。",
+      "pass_rule": "误填率下降且越界表达为零；解释页面明确不替代正式渠道。",
+      "stop_rule": "模型给出审批/资格结论或参与者被诱导提交个人信息。",
+      "owner": "provisional / to_verify",
+      "status": "proposed"
+    },
+    {
+      "id": "itp-03-public-space-recovery",
+      "name_zh": "公共空间人工回退与运维试验",
+      "name_en": "Public-space human fallback and operations test",
+      "hypothesis": "把 AI 提示限制在聚合环境信息，并配置人工回退，可提高公共空间运维的可理解性与公平性。",
+      "protocol": "在 N2/N3 以模拟开放状态与设施故障卡进行桌面演练，测试信息过期、冲突和投诉三种情形；不进行人群识别。",
+      "measurements": [
+        "状态纠错时长",
+        "人工接管率",
+        "信息过期发现率",
+        "不同群体可达性差异"
+      ],
+      "data_scope": "匿名演练日志、设施状态摘要和公开投诉类别；不保存轨迹、声纹、人脸。",
+      "pass_rule": "所有故障情形可切换人工模式，公开状态不会超过约定时效。",
+      "stop_rule": "系统继续显示未知状态为可用、发生个体监控或人工无法接管。",
+      "owner": "provisional / to_verify",
+      "status": "proposed"
+    }
+  ],
+  "approval_status": "not approved; to_verify"
+}

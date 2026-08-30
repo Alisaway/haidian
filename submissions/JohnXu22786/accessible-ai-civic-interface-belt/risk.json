@@ -1,0 +1,176 @@
+{
+  "schema_version": "0.2.0",
+  "version": 1,
+  "dimensions": [
+    {
+      "id": "data_privacy",
+      "label": "数据隐私",
+      "label_en": "Data privacy",
+      "score": 4,
+      "note": "真实数据接入可能伤害公共信任。",
+      "mitigation": "仅匿名聚合、最小化、人工复核、删除和退出。",
+      "human_review": "由隐私与专业团队在任何真实数据接入前复核。"
+    },
+    {
+      "id": "implementation_complexity",
+      "label": "实施复杂度",
+      "label_en": "Implementation complexity",
+      "score": 3,
+      "note": "三节点、双翼和人工回退需要跨专业协作。",
+      "mitigation": "先最小组件包、再小规模协议、最后决定是否扩散。",
+      "human_review": "由实施团队在每期闸门评审。"
+    },
+    {
+      "id": "public_acceptance",
+      "label": "公众接受度",
+      "label_en": "Public acceptance",
+      "score": 3,
+      "note": "AI 归并可能遮蔽少数意见。",
+      "mitigation": "议事、公示、保留相反意见和年度公开报告。",
+      "human_review": "由社区参与者与主持人复核。"
+    },
+    {
+      "id": "operations_cost",
+      "label": "运营成本",
+      "label_en": "Operations cost",
+      "score": 3,
+      "note": "巡检、审校、人工接管和活动成本未知。",
+      "mitigation": "轮换、分级、过期降级和先定责任再扩散。",
+      "human_review": "由运营方与财务/公共服务团队待核。"
+    },
+    {
+      "id": "policy_uncertainty",
+      "label": "政策不确定性",
+      "label_en": "Policy uncertainty",
+      "score": 4,
+      "note": "控规、蓝线、遗产和数据规则资料尚不完整。",
+      "mitigation": "所有结论标 provisional/to_verify/unknown，不替代审批。",
+      "human_review": "由规划、交通、水务和法务专业团队复核。"
+    },
+    {
+      "id": "spatial_dispute",
+      "label": "空间争议",
+      "label_en": "Spatial dispute",
+      "score": 4,
+      "note": "临时几何可能被误读为官方红线。",
+      "mitigation": "官方边界到位即重画并复算，当前图层只作示意。",
+      "human_review": "由测绘与规划团队复核。"
+    },
+    {
+      "id": "technology_maturity",
+      "label": "技术成熟度",
+      "label_en": "Technology maturity",
+      "score": 3,
+      "note": "原型可能失效、过期或误导。",
+      "mitigation": "三项协议、小规模、人工回退和停止条件。",
+      "human_review": "由试验管理员和无障碍顾问复核。"
+    },
+    {
+      "id": "equity_inclusion",
+      "label": "公平与包容性",
+      "label_en": "Equity and inclusion",
+      "score": 4,
+      "note": "数字优先可能排除老年人、残障者和低带宽用户。",
+      "mitigation": "纸本、语音、大字、英文、人工服务与退出并行。",
+      "human_review": "由无障碍顾问和多元参与者复核。"
+    }
+  ],
+  "risks": [
+    {
+      "risk_id": "R-PRIVACY",
+      "dimension": "data_privacy",
+      "risk_en": "Individual profiling, continuous traces, or sensitive data enter a public scenario",
+      "severity": "high",
+      "status": "controlled_by_boundary",
+      "risk_zh": "个体画像、连续轨迹或敏感数据进入公共场景",
+      "mitigation_zh": "匿名聚合、虚拟数据、最小化、人工复核、删除与退出；禁止人脸/声纹/过度监控",
+      "mitigation_en": "Use anonymous aggregation, synthetic data, minimization, human review, deletion, and exit; prohibit face, voiceprint, and excessive monitoring.",
+      "owner": "to_verify",
+      "trigger": "任何真实数据接入"
+    },
+    {
+      "risk_id": "R-SPATIAL",
+      "dimension": "spatial_dispute",
+      "risk_en": "Temporary geometry is misread as an official boundary or engineering conclusion",
+      "severity": "high",
+      "status": "provisional",
+      "risk_zh": "临时几何被误读为官方边界或工程结论",
+      "mitigation_zh": "显式 provisional、图层属性和复算触发条件；官方资料到位后重画",
+      "mitigation_en": "State provisional status, layer attributes, and recalculation triggers; redraw when official material arrives.",
+      "owner": "planning team to_verify",
+      "trigger": "官方红线/测绘发布"
+    },
+    {
+      "risk_id": "R-ECOLOGY",
+      "dimension": "policy_uncertainty",
+      "risk_en": "Blue-line, river-management, flood, and ecological data are incomplete",
+      "severity": "high",
+      "status": "to_verify",
+      "risk_zh": "蓝线、河道管理、防洪、生态资料缺失",
+      "mitigation_zh": "水边活动只做概念观察与可撤组件，不作工程结论",
+      "mitigation_en": "Keep water-edge activity to conceptual observation and removable components; make no engineering conclusion.",
+      "owner": "specialists to_verify",
+      "trigger": "任何岸线实施"
+    },
+    {
+      "risk_id": "R-EQUITY",
+      "dimension": "equity_inclusion",
+      "risk_en": "Digital-first service excludes older people, disabled people, low-bandwidth users, or international visitors",
+      "severity": "high",
+      "status": "controlled_by_fallback",
+      "risk_zh": "数字优先排除老年人、残障者、低带宽用户或国际访客",
+      "mitigation_zh": "纸本、语音、大字、英文和人工并行；场景卡设可退出与停止条件",
+      "mitigation_en": "Run paper, audio, large type, English, and human service in parallel; keep exit and stop conditions in every card.",
+      "owner": "accessibility advisor to_verify",
+      "trigger": "现场测试投诉"
+    },
+    {
+      "risk_id": "R-TECH",
+      "dimension": "technology_maturity",
+      "risk_en": "A prototype fails or a model produces inaccurate output",
+      "severity": "medium",
+      "status": "proposed_test",
+      "risk_zh": "原型失效或模型生成不准确",
+      "mitigation_zh": "三项协议、小规模、来源卡、过期降级、人工回退",
+      "mitigation_en": "Use three protocols, small scale, source cards, stale-status downgrade, and human fallback.",
+      "owner": "test manager to_verify",
+      "trigger": "错误/越界/无法回退"
+    },
+    {
+      "risk_id": "R-ACCEPT",
+      "dimension": "public_acceptance",
+      "risk_en": "AI aggregation hides minority views or creates an illusion of automation",
+      "severity": "medium",
+      "status": "proposed_governance",
+      "risk_zh": "AI 归并掩盖少数意见或造成自动化错觉",
+      "mitigation_zh": "议事、公示、保留相反意见、年度公开报告",
+      "mitigation_en": "Use deliberation, disclosure, preserved dissent, and an annual public report.",
+      "owner": "community mechanism provisional",
+      "trigger": "公众质疑或议题偏置"
+    },
+    {
+      "risk_id": "R-OPS",
+      "dimension": "operations_cost",
+      "risk_en": "Human takeover, inspection, content review, and event-operation costs are unknown",
+      "severity": "medium",
+      "status": "unknown",
+      "risk_zh": "人工接管、巡检、内容审校和活动运营成本未知",
+      "mitigation_zh": "先做最小组件包和轮换试点，先定责任再扩散",
+      "mitigation_en": "Start with a minimum component kit and rotating test; assign responsibility before expansion.",
+      "owner": "operator to_verify",
+      "trigger": "预算与RACI确定"
+    },
+    {
+      "risk_id": "R-RIGHTS",
+      "dimension": "policy_uncertainty",
+      "risk_en": "Rights for historic material, fonts, case imagery, or trademarks are unclear",
+      "severity": "medium",
+      "status": "ledgered",
+      "risk_zh": "历史材料、字体、案例图像或商标权利不清",
+      "mitigation_zh": "原创图形/几何、清权文本、无第三方视觉复用；发布前逐项复核",
+      "mitigation_en": "Use original graphics/geometry and cleared text only; reuse no third-party visuals and review each item before publication.",
+      "owner": "rights reviewer to_verify",
+      "trigger": "外部发布或品牌注册"
+    }
+  ]
+}
