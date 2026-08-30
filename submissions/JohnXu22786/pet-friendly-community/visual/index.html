@@ -44,7 +44,7 @@ footer { color:var(--muted); font-size:13px; margin-top:26px; }
 <section class="sheet"><h2>重点区域</h2><p>重点区域（三片区两翼概念分工）：众智园AI加速区承载萌宠乐园、AI原点社区承载伴行步径、大钟寺产业集聚区承载宠物服务站；中关村科技服务翼与小月河场景赋能翼提供算力、数据与场景开放机制（概念）；三处地标与九节点目录（3地标+6场景节点）。</p>
 <p data-metric="landmark_count" data-value="3" class="metric">AI 地标：3</p>
 <p data-metric="scenario_node_count" data-value="9" class="metric">场景节点：9</p></section>
-<section class="sheet"><h2>用地分区</h2><p>用地分类单一口径（口径A，分母为用地分区总面积约11.4 km²，与总体设计范围相当）：共27个概念分区单元；绿地率（口径B）约12%，公共空间率（口径C）约0.4%，三口径分别标注、不可混算，官方数据发布后整体复算。</p>
+<section class="sheet"><h2>用地分区</h2><p>用地分类单一口径（口径A）仅统计 land_use.geojson 的概念分区单元数，不声称面积占比，也不以总体设计范围作分母：共27个概念分区单元；绿地率（口径B）约12%、公共空间率（口径C）约0.4%分别复算，三口径不可混算，官方数据发布后按各自公式复算。</p>
 <p data-metric="land_use_zone_count" data-value="27" class="metric">概念用地分区单元：27</p>
 <table><tr><th>用地类别（口径A）</th><th>概念分区单元数</th></tr>
 <tr><td>公园绿地</td><td>5</td></tr>
@@ -79,14 +79,15 @@ footer { color:var(--muted); font-size:13px; margin-top:26px; }
 <tr><td>场景卡</td><td class="metric" data-metric="scenario_card_count" data-value="10">10</td><td>count</td><td>high</td><td>count(scenario card rows in proposal.md)</td></tr>
 <tr><td>行业验证测试</td><td class="metric" data-metric="industry_test_scenario_count" data-value="3">3</td><td>count</td><td>high</td><td>count(industry test protocol rows in proposal.md)</td></tr>
 <tr><td>年度活动</td><td class="metric" data-metric="annual_program_count" data-value="3">3</td><td>count</td><td>high</td><td>count(annual programme rows in proposal.md)</td></tr>
-<tr><td>全球案例</td><td class="metric" data-metric="global_case_count" data-value="6">6</td><td>count</td><td>high</td><td>count(global pet-friendly and AI ecosystem case rows in proposal.md)</td></tr>
+<tr><td>全球AI生态案例</td><td class="metric" data-metric="global_case_count" data-value="6">6</td><td>count</td><td>high</td><td>count(global AI ecosystem case rows in proposal.md)</td></tr>
+<tr><td>宠物友好对标案例</td><td class="metric" data-metric="pet_friendly_case_count" data-value="6">6</td><td>count</td><td>high</td><td>count(pet-friendly benchmark case rows in proposal.md)</td></tr>
 <tr><td>人才画像</td><td class="metric" data-metric="persona_count" data-value="5">5</td><td>count</td><td>high</td><td>count(representative user groups)</td></tr>
 <tr><td>分期</td><td class="metric" data-metric="phase_count" data-value="3">3</td><td>count</td><td>high</td><td>count(phasing polygons)</td></tr>
 </table></section>
 <section class="sheet"><h2>任务覆盖</h2><p>任务书覆盖（agent.1-6 逐项映射于 compliance_matrix.json）：agent.1 一带总体概念与命名；agent.2 6个全球案例与AI生态图谱；agent.3 10张场景卡+3项测试协议；agent.4 三处地标目录+荣誉展示+可逆组件库；agent.5 京张—中关村—AI文化叙事与国际传播；agent.6 开发者社区、场景开放与招引转化机制。</p></section>
 <section class="sheet"><h2>自检状态</h2><p>四门自检记录见 self_check.json（确定性校验、空间审查、可视化打包、专业证据）；figure_qc 见 self_check.json[figure_qc]；manifest 校验声明见 manifest.json。</p></section>
-<section class="sheet"><h2>来源</h2><p>来源逐条登记于 sources.json（机构、URL、发布日期、获取日期、复用边界与许可）：组织方公告与任务书、无障碍环境建设法、用地分类指南、生成式AI暂行办法、6个全球宠物友好与AI生态案例、品牌在先权利状态自记录、字体与工具许可。</p></section>
-<section class="sheet"><h2>假设</h2><p>假设逐条登记于 assumptions.json：边界与几何为 provisional、法定控制未知、不引用未核实数据、AI场景仅匿名聚合、品牌在先权利未检索前按内部工作代号处理、养宠管理概念建议。</p></section>
+<section class="sheet"><h2>来源</h2><p>来源逐条登记于 sources.json（机构、URL、发布日期、获取日期、复用边界与许可）：组织方公告与任务书、无障碍环境建设法、用地分类指南、生成式AI暂行办法、6个全球AI创新生态案例与6个宠物友好对标案例（分开统计）、品牌在先权利状态自记录、字体与工具许可。</p></section>
+<section class="sheet"><h2>假设</h2><p>假设逐条登记于 assumptions.json：边界与几何为 provisional、法定控制未知、不引用未核实数据、AI场景采用分层数据治理（匿名聚合、去标识运营记录与受控可关联服务记录）、品牌在先权利未检索前按内部工作代号处理、养宠管理概念建议。</p></section>
 <footer>本页数据与几何均为参与者临时模型数据（非权威数据），provisional 边界，官方数据发布后复算并同步更新；版权归 JohnXu22786，COMMUNITY-DISPLAY-ONLY 许可。</footer>
 </div>
 </body>
