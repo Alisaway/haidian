@@ -1,0 +1,216 @@
+{
+  "schema_version": "1.0.0",
+  "model_id": "JZ-ECON-20260829-V2",
+  "status": "participant_authored_internal_concept_estimate",
+  "effective_date": "2026-08-29",
+  "currency": "CNY",
+  "price_basis": "2026-08 participant concept estimate; constant prices; VAT treatment not separately modelled",
+  "license": "COMMUNITY-DISPLAY-ONLY",
+  "purpose": "Reproduce the rounded quantities, CAPEX, operating return and payback values shown in the bilingual FIG-10 economic diagrams. This model is not a quotation, approved budget, financing plan, investment conclusion or revenue guarantee.",
+  "quantity_basis": {
+    "total_design_area_sqm": 11412825.386,
+    "three_key_areas_ha": 369,
+    "buildings_included_count": 41,
+    "standard_activated_floor_area_sqm": 172100,
+    "public_realm_interface_km": 9.52,
+    "flexible_modules_count": 12,
+    "public_realm_nodes_count": 12,
+    "geometry_confidence": "low",
+    "notes": [
+      "The overall boundary, key-area polygons, building count and derived quantities remain participant-authored provisional design inputs.",
+      "All quantities and financial outputs must be recalculated when trusted official geometry, surveyed conditions or approved design quantities become available."
+    ]
+  },
+  "standard_scenario_capex": {
+    "currency_unit": "billion_CNY",
+    "items": [
+      {
+        "id": "CAPEX-01",
+        "name_zh": "建筑适应性更新",
+        "name_en": "Building renewal and upgrades",
+        "quantity": 172100,
+        "quantity_unit": "sqm",
+        "concept_unit_rate_cny": 3701.34,
+        "formula": "172100 sqm * 3701.34 CNY/sqm / 1e9",
+        "rounded_value": 0.637,
+        "share": 0.572
+      },
+      {
+        "id": "CAPEX-02",
+        "name_zh": "公共界面与开放空间",
+        "name_en": "Public realm and open space",
+        "quantity": 9.52,
+        "quantity_unit": "km",
+        "concept_unit_rate_cny": 11974790,
+        "formula": "9.52 km * 11974790 CNY/km / 1e9",
+        "rounded_value": 0.114,
+        "share": 0.103
+      },
+      {
+        "id": "CAPEX-03",
+        "name_zh": "公园、廊道、模块与智慧系统",
+        "name_en": "Park, corridor, modules and smart systems",
+        "quantity": 24,
+        "quantity_unit": "module_or_node",
+        "concept_unit_rate_cny": 3916667,
+        "formula": "24 locations * 3916667 CNY/location / 1e9",
+        "rounded_value": 0.094,
+        "share": 0.084
+      },
+      {
+        "id": "CAPEX-04",
+        "name_zh": "设计管理、预备费与启动金",
+        "name_en": "Design, contingency and activation fund",
+        "quantity": 1,
+        "quantity_unit": "lump_sum",
+        "concept_unit_rate_cny": 269000000,
+        "formula": "direct_cost 0.845bn * design_management 12% + direct_cost 0.845bn * contingency 15% + 18_month_activation_fund 0.04085bn",
+        "rounded_value": 0.269,
+        "share": 0.241,
+        "components_billion_cny": {
+          "design_management": 0.1014,
+          "contingency": 0.12675,
+          "eighteen_month_activation_fund": 0.04085
+        }
+      }
+    ],
+    "formula": "sum(CAPEX-01..04)",
+    "total_billion_cny": 1.114,
+    "allocation_by_key_area_billion_cny": {
+      "zhongzhiyuan_xiaoyue_river": 0.429,
+      "ai_origin_community": 0.434,
+      "dazhongsi": 0.251
+    }
+  },
+  "standard_scenario_operations": {
+    "stabilized_occupancy": 0.75,
+    "operable_share_of_activated_floor_area": 0.70,
+    "operable_floor_area_sqm": 120470,
+    "annual_revenue_million_cny": 226,
+    "annual_opex_million_cny": 124,
+    "annual_noi_million_cny": 102,
+    "formulas": {
+      "operable_floor_area_sqm": "172100 * 70%",
+      "annual_noi_million_cny": "226 - 124",
+      "static_unlevered_payback_years": "1114 / 102"
+    },
+    "static_unlevered_payback_years_unrounded": 10.9216,
+    "display_payback": "approximately 11 years",
+    "by_key_area_million_cny": [
+      {
+        "area": "zhongzhiyuan_xiaoyue_river",
+        "capex": 429,
+        "annual_revenue": 98,
+        "annual_opex": 54,
+        "annual_noi": 44,
+        "payback_years": 9.8
+      },
+      {
+        "area": "ai_origin_community",
+        "capex": 434,
+        "annual_revenue": 86,
+        "annual_opex": 47,
+        "annual_noi": 39,
+        "payback_years": 11.1
+      },
+      {
+        "area": "dazhongsi",
+        "capex": 251,
+        "annual_revenue": 42,
+        "annual_opex": 23,
+        "annual_noi": 19,
+        "payback_years": 13.2
+      }
+    ],
+    "revenue_components": [
+      "space leasing",
+      "technical services",
+      "events and training",
+      "brand and public-realm value"
+    ],
+    "revenue_note": "The key-area revenue envelopes are participant-set internal scenario inputs, not signed leases, contracts or third-party forecasts."
+  },
+  "scenario_comparison": [
+    {
+      "scenario": "light_start",
+      "activation_share": 0.25,
+      "capex_million_cny": 283,
+      "annual_revenue_million_cny": 57,
+      "annual_noi_million_cny": 20,
+      "display_payback_years": 14.3
+    },
+    {
+      "scenario": "standard_implementation",
+      "activation_share": 0.50,
+      "capex_million_cny": 1114,
+      "annual_revenue_million_cny": 226,
+      "annual_noi_million_cny": 102,
+      "display_payback_years": 11.0
+    },
+    {
+      "scenario": "full_rollout",
+      "activation_share": 1.0,
+      "capex_million_cny": 2603,
+      "annual_revenue_million_cny": 731,
+      "annual_noi_million_cny": 366,
+      "display_payback_years": 7.1
+    }
+  ],
+  "sensitivity": {
+    "operating_cost_structure": {
+      "fixed_share_of_base_opex": 0.60,
+      "occupancy_variable_share_of_base_opex": 0.40
+    },
+    "occupancy_cases": [
+      {
+        "occupancy": 0.60,
+        "annual_revenue_million_cny": 180.8,
+        "annual_opex_million_cny": 114.08,
+        "annual_noi_million_cny": 66.72,
+        "payback_years": 16.7
+      },
+      {
+        "occupancy": 0.75,
+        "annual_revenue_million_cny": 226.0,
+        "annual_opex_million_cny": 124.0,
+        "annual_noi_million_cny": 102.0,
+        "payback_years": 10.9
+      },
+      {
+        "occupancy": 0.90,
+        "annual_revenue_million_cny": 271.2,
+        "annual_opex_million_cny": 133.92,
+        "annual_noi_million_cny": 137.28,
+        "payback_years": 8.1
+      }
+    ],
+    "capex_cases_at_base_noi": [
+      {
+        "capex_change": -0.15,
+        "capex_million_cny": 946.9,
+        "payback_years": 9.3
+      },
+      {
+        "capex_change": 0.0,
+        "capex_million_cny": 1114.0,
+        "payback_years": 10.9
+      },
+      {
+        "capex_change": 0.15,
+        "capex_million_cny": 1281.1,
+        "payback_years": 12.6
+      }
+    ]
+  },
+  "exclusions": [
+    "land acquisition and relocation",
+    "financing costs and taxes not explicitly stated",
+    "major structural reinforcement",
+    "heritage-specialist works",
+    "underground engineering and utility expansion",
+    "government approval costs",
+    "inflation, escalation and terminal value"
+  ],
+  "confidence": "low",
+  "decision_rule": "Use only for comparing internal concept scenarios. Re-estimate with measured quantities, dated market quotations and operator agreements before design approval, procurement, financing or investment decisions."
+}

@@ -1,0 +1,133 @@
+{
+  "schema_version": "0.1.0",
+  "units": {
+    "length": "m",
+    "area": "sqm"
+  },
+  "metrics": {
+    "site_area_sqm": {
+      "status": "known",
+      "value": 11412825.386,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "polygon_area(submitted_site_boundary)",
+      "confidence": "low",
+      "assumptions": [
+        "The submitted site boundary is a provisional rough design constraint, not an official planning boundary.",
+        "Recalculate the site, land-use, green-space, public-space, building and phasing metrics when trusted official geometry is released."
+      ]
+    },
+    "building_footprint_area_sqm": {
+      "status": "known",
+      "value": 310807.184,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "sum(polygon_area(building_footprints))",
+      "confidence": "low",
+      "assumptions": [
+        "Building footprints are participant-authored conceptual design geometry and do not represent surveyed existing buildings or approved construction."
+      ]
+    },
+    "green_ratio": {
+      "status": "known",
+      "value": 0.123423,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/green_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "green_space_area_sqm / site_area_sqm",
+      "confidence": "low",
+      "assumptions": [
+        "Both the green-space geometry and denominator use the same provisional design model and require full recalculation against official geometry."
+      ]
+    },
+    "public_space_ratio": {
+      "status": "known",
+      "value": 0.073281,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "public_space_area_sqm / site_area_sqm",
+      "confidence": "low",
+      "assumptions": [
+        "Both the public-space geometry and denominator use the same provisional design model and require full recalculation against official geometry."
+      ]
+    },
+    "floor_area_ratio": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "brief/site-package/ranges/planning_limits.json"
+      ],
+      "formula": "total_floor_area_sqm / official_site_area_sqm",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "Approved FAR controls and official site boundary are not present in the public site package."
+    },
+    "key_area_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "count(key_detailed_design_areas)",
+      "confidence": "medium",
+      "assumptions": [
+        "The taskbook fixes the count at three, while the exact polygon boundaries remain provisional."
+      ]
+    },
+    "standard_scenario_capex_cny": {
+      "status": "known",
+      "value": 1114000000,
+      "unit": "none",
+      "display_unit": "CNY",
+      "source_files": [
+        "visual/assets/economics_model.json"
+      ],
+      "formula": "637000000 + 114000000 + 94000000 + 269000000",
+      "confidence": "low",
+      "assumptions": [
+        "Participant-authored internal concept estimate effective 2026-08-29; not a market quotation, approved estimate, procurement basis or investment conclusion.",
+        "Direct cost, design-management, contingency and activation-fund formula is registered in visual/assets/economics_model.json."
+      ]
+    },
+    "standard_scenario_annual_revenue_cny": {
+      "status": "known",
+      "value": 226000000,
+      "unit": "none",
+      "display_unit": "CNY_per_year",
+      "source_files": [
+        "visual/assets/economics_model.json"
+      ],
+      "formula": "sum(participant-set key-area stabilized revenue envelopes) at 75% occupancy and 70% operable share",
+      "confidence": "low",
+      "assumptions": [
+        "No signed leases, service contracts or third-party forecasts support this internal scenario input."
+      ]
+    },
+    "standard_scenario_annual_noi_cny": {
+      "status": "known",
+      "value": 102000000,
+      "unit": "none",
+      "display_unit": "CNY_per_year",
+      "source_files": [
+        "visual/assets/economics_model.json"
+      ],
+      "formula": "226000000 annual revenue - 124000000 annual operating cost",
+      "confidence": "low",
+      "assumptions": [
+        "Static unlevered payback is 1114000000 / 102000000 = 10.9216 years, displayed as approximately 11 years.",
+        "Sensitivity and exclusions are registered in visual/assets/economics_model.json."
+      ]
+    }
+  }
+}
