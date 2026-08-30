@@ -62,8 +62,8 @@ const add = (id, claim, pass, actual) => checks.push({ id, claim, pass: !!pass, 
 /* A. metrics.json 的自陈与内部一致性 */
 const valued = Object.values(metrics).filter((m) => m.value !== null && m.value !== undefined).length;
 const pending = Object.keys(metrics).length - valued;
-add("M1", "86 项指标 ＝ 72 已赋值 ＋ 14 待测",
-    Object.keys(metrics).length === 86 && valued === 72 && pending === 14,
+add("M1", "100 项指标 ＝ 86 已赋值 ＋ 14 待测",
+    Object.keys(metrics).length === 100 && valued === 86 && pending === 14,
     `${Object.keys(metrics).length} ＝ ${valued} ＋ ${pending}`);
 
 const phaseSum = val("phase_1_area_sqm") + val("phase_2_area_sqm") + val("phase_3_area_sqm");
@@ -432,10 +432,24 @@ add("G3", "正文的 [depth:] 标记全部能在 design_depth_matrix.json 里解
   const zlib = require("zlib");
   const PDFS = ["a0-boards.pdf", "a3-booklet.pdf", "a0-boards.en.pdf", "a3-booklet.en.pdf"];
   const EXPECTED = {
-    "a0-boards.pdf": { identity: 3, sparse: 67 },
-    "a3-booklet.pdf": { identity: 2, sparse: 69 },
-    "a0-boards.en.pdf": { identity: 2, sparse: 5 },
-    "a3-booklet.en.pdf": { identity: 2, sparse: 5 },
+    "a0-boards.pdf": { identity: 3, sparse: 20 },
+    "a3-booklet.pdf": { identity: 2, sparse: 20 },
+    "a0-boards.en.pdf": { identity: 2, sparse: 6 },
+    "a3-booklet.en.pdf": { identity: 2, sparse: 6 },
+  };
+  const destinationCodepoints = (hex) => {
+    if (!hex || hex.length % 4 !== 0) return [];
+    const units = [];
+    for (let i = 0; i < hex.length; i += 4) units.push(parseInt(hex.slice(i, i + 4), 16));
+    const codepoints = [];
+    for (let i = 0; i < units.length; i += 1) {
+      const unit = units[i];
+      if (unit >= 0xd800 && unit <= 0xdbff && units[i + 1] >= 0xdc00 && units[i + 1] <= 0xdfff) {
+        codepoints.push(0x10000 + ((unit - 0xd800) << 10) + (units[i + 1] - 0xdc00));
+        i += 1;
+      } else codepoints.push(unit);
+    }
+    return codepoints;
   };
   const bad = [];
   let cmapCount = 0, identityTotal = 0, sparseTotal = 0;
@@ -470,12 +484,16 @@ add("G3", "正文的 [depth:] 标记全部能在 design_depth_matrix.json 里解
         if (!text.includes("/CMapName /Adobe-Identity-UCS")) bad.push(`${name}: 首页稀疏 CMap 缺 Adobe-Identity-UCS 声明`);
         const dests = [];
         for (const line of text.split("\n")) {
-          const m2 = line.match(/^\s*<[0-9a-fA-F]+>\s*<([0-9a-fA-F]{4,6})>\s*$/);
-          const m3 = line.match(/^\s*<[0-9a-fA-F]+>\s*<[0-9a-fA-F]+>\s*<([0-9a-fA-F]{4,6})>\s*$/);
-          if (m2 || m3) dests.push(parseInt((m2 || m3)[1], 16));
+          const m2 = line.match(/^\s*<[0-9a-fA-F]+>\s*<([0-9a-fA-F]{4}(?:[0-9a-fA-F]{4})*)>\s*$/);
+          const m3 = line.match(/^\s*<[0-9a-fA-F]+>\s*<[0-9a-fA-F]+>\s*<([0-9a-fA-F]{4}(?:[0-9a-fA-F]{4})*)>\s*$/);
+          if (m2 || m3) dests.push(...destinationCodepoints((m2 || m3)[1]));
         }
         if (!dests.length) bad.push(`${name}: 首页稀疏 CMap 没有可解析目标码位`);
-        if (dests.some((cp) => cp === 0xfffd || (cp >= 0xe000 && cp <= 0xf8ff) || (cp >= 0xf900 && cp <= 0xfaff))) {
+        if (dests.some((cp) => cp === 0xfffd
+          || (cp >= 0xe000 && cp <= 0xf8ff)
+          || (cp >= 0xf900 && cp <= 0xfaff)
+          || (cp >= 0xf0000 && cp <= 0xffffd)
+          || (cp >= 0x100000 && cp <= 0x10fffd))) {
           bad.push(`${name}: 首页稀疏 CMap 目标落入替换符、私用区或 CJK 兼容区`);
         }
       }
@@ -489,8 +507,8 @@ add("G3", "正文的 [depth:] 标记全部能在 design_depth_matrix.json 里解
     if (!hasNoto) bad.push(`${name}: v2.0 首页 OFL 字体名缺失`);
   }
   add("G4", "四套图纸的技术内页保留恒等 ToUnicode；v2.0 首页使用合法稀疏 ToUnicode 与 OFL Noto 子集，目标码位无替换符、私用区或 CJK 兼容区",
-      bad.length === 0 && cmapCount === 155 && identityTotal === 9 && sparseTotal === 146,
-      bad.length ? bad.slice(0, 4).join("；") : `155 个 CMap：技术内页 9 个恒等映射＋首页 146 个合法稀疏映射`);
+      bad.length === 0 && cmapCount === 61 && identityTotal === 9 && sparseTotal === 52,
+      bad.length ? bad.slice(0, 4).join("；") : `61 个 CMap：技术内页 9 个恒等映射＋首页 52 个合法稀疏映射`);
 }
 
 /* G6/G7/G8/G9/G10. 评分器暴露的表达层盲点必须进入总退出码：无系统中文字体时的
@@ -554,10 +572,10 @@ function runNestedAudit(filename) {
   const result = runNestedAudit("p0-readiness-audit.js");
   const problems = result.parsed && Array.isArray(result.parsed.errors)
     ? result.parsed.errors : [result.stderr || "无法解析 p0-readiness-audit.js 输出"];
-  add("G10", "SCN-05 单场景 P0 同时具备八门、五阶段、十项 RACI、十二项构件、八项预注册验收、六类公共群体、十二场景公共利益硬门槛与可操作离线原型；并把六项资格事实核对、七项官方后续动作、投稿闭合和现场阻断分栏锁定；真实观察仍为 0",
+  add("G10", "SCN-05 单场景 P0 同时具备八门、五阶段、十项 RACI、十二项构件、八项预注册验收、十二组预可研自洽检查、三档评委路径、七项评分证据索引、六类公共群体、十二场景公共利益硬门槛与可操作离线原型；并把参与者敏感性与正式场地、报价、保险、预算、专业签认和现场绩效分栏锁定；真实观察仍为 0",
       result.status === 0 && result.parsed && result.parsed.ok === true,
       problems.length ? problems.slice(0, 4).join("；")
-        : `${result.parsed.entry_gates_valid} 门／${result.parsed.delivery_stages_valid} 阶段／${result.parsed.raci_work_packages_valid} RACI／${result.parsed.component_line_items_valid} 构件／${result.parsed.acceptance_criteria_valid} 验收／${result.parsed.public_benefit_groups_valid} 群体／${result.parsed.scenario_public_value_gates_valid} 场景公共门／资格证据 ${result.parsed.eligibility_evidence_checks_valid}／评审归类 ${result.parsed.review_items_classified_valid}／原型 ${result.parsed.prototype_checks_valid}/${result.parsed.prototype_checks_expected}／真实观察 ${result.parsed.real_participant_observations}`);
+        : `${result.parsed.entry_gates_valid} 门／${result.parsed.delivery_stages_valid} 阶段／${result.parsed.raci_work_packages_valid} RACI／${result.parsed.component_line_items_valid} 构件／${result.parsed.acceptance_criteria_valid} 验收／预可研 ${result.parsed.pre_feasibility_checks_valid}/${result.parsed.pre_feasibility_checks_expected}／评委路径 ${result.parsed.jury_paths_valid}/${result.parsed.jury_paths_expected}／评分索引 ${result.parsed.rubric_dimensions_valid}/${result.parsed.rubric_dimensions_expected}／${result.parsed.public_benefit_groups_valid} 群体／${result.parsed.scenario_public_value_gates_valid} 场景公共门／资格证据 ${result.parsed.eligibility_evidence_checks_valid}／评审归类 ${result.parsed.review_items_classified_valid}／原型 ${result.parsed.prototype_checks_valid}/${result.parsed.prototype_checks_expected}／真实观察 ${result.parsed.real_participant_observations}`);
 }
 
 /* H. sources.json 的字段深度——CLAUDE.md 记为与分数相关性最高的特征，缺一栏就是缺证据 */
@@ -972,7 +990,7 @@ add("J2", "compliance_matrix 自陈的 standard_ids 推导规则成立：规则�
    连四张图件都逐一列出），**只有 `A-CONTRAST-001` 写了一个裸目录 `assets/figures/`**。字段名是
    affected_files，机器按它算复算范围时这一项解析不出来。已按 `figure-contrast-report.json` 自陈的
    范围（26 张栅格图件 ＝ 24 PNG ＋ 2 JPEG）展开成 26 个具体路径，与报告声明逐一对应。
-   规模 11 条假设／100 处文件引用写死参与退出码——某条引用被悄悄删掉时「逐条可解析」仍会成立。 */
+   规模 11 条假设／104 处文件引用写死参与退出码——某条引用被悄悄删掉时「逐条可解析」仍会成立。 */
 {
   const asms = readPkg("assumptions.json").assumptions || [];
   const problems = [];
@@ -988,11 +1006,11 @@ add("J2", "compliance_matrix 自陈的 standard_ids 推导规则成立：规则�
       if (!a[k]) problems.push(`${a.id}: 缺 ${k}`);
     }
   }
-  add("A2", "assumptions.json 的 11 条假设各带复算触发器与责任角色，且 100 处 affected_files 逐条解析到包内实际文件（不接受目录）",
-      problems.length === 0 && asms.length === 11 && refs === 100,
+  add("A2", "assumptions.json 的 11 条假设各带复算触发器与责任角色，且 104 处 affected_files 逐条解析到包内实际文件（不接受目录）",
+      problems.length === 0 && asms.length === 11 && refs === 104,
       problems.length ? problems.join("；")
-        : (asms.length !== 11 || refs !== 100 ? `实为 ${asms.length} 条假设／${refs} 处引用，应为 11／100`
-           : `11 条假设、100 处引用逐条可解析`));
+        : (asms.length !== 11 || refs !== 104 ? `实为 ${asms.length} 条假设／${refs} 处引用，应为 11／104`
+           : `11 条假设、104 处引用逐条可解析`));
 }
 
 /* Z. 元检查：断言检查清单本身没有缺项。

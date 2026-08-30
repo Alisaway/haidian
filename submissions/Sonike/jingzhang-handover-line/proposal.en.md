@@ -26,13 +26,13 @@ The public floor is one sentence: **every smart service must still accomplish th
 
 ![Overall concept: a comb-shaped civic spine, three Handover Yards, eight east–west links and four civic landmarks](assets/figures/site-overview.en.png)
 
-| What a juror should see in one minute | One answer from the proposal |
-| --- | --- |
-| Spatial proposition | One comb, three yards, two wings, eight links and twenty cells |
-| How AI enters the city | BUILD→VERIFY→SHARE→SERVE→RETURN |
-| Why the three key areas differ | Longitudinal testing in the north, open collaboration in the middle, a transverse civic room in the south |
-| How to begin | Assemble one movable S-class Public Handover Table before deciding whether to expand |
-| What happens after failure | Switch off the smart layer, continue staffed service, delete temporary records and return the space to ordinary use |
+| Juror path | The only question to answer in this time | Direct evidence |
+| --- | --- | --- |
+| **30 seconds** | What is it, where does it land, and why is it not a generic AI campus? | One-comb/three-yard overview plus the F/05 P0 pre-feasibility board; field remains 0/12 |
+| **3 minutes** | Do space, service and implementation form one evidence chain? | Overall structure → three sections → twelve-scenario takeover → P0 space/roster/cost → three conditional phases |
+| **15 minutes** | Can it be recalculated, refused, rolled back and handed to professional teams? | A3 booklet + metrics/geometry + eight-gate/five-stage contract + service equivalence + risk and rights chain |
+
+`visual/assets/governance/jury-evidence-index.json` provides the complete paths and direct evidence entry for all seven scoring dimensions. It is a reading guide, not a score or a new implementation fact.
 
 This round has completed 12/12 synthetic offline tasks and 48/48 takeover assertions; **field tasks remain 0/12**. That proves the protocol can be executed and audited by machine. It does not prove field safety, public acceptance, measured accessibility or implementation approval [metric:simulation_task_count] [metric:offline_takeover_assertion_count] [metric:field_rehearsal_task_count].
 
@@ -221,11 +221,61 @@ These are currently **8/8 design requirement fixtures, not eight user tests**. R
 
 The first field prototype is not a building. It is a **Public Handover Table**. This iteration no longer merely draws it: `visual/index.html#p0-prototype` embeds an operable offline SCN-05 service prototype in the official review entry. A reviewer can switch off the smart layer, refuse algorithmic processing and data, enable large text or high contrast, compare smart and no-AI routes, issue a complaint/stop/delete receipt and print the paper route. Both routes share the `SCN-05-CORE-001` outcome; the page has no network, persistence or personal-data field [metric:offline_service_prototype_route_count]. It proves that service obligations are operable, not that a field route is safe or accessible.
 
-The kit retains an S-class cost basis. F/05 shows the original six macro component and delivery families; `visual/assets/governance/p0-delivery-contract.json` now develops them into **12 quantified component lines, eight entry gates and ten RACI work packages** [metric:p0_component_line_item_count] [metric:p0_entry_gate_count] [metric:p0_raci_work_package_count].
+The kit retains an S-class cost basis. `visual/assets/governance/p0-delivery-contract.json` locks it into **12 quantified component lines, eight entry gates and ten RACI work packages** [metric:p0_component_line_item_count] [metric:p0_entry_gate_count] [metric:p0_raci_work_package_count]. F/05 now exposes the space, capacity, roster, cost sensitivity, maintenance and alternatives that were previously buried inside the contract.
 
 The same contract pre-registers **five 90-day stages and eight acceptance criteria** [metric:p0_delivery_stage_count] [metric:p0_preregistered_acceptance_criterion_count]. Roles resolve to `role-spec.json` but remain `unassigned`. Three quote slots, insurance, total and sustained budgets, site and professional sign-offs remain `null` or `not_started` until real evidence exists; completeness of the form is not presented as delivery.
 
-![P0 Public Handover Table: six original macro delivery groups, offline evidence and field 0/12, now developed through eight entry gates](assets/figures/metrics-evidence.en.png)
+#### P0 Pre-feasibility | First Show That It Fits, Operates and Leaves
+
+`visual/assets/governance/p0-pre-feasibility-envelope.json` defines a **participant concept-screening envelope**. A 7.2 × 7.2 m control area contains a 6.0 × 6.0 m reversible operating patch and a 2.4 × 1.2 m two-face staffed island. The narrowest continuous loop is 1.8 m, a 0.6 m perimeter safety buffer surrounds the patch, two opposite 1.8 m openings remain clear, and two 1.5 m turning circles are reserved. No new canopy, fixed paving, structure or permanent utility is included. Without existing shelter, a level continuous surface and safe removal, the pilot moves indoors or does not start [metric:p0_screening_control_envelope_area_sqm] [metric:p0_reversible_operating_patch_area_sqm].
+
+![P0 pre-feasibility envelope: 7.2 m control area, 6 m reversible patch, eight members of the public and three staffed role seats, participant 90-day sensitivity of approximately CNY 0.12-0.29 million, and four alternatives; field 0/12, quotations 0/3, budget and insurance null](assets/figures/metrics-evidence.en.png)
+
+| Pre-feasibility variable | Participant reference | How it may and may not be used |
+| --- | ---: | --- |
+| Area-screening ceiling | `floor(36 ÷ 2.4) = 15` people | Shows geometric order of magnitude only; not statutory occupancy or fire capacity |
+| Conservative operating cap | **8 public users, including companions, + 3 simultaneous role seats** | Eleven people total, about 3.27 m²/person; a real site still needs professional review |
+| Queue stop line | **6 people** | Pause new tasks, switch off the smart layer and divert to existing staffed service if exceeded |
+| Reference roster | 4 hours/day × 5 days/week × 13 weeks | 260 public hours and 780 staffed-seat hours; not approved opening hours or appointments |
+| Scheduling headroom | Two faces × 10-minute slots × 75% buffer = **36 slots/day** | Tests whether 24 tasks can fit the window; not a demand or throughput promise |
+
+The simultaneous seats are outgoing/service, incoming/wayfinding and independent safety/dissent. At least four people are needed on the roster to cover breaks. Names remain blank. If any seat is absent, the smart layer stays off; two seats may preserve existing staffed wayfinding but cannot continue co-testing, acceptance or performance publication [metric:p0_operational_public_cap_persons] [metric:p0_simultaneous_staff_position_count] [metric:p0_queue_cap_persons].
+
+#### Cost, Operations and Restoration | A Comparable Range, Not Fabricated Quotes
+
+Ninety-day cost is not merely the price of one table. Components, staffed operation, professional review, accommodation, maintenance and removal move together. Every rate below is a **participant-set sensitivity variable** that tests whether the scope remains S-class. It is not a market quote, wage recommendation, contract rate or approved budget.
+
+| 90-day sensitivity line | Low–high | Recalculation basis |
+| --- | ---: | --- |
+| Twelve removable components | approx. CNY 18k–57k | Quantity × participant unit variable; formal procurement still needs three comparable quotations |
+| Three-seat public roster | approx. CNY 62k–125k | 780 staffed-seat hours × CNY 80–160/hour |
+| Professional and independent review | approx. CNY 19k–51k | 64 role-hours × CNY 300–800/hour; real scope and qualifications await sign-off |
+| Compensation and accommodation for 24 sessions | approx. CNY 10k–30k | Fixed compensation plus accommodations; failure, withdrawal or data refusal never reduces compensation |
+| Maintenance and consumables | approx. CNY 7k–20k | 13 weeks × CNY 500–1,500/week |
+| Removal and restoration reserve | approx. CNY 2k–8k | 10% of removable kit plus maintenance; not insurance or a formal contingency |
+| **Participant sensitivity subtotal** | **approx. CNY 0.12–0.29m / 90 days** | Exact arithmetic CNY 118,042–289,750; formal budget remains `null` |
+
+At the same service intensity—four hours/day, five days/week and fifty weeks/year with three simultaneous seats—the participant annual operating sensitivity is approximately **CNY 0.30–0.65 million/year**; staffed hours dominate [metric:p0_90_day_cost_sensitivity_low_cny] [metric:p0_90_day_cost_sensitivity_high_cny] [metric:p0_annual_opex_sensitivity_high_cny]. Both ranges **exclude** site cost, insurance, tax, statutory submission and professional services, permanent works, existing-site defects and unknown utilities. If any excluded external item is non-zero, three quotations are incomplete or sustained funding is unapproved, `total_budget_cny` remains `null`; there is no procurement or site entry.
+
+| Cycle | Required checks | After failure |
+| --- | --- | --- |
+| Before every shift | Two openings, 1.8 m loop, stop control, paper route, cables and lighting | Open no new task; smart layer off |
+| After every shift | Delete temporary digital records, sign the two ledgers separately, hand complaints and open issues onward | Open issues remain visible; smart layer stays off |
+| Weekly | Tactile map, signs, furniture, fixings, consumables and spares | Remove the failed component; staffed basic service continues |
+| D0/D30/D60/D90 | Safety/accessibility, queue, cost, faults, complaints and continue/repair/terminate decision | Do not advance the stage |
+
+The reference removal target is four people for four hours, or sixteen person-hours. This is an **untested target**. The proposal may not advertise rapid removal before an authorised D1–30 field rehearsal proves it. If surface, drainage, passage, tactile route, temporary records or the staffed-service location is not restored, the next session does not open [metric:p0_same_day_removal_target_hours].
+
+#### Four Alternatives | A Fallback Does Not Bypass Entry Gates
+
+| Option | Best-fit condition | Main gain and trade-off | Decision trigger |
+| --- | --- | --- | --- |
+| **A0 Existing human floor** | Site, insurance or budget gate fails | No new component and lowest risk, but no P0 co-test evidence | **Do not start P0**; keep the existing staffed counter and paper |
+| **A1 Single-face mobile cart** | Authorised patch is below 6 × 6 m and demonstrably low queue | Moves indoors after each shift, but dual roles, turning and single-face queue interfere more easily | Still needs all eight gates; public cap 3, queue 2 |
+| **A2 Two-face Public Handover Table** | 6 × 6 m patch and two openings receive professional confirmation | Three seats, two service faces and a continuous loop can be reviewed on one plane; staffing cost is highest | **Reference scheme**; opens only after 8/8 gates |
+| **A3 Borrowed existing indoor room** | Outdoor weather or utility review fails and the room needs no rent or fit-out | Stable environment but less civic visibility; rent or fit-out moves it outside the S-class reference | Still needs all eight gates plus indoor egress and accessibility review |
+
+The four options alter the carrier and spatial envelope only; none changes the public floor. If no option can preserve staffed service, dual-control roles, continuous access and restoration in an existing authorised setting without permanent works, the correct answer is A0: do not start [metric:p0_alternative_option_count].
 
 #### Eight Gates Before Authorisation
 
@@ -258,6 +308,8 @@ The eight criteria do not hide inequity inside satisfaction averages. Core outco
 
 The latest official review passed all four deterministic, spatial, visual and professional-evidence gates and scored the package **96/100**, including **5/5** for public interest and inclusion and **4/5** for implementation feasibility. Its seven “next actions” mix full-jury review procedure, organiser-owned official data, future field-entry conditions and a future gate for public-performance claims. `visual/assets/governance/review-3825-readiness-matrix.json` classifies every item so that future implementation responsibilities are not mistaken for a current package omission—and so that actors, authorisation, quotations, insurance, budget, signatures or user data are never fabricated merely to make the proposal look implementable.
 
+This round adds only implementation evidence the participant can honestly complete now: P0 reference plan and capacity arithmetic, a three-seat roster, 90-day and annual cost sensitivity, maintenance/removal cycles, four trigger-based alternatives, and 30-second/3-minute/15-minute review paths. It does not fill in a real site, actor, quote, insurance, budget, professional sign-off or field observation; the original eight gates continue to block them.
+
 | Decision layer | Current state | Who closes it and when | May this submission fill it in? |
 | --- | --- | --- | --- |
 | Concept-submission package | `CLOSED_FOR_FORMAL_REVIEW`; **zero** open participant-controlled repairs | This revision hands narrative, matrices, prototype, rights chain and four passed gates to formal jurors | Closed as a participant self-audit only; not official intake or an award |
@@ -286,13 +338,14 @@ International communication uses one identity—**HANDOVER LINE**. A visitor enc
 
 ## Metrics, Area Recalculation, and Compliance Matrix
 
-`metrics.json` contains **86 metrics, 72 of them valued, 14 pending**. The 72 valued metrics derive from GeoJSON, synthetic rehearsals, design contracts or machine checks. Nine new entries count only P0 gates, stages, RACI, components, acceptance criteria, groups, scenario public-benefit gates, offline routes and the planned co-test minimum; none claims real delivery. “8/8 requirement fixtures”, “24 planned sessions” and “zero real observations” remain distinct design-coverage, future-sampling and evidence-boundary values. Pending items include statutory intensity, real handover time, rework rounds, public acceptance, field accessibility and operational effect; none is filled by inference [depth:metrics_recalculation].
+`metrics.json` contains **100 metrics, 86 of them valued and 14 pending**. The 86 valued metrics derive from GeoJSON, synthetic rehearsals, design contracts, machine checks or explicitly labelled participant pre-feasibility inputs. Fourteen entries added in this round record only P0 control/operating area, conservative capacity, the three-seat roster, queue stop line, scheduling headroom, cost/operating sensitivity, four alternatives and an untested removal target. None is a formal site, statutory occupancy, market quote, approved budget or delivered performance claim. “8/8 requirement fixtures”, “24 planned sessions”, “approximately CNY 0.12–0.29 million sensitivity” and “zero real observations” remain distinct design-coverage, future-sampling, participant-sensitivity and evidence-boundary values. The fourteen pending items still include statutory intensity, real handover time, rework rounds, public acceptance, field accessibility and operational effect; none is filled by inference [depth:metrics_recalculation].
 
 | Observation layer | Current verifiable value | Correct reading |
 | --- | ---: | --- |
 | Space | approx. 11.4 km², 9.5 km spine, 8 cross-links, 3 key areas, 20 conceptual cells | Provisional model quantities, recalculable, not statutory controls |
 | Civic base | approx. 19.8% conceptual green, 9.1% public handover surface | Structural proposals, not net existing gain or statutory ratios |
 | Scenarios | 12 scenarios, including 4 industry-validation scenarios | Every one has a human route, stop condition and exit use |
+| P0 pre-feasibility | 51.84 m² control envelope, 36 m² patch, 8 public + 3 seats, queue stop at 6 | Participant concept screening and sensitivity inputs, not site measurement or statutory occupancy |
 | Offline evidence | 12/12 tasks, 48/48 takeover assertions, 96 rule checks | Participant-controlled synthetic validation; not field performance |
 | Field evidence | 0/12 | Not authorised, measured or completed |
 

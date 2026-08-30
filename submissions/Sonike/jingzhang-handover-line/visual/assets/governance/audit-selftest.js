@@ -245,6 +245,25 @@ negInput("正式评审资格事实把一项改成已观察到拒绝条件 ——
         d.eligibility_evidence[0].rejection_condition_observed = true;
       }) }, ["G10"]);
 
+negInput("P0 预可研把 90 天敏感性高值悄悄多写 1,000 元 —— 图上仍像合理区间但分项已加不回总数",
+  { "visual/assets/governance/p0-pre-feasibility-envelope.json": jsonMutated(
+      "visual/assets/governance/p0-pre-feasibility-envelope.json", (d) => {
+        d.participant_cost_sensitivity_90_day.sensitivity_subtotal_high_cny += 1000;
+      }) }, ["G10"]);
+
+negInput("P0 预可研把参与者敏感性偷换成已批准预算 —— 成本数值不变也必须拒绝",
+  { "visual/assets/governance/p0-pre-feasibility-envelope.json": jsonMutated(
+      "visual/assets/governance/p0-pre-feasibility-envelope.json", (d) => {
+        d.current_external_evidence.approved_budget_cny = 289750;
+        d.participant_cost_sensitivity_90_day.formal_budget_cny = 289750;
+      }) }, ["G10"]);
+
+negInput("评委证据索引删掉 3 分钟路径 —— 30 秒和 15 分钟仍完整也不得自称三档路径",
+  { "visual/assets/governance/jury-evidence-index.json": jsonMutated(
+      "visual/assets/governance/jury-evidence-index.json", (d) => {
+        d.review_paths = d.review_paths.filter((item) => item.path_id !== "JURY-3M");
+      }) }, ["G10"]);
+
 negative("A0 首页内嵌图的预期顺序调换 —— 可搜索页脚全为 v2.0 也必须被像素绑定拦住", () => {
   const script = scriptMutated(VERSION_AUDITOR, (text) => text.replace(
     'figures: ["assets/figures/site-overview.png", "assets/figures/key-areas.png"]',
@@ -367,10 +386,10 @@ negInput("场景卡把落点写回「城市交接场维修驿」—— 复刻 20
 negInput("连接段卡片只把里程数字改错 0.5 km —— 落点归属仍对，只有里程对不上几何",
   { [EVIDENCE]: textOf(EVIDENCE).replace("主轴里程约 7.2 km", "主轴里程约 7.7 km") }, ["G5"]);
 
-negInput("英文正文的指标计数退回旧值 77/63 —— 中文写对、英文没跟着新增的九项 P0 指标，且英文内部算术自洽（77−63＝14）所以只看英文看不出来",
+negInput("英文正文的指标计数退回旧值 91/77 —— 中文写对、英文没跟着新增的十四项 P0 指标，且英文内部算术自洽（91−77＝14）所以只看英文看不出来",
   { "proposal.en.md": textOf("proposal.en.md")
-      .replace("**86 metrics, 72 of them valued", "**77 metrics, 63 of them valued")
-      .replace("The 72 valued metrics", "The 63 valued metrics") }, ["M9"]);
+      .replace("**100 metrics, 86 of them valued", "**91 metrics, 77 of them valued")
+      .replace("The 86 valued metrics", "The 77 valued metrics") }, ["M9"]);
 
 negInput("正文删掉任务书 required_wording_zh 里的「参考方案」—— 复刻 2026-08-22 补齐前的状态，其余措辞仍在所以读起来毫无异样",
   { "proposal.md": textOf("proposal.md").replace(/参考方案/g, "") }, ["T1"]);
