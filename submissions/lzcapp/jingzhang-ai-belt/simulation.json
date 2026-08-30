@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "title": "沙盒准入与凭证协议 · 声明式规则台账 / Sandbox Admission & Credential Protocol — Declared Rule Ledger",
+  "summary": "声明六项准入判定规则及其预期结果与停止条件，用于说明「准入 → 凭证 → 退出 → 复盘」四步治理协议如何 fail-closed。本台账为声明式规则登记，**尚未执行**，包内不含可执行脚本，因此不存在观测结果（observed_decision 一律为 null）。",
+  "status": "declared_not_executed",
+  "executed": false,
+  "executable_in_package": false,
+  "method": "声明式规则台账：逐条给出输入条件与预期判定；不含网络调用、真实模型调用、机器人、公众用户或个人数据。",
+  "field_claim": false,
+  "basis": "规则对应本包场景卡九字段（服务对象 / 空间 / 运营 / 最小数据 / 隐私 / 人工复核 / 非 AI 替代 / 申诉 / 停止条件）与沙盒准入协议的停止条件。",
+  "task_count": 6,
+  "tasks": [
+    {
+      "task_id": "S0-BASELINE-ADMIT",
+      "rule": "同时满足最小数据声明、隐私边界、人工复核闸门与非 AI 替代通道四项",
+      "expected_decision": "admit",
+      "observed_decision": null,
+      "rollback_action": null,
+      "field_claim": false
+    },
+    {
+      "task_id": "S1-MISSING-MINIMAL-DATA",
+      "rule": "缺少最小数据字段声明",
+      "expected_decision": "stop",
+      "observed_decision": null,
+      "rollback_action": "补全最小数据声明后重新申请准入",
+      "field_claim": false
+    },
+    {
+      "task_id": "S2-PRIVACY-BOUNDARY-UNDECLARED",
+      "rule": "隐私边界未声明或超出数据最小化原则",
+      "expected_decision": "stop",
+      "observed_decision": null,
+      "rollback_action": "回退至最小数据采集范围并删除越界字段后重新申请",
+      "field_claim": false
+    },
+    {
+      "task_id": "S3-NO-HUMAN-REVIEW-GATE",
+      "rule": "缺少人工复核闸门，AI 输出将直接生效",
+      "expected_decision": "stop",
+      "observed_decision": null,
+      "rollback_action": "增设人工复核闸门后方可进入凭证发放环节",
+      "field_claim": false
+    },
+    {
+      "task_id": "S4-NO-NON-AI-FALLBACK",
+      "rule": "未提供非 AI 替代通道，智能化服务成为唯一路径",
+      "expected_decision": "stop",
+      "observed_decision": null,
+      "rollback_action": "先恢复人工与纸质等无障碍等价服务，再重新验证",
+      "field_claim": false
+    },
+    {
+      "task_id": "S5-NO-STOP-CONDITION",
+      "rule": "未定义停止条件或申诉路径",
+      "expected_decision": "stop",
+      "observed_decision": null,
+      "rollback_action": "补全停止条件与申诉路径后重新申请准入",
+      "field_claim": false
+    }
+  ],
+  "honest_note": "上表仅为规则声明，不构成任何现场运行、性能或合规结论；observed_decision 保持 null 直至存在可执行的确定性重放脚本并实际运行。"
+}
