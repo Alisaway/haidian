@@ -17,3 +17,7 @@ Noto Sans SC is redistributed here under the SIL Open Font License 1.1. Its lice
 ## AI and human responsibility
 
 The Owner directed the candidate, constraints and working direction. AI/Codex supported public-source research, structured design generation, deterministic production and validation. The Owner selected Jing-Zhang In Place as the participant's final submission candidate. This internal selection is not a competition result, award claim, official adoption, implementation approval, or government endorsement. No unverified credential or professional sign-off is claimed.
+
+## Final100 cover and identity
+
+`assets/media/cover.webp` is a participant-directed AI-generated conceptual illustration created in this Final100 production run. Prompt intent: a 16:10, human-centred conceptual urban-design scene with everyday intergenerational life, green walking space, modest mixed-use fabric and a secondary removable supervised pavilion. It contains no third-party photograph, map, logo, celebrity, location evidence or planning fact, and must not be read as a depiction of a surveyed or proposed site. `assets/identity/jingzhang-in-place-mark.svg` is a participant-authored original mark: a railway seam opening into a reset gate. Both assets are presentation devices only and do not evidence approval, carrier availability, operation, cost, safety, capacity, ownership or field performance.

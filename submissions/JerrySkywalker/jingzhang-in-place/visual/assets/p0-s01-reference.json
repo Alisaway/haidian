@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0.0",
+  "reference_id": "JZ100-P0-S01-REFERENCE",
+  "title_zh": "S01 众智园可撤物理验证：P0 空间—运营—复位参考",
+  "title_en": "S01 Zhongzhiyuan reversible physical validation: P0 space-operation-reset reference",
+  "evidence_status": "CONCEPT_PROPOSAL",
+  "purpose": "One participant-authored reference for reviewing a minimum reversible S01 condition. It is not a survey, approval, construction drawing, operating authorisation, cost plan, or field-performance record.",
+  "scope": {
+    "task_id": "S01",
+    "project_id": "PRJ-06",
+    "area_typology": "Zhongzhiyuan validation type; no parcel, carrier, or field location is asserted",
+    "envelope": {
+      "value": "12 m x 9 m zero-coordinate conceptual envelope",
+      "status": "DESIGN_ASSUMPTION",
+      "does_not_claim": ["surveyed clearance", "code compliance", "egress", "load", "anchorage", "power capacity", "approved layout"]
+    },
+    "p0_go": false
+  },
+  "why_space_people": {
+    "why": "A real, bounded physical task may require a supervised separation and reset edge that ordinary simulation or meeting rooms cannot provide.",
+    "ordinary_city_floor": "Public route, ordinary training/work, maintenance access, human help and non-digital fallback remain first and cannot be displaced.",
+    "people": [
+      "test operator",
+      "separate human safety authority",
+      "public/service handoff steward",
+      "maintenance and reset steward",
+      "independent observer or reviewer"
+    ]
+  },
+  "zone_logic": [
+    {"id": "Z0", "name": "ordinary route", "rule": "No walk-in queue or task occupancy; remains legible and continuous."},
+    {"id": "Z1", "name": "handoff", "rule": "A human steward confirms the conditional boundary before any task state."},
+    {"id": "Z2", "name": "removable test", "rule": "One bounded active task/device only; no autonomous public-space activity."},
+    {"id": "Z3", "name": "authority/operator", "rule": "Separated safety and operating decisions are visible at the threshold."},
+    {"id": "Z4", "name": "booked observer", "rule": "Observation is booked, supervised and non-queueing."},
+    {"id": "Z5", "name": "maintenance/reset", "rule": "Inventory, isolation and quarantine route stay available before and after a session."},
+    {"id": "Z6", "name": "variable professional buffer", "rule": "Extent is null until future competent professional assessment."}
+  ],
+  "capacity": {
+    "concept_session_limit": "1 active task/device",
+    "session_role_positions": 5,
+    "booked_observer_positions": 4,
+    "concept_total_cap": 9,
+    "walk_in_queue": "not permitted in Z0",
+    "observed_or_approved_capacity": null,
+    "status": "DESIGN_ASSUMPTION"
+  },
+  "components": [
+    "STATUS/reset frame",
+    "removable perimeter",
+    "floor/interface protection",
+    "power/isolation interface",
+    "physical stop/control kit",
+    "operator/safety console and log",
+    "handoff/observer elements",
+    "reset/storage inventory"
+  ],
+  "operation_chain": [
+    "pre-open external gates",
+    "ordinary baseline verify",
+    "install and inspect",
+    "conditional activation and stop rehearsal",
+    "one controlled task",
+    "fail-close",
+    "human isolation/takeover",
+    "remove",
+    "restore",
+    "independent ordinary-baseline verification"
+  ],
+  "stop_reset_maintenance": {
+    "fail_close_rule": "Any missing gate, unsafe state, route conflict, stale authority or incomplete role separation yields P0_GO=false.",
+    "reset_time": null,
+    "issue_state": "QUARANTINED until an independent reset and ordinary-baseline verification is complete.",
+    "maintenance_rule": "No new session follows a failed close, incomplete inventory, or missing reset record."
+  },
+  "cost_and_alternatives": {
+    "market_quotation_count": 0,
+    "approved_budget": null,
+    "funding_commitment": null,
+    "rom_opex_expression": "Relative sensitivity only; any future amount requires source-bounded quotation, authorisation and a named responsible party.",
+    "alternatives": [
+      "NO-BUILD: simulation, review and ordinary carrier",
+      "lower-tech reversible arrangement",
+      "selected P0 minimum reversible condition",
+      "alternate linear side-bay"
+    ],
+    "selection_rule": "P0 does not proceed when an alternative preserves the ordinary-city floor with less impact, or verified physical need is absent."
+  },
+  "external_hold_gates": [
+    "carrier and rights-holder confirmation",
+    "current access and public-route survey",
+    "bounded real task and accountable task owner",
+    "qualified operator confirmation",
+    "separate human safety authority confirmation",
+    "professional safety and accessibility review",
+    "power, isolation and facility-capacity confirmation",
+    "privacy/data boundary where applicable",
+    "maintenance and reset responsibility",
+    "independent observer/reviewer arrangement",
+    "supervised stop and reset rehearsal"
+  ],
+  "gate_status": "All 11 gates are HOLD_EXTERNAL. P0_GO=false.",
+  "acceptance_and_handoff": {
+    "participant_now": ["concept reference", "ordinary-city floor", "conditional zone/component/operation logic", "external-hold register"],
+    "professional_needed": ["survey", "codes and life safety", "accessibility", "carrier/utility capacity", "risk method", "role competence and approvals"],
+    "field_observation_needed": ["ordinary-route continuity", "maintenance conflicts", "human handoff", "stop/reset rehearsal", "independent baseline restoration"],
+    "handoff_record": "dated gate register, stop/reset record, inventory state and independent ordinary-baseline verification"
+  },
+  "links": {
+    "admission": "visual/assets/ai-spatial-admission.json#S01",
+    "portfolio": "visual/assets/renewal-project-portfolio.json#PRJ-06",
+    "assumption": "assumptions.json#A-P0-S01-001"
+  }
+}
