@@ -1,24 +1,25 @@
 # Copyright, provenance, and rights ledger
 
 Package: `accessible-ai-civic-interface-belt`  
-Status: independent local candidate; not a PR and not ready/approved.
+Status: independent local candidate; current derived assets have a resolved publication gate under the ledger below.
 
 ## Rights posture
 
-This package is marked `COMMUNITY-DISPLAY-ONLY`. All narrative, scenario cards, protocols, geometry, diagrams, HTML, and PDF layouts are original candidate work generated for this review. No existing PR package, logo, portrait, historic photograph, map tile, or third-party illustration is copied into the output.
+This package is marked `COMMUNITY-DISPLAY-ONLY`. The narrative, bilingual translation, scenario cards, protocols, provisional geometry, diagrams, HTML, and PDF layouts are original candidate work. No existing PR package, logo, portrait, historic photograph, map tile, third-party illustration, third-party code, or external data file is copied or redistributed.
+
+The figures and PDFs use Noto Sans SC Version 2.04;241114210130;non-release from the local rendering environment. Its OFL 1.1 license and official URLs are recorded in `sources.json`; the current HTML/PDF/PNG derived-output scope is covered by that license.
 
 ## Ledger
 
-| Item | Path(s) | Origin | Rights status | Publication action |
+| Item | Path(s) | Origin / basis | Rights status | Publication action |
 |---|---|---|---|---|
-| Narrative and bilingual translation | `proposal.md`, `proposal.en.md`, `report/*.html` | Original candidate drafting | internal candidate use | review and edit before external use |
-| Geometry | `geometry/*.geojson` | Original provisional working box | original; not official data | replace/recalculate when official geometry arrives |
-| Visual diagrams and logo direction | `assets/figures/*` | Original deterministic diagrams | original concept; no trademark claim | clear branding and accessibility before publication |
-| Scenario/protocol evidence | `visual/assets/*.json` | Original structured design evidence | original candidate content | professional, privacy, and safety review |
-| Public sources | `sources.json` | Official/public or user-cleared references | cite and verify current page/license | no copied imagery; recheck URLs before publication |
-| International case names | sources and proposal tables | Public mechanism references | `to_verify`; names used as text only | do not add logos, photos, or implied partnership |
-| Fonts | PDF/PNG rendering only | Local Windows system font selected for Chinese coverage | external redistribution `to_verify` | replace with cleared open font before external distribution |
-| Code/dependencies | local builder outside package; reportlab/Pillow/pyproj/shapely | standard local tools | package contains no executable code | no remote API, CDN, iframe, or tracking |
+| Narrative and bilingual translation | `proposal.md`, `proposal.en.md`, `report/*.html` | Original candidate drafting and translation | original candidate content | retain provenance and re-audit if external text is added |
+| Geometry | `geometry/*.geojson` | Original provisional working model | original; not official data | replace/recalculate when authorized geometry arrives |
+| Visual diagrams and logo direction | `assets/figures/*`, `drawings/*` | Original deterministic diagrams | original concept; no trademark claim | current assets may be displayed; clear branding before registration or public campaign |
+| Scenario/protocol evidence | `visual/assets/*.json` | Original structured design evidence | original candidate content | professional, privacy, and safety review remains required |
+| External public sources | `sources.json` and cited proposal text | Primary-page facts paraphrased; no protected expression or page asset copied | citation/factual-summary basis; audited 2026-08-30 | recheck live terms before adding any quote, image, map, data, or code |
+| Font | `report/*.html`, `assets/figures/*.png`, `drawings/*.pdf` | Noto Sans SC Version 2.04;241114210130;non-release | SIL Open Font License 1.1; embedding/derived output permitted subject to license | license URL and scope recorded in `sources.json` |
+| Code/dependencies | local builder outside package | standard local tools; no executable code in package | no third-party code redistributed | no remote API, CDN, iframe, or tracking |
 
 ## Privacy and human review
 
