@@ -1,5 +1,12 @@
 # 方案迭代记录
 
+## v2.1 - 2026-08-30 (DIRECT CODEX FOLLOW-UP, PR #3864)
+
+- 按最新 CocoSgt 反馈继续深改：五个全球案例保持项目级来源、发布方、访问日期、事实边界与不可迁移条件；PACKAGE-ASSETS 与 `report/copyright_statement.md` 的逐资产权属/复用台账统一。
+- 东西缝合、南北贯通、大钟寺智能原生消费与商务场景补齐空间类型、适用片区与面积口径、运营主体、公共利益边界、审批前置和停止条件，继续明确为概念、非工程。
+- 中英文正文、双语 visual/report HTML、14 张图件和 4 份 A0/A3 图册同步；读者可见场地面积统一为约 1141 万平方米 / about 11.41 million m²，精确值仅保留在机器绑定数据中。
+- 使用工作区 OFL 字体源重建完整已用字形子集，四份 HTML 显式内嵌同一字体；最终 manifest 哈希与四门 self-check 已刷新。PR 状态保持 Draft，未 push、未 Ready。
+
 ## v0.1.0 - 2026-08-24
 
 - Initial assembly (concept package) for zhongzhiyuan-ai-innovation-accelerator.
