@@ -10,7 +10,7 @@ summary: "以人本缓冲、机器可调用的公共规则和可撤回的版本�
 proposal_format_version: "2"
 bilingual_contract_version: "1"
 translation_file: "proposal.en.md"
-iteration: "v2.1"
+iteration: "v2.6"
 tracks: "ai-traffic-walkability,civic-agent-governance,youth-friendly-public-space"
 scenarios: "ai-traffic-walkability,robot-delivery-low-speed,ai-health-service-navigation,ai-cultural-guide,enterprise-service-copilot,public-safety-operations-review"
 ---
@@ -32,6 +32,44 @@ scenarios: "ai-traffic-walkability,robot-delivery-low-speed,ai-health-service-na
 | 第三方复演并决定扩展/返修/退出 | 证据柜、版本牌、公众观察席 | 复演差异、最差组结果、决定记录 | 不能复演则回到纸面协议 |
 
 当前包只声明 G0 概念证据链；G1/G2 仍需要现场、正式数据、专业复核与授权。五步链与现有 10 张场景卡、人工兜底和 implementation matrix 相互对照，不把概念指标写成服务绩效 [data:geometry/constraints.geojson#SCN-06] [metric:scenario_g0_count]。新增的离线 runner 将四条既有路线绑定到真实 GeoJSON 要素：代际共学、城市 API、夜间人工服务和技能再造各有一条普通人入口；要求 5/5 步骤、5/5 回退、6/6 验收检查和 4/4 路线可解析。五个失败夹具会停止、拒绝数据调用、冻结夜间扩展、暂停自动分流或退回 G0；三个普通/人工替代夹具继续。它只证明本地结构可回放，不证明现场服务、无障碍、人员值守或安全结果 [data:visual/assets/ai-era-ordinary-journey-evidence.json] [metric:scenario_g0_count]。
+
+## 五步回执把普通服务留在自动化旁边
+
+现有普通人链路已经登记了四条示范路线、八个夹具、六项验收和五个回退动作。新增双语图件把这些字段放在一张回执上，方便先看普通路线，再看 AI 辅助路径。当前回放只覆盖包内结构，授权数量为 0，现场观察数量为 0，本地基线仍为 unknown，方案保持 HOLD [data:visual/assets/ai-era-g0-journey-atlas.json] [data:visual/assets/run-ai-era-g0-journey-atlas.js]。
+
+![G0 普通人任务链回执。四条路线共用五步交接和人工回退](assets/figures/ai-era-g0-journey-atlas.svg)
+
+图中把选择、目的、接管、申诉和独立复演分别放回动作位置。缺少普通路线、人工责任或独立复演时，链路回到 G0；图件不提供居民体验、服务绩效、许可或实施结论 [data:visual/assets/ai-era-g0-journey-atlas.json]。
+
+## AI 可选，城市继续运行
+
+四条路线把无 AI 的普通服务作为基线，把 AI 只放在可撤回的增益位。代际共学保留人工讲解，城市 API 保留无数据调用的人工服务，夜间服务保留值守与纸面规则，技能再造保留人工咨询。每条路线都经过普通基线、可选增益、触发停用和保留公共资产四个状态 [data:visual/assets/ai-era-off-city-on-contract.json] [data:visual/assets/run-ai-era-off-city-on.js]。
+
+| 状态 | 评审要核对的内容 | 当前边界 |
+| --- | --- | --- |
+| 普通基线 | 人工、纸面、语音或物理导视先能完成任务 | 概念合同 |
+| 可选增益 | AI 只提供有限提示、检索或匹配，不成为唯一入口 | G0 设计目标 |
+| 触发停用 | 接管缺失、权利不清、夜间风险或退出失败即冻结 | 合成回放 |
+| 保留公共资产 | 撤回数字层，保留通行、服务、申诉和决定记录 | 现场结果 unknown |
+
+![AI 可选，城市继续运行。四条路线共用普通基线与撤回状态](assets/figures/ai-era-off-city-on-atlas.svg)
+
+这份合同把四条既有路线与普通服务入口、AI 作用、停用条件和撤回后的公共资产逐项相连。4 个负向夹具都应回到 HOLD，3 个普通或人工控制夹具继续；结果仍是 0 授权、0 现场数据、not_run 和 HOLD，不证明服务绩效、人员值守或官方评分 [data:visual/assets/ai-era-off-city-on-contract.json]。
+
+## 连续性回执把维护责任接到普通服务
+
+四个状态继续向后接维护交接。BASE 先确认普通入口、无屏替代和退出登记，BOOST 只保留有限的 AI 增益，BLACKOUT 在责任、权利或安全条件不清时停止，BEQUEST 保留通行、服务、申诉和版本记录。交接完成后，公共资产回到普通路径，数字层不承担唯一入口的责任 [data:visual/assets/ai-era-continuity-maintenance-contract.json] [data:visual/assets/run-ai-era-continuity-maintenance.js]。
+
+| 状态 | 评审要核对的动作 | 通过条件 |
+| --- | --- | --- |
+| BASE 普通路径 | 人工入口、纸面规则、无屏导视、退出登记 | 普通服务可见且有人接住 |
+| BOOST 可选增益 | 目的限定、人工复核、可撤回 | AI 不成为唯一入口 |
+| BLACKOUT 停用接管 | 停用触发、安全退避、事件记录 | 失败样例全部回到 HOLD |
+| BEQUEST 公共保留 | 维护交接、版本说明、公众复演 | 通行、服务和申诉仍可用 |
+
+![人本连续性与维护回执。四个状态、三个重点区、七个维护角色和十二个概念复核窗口](assets/figures/ai-era-continuity-maintenance-atlas.svg)
+
+回执把众智园、AI 原点社区和大钟寺的普通入口放进同一套交接规则，另外登记 6 个交接缝、7 个待确认责任角色和 7 个离线组件。W01 至 W12 是概念复核窗口，顺序覆盖来源清点、纸面回放、无屏检查、停用回放、维护交接、公众复演和阶段决定，不代表现场工期或运营承诺。6 个负向夹具均保持 HOLD，4 个正向夹具只证明普通服务、人工选择或公共资产保留可以继续回放；当前仍为 0 授权、0 现场观察、baseline unknown、performance not_run [data:visual/assets/ai-era-continuity-maintenance-contract.json]。
 
 ## 设计依据与资料清单
 

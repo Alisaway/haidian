@@ -1,0 +1,576 @@
+{
+  "schema_version": "0.1.0",
+  "artifact_id": "FP01-DELIVERY-CONTROL-001",
+  "artifact_version": "v0.12",
+  "contract_id": "FP01-CONTRACT-001",
+  "pilot_id": "FP01",
+  "title_zh": "FP01 概念交付控制簿",
+  "title_en": "FP01 Concept Delivery Control Book",
+  "artifact_status": "concept_delivery_control_model_unexecuted",
+  "claim_boundary": {
+    "zh": "本文件把三片区界面、D0 测量口径、逐门 RACI、单套设计测试数量和关键依赖做成可复核的交付模型。它不是现场测绘、实际工程量清单、市场询价、预算、采购、人员承诺、专业签署、授权或运行结果。",
+    "en": "This file makes the three-area interfaces, D0 measurement methods, gate-by-gate RACI, one-kit design-test quantities, and critical dependencies reviewable. It is not a site survey, actual bill of quantities, market quotation, budget, procurement, staffing commitment, professional sign-off, authorization, or operating result.",
+    "actual_site_dimensions_verified": false,
+    "actual_quantity_verified": false,
+    "unit_price_verified": false,
+    "budget_authorized": false,
+    "named_entity_committed": false,
+    "professional_signoff_obtained": false,
+    "field_result_obtained": false
+  },
+  "three_key_area_interface_prototypes": [
+    {
+      "prototype_id": "TD-KA01",
+      "area_id": "zhongzhiyuan_ai_acceleration_area",
+      "name_zh": "众智园：公开测试界面",
+      "name_en": "Zhongzhiyuan: Public Test Interface",
+      "design_intent_zh": "以公众旁观线、受控测试线和运营安全线三线分隔，组合来源牌、急停界面和贡献轨。",
+      "design_intent_en": "Separate a public observation line, a bounded test line, and an operator safety line, combining provenance panels, emergency-stop interfaces, and the contribution rail.",
+      "reference_test_envelope": {
+        "length_m": 24,
+        "width_m": 12,
+        "status": "concept_design_test_envelope_not_site_dimension"
+      },
+      "component_refs": [
+        "M02",
+        "M05",
+        "M06"
+      ],
+      "flagship_refs": [
+        "FP02"
+      ],
+      "scenario_refs": [
+        "S01",
+        "S10"
+      ],
+      "human_baseline": "staffed_safety_supervision_and_non_ai_observation_route",
+      "public_test_separation": "required",
+      "actual_site_dimension_m": null,
+      "survey_reference": null,
+      "professional_review_reference": null,
+      "status": "pending_site_and_professional_evidence"
+    },
+    {
+      "prototype_id": "TD-KA02",
+      "area_id": "beijing_ai_origin_community",
+      "name_zh": "北京 AI 原点：首用服务界面",
+      "name_en": "Beijing AI Origin: First-Use Service Interface",
+      "design_intent_zh": "以选择门、来源牌、有人台和回执坞组成可撤除服务模块，保证无手机、无账号和人工等价路径。",
+      "design_intent_en": "Combine a choice gate, provenance panel, staffed desk, and receipt dock as a removable service module that preserves no-phone, no-account, and equivalent human routes.",
+      "reference_test_envelope": {
+        "length_m": 18,
+        "width_m": 12,
+        "status": "concept_design_test_envelope_not_site_dimension"
+      },
+      "component_refs": [
+        "M01",
+        "M02",
+        "M03",
+        "M04"
+      ],
+      "flagship_refs": [
+        "FP01"
+      ],
+      "scenario_refs": [
+        "S03",
+        "S04",
+        "S07"
+      ],
+      "human_baseline": "staffed_and_non_digital_service_route",
+      "public_test_separation": "required",
+      "actual_site_dimension_m": null,
+      "survey_reference": null,
+      "professional_review_reference": null,
+      "status": "pending_site_and_professional_evidence"
+    },
+    {
+      "prototype_id": "TD-KA03",
+      "area_id": "dazhongsi_ai_industry_cluster",
+      "name_zh": "大钟寺：日常采用与公共记忆界面",
+      "name_en": "Dazhongsi: Everyday Adoption and Public-Memory Interface",
+      "design_intent_zh": "以选择门、回执坞和贡献轨连接日常服务、争议补救与可更正公共记录，不以客流替代公共价值。",
+      "design_intent_en": "Connect everyday service, dispute remedy, and correctable public records through a choice gate, receipt dock, and contribution rail without treating footfall as public value.",
+      "reference_test_envelope": {
+        "length_m": 30,
+        "width_m": 6,
+        "status": "concept_design_test_envelope_not_site_dimension"
+      },
+      "component_refs": [
+        "M01",
+        "M04",
+        "M06"
+      ],
+      "flagship_refs": [
+        "FP04"
+      ],
+      "scenario_refs": [
+        "S11",
+        "S12"
+      ],
+      "human_baseline": "staffed_commercial_or_public_service_and_dispute_route",
+      "public_test_separation": "required",
+      "actual_site_dimension_m": null,
+      "survey_reference": null,
+      "professional_review_reference": null,
+      "status": "pending_site_and_professional_evidence"
+    }
+  ],
+  "d0_measurement_methods": [
+    {
+      "baseline_id": "D0-B01",
+      "name_zh": "任务完成率",
+      "name_en": "Task completion rate",
+      "observation_start": "staffed_intake_accepts_one_eligible_task",
+      "observation_end": "human_confirmed_referral_or_reasoned_refusal_receipt",
+      "numerator": "eligible_tasks_with_human_confirmed_referral_or_reasoned_refusal_receipt",
+      "denominator": "all_eligible_tasks_started",
+      "formula": "numerator / denominator",
+      "missingness_rule": "user_withdrawal_and_observer_interruption_reported_separately_and_never_relabelled_success",
+      "reporting": "ratio_with_numerator_denominator_and_missing_count",
+      "actual_sample_size": null,
+      "actual_value": null,
+      "status": "method_defined_actual_pending"
+    },
+    {
+      "baseline_id": "D0-B02",
+      "name_zh": "任务完成用时",
+      "name_en": "Task completion time",
+      "observation_start": "staffed_intake_accepts_one_eligible_task",
+      "observation_end": "final_portable_receipt_is_explained",
+      "numerator": null,
+      "denominator": null,
+      "formula": "elapsed_minutes_per_completed_or_reasoned_refusal_task",
+      "missingness_rule": "user_requested_pause_is_reported_separately_and_raw_elapsed_time_is_retained",
+      "reporting": "median_p90_range_and_missing_count",
+      "actual_sample_size": null,
+      "actual_value": null,
+      "status": "method_defined_actual_pending"
+    },
+    {
+      "baseline_id": "D0-B03",
+      "name_zh": "人工接管时延",
+      "name_en": "Human-takeover delay",
+      "observation_start": "takeover_requested_or_stop_trigger_fires",
+      "observation_end": "named_on_duty_human_acknowledges_control",
+      "numerator": null,
+      "denominator": null,
+      "formula": "acknowledgement_timestamp - request_or_trigger_timestamp",
+      "missingness_rule": "unacknowledged_takeover_is_a_failure_not_a_missing_value",
+      "reporting": "median_p90_maximum_and_unacknowledged_count",
+      "actual_sample_size": null,
+      "actual_value": null,
+      "status": "method_defined_actual_pending"
+    },
+    {
+      "baseline_id": "D0-B04",
+      "name_zh": "申诉权利理解",
+      "name_en": "Appeal-rights comprehension",
+      "observation_start": "receipt_and_appeal_route_explained",
+      "observation_end": "plain_language_teach_back_completed_or_declined",
+      "numerator": "participants_who_can_identify_human_appeal_channel_and_next_step",
+      "denominator": "participants_completing_the_non_coercive_teach_back",
+      "formula": "numerator / denominator",
+      "missingness_rule": "declined_teach_back_reported_separately_and_never_scored_as_understanding",
+      "reporting": "ratio_with_numerator_denominator_declines_and_accessibility_format",
+      "actual_sample_size": null,
+      "actual_value": null,
+      "status": "method_defined_actual_pending"
+    },
+    {
+      "baseline_id": "D0-B05",
+      "name_zh": "退出后人工服务恢复",
+      "name_en": "Staffed-service restoration after exit",
+      "observation_start": "exit_or_stop_instruction_issued",
+      "observation_end": "staffed_service_data_disposition_and_asset_state_receipts_complete",
+      "numerator": "exit_tests_with_verified_staffed_baseline_restoration_and_receipt",
+      "denominator": "all_exit_tests_started",
+      "formula": "numerator / denominator",
+      "missingness_rule": "incomplete_restoration_is_a_failure_not_a_missing_value",
+      "reporting": "ratio_elapsed_time_open_cases_and_unrestored_items",
+      "actual_sample_size": null,
+      "actual_value": null,
+      "status": "method_defined_actual_pending"
+    },
+    {
+      "baseline_id": "D0-B06",
+      "name_zh": "无手机及无障碍服务可达",
+      "name_en": "No-phone and accessible service reachability",
+      "observation_start": "participant_selects_no_phone_no_account_or_accommodation_route",
+      "observation_end": "human_confirmed_referral_reasoned_refusal_or_documented_barrier",
+      "numerator": "attempts_completed_with_equivalent_service_or_reasoned_refusal_without_phone_or_account",
+      "denominator": "all_no_phone_no_account_or_accommodation_attempts",
+      "formula": "numerator / denominator",
+      "missingness_rule": "documented_accessibility_barrier_is_a_failure_and_is_never_removed_from_denominator",
+      "reporting": "ratio_with_route_type_accommodation_barriers_and_non_identifying_breakdown",
+      "actual_sample_size": null,
+      "actual_value": null,
+      "status": "method_defined_actual_pending"
+    }
+  ],
+  "formative_observation_protocol": {
+    "status": "concept_protocol_requires_ethics_operator_and_user_review",
+    "planned_minimum_valid_task_sessions": 30,
+    "planned_minimum_service_days": 3,
+    "coverage_requirements": [
+      "staffed_or_non_digital_baseline",
+      "no_phone_or_no_account_path",
+      "accessibility_or_reasonable_accommodation_path",
+      "success_and_reasoned_refusal",
+      "human_takeover",
+      "exit_and_restoration"
+    ],
+    "inference_boundary_zh": "30 次是概念阶段的最小形成性观察门，不代表统计功效、总体代表性、公众同意或真实样本已经取得；责任服务方、使用者代表与适用伦理/数据审查可提高或否决该门槛。",
+    "inference_boundary_en": "Thirty sessions are a concept-stage formative-observation floor, not statistical power, population representativeness, public consent, or evidence that a sample exists. The accountable service owner, user representatives, and applicable ethics or data review may raise or reject this threshold.",
+    "actual_valid_task_sessions": null,
+    "actual_service_days": null,
+    "protocol_approval_reference": null
+  },
+  "hold_point_raci": [
+    {
+      "hold_point_id": "H0",
+      "accountable": [
+        "accountable_service_owner_role"
+      ],
+      "responsible": [
+        "human_service_role",
+        "user_representative_role"
+      ],
+      "consulted": [
+        "accessibility_and_service_equivalence_role",
+        "independent_evaluation_role"
+      ],
+      "informed": [
+        "public_evidence_custodian_role"
+      ],
+      "signatory_name": null,
+      "acceptance_date": null,
+      "status": "roles_defined_signoff_pending"
+    },
+    {
+      "hold_point_id": "H1",
+      "accountable": [
+        "accountable_service_owner_role",
+        "budget_authority_role"
+      ],
+      "responsible": [
+        "site_or_asset_owner_role",
+        "accountable_operating_role",
+        "procurement_and_legal_review_role"
+      ],
+      "consulted": [
+        "maintenance_role",
+        "survey_and_existing_condition_role"
+      ],
+      "informed": [
+        "public_evidence_custodian_role"
+      ],
+      "signatory_name": null,
+      "acceptance_date": null,
+      "status": "roles_defined_signoff_pending"
+    },
+    {
+      "hold_point_id": "H2",
+      "accountable": [
+        "accountable_service_owner_role"
+      ],
+      "responsible": [
+        "data_rights_and_security_role",
+        "professional_site_review_role",
+        "accessibility_and_service_equivalence_role"
+      ],
+      "consulted": [
+        "human_service_role",
+        "maintenance_role",
+        "independent_evaluation_role"
+      ],
+      "informed": [
+        "site_or_asset_owner_role",
+        "public_evidence_custodian_role"
+      ],
+      "signatory_name": null,
+      "acceptance_date": null,
+      "status": "roles_defined_signoff_pending"
+    },
+    {
+      "hold_point_id": "H3",
+      "accountable": [
+        "independent_evaluation_role"
+      ],
+      "responsible": [
+        "human_service_role",
+        "accountable_operating_role",
+        "appeal_decision_role"
+      ],
+      "consulted": [
+        "data_rights_and_security_role",
+        "accessibility_and_service_equivalence_role",
+        "user_representative_role"
+      ],
+      "informed": [
+        "accountable_service_owner_role",
+        "public_evidence_custodian_role"
+      ],
+      "signatory_name": null,
+      "acceptance_date": null,
+      "status": "roles_defined_signoff_pending"
+    },
+    {
+      "hold_point_id": "H4",
+      "accountable": [
+        "separate_authorizing_role"
+      ],
+      "responsible": [
+        "accountable_service_owner_role",
+        "site_or_asset_owner_role",
+        "data_rights_and_security_role",
+        "public_evidence_custodian_role"
+      ],
+      "consulted": [
+        "procurement_and_legal_review_role",
+        "independent_evaluation_role",
+        "appeal_decision_role",
+        "maintenance_role"
+      ],
+      "informed": [
+        "human_service_role",
+        "user_representative_role"
+      ],
+      "signatory_name": null,
+      "acceptance_date": null,
+      "status": "roles_defined_signoff_pending"
+    }
+  ],
+  "concept_installation_boq": {
+    "scope": "one_cross_flagship_design_test_kit",
+    "status": "design_test_quantities_only_not_actual_boq",
+    "items": [
+      {
+        "item_id": "BOQ-M01",
+        "component_ref": "M01",
+        "unit": "set",
+        "design_test_quantity": 1,
+        "actual_quantity": null,
+        "verified_unit_cost_cny": null,
+        "verified_amount_cny": null
+      },
+      {
+        "item_id": "BOQ-M02",
+        "component_ref": "M02",
+        "unit": "panel",
+        "design_test_quantity": 2,
+        "actual_quantity": null,
+        "verified_unit_cost_cny": null,
+        "verified_amount_cny": null
+      },
+      {
+        "item_id": "BOQ-M03",
+        "component_ref": "M03",
+        "unit": "two_position_set",
+        "design_test_quantity": 1,
+        "actual_quantity": null,
+        "verified_unit_cost_cny": null,
+        "verified_amount_cny": null
+      },
+      {
+        "item_id": "BOQ-M04",
+        "component_ref": "M04",
+        "unit": "set",
+        "design_test_quantity": 1,
+        "actual_quantity": null,
+        "verified_unit_cost_cny": null,
+        "verified_amount_cny": null
+      },
+      {
+        "item_id": "BOQ-M05",
+        "component_ref": "M05",
+        "unit": "interface",
+        "design_test_quantity": 2,
+        "actual_quantity": null,
+        "verified_unit_cost_cny": null,
+        "verified_amount_cny": null
+      },
+      {
+        "item_id": "BOQ-M06",
+        "component_ref": "M06",
+        "unit": "linear_metre",
+        "design_test_quantity": 6,
+        "actual_quantity": null,
+        "verified_unit_cost_cny": null,
+        "verified_amount_cny": null
+      }
+    ],
+    "cost_breakdown_structure": [
+      "survey_and_existing_condition",
+      "reversible_components_and_fitout",
+      "accessibility_and_staffed_service",
+      "local_interfaces_hardware_and_connectivity",
+      "data_rights_security_and_testing",
+      "independent_evaluation_and_public_evidence",
+      "removal_restoration_and_contingency"
+    ],
+    "calculation_rule": "verified_actual_quantity * rights_cleared_comparable_unit_cost + approved_contingency",
+    "cost_basis_requirement": "rights_cleared_comparable_quotes_or_official_cost_basis_reviewed_for_scope_date_and_location",
+    "capital_budget_amount_cny": null,
+    "operating_budget_amount_cny": null,
+    "contingency_amount_cny": null,
+    "funding_source": null,
+    "procurement_route": null,
+    "legal_review_reference": null,
+    "budget_authority_signoff": null
+  },
+  "critical_dependency_path": [
+    {
+      "step_id": "K01",
+      "name_zh": "确认单一问题与有人基线协议",
+      "name_en": "Confirm one problem and staffed-baseline protocol",
+      "depends_on": [],
+      "may_run_in_parallel_with": [
+        "K02"
+      ],
+      "exit_gate": "H0",
+      "actual_start": null,
+      "actual_finish": null,
+      "status": "not_started"
+    },
+    {
+      "step_id": "K02",
+      "name_zh": "候选载体初筛与资料请求",
+      "name_en": "Screen candidate carriers and request evidence",
+      "depends_on": [],
+      "may_run_in_parallel_with": [
+        "K01"
+      ],
+      "exit_gate": "H1",
+      "actual_start": null,
+      "actual_finish": null,
+      "status": "not_started"
+    },
+    {
+      "step_id": "K03",
+      "name_zh": "责任、资金与采购路径草案",
+      "name_en": "Draft accountability, funding, and procurement route",
+      "depends_on": [
+        "K01",
+        "K02"
+      ],
+      "may_run_in_parallel_with": [],
+      "exit_gate": "H1",
+      "actual_start": null,
+      "actual_finish": null,
+      "status": "not_started"
+    },
+    {
+      "step_id": "K04",
+      "name_zh": "测绘与专业条件核验",
+      "name_en": "Survey and verify professional conditions",
+      "depends_on": [
+        "K02"
+      ],
+      "may_run_in_parallel_with": [
+        "K05"
+      ],
+      "exit_gate": "H2",
+      "actual_start": null,
+      "actual_finish": null,
+      "status": "not_started"
+    },
+    {
+      "step_id": "K05",
+      "name_zh": "D0 形成性基线观测",
+      "name_en": "Conduct D0 formative baseline observation",
+      "depends_on": [
+        "K01"
+      ],
+      "may_run_in_parallel_with": [
+        "K04"
+      ],
+      "exit_gate": "H2",
+      "actual_start": null,
+      "actual_finish": null,
+      "status": "not_started"
+    },
+    {
+      "step_id": "K06",
+      "name_zh": "冻结合同、组件、停止阈值与复演协议",
+      "name_en": "Freeze contract, components, stop thresholds, and rehearsal protocol",
+      "depends_on": [
+        "K03",
+        "K04",
+        "K05"
+      ],
+      "may_run_in_parallel_with": [],
+      "exit_gate": "D30",
+      "actual_start": null,
+      "actual_finish": null,
+      "status": "not_started"
+    },
+    {
+      "step_id": "K07",
+      "name_zh": "独立受控复演四类事件",
+      "name_en": "Independently rehearse four event classes",
+      "depends_on": [
+        "K06"
+      ],
+      "may_run_in_parallel_with": [],
+      "exit_gate": "H3",
+      "actual_start": null,
+      "actual_finish": null,
+      "status": "not_started"
+    },
+    {
+      "step_id": "K08",
+      "name_zh": "形成 go / revise / stop 公开证据决定",
+      "name_en": "Issue a public-evidence go, revise, or stop decision",
+      "depends_on": [
+        "K07"
+      ],
+      "may_run_in_parallel_with": [],
+      "exit_gate": "D90",
+      "actual_start": null,
+      "actual_finish": null,
+      "status": "not_started"
+    },
+    {
+      "step_id": "K09",
+      "name_zh": "另行完成法定授权与退出交接",
+      "name_en": "Obtain separate lawful authorization and exit handover",
+      "depends_on": [
+        "K08"
+      ],
+      "may_run_in_parallel_with": [],
+      "exit_gate": "H4",
+      "actual_start": null,
+      "actual_finish": null,
+      "status": "not_started"
+    },
+    {
+      "step_id": "K10",
+      "name_zh": "执行或关闭十日验收窗口",
+      "name_en": "Run or close the ten-day acceptance window",
+      "depends_on": [
+        "K09"
+      ],
+      "may_run_in_parallel_with": [],
+      "exit_gate": "D100",
+      "actual_start": null,
+      "actual_finish": null,
+      "status": "not_started"
+    }
+  ],
+  "structural_claims": {
+    "key_area_interface_prototype_count": 3,
+    "d0_measurement_method_count": 6,
+    "d0_measurement_method_coverage_ratio": 1.0,
+    "hold_point_raci_count": 5,
+    "hold_point_raci_coverage_ratio": 1.0,
+    "design_test_boq_item_count": 6,
+    "critical_dependency_step_count": 10,
+    "actual_boq_verified_item_count": 0,
+    "verified_external_signoff_count": 0
+  },
+  "verification": {
+    "script": "visual/assets/verify-fp01-delivery-control.js",
+    "runtime": "Node.js standard library only",
+    "pass_claim": "Structural PASS proves only that the delivery-control model is internally complete and that all external actuals remain empty."
+  }
+}

@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CMP·JZ Compute-Energy Loop (Concept) - visual index</title>
+<style>@font-face{font-family:'Noto Sans SC Subset';src:url(data:font/woff;base64,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) format('woff');font-weight:normal;font-style:normal;font-display:block;}
+html,body,body *{font-family:'Noto Sans SC Subset','PingFang SC','Microsoft YaHei','Noto Sans CJK SC',sans-serif !important;}
+:root{--ink:#162033;--muted:#4B5563;--line:#d7dee8;--paper:#ffffff;--bg:#eef2f6;--accent:#0E4A6E;--warn:#92400E;--warnbg:#FDF3D7;--warnedge:#C2703D}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans SC Subset","PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;margin:0;background:var(--bg);color:var(--ink);line-height:1.7}
+header{background:var(--accent);color:#fff;padding:26px 22px}
+.wrap{max-width:1120px;margin:auto;padding:0 8px}
+h1{margin:0 0 8px;font-size:27px;line-height:1.25}h2{font-size:20px;margin:0 0 10px}
+.pill{display:inline-block;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:3px 10px;font-size:12px;margin:4px 6px 0 0;color:#e2e8f0}
+main{padding:22px 8px}.sheet{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin-bottom:16px}
+.sheet h2{border-bottom:2px solid var(--accent);padding-bottom:8px}
+.stat{display:inline-block;width:230px;vertical-align:top;border:1px solid #dfe6ef;border-radius:8px;padding:12px;margin:6px}
+.stat b{display:block;font-size:24px;margin-top:4px;color:var(--accent)}.stat span{color:#667085;font-size:12.5px}
+.warnbox{border:2px solid var(--warnedge);background:var(--warnbg);color:var(--warn);border-radius:10px;padding:12px 16px;margin:14px 0;font-weight:600}
+table{border-collapse:collapse;width:100%;font-size:14px;margin:10px 0 6px}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
+th{background:#eef2f7}caption{caption-side:top;text-align:left;font-weight:700;padding:6px 0;color:var(--accent)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--warnedge);outline-offset:2px;border-radius:4px}
+.skip{position:absolute;left:-999px;top:0;background:var(--warnedge);color:#fff;padding:8px 14px;border-radius:0 0 8px 0;z-index:99}
+.skip:focus{left:0}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px;margin:8px 0;color:var(--ink)}
+.legend i{display:inline-block;width:16px;height:16px;border-radius:3px;margin-right:5px;vertical-align:-3px;border:1px solid #94A3B8}
+.small{color:#667085;font-size:12.5px}
+figure{margin:14px 0}figcaption{font-size:13px;color:var(--muted);margin-top:6px}
+</style><style></style></head>
+<a class="skip" href="#main">Skip to content</a><body>
+<a class="skip" href="#main">Skip to content</a>
+<header><div class="wrap"><h1>CMP·JZ Compute-Energy Loop: AI Compute Infrastructure & Compute-Energy Synergy Loop (Concept)</h1>
+<p>Offline electronic exhibition. Participant provisional model data (not official authority): GeoJSON, metrics.json, matrices and self-check; this page visualizes overview map, three-level scope, key areas, land use, mobility & blue-green space, buildings, renewal projects, AI scenarios, core metrics, task coverage, sources and risks.</p>
+<span class="pill">Compute infrastructure</span><span class="pill">Compute-energy synergy</span><span class="pill">Blue-green loop</span><span class="pill">Slow mobility first</span><span class="pill">provisional intake</span></div></header>
+<main class="wrap" id="main">
+<div class="warnbox">Boundary & precision warning: this page is based on provisional low-confidence concept geometry and data; all values are rounded low-precision figures; full recomputation after official boundaries, regulatory plans and utility data are published. Not a formal scoring drawing or engineering basis; accessibility is certified by human review and on-site measurement, never by machine validation alone.</div>
+
+<section class="sheet"><h2>Overview map</h2><svg viewBox="0 0 1180 360" role="img" aria-label="corridor band map north right" style="width:100%;height:auto;background:#f8fafc;border:1px solid #b9c4d3;border-radius:8px"><defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#162033"/></marker></defs><path d="M 1153.5 302.1 L 1152.7 192.0 L 911.8 193.7 L 912.6 303.8 L 1153.5 302.1 Z" fill="#6E9FC0" stroke="#ffffff" stroke-width="0.8"/><path d="M 730.5 315.2 L 729.6 205.0 L 599.5 206.0 L 600.3 316.1 L 730.5 315.2 Z" fill="#B89757" stroke="#ffffff" stroke-width="0.8"/><path d="M 162.1 319.4 L 161.1 189.1 L 85.1 189.7 L 86.1 319.9 L 162.1 319.4 Z" fill="#CD9A3B" stroke="#ffffff" stroke-width="0.8"/><path d="M 161.5 241.3 L 161.6 255.4 L 599.9 260.5 L 599.8 246.4 L 161.5 241.3 Z" fill="#5FB872" stroke="#ffffff" stroke-width="0.8"/><path d="M 912.4 265.6 L 912.3 251.5 L 730.0 248.3 L 730.1 262.4 L 912.4 265.6 Z" fill="#5FB872" stroke="#ffffff" stroke-width="0.8"/><path d="M 489.8 340.0 L 726.8 326.5 L 726.8 315.2 L 600.3 316.1 L 600.2 304.6 L 362.0 304.6 L 362.0 338.2 L 489.8 340.0 Z" fill="#6E9FC0" stroke="#ffffff" stroke-width="0.8"/><path d="M 362.0 304.6 L 162.0 304.6 L 162.1 319.4 L 86.1 319.9 L 86.0 304.6 L 20.9 304.6 L 21.1 333.4 L 362.0 338.2 L 362.0 304.6 Z" fill="#6E9FC0" stroke="#ffffff" stroke-width="0.8"/><path d="M 362.0 304.6 L 600.2 304.6 L 599.9 267.5 L 362.0 267.5 L 362.0 304.6 Z" fill="#6E9FC0" stroke="#ffffff" stroke-width="0.8"/><path d="M 161.7 267.5 L 162.0 304.6 L 362.0 304.6 L 362.0 267.5 L 161.7 267.5 Z" fill="#B89757" stroke="#ffffff" stroke-width="0.8"/><path d="M 1160.0 304.6 L 1159.7 267.5 L 1153.2 267.5 L 1153.5 302.1 L 912.6 303.8 L 912.4 267.5 L 730.1 267.5 L 730.4 304.6 L 1160.0 304.6 Z" fill="#B89757" stroke="#ffffff" stroke-width="0.8"/><path d="M 362.0 184.9 L 358.5 184.7 L 20.0 187.1 L 20.2 211.1 L 85.3 211.1 L 85.1 189.7 L 161.1 189.1 L 161.3 211.1 L 362.0 211.1 L 362.0 184.9 Z" fill="#CD9A3B" stroke="#ffffff" stroke-width="0.8"/><path d="M 362.0 240.1 L 599.7 240.1 L 599.5 211.1 L 362.0 211.1 L 362.0 240.1 Z" fill="#CD9A3B" stroke="#ffffff" stroke-width="0.8"/><path d="M 161.3 211.1 L 161.5 240.1 L 362.0 240.1 L 362.0 211.1 L 161.3 211.1 Z" fill="#A57AA6" stroke="#ffffff" stroke-width="0.8"/><path d="M 726.8 200.3 L 684.1 202.4 L 362.0 184.9 L 362.0 211.1 L 599.5 211.1 L 599.5 206.0 L 726.8 205.1 L 726.8 200.3 Z" fill="#A57AA6" stroke="#ffffff" stroke-width="0.8"/><path d="M 729.7 211.1 L 729.9 240.1 L 912.2 240.1 L 912.0 211.1 L 729.7 211.1 Z" fill="#A57AA6" stroke="#ffffff" stroke-width="0.8"/><path d="M 1159.3 211.1 L 1159.1 178.9 L 726.8 200.3 L 726.8 205.1 L 729.6 205.0 L 729.7 211.1 L 912.0 211.1 L 911.8 193.7 L 1152.7 192.0 L 1152.8 211.1 L 1159.3 211.1 Z" fill="#5FB872" stroke="#ffffff" stroke-width="0.8"/><path d="M 726.8 326.5 L 893.2 317.0 L 1160.0 305.0 L 1160.0 304.6 L 730.4 304.6 L 730.5 315.2 L 726.8 315.2 L 726.8 326.5 Z" fill="#5FB872" stroke="#ffffff" stroke-width="0.8"/><path d="M 20.6 267.5 L 20.9 304.6 L 86.0 304.6 L 85.7 267.5 L 20.6 267.5 Z" fill="#5FB872" stroke="#ffffff" stroke-width="0.8"/><path d="M 161.6 255.4 L 161.7 267.5 L 362.0 267.5 L 362.0 257.7 L 161.6 255.4 Z" fill="#5FB872" stroke="#ffffff" stroke-width="0.8"/><path d="M 362.0 267.5 L 599.9 267.5 L 599.9 260.5 L 362.0 257.7 L 362.0 267.5 Z" fill="#5FB872" stroke="#ffffff" stroke-width="0.8"/><path d="M 20.2 211.1 L 20.4 240.1 L 85.5 240.1 L 85.3 211.1 L 20.2 211.1 Z" fill="#5FB872" stroke="#ffffff" stroke-width="0.8"/><path d="M 20.4 240.1 L 20.6 267.5 L 85.7 267.5 L 85.5 240.1 L 20.4 240.1 Z" fill="#5FB872" stroke="#ffffff" stroke-width="0.8"/><path d="M 729.9 240.1 L 730.0 248.3 L 912.3 251.5 L 912.2 240.1 L 729.9 240.1 Z" fill="#5FB872" stroke="#ffffff" stroke-width="0.8"/><path d="M 362.0 243.7 L 599.8 246.4 L 599.7 240.1 L 362.0 240.1 L 362.0 243.7 Z" fill="#5FB872" stroke="#ffffff" stroke-width="0.8"/><path d="M 912.4 267.5 L 912.4 265.6 L 730.1 262.4 L 730.1 267.5 L 912.4 267.5 Z" fill="#5FB872" stroke="#ffffff" stroke-width="0.8"/><path d="M 161.5 240.1 L 161.5 241.3 L 362.0 243.7 L 362.0 240.1 L 161.5 240.1 Z" fill="#5FB872" stroke="#ffffff" stroke-width="0.8"/><path d="M 1159.5 240.1 L 1159.3 211.1 L 1152.8 211.1 L 1153.0 240.1 L 1159.5 240.1 Z" fill="#5FB872" stroke="#ffffff" stroke-width="0.8"/><path d="M 1159.7 267.5 L 1159.5 240.1 L 1153.0 240.1 L 1153.2 267.5 L 1159.7 267.5 Z" fill="#5FB872" stroke="#ffffff" stroke-width="0.8"/><path d="M 665.0 247.2 L 123.7 240.9 L 123.5 254.9 L 664.9 261.3 L 1032.5 267.6 L 1032.8 253.6 L 665.1 247.2 L 665.0 247.2 Z" fill="#5FB872" stroke="#2F6B3A" stroke-width="1"/><path d="M 235.7 325.4 L 260.3 325.4 L 260.3 290.2 L 235.7 290.2 L 235.7 325.4 Z" fill="#5FB872" stroke="#2F6B3A" stroke-width="1"/><path d="M 593.3 296.6 L 627.8 296.6 L 627.8 247.4 L 593.3 247.4 L 593.3 296.6 Z" fill="#5FB872" stroke="#2F6B3A" stroke-width="1"/><path d="M 266.9 267.9 L 311.2 267.9 L 311.2 204.6 L 266.9 204.6 L 266.9 267.9 Z" fill="#5FB872" stroke="#2F6B3A" stroke-width="1"/><path d="M 639.2 314.7 L 663.9 314.7 L 663.9 279.6 L 639.2 279.6 L 639.2 314.7 Z" fill="#5FB872" stroke="#2F6B3A" stroke-width="1"/><path d="M 312.8 286.0 L 347.3 286.0 L 347.3 236.8 L 312.8 236.8 L 312.8 286.0 Z" fill="#5FB872" stroke="#2F6B3A" stroke-width="1"/><path d="M 1032.6 260.6 L 665.0 254.2 L 123.6 247.9" fill="none" stroke="#7E8CA3" stroke-width="3" stroke-linecap="round"/><path d="M 985.7 247.9 L 1079.5 247.9" fill="none" stroke="#7E8CA3" stroke-width="3" stroke-linecap="round"/><path d="M 618.1 260.6 L 711.9 260.6" fill="none" stroke="#7E8CA3" stroke-width="3" stroke-linecap="round"/><path d="M 76.7 254.5 L 170.5 254.5" fill="none" stroke="#7E8CA3" stroke-width="3" stroke-linecap="round"/><path d="M 21.1 333.4 L 20.0 187.1 L 358.5 184.7 L 684.1 202.4 L 1159.1 178.9 L 1160.0 305.0 L 893.2 317.0 L 489.8 340.0 L 21.1 333.4 Z" fill="none" stroke="#162033" stroke-width="4"/><path d="M 912.6 303.8 L 911.8 193.7 L 1152.7 192.0 L 1153.5 302.1 L 912.6 303.8 Z" fill="none" stroke="#C2703D" stroke-width="4" stroke-dasharray="10 6"/><path d="M 600.3 316.1 L 599.5 206.0 L 729.6 205.0 L 730.5 315.2 L 600.3 316.1 Z" fill="none" stroke="#C2703D" stroke-width="4" stroke-dasharray="10 6"/><path d="M 86.1 319.9 L 85.1 189.7 L 161.1 189.1 L 162.1 319.4 L 86.1 319.9 Z" fill="none" stroke="#C2703D" stroke-width="4" stroke-dasharray="10 6"/><circle cx="1008.6" cy="259.1" r="12" fill="#0E4A6E" stroke="#ffffff" stroke-width="2.5"/><circle cx="652.0" cy="271.7" r="12" fill="#0E4A6E" stroke="#ffffff" stroke-width="2.5"/><circle cx="116.1" cy="267.6" r="12" fill="#0E4A6E" stroke="#ffffff" stroke-width="2.5"/><line x1="54.2" y1="328.7" x2="288.7" y2="328.7" stroke="#162033" stroke-width="4"/><text x="171.4" y="346.7" text-anchor="middle" font-size="15" fill="#162033">2 km</text><line x1="1114.4" y1="195.0" x2="1154.4" y2="195.0" stroke="#162033" stroke-width="4" marker-end="url(#arr)"/><text x="1160.4" y="201.0" font-size="18" font-weight="bold" fill="#162033">N →</text></svg>
+<div class="legend">
+<span><i style="background:#6E9FC0"></i>Research</span>
+<span><i style="background:#5FB872"></i>Park & green</span>
+<span><i style="background:#B89757"></i>Business finance</span>
+<span><i style="background:#CD9A3B"></i>Commercial</span>
+<span><i style="background:#A57AA6"></i>Residential</span>
+<span><i style="border:3px dashed #C2703D;background:none"></i>Key areas (3)</span>
+</div>
+<figure><svg viewBox="0 0 980 300" role="img" aria-label="four-flow loop mechanism diagram" style="width:100%;height:auto;background:#f8fafc;border:1px solid #b9c4d3;border-radius:8px"><defs><marker id="arr4" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#162033"/></marker></defs><rect x="40" y="60" width="400" height="80" rx="12" fill="#1D6F42" opacity="0.18" stroke="#1D6F42" stroke-width="2.5"/><text x="240" y="102" text-anchor="middle" font-size="16" font-weight="bold" fill="#162033">Energy supply (green power / waste heat)</text><rect x="540" y="60" width="400" height="80" rx="12" fill="#0E4A6E" opacity="0.18" stroke="#0E4A6E" stroke-width="2.5"/><text x="740" y="102" text-anchor="middle" font-size="16" font-weight="bold" fill="#162033">Compute hub (center / edge stations)</text><rect x="540" y="180" width="400" height="80" rx="12" fill="#7A5A8A" opacity="0.18" stroke="#7A5A8A" stroke-width="2.5"/><text x="740" y="222" text-anchor="middle" font-size="16" font-weight="bold" fill="#162033">Data &amp; secure sandbox (joint compute)</text><rect x="40" y="180" width="400" height="80" rx="12" fill="#C2703D" opacity="0.18" stroke="#C2703D" stroke-width="2.5"/><text x="240" y="222" text-anchor="middle" font-size="16" font-weight="bold" fill="#162033">Scenarios &amp; public services (science / disclosure)</text><line x1="440" y1="100" x2="540" y2="100" stroke="#162033" stroke-width="4" marker-end="url(#arr4)"/><text x="490" y="88" text-anchor="middle" font-size="14" fill="#4B5563">compute</text><line x1="740" y1="140" x2="740" y2="180" stroke="#162033" stroke-width="4" marker-end="url(#arr4)"/><text x="756" y="165" text-anchor="start" font-size="14" fill="#4B5563">data</text><line x1="540" y1="220" x2="440" y2="220" stroke="#162033" stroke-width="4" marker-end="url(#arr4)"/><text x="490" y="208" text-anchor="middle" font-size="14" fill="#4B5563">scenarios</text><line x1="200" y1="180" x2="200" y2="140" stroke="#162033" stroke-width="4" marker-end="url(#arr4)"/><text x="216" y="165" text-anchor="start" font-size="14" fill="#4B5563">loop back</text><text x="490" y="285" text-anchor="middle" font-size="13" fill="#4B5563">Four-flow loop (concept): energy → compute → data → scenarios; eight public cases registered one by one (public channels only)</text></svg><figcaption>Global case & ecosystem map: eight public cases registered one by one (energy→compute→data→scenario four-layer mechanism loop), summarized from public sources only.</figcaption></figure>
+<p class="small">Schematic is a rotated corridor view (N to the right), scale 2 km; not an official red line, no engineering location.</p>
+</section>
+
+<section class="sheet"><h2>Three-level scope</h2>
+<p>Coordinated research ~43.6 km²: compute demand/supply and regional synergy (role—resource flow—interface—spatial relation framework for Beiwu, Future Science City, Huairou Science City, the EZ and Jing-Jin-Ji in proposal.md). Overall design ~11.4 km²: three nodes + loop network concept (package provisional recompute ~11.4 km², consistent with the announced figure (self-computed from the announcement, not officially issued), official figures govern). Key areas ~368.4 ha: detailed design of the Hub, the Edge station and the Synergy Park.</p>
+</section>
+
+<section class="sheet"><h2>Key areas</h2>
+<p>Smart Compute Hub (Zhongzhiyuan): city-level smart-compute cluster — machine block—R&D podium—scheduling gallery, compute-visualization gallery and voucher desk; Edge Intelligence Station (AI Origin): micro cabinet + co-intelligence lab + delivery porch, community demo window and sandbox corner; Compute-Energy Synergy Park (Dazhongsi): energy courtyard + heat-interface well + display gallery, 'watt to bit' exhibition and carbon board. Landmark catalogs, honor display and component library in proposal.md.</p>
+</section>
+
+<section class="sheet"><h2>Land use</h2>
+<table><caption>Conceptual land-use shares (provisional, rounded)</caption>
+<thead><tr><th>Category (national standard)</th><th>Share</th></tr></thead>
+<tbody><tr><td>Research</td><td>35%</td></tr>
+<tr><td>Park & green</td><td>21%</td></tr>
+<tr><td>Business finance</td><td>19%</td></tr>
+<tr><td>Commercial</td><td>15%</td></tr>
+<tr><td>Residential</td><td>10%</td></tr></tbody></table>
+<p class="small">Single caliber: Research (0802) / Park &amp; green (1401) / Business finance (0902) / Commercial (0901) / Residential (0701); rounded from land_use.geojson recomputed in EPSG:4548 (aggregation share_i = class area / site area, low confidence); recomputed with the same logic after the official regulatory plan.</p>
+<p class="small">Caliber note: land_use.geojson contains 27 GeoJSON zone features (land_use_zone_count=27) aggregated by land-use code into 5 classes (land_use_class_count=5); 27 = feature count and 5 = aggregate class count, different meanings, never interchangeable; feature counts never participate in class shares. Recompute with the same logic after the official regulatory plan or formal land data.</p>
+</section>
+
+<section class="sheet"><h2>Mobility & slow travel</h2>
+<p>A slow-mobility loop links the three nodes (concept) while maintenance/freight routes are separated from public walking; no road red lines, rail alignments or bridge/tunnel conclusions. Key-route sketch is consistent with the package's provisional road geometry; updated with official road data.</p>
+</section>
+
+<section class="sheet"><h2>Blue-green & public space</h2>
+<p>Two concept green corridors along the Jingzhang heritage green corridor and the Xiaoyuehe water system connect the three nodes; a heat-science node at the Synergy Park. Green ratio ~12.2%, public-space ratio ~0.4% (provisional rounded, recomputed after official data).</p>
+</section>
+
+<section class="sheet"><h2>Buildings</h2>
+<p>Retain-first with reversible light renovation: heritage park fabric retained, existing stock functionally replaced with reversible compute interfaces; demolition only for individually justified cases; nodes are modular, reversible, light-touch; no large volumes, heights or capacities assumed.</p>
+</section>
+
+<section class="sheet"><h2>Renewal projects</h2>
+<p>Three concept categories: compute foundation (pool expansion & scheduling platform, edge embedding, energy-interface demo), coordination mechanisms (vouchers, green-power access, heat-interface standard, sandbox rules, annual carbon disclosure), service ecosystem (matching platform, developer community, science communication, talent program). 1–3y pilots, 3–5y loop connection, 5–10y full-loop operation.</p>
+<h3>Annual programs (annual_program_count=3)</h3>
+<table><thead><tr><th>Program</th><th>Frequency & venue</th></tr></thead><tbody><tr><td>Global Compute Open Season</td><td>Q3 · Hub and along the belt</td></tr>
+<tr><td>AI Compute Science Week</td><td>May–June · three nodes & communities</td></tr>
+<tr><td>Green Compute Exchange Day</td><td>October · Synergy Park</td></tr></tbody></table>
+<p>Scenario opening & attraction chain (concept): voucher → pool trial & sandbox validation → test pass → incubation & landing → annual disclosure review; no company lists or landing volumes promised.</p>
+</section>
+
+<section class="sheet"><h2>AI scenarios</h2>
+<p>Ten AI+ scenario cards (scenario_card_count=10), all 'anonymized aggregation + human review':</p>
+<table><thead><tr><th>ID</th><th>Scenario</th></tr></thead><tbody><tr><td>SC-01</td><td>Compute scheduling AI — load dispatch suggestions, human confirms</td></tr>
+<tr><td>SC-02</td><td>Energy optimization AI — anomaly hints, adopted by operators</td></tr>
+<tr><td>SC-03</td><td>Matching AI — supply-demand matching, human release</td></tr>
+<tr><td>SC-04</td><td>Data sandbox AI — in-domain joint compute, audited</td></tr>
+<tr><td>SC-05</td><td>Carbon tracking AI — annual recompute & disclosure, reviewed</td></tr>
+<tr><td>SC-06</td><td>Slow-path guidance AI — facility hours only, no tracking</td></tr>
+<tr><td>SC-07</td><td>Public-space guide AI — multilingual, human-reviewed content</td></tr>
+<tr><td>SC-08</td><td>Accessible guide AI — voice & large type, human fallback</td></tr>
+<tr><td>SC-09</td><td>Developer support AI — voucher pre-check, humans decide</td></tr>
+<tr><td>SC-10</td><td>Disclosure Q&A AI — cites disclosed content only</td></tr></tbody></table>
+<h3>Industry test scenarios (industry_test_scenario_count=3, threshold framework)</h3>
+<table><caption>Object | Input | Metrics | Exit (thresholds preset in writing by pilot task force)</caption>
+<thead><tr><th>Scenario</th><th>Object</th><th>Input</th><th>Metrics</th><th>Exit</th></tr></thead><tbody><tr><td>Scheduling simulation test</td><td>scheduling algorithm prototype</td><td>de-identified load samples</td><td>queue / utilization / review pass rate (preset)</td><td>pause & review below floor</td></tr>
+<tr><td>Energy + heat metering joint test</td><td>heat metering prototype</td><td>aggregated telemetry & readings</td><td>metering error / adoption (preset)</td><td>stop on metering anomaly</td></tr>
+<tr><td>Sandbox joint-computing test</td><td>sandbox rule engine</td><td>de-identified datasets & logs</td><td>rule hit / audit trail / pass rate (preset)</td><td>abort on rule bypass</td></tr></tbody></table>
+</section>
+
+<section class="sheet"><h2>Core metrics</h2>
+<span class="stat"><span>Overall design area</span><b data-metric="site_area_sqm" data-value="11412825.386000">≈ 11.4 km² (provisional)</b><span class="small">Low confidence; recompute after official boundary</span></span>
+<span class="stat"><span>Green ratio</span><b data-metric="green_ratio" data-value="0.122122">≈ 12.2% (provisional)</b><span class="small">Rounded; exact value in metrics.json</span></span>
+<span class="stat"><span>Public-space ratio</span><b data-metric="public_space_ratio" data-value="0.003588">≈ 0.4% (provisional)</b><span class="small">Rounded; exact value in metrics.json</span></span>
+<p class="small">data-value is the machine-checkable value consistent with metrics.json; displayed text is always a rounded low-precision figure with a provisional warning.</p>
+</section>
+
+<section class="sheet"><h2>Task coverage</h2>
+<span class="stat"><span>Personas</span><b data-metric="persona_count" data-value="6">6</b><span class="small">Counting aligned with proposal.md / metrics.json</span></span>
+<span class="stat"><span>Scenario cards</span><b data-metric="scenario_card_count" data-value="10">10</b><span class="small">Counting aligned with proposal.md / metrics.json</span></span>
+<span class="stat"><span>Industry test scenarios</span><b data-metric="industry_test_scenario_count" data-value="3">3</b><span class="small">Counting aligned with proposal.md / metrics.json</span></span>
+<span class="stat"><span>Annual programs</span><b data-metric="annual_program_count" data-value="3">3</b><span class="small">Counting aligned with proposal.md / metrics.json</span></span>
+<span class="stat"><span>Global cases (incl. domestic)</span><b data-metric="global_case_count" data-value="8">8</b><span class="small">Counting aligned with proposal.md / metrics.json</span></span>
+<span class="stat"><span>Key areas</span><b data-metric="key_area_count" data-value="3">3</b><span class="small">Counting aligned with proposal.md / metrics.json</span></span>
+<span class="stat"><span>Land-use zones (GeoJSON features)</span><b data-metric="land_use_zone_count" data-value="27">27</b><span class="small">Feature count; distinct from the 5 aggregate classes</span></span>
+<span class="stat"><span>Land-use aggregate classes (single caliber)</span><b data-metric="land_use_class_count" data-value="5">5</b><span class="small">National codes 0802/1401/0902/0901/0701</span></span>
+<p>Compliance matrix covers 23 items and agent.1–agent.6: overall concept & naming (incl. Logo/VI), compute mechanisms & eight ecosystem cases, scenario cards & personas, public space & landmarks (catalogs/honor display/component library), cultural narrative & wayfinding & international communication, annual programs & long-term operation matrix (preconditions/minimum pilot/responsible actors/interfaces/stage gates/KPI/maintenance/feedback/exit-recovery). Standard and design-depth matrices in the corresponding JSONs.</p>
+</section>
+
+<section class="sheet"><h2>Self-check status</h2>
+<p>Self-check results per self_check.json: deterministic validation, spatial review, visual packaging and professional evidence gates are recorded as run. Accessibility statements are certified by human review; machine PASS cannot substitute.</p>
+</section>
+
+<section class="sheet"><h2>Sources</h2>
+<p>Sources per sources.json (announcement, taskbook, standards, provisional geometry and the eight cases each with publisher/link/date/claim/license boundary).</p>
+<table><thead><tr><th>Case (public channels only)</th><th>Transferable mechanism</th><th>Source entry</th></tr></thead><tbody><tr><td>LUMI, Finland</td><td>hydro power + waste heat to district heating</td><td><code>[source:CASE-LUMI]</code></td></tr>
+<tr><td>Fugaku, Japan</td><td>public compute open system</td><td><code>[source:CASE-FUGAKU-RIKEN]</code></td></tr>
+<tr><td>Stockholm waste-heat heating</td><td>heat interface & metering</td><td><code>[source:CASE-STOCKHOLM-EXERGI]</code></td></tr>
+<tr><td>Iceland energy endowment</td><td>energy-endowment siting</td><td><code>[source:CASE-ICELAND-ENERGY]</code></td></tr>
+<tr><td>Guian data-center cluster</td><td>cluster scale effect</td><td><code>[source:CASE-GUIAN]</code></td></tr>
+<tr><td>East-Data-West-Compute network</td><td>national scheduling framework</td><td><code>[source:CASE-NDRC-SUANLI]</code></td></tr>
+<tr><td>Beijing public compute platform</td><td>city compute as a service</td><td><code>[source:CASE-BEIJING-COMPUTE]</code></td></tr>
+<tr><td>Shanghai Lingang compute center</td><td>open smart-compute infrastructure</td><td><code>[source:CASE-LINGANG]</code></td></tr></tbody></table>
+<p class="small">Figures, drawings, logo, HTML and geometry are self-produced with open-source tools (matplotlib etc.); font Noto Sans CJK SC is SIL OFL 1.1 licensed; full rights ledger in report/copyright_statement.md.</p>
+</section>
+
+<section class="sheet"><h2>Assumptions</h2>
+<p>Key assumptions in assumptions.json (7 items): provisional boundary, unknown statutory controls, compute/energy data boundary, privacy (anonymized aggregation + human review), AI content governance, green-power/heat interfaces concept-only, accessibility certified by human review; each rechecked after official data.</p>
+</section>
+
+</main></body></html>

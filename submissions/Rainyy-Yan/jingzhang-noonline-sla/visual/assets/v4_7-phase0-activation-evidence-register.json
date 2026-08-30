@@ -1,0 +1,917 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_type": "phase0_activation_evidence_register",
+  "status": "conceptual_pre_activation_template",
+  "purpose": "Provide one machine-readable, editable register for future authorised parties to request data, record field observations, control a bounded exercise, and return to baseline without asserting present implementation capability.",
+  "claim_boundary": "This register appoints no organisation and records no received official data, permission, budget, procurement, land right, site access, operating commitment, service agreement, approval, field condition, or Verified SLA upgrade. Every blank, missing, expired, contradictory, or unauditable record remains HOLD. AI cannot convert unknown to Verified.",
+  "operating_sequence": [
+    "Request only public or cleared records with a version, date, coordinate reference system where relevant, permitted reuse scope, and evidence owner.",
+    "Assign a named responsible party before an exercise; an unnamed concept role is not an operating role.",
+    "Record the applicable field tasks with the required evidence fields and use each record only for the gate it supports.",
+    "Run at most one authorised, bounded and reversible exercise after every applicable gate is affirmative.",
+    "Stop, remove, reroute, downgrade, and return to baseline when any condition fails; archive the close-out record before a later decision."
+  ],
+  "data_request_register": {
+    "default_status": "NOT_REQUESTED",
+    "items": [
+      {
+        "id": "DR-01",
+        "record": "Official overall design boundary",
+        "provider": "organizer_or_authorised_data_custodian",
+        "required_metadata": [
+          "version",
+          "date",
+          "CRS",
+          "reuse_scope"
+        ],
+        "if_missing": "Retain provisional geometry and do not state precise-area conclusions."
+      },
+      {
+        "id": "DR-02",
+        "record": "Official key-area boundaries",
+        "provider": "organizer_or_authorised_data_custodian",
+        "required_metadata": [
+          "version",
+          "date",
+          "CRS",
+          "reuse_scope"
+        ],
+        "if_missing": "Retain concept-only key areas and do not locate a field exercise by proposal geometry."
+      },
+      {
+        "id": "DR-03",
+        "record": "Road and public-right-of-way records",
+        "provider": "transport_or_planning_authority",
+        "required_metadata": [
+          "version",
+          "date",
+          "reuse_scope"
+        ],
+        "if_missing": "HOLD route activation and do not claim lawful passage."
+      },
+      {
+        "id": "DR-04",
+        "record": "Parcel and ownership interface",
+        "provider": "authorised_owner_or_site_manager",
+        "required_metadata": [
+          "contact",
+          "permitted_access_scope",
+          "validity"
+        ],
+        "if_missing": "HOLD any installation or managed-site exercise."
+      },
+      {
+        "id": "DR-05",
+        "record": "Applicable planning controls",
+        "provider": "planning_authority_or_authorised_record_holder",
+        "required_metadata": [
+          "version",
+          "date",
+          "reuse_scope"
+        ],
+        "if_missing": "Keep all FAR, height, density, use, and setback conclusions unknown."
+      },
+      {
+        "id": "DR-06",
+        "record": "Heritage and landscape controls",
+        "provider": "heritage_authority_or_site_manager",
+        "required_metadata": [
+          "control_geometry",
+          "intervention_limits",
+          "reuse_scope"
+        ],
+        "if_missing": "HOLD physical heritage intervention."
+      },
+      {
+        "id": "DR-07",
+        "record": "Fire municipal and underground constraints",
+        "provider": "professional_authority_or_asset_manager",
+        "required_metadata": [
+          "version",
+          "date",
+          "reuse_scope"
+        ],
+        "if_missing": "HOLD physical placement where the interface is relevant."
+      },
+      {
+        "id": "DR-08",
+        "record": "Accessibility baseline",
+        "provider": "site_manager_and_accessibility_professional",
+        "required_metadata": [
+          "date",
+          "scope",
+          "validity"
+        ],
+        "if_missing": "HOLD accessibility promotion and do not promise a continuous route."
+      },
+      {
+        "id": "DR-09",
+        "record": "Site-use or test permission",
+        "provider": "authorised_site_manager",
+        "required_metadata": [
+          "place",
+          "time",
+          "footprint",
+          "activity",
+          "removal_conditions"
+        ],
+        "if_missing": "HOLD exercise."
+      },
+      {
+        "id": "DR-10",
+        "record": "Named operating and stop authority",
+        "provider": "implementing_and_operating_parties",
+        "required_metadata": [
+          "person",
+          "organisation",
+          "service_hours",
+          "stop_authority"
+        ],
+        "if_missing": "HOLD human-service claim and relevant exercise."
+      },
+      {
+        "id": "DR-11",
+        "record": "Funding procurement or resource path",
+        "provider": "authorised_funding_or_procurement_party",
+        "required_metadata": [
+          "budget_or_resource_path",
+          "custody",
+          "insurance"
+        ],
+        "if_missing": "Do not claim funded delivery or procurement readiness."
+      },
+      {
+        "id": "DR-12",
+        "record": "Data and compute governance record",
+        "provider": "authorised_data_controller_or_service_owner",
+        "required_metadata": [
+          "source",
+          "purpose",
+          "minimisation",
+          "retention",
+          "audit",
+          "appeal"
+        ],
+        "if_missing": "HOLD real-data or AI-enabled activity."
+      }
+    ]
+  },
+  "field_verification_register": {
+    "total_required_tasks": 45,
+    "privacy_rule": "Collect only the minimum auditable evidence. Do not collect faces, personal identifiers, vehicle plates, or individual movement traces for this register.",
+    "task_groups": [
+      {
+        "category": "route_and_public_access",
+        "tasks": [
+          {
+            "id": "FV-01",
+            "category": "route",
+            "location": "TO_BE_SET",
+            "observation": "Confirm a lawful public approach to the observation point.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "HOLD unless verified"
+          },
+          {
+            "id": "FV-02",
+            "category": "route",
+            "location": "TO_BE_SET",
+            "observation": "Record the public entrance and opening condition.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "HOLD unless verified"
+          },
+          {
+            "id": "FV-03",
+            "category": "route",
+            "location": "TO_BE_SET",
+            "observation": "Record each crossing used by the intended route.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "HOLD unless verified"
+          },
+          {
+            "id": "FV-04",
+            "category": "route",
+            "location": "TO_BE_SET",
+            "observation": "Check crossing signal, marking, and visibility conditions.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "HOLD unless verified"
+          },
+          {
+            "id": "FV-05",
+            "category": "route",
+            "location": "TO_BE_SET",
+            "observation": "Check the detour when the preferred crossing is unavailable.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "HOLD unless verified"
+          },
+          {
+            "id": "FV-06",
+            "category": "route",
+            "location": "TO_BE_SET",
+            "observation": "Check public clearway condition and obstructions without inferring a legal dimension.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "HOLD unless verified"
+          },
+          {
+            "id": "FV-07",
+            "category": "route",
+            "location": "TO_BE_SET",
+            "observation": "Record conflict points with cycles, vehicles, loading, or service access.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "HOLD unless verified"
+          },
+          {
+            "id": "FV-08",
+            "category": "route",
+            "location": "TO_BE_SET",
+            "observation": "Record route continuity at each proposed node.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "HOLD unless verified"
+          },
+          {
+            "id": "FV-09",
+            "category": "route",
+            "location": "TO_BE_SET",
+            "observation": "Record temporary closures, works, barriers, or security controls.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "HOLD unless verified"
+          },
+          {
+            "id": "FV-10",
+            "category": "route",
+            "location": "TO_BE_SET",
+            "observation": "Confirm a non-digital wayfinding fallback exists or is not claimed.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "HOLD unless verified"
+          },
+          {
+            "id": "FV-11",
+            "category": "route",
+            "location": "TO_BE_SET",
+            "observation": "Confirm emergency or incident egress conflict is absent or escalated.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "HOLD unless verified"
+          },
+          {
+            "id": "FV-12",
+            "category": "route",
+            "location": "TO_BE_SET",
+            "observation": "Record any condition requiring reroute or removal.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "STOP or REROUTE"
+          }
+        ]
+      },
+      {
+        "category": "accessibility",
+        "tasks": [
+          {
+            "id": "FV-13",
+            "category": "accessibility",
+            "location": "TO_BE_SET",
+            "observation": "Record step-free approach availability.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "HOLD unless verified"
+          },
+          {
+            "id": "FV-14",
+            "category": "accessibility",
+            "location": "TO_BE_SET",
+            "observation": "Record ramp condition; seek professional confirmation for gradient or performance claims.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "HOLD unless verified"
+          },
+          {
+            "id": "FV-15",
+            "category": "accessibility",
+            "location": "TO_BE_SET",
+            "observation": "Record lift availability, hours, and outages where relevant.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "HOLD unless verified"
+          },
+          {
+            "id": "FV-16",
+            "category": "accessibility",
+            "location": "TO_BE_SET",
+            "observation": "Record a continuous accessible alternative for each interruption.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "HOLD unless verified"
+          },
+          {
+            "id": "FV-17",
+            "category": "accessibility",
+            "location": "TO_BE_SET",
+            "observation": "Record tactile guidance condition and discontinuities.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "HOLD unless verified"
+          },
+          {
+            "id": "FV-18",
+            "category": "accessibility",
+            "location": "TO_BE_SET",
+            "observation": "Record seating, rest opportunity, and transfer-clearance condition.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "HOLD unless verified"
+          },
+          {
+            "id": "FV-19",
+            "category": "accessibility",
+            "location": "TO_BE_SET",
+            "observation": "Record information readability without smartphone access.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "HOLD unless verified"
+          },
+          {
+            "id": "FV-20",
+            "category": "accessibility",
+            "location": "TO_BE_SET",
+            "observation": "Record whether specialist accessibility review is required.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "ESCALATE"
+          }
+        ]
+      },
+      {
+        "category": "microclimate_and_weather",
+        "tasks": [
+          {
+            "id": "FV-21",
+            "category": "microclimate",
+            "location": "TO_BE_SET",
+            "observation": "Record canopy or shade source with time and weather.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "HOLD unless verified"
+          },
+          {
+            "id": "FV-22",
+            "category": "microclimate",
+            "location": "TO_BE_SET",
+            "observation": "Record continuous-exposure segments and observation duration.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "HOLD unless verified"
+          },
+          {
+            "id": "FV-23",
+            "category": "microclimate",
+            "location": "TO_BE_SET",
+            "observation": "Record surface heat or radiant-exposure concern as an observation, not a performance claim.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "HOLD unless verified"
+          },
+          {
+            "id": "FV-24",
+            "category": "microclimate",
+            "location": "TO_BE_SET",
+            "observation": "Record rain shelter and drainage condition.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "HOLD unless verified"
+          },
+          {
+            "id": "FV-25",
+            "category": "microclimate",
+            "location": "TO_BE_SET",
+            "observation": "Record standing-water, trip, or drainage hazards.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "STOP or REROUTE"
+          },
+          {
+            "id": "FV-26",
+            "category": "microclimate",
+            "location": "TO_BE_SET",
+            "observation": "Record wind or winter-weather exposure concern where observed.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "HOLD unless verified"
+          },
+          {
+            "id": "FV-27",
+            "category": "microclimate",
+            "location": "TO_BE_SET",
+            "observation": "Record seasonal limitations of the observation.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "HOLD for unobserved seasons"
+          },
+          {
+            "id": "FV-28",
+            "category": "microclimate",
+            "location": "TO_BE_SET",
+            "observation": "Escalate any claim needing simulation or specialist climate study.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "ESCALATE"
+          }
+        ]
+      },
+      {
+        "category": "facilities_and_night_conditions",
+        "tasks": [
+          {
+            "id": "FV-29",
+            "category": "facilities",
+            "location": "TO_BE_SET",
+            "observation": "Record drinking-water availability or absence.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "HOLD unless verified"
+          },
+          {
+            "id": "FV-30",
+            "category": "facilities",
+            "location": "TO_BE_SET",
+            "observation": "Record seating availability, condition, and public accessibility.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "HOLD unless verified"
+          },
+          {
+            "id": "FV-31",
+            "category": "facilities",
+            "location": "TO_BE_SET",
+            "observation": "Record toilet or support-service availability only when publicly confirmed.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "HOLD unless verified"
+          },
+          {
+            "id": "FV-32",
+            "category": "facilities",
+            "location": "TO_BE_SET",
+            "observation": "Record lighting state at the intended operating time.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "HOLD unless verified"
+          },
+          {
+            "id": "FV-33",
+            "category": "facilities",
+            "location": "TO_BE_SET",
+            "observation": "Record waste, maintenance, or cleaning condition relevant to a bounded exercise.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "HOLD unless verified"
+          },
+          {
+            "id": "FV-34",
+            "category": "facilities",
+            "location": "TO_BE_SET",
+            "observation": "Record mobile-signal or digital-service absence only as a resilience condition, not an access requirement.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "NO SLA PROMOTION"
+          },
+          {
+            "id": "FV-35",
+            "category": "facilities",
+            "location": "TO_BE_SET",
+            "observation": "Record weather-related closure or facility outage.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "STOP or DOWNGRADE"
+          }
+        ]
+      },
+      {
+        "category": "operations_and_human_authority",
+        "tasks": [
+          {
+            "id": "FV-36",
+            "category": "operations",
+            "location": "TO_BE_SET",
+            "observation": "Name the exercise lead and confirm authority for the stated time and place.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "HOLD unless verified"
+          },
+          {
+            "id": "FV-37",
+            "category": "operations",
+            "location": "TO_BE_SET",
+            "observation": "Name the human handover person and service hours.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "HOLD unless verified"
+          },
+          {
+            "id": "FV-38",
+            "category": "operations",
+            "location": "TO_BE_SET",
+            "observation": "Name the stop authority and reachable escalation channel.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "HOLD unless verified"
+          },
+          {
+            "id": "FV-39",
+            "category": "operations",
+            "location": "TO_BE_SET",
+            "observation": "Confirm site permission, footprint, time, activity, and removal condition.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "HOLD unless verified"
+          },
+          {
+            "id": "FV-40",
+            "category": "operations",
+            "location": "TO_BE_SET",
+            "observation": "Confirm setup inspection and removal-to-baseline responsibility.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "HOLD unless verified"
+          },
+          {
+            "id": "FV-41",
+            "category": "operations",
+            "location": "TO_BE_SET",
+            "observation": "Confirm public information and complaint or appeal route.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "HOLD unless verified"
+          },
+          {
+            "id": "FV-42",
+            "category": "operations",
+            "location": "TO_BE_SET",
+            "observation": "Record incident response and close-out result.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "STOP or CLOSE_OUT"
+          }
+        ]
+      },
+      {
+        "category": "data_and_ai_governance",
+        "tasks": [
+          {
+            "id": "FV-43",
+            "category": "data_governance",
+            "location": "TO_BE_SET",
+            "observation": "Confirm whether real data is used and identify its authorised source.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "HOLD real-data use"
+          },
+          {
+            "id": "FV-44",
+            "category": "data_governance",
+            "location": "TO_BE_SET",
+            "observation": "Confirm no personal identity, face, or individual-trajectory data is collected without separate authorisation.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "HOLD data-enabled activity"
+          },
+          {
+            "id": "FV-45",
+            "category": "data_governance",
+            "location": "TO_BE_SET",
+            "observation": "Confirm human appeal, audit-log, and disable path before AI-supported activity.",
+            "required_record": [
+              "date_time",
+              "verifier",
+              "method",
+              "evidence_reference",
+              "result"
+            ],
+            "gate_effect": "HOLD AI-enabled activity"
+          }
+        ]
+      }
+    ]
+  },
+  "activation_gates": [
+    {
+      "id": "GATE-01",
+      "question": "Is the exact exercise location authorised and spatially identified?",
+      "affirmative_evidence": "official_or_site_manager_cleared_location_record"
+    },
+    {
+      "id": "GATE-02",
+      "question": "Is a lawful public approach and clearway verified?",
+      "affirmative_evidence": "completed_FV-01_to_FV-12"
+    },
+    {
+      "id": "GATE-03",
+      "question": "Is a continuous accessible alternative verified?",
+      "affirmative_evidence": "completed_FV-13_to_FV-20"
+    },
+    {
+      "id": "GATE-04",
+      "question": "Are weather, drainage, lighting, and facilities checked for the exercise conditions?",
+      "affirmative_evidence": "completed_FV-21_to_FV-35"
+    },
+    {
+      "id": "GATE-05",
+      "question": "Are named lead, handover, stop, and removal roles active for the stated period?",
+      "affirmative_evidence": "completed_FV-36_to_FV-42"
+    },
+    {
+      "id": "GATE-06",
+      "question": "Is site-use permission valid for time, footprint, activity, and removal?",
+      "affirmative_evidence": "written_permission_with_expiry_and_conditions"
+    },
+    {
+      "id": "GATE-07",
+      "question": "Are heritage, traffic, fire, municipal, and engineering interfaces cleared or explicitly outside scope?",
+      "affirmative_evidence": "applicable_professional_records"
+    },
+    {
+      "id": "GATE-08",
+      "question": "Is the funding, procurement, insurance, and custody path confirmed if physical items are used?",
+      "affirmative_evidence": "authorised_resource_record"
+    },
+    {
+      "id": "GATE-09",
+      "question": "If data or AI is used, are governance, minimisation, audit, and human-stop records complete?",
+      "affirmative_evidence": "completed_FV-43_to_FV-45"
+    },
+    {
+      "id": "GATE-10",
+      "question": "Is a bounded exercise run sheet and close-out plan completed?",
+      "affirmative_evidence": "activation_record_sections_3_and_5"
+    },
+    {
+      "id": "GATE-11",
+      "question": "Has an authorised owner signed the final proceed or HOLD decision?",
+      "affirmative_evidence": "authorised_decision_record"
+    }
+  ],
+  "blank_activation_record": {
+    "status_values": [
+      "HOLD",
+      "BOUNDED_EXERCISE",
+      "STOP",
+      "CLOSE_OUT"
+    ],
+    "required_identifiers": [
+      "record_id",
+      "date_time_window",
+      "exact_authorised_location",
+      "permission_reference",
+      "proposal_work_package_or_node"
+    ],
+    "required_roles": [
+      "exercise_lead",
+      "site_manager_or_permission_holder",
+      "human_handover",
+      "stop_authority",
+      "accessibility_interface",
+      "safety_interface",
+      "removal_and_baseline_restoration",
+      "data_governance_owner_if_applicable"
+    ],
+    "required_close_out": [
+      "clearway_restored",
+      "components_removed_or_secured",
+      "site_condition_recorded_without_personal_data",
+      "incidents_complaints_and_appeals_logged",
+      "data_disabled_minimised_or_retained_under_approved_rule",
+      "evidence_archive_indexed",
+      "next_action"
+    ]
+  },
+  "phase_boundary": "Phase 0 requests and records evidence. Phase 1 is a permitted, limited, reversible exercise only. Phase 2 requires discipline-specific review. Phase 3 requires sustained responsibility, maintenance, and independently auditable evidence. This register changes none of those phase conditions."
+}

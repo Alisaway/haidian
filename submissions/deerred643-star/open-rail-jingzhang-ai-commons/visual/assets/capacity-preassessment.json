@@ -1,0 +1,177 @@
+{
+  "schema_note": "v3.0 municipal capacity pre-assessment: keeps the v2.8 methodology skeleton (four subjects — power, compute, water supply and drainage, heating — each with a formula skeleton, dimension placeholders and a recheck trigger) and adds a capacity_anchors section registering publicly verifiable regional power-supply capacity anchors (existing Dazhongsi 110 kV substation operating state; planned Qingyun 220 kV substation) cited from the registered public source DZS-UTILITY-CAPACITY-2025. On that basis the edge-compute node supply-capacity pre-assessment is upgraded from fully unknown (external-data triggered) to comparable against public anchors, while every demand-side dimension stays value_status=pending_baseline and the package produces no estimates. Node access schemes, dedicated-line capacity and approvals remain project-level external conditions — no approval outcome is presumed; capacity conclusions are still jointly reviewed and published by the district authority and professional agencies after official special-plan data are released.",
+  "version": "v3.0",
+  "status": "methodology_plus_public_capacity_anchors",
+  "subjects": [
+    {
+      "subject_zh": "电力",
+      "subject_en": "Power",
+      "formula": "P_demand = Σ(node_i_demand × coincidence_factor) + P_loss",
+      "dimensions": [
+        {
+          "name_zh": "边缘算力节点单点功率",
+          "name_en": "Per-node power demand of edge-compute nodes",
+          "unit": "kW",
+          "value_status": "pending_baseline"
+        },
+        {
+          "name_zh": "六站厅服务设施负荷",
+          "name_en": "Service-facility load of the six halls",
+          "unit": "kW",
+          "value_status": "pending_baseline"
+        },
+        {
+          "name_zh": "同时率",
+          "name_en": "Coincidence factor",
+          "unit": "ratio",
+          "value_status": "pending_baseline"
+        }
+      ],
+      "recheck_trigger_zh": "官方电力专项规划或供电部门容量资料发布。",
+      "recheck_trigger_en": "Release of the official power special plan or capacity data from the power-supply authority.",
+      "edge_node_supply_preassessment": {
+        "status": "public_capacity_anchor_referenced",
+        "status_zh": "已获公开容量对照锚点",
+        "status_en": "Public capacity comparison anchors obtained",
+        "nodes_zh": "边缘算力节点按本包口径为六站厅端侧算力节点与众智园端侧算力节点（众智园中央绿谷开放共享界面，「边缘算力进公园」选址；见 implementation-cards.json 实施卡 OR-P8「端侧算力节点与新型基础设施示范」）。",
+        "nodes_en": "In this package's calibre the edge-compute nodes are the six-hall edge-compute nodes and the Zhongzhiyuan edge-compute node (the Central Green Valley shared interface in Zhongzhiyuan, the 'edge compute into parks' siting; see implementation-cards.json card OR-P8 'Edge-compute nodes and new-infrastructure demonstration').",
+        "assessment_zh": "供电容量预评估由 v2.8 的完全 unknown（外部数据触发）升级为可对照：公开容量锚点显示大钟寺 110 千伏变电站高峰负载率与剩余出线间隔为真实运行状态，2026 年青云 220 千伏变电站投运将新增区域容量。",
+        "assessment_en": "The supply-capacity pre-assessment is upgraded from v2.8's fully unknown (external-data triggered) to comparable: the public capacity anchors show the Dazhongsi 110 kV substation's peak loading rates and spare outgoing bays as real operating states, and the Qingyun 220 kV substation will add regional capacity when commissioned in 2026.",
+        "boundary_zh": "节点具体接入方案、专线容量与供电批复仍属项目级外部条件，本包不预设任何批复结论。",
+        "boundary_en": "Node-specific access schemes, dedicated-line capacity and supply approvals remain project-level external conditions; this package presumes no approval outcome."
+      }
+    },
+    {
+      "subject_zh": "算力",
+      "subject_en": "Compute",
+      "formula": "C_demand = Σ(scenario_i_compute × duty_cycle)",
+      "dimensions": [
+        {
+          "name_zh": "场景算力需求",
+          "name_en": "Per-scenario compute demand",
+          "unit": "pending_definition",
+          "value_status": "pending_baseline"
+        },
+        {
+          "name_zh": "占空比",
+          "name_en": "Duty cycle",
+          "unit": "ratio",
+          "value_status": "pending_baseline"
+        },
+        {
+          "name_zh": "边缘节点容量",
+          "name_en": "Edge-node capacity",
+          "unit": "pending_definition",
+          "value_status": "pending_baseline"
+        }
+      ],
+      "recheck_trigger_zh": "算力专项资料或实测负荷发布。",
+      "recheck_trigger_en": "Release of compute special-plan data or measured loads."
+    },
+    {
+      "subject_zh": "给排水",
+      "subject_en": "Water supply and drainage",
+      "formula": "W_demand = Σ(unit_i_demand × scale_i); drainage checked by equivalent load and return period",
+      "dimensions": [
+        {
+          "name_zh": "单位需水量",
+          "name_en": "Unit water demand",
+          "unit": "pending_definition",
+          "value_status": "pending_baseline"
+        },
+        {
+          "name_zh": "规模",
+          "name_en": "Scale",
+          "unit": "pending_definition",
+          "value_status": "pending_baseline"
+        },
+        {
+          "name_zh": "重现期",
+          "name_en": "Return period",
+          "unit": "a",
+          "value_status": "pending_baseline"
+        }
+      ],
+      "recheck_trigger_zh": "水务专项资料发布。",
+      "recheck_trigger_en": "Release of water-authority special-plan data."
+    },
+    {
+      "subject_zh": "热力",
+      "subject_en": "Heating",
+      "formula": "H_demand = Σ(load_i × duration_factor)",
+      "dimensions": [
+        {
+          "name_zh": "热负荷",
+          "name_en": "Heating load",
+          "unit": "kW",
+          "value_status": "pending_baseline"
+        },
+        {
+          "name_zh": "持续时间因子",
+          "name_en": "Duration factor",
+          "unit": "ratio",
+          "value_status": "pending_baseline"
+        }
+      ],
+      "recheck_trigger_zh": "供热专项资料发布。",
+      "recheck_trigger_en": "Release of heating special-plan data."
+    }
+  ],
+  "capacity_anchors": {
+    "status": "public_capacity_anchor_referenced",
+    "status_zh": "已获公开容量对照锚点",
+    "status_en": "Public capacity comparison anchors obtained",
+    "scope_zh": "登记带内公开可核验的区域供电容量锚点，供边缘算力节点等选址的供电容量预评估对照；锚点数值全部引自已登记公开来源，本包不产生任何估算值。",
+    "scope_en": "Registers publicly verifiable regional power-supply capacity anchors inside the band for comparison in the supply-capacity pre-assessment of edge-compute node siting and similar checks; every anchor value is cited from a registered public source and the package produces no estimates.",
+    "source": {
+      "id": "DZS-UTILITY-CAPACITY-2025",
+      "title_zh": "《海淀区蓝景丽家项目HD00-1603-01等地块市政交通规划综合方案》（2025年7月）",
+      "title_en": "Comprehensive Municipal and Traffic Planning Scheme for the Lanjing Lijia Project HD00-1603-01 and Other Plots, Haidian District (July 2025)",
+      "platform_zh": "北京市公共资源交易服务平台",
+      "platform_en": "Beijing Public Resources Trading Service Platform",
+      "url": "https://ggzyfw.beijing.gov.cn/cmsbj/u/cms/cn.gov.bjggzyfw.www/202601/8651375391270.pdf",
+      "registry_note_zh": "来源条目登记于 sources.json（id: DZS-UTILITY-CAPACITY-2025）。",
+      "registry_note_en": "The source entry is registered in sources.json (id: DZS-UTILITY-CAPACITY-2025)."
+    },
+    "anchors": [
+      {
+        "id": "CA-1-dazhongsi-110kv",
+        "name_zh": "大钟寺 110 千伏变电站",
+        "name_en": "Dazhongsi 110 kV substation",
+        "location_zh": "带内大钟寺先导区南侧",
+        "location_en": "South of the Dazhongsi pilot area within the band",
+        "capacity_facts_zh": "现状安装 4 台 50 兆伏安变压器，剩余可用出线间隔 2 回，近期高峰负荷期间 4 台变压器负载率分别为 60%、63%、51%、79%。",
+        "capacity_facts_en": "Four 50 MVA transformers currently installed; 2 spare outgoing feeder bays available; loading rates of the four transformers during the recent peak-load period were 60%, 63%, 51% and 79% respectively.",
+        "fact_nature_zh": "负载率与剩余出线间隔为该公开文件披露的真实运行状态，非本包估算或假设。",
+        "fact_nature_en": "Loading rates and spare bays are real operating states disclosed in the public document, not package estimates or assumptions.",
+        "source_ref": "DZS-UTILITY-CAPACITY-2025"
+      },
+      {
+        "id": "CA-2-qingyun-220kv",
+        "name_zh": "拟建青云 220 千伏变电站",
+        "name_en": "Planned Qingyun 220 kV substation",
+        "location_zh": "带内西侧",
+        "location_en": "West side of the band",
+        "capacity_facts_zh": "计划安装 2 台 180 兆伏安变压器，投运时间 2026 年。",
+        "capacity_facts_en": "Two 180 MVA transformers planned; commissioning scheduled for 2026.",
+        "fact_nature_zh": "拟建规模与投运时间为该公开文件披露的规划安排，实际建设与投运以实施为准。",
+        "fact_nature_en": "Planned scale and commissioning year are planning arrangements disclosed in the public document; actual construction and commissioning follow implementation.",
+        "source_ref": "DZS-UTILITY-CAPACITY-2025"
+      }
+    ]
+  },
+  "discipline": {
+    "no_estimate_policy_zh": "全部核算参数仍为占位（pending_baseline）；v3.0 新增的容量锚点数值全部引自已登记公开来源（DZS-UTILITY-CAPACITY-2025），属公开引用事实而非本包估算、实测或假设值；公式仅为核算框架。",
+    "no_estimate_policy_en": "All accounting parameters remain placeholders (pending_baseline); the v3.0 capacity-anchor values are cited in full from the registered public source (DZS-UTILITY-CAPACITY-2025) — publicly cited facts rather than package estimates, measurements or assumptions — and the formulas remain accounting frames only.",
+    "publication_policy_zh": "承载力结论仅在官方专项资料发布并完成核算后，由属地主管与专业机构联合复核发布。",
+    "publication_policy_en": "Capacity conclusions are published only after official special-plan data are released and the accounting is jointly reviewed by the district authority and professional agencies."
+  },
+  "linkage": {
+    "sequencing_methodology_zh": "挂接排序方法论环节①（S1-DATA 数据基线）：市政承载力属数据基线缺口，官方专项资料发布后进入复算（见 visual/assets/sequencing-methodology.json）。",
+    "sequencing_methodology_en": "Hooked to step ① of the sequencing methodology (S1-DATA data baseline): utility capacity is a data-baseline gap entering recomputation once official materials are released (see visual/assets/sequencing-methodology.json).",
+    "climate_carbon_zh": "电力与算力科目核算结果挂接 climate-carbon-framework.json 的碳/能源科目口径（见 visual/assets/climate-carbon-framework.json）。",
+    "climate_carbon_en": "Power and compute accounting feeds the carbon/energy subjects of climate-carbon-framework.json (see visual/assets/climate-carbon-framework.json)."
+  },
+  "boundary_zh": "方法论骨架＋公开容量锚点（待官方资料）：全部核算维度保持 pending_baseline，锚点数值仅作公开对照、不构成承载力数值结论；节点接入方案、专线容量与批复属项目级外部条件，本包不预设任何批复结论；承载力判断仍以官方专项资料发布后的联合复核为准。",
+  "boundary_en": "Methodology skeleton plus public capacity anchors (official data pending): all accounting dimensions remain pending_baseline and anchor values serve only as public comparison, constituting no capacity conclusion; node access schemes, dedicated-line capacity and approvals are project-level external conditions with no approval outcome presumed; capacity judgements still rest on joint review after official special-plan release."
+}

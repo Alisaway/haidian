@@ -1,0 +1,353 @@
+{
+  "schema_version": "0.1.0",
+  "units": {
+    "length": "m",
+    "area": "sqm"
+  },
+  "metrics": {
+    "site_area_research_sqm": {
+      "status": "known",
+      "value": 43600000,
+      "unit": "sqm",
+      "source_files": [
+        "brief/site-package/design_brief.json"
+      ],
+      "formula": "43.6 km2 official announcement value converted to sqm",
+      "confidence": "high",
+      "assumptions": [
+        "official announcement text value"
+      ]
+    },
+    "site_area_design_sqm": {
+      "status": "known",
+      "value": 11400000,
+      "unit": "sqm",
+      "source_files": [
+        "brief/site-package/design_brief.json"
+      ],
+      "formula": "11.4 km2 official announcement value converted to sqm",
+      "confidence": "high",
+      "assumptions": [
+        "official announcement text value"
+      ]
+    },
+    "site_area_sqm": {
+      "status": "known",
+      "value": 11412825.386,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "spatial recomputation from provisional site_boundary.geojson; official design-area value remains site_area_design_sqm",
+      "confidence": "low",
+      "assumptions": [
+        "replace with official boundary before publication"
+      ]
+    },
+    "key_area_total_sqm": {
+      "status": "known",
+      "value": 3684000,
+      "unit": "sqm",
+      "source_files": [
+        "brief/site-package/design_brief.json"
+      ],
+      "formula": "192.1+104.3+72.0 ha converted to sqm",
+      "confidence": "high",
+      "assumptions": [
+        "official announcement text value"
+      ]
+    },
+    "zhongzhiyuan_ai_acceleration_area_sqm": {
+      "status": "known",
+      "value": 1921000,
+      "unit": "sqm",
+      "source_files": [
+        "brief/site-package/design_brief.json"
+      ],
+      "formula": "official announced key-area value",
+      "confidence": "high",
+      "assumptions": [
+        "official announcement text value"
+      ]
+    },
+    "beijing_ai_origin_community_sqm": {
+      "status": "known",
+      "value": 1043000,
+      "unit": "sqm",
+      "source_files": [
+        "brief/site-package/design_brief.json"
+      ],
+      "formula": "official announced key-area value",
+      "confidence": "high",
+      "assumptions": [
+        "official announcement text value"
+      ]
+    },
+    "dazhongsi_ai_industry_cluster_area_sqm": {
+      "status": "known",
+      "value": 720000,
+      "unit": "sqm",
+      "source_files": [
+        "brief/site-package/design_brief.json"
+      ],
+      "formula": "official announced key-area value",
+      "confidence": "high",
+      "assumptions": [
+        "official announcement text value"
+      ]
+    },
+    "key_area_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "count KEY_AREA features",
+      "confidence": "medium",
+      "assumptions": [
+        "provisional key-area geometry"
+      ]
+    },
+    "scenario_card_count": {
+      "status": "known",
+      "value": 10,
+      "unit": "count",
+      "source_files": [
+        "assets/media/human-ai-symbiotic-scenarios.md"
+      ],
+      "formula": "count Human–AI Symbiotic Scenarios mapped to the official scenario-card requirement",
+      "confidence": "medium",
+      "assumptions": [
+        "concept package inventory"
+      ]
+    },
+    "industry_validation_scenario_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "assets/media/human-ai-symbiotic-scenarios.md"
+      ],
+      "formula": "count S05/S06/S07",
+      "confidence": "medium",
+      "assumptions": [
+        "concept package inventory"
+      ]
+    },
+    "persona_count": {
+      "status": "known",
+      "value": 5,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count core personas",
+      "confidence": "medium",
+      "assumptions": [
+        "concept package inventory"
+      ]
+    },
+    "ai_landmarks": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count conceptual public landmarks",
+      "confidence": "medium",
+      "assumptions": [
+        "not approved buildings"
+      ]
+    },
+    "ecosystem_case_count": {
+      "status": "known",
+      "value": 8,
+      "unit": "count",
+      "source_files": [
+        "assets/media/case-transfer-matrix.md"
+      ],
+      "formula": "count Deep Research cases with evidence grade A or A-",
+      "confidence": "medium",
+      "assumptions": [
+        "background reference layer; not a statutory or site-source claim"
+      ]
+    },
+    "implementation_phases": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "assets/media/project-list.md"
+      ],
+      "formula": "count conceptual stages: source clearing and baseline, low-risk commons use, controlled validation and reuse",
+      "confidence": "medium",
+      "assumptions": [
+        "P0-P3 remain internal release gates nested within three conceptual stages"
+      ]
+    },
+    "internal_release_gate_count": {
+      "status": "known",
+      "value": 4,
+      "unit": "count",
+      "source_files": [
+        "geometry/phasing.geojson"
+      ],
+      "formula": "count internal P0-P3 release gates nested within three conceptual stages",
+      "confidence": "medium",
+      "assumptions": [
+        "internal gates are not parallel implementation stages"
+      ]
+    },
+    "implementation_stage_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "assets/media/project-list.md"
+      ],
+      "formula": "count distinct conceptual stages: source clearing and baseline, low-risk commons use, controlled validation and reuse",
+      "confidence": "medium",
+      "assumptions": [
+        "concept project list; not an official schedule"
+      ]
+    },
+    "non_ai_path_coverage": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "assets/media/human-ai-symbiotic-scenarios.md"
+      ],
+      "formula": "10 scenario cards with non-AI/human paths divided by 10 cards",
+      "confidence": "medium",
+      "assumptions": [
+        "scenario-card inventory"
+      ]
+    },
+    "s01_synthetic_rule_test_case_count": {
+      "status": "known",
+      "value": 24,
+      "unit": "count",
+      "source_files": [
+        "assets/media/s01-synthetic-rule-test-ledger.md"
+      ],
+      "formula": "4 personas multiplied by 3 time windows multiplied by 2 route states",
+      "confidence": "high",
+      "assumptions": [
+        "deterministic synthetic rule test only; not field or user-performance evidence"
+      ]
+    },
+    "s01_safe_pause_case_count": {
+      "status": "known",
+      "value": 20,
+      "unit": "count",
+      "source_files": [
+        "assets/media/s01-synthetic-rule-test-ledger.md"
+      ],
+      "formula": "count cases with gate_status=ai_paused_ordinary_path_open",
+      "confidence": "high",
+      "assumptions": [
+        "pause is the expected protocol output for a blocked route or unverified night/weekend service window"
+      ]
+    },
+    "symbiotic_transfer_scenario_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "assets/media/s01-s06-s07-transfer-validation.md"
+      ],
+      "formula": "count S01, S06 and S07 protocol-transfer rows",
+      "confidence": "medium",
+      "assumptions": [
+        "S01 has synthetic rule-test evidence; S06 and S07 remain conceptual and untested in the field"
+      ]
+    },
+    "honor_display_node_count": {
+      "status": "known",
+      "value": 4,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "assets/figures/co-track-protocol.png"
+      ],
+      "formula": "count of distinct honor-display outputs: Symbiotic Markers, version milestones, Evidence Yard and Fellow Travellers Register",
+      "confidence": "high",
+      "assumptions": [
+        "concept-level deliverable count; not a count of constructed facilities"
+      ]
+    },
+    "s01_acceptance_indicator_count": {
+      "status": "known",
+      "value": 9,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "proposal.en.md"
+      ],
+      "formula": "count of rows in the bilingual S01 100-day package acceptance table",
+      "confidence": "high",
+      "assumptions": [
+        "design acceptance inventory; three performance indicators remain unknown until field baselines and sign-off"
+      ]
+    },
+    "green_ratio": {
+      "status": "known",
+      "value": 0.056513,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/green_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "green_space area divided by provisional site boundary area; replace with official land-use survey calculation",
+      "confidence": "low",
+      "assumptions": [
+        "conceptual geometry only; not a statutory control"
+      ]
+    },
+    "public_space_ratio": {
+      "status": "known",
+      "value": 0.001995,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "public_space area divided by provisional site boundary area; replace with official public-space survey calculation",
+      "confidence": "low",
+      "assumptions": [
+        "conceptual geometry only; not a statutory control"
+      ]
+    },
+    "far_average": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "brief/site-package/ranges/planning_limits.json"
+      ],
+      "formula": "building GFA divided by developable land area",
+      "confidence": "unknown",
+      "reason": "formal regulatory controls are not publicly available",
+      "assumptions": [
+        "do not use conceptual density as statutory control"
+      ]
+    },
+    "building_height_m": {
+      "status": "unknown",
+      "value": null,
+      "unit": "m",
+      "source_files": [
+        "brief/site-package/ranges/planning_limits.json"
+      ],
+      "formula": "formal height control",
+      "confidence": "unknown",
+      "reason": "formal height controls and surveys are missing",
+      "assumptions": [
+        "professional confirmation required"
+      ]
+    }
+  }
+}

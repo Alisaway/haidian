@@ -1,0 +1,104 @@
+{
+  "version": "V4.4",
+  "artifact_type": "phase_0_data_and_verification_action_pack",
+  "status": "conceptual_pre_activation_template",
+  "purpose": "Turn the existing delivery-readiness contract into a requestable Phase 0 handoff: official-data requests, human field-verification records, bounded reversible exercises and evidence close-out rules for future authorised parties.",
+  "claim_boundary": "This action pack appoints no organisation and records no received official data, permission, budget, procurement, land right, site access, operating commitment, service agreement or approval. Every request starts not_received and every proposed exercise starts HOLD until the applicable authorised records exist.",
+  "baseline": {
+    "official_geometry": "not_received",
+    "planning_and_engineering_controls": "not_received",
+    "field_verification": "not_started",
+    "heritage_intervention_clearance": "not_received",
+    "implementation_and_operations_commitment": "not_received"
+  },
+  "data_requests": [
+    {
+      "id": "P0-REQ-01",
+      "name_zh": "总体与重点区正式空间资料",
+      "name_en": "official overall and key-area spatial data",
+      "requested_from": "organizer or lawful spatial-data custodian",
+      "required_payload": "cleared SITE_BOUNDARY and KEY_AREA GIS/CAD/GeoJSON or archiveable plan files with publisher, version, publication date, coordinate reference system, permitted use and original-file hash",
+      "unlocks": ["replacement of provisional geometry", "area and relationship recalculation", "official-data refresh"],
+      "if_not_received": "Retain provisional_constraint geometry and do not make statutory, precise-area or construction-control claims."
+    },
+    {
+      "id": "P0-REQ-02",
+      "name_zh": "控规、道路与工程控制资料",
+      "name_en": "planning, access and engineering control data",
+      "requested_from": "relevant planning, transport, municipal, fire, property and operations interfaces",
+      "required_payload": "applicable control parcels, public-access and road conditions, utility and fire constraints, property/interface status, plus version, scope and reuse boundary",
+      "unlocks": ["professional Phase 2 study", "regulated-interface design"],
+      "if_not_received": "HOLD parcel, height, demolition, road-line, engineering, fire, property and approval conclusions."
+    },
+    {
+      "id": "P0-REQ-03",
+      "name_zh": "授权现场核验记录",
+      "name_en": "authorised field-verification records",
+      "requested_from": "appointed human field-verification lead and affected interface custodian",
+      "required_payload": "dated, location-specific observations of legal passage, public entry, crossing, accessible alternative, shade/exposure, rest/water, lighting, service window and maintenance interface; each record identifies verifier, evidence reference, validity period and privacy handling",
+      "unlocks": ["selected reversible Phase 1 exercise", "human review of SLA evidence"],
+      "if_not_received": "Keep every affected node, route and service condition unknown or HOLD; AI cannot write or promote a field result."
+    },
+    {
+      "id": "P0-REQ-04",
+      "name_zh": "遗产与实体安装限制",
+      "name_en": "heritage and physical-installation constraints",
+      "requested_from": "heritage authority, park manager, property/interface custodian or other lawful approver",
+      "required_payload": "cleared protection geometry or scope, intervention limits, approved interpretation text and any attachment, lighting, excavation or sign-installation conditions",
+      "unlocks": ["non-intrusive interface study", "heritage-sensitive professional review"],
+      "if_not_received": "Retain cultural narrative and non-intrusive interpretation only; do not start physical heritage intervention or installation."
+    },
+    {
+      "id": "P0-REQ-05",
+      "name_zh": "试点责任、资源、服务与数据治理文件",
+      "name_en": "pilot responsibility, resource, service and data-governance records",
+      "requested_from": "future authorised implementation, operations, data-governance and service parties",
+      "required_payload": "named accountable and stop-authority roles, lawful site/test permission, resource or procurement path, maintenance and service window, data source and privacy assessment, audit/log/appeal procedure, and optional compute or service agreement",
+      "unlocks": ["activation of an individual work-package card", "bounded Phase 1 pilot"],
+      "if_not_received": "Keep the work package HOLD and do not describe a concept role, resource band or AI layer as an operating service."
+    }
+  ],
+  "field_record_protocol": {
+    "record_owner": "future appointed ROLE-02 authorised field-verification lead",
+    "minimum_fields": ["work_package_id", "route_or_node_reference", "date_time", "observer_identity_or_auditable_role", "evidence_reference", "publicness_and_access_condition", "accessible_alternative", "service_or_maintenance_condition", "valid_until", "review_decision"],
+    "privacy_boundary": "Do not collect facial images, identity profiles, personal trajectories or uncleared data. Use location-specific evidence only to evaluate the declared public-service condition.",
+    "review_rule": "A record may release only the gate it directly supports. Missing, stale, rejected or unauditable evidence retains HOLD, DOWNGRADE, REROUTE or STOP; no AI actor may change unknown to Verified."
+  },
+  "minimum_reversible_exercises": [
+    {
+      "id": "P0-EXP-01",
+      "name_zh": "AI-OFF 决策点步行演练",
+      "name_en": "AI-OFF decision-point walk",
+      "work_package_refs": ["WP-01", "WP-05", "WP-06"],
+      "purpose": "At one confirmed public interface, test whether fixed bilingual information and human handover preserve the documented decision sequence when phone, screen and AI functions are unavailable.",
+      "minimum_release_checks": ["DR-GATE-01", "DR-GATE-02", "DR-GATE-04", "DR-GATE-05", "DR-GATE-06"],
+      "evidence_output": "dated walkthrough record, legibility observation, clearway sketch, human-handover result and close-out decision",
+      "stop_or_hold": "HOLD before an authorised record exists; remove, relocate or downgrade any component that obstructs passage, cannot be read or lacks a maintainable human fallback."
+    },
+    {
+      "id": "P0-EXP-02",
+      "name_zh": "公共绕行与测试停止演练",
+      "name_en": "public-bypass and test-stop exercise",
+      "work_package_refs": ["WP-02", "WP-06"],
+      "purpose": "At a permitted and bounded future test interface, exercise stopping the test-facing layer while preserving a legible public bypass, physical information and human explanation.",
+      "minimum_release_checks": ["DR-GATE-01", "DR-GATE-02", "DR-GATE-04", "DR-GATE-05", "DR-GATE-06", "DR-GATE-07"],
+      "evidence_output": "authorised test-window and buffer record, stop decision, bypass observation, privacy boundary check and close-out decision",
+      "stop_or_hold": "HOLD without lawful permission, buffer, public bypass, stop authority or privacy boundary; STOP immediately if testing affects public passage or safety."
+    },
+    {
+      "id": "P0-EXP-03",
+      "name_zh": "到达与无障碍替代走查",
+      "name_en": "arrival and accessible-alternative walkthrough",
+      "work_package_refs": ["WP-04", "WP-06"],
+      "purpose": "At a confirmed public edge, document an arrival, legal crossing, accessible alternative, short stay and human-enquiry sequence without claiming unverified direct station access.",
+      "minimum_release_checks": ["DR-GATE-01", "DR-GATE-02", "DR-GATE-03", "DR-GATE-04", "DR-GATE-05", "DR-GATE-06"],
+      "evidence_output": "authorised route observation, access/crossing record, accessible-alternative assessment, unavailable-condition notice and close-out decision",
+      "stop_or_hold": "HOLD without current legal-access and accessibility evidence; REROUTE to a verified public edge or suspend the continuity claim when the alternative fails."
+    }
+  ],
+  "handover_packet": {
+    "required_contents": ["applicable P0 request responses", "gate-by-gate evidence index", "exercise result and close-out decision", "unresolved risks and current service statement", "next reviewer and validity/recheck date"],
+    "phase_rule": "Phase 0 records evidence and interfaces. Phase 1 is limited to an authorised reversible exercise. Phase 2 requires the relevant professional review. Phase 3 requires sustainable responsibility, maintenance and auditable evidence.",
+    "promotion_boundary": "Passing an exercise does not establish corridor-wide service, construction readiness, an approved plan or a Verified SLA promotion. Any promotion remains subject to the existing human evidence and independent review rules."
+  }
+}

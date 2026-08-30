@@ -1,0 +1,310 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-08-30T08:03:37Z",
+  "crs": "EPSG:4548",
+  "script": "visual/assets/recompute_metrics.js",
+  "runtime": "Node.js（仅标准库，零外部依赖，全离线）",
+  "inputs": [
+    "geometry/site_boundary.geojson",
+    "geometry/green_space.geojson",
+    "geometry/public_space.geojson",
+    "geometry/buildings.geojson",
+    "geometry/roads.geojson",
+    "geometry/key_areas.geojson",
+    "metrics.json",
+    "visual/assets/om-funding-gap.json",
+    "sources.json"
+  ],
+  "tolerances": {
+    "site_area_sqm": "rel<=0.0001",
+    "green_space_area_sqm": "rel<=0.0001",
+    "green_ratio": "abs<=0.0001",
+    "public_space_area_sqm": "rel<=0.0001",
+    "public_space_ratio": "abs<=0.0001",
+    "building_footprint_area_sqm": "rel<=0.0001",
+    "building_footprint_ratio": "abs<=0.0001",
+    "spine_length_m": "rel<=0.001",
+    "key_area_count": "abs<=0",
+    "key_area_zhongzhiyuan_area_sqm": "rel<=0.0001",
+    "key_area_origin_community_area_sqm": "rel<=0.0001",
+    "key_area_dazhongsi_area_sqm": "rel<=0.0001"
+  },
+  "unknown_metrics_kept": [
+    "floor_area_ratio",
+    "building_height_control"
+  ],
+  "metrics_checked": 12,
+  "om_funding_gap": {
+    "checks": 13,
+    "all_pass": true,
+    "results": [
+      {
+        "sub_item": "SU-1-green",
+        "check": "dimension x share x price",
+        "recomputed": [
+          2663.7,
+          7399.3
+        ],
+        "claimed": [
+          2663.7,
+          7399.3
+        ],
+        "result": "PASS"
+      },
+      {
+        "sub_item": "SU-2-hard",
+        "check": "dimension x share x price",
+        "recomputed": [
+          299,
+          651.1
+        ],
+        "claimed": [
+          299,
+          651.1
+        ],
+        "result": "PASS"
+      },
+      {
+        "account": "空间养护",
+        "check": "sub_item_sum",
+        "recomputed": [
+          2962.7,
+          8050.4
+        ],
+        "claimed": [
+          2962.7,
+          8050.4
+        ],
+        "result": "PASS"
+      },
+      {
+        "sub_item": "EV-1-events",
+        "check": "dimension x share x price",
+        "recomputed": [
+          149,
+          495
+        ],
+        "claimed": [
+          149,
+          495
+        ],
+        "result": "PASS"
+      },
+      {
+        "account": "活动策展",
+        "check": "sub_item_sum",
+        "recomputed": [
+          149,
+          495
+        ],
+        "claimed": [
+          149,
+          495
+        ],
+        "result": "PASS"
+      },
+      {
+        "account": "场景运营",
+        "check": "placeholder_no_amount",
+        "recomputed": [
+          null,
+          null
+        ],
+        "claimed": [
+          null,
+          null
+        ],
+        "result": "PASS"
+      },
+      {
+        "account": "数据与算力",
+        "check": "placeholder_no_amount",
+        "recomputed": [
+          null,
+          null
+        ],
+        "claimed": [
+          null,
+          null
+        ],
+        "result": "PASS"
+      },
+      {
+        "account": "复审与测量",
+        "check": "placeholder_no_amount",
+        "recomputed": [
+          null,
+          null
+        ],
+        "claimed": [
+          null,
+          null
+        ],
+        "result": "PASS"
+      },
+      {
+        "account": "应急折返储备",
+        "check": "derived_reserve (quantified_sum x ratio)",
+        "recomputed": [
+          155.6,
+          854.5
+        ],
+        "claimed": [
+          155.6,
+          854.5
+        ],
+        "result": "PASS"
+      },
+      {
+        "check": "totals (quantified accounts)",
+        "recomputed": [
+          3111.7,
+          8545.4
+        ],
+        "claimed": [
+          3111.7,
+          8545.4
+        ],
+        "result": "PASS"
+      },
+      {
+        "check": "totals_plus_reserve",
+        "recomputed": [
+          3267.3,
+          9399.9
+        ],
+        "claimed": [
+          3267.3,
+          9399.9
+        ],
+        "result": "PASS"
+      },
+      {
+        "check": "gap_identity (coverage=0 => gap = quantified+reserve)",
+        "recomputed": [
+          3267.3,
+          9399.9
+        ],
+        "claimed": [
+          3267.3,
+          9399.9
+        ],
+        "result": "PASS"
+      },
+      {
+        "check": "coverage_discipline (all declared coverage = 0)",
+        "recomputed": [
+          0,
+          0
+        ],
+        "claimed": [
+          0,
+          0
+        ],
+        "result": "PASS"
+      }
+    ],
+    "calibre": "万元/年 ROM 区间；子项=量纲×占比假设×单价区间，储备=已量化科目合计×5%-10%，缺口恒等式=coverage 0 时等于已量化+储备合计；单价来源须登记于 sources.json。"
+  },
+  "all_pass": true,
+  "failures": [],
+  "results": [
+    {
+      "metric": "site_area_sqm",
+      "recomputed": 11412825.387,
+      "claimed": 11412825.386,
+      "abs_diff": 0.001436,
+      "tolerance": "rel <= 0.0001",
+      "result": "PASS"
+    },
+    {
+      "metric": "green_space_area_sqm",
+      "recomputed": 2466420.949,
+      "claimed": 2466420.91,
+      "abs_diff": 0.039478,
+      "tolerance": "rel <= 0.0001",
+      "result": "PASS"
+    },
+    {
+      "metric": "green_ratio",
+      "recomputed": 0.216,
+      "claimed": 0.21611,
+      "abs_diff": 0,
+      "tolerance": "abs <= 0.0001",
+      "result": "PASS"
+    },
+    {
+      "metric": "public_space_area_sqm",
+      "recomputed": 1205675.697,
+      "claimed": 1205675.657,
+      "abs_diff": 0.039533,
+      "tolerance": "rel <= 0.0001",
+      "result": "PASS"
+    },
+    {
+      "metric": "public_space_ratio",
+      "recomputed": 0.106,
+      "claimed": 0.105642,
+      "abs_diff": 0,
+      "tolerance": "abs <= 0.0001",
+      "result": "PASS"
+    },
+    {
+      "metric": "building_footprint_area_sqm",
+      "recomputed": 2215733.133,
+      "claimed": 2215733.133,
+      "abs_diff": 0.000209,
+      "tolerance": "rel <= 0.0001",
+      "result": "PASS"
+    },
+    {
+      "metric": "building_footprint_ratio",
+      "recomputed": 0.194,
+      "claimed": 0.194146,
+      "abs_diff": 0.000002,
+      "tolerance": "abs <= 0.0001",
+      "result": "PASS"
+    },
+    {
+      "metric": "spine_length_m",
+      "recomputed": 9717.879,
+      "claimed": 9717.9,
+      "abs_diff": 0.020897,
+      "tolerance": "rel <= 0.001",
+      "result": "PASS"
+    },
+    {
+      "metric": "key_area_count",
+      "recomputed": 3,
+      "claimed": 3,
+      "abs_diff": 0,
+      "tolerance": "abs <= 0",
+      "result": "PASS"
+    },
+    {
+      "metric": "key_area_zhongzhiyuan_area_sqm",
+      "recomputed": 1929201.878,
+      "claimed": 1929201.877,
+      "abs_diff": 0.000762,
+      "tolerance": "rel <= 0.0001",
+      "result": "PASS"
+    },
+    {
+      "metric": "key_area_origin_community_area_sqm",
+      "recomputed": 1043236.909,
+      "claimed": 1043236.909,
+      "abs_diff": 0.00008,
+      "tolerance": "rel <= 0.0001",
+      "result": "PASS"
+    },
+    {
+      "metric": "key_area_dazhongsi_area_sqm",
+      "recomputed": 720454.219,
+      "claimed": 720454.219,
+      "abs_diff": 0.00004,
+      "tolerance": "rel <= 0.0001",
+      "result": "PASS"
+    }
+  ],
+  "note": "一键复算证据：全部 known 状态指标由包内 GeoJSON 在 EPSG:4548（CGCS2000 / 3-degree Gauss-Kruger CM 117E，脚本内联投影实现）下独立复算并与 metrics.json 对账；floor_area_ratio 与 building_height_control 保持 unknown——v3.0 已登记 HD00-1601 等街区控规公开版街区层面基准强度/高度分区（statutory-reconciliation.json），地块级图则数值需读图获取，本包不以推测值冒充。复算口径与仓库评审脚本一致（EPSG:4326→4548 投影面积/长度）。第 13 项（v2.9）：om-funding-gap.json 运维资金缺口表全量算术一致性——子项乘积、科目小计、储备比例、总计、缺口恒等式、占位纪律与单价来源登记逐项机检。"
+}

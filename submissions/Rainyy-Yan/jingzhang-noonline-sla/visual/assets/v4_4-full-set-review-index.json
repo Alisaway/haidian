@@ -1,0 +1,56 @@
+{
+  "version": "V4.4",
+  "status": "manual_rendered_page_audit_complete",
+  "purpose": "Reviewer-facing inventory for the complete bilingual drawing set. It makes the full reading sequence, page pairing and original local PDF entry points explicit.",
+  "audit_method": {
+    "method": "offline PDF raster review plus human visual comparison",
+    "scope": "current submission PDFs only",
+    "checked": [
+      "page count and reading order",
+      "nonblank rendering and visible layout continuity",
+      "Chinese and English page-pair correspondence",
+      "figure sequence, evidence language and concept-boundary labels"
+    ]
+  },
+  "drawing_sets": [
+    {
+      "id": "DRAWING-A3",
+      "zh_file": "drawings/a3-booklet.pdf",
+      "en_file": "drawings/a3-booklet.en.pdf",
+      "page_count_per_language": 9,
+      "paired_reading_sequence": [
+        { "pages": "01", "content": "Figure 01: overall urban structure" },
+        { "pages": "02", "content": "Figure 02: Zhongzhiyuan validation interface" },
+        { "pages": "03", "content": "Figure 03: AI Origin civic knowledge room" },
+        { "pages": "04", "content": "Figure 04: Dazhongsi concept station-arrival interface" },
+        { "pages": "05", "content": "Figure 05: Section-01-04 / space before AI" },
+        { "pages": "06", "content": "Figure 06: AI-ON / AI-OFF urban resilience" },
+        { "pages": "07", "content": "Figure 07: Research to City to Feedback to Iterate" },
+        { "pages": "08", "content": "Support 04: metrics and evidence chain" },
+        { "pages": "09", "content": "Figure 08: implementation control" }
+      ]
+    },
+    {
+      "id": "DRAWING-A0",
+      "zh_file": "drawings/a0-boards.pdf",
+      "en_file": "drawings/a0-boards.en.pdf",
+      "page_count_per_language": 3,
+      "paired_reading_sequence": [
+        { "pages": "01", "content": "Figure 01 plus Figures 02-04: overall structure and three spatial prototypes" },
+        { "pages": "02", "content": "Figure 05, Figure 06, Figure 07 and Support 04: sections, resilience, loop and evidence chain" },
+        { "pages": "03", "content": "Figure 08: implementation control" }
+      ]
+    }
+  ],
+  "review_summary": {
+    "pdf_files": 4,
+    "rendered_pages": 24,
+    "bilingual_page_pairs": 12,
+    "result": "all declared pages were available to review in the recorded sequence; the paired sets retained their corresponding figure order and visible evidence language"
+  },
+  "boundary": [
+    "The index records drawing-package readability and correspondence only.",
+    "It does not turn concept geometry, routes, nodes, facilities, accessibility, operations, permissions, land rights or funding into verified conditions.",
+    "It does not replace the required future human bilingual comparison after any substantive change."
+  ]
+}

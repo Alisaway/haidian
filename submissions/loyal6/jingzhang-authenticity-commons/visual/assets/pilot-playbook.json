@@ -1,8 +1,11 @@
 {
-  "schema_version": "1.2",
+  "schema_version": "1.5",
   "title_zh": "90天可逆试点与故障演练",
   "title_en": "90-day Reversible Pilot and Failure Drill",
   "status": "conceptual_pre-implementation_protocol",
+  "execution_contract_ref": "visual/assets/execution-contract.json#PILOT-A-EXECUTION-142",
+  "preimplementation_ref": "visual/assets/preimplementation-package.json#JZAC-P0-ORIGIN-RELAY-01",
+  "execution_note": "The four RACI rows below are a role-level summary; the linked unsigned execution contract expands them into eight actions with named role IDs, channels, data rules, co-testing, measurement and disposition signatures. No live pilot is authorized.",
   "duration_days": 90,
   "public_test_zh": "一条错误如果不能沿原渠道被纠正，这项AI服务就不能留在京张。",
   "public_test_en": "If an error cannot be corrected through every channel that carried it, the AI service must not remain in Jing-Zhang.",
@@ -11,7 +14,37 @@
     "evidence_file": "correction-receipt-demo.json",
     "status": "synthetic_drill_not_field_result",
     "original_channels": ["drill physical exhibit label", "drill offline webpage"],
-    "advance_gate": "both original channels corrected and all four fail-closed field-removal tests pass"
+    "advance_gate": "both original channels corrected, the three-area relay completed, and all four fail-closed field-removal tests pass"
+  },
+  "pilot_a_implementation_card": {
+    "host_area": "beijing_ai_origin_community",
+    "five_spaces": [
+      "screenless intake counter",
+      "evidence foyer",
+      "private review room",
+      "public correction table",
+      "revision and return wall"
+    ],
+    "five_roles": [
+      "reporting visitor",
+      "case steward",
+      "original-channel owner",
+      "independent archive reviewer",
+      "product and procurement owner"
+    ],
+    "six_moments": ["report", "pause", "review", "same-channel correction", "product retest", "procurement update and recovery"],
+    "four_fail_injections": [
+      "remove accountable role",
+      "remove original-channel inventory",
+      "remove independent reviewer",
+      "remove recovery record"
+    ],
+    "acceptance": {
+      "same_channel_correction": "2/2 named drill channels",
+      "fail_closed_tests": "4/4 expected pause or retire states",
+      "three_area_relay": "Origin intake and correction + Zhongzhiyuan retest + Dazhongsi procurement update and recovery",
+      "field_performance": "unknown until an authorized pilot establishes a baseline"
+    }
   },
   "stages": [
     {
@@ -48,9 +81,9 @@
       "id": "PILOT-A",
       "name_zh": "京张遗产数字内容误标",
       "name_en": "Mislabeled Jing-Zhang heritage interpretation",
-      "route": ["众智园失效证据场", "原点共同复核厅", "沿线实体展签与离线网页"],
+      "route": ["原点共同复核厅：无屏受理、暂停、独立复核与公众更正", "众智园失效证据场：产品和发布流程重测", "大钟寺可逆采用门厅：采购更新、退出测试与空间数据恢复"],
       "failure_condition": "AI reconstruction is presented as an original historical record",
-      "recovery": "freeze the label, correct every display channel, preserve the original record and retest the publishing workflow"
+      "recovery": "freeze the label, correct every display channel, preserve the original record, retest the publishing workflow, update procurement evidence and recover the temporary display and data"
     },
     {
       "id": "PILOT-B",

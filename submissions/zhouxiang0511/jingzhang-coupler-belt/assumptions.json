@@ -1,0 +1,53 @@
+{
+  "schema_version": "0.1.0",
+  "assumptions": [
+    {
+      "id": "A-CONTROLS-001",
+      "status": "pending_professional_confirmation",
+      "statement": "Detailed regulatory controls, road redlines, ownership, municipal utilities, and engineering constraints must be confirmed from official attachments before statutory use.",
+      "impact": "The package can be reviewed as a formal AI submission only for provided official boundaries and submitted design layers; statutory controls still need professional confirmation."
+    },
+    {
+      "id": "A-BOUNDARY-001",
+      "status": "provisional_intake",
+      "statement": "官方精确边界尚未公开；本方案使用仓库 provisional_boundaries.geojson 的临时边界生成、展示与自检。",
+      "impact": "所有面积、比例与图面为概念示意；官方 polygon 发布后须整体重算并替换。",
+      "recalc_trigger": "official or cleared polygon release"
+    },
+    {
+      "id": "A-MASSING-001",
+      "status": "concept_only",
+      "statement": "建筑基底为概念体量，仅用于表达空间组织与公共空间关系。",
+      "impact": "不代表建筑高度、容积率或法定规模；不构成拆改留结论。",
+      "recalc_trigger": "official regulatory controls and existing building data"
+    },
+    {
+      "id": "A-CONTROLS-002",
+      "status": "pending_professional_confirmation",
+      "statement": "容积率、建筑高度、绿地率等控制指标依赖尚未公开的控规条件。",
+      "impact": "相关指标保持 unknown；不得伪装为审定结论。",
+      "recalc_trigger": "official control conditions from approved regulatory plans or brief attachments"
+    },
+    {
+      "id": "A-SCENARIOS-001",
+      "status": "concept_only",
+      "statement": "AI 场景卡、活动体系与运营机制均为概念建议。",
+      "impact": "不构成已确定政府安排或实施承诺；试点须经评审、授权与公众反馈。",
+      "recalc_trigger": "n/a"
+    },
+    {
+      "id": "A-HISTORY-001",
+      "status": "concept_only",
+      "statement": "关于詹天佑与自动车钩的历史归因存在学术考据异议（见《历史教学问题》1982年第3期）；本方案仅将自动车钩作为文化叙事与互操作符号使用，不作历史定论。",
+      "impact": "车钩叙事仅作概念符号，不影响空间设计结论；不构成历史学术判断。",
+      "recalc_trigger": "n/a"
+    },
+    {
+      "id": "A-PHASING-NODE-001",
+      "status": "concept_only",
+      "statement": "会让站/场景触点间距（约800米/500—800米）按步行10分钟可达圈与轨道接驳半径的常用区间设定，为概念假设。",
+      "impact": "正式布局以需求调查与服务半径测算为准，不构成设施定址结论。",
+      "recalc_trigger": "需求调查、服务半径测算或官方设施布局数据发布"
+    }
+  ]
+}

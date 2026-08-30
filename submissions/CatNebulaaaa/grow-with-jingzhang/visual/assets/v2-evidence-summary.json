@@ -1,0 +1,209 @@
+{
+  "schema_version": "1.0.0",
+  "status": "formal_submission_compact_evidence_v04",
+  "research_cache_repo_path": "tmp/jingzhang-analysis-cache/grow-with-jingzhang-analysis-v2/",
+  "packaging_note": "The full V2 research workspace is intentionally kept outside the formal submission because the submission contract only permits approved artifact directories. This compact record preserves the evidence chain used by formal geometry, metrics and figures.",
+  "analysis_units": {
+    "grid_size_m": 100,
+    "grid_cell_count": 1254,
+    "working_area_sqm": 11412825.385,
+    "construction_crs": "EPSG:4548",
+    "output_crs": "EPSG:4326",
+    "boundary_status": "provisional_rough"
+  },
+  "population": {
+    "source": "WorldPop Global2 2025 official API",
+    "underlying_resolution_m": 100,
+    "api_support_resolution_m": 200,
+    "support_block_count": 339,
+    "modelled_population_total": 192592.43,
+    "caveat": "Modelled population estimate, not census population."
+  },
+  "osm_context": {
+    "source_id": "OSM-CONTEXT-V2-20260824",
+    "element_count": 9002,
+    "walkable_way_count": 5273,
+    "walk_graph_nodes": 21448,
+    "walk_graph_edges": 24760,
+    "classified_poi_count": 3217,
+    "license": "ODbL 1.0",
+    "caveat": "Context/proxy evidence only; not a statutory survey or complete official service registry."
+  },
+  "population_weighted_site_metrics": {
+    "rail_5min_share": 0.209519,
+    "rail_10min_share": 0.588898,
+    "rail_15min_share": 0.810191,
+    "bus_10min_share": 0.961358,
+    "education_15min_share": 0.930755,
+    "health_15min_share": 0.851058,
+    "daily_service_15min_share": 0.982739,
+    "service_gap_ge1_share": 0.179496,
+    "service_gap_ge2_share": 0.043939
+  },
+  "key_area_population_weighted": {
+    "PROV-KEY-001": {
+      "name": "Zhongzhiyuan",
+      "population": 22641.129,
+      "rail10": 0.530262,
+      "health15": 0.795114,
+      "gap1": 0.368322,
+      "gap2": 0.154245,
+      "rail_detour_proxy": 1.937272
+    },
+    "PROV-KEY-002": {
+      "name": "AI Origin Community",
+      "population": 14948.382,
+      "rail10": 0.866525,
+      "health15": 0.634931,
+      "gap1": 0.365069,
+      "gap2": 0.0,
+      "rail_detour_proxy": 1.714239
+    },
+    "PROV-KEY-003": {
+      "name": "Dazhongsi",
+      "population": 18038.132,
+      "rail10": 0.25274,
+      "health15": 0.495686,
+      "gap1": 0.536413,
+      "gap2": 0.131324,
+      "rail_detour_proxy": 2.782857
+    }
+  },
+  "robust_opportunity_v02": {
+    "weight_samples": 5000,
+    "dimensions": [
+      "population_exposure",
+      "service_deficit",
+      "mobility_deficit",
+      "innovation_leverage",
+      "urban_activity",
+      "culture_linkage",
+      "green_deficit"
+    ],
+    "cells_top20_probability_ge_075": 21,
+    "v01_v02_rank_correlation_proxy": 0.899865,
+    "green_layer": "historical OSM public park/garden proxy baseline; superseded for final sensitivity and design re-audit by v0.4 Sentinel vegetation deficit"
+  },
+  "service_node_audit": {
+    "existing_12_population_coverage": 0.550325,
+    "existing_12_gap1_coverage": 0.394428,
+    "existing_12_gap2_coverage": 0.288484,
+    "priority_move_or_merge": [
+      "PUBLIC-03",
+      "PUBLIC-04",
+      "PUBLIC-09",
+      "PUBLIC-10"
+    ],
+    "priority_retain": [
+      "PUBLIC-11",
+      "PUBLIC-07",
+      "PUBLIC-08"
+    ],
+    "consensus_12_population_coverage": 0.576236,
+    "consensus_12_gap1_coverage": 0.619045,
+    "consensus_12_gap2_coverage": 0.515413,
+    "equity_only_gap1_sensitivity_upper_bound": 0.745928,
+    "replacement_method": "12 unordered objective-specific candidates -> 8 spatial clusters at 120 m -> 55 feasible four-site combinations -> maximin multi-objective consensus",
+    "selected_consensus_candidates": [
+      "CONS-CAND-01",
+      "CONS-CAND-02",
+      "CONS-CAND-05",
+      "CONS-CAND-06"
+    ],
+    "post_sentinel_v04_status": "formal 8+4 consensus geometry retained after full v0.4 tie-aware Sentinel multi-objective re-optimization",
+    "v04_consensus_reoptimization": {
+      "method": "rerun three objective-specific four-node searches on opportunity v0.4; spatially deduplicate their 12 selections; exhaust all feasible four-site combinations; maximize the minimum normalized population/gap1/gap2/opportunity-population criterion",
+      "candidate_cluster_count": 8,
+      "feasible_four_site_combinations": 55,
+      "current_formal_system": {
+        "population_share": 0.576236,
+        "gap1_share": 0.619045,
+        "gap2_share": 0.515413,
+        "opportunity_population_mean": 0.244674
+      },
+      "v04_reoptimized_system": {
+        "population_share": 0.57121,
+        "gap1_share": 0.614634,
+        "gap2_share": 0.515413,
+        "opportunity_population_mean": 0.253813,
+        "min_normalized_objective": 0.536104,
+        "mean_normalized_objective": 0.690024
+      },
+      "delta_reoptimized_minus_current": {
+        "population_share": -0.005026,
+        "gap1_share": -0.004411,
+        "gap2_share": 0.0,
+        "opportunity_population_mean": 0.009139
+      },
+      "recommendation": "retain_current_formal_8plus4_geometry",
+      "interpretation": "The v0.4 re-optimized set raises opportunity-population mean by 0.009139 but reduces population coverage by 0.005026 and gap1 coverage by 0.004411, with gap2 unchanged; therefore the current formal four-point consensus remains the better balanced scheme."
+    }
+  },
+  "pilot_corridor": {
+    "candidate_window_count": 36,
+    "window_length_m": 1000,
+    "lead": "CORRIDOR-04",
+    "tolerance": [
+      "CORRIDOR-03",
+      "CORRIDOR-05"
+    ],
+    "lead_top20_probability_v02": 0.997,
+    "lead_top10_probability_v02": 0.9734,
+    "design_role": "research lead candidate; not an approved engineering alignment",
+    "lead_top20_probability_v04": 0.9986,
+    "lead_top10_probability_v04": 0.986,
+    "post_sentinel_status": "CORRIDOR-04 remains rank-1 lead after explicit Sentinel green-deficit dimension"
+  },
+  "formal_concept_geometry": {
+    "service_node_count": 12,
+    "retained_center_count": 8,
+    "consensus_replacement_count": 4,
+    "node_module_dimensions_m": [
+      20,
+      16
+    ],
+    "node_module_area_sqm": 320,
+    "service_node_total_footprint_sqm": 3840,
+    "status": "conceptual/provisional"
+  },
+  "unresolved_evidence": [
+    "Formal redlines, tenure, utilities, rail safety, accessibility/fire constraints and field survey can trigger node or corridor re-selection.",
+    "Official-facility spatial validation is intentionally partial because district directories do not cover all central/university hospitals and unmatched records are not geocoded by guesswork."
+  ],
+  "sentinel2_green": {
+    "source_id": "SENTINEL2-L2A-PC-2026-SUMMER",
+    "selected_scene_count": 5,
+    "valid_grid_cells": 1244,
+    "site_area_weighted_vegetation_fraction": 0.262296,
+    "site_area_weighted_dense_vegetation_fraction": 0.071219,
+    "site_area_weighted_spectral_built_proxy_fraction": 0.259896,
+    "population_weighted_green_deficit_index": 0.767713,
+    "method": "five unique-date low-cloud Sentinel-2 L2A composite via Planetary Computer Data API tiles; B08/B04/B11/SCL; SCL-filtered median; 100m reporting grid",
+    "caveat": "Spectral vegetation/built proxies, not statutory green-space or cadastral land-use area."
+  },
+  "robust_opportunity_v04": {
+    "weight_samples": 5000,
+    "dimensions": [
+      "population_exposure",
+      "service_deficit",
+      "mobility_deficit",
+      "innovation_leverage",
+      "urban_activity",
+      "culture_linkage",
+      "green_deficit"
+    ],
+    "cells_top20_probability_ge_075": 37,
+    "cells_top20_probability_ge_090": 4,
+    "service_formula": "clip(service_gap_count/3,0,1)",
+    "green_formula": "mean(inverse tie-aware percentile vegetation_fraction, inverse tie-aware percentile dense_vegetation_fraction)",
+    "status": "final sensitivity model used for post-Sentinel re-audit"
+  },
+  "official_facility_validation": {
+    "method": "official identity/address + OSM coordinate conservative name reconciliation",
+    "matched_feature_count": 39,
+    "education_verified": 36,
+    "medical_verified": 2,
+    "eldercare_verified": 1,
+    "caveat": "Official identities/addresses are reconciled to OSM coordinates conservatively; unmatched official facilities are not treated as absent and this layer does not replace the full OSM service layer."
+  }
+}

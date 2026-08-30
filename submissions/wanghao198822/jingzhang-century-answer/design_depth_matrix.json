@@ -1,0 +1,560 @@
+{
+  "schema_version": "0.1.0",
+  "items": [
+    {
+      "item_id": "existing_conditions_diagnosis",
+      "title_zh": "现状诊断图与资料缺口",
+      "professional_dimension": "规划",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "设计依据与资料清单",
+        "风险、版权与合规说明"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf",
+        "assets/figures/site-overview.png"
+      ],
+      "geometry_refs": [
+        "geometry/site_boundary.geojson",
+        "geometry/constraints.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "metric_refs": [
+        "site_area_sqm",
+        "key_area_count"
+      ],
+      "source_ids": [
+        "SITE-PACKAGE",
+        "SOURCE-REGISTRY",
+        "PROCESSED-FACT-PACK",
+        "BOUNDARY-SOURCE"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-CONTROLS-001",
+        "A-RECALC-001"
+      ],
+      "self_check_ids": [
+        "DETERMINISTIC_VALIDATION",
+        "KEY_AREA_PROVISIONAL"
+      ],
+      "evidence_summary_zh": "现状认知以场地包与10条逐条抓取复核的官方来源为准，死链替换与口径缺项在来源报告中诚实披露；约束图层刻意保持空集合并声明数据缺口（宁空勿造）；官方红线、控规、权属、市政、文保等缺失项全部进入假设登记与复算触发器清单（A-RECALC-001）。"
+    },
+    {
+      "item_id": "three_level_scope_framework",
+      "title_zh": "三层范围工作框架",
+      "professional_dimension": "规划",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "三层范围工作框架"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf",
+        "assets/figures/land-use-structure.png"
+      ],
+      "geometry_refs": [
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson",
+        "geometry/land_use.geojson"
+      ],
+      "metric_refs": [
+        "site_area_sqm",
+        "key_area_count"
+      ],
+      "source_ids": [
+        "OFFICIAL-ANNOUNCEMENT",
+        "AGENT-TASKBOOK",
+        "SITE-PACKAGE"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-CONTROLS-001"
+      ],
+      "self_check_ids": [
+        "DETERMINISTIC_VALIDATION",
+        "KEY_AREA_PROVISIONAL"
+      ],
+      "evidence_summary_zh": "统筹（约43.6平方公里）、总体（约11.4平方公里）、重点（约368.4公顷）三层各自的设计问题、方案回答与数据落点以表格逐层映射；三层被题—答—阅一条叙事主线拧紧：统筹层决定写什么、总体层决定写在哪、重点层决定怎么落笔。"
+    },
+    {
+      "item_id": "overall_spatial_structure",
+      "title_zh": "总体空间结构",
+      "professional_dimension": "城市设计",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "三层范围工作框架",
+        "统筹研究范围产业与未来城市研究",
+        "重点区域详细设计"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf",
+        "assets/figures/site-overview.png",
+        "assets/figures/land-use-structure.png"
+      ],
+      "geometry_refs": [
+        "geometry/roads.geojson",
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "metric_refs": [
+        "green_ratio",
+        "public_space_ratio"
+      ],
+      "source_ids": [
+        "OFFICIAL-ANNOUNCEMENT",
+        "AGENT-TASKBOOK",
+        "PARK2-PLAN-2024"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-GATE-001"
+      ],
+      "self_check_ids": [
+        "DETERMINISTIC_VALIDATION",
+        "VISUAL_PACKAGING"
+      ],
+      "evidence_summary_zh": "总体结构为一条9公里应答长卷主脊、南问—中答—北跃三段、东西以46座应答门（以实际建成为准）向近70个社区渗透（概念建议）：南段大钟寺鸣钟之门、中段清华园车站旁应答原点、北段众智园人字之跃，主脊慢行概念线约9.7公里落入roads图层。"
+    },
+    {
+      "item_id": "land_use_layout",
+      "title_zh": "用地布局",
+      "professional_dimension": "规划",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "用地、建筑规模与拆改留方案",
+        "总体设计范围城市更新与控规深度城市设计"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf",
+        "assets/figures/land-use-structure.png"
+      ],
+      "geometry_refs": [
+        "geometry/land_use.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "metric_refs": [
+        "site_area_sqm",
+        "green_ratio"
+      ],
+      "source_ids": [
+        "SITE-PACKAGE",
+        "PROCESSED-FACT-PACK"
+      ],
+      "assumption_ids": [
+        "A-CONTROLS-001",
+        "A-BOUNDARY-001"
+      ],
+      "self_check_ids": [
+        "SPATIAL_REVIEW"
+      ],
+      "evidence_summary_zh": "十个概念地块分区完整覆盖提交边界且拓扑无缝（EPSG:4548复算覆盖缺口0.398平方米、最大重叠0.087平方米），公园绿轴1401贯通南北，两翼布置0803/0901/0802/0701/0804/0902与留白16，代码全部取自场地包枚举；用地分区为概念建议、不替代法定控规。"
+    },
+    {
+      "item_id": "development_intensity_controls",
+      "title_zh": "开发强度或待确认控规条件",
+      "professional_dimension": "控规",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "总体设计范围城市更新与控规深度城市设计",
+        "指标体系、面积复算与合规矩阵"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf",
+        "assets/figures/metrics-evidence.png"
+      ],
+      "geometry_refs": [
+        "geometry/land_use.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "metric_refs": [
+        "floor_area_ratio",
+        "site_area_sqm"
+      ],
+      "source_ids": [
+        "OFFICIAL-ANNOUNCEMENT",
+        "SITE-PACKAGE"
+      ],
+      "assumption_ids": [
+        "A-CONTROLS-001",
+        "A-RECALC-001"
+      ],
+      "self_check_ids": [
+        "DETERMINISTIC_VALIDATION",
+        "PROFESSIONAL_EVIDENCE"
+      ],
+      "evidence_summary_zh": "凡涉及建筑高度、开发强度、道路红线、退线与设施标准一律不给结论数值、统一表述为待正式控规条件确认；floor_area_ratio在指标表中如实保持status=unknown并写明原因与复算路径——unknown是合法终态而非缺项，官方条件发布后按A-RECALC-001触发器逐项重算。"
+    },
+    {
+      "item_id": "height_massing_character",
+      "title_zh": "建筑高度、体量与风貌控制",
+      "professional_dimension": "建筑",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "用地、建筑规模与拆改留方案",
+        "蓝绿空间、公共空间与城市风貌"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/buildings.geojson",
+        "geometry/public_space.geojson"
+      ],
+      "metric_refs": [
+        "building_footprint_area_sqm"
+      ],
+      "source_ids": [
+        "SITE-PACKAGE",
+        "DZS-MUSEUM-2021"
+      ],
+      "assumption_ids": [
+        "A-CONTROLS-001",
+        "A-HERITAGE-001"
+      ],
+      "self_check_ids": [
+        "PROFESSIONAL_EVIDENCE"
+      ],
+      "evidence_summary_zh": "建筑方案刻意轻量：仅三处小型概念基底（应答钟阁、城市进化档案馆装置、要素服务驿站示范点，合计约3125平方米）且均不含高度结论；风貌控制建议京张三色概念色卡与里程语汇导视系统，文保周边风貌以文物部门认定为准——以最小物理介入激活既有公共空间既是设计判断也是对条件缺失的诚实回应。"
+    },
+    {
+      "item_id": "retain_renovate_demolish",
+      "title_zh": "建筑拆改留分类",
+      "professional_dimension": "建筑",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "用地、建筑规模与拆改留方案"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/buildings.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "metric_refs": [
+        "building_footprint_area_sqm",
+        "key_area_count"
+      ],
+      "source_ids": [
+        "THU-STATION-2023",
+        "SITE-PACKAGE"
+      ],
+      "assumption_ids": [
+        "A-HERITAGE-001",
+        "A-CONTROLS-001"
+      ],
+      "self_check_ids": [
+        "PROFESSIONAL_EVIDENCE"
+      ],
+      "evidence_summary_zh": "拆改留只给方法不给结论：在现状建筑、权属、控规与工程条件缺失前提下不对任何具体建筑给出拆改留分类判断，提出三条分类原则供专业团队深化——文物与历史建筑绝对保留本体不动、沿线可更新产业空间优先改与功能置换、仅经权属梳理确认的低效边角空间研究微更新。"
+    },
+    {
+      "item_id": "traffic_rail_slow_parking",
+      "title_zh": "道路、轨道、慢行与停车组织",
+      "professional_dimension": "交通",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "交通、轨道、市政与公共服务设施"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf",
+        "assets/figures/mobility-bluegreen.png"
+      ],
+      "geometry_refs": [
+        "geometry/roads.geojson",
+        "geometry/public_space.geojson"
+      ],
+      "metric_refs": [
+        "public_space_ratio",
+        "site_area_sqm"
+      ],
+      "source_ids": [
+        "PARK2-PLAN-2024",
+        "PARK1-YLLHJ-2023",
+        "OFFICIAL-ANNOUNCEMENT"
+      ],
+      "assumption_ids": [
+        "A-ROBOT-001",
+        "A-CONTROLS-001"
+      ],
+      "self_check_ids": [
+        "PROFESSIONAL_EVIDENCE"
+      ],
+      "evidence_summary_zh": "慢行为交通回答主体：9公里应答长卷慢行主线（约9.7公里概念线）加三条东西缝合示范线，全部标注概念属性不代表道路红线；轨道接驳聚焦大钟寺站四象限声波径缝合；断点执行先通后留、逐一回应官方交通优化方案原文；机器人测试通道建议先行于已开放一期16.8公顷段、物理隔离并逐级报批。"
+    },
+    {
+      "item_id": "municipal_new_infrastructure",
+      "title_zh": "市政与新型基础设施策略",
+      "professional_dimension": "市政",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "交通、轨道、市政与公共服务设施"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/buildings.geojson",
+        "geometry/public_space.geojson"
+      ],
+      "metric_refs": [
+        "building_footprint_area_sqm",
+        "public_space_ratio"
+      ],
+      "source_ids": [
+        "AGENT-POLICY-2026",
+        "SITE-PACKAGE"
+      ],
+      "assumption_ids": [
+        "A-CONTROLS-001"
+      ],
+      "self_check_ids": [
+        "PROFESSIONAL_EVIDENCE"
+      ],
+      "evidence_summary_zh": "市政与新基建以接入与衔接为原则：算力以服务接入而非设施落地为方向并衔接市级政策，端侧算力与分布式能源作为待深化原型研究；公共服务设施以要素服务驿站为统一界面（政策咨询、备案辅导、健康导航角，导航不诊疗）；管线、能源、排水、防洪、消防等工程资料缺失如实列为正式深化前置条件。"
+    },
+    {
+      "item_id": "blue_green_public_space",
+      "title_zh": "蓝绿系统与公共空间",
+      "professional_dimension": "景观",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "蓝绿空间、公共空间与城市风貌",
+        "AI 创新生态、人才画像与 AI+ 场景"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf",
+        "assets/figures/mobility-bluegreen.png"
+      ],
+      "geometry_refs": [
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson"
+      ],
+      "metric_refs": [
+        "green_ratio",
+        "public_space_ratio"
+      ],
+      "source_ids": [
+        "PARK1-YLLHJ-2023",
+        "PARK2-PLAN-2024"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-GATE-001"
+      ],
+      "self_check_ids": [
+        "VISUAL_PACKAGING",
+        "PROFESSIONAL_EVIDENCE"
+      ],
+      "evidence_summary_zh": "蓝绿骨架一脊一带：公园绿轴按南问中答北跃三段组织、北端与清河蓝绿概念协调带十字交叠（主脊给叙事、清河给生态、交点给场景）；公共空间由五处概念节点加10件标准化组件库构成，绿地占提交范围约25.04%、公共空间约1.93%（临时边界口径），全线共用道钉铜色、声波环几何与考卷版式语汇。"
+    },
+    {
+      "item_id": "three_key_area_detailed_design",
+      "title_zh": "三大重点片区详细设计",
+      "professional_dimension": "城市设计",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "重点区域详细设计"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf",
+        "assets/figures/key-areas.png"
+      ],
+      "geometry_refs": [
+        "geometry/key_areas.geojson",
+        "geometry/public_space.geojson",
+        "geometry/buildings.geojson"
+      ],
+      "metric_refs": [
+        "key_area_count",
+        "building_footprint_area_sqm"
+      ],
+      "source_ids": [
+        "KEY-AREA-SOURCE",
+        "DZS-MUSEUM-2021",
+        "THU-STATION-2023"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-HERITAGE-001"
+      ],
+      "self_check_ids": [
+        "KEY_AREA_PROVISIONAL"
+      ],
+      "evidence_summary_zh": "三区各任一段叙事并完成详细概念设计：大钟寺（72.0公顷口径）应答钟与钟声广场、四象限声波径，铁律绝不触碰文物古钟；AI原点社区（104.3公顷口径）素广场、应答簿与零公里桩全部标注待文物部门协商概念选点；众智园（192.1公顷口径）人字天桥概念节点不含工程结论、承担测试主场职能。"
+    },
+    {
+      "item_id": "renewal_project_list",
+      "title_zh": "更新项目清单",
+      "professional_dimension": "实施",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "更新项目清单、实施政策与分期计划"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/roads.geojson",
+        "geometry/public_space.geojson",
+        "geometry/buildings.geojson",
+        "geometry/phasing.geojson"
+      ],
+      "metric_refs": [
+        "site_area_sqm",
+        "building_footprint_area_sqm"
+      ],
+      "source_ids": [
+        "PARK2-PLAN-2024",
+        "AGENT-TASKBOOK"
+      ],
+      "assumption_ids": [
+        "A-CONTROLS-001",
+        "A-GATE-001"
+      ],
+      "self_check_ids": [
+        "PROFESSIONAL_EVIDENCE"
+      ],
+      "evidence_summary_zh": "JZ-01至JZ-08八个更新项目逐项列明类型、主要依赖与几何证据引用（道钉带与零公里桩、应答钟广场、46座应答门、断点客厅、要素服务驿站、一期段测试环线、人字天桥、城市进化档案馆），全部为概念建议、实施须经主管部门审批。"
+    },
+    {
+      "item_id": "phasing_implementation",
+      "title_zh": "分期实施计划",
+      "professional_dimension": "实施",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "更新项目清单、实施政策与分期计划"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/phasing.geojson"
+      ],
+      "metric_refs": [
+        "key_area_count",
+        "site_area_sqm"
+      ],
+      "source_ids": [
+        "PARK2-START-2024",
+        "PARK2-PLAN-2024",
+        "PARK1-YLLHJ-2023"
+      ],
+      "assumption_ids": [
+        "A-GATE-001",
+        "A-CONTROLS-001"
+      ],
+      "self_check_ids": [
+        "PROFESSIONAL_EVIDENCE"
+      ],
+      "evidence_summary_zh": "三期概念时序（非政府承诺）：一期南问段依托既有建成界面先启动场景与仪式，二期中答段随公园二期建设推进认领与协商，三期北跃段承接人字天桥专项研究与清河衔接；近期可用轻量设施启动的内容与必须等待控规、市政、权属条件确认的内容在清单中明确区分。"
+    },
+    {
+      "item_id": "metrics_recalculation",
+      "title_zh": "指标复算",
+      "professional_dimension": "校核",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "指标体系、面积复算与合规矩阵"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf",
+        "assets/figures/metrics-evidence.png"
+      ],
+      "geometry_refs": [
+        "geometry/site_boundary.geojson",
+        "geometry/land_use.geojson",
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson",
+        "geometry/buildings.geojson"
+      ],
+      "metric_refs": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "building_footprint_area_sqm",
+        "key_area_count",
+        "floor_area_ratio"
+      ],
+      "source_ids": [
+        "SITE-PACKAGE",
+        "BOUNDARY-SOURCE"
+      ],
+      "assumption_ids": [
+        "A-RECALC-001",
+        "A-BOUNDARY-001"
+      ],
+      "self_check_ids": [
+        "SPATIAL_REVIEW",
+        "DETERMINISTIC_VALIDATION"
+      ],
+      "evidence_summary_zh": "全部空间指标由提交几何在EPSG:4548复算且与审查脚本口径一致：提交范围约1141.28万平方米、绿地率约25.04%、公共空间比例约1.93%、概念建筑基底约3125平方米、重点区3处；spatial_review结果PASS（面要素越界小于1平方米、概念线越界为0），全部数值基于临时边界、官方红线发布后须整包重算。"
+    },
+    {
+      "item_id": "risk_missing_data",
+      "title_zh": "风险与缺资料清单",
+      "professional_dimension": "合规",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "风险、版权与合规说明"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/constraints.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "metric_refs": [
+        "site_area_sqm",
+        "floor_area_ratio"
+      ],
+      "source_ids": [
+        "SOURCE-REGISTRY",
+        "THU-STATION-2023",
+        "DZS-MUSEUM-2021"
+      ],
+      "assumption_ids": [
+        "A-HERITAGE-001",
+        "A-DATA-001",
+        "A-CONTROLS-001"
+      ],
+      "self_check_ids": [
+        "PROFESSIONAL_EVIDENCE",
+        "VISUAL_PACKAGING"
+      ],
+      "evidence_summary_zh": "风险章覆盖五类：红色叙事使用边界专设铁律（3·25仅公益纪念、商业活动错日错址错叙事）、数据口径纪律（122款区政府口径为准、128款时点差异脚注、未核到口径不引用）、符号防撞全量检索诚实披露、文保与工程风险（概念选点待协商、人字桥无工程结论、测试以许可为前提）、数据治理吸取Sidewalk Toronto教训默认最小采集；缺资料项全部进入假设登记。"
+    }
+  ]
+}

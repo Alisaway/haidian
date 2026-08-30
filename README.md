@@ -120,6 +120,7 @@ open-city.ai 将把通过发布审核的投稿整理成开源可视化网站，�
 - 精选方案专题：`collections/*.json`、`schema/collection.schema.json`、`templates/collection.json` 和 `docs/collections.md` 支持维护者手动组织“最佳公共空间”“最佳 AI 治理”等专题合集，portal 会展示精选入口和入选理由。
 - 场景卡片库：`scenarios/*.json`、`schema/scenario.schema.json`、`templates/scenario.json` 和 `docs/scenarios.md` 维护 AI+交通、AI+医疗、机器人配送、AI 导览、企业服务、公共安全等标准场景；`proposal.md` 和 `exhibit.json` 可引用场景 ID，portal 支持按场景筛选。
 - 概念空间节点：`templates/spatial.json`、`schema/spatial.schema.json` 和 `docs/spatial.md` 支持投稿者用概念节点、廊道和区域说明方案空间结构；不允许坐标、bbox 或官方规划线位，portal 会以节点清单展示。
+- 场景演练台账：`templates/simulation.json` 和 `docs/simulations.md` 支持投稿者用可复算的任务台账说明 AI 场景演练读数；`simulation_task_count`、`simulation_success_rate`、`tool_schema_pass_rate`、`energy_budget_violations` 和 `audit_completeness` 由 `scripts/validate_submission.py` 从任务记录重新推导，失败、超预算和审计缺口应如实记录。
 - 方案展示配置：`templates/exhibit.json`、`schema/exhibit.schema.json`、`scripts/render_exhibit.py` 和 `scripts/render_portal.py` 支持生成标准展示页、portal 卡片、赛道筛选和方案对比，示例位于 `examples/`。
 - 方案迭代记录：`templates/changelog.md` 和 `proposal.md` 中的 `iteration` / `version` 元数据用于记录版本变化、采纳反馈和待复核事项。
 - 导出版专家评审包：`scripts/export_review_packet.py` 可把单个或多个投稿导出为本地 Markdown/HTML 评审包，并可在安装 PDF 引擎时生成 PDF，方便专家离线阅读；说明见 `docs/review-packets.md`。
@@ -222,9 +223,10 @@ submissions/octocat/ai-urban-loop/visual/index.html
 - 风险、版权与合规说明
 - 可选 `spatial.json` 概念空间节点
 - 可选 `risk.json` 风险矩阵
+- 可选 `simulation.json` 场景演练台账
 - 参考资料与来源
 
-必交文件包括：`manifest.json`、`agent.json`、`metrics.json`、`assumptions.json`、`sources.json`、`self_check.json`、`compliance_matrix.json`、`standard_matrix.json`、`design_depth_matrix.json`、`geometry/*.geojson`、`assets/figures/*.png`、`report/proposal.html`、`report/copyright_statement.md`、`drawings/a3-booklet.pdf`、`drawings/a0-boards.pdf`、`visual/index.html`。可选 `risk.json` 用于说明风险矩阵；可选 `changelog.md` 用于记录迭代过程；一旦提交，CI 会检查它们的基本格式和合规风险。`proposal.md` 是主语言主体方案，语言副本只是等义译稿；JSON/GeoJSON 是证据和复算数据，图片/PDF/HTML 是展示层。HTML 必须离线可打开，不得依赖 CDN、远程地图瓦片、外部脚本、外部字体、API 请求或 iframe。
+必交文件包括：`manifest.json`、`agent.json`、`metrics.json`、`assumptions.json`、`sources.json`、`self_check.json`、`compliance_matrix.json`、`standard_matrix.json`、`design_depth_matrix.json`、`geometry/*.geojson`、`assets/figures/*.png`、`report/proposal.html`、`report/copyright_statement.md`、`drawings/a3-booklet.pdf`、`drawings/a0-boards.pdf`、`visual/index.html`。可选 `risk.json` 用于说明风险矩阵；可选 `simulation.json` 用于登记可复算的场景演练台账；可选 `changelog.md` 用于记录迭代过程；一旦提交，CI 会检查它们的基本格式和合规风险。`proposal.md` 是主语言主体方案，语言副本只是等义译稿；JSON/GeoJSON 是证据和复算数据，图片/PDF/HTML 是展示层。HTML 必须离线可打开，不得依赖 CDN、远程地图瓦片、外部脚本、外部字体、API 请求或 iframe。
 
 可读性优先级最高。`proposal.md` 必须像一份真正的城市设计方案，而不是 JSON/GeoJSON 的目录说明；每个章节都要解释设计判断、空间图层、指标含义、标准依据和资料缺口，并在核心章节插入本地派生图。必须嵌入 `assets/figures/site-overview.png`、`land-use-structure.png`、`key-areas.png`、`mobility-bluegreen.png`、`metrics-evidence.png`。`report/proposal.html` 是从 `proposal.md` 渲染出的离线阅读版，解决不同 Markdown 预览器图片路径和排版不一致的问题；`visual/index.html` 是独立电子展示页，必须有清晰版式、图例、核心指标、任务覆盖、自检状态、来源和假设，建议 agent 使用设计/产品设计类能力完成视觉 QA。
 
@@ -262,10 +264,12 @@ CI 不替代人工评审。`package_type` 描述成果包类型，`review_status
 
 ## 本地校验
 
-安装 Python 测试依赖后，可以运行：
+安装与本次改动相关的测试依赖后，优先运行对应的测试模块。仓库中的依赖清单包括
+`requirements-validation.txt`、`requirements-review.txt` 和 `requirements-translation.txt`；
+完整测试 discovery 需要相应环境和依赖，可运行：
 
 ```bash
-python -m pytest
+python3 -m unittest discover -s tests -v
 ```
 
 校验公开资料登记表可运行：

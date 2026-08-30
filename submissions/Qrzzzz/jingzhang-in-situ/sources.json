@@ -1,7 +1,47 @@
 {
   "schema_version": "0.1.0",
-  "accessed_date": "2026-08-13",
-  "source_use_policy": "Only claim-specific sources may be cited as evidence. Processed packs are navigation aids, public case studies are background-only, and provisional geometry is never an official or precise spatial basis.",
+  "accessed_date": "2026-08-29",
+  "source_use_policy": "Only claim-specific sources may be cited as evidence. Processed packs are navigation aids; public cases and the eight R3-E official references are background-only desktop-review inputs; provisional geometry is never an official or precise spatial basis.",
+  "r5_evidence_separation": {
+    "reviewed_date": "2026-08-29",
+    "purpose": "Prevent two temporally and functionally distinct OSM evidence groups from being conflated.",
+    "groups": [
+      {
+        "group_id": "OSM-EARLY-MISMATCH-20260814",
+        "source_id": "DATA-SRC-PROVISIONAL-BOUNDARY-BASIS-20260814",
+        "role": "background_only_negative_boundary_mismatch_check",
+        "package_replayability": "not_replayable_raw_response_not_registered",
+        "supports_only": [
+          "osm_heritage_park_intersection_ratio=0.0",
+          "osm_named_street_average_offset_m=667.0"
+        ],
+        "does_not_support": [
+          "official boundary",
+          "survey",
+          "heritage control",
+          "road redline"
+        ]
+      },
+      {
+        "group_id": "OSM-R3-SITE-RECOGNITION-20260828",
+        "source_id": "DATA-SRC-OSM-CONTEXT-20260828",
+        "role": "background_only_site_recognition",
+        "package_replayability": "replayable_four_raw_overpass_snapshots_with_query_raw_and_derived_hashes",
+        "supports_only": [
+          "coarse road and rail clues",
+          "parks and cleared landmarks",
+          "coarse building morphology in R3 presentation backgrounds"
+        ],
+        "does_not_support": [
+          "the 2026-08-14 zero-percent intersection result",
+          "the 2026-08-14 667-metre offset result",
+          "required design GeoJSON",
+          "official boundary, survey, heritage control or road redline"
+        ]
+      }
+    ],
+    "non_substitution_rule": "The later replayable R3 site-recognition package does not retroactively supply the missing raw response or recomputation basis for the earlier mismatch metrics."
+  },
   "sources": [
     {
       "id": "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
@@ -27,7 +67,27 @@
         "implementation commitment beyond the announcement text"
       ],
       "license_summary": "Official public announcement retained for limited factual quotation, paraphrase and attribution; no license for unrelated images or page-layout reuse is asserted.",
-      "limitations": "Textual bounds and approximate area values cannot replace coordinate-system-verified official GIS/CAD geometry."
+      "limitations": "Textual bounds and approximate area values cannot replace coordinate-system-verified official GIS/CAD geometry.",
+      "retrieval_or_publication_date": "2026-06-03",
+      "spatial_scope": "project/corridor relevance only as stated; no geometry transfer unless explicitly listed",
+      "temporal_scope": "2026-05-09",
+      "acquisition_chain": "Repository registry or cited first-party URL -> local reference where licensed/cleared -> Phase 2 source freeze metadata.",
+      "transformation_chain": "UTF-8 read -> claim-level extraction/paraphrase -> structured source/metric/geometry reference; no raster or map copying.",
+      "content_hashes": [
+        {
+          "path": "brief/site-package/standards/references/project-official-announcement.md",
+          "sha256": "158203872171f39b41ef4d071cb662cae810a7e5ab049ef57f83b7ff96659cc3"
+        },
+        {
+          "path": "brief/site-package/design_brief.json",
+          "sha256": "884ec2be645c7906c8407f29f7a4cb1c81bd71941be7519b23f415bff5d63b1c"
+        }
+      ],
+      "hash_status": "local_snapshot_hashed",
+      "evidence_grade": "yes",
+      "redistribution_status": "existing_repository_snapshot_rights_follow_item_record",
+      "metadata_record_sha256": "c8ee055ac305f5d9abe83d83185127dfbd43de91a5b10c83a2c7092d3cffa8b4",
+      "metadata_hash_scope": "Canonical source metadata only; for URL-only sources this is explicitly not a hash of remote webpage content."
     },
     {
       "id": "DATA-SRC-AGENT-TASKBOOK-20260518",
@@ -50,7 +110,23 @@
         "government approval or implementation commitment"
       ],
       "license_summary": "User provided and cleared for repository use and public agent-facing task alignment.",
-      "limitations": "This taskbook is an assignment source, not an official spatial boundary or project approval."
+      "limitations": "This taskbook is an assignment source, not an official spatial boundary or project approval.",
+      "retrieval_or_publication_date": "2026-06-05",
+      "spatial_scope": "project/corridor relevance only as stated; no geometry transfer unless explicitly listed",
+      "temporal_scope": "2026-05-18",
+      "acquisition_chain": "Repository registry or cited first-party URL -> local reference where licensed/cleared -> Phase 2 source freeze metadata.",
+      "transformation_chain": "UTF-8 read -> claim-level extraction/paraphrase -> structured source/metric/geometry reference; no raster or map copying.",
+      "content_hashes": [
+        {
+          "path": "brief/site-package/agent_taskbook.json",
+          "sha256": "40465ac99823c78cd197f331a7729e4c5dbe6764278bdd534598f8275d5a8b7d"
+        }
+      ],
+      "hash_status": "local_snapshot_hashed",
+      "evidence_grade": "yes",
+      "redistribution_status": "existing_repository_snapshot_rights_follow_item_record",
+      "metadata_record_sha256": "3e510dd4be3a458ec6d219dc877559032b60cdfed63017054a4f2231720e160c",
+      "metadata_hash_scope": "Canonical source metadata only; for URL-only sources this is explicitly not a hash of remote webpage content."
     },
     {
       "id": "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
@@ -74,7 +150,23 @@
         "approval or implementation basis"
       ],
       "license_summary": "Repository-maintained provisional geometry for intake testing and visualization only.",
-      "limitations": "Geometry was inferred from textual bounds, location clues and approximate areas; no verified official coordinates were available."
+      "limitations": "Geometry was inferred from textual bounds, location clues and approximate areas; no verified official coordinates were available.",
+      "retrieval_or_publication_date": "2026-08-07",
+      "spatial_scope": "project/corridor relevance only as stated; no geometry transfer unless explicitly listed",
+      "temporal_scope": "2026-06-05",
+      "acquisition_chain": "Repository registry or cited first-party URL -> local reference where licensed/cleared -> Phase 2 source freeze metadata.",
+      "transformation_chain": "UTF-8 read -> claim-level extraction/paraphrase -> structured source/metric/geometry reference; no raster or map copying.",
+      "content_hashes": [
+        {
+          "path": "brief/site-package/geometry/provisional_boundaries.geojson",
+          "sha256": "0b9ae36bae6eca68157e7124e027c09615f04da5690ea636a70551584acf2306"
+        }
+      ],
+      "hash_status": "local_snapshot_hashed",
+      "evidence_grade": "provisional_only",
+      "redistribution_status": "existing_repository_snapshot_rights_follow_item_record",
+      "metadata_record_sha256": "7ac4a27f8a4e56d4552771eeefd57d73ce0577587121d33167b34637566b3061",
+      "metadata_hash_scope": "Canonical source metadata only; for URL-only sources this is explicitly not a hash of remote webpage content."
     },
     {
       "id": "REPO-SOURCE-REGISTRY",
@@ -93,7 +185,23 @@
         "substitution for the underlying primary source"
       ],
       "license_summary": "Repository metadata; underlying-source rights and limits continue to apply.",
-      "limitations": "A registry entry does not upgrade provisional or background material to formal evidence."
+      "limitations": "A registry entry does not upgrade provisional or background material to formal evidence.",
+      "retrieval_or_publication_date": "2026-08-13",
+      "spatial_scope": "project/corridor relevance only as stated; no geometry transfer unless explicitly listed",
+      "temporal_scope": "2026-08-09",
+      "acquisition_chain": "Repository registry or cited first-party URL -> local reference where licensed/cleared -> Phase 2 source freeze metadata.",
+      "transformation_chain": "UTF-8 read -> claim-level extraction/paraphrase -> structured source/metric/geometry reference; no raster or map copying.",
+      "content_hashes": [
+        {
+          "path": "data/source_registry.json",
+          "sha256": "4784e80d2d3662be2f4d8c46451ddb9b11e06058150786a784a870cd92a91c66"
+        }
+      ],
+      "hash_status": "local_snapshot_hashed",
+      "evidence_grade": "navigation_only",
+      "redistribution_status": "existing_repository_snapshot_rights_follow_item_record",
+      "metadata_record_sha256": "168e48663ae988b16a098ec6aef4fea335e8b20485c16a0f30a7fcd796f720dc",
+      "metadata_hash_scope": "Canonical source metadata only; for URL-only sources this is explicitly not a hash of remote webpage content."
     },
     {
       "id": "REPO-PROCESSED-FACT-PACK",
@@ -113,7 +221,23 @@
         "overriding limitations of the underlying source"
       ],
       "license_summary": "Repository-processed navigation layer; cite the underlying registered source for substantive claims.",
-      "limitations": "Transformations may omit context; verify every material claim against its direct source."
+      "limitations": "Transformations may omit context; verify every material claim against its direct source.",
+      "retrieval_or_publication_date": "2026-08-13",
+      "spatial_scope": "project/corridor relevance only as stated; no geometry transfer unless explicitly listed",
+      "temporal_scope": "2026-08-09",
+      "acquisition_chain": "Repository registry or cited first-party URL -> local reference where licensed/cleared -> Phase 2 source freeze metadata.",
+      "transformation_chain": "UTF-8 read -> claim-level extraction/paraphrase -> structured source/metric/geometry reference; no raster or map copying.",
+      "content_hashes": [
+        {
+          "path": "data/processed/agent_fact_pack.md",
+          "sha256": "9dc23086fed2b118b67f28741834f3cb679d9c79be38419e05bf76ed3994952d"
+        }
+      ],
+      "hash_status": "local_snapshot_hashed",
+      "evidence_grade": "navigation_only",
+      "redistribution_status": "existing_repository_snapshot_rights_follow_item_record",
+      "metadata_record_sha256": "1ea227796b00ec654fe125df155b8b10e5eb2a2278efd3852f9c70c04bd57582",
+      "metadata_hash_scope": "Canonical source metadata only; for URL-only sources this is explicitly not a hash of remote webpage content."
     },
     {
       "id": "CASE-SEOUL-AI-HUB-20250710",
@@ -135,7 +259,18 @@
         "implying local funding or partnership commitments"
       ],
       "license_summary": "No open-content reuse license was verified; use factual paraphrase, attribution and a link only.",
-      "limitations": "Program scale, governance and funding context differ from the Jing-Zhang corridor."
+      "limitations": "Program scale, governance and funding context differ from the Jing-Zhang corridor.",
+      "retrieval_or_publication_date": "2026-08-13",
+      "spatial_scope": "project/corridor relevance only as stated; no geometry transfer unless explicitly listed",
+      "temporal_scope": "2025-07-10",
+      "acquisition_chain": "Repository registry or cited first-party URL -> local reference where licensed/cleared -> Phase 2 source freeze metadata.",
+      "transformation_chain": "UTF-8 read -> claim-level extraction/paraphrase -> structured source/metric/geometry reference; no raster or map copying.",
+      "content_hashes": [],
+      "hash_status": "url_only_no_redistributable_snapshot",
+      "evidence_grade": "background_only",
+      "redistribution_status": "metadata_and_link_only",
+      "metadata_record_sha256": "8e0f27c0a4d02c33d9fac614af908e7f30106ed94637746e8fa4c459ee711c68",
+      "metadata_hash_scope": "Canonical source metadata only; for URL-only sources this is explicitly not a hash of remote webpage content."
     },
     {
       "id": "CASE-SINGAPORE-ONE-NORTH-20230703",
@@ -160,7 +295,18 @@
         "claiming equivalent governance authority"
       ],
       "license_summary": "No open reuse license was verified; cite and paraphrase only.",
-      "limitations": "Land tenure and development-agency powers are not transferable."
+      "limitations": "Land tenure and development-agency powers are not transferable.",
+      "retrieval_or_publication_date": "2026-08-13",
+      "spatial_scope": "project/corridor relevance only as stated; no geometry transfer unless explicitly listed",
+      "temporal_scope": "2023-07-03",
+      "acquisition_chain": "Repository registry or cited first-party URL -> local reference where licensed/cleared -> Phase 2 source freeze metadata.",
+      "transformation_chain": "UTF-8 read -> claim-level extraction/paraphrase -> structured source/metric/geometry reference; no raster or map copying.",
+      "content_hashes": [],
+      "hash_status": "url_only_no_redistributable_snapshot",
+      "evidence_grade": "background_only",
+      "redistribution_status": "metadata_and_link_only",
+      "metadata_record_sha256": "62e854ed2ff663102bb96d9c78860dfe96c595d544dffe0254461b44f5ce39fa",
+      "metadata_hash_scope": "Canonical source metadata only; for URL-only sources this is explicitly not a hash of remote webpage content."
     },
     {
       "id": "CASE-STATION-F-FAI-20260211",
@@ -185,7 +331,18 @@
         "claiming identical cohort outcomes"
       ],
       "license_summary": "No open-content license was verified; use attributed factual paraphrase only.",
-      "limitations": "Private-campus operations and partner structures require local adaptation."
+      "limitations": "Private-campus operations and partner structures require local adaptation.",
+      "retrieval_or_publication_date": "2026-08-13",
+      "spatial_scope": "project/corridor relevance only as stated; no geometry transfer unless explicitly listed",
+      "temporal_scope": "2026-02-11",
+      "acquisition_chain": "Repository registry or cited first-party URL -> local reference where licensed/cleared -> Phase 2 source freeze metadata.",
+      "transformation_chain": "UTF-8 read -> claim-level extraction/paraphrase -> structured source/metric/geometry reference; no raster or map copying.",
+      "content_hashes": [],
+      "hash_status": "url_only_no_redistributable_snapshot",
+      "evidence_grade": "background_only",
+      "redistribution_status": "metadata_and_link_only",
+      "metadata_record_sha256": "6dcd53d4712ecf7775ed06ec076f5e6789e21a28e9eae43223de50329cbd0b8d",
+      "metadata_hash_scope": "Canonical source metadata only; for URL-only sources this is explicitly not a hash of remote webpage content."
     },
     {
       "id": "CASE-HELSINKI-MARIA-AREA",
@@ -211,7 +368,18 @@
         "treating projected dates as local requirements"
       ],
       "license_summary": "No open reuse license was verified; paraphrase with attribution and source link.",
-      "limitations": "The main city page is undated; retain the access date and distinguish the municipal source from the operator source."
+      "limitations": "The main city page is undated; retain the access date and distinguish the municipal source from the operator source.",
+      "retrieval_or_publication_date": "2026-08-13",
+      "spatial_scope": "project/corridor relevance only as stated; no geometry transfer unless explicitly listed",
+      "temporal_scope": "undated source, bounded by accessed date",
+      "acquisition_chain": "Repository registry or cited first-party URL -> local reference where licensed/cleared -> Phase 2 source freeze metadata.",
+      "transformation_chain": "UTF-8 read -> claim-level extraction/paraphrase -> structured source/metric/geometry reference; no raster or map copying.",
+      "content_hashes": [],
+      "hash_status": "url_only_no_redistributable_snapshot",
+      "evidence_grade": "background_only",
+      "redistribution_status": "metadata_and_link_only",
+      "metadata_record_sha256": "7b56d888392bf365d1f456aaa8361c0652130a77ce23ef344af21ef4c46a92d3",
+      "metadata_hash_scope": "Canonical source metadata only; for URL-only sources this is explicitly not a hash of remote webpage content."
     },
     {
       "id": "CASE-MILA-IMPACT-20211118",
@@ -236,7 +404,18 @@
         "implying Mila participation"
       ],
       "license_summary": "No open reuse license was verified; summarize facts and link to the source.",
-      "limitations": "Institute-scale research metrics are not comparable to district-scale planning metrics."
+      "limitations": "Institute-scale research metrics are not comparable to district-scale planning metrics.",
+      "retrieval_or_publication_date": "2026-08-13",
+      "spatial_scope": "project/corridor relevance only as stated; no geometry transfer unless explicitly listed",
+      "temporal_scope": "2021-11-18",
+      "acquisition_chain": "Repository registry or cited first-party URL -> local reference where licensed/cleared -> Phase 2 source freeze metadata.",
+      "transformation_chain": "UTF-8 read -> claim-level extraction/paraphrase -> structured source/metric/geometry reference; no raster or map copying.",
+      "content_hashes": [],
+      "hash_status": "url_only_no_redistributable_snapshot",
+      "evidence_grade": "background_only",
+      "redistribution_status": "metadata_and_link_only",
+      "metadata_record_sha256": "2a3a49721bf841a9930212c2d40d58bdbb5e0b681ac1a5e5e15283a9d53f34b8",
+      "metadata_hash_scope": "Canonical source metadata only; for URL-only sources this is explicitly not a hash of remote webpage content."
     },
     {
       "id": "CASE-DUBAI-FUTURE-ACCELERATORS",
@@ -262,7 +441,18 @@
         "copying visual or brand assets"
       ],
       "license_summary": "No open-content license was verified; use attributed paraphrase only.",
-      "limitations": "Regulatory powers and financing instruments cannot be assumed locally."
+      "limitations": "Regulatory powers and financing instruments cannot be assumed locally.",
+      "retrieval_or_publication_date": "2026-08-13",
+      "spatial_scope": "project/corridor relevance only as stated; no geometry transfer unless explicitly listed",
+      "temporal_scope": "undated source, bounded by accessed date",
+      "acquisition_chain": "Repository registry or cited first-party URL -> local reference where licensed/cleared -> Phase 2 source freeze metadata.",
+      "transformation_chain": "UTF-8 read -> claim-level extraction/paraphrase -> structured source/metric/geometry reference; no raster or map copying.",
+      "content_hashes": [],
+      "hash_status": "url_only_no_redistributable_snapshot",
+      "evidence_grade": "background_only",
+      "redistribution_status": "metadata_and_link_only",
+      "metadata_record_sha256": "bf5ff25be35a0d7902d9fbbf675e392203445aec648b53a4bce48a37330e53f1",
+      "metadata_hash_scope": "Canonical source metadata only; for URL-only sources this is explicitly not a hash of remote webpage content."
     },
     {
       "id": "CASE-AMSTERDAM-MARINETERREIN",
@@ -284,7 +474,718 @@
         "transferring land-use or participation outcomes"
       ],
       "license_summary": "No open reuse license was verified; cite and paraphrase only.",
-      "limitations": "Dutch planning and participation procedures are not transferable as legal precedent."
+      "limitations": "Dutch planning and participation procedures are not transferable as legal precedent.",
+      "retrieval_or_publication_date": "2026-08-13",
+      "spatial_scope": "project/corridor relevance only as stated; no geometry transfer unless explicitly listed",
+      "temporal_scope": "undated source, bounded by accessed date",
+      "acquisition_chain": "Repository registry or cited first-party URL -> local reference where licensed/cleared -> Phase 2 source freeze metadata.",
+      "transformation_chain": "UTF-8 read -> claim-level extraction/paraphrase -> structured source/metric/geometry reference; no raster or map copying.",
+      "content_hashes": [],
+      "hash_status": "url_only_no_redistributable_snapshot",
+      "evidence_grade": "background_only",
+      "redistribution_status": "metadata_and_link_only",
+      "metadata_record_sha256": "69db0c874f33e9fcac559f081773569e910bfef781b991ee5a2457477d975307",
+      "metadata_hash_scope": "Canonical source metadata only; for URL-only sources this is explicitly not a hash of remote webpage content."
+    },
+    {
+      "id": "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+      "title": "城市设计管理办法",
+      "publisher": "中华人民共和国住房和城乡建设部",
+      "url": "https://www.mohurd.gov.cn/gongkai/zc/wjk/art/2023/art_17339_775476.html",
+      "local_paths": [
+        "brief/site-package/standards/references/mohurd-urban-design-measures.md"
+      ],
+      "source_type": "official_public",
+      "authority_level": "A0",
+      "published_date": "2017-03-14",
+      "accessed_date": "2026-06-03",
+      "usable_for_formal": "yes",
+      "allowed_uses": [
+        "urban design purpose and scope",
+        "public space and city character requirements",
+        "building height, volume, style, color, skyline and interface control references"
+      ],
+      "prohibited_uses": [
+        "project-specific planning approval",
+        "site-specific quantitative control without official attachments"
+      ],
+      "license_summary": "Official public standard/policy page snapshot retained for reference and citation.",
+      "limitations": "可作为专业标准响应依据。",
+      "retrieval_or_publication_date": "2026-06-03",
+      "spatial_scope": "project/corridor relevance only as stated; no geometry transfer unless explicitly listed",
+      "temporal_scope": "2017-03-14",
+      "acquisition_chain": "Repository registry or cited first-party URL -> local reference where licensed/cleared -> Phase 2 source freeze metadata.",
+      "transformation_chain": "UTF-8 read -> claim-level extraction/paraphrase -> structured source/metric/geometry reference; no raster or map copying.",
+      "content_hashes": [
+        {
+          "path": "brief/site-package/standards/references/mohurd-urban-design-measures.md",
+          "sha256": "bf456cb9bc91ffc1d384670ce34126c31c9f9353983d876a8d58ebdd692cd25c"
+        }
+      ],
+      "hash_status": "local_snapshot_hashed",
+      "evidence_grade": "yes",
+      "redistribution_status": "existing_repository_snapshot_rights_follow_item_record",
+      "metadata_record_sha256": "acc49a9c4e6ed5dcbce0cb42b5591f2a3094d29c9478d943c940120c3c240a01",
+      "metadata_hash_scope": "Canonical source metadata only; for URL-only sources this is explicitly not a hash of remote webpage content."
+    },
+    {
+      "id": "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+      "title": "城市、镇控制性详细规划编制审批办法",
+      "publisher": "中华人民共和国住房和城乡建设部",
+      "url": "https://www.gov.cn/zhengce/2022-01/25/content_5711967.htm",
+      "local_paths": [
+        "brief/site-package/standards/references/mohurd-control-detailed-planning.md"
+      ],
+      "source_type": "official_public",
+      "authority_level": "A0",
+      "published_date": null,
+      "accessed_date": "2026-06-03",
+      "usable_for_formal": "yes",
+      "allowed_uses": [
+        "regulatory detailed planning depth reference",
+        "planning permission and implementation-management boundary language"
+      ],
+      "prohibited_uses": [
+        "claiming this project has approved regulatory controls",
+        "inventing FAR, height, road redline, ownership, municipal or fire-control conclusions"
+      ],
+      "license_summary": "Official public government page snapshot retained for reference and citation.",
+      "limitations": "可要求 agent 区分已知控制与待补控制。",
+      "retrieval_or_publication_date": "2026-06-03",
+      "spatial_scope": "project/corridor relevance only as stated; no geometry transfer unless explicitly listed",
+      "temporal_scope": "undated source, bounded by accessed date",
+      "acquisition_chain": "Repository registry or cited first-party URL -> local reference where licensed/cleared -> Phase 2 source freeze metadata.",
+      "transformation_chain": "UTF-8 read -> claim-level extraction/paraphrase -> structured source/metric/geometry reference; no raster or map copying.",
+      "content_hashes": [
+        {
+          "path": "brief/site-package/standards/references/mohurd-control-detailed-planning.md",
+          "sha256": "4c221dbdaba8536916759396e901317a5f2a95ac289eb617cc23d7b53dd5fe23"
+        }
+      ],
+      "hash_status": "local_snapshot_hashed",
+      "evidence_grade": "yes",
+      "redistribution_status": "existing_repository_snapshot_rights_follow_item_record",
+      "metadata_record_sha256": "85ff95af41a96663b243a2dc081df6106a4e006b6e8bceb90077f2f1b44fa298",
+      "metadata_hash_scope": "Canonical source metadata only; for URL-only sources this is explicitly not a hash of remote webpage content."
+    },
+    {
+      "id": "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+      "title": "自然资源部关于印发《国土空间调查、规划、用途管制用地用海分类指南》的通知",
+      "publisher": "自然资源部",
+      "url": "https://www.gov.cn/zhengce/zhengceku/202311/content_6917279.htm",
+      "local_paths": [
+        "brief/site-package/standards/references/mnr-land-use-classification-guide.md"
+      ],
+      "source_type": "official_public",
+      "authority_level": "A0",
+      "published_date": "2023-11-22",
+      "accessed_date": "2026-06-03",
+      "usable_for_formal": "yes",
+      "allowed_uses": [
+        "land-use classification terminology",
+        "land-use code reference for structured GeoJSON and metrics"
+      ],
+      "prohibited_uses": [
+        "site-specific land-use approval",
+        "replacement for official regulatory plan conditions"
+      ],
+      "license_summary": "Official public government page snapshot retained for reference and citation.",
+      "limitations": "可用于统一 land_use_code 语义。",
+      "retrieval_or_publication_date": "2026-06-03",
+      "spatial_scope": "project/corridor relevance only as stated; no geometry transfer unless explicitly listed",
+      "temporal_scope": "2023-11-22",
+      "acquisition_chain": "Repository registry or cited first-party URL -> local reference where licensed/cleared -> Phase 2 source freeze metadata.",
+      "transformation_chain": "UTF-8 read -> claim-level extraction/paraphrase -> structured source/metric/geometry reference; no raster or map copying.",
+      "content_hashes": [
+        {
+          "path": "brief/site-package/standards/references/mnr-land-use-classification-guide.md",
+          "sha256": "3ecf58d1ad076c2c6e46616cbefbcbd4a828d94cd35cfb30f230af455877b43a"
+        }
+      ],
+      "hash_status": "local_snapshot_hashed",
+      "evidence_grade": "yes",
+      "redistribution_status": "existing_repository_snapshot_rights_follow_item_record",
+      "metadata_record_sha256": "65a7d579bb6dbe27256df160643d2d9282c8cc49aa350d87a11e14c51095ecaf",
+      "metadata_hash_scope": "Canonical source metadata only; for URL-only sources this is explicitly not a hash of remote webpage content."
+    },
+    {
+      "id": "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+      "title": "生成式人工智能服务管理暂行办法",
+      "publisher": "国家互联网信息办公室等七部门",
+      "url": "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm",
+      "local_paths": [
+        "brief/site-package/standards/references/generative-ai-interim-measures.md"
+      ],
+      "source_type": "official_public",
+      "authority_level": "A0",
+      "published_date": "2023-07-13",
+      "accessed_date": "2026-08-09",
+      "usable_for_formal": "yes",
+      "allowed_uses": [
+        "Article 2 scope for services that use generative AI to provide generated text, images, audio or video to the public within mainland China",
+        "Article 14 unlawful-content and service-handling duties, not a general user opt-out requirement",
+        "Article 15 complaint and reporting channels with timely handling; the Measures do not set a numeric statutory response deadline",
+        "Article 17 security-assessment and filing references only for services with public-opinion or social-mobilization capacity"
+      ],
+      "prohibited_uses": [
+        "legal opinion or case-specific compliance determination",
+        "inferring that a service completed filing or security assessment",
+        "generalizing the measures to every AI application, urban design project or non-generative system",
+        "inferring a general user opt-out right from Article 14, a numeric deadline from Article 15, or Article 17 duties for services without public-opinion or social-mobilization capacity"
+      ],
+      "license_summary": "Official public government text; attributed Markdown snapshot retained for reference. No reuse permission is inferred for page chrome, images or third-party editorial content; any reuse remains subject to official terms.",
+      "limitations": "官方页面标注 2023-07-13 发布、2023-08-15 施行；第2条适用范围是向境内公众提供生成文本、图片、音频、视频等内容的生成式人工智能服务。第14条是违法内容与服务处置，不是一般用户退出权；第15条有投诉举报和及时处理要求，但没有法定数字响应期限；第17条安全评估、备案等表述仅针对具有舆论属性或社会动员能力的服务。快照仅供离线检索，正式引用仍以官方页面为准。",
+      "retrieval_or_publication_date": "2026-08-09",
+      "spatial_scope": "project/corridor relevance only as stated; no geometry transfer unless explicitly listed",
+      "temporal_scope": "2023-07-13",
+      "acquisition_chain": "Repository registry or cited first-party URL -> local reference where licensed/cleared -> Phase 2 source freeze metadata.",
+      "transformation_chain": "UTF-8 read -> claim-level extraction/paraphrase -> structured source/metric/geometry reference; no raster or map copying.",
+      "content_hashes": [
+        {
+          "path": "brief/site-package/standards/references/generative-ai-interim-measures.md",
+          "sha256": "a2900c3b054d5f460ff531456656458fafd96adb2b947987c69d83e518a09f64"
+        }
+      ],
+      "hash_status": "local_snapshot_hashed",
+      "evidence_grade": "yes",
+      "redistribution_status": "existing_repository_snapshot_rights_follow_item_record",
+      "metadata_record_sha256": "d5b6cb7c8db6f1e91579450d0c376a51a6aef59ca05a9fe1737892ef133e4039",
+      "metadata_hash_scope": "Canonical source metadata only; for URL-only sources this is explicitly not a hash of remote webpage content."
+    },
+    {
+      "id": "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+      "title": "中华人民共和国无障碍环境建设法",
+      "publisher": "全国人民代表大会常务委员会",
+      "url": "https://www.gov.cn/yaowen/liebiao/202306/content_6888910.htm",
+      "local_paths": [
+        "brief/site-package/standards/references/barrier-free-environment-law.md"
+      ],
+      "source_type": "official_public",
+      "authority_level": "A0",
+      "published_date": "2023-06-28",
+      "accessed_date": "2026-08-09",
+      "usable_for_formal": "yes",
+      "allowed_uses": [
+        "Article 39 requirement for on-site guidance and human-operated service in public service venues handling medical, social-security, financial or living-payment services",
+        "accessibility and human-fallback baseline only for the expressly listed service contexts"
+      ],
+      "prohibited_uses": [
+        "legal opinion or venue-specific compliance determination",
+        "inferring the accessibility compliance status of existing facilities",
+        "generalizing the human-service requirement to every public space or digital interface"
+      ],
+      "license_summary": "Official public government text; attributed Markdown snapshot retained for reference. No reuse permission is inferred for page chrome, images or third-party editorial content; any reuse remains subject to official terms.",
+      "limitations": "法律于 2023-06-28 通过（人大常委会通过/公布），gov.cn/Xinhua 页面于 2023-06-29 发布；2023-09-01 起施行。第39条的现场指导、人工办理边界仅限正文列举的医疗、社会保障、金融、生活缴费等服务事项公共服务场所，不能泛化为所有公共空间或数字界面。快照仅供离线检索，具体场所合规仍需单独判断。",
+      "retrieval_or_publication_date": "2026-08-09",
+      "spatial_scope": "project/corridor relevance only as stated; no geometry transfer unless explicitly listed",
+      "temporal_scope": "2023-06-28",
+      "acquisition_chain": "Repository registry or cited first-party URL -> local reference where licensed/cleared -> Phase 2 source freeze metadata.",
+      "transformation_chain": "UTF-8 read -> claim-level extraction/paraphrase -> structured source/metric/geometry reference; no raster or map copying.",
+      "content_hashes": [
+        {
+          "path": "brief/site-package/standards/references/barrier-free-environment-law.md",
+          "sha256": "c4c99ec4f8ea7851f44d485fb3a0c7ce84be117beaa3361da18508a6c3f35dc3"
+        }
+      ],
+      "hash_status": "local_snapshot_hashed",
+      "evidence_grade": "yes",
+      "redistribution_status": "existing_repository_snapshot_rights_follow_item_record",
+      "metadata_record_sha256": "8efd21c7c5acb01b0c60ee606ed0c6b4f490e8521de7a096879b92d44214512a",
+      "metadata_hash_scope": "Canonical source metadata only; for URL-only sources this is explicitly not a hash of remote webpage content."
+    },
+    {
+      "id": "DATA-SRC-ELDERLY-SMART-TECH-PLAN-2020-45",
+      "title": "国务院办公厅关于印发《关于切实解决老年人运用智能技术困难实施方案》的通知（国办发〔2020〕45号）",
+      "publisher": "国务院办公厅",
+      "url": "https://www.gov.cn/zhengce/content/2020-11/24/content_5563804.htm",
+      "local_paths": [
+        "brief/site-package/standards/references/elderly-smart-tech-plan-2020-45.md"
+      ],
+      "source_type": "official_public",
+      "authority_level": "A0",
+      "published_date": "2020-11-24",
+      "accessed_date": "2026-08-09",
+      "usable_for_formal": "background_only",
+      "allowed_uses": [
+        "background context for running traditional service channels in parallel with smart services",
+        "reference to high-frequency scenarios such as travel, medical care, consumption, culture and administrative affairs"
+      ],
+      "prohibited_uses": [
+        "compliance evaluation of a specific service provider",
+        "inferring that a local area or service has implemented the policy",
+        "inferring local elderly usage or demand figures",
+        "treating this policy notice as a site-specific statutory control"
+      ],
+      "license_summary": "Official public policy text; attributed Markdown snapshot retained for background reference. No reuse permission is inferred for page chrome, images or third-party editorial content; any reuse remains subject to official terms.",
+      "limitations": "国办发〔2020〕45号，2020-11-24 发布；提出传统服务方式与智能化服务创新并行，并列举老年人高频服务场景。该文件面向全国，未提供海淀区空间落位或本地实施结论。作为政策背景参照，不写成具体项目法定控制。",
+      "retrieval_or_publication_date": "2026-08-09",
+      "spatial_scope": "project/corridor relevance only as stated; no geometry transfer unless explicitly listed",
+      "temporal_scope": "2020-11-24",
+      "acquisition_chain": "Repository registry or cited first-party URL -> local reference where licensed/cleared -> Phase 2 source freeze metadata.",
+      "transformation_chain": "UTF-8 read -> claim-level extraction/paraphrase -> structured source/metric/geometry reference; no raster or map copying.",
+      "content_hashes": [
+        {
+          "path": "brief/site-package/standards/references/elderly-smart-tech-plan-2020-45.md",
+          "sha256": "5db53c32b4045ba441bf58b60b5f6b5ab5c0d9165193ebac2072e5df2c120940"
+        }
+      ],
+      "hash_status": "local_snapshot_hashed",
+      "evidence_grade": "background_only",
+      "redistribution_status": "existing_repository_snapshot_rights_follow_item_record",
+      "metadata_record_sha256": "6fe54b82e3cf68b21bfa6819c766284767d2c53402898c9bbd4fe4515a72e76c",
+      "metadata_hash_scope": "Canonical source metadata only; for URL-only sources this is explicitly not a hash of remote webpage content."
+    },
+    {
+      "id": "DATA-SRC-PROVISIONAL-BOUNDARY-BASIS-20260814",
+      "title": "Provisional boundary derivation and mismatch checks",
+      "publisher": "Repository maintainers",
+      "path": "brief/site-package/geometry/provisional_boundaries_basis.md",
+      "source_type": "agent_inferred_from_public_data",
+      "authority_level": "BACKGROUND_ONLY",
+      "published_date": "2026-08-14",
+      "accessed_date": "2026-08-27",
+      "usable_for_formal": "background_only",
+      "allowed_uses": [
+        "audit derivation chain",
+        "retain negative OSM mismatch results",
+        "define future replacement triggers"
+      ],
+      "prohibited_uses": [
+        "official boundary correction",
+        "survey or road-redline claim",
+        "heritage-control conclusion",
+        "redistribution of an unregistered raw OSM snapshot"
+      ],
+      "license_summary": "The repository-authored derivation note follows its source-file rights record; no blanket repository-wide license or raw OSM redistribution right is asserted.",
+      "limitations": "The note records a crowdsourced-data mismatch check; it cannot establish legal or surveyed geometry.",
+      "retrieval_or_publication_date": "2026-08-27",
+      "spatial_scope": "project/corridor relevance only as stated; no geometry transfer unless explicitly listed",
+      "temporal_scope": "2026-08-14",
+      "acquisition_chain": "Repository registry or cited first-party URL -> local reference where licensed/cleared -> Phase 2 source freeze metadata.",
+      "transformation_chain": "UTF-8 read -> claim-level extraction/paraphrase -> structured source/metric/geometry reference; no raster or map copying.",
+      "content_hashes": [
+        {
+          "path": "brief/site-package/geometry/provisional_boundaries_basis.md",
+          "sha256": "295869f7aafeae28c521eb45961ddc1c75d97692f7063ffed91b079a14e94910"
+        }
+      ],
+      "hash_status": "local_snapshot_hashed",
+      "evidence_grade": "background_only",
+      "redistribution_status": "existing_repository_snapshot_rights_follow_item_record",
+      "metadata_record_sha256": "f9030e563fa8a158d9bd0dc863043a58d50e35df2f4d837c2237fe76e2b63d32",
+      "metadata_hash_scope": "Canonical source metadata only; for URL-only sources this is explicitly not a hash of remote webpage content."
+    },
+    {
+      "id": "DATA-SRC-OSM-CONTEXT-20260828",
+      "title": "Fixed OpenStreetMap / Overpass background snapshot for R3 site recognition",
+      "publisher": "OpenStreetMap contributors",
+      "url": "https://overpass-api.de/api/interpreter",
+      "attribution_url": "https://www.openstreetmap.org/copyright",
+      "local_paths": [
+        "visual/assets/r3-osm-corridor-snapshot.json",
+        "visual/assets/r3-osm-zhongzhiyuan-snapshot.json",
+        "visual/assets/r3-osm-ai_origin-snapshot.json",
+        "visual/assets/r3-osm-dazhongsi-snapshot.json",
+        "visual/assets/r3-site-context.json",
+        "visual/assets/r3-site-context-builder-source.json"
+      ],
+      "source_type": "public_open_data",
+      "authority_level": "BACKGROUND_ONLY",
+      "published_date": null,
+      "accessed_date": "2026-08-28",
+      "usable_for_formal": "background_only",
+      "allowed_uses": [
+        "recognize public roads, rail traces, parks, water, landmarks and coarse existing building morphology",
+        "compare three key areas at one projected scale",
+        "locate candidate CX paths against background context without changing their authority"
+      ],
+      "prohibited_uses": [
+        "survey or engineering base map",
+        "official project boundary, road redline, parcel, ownership or statutory land-use claim",
+        "heritage-control or protection-line claim",
+        "accessibility, safety, capacity, legal, operating-entity or approval finding",
+        "writing open-data features into required design GeoJSON"
+      ],
+      "license_summary": "OpenStreetMap data is available under the Open Data Commons Open Database License 1.0 (ODbL). The package keeps fixed raw responses, query text, hashes and visible attribution; any database reuse remains subject to the ODbL, including attribution and share-alike obligations for derived databases.",
+      "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "limitations": "Crowdsourced context retrieved through a read-only Overpass query; completeness and positional accuracy are not guaranteed. It is background/open-data-derived only and does not replace fieldwork, official GIS/CAD, title, heritage, accessibility, safety or legal evidence.",
+      "retrieval_or_publication_date": "2026-08-28",
+      "spatial_scope": "Fixed corridor bbox 39.9380,116.3250,40.0270,116.3630 plus three fixed building-query bboxes recorded in the snapshot queries.",
+      "temporal_scope": "OSM base timestamps 2026-08-28T10:42:15Z through 2026-08-28T10:45:20Z; retrievals 2026-08-28T10:45:02Z through 2026-08-28T10:46:36Z.",
+      "acquisition_chain": "Overpass API POST with recorded UTF-8 query and one-off project User-Agent -> raw JSON response -> exact SHA-256 -> deterministic XZ preset 9 extreme + base64 package snapshot.",
+      "transformation_chain": "Validate query and raw-response SHA-256 -> decode Overpass out geom -> project to EPSG:4548 -> topology-preserving simplification -> 0.01 m rounding -> omit repeated per-feature authority fields under one background-only layer contract -> compact JSON -> isolated background render layers.",
+      "content_hashes": [
+        {
+          "path": "visual/assets/r3-osm-corridor-snapshot.json",
+          "sha256": "3cf9aa0c56cf4abdfcc4e380927ac88d3f14b5fae4f3000847abba95c043537a"
+        },
+        {
+          "path": "visual/assets/r3-osm-zhongzhiyuan-snapshot.json",
+          "sha256": "57f575b3c3f858482d9b2d9c9501834dc3fd367c0444e2e5e7a15f4711a678c5"
+        },
+        {
+          "path": "visual/assets/r3-osm-ai_origin-snapshot.json",
+          "sha256": "2c806a2f87f003dbf5ec4dd462624715780d1b3db7a63ec66ddbccc4a29f1770"
+        },
+        {
+          "path": "visual/assets/r3-osm-dazhongsi-snapshot.json",
+          "sha256": "94530599dddd00b9dfd604ce7e8454c238e7bfa4980f54d5a5c22475a2aaf1fa"
+        },
+        {
+          "path": "visual/assets/r3-site-context.json",
+          "sha256": "b4db339331b4a69b0302153c355d2bb4089b26e148ec2cbac487ae2701117c92"
+        },
+        {
+          "path": "visual/assets/r3-site-context-builder-source.json",
+          "sha256": "ce0e540d815993da7c9f0d881420a3d29da9039007eb7fb8dc0be839594384ca"
+        }
+      ],
+      "raw_response_hashes": {
+        "corridor": "8dad196202f791ac49ecb353f45447539769b3baf877e716292b0acaacb3ac7c",
+        "zhongzhiyuan": "51ec26b19c638cbd59d37a78d9bc3fc45fcb89eda891181cb025267331432fb7",
+        "ai_origin": "471e7ae53d7cd0c16d683c478b9e4c32a8062d1ae5c3a74b1bb5c733a29d3d0c",
+        "dazhongsi": "4b658b531b8154593bd19e6a99d540d9b1105c8e3c25a3a4673c10777b4fd84e"
+      },
+      "hash_status": "raw_and_derived_snapshots_hashed",
+      "evidence_grade": "background_only",
+      "redistribution_status": "ODbL-1.0; attribution required; derived database share-alike applies",
+      "visible_attribution_zh": "© OpenStreetMap 贡献者 · ODbL 1.0 · 开放资料推导背景；非测绘/法定控制/道路红线",
+      "visible_attribution_en": "© OpenStreetMap contributors · ODbL 1.0 · open-data-derived context; not survey/statutory/road redline",
+      "metadata_record_sha256": "e805f6320e19a4b6f61cde68e251071e6a15e95c1d53911b7f5abef4ca5d13ef",
+      "metadata_hash_scope": "Canonical JSON of this source record excluding metadata_record_sha256."
+    },
+    {
+      "id": "DATA-SRC-R3E-JINGZHANG-CONTROL-PLAN-RESPONSE-20250208",
+      "title": "京张铁路遗址公园沿线人工智能创新街区控规草案公示采信情况通告",
+      "publisher": "北京市规划和自然资源委员会海淀分局",
+      "url": "https://ghzrzyw.beijing.gov.cn/chengxiangguihua/ghlgg/hd_ghlgg/202502/t20250207_4005553.html",
+      "local_paths": [
+        "visual/assets/r3e-official-source-snapshots.json#/sources/0"
+      ],
+      "source_type": "official_public_reference",
+      "authority_level": "official_text_only_no_project_geometry",
+      "published_date": "2025-02-08",
+      "accessed_date": "2026-08-28",
+      "usable_for_formal": "background_only",
+      "allowed_uses": [
+        "road-class and intersection-form desktop review",
+        "later-stage road-redline data gap"
+      ],
+      "prohibited_uses": [
+        "road or redline geometry",
+        "width, capacity, feasibility or approval"
+      ],
+      "license_summary": "Official public page retained as metadata, hash and limited factual paraphrase only; page layout and images are not reused.",
+      "limitations": "The page gives textual planning conclusions but no project-usable linework, width or coordinates.",
+      "acquisition_chain": "Official first-party HTTPS retrieval on accessed_date -> response/attachment byte hash -> metadata-only package record; response and attachment bodies are not redistributed.",
+      "transformation_chain": "Verify HTTP status, byte count and SHA-256 -> limited factual paraphrase and review-interface mapping -> JSON Pointer to metadata snapshot; no geometry, raster, or standard text copied.",
+      "content_hashes": [
+        {
+          "kind": "retrieved_http_response",
+          "sha256": "e37446c8f0d675b31031468a5aa37fcfcc2b62a7df30298d91432544b1214f0d"
+        }
+      ],
+      "evidence_grade": "reference_only",
+      "redistribution_status": "metadata_hash_and_link_only_no_response_or_attachment_body",
+      "retrieval_or_publication_date": "2026-08-28",
+      "spatial_scope": "review interface only; no project geometry transfer",
+      "temporal_scope": "2025-02-08",
+      "hash_status": "retrieved_response_hash_recorded_body_not_redistributed",
+      "metadata_hash_scope": "Canonical JSON of this source record excluding metadata_record_sha256; content_hashes identify retrieved external bytes, not packaged copies.",
+      "metadata_record_sha256": "3f24c9a47d76613d70a24504292e2665d3a56ce33a37866a77d1263479337cea"
+    },
+    {
+      "id": "DATA-SRC-R3E-PARCEL-ACCESS-LIMITATION-2015",
+      "title": "不动产登记暂行条例（国务院令第656号）",
+      "publisher": "中华人民共和国国务院",
+      "url": "https://www.gov.cn/gongbao/content/2015/content_2799010.htm",
+      "local_paths": [
+        "visual/assets/r3e-official-source-snapshots.json#/sources/1"
+      ],
+      "source_type": "official_public_law",
+      "authority_level": "official_legal_access_gap_reference",
+      "published_date": "2014-11-24",
+      "accessed_date": "2026-08-28",
+      "usable_for_formal": "background_only",
+      "allowed_uses": [
+        "Article 27 access-condition review",
+        "support for keeping parcel ownership and geometry unknown"
+      ],
+      "prohibited_uses": [
+        "parcel geometry or ownership inference",
+        "participant query authorization"
+      ],
+      "license_summary": "Official regulation retained as metadata, hash and limited legal citation/paraphrase only.",
+      "limitations": "It explains an access constraint and supplies no project parcel data.",
+      "acquisition_chain": "Official first-party HTTPS retrieval on accessed_date -> response/attachment byte hash -> metadata-only package record; response and attachment bodies are not redistributed.",
+      "transformation_chain": "Verify HTTP status, byte count and SHA-256 -> limited factual paraphrase and review-interface mapping -> JSON Pointer to metadata snapshot; no geometry, raster, or standard text copied.",
+      "content_hashes": [
+        {
+          "kind": "retrieved_http_response",
+          "sha256": "78c8b91e9ff589d64c977a012b4c4e59e264ce44406eaa288e9638f50e178209"
+        }
+      ],
+      "evidence_grade": "reference_only",
+      "redistribution_status": "metadata_hash_and_link_only_no_response_or_attachment_body",
+      "retrieval_or_publication_date": "2026-08-28",
+      "spatial_scope": "review interface only; no project geometry transfer",
+      "temporal_scope": "2014-11-24",
+      "hash_status": "retrieved_response_hash_recorded_body_not_redistributed",
+      "metadata_hash_scope": "Canonical JSON of this source record excluding metadata_record_sha256; content_hashes identify retrieved external bytes, not packaged copies.",
+      "metadata_record_sha256": "7b67272cc1bea61d806bd9115a6cdad975a44421eb999ad5045fc392088f37ca"
+    },
+    {
+      "id": "DATA-SRC-R3E-QINGHUAYUAN-HERITAGE-TEXT-20260214",
+      "title": "清华园车站旧址保护范围及建设控制地带文字记录",
+      "publisher": "北京市文物局",
+      "url": "https://wwj.beijing.gov.cn/bjww/362771/362782/743928533/743928745/index.html",
+      "local_paths": [
+        "visual/assets/r3e-official-source-snapshots.json#/sources/2"
+      ],
+      "source_type": "official_public_heritage_reference",
+      "authority_level": "official_text_only_no_geometry_transfer",
+      "published_date": "2026-02-14",
+      "accessed_date": "2026-08-28",
+      "usable_for_formal": "background_only",
+      "allowed_uses": [
+        "heritage-review trigger",
+        "request for authoritative drawings and surveyed anchors"
+      ],
+      "prohibited_uses": [
+        "digitized protection or construction-control geometry",
+        "heritage-control area or clearance"
+      ],
+      "license_summary": "Official heritage page retained as metadata, hash and limited factual paraphrase only.",
+      "limitations": "Text offsets cannot be converted into a reliable project layer without authoritative anchors, drawings and coordinate metadata.",
+      "acquisition_chain": "Official first-party HTTPS retrieval on accessed_date -> response/attachment byte hash -> metadata-only package record; response and attachment bodies are not redistributed.",
+      "transformation_chain": "Verify HTTP status, byte count and SHA-256 -> limited factual paraphrase and review-interface mapping -> JSON Pointer to metadata snapshot; no geometry, raster, or standard text copied.",
+      "content_hashes": [
+        {
+          "kind": "retrieved_http_response",
+          "sha256": "5d603cbad253c529b62857a9c9545b86976653c8d9beea8bab517cea3f8544eb"
+        }
+      ],
+      "evidence_grade": "reference_only",
+      "redistribution_status": "metadata_hash_and_link_only_no_response_or_attachment_body",
+      "retrieval_or_publication_date": "2026-08-28",
+      "spatial_scope": "review interface only; no project geometry transfer",
+      "temporal_scope": "2026-02-14",
+      "hash_status": "retrieved_response_hash_recorded_body_not_redistributed",
+      "metadata_hash_scope": "Canonical JSON of this source record excluding metadata_record_sha256; content_hashes identify retrieved external bytes, not packaged copies.",
+      "metadata_record_sha256": "bd276e98a81abd08e24f9c01ceda0a75767f6079465d6bfefeacb8c89b01c12e"
+    },
+    {
+      "id": "DATA-SRC-R3E-DAZHONGSI-HERITAGE-REGISTER-20171027",
+      "title": "觉生寺（大钟寺）全国重点文物保护单位登记页",
+      "publisher": "北京市文物局",
+      "url": "https://wwj.beijing.gov.cn/bjww/362771/362779/dspqgzdwwbhdw73/523328/index.html",
+      "local_paths": [
+        "visual/assets/r3e-official-source-snapshots.json#/sources/3"
+      ],
+      "source_type": "official_public_heritage_reference",
+      "authority_level": "official_register_no_geometry_transfer",
+      "published_date": "2017-10-27",
+      "accessed_date": "2026-08-28",
+      "usable_for_formal": "background_only",
+      "allowed_uses": [
+        "registered heritage identity/address context",
+        "CX10 heritage specialist review trigger"
+      ],
+      "prohibited_uses": [
+        "protection or construction-control line",
+        "distance compliance or approval"
+      ],
+      "license_summary": "Official heritage register retained as metadata, hash and limited factual paraphrase only.",
+      "limitations": "The page does not transfer a project-usable protection boundary.",
+      "acquisition_chain": "Official first-party HTTPS retrieval on accessed_date -> response/attachment byte hash -> metadata-only package record; response and attachment bodies are not redistributed.",
+      "transformation_chain": "Verify HTTP status, byte count and SHA-256 -> limited factual paraphrase and review-interface mapping -> JSON Pointer to metadata snapshot; no geometry, raster, or standard text copied.",
+      "content_hashes": [
+        {
+          "kind": "retrieved_http_response",
+          "sha256": "b1ff701c56649d4c8297cb214728360388cdb2bb7a9b290aefe504934d78454d"
+        }
+      ],
+      "evidence_grade": "reference_only",
+      "redistribution_status": "metadata_hash_and_link_only_no_response_or_attachment_body",
+      "retrieval_or_publication_date": "2026-08-28",
+      "spatial_scope": "review interface only; no project geometry transfer",
+      "temporal_scope": "2017-10-27",
+      "hash_status": "retrieved_response_hash_recorded_body_not_redistributed",
+      "metadata_hash_scope": "Canonical JSON of this source record excluding metadata_record_sha256; content_hashes identify retrieved external bytes, not packaged copies.",
+      "metadata_record_sha256": "9cb0992801ce47169df57de602aee98a3b7fb9ca8c4b2a2339e4da3804505182"
+    },
+    {
+      "id": "DATA-SRC-R3E-JINGZHANG-PARK-PLANNING-INTERPRETATION-20211216",
+      "title": "规划解读：京张铁路遗址公园，一场各方响应的众创之旅",
+      "publisher": "北京市规划和自然资源委员会",
+      "url": "https://ghzrzyw.beijing.gov.cn/zhengwuxinxi/zxzt/wsghs/2021dej/d5j/202112/t20211216_2562970.html",
+      "local_paths": [
+        "visual/assets/r3e-official-source-snapshots.json#/sources/4"
+      ],
+      "source_type": "official_public_background",
+      "authority_level": "official_approximate_text_no_alignment",
+      "published_date": "2021-12-16",
+      "accessed_date": "2026-08-28",
+      "usable_for_formal": "background_only",
+      "allowed_uses": [
+        "rail/park identity and approximate text background",
+        "implementation-interface context"
+      ],
+      "prohibited_uses": [
+        "tunnel, park, safety-zone or released-land geometry",
+        "ownership, completion or operating commitment"
+      ],
+      "license_summary": "Official planning interpretation retained as metadata, hash and limited factual paraphrase only; images are not reused.",
+      "limitations": "Approximate public narrative does not supply a survey, alignment or project boundary.",
+      "acquisition_chain": "Official first-party HTTPS retrieval on accessed_date -> response/attachment byte hash -> metadata-only package record; response and attachment bodies are not redistributed.",
+      "transformation_chain": "Verify HTTP status, byte count and SHA-256 -> limited factual paraphrase and review-interface mapping -> JSON Pointer to metadata snapshot; no geometry, raster, or standard text copied.",
+      "content_hashes": [
+        {
+          "kind": "retrieved_http_response",
+          "sha256": "574e91f8e71532e2e1d228c275ec9f184fb5bcc46c3d313ae0bf4fd6172ff07d"
+        }
+      ],
+      "evidence_grade": "reference_only",
+      "redistribution_status": "metadata_hash_and_link_only_no_response_or_attachment_body",
+      "retrieval_or_publication_date": "2026-08-28",
+      "spatial_scope": "review interface only; no project geometry transfer",
+      "temporal_scope": "2021-12-16",
+      "hash_status": "retrieved_response_hash_recorded_body_not_redistributed",
+      "metadata_hash_scope": "Canonical JSON of this source record excluding metadata_record_sha256; content_hashes identify retrieved external bytes, not packaged copies.",
+      "metadata_record_sha256": "04dc6f826c4e9155bcc9bed91e6da0e4248cf716d58f9b5d1bbb88df7eb9a372"
+    },
+    {
+      "id": "DATA-SRC-R3E-GB55019-2021-ACCESSIBILITY",
+      "title": "建筑与市政工程无障碍通用规范 GB 55019-2021 发布公告及官方附件",
+      "publisher": "中华人民共和国住房和城乡建设部",
+      "url": "https://www.mohurd.gov.cn/gongkai/zc/wjk/art/2021/art_17339_762461.html",
+      "local_paths": [
+        "visual/assets/r3e-official-source-snapshots.json#/sources/5"
+      ],
+      "source_type": "official_public_standard_announcement",
+      "authority_level": "mandatory_standard_reference_pending_project_applicability",
+      "published_date": "2021-09-08",
+      "accessed_date": "2026-08-28",
+      "usable_for_formal": "background_only",
+      "allowed_uses": [
+        "mandatory accessibility review gate and version",
+        "request for site measurements, clause applicability and professional sign-off"
+      ],
+      "prohibited_uses": [
+        "accessibility audit result/pass rate",
+        "project dimensional compliance or approval"
+      ],
+      "license_summary": "Official announcement and attachment were read and hash-bound; neither attachment nor page layout is redistributed.",
+      "limitations": "A mandatory national standard does not itself prove project applicability or measured compliance.",
+      "acquisition_chain": "Official first-party HTTPS retrieval on accessed_date -> response/attachment byte hash -> metadata-only package record; response and attachment bodies are not redistributed.",
+      "transformation_chain": "Verify HTTP status, byte count and SHA-256 -> limited factual paraphrase and review-interface mapping -> JSON Pointer to metadata snapshot; no geometry, raster, or standard text copied.",
+      "content_hashes": [
+        {
+          "kind": "retrieved_http_response",
+          "sha256": "b780fe56fc14a612c00d61c812082626b6117df1808136528dc5a3f5ec09b1ff"
+        },
+        {
+          "kind": "retrieved_official_attachment",
+          "sha256": "ee78b16e1dec13b83f2361fb4a1bd6a07eb6320b6f82d9082fdbcb9f8c7416bb"
+        }
+      ],
+      "evidence_grade": "reference_only",
+      "redistribution_status": "metadata_hash_and_link_only_no_response_or_attachment_body",
+      "retrieval_or_publication_date": "2026-08-28",
+      "spatial_scope": "review interface only; no project geometry transfer",
+      "temporal_scope": "2021-09-08",
+      "hash_status": "retrieved_response_hash_recorded_body_not_redistributed",
+      "metadata_hash_scope": "Canonical JSON of this source record excluding metadata_record_sha256; content_hashes identify retrieved external bytes, not packaged copies.",
+      "metadata_record_sha256": "03c2a8c374bda053b5525c1a8fb77409e644cc02d5905651e3c7412a96b9b34a"
+    },
+    {
+      "id": "DATA-SRC-R3E-GB55037-2022-FIRE",
+      "title": "建筑防火通用规范 GB 55037-2022 发布公告及官方附件",
+      "publisher": "中华人民共和国住房和城乡建设部",
+      "url": "https://www.mohurd.gov.cn/gongkai/zc/wjk/art/2023/art_17339_770016.html",
+      "local_paths": [
+        "visual/assets/r3e-official-source-snapshots.json#/sources/6"
+      ],
+      "source_type": "official_public_standard_announcement",
+      "authority_level": "mandatory_standard_reference_pending_project_applicability",
+      "published_date": "2022-12-27",
+      "accessed_date": "2026-08-28",
+      "usable_for_formal": "background_only",
+      "allowed_uses": [
+        "mandatory fire/life-safety review gate and version",
+        "request for project-specific fire applicability and professional sign-off"
+      ],
+      "prohibited_uses": [
+        "fire compliance or evacuation capacity",
+        "project fire access, exit, water-supply or travel-distance claim"
+      ],
+      "license_summary": "Official announcement and attachment were read and hash-bound; neither attachment nor page layout is redistributed.",
+      "limitations": "A mandatory national standard does not itself prove project applicability, life safety or approval.",
+      "acquisition_chain": "Official first-party HTTPS retrieval on accessed_date -> response/attachment byte hash -> metadata-only package record; response and attachment bodies are not redistributed.",
+      "transformation_chain": "Verify HTTP status, byte count and SHA-256 -> limited factual paraphrase and review-interface mapping -> JSON Pointer to metadata snapshot; no geometry, raster, or standard text copied.",
+      "content_hashes": [
+        {
+          "kind": "retrieved_http_response",
+          "sha256": "55b8146317f63d6714b0e20807a4c727c1080ebd0696adb3398a19a89a74c595"
+        },
+        {
+          "kind": "retrieved_official_attachment",
+          "sha256": "90b92701fe6988a1c1c7659cd96a68fef92523ae3a2b04168aed937f03c247d0"
+        }
+      ],
+      "evidence_grade": "reference_only",
+      "redistribution_status": "metadata_hash_and_link_only_no_response_or_attachment_body",
+      "retrieval_or_publication_date": "2026-08-28",
+      "spatial_scope": "review interface only; no project geometry transfer",
+      "temporal_scope": "2022-12-27",
+      "hash_status": "retrieved_response_hash_recorded_body_not_redistributed",
+      "metadata_hash_scope": "Canonical JSON of this source record excluding metadata_record_sha256; content_hashes identify retrieved external bytes, not packaged copies.",
+      "metadata_record_sha256": "d5f2c9d61740646eac04b8a25a300870cfde1739887865b8a6c17caa61a3e72d"
+    },
+    {
+      "id": "DATA-SRC-R3E-DB11-1761-2020-WALK-CYCLE",
+      "title": "步行和自行车交通环境规划设计标准 DB11/1761-2020 官方页面及附件",
+      "publisher": "北京市规划和自然资源委员会",
+      "url": "https://ghzrzyw.beijing.gov.cn/biaozhunguanli/bz/cxgh/202012/t20201223_2181212.html",
+      "local_paths": [
+        "visual/assets/r3e-official-source-snapshots.json#/sources/7"
+      ],
+      "source_type": "official_public_standard_reference",
+      "authority_level": "local_standard_reference_pending_project_applicability",
+      "published_date": "2020-12-23",
+      "accessed_date": "2026-08-28",
+      "usable_for_formal": "background_only",
+      "allowed_uses": [
+        "pedestrian/cycle desktop checklist",
+        "later specialist cross-check of candidate CX survey fields and design-target bands"
+      ],
+      "prohibited_uses": [
+        "measured sidewalk/road section",
+        "accessibility result or traffic approval"
+      ],
+      "license_summary": "Official page and attachment were read and hash-bound; neither attachment nor page layout is redistributed.",
+      "limitations": "The standard is a review input and does not replace site survey or current project-specific authority conditions.",
+      "acquisition_chain": "Official first-party HTTPS retrieval on accessed_date -> response/attachment byte hash -> metadata-only package record; response and attachment bodies are not redistributed.",
+      "transformation_chain": "Verify HTTP status, byte count and SHA-256 -> limited factual paraphrase and review-interface mapping -> JSON Pointer to metadata snapshot; no geometry, raster, or standard text copied.",
+      "content_hashes": [
+        {
+          "kind": "retrieved_http_response",
+          "sha256": "407d04df1fe3a6f7e916fb6fc75103121e43e534837042682326a88b5534e645"
+        },
+        {
+          "kind": "retrieved_official_attachment",
+          "sha256": "3a01c4a77d5dc4fcab0270544199829592651fec9a0e0f9b8e504fcdb95ca8cf"
+        }
+      ],
+      "evidence_grade": "reference_only",
+      "redistribution_status": "metadata_hash_and_link_only_no_response_or_attachment_body",
+      "retrieval_or_publication_date": "2026-08-28",
+      "spatial_scope": "review interface only; no project geometry transfer",
+      "temporal_scope": "2020-12-23",
+      "hash_status": "retrieved_response_hash_recorded_body_not_redistributed",
+      "metadata_hash_scope": "Canonical JSON of this source record excluding metadata_record_sha256; content_hashes identify retrieved external bytes, not packaged copies.",
+      "metadata_record_sha256": "150b5fe6ba0dba21da21d2032d4dd9c8e0ecb8e8a9103776b4ccd6c7eccd16e3"
     }
-  ]
+  ],
+  "phase2_freeze_policy": "Every local snapshot is hash-bound. URL-only precedents remain link-and-paraphrase metadata; open data never becomes survey, cadastral, statutory, or official design geometry."
 }

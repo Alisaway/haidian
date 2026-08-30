@@ -10,11 +10,15 @@ tracks: ["ai-traffic-walkability", "ai-public-services", "civic-agent-governance
 
 # 百年京张 AI 创新带城市更新与实施方案
 
-京张铁路沿线承载着百年工业记忆，也串联起海淀区高校、科研院所、创新园区和成熟社区，是存量更新与创新资源集聚的交汇地带。为落实征集任务要求，推动京张铁路遗产廊道及周边地区有序更新，编制本方案。方案统筹安排总体空间结构、重点片区更新、公共服务补短板和近期建设项目，力求把规划意图转化为可落地、可核查、可评估的实施安排。
+京张铁路沿线的更新机会并不均匀。基于约 11.4 平方公里工作底图构建的 1,254 个 100 米研究网格显示，2025 年 WorldPop 模型人口约 19.26 万，其中约 17.9% 至少缺一类教育、医疗或日常服务，4.4% 同时缺两类以上。[metric:v2_modelled_population_2025] [metric:v2_service_gap1_population_ratio] [source:WORLDPOP-GLOBAL2-2025]
 
-需要清醒认识到，现阶段正式边界、土地及房屋权属、轨道安全、交通组织、地下管线、消防条件、项目资金和后续运营主体等基础条件尚未逐项核清。本方案坚持底线思维、量力而行，把核清前置条件作为现阶段首要工作，在此基础上研究确定项目能否启动、建设规模和实施顺序，防止脱离实际、仓促上马。
+现有十二处概念服务节点的 800 米步行网络仅覆盖约 39.4% 的缺口人口。5000 组随机权重敏感性分析进一步识别出跨权重稳定的干预热点，说明近期投资应从平均铺开转向“缺口人口、慢行连接和创新资源叠加处优先”。[metric:v2_existing_12node_gap1_coverage_ratio] [source:OSM-CONTEXT-V2-20260824]
 
-按照征集任务，方案以约 11.4 平方公里总体设计范围为工作底图，以众智园、北京 AI 原点社区和大钟寺三处重点片区为近期工作重点，建立六个项目包和 0—24 个月滚动实施计划。其中，京张铁路遗产廊道主要承担公共空间联系功能；三处重点片区分别补齐研发测试、成果转化、人才服务和站城接驳方面的设施短板；十二处公共服务节点随示范段和片区项目分期建设、逐步投用。[source:DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509] [source:DATA-SRC-AGENT-TASKBOOK-20260518]
+据此，V2 将原有空间设想改造成一条可复核的证据链：大钟寺优先修复站城步行连接并承接首个 1 公里示范段；AI 原点社区继续验证共享首层，但重点转向人才、家庭和健康支持；众智园在研发测试之外补入日常服务。十二处服务节点保留 PUBLIC-01、02、05、06、07、08、11、12 八处中心位置，并从三类优化目标产生的 12 个无序候选中按 120 米空间聚类、55 组四点组合进行多目标稳健选择，形成 PUBLIC-V2-01—04 四处共识替换点。四个新点均为概念方案位置，现场权属、道路红线、管线和正式设施目录若显示冲突或显著改变覆盖判断，应触发重新选址。[metric:v2_consensus_12node_gap1_coverage_ratio] [depth:existing_conditions_diagnosis]
+
+正式边界、土地及房屋权属、轨道安全、地下管线和运营主体仍须专项核清。2026 夏季 Sentinel-2 已完成 5 个独立日期低云影像合成，1,254 个 100 米研究网格中 1,244 个获得有效像素；工作范围面积加权植被光谱覆盖代理约 26.23%，高密植被代理约 7.12%。该指标用于识别缺绿热点，不等同于法定绿地率或树木调查。[metric:v2_observed_green_ratio] [metric:v2_dense_vegetation_ratio] [source:SENTINEL2-L2A-PC-2026-SUMMER]
+
+官方设施空间核验采用“官方机构身份/地址 + 冻结 OSM 坐标”的保守交叉验证：目前高置信核验 36 个学校点、2 个医疗点和 1 个养老点；未匹配机构不视为缺失，也不通过猜测地理编码补点，因此全量可达性仍以 OSM 服务层为主、官方核验层为身份校验。[metric:v2_official_validated_school_point_count] [metric:v2_official_validated_medical_point_count] [metric:v2_official_validated_eldercare_point_count] [source:HAIDIAN-COMPULSORY-SCHOOLS-20250309] [source:HAIDIAN-MEDICAL-PUBLIC-20260708] [source:HAIDIAN-ELDERCARE-INSTITUTIONS-20260708]
 
 ## 一、需要优先解决的实施问题
 
@@ -90,12 +94,9 @@ tracks: ["ai-traffic-walkability", "ai-public-services", "civic-agent-governance
 
 ## 六、总体设计范围城市更新与控规深度城市设计
 
-总体设计范围形成“一轴三片、两翼协同、多点支撑”的空间结构，统筹近期项目和公共设施布局；法定用地及规划条件按照主管部门审批成果执行。
+总体设计范围仍以“一轴三片、两翼协同”为骨架，但公共设施布局改由 100 米网格诊断和步行网络审计决定。京张沿线公共空间联系轴承担连续慢行、站城连接、蓝绿设施和文化信息组织；三处重点片区分别处理研发验证与社区服务、共享创新与家庭支持、站城连接与服务补缺；东西两翼继续衔接中关村技术服务资源和小月河公共服务资源。
 
-- 京张沿线公共空间联系轴依托铁路遗产廊道，分段补齐步行、骑行、林荫、雨水设施、公共服务和文化信息。
-- 三处重点片区分别承担受控验证、社区协同创新和站城公共服务职能。
-- 东西两翼衔接中关村技术服务资源和小月河公共服务资源，按年度任务落实课程、测试、转化和设施运维协作。
-- 十二处公共服务节点提供人工咨询、休憩、饮水、充电、纸质导向、设施维护和服务信息公示。
+十二处公共服务节点已形成“8 个审计保留点 + 4 个多目标共识替换点”的 V2 概念几何。三套优化目标产生的 12 个候选先按空间位置去重为 8 个候选簇，再对 55 组四点组合同时比较总人口覆盖、至少一类服务缺口覆盖、两类以上缺口覆盖和机会强度，选择四项中最弱表现仍较高的一组。加入 Sentinel-2 五景绿量并修正并列排名后，v0.4 又完整重跑了三类目标与 55 组四点组合：重新优化方案仅使机会强度人口均值提高 0.009139，却使总人口覆盖下降约 0.50 个百分点、至少一类服务缺口覆盖下降约 0.44 个百分点，两类以上缺口覆盖不变，因此正式 PUBLIC-V2-01—04 保持不变。现方案的 800 米步行网络情景覆盖约 57.6% 模型人口、61.9% 至少一类服务缺口人口和 51.5% 两类以上缺口人口；公平导向单目标方案可把第一项缺口覆盖推至约 74.6%，因此 61.9% 是平衡方案结果，不表述为理论上限。[metric:v2_consensus_12node_population_coverage_ratio] [metric:v2_consensus_12node_gap1_coverage_ratio] [metric:v2_consensus_12node_gap2_coverage_ratio]
 
 经复算，工作底图面积为 11,412,825.386 平方米，用于方案图层校核和规划指标测算；待正式总体设计范围公布后，同步更新面积成果和土地平衡。[data:geometry/site_boundary.geojson#SITE-001] [metric:site_area_sqm]
 
@@ -117,21 +118,21 @@ tracks: ["ai-traffic-walkability", "ai-public-services", "civic-agent-governance
 
 ### （一）众智园创新验证片区
 
-片区公告面积约 192.1 公顷，工作底图复算 192.92 公顷。功能定位为受控测试、公众审议和设施运维。首期设置约 1.5 公顷创新验证场，空间预算包括 3,200 平方米受控测试与安全缓冲、900 平方米公众审议与信息公示、1,200 平方米设施运维实训、2,800 平方米雨水花园和生态缓冲，以及 6,900 平方米全龄测试环、消防及后勤通道。
+片区公告面积约 192.1 公顷，工作底图复算 192.92 公顷。人口加权诊断显示，片区模型人口约 2.26 万，轨交 10 分钟覆盖约 53.0%，至少缺一类基本服务的人口约占 36.8%，同时缺两类以上约占 15.4%。因此首期任务采用“验证设施 + 日常服务补缺”的双重结构：保留约 1.5 公顷创新验证场作为研究假设，同时把步行可达的健康、家庭和日常服务纳入场地比选条件，避免测试设施与真实社区需求脱节。[depth:three_key_area_detailed_design]
 
-验证场采用可逆构造，保障既有园区通行和公共服务连续运行。建筑利用对象经权属、结构和消防核验后分类确定。开放前完成场地许可、交通消防、伦理数据、安全评估和独立测试审查；发生重大事件时，按规定启动应急暂停和独立复核程序。
+验证场采用可逆构造，具体位置不沿用 V1 先验点位，须与缺口人口热点、现状通行、权属、结构消防和园区运营共同校核。开放前完成场地许可、交通消防、伦理数据、安全评估和独立测试审查；若最终场地无法同时满足测试安全与社区可达性，则缩减集中验证场规模，改为多点分时测试。
 
 ### （二）北京 AI 原点社区协同创新片区
 
-片区公告面积约 104.3 公顷，工作底图复算 104.32 公顷。功能定位为学习协作、开源发布、人才服务和家庭支持。首期盘活约 3,000 平方米共享首层，其中学习与议事空间 900 平方米，开源发布及短期展陈 600 平方米，人工人才服务和家庭支持 520 平方米，共享工作及小型原型空间 680 平方米，后勤、无障碍和消防调整预留 300 平方米。
+片区公告面积约 104.3 公顷，工作底图复算 104.32 公顷。片区模型人口约 1.49 万，轨交 10 分钟覆盖约 86.7%，教育和日常服务 15 分钟覆盖在当前代理数据中均达到 100%，主要可见短板集中在医疗服务，覆盖约 63.5%。因此这里不再以交通补短板为主线，继续验证约 3,000 平方米共享首层，并把人才家庭支持、健康转介、学习协作和开放创新作为首层复合功能。[depth:three_key_area_detailed_design]
 
-共享首层采用分时开放和轻改造方式。实施前核对产权、租约、房屋安全、消防和分时运营协议，并向社会公布开放时段、收费规则和人工服务安排。近期可先行开展短期活动和临时共享，待产权、运营和消防条件稳定后，再推进固定改造。
+共享首层采用分时开放和轻改造方式。实施前核对产权、租约、房屋安全、消防和分时运营协议，并通过实际设施目录复核医疗缺口；若官方设施空间化后显示医疗可达性已被低估，则相应减少健康服务面积，把空间转向开放协作和家庭支持。
 
 ### （三）大钟寺站城融合片区
 
-片区公告面积约 72.0 公顷，工作底图复算 72.05 公顷。功能定位为轨道接驳、城市信息、人工服务和公共停留。首期研究约 2.4 公顷站城公共厅界面，完善四向步行联系，设置两处人工服务点、多语言实体导向和全龄友好停留设施，并与京张创新发展轴示范段衔接。
+片区公告面积约 72.0 公顷，工作底图复算 72.05 公顷。片区模型人口约 1.80 万，轨交 10 分钟覆盖约 25.3%，医疗 15 分钟覆盖约 49.6%，至少缺一类基本服务的人口约占 53.6%；OSM 步行网络分析得到的平均绕行比约 2.77。三项证据共同指向站城连接和服务可达性，因此首期顺序调整为“打通连接—补齐服务—激活公共界面—再判断扩建规模”。[depth:three_key_area_detailed_design]
 
-实施顺序依次为客流和疏散分析、轨道安全条件确认、产权及商业运营协商、导向及铺装改造、服务节点建设。近期优先实施导向和人工服务改善；空间扩建部分，待疏散、客流和轨道安全条件落实后，纳入后续建设时序安排。
+沿 ROAD-01 滑动比较的 36 个 1 公里候选窗口中，CORRIDOR-04 在加入 Sentinel-2 五景植被缺口并修正并列排名后的 v0.4 分析中仍排名第 1；5000 组权重下进入前 20% 的概率约 99.86%，进入前 10% 的概率约 98.6%，CORRIDOR-03/05 继续作为线位容差。首期据此研究约 1 公里的连续慢行和站城衔接示范段；原 2.4 公顷“公共厅”保留为后续空间假设，待客流疏散、轨道安全、权属和连接改善成效验证后再决定是否扩大。[metric:v2_pilot_corridor_top20_robust_probability] [metric:v2_pilot_corridor_top10_robust_probability]
 
 ## 九、交通、轨道、市政与公共服务设施
 
@@ -147,7 +148,9 @@ tracks: ["ai-traffic-walkability", "ai-public-services", "civic-agent-governance
 
 ## 十一、公共服务节点建设指引
 
-公共服务节点规划面积 250—400 平方米，优先采用可拆装构件，便于随使用需求调整。每处节点配置 24—36 平方米人工服务空间，并统筹设置遮阴停留、饮水、充电、纸质地图、服务信息公示和雨水花园。节点建设同步开展地下管线综合、消防审查、无障碍设计、设施接入、场地许可和运营维护方案编制，保障断网、停电等情形下基本服务连续可用。
+十二处服务节点不再按 V1 点位整体平移进入实施。V1 十二点的 800 米步行网络联合覆盖约 55.0% 模型人口、39.4% 至少一类服务缺口人口和 28.8% 两类以上缺口人口；其中 PUBLIC-03、04、09、10 对当前测得的缺口人口没有独有贡献，PUBLIC-11 则具有最强的独有缺口覆盖。V2 因此保留 PUBLIC-01、02、05、06、07、08、11、12 的中心位置，并将 PUBLIC-V2-01—04 四个多目标共识点写入概念几何。共识十二点情景的缺口覆盖为 61.9% / 51.5%（至少一类 / 两类以上），明显高于 V1，同时避免为了单一公平目标牺牲过多总体覆盖。[metric:v2_existing_12node_gap1_coverage_ratio] [metric:v2_consensus_12node_gap1_coverage_ratio] [metric:v2_consensus_12node_gap2_coverage_ratio]
+
+十二处节点均统一物化为 20 米×16 米、320 平方米的轻量可拆装模块，总概念占地 3,840 平方米；每处预留 24—36 平方米人工服务空间，并统筹遮阴停留、饮水、充电、纸质地图和服务信息公示。320 平方米是方案阶段模块尺寸，不是已批准建设面积。四个新点仍须通过现有设施重复度、权属与管线、消防无障碍、运营主体和现场踏勘核查；若后续官方设施空间化或正式边界改变判断，应重新运行节点选址而非固守算法中心。[metric:v2_service_node_total_footprint_sqm] [metric:prototype_service_node_area_sqm] [depth:overall_spatial_structure]
 
 ![公共服务节点可拆装构造与运行标准](assets/figures/service-node-kit.png)
 
@@ -212,15 +215,15 @@ tracks: ["ai-traffic-walkability", "ai-public-services", "civic-agent-governance
 
 ## 十五、更新项目清单、实施政策与分期计划
 
-近期建立六个项目包，即京张沿线慢行示范段、大钟寺站城衔接先导项目、众智园研发测试场、AI 原点社区共享首层、公共服务节点样板、公共人工智能服务管理系统。S、M、L 为项目储备阶段的投资比较级别，分别对应 500 万元以内、500—2,000 万元和 2,000—5,000 万元；具体资金需求在可行性研究、设计概算和财政评审阶段核定。
+近期仍组织六个项目包，但启动顺序由 V2 证据调整：P-01 与 P-02 共同承担大钟寺侧 CORRIDOR-04 及其站城连接修复；P-05 以 PUBLIC-V2-01—04 四个共识替换点为概念选址，优先选择通过现场核验的节点实施样板；P-04 延续 AI 原点共享首层；P-03 众智园验证场须把社区服务可达性纳入选址；P-06 提供跨项目运行治理。S、M、L 仅作为项目储备阶段的投资比较级别，分别对应 500 万元以内、500—2,000 万元和 2,000—5,000 万元，具体资金需求在可行性研究、设计概算和财政评审阶段核定。
 
 | 项目 | 主要建设内容 | 建议责任类型 | 实施窗口 | 前置条件 | 资金与运营安排 |
 |---|---|---|---:|---|---|
-| P-01 京张沿线慢行示范段 | 约 1 公里连续步行、双向骑行、雨水花园、遮阴休憩及服务停留 | 区级统筹、属地街道、产权单位、交通和园林专业单位 | 6—18 个月 | 正式红线与权属、轨道安全、交通组织、管线和消防意见 | 公共空间建设资金统筹；属地和设施运维单位共同承担日常维护 |
-| P-02 大钟寺站城衔接先导项目 | 四向步行联系、两处人工服务点、多语言实体导向和非机动车停放整治 | 属地街道、站区运营、交通专业单位、产权单位 | 12—24 个月 | 分时客流与疏散、轨道接口、消防和产权协议 | 站区公共环境改造与运营单位投入分类核算 |
-| P-03 众智园研发测试场 | 约 1.5 公顷受控测试、安全缓冲、公众说明、运维培训和雨水设施 | 园区运营、高校企业测试方、独立安全评估 | 12—24 个月 | 场地权属、项目准入、数据安全、应急处置和保险安排 | 建设及测试费用由实施主体落实；公众设施和园区设施分别建账 |
-| P-04 AI 原点社区共享首层 | 约 3,000 平方米学习议事、成果发布、人才服务、共享工作及后勤空间 | 产权单位、属地街道、高校社区、专业运营方 | 9—18 个月 | 权属租约、房屋安全、消防、分时开放和收费规则 | 轻改造与运营费用同步测算，签订共享使用和维护协议 |
-| P-05 公共服务节点样板 | 320 平方米样板，配置人工服务、饮水充电、遮阴休憩和雨水花园 | 属地街道、社区、园林及设施运维单位 | 6—12 个月 | 地下管线、设施接入、场地许可、消防和维护责任 | 建设投资与年度运维经费一并明确，验收后办理资产和运维移交 |
+| P-01 京张沿线慢行示范段 | 以 CORRIDOR-04 为主候选、CORRIDOR-03/05 为线位容差，研究约 1 公里连续步行、双向骑行、遮阴休憩及服务停留 | 区级统筹、属地街道、产权单位、交通和园林专业单位 | 6—18 个月 | 正式红线与权属、轨道安全、交通组织、管线、绿量现场核查和消防意见 | 公共空间建设资金统筹；属地和设施运维单位共同承担日常维护 |
+| P-02 大钟寺站城衔接先导项目 | 优先消除步行绕行与站区断点，配置人工服务、实体导向和非机动车停放整治；2.4 公顷公共厅暂不作为首期建设前提 | 属地街道、站区运营、交通专业单位、产权单位 | 6—18 个月 | 分时客流与疏散、轨道接口、消防和产权协议 | 站区公共环境改造与运营单位投入分类核算 |
+| P-03 众智园研发测试场 | 约 1.5 公顷受控测试研究场地，并同步补入健康、家庭和日常服务接口 | 园区运营、高校企业测试方、属地服务主体、独立安全评估 | 12—24 个月 | 缺口人口与步行可达复核、场地权属、项目准入、数据安全、应急处置和保险安排 | 建设及测试费用由实施主体落实；公众设施和园区设施分别建账 |
+| P-04 AI 原点社区共享首层 | 约 3,000 平方米学习协作、人才家庭支持、健康转介、成果发布及共享工作空间 | 产权单位、属地街道、高校社区、专业运营方 | 9—18 个月 | 权属租约、房屋安全、消防、分时开放、收费规则及官方医疗设施复核 | 轻改造与运营费用同步测算，签订共享使用和维护协议 |
+| P-05 公共服务节点样板 | 以 PUBLIC-V2-01—04 四个共识替换点为概念候选，每处采用 320 平方米模块；现场核验后选择首批样板，并与 8 个保留节点组成十二点网络 | 属地街道、社区、园林及设施运维单位 | 6—12 个月 | 正式设施目录交叉核验、现有设施重复度、地下管线、权属、设施接入、场地许可、消防和维护责任 | 建设投资与年度运维经费一并明确；若核验改变缺口判断则重新选址，验收后办理资产和运维移交 |
 | P-06 公共人工智能服务管理系统 | 项目申报、联合审查、试运行记录、故障工单、公众反馈和年度评估 | 区级统筹、服务运营单位、独立评估单位 | 3—9 个月 | 数据分类、责任单位、应急预案和投诉流程 | 作为管理工具建设，按年度安排系统维护和评估费用 |
 
 ![近期项目包与实施前置条件](assets/figures/area-action-plan.png)
@@ -257,14 +260,19 @@ tracks: ["ai-traffic-walkability", "ai-public-services", "civic-agent-governance
 
 ## 十八、指标体系、面积复算与合规矩阵
 
-指标体系分为工作底图复算、概念方案复算、规划控制值、运营目标和方案规则校核五类。图表同步列出各项指标的当前状态、测量方法、责任主体和评估周期；尚未调查核实的补充事项，纳入项目启动清单，不以推测值充数。[metric:green_ratio] [metric:public_space_ratio] [depth:metrics_recalculation]
+指标体系按证据属性分为现状观测或模型估计、设计响应、情景影响和实施控制四类。WorldPop、OSM 网络和 5000 组权重敏感性结果用于回答“哪里优先”；步行骑行宽度、遮阴和人工服务等仍属于尚未实施的控制目标。现状绿量已以 2026 年 Sentinel-2 五景植被光谱覆盖代理补齐，官方设施也完成 36 个学校、2 个医疗点和 1 个养老点的身份/地址保守空间核验；这些结果仍不替代法定绿地率、完整官方设施底图或现场核验。[metric:v2_observed_green_ratio] [metric:v2_official_validated_school_point_count] [metric:v2_official_validated_medical_point_count] [metric:v2_official_validated_eldercare_point_count] [depth:metrics_recalculation]
 
 ![规划指标体系与实施评估要求](assets/figures/metrics-evidence.png)
 
 | 指标 | 数值或状态 | 属性 | 测量与复核 |
 |---|---:|---|---|
 | 总体设计工作底图 | 11.4128 km² | 复算值 | EPSG:4548 投影面积；正式值由主管部门确认 |
-| 概念蓝绿空间比例 | 18.95% | 方案复算值 | 图层并集面积除以工作底图面积 |
+| 2025 模型人口 | 约 19.26 万 | WorldPop 模型估计 | 339 个 API 支撑块面积分配至 1,254 个 100m 研究网格；不作为普查人口 |
+| 至少一类基本服务缺口人口 | 17.9% | 模型人口加权现状指标 | 教育、医疗、日常服务 15 分钟代理覆盖；官方设施空间化后复核 |
+| 现有 12 节点缺口人口覆盖 | 39.4% | 网络情景基线 | 800m OSM 步行网络联合覆盖 |
+| V2 共识十二节点缺口人口覆盖 | 61.9% | 研究情景影响 | 8 个保留中心 + 4 个多目标共识替换点的 800m 步行网络情景；74.6% 仅作为公平单目标敏感性上界，不作为最终方案效果 |
+| CORRIDOR-04 前20%稳健概率 | 99.86% | 研究优先级 | v0.4：5000 组权重，显式加入 Sentinel-2 植被缺口并采用并列值平均秩 |
+| 现状卫星植被光谱覆盖代理 | 26.23% | Sentinel-2 五景派生 | 5 个独立日期、SCL 掩膜、中位数合成；1,244/1,254 个 100m 网格有效；不等同法定绿地率 |
 | 连续步行净宽 | ≥3.0 m | 建议控制值，未实施 | 建成后按最窄点逐段实测 |
 | 双向骑行净宽 | ≥4.0 m | 建议控制值，未实施 | 施工图复核和建成实测 |
 | 有效休憩点间距 | ≤150 m | 建议控制值，未实施 | 沿连续无障碍路线测量 |
@@ -298,7 +306,27 @@ tracks: ["ai-traffic-walkability", "ai-public-services", "civic-agent-governance
 下列索引用于连接公开资料、规划标准、设计深度、空间图层和指标台账，便于查询原始记录和复算口径。
 
 - 来源与方法：[source:SITE-PACKAGE] [source:SOURCE-REGISTRY] [source:PROCESSED-FACT-PACK] [source:BOUNDARY-SOURCE] [source:KEY-AREA-SOURCE] [source:DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509] [source:DATA-SRC-AGENT-TASKBOOK-20260518] [source:CASE-PARIS-15M] [source:CASE-VIENNA-GENDER] [source:CASE-PUNGGOL] [source:CASE-KALASATAMA] [source:CASE-BARCELONA-SUPERBLOCK] [source:CASE-KENDALL] [source:CASE-PARIS-SACLAY] [source:PRINCIPLE-UNHABITAT] [source:PRINCIPLE-NEB] [source:PRINCIPLE-AMSTERDAM-CIRCULAR] [source:OSM-CONTEXT-20260808] [source:NASA-POWER-2015-2024] [source:BEIJING-SPONGE-CITY] [source:BEIJING-RESILIENT-CITY] [source:BEIJING-CLIMATE-ADAPTATION] [source:BEIJING-RAIN-GARDEN-STANDARD] [source:BEIJING-URBAN-RENEWAL-REGULATION] [source:BEIJING-WALK-CYCLE-STANDARD] [source:DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW] [source:BEIJING-SPONGE-DESIGN-STANDARD] [source:BLENDER-52-MODEL] [source:THREEJS-OFFLINE-EXHIBIT] [source:OPENAI-IMAGEGEN-SCENES]
+- 既有北京设施目录元数据：[source:BJ-DESIGNATED-MEDICAL-20260813] [source:BJ-ELDERCARE-STATIONS-20260119] [source:BJ-PRIMARY-SCHOOLS-20250729]
+- 海淀官方设施核验补充来源：[source:HAIDIAN-ELDERCARE-STATIONS-20250813] [source:HAIDIAN-MEDICAL-PARTNERS-20260730]
 - 适用标准：[standard:PROJECT-OFFICIAL-ANNOUNCEMENT] [standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK] [standard:MOHURD-URBAN-DESIGN-MEASURES] [standard:MOHURD-CONTROL-DETAILED-PLANNING] [standard:MNR-LAND-USE-CLASSIFICATION-GUIDE] [standard:MOHURD-ARCH-DESIGN-DEPTH-2016]
 - 设计深度：[depth:existing_conditions_diagnosis] [depth:three_level_scope_framework] [depth:overall_spatial_structure] [depth:land_use_layout] [depth:development_intensity_controls] [depth:height_massing_character] [depth:retain_renovate_demolish] [depth:traffic_rail_slow_parking] [depth:municipal_new_infrastructure] [depth:blue_green_public_space] [depth:three_key_area_detailed_design] [depth:renewal_project_list] [depth:phasing_implementation] [depth:metrics_recalculation] [depth:risk_missing_data]
 - 空间数据：[data:geometry/site_boundary.geojson] [data:geometry/key_areas.geojson] [data:geometry/land_use.geojson] [data:geometry/buildings.geojson] [data:geometry/roads.geojson] [data:geometry/green_space.geojson] [data:geometry/public_space.geojson] [data:geometry/constraints.geojson] [data:geometry/phasing.geojson]
-- 指标台账：[metric:site_area_sqm] [metric:building_footprint_area_sqm] [metric:green_ratio] [metric:public_space_ratio] [metric:key_area_count] [metric:growth_station_count] [metric:ai_scenario_card_count] [metric:pilot_corridor_length_m] [metric:prototype_service_node_area_sqm] [metric:pilot_shared_ground_floor_area_sqm] [metric:implementation_project_count] [metric:acceptance_kpi_count] [metric:osm_context_feature_count] [metric:climate_heat_days_ge_35c_per_year] [metric:climate_annual_precip_mm] [metric:climate_mean_solar_kwh_m2_day] [metric:pilot_walk_clear_width_target_m] [metric:pilot_cycle_width_target_m] [metric:rest_point_spacing_target_max_m] [metric:shade_coverage_target_ratio] [metric:human_service_availability_target_ratio] [metric:protocol_service_pass_count] [metric:negative_test_caught_count]
+- 基础与实施指标：[metric:site_area_sqm] [metric:building_footprint_area_sqm] [metric:green_ratio]
+- 公共空间与任务规模：[metric:public_space_ratio] [metric:key_area_count] [metric:growth_station_count]
+- 场景与试点规模：[metric:ai_scenario_card_count] [metric:pilot_corridor_length_m] [metric:prototype_service_node_area_sqm]
+- 共享首层与项目管理：[metric:pilot_shared_ground_floor_area_sqm] [metric:implementation_project_count] [metric:acceptance_kpi_count]
+- 旧版背景与气候基线：[metric:osm_context_feature_count] [metric:climate_heat_days_ge_35c_per_year] [metric:climate_annual_precip_mm]
+- 气候与慢行控制：[metric:climate_mean_solar_kwh_m2_day] [metric:pilot_walk_clear_width_target_m] [metric:pilot_cycle_width_target_m]
+- 公共空间控制：[metric:rest_point_spacing_target_max_m] [metric:shade_coverage_target_ratio] [metric:human_service_availability_target_ratio]
+- 协议验证：[metric:protocol_service_pass_count] [metric:negative_test_caught_count]
+- V2 轨交覆盖：[metric:v2_rail_5min_population_coverage_ratio] [metric:v2_rail_10min_population_coverage_ratio] [metric:v2_rail_15min_population_coverage_ratio]
+- V2 公交与基本服务：[metric:v2_bus_10min_population_coverage_ratio] [metric:v2_education_15min_population_coverage_ratio] [metric:v2_health_15min_population_coverage_ratio]
+- V2 日常服务与缺口：[metric:v2_daily_service_15min_population_coverage_ratio] [metric:v2_service_gap2_population_ratio] [metric:v2_zhongzhiyuan_gap2_population_ratio]
+- 大钟寺诊断：[metric:v2_dazhongsi_rail10_population_coverage_ratio] [metric:v2_dazhongsi_health15_population_coverage_ratio] [metric:v2_dazhongsi_gap1_population_ratio]
+- AI 原点诊断：[metric:v2_ai_origin_rail10_population_coverage_ratio] [metric:v2_ai_origin_health15_population_coverage_ratio]
+- 现有十二节点基线：[metric:v2_existing_12node_population_coverage_ratio] [metric:v2_existing_12node_gap2_coverage_ratio]
+- 替换目标敏感性：[metric:v2_balanced_12node_gap1_coverage_ratio] [metric:v2_equity_12node_gap1_coverage_ratio]
+- OSM 可复算底座：[metric:v2_osm_walk_way_count] [metric:v2_osm_poi_count]
+- 公共绿地代理：[metric:v2_osm_park_garden_direct_overlap_ratio] [metric:v2_osm_park_garden_500m_population_share]
+- 稳健机会识别：[metric:v2_robust_opportunity_v02_cell_count_top20_p75] [metric:v2_robust_opportunity_v04_cell_count_top20_p75]
+- Sentinel-2 现状绿量：[metric:v2_sentinel_scene_count] [metric:v2_sentinel_valid_grid_count] [metric:v2_spectral_built_proxy_ratio]

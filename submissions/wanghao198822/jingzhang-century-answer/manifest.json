@@ -1,0 +1,771 @@
+{
+  "schema_version": "0.2.0",
+  "package_id": "jingzhang-century-answer",
+  "project_id": "centennial-jingzhang-ai-belt",
+  "site_package_version": "0.1.0",
+  "package_type": "professional_design_package",
+  "package_state": "ready_for_review",
+  "submission_stage": "formal",
+  "submission_type": "ai_agent",
+  "agent": {
+    "agent_id": "wanghao198822",
+    "agent_name": "claude-fable-5",
+    "model": "claude",
+    "model_family": "claude",
+    "model_detail": "claude-fable-5"
+  },
+  "generated_at": "2026-08-17T13:52:38Z",
+  "files": [
+    {
+      "path": "manifest.json",
+      "role": "manifest",
+      "required": true
+    },
+    {
+      "path": "proposal.md",
+      "role": "narrative",
+      "required": true,
+      "language": "zh",
+      "sha256": "cd73659b2b1f8d7770d59853dacd552b94d230b933dfb7273d4f0c48e6de0d41"
+    },
+    {
+      "path": "agent.json",
+      "role": "agent_card",
+      "required": true,
+      "sha256": "876b8ff6c2fb19f2cc45add278f999e681d5e44b4c32bb5e8eda5772485c6af9"
+    },
+    {
+      "path": "metrics.json",
+      "role": "metrics",
+      "required": true,
+      "sha256": "398a0ba678d72f781b3f80311483a39182bebafa5065d54b2065da2c91fe1cc1"
+    },
+    {
+      "path": "assumptions.json",
+      "role": "assumptions",
+      "required": true,
+      "sha256": "1a60c3d4fae1926ac8c476ac916b628e8ef933fb9b1df9651ba1ddd76881dcf8"
+    },
+    {
+      "path": "sources.json",
+      "role": "sources",
+      "required": true,
+      "sha256": "4bd0af2757cd2bcdbcc9cb58ad9f13755b80f15cac7f6e9d1ace2111c317b789"
+    },
+    {
+      "path": "self_check.json",
+      "role": "self_check",
+      "required": true,
+      "sha256": "0dd3da524dada71b0a09caa96269c0c7bbd4e1cc74778779f5d619e23778c458"
+    },
+    {
+      "path": "compliance_matrix.json",
+      "role": "compliance_matrix",
+      "required": true,
+      "sha256": "8ee32a7ff3a8fc65285a28c129f88f1ff531a4f7d342779a0214a4d1b2f28885"
+    },
+    {
+      "path": "standard_matrix.json",
+      "role": "standard_matrix",
+      "required": true,
+      "sha256": "f03739c1837a6995bfa103b18439551cf509ba94bfaa7b19d27bcf6376be2f63"
+    },
+    {
+      "path": "design_depth_matrix.json",
+      "role": "design_depth_matrix",
+      "required": true,
+      "sha256": "156595a062ac8bf17b05e0d67ec670a6bf4bc3b606848d2a8caee41c1beda494"
+    },
+    {
+      "path": "risk.json",
+      "role": "evidence_data",
+      "required": false,
+      "sha256": "2ddc5eeef7ef794a578a7223a7b224788f6967c8eecfa60b93bbc8a605a21306"
+    },
+    {
+      "path": "spatial.json",
+      "role": "evidence_data",
+      "required": false,
+      "sha256": "21229a72d97c3851734b7c24837180591ca7f9fb990d6dd12d985ce5f068b0aa"
+    },
+    {
+      "path": "simulation.json",
+      "role": "evidence_data",
+      "required": false,
+      "sha256": "c15541eb1b9606c9fc3139a4a8c2c0d440518a3f4b1c247f6d2da33c04e7a02c"
+    },
+    {
+      "path": "report/proposal.html",
+      "role": "rendered_proposal_html",
+      "required": true,
+      "language": "zh",
+      "sha256": "52fbf5e375f3927beb11e27b7ffd3682d88cd3a3bec94ef89cc34f80ba92f663"
+    },
+    {
+      "path": "report/narrative.md",
+      "role": "narrative",
+      "required": false,
+      "sha256": "197570958e8f9f315c94669bc2f30c2d04fb05ae937fb6c20508ba97a5dd20ca"
+    },
+    {
+      "path": "report/copyright_statement.md",
+      "role": "copyright_statement",
+      "required": true,
+      "sha256": "4d89b739d71388eeb53647e343c0e62a1da5cb3287f4299d6675b924f5ee0e1d"
+    },
+    {
+      "path": "drawings/a3-booklet.pdf",
+      "role": "drawing",
+      "required": true,
+      "language": "zh",
+      "sha256": "ca7e2ad23fee26e8d68077ba05aa7162d1c30d79365c6319f0691f29a8987e1a"
+    },
+    {
+      "path": "drawings/a0-boards.pdf",
+      "role": "drawing",
+      "required": true,
+      "language": "zh",
+      "sha256": "182c07ac87314c226f5e6a17ea7c7f4e7b515bec2d41942baf1d65c4dabe86c7"
+    },
+    {
+      "path": "visual/index.html",
+      "role": "visualization",
+      "required": true,
+      "language": "zh",
+      "sha256": "1271b1a5a58792310bb16953d0d53387404267847854a8ffcebae6534a69242a"
+    },
+    {
+      "path": "assets/figures/key-areas.png",
+      "role": "proposal_figure",
+      "required": true,
+      "language": "zh",
+      "sha256": "a35563dd8ff666b81c2232042a3f78299f796d206180fa8817a70fea8c17ba68"
+    },
+    {
+      "path": "assets/figures/land-use-structure.png",
+      "role": "proposal_figure",
+      "required": true,
+      "language": "zh",
+      "sha256": "14310fef1449ae4db794557f557f2f3a5cd7821d4f721372e67d0b620e559329"
+    },
+    {
+      "path": "assets/figures/metrics-evidence.png",
+      "role": "proposal_figure",
+      "required": true,
+      "language": "zh",
+      "sha256": "f5a844d4a5dab1441c2f97e67644cb42c268699b724b843394efd296ae2993a0"
+    },
+    {
+      "path": "assets/figures/mobility-bluegreen.png",
+      "role": "proposal_figure",
+      "required": true,
+      "language": "zh",
+      "sha256": "403d9f602136a67eb2d54585a151ca0ceaa4708d92fbf9892ebb27a15bf07e19"
+    },
+    {
+      "path": "assets/figures/site-overview.png",
+      "role": "proposal_figure",
+      "required": true,
+      "language": "zh",
+      "sha256": "79130836bd3e13adc6dbeef7e245d5331ea0acc7b1fa68a8cc39aaa7f307ac2c"
+    },
+    {
+      "path": "geometry/buildings.geojson",
+      "role": "geometry",
+      "required": true,
+      "sha256": "12134881779360c8e572fea3752cf13d9b904529e22b4c5ff682e16a37d9ffcd"
+    },
+    {
+      "path": "geometry/constraints.geojson",
+      "role": "geometry",
+      "required": true,
+      "sha256": "74513709b993c01001d721b90583f62194cb3b918af32fa5a16a6f4cd0aa350f"
+    },
+    {
+      "path": "geometry/green_space.geojson",
+      "role": "geometry",
+      "required": true,
+      "sha256": "fea3c2a93141607569e909eae6e996997a78b98c3e489b1ac6804d438423fd56"
+    },
+    {
+      "path": "geometry/key_areas.geojson",
+      "role": "geometry",
+      "required": true,
+      "sha256": "566926817504a2938e081390879095fdc300a0df9328ddcbc6131b1e861718d3"
+    },
+    {
+      "path": "geometry/land_use.geojson",
+      "role": "geometry",
+      "required": true,
+      "sha256": "1901c3d6cf6c8097e5b821707499e4b5395bcefde08756e3e4bc5b733fc68a96"
+    },
+    {
+      "path": "geometry/phasing.geojson",
+      "role": "geometry",
+      "required": true,
+      "sha256": "583889095b861a4a59d6211f4b4cc3c2d74b7b377bdc61f792dc6990e1a55444"
+    },
+    {
+      "path": "geometry/public_space.geojson",
+      "role": "geometry",
+      "required": true,
+      "sha256": "e79a4644159576ecf5f7d38fdc2e8df84267cb1639ed820e0f962f6732ca25d0"
+    },
+    {
+      "path": "geometry/roads.geojson",
+      "role": "geometry",
+      "required": true,
+      "sha256": "ea3fdc2c238de30faea6bf9582ae4457b3f91fb799884c97f02081bb6201c5bc"
+    },
+    {
+      "path": "geometry/site_boundary.geojson",
+      "role": "geometry",
+      "required": true,
+      "sha256": "66b8ab3db46dca00224c0662890a69c1bc0244902aa3390574f1ec20bc4348ff"
+    },
+    {
+      "path": "proposal.en.md",
+      "role": "narrative",
+      "required": true,
+      "language": "en",
+      "translation_of": "proposal.md",
+      "sha256": "3bf591edf5afdd84da95afc30adebcbe56d9e6f03bc0229da9074d57d3cceece"
+    },
+    {
+      "path": "report/proposal.en.html",
+      "role": "rendered_proposal_html",
+      "required": true,
+      "language": "en",
+      "translation_of": "report/proposal.html",
+      "sha256": "678ad62bbff759efc5a90d1126c9dc650a6d8873c753748467438d575d5a784d"
+    },
+    {
+      "path": "drawings/a3-booklet.en.pdf",
+      "role": "drawing",
+      "required": true,
+      "language": "en",
+      "translation_of": "drawings/a3-booklet.pdf",
+      "sha256": "4c1f7a3841bd31d4b17d3107f32718afd46cad87a58bb3f5089eab05d56d362f"
+    },
+    {
+      "path": "drawings/a0-boards.en.pdf",
+      "role": "drawing",
+      "required": true,
+      "language": "en",
+      "translation_of": "drawings/a0-boards.pdf",
+      "sha256": "ae70ac2b326b707c63b2f18aea5eb322d4f03d5e6affe7e15df204924bf844a4"
+    },
+    {
+      "path": "visual/index.en.html",
+      "role": "visualization",
+      "required": true,
+      "language": "en",
+      "translation_of": "visual/index.html",
+      "sha256": "c8dad9200f5ea025db1ef96cddbf0150f7cb888a852317efe206fc0a5104637b"
+    },
+    {
+      "path": "assets/figures/key-areas.en.png",
+      "role": "proposal_figure",
+      "required": true,
+      "language": "en",
+      "translation_of": "assets/figures/key-areas.png",
+      "sha256": "80c4f989b756ebd975744a9a72b1ebb04293e5c8fe13710b68fbe87b8e331f2e"
+    },
+    {
+      "path": "assets/figures/land-use-structure.en.png",
+      "role": "proposal_figure",
+      "required": true,
+      "language": "en",
+      "translation_of": "assets/figures/land-use-structure.png",
+      "sha256": "4c8fd1bc3dd7b289917e64918e7b3cf182ac5643a006159d3cbcd10b256b07ba"
+    },
+    {
+      "path": "assets/figures/metrics-evidence.en.png",
+      "role": "proposal_figure",
+      "required": true,
+      "language": "en",
+      "translation_of": "assets/figures/metrics-evidence.png",
+      "sha256": "226dab3ee1ab747d7005eef5acc85e406c85e4dc0146f557d8ce2aaa3e80768a"
+    },
+    {
+      "path": "assets/figures/mobility-bluegreen.en.png",
+      "role": "proposal_figure",
+      "required": true,
+      "language": "en",
+      "translation_of": "assets/figures/mobility-bluegreen.png",
+      "sha256": "0a3eb7d27fdcb8ed0b73d559f9349be864f58ef9f63d29a8dfb765eb40dd95b8"
+    },
+    {
+      "path": "assets/figures/site-overview.en.png",
+      "role": "proposal_figure",
+      "required": true,
+      "language": "en",
+      "translation_of": "assets/figures/site-overview.png",
+      "sha256": "1a3c091e9fd46de1c879ce93faba22a75c43a5ee4d7f54c734620b3253caf1c0"
+    },
+    {
+      "path": "assets/figures/ai-on-off.png",
+      "role": "proposal_figure",
+      "required": true,
+      "language": "zh",
+      "sha256": "8788db96124d41e3a3a9f771977f9ee2a8ce6afd455ca21030e0c70a3bd640c6"
+    },
+    {
+      "path": "assets/figures/ai-on-off.en.png",
+      "role": "proposal_figure",
+      "required": true,
+      "language": "en",
+      "translation_of": "assets/figures/ai-on-off.png",
+      "sha256": "39b9a53f17e8f4caf82c20ed2a41f990edcdf4435676ca44306b6c8e20385943"
+    },
+    {
+      "path": "assets/figures/section-dzs-1.png",
+      "role": "proposal_figure",
+      "required": false,
+      "language": "zh",
+      "sha256": "42635452ed6db46b2496225cbad6223f4973aacec05f1de414b372efd4ab04bb"
+    },
+    {
+      "path": "assets/figures/section-dzs-1.en.png",
+      "role": "proposal_figure",
+      "required": false,
+      "language": "en",
+      "translation_of": "assets/figures/section-dzs-1.png",
+      "sha256": "bd707c68b69dfdbaf9f608301bee32b76dfbbf8f6685f02b04f65e6022d5d6bf"
+    },
+    {
+      "path": "assets/figures/section-dzs-2.png",
+      "role": "proposal_figure",
+      "required": false,
+      "language": "zh",
+      "sha256": "0dac84b6ac930e31df0756c644f83ee9c39f6647bbe7fbf6df8f4fb48e8c5930"
+    },
+    {
+      "path": "assets/figures/section-dzs-2.en.png",
+      "role": "proposal_figure",
+      "required": false,
+      "language": "en",
+      "translation_of": "assets/figures/section-dzs-2.png",
+      "sha256": "41e7b9b8db400acc59fbe216e5c245e81dc6783090f943019d29bfd20c3ac627"
+    },
+    {
+      "path": "assets/figures/section-dzs-3.png",
+      "role": "proposal_figure",
+      "required": false,
+      "language": "zh",
+      "sha256": "aa64a58a0581d85971781e0ddd1ef9bedb223b4f2c6c7291fac7d13581af0d13"
+    },
+    {
+      "path": "assets/figures/section-dzs-3.en.png",
+      "role": "proposal_figure",
+      "required": false,
+      "language": "en",
+      "translation_of": "assets/figures/section-dzs-3.png",
+      "sha256": "043bc8a4ad10f563de15165a021dfc0280face7371dc64b714742859db4247ab"
+    },
+    {
+      "path": "assets/figures/section-ori-1.png",
+      "role": "proposal_figure",
+      "required": false,
+      "language": "zh",
+      "sha256": "ab2528719491139368b1d3a6b29c13d7e7479b7fc81ce1bd1eb7710a8655f3a4"
+    },
+    {
+      "path": "assets/figures/section-ori-1.en.png",
+      "role": "proposal_figure",
+      "required": false,
+      "language": "en",
+      "translation_of": "assets/figures/section-ori-1.png",
+      "sha256": "e401efe443d97ee4f12c7043ee25628f2cfc4a9a3979691972c2a3387f3f2798"
+    },
+    {
+      "path": "assets/figures/section-ori-2.png",
+      "role": "proposal_figure",
+      "required": false,
+      "language": "zh",
+      "sha256": "3fc9f65454f0d41e180b4501a83d1bd9c7d10bd747ea23beb8bf54f80f6ded61"
+    },
+    {
+      "path": "assets/figures/section-ori-2.en.png",
+      "role": "proposal_figure",
+      "required": false,
+      "language": "en",
+      "translation_of": "assets/figures/section-ori-2.png",
+      "sha256": "335a542b34ddb6b6142ddf1f2e286cb890008b9c32bf8d922743c748723e7329"
+    },
+    {
+      "path": "assets/figures/section-ori-3.png",
+      "role": "proposal_figure",
+      "required": false,
+      "language": "zh",
+      "sha256": "9fd605768b1a35e3298bde18d7073f320626976a3ceb97548b6f6302b866399e"
+    },
+    {
+      "path": "assets/figures/section-ori-3.en.png",
+      "role": "proposal_figure",
+      "required": false,
+      "language": "en",
+      "translation_of": "assets/figures/section-ori-3.png",
+      "sha256": "72128c4174a53de5109b61084f3efbed658ffd41d5597ff468a032cc5a2964bc"
+    },
+    {
+      "path": "assets/figures/section-zzy-1.png",
+      "role": "proposal_figure",
+      "required": false,
+      "language": "zh",
+      "sha256": "249f7f103616a6cc67cc28fc1e517cae92e3b061519e99aa4c13f7df539c6b1b"
+    },
+    {
+      "path": "assets/figures/section-zzy-1.en.png",
+      "role": "proposal_figure",
+      "required": false,
+      "language": "en",
+      "translation_of": "assets/figures/section-zzy-1.png",
+      "sha256": "87039793bba691eeb9a4e4bc2c9000d7e1b840bce52c56b19cd4dda87c051184"
+    },
+    {
+      "path": "assets/figures/section-zzy-2.png",
+      "role": "proposal_figure",
+      "required": false,
+      "language": "zh",
+      "sha256": "c62307bfb0829b375ed886119343a10c1f00900f3007bfe1420e8053ebb010d1"
+    },
+    {
+      "path": "assets/figures/section-zzy-2.en.png",
+      "role": "proposal_figure",
+      "required": false,
+      "language": "en",
+      "translation_of": "assets/figures/section-zzy-2.png",
+      "sha256": "a0897ce6e697a45d8f9b1a4413457561ec2eda0078303198aaa07146f5d257bf"
+    },
+    {
+      "path": "assets/figures/section-zzy-3.png",
+      "role": "proposal_figure",
+      "required": false,
+      "language": "zh",
+      "sha256": "cebc6bbb4eec7e521c0ce82741b4d6b7f94bcaaa08b0d485eb6fab64642cc30b"
+    },
+    {
+      "path": "assets/figures/section-zzy-3.en.png",
+      "role": "proposal_figure",
+      "required": false,
+      "language": "en",
+      "translation_of": "assets/figures/section-zzy-3.png",
+      "sha256": "caf2ad646b04923bca54b8c085aa38cdaaf484cdf8a89c1636b5839a809c5cfe"
+    },
+    {
+      "path": "assets/figures/streetview-dzs.png",
+      "role": "proposal_figure",
+      "required": false,
+      "language": "zh",
+      "sha256": "0c58aa08aa84ca6dd0eb6a20c6a7a8d00223593b5c027969bc909b4470049980"
+    },
+    {
+      "path": "assets/figures/streetview-dzs.en.png",
+      "role": "proposal_figure",
+      "required": false,
+      "language": "en",
+      "translation_of": "assets/figures/streetview-dzs.png",
+      "sha256": "051271e7b0490cce86700f45b35f528bbfd2d92d97e1befdeb0eadca03abf95b"
+    },
+    {
+      "path": "assets/figures/streetview-ori.png",
+      "role": "proposal_figure",
+      "required": false,
+      "language": "zh",
+      "sha256": "4fc5563b53e4d404bfa4db01e862ef5204fc1c0f5f86d17f09587ae8696d7fe9"
+    },
+    {
+      "path": "assets/figures/streetview-ori.en.png",
+      "role": "proposal_figure",
+      "required": false,
+      "language": "en",
+      "translation_of": "assets/figures/streetview-ori.png",
+      "sha256": "ccc1b1fb56af62d855829aaf53099e4060b7a93a118753c71db27cb05d60a135"
+    },
+    {
+      "path": "assets/figures/streetview-zzy.png",
+      "role": "proposal_figure",
+      "required": false,
+      "language": "zh",
+      "sha256": "a17eac211aad1bc3a372e191a69adc0d59635b1ef012975cf818b03f5af77e59"
+    },
+    {
+      "path": "assets/figures/streetview-zzy.en.png",
+      "role": "proposal_figure",
+      "required": false,
+      "language": "en",
+      "translation_of": "assets/figures/streetview-zzy.png",
+      "sha256": "3d8ffa129aa67d459df3424840128acc5b0eb77c3e9f03f6c4e76db1afb6b19e"
+    },
+    {
+      "path": "visual/assets/data/geo_layers.js",
+      "role": "evidence_data",
+      "required": false,
+      "sha256": "724ea206357d81c73f701d8442c89fbfbfac822b98249e6124b36ffd1623e804"
+    },
+    {
+      "path": "visual/assets/data/metrics_snapshot.js",
+      "role": "evidence_data",
+      "required": false,
+      "sha256": "7bc03382f38bb262f3a4e1f7ea74616edd3c8284d3d1cb840d85b0a2d872a5a1"
+    },
+    {
+      "path": "visual/assets/geo_core.js",
+      "role": "verification_script",
+      "required": false,
+      "sha256": "2ff0f252f760c4505de164f12440be5706cf305ee99464021acb4dc78de7c52b"
+    },
+    {
+      "path": "visual/assets/draw_map.js",
+      "role": "visualization",
+      "required": false,
+      "sha256": "2aa8250f7dee162e632a26c1d6cd3483797dc5ef4f0912af365b4de88abc36b4"
+    },
+    {
+      "path": "visual/assets/verify_geometry.js",
+      "role": "verification_script",
+      "required": false,
+      "sha256": "418dbea3c9f22c50a3b5866fc758fafe9c342e58f2ffc43afba3b9d73bb80b59"
+    },
+    {
+      "path": "visual/assets/verify_metrics.js",
+      "role": "verification_script",
+      "required": false,
+      "sha256": "b7368159cc2ae5575fe922a244ea79115ba39acc40520b1d7c9d520078b2839a"
+    },
+    {
+      "path": "visual/assets/verify_topology.js",
+      "role": "verification_script",
+      "required": false,
+      "sha256": "3768786d453b7a9c1ac85b9c3952da9ee926ca564306c9639f780036d4b873cd"
+    },
+    {
+      "path": "visual/assets/renders/render-answer-gate.jpg",
+      "role": "visualization",
+      "required": false,
+      "sha256": "7b43f0f10e4de5ce89ffe839c3518d5114798c8aa2314f43972614d2a936ddf9",
+      "title_zh": "生成过程留档 · 巨型「应答簿」纪念门（判为不采用）",
+      "title_en": "Generation archive — giant Answer-Book memorial gate (not adopted)",
+      "description_zh": "AI 生成过程留档，判为不采用：与正文主张冲突——本方案执行「以钉代碑」，不立高碑、不做名人墙；应答门是 46 处公园出入口上的社区界面，不是纪念性门架。保留此图供评审核对我方对生成结果的取舍标准。",
+      "description_en": "An archived generation not adopted: it conflicts with the proposal's position — honours are cast into spikes rather than raised as monuments, and an Answer Gate is a community interface at one of 46 park entrances, not a memorial portal. The image is kept so reviewers can check the standard by which generated results were accepted or rejected."
+    },
+    {
+      "path": "visual/assets/renders/render-robot-knocks.jpg",
+      "role": "visualization",
+      "required": false,
+      "sha256": "a8fc34d1832dd8e76177fbdbda4b028865ff46382f9fadf1f7e3d2e626797908",
+      "title_zh": "应答门 · 机器人也要敲门",
+      "title_en": "Answer Gate — the robot knocks too",
+      "description_zh": "低速配送机器人完全停在门槛线之外等待，门内居民刚在实体面板上按下同意，门框侧指示灯转为绿色。社区认领的不只是这道门，还有「谁的机器人可以进」这项决定权（场景卡 S17）。",
+      "description_en": "A low-speed delivery robot waits entirely outside the threshold line while a resident inside has just pressed approval on a physical panel and the indicator on the jamb has turned green. What the community adopts is not only the gate but the right to decide whose robot may enter (scenario card S17)."
+    },
+    {
+      "path": "visual/assets/renders/render-bell-plaza.jpg",
+      "role": "visualization",
+      "required": false,
+      "sha256": "3a4dc32f56ba0839cd4515c77c9b35962a769ee4fcb63f6fe3bb5133c460f5b5"
+    },
+    {
+      "path": "visual/assets/renders/render-dazhongsi-aerial.jpg",
+      "role": "visualization",
+      "required": false,
+      "sha256": "4d4dc85756131c208244fdc8b52e78d49aa8da61ea1e073d3f60f6d303786827",
+      "title_zh": "南问 · 大钟寺片区鸟瞰",
+      "title_en": "Question (south) — Dazhongsi key-area aerial",
+      "description_zh": "空间关系取自 OSM 实测、可核：觉生寺与地铁13号线大钟寺站相距约 676 米（方位约 115°），13 号线走向约 175°，北三环西路距寺约 160 米；周边为「大盘子街区」——建筑逾 50 栋、基底合计约 15 公顷、单栋均值约 3000 平方米。与正文一致：古寺本体不动一砖一瓦；钟声广场退开院墙、无高差、同心声环铺装；钟架为独立结构、不与既有物相连、不高过成熟树冠。图为意象示意，未经坐标配准，用地与边界一律以规划图件为准。",
+      "description_en": "The spatial relations are taken from verified OSM measurements: the Jueshengsi temple lies about 676 m from Dazhongsi station on Metro Line 13 (bearing about 115°), Line 13 runs at about 175°, and the North Third Ring West Road is about 160 m from the temple; the surrounding fabric is the 'big-plate block' — over 50 buildings, some 15 ha of footprint in total, averaging about 3,000 m² each. Consistent with the text: the temple itself is untouched; the Bell Chime Plaza stands clear of its walls, is free of level changes and paved in concentric sound rings; the bell frame is independent, attached to nothing existing, and never rises above the mature tree canopy. An atmosphere illustration: it is not coordinate-registered, and land use and boundaries follow the planning figures."
+    },
+    {
+      "path": "visual/assets/renders/render-ren-bridge.jpg",
+      "role": "visualization",
+      "required": false,
+      "sha256": "cf5e08fbc754910d90b1bd6764925783136967095332821ced638e896100c633",
+      "title_zh": "北跃 · 人字之跃片区鸟瞰",
+      "title_en": "Ren-Shaped Leap — key-area aerial",
+      "description_zh": "跨环路慢行桥的片区鸟瞰：桥面之上除栏板与照明外无任何构筑物，结构全在桥面以下；两端各一组折返坡道，两段并排展开、端头折返，占地明显大于跨路段，两端均落在环路两侧绿地内。",
+      "description_en": "A key-area aerial of the slow-traffic bridge over the ring road: nothing stands above the deck except the parapet and its lighting, with all structure below; each end carries one switchback ramp assembly of two parallel runs joined by a turning platform, occupying visibly more ground than the span itself, and both ends land in the green strips either side."
+    },
+    {
+      "path": "visual/assets/renders/b3d-poster.jpg",
+      "role": "visualization",
+      "required": false,
+      "sha256": "a0bd417ec9ba8e466eba36873b31c969868399a9d3b0226bbd5825ec5504e638",
+      "title_zh": "人字之跃 · 概念意象（AI 生成）",
+      "title_en": "Ren-Shaped Leap - conceptual impression (AI-generated)",
+      "description_zh": "人字之跃步行桥的概念意象图（AI 生成）：一跨平直主跨横跨环路，桥面之上除栏板与照明外无构筑物；两端各设一处折返，两段坡道同层并排、中夹绿带、行进方向相反并在远端相接，落回道路两侧绿地；桥墩落地、V 形支撑；耐候钢色与道钉带的铜相呼应。用作展示页三维场景加载前的静态图与浏览器不支持 WebGL 时的兜底图。**非实景照片、非工程效果图、非官方审定成果**；形体、材质、树种、人物、天气均为意象表达，不构成任何形式、尺寸或工程做法的设计依据，形式与尺寸一律以断面 ZZY-1／ZZY-2 与正文为准。图上无文字，中英两版共用同一文件。",
+      "description_en": "AI-generated conceptual impression of the Ren-Shaped Leap footbridge: one flat main span crosses the ring road with nothing above the deck but parapet and lighting; each end carries a single switchback whose two runs sit side by side on the same level with a planted strip between them, running in opposite directions and meeting at the far turn before landing in the green on either side; piers land on V-shaped supports; the weathering-steel tone answers the bronze of the Rail-Spike Band. Used as the still shown before the 3D scene loads and as the fallback when a browser cannot run WebGL. **Not a photograph, not an engineering rendering, not an officially approved result**; forms, materials, tree species, figures and weather are expressive only and constitute no basis for any shape, dimension or construction method - sections ZZY-1/ZZY-2 and the proposal text govern. The image carries no text and is shared by both language editions.",
+      "language": "neutral"
+    },
+    {
+      "path": "visual/assets/renders/render-spike-belt.jpg",
+      "role": "visualization",
+      "required": false,
+      "sha256": "554a88e8d09e708b7efeab396e21105d15a0b2b45ded17a13fe555bbb2ef4391"
+    },
+    {
+      "path": "visual/assets/renders/render-spike-belt-night.jpg",
+      "role": "visualization",
+      "required": false,
+      "sha256": "f87e296155f00b092d2fa44e6071cb563f373d18f04e69fa691ecff6c025ac8b",
+      "title_zh": "道钉带夜景 · 备案疏密",
+      "title_en": "Rail-Spike Band at night — the rhythm of filings",
+      "description_zh": "夜间低空俯视道钉带：嵌在步道边缘的铜道钉透出暖铜色光，光点间距刻意不均——密集段对应模型备案井喷的年份，空白段对应安静的年份，因此这条光点线本身就是一条可以数出来的产业时间轴。",
+      "description_en": "A low-altitude night view of the Rail-Spike Band: bronze spikes set along the walkway edge glow warm copper, and their spacing is deliberately uneven — dense runs mark years when model filings surged, gaps mark quiet years, so the line of lights is itself a countable industrial timeline."
+    },
+    {
+      "path": "visual/assets/renders/render-disclosure-wall.jpg",
+      "role": "visualization",
+      "required": false,
+      "sha256": "7ad8fb48cf35ad7924ab0753fcdefd7b3cfb78067b343a08061e31b735dc9d29",
+      "title_zh": "算法公示墙",
+      "title_en": "Algorithm Disclosure Wall",
+      "description_zh": "齐人高的耐候钢公示墙，横向分为若干信息带，每带末端设可按下的实体关闭键；居民站着即可读完全部部署信息并当场关闭某一项。这是「数据治理先于技术部署」这条红线的空间化。",
+      "description_en": "A chest-height weathering-steel wall divided into horizontal information bands, each ending in a physical off-button that can be pressed; a resident can read every deployment disclosure standing up and switch one off on the spot. It is the spatial form of the red line that data governance precedes technology deployment."
+    },
+    {
+      "path": "visual/assets/renders/render-lesson-gate.jpg",
+      "role": "visualization",
+      "required": false,
+      "sha256": "4e9ea896127a1bab0c095945ec37ffa82e43ead9cad077351a426009c6f9cc5c",
+      "title_zh": "无墙学期 · 课门旁听席",
+      "title_en": "The Wall-less Term — auditing benches at a Lesson Gate",
+      "description_zh": "大学围墙不拆、只开一处课门，墙外沿墙设露天旁听席；相邻高校的公开课向带上开放，AI 助教按听者自选的档位解释同一句话，一位老人与一名中学生并排听同一堂课。",
+      "description_en": "The university wall is not demolished — a single Lesson Gate is opened in it, with open-air auditing benches along the city side; a neighbouring university's public lecture is opened to the belt, an AI teaching assistant explains the same sentence at a tier the listener chooses, and an elderly resident and a secondary-school student sit side by side in the same class."
+    },
+    {
+      "path": "assets/media/cover.jpg",
+      "role": "media_poster",
+      "required": false,
+      "sha256": "9cbcb3c84e2e4bfbfa0bcf6c2270c9d1b4daa718228ae32aa64d155e2c617402",
+      "title_zh": "方案封面 · 大钟寺片区鸟瞰",
+      "title_en": "Cover — Dazhongsi key-area aerial",
+      "description_zh": "封面主图为 AI 生成的大钟寺片区鸟瞰概念意象（非实景照片、非官方审定成果），其上以 PIL 程序化排版标题、两问、三个核心数字与 K0–K9 疏密道钉带示意。",
+      "description_en": "The cover hero is an AI-generated concept aerial of the Dazhongsi key area (not a photograph, not an officially approved result), over which the title, the two questions, three key figures and the K0–K9 spike rhythm are typeset programmatically with PIL."
+    },
+    {
+      "path": "assets/media/narrative-poster.jpg",
+      "role": "media_poster",
+      "required": false,
+      "sha256": "9642fc1a7f6b4e1bfc7398ea7a20f0484f2267124dbdf9f5788952c07de41c3f",
+      "title_zh": "短片海报帧 · 蹲下来数道钉",
+      "title_en": "Film Poster Frame — Crouching to Count the Spikes",
+      "description_zh": "概念短片的静帧海报，取自道钉带段：市民蹲在步道上端详一颗嵌入铺装的铜道钉。画面由 AI 生成，为概念意象示意，非实景照片。",
+      "description_en": "A still poster frame from the film's Rail-Spike Band segment: a citizen crouching over a bronze spike set flush into the walkway. The image is AI-generated and conceptual in intent, not a photograph."
+    },
+    {
+      "path": "assets/media/narrative.mp4",
+      "role": "video",
+      "required": false,
+      "sha256": "5bf84f4bb90c888df54e50ad374d5957c9baa146be4d750c29b1475876657ec8",
+      "title_zh": "《百年应答》概念方案短片",
+      "title_en": "The Century Answer — Concept Film",
+      "description_zh": "55 秒静音概念短片：片头提出 1909 年之问，随后依次走过道钉带、南问·鸣钟之门、中答·应答原点、北跃·人字之跃、东西向穿越·应答门五个片段，片尾落回“市民蹲下来数道钉”。画面由 AI 生成（图生视频与静帧推镜），为概念意象示意——非实景照片、非工程效果图、非官方审定成果。人字之跃段已按断面 ZZY-1/ZZY-2 口径绘制（桥面平直、无上部构筑物、两端并排折返坡道）；仅存一处已声明差异：道钉带段铜道钉位于步道中部，正文口径为步道边缘。",
+      "description_en": "A 55-second silent concept film. The opening card poses the 1909 question; five segments walk the belt — the Rail-Spike Band, the Ringing Bell in the south, the Answer Origin at the centre, the Ren-Shaped Leap in the north, and the east-west Answer Gates — before the closing card returns to citizens crouching to count the spikes. The imagery is AI-generated (image-to-video and still push-ins), conceptual in intent: not photographs, not engineering renderings, not an officially approved result. The Ren-Shaped Leap segment now follows sections ZZY-1/ZZY-2 (flat deck, nothing above it, paired switchback ramps); the single declared divergence that remains is the spike position — mid-path in the film, at the walkway edge in the body text.",
+      "poster": "assets/media/narrative-poster.jpg",
+      "caption": "assets/media/narrative.vtt",
+      "transcript": "assets/media/narrative-transcript.md"
+    },
+    {
+      "path": "assets/media/narrative.vtt",
+      "role": "caption_track",
+      "required": false,
+      "sha256": "6fdc749189db2c1f6f2ed4783dc49622bef86165e3ce6ea9a01ff800c6ccd591",
+      "title_zh": "短片字幕（WebVTT）",
+      "title_en": "Concept Film Captions (WebVTT)",
+      "description_zh": "与画面烧录字幕逐字一致的中文字幕轨，含 AI 生成声明与两处已知形式差异声明。",
+      "description_en": "Chinese caption track, word-for-word identical to the burnt-in subtitles, carrying the AI-generation declaration and the two declared divergences from the body text."
+    },
+    {
+      "path": "assets/media/narrative.en.vtt",
+      "role": "caption_track",
+      "required": false,
+      "language": "en",
+      "translation_of": "assets/media/narrative.vtt",
+      "sha256": "8569a8bac0ee7953d9412da2dd597f16145015ab06efd5d0be1b154af237322e",
+      "title_zh": "短片字幕·英文轨（WebVTT）",
+      "title_en": "Concept Film Captions - English track (WebVTT)",
+      "description_zh": "中文字幕轨的英文译稿，时间码与中文轨逐条一致（7 条，末条 00:00:54.900）。片中烧录字幕为中文，本轨为叠加显示的英文字幕，供英文读者使用；同样载有 AI 生成声明与已知形式差异声明。",
+      "description_en": "English translation of the Chinese caption track, with cue timings identical line by line (7 cues, last ending at 00:00:54.900). The subtitles burnt into the picture are Chinese; this track is the overlaid English caption for English-language readers, and carries the same AI-generation declaration and declared divergences."
+    },
+    {
+      "path": "assets/media/narrative-transcript.md",
+      "role": "transcript",
+      "required": false,
+      "sha256": "c5fd497ae47fa05d3fe61921d9b338ce165f2cde0aef570a215afe38b18311fb",
+      "title_zh": "短片完整文字稿",
+      "title_en": "Concept Film Full Transcript",
+      "description_zh": "短片全部叙述内容的文字稿，供无法播放视频时完整获取。",
+      "description_en": "A full transcript of everything narrated in the film, for readers who cannot play video."
+    },
+    {
+      "path": "assets/media/answer-bell.mp3",
+      "role": "audio",
+      "required": false,
+      "sha256": "beec5b6e984c1f9629929c473fa8129acfc1afff24027480d05c8495cdae5b70",
+      "title_zh": "「应答钟」示意音",
+      "title_en": "Answer Bell — Indicative Tone",
+      "description_zh": "程序化合成的钟体余响示意音，说明应答钟装置的听觉意象。不是任何实体钟的实录，与大钟寺古钟博物馆及其馆藏文物无关；方案绝不敲击、移动或商业化使用任何文物古钟。",
+      "description_en": "A programmatically synthesised bell resonance illustrating the auditory idea of the Answer Bell installation. It is not a recording of any physical bell and bears no relation to the Dazhongsi Ancient Bell Museum or its collection; the proposal never strikes, moves, or commercially uses any heritage bell.",
+      "transcript": "assets/media/answer-bell-transcript.md"
+    },
+    {
+      "path": "assets/media/answer-bell-transcript.md",
+      "role": "transcript",
+      "required": false,
+      "sha256": "2bdf45bc9ad42dd8f9a799ea626896c8ce81c33b903d640661bfd902967a9dfb",
+      "title_zh": "应答钟音频内容说明",
+      "title_en": "Answer Bell Audio Description",
+      "description_zh": "音频的生成方式、用途与合规边界说明。",
+      "description_en": "How the audio was generated, what it is for, and its compliance boundaries."
+    },
+    {
+      "path": "visual/assets/renders/render-answer-origin.jpg",
+      "role": "visualization",
+      "required": false,
+      "sha256": "ad131b70ac7622b39b3035bbc1933a92b7a906014e825728c85693faf9d88bff",
+      "title_zh": "中答 · 应答原点站前素广场",
+      "title_en": "Answer Origin forecourt",
+      "description_zh": "清华园车站站前素广场鸟瞰：老站房本体不动，0.6 公顷留白广场上只有零公里桩与应答簿两件小体量物件，校园围墙改为通透格栅界面。AI 生成概念意象，未经坐标配准，不表达用地与尺寸。",
+      "description_en": "An aerial of the plain forecourt at Tsinghuayuan Station: the 1910 station house untouched, only the Kilometre-Zero Post and the Answer Book on 0.6 ha of deliberate emptiness, the campus wall rebuilt as a permeable lattice. AI-generated concept imagery, not coordinate-registered; it expresses no land use or dimensions."
+    },
+    {
+      "path": "visual/assets/fonts/notosanssc-subset.css",
+      "role": "visualization",
+      "required": false,
+      "language": "neutral",
+      "sha256": "383ace0279276d0f29d064dfb31de2b1904a081a97324dc72fcb7416effea6ed",
+      "title_zh": "随包中文字体子集（Noto Sans SC，SIL OFL 1.1）",
+      "title_en": "Bundled Chinese font subset (Noto Sans SC, SIL OFL 1.1)",
+      "description_zh": "四个必需 HTML（report/proposal.html、report/proposal.en.html、visual/index.html、visual/index.en.html）共用的随包中文字体，以 @font-face 引用，使中文在**没有安装中文字体的环境**（例如评审所用的离线容器）中仍能正常显示，而不是回退失败成方框。原字体 Noto Sans SC（版权 © 2014, 2015 Adobe Systems Incorporated，SIL Open Font License 1.1，未声明保留字体名），按四个 HTML 的实际用字子集化为 1551 个码位、族名改为「NotoSansSC Subset」。包内不允许字体扩展名，故字体以 WOFF2 的 data: URI 内嵌于本 CSS；实测 file:// 下可正常加载。许可与来源另见 report/copyright_statement.md 与 sources.json:FONT-NOTOSANSSC-OFL。",
+      "description_en": "The Chinese font shared by the four required HTML files (report/proposal.html, report/proposal.en.html, visual/index.html, visual/index.en.html) via @font-face, so that Chinese text stays readable in environments with no Chinese system font — such as the reviewer's offline container — instead of falling back to empty boxes. The source face is Noto Sans SC (© 2014, 2015 Adobe Systems Incorporated, SIL Open Font License 1.1, no Reserved Font Name), subset to the 1551 codepoints these four files actually use and renamed to \"NotoSansSC Subset\". Font file extensions are not permitted inside the package, so the WOFF2 is embedded as a data: URI in this CSS; loading under file:// was verified. Licence and provenance: report/copyright_statement.md and sources.json:FONT-NOTOSANSSC-OFL."
+    },
+    {
+      "path": "visual/assets/three.min.js",
+      "role": "visualization",
+      "required": false,
+      "sha256": "170c6789f43217c96b3170f4b42fafe135de7f7cd48497a4218f9757ee1d49fa",
+      "title_zh": "Three.js r160 运行库（MIT，离线随包）",
+      "title_en": "Three.js r160 runtime (MIT, bundled offline)",
+      "description_zh": "第三方开源三维引擎 three.js r160 压缩版，MIT 许可，随包离线提供；仅供人字之跃三维示意在本地渲染使用，无网络请求。",
+      "description_en": "The minified third-party 3D engine three.js r160, MIT-licensed and bundled offline; used only to render the Ren-Shaped Leap 3D sketch locally, with no network request."
+    },
+    {
+      "path": "visual/assets/bridge3d.js",
+      "role": "visualization",
+      "required": false,
+      "sha256": "26086f85de6aa9fc96f5fbc3724a6ab3023269115499f9d95e7a997f0ecd49b2",
+      "title_zh": "人字之跃 · 三维示意场景脚本",
+      "title_en": "Ren-Shaped Leap — 3D sketch scene",
+      "description_zh": "以断面 ZZY-1/ZZY-2 设计目标值搭建的本地三维示意（抬升6.0m、桥面9m、栏板1.4m、并排坡道62m×2、单侧占地66×9m）；概念示意，未经坐标配准。",
+      "description_en": "A local 3D sketch built to the target values of sections ZZY-1/ZZY-2 (6.0 m rise, 9 m deck, 1.4 m parapet, twin 62 m runs, 66×9 m footprint per side); conceptual, not coordinate-registered."
+    }
+  ],
+  "validation_claim": {
+    "self_checked": true,
+    "known_blockers": [],
+    "data_confidence": "high",
+    "readiness_contract": "persisted-self-check-v1"
+  },
+  "cover_image": "assets/media/cover.jpg"
+}

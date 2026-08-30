@@ -357,14 +357,21 @@ const spineToPark = parkRings.reduce((best, r) => {
  */
 const at = (dotted) => dotted.split('.').reduce((o, k) => o[k], ref);
 const rows = [];
-let failed = structural.filter((s) => s.result === 'FAIL').length;
+// **Counted at the end, over both tables.** This was a snapshot of the
+// structural table taken here, before seven of its ten assertions had been
+// made — attribution, the ODbL grant, the background_only grading, both
+// provisional-ring labels, the unsimplified geometry and the projection — and
+// `check()` never touched the counter. Every one of those could report FAIL
+// while this script printed `Every scalar reproduced` and exited 0, which is
+// the one thing a verifier may not do (E390).
+let scalarFailures = 0;
 
 const compare = (key, value, dp) => {
   const declared = at(key);
   const tol = 0.5 * 10 ** -dp;
   const diff = Math.abs(value - declared);
   const ok = diff <= tol * (1 + 1e-9);
-  if (!ok) failed++;
+  if (!ok) scalarFailures++;
   rows.push({
     scalar: key,
     declared,
@@ -411,6 +418,21 @@ check(
   `${geom.vertex_count} vertices, ${geom.decimal_places} dp, simplification: ${geom.simplification}`,
 );
 
+// **This script closes by saying every scalar in the file reproduced, and
+// vertex_count is a scalar in the file.** It was described rather than checked:
+// printed in the geometry line above and never recomputed, so the one number
+// that says how much OSM data is actually redistributed here — the number the
+// ODbL paragraph rests on — was the one number a reader could not verify by
+// running this. Counted from the coordinates beside it now, so the closing
+// sentence is true (E390).
+const vertices = geom.osm_park.reduce((n, w) => n + w.ring.length, 0) +
+  geom.osm_rail_query_result.reduce((n, w) => n + w.line.length, 0);
+check(
+  'the declared vertex_count is the number of redistributed OSM coordinates',
+  vertices === geom.vertex_count,
+  `${vertices} counted, ${geom.vertex_count} declared`,
+);
+
 // The projection declared in the data and the projection implemented here must
 // be the same one, or the table above compares two different maps.
 const p = ref.recompute.projection;
@@ -432,6 +454,7 @@ console.log(`  geometry  ${geom.osm_park.length} park way(s), ${railWays.length}
 console.log('  projection re-implemented in this file (EPSG:4548), no dependencies\n');
 console.table(rows);
 
+const failed = scalarFailures + structural.filter((s) => s.result === 'FAIL').length;
 console.log('\nAssumptions the numbers rest on, asserted rather than described');
 console.table(structural);
 

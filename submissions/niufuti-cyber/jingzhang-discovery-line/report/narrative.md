@@ -1,0 +1,38 @@
+# 运行证据索引｜Runtime Evidence Index
+
+## 阅读边界｜Reading boundary
+
+本文只是指纹与定位索引，不复制证据原文。所有被索引源文件均位于项目工作区留档目录，**未随正式包复制**；仅持有正式包的读者无法直接打开这些源文件，须取得同一项目工作区后按下列功能名和 SHA-256 复核。这些记录只证明桌面合成推演、机制检查或文本生成调用，不证明真实复测、现场运行、批准、授权或实施。
+
+This document is a fingerprint-and-location index only; it does not reproduce the source evidence. Every indexed source remains in the project workspace archive and **has not been copied into the formal package**. A reader holding only the formal package cannot open these sources directly; access to the same project workspace is required to verify the functional names and SHA-256 values below. The records establish only desktop synthetic replay, mechanism checks, or text-generation calls—not real retesting, field operation, approval, authorization, or implementation.
+
+“十卡全体 / all ten cards”指 `G01 / W01 / R01 / R02 / M01 / H01 / H02 / E01 / C01 / C02`。
+
+## 逐件索引｜Item-by-item index
+
+| 名称｜Name | SHA-256 | 一句功能说明｜One-sentence function | 所属机制卡｜Mechanism card |
+|---|---|---|---|
+| 终态运行审查记录｜Final runtime review record | `92e04978418248e14440fc353c6b231971eeccfe5655b8d23e628e9e1f123769` | 汇总桌面运行边界、交付结果与独立对抗审查。 / Summarizes the desktop-run boundary, delivered results, and independent adversarial review. | 十卡全体；M01 深链 / All ten cards; M01 deep chain |
+| 程序规则↔正文六门对照｜Program-to-text six-gate crosswalk | `3e8b50d9359bf1c7075bf7009fb25df1270ff45b24e5aa10dcdbed20ddf82963` | 把六门程序条件对齐到正文门名、当前状态与退出动作。 / Maps the six-gate program conditions to the proposal gate names, current states, and exit actions. | 十卡全体 / All ten cards |
+| 输入来源图｜Source map | `24c5dce9b2929c72a026868e11a97212fc30550e9ab098609c675bbae49b5892` | 定位十卡投影、M01 九字段、六门正文锚点和机器可读十卡缺口。 / Locates the ten-card projection, M01 nine fields, six-gate text anchors, and the machine-readable ten-card source gap. | 十卡全体；M01 深链 / All ten cards; M01 deep chain |
+| 三态桌面演算案例｜Three-state desktop replay cases | `41bee85a176b55afc51199c36960df1d85b18ab38932f4c144077ccd9f305e67` | 预登记每张卡共用的人工基线、协议比较和越线推进三类桌面输入。 / Pre-registers the manual-baseline, protocol-comparison, and over-boundary replay inputs shared by every card. | 十卡全体 / All ten cards |
+| 负向注入预登记｜Negative-injection preregistration | `2f5f548ff5470aa5043373113489ec7ea9411121d2855f50f385e20890ed2a03` | 预登记 14 个故意越界的桌面测试及其预期拒绝门。 / Pre-registers 14 deliberate desktop violations and their expected rejecting gates. | `G01 / W01 / M01 / C02` |
+| 正式包边界投影｜Formal-package boundary projection | `1ba73670bc212665dea51e90e372ed50dba2b79cd598f28a3b1bd471cd7f7891` | 锁定当时正式包身份、十卡与 M01 字段投影，并保留非现场声明。 / Locks the then-current package identity and the ten-card/M01 field projections while preserving non-field claims. | 十卡全体；M01 深链 / All ten cards; M01 deep chain |
+| 六门桌面协议｜Six-gate desktop protocol | `10a385cfae514b292a1d40eeb559a32e86cfd7e0181393467c25cac77e4dd2b2` | 定义六门的确定性桌面判定条件、未决状态和退出边界。 / Defines deterministic desktop conditions, unresolved states, and exit boundaries for the six gates. | 十卡全体 / All ten cards |
+| 十卡编译投影｜Compiled ten-card projection | `b8d17baa82d282fd0df81423403b792b444efb7f8b05828b3d523d93ecf07bc6` | 将十卡编成带来源追踪和 source_gap 的工作区输入投影，不冒充包内正式真值。 / Compiles all ten cards into a traced workspace input projection with its source gap, without presenting it as formal-package truth. | 十卡全体；M01 为唯一深链 / All ten cards; M01 is the sole deep chain |
+| 机制引擎｜Mechanism engine | `31574926f467e0a58467e4b612b1b053cc778da83a3db8f564d22202c106b304` | 用锁定输入执行六门判定并生成回执，输入或正文投影漂移时失败。 / Runs six-gate adjudication on locked inputs, emits receipts, and fails on input or proposal-projection drift. | 十卡全体；M01 模型轮 / All ten cards; M01 model round |
+| 30 张三态记录｜30 three-state records | `547691e72b6f18d262ae7114257b3f85d46e11437400c03318e94c0c7efb2c8e` | 为十卡各保存三种桌面状态的六门判定、证据路径和合成／非现场标记。 / Stores the six-gate decision, evidence paths, and synthetic/non-field flags for three desktop states of every card. | 十卡全体 / All ten cards |
+| 双计数记录｜Double-count record | `0be779ea64d3a549c3482a5cde3c8039a0ff4b5b90b4d57bf8cd91c4483c3c13` | 分开记录桌面票据、真实复测和现场运行计数，防止将桌面推演冒充现场。 / Separates desktop-receipt, real-retest, and field-run counts so desktop replay cannot be presented as field evidence. | 十卡全体 / All ten cards |
+| 负向注入结果账｜Negative-injection result ledger | `e2a6ced834c4f07bc2d0b799f6b702c7b8b211b9ac6672285bff107f1ef34fb4` | 记录 14 个预登记负向注入的预期门、实际拒绝门和漏检状态。 / Records the expected gates, actual rejecting gates, and leak status for the 14 preregistered negative injections. | `G01 / W01 / M01 / C02` |
+| M01 模型生成捕获｜M01 model-generation capture | `7b4fc33f010b4694256a28914fac4ca106f334ec1d77bca7e6f0872fb0effbce` | 保留 M01 单轮的提示词与三个候选，并如实标记精确服务身份和种子不可得。 / Retains the prompt and three candidates from the single M01 round while recording that the exact service identity and seed were unavailable. | `M01` |
+| M01 三候选裁决｜M01 three-candidate adjudications | `22dd3ce783aeaf9527ad46c1b32a5f2e5c5262689ab2ee453082a6ce542dca5f` | 对单轮 M01 三个候选逐一保存六门裁决与非现场标记。 / Stores a six-gate adjudication and non-field flag for each of the three candidates in the single M01 round. | `M01` |
+| 整线降级演算｜Whole-line downgrade calculation | `7226d4f485962c9d48ba146453d3c5703f6ee83ac0065af0d3b73f2a7e86ef0d` | 记录由 M01 复测不通过触发的整线降级桌面演算，并禁止只修最弱一卡。 / Records the desktop calculation in which an M01 retest failure downgrades the whole line and forbids patching only the weakest card. | `M01` 触发→十卡整线 / M01 trigger → all-ten-card line |
+| 六门验证台账｜Six-gate validation ledger | `7b97801bda0418c03761a62c4581ac22e6c91bf27b135ec2903b5f9f0c151e60` | 保存六门阈值、待定状态、停止条件与输入源锁。 / Stores the six-gate thresholds, pending states, stop conditions, and input-source locks. | 十卡全体 / All ten cards |
+| 意图式 brief 集｜Intent-based brief set | `d974d8903ebaf5d8b8eef6b5eaeba301bffc9c7d2b173445370271dff4c907ca` | 预登记文本生成任务的事实点、不可改边界、卡号绑定和输出合同，不作机制成效证据。 / Pre-registers facts, immutable boundaries, card bindings, and output contracts for text-generation tasks; it is not mechanism-effect evidence. | `M01` 及 `G01 / W01 / R02 / H01 / H02 / E01 / C01 / C02`；`R01` 未被该 brief 的卡号清单绑定 / The nine-card human-baseline set: M01 plus the eight listed cards; R01 is not bound by that brief card list |
+| 模型调用账｜Model-call ledger | `aac91e8f9b0e1f173329307515f0f23c32963a3eb1a072000aace510d66e46c7` | 记录文本生成任务的调用记录与失败留痕，卡号只通过同批 brief 的关联标识匹配。 / Records text-generation task calls and failure traces; card linkage exists only through matching identifiers in the same-batch brief. | 同批 brief 显式绑定的跨卡表达层；非机制成效票据 / Cross-card narrative layer explicitly bound by the same-batch brief; not a mechanism-effect receipt |
+
+## 不纳入项｜Excluded items
+
+- 通道探测记录只证明当时通道可达，没有与任何单卡或跨卡 job 的明确绑定，因此不纳入逐件索引。 / The channel-probe record proves only channel reachability and has no explicit binding to a card or cross-card job, so it is excluded.
+- 预览目录与候选正文／图像用于预览、挑版或候选安装，不是十卡机制记录，因此不纳入。 / Preview, selection, and candidate-installation files are not ten-card mechanism records and are therefore excluded.
+- 本索引对正文中的桌面记录、负向注入、M01 单轮候选与裁决、整线降级、六门验证和双计数均已定位，无“找不到但仍写入”的条目。 / All relevant proposal claims were located; no unlocated source has been presented as evidence.

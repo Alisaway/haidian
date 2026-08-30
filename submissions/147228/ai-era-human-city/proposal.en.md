@@ -9,7 +9,7 @@ translation_of: "proposal.md"
 license: "CC-BY-4.0"
 proposal_format_version: "2"
 bilingual_contract_version: "1"
-iteration: "v2.1"
+iteration: "v2.6"
 ---
 
 # From an AI Showcase to a City for People in the AI Era
@@ -29,6 +29,44 @@ The first G0 acceptance unit starts with a complete ordinary-person journey. The
 | Independent replay and decide expand/repair/exit | Evidence cabinet, version board and public observer seat | Replay difference, worst-group result and decision record | Return to the paper protocol if it cannot be replayed |
 
 The package claims only a G0 conceptual evidence chain; G1/G2 still require field work, formal data, professional review and authorization. The five-step chain cross-checks the ten scenario cards, human fallback and implementation matrix without turning concept metrics into service performance [data:geometry/constraints.geojson#SCN-06] [metric:scenario_g0_count]. The offline runner now binds four existing routes to real GeoJSON features: intergenerational learning, civic API, night human service, and reskilling each have an ordinary-person entry. It requires 5/5 journey steps, 5/5 rollback steps, 6/6 acceptance checks, and 4/4 resolving routes; five failing fixtures stop, reject a data call, freeze night expansion, hold automated routing, or return to G0, while three ordinary or human alternatives continue. This proves only local structural replay, not field service, accessibility, staffing, or safety outcomes [data:visual/assets/ai-era-ordinary-journey-evidence.json] [metric:scenario_g0_count].
+
+## Five Receipt Steps Keep Ordinary Service Beside Automation
+
+The existing ordinary-person journey records four sample routes, eight fixtures, six acceptance checks and five rollback actions. The new bilingual board puts these fields on one receipt so a reviewer can read the ordinary route before the AI-assisted route. The replay covers package structure only; authorisation count is zero, field observations are zero, the local baseline remains unknown, and the package stays at HOLD [data:visual/assets/ai-era-g0-journey-atlas.json] [data:visual/assets/run-ai-era-g0-journey-atlas.js].
+
+![G0 ordinary-person journey receipt: four routes, five handoffs and human fallback](assets/figures/ai-era-g0-journey-atlas.en.svg)
+
+The board places choice, purpose, takeover, appeal and independent replay back into the sequence of actions. Missing ordinary route, human responsibility or independent replay returns the chain to G0; the board provides no resident experience, service performance, permit or implementation evidence [data:visual/assets/ai-era-g0-journey-atlas.json].
+
+## AI Is Optional and the City Keeps Running
+
+Four routes use ordinary service without AI as the baseline and place AI only in a reversible gain position. Intergenerational learning keeps human explanation, the civic API keeps a staffed service without a data call, night service keeps staffing and paper rules, and reskilling keeps human consultation. Each route passes through ordinary baseline, optional gain, stop trigger and retained public asset [data:visual/assets/ai-era-off-city-on-contract.json] [data:visual/assets/run-ai-era-off-city-on.js].
+
+| State | Reviewer check | Current boundary |
+| --- | --- | --- |
+| Ordinary baseline | Human, paper, voice or physical wayfinding can complete the task first | Concept contract |
+| Optional gain | AI offers bounded prompts, retrieval or matching and is never the only entry | G0 design target |
+| Stop trigger | Missing takeover, unclear rights, night risk or failed exit freezes the route | Synthetic replay |
+| Retained public asset | Remove the digital layer and retain access, service, redress and the decision record | Field result unknown |
+
+![AI is optional and the city keeps running. Four routes share an ordinary baseline and a withdrawal state](assets/figures/ai-era-off-city-on-atlas.en.svg)
+
+This contract links each existing route to an ordinary entry, the AI role, the stop condition and the public asset retained after withdrawal. Four negative fixtures return to HOLD and three ordinary or human controls continue. The result remains zero authorisations, zero field data, not run and HOLD; it provides no service performance, staffing or official-score evidence [data:visual/assets/ai-era-off-city-on-contract.json].
+
+## A Continuity Receipt Connects Maintenance to Ordinary Service
+
+The four states now continue into a maintenance handoff. BASE checks the ordinary entry, screen-free alternative and exit record. BOOST keeps AI as a bounded gain. BLACKOUT stops the route when role, rights or safety conditions are unclear. BEQUEST retains access, service, redress and the release record. After handoff, the public asset returns to the ordinary route and the digital layer is not the only entrance [data:visual/assets/ai-era-continuity-maintenance-contract.json] [data:visual/assets/run-ai-era-continuity-maintenance.js].
+
+| State | Reviewer action | Passing condition |
+| --- | --- | --- |
+| BASE ordinary route | Staffed entry, paper rule, screen-free wayfinding, exit record | Ordinary service is visible and staffed |
+| BOOST optional gain | Purpose bound, human review, withdrawal | AI is not the only entry |
+| BLACKOUT stop and takeover | Stop trigger, safe retreat, incident record | Every failing fixture returns to HOLD |
+| BEQUEST public retention | Maintenance handoff, release note, public replay | Access, service and redress remain usable |
+
+![Human continuity and maintenance receipt: four states, three key areas, seven maintenance roles and twelve conceptual review windows](assets/figures/ai-era-continuity-maintenance-atlas.en.svg)
+
+The receipt places the ordinary entries of Zhongzhiyuan, AI Origin Community and Dazhongsi under one handoff rule. It also records six handoff seams, seven proposed responsibility roles and seven offline components. W01 through W12 are conceptual review windows covering source inventory, paper replay, screen-free checks, stop replay, maintenance handoff, public replay and stage decisions. They are not field work periods or operating commitments. Six negative fixtures remain HOLD. Four positive controls only show that ordinary service, a human option or a retained public asset can continue in replay. The package remains at zero authorisations, zero field observations, baseline unknown and performance not run [data:visual/assets/ai-era-continuity-maintenance-contract.json].
 
 ## Design Basis and Source List
 

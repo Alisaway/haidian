@@ -41,7 +41,7 @@
       "drawing_refs": ["drawings/a3-booklet.pdf", "drawings/a0-boards.pdf"],
       "geometry_refs": ["geometry/land_use.geojson", "geometry/buildings.geojson", "geometry/roads.geojson", "geometry/green_space.geojson", "geometry/public_space.geojson"],
       "metric_refs": ["building_footprint_area_sqm", "green_ratio", "public_space_ratio"],
-      "source_ids": ["DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509", "REPO-SOURCE-REGISTRY"],
+      "source_ids": ["DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509", "REPO-SOURCE-REGISTRY", "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES"],
       "assumption_ids": ["A-CONTROLS-001", "A-SURVEY-001", "A-GEOM-001"],
       "self_check_ids": ["SPATIAL_REVIEW", "VISUAL_PACKAGING"],
       "evidence_summary_zh": "F02 将 KEEP/OPEN/INTENSIFY 与用地、建筑界面关联，F04 统筹慢行与蓝绿公共空间，F09 将三地标和C01-C09组件转化为可逆公共界面；正文明确所有建筑、竖向和工程条件均待逐栋调查与专业深化。"
@@ -56,7 +56,7 @@
       "drawing_refs": ["drawings/a3-booklet.pdf", "drawings/a0-boards.pdf"],
       "geometry_refs": ["geometry/site_boundary.geojson", "geometry/land_use.geojson", "geometry/buildings.geojson", "geometry/constraints.geojson"],
       "metric_refs": ["site_area_sqm", "building_footprint_area_sqm"],
-      "source_ids": ["DATA-SRC-PROVISIONAL-BOUNDARIES-20260605", "REPO-SOURCE-REGISTRY"],
+      "source_ids": ["DATA-SRC-PROVISIONAL-BOUNDARIES-20260605", "REPO-SOURCE-REGISTRY", "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING"],
       "assumption_ids": ["A-GEOM-001", "A-CONTROLS-001"],
       "self_check_ids": ["SPATIAL_REVIEW", "PROFESSIONAL_EVIDENCE"],
       "evidence_summary_zh": "正文把已计算的临时图层指标、概念更新动作与待补 FAR/高度/密度/道路红线严格分开；F05 要求合理精度和临时边界标签，T06 的每个项目均以正式资料、专业审查和退出 Gate 为前提，不形成法定控规判断。"
@@ -71,7 +71,7 @@
       "drawing_refs": ["drawings/a3-booklet.pdf", "drawings/a0-boards.pdf"],
       "geometry_refs": ["geometry/land_use.geojson", "geometry/site_boundary.geojson"],
       "metric_refs": ["site_area_sqm"],
-      "source_ids": ["DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509", "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605"],
+      "source_ids": ["DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509", "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605", "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311"],
       "assumption_ids": ["A-GEOM-001", "A-CONTROLS-001"],
       "self_check_ids": ["DETERMINISTIC_VALIDATION", "SPATIAL_REVIEW"],
       "evidence_summary_zh": "land_use.geojson 继续承担分类与拓扑证据，正文解释每类用地在公共开放、创新服务、生活照护和蓝绿连续中的设计作用，同时声明分类闭合不等于现状真实、法定用途或审批结论。"
@@ -90,6 +90,51 @@
       "assumption_ids": ["A-CONTROLS-001", "A-SURVEY-001"],
       "self_check_ids": ["PROFESSIONAL_EVIDENCE"],
       "evidence_summary_zh": "当前仅有情景建筑基底，缺逐栋测绘、结构、消防、日照、设备和官方建筑深度文件；正文据此只提出公共首层、界面、屋顶和可逆构件的深化问题，未声称达到施工图或工程可行性深度。"
+    },
+    {
+      "standard_id": "GENERATIVE-AI-INTERIM-MEASURES",
+      "requirement_zh": "仅在实际服务与适用范围核验后判断生成式 AI 规则；不得把设计合同扩写成法定义务或虚构数字期限。",
+      "professional_dimension": "AI治理与法律边界",
+      "mandatory": false,
+      "review_status": "data_gap",
+      "proposal_sections": ["AI 创新生态、人才画像与 AI+ 场景", "更新项目清单、实施政策与分期计划", "风险、版权与合规说明"],
+      "drawing_refs": ["assets/figures/scenario-matrix.png", "assets/figures/operations-pathway.png", "drawings/a3-booklet.pdf", "drawings/a0-boards.pdf"],
+      "geometry_refs": ["geometry/public_space.geojson"],
+      "metric_refs": ["public_space_feature_count"],
+      "source_ids": ["DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES"],
+      "assumption_ids": ["A-OPS-001", "A-PROTOCOL-001"],
+      "self_check_ids": ["PROFESSIONAL_EVIDENCE", "VISUAL_PACKAGING"],
+      "evidence_summary_zh": "十二场景合同统一限制 AI 只建议、排序、转译、辅助验证或提示，并保留人工决定、接管、投诉、停止与撤场；适用性、具名控制者、合法依据和数字窗口均待个案法律审查，不宣称已合规。"
+    },
+    {
+      "standard_id": "BARRIER-FREE-ENVIRONMENT-LAW",
+      "requirement_zh": "无障碍服务和信息交流应保留可访问、可人工解释、可非数字进入的等效路径；现场条件仍需专业核验。",
+      "professional_dimension": "无障碍与等效服务",
+      "mandatory": false,
+      "review_status": "data_gap",
+      "proposal_sections": ["重点区域详细设计", "AI 创新生态、人才画像与 AI+ 场景", "交通、轨道、市政与公共服务设施", "风险、版权与合规说明"],
+      "drawing_refs": ["assets/figures/scenario-matrix.png", "assets/figures/operations-pathway.png", "drawings/a3-booklet.pdf", "drawings/a0-boards.pdf"],
+      "geometry_refs": ["geometry/roads.geojson", "geometry/public_space.geojson"],
+      "metric_refs": ["accessible_route_pass_rate"],
+      "source_ids": ["DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW"],
+      "assumption_ids": ["A-SURVEY-001", "A-PROTOCOL-001"],
+      "self_check_ids": ["SPATIAL_REVIEW", "PROFESSIONAL_EVIDENCE", "VISUAL_PACKAGING"],
+      "evidence_summary_zh": "六类受保护/易受排除用户均在数据治理矩阵中保留等效服务、非数字入口、人工解释和退出；SC08 等现场路线、设施、人员和通过率继续为 unknown，未宣称完成无障碍审计。"
+    },
+    {
+      "standard_id": "ELDERLY-SMART-TECH-PLAN-2020-45",
+      "requirement_zh": "传统服务与智能化服务创新并行仅作为政策背景，不证明本地人员、设施、需求或实施承诺。",
+      "professional_dimension": "包容性公共服务",
+      "mandatory": false,
+      "review_status": "data_gap",
+      "proposal_sections": ["AI 创新生态、人才画像与 AI+ 场景", "交通、轨道、市政与公共服务设施", "风险、版权与合规说明"],
+      "drawing_refs": ["assets/figures/scenario-matrix.png", "assets/figures/operations-pathway.png", "drawings/a3-booklet.pdf", "drawings/a0-boards.pdf"],
+      "geometry_refs": ["geometry/public_space.geojson"],
+      "metric_refs": ["public_space_ratio"],
+      "source_ids": ["DATA-SRC-ELDERLY-SMART-TECH-PLAN-2020-45"],
+      "assumption_ids": ["A-OPS-001", "A-PROTOCOL-001"],
+      "self_check_ids": ["PROFESSIONAL_EVIDENCE", "VISUAL_PACKAGING"],
+      "evidence_summary_zh": "低技术/无 AI 替代、柜台/纸面/电话入口与人工解释已写入十二场景和六类等效服务；人员配置、响应窗口和持续运营均为 design-target 或 unknown。"
     }
   ]
 }

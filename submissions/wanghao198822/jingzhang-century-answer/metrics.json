@@ -1,0 +1,1309 @@
+{
+  "schema_version": "0.1.0",
+  "units": {
+    "length": "m",
+    "area": "sqm"
+  },
+  "metrics": {
+    "site_area_sqm": {
+      "status": "known",
+      "value": 11412825.386,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/site_boundary.geojson#SITE-001"
+      ],
+      "formula": "round(area(project(union(site_boundary.features), EPSG:4326->EPSG:4548)), 3)",
+      "confidence": "high",
+      "assumptions": [
+        "Based on the provisional submitted boundary, not an official redline; recompute the whole package when official geometry is published."
+      ]
+    },
+    "land_use_area_0701_sqm": {
+      "status": "known",
+      "value": 3311924.496,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson#LU-005",
+        "geometry/land_use.geojson#LU-009"
+      ],
+      "formula": "round(area(union(land_use.features where properties.land_use_code == \"0701\")), 3)",
+      "confidence": "medium",
+      "assumptions": [
+        "Concept land-use allocation for residential (0701); not a statutory plot classification.",
+        "Land-use codes are taken from the site-package enumeration.",
+        "Geometry is projected from EPSG:4326 to EPSG:4548 with pyproj (always_xy=True) and measured with shapely, matching scripts/spatial_review.py."
+      ]
+    },
+    "land_use_ratio_0701": {
+      "status": "known",
+      "value": 0.290193,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/land_use.geojson#LU-005",
+        "geometry/land_use.geojson#LU-009",
+        "geometry/site_boundary.geojson#SITE-001"
+      ],
+      "formula": "round(land_use_area_0701_sqm / site_area_sqm, 6)",
+      "confidence": "medium",
+      "assumptions": [
+        "Share of the submitted scope allocated to residential (0701).",
+        "Denominator is the provisional submitted boundary, not an official redline."
+      ]
+    },
+    "land_use_area_0802_sqm": {
+      "status": "known",
+      "value": 1962761.625,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson#LU-004",
+        "geometry/land_use.geojson#LU-008"
+      ],
+      "formula": "round(area(union(land_use.features where properties.land_use_code == \"0802\")), 3)",
+      "confidence": "medium",
+      "assumptions": [
+        "Concept land-use allocation for research and development (0802); not a statutory plot classification.",
+        "Land-use codes are taken from the site-package enumeration.",
+        "Geometry is projected from EPSG:4326 to EPSG:4548 with pyproj (always_xy=True) and measured with shapely, matching scripts/spatial_review.py."
+      ]
+    },
+    "land_use_ratio_0802": {
+      "status": "known",
+      "value": 0.171979,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/land_use.geojson#LU-004",
+        "geometry/land_use.geojson#LU-008",
+        "geometry/site_boundary.geojson#SITE-001"
+      ],
+      "formula": "round(land_use_area_0802_sqm / site_area_sqm, 6)",
+      "confidence": "medium",
+      "assumptions": [
+        "Share of the submitted scope allocated to research and development (0802).",
+        "Denominator is the provisional submitted boundary, not an official redline."
+      ]
+    },
+    "land_use_area_0803_sqm": {
+      "status": "known",
+      "value": 400735.683,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson#LU-002"
+      ],
+      "formula": "round(area(union(land_use.features where properties.land_use_code == \"0803\")), 3)",
+      "confidence": "medium",
+      "assumptions": [
+        "Concept land-use allocation for culture (0803); not a statutory plot classification.",
+        "Land-use codes are taken from the site-package enumeration.",
+        "Geometry is projected from EPSG:4326 to EPSG:4548 with pyproj (always_xy=True) and measured with shapely, matching scripts/spatial_review.py."
+      ]
+    },
+    "land_use_ratio_0803": {
+      "status": "known",
+      "value": 0.035113,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/land_use.geojson#LU-002",
+        "geometry/site_boundary.geojson#SITE-001"
+      ],
+      "formula": "round(land_use_area_0803_sqm / site_area_sqm, 6)",
+      "confidence": "medium",
+      "assumptions": [
+        "Share of the submitted scope allocated to culture (0803).",
+        "Denominator is the provisional submitted boundary, not an official redline."
+      ]
+    },
+    "land_use_area_0804_sqm": {
+      "status": "known",
+      "value": 328759.955,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson#LU-006"
+      ],
+      "formula": "round(area(union(land_use.features where properties.land_use_code == \"0804\")), 3)",
+      "confidence": "medium",
+      "assumptions": [
+        "Concept land-use allocation for education and research institutes (0804); not a statutory plot classification.",
+        "Land-use codes are taken from the site-package enumeration.",
+        "Geometry is projected from EPSG:4326 to EPSG:4548 with pyproj (always_xy=True) and measured with shapely, matching scripts/spatial_review.py."
+      ]
+    },
+    "land_use_ratio_0804": {
+      "status": "known",
+      "value": 0.028806,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/land_use.geojson#LU-006",
+        "geometry/site_boundary.geojson#SITE-001"
+      ],
+      "formula": "round(land_use_area_0804_sqm / site_area_sqm, 6)",
+      "confidence": "medium",
+      "assumptions": [
+        "Share of the submitted scope allocated to education and research institutes (0804).",
+        "Denominator is the provisional submitted boundary, not an official redline."
+      ]
+    },
+    "land_use_area_0901_sqm": {
+      "status": "known",
+      "value": 796407.677,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson#LU-003"
+      ],
+      "formula": "round(area(union(land_use.features where properties.land_use_code == \"0901\")), 3)",
+      "confidence": "medium",
+      "assumptions": [
+        "Concept land-use allocation for commercial (0901); not a statutory plot classification.",
+        "Land-use codes are taken from the site-package enumeration.",
+        "Geometry is projected from EPSG:4326 to EPSG:4548 with pyproj (always_xy=True) and measured with shapely, matching scripts/spatial_review.py."
+      ]
+    },
+    "land_use_ratio_0901": {
+      "status": "known",
+      "value": 0.069782,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/land_use.geojson#LU-003",
+        "geometry/site_boundary.geojson#SITE-001"
+      ],
+      "formula": "round(land_use_area_0901_sqm / site_area_sqm, 6)",
+      "confidence": "medium",
+      "assumptions": [
+        "Share of the submitted scope allocated to commercial (0901).",
+        "Denominator is the provisional submitted boundary, not an official redline."
+      ]
+    },
+    "land_use_area_0902_sqm": {
+      "status": "known",
+      "value": 601926.438,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson#LU-007"
+      ],
+      "formula": "round(area(union(land_use.features where properties.land_use_code == \"0902\")), 3)",
+      "confidence": "medium",
+      "assumptions": [
+        "Concept land-use allocation for business office (0902); not a statutory plot classification.",
+        "Land-use codes are taken from the site-package enumeration.",
+        "Geometry is projected from EPSG:4326 to EPSG:4548 with pyproj (always_xy=True) and measured with shapely, matching scripts/spatial_review.py."
+      ]
+    },
+    "land_use_ratio_0902": {
+      "status": "known",
+      "value": 0.052741,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/land_use.geojson#LU-007",
+        "geometry/site_boundary.geojson#SITE-001"
+      ],
+      "formula": "round(land_use_area_0902_sqm / site_area_sqm, 6)",
+      "confidence": "medium",
+      "assumptions": [
+        "Share of the submitted scope allocated to business office (0902).",
+        "Denominator is the provisional submitted boundary, not an official redline."
+      ]
+    },
+    "land_use_area_1401_sqm": {
+      "status": "known",
+      "value": 2589251.89,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson#LU-001"
+      ],
+      "formula": "round(area(union(land_use.features where properties.land_use_code == \"1401\")), 3)",
+      "confidence": "medium",
+      "assumptions": [
+        "Concept land-use allocation for park green space (1401); not a statutory plot classification.",
+        "Land-use codes are taken from the site-package enumeration.",
+        "Geometry is projected from EPSG:4326 to EPSG:4548 with pyproj (always_xy=True) and measured with shapely, matching scripts/spatial_review.py."
+      ]
+    },
+    "land_use_ratio_1401": {
+      "status": "known",
+      "value": 0.226872,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/land_use.geojson#LU-001",
+        "geometry/site_boundary.geojson#SITE-001"
+      ],
+      "formula": "round(land_use_area_1401_sqm / site_area_sqm, 6)",
+      "confidence": "medium",
+      "assumptions": [
+        "Share of the submitted scope allocated to park green space (1401).",
+        "Denominator is the provisional submitted boundary, not an official redline."
+      ]
+    },
+    "land_use_area_16_sqm": {
+      "status": "known",
+      "value": 1421057.362,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson#LU-010"
+      ],
+      "formula": "round(area(union(land_use.features where properties.land_use_code == \"16\")), 3)",
+      "confidence": "medium",
+      "assumptions": [
+        "Concept land-use allocation for reserved / undetermined (16); not a statutory plot classification.",
+        "Land-use codes are taken from the site-package enumeration.",
+        "Geometry is projected from EPSG:4326 to EPSG:4548 with pyproj (always_xy=True) and measured with shapely, matching scripts/spatial_review.py."
+      ]
+    },
+    "land_use_ratio_16": {
+      "status": "known",
+      "value": 0.124514,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/land_use.geojson#LU-010",
+        "geometry/site_boundary.geojson#SITE-001"
+      ],
+      "formula": "round(land_use_area_16_sqm / site_area_sqm, 6)",
+      "confidence": "medium",
+      "assumptions": [
+        "Share of the submitted scope allocated to reserved / undetermined (16).",
+        "Denominator is the provisional submitted boundary, not an official redline."
+      ]
+    },
+    "land_use_total_area_sqm": {
+      "status": "known",
+      "value": 11412825.023,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "round(area(union(land_use.features)), 3)",
+      "confidence": "medium",
+      "assumptions": [
+        "Dissolved area of all concept parcels; overlaps are counted once.",
+        "Geometry is projected from EPSG:4326 to EPSG:4548 with pyproj (always_xy=True) and measured with shapely, matching scripts/spatial_review.py."
+      ]
+    },
+    "land_use_coverage_ratio": {
+      "status": "known",
+      "value": 0.999999965,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/land_use.geojson",
+        "geometry/site_boundary.geojson#SITE-001"
+      ],
+      "formula": "round((site_area_sqm - land_use_coverage_gap_sqm) / site_area_sqm, 9)",
+      "confidence": "high",
+      "assumptions": [
+        "Reported to nine decimals because the residual gap is sub-square-metre."
+      ]
+    },
+    "land_use_coverage_gap_sqm": {
+      "status": "known",
+      "value": 0.398,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson",
+        "geometry/site_boundary.geojson#SITE-001"
+      ],
+      "formula": "round(area(difference(union(site_boundary), union(land_use.features))), 3)",
+      "confidence": "high",
+      "assumptions": [
+        "Topology quality measure; the review gate allows up to max(1 sqm, 0.01% of site area).",
+        "Geometry is projected from EPSG:4326 to EPSG:4548 with pyproj (always_xy=True) and measured with shapely, matching scripts/spatial_review.py."
+      ]
+    },
+    "land_use_max_overlap_sqm": {
+      "status": "known",
+      "value": 0.087,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "round(max(area(intersection(a, b)) for every unordered pair a,b of land_use.features), 3)",
+      "confidence": "high",
+      "assumptions": [
+        "Topology quality measure; the review gate allows up to 1 sqm per pair.",
+        "Geometry is projected from EPSG:4326 to EPSG:4548 with pyproj (always_xy=True) and measured with shapely, matching scripts/spatial_review.py."
+      ]
+    },
+    "land_use_parcel_count": {
+      "status": "known",
+      "value": 10,
+      "unit": "count",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "count(land_use.features)",
+      "confidence": "high",
+      "assumptions": [
+        "Concept parcels, not statutory plots."
+      ]
+    },
+    "key_area_zhongzhiyuan_area_sqm": {
+      "status": "known",
+      "value": 1929201.877,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/key_areas.geojson#PROV-KEY-001"
+      ],
+      "formula": "round(area(project(key_areas.feature[PROV-KEY-001], EPSG:4326->EPSG:4548)), 3)",
+      "confidence": "medium",
+      "assumptions": [
+        "Provisional boundary inferred from public announcements; not an official redline.",
+        "The area is a property of the drawn provisional polygon, not a survey result."
+      ]
+    },
+    "key_area_zhongzhiyuan_ratio": {
+      "status": "known",
+      "value": 0.169038,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/key_areas.geojson#PROV-KEY-001",
+        "geometry/site_boundary.geojson#SITE-001"
+      ],
+      "formula": "round(key_area_zhongzhiyuan_area_sqm / site_area_sqm, 6)",
+      "confidence": "medium",
+      "assumptions": [
+        "Share of the submitted scope covered by this provisional key-area polygon."
+      ]
+    },
+    "key_area_zhongzhiyuan_area_deviation_percent": {
+      "status": "known",
+      "value": 0.427,
+      "unit": "percent",
+      "source_files": [
+        "geometry/key_areas.geojson#PROV-KEY-001",
+        "sources.json#OFFICIAL-ANNOUNCEMENT"
+      ],
+      "formula": "round((key_area_zhongzhiyuan_area_sqm - announced_area_sqm) / announced_area_sqm * 100, 4); announced_area_sqm = 1921000 from the public announcement",
+      "confidence": "medium",
+      "assumptions": [
+        "Announced areas are 192.1 ha / 104.3 ha / 72.0 ha; the deviation shows how closely the provisional polygon reproduces the announced size.",
+        "A small deviation does not make the provisional boundary correct in position; the package discloses a 1.9-2.7 km centroid offset from the real named places."
+      ]
+    },
+    "key_area_ai_origin_area_sqm": {
+      "status": "known",
+      "value": 1043236.909,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/key_areas.geojson#PROV-KEY-002"
+      ],
+      "formula": "round(area(project(key_areas.feature[PROV-KEY-002], EPSG:4326->EPSG:4548)), 3)",
+      "confidence": "medium",
+      "assumptions": [
+        "Provisional boundary inferred from public announcements; not an official redline.",
+        "The area is a property of the drawn provisional polygon, not a survey result."
+      ]
+    },
+    "key_area_ai_origin_ratio": {
+      "status": "known",
+      "value": 0.091409,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/key_areas.geojson#PROV-KEY-002",
+        "geometry/site_boundary.geojson#SITE-001"
+      ],
+      "formula": "round(key_area_ai_origin_area_sqm / site_area_sqm, 6)",
+      "confidence": "medium",
+      "assumptions": [
+        "Share of the submitted scope covered by this provisional key-area polygon."
+      ]
+    },
+    "key_area_ai_origin_area_deviation_percent": {
+      "status": "known",
+      "value": 0.0227,
+      "unit": "percent",
+      "source_files": [
+        "geometry/key_areas.geojson#PROV-KEY-002",
+        "sources.json#OFFICIAL-ANNOUNCEMENT"
+      ],
+      "formula": "round((key_area_ai_origin_area_sqm - announced_area_sqm) / announced_area_sqm * 100, 4); announced_area_sqm = 1043000 from the public announcement",
+      "confidence": "medium",
+      "assumptions": [
+        "Announced areas are 192.1 ha / 104.3 ha / 72.0 ha; the deviation shows how closely the provisional polygon reproduces the announced size.",
+        "A small deviation does not make the provisional boundary correct in position; the package discloses a 1.9-2.7 km centroid offset from the real named places."
+      ]
+    },
+    "key_area_dazhongsi_area_sqm": {
+      "status": "known",
+      "value": 720454.219,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/key_areas.geojson#PROV-KEY-003"
+      ],
+      "formula": "round(area(project(key_areas.feature[PROV-KEY-003], EPSG:4326->EPSG:4548)), 3)",
+      "confidence": "medium",
+      "assumptions": [
+        "Provisional boundary inferred from public announcements; not an official redline.",
+        "The area is a property of the drawn provisional polygon, not a survey result."
+      ]
+    },
+    "key_area_dazhongsi_ratio": {
+      "status": "known",
+      "value": 0.063127,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/key_areas.geojson#PROV-KEY-003",
+        "geometry/site_boundary.geojson#SITE-001"
+      ],
+      "formula": "round(key_area_dazhongsi_area_sqm / site_area_sqm, 6)",
+      "confidence": "medium",
+      "assumptions": [
+        "Share of the submitted scope covered by this provisional key-area polygon."
+      ]
+    },
+    "key_area_dazhongsi_area_deviation_percent": {
+      "status": "known",
+      "value": 0.0631,
+      "unit": "percent",
+      "source_files": [
+        "geometry/key_areas.geojson#PROV-KEY-003",
+        "sources.json#OFFICIAL-ANNOUNCEMENT"
+      ],
+      "formula": "round((key_area_dazhongsi_area_sqm - announced_area_sqm) / announced_area_sqm * 100, 4); announced_area_sqm = 720000 from the public announcement",
+      "confidence": "medium",
+      "assumptions": [
+        "Announced areas are 192.1 ha / 104.3 ha / 72.0 ha; the deviation shows how closely the provisional polygon reproduces the announced size.",
+        "A small deviation does not make the provisional boundary correct in position; the package discloses a 1.9-2.7 km centroid offset from the real named places."
+      ]
+    },
+    "key_area_total_area_sqm": {
+      "status": "known",
+      "value": 3692893.005,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "round(area(union(key_areas.features)), 3)",
+      "confidence": "medium",
+      "assumptions": [
+        "Dissolved area of the three provisional key-area polygons."
+      ]
+    },
+    "key_area_coverage_ratio": {
+      "status": "known",
+      "value": 0.323574,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/key_areas.geojson",
+        "geometry/site_boundary.geojson#SITE-001"
+      ],
+      "formula": "round(key_area_total_area_sqm / site_area_sqm, 6)",
+      "confidence": "medium",
+      "assumptions": [
+        "Share of the submitted scope taken by the three key detailed-design areas."
+      ]
+    },
+    "key_area_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "count(key_detailed_design_areas)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "green_space_area_sqm": {
+      "status": "known",
+      "value": 2857266.305,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/green_space.geojson"
+      ],
+      "formula": "round(area(union(green_space.features)), 3)",
+      "confidence": "medium",
+      "assumptions": [
+        "Dissolved area, so any overlap between green polygons is counted once.",
+        "Geometry is projected from EPSG:4326 to EPSG:4548 with pyproj (always_xy=True) and measured with shapely, matching scripts/spatial_review.py."
+      ]
+    },
+    "green_ratio": {
+      "status": "known",
+      "value": 0.250356,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/green_space.geojson",
+        "geometry/site_boundary.geojson#SITE-001"
+      ],
+      "formula": "round(green_space_area_sqm / site_area_sqm, 6)",
+      "confidence": "medium",
+      "assumptions": []
+    },
+    "green_space_south_segment_area_sqm": {
+      "status": "known",
+      "value": 1316500.098,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/green_space.geojson#GREEN-001"
+      ],
+      "formula": "round(area(project(green_space.feature[GREEN-001], EPSG:4326->EPSG:4548)), 3)",
+      "confidence": "medium",
+      "assumptions": [
+        "Concept green interface: south segment of the century-scroll spine.",
+        "Declared land-use code 1401."
+      ]
+    },
+    "green_space_middle_segment_area_sqm": {
+      "status": "known",
+      "value": 710158.967,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/green_space.geojson#GREEN-002"
+      ],
+      "formula": "round(area(project(green_space.feature[GREEN-002], EPSG:4326->EPSG:4548)), 3)",
+      "confidence": "medium",
+      "assumptions": [
+        "Concept green interface: middle segment around the answer-origin.",
+        "Declared land-use code 1401."
+      ]
+    },
+    "green_space_north_segment_area_sqm": {
+      "status": "known",
+      "value": 562593.053,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/green_space.geojson#GREEN-003"
+      ],
+      "formula": "round(area(project(green_space.feature[GREEN-003], EPSG:4326->EPSG:4548)), 3)",
+      "confidence": "medium",
+      "assumptions": [
+        "Concept green interface: north segment toward Qinghe.",
+        "Declared land-use code 1401."
+      ]
+    },
+    "green_space_qinghe_bluegreen_area_sqm": {
+      "status": "known",
+      "value": 268014.191,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/green_space.geojson#GREEN-004"
+      ],
+      "formula": "round(area(project(green_space.feature[GREEN-004], EPSG:4326->EPSG:4548)), 3)",
+      "confidence": "medium",
+      "assumptions": [
+        "Concept green interface: Qinghe blue-green coordination belt.",
+        "Declared land-use code 1402."
+      ]
+    },
+    "green_space_feature_count": {
+      "status": "known",
+      "value": 4,
+      "unit": "count",
+      "source_files": [
+        "geometry/green_space.geojson"
+      ],
+      "formula": "count(green_space.features)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "public_space_area_sqm": {
+      "status": "known",
+      "value": 220269.135,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "round(area(union(public_space.features)), 3)",
+      "confidence": "medium",
+      "assumptions": [
+        "Dissolved area, so any overlap between public-space polygons is counted once.",
+        "Geometry is projected from EPSG:4326 to EPSG:4548 with pyproj (always_xy=True) and measured with shapely, matching scripts/spatial_review.py."
+      ]
+    },
+    "public_space_ratio": {
+      "status": "known",
+      "value": 0.0193,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "geometry/site_boundary.geojson#SITE-001"
+      ],
+      "formula": "round(public_space_area_sqm / site_area_sqm, 6)",
+      "confidence": "medium",
+      "assumptions": []
+    },
+    "public_space_bell_plaza_area_sqm": {
+      "status": "known",
+      "value": 10000.0,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/public_space.geojson#PUBLIC-001"
+      ],
+      "formula": "round(area(project(public_space.feature[PUBLIC-001], EPSG:4326->EPSG:4548)), 3)",
+      "confidence": "medium",
+      "assumptions": [
+        "Concept public space: bell plaza at Dazhongsi; siting still needs professional and heritage consultation."
+      ]
+    },
+    "public_space_station_plaza_area_sqm": {
+      "status": "known",
+      "value": 6000.0,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/public_space.geojson#PUBLIC-002"
+      ],
+      "formula": "round(area(project(public_space.feature[PUBLIC-002], EPSG:4326->EPSG:4548)), 3)",
+      "confidence": "medium",
+      "assumptions": [
+        "Concept public space: Tsinghua Yuan station forecourt with the Kilometre-Zero Post; siting still needs professional and heritage consultation."
+      ]
+    },
+    "public_space_north_bridgehead_area_sqm": {
+      "status": "known",
+      "value": 8000.0,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/public_space.geojson#PUBLIC-003"
+      ],
+      "formula": "round(area(project(public_space.feature[PUBLIC-003], EPSG:4326->EPSG:4548)), 3)",
+      "confidence": "medium",
+      "assumptions": [
+        "Concept public space: north bridgehead plaza; siting still needs professional and heritage consultation."
+      ]
+    },
+    "public_space_community_micro_plaza_area_sqm": {
+      "status": "known",
+      "value": 4200.0,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/public_space.geojson#PUBLIC-004"
+      ],
+      "formula": "round(area(project(public_space.feature[PUBLIC-004], EPSG:4326->EPSG:4548)), 3)",
+      "confidence": "medium",
+      "assumptions": [
+        "Concept public space: community micro-plaza demonstration point; siting still needs professional and heritage consultation."
+      ]
+    },
+    "public_space_east_wing_belt_area_sqm": {
+      "status": "known",
+      "value": 192069.136,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/public_space.geojson#PUBLIC-005"
+      ],
+      "formula": "round(area(project(public_space.feature[PUBLIC-005], EPSG:4326->EPSG:4548)), 3)",
+      "confidence": "medium",
+      "assumptions": [
+        "Concept public space: east-wing slow-mobility public activity belt; siting still needs professional and heritage consultation."
+      ]
+    },
+    "public_space_feature_count": {
+      "status": "known",
+      "value": 5,
+      "unit": "count",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "count(public_space.features)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "building_footprint_area_sqm": {
+      "status": "known",
+      "value": 3124.999,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "round(area(union(buildings.features)), 3)",
+      "confidence": "medium",
+      "assumptions": []
+    },
+    "building_footprint_ratio": {
+      "status": "known",
+      "value": 0.000274,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/buildings.geojson",
+        "geometry/site_boundary.geojson#SITE-001"
+      ],
+      "formula": "round(building_footprint_area_sqm / site_area_sqm, 6)",
+      "confidence": "medium",
+      "assumptions": [
+        "Measures how light the physical intervention is: only three small concept footprints are proposed inside the whole submitted scope."
+      ]
+    },
+    "building_bell_pavilion_footprint_sqm": {
+      "status": "known",
+      "value": 1599.999,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/buildings.geojson#BLDG-001"
+      ],
+      "formula": "round(area(project(buildings.feature[BLDG-001], EPSG:4326->EPSG:4548)), 3)",
+      "confidence": "medium",
+      "assumptions": [
+        "Concept footprint: answer-bell pavilion inside the bell plaza (cultural).",
+        "Footprint only; this package states no building height and no development intensity."
+      ]
+    },
+    "building_archive_pavilion_footprint_sqm": {
+      "status": "known",
+      "value": 900.0,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/buildings.geojson#BLDG-002"
+      ],
+      "formula": "round(area(project(buildings.feature[BLDG-002], EPSG:4326->EPSG:4548)), 3)",
+      "confidence": "medium",
+      "assumptions": [
+        "Concept footprint: city-evolution archive installation beside the rail-spike band (cultural).",
+        "Footprint only; this package states no building height and no development intensity."
+      ]
+    },
+    "building_service_station_footprint_sqm": {
+      "status": "known",
+      "value": 625.0,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/buildings.geojson#BLDG-003"
+      ],
+      "formula": "round(area(project(buildings.feature[BLDG-003], EPSG:4326->EPSG:4548)), 3)",
+      "confidence": "medium",
+      "assumptions": [
+        "Concept footprint: factor-service station demonstration point (community_service).",
+        "Footprint only; this package states no building height and no development intensity."
+      ]
+    },
+    "building_footprint_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "count(buildings.features)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "spine_greenway_length_m": {
+      "status": "known",
+      "value": 9710.125,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson#ROAD-001"
+      ],
+      "formula": "round(length(project(roads.feature[ROAD-001], EPSG:4326->EPSG:4548)), 3)",
+      "confidence": "medium",
+      "assumptions": [
+        "Concept alignment: century-scroll spine, slow-mobility main line (road_class=greenway).",
+        "Concept centreline drawn for this submission; it is not a road redline and not a survey of the built alignment.",
+        "This is the length of the submitted concept centreline, not the roughly 9 km built length of the heritage park reported by PARK2-OPEN-2026; the two are different measurements and must not be quoted interchangeably."
+      ]
+    },
+    "low_speed_logistics_route_length_m": {
+      "status": "known",
+      "value": 2664.859,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson#ROAD-002"
+      ],
+      "formula": "round(length(project(roads.feature[ROAD-002], EPSG:4326->EPSG:4548)), 3)",
+      "confidence": "medium",
+      "assumptions": [
+        "Concept alignment: low-speed delivery-robot test route (road_class=cycleway).",
+        "Concept centreline drawn for this submission; it is not a road redline and not a survey of the built alignment."
+      ]
+    },
+    "suture_line_bell_gate_length_m": {
+      "status": "known",
+      "value": 1254.558,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson#ROAD-003"
+      ],
+      "formula": "round(length(project(roads.feature[ROAD-003], EPSG:4326->EPSG:4548)), 3)",
+      "confidence": "medium",
+      "assumptions": [
+        "Concept alignment: east-west suture line, bell-gate segment (road_class=pedestrian).",
+        "Concept centreline drawn for this submission; it is not a road redline and not a survey of the built alignment."
+      ]
+    },
+    "suture_line_answer_origin_length_m": {
+      "status": "known",
+      "value": 1091.485,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson#ROAD-004"
+      ],
+      "formula": "round(length(project(roads.feature[ROAD-004], EPSG:4326->EPSG:4548)), 3)",
+      "confidence": "medium",
+      "assumptions": [
+        "Concept alignment: east-west suture line, answer-origin segment (road_class=pedestrian).",
+        "Concept centreline drawn for this submission; it is not a road redline and not a survey of the built alignment."
+      ]
+    },
+    "suture_line_north_leap_length_m": {
+      "status": "known",
+      "value": 1065.192,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson#ROAD-005"
+      ],
+      "formula": "round(length(project(roads.feature[ROAD-005], EPSG:4326->EPSG:4548)), 3)",
+      "confidence": "medium",
+      "assumptions": [
+        "Concept alignment: east-west suture line, north-leap segment (road_class=pedestrian).",
+        "Concept centreline drawn for this submission; it is not a road redline and not a survey of the built alignment."
+      ]
+    },
+    "suture_line_total_length_m": {
+      "status": "known",
+      "value": 3411.235,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson#ROAD-003",
+        "geometry/roads.geojson#ROAD-004",
+        "geometry/roads.geojson#ROAD-005"
+      ],
+      "formula": "round(sum(length(roads.features where properties.road_class == \"pedestrian\")), 3)",
+      "confidence": "medium",
+      "assumptions": [
+        "The three east-west suture lines are the demonstration segments of the cross-corridor stitching."
+      ]
+    },
+    "slow_mobility_network_total_length_m": {
+      "status": "known",
+      "value": 15786.22,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson"
+      ],
+      "formula": "round(sum(length(project(roads.features, EPSG:4326->EPSG:4548))), 3)",
+      "confidence": "medium",
+      "assumptions": [
+        "Sum of all five concept alignments; they do not overlap, so no dissolve is needed."
+      ]
+    },
+    "road_segment_count": {
+      "status": "known",
+      "value": 5,
+      "unit": "count",
+      "source_files": [
+        "geometry/roads.geojson"
+      ],
+      "formula": "count(roads.features)",
+      "confidence": "high",
+      "assumptions": [
+        "All five are concept alignments, not road redlines."
+      ]
+    },
+    "phase_1_area_sqm": {
+      "status": "known",
+      "value": 6263221.578,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/phasing.geojson#PHASE-001"
+      ],
+      "formula": "round(area(project(phasing.feature[PHASE-001], EPSG:4326->EPSG:4548)), 3)",
+      "confidence": "medium",
+      "assumptions": [
+        "Concept sequencing proposal; the real programme depends on the implementing agencies."
+      ]
+    },
+    "phase_1_ratio": {
+      "status": "known",
+      "value": 0.548788,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/phasing.geojson#PHASE-001",
+        "geometry/site_boundary.geojson#SITE-001"
+      ],
+      "formula": "round(phase_1_area_sqm / site_area_sqm, 6)",
+      "confidence": "medium",
+      "assumptions": [
+        "Share of the submitted scope covered by this phase."
+      ]
+    },
+    "phase_2_area_sqm": {
+      "status": "known",
+      "value": 2890709.805,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/phasing.geojson#PHASE-002"
+      ],
+      "formula": "round(area(project(phasing.feature[PHASE-002], EPSG:4326->EPSG:4548)), 3)",
+      "confidence": "medium",
+      "assumptions": [
+        "Concept sequencing proposal; the real programme depends on the implementing agencies."
+      ]
+    },
+    "phase_2_ratio": {
+      "status": "known",
+      "value": 0.253286,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/phasing.geojson#PHASE-002",
+        "geometry/site_boundary.geojson#SITE-001"
+      ],
+      "formula": "round(phase_2_area_sqm / site_area_sqm, 6)",
+      "confidence": "medium",
+      "assumptions": [
+        "Share of the submitted scope covered by this phase."
+      ]
+    },
+    "phase_3_area_sqm": {
+      "status": "known",
+      "value": 2258894.016,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/phasing.geojson#PHASE-003"
+      ],
+      "formula": "round(area(project(phasing.feature[PHASE-003], EPSG:4326->EPSG:4548)), 3)",
+      "confidence": "medium",
+      "assumptions": [
+        "Concept sequencing proposal; the real programme depends on the implementing agencies."
+      ]
+    },
+    "phase_3_ratio": {
+      "status": "known",
+      "value": 0.197926,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/phasing.geojson#PHASE-003",
+        "geometry/site_boundary.geojson#SITE-001"
+      ],
+      "formula": "round(phase_3_area_sqm / site_area_sqm, 6)",
+      "confidence": "medium",
+      "assumptions": [
+        "Share of the submitted scope covered by this phase."
+      ]
+    },
+    "phase_coverage_gap_sqm": {
+      "status": "known",
+      "value": 0.041,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/phasing.geojson",
+        "geometry/site_boundary.geojson#SITE-001"
+      ],
+      "formula": "round(area(difference(union(site_boundary), union(phasing.features))), 3)",
+      "confidence": "high",
+      "assumptions": [
+        "Topology quality measure: the three phases together must cover the whole submitted scope."
+      ]
+    },
+    "phase_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/phasing.geojson"
+      ],
+      "formula": "count(phasing.features)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "served_population_reported_count": {
+      "status": "known",
+      "value": 450000,
+      "unit": "count",
+      "source_files": [
+        "sources.json#PARK2-OPEN-2026"
+      ],
+      "formula": "reported_value(PARK2-OPEN-2026: about 450 thousand residents along the corridor)",
+      "confidence": "low",
+      "assumptions": [
+        "This is a served-population figure quoted in the opening coverage of park phase 2, not a census resident count and not a figure tied to the submitted boundary.",
+        "Per-capita metrics derived from it are order-of-magnitude indicators only.",
+        "See assumptions A-POP-002."
+      ]
+    },
+    "served_community_reported_count": {
+      "status": "known",
+      "value": 70,
+      "unit": "count",
+      "source_files": [
+        "sources.json#PARK2-OPEN-2026"
+      ],
+      "formula": "reported_value(PARK2-OPEN-2026: 70 communities served along the corridor)",
+      "confidence": "low",
+      "assumptions": [
+        "Reported service coverage of the built park corridor, not a count derived from the submitted geometry.",
+        "See assumptions A-POP-002."
+      ]
+    },
+    "filed_model_reported_count": {
+      "status": "known",
+      "value": 122,
+      "unit": "count",
+      "source_files": [
+        "sources.json#HD-PLAN-2026"
+      ],
+      "formula": "reported_value(HD-PLAN-2026: 122 filed and launched large models, 2026-02 district figure)",
+      "confidence": "low",
+      "assumptions": [
+        "Point-in-time figure, not a live count; a later municipal source reports a different date and a different number.",
+        "See assumptions A-DATA-001."
+      ]
+    },
+    "public_space_sqm_per_served_resident": {
+      "status": "known",
+      "value": 0.4895,
+      "unit": "sqm_per_person",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "sources.json#PARK2-OPEN-2026"
+      ],
+      "formula": "round(public_space_area_sqm / served_population_reported_count, 4)",
+      "confidence": "low",
+      "assumptions": [
+        "Numerator is submitted concept geometry, denominator is a reported served population; the two are not measured over the same footprint, so this is an indicative ratio and not a statutory per-capita provision figure.",
+        "See assumptions A-POP-002."
+      ]
+    },
+    "green_space_sqm_per_served_resident": {
+      "status": "known",
+      "value": 6.3495,
+      "unit": "sqm_per_person",
+      "source_files": [
+        "geometry/green_space.geojson",
+        "sources.json#PARK2-OPEN-2026"
+      ],
+      "formula": "round(green_space_area_sqm / served_population_reported_count, 4)",
+      "confidence": "low",
+      "assumptions": [
+        "Same caveat as public_space_sqm_per_served_resident: mixed footprints, indicative only.",
+        "Not comparable with the statutory per-capita park green-space indicator.",
+        "See assumptions A-POP-002."
+      ]
+    },
+    "daoding_design_density_per_km": {
+      "status": "known",
+      "value": 12.5642,
+      "unit": "count_per_km",
+      "source_files": [
+        "sources.json#HD-PLAN-2026",
+        "geometry/roads.geojson#ROAD-001"
+      ],
+      "formula": "round(filed_model_reported_count / (spine_greenway_length_m / 1000), 4)",
+      "confidence": "low",
+      "assumptions": [
+        "Design model value, not a built count: it expresses the average linear density the rail-spike band would have if one spike were set for each filed model at the 2026-02 district figure and spread evenly along the concept spine.",
+        "The number moves whenever the filing count moves; the design rule (one spike per filed model, spikes are never pulled out) is the stable part, the density is not.",
+        "See assumptions A-DAOGDING-001 and A-DATA-001."
+      ]
+    },
+    "floor_area_ratio": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "brief/site-package/ranges/planning_limits.json"
+      ],
+      "formula": "total_floor_area_sqm / official_site_area_sqm",
+      "confidence": "unknown",
+      "assumptions": [
+        "This package states no development-intensity conclusion; see assumptions A-CONTROLS-001."
+      ],
+      "reason": "Approved FAR controls and official site boundary are not present in the public site package."
+    },
+    "total_floor_area_sqm": {
+      "status": "unknown",
+      "value": null,
+      "unit": "sqm",
+      "source_files": [
+        "brief/site-package/ranges/planning_limits.json"
+      ],
+      "formula": "sum(building_footprint_area * storeys) once approved intensity controls are published",
+      "confidence": "unknown",
+      "assumptions": [
+        "Depends on the same missing attachment as floor_area_ratio."
+      ],
+      "reason": "No approved intensity control and no storey assumption exists; inventing one would be an engineering conclusion this package is not entitled to make."
+    },
+    "building_height_max_m": {
+      "status": "unknown",
+      "value": null,
+      "unit": "m",
+      "source_files": [
+        "brief/site-package/ranges/planning_limits.json"
+      ],
+      "formula": "max(height of proposed buildings) once height controls and heritage sightline rules are published",
+      "confidence": "unknown",
+      "assumptions": [
+        "See assumptions A-CONTROLS-001 and A-HERITAGE-001."
+      ],
+      "reason": "Height control values are not published, and the submission rule for this package forbids stating building heights; the bell frame height is expressed only as an intent not to rise above the mature street-tree canopy."
+    },
+    "constraint_feature_count": {
+      "status": "unknown",
+      "value": null,
+      "unit": "count",
+      "source_files": [
+        "geometry/constraints.geojson"
+      ],
+      "formula": "count(constraints.features) once official constraint geometry is supplied",
+      "confidence": "unknown",
+      "assumptions": [
+        "Heritage protection ranges, road redlines, ownership boundaries and utility corridors are all still missing.",
+        "See assumptions A-CONTROLS-001 and A-RECALC-001."
+      ],
+      "reason": "constraints.geojson is an empty FeatureCollection carrying a declared data gap. Zero features means the official constraint geometry has not been published, not that the site has no constraints; reporting 0 as a finding would be a false negative."
+    },
+    "heritage_protection_area_sqm": {
+      "status": "unknown",
+      "value": null,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/constraints.geojson",
+        "sources.json#THU-STATION-HERITAGE-2025"
+      ],
+      "formula": "area(project(heritage protection range and construction control zone polygons))",
+      "confidence": "unknown",
+      "assumptions": [
+        "Until the boundary is obtained the package uses a substitute rule (nothing enters the north-west quadrant of the bell plaza).",
+        "See assumptions A-HERITAGE-001."
+      ],
+      "reason": "The protection range and construction control zone of the Tsinghua Yuan station are published as a text notice; the GIS boundary has not been released, so no polygon can be measured."
+    },
+    "resident_population_count": {
+      "status": "unknown",
+      "value": null,
+      "unit": "count",
+      "source_files": [
+        "sources.json#HD-CENSUS7-2021"
+      ],
+      "formula": "sum(resident population of the sub-districts intersecting the site boundary)",
+      "confidence": "unknown",
+      "assumptions": [
+        "This is why the per-capita metrics use a reported served population instead, and are labelled indicative.",
+        "See assumptions A-POP-001."
+      ],
+      "reason": "Per-sub-district resident population along the corridor is not published: the seventh census release only bands sub-districts by size, so the population inside the submitted boundary cannot be derived."
+    },
+    "park_entrance_built_count": {
+      "status": "unknown",
+      "value": null,
+      "unit": "count",
+      "source_files": [
+        "sources.json#PARK2-PLAN-2024",
+        "sources.json#PARK2-OPEN-2026"
+      ],
+      "formula": "count(as-built entrances along the corridor)",
+      "confidence": "unknown",
+      "assumptions": [
+        "The answer-gate mechanism scales to whatever number is actually built.",
+        "See assumptions A-GATE-001."
+      ],
+      "reason": "46 entrances is the phase-2 planning figure; the as-built number and positions are not itemised in the opening coverage, so the built count is unverified."
+    },
+    "road_redline_width_m": {
+      "status": "unknown",
+      "value": null,
+      "unit": "m",
+      "source_files": [
+        "brief/site-package/ranges/planning_limits.json"
+      ],
+      "formula": "width(official road redline) once the statutory plan attachments are published",
+      "confidence": "unknown",
+      "assumptions": [
+        "All road geometry in this package is tagged concept=true.",
+        "See assumptions A-CONTROLS-001."
+      ],
+      "reason": "Road redlines are not published and this package draws concept centrelines only; stating a redline width would be a statutory conclusion it is not entitled to make."
+    },
+    "pilot_zone_area_sqm": {
+      "status": "unknown",
+      "value": null,
+      "unit": "sqm",
+      "source_files": [
+        "sources.json#JZ-BELT-OFFICIAL-2026"
+      ],
+      "formula": "area(project(pilot zone boundaries)) once the boundaries are published",
+      "confidence": "unknown",
+      "assumptions": [
+        "See assumptions A-PILOT-001."
+      ],
+      "reason": "The Dazhongsi and Wudaokou pilot zones are named in public releases but their boundaries and areas have never been published, so no polygon and no area can be produced."
+    },
+    "investment_estimate_cny": {
+      "status": "unknown",
+      "value": null,
+      "unit": "cny",
+      "source_files": [
+        "compliance_matrix.json"
+      ],
+      "formula": "sum(quantity * unit_price) over the declared quantity base",
+      "confidence": "unknown",
+      "assumptions": [
+        "Registering one public cost-index source would let the existing quantity base be developed straight into an itemised estimate."
+      ],
+      "reason": "The quantity base is complete, but no public construction cost index is registered in sources.json, so no unit price and no amount can be stated."
+    },
+    "simulation_task_count": {
+      "status": "known",
+      "value": 16,
+      "unit": "count",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "len(tasks)",
+      "confidence": "medium",
+      "assumptions": [
+        "离线合成演练读数，非现场实测；不构成效果承诺。"
+      ]
+    },
+    "simulation_success_rate": {
+      "status": "known",
+      "value": 0.6875,
+      "unit": "ratio",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "count(tasks[outcome=='success' or endswith('_success')]) / len(tasks)",
+      "confidence": "medium",
+      "assumptions": [
+        "离线合成演练读数，成功仅按 outcome 等于 success 或以 _success 结尾判定；非现场实测，不构成效果承诺。"
+      ]
+    },
+    "tool_schema_pass_rate": {
+      "status": "known",
+      "value": 0.9375,
+      "unit": "ratio",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "count(tasks[dispatch_schema_valid==true]) / len(tasks)",
+      "confidence": "medium",
+      "assumptions": [
+        "离线合成演练读数，仅反映派单结构校验结果；非现场实测，不构成效果承诺。"
+      ]
+    },
+    "energy_budget_violations": {
+      "status": "known",
+      "value": 1,
+      "unit": "count",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "count(tasks[energy_used_kwh > energy_budget_kwh])",
+      "confidence": "medium",
+      "assumptions": [
+        "离线合成演练读数，能耗为固定 seed 在人工声明区间内生成；非现场实测，不构成效果承诺。"
+      ]
+    },
+    "audit_completeness": {
+      "status": "known",
+      "value": 0.9375,
+      "unit": "ratio",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "count(tasks[audit_complete==true]) / len(tasks)",
+      "confidence": "medium",
+      "assumptions": [
+        "离线合成演练读数，仅按任务记录中的 audit_complete 字段统计；非现场实测，不构成效果承诺。"
+      ]
+    },
+    "replan_p95_seconds": {
+      "status": "known",
+      "value": 12.4,
+      "unit": "s",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "nearest_rank(sort(tasks[].replan_seconds), ceil(0.95 * len(tasks)))",
+      "confidence": "medium",
+      "assumptions": [
+        "离线合成演练读数，重规划耗时为固定 seed 在人工声明区间内生成；按全部 16 条任务取 nearest-rank P95，非现场实测，不构成效果承诺。"
+      ]
+    }
+  }
+}

@@ -1,0 +1,1170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/cjk-font.css">
+<title>CONFLUENT TRACKS JING-ZHANG - Interactive Visual Exhibition Studio</title>
+<style>
+:root {
+  --bg-base: #0a1120;
+  --bg-surface: #0f1c30;
+  --bg-card: #15243e;
+  --bg-card-hover: #1b2f52;
+  --border-subtle: #223758;
+  --border-focus: #3b82f6;
+  --gold-primary: #f59e0b;
+  --gold-glow: rgba(245, 158, 11, 0.25);
+  --gold-light: #fde68a;
+  --amber-human: #fb923c;
+  --teal-bot: #2dd4bf;
+  --green-leaf: #10b981;
+  --blue-water: #38bdf8;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-subtle: #64748b;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background-color: var(--bg-base);
+  color: var(--text-main);
+  font-family: "JingZhang Noto Sans SC Offline", "Noto Sans SC", "Source Han Sans SC", "Noto Sans CJK SC", Arial, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+.container { max-width: 1360px; margin: 0 auto; padding: 0 24px; }
+
+/* Header & Hero */
+header {
+  background: linear-gradient(180deg, #0e1a2f 0%, #0a1120 100%);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 36px 0 28px;
+  position: relative;
+  overflow: hidden;
+}
+header::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(245,158,11,0.12) 0%, rgba(10,17,32,0) 70%);
+  pointer-events: none;
+}
+.hero-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 340px);
+  gap: 32px;
+  align-items: center;
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--gold-primary);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold-primary);
+  box-shadow: 0 0 10px var(--gold-primary);
+}
+h1 {
+  font-size: 38px;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+  background: linear-gradient(135deg, #ffffff 30%, var(--gold-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-desc {
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.65;
+  margin-bottom: 20px;
+  max-width: 820px;
+}
+.pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.pill {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  transition: all 0.2s ease;
+}
+.pill:hover { border-color: var(--gold-primary); color: var(--gold-light); }
+
+.status-badge-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: var(--shadow-lg);
+}
+.status-badge-card h3 {
+  font-size: 14px;
+  color: var(--gold-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.status-badge-card p {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.status-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+/* Sections & Sheets */
+main { padding: 36px 0 60px; }
+.sheet {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  margin-bottom: 28px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+.sheet-header {
+  padding: 22px 28px;
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.015);
+}
+.sheet-header h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+}
+.sheet-header p {
+  font-size: 13.5px;
+  color: var(--text-muted);
+}
+.tag-badge {
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--gold-light);
+  white-space: nowrap;
+}
+
+/* Map Studio Layout */
+.map-studio-grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  min-height: 640px;
+}
+.map-canvas-wrap {
+  position: relative;
+  background: #080d18;
+  border-right: 1px solid var(--border-subtle);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.map-toolbar {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 20;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  background: rgba(15, 28, 48, 0.92);
+  backdrop-filter: blur(8px);
+  padding: 6px 10px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+}
+.layer-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-muted);
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.layer-btn:hover { color: #fff; background: rgba(255,255,255,0.06); }
+.layer-btn.active {
+  background: var(--gold-primary);
+  color: #000;
+  border-color: var(--gold-primary);
+}
+
+.map-svg-frame {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Map Sidebar & Live Inspector */
+.map-sidebar {
+  padding: 24px;
+  background: var(--bg-surface);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.sidebar-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gold-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+}
+.metrics-container {
+  display: grid;
+  gap: 10px;
+}
+.metric-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  transition: transform 0.2s ease;
+}
+.metric-box:hover { transform: translateY(-2px); border-color: var(--border-focus); }
+.metric-box span {
+  display: block;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+.metric-box strong {
+  display: block;
+  font-size: 24px;
+  font-weight: 800;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+.metric-box small {
+  display: block;
+  font-size: 11px;
+  color: var(--gold-primary);
+  margin-top: 4px;
+}
+
+.inspector-card {
+  background: var(--bg-card);
+  border: 1px solid var(--gold-primary);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  box-shadow: 0 0 20px var(--gold-glow);
+}
+.inspector-card h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--gold-light);
+  margin-bottom: 6px;
+}
+.inspector-card p {
+  font-size: 12.5px;
+  color: var(--text-main);
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+.inspector-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 8px;
+}
+
+/* 3-Scope Matrix Cards */
+.matrix-3col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  padding: 24px 28px;
+}
+.area-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  position: relative;
+  transition: all 0.2s ease;
+}
+.area-card:hover { border-color: var(--gold-primary); transform: translateY(-3px); }
+.area-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  background: var(--gold-primary);
+}
+.area-card.origin::before { background: var(--teal-bot); }
+.area-card.market::before { background: var(--amber-human); }
+.area-card h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.area-card .area-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gold-light);
+  background: rgba(245,158,11,0.12);
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+.area-card p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 12px;
+}
+.area-card ul {
+  padding-left: 18px;
+  font-size: 12.5px;
+  color: var(--text-main);
+}
+.area-card li { margin-bottom: 6px; }
+
+/* Conflict Prototypes Grid */
+.proto-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding: 24px 28px;
+}
+.proto-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.proto-box h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--teal-bot);
+}
+.proto-box p {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.proto-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: rgba(45,212,191,0.15);
+  color: var(--teal-bot);
+  align-self: flex-start;
+}
+
+/* 12 Scenario Cards Grid */
+.scenario-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  padding: 24px 28px;
+}
+.scenario-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.2s ease;
+  min-height: 185px;
+}
+.scenario-card:hover {
+  border-color: var(--teal-bot);
+  background: var(--bg-card-hover);
+  transform: translateY(-2px);
+}
+.scenario-card.verified { border-left: 4px solid var(--gold-primary); }
+.scenario-card .sc-id {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gold-primary);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.scenario-card h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 6px;
+}
+.scenario-card p {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.scenario-card .swb-tag {
+  font-size: 10.5px;
+  color: var(--gold-light);
+  background: rgba(245,158,11,0.12);
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-top: 6px;
+  display: inline-block;
+}
+.scenario-card .sc-footer {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--teal-bot);
+}
+
+/* Risk Radar & Phasing */
+.two-col-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 24px 28px;
+}
+.card-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 20px;
+}
+.card-panel h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Evidence and Governance Links */
+.evidence-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 24px 28px;
+}
+.source-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 18px;
+}
+.source-box h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--gold-light);
+  margin-bottom: 8px;
+}
+.source-box p {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+.code-pill {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 11.5px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  color: #38bdf8;
+  display: block;
+  overflow-x: auto;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Legend Swatches */
+.legend-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text-main);
+}
+.legend-item { display: flex; align-items: center; gap: 8px; }
+.swatch {
+  width: 14px; height: 14px; border-radius: 3px; display: inline-block; flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero-wrap, .map-studio-grid, .two-col-grid, .evidence-grid, .proto-grid { grid-template-columns: 1fr; }
+  .matrix-3col { grid-template-columns: 1fr; }
+  .scenario-grid { grid-template-columns: repeat(2, 1fr); }
+  .map-canvas-wrap { min-height: 480px; border-right: none; border-bottom: 1px solid var(--border-subtle); }
+}
+@media (max-width: 640px) {
+  .scenario-grid { grid-template-columns: 1fr; }
+  h1 { font-size: 28px; }
+  .sheet-header { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container hero-wrap">
+    <div>
+      <div class="eyebrow">Centennial Jing-Zhang AI Innovation Belt · Visual Exhibition Studio</div>
+      <h1>CONFLUENT TRACKS JING-ZHANG</h1>
+      <p class="hero-desc">
+        Centering on "Human-Robot Labor Confluence", robotics and UAVs undertake hazardous operations (power line inspection, utility tunnel sensing, fire reconnaissance), while humans retain three-stage sovereign control: Authorize, E-Stop, and Accept. AI algorithms optimize traffic green waves and transit priority across "One Spine, Three Fields, Twin Loops, Nine Stations".
+      </p>
+      <div class="pills">
+        <span class="pill">Master Plan</span>
+        <span class="pill">Three-Level Scopes</span>
+        <span class="pill">Key Areas</span>
+        <span class="pill">Land Use Zoning</span>
+        <span class="pill">Twin Mobility Loops</span>
+        <span class="pill">Blue-Green Ecology</span>
+        <span class="pill">Building Typology</span>
+        <span class="pill">Renewal Projects</span>
+        <span class="pill">AI Scenarios</span>
+        <span class="pill">Core Metrics</span>
+        <span class="pill">Task Coverage</span>
+        <span class="pill">Self-Check Status</span>
+        <span class="pill">Data Sources</span>
+        <span class="pill">Assumptions</span>
+      </div>
+    </div>
+    
+    <aside class="status-badge-card">
+      <h3>Self-Check Gate <span class="status-tag">Current four-gate self-check passed</span></h3>
+      <p>
+        Deterministic validation, spatial review, visual packaging check, and professional evidence review all passed.
+      </p>
+      <div style="font-size: 11.5px; color: var(--text-muted); border-top: 1px solid var(--border-subtle); padding-top: 8px;">
+        <div>• Coverage review: ≈100.8 m² remains inside-boundary uncovered; ≈0 m² outside</div>
+        <div>• Frozen version: v1.8.0 · Generated: 2026-08-27T20:15:00+08:00</div>
+        <div>• Agent: zxymiku-agent (zxymiku)</div>
+        <div>• Models: claude-opus-4-8+gpt-5.6-sol</div>
+        <div>• Projection: EPSG:4548 (CGCS2000)</div>
+        <div>• Boundary: provisional_constraint (Full recompute on official release)</div>
+      </div>
+    </aside>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- 1. Interactive Map Studio: Master Plan & Core Metrics -->
+  <section class="sheet">
+    <div class="sheet-header">
+      <div>
+        <h2>Master Plan & Interactive GIS Studio</h2>
+        <p>Integrates land-use partitions, twin mobility loops, blue-green corridors, building renewal, and AI scenario nodes in the current spatial base.</p>
+      </div>
+      <span class="tag-badge">GIS Vector Studio · EPSG:4548</span>
+    </div>
+    
+    <div class="map-studio-grid">
+      <div class="map-canvas-wrap">
+        <!-- Interactive Layer Toolbar -->
+        <div class="map-toolbar" role="toolbar" aria-label="Layer Control">
+          <button class="layer-btn active" onclick="setLayer('all')">All Layers</button>
+          <button class="layer-btn" onclick="setLayer('zoning')">Land Use (MNR)</button>
+          <button class="layer-btn" onclick="setLayer('mobility')">Twin Mobility Loops</button>
+          <button class="layer-btn" onclick="setLayer('ecology')">Blue-Green Ecology</button>
+          <button class="layer-btn" onclick="setLayer('scenarios')">12 AI Scenario Nodes</button>
+          <button class="layer-btn" onclick="setLayer('landmarks')">4 Pilgrimage Landmarks</button>
+        </div>
+
+        <!-- High-Precision SVG Map Rendering -->
+        <svg id="vectorMap" class="map-svg-frame" viewBox="116.320 39.935 0.045 0.095" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Urban Design Master Plan Diagram">
+          <!-- Background Grid lines -->
+          <g stroke="#1e293b" stroke-width="0.0003" stroke-dasharray="0.002 0.002">
+            <line x1="116.33" y1="39.935" x2="116.33" y2="40.030" />
+            <line x1="116.34" y1="39.935" x2="116.34" y2="40.030" />
+            <line x1="116.35" y1="39.935" x2="116.35" y2="40.030" />
+            <line x1="116.36" y1="39.935" x2="116.36" y2="40.030" />
+            <line x1="116.32" y1="39.950" x2="116.365" y2="39.950" />
+            <line x1="116.32" y1="39.970" x2="116.365" y2="39.970" />
+            <line x1="116.32" y1="39.990" x2="116.365" y2="39.990" />
+            <line x1="116.32" y1="40.010" x2="116.365" y2="40.010" />
+          </g>
+
+          <!-- Layer: Site Boundary (Provisional) -->
+          <path id="lyr-boundary" d="M116.3425 40.0245 L116.3582 40.0250 L116.3590 39.9750 L116.3550 39.9420 L116.3350 39.9430 L116.3365 39.9850 Z"
+                fill="#0f172a" fill-opacity="0.85" stroke="#64748b" stroke-width="0.0008" stroke-dasharray="0.002 0.001" />
+
+          <!-- Layer: Land Use Partitions (MNR Codes) -->
+          <g id="lyr-zoning" opacity="0.9">
+            <!-- Public administration and public services (08), with conceptual R&D programs -->
+            <polygon points="116.342,40.010 116.356,40.012 116.355,40.024 116.343,40.024" fill="#38bdf8" fill-opacity="0.6" stroke="#0284c7" stroke-width="0.0004" />
+            <polygon points="116.343,39.975 116.357,39.975 116.356,39.988 116.343,39.988" fill="#38bdf8" fill-opacity="0.6" stroke="#0284c7" stroke-width="0.0004" />
+            <!-- Commercial (09) Dazhongsi & East nodes -->
+            <polygon points="116.338,39.943 116.353,39.943 116.352,39.955 116.338,39.955" fill="#fb7185" fill-opacity="0.65" stroke="#e11d48" stroke-width="0.0004" />
+            <!-- Culture (0803) Wudaokou -->
+            <polygon points="116.343,39.965 116.355,39.965 116.354,39.975 116.343,39.975" fill="#c084fc" fill-opacity="0.6" stroke="#9333ea" stroke-width="0.0004" />
+            <!-- Residential (07) West blocks -->
+            <polygon points="116.336,39.960 116.343,39.960 116.343,39.980 116.336,39.980" fill="#fbbf24" fill-opacity="0.5" stroke="#d97706" stroke-width="0.0004" />
+          </g>
+
+          <!-- Layer: Blue-Green Ecology -->
+          <g id="lyr-ecology">
+            <!-- Qinghe River Corridor -->
+            <path d="M116.325 40.023 C116.340 40.025 116.355 40.024 116.365 40.026" fill="none" stroke="#38bdf8" stroke-width="0.0016" stroke-linecap="round" />
+            <!-- Xiaoyue River Corridor -->
+            <path d="M116.330 39.985 C116.345 39.988 116.355 39.982 116.365 39.980" fill="none" stroke="#38bdf8" stroke-width="0.0014" stroke-linecap="round" />
+            <!-- Green Spaces along Heritage Park -->
+            <polygon points="116.3435,39.945 116.3465,39.945 116.348,40.024 116.345,40.024" fill="#10b981" fill-opacity="0.4" stroke="#059669" stroke-width="0.0005" />
+          </g>
+
+          <!-- Layer: Three Key Areas Outlines -->
+          <g id="lyr-key-areas">
+            <!-- KEY-001 Zhongzhiyuan -->
+            <rect x="116.342" y="40.008" width="0.016" height="0.016" rx="0.001" fill="rgba(245,158,11,0.15)" stroke="#f59e0b" stroke-width="0.0008" />
+            <!-- KEY-002 Origin Community -->
+            <rect x="116.342" y="39.972" width="0.016" height="0.016" rx="0.001" fill="rgba(245,158,11,0.15)" stroke="#f59e0b" stroke-width="0.0008" />
+            <!-- KEY-003 Dazhongsi -->
+            <rect x="116.338" y="39.943" width="0.015" height="0.013" rx="0.001" fill="rgba(245,158,11,0.15)" stroke="#f59e0b" stroke-width="0.0008" />
+          </g>
+
+          <!-- Layer: Roads & Mobility (Spine & Twin Loops) -->
+          <g id="lyr-mobility">
+            <!-- Arterial roads -->
+            <line x1="116.325" y1="40.000" x2="116.365" y2="40.000" stroke="#334155" stroke-width="0.0012" />
+            <line x1="116.325" y1="39.960" x2="116.365" y2="39.960" stroke="#334155" stroke-width="0.0012" />
+            <line x1="116.350" y1="39.935" x2="116.350" y2="40.030" stroke="#334155" stroke-width="0.0012" />
+
+            <!-- Heritage Spine (Gold Pulse) -->
+            <path d="M116.3440 39.9460 C116.3445 39.9620 116.3442 39.9780 116.3450 39.9900 S116.3460 40.0100 116.3475 40.0245"
+                  fill="none" stroke="#f59e0b" stroke-width="0.0022" stroke-linecap="round" />
+            <path d="M116.3440 39.9460 C116.3445 39.9620 116.3442 39.9780 116.3450 39.9900 S116.3460 40.0100 116.3475 40.0245"
+                  fill="none" stroke="#fde68a" stroke-width="0.0008" stroke-linecap="round" />
+
+            <!-- Human Slow Loop (Amber Dashed) -->
+            <path d="M116.344 39.946 C116.353 39.955 116.356 39.980 116.352 40.015 S116.348 40.024 116.347 40.024 S116.343 39.980 116.344 39.946"
+                  fill="none" stroke="#fb923c" stroke-width="0.0012" stroke-dasharray="0.002 0.001" />
+
+            <!-- Robot Low-Speed Service Loops (Teal) -->
+            <ellipse cx="116.348" cy="39.948" rx="0.006" ry="0.004" fill="none" stroke="#2dd4bf" stroke-width="0.0011" />
+            <ellipse cx="116.348" cy="40.014" rx="0.006" ry="0.005" fill="none" stroke="#2dd4bf" stroke-width="0.0011" />
+          </g>
+
+          <!-- Layer: 9 Handover Stations (Interactive Nodes) -->
+          <g id="lyr-stations" cursor="pointer">
+            <circle cx="116.3475" cy="40.0245" r="0.0012" fill="#2dd4bf" stroke="#fff" stroke-width="0.0004" onclick="inspectNode('S1 Qinghe North (Type B)', 'Drone transfer hub and riverside slow mobility connection; Footprint 350 sqm with isolation pod.', 'Zhongzhiyuan North', 'Type B District Station')" />
+            <circle cx="116.3458" cy="40.0030" r="0.0012" fill="#2dd4bf" stroke="#fff" stroke-width="0.0004" onclick="inspectNode('S2 Zhongzhiyuan (Type B)', 'Power line inspection ground authorization & E-stop kiosk; Footprint 400 sqm with master emergency stop.', 'Zhongzhiyuan Core', 'Type B District Station')" />
+            <circle cx="116.3530" cy="40.0100" r="0.0012" fill="#2dd4bf" stroke="#fff" stroke-width="0.0004" onclick="inspectNode('S3 Houchangcun East (Type C)', 'Enterprise service inspection and utility tunnel maintenance hub; Footprint 80 sqm quick swap node.', 'Houchangcun Area', 'Type C Micro Outpost')" />
+            <circle cx="116.3450" cy="39.9900" r="0.0012" fill="#2dd4bf" stroke="#fff" stroke-width="0.0004" onclick="inspectNode('S4 Tsinghua East Rd (Type B)', 'University original AI incubation and autonomous shuttle stop; Footprint 300 sqm joint testing kiosk.', 'Origin Community North', 'Type B District Station')" />
+            <circle cx="116.3442" cy="39.9780" r="0.0016" fill="#f59e0b" stroke="#fff" stroke-width="0.0006" onclick="inspectNode('S5 Wudaokou Hub (Type A)', 'Co-Governance Central Handover Hub (Visualization rotunda, dispatch center & public workshop; Footprint 1,200 sqm).', 'Wudaokou Core', 'Type A Central Handover Hub')" />
+            <circle cx="116.3550" cy="39.9720" r="0.0012" fill="#2dd4bf" stroke="#fff" stroke-width="0.0004" onclick="inspectNode('S6 Xueyuan Rd (Type C)', 'Academic corridor and autonomous mobility testing node; Footprint 100 sqm transit feeder.', 'Xueyuan Rd East', 'Type C Micro Outpost')" />
+            <circle cx="116.3448" cy="39.9620" r="0.0012" fill="#2dd4bf" stroke="#fff" stroke-width="0.0004" onclick="inspectNode('S7 Zhichunlu (Type C)', 'Zhongguancun Tech Services cross-regional coordination hub; Footprint 90 sqm service relay.', 'Zhichunlu Area', 'Type C Micro Outpost')" />
+            <circle cx="116.3440" cy="39.9460" r="0.0012" fill="#2dd4bf" stroke="#fff" stroke-width="0.0004" onclick="inspectNode('S8 Dazhongsi (Type B)', 'Last-mile robot delivery sortation and green-wave monitor; Footprint 450 sqm narrow-lane dispatch center.', 'Dazhongsi Core', 'Type B District Station')" />
+            <circle cx="116.3510" cy="39.9520" r="0.0012" fill="#2dd4bf" stroke="#fff" stroke-width="0.0004" onclick="inspectNode('S9 Jimenqiao East (Type C)', 'Commercial logistics and urban agent coordination node; Footprint 80 sqm last-mile relay.', 'Dazhongsi East', 'Type C Micro Outpost')" />
+          </g>
+
+          <!-- Layer: 4 Pilgrimage Landmarks (Star Pins) -->
+          <g id="lyr-landmarks" cursor="pointer">
+            <polygon points="116.3442,39.9765 116.3448,39.9790 116.3428,39.9775 116.3456,39.9775 116.3436,39.9790" fill="#f59e0b" stroke="#000" stroke-width="0.0002"
+                     onclick="inspectNode('Centennial Switch Plaza (Main Landmark)', 'A bronze statue of historical switchman standing beside modern quadruped inspection robot, symbolizing labor relay across a century.', 'Origin Community', 'Main Landmark')" />
+            <polygon points="116.3450,39.9885 116.3456,39.9910 116.3436,39.9895 116.3464,39.9895 116.3444,39.9910" fill="#f59e0b" stroke="#000" stroke-width="0.0002"
+                     onclick="inspectNode('Handover Central Hub', 'A transparent rotunda authorization hall where the public observes real-time task dispatch, physical E-stop, and verification.', 'Origin Community', 'Central Landmark')" />
+            <polygon points="116.3465,40.0165 116.3471,40.0190 116.3451,40.0175 116.3479,40.0175 116.3459,40.0190" fill="#f59e0b" stroke="#000" stroke-width="0.0002"
+                     onclick="inspectNode('Watchtower Drone Nest', 'Lower cellular docking nest for automated inspection drones; upper public observation deck overlooking North Haidian.', 'Zhongzhiyuan', 'Airspace Landmark')" />
+            <polygon points="116.3440,39.9445 116.3446,39.9470 116.3426,39.9455 116.3454,39.9455 116.3434,39.9470" fill="#f59e0b" stroke="#000" stroke-width="0.0002"
+                     onclick="inspectNode('Green Wave Crossway', 'Four-quadrant connected intersection with interactive ground lighting visualizing AI traffic wave and bus priority.', 'Dazhongsi', 'Traffic Landmark')" />
+          </g>
+        </svg>
+      </div>
+
+      <!-- Map Sidebar: Core Metrics & Live Node Inspector -->
+      <div class="map-sidebar">
+        <div>
+          <div class="sidebar-title">Core Metrics (Metrics)</div>
+          <div class="metrics-container">
+            <div class="metric-box">
+              <span>Total Site Area (site_area_sqm)</span>
+              <strong data-metric="site_area_sqm" data-value="11412825.4">11,412,825.4 sqm</strong>
+              <small>11.41 km² · Strict EPSG:4548 Recalculation</small>
+            </div>
+            <div class="metric-box">
+              <span>Green Ratio (green_ratio)</span>
+              <strong data-metric="green_ratio" data-value="0.273993">27.40 %</strong>
+              <small>Green Space Area: 3,127,039.4 sqm</small>
+            </div>
+            <div class="metric-box">
+              <span>Public Space Ratio (public_space_ratio)</span>
+              <strong data-metric="public_space_ratio" data-value="0.044005">4.40 %</strong>
+              <small>Public Space: 502,225.7 sqm (6 Core Nodes)</small>
+            </div>
+          </div>
+        </div>
+
+        <div id="inspectorBox" class="inspector-card">
+          <h4 id="inspTitle">[Interactive Probe] Click Map Elements</h4>
+          <p id="inspDesc">Click on any Handover Station (teal circles) or Pilgrimage Landmark (gold stars) on the map to view human-robot collaboration mechanisms and spatial programming.</p>
+          <div class="inspector-meta">
+            <div id="inspLoc">Location: Entire Innovation Belt</div>
+            <div id="inspRole">Role: Conceptual Proposal</div>
+          </div>
+        </div>
+
+        <div class="inspector-card land-use-basis-card">
+          <h4>MNR Direct-Code Table (Frozen v1.8.0)</h4>
+          <p>07 Residential 42.03 ha; 08 Public administration and public services 182.13 ha; 0803 Cultural 78.08 ha; 09 Commercial and service 259.13 ha; 1207 Urban and rural roads 367.28 ha; 14 Green and open space 201.77 ha; 1401 Park green space 10.85 ha.</p>
+          <p>Direct codes are reported separately from geometry/land_use.geojson; parent and child codes are never double-counted. The dissolved green_space overlay is 312.70 ha / 27.40% and is not code 14.</p>
+        </div>
+
+        <div class="legend-grid">
+          <div class="legend-item"><i class="swatch" style="background:var(--gold-primary)"></i>Heritage Active Spine</div>
+          <div class="legend-item"><i class="swatch" style="background:var(--amber-human)"></i>Human Greenway Loop</div>
+          <div class="legend-item"><i class="swatch" style="background:var(--teal-bot)"></i>Robot Service Twin Loops</div>
+          <div class="legend-item"><i class="swatch" style="background:var(--blue-water)"></i>Qinghe / Xiaoyue River</div>
+          <div class="legend-item"><i class="swatch" style="background:#38bdf8"></i>Public Admin. & Services (08)</div>
+          <div class="legend-item"><i class="swatch" style="background:#fb7185"></i>Commercial / Retail (09)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Three-Level Scope Framework -->
+  <section class="sheet">
+    <div class="sheet-header">
+      <div>
+        <h2>Three-Level Scope Framework</h2>
+        <p>Progresses from Coordinated Research Area to Overall Design Area and Key Detailed Design Areas.</p>
+      </div>
+      <span class="tag-badge">Scope Transmission · 43.6 km² → 11.4 km² → 368.4 ha</span>
+    </div>
+    <div class="matrix-3col">
+      <article class="area-card">
+        <h3>Coordinated Research Area (CRA)</h3>
+        <span class="area-badge">43.6 km² · Industrial Ecosystem Level</span>
+        <p>Spanning from North 5th Ring to Beijing North Station, building the "Three Zones and Two Wings" collaborative loop and full-stack AI ecosystem.</p>
+        <ul>
+          <li><strong>Zhongguancun Tech Services Wing:</strong> Capital and global resource allocation</li>
+          <li><strong>Xiaoyue River Enablement Wing:</strong> Scenario access across urban life</li>
+          <li><strong>Cross-District Synergy:</strong> Linking Future Science City (Energy AI), Huairou (Compute), and E-Town (Embodied AI)</li>
+        </ul>
+      </article>
+      <article class="area-card origin">
+        <h3>Overall Design Area (ODA)</h3>
+        <span class="area-badge">11.41 km² · Urban Renewal & Regulatory Plan Depth</span>
+        <p>Structuring the "One Spine, Three Fields, Twin Loops, Nine Stations" master spatial framework and topology-safe land-use zoning.</p>
+        <ul>
+          <li><strong>MNR Standard Zoning:</strong> Current boundary coverage review across 13 blocks</li>
+          <li><strong>Twin Loops Micro-Circulation:</strong> 8.7km human loop + 8.2km robot service loops</li>
+          <li><strong>Renewal Project List:</strong> Organic low-disturbance renewal and phasing</li>
+        </ul>
+      </article>
+      <article class="area-card market">
+        <h3>Key Detailed Design Areas (KDA)</h3>
+        <span class="area-badge">368.4 ha · Implementation Level</span>
+        <p>Three core districts with differentiated functional programming, reaching Integrated Planning Implementation Plan urban design depth.</p>
+        <ul>
+          <li><strong>Zhongzhiyuan (192.9 ha):</strong> Testing Arena (Hazardous robotics testbed)</li>
+          <li><strong>AI Origin Community (104.3 ha):</strong> Learning Garden (Incubation & Handover Hub)</li>
+          <li><strong>Dazhongsi (72.0 ha):</strong> Smart Market (AI retail & Traffic green wave)</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- 3. Key Areas Detailed Design -->
+  <section class="sheet">
+    <div class="sheet-header">
+      <div>
+        <h2>Detailed Design of Three Key Areas</h2>
+        <p>Zhongzhiyuan, AI Origin Community, and Dazhongsi form a differentiated and complementary urban layout.</p>
+      </div>
+      <span class="tag-badge">Detailed Key Areas · key_areas.geojson</span>
+    </div>
+    <div class="matrix-3col">
+      <article class="area-card">
+        <h3>Zhongzhiyuan · Testing Arena</h3>
+        <span class="area-badge">192.9 ha · Hazardous Robotics Testbed</span>
+        <p>Proposed AI innovation testbed and high-risk operations sandbox: power grid climb-tower testing and utility tunnel sensing.</p>
+        <ul>
+          <li><strong>Pilgrimage Landmark:</strong> Watchtower (Drone nest + public observation deck)</li>
+          <li><strong>Special Features:</strong> Qinghe Riverside Innovation Garden & 5th Ring Bridge</li>
+          <li><strong>Scenario Support:</strong> High-voltage transmission tower robot partner testbed</li>
+        </ul>
+      </article>
+      <article class="area-card origin">
+        <h3>AI Origin Community · Learning Garden</h3>
+        <span class="area-badge">104.3 ha · Collaboration & Incubation</span>
+        <p>Leveraging Tsinghua/PKU original research to build an open-source development, incubation, and labor upskilling academy.</p>
+        <ul>
+          <li><strong>Pilgrimage Landmark:</strong> Handover Central Hub (Visualized authorization hall)</li>
+          <li><strong>Cultural Anchor:</strong> Centennial Switch Plaza (Switchman statue + robot)</li>
+          <li><strong>Spatial Integration:</strong> Wudaokou TOD transit integration & healing gardens</li>
+        </ul>
+      </article>
+      <article class="area-card market">
+        <h3>Dazhongsi · Smart Market</h3>
+        <span class="area-badge">72.0 ha · AI-Native Commerce & Services</span>
+        <p>Driven by leading tech enterprises, gathering AI agents, smart hardware, and digital services to create a concept scenario for extended-hours services.</p>
+        <ul>
+          <li><strong>Pilgrimage Landmark:</strong> Green Wave Crossway (Four-quadrant demo crossing)</li>
+          <li><strong>Last-Mile Network:</strong> Dedicated 1.2m narrow-lane delivery robot loops</li>
+          <li><strong>Traffic Improvement:</strong> Dazhongsi metro underground connection & slow stitching</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- 4. Three Spatial Conflict Resolution Prototypes -->
+  <section class="sheet">
+    <div class="sheet-header">
+      <div>
+        <h2>Spatial Conflict Resolution Prototypes (Safety Engineering)</h2>
+        <p>Standardized cross-section details resolving human-vehicle-robot friction in physical shared spaces.</p>
+      </div>
+      <span class="tag-badge">Engineering Prototypes · Safety First</span>
+    </div>
+    <div class="proto-grid">
+      <div class="proto-box">
+        <span class="proto-badge">Prototype 01 · Crosswalk Crossing</span>
+        <h4>Intersection Crosswalk Confluence</h4>
+        <p>1.5m dedicated robot deceleration waiting island with ground projection alerts. Pedestrians retain priority right-of-way; robots yield statically within 2m distance, targeting collision risk reduction as test validation goal.</p>
+      </div>
+      <div class="proto-box">
+        <span class="proto-badge">Prototype 02 · Commercial Microcirculation</span>
+        <h4>Courier vs. Delivery Robot Separation</h4>
+        <p>1.2m dedicated delivery lane physically segregated from non-motorized lanes via 15cm sloped landscaped curb, expected to reduce collision risks with 25 km/h electric scooters.</p>
+      </div>
+      <div class="proto-box">
+        <span class="proto-badge">Prototype 03 · Greenway Buffer</span>
+        <h4>Tactile Blind-Path Buffer</h4>
+        <p>Preserving a continuous 60cm clear buffer on both sides of tactile paving; guide assist robots accompany visually impaired users with a 50cm lateral UWB offset.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. 12 AI Scenario Cards Matrix -->
+  <section class="sheet">
+    <div class="sheet-header">
+      <div>
+        <h2>AI Scenarios & Personas</h2>
+        <p>Twelve human-robot co-governance scenario cards (including 3 industry testbeds) with explicit human review and Service Withdrawal Baselines (SWB).</p>
+      </div>
+      <span class="tag-badge">12 AI Scenarios · 3 Industry Testbeds · SWB Fallbacks</span>
+    </div>
+    
+    <div class="scenario-grid">
+      <article class="scenario-card verified">
+        <div>
+          <div class="sc-id">01 Industry Testbed</div>
+          <h4>Power Line Inspection Robot Partner</h4>
+          <p>Zhongzhiyuan; quadruped robot climbs transmission towers; human electrician authorizes on ground.</p>
+          <span class="swb-tag">SWB: Manual power verification & breaker pull</span>
+        </div>
+        <div class="sc-footer"><span>Persona: Electrician Zhang</span><span>Safety: Ground E-Stop</span></div>
+      </article>
+      <article class="scenario-card verified">
+        <div>
+          <div class="sc-id">02 Industry Testbed</div>
+          <h4>Utility Tunnel Sensing Drone</h4>
+          <p>Municipal corridors; micro-drone enters confined toxic spaces; human expert audits alarms.</p>
+          <span class="swb-tag">SWB: Manual ventilation & toxicity test</span>
+        </div>
+        <div class="sc-footer"><span>Persona: Tunnel Engineer</span><span>Safety: Dual Fallback</span></div>
+      </article>
+      <article class="scenario-card verified">
+        <div>
+          <div class="sc-id">03 Industry Testbed</div>
+          <h4>Adaptive Traffic Green Wave AI</h4>
+          <p>Dazhongsi; adaptive signal coordination for vehicles and transit; traffic police retain override.</p>
+          <span class="swb-tag">SWB: Fallback to fixed timing plan</span>
+        </div>
+        <div class="sc-footer"><span>Persona: Traffic Warden Li</span><span>Safety: Hard Switch Override</span></div>
+      </article>
+      <article class="scenario-card">
+        <div>
+          <div class="sc-id">04 Municipal Inspection</div>
+          <h4>Bridge Structural Health Monitor</h4>
+          <p>Qinghe bridges; wall-climbing robots inspect cracks and upload telemetry.</p>
+          <span class="swb-tag">SWB: Regular on-site expert inspection</span>
+        </div>
+        <div class="sc-footer"><span>Location: North Loop</span><span>Review: Structural Audit</span></div>
+      </article>
+      <article class="scenario-card">
+        <div>
+          <div class="sc-id">05 Public Safety</div>
+          <h4>Fire Reconnaissance Vanguard Drone</h4>
+          <p>Airspace corridor; UAV streams 3D thermal maps; firefighters decide entry.</p>
+          <span class="swb-tag">SWB: Recon only; human tactical decision</span>
+        </div>
+        <div class="sc-footer"><span>Location: Innovation Belt</span><span>Safety: Tethered / Special Lane</span></div>
+      </article>
+      <article class="scenario-card">
+        <div>
+          <div class="sc-id">06 Urban Sanitation</div>
+          <h4>Nighttime Sweeper Fleet</h4>
+          <p>Twin loops; low-noise autonomous sweeping at night; human sanitation workers maintain daytime detail.</p>
+          <span class="swb-tag">SWB: Daytime in-depth manual sweeping</span>
+        </div>
+        <div class="sc-footer"><span>Location: Twin Loops</span><span>Safety: 360° LiDAR</span></div>
+      </article>
+      <article class="scenario-card">
+        <div>
+          <div class="sc-id">07 Accessibility</div>
+          <h4>Guide Assist Robot Companion</h4>
+          <p>Heritage Park greenway; tactile vibration and audio guidance alongside guide dogs without face capture.</p>
+          <span class="swb-tag">SWB: Guide dogs & human volunteers</span>
+        </div>
+        <div class="sc-footer"><span>Persona: Resident Liu</span><span>Law: Barrier-Free Law</span></div>
+      </article>
+      <article class="scenario-card">
+        <div>
+          <div class="sc-id">08 Logistics</div>
+          <h4>Narrow-Lane Delivery Loop</h4>
+          <p>Dazhongsi retail zone; dedicated 1.2m curb lanes physically segregated from pedestrian and courier paths.</p>
+          <span class="swb-tag">SWB: Courier direct trunk dispatch</span>
+        </div>
+        <div class="sc-footer"><span>Persona: Courier Zhou</span><span>Safety: Dedicated Right-of-Way</span></div>
+      </article>
+      <article class="scenario-card">
+        <div>
+          <div class="sc-id">09 Healthcare</div>
+          <h4>AED Emergency Drone Route</h4>
+          <p>From Watchtower to 9 kiosks; testing the emergency-supply delivery chain against a proposed response target, subject to airspace, medical, and safety authorization; not an existing service commitment.</p>
+          <span class="swb-tag">SWB: degrade to ordinary authorized ground-emergency dispatch before approval</span>
+        </div>
+        <div class="sc-footer"><span>Location: 9 Stations</span><span>Safety: Parachute Drop</span></div>
+      </article>
+      <article class="scenario-card">
+        <div>
+          <div class="sc-id">10 Construction Safety</div>
+          <h4>Site Safety AI Vision Monitor</h4>
+          <p>Renewal project sites; edge AI detects harness omissions and notifies human supervisors.</p>
+          <span class="swb-tag">SWB: Human site safety officers</span>
+        </div>
+        <div class="sc-footer"><span>Location: Renewal Sites</span><span>Privacy: Edge Processing</span></div>
+      </article>
+      <article class="scenario-card">
+        <div>
+          <div class="sc-id">11 Transit Integration</div>
+          <h4>Low-Speed Autonomous Feeder</h4>
+          <p>Wudaokou and Tsinghua East stations; connecting parks with metro stops, staffed with safety operators.</p>
+          <span class="swb-tag">SWB: Conventional feeder shuttle</span>
+        </div>
+        <div class="sc-footer"><span>Persona: Engineer Wang</span><span>Speed: Cap at 20 km/h</span></div>
+      </article>
+      <article class="scenario-card">
+        <div>
+          <div class="sc-id">12 Elder Care</div>
+          <h4>Senior Care Check-in Robot</h4>
+          <p>Community pocket parks; routine vitals check; genuine emotional care provided by community social workers.</p>
+          <span class="swb-tag">SWB: Community social workers on-site</span>
+        </div>
+        <div class="sc-footer"><span>Persona: Retired Chen</span><span>Guideline: Senior Tech Plan</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 6. Phasing and Risk Radar -->
+  <section class="sheet">
+    <div class="sheet-header">
+      <div>
+        <h2>Implementation Phasing & Risk Governance</h2>
+        <p>Three-phase progressive deployment and 8-dimensional risk control matrix ensuring real-world feasibility.</p>
+      </div>
+      <span class="tag-badge">Phasing & Risk Governance</span>
+    </div>
+    
+    <div class="two-col-grid">
+      <!-- Phasing Milestones -->
+      <div class="card-panel">
+        <h3>Phasing & Milestones (Phasing)</h3>
+        <div style="display:flex; flex-direction:column; gap:12px; margin-top:10px;">
+          <div style="border-left: 3px solid var(--gold-primary); padding-left: 12px;">
+            <strong style="color:var(--gold-light); font-size:13.5px;">Phase 1: Pilot Verification (2026-2028 · 159.4 ha)</strong>
+            <p style="font-size:12.5px; color:var(--text-muted); margin-top:3px;">
+              Deploy 3 prototype handover kiosks; test traffic green-wave coordination in Dazhongsi; certify power line inspection robots in Zhongzhiyuan.
+            </p>
+          </div>
+          <div style="border-left: 3px solid var(--teal-bot); padding-left: 12px;">
+            <strong style="color:var(--teal-bot); font-size:13.5px;">Phase 2: Network Interconnection (2028-2030 · 297.4 ha)</strong>
+            <p style="font-size:12.5px; color:var(--text-muted); margin-top:3px;">
+              Complete the 8.7km greenway and 8.2km robot service loops (subject to phased validation); validate interconnection among 9 kiosks; erect the Watchtower and Handover Central Hub; host 1st Confluent Summit.
+            </p>
+          </div>
+          <div style="border-left: 3px solid var(--green-leaf); padding-left: 12px;">
+            <strong style="color:#34d399; font-size:13.5px;">Phase 3: Full-Scale Confluence (2030-2035 · 392.3 ha)</strong>
+            <p style="font-size:12.5px; color:var(--text-muted); margin-top:3px;">
+              Full 43.6 km² industrial collaboration and human-robot co-governance as a long-term research direction, with any reusable method subject to evaluation and approval.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Risk Evaluation -->
+      <div class="card-panel">
+        <h3>Risk & Compliance Assessment</h3>
+        <p style="font-size:12.5px; color:var(--text-muted); margin-bottom:12px;">
+          1-5 risk scoring across 8 dimensions; high-risk operations retain proposed human review and fallback paths:
+        </p>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; font-size:12px;">
+          <div style="background:rgba(0,0,0,0.25); padding:8px 10px; border-radius:4px;">
+            <span style="color:var(--gold-primary)">Data Privacy (2/5):</span> Edge computing / No face capture
+          </div>
+          <div style="background:rgba(0,0,0,0.25); padding:8px 10px; border-radius:4px;">
+            <span style="color:var(--gold-primary)">Complexity (3/5):</span> Phased pilots / Dedicated lanes
+          </div>
+          <div style="background:rgba(0,0,0,0.25); padding:8px 10px; border-radius:4px;">
+            <span style="color:var(--gold-primary)">Public Acceptance (2/5):</span> Transparent handover / Companion
+          </div>
+          <div style="background:rgba(0,0,0,0.25); padding:8px 10px; border-radius:4px;">
+            <span style="color:var(--gold-primary)">O&M Cost (3/5):</span> Modular kiosks / Infrastructure fusion
+          </div>
+          <div style="background:rgba(0,0,0,0.25); padding:8px 10px; border-radius:4px;">
+            <span style="color:var(--gold-primary)">Policy Uncertainty (3/5):</span> Regulatory sandbox / Safe harbor
+          </div>
+          <div style="background:rgba(0,0,0,0.25); padding:8px 10px; border-radius:4px;">
+            <span style="color:var(--gold-primary)">Spatial Disputes (2/5):</span> Dedicated lanes / Yield to humans
+          </div>
+          <div style="background:rgba(0,0,0,0.25); padding:8px 10px; border-radius:4px;">
+            <span style="color:var(--gold-primary)">Tech Maturity (3/5):</span> Physical E-Stop / Expert audit
+          </div>
+          <div style="background:rgba(0,0,0,0.25); padding:8px 10px; border-radius:4px;">
+            <span style="color:var(--gold-primary)">Inclusion (1/5):</span> Barrier-Free Law / Human-centered
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Task Coverage, Sources and Assumptions -->
+  <section class="sheet">
+    <div class="sheet-header">
+      <div>
+        <h2>Task Coverage & Evidence Traceability</h2>
+        <p>Strictly compliant with official brief and agent.1-6 requirements; fully verified closed-loop matrices.</p>
+      </div>
+      <span class="tag-badge">Audit Matrices & Assumptions</span>
+    </div>
+    
+    <div class="evidence-grid">
+      <div class="source-box">
+        <h4>Data Sources (Sources)</h4>
+        <p>Based on official qualification brief, taskbook extracts, and public planning standards without non-public data:</p>
+        <span class="code-pill">
+          OFFICIAL-ANNOUNCEMENT / AGENT-TASKBOOK / SOURCE-REGISTRY / MOHURD-URBAN-DESIGN / MNR-LAND-USE
+        </span>
+      </div>
+
+      <div class="source-box">
+        <h4>Assumptions & Data Gaps</h4>
+        <p>FAR and building heights remain unknown pending official regulatory plans; provisional geometry subject to recomputation:</p>
+        <span class="code-pill">
+          A-BOUNDARY-001 (Provisional) / A-CONTROLS-001 (Controls) / A-HERITAGE-001 (Heritage)
+        </span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+// Interactive Node Inspector Logic
+function inspectNode(name, desc, loc, role) {
+  document.getElementById("inspTitle").innerText = name;
+  document.getElementById("inspDesc").innerText = desc;
+  document.getElementById("inspLoc").innerText = "Location: " + loc;
+  document.getElementById("inspRole").innerText = "Type: " + role;
+  
+  const box = document.getElementById("inspectorBox");
+  box.style.borderColor = "var(--gold-primary)";
+  box.style.boxShadow = "0 0 25px var(--gold-glow)";
+}
+
+// Layer Toggle Logic
+function setLayer(layerName) {
+  const buttons = document.querySelectorAll(".layer-btn");
+  buttons.forEach(b => b.classList.remove("active"));
+  event.target.classList.add("active");
+
+  const zoning = document.getElementById("lyr-zoning");
+  const mobility = document.getElementById("lyr-mobility");
+  const ecology = document.getElementById("lyr-ecology");
+  const stations = document.getElementById("lyr-stations");
+  const landmarks = document.getElementById("lyr-landmarks");
+  const keyAreas = document.getElementById("lyr-key-areas");
+
+  // Reset display
+  zoning.style.display = "block";
+  mobility.style.display = "block";
+  ecology.style.display = "block";
+  stations.style.display = "block";
+  landmarks.style.display = "block";
+  keyAreas.style.display = "block";
+
+  if (layerName === "zoning") {
+    mobility.style.display = "none";
+    ecology.style.display = "none";
+    stations.style.display = "none";
+    landmarks.style.display = "none";
+  } else if (layerName === "mobility") {
+    zoning.style.display = "none";
+    ecology.style.display = "none";
+  } else if (layerName === "ecology") {
+    zoning.style.display = "none";
+    mobility.style.display = "none";
+    stations.style.display = "none";
+  } else if (layerName === "scenarios") {
+    zoning.style.display = "none";
+  } else if (layerName === "landmarks") {
+    zoning.style.display = "none";
+    mobility.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>

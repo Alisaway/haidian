@@ -34,6 +34,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -84,6 +85,39 @@ DIMENSIONS = [dimension["title_zh"] for dimension in RUBRIC_DIMENSIONS]
 SCRIPT_DIR = Path(__file__).resolve().parent
 DEFAULT_OUTPUT_ROOT = ".maintainer-review"
 ADVISORY_REVIEW_SCHEMA_PATH = "brief/site-package/schemas/advisory_review.schema.json"
+PACKAGE_FILES_INCLUDED_AS_RAW_TEXT = {
+    "proposal.md",
+    "manifest.json",
+    "metrics.json",
+    "assumptions.json",
+    "sources.json",
+    "self_check.json",
+    "compliance_matrix.json",
+    "standard_matrix.json",
+    "design_depth_matrix.json",
+}
+PACKAGE_FILES_INCLUDED_AS_RENDERED_PREVIEW = {
+    "assets/figures/site-overview.png",
+    "assets/figures/site-overview.en.png",
+    "assets/figures/land-use-structure.png",
+    "assets/figures/land-use-structure.en.png",
+    "assets/figures/key-areas.png",
+    "assets/figures/key-areas.en.png",
+    "assets/figures/mobility-bluegreen.png",
+    "assets/figures/mobility-bluegreen.en.png",
+    "assets/figures/metrics-evidence.png",
+    "assets/figures/metrics-evidence.en.png",
+    "report/proposal.html",
+    "report/proposal.en.html",
+    "visual/index.html",
+    "visual/index.en.html",
+}
+PACKAGE_FILES_INCLUDED_AS_PARTIAL_PREVIEW = {
+    "drawings/a3-booklet.pdf",
+    "drawings/a3-booklet.en.pdf",
+    "drawings/a0-boards.pdf",
+    "drawings/a0-boards.en.pdf",
+}
 
 
 def read_text(path: Path) -> str:
@@ -125,18 +159,28 @@ def script_path(repo_root: Path, name: str) -> Path:
 
 
 def run_json_command(command: list[str]) -> dict:
-    completed = subprocess.run(command, capture_output=True, text=True, check=False)
-    if completed.stdout.strip():
+    completed = subprocess.run(
+        command,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        errors="replace",
+        env={**os.environ, "PYTHONUTF8": "1", "PYTHONIOENCODING": "utf-8"},
+        check=False,
+    )
+    stdout = completed.stdout or ""
+    stderr = completed.stderr or ""
+    if stdout.strip():
         try:
-            parsed = json.loads(completed.stdout)
+            parsed = json.loads(stdout)
         except json.JSONDecodeError:
-            parsed = {"raw_stdout": completed.stdout}
+            parsed = {"raw_stdout": stdout}
     else:
         parsed = {}
     return {
         "returncode": completed.returncode,
         "stdout": parsed,
-        "stderr": completed.stderr.strip(),
+        "stderr": stderr.strip(),
     }
 
 
@@ -154,9 +198,67 @@ def run_pre_submit_self_check(repo_root: Path, submission_dir: Path, author: str
     return run_json_command(command)
 
 
+def build_review_input_access_boundary(
+    package_files: list[str],
+    manifest: Any,
+) -> dict[str, Any]:
+    """Describe packet visibility without reading or executing arbitrary artifacts."""
+    present_paths = set(package_files)
+    raw_text_paths = sorted(PACKAGE_FILES_INCLUDED_AS_RAW_TEXT & present_paths)
+    rendered_preview_paths = sorted(PACKAGE_FILES_INCLUDED_AS_RENDERED_PREVIEW & present_paths)
+    partial_preview_paths = sorted(PACKAGE_FILES_INCLUDED_AS_PARTIAL_PREVIEW & present_paths)
+    not_supplied_paths = sorted(
+        present_paths
+        - PACKAGE_FILES_INCLUDED_AS_RAW_TEXT
+        - PACKAGE_FILES_INCLUDED_AS_RENDERED_PREVIEW
+        - PACKAGE_FILES_INCLUDED_AS_PARTIAL_PREVIEW
+    )
+    manifest_artifacts: list[dict[str, Any]] = []
+    if isinstance(manifest, dict) and isinstance(manifest.get("files"), list):
+        for item in manifest["files"]:
+            if not isinstance(item, dict) or not isinstance(item.get("path"), str):
+                continue
+            path = item["path"]
+            artifact = {
+                "path": path,
+                "role": item.get("role"),
+                "present_in_package": path in present_paths,
+                "raw_content_in_review_input_json": path in raw_text_paths,
+                "rendered_preview_supplied": path in rendered_preview_paths,
+                "partial_preview_supplied": path in partial_preview_paths,
+            }
+            manifest_artifacts.append(artifact)
+    return {
+        "raw_text_paths": raw_text_paths,
+        "rendered_preview_paths": rendered_preview_paths,
+        "partial_preview_paths": partial_preview_paths,
+        "partial_preview_rule": "PDF previews include only the first page of each listed file.",
+        "not_supplied_paths": not_supplied_paths,
+        "manifest_artifacts": manifest_artifacts,
+        "participant_verification_scripts_executed": False,
+        "trusted_gate_reports_supplied": [
+            "deterministic_validation",
+            "spatial_review",
+            "visual_review",
+            "professional_review",
+        ],
+        "rule": (
+            "A package artifact listed in not_supplied_paths is absent from the advisory packet, "
+            "not absent from the submission. Rendered previews do not expose source bytes, and PDF "
+            "previews include only their first page. Never claim to have inspected content "
+            "outside the stated access mode or executed a participant artifact."
+        ),
+    }
+
+
 def build_review_input(repo_root: Path, submission_dir: Path) -> dict:
     author = infer_author(submission_dir, repo_root)
     changed_files = discover_files(submission_dir, repo_root)
+    submission_rel = submission_dir.resolve().relative_to(repo_root.resolve())
+    package_files = [
+        Path(path).relative_to(submission_rel).as_posix()
+        for path in changed_files
+    ]
     pre_submit = run_pre_submit_self_check(repo_root, submission_dir, author)
     pre_submit_stdout = pre_submit.get("stdout") if isinstance(pre_submit.get("stdout"), dict) else {}
     validation_stdout = (
@@ -173,11 +275,12 @@ def build_review_input(repo_root: Path, submission_dir: Path) -> dict:
     advisory_review_schema = read_json(repo_root / ADVISORY_REVIEW_SCHEMA_PATH)
     source_registry = load_source_registry(repo_root)
     source_registry_summary = summarize_source_registry(source_registry)
+    manifest = read_json(submission_dir / "manifest.json")
     return {
-        "submission_dir": submission_dir.resolve().relative_to(repo_root.resolve()).as_posix(),
+        "submission_dir": submission_rel.as_posix(),
         "author": author,
         "proposal_md": read_text(submission_dir / "proposal.md"),
-        "manifest": read_json(submission_dir / "manifest.json"),
+        "manifest": manifest,
         "metrics": read_json(submission_dir / "metrics.json"),
         "assumptions": read_json(submission_dir / "assumptions.json"),
         "sources": read_json(submission_dir / "sources.json"),
@@ -197,6 +300,10 @@ def build_review_input(repo_root: Path, submission_dir: Path) -> dict:
         "advisory_review_schema_path": ADVISORY_REVIEW_SCHEMA_PATH,
         "advisory_review_schema": advisory_review_schema,
         "source_registry_summary": source_registry_summary,
+        "review_input_access_boundary": build_review_input_access_boundary(
+            package_files,
+            manifest,
+        ),
         "review_visibility_rule": "Maintainer/advisory review results are local-only and may be shared with the contributor through PR comments only. Do not add them to submissions-data.js, public gallery cards, or committed review pages.",
         "agent_taskbook_review_dimensions": agent_taskbook.get("review_dimensions") if isinstance(agent_taskbook, dict) else None,
         "agent_taskbook_boundary_clause": agent_taskbook.get("boundary_clause") if isinstance(agent_taskbook, dict) else None,
@@ -219,6 +326,8 @@ def build_prompt(review_input: dict) -> str:
             "You are reviewing a machine-readable AI urban design submission for the Haidian Centennial Jing-Zhang AI Innovation Belt.",
             "Use only the supplied review-input JSON. Do not invent official boundaries, planning controls, data sources, or approval status.",
             "Use `source_registry_summary` to distinguish approved formal sources, background-only sources, provisional sources, and needs-review sources.",
+            "Use `review_input_access_boundary` to distinguish raw package content actually supplied in the review-input JSON from artifacts that are only listed in the manifest or file inventory. Some visual artifacts may be attached separately as rendered previews.",
+            "Do not reduce a rubric score, create a required repair, fail a gate, or make an adverse recommendation merely because an artifact is listed in `not_supplied_paths`. Treat `rendered_preview_paths` as visual evidence rather than source bytes, and never claim that `partial_preview_paths` proves anything beyond the first PDF page. Do not claim to have inspected or executed an unsupplied artifact. Use the trusted deterministic, spatial, visual, and professional gate reports for those checks; request participant action only when a supplied report or visible contradiction establishes a real failure.",
             "The review is a local maintainer aid. The only user-visible destination is a Pull Request comment; do not ask to publish this review to the gallery, submissions-data.js, or committed review pages.",
             "",
             f"Return JSON that validates against `{ADVISORY_REVIEW_SCHEMA_PATH}` and include the PR comment body in `pr_comment_markdown`.",
@@ -230,14 +339,14 @@ def build_prompt(review_input: dict) -> str:
             "- Whether the package can enter formal professional review",
             "- Seven-dimension rubric scores and comments using the supplied `rubric_dimensions[].dimension_id` values",
             "- Agent taskbook comments inside the relevant rubric comments when agent_taskbook_review_dimensions is present",
-            "- Data gaps and repair actions",
+            "- Data gaps, current blocking repair actions, and structured non-blocking conditional follow-ups",
             "- `pr_comment_markdown`: concise Markdown for a PR comment",
             "",
             "Important: deterministic validation and spatial review results are evidence. Treat blocking self-checks, known blockers, and missing official geometry as serious readiness limits.",
             "Treat background_only, provisional_only, and needs_review registry entries as non-formal evidence unless the submitted package separately provides reviewed official/cleared evidence.",
             "Version 2 bilingual deliverables are mandatory. A missing, incomplete, malformed, or incorrectly mapped Chinese/English counterpart is a blocking package-readiness failure. Historical version 1 packages remain compatible; review their available language without inventing missing content. Human reviewers must still compare translated claims, metrics, evidence, and figure positions for substantive equivalence.",
             "When English counterparts are present, the multimodal packet includes language-paired figure, PDF first-page, and HTML screenshot evidence. Do not reduce expression_completeness merely because a counterpart is absent from the multimodal packet; the deterministic bilingual gate and human package review own that mapping check.",
-            "Organizer-owned missing geometry or official data is a data gap, not a participant repair. If you include an organizer-owned follow-up in required_next_actions_zh, prefix it with exactly `组织方：` or `主办方：`; official/正式 wording alone does not establish ownership. Any action asking the participant to correct, remove, clarify, or replace a claim remains participant-controlled even when it mentions official boundaries or geometry. Record organizer-owned items in data_gaps_zh; required_next_actions_zh must contain participant-controlled repairs and must not block featured-candidate solely because organizer data still needs recalculation.",
+            "Organizer-owned missing geometry or official data is a data gap, not a participant repair. Record the missing input itself in data_gaps_zh. Put work that becomes due only after a future trigger in conditional_followups with blocking_now=false, a concrete trigger, and owner=participant|organizer|external|shared. For example, a participant-side full recalculation after official data arrives is a conditional follow-up owned by the participant, not a current blocker. required_next_actions_zh and every rubric required_repairs_zh entry must contain only participant-controlled defects that can be repaired in the current package before intake. Any current action asking the participant to correct, remove, clarify, or replace an unsupported claim remains blocking even when it mentions official boundaries or geometry. Ambiguous ownership or timing stays fail-closed as a current repair; do not infer it from keywords or substrings. The legacy exact prefixes `组织方：` and `主办方：` remain a fallback only for an organizer-owned item mistakenly placed in required_next_actions_zh.",
             "If pre-submit self-check, spatial review, machine visual-packaging checks, or professional evidence review is FAIL, the package cannot enter formal professional scoring.",
             "",
             "Submission path:",
@@ -276,8 +385,14 @@ def build_template(review_input: dict) -> str:
     for dimension in RUBRIC_DIMENSIONS:
         lines.append(f"- `{dimension['dimension_id']}` {dimension['title_zh']}: TODO")
     lines.append("")
-    lines.append("## Data Gaps And Repairs")
+    lines.append("## Data Gaps")
     lines.append("- TODO")
+    lines.append("")
+    lines.append("## Current Blocking Repairs")
+    lines.append("- TODO")
+    lines.append("")
+    lines.append("## Conditional Follow-ups (Non-Blocking)")
+    lines.append("- Action / trigger / owner: TODO")
     lines.append("")
     lines.append("## Recommendation")
     lines.append("TODO")

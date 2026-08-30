@@ -249,6 +249,71 @@
       "confidence": "high",
       "assumptions": []
     },
+    "ai_innovation_index": {
+      "status": "unknown",
+      "value": null,
+      "unit": "index",
+      "source_files": [
+        "brief/site-package/standards/references/project-official-announcement.md"
+      ],
+      "formula": "sum(approved_weight_i * normalized_indicator_i), where the proposed indicator basket covers open-source outputs, standards/patents, controlled-test-to-adoption conversion, cross-organisation public-task completion, and accessible AI public services",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-DATA-001"
+      ],
+      "reason": "No organiser-approved indicator definitions, weights, baseline year, statistical perimeter, or verified source series are available; a score would be fabricated.",
+      "data_requirements": [
+        "organiser- or authority-approved indicator dictionary and weights",
+        "baseline year and normalization method",
+        "authorised aggregate time series with provenance, coverage, and revision dates",
+        "independent statistical and industry review of double counting and comparability"
+      ],
+      "recalculation_trigger": "Calculate and publish only after the indicator dictionary, weights, baseline, and authorised aggregate source series are approved; recalculate whenever the perimeter, weights, baseline, or source revision changes."
+    },
+    "ai_talent_density": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "brief/site-package/standards/references/project-official-announcement.md"
+      ],
+      "formula": "verified AI R&D and product full-time-equivalent workers / officially operational AI innovation floor area_sqm * 10000",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-DATA-001",
+        "A-CONTROLS-001"
+      ],
+      "reason": "No authorised aggregate AI employment count, official functional floor-area denominator, common reference date, or approved inclusion rule is available; personal rosters must not be used.",
+      "data_requirements": [
+        "privacy-preserving aggregate AI employment FTE by an approved industry and occupation definition",
+        "official boundary and verified operational AI innovation floor area",
+        "one reference date and rules for cross-site, part-time, and duplicate employment",
+        "statistical privacy threshold and professional sign-off"
+      ],
+      "recalculation_trigger": "Calculate only when official geometry, verified functional floor area, and authorised same-date aggregate FTE data are available; recalculate after any boundary, floor-area, inclusion-rule, or reference-date revision."
+    },
+    "ai_industry_output_cny": {
+      "status": "unknown",
+      "value": null,
+      "unit": "none",
+      "source_files": [
+        "brief/site-package/standards/references/project-official-announcement.md"
+      ],
+      "formula": "sum(verified AI principal-business revenue_cny within one approved industry definition, geographic perimeter, and reporting year, after removing duplicate enterprise and consolidated-group records)",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-DATA-001",
+        "A-CONTROLS-001"
+      ],
+      "reason": "No authorised enterprise-level or official aggregate output series, approved AI industry boundary, reporting year, or non-duplication rule is available; no firm or investment value is inferred.",
+      "data_requirements": [
+        "authority-approved AI industry and geographic statistical perimeter",
+        "authorised audited or administrative aggregate principal-business revenue for one reporting year",
+        "enterprise and group de-duplication rules",
+        "publication, confidentiality, and revision controls"
+      ],
+      "recalculation_trigger": "Calculate only after authorised statistics and the industry, geographic, time, and de-duplication definitions are approved; recalculate when any source revision or perimeter definition changes."
+    },
     "regional_interface_count": {
       "status": "known",
       "value": 5,
@@ -356,6 +421,75 @@
       "confidence": "medium",
       "assumptions": [
         "A-PILOT-001"
+      ]
+    },
+    "simulation_task_count": {
+      "status": "known",
+      "value": 13,
+      "unit": "count",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "count(simulation.json tasks)",
+      "confidence": "high",
+      "assumptions": [
+        "A-TEST-001"
+      ]
+    },
+    "simulation_success_rate": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "count(outcome == success or outcome ends with _success) / count(tasks); this measures expected checker behaviour, not service or field success",
+      "confidence": "high",
+      "assumptions": [
+        "A-TEST-001"
+      ]
+    },
+    "synthetic_assertions_passed": {
+      "status": "known",
+      "value": 18,
+      "unit": "count",
+      "source_files": [
+        "simulation.json",
+        "visual/assets/encounter-ticket.validation.json"
+      ],
+      "formula": "baselines.encounter_ticket_contract_replay.assertions_passed",
+      "confidence": "high",
+      "assumptions": [
+        "A-TEST-001"
+      ]
+    },
+    "spatial_boolean_combinations_checked": {
+      "status": "known",
+      "value": 64,
+      "unit": "count",
+      "source_files": [
+        "simulation.json",
+        "visual/assets/encounter-ticket.validation.json"
+      ],
+      "formula": "2^6 combinations of public_path, separation, duty_holder, physical_stop, ai_off_bypass, and restoration",
+      "confidence": "high",
+      "assumptions": [
+        "A-TEST-001",
+        "A-SITE-VERIFY-001"
+      ]
+    },
+    "expected_rejection_count": {
+      "status": "known",
+      "value": 9,
+      "unit": "count",
+      "source_files": [
+        "simulation.json",
+        "visual/assets/encounter-ticket.validation.json"
+      ],
+      "formula": "5 expected-invalid Encounter Tickets + 4 expected-reject spatial cases",
+      "confidence": "high",
+      "assumptions": [
+        "A-TEST-001"
       ]
     },
     "floor_area_ratio": {

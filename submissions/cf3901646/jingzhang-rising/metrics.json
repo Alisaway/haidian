@@ -415,6 +415,408 @@
       "confidence": "unknown",
       "assumptions": [],
       "reason": "建筑总规模需以正式控规条件和现状建筑普查数据为基础，待正式数据补齐。"
+    },
+    "zhongzhiyuan_key_area_area_sqm": {
+      "status": "known",
+      "value": 1929201.877,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "polygon_area(key_areas where key_area_id=zhongzhiyuan_ai_acceleration_area, EPSG:4548)",
+      "confidence": "medium",
+      "assumptions": [
+        "重点区域边界为组织方提供的临时粗略范围，非官方红线。"
+      ],
+      "note": "分片区值由本包 geometry/ 图层与 key_areas.geojson 临时粗略边界求交复算；官方 polygon 发布后必须重算。"
+    },
+    "zhongzhiyuan_slow_mobility_length_m": {
+      "status": "known",
+      "value": 5790.99,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "sum(length(roads where road_class in {greenway,pedestrian,cycleway} ∩ key_area))",
+      "confidence": "medium",
+      "assumptions": [
+        "重点区域边界为组织方提供的临时粗略范围，非官方红线。"
+      ],
+      "note": "分片区值由本包 geometry/ 图层与 key_areas.geojson 临时粗略边界求交复算；官方 polygon 发布后必须重算。"
+    },
+    "zhongzhiyuan_cycleway_length_m": {
+      "status": "known",
+      "value": 1999.59,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "sum(length(roads where road_class=cycleway ∩ key_area))",
+      "confidence": "medium",
+      "assumptions": [
+        "重点区域边界为组织方提供的临时粗略范围，非官方红线。"
+      ],
+      "note": "分片区值由本包 geometry/ 图层与 key_areas.geojson 临时粗略边界求交复算；官方 polygon 发布后必须重算。"
+    },
+    "zhongzhiyuan_pedestrian_link_length_m": {
+      "status": "known",
+      "value": 1791.77,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "sum(length(roads where road_class=pedestrian ∩ key_area))",
+      "confidence": "medium",
+      "assumptions": [
+        "重点区域边界为组织方提供的临时粗略范围，非官方红线。"
+      ],
+      "note": "分片区值由本包 geometry/ 图层与 key_areas.geojson 临时粗略边界求交复算；官方 polygon 发布后必须重算。"
+    },
+    "zhongzhiyuan_transit_connection_length_m": {
+      "status": "known",
+      "value": 797.19,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "sum(length(roads where road_class=transit_connection ∩ key_area))",
+      "confidence": "medium",
+      "assumptions": [
+        "重点区域边界为组织方提供的临时粗略范围，非官方红线。"
+      ],
+      "note": "分片区值由本包 geometry/ 图层与 key_areas.geojson 临时粗略边界求交复算；官方 polygon 发布后必须重算。"
+    },
+    "zhongzhiyuan_slow_mobility_density_m_per_ha": {
+      "status": "known",
+      "value": 30.018,
+      "unit": "m_per_ha",
+      "source_files": [
+        "geometry/roads.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "zhongzhiyuan_slow_mobility_length_m / (zhongzhiyuan_key_area_area_sqm / 10000)",
+      "confidence": "medium",
+      "assumptions": [
+        "重点区域边界为组织方提供的临时粗略范围，非官方红线。"
+      ],
+      "note": "分片区值由本包 geometry/ 图层与 key_areas.geojson 临时粗略边界求交复算；官方 polygon 发布后必须重算。"
+    },
+    "zhongzhiyuan_green_ratio": {
+      "status": "known",
+      "value": 0.299179,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/green_space.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "area(green_space ∩ key_area) / area(key_area)",
+      "confidence": "medium",
+      "assumptions": [
+        "重点区域边界为组织方提供的临时粗略范围，非官方红线。"
+      ],
+      "note": "分片区值由本包 geometry/ 图层与 key_areas.geojson 临时粗略边界求交复算；官方 polygon 发布后必须重算。"
+    },
+    "zhongzhiyuan_public_space_ratio": {
+      "status": "known",
+      "value": 0.054506,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "area(public_space ∩ key_area) / area(key_area)",
+      "confidence": "medium",
+      "assumptions": [
+        "重点区域边界为组织方提供的临时粗略范围，非官方红线。"
+      ],
+      "note": "分片区值由本包 geometry/ 图层与 key_areas.geojson 临时粗略边界求交复算；官方 polygon 发布后必须重算。"
+    },
+    "zhongzhiyuan_building_coverage_ratio": {
+      "status": "known",
+      "value": 0.092164,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/buildings.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "area(buildings ∩ key_area) / area(key_area)",
+      "confidence": "medium",
+      "assumptions": [
+        "重点区域边界为组织方提供的临时粗略范围，非官方红线。"
+      ],
+      "note": "分片区值由本包 geometry/ 图层与 key_areas.geojson 临时粗略边界求交复算；官方 polygon 发布后必须重算。"
+    },
+    "ai_origin_community_key_area_area_sqm": {
+      "status": "known",
+      "value": 1043236.909,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "polygon_area(key_areas where key_area_id=beijing_ai_origin_community, EPSG:4548)",
+      "confidence": "medium",
+      "assumptions": [
+        "重点区域边界为组织方提供的临时粗略范围，非官方红线。"
+      ],
+      "note": "分片区值由本包 geometry/ 图层与 key_areas.geojson 临时粗略边界求交复算；官方 polygon 发布后必须重算。"
+    },
+    "ai_origin_community_slow_mobility_length_m": {
+      "status": "known",
+      "value": 3092.47,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "sum(length(roads where road_class in {greenway,pedestrian,cycleway} ∩ key_area))",
+      "confidence": "medium",
+      "assumptions": [
+        "重点区域边界为组织方提供的临时粗略范围，非官方红线。"
+      ],
+      "note": "分片区值由本包 geometry/ 图层与 key_areas.geojson 临时粗略边界求交复算；官方 polygon 发布后必须重算。"
+    },
+    "ai_origin_community_cycleway_length_m": {
+      "status": "known",
+      "value": 1112.43,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "sum(length(roads where road_class=cycleway ∩ key_area))",
+      "confidence": "medium",
+      "assumptions": [
+        "重点区域边界为组织方提供的临时粗略范围，非官方红线。"
+      ],
+      "note": "分片区值由本包 geometry/ 图层与 key_areas.geojson 临时粗略边界求交复算；官方 polygon 发布后必须重算。"
+    },
+    "ai_origin_community_pedestrian_link_length_m": {
+      "status": "known",
+      "value": 866.78,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "sum(length(roads where road_class=pedestrian ∩ key_area))",
+      "confidence": "medium",
+      "assumptions": [
+        "重点区域边界为组织方提供的临时粗略范围，非官方红线。"
+      ],
+      "note": "分片区值由本包 geometry/ 图层与 key_areas.geojson 临时粗略边界求交复算；官方 polygon 发布后必须重算。"
+    },
+    "ai_origin_community_transit_connection_length_m": {
+      "status": "known",
+      "value": 797.44,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "sum(length(roads where road_class=transit_connection ∩ key_area))",
+      "confidence": "medium",
+      "assumptions": [
+        "重点区域边界为组织方提供的临时粗略范围，非官方红线。"
+      ],
+      "note": "分片区值由本包 geometry/ 图层与 key_areas.geojson 临时粗略边界求交复算；官方 polygon 发布后必须重算。"
+    },
+    "ai_origin_community_slow_mobility_density_m_per_ha": {
+      "status": "known",
+      "value": 29.643,
+      "unit": "m_per_ha",
+      "source_files": [
+        "geometry/roads.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "ai_origin_community_slow_mobility_length_m / (ai_origin_community_key_area_area_sqm / 10000)",
+      "confidence": "medium",
+      "assumptions": [
+        "重点区域边界为组织方提供的临时粗略范围，非官方红线。"
+      ],
+      "note": "分片区值由本包 geometry/ 图层与 key_areas.geojson 临时粗略边界求交复算；官方 polygon 发布后必须重算。"
+    },
+    "ai_origin_community_green_ratio": {
+      "status": "known",
+      "value": 0.228917,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/green_space.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "area(green_space ∩ key_area) / area(key_area)",
+      "confidence": "medium",
+      "assumptions": [
+        "重点区域边界为组织方提供的临时粗略范围，非官方红线。"
+      ],
+      "note": "分片区值由本包 geometry/ 图层与 key_areas.geojson 临时粗略边界求交复算；官方 polygon 发布后必须重算。"
+    },
+    "ai_origin_community_public_space_ratio": {
+      "status": "known",
+      "value": 0.344044,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "area(public_space ∩ key_area) / area(key_area)",
+      "confidence": "medium",
+      "assumptions": [
+        "重点区域边界为组织方提供的临时粗略范围，非官方红线。"
+      ],
+      "note": "分片区值由本包 geometry/ 图层与 key_areas.geojson 临时粗略边界求交复算；官方 polygon 发布后必须重算。"
+    },
+    "ai_origin_community_building_coverage_ratio": {
+      "status": "known",
+      "value": 0.082648,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/buildings.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "area(buildings ∩ key_area) / area(key_area)",
+      "confidence": "medium",
+      "assumptions": [
+        "重点区域边界为组织方提供的临时粗略范围，非官方红线。"
+      ],
+      "note": "分片区值由本包 geometry/ 图层与 key_areas.geojson 临时粗略边界求交复算；官方 polygon 发布后必须重算。"
+    },
+    "dazhongsi_key_area_area_sqm": {
+      "status": "known",
+      "value": 720454.219,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "polygon_area(key_areas where key_area_id=dazhongsi_ai_industry_cluster, EPSG:4548)",
+      "confidence": "medium",
+      "assumptions": [
+        "重点区域边界为组织方提供的临时粗略范围，非官方红线。"
+      ],
+      "note": "分片区值由本包 geometry/ 图层与 key_areas.geojson 临时粗略边界求交复算；官方 polygon 发布后必须重算。"
+    },
+    "dazhongsi_slow_mobility_length_m": {
+      "status": "known",
+      "value": 2282.88,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "sum(length(roads where road_class in {greenway,pedestrian,cycleway} ∩ key_area))",
+      "confidence": "medium",
+      "assumptions": [
+        "重点区域边界为组织方提供的临时粗略范围，非官方红线。"
+      ],
+      "note": "分片区值由本包 geometry/ 图层与 key_areas.geojson 临时粗略边界求交复算；官方 polygon 发布后必须重算。"
+    },
+    "dazhongsi_cycleway_length_m": {
+      "status": "known",
+      "value": 652.95,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "sum(length(roads where road_class=cycleway ∩ key_area))",
+      "confidence": "medium",
+      "assumptions": [
+        "重点区域边界为组织方提供的临时粗略范围，非官方红线。"
+      ],
+      "note": "分片区值由本包 geometry/ 图层与 key_areas.geojson 临时粗略边界求交复算；官方 polygon 发布后必须重算。"
+    },
+    "dazhongsi_pedestrian_link_length_m": {
+      "status": "known",
+      "value": 972.75,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "sum(length(roads where road_class=pedestrian ∩ key_area))",
+      "confidence": "medium",
+      "assumptions": [
+        "重点区域边界为组织方提供的临时粗略范围，非官方红线。"
+      ],
+      "note": "分片区值由本包 geometry/ 图层与 key_areas.geojson 临时粗略边界求交复算；官方 polygon 发布后必须重算。"
+    },
+    "dazhongsi_transit_connection_length_m": {
+      "status": "known",
+      "value": 66.46,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "sum(length(roads where road_class=transit_connection ∩ key_area))",
+      "confidence": "medium",
+      "assumptions": [
+        "重点区域边界为组织方提供的临时粗略范围，非官方红线。"
+      ],
+      "note": "分片区值由本包 geometry/ 图层与 key_areas.geojson 临时粗略边界求交复算；官方 polygon 发布后必须重算。"
+    },
+    "dazhongsi_slow_mobility_density_m_per_ha": {
+      "status": "known",
+      "value": 31.687,
+      "unit": "m_per_ha",
+      "source_files": [
+        "geometry/roads.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "dazhongsi_slow_mobility_length_m / (dazhongsi_key_area_area_sqm / 10000)",
+      "confidence": "medium",
+      "assumptions": [
+        "重点区域边界为组织方提供的临时粗略范围，非官方红线。"
+      ],
+      "note": "分片区值由本包 geometry/ 图层与 key_areas.geojson 临时粗略边界求交复算；官方 polygon 发布后必须重算。"
+    },
+    "dazhongsi_green_ratio": {
+      "status": "known",
+      "value": 0.301723,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/green_space.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "area(green_space ∩ key_area) / area(key_area)",
+      "confidence": "medium",
+      "assumptions": [
+        "重点区域边界为组织方提供的临时粗略范围，非官方红线。"
+      ],
+      "note": "分片区值由本包 geometry/ 图层与 key_areas.geojson 临时粗略边界求交复算；官方 polygon 发布后必须重算。"
+    },
+    "dazhongsi_public_space_ratio": {
+      "status": "known",
+      "value": 0.062691,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "area(public_space ∩ key_area) / area(key_area)",
+      "confidence": "medium",
+      "assumptions": [
+        "重点区域边界为组织方提供的临时粗略范围，非官方红线。"
+      ],
+      "note": "分片区值由本包 geometry/ 图层与 key_areas.geojson 临时粗略边界求交复算；官方 polygon 发布后必须重算。"
+    },
+    "dazhongsi_building_coverage_ratio": {
+      "status": "known",
+      "value": 0.104862,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/buildings.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "area(buildings ∩ key_area) / area(key_area)",
+      "confidence": "medium",
+      "assumptions": [
+        "重点区域边界为组织方提供的临时粗略范围，非官方红线。"
+      ],
+      "note": "分片区值由本包 geometry/ 图层与 key_areas.geojson 临时粗略边界求交复算；官方 polygon 发布后必须重算。"
     }
   }
 }

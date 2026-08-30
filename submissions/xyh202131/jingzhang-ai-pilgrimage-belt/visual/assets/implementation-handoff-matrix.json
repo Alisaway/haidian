@@ -24,7 +24,7 @@
       "definition_zh": "连续日常轨 + 间歇验证轨 + 三座换轨场 + 失败侧线 + 公共时刻表。",
       "definition_en": "Continuous civic track + intermittent proof track + three switchyards + failure siding + civic timetable.",
       "primary_refs": [
-        "proposal.md#双轨京张前台空间总纲--twin-track-jing-zhang",
+        "proposal.md#双轨京张公共空间运行框架--twin-track-jing-zhang",
         "assets/figures/site-overview.png",
         "visual/assets/key-area-evidence-matrix.json#twin_track_frontend_contract"
       ]
@@ -176,7 +176,7 @@
       "review_question_zh": "文化内容是否可核验、可纠错且无屏可达？",
       "review_question_en": "Is cultural content verifiable, correctable, and reachable without a screen?",
       "existing_answer_refs": [
-        "proposal.md#百年时间博物馆可核验可纠错无屏可达的城市时间教育线",
+        "proposal.md#后台证据与专业交接一个入口五步追证",
         "assets/figures/century-timeline.png",
         "visual/assets/century-time-museum-contract.json",
         "compliance_matrix.json#agent.5"
@@ -194,7 +194,7 @@
       "review_question_zh": "全年运营是否服务普通日常，而非活动热度？",
       "review_question_en": "Does year-round operation serve ordinary life rather than event heat?",
       "existing_answer_refs": [
-        "proposal.md#长期公共共同体运营普通生活始终连续",
+        "proposal.md#四条后台合同只服务八个既有项目",
         "assets/figures/year-round-civic-operations.png",
         "visual/assets/civic-operations-contract.json",
         "compliance_matrix.json#agent.6"
@@ -360,7 +360,7 @@
     },
     {
       "replacement_id": "D08_RIGHTS_AND_REUSE",
-      "current_state": "not_fully_cleared",
+      "current_state": "component_terms_declared_future_or_external_use_review_open",
       "current_refs": [
         "visual/assets/rights-clearance-ledger.json",
         "visual/assets/submission-use-rights-matrix.json"
@@ -385,72 +385,135 @@
     {
       "discipline_id": "P01_PLANNING_URBAN_DESIGN",
       "must_receive": [
-        "D01",
-        "D02",
-        "D03"
+        "D01_OFFICIAL_GEOMETRY",
+        "D02_EXISTING_CONDITION_SURVEY",
+        "D03_REGULATORY_OWNERSHIP"
       ],
+      "current_status": "suggested_role_type_only",
+      "accepted_responsibility_count": 0,
       "decision_scope": "boundary comparison, control conflict, public-space hierarchy and spatial revision",
+      "decision_rights": [
+        "revise_affected_concept",
+        "reject_affected_concept",
+        "delete_affected_concept",
+        "maintain_no_go"
+      ],
+      "decision_rights_boundary": "These rights apply only within decision_scope; listing a suggested role type neither assigns nor evidences accepted responsibility.",
       "cannot_be_replaced_by": "concept figures or repository validation"
     },
     {
       "discipline_id": "P02_LANDSCAPE_ACCESSIBILITY",
       "must_receive": [
-        "D02",
-        "D04",
-        "D06"
+        "D02_EXISTING_CONDITION_SURVEY",
+        "D04_ACCESSIBILITY_PUBLIC_PARITY",
+        "D06_SPECIALIST_CONSTRAINTS"
       ],
+      "current_status": "suggested_role_type_only",
+      "accepted_responsibility_count": 0,
       "decision_scope": "ordinary route, levels, rest, surfaces, maintenance clear zones and group co-test",
+      "decision_rights": [
+        "revise_affected_concept",
+        "reject_affected_concept",
+        "delete_affected_concept",
+        "maintain_no_go"
+      ],
+      "decision_rights_boundary": "These rights apply only within decision_scope; listing a suggested role type neither assigns nor evidences accepted responsibility.",
       "cannot_be_replaced_by": "green line in a concept diagram"
     },
     {
       "discipline_id": "P03_TRANSPORT",
       "must_receive": [
-        "D02",
-        "D05",
-        "D06"
+        "D02_EXISTING_CONDITION_SURVEY",
+        "D05_TRANSPORT_AND_PEAK_CONTINUITY",
+        "D06_SPECIALIST_CONSTRAINTS"
       ],
+      "current_status": "suggested_role_type_only",
+      "accepted_responsibility_count": 0,
       "decision_scope": "six interfaces, four-quadrant continuity, peak conflict and safe detour",
+      "decision_rights": [
+        "revise_affected_concept",
+        "reject_affected_concept",
+        "delete_affected_concept",
+        "maintain_no_go"
+      ],
+      "decision_rights_boundary": "These rights apply only within decision_scope; listing a suggested role type neither assigns nor evidences accepted responsibility.",
       "cannot_be_replaced_by": "directional OSM background"
     },
     {
       "discipline_id": "P04_ARCHITECTURE_PUBLIC_INTERFACE",
       "must_receive": [
-        "D02",
-        "D03",
-        "D06"
+        "D02_EXISTING_CONDITION_SURVEY",
+        "D03_REGULATORY_OWNERSHIP",
+        "D06_SPECIALIST_CONSTRAINTS"
       ],
+      "current_status": "suggested_role_type_only",
+      "accepted_responsibility_count": 0,
       "decision_scope": "ground-floor interface, removable-component interface and existing-building limits",
+      "decision_rights": [
+        "revise_affected_concept",
+        "reject_affected_concept",
+        "delete_affected_concept",
+        "maintain_no_go"
+      ],
+      "decision_rights_boundary": "These rights apply only within decision_scope; listing a suggested role type neither assigns nor evidences accepted responsibility.",
       "cannot_be_replaced_by": "massing prototypes"
     },
     {
       "discipline_id": "P05_SPECIALIST_SAFETY",
       "must_receive": [
-        "D03",
-        "D06",
-        "D07"
+        "D03_REGULATORY_OWNERSHIP",
+        "D06_SPECIALIST_CONSTRAINTS",
+        "D07_RESPONSIBILITY_OPERATIONS"
       ],
+      "current_status": "suggested_role_type_only",
+      "accepted_responsibility_count": 0,
       "decision_scope": "railway, heritage, municipal, water, fire, emergency, structural, light and noise constraints",
+      "decision_rights": [
+        "revise_affected_concept",
+        "reject_affected_concept",
+        "delete_affected_concept",
+        "maintain_no_go"
+      ],
+      "decision_rights_boundary": "These rights apply only within decision_scope; listing a suggested role type neither assigns nor evidences accepted responsibility.",
       "cannot_be_replaced_by": "a complete closure template"
     },
     {
       "discipline_id": "P06_DATA_AI_RIGHTS",
       "must_receive": [
-        "D04",
-        "D07",
-        "D08"
+        "D04_ACCESSIBILITY_PUBLIC_PARITY",
+        "D07_RESPONSIBILITY_OPERATIONS",
+        "D08_RIGHTS_AND_REUSE"
       ],
+      "current_status": "suggested_role_type_only",
+      "accepted_responsibility_count": 0,
       "decision_scope": "minimum data, prohibited data, human review, evidence version, appeal and rights clearance",
+      "decision_rights": [
+        "revise_affected_concept",
+        "reject_affected_concept",
+        "delete_affected_concept",
+        "maintain_no_go"
+      ],
+      "decision_rights_boundary": "These rights apply only within decision_scope; listing a suggested role type neither assigns nor evidences accepted responsibility.",
       "cannot_be_replaced_by": "synthetic replay PASS"
     },
     {
       "discipline_id": "P07_OPERATIONS_COMMUNITY",
       "must_receive": [
-        "D04",
-        "D05",
-        "D07",
-        "D08"
+        "D04_ACCESSIBILITY_PUBLIC_PARITY",
+        "D05_TRANSPORT_AND_PEAK_CONTINUITY",
+        "D07_RESPONSIBILITY_OPERATIONS",
+        "D08_RIGHTS_AND_REUSE"
       ],
+      "current_status": "suggested_role_type_only",
+      "accepted_responsibility_count": 0,
       "decision_scope": "ordinary/no-event baseline, staffed access, complaint, quiet time, maintenance, retirement and annual decision",
+      "decision_rights": [
+        "revise_affected_concept",
+        "reject_affected_concept",
+        "delete_affected_concept",
+        "maintain_no_go"
+      ],
+      "decision_rights_boundary": "These rights apply only within decision_scope; listing a suggested role type neither assigns nor evidences accepted responsibility.",
       "cannot_be_replaced_by": "event calendar or volunteer assumption"
     }
   ],
@@ -497,7 +560,27 @@
   "handoff_pack_definitions": [
     {
       "pack_id": "H01_AUTHORITY",
-      "closure_category_ref": "visual/assets/readiness-closure-contract.json#C01_ROLE_ACCEPTANCE",
+      "linked_replacement_ids": [
+        "D07_RESPONSIBILITY_OPERATIONS"
+      ],
+      "suggested_discipline_ids": [
+        "P05_SPECIALIST_SAFETY",
+        "P06_DATA_AI_RIGHTS",
+        "P07_OPERATIONS_COMMUNITY"
+      ],
+      "suggested_discipline_status": "suggested_role_type_only",
+      "current_state": "not_submitted",
+      "accepted_responsibility_count": 0,
+      "conservative_default": "NO-GO",
+      "affected_concept_disposition_options": [
+        "revise_affected_concept",
+        "condition_affected_concept",
+        "reject_affected_concept",
+        "delete_affected_concept"
+      ],
+      "disposition_authority_boundary": "A competent professional may exercise these options only within the decision_scope of a linked suggested discipline; listing a suggested discipline neither assigns nor evidences accepted responsibility.",
+      "closure_category_id": "C01_ROLE_ACCEPTANCE",
+      "closure_category_ref": "visual/assets/readiness-closure-contract.json#/closure_categories/0",
       "required_contents": [
         "real accountable-party acceptance",
         "operationally responsible-party acceptance",
@@ -506,7 +589,31 @@
     },
     {
       "pack_id": "H02_APPROVAL_SCOPE",
-      "closure_category_ref": "visual/assets/readiness-closure-contract.json#C02_APPROVAL_SCOPE",
+      "linked_replacement_ids": [
+        "D01_OFFICIAL_GEOMETRY",
+        "D03_REGULATORY_OWNERSHIP",
+        "D06_SPECIALIST_CONSTRAINTS"
+      ],
+      "suggested_discipline_ids": [
+        "P01_PLANNING_URBAN_DESIGN",
+        "P02_LANDSCAPE_ACCESSIBILITY",
+        "P03_TRANSPORT",
+        "P04_ARCHITECTURE_PUBLIC_INTERFACE",
+        "P05_SPECIALIST_SAFETY"
+      ],
+      "suggested_discipline_status": "suggested_role_type_only",
+      "current_state": "not_submitted",
+      "accepted_responsibility_count": 0,
+      "conservative_default": "NO-GO",
+      "affected_concept_disposition_options": [
+        "revise_affected_concept",
+        "condition_affected_concept",
+        "reject_affected_concept",
+        "delete_affected_concept"
+      ],
+      "disposition_authority_boundary": "A competent professional may exercise these options only within the decision_scope of a linked suggested discipline; listing a suggested discipline neither assigns nor evidences accepted responsibility.",
+      "closure_category_id": "C02_APPROVAL_SCOPE",
+      "closure_category_ref": "visual/assets/readiness-closure-contract.json#/closure_categories/1",
       "required_contents": [
         "approval register",
         "approved site and time window",
@@ -515,7 +622,33 @@
     },
     {
       "pack_id": "H03_BASELINE",
-      "closure_category_ref": "visual/assets/readiness-closure-contract.json#C03_SITE_TIME_BASELINE",
+      "linked_replacement_ids": [
+        "D01_OFFICIAL_GEOMETRY",
+        "D02_EXISTING_CONDITION_SURVEY",
+        "D04_ACCESSIBILITY_PUBLIC_PARITY",
+        "D05_TRANSPORT_AND_PEAK_CONTINUITY"
+      ],
+      "suggested_discipline_ids": [
+        "P01_PLANNING_URBAN_DESIGN",
+        "P02_LANDSCAPE_ACCESSIBILITY",
+        "P03_TRANSPORT",
+        "P04_ARCHITECTURE_PUBLIC_INTERFACE",
+        "P06_DATA_AI_RIGHTS",
+        "P07_OPERATIONS_COMMUNITY"
+      ],
+      "suggested_discipline_status": "suggested_role_type_only",
+      "current_state": "not_submitted",
+      "accepted_responsibility_count": 0,
+      "conservative_default": "NO-GO",
+      "affected_concept_disposition_options": [
+        "revise_affected_concept",
+        "condition_affected_concept",
+        "reject_affected_concept",
+        "delete_affected_concept"
+      ],
+      "disposition_authority_boundary": "A competent professional may exercise these options only within the decision_scope of a linked suggested discipline; listing a suggested discipline neither assigns nor evidences accepted responsibility.",
+      "closure_category_id": "C03_SITE_TIME_BASELINE",
+      "closure_category_ref": "visual/assets/readiness-closure-contract.json#/closure_categories/2",
       "required_contents": [
         "dated site survey",
         "ordinary-use baseline",
@@ -524,7 +657,26 @@
     },
     {
       "pack_id": "H04_DATA_SAFETY",
-      "closure_category_ref": "visual/assets/readiness-closure-contract.json#C04_PROHIBITED_DATA_CONTROL",
+      "linked_replacement_ids": [
+        "D08_RIGHTS_AND_REUSE"
+      ],
+      "suggested_discipline_ids": [
+        "P06_DATA_AI_RIGHTS",
+        "P07_OPERATIONS_COMMUNITY"
+      ],
+      "suggested_discipline_status": "suggested_role_type_only",
+      "current_state": "not_submitted",
+      "accepted_responsibility_count": 0,
+      "conservative_default": "NO-GO",
+      "affected_concept_disposition_options": [
+        "revise_affected_concept",
+        "condition_affected_concept",
+        "reject_affected_concept",
+        "delete_affected_concept"
+      ],
+      "disposition_authority_boundary": "A competent professional may exercise these options only within the decision_scope of a linked suggested discipline; listing a suggested discipline neither assigns nor evidences accepted responsibility.",
+      "closure_category_id": "C04_PROHIBITED_DATA_CONTROL",
+      "closure_category_ref": "visual/assets/readiness-closure-contract.json#/closure_categories/3",
       "required_contents": [
         "prohibited-data control",
         "minimum-data inventory",
@@ -533,8 +685,34 @@
     },
     {
       "pack_id": "H05_STOP_RECOVERY",
-      "closure_category_ref": "visual/assets/readiness-closure-contract.json#C05_STOP_AUTHORITY",
-      "additional_closure_category_ref": "visual/assets/readiness-closure-contract.json#C06_RECOVERY_REHEARSAL",
+      "linked_replacement_ids": [
+        "D05_TRANSPORT_AND_PEAK_CONTINUITY",
+        "D06_SPECIALIST_CONSTRAINTS",
+        "D07_RESPONSIBILITY_OPERATIONS"
+      ],
+      "suggested_discipline_ids": [
+        "P02_LANDSCAPE_ACCESSIBILITY",
+        "P03_TRANSPORT",
+        "P04_ARCHITECTURE_PUBLIC_INTERFACE",
+        "P05_SPECIALIST_SAFETY",
+        "P06_DATA_AI_RIGHTS",
+        "P07_OPERATIONS_COMMUNITY"
+      ],
+      "suggested_discipline_status": "suggested_role_type_only",
+      "current_state": "not_submitted",
+      "accepted_responsibility_count": 0,
+      "conservative_default": "NO-GO",
+      "affected_concept_disposition_options": [
+        "revise_affected_concept",
+        "condition_affected_concept",
+        "reject_affected_concept",
+        "delete_affected_concept"
+      ],
+      "disposition_authority_boundary": "A competent professional may exercise these options only within the decision_scope of a linked suggested discipline; listing a suggested discipline neither assigns nor evidences accepted responsibility.",
+      "closure_category_id": "C05_STOP_AUTHORITY",
+      "closure_category_ref": "visual/assets/readiness-closure-contract.json#/closure_categories/4",
+      "additional_closure_category_id": "C06_RECOVERY_REHEARSAL",
+      "additional_closure_category_ref": "visual/assets/readiness-closure-contract.json#/closure_categories/5",
       "required_contents": [
         "physical or procedural stop test",
         "named restart authority",
@@ -543,7 +721,31 @@
     },
     {
       "pack_id": "H06_PUBLIC_PARITY",
-      "closure_category_ref": "visual/assets/readiness-closure-contract.json#C07_COMMUNITY_CO_TEST",
+      "linked_replacement_ids": [
+        "D02_EXISTING_CONDITION_SURVEY",
+        "D04_ACCESSIBILITY_PUBLIC_PARITY"
+      ],
+      "suggested_discipline_ids": [
+        "P01_PLANNING_URBAN_DESIGN",
+        "P02_LANDSCAPE_ACCESSIBILITY",
+        "P03_TRANSPORT",
+        "P04_ARCHITECTURE_PUBLIC_INTERFACE",
+        "P06_DATA_AI_RIGHTS",
+        "P07_OPERATIONS_COMMUNITY"
+      ],
+      "suggested_discipline_status": "suggested_role_type_only",
+      "current_state": "not_submitted",
+      "accepted_responsibility_count": 0,
+      "conservative_default": "NO-GO",
+      "affected_concept_disposition_options": [
+        "revise_affected_concept",
+        "condition_affected_concept",
+        "reject_affected_concept",
+        "delete_affected_concept"
+      ],
+      "disposition_authority_boundary": "A competent professional may exercise these options only within the decision_scope of a linked suggested discipline; listing a suggested discipline neither assigns nor evidences accepted responsibility.",
+      "closure_category_id": "C07_COMMUNITY_CO_TEST",
+      "closure_category_ref": "visual/assets/readiness-closure-contract.json#/closure_categories/6",
       "required_contents": [
         "community co-test record",
         "same-task non-AI parity comparison",
@@ -552,8 +754,30 @@
     },
     {
       "pack_id": "H07_RETEST_DECISION",
-      "closure_category_ref": "visual/assets/readiness-closure-contract.json#C08_INDEPENDENT_RETEST",
-      "additional_closure_category_ref": "visual/assets/readiness-closure-contract.json#C09_GO_NO_GO_MINUTE",
+      "linked_replacement_ids": [
+        "D07_RESPONSIBILITY_OPERATIONS",
+        "D08_RIGHTS_AND_REUSE"
+      ],
+      "suggested_discipline_ids": [
+        "P05_SPECIALIST_SAFETY",
+        "P06_DATA_AI_RIGHTS",
+        "P07_OPERATIONS_COMMUNITY"
+      ],
+      "suggested_discipline_status": "suggested_role_type_only",
+      "current_state": "not_submitted",
+      "accepted_responsibility_count": 0,
+      "conservative_default": "NO-GO",
+      "affected_concept_disposition_options": [
+        "revise_affected_concept",
+        "condition_affected_concept",
+        "reject_affected_concept",
+        "delete_affected_concept"
+      ],
+      "disposition_authority_boundary": "A competent professional may exercise these options only within the decision_scope of a linked suggested discipline; listing a suggested discipline neither assigns nor evidences accepted responsibility.",
+      "closure_category_id": "C08_INDEPENDENT_RETEST",
+      "closure_category_ref": "visual/assets/readiness-closure-contract.json#/closure_categories/7",
+      "additional_closure_category_id": "C09_GO_NO_GO_MINUTE",
+      "additional_closure_category_ref": "visual/assets/readiness-closure-contract.json#/closure_categories/8",
       "required_contents": [
         "independent retest package",
         "versioned finding register",
@@ -564,7 +788,8 @@
   "item_handoffs": [
     {
       "item_id": "JZ-01",
-      "closure_record_ref": "visual/assets/readiness-closure-contract.json#CLOSE-JZ-01",
+      "closure_record_id": "CLOSE-JZ-01",
+      "closure_record_ref": "visual/assets/readiness-closure-contract.json#/records/0",
       "current_phase_ref": "geometry/phasing.geojson#PHASE-1",
       "spatial_refs": [
         "geometry/public_space.geojson#PUBLIC-004",
@@ -590,7 +815,8 @@
     },
     {
       "item_id": "JZ-02",
-      "closure_record_ref": "visual/assets/readiness-closure-contract.json#CLOSE-JZ-02",
+      "closure_record_id": "CLOSE-JZ-02",
+      "closure_record_ref": "visual/assets/readiness-closure-contract.json#/records/1",
       "current_phase_ref": "geometry/phasing.geojson#PHASE-1",
       "spatial_refs": [
         "geometry/public_space.geojson",
@@ -615,7 +841,8 @@
     },
     {
       "item_id": "JZ-03",
-      "closure_record_ref": "visual/assets/readiness-closure-contract.json#CLOSE-JZ-03",
+      "closure_record_id": "CLOSE-JZ-03",
+      "closure_record_ref": "visual/assets/readiness-closure-contract.json#/records/2",
       "current_phase_ref": "geometry/phasing.geojson#PHASE-1",
       "spatial_refs": [
         "geometry/constraints.geojson#AI-ZONE-001",
@@ -641,7 +868,8 @@
     },
     {
       "item_id": "JZ-04",
-      "closure_record_ref": "visual/assets/readiness-closure-contract.json#CLOSE-JZ-04",
+      "closure_record_id": "CLOSE-JZ-04",
+      "closure_record_ref": "visual/assets/readiness-closure-contract.json#/records/3",
       "current_phase_ref": "geometry/phasing.geojson#PHASE-1",
       "spatial_refs": [
         "geometry/constraints.geojson#AI-ZONE-002",
@@ -667,7 +895,8 @@
     },
     {
       "item_id": "JZ-05",
-      "closure_record_ref": "visual/assets/readiness-closure-contract.json#CLOSE-JZ-05",
+      "closure_record_id": "CLOSE-JZ-05",
+      "closure_record_ref": "visual/assets/readiness-closure-contract.json#/records/4",
       "current_phase_ref": "geometry/phasing.geojson#PHASE-1",
       "spatial_refs": [
         "geometry/constraints.geojson#AI-ZONE-003",
@@ -693,7 +922,8 @@
     },
     {
       "item_id": "JZ-06",
-      "closure_record_ref": "visual/assets/readiness-closure-contract.json#CLOSE-JZ-06",
+      "closure_record_id": "CLOSE-JZ-06",
+      "closure_record_ref": "visual/assets/readiness-closure-contract.json#/records/5",
       "current_phase_ref": "geometry/phasing.geojson#PHASE-1",
       "spatial_refs": [
         "geometry/public_space.geojson#PUBLIC-001",
@@ -716,7 +946,8 @@
     },
     {
       "item_id": "JZ-07",
-      "closure_record_ref": "visual/assets/readiness-closure-contract.json#CLOSE-JZ-07",
+      "closure_record_id": "CLOSE-JZ-07",
+      "closure_record_ref": "visual/assets/readiness-closure-contract.json#/records/6",
       "current_phase_ref": "geometry/phasing.geojson#PHASE-1",
       "spatial_refs": [
         "geometry/constraints.geojson"
@@ -739,7 +970,8 @@
     },
     {
       "item_id": "JZ-08",
-      "closure_record_ref": "visual/assets/readiness-closure-contract.json#CLOSE-JZ-08",
+      "closure_record_id": "CLOSE-JZ-08",
+      "closure_record_ref": "visual/assets/readiness-closure-contract.json#/records/7",
       "current_phase_ref": "geometry/phasing.geojson#PHASE-1",
       "spatial_refs": [
         "geometry/phasing.geojson"
@@ -761,7 +993,8 @@
     },
     {
       "item_id": "T-01",
-      "closure_record_ref": "visual/assets/readiness-closure-contract.json#CLOSE-T-01",
+      "closure_record_id": "CLOSE-T-01",
+      "closure_record_ref": "visual/assets/readiness-closure-contract.json#/records/8",
       "current_phase_ref": "geometry/phasing.geojson#PHASE-1",
       "spatial_refs": [
         "geometry/constraints.geojson#SCENE-001"
@@ -783,7 +1016,8 @@
     },
     {
       "item_id": "T-02",
-      "closure_record_ref": "visual/assets/readiness-closure-contract.json#CLOSE-T-02",
+      "closure_record_id": "CLOSE-T-02",
+      "closure_record_ref": "visual/assets/readiness-closure-contract.json#/records/9",
       "current_phase_ref": "geometry/phasing.geojson#PHASE-1",
       "spatial_refs": [
         "geometry/constraints.geojson#SCENE-011",
@@ -807,7 +1041,8 @@
     },
     {
       "item_id": "T-03",
-      "closure_record_ref": "visual/assets/readiness-closure-contract.json#CLOSE-T-03",
+      "closure_record_id": "CLOSE-T-03",
+      "closure_record_ref": "visual/assets/readiness-closure-contract.json#/records/10",
       "current_phase_ref": "geometry/phasing.geojson#PHASE-1",
       "spatial_refs": [
         "geometry/constraints.geojson#SCENE-008",
@@ -938,6 +1173,8 @@
     "covered_item_count": 11,
     "covered_preregistration_count": 12,
     "required_item_category_slot_count": 99,
+    "prepared_professional_review_candidate_count": 1,
+    "prepared_candidate_material_record_count": 8,
     "submitted_real_world_artifact_count": 0,
     "approved_item_count": 0,
     "confirmed_authoritative_replacement_input_count": 0,
@@ -985,7 +1222,7 @@
   },
   "round_15_field_evidence_intake": {
     "canonical_contract_ref": "visual/assets/field-evidence-intake-contract.json",
-    "purpose": "Give D01-D08 and H01-H07 an empty, field-usable packet, custody and disposition schema without claiming that any material has been collected.",
+    "purpose": "Give D01-D08 and H01-H07 a field-usable packet, custody and disposition schema plus eight candidate-scoped intake records without claiming that any material has been collected.",
     "replacement_ids_reused": [
       "D01_OFFICIAL_GEOMETRY",
       "D02_EXISTING_CONDITION_SURVEY",
@@ -1006,9 +1243,30 @@
       "H07_RETEST_DECISION"
     ],
     "peer_method_boundary": "PR #2266 contributes public disposition semantics only; no Commons Loop brand, spatial grammar, geometry, metric, figure, media or claim is reused.",
-    "field_packet_count": 0,
+    "candidate_id": "PRE-G1-JZ05-SCENE011-T02",
+    "prepared_candidate_record_count": 8,
+    "submitted_field_packet_count": 0,
     "accepted_for_recalculation_count": 0,
     "approval_count": 0,
+    "current_gate": "G0",
+    "decision": "NO-GO"
+  },
+  "round_58_professional_review_candidate": {
+    "candidate_ref": "visual/assets/professional-handoff-candidate.json",
+    "candidate_id": "PRE-G1-JZ05-SCENE011-T02",
+    "linked_items": [
+      "JZ-05",
+      "SCENE-011",
+      "T-02",
+      "G1-PREREG-011"
+    ],
+    "prepared_handoff_gate_count": 7,
+    "accepted_handoff_gate_count": 0,
+    "prepared_candidate_material_record_count": 8,
+    "submitted_real_material_count": 0,
+    "primary_metric_id": "G1-M-011",
+    "primary_metric_denominator": "all_started_service_tasks",
+    "synthetic_10_of_10_is_service_accuracy": false,
     "current_gate": "G0",
     "decision": "NO-GO"
   }

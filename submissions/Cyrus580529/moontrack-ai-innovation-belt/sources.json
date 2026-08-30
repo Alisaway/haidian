@@ -1,0 +1,437 @@
+{
+  "schema_version": "0.1.0",
+  "sources": [
+    {
+      "id": "SITE-PACKAGE",
+      "path": "brief/site-package/",
+      "source_type": "official_public",
+      "usage": "Project brief, enums, allowed design space, ranges, and schemas."
+    },
+    {
+      "id": "SOURCE-REGISTRY",
+      "path": "data/source_registry.json",
+      "source_type": "repository_public_registry",
+      "usage": "Public/cleared/provisional source usability registry; distinguishes formal-ready, background-only, provisional-only, and needs-review materials."
+    },
+    {
+      "id": "PROCESSED-FACT-PACK",
+      "path": "data/processed/agent_fact_pack.md",
+      "source_type": "repository_processed_reference",
+      "usage": "Agent-readable navigation layer for scopes, required tasks, source-use boundaries, and missing-data checklist; not a new authority source."
+    },
+    {
+      "id": "PROCESSED-SCOPE-SUMMARY",
+      "path": "data/processed/project_scope_summary.csv",
+      "source_type": "repository_processed_reference",
+      "public_status": "confirmed-public",
+      "derived_from": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605"
+      ],
+      "usage": "Three-tier scope and key-area navigation: announced areas, textual extents, provisional polygon feature ids.",
+      "usage_note": "仓库维护者公开发布的导航层处理资料,用于三层范围结构导航。不是新的权威来源:面积与四至的权威依据仍是官方公告,空间依据仍是临时粗略 polygon 登记。"
+    },
+    {
+      "id": "PROCESSED-TASK-REQUIREMENTS",
+      "path": "data/processed/agent_task_requirements.csv",
+      "source_type": "repository_processed_reference",
+      "public_status": "confirmed-public",
+      "derived_from": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "DATA-SRC-AGENT-TASKBOOK-20260518"
+      ],
+      "usage": "Index of required tasks from the official announcement and the agent-facing taskbook, used to check response coverage.",
+      "usage_note": "仓库维护者公开发布的导航层处理资料,用于必答任务逐条核对。任务措辞的权威依据是公告与任务书原文,本表只做索引。"
+    },
+    {
+      "id": "PROCESSED-SOURCE-USE-MATRIX",
+      "path": "data/processed/source_use_matrix.csv",
+      "source_type": "repository_processed_reference",
+      "public_status": "confirmed-public",
+      "derived_from": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "DATA-SRC-AGENT-TASKBOOK-20260518",
+        "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+        "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+        "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+        "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605"
+      ],
+      "usage": "Source-use matrix separating formal basis, background-only material, provisional spatial data, and prohibited uses.",
+      "usage_note": "仓库维护者公开发布的导航层处理资料,为 data/source_registry.json 中登记的六项资料划定用途边界(登记表另有三项法规未纳入本表)。本表 source_id 列逐行列出上述六项上游来源,derived_from 与该列一致。用途判定本身是维护者的编排,不是新的权威来源。"
+    },
+    {
+      "id": "PROCESSED-MISSING-DATA-CHECKLIST",
+      "path": "data/processed/missing_data_checklist.csv",
+      "source_type": "repository_processed_reference",
+      "public_status": "confirmed-public",
+      "derived_from": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "DATA-SRC-AGENT-TASKBOOK-20260518",
+        "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605"
+      ],
+      "usage": "Outstanding-data checklist: official boundary, regulatory planning, roads, plots, buildings, utilities, heritage and public services.",
+      "usage_note": "仓库维护者公开发布的导航层处理资料,是依据已登记资料与其缺失项汇编的检查表,不是新的权威资料。与其他三份处理资料不同,本表没有 source_id 列:它登记的正是尚未登记、尚未公开的官方材料(官方边界、控规、道路红线、地块权属、现状建筑、文保范围、市政条件、公共服务底数)。derived_from 列出的是界定这些缺口的三项已登记来源——公告与任务书定义了需要什么资料,临时粗略 polygon 说明边界为何只能算 provisional——而不是缺失资料本身的来源。清单项进入 assumptions.json 与风险章节,缺口本身不因收录而消失。"
+    },
+    {
+      "id": "BOUNDARY-SOURCE",
+      "path": "brief/site-package/geometry/provisional_boundaries.geojson",
+      "source_type": "agent_inferred_from_public_data",
+      "usage": "Submitted site boundary geometry source (provisional)."
+    },
+    {
+      "id": "KEY-AREA-SOURCE",
+      "path": "brief/site-package/geometry/provisional_boundaries.geojson",
+      "source_type": "agent_inferred_from_public_data",
+      "usage": "Three required detailed-design key area boundaries (provisional)."
+    },
+    {
+      "id": "OFFICIAL-ANNOUNCEMENT",
+      "url": "https://ghzrzyw.beijing.gov.cn/zhengwuxinxi/tzgg/hd/202605/t20260509_4643047.html",
+      "source_type": "official_public",
+      "usage": "Official announcement tasks, scope levels, key areas, language, and deliverable context."
+    },
+    {
+      "id": "AGENT-TASKBOOK",
+      "path": "brief/site-package/agent_taskbook.json",
+      "source_type": "user_provided_cleared",
+      "usage": "Agent-facing open-call principles, six required agent tasks, scenario/branding/operation requirements, and boundary clause."
+    },
+    {
+      "id": "osm-xiaoyuehe-river",
+      "title": "小月河河道线形(OpenStreetMap)",
+      "type": "map",
+      "path": "geometry/green_space.geojson",
+      "url": "https://www.openstreetmap.org/way/27065953",
+      "publisher": "OpenStreetMap contributors",
+      "published_at": "accessed 2026-08-10",
+      "public_status": "confirmed-public",
+      "citation": "OpenStreetMap contributors, 小月河 waterway=river, retrieved via Overpass API (overpass-api.de), 2026-08-10, ODbL 1.0",
+      "usage_note": "仅用于表达小月河真实走向的 existing_condition 参考线,不作为官方河道管理范围或蓝线;暗涵段已在原始标注中注明。可用于场景选址论证与场地叙述配图。",
+      "risk_note": "OSM 众包数据,精度和拓扑完整性未经官方复核,confidence 标注为 medium;不得用于面积复算或作为official_constraint。8段中1段(xiaoyuehe-seg-07)完全落在统筹研究范围之外,已在文件内用 outside_research_scope 标注,不应用于设计论证。"
+    },
+    {
+      "id": "osm-universities-nearby",
+      "title": "场地统筹研究范围内高校/科研机构 POI(OpenStreetMap)",
+      "type": "map",
+      "path": "geometry/public_space.geojson",
+      "url": "https://overpass-api.de/",
+      "publisher": "OpenStreetMap contributors",
+      "published_at": "accessed 2026-08-10",
+      "public_status": "confirmed-public",
+      "citation": "OpenStreetMap contributors, amenity=university/college nodes within 统筹研究范围, retrieved via Overpass API, 2026-08-10, ODbL 1.0",
+      "usage_note": "用于说明场地周边科教资源密度和潜在用户画像(学生/科研人员),仅取落在官方统筹研究范围(PROV-RESEARCH-001)内的条目,已按名称去重,并已剔除院系/教室/楼宇级子设施(如'第四教室''报告厅',共8条,2026-08-11确认剔除)。",
+      "risk_note": "'中国人民大学继续教育学院'与人大本部不同址(坐标116.3577,40.0006),不能等同于人大主校区在研究范围内,人大主体实测确实不在研究范围内。"
+    },
+    {
+      "id": "osm-parks-green-space",
+      "title": "场地统筹研究范围内公园绿地(OpenStreetMap)",
+      "type": "map",
+      "path": "geometry/green_space.geojson",
+      "url": "https://overpass-api.de/",
+      "publisher": "OpenStreetMap contributors",
+      "published_at": "accessed 2026-08-10",
+      "public_status": "confirmed-public",
+      "citation": "OpenStreetMap contributors, leisure=park/landuse nodes within 统筹研究范围, retrieved via Overpass API, 2026-08-10, ODbL 1.0",
+      "usage_note": "用于蓝绿空间叙述背景和公共空间盘点参考,不作为官方绿地控制线。",
+      "risk_note": "众包数据,存在漏采/重名可能;仅作背景参考,不支撑绿地率等精确指标。"
+    },
+    {
+      "id": "osm-cycleways-lines",
+      "title": "场地统筹研究范围内非机动车道完整线形(OpenStreetMap)",
+      "type": "map",
+      "path": "geometry/roads.geojson",
+      "url": "https://overpass-api.de/",
+      "publisher": "OpenStreetMap contributors",
+      "published_at": "accessed 2026-08-11",
+      "public_status": "confirmed-public",
+      "citation": "OpenStreetMap contributors, ways tagged cycleway/cycleway:left/right/both or highway=cycleway, Overpass 'out geom' query, 2026-08-11, ODbL 1.0",
+      "usage_note": "用于绘制机器人低速配送路线图背景网络,支撑'须在非机动车道内行驶、最高15km/h'的路线可行性论证;实测42段(共421段中)在小月河河道约300米范围内,可作为场景卡路线设计的直接参考。",
+      "risk_note": "OSM 众包数据,confidence 标注为 medium,车道类型(lane/track/shared_lane等)和是否连续贯通未逐段实地核实,不能用于工程级路权设计,仅作概念路线参考。"
+    },
+    {
+      "id": "dongpan-innovation-center",
+      "title": "东畔科创中心(中关村东升科技园三期)基本信息",
+      "type": "industry",
+      "path": "geometry/public_space.geojson",
+      "url": "https://www.openstreetmap.org/",
+      "publisher": "公开报道 / OpenStreetMap 地址定位",
+      "published_at": "accessed 2026-08-10",
+      "public_status": "confirmed-public",
+      "citation": "东畔科创中心(中关村东升科技园三期),用地5.93公顷,建筑面积约25.48万平方米,地址:北京市海淀区小月河东畔路16号院",
+      "usage_note": "用于 agent.2/agent.3 产业生态联动叙述,说明场地与具身智能产业载体的地理邻近关系。",
+      "risk_note": "经点在多边形复核,该锚点落在官方统筹研究范围(PROV-RESEARCH-001)内,但不在总体设计范围或众智园重点区域内——正文表述须为'研究范围内的邻近产业载体',不得暗示其位于总体设计范围或重点区域内。"
+    },
+    {
+      "id": "embodied-ai-industrial-park",
+      "title": "中关村(海淀)具身智能创新产业园揭牌信息",
+      "type": "news",
+      "path": "geometry/public_space.geojson",
+      "url": "https://www.most.gov.cn/dfkj/bj/zxdt/202503/t20250318_193242.html",
+      "publisher": "中华人民共和国科学技术部",
+      "published_at": "2025-03-18",
+      "public_status": "confirmed-public",
+      "citation": "科技部网站,《中关村(海淀)具身智能创新产业园揭牌》,2025-03-18",
+      "usage_note": "用于说明场地所在片区已有国家级具身智能产业政策关注,支撑机器人场景选题的产业合理性。",
+      "risk_note": "该产业园坐标为文字地址人工定位(与东畔科创中心同址推定),非独立测绘点,confidence 标注为 low,不得用于精确选址论证,只可作为产业背景引用。"
+    },
+    {
+      "id": "beijing-embodied-ai-action-plan-2025-2027",
+      "title": "北京具身智能科技创新与产业培育行动计划(2025-2027年)",
+      "type": "policy",
+      "url": "https://www.beijing.gov.cn/zhengce/zhengcefagui/202503/t20250304_4024579.html",
+      "publisher": "北京市科委、中关村管委会等",
+      "published_at": "2025-02-28",
+      "public_status": "confirmed-public",
+      "citation": "北京市人民政府网站,《北京具身智能科技创新与产业培育行动计划(2025-2027年)》,2025-02-28发布",
+      "usage_note": "用于支撑机器人场景的政策合理性,引用'2027年前突破≥100项关键技术'及'三大场景规模化应用≥100项'等目标。",
+      "risk_note": "市级产业行动计划,不构成本项目场地的规划审批依据,仅作为场景选题政策背景引用,不得表述为本项目已获得该计划的专项资金或审批承诺。"
+    },
+    {
+      "id": "beijing-delivery-robot-management-measures",
+      "title": "北京市无人配送车道路测试与商业示范管理办法(试行)",
+      "type": "policy",
+      "url": "https://www.beijing.gov.cn/zhengce/zhengcefagui/202306/t20230608_3126678.html",
+      "publisher": "北京市交通委员会等5部门",
+      "published_at": "2023-06",
+      "public_status": "confirmed-public",
+      "citation": "北京市人民政府网站,《北京市无人配送车道路测试与商业示范管理办法(试行)》,2023-06发布",
+      "usage_note": "用于约束机器人场景设计的硬指标:参照非机动车管理、须在非机动车道内行驶、最高时速15km/h;试点区政府可自行制定实施细则。",
+      "risk_note": "试行办法,具体测试路段和实施细则须由试点区政府另行划定,本方案的路线建议为概念设计,不代表已获得测试路段审批。"
+    },
+    {
+      "id": "haidian-2024-statistical-bulletin",
+      "title": "海淀区2024年国民经济和社会发展统计公报",
+      "type": "other",
+      "url": "https://zyk.bjhd.gov.cn/sjkf/tjgb/202504/t20250423_4766489.shtml",
+      "publisher": "北京市海淀区统计局",
+      "published_at": "2025-04-23",
+      "public_status": "confirmed-public",
+      "citation": "海淀区人民政府网站,《海淀区2024年国民经济和社会发展统计公报》,2025-04-23发布",
+      "usage_note": "用于支撑适老化场景的人口结构依据:60岁+老年人口67.1万(占比21.47%),80岁+户籍高龄化率全市第一,常住人口312.2万。",
+      "risk_note": "全区口径统计数据,不是场地周边街道/社区级精确数据;正文引用时须注明为'全区口径',不得直接等同于场地周边社区的老龄化率。"
+    },
+    {
+      "id": "elderly-poi-osm",
+      "title": "场地周边适老服务机构 POI(OpenStreetMap)",
+      "type": "map",
+      "path": "geometry/public_space.geojson",
+      "url": "https://overpass-api.de/",
+      "publisher": "OpenStreetMap contributors",
+      "published_at": "accessed 2026-08-10",
+      "public_status": "confirmed-public",
+      "citation": "OpenStreetMap contributors, 老年活动中心/养老院等 POI, retrieved via Overpass API, 2026-08-10, ODbL 1.0",
+      "usage_note": "用于说明场地周边已有适老服务设施基础,支撑'低速机器人+无障碍/适老服务'场景的用户画像和现状分析。",
+      "risk_note": "众包 POI 数据,机构名称、是否仍在运营未经逐一电话/实地核实,confidence 标注为 medium,正文中应表述为'参考性现状盘点'而非权威机构名录。"
+    },
+    {
+      "id": "case-station-f",
+      "title": "Station F 巴黎创业园区(Halle Freyssinet 货运车站改造)",
+      "type": "news",
+      "url": "https://stationf.co/",
+      "publisher": "Station F / 公开报道(TechCrunch、CNBC 等)",
+      "published_at": "2017-07 开业,2026-08 访问",
+      "public_status": "external-public",
+      "citation": "Station F, Paris: 由1920年代 Halle Freyssinet 货运车站改造,2012年列入法国历史保护建筑;2017年7月开业,5.1万平方米,1000+初创企业,600间创业者住房,Xavier Niel 出资约2.95亿美元",
+      "usage_note": "作为 agent.2 全球AI创新生态案例之一,用于论证铁路/工业遗产建筑做生产性再利用、创业空间与居住空间同址两条可转化机制。",
+      "risk_note": "数据来自官网与公开报道(非一手统计年鉴),规模与投资额可能随时间变化;引用时只作为国际经验参照,不得据此推导京张项目的建设规模或投资测算。"
+    },
+    {
+      "id": "case-kings-cross",
+      "title": "伦敦国王十字 / 知识片区(Knowledge Quarter)铁路用地更新",
+      "type": "news",
+      "url": "https://en.wikipedia.org/wiki/Knowledge_Quarter,_London",
+      "publisher": "公开报道与百科条目(TechCrunch、Building 等)",
+      "published_at": "2016 DeepMind 迁入起,2026-08 访问",
+      "public_status": "external-public",
+      "citation": "King's Cross / Knowledge Quarter, London: 原铁路货场用地更新;2016年 DeepMind 迁入触发AI企业集聚;片区含UCL、Francis Crick研究所、大英图书馆;居住工作学习人口约4.1万",
+      "usage_note": "作为 agent.2 案例之一,用于论证'锚定机构先行、产业随后集聚'的机制,对应众智园引入国家级AI平台的策略。",
+      "risk_note": "人口与企业清单来自新闻报道,非官方统计;仅作为国际经验参照,不得作为京张片区人口或产业规模的预测依据。"
+    },
+    {
+      "id": "case-kendall-square",
+      "title": "波士顿肯德尔广场(Kendall Square)MIT 与剑桥市公私合作更新",
+      "type": "news",
+      "url": "https://kendallsquare.mit.edu/milestones/",
+      "publisher": "麻省理工学院(MIT)官方项目页与 MIT News",
+      "published_at": "2016-05 规划获批,2026-08 访问",
+      "public_status": "external-public",
+      "citation": "Kendall Square Initiative, MIT: MIT 与剑桥市政府公私合作,在MIT自有停车场用地建设6栋混合功能建筑,含约250套研究生住房、290套市场化住房、超10万平方英尺底层商业、近3英亩开放空间",
+      "usage_note": "作为 agent.2 案例之一,用于论证高校土地资产转化为混合功能街区、以及底层连续商业界面与开放空间维持街区活力的机制,对应校区-园区缝合段。",
+      "risk_note": "为美国本土规划实践,土地制度与国内不同;仅作为设计策略参照,不得直接套用其开发指标或土地处置方式。"
+    },
+    {
+      "id": "case-mila-montreal",
+      "title": "蒙特利尔 Mila 魁北克人工智能研究所与两级财政支持模式",
+      "type": "news",
+      "url": "https://mila.quebec/en/",
+      "publisher": "Mila / 魁北克省政府 / CIFAR 公开信息",
+      "published_at": "2017 起,2026-08 访问",
+      "public_status": "external-public",
+      "citation": "Mila, Montreal: 魁北克省政府2017年投入1亿加元建设AI集群,2018年再投8000万加元/五年;联邦通过泛加拿大AI战略经CIFAR投入4400万加元;2019年在 Mile-Ex 旧工业区建成研究园区",
+      "usage_note": "作为 agent.2 案例之一,用于论证多级财政叠加支持单一锚定研究机构、以及旧工业区选址形成人才锚点的机制。",
+      "risk_note": "财政数据来自公开报道与机构公告,币种为加元;仅作为机制参照,不构成对京张项目任何资金安排的建议或承诺。"
+    },
+    {
+      "id": "case-one-north",
+      "title": "新加坡 one-north 与 Kampong AI(JTC 统筹开发)",
+      "type": "news",
+      "url": "https://www.jtc.gov.sg/about-jtc/news-and-stories/press-releases/jtc-unveils-refreshed-masterplan-for-launchpad",
+      "publisher": "新加坡裕廊集团(JTC Corporation)新闻稿 / 新加坡经济发展局(EDB)",
+      "published_at": "2026-08 访问",
+      "public_status": "external-public",
+      "citation": "one-north / Kampong AI, Singapore: JTC 统筹开发的研发高科技集群,规划八个功能片区;Kampong AI 由两栋既有建筑改造,1.45万平方米业务空间可容纳约70家企业,另一栋提供200+住宅单元,2028年建成,2026年3月起先行试点",
+      "usage_note": "作为 agent.2 案例之一,用于论证政府平台公司统一开发、存量建筑改造、产住混合,以及'先试点后建成'分阶段节奏三条机制。",
+      "risk_note": "Kampong AI 尚在建设中(2028年建成),其成效尚未经实践检验;引用时须表述为在建案例,不得作为已验证成功的经验。"
+    },
+    {
+      "id": "case-zhangjiang-ai-island",
+      "title": "上海张江人工智能岛",
+      "type": "news",
+      "url": "https://www.stcn.com/article/detail/3257023.html",
+      "publisher": "证券时报网等公开报道 / 张江科学城公开信息",
+      "published_at": "2019 揭幕,2026-08 访问",
+      "public_status": "external-public",
+      "citation": "上海张江人工智能岛:占地6.6万平方米,地上建筑面积10万平方米;引入IBM、微软AI与IoT实验室等;截至2022年末以AI岛为核心的张江科学城集聚AI企业600余家;2024年园区营收超135亿元",
+      "usage_note": "作为 agent.2 案例中唯一的国内同类先例,用于论证'上下楼就是上下游'的垂直产业链组织方式,适用于众智园高密度地块。",
+      "risk_note": "营收与企业数量来自媒体报道,非官方统计公报;仅作为国内经验参照,不得作为京张片区产业规模的预测或承诺。"
+    },
+    {
+      "id": "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+      "title": "中华人民共和国无障碍环境建设法",
+      "type": "policy",
+      "url": "https://www.gov.cn/yaowen/liebiao/202306/content_6888910.htm",
+      "publisher": "全国人民代表大会常务委员会",
+      "published_at": "2023-06-28 通过,2023-09-01 施行",
+      "public_status": "confirmed-public",
+      "citation": "《中华人民共和国无障碍环境建设法》,全国人大常委会2023-06-28通过,2023-09-01起施行;复用仓库中央登记表同一 source_id",
+      "usage_note": "用于 agent.3 无障碍相关场景卡(03 盲道巡检)与无障碍出行人士画像的合规依据;第39条关于现场指导与人工办理的要求,支撑本方案'人工复核不可省略'的设计边界。",
+      "risk_note": "中央登记表限定:第39条的人工服务要求仅限法条列举的医疗、社会保障、金融、生活缴费等公共服务场所,**不得泛化到所有公共空间或数字界面**;不得据此对既有设施做无障碍合规判定或出具法律意见。"
+    },
+    {
+      "id": "DATA-SRC-ELDERLY-SMART-TECH-PLAN-2020-45",
+      "title": "国务院办公厅《关于切实解决老年人运用智能技术困难实施方案》(国办发〔2020〕45号)",
+      "type": "policy",
+      "url": "https://www.gov.cn/zhengce/content/2020-11/24/content_5563804.htm",
+      "publisher": "国务院办公厅",
+      "published_at": "2020-11-24",
+      "public_status": "confirmed-public",
+      "citation": "国办发〔2020〕45号《关于切实解决老年人运用智能技术困难实施方案》,国务院办公厅2020-11-24发布;复用仓库中央登记表同一 source_id",
+      "usage_note": "作为背景政策,用于 agent.3 场景卡06(社区适老AI呼叫亭)论证传统服务方式与智能化服务并行的必要性,支撑'呼叫响应仍由人工坐席处理'的设计选择。",
+      "risk_note": "中央登记表标注为 background_only:仅可用作背景叙述,**不得作为正式规划控制依据**;不得据此推断海淀本地老年人使用率或需求数据,也不得暗示该政策已在本片区落地实施。"
+    },
+    {
+      "id": "landmark-qinghuayuan-station",
+      "title": "清华园车站旧址(京张铁路,詹天佑题写匾额)",
+      "type": "culture",
+      "url": "http://www.chinanews.com.cn/sh/2023/03-27/9979152.shtml",
+      "publisher": "中国新闻网等公开报道 / 北京市海淀区人民政府网站",
+      "published_at": "1910年建成,2021年列为文物,2022年修缮;2026-08 访问",
+      "public_status": "external-public",
+      "citation": "清华园车站旧址:1910年(宣统二年)建成,中西合璧外廊式单层砖木建筑,占地约300平方米,门匾为詹天佑亲笔题写;2021年列入北京市首批不可移动革命文物,2022年启动修缮,站前复原老京张铁路轨道并新建约4000平方米公园",
+      "usage_note": "作为 agent.4 三个AI朝圣地标之一(原物型),用于论证'自主建造'叙事有实体物证支撑;也用于 agent.5 京张铁路文化资源系统。",
+      "risk_note": "为已列级不可移动革命文物,任何针对文物本体的改造、附加装置或投影均须文保主管部门审定,本方案不提出文物本体改造建议;建成年代与修缮细节来自新闻报道,以文保部门正式记录为准。"
+    },
+    {
+      "id": "landmark-zhongguancun-origin",
+      "title": "中关村创业原点:陈春先服务部(1980)与联想传达室(1984)",
+      "type": "culture",
+      "url": "http://news.sina.com.cn/c/2008-06-10/074016676576.shtml",
+      "publisher": "新浪新闻、界面新闻、中国科学家博物馆等公开报道",
+      "published_at": "史实为1980/1984年;2026-08 访问",
+      "public_status": "external-public",
+      "citation": "1980-10-23 陈春先等在中科院物理所约五平方米废弃仓库成立'北京等离子体学会技术发展服务部',被公认为中关村公司诞生日,提出'二不四自'原则;1984-10-17 联想在计算所传达室成立,启动资金二十万元",
+      "usage_note": "作为 agent.4 三个AI朝圣地标之一(故事型)与 agent.5 中关村创新文化叙事的史实依据,用于论证'从最小空间开始'的创业原型。",
+      "risk_note": "史实来自公开报道与纪念性文章,细节(面积、日期)在不同来源间存在出入;**1980年物理所仓库的确切位置本方案未核实**,不得据此指定地标具体地址,须由专业团队与中科院方面共同考证。相关机构POI实测位于统筹研究范围而非总体设计范围内。"
+    },
+    {
+      "id": "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+      "title": "自然资源部《国土空间调查、规划、用途管制用地用海分类指南》",
+      "type": "policy",
+      "url": "https://www.gov.cn/zhengce/zhengceku/202311/content_6917279.htm",
+      "publisher": "中华人民共和国自然资源部",
+      "published_at": "2023-11-22",
+      "public_status": "confirmed-public",
+      "citation": "自然资源部关于印发《国土空间调查、规划、用途管制用地用海分类指南》的通知,2023-11-22;复用仓库中央登记表同一 source_id",
+      "usage_note": "用于 agent.1 国土空间规划创新思路一节的用地分类术语依据,以及结构化 GeoJSON 与指标中的用地代码参照。",
+      "risk_note": "中央登记表限定用途:仅可用于用地分类术语与代码参照,**不得用于具体地块的用途审批判断,也不得替代官方控规条件**;本方案关于'场景使用权叠加'的讨论为规划方法建议,不是对该指南的解释或适用结论。"
+    },
+    {
+      "id": "osm-buildings-footprints",
+      "title": "总体设计范围内建筑基底轮廓(OpenStreetMap)",
+      "type": "map",
+      "path": "geometry/buildings.geojson",
+      "url": "https://overpass-api.de/",
+      "publisher": "OpenStreetMap contributors",
+      "published_at": "accessed 2026-08-24",
+      "public_status": "confirmed-public",
+      "citation": "OpenStreetMap contributors, ways and relations tagged building=*, Overpass 'out geom' query over the provisional overall design area bounding box, 2026-08-24, ODbL 1.0",
+      "usage_note": "用于复算现状建筑基底面积、建筑密度与三处重点区域的密度对比。仅收完整落在临时设计范围内的要素共1,562栋,跨界要素不收,因此结果为下限。",
+      "risk_note": "OSM 众包数据,完整性无保证,新建与已拆除建筑可能缺失或过时。层数标签覆盖率仅9.6%、高度标签不足1%、建成年代与产权为零,因此不能用于推算建筑面积、容积率、建筑高度,也不能用于拆改留判断——本方案据此明确不给出这几类结论。"
+    },
+    {
+      "id": "osm-landuse-polygons",
+      "title": "总体设计范围内现状用地与设施多边形(OpenStreetMap)",
+      "type": "map",
+      "path": "geometry/land_use.geojson",
+      "url": "https://overpass-api.de/",
+      "publisher": "OpenStreetMap contributors",
+      "published_at": "accessed 2026-08-24",
+      "public_status": "confirmed-public",
+      "citation": "OpenStreetMap contributors, ways and relations tagged landuse=*, amenity=university/college/school/kindergarten/hospital/clinic and leisure=park/garden/pitch/stadium/sports_centre, Overpass 'out geom' query, 2026-08-24, ODbL 1.0",
+      "usage_note": "映射到 brief/site-package/enums/land_use_codes.json 的项目代码子集后,用于描述现状用地构成,支撑'教育用地占设计范围20.34%'与低效地块识别两项结论。覆盖设计范围的53.6%。",
+      "risk_note": "OSM 标签不是地籍资料,类别与边界均为志愿者标注,confidence 标为 low。未被标注的46.4%如实记为16留白用地,不从周边推测。项目代码子集缺工业用地类目,走廊内实测存在的工业用地只能暂记留白。任何情况下不得作为法定用地依据或面积基准。"
+    },
+    {
+      "id": "osm-footways-walking-network",
+      "title": "场地周边步行网(人行道/步道/步行街/台阶,OpenStreetMap)",
+      "type": "map",
+      "path": "geometry/roads.geojson",
+      "url": "https://overpass-api.de/",
+      "publisher": "OpenStreetMap contributors",
+      "published_at": "accessed 2026-08-25",
+      "public_status": "confirmed-public",
+      "citation": "OpenStreetMap contributors, ways tagged highway=footway/path/pedestrian/living_street/steps, Overpass 'out geom' query, 2026-08-25, ODbL 1.0",
+      "usage_note": "仅用于路权规则的反事实测算:同一批目的地到法定路权网与到步行网的末端距离对比,以及允许人行道通行后的可达网络里程。共 4,980 段可通行 + 465 段台阶,台阶已排除——机器人与轮椅都过不去。",
+      "risk_note": "OSM 人行道测绘完整性明显低于机动车与非机动车道,并入后连通分量反而增加(大量断头的路侧短段),因此该情景的可达结果是下界而非上界。本数据不进提交图层,只作反事实测算输入,不得据以主张任何具体路段可通行。"
+    },
+    {
+      "id": "open-call-standard-scenarios",
+      "title": "开源征集标准场景库(scenarios/*.json)",
+      "type": "document",
+      "path": "simulation.json",
+      "url": "https://github.com/open-city-ai/haidian/tree/main/scenarios",
+      "publisher": "百年京张AI创新带面向智能体的开源征集",
+      "published_at": "accessed 2026-08-25",
+      "public_status": "confirmed-public",
+      "citation": "open-city-ai/haidian, scenarios/robot-delivery-low-speed.json 等 6 个标准场景定义, 2026-08-25",
+      "usage_note": "本方案的十张场景卡逐张对应到标准场景 id;simulation.json 的调度台账整体归入 robot-delivery-low-speed。",
+      "risk_note": "标准场景库描述的是征集方设定的场景类型与人工复核要求,不是已批准的实施计划,不得据以主张任何试点已获授权。"
+    },
+    {
+      "id": "osm-rail-stations-lines",
+      "title": "场地及周边轨道站点与线路(OpenStreetMap)",
+      "type": "map",
+      "path": "proposal.md",
+      "url": "https://overpass-api.de/",
+      "publisher": "OpenStreetMap contributors",
+      "published_at": "accessed 2026-08-25",
+      "public_status": "confirmed-public",
+      "citation": "OpenStreetMap contributors, nodes tagged railway=station and ways tagged railway=rail/subway within 39.955-40.045N, 116.290-116.400E, Overpass 'out geom' query, 2026-08-25, ODbL 1.0",
+      "usage_note": "用于区域协同一节的空间底盘测算:带内与近带轨道站点计数、带内轨道里程、门户站到范围边界的距离,以及旗舰驿站到最近站点的距离。复算脚本为 analysis_region.py。",
+      "risk_note": "OSM 站点为社区测绘,站名与出入口位置可能与官方资料存在出入;站点是否'落在带内'取决于临时粗略边界,官方边界发布后须重算。本数据不进提交图层。"
+    },
+    {
+      "id": "moontrack-machine-accessibility",
+      "title": "机器可达率测算(本方案自算)",
+      "type": "dataset",
+      "path": "proposal.md",
+      "url": "https://github.com/open-city-ai/haidian",
+      "publisher": "本方案 analysis_index.py",
+      "published_at": "computed 2026-08-25",
+      "public_status": "confirmed-public",
+      "citation": "MoonTrack, analysis_index.py, pair-based machine accessibility over 1,619 destinations, inputs: package GeoJSON + OSM footways, 2026-08-25",
+      "usage_note": "用于核心主张一节的与驿站无关口径:接入率、机器可达率及其步行网对照。输入全部为本包图层与公开 OSM 数据,任何团队可重算。",
+      "risk_note": "结果继承 OSM 测绘完整性与 8 m 吸附容差的限制(A-NET-001 至 A-NET-004、A-IDX-001 至 A-IDX-003);两两口径下碎裂按平方进入结果,须与接入率并读,不得单独引用。"
+    }
+  ]
+}

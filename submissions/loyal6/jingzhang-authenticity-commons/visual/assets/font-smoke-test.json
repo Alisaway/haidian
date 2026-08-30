@@ -1,0 +1,26 @@
+{
+  "superseded_by": "font-coverage.json",
+  "note": "Historical two-entry probe configuration; current coverage checks four main HTML entries and two annexes.",
+  "schema_version": "0.1.0",
+  "font_family": "JZAC Noto Sans SC",
+  "font_delivery": "one local visual/assets/cjk-font.css with an inline WOFF2 data URI shared by both Chinese entrypoints",
+  "entrypoints": [
+    "report/proposal.html",
+    "visual/index.html"
+  ],
+  "critical_strings": [
+    "京张验真公地",
+    "公众判据",
+    "临时边界",
+    "概念建议",
+    "待授权实测"
+  ],
+  "expected_visual_attribute": "data-cjk-font-smoke=pass",
+  "expected_report_attribute": "data-inline-cjk-font=embedded",
+  "source_check": "node visual/assets/font-source-smoke-test.js",
+  "screenshot_evidence": [
+    "assets/media/cjk-html-visual.jpg",
+    "assets/media/cjk-html-proposal.jpg"
+  ],
+  "network_dependency": false
+}

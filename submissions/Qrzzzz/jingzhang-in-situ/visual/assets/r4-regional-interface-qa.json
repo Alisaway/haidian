@@ -1,0 +1,82 @@
+{
+  "schema": "jz-r4-regional-interface-qa/v1",
+  "review_date": "2026-08-29",
+  "scope": "IM12 RI01-RI05, proposal carriers, F07, F11, four HTML entries, and four PDFs only",
+  "red_team": {
+    "agent": "independent Agent C read-only review",
+    "finding_count": 19,
+    "severity_counts": {
+      "critical": 2,
+      "high": 13,
+      "medium": 4,
+      "low": 0
+    },
+    "findings": [
+      {"id": "C01", "severity": "critical", "finding": "manifest hashes and R4 file declarations must be refreshed", "resolution": "final manifest refresh is required after this QA artifact and before the persisted self-check", "final_evidence": "manifest.json"},
+      {"id": "C02", "severity": "critical", "finding": "pre-R4 self_check cannot evidence the candidate", "resolution": "the complete four-gate persisted self-check is required after final manifest refresh", "final_evidence": "self_check.json"},
+      {"id": "H03", "severity": "high", "finding": "RI01 lacked the exact four-path service comparison and SC08/SC12 anchors", "resolution": "fixed: AI, human, paper/low-tech, and failure-handoff paths plus SC08/SC12 are explicit"},
+      {"id": "H04", "severity": "high", "finding": "RI02 lacked TVS-1-3 and safety classification", "resolution": "fixed: TVS-1-3, professional Gate, safety class, and data class are explicit"},
+      {"id": "H05", "severity": "high", "finding": "RI02 task-card acceptance chain was incomplete", "resolution": "fixed: question to hypothesis to scenario to determinacy constraints to human/professional review to stop is explicit"},
+      {"id": "H06", "severity": "high", "finding": "RI03 lacked F10/SC11/SC12 and the six tabletop states", "resolution": "fixed: all anchors and normal/crowding/offline/mistranslation/uncertain/takeover states are explicit"},
+      {"id": "H07", "severity": "high", "finding": "RI04 lacked C01-C09, SC10, power-off, human substitution, and a complete handover chain", "resolution": "fixed: all existing anchors and handover questions are explicit without a new canonical ID"},
+      {"id": "H08", "severity": "high", "finding": "RI05 lacked the nine-state/fifteen-transition baseline and four result classes", "resolution": "fixed: frozen protocol, evidence grades, adverse results, takeover, and all four comparison classes are explicit"},
+      {"id": "H09", "severity": "high", "finding": "metrics top-level summary mixed the Phase 2 baseline with package totals", "resolution": "fixed: package 23 known / 6 unknown / 21 recomputable and Phase 2 baseline 21/19 are separate"},
+      {"id": "H10", "severity": "high", "finding": "R4 checker did not independently compare metric values/formulas or bilingual required fields", "resolution": "fixed: actual contract/gate counts, formulas, values, non-empty parity fields, internal anchors, and reviewer roles are asserted"},
+      {"id": "H11", "severity": "high", "finding": "F11 readiness overlapped the complaint path and resembled a lifecycle row", "resolution": "fixed: standalone F11 uses a separate header block; native A3/A0 use a separate governance card restored from a clean Phase 3 base"},
+      {"id": "H12", "severity": "high", "finding": "F11 registry lifecycle-separated claim was not supported by the prior rendering", "resolution": "fixed: the current rendering now supports the registry statement"},
+      {"id": "H13", "severity": "high", "finding": "F11 text sizes contradicted the generation contract", "resolution": "fixed: standalone new text is at least 21 px; native contracts separately state A3 8 pt and A0 18 pt minima"},
+      {"id": "H14", "severity": "high", "finding": "R4 generation hashes omitted assumptions and two actual generated contracts", "resolution": "fixed: assumptions and Phase 3 base inputs are bound; Phase 4 freeze and generation contracts are bound as outputs"},
+      {"id": "H15", "severity": "high", "finding": "rights ledger did not cover R4 files and regeneration", "resolution": "fixed: path-level contract, generator, figure, HTML, PDF, and no-new-third-party-material terms are recorded"},
+      {"id": "M16", "severity": "medium", "finding": "minimum inbound fields repeated authorization/role rather than object-specific facts", "resolution": "fixed: object-specific factual inputs remain inbound; roles and authorization remain in their dedicated fields"},
+      {"id": "M17", "severity": "medium", "finding": "review triggers did not name a reviewer role type", "resolution": "fixed: every interface has a bilingual reviewer role type"},
+      {"id": "M18", "severity": "medium", "finding": "the ETDA English entity label could imply resolved identity", "resolution": "fixed: the assumption and target state say taskbook-named scope with exact entity unresolved"},
+      {"id": "M19", "severity": "medium", "finding": "changelog lacked an R4 closeout entry", "resolution": "fixed: one concise R4 entry records scope, 5/0/0, visuals, metrics, and non-claim boundary"}
+    ],
+    "truthfulness_result": "No statement presents RI01-RI05 as an existing partnership, signed agreement, joint operation, deployed interface, or implemented regional network."
+  },
+  "contract_recomputation": {
+    "interface_count": 5,
+    "unique_ids": 5,
+    "ids": ["RI01", "RI02", "RI03", "RI04", "RI05"],
+    "status_set": ["candidate_not_authorized"],
+    "authorized_count": 0,
+    "operating_count": 0,
+    "field_or_live_exchange_count": 0,
+    "required_field_failures": 0,
+    "bilingual_required_field_failures": 0
+  },
+  "blind_reader": {
+    "access_boundary": ["proposal.md F07 section", "proposal.en.md F07 section", "F07 zh/en PNG", "F11 zh/en PNG"],
+    "excluded": ["compliance_matrix", "design_depth_matrix", "regional-interface-contracts.json", "metrics", "taskbook", "rubric", "historical score", "red-team report"],
+    "timebox": "3 minutes",
+    "interface_accuracy": "5/5",
+    "field_accuracy": "25/25",
+    "per_interface": {"RI01": "correct", "RI02": "correct", "RI03": "correct", "RI04": "correct", "RI05": "correct"},
+    "f07_internal_loop_priority": "pass",
+    "existing_partnership_misread_risk": "low",
+    "f11_readiness_lifecycle_separation": "pass"
+  },
+  "visual_and_pdf_review": {
+    "standalone_f07_zh_en": "pass: dominant internal loop, five detached hollow dashed cards, readable deliverables, explicit unauthorized state",
+    "standalone_f11_zh_en": "pass: readiness is a separate upper-right header block and does not cover the complaint path",
+    "a3_pages_reviewed": ["zh page 8", "en page 8", "zh page 12", "en page 12"],
+    "a0_boards_reviewed": ["zh board 2", "en board 2"],
+    "result": "pass: no clipping, truncation, new page overflow, lifecycle confusion, or loss of the sole SC10+IM06 first-use hierarchy"
+  },
+  "generation": {
+    "generator": "visual/assets/r4-regional-interface-generator.js",
+    "contract": "visual/assets/r4-regional-interface-generation-contract.json",
+    "latest_generate": "pass",
+    "figures": 4,
+    "presentation_outputs": 8,
+    "pdf_pages": 28,
+    "html_remote_dependencies": 0
+  },
+  "finalization_order": [
+    "add this QA and all R4 artifacts to manifest",
+    "refresh rights and manifest",
+    "run generator --check",
+    "run complete four-gate persisted self-check",
+    "run participant preflight and git diff --check"
+  ]
+}

@@ -1,0 +1,372 @@
+{
+  "schema_version": "0.1.0",
+  "units": {
+    "length": "m",
+    "area": "sqm"
+  },
+  "metrics": {
+    "site_area_sqm": {
+      "status": "known",
+      "value": 11412825.386,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "polygon_area(provisional_site_boundary, EPSG:4548)",
+      "confidence": "medium",
+      "assumptions": [
+        "Provisional boundary, not an official redline."
+      ]
+    },
+    "green_space_area_sqm": {
+      "status": "known",
+      "value": 1393756.159,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/green_space.geojson"
+      ],
+      "formula": "union(conceptual green polygons, EPSG:4548)",
+      "confidence": "low",
+      "assumptions": []
+    },
+    "public_space_area_sqm": {
+      "status": "known",
+      "value": 40950.0,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "union(conceptual public-space polygons, EPSG:4548)",
+      "confidence": "low",
+      "assumptions": []
+    },
+    "building_footprint_area_sqm": {
+      "status": "known",
+      "value": 111600.0,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "union(conceptual reuse-first envelopes, EPSG:4548)",
+      "confidence": "low",
+      "assumptions": []
+    },
+    "green_ratio": {
+      "status": "known",
+      "value": 0.122122,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/green_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "green_space_area_sqm / site_area_sqm",
+      "confidence": "low",
+      "assumptions": []
+    },
+    "public_space_ratio": {
+      "status": "known",
+      "value": 0.003588,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "public_space_area_sqm / site_area_sqm",
+      "confidence": "low",
+      "assumptions": []
+    },
+    "road_network_length_m": {
+      "status": "known",
+      "value": 10154.351,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson"
+      ],
+      "formula": "sum(conceptual paths, EPSG:4548)",
+      "confidence": "low",
+      "assumptions": []
+    },
+    "key_area_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "count(area_id in key_areas.geojson)",
+      "confidence": "medium",
+      "assumptions": []
+    },
+    "land_use_zone_count": {
+      "status": "known",
+      "value": 27,
+      "unit": "count",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "count(land_use.geojson features) — GeoJSON 分区要素数，与聚合类别数（land_use_class_count=5）含义不同、不互替",
+      "confidence": "high",
+      "assumptions": [
+        "27 为分区要素计数（含 5 个国标代码类别 0802/1401/0902/0901/0701）；图形/正文/HTML 中只作“分区要素数”使用，不与类别占比混用。"
+      ]
+    },
+    "land_use_class_count": {
+      "status": "known",
+      "value": 5,
+      "unit": "count",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "count(distinct land_use_code in land_use.geojson) — 用地聚合类别数（国标 0802/1401/0902/0901/0701）",
+      "confidence": "high",
+      "assumptions": [
+        "全包用地统计单一口径：科研(0802)/公园绿地(1401)/商务金融(0902)/商业(0901)/城镇住宅(0701) 五类；占比见 land_use_*_share。"
+      ]
+    },
+    "building_unit_count": {
+      "status": "known",
+      "value": 12,
+      "unit": "count",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "count(buildings.geojson features)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "landmark_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "count(scenario_type == ai_landmark)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "scenario_node_count": {
+      "status": "known",
+      "value": 8,
+      "unit": "count",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "count(public_space scenario nodes + landmarks)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "industry_test_scenario_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(产业测试验证场景表行数，含测试对象/数据输入/验证指标/退出条件)",
+      "confidence": "high",
+      "assumptions": [
+        "三个测试场景只给阈值框架，不虚构电力、热力、容量、投资或审批数据。"
+      ]
+    },
+    "persona_count": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(代表用户群体六类人才画像，见 proposal.md「AI 创新生态、人才画像与 AI+ 场景」人才画像段落)",
+      "confidence": "high",
+      "assumptions": [
+        "六类人才画像与正文段落一一对应。"
+      ]
+    },
+    "scenario_card_count": {
+      "status": "known",
+      "value": 10,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(proposal.md 场景卡表 SC-01..SC-10 行数)",
+      "confidence": "high",
+      "assumptions": [
+        "十张场景卡均满足「AI辅助+人工复核」边界。"
+      ]
+    },
+    "global_case_count": {
+      "status": "known",
+      "value": 8,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "sources.json"
+      ],
+      "formula": "count(全球案例表行数；每个案例在 sources.json 有独立来源条目)",
+      "confidence": "high",
+      "assumptions": [
+        "四个国际案例与四个国内方向逐案登记来源。"
+      ]
+    },
+    "phase_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/phasing.geojson"
+      ],
+      "formula": "count(phasing polygons)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "annual_program_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(年度活动品牌表行数：全球算力开放季/AI算力科普周/绿色算力交换日)",
+      "confidence": "high",
+      "assumptions": [
+        "活动为概念设计，效果不作承诺。"
+      ]
+    },
+    "land_use_0802_area_sqm": {
+      "status": "known",
+      "value": 3976460.7,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "union(land_use.geojson features with land_use_code=0802, EPSG:4548)",
+      "confidence": "low",
+      "assumptions": [
+        "Recompute trigger: official regulatory plan or formal land-use data published -> re-cut and recompute with the same aggregation logic; provisional conceptual geometry, not official data."
+      ]
+    },
+    "land_use_0802_share": {
+      "status": "known",
+      "value": 0.34842,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/land_use.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "land_use_0802_area_sqm / site_area_sqm",
+      "confidence": "low",
+      "assumptions": [
+        "Recompute trigger: official regulatory plan or formal land-use data published -> re-cut and recompute with the same aggregation logic; provisional conceptual geometry, not official data."
+      ]
+    },
+    "land_use_1401_area_sqm": {
+      "status": "known",
+      "value": 2391447.5,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "union(land_use.geojson features with land_use_code=1401, EPSG:4548)",
+      "confidence": "low",
+      "assumptions": [
+        "Recompute trigger: official regulatory plan or formal land-use data published -> re-cut and recompute with the same aggregation logic; provisional conceptual geometry, not official data."
+      ]
+    },
+    "land_use_1401_share": {
+      "status": "known",
+      "value": 0.20954,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/land_use.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "land_use_1401_area_sqm / site_area_sqm",
+      "confidence": "low",
+      "assumptions": [
+        "Recompute trigger: official regulatory plan or formal land-use data published -> re-cut and recompute with the same aggregation logic; provisional conceptual geometry, not official data."
+      ]
+    },
+    "land_use_0902_area_sqm": {
+      "status": "known",
+      "value": 2119912.0,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "union(land_use.geojson features with land_use_code=0902, EPSG:4548)",
+      "confidence": "low",
+      "assumptions": [
+        "Recompute trigger: official regulatory plan or formal land-use data published -> re-cut and recompute with the same aggregation logic; provisional conceptual geometry, not official data."
+      ]
+    },
+    "land_use_0902_share": {
+      "status": "known",
+      "value": 0.185748,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/land_use.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "land_use_0902_area_sqm / site_area_sqm",
+      "confidence": "low",
+      "assumptions": [
+        "Recompute trigger: official regulatory plan or formal land-use data published -> re-cut and recompute with the same aggregation logic; provisional conceptual geometry, not official data."
+      ]
+    },
+    "land_use_0901_area_sqm": {
+      "status": "known",
+      "value": 1728802.6,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "union(land_use.geojson features with land_use_code=0901, EPSG:4548)",
+      "confidence": "low",
+      "assumptions": [
+        "Recompute trigger: official regulatory plan or formal land-use data published -> re-cut and recompute with the same aggregation logic; provisional conceptual geometry, not official data."
+      ]
+    },
+    "land_use_0901_share": {
+      "status": "known",
+      "value": 0.151479,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/land_use.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "land_use_0901_area_sqm / site_area_sqm",
+      "confidence": "low",
+      "assumptions": [
+        "Recompute trigger: official regulatory plan or formal land-use data published -> re-cut and recompute with the same aggregation logic; provisional conceptual geometry, not official data."
+      ]
+    },
+    "land_use_0701_area_sqm": {
+      "status": "known",
+      "value": 1196202.5,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "union(land_use.geojson features with land_use_code=0701, EPSG:4548)",
+      "confidence": "low",
+      "assumptions": [
+        "Recompute trigger: official regulatory plan or formal land-use data published -> re-cut and recompute with the same aggregation logic; provisional conceptual geometry, not official data."
+      ]
+    },
+    "land_use_0701_share": {
+      "status": "known",
+      "value": 0.104812,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/land_use.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "land_use_0701_area_sqm / site_area_sqm",
+      "confidence": "low",
+      "assumptions": [
+        "Recompute trigger: official regulatory plan or formal land-use data published -> re-cut and recompute with the same aggregation logic; provisional conceptual geometry, not official data."
+      ]
+    }
+  }
+}

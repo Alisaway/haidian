@@ -1,0 +1,28 @@
+{
+  "fixture_id": "ECR-FIXTURE-INVALID-001",
+  "expected_result": "reject",
+  "claim": {
+    "claim_id": "ECR-FIXTURE-INVALID-001",
+    "claim_zh": "本包已正式采用外部开放等级。",
+    "claim_en": "This package has formally adopted an external open level.",
+    "claim_status": "design_research_hypothesis",
+    "evidence_state": "protocol_semantics_only",
+    "review_decision": "retain_with_boundary",
+    "adoption_status": "formal_external_adoption",
+    "source_refs": ["SEB-V050-ISSUE"],
+    "snapshot_refs": ["SNAP-SEB"],
+    "metric_refs": ["operations_audit_gate_count"],
+    "metric_interpretation_zh": "这不是外部实测性能。",
+    "metric_interpretation_en": "This is not measured external performance.",
+    "responsible_roles": ["protocol_crosswalk_reviewer"],
+    "stop_condition_ids": ["STOP-CROSSWALK-001"],
+    "boundary_flags": {
+      "external_level_claim": true,
+      "official_endorsement": false,
+      "deployment_authorized": false,
+      "field_data": false,
+      "performance_result": false
+    },
+    "review_test": "Reject any external adoption or level claim."
+  }
+}

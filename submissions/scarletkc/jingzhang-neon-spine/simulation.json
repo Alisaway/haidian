@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0",
+  "title": "协议灯塔离线负向演练台账 / Protocol Beacon Offline Fail-Closed Ledger",
+  "summary": "Four synthetic, offline, no-personal-data fixtures replay the T2 passport admission rule. Success means the observed decision matched the declared expectation, including three expected stop decisions; it is not field performance.",
+  "status": "validated_offline_synthetic",
+  "operational_status": "not_authorized_not_run",
+  "method": "Deterministic local replay of protocol-beacon-passport.fixture.json and three controlled mutations through run-protocol-beacon-tabletop.js --check; no network, live model, robot, public user or personal data.",
+  "seed": 20260824,
+  "task_count": 4,
+  "tasks": [
+    {
+      "task_id": "F0-NO-APP-BASELINE",
+      "scenario_id": "T2-public-model-assurance-yard",
+      "outcome": "expected_admit_success",
+      "dispatch_schema_valid": true,
+      "audit_complete": true,
+      "expected_decision": "admit",
+      "observed_decision": "admit",
+      "field_claim": false
+    },
+    {
+      "task_id": "F1-ACCESSIBLE-ROUTE-BLOCKED",
+      "scenario_id": "T2-public-model-assurance-yard",
+      "outcome": "expected_fail_closed_success",
+      "dispatch_schema_valid": true,
+      "audit_complete": true,
+      "expected_decision": "stop",
+      "observed_decision": "stop",
+      "rollback_action": "restore_accessible_non_ai_route_before_retest",
+      "field_claim": false
+    },
+    {
+      "task_id": "F2-CONSENT-WITHDRAWN-WITH-RAW-DATA",
+      "scenario_id": "T2-public-model-assurance-yard",
+      "outcome": "expected_fail_closed_success",
+      "dispatch_schema_valid": true,
+      "audit_complete": true,
+      "expected_decision": "stop",
+      "observed_decision": "stop",
+      "rollback_action": "delete_raw_feedback_records",
+      "field_claim": false
+    },
+    {
+      "task_id": "F3-SOURCE-TAMPERED-AND-OWNER-ABSENT",
+      "scenario_id": "T2-public-model-assurance-yard",
+      "outcome": "expected_fail_closed_success",
+      "dispatch_schema_valid": true,
+      "audit_complete": true,
+      "expected_decision": "stop",
+      "observed_decision": "stop",
+      "rollback_action": "restore_verified_source_and_assign_accountable_role",
+      "field_claim": false
+    }
+  ],
+  "baselines": {
+    "protocol_beacon_tabletop": {
+      "status": "validated_offline_synthetic",
+      "claim_scope": "Rule-expectation matching only; no live-system, safety, accessibility, public-acceptance or operational-performance claim.",
+      "replayable": true,
+      "expectation_match_rate": 1.0,
+      "negative_fail_closed_rate": 1.0,
+      "audit_completeness": 1.0,
+      "field_pass_claim_count": 0
+    },
+    "ai_off_equivalent": {
+      "status": "specified_not_field_tested",
+      "claim_scope": "Static signs, staffed desk, ordinary passage and closed test yard defined as the non-AI service baseline.",
+      "replayable": false,
+      "field_result": null
+    }
+  },
+  "authoritative_evidence": "visual/assets/protocol-beacon-tabletop-evidence.json",
+  "replay_command": "node visual/assets/run-protocol-beacon-tabletop.js --check"
+}

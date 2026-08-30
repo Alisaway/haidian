@@ -1,0 +1,236 @@
+{
+  "schema_version": "0.1.0",
+  "units": {
+    "length": "m",
+    "area": "sqm"
+  },
+  "metrics": {
+    "site_area_sqm": {
+      "status": "known",
+      "value": 11412825.386,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "polygon_area(submitted_provisional_site_boundary, EPSG:4548)",
+      "confidence": "low",
+      "assumptions": [
+        "All design geometry is generated inside the organizer-provided provisional boundary; replace and recompute it after citable official polygons, final regulatory sheets, survey, ownership, road, heritage, rail, and water data become available."
+      ]
+    },
+    "green_space_area_sqm": {
+      "status": "known",
+      "value": 1034634.044,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/green_space.geojson"
+      ],
+      "formula": "area(union(submitted_provisional_green_space), EPSG:4548)",
+      "confidence": "low",
+      "assumptions": [
+        "All design geometry is generated inside the organizer-provided provisional boundary; replace and recompute it after citable official polygons, final regulatory sheets, survey, ownership, road, heritage, rail, and water data become available.",
+        "Green geometry is a design model, not surveyed or statutory green space."
+      ]
+    },
+    "public_space_area_sqm": {
+      "status": "known",
+      "value": 1147875.019,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "area(union(submitted_provisional_public_space), EPSG:4548)",
+      "confidence": "low",
+      "assumptions": [
+        "All design geometry is generated inside the organizer-provided provisional boundary; replace and recompute it after citable official polygons, final regulatory sheets, survey, ownership, road, heritage, rail, and water data become available.",
+        "Public-space geometry is a design model, not an ownership or access audit."
+      ]
+    },
+    "building_footprint_area_sqm": {
+      "status": "known",
+      "value": 56168.0,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "area(union(conceptual_prototype_envelopes), EPSG:4548)",
+      "confidence": "low",
+      "assumptions": [
+        "All design geometry is generated inside the organizer-provided provisional boundary; replace and recompute it after citable official polygons, final regulatory sheets, survey, ownership, road, heritage, rail, and water data become available.",
+        "Measures prototype envelopes only; it is not total existing or proposed building footprint."
+      ]
+    },
+    "green_ratio": {
+      "status": "known",
+      "value": 0.090655,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/green_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "green_space_area_sqm / site_area_sqm",
+      "confidence": "low",
+      "assumptions": [
+        "All design geometry is generated inside the organizer-provided provisional boundary; replace and recompute it after citable official polygons, final regulatory sheets, survey, ownership, road, heritage, rail, and water data become available."
+      ]
+    },
+    "public_space_ratio": {
+      "status": "known",
+      "value": 0.100578,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "public_space_area_sqm / site_area_sqm",
+      "confidence": "low",
+      "assumptions": [
+        "All design geometry is generated inside the organizer-provided provisional boundary; replace and recompute it after citable official polygons, final regulatory sheets, survey, ownership, road, heritage, rail, and water data become available."
+      ]
+    },
+    "key_area_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "count(required_key_detailed_design_areas)",
+      "confidence": "high",
+      "assumptions": [
+        "The official open-call task defines three named key areas; their submitted polygons remain provisional."
+      ]
+    },
+    "common_ground_design_length_m": {
+      "status": "known",
+      "value": 9296.64,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "length(ROAD-001 within provisional site boundary, EPSG:4548)",
+      "confidence": "low",
+      "assumptions": [
+        "All design geometry is generated inside the organizer-provided provisional boundary; replace and recompute it after citable official polygons, final regulatory sheets, survey, ownership, road, heritage, rail, and water data become available.",
+        "Analytic centreline only; not the surveyed park route."
+      ]
+    },
+    "productive_interface_area_sqm": {
+      "status": "unknown",
+      "value": null,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "geometry/buildings.geojson"
+      ],
+      "formula": "area(verified_public_front_plus_controlled_back_interface_polygons, EPSG:4548)",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "The package records MAKE, TRANSLATE and USE roles on public forecourts and prototype buildings, but verified legal and operational interface polygons are unavailable."
+    },
+    "productive_interface_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "geometry/buildings.geojson"
+      ],
+      "formula": "count(unique interface_role values: MAKE, TRANSLATE, USE)",
+      "confidence": "medium",
+      "assumptions": [
+        "The three roles MAKE, TRANSLATE and USE are design decisions; exact locations remain provisional."
+      ]
+    },
+    "prototype_building_count": {
+      "status": "known",
+      "value": 9,
+      "unit": "count",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "count(conceptual_prototype_envelopes)",
+      "confidence": "medium",
+      "assumptions": [
+        "Counts concept envelopes only; it is not a building inventory."
+      ]
+    },
+    "hundred_day_pilot_area_sqm": {
+      "status": "known",
+      "value": 212306.044,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/phasing.geojson"
+      ],
+      "formula": "area(PHASE-001, EPSG:4548)",
+      "confidence": "low",
+      "assumptions": [
+        "All design geometry is generated inside the organizer-provided provisional boundary; replace and recompute it after citable official polygons, final regulatory sheets, survey, ownership, road, heritage, rail, and water data become available.",
+        "A conceptual pilot envelope, not an approved project boundary."
+      ]
+    },
+    "floor_area_ratio": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "brief/site-package/ranges/planning_limits.json"
+      ],
+      "formula": "total_floor_area_sqm / official_site_area_sqm",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "Final approved parcel-level FAR controls and citable official geometry are unavailable."
+    },
+    "building_height_m": {
+      "status": "unknown",
+      "value": null,
+      "unit": "m",
+      "source_files": [
+        "geometry/constraints.geojson"
+      ],
+      "formula": "official_height_control_after_final_regulatory_sheet_recovery",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "Final approved height-control sheets and surveyed context are unavailable."
+    },
+    "productive_edge_length_m": {
+      "status": "unknown",
+      "value": null,
+      "unit": "m",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "geometry/buildings.geojson"
+      ],
+      "formula": "sum(verified_implementable_frontage_segments)",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "Provisional polygon perimeters and candidate bands cannot substitute for surveyed, accessible and legally implementable frontage."
+    },
+    "accessible_entries_per_km": {
+      "status": "unknown",
+      "value": null,
+      "unit": "index",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "geometry/roads.geojson"
+      ],
+      "formula": "verified_step_free_public_entries / verified_productive_edge_length_km",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "Requires field-verified entrances, accessibility audit and verified frontage length."
+    },
+    "reuse_floor_area_ratio": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "verified_reused_floor_area / verified_total_intervention_floor_area",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "Requires a cleared building survey, ownership information and retain/retrofit/replace classification."
+    }
+  }
+}

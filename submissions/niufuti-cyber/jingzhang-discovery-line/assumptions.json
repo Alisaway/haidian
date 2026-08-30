@@ -1,0 +1,252 @@
+{
+  "schema_version": "1.0.0",
+  "canonical_ledger": "assumptions.json",
+  "assumptions": [
+    {
+      "assumption_id": "UNKNOWN-OFFICIAL-OVERALL-POLYGON",
+      "status": "unknown",
+      "value": null,
+      "reason": "公开仓库只有维护者推定的临时粗略边界，没有经清权的官方精确 polygon。",
+      "needed_from": "征集组织方或有权规划测绘主体提供带坐标系、版本和许可的 CAD/GIS/PDF 边界",
+      "blocks": [
+        "法定范围表达",
+        "专业空间评分",
+        "精确面积复算",
+        "正式用地与设施落位"
+      ],
+      "recalculation_trigger": "取得官方或清权边界并记录坐标系和转换方法",
+      "required_for_formal_submission": true,
+      "owner_to_confirm": "Professional team / authority"
+    },
+    {
+      "assumption_id": "UNKNOWN-OFFICIAL-KEY-AREA-POLYGONS",
+      "status": "unknown",
+      "value": null,
+      "reason": "三处重点区只有仓库临时矩形和公告面积，没有官方四至与精确边界。",
+      "needed_from": "征集组织方或有权规划测绘主体提供三处重点区清权边界",
+      "blocks": [
+        "重点区详细设计",
+        "建筑与公共空间落位",
+        "专业面积复算"
+      ],
+      "recalculation_trigger": "取得三处重点区精确 polygon",
+      "required_for_formal_submission": true,
+      "owner_to_confirm": "Professional team / authority"
+    },
+    {
+      "assumption_id": "UNKNOWN-PLANNING-CONTROLS",
+      "status": "unknown",
+      "value": null,
+      "reason": "现有材料没有可用于关门的地块级控规指标。",
+      "needed_from": "批准的控规条件、规划综合实施方案或正式任务附件",
+      "blocks": [
+        "容积率",
+        "建筑高度",
+        "建筑密度",
+        "绿地率",
+        "退界",
+        "总建筑面积",
+        "容量判断"
+      ],
+      "recalculation_trigger": "取得带地块与版本的正式控制条件",
+      "required_for_formal_submission": true,
+      "owner_to_confirm": "Professional team / authority"
+    },
+    {
+      "assumption_id": "UNKNOWN-ROAD-REDLINES",
+      "status": "unknown",
+      "value": null,
+      "reason": "道路名称和临时走廊只可粗略定位，不能推出道路红线或工程线位。",
+      "needed_from": "现状测绘、规划道路红线与交通工程资料",
+      "blocks": [
+        "道路红线",
+        "路缘单元落位",
+        "桥隧或拓宽判断",
+        "交通工程设计"
+      ],
+      "recalculation_trigger": "取得清权道路红线和现状交通底图",
+      "required_for_formal_submission": true,
+      "owner_to_confirm": "Professional team / authority"
+    },
+    {
+      "assumption_id": "UNKNOWN-LAND-OWNERSHIP",
+      "status": "unknown",
+      "value": null,
+      "reason": "没有地块与设施权属、养护和使用授权台账。",
+      "needed_from": "不动产、资产、养护、场地授权与运营接收资料",
+      "blocks": [
+        "具体项目落位",
+        "场地授权",
+        "M01责任接收",
+        "建设与运营安排"
+      ],
+      "recalculation_trigger": "取得对象级权属与有权签认",
+      "required_for_formal_submission": true,
+      "owner_to_confirm": "Professional team / authority"
+    },
+    {
+      "assumption_id": "UNKNOWN-EXISTING-BUILDINGS",
+      "status": "unknown",
+      "value": null,
+      "reason": "缺少现状建筑测绘、合法性、结构安全、使用和历史价值底账。",
+      "needed_from": "清权现状建筑普查、测绘、鉴定和文保资料",
+      "blocks": [
+        "建筑体量",
+        "拆改留",
+        "再利用",
+        "消防与无障碍深化"
+      ],
+      "recalculation_trigger": "逐栋资料完成核验",
+      "required_for_formal_submission": true,
+      "owner_to_confirm": "Professional team / authority"
+    },
+    {
+      "assumption_id": "UNKNOWN-MUNICIPAL-CAPACITY",
+      "status": "unknown",
+      "value": null,
+      "reason": "缺少地下管线、排水分区、供电通信、环卫、消防与检修容量资料。",
+      "needed_from": "有权市政运营主体与测绘资料",
+      "blocks": [
+        "市政容量",
+        "新型基础设施数量",
+        "接入时序",
+        "地下空间和能源判断"
+      ],
+      "recalculation_trigger": "取得管线和容量校核",
+      "required_for_formal_submission": true,
+      "owner_to_confirm": "Professional team / authority"
+    },
+    {
+      "assumption_id": "UNKNOWN-HERITAGE-ECOLOGY-CONTROLS",
+      "status": "unknown",
+      "value": null,
+      "reason": "缺少对象级文保、生态、水岸、树木与保护控制线清单。",
+      "needed_from": "文保、园林、水务、生态与规划有权主体正式资料",
+      "blocks": [
+        "文化资源落位",
+        "蓝绿空间深化",
+        "工程可行性",
+        "版权与保护说明"
+      ],
+      "recalculation_trigger": "取得正式资源清单与保护边界",
+      "required_for_formal_submission": true,
+      "owner_to_confirm": "Professional team / authority"
+    },
+    {
+      "assumption_id": "UNKNOWN-REAL-DEMAND-BASELINE",
+      "status": "unknown",
+      "value": null,
+      "reason": "合成人物和聚合线索不是街段级访谈、客流、容量、噪声或服务需求实测。",
+      "needed_from": "经授权现场共走、访谈、客流/噪声/服务基线和代表性说明",
+      "blocks": [
+        "真实需求结论",
+        "场景优先级复核",
+        "成效结果",
+        "专业场景设计"
+      ],
+      "recalculation_trigger": "完成经授权基线调查并记录分母和缺测",
+      "required_for_formal_submission": true,
+      "owner_to_confirm": "User + Professional team / authority"
+    },
+    {
+      "assumption_id": "UNKNOWN-SITE-AUTHORIZATION",
+      "status": "unknown",
+      "value": null,
+      "reason": "三站、路缘和体验路径均没有具体场地授权。",
+      "needed_from": "场地所有/管理/运营有权主体书面签认",
+      "blocks": [
+        "现场采样",
+        "M01有限首用",
+        "组件安装",
+        "对公众开放"
+      ],
+      "recalculation_trigger": "取得对象、期限、责任和撤除范围明确的授权",
+      "required_for_formal_submission": true,
+      "owner_to_confirm": "Professional team / authority"
+    },
+    {
+      "assumption_id": "UNKNOWN-OPERATIONS-RECEIVER",
+      "status": "unknown",
+      "value": null,
+      "reason": "尚无运营接收、人工接管、投诉和维护责任主体。",
+      "needed_from": "经遴选或依法确定的运营主体与有权部门责任协议",
+      "blocks": [
+        "M01人工接管与叫停",
+        "服务连续",
+        "维护",
+        "投诉与退役"
+      ],
+      "recalculation_trigger": "责任主体签认项目护照和接管协议",
+      "required_for_formal_submission": true,
+      "owner_to_confirm": "Professional team / authority"
+    },
+    {
+      "assumption_id": "UNKNOWN-RECOVERY-COST",
+      "status": "unknown",
+      "value": null,
+      "reason": "没有基于真实资产、工序与责任的撤除和原状恢复费用。",
+      "needed_from": "专业造价、资产和运营主体的可复算恢复清单",
+      "blocks": [
+        "M01恢复保证",
+        "资金门",
+        "有限首用"
+      ],
+      "recalculation_trigger": "取得资产清单、恢复标准、单价来源和责任签认",
+      "required_for_formal_submission": true,
+      "owner_to_confirm": "Professional team / authority"
+    },
+    {
+      "assumption_id": "UNKNOWN-BUDGET-SOURCE",
+      "status": "unknown",
+      "value": null,
+      "reason": "政策与部门预算不能自动视为本方案资金。",
+      "needed_from": "项目级资金来源、科目、采购路径与支付责任",
+      "blocks": [
+        "项目与资金门",
+        "建设采购",
+        "运营周期"
+      ],
+      "recalculation_trigger": "取得项目级资金签认与预算边界",
+      "required_for_formal_submission": true,
+      "owner_to_confirm": "Professional team / authority"
+    },
+    {
+      "assumption_id": "UNKNOWN-IMPLEMENTATION-ENTITY-TIME",
+      "status": "unknown",
+      "value": null,
+      "reason": "没有授权实施主体、法定审批路径、工期或开工日期。",
+      "needed_from": "有权实施主体、审批清单与经批准进度",
+      "blocks": [
+        "实施主体",
+        "工期",
+        "开发时序",
+        "建设承诺"
+      ],
+      "recalculation_trigger": "取得责任主体与批准时序",
+      "required_for_formal_submission": true,
+      "owner_to_confirm": "Professional team / authority"
+    },
+    {
+      "assumption_id": "KNOWN-AUTHOR-GITHUB",
+      "status": "known",
+      "value": "niufuti-cyber",
+      "reason": "投稿人已确认以 GitHub 账号 niufuti-cyber 个人名义署名投稿。",
+      "needed_from": "不适用，本项已由投稿人确认",
+      "blocks": [],
+      "recalculation_trigger": "仅当投稿人明确变更投稿 GitHub 账号时更新",
+      "required_for_formal_submission": true,
+      "owner_to_confirm": "User-confirmed on 2026-08-16"
+    },
+    {
+      "assumption_id": "KNOWN-DAZHONGSI-TERM-CHOICE",
+      "status": "known",
+      "value": "大钟寺AI产业聚集区",
+      "reason": "官方材料中“集聚区”和“聚集区”并存；当前正式空间层沿用临时几何与设计任务口径中的“聚集区”，不把该用词取舍解释为对官方材料的纠错。",
+      "needed_from": "不适用；若组织方发布统一术语，则以新正式材料替换",
+      "blocks": [],
+      "recalculation_trigger": "组织方发布统一术语或正式重点区文件",
+      "required_for_formal_submission": true,
+      "owner_to_confirm": "Current wording choice documented from official-source conflict"
+    }
+  ]
+}

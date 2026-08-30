@@ -51,6 +51,12 @@ code {
   padding: 0.1em 0.35em;
   border-radius: 4px;
 }
+:not(pre) > code {
+  display: inline-block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
 .summary { color: var(--muted); font-size: 17px; }
 .translation-link a { color: var(--accent); font-weight: 700; }
 .proposal-table { margin: 20px 0 26px; overflow-x: auto; }
@@ -107,6 +113,7 @@ code {
   h2 { font-size: 21px; }
 }
 </style>
+<link rel="stylesheet" href="../visual/assets/fonts-noto-subset.css">
 </head>
 <body>
 <main>
@@ -146,6 +153,11 @@ code {
 <p>任务书的三大定位在空间上不是三张皮，而是同一条脊线的三个剖面：百年京张文化带是脊线的&quot;历史剖面&quot;，都市AI生活体验带是&quot;日常剖面&quot;，AI融合创新带是&quot;生产剖面&quot;。五大功能则分别锚定在三区两翼：</p>
 <div class="proposal-table"><table><thead><tr><th>环节</th><th>空间载体</th><th>承担的功能</th><th>用地支撑</th></tr></thead><tbody><tr><td>研发</td><td>众智园AI自主创新加速区</td><td>AI全栈自主创新体系、AI治理全球话语权</td><td>科研用地 <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/land_use.geojson#LU-025" title="空间数据：geometry/land_use.geojson#LU-025">空间数据</sup></td></tr><tr><td>验证</td><td>小月河场景赋能翼</td><td>AI+场景赋能新范式</td><td>教育用地与场景服务用地</td></tr><tr><td>发布</td><td>北京AI原点社区</td><td>世界级AI创新生态</td><td>科研与社区服务设施用地</td></tr><tr><td>消费</td><td>大钟寺AI产业聚集区</td><td>智能化AI活力城市、智能原生新业态</td><td>商业服务业用地</td></tr><tr><td>反馈</td><td>中关村科技服务翼</td><td>要素全球化配置、中关村IP与资本赋能</td><td>商业服务业与居住用地</td></tr></tbody></table></div>
 <p>这五个环节沿脊线自北向南依次排布，最南端的大钟寺经由轨道与城市中心区连接，把&quot;消费与国际交往&quot;的反馈重新送回北端的研发环节，回路由此闭合 <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="slow_mobility_spine_length_m" title="指标：slow_mobility_spine_length_m">指标</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="overall_spatial_structure" title="深度：overall_spatial_structure">深度</sup>。</p>
+<h3>区域创新协同接口（概念建议）</h3>
+<p>仅有“与区域协同”这句话不足以说明一带如何工作。本节把北纬社区、未来科学城、怀柔科学城、经开区和京津冀写成五个可讨论的接口：每个接口都同时列出建议角色、进入京张带的要素、从京张带返回的公共或产业回流，以及需要核实的边界 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="OFFICIAL-ANNOUNCEMENT" title="来源：OFFICIAL-ANNOUNCEMENT">来源</sup> <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="AGENT-TASKBOOK" title="来源：AGENT-TASKBOOK">来源</sup>。</p>
+<div class="proposal-table"><table><thead><tr><th>区域接口</th><th>建议角色（非既有合作声明）</th><th>进入京张带的双向要素</th><th>京张带接口</th><th>当前不确定性与核验动作</th></tr></thead><tbody><tr><td>北纬社区</td><td>北部日常生活与公共服务接口</td><td>进入：居民日常需求、使用反馈、社区议题；返回：可旁观的 AI 服务原型、文化路线与人工服务经验</td><td>北五环接驳段、学习脊北端、社区服务节点</td><td>社区边界、人口结构和需求基线未取得；需开展现场走访与服务清单核验</td></tr><tr><td>未来科学城</td><td>上游研发、企业孵化与技术供给接口</td><td>进入：研发议题、算力与人才线索；返回：城市场景需求、公共测试反馈与可解释展示</td><td>众智园研发端、模型评测开放日、标准治理工作坊</td><td>机构关系、数据与算力可共享范围未确认；需以公开规划和主体授权核验</td></tr><tr><td>怀柔科学城</td><td>长周期基础研究与科学议题接口</td><td>进入：基础研究问题、长期评测方法与科学传播内容；返回：城市尺度验证问题、公众可理解的研究叙事</td><td>自主之环、遗产叙事导览、年度回路周</td><td>具体研究协作和成果转化路径未知；不得写成现有合作，需由专业主体确认</td></tr><tr><td>经开区</td><td>产业化、机器人与规模化应用接口</td><td>进入：产业测试需求、制造与低速机器人应用线索；返回：公共空间试验反馈、人才与场景展示</td><td>小月河场景赋能翼、低速配送试验段、活动日沙盘</td><td>产业主体、交通条件和安全责任未确认；需完成场景准入与工程安全评估</td></tr><tr><td>京津冀</td><td>跨区域人才、资本、案例与传播网络接口</td><td>进入：跨区域人才流、资本与案例交换；返回：可复用的开放场景规则、公共利益评估方法与文化传播内容</td><td>国际路演客厅、开发者社区、开放成果展示</td><td>跨区域交通、资金和组织机制未确认；需用公开政策与主体意愿逐项核验</td></tr></tbody></table></div>
+<p>这张接口表的含义是提出可验证的协同假设，而不是声称已经存在合作、资金、数据共享或政府安排。近期可先验证“问题—场景—反馈”三类轻量接口；涉及算力、交通、机器人、跨区域数据或主体合作的内容，均须在授权、专业评估和责任边界明确后再推进 <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="overall_spatial_structure" title="深度：overall_spatial_structure">深度</sup>。</p>
+<figure class="proposal-figure"><img src="../assets/figures/regional-coordination.png" alt="五个区域接口与京张自主回路"><figcaption>五个区域接口与京张自主回路</figcaption></figure>
 <h3>命名体系与视觉识别方向</h3>
 <p>任务书明确反对只提交口号式命名，也反对照搬城市、园区或企业名称。因此本方案提交的不是一个名字，而是<strong>一套可以持续生成名字的规则</strong>，分三级：</p>
 <ul>
@@ -178,6 +190,7 @@ code {
 <p>城市更新最常见的失败方式，是把所有内容都绑定在需要长周期审批的重资产项目上，结果十年内什么都看不见。本方案提出<strong>轻重分离</strong>：把不依赖控规条件的内容（公共空间、慢行缝合、场景回路、荣誉展示、活动运营）放进近期，把依赖控规、权属与工程条件的内容（建筑更新、轨道一体化、市政扩容）放进中远期 <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="renewal_project_list" title="深度：renewal_project_list">深度</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="phase_near_term_area_sqm" title="指标：phase_near_term_area_sqm">指标</sup>。</p>
 <h2>重点区域详细设计</h2>
 <p>三处重点区各按&quot;定位—空间结构—建筑更新—交通慢行—公共空间—AI场景—实施风险&quot;七段展开。三处片区的边界均为矩形化的临时范围，其边线不代表地块界线或道路红线，因此以下所有结论都是方向性的 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="KEY-AREA-SOURCE" title="来源：KEY-AREA-SOURCE">来源</sup> <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/key_areas.geojson#PROV-KEY-003" title="空间数据：geometry/key_areas.geojson#PROV-KEY-003">空间数据</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="key_area_count" title="指标：key_area_count">指标</sup>。</p>
+<p><strong>位置锚定披露（2026-08-29）</strong>：公开 Issue #1029 记录并复核了 <code>PROV-KEY-003</code> 的临时多边形质心约为北纬39.94692度、东经116.34850度，距大钟寺地铁站约2.26公里，且落在北京北站一带 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="ISSUE-1029" title="来源：ISSUE-1029">来源</sup> <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/key_areas.geojson#PROV-KEY-003" title="空间数据：geometry/key_areas.geojson#PROV-KEY-003">空间数据</sup>。因此，正文中“大钟寺站”来自公告的任务锚点，不表示当前 provisional polygon 已完成站点或道路锚定；本方案不自行平移该几何。取得官方 key-area polygon 或明确的官方锚定关系后，必须连同大钟寺相关道路、公共空间、用地、建筑、分期、指标、图件和双语展示整体重算 <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="three_key_area_detailed_design" title="深度：three_key_area_detailed_design">深度</sup>。</p>
 <p>按城市设计管理办法第九条，应当编制重点地区城市设计的区域包括&quot;体现城市历史风貌的地区&quot;和&quot;滨水地区&quot;——本方案的三处重点区同时落在这两类之中：京张遗址走廊构成历史风貌轴，清河与小月河构成滨水界面。因此以下详细设计按该办法第十条的要求组织，即协调市政工程、组织公共空间功能、注重建筑空间尺度，并提出建筑高度、体量、风格、色彩的控制方向 <sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="MOHURD-URBAN-DESIGN-MEASURES" title="标准：MOHURD-URBAN-DESIGN-MEASURES">标准</sup> <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="MOHURD-URBAN-DESIGN" title="来源：MOHURD-URBAN-DESIGN">来源</sup>。</p>
 <figure class="proposal-figure"><img src="../assets/figures/key-areas.png" alt="三处重点区域索引与设计任务图"><figcaption>三处重点区域索引与设计任务图</figcaption></figure>
 <h3>众智园AI自主创新加速区（192.92公顷）</h3>

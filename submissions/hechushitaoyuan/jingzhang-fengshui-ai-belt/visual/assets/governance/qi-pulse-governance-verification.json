@@ -1,0 +1,145 @@
+{
+ "schema_version": "1.0",
+ "verifier": "verify-governance v1.0 (node std-lib only)",
+ "generated_at": "2026-08-26T07:05:36.514Z",
+ "summary": {
+  "total_checks": 19,
+  "passed": 18,
+  "failed": 1
+ },
+ "checks": [
+  {
+   "group": "A",
+   "id": "QP-RULES",
+   "desc": "气数协议规则 = 7 条",
+   "status": "PASS",
+   "detail": "got 7"
+  },
+  {
+   "group": "A",
+   "id": "QP-STEPS",
+   "desc": "四步协议",
+   "status": "PASS",
+   "detail": "got 4"
+  },
+  {
+   "group": "B",
+   "id": "ROLE-COUNT",
+   "desc": "岗位 = 8 类",
+   "status": "PASS",
+   "detail": "got 8"
+  },
+  {
+   "group": "B",
+   "id": "ROLE-MUTEX",
+   "desc": "存在互斥规则声明",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "group": "C",
+   "id": "RD-COUNT",
+   "desc": "三个测试场景均有登记",
+   "status": "PASS",
+   "detail": "got 3"
+  },
+  {
+   "group": "C",
+   "id": "RD-HONEST",
+   "desc": "全部场景如实处于 H0 且升级状态=未达成（诚实强制：任何'达成'即失败）",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "group": "C",
+   "id": "RD-NO-FABRICATION",
+   "desc": "登记表不含任何已执行/已授权类字段值",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "group": "D",
+   "id": "M-COUNT",
+   "desc": "测量口径 = 6 项 M01-M06",
+   "status": "PASS",
+   "detail": "got 6"
+  },
+  {
+   "group": "D",
+   "id": "M-BLANK",
+   "desc": "全部数值留白（标定前不预设数字，诚实强制）",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "group": "D",
+   "id": "M-DEF",
+   "desc": "每项口径含定义与复核岗",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "group": "E",
+   "id": "X-RD-METRIC",
+   "desc": "metrics.readiness_register_count 与场景数一致",
+   "status": "PASS",
+   "detail": "metric=3"
+  },
+  {
+   "group": "E",
+   "id": "X-QP-METRIC",
+   "desc": "metrics.qi_protocol_rule_count 与协议一致",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "group": "E",
+   "id": "X-A11Y",
+   "desc": "a11y 失配计数跨文件一致",
+   "status": "PASS",
+   "detail": "json=36 metric=36"
+  },
+  {
+   "group": "E",
+   "id": "X-CARDS",
+   "desc": "metrics.scenario_card_count = 13",
+   "status": "PASS",
+   "detail": "got 13"
+  },
+  {
+   "group": "F",
+   "id": "AS-COUNT",
+   "desc": "假设登记非空",
+   "status": "PASS",
+   "detail": "got 17"
+  },
+  {
+   "group": "F",
+   "id": "AS-UNIQUE",
+   "desc": "ID 唯一",
+   "status": "PASS",
+   "detail": "17/17"
+  },
+  {
+   "group": "F",
+   "id": "AS-SCHEMA",
+   "desc": "统一双语 schema(0.2.0) 字段一致",
+   "status": "PASS",
+   "detail": "schema=0.2.0"
+  },
+  {
+   "group": "F",
+   "id": "AS-FILLED",
+   "desc": "必填字段非空且双语齐备",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "group": "F",
+   "id": "AS-TRACEABLE",
+   "desc": "来源指针可追溯（每条 ref 均含定位符且非空）",
+   "status": "FAIL",
+   "detail": ""
+  }
+ ]
+}

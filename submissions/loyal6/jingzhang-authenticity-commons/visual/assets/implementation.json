@@ -1,5 +1,8 @@
 {
   "schema_version": "1.0",
+  "execution_contract_ref": "visual/assets/execution-contract.json#PILOT-A-EXECUTION-142",
+  "preimplementation_ref": "visual/assets/preimplementation-package.json#JZAC-P0-ORIGIN-RELAY-01",
+  "execution_status": "unsigned_design_draft_not_field_authority",
   "spatial_structure": {
     "zh": "一条双向证据脊、三带叠合、三核六站、两翼互馈",
     "en": "one bidirectional evidence spine, three overlapping belts, three anchors, six stations and two reciprocal wings"
@@ -9,6 +12,26 @@
     "en": "Evidence moves south and corrections return north; each correction reaches every affected channel and triggers retesting, procurement updates and product revision.",
     "rights": ["know_the_basis", "human_handover", "pause_and_review", "same_channel_recovery"]
   },
+  "verification_layers": [
+    {
+      "id": "V1",
+      "zh": "来源与传播可追溯",
+      "en": "Trace provenance and propagation",
+      "check": "source + version + purpose + expiry + every delivery channel"
+    },
+    {
+      "id": "V2",
+      "zh": "独立人工事实复核",
+      "en": "Independent human fact review",
+      "check": "source records, detector outputs and human judgement stay separate"
+    },
+    {
+      "id": "V3",
+      "zh": "纠错后果可执行",
+      "en": "Executable correction consequences",
+      "check": "pause + same-channel correction + retest + procurement update + recover or retire"
+    }
+  ],
   "three_belts": [
     {
       "zh": "百年京张文化带",

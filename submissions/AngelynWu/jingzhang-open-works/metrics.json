@@ -1,0 +1,128 @@
+{
+  "schema_version": "0.1.0",
+  "units": {
+    "length": "m",
+    "area": "sqm"
+  },
+  "metrics": {
+    "site_area_sqm": {
+      "status": "known",
+      "value": 11412825.386,
+      "unit": "sqm",
+      "source_files": ["geometry/site_boundary.geojson"],
+      "formula": "polygon_area(submitted_provisional_site_boundary, EPSG:4548)",
+      "confidence": "low",
+      "assumptions": ["A-BOUNDARY-002"],
+      "interpretation": "Area of the submitted provisional polygon only; not an official or precise project area."
+    },
+    "building_footprint_area_sqm": {
+      "status": "known",
+      "value": 310807.184,
+      "unit": "sqm",
+      "source_files": ["geometry/buildings.geojson"],
+      "formula": "sum(polygon_area(conceptual_intervention_envelopes, EPSG:4548))",
+      "confidence": "low",
+      "assumptions": ["A-BUILDING-004"],
+      "interpretation": "Concept design envelope area; not surveyed or approved building footprint."
+    },
+    "green_ratio": {
+      "status": "known",
+      "value": 0.123423,
+      "unit": "ratio",
+      "source_files": ["geometry/green_space.geojson", "geometry/site_boundary.geojson"],
+      "formula": "concept_green_space_area_sqm / provisional_site_area_sqm",
+      "confidence": "low",
+      "assumptions": ["A-BOUNDARY-002", "A-LANDUSE-003"],
+      "interpretation": "Ratio within submitted conceptual geometry; not statutory green ratio."
+    },
+    "public_space_ratio": {
+      "status": "known",
+      "value": 0.073281,
+      "unit": "ratio",
+      "source_files": ["geometry/public_space.geojson", "geometry/site_boundary.geojson"],
+      "formula": "concept_public_space_area_sqm / provisional_site_area_sqm",
+      "confidence": "low",
+      "assumptions": ["A-BOUNDARY-002", "A-LANDUSE-003"],
+      "interpretation": "Ratio within submitted conceptual geometry; not statutory public-space control."
+    },
+    "floor_area_ratio": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": ["brief/site-package/ranges/planning_limits.json"],
+      "formula": "total_floor_area_sqm / official_site_area_sqm",
+      "confidence": "unknown",
+      "assumptions": ["A-CONTROLS-001"],
+      "reason": "Approved FAR controls, official boundary and reliable building inventory are unavailable."
+    },
+    "key_area_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": ["geometry/key_areas.geojson"],
+      "formula": "count(required_key_area_features)",
+      "confidence": "high",
+      "assumptions": ["A-BOUNDARY-002"]
+    },
+    "scenario_count": {
+      "status": "known",
+      "value": 12,
+      "unit": "count",
+      "source_files": ["proposal.md", "proposal.en.md"],
+      "formula": "count(S01..S12 scenario cards)",
+      "confidence": "high",
+      "assumptions": [],
+      "interpretation": "Design content count, not implemented service count."
+    },
+    "testbed_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": ["proposal.md", "proposal.en.md"],
+      "formula": "count(T01..T03 controlled industry testbeds)",
+      "confidence": "high",
+      "assumptions": ["A-ROBOT-006", "A-DATA-007"],
+      "interpretation": "Conditional testbed proposals, not operating facilities."
+    },
+    "persona_count": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": ["proposal.md", "proposal.en.md"],
+      "formula": "count(P01..P06 personas)",
+      "confidence": "high",
+      "assumptions": [],
+      "interpretation": "Design persona types, not a demographic survey."
+    },
+    "interface_type_count": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": ["proposal.md", "proposal.en.md"],
+      "formula": "count(narrative, encounter, service, test, ecology, governance interfaces)",
+      "confidence": "high",
+      "assumptions": [],
+      "interpretation": "Conceptual interface taxonomy."
+    },
+    "park_phase1_length_m": {
+      "status": "known",
+      "value": 2500,
+      "unit": "m",
+      "source_files": ["sources.json"],
+      "formula": "official_public_reported_value",
+      "confidence": "medium",
+      "assumptions": [],
+      "interpretation": "Published length of the opened phase-one park, not the full competition corridor."
+    },
+    "park_phase1_area_sqm": {
+      "status": "known",
+      "value": 168000,
+      "unit": "sqm",
+      "source_files": ["sources.json"],
+      "formula": "16.8 ha * 10000",
+      "confidence": "medium",
+      "assumptions": [],
+      "interpretation": "Published area of the opened phase-one park, not the overall design area."
+    }
+  }
+}

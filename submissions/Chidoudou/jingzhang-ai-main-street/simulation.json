@@ -1,0 +1,165 @@
+{
+  "schema_version": "1.0",
+  "title": "京张上街 Street Pass 离线故障演练台账",
+  "summary": "以12个固定输入复演PROVE、TRANSLATE和FIRST USE三道门，检验范围、人工责任、普通服务、路线版本、无障碍、数据边界、申诉与退场规则。演练包含失败和无效载荷，不代表现场实测或效果承诺。",
+  "status": "validated_offline_synthetic",
+  "method": "固定seed的规则演练；不调用在线模型，不接入真实轨道、商业或个人数据。visual/assets/verify-street-pass-simulation.js可从任务记录复算所有聚合读数。",
+  "seed": 20260829,
+  "task_count": 12,
+  "tasks": [
+    {
+      "task_id": "SP-SIM-001",
+      "scenario_id": "prove-bounded-test",
+      "gate": "PROVE",
+      "injected_condition": "范围、急停、人工安全员与撤场线齐备",
+      "high_risk": false,
+      "release_decision": "advance",
+      "outcome": "success",
+      "dispatch_schema_valid": true,
+      "audit_complete": true
+    },
+    {
+      "task_id": "SP-SIM-002",
+      "scenario_id": "prove-geofence-breach",
+      "gate": "PROVE",
+      "injected_condition": "设备越出验证边界",
+      "high_risk": true,
+      "release_decision": "hold",
+      "outcome": "blocked_success",
+      "dispatch_schema_valid": true,
+      "audit_complete": true
+    },
+    {
+      "task_id": "SP-SIM-003",
+      "scenario_id": "prove-emergency-stop-missing",
+      "gate": "PROVE",
+      "injected_condition": "实体急停不可用",
+      "high_risk": true,
+      "release_decision": "hold",
+      "outcome": "blocked_success",
+      "dispatch_schema_valid": true,
+      "audit_complete": true
+    },
+    {
+      "task_id": "SP-SIM-004",
+      "scenario_id": "translate-plain-language",
+      "gate": "TRANSLATE",
+      "injected_condition": "用途、局限、责任与撤回可由普通使用者复述",
+      "high_risk": false,
+      "release_decision": "advance",
+      "outcome": "success",
+      "dispatch_schema_valid": true,
+      "audit_complete": true
+    },
+    {
+      "task_id": "SP-SIM-005",
+      "scenario_id": "translate-withdrawal",
+      "gate": "TRANSLATE",
+      "injected_condition": "使用者提出撤回并收到人工回执",
+      "high_risk": false,
+      "release_decision": "advance",
+      "outcome": "success",
+      "dispatch_schema_valid": true,
+      "audit_complete": true
+    },
+    {
+      "task_id": "SP-SIM-006",
+      "scenario_id": "translate-owner-missing",
+      "gate": "TRANSLATE",
+      "injected_condition": "责任岗位为空",
+      "high_risk": true,
+      "release_decision": "hold",
+      "outcome": "blocked_success",
+      "dispatch_schema_valid": true,
+      "audit_complete": true
+    },
+    {
+      "task_id": "SP-SIM-007",
+      "scenario_id": "dazhongsi-paper-route",
+      "gate": "FIRST_USE",
+      "injected_condition": "A口—1733—D口的实体图与人工问路可用",
+      "high_risk": false,
+      "release_decision": "advance",
+      "outcome": "success",
+      "dispatch_schema_valid": true,
+      "audit_complete": true
+    },
+    {
+      "task_id": "SP-SIM-008",
+      "scenario_id": "dazhongsi-route-version-change",
+      "gate": "FIRST_USE",
+      "injected_condition": "入口或围挡变化使路线版本过期",
+      "high_risk": false,
+      "release_decision": "reverify",
+      "outcome": "replanned_success",
+      "dispatch_schema_valid": true,
+      "audit_complete": true
+    },
+    {
+      "task_id": "SP-SIM-009",
+      "scenario_id": "dazhongsi-accessibility-gap",
+      "gate": "FIRST_USE",
+      "injected_condition": "连续无障碍替代尚未核验",
+      "high_risk": true,
+      "release_decision": "hold",
+      "outcome": "blocked_success",
+      "dispatch_schema_valid": true,
+      "audit_complete": true
+    },
+    {
+      "task_id": "SP-SIM-010",
+      "scenario_id": "dazhongsi-identity-request",
+      "gate": "FIRST_USE",
+      "injected_condition": "载荷请求乘客身份与连续轨迹",
+      "high_risk": true,
+      "release_decision": "hold",
+      "outcome": "blocked_success",
+      "dispatch_schema_valid": false,
+      "audit_complete": true
+    },
+    {
+      "task_id": "SP-SIM-011",
+      "scenario_id": "first-use-appeal-log-gap",
+      "gate": "FIRST_USE",
+      "injected_condition": "人工申诉已受理但结果卡缺少处理记录",
+      "high_risk": true,
+      "release_decision": "hold",
+      "outcome": "failure",
+      "dispatch_schema_valid": true,
+      "audit_complete": false
+    },
+    {
+      "task_id": "SP-SIM-012",
+      "scenario_id": "first-use-exit-recovery",
+      "gate": "FIRST_USE",
+      "injected_condition": "设备、账号与临时数据退出，普通服务恢复",
+      "high_risk": false,
+      "release_decision": "retire",
+      "outcome": "success",
+      "dispatch_schema_valid": true,
+      "audit_complete": true
+    }
+  ],
+  "baselines": {
+    "urban_llm_harness": {
+      "status": "validated_offline_synthetic",
+      "claim_scope": "规则工作流的离线合成读数，非现场服务绩效",
+      "replayable": true,
+      "success_rate": 0.9166666666666666,
+      "tool_schema_pass_rate": 0.9166666666666666,
+      "audit_completeness": 0.9166666666666666
+    },
+    "street_pass_guard": {
+      "status": "validated_offline_synthetic",
+      "claim_scope": "六个高风险故障注入是否全部进入hold状态",
+      "replayable": true,
+      "injected_high_risk_case_count": 6,
+      "high_risk_intercept_rate": 1.0
+    }
+  },
+  "limitations_zh": [
+    "演练只验证规则、字段与放行逻辑，不验证真实客流、路线可达性、模型准确率或工程条件。",
+    "0.916667表示12条规则工作流中11条形成完整成功记录；SP-SIM-011因申诉结果卡不完整而失败并保持hold。",
+    "1.0表示本台账设置的6个高风险输入均被hold；它不表示未来真实系统零漏报。"
+  ]
+}

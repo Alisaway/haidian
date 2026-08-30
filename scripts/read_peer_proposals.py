@@ -130,8 +130,17 @@ def fetch_bytes(url: str, max_bytes: int) -> bytes:
     request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
     with urllib.request.urlopen(request, timeout=30) as response:
         length = response.headers.get("Content-Length")
-        if length and int(length) > max_bytes:
-            raise PeerReaderError(f"remote file exceeds limit ({int(length)} bytes): {url}")
+        declared_length: int | None = None
+        if length:
+            try:
+                parsed_length = int(length)
+            except (TypeError, ValueError):
+                pass
+            else:
+                if parsed_length >= 0:
+                    declared_length = parsed_length
+        if declared_length is not None and declared_length > max_bytes:
+            raise PeerReaderError(f"remote file exceeds limit ({declared_length} bytes): {url}")
         chunks: list[bytes] = []
         total = 0
         while True:

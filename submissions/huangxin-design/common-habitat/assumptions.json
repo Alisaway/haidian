@@ -1,0 +1,65 @@
+{
+  "schema_version": "0.1.0",
+  "assumptions": [
+    {
+      "id": "A-BOUNDARY-001",
+      "status": "pending_official_geometry",
+      "statement": "总体设计范围采用仓库 provisional polygon，不是官方红线。",
+      "impact": "全部面积、比例、落点和图纸均为临时复算；official polygon 到位后需统一裁切并重算。"
+    },
+    {
+      "id": "A-KEY-001",
+      "status": "pending_official_geometry",
+      "statement": "三处重点区的名称、顺序和公告约面积可信，但当前 polygon 为临时粗略位置。",
+      "impact": "重点区方案只表达角色、关系和项目原型，不表达精确地块边界或建设规模。"
+    },
+    {
+      "id": "A-CONTROLS-001",
+      "status": "pending_professional_confirmation",
+      "statement": "缺少已批准控规、容积率、高度、密度、退线、道路红线及四线控制。",
+      "impact": "相关内容保留为 unknown 或方法建议，不能用于规划许可。"
+    },
+    {
+      "id": "A-BUILDING-001",
+      "status": "pending_existing_conditions",
+      "statement": "缺少完整现状建筑、结构安全、使用状态与产权数据。",
+      "impact": "建筑 GeoJSON 只表达可逆更新原型，不构成具体拆改留结论。"
+    },
+    {
+      "id": "A-TRAFFIC-001",
+      "status": "pending_transport_study",
+      "statement": "缺少断面流量、站点客流、路权、信号、停车与无障碍连续性实测。",
+      "impact": "慢行与接驳线只表达应优先验证的关系，工程线位和能力需专题研究。"
+    },
+    {
+      "id": "A-MUNICIPAL-001",
+      "status": "pending_engineering_inputs",
+      "statement": "缺少能源、给排水、通信、消防、防洪和地下管线资料。",
+      "impact": "端侧算力、雨洪和市政融合均为原则性接口，不给出容量与工程可行性结论。"
+    },
+    {
+      "id": "A-ECOLOGY-001",
+      "status": "pending_seasonal_survey",
+      "statement": "缺少连续树冠、土壤、水文、生物多样性、热环境和夜间生态基线。",
+      "impact": "绿地比例仅为方案 geometry 相对临时边界的复算值，生态绩效需四季监测。"
+    },
+    {
+      "id": "A-HERITAGE-001",
+      "status": "pending_heritage_controls",
+      "statement": "缺少完整文物名录、保护范围、建设控制地带与遗址工程要求。",
+      "impact": "文化节点和导视不进入受保护实体，需文保专业复核后定位。"
+    },
+    {
+      "id": "A-OWNERSHIP-001",
+      "status": "pending_ownership_and_operation",
+      "statement": "缺少土地权属、运营边界、实施主体、资金和审批路径。",
+      "impact": "项目清单与分期为决策门，不是确定建设计划、招商或财政承诺。"
+    },
+    {
+      "id": "A-OPERATIONS-001",
+      "status": "pending_pilot_authorization",
+      "statement": "全部 AI 场景、活动和合作均未被视为已批准运营。",
+      "impact": "只有完成数据最小化、人工复核、公众告知、退出演练和专业审批后才可试点。"
+    }
+  ]
+}

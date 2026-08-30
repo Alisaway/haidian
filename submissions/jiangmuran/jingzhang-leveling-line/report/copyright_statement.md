@@ -5,11 +5,11 @@
 **本包的权利声明不是一段话，是一个逐文件枚举的机读文件。** `visual/assets/rights_ledger.json` 为随包的**每一个文件**给出来源、生成方式、是否含第三方内容、许可、清权类别，以及——这一项与常见台账不同——**评审如何自行核验这一条**。
 
 <!-- LEDGER:BEGIN -->
-它由 `analysis/build_rights_ledger.py` 从 `manifest.json` 生成，而不是手写的资产分组清单。差别是实质性的：手写的台账枚举「作者记得的资产」，生成的台账枚举「实际随包的文件」，任一文件没有权利归类即**构建失败**。当前 **150 个文件全部归类**：
+它由 `analysis/build_rights_ledger.py` 从 `manifest.json` 生成，而不是手写的资产分组清单。差别是实质性的：手写的台账枚举「作者记得的资产」，生成的台账枚举「实际随包的文件」，任一文件没有权利归类即**构建失败**。当前 **160 个文件全部归类**：
 
 | 清权类别 | 文件数 | 含义 |
 |---|---|---|
-| `author-originated` | 127 | 本方案原创，无第三方内容 |
+| `author-originated` | 137 | 本方案原创，无第三方内容 |
 | `provisional-only-with-stated-limit` | 9 | 九个 GeoJSON 图层，派生自仓库临时边界，限制已写明 |
 | `author-originated-measurement` | 8 | 对仓库公开元数据的自采统计，定级 background_only |
 | `author-originated-with-embedded-fonts` | 4 | A3/A0 PDF，含字体子集（见下） |
@@ -45,7 +45,7 @@
 
 本方案由 **Claude Opus 5**（Claude Code）生成，模型标识 `claude-opus-5`，`model_family` 为 `claude`，均已写入 `agent.json`。人类贡献者 jiangmuran 提出参赛意图、选定赛道，并在推送前审阅。
 
-全部产出确定性生成。生成链：几何 `build_geometry.py`、指标 `recompute_metrics.py`、场景卡 `build_scenario_cards.py`、空白表 `build_gap_table.py`、图纸 `figures.py` 与十二个 `fig_*.py`、A3/A0 `build_drawings.py`、离线可视化 `build_visual.py` 与 `build_visual_en.py`、HTML 报告 `render_proposal_html.py`、语料普查 `census.py` / `field_map.py` / `track_scan.py` / `census_history.py` / `manifest_schema_survey.py`、本台账 `build_rights_ledger.py`，以及五道 QA 闸门与统一构建 `build_all.py`。
+全部产出确定性生成。生成链：几何 `build_geometry.py`、指标 `recompute_metrics.py`、场景卡 `build_scenario_cards.py`、空白表 `build_gap_table.py`、图纸 `figures.py` 与 35 个 `fig_*.py`、A3/A0 `build_drawings.py`、离线可视化 `build_visual.py` 与 `build_visual_en.py`、HTML 报告 `render_proposal_html.py`、语料普查 `census.py` / `field_map.py` / `track_scan.py` / `census_history.py` / `manifest_schema_survey.py`、本台账 `build_rights_ledger.py`，以及 125 个 `*_qa.py` 闸门脚本与统一构建 `build_all.py`（闸门总数与脚本文件数不等，闸门以 `gate_mutation.json` 为准）。
 
 **这些脚本无法随包提交**：入库格式白名单在 `visual/assets/` 下只接受 `.css/.jpeg/.jpg/.js/.json/.png/.svg/.webp`，且提交目录本身有白名单，`.py` 在包内任何位置都不被接受。这一点是实测确认的，不是推断——把一个 `.py` 放进去，确定性校验会以该条规则拒绝。脚本已在配套 Issue 中公开，其数据产物随包提交于 `visual/assets/`。
 

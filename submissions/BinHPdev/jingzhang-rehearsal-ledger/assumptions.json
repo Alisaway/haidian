@@ -1,0 +1,41 @@
+{
+  "schema_version": "0.1.0",
+  "assumptions": [
+    {
+      "id": "A-CONTROLS-001",
+      "status": "pending_professional_confirmation",
+      "statement": "Detailed regulatory controls, road redlines, ownership, municipal utilities, and engineering constraints must be confirmed from official attachments before statutory use.",
+      "impact": "The package can be reviewed as a formal AI submission only for provided official boundaries and submitted design layers; statutory controls still need professional confirmation."
+    },
+    {
+      "id": "A-BOUNDARY-002",
+      "status": "pending_official_data",
+      "statement": "All spatial metrics are computed from provisional_rough interim geometry, not an official redline. Confidence is low and the values are interim design-model outputs.",
+      "impact": "site_area_sqm, green_ratio, public_space_ratio and every derived value must be recomputed when the official boundary and official key-area polygons are released."
+    },
+    {
+      "id": "A-SOUTH-GATEWAY-003",
+      "status": "pending_official_data",
+      "statement": "The interim polygon labelled as the Dazhongsi cluster has its centroid near Beijing North Station, inconsistent with the name (upstream Issue #1029, ~2.26 km).",
+      "impact": "The southern area is referred to only as the South Gateway; its structure, area, and derived metrics must be recomputed once the location is clarified."
+    },
+    {
+      "id": "A-REHEARSAL-004",
+      "status": "participant_declared",
+      "statement": "simulation.json records a fixed-seed offline synthetic rehearsal. No online model call, no physical robot, and no personal data are involved.",
+      "impact": "Readings prove recomputability under a frozen task manifest. They are not field measurements and are not a commitment about real-world performance or approval to operate."
+    },
+    {
+      "id": "A-ADMISSION-005",
+      "status": "pending_policy_decision",
+      "statement": "The graded scenario admission mechanism, the blame-free failure reporting rule, and the fallback service floor have no existing statutory basis.",
+      "impact": "All three are conceptual policy suggestions requiring separate institutional authorisation; they are not presented as decided arrangements."
+    },
+    {
+      "id": "A-REGION-006",
+      "status": "pending_official_data",
+      "statement": "The taskbook review dimension names 北纬社区 (Beiwei Community) as a regional coordination partner, but neither the repository nor the public brief provides any definition material (function, location, scale). This proposal does not infer any of these and proposes only mechanism-level coordination (shared ledger standard, reciprocal scenario rehearsal, cross-checked resident-jury records).",
+      "impact": "The Beiwei Community row of the regional coordination table stays mechanism-only until the organizer supplies definition material; the other coordination rows and all spatial layers are unaffected."
+    }
+  ]
+}

@@ -1,13 +1,13 @@
 {
-  "schema_version": "1.2.0",
+  "schema_version": "1.14.0",
   "dataset_id": "jingzhang-two-answers",
   "title": {
-    "zh": "京张双答：城市采纳回执",
-    "en": "Jing-Zhang Two Answers: Civic Adoption Receipt"
+    "zh": "京张双答：三站一历",
+    "en": "Jing-Zhang Two Answers: Three Stations, One Civic Year"
   },
   "status_note": {
-    "zh": "运营绩效均待现场基线；known 仅用于可复算的文档覆盖数。",
-    "en": "Operational performance awaits field baselines; known values are limited to reproducible document coverage counts."
+    "zh": "S7 已形成 E2 原型准备文件；仍未测绘、许可、搭建或现场运行。",
+    "en": "S7 has an E2 prototype-preparation dossier; survey, permits, assembly and field operation remain incomplete."
   },
   "admission_rule": [
     "baseline_independently_complete",
@@ -250,7 +250,322 @@
           "revise",
           "stop"
         ]
-      }
+      },
+      "evidence_level": "E1_catalogue_trace_complete",
+      "geometry_refs": [
+        "V5-Z-BYPASS",
+        "V5-Z-EMERGENCY",
+        "V5-Z-REMOVAL",
+        "V5-Z-TRIAL",
+        "V5-Z-BUFFER",
+        "V5-Z-EVIDENCE",
+        "V5-Z-REPRO",
+        "V5-Z-CABINET",
+        "V5-Z-ENT-W",
+        "V5-Z-ENT-E",
+        "V5-Z-STAFF-01",
+        "V5-Z-UTILITY"
+      ],
+      "baseline_measurement_protocol": {
+        "denominator": {
+          "zh": "同一任务下全部符合准入条件的普通服务使用尝试",
+          "en": "All eligible baseline-service attempts for the same task"
+        },
+        "sample_window": {
+          "zh": "E2 原型运行后确定；同时记录时段、天气、辅助需求与退出原因",
+          "en": "Set after the E2 prototype; record time, weather, assistance needs and exit reason"
+        },
+        "minimum_fields": [
+          "task_completion",
+          "assistance_request",
+          "safety_event",
+          "fallback_used",
+          "appeal_lodged"
+        ],
+        "current_status": "not_field_run"
+      },
+      "trial_threshold_rule": {
+        "no_regression": {
+          "zh": "普通服务的可达性、可靠性和公平性不得降低",
+          "en": "Accessibility, reliability and equity of the baseline may not regress"
+        },
+        "zero_tolerance": {
+          "zh": "发现无权数据、无法解释的外联或复现环境越界时立即停止。",
+          "en": "Stop T1 when safety, rights, data minimisation, human takeover or reliable degradation fails; the human lead has final authority."
+        },
+        "ai_increment_threshold": {
+          "zh": "在 E2 基线完成后由人类场景委员会登记，当前为 unknown",
+          "en": "Registered by the human scene committee after E2 baseline completion; currently unknown"
+        }
+      },
+      "permit_dependencies": [
+        {
+          "zh": "场地与资产方同意",
+          "en": "Site and asset-owner consent"
+        },
+        {
+          "zh": "消防与疏散复核",
+          "en": "Fire and egress review"
+        },
+        {
+          "zh": "无障碍审计",
+          "en": "Accessibility audit"
+        },
+        {
+          "zh": "临时用电与网络隔离",
+          "en": "Temporary power and network isolation"
+        },
+        {
+          "zh": "设备安全与保险",
+          "en": "Equipment safety and insurance"
+        },
+        {
+          "zh": "活动或交通组织许可",
+          "en": "Event or traffic-management permit"
+        }
+      ],
+      "maintenance_cycle": {
+        "zh": "由复制场景运营者在 E2 前登记",
+        "en": "Registered by the replication-scene operator before E2"
+      },
+      "receipt_state": "pending_field_evidence",
+      "dimension_basis": "prototype_design_assumption_pending_survey",
+      "interface_geometry_refs": [],
+      "baseline_route_geometry": [
+        "BASELINE-T1"
+      ],
+      "trial_boundary_geometry": [],
+      "human_post_geometry": [],
+      "emergency_route_geometry": [
+        "FALLBACK-T1"
+      ],
+      "state_views": {},
+      "measurement_denominator": {
+        "zh": "E2 前由场景运营者登记同题分母",
+        "en": "Operator registers the same-task denominator before E2"
+      },
+      "baseline_window": {
+        "zh": "E2 原型后建立",
+        "en": "Established after the E2 prototype"
+      },
+      "zero_tolerance_events": [
+        {
+          "zh": "发现无权数据、无法解释的外联或复现环境越界时立即停止。",
+          "en": "Stop T1 when safety, rights, data minimisation, human takeover or reliable degradation fails; the human lead has final authority."
+        }
+      ],
+      "recovery_protocol": {
+        "zh": "删除临时副本，保留经人工确认的清单、日志哈希和普通登记台。",
+        "en": "Remove and isolate the optional T1 equipment; retain the complete staffed, static and accessible baseline."
+      },
+      "quote_status": "pending_market_quote",
+      "permit_gate": "site_fire_accessibility_power_network_traffic_equipment_permissions_complete_before_TRIAL",
+      "measurement_clock": {
+        "zh": "停止指令发出时开始，普通任务由人工完成且两条公共路线恢复开放时结束；E2 演练前不设虚构阈值。",
+        "en": "Starts at the stop command and ends when staff complete the ordinary task and both public routes reopen; no invented threshold before E2."
+      },
+      "baseline_sample_rule": {
+        "zh": "同题、同人、同空间、同时间分层；普通服务先记录，AI 只比较增量。",
+        "en": "Same task, user, space and stratified time; baseline first, then compare only the AI increment."
+      },
+      "recovery_verification": {
+        "zh": "安全、普通服务和公众代表共同签字；结果只允许 adopt / revise / stop。",
+        "en": "Safety, baseline-service and public representatives co-sign; adopt / revise / stop only."
+      },
+      "review_due": "after_E2_or_next_annual_review",
+      "prototype_readiness": "E1_catalogue_trace_complete",
+      "readiness_gate": "replicate_after_S7_review",
+      "survey_dependency": [
+        "official_boundary",
+        "topographic_survey",
+        "ownership",
+        "station_exits",
+        "utilities",
+        "fire_access",
+        "traffic_counts"
+      ],
+      "permit_checklist": [
+        "PERMIT-SITE",
+        "PERMIT-TITLE",
+        "PERMIT-FIRE",
+        "PERMIT-ACCESS"
+      ],
+      "bill_of_components": [],
+      "quantity_formula": "adapt_after_site_survey",
+      "procurement_package_ref": [],
+      "baseline_form_ref": "FORM-BASELINE",
+      "trial_form_ref": "FORM-TRIAL",
+      "incident_form_ref": "FORM-INCIDENT",
+      "recovery_drill_ref": "FORM-RECOVERY",
+      "receipt_template_ref": "FORM-RECEIPT",
+      "e2_status": "not_built",
+      "verification_scope": "synthetic_design_contract_only",
+      "test_case_ids": [
+        "SCN-001-T01",
+        "SCN-001-T02",
+        "SCN-001-T03",
+        "SCN-001-T04",
+        "SCN-001-T05",
+        "SCN-001-T06",
+        "SCN-001-T07"
+      ],
+      "initial_state": "OPEN",
+      "injected_event": "see_v10_tabletop_results",
+      "expected_state": "see_v10_tabletop_results",
+      "observed_state": "see_v10_tabletop_results",
+      "invariants_checked": [
+        "baseline_route_continuous",
+        "permit_gate_before_trial",
+        "accountable_human_before_trial",
+        "zero_tolerance_stops_trial",
+        "recovery_before_reopen",
+        "retirement_restores_public_use"
+      ],
+      "synthetic_result": "pass",
+      "input_hash": "resolved_per_test_case",
+      "recovery_exit": {
+        "zh": "删除临时副本，保留经人工确认的清单、日志哈希和普通登记台。",
+        "en": "Remove and isolate the optional T1 equipment; retain the complete staffed, static and accessible baseline."
+      },
+      "field_status": "not_field_run",
+      "measurement_contract": {
+        "measurement_question": {
+          "zh": "同一模型包由独立人员复现时，普通清单与 AI 助手哪一种能完成更多可核验步骤？",
+          "en": "When independent operators reproduce the same model package, which mode completes more verifiable steps?"
+        },
+        "numerator": {
+          "zh": "完成同题任务且未触发零容忍事件的记录数",
+          "en": "Records completing the same task without a zero-tolerance event"
+        },
+        "denominator": {
+          "zh": "每个模型包的全部必需复现步骤",
+          "en": "All required reproduction steps per model package"
+        },
+        "baseline_window": {
+          "zh": "至少 3 个模型包；每包由 3 名独立人员各完成普通与 AI 两种模式",
+          "en": "At least 3 model packages; 3 independent operators per package complete both modes"
+        },
+        "comparison_design": "paired_crossover_same_package",
+        "sample_rule": {
+          "zh": "至少 3 个模型包；每包由 3 名独立人员各完成普通与 AI 两种模式",
+          "en": "At least 3 model packages; 3 independent operators per package complete both modes"
+        },
+        "collection_frequency": {
+          "zh": "每次运行记录；每个模型包结束后汇总",
+          "en": "Record every run; aggregate after each package"
+        },
+        "stratifiers": [
+          "model_package",
+          "operator",
+          "licence_class"
+        ],
+        "statistic": "paired_completion_difference_and_human_minutes",
+        "threshold_rule": {
+          "zh": "普通服务不得退化；安全事件零容忍；AI 增量阈值仅在基线完成后由人类场景委员会登记。",
+          "en": "Baseline service may not regress; safety events have zero tolerance; the human scene committee registers any AI-increment threshold only after the baseline."
+        },
+        "threshold_status": "pending_baseline_committee",
+        "zero_tolerance_events": [
+          "unlicensed_data_used",
+          "unlogged_external_connection",
+          "reproduction_environment_escape"
+        ],
+        "missing_data_rule": {
+          "zh": "缺失样本不得删除或填补为成功；单列缺失原因，若影响分层比较则结果只能 revise 或 stop。",
+          "en": "Missing samples are never deleted or imputed as success; publish the reason, and if stratified comparison is compromised the result can only be revise or stop."
+        },
+        "human_review": {
+          "zh": "普通服务负责人、数据负责人、安全负责人和公众代表共同复核，AI 不拥有决定权。",
+          "en": "The baseline-service lead, data lead, safety lead and public representative review together; AI has no decision authority."
+        },
+        "public_output_schema": [
+          "scenario_id",
+          "mode",
+          "sample_window",
+          "denominator",
+          "completed",
+          "missing",
+          "strata",
+          "safety_events",
+          "human_interventions",
+          "resource_use",
+          "grievances",
+          "recovery_clock",
+          "decision"
+        ],
+        "owner_roles": [
+          "baseline_service_owner",
+          "data_steward",
+          "safety_owner",
+          "public_representative"
+        ],
+        "field_status": "not_field_run"
+      },
+      "measurement_question": {
+        "zh": "同一模型包由独立人员复现时，普通清单与 AI 助手哪一种能完成更多可核验步骤？",
+        "en": "When independent operators reproduce the same model package, which mode completes more verifiable steps?"
+      },
+      "numerator": {
+        "zh": "完成同题任务且未触发零容忍事件的记录数",
+        "en": "Records completing the same task without a zero-tolerance event"
+      },
+      "denominator": {
+        "zh": "每个模型包的全部必需复现步骤",
+        "en": "All required reproduction steps per model package"
+      },
+      "comparison_design": "paired_crossover_same_package",
+      "sample_rule": {
+        "zh": "至少 3 个模型包；每包由 3 名独立人员各完成普通与 AI 两种模式",
+        "en": "At least 3 model packages; 3 independent operators per package complete both modes"
+      },
+      "collection_frequency": {
+        "zh": "每次运行记录；每个模型包结束后汇总",
+        "en": "Record every run; aggregate after each package"
+      },
+      "stratifiers": [
+        "model_package",
+        "operator",
+        "licence_class"
+      ],
+      "statistic": "paired_completion_difference_and_human_minutes",
+      "threshold_status": "pending_baseline_committee",
+      "missing_data_rule": {
+        "zh": "缺失样本不得删除或填补为成功；单列缺失原因，若影响分层比较则结果只能 revise 或 stop。",
+        "en": "Missing samples are never deleted or imputed as success; publish the reason, and if stratified comparison is compromised the result can only be revise or stop."
+      },
+      "human_review": {
+        "zh": "普通服务负责人、数据负责人、安全负责人和公众代表共同复核，AI 不拥有决定权。",
+        "en": "The baseline-service lead, data lead, safety lead and public representative review together; AI has no decision authority."
+      },
+      "public_output_schema": [
+        "scenario_id",
+        "mode",
+        "sample_window",
+        "denominator",
+        "completed",
+        "missing",
+        "strata",
+        "safety_events",
+        "human_interventions",
+        "resource_use",
+        "grievances",
+        "recovery_clock",
+        "decision"
+      ],
+      "owner_roles": [
+        "baseline_service_owner",
+        "data_steward",
+        "safety_owner",
+        "public_representative"
+      ],
+      "architectural_prototype_ref": null,
+      "visual_priority": "reference",
+      "implementation_stage": "E1_concept_design",
+      "next_gate_requirements": [
+        "baseline_validation",
+        "operator_assignment"
+      ],
+      "public_route_invariant": "ordinary_service_continuous_in_all_states"
     },
     {
       "id": "SCN-002",
@@ -451,7 +766,323 @@
           "revise",
           "stop"
         ]
-      }
+      },
+      "evidence_level": "E1_concept_design_complete",
+      "geometry_refs": [
+        "V5-Z-BYPASS",
+        "V5-Z-EMERGENCY",
+        "V5-Z-REMOVAL",
+        "V5-Z-TRIAL",
+        "V5-Z-BUFFER",
+        "V5-Z-EVIDENCE",
+        "V5-Z-REPRO",
+        "V5-Z-CABINET",
+        "V5-Z-ENT-W",
+        "V5-Z-ENT-E",
+        "V5-Z-STAFF-01",
+        "V5-Z-UTILITY"
+      ],
+      "baseline_measurement_protocol": {
+        "denominator": {
+          "zh": "同一任务下全部符合准入条件的普通服务使用尝试",
+          "en": "All eligible baseline-service attempts for the same task"
+        },
+        "sample_window": {
+          "zh": "E2 原型运行后确定；同时记录时段、天气、辅助需求与退出原因",
+          "en": "Set after the E2 prototype; record time, weather, assistance needs and exit reason"
+        },
+        "minimum_fields": [
+          "task_completion",
+          "assistance_request",
+          "safety_event",
+          "fallback_used",
+          "appeal_lodged"
+        ],
+        "current_status": "not_field_run"
+      },
+      "trial_threshold_rule": {
+        "no_regression": {
+          "zh": "普通服务的可达性、可靠性和公平性不得降低",
+          "en": "Accessibility, reliability and equity of the baseline may not regress"
+        },
+        "zero_tolerance": {
+          "zh": "任何人进入安全缓冲区、连续两次近失误或急停失效即停止。",
+          "en": "Stop T2 when safety, rights, data minimisation, human takeover or reliable degradation fails; the human lead has final authority."
+        },
+        "ai_increment_threshold": {
+          "zh": "在 E2 基线完成后由人类场景委员会登记，当前为 unknown",
+          "en": "Registered by the human scene committee after E2 baseline completion; currently unknown"
+        }
+      },
+      "permit_dependencies": [
+        {
+          "zh": "场地与资产方同意",
+          "en": "Site and asset-owner consent"
+        },
+        {
+          "zh": "消防与疏散复核",
+          "en": "Fire and egress review"
+        },
+        {
+          "zh": "无障碍审计",
+          "en": "Accessibility audit"
+        },
+        {
+          "zh": "临时用电与网络隔离",
+          "en": "Temporary power and network isolation"
+        },
+        {
+          "zh": "设备安全与保险",
+          "en": "Equipment safety and insurance"
+        },
+        {
+          "zh": "活动或交通组织许可",
+          "en": "Event or traffic-management permit"
+        }
+      ],
+      "maintenance_cycle": {
+        "zh": "每日开场检查、每次试验前联锁检查、每周资产盘点、每月公开复盘",
+        "en": "Daily opening check, interlock check before every trial, weekly asset inventory, monthly public review"
+      },
+      "receipt_state": "pending_field_evidence",
+      "dimension_basis": "prototype_design_assumption_pending_survey",
+      "interface_geometry_refs": [],
+      "baseline_route_geometry": [
+        "ROUTE-Z-BYPASS"
+      ],
+      "trial_boundary_geometry": [],
+      "human_post_geometry": [],
+      "emergency_route_geometry": [
+        "ROUTE-Z-EMERGENCY"
+      ],
+      "state_views": {},
+      "measurement_denominator": {
+        "zh": "E2 前由场景运营者登记同题分母",
+        "en": "Operator registers the same-task denominator before E2"
+      },
+      "baseline_window": {
+        "zh": "E2 原型后建立",
+        "en": "Established after the E2 prototype"
+      },
+      "zero_tolerance_events": [
+        {
+          "zh": "任何人进入安全缓冲区、连续两次近失误或急停失效即停止。",
+          "en": "Stop T2 when safety, rights, data minimisation, human takeover or reliable degradation fails; the human lead has final authority."
+        }
+      ],
+      "recovery_protocol": {
+        "zh": "机器人撤库、临时围栏拆除；保留步行路径、座椅与事件公告位。",
+        "en": "Remove and isolate the optional T2 equipment; retain the complete staffed, static and accessible baseline."
+      },
+      "quote_status": "pending_market_quote",
+      "permit_gate": "site_fire_accessibility_power_network_traffic_equipment_permissions_complete_before_TRIAL",
+      "measurement_clock": {
+        "zh": "停止指令发出时开始，普通任务由人工完成且两条公共路线恢复开放时结束；E2 演练前不设虚构阈值。",
+        "en": "Starts at the stop command and ends when staff complete the ordinary task and both public routes reopen; no invented threshold before E2."
+      },
+      "baseline_sample_rule": {
+        "zh": "同题、同人、同空间、同时间分层；普通服务先记录，AI 只比较增量。",
+        "en": "Same task, user, space and stratified time; baseline first, then compare only the AI increment."
+      },
+      "recovery_verification": {
+        "zh": "安全、普通服务和公众代表共同签字；结果只允许 adopt / revise / stop。",
+        "en": "Safety, baseline-service and public representatives co-sign; adopt / revise / stop only."
+      },
+      "review_due": "after_E2_or_next_annual_review",
+      "prototype_readiness": "E1_concept_design",
+      "readiness_gate": "replicate_after_S7_review",
+      "survey_dependency": [
+        "official_boundary",
+        "topographic_survey",
+        "ownership",
+        "station_exits",
+        "utilities",
+        "fire_access",
+        "traffic_counts"
+      ],
+      "permit_checklist": [
+        "PERMIT-SITE",
+        "PERMIT-TITLE",
+        "PERMIT-FIRE",
+        "PERMIT-ACCESS"
+      ],
+      "bill_of_components": [],
+      "quantity_formula": "adapt_after_site_survey",
+      "procurement_package_ref": [],
+      "baseline_form_ref": "FORM-BASELINE",
+      "trial_form_ref": "FORM-TRIAL",
+      "incident_form_ref": "FORM-INCIDENT",
+      "recovery_drill_ref": "FORM-RECOVERY",
+      "receipt_template_ref": "FORM-RECEIPT",
+      "e2_status": "not_built",
+      "verification_scope": "synthetic_design_contract_only",
+      "test_case_ids": [
+        "SCN-002-T01",
+        "SCN-002-T02",
+        "SCN-002-T03",
+        "SCN-002-T04",
+        "SCN-002-T05",
+        "SCN-002-T06",
+        "SCN-002-T07"
+      ],
+      "initial_state": "OPEN",
+      "injected_event": "see_v10_tabletop_results",
+      "expected_state": "see_v10_tabletop_results",
+      "observed_state": "see_v10_tabletop_results",
+      "invariants_checked": [
+        "baseline_route_continuous",
+        "permit_gate_before_trial",
+        "accountable_human_before_trial",
+        "zero_tolerance_stops_trial",
+        "recovery_before_reopen",
+        "retirement_restores_public_use"
+      ],
+      "synthetic_result": "pass",
+      "input_hash": "resolved_per_test_case",
+      "recovery_exit": {
+        "zh": "机器人撤库、临时围栏拆除；保留步行路径、座椅与事件公告位。",
+        "en": "Remove and isolate the optional T2 equipment; retain the complete staffed, static and accessible baseline."
+      },
+      "field_status": "not_field_run",
+      "measurement_contract": {
+        "measurement_question": {
+          "zh": "同一路径与同一使用者下，机器人试验是否保持普通通行完整且不增加安全冲突？",
+          "en": "For the same route and users, does the robot trial preserve baseline passage without adding safety conflicts?"
+        },
+        "numerator": {
+          "zh": "完成同题任务且未触发零容忍事件的记录数",
+          "en": "Records completing the same task without a zero-tolerance event"
+        },
+        "denominator": {
+          "zh": "每种模式 100 次符合准入条件的通行；所有严重事件另行全量保留",
+          "en": "100 eligible passages per mode; retain every severe event separately"
+        },
+        "baseline_window": {
+          "zh": "普通模式与试验模式各 100 次，按轮椅、视障、步行和昼夜分层",
+          "en": "100 passages in baseline and trial modes, stratified by wheelchair, visual impairment, walking and day/night"
+        },
+        "comparison_design": "parallel_same_route_stratified",
+        "sample_rule": {
+          "zh": "普通模式与试验模式各 100 次，按轮椅、视障、步行和昼夜分层",
+          "en": "100 passages in baseline and trial modes, stratified by wheelchair, visual impairment, walking and day/night"
+        },
+        "collection_frequency": {
+          "zh": "每次通行记录；每日闭场复核",
+          "en": "Record each passage; review at daily close"
+        },
+        "stratifiers": [
+          "mobility_need",
+          "day_night",
+          "route_direction"
+        ],
+        "statistic": "rate_per_100_passages_and_accessibility_parity_gap",
+        "threshold_rule": {
+          "zh": "普通服务不得退化；安全事件零容忍；AI 增量阈值仅在基线完成后由人类场景委员会登记。",
+          "en": "Baseline service may not regress; safety events have zero tolerance; the human scene committee registers any AI-increment threshold only after the baseline."
+        },
+        "threshold_status": "pending_baseline_committee",
+        "zero_tolerance_events": [
+          "collision",
+          "person_enters_safety_buffer",
+          "emergency_stop_failure",
+          "baseline_route_blocked"
+        ],
+        "missing_data_rule": {
+          "zh": "缺失样本不得删除或填补为成功；单列缺失原因，若影响分层比较则结果只能 revise 或 stop。",
+          "en": "Missing samples are never deleted or imputed as success; publish the reason, and if stratified comparison is compromised the result can only be revise or stop."
+        },
+        "human_review": {
+          "zh": "普通服务负责人、数据负责人、安全负责人和公众代表共同复核，AI 不拥有决定权。",
+          "en": "The baseline-service lead, data lead, safety lead and public representative review together; AI has no decision authority."
+        },
+        "public_output_schema": [
+          "scenario_id",
+          "mode",
+          "sample_window",
+          "denominator",
+          "completed",
+          "missing",
+          "strata",
+          "safety_events",
+          "human_interventions",
+          "resource_use",
+          "grievances",
+          "recovery_clock",
+          "decision"
+        ],
+        "owner_roles": [
+          "baseline_service_owner",
+          "data_steward",
+          "safety_owner",
+          "public_representative"
+        ],
+        "field_status": "not_field_run"
+      },
+      "measurement_question": {
+        "zh": "同一路径与同一使用者下，机器人试验是否保持普通通行完整且不增加安全冲突？",
+        "en": "For the same route and users, does the robot trial preserve baseline passage without adding safety conflicts?"
+      },
+      "numerator": {
+        "zh": "完成同题任务且未触发零容忍事件的记录数",
+        "en": "Records completing the same task without a zero-tolerance event"
+      },
+      "denominator": {
+        "zh": "每种模式 100 次符合准入条件的通行；所有严重事件另行全量保留",
+        "en": "100 eligible passages per mode; retain every severe event separately"
+      },
+      "comparison_design": "parallel_same_route_stratified",
+      "sample_rule": {
+        "zh": "普通模式与试验模式各 100 次，按轮椅、视障、步行和昼夜分层",
+        "en": "100 passages in baseline and trial modes, stratified by wheelchair, visual impairment, walking and day/night"
+      },
+      "collection_frequency": {
+        "zh": "每次通行记录；每日闭场复核",
+        "en": "Record each passage; review at daily close"
+      },
+      "stratifiers": [
+        "mobility_need",
+        "day_night",
+        "route_direction"
+      ],
+      "statistic": "rate_per_100_passages_and_accessibility_parity_gap",
+      "threshold_status": "pending_baseline_committee",
+      "missing_data_rule": {
+        "zh": "缺失样本不得删除或填补为成功；单列缺失原因，若影响分层比较则结果只能 revise 或 stop。",
+        "en": "Missing samples are never deleted or imputed as success; publish the reason, and if stratified comparison is compromised the result can only be revise or stop."
+      },
+      "human_review": {
+        "zh": "普通服务负责人、数据负责人、安全负责人和公众代表共同复核，AI 不拥有决定权。",
+        "en": "The baseline-service lead, data lead, safety lead and public representative review together; AI has no decision authority."
+      },
+      "public_output_schema": [
+        "scenario_id",
+        "mode",
+        "sample_window",
+        "denominator",
+        "completed",
+        "missing",
+        "strata",
+        "safety_events",
+        "human_interventions",
+        "resource_use",
+        "grievances",
+        "recovery_clock",
+        "decision"
+      ],
+      "owner_roles": [
+        "baseline_service_owner",
+        "data_steward",
+        "safety_owner",
+        "public_representative"
+      ],
+      "architectural_prototype_ref": "LMK-01",
+      "visual_priority": "support",
+      "implementation_stage": "E1_concept_design",
+      "next_gate_requirements": [
+        "baseline_validation",
+        "operator_assignment"
+      ],
+      "public_route_invariant": "ordinary_service_continuous_in_all_states"
     },
     {
       "id": "SCN-003",
@@ -650,7 +1281,322 @@
           "revise",
           "stop"
         ]
-      }
+      },
+      "evidence_level": "E1_catalogue_trace_complete",
+      "geometry_refs": [
+        "V5-Z-BYPASS",
+        "V5-Z-EMERGENCY",
+        "V5-Z-REMOVAL",
+        "V5-Z-TRIAL",
+        "V5-Z-BUFFER",
+        "V5-Z-EVIDENCE",
+        "V5-Z-REPRO",
+        "V5-Z-CABINET",
+        "V5-Z-ENT-W",
+        "V5-Z-ENT-E",
+        "V5-Z-STAFF-01",
+        "V5-Z-UTILITY"
+      ],
+      "baseline_measurement_protocol": {
+        "denominator": {
+          "zh": "同一任务下全部符合准入条件的普通服务使用尝试",
+          "en": "All eligible baseline-service attempts for the same task"
+        },
+        "sample_window": {
+          "zh": "E2 原型运行后确定；同时记录时段、天气、辅助需求与退出原因",
+          "en": "Set after the E2 prototype; record time, weather, assistance needs and exit reason"
+        },
+        "minimum_fields": [
+          "task_completion",
+          "assistance_request",
+          "safety_event",
+          "fallback_used",
+          "appeal_lodged"
+        ],
+        "current_status": "not_field_run"
+      },
+      "trial_threshold_rule": {
+        "no_regression": {
+          "zh": "普通服务的可达性、可靠性和公平性不得降低",
+          "en": "Accessibility, reliability and equity of the baseline may not regress"
+        },
+        "zero_tolerance": {
+          "zh": "超过许可噪声/热环境、异常外传或降级失败时停止。",
+          "en": "Stop T3 when safety, rights, data minimisation, human takeover or reliable degradation fails; the human lead has final authority."
+        },
+        "ai_increment_threshold": {
+          "zh": "在 E2 基线完成后由人类场景委员会登记，当前为 unknown",
+          "en": "Registered by the human scene committee after E2 baseline completion; currently unknown"
+        }
+      },
+      "permit_dependencies": [
+        {
+          "zh": "场地与资产方同意",
+          "en": "Site and asset-owner consent"
+        },
+        {
+          "zh": "消防与疏散复核",
+          "en": "Fire and egress review"
+        },
+        {
+          "zh": "无障碍审计",
+          "en": "Accessibility audit"
+        },
+        {
+          "zh": "临时用电与网络隔离",
+          "en": "Temporary power and network isolation"
+        },
+        {
+          "zh": "设备安全与保险",
+          "en": "Equipment safety and insurance"
+        },
+        {
+          "zh": "活动或交通组织许可",
+          "en": "Event or traffic-management permit"
+        }
+      ],
+      "maintenance_cycle": {
+        "zh": "由复制场景运营者在 E2 前登记",
+        "en": "Registered by the replication-scene operator before E2"
+      },
+      "receipt_state": "pending_field_evidence",
+      "dimension_basis": "prototype_design_assumption_pending_survey",
+      "interface_geometry_refs": [],
+      "baseline_route_geometry": [
+        "BASELINE-T3"
+      ],
+      "trial_boundary_geometry": [],
+      "human_post_geometry": [],
+      "emergency_route_geometry": [
+        "FALLBACK-T3"
+      ],
+      "state_views": {},
+      "measurement_denominator": {
+        "zh": "E2 前由场景运营者登记同题分母",
+        "en": "Operator registers the same-task denominator before E2"
+      },
+      "baseline_window": {
+        "zh": "E2 原型后建立",
+        "en": "Established after the E2 prototype"
+      },
+      "zero_tolerance_events": [
+        {
+          "zh": "超过许可噪声/热环境、异常外传或降级失败时停止。",
+          "en": "Stop T3 when safety, rights, data minimisation, human takeover or reliable degradation fails; the human lead has final authority."
+        }
+      ],
+      "recovery_protocol": {
+        "zh": "机柜整机移除，恢复预留空腔与普通电气检修口。",
+        "en": "Remove and isolate the optional T3 equipment; retain the complete staffed, static and accessible baseline."
+      },
+      "quote_status": "pending_market_quote",
+      "permit_gate": "site_fire_accessibility_power_network_traffic_equipment_permissions_complete_before_TRIAL",
+      "measurement_clock": {
+        "zh": "停止指令发出时开始，普通任务由人工完成且两条公共路线恢复开放时结束；E2 演练前不设虚构阈值。",
+        "en": "Starts at the stop command and ends when staff complete the ordinary task and both public routes reopen; no invented threshold before E2."
+      },
+      "baseline_sample_rule": {
+        "zh": "同题、同人、同空间、同时间分层；普通服务先记录，AI 只比较增量。",
+        "en": "Same task, user, space and stratified time; baseline first, then compare only the AI increment."
+      },
+      "recovery_verification": {
+        "zh": "安全、普通服务和公众代表共同签字；结果只允许 adopt / revise / stop。",
+        "en": "Safety, baseline-service and public representatives co-sign; adopt / revise / stop only."
+      },
+      "review_due": "after_E2_or_next_annual_review",
+      "prototype_readiness": "E1_catalogue_trace_complete",
+      "readiness_gate": "replicate_after_S7_review",
+      "survey_dependency": [
+        "official_boundary",
+        "topographic_survey",
+        "ownership",
+        "station_exits",
+        "utilities",
+        "fire_access",
+        "traffic_counts"
+      ],
+      "permit_checklist": [
+        "PERMIT-SITE",
+        "PERMIT-TITLE",
+        "PERMIT-FIRE",
+        "PERMIT-ACCESS"
+      ],
+      "bill_of_components": [],
+      "quantity_formula": "adapt_after_site_survey",
+      "procurement_package_ref": [],
+      "baseline_form_ref": "FORM-BASELINE",
+      "trial_form_ref": "FORM-TRIAL",
+      "incident_form_ref": "FORM-INCIDENT",
+      "recovery_drill_ref": "FORM-RECOVERY",
+      "receipt_template_ref": "FORM-RECEIPT",
+      "e2_status": "not_built",
+      "verification_scope": "synthetic_design_contract_only",
+      "test_case_ids": [
+        "SCN-003-T01",
+        "SCN-003-T02",
+        "SCN-003-T03",
+        "SCN-003-T04",
+        "SCN-003-T05",
+        "SCN-003-T06",
+        "SCN-003-T07"
+      ],
+      "initial_state": "OPEN",
+      "injected_event": "see_v10_tabletop_results",
+      "expected_state": "see_v10_tabletop_results",
+      "observed_state": "see_v10_tabletop_results",
+      "invariants_checked": [
+        "baseline_route_continuous",
+        "permit_gate_before_trial",
+        "accountable_human_before_trial",
+        "zero_tolerance_stops_trial",
+        "recovery_before_reopen",
+        "retirement_restores_public_use"
+      ],
+      "synthetic_result": "pass",
+      "input_hash": "resolved_per_test_case",
+      "recovery_exit": {
+        "zh": "机柜整机移除，恢复预留空腔与普通电气检修口。",
+        "en": "Remove and isolate the optional T3 equipment; retain the complete staffed, static and accessible baseline."
+      },
+      "field_status": "not_field_run",
+      "measurement_contract": {
+        "measurement_question": {
+          "zh": "正常、断网和降级状态下，端侧系统是否以可接受资源完成任务并可靠回退？",
+          "en": "Under normal, offline and degraded states, does edge compute complete tasks with auditable resources and reliable fallback?"
+        },
+        "numerator": {
+          "zh": "完成同题任务且未触发零容忍事件的记录数",
+          "en": "Records completing the same task without a zero-tolerance event"
+        },
+        "denominator": {
+          "zh": "每种状态 30 个同题任务，并保留连续 7 日能耗与噪声日志",
+          "en": "30 same-task trials per state plus a continuous 7-day energy and noise log"
+        },
+        "baseline_window": {
+          "zh": "正常、断网、降级三种状态各 30 次；同设备、同任务集",
+          "en": "30 trials in each normal, offline and degraded state; same device and task set"
+        },
+        "comparison_design": "three_state_repeated_tasks",
+        "sample_rule": {
+          "zh": "正常、断网、降级三种状态各 30 次；同设备、同任务集",
+          "en": "30 trials in each normal, offline and degraded state; same device and task set"
+        },
+        "collection_frequency": {
+          "zh": "逐任务记录；能耗与噪声每分钟采样，按日汇总",
+          "en": "Record each task; sample energy and noise each minute and aggregate daily"
+        },
+        "stratifiers": [
+          "operating_state",
+          "task_class",
+          "day"
+        ],
+        "statistic": "completion_rate_resource_per_completed_task_and_fallback_rate",
+        "threshold_rule": {
+          "zh": "普通服务不得退化；安全事件零容忍；AI 增量阈值仅在基线完成后由人类场景委员会登记。",
+          "en": "Baseline service may not regress; safety events have zero tolerance; the human scene committee registers any AI-increment threshold only after the baseline."
+        },
+        "threshold_status": "pending_baseline_committee",
+        "zero_tolerance_events": [
+          "unsafe_overheat",
+          "unlogged_network_egress",
+          "fallback_unavailable"
+        ],
+        "missing_data_rule": {
+          "zh": "缺失样本不得删除或填补为成功；单列缺失原因，若影响分层比较则结果只能 revise 或 stop。",
+          "en": "Missing samples are never deleted or imputed as success; publish the reason, and if stratified comparison is compromised the result can only be revise or stop."
+        },
+        "human_review": {
+          "zh": "普通服务负责人、数据负责人、安全负责人和公众代表共同复核，AI 不拥有决定权。",
+          "en": "The baseline-service lead, data lead, safety lead and public representative review together; AI has no decision authority."
+        },
+        "public_output_schema": [
+          "scenario_id",
+          "mode",
+          "sample_window",
+          "denominator",
+          "completed",
+          "missing",
+          "strata",
+          "safety_events",
+          "human_interventions",
+          "resource_use",
+          "grievances",
+          "recovery_clock",
+          "decision"
+        ],
+        "owner_roles": [
+          "baseline_service_owner",
+          "data_steward",
+          "safety_owner",
+          "public_representative"
+        ],
+        "field_status": "not_field_run"
+      },
+      "measurement_question": {
+        "zh": "正常、断网和降级状态下，端侧系统是否以可接受资源完成任务并可靠回退？",
+        "en": "Under normal, offline and degraded states, does edge compute complete tasks with auditable resources and reliable fallback?"
+      },
+      "numerator": {
+        "zh": "完成同题任务且未触发零容忍事件的记录数",
+        "en": "Records completing the same task without a zero-tolerance event"
+      },
+      "denominator": {
+        "zh": "每种状态 30 个同题任务，并保留连续 7 日能耗与噪声日志",
+        "en": "30 same-task trials per state plus a continuous 7-day energy and noise log"
+      },
+      "comparison_design": "three_state_repeated_tasks",
+      "sample_rule": {
+        "zh": "正常、断网、降级三种状态各 30 次；同设备、同任务集",
+        "en": "30 trials in each normal, offline and degraded state; same device and task set"
+      },
+      "collection_frequency": {
+        "zh": "逐任务记录；能耗与噪声每分钟采样，按日汇总",
+        "en": "Record each task; sample energy and noise each minute and aggregate daily"
+      },
+      "stratifiers": [
+        "operating_state",
+        "task_class",
+        "day"
+      ],
+      "statistic": "completion_rate_resource_per_completed_task_and_fallback_rate",
+      "threshold_status": "pending_baseline_committee",
+      "missing_data_rule": {
+        "zh": "缺失样本不得删除或填补为成功；单列缺失原因，若影响分层比较则结果只能 revise 或 stop。",
+        "en": "Missing samples are never deleted or imputed as success; publish the reason, and if stratified comparison is compromised the result can only be revise or stop."
+      },
+      "human_review": {
+        "zh": "普通服务负责人、数据负责人、安全负责人和公众代表共同复核，AI 不拥有决定权。",
+        "en": "The baseline-service lead, data lead, safety lead and public representative review together; AI has no decision authority."
+      },
+      "public_output_schema": [
+        "scenario_id",
+        "mode",
+        "sample_window",
+        "denominator",
+        "completed",
+        "missing",
+        "strata",
+        "safety_events",
+        "human_interventions",
+        "resource_use",
+        "grievances",
+        "recovery_clock",
+        "decision"
+      ],
+      "owner_roles": [
+        "baseline_service_owner",
+        "data_steward",
+        "safety_owner",
+        "public_representative"
+      ],
+      "architectural_prototype_ref": null,
+      "visual_priority": "reference",
+      "implementation_stage": "E1_concept_design",
+      "next_gate_requirements": [
+        "baseline_validation",
+        "operator_assignment"
+      ],
+      "public_route_invariant": "ordinary_service_continuous_in_all_states"
     },
     {
       "id": "SCN-004",
@@ -849,7 +1795,325 @@
           "revise",
           "stop"
         ]
-      }
+      },
+      "evidence_level": "E1_catalogue_trace_complete",
+      "geometry_refs": [
+        "V5-A-PASS-01",
+        "V5-A-PASS-02",
+        "V5-A-PASS-03",
+        "V5-A-EMERGENCY",
+        "V5-A-REMOVAL",
+        "V5-A-HALL",
+        "V5-A-PLUGIN",
+        "V5-A-WAIT",
+        "V5-A-DESK",
+        "V5-A-BACK",
+        "V5-A-ENT-NW",
+        "V5-A-ENT-CW",
+        "V5-A-ENT-SW",
+        "V5-A-STAFF-01",
+        "V5-A-UTILITY"
+      ],
+      "baseline_measurement_protocol": {
+        "denominator": {
+          "zh": "同一任务下全部符合准入条件的普通服务使用尝试",
+          "en": "All eligible baseline-service attempts for the same task"
+        },
+        "sample_window": {
+          "zh": "E2 原型运行后确定；同时记录时段、天气、辅助需求与退出原因",
+          "en": "Set after the E2 prototype; record time, weather, assistance needs and exit reason"
+        },
+        "minimum_fields": [
+          "task_completion",
+          "assistance_request",
+          "safety_event",
+          "fallback_used",
+          "appeal_lodged"
+        ],
+        "current_status": "not_field_run"
+      },
+      "trial_threshold_rule": {
+        "no_regression": {
+          "zh": "普通服务的可达性、可靠性和公平性不得降低",
+          "en": "Accessibility, reliability and equity of the baseline may not regress"
+        },
+        "zero_tolerance": {
+          "zh": "高风险事项被自动决定、连续误分诊或人工窗口不可用时停止 AI。",
+          "en": "Stop S1 when safety, rights, data minimisation, human takeover or reliable degradation fails; the human lead has final authority."
+        },
+        "ai_increment_threshold": {
+          "zh": "在 E2 基线完成后由人类场景委员会登记，当前为 unknown",
+          "en": "Registered by the human scene committee after E2 baseline completion; currently unknown"
+        }
+      },
+      "permit_dependencies": [
+        {
+          "zh": "场地与资产方同意",
+          "en": "Site and asset-owner consent"
+        },
+        {
+          "zh": "消防与疏散复核",
+          "en": "Fire and egress review"
+        },
+        {
+          "zh": "无障碍审计",
+          "en": "Accessibility audit"
+        },
+        {
+          "zh": "临时用电与网络隔离",
+          "en": "Temporary power and network isolation"
+        },
+        {
+          "zh": "设备安全与保险",
+          "en": "Equipment safety and insurance"
+        },
+        {
+          "zh": "活动或交通组织许可",
+          "en": "Event or traffic-management permit"
+        }
+      ],
+      "maintenance_cycle": {
+        "zh": "由复制场景运营者在 E2 前登记",
+        "en": "Registered by the replication-scene operator before E2"
+      },
+      "receipt_state": "pending_field_evidence",
+      "dimension_basis": "prototype_design_assumption_pending_survey",
+      "interface_geometry_refs": [],
+      "baseline_route_geometry": [
+        "BASELINE-S1"
+      ],
+      "trial_boundary_geometry": [],
+      "human_post_geometry": [],
+      "emergency_route_geometry": [
+        "FALLBACK-S1"
+      ],
+      "state_views": {},
+      "measurement_denominator": {
+        "zh": "E2 前由场景运营者登记同题分母",
+        "en": "Operator registers the same-task denominator before E2"
+      },
+      "baseline_window": {
+        "zh": "E2 原型后建立",
+        "en": "Established after the E2 prototype"
+      },
+      "zero_tolerance_events": [
+        {
+          "zh": "高风险事项被自动决定、连续误分诊或人工窗口不可用时停止 AI。",
+          "en": "Stop S1 when safety, rights, data minimisation, human takeover or reliable degradation fails; the human lead has final authority."
+        }
+      ],
+      "recovery_protocol": {
+        "zh": "撤除终端，继续使用人工窗口、纸质目录和预约电话。",
+        "en": "Remove and isolate the optional S1 equipment; retain the complete staffed, static and accessible baseline."
+      },
+      "quote_status": "pending_market_quote",
+      "permit_gate": "site_fire_accessibility_power_network_traffic_equipment_permissions_complete_before_TRIAL",
+      "measurement_clock": {
+        "zh": "停止指令发出时开始，普通任务由人工完成且两条公共路线恢复开放时结束；E2 演练前不设虚构阈值。",
+        "en": "Starts at the stop command and ends when staff complete the ordinary task and both public routes reopen; no invented threshold before E2."
+      },
+      "baseline_sample_rule": {
+        "zh": "同题、同人、同空间、同时间分层；普通服务先记录，AI 只比较增量。",
+        "en": "Same task, user, space and stratified time; baseline first, then compare only the AI increment."
+      },
+      "recovery_verification": {
+        "zh": "安全、普通服务和公众代表共同签字；结果只允许 adopt / revise / stop。",
+        "en": "Safety, baseline-service and public representatives co-sign; adopt / revise / stop only."
+      },
+      "review_due": "after_E2_or_next_annual_review",
+      "prototype_readiness": "E1_catalogue_trace_complete",
+      "readiness_gate": "replicate_after_S7_review",
+      "survey_dependency": [
+        "official_boundary",
+        "topographic_survey",
+        "ownership",
+        "station_exits",
+        "utilities",
+        "fire_access",
+        "traffic_counts"
+      ],
+      "permit_checklist": [
+        "PERMIT-SITE",
+        "PERMIT-TITLE",
+        "PERMIT-FIRE",
+        "PERMIT-ACCESS"
+      ],
+      "bill_of_components": [],
+      "quantity_formula": "adapt_after_site_survey",
+      "procurement_package_ref": [],
+      "baseline_form_ref": "FORM-BASELINE",
+      "trial_form_ref": "FORM-TRIAL",
+      "incident_form_ref": "FORM-INCIDENT",
+      "recovery_drill_ref": "FORM-RECOVERY",
+      "receipt_template_ref": "FORM-RECEIPT",
+      "e2_status": "not_built",
+      "verification_scope": "synthetic_design_contract_only",
+      "test_case_ids": [
+        "SCN-004-T01",
+        "SCN-004-T02",
+        "SCN-004-T03",
+        "SCN-004-T04",
+        "SCN-004-T05",
+        "SCN-004-T06",
+        "SCN-004-T07"
+      ],
+      "initial_state": "OPEN",
+      "injected_event": "see_v10_tabletop_results",
+      "expected_state": "see_v10_tabletop_results",
+      "observed_state": "see_v10_tabletop_results",
+      "invariants_checked": [
+        "baseline_route_continuous",
+        "permit_gate_before_trial",
+        "accountable_human_before_trial",
+        "zero_tolerance_stops_trial",
+        "recovery_before_reopen",
+        "retirement_restores_public_use"
+      ],
+      "synthetic_result": "pass",
+      "input_hash": "resolved_per_test_case",
+      "recovery_exit": {
+        "zh": "撤除终端，继续使用人工窗口、纸质目录和预约电话。",
+        "en": "Remove and isolate the optional S1 equipment; retain the complete staffed, static and accessible baseline."
+      },
+      "field_status": "not_field_run",
+      "measurement_contract": {
+        "measurement_question": {
+          "zh": "企业服务请求在人工窗口先成立时，AI 分诊是否减少未完成任务而不增加误分？",
+          "en": "With the staffed desk operating first, does AI triage reduce incomplete enterprise-service requests without increasing misrouting?"
+        },
+        "numerator": {
+          "zh": "完成同题任务且未触发零容忍事件的记录数",
+          "en": "Records completing the same task without a zero-tolerance event"
+        },
+        "denominator": {
+          "zh": "每种模式 100 个符合准入条件的服务请求",
+          "en": "100 eligible service requests per mode"
+        },
+        "baseline_window": {
+          "zh": "人工模式与 AI 辅助模式各 100 个同类请求，按事项复杂度分层",
+          "en": "100 comparable requests in staffed and AI-assisted modes, stratified by complexity"
+        },
+        "comparison_design": "matched_request_cohorts",
+        "sample_rule": {
+          "zh": "人工模式与 AI 辅助模式各 100 个同类请求，按事项复杂度分层",
+          "en": "100 comparable requests in staffed and AI-assisted modes, stratified by complexity"
+        },
+        "collection_frequency": {
+          "zh": "逐请求记录；每周人工抽查与公开汇总",
+          "en": "Record each request; weekly human audit and public summary"
+        },
+        "stratifiers": [
+          "request_class",
+          "complexity",
+          "language"
+        ],
+        "statistic": "completion_rate_misrouting_rate_and_human_minutes",
+        "threshold_rule": {
+          "zh": "普通服务不得退化；安全事件零容忍；AI 增量阈值仅在基线完成后由人类场景委员会登记。",
+          "en": "Baseline service may not regress; safety events have zero tolerance; the human scene committee registers any AI-increment threshold only after the baseline."
+        },
+        "threshold_status": "pending_baseline_committee",
+        "zero_tolerance_events": [
+          "legal_advice_without_review",
+          "eligible_user_denied_baseline_service",
+          "personal_data_overcollection"
+        ],
+        "missing_data_rule": {
+          "zh": "缺失样本不得删除或填补为成功；单列缺失原因，若影响分层比较则结果只能 revise 或 stop。",
+          "en": "Missing samples are never deleted or imputed as success; publish the reason, and if stratified comparison is compromised the result can only be revise or stop."
+        },
+        "human_review": {
+          "zh": "普通服务负责人、数据负责人、安全负责人和公众代表共同复核，AI 不拥有决定权。",
+          "en": "The baseline-service lead, data lead, safety lead and public representative review together; AI has no decision authority."
+        },
+        "public_output_schema": [
+          "scenario_id",
+          "mode",
+          "sample_window",
+          "denominator",
+          "completed",
+          "missing",
+          "strata",
+          "safety_events",
+          "human_interventions",
+          "resource_use",
+          "grievances",
+          "recovery_clock",
+          "decision"
+        ],
+        "owner_roles": [
+          "baseline_service_owner",
+          "data_steward",
+          "safety_owner",
+          "public_representative"
+        ],
+        "field_status": "not_field_run"
+      },
+      "measurement_question": {
+        "zh": "企业服务请求在人工窗口先成立时，AI 分诊是否减少未完成任务而不增加误分？",
+        "en": "With the staffed desk operating first, does AI triage reduce incomplete enterprise-service requests without increasing misrouting?"
+      },
+      "numerator": {
+        "zh": "完成同题任务且未触发零容忍事件的记录数",
+        "en": "Records completing the same task without a zero-tolerance event"
+      },
+      "denominator": {
+        "zh": "每种模式 100 个符合准入条件的服务请求",
+        "en": "100 eligible service requests per mode"
+      },
+      "comparison_design": "matched_request_cohorts",
+      "sample_rule": {
+        "zh": "人工模式与 AI 辅助模式各 100 个同类请求，按事项复杂度分层",
+        "en": "100 comparable requests in staffed and AI-assisted modes, stratified by complexity"
+      },
+      "collection_frequency": {
+        "zh": "逐请求记录；每周人工抽查与公开汇总",
+        "en": "Record each request; weekly human audit and public summary"
+      },
+      "stratifiers": [
+        "request_class",
+        "complexity",
+        "language"
+      ],
+      "statistic": "completion_rate_misrouting_rate_and_human_minutes",
+      "threshold_status": "pending_baseline_committee",
+      "missing_data_rule": {
+        "zh": "缺失样本不得删除或填补为成功；单列缺失原因，若影响分层比较则结果只能 revise 或 stop。",
+        "en": "Missing samples are never deleted or imputed as success; publish the reason, and if stratified comparison is compromised the result can only be revise or stop."
+      },
+      "human_review": {
+        "zh": "普通服务负责人、数据负责人、安全负责人和公众代表共同复核，AI 不拥有决定权。",
+        "en": "The baseline-service lead, data lead, safety lead and public representative review together; AI has no decision authority."
+      },
+      "public_output_schema": [
+        "scenario_id",
+        "mode",
+        "sample_window",
+        "denominator",
+        "completed",
+        "missing",
+        "strata",
+        "safety_events",
+        "human_interventions",
+        "resource_use",
+        "grievances",
+        "recovery_clock",
+        "decision"
+      ],
+      "owner_roles": [
+        "baseline_service_owner",
+        "data_steward",
+        "safety_owner",
+        "public_representative"
+      ],
+      "architectural_prototype_ref": null,
+      "visual_priority": "reference",
+      "implementation_stage": "E1_concept_design",
+      "next_gate_requirements": [
+        "baseline_validation",
+        "operator_assignment"
+      ],
+      "public_route_invariant": "ordinary_service_continuous_in_all_states"
     },
     {
       "id": "SCN-005",
@@ -1050,7 +2314,325 @@
           "revise",
           "stop"
         ]
-      }
+      },
+      "evidence_level": "E1_concept_design_complete",
+      "geometry_refs": [
+        "V5-A-PASS-01",
+        "V5-A-PASS-02",
+        "V5-A-PASS-03",
+        "V5-A-EMERGENCY",
+        "V5-A-REMOVAL",
+        "V5-A-HALL",
+        "V5-A-PLUGIN",
+        "V5-A-WAIT",
+        "V5-A-DESK",
+        "V5-A-BACK",
+        "V5-A-ENT-NW",
+        "V5-A-ENT-CW",
+        "V5-A-ENT-SW",
+        "V5-A-STAFF-01",
+        "V5-A-UTILITY"
+      ],
+      "baseline_measurement_protocol": {
+        "denominator": {
+          "zh": "同一任务下全部符合准入条件的普通服务使用尝试",
+          "en": "All eligible baseline-service attempts for the same task"
+        },
+        "sample_window": {
+          "zh": "E2 原型运行后确定；同时记录时段、天气、辅助需求与退出原因",
+          "en": "Set after the E2 prototype; record time, weather, assistance needs and exit reason"
+        },
+        "minimum_fields": [
+          "task_completion",
+          "assistance_request",
+          "safety_event",
+          "fallback_used",
+          "appeal_lodged"
+        ],
+        "current_status": "not_field_run"
+      },
+      "trial_threshold_rule": {
+        "no_regression": {
+          "zh": "普通服务的可达性、可靠性和公平性不得降低",
+          "en": "Accessibility, reliability and equity of the baseline may not regress"
+        },
+        "zero_tolerance": {
+          "zh": "出现身份误用、翻译改变权利义务或错误无法及时纠正时停止。",
+          "en": "Stop S2 when safety, rights, data minimisation, human takeover or reliable degradation fails; the human lead has final authority."
+        },
+        "ai_increment_threshold": {
+          "zh": "在 E2 基线完成后由人类场景委员会登记，当前为 unknown",
+          "en": "Registered by the human scene committee after E2 baseline completion; currently unknown"
+        }
+      },
+      "permit_dependencies": [
+        {
+          "zh": "场地与资产方同意",
+          "en": "Site and asset-owner consent"
+        },
+        {
+          "zh": "消防与疏散复核",
+          "en": "Fire and egress review"
+        },
+        {
+          "zh": "无障碍审计",
+          "en": "Accessibility audit"
+        },
+        {
+          "zh": "临时用电与网络隔离",
+          "en": "Temporary power and network isolation"
+        },
+        {
+          "zh": "设备安全与保险",
+          "en": "Equipment safety and insurance"
+        },
+        {
+          "zh": "活动或交通组织许可",
+          "en": "Event or traffic-management permit"
+        }
+      ],
+      "maintenance_cycle": {
+        "zh": "每日开场检查、每次试验前联锁检查、每周资产盘点、每月公开复盘",
+        "en": "Daily opening check, interlock check before every trial, weekly asset inventory, monthly public review"
+      },
+      "receipt_state": "pending_field_evidence",
+      "dimension_basis": "prototype_design_assumption_pending_survey",
+      "interface_geometry_refs": [],
+      "baseline_route_geometry": [
+        "ROUTE-A-PASSAGES"
+      ],
+      "trial_boundary_geometry": [],
+      "human_post_geometry": [],
+      "emergency_route_geometry": [
+        "ROUTE-A-EMERGENCY"
+      ],
+      "state_views": {},
+      "measurement_denominator": {
+        "zh": "E2 前由场景运营者登记同题分母",
+        "en": "Operator registers the same-task denominator before E2"
+      },
+      "baseline_window": {
+        "zh": "E2 原型后建立",
+        "en": "Established after the E2 prototype"
+      },
+      "zero_tolerance_events": [
+        {
+          "zh": "出现身份误用、翻译改变权利义务或错误无法及时纠正时停止。",
+          "en": "Stop S2 when safety, rights, data minimisation, human takeover or reliable degradation fails; the human lead has final authority."
+        }
+      ],
+      "recovery_protocol": {
+        "zh": "关闭终端，保留人工接待、纸质地图和静态双语导视。",
+        "en": "Remove and isolate the optional S2 equipment; retain the complete staffed, static and accessible baseline."
+      },
+      "quote_status": "pending_market_quote",
+      "permit_gate": "site_fire_accessibility_power_network_traffic_equipment_permissions_complete_before_TRIAL",
+      "measurement_clock": {
+        "zh": "停止指令发出时开始，普通任务由人工完成且两条公共路线恢复开放时结束；E2 演练前不设虚构阈值。",
+        "en": "Starts at the stop command and ends when staff complete the ordinary task and both public routes reopen; no invented threshold before E2."
+      },
+      "baseline_sample_rule": {
+        "zh": "同题、同人、同空间、同时间分层；普通服务先记录，AI 只比较增量。",
+        "en": "Same task, user, space and stratified time; baseline first, then compare only the AI increment."
+      },
+      "recovery_verification": {
+        "zh": "安全、普通服务和公众代表共同签字；结果只允许 adopt / revise / stop。",
+        "en": "Safety, baseline-service and public representatives co-sign; adopt / revise / stop only."
+      },
+      "review_due": "after_E2_or_next_annual_review",
+      "prototype_readiness": "E1_concept_design",
+      "readiness_gate": "replicate_after_S7_review",
+      "survey_dependency": [
+        "official_boundary",
+        "topographic_survey",
+        "ownership",
+        "station_exits",
+        "utilities",
+        "fire_access",
+        "traffic_counts"
+      ],
+      "permit_checklist": [
+        "PERMIT-SITE",
+        "PERMIT-TITLE",
+        "PERMIT-FIRE",
+        "PERMIT-ACCESS"
+      ],
+      "bill_of_components": [],
+      "quantity_formula": "adapt_after_site_survey",
+      "procurement_package_ref": [],
+      "baseline_form_ref": "FORM-BASELINE",
+      "trial_form_ref": "FORM-TRIAL",
+      "incident_form_ref": "FORM-INCIDENT",
+      "recovery_drill_ref": "FORM-RECOVERY",
+      "receipt_template_ref": "FORM-RECEIPT",
+      "e2_status": "not_built",
+      "verification_scope": "synthetic_design_contract_only",
+      "test_case_ids": [
+        "SCN-005-T01",
+        "SCN-005-T02",
+        "SCN-005-T03",
+        "SCN-005-T04",
+        "SCN-005-T05",
+        "SCN-005-T06",
+        "SCN-005-T07"
+      ],
+      "initial_state": "OPEN",
+      "injected_event": "see_v10_tabletop_results",
+      "expected_state": "see_v10_tabletop_results",
+      "observed_state": "see_v10_tabletop_results",
+      "invariants_checked": [
+        "baseline_route_continuous",
+        "permit_gate_before_trial",
+        "accountable_human_before_trial",
+        "zero_tolerance_stops_trial",
+        "recovery_before_reopen",
+        "retirement_restores_public_use"
+      ],
+      "synthetic_result": "pass",
+      "input_hash": "resolved_per_test_case",
+      "recovery_exit": {
+        "zh": "关闭终端，保留人工接待、纸质地图和静态双语导视。",
+        "en": "Remove and isolate the optional S2 equipment; retain the complete staffed, static and accessible baseline."
+      },
+      "field_status": "not_field_run",
+      "measurement_contract": {
+        "measurement_question": {
+          "zh": "国际人才抵达任务中，无账户人工服务与可选 AI 导航哪种模式更完整、公平且可恢复？",
+          "en": "For international arrivals, which mode is more complete, equitable and recoverable: no-account staffed service or optional AI guidance?"
+        },
+        "numerator": {
+          "zh": "完成同题任务且未触发零容忍事件的记录数",
+          "en": "Records completing the same task without a zero-tolerance event"
+        },
+        "denominator": {
+          "zh": "每种模式 100 个符合准入条件的抵达服务请求",
+          "en": "100 eligible arrival-service requests per mode"
+        },
+        "baseline_window": {
+          "zh": "人工与 AI 辅助各 100 个请求，按语言、辅助需求和事项复杂度分层",
+          "en": "100 requests per mode, stratified by language, assistance need and complexity"
+        },
+        "comparison_design": "paired_service_script_or_matched_cohort",
+        "sample_rule": {
+          "zh": "人工与 AI 辅助各 100 个请求，按语言、辅助需求和事项复杂度分层",
+          "en": "100 requests per mode, stratified by language, assistance need and complexity"
+        },
+        "collection_frequency": {
+          "zh": "逐请求记录；每日闭场复核争议样本",
+          "en": "Record each request; review disputed cases at daily close"
+        },
+        "stratifiers": [
+          "language",
+          "assistance_need",
+          "complexity"
+        ],
+        "statistic": "completion_rate_accessibility_parity_gap_intervention_rate",
+        "threshold_rule": {
+          "zh": "普通服务不得退化；安全事件零容忍；AI 增量阈值仅在基线完成后由人类场景委员会登记。",
+          "en": "Baseline service may not regress; safety events have zero tolerance; the human scene committee registers any AI-increment threshold only after the baseline."
+        },
+        "threshold_status": "pending_baseline_committee",
+        "zero_tolerance_events": [
+          "account_required_for_baseline",
+          "translation_changes_legal_meaning",
+          "human_review_unavailable"
+        ],
+        "missing_data_rule": {
+          "zh": "缺失样本不得删除或填补为成功；单列缺失原因，若影响分层比较则结果只能 revise 或 stop。",
+          "en": "Missing samples are never deleted or imputed as success; publish the reason, and if stratified comparison is compromised the result can only be revise or stop."
+        },
+        "human_review": {
+          "zh": "普通服务负责人、数据负责人、安全负责人和公众代表共同复核，AI 不拥有决定权。",
+          "en": "The baseline-service lead, data lead, safety lead and public representative review together; AI has no decision authority."
+        },
+        "public_output_schema": [
+          "scenario_id",
+          "mode",
+          "sample_window",
+          "denominator",
+          "completed",
+          "missing",
+          "strata",
+          "safety_events",
+          "human_interventions",
+          "resource_use",
+          "grievances",
+          "recovery_clock",
+          "decision"
+        ],
+        "owner_roles": [
+          "baseline_service_owner",
+          "data_steward",
+          "safety_owner",
+          "public_representative"
+        ],
+        "field_status": "not_field_run"
+      },
+      "measurement_question": {
+        "zh": "国际人才抵达任务中，无账户人工服务与可选 AI 导航哪种模式更完整、公平且可恢复？",
+        "en": "For international arrivals, which mode is more complete, equitable and recoverable: no-account staffed service or optional AI guidance?"
+      },
+      "numerator": {
+        "zh": "完成同题任务且未触发零容忍事件的记录数",
+        "en": "Records completing the same task without a zero-tolerance event"
+      },
+      "denominator": {
+        "zh": "每种模式 100 个符合准入条件的抵达服务请求",
+        "en": "100 eligible arrival-service requests per mode"
+      },
+      "comparison_design": "paired_service_script_or_matched_cohort",
+      "sample_rule": {
+        "zh": "人工与 AI 辅助各 100 个请求，按语言、辅助需求和事项复杂度分层",
+        "en": "100 requests per mode, stratified by language, assistance need and complexity"
+      },
+      "collection_frequency": {
+        "zh": "逐请求记录；每日闭场复核争议样本",
+        "en": "Record each request; review disputed cases at daily close"
+      },
+      "stratifiers": [
+        "language",
+        "assistance_need",
+        "complexity"
+      ],
+      "statistic": "completion_rate_accessibility_parity_gap_intervention_rate",
+      "threshold_status": "pending_baseline_committee",
+      "missing_data_rule": {
+        "zh": "缺失样本不得删除或填补为成功；单列缺失原因，若影响分层比较则结果只能 revise 或 stop。",
+        "en": "Missing samples are never deleted or imputed as success; publish the reason, and if stratified comparison is compromised the result can only be revise or stop."
+      },
+      "human_review": {
+        "zh": "普通服务负责人、数据负责人、安全负责人和公众代表共同复核，AI 不拥有决定权。",
+        "en": "The baseline-service lead, data lead, safety lead and public representative review together; AI has no decision authority."
+      },
+      "public_output_schema": [
+        "scenario_id",
+        "mode",
+        "sample_window",
+        "denominator",
+        "completed",
+        "missing",
+        "strata",
+        "safety_events",
+        "human_interventions",
+        "resource_use",
+        "grievances",
+        "recovery_clock",
+        "decision"
+      ],
+      "owner_roles": [
+        "baseline_service_owner",
+        "data_steward",
+        "safety_owner",
+        "public_representative"
+      ],
+      "architectural_prototype_ref": "LMK-02",
+      "visual_priority": "support",
+      "implementation_stage": "E1_concept_design",
+      "next_gate_requirements": [
+        "baseline_validation",
+        "operator_assignment"
+      ],
+      "public_route_invariant": "ordinary_service_continuous_in_all_states"
     },
     {
       "id": "SCN-006",
@@ -1249,7 +2831,325 @@
           "revise",
           "stop"
         ]
-      }
+      },
+      "evidence_level": "E1_catalogue_trace_complete",
+      "geometry_refs": [
+        "V5-A-PASS-01",
+        "V5-A-PASS-02",
+        "V5-A-PASS-03",
+        "V5-A-EMERGENCY",
+        "V5-A-REMOVAL",
+        "V5-A-HALL",
+        "V5-A-PLUGIN",
+        "V5-A-WAIT",
+        "V5-A-DESK",
+        "V5-A-BACK",
+        "V5-A-ENT-NW",
+        "V5-A-ENT-CW",
+        "V5-A-ENT-SW",
+        "V5-A-STAFF-01",
+        "V5-A-UTILITY"
+      ],
+      "baseline_measurement_protocol": {
+        "denominator": {
+          "zh": "同一任务下全部符合准入条件的普通服务使用尝试",
+          "en": "All eligible baseline-service attempts for the same task"
+        },
+        "sample_window": {
+          "zh": "E2 原型运行后确定；同时记录时段、天气、辅助需求与退出原因",
+          "en": "Set after the E2 prototype; record time, weather, assistance needs and exit reason"
+        },
+        "minimum_fields": [
+          "task_completion",
+          "assistance_request",
+          "safety_event",
+          "fallback_used",
+          "appeal_lodged"
+        ],
+        "current_status": "not_field_run"
+      },
+      "trial_threshold_rule": {
+        "no_regression": {
+          "zh": "普通服务的可达性、可靠性和公平性不得降低",
+          "en": "Accessibility, reliability and equity of the baseline may not regress"
+        },
+        "zero_tolerance": {
+          "zh": "抓取无许可内容、生成不可追溯建议或压过社区选择时停止。",
+          "en": "Stop S3 when safety, rights, data minimisation, human takeover or reliable degradation fails; the human lead has final authority."
+        },
+        "ai_increment_threshold": {
+          "zh": "在 E2 基线完成后由人类场景委员会登记，当前为 unknown",
+          "en": "Registered by the human scene committee after E2 baseline completion; currently unknown"
+        }
+      },
+      "permit_dependencies": [
+        {
+          "zh": "场地与资产方同意",
+          "en": "Site and asset-owner consent"
+        },
+        {
+          "zh": "消防与疏散复核",
+          "en": "Fire and egress review"
+        },
+        {
+          "zh": "无障碍审计",
+          "en": "Accessibility audit"
+        },
+        {
+          "zh": "临时用电与网络隔离",
+          "en": "Temporary power and network isolation"
+        },
+        {
+          "zh": "设备安全与保险",
+          "en": "Equipment safety and insurance"
+        },
+        {
+          "zh": "活动或交通组织许可",
+          "en": "Event or traffic-management permit"
+        }
+      ],
+      "maintenance_cycle": {
+        "zh": "由复制场景运营者在 E2 前登记",
+        "en": "Registered by the replication-scene operator before E2"
+      },
+      "receipt_state": "pending_field_evidence",
+      "dimension_basis": "prototype_design_assumption_pending_survey",
+      "interface_geometry_refs": [],
+      "baseline_route_geometry": [
+        "BASELINE-S3"
+      ],
+      "trial_boundary_geometry": [],
+      "human_post_geometry": [],
+      "emergency_route_geometry": [
+        "FALLBACK-S3"
+      ],
+      "state_views": {},
+      "measurement_denominator": {
+        "zh": "E2 前由场景运营者登记同题分母",
+        "en": "Operator registers the same-task denominator before E2"
+      },
+      "baseline_window": {
+        "zh": "E2 原型后建立",
+        "en": "Established after the E2 prototype"
+      },
+      "zero_tolerance_events": [
+        {
+          "zh": "抓取无许可内容、生成不可追溯建议或压过社区选择时停止。",
+          "en": "Stop S3 when safety, rights, data minimisation, human takeover or reliable degradation fails; the human lead has final authority."
+        }
+      ],
+      "recovery_protocol": {
+        "zh": "删除临时候选库，保留纸质问题卡、工作坊桌和公开来源清单。",
+        "en": "Remove and isolate the optional S3 equipment; retain the complete staffed, static and accessible baseline."
+      },
+      "quote_status": "pending_market_quote",
+      "permit_gate": "site_fire_accessibility_power_network_traffic_equipment_permissions_complete_before_TRIAL",
+      "measurement_clock": {
+        "zh": "停止指令发出时开始，普通任务由人工完成且两条公共路线恢复开放时结束；E2 演练前不设虚构阈值。",
+        "en": "Starts at the stop command and ends when staff complete the ordinary task and both public routes reopen; no invented threshold before E2."
+      },
+      "baseline_sample_rule": {
+        "zh": "同题、同人、同空间、同时间分层；普通服务先记录，AI 只比较增量。",
+        "en": "Same task, user, space and stratified time; baseline first, then compare only the AI increment."
+      },
+      "recovery_verification": {
+        "zh": "安全、普通服务和公众代表共同签字；结果只允许 adopt / revise / stop。",
+        "en": "Safety, baseline-service and public representatives co-sign; adopt / revise / stop only."
+      },
+      "review_due": "after_E2_or_next_annual_review",
+      "prototype_readiness": "E1_catalogue_trace_complete",
+      "readiness_gate": "replicate_after_S7_review",
+      "survey_dependency": [
+        "official_boundary",
+        "topographic_survey",
+        "ownership",
+        "station_exits",
+        "utilities",
+        "fire_access",
+        "traffic_counts"
+      ],
+      "permit_checklist": [
+        "PERMIT-SITE",
+        "PERMIT-TITLE",
+        "PERMIT-FIRE",
+        "PERMIT-ACCESS"
+      ],
+      "bill_of_components": [],
+      "quantity_formula": "adapt_after_site_survey",
+      "procurement_package_ref": [],
+      "baseline_form_ref": "FORM-BASELINE",
+      "trial_form_ref": "FORM-TRIAL",
+      "incident_form_ref": "FORM-INCIDENT",
+      "recovery_drill_ref": "FORM-RECOVERY",
+      "receipt_template_ref": "FORM-RECEIPT",
+      "e2_status": "not_built",
+      "verification_scope": "synthetic_design_contract_only",
+      "test_case_ids": [
+        "SCN-006-T01",
+        "SCN-006-T02",
+        "SCN-006-T03",
+        "SCN-006-T04",
+        "SCN-006-T05",
+        "SCN-006-T06",
+        "SCN-006-T07"
+      ],
+      "initial_state": "OPEN",
+      "injected_event": "see_v10_tabletop_results",
+      "expected_state": "see_v10_tabletop_results",
+      "observed_state": "see_v10_tabletop_results",
+      "invariants_checked": [
+        "baseline_route_continuous",
+        "permit_gate_before_trial",
+        "accountable_human_before_trial",
+        "zero_tolerance_stops_trial",
+        "recovery_before_reopen",
+        "retirement_restores_public_use"
+      ],
+      "synthetic_result": "pass",
+      "input_hash": "resolved_per_test_case",
+      "recovery_exit": {
+        "zh": "删除临时候选库，保留纸质问题卡、工作坊桌和公开来源清单。",
+        "en": "Remove and isolate the optional S3 equipment; retain the complete staffed, static and accessible baseline."
+      },
+      "field_status": "not_field_run",
+      "measurement_contract": {
+        "measurement_question": {
+          "zh": "社区问题工作坊中，AI 匹配是否增加可核验知识连接而不替代居民议题决定？",
+          "en": "In community workshops, does AI matching add verifiable knowledge links without replacing residents’ agenda decisions?"
+        },
+        "numerator": {
+          "zh": "完成同题任务且未触发零容忍事件的记录数",
+          "en": "Records completing the same task without a zero-tolerance event"
+        },
+        "denominator": {
+          "zh": "20 场完整工作坊及其全部问题—证据—决定记录",
+          "en": "20 complete workshops and all problem–evidence–decision records"
+        },
+        "baseline_window": {
+          "zh": "至少 20 场，交替使用普通知识台账与 AI 辅助匹配",
+          "en": "At least 20 workshops alternating baseline ledger and AI-assisted matching"
+        },
+        "comparison_design": "alternating_workshop_series",
+        "sample_rule": {
+          "zh": "至少 20 场，交替使用普通知识台账与 AI 辅助匹配",
+          "en": "At least 20 workshops alternating baseline ledger and AI-assisted matching"
+        },
+        "collection_frequency": {
+          "zh": "逐场记录；每 5 场公开一次归档完整性",
+          "en": "Record each workshop; publish archive completeness every 5 workshops"
+        },
+        "stratifiers": [
+          "issue_type",
+          "participant_role",
+          "workshop_mode"
+        ],
+        "statistic": "verified_link_rate_unresolved_issue_rate_and_human_review_minutes",
+        "threshold_rule": {
+          "zh": "普通服务不得退化；安全事件零容忍；AI 增量阈值仅在基线完成后由人类场景委员会登记。",
+          "en": "Baseline service may not regress; safety events have zero tolerance; the human scene committee registers any AI-increment threshold only after the baseline."
+        },
+        "threshold_status": "pending_baseline_committee",
+        "zero_tolerance_events": [
+          "resident_agenda_overridden",
+          "unattributed_source_presented_as_fact",
+          "participant_identity_disclosed"
+        ],
+        "missing_data_rule": {
+          "zh": "缺失样本不得删除或填补为成功；单列缺失原因，若影响分层比较则结果只能 revise 或 stop。",
+          "en": "Missing samples are never deleted or imputed as success; publish the reason, and if stratified comparison is compromised the result can only be revise or stop."
+        },
+        "human_review": {
+          "zh": "普通服务负责人、数据负责人、安全负责人和公众代表共同复核，AI 不拥有决定权。",
+          "en": "The baseline-service lead, data lead, safety lead and public representative review together; AI has no decision authority."
+        },
+        "public_output_schema": [
+          "scenario_id",
+          "mode",
+          "sample_window",
+          "denominator",
+          "completed",
+          "missing",
+          "strata",
+          "safety_events",
+          "human_interventions",
+          "resource_use",
+          "grievances",
+          "recovery_clock",
+          "decision"
+        ],
+        "owner_roles": [
+          "baseline_service_owner",
+          "data_steward",
+          "safety_owner",
+          "public_representative"
+        ],
+        "field_status": "not_field_run"
+      },
+      "measurement_question": {
+        "zh": "社区问题工作坊中，AI 匹配是否增加可核验知识连接而不替代居民议题决定？",
+        "en": "In community workshops, does AI matching add verifiable knowledge links without replacing residents’ agenda decisions?"
+      },
+      "numerator": {
+        "zh": "完成同题任务且未触发零容忍事件的记录数",
+        "en": "Records completing the same task without a zero-tolerance event"
+      },
+      "denominator": {
+        "zh": "20 场完整工作坊及其全部问题—证据—决定记录",
+        "en": "20 complete workshops and all problem–evidence–decision records"
+      },
+      "comparison_design": "alternating_workshop_series",
+      "sample_rule": {
+        "zh": "至少 20 场，交替使用普通知识台账与 AI 辅助匹配",
+        "en": "At least 20 workshops alternating baseline ledger and AI-assisted matching"
+      },
+      "collection_frequency": {
+        "zh": "逐场记录；每 5 场公开一次归档完整性",
+        "en": "Record each workshop; publish archive completeness every 5 workshops"
+      },
+      "stratifiers": [
+        "issue_type",
+        "participant_role",
+        "workshop_mode"
+      ],
+      "statistic": "verified_link_rate_unresolved_issue_rate_and_human_review_minutes",
+      "threshold_status": "pending_baseline_committee",
+      "missing_data_rule": {
+        "zh": "缺失样本不得删除或填补为成功；单列缺失原因，若影响分层比较则结果只能 revise 或 stop。",
+        "en": "Missing samples are never deleted or imputed as success; publish the reason, and if stratified comparison is compromised the result can only be revise or stop."
+      },
+      "human_review": {
+        "zh": "普通服务负责人、数据负责人、安全负责人和公众代表共同复核，AI 不拥有决定权。",
+        "en": "The baseline-service lead, data lead, safety lead and public representative review together; AI has no decision authority."
+      },
+      "public_output_schema": [
+        "scenario_id",
+        "mode",
+        "sample_window",
+        "denominator",
+        "completed",
+        "missing",
+        "strata",
+        "safety_events",
+        "human_interventions",
+        "resource_use",
+        "grievances",
+        "recovery_clock",
+        "decision"
+      ],
+      "owner_roles": [
+        "baseline_service_owner",
+        "data_steward",
+        "safety_owner",
+        "public_representative"
+      ],
+      "architectural_prototype_ref": null,
+      "visual_priority": "reference",
+      "implementation_stage": "E1_concept_design",
+      "next_gate_requirements": [
+        "baseline_validation",
+        "operator_assignment"
+      ],
+      "public_route_invariant": "ordinary_service_continuous_in_all_states"
     },
     {
       "id": "SCN-007",
@@ -1449,7 +3349,311 @@
           "revise",
           "stop"
         ]
-      }
+      },
+      "evidence_level": "E1_catalogue_trace_complete",
+      "geometry_refs": [
+        "baseline_spine.heritage_stop"
+      ],
+      "baseline_measurement_protocol": {
+        "denominator": {
+          "zh": "同一任务下全部符合准入条件的普通服务使用尝试",
+          "en": "All eligible baseline-service attempts for the same task"
+        },
+        "sample_window": {
+          "zh": "E2 原型运行后确定；同时记录时段、天气、辅助需求与退出原因",
+          "en": "Set after the E2 prototype; record time, weather, assistance needs and exit reason"
+        },
+        "minimum_fields": [
+          "task_completion",
+          "assistance_request",
+          "safety_event",
+          "fallback_used",
+          "appeal_lodged"
+        ],
+        "current_status": "not_field_run"
+      },
+      "trial_threshold_rule": {
+        "no_regression": {
+          "zh": "普通服务的可达性、可靠性和公平性不得降低",
+          "en": "Accessibility, reliability and equity of the baseline may not regress"
+        },
+        "zero_tolerance": {
+          "zh": "出现无来源断言、错误未纠正或影响遗产安全时停止。",
+          "en": "Stop S4 when safety, rights, data minimisation, human takeover or reliable degradation fails; the human lead has final authority."
+        },
+        "ai_increment_threshold": {
+          "zh": "在 E2 基线完成后由人类场景委员会登记，当前为 unknown",
+          "en": "Registered by the human scene committee after E2 baseline completion; currently unknown"
+        }
+      },
+      "permit_dependencies": [
+        {
+          "zh": "场地与资产方同意",
+          "en": "Site and asset-owner consent"
+        },
+        {
+          "zh": "消防与疏散复核",
+          "en": "Fire and egress review"
+        },
+        {
+          "zh": "无障碍审计",
+          "en": "Accessibility audit"
+        },
+        {
+          "zh": "临时用电与网络隔离",
+          "en": "Temporary power and network isolation"
+        },
+        {
+          "zh": "设备安全与保险",
+          "en": "Equipment safety and insurance"
+        },
+        {
+          "zh": "活动或交通组织许可",
+          "en": "Event or traffic-management permit"
+        }
+      ],
+      "maintenance_cycle": {
+        "zh": "由复制场景运营者在 E2 前登记",
+        "en": "Registered by the replication-scene operator before E2"
+      },
+      "receipt_state": "pending_field_evidence",
+      "dimension_basis": "prototype_design_assumption_pending_survey",
+      "interface_geometry_refs": [],
+      "baseline_route_geometry": [
+        "BASELINE-S4"
+      ],
+      "trial_boundary_geometry": [],
+      "human_post_geometry": [],
+      "emergency_route_geometry": [
+        "FALLBACK-S4"
+      ],
+      "state_views": {},
+      "measurement_denominator": {
+        "zh": "E2 前由场景运营者登记同题分母",
+        "en": "Operator registers the same-task denominator before E2"
+      },
+      "baseline_window": {
+        "zh": "E2 原型后建立",
+        "en": "Established after the E2 prototype"
+      },
+      "zero_tolerance_events": [
+        {
+          "zh": "出现无来源断言、错误未纠正或影响遗产安全时停止。",
+          "en": "Stop S4 when safety, rights, data minimisation, human takeover or reliable degradation fails; the human lead has final authority."
+        }
+      ],
+      "recovery_protocol": {
+        "zh": "撤除终端，保留触摸模型、标牌、纸质路线与人工讲解点。",
+        "en": "Remove and isolate the optional S4 equipment; retain the complete staffed, static and accessible baseline."
+      },
+      "quote_status": "pending_market_quote",
+      "permit_gate": "site_fire_accessibility_power_network_traffic_equipment_permissions_complete_before_TRIAL",
+      "measurement_clock": {
+        "zh": "停止指令发出时开始，普通任务由人工完成且两条公共路线恢复开放时结束；E2 演练前不设虚构阈值。",
+        "en": "Starts at the stop command and ends when staff complete the ordinary task and both public routes reopen; no invented threshold before E2."
+      },
+      "baseline_sample_rule": {
+        "zh": "同题、同人、同空间、同时间分层；普通服务先记录，AI 只比较增量。",
+        "en": "Same task, user, space and stratified time; baseline first, then compare only the AI increment."
+      },
+      "recovery_verification": {
+        "zh": "安全、普通服务和公众代表共同签字；结果只允许 adopt / revise / stop。",
+        "en": "Safety, baseline-service and public representatives co-sign; adopt / revise / stop only."
+      },
+      "review_due": "after_E2_or_next_annual_review",
+      "prototype_readiness": "E1_catalogue_trace_complete",
+      "readiness_gate": "replicate_after_S7_review",
+      "survey_dependency": [
+        "official_boundary",
+        "topographic_survey",
+        "ownership",
+        "station_exits",
+        "utilities",
+        "fire_access",
+        "traffic_counts"
+      ],
+      "permit_checklist": [
+        "PERMIT-SITE",
+        "PERMIT-TITLE",
+        "PERMIT-FIRE",
+        "PERMIT-ACCESS"
+      ],
+      "bill_of_components": [],
+      "quantity_formula": "adapt_after_site_survey",
+      "procurement_package_ref": [],
+      "baseline_form_ref": "FORM-BASELINE",
+      "trial_form_ref": "FORM-TRIAL",
+      "incident_form_ref": "FORM-INCIDENT",
+      "recovery_drill_ref": "FORM-RECOVERY",
+      "receipt_template_ref": "FORM-RECEIPT",
+      "e2_status": "not_built",
+      "verification_scope": "synthetic_design_contract_only",
+      "test_case_ids": [
+        "SCN-007-T01",
+        "SCN-007-T02",
+        "SCN-007-T03",
+        "SCN-007-T04",
+        "SCN-007-T05",
+        "SCN-007-T06",
+        "SCN-007-T07"
+      ],
+      "initial_state": "OPEN",
+      "injected_event": "see_v10_tabletop_results",
+      "expected_state": "see_v10_tabletop_results",
+      "observed_state": "see_v10_tabletop_results",
+      "invariants_checked": [
+        "baseline_route_continuous",
+        "permit_gate_before_trial",
+        "accountable_human_before_trial",
+        "zero_tolerance_stops_trial",
+        "recovery_before_reopen",
+        "retirement_restores_public_use"
+      ],
+      "synthetic_result": "pass",
+      "input_hash": "resolved_per_test_case",
+      "recovery_exit": {
+        "zh": "撤除终端，保留触摸模型、标牌、纸质路线与人工讲解点。",
+        "en": "Remove and isolate the optional S4 equipment; retain the complete staffed, static and accessible baseline."
+      },
+      "field_status": "not_field_run",
+      "measurement_contract": {
+        "measurement_question": {
+          "zh": "文化讲解中，可选 AI 是否提高可达性，同时保持史实出处与人工纠错？",
+          "en": "In heritage interpretation, does optional AI improve access while preserving provenance and human correction?"
+        },
+        "numerator": {
+          "zh": "完成同题任务且未触发零容忍事件的记录数",
+          "en": "Records completing the same task without a zero-tolerance event"
+        },
+        "denominator": {
+          "zh": "100 个讲解内容项，并全量复核所有争议项",
+          "en": "100 interpretation items plus every disputed item"
+        },
+        "baseline_window": {
+          "zh": "同一 100 项分别由静态/人工讲解与 AI 可选讲解呈现",
+          "en": "Present the same 100 items through static/staffed and optional-AI modes"
+        },
+        "comparison_design": "item_level_paired_review",
+        "sample_rule": {
+          "zh": "同一 100 项分别由静态/人工讲解与 AI 可选讲解呈现",
+          "en": "Present the same 100 items through static/staffed and optional-AI modes"
+        },
+        "collection_frequency": {
+          "zh": "逐内容项记录；争议即时冻结并复核",
+          "en": "Record each item; freeze and review disputes immediately"
+        },
+        "stratifiers": [
+          "content_type",
+          "language",
+          "accessibility_format"
+        ],
+        "statistic": "source_accuracy_accessibility_coverage_and_correction_time",
+        "threshold_rule": {
+          "zh": "普通服务不得退化；安全事件零容忍；AI 增量阈值仅在基线完成后由人类场景委员会登记。",
+          "en": "Baseline service may not regress; safety events have zero tolerance; the human scene committee registers any AI-increment threshold only after the baseline."
+        },
+        "threshold_status": "pending_baseline_committee",
+        "zero_tolerance_events": [
+          "fabricated_historical_fact",
+          "missing_source_for_factual_claim",
+          "disputed_item_remains_public"
+        ],
+        "missing_data_rule": {
+          "zh": "缺失样本不得删除或填补为成功；单列缺失原因，若影响分层比较则结果只能 revise 或 stop。",
+          "en": "Missing samples are never deleted or imputed as success; publish the reason, and if stratified comparison is compromised the result can only be revise or stop."
+        },
+        "human_review": {
+          "zh": "普通服务负责人、数据负责人、安全负责人和公众代表共同复核，AI 不拥有决定权。",
+          "en": "The baseline-service lead, data lead, safety lead and public representative review together; AI has no decision authority."
+        },
+        "public_output_schema": [
+          "scenario_id",
+          "mode",
+          "sample_window",
+          "denominator",
+          "completed",
+          "missing",
+          "strata",
+          "safety_events",
+          "human_interventions",
+          "resource_use",
+          "grievances",
+          "recovery_clock",
+          "decision"
+        ],
+        "owner_roles": [
+          "baseline_service_owner",
+          "data_steward",
+          "safety_owner",
+          "public_representative"
+        ],
+        "field_status": "not_field_run"
+      },
+      "measurement_question": {
+        "zh": "文化讲解中，可选 AI 是否提高可达性，同时保持史实出处与人工纠错？",
+        "en": "In heritage interpretation, does optional AI improve access while preserving provenance and human correction?"
+      },
+      "numerator": {
+        "zh": "完成同题任务且未触发零容忍事件的记录数",
+        "en": "Records completing the same task without a zero-tolerance event"
+      },
+      "denominator": {
+        "zh": "100 个讲解内容项，并全量复核所有争议项",
+        "en": "100 interpretation items plus every disputed item"
+      },
+      "comparison_design": "item_level_paired_review",
+      "sample_rule": {
+        "zh": "同一 100 项分别由静态/人工讲解与 AI 可选讲解呈现",
+        "en": "Present the same 100 items through static/staffed and optional-AI modes"
+      },
+      "collection_frequency": {
+        "zh": "逐内容项记录；争议即时冻结并复核",
+        "en": "Record each item; freeze and review disputes immediately"
+      },
+      "stratifiers": [
+        "content_type",
+        "language",
+        "accessibility_format"
+      ],
+      "statistic": "source_accuracy_accessibility_coverage_and_correction_time",
+      "threshold_status": "pending_baseline_committee",
+      "missing_data_rule": {
+        "zh": "缺失样本不得删除或填补为成功；单列缺失原因，若影响分层比较则结果只能 revise 或 stop。",
+        "en": "Missing samples are never deleted or imputed as success; publish the reason, and if stratified comparison is compromised the result can only be revise or stop."
+      },
+      "human_review": {
+        "zh": "普通服务负责人、数据负责人、安全负责人和公众代表共同复核，AI 不拥有决定权。",
+        "en": "The baseline-service lead, data lead, safety lead and public representative review together; AI has no decision authority."
+      },
+      "public_output_schema": [
+        "scenario_id",
+        "mode",
+        "sample_window",
+        "denominator",
+        "completed",
+        "missing",
+        "strata",
+        "safety_events",
+        "human_interventions",
+        "resource_use",
+        "grievances",
+        "recovery_clock",
+        "decision"
+      ],
+      "owner_roles": [
+        "baseline_service_owner",
+        "data_steward",
+        "safety_owner",
+        "public_representative"
+      ],
+      "architectural_prototype_ref": null,
+      "visual_priority": "reference",
+      "implementation_stage": "E1_concept_design",
+      "next_gate_requirements": [
+        "baseline_validation",
+        "operator_assignment"
+      ],
+      "public_route_invariant": "ordinary_service_continuous_in_all_states"
     },
     {
       "id": "SCN-008",
@@ -1650,7 +3854,311 @@
           "revise",
           "stop"
         ]
-      }
+      },
+      "evidence_level": "E1_catalogue_trace_complete",
+      "geometry_refs": [
+        "baseline_spine.accessible_route"
+      ],
+      "baseline_measurement_protocol": {
+        "denominator": {
+          "zh": "同一任务下全部符合准入条件的普通服务使用尝试",
+          "en": "All eligible baseline-service attempts for the same task"
+        },
+        "sample_window": {
+          "zh": "E2 原型运行后确定；同时记录时段、天气、辅助需求与退出原因",
+          "en": "Set after the E2 prototype; record time, weather, assistance needs and exit reason"
+        },
+        "minimum_fields": [
+          "task_completion",
+          "assistance_request",
+          "safety_event",
+          "fallback_used",
+          "appeal_lodged"
+        ],
+        "current_status": "not_field_run"
+      },
+      "trial_threshold_rule": {
+        "no_regression": {
+          "zh": "普通服务的可达性、可靠性和公平性不得降低",
+          "en": "Accessibility, reliability and equity of the baseline may not regress"
+        },
+        "zero_tolerance": {
+          "zh": "导航引向障碍、无障碍路径中断或退出后仍留存轨迹时停止。",
+          "en": "Stop S5 when safety, rights, data minimisation, human takeover or reliable degradation fails; the human lead has final authority."
+        },
+        "ai_increment_threshold": {
+          "zh": "在 E2 基线完成后由人类场景委员会登记，当前为 unknown",
+          "en": "Registered by the human scene committee after E2 baseline completion; currently unknown"
+        }
+      },
+      "permit_dependencies": [
+        {
+          "zh": "场地与资产方同意",
+          "en": "Site and asset-owner consent"
+        },
+        {
+          "zh": "消防与疏散复核",
+          "en": "Fire and egress review"
+        },
+        {
+          "zh": "无障碍审计",
+          "en": "Accessibility audit"
+        },
+        {
+          "zh": "临时用电与网络隔离",
+          "en": "Temporary power and network isolation"
+        },
+        {
+          "zh": "设备安全与保险",
+          "en": "Equipment safety and insurance"
+        },
+        {
+          "zh": "活动或交通组织许可",
+          "en": "Event or traffic-management permit"
+        }
+      ],
+      "maintenance_cycle": {
+        "zh": "由复制场景运营者在 E2 前登记",
+        "en": "Registered by the replication-scene operator before E2"
+      },
+      "receipt_state": "pending_field_evidence",
+      "dimension_basis": "prototype_design_assumption_pending_survey",
+      "interface_geometry_refs": [],
+      "baseline_route_geometry": [
+        "BASELINE-S5"
+      ],
+      "trial_boundary_geometry": [],
+      "human_post_geometry": [],
+      "emergency_route_geometry": [
+        "FALLBACK-S5"
+      ],
+      "state_views": {},
+      "measurement_denominator": {
+        "zh": "E2 前由场景运营者登记同题分母",
+        "en": "Operator registers the same-task denominator before E2"
+      },
+      "baseline_window": {
+        "zh": "E2 原型后建立",
+        "en": "Established after the E2 prototype"
+      },
+      "zero_tolerance_events": [
+        {
+          "zh": "导航引向障碍、无障碍路径中断或退出后仍留存轨迹时停止。",
+          "en": "Stop S5 when safety, rights, data minimisation, human takeover or reliable degradation fails; the human lead has final authority."
+        }
+      ],
+      "recovery_protocol": {
+        "zh": "关闭动态服务；静态导视、触觉节点和人工问路保持不变。",
+        "en": "Remove and isolate the optional S5 equipment; retain the complete staffed, static and accessible baseline."
+      },
+      "quote_status": "pending_market_quote",
+      "permit_gate": "site_fire_accessibility_power_network_traffic_equipment_permissions_complete_before_TRIAL",
+      "measurement_clock": {
+        "zh": "停止指令发出时开始，普通任务由人工完成且两条公共路线恢复开放时结束；E2 演练前不设虚构阈值。",
+        "en": "Starts at the stop command and ends when staff complete the ordinary task and both public routes reopen; no invented threshold before E2."
+      },
+      "baseline_sample_rule": {
+        "zh": "同题、同人、同空间、同时间分层；普通服务先记录，AI 只比较增量。",
+        "en": "Same task, user, space and stratified time; baseline first, then compare only the AI increment."
+      },
+      "recovery_verification": {
+        "zh": "安全、普通服务和公众代表共同签字；结果只允许 adopt / revise / stop。",
+        "en": "Safety, baseline-service and public representatives co-sign; adopt / revise / stop only."
+      },
+      "review_due": "after_E2_or_next_annual_review",
+      "prototype_readiness": "E1_catalogue_trace_complete",
+      "readiness_gate": "replicate_after_S7_review",
+      "survey_dependency": [
+        "official_boundary",
+        "topographic_survey",
+        "ownership",
+        "station_exits",
+        "utilities",
+        "fire_access",
+        "traffic_counts"
+      ],
+      "permit_checklist": [
+        "PERMIT-SITE",
+        "PERMIT-TITLE",
+        "PERMIT-FIRE",
+        "PERMIT-ACCESS"
+      ],
+      "bill_of_components": [],
+      "quantity_formula": "adapt_after_site_survey",
+      "procurement_package_ref": [],
+      "baseline_form_ref": "FORM-BASELINE",
+      "trial_form_ref": "FORM-TRIAL",
+      "incident_form_ref": "FORM-INCIDENT",
+      "recovery_drill_ref": "FORM-RECOVERY",
+      "receipt_template_ref": "FORM-RECEIPT",
+      "e2_status": "not_built",
+      "verification_scope": "synthetic_design_contract_only",
+      "test_case_ids": [
+        "SCN-008-T01",
+        "SCN-008-T02",
+        "SCN-008-T03",
+        "SCN-008-T04",
+        "SCN-008-T05",
+        "SCN-008-T06",
+        "SCN-008-T07"
+      ],
+      "initial_state": "OPEN",
+      "injected_event": "see_v10_tabletop_results",
+      "expected_state": "see_v10_tabletop_results",
+      "observed_state": "see_v10_tabletop_results",
+      "invariants_checked": [
+        "baseline_route_continuous",
+        "permit_gate_before_trial",
+        "accountable_human_before_trial",
+        "zero_tolerance_stops_trial",
+        "recovery_before_reopen",
+        "retirement_restores_public_use"
+      ],
+      "synthetic_result": "pass",
+      "input_hash": "resolved_per_test_case",
+      "recovery_exit": {
+        "zh": "关闭动态服务；静态导视、触觉节点和人工问路保持不变。",
+        "en": "Remove and isolate the optional S5 equipment; retain the complete staffed, static and accessible baseline."
+      },
+      "field_status": "not_field_run",
+      "measurement_contract": {
+        "measurement_question": {
+          "zh": "动态辅助导航是否在不削弱静态导视的前提下，改善不同辅助需求的路线完成？",
+          "en": "Does dynamic guidance improve route completion for different assistance needs without weakening static wayfinding?"
+        },
+        "numerator": {
+          "zh": "完成同题任务且未触发零容忍事件的记录数",
+          "en": "Records completing the same task without a zero-tolerance event"
+        },
+        "denominator": {
+          "zh": "10 条路线 × 3 类辅助需求 × 昼/夜两时段",
+          "en": "10 routes × 3 assistance-need groups × day/night"
+        },
+        "baseline_window": {
+          "zh": "每个组合均完成普通静态导视与 AI 辅助两种模式",
+          "en": "Each combination completes both static-baseline and AI-assisted modes"
+        },
+        "comparison_design": "paired_route_crossover",
+        "sample_rule": {
+          "zh": "每个组合均完成普通静态导视与 AI 辅助两种模式",
+          "en": "Each combination completes both static-baseline and AI-assisted modes"
+        },
+        "collection_frequency": {
+          "zh": "逐路线记录；每个时段结束复核",
+          "en": "Record every route; review at the end of each time band"
+        },
+        "stratifiers": [
+          "route",
+          "assistance_need",
+          "day_night"
+        ],
+        "statistic": "route_completion_accessibility_parity_gap_and_intervention_rate",
+        "threshold_rule": {
+          "zh": "普通服务不得退化；安全事件零容忍；AI 增量阈值仅在基线完成后由人类场景委员会登记。",
+          "en": "Baseline service may not regress; safety events have zero tolerance; the human scene committee registers any AI-increment threshold only after the baseline."
+        },
+        "threshold_status": "pending_baseline_committee",
+        "zero_tolerance_events": [
+          "baseline_signage_obscured",
+          "unsafe_route_instruction",
+          "fallback_not_available"
+        ],
+        "missing_data_rule": {
+          "zh": "缺失样本不得删除或填补为成功；单列缺失原因，若影响分层比较则结果只能 revise 或 stop。",
+          "en": "Missing samples are never deleted or imputed as success; publish the reason, and if stratified comparison is compromised the result can only be revise or stop."
+        },
+        "human_review": {
+          "zh": "普通服务负责人、数据负责人、安全负责人和公众代表共同复核，AI 不拥有决定权。",
+          "en": "The baseline-service lead, data lead, safety lead and public representative review together; AI has no decision authority."
+        },
+        "public_output_schema": [
+          "scenario_id",
+          "mode",
+          "sample_window",
+          "denominator",
+          "completed",
+          "missing",
+          "strata",
+          "safety_events",
+          "human_interventions",
+          "resource_use",
+          "grievances",
+          "recovery_clock",
+          "decision"
+        ],
+        "owner_roles": [
+          "baseline_service_owner",
+          "data_steward",
+          "safety_owner",
+          "public_representative"
+        ],
+        "field_status": "not_field_run"
+      },
+      "measurement_question": {
+        "zh": "动态辅助导航是否在不削弱静态导视的前提下，改善不同辅助需求的路线完成？",
+        "en": "Does dynamic guidance improve route completion for different assistance needs without weakening static wayfinding?"
+      },
+      "numerator": {
+        "zh": "完成同题任务且未触发零容忍事件的记录数",
+        "en": "Records completing the same task without a zero-tolerance event"
+      },
+      "denominator": {
+        "zh": "10 条路线 × 3 类辅助需求 × 昼/夜两时段",
+        "en": "10 routes × 3 assistance-need groups × day/night"
+      },
+      "comparison_design": "paired_route_crossover",
+      "sample_rule": {
+        "zh": "每个组合均完成普通静态导视与 AI 辅助两种模式",
+        "en": "Each combination completes both static-baseline and AI-assisted modes"
+      },
+      "collection_frequency": {
+        "zh": "逐路线记录；每个时段结束复核",
+        "en": "Record every route; review at the end of each time band"
+      },
+      "stratifiers": [
+        "route",
+        "assistance_need",
+        "day_night"
+      ],
+      "statistic": "route_completion_accessibility_parity_gap_and_intervention_rate",
+      "threshold_status": "pending_baseline_committee",
+      "missing_data_rule": {
+        "zh": "缺失样本不得删除或填补为成功；单列缺失原因，若影响分层比较则结果只能 revise 或 stop。",
+        "en": "Missing samples are never deleted or imputed as success; publish the reason, and if stratified comparison is compromised the result can only be revise or stop."
+      },
+      "human_review": {
+        "zh": "普通服务负责人、数据负责人、安全负责人和公众代表共同复核，AI 不拥有决定权。",
+        "en": "The baseline-service lead, data lead, safety lead and public representative review together; AI has no decision authority."
+      },
+      "public_output_schema": [
+        "scenario_id",
+        "mode",
+        "sample_window",
+        "denominator",
+        "completed",
+        "missing",
+        "strata",
+        "safety_events",
+        "human_interventions",
+        "resource_use",
+        "grievances",
+        "recovery_clock",
+        "decision"
+      ],
+      "owner_roles": [
+        "baseline_service_owner",
+        "data_steward",
+        "safety_owner",
+        "public_representative"
+      ],
+      "architectural_prototype_ref": null,
+      "visual_priority": "reference",
+      "implementation_stage": "E1_concept_design",
+      "next_gate_requirements": [
+        "baseline_validation",
+        "operator_assignment"
+      ],
+      "public_route_invariant": "ordinary_service_continuous_in_all_states"
     },
     {
       "id": "SCN-009",
@@ -1851,7 +4359,311 @@
           "revise",
           "stop"
         ]
-      }
+      },
+      "evidence_level": "E1_catalogue_trace_complete",
+      "geometry_refs": [
+        "xiaoyuehe.climate_rest_node"
+      ],
+      "baseline_measurement_protocol": {
+        "denominator": {
+          "zh": "同一任务下全部符合准入条件的普通服务使用尝试",
+          "en": "All eligible baseline-service attempts for the same task"
+        },
+        "sample_window": {
+          "zh": "E2 原型运行后确定；同时记录时段、天气、辅助需求与退出原因",
+          "en": "Set after the E2 prototype; record time, weather, assistance needs and exit reason"
+        },
+        "minimum_fields": [
+          "task_completion",
+          "assistance_request",
+          "safety_event",
+          "fallback_used",
+          "appeal_lodged"
+        ],
+        "current_status": "not_field_run"
+      },
+      "trial_threshold_rule": {
+        "no_regression": {
+          "zh": "普通服务的可达性、可靠性和公平性不得降低",
+          "en": "Accessibility, reliability and equity of the baseline may not regress"
+        },
+        "zero_tolerance": {
+          "zh": "预警来源中断、现场值异常或提示与人工判断冲突时转人工并停止。",
+          "en": "Stop S6 when safety, rights, data minimisation, human takeover or reliable degradation fails; the human lead has final authority."
+        },
+        "ai_increment_threshold": {
+          "zh": "在 E2 基线完成后由人类场景委员会登记，当前为 unknown",
+          "en": "Registered by the human scene committee after E2 baseline completion; currently unknown"
+        }
+      },
+      "permit_dependencies": [
+        {
+          "zh": "场地与资产方同意",
+          "en": "Site and asset-owner consent"
+        },
+        {
+          "zh": "消防与疏散复核",
+          "en": "Fire and egress review"
+        },
+        {
+          "zh": "无障碍审计",
+          "en": "Accessibility audit"
+        },
+        {
+          "zh": "临时用电与网络隔离",
+          "en": "Temporary power and network isolation"
+        },
+        {
+          "zh": "设备安全与保险",
+          "en": "Equipment safety and insurance"
+        },
+        {
+          "zh": "活动或交通组织许可",
+          "en": "Event or traffic-management permit"
+        }
+      ],
+      "maintenance_cycle": {
+        "zh": "由复制场景运营者在 E2 前登记",
+        "en": "Registered by the replication-scene operator before E2"
+      },
+      "receipt_state": "pending_field_evidence",
+      "dimension_basis": "prototype_design_assumption_pending_survey",
+      "interface_geometry_refs": [],
+      "baseline_route_geometry": [
+        "BASELINE-S6"
+      ],
+      "trial_boundary_geometry": [],
+      "human_post_geometry": [],
+      "emergency_route_geometry": [
+        "FALLBACK-S6"
+      ],
+      "state_views": {},
+      "measurement_denominator": {
+        "zh": "E2 前由场景运营者登记同题分母",
+        "en": "Operator registers the same-task denominator before E2"
+      },
+      "baseline_window": {
+        "zh": "E2 原型后建立",
+        "en": "Established after the E2 prototype"
+      },
+      "zero_tolerance_events": [
+        {
+          "zh": "预警来源中断、现场值异常或提示与人工判断冲突时转人工并停止。",
+          "en": "Stop S6 when safety, rights, data minimisation, human takeover or reliable degradation fails; the human lead has final authority."
+        }
+      ],
+      "recovery_protocol": {
+        "zh": "拆除传感插件，保留树荫、雨棚、座椅、饮水和公告牌。",
+        "en": "Remove and isolate the optional S6 equipment; retain the complete staffed, static and accessible baseline."
+      },
+      "quote_status": "pending_market_quote",
+      "permit_gate": "site_fire_accessibility_power_network_traffic_equipment_permissions_complete_before_TRIAL",
+      "measurement_clock": {
+        "zh": "停止指令发出时开始，普通任务由人工完成且两条公共路线恢复开放时结束；E2 演练前不设虚构阈值。",
+        "en": "Starts at the stop command and ends when staff complete the ordinary task and both public routes reopen; no invented threshold before E2."
+      },
+      "baseline_sample_rule": {
+        "zh": "同题、同人、同空间、同时间分层；普通服务先记录，AI 只比较增量。",
+        "en": "Same task, user, space and stratified time; baseline first, then compare only the AI increment."
+      },
+      "recovery_verification": {
+        "zh": "安全、普通服务和公众代表共同签字；结果只允许 adopt / revise / stop。",
+        "en": "Safety, baseline-service and public representatives co-sign; adopt / revise / stop only."
+      },
+      "review_due": "after_E2_or_next_annual_review",
+      "prototype_readiness": "E1_catalogue_trace_complete",
+      "readiness_gate": "replicate_after_S7_review",
+      "survey_dependency": [
+        "official_boundary",
+        "topographic_survey",
+        "ownership",
+        "station_exits",
+        "utilities",
+        "fire_access",
+        "traffic_counts"
+      ],
+      "permit_checklist": [
+        "PERMIT-SITE",
+        "PERMIT-TITLE",
+        "PERMIT-FIRE",
+        "PERMIT-ACCESS"
+      ],
+      "bill_of_components": [],
+      "quantity_formula": "adapt_after_site_survey",
+      "procurement_package_ref": [],
+      "baseline_form_ref": "FORM-BASELINE",
+      "trial_form_ref": "FORM-TRIAL",
+      "incident_form_ref": "FORM-INCIDENT",
+      "recovery_drill_ref": "FORM-RECOVERY",
+      "receipt_template_ref": "FORM-RECEIPT",
+      "e2_status": "not_built",
+      "verification_scope": "synthetic_design_contract_only",
+      "test_case_ids": [
+        "SCN-009-T01",
+        "SCN-009-T02",
+        "SCN-009-T03",
+        "SCN-009-T04",
+        "SCN-009-T05",
+        "SCN-009-T06",
+        "SCN-009-T07"
+      ],
+      "initial_state": "OPEN",
+      "injected_event": "see_v10_tabletop_results",
+      "expected_state": "see_v10_tabletop_results",
+      "observed_state": "see_v10_tabletop_results",
+      "invariants_checked": [
+        "baseline_route_continuous",
+        "permit_gate_before_trial",
+        "accountable_human_before_trial",
+        "zero_tolerance_stops_trial",
+        "recovery_before_reopen",
+        "retirement_restores_public_use"
+      ],
+      "synthetic_result": "pass",
+      "input_hash": "resolved_per_test_case",
+      "recovery_exit": {
+        "zh": "拆除传感插件，保留树荫、雨棚、座椅、饮水和公告牌。",
+        "en": "Remove and isolate the optional S6 equipment; retain the complete staffed, static and accessible baseline."
+      },
+      "field_status": "not_field_run",
+      "measurement_contract": {
+        "measurement_question": {
+          "zh": "极端天气提示是否在遮阴、饮水和人工服务先成立后，提高正确服务抵达率？",
+          "en": "After shade, water and staffed service operate, do weather prompts improve arrival at the correct service?"
+        },
+        "numerator": {
+          "zh": "完成同题任务且未触发零容忍事件的记录数",
+          "en": "Records completing the same task without a zero-tolerance event"
+        },
+        "denominator": {
+          "zh": "3 类天气条件，每类至少 30 个节点小时",
+          "en": "Three weather classes with at least 30 node-hours each"
+        },
+        "baseline_window": {
+          "zh": "常态、高温/强日照、降雨三类；普通静态服务与 AI 提示并行记录",
+          "en": "Normal, heat/strong sun and rain; record baseline static service and AI prompts in parallel"
+        },
+        "comparison_design": "weather_stratified_node_hours",
+        "sample_rule": {
+          "zh": "常态、高温/强日照、降雨三类；普通静态服务与 AI 提示并行记录",
+          "en": "Normal, heat/strong sun and rain; record baseline static service and AI prompts in parallel"
+        },
+        "collection_frequency": {
+          "zh": "每节点小时记录；事件结束后复核",
+          "en": "Record each node-hour; review after each event"
+        },
+        "stratifiers": [
+          "weather_class",
+          "node",
+          "time_band"
+        ],
+        "statistic": "correct_service_arrival_rate_resource_per_completed_task",
+        "threshold_rule": {
+          "zh": "普通服务不得退化；安全事件零容忍；AI 增量阈值仅在基线完成后由人类场景委员会登记。",
+          "en": "Baseline service may not regress; safety events have zero tolerance; the human scene committee registers any AI-increment threshold only after the baseline."
+        },
+        "threshold_status": "pending_baseline_committee",
+        "zero_tolerance_events": [
+          "official_warning_contradicted",
+          "water_or_shade_baseline_unavailable",
+          "unsafe_route_prompt"
+        ],
+        "missing_data_rule": {
+          "zh": "缺失样本不得删除或填补为成功；单列缺失原因，若影响分层比较则结果只能 revise 或 stop。",
+          "en": "Missing samples are never deleted or imputed as success; publish the reason, and if stratified comparison is compromised the result can only be revise or stop."
+        },
+        "human_review": {
+          "zh": "普通服务负责人、数据负责人、安全负责人和公众代表共同复核，AI 不拥有决定权。",
+          "en": "The baseline-service lead, data lead, safety lead and public representative review together; AI has no decision authority."
+        },
+        "public_output_schema": [
+          "scenario_id",
+          "mode",
+          "sample_window",
+          "denominator",
+          "completed",
+          "missing",
+          "strata",
+          "safety_events",
+          "human_interventions",
+          "resource_use",
+          "grievances",
+          "recovery_clock",
+          "decision"
+        ],
+        "owner_roles": [
+          "baseline_service_owner",
+          "data_steward",
+          "safety_owner",
+          "public_representative"
+        ],
+        "field_status": "not_field_run"
+      },
+      "measurement_question": {
+        "zh": "极端天气提示是否在遮阴、饮水和人工服务先成立后，提高正确服务抵达率？",
+        "en": "After shade, water and staffed service operate, do weather prompts improve arrival at the correct service?"
+      },
+      "numerator": {
+        "zh": "完成同题任务且未触发零容忍事件的记录数",
+        "en": "Records completing the same task without a zero-tolerance event"
+      },
+      "denominator": {
+        "zh": "3 类天气条件，每类至少 30 个节点小时",
+        "en": "Three weather classes with at least 30 node-hours each"
+      },
+      "comparison_design": "weather_stratified_node_hours",
+      "sample_rule": {
+        "zh": "常态、高温/强日照、降雨三类；普通静态服务与 AI 提示并行记录",
+        "en": "Normal, heat/strong sun and rain; record baseline static service and AI prompts in parallel"
+      },
+      "collection_frequency": {
+        "zh": "每节点小时记录；事件结束后复核",
+        "en": "Record each node-hour; review after each event"
+      },
+      "stratifiers": [
+        "weather_class",
+        "node",
+        "time_band"
+      ],
+      "statistic": "correct_service_arrival_rate_resource_per_completed_task",
+      "threshold_status": "pending_baseline_committee",
+      "missing_data_rule": {
+        "zh": "缺失样本不得删除或填补为成功；单列缺失原因，若影响分层比较则结果只能 revise 或 stop。",
+        "en": "Missing samples are never deleted or imputed as success; publish the reason, and if stratified comparison is compromised the result can only be revise or stop."
+      },
+      "human_review": {
+        "zh": "普通服务负责人、数据负责人、安全负责人和公众代表共同复核，AI 不拥有决定权。",
+        "en": "The baseline-service lead, data lead, safety lead and public representative review together; AI has no decision authority."
+      },
+      "public_output_schema": [
+        "scenario_id",
+        "mode",
+        "sample_window",
+        "denominator",
+        "completed",
+        "missing",
+        "strata",
+        "safety_events",
+        "human_interventions",
+        "resource_use",
+        "grievances",
+        "recovery_clock",
+        "decision"
+      ],
+      "owner_roles": [
+        "baseline_service_owner",
+        "data_steward",
+        "safety_owner",
+        "public_representative"
+      ],
+      "architectural_prototype_ref": null,
+      "visual_priority": "reference",
+      "implementation_stage": "E1_concept_design",
+      "next_gate_requirements": [
+        "baseline_validation",
+        "operator_assignment"
+      ],
+      "public_route_invariant": "ordinary_service_continuous_in_all_states"
     },
     {
       "id": "SCN-010",
@@ -2055,7 +4867,626 @@
           "revise",
           "stop"
         ]
-      }
+      },
+      "evidence_level": "E2_READINESS_DOCUMENTED_NOT_BUILT",
+      "geometry_refs": [
+        "V7-D-BASE-NS",
+        "V7-D-BASE-EW",
+        "V7-D-TACTILE-NS",
+        "V7-D-TACTILE-EW",
+        "V7-D-CROSS-N",
+        "V7-D-CROSS-S",
+        "V7-D-RAMP-N",
+        "V7-D-RAMP-S",
+        "V7-D-TRANSIT",
+        "V7-D-EMERGENCY",
+        "V7-D-REMOVAL",
+        "V7-D-FIRE",
+        "V7-D-CURB-N",
+        "V7-D-CURB-S",
+        "V7-D-SERVICE-ROUTE",
+        "V7-D-FORECOURT",
+        "V7-D-PLATFORM",
+        "V7-D-WAIT-W",
+        "V7-D-WAIT-E",
+        "V7-D-TRIAL",
+        "V7-D-BUFFER",
+        "V7-D-EVIDENCE",
+        "V7-D-EGRESS",
+        "V7-D-RAIN-W",
+        "V7-D-RAIN-E",
+        "V7-D-SHADE-W",
+        "V7-D-SHADE-E",
+        "V7-D-RESTORE",
+        "V7-D-NODATA",
+        "V7-D-PORCH",
+        "V7-D-SERVICE",
+        "V7-D-CONTROL",
+        "V7-D-STORAGE",
+        "V7-D-EVIDENCE-WALL",
+        "V7-D-ENT-N",
+        "V7-D-ENT-E",
+        "V7-D-ENT-S",
+        "V7-D-ENT-W",
+        "V7-D-STAFF-BASE",
+        "V7-D-STAFF-TRIAL",
+        "V7-D-ESTOP-01",
+        "V7-D-ESTOP-02",
+        "V7-D-UTILITY",
+        "V7-D-FIRE-GATE",
+        "V7-D-APPEAL",
+        "V7-D-WATER",
+        "V7-D-STATE-OPEN",
+        "V7-D-STATE-TRIAL",
+        "V7-D-COUNTER",
+        "V7-D-STORAGE-GATE",
+        "V7-D-RAMP-PT-N",
+        "V7-D-RAMP-PT-S",
+        "V7-D-LIGHT-01",
+        "V7-D-LIGHT-02",
+        "V7-D-LIGHT-03",
+        "V7-D-LIGHT-04",
+        "V7-D-LIGHT-05",
+        "V7-D-LIGHT-06",
+        "V7-D-LIGHT-07",
+        "V7-D-LIGHT-08",
+        "V7-D-SEAT-01",
+        "V7-D-SEAT-02",
+        "V7-D-SEAT-03",
+        "V7-D-SEAT-04",
+        "V7-D-SEAT-05",
+        "V7-D-SEAT-06",
+        "V7-D-SEAT-07",
+        "V7-D-SEAT-08",
+        "V7-D-TREE-01",
+        "V7-D-TREE-02",
+        "V7-D-TREE-03",
+        "V7-D-TREE-04",
+        "V7-D-TREE-05",
+        "V7-D-TREE-06",
+        "V7-D-TREE-07",
+        "V7-D-TREE-08",
+        "V7-D-TREE-09",
+        "V7-D-TREE-10",
+        "V7-D-TREE-11",
+        "V7-D-TREE-12",
+        "V7-D-BARRIER-01",
+        "V7-D-BARRIER-02",
+        "V7-D-BARRIER-03",
+        "V7-D-BARRIER-04",
+        "V7-D-BARRIER-05",
+        "V7-D-BARRIER-06",
+        "V7-D-BARRIER-07",
+        "V7-D-BARRIER-08",
+        "V7-D-BARRIER-09",
+        "V7-D-BARRIER-10",
+        "V7-D-BARRIER-11",
+        "V7-D-BARRIER-12",
+        "V7-D-BARRIER-13",
+        "V7-D-BARRIER-14",
+        "V7-D-BARRIER-15",
+        "V7-D-BARRIER-16",
+        "V7-D-BARRIER-17",
+        "V7-D-BARRIER-18"
+      ],
+      "baseline_measurement_protocol": {
+        "denominator": {
+          "zh": "同一任务下全部符合准入条件的普通服务使用尝试",
+          "en": "All eligible baseline-service attempts for the same task"
+        },
+        "sample_window": {
+          "zh": "E2 原型运行后确定；同时记录时段、天气、辅助需求与退出原因",
+          "en": "Set after the E2 prototype; record time, weather, assistance needs and exit reason"
+        },
+        "minimum_fields": [
+          "task_completion",
+          "assistance_request",
+          "safety_event",
+          "fallback_used",
+          "appeal_lodged"
+        ],
+        "current_status": "not_field_run"
+      },
+      "trial_threshold_rule": {
+        "no_regression": {
+          "zh": "普通服务的可达性、可靠性和公平性不得降低",
+          "en": "Accessibility, reliability and equity of the baseline may not regress"
+        },
+        "zero_tolerance": {
+          "zh": "发生碰撞/近失误、定位失效、人工接管超时或投诉集中时停止。",
+          "en": "Stop S7 when safety, rights, data minimisation, human takeover or reliable degradation fails; the human lead has final authority."
+        },
+        "ai_increment_threshold": {
+          "zh": "在 E2 基线完成后由人类场景委员会登记，当前为 unknown",
+          "en": "Registered by the human scene committee after E2 baseline completion; currently unknown"
+        }
+      },
+      "permit_dependencies": [
+        {
+          "zh": "场地与资产方同意",
+          "en": "Site and asset-owner consent"
+        },
+        {
+          "zh": "消防与疏散复核",
+          "en": "Fire and egress review"
+        },
+        {
+          "zh": "无障碍审计",
+          "en": "Accessibility audit"
+        },
+        {
+          "zh": "临时用电与网络隔离",
+          "en": "Temporary power and network isolation"
+        },
+        {
+          "zh": "设备安全与保险",
+          "en": "Equipment safety and insurance"
+        },
+        {
+          "zh": "活动或交通组织许可",
+          "en": "Event or traffic-management permit"
+        }
+      ],
+      "maintenance_cycle": {
+        "zh": "每日开场检查、每次试验前联锁检查、每周资产盘点、每月公开复盘",
+        "en": "Daily opening check, interlock check before every trial, weekly asset inventory, monthly public review"
+      },
+      "receipt_state": "pending_field_evidence",
+      "dimension_basis": "prototype_design_assumption_pending_survey",
+      "interface_geometry_refs": [
+        "V7-D-CURB-N",
+        "V7-D-CURB-S",
+        "V7-D-CROSS-N",
+        "V7-D-CROSS-S",
+        "V7-D-TRANSIT"
+      ],
+      "baseline_route_geometry": [
+        "V7-D-BASE-NS",
+        "V7-D-BASE-EW",
+        "V7-D-TACTILE-NS",
+        "V7-D-TACTILE-EW",
+        "V7-D-CROSS-N",
+        "V7-D-CROSS-S"
+      ],
+      "trial_boundary_geometry": [
+        "V7-D-TRIAL",
+        "V7-D-BUFFER"
+      ],
+      "human_post_geometry": [
+        "V7-D-STAFF-BASE",
+        "V7-D-STAFF-TRIAL",
+        "V7-D-ESTOP-01",
+        "V7-D-ESTOP-02"
+      ],
+      "emergency_route_geometry": [
+        "V7-D-EMERGENCY",
+        "V7-D-FIRE",
+        "V7-D-EGRESS"
+      ],
+      "state_views": {
+        "OPEN": [
+          "V7-D-BASE-NS",
+          "V7-D-BASE-EW",
+          "V7-D-TACTILE-NS",
+          "V7-D-TACTILE-EW",
+          "V7-D-TRANSIT",
+          "V7-D-FORECOURT",
+          "V7-D-PLATFORM",
+          "V7-D-SERVICE",
+          "V7-D-PORCH"
+        ],
+        "TRIAL": [
+          "V7-D-TRIAL",
+          "V7-D-BUFFER",
+          "V7-D-CONTROL",
+          "V7-D-STAFF-TRIAL",
+          "V7-D-ESTOP-01",
+          "V7-D-ESTOP-02",
+          "V7-D-STATE-TRIAL"
+        ],
+        "PAUSE": [
+          "V7-D-EMERGENCY",
+          "V7-D-EGRESS",
+          "V7-D-STAFF-BASE",
+          "V7-D-APPEAL",
+          "V7-D-STATE-OPEN"
+        ],
+        "RETIRE": [
+          "V7-D-REMOVAL",
+          "V7-D-SERVICE-ROUTE",
+          "V7-D-RESTORE",
+          "V7-D-EVIDENCE",
+          "V7-D-PORCH",
+          "V7-D-EVIDENCE-WALL",
+          "V7-D-STORAGE"
+        ]
+      },
+      "measurement_denominator": {
+        "zh": "每种模式连续记录 100 次符合准入条件的接驳通行，并保留全部严重事件。",
+        "en": "Record 100 eligible interchange passages in each mode and retain every severe event."
+      },
+      "baseline_window": {
+        "zh": "E2 后连续 7 个运行日，按高峰/平峰、昼/夜、天气和辅助需求分层。",
+        "en": "Seven operating days after E2, stratified by peak/off-peak, day/night, weather and assistance need."
+      },
+      "zero_tolerance_events": [
+        "collision_or_person_in_safety_buffer",
+        "emergency_stop_failure",
+        "baseline_route_blocked_or_accessibility_regressed",
+        "human_takeover_timeout"
+      ],
+      "recovery_protocol": {
+        "zh": "停机并关闭试验边界；人工完成任务；两条公共路线持续开放；记录事件；设备经撤场线进入存储或供应商回收；委员会复核后方可重新申请 TRIAL。",
+        "en": "Stop and close the trial boundary; staff complete the task; keep both routes open; log the event; move equipment to storage or supplier return; committee review is required before another TRIAL."
+      },
+      "quote_status": "pending_market_quote",
+      "permit_gate": "site_fire_accessibility_power_network_traffic_equipment_permissions_complete_before_TRIAL",
+      "measurement_clock": {
+        "zh": "停止指令发出时开始，普通任务由人工完成且两条公共路线恢复开放时结束；E2 演练前不设虚构阈值。",
+        "en": "Starts at the stop command and ends when staff complete the ordinary task and both public routes reopen; no invented threshold before E2."
+      },
+      "baseline_sample_rule": {
+        "zh": "同题、同人、同空间、同时间分层；普通服务先记录，AI 只比较增量。",
+        "en": "Same task, user, space and stratified time; baseline first, then compare only the AI increment."
+      },
+      "recovery_verification": {
+        "zh": "安全、普通服务和公众代表共同签字；结果只允许 adopt / revise / stop。",
+        "en": "Safety, baseline-service and public representatives co-sign; adopt / revise / stop only."
+      },
+      "prototype_kit_refs": [
+        "KIT-PAV-01",
+        "KIT-ACC-01",
+        "KIT-ACC-02",
+        "KIT-BGR-01",
+        "KIT-SHA-01",
+        "KIT-FUR-01",
+        "KIT-WAT-01",
+        "KIT-LGT-01",
+        "KIT-SAF-01",
+        "KIT-SAF-02",
+        "KIT-EVD-01",
+        "KIT-EVD-02",
+        "KIT-OPS-01",
+        "KIT-AI-01",
+        "KIT-AI-02",
+        "KIT-DAT-01",
+        "KIT-RET-01"
+      ],
+      "daily_operation_steps": [
+        {
+          "id": "DAY-01",
+          "state": "OPEN",
+          "zh": "开场检查公共十字、盲道、坡道、照明和人工岗位。",
+          "en": "Opening check of public cross, tactile guidance, ramps, lighting and staffed posts."
+        },
+        {
+          "id": "DAY-02",
+          "state": "OPEN",
+          "zh": "普通接驳独立运行并建立非识别基线记录。",
+          "en": "Conventional interchange runs independently and establishes a non-identifying baseline log."
+        },
+        {
+          "id": "DAY-03",
+          "state": "TRIAL",
+          "zh": "许可与检查表齐全后，在东南湾开启单次受控试验。",
+          "en": "After permits and checks are complete, open one controlled trial in the southeast bay."
+        },
+        {
+          "id": "DAY-04",
+          "state": "PAUSE",
+          "zh": "触发停止时设备停机、人工完成任务、公共十字保持开放。",
+          "en": "On a stop trigger, equipment halts, staff complete the task and the public cross stays open."
+        },
+        {
+          "id": "DAY-05",
+          "state": "OPEN",
+          "zh": "闭场前对照普通与试验记录，回执保持采用、修改或停止三选一。",
+          "en": "Before close, compare baseline and trial logs; the receipt remains adopt, revise or stop only."
+        },
+        {
+          "id": "DAY-06",
+          "state": "RETIRE",
+          "zh": "设备经撤场线进入存储或供应商回收，试验湾恢复普通用途。",
+          "en": "Equipment follows the removal route to storage or supplier return; the bay returns to ordinary use."
+        }
+      ],
+      "curb_refs": [
+        "V7-D-CURB-N",
+        "V7-D-CURB-S"
+      ],
+      "tactile_route_refs": [
+        "V7-D-TACTILE-NS",
+        "V7-D-TACTILE-EW"
+      ],
+      "drainage_refs": [
+        "V7-D-RAIN-W",
+        "V7-D-RAIN-E"
+      ],
+      "lighting_refs": [
+        "V7-D-LIGHT-01",
+        "V7-D-LIGHT-02",
+        "V7-D-LIGHT-03",
+        "V7-D-LIGHT-04",
+        "V7-D-LIGHT-05",
+        "V7-D-LIGHT-06",
+        "V7-D-LIGHT-07",
+        "V7-D-LIGHT-08"
+      ],
+      "storage_refs": [
+        "V7-D-STORAGE",
+        "V7-D-STORAGE-GATE",
+        "V7-D-SERVICE-ROUTE"
+      ],
+      "review_due": "after_E2_or_next_annual_review",
+      "prototype_readiness": "E2_documented_prototype_ready",
+      "readiness_gate": "all_eight_permits_and_four_independent_posts_before_TRIAL",
+      "survey_dependency": [
+        "official_boundary",
+        "topographic_survey",
+        "ownership",
+        "station_exits",
+        "utilities",
+        "fire_access",
+        "traffic_counts"
+      ],
+      "permit_checklist": [
+        "PERMIT-SITE",
+        "PERMIT-TITLE",
+        "PERMIT-FIRE",
+        "PERMIT-ACCESS",
+        "PERMIT-POWER",
+        "PERMIT-NET",
+        "PERMIT-TRAFFIC",
+        "PERMIT-EQUIP"
+      ],
+      "bill_of_components": [
+        "KIT-PAV-01",
+        "KIT-ACC-01",
+        "KIT-ACC-02",
+        "KIT-BGR-01",
+        "KIT-SHA-01",
+        "KIT-FUR-01",
+        "KIT-WAT-01",
+        "KIT-LGT-01",
+        "KIT-SAF-01",
+        "KIT-SAF-02",
+        "KIT-EVD-01",
+        "KIT-EVD-02",
+        "KIT-OPS-01",
+        "KIT-AI-01",
+        "KIT-DAT-01",
+        "KIT-RET-01"
+      ],
+      "quantity_formula": "see_visual_assets_e2_readiness_json",
+      "procurement_package_ref": [
+        "PROC-BASELINE",
+        "PROC-SAFETY",
+        "PROC-EVIDENCE",
+        "PROC-AI-OPTIONAL"
+      ],
+      "baseline_form_ref": "FORM-BASELINE",
+      "trial_form_ref": "FORM-TRIAL",
+      "incident_form_ref": "FORM-INCIDENT",
+      "recovery_drill_ref": "FORM-RECOVERY",
+      "receipt_template_ref": "FORM-RECEIPT",
+      "e2_status": "E2_documented_prototype_ready",
+      "verification_scope": "synthetic_design_contract_only",
+      "test_case_ids": [
+        "SCN-010-T01",
+        "SCN-010-T02",
+        "SCN-010-T03",
+        "SCN-010-T04",
+        "SCN-010-T05",
+        "SCN-010-T06",
+        "SCN-010-T07"
+      ],
+      "initial_state": "OPEN",
+      "injected_event": "see_v10_tabletop_results",
+      "expected_state": "see_v10_tabletop_results",
+      "observed_state": "see_v10_tabletop_results",
+      "invariants_checked": [
+        "baseline_route_continuous",
+        "permit_gate_before_trial",
+        "accountable_human_before_trial",
+        "zero_tolerance_stops_trial",
+        "recovery_before_reopen",
+        "retirement_restores_public_use"
+      ],
+      "synthetic_result": "pass",
+      "input_hash": "resolved_per_test_case",
+      "recovery_exit": {
+        "zh": "车辆撤场，接驳湾恢复普通无障碍上下客与临时活动使用。",
+        "en": "Remove and isolate the optional S7 equipment; retain the complete staffed, static and accessible baseline."
+      },
+      "field_status": "not_field_run",
+      "spatial_decision_ref": "visual/assets/spatial-decision.json#ALT-C",
+      "alternative_geometry_refs": [
+        "geometry/roads.geojson#V11-ALT-A-BASE-NS",
+        "geometry/roads.geojson#V11-ALT-A-BASE-EW",
+        "geometry/roads.geojson#V11-ALT-A-TRIAL-ROUTE-NS",
+        "geometry/roads.geojson#V11-ALT-A-TRIAL-ROUTE-EW",
+        "geometry/roads.geojson#V11-ALT-A-FIRE",
+        "geometry/roads.geojson#V11-ALT-A-RETIRE-1",
+        "geometry/public_space.geojson#V11-ALT-A-TRIAL-1",
+        "geometry/public_space.geojson#V11-ALT-A-BUFFER-1",
+        "geometry/constraints.geojson#V11-ALT-A-HUMAN-1",
+        "geometry/constraints.geojson#V11-ALT-A-ESTOP-1",
+        "geometry/constraints.geojson#V11-ALT-A-ESTOP-2",
+        "geometry/roads.geojson#V11-ALT-B-BASE-NS",
+        "geometry/roads.geojson#V11-ALT-B-BASE-EW",
+        "geometry/roads.geojson#V11-ALT-B-TRIAL-ROUTE-NS",
+        "geometry/roads.geojson#V11-ALT-B-TRIAL-ROUTE-EW",
+        "geometry/roads.geojson#V11-ALT-B-FIRE",
+        "geometry/roads.geojson#V11-ALT-B-RETIRE-1",
+        "geometry/roads.geojson#V11-ALT-B-RETIRE-2",
+        "geometry/public_space.geojson#V11-ALT-B-TRIAL-1",
+        "geometry/public_space.geojson#V11-ALT-B-TRIAL-2",
+        "geometry/public_space.geojson#V11-ALT-B-BUFFER-1",
+        "geometry/public_space.geojson#V11-ALT-B-BUFFER-2",
+        "geometry/constraints.geojson#V11-ALT-B-HUMAN-1",
+        "geometry/constraints.geojson#V11-ALT-B-HUMAN-2",
+        "geometry/constraints.geojson#V11-ALT-B-ESTOP-1",
+        "geometry/constraints.geojson#V11-ALT-B-ESTOP-2",
+        "geometry/constraints.geojson#V11-ALT-B-ESTOP-3",
+        "geometry/constraints.geojson#V11-ALT-B-ESTOP-4",
+        "geometry/roads.geojson#V11-ALT-C-BASE-NS",
+        "geometry/roads.geojson#V11-ALT-C-BASE-EW",
+        "geometry/roads.geojson#V11-ALT-C-TRIAL-ROUTE-NS",
+        "geometry/roads.geojson#V11-ALT-C-TRIAL-ROUTE-EW",
+        "geometry/roads.geojson#V11-ALT-C-FIRE",
+        "geometry/roads.geojson#V11-ALT-C-RETIRE-1",
+        "geometry/public_space.geojson#V11-ALT-C-TRIAL-1",
+        "geometry/public_space.geojson#V11-ALT-C-BUFFER-1",
+        "geometry/constraints.geojson#V11-ALT-C-HUMAN-1",
+        "geometry/constraints.geojson#V11-ALT-C-ESTOP-1",
+        "geometry/constraints.geojson#V11-ALT-C-ESTOP-2"
+      ],
+      "design_alternative_state": "advance_design",
+      "measurement_contract": {
+        "measurement_question": {
+          "zh": "低速辅助接驳是否在公共十字不断线的前提下，改善同题接驳且可被人工及时停止？",
+          "en": "Does low-speed assistance improve the same interchange task while the public cross stays unbroken and staff can stop it promptly?"
+        },
+        "numerator": {
+          "zh": "完成同题任务且未触发零容忍事件的记录数",
+          "en": "Records completing the same task without a zero-tolerance event"
+        },
+        "denominator": {
+          "zh": "每种模式 100 次符合准入条件的接驳通行；严重事件全量保留",
+          "en": "100 eligible interchange passages per mode; retain every severe event"
+        },
+        "baseline_window": {
+          "zh": "普通接驳连续 7 个运行日，再记录 AI 试验模式 100 次；按高峰/平峰、昼夜、天气和辅助需求分层",
+          "en": "Seven baseline operating days, then 100 AI-trial passages; stratify by peak, day/night, weather and assistance need"
+        },
+        "comparison_design": "sequential_baseline_then_controlled_trial",
+        "sample_rule": {
+          "zh": "普通接驳连续 7 个运行日，再记录 AI 试验模式 100 次；按高峰/平峰、昼夜、天气和辅助需求分层",
+          "en": "Seven baseline operating days, then 100 AI-trial passages; stratify by peak, day/night, weather and assistance need"
+        },
+        "collection_frequency": {
+          "zh": "逐通行记录；每日闭场、每周委员会复核",
+          "en": "Record each passage; daily close and weekly committee review"
+        },
+        "stratifiers": [
+          "peak_offpeak",
+          "day_night",
+          "weather",
+          "assistance_need"
+        ],
+        "statistic": "completion_rate_conflicts_per_100_intervention_rate_recovery_clock",
+        "threshold_rule": {
+          "zh": "普通服务不得退化；安全事件零容忍；AI 增量阈值仅在基线完成后由人类场景委员会登记。",
+          "en": "Baseline service may not regress; safety events have zero tolerance; the human scene committee registers any AI-increment threshold only after the baseline."
+        },
+        "threshold_status": "pending_baseline_committee",
+        "zero_tolerance_events": [
+          "collision",
+          "person_in_safety_buffer",
+          "emergency_stop_failure",
+          "baseline_route_blocked",
+          "human_takeover_timeout"
+        ],
+        "missing_data_rule": {
+          "zh": "缺失样本不得删除或填补为成功；单列缺失原因，若影响分层比较则结果只能 revise 或 stop。",
+          "en": "Missing samples are never deleted or imputed as success; publish the reason, and if stratified comparison is compromised the result can only be revise or stop."
+        },
+        "human_review": {
+          "zh": "普通服务负责人、数据负责人、安全负责人和公众代表共同复核，AI 不拥有决定权。",
+          "en": "The baseline-service lead, data lead, safety lead and public representative review together; AI has no decision authority."
+        },
+        "public_output_schema": [
+          "scenario_id",
+          "mode",
+          "sample_window",
+          "denominator",
+          "completed",
+          "missing",
+          "strata",
+          "safety_events",
+          "human_interventions",
+          "resource_use",
+          "grievances",
+          "recovery_clock",
+          "decision"
+        ],
+        "owner_roles": [
+          "baseline_service_owner",
+          "data_steward",
+          "safety_owner",
+          "public_representative"
+        ],
+        "field_status": "not_field_run"
+      },
+      "measurement_question": {
+        "zh": "低速辅助接驳是否在公共十字不断线的前提下，改善同题接驳且可被人工及时停止？",
+        "en": "Does low-speed assistance improve the same interchange task while the public cross stays unbroken and staff can stop it promptly?"
+      },
+      "numerator": {
+        "zh": "完成同题任务且未触发零容忍事件的记录数",
+        "en": "Records completing the same task without a zero-tolerance event"
+      },
+      "denominator": {
+        "zh": "每种模式 100 次符合准入条件的接驳通行；严重事件全量保留",
+        "en": "100 eligible interchange passages per mode; retain every severe event"
+      },
+      "comparison_design": "sequential_baseline_then_controlled_trial",
+      "sample_rule": {
+        "zh": "普通接驳连续 7 个运行日，再记录 AI 试验模式 100 次；按高峰/平峰、昼夜、天气和辅助需求分层",
+        "en": "Seven baseline operating days, then 100 AI-trial passages; stratify by peak, day/night, weather and assistance need"
+      },
+      "collection_frequency": {
+        "zh": "逐通行记录；每日闭场、每周委员会复核",
+        "en": "Record each passage; daily close and weekly committee review"
+      },
+      "stratifiers": [
+        "peak_offpeak",
+        "day_night",
+        "weather",
+        "assistance_need"
+      ],
+      "statistic": "completion_rate_conflicts_per_100_intervention_rate_recovery_clock",
+      "threshold_status": "pending_baseline_committee",
+      "missing_data_rule": {
+        "zh": "缺失样本不得删除或填补为成功；单列缺失原因，若影响分层比较则结果只能 revise 或 stop。",
+        "en": "Missing samples are never deleted or imputed as success; publish the reason, and if stratified comparison is compromised the result can only be revise or stop."
+      },
+      "human_review": {
+        "zh": "普通服务负责人、数据负责人、安全负责人和公众代表共同复核，AI 不拥有决定权。",
+        "en": "The baseline-service lead, data lead, safety lead and public representative review together; AI has no decision authority."
+      },
+      "public_output_schema": [
+        "scenario_id",
+        "mode",
+        "sample_window",
+        "denominator",
+        "completed",
+        "missing",
+        "strata",
+        "safety_events",
+        "human_interventions",
+        "resource_use",
+        "grievances",
+        "recovery_clock",
+        "decision"
+      ],
+      "owner_roles": [
+        "baseline_service_owner",
+        "data_steward",
+        "safety_owner",
+        "public_representative"
+      ],
+      "architectural_prototype_ref": "LMK-03",
+      "visual_priority": "hero",
+      "implementation_stage": "G0_survey_and_permit_preparation",
+      "next_gate_requirements": [
+        "survey_complete",
+        "title_and_interface_verified",
+        "permit_dependencies_closed",
+        "four_independent_posts",
+        "seven_ordinary_days"
+      ],
+      "public_route_invariant": "ordinary_service_continuous_in_all_states"
     },
     {
       "id": "SCN-011",
@@ -2256,7 +5687,327 @@
           "revise",
           "stop"
         ]
-      }
+      },
+      "evidence_level": "E1_catalogue_trace_complete",
+      "geometry_refs": [
+        "V7-D-BASE-NS",
+        "V7-D-BASE-EW",
+        "V7-D-EMERGENCY",
+        "V7-D-REMOVAL",
+        "V7-D-FORECOURT",
+        "V7-D-TRIAL",
+        "V7-D-EVIDENCE",
+        "V7-D-SERVICE",
+        "V7-D-CONTROL",
+        "V7-D-ENT-N",
+        "V7-D-ENT-E",
+        "V7-D-ENT-S",
+        "V7-D-ENT-W",
+        "V7-D-STAFF-BASE",
+        "V7-D-UTILITY"
+      ],
+      "baseline_measurement_protocol": {
+        "denominator": {
+          "zh": "同一任务下全部符合准入条件的普通服务使用尝试",
+          "en": "All eligible baseline-service attempts for the same task"
+        },
+        "sample_window": {
+          "zh": "E2 原型运行后确定；同时记录时段、天气、辅助需求与退出原因",
+          "en": "Set after the E2 prototype; record time, weather, assistance needs and exit reason"
+        },
+        "minimum_fields": [
+          "task_completion",
+          "assistance_request",
+          "safety_event",
+          "fallback_used",
+          "appeal_lodged"
+        ],
+        "current_status": "not_field_run"
+      },
+      "trial_threshold_rule": {
+        "no_regression": {
+          "zh": "普通服务的可达性、可靠性和公平性不得降低",
+          "en": "Accessibility, reliability and equity of the baseline may not regress"
+        },
+        "zero_tolerance": {
+          "zh": "人工不可用、错误影响办事权利或未授权采集身份信息时停止。",
+          "en": "Stop S8 when safety, rights, data minimisation, human takeover or reliable degradation fails; the human lead has final authority."
+        },
+        "ai_increment_threshold": {
+          "zh": "在 E2 基线完成后由人类场景委员会登记，当前为 unknown",
+          "en": "Registered by the human scene committee after E2 baseline completion; currently unknown"
+        }
+      },
+      "permit_dependencies": [
+        {
+          "zh": "场地与资产方同意",
+          "en": "Site and asset-owner consent"
+        },
+        {
+          "zh": "消防与疏散复核",
+          "en": "Fire and egress review"
+        },
+        {
+          "zh": "无障碍审计",
+          "en": "Accessibility audit"
+        },
+        {
+          "zh": "临时用电与网络隔离",
+          "en": "Temporary power and network isolation"
+        },
+        {
+          "zh": "设备安全与保险",
+          "en": "Equipment safety and insurance"
+        },
+        {
+          "zh": "活动或交通组织许可",
+          "en": "Event or traffic-management permit"
+        }
+      ],
+      "maintenance_cycle": {
+        "zh": "由复制场景运营者在 E2 前登记",
+        "en": "Registered by the replication-scene operator before E2"
+      },
+      "receipt_state": "pending_field_evidence",
+      "dimension_basis": "prototype_design_assumption_pending_survey",
+      "interface_geometry_refs": [],
+      "baseline_route_geometry": [
+        "BASELINE-S8"
+      ],
+      "trial_boundary_geometry": [],
+      "human_post_geometry": [],
+      "emergency_route_geometry": [
+        "FALLBACK-S8"
+      ],
+      "state_views": {},
+      "measurement_denominator": {
+        "zh": "E2 前由场景运营者登记同题分母",
+        "en": "Operator registers the same-task denominator before E2"
+      },
+      "baseline_window": {
+        "zh": "E2 原型后建立",
+        "en": "Established after the E2 prototype"
+      },
+      "zero_tolerance_events": [
+        {
+          "zh": "人工不可用、错误影响办事权利或未授权采集身份信息时停止。",
+          "en": "Stop S8 when safety, rights, data minimisation, human takeover or reliable degradation fails; the human lead has final authority."
+        }
+      ],
+      "recovery_protocol": {
+        "zh": "终端断电封存，普通服务台、纸质目录和电话继续运行。",
+        "en": "Remove and isolate the optional S8 equipment; retain the complete staffed, static and accessible baseline."
+      },
+      "quote_status": "pending_market_quote",
+      "permit_gate": "site_fire_accessibility_power_network_traffic_equipment_permissions_complete_before_TRIAL",
+      "measurement_clock": {
+        "zh": "停止指令发出时开始，普通任务由人工完成且两条公共路线恢复开放时结束；E2 演练前不设虚构阈值。",
+        "en": "Starts at the stop command and ends when staff complete the ordinary task and both public routes reopen; no invented threshold before E2."
+      },
+      "baseline_sample_rule": {
+        "zh": "同题、同人、同空间、同时间分层；普通服务先记录，AI 只比较增量。",
+        "en": "Same task, user, space and stratified time; baseline first, then compare only the AI increment."
+      },
+      "recovery_verification": {
+        "zh": "安全、普通服务和公众代表共同签字；结果只允许 adopt / revise / stop。",
+        "en": "Safety, baseline-service and public representatives co-sign; adopt / revise / stop only."
+      },
+      "review_due": "after_E2_or_next_annual_review",
+      "prototype_readiness": "E1_catalogue_trace_complete",
+      "readiness_gate": "replicate_after_S7_review",
+      "survey_dependency": [
+        "official_boundary",
+        "topographic_survey",
+        "ownership",
+        "station_exits",
+        "utilities",
+        "fire_access",
+        "traffic_counts"
+      ],
+      "permit_checklist": [
+        "PERMIT-SITE",
+        "PERMIT-TITLE",
+        "PERMIT-FIRE",
+        "PERMIT-ACCESS"
+      ],
+      "bill_of_components": [],
+      "quantity_formula": "adapt_after_site_survey",
+      "procurement_package_ref": [],
+      "baseline_form_ref": "FORM-BASELINE",
+      "trial_form_ref": "FORM-TRIAL",
+      "incident_form_ref": "FORM-INCIDENT",
+      "recovery_drill_ref": "FORM-RECOVERY",
+      "receipt_template_ref": "FORM-RECEIPT",
+      "e2_status": "not_built",
+      "verification_scope": "synthetic_design_contract_only",
+      "test_case_ids": [
+        "SCN-011-T01",
+        "SCN-011-T02",
+        "SCN-011-T03",
+        "SCN-011-T04",
+        "SCN-011-T05",
+        "SCN-011-T06",
+        "SCN-011-T07"
+      ],
+      "initial_state": "OPEN",
+      "injected_event": "see_v10_tabletop_results",
+      "expected_state": "see_v10_tabletop_results",
+      "observed_state": "see_v10_tabletop_results",
+      "invariants_checked": [
+        "baseline_route_continuous",
+        "permit_gate_before_trial",
+        "accountable_human_before_trial",
+        "zero_tolerance_stops_trial",
+        "recovery_before_reopen",
+        "retirement_restores_public_use"
+      ],
+      "synthetic_result": "pass",
+      "input_hash": "resolved_per_test_case",
+      "recovery_exit": {
+        "zh": "终端断电封存，普通服务台、纸质目录和电话继续运行。",
+        "en": "Remove and isolate the optional S8 equipment; retain the complete staffed, static and accessible baseline."
+      },
+      "field_status": "not_field_run",
+      "measurement_contract": {
+        "measurement_question": {
+          "zh": "公共服务台在人工入口完整时，AI 导航是否提高完成率且不制造数字排斥？",
+          "en": "With the staffed public desk complete, does AI guidance improve completion without digital exclusion?"
+        },
+        "numerator": {
+          "zh": "完成同题任务且未触发零容忍事件的记录数",
+          "en": "Records completing the same task without a zero-tolerance event"
+        },
+        "denominator": {
+          "zh": "每种模式 100 个符合准入条件的公共服务请求",
+          "en": "100 eligible public-service requests per mode"
+        },
+        "baseline_window": {
+          "zh": "人工与 AI 辅助各 100 个请求，按年龄、语言、智能手机可用性和辅助需求分层",
+          "en": "100 requests per mode, stratified by age, language, smartphone access and assistance need"
+        },
+        "comparison_design": "matched_request_cohorts",
+        "sample_rule": {
+          "zh": "人工与 AI 辅助各 100 个请求，按年龄、语言、智能手机可用性和辅助需求分层",
+          "en": "100 requests per mode, stratified by age, language, smartphone access and assistance need"
+        },
+        "collection_frequency": {
+          "zh": "逐请求记录；每日抽查拒绝与转人工记录",
+          "en": "Record each request; daily audit of denial and human handoff"
+        },
+        "stratifiers": [
+          "age_group",
+          "language",
+          "smartphone_access",
+          "assistance_need"
+        ],
+        "statistic": "completion_rate_accessibility_parity_gap_and_handoff_rate",
+        "threshold_rule": {
+          "zh": "普通服务不得退化；安全事件零容忍；AI 增量阈值仅在基线完成后由人类场景委员会登记。",
+          "en": "Baseline service may not regress; safety events have zero tolerance; the human scene committee registers any AI-increment threshold only after the baseline."
+        },
+        "threshold_status": "pending_baseline_committee",
+        "zero_tolerance_events": [
+          "account_or_phone_required_for_baseline",
+          "human_handoff_unavailable",
+          "personal_data_overcollection"
+        ],
+        "missing_data_rule": {
+          "zh": "缺失样本不得删除或填补为成功；单列缺失原因，若影响分层比较则结果只能 revise 或 stop。",
+          "en": "Missing samples are never deleted or imputed as success; publish the reason, and if stratified comparison is compromised the result can only be revise or stop."
+        },
+        "human_review": {
+          "zh": "普通服务负责人、数据负责人、安全负责人和公众代表共同复核，AI 不拥有决定权。",
+          "en": "The baseline-service lead, data lead, safety lead and public representative review together; AI has no decision authority."
+        },
+        "public_output_schema": [
+          "scenario_id",
+          "mode",
+          "sample_window",
+          "denominator",
+          "completed",
+          "missing",
+          "strata",
+          "safety_events",
+          "human_interventions",
+          "resource_use",
+          "grievances",
+          "recovery_clock",
+          "decision"
+        ],
+        "owner_roles": [
+          "baseline_service_owner",
+          "data_steward",
+          "safety_owner",
+          "public_representative"
+        ],
+        "field_status": "not_field_run"
+      },
+      "measurement_question": {
+        "zh": "公共服务台在人工入口完整时，AI 导航是否提高完成率且不制造数字排斥？",
+        "en": "With the staffed public desk complete, does AI guidance improve completion without digital exclusion?"
+      },
+      "numerator": {
+        "zh": "完成同题任务且未触发零容忍事件的记录数",
+        "en": "Records completing the same task without a zero-tolerance event"
+      },
+      "denominator": {
+        "zh": "每种模式 100 个符合准入条件的公共服务请求",
+        "en": "100 eligible public-service requests per mode"
+      },
+      "comparison_design": "matched_request_cohorts",
+      "sample_rule": {
+        "zh": "人工与 AI 辅助各 100 个请求，按年龄、语言、智能手机可用性和辅助需求分层",
+        "en": "100 requests per mode, stratified by age, language, smartphone access and assistance need"
+      },
+      "collection_frequency": {
+        "zh": "逐请求记录；每日抽查拒绝与转人工记录",
+        "en": "Record each request; daily audit of denial and human handoff"
+      },
+      "stratifiers": [
+        "age_group",
+        "language",
+        "smartphone_access",
+        "assistance_need"
+      ],
+      "statistic": "completion_rate_accessibility_parity_gap_and_handoff_rate",
+      "threshold_status": "pending_baseline_committee",
+      "missing_data_rule": {
+        "zh": "缺失样本不得删除或填补为成功；单列缺失原因，若影响分层比较则结果只能 revise 或 stop。",
+        "en": "Missing samples are never deleted or imputed as success; publish the reason, and if stratified comparison is compromised the result can only be revise or stop."
+      },
+      "human_review": {
+        "zh": "普通服务负责人、数据负责人、安全负责人和公众代表共同复核，AI 不拥有决定权。",
+        "en": "The baseline-service lead, data lead, safety lead and public representative review together; AI has no decision authority."
+      },
+      "public_output_schema": [
+        "scenario_id",
+        "mode",
+        "sample_window",
+        "denominator",
+        "completed",
+        "missing",
+        "strata",
+        "safety_events",
+        "human_interventions",
+        "resource_use",
+        "grievances",
+        "recovery_clock",
+        "decision"
+      ],
+      "owner_roles": [
+        "baseline_service_owner",
+        "data_steward",
+        "safety_owner",
+        "public_representative"
+      ],
+      "architectural_prototype_ref": null,
+      "visual_priority": "reference",
+      "implementation_stage": "E1_concept_design",
+      "next_gate_requirements": [
+        "baseline_validation",
+        "operator_assignment"
+      ],
+      "public_route_invariant": "ordinary_service_continuous_in_all_states"
     },
     {
       "id": "SCN-012",
@@ -2458,12 +6209,1405 @@
           "revise",
           "stop"
         ]
-      }
+      },
+      "evidence_level": "E1_catalogue_trace_complete",
+      "geometry_refs": [
+        "V7-D-BASE-NS",
+        "V7-D-BASE-EW",
+        "V7-D-EMERGENCY",
+        "V7-D-REMOVAL",
+        "V7-D-FORECOURT",
+        "V7-D-TRIAL",
+        "V7-D-EVIDENCE",
+        "V7-D-SERVICE",
+        "V7-D-CONTROL",
+        "V7-D-ENT-N",
+        "V7-D-ENT-E",
+        "V7-D-ENT-S",
+        "V7-D-ENT-W",
+        "V7-D-STAFF-BASE",
+        "V7-D-UTILITY"
+      ],
+      "baseline_measurement_protocol": {
+        "denominator": {
+          "zh": "同一任务下全部符合准入条件的普通服务使用尝试",
+          "en": "All eligible baseline-service attempts for the same task"
+        },
+        "sample_window": {
+          "zh": "E2 原型运行后确定；同时记录时段、天气、辅助需求与退出原因",
+          "en": "Set after the E2 prototype; record time, weather, assistance needs and exit reason"
+        },
+        "minimum_fields": [
+          "task_completion",
+          "assistance_request",
+          "safety_event",
+          "fallback_used",
+          "appeal_lodged"
+        ],
+        "current_status": "not_field_run"
+      },
+      "trial_threshold_rule": {
+        "no_regression": {
+          "zh": "普通服务的可达性、可靠性和公平性不得降低",
+          "en": "Accessibility, reliability and equity of the baseline may not regress"
+        },
+        "zero_tolerance": {
+          "zh": "计数漂移、容量接近上限、出口受阻或任何安全事件时停止入场/AI。",
+          "en": "Stop S9 when safety, rights, data minimisation, human takeover or reliable degradation fails; the human lead has final authority."
+        },
+        "ai_increment_threshold": {
+          "zh": "在 E2 基线完成后由人类场景委员会登记，当前为 unknown",
+          "en": "Registered by the human scene committee after E2 baseline completion; currently unknown"
+        }
+      },
+      "permit_dependencies": [
+        {
+          "zh": "场地与资产方同意",
+          "en": "Site and asset-owner consent"
+        },
+        {
+          "zh": "消防与疏散复核",
+          "en": "Fire and egress review"
+        },
+        {
+          "zh": "无障碍审计",
+          "en": "Accessibility audit"
+        },
+        {
+          "zh": "临时用电与网络隔离",
+          "en": "Temporary power and network isolation"
+        },
+        {
+          "zh": "设备安全与保险",
+          "en": "Equipment safety and insurance"
+        },
+        {
+          "zh": "活动或交通组织许可",
+          "en": "Event or traffic-management permit"
+        }
+      ],
+      "maintenance_cycle": {
+        "zh": "由复制场景运营者在 E2 前登记",
+        "en": "Registered by the replication-scene operator before E2"
+      },
+      "receipt_state": "pending_field_evidence",
+      "dimension_basis": "prototype_design_assumption_pending_survey",
+      "interface_geometry_refs": [],
+      "baseline_route_geometry": [
+        "BASELINE-S9"
+      ],
+      "trial_boundary_geometry": [],
+      "human_post_geometry": [],
+      "emergency_route_geometry": [
+        "FALLBACK-S9"
+      ],
+      "state_views": {},
+      "measurement_denominator": {
+        "zh": "E2 前由场景运营者登记同题分母",
+        "en": "Operator registers the same-task denominator before E2"
+      },
+      "baseline_window": {
+        "zh": "E2 原型后建立",
+        "en": "Established after the E2 prototype"
+      },
+      "zero_tolerance_events": [
+        {
+          "zh": "计数漂移、容量接近上限、出口受阻或任何安全事件时停止入场/AI。",
+          "en": "Stop S9 when safety, rights, data minimisation, human takeover or reliable degradation fails; the human lead has final authority."
+        }
+      ],
+      "recovery_protocol": {
+        "zh": "拆除计数插件，保留普通活动电源、容量牌和疏散设施。",
+        "en": "Remove and isolate the optional S9 equipment; retain the complete staffed, static and accessible baseline."
+      },
+      "quote_status": "pending_market_quote",
+      "permit_gate": "site_fire_accessibility_power_network_traffic_equipment_permissions_complete_before_TRIAL",
+      "measurement_clock": {
+        "zh": "停止指令发出时开始，普通任务由人工完成且两条公共路线恢复开放时结束；E2 演练前不设虚构阈值。",
+        "en": "Starts at the stop command and ends when staff complete the ordinary task and both public routes reopen; no invented threshold before E2."
+      },
+      "baseline_sample_rule": {
+        "zh": "同题、同人、同空间、同时间分层；普通服务先记录，AI 只比较增量。",
+        "en": "Same task, user, space and stratified time; baseline first, then compare only the AI increment."
+      },
+      "recovery_verification": {
+        "zh": "安全、普通服务和公众代表共同签字；结果只允许 adopt / revise / stop。",
+        "en": "Safety, baseline-service and public representatives co-sign; adopt / revise / stop only."
+      },
+      "review_due": "after_E2_or_next_annual_review",
+      "prototype_readiness": "E1_catalogue_trace_complete",
+      "readiness_gate": "replicate_after_S7_review",
+      "survey_dependency": [
+        "official_boundary",
+        "topographic_survey",
+        "ownership",
+        "station_exits",
+        "utilities",
+        "fire_access",
+        "traffic_counts"
+      ],
+      "permit_checklist": [
+        "PERMIT-SITE",
+        "PERMIT-TITLE",
+        "PERMIT-FIRE",
+        "PERMIT-ACCESS"
+      ],
+      "bill_of_components": [],
+      "quantity_formula": "adapt_after_site_survey",
+      "procurement_package_ref": [],
+      "baseline_form_ref": "FORM-BASELINE",
+      "trial_form_ref": "FORM-TRIAL",
+      "incident_form_ref": "FORM-INCIDENT",
+      "recovery_drill_ref": "FORM-RECOVERY",
+      "receipt_template_ref": "FORM-RECEIPT",
+      "e2_status": "not_built",
+      "verification_scope": "synthetic_design_contract_only",
+      "test_case_ids": [
+        "SCN-012-T01",
+        "SCN-012-T02",
+        "SCN-012-T03",
+        "SCN-012-T04",
+        "SCN-012-T05",
+        "SCN-012-T06",
+        "SCN-012-T07"
+      ],
+      "initial_state": "OPEN",
+      "injected_event": "see_v10_tabletop_results",
+      "expected_state": "see_v10_tabletop_results",
+      "observed_state": "see_v10_tabletop_results",
+      "invariants_checked": [
+        "baseline_route_continuous",
+        "permit_gate_before_trial",
+        "accountable_human_before_trial",
+        "zero_tolerance_stops_trial",
+        "recovery_before_reopen",
+        "retirement_restores_public_use"
+      ],
+      "synthetic_result": "pass",
+      "input_hash": "resolved_per_test_case",
+      "recovery_exit": {
+        "zh": "拆除计数插件，保留普通活动电源、容量牌和疏散设施。",
+        "en": "Remove and isolate the optional S9 equipment; retain the complete staffed, static and accessible baseline."
+      },
+      "field_status": "not_field_run",
+      "measurement_contract": {
+        "measurement_question": {
+          "zh": "聚合客流辅助是否在常规活动组织完整时，改善疏散判断且不识别个人？",
+          "en": "With conventional event operations complete, does aggregate flow assistance improve egress decisions without identifying people?"
+        },
+        "numerator": {
+          "zh": "完成同题任务且未触发零容忍事件的记录数",
+          "en": "Records completing the same task without a zero-tolerance event"
+        },
+        "denominator": {
+          "zh": "全部受控活动试验，且至少覆盖 3 个到场规模等级",
+          "en": "All controlled event trials across at least 3 attendance levels"
+        },
+        "baseline_window": {
+          "zh": "小、中、大三类到场规模；每类先普通组织、后 AI 聚合辅助",
+          "en": "Small, medium and large attendance; baseline operations first, then aggregate AI assistance"
+        },
+        "comparison_design": "attendance_level_paired_trials",
+        "sample_rule": {
+          "zh": "小、中、大三类到场规模；每类先普通组织、后 AI 聚合辅助",
+          "en": "Small, medium and large attendance; baseline operations first, then aggregate AI assistance"
+        },
+        "collection_frequency": {
+          "zh": "逐场记录；每场结束后复盘",
+          "en": "Record each event; review after every event"
+        },
+        "stratifiers": [
+          "attendance_level",
+          "day_night",
+          "event_type"
+        ],
+        "statistic": "egress_task_completion_intervention_rate_and_grievance_recovery_time",
+        "threshold_rule": {
+          "zh": "普通服务不得退化；安全事件零容忍；AI 增量阈值仅在基线完成后由人类场景委员会登记。",
+          "en": "Baseline service may not regress; safety events have zero tolerance; the human scene committee registers any AI-increment threshold only after the baseline."
+        },
+        "threshold_status": "pending_baseline_committee",
+        "zero_tolerance_events": [
+          "individual_identification",
+          "egress_route_blocked",
+          "official_capacity_exceeded",
+          "manual_command_overridden"
+        ],
+        "missing_data_rule": {
+          "zh": "缺失样本不得删除或填补为成功；单列缺失原因，若影响分层比较则结果只能 revise 或 stop。",
+          "en": "Missing samples are never deleted or imputed as success; publish the reason, and if stratified comparison is compromised the result can only be revise or stop."
+        },
+        "human_review": {
+          "zh": "普通服务负责人、数据负责人、安全负责人和公众代表共同复核，AI 不拥有决定权。",
+          "en": "The baseline-service lead, data lead, safety lead and public representative review together; AI has no decision authority."
+        },
+        "public_output_schema": [
+          "scenario_id",
+          "mode",
+          "sample_window",
+          "denominator",
+          "completed",
+          "missing",
+          "strata",
+          "safety_events",
+          "human_interventions",
+          "resource_use",
+          "grievances",
+          "recovery_clock",
+          "decision"
+        ],
+        "owner_roles": [
+          "baseline_service_owner",
+          "data_steward",
+          "safety_owner",
+          "public_representative"
+        ],
+        "field_status": "not_field_run"
+      },
+      "measurement_question": {
+        "zh": "聚合客流辅助是否在常规活动组织完整时，改善疏散判断且不识别个人？",
+        "en": "With conventional event operations complete, does aggregate flow assistance improve egress decisions without identifying people?"
+      },
+      "numerator": {
+        "zh": "完成同题任务且未触发零容忍事件的记录数",
+        "en": "Records completing the same task without a zero-tolerance event"
+      },
+      "denominator": {
+        "zh": "全部受控活动试验，且至少覆盖 3 个到场规模等级",
+        "en": "All controlled event trials across at least 3 attendance levels"
+      },
+      "comparison_design": "attendance_level_paired_trials",
+      "sample_rule": {
+        "zh": "小、中、大三类到场规模；每类先普通组织、后 AI 聚合辅助",
+        "en": "Small, medium and large attendance; baseline operations first, then aggregate AI assistance"
+      },
+      "collection_frequency": {
+        "zh": "逐场记录；每场结束后复盘",
+        "en": "Record each event; review after every event"
+      },
+      "stratifiers": [
+        "attendance_level",
+        "day_night",
+        "event_type"
+      ],
+      "statistic": "egress_task_completion_intervention_rate_and_grievance_recovery_time",
+      "threshold_status": "pending_baseline_committee",
+      "missing_data_rule": {
+        "zh": "缺失样本不得删除或填补为成功；单列缺失原因，若影响分层比较则结果只能 revise 或 stop。",
+        "en": "Missing samples are never deleted or imputed as success; publish the reason, and if stratified comparison is compromised the result can only be revise or stop."
+      },
+      "human_review": {
+        "zh": "普通服务负责人、数据负责人、安全负责人和公众代表共同复核，AI 不拥有决定权。",
+        "en": "The baseline-service lead, data lead, safety lead and public representative review together; AI has no decision authority."
+      },
+      "public_output_schema": [
+        "scenario_id",
+        "mode",
+        "sample_window",
+        "denominator",
+        "completed",
+        "missing",
+        "strata",
+        "safety_events",
+        "human_interventions",
+        "resource_use",
+        "grievances",
+        "recovery_clock",
+        "decision"
+      ],
+      "owner_roles": [
+        "baseline_service_owner",
+        "data_steward",
+        "safety_owner",
+        "public_representative"
+      ],
+      "architectural_prototype_ref": null,
+      "visual_priority": "reference",
+      "implementation_stage": "E1_concept_design",
+      "next_gate_requirements": [
+        "baseline_validation",
+        "operator_assignment"
+      ],
+      "public_route_invariant": "ordinary_service_continuous_in_all_states"
     }
   ],
   "subtitle": {
-    "zh": "普通服务先成立，AI 通过同题、同人、同空间的公开验收后，才获得城市采用资格。",
-    "en": "The baseline stands first; AI earns civic adoption only through a public same-task, same-user, same-space test."
+    "zh": "一条公共路径，四种城市状态",
+    "en": "One public route, four civic states"
   },
-  "field_status": "not_field_run"
+  "field_status": "not_field_run",
+  "publication_version": "V17",
+  "evidence_ladder": [
+    {
+      "id": "E0",
+      "state": "public_source",
+      "label": {
+        "zh": "公开资料已登记",
+        "en": "Public sources registered"
+      }
+    },
+    {
+      "id": "E1",
+      "state": "concept_design",
+      "label": {
+        "zh": "概念设计可追踪",
+        "en": "Concept design traceable"
+      }
+    },
+    {
+      "id": "E2",
+      "state": "baseline_prototype_pending",
+      "label": {
+        "zh": "普通服务原型待建",
+        "en": "Baseline prototype pending"
+      }
+    },
+    {
+      "id": "E3",
+      "state": "controlled_trial_pending",
+      "label": {
+        "zh": "受控试验待运行",
+        "en": "Controlled trial pending"
+      }
+    },
+    {
+      "id": "E4",
+      "state": "civic_adoption_pending",
+      "label": {
+        "zh": "城市采用待决定",
+        "en": "Civic adoption pending"
+      }
+    }
+  ],
+  "hero_operating_framework": {
+    "raci_roles": [
+      "asset_owner_representative",
+      "site_operator",
+      "baseline_service_staff",
+      "ai_operator",
+      "safety_officer",
+      "data_steward",
+      "public_representative"
+    ],
+    "permit_prerequisites": [
+      {
+        "zh": "场地与资产方同意",
+        "en": "Site and asset-owner consent"
+      },
+      {
+        "zh": "消防与疏散复核",
+        "en": "Fire and egress review"
+      },
+      {
+        "zh": "无障碍审计",
+        "en": "Accessibility audit"
+      },
+      {
+        "zh": "临时用电与网络隔离",
+        "en": "Temporary power and network isolation"
+      },
+      {
+        "zh": "设备安全与保险",
+        "en": "Equipment safety and insurance"
+      },
+      {
+        "zh": "活动或交通组织许可",
+        "en": "Event or traffic-management permit"
+      }
+    ],
+    "decision_rule": {
+      "zh": "普通服务不得退化；安全类事件零容忍；AI 增量阈值只在 E2 普通服务基线建立后由人类场景委员会确认。",
+      "en": "The baseline must not regress; safety events are zero-tolerance; AI-increment thresholds are set by the human scene committee only after the E2 baseline is established."
+    }
+  },
+  "annual_program": [
+    {
+      "program_id": "YEAR-SPRING",
+      "season": "spring",
+      "station_ref": "belt_wide",
+      "title": {
+        "zh": "公共基线审计季",
+        "en": "Public Baseline Audit Season"
+      },
+      "users": [
+        "wheelchair_user",
+        "blind_pedestrian",
+        "older_adult_without_smartphone",
+        "night_operator"
+      ],
+      "ordinary_baseline": {
+        "zh": "人工无障碍审计、静态导视核验、遮阴饮水和常规接驳台账。",
+        "en": "Staff-led accessibility audit, static-sign check, shade/water and conventional interchange ledger."
+      },
+      "ai_optional": {
+        "zh": "可选工具只整理公开问题，不替代现场判断。",
+        "en": "Optional tools organise public issues only and do not replace field judgement."
+      },
+      "entry_gate": "named_baseline_operator_and_accessibility_review_method",
+      "evidence_output": "baseline_issue_register",
+      "stop_condition": "ordinary_service_or_accessibility_route_unavailable",
+      "knowledge_asset": "public_baseline_audit_pack"
+    },
+    {
+      "program_id": "YEAR-SUMMER",
+      "season": "summer",
+      "station_ref": "zhongzhiyuan",
+      "title": {
+        "zh": "能力验真与开发者开放测试",
+        "en": "Capability Verification and Developer Open Test"
+      },
+      "users": [
+        "developer_team",
+        "safety_reviewer",
+        "accessibility_observer"
+      ],
+      "ordinary_baseline": {
+        "zh": "隔离场地、人工安全员、手工复现清单和完整公共旁路。",
+        "en": "Isolated site, human safety staff, manual reproducibility checklist and complete public bypass."
+      },
+      "ai_optional": {
+        "zh": "模型、机器人和端侧设备在受控边界内接受复现与降级测试。",
+        "en": "Models, robots and edge devices undergo reproducibility and degradation tests in a controlled boundary."
+      },
+      "entry_gate": "licence_safety_data_and_shutdown_checks_complete",
+      "evidence_output": "verification_dossier",
+      "stop_condition": "safety_data_or_degradation_gate_failure",
+      "knowledge_asset": "open_verification_recipe"
+    },
+    {
+      "program_id": "YEAR-AUTUMN",
+      "season": "autumn",
+      "station_ref": "dazhongsi",
+      "title": {
+        "zh": "城市场景试用与公众采纳周",
+        "en": "Urban Trial and Civic Adoption Week"
+      },
+      "users": [
+        "resident_and_carer",
+        "visitor",
+        "international_team",
+        "transport_operator"
+      ],
+      "ordinary_baseline": {
+        "zh": "普通路线、人工服务、常规接驳和纸质回执先独立运行。",
+        "en": "Ordinary routes, staffed service, conventional interchange and paper receipt operate first."
+      },
+      "ai_optional": {
+        "zh": "AI 只在许可时窗和一侧试验湾比较同题增量。",
+        "en": "AI compares same-task increment only in a permitted window and one-side trial bay."
+      },
+      "entry_gate": "E2_baseline_complete_and_all_trial_permits_valid",
+      "evidence_output": "civic_adoption_receipt",
+      "stop_condition": "zero_tolerance_event_or_baseline_regression",
+      "knowledge_asset": "adopt_revise_stop_case_record"
+    },
+    {
+      "program_id": "YEAR-WINTER",
+      "season": "winter",
+      "station_ref": "ai_origin",
+      "title": {
+        "zh": "年度回执与退出复盘",
+        "en": "Annual Receipt and Exit Review"
+      },
+      "users": [
+        "public_representative",
+        "asset_owner",
+        "service_operator",
+        "data_reviewer"
+      ],
+      "ordinary_baseline": {
+        "zh": "公开会议、纸质摘要、人工申诉和资产盘点。",
+        "en": "Public meeting, paper summary, staffed appeal and asset inventory."
+      },
+      "ai_optional": {
+        "zh": "可选助手仅生成可追溯摘要，最终决定由人类委员会签署。",
+        "en": "Optional assistant produces traceable summaries only; the human committee signs the final decision."
+      },
+      "entry_gate": "conflict_disclosure_and_evidence_quality_review_complete",
+      "evidence_output": "annual_public_ledger",
+      "stop_condition": "evidence_not_reproducible_or_conflict_not_disclosed",
+      "knowledge_asset": "annual_civic_proof_archive"
+    }
+  ],
+  "pilot_protocol": {
+    "pilot_id": "S7-90D",
+    "scene_ref": "SCN-010",
+    "status": "concept_schedule_pending_site_and_operator_confirmation",
+    "minimum_role_coverage": [
+      "site_lead",
+      "ordinary_service_staff",
+      "safety_lead",
+      "data_recorder"
+    ],
+    "role_separation_rule": "safety_lead_and_ordinary_service_staff_must_not_be_the_same_person_during_TRIAL",
+    "phases": [
+      {
+        "phase_id": "P90-01",
+        "day_range": "0-15",
+        "entry_gate": "site_access_for_survey",
+        "owner_roles": [
+          "site_lead"
+        ],
+        "evidence_output": "survey_and_permission_gap_register",
+        "stop_condition": "boundary_ownership_exit_fire_utility_or_traffic_unknown_blocks_layout",
+        "receipt_state": "E1"
+      },
+      {
+        "phase_id": "P90-02",
+        "day_range": "16-30",
+        "entry_gate": "baseline_layout_reviewed",
+        "owner_roles": [
+          "site_lead",
+          "ordinary_service_staff"
+        ],
+        "evidence_output": "ordinary_baseline_prototype",
+        "stop_condition": "public_cross_or_accessibility_route_incomplete",
+        "receipt_state": "E2_pending"
+      },
+      {
+        "phase_id": "P90-03",
+        "day_range": "31-45",
+        "entry_gate": "ordinary_baseline_operational",
+        "owner_roles": [
+          "ordinary_service_staff",
+          "data_recorder"
+        ],
+        "evidence_output": "seven_operating_day_baseline",
+        "stop_condition": "sample_definition_or_manual_service_not_stable",
+        "receipt_state": "E2"
+      },
+      {
+        "phase_id": "P90-04",
+        "day_range": "46-75",
+        "entry_gate": "all_permits_RACI_and_zero_tolerance_controls_active",
+        "owner_roles": [
+          "site_lead",
+          "ordinary_service_staff",
+          "safety_lead",
+          "data_recorder"
+        ],
+        "evidence_output": "controlled_same_task_trial_log",
+        "stop_condition": "any_zero_tolerance_event_or_baseline_regression",
+        "receipt_state": "E3"
+      },
+      {
+        "phase_id": "P90-05",
+        "day_range": "76-90",
+        "entry_gate": "trial_closed_or_completed",
+        "owner_roles": [
+          "site_lead",
+          "ordinary_service_staff",
+          "safety_lead",
+          "data_recorder",
+          "public_representative"
+        ],
+        "evidence_output": "recovery_verification_and_public_receipt",
+        "stop_condition": "public_space_not_restored_or_evidence_not_reproducible",
+        "receipt_state": "E4_pending"
+      }
+    ]
+  },
+  "public_ledger_schema": {
+    "status": "schema_only_no_field_records",
+    "allowed_decisions": [
+      "adopt",
+      "revise",
+      "stop"
+    ],
+    "required_fields": [
+      "event_id",
+      "task",
+      "user_group",
+      "ordinary_baseline",
+      "ai_increment",
+      "evidence_level",
+      "measurement_definition",
+      "human_decision",
+      "review_due",
+      "appeal_route",
+      "exit_asset_destination"
+    ],
+    "records": []
+  },
+  "prototype_readiness": {
+    "status": "ready_documented",
+    "scope": "S7_DAZHONGSI_FLAGSHIP",
+    "field_status": "not_field_run",
+    "readiness_pack_ref": "visual/assets/e2-readiness.json"
+  },
+  "permit_checklist": [
+    {
+      "id": "PERMIT-SITE",
+      "label": {
+        "zh": "场地使用与资产方书面同意",
+        "en": "Written site-use and asset-owner consent"
+      },
+      "status": "pending_permit",
+      "required_before": "TRIAL"
+    },
+    {
+      "id": "PERMIT-TITLE",
+      "label": {
+        "zh": "权属、边界与现状测绘核验",
+        "en": "Ownership, boundary and existing-condition survey"
+      },
+      "status": "pending_permit",
+      "required_before": "TRIAL"
+    },
+    {
+      "id": "PERMIT-FIRE",
+      "label": {
+        "zh": "消防车道、疏散面与临时构筑物复核",
+        "en": "Fire access, egress apron and temporary-structure review"
+      },
+      "status": "pending_permit",
+      "required_before": "TRIAL"
+    },
+    {
+      "id": "PERMIT-ACCESS",
+      "label": {
+        "zh": "无障碍路线、坡道、盲道和人工服务审计",
+        "en": "Audit of accessible routes, ramps, tactile guidance and staffed service"
+      },
+      "status": "pending_permit",
+      "required_before": "TRIAL"
+    },
+    {
+      "id": "PERMIT-POWER",
+      "label": {
+        "zh": "临时用电、配电保护与断电责任",
+        "en": "Temporary power, protection and isolation responsibility"
+      },
+      "status": "pending_permit",
+      "required_before": "TRIAL"
+    },
+    {
+      "id": "PERMIT-NET",
+      "label": {
+        "zh": "隔离网络、数据最小化与日志保存规则",
+        "en": "Isolated network, data minimisation and log-retention rule"
+      },
+      "status": "pending_permit",
+      "required_before": "TRIAL"
+    },
+    {
+      "id": "PERMIT-TRAFFIC",
+      "label": {
+        "zh": "常规接驳优先、活动时窗与交通组织审批",
+        "en": "Conventional-interchange priority, operating window and traffic approval"
+      },
+      "status": "pending_permit",
+      "required_before": "TRIAL"
+    },
+    {
+      "id": "PERMIT-EQUIP",
+      "label": {
+        "zh": "设备安全、保险、急停与供应商撤场责任",
+        "en": "Equipment safety, insurance, emergency stop and supplier removal duty"
+      },
+      "status": "pending_permit",
+      "required_before": "TRIAL"
+    }
+  ],
+  "bill_of_components": [
+    {
+      "id": "KIT-PAV-01",
+      "name": {
+        "zh": "透水铺装",
+        "en": "Permeable paving"
+      },
+      "quantity": 920,
+      "unit": "sqm",
+      "quantity_formula": {
+        "zh": "46m × 20m 原型公共面；待测绘复核",
+        "en": "46m × 20m prototype public surface; survey pending"
+      },
+      "dimension_basis": "prototype_design_assumption_pending_survey",
+      "quote_status": "pending_quote",
+      "maintenance_owner": "site_asset_lead",
+      "retirement_destination": "retain_as_public_space"
+    },
+    {
+      "id": "KIT-ACC-01",
+      "name": {
+        "zh": "连续盲道",
+        "en": "Continuous tactile guidance"
+      },
+      "quantity": 168,
+      "unit": "linear_m",
+      "quantity_formula": {
+        "zh": "南北 92m + 东西 76m 原型路线",
+        "en": "92m north-south + 76m east-west prototype route"
+      },
+      "dimension_basis": "prototype_design_assumption_pending_survey",
+      "quote_status": "pending_quote",
+      "maintenance_owner": "baseline_service_lead",
+      "retirement_destination": "retain_as_public_access"
+    },
+    {
+      "id": "KIT-ACC-02",
+      "name": {
+        "zh": "无障碍坡道",
+        "en": "Accessible ramps"
+      },
+      "quantity": 4,
+      "unit": "unit",
+      "quantity_formula": {
+        "zh": "公共十字四个路缘接口各 1 处",
+        "en": "one at each of four public-cross curb interfaces"
+      },
+      "dimension_basis": "prototype_design_assumption_pending_survey",
+      "quote_status": "pending_quote",
+      "maintenance_owner": "baseline_service_lead",
+      "retirement_destination": "retain_as_public_access"
+    },
+    {
+      "id": "KIT-BGR-01",
+      "name": {
+        "zh": "雨水花园",
+        "en": "Rain gardens"
+      },
+      "quantity": 240,
+      "unit": "sqm",
+      "quantity_formula": {
+        "zh": "两侧 6m × 20m × 2 处",
+        "en": "two sides at 6m × 20m each"
+      },
+      "dimension_basis": "prototype_design_assumption_pending_survey",
+      "quote_status": "pending_quote",
+      "maintenance_owner": "site_asset_lead",
+      "retirement_destination": "retain_as_blue_green_asset"
+    },
+    {
+      "id": "KIT-SHA-01",
+      "name": {
+        "zh": "遮阴单元",
+        "en": "Shade bays"
+      },
+      "quantity": 6,
+      "unit": "bay",
+      "quantity_formula": {
+        "zh": "两侧候车与休息面各 3 跨",
+        "en": "three bays on each waiting/rest edge"
+      },
+      "dimension_basis": "prototype_design_assumption_pending_survey",
+      "quote_status": "pending_quote",
+      "maintenance_owner": "site_asset_lead",
+      "retirement_destination": "retain_as_public_space"
+    },
+    {
+      "id": "KIT-FUR-01",
+      "name": {
+        "zh": "公共座椅",
+        "en": "Public benches"
+      },
+      "quantity": 12,
+      "unit": "unit",
+      "quantity_formula": {
+        "zh": "每个遮阴跨 2 组",
+        "en": "two units per shade bay"
+      },
+      "dimension_basis": "prototype_design_assumption_pending_survey",
+      "quote_status": "pending_quote",
+      "maintenance_owner": "baseline_service_lead",
+      "retirement_destination": "retain_as_public_space"
+    },
+    {
+      "id": "KIT-WAT-01",
+      "name": {
+        "zh": "饮水点",
+        "en": "Drinking-water points"
+      },
+      "quantity": 2,
+      "unit": "unit",
+      "quantity_formula": {
+        "zh": "公共十字两侧各 1 处",
+        "en": "one on each side of the public cross"
+      },
+      "dimension_basis": "prototype_design_assumption_pending_survey",
+      "quote_status": "pending_quote",
+      "maintenance_owner": "site_asset_lead",
+      "retirement_destination": "retain_as_public_service"
+    },
+    {
+      "id": "KIT-LGT-01",
+      "name": {
+        "zh": "低位照明",
+        "en": "Low-level lighting"
+      },
+      "quantity": 16,
+      "unit": "unit",
+      "quantity_formula": {
+        "zh": "公共路线按约 12m 原型间距布置",
+        "en": "prototype spacing of about 12m along public routes"
+      },
+      "dimension_basis": "prototype_design_assumption_pending_survey",
+      "quote_status": "pending_quote",
+      "maintenance_owner": "site_asset_lead",
+      "retirement_destination": "retain_as_public_safety"
+    },
+    {
+      "id": "KIT-SAF-01",
+      "name": {
+        "zh": "可拆隔离单元",
+        "en": "Removable barriers"
+      },
+      "quantity": 48,
+      "unit": "module",
+      "quantity_formula": {
+        "zh": "试验湾边界按 2m 模块复算",
+        "en": "trial-bay perimeter calculated in 2m modules"
+      },
+      "dimension_basis": "prototype_design_assumption_pending_survey",
+      "quote_status": "pending_quote",
+      "maintenance_owner": "safety_lead",
+      "retirement_destination": "supplier_return_or_storage"
+    },
+    {
+      "id": "KIT-SAF-02",
+      "name": {
+        "zh": "双急停柱",
+        "en": "Dual emergency-stop posts"
+      },
+      "quantity": 2,
+      "unit": "unit",
+      "quantity_formula": {
+        "zh": "试验湾相对两角各 1 处",
+        "en": "one at each of two opposing trial-bay corners"
+      },
+      "dimension_basis": "prototype_design_assumption_pending_survey",
+      "quote_status": "pending_quote",
+      "maintenance_owner": "safety_lead",
+      "retirement_destination": "supplier_return_or_storage"
+    },
+    {
+      "id": "KIT-EVD-01",
+      "name": {
+        "zh": "人工证据门廊",
+        "en": "Staffed evidence porch"
+      },
+      "quantity": 48,
+      "unit": "sqm",
+      "quantity_formula": {
+        "zh": "8m × 6m 可逆构筑物",
+        "en": "8m × 6m reversible pavilion"
+      },
+      "dimension_basis": "prototype_design_assumption_pending_survey",
+      "quote_status": "pending_quote",
+      "maintenance_owner": "baseline_service_lead",
+      "retirement_destination": "reuse_as_staffed_service"
+    },
+    {
+      "id": "KIT-EVD-02",
+      "name": {
+        "zh": "公开回执墙",
+        "en": "Public receipt wall"
+      },
+      "quantity": 12,
+      "unit": "linear_m",
+      "quantity_formula": {
+        "zh": "门廊两侧各 6m 展示界面",
+        "en": "two 6m display faces at the porch"
+      },
+      "dimension_basis": "prototype_design_assumption_pending_survey",
+      "quote_status": "pending_quote",
+      "maintenance_owner": "public_representative",
+      "retirement_destination": "retain_as_public_information"
+    },
+    {
+      "id": "KIT-OPS-01",
+      "name": {
+        "zh": "控制亭",
+        "en": "Control kiosk"
+      },
+      "quantity": 1,
+      "unit": "unit",
+      "quantity_formula": {
+        "zh": "独立于人工公共服务岗位",
+        "en": "separate from the staffed public-service post"
+      },
+      "dimension_basis": "prototype_design_assumption_pending_survey",
+      "quote_status": "pending_quote",
+      "maintenance_owner": "trial_operator",
+      "retirement_destination": "supplier_return_or_storage"
+    },
+    {
+      "id": "KIT-AI-01",
+      "name": {
+        "zh": "可逆试验湾",
+        "en": "Reversible trial bay"
+      },
+      "quantity": 420,
+      "unit": "sqm",
+      "quantity_formula": {
+        "zh": "21m × 20m 单侧原型范围",
+        "en": "21m × 20m one-side prototype area"
+      },
+      "dimension_basis": "prototype_design_assumption_pending_survey",
+      "quote_status": "pending_quote",
+      "maintenance_owner": "trial_operator",
+      "retirement_destination": "restore_as_waiting_or_event_space"
+    },
+    {
+      "id": "KIT-DAT-01",
+      "name": {
+        "zh": "端侧机柜",
+        "en": "Edge cabinet"
+      },
+      "quantity": 1,
+      "unit": "unit",
+      "quantity_formula": {
+        "zh": "隔离供电与网络，位于试验边界内",
+        "en": "isolated power and network inside the trial boundary"
+      },
+      "dimension_basis": "prototype_design_assumption_pending_survey",
+      "quote_status": "pending_quote",
+      "maintenance_owner": "data_lead",
+      "retirement_destination": "supplier_return_or_secure_storage"
+    },
+    {
+      "id": "KIT-RET-01",
+      "name": {
+        "zh": "存储与撤场门",
+        "en": "Storage and removal gate"
+      },
+      "quantity": 1,
+      "unit": "unit",
+      "quantity_formula": {
+        "zh": "连接试验湾与外侧服务路线",
+        "en": "connects trial bay to outer service route"
+      },
+      "dimension_basis": "prototype_design_assumption_pending_survey",
+      "quote_status": "pending_quote",
+      "maintenance_owner": "site_asset_lead",
+      "retirement_destination": "retain_as_service_access"
+    }
+  ],
+  "form_templates": [
+    {
+      "id": "FORM-BASELINE",
+      "title": {
+        "zh": "普通服务基线记录表",
+        "en": "Baseline service log"
+      },
+      "fields": [
+        "date_time",
+        "weather",
+        "user_profile_optional",
+        "task_attempt",
+        "task_completed",
+        "assistance_requested",
+        "route_continuous",
+        "accessibility_issue",
+        "appeal_lodged"
+      ],
+      "record_status": "not_field_run",
+      "printable": true
+    },
+    {
+      "id": "FORM-TRIAL",
+      "title": {
+        "zh": "受控试验记录表",
+        "en": "Controlled trial log"
+      },
+      "fields": [
+        "permit_gate_complete",
+        "four_posts_present",
+        "trial_start",
+        "trial_end",
+        "eligible_passages",
+        "human_interventions",
+        "near_miss_events",
+        "zero_tolerance_event",
+        "baseline_regression"
+      ],
+      "record_status": "not_field_run",
+      "printable": true
+    },
+    {
+      "id": "FORM-INCIDENT",
+      "title": {
+        "zh": "异常与停止事件表",
+        "en": "Incident and stop-event form"
+      },
+      "fields": [
+        "event_time",
+        "trigger",
+        "stop_authority",
+        "equipment_isolated",
+        "staff_takeover",
+        "public_routes_open",
+        "notification",
+        "corrective_action"
+      ],
+      "record_status": "not_field_run",
+      "printable": true
+    },
+    {
+      "id": "FORM-RECOVERY",
+      "title": {
+        "zh": "停止演练与空间恢复表",
+        "en": "Recovery drill and space-restoration form"
+      },
+      "fields": [
+        "clock_start",
+        "ordinary_task_completed",
+        "north_south_route_open",
+        "east_west_route_open",
+        "equipment_removed",
+        "bay_restored",
+        "clock_end",
+        "co_signatures"
+      ],
+      "record_status": "not_field_run",
+      "printable": true
+    },
+    {
+      "id": "FORM-RECEIPT",
+      "title": {
+        "zh": "城市采纳回执",
+        "en": "Civic adoption receipt"
+      },
+      "fields": [
+        "task",
+        "same_users",
+        "ordinary_baseline",
+        "ai_increment",
+        "measurement_denominator",
+        "zero_tolerance_events",
+        "public_comment",
+        "appeal_status",
+        "decision",
+        "review_due",
+        "signatures"
+      ],
+      "record_status": "not_field_run",
+      "printable": true
+    }
+  ],
+  "verification_scope": {
+    "status": "T0_synthetic_contract_verified",
+    "result_ref": "visual/assets/tabletop-results.json",
+    "rule_ref": "visual/assets/run-v10-tabletop.js",
+    "case_count": 84,
+    "field_status": "not_field_run"
+  },
+  "spatial_decision": {
+    "dataset_ref": "visual/assets/spatial-decision.json",
+    "advanced_alternative_id": "ALT-C",
+    "decisions": {
+      "reject_design": 1,
+      "revise_design": 1,
+      "advance_design": 1
+    },
+    "verification_scope": "geometry_based_design_audit",
+    "field_status": "not_field_run"
+  },
+  "measurement_framework": {
+    "status": "protocol_documented_results_not_field_run",
+    "public_value_families": [
+      "task_completion",
+      "accessibility_parity",
+      "safety",
+      "human_intervention",
+      "resource_per_completed_task",
+      "grievance_and_recovery"
+    ],
+    "threshold_status_values": [
+      "design_invariant",
+      "zero_tolerance",
+      "pending_baseline_committee"
+    ],
+    "field_status": "not_field_run"
+  },
+  "current_implementation_gate": "G0_no_go_pending_survey_and_permits",
+  "prototype_model_ref": "visual/assets/prototype-model.json",
+  "official_context_update": {
+    "context_id": "OFFICIAL-CONTEXT-202608",
+    "schema_version": "1.13.0",
+    "title": {
+      "zh": "已批空间结构与京张双答运营叠加层",
+      "en": "Approved spatial structure and Jing-Zhang operating overlay"
+    },
+    "published_date": "2026-08-12",
+    "context_status": "approved_context",
+    "official_context_update": {
+      "planning_area_ha": 1668.2,
+      "green_belt_length_km": 9,
+      "published_structure": {
+        "zh": "一带一轴、两心多点",
+        "en": "one belt, one axis, two centres and multiple nodes"
+      },
+      "dazhongsi_role": {
+        "zh": "已公布的大钟寺中心",
+        "en": "published Dazhongsi centre"
+      },
+      "phase_two_status": {
+        "zh": "配套工程完工并报道近期开放",
+        "en": "supporting works completed and reported recently open"
+      },
+      "slow_mobility_pattern": {
+        "zh": "鱼骨状慢行联系",
+        "en": "fishbone slow-mobility connections"
+      },
+      "sources": [
+        "BEIJING-BLOCK-PLAN-APPROVED-20260812",
+        "BEIJING-JZ-PHASE2-COMPLETE-20260714",
+        "BEIJING-JZ-PUBLIC-USE-20260730"
+      ]
+    },
+    "planning_reconciliation": [
+      {
+        "layer": "existing_published",
+        "meaning": {
+          "zh": "公开报道的现状公共路径、二期完成状态与公共使用",
+          "en": "published public paths, Phase II completion and reported public use"
+        },
+        "legal_limit": {
+          "zh": "不是本团队踏勘、测绘或验收",
+          "en": "not participant fieldwork, survey or acceptance"
+        }
+      },
+      {
+        "layer": "approved_context",
+        "meaning": {
+          "zh": "1668.2公顷街区层面结构、9公里绿带和大钟寺中心",
+          "en": "1,668.2 ha block-level structure, 9 km green belt and Dazhongsi centre"
+        },
+        "legal_limit": {
+          "zh": "不替代精确红线、地块控制或产权",
+          "en": "does not replace exact redlines, parcel controls or title"
+        }
+      },
+      {
+        "layer": "design_proposal",
+        "meaning": {
+          "zh": "一脊三站两翼运营层、回执廊和可逆试验湾",
+          "en": "spine/stations/wings operating layer, Receipt Porch and reversible bay"
+        },
+        "legal_limit": {
+          "zh": "概念建议，待专业深化",
+          "en": "concept proposal pending professional development"
+        }
+      },
+      {
+        "layer": "unknown",
+        "meaning": {
+          "zh": "测绘、产权、管线、许可、报价和现场绩效",
+          "en": "survey, title, utilities, permits, quote and field performance"
+        },
+        "legal_limit": {
+          "zh": "不得由图面推定",
+          "en": "must not be inferred from drawings"
+        }
+      }
+    ],
+    "submission_overlay": {
+      "area_sqm": 11412825.386,
+      "status": "design_proposal",
+      "geometry_ref": "geometry/site_boundary.geojson",
+      "note": {
+        "zh": "11.4平方公里临时投稿几何，仅用于可复算与概念组织",
+        "en": "11.4 sq km provisional submission geometry for recomputation and concept organisation only"
+      }
+    },
+    "visual_evidence_role": "planning_reconciliation_and_operating_overlay",
+    "supersedes_assumption_ref": "V15_CONTEXT_TREATED_AS_MISSING"
+  },
+  "ordinary_open_day": {
+    "program_id": "OPS-ORDINARY-OPEN-DAY",
+    "title": {
+      "zh": "普通开放日运营总图",
+      "en": "Ordinary Open Day operating plan"
+    },
+    "published_public_use": "reported_by_government_portal_not_participant_observation",
+    "steps": [
+      {
+        "time": "08:00",
+        "state": "OPEN",
+        "action": {
+          "zh": "普通路径、无障碍、人工台与静态导视检查",
+          "en": "public route, access, staffed desk and static guide check"
+        },
+        "owner_roles": [
+          "site_lead",
+          "baseline_service",
+          "safety_lead",
+          "data_steward"
+        ],
+        "failure_exit": "PAUSE_to_OPEN"
+      },
+      {
+        "time": "09:00",
+        "state": "BASELINE",
+        "action": {
+          "zh": "常规接驳、候车、遮阴与申诉独立运行",
+          "en": "ordinary feeder, waiting, shade and appeal operate independently"
+        },
+        "owner_roles": [
+          "site_lead",
+          "baseline_service",
+          "safety_lead",
+          "data_steward"
+        ],
+        "failure_exit": "PAUSE_to_OPEN"
+      },
+      {
+        "time": "13:00",
+        "state": "TRIAL_GATE",
+        "action": {
+          "zh": "只核验开发者许可、岗位和普通基线；不满足则不开试验",
+          "en": "check developer permits, posts and baseline only; no trial if incomplete"
+        },
+        "owner_roles": [
+          "site_lead",
+          "baseline_service",
+          "safety_lead",
+          "data_steward"
+        ],
+        "failure_exit": "PAUSE_to_OPEN"
+      },
+      {
+        "time": "16:00",
+        "state": "PUBLIC_REVIEW",
+        "action": {
+          "zh": "公布状态、失败、人工干预和未知项",
+          "en": "publish state, failures, staff interventions and unknowns"
+        },
+        "owner_roles": [
+          "site_lead",
+          "baseline_service",
+          "safety_lead",
+          "data_steward"
+        ],
+        "failure_exit": "PAUSE_to_OPEN"
+      },
+      {
+        "time": "18:00",
+        "state": "CLOSE",
+        "action": {
+          "zh": "插件停机、场地复位、人工复核与知识归档",
+          "en": "stop plug-ins, restore space, staff review and archive knowledge"
+        },
+        "owner_roles": [
+          "site_lead",
+          "baseline_service",
+          "safety_lead",
+          "data_steward"
+        ],
+        "failure_exit": "PAUSE_to_OPEN"
+      }
+    ],
+    "annual_program": [
+      {
+        "season": "spring",
+        "knowledge_asset": "baseline_accessibility_audit"
+      },
+      {
+        "season": "summer",
+        "knowledge_asset": "capability_reproduction_record"
+      },
+      {
+        "season": "autumn",
+        "knowledge_asset": "public_trial_receipt_set"
+      },
+      {
+        "season": "winter",
+        "knowledge_asset": "annual_asset_and_exit_review"
+      }
+    ],
+    "field_status": "not_field_run"
+  },
+  "planning_reconciliation": [
+    {
+      "layer": "existing_published",
+      "meaning": {
+        "zh": "公开报道的现状公共路径、二期完成状态与公共使用",
+        "en": "published public paths, Phase II completion and reported public use"
+      },
+      "legal_limit": {
+        "zh": "不是本团队踏勘、测绘或验收",
+        "en": "not participant fieldwork, survey or acceptance"
+      }
+    },
+    {
+      "layer": "approved_context",
+      "meaning": {
+        "zh": "1668.2公顷街区层面结构、9公里绿带和大钟寺中心",
+        "en": "1,668.2 ha block-level structure, 9 km green belt and Dazhongsi centre"
+      },
+      "legal_limit": {
+        "zh": "不替代精确红线、地块控制或产权",
+        "en": "does not replace exact redlines, parcel controls or title"
+      }
+    },
+    {
+      "layer": "design_proposal",
+      "meaning": {
+        "zh": "一脊三站两翼运营层、回执廊和可逆试验湾",
+        "en": "spine/stations/wings operating layer, Receipt Porch and reversible bay"
+      },
+      "legal_limit": {
+        "zh": "概念建议，待专业深化",
+        "en": "concept proposal pending professional development"
+      }
+    },
+    {
+      "layer": "unknown",
+      "meaning": {
+        "zh": "测绘、产权、管线、许可、报价和现场绩效",
+        "en": "survey, title, utilities, permits, quote and field performance"
+      },
+      "legal_limit": {
+        "zh": "不得由图面推定",
+        "en": "must not be inferred from drawings"
+      }
+    }
+  ],
+  "public_route_invariant": {
+    "clear_width_m": 4,
+    "states": [
+      "OPEN",
+      "TRIAL",
+      "PAUSE",
+      "RETIRE"
+    ],
+    "interruption_allowed": false
+  },
+  "canonical_view_refs": {
+    "city_context": "FIG-SITE-OVERVIEW-V17",
+    "ground_interface": "FIG-LAND-USE-V17",
+    "landmark_family": "FIG-KEY-AREAS-V17",
+    "continuous_journey": "FIG-MOBILITY-V17",
+    "evidence_desk": "FIG-METRICS-V17"
+  },
+  "context_feature_refs": [
+    "approved_green_belt",
+    "innovation_axis",
+    "dazhongsi_centre",
+    "fishbone_slow_mobility"
+  ],
+  "existing_public_use_refs": [
+    "BEIJING-JZ-PHASE2-COMPLETE-20260714"
+  ],
+  "state_geometry_refs": {
+    "OPEN": "S7-STATE-OPEN",
+    "TRIAL": "S7-STATE-TRIAL",
+    "PAUSE": "S7-STATE-PAUSE",
+    "RETIRE": "S7-STATE-RETIRE"
+  },
+  "maintenance_route_refs": [
+    "S7-SERVICE-S",
+    "S7-RETIRE-E"
+  ],
+  "experience_camera_ref": "CAM-S7-NW-01",
+  "visual_priority": "hero",
+  "implementation_stage": "G0_survey_and_permit_preparation",
+  "next_gate_requirements": [
+    "survey_complete",
+    "title_and_interface_verified",
+    "permit_dependencies_closed",
+    "four_independent_posts",
+    "seven_ordinary_days"
+  ]
 }

@@ -16,7 +16,10 @@
       "confidence": "low",
       "assumptions": [
         "A-BOUNDARY-001"
-      ]
+      ],
+      "recalculation_trigger": "官方几何到位后按同一公式与投影 EPSG:4548 原样复算，只换输入不改公式；触发条件、责任角色与复算范围见 assumptions.json#A-BOUNDARY-001。",
+      "precision_note": "小数位来自面积／比值算法本身，不代表边界精度；输入为临时粗略范围。",
+      "verification": "已用 shapely + pyproj 按 formula 复算（EPSG:4326 → EPSG:4548）；本包 20 项面积与比值指标不一致 0 条，面积容差 0.001 ㎡、比值容差 1e-6。"
     },
     "green_space_area_sqm": {
       "status": "known",
@@ -30,7 +33,11 @@
       "assumptions": [
         "A-BOUNDARY-001",
         "A-BASELINE-001"
-      ]
+      ],
+      "recalculation_trigger": "官方几何到位后按同一公式与投影 EPSG:4548 原样复算，只换输入不改公式；触发条件、责任角色与复算范围见 assumptions.json#A-BOUNDARY-001。",
+      "precision_note": "小数位来自面积／比值算法本身，不代表边界精度；输入为临时粗略范围。",
+      "overlap_treatment": "union 实测：geometry/green_space.geojson：1 个面要素，union=2264695.802 ㎡，逐要素求和=2264695.802 ㎡，实测重叠=0.000 ㎡。",
+      "verification": "已用 shapely + pyproj 按 formula 复算（EPSG:4326 → EPSG:4548）；本包 20 项面积与比值指标不一致 0 条，面积容差 0.001 ㎡、比值容差 1e-6。"
     },
     "green_ratio": {
       "status": "known",
@@ -45,7 +52,12 @@
       "assumptions": [
         "A-BOUNDARY-001",
         "A-BASELINE-001"
-      ]
+      ],
+      "recalculation_trigger": "官方几何到位后按同一公式与投影 EPSG:4548 原样复算，只换输入不改公式；触发条件、责任角色与复算范围见 assumptions.json#A-BOUNDARY-001。",
+      "precision_note": "小数位来自面积／比值算法本身，不代表边界精度；输入为临时粗略范围。",
+      "numerator_definition": "green_space_area_sqm = area(union(green_space), EPSG:4548)；图层 geometry/green_space.geojson；投影 EPSG:4548",
+      "denominator_definition": "site_area_sqm = polygon_area(provisional_site_boundary, EPSG:4548)；图层 geometry/site_boundary.geojson；投影 EPSG:4548",
+      "verification": "已用 shapely + pyproj 按 formula 复算（EPSG:4326 → EPSG:4548）；本包 20 项面积与比值指标不一致 0 条，面积容差 0.001 ㎡、比值容差 1e-6。"
     },
     "public_space_area_sqm": {
       "status": "known",
@@ -59,7 +71,11 @@
       "assumptions": [
         "A-BOUNDARY-001",
         "A-BASELINE-001"
-      ]
+      ],
+      "recalculation_trigger": "官方几何到位后按同一公式与投影 EPSG:4548 原样复算，只换输入不改公式；触发条件、责任角色与复算范围见 assumptions.json#A-BOUNDARY-001。",
+      "precision_note": "小数位来自面积／比值算法本身，不代表边界精度；输入为临时粗略范围。",
+      "overlap_treatment": "union 实测：geometry/public_space.geojson：1 个面要素，union=1039257.211 ㎡，逐要素求和=1039257.211 ㎡，实测重叠=0.000 ㎡。",
+      "verification": "已用 shapely + pyproj 按 formula 复算（EPSG:4326 → EPSG:4548）；本包 20 项面积与比值指标不一致 0 条，面积容差 0.001 ㎡、比值容差 1e-6。"
     },
     "public_space_ratio": {
       "status": "known",
@@ -74,7 +90,12 @@
       "assumptions": [
         "A-BOUNDARY-001",
         "A-BASELINE-001"
-      ]
+      ],
+      "recalculation_trigger": "官方几何到位后按同一公式与投影 EPSG:4548 原样复算，只换输入不改公式；触发条件、责任角色与复算范围见 assumptions.json#A-BOUNDARY-001。",
+      "precision_note": "小数位来自面积／比值算法本身，不代表边界精度；输入为临时粗略范围。",
+      "numerator_definition": "public_space_area_sqm = area(union(PUBLIC_SPACE polygons), EPSG:4548)；图层 geometry/public_space.geojson；投影 EPSG:4548",
+      "denominator_definition": "site_area_sqm = polygon_area(provisional_site_boundary, EPSG:4548)；图层 geometry/site_boundary.geojson；投影 EPSG:4548",
+      "verification": "已用 shapely + pyproj 按 formula 复算（EPSG:4326 → EPSG:4548）；本包 20 项面积与比值指标不一致 0 条，面积容差 0.001 ㎡、比值容差 1e-6。"
     },
     "building_footprint_area_sqm": {
       "status": "known",
@@ -87,7 +108,10 @@
       "confidence": "low",
       "assumptions": [
         "A-BUILDING-001"
-      ]
+      ],
+      "overlap_treatment": "union 实测：geometry/buildings.geojson：20 个面要素，union=221014.099 ㎡，逐要素求和=221014.099 ㎡，实测重叠=0.000 ㎡。",
+      "verification": "已用 shapely + pyproj 按 formula 复算（EPSG:4326 → EPSG:4548）；本包 20 项面积与比值指标不一致 0 条，面积容差 0.001 ㎡、比值容差 1e-6。",
+      "precision_note": "小数位来自面积／长度／比值算法本身，不代表边界或实测精度；输入为组织方临时粗略范围，有效位数不高于其来源。"
     },
     "handover_spine_length_m": {
       "status": "known",
@@ -100,7 +124,8 @@
       "confidence": "medium",
       "assumptions": [
         "A-TRANSPORT-001"
-      ]
+      ],
+      "precision_note": "小数位来自面积／长度／比值算法本身，不代表边界或实测精度；输入为组织方临时粗略范围，有效位数不高于其来源。"
     },
     "conceptual_movement_length_m": {
       "status": "known",
@@ -113,7 +138,8 @@
       "confidence": "low",
       "assumptions": [
         "A-TRANSPORT-001"
-      ]
+      ],
+      "precision_note": "小数位来自面积／长度／比值算法本身，不代表边界或实测精度；输入为组织方临时粗略范围，有效位数不高于其来源。"
     },
     "cross_link_count": {
       "status": "known",
@@ -166,7 +192,8 @@
       "assumptions": [
         "A-OPERATIONS-001",
         "A-BOUNDARY-001"
-      ]
+      ],
+      "recalculation_trigger": "官方几何到位后按同一公式与投影 EPSG:4548 原样复算，只换输入不改公式；触发条件、责任角色与复算范围见 assumptions.json#A-BOUNDARY-001。"
     },
     "key_area_count": {
       "status": "known",
@@ -179,7 +206,8 @@
       "confidence": "low",
       "assumptions": [
         "A-BOUNDARY-001"
-      ]
+      ],
+      "recalculation_trigger": "官方几何到位后按同一公式与投影 EPSG:4548 原样复算，只换输入不改公式；触发条件、责任角色与复算范围见 assumptions.json#A-BOUNDARY-001。"
     },
     "renewal_cell_count": {
       "status": "known",
@@ -205,7 +233,8 @@
       "confidence": "medium",
       "assumptions": [
         "A-BOUNDARY-001"
-      ]
+      ],
+      "recalculation_trigger": "官方几何到位后按同一公式与投影 EPSG:4548 原样复算，只换输入不改公式；触发条件、责任角色与复算范围见 assumptions.json#A-BOUNDARY-001。"
     },
     "phase_count": {
       "status": "known",
@@ -220,19 +249,6 @@
         "A-CONTROLS-001"
       ]
     },
-    "land_use_05_sqm": {
-      "status": "known",
-      "value": 2133693.511,
-      "unit": "sqm",
-      "source_files": [
-        "geometry/land_use.geojson"
-      ],
-      "formula": "sum(area(land_use where land_use_code=05), EPSG:4548)",
-      "confidence": "medium",
-      "assumptions": [
-        "A-BOUNDARY-001"
-      ]
-    },
     "land_use_0701_sqm": {
       "status": "known",
       "value": 1459314.115,
@@ -244,7 +260,11 @@
       "confidence": "medium",
       "assumptions": [
         "A-BOUNDARY-001"
-      ]
+      ],
+      "recalculation_trigger": "官方几何到位后按同一公式与投影 EPSG:4548 原样复算，只换输入不改公式；触发条件、责任角色与复算范围见 assumptions.json#A-BOUNDARY-001。",
+      "precision_note": "小数位来自面积／比值算法本身，不代表边界精度；输入为临时粗略范围。",
+      "overlap_treatment": "逐要素求和（子集内须无重叠才等于并集）实测：geometry/land_use.geojson：11 个面要素，union=11412825.386 ㎡，逐要素求和=11412825.386 ㎡，实测重叠=0.000 ㎡。",
+      "verification": "已用 shapely + pyproj 按 formula 复算（EPSG:4326 → EPSG:4548）；本包 20 项面积与比值指标不一致 0 条，面积容差 0.001 ㎡、比值容差 1e-6。"
     },
     "land_use_0702_sqm": {
       "status": "known",
@@ -257,7 +277,11 @@
       "confidence": "medium",
       "assumptions": [
         "A-BOUNDARY-001"
-      ]
+      ],
+      "recalculation_trigger": "官方几何到位后按同一公式与投影 EPSG:4548 原样复算，只换输入不改公式；触发条件、责任角色与复算范围见 assumptions.json#A-BOUNDARY-001。",
+      "precision_note": "小数位来自面积／比值算法本身，不代表边界精度；输入为临时粗略范围。",
+      "overlap_treatment": "逐要素求和（子集内须无重叠才等于并集）实测：geometry/land_use.geojson：11 个面要素，union=11412825.386 ㎡，逐要素求和=11412825.386 ㎡，实测重叠=0.000 ㎡。",
+      "verification": "已用 shapely + pyproj 按 formula 复算（EPSG:4326 → EPSG:4548）；本包 20 项面积与比值指标不一致 0 条，面积容差 0.001 ㎡、比值容差 1e-6。"
     },
     "land_use_0802_sqm": {
       "status": "known",
@@ -270,7 +294,11 @@
       "confidence": "medium",
       "assumptions": [
         "A-BOUNDARY-001"
-      ]
+      ],
+      "recalculation_trigger": "官方几何到位后按同一公式与投影 EPSG:4548 原样复算，只换输入不改公式；触发条件、责任角色与复算范围见 assumptions.json#A-BOUNDARY-001。",
+      "precision_note": "小数位来自面积／比值算法本身，不代表边界精度；输入为临时粗略范围。",
+      "overlap_treatment": "逐要素求和（子集内须无重叠才等于并集）实测：geometry/land_use.geojson：11 个面要素，union=11412825.386 ㎡，逐要素求和=11412825.386 ㎡，实测重叠=0.000 ㎡。",
+      "verification": "已用 shapely + pyproj 按 formula 复算（EPSG:4326 → EPSG:4548）；本包 20 项面积与比值指标不一致 0 条，面积容差 0.001 ㎡、比值容差 1e-6。"
     },
     "land_use_0803_sqm": {
       "status": "known",
@@ -283,7 +311,11 @@
       "confidence": "medium",
       "assumptions": [
         "A-BOUNDARY-001"
-      ]
+      ],
+      "recalculation_trigger": "官方几何到位后按同一公式与投影 EPSG:4548 原样复算，只换输入不改公式；触发条件、责任角色与复算范围见 assumptions.json#A-BOUNDARY-001。",
+      "precision_note": "小数位来自面积／比值算法本身，不代表边界精度；输入为临时粗略范围。",
+      "overlap_treatment": "逐要素求和（子集内须无重叠才等于并集）实测：geometry/land_use.geojson：11 个面要素，union=11412825.386 ㎡，逐要素求和=11412825.386 ㎡，实测重叠=0.000 ㎡。",
+      "verification": "已用 shapely + pyproj 按 formula 复算（EPSG:4326 → EPSG:4548）；本包 20 项面积与比值指标不一致 0 条，面积容差 0.001 ㎡、比值容差 1e-6。"
     },
     "land_use_0804_sqm": {
       "status": "known",
@@ -296,7 +328,11 @@
       "confidence": "medium",
       "assumptions": [
         "A-BOUNDARY-001"
-      ]
+      ],
+      "recalculation_trigger": "官方几何到位后按同一公式与投影 EPSG:4548 原样复算，只换输入不改公式；触发条件、责任角色与复算范围见 assumptions.json#A-BOUNDARY-001。",
+      "precision_note": "小数位来自面积／比值算法本身，不代表边界精度；输入为临时粗略范围。",
+      "overlap_treatment": "逐要素求和（子集内须无重叠才等于并集）实测：geometry/land_use.geojson：11 个面要素，union=11412825.386 ㎡，逐要素求和=11412825.386 ㎡，实测重叠=0.000 ㎡。",
+      "verification": "已用 shapely + pyproj 按 formula 复算（EPSG:4326 → EPSG:4548）；本包 20 项面积与比值指标不一致 0 条，面积容差 0.001 ㎡、比值容差 1e-6。"
     },
     "land_use_1401_sqm": {
       "status": "known",
@@ -309,7 +345,11 @@
       "confidence": "medium",
       "assumptions": [
         "A-BOUNDARY-001"
-      ]
+      ],
+      "recalculation_trigger": "官方几何到位后按同一公式与投影 EPSG:4548 原样复算，只换输入不改公式；触发条件、责任角色与复算范围见 assumptions.json#A-BOUNDARY-001。",
+      "precision_note": "小数位来自面积／比值算法本身，不代表边界精度；输入为临时粗略范围。",
+      "overlap_treatment": "逐要素求和（子集内须无重叠才等于并集）实测：geometry/land_use.geojson：11 个面要素，union=11412825.386 ㎡，逐要素求和=11412825.386 ㎡，实测重叠=0.000 ㎡。",
+      "verification": "已用 shapely + pyproj 按 formula 复算（EPSG:4326 → EPSG:4548）；本包 20 项面积与比值指标不一致 0 条，面积容差 0.001 ㎡、比值容差 1e-6。"
     },
     "conceptual_building_coverage_ratio": {
       "status": "known",
@@ -324,7 +364,12 @@
       "assumptions": [
         "A-BOUNDARY-001",
         "A-BUILDING-001"
-      ]
+      ],
+      "recalculation_trigger": "官方几何到位后按同一公式与投影 EPSG:4548 原样复算，只换输入不改公式；触发条件、责任角色与复算范围见 assumptions.json#A-BOUNDARY-001。",
+      "precision_note": "小数位来自面积／比值算法本身，不代表边界精度；输入为临时粗略范围。",
+      "numerator_definition": "building_footprint_area_sqm = area(union(conceptual_typology_cells), EPSG:4548)；图层 geometry/buildings.geojson；投影 EPSG:4548",
+      "denominator_definition": "site_area_sqm = polygon_area(provisional_site_boundary, EPSG:4548)；图层 geometry/site_boundary.geojson；投影 EPSG:4548",
+      "verification": "已用 shapely + pyproj 按 formula 复算（EPSG:4326 → EPSG:4548）；本包 20 项面积与比值指标不一致 0 条，面积容差 0.001 ㎡、比值容差 1e-6。"
     },
     "versioned_asset_count": {
       "status": "known",
@@ -361,10 +406,11 @@
       "unit": "count",
       "source_files": [
         "visual/assets/governance/shift-ledger-suite.json",
-        "visual/assets/governance/rule-check-report.json",
-        "visual/assets/governance/validation-report.json"
+        "visual/assets/governance/shift-ledger.schema.json",
+        "visual/assets/governance/protocol-check-runner.js"
       ],
-      "formula": "count(synthetic shift-ledger instances validating against shift-ledger.schema.json with 0 errors)",
+      "formula": "count(ledgers in shift-ledger-suite.json whose enum-constrained fields all conform to shift-ledger.schema.json, recomputed in-package by protocol-check-runner.js)",
+      "scope_note": "在包内被独立复算的是**枚举符合性**：12 条账、360 个受枚举约束的字段实例、18 个枚举定义，越界 0 个；另有拒收理由码 5 值与「处置 × 智能层」兼容表 7 对，重跑器要求目录与枚举逐条一致。**完整的 Draft 2020-12 校验（含 required／type／format）只在仓库外对单个示例实例 example-scn05-shift-ledger.json 执行过一次**，记录在 validation-report.json——该报告从未覆盖 shift-ledger-suite.json 的 12 条账。此前本指标的公式写成「12 个实例通过 schema 校验」并把该报告列为来源，对证据范围夸大了 12 倍，2026-08-21 改准。",
       "confidence": "high",
       "assumptions": [
         "A-OPERATIONS-001"
@@ -422,7 +468,10 @@
       "assumptions": [
         "A-BOUNDARY-001",
         "A-CONTROLS-001"
-      ]
+      ],
+      "recalculation_trigger": "官方几何到位后按同一公式与投影 EPSG:4548 原样复算，只换输入不改公式；触发条件、责任角色与复算范围见 assumptions.json#A-BOUNDARY-001。",
+      "precision_note": "小数位来自面积／比值算法本身，不代表边界精度；输入为临时粗略范围。",
+      "verification": "已用 shapely + pyproj 按 formula 复算（EPSG:4326 → EPSG:4548）；本包 20 项面积与比值指标不一致 0 条，面积容差 0.001 ㎡、比值容差 1e-6。"
     },
     "phase_2_area_sqm": {
       "status": "known",
@@ -436,7 +485,10 @@
       "assumptions": [
         "A-BOUNDARY-001",
         "A-CONTROLS-001"
-      ]
+      ],
+      "recalculation_trigger": "官方几何到位后按同一公式与投影 EPSG:4548 原样复算，只换输入不改公式；触发条件、责任角色与复算范围见 assumptions.json#A-BOUNDARY-001。",
+      "precision_note": "小数位来自面积／比值算法本身，不代表边界精度；输入为临时粗略范围。",
+      "verification": "已用 shapely + pyproj 按 formula 复算（EPSG:4326 → EPSG:4548）；本包 20 项面积与比值指标不一致 0 条，面积容差 0.001 ㎡、比值容差 1e-6。"
     },
     "phase_3_area_sqm": {
       "status": "known",
@@ -450,7 +502,10 @@
       "assumptions": [
         "A-BOUNDARY-001",
         "A-CONTROLS-001"
-      ]
+      ],
+      "recalculation_trigger": "官方几何到位后按同一公式与投影 EPSG:4548 原样复算，只换输入不改公式；触发条件、责任角色与复算范围见 assumptions.json#A-BOUNDARY-001。",
+      "precision_note": "小数位来自面积／比值算法本身，不代表边界精度；输入为临时粗略范围。",
+      "verification": "已用 shapely + pyproj 按 formula 复算（EPSG:4326 → EPSG:4548）；本包 20 项面积与比值指标不一致 0 条，面积容差 0.001 ㎡、比值容差 1e-6。"
     },
     "key_area_zhongzhiyuan_sqm": {
       "status": "known",
@@ -463,7 +518,10 @@
       "confidence": "low",
       "assumptions": [
         "A-BOUNDARY-001"
-      ]
+      ],
+      "recalculation_trigger": "官方几何到位后按同一公式与投影 EPSG:4548 原样复算，只换输入不改公式；触发条件、责任角色与复算范围见 assumptions.json#A-BOUNDARY-001。",
+      "precision_note": "小数位来自面积／比值算法本身，不代表边界精度；输入为临时粗略范围。",
+      "verification": "已用 shapely + pyproj 按 formula 复算（EPSG:4326 → EPSG:4548）；本包 20 项面积与比值指标不一致 0 条，面积容差 0.001 ㎡、比值容差 1e-6。"
     },
     "key_area_origin_community_sqm": {
       "status": "known",
@@ -476,7 +534,10 @@
       "confidence": "low",
       "assumptions": [
         "A-BOUNDARY-001"
-      ]
+      ],
+      "recalculation_trigger": "官方几何到位后按同一公式与投影 EPSG:4548 原样复算，只换输入不改公式；触发条件、责任角色与复算范围见 assumptions.json#A-BOUNDARY-001。",
+      "precision_note": "小数位来自面积／比值算法本身，不代表边界精度；输入为临时粗略范围。",
+      "verification": "已用 shapely + pyproj 按 formula 复算（EPSG:4326 → EPSG:4548）；本包 20 项面积与比值指标不一致 0 条，面积容差 0.001 ㎡、比值容差 1e-6。"
     },
     "key_area_dazhongsi_sqm": {
       "status": "known",
@@ -489,7 +550,10 @@
       "confidence": "low",
       "assumptions": [
         "A-BOUNDARY-001"
-      ]
+      ],
+      "recalculation_trigger": "官方几何到位后按同一公式与投影 EPSG:4548 原样复算，只换输入不改公式；触发条件、责任角色与复算范围见 assumptions.json#A-BOUNDARY-001。",
+      "precision_note": "小数位来自面积／比值算法本身，不代表边界精度；输入为临时粗略范围。",
+      "verification": "已用 shapely + pyproj 按 formula 复算（EPSG:4326 → EPSG:4548）；本包 20 项面积与比值指标不一致 0 条，面积容差 0.001 ㎡、比值容差 1e-6。"
     },
     "total_floor_area_sqm": {
       "status": "unknown",
@@ -681,7 +745,7 @@
     "talent_density": {
       "status": "unknown",
       "value": null,
-      "unit": "index",
+      "unit": "persons_per_ha",
       "source_files": [],
       "formula": "ai_related_workforce_and_students / employment_land_area",
       "measurement_unit": "persons_per_hectare_of_authorised_employment_land",
@@ -690,7 +754,7 @@
       "assumptions": [
         "A-BASELINE-001"
       ],
-      "reason": "公告要求研提人才密度；需官方就业、学籍统计与用地权属数据，仓库未提供，暂不赋值。",
+      "reason": "公告要求研提人才密度；需官方就业、学籍统计与用地权属数据，仓库未提供，暂不赋值。单位声明由 index 更正为 persons_per_ha——原值是占位词，与该指标实际的人／公顷口径不符。",
       "measurement_protocol": {
         "path": "visual/assets/governance/measurement-protocol.json",
         "metric_id": "talent_density",
@@ -706,7 +770,7 @@
     "output_scale": {
       "status": "unknown",
       "value": null,
-      "unit": "none",
+      "unit": "cny_per_year",
       "source_files": [],
       "formula": "annual_output_of_ai_and_ai_plus_industries(statistical_scope)",
       "measurement_unit": "CNY_per_calendar_year_at_published_constant_price",
@@ -715,7 +779,7 @@
       "assumptions": [
         "A-BASELINE-001"
       ],
-      "reason": "公告要求研提产值规模；需统计部门口径与企业名录，仓库未提供，暂不赋值。",
+      "reason": "公告要求研提产值规模；需统计部门口径与企业名录，仓库未提供，暂不赋值。单位声明由 none 更正为 cny_per_year——原值是占位词，与该指标实际的元／年口径不符。",
       "measurement_protocol": {
         "path": "visual/assets/governance/measurement-protocol.json",
         "metric_id": "output_scale",
@@ -774,6 +838,754 @@
         "baseline": null,
         "target": null
       }
+    },
+    "stitch_grade_break_crossing_count": {
+      "status": "known",
+      "value": 8,
+      "unit": "count",
+      "source_files": [
+        "geometry/roads.geojson"
+      ],
+      "formula": "count(roads where movement_class != 'greenway_walk_cycle')",
+      "confidence": "medium",
+      "assumptions": [
+        "A-BOUNDARY-001"
+      ],
+      "measurement_protocol": "八条东西缝合支线与主轴各交汇一次，因此交汇点数等于支线条数；主轴沿废弃铁路线形，支线接回城市街道标高，交汇处即高差可能出现的位置。",
+      "recalculation_trigger": "官方几何或道路红线到位后按同一公式复算；支线条数变化即更新。",
+      "verification": "已复算：读 geometry/roads.geojson，movement_class 非 greenway_walk_cycle 的要素为 ROAD-002…ROAD-009，共 8 条。"
+    },
+    "spine_longitudinal_gradient_max_pct": {
+      "status": "unknown",
+      "value": null,
+      "unit": "percent",
+      "source_files": [
+        "geometry/roads.geojson"
+      ],
+      "formula": "max(abs(delta_elevation / horizontal_run)) along ROAD-001",
+      "confidence": "low",
+      "assumptions": [
+        "A-BOUNDARY-001"
+      ],
+      "reason": "主轴纵坡需现状高程测量。仓库未提供 DEM 或纵断面测量数据，几何图层亦无高程字段，因此保持未赋值——不以「铁路线形通常平缓」推算出一个数字。",
+      "measurement_protocol": "取得纵断面测量后，沿 ROAD-001 逐段计算纵坡，取绝对值最大者；与无障碍规范限值比较后决定该段是否需要设置休息平台或绕行。"
+    },
+    "land_use_09_sqm": {
+      "status": "known",
+      "value": 2133693.511,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "sum(area(land_use where land_use_code=09), EPSG:4548)",
+      "confidence": "medium",
+      "assumptions": [
+        "A-BOUNDARY-001"
+      ],
+      "recalculation_trigger": "官方几何到位后按同一公式与投影 EPSG:4548 原样复算，只换输入不改公式；触发条件、责任角色与复算范围见 assumptions.json#A-BOUNDARY-001。；2026-08-18：组织方在 PR #3017 修正枚举（05=湿地、新增 09=商业服务业）后，本指标由 land_use_05_sqm 更名为 land_use_09_sqm，筛选条件同步由 land_use_code=05 改为 09；**几何与数值未变**，LU-003 与 LU-007 的 area_sqm_declared 与几何哈希迁移前后逐条相同。",
+      "precision_note": "小数位来自面积／比值算法本身，不代表边界精度；输入为临时粗略范围。",
+      "overlap_treatment": "逐要素求和（子集内须无重叠才等于并集）实测：geometry/land_use.geojson：11 个面要素，union=11412825.386 ㎡，逐要素求和=11412825.386 ㎡，实测重叠=0.000 ㎡。",
+      "verification": "已用 shapely + pyproj 按 formula 复算（EPSG:4326 → EPSG:4548）；本包 20 项面积与比值指标不一致 0 条，面积容差 0.001 ㎡、比值容差 1e-6。"
+    },
+    "simulation_task_count": {
+      "status": "known",
+      "value": 12,
+      "unit": "count",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "count(simulation.tasks)",
+      "confidence": "high",
+      "assumptions": [],
+      "verification": "simulation.json 的 task_count 与 tasks.length 均为 12；每条任务对应 SCN-01 至 SCN-12 之一。"
+    },
+    "simulation_success_rate": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "count(tasks where outcome ends_with '_success') / count(tasks)",
+      "confidence": "high",
+      "assumptions": [],
+      "verification": "12 条任务的 outcome 均为 offline_tabletop_success；该值仅代表离线合成桌面演练。"
+    },
+    "tool_schema_pass_rate": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "count(tasks where dispatch_schema_valid=true) / count(tasks)",
+      "confidence": "high",
+      "assumptions": [],
+      "verification": "12 条任务均保留场景、交出角色、接入角色、人工服务与审计字段。"
+    },
+    "audit_completeness": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "count(tasks where audit_complete=true) / count(tasks)",
+      "confidence": "high",
+      "assumptions": [],
+      "verification": "每条任务均记录四项断言、角色类型、人工兜底、结果与现场未执行状态。"
+    },
+    "offline_takeover_assertion_count": {
+      "status": "known",
+      "value": 48,
+      "unit": "count",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "count(tasks) * 4",
+      "confidence": "high",
+      "assumptions": [],
+      "verification": "十二个场景分别执行智能层关闭、人工接管、合成记录清零与回滚四项断言。"
+    },
+    "offline_takeover_assertion_pass_rate": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "summary.offline_assertions_passed / summary.offline_assertions_run",
+      "confidence": "high",
+      "assumptions": [],
+      "verification": "simulation.json 记录 48/48 项离线断言通过；不外推为现场绩效。"
+    },
+    "field_rehearsal_task_count": {
+      "status": "known",
+      "value": 0,
+      "unit": "count",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "summary.field_rehearsal_tasks_completed",
+      "confidence": "high",
+      "assumptions": [
+        "A-OPERATIONS-001"
+      ],
+      "verification": "没有场地授权、角色指派或真实使用者参与，本轮未进行任何现场演练。"
+    },
+    "no_ai_equivalent_scenario_count": {
+      "status": "known",
+      "value": 12,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/governance/public-service-equivalence-contract.json",
+        "visual/assets/governance/shift-ledger-suite.json",
+        "simulation.json"
+      ],
+      "formula": "count(scenarios with a named human_service_floor, device_free_access=true and a no-AI base route that exists before the smart layer)",
+      "confidence": "low",
+      "assumptions": [
+        "A-OPERATIONS-001"
+      ],
+      "metric_kind": "design_target",
+      "verification": "合同把 SCN-01 至 SCN-12 逐一绑定到 simulation.json 的人工兜底和交接账的人力底线；只证明设计路线完整，不证明现场可用。"
+    },
+    "no_ai_equivalent_service_target_ratio": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/governance/public-service-equivalence-contract.json",
+        "visual/assets/governance/public-service-equivalence-audit.js"
+      ],
+      "formula": "scenarios_with_no_ai_base_route / all_scenarios = 12 / 12",
+      "confidence": "low",
+      "assumptions": [
+        "A-OPERATIONS-001"
+      ],
+      "metric_kind": "design_target",
+      "verification": "E2 设计目标覆盖率；同一核心结果、同队列优先级、零额外费用和基础安全信息等价仍须由授权后的真实任务验证。"
+    },
+    "algorithm_refusal_no_penalty_scenario_count": {
+      "status": "known",
+      "value": 12,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/governance/public-service-equivalence-contract.json",
+        "visual/assets/governance/shift-ledger-suite.json"
+      ],
+      "formula": "count(shift ledgers whose human_service_floor prohibits a lower basic service level after refusing the smart service)",
+      "confidence": "low",
+      "assumptions": [
+        "A-OPERATIONS-001"
+      ],
+      "metric_kind": "design_target",
+      "verification": "十二条交接账逐条写明“拒绝智能服务不得降低该场景的基本服务水平”；真实队列、费用、结果与安全信息同等性尚未观察。"
+    },
+    "accessibility_requirement_fixture_task_count": {
+      "status": "known",
+      "value": 8,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/governance/public-service-equivalence-contract.json"
+      ],
+      "formula": "count(accessibility requirement fixtures: nonvisual, keyboard/no pointer, low/colour vision, reduced mobility, older/cognitive load, multilingual, no device, algorithm/data refusal)",
+      "confidence": "low",
+      "assumptions": [
+        "A-CONTRAST-001",
+        "A-OPERATIONS-001"
+      ],
+      "metric_kind": "design_requirement_fixture",
+      "verification": "八类任务各带两条路线、至少三项设计要件、至少两项待采现场证据、关闭智能层条件，并显式保持 observed_user_count=0、pass_claimed=false。"
+    },
+    "accessibility_requirement_fixture_coverage_ratio": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/governance/public-service-equivalence-contract.json",
+        "visual/assets/governance/public-service-equivalence-audit.js"
+      ],
+      "formula": "valid_accessibility_requirement_fixtures / required_fixtures = 8 / 8",
+      "confidence": "low",
+      "assumptions": [
+        "A-CONTRAST-001",
+        "A-OPERATIONS-001"
+      ],
+      "metric_kind": "synthetic_contract_test",
+      "verification": "覆盖率只量设计需求字段与停止条件是否齐备，不量真实用户完成率、时间、求助、绕行或满意度。"
+    },
+    "real_user_accessibility_observation_count": {
+      "status": "known",
+      "value": 0,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/governance/public-service-equivalence-contract.json",
+        "visual/assets/governance/figure-contrast-report.json"
+      ],
+      "formula": "sum(observed real participants across the eight accessibility tasks)",
+      "confidence": "high",
+      "assumptions": [
+        "A-CONTRAST-001",
+        "A-OPERATIONS-001"
+      ],
+      "metric_kind": "observed_count",
+      "verification": "当前没有任何真实参与者记录；0 是证据边界，不是缺失值，也不得被解释为失败率为零。"
+    },
+    "real_user_accessibility_pass_count": {
+      "status": "known",
+      "value": 0,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/governance/public-service-equivalence-contract.json"
+      ],
+      "formula": "count(real-user accessibility tasks with an observed pass record)",
+      "confidence": "high",
+      "assumptions": [
+        "A-CONTRAST-001",
+        "A-OPERATIONS-001"
+      ],
+      "metric_kind": "observed_count",
+      "verification": "真实观察人数为 0，因此真实通过记录也保持 0；设计夹具 8/8 不得计入本指标。"
+    },
+    "handover_to_service_days": {
+      "status": "unknown",
+      "value": null,
+      "unit": "days",
+      "source_files": [],
+      "formula": "median(date(SERVE_accepted) - date(first_BUILD_handout)) over capabilities that completed BUILD→VERIFY→SHARE→SERVE",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-BASELINE-001",
+        "A-OPERATIONS-001"
+      ],
+      "reason": "标题主张「让好 AI 更快进城」，该主张只能由时间量检验，不能由完备率替代。基线须来自授权后的真实交接账；包内赋值会形成不可复核的伪精度，且没有基线的「缩短若干」比不赋值更具误导性。",
+      "measurement_protocol": {
+        "path": "visual/assets/governance/measurement-protocol.json",
+        "metric_id": "handover_to_service_days",
+        "collecting_role": "R-INDEPENDENT-REVIEW",
+        "role_spec": "visual/assets/governance/role-spec.json",
+        "frequency_or_trigger": "每完成一次 SERVE 侧接收即记一条；每季度汇总一次中位数",
+        "denominator": "当期完成 SERVE 侧接收的能力数",
+        "assignment_precondition": "至少一条能力走完 BUILD→VERIFY→SHARE→SERVE 四次交接，且四次交接账均可复核。",
+        "baseline": null,
+        "target": null
+      }
+    },
+    "handover_rework_rounds": {
+      "status": "unknown",
+      "value": null,
+      "unit": "rounds",
+      "source_files": [],
+      "formula": "median(count(rejections_with_resubmission)) per capability across BUILD→VERIFY→SHARE→SERVE",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-BASELINE-001",
+        "A-OPERATIONS-001"
+      ],
+      "reason": "「可信→少反复→更快」这条因果链的断裂点在于接入方是否仍要重做已做过的验证。该指标是这条链唯一的观测口；基线须由授权后的真实拒收记录产生，本方案不代为设定。",
+      "measurement_protocol": {
+        "path": "visual/assets/governance/measurement-protocol.json",
+        "metric_id": "handover_rework_rounds",
+        "collecting_role": "R-INDEPENDENT-REVIEW",
+        "role_spec": "visual/assets/governance/role-spec.json",
+        "frequency_or_trigger": "每次拒收并重新提交即记一条；每季度汇总一次中位数",
+        "denominator": "当期至少完成一次交接的能力数",
+        "assignment_precondition": "拒收理由已按 R1—R7 归类且可复核，能重新提交与首次提交之间建立对应关系。",
+        "baseline": null,
+        "target": null
+      }
+    },
+    "shift_protocol_enum_instance_count": {
+      "status": "known",
+      "value": 360,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/governance/shift-ledger-suite.json",
+        "visual/assets/governance/shift-ledger.schema.json",
+        "visual/assets/governance/protocol-check-runner.js"
+      ],
+      "formula": "count(enum-constrained string field instances across the 12 shift ledgers, over the 18 enumerations declared in shift-ledger.schema.json)",
+      "confidence": "high",
+      "assumptions": [
+        "A-OPERATIONS-001"
+      ]
+    },
+    "shift_protocol_enum_violation_count": {
+      "status": "known",
+      "value": 0,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/governance/protocol-check-runner.js"
+      ],
+      "formula": "count(enum-constrained field instances whose value is outside its declared enumeration)",
+      "confidence": "high",
+      "assumptions": [
+        "A-OPERATIONS-001"
+      ]
+    },
+    "smart_layer_state_enum_size": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/governance/shift-ledger.schema.json",
+        "visual/assets/governance/protocol-check-runner.js"
+      ],
+      "formula": "len(shift-ledger.schema.json#$defs.transferAttempt.properties.smart_layer_state_after_decision.enum) — off | sandbox_preview | limited_trial",
+      "scope_note": "该枚举**没有任何表示完全启用或已上线的取值**，因此「智能层不得越过有限试用」在 schema 层面就是结构性不可能，而不是一句承诺。protocol-check-runner.js 把这三个取值逐位写死并参与退出码，往枚举里加任何更高的状态都会立刻判失败。",
+      "confidence": "high",
+      "assumptions": [
+        "A-OPERATIONS-001"
+      ]
+    },
+    "model_shadow_case_count": {
+      "status": "known",
+      "value": 36,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/governance/model-shadow-run.json"
+      ],
+      "formula": "count(cases in the model shadow run: 12 shift ledgers x 3 clearance variants, one independent model call each)",
+      "confidence": "high",
+      "assumptions": [
+        "A-OPERATIONS-001"
+      ]
+    },
+    "model_shadow_deterministic_hold_case_count": {
+      "status": "known",
+      "value": 24,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/governance/model-shadow-run.json"
+      ],
+      "formula": "count(shadow cases whose deterministic outcome is smart_layer_state = off, i.e. variants P0 and P4)",
+      "confidence": "high",
+      "assumptions": [
+        "A-OPERATIONS-001"
+      ]
+    },
+    "model_shadow_hold_upheld_by_model_count": {
+      "status": "known",
+      "value": 24,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/governance/model-shadow-run.json"
+      ],
+      "formula": "count(deterministic-hold cases in which the independent model also returned smart_layer_state = off)",
+      "confidence": "high",
+      "assumptions": [
+        "A-OPERATIONS-001"
+      ],
+      "scope_note": "24/24。这是本方案核心前提（智能层可被确定性闸门拦住）第一次由一个不受规则约束的独立判断者验证，而不是由本方案自己的重放脚本验证。"
+    },
+    "model_shadow_more_permissive_case_count": {
+      "status": "known",
+      "value": 0,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/governance/model-shadow-run.json"
+      ],
+      "formula": "count(shadow cases in which the model returned a smart_layer_state strictly above the deterministic outcome)",
+      "confidence": "high",
+      "assumptions": [
+        "A-OPERATIONS-001"
+      ],
+      "scope_note": "0 例。模型无一例想让智能层越过确定性闸门给出的状态。"
+    },
+    "model_shadow_smart_layer_agreement_count": {
+      "status": "known",
+      "value": 36,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/governance/model-shadow-run.json"
+      ],
+      "formula": "count(shadow cases in which the model's smart_layer_state equals the deterministic outcome)",
+      "confidence": "high",
+      "assumptions": [
+        "A-OPERATIONS-001"
+      ]
+    },
+    "model_shadow_reason_set_divergence_case_count": {
+      "status": "known",
+      "value": 24,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/governance/model-shadow-run.json"
+      ],
+      "formula": "count(shadow cases in which the model's refusal_reasons set differs from the deterministic set)",
+      "confidence": "high",
+      "assumptions": [
+        "A-OPERATIONS-001"
+      ],
+      "scope_note": "分歧集中在理由码的命名与覆盖，不在结论上——这些分歧正是 model-shadow-run.json 里四条设计发现的来源。"
+    },
+    "model_shadow_distinct_reason_codes_produced": {
+      "status": "known",
+      "value": 14,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/governance/model-shadow-run.json"
+      ],
+      "formula": "count(distinct refusal reason codes produced by the model across 36 cases; the protocol itself records 4)",
+      "confidence": "high",
+      "assumptions": [
+        "A-OPERATIONS-001"
+      ],
+      "scope_note": "14 对 4。同一概念被拼成多种写法（「场地未确认」有 4 种），因为 refusal_reasons 在 schema 里没有枚举约束——见 SHADOW-F1。"
+    },
+    "shift_protocol_refusal_reason_code_count": {
+      "status": "known",
+      "unit": "count",
+      "source_files": [
+        "visual/assets/governance/shift-ledger-suite.json",
+        "visual/assets/governance/shift-ledger.schema.json",
+        "visual/assets/governance/protocol-check-runner.js"
+      ],
+      "confidence": "high",
+      "assumptions": [
+        "A-OPERATIONS-001"
+      ],
+      "value": 5,
+      "formula": "len(shift-ledger.schema.json#$defs.transferAttempt.properties.refusal_reasons.items.enum)"
+    },
+    "shift_protocol_disposition_smart_layer_pair_count": {
+      "status": "known",
+      "unit": "count",
+      "source_files": [
+        "visual/assets/governance/shift-ledger-suite.json",
+        "visual/assets/governance/shift-ledger.schema.json",
+        "visual/assets/governance/protocol-check-runner.js"
+      ],
+      "confidence": "high",
+      "assumptions": [
+        "A-OPERATIONS-001"
+      ],
+      "value": 7,
+      "formula": "sum(len(row.permitted_smart_layer_state_after_decision) for row in shift-ledger.schema.json#disposition_smart_layer_compatibility.table)"
+    },
+    "p0_entry_gate_count": {
+      "status": "known",
+      "value": 8,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/governance/p0-delivery-contract.json",
+        "visual/assets/governance/p0-readiness-audit.js"
+      ],
+      "formula": "count(p0-delivery-contract.entry_gates)",
+      "confidence": "high",
+      "assumptions": ["A-OPERATIONS-001"],
+      "metric_kind": "preregistered_design_obligation",
+      "verification": "八门 ID 集合由审计器写死并逐项检查 required_evidence、status=not_started、evidence_received_count=0 和失败后 smart_layer_off；只证明启动条件完整，不证明已有任何授权。"
+    },
+    "p0_delivery_stage_count": {
+      "status": "known",
+      "value": 5,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/governance/p0-delivery-contract.json",
+        "visual/assets/governance/p0-readiness-audit.js"
+      ],
+      "formula": "count(PRE-D0, D0, D1-D30, D31-D60, D61-D90)",
+      "confidence": "high",
+      "assumptions": ["A-OPERATIONS-001"],
+      "metric_kind": "preregistered_delivery_path",
+      "verification": "审计器要求五阶段逐位齐备，每阶段至少两项交付、两项退出证据，并明确失败后关闭智能层、保留基础人工服务；当前五阶段状态均为 not_started。"
+    },
+    "p0_raci_work_package_count": {
+      "status": "known",
+      "value": 10,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/governance/p0-delivery-contract.json",
+        "visual/assets/governance/role-spec.json",
+        "visual/assets/governance/p0-readiness-audit.js"
+      ],
+      "formula": "count(p0-delivery-contract.raci_work_packages)",
+      "confidence": "high",
+      "assumptions": ["A-OPERATIONS-001"],
+      "metric_kind": "unassigned_responsibility_design",
+      "verification": "十项工作包各有至少一个 R 和唯一 A，角色必须存在于 role-spec；全部 assignment_status=unassigned，避免把建议角色伪装成真实任命。"
+    },
+    "p0_component_line_item_count": {
+      "status": "known",
+      "value": 12,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/governance/p0-delivery-contract.json",
+        "visual/assets/governance/p0-readiness-audit.js"
+      ],
+      "formula": "count(p0-delivery-contract.component_schedule)",
+      "confidence": "high",
+      "assumptions": ["A-OPERATIONS-001"],
+      "metric_kind": "quantity_schedule_not_cost_estimate",
+      "verification": "十二项均给数量、单位和验收检查；询价前 procurement_status=not_quoted、单价和合价保持 null，三方报价槽位也保持空白。"
+    },
+    "p0_preregistered_acceptance_criterion_count": {
+      "status": "known",
+      "value": 8,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/governance/p0-delivery-contract.json",
+        "visual/assets/governance/p0-readiness-audit.js"
+      ],
+      "formula": "count(p0-delivery-contract.preregistered_acceptance_criteria)",
+      "confidence": "high",
+      "assumptions": ["A-OPERATIONS-001", "A-CONTRAST-001"],
+      "metric_kind": "preregistered_field_acceptance_rule",
+      "verification": "八项分别锁定同一核心结果、完成率差、时间比、队列/价格、安全信息、设备/算法拒绝、回执和无障碍必备任务；observed_value 全为 null、status=not_observed。"
+    },
+    "public_benefit_group_count": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/governance/public-benefit-gate.json",
+        "visual/assets/governance/p0-readiness-audit.js"
+      ],
+      "formula": "count(residents, youth_talent, enterprises, universities, visitors, marginalized_groups)",
+      "confidence": "high",
+      "assumptions": ["A-OPERATIONS-001"],
+      "metric_kind": "brief_group_design_coverage",
+      "verification": "六类来自官方评审维度；每类均有公共价值、无 AI 入口和至少两类待采证据，observed_participant_count 保持 0。"
+    },
+    "scenario_public_benefit_gate_count": {
+      "status": "known",
+      "value": 12,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/governance/public-benefit-gate.json",
+        "visual/assets/governance/p0-readiness-audit.js"
+      ],
+      "formula": "count(public-benefit-gate.scenario_public_value_gates for SCN-01..SCN-12)",
+      "confidence": "high",
+      "assumptions": ["A-OPERATIONS-001"],
+      "metric_kind": "preregistered_public_value_gate",
+      "verification": "十二场景逐一写明至少两类受益群体、公共收益、要避免的伤害、至少三项保障、关闭条件与智能层移除后仍留下的公共服务；全部 specified_not_observed。"
+    },
+    "offline_service_prototype_route_count": {
+      "status": "known",
+      "value": 2,
+      "unit": "count",
+      "source_files": [
+        "visual/index.html",
+        "visual/assets/governance/p0-readiness-audit.js"
+      ],
+      "formula": "count(data-service-route = smart-assist | no-ai-human)",
+      "confidence": "high",
+      "assumptions": ["A-OPERATIONS-001"],
+      "metric_kind": "synthetic_offline_prototype",
+      "verification": "两条路线共享 SCN-05-CORE-001 核心结果；原型含关闭智能层、拒绝数据、投诉/停用回执、大字、高对比、中英切换和打印，且无网络、持久化或个人信息字段。"
+    },
+    "planned_equity_cotest_session_min_count": {
+      "status": "known",
+      "value": 24,
+      "unit": "task_sessions",
+      "source_files": [
+        "visual/assets/governance/p0-delivery-contract.json",
+        "visual/assets/governance/public-benefit-gate.json"
+      ],
+      "formula": "p0-delivery-contract.cotesting_protocol.participant_session_minimum",
+      "confidence": "high",
+      "assumptions": ["A-OPERATIONS-001", "A-CONTRAST-001"],
+      "metric_kind": "preregistered_minimum_not_observed_count",
+      "verification": "24 是授权后计划完成的最少任务场次，不是当前样本；current_participant_sessions=0。六类群体均须留任务记录，至少 8 场覆盖无障碍、无设备、多语或拒绝算法等交叉需求。"
+    },
+    "p0_screening_control_envelope_area_sqm": {
+      "status": "known",
+      "value": 51.84,
+      "unit": "sqm",
+      "source_files": ["visual/assets/governance/p0-pre-feasibility-envelope.json"],
+      "formula": "7.2 m * 7.2 m",
+      "confidence": "medium",
+      "assumptions": ["A-OPERATIONS-001"],
+      "metric_kind": "participant_concept_screening_dimension",
+      "verification": "参赛者概念筛选包络，不是已授权场地面积、法定容量或实测边界；真实场地不足即转备选或不启动。"
+    },
+    "p0_reversible_operating_patch_area_sqm": {
+      "status": "known",
+      "value": 36,
+      "unit": "sqm",
+      "source_files": ["visual/assets/governance/p0-pre-feasibility-envelope.json"],
+      "formula": "6.0 m * 6.0 m",
+      "confidence": "medium",
+      "assumptions": ["A-OPERATIONS-001"],
+      "metric_kind": "participant_concept_screening_dimension",
+      "verification": "只允许落在既有、平整、连续、经授权且无需固定土建的表面；否则不以永久工程补齐。"
+    },
+    "p0_operational_public_cap_persons": {
+      "status": "known",
+      "value": 8,
+      "unit": "persons",
+      "source_files": ["visual/assets/governance/p0-pre-feasibility-envelope.json"],
+      "formula": "participant conservative cap below floor(36 sqm / 2.4 sqm per person) = 15",
+      "confidence": "medium",
+      "assumptions": ["A-OPERATIONS-001"],
+      "metric_kind": "participant_operating_cap_not_statutory_occupancy",
+      "verification": "8 人含陪同者，是参赛者为保持环线、回转和双面服务提出的运营上限；不是消防容量或现场观察。"
+    },
+    "p0_simultaneous_staff_position_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "role_seats",
+      "source_files": ["visual/assets/governance/p0-pre-feasibility-envelope.json", "visual/assets/governance/role-spec.json"],
+      "formula": "outgoing service + incoming wayfinding + independent safety/dissent",
+      "confidence": "high",
+      "assumptions": ["A-OPERATIONS-001"],
+      "metric_kind": "unassigned_operating_role_specification",
+      "verification": "三个席位必须同时在岗但当前 named_people 为空、assignment_status=unassigned；任一缺岗关闭智能层。"
+    },
+    "p0_queue_cap_persons": {
+      "status": "known",
+      "value": 6,
+      "unit": "persons",
+      "source_files": ["visual/assets/governance/p0-pre-feasibility-envelope.json"],
+      "formula": "participant queue cap within an unobstructed 6 m x 6 m operating patch",
+      "confidence": "medium",
+      "assumptions": ["A-OPERATIONS-001"],
+      "metric_kind": "participant_queue_stop_threshold",
+      "verification": "超过 6 人即暂停新任务、关闭智能层并转既有人工服务；阈值须在真实场地由安全与无障碍角色复核。"
+    },
+    "p0_buffered_task_slot_count_per_day": {
+      "status": "known",
+      "value": 36,
+      "unit": "planned_task_slots_per_day",
+      "source_files": ["visual/assets/governance/p0-pre-feasibility-envelope.json"],
+      "formula": "2 service faces * 4 hours * 60 / 10-minute assumed slot * 0.75 planning buffer",
+      "confidence": "low",
+      "assumptions": ["A-OPERATIONS-001"],
+      "metric_kind": "participant_planning_ceiling_not_observed_throughput",
+      "verification": "只用于检查至少 24 个真实任务场次在 30 天窗口内是否存在排期余量，不是需求预测、服务承诺或实测吞吐。"
+    },
+    "p0_public_open_hours_90_day": {
+      "status": "known",
+      "value": 260,
+      "unit": "hours",
+      "source_files": ["visual/assets/governance/p0-pre-feasibility-envelope.json"],
+      "formula": "4 public hours/day * 5 days/week * 13 weeks",
+      "confidence": "medium",
+      "assumptions": ["A-OPERATIONS-001"],
+      "metric_kind": "participant_roster_sensitivity_input",
+      "verification": "是成本与排班敏感性输入，不是已批准开放时段；真实时段由场地授权确定。"
+    },
+    "p0_staffed_seat_hours_90_day": {
+      "status": "known",
+      "value": 780,
+      "unit": "role_seat_hours",
+      "source_files": ["visual/assets/governance/p0-pre-feasibility-envelope.json"],
+      "formula": "260 public open hours * 3 simultaneous role seats",
+      "confidence": "medium",
+      "assumptions": ["A-OPERATIONS-001"],
+      "metric_kind": "participant_roster_sensitivity_input",
+      "verification": "只表示岗位工作量，不等于已有人员、FTE 任命、工资或持续预算。"
+    },
+    "p0_90_day_cost_sensitivity_low_cny": {
+      "status": "known",
+      "value": 118042,
+      "unit": "CNY",
+      "source_files": ["visual/assets/governance/p0-pre-feasibility-envelope.json"],
+      "formula": "sum(participant low sensitivity for removable kit, roster, review, compensation/accommodation, maintenance and 10% restoration reserve)",
+      "confidence": "low",
+      "assumptions": ["A-OPERATIONS-001"],
+      "metric_kind": "participant_sensitivity_not_quote_or_budget",
+      "verification": "费率由参赛者为比较范围而设置；不含场地、保险、税费、法定专业服务、永久工程和未查明公用事业，formal_budget_cny 仍为 null。"
+    },
+    "p0_90_day_cost_sensitivity_high_cny": {
+      "status": "known",
+      "value": 289750,
+      "unit": "CNY",
+      "source_files": ["visual/assets/governance/p0-pre-feasibility-envelope.json"],
+      "formula": "sum(participant high sensitivity for removable kit, roster, review, compensation/accommodation, maintenance and 10% restoration reserve)",
+      "confidence": "low",
+      "assumptions": ["A-OPERATIONS-001"],
+      "metric_kind": "participant_sensitivity_not_quote_or_budget",
+      "verification": "上限同样不是市场报价或预算承诺；三方报价、保险和 90 天批准预算未齐时不得采购。"
+    },
+    "p0_annual_opex_sensitivity_low_cny": {
+      "status": "known",
+      "value": 300772,
+      "unit": "CNY_per_year",
+      "source_files": ["visual/assets/governance/p0-pre-feasibility-envelope.json"],
+      "formula": "participant low annual sensitivity at 4 h/day, 5 days/week, 50 weeks/year and 3 simultaneous role seats",
+      "confidence": "low",
+      "assumptions": ["A-OPERATIONS-001"],
+      "metric_kind": "participant_opex_sensitivity_not_approved_budget",
+      "verification": "约 30 万元/年只用于识别人员是主要变量；不含场地、保险、税费、公用事业和永久工程。"
+    },
+    "p0_annual_opex_sensitivity_high_cny": {
+      "status": "known",
+      "value": 648300,
+      "unit": "CNY_per_year",
+      "source_files": ["visual/assets/governance/p0-pre-feasibility-envelope.json"],
+      "formula": "participant high annual sensitivity at 4 h/day, 5 days/week, 50 weeks/year and 3 simultaneous role seats",
+      "confidence": "low",
+      "assumptions": ["A-OPERATIONS-001"],
+      "metric_kind": "participant_opex_sensitivity_not_approved_budget",
+      "verification": "约 65 万元/年不是运营承诺；持续预算未批准时 P0 不启动。"
+    },
+    "p0_alternative_option_count": {
+      "status": "known",
+      "value": 4,
+      "unit": "options",
+      "source_files": ["visual/assets/governance/p0-pre-feasibility-envelope.json"],
+      "formula": "count(ALT-0 existing human floor, ALT-1 mobile cart, ALT-2 reference table, ALT-3 borrowed indoor room)",
+      "confidence": "high",
+      "assumptions": ["A-OPERATIONS-001"],
+      "metric_kind": "participant_alternative_comparison",
+      "verification": "四个备选只改变载体和空间包络，不绕过八道门；条件都不成立时选择 ALT-0 不启动。"
+    },
+    "p0_same_day_removal_target_hours": {
+      "status": "known",
+      "value": 4,
+      "unit": "hours",
+      "source_files": ["visual/assets/governance/p0-pre-feasibility-envelope.json"],
+      "formula": "participant target for 4-person removal crew = 16 person-hours",
+      "confidence": "low",
+      "assumptions": ["A-OPERATIONS-001"],
+      "metric_kind": "participant_target_not_field_tested",
+      "verification": "真实授权演练前不得宣传已能四小时撤场；任一恢复检查失败即不开放下一场次。"
     }
-  }
+  },
+  "precision_policy_zh": "本文件所有由几何推算的数值，其小数位都是算法输出，不是实测精度。输入几何为组织方临时粗略范围（`geometry/site_boundary.geojson`，official_boundary=false），因此**面积类数值的有效位数实际只到公顷级、长度类只到百米级**；保留完整小数位的唯一目的是让任何人用同一公式与同一投影（EPSG:4548）逐位复算校对。官方几何到位后按同一公式原样复算，只换输入不改公式。**不要把这些小数位当作场地的精确程度来读。**",
+  "precision_policy_en": "Every value in this file derived from geometry carries decimals that are an output of the algorithm, not a survey precision. The input geometry is the organiser's provisional coarse extent (`geometry/site_boundary.geojson`, official_boundary=false), so the **effective significance of area values reaches only the hectare level and of lengths only the hundred-metre level**. Full decimals are retained for one purpose only: so anyone can recompute digit by digit with the same formula and projection (EPSG:4548). Once official geometry exists, the same formula is rerun on the new input unchanged. **Do not read these decimals as the precision of the site.**"
 }

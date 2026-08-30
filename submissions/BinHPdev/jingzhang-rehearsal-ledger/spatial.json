@@ -1,0 +1,95 @@
+{
+  "version": 1,
+  "disclaimer": "concept-only",
+  "summary": "以概念节点、廊道和区域描述京张演练场的空间结构。不含坐标、bbox、权属或官方规划线位；正式数据发布后按同一结构复算。",
+  "items": [
+    {
+      "id": "corridor-rehearsal-spine",
+      "type": "corridor",
+      "title": "演练主脊",
+      "summary": "沿京张铁路历史线位的连续慢行绿廊，是所有街道级 AI 场景的默认演练界面与南北贯通主线。",
+      "source": "brief/public-brief.md",
+      "public_level": "provisional",
+      "linked_scenarios": ["ai-traffic-walkability", "robot-delivery-low-speed"],
+      "order": 1,
+      "geometry": { "mode": "concept", "label": "京张铁路遗址公园沿线南北向" }
+    },
+    {
+      "id": "corridor-east-west-seams",
+      "type": "corridor",
+      "title": "东西缝合口",
+      "summary": "七处横向步行缝合口，把被大路切断的东西两侧重新接通，同时作为跨界场景的演练入口。",
+      "source": "brief/public-brief.md",
+      "public_level": "provisional",
+      "linked_scenarios": ["ai-traffic-walkability", "ai-health-service-navigation"],
+      "order": 2,
+      "geometry": { "mode": "concept", "label": "主脊与既有横向道路相交处" }
+    },
+    {
+      "id": "area-grade-1-grounds",
+      "type": "area",
+      "title": "一级演练场·众智园",
+      "summary": "封闭与半封闭演练场地，承担全栈自主技术验证、任务清单冻结与复算，对应 AI 治理话语权功能。",
+      "source": "brief/site-package/agent_taskbook.json",
+      "public_level": "provisional",
+      "linked_scenarios": ["public-safety-operations-review", "robot-delivery-low-speed"],
+      "order": 3,
+      "geometry": { "mode": "concept", "label": "一带北段众智园片区" }
+    },
+    {
+      "id": "area-grade-2-living",
+      "type": "area",
+      "title": "二级生活演练区·AI原点社区",
+      "summary": "在真实生活场景中做有居民陪审的演练，服务日常出行、健康导航与社区服务。",
+      "source": "brief/site-package/agent_taskbook.json",
+      "public_level": "provisional",
+      "linked_scenarios": ["ai-health-service-navigation", "enterprise-service-copilot"],
+      "order": 4,
+      "geometry": { "mode": "concept", "label": "一带中段 AI 原点社区片区" }
+    },
+    {
+      "id": "area-grade-3-concourse",
+      "type": "area",
+      "title": "三级开放门厅·大钟寺门户",
+      "summary": "对外展示与开放验证段，承担智能原生消费与商务场景与 AI-off 兜底服务的公开验证。",
+      "source": "brief/site-package/agent_taskbook.json",
+      "public_level": "provisional",
+      "linked_scenarios": ["ai-cultural-guide", "enterprise-service-copilot"],
+      "order": 5,
+      "geometry": { "mode": "concept", "label": "一带南段门户片区（位置存疑，见 Issue #1029）" }
+    },
+    {
+      "id": "node-ledger-tower",
+      "type": "node",
+      "title": "台账塔",
+      "summary": "朝圣地标一：公开显示当日全部在跑场景的实时读数、失败数与未达标项，把治理过程做成可看见的公共物。",
+      "source": "brief/site-package/agent_taskbook.json",
+      "public_level": "provisional",
+      "linked_scenarios": ["public-safety-operations-review"],
+      "order": 6,
+      "geometry": { "mode": "concept", "label": "一级演练场核心" }
+    },
+    {
+      "id": "node-switchback-colonnade",
+      "type": "node",
+      "title": "人字回廊",
+      "summary": "朝圣地标二：以人字形折返隐喻可撤回的城市决策，是居民陪审与场景公示的日常场所。",
+      "source": "brief/public-brief.md",
+      "public_level": "provisional",
+      "linked_scenarios": ["ai-cultural-guide"],
+      "order": 7,
+      "geometry": { "mode": "concept", "label": "二级生活演练区核心" }
+    },
+    {
+      "id": "node-ai-off-plaza",
+      "type": "node",
+      "title": "断电广场",
+      "summary": "朝圣地标三：每周固定时段关闭 AI，公开验证人工兜底服务是否仍然可用，读数当场公布。",
+      "source": "brief/public-brief.md",
+      "public_level": "provisional",
+      "linked_scenarios": ["enterprise-service-copilot", "ai-health-service-navigation"],
+      "order": 8,
+      "geometry": { "mode": "concept", "label": "三级开放门厅核心" }
+    }
+  ]
+}

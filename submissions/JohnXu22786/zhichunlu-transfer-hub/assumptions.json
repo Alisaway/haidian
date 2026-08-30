@@ -1,0 +1,61 @@
+{
+ "schema_version": "0.1.0",
+ "assumptions": [
+  {
+   "assumption_id": "A-BOUNDARY-001",
+   "statement_zh": "组织方尚未发布官方总体边界与重点区域 polygon，本方案全部几何为 provisional 临时粗略约束，仅用于内容设计与机器校验；官方图形发布后必须整体复算。",
+   "statement_en": "No official boundary or key-area polygons are published yet; all geometry here is provisional and must be recomputed when official data arrives.",
+   "category": "boundary",
+   "status": "accepted_limitation"
+  },
+  {
+   "assumption_id": "A-CONTROLS-001",
+   "statement_zh": "轨道保护区、站城一体化控制条件与控规指标未知，本方案不给出任何具体数值结论，仅保留概念口径的示意。",
+   "statement_en": "Statutory controls (railway protection zone, FAR, height) are unknown; this proposal makes no numeric conclusions about them.",
+   "category": "statutory_control",
+   "status": "accepted_limitation"
+  },
+  {
+   "assumption_id": "A-DATA-001",
+   "statement_zh": "公交IC卡、共享单车与客流数据仅作概念性匿名聚合引用，不替代官方统计，不涉及任何真实个体信息。",
+   "statement_en": "Transit-card and crowd data are referenced as anonymous aggregates only; no real individuals are identified.",
+   "category": "data_boundary",
+   "status": "accepted_limitation"
+  },
+  {
+   "assumption_id": "A-DESIGN-001",
+   "statement_zh": "智核集散广场、AI出行服务大厅与智慧换乘走廊设施均为原创概念建议，模块化可逆，不构成建设承诺。",
+   "statement_en": "All facilities are original reversible conceptual proposals, not construction commitments.",
+   "category": "design_proposal",
+   "status": "concept"
+  },
+  {
+   "assumption_id": "A-PRIVACY-001",
+   "statement_zh": "出行与客流数据仅提供匿名聚合与人工复核兜底，不设个体识别采集，不设无法人工终止的自动决定。",
+   "statement_en": "Mobility data uses anonymous aggregation with human review; no irreversible automated decisions.",
+   "category": "privacy",
+   "status": "concept"
+  },
+  {
+   "assumption_id": "A-EVENT-001",
+   "statement_zh": "通勤周、开放日与分期实施等均为建议性设计，不代表已确定的政府安排、轨道运营方承诺或投资承诺。",
+   "statement_en": "The event system and phasing are design suggestions, not confirmed government or operator commitments.",
+   "category": "operation",
+   "status": "concept"
+  },
+  {
+   "assumption_id": "A-ACCESS-001",
+   "statement_zh": "「5—10分钟可达全覆盖」为待验证目标而非已量化结论：当前概念路网（geometry/roads.geojson）不用于计算覆盖率，官方路网与客流数据发布后将按公开方法（步行4.5km/h、骑行12km/h等效时间栅格，按实际过街路径计）复算并发布结果与限制。",
+   "statement_en": "The 5-10 minute accessibility coverage is a to-be-verified goal, not a quantified conclusion; it will be recomputed and published once official network and ridership data are available.",
+   "category": "accessibility",
+   "status": "to_be_verified_goal"
+  },
+  {
+   "assumption_id": "A-DETAILED-PLAN-001",
+   "statement_zh": "截至提交日无公开可核验的在编详细规划全文，本方案不以在编详细规划作为设计依据；若后续官方发布相关成果，须补充来源条目并校核表述。",
+   "statement_en": "No public verifiable full text of any in-progress detailed plan exists as of submission; it is not used as a design basis. If official outputs are published later, add a source entry and re-check the text.",
+   "category": "planning_basis",
+   "status": "accepted_limitation"
+  }
+ ]
+}

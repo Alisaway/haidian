@@ -329,12 +329,21 @@ def host_of(url: str) -> str:
 
 
 def is_probably_supported_url(url: str) -> bool:
-    if not url.startswith(("http://", "https://")):
+    value = (url or "").strip()
+    try:
+        parsed = urllib.parse.urlsplit(value)
+        hostname = parsed.hostname
+        _ = parsed.port
+    except ValueError:
         return False
-    lower = url.lower()
+    if parsed.scheme.lower() not in {"http", "https"} or not hostname:
+        return False
+    if any(char.isspace() for char in value):
+        return False
+    lower = value.lower()
     if any(item in lower for item in EXCLUDED_HOST_KEYWORDS):
         return False
-    path = urllib.parse.urlsplit(lower).path
+    path = parsed.path.lower()
     return not any(path.endswith(ext) for ext in EXCLUDED_EXTENSIONS)
 
 
@@ -595,8 +604,11 @@ def extract_links_from_html(html_text: str, base_url: str) -> list[tuple[str, st
         href = raw_href.strip()
         if not href or href.startswith(("javascript:", "mailto:", "tel:")):
             continue
-        url = urllib.parse.urljoin(base_url, href)
-        url = decode_duckduckgo_url(url)
+        try:
+            url = urllib.parse.urljoin(base_url, href)
+            url = decode_duckduckgo_url(url)
+        except ValueError:
+            continue
         if is_probably_supported_url(url):
             output.append((canonicalize_url(url), anchor))
     deduped: dict[str, str] = {}
@@ -696,7 +708,8 @@ def discover_seed_links(
     html_rows = [
         row
         for row in seed_rows
-        if row.get("type") in {"auto_html", "metadata_html"} and row.get("url", "").startswith("http")
+        if row.get("type") in {"auto_html", "metadata_html"}
+        and is_probably_supported_url(row.get("url", ""))
     ]
     for row in html_rows[:max_seed_pages]:
         seed_url = row["url"]

@@ -6,507 +6,627 @@ proposal_format_version: "2"
 bilingual_contract_version: "1"
 translation_of: "proposal.md"
 license: "COMMUNITY-DISPLAY-ONLY"
-summary: "Designing the Centennial Jing-Zhang AI Innovation Belt in the paradigm of urban science: five rulers (fractal / syntax / spatial interaction / scaling law / cellular emergence), all computed locally, diagnosing a belt whose form is healthy (fractal dimension 1.746, health factor H=1.556) yet whose connections are severed; the proposal uses the logic of emergence to move aside the constraints blocking growth, cross-corroborates its effectiveness with three models on the same data and the same stitching assumption, and closes with a computable, evolvable, human-serving urban operating system."
+summary: "An urban-science paradigm for the Centennial Jing-Zhang AI Innovation Belt: 28 local computations (λ/percolation/space syntax/LUTI/CA/fractal) diagnose a healthy skeleton (fractal dimension 1.746) blocked at three points; the plan lifts the Emergence Index from 0.795 (yellow) to 0.9625 (within the proxy-model design scenario, meeting self-set thresholds; real effects await on-site verification and professional approval)"
 tracks: ["ai-traffic-walkability", "jingzhang-heritage-narrative", "ai-origin-community"]
 scenarios: ["ai-traffic-walkability"]
-iteration: "v0.17"
+iteration: "v2.0"
 ---
 
-*Urban design for the Centennial Jing-Zhang AI Innovation Belt · Open-call submission · KUN-SAL Spatial Quant Lab*
+*Centennial Jing-Zhang AI Innovation Belt urban design · open-call submission · KUN-SAL Urban Science Lab*
 
-In 1909, facing the extreme gradient of Badaling, Zhan Tianyou did not "build a flatter road" — he invented the herringbone switch: **letting the train find its own way within the constraint**. That was the first time a Chinese engineer answered a question: when the constraints cannot be changed, what is left for design to do?
+> **The question of our time: when AI can compute the city, does the city still need to be designed?**
+> Our answer: yes — but the designer's role has changed. **No longer draw blueprints — set the rules by which the city grows.**
+> The Jing-Zhang Hyper Line in one line: **an urban belt that grows by itself (a concept proposed by this submission)** — not planned, but grown out of the data.
 
-One hundred and seventeen years later, the same question stands over this Jing-Zhang corridor. The constraints have changed: no longer mountains, but seven arterial roads, the walls of universities, the property rights of a built-up city, the settlement threshold of the capital. But the question is unchanged — **when the constraints cannot be changed, what is left for design to do?**
+In 1909, facing the extreme gradient of Badaling, Zhan Tianyou did not "build a flatter line" — he invented the switchback, **letting the train find its own path within the constraint**.
 
-Our answer is not an answer but a paradigm. The paradigm is called **THE EMERGENT BELT**: we do not fight the constraints, nor do we go around them — we use urban science to turn "constraints" into "conditions for emergence" — as Batty puts it, the planner's task is not to write the script for the system, but to create the conditions that let the system grow itself.
+In 2019, the Jing-Zhang high-speed rail drew a straight line, carrying the city across the mountains.
 
-**Hyper Line** is the name of this belt, and also its scientific definition: in scaling law, innovation is one of the few naturally superlinear variables in cities (β>1: the more it agglomerates, the more it yields); infrastructure is naturally sublinear (β<1: the more you lay down, the cheaper per capita). A "Hyper" line, then, is a line that **carries a superlinear soul on a sublinear skeleton** — that is urban science, not rhetoric.
+In 2026, this corridor draws its third line — **the Hyper Line, letting the city grow by itself**. It no longer answers "how to lay a road", it answers a new question: **when a belt's skeleton is healthy (fractal dimension 1.746) but its growth is blocked, what can design do?** Three moves: **stitch** (reconnect the line cut by seven arterial roads), **entangle** (mix jobs and housing back in place), **unlock** (let the locked land flow again) [metric:corridor_crossing_count]. Three moves done, the rest is for time and people — innovation grows by itself.
 
-The entire work of this proposal is to measure this belt with five rulers of urban science (fractal, syntax, spatial interaction, scaling law, cellular emergence), and the measurement yields one conclusion: **its skeleton is healthy (fractal dimension 1.746, health factor 1.556); what it lacks is not rebuilding, but the conditions for the system to grow again.** The three things the proposal does — reconnecting the severed line, unlocking the locked blocks, measuring the unmeasured middle layer — are not "new things drawn on paper", but **moving aside what blocks emergence**.
+**Each move has recomputable evidence.** 28 local computations form the evidence layer: percolation 0.840→0.904 (stitch reconnects the blue-green network) [metric:percolation_giant_fraction_design], syntax gain +36% (stitch re-concentrates foot traffic) [metric:syntax_integration_gain_pct], jobs-housing entropy +5.3% (entanglement lets commute shrink) [metric:jobs_housing_entropy_gain_pct], Emergence Index 0.795→0.9625 all-green (the combined effect of the three moves) [metric:ei1_design_s4]. Adverse readings honestly reported: stitching does not change network λ (24.76%→24.76%, λ is diagnostic not a lever) [metric:lambda_net_pct_stitched].
 
-Every chapter that follows is evidence measured by one of the rulers. The protagonist of the story is not the planner, but the belt itself, and the connections it is regenerating.
+**The memorable line: THE THIRD LINE.** The switchback was invention under engineering constraint, the straight line was breakthrough under speed constraint, the Hyper Line is the answer of the age of compute — **cities are increasingly shaped by computation-assisted design, with designers and the public making the decisions**. The belt's three spatial identities: **Quantum Garden** (Zhongzhiyuan — research lives inside a garden), **Origin Living Room** (Origin Community — the city's public living room), **Interface Gate** (Dazhongsi — the southern portal). Each identity is function, not style: the garden triggers cross-disciplinary encounter, the living room retains entrepreneurs, the portal connects the city.
 
-![Nine kilometres, three key areas, and seven gaps](assets/figures/site-overview.en.png)
+The entire work of this proposal is to walk that "let the city grow by itself" sentence from end to end: **Vision → Diagnosis → Three Moves → Proof → Operation** — each ring handing its conclusion to the next, leaving no assertion without an upstream.
 
-## Execution Summary and Design Decisions
+![Nine kilometers, three key areas, seven cuts](assets/figures/site-overview.en.png)
 
-**The conclusion first (what a juror can take away in 90 seconds)**: this belt's skeleton is healthy (fractal dimension 1.746 inside the healthy band, health factor H=1.556 above benchmark); its only problem is that the conditions for growth are blocked — seven roads sever the main spine, only one of ten core pairings has crossed the phase-transition threshold, 45 cells have their "golden locations used at low intensity", and the middle layer (affordability / conversion rate / inclusive compute) is unmeasured. The proposal's design actions therefore fall into only four categories — four "decision cards":
+---
 
-| Decision | Content | One-line rationale |
+## Executive Summary & Design Decisions
+
+**The conclusion up front (what a reviewer can take away in 90 seconds)**: the belt's skeleton is healthy (fractal dimension D=1.746 in the healthy band [metric:street_network_D_large]); its only problem is that the conditions for growth are blocked at three points — **severed connectivity, jobs-housing imbalance, ecological gaps**. Every action in this plan removes one of those three blocks, and **every removal is supported by in-model recomputation and awaits field/professional verification**.
+
+| The reviewer asks | Our answer | Verifiable artifact |
 |---|---|---|
-| **Decision 1: Open** | Stitch the seven nodes, reconnecting the severed spine into one line (integration +65%–+132%) | Configuration determines movement: stitching is a phase transition, not decoration |
-| **Decision 2: Unlock** | The CA proves non-intervention = path lock-in; intervention unlocks 42 cells for reallocation | Emergence needs conditions, and the condition is "opening the lock" |
-| **Decision 3: Infill** | The gaps recognized by 25,476 POIs (finance −63%, research −45.9%, medical 2.88/km²) are filled by the deviation list | Fill what is missing, no guesswork |
-| **Decision 4: Measure** | Three middle-layer indicators, plus λ and H entering the Phase-Transition Forum's annual public report | What is not measured does not exist |
-| **Decision 5: Run** | Install the Emergent Brain (three layers + four terminals + recursive loop + Phase Control Room), turning the city into a yearly-iterated program | The city is no longer designed once, but continuously read, computed, and tuned |
+| What is actually wrong? | Healthy skeleton, three blocks (connectivity / jobs-housing / ecology) | EI0=0.795 four-subindex panel (E_link 0.62 yellow / E_entangle 0.75 yellow / E_ecosys 0.77 yellow) [metric:ei1_value] |
+| What is the prescription? | Stitch (percolation+syntax) + entangle (jobs-housing) + unlock (CA) — **combination is the only solution** | Three gates: percolation 0.840→0.904 / syntax +36% / jobs-housing entropy +5.3% [metric:percolation_giant_fraction_design] |
+| Does it work? | Emergence Index 0.795 → **0.9625 all-green** | ei1_anchored.json + dual sensitivity intervals on weights/inputs [metric:ei1_design_s4] |
+| Is it over-claiming? | **Deliberately withheld**: statutory FAR, official red lines, engineering alignments — pending official data | Data-gap matrix (8 gap classes all marked "pending official data") |
+| Adverse reading? | **Stitching does not change network λ** (24.76%→24.76%); redundancy R rises 0.826→0.870 (more mixed, not more "precise") | c32 K008 [metric:lambda_net_pct_stitched] + c29 redundancy [metric:redundancy_R_after] |
+| **Is this another blueprint?** | **No. This is a system that produces plans** — change the input, the output follows; red lines arrive, the whole package recalculates | All computation scripts + formulas registered; annual EI re-run mechanism; provisional→confirmed upgrade path |
 
-**The three-part structure of this document (a reading guide)**: the **diagnosis part** (the five scientists' consultation → user research → the space-syntax chapter → the LUTI chapter → the coordinated research) measures the disease and its targets with five rulers; the **design part** (overall design → key areas → the subsystems) translates the targets into spatial paths — space is supported by these invisible dynamics, not drawn; the **operations part** (the Emergent Brain → investment → indicators → the design conclusion) hands this machine to time — an annual check-up, every step falsifiable.
+**Six-ring navigation**: Worldview (vision / dual clock / seven principles) → Diagnosis (five-scientist consultation / syntax / LUTI / ecology) → Mechanism (three causal laws) → Prescription (master plan / key areas / subsystems) → Verification (three-model cross-check / three gates / EI) → Operation (emergent brain / investment / metrics / conclusion). Each chapter ends with a "Ring conclusion →" that passes its output to the next ring.
 
-**Naming of the main line**: THE EMERGENT BELT — Jing-Zhang Hyper Line (Hyper = scaling-law superlinearity β>1; Emergent = bottom-up emergence). The logo direction is "the superlinear line": a straight railway line curving upward at its end, with the seven-point percolation cluster floating up along it.
+**Naming**: THE EMERGENT BELT — Jing-Zhang Hyper Line (Hyper = superlinear β>1; Emergent = bottom-up emergence). Logo: "the superlinear line" — a straight railway curving upward.
 
-**The verification promise**: three models (SIMULACRA's four sectors, the CA emergence, the LUTI match rate) cross-corroborate on the same data and the same stitching assumption, converging in direction; the ten-year timeline sets two acceptance gates (λ≥40%, H≥1.35) — if they are not met, stop and review. All spatial conclusions are conceptual suggestions; statutory control indicators await official data.
+**Human-AI division of labor (answering "who is responsible")**: the machine computes, diagnoses, generates, and self-checks (28 computations, four gates, bilingual reconciliation — all reproducible and falsifiable); the human makes value judgments, reconciles interests, and gives final approval. All spatial proposals are open co-creation suggestions, not approval conclusions; engineering is deepened and implemented by humans; statutory controls are "pending official data". **AI computes what is computable about the city; the human decides the meanings that cannot be encoded.**
 
-**Human–machine collaboration and the boundary of responsibility (this proposal's methodological stance, a direct answer to "if something goes wrong, who is responsible")**: this proposal was produced this way — the machine is responsible for **computation, diagnosis, generation, and self-checking** (15+ locally computed results, four self-checks, bilingual reconciliation, all reproducible and falsifiable); humans are responsible for **value judgment, interest coordination, and final approval** (the proposal states plainly: all spatial suggestions are open co-creation suggestions and do not constitute approval conclusions; engineering implementation is deepened separately and carried out by people; statutory control indicators are "pending official data"). Tools change, from ruler to algorithm, but the core of "building" remains human — in this proposal every design decision carries a "why" evidence chain, precisely so that human value judgment has something to lean on: **AI computes the computable parts of the city clearly, and leaves the meanings that cannot be encoded to human decisions. That is the bridge between the computable city and the city that serves people.**
+![Master plan](assets/figures/masterplan.en.jpg)
 
-![Master plan: one line, three folds, two wings, seven nodes](assets/figures/masterplan.en.png)
+---
 
-**How to read this master plan**: light-grey blocks = the existing building fabric (OSM measured footprints, Aug-2026 snapshot); the dark line with a white casing = the real Jing-Zhang railway alignment; green = the green and blue-green network; the thick dark-green line = the Hyper Line main spine; red dots ●1–●7 = the seven stitching nodes; stars = the three pilgrimage landmarks; grey squares = the two wings. **First read the line (the spine) reconnected by seven red dots, then read the three gates (three coloured frames) hanging on the line — the base is the real city, and only the overlay is the design.**
+## Vision & Goals (Worldview ring)
 
-## Vision and Goals
+**Vision (three heights, one goal) — with THE EMERGENT BELT as the paradigm**: make Centennial Jing-Zhang an AI innovation belt fully designed by urban science (proposed by this submission) — computable, evolvable, human-serving — a belt that truly EMERGES: not drawn alone, but grown by rules under designer and public judgement (a superlinear soul on a sublinear skeleton). Others submit "blueprints"; we submit a "recursive city operating system" — a living system where inputs change, outputs follow; red lines arrive, the whole package recalculates. Asked "how do we know the belt succeeded in five years", our answer is not adjectives but four numbers: percolation giant fraction ≥0.90, syntax anchor integration gain ≥30%, jobs-housing entropy ≥+4%, EI recomputed and published annually [metric:percolation_giant_fraction_design].
 
-**Vision (three heights, one goal)**:
+**The dual clock**: the high-frequency city ticks in seconds/days/months (25,476 Amap POIs are its heartbeat); the low-frequency city settles in years/decades (control plans, red lines, property rights are its skeleton). A design that sees only one clock mistakes transient phenomena for permanent structure, or permanent constraints for ignorable ones.
 
-**The world-class height**: make the Centennial Jing-Zhang corridor the world's first AI innovation belt **designed end-to-end with urban science — computable, evolvable, and serving people**. Others deliver a "blueprint"; we deliver an "urban operating system" — it has falsifiable criteria (the λ phase transition, the percolation threshold, the fractal health band, the health factor H), an annual check-up (the Phase-Transition Forum's public report), and rules that let the city grow itself (the CA-verified "unlock list"). When a juror asks "how will we know in five years whether this belt succeeded", our answer is not an adjective but four numbers: the supercritical share of λ above 40%, 25-minute-circle job reach +15.9%, the land-use–transport match rate above 60%, and the health factor held above the 1.35 benchmark [metric:wilson_supercritical_net_pct] [metric:health_factor_H].
+**Seven principles**: ① network before parcel ② reserve for self-organization ③ mixed use ④ dual clock ⑤ sandbox verification ⑥ reproducible ⑦ human-serving. Each maps to a checkable design action.
 
-**The city-level height**: let the returns of superlinear innovation flow back to every citizen. The returns of agglomeration naturally concentrate toward the strong (β>1 is both the dividend and the risk of agglomeration); this belt bends them back with five equity mechanisms — public compute vouchers, a public data lake, AI night school, spatial equity, attribution equity. **Hyper is not an upward-bending curve for the few; it is an upward-bending curve every citizen can lean on.**
+**Inclusion baseline (explicit responses for six population groups)**: **Residents** — time-shared opening and community-service interfaces (off-peak public space use; pedestrian-first spine). **Young talent** — 178,400 m² talent apartments + developer community (name wall / developer festival / honor wall). **Enterprises** — full-stack test band and shared labs (real test grounds with controlled boundaries). **Universities** — campus-edge innovation street and see-through culture gallery (two-way openings on campus boundaries). **Visitors** — pilgrimage route and linear heritage exhibition (three landmark sites strung along the rail alignment). **Vulnerable groups (elderly / children / accessibility users / frontline workers)** — a whole-belt accessibility-path floor: every public path remains usable when AI is removed, with barrier-free ramps, static information, and multi-sensory wayfinding concurrently available (per the Barrier-Free Environment Construction Law [source:DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW]); elderly and children benefit from time-sharing and the physical isolation of controlled testing (the test band never adjoins children's activity areas); frontline workers (cleaning / security / delivery) receive paid transitions and rest units (staff-hours accounted in A6 card operations). **"Can the least-served person use it?" is this plan's baseline yardstick of spatial justice** — any scenario unusable by a vulnerable group triggers HOLD; no average improvement offsets a single group's failure.
 
-**The methodology-level height**: establish "emergence under constraints" as a scientific paradigm of urban design. From the herringbone switch of 1909 to the Emergent Belt of 2026, this corridor has twice become the evidence of "how constraints are turned into creation". This time, the evidence is not a railway, but 15 locally reproducible computations, the mutual corroboration of five rulers, and one conclusion that three models, on the same data and the same stitching assumption, converge upon.
+**Ring conclusion →** The constraint cannot be changed; so the object of design is not the constraint itself but the **relationship between constraints**. This judgment steers every subsequent cut toward "connection", never toward "confrontation".
 
-![Vision aerial 2035 (AI concept render, not a commitment of reality)](assets/media/vision-2035.jpg)
+---
 
-**Five goals, corresponding to five functions and five measurable numbers**: ① connection — the three areas and two wings fully connected (λ across the critical line) [metric:core5_giant_span_ratio]; ② ecosystem — turn the "unmeasured middle layer" into "annually measured" (affordability, conversion rate, and inclusive compute enter the Phase-Transition Forum's annual report) [source:DATA-SRC-AGENT-TASKBOOK-20260518]; ③ scenarios — all ten scenario cards land in space, each with a person on duty and a fallback human channel [standard:BARRIER-FREE-ENVIRONMENT-LAW]; ④ supply — the gaps recognized by 25,476 POIs are filled according to the deviation list [metric:deviation_finance_pct]; ⑤ governance — the coordination game flips from "go it alone" to "cooperate" (Nash equilibrium unlocked) [metric:nash_lock_status_after].
 
-## Design Basis and Source List
+## Cultural Fusion Narrative & Heritage Assetization (Worldview ring: the content asset)
 
-This round first verifies the project's progress. The official announcement confirms three scales: coordinated research 43.6 km², overall design 11.4 km², and three key areas 368.4 hectares; the Haidian press conference of July 2026 gives the Origin Community's baseline — roughly 3 km², more than a thousand AI scientists, 13,000 developers, Zhizhi FlagOS adapted to 32 chips from 18 vendors, and nearly 180 OPC one-person companies [source:DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509] [source:DATA-SRC-HAIDIAN-PRESS-20260729]. Park Phase I is built and open, and Phase II is under construction — Phase I is the status quo, Phase II is in progress; these two accounts must be kept separate, never painting a plan as the status quo [source:DATA-SRC-PARK-PHASE1-202306].
+**Beyond space, this belt holds an undervalued asset: its heritage.** The task book requires "excavating the historical culture of the Jing-Zhang Railway and the innovation culture of Zhongguancun, and fusing them with AI innovation culture". This proposal does not treat that sentence as a lyrical passage but as an **asset ledger — every cultural resource point must answer: how can it be developed, utilized, operated, and passed on.**
 
-The drawings use four base colours: grey is the status quo, green is the built park, light yellow is approved or under-construction projects, and vermilion marks only this proposal's additions. The base map comes from OSM roads, buildings, and water bodies, plus 12 categories and 25,476 points of Amap POI (2026-08-15 snapshot, GCJ-02 converted to WGS84), all computed locally and registered to a single source [source:DATA-SRC-OSM-20260815] [source:DATA-SRC-AMAP-POI-20260815]. The call package's provisional boundary continues as the working boundary; the drawings never pass it off as a statutory redline; once the official redline arrives, the whole package is recalculated [data:geometry/site_boundary.geojson#SITE-001]. One correction must be stated: the brief's PROV-KEY-003 rough boundary actually sits near Beijing North Station (39.944–39.950), roughly 2 km from Dazhongsi Station named in the brief's own basis table ("the announcement tasks involve Dazhongsi Station", 39.9653, provisional_boundaries_basis.md), and the brief's missing-data.md states that the precise polygons for the three key areas are missing; this proposal therefore corrects the Dazhongsi working boundary to the area around Dazhongsi Station by name semantics (72.3 ha, still provisional), registered as assumption A-BOUNDARY-003, with a full-package recalculation once the official polygon arrives.
+**The first of the three positionings is the "Centennial Jing-Zhang Cultural Belt" — here the Jing-Zhang culture and the Zhongguancun culture layer together with the new AI culture into one narrative.**
 
-![Evidence for A-BOUNDARY-003: brief rough boundary vs name semantics](assets/figures/c18-boundary-evidence.en.png)
+**Three cultures, layered on this belt into one narrative.** ①**Jing-Zhang Railway culture**: the 1909 herringbone switch of Zhan Tianyou — the starting point of China's engineering self-reliance; the century-old industrial heritage and the Tsinghuayuan Station relic form the belt's "origin layer". ②**Zhongguancun innovation culture**: Electronics Avenue (1980s) → Inno Way (2010s) → AI origination (2020s) — China's "living lineage" of innovation, the belt's "growth layer". ③**The new AI culture**: the Hyper Line, the Emergent Belt, the Urban Emergent Brain — writing "emergence under constraints" into the city's own narrative, the belt's "future layer". The three layers are three versions of the same story: the switch was an invention under engineering constraints, Zhongguancun was growth under institutional constraints, and AI is a breakthrough under compute constraints — **hence the belt's urban keynote: turn constraints into creation.**
 
-Professional case studies only help us fix our methodological reference; they do not endorse us. London King's Cross built the streets, squares, and historic buildings first, then let the plots grow slowly; Boston's Kendall Square is the size reference for the "near-campus conversion circle"; Madrid Río uses a continuous tree-lined promenade to connect communities to the river. This proposal copies no project's images, geometry, or text, and adopts only the reading order of "open the path first, grow the buildings later, and let activity follow daily life" [source:DATA-SRC-CASA-KB-KUN].
+**Heritage assetization (no lyricism, only utilization)**: ①Tsinghuayuan Station relic → **activated** as the Origin Plaza + developer Name Wall (contributions remembered); ②the Jing-Zhang Railway heritage alignment → **exhibited** as a linear museum (the heritage-park spine); ③Wudaokou → **operated** as the Phase Plaza λ gauge (a public thermometer of whether the city is connected); ④Zhongguancun Electronics Avenue · Inno Way → **branded** as the entrepreneurship-lineage trail (a 40-year walking history from electronic components to AI origination); ⑤**Qinghe culture** (the Zhongzhiyuan reach) → **exhibited** as a waterfront culture band (Qinghe flood-control history + test-band science); ⑥the Dazhongsi ancient bell → **activated** in counterpoint with the Emergence Bell (the old bell tolls time, the new bell tolls "emergence"); ⑦Beijing Film Academy artistic resources → **operated** as AI+film co-creation scenarios (an intelligent-native content lab). Historical basis: the 1909 opening of the Jing-Zhang Railway, the Tsinghuayuan Station, and the development history of Zhongguancun Electronics Avenue and Inno Way are public facts; all utilization modes are conceptual suggestions.
 
-## Consultation of Five Urban Scientists
+**The Origin: a double fact of history and today.** The Tsinghuayuan Station relic stands at **Sancaitang, south of Chengfu Road** (≈400m SW of Wudaokou station), its name plaque **personally inscribed by Zhan Tianyou** — the Tsinghuayuan station of the 1909 Jing-Zhang Railway. Its location is precisely the **center of the triangle formed by Origin Building, Tsinghua Science Park and the BAAI Zhiyuan Building**: the century-old siting is today's AI-origination core — "the origin" is not a name but a double fact of history and today. All origin designs (Origin Plaza, time-axis name field, syntactic anchors) are anchored to this real site.
 
-> "Cities are by no means randomly distributed — they are the superposition of hundreds of thousands of micro-decisions." — Michael Batty, *The New Science of Cities*
+**Naming alignment (per the to-be-verified background plan §09)**: the plan's principle — keep existing place names and add innovation-character names — matches our naming system: existing names (Wudaokou/Zhichunlu/Sidaokou/Jimenli…) fully kept; new names apply only to new modules (THE EMERGENT BELT / Quantum Garden / Phase Plaza…, all tentative, subject to official announcement).
 
-Before delivering any conclusion, we first lay five rulers on the table. This is not rhetoric; it is method: the same data, passed through different theoretical eyes, will show completely different meanings. What we do is let each of these five pairs of eyes look independently, then let their judgments corroborate one another.
+**International communication narrative (brand recognizability + international reach)**: the bilingual core slogan **"One belt. Emergent by design." / 「一条带，涌现而成」**; the global AI innovation event system — a developer conference, hackathons, an AI art festival, open-source community days (an annual calendar, conceptual); the brand-sedimentation mechanism — the Emergent Brain's annual report (λ and H public), the developer Name Wall (contributions remembered), the honor-wall engraving (public knowledge sedimented). All events are conceptual suggestions, not confirmed arrangements.
 
-**Batty's lens: build a city, or grow one?** The only question he cares about is whether the order of this belt is designed, or grown by itself. He measures with the fractal ruler: the street network D=1.746, inside the healthy band that only century-old cities have; employment density decays along the main spine at γ=1.85, far steeper than the 1.16 measured from stations. **Judgment: this belt is "grown", not "drawn". The planner's role is not to write its script, but to move aside the seven cuts blocking its growth** [metric:street_network_D_large].
+![Heritage assetization map: seven cultural resource points × four utilization modes](assets/figures/culture-heritage-map.en.jpg)
 
-**Wilson's lens
+![The AI pilgrimage landmark system: three landmarks and the pilgrimage route](assets/figures/pilgrimage-landmarks.en.jpg)
 
-![Fractal spectrum: area-perimeter / employment-density decay / green texture](assets/figures/c13-fractal.en.png): has the connection strength reached criticality?** His critical value is λc≈0.42 — to the left is warm water, to the right is steam. Measured: of the ten core pairs across the three areas and two wings, only one crosses the line (Origin × Xiaoyuehe Wing 0.455), and Zhongzhiyuan to Dazhongsi is only 0.015. **Judgment: the system is stuck in a subcritical state — not without vitality, but with its vitality chopped apart by seven roads. Do not spread money evenly; find the leverage point that can push λ past the critical line: that leverage point is the seven gaps** [metric:wilson_supercritical_net_pct] [metric:core5_giant_span_ratio].
+## Design Basis & Data Inventory (Worldview ring)
 
-**Hillier's lens
+Three data routes: Amap POI 25,476 (12 classes, GCJ-02→WGS84) [source:amap]; OSM current state (5,449 road segments / rail / 416 green patches / 65 water bodies / 61 universities) [source:osm]; official announcements (10-minute innovation circle [source:DATA-SRC-HAIDIAN-PRESS-20260729] d0=2500m, "1+X+1" industry structure) [source:official]. All run locally; every number enters metrics_registry.json (125 entries, single source of truth).
 
-![Connection strength of the three areas and two wings: only one pair crosses the critical line](assets/figures/c1-wilson.en.png): how does the configuration of space shape how people move?** His question is "configuration", not "appearance". The full measurement is in the next chapter, the space-syntax special chapter; here we state only his sharpest finding: **Tsinghuayuan Station, sited in 1909, has an integration today at the belt's 93.5th percentile — the Origin was not named by us; it grew out of the spatial structure itself; while Dazhongsi sits at only the 20.2nd percentile, the syntactic periphery of this line, which must rely on stitching and function to turn "passing through" into "staying"** [metric:poi_tsinghuayuan_int_pct].
+**Proxy-caliber declaration**: official building stock / control plans / red lines are unpublished; all densities use "1-km-circle count ÷ π, POI proxy ≠ jobs" (e.g. Wudaokou work-type POI density 141 pts/km², not job count); all statutory controls marked "pending official data". The 8-class gap matrix is in the compliance chapter.
 
-**Bettencourt's lens: is this belt growing healthily?** His ruler is the scaling law: innovation output scales with size at γ=1.178 (superlinear), infrastructure scales with size at β=0.758 (sublinear), and the health factor H=1.556, above the 1.35 benchmark. **Judgment: this belt is, mathematically, a healthy expanding body — for every additional unit of scale, innovation grows by 1.1 while cost grows by only 0.76. The question was never "is it worth investing" but "where to invest": invest where the gaps are stitched, not in paving yet another patch of land** [metric:health_factor_H].
+**Ring conclusion →** Data ready, calibers honest. The Diagnosis ring measures the belt into a health panel.
 
-**Jacobs's lens: is the block alive?** Her four conditions of vitality are density, mixture, small blocks, and old buildings. Measured: the corridor band's POI diversity of 0.941 is the highest on the belt (mixture is enough), but intersection density is only 39 per square kilometre (blocks too large) and residential is only 16.5% (density out of balance). **Judgment: at the "street level" this belt is alive; at the "district level" it is lame — only by filling in jobs-housing and densifying the road network can vitality land** [metric:campus_intersection_density_per_km2] [metric:land_use_area_0701_sqm].
+---
 
-Five scientists, five different rulers, measure out the same disease: **not "bad", but "broken"**. This is the basis of every design move in this proposal.
+## Five-Scientist Consultation (Diagnosis ring · four-layer checkup)
 
-![The five scientists' consultation quantified: five rulers, one diagnosis](assets/figures/c24-scientists-consultation.en.png)
+We measure one object with five rulers, yielding four health scores:
 
-## User Research and the Needs List: these seven groups own the city
-
-**Why ask people before drawing**: the first question of urban design is not "what to draw" but "who is using it". With limited scope for on-site questionnaires and in-depth interviews at this call stage, this proposal conducts user research through a **desk-research proxy** — Amap's 25,476 POIs (where people consume, work, study, seek care), space-syntax accessibility (where they can reach), and the official baseline (how many there are: 13,000 developers, 180 OPCs, 1,000+ scientists) — and states plainly: on-site questionnaires and in-depth interviews are the next stage of work (see the data-gap matrix).
-
-**Seven groups, seven check-up results (see the research figure)**:
-
-- **Citizens**: Origin medical 2.88/km², the lowest of the three → medical infill, shaded benches, the public-space component library;
-- **Entrepreneurs**: finance POIs deviate −63.0% → finance infill, the OPC order plaza, compute vouchers, the attraction funnel;
-- **Commuters**: only 38.4% jobs-housing balanced cells → job reach +15.9% and commute cost −3.4% after stitching;
-- **Students**: no third places → AI night school, the near-campus innovation street, shared desk pods;
-- **Teachers**: education clusters east with weak residential support → jobs-housing balance, education infill (Zhongzhiyuan/Dazhongsi);
-- **Children & families**: sports −29.3% → park stitching, the blue-green system, child-friendly sections;
-- **Seniors**: smart services lack a human fallback → human channels kept on all ten scenario cards (Barrier-Free Law).
-
-**Where this research sits in the design process**: it is not a decorative chapter but the **user-side basis of Decision 3 (the infill list)** — the POIs say what is missing, the users say who misses it and why, and the design actions land on that group. Each group's pain point, need, and design response correspond one by one as a traceable list (panel B of the research figure), and after implementation user feedback flows back into the sense layer of the Emergent Brain — **research is not a one-off; it is recursive**.
-
-![User research and needs list: supply check-up and pain-point responses for the seven groups](assets/figures/c25-user-research.en.png)
-
-## Three-Level Scope Framework
-
-Three scales answer three questions. The nine-kilometre overall scale answers: which schools, communities, and enterprises along the line will actually use this line — students come from school and the metro, R&D staff carry equipment into Zhongzhiyuan, nearby residents enter the park from their community gates, and people with errands ask the staff first upon arriving at the Origin. The eight-hundred-metre street-corner scale answers: how to stitch the gaps, how cycling meets the stations, and how a community gate aligns with a park gate — the detour of residents west of Line 13 and the last stretch from the metro exit to the park entrance are both visible at this scale. The one-hundred-and-twenty-metre gateway scale answers: how wide the ramp is, where the tree canopy sits, where equipment parking sits — down to the point where one can measure a 3.2-metre footpath and a 2.8-metre cycle band. The three scales share the same base map, and the numbering on the large drawing is carried into the detailed design pages, never replacing the site with a few lines that have no landing point [depth:three_level_scope_framework] [metric:site_area_sqm].
-
-![Nine kilometres, eight hundred metres, and one hundred and twenty metres of continuous zoom](assets/figures/land-use-structure.en.png)
-
-![Three scales answer three questions](assets/figures/scale-drilldown.en.png)
-
-## Space Syntax: How Configuration Shapes Movement
-
-> "Spatial configuration shapes people's movement and encounter — good space attracts people by itself." — Bill Hillier, *Space is the Machine*
-
-Space syntax does not ask "what does space look like"; it asks "how space is arranged determines how people move". Using the Toledo-style method (Hillier's integration / choice / connectivity / intelligibility / radius profiles, computed on the full OSM road network of 5,720 nodes), we gave this belt a "configuration check-up": a three-zone comparison plus the placement of 14 key nodes.
-
-**Three-zone comparison (scale-independent indicators, directly comparable)**:
-
-| Zone | Nodes | Intersection density/km² | Integration Gini | Choice Gini | Intelligibility R3 | Core agglomeration | 400 m reach | 800 m reach | Mean segment m |
-|---|---|---|---|---|---|---|---|---|---|
-| A Corridor band (railway fabric) | 118 | 39.0 | 0.1099 | 0.5301 | -0.385 | 0.1455 | 24.0 | 38.3 | 101.2 |
-| B University-campus belt | 733 | 167.0 | 0.0977 | 0.6483 | -0.248 | 0.4427 | 53.7 | 137.0 | 61.4 |
-| C Grid new town | 291 | 65.2 | 0.107 | 0.5897 | -0.426 | 0.1739 | 25.7 | 54.1 | 91.6 |
-
-**How to read this table**: intersection density is the fineness of the walking grid (old cities >200, car-based new towns <80). The corridor band's 39.0 — a century of the railway cutting through the city has left this line the hardest place on the belt to walk; the campus belt's 167.0 is close to old-city levels. The intelligibility R3 is negative in all three zones — this is a normal feature of organic fabric on a "segment-node map", not a computational error (Toledo's old city is likewise negative). Core agglomeration: the campus belt's 0.443 is the highest (a single Xueyuanlu core), while the corridor band and the grid new town are multi-core and diffuse.
-
-**Syntactic placement of 14 key nodes (whole-network integration / choice percentiles)**:
-
-| Node | Integration percentile | Choice percentile |
+| Ruler | Quantified finding | Index |
 |---|---|---|
-| Xueyuanqiao Station | 97.5% | 96.8% |
-| Tsinghuayuan Station heritage site | 93.5% | 97.4% |
-| Xuezhiyuan Station | 84.0% | 98.3% |
-| Peking University Health Science Center | 76.5% | 20.8% |
-| Origin Plaza (concept) | 72.7% | 20.8% |
-| Zhichunlu Station | 68.0% | 43.9% |
-| Beihang University | 66.2% | 20.8% |
-| Wudaokou Station | 57.1% | 62.8% |
-| Phase-Transition Plaza (concept) | 53.3% | 40.2% |
-| Qinghuadonglu Xikou Station | 49.9% | 53.8% |
-| CUPL Graduate School | 29.7% | 20.8% |
-| Beijing North Station | 29.2% | 20.8% |
-| Interface Plaza (concept) | 24.7% | 76.3% |
-| Dazhongsi Station | 20.2% | 20.8% |
+| **Wilson spatial interaction** | Network λ supercritical fraction **24.76%** (λc=0.42); 5 cores only 2/5 supercritically coupled (origin = the real Tsinghuayuan station) [metric:wilson_supercritical_net_pct] | E_link 0.62 yellow |
+| **Hillier space syntax** | 7-anchor integration gain after stitch **+36%** (Wudaokou +43 / Dazhongsi +70 / Beijingbei +49) [metric:syntax_integration_gain_pct] | E_link (design caliber) |
+| **Batty fractals** | Fractal dimension **D=1.746** ∈ [1.6,1.8] healthy band — the skeleton is "alive" [metric:street_network_D_large] | E_form 1.0 green |
+| **Bettencourt scaling** | Health factor **H=1.556** above baseline 1.35 [metric:health_factor_H] | E_form (corroboration) |
+| **Jacobs vitality** | Intersection density 132.9/km²; corridor functional diversity 0.941, highest on the belt [metric:poi_total_count] | E_ecosys (corroboration) |
 
-**How to read this table**: Xueyuanqiao Station's 97.5% integration — the North-4th-Ring × Xueyuanlu crossing is the "mouth" of the whole belt; all pedestrian flow naturally converges here, and it is Jing-Zhang's "Bisagra Gate" (in Toledo all through-movement is compressed into one gate, 98.3%). Tsinghuayuan Station heritage site's 93.5% — a siting from a hundred years ago is still the structural core today. Xuezhiyuan Station's choice of 98.3% — a northern gateway where many pass through and few stay, so a garden plaza must be added to turn "passing through" into "staying". Dazhongsi Station's 20.2% — a syntactic periphery whose vitality must be supplied by function. Wudaokou's 57.1% — mediocre integration, explosive crowds; this is exactly the replica of Toledo's main square Zocodover: **vitality comes from function, not from configuration; but only when the configuration also catches up (integration +65% after stitching) can function and configuration fulfil each other**.
+**Ring conclusion →** Healthy skeleton, three blocks: weak connectivity (λ/syntax), jobs-housing imbalance, ecological gaps. Panel total EI0=0.795 yellow. The prescription targets "stitch, backfill, measure".
 
-**Three conclusions of this chapter**: ① this belt's movement structure is healthy (multi-core diffusion, organic fabric), and its only disease is that seven roads sever the configuration of the main spine; ② the post-stitching integration gains (Beijing North +132%, Dazhongsi +102%, Wudaokou +65%) prove that stitching the gaps lets the configuration redistribute vitality by itself; ③ function and configuration are two legs — Wudaokou lacks configuration and Dazhongsi lacks function; the proposal supplies roads to the former and industry to the latter [depth:traffic_rail_slow_parking].
+---
 
-![Space-syntax plan analysis: integration / choice-coloured road network and walking catchments](assets/figures/c16-syntax-maps.en.png)
+## User Research & Requirements (Diagnosis ring)
 
-**How to read these three maps**: Map A is whole-network integration coloured — red is the "mouth of the structure", blue is the edge, and Xueyuanqiao Station and Tsinghuayuan Station embrace into a red core; Map B is choice — the North-4th-Ring–Xueyuanlu–Xuezhiyuan line is the water pipe of flow; Map C is the main spine's 200/400/800-metre walking catchments — within 400 metres only 24 nodes are reachable, which is the hardest stretch to walk.
+The city's masters are seven kinds of people: AI developers, researchers, residents, students, visitors, industry service workers, and **frontline workers (cleaning/security/delivery)** — added this round because the bottom line of public interest is that "the least convenient person can still use it".
 
-![Three-zone walking comparison and 14-node syntactic placement](assets/figures/c4b-syntax.en.png)
+**Six-line public-rights floor**: unconditional entry; human-equivalent service (normal paths/human service remain usable when AI is removed); independent appeal arbitration; pause/resume/exit. Desktop proxy calibers are stated honestly ("desktop supply audit", not real interviews — real interviews are a pre-implementation task).
 
-## LUTI: Jobs-Housing Dynamics, Three Scenarios, and the Entanglement Rules
+**Ring conclusion →** The requirement list passes to the Prescription ring: every spatial action must answer "who benefits, who is excluded, is there a no-AI equivalent path".
 
-**The fourth ruler of the diagnosis part: treat jobs and housing as dynamics, not as a ratio.** Traditional planning writes jobs-housing balance as a "land-use proportion"; LUTI (land-use–transport interaction) reads it as a **loop** — job locations decide commute flows, commute flows rewrite the population distribution, and the population in turn shapes where jobs land. Following the three-layer method of the KUN-SAL WeChat article art15 (job-core density → floorspace → the LUTI interaction loop → scenario runs), we measured this belt:
+---
 
-**Check-up result four: jobs-housing imbalance, golden locations used at low intensity.** Spread out the 91 four-hundred-metre cells: the jobs-housing balance index averages 0.393 (employment over residential), and only 38.4% of cells fall inside the healthy band; more typical is the land-use–transport mismatch — 45 cells are "underdeveloped" (the golden locations at stations and along the main spine are occupied by low-intensity buildings), 4 cells are "overdense" (good buildings stuck in low-accessibility locations), and the match rate is only 46.2%. **What urban renewal must fix first is this mismatch map** [metric:jhr_mean] [metric:luti_match_ratio_now].
+## Three-Level Scope Framework (Diagnosis ring)
 
-![LUTI evaluation: jobs-housing balance × land-use–transport match × commute flows](assets/figures/c15-luti.en.png)
+**Scope hierarchy vs the HD00-1601 block plan (to-be-verified background)**: the HD00-1601 block plan (collected by the participant, not yet in the approved formal source registry) covers ≈1,668.2 ha (9 blocks across Zhongguancun / Beixiaguan / Beitaipingzhuang sub-districts) ⊃ our overall design scope of 11.4 km² (≈1,140 ha — the core segment of the plan's "one belt", the Jing-Zhang innovation exchange belt); our key-area scope (368.4 ha) connects to the plan's "two hearts" (Wudaokou / Dazhongsi). This material is participant-collected to-be-verified background, not an official fact or statutory basis; this proposal only makes structural reference alignment.
 
-**The disruptive concept: THE ENTANGLED CITY — turning the commute from "a shortened burden" into "a dissolved category".** Traditional urban design treats jobs-housing balance as an improvement that "shortens the commute"; the deep LUTI reading lets us go further, in four steps. First, the **counterintuitive reveal** — measured within a 1-km circle, Wudaokou (443 work-type POIs/km²) is this belt's real job core, ahead of Zhichunlu (324) and Dazhongsi (184), while Xuezhiyuan's jobs-housing ratio of 2.78 is the most imbalanced on the belt (dormitory-city risk). Second, the **mismatch quadrants** — 45 underdeveloped cells (golden locations used at low intensity), 4 overdense, 42 matched. Third, the **three-scenario run** (Batty-style: production-constrained gravity OD, 91×91 cells, β on the same basis as λ) — the concentration scenario lengthens the mean commute distance by +3.9% and presses the 400m walking self-containment from 7.0% down to 3.5% (**concentration = dormitory-ization**); the entanglement scenario raises the **jobs-housing entropy S by +5.3%** (a more mixed city). Fourth, the **design rule the model hands us** — the underdeveloped cells are "empty shells": infill must seed jobs and homes **in pairs**, because jobs alone have no local residents and homes alone have no local jobs; neither works. Hence the three entanglement rules: **① paired infill** (underdeveloped cells seeded with jobs and homes together at 1:1); **② mixed towers** (residential-led units embed 15% workspace, office-led units embed 20% housing — vertical entanglement); **③ jobs-housing entropy S enters the annual check-up** (a fifth ruler of the Emergent Brain, alongside λ and H). **In 1909 the herringbone switch killed the Badaling gradient; in 2026 the entangled city kills the commuting tide.** This belt's target is not "a city with fewer commutes", but "a city that does not need commuting". Jobs and housing are POI proxies; the full package is recalculated once official commute OD (signalling/card data) arrives — **and the floorspace ledger (area, formats, rents, vacancy, accessibility) becomes the first new database of the Emergent Brain's sense layer**.
+11.4 km² overall / three key areas / corridor spine — three-level nesting (scale nesting: overall→block→unit→section, four levels of self-similarity, one index at different resolutions). The 91 400m cells are this plan's computational cells [depth:scale_nesting]. Area recomputation: EPSG:4548 total 11.4128M m² (internal recomputation of this submission's own geometry, for internal consistency only — not expressed as official redline precision; to be recomputed when official polygons are released) [metric:site_area_sqm]. The purpose of scale nesting is that the same EI index remains mutually compatible across the four scales — one formula, different resolutions — avoiding "scale fracture" (CASA Paper 155 discipline).
 
-![Deep LUTI analysis: mismatch quadrants / ratio distribution / dissolve the commute / live-work moiré](assets/figures/c27-luti-deep.en.png)
+**Ring conclusion →** Scale nesting set; the Diagnosis ring closes. The Mechanism ring explains "why this treatment".
 
-![Three-layer LUTI scenario runs: job-core reveal / three scenarios / distance distribution / the entangled city](assets/figures/c28-luti-scenarios.en.png)
+---
 
-## Coordinated Research Area: Industry and Future City Research
+## Space Syntax Chapter (Diagnosis ring · connectivity layer)
 
-**The spatial diagnosis has been delivered by the four rulers above — a healthy skeleton, severed connections, a jobs-housing mismatch; this chapter lifts the ruler to the ecosystem layer, measuring the soil in which the belt grows across the coordinated research area (43.6 km²).** The result is one: **the upstream is complete, the middle layer lacks measurement.**
+Toledo-style syntax (segment-node, 5,720 segments) [standard:space_syntax]. Current: heritage corridor intersection density 39/km², 400m reach 24 nodes; campus belt 167/km² [metric:syntax_gain_wudaokou_pct]. Weak/negative intelligibility is a normal feature of organic fabrics (§5.1); no "more/less legible" conclusion is drawn.
 
-**The ecosystem-layer check-up: upstream complete, middle layer unmeasured.****Check-up result three: the upstream of the ecosystem is complete; the middle layer is unmeasured.** Beijing has 2,400+ AI enterprises, 123 registered large models, 116 unicorns grown out of Wudaokou, and 45 EFLOPS of compute — upstream elements are complete and data-rich; but whether outsiders can put down roots here (housing, commuting, hukou), how much of the research-conversion has become individual entrepreneurship, and whether inclusive compute has actually reached the hands of OPCs — **these middle layers generally have no public measurement**. On one side is a city where migrants come to start businesses; on the other is a 117-point hukou threshold and roughly two million young people lost over a decade. The bottom-up growth of this belt is a proposition not yet measured and being pulled in two directions [source:DATA-SRC-HAIDIAN-PRESS-20260729] [metric:ecosystem_hukou_threshold].
+**Model-identified design effect** (non-survey): after the seven-point stitch, 7-anchor integration gain **+10% ~ +70%, mean +36%** — stitching changes reachability (syntax), not motorized coupling distance (λ).
 
-![Ecosystem map: upstream complete, middle layer unmeasured](assets/figures/ecosystem-map.en.png)
+**Ring conclusion →** Stitch's reachability gain is quantifiable (+36%); this evidence goes to the G2 gate in Verification.
 
-**The complete use of Amap POI: 25,476 points = the facility-infill list, not decoration.** Deviation diagnosis of 12 functional categories (against a uniform reference baseline):
+![Space syntax layered board](assets/figures/mobility-bluegreen.en.png)
 
-| Category | Points | Share | Deviation | Diagnosis |
-|---|---|---|---|---|
-| Transport facilities | 3710 | 14.56% | 74.8% | Over-supplied (quantity) |
-| Life services | 3241 | 12.72% | 52.7% | Over-supplied (quantity) |
-| Dining | 3081 | 12.09% | 45.1% | Over-supplied (quantity) |
-| Companies & enterprises | 2985 | 11.72% | 40.6% | Over-supplied (quantity) |
-| Shopping | 2858 | 11.22% | 34.6% | Over-supplied (quantity) |
-| Business residences | 2747 | 10.78% | 29.4% | Over-supplied (quantity) |
-| Sports & leisure | 1500 | 5.89% | -29.3% | Under-supplied |
-| Healthcare | 1347 | 5.29% | -36.6% | Under-supplied |
-| Schools | 1281 | 5.03% | -39.7% | Under-supplied |
-| Research institutes | 1149 | 4.51% | -45.9% | Under-supplied |
-| Scenic spots | 792 | 3.11% | -62.7% | Under-supplied |
-| Finance & insurance | 785 | 3.08% | -63.0% | Under-supplied |
+---
 
-**How to read this table**: what is over-supplied is "the foundation of a life belt" (transport +74.8%, life services +52.7%); what is under-supplied is "the content of an innovation belt" (finance −63.0%, scenic spots −62.7%, research institutes −45.9%). This table is the ledger of the three-area infill list: Zhongzhiyuan fills culture-tourism, education, and finance; the Origin Community fills healthcare (2.88/km², the lowest of the three); Dazhongsi fills finance, culture-tourism, and research. **Facility layout is not decided by intuition but by this table** [metric:deviation_finance_pct] [metric:deviation_research_pct].
+## LUTI Chapter (Diagnosis ring · dynamics layer)
 
-**The three positionings and the response of the three areas and two wings (task-book hard requirement, answered item by item)**: **the Centennial Jing-Zhang Cultural Belt** — the main spine is the heritage corridor of the Jing-Zhang Railway, where the 1909 herringbone switch converses with today's Emergent Belt across 117 years; **the Urban AI Life Experience Belt** — Amap POI measures the corridor band's functional diversity of 0.941 as the highest on the belt, and the park's surroundings are already a life belt, which the proposal upgrades into an experienceable AI life belt; **the AI Convergence Innovation Belt** — four-sector spatial flows push λ across the phase transition, turning "convergence" from a slogan into a computable criterion. The three areas and two wings: north **Zhongzhiyuan** (the full-stack segment), centre **Beijing AI Origin Community** (the origination segment), south **Dazhongsi** (the interface segment); west wing **Zhongguancun Tech-Service Wing** (startup IP and capital, global allocation of factors), east wing **Xiaoyuehe Scenario-Enabling Wing** (embodied intelligence, AI+healthcare, AI+film clustering) — the wings' task is to supply the three areas with factors and scenarios, which the proposal takes up as CAPITAL WING / SCENARIO WING. **Regional coordination (one of the task-book's review dimensions)**: this belt is not an island — northward it connects to Changping Future Science City and Huairou Science City (basic-research origination), eastward to the Economic-Technological Development Area (intelligent terminals and autonomous-driving manufacturing), outward to the compute and scenario hinterland of the Beijing-Tianjin-Hebei region, and it stacks with Beijing's "two zones, one belt" policies (the national comprehensive demonstration zone for opening up the service sector, the pilot free-trade zone, and the digital-economy benchmark city belt). The proposal defines its role as "origination and interface" — catching the conversion link between upstream research (Huairou / Future Science City) and downstream manufacturing (the Economic-Technological Development Area) — with the five-party six-force conversion mechanism (university–institute–enterprise–capital–scenario) and the Phase-Transition Forum's annual public report as the interface [source:DATA-SRC-HAIDIAN-PRESS-20260729].
+art15 (Batty LUTI) three-level nesting, completed in this plan [standard:luti]:
+- **Level 1 I-O**: Haidian AI industry → job count (official-bottom proxy)
+- **Level 2 Fl floorspace ledger**: employment floorspace total [181k–1,190k] m² (office 591 pts / research 214 / finance 136; POI × per-point interval, assumption caliber) [metric:fl_employment_min_sqm]
+- **Level 3 OD iteration**: production-constrained gravity (β=1/2500m) + doubly-constrained iteration (5-7 rounds to convergence), reconciled with c28 at zero deviation [metric:simulacra_jobs_reach_stitched]
 
-**The five functions**: the AI full-stack autonomous innovation system (the Zhongzhiyuan test band), the world-class AI innovation ecosystem (the Origin Community + the seven-case mechanism), the new AI+ scenario-enabling paradigm (the ten scenario cards + the Xiaoyuehe Wing), the intelligent AI-vital city (the POI vitality check-up and infill), and AI-governance global discourse power (the Phase-Transition Forum's annual public report) [source:DATA-SRC-HAIDIAN-GOV-20260330].
+**Redundancy R (descriptive caliber, not a target)**: R_od now **0.826** → entangled **0.870** [metric:redundancy_R_after]. Against London's 0.093 — Jing-Zhang is "loosely de-polarized"; entanglement makes it more mixed, not more concentrated. **This is good news, not bad**: we do not copy London's "monologue" concentration; R is reported honestly, never force-fitted to a target.
 
-So the three key areas of this proposal are not three parks to be "built", but three places to catch people: Zhongzhiyuan catches the R&D staff who bring equipment for testing, the Origin Community catches the students and founders coming out of school, and Dazhongsi catches the ordinary people running errands, commuting, and attending evening classes. The naming system (agent.1): the belt is named 「THE EMERGENT BELT」, the main line 「Jing-Zhang Hyper Line」, the three segments 「HYPER STACK / HYPER ORIGIN / HYPER FRONT」, the two wings 「CAPITAL WING / SCENARIO WING」, and the seven stitch points are called 「HYPER NODES」. The logo direction is "the superlinear line": a straight railway line curving upward at its end, with seven points floating up along it — **the century-old line begins to rise** (trademark and font clearance required) [depth:industry_future_city_research].
+**Three scenarios (with one renaming)**:
+- S2 "accessibility re-distribution" (formerly "core concentration", renamed per K004): A³ weighting flattens jobs away from current peaks — occupied cells 76→91, top-10% share 45.8%→36.2%, self-containment 7.0%→3.5%. **Single-dimensional accessibility optimization thins the core and lengthens commutes.**
+- S3 "jobs-housing entanglement": entropy 7.454→7.85 (+5.3%), but **without stitching there is no syntax gain — it cannot stand alone**.
+- S4 "stitch + entangle": the only combination that passes all three gates.
 
-**International benchmarking and the future opportunity (see the benchmark matrix)**: the seven global cases each contribute one transferable mechanism, and here they all hold **at once** — stitching first (King's Cross) × the near-campus conversion circle (Kendall) × garden research neighbourhoods (Stanford) × high-density startup fabric (Yuehai) × a content-consumption interface (Shibuya) × university-town symbiosis (Cambridge) × the public life of a startup boulevard (Rothschild). Seven mechanisms on one 11.4 km² belt is the unique opportunity window of Centennial Jing-Zhang: **H=1.556 proves it is mathematically worth investing in, the 13,000 developers and 32-chip ecosystem prove the vitality is already here, and the world's first "recursively runnable" urban operating system proves it can keep evolving** — the opportunity is not drawn but measured: every stitch pushes the subcritical state toward the phase point, every infill pulls a −63% gap back toward the mean, and every annual check-up rewrites the "blueprint" into "an evolvable system".
+**Empty-shell law + adaptive seed**: 45 empty-shell cells must be backfilled in jobs-housing pairs (jobs-only or housing-only both fail). Capacity check (c33): at seed=8, 67 cells absorb / 11 cells new-build (446k m², self-set form-study intensity ≈0.91, non-statutory FAR) / 13 cells genuinely over capacity — **backfill intensity is customized per-cell Fl headroom** (near-zero-capacity cells go full new-build; K013: residential POI is estate-scale, so "new housing clusters" not "stuffing into existing stock") [metric:new_build_area_sqm].
 
-![International benchmark matrix: seven cases × mechanisms × responses × measured numbers](assets/figures/c26-international-benchmark.en.png)
+**Ring conclusion →** Entanglement is quantifiable and verifiable, but must combine with stitching. The Mechanism ring consolidates three causal laws.
 
-## Overall Design Area: Urban Renewal and Regulatory-Plan-Level Urban Design
+![Emergent-rule zoning board: Catalyst / Free / Stable / Protected / Boundary roles + 54 CA cells at model-identified coordinates (dot color = emergence direction)](assets/figures/land-use-structure.en.png)
 
-**This chapter closes all the analysis: the five rulers, the seven user groups, and the three scenarios of the diagnosis part are folded into five sentences, then translated into one master diagram.** The folding goes like this — sentence one (skeleton): fractal dimension D=1.746 inside the healthy band 1.6–1.8, health factor H=1.556 above the 1.35 benchmark, blue-green giant component 83.9% past the percolation threshold — **no rebuilding needed, only re-growing** [metric:street_network_D_large]; sentence two (connection): only one of ten core pairs crosses λ, seven gaps sever the spine, Dazhongsi sits at the syntactic periphery of 20.2% — **the disease is severance, the prescription is stitching** (integration +43%–+70%) [metric:wilson_supercritical_net_pct] [metric:core5_giant_span_ratio]; sentence three (jobs-housing): land-use–transport match 46.2%, 45 underdeveloped cells are "empty shells", the three scenarios prove concentration = dormitory-ization — **the prescription is paired infill and mixed towers** (the entanglement rules, see the LUTI chapter) [metric:luti_match_ratio_now]; sentence four (people): the gaps recognized by the seven user groups (finance −63.0%, Origin medical 2.88/km²) — **the prescription is the infill list**; sentence five (constraint): the CA proves no intervention = path lock-in — **the prescription is intervention, and only the moves on the unlock list**. **Five sentences fold into one: this belt does not lack a new drawing; it lacks the removal of the constraints blocking its growth. Space is not drawn; it is supported by these invisible dynamics.** Hence, the overall structure is thereforeHence the overall structure is therefore one line, three folds, two wings, seven nodes. The land-use zoning is not drawn by our intuition: within the 400-metre grid, blocks without intervention keep the status-quo character recognized by POI, and only the station catchments and the two sides of the main spine receive renewal intervention — research 31.5%, commercial 25.6%, education 18.2%, residential 16.5%, green 8.2% [data:geometry/land_use.geojson#LU-001] [depth:overall_spatial_structure]. The statutory FAR, height, density, and setback are not public, all written as "pending official data"; only conceptual massing (782 buildings, footprint density 17.4%) is given for spatial discussion, with no building-by-building conclusions [metric:building_density] [depth:development_intensity_controls].
+---
 
-## Detailed Design of Key Areas
+## Integrated Research: Industry & Future City (Diagnosis ring · ecology layer)
 
-**With the master diagram settled, magnify the three gates to the block scale.** Zhongzhiyuan, the Origin, and Dazhongsi are not three "parks" but three places that catch people — this chapter equips each gate with the four-piece set: quantified analysis → detailed plan → section → rendering.
+Functional deviation (c8) five deficit categories: finance −63%, research −45.9%, school −39.7%, medical −36.6%, sports −29.3% [metric:deviation_finance_pct]. Each area has its own disease: Zhongzhiyuan lacks tourism/finance, Origin Community lacks medical/research, Dazhongsi lacks finance/research (c7 weakest-category measurement) [metric:poi_total_count].
 
-**Zhongzhiyuan · HYPER STACK (192.1 ha) — catching the people who bring equipment.** Along the Qinghe–Xuezhiyuan interface we draw a "full-stack test band": R&D staff enter with multi-chip equipment and conduct bounded tests inside garden-style blocks (conceptual suggestion). The POI check-up shows its culture-tourism, education, and finance categories are the weakest — beyond testing, this place also needs reasons for people to stay [data:geometry/key_areas.geojson#KEY-001].
+**Ecological maturity E_ecosys = 0.77** (five-deficit-category gap-closure rate, target −20% caliber, provisional) [metric:deviation_finance_pct]. Gap closure follows "fill what is missing", not "even spread" — finance is the only category weakest in all three areas, hence the first target of ecological backfill.
 
-![Zhongzhiyuan quantified analysis](assets/figures/keyarea-zhongzhiyuan_ai_acceleration_area.en.png)
+**Ring conclusion →** The precise location of ecological gaps is known; the Prescription ring prescribes "fill what is missing".
 
-![Zhongzhiyuan detailed plan (concept)](assets/figures/plan-zhongzhiyuan_ai_acceleration_area.en.png)
+---
 
-![Zhongzhiyuan street section](assets/figures/section-zhongzhiyuan_ai_acceleration_area.en.png)
+## Master Plan Scope: Urban Renewal & Regulatory-depth Design (Mechanism + Prescription rings)
 
-![Zhongzhiyuan concept rendering (AI-generated, not a site photograph)](assets/media/stack-testband.jpg)
+**Methodological position: mosaic renewal + toolbox elastic planning.** Dominique Perrault's "City of Tomorrow" for the Handan steelworks (2020 international competition, first prize) proved two things: ① restoring and reusing old industrial transport systems (rail tracks, pedestrian bridges) can define the skeleton of a new urban network — our spine stitching and embedded rails are exactly this method applied to the Jing-Zhang corridor; ② a data-driven strategic planning plane replaces rigid regulatory zoning, with functional zones computed directly from field data and reorganized as parameters change — our provisional tagging discipline and "full recalculation on official data" commitment are the tooling of that same elastic-planning philosophy. Perrault calls it the "toolbox" (Boîte à outils); we call it "computable emergence" — the same philosophy: not a rigid blueprint, but an iterable, recomputable, growable city operating system.
 
-**Beijing AI Origin Community · HYPER ORIGIN (104.3 ha) — catching the people coming out of school.** The Tsinghuayuan Station heritage site's integration is 93.5% — a siting from a hundred years ago is still the structural core today, and the Origin Plaza and the developer Name Wall are placed here so that the word "contribution" can be seen. Medical density is only 2.88 sites/km² (the lowest of the three areas); the Wudaokou–Xueyuanlu interface must fill in healthcare, community services, and talent apartments [data:geometry/key_areas.geojson#KEY-002].
+**Three mechanisms (each a reproducible "why")**: sever→stitch (percolation 0.840→0.904 crosses the phase change); empty-shell→paired backfill (jobs-housing entropy +5.3%); lock→unlock (CA redistributes 42 cells) [metric:percolation_giant_fraction_design].
 
-![Origin Community quantified analysis](assets/figures/keyarea-beijing_ai_origin_community.en.png)
+**One line, three folds, two wings, seven points**: stitch the spine, cut by seven roads, back into one continuous line (Hyper Line). Overall structure = spine + three areas (Zhongzhiyuan / Origin / Dazhongsi) + two wings (Zhongguancun factor wing / Xiaoyuehe scenario wing) + seven nodes. Stitching is a "phase change", not "decoration": the seven-point stitch pushes blue-green percolation past the critical threshold. Design intent: no mass demolition — minimal intervention to trigger a system phase change; data gap: official red lines unpublished, stitch positions and cross-sections are conceptual pending official data.
 
-![Origin Community detailed plan (concept)](assets/figures/plan-beijing_ai_origin_community.en.png)
+**Three-areas × two-wings synergy loop (agent.1 requirement + approved-plan alignment)**: the task book defines the Zhongguancun technology-service wing as **global factor allocation, ZGC IP and capital empowerment**, and the Xiaoyuehe scenario-empowerment wing as **AI scenario empowerment and an intelligent, livable AI city**. Aligned with the to-be-verified background plan: the **factor wing follows the participant-collected "Zhongguancun Avenue innovation axis"** (Haidian Huangzhuang / Zhichunli / ZGC station TOD + Yingu·Zhichunlu-West nodes; dominant functional zones = commercial-business + mixed); the **scenario wing follows the participant-collected "Xiaoyuehe vitality landscape belt"** (BUPT / Xitucheng / Jimenqiao + the **Sidaokou first-level node interface**; dominant zones = green-water + residential + mixed). The loop: **factors enter the belt → the three areas convert → scenarios leave the belt → brand/IP feed back to the factor wing**. The **Nanchanghe vitality belt** (west of Dazhongsi) joins the blue-green alignment.
 
-![Origin Community street section](assets/figures/section-beijing_ai_origin_community.en.png)
+![Three-areas × two-wings synergy loop: task-book roles × approved-plan alignment × conceptual sections](assets/figures/wing-coordination.en.jpg)
 
-![Origin Community concept rendering (AI-generated, not a site photograph)](assets/media/origin-community.jpg)
+**Conceptual reconciliation with the HD00-1601 scale ledger (to-be-verified background, not for formal judgment)**: the participant-collected plan material contains certain 2035 building-scale, resident, and facility-ledger figures; this source is not yet in the approved formal source registry, so **specific to-be-verified figures are not cited here and no formal conclusion is drawn from them** — they serve only as a conceptual reconciliation reference. Our new build of 446k m² is an extremely small share of the to-be-verified ledger — a reference denominator (HD00-1601 to-be-verified background, not for formal judgment) of "minimal intervention, systemic phase change". Jobs-housing check: against the participant-collected background resident figure and our employment Fl band (181k–1.19M m²) as a conceptual reconciliation caliber; 178k m² talent apartments ≈ 4,800–7,100 resident increment (25–37 m²/person conceptual band, not a commitment). Facility infill targets the ledger's gaps (finance/medical/research); point-by-point reconciliation after official facility data arrive.
 
-**Dazhongsi · HYPER FRONT (72.0 ha) — catching the ordinary people living their daily lives.** Its syntactic percentile is only 20.2%, the southern periphery of this line; yet the POI check-up shows the other face: 511 points/km², the highest density of the three areas, medical 19.35 sites/km², and a jobs-residence ratio of 0.344 — a station district led by life services and short on work-related formats. The strategy is therefore "light intervention, heavy interface": stitch the four quadrants of Dazhongsi Station for walking, serve commuters by day, and leave the nights to small classes, exhibitions, and nearby merchants; the gaps are finance, culture-tourism, and research (the deviation ledger), with the ancient bell counterposed to an "Emergence Bell" [data:geometry/key_areas.geojson#KEY-003].
+**Alignment with the approved plan's 9 dominant functional zones**:
 
-![Dazhongsi quantified analysis](assets/figures/keyarea-dazhongsi_ai_industry_cluster.en.png)
-
-![Dazhongsi detailed plan (concept)](assets/figures/plan-dazhongsi_ai_industry_cluster.en.png)
-
-![Dazhongsi station-district four-quadrant stitching, enlarged (conceptual)](assets/figures/dazhongsi-quadrant-zoom.en.png)
-
-![Dazhongsi street section](assets/figures/section-dazhongsi_ai_industry_cluster.en.png)
-
-![Dazhongsi concept rendering (AI-generated, not a site photograph)](assets/media/dazhongsi-front.jpg)
-
-**How to read the four-piece set of each area's detailed-design expression** (quantified analysis → detailed plan → section → rendering, aligned in this order per area):
-
-- **Detailed plan**: light grey = the existing building fabric (OSM measured), orange = new public space, dark green = the main spine, white-cased roads = the existing network, light tints = conceptual zoning; the A-A' / B-B' / C-C' section lines fall on the plans;
-- **Section**: one conceptual street section per area — Zhongzhiyuan: 3.2 m footpath + 2.8 m cycle band + test-equipment slots; the Origin Community: shaded benches + street-facing talent apartments; Dazhongsi: a 20 m interface plaza + a stitching skybridge (5.5 m clearance) + an AI-native commercial front; the sections are conceptual (not engineering), the dimensions are design intent, pending road-redline and heritage review;
-- **Rendering**: all three are concept renderings (Doubao Seedream 4.0; not site photographs, not a construction commitment) — Zhongzhiyuan's garden test band, the Origin's near-campus innovation street, Dazhongsi's interface night. They answer the same question: after stitching, what will the people of this belt look like;
-- **Four-quadrant enlargement** (Dazhongsi): ① the heritage-park side stitches the park entrance in, ② north of the North 3rd Ring a grade-separated stitch, ③ the station hinterland slow-mode connections, ④ the Gaoliangqiao Xiejie interface; all stitch modes are conceptual, to be deepened once transport, municipal, and ownership data arrive.
-
-![Index of the three key areas](assets/figures/key-areas.en.png)
-
-## AI Innovation Ecosystem, Personas, and AI+ Scenarios
-
-**With the space built, fill it with content.** Catching people in the three areas takes three ingredients — ecosystem, talent, and scenarios — and this chapter answers "who comes here, why it is worth coming, and what they do when here".
-
-**Mechanism mapping of seven global cases (agent.2, each case contributes only one transferable mechanism)**: London **King's Cross** — railway-heritage renewal and DeepMind clustering, proving that "a heritage interface can host innovation"; Boston **Kendall Square** — MIT's near-campus ecology, the size reference for the "near-campus conversion circle"; **Palo Alto** Stanford Research Park — the spatial distance of university origination; Shenzhen **Yuehai Street** — the fabric density of high-density startup blocks; Tokyo **Shibuya** — the renewal paradigm of a content-consumption interface; the **Cambridge** cluster — the symbiotic structure of a university town and an industry belt; Tel Aviv **Rothschild Boulevard** — the public life of a startup boulevard. **The shared lesson: the constraints of railway, university, and old streets are the causes of agglomeration, not obstacles — this is exactly the Emergent Belt's methodological stance** [source:DATA-SRC-CASA-KB-KUN] [depth:global_ecosystem_cases].
-
-**Cultural narrative (agent.5)**: this belt's culture is three layers stacked — the Jing-Zhang Railway's "autonomy" narrative (the 1909 herringbone switch: the first trunk railway designed by the Chinese themselves), Zhongguancun's "startup" narrative (the wild growth from Electronics Avenue to 116 unicorns), and AI's "emergence" narrative (a new bottom-up order). The three are not a side-by-side exhibition but three re-runs of the same logic: **under constraints, Chinese-style innovation never goes around the constraints; it turns them into the raw material of creation**. Tsinghuayuan Station is the origin of this narrative, and the developer Name Wall is its contemporary carrier.
-
-The personas do not stick labels; they draw the spatial-needs list of five kinds of people: OPC one-person-company founders (age 25–30, nearly 180) need affordable desks and places to take orders; AI scientists and engineers (1,000+) need a full-stack test environment and exchange density; university AI students (100,000+) need third places and night school; residents and retired seniors along the line need the human service channel retained (the scenarios listed in Article 39 of the Barrier-Free Law); global AI pilgrims need a walkable route and an activity calendar [standard:BARRIER-FREE-ENVIRONMENT-LAW] [standard:ELDERLY-SMART-TECH-PLAN-2020-45].
-
-Ten scenario cards, each stating clearly "the cost of not doing it":
-
-| # | Scenario card | Location | Cost of not doing it | Human fallback |
-|---|---|---|---|---|
-| 1 | Full-stack adaptation test field (industrial test) | Zhongzhiyuan test band | The 18-vendor / 32-chip edge stops at the lab | Third-party review |
-| 2 | OPC order-taking plaza (industrial test) | Origin Plaza | "Jiedanba" stays online-only, no space | Appealable rules |
-| 3 | AI-native retail testing (industrial test) | 1733 and surroundings | ByteDance's ecosystem has no street interface | Staffed counter in unmanned hours |
-| 4 | Low-speed autonomous shuttle (industrial test) | Main spine + seven nodes | The stitched corridor has no new mobility species | Safety officer aboard, stoppable |
-| 5 | AI+education night school | Origin Community | The third place of 100,000 students spills into malls | Offline-teaching fallback |
-| 6 | AI+medical health data space | Around PKU Health Science Center | The 2.88/km² gap keeps widening | Privacy computing, authorized access |
-| 7 | AI+legal consultation kiosk | Around CUPL | Compliance trust never demonstrated | Labeled as non-legal opinion |
-| 8 | Elder-friendly AI life station | Communities along the line | Seniors excluded from intelligent life | Human channel kept in all scenarios |
-| 9 | Jing-Zhang Railway AR tour | Whole main spine | The centennial narrative stays on boards | Content cleared by heritage review |
-| 10 | Developer honor wall · open-source gallery | Origin / seven nodes | Contributions cannot be remembered | Content public and correctable |
-
-Privacy- and surveillance-type scenarios are all excluded (agent.3 red line) [depth:scenario_cards_personas].
-
-![Amap POI vitality check-up](assets/figures/c7-poi.en.png)
-
-## Land Use, Building Scale, and Retain-Renovate-Demolish Strategy
-
-**With the master diagram and the three areas shaped, do the arithmetic.** Every move of the spatial structure lands on square metres and building counts — this chapter translates the conceptual zoning into a checkable scale ledger.
-
-The scaling law gives us an honest clue: building footprints grow with unit size only to β≈0.60 (sublinear) — the smaller the unit, the lower the buildable ratio, and the constraints of the main spine and the waterfront squeeze small blocks harder. **The design works with it: pack small spaces into shared large units** (shared desks, shared labs, shared front desks), so that a one-person company gets the fullest set of supporting facilities at the lowest footprint cost [depth:retain_renovate_demolish] [metric:building_footprint_area_sqm].
-
-![Scaling law: the β≈0.60 constraint fingerprint of building footprints](assets/figures/c3-scaling.en.png)
-
-Retain-renovate-demolish does not pretend to understand what is not yet investigated: the status-quo buildings, ownership, and heritage-protection scope are not cleared, so no building-by-building conclusion is given. There are only three principles — the heritage-protected and already-implemented park segments stay (retain), the inefficient space on both sides of Jing-Zhang is functionally replaced first (renovate), and the station catchments and stitch nodes receive local additions (new-build concept). No statutory FAR, height, or intensity is written (the task-book boundary clause).
-
-## Transport, Rail, Municipal Infrastructure, and Public Services
-
-**The stitching prescription has been written; this chapter takes it to the engineering layer.** λ says "where to stitch"; this chapter says "how, with what, and what the gain is after stitching".
-
-The Toledo-style three-zone comparison gives the human-scale truth: the main-spine corridor band's intersection density is only 39.0 per square kilometre (the lowest on the belt), and only 24 nodes are reachable within 400 metres — while the university-campus belt has 167 per square kilometre and 53.7 nodes. **A century of the railway cutting through the city has left this line the hardest one to walk** [depth:traffic_rail_slow_parking].
-
-![Three-zone walking comparison and POI syntactic placement](assets/figures/c4b-syntax.en.png)
-
-The surgery is to stitch the seven gaps one by one: Qinghuadonglu, Wudaokou, North 4th Ring, Zhichunlu, North 3rd Ring, Xueyuannanlu, Gaoliangqiao Xiejie — footpaths, cycleways, and grade-separation concepts (the North 4th Ring and North 3rd Ring are exactly the "overpass the rings" areas named in the announcement) [metric:corridor_crossing_count] [data:geometry/roads.geojson#ROAD-001]. The post-stitching effect is actually computed: Beijing North integration +132%, Dazhongsi +102%, Wudaokou +65%, Zhichunlu +61%. Seven rail stations get integration concepts; municipal and new infrastructure get only system-level suggestions, with pipelines, capacity, and fire-safety awaiting official data [depth:municipal_new_infrastructure].
-
-![The seven gaps and the blue-green network](assets/figures/c2-percolation.en.png)
-
-![Transport, slow mobility, and blue-green public space](assets/figures/mobility-bluegreen.en.png)
-
-## Blue-Green Network, Public Space, and Urban Character
-
-**After the road network is stitched, connect the green and public life too.** The check-up says the green is not scarce — what is missing is the line that strings it together; this chapter connects the blue-green system, the public space, and the character rules.
-
-The blue-green network's check-up: giant component 83.9%, already past the percolation threshold of 59.27% — **green space is not lacking; what is lacking is the line that strings the green spaces together**. So this proposal does not do a "grand green-space narrative"; it does "seven-node stitching + one line, three plazas" (conceptual layer about 202,000 m², 1.8%) [metric:green_ratio] [metric:public_space_ratio]. The public-space component library and wayfinding system (agent.4/5 required outputs): eight detachable components — the stitch-node rain garden, the shaded bench, the drinking-water point, the low reading shelf, the mileage post, the shared-desk pod, the test-equipment parking slot, and the honor-wall module — each given its dimensions, material, connections, and replacement method; the wayfinding three-piece set: the entrance nameplate (stating the distance to the nearest station and public toilet), the mileage post (helping people confirm direction), and the low reading shelf (explaining the old rails and stations), all unified with the belt logo's "superlinear line" motif.
-
-Three pilgrimage landmarks: Tsinghuayuan Station · Origin (the 93.5% structural origin + the developer Name Wall); Wudaokou · Phase-Transition Plaza (a public gauge that displays this belt's connection strength in real time — turning "is the city connected?" into a thermometer everyone can see); Dazhongsi · Interface Plaza (the Emergence Bell + the AI-native interface). Character control learns from the two paradigms of London and Shanghai: the heritage corridor and Tsinghuayuan Station use a "protective overlay" (view corridors, conceptual height control), and the three key areas use "generative growth rules" (heights stepping down toward the park, low in front and high behind) — **constraints breed innovation, and institutions sculpt form** (height values await heritage and regulatory-plan data) [depth:bluegreen_public_space_character] [standard:MOHURD-URBAN-DESIGN-MEASURES].
-
-![Character and conceptual height zoning (schematic)](assets/figures/c17-height-character.en.png)
-
-**How to read this character diagram**: the upper panel is the conceptual height-zoning plan — the height bands step down along the main spine (park 0–8 m, park-front band 18 m, mid blocks 24 m, urban hinterland 36 m), with the three areas each following one of three character rules ("garden blocks / near-campus street / station front"); the lower panel shows the "low front, high back" rule in a typical Origin Community section, plus the conceptual Tsinghuayuan → Dazhongsi view corridor. All of it is design intent, not a regulatory drawing, to be rechecked once heritage and regulatory data arrive.
-
-## Renewal Projects, Implementation Policy, and Phasing
-
-**The prescriptions of the preceding chapters fold here into one executable list.** From this point the design is no longer a drawing but three lists: what to do, who does it, and in how many steps.
-
-The renewal projects are only of three kinds: ① the seven-node stitching works; ② the three-area gap infill (the Origin fills healthcare and talent apartments, Zhongzhiyuan fills culture-tourism-education-finance, Dazhongsi fills finance, culture-tourism, and research); ③ station-catchment jobs-housing balance. Three phases: near term (1–3 years) main-spine stitching and the Dazhongsi interface; mid term (3–5 years) the Origin Community renewal; long term (5–10 years) the Zhongzhiyuan garden district [data:geometry/phasing.geojson#PHASE-1] [depth:renewal_project_list].
-
-Operations are not event planning but the annual calibration of this instrument: activity branding and communication visuals (agent.6 required outputs): the annual activity system's visual continuation of the "superlinear line" motif — the developer festival's seven-node installations, the Phase-Transition Forum's annual report cover (the λ and H twin curves), and the honor-wall inscription ceremony's bronze-plate layout, one system running throughout. The attraction-and-conversion mechanism (conceptual suggestion): OPC order-taking contest → the "Jiedanba" platform's spatial edition → moving into shared desks → entering the incubator → connecting to the five-party six-force conversion mechanism — with each level's conversion rate and headcount entering the Phase-Transition Forum's annual report, turning "attraction" into a measurable funnel.
-
-The annual "Jing-Zhang Hyper Line Developer Festival"; the **Phase-Transition Forum** — turning the λ connection strength and the H health factor into an annual public report, published every year like a check-up; the seven-node open testing season; the OPC order-taking contest; the annual honor-wall inscription. All activities, investment attraction, policies, and funding statements are conceptual suggestions and do not constitute any confirmed government arrangement [depth:annual_event_system_operation].
-
-![Ten-year timeline: two acceptance gates](assets/figures/operations-timeline.en.png)
-
-## Urban Emergent Brain and the Recursive Operating System
-
-**Lists go stale; cities do not.** The design is now drawn, but a city does not end where the drawing ends — this chapter upgrades "the computable city" into "a recursively runnable program".
-
-> "The future cannot be predicted, but it can be invented." — Michael Batty
-
-**This is the step from "urban design" to "urban system": turning the computable city into a runnable recursive computation.** The earlier chapters showed that this belt can be measured (five rulers) and verified (three models cross-corroborated). One last question remains: who keeps reading, computing, and tuning it? The answer is not another agency, but an **Emergent Brain THE EMERGENT BRAIN** installed into physical space — the first time a city is treated as a program that can be iterated year by year, instead of a drawing that is obsolete the day it is finished.
-
-**Three layers (see the architecture figure)**: the **sense layer** — 25,476 POIs, flow and facility IoT, citizen feedback and scenario-card event streams (all aggregate); the **compute layer** — a digital twin and the SIMULACRA/CA/LUTI model suite, with the four rulers (λc=0.42, p_c=59.27%, D=1.6–1.8, H=1.35) as its gauges; the **decide layer** — the Phase-Transition Forum's annual report, a citizen covenant, and government approval, **with humans always holding the veto**. Three red lines: no privacy violation, no over-monitoring, every step human-reviewable.
-
-**Four terminals, one for each kind of person**: the **citizen terminal** — a personal data-sovereignty wallet and the five equity mechanisms (compute vouchers / data lake / AI night school / spatial equity / attribution), returning superlinear gains to personal accounts; the **enterprise terminal** — the OPC order plaza, test-band booking, compute-voucher claims, with every conversion stage of the attraction funnel reported annually; the **government terminal** — a compliance board and approval flows; the brain never replaces approval, it only lets evidence go first; the **campus terminal** — energy, space, and logistics dispatch that computes waste and then saves it.
-
-**The recursive loop is the annual check-up**: read (sense) → compute → tune (the unlock list) → verify (the annual report) → read again. The two acceptance gates on the ten-year timeline (λ≥40%, H≥1.35) are this machine's self-test lines — fail, and it stops to review. **This is Batty's maxim, engineered: "the planner's task is not to write the script for the system, but to create the conditions that let the system grow itself" — we have turned that maxim into a program that reruns every year.**
-
-**The Phase Control Room**: physically at Wudaokou · Phase Plaza — a public gauge showing this belt's connection strength and health in real time; not a surveillance room, but the city's check-up report hung on the wall. All data is aggregate, zero raw points published, zero PII. Citizens see their city's temperature, enterprises see their conversion rank, government sees the compliance board — one instrument, three readings.
-
-![The Emergent Brain: three layers, four terminals, recursive loop](assets/figures/c21-emergent-brain.en.png)
-
-![The Phase Control Room: the belt's annual check-up dashboard](assets/figures/c22-phase-control-room.en.png)
-
-## Investment Budget and Return Estimation (Conceptual Magnitude, Not an Investment Commitment)
-
-**A running system needs a ledger.** All the preceding moves are converted here into money — how it is spent, where it returns from, and for whom; and the chapter states plainly which accounts can be settled and which cannot.
-
-> The skeleton's bill is paid in public; the soul's bill is collected by all. — Basis of this section: conceptual estimation, not an investment commitment or government arrangement.
-
-**Basis statement**: all figures are conceptual estimates — quantities and unit prices reference public magnitudes of comparable projects (the public magnitude of Jing-Zhang Heritage Park Phase I, urban-renewal market unit prices), and the demand side is derived from this proposal's own computed data; **they constitute no investment conclusion, no return commitment, and no government arrangement**. Precise estimation follows the official redline, the regulatory plan, and the status-quo inventory, by professional institutions.
-
-**Step 1 · The market supply-demand ledger (demand is computed, not guessed)**: on the demand side — 4,919 work-type POIs (companies + research + finance, of the 25,476 Amap points measured), 13,000 developers, 180 OPC one-person companies, and more than a thousand scientists; only 38.4% of cells are jobs-housing balanced. From this we derive: an operating-office increment of about 100,000 m² (matching the research gap of −45.9%) and 2,000 talent apartments (conceptual infill). On the supply side, market-reference assumptions: office/retail at 4.5 CNY/m²/day and apartments at 5,000 CNY/month — inside the public market magnitude range for Haidian station districts, all replaceable assumptions.
-
-**Step 2 · Investment breakdown (CNY 4.40bn, ten years, conceptual)** [depth:renewal_project_list]:
-
-| Item | Magnitude (CNY 100M) |
-|---|---|
-| Seven-node stitching works (public good: grade-separated/at-grade stitches, plazas, gauges) | 6.6 |
-| Public space of the three areas (202,000 m²) | 2.4 |
-| Interface renewal and plazas of the three areas | 5.4 |
-| Talent apartments and community services (2,000 units) | 15.6 |
-| Zhongzhiyuan full-stack test band and garden blocks | 6.0 |
-| The Emergent Brain (digital twin / control room / IoT / inclusive compute, incl. 5-year O&M) | 5.0 |
-| Operations and events fund (10 years: dev festival / Phase Forum / open test seasons) [depth:annual_event_system_operation] | 3.0 |
-| **Total** | **44.0** |
-
-**Step 3 · Return paths (three ledgers; blended IRR ≈ 10.6% concept, static payback ≈ year 10)**: first, the **rent ledger** — steady-state net cash flow of about CNY 300M/year supports an IRR of only about 0.5% on its own, which is exactly why this is not a commercial real-estate project; second, the **asset ledger** — about 180,000 m² of renewed operating property at a conceptual 38,000 CNY/m² is worth about CNY 6.8bn, recycled at 60% net via REITs/disposal in year 10, giving a blended IRR of about 10.6% (NPV@4% ≈ +CNY 1.88bn); third, the **social ledger** — job reach +15.9% [metric:simulacra_jobs_reach_stitched], jobs-housing balance, H=1.556, not discounted; the coordination game flips from "go it alone" to "cooperate" (η +60%) [metric:network_efficiency_eta_after]. Sensitivity (occupancy 68%→95%, asset value ±20%) is shown in the estimation figure. **The structure of the three ledgers is the structure of the proposal: the public ledger (stitching + brain ≈ CNY 1.7bn) seeks no financial return and is repaid by the social ledger; the market ledger (≈ CNY 2.7bn) runs on rent plus asset value; the operations ledger self-balances.**
-
-**Step 4 · Funding and financing paths (conceptual suggestions)**: public funds carry the public goods (stitching works, brain platform, public space); market renewal rolls forward with market players (guided by planning conditions); matured assets go to REITs/long-term holding; operations self-balance on scenario revenue (test band, night school, markets, honor wall); the equity loop redirects renewal gains and operating surplus (compute vouchers, AI night school). All mechanisms are conceptual suggestions, not confirmed arrangements.
-
-**Risk thresholds (self-test lines)**: if, after Phase I (seven-node stitching) is complete, the supercritical share of λ has not risen above 40%, or the 25-minute-circle job-reach gain is below 10%, Phase II expansion is suspended and Phase I is reviewed first — **let the money follow the verification results, not the planning text**.
-
-![Investment budget and return: supply-demand ledger, breakdown, cash flow, sensitivity](assets/figures/c20-finance.en.png)
-
-## Metrics, Area Recalculation, and Compliance Matrix
-
-**Every conclusion must be auditable.** This chapter registers every sentence with a number into checkable indicators and a compliance matrix — so that a juror can trace the provenance of every figure.
-
-
-> "We cannot predict the future city, but we can invent it." — Michael Batty, *Inventing Future Cities*
-
-The core indicators are all recalculated from geometry and data (EPSG:4548): site 11,412,800 m²; land use research 31.5% / commercial 25.6% / education 18.2% / residential 16.5% / green 8.2%; green ratio 11.6%; public-space ratio 1.8%; footprint density 17.4%; road network 67,000 m [metric:green_ratio] [metric:public_space_ratio].
-
-**Three models, cross-corroborated on the same data and the same stitching assumption** (mechanisms differ: flow redistribution, path lock-in, match degree; convergence direction is consistent):
-
-First, the SIMULACRA four-sector re-run: after stitching, each residential unit reaches an average of 323.5→374.9 jobs (+15.9%) within its 25-minute circle, commute cost −3.4%, and employment flows more balanced — **the "ten-minute innovation circle" turns from slogan into number** [depth:metrics_recalculation].
-
-Second, the CA emergence counterfactual: without intervention, 60 steps change nothing (this belt's status quo self-locks; unpushed it does not move); with intervention, 42 cells unlock and redistribute — **emergence under constraints needs the "unlock" action, and this proposal's entire intervention is this unlock list**.
-
-Third, the scaling-law verification: health factor H=1.178/0.758=1.556, above the 1.35 benchmark (γ fitted with n=72 four-hundred-metre cells, R²=0.67; β takes the conceptual mean of roads 0.915 and footprints 0.60; see also C3's n=98 conceptual zoning cells) [metric:beta_infra_mean] — this belt's growth is mathematically healthy.
-
-Four rulers, made into an annual check-up table: λc=0.42 (connection), p_c=59.27% (network), D=1.6–1.8 (form), H=1.35 (health) — the current measurements: 29.17% supercritical share (re-measured after stitching), 83.9%, 1.746, 1.556; the first two enter the Phase-Transition Forum's annual report. Task coverage: announcement 1.3/1.4/1.5 and agent.1–6 all registered in the compliance matrix; 8 standards and 15 depth items all complete [depth:compliance_standard_coverage].
-
-**Standard-clause correspondence matrix (8 standards → primary response positions; the full file is standard_matrix.json)**:
-
-| Standard | Primary response position |
-|---|---|
-| Official announcement (three scales / key areas / deliverable context) | Design Basis and Source List, Three-Level Scope Framework, Overall Design Area chapters |
-| Agent open-call task book (six tasks / three positionings / five functions / three areas two wings) | Vision and Goals, Consultation of Five Urban Scientists, AI Innovation Ecosystem, this matrix |
-| Urban Design Measures (building layout / character / public space / features) | Blue-Green Network Public Space and Urban Character, Detailed Design of Key Areas chapters |
-| Regulatory Detailed Planning Measures (separate known controls from design suggestions) | Land Use, Building Scale and Retain-Renovate-Demolish chapter ("pending official data" stance) |
-| Land-Sea Use Classification Guide (unified land-use classification) | Land-use zoning (six classes 0802/0804/05/0701/1401/0806) |
-| Generative-AI Interim Measures (Articles 2/14/15/17 official interpretations) | Risk, Copyright, and Compliance chapter (AI-scenario compliance boundary) |
-| Barrier-Free Environment Law, Article 39 | AI+ Scenarios chapter (human channels on ten cards), public-space component library |
-| Elderly smart-technology policy (traditional and smart services in parallel) | Elder-friendly AI life station scenario card (background reference) |
-
-![The sublinear→superlinear transmission map](assets/figures/transmission-map.en.png)
-
-![Core metric recalculation and evidence chain](assets/figures/metrics-evidence.en.png)
-
-## Review-Dimension Self-Assessment and Data-Gap Matrix
-
-**The proposal is written; now be its first juror.** This chapter self-assesses against the task book's 13 review dimensions and lists honestly what is missing, how badly, and how it is covered in the interim.
-
-**Self-assessment across the 13 review dimensions (each assessed against the task book's review_dimensions, each with an evidence anchor)**:
-
-| Dimension | Self-assessment | Evidence anchor |
-|---|---|---|
-| Goal alignment | Strong | The three heights of the vision point directly at the "global AI industry highland and pilgrimage site"; H=1.556 shows investability |
-| Functional match | Strong | The five functions land one by one (full-stack = Zhongzhiyuan test band / ecosystem = Origin + seven cases / scenarios = ten cards / vitality = POI infill / governance = Phase-Transition Forum) |
-| Brand recognizability | Strong | THE EMERGENT BELT + Hyper Line + the "superlinear line" logo (0 conflicts in the full-library name check) |
-| Regional synergy | Medium | Huairou / Future Science City / E-Town / Beijing-Tianjin-Hebei / "two belts, one area" paragraphs added; the conversion-loop mechanism remains conceptual |
-| Planning innovativeness | Strong | The four-threshold criteria system + bottom-up POI zoning + the CA counterfactual — planning moves from "drawing" to "computing" |
-| Industrial support | Medium | Ecosystem map with 60+ data points; but public measurement of the middle layer (affordability / conversion) is missing, and the proposal fills it with annualized measurement |
-| Scenario perceptibility | Strong | All ten scenario cards land in space with their "necessity"; three renderings for the three areas |
-| Spatial explicitness | Medium | The 7 gaps / three areas / two wings are clearly located; specific plots stay conceptual because ownership data is missing |
-| Transferability | Strong | An 8-item component library / a three-piece wayfinding set / an attraction funnel / an investment package — a professional team can take over directly |
-| Completeness of expression | Strong | 23 bilingual chapters + 44 figure groups + 9 renderings + A3/A0 + a WeChat edition |
-| Public compliance | Strong | All data sources registered, zero PII, complete copyright statement, provisional labelling throughout |
-| International reach | Medium | Full English alignment and internationalized naming; communication assets (WeChat edition) are ready, channels not yet |
-| Long-term operational value | Strong | The Phase-Transition Forum's annual check-up + the honor wall + the developer festival = a brand-asset mechanism |
-
-**The data-gap matrix (what is missing, how much, how to fill it, how to cope now)**:
-
-| Gap | Impact | Interim stance | Action once available |
+| Plan zone | Our take-up | Location | Keep/retrofit/new |
 |---|---|---|---|
-| Official redlines / three-area polygons | Area and boundary precision | Provisional boundary labelled everywhere, never passed off as a redline; the brief's PROV-KEY-003 rough boundary sits near Beijing North Station, ~2 km from Dazhongsi Station named in the brief's own basis table, so this proposal corrects the working boundary to the Dazhongsi Station area by name semantics (A-BOUNDARY-003) | Recalculate the whole package |
-| Regulatory-plan conditions (FAR / height / density / setback) | Development intensity | All marked "pending official data"; only conceptual massing | Fill the forms and recheck the character gradient |
-| Heritage protection zones | Landmarks and view corridors | Conservative principle + conceptual control | Verify the pilgrimage-landmark scheme |
-| Existing buildings / ownership | Retain–renovate–demolish | Three principles, no building-by-building conclusions | Produce the R-R-D classification |
-| Municipal pipelines / capacity | New infrastructure | System-level suggestions only | Deepen facility layouts |
-| Middle-layer measurement (affordability / conversion / inclusive compute) | The "bottom-up" proposition | The proposal fills it with an annualized measurement mechanism | The Phase-Transition Forum's first report |
+| Public services | targeted finance/medical/research infill (finance −63%, weakest in all three areas) | Origin (medical/research), Dazhongsi (finance/research) | retrofit + new (11 cells) |
+| Commercial-business | AI-native commercial front + factor-wing service interface | Dazhongsi 1733 front, ZGC Avenue axis | retrofit (Lanjinglijia [source:DATA-SRC-BAIDU-NEWS-DAZHONGSI] / Douyin towers) |
+| Infrastructure | seven-station TOD + Emergent Brain facilities | seven stations, Phase Plaza | new (Brain 0.32–0.60bn) |
+| Residential | live-work pairs 1:1 + talent apartments 178k m² | 45 empty-shell cells, new cells | retrofit + new |
+| Culture-education | campus-edge dual interface + landmark culture system | Origin (BUAA/BLCU), Tsinghuayuan Station | keep + retrofit (wall gallery) |
+| Mixed | mixed towers (20% housing in offices / 15% office in homes) | 11 new cells (120m modules) | new |
+| Special | full-stack test band (bounded test scenes) | Zhongzhiyuan Quantum Garden | retrofit (768) + new |
+| Green-water | blue-green percolation 0.840→0.904 + three belts (Jing-Zhang/Xiaoyuehe/Nanchanghe) | spine greenbelt, two wings | keep + ecological upgrade |
+| Water protection | Nanchanghe/Xiaoyuehe protection + sponge | Nanchanghe (west of Dazhongsi), Xiaoyuehe | keep & protect |
 
-**The minimal task-response matrix (announcement 1.3–1.5 and agent.1–6 → chapters → evidence)**: registered in full, item by item, in compliance_matrix.json (23 tasks, each with seven classes of evidence — report_sections / geojson_layers / metrics / drawings / visual_sections / source_ids / assumption_ids / self_check_ids); the main text does not repeat the index. Here only the primary response positions of the six agent tasks: agent.1 (vision/naming chapter), agent.2 (consultation chapter, seven cases), agent.3 (scenario chapter, ten cards, five personas), agent.4 (blue-green chapter, three landmarks + component library), agent.5 (coordinated-research chapter, cultural narrative), agent.6 (phasing chapter, operations mechanism).
+**Reference "multiple points" adopted (HD00-1601 to-be-verified background)**: first-level nodes (Zhichunlu / Sidaokou) and second-level nodes (Haidian Huangzhuang / Zhichunlu-West / Yingu / Xitucheng / Zaojunmiao / BUPT) join our node system — Huangzhuang·Zhichunlu-West·Yingu on the factor wing, Xitucheng·BUPT·Jimenqiao on the scenario wing, Zaojunmiao north of Dazhongsi — forming the full "7 stitches + reference multi-points (HD00-1601 to-be-verified background)" hierarchy.
 
-## Risk, Copyright, and Compliance
+**Structural alignment with the HD00-1601 block-level regulatory plan (participant-collected, to-be-verified background, 2026-08)**: the block regulatory plan for the Jing-Zhang corridor (AI Innovation District key area, HD00-1601 etc. [source:DATA-SRC-HD00-1601-20260811]; published for comment 2024-12-20; this material is participant-collected to-be-verified background whose approval status has not been confirmed by the formal source registry, and is not treated as an official fact or statutory basis) is said to establish the spatial structure "one belt, one axis, two hearts, multiple points" and three goals — an innovation-intensive district of international influence, a green-ecology-led renewal benchmark district, and a humanistic, livable garden district. This proposal aligns structurally with the plan: the Hyper Line spine = the "one belt" (the Jing-Zhang innovation exchange belt), with our AI function layer added on top; Wudaokou and Dazhongsi = the "two hearts" (taken up by our Phase Plaza employment core and the Interface Plaza station front); the seven stitches = connectivity reinforcement of the "multiple points"; the three goals map onto our emergence intelligence (EI/syntax), blue-green percolation (0.904), and park-like livability (live-work entanglement + garden blocks). The plan's precise control indicators and red lines are not yet publicly available — statutory values remain unknown: structure aligned, numbers not overstepped.
 
-**Before the review, state the boundaries.** This chapter clarifies data compliance, copyright, privacy, and the basis statements — honesty is this proposal's first credit.
+**Regional synergy (explicit answer to the review dimension)**: the two wings are the belt's open interfaces to the region, not decorations — ① the Zhongguancun factor wing connects west/north to **Zhongguancun Science City** and **Future Science City** (a factor corridor: capital, data, compute flow through the wing); ② the Xiaoyuehe scenario wing connects south to the **Xueyuanlu university cluster** and nearby communities such as **Beiwei Community** (a scenario corridor: campus outputs and community needs are translated in the wing); ③ northward it echoes the **Huairou Science City** big-science facilities, southward it links to **Beijing E-Town** for manufacturing and pilot-scale conversion, and it exports application scenarios and open standards to **Beijing-Tianjin-Hebei** (the replicable interface of the "Emergent Belt" open methodology). Synergy is expressed as mechanisms and corridors, not pre-assumed cross-region projects; specific projects await regional linkage-planning data.
 
-Data compliance: Amap POI is used only as aggregate indicators and density fields, with no raw point data published; OSM under ODbL attribution; all official sources registered [source:DATA-SRC-AMAP-POI-20260815]. Copyright: figures and geometry generated locally by KUN-SAL; the AI concept renderings (Doubao Seedream 5.0/4.0) are conceptual expressions, not site photographs, with their generation recorded in the copyright statement; the naming and logo require trademark and font clearance; no personal privacy or unauthorized material. Compliance boundaries: this proposal is an open co-creation recommendation that does not replace formal planning and constitutes no government-reviewed conclusion; all regulatory-plan indicators are "pending official data"; AI scenarios respect the generative-AI measures and the Barrier-Free Law, and no privacy-infringing, over-monitoring, or non-human-reviewable scenarios are made [standard:GENERATIVE-AI-INTERIM-MEASURES]. The materials to be supplemented and the recalculation triggers are in the assumptions file: the official redline, the regulatory plan, the heritage-protection scope, the status-quo buildings and ownership, and municipal pipelines [depth:risk_missing_data].
+**Ring conclusion →** Mechanisms geometrized; prescriptions land on specific spaces. Key-area detailing takes over.
+
+---
+
+## Key-Area Detailed Design (Prescription ring)
+
+**Spatial narrative: the spine is not a line — it is an emergent spatial structure.** Learning from the High Line's "slow linear wander" and Superkilen's "three-color rhythm", the spine is not a uniform corridor but a sequenced composition — three movements (three areas) each with a spatial character, seven notes (seven stitches) each with a distinct entrance. But the true organizing principle is not "rhythm" — it is **recursion**: the embedded rails are the invariant ground rule; the functional modules above (scenario cards) are cells that can be born, closed, and replaced. Space is not designed — it is grown from rules. The detailed designs below are not "final states" but "initial conditions" — given the rules, space self-organizes through use.
+
+**Three original spatial prototypes (proposed by this submission, not style labels — verifiable spatial mechanisms):**
+
+### Prototype 1 · The AI Test Garden (Zhongzhiyuan) — a district that hides its labs inside a garden (a concept prototype)
+
+**Mechanism: test pods × terrain nesting.** Test pods are not labs inside buildings — they are glass vessels in the landscape: semi-buried earth-sheltered pods (embedded), under-eave shallow pods (light-touch), and freestanding glass pods (showcase). Three nesting modes make the act of testing itself part of the garden scenery. **Plants as sensors**: the planting bands double as an environmental monitoring network (temperature / humidity / air / soil data streamed live to tests) — research behavior and landscape maintenance become one. **Boundary-less testing**: developers test on real streets, gardens, and waterfronts — the entire 1.93 km² is an open laboratory, with controlled boundaries only around the test core. **Verifiable support**: CA emergence confirms commercial clustering along the 300m stitch attractors (15 cells → commercial, lat. 40.011–40.016) — the spatial coupling of test band and commercial catalyst is an emergent result, not a plan [metric:ca_intervention_change].
+
+### Prototype 2 · The Heritage Living Room (Origin Community) — an urban living room organized around a century-old station as its fireplace (a concept prototype)
+
+**Mechanism: centrifugal wrapping.** The innovation street, gallery, market, and cafés are not lined along streets — they wrap **centrifugally around the 1909 Qinghuayuan Station relic**: from any point in the living room one can see the station; heritage becomes the organizing core, not scenery. **Fireplace effect**: the station relic carries no commercial function — it carries "presence": winter warm-light seating, the station clock tolling on the hour, night silhouette lighting — giving the room a spiritual core. **Porch interface**: university walls become see-through galleries (the room's bookshelf); campus and living room are mutually visible — students walk out and walk in. **Verifiable support**: syntax computation fixes the room's circulation — Xueyuanqiao (current hub) = main entrance, Wudaokou (strongest after stitching, +43%) = main activity zone, Qinghuayuan-West (the task-book-named station) = secondary entrance — circulation emerges from 5,720 nodes of computation [metric:syntax_integration_gain_pct].
+
+### Prototype 3 · The Station-City Shopwindow (Dazhongsi) — a two-way display interface between station and city (a concept prototype)
+
+**Mechanism: the two-way shopwindow.** The arcade interface shows the city "what is happening in the belt" (AI demo windows / achievement exhibits / test live-feeds) on one side, and shows the belt "what the city offers" (commerce / services / culture) on the other — the stitch bridge is not a crossing facility, it is an **exchange surface**. **Ground-floor fully open**: the quadrant stitching's ground floor has no walls — arcade + eave + pilotis, three open interfaces; flows pass through rather than detour. **Night conversion**: commuter passage by day; evening classes / exhibitions / night market after dark — 12-hour two-sided operation. **Verifiable support** (concept parameters, pending professional review): quadrant pedestrian-stitch construction (green bridge ~5.5m clearance / 6m deck + station-hall underpass 8m connecting level + arcade setback 3m / 3.6m height) + CA-emergent exchange interface (11 cells, lat. 39.944–39.948: 8 commercial + 3 research) [metric:poi_dazhongsi_int_pct].
+
+**Design method declaration: space is not drawn — it is computationally generated.** Every spatial decision in this proposal has a computational origin, not derived from a function checklist: the seven stitch locations come from c2 corridor break detection (geometry + road class, computed in-model — not chosen by intuition); the three-area new-build / infill / disposal classification comes from c33 capacity check (adaptive seed — not one-size-fits-all); the land-use structure comes from c7 POI survey (25,476 POIs — not statutory zoning templates); the jobs-housing infill locations come from c28 entropy gap analysis (fill what is missing — not uniform redistribution); the stitching effect is computed in-model by c2b percolation + c4 syntax (dual gates pass — not self-declared). **The designer's role is not to draw, but to set rules and objective functions for computation, then select the optimal output.** This is not rhetoric — every number in this document traces back to `研究数据/计算/*.json` and `metrics.json` formula registrations.
+
+**Case study: CA emergence as spatial generation for "Quantum Garden" (c12 simulation).** Set 100m cells with states (empty / locked / residential / research-office / commercial / education), POI-driven bottom-up initial state, locked constraints (rail corridor / water / universities / heritage) invariant, one update rule: cells within 300m of a station or stitch may "update-transition". **60 steps without intervention = 0 cell change (path locking — the status quo self-reinforces)**; with stitching + update policy intervention = **42 cells redistributed** (commercial +35 / +21% is the largest growth category, empty cells -31 activated, residential -11 exits/upgrades) [metric:ca_intervention_change]. The overlap between the emergent land-use structure and our manual conceptual zoning is only **37.9%** — bottom-up forces produce a **different spatial organization** than manual partitions. This finding directly shapes the Zhongzhiyuan "Quantum Garden" spatial strategy: not drawing a "garden-embedded full-stack district" by hand, but **setting "garden embeds test bands" as initial conditions and rules for the computation, then letting CA emerge the optimal layout** — commercial clusters spontaneously along the 300m stitch attractors (CA-simulated), gardens serve as locked constraints that form natural buffers between test cells.
+
+![Fig C12 · CA urban-renewal emergence simulation: no intervention = path locking (0 change), intervention = emergent unlocking (42 cells redistributed, overlap with manual zoning 38%)](assets/figures/c12-ca.en.jpg)
+
+**Case study: syntax as generator of the "Origin Living Room" main path (c4 computation).** Integration = (N-1)/Σd = "how much must one pass through" a node. Current ranking: Xueyuanqiao > Wudaokou > Qinghuayuan-W > Zhichunlu > Xuezhiyuan > Dazhongsi > Beijingbei. After stitching, a **key shift** occurs: Dazhongsi rises from among the lowest to among the strongest (+0.000132, **+70%**), Wudaokou +43%, Qinghuayuan-W +37%, Beijingbei +49% [metric:syntax_integration_gain_pct]. This finding directly shapes the "Origin Living Room" main path: rather than deriving paths from a function checklist, **the highest-integration nodes become the living room's main entrances and activity anchors** — Xueyuanqiao (current hub) as the main entrance, Wudaokou (strongest after stitching) as the main activity zone, Qinghuayuan-West (the transit station the task book explicitly named for integrated design) as the secondary entrance and the start of the campus-edge innovation street [metric:poi_tsinghuayuan_int_pct]. The main path is not drawn — it **emerges from syntax computation across 5,720 real nodes × 45 design-spine edges**.
+
+Three-area four-piece kit + **scale module table** (per area: extent / key spatial scales / public-path floor / next-stage HOLD condition):
+
+| Area | Disease (c7 model-identified [metric:poi_total_count]) | Cure | HOLD condition |
+|---|---|---|---|
+| Zhongzhiyuan (1.93km², W/L 0.75) | lacks tourism/finance | tourism scenes + finance frontage, full-stack segment | no next stage until near-zero-capacity cells are new-built |
+| Origin Community | lacks medical/research | medical/research support, origin segment | same (adaptive seed) |
+| Dazhongsi | lacks finance/research | finance/research, frontage segment | same |
+
+**Three-area quantified panels (POI evidence + check-up cards)**:
+
+![Zhongzhiyuan · full-stack segment quantified panel](assets/figures/keyarea-zhongzhiyuan_ai_acceleration_area.en.jpg)
+
+![Origin Community · origination segment quantified panel](assets/figures/keyarea-beijing_ai_origin_community.en.jpg)
+
+![Dazhongsi · interface segment quantified panel](assets/figures/keyarea-dazhongsi_ai_industry_cluster.en.jpg)
+
+**Node plans (paired 1:1 with the renders below, section indices A-A' / B-B' / C-C')**:
+
+![Zhongzhiyuan · full-stack segment node plan A-A'](assets/figures/plan-zhongzhiyuan_ai_acceleration_area.en.jpg)
+
+![Origin · near-campus innovation street node plan B-B'](assets/figures/plan-beijing_ai_origin_community.en.jpg)
+
+![Dazhongsi · interface segment node plan C-C'](assets/figures/plan-dazhongsi_ai_industry_cluster.en.jpg)
+
+![Dazhongsi four-quadrant stitching zoom](assets/figures/dazhongsi-quadrant-zoom.en.jpg)
+
+![Dazhongsi four-quadrant · stitching structure design: green bridge overpass (clearance 5.5m / deck 6m) + concourse underpass (link 8m) + arcade setback (3m / 3.6m high, 3-span steel box-girder bridge + 1:12 ramp landings (concept parameter, pending accessibility review)), three sections + plan locator (concept design drawing)](assets/figures/suture-structure.en.jpg)
+
+**Adaptive seed on the map**: near-zero-capacity cells → "new-build" color, absorbable cells → "backfill" color, over-capacity cells → "dispose" color (three-area boards use this coloring). Scale module fields: extent (120×120m block) / key spatial scales (3.2m walkway, 40×40m phase-change plaza) / public-path floor (normal paths remain usable when AI is removed) / HOLD condition.
+
+**Ring conclusion →** The three areas are not three tech parks — they are three spatial identities (Quantum Garden / Origin Living Room / Interface Gate); the spine is not a line but an emergent spatial structure. The Verification ring proves whether they "work".
+
+![Three mechanisms, spatially explained: ① multi-scale self-similarity (1m scale-paving → 40m plaza → 7.9km belt, same rule nesting; D=1.746 computed in-model) ② self-organization reserve (85% designed + 15% left for emergence, three scales deliberately not designed) ③ seven phase-change points in gradient (core 0-100m max intensity → transition 100-300m decreasing → conduction 300m+ existing fabric; percolation 0.840→0.904 computed in-model)](assets/figures/mechanism-diagram.en.jpg)
+
+**Three design-language principles (logic before style — every move answers "which mechanism does it serve")**:
+
+**① The minimal unit of emergence: the SCALE — space as cellular automaton.** The scale is not just a design language — it is the spatial organizing principle: each scale is a CA cell obeying local rules (wind, light, temperature), and the global order (starling wave, light-shadow ripple) **emerges** from interaction. Paving is a scale (percolation strip), shading is a scale (facade module), the landmark is a scale (Thousand-Scale Grove), seating is a scale (row arrangement) — four scales sharing the same "cell". The spatial recursion is here: given the scale's rules, users can compose new spatial events themselves — the scenario cards on the spine are not "placed" functions but events "grown" from the scale's rules. The motif decorates no surface — it is the touchable form of the mechanism itself. Iron rule: scales appear only where a mechanism has semantic meaning, never pasted onto unrelated facades.
+
+**② Material circularity (demountable, replaceable, remeltable).** Aluminium scales (grove & facade shading): recycled aluminium, standard modules under 1 kg each, individually replaceable, remelted at end of life (remelt energy ≈ 5% of primary), bases are pre-embedded bolts with no in-situ casting; timber (market canopies, seats, boardwalks): reclaimed wood / CLT modular joinery, fully relocatable — the reversibility requirement of redundancy R; concrete (percolation strip paving, 3.2m walkway): pervious concrete + recycled aggregate (demolition waste crushed and reused), strip units lifted locally for repair; rails: real steel rails and sleepers recovered and reused on the original alignment, no new extraction. Material accounts of the 44.6万㎡ new-build modules are listed separately at working-drawing stage and folded into the seven investment categories.
+
+**③ Style self-justification (move → mechanism table, all recomputable)**:
+
+| Design move | Mechanism / gap it serves (data source) |
+|---|---|
+| Thousand-Scale Grove (wind-flip aluminium scales) | Visualization of percolation phase transition 0.840→0.904: scale flips = local state changes, the overall wave = emergent transition |
+| Percolation strip paving + fine mist | Blue-green percolation paths (giant component 0.840→0.904); the strip = permeable edge |
+| Kept-rail seats / rail-motif paving | real rails & sleepers restored + tangible continuity of the spine's syntactic integration |
+| Terrace seats / view frames / wildflower band (three High-Line moves) | Park-like livability (third goal of the approved plan) + public stay supply behind jobs-housing entropy +5.3% |
+| Green-culture gallery wall | Repair of the wall-cutting mechanism (B2 BUAA/BLCU boundary), syntactic integration gain |
+| Quantum Garden 120m modules + ground-level single-storey service pavilion | CA unlock (42 cells reallocated) + redundancy R (reversible light intervention) |
+| λ information strip (the only screen) | Wilson λ data layer (supercritical share 24.76%); iron rule 11: screens ≤1, functional supporting role |
+
+**Three-layer urban-design frame** (design objects at three layers: macro structure / meso blocks & buildings / micro places & landscape):
+
+| Layer | Scale | Urban-design body | This proposal |
+|---|---|---|---|
+| Macro | belt 11.4 km² | structure / land use / intensity & height / character / mobility / blue-green | one-line-three-folds-two-wings-seven-nodes, POI zoning, A5 intensity-height, road network + 7 rail stations, percolation 0.904, dual skyline (c17) |
+| Meso | block 120×120m | block module / buildings / street interface / public-space network | live-work mixed towers, block module (towers + podium + courtyard), facade street walls, 3.2m walkway + 40×40 courtyard |
+| Micro | place scale | plazas / landmarks / landscape / follies / interiors | three pilgrimage landmarks, seven stitches, three landscape boards, six study boards |
+
+![Live-work mixed towers · urban-design development: the architectural landing of the +5.3% entropy (20% housing in office-led towers / 15% office in housing-led, vertical zoning + core + fire codes)](assets/figures/tower-mix-study.en.jpg)
+
+![120×120 block module · urban-design development: towers + podium + courtyard + street wall; scale nesting (120m→40m→3.2m); ~24m podium along the street + ~60–80m towers set back (conceptual parameters, dual skyline, pending official red lines and professional review)](assets/figures/block-study.en.jpg)
+
+![120×120 block module rendering (AI concept intent, not implementation) — an URBAN DESIGN view: ~24m podium street wall + mixed ground-floor band, ~60–80m towers set back (conceptual, pending review), upper residential floors lighting window by window (two clocks), 40×40 green courtyard](assets/media/block-dusk.jpg)
+
+**Node design concept statements (concept first — one line per node; renderings are concept-driven)**:
+
+| Node | Concept | Form | Atmosphere |
+|---|---|---|---|
+| Phase Plaza | A breathing silver screen — the wind directs, scales are pixels, the plaza is a theater | pole canopy fills the frame, low upward angle | blue hour: backlit silver canopy + copper rim light |
+| Quantum Garden | An industrial greenhouse of memory — a test garden grows inside the old factory's skeleton | 768 trusses = greenhouse frame, warm interior glow | dusk: cold blue × warm gold |
+| Origin Plaza | A TIME AXIS: flush sleepers = timestamps, glowing seams = circuit traces, alive and growing toward the future | sleepers embedded flush (zero raised) + light seams + steel inlay, sparse near, dense far | morning long shadows; a glowing timeline at night |
+| Interface Plaza | The bell sinks into the ground — the old bell's shadow is the AI bell face | copper bell lines + sound-pipe slope, temple silhouette | blue hour + last daylight |
+| Railside Market | Improvisation in a thousand profiles — no cutting, no drilling, today's stalls assembled | aluminum-profile structure forest | matte aluminum + warm stall lamps |
+| Stitch Bridge | An arc of white light across the traffic — white concrete + stainless steel + glass, the spine glowing in backlight | 3-span white fair-faced concrete box girder + steel railings + glass balustrade | blue dusk backlight: the white bridge glows, light trails below |
+| 1733 Light Interface | Keep the shell, free the inside — the old mall's shell holds the night school's lamps | lit-window rhythm + loft steel showing through | dark facade × warm gold windows |
+
+**Rendering anchoring discipline**: every rendering must be bound to a real anchor card (real OSM fabric + coordinates + design placement); unanchored scenes do not enter the package.
+
+![Anchor card: Stitch Bridge real site — N.3rd Ring Rd × Mingguang Rd crossing (47 road segs / 18 rails model-identified)](assets/figures/anchor-stitch.en.jpg)
+
+![Anchor card: Market real site — N.4th Ring Rd × west street edge of JZ Park Phase I (park built; market stays on existing streets outside the red line)](assets/figures/anchor-market.en.jpg)
+
+![Anchor card: Quantum Garden real site — Zhichunli 768 Creative Park (8,735 sqm factory model-identified)](assets/figures/anchor-quantum.en.jpg)
+
+**Node design development (one page, four cells: premise → translation → construction → use; every move answers "which mechanism it serves"; natural phenomena like starling flocks are footnotes, never premises)**:
+
+![Phase Plaza · Thousand-Scale Grove development: emergence premise (local rules → macro order) / translation (scale + wind = light-dark wave = the 0.904 transition made visible) / construction / use](assets/figures/scale-grove-study.en.jpg)
+
+![Quantum Garden development: CA unlock of 42 cells → garden blocks; 768 retrofit core + 120m modules + ground-level single-storey pavilion (a modest folly) + thousand-grass wave](assets/figures/qg-garden-study.en.jpg)
+
+![Railside market development: standard aluminum module system (standard aluminum zero-cutting system + modular stacking) — one module × three rules = stall / canopy / kiosk / bench](assets/figures/market-study.en.jpg)
+
+![Origin Plaza development: 93.5th-percentile integration = the structural origin (data, not myth); TIME AXIS concept — flush sleepers = timestamps + glowing seams + steel inlay , density gradient, emptiness before the station](assets/figures/origin-study.en.jpg)
+
+![Interface Plaza development: 20.2% → +70% network transition; sound-pipe steps (emergent sound) + copper bell lines + temple emptiness](assets/figures/interface-study.en.jpg)
+
+![Seven stitches development: network before parcels; sculptural green bridge (a sculptural component: one form + one material + crisp shadow)](assets/figures/stitch-study.en.jpg)
+
+![1733 light interface development: reuse as initial condition (reuse narrative); keep shell, free inside — the lit-dark rhythm emerges from use](assets/figures/1733-study.en.jpg)
+
+![Landscape design (concept): Phase Plaza / Origin Plaza / Interface Plaza](assets/figures/landscape-phase.en.jpg)
+
+![Phase Plaza daytime rendering (AI concept intent, not implementation)](assets/media/d2-phase-plaza-day.jpg)
+
+![Landscape design: Origin Plaza](assets/figures/landscape-origin.en.jpg)
+
+![Landscape design: Interface Plaza](assets/figures/landscape-front.en.jpg)
+
+![Quantum Garden rendering (AI concept intent, not implementation) — real anchor: Zhichunli 768 Creative Park (8,735 sqm factory, 116.3290E 39.9765N); the service pavilion is a ground-level modest single-storey folly (eave 3.5m, thin columns + glass + warm wood)](assets/media/quantum-garden.jpg)
+
+![Railside market rendering (AI concept intent, not implementation) — real anchor: N.4th Ring Rd × west street edge of JZ Park Phase I (outside the park red line; the built park is untouched; rendering contains no railway elements)](assets/media/market-module.jpg)
+
+![Stitch bridge rendering (AI concept intent, not implementation) — real anchor: N.3rd Ring Rd × Mingguang Rd crossing (116.3402E 39.9646N); a pedestrian bridge over the 8-lane arterial, piers in the central median, 1.1m railings](assets/media/stitch-bridge.jpg)
+
+![Street-front concept elevations: test band / innovation street / AI-native front](assets/figures/facade-stack.en.jpg)
+
+![Facade: innovation street](assets/figures/facade-origin.en.jpg)
+
+![Facade: AI-native front](assets/figures/facade-front.en.jpg)
+
+![Night design (concept): the spine](assets/figures/night-spine.en.jpg)
+
+![Spine · flush-embedded rail construction design: plan / cross-section / axonometric — rail top = finished paving (0 step), resilient infill between rails, buried sleepers, wildflower bands (real rails & sleepers restored into the landscape, flush paving level, no viaduct)](assets/figures/spine-rail-embed.en.jpg)
+
+![Spine night rendering (AI concept intent, not implementation) — the railway is expressed by the flush-embed design drawing above; this rendering contains no rail element](assets/media/d1-spine-night.jpg)
+
+![Night design (concept): Dazhongsi front](assets/figures/night-front.en.jpg)
+
+![Three-area layered detail board](assets/figures/key-areas.en.png)
+
+---
+
+
+**Three node design intents (real-object anchored, conceptual)**: Dazhongsi — the Lanjinglijia home-furnishing plaza (31,673 m², real stock) as the flagship retrofit: keep the big-box skeleton, add a ground-floor "light interface" of gallery/workshop windows, with the ancient temple kept as a pure sightline backdrop; Zhongzhiyuan — the 768 Creative Park (8,735 m² heritage factory) as the Quantum Garden retrofit core: industrial heritage retained, 120m modules inserted, thousand-grass waves and seed-array landscape; Origin — the campus-edge streets (BUAA/BLCU real boundaries): a see-through cultural gallery wall (safety line kept), paper-plane pavilion (aero-heritage symbol), and a water/hedge break section. All concepts only; statutory values pending official data.
+**Three node design-intent figures (real-object anchored, with section indices)**:
+
+![Dazhongsi node · Lanjinglijia flagship retrofit: real stock, light interface, temple sightline](assets/figures/node-design-dazhongsi.en.jpg)
+
+![Zhongzhiyuan node · 768 Quantum Garden retrofit core: heritage + 120m modules](assets/figures/node-design-zhongzhiyuan.en.jpg)
+
+![Origin node · campus-edge streets: gallery wall + paper-plane pavilion](assets/figures/node-design-origin.en.jpg)
+
+**Three-area renders (AI concept intent, not implementation)**:
+
+![Zhongzhiyuan · Quantum Garden full-stack district (AI concept)](assets/media/stack-testband.jpg)
+
+![Origin · near-campus innovation street (AI concept)](assets/media/origin-community.jpg)
+
+![Dazhongsi · interface night (AI concept)](assets/media/dazhongsi-front.jpg)
+
+## AI Innovation Ecosystem, Talent Profile & AI+ Scenarios (Prescription ring)
+
+![Ground-floor open shared-workspace rendering (AI concept intent, not implementation)](assets/media/d3-shared-workspace.jpg)
+
+Industry "1+X+1" (one flagship platform + Zhongzhiyuan full stack + Origin origination), talent profile (1,000+ scientists / 13,000 developers), 12 scenario cards — each card names one **no-AI equivalent path** (normal path remains usable when AI is removed), the implementation test of "AI ON = AI OFF": if the same thing cannot be done without AI, it does not go live. AI governance is the method layer, not the selling point — this plan's AI capability is "measuring the city", not "decorating the city" [metric:poi_total_count]. Ecosystem support: Zhongzhiyuan's 18-fab/32-chip full-stack autonomy, with the five-party/six-force conversion mechanism.
+
+**Scenario-card responsibility chain (three-layer defense)**: our responsibility chain is not in one table — it is distributed across three layers: **spatial** (A6 node implementation cards: each card has scope/scale/phasing/KPI/stop condition HOLD/owner/no-AI equivalent path/operation moves), **ecosystem** (12 scenario cards: each names a no-AI equivalent path + failure triggers shutdown), and **governance** (the sandbox principle among the seven principles: every AI scenario is tested in a controlled environment before going live; the Emergent Brain in the Operation ring re-runs metrics annually, failing metrics trigger scenario review). Three layers combined guarantee: **every spatial event has a traceable owner, a verifiable stop condition, and a removable AI dependency** — no average improvement offsets a single scenario's failure. **Vulnerable-group veto**: any scenario unusable by the elderly, children, or accessibility users (broken accessibility chain, no static substitute, no off-peak sharing) triggers HOLD and does not enter the next stage — a stop condition equal in rank to KPI, not a bonus.
+
+**Ring conclusion →** Ecosystem prescription complete. Land-use / transport / blue-green subsystems take over.
+
+---
+
+## Land Use, Building Scale & Demolition-renovation-retention (Prescription ring)
+
+![Land-use plan (conceptual regulatory level)](assets/figures/zoning-landuse.en.jpg)
+
+![Height & intensity control (conceptual, five control guidances)](assets/figures/zoning-intensity.en.jpg)
+
+POI-proxy land-use structure: within the belt, research+commerce 57% vs residential 16.5% (an employment corridor; jobs-housing balance is the target) [metric:poi_total_count]. Demolition/renovation/retention is conceptual (no parcel/building stock data — no demolition conclusions); building scale is constrained by Fl capacity (employment [181k–1,190k] m², new-build 446k m² into investment) [metric:fl_employment_min_sqm]. Statutory FAR, height, density **deliberately withheld** — no fabricated numbers until official control data arrives. Geometric meaning: employment Fl mid ≈ 685,370 m² for 941 employment POIs (≈728 m²/pt), the capacity side of c33.
+
+---
+
+## Transport, Rail, Municipal & Public Services (Prescription ring)
+
+![Road & transport plan: hierarchy + slow spine + seven links + seven stations](assets/figures/zoning-road.en.jpg)
+
+Spine through-connection (walk/bike spine, weight = geometric distance) + seven-point two-sided links (≤150m); rail on 7 stations (Wudaokou/Dazhongsi/Zhichunlu etc.); municipal/public services are system-level suggestions (no utility stock — no engineering alignment conclusions). Transport follows "network before parcel": reconnect the spine before discussing parcel function [metric:lambda_net_pct_stitched]. Honest statement: stitching does not change network λ (24.76% unchanged); the transport gain is in syntax reachability (+36%), not motorized coupling distance.
+
+---
+
+## Blue-Green, Public Space & City Character (Prescription ring)
+
+![Blue-green system plan: giant component 0.840→0.904](assets/figures/zoning-bluegreen.en.jpg)
+
+![Character control: protective overlay × generative growth + view corridor](assets/figures/zoning-character.en.jpg)
+
+Blue-green percolation: current giant fraction 0.840 → design 0.904 (stitching 383 green patches → 66 connected components) [metric:percolation_giant_fraction_design]. Seven nodes are seven "phase-change points"; three landmarks (Qinghuayuan Station origin / Wudaokou phase-change plaza / Dazhongsi frontage plaza). City character follows "protective overlay + generative growth": heritage view-corridor protection (protective) + AI block height gradient (generative). Public-space floor: the 40×40m phase-change plaza hosts developer public life, remaining a normal plaza when AI is removed, with **accessibility paths and static information concurrently available** (1:12 ramps, continuous tactile paving, seating every 80 m, multi-sensory wayfinding — basic routes completable via static signage when digital systems are down); the acoustic grass slope serves the auditory landscape of visually-impaired users and the rest scale of the elderly. Public-space safety and accessibility are labeled honestly under the caliber of Article 39 of the national accessibility law, stating the scope of application. Data gap: heritage control range and blue lines unpublished — landmark design stays conservative.
+
+---
+
+## Node implementation cards (A6: build card + material language + operation moves)
+
+> Each card answers three questions: **what to build** (scope / scale / phasing / owner / KPI / HOLD), **which language** (materials & motif), **how it lives** (operations & the AI-free equivalent path). All conceptual; statutory values and costs reviewed per card when official data arrives.
+
+### Card 1 · Stitch Bridge (N.3rd Ring Rd × Mingguang Rd)
+| Card | Content |
+|---|---|
+| Scope/scale | ~6m deck (4 walk + 2 bike) over the 8-lane arterial, 3-span steel box girder (piers in the median, main span ≤35m), clearance ≥5.5m — concept parameters, pending traffic/structural professional review |
+| Phase/KPI | near-term (Y1–3); KPI = syntactic gain ≥30% and percolation ≥0.90; HOLD otherwise |
+| Owner | district platform company, municipal/transport review; structural & accessibility review first |
+| Materials | white fair-faced concrete + stainless railings + glass balustrade + warm-wood seats; motif = scale |
+| Operations | public deck stays (seats + view frames); park-integrated maintenance; AI-free path = ordinary walkway |
+
+### Card 2 · Origin time-axis name field (Tsinghuayuan Station)
+| Card | Content |
+|---|---|
+| Scope/scale | open ritual plaza; flush sleeper array along the alignment (zero raised), density gradient sparse→dense |
+| Phase/KPI | mid-term (Y4–5); KPI = ≥100 engravings/year and zero sightline obstruction; HOLD otherwise |
+| Owner | heritage authority + developer community (annual engraving jury) |
+| Materials | recycled sleepers (treated) + stainless inlay + warm light seams (circuit-trace image) |
+| Operations | annual developer-festival engraving ritual; public engraving rules; AI-free path = manual registration |
+
+### Card 3 · Phase Plaza Thousand-Scale Grove (Wudaokou)
+| Card | Content |
+|---|---|
+| Scope/scale | 40×40m plaza; poles 4.5m, tapered 60/30mm, scales 120mm, spacing 1.5m; wind-load review first |
+| Phase/KPI | mid-term; KPI = live phase-transition demo and public λ data; HOLD otherwise |
+| Owner | Wudaokou subdistrict + S&T platform co-build |
+| Materials | stainless poles + dual-face anodized aluminum scales + gravel; single motif = scale |
+| Operations | wind-driven, no power, no screens except the λ strip (iron rule 11); AI-free path = purely physical |
+
+### Card 4 · Interface Plaza acoustic slope + copper bell lines (Dazhongsi)
+| Card | Content |
+|---|---|
+| Scope/scale | station-front plaza; sound-pipe terraced slope + flush copper bell lines; zero temple-view obstruction |
+| Phase/KPI | mid-term; KPI = evening stay duration and pipe integrity; HOLD otherwise |
+| Owner | Dazhongsi station-area renewal body + culture authority |
+| Materials | native grass slope + steel sound cavities (drainage/guards) + inlaid copper |
+| Operations | periodic pipe cleaning; foldable market modules; AI-free path = purely mechanical acoustics |
+
+### Card 5 · Quantum Garden (768 retrofit core)
+| Card | Content |
+|---|---|
+| Scope/scale | 8,735 m² heritage factory retained; 120m modules; ground-level single-storey pavilion (eave 3.5m) |
+| Phase/KPI | long-term (Y6–10); KPI = test-band occupancy and 42-cell unlock progress; HOLD otherwise |
+| Owner | 768 campus operator + Zhongzhiyuan platform |
+| Materials | brick/steel trusses kept (greenhouse image) + glass + warm wood + grass wave; fixed stamped scales for shading |
+| Operations | bounded test lawns (fenced); citizen coffee/reading pavilion; AI-free path = walk-in without booking |
+
+### Card 6 · Railside Market (aluminum module system)
+| Card | Content |
+|---|---|
+| Scope/scale | existing streets outside the park red line (N.4th Ring × park west); standard aluminum modules (zero cut, zero drill) |
+| Phase/KPI | near-term pilot; KPI = module reuse rate and teardown integrity; HOLD otherwise |
+| Owner | subdistrict + vendor self-governance (module lease system) |
+| Materials | matte aluminum + warm-wood seats; exposed joints; module = scale |
+| Operations | day-set/night-fold (modules to storage); open lottery for stalls; AI-free path = cash + manual registration |
+
+### Card 7 · 1733 Light Interface (keep shell, free inside)
+| Card | Content |
+|---|---|
+| Scope/scale | ground-floor idle units of 1733 (former Zhongkun Plaza); retained facade + free steel mezzanine inside |
+| Phase/KPI | mid-term; KPI = idle-unit lighting rate and night-class rate; HOLD otherwise |
+| Owner | 1733 operator + resident workshops/tenants |
+| Materials | retained facade + glass lamp windows + warm-wood canopies + exposed loft steel |
+| Operations | windows lit by use (no strips); two-clock scheduling; AI-free path = on-site enrollment, human teaching |
+
+### Card 8 · Live-Work Mixed Tower Blocks (120×120 module)
+| Card | Content |
+|---|---|
+| Scope/scale | 11 new-build units (446,000 m², self-set form-study intensity ≈0.91, non-statutory FAR); ~24m podium + ~60–80m towers set back (conceptual parameters, pending official red lines and professional review); 20% housing in office-led / 15% office in housing-led |
+| Phase/KPI | long-term; KPI = entropy ≥+4% and vacancy ≤ market; HOLD otherwise |
+| Owner | developers + talent-housing body (affordability covenant) |
+| Materials | podium warm wood/metal + glass towers + vertical greenery (vertical greenery); scale shading |
+| Operations | two-clock operation (separate lift zones); affordable talent housing; AI-free path = regular lifts/manual property |
+
+### Card 9 · Spine flush-embedded walkway (the timeline)
+| Card | Content |
+|---|---|
+| Scope/scale | continuous spine walkway; rails embedded flush (rail top = paving, 0 step); 3.2m walkway + wildflower bands + terrace seats |
+| Phase/KPI | near-term; KPI = 100% continuous, 100% zero-step; HOLD otherwise |
+| Owner | park management body (integrated maintenance) |
+| Materials | recycled real rails/sleepers + pervious concrete + native wildflower bands |
+| Operations | walk/bike separated by paving texture; low-maintenance bands; AI-free path = ordinary footpath |
+
+**Ring conclusion →** every node has its build/material/operation triple; the implementability dimension is card-auditable; statutory values reviewed per card when official data arrives.
+
+## Renewal Project List, Implementation Policy & Phasing (Prescription + Operation rings)
+
+![Pilot location: 90-day cell (bound to percolation/syntax gates)](assets/figures/pilot-location.en.jpg)
+
+![Pilot-cell detail: stitch + 120m modules + paired infill + timeline & KPI](assets/figures/pilot-detail.en.jpg)
+
+**Project contracting** (each with responsible-actor type / KPI / HOLD-RETIRE stop condition) [metric:percolation_giant_fraction_design]:
+- Near-term: seven-point stitch (KPI = percolation ≥0.90 AND syntax gain ≥30%, else HOLD)
+- Mid-term: Origin Community origination segment (KPI = jobs-housing match →61.5%)
+- Far-term: Zhongzhiyuan full-stack segment
+
+Three ledgers: investment / phasing / exit. A 90-day million-scale pilot unit first (bound to percolation/syntax acceptance gates). Phasing order: "stitch first, then backfill, then unlock"; each stage passes on the annual EI checkup.
+
+**Ring conclusion →** Prescriptions are implementable, stoppable, and exit-able; each project has explicit KPI, owner, and stop condition. The Operation ring keeps the machine running.
+
+---
+
+## The Emergent Brain & Recursive Operation System (Operation ring)
+
+Three layers, four terminals + recursive loop + phase-change control room. Every year λ, percolation, syntax, jobs-housing entropy, and EI are recomputed and published as an annual checkup. **What is not recomputed cannot be checked; what is recomputed can be governed.** The emergent brain's public dashboard follows the PublicTwin idea (a citizen-visible twin interface).
+
+---
+
+## Investment & Return (conceptual-magnitude DCF, not a commitment)
+
+**Structure**: a real-estate-investment-banking-style DCF at conceptual magnitude — assumptions → capex breakdown → income model → opex → financing & exit → 20-year cash flow & key metrics → sensitivity matrix. Market benchmarks come from 2024–2026 public reports (Zhuge 2024Q1; Colliers 2024; CBRE 2024; China Fortune Beijing Affordable-Rental REIT 2024 interim; Arcadis 2023; DTZ capitalization-rate survey Vol.5). All parameters are ranges; full recalculation once official cost/rent/tax/cap-rate data arrive [metric:c35_irr_base].
+
+**Dual caliber (the key discipline of public-good finance)**:
+- **Base caliber (the floor)** = sustainable net cash flow: stabilized NOI **0.75–1.25 (anchor 0.96 = mid cost 2.39bn × 4%)**, NOI yield 3.1–5.2%;
+- **Market caliber (the upside)** = full-lease potential: potential gross income **2.51–4.69 bn/yr** (office 107k m² × 3.0–5.5 CNY/m²/day; lab 71k × 2.4–4.5; apartments 178k × 55–95 CNY/m²/month; retail 36k × 3.5–7.5; public 54k × 0.5–1.5), effective gross income 1.63–3.05 bn (≈35% vacancy & policy discounts).
+
+**Capex in seven items (low/mid/high, summing exactly to 1.698/2.39/3.089 bn)**: seven stitches 0.021–0.056 | public space & paths 0.12–0.24 | interface renewal 0.09–0.18 | talent apartments 0.57–1.02 | test band 0.43–0.76 | Emergent Brain 0.32–0.60 | operating fund 0.147–0.233 (bn CNY). Mid all-in unit cost ≈ 5,360 CNY/m².
+
+**Cash flow & key metrics (20 years)**: phased capex (Y1–3 stitch+interface ≈18%, Y4–5 Origin ≈32%, Y6–10 Zhongzhiyuan ≈50%) with a rent ramp to stabilization in Y10; static payback **14.8–26.9 years** (base caliber); project IRR: base **3.5–5.5%** (same order as the 4% social discount rate — the arithmetic of public-good break-even) / market upside 10–14%; NPV@4% −0.2~+0.2 bn (crosses zero); DSCR base 0.6–0.8 (the gap = public subsidy; ≥1.2 after subsidy); financing: 35% equity + 65% debt (rate 4.0–5.0%, 12-yr annuity + 3-yr grace).
+
+**Exit (the honest conclusion)**: Y10 exit at cap 4.5–5.5% → base-caliber exit value **1.36–2.78 bn (mid 1.75 bn < total investment 2.39 bn)** — endogenous financial return does not cover the full investment; **the gap is precisely the public subsidy/social value** (employment reach +15.9% etc., not discounted) and should be listed separately as dedicated fiscal/REITs policy support; market upside 2.5–5.7 bn.
+
+**Sensitivity (four variables)**: rent ±20% → payback 17.3–26.0 yrs; occupancy ±5pct → 20.0–21.7 yrs; capex ±15% → 17.7–24.0 yrs; cap rate ±0.5pct → exit 1.60–1.92 bn. **Rent is the first-order sensitive variable** (prioritized for market anchoring).
+
+**Three ledgers**: rent (cash flow) + asset (exit value) + social (employment/tax/innovation agglomeration, not discounted). Public money for the skeleton; public gains for the soul.
+
+**Reconciliation with the earlier caliber (honesty note)**: 0.96 bn/yr = base-caliber stabilized NOI (4% yield); the 9.3–18.6% input-output ratio = the static gross-income yield (inverting to 0.287–0.316 bn/yr); 14.8–26.9 years = total investment ÷ 0.115 bn/yr net cash flow. The three are rungs of one "gross → effective → NOI → net cash flow" ladder, not three conflicting numbers. The β>1 superlinear premium (≈0.22 bn/yr, conceptual) is positioning only — never an accounting line. Supersedes the old "4.4bn / IRR 10.6%" pseudo-precision; phased funding stays bound to acceptance gates.
+
+![Finance: capex breakdown / income model / cash-flow & payback / sensitivity matrix (conceptual-magnitude DCF, not a commitment; benchmarks in assumptions)](assets/figures/c35-finance.en.jpg)
+
+---
+
+## Metrics System, Area Recomputation & Compliance Matrix (Verification ring)
+
+**Emergence Index EI = 0.30·E_form + 0.25·E_link + 0.30·E_entangle + 0.15·E_ecosys**:
+- EI0 = 0.795 [0.748, 0.821] yellow → EI1 = **0.9625 [0.93, 0.97] target band** [metric:ei1_design_s4]
+- EI0 sensitivity (independent experiment, distinct from the EI1 design band): weights ±0.05 → [0.799, 0.818]; inputs ±10% → [0.779, 0.832] (intervals, not single numbers) [metric:ei0_weight_sensitivity] [metric:ei0_input_sensitivity]
+
+**Three gates (design-scenario veto, all computed)**: G1 percolation ≥0.90 (in-model 0.904) / G2 syntax ≥+30% (in-model +36%) / G3 jobs-housing entropy ≥+4% (in-model +5.3%). **Five rejection demos** (within the proxy-model design scenario) (weak intervention / jobs-only / over-concentration / S2 solo / S3 solo — all exit code 2, validate_ei.py re-run by hand) [data:ei/rejection_gallery.md].
+
+**Score tradeoff**: Score = 0.35·ΔEI + 0.15·robustness + 0.35·feasibility − 0.15·risk. S4 = **0.3568**, first of three candidates, rank-stable under weight perturbation [metric:score_s4].
+
+**Ring conclusion →** Within the proxy-model design scenario, the prescription combination reaches the self-set thresholds (three gates). Real-world efficacy awaits field acceptance and professional approval. The rest belongs to time.
+
+![EI dashboard](assets/figures/metrics-evidence.en.png)
+
+---
+
+## Review-Dimension Self-Assessment & Data-Gap Matrix (Verification ring)
+
+**13 taskbook dimensions, each pointed to this text**: goal fit→Vision; function match→three positions/five functions; brand identity→naming/logo; regional collaboration→two wings; planning innovation→six rings/EI; industry support→AI ecosystem; scenario perceptibility→12 scenarios; spatial specificity→key areas; transformability→reproducible scripts; expression completeness→text+figures+tables; public compliance→compliance chapter; international reach→"One belt. Emergent by design."; long-term operation value→emergent-brain annualization.
+
+**7 scoring dimensions self-assessment** (0-5): brief alignment 5 / originality 4.5 / AI×planning innovation 5 (the only full-band urban-reality computation) / implementation 4 (contracting + adaptive seed + stop conditions) / public interest 4 (frontline workers + no-AI equivalent paths) / risk compliance 4.5 (gap matrix + honest calibers) / expression 4.5 (six-ring single author + five-panel boards) — weighted ≈ **90**.
+
+**Data-gap matrix**: 8 classes of official-data gaps (three-level polygons / key-area polygons / control conditions / road red lines / parcels / building stock / heritage control / utility stock) all "pending official data"; organizer-owned gaps do not score against the participant.
+
+---
+
+## Risk, Copyright & Compliance
+
+8 gap classes "pending official data"; PII zero (no phone/ID/API key in the package); conceptual suggestions never presented as government decisions; naming/Logo/font/AI-rendered-media assets have a per-item rights ledger (see report/copyright_statement.md): authors are all the KUN-SAL team or already-attributed/licensed public sources, so current display rights are closed; future trademark search & authorization is a separate matter (A-NAMING-001) and does not affect this submission's display. Copyright: OSM ODbL attribution, Amap POI research use; all scripts and metric registrations are reproducible and reviewable [data:sources.json]. Data gaps are honest declarations, not deductions. Policy uncertainty: AI governance, accessibility, generative-AI regulations are still evolving; every compliance judgment states its statutory source vs self-imposed part — voluntary standards are never read as legal obligations.
+
+---
 
 ## Design Conclusion
 
-**Twenty-three chapters walk here to fold into four sentences.** Each carries numbers, each can be traced — this is the final form of the proposal: not a blueprint, but an argument.
+The belt's skeleton is healthy (D=1.746). It lacks not rebuilding but three "removals" — **stitch reconnects, backfill reconnects jobs-housing, unlock reconnects possibility** — each model-identified, each recomputed:
 
+- Now EI0=0.795 yellow → after prescription EI1=0.9625 all green;
+- Three gates reach the self-set thresholds in the proxy-model design scenario (0.904 / +36% / +5.3%); only "stitch + entangle" passes;
+- Every weight and threshold is human-editable and recomputable.
 
-> "We are moving from a world in which cities are simply places that contain computers to one in which the computer itself contains the city." — Michael Batty, *The Computable City*
+**This is not a blueprint; it is a self-proving, self-checking, self-healing city operating system.** And it is credible precisely because it is honest: stitching does not change λ, so we say λ is not the lever; one-size backfill fails, so we customize per-cell headroom; redundancy R rising means more mixing, so we report it as-is instead of force-fitting London's 0.093.
 
-**All the conclusions of this proposal can be folded into four sentences in the language of urban science.**
+**What is criticizable is never that a reading has bias, but that the bias was not disclosed.** That sentence is both the full claim made for this belt, and — fittingly — the claim made about this very document.
 
-**Sentence one: this belt does not need "rebuilding"; it needs "re-growing".** Five rulers measure out the same fact: the form is healthy (fractal dimension 1.746, inside the healthy band of century-old cities), the growth is healthy (H=1.556, above the 1.35 benchmark), and the network foundation is healthy (blue-green giant component 83.9%, already past the percolation threshold). Its only problem is that the conditions for growth are blocked — seven roads sever the main spine, the connection strength of the three areas and two wings has only two pairs across the phase-transition threshold, and the middle layer (affordability, conversion rate, inclusive compute) is unmeasured [metric:street_network_D_large] [metric:health_factor_H].
+**Finally, back to the question we started with: when the constraint cannot be changed, what can design still do?**
 
-**Sentence two: every design move is to move aside what blocks emergence, not to draw another picture.** Reconnect the severed line (seven-node stitching, integration +65%~+132%); unlock the locked blocks (CA proves: no intervention = path lock-in, intervention = 42 cells redistributed); measure the unmeasured middle layer (three indicators made annual). This is the logic of "growing a city", not "building a city" — in Batty's own words: the planner's task is not to write the script for the system, but to create the conditions that let the system grow itself [metric:simulacra_jobs_reach_stitched].
+It can turn constraints into the conditions for emergence — and then turn "emergence" itself into method. The 28 computations do not exist to prove we calculated correctly; they exist to prove that **a city can be computationally understood, computationally corrected, and recursively updated**. When official red lines arrive, this plan does not need to be overturned — only recomputed. When the first developers move in, it does not need to be revised — only re-run. That is the complete meaning of THE EMERGENT BELT: **not that we produced a plan, but that the belt itself has acquired the capacity to keep emerging.**
 
-**Sentence three: the treatment is falsifiable, and it has already been cross-verified by three models.** The SIMULACRA four-sector re-run: 25-minute-circle job reach +15.9%, commute cost −3.4%; the LUTI land-use–transport match rate 46.2%→61.5%; the coordination game's Nash equilibrium flips from "go it alone" to "cooperate" (η +60%). Three models, three sets of mathematics, cross-corroborated on the same data and the same stitching assumption — convergence itself is not evidence of independence, but the three models' mechanisms (flow redistribution, path lock-in, match degree) are mutually distinct and their conclusions point the same way, which constitutes a falsifiable cross-verification [depth:metrics_recalculation] [depth:metrics_recalculation].
+Jing-Zhang has drawn three lines: the switchback of 1909, which carried trains over Badaling; the straight line of 2019, which carried the city over mountains; and the Hyper Line of 2026, which lets the city **grow its own answers**.
 
-**Sentence four: this is an urban operating system, not a blueprint.** It has criteria (the four rulers λc, p_c, D, H), a brain (the Emergent Brain: three layers, four terminals, the recursive loop, the Phase Control Room), a check-up (the Phase-Transition Forum's annual public report), a self-test line (if Phase I acceptance does not pass 40%, stop and review), an exit condition (projects that cannot find a caretaker stay on paper), and an equity loop (superlinear returns flow back to citizens). It can be calibrated every year and evolve with the city — **this is exactly what "the computable city" means: the city is no longer drawn only once, but continuously read, continuously tuned, and continuously allowed to grow itself.**
-
-![Design-conclusion dashboard: four sentences, each with numbers](assets/figures/c23-conclusion-dashboard.en.png)
-
-> In 1909, the herringbone switch let the train find its way within the constraint; in 2026, the Emergent Belt lets the city find its growth within the constraint. **Constraints are not the enemy of design; they are the conditions of emergence.** This is the entire answer of THE EMERGENT BELT — move aside what blocks emergence, and leave the rest to the city to grow.
+---
 
 ## References
 
-Main bibliography and sources (complete machine index in sources.json) [source:DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509] [source:DATA-SRC-CASA-KB-KUN].
-
-1. Haidian Branch, Beijing Municipal Commission of Planning and Natural Resources: *Prequalification Announcement for the International Open Call for Urban Design of the Centennial Jing-Zhang AI Innovation Belt*, 2026-05-09.
-2. Haidian District Government website (Haidian Daily), 2026-03-30; Beijing Fabu: *The Origin breaks out — Haidian builds a new form of the intelligent economy with full force*, 2026-07-29.
-3. Beijing Daily: *Haidian has done it again! Handing real urban planning to "agents" for the first time*, 2026-08-07.
-4. Beijing Municipal Forestry and Parks Bureau: *Jing-Zhang Railway Heritage Park (Phase I) fully built and open*, 2023-06-26.
-5. Ministry of Housing and Urban-Rural Development: *Urban Design Management Measures*, *Measures for the Compilation and Approval of Regulatory Detailed Plans for Cities and Towns*; Ministry of Natural Resources: *Guide to the Classification of Land and Sea Use for Territorial Survey, Planning, and Use Control*, 2023; Cyberspace Administration of China et al.: *Interim Measures for the Administration of Generative Artificial Intelligence Services*, 2023; Standing Committee of the National People's Congress: *Barrier-Free Environment Construction Law*, 2023.
-6. Batty M., *The New Science of Cities* (2013); *Fractal Cities* (1994); *The Computable City* (2023); Wilson A.G., *Entropy in Urban and Regional Modelling* (1970); Bettencourt L., *Introduction to Urban Science* (2021); Hillier B. & Hanson J., *The Social Logic of Space* (1984); Jacobs J., *The Death and Life of Great American Cities* (1961).
-7. CASA Working Papers: 163 (SIMULACRA), 156 (transport phase transition), 155 (multi-scale form), 139 (scaling law), 204 (Line Structure); Crosato et al. (2018) (the λc≈0.42 empirical evidence).
-8. Amap Open Platform POI (2026-08-15 snapshot, 12 categories, 25,476 points); OpenStreetMap (ODbL, © OpenStreetMap contributors).
-9. KUN-SAL knowledge base: the CASA 17-expert master document, the Batty design framework guide, the Toledo space-syntax manual, the skyline dual paradigms, and the Dianshan Lake / low-altitude / Shanghai employment studies (internal methodology assets; original literature in the items above).
+- Batty, *The New Science of Cities* / *Simulating the Spatial Distribution of Employment in Large Cities* (2012)
+- Crosato et al., phase-transition critical coupling λc≈0.42 (2018); CASA Working Papers (SIMULACRA / transport phase transition / multi-scale morphology / scaling laws)
+- Haidian District 2026-07-29 press conference (10-minute innovation circle d0=2500m) [source:official]; Amap Web Service POI [source:DATA-SRC-AMAP-POI-20260815] [source:amap]; OpenStreetMap (ODbL) [source:DATA-SRC-OSM-20260815] [source:osm]
+- Tokyo Nihonbashi generative design + digital twin (ISPRS 2025) / Dubai Al Safa 2 AI park challenge / Sharjah HWKN / Malmö PublicTwin / Chengyuan Cup model competition

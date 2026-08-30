@@ -1,22 +1,22 @@
 {
-  "version": "1.1",
-  "title_zh": "居业接力 90 天验证框架",
-  "title_en": "90-Day Home-Work Relay Validation Framework",
-  "status": "validation_framework",
-  "authority_note_zh": "本文件定义拟议验证的证据、责任和停止条件，用于说明长期运营前的测试逻辑。",
-  "authority_note_en": "This file defines the evidence, responsibilities and stop conditions for a validation process that explains the logic before long-term operation.",
+  "version": "1.2",
+  "title_zh": "居业接力 90 天可逆试点协议",
+  "title_en": "90-Day Reversible Home-Work Relay Pilot Protocol",
+  "status": "protocol_only_not_authorized_not_run",
+  "authority_note_zh": "本文件定义拟议试点的证据、责任和停止条件，不代表已有运营主体、预算、采购、场地许可、参与者或测试结果。",
+  "authority_note_en": "This file defines proposed evidence, responsibilities and stop conditions. It does not claim an operator, budget, procurement, site permission, participants or test results.",
   "phases": [
     {
       "id": "P1",
       "day_range": "Day 1-30",
-      "name_zh": "协同演练",
-      "name_en": "Coordination rehearsal",
+      "name_zh": "影子演练",
+      "name_en": "Shadow rehearsal",
       "purpose_zh": "不改变任何资格、合同或空间状态，只复演请求、人工接收、普通路径、撤回和无人接收等情况。",
       "purpose_en": "Replay requests, human receipt, ordinary routes, withdrawal and missing receivers without changing eligibility, contracts or space.",
-      "permitted_actions": ["公开目录校对", "合成桌面案例", "角色接收演练", "成本与容量字段采集设计", "无 AI 路径走查"],
+      "permitted_actions": ["公开目录校对", "合成桌面案例", "RACI 接收演练", "成本与容量字段采集设计", "无 AI 路径走查"],
       "prohibited_actions": ["真实住房分配", "真实租金决定", "真实工位准入", "私宅数据采集", "建筑或道路改造"],
-      "deliverables": ["请求与失败台账", "角色接受记录", "普通路径差异表", "未知成本容量字段清单", "P2 release note 记录"],
-      "exit_gate": "G1 and G2 must both pass; any absent accountable role, ordinary route or withdrawal method blocks progression."
+      "deliverables": ["请求与失败台账", "角色接受记录", "普通路径差异表", "未知成本容量字段清单", "P2 go/no-go 记录"],
+      "exit_gate": "G1 and G2 must both pass; any absent accountable role, ordinary route or withdrawal method is a no-go."
     },
     {
       "id": "P2",
@@ -27,7 +27,7 @@
       "purpose_en": "Test three industry-validation protocols and human takeover only in authorized, reversible mock-up or service-desk settings.",
       "permitted_actions": ["非结构性样板转换", "受控噪声与安全边界测量", "默认拒绝设备负向测试", "人工与无 AI 成对办理", "故障和撤回演练"],
       "prohibited_actions": ["未经同意进入私宅", "未获许可的公众开放", "自动资格决定", "把样板结果外推为片区成效", "不可逆施工"],
-      "deliverables": ["三份原始测试记录", "仪器校准和版本记录", "人工签字与异议", "停止和恢复记录", "P3 release note 记录"],
+      "deliverables": ["三份原始测试记录", "仪器校准和版本记录", "人工签字与异议", "停止和恢复记录", "P3 go/no-go 记录"],
       "exit_gate": "G3 requires an accountable receiver, complete raw records, zero unresolved high-severity safety or consent breach, and a tested rollback."
     },
     {
@@ -81,7 +81,7 @@
     }
   ],
   "cost_method": {
-    "status": "pending_quotes_and_authority",
+    "status": "unknown_pending_quotes_and_authority",
     "currency": "CNY",
     "formula": "total_lifecycle_cost = approved_personnel_hours * approved_role_rates + authorized_space_cost + equipment_and_calibration_quotes + accessibility_accommodation_quotes + insurance_permit_and_safety_quotes + maintenance_spares + verified_retirement_and_restoration_cost + approved_contingency",
     "required_operands": [
@@ -95,10 +95,10 @@
       {"id": "verified_retirement_and_restoration_cost", "status": "unknown"},
       {"id": "approved_contingency", "status": "unknown"}
     ],
-    "go_no_go": "No opening or scaling until every operand has a named evidence owner, quote or approved rate, lifecycle period and retirement provision."
+    "go_no_go": "No pilot opening or scaling until every operand has a named evidence owner, quote or approved rate, lifecycle period and retirement provision."
   },
   "capacity_method": {
-    "status": "pending_capacity_verification",
+    "status": "unknown_pending_shadow_phase",
     "formula": "safe_daily_case_capacity = min(staff_minutes_available / observed_median_case_minutes, authorized_space_slots, verified_no_ai_fallback_capacity, maintenance_and_emergency_capacity)",
     "required_operands": [
       {"id": "staff_minutes_available", "status": "unknown"},
@@ -135,7 +135,7 @@
       "baseline_required": ["authorized room and component inventory", "photo/drawing record with rights and consent", "egress, fire, structure and accessibility review", "pre-test defect register"],
       "cycle": "baseline review -> dry run -> witnessed changeover -> occupied-use observation only if separately authorized -> witnessed restoration",
       "instruments": ["versioned drawing and component register", "measuring tools appropriate to the component", "time and defect log", "professional egress/fire/accessibility checklist"],
-      "sample_status": "pending_authorized_site_and_professional_protocol",
+      "sample_status": "unknown_pending_authorized_site_and_professional_protocol",
       "proposed_acceptance": ["no unresolved safety or egress nonconformity", "all changed components accounted for", "restoration reaches the signed baseline or a new jointly accepted state", "resident/user and professional sign-off both present"],
       "stop_rule": ["unexpected structural or fire issue", "damage or inaccessible egress", "consent withdrawal", "restoration path no longer feasible"],
       "human_signoff": ["resident or prototype user", "property-right role", "fire/structure/accessibility professional roles", "maintenance receiving role"],
@@ -149,7 +149,7 @@
       "baseline_required": ["authorized boundary between domestic and work areas", "calibrated ambient-noise baseline at agreed periods", "activity and equipment inventory", "ordinary access, complaint and emergency routes"],
       "cycle": "baseline measurement -> closed low-intensity test -> declared operating window -> resident/user review -> joint stop/continue decision",
       "instruments": ["calibrated sound level meter used by a qualified role", "access and incident log", "voluntary disturbance diary without diagnostic inference", "safety-boundary inspection"],
-      "sample_status": "pending_authorized_site_participants_and_applicable_thresholds",
+      "sample_status": "unknown_pending_authorized_site_participants_and_applicable_thresholds",
       "proposed_acceptance": ["applicable acoustic and safety thresholds set by qualified reviewers before the test", "zero unauthorized crossing into domestic space", "ordinary route and complaint channel remain open", "negative feedback and non-completion remain visible"],
       "stop_rule": ["applicable threshold exceeded", "unauthorized access", "safety or privacy incident", "complaint cannot be received and acted on"],
       "human_signoff": ["affected residents or user representatives", "acoustic and safety professional roles", "space operator", "independent public-interest reviewer"],
@@ -163,7 +163,7 @@
       "baseline_required": ["complete device and data-flow inventory", "default-off firmware/configuration record", "ordinary mechanical or offline function", "deletion and permission-revocation procedure"],
       "cycle": "default-off inspection -> negative network observation -> explicit consent activation -> withdrawal -> deletion and offline fallback -> independent replay",
       "instruments": ["local network observation appropriate to the device", "device and permission logs", "physical-state inspection", "deletion and fallback checklist"],
-      "sample_status": "pending_cleared_devices_authorized_mockup_and_security_review",
+      "sample_status": "unknown_pending_cleared_devices_authorized_mockup_and_security_review",
       "proposed_acceptance": ["zero unauthorized transmission while consent is off", "withdrawal disables the declared data flow", "basic residential and maintenance functions remain available without AI", "resident-readable state and deletion receipt are present"],
       "stop_rule": ["any unauthorized transmission", "hidden or ambiguous state", "withdrawal or deletion failure", "ordinary function depends on continued consent"],
       "human_signoff": ["resident or mock-up participant", "data responsibility role", "independent cybersecurity reviewer", "ordinary-service receiving role"],

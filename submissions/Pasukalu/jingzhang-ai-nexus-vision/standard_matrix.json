@@ -1,0 +1,104 @@
+{
+  "schema_version": "0.1.0",
+  "standards": [
+    {
+      "standard_id": "PROJECT-OFFICIAL-ANNOUNCEMENT", "requirement_zh": "按公告目标、三层范围、三处重点区域、设计任务和成果深度组织完整方案。", "professional_dimension": "规划统筹", "mandatory": true, "review_status": "addressed",
+      "proposal_sections": ["设计依据与资料清单","三层范围工作框架","总体设计范围城市更新与控规深度城市设计","重点区域详细设计","更新项目清单、实施政策与分期计划"],
+      "drawing_refs": ["drawings/a3-booklet.pdf","drawings/a0-boards.pdf"],
+      "geometry_refs": ["geometry/site_boundary.geojson","geometry/key_areas.geojson","geometry/land_use.geojson","geometry/buildings.geojson","geometry/roads.geojson","geometry/green_space.geojson","geometry/public_space.geojson","geometry/phasing.geojson"],
+      "metric_refs": ["site_area_sqm","key_area_count","green_ratio","public_space_ratio","building_footprint_area_sqm","renewal_project_count"],
+      "source_ids": ["OFFICIAL-ANNOUNCEMENT","SITE-PACKAGE","BOUNDARY-SOURCE","KEY-AREA-SOURCE"],
+      "assumption_ids": ["A-BOUNDARY-001","A-CONTROLS-001","A-SURVEY-001","A-INFRA-001"],
+      "self_check_ids": ["DETERMINISTIC_VALIDATION","SPATIAL_REVIEW","VISUAL_PACKAGING","PROFESSIONAL_EVIDENCE"],
+      "evidence_summary_zh": "13 章正文、三层范围图、三处重点区、九类空间图层、指标复算和四类 Gate 共同响应公告；临时边界不伪装为官方红线。"
+    },
+    {
+      "standard_id": "PROJECT-AGENT-OPEN-CALL-TASKBOOK", "requirement_zh": "落实十条共创原则、三大定位、五大功能、三区两翼与 agent.1–agent.6 六项任务。", "professional_dimension": "AI原生城市与运营", "mandatory": true, "review_status": "addressed",
+      "proposal_sections": ["统筹研究范围产业与未来城市研究","AI 创新生态、人才画像与 AI+ 场景","蓝绿空间、公共空间与城市风貌","更新项目清单、实施政策与分期计划"],
+      "drawing_refs": ["drawings/a3-booklet.pdf","drawings/a0-boards.pdf"],
+      "geometry_refs": ["geometry/key_areas.geojson","geometry/public_space.geojson","geometry/public_space.geojson","geometry/roads.geojson"],
+      "metric_refs": ["scenario_card_count","industry_test_scenario_count","user_persona_count","ai_landmark_count","annual_event_family_count","regional_interface_count"],
+      "source_ids": ["AGENT-TASKBOOK","PROCESSED-FACT-PACK"],
+      "assumption_ids": ["A-OPERATIONS-001","A-COST-001","A-DATA-001","A-CASES-001"],
+      "self_check_ids": ["DETERMINISTIC_VALIDATION","VISUAL_PACKAGING","PROFESSIONAL_EVIDENCE"],
+      "evidence_summary_zh": "品牌、八案例、10场景、10画像、3地标、12组件、四季运营和五个区域接口分别落在 evidence 数据、图层、图纸与双语展示中。"
+    },
+    {
+      "standard_id": "MOHURD-URBAN-DESIGN-MEASURES", "requirement_zh": "统筹平面与立体空间、公共空间、建筑体量和特色风貌，并指导后续建筑设计。", "professional_dimension": "城市设计", "mandatory": true, "review_status": "addressed",
+      "proposal_sections": ["总体设计范围城市更新与控规深度城市设计","重点区域详细设计","用地、建筑规模与拆改留方案","蓝绿空间、公共空间与城市风貌"],
+      "drawing_refs": ["drawings/a3-booklet.pdf","drawings/a0-boards.pdf"],
+      "geometry_refs": ["geometry/land_use.geojson","geometry/buildings.geojson","geometry/roads.geojson","geometry/green_space.geojson","geometry/public_space.geojson"],
+      "metric_refs": ["green_ratio","public_space_ratio","building_footprint_area_sqm","urban_component_count"],
+      "source_ids": ["SITE-PACKAGE","OFFICIAL-ANNOUNCEMENT"],
+      "assumption_ids": ["A-CONTROLS-001","A-SURVEY-001","A-HERITAGE-001","A-ACCESS-001"],
+      "self_check_ids": ["SPATIAL_REVIEW","VISUAL_PACKAGING","PROFESSIONAL_EVIDENCE"],
+      "evidence_summary_zh": "双轨空间结构、三核详细设计、连续公共路线、体量和拆改留原则、品牌构件库共同形成可深化的城市设计控制。"
+    },
+    {
+      "standard_id": "MOHURD-CONTROL-DETAILED-PLANNING", "requirement_zh": "控规实施相关结论须区分已知条件、设计建议和待确认事项，并支撑项目与分期管理。", "professional_dimension": "控规与实施", "mandatory": true, "review_status": "addressed",
+      "proposal_sections": ["总体设计范围城市更新与控规深度城市设计","用地、建筑规模与拆改留方案","更新项目清单、实施政策与分期计划","指标体系、面积复算与合规矩阵"],
+      "drawing_refs": ["drawings/a3-booklet.pdf","drawings/a0-boards.pdf"],
+      "geometry_refs": ["geometry/land_use.geojson","geometry/buildings.geojson","geometry/roads.geojson","geometry/phasing.geojson","geometry/constraints.geojson"],
+      "metric_refs": ["site_area_sqm","building_footprint_area_sqm","floor_area_ratio","building_height_m","implementation_gate_coverage"],
+      "source_ids": ["OFFICIAL-ANNOUNCEMENT","SITE-PACKAGE"],
+      "assumption_ids": ["A-BOUNDARY-001","A-CONTROLS-001","A-SURVEY-001","A-COST-001"],
+      "self_check_ids": ["DETERMINISTIC_VALIDATION","SPATIAL_REVIEW","PROFESSIONAL_EVIDENCE"],
+      "evidence_summary_zh": "法定强度保持 unknown；每个更新项目另列责任主体、依赖、资源等级、决策门、验收与回退，避免把愿景写成审定控规。"
+    },
+    {
+      "standard_id": "MNR-LAND-USE-CLASSIFICATION-GUIDE", "requirement_zh": "用地表达使用仓库允许的可校验 land_use_code，不以AI主题自造法定类别。", "professional_dimension": "用地分类", "mandatory": true, "review_status": "addressed",
+      "proposal_sections": ["总体设计范围城市更新与控规深度城市设计","用地、建筑规模与拆改留方案","指标体系、面积复算与合规矩阵"],
+      "drawing_refs": ["drawings/a3-booklet.pdf","drawings/a0-boards.pdf"],
+      "geometry_refs": ["geometry/land_use.geojson","geometry/site_boundary.geojson"],
+      "metric_refs": ["site_area_sqm","green_ratio","public_space_ratio"],
+      "source_ids": ["SITE-PACKAGE"],
+      "assumption_ids": ["A-BOUNDARY-001","A-CONTROLS-001"],
+      "self_check_ids": ["DETERMINISTIC_VALIDATION","SPATIAL_REVIEW","PROFESSIONAL_EVIDENCE"],
+      "evidence_summary_zh": "AI功能作为建筑、运营和协议叠加层进入，法定用地仍由 land_use_code 表达并通过拓扑审查。"
+    },
+    {
+      "standard_id": "MOHURD-ARCH-DESIGN-DEPTH-2016", "requirement_zh": "建筑专业深度应有现状、功能、体量、拆改留与专项条件；当前官方文本和逐栋资料不足。", "professional_dimension": "建筑设计深度", "mandatory": false, "review_status": "data_gap",
+      "proposal_sections": ["重点区域详细设计","用地、建筑规模与拆改留方案","更新项目清单、实施政策与分期计划"],
+      "drawing_refs": ["drawings/a3-booklet.pdf","drawings/a0-boards.pdf"],
+      "geometry_refs": ["geometry/buildings.geojson","geometry/key_areas.geojson"],
+      "metric_refs": ["building_footprint_area_sqm","floor_area_ratio","building_height_m"],
+      "source_ids": ["SITE-PACKAGE"],
+      "assumption_ids": ["A-CONTROLS-001","A-SURVEY-001","A-INFRA-001","A-HERITAGE-001"],
+      "self_check_ids": ["SPATIAL_REVIEW","PROFESSIONAL_EVIDENCE"],
+      "evidence_summary_zh": "概念包提供14个载体、三类拆改留筛选和项目门，但明确不能替代建筑测绘、鉴定、专项与施工图深化。"
+    },
+    {
+      "standard_id": "GENERATIVE-AI-INTERIM-MEASURES", "requirement_zh": "对可能面向公众的生成式AI场景，按实际服务边界落实数据合法、隐私、内容标识、投诉和安全治理，不扩张法条适用范围。", "professional_dimension": "AI治理与公共服务", "mandatory": false, "review_status": "addressed",
+      "proposal_sections": ["AI 创新生态、人才画像与 AI+ 场景","风险、版权与合规说明"],
+      "drawing_refs": ["drawings/a3-booklet.pdf","drawings/a0-boards.pdf"],
+      "geometry_refs": ["geometry/public_space.geojson","geometry/public_space.geojson"],
+      "metric_refs": ["scenario_passport_gate_count","scenario_manual_fallback_coverage","scenario_stop_trigger_coverage","scenario_acceptance_coverage"],
+      "source_ids": ["SITE-PACKAGE","AGENT-TASKBOOK"],
+      "assumption_ids": ["A-DATA-001","A-OPERATIONS-001"],
+      "self_check_ids": ["PROFESSIONAL_EVIDENCE","VISUAL_PACKAGING"],
+      "evidence_summary_zh": "场景护照把数据最小化、人工复核、合成标识、投诉与停止门写入10张卡；是否适用备案/安全评估由实际服务逐案判断。"
+    },
+    {
+      "standard_id": "BARRIER-FREE-ENVIRONMENT-LAW", "requirement_zh": "公共空间与服务关注连续无障碍设施、信息交流、参与监督与法律列举场所的人工服务边界。", "professional_dimension": "无障碍与公共利益", "mandatory": false, "review_status": "addressed",
+      "proposal_sections": ["AI 创新生态、人才画像与 AI+ 场景","交通、轨道、市政与公共服务设施","蓝绿空间、公共空间与城市风貌","风险、版权与合规说明"],
+      "drawing_refs": ["drawings/a3-booklet.pdf","drawings/a0-boards.pdf"],
+      "geometry_refs": ["geometry/roads.geojson","geometry/public_space.geojson","geometry/public_space.geojson"],
+      "metric_refs": ["user_persona_count","vulnerable_or_excluded_persona_count","scenario_manual_fallback_coverage"],
+      "source_ids": ["SITE-PACKAGE","AGENT-TASKBOOK"],
+      "assumption_ids": ["A-ACCESS-001","A-INFRA-001"],
+      "self_check_ids": ["SPATIAL_REVIEW","VISUAL_PACKAGING","PROFESSIONAL_EVIDENCE"],
+      "evidence_summary_zh": "连续路线、十类画像、残障/老年代表月度共评、人工与非数字渠道、投诉和维护责任进入空间与运营证据。"
+    },
+    {
+      "standard_id": "ELDERLY-SMART-TECH-PLAN-2020-45", "requirement_zh": "以传统服务方式与智能化服务并行作为老年友好场景的政策参照，不把阶段性政策写成2026年新增法定义务。", "professional_dimension": "老年友好与数字包容", "mandatory": false, "review_status": "addressed",
+      "proposal_sections": ["AI 创新生态、人才画像与 AI+ 场景","交通、轨道、市政与公共服务设施","风险、版权与合规说明"],
+      "drawing_refs": ["drawings/a3-booklet.pdf","drawings/a0-boards.pdf"],
+      "geometry_refs": ["geometry/public_space.geojson","geometry/roads.geojson"],
+      "metric_refs": ["user_persona_count","scenario_manual_fallback_coverage"],
+      "source_ids": ["SITE-PACKAGE"],
+      "assumption_ids": ["A-ACCESS-001","A-DATA-001"],
+      "self_check_ids": ["VISUAL_PACKAGING","PROFESSIONAL_EVIDENCE"],
+      "evidence_summary_zh": "所有智能服务保留现场、电话或纸质路径；不设置数字专属基本服务，老年人和低数字技能用户单列画像与验收。"
+    }
+  ]
+}

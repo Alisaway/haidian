@@ -1,0 +1,105 @@
+{
+  "ok": true,
+  "scope": "local_synthetic_software_test_not_field_performance",
+  "fixture_sha256": "063bd8c348d5a064c27b0d35e06671effc486471c84dd2e1d7f53d815efd3560",
+  "tests": [
+    {
+      "name": "complete synthetic fixture",
+      "expected": "synthetic_complete",
+      "actual": "synthetic_complete",
+      "reason": "not_authorized_for_field_use",
+      "passed": true
+    },
+    {
+      "name": "remove accountable_role",
+      "expected": "pause",
+      "actual": "pause",
+      "reason": "accountable_role_missing",
+      "passed": true
+    },
+    {
+      "name": "remove original_channels",
+      "expected": "pause",
+      "actual": "pause",
+      "reason": "channel_inventory_incomplete",
+      "passed": true
+    },
+    {
+      "name": "remove independent_reviewer",
+      "expected": "pause",
+      "actual": "pause",
+      "reason": "independent_reviewer_missing",
+      "passed": true
+    },
+    {
+      "name": "remove asset_data_recovery_record",
+      "expected": "retire",
+      "actual": "retire",
+      "reason": "recovery_record_missing",
+      "passed": true
+    },
+    {
+      "name": "one original channel unacknowledged",
+      "expected": "pause",
+      "actual": "pause",
+      "reason": "channel_receipt_incomplete",
+      "passed": true
+    },
+    {
+      "name": "duplicate channel cannot count twice",
+      "expected": "pause",
+      "actual": "pause",
+      "reason": "duplicate_channel",
+      "passed": true
+    },
+    {
+      "name": "receipt and channel counts must agree",
+      "expected": "pause",
+      "actual": "pause",
+      "reason": "coverage_mismatch",
+      "passed": true
+    },
+    {
+      "name": "uncleared cache blocks restoration",
+      "expected": "retire",
+      "actual": "retire",
+      "reason": "recovery_incomplete",
+      "passed": true
+    },
+    {
+      "name": "synthetic fixture cannot authorize live publication",
+      "expected": "pause",
+      "actual": "pause",
+      "reason": "synthetic_boundary_required",
+      "passed": true
+    },
+    {
+      "name": "two receipts on different channels do not satisfy same-channel correction",
+      "expected": "pause",
+      "actual": "pause",
+      "reason": "not_the_original_channels",
+      "passed": true
+    },
+    {
+      "name": "publication inventory cannot be omitted",
+      "expected": "pause",
+      "actual": "pause",
+      "reason": "original_publication_inventory_missing",
+      "passed": true
+    },
+    {
+      "name": "same accountable and reviewing role cannot count as independent",
+      "expected": "pause",
+      "actual": "pause",
+      "reason": "reviewer_conflict",
+      "passed": true
+    },
+    {
+      "name": "malformed channel receipt fails closed without a crash",
+      "expected": "pause",
+      "actual": "pause",
+      "reason": "invalid_channel_receipt",
+      "passed": true
+    }
+  ]
+}

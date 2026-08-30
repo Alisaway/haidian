@@ -308,6 +308,60 @@
       "confidence": "high",
       "assumptions": []
     },
+    "non_ai_task_completion_target_ratio": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/seb-adoption.json",
+        "proposal.md"
+      ],
+      "formula": "count(K0-K9 关键任务 completed with AI switched off) / count(K0-K9 关键任务 attempted with AI switched off); 分母须同时报告完成、撤回、技术故障、其他非完成四类,删除任一类该次测量作废",
+      "confidence": "unknown",
+      "assumptions": [
+        "设计目标值 1.0(十驿全部关键任务在 AI 关闭后仍可完成);目标值非承诺,亦非测量结果。",
+        "本包无任何一处节点在运行(gate_id 全部 G0),无实测样本,故 status 保持 unknown。",
+        "分母完整性口径取自 SEB v0.5.0 评分口径组件的公开条文,本包未采用该组件的评分与判定规则。"
+      ],
+      "reason": "AI 关闭后任务完成率须由真实试点测量,本包全部场景证据等级停留 G0-G2,现场运营验证为零;在试点授权与运营主体落实前不产生任何数值。",
+      "required_for_formal_submission": false
+    },
+    "no_login_task_completion_target_ratio": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/seb-adoption.json",
+        "proposal.md"
+      ],
+      "formula": "count(关键任务 completed without any account or personal identifier) / count(关键任务 attempted without any account or personal identifier); 分母四类非完成原因须一并报告",
+      "confidence": "unknown",
+      "assumptions": [
+        "设计目标值 1.0(十驿关键任务均不以账户、实名或个人标识为前置);目标值非承诺。",
+        "本包场景卡已声明数据最小化与不采集人脸,但该声明未经现场测量验证。",
+        "无实测样本,status 保持 unknown。"
+      ],
+      "reason": "无登录完成率须在真实服务点位测量,本包无运行中节点,不产生数值。",
+      "required_for_formal_submission": false
+    },
+    "equity_access_burden_gap_target_minutes": {
+      "status": "unknown",
+      "value": null,
+      "unit": "minutes",
+      "source_files": [
+        "visual/assets/seb-adoption.json",
+        "proposal.md"
+      ],
+      "formula": "median(完成同一关键任务耗时 | 非智能路径) - median(完成同一关键任务耗时 | AI 路径); 按画像分组分别报告,不取全体合并中位数",
+      "confidence": "unknown",
+      "assumptions": [
+        "设计目标值 ≤10 分钟(同一关键任务,非智能路径相对 AI 路径的额外耗时上限);目标值非承诺。",
+        "按六类画像分组报告,合并中位数会掩盖长者与无智能手机使用者的实际负担。",
+        "无实测样本,status 保持 unknown。"
+      ],
+      "reason": "公平负担差须由参与式测试测得,本包尚无居民、长者、障碍人士与一线运营人员的参与式核验结果。",
+      "required_for_formal_submission": false
+    },
     "floor_area_ratio": {
       "status": "unknown",
       "value": null,

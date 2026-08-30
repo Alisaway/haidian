@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>京张生长网络 JINGZHANG ADAPTIVE COMMONS — 投稿发布版 v1.0.3</title>
+
+<!-- Fonts: 本地子集化 woff2 以 base64 data-URI 内嵌于 assets/fonts.css（离线、零远程请求）— Noto Serif SC (display) + IBM Plex Mono (labels/metrics) -->
+<link rel="stylesheet" href="assets/fonts.css">
+
+<style>
+/* ===========================================
+   THEME — 米白纸面 + 墨蓝 + 铜金 + 青瓷
+   =========================================== */
+:root{
+  --paper:#fafaf8; --card:#ffffff; --ink:#1a1a2e; --text:#2d2d2d;
+  --muted:#6b7280; --copper:#c9a227; --celadon:#5ba4a4; --signal:#4a90d9;
+  --moss:#4caf50; --purple:#7a6fb5; --danger:#d95f4b; --border:#e8e6e1;
+
+  --font-display:"Noto Serif SC",Georgia,serif;
+  --font-mono:"IBM Plex Mono",Menlo,Consolas,monospace;
+
+  --ease-out-expo:cubic-bezier(0.16,1,0.3,1);
+  --duration-normal:.6s;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+/* ===========================================
+   VIEWPORT FITTING: MANDATORY BASE STYLES
+   (viewport-base.css — included in full)
+   =========================================== */
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+.slide {
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.slide-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-height: 100%;
+    overflow: hidden;
+    padding: var(--slide-padding);
+}
+:root {
+    --title-size: clamp(1.5rem, 5vw, 4rem);
+    --h2-size: clamp(1.25rem, 3.5vw, 2.5rem);
+    --h3-size: clamp(1rem, 2.5vw, 1.75rem);
+    --body-size: clamp(0.75rem, 1.5vw, 1.125rem);
+    --small-size: clamp(0.65rem, 1vw, 0.875rem);
+    --slide-padding: clamp(1rem, 4vw, 4rem);
+    --content-gap: clamp(0.5rem, 2vw, 2rem);
+    --element-gap: clamp(0.25rem, 1vw, 1rem);
+}
+.card, .container, .content-box {
+    max-width: min(90vw, 1000px);
+    max-height: min(80vh, 700px);
+}
+.feature-list, .bullet-list {
+    gap: clamp(0.4rem, 1vh, 1rem);
+}
+.feature-list li, .bullet-list li {
+    font-size: var(--body-size);
+    line-height: 1.4;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+    gap: clamp(0.5rem, 1.5vw, 1rem);
+}
+img, .image-container {
+    max-width: 100%;
+    max-height: min(50vh, 400px);
+    object-fit: contain;
+}
+@media (max-height: 700px) {
+    :root {
+        --slide-padding: clamp(0.75rem, 3vw, 2rem);
+        --content-gap: clamp(0.4rem, 1.5vw, 1rem);
+        --title-size: clamp(1.25rem, 4.5vw, 2.5rem);
+        --h2-size: clamp(1rem, 3vw, 1.75rem);
+    }
+}
+@media (max-height: 600px) {
+    :root {
+        --slide-padding: clamp(0.5rem, 2.5vw, 1.5rem);
+        --content-gap: clamp(0.3rem, 1vw, 0.75rem);
+        --title-size: clamp(1.1rem, 4vw, 2rem);
+        --body-size: clamp(0.7rem, 1.2vw, 0.95rem);
+    }
+    .nav-dots, .keyboard-hint, .decorative {
+        display: none;
+    }
+}
+@media (max-height: 500px) {
+    :root {
+        --slide-padding: clamp(0.4rem, 2vw, 1rem);
+        --title-size: clamp(1rem, 3.5vw, 1.5rem);
+        --h2-size: clamp(0.9rem, 2.5vw, 1.25rem);
+        --body-size: clamp(0.65rem, 1vw, 0.85rem);
+    }
+}
+@media (max-width: 600px) {
+    :root {
+        --title-size: clamp(1.25rem, 7vw, 2.5rem);
+    }
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.2s !important;
+    }
+    html { scroll-behavior: auto; }
+}
+
+/* ===========================================
+   BASE — 纸面排版
+   =========================================== */
+body{
+  font-family:var(--font-display);
+  background:var(--paper);
+  color:var(--text);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+.slide-content{width:100%;max-width:min(92vw,1280px);margin:0 auto}
+.slide{
+  background:
+    linear-gradient(rgba(26,26,46,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26,26,46,.025) 1px, transparent 1px),
+    var(--paper);
+  background-size:64px 64px,64px 64px,auto;
+}
+
+/* kicker 标签 — 单字节码感 */
+.kicker{
+  font-family:var(--font-mono);font-size:var(--small-size);
+  letter-spacing:.22em;color:var(--copper);text-transform:uppercase;
+  margin-bottom:var(--element-gap);
+}
+h1{font-size:var(--title-size);color:var(--ink);font-weight:900;line-height:1.15}
+h2{
+  font-size:var(--h2-size);color:var(--ink);font-weight:700;line-height:1.2;
+  padding-bottom:.35em;margin-bottom:var(--content-gap);
+  border-bottom:2px solid var(--copper);
+}
+h3{font-size:var(--h3-size);color:var(--celadon);font-weight:700;line-height:1.3}
+p{font-size:var(--body-size)}
+.lede{font-size:clamp(.9rem,1.8vw,1.3rem);color:var(--ink);max-width:62ch}
+.muted{color:var(--muted)}
+.small{font-size:var(--small-size)}
+.mono{font-family:var(--font-mono)}
+.copper{color:var(--copper)}
+
+/* ===========================================
+   COMPONENTS — 与参考页同源
+   =========================================== */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:var(--element-gap)}
+.card{
+  background:var(--card);border:1px solid var(--border);border-radius:8px;
+  padding:clamp(.7rem,1.6vw,1.3rem);box-shadow:0 1px 4px rgba(0,0,0,.04);
+}
+.card h3{margin:0 0 .4em}
+.card p{font-size:var(--small-size);margin:.25em 0}
+.card .role{font-family:var(--font-mono);font-size:var(--small-size);color:var(--copper)}
+
+.metric-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:var(--element-gap)}
+.metric-card{
+  background:var(--card);border-left:4px solid var(--signal);border-radius:0 8px 8px 0;
+  padding:clamp(.6rem,1.4vw,1rem);text-align:center;
+}
+.metric-card .value{font-size:clamp(1.2rem,2.6vw,2rem);font-weight:700;color:var(--ink)}
+.metric-card .label{font-size:var(--small-size);color:var(--muted);margin-top:.2em}
+
+.badge{display:inline-block;padding:.12em .5em;border-radius:3px;font-size:var(--small-size);color:#fff;font-family:var(--font-mono)}
+.badge-pass{background:var(--moss)}
+.badge-concept{background:var(--copper)}
+.badge-open{background:var(--signal)}
+
+table{width:100%;border-collapse:collapse;font-size:var(--small-size);background:var(--card)}
+th{background:var(--ink);color:#fff;padding:.45em .7em;text-align:left;font-weight:600;white-space:nowrap}
+td{padding:.4em .7em;border-bottom:1px solid var(--border);vertical-align:top}
+tr:nth-child(even) td{background:rgba(0,0,0,.02)}
+td b{color:var(--ink)}
+
+.bullet-list{list-style:none;padding:0;display:flex;flex-direction:column}
+.bullet-list li{padding-left:1.4em;position:relative}
+.bullet-list li::before{content:"◆";position:absolute;left:0;color:var(--celadon);font-size:.7em;top:.4em}
+
+/* 链条图 — 育传用还 */
+.chain{display:flex;align-items:stretch;gap:0;margin:var(--content-gap) 0}
+.chain .node{
+  flex:1;background:var(--card);border:1px solid var(--border);border-radius:8px;
+  padding:clamp(.5rem,1.2vw,1rem);text-align:center;
+}
+.chain .node b{display:block;color:var(--ink);font-size:var(--h3-size)}
+.chain .node span{font-size:var(--small-size);color:var(--muted)}
+.chain .arrow{display:flex;align-items:center;padding:0 .4em;color:var(--copper);font-size:1.2em}
+
+/* 主轴—五层网络 图 */
+.netviz{display:flex;gap:clamp(.8rem,2.5vw,2.5rem);align-items:stretch}
+.axis-rail{position:relative;width:34%;min-width:220px;display:flex;flex-direction:column;justify-content:space-between;padding:1em 0}
+.axis-rail::before{content:"";position:absolute;left:50%;top:.6em;bottom:.6em;width:3px;background:var(--ink);transform:translateX(-50%);border-radius:2px}
+.axis-node{
+  position:relative;background:var(--card);border:1px solid var(--border);border-radius:8px;
+  padding:.5em .8em;margin:0 auto;text-align:center;min-width:78%;box-shadow:0 1px 4px rgba(0,0,0,.05);
+}
+.axis-node b{color:var(--ink);display:block}
+.axis-node span{font-size:var(--small-size);color:var(--muted)}
+.layers{display:flex;flex-direction:column;gap:.45em;flex:1;justify-content:center}
+.layer{
+  border-radius:6px;padding:.45em .9em;color:#fff;font-size:var(--small-size);
+  display:flex;justify-content:space-between;align-items:center;gap:1em;
+}
+.layer.l1{background:var(--celadon)} .layer.l2{background:var(--signal)}
+.layer.l3{background:var(--moss)} .layer.l4{background:var(--copper)}
+.layer.l5{background:var(--purple)}
+.layer span:last-child{font-family:var(--font-mono);opacity:.85;font-size:.85em}
+
+/* 京张生长断面 */
+.profile{display:flex;flex-direction:column;gap:3px;border-radius:8px;overflow:hidden;border:1px solid var(--border)}
+.profile .stratum{padding:.5em 1em;font-size:var(--small-size);display:flex;justify-content:space-between;gap:1em;color:#fff}
+.profile .s1{background:#6b5f8f}.profile .s2{background:#b98a2e}.profile .s3{background:#c9a227}
+.profile .s4{background:#5ba4a4}.profile .s5{background:#1a1a2e}
+.profile .s6{background:#fff;color:var(--muted);border-top:1px dashed var(--border)}
+.profile .stratum span:last-child{font-family:var(--font-mono);opacity:.85}
+
+/* 九步循环 */
+.journey{display:grid;grid-template-columns:repeat(9,1fr);gap:6px}
+.jstep{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.6em .5em;text-align:center;position:relative}
+.jstep .n{font-family:var(--font-mono);color:var(--copper);font-size:var(--small-size);display:block}
+.jstep b{font-size:var(--small-size);color:var(--ink);display:block;line-height:1.3;margin-top:.2em}
+.jstep span{font-size:calc(var(--small-size)*.85);color:var(--muted);display:block;line-height:1.35;margin-top:.25em}
+@media(max-width:900px){.journey{grid-template-columns:repeat(3,1fr)}}
+
+/* AI 闭环 */
+.loop{display:flex;flex-wrap:wrap;align-items:center;gap:.4em;justify-content:center}
+.loop .box{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.5em .8em;font-size:var(--small-size);color:var(--ink)}
+.loop .box.decision{border-color:var(--copper);color:var(--copper);font-family:var(--font-mono)}
+.loop .arrow{color:var(--celadon)}
+
+.brand-system{display:grid;grid-template-columns:minmax(210px,.72fr) minmax(0,1.55fr);gap:var(--content-gap);align-items:center}
+.brand-mark{display:flex;align-items:center;justify-content:center;min-height:280px;border-right:1px solid var(--border);padding-right:var(--content-gap)}
+.brand-mark img{width:min(30vh,250px);height:auto}
+.brand-rules{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--element-gap)}
+.brand-rule{border-top:2px solid var(--copper);padding-top:.5em}
+.brand-rule p{font-size:var(--small-size);margin:.2em 0}
+@media(max-width:760px){.brand-system{grid-template-columns:1fr}.brand-mark{min-height:150px;border-right:0;border-bottom:1px solid var(--border);padding:0 0 var(--element-gap)}.brand-mark img{width:min(18vh,140px)}}
+
+/* 评审权重条 */
+.wbar{display:flex;flex-direction:column;gap:.4em}
+.wbar .row{display:flex;align-items:center;gap:.8em;font-size:var(--small-size)}
+.wbar .row .name{width:9em;flex-shrink:0;color:var(--ink);text-align:right}
+.wbar .row .track{flex:1;background:var(--border);border-radius:3px;height:.9em;overflow:hidden}
+.wbar .row .fill{height:100%;background:var(--copper);border-radius:3px}
+.wbar .row .w{font-family:var(--font-mono);color:var(--muted);width:2.5em}
+
+/* 场景 chips */
+.chips{display:flex;flex-wrap:wrap;gap:.45em}
+.chip{
+  background:var(--card);border:1px solid var(--border);border-radius:99px;
+  padding:.3em .9em;font-size:var(--small-size);color:var(--ink);white-space:nowrap;
+}
+.chip .mono{color:var(--copper);margin-right:.4em}
+
+/* ===========================================
+   FIGURE SLIDES — 图件页（一图一页）
+   =========================================== */
+.figure-slide .slide-content{align-items:center;text-align:center}
+.slide-figure{
+  max-width:min(92vw,1400px);
+  max-height:min(66vh,680px);
+  object-fit:contain;
+  background:var(--card);
+  border:1px solid var(--border);border-radius:8px;
+  box-shadow:0 4px 24px rgba(26,26,46,.08);
+}
+.figure-caption{margin-top:var(--element-gap);font-size:var(--small-size);color:var(--muted);font-family:var(--font-mono)}
+
+/* ===========================================
+   TITLE SLIDE
+   =========================================== */
+.title-slide .slide-content{align-items:center;text-align:center}
+.title-slide h1{font-size:clamp(2.2rem,7vw,5.5rem);letter-spacing:.04em}
+.title-slide .en{
+  font-family:var(--font-mono);font-size:clamp(.7rem,1.6vw,1.1rem);
+  letter-spacing:.42em;color:var(--celadon);margin-top:.6em;text-transform:uppercase;
+}
+.title-slide .rule{width:min(40vw,320px);height:2px;background:var(--copper);margin:1.4em auto}
+.title-slide .tagline{font-size:clamp(1rem,2.4vw,1.6rem);color:var(--ink)}
+.title-slide .meta{margin-top:2.2em;font-size:var(--small-size);color:var(--muted);font-family:var(--font-mono)}
+.rail-motif{position:absolute;left:0;right:0;bottom:0;height:22%;pointer-events:none;opacity:.5}
+
+/* ===========================================
+   CLOSING SLIDE
+   =========================================== */
+.closing{background:var(--ink);color:#e8e6e1}
+.closing h2{color:#fff;border-bottom-color:var(--copper)}
+.closing .kicker{color:var(--copper)}
+.closing .card{background:#232338;border-color:#3a3a52}
+.closing .card p{color:#c6c9d4}
+.closing .card h3{color:var(--celadon)}
+
+/* ===========================================
+   ANIMATIONS
+   =========================================== */
+.reveal{opacity:0;transform:translateY(28px);
+  transition:opacity var(--duration-normal) var(--ease-out-expo),transform var(--duration-normal) var(--ease-out-expo)}
+.slide.visible .reveal{opacity:1;transform:translateY(0)}
+.reveal:nth-child(1){transition-delay:.08s}.reveal:nth-child(2){transition-delay:.16s}
+.reveal:nth-child(3){transition-delay:.24s}.reveal:nth-child(4){transition-delay:.32s}
+.reveal:nth-child(5){transition-delay:.4s}.reveal:nth-child(6){transition-delay:.48s}
+
+/* ===========================================
+   TOP TABS — 顶部章节导航
+   =========================================== */
+.top-tabs{
+  position:fixed;top:0;left:0;right:0;z-index:900;height:42px;
+  background:var(--ink);display:flex;align-items:center;gap:.2em;
+  padding:0 clamp(.5rem,2vw,1.5rem);overflow-x:auto;white-space:nowrap;
+  scrollbar-width:none;
+}
+.top-tabs::-webkit-scrollbar{display:none}
+.top-tabs a{
+  color:#aab;border-bottom:2px solid transparent;
+  font-family:var(--font-mono);font-size:clamp(.6rem,1vw,.78rem);letter-spacing:.05em;
+  padding:.45em .7em;border-radius:3px;transition:all .2s;text-decoration:none;flex-shrink:0;
+}
+.top-tabs a:hover{color:var(--copper);background:rgba(201,162,39,.1)}
+.top-tabs a.active{color:var(--copper);background:rgba(201,162,39,.12);border-bottom-color:var(--copper)}
+.top-tabs .brand{color:#fff;font-weight:600;margin-right:.6em;pointer-events:none}
+.top-tabs .brand em{font-style:normal;color:var(--copper)}
+
+/* ===========================================
+   PROGRESS BAR / NAV DOTS / HINT
+   =========================================== */
+.progress-bar{position:fixed;top:42px;left:0;height:3px;width:0;z-index:1000;
+  background:linear-gradient(90deg,var(--copper),var(--celadon));transition:width .2s ease}
+.nav-dots{position:fixed;right:14px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:8px;z-index:1000}
+.nav-dots a{width:9px;height:9px;border-radius:50%;background:var(--border);border:1px solid #d5d2ca;transition:all .25s;display:block}
+.nav-dots a.active{background:var(--copper);transform:scale(1.4)}
+.keyboard-hint{position:fixed;bottom:12px;left:16px;z-index:1000;font-family:var(--font-mono);
+  font-size:.65rem;color:var(--muted);letter-spacing:.08em}
+
+/* ===========================================
+   INLINE EDITING (opt-in)
+   =========================================== */
+.edit-hotzone{position:fixed;bottom:0;right:0;width:80px;height:80px;z-index:10000;cursor:pointer}
+.edit-toggle{
+  position:fixed;bottom:14px;right:14px;z-index:10001;width:40px;height:40px;border-radius:50%;
+  border:1px solid var(--border);background:var(--card);cursor:pointer;font-size:16px;
+  opacity:0;pointer-events:none;transition:opacity .3s ease;box-shadow:0 2px 8px rgba(0,0,0,.12);
+}
+.edit-toggle.show,.edit-toggle.active{opacity:1;pointer-events:auto}
+.edit-toggle.active{background:var(--copper);color:#fff;border-color:var(--copper)}
+.edit-toggle::before{
+  content:"";width:15px;height:5px;border:2px solid currentColor;border-radius:1px;
+  transform:rotate(-45deg);box-sizing:border-box;
+}
+.edit-toggle::after{
+  content:"";width:0;height:0;border-top:4px solid transparent;border-bottom:4px solid transparent;
+  border-left:6px solid currentColor;transform:rotate(-45deg);margin-left:-4px;
+}
+.edit-banner{
+  position:fixed;top:0;left:0;right:0;z-index:9999;background:var(--ink);color:#fff;
+  text-align:center;font-family:var(--font-mono);font-size:.72rem;padding:.45em 1em;
+  transform:translateY(-100%);transition:transform .3s ease;
+}
+.edit-banner.active{transform:translateY(0)}
+.edit-banner b{color:var(--copper)}
+body.edit-active [data-edit]{outline:1px dashed var(--copper);outline-offset:2px;cursor:text;border-radius:2px}
+body.edit-active .slide{scroll-snap-align:none}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+<nav class="top-tabs" id="topTabs" aria-label="章节导航">
+  <span class="brand">京张<em>生长网络</em></span>
+  <a href="#" data-goto="0">封面</a>
+  <a href="#" data-goto="1">结论</a>
+  <a href="#" data-goto="2">判准</a>
+  <a href="#" data-goto="3">命题</a>
+  <a href="#" data-goto="4">场地总览</a>
+  <a href="#" data-goto="5">总体结构</a>
+  <a href="#" data-goto="6">结构组织图</a>
+  <a href="#" data-goto="7">育传用还</a>
+  <a href="#" data-goto="8">片区深化图</a>
+  <a href="#" data-goto="9">六类节点</a>
+  <a href="#" data-goto="10">生长断面</a>
+  <a href="#" data-goto="11">建筑原型</a>
+  <a href="#" data-goto="12">蓝绿网络图</a>
+  <a href="#" data-goto="13">场景体系</a>
+  <a href="#" data-goto="14">九步循环</a>
+  <a href="#" data-goto="15">项目包</a>
+  <a href="#" data-goto="16">验证协议</a>
+  <a href="#" data-goto="17">品牌载体</a>
+  <a href="#" data-goto="18">AI 闭环</a>
+  <a href="#" data-goto="19">实施运营</a>
+  <a href="#" data-goto="20">证据仪表板</a>
+  <a href="#" data-goto="21">荣誉组件</a>
+  <a href="#" data-goto="22">边界声明</a>
+</nav>
+<nav class="nav-dots" id="navDots" aria-label="幻灯片导航"></nav>
+<div class="keyboard-hint">← → / 空格 翻页 · E 编辑 · Ctrl+S 导出</div>
+
+<!-- Inline editing UI -->
+<div class="edit-hotzone" id="editHotzone" title="编辑模式"></div>
+<button class="edit-toggle" id="editToggle" title="编辑模式 (E)" aria-label="编辑模式"></button>
+<div class="edit-banner" id="editBanner">编辑模式 — 点击任意文字直接修改 · 自动保存到本地 · <b>Ctrl/⌘+S 导出 HTML</b> · 按 E 退出</div>
+
+<!-- ==========================================
+     01 · 封面
+     ========================================== -->
+<section class="slide title-slide">
+  <svg class="rail-motif" viewBox="0 0 1200 240" preserveAspectRatio="none" aria-hidden="true">
+    <line x1="600" y1="0" x2="600" y2="240" stroke="#1a1a2e" stroke-width="3"/>
+    <line x1="150" y1="240" x2="1050" y2="240" stroke="#e8e6e1" stroke-width="1"/>
+    <circle cx="600" cy="45" r="9" fill="#fafaf8" stroke="#c9a227" stroke-width="3"/>
+    <circle cx="600" cy="120" r="9" fill="#fafaf8" stroke="#5ba4a4" stroke-width="3"/>
+    <circle cx="600" cy="195" r="9" fill="#fafaf8" stroke="#4a90d9" stroke-width="3"/>
+    <line x1="600" y1="45" x2="300" y2="90" stroke="#c9a227" stroke-width="1" stroke-dasharray="4 5"/>
+    <line x1="600" y1="120" x2="900" y2="150" stroke="#5ba4a4" stroke-width="1" stroke-dasharray="4 5"/>
+    <line x1="600" y1="195" x2="380" y2="220" stroke="#4a90d9" stroke-width="1" stroke-dasharray="4 5"/>
+    <line x1="600" y1="45" x2="880" y2="70" stroke="#c9a227" stroke-width="1" stroke-dasharray="4 5"/>
+  </svg>
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>百年京张 AI 创新带城市设计 · 投稿发布版 V1.0.3</div>
+    <h1 class="reveal" data-edit>京张生长网络</h1>
+    <div class="en reveal" data-edit>JINGZHANG ADAPTIVE COMMONS</div>
+    <div class="rule reveal"></div>
+    <p class="tagline reveal" data-edit>让创新进入城市日常</p>
+    <p class="meta reveal" data-edit><strong>发布状态</strong><br>公开共创建议 · 非正式规划 · 非工程结论 · 非官方批准<br>2026-08-26</p>
+  </div>
+</section>
+
+<!-- ==========================================
+     02 · 结论先行
+     ========================================== -->
+<section class="slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>01 · 结论先行</div>
+    <h2 class="reveal" data-edit>不做地标展示轴，做一套可生长的城市公共基础设施网络</h2>
+    <div class="metric-grid reveal">
+      <div class="metric-card"><div class="value" data-edit>1 条</div><div class="label" data-edit>公共创新主轴</div></div>
+      <div class="metric-card" style="border-left-color:var(--copper)"><div class="value" data-edit data-metric="key_area_count" data-value="3">3 处</div><div class="label" data-edit>重点片区 · 育—传—用—还</div></div>
+      <div class="metric-card" style="border-left-color:var(--celadon)"><div class="value" data-edit>6 类</div><div class="label" data-edit>分布式节点</div></div>
+      <div class="metric-card" style="border-left-color:var(--moss)"><div class="value" data-edit>5 层</div><div class="label" data-edit>复合网络共址协同</div></div>
+    </div>
+    <div style="margin-top:var(--content-gap)">
+      <ul class="bullet-list reveal">
+        <li data-edit>以铁路遗产和公园系统建立连续公共基底；</li>
+        <li data-edit>用高频横向缝合点连接铁路两侧的社区、校园和园区；东西两翼——中关村科技服务翼、小月河场景赋能翼——经缝合点接入主轴；</li>
+        <li data-edit>创新资源布置为大小互补的公共节点，首层开放、混合使用；</li>
+        <li data-edit>通过监测、评估和小步迭代，使建设过程持续校正——城市不再一次建成。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     03 · 设计判准：三问
+     ========================================== -->
+<section class="slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>02 · 设计判准</div>
+    <h2 class="reveal" data-edit>任何空间动作，答不出三问即不建</h2>
+    <p class="lede reveal" data-edit style="margin-bottom:var(--content-gap)">沿京张，让城市不再一次建成，而在持续交换中更新。</p>
+    <div class="cards">
+      <div class="card reveal" style="border-top:3px solid var(--copper)">
+        <h3 data-edit>连接</h3>
+        <p data-edit>它缝合了哪一处具体的断裂——铁路两侧、院墙内外、新老社区？</p>
+      </div>
+      <div class="card reveal" style="border-top:3px solid var(--celadon)">
+        <h3 data-edit>交换</h3>
+        <p data-edit>它让什么资源在哪些主体之间真实流动——空间、设备、材料、知识、数据？</p>
+      </div>
+      <div class="card reveal" style="border-top:3px solid var(--signal)">
+        <h3 data-edit>生长</h3>
+        <p data-edit>它留下了什么接口，使下一阶段的扩展、调整或退出成为可能？</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     04 · 设计命题：五个结构性问题
+     ========================================== -->
+<section class="slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>03 · 设计命题</div>
+    <h2 class="reveal" data-edit>五个结构性问题，五个回应</h2>
+    <table class="reveal">
+      <tr><th>问题</th><th>常见方案局限</th><th>本方案回应</th></tr>
+      <tr><td data-edit>铁路廊道连续但横向联系不足</td><td data-edit>把公园只做成线性景观</td><td data-edit>高频横向缝合点与跨界公共界面</td></tr>
+      <tr><td data-edit>创新资源密集但彼此封闭</td><td data-edit>园区校园各自为独立单元</td><td data-edit>共享设施、联合试验、成果展示网络</td></tr>
+      <tr><td data-edit>AI 场景容易成为设备陈列</td><td data-edit>追求短期"黑科技"可视化</td><td data-edit>聚焦公共服务与真实使用闭环</td></tr>
+      <tr><td data-edit>遗产展示与当代生活脱节</td><td data-edit>保护对象孤立、路径单一</td><td data-edit>遗产空间转化为公共客厅与创新载体</td></tr>
+      <tr><td data-edit>建成后运营动力不足</td><td data-edit>先造空间、后找内容</td><td data-edit>项目、运营主体与评估指标同步进入设计</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ==========================================
+     图01 · 场地总览与问题机会图
+     ========================================== -->
+<section class="slide figure-slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>图件 01 · 场地总览与问题机会图</div>
+    <img class="slide-figure reveal" src="../assets/figures/site-overview.png" alt="场地总览与问题机会图：43.6 平方公里统筹范围、铁路遗产主线与三处重点片区">
+    <p class="figure-caption reveal" data-edit>统筹研究范围 43.6 km² · 总体设计范围 <span data-metric="site_area_sqm" data-value="11412825.4">11.4 km²</span> · 三处重点片区 368.4 ha（均为 provisional 轮廓）</p>
+  </div>
+</section>
+
+<!-- ==========================================
+     05 · 总体空间结构
+     ========================================== -->
+<section class="slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>04 · 总体结构</div>
+    <h2 class="reveal" data-edit>一轴 · 三片区 · 五层复合网络</h2>
+    <div class="netviz reveal">
+      <div class="axis-rail">
+        <div class="axis-node"><b data-edit>众智园 · 育</b><span data-edit>192.1 ha · 花园型创新街区</span></div>
+        <div class="axis-node"><b data-edit>AI 原点 · 传</b><span data-edit>104.3 ha · 近校型创新街区</span></div>
+        <div class="axis-node"><b data-edit>大钟寺 · 用</b><span data-edit>72.0 ha · 城市型创新街区</span></div>
+      </div>
+      <div class="layers">
+        <div class="layer l1"><span data-edit>公共空间网络</span><span data-edit>连续界面 · 交换界面 · 安静界面</span></div>
+        <div class="layer l2"><span data-edit>慢行与换乘网络</span><span data-edit>城市级 / 片区级 / 街坊级缝合</span></div>
+        <div class="layer l3"><span data-edit>生态与雨洪网络</span><span data-edit>生境 · 雨洪 · 微气候廊道</span></div>
+        <div class="layer l4"><span data-edit>创新与公共服务网络</span><span data-edit>六类分布式节点</span></div>
+        <div class="layer l5"><span data-edit>城市观测与运营网络</span><span data-edit>传感 · 归档 · 年度更新决策</span></div>
+      </div>
+    </div>
+    <p class="small muted reveal" data-edit style="margin-top:var(--element-gap)">网络层之间共址协同：一个横向缝合点同时解决慢行穿越、雨洪滞蓄、公共服务、夜间照明与遗产解说，而不是五套独立专项工程。</p>
+  </div>
+</section>
+
+<!-- ==========================================
+     图02 · 总体结构与功能组织图
+     ========================================== -->
+<section class="slide figure-slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>图件 02 · 总体结构与功能组织图</div>
+    <img class="slide-figure reveal" src="../assets/figures/land-use-structure.png" alt="总体结构与功能组织图：一条公共主轴、三处重点片区、六类分布式节点、五层复合网络">
+    <p class="figure-caption reveal" data-edit>一条公共主轴 · 育—传—用—还 · 东西两翼 · 六类分布式节点 · 五层复合网络（结构性示意，非地理精确）</p>
+  </div>
+</section>
+
+<!-- ==========================================
+     06 · 育—传—用—还
+     ========================================== -->
+<section class="slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>05 · 三处重点片区</div>
+    <h2 class="reveal" data-edit>育—传—用—还：一条只对京张成立的城市交换链</h2>
+    <div class="chain reveal">
+      <div class="node"><b data-edit>育</b><span data-edit>众智园造出原型并完成检测</span></div>
+      <div class="arrow">→</div>
+      <div class="node"><b data-edit>传</b><span data-edit>AI 原点转化为可教学的公共知识</span></div>
+      <div class="arrow">→</div>
+      <div class="node"><b data-edit>用</b><span data-edit>大钟寺接受真实公共生活检验</span></div>
+      <div class="arrow">→</div>
+      <div class="node"><b data-edit>还</b><span data-edit>数据与材料回流，进入下一轮更新</span></div>
+    </div>
+    <div class="cards">
+      <div class="card reveal">
+        <p class="role" data-edit>众智园AI自主创新加速区 · 192.1 ha</p>
+        <h3 data-edit>原型与验证场</h3>
+        <p data-edit>把生态样地、材料试验田和原型建造场做成街区的日常首层——"制造与验证未来"成为可观看的公共景观。</p>
+      </div>
+      <div class="card reveal">
+        <p class="role" data-edit>北京AI原点社区 · 104.3 ha</p>
+        <h3 data-edit>开放研发与知识共享</h3>
+        <p data-edit>让高校院所的知识生产与社区日常互相可见、互相可用，而不是隔院墙相望。</p>
+      </div>
+      <div class="card reveal">
+        <p class="role" data-edit>大钟寺AI产业聚集区 · 72.0 ha</p>
+        <h3 data-edit>公共生活检验客厅</h3>
+        <p data-edit>任何 AI 服务和空间原型，只有在这里被不用智能手机的居民真正用起来，才算成立。</p>
+      </div>
+    </div>
+    <p class="small muted reveal" data-edit style="margin-top:var(--element-gap)">片区名称与面积依据征集公告（DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509）；边界为 provisional 几何，正式红线发布后复算。</p>
+  </div>
+</section>
+
+<!-- ==========================================
+     图03 · 三处重点片区深化图
+     ========================================== -->
+<section class="slide figure-slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>图件 03 · 三处重点片区深化图</div>
+    <img class="slide-figure reveal" src="../assets/figures/key-areas.png" alt="三处重点片区深化图：众智园、AI原点、大钟寺的概念布局、断面截取与使用情景">
+    <p class="figure-caption reveal" data-edit>概念布局 + 京张生长断面截取 + 日夜与工作日/周末使用情景（概念示意，非总平面）</p>
+  </div>
+</section>
+
+<!-- ==========================================
+     07 · 六类分布式节点
+     ========================================== -->
+<section class="slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>06 · 分布式节点</div>
+    <h2 class="reveal" data-edit>公共资源：少量核心设施 + 大量轻量节点</h2>
+    <table class="reveal">
+      <tr><th>节点类型</th><th>空间载体</th><th>核心功能</th><th>建设等级</th></tr>
+      <tr><td data-edit><b>研究转化节点</b></td><td data-edit>更新厂房、共享实验楼、院落式研发单元</td><td data-edit>联合研发、原型制作、技术服务</td><td data-edit>核心级</td></tr>
+      <tr><td data-edit><b>城市试验节点</b></td><td data-edit>开放街区、测试道路、可变公共空间</td><td data-edit>真实场景测试、公众参与、评估展示</td><td data-edit>核心/社区级</td></tr>
+      <tr><td data-edit><b>公共服务节点</b></td><td data-edit>社区大厅、街角服务站、换乘界面</td><td data-edit>教育、健康、政务、无障碍服务</td><td data-edit>社区级</td></tr>
+      <tr><td data-edit><b>青年生活节点</b></td><td data-edit>混合居住、共享厨房、学习空间</td><td data-edit>居住、社交、创业与夜间活力</td><td data-edit>片区级</td></tr>
+      <tr><td data-edit><b>遗产文化节点</b></td><td data-edit>旧站房、铁路构筑物、线性展廊</td><td data-edit>记忆展示、公共教育、文化活动</td><td data-edit>核心/片区级</td></tr>
+      <tr><td data-edit><b>生态材料节点</b></td><td data-edit>户外试验园、材料工坊、观测站</td><td data-edit>生境监测、修复试验、循环建造展示</td><td data-edit>片区/轻量级</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ==========================================
+     08 · 京张生长断面
+     ========================================== -->
+<section class="slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>07 · 核心剖面</div>
+    <h2 class="reveal" data-edit>京张生长断面：每个界面都是一次交换</h2>
+    <div class="profile reveal">
+      <div class="stratum s1"><span data-edit>可变研发单元 —— 可拆装围护与独立机电模块，3—5 年尺度可重构</span><span data-edit>庭院 ↔ 研发：交换成果</span></div>
+      <div class="stratum s2"><span data-edit>共享庭院 —— 机构间交换界面：设备、样品、课程、联合实验</span><span data-edit>首层 ↔ 庭院：交换使用者</span></div>
+      <div class="stratum s3"><span data-edit>开放首层 —— 公众可达：展示、课程、社区服务、小型商业</span><span data-edit>样地 ↔ 首层：交换展示内容</span></div>
+      <div class="stratum s4"><span data-edit>生态修复样地 —— 生产性景观：生境监测、雨洪滞蓄、材料试验</span><span data-edit>公园 ↔ 样地：交换生态数据</span></div>
+      <div class="stratum s5"><span data-edit>铁路遗产公园 —— 连续公共基底：慢行主线、遗产叙事、城市观测</span><span data-edit>全线共享</span></div>
+      <div class="stratum s6"><span data-edit>背景层 · 城市观测与运营网络 —— 传感、数据归档与维护动线</span><span data-edit>——</span></div>
+    </div>
+    <p class="small muted reveal" data-edit style="margin-top:var(--element-gap)">不同区段截取不同片段：众智园五层完整出现；AI 原点强化庭院—首层；大钟寺强化首层—公园。断面即判准的图面形态：说不出"交换发生在哪一层"的设计不进入深化。</p>
+  </div>
+</section>
+
+<!-- ==========================================
+     09 · 建筑与公共空间体系
+     ========================================== -->
+<section class="slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>08 · 建筑体系</div>
+    <h2 class="reveal" data-edit>四种建筑原型，拒绝"蘑菇形"表达</h2>
+    <div class="cards reveal">
+      <div class="card">
+        <h3 data-edit>A · 更新型创新大厅</h3>
+        <p data-edit>既有厂房适应性再利用；中央共享大厅连接实验、路演、展览与制造；独立机电模块适应团队变化。</p>
+      </div>
+      <div class="card">
+        <h3 data-edit>B · 院落式研发单元</h3>
+        <p data-edit>小尺度研发楼围合共享庭院；首层共享、上层可分可合；连廊衔接校园、园区与主轴。</p>
+      </div>
+      <div class="card">
+        <h3 data-edit>C · 渗透型公共街区</h3>
+        <p data-edit>首层多入口、小进深、高可见度；内部步行与周边社区连续，不形成封闭园区。</p>
+      </div>
+      <div class="card">
+        <h3 data-edit>D · 轻量公共站</h3>
+        <p data-edit>可拆装结构、标准化接口、低基础干预；先作试点部署，依据使用数据调整位置与功能。</p>
+      </div>
+    </div>
+    <p class="small muted reveal" data-edit style="margin-top:var(--element-gap)">清晰结构网格 · 线性站台与跨线构筑物 · 砖钢木与再利用构件的新旧可读 · 标志性来自公共活动和结构秩序，而非一次性异形表皮。</p>
+  </div>
+</section>
+
+<!-- ==========================================
+     图04 · 慢行、换乘与蓝绿网络图
+     ========================================== -->
+<section class="slide figure-slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>图件 04 · 慢行、换乘与蓝绿网络图</div>
+    <img class="slide-figure reveal" src="../assets/figures/mobility-bluegreen.png" alt="慢行、换乘与蓝绿网络图：主轴慢行主线、三级横向缝合、轨道站点与雨洪生境廊道">
+    <p class="figure-caption reveal" data-edit>三级横向缝合 · 每个缝合点同时解决慢行穿越、雨洪滞蓄、公共服务与遗产解说</p>
+  </div>
+</section>
+
+<!-- ==========================================
+     10 · 场景体系
+     ========================================== -->
+<section class="slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>09 · 场景体系</div>
+    <h2 class="reveal" data-edit>12 个可感知场景，6 类使用者</h2>
+    <div class="chips reveal">
+      <span class="chip"><span class="mono">S01</span><span data-edit>京张环境观测站</span></span>
+      <span class="chip"><span class="mono">S02</span><span data-edit>城市生态修复花园</span></span>
+      <span class="chip"><span class="mono">S03</span><span data-edit>AI 社区服务站</span></span>
+      <span class="chip"><span class="mono">S04</span><span data-edit>青年共创居所</span></span>
+      <span class="chip"><span class="mono">S05</span><span data-edit>无障碍出行助手</span></span>
+      <span class="chip"><span class="mono">S06</span><span data-edit>低速配送共用走廊</span></span>
+      <span class="chip"><span class="mono">S07</span><span data-edit>铁路记忆数字档案</span></span>
+      <span class="chip"><span class="mono">S08</span><span data-edit>循环材料工坊</span></span>
+      <span class="chip"><span class="mono">S09</span><span data-edit>城市测试街</span></span>
+      <span class="chip"><span class="mono">S10</span><span data-edit>校企共享实验平台</span></span>
+      <span class="chip"><span class="mono">S11</span><span data-edit>国际创新论坛</span></span>
+      <span class="chip"><span class="mono">S12</span><span data-edit>四季公共日历</span></span>
+    </div>
+    <div class="cards reveal" style="margin-top:var(--content-gap)">
+      <div class="card"><p data-edit><b>社区居民</b> —— 便捷服务、环境品质、隐私</p></div>
+      <div class="card"><p data-edit><b>青年科研人员与学生</b> —— 低成本工作、短住、设备共享</p></div>
+      <div class="card"><p data-edit><b>初创及企业团队</b> —— 真实场景验证与成果展示</p></div>
+      <div class="card"><p data-edit><b>高校与科研机构</b> —— 跨机构平台、长期样地</p></div>
+      <div class="card"><p data-edit><b>儿童、老人及残障使用者</b> —— 无障碍、低认知负担</p></div>
+      <div class="card"><p data-edit><b>访客与国际合作机构</b> —— 清晰叙事、可理解的示范</p></div>
+    </div>
+    <p class="small muted reveal" data-edit style="margin-top:var(--element-gap)">每个场景明确使用者、空间载体、运营主体、数据边界和退出条件；维护运营人员作为隐含第七类用户进入后台动线设计。</p>
+  </div>
+</section>
+
+<!-- ==========================================
+     11 · 一块构件的九步循环
+     ========================================== -->
+<section class="slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>10 · 资源旅程</div>
+    <h2 class="reveal" data-edit>一块构件的九步循环</h2>
+    <div class="journey reveal">
+      <div class="jstep"><span class="n">01</span><b data-edit>登记</b><span data-edit>闲置构件入构件库，发材料护照</span></div>
+      <div class="jstep"><span class="n">02</span><b data-edit>检测</b><span data-edit>第三方结构与有害物质检测</span></div>
+      <div class="jstep"><span class="n">03</span><b data-edit>分级</b><span data-edit>结构再用 / 非承重 / 仅展示</span></div>
+      <div class="jstep"><span class="n">04</span><b data-edit>入库公开</b><span data-edit>线上可查，设计师与社区可申请</span></div>
+      <div class="jstep"><span class="n">05</span><b data-edit>再设计</b><span data-edit>设计机构与社区议事共定用途</span></div>
+      <div class="jstep"><span class="n">06</span><b data-edit>再安装</b><span data-edit>可逆连接进入公共空间</span></div>
+      <div class="jstep"><span class="n">07</span><b data-edit>使用监测</b><span data-edit>频率、维护、反馈持续记录</span></div>
+      <div class="jstep"><span class="n">08</span><b data-edit>失效判定</b><span data-edit>维修、降级或退役评估</span></div>
+      <div class="jstep"><span class="n">09</span><b data-edit>回库/处置</b><span data-edit>全生命周期档案公开</span></div>
+    </div>
+    <p class="lede reveal" data-edit style="margin-top:var(--content-gap)">每个构件携带可扫码阅读的来源故事：来自哪一段铁路、哪一栋建筑、经过几次再生——京张记忆存在于市民每天使用的座椅、雨棚与展架中。</p>
+  </div>
+</section>
+
+<!-- ==========================================
+     12 · 六个创新生态项目包
+     ========================================== -->
+<section class="slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>11 · 项目包</div>
+    <h2 class="reveal" data-edit>六个创新生态项目包：连接空间建设与产业运营</h2>
+    <table class="reveal">
+      <tr><th>项目包</th><th>空间载体</th><th>合作主体</th><th>公共回报</th></tr>
+      <tr><td data-edit><b class="mono copper">E01</b> 共享实验设施</td><td data-edit>创新大厅、研发庭院</td><td data-edit>高校、科研机构、企业</td><td data-edit>开放设备时段、公众课程</td></tr>
+      <tr><td data-edit><b class="mono copper">E02</b> 城市真实场景测试</td><td data-edit>测试街、社区服务站</td><td data-edit>企业、社区、主管单位</td><td data-edit>结果公开、问题退出机制</td></tr>
+      <tr><td data-edit><b class="mono copper">E03</b> 青年驻留与共创</td><td data-edit>青年居所、共享首层</td><td data-edit>高校、基金会、运营方</td><td data-edit>社区课题、人才留驻</td></tr>
+      <tr><td data-edit><b class="mono copper">E04</b> 循环建造平台</td><td data-edit>材料工坊、更新建筑</td><td data-edit>设计机构、施工企业</td><td data-edit>材料护照、构件库、公众培训</td></tr>
+      <tr><td data-edit><b class="mono copper">E05</b> 遗产开放档案</td><td data-edit>记忆站台、数字档案室</td><td data-edit>档案机构、社区、文化团队</td><td data-edit>公众可访问档案与口述史</td></tr>
+      <tr><td data-edit><b class="mono copper">E06</b> 公共价值采购</td><td data-edit>分布式节点、线上平台</td><td data-edit>公共部门、企业、第三方评估</td><td data-edit>以可验证公共成效作为续约依据</td></tr>
+    </table>
+    <p class="small muted reveal" data-edit style="margin-top:var(--element-gap)">统一开放时段、数据记录、成果归档与年度评估规则——空间共享不停留在名义层面。</p>
+  </div>
+</section>
+
+<!-- ==========================================
+     13 · 三个可证伪验证项目
+     ========================================== -->
+<section class="slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>12 · 先行验证</div>
+    <h2 class="reveal" data-edit>三个可证伪协议：写明继续、停止与恢复</h2>
+    <div class="cards reveal">
+      <div class="card">
+        <p class="role" data-edit>P1 · 众智园</p>
+        <h3 data-edit>生态基线与修复样地</h3>
+        <p data-edit>不少于一个生长季的土壤、生境、微气候基线；干预组与对照组同地块并置。</p>
+        <p data-edit><span class="badge badge-concept">证伪点</span> 完整周期后干预组无确认意义的改善——公开承认无效，策略退出工具包。</p>
+      </div>
+      <div class="card">
+        <p class="role" data-edit>P2 · 大钟寺</p>
+        <h3 data-edit>AI 社区服务与无障碍公共站</h3>
+        <p data-edit>人工与数字服务长期并行；数据最小化、人工兜底、可退出。</p>
+        <p data-edit><span class="badge badge-concept">证伪点</span> 弱势群体满意度低于纯人工基线——承认 AI 介入不成立，退回人工模式。</p>
+      </div>
+      <div class="card">
+        <p class="role" data-edit>P3 · 众智园工坊</p>
+        <h3 data-edit>循环材料与可拆装构件</h3>
+        <p data-edit>再利用构件与新制构件并列安装、同步记录；消防耐久检测为前置门槛。</p>
+        <p data-edit><span class="badge badge-concept">证伪点</span> 维护成本高于新制对照且无改进路径——缩减至展示用途，不作规模推广。</p>
+      </div>
+    </div>
+    <p class="small muted reveal" data-edit style="margin-top:var(--element-gap)">阈值类数字在基线调查完成前一律留空，由评审会确认并公开——不预设虚假精度。王阿姨不需要知道什么是大模型，她的等待时间决定这套系统是否继续存在。</p>
+  </div>
+</section>
+
+<!-- ==========================================
+     14 · 三个品牌性公共载体
+     ========================================== -->
+<section class="slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>13 · 品牌载体</div>
+    <h2 class="reveal" data-edit>母品牌标志与视觉识别规则</h2>
+    <div class="brand-system reveal">
+      <div class="brand-mark"><img src="../assets/figures/jingzhang-growth-mark.svg" alt="京张生长网络原创标志：人字形双轨、交换节点与开口回流环"></div>
+      <div class="brand-rules">
+        <div class="brand-rule"><h3 data-edit>构成</h3><p data-edit>京张双轨 + “人”字分叉 + 育传用还节点回路；原创纯矢量几何。</p></div>
+        <div class="brand-rule"><h3 data-edit>色彩</h3><p data-edit>墨蓝主轴、铜金交换、青瓷回流、信号蓝生长接口；单色统一黑或白。</p></div>
+        <div class="brand-rule"><h3 data-edit>尺寸与留白</h3><p data-edit>印刷 ≥18 mm，屏幕 ≥72 px；净空 ≥ 中心节点直径；禁止拉伸、旋转、阴影。</p></div>
+        <div class="brand-rule"><h3 data-edit>双语字阶</h3><p data-edit>主标题 Noto Serif CJK SC 700；副标题 IBM Plex Mono 500；约 3:1。</p></div>
+        <div class="brand-rule"><h3 data-edit>agent.5 导视</h3><p data-edit>只继承轨道线、节点与色彩层级作为导向语法，服从母标。</p></div>
+        <div class="brand-rule"><h3 data-edit>agent.6 活动</h3><p data-edit>母标 + 活动名称 + 年份；L1–L3 仅以名称与节点色区分，不另造主标。</p></div>
+      </div>
+    </div>
+    <p class="small muted reveal" data-edit style="margin-top:var(--element-gap)">从哪里来 · 如何认识当下 · 共同走向哪里：L1 京张记忆站台、L2 城市智能观测厅、L3 未来公共生活厅共同承载母品牌，不各自建立竞争性标识。</p>
+  </div>
+</section>
+
+<!-- ==========================================
+     15 · AI 与空间运行闭环
+     ========================================== -->
+<section class="slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>14 · 运行闭环</div>
+    <h2 class="reveal" data-edit>AI 进入基线、服务、运营和评估闭环</h2>
+    <div class="loop reveal" style="margin-bottom:var(--content-gap)">
+      <span class="box" data-edit>环境与使用基线</span><span class="arrow">→</span>
+      <span class="box" data-edit>问题识别</span><span class="arrow">→</span>
+      <span class="box" data-edit>小尺度空间干预</span><span class="arrow">→</span>
+      <span class="box" data-edit>真实场景运行</span><span class="arrow">→</span>
+      <span class="box" data-edit>公众反馈与数据评估</span><span class="arrow">→</span>
+      <span class="box decision" data-edit>继续 / 调整 / 退出</span>
+    </div>
+    <div class="cards reveal">
+      <div class="card"><p data-edit>AI 的角色限定为辅助识别、预测、匹配和评估；重要公共决策保持可解释和人工负责。</p></div>
+      <div class="card"><p data-edit>数据边界：采集对应明确公共目的；优先匿名聚合数据；不以算法评分替代公共服务资格判断。</p></div>
+      <div class="card"><p data-edit>场景上线前明确责任主体、保留期限、申诉与退出机制；观测厅公开指标定义、数据时间与不确定性。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     16 · 实施与运营
+     ========================================== -->
+<section class="slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>15 · 实施与运营</div>
+    <h2 class="reveal" data-edit>四阶段实施，五方运营结构</h2>
+    <table class="reveal">
+      <tr><th>阶段</th><th>节奏</th><th>主要动作</th><th>阶段成果</th></tr>
+      <tr><td data-edit><b>0 基线与共识</b></td><td data-edit>0—12 个月</td><td data-edit>场地调查、遗产与生态基线、临时开放</td><td data-edit>项目清单、基线数据库、首批运营伙伴</td></tr>
+      <tr><td data-edit><b>1 先行连接</b></td><td data-edit>1—2 年</td><td data-edit>横向缝合点、轻量公共站、三个验证项目</td><td data-edit>首段可用公共网络与验证报告</td></tr>
+      <tr><td data-edit><b>2 重点片区</b></td><td data-edit>2—5 年</td><td data-edit>存量更新、核心节点与公共首层建设</td><td data-edit>三处重点片区形成可识别样板</td></tr>
+      <tr><td data-edit><b>3 网络扩展</b></td><td data-edit>5 年后</td><td data-edit>依评估复制节点、补齐网络、动态更新</td><td data-edit>全线协同运营与对外推广工具包</td></tr>
+    </table>
+    <div class="chips reveal" style="margin-top:var(--content-gap)">
+      <span class="chip"><span data-edit>公共平台主管单位 · 目标与准入</span></span>
+      <span class="chip"><span data-edit>专业运营团队 · 招商与维护</span></span>
+      <span class="chip"><span data-edit>高校科研联盟 · 监测与评议</span></span>
+      <span class="chip"><span data-edit>社区议事机制 · 监督与反馈</span></span>
+      <span class="chip"><span data-edit>企业项目伙伴 · 技术与风险承担</span></span>
+    </div>
+    <p class="small muted reveal" data-edit style="margin-top:var(--element-gap)">时间为概念性节奏，需在权属、审批、资金与工程条件明确后校正。</p>
+  </div>
+</section>
+
+<!-- ==========================================
+     图05 · 实施分期与证据仪表板
+     ========================================== -->
+<section class="slide figure-slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>图件 05 · 实施分期与证据仪表板</div>
+    <img class="slide-figure reveal" src="../assets/figures/metrics-evidence.png" alt="实施分期与证据仪表板：四阶段实施、三个可证伪验证项目协议卡、基线—干预—评估闭环">
+    <p class="figure-caption reveal" data-edit>四阶段实施 · 三个可证伪验证项目协议卡 · 基线—干预—评估—扩展闭环</p>
+  </div>
+</section>
+
+<!-- ==========================================
+     17 · agent.4 独立成果
+     ========================================== -->
+<section class="slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>16 · agent.4 独立成果</div>
+    <h2 class="reveal" data-edit>公共荣誉展示体系 + 公共空间组件库</h2>
+    <table class="reveal"><thead><tr><th data-edit>治理/组件</th><th data-edit>规则</th><th data-edit>空间映射</th><th data-edit>退出</th></tr></thead><tbody>
+      <tr><td data-edit><b>候选展示</b></td><td data-edit>公共价值标准 → 开放提名 → 证据审核 → 异议期；候选不等于授牌或机构背书</td><td data-edit>L1 记忆档案 · L2 数据与失败档案 · L3 开放作品</td><td data-edit>年度复核；证据失效、争议未解或公共价值不成立即撤下并留更正记录</td></tr>
+      <tr><td data-edit><b>H 展示档案</b></td><td data-edit>大字高对比结论 → 易读图文 → 二维码/音频/完整证据；核心信息不只放手机端</td><td data-edit>L1–L3 模块化展板；轻量站只显示所在地内容</td><td data-edit>可逆连接，展期结束回库；数字链接迁移归档</td></tr>
+      <tr><td data-edit><b>R 停留交流</b></td><td data-edit>靠背扶手座椅、轮椅并排位、遮阳避雨；保持回转与连续通行净宽</td><td data-edit>L1–L3 安静停留点；轻量站邻近人工服务</td><td data-edit>妨碍通行或维护超限即移位/退役</td></tr>
+      <tr><td data-edit><b>W 导视服务</b></td><td data-edit>视觉/触觉/听觉/简明文字至少两种通道；中英双语 + 人工解释</td><td data-edit>L1–L3 同一语法；轻量站显示公共服务、无障碍路径和出口</td><td data-edit>错误导向立即遮蔽更新，保留修订日志</td></tr>
+    </tbody></table>
+    <p class="small muted reveal" data-edit style="margin-top:var(--element-gap)">版权红线：逐项登记作者、许可、来源、AI 辅助与到期日；无许可照片、机构标识、个人信息和非公开数据不展示；争议期间暂停传播。未取得场地、文保和运营许可时不布设实体。</p>
+  </div>
+</section>
+
+<!-- ==========================================
+     18 · 结束页：边界与红线
+     ========================================== -->
+<section class="slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>18 · 审阅索引 REVIEW INDEX</div>
+    <h2 class="reveal" data-edit>评审定位：内容区块、指标与证据锚点</h2>
+    <p class="lede reveal" data-edit>本页把展示页内容映射到评审所需的内容区块与机器可读证据，便于对照 proposal.md 十三章、metrics.json、compliance_matrix.json 与四门自检结果。</p>
+    <div class="cards reveal">
+      <div class="card"><p data-edit><b>总览地图</b>：第 4 页现状与范围总览（site-overview 图，临时几何）。</p></div>
+      <div class="card"><p data-edit><b>三层范围</b>：统筹研究范围约 43.6 km²、总体设计范围约 11.4 km²、重点区域合计约 368.4 ha（公告口径，provisional 轮廓）。</p></div>
+      <div class="card"><p data-edit><b>重点区域</b>：众智园、AI 原点社区、大钟寺三处重点片区（育—传—用—还，第 7 页）。</p></div>
+      <div class="card"><p data-edit><b>用地分区</b>：六类功能用地 30 块无重叠覆盖总体设计范围（land-use-structure 图 + geometry/land_use.geojson）。</p></div>
+      <div class="card"><p data-edit><b>交通慢行</b>：京张公共创新主轴慢行主线 + 三级横向缝合 + 四个轨道站点节点（geometry/roads.geojson，概念线位）。</p></div>
+      <div class="card"><p data-edit><b>蓝绿公共空间</b>：遗产公园六段 + 小月河蓝绿廊道 + 三处共享广场（geometry/green_space.geojson / public_space.geojson）。</p></div>
+      <div class="card"><p data-edit><b>建筑</b>：四种建筑原型与 14 个概念建筑基底，含高度与层数概念区间（geometry/buildings.geojson）。</p></div>
+      <div class="card"><p data-edit><b>更新项目</b>：六个创新生态项目包 E01–E06 与三片区首期项目包，四阶段实施（geometry/phasing.geojson）。</p></div>
+      <div class="card"><p data-edit><b>AI 场景</b>：12 张场景卡与 6 类使用者画像，含数据治理边界（第 12-13 页）。</p></div>
+      <div class="card"><p data-edit><b>核心指标</b>（provisional 概念模型值，与 metrics.json 一致）：总体设计范围 <span data-metric="site_area_sqm" data-value="11412825.4">约 1,141.28 公顷</span>；绿地水系占比 <span data-metric="green_ratio" data-value="0.2796">约 27.96%</span>；公共空间占比 <span data-metric="public_space_ratio" data-value="0.1111">约 11.11%</span>。</p></div>
+      <div class="card"><p data-edit><b>任务覆盖</b>：官方公告 17 项 + 智能体任务书 6 项，共 23 项逐条应答（compliance_matrix.json）。</p></div>
+      <div class="card"><p data-edit><b>自检状态</b>：官方四门检查（deterministic / spatial / visual / professional）结果持久化于 self_check.json，manifest.json 登记 validation_claim。</p></div>
+      <div class="card"><p data-edit><b>来源</b>：全部资料来源、许可与限制逐项登记于 sources.json；图件为本包自产，不含第三方图像素材。</p></div>
+      <div class="card"><p data-edit><b>假设</b>：十项数据缺口与复算触发器登记于 assumptions.json（A-BOUNDARY-001 至 A-ENUM-010）。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide closing">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>17 · 边界声明</div>
+    <h2 class="reveal" data-edit>我们承诺不做什么</h2>
+    <div class="cards reveal">
+      <div class="card"><p data-edit>不以机器人数量、屏幕数量或算法名称代替公共价值；</p></div>
+      <div class="card"><p data-edit>无基线不宣称生态改善，无检测不宣称污染修复；</p></div>
+      <div class="card"><p data-edit>新型生物基材料先检测，只进入经检测的非结构场景；</p></div>
+      <div class="card"><p data-edit>所有范围、指标、分期均标注概念属性，不冒充法定结论。</p></div>
+    </div>
+    <p class="reveal" data-edit style="margin-top:var(--content-gap);font-size:clamp(1rem,2.4vw,1.5rem);color:#fff">沿京张，让城市不再一次建成，<span style="color:var(--copper)">而在持续交换中更新。</span></p>
+    <p class="small reveal" data-edit style="margin-top:var(--element-gap);color:#9aa0b4;font-family:var(--font-mono)">京张生长网络 · JINGZHANG ADAPTIVE COMMONS · 投稿发布版 v1.0.3 · 2026-08-26</p>
+  </div>
+</section>
+
+<script>
+/* ===========================================
+   SLIDE PRESENTATION CONTROLLER
+   键盘 / 滚轮(原生 snap) / 触摸 / 进度条 / 导航点
+   =========================================== */
+class SlidePresentation {
+  constructor() {
+    this.slides = Array.from(document.querySelectorAll(".slide"));
+    this.currentSlide = 0;
+    this.navDotsContainer = document.getElementById("navDots");
+    this.topTabs = Array.from(document.querySelectorAll("#topTabs a[data-goto]"));
+    this.setupTopTabs();
+    this.setupNavDots();
+    this.setupIntersectionObserver();
+    this.setupKeyboardNav();
+    this.setupTouchNav();
+    this.setupProgressBar();
+  }
+  setupNavDots() {
+    // Always clear first — avoids duplicate dots if outerHTML was re-saved
+    this.navDotsContainer.innerHTML = "";
+    this.slides.forEach((_, i) => {
+      const a = document.createElement("a");
+      a.href = "#";
+      a.setAttribute("aria-label", "第 " + (i + 1) + " 页");
+      a.addEventListener("click", (e) => { e.preventDefault(); this.goTo(i); });
+      this.navDotsContainer.appendChild(a);
+    });
+  }
+  setupIntersectionObserver() {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          this.currentSlide = this.slides.indexOf(entry.target);
+          this.updateDots();
+        }
+      });
+    }, { threshold: 0.55 });
+    this.slides.forEach((s) => io.observe(s));
+    this.slides[0].classList.add("visible");
+  }
+  setupKeyboardNav() {
+    document.addEventListener("keydown", (e) => {
+      if (e.target.getAttribute && e.target.getAttribute("contenteditable") === "true") return;
+      const next = ["ArrowRight", "ArrowDown", " ", "PageDown"].includes(e.key);
+      const prev = ["ArrowLeft", "ArrowUp", "PageUp"].includes(e.key);
+      if (next) { e.preventDefault(); this.goTo(this.currentSlide + 1); }
+      else if (prev) { e.preventDefault(); this.goTo(this.currentSlide - 1); }
+      else if (e.key === "Home") { e.preventDefault(); this.goTo(0); }
+      else if (e.key === "End") { e.preventDefault(); this.goTo(this.slides.length - 1); }
+    });
+  }
+  setupTouchNav() {
+    let startY = null;
+    document.addEventListener("touchstart", (e) => { startY = e.touches[0].clientY; }, { passive: true });
+    document.addEventListener("touchend", (e) => {
+      if (startY === null) return;
+      const dy = startY - e.changedTouches[0].clientY;
+      if (Math.abs(dy) > 60) this.goTo(this.currentSlide + (dy > 0 ? 1 : -1));
+      startY = null;
+    }, { passive: true });
+  }
+  setupProgressBar() {
+    const bar = document.getElementById("progressBar");
+    const update = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + "%";
+    };
+    document.addEventListener("scroll", update, { passive: true });
+    update();
+  }
+  setupTopTabs() {
+    // 顶部 Tab：点击跳转对应页
+    this.topTabs.forEach((a) => {
+      a.addEventListener("click", (e) => {
+        e.preventDefault();
+        this.goTo(parseInt(a.dataset.goto, 10));
+      });
+    });
+  }
+  updateDots() {
+    Array.from(this.navDotsContainer.children).forEach((d, i) =>
+      d.classList.toggle("active", i === this.currentSlide));
+    // 同步顶部 Tab 高亮，并把当前 Tab 滚动到可见位置
+    this.topTabs.forEach((a, i) => {
+      const active = parseInt(a.dataset.goto, 10) === this.currentSlide;
+      a.classList.toggle("active", active);
+      if (active) a.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+    });
+  }
+  goTo(i) {
+    const idx = Math.max(0, Math.min(this.slides.length - 1, i));
+    this.slides[idx].scrollIntoView({ behavior: "smooth" });
+  }
+}
+const deck = new SlidePresentation();
+
+/* ===========================================
+   INLINE EDITING
+   E 键 / 左上角热区 进入；自动保存 localStorage；Ctrl/⌘+S 导出
+   =========================================== */
+const LS_KEY = "jz-adaptive-commons-edits";
+const editor = {
+  isActive: false,
+  toggleEditMode() {
+    this.isActive = !this.isActive;
+    document.body.classList.toggle("edit-active", this.isActive);
+    document.getElementById("editToggle").classList.toggle("active", this.isActive);
+    document.getElementById("editBanner").classList.toggle("active", this.isActive);
+    document.querySelectorAll("[data-edit]").forEach((el) => {
+      if (this.isActive) el.setAttribute("contenteditable", "true");
+      else el.removeAttribute("contenteditable");
+    });
+    if (!this.isActive) this.save();
+  },
+  save() {
+    const data = {};
+    document.querySelectorAll("[data-edit]").forEach((el, i) => { data[i] = el.innerHTML; });
+    localStorage.setItem(LS_KEY, JSON.stringify(data));
+  },
+  load() {
+    try {
+      const data = JSON.parse(localStorage.getItem(LS_KEY) || "{}");
+      document.querySelectorAll("[data-edit]").forEach((el, i) => {
+        if (data[i] !== undefined) el.innerHTML = data[i];
+      });
+    } catch (e) { /* ignore corrupt storage */ }
+  },
+  exportFile() {
+    // Strip edit state before capturing outerHTML so the saved file opens cleanly
+    const editableEls = Array.from(document.querySelectorAll("[contenteditable]"));
+    editableEls.forEach((el) => el.removeAttribute("contenteditable"));
+    document.body.classList.remove("edit-active");
+    const toggle = document.getElementById("editToggle");
+    const banner = document.getElementById("editBanner");
+    toggle?.classList.remove("active", "show");
+    banner?.classList.remove("active", "show");
+
+    const html = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+
+    if (this.isActive) {
+      document.body.classList.add("edit-active");
+      editableEls.forEach((el) => el.setAttribute("contenteditable", "true"));
+      toggle?.classList.add("active");
+      banner?.classList.add("active");
+    }
+
+    const blob = new Blob([html], { type: "text/html" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "jingzhang-adaptive-commons.html";
+    a.click();
+    URL.revokeObjectURL(a.href);
+  }
+};
+editor.load();
+
+// Autosave on input while editing
+document.addEventListener("input", (e) => {
+  if (editor.isActive && e.target.hasAttribute && e.target.hasAttribute("data-edit")) editor.save();
+});
+
+// Toggle button click
+document.getElementById("editToggle").addEventListener("click", () => editor.toggleEditMode());
+
+// Hotzone hover with 400ms grace period (CSS ~ sibling approach breaks on pointer-events)
+const hotzone = document.getElementById("editHotzone");
+const editToggle = document.getElementById("editToggle");
+let hideTimeout = null;
+hotzone.addEventListener("mouseenter", () => { clearTimeout(hideTimeout); editToggle.classList.add("show"); });
+hotzone.addEventListener("mouseleave", () => {
+  hideTimeout = setTimeout(() => { if (!editor.isActive) editToggle.classList.remove("show"); }, 400);
+});
+editToggle.addEventListener("mouseenter", () => clearTimeout(hideTimeout));
+editToggle.addEventListener("mouseleave", () => {
+  hideTimeout = setTimeout(() => { if (!editor.isActive) editToggle.classList.remove("show"); }, 400);
+});
+hotzone.addEventListener("click", () => editor.toggleEditMode());
+
+// Keyboard: E toggles edit mode; Ctrl/⌘+S exports
+document.addEventListener("keydown", (e) => {
+  if ((e.key === "e" || e.key === "E") && !(e.target.getAttribute && e.target.getAttribute("contenteditable") === "true")) {
+    editor.toggleEditMode();
+  }
+  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "s") {
+    e.preventDefault();
+    editor.save();
+    editor.exportFile();
+  }
+});
+</script>
+</body>
+</html>

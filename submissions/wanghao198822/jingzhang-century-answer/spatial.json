@@ -1,0 +1,386 @@
+{
+  "version": 1,
+  "disclaimer": "concept-only",
+  "summary": "只表达概念节点、概念廊道与概念区域，不含坐标、红线、权属或审定指标。每一条都锚定随包 geometry/*.geojson 中真实存在的要素，source 字段给出要素 id、metrics.json 中对应的指标 id 与假设登记号，可逐条回查；不新增几何里没有的落位。全部落位基于临时边界口径，该边界较真实京张廊道东偏1.9至2.7公里，正文与假设登记已公开披露。",
+  "items": [
+    {
+      "id": "plaza-bell-sound",
+      "type": "node",
+      "title": "钟声广场（大钟寺·应答钟概念广场）",
+      "summary": "南问段仪式主场：四条声波径把轨道站四象限接进广场，铺装以面层骨料与颜色变化提示方向、一律不做凸起，避免绊人与卡轮椅。广场与城市道路的界面见概念断面 assets/figures/section-dzs-2.png。概念建议，选址与规模待专业团队深化。",
+      "source": "本方案概念设计｜geometry/public_space.geojson#PUBLIC-001｜metric:public_space_bell_plaza_area_sqm｜source:DZS-MUSEUM-2021",
+      "public_level": "provisional",
+      "linked_scenarios": [
+        "ai-traffic-walkability",
+        "ai-cultural-guide"
+      ],
+      "order": 1,
+      "geometry": {
+        "mode": "concept",
+        "label": "大钟寺片区，轨道站四象限与公园绿廊之间（临时边界口径的概念示意）"
+      }
+    },
+    {
+      "id": "landmark-answer-bell",
+      "type": "node",
+      "title": "应答钟阁概念基底（钟声广场内）",
+      "summary": "四柱独立钢框架，柱脚落在自身独立基础上，不依附、不搭接、不受力于任何既有建筑或古建；为当代新铸之钟，与大钟寺馆藏文物古钟仅为文化呼应关系，不涉及文物本体。西北文保象限不进任何新增构筑。体量与基础待专业团队核定。",
+      "source": "本方案概念设计｜geometry/buildings.geojson#BLDG-001｜metric:building_bell_pavilion_footprint_sqm｜assumption:A-HERITAGE-001",
+      "public_level": "provisional",
+      "linked_scenarios": [
+        "ai-cultural-guide"
+      ],
+      "order": 2,
+      "geometry": {
+        "mode": "concept",
+        "label": "钟声广场内，避开西北文保象限（概念示意）"
+      }
+    },
+    {
+      "id": "plaza-station-memorial",
+      "type": "node",
+      "title": "清华园车站站前纪念广场（素广场）",
+      "summary": "中答段纪念主场：只做减法的素广场，承接每年一次的公益性纪念开放日，无企业冠名、无商业路演、无当场钉钉。文物保护范围GIS数据缺失，本处为待文物部门协商的概念选点，不得视为已确定落位。",
+      "source": "本方案概念设计｜geometry/public_space.geojson#PUBLIC-002｜metric:public_space_station_plaza_area_sqm｜source:THU-STATION-2023",
+      "public_level": "provisional",
+      "linked_scenarios": [
+        "ai-cultural-guide"
+      ],
+      "order": 3,
+      "geometry": {
+        "mode": "concept",
+        "label": "清华园车站旧址站前，待文物部门协商的概念选点"
+      }
+    },
+    {
+      "id": "marker-zero-kilometer",
+      "type": "node",
+      "title": "零公里桩概念选点（道钉带原点）",
+      "summary": "道钉带的计量原点，刻字规则与全线道钉同规格。作为素广场范围内的概念选点，与应答簿同批待文物部门协商，协商结果可能改变选点、体量或取消装置；协商完成前不做任何落位结论。",
+      "source": "本方案概念设计｜落位于 geometry/public_space.geojson#PUBLIC-002 内｜assumption:A-HERITAGE-001｜source:CAC-FILING-LIST",
+      "public_level": "provisional",
+      "linked_scenarios": [
+        "ai-cultural-guide"
+      ],
+      "order": 4,
+      "geometry": {
+        "mode": "concept",
+        "label": "站前纪念广场范围内，待文物部门协商的概念选点"
+      }
+    },
+    {
+      "id": "plaza-gate-micro",
+      "type": "node",
+      "title": "应答门社区微广场示范点（东翼界面）",
+      "summary": "沿线应答门的示范样段：门侧须现场可见认领主体与不用手机即可获取的反馈方式；门内外触觉引导带衔接中断即触发该门一票否决，整改前不得开放任何智能层服务。出入口数量与位置以实际建成为准。",
+      "source": "本方案概念设计｜geometry/public_space.geojson#PUBLIC-004｜metric:public_space_community_micro_plaza_area_sqm｜assumption:A-GATE-001",
+      "public_level": "provisional",
+      "linked_scenarios": [
+        "ai-cultural-guide",
+        "ai-health-service-navigation"
+      ],
+      "order": 5,
+      "geometry": {
+        "mode": "concept",
+        "label": "公园东翼一页考卷界面，社区一侧出入口处（概念示意）"
+      }
+    },
+    {
+      "id": "landmark-evolution-archive",
+      "type": "node",
+      "title": "城市进化档案馆概念装置（道钉带旁）",
+      "summary": "全部核验轮次的原始记录——核查表、照片、时间戳、签认人——统一归入此处，与年度报告同批公开，不另建台账。归档责任须随运营主体确定后一并明确，在此之前不写入任何含责任主体的承诺性表述。",
+      "source": "本方案概念设计｜geometry/buildings.geojson#BLDG-002｜metric:building_archive_pavilion_footprint_sqm｜assumption:A-OPERATOR-001",
+      "public_level": "provisional",
+      "linked_scenarios": [
+        "ai-cultural-guide"
+      ],
+      "order": 6,
+      "geometry": {
+        "mode": "concept",
+        "label": "中答段道钉带核心界面一侧（概念示意）"
+      }
+    },
+    {
+      "id": "station-factor-service",
+      "type": "node",
+      "title": "要素服务驿站示范点（东翼低效空间）",
+      "summary": "产业服务与健康服务导航共用的沿线驿站示范点，落在东翼既有低效空间、不新增建筑体量。备案辅导只做公开信息问答、不当场兑付，企业材料用后即删；健康导航只导航不诊疗，越界一条即全场景下线。",
+      "source": "本方案概念设计｜geometry/buildings.geojson#BLDG-003｜metric:building_service_station_footprint_sqm｜assumption:A-OPERATOR-001",
+      "public_level": "provisional",
+      "linked_scenarios": [
+        "enterprise-service-copilot",
+        "ai-health-service-navigation"
+      ],
+      "order": 7,
+      "geometry": {
+        "mode": "concept",
+        "label": "公园东翼界面带内，低效空间概念布点（概念示意）"
+      }
+    },
+    {
+      "id": "test-site-t0-workbench",
+      "type": "node",
+      "title": "T0 室内中试工位（既有产业载体首层）",
+      "summary": "四级放开的第一级：进入条件为运营主体登记与设备安全预案备案，设备安全事件即停。落在既有产业载体首层、不新增建筑；模型demo接入测试自此级起步，配一段道钉样段端到端跑通后再向全线推广。",
+      "source": "本方案概念设计｜位于 geometry/key_areas.geojson#PROV-KEY-001 内｜assumption:A-PILOT-001｜source:XUEBEI-PARK-2026",
+      "public_level": "provisional",
+      "linked_scenarios": [
+        "enterprise-service-copilot",
+        "robot-delivery-low-speed"
+      ],
+      "order": 8,
+      "geometry": {
+        "mode": "concept",
+        "label": "众智园片区既有产业载体首层（概念示意，不新增建筑）"
+      }
+    },
+    {
+      "id": "corridor-spine-scroll",
+      "type": "corridor",
+      "title": "九公里应答长卷慢行主线（概念线）",
+      "summary": "全线纵向骨架。二期建成开放后南北慢行已在绿廊内贯通，本方案不改其断面，只在其上挂载道钉带与三条东西缝合线的接点；真正待解的是东西向穿越。概念线仅表达联通意向，不代表道路红线、断面或工程结论。",
+      "source": "本方案概念设计｜geometry/roads.geojson#ROAD-001｜metric:spine_greenway_length_m｜source:PARK2-OPEN-2026",
+      "public_level": "provisional",
+      "linked_scenarios": [
+        "ai-traffic-walkability"
+      ],
+      "order": 9,
+      "geometry": {
+        "mode": "concept",
+        "label": "京张铁路遗址公园全线，南起大钟寺段、北至清河一侧（概念示意）"
+      }
+    },
+    {
+      "id": "belt-daoding-inscription",
+      "type": "corridor",
+      "title": "道钉带（备案事件铸刻带）",
+      "summary": "沿主脊铺设的铸刻带，每颗钉刻模型名称、备案单位、备案编号、备案时间四字段，须在国家级公告附件中逐条核到方可安装，核不到不钉。步道断面见 assets/figures/section-ori-3.png；密度为概念设计密度，实装数量随公告批次变动。",
+      "source": "本方案概念设计｜沿 geometry/roads.geojson#ROAD-001 布设｜metric:daoding_design_density_per_km｜source:CAC-FILING-LIST",
+      "public_level": "provisional",
+      "linked_scenarios": [
+        "ai-cultural-guide",
+        "enterprise-service-copilot"
+      ],
+      "order": 10,
+      "geometry": {
+        "mode": "concept",
+        "label": "沿九公里主脊步道，原点为站前纪念广场内的零公里桩（概念示意）"
+      }
+    },
+    {
+      "id": "corridor-suture-bell-gate",
+      "type": "corridor",
+      "title": "东西缝合线·鸣钟之门段（概念示范线）",
+      "summary": "南问段东西向缝合示范线：在绿廊东侧边界靠近三环处设应答门，把东侧街坊直接接进绿廊，绿廊本体断面维持现状、不因广场而改造。本段相关概念断面两处：assets/figures/section-dzs-1.png（声波径穿越城市道路）、assets/figures/section-dzs-3.png（桥下空间由无序停车改为公共使用）。",
+      "source": "本方案概念设计｜geometry/roads.geojson#ROAD-003｜metric:suture_line_bell_gate_length_m｜source:PARK2-PLAN-2024",
+      "public_level": "provisional",
+      "linked_scenarios": [
+        "ai-traffic-walkability",
+        "robot-delivery-low-speed"
+      ],
+      "order": 11,
+      "geometry": {
+        "mode": "concept",
+        "label": "大钟寺段，绿廊东侧边界靠近三环处（概念示意）"
+      }
+    },
+    {
+      "id": "corridor-suture-answer-origin",
+      "type": "corridor",
+      "title": "东西缝合线·应答原点段（概念示范线）",
+      "summary": "中答段东西向缝合示范线，按贴边、穿下、借道的谈判难度排序推进校区—园区—社区三合一缝合。概念断面两处：校园围墙界面透而不破 assets/figures/section-ori-1.png、轨道站点一体化步行接驳 assets/figures/section-ori-2.png。",
+      "source": "本方案概念设计｜geometry/roads.geojson#ROAD-004｜metric:suture_line_answer_origin_length_m｜assumption:A-CONTROLS-001",
+      "public_level": "provisional",
+      "linked_scenarios": [
+        "ai-traffic-walkability"
+      ],
+      "order": 12,
+      "geometry": {
+        "mode": "concept",
+        "label": "AI原点社区段，校区、园区与社区之间（概念示意）"
+      }
+    },
+    {
+      "id": "corridor-suture-north-leap",
+      "type": "corridor",
+      "title": "东西缝合线·人字之跃段（概念示范线）",
+      "summary": "北跃段东西向缝合示范线，指向五环路穿越的概念节点方向。桥体须先完成五项前置确认才进入专项研究，本线在桥长期不落地时仍作为地面段独立成立，不把该段价值全部押在一座桥上。",
+      "source": "本方案概念设计｜geometry/roads.geojson#ROAD-005｜metric:suture_line_north_leap_length_m｜assumption:A-BOUNDARY-001",
+      "public_level": "provisional",
+      "linked_scenarios": [
+        "ai-traffic-walkability"
+      ],
+      "order": 13,
+      "geometry": {
+        "mode": "concept",
+        "label": "众智园段，指向五环路穿越概念节点方向（概念示意）"
+      }
+    },
+    {
+      "id": "corridor-robot-test-lane",
+      "type": "corridor",
+      "title": "低速物流机器人测试通道（概念线）",
+      "summary": "与无障碍坡道一套改造两用：轮椅优先、机器人强制停让为通过硬条件，一次未停即整批下线。建议先行于已开放的一期建成段验证，以取得相应管理许可为前提；不含坡度、净宽、荷载与运营时段任何结论。",
+      "source": "本方案概念设计｜geometry/roads.geojson#ROAD-002｜metric:low_speed_logistics_route_length_m｜assumption:A-ROBOT-001",
+      "public_level": "provisional",
+      "linked_scenarios": [
+        "robot-delivery-low-speed"
+      ],
+      "order": 14,
+      "geometry": {
+        "mode": "concept",
+        "label": "一期已开放建成段内的受管理动线（概念示意）"
+      }
+    },
+    {
+      "id": "test-loop-t1-closed",
+      "type": "corridor",
+      "title": "T1 封闭测试环线（可整体关闭）",
+      "summary": "四级放开的第二级：物理隔离、可整体关闭，进入条件为T0连续无事件运行与安全预案通过，任一次脱离环线即退回T0。落在小月河一侧绿地内；首个环线仍建议先行于已开放建成段验证。",
+      "source": "本方案概念设计｜位于 geometry/green_space.geojson#GREEN-003 一侧｜assumption:A-ROBOT-001｜source:PARK1-YLLHJ-2023",
+      "public_level": "provisional",
+      "linked_scenarios": [
+        "robot-delivery-low-speed"
+      ],
+      "order": 15,
+      "geometry": {
+        "mode": "concept",
+        "label": "北跃段小月河一侧绿地内的独立环线（概念示意）"
+      }
+    },
+    {
+      "id": "test-interface-t2-shared",
+      "type": "corridor",
+      "title": "T2 半开放共用界面（双用坡道）",
+      "summary": "四级放开的第三级：人字天桥坡道与应答门双用坡道，进入条件为T1达标、取得相应管理许可、安全员到位，任一次未按规则停让即退回T1。坡道本体未达现行无障碍工程建设标准的不得作为测试样段；折返坡道概念断面见 assets/figures/section-zzy-2.png。",
+      "source": "本方案概念设计｜geometry/public_space.geojson#PUBLIC-004 与 #PUBLIC-003 的坡道界面｜assumption:A-ROBOT-001",
+      "public_level": "provisional",
+      "linked_scenarios": [
+        "robot-delivery-low-speed",
+        "ai-traffic-walkability"
+      ],
+      "order": 16,
+      "geometry": {
+        "mode": "concept",
+        "label": "应答门样段坡道与北跃段桥头坡道界面（概念示意）"
+      }
+    },
+    {
+      "id": "plaza-bridgehead-north",
+      "type": "node",
+      "title": "人字天桥北桥头·未来之问广场（概念节点）",
+      "summary": "北跃段终点广场，与人字天桥概念节点同批推进。桥体属工程专项，本方案只给广场的轻量做法——场地平整、树阵、连续坐憩边界、地面刻字，不含任何桥梁工程结论；跨环路主跨概念断面见 assets/figures/section-zzy-1.png。",
+      "source": "本方案概念设计｜geometry/public_space.geojson#PUBLIC-003｜metric:public_space_north_bridgehead_area_sqm｜assumption:A-BOUNDARY-001",
+      "public_level": "provisional",
+      "linked_scenarios": [
+        "ai-traffic-walkability"
+      ],
+      "order": 17,
+      "geometry": {
+        "mode": "concept",
+        "label": "北跃段五环路穿越概念节点北侧桥头（概念示意）"
+      }
+    },
+    {
+      "id": "area-key-dazhongsi",
+      "type": "area",
+      "title": "大钟寺AI产业聚集区（南问·鸣钟之门）",
+      "summary": "三重点区之一，公告口径约72.0公顷；本包面积仅与公告口径做一致性校验、不作勘界，公告未给四至，矩形边不得解释为地块或道路红线。叙事角色为南问，承接商业路演与敲钟仪式，与车站段的纪念叙事错日、错址、错叙事。",
+      "source": "据公告推定的临时粗略范围｜geometry/key_areas.geojson#PROV-KEY-003｜metric:key_area_dazhongsi_area_sqm｜assumption:A-BOUNDARY-001",
+      "public_level": "provisional",
+      "linked_scenarios": [
+        "ai-traffic-walkability",
+        "ai-cultural-guide"
+      ],
+      "order": 18,
+      "geometry": {
+        "mode": "concept",
+        "label": "主脊南端，轨道站与商业界面之间（临时边界口径的粗略范围）"
+      }
+    },
+    {
+      "id": "area-key-ai-origin",
+      "type": "area",
+      "title": "北京AI原点社区（中答·应答原点）",
+      "summary": "三重点区之一，公告口径约104.3公顷；粗略范围据公告名称、南北顺序与约面积推定，公告未给四至。叙事角色为中答，承接公益纪念开放日与毕业礼，道钉带核心段与素广场均在本区内。",
+      "source": "据公告推定的临时粗略范围｜geometry/key_areas.geojson#PROV-KEY-002｜metric:key_area_ai_origin_area_sqm｜source:AI-ORIGIN-2026",
+      "public_level": "provisional",
+      "linked_scenarios": [
+        "ai-cultural-guide",
+        "ai-health-service-navigation"
+      ],
+      "order": 19,
+      "geometry": {
+        "mode": "concept",
+        "label": "主脊中段，清华园车站旧址一侧（临时边界口径的粗略范围）"
+      }
+    },
+    {
+      "id": "area-key-zhongzhiyuan",
+      "type": "area",
+      "title": "众智园AI自主创新加速区（北跃·人字之跃）",
+      "summary": "三重点区之一，公告口径约192.1公顷；粗略范围据公告名称、南北顺序与约面积推定，公告未给四至。叙事角色为北跃，承接测试验证主场（T0至T3四级场地）与清河蓝绿衔接；本段不在已批控规覆盖范围内，法定依据归属须另行核定。",
+      "source": "据公告推定的临时粗略范围｜geometry/key_areas.geojson#PROV-KEY-001｜metric:key_area_zhongzhiyuan_area_sqm｜assumption:A-PILOT-001",
+      "public_level": "provisional",
+      "linked_scenarios": [
+        "robot-delivery-low-speed",
+        "enterprise-service-copilot"
+      ],
+      "order": 20,
+      "geometry": {
+        "mode": "concept",
+        "label": "主脊北端，五环路与清河一侧（临时边界口径的粗略范围）"
+      }
+    },
+    {
+      "id": "area-east-wing-interface",
+      "type": "area",
+      "title": "公园东翼慢行公共活动界面带",
+      "summary": "要素服务驿站与路演界面的概念布点带，也是应答门社区微广场所在的界面。只做既有低效空间的界面梳理与朝公园一侧的开口改造，不新增建筑体量；具体点位待权属核定与专业团队深化。",
+      "source": "本方案概念设计｜geometry/public_space.geojson#PUBLIC-005｜metric:public_space_east_wing_belt_area_sqm｜assumption:A-SITE-002",
+      "public_level": "provisional",
+      "linked_scenarios": [
+        "enterprise-service-copilot",
+        "ai-cultural-guide"
+      ],
+      "order": 21,
+      "geometry": {
+        "mode": "concept",
+        "label": "公园东侧沿线，园区与社区朝公园一侧的界面（概念示意）"
+      }
+    },
+    {
+      "id": "area-qinghe-bluegreen",
+      "type": "area",
+      "title": "清河蓝绿空间概念协调带",
+      "summary": "跨地块生态界面示意，承接北跃段与清河的衔接。滨水展陈只写这片土地的用水与生活，不与主脊道钉带的备案事件混刻；滨水界面概念断面见 assets/figures/section-zzy-3.png，河道管理范围线与水位资料补齐前不给定线定标高。",
+      "source": "本方案概念设计｜geometry/green_space.geojson#GREEN-004｜metric:green_space_qinghe_bluegreen_area_sqm｜assumption:A-CONTROLS-001",
+      "public_level": "provisional",
+      "linked_scenarios": [
+        "ai-cultural-guide"
+      ],
+      "order": 22,
+      "geometry": {
+        "mode": "concept",
+        "label": "主脊北端清河沿线的跨地块生态界面（概念示意）"
+      }
+    },
+    {
+      "id": "test-street-t3-open",
+      "type": "area",
+      "title": "T3 开放街区段落（另行专项报批）",
+      "summary": "四级放开的最高级：本段城市支路与园区间通道，进入须另行专项报批，任一起人身安全事件即退回T2。退级不需开会、恢复才需要；测试期间公众通行净宽不得缩减，安全员全程跟随并可随时急停。",
+      "source": "本方案概念设计｜位于 geometry/key_areas.geojson#PROV-KEY-001 内的支路与园区间通道｜assumption:A-ROBOT-001",
+      "public_level": "provisional",
+      "linked_scenarios": [
+        "robot-delivery-low-speed"
+      ],
+      "order": 23,
+      "geometry": {
+        "mode": "concept",
+        "label": "众智园段城市支路与园区间通道（概念示意）"
+      }
+    }
+  ]
+}

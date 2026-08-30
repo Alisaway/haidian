@@ -2,15 +2,13 @@
 
 ## 可转换之家与居业短链
 
-京张居业接力把铁路的编组、换挂、直通转译为一条公共慢行主线和三种城市门槛。主线沿京张遗址公园串联众智园、AI 原点和大钟寺：北站以住研庭院容纳项目扩缩，中站以照护檐廊和可变住宅回应家庭阶段，南站以首层公共门厅承接抵达、短住和换乘。
+“行止有居”回应京张铁路百年流动史中的一个当代问题：当研究者、创业团队、青年家庭、国际开发者、服务与维护劳动者，以及老年人和残障使用者更换项目、团队或人生阶段时，如何仍能留在熟悉的住房、工位与公共服务网络中。方案不把“人才吸引”理解为一次性抵达，而把居住稳定、工作转换与日常照护组织成可以连续接续的城市能力。
 
-建筑采用适应性再利用：保留可用结构与城市记忆，把首层更新为公共服务界面，以长寿命结构、围护和设备骨架承载短寿命隔墙、家具和工位。街道—共享门厅—半公共庭院—住户门槛—室内形成连续公私梯度；服务与维修沿公共边可见，私宅默认由住户掌握入口。遗址公园、河道、遮阴和雨水花园共同组成可停留的门到桌骨架。
+空间概念为“一线、三站、四居、六接力”。一条居业接力公共主线串联众智园项目研居站、北京 AI 原点家庭转换站与大钟寺抵达换乘站；四种居住状态不与四个建筑基底原型一一对应。六项接力已升级为六份结构化合同，共用九态状态机与三道人工证据闸门；每份声明最小输入、RACI、同意、AI 禁区、普通/离线路径、停止、恢复和退出资产。十二个场景卡进一步补齐触发、成功证据和失败交接。
 
-空间骨架与使用转换分为两层：一线、三站和庭院/首层/阈值构成城市结构；抵达短住、项目租住、家庭或无障碍可变居住、社区长期居住构成四种状态。六项接力把租期、户型、工位、服务、私宅同意以及离开与回流接入同一套人工服务核心，十二张场景卡把每一次转换落实到入口、选项、接收、恢复和回程。
+AI 只承担解释、匹配、预约、提醒、聚合反馈和流程衔接，不决定资格、租金或住房分配，不对个人和家庭评分。三项产业验证已形成含基线、周期、仪器、拟议验收、停止与签字的协议，但尚未运行；90 天试点依次为影子演练、可逆小试和联合复核。六条公平验收、五个区域接口、三站服务蓝图、品牌 steward 和状态标签强化长期运营与国际传播，同时不声称合作、预算、容量或活动已成立。
 
-AI 负责解释公开选项、协助预约、提示冲突和整理聚合反馈；住房资格、租金、分配、安全、照护和私宅决定由人工保留。普通入口、无 AI 办理、纸本告知、撤回授权与断网降级和数字服务并置，使服务不依赖单一设备或单一雇主。三项产业验证以可逆内装、住研邻接和门内默认禁入为主题，先做影子演练，再进入经授权的可逆小试与联合复核。
-
-当前空间图层沿用统一概念底图，用于表达相对关系和可复算设计量。正式深化将以官方边界、现状测绘、权属、文保、交通、市政和运营资料校准三站位置、四类断面、建筑体量、指标和分期；这些资料条件决定后续的专业实施深度。
+本包原样继承仓库 provisional `SITE_BOUNDARY` 与三处 `KEY_AREA`，仅用于概念生成、可视化和 intake 自检。Issue #846 与 #1029 指出的区位疑问仍未解决，因此所有设计图层均标记为 `design_proposal`。仅 GeoJSON 可复算量，以及合同、状态、闸门、协议和接口的可解析计数为 known；租金、住房存量、单元数、可负担性、真实通勤、服务容量、试点成本、公平与验证结果、FAR、高度和留驻率保持 unknown。
 
 ---
 
@@ -18,12 +16,10 @@ AI 负责解释公开选项、协助预约、提示冲突和整理聚合反馈�
 
 ## Convertible Homes and Short Links Between Living, Work and Services
 
-The Jing-Zhang Home-Work Relay translates coupling, switching and through-running into one public walking spine and three urban thresholds. Along the Jing-Zhang Heritage Park, the spine links Zhongzhiyuan, AI Origin and Dazhongsi: the northern station uses a live-work court for project growth, the middle station uses a care porch and adaptable home for household change, and the southern station uses a civic ground-floor hall for arrival, short stay and transfer.
+“A Home in Motion and at Rest” reframes the Jing-Zhang Railway's century-long history of movement as a present-day urban question: when researchers, startup teams, young families, international developers, service and maintenance workers, older people, and disabled people change projects, teams or life stages, how can they remain connected to familiar homes, workplaces and public services? The proposal treats talent attraction not as a single arrival but as a continuous urban capacity that joins residential stability, work transitions and everyday care.
 
-The architecture is adaptive reuse. Existing structure and urban memory form the durable frame; ground floors become public-service interfaces; long-life structure, envelope and service cores carry short-life partitions, furniture and desks. A continuous gradient of street, shared hall, semi-public court, resident threshold and interior keeps public life legible. Service and maintenance remain visible along the public edge, while residents control access to the home. The heritage park, waterways, shade and rain gardens form a stayable door-to-desk framework.
+The spatial concept is “one line, three stations, four housing states and six relays.” A public line links the Zhongzhiyuan Project Live-Work Station, Beijing AI Origin Family Transition Station and Dazhongsi Arrival Transfer Station. Four housing states do not map one-to-one to four footprint prototypes. The six relays are now structured contracts sharing nine states and three human evidence gates. Each defines minimum input, RACI, consent, prohibited AI decisions, ordinary/offline routes, stop and resume evidence, and an exit asset. Twelve cards add triggers, evidence and failed-handover logic.
 
-The proposal has two layers. The spatial layer is one line, three stations and a sequence of courts, halls and thresholds. The use layer is four housing states: arrival stay, project rental, family or accessible convertible living, and long-term community living. Six relays connect tenure, layout, workplace, services, private-home consent, and departure or return through one staffed service core. Twelve scenario cards turn each transition into an entrance, options, receiving confirmation, restoration and a return path.
+AI is limited to explanation and coordination. It does not decide eligibility, rent or housing allocation and does not score people or households. Three industry protocols now specify baselines, cycles, instruments, proposed acceptance, stopping and sign-off, but have not been run. A 90-day sequence moves from shadow rehearsal to reversible micro-pilot and joint review. Six equity rules, five regional interfaces, three station blueprints, a proposed brand steward and evidence-based status labels strengthen operations without claiming partnerships, budgets, capacity or scheduled events.
 
-AI explains public options, helps with appointments, surfaces conflicts and organises aggregate feedback. People retain decisions about housing eligibility, rent, allocation, safety, care and the private home. Ordinary entrances, no-AI handling, paper notice, revocable consent and offline fallback sit beside digital service so continuity does not depend on one device or one employer. Three industry protocols address reversible fit-out, live-work adjacency and private-home default deny, moving from shadow rehearsal to authorised reversible testing and joint review.
-
-The spatial layers use a common conceptual base to express relationships and recalculable design quantities. Professional development will calibrate station locations, four section types, building massing, metrics and phasing against official boundaries, existing-condition surveys, ownership, heritage, transport, utilities and operating evidence.
+The package inherits the repository's provisional `SITE_BOUNDARY` and three `KEY_AREA` geometries unchanged for concept generation, visualisation and intake checks. Only GeoJSON calculations and parseable counts of contracts, states, gates, protocols and interfaces are known. Rent, stock, units, affordability, observed travel, service capacity, pilot cost, equity and validation outcomes, FAR, height and retention remain unknown pending official data, authorised trials and professional development.

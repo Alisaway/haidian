@@ -1,0 +1,1936 @@
+{
+  "schema_version": "1.0.0",
+  "package_type": "phase3_operations_and_red_team_protocol",
+  "package_status": "design_protocol_not_operational_evidence",
+  "generated_date": "2026-08-27",
+  "language_contract": "bilingual_zh_en",
+  "authority_note": {
+    "zh": "本文件是第三期运营与反方测试的机器审计载体。它定义责任、连续性与停止判据，不证明任何场景已上线、已完成现场测试、已通过专业或法律审查。",
+    "en": "This file is the Phase 3 machine-audit carrier for operations and adversarial tests. It defines accountability, continuity, and stop criteria; it does not prove that any scenario is live, field-tested, or professionally or legally cleared."
+  },
+  "frozen_contracts": {
+    "phase2_frozen_head": "554979e4bc66f21fbdf53e4cde85ed94afe4421c",
+    "project_name_zh": "京张在场",
+    "project_name_en": "Jing-Zhang In Situ",
+    "scenario_ids": [
+      "SC01",
+      "SC02",
+      "SC03",
+      "SC04",
+      "SC05",
+      "SC06",
+      "SC07",
+      "SC08",
+      "SC09",
+      "SC10",
+      "SC11",
+      "SC12"
+    ],
+    "flagships": [
+      "SC01",
+      "SC05",
+      "SC10"
+    ],
+    "only_first_use_trial": {
+      "scenario_id": "SC10",
+      "implementation_id": "IM06"
+    },
+    "canonical_carriers": {
+      "zhongzhiyuan": [
+        "SC01",
+        "SC02",
+        "SC03",
+        "SC04"
+      ],
+      "beijing_ai_origin": [
+        "SC05",
+        "SC06",
+        "SC07"
+      ],
+      "dazhongsi": [
+        "SC09",
+        "SC10",
+        "SC11"
+      ],
+      "in_situ_spine_cross_area_support": [
+        "SC08"
+      ],
+      "all_three_prototypes_cross_area_support": [
+        "SC12"
+      ]
+    },
+    "action_package_mapping": {
+      "AP1": [
+        "IM01",
+        "IM13"
+      ],
+      "AP2": [
+        "IM02",
+        "IM03"
+      ],
+      "AP3": [
+        "IM04"
+      ],
+      "AP4": [
+        "IM05"
+      ],
+      "AP5": [
+        "IM06"
+      ],
+      "AP6": [
+        "IM07",
+        "IM08",
+        "IM09",
+        "IM10"
+      ],
+      "AP7": [
+        "IM11",
+        "IM12"
+      ]
+    },
+    "spatial_change": "none",
+    "new_scenario_project_or_action_package": false
+  },
+  "responsibility_model": {
+    "assignment_status": "requires_authorized_operator_and_professional_assignment",
+    "assignment_note": {
+      "zh": "角色是责任合同中的功能席位，不代表政府、企业或专业人员已经受任、签约或批准。每次开放前必须登记具名主体、联系方式、值守时段、替补和停止权限。",
+      "en": "Roles are functional seats in the accountability contract; they do not imply that any government, company, or professional has been appointed, contracted, or approved. Before every opening, register the named party, contact route, duty window, substitute, and stop authority."
+    },
+    "ai_authority_boundary": {
+      "allowed_only_as_assistance": [
+        "suggest",
+        "rank_candidate_options",
+        "translate",
+        "retrieve_cleared_information",
+        "summarize_with_source",
+        "assist_verification",
+        "flag_anomaly"
+      ],
+      "prohibited_autonomous_actions": [
+        "approve_opening_or_implementation",
+        "change_legal_or_service_rights",
+        "deny_or_deprive_resources",
+        "impose_sanction",
+        "hide_surveillance",
+        "perform_default_face_or_emotion_recognition",
+        "perform_social_scoring_or_predictive_policing",
+        "infer_undeclared_sensitive_traits",
+        "close_complaint_or_appeal",
+        "delete_incident_evidence",
+        "reopen_after_stop"
+      ]
+    },
+    "canonical_role_registry_ref": "phase3-protocol-contracts.json#/role_registry",
+    "canonical_role_count": 12,
+    "human_only_stop_authority_ref": "phase3-protocol-contracts.json#/role_registry.authority_contract.human_only_stop_authority_role_keys",
+    "human_only_reopen_authority_ref": "phase3-protocol-contracts.json#/role_registry.authority_contract.human_only_same_instance_reopen_role_keys",
+    "archive_rule_ref": "phase3-protocol-contracts.json#/shared_state_machine.archive_semantics"
+  },
+  "qualitative_cost_legend": {
+    "S": {
+      "zh": "研究、登记、协议或协调工作",
+      "en": "research, registration, protocol, or coordination work"
+    },
+    "M": {
+      "zh": "现场运营、可逆改造或持续值守",
+      "en": "site operation, reversible adaptation, or sustained staffing"
+    },
+    "L": {
+      "zh": "须待工程与专业条件深化",
+      "en": "requires engineering and professional development"
+    },
+    "contract": "qualitative_only_not_an_investment_estimate"
+  },
+  "operations_register": [
+    {
+      "action_package_id": "AP1",
+      "implementation_ids": [
+        "IM01",
+        "IM13"
+      ],
+      "scenario_scope": [],
+      "responsible_role_keys": [
+        "data_steward",
+        "scenario_service_owner"
+      ],
+      "dependencies_zh": [
+        "正式附件或权威资料版本",
+        "版本、差异与替换范围台账",
+        "有权复核的专业责任人"
+      ],
+      "dependencies_en": [
+        "official attachments or authoritative data versions",
+        "version, difference, and replacement-scope register",
+        "authorized professional reviewer"
+      ],
+      "qualitative_cost_classes": [
+        "S",
+        "M"
+      ],
+      "maintenance_zh": "每次权威来源变化触发同批复核与重算；旧指标在冲突闭环前冻结。",
+      "maintenance_en": "Every authoritative-source change triggers one-batch review and recomputation; stale metrics remain frozen until conflict closure.",
+      "evaluation_zh": [
+        "权威顺序一致",
+        "九类图层与全部载体重算范围完整",
+        "旧指标撤回可追溯"
+      ],
+      "evaluation_en": [
+        "authority-order consistency",
+        "complete recomputation scope for nine layers and all carriers",
+        "traceable withdrawal of stale metrics"
+      ],
+      "continuity_action": "freeze_derived_outputs_and_keep_public_status_pending_verification",
+      "evidence_status": "documented_phase2_contract"
+    },
+    {
+      "action_package_id": "AP2",
+      "implementation_ids": [
+        "IM02",
+        "IM03"
+      ],
+      "scenario_scope": [
+        "SC08",
+        "SC12"
+      ],
+      "scope_note": "IM03 applies as the shared protocol to SC01-SC12 without changing canonical carrier ownership.",
+      "responsible_role_keys": [
+        "accessibility_lead",
+        "complaint_appeal_lead",
+        "data_steward",
+        "scenario_service_owner"
+      ],
+      "dependencies_zh": [
+        "调查许可与现场安全安排",
+        "具名责任清单、申诉入口与停止权限",
+        "低技术替代及可达人工帮助"
+      ],
+      "dependencies_en": [
+        "survey permission and field-safety arrangements",
+        "named responsibility list, appeal channel, and stop authority",
+        "low-tech fallback and reachable human help"
+      ],
+      "qualitative_cost_classes": [
+        "S",
+        "M"
+      ],
+      "maintenance_zh": "现场审计首轮 4–8 周、季节复查和季度协议复盘均为 `design-target`；未获书面安排前不构成承诺。",
+      "maintenance_en": "A 4–8-week first field pass, seasonal recheck, and quarterly protocol review are all `design-target`; none is a commitment before written authorization.",
+      "evaluation_zh": [
+        "横断面调查质量",
+        "人工接管可达",
+        "投诉闭环",
+        "高风险误答停止可执行"
+      ],
+      "evaluation_en": [
+        "cross-section survey quality",
+        "reachable human takeover",
+        "complaint closure",
+        "executable stop for high-risk error"
+      ],
+      "continuity_action": "retain_pending_survey_list_or_human_static_service_only",
+      "evidence_status": "design-target"
+    },
+    {
+      "action_package_id": "AP3",
+      "implementation_ids": [
+        "IM04"
+      ],
+      "scenario_scope": [
+        "SC01",
+        "SC02",
+        "SC03",
+        "SC04"
+      ],
+      "responsible_role_keys": [
+        "data_steward",
+        "facilities_maintenance",
+        "safety_professional",
+        "scenario_service_owner"
+      ],
+      "dependencies_zh": [
+        "权属、消防、能源和设施条件",
+        "测试协议、清权数据与专业放行",
+        "现场安全员和隔离能力"
+      ],
+      "dependencies_en": [
+        "ownership, fire, energy, and facility conditions",
+        "test protocol, cleared data, and professional release",
+        "on-site safety lead and isolation capability"
+      ],
+      "qualitative_cost_classes": [
+        "M"
+      ],
+      "maintenance_zh": "只在书面有期限受控窗口内逐次检查数据、设备、日志和人员。",
+      "maintenance_en": "Check data, equipment, logs, and staffing per run only inside a written time-bounded controlled window.",
+      "evaluation_zh": [
+        "专业 Gate 完整",
+        "异常和近失闭环",
+        "隔离与停止可执行"
+      ],
+      "evaluation_en": [
+        "complete professional gates",
+        "anomaly and near-miss closure",
+        "executable isolation and stop"
+      ],
+      "continuity_action": "isolate_equipment_and_revert_to_offline_or_human_review",
+      "evidence_status": "design-target"
+    },
+    {
+      "action_package_id": "AP4",
+      "implementation_ids": [
+        "IM05"
+      ],
+      "scenario_scope": [
+        "SC05",
+        "SC06",
+        "SC07"
+      ],
+      "responsible_role_keys": [
+        "complaint_appeal_lead",
+        "data_steward",
+        "on_site_host",
+        "scenario_service_owner"
+      ],
+      "dependencies_zh": [
+        "数据用途许可与最小字段",
+        "设施条件与人工顾问在场",
+        "纠错、拒绝和人工表格路径"
+      ],
+      "dependencies_en": [
+        "data-use permission and minimum fields",
+        "facility conditions and a human adviser present",
+        "correction, refusal, and manual-sheet paths"
+      ],
+      "qualitative_cost_classes": [
+        "M"
+      ],
+      "maintenance_zh": "8–12 周服务原型及持续权限复核均为 `design-target`；发生泄露、持续误配或歧视时暂停。",
+      "maintenance_en": "An 8–12-week service prototype and continuing permission review are `design-target`; leakage, persistent mismatch, or discrimination pauses service.",
+      "evaluation_zh": [
+        "主动同意与拒绝可见",
+        "误配与纠错",
+        "数据泄露和不平等结果"
+      ],
+      "evaluation_en": [
+        "visible active consent and refusal",
+        "mismatch and correction",
+        "data leakage and unequal outcomes"
+      ],
+      "continuity_action": "revert_to_human_adviser_manual_sheet_map_or_counter",
+      "evidence_status": "design-target"
+    },
+    {
+      "action_package_id": "AP5",
+      "implementation_ids": [
+        "IM06"
+      ],
+      "scenario_scope": [
+        "SC09",
+        "SC10",
+        "SC11"
+      ],
+      "responsible_role_keys": [
+        "complaint_appeal_lead",
+        "facilities_maintenance",
+        "on_site_host",
+        "rights_content_reviewer",
+        "scenario_service_owner"
+      ],
+      "dependencies_zh": [
+        "场地、产品、人员与消费者权益条件",
+        "无障碍、投诉、停止和撤场权限",
+        "交通信息或文化内容的来源与清权"
+      ],
+      "dependencies_en": [
+        "site, product, staffing, and consumer-rights conditions",
+        "accessibility, complaint, stop, and removal authority",
+        "source and rights clearance for transit or cultural content"
+      ],
+      "qualitative_cost_classes": [
+        "M"
+      ],
+      "maintenance_zh": "逐场限时轮换；SC10＋IM06 的期限必须书面设定，届满默认撤场并归档。",
+      "maintenance_en": "Use time-bounded per-event rotations; SC10 + IM06 requires a written period, with expiry defaulting to removal and archive.",
+      "evaluation_zh": [
+        "自愿退出",
+        "投诉闭环",
+        "安全、权利与误导风险",
+        "撤场和场地恢复证据"
+      ],
+      "evaluation_en": [
+        "voluntary exit",
+        "complaint closure",
+        "safety, rights, and misleading-claim risk",
+        "removal and site-restoration evidence"
+      ],
+      "continuity_action": "switch_to_human_or_static_information_then_remove_if_gate_fails",
+      "evidence_status": "design-target"
+    },
+    {
+      "action_package_id": "AP6",
+      "implementation_ids": [
+        "IM07",
+        "IM08",
+        "IM09",
+        "IM10"
+      ],
+      "scenario_scope": [
+        "SC12"
+      ],
+      "responsible_role_keys": [
+        "accessibility_lead",
+        "data_steward",
+        "facilities_maintenance",
+        "rights_content_reviewer",
+        "scenario_service_owner"
+      ],
+      "dependencies_zh": [
+        "权属、维护、安全与无障碍复核",
+        "史实、翻译、版权和展示同意",
+        "人工/静态组件和撤除能力"
+      ],
+      "dependencies_en": [
+        "ownership, maintenance, safety, and accessibility review",
+        "historical fact, translation, rights, and display consent",
+        "human/static components and removal capability"
+      ],
+      "qualitative_cost_classes": [
+        "S",
+        "M",
+        "L"
+      ],
+      "maintenance_zh": "小批量可逆试装按月检查、内容按季度纠错、贡献谱按半年复核，全部为 `design-target`。",
+      "maintenance_en": "Monthly checks for small reversible installations, quarterly content correction, and semiannual ledger review are all `design-target`.",
+      "evaluation_zh": [
+        "安全通行与等效可达",
+        "双语等义与史实准确",
+        "故障维护",
+        "纠错与撤回可达"
+      ],
+      "evaluation_en": [
+        "safe passage and equivalent access",
+        "bilingual equivalence and historical accuracy",
+        "fault maintenance",
+        "reachable correction and withdrawal"
+      ],
+      "continuity_action": "disable_information_hide_disputed_content_and_use_human_static_components",
+      "evidence_status": "design-target"
+    },
+    {
+      "action_package_id": "AP7",
+      "implementation_ids": [
+        "IM11",
+        "IM12"
+      ],
+      "scenario_scope": [],
+      "responsible_role_keys": [
+        "rights_content_reviewer",
+        "safety_professional",
+        "scenario_service_owner"
+      ],
+      "dependencies_zh": [
+        "逐项活动许可、责任、资源与风险 Gate",
+        "机构授权和事实依据",
+        "非约束议题与取消记录"
+      ],
+      "dependencies_en": [
+        "per-event permission, responsibility, resources, and risk gate",
+        "institutional authorization and factual basis",
+        "non-binding issue and cancellation records"
+      ],
+      "qualitative_cost_classes": [
+        "S",
+        "M"
+      ],
+      "maintenance_zh": "候选年历逐项申请复核；任何授权变化立即复核，未获许可即取消。",
+      "maintenance_en": "Review each candidate-calendar item; recheck every authorization change and cancel without permission.",
+      "evaluation_zh": [
+        "许可与授权有效",
+        "责任和资源可用",
+        "风险 Gate 和取消记录完整"
+      ],
+      "evaluation_en": [
+        "valid permission and authorization",
+        "available responsibility and resources",
+        "complete risk-gate and cancellation records"
+      ],
+      "continuity_action": "cancel_ai_element_switch_to_human_process_or_cancel_event",
+      "evidence_status": "design-target"
+    }
+  ],
+  "service_continuity_contract": {
+    "state_source": "visual/assets/phase3-protocol-contracts.json#/shared_state_machine",
+    "states_used": [
+      "preflight",
+      "limited-open",
+      "operating",
+      "degraded",
+      "human-takeover",
+      "paused",
+      "stopped",
+      "removed",
+      "archive"
+    ],
+    "rules": [
+      {
+        "from": "operating",
+        "to": "degraded",
+        "condition_zh": "核心安全未受影响且人工或静态替代可用。",
+        "condition_en": "Core safety is unaffected and a human or static fallback is available.",
+        "public_state_required": true,
+        "return_rule": "paused_then_limited-open_after_human_review"
+      },
+      {
+        "from": "operating",
+        "to": "human-takeover",
+        "condition_zh": "求助、异常、误导、弱势群体风险或越权触发。",
+        "condition_en": "A help request, anomaly, misleading output, vulnerable-user risk, or authority overreach triggers.",
+        "public_state_required": true,
+        "return_rule": "human-takeover_then_paused"
+      },
+      {
+        "from": "degraded",
+        "to": "paused",
+        "condition_zh": "替代不可达、证据不完整或影响范围 unknown。",
+        "condition_en": "Fallback is unreachable, evidence is incomplete, or impact scope is unknown.",
+        "public_state_required": true,
+        "return_rule": "human_authorized_limited_retest_only"
+      },
+      {
+        "from": "human-takeover",
+        "to": "stopped",
+        "condition_zh": "安全、权利、投诉或接管无法闭环。",
+        "condition_en": "Safety, rights, complaint, or takeover cannot be closed.",
+        "public_state_required": true,
+        "return_rule": "removal_or_future_new_instance_only"
+      },
+      {
+        "from": "paused",
+        "to": "stopped",
+        "condition_zh": "修复、投诉、责任或权限仍失败。",
+        "condition_en": "Remediation, complaint, accountability, or authority still fails.",
+        "public_state_required": true,
+        "return_rule": "removal_or_future_new_instance_only"
+      },
+      {
+        "from": "stopped",
+        "to": "removed",
+        "condition_zh": "获授权撤场完成且证据齐备。",
+        "condition_en": "Authorized removal completes with evidence.",
+        "public_state_required": true,
+        "return_rule": "remain_stopped_if_incomplete"
+      },
+      {
+        "from": "removed",
+        "to": "archive",
+        "condition_zh": "数据动作、申诉状态、证据索引和公开复盘齐备。",
+        "condition_en": "Data action, appeal status, evidence index, and public review are complete.",
+        "public_state_required": true,
+        "return_rule": "archive_terminal_future_use_new_run_instance"
+      }
+    ],
+    "unavailable_dependencies": {
+      "minimum_public_action_zh": "显示暂停或人工接管；提供纸面、静态、柜台或人工带领；不得静默降级。",
+      "minimum_public_action_en": "Show Paused or Human Takeover; provide paper, static, counter, or human escort service; never degrade silently.",
+      "evidence_required": [
+        "timestamp",
+        "affected_scenario_ids",
+        "detected_condition",
+        "named_human_owner",
+        "public_status",
+        "fallback_used",
+        "complaint_or_incident_link",
+        "stop_or_reopen_decision"
+      ]
+    }
+  },
+  "red_team_method": {
+    "exercise_mode": "design_tabletop_and_protocol_conformance",
+    "not_field_performance": true,
+    "test_id_contract": "RT identifiers index verification cases only; they are not new SC, CX, IM, AP, component, landmark, or project IDs.",
+    "independent_test_count": 16,
+    "tabletop_disposition_counts": {
+      "fail_stop": 6,
+      "unknown_stop": 3,
+      "fail_pause": 3,
+      "controlled_degrade": 3,
+      "controlled_stop": 1
+    },
+    "negative_or_unknown_test_ids": [
+      "RT-01",
+      "RT-02",
+      "RT-03",
+      "RT-04",
+      "RT-09",
+      "RT-10",
+      "RT-11",
+      "RT-12",
+      "RT-13",
+      "RT-14",
+      "RT-15",
+      "RT-16"
+    ],
+    "acceptance_rule": {
+      "zh": "`fail_stop`、`unknown_stop` 和 `fail_pause` 是故意保留的负例判定，不可在未取得复测证据时改写为通过。",
+      "en": "`fail_stop`, `unknown_stop`, and `fail_pause` are intentionally retained adverse dispositions and must not be rewritten as passes without retest evidence."
+    }
+  },
+  "red_team_tests": [
+    {
+      "test_id": "RT-01",
+      "title_zh": "高风险错误建议且人工转接失败",
+      "title_en": "High-risk wrong advice with failed human transfer",
+      "category": "wrong_advice",
+      "affected_scenarios": [
+        "SC07",
+        "SC09",
+        "SC12"
+      ],
+      "precondition_zh": "公开信息源看似有效，但答案涉及交通应急或法律、医疗、消防等专业边界，人工转接同时不可达。",
+      "precondition_en": "A public source appears current, but the answer crosses transit-emergency or legal, medical, or fire boundaries while human transfer is unreachable.",
+      "observable_failure_zh": "前台给出确定性建议、未显示限制，用户可能据此采取有害行动。",
+      "observable_failure_en": "The interface gives definitive advice without its limit, creating a risk of harmful reliance.",
+      "detection_evidence": {
+        "zh": [
+          "输出与已登记来源逐句差异",
+          "专业边界命中记录",
+          "人工转接失败与用户可见状态截图/日志"
+        ],
+        "en": [
+          "output-to-registered-source diff",
+          "domain-boundary hit record",
+          "human-transfer failure and public-status screenshot/log"
+        ]
+      },
+      "human_takeover": {
+        "action_zh": "立即隐藏答案，显示“人工接管”，由现场服务人员提供静态来源或说明当前不能作答。",
+        "action_en": "Hide the answer immediately, show Human Takeover, and have on-site staff provide a static source or state that no answer can be given.",
+        "owner_role_keys": [
+          "complaint_appeal_lead",
+          "on_site_host",
+          "rights_content_reviewer"
+        ]
+      },
+      "stop_exit_decision": {
+        "tabletop_disposition": "fail_stop",
+        "decision_zh": "停止受影响问答；无法恢复转接或专业复核时关闭该服务。",
+        "decision_en": "Stop the affected Q&A; close the service if transfer or qualified review cannot be restored."
+      },
+      "residual_risk_zh": "用户可能已记住或传播错误建议；需公开更正但无法保证触达全部受众。",
+      "residual_risk_en": "Users may remember or repeat the wrong advice; a public correction cannot guarantee reaching everyone.",
+      "retest_condition_zh": "用同一高风险问题复测，必须拒绝越界结论、显示来源/限制并成功接通具名人工角色。",
+      "retest_condition_en": "Retest with the same high-risk query; the system must refuse an out-of-scope conclusion, show source/limit, and reach a named human role.",
+      "trace_links": {
+        "protocol_fields": [
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC07|SC09|SC12].ai_authority",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC07|SC09|SC12].outputs",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC07|SC09|SC12].human_takeover",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC07|SC09|SC12].complaints_and_appeals",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC07|SC09|SC12].stop_exit"
+        ],
+        "f08": "F08 rows SC07/SC09/SC12: AI boundary, Human Takeover, low-tech alternative, stop state",
+        "f11": "F11 shared transition human-takeover -> stopped and AP2/AP4/AP5",
+        "proposal": [
+          "AI 创新生态、人才画像与 AI+ 场景 / AI Innovation Ecosystem, Personas, and AI+ Scenarios",
+          "风险、版权与合规说明 / Risk, Copyright, and Compliance"
+        ],
+        "matrices": [
+          "design_depth_matrix.json#/items/11/implementation_projects[IM03|IM05|IM06]",
+          "compliance_matrix.json#/review_navigation/core_claims[CL06]"
+        ]
+      },
+      "state_paths": [
+        [
+          "operating",
+          "human-takeover",
+          "stopped"
+        ]
+      ]
+    },
+    {
+      "test_id": "RT-02",
+      "title_zh": "匹配、排程或导航形成群体差异",
+      "title_en": "Group disparity in matching, scheduling, or navigation",
+      "category": "bias_and_inequality",
+      "affected_scenarios": [
+        "SC05",
+        "SC06",
+        "SC07"
+      ],
+      "precondition_zh": "不同年龄、残障、语言、设备条件或拒绝 AI 的等价请求进入同一服务。",
+      "precondition_en": "Equivalent requests from people differing in age, disability, language, device access, or AI refusal enter the same service.",
+      "observable_failure_zh": "某组持续获得较差匹配、较晚时段、无法访问的入口或被迫使用智能设备。",
+      "observable_failure_en": "One group repeatedly receives poorer matches, later slots, inaccessible entry, or forced smart-device use.",
+      "detection_evidence": {
+        "zh": [
+          "按最小必要且允许的群体测试维度汇总的结果差异",
+          "拒绝/纠错/人工回退记录",
+          "等效服务走查"
+        ],
+        "en": [
+          "outcome disparity over minimum permitted test dimensions",
+          "refusal, correction, and human-fallback records",
+          "equivalent-service walkthrough"
+        ]
+      },
+      "human_takeover": {
+        "action_zh": "暂停自动排序或排程，人工顾问逐项复核并开放电话、表格、地图和柜台入口。",
+        "action_en": "Pause automated ranking or scheduling; a human adviser reviews each case and opens phone, sheet, map, and counter entry.",
+        "owner_role_keys": [
+          "accessibility_lead",
+          "on_site_host",
+          "scenario_service_owner"
+        ]
+      },
+      "stop_exit_decision": {
+        "tabletop_disposition": "fail_pause",
+        "decision_zh": "暂停受影响自动功能；在差异原因和等效服务均未验证前不得恢复。",
+        "decision_en": "Pause the affected automation; do not restore it until disparity cause and equivalent service are verified."
+      },
+      "residual_risk_zh": "样本过小或不允许收集敏感属性时，差异原因可能保持 unknown。",
+      "residual_risk_en": "With small samples or prohibited sensitive-attribute collection, the cause of disparity may remain unknown.",
+      "retest_condition_zh": "预先登记测试口径，确认各入口可达，差异由人工复核并达到书面 `design-target` 后再开。",
+      "retest_condition_en": "Pre-register the test method, verify every entry route, and reopen only after human review meets a written `design-target`.",
+      "trace_links": {
+        "protocol_fields": [
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC05|SC06|SC07].users.affected",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC05|SC06|SC07].minimum_necessary_data",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC05|SC06|SC07].low_tech_alternative",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC05|SC06|SC07].evaluation",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC05|SC06|SC07].lifecycle"
+        ],
+        "f08": "F08 rows SC05/SC06/SC07: human decision, non-AI entry, state",
+        "f11": "F11 AP4 Human Takeover and paused path",
+        "proposal": [
+          "七类用户画像 / Seven personas",
+          "十二张场景卡 / Twelve scenario cards"
+        ],
+        "matrices": [
+          "design_depth_matrix.json#/items/11/implementation_projects[IM05]",
+          "compliance_matrix.json#/review_navigation/core_claims[CL06]"
+        ]
+      },
+      "state_paths": [
+        [
+          "operating",
+          "degraded",
+          "paused"
+        ]
+      ]
+    },
+    {
+      "test_id": "RT-03",
+      "title_zh": "数据或模型漂移无法界定影响范围",
+      "title_en": "Data or model drift with unknown impact scope",
+      "category": "data_and_model_drift",
+      "affected_scenarios": [
+        "SC01",
+        "SC05",
+        "SC07",
+        "SC09",
+        "SC12"
+      ],
+      "precondition_zh": "来源、模型、提示、阈值或知识版本变化，但版本登记缺少可复算基线。",
+      "precondition_en": "A source, model, prompt, threshold, or knowledge version changes without a recomputable baseline in the version register.",
+      "observable_failure_zh": "相同输入产生不可解释差异，且无法确定哪些用户、记录或场景受影响。",
+      "observable_failure_en": "The same input yields unexplained differences and affected users, records, or scenarios cannot be bounded.",
+      "detection_evidence": {
+        "zh": [
+          "版本/哈希缺口",
+          "固定回归集差异",
+          "影响范围 unknown 记录"
+        ],
+        "en": [
+          "version/hash gap",
+          "fixed regression-set diff",
+          "unknown impact-scope record"
+        ]
+      },
+      "human_takeover": {
+        "action_zh": "数据治理责任人冻结派生输出；场景转静态或人工，保留旧新版本及差异。",
+        "action_en": "The data steward freezes derived outputs; the scenario moves to static or human service while old/new versions and diffs are preserved.",
+        "owner_role_keys": [
+          "data_steward",
+          "scenario_service_owner"
+        ]
+      },
+      "stop_exit_decision": {
+        "tabletop_disposition": "unknown_stop",
+        "decision_zh": "影响范围 unknown 即停止自动输出；禁止自动回滚后静默重开。",
+        "decision_en": "Unknown impact scope stops automated output; silent reopening after an automatic rollback is prohibited."
+      },
+      "residual_risk_zh": "缺失的历史输入或远程模型版本可能使完整复现永久不可得。",
+      "residual_risk_en": "Missing historical inputs or remote-model versions may make complete reproduction permanently unavailable.",
+      "retest_condition_zh": "锁定输入、模型/提示版本和预期输出，运行固定回归集并由人工批准新基线。",
+      "retest_condition_en": "Lock input, model/prompt version, and expected output; run the fixed regression set and obtain human approval for a new baseline.",
+      "trace_links": {
+        "protocol_fields": [
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC01|SC05|SC07|SC09|SC12].data_and_evidence",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC01|SC05|SC07|SC09|SC12].logging_audit",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC01|SC05|SC07|SC09|SC12].evaluation",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC01|SC05|SC07|SC09|SC12].stop_exit"
+        ],
+        "f08": "F08 evidence/status cells for affected SCs",
+        "f11": "F11 AP1 freeze and archive path",
+        "proposal": [
+          "设计依据与资料清单 / Design Basis and Source List",
+          "指标体系、面积复算与合规矩阵 / Metrics, Area Recalculation, and Compliance Matrix"
+        ],
+        "matrices": [
+          "design_depth_matrix.json#/items/11/implementation_projects[IM01|IM13]",
+          "compliance_matrix.json#/review_navigation/core_claims[CL02]"
+        ]
+      },
+      "state_paths": [
+        [
+          "operating",
+          "degraded",
+          "paused",
+          "stopped"
+        ]
+      ]
+    },
+    {
+      "test_id": "RT-04",
+      "title_zh": "身份冒用或未经授权代理",
+      "title_en": "Impersonation or unauthorized delegation",
+      "category": "identity_misuse",
+      "affected_scenarios": [
+        "SC05",
+        "SC06",
+        "SC10"
+      ],
+      "precondition_zh": "攻击者提交他人的成果摘要、设施申请或反馈，系统仅凭可伪造标识继续处理。",
+      "precondition_en": "An attacker submits another person's research summary, facility request, or feedback, and the service proceeds on a spoofable identifier alone.",
+      "observable_failure_zh": "未授权引荐、时段占用、公开展示或投诉记录绑定到错误主体。",
+      "observable_failure_en": "An unauthorized referral, slot, public display, or complaint record is bound to the wrong party.",
+      "detection_evidence": {
+        "zh": [
+          "授权链和提交来源不一致",
+          "本人异议或撤回",
+          "访问与变更日志"
+        ],
+        "en": [
+          "authorization-chain and submission-origin mismatch",
+          "subject objection or withdrawal",
+          "access and change logs"
+        ]
+      },
+      "human_takeover": {
+        "action_zh": "冻结该请求和关联输出，人工联系已登记主体，不再扩大收集身份材料。",
+        "action_en": "Freeze the request and linked outputs; contact the registered party manually without expanding identity-data collection.",
+        "owner_role_keys": [
+          "complaint_appeal_lead",
+          "data_steward",
+          "scenario_service_owner"
+        ]
+      },
+      "stop_exit_decision": {
+        "tabletop_disposition": "fail_stop",
+        "decision_zh": "停止并撤回未授权结果；无法验证授权时不得恢复。",
+        "decision_en": "Stop and withdraw unauthorized results; do not restore when authorization cannot be verified."
+      },
+      "residual_risk_zh": "纠正前可能已发生名誉、机会或信息泄露损害。",
+      "residual_risk_en": "Reputational, opportunity, or disclosure harm may occur before correction.",
+      "retest_condition_zh": "用合法代理、拒绝代理和撤回三种样例验证最小授权记录及人工复核。",
+      "retest_condition_en": "Use authorized-agent, refused-agent, and withdrawal cases to verify minimum authorization records and human review.",
+      "trace_links": {
+        "protocol_fields": [
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC05|SC06|SC10].inputs.allowed_zh",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC05|SC06|SC10].inputs.prohibited_zh",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC05|SC06|SC10].lawful_basis_or_no_collection",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC05|SC06|SC10].logging_audit",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC05|SC06|SC10].retention_deletion"
+        ],
+        "f08": "F08 input/data and human-decision cells for SC05/SC06/SC10",
+        "f11": "F11 AP4/AP5 permission and withdrawal gates",
+        "proposal": [
+          "十二张场景卡 / Twelve scenario cards",
+          "更新项目清单、实施政策与分期计划 / Renewal Projects, Implementation Policy, and Phasing"
+        ],
+        "matrices": [
+          "design_depth_matrix.json#/items/11/implementation_projects[IM05|IM06]",
+          "compliance_matrix.json#/review_navigation/first_use_trial"
+        ]
+      },
+      "state_paths": [
+        [
+          "operating",
+          "human-takeover",
+          "stopped"
+        ]
+      ]
+    },
+    {
+      "test_id": "RT-05",
+      "title_zh": "恶意提示、文件或内容注入",
+      "title_en": "Malicious prompt, file, or content injection",
+      "category": "malicious_input",
+      "affected_scenarios": [
+        "SC01",
+        "SC04",
+        "SC10",
+        "SC12"
+      ],
+      "precondition_zh": "公开 Issue、基准、产品说明或 FAQ 中包含指令注入、混淆链接或越权请求。",
+      "precondition_en": "A public issue, benchmark, product notice, or FAQ contains prompt injection, a deceptive link, or a privilege-escalation request.",
+      "observable_failure_zh": "系统泄露内部提示、忽略来源边界、调用未授权功能或展示有害内容。",
+      "observable_failure_en": "The system reveals internal instructions, ignores source limits, invokes unauthorized functions, or displays harmful content.",
+      "detection_evidence": {
+        "zh": [
+          "净化前后输入",
+          "策略命中和工具调用日志",
+          "输出来源差异"
+        ],
+        "en": [
+          "pre/post-sanitization input",
+          "policy-hit and tool-call log",
+          "output-source diff"
+        ]
+      },
+      "human_takeover": {
+        "action_zh": "隔离输入和会话，切换人工/离线脚本，禁止把攻击内容继续写回知识库。",
+        "action_en": "Quarantine the input and session, switch to human/offline script, and block the attack content from re-entering the knowledge base.",
+        "owner_role_keys": [
+          "data_steward",
+          "on_site_host",
+          "safety_professional"
+        ]
+      },
+      "stop_exit_decision": {
+        "tabletop_disposition": "controlled_degrade",
+        "decision_zh": "单次输入隔离；若发生权限越界或影响范围未知，升级为停止。",
+        "decision_en": "Isolate the individual input; escalate to stop for privilege escape or unknown impact scope."
+      },
+      "residual_risk_zh": "新型注入可能绕过规则；人工也可能被欺骗。",
+      "residual_risk_en": "Novel injection may bypass controls, and human reviewers may also be deceived.",
+      "retest_condition_zh": "恶意语料、链接、编码与多语言变体均不得触发越权，且隔离证据完整。",
+      "retest_condition_en": "Malicious text, links, encodings, and multilingual variants must not trigger unauthorized action, and quarantine evidence must be complete.",
+      "trace_links": {
+        "protocol_fields": [
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC01|SC04|SC10|SC12].inputs.allowed_zh",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC01|SC04|SC10|SC12].inputs.prohibited_zh",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC01|SC04|SC10|SC12].ai_authority",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC01|SC04|SC10|SC12].failure_modes",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC01|SC04|SC10|SC12].logging_audit"
+        ],
+        "f08": "F08 AI/input boundary and state cells",
+        "f11": "F11 controlled-test and degraded/Human Takeover paths",
+        "proposal": [
+          "十二张场景卡 / Twelve scenario cards",
+          "风险、版权与合规说明 / Risk, Copyright, and Compliance"
+        ],
+        "matrices": [
+          "design_depth_matrix.json#/items/11/implementation_projects[IM03|IM04|IM06]",
+          "compliance_matrix.json#/review_navigation/core_claims[CL06]"
+        ]
+      },
+      "state_paths": [
+        [
+          "operating",
+          "degraded"
+        ]
+      ]
+    },
+    {
+      "test_id": "RT-06",
+      "title_zh": "断网与远程依赖不可用",
+      "title_en": "Network loss and unavailable remote dependency",
+      "category": "network_loss",
+      "affected_scenarios": [
+        "SC06",
+        "SC07",
+        "SC08",
+        "SC09",
+        "SC12"
+      ],
+      "precondition_zh": "网络、远程模型、地图、时刻或服务接口在开放期间中断。",
+      "precondition_en": "Network, remote model, map, timetable, or service API fails during opening.",
+      "observable_failure_zh": "界面卡死、继续展示过期信息或把失败伪装成正常。",
+      "observable_failure_en": "The interface freezes, continues showing stale information, or masks failure as normal operation.",
+      "detection_evidence": {
+        "zh": [
+          "依赖健康检查",
+          "最后成功更新时间",
+          "前台状态和回退启动日志"
+        ],
+        "en": [
+          "dependency health check",
+          "last-success timestamp",
+          "public status and fallback activation log"
+        ]
+      },
+      "human_takeover": {
+        "action_zh": "显示降级/人工接管，改用人工表格、纸图、静态图和柜台；禁止缓存内容冒充实时。",
+        "action_en": "Show Degraded/Human Takeover and use manual sheets, paper maps, static boards, and counters; cached content must not masquerade as live.",
+        "owner_role_keys": [
+          "facilities_maintenance",
+          "on_site_host",
+          "scenario_service_owner"
+        ]
+      },
+      "stop_exit_decision": {
+        "tabletop_disposition": "controlled_degrade",
+        "decision_zh": "仅在静态替代安全且标时后降级运行；否则暂停。",
+        "decision_en": "Continue in degraded mode only when the static fallback is safe and time-stamped; otherwise pause."
+      },
+      "residual_risk_zh": "静态信息仍可能迅速过期，人工队列可能拥堵。",
+      "residual_risk_en": "Static information may age quickly and human queues may overload.",
+      "retest_condition_zh": "模拟完全断网和间歇网络，确认状态可见、替代可达且恢复需人工确认。",
+      "retest_condition_en": "Simulate total and intermittent loss; verify visible state, reachable fallback, and human-confirmed restoration.",
+      "trace_links": {
+        "protocol_fields": [
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC06|SC07|SC08|SC09|SC12].dependencies",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC06|SC07|SC08|SC09|SC12].low_tech_alternative",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC06|SC07|SC08|SC09|SC12].human_takeover",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC06|SC07|SC08|SC09|SC12].lifecycle"
+        ],
+        "f08": "F08 low-tech alternative and visible state cells",
+        "f11": "F11 operating -> degraded -> paused path",
+        "proposal": [
+          "交通、轨道、市政与公共服务设施 / Transport, Rail, Municipal Infrastructure, and Public Services",
+          "十二张场景卡 / Twelve scenario cards"
+        ],
+        "matrices": [
+          "design_depth_matrix.json#/items/11/implementation_projects[IM03|IM05|IM06|IM08]"
+        ]
+      },
+      "state_paths": [
+        [
+          "operating",
+          "degraded"
+        ]
+      ]
+    },
+    {
+      "test_id": "RT-07",
+      "title_zh": "断电、热风险或安全关机失败",
+      "title_en": "Power loss, thermal risk, or failed safe shutdown",
+      "category": "power_and_thermal_failure",
+      "affected_scenarios": [
+        "SC02",
+        "SC03",
+        "SC10"
+      ],
+      "precondition_zh": "供电中断、温度越过专业阈值，或断电后设备仍保留运动/输出。",
+      "precondition_en": "Power fails, temperature exceeds a professional threshold, or equipment retains motion/output after shutdown.",
+      "observable_failure_zh": "设备失控、热伤害、夹碰风险、数据损坏或公众误以为服务仍正常。",
+      "observable_failure_en": "Equipment loses control, creates thermal/contact harm, corrupts data, or appears operational to the public.",
+      "detection_evidence": {
+        "zh": [
+          "专业阈值与遥测",
+          "物理断电/隔离确认",
+          "近失、伤害和损坏记录"
+        ],
+        "en": [
+          "professional thresholds and telemetry",
+          "physical power-off/isolation confirmation",
+          "near-miss, harm, and damage record"
+        ]
+      },
+      "human_takeover": {
+        "action_zh": "安全/设施角色物理隔离并清场，现场主持显示停止；需要时启动应急流程。",
+        "action_en": "Safety/facility roles physically isolate and clear the area; the host shows Stopped and activates emergency procedures when needed.",
+        "owner_role_keys": [
+          "facilities_maintenance",
+          "on_site_host",
+          "safety_professional"
+        ]
+      },
+      "stop_exit_decision": {
+        "tabletop_disposition": "controlled_stop",
+        "decision_zh": "立即停止；阈值、关机和隔离均经专业复核后才可重新 preflight。",
+        "decision_en": "Stop immediately; a new preflight requires professional verification of thresholds, shutdown, and isolation."
+      },
+      "residual_risk_zh": "断电瞬间的运动和热惯性不能仅靠软件消除。",
+      "residual_risk_en": "Motion and thermal inertia at power loss cannot be eliminated by software alone.",
+      "retest_condition_zh": "在无人接触危险区的条件下完成断电、过热、恢复和紧急隔离演练。",
+      "retest_condition_en": "Complete power-loss, overheating, restoration, and emergency-isolation drills without exposing anyone to the hazard zone.",
+      "trace_links": {
+        "protocol_fields": [
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC02|SC03|SC10].failure_modes",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC02|SC03|SC10].human_takeover",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC02|SC03|SC10].dependencies",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC02|SC03|SC10].lifecycle"
+        ],
+        "f08": "F08 stop/isolate/remove cells for SC02/SC03/SC10",
+        "f11": "F11 AP3/AP5 stop and removal path",
+        "proposal": [
+          "交通、轨道、市政与公共服务设施 / Transport, Rail, Municipal Infrastructure, and Public Services",
+          "唯一首用试验 / Single first-use trial"
+        ],
+        "matrices": [
+          "design_depth_matrix.json#/items/11/implementation_projects[IM04|IM06]"
+        ]
+      },
+      "state_paths": [
+        [
+          "operating",
+          "human-takeover",
+          "stopped"
+        ]
+      ]
+    },
+    {
+      "test_id": "RT-08",
+      "title_zh": "传感器、无障碍接口或显示故障",
+      "title_en": "Sensor, accessibility-interface, or display failure",
+      "category": "sensor_and_interface_failure",
+      "affected_scenarios": [
+        "SC02",
+        "SC03",
+        "SC08",
+        "SC09"
+      ],
+      "precondition_zh": "传感值卡死、路线障碍未更新、语音/大字/按键失效或屏幕显示与后台状态不同。",
+      "precondition_en": "A sensor value freezes, route barriers are stale, speech/large-text/controls fail, or the screen diverges from backend state.",
+      "observable_failure_zh": "系统继续给出错误安全判断、不可达路线或虚假开放状态。",
+      "observable_failure_en": "The service continues with a wrong safety judgment, inaccessible route, or false open state.",
+      "detection_evidence": {
+        "zh": [
+          "心跳和交叉传感比对",
+          "现场走查与前后台状态差异",
+          "无障碍功能检查记录"
+        ],
+        "en": [
+          "heartbeat and cross-sensor comparison",
+          "field walkthrough and front/back-state diff",
+          "accessibility-function check record"
+        ]
+      },
+      "human_takeover": {
+        "action_zh": "关闭故障接口，现场人员以人工仪表、纸图或陪同替代，并标记待现场核验。",
+        "action_en": "Disable the failed interface; staff use manual instruments, paper maps, or escort and mark Pending Site Verification.",
+        "owner_role_keys": [
+          "accessibility_lead",
+          "facilities_maintenance",
+          "safety_professional"
+        ]
+      },
+      "stop_exit_decision": {
+        "tabletop_disposition": "controlled_degrade",
+        "decision_zh": "安全相关传感故障即停止；仅展示性接口可在等效替代已验证时降级。",
+        "decision_en": "Stop for safety-related sensor failure; a display-only interface may degrade only with a verified equivalent fallback."
+      },
+      "residual_risk_zh": "人工检查存在间隔，障碍可能在两次检查之间出现。",
+      "residual_risk_en": "Manual checks are intermittent, so a barrier may appear between checks.",
+      "retest_condition_zh": "逐一拔除/冻结接口并验证告警、状态、人工替代和禁止自动恢复。",
+      "retest_condition_en": "Disconnect/freeze each interface and verify alert, state, human fallback, and prohibition on automatic restoration.",
+      "trace_links": {
+        "protocol_fields": [
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC02|SC03|SC08|SC09].inputs.allowed_zh",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC02|SC03|SC08|SC09].data_and_evidence",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC02|SC03|SC08|SC09].human_takeover",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC02|SC03|SC08|SC09].evaluation"
+        ],
+        "f08": "F08 data/evidence, fallback, and state cells",
+        "f11": "F11 degraded/Human Takeover and AP2/AP3/AP5",
+        "proposal": [
+          "交通、轨道、市政与公共服务设施 / Transport, Rail, Municipal Infrastructure, and Public Services"
+        ],
+        "matrices": [
+          "design_depth_matrix.json#/items/11/implementation_projects[IM02|IM04|IM06]"
+        ]
+      },
+      "state_paths": [
+        [
+          "operating",
+          "degraded"
+        ]
+      ]
+    },
+    {
+      "test_id": "RT-09",
+      "title_zh": "人工接管岗位无人或不可达",
+      "title_en": "Human-takeover role absent or unreachable",
+      "category": "human-takeover_unavailable",
+      "affected_scenarios": [
+        "SC01",
+        "SC02",
+        "SC03",
+        "SC04",
+        "SC05",
+        "SC06",
+        "SC07",
+        "SC08",
+        "SC09",
+        "SC10",
+        "SC11",
+        "SC12"
+      ],
+      "precondition_zh": "值守人缺席、联系方式失效、超出值守时段或责任角色互相推诿。",
+      "precondition_en": "The duty person is absent, contact fails, the service runs outside duty hours, or roles deflect responsibility.",
+      "observable_failure_zh": "界面声称可人工接管，但用户无法获得响应，风险输出仍继续。",
+      "observable_failure_en": "The interface claims human takeover, yet no response is reachable while risky output continues.",
+      "detection_evidence": {
+        "zh": [
+          "开场签到和值守表",
+          "多入口接管探测",
+          "失败通话/柜台/按钮记录"
+        ],
+        "en": [
+          "opening sign-in and duty roster",
+          "multi-channel takeover probe",
+          "failed phone/counter/button record"
+        ]
+      },
+      "human_takeover": {
+        "action_zh": "场景责任人停止 AI 功能并显示暂停；由替补人工或现场总负责人接管。无替补即停服。",
+        "action_en": "The scenario owner stops AI functions and shows Paused; a substitute human or site lead takes over. No substitute means service stop.",
+        "owner_role_keys": [
+          "on_site_host",
+          "scenario_service_owner"
+        ]
+      },
+      "stop_exit_decision": {
+        "tabletop_disposition": "fail_stop",
+        "decision_zh": "12/12 均执行“无人接管即不进入或立即停止”；禁止无人值守续跑。",
+        "decision_en": "All 12 scenarios apply no takeover = no entry or immediate stop; unattended continuation is prohibited."
+      },
+      "residual_risk_zh": "高峰时段即使有人值守也可能超载；当前没有事实支持数字响应承诺。",
+      "residual_risk_en": "Human service may still overload at peaks; no evidence supports a numeric response promise.",
+      "retest_condition_zh": "开放前和开放中随机测试全部入口、替补与停止权限；窗口写入运营协议并标 `design-target`。",
+      "retest_condition_en": "Randomly test every channel, substitute, and stop authority before and during opening; write windows into the operating protocol as `design-target`.",
+      "trace_links": {
+        "protocol_fields": [
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC01-SC12].human_takeover.triggers",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC01-SC12].human_takeover.responsible_role_keys",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC01-SC12].human_takeover.visible_action_zh",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC01-SC12].low_tech_alternative",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC01-SC12].dependencies"
+        ],
+        "f08": "F08 12/12 Human Takeover owner and low-tech alternative",
+        "f11": "F11 preflight staffing gate and human-takeover -> stopped",
+        "proposal": [
+          "AI 创新生态、人才画像与 AI+ 场景 / AI Innovation Ecosystem, Personas, and AI+ Scenarios",
+          "年度运营与转化路径 / Annual operation and conversion pathway"
+        ],
+        "matrices": [
+          "design_depth_matrix.json#/items/11/implementation_projects[IM03]",
+          "compliance_matrix.json#/review_navigation/core_claims[CL06]"
+        ]
+      },
+      "state_paths": [
+        [
+          "preflight"
+        ],
+        [
+          "limited-open",
+          "stopped"
+        ],
+        [
+          "operating",
+          "human-takeover",
+          "stopped"
+        ]
+      ]
+    },
+    {
+      "test_id": "RT-10",
+      "title_zh": "无障碍或低技术替代不等效",
+      "title_en": "Inaccessible or non-equivalent low-tech fallback",
+      "category": "accessibility_failure",
+      "affected_scenarios": [
+        "SC03",
+        "SC08",
+        "SC09",
+        "SC10",
+        "SC12"
+      ],
+      "precondition_zh": "轮椅用户、视听障碍者、老年人、儿童照护者、无智能设备或拒绝 AI 用户尝试完成同一任务。",
+      "precondition_en": "Wheelchair users, people with sensory disabilities, older people, carers with children, non-smart-device users, or people refusing AI attempt the same task.",
+      "observable_failure_zh": "替代入口不可找到、路线不安全、信息缺少等效格式，或必须接受 AI 才能获得服务。",
+      "observable_failure_en": "The fallback cannot be found, the route is unsafe, information lacks an equivalent format, or AI acceptance is mandatory for service.",
+      "detection_evidence": {
+        "zh": [
+          "由受影响用户参与的任务走查",
+          "人工帮助可达测试",
+          "完成/中止及障碍记录"
+        ],
+        "en": [
+          "task walkthrough with affected users",
+          "human-help reachability test",
+          "completion/abandonment and barrier record"
+        ]
+      },
+      "human_takeover": {
+        "action_zh": "关闭不等效入口，人工解释并提供安全陪同、纸面/语音/大字或非 AI 柜台；不得让用户自行承担风险。",
+        "action_en": "Close the non-equivalent entry; provide human explanation, safe escort, paper/speech/large text, or a non-AI counter without shifting risk to the user.",
+        "owner_role_keys": [
+          "accessibility_lead",
+          "on_site_host",
+          "scenario_service_owner"
+        ]
+      },
+      "stop_exit_decision": {
+        "tabletop_disposition": "fail_stop",
+        "decision_zh": "等效服务或安全路线未验证即停止受影响场景；Phase 2 的 `surveyed=0` 不得被写成已通过。",
+        "decision_en": "Stop the affected scenario until equivalent service and a safe route are verified; Phase 2 `surveyed=0` must never be written as a pass."
+      },
+      "residual_risk_zh": "一次走查不能代表所有障碍类型、时段和季节。",
+      "residual_risk_en": "One walkthrough cannot represent every disability, time window, or season.",
+      "retest_condition_zh": "由多类受影响用户重复走查，并将现场日期、覆盖、方法和责任人登记为调查证据。",
+      "retest_condition_en": "Repeat walkthroughs with multiple affected groups and register field date, coverage, method, and owner as survey evidence.",
+      "trace_links": {
+        "protocol_fields": [
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC03|SC08|SC09|SC10|SC12].users.affected",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC03|SC08|SC09|SC10|SC12].frontstage_notice",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC03|SC08|SC09|SC10|SC12].low_tech_alternative",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC03|SC08|SC09|SC10|SC12].evaluation"
+        ],
+        "f08": "F08 12-scenario low-tech/non-AI comparison and state",
+        "f11": "F11 accessibility gate before limited-open",
+        "proposal": [
+          "七类用户画像 / Seven personas",
+          "交通、轨道、市政与公共服务设施 / Transport, Rail, Municipal Infrastructure, and Public Services"
+        ],
+        "matrices": [
+          "design_depth_matrix.json#/items/11/implementation_projects[IM02|IM03|IM04|IM06|IM08]",
+          "metrics.json#/metrics/cross_section_surveyed_count"
+        ]
+      },
+      "state_paths": [
+        [
+          "operating",
+          "human-takeover",
+          "stopped"
+        ]
+      ]
+    },
+    {
+      "test_id": "RT-11",
+      "title_zh": "双语或易读表达造成误导",
+      "title_en": "Misleading bilingual or plain-language presentation",
+      "category": "language_misdirection",
+      "affected_scenarios": [
+        "SC07",
+        "SC09",
+        "SC11",
+        "SC12"
+      ],
+      "precondition_zh": "中文、英文、符号、语音或易读版本对状态、限制、来源或风险表达不等义。",
+      "precondition_en": "Chinese, English, symbols, speech, or plain-language versions differ on state, limit, source, or risk.",
+      "observable_failure_zh": "非中文用户或认知负担较高的用户获得更强承诺、遗漏警示或把概念当成实时事实。",
+      "observable_failure_en": "A non-Chinese or cognitively burdened user receives a stronger promise, missing warning, or conceptual content presented as live fact.",
+      "detection_evidence": {
+        "zh": [
+          "逐字段双语差异",
+          "语音/符号/易读版走查",
+          "误解反馈和更正记录"
+        ],
+        "en": [
+          "field-level bilingual diff",
+          "speech/symbol/plain-language walkthrough",
+          "misunderstanding feedback and correction record"
+        ]
+      },
+      "human_takeover": {
+        "action_zh": "隐藏争议版本，人工解释统一限制，保留静态已复核文本。",
+        "action_en": "Hide the disputed version, explain the common limit in person, and retain only reviewed static copy.",
+        "owner_role_keys": [
+          "accessibility_lead",
+          "on_site_host",
+          "rights_content_reviewer"
+        ]
+      },
+      "stop_exit_decision": {
+        "tabletop_disposition": "fail_pause",
+        "decision_zh": "暂停不等义语言/格式；涉及安全或权利时停止整项输出。",
+        "decision_en": "Pause the non-equivalent language/format; stop the whole output when safety or rights are affected."
+      },
+      "residual_risk_zh": "文字等义不保证文化理解等效，现场噪声或压力会放大误解。",
+      "residual_risk_en": "Textual equivalence does not guarantee cultural equivalence, and noise or stress may amplify misunderstanding.",
+      "retest_condition_zh": "人工双语复核后，让目标用户完成状态、限制、求助和退出四项理解测试。",
+      "retest_condition_en": "After manual bilingual review, have target users complete comprehension checks for state, limit, help, and exit.",
+      "trace_links": {
+        "protocol_fields": [
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC07|SC09|SC11|SC12].frontstage_notice",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC07|SC09|SC11|SC12].outputs",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC07|SC09|SC11|SC12].human_takeover.visible_action_zh",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC07|SC09|SC11|SC12].evaluation"
+        ],
+        "f08": "F08 bilingual status and boundary text",
+        "f11": "F11 public-visible status and appeal route",
+        "proposal": [
+          "文化、导视与国际传播 / Culture, wayfinding, and international communication",
+          "T07 人工双语复核 / T07 manual bilingual review"
+        ],
+        "matrices": [
+          "design_depth_matrix.json#/items/11/implementation_projects[IM09]",
+          "compliance_matrix.json#/review_navigation/core_claims[CL06]"
+        ]
+      },
+      "state_paths": [
+        [
+          "operating",
+          "degraded",
+          "paused"
+        ]
+      ]
+    },
+    {
+      "test_id": "RT-12",
+      "title_zh": "投诉或申诉入口无法到达",
+      "title_en": "Complaint or appeal channel unreachable",
+      "category": "complaint_unreachable",
+      "affected_scenarios": [
+        "SC05",
+        "SC07",
+        "SC08",
+        "SC10",
+        "SC12"
+      ],
+      "precondition_zh": "二维码失效、电话无人接、现场人员不知道流程、匿名/无设备用户无法提交，或投诉被模型自动关闭。",
+      "precondition_en": "The QR code fails, phone is unanswered, staff do not know the process, anonymous/non-device users cannot file, or the model auto-closes a complaint.",
+      "observable_failure_zh": "用户无法获得收件确认、人工复核、进度或纠错，服务却继续开放。",
+      "observable_failure_en": "The user cannot obtain receipt, human review, progress, or correction while the service remains open.",
+      "detection_evidence": {
+        "zh": [
+          "数字、电话、纸面、柜台多入口探测",
+          "收件—分派—反馈链",
+          "未闭环投诉与前台状态"
+        ],
+        "en": [
+          "digital, phone, paper, and counter channel probes",
+          "receipt-assignment-feedback chain",
+          "unclosed complaint and public status"
+        ]
+      },
+      "human_takeover": {
+        "action_zh": "现场负责人当面收件并出具纸面编号，投诉负责人接管；停止自动关闭和销毁相关日志。",
+        "action_en": "The site lead accepts the complaint in person with a paper reference; the complaint lead takes over and blocks automatic closure or log deletion.",
+        "owner_role_keys": [
+          "complaint_appeal_lead",
+          "data_steward",
+          "on_site_host"
+        ]
+      },
+      "stop_exit_decision": {
+        "tabletop_disposition": "fail_stop",
+        "decision_zh": "投诉闭环失效即停止相关服务；SC10 首用试验立即终止并进入撤场判断。",
+        "decision_en": "Failed complaint closure stops the related service; the SC10 first-use trial ends immediately and enters removal review."
+      },
+      "residual_risk_zh": "已放弃投诉的用户无法自动找回，数字响应期限目前无事实或法定数字依据。",
+      "residual_risk_en": "Users who already abandoned a complaint cannot automatically be recovered, and no factual or statutory numeric response deadline is established here.",
+      "retest_condition_zh": "各类用户从四种入口提交并收到具名人工反馈；期限由获授权运营方书面设为 `design-target`。",
+      "retest_condition_en": "Different users file through four channels and receive named human feedback; an authorized operator sets the written window as `design-target`.",
+      "trace_links": {
+        "protocol_fields": [
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC05|SC07|SC08|SC10|SC12].complaints_and_appeals",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC05|SC07|SC08|SC10|SC12].human_takeover",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC05|SC07|SC08|SC10|SC12].logging_audit",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC05|SC07|SC08|SC10|SC12].stop_exit"
+        ],
+        "f08": "F08 complaint/Human Takeover comparison",
+        "f11": "F11 complaint evidence, stop, and SC10+IM06 removal",
+        "proposal": [
+          "十二张场景卡 / Twelve scenario cards",
+          "唯一首用试验 / Single first-use trial"
+        ],
+        "matrices": [
+          "design_depth_matrix.json#/items/11/implementation_projects[IM03|IM05|IM06]",
+          "compliance_matrix.json#/review_navigation/first_use_trial"
+        ]
+      },
+      "state_paths": [
+        [
+          "operating",
+          "human-takeover",
+          "stopped"
+        ]
+      ]
+    },
+    {
+      "test_id": "RT-13",
+      "title_zh": "SC10＋IM06 撤场或场地恢复失败",
+      "title_en": "SC10 + IM06 removal or site-restoration failure",
+      "category": "removal_failure",
+      "affected_scenarios": [
+        "SC10"
+      ],
+      "implementation_refs": [
+        "IM06"
+      ],
+      "precondition_zh": "首用试验期限届满或停止触发，但设备、标识、账号、临时数据、通行障碍或营销物仍残留。",
+      "precondition_en": "The first-use period expires or stop triggers, but equipment, signs, accounts, temporary data, access obstructions, or marketing material remain.",
+      "observable_failure_zh": "公众仍以为场景开放，场地未恢复、数据仍可访问，或责任人无法证明撤除完成。",
+      "observable_failure_en": "The public still perceives an open service, the site is not restored, data remains accessible, or the owner cannot prove removal completion.",
+      "detection_evidence": {
+        "zh": [
+          "撤场逐项清单和前后影像",
+          "资产/账号/访问权注销",
+          "临时数据删除或必要事件证据保全记录",
+          "现场通行复核"
+        ],
+        "en": [
+          "itemized removal list and before/after images",
+          "asset/account/access revocation",
+          "temporary-data deletion or necessary incident-evidence preservation record",
+          "site-passage recheck"
+        ]
+      },
+      "human_takeover": {
+        "action_zh": "场景责任人与设施维护人员封闭残留界面、张贴已停止/撤场状态并完成人工清单。",
+        "action_en": "The scenario owner and facilities team close residual interfaces, post Stopped/Removed status, and complete a manual checklist.",
+        "owner_role_keys": [
+          "data_steward",
+          "facilities_maintenance",
+          "scenario_service_owner"
+        ]
+      },
+      "stop_exit_decision": {
+        "tabletop_disposition": "fail_stop",
+        "decision_zh": "保持 stopped，不得进入 archive 或重新开放，直至撤场和恢复证据完整。",
+        "decision_en": "Remain stopped; do not enter archive or reopen until removal and restoration evidence is complete."
+      },
+      "residual_risk_zh": "第三方缓存、用户截图或不可逆场地损伤可能无法完全撤回。",
+      "residual_risk_en": "Third-party caches, user captures, or irreversible site damage may not be fully withdrawable.",
+      "retest_condition_zh": "由非执行人按清单复核现场、账号、数据、标识和公众状态，完成后才归档。",
+      "retest_condition_en": "A non-executing reviewer checks site, accounts, data, signs, and public state against the list before archive.",
+      "trace_links": {
+        "protocol_fields": [
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC10].retention_deletion",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC10].lifecycle",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC10].dependencies",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC10].stop_exit"
+        ],
+        "f08": "F08 SC10 removed/archive status and low-tech exit",
+        "f11": "F11 SC10+IM06 stopped -> removed -> archive sequence",
+        "proposal": [
+          "唯一首用试验 / Single first-use trial",
+          "年度运营与转化路径 / Annual operation and conversion pathway"
+        ],
+        "matrices": [
+          "design_depth_matrix.json#/items/11/implementation_projects[IM06]",
+          "compliance_matrix.json#/review_navigation/first_use_trial"
+        ]
+      },
+      "state_paths": [
+        [
+          "stopped"
+        ],
+        [
+          "stopped",
+          "removed",
+          "archive"
+        ]
+      ]
+    },
+    {
+      "test_id": "RT-14",
+      "title_zh": "日志不完整或事件证据被覆盖",
+      "title_en": "Incomplete logs or overwritten incident evidence",
+      "category": "incomplete_logs",
+      "affected_scenarios": [
+        "SC01",
+        "SC02",
+        "SC03",
+        "SC04",
+        "SC10",
+        "SC12"
+      ],
+      "precondition_zh": "输出、输入版本、人工决定、接管、投诉、停止或删除字段缺失，或日志轮换覆盖事件时段。",
+      "precondition_en": "Output, input version, human decision, takeover, complaint, stop, or deletion fields are missing, or log rotation overwrites the incident window.",
+      "observable_failure_zh": "无法重建谁在何时基于什么证据作出何种决定，也无法证明删除或撤场。",
+      "observable_failure_en": "Reviewers cannot reconstruct who decided what, when, and on which evidence, or prove deletion/removal.",
+      "detection_evidence": {
+        "zh": [
+          "必填字段完整性审计",
+          "跨系统事件时间线差异",
+          "哈希/签名/保留策略缺口"
+        ],
+        "en": [
+          "required-field completeness audit",
+          "cross-system incident-timeline diff",
+          "hash/signature/retention-policy gap"
+        ]
+      },
+      "human_takeover": {
+        "action_zh": "数据治理责任人保全现有证据并禁止继续覆盖；场景责任人切人工、纸面登记或停止。",
+        "action_en": "The data steward preserves existing evidence and blocks overwrite; the scenario owner switches to human/paper recording or stops.",
+        "owner_role_keys": [
+          "complaint_appeal_lead",
+          "data_steward",
+          "scenario_service_owner"
+        ]
+      },
+      "stop_exit_decision": {
+        "tabletop_disposition": "unknown_stop",
+        "decision_zh": "影响和责任链 unknown 即停止；不得以补写日志冒充原始记录。",
+        "decision_en": "Unknown impact or accountability chain stops service; reconstructed notes must not masquerade as original logs."
+      },
+      "residual_risk_zh": "缺失证据可能永久无法恢复，导致申诉与责任判断受限。",
+      "residual_risk_en": "Missing evidence may be irrecoverable, limiting appeal and accountability review.",
+      "retest_condition_zh": "以模拟事件检查必填字段、不可篡改时间线、权限、保留/删除和人工导出。",
+      "retest_condition_en": "Use a simulated incident to test required fields, tamper-evident timeline, access, retention/deletion, and human export.",
+      "trace_links": {
+        "protocol_fields": [
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC01|SC02|SC03|SC04|SC10|SC12].logging_audit",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC01|SC02|SC03|SC04|SC10|SC12].retention_deletion",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC01|SC02|SC03|SC04|SC10|SC12].human_takeover",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC01|SC02|SC03|SC04|SC10|SC12].evaluation"
+        ],
+        "f08": "F08 audit/status evidence cells",
+        "f11": "F11 required evidence for every transition and archive",
+        "proposal": [
+          "十二张场景卡 / Twelve scenario cards",
+          "风险、版权与合规说明 / Risk, Copyright, and Compliance"
+        ],
+        "matrices": [
+          "design_depth_matrix.json#/items/11/implementation_projects[IM03|IM04|IM06]"
+        ]
+      },
+      "state_paths": [
+        [
+          "operating",
+          "human-takeover",
+          "stopped"
+        ]
+      ]
+    },
+    {
+      "test_id": "RT-15",
+      "title_zh": "来源、许可或口述同意撤回后内容仍展示",
+      "title_en": "Content persists after source, rights, or oral-history consent withdrawal",
+      "category": "rights_and_source_withdrawal",
+      "affected_scenarios": [
+        "SC01",
+        "SC04",
+        "SC07",
+        "SC11",
+        "SC12"
+      ],
+      "precondition_zh": "来源过期、许可撤回、贡献者撤回口述材料或权威版本与现有内容冲突。",
+      "precondition_en": "A source expires, permission is withdrawn, a contributor withdraws oral material, or an authoritative version conflicts with displayed content.",
+      "observable_failure_zh": "内容仍可检索、翻译、推荐或展示，且没有撤回状态。",
+      "observable_failure_en": "The content remains retrievable, translated, recommended, or displayed without a withdrawn state.",
+      "detection_evidence": {
+        "zh": [
+          "来源/许可状态变更",
+          "消费者图谱查询",
+          "缓存和公开载体残留清单"
+        ],
+        "en": [
+          "source/permission status change",
+          "consumer-graph query",
+          "cache and public-carrier residue list"
+        ]
+      },
+      "human_takeover": {
+        "action_zh": "权利内容复核人隐藏受影响内容，数据治理责任人冻结下游生成并记录传播范围。",
+        "action_en": "The rights/content reviewer hides affected material and the data steward freezes downstream generation while recording propagation scope.",
+        "owner_role_keys": [
+          "data_steward",
+          "rights_content_reviewer"
+        ]
+      },
+      "stop_exit_decision": {
+        "tabletop_disposition": "fail_pause",
+        "decision_zh": "暂停受影响内容；传播范围不明则停止相关场景输出。",
+        "decision_en": "Pause the affected content; stop related scenario output when propagation scope is unknown."
+      },
+      "residual_risk_zh": "已下载或第三方转载无法由本系统完全撤回。",
+      "residual_risk_en": "Downloads or third-party republication cannot be fully withdrawn by this system.",
+      "retest_condition_zh": "执行撤回后验证正文、检索、翻译、缓存、F08/F11 与审计记录均反映同一状态。",
+      "retest_condition_en": "After withdrawal, verify that narrative, retrieval, translation, caches, F08/F11, and audit records show the same state.",
+      "trace_links": {
+        "protocol_fields": [
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC01|SC04|SC07|SC11|SC12].data_and_evidence",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC01|SC04|SC07|SC11|SC12].retention_deletion",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC01|SC04|SC07|SC11|SC12].lifecycle",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC01|SC04|SC07|SC11|SC12].stop_exit"
+        ],
+        "f08": "F08 evidence grade and hidden/paused/stopped state",
+        "f11": "F11 AP1/AP6 withdrawal and archive",
+        "proposal": [
+          "设计依据与资料清单 / Design Basis and Source List",
+          "三地标、开放贡献谱与组件库 / Three landmarks, ledger, and component library"
+        ],
+        "matrices": [
+          "design_depth_matrix.json#/items/11/implementation_projects[IM01|IM09|IM10|IM13]",
+          "compliance_matrix.json#/review_navigation/core_claims[CL02|CL06]"
+        ]
+      },
+      "state_paths": [
+        [
+          "operating",
+          "degraded",
+          "paused"
+        ]
+      ]
+    },
+    {
+      "test_id": "RT-16",
+      "title_zh": "AI 自动改变资格、机会或公共服务权利",
+      "title_en": "AI autonomously changes eligibility, opportunity, or service rights",
+      "category": "authority_overreach_and_rights_deprivation",
+      "affected_scenarios": [
+        "SC05",
+        "SC06",
+        "SC07",
+        "SC10",
+        "SC12"
+      ],
+      "precondition_zh": "建议、排序或验证结果被直接连接到引荐、时段、进入、购买、资源或服务资格，缺少人工决定。",
+      "precondition_en": "A recommendation, rank, or verification result directly controls referral, slot, entry, purchase, resource, or service eligibility without a human decision.",
+      "observable_failure_zh": "用户因 AI 输出失去机会、资源或服务，前台无法指出具名决定人和申诉入口。",
+      "observable_failure_en": "A user loses an opportunity, resource, or service because of AI output, and the interface cannot name the decision-maker or appeal route.",
+      "detection_evidence": {
+        "zh": [
+          "决策链和权限调用",
+          "人工批准字段缺失",
+          "受影响用户与申诉记录"
+        ],
+        "en": [
+          "decision chain and authorization call",
+          "missing human-approval field",
+          "affected-user and appeal record"
+        ]
+      },
+      "human_takeover": {
+        "action_zh": "立即撤销自动决定、恢复原有资格或人工待审状态，由具名责任人重新判断并通知受影响者。",
+        "action_en": "Revoke the automated decision immediately, restore prior eligibility or human-pending status, and have a named owner re-decide and notify affected people.",
+        "owner_role_keys": [
+          "complaint_appeal_lead",
+          "data_steward",
+          "scenario_service_owner"
+        ]
+      },
+      "stop_exit_decision": {
+        "tabletop_disposition": "unknown_stop",
+        "decision_zh": "停止自动决策链；实际权利与法律影响需专业/法律复核，当前保持 unknown。",
+        "decision_en": "Stop the automated decision chain; actual rights and legal impact require professional/legal review and remain unknown."
+      },
+      "residual_risk_zh": "错失机会可能无法完全恢复，且法律责任需个案判断。",
+      "residual_risk_en": "A lost opportunity may not be fully restorable, and legal responsibility requires case-specific review.",
+      "retest_condition_zh": "逐项证明 AI 仅建议、每个权利相关动作都有具名人工批准、通知、理由和申诉。",
+      "retest_condition_en": "Prove item by item that AI only assists and every rights-affecting action has named human approval, notice, reason, and appeal.",
+      "trace_links": {
+        "protocol_fields": [
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC05|SC06|SC07|SC10|SC12].ai_authority",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC05|SC06|SC07|SC10|SC12].human_only_decisions",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC05|SC06|SC07|SC10|SC12].complaints_and_appeals",
+          "phase3-protocol-contracts.json#/scenarios[scenario_id=SC05|SC06|SC07|SC10|SC12].logging_audit"
+        ],
+        "f08": "F08 AI-versus-human authority boundary for SC05/SC06/SC07/SC10/SC12",
+        "f11": "F11 human Gate before limited-open and no automatic reopening",
+        "proposal": [
+          "十二张场景卡 / Twelve scenario cards",
+          "风险、版权与合规说明 / Risk, Copyright, and Compliance"
+        ],
+        "matrices": [
+          "design_depth_matrix.json#/items/11/implementation_projects[IM03|IM05|IM06]",
+          "compliance_matrix.json#/review_navigation/core_claims[CL06]"
+        ]
+      },
+      "state_paths": [
+        [
+          "operating",
+          "human-takeover",
+          "stopped"
+        ]
+      ]
+    }
+  ],
+  "coverage_audit": {
+    "required_categories": {
+      "wrong_advice": [
+        "RT-01"
+      ],
+      "bias_or_inequality": [
+        "RT-02"
+      ],
+      "data_or_model_drift": [
+        "RT-03"
+      ],
+      "impersonation": [
+        "RT-04"
+      ],
+      "malicious_input": [
+        "RT-05"
+      ],
+      "network_loss": [
+        "RT-06"
+      ],
+      "power_loss": [
+        "RT-07"
+      ],
+      "sensor_or_interface_failure": [
+        "RT-08"
+      ],
+      "human_takeover_unavailable": [
+        "RT-09"
+      ],
+      "accessibility_failure": [
+        "RT-10"
+      ],
+      "language_misdirection": [
+        "RT-11"
+      ],
+      "complaint_unreachable": [
+        "RT-12"
+      ],
+      "removal_failure": [
+        "RT-13"
+      ],
+      "incomplete_logs": [
+        "RT-14"
+      ],
+      "rights_or_source_withdrawal": [
+        "RT-15"
+      ],
+      "authority_overreach": [
+        "RT-16"
+      ]
+    },
+    "scenario_test_coverage": {
+      "SC01": [
+        "RT-03",
+        "RT-05",
+        "RT-09",
+        "RT-14",
+        "RT-15"
+      ],
+      "SC02": [
+        "RT-07",
+        "RT-08",
+        "RT-09",
+        "RT-14"
+      ],
+      "SC03": [
+        "RT-07",
+        "RT-08",
+        "RT-09",
+        "RT-10",
+        "RT-14"
+      ],
+      "SC04": [
+        "RT-05",
+        "RT-09",
+        "RT-14",
+        "RT-15"
+      ],
+      "SC05": [
+        "RT-02",
+        "RT-03",
+        "RT-04",
+        "RT-09",
+        "RT-12",
+        "RT-16"
+      ],
+      "SC06": [
+        "RT-02",
+        "RT-04",
+        "RT-06",
+        "RT-09",
+        "RT-16"
+      ],
+      "SC07": [
+        "RT-01",
+        "RT-02",
+        "RT-03",
+        "RT-06",
+        "RT-09",
+        "RT-11",
+        "RT-12",
+        "RT-15",
+        "RT-16"
+      ],
+      "SC08": [
+        "RT-06",
+        "RT-08",
+        "RT-09",
+        "RT-10",
+        "RT-12"
+      ],
+      "SC09": [
+        "RT-01",
+        "RT-03",
+        "RT-06",
+        "RT-08",
+        "RT-09",
+        "RT-10",
+        "RT-11"
+      ],
+      "SC10": [
+        "RT-04",
+        "RT-05",
+        "RT-07",
+        "RT-09",
+        "RT-10",
+        "RT-12",
+        "RT-13",
+        "RT-14",
+        "RT-16"
+      ],
+      "SC11": [
+        "RT-09",
+        "RT-11",
+        "RT-15"
+      ],
+      "SC12": [
+        "RT-01",
+        "RT-03",
+        "RT-05",
+        "RT-06",
+        "RT-09",
+        "RT-10",
+        "RT-11",
+        "RT-12",
+        "RT-14",
+        "RT-15",
+        "RT-16"
+      ]
+    },
+    "all_scenarios_covered": true,
+    "human_takeover_tested_for_all_scenarios": true,
+    "negative_fail_stop_unknown_count": 12,
+    "minimum_required_negative_count": 3,
+    "trace_targets": [
+      "phase3 protocol fields",
+      "F08",
+      "F11",
+      "proposal zh/en",
+      "design_depth_matrix.json",
+      "compliance_matrix.json"
+    ]
+  },
+  "uncertainties_and_required_follow_up": [
+    {
+      "status": "unknown",
+      "topic_zh": "具名运营主体、值守人员和替补",
+      "topic_en": "Named operator, duty staff, and substitutes",
+      "required_action_zh": "每次 preflight 由获授权主体书面登记。",
+      "required_action_en": "An authorized party records them in writing at every preflight."
+    },
+    {
+      "status": "requires legal review",
+      "topic_zh": "各场景适用法律、个人信息角色与投诉义务",
+      "topic_en": "Applicable law, personal-information roles, and complaint duties per scenario",
+      "required_action_zh": "由有权法律/合规人员按真实部署和数据流判断；本文件不宣称已合规。",
+      "required_action_en": "Authorized legal/compliance reviewers assess the real deployment and data flow; this file claims no compliance."
+    },
+    {
+      "status": "unknown",
+      "topic_zh": "响应、维护、评价和复测的数字窗口",
+      "topic_en": "Numeric response, maintenance, evaluation, and retest windows",
+      "required_action_zh": "由运营方依据风险、人员和专业条件书面设为 `design-target`，不得冒充法定或已承诺时限。",
+      "required_action_en": "The operator sets written `design-target` windows from risk, staffing, and professional conditions; they are neither statutory nor promised."
+    },
+    {
+      "status": "unknown",
+      "topic_zh": "现场无障碍、客流、消防、能源、网络与撤场可行性",
+      "topic_en": "Field accessibility, flows, fire, energy, network, and removal feasibility",
+      "required_action_zh": "保持 surveyed=0 和现有 unknown；不得从桌面测试升级为现场证明。",
+      "required_action_en": "Retain surveyed=0 and existing unknowns; do not promote tabletop tests into field evidence."
+    },
+    {
+      "status": "requires integration check",
+      "topic_zh": "A 线最终协议字段与统一状态机选择器",
+      "topic_en": "Final A-line protocol-field and shared-state-machine selectors",
+      "required_action_zh": "集成时解析所有 `trace_links.protocol_fields`，并保持 F08/F11/正文/矩阵同源。",
+      "required_action_en": "During integration, resolve every `trace_links.protocol_fields` selector and keep F08/F11/narrative/matrices generated from the same source."
+    }
+  ]
+}

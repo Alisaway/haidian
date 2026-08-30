@@ -1,0 +1,72 @@
+{
+  "schema_version": "0.1.0",
+  "concept": "共行信号容量一致性模型 (Signal Capacity Consistency Model)",
+  "purpose_zh": "回应评审质疑：8 个闭塞区间、每区间一车，与示范段 2000 单/日 KPI 是否一致？本模型给出分阶段容量核算，并据此修正 KPI 表述。",
+  "purpose_en": "Answers the review: are 8 block sections with one robot each consistent with the 2,000 orders/day KPI? This model computes phased capacity and restates the KPI accordingly.",
+  "synthetic_only": true,
+  "field_status": "not_authorized_not_run",
+  "network_geometry": {
+    "total_lane_km": 18.78,
+    "signaled_block_km": 13.1,
+    "connector_km": 5.68,
+    "connector_note_zh": "差额为驿站接驳段与末端百米段：步行速度随流运行，无需闭塞信号",
+    "block_lengths_km": {
+      "BLK-01": 2.6,
+      "BLK-02": 3.1,
+      "BLK-03": 2.8,
+      "BLK-04": 1.2,
+      "BLK-05": 1.1,
+      "BLK-06": 0.8,
+      "BLK-07": 0.6,
+      "BLK-08": 0.9
+    }
+  },
+  "assumptions": {
+    "service_hours_per_day": 12,
+    "orders_per_trip": [
+      2,
+      3
+    ],
+    "orders_note_zh": "单趟多单（驿站集货），取 2-3 单/趟为概念区间",
+    "spine_blocks": [
+      "BLK-01",
+      "BLK-02",
+      "BLK-03"
+    ],
+    "spine_speed_kmh": 15
+  },
+  "phases": [
+    {
+      "phase": "P1_current_rule",
+      "rule_zh": "当前闭塞规则：一区间一车",
+      "bottleneck_block": "BLK-02",
+      "bottleneck_transit_min": 12.4,
+      "trips_per_hour": 4.84,
+      "trips_per_day": 116,
+      "orders_per_day_range": [
+        232,
+        348
+      ],
+      "conclusion_zh": "当前规则下示范段容量约 230-350 单/日，达不到 2000 单/日——KPI 必须分阶段表述"
+    },
+    {
+      "phase": "P2_sub_blocking",
+      "rule_zh": "区间细分：专用脊柱拆为 500m 子区间（信号系统支持的最小粒度）",
+      "sub_block_count": 17,
+      "sub_block_transit_min": 2.0,
+      "trips_per_hour": 30,
+      "trips_per_day": 720,
+      "orders_per_day_range": [
+        1440,
+        2160
+      ],
+      "conclusion_zh": "子区间化后容量约 1440-2160 单/日，2000 单/日 KPI 在此阶段可达"
+    },
+    {
+      "phase": "P3_moving_block",
+      "rule_zh": "远期：移动闭塞/追踪运行（同区间多车、按制动距离间隔）",
+      "conclusion_zh": "容量再提升数倍，但需车-车通信与安全论证，列为远期技术路线而非承诺"
+    }
+  ],
+  "kpi_restatement_zh": "示范段日均配送单量修正为三档：初期（当前闭塞规则）200-350 单/日；区间细分后 1,400-2,100 单/日；远期 2,000 单/日仅在 P2 成熟后作为目标，不再作为初期通过门槛"
+}

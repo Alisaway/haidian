@@ -1,0 +1,738 @@
+{
+  "$schema": "local://jingzhang/fp01-evidence-readiness/v1",
+  "artifact_id": "FP01-EVIDENCE-READINESS-001",
+  "artifact_version": "v0.12",
+  "pilot_id": "FP01",
+  "contract_id": "FP01-CONTRACT-001",
+  "title_zh": "FP01 H0—H4 实证就绪登记册",
+  "title_en": "FP01 H0-H4 Evidence-Readiness Register",
+  "language_contract": "embedded_bilingual_fields",
+  "artifact_status": {
+    "readiness_status": "pending_external_evidence",
+    "verified_gate_count": 0,
+    "gate_count": 5,
+    "authorization_status": "not_authorized",
+    "fieldwork_status": "not_conducted",
+    "operator_confirmation_status": "unconfirmed",
+    "budget_status": "unknown",
+    "procurement_status": "not_procured",
+    "professional_review_status": "not_conducted",
+    "rehearsal_status": "not_conducted",
+    "outcome_status": "unknown",
+    "scope_note_zh": "本文件只把 H0—H4 所需外部证据转化为可填写、可核验、可停止的登记结构。当前没有把现场调研、实名主体、预算采购、专业审查、试运行或结果写成已发生事实。",
+    "scope_note_en": "This file only turns the external evidence required by H0-H4 into a fillable, checkable, and stoppable register. It does not represent fieldwork, named entities, budgets, procurement, professional review, rehearsals, or outcomes as completed facts."
+  },
+  "advancement_rule": {
+    "sequence": [
+      "H0",
+      "H1",
+      "H2",
+      "H3",
+      "H4"
+    ],
+    "default_state": "pending_external_evidence",
+    "gate_pass_rule": "all_required_evidence_items_independently_verifiable_and_gate_decision_cosigned",
+    "failed_or_missing_rule": "stop_and_remain_concept_only",
+    "no_self_certification": true,
+    "no_structural_pass_as_delivery_claim": true,
+    "separate_authorization_after_h3": true,
+    "rule_zh": "后一门不得绕过前一门；材料齐全也不自动等于通过。每一门须由相应责任角色签认，H3 评测须与供应、运营或采购决定分离，H4 授权须与设计审查或测试通过分离。",
+    "rule_en": "No later gate may bypass an earlier gate, and document completeness does not automatically mean passage. Each gate requires sign-off by the relevant accountable roles; H3 evaluation must be separated from supply, operations, or procurement, and H4 authorization must be separate from design review or test passage."
+  },
+  "hold_points": [
+    {
+      "hold_point_id": "H0",
+      "name_zh": "公共问题与 D0 人工基线",
+      "name_en": "Public Problem and D0 Human Baseline",
+      "prerequisite_hold_points": [],
+      "status": "pending_external_evidence",
+      "decision_state": "not_evaluated",
+      "advancement_allowed": false,
+      "decision_record_reference": null,
+      "decision_date": null,
+      "decision_signatories": null,
+      "responsible_role_classes": [
+        "accountable_service_owner_role",
+        "intended_user_representative_role",
+        "human_service_baseline_observer_role"
+      ],
+      "required_evidence": [
+        {
+          "evidence_id": "H0-E01",
+          "name_zh": "现场共同确认的单一公共问题",
+          "name_en": "One public problem co-confirmed in context",
+          "evidence_class": "field_confirmation",
+          "minimum_content": [
+            "problem_statement",
+            "affected_user_boundary",
+            "current_staffed_or_non_digital_path",
+            "dissent_and_unresolved_questions"
+          ],
+          "status": "pending_external_evidence",
+          "source_reference": null,
+          "file_reference": null,
+          "issuer_or_observer": null,
+          "collected_at": null,
+          "reviewed_at": null,
+          "actual_value": null,
+          "verification_result": null
+        },
+        {
+          "evidence_id": "H0-E02",
+          "name_zh": "D0 有人或非数字基线观测包",
+          "name_en": "D0 staffed or non-digital baseline observation pack",
+          "evidence_class": "baseline_observation",
+          "minimum_content": [
+            "measurement_protocol",
+            "observation_log",
+            "aggregated_results",
+            "missingness_and_limitations"
+          ],
+          "status": "pending_external_evidence",
+          "source_reference": null,
+          "file_reference": null,
+          "issuer_or_observer": null,
+          "collected_at": null,
+          "reviewed_at": null,
+          "actual_value": null,
+          "verification_result": null
+        },
+        {
+          "evidence_id": "H0-E03",
+          "name_zh": "禁止自动决定与受影响群体边界记录",
+          "name_en": "Record of prohibited automated decisions and affected groups",
+          "evidence_class": "rights_boundary",
+          "minimum_content": [
+            "prohibited_decisions",
+            "affected_groups",
+            "human_decision_authority",
+            "appeal_and_remedy_route"
+          ],
+          "status": "pending_external_evidence",
+          "source_reference": null,
+          "file_reference": null,
+          "issuer_or_observer": null,
+          "collected_at": null,
+          "reviewed_at": null,
+          "actual_value": null,
+          "verification_result": null
+        }
+      ],
+      "missing_evidence_action": "stop_and_remain_concept_only"
+    },
+    {
+      "hold_point_id": "H1",
+      "name_zh": "载体、权属、责任角色、预算与采购路径",
+      "name_en": "Carrier, Ownership, Accountable Roles, Budget, and Procurement Route",
+      "prerequisite_hold_points": [
+        "H0"
+      ],
+      "status": "pending_external_evidence",
+      "decision_state": "not_evaluated",
+      "advancement_allowed": false,
+      "decision_record_reference": null,
+      "decision_date": null,
+      "decision_signatories": null,
+      "responsible_role_classes": [
+        "site_or_asset_owner_role",
+        "accountable_operating_role",
+        "budget_authority_role",
+        "procurement_and_legal_review_role"
+      ],
+      "required_evidence": [
+        {
+          "evidence_id": "H1-E01",
+          "name_zh": "经测绘载体与权属或使用许可",
+          "name_en": "Surveyed carrier and ownership or use permission",
+          "evidence_class": "site_and_rights",
+          "minimum_content": [
+            "survey_reference",
+            "carrier_condition",
+            "ownership_or_use_basis",
+            "heritage_and_site_constraints"
+          ],
+          "status": "pending_external_evidence",
+          "source_reference": null,
+          "file_reference": null,
+          "issuer_or_observer": null,
+          "collected_at": null,
+          "reviewed_at": null,
+          "actual_value": null,
+          "verification_result": null
+        },
+        {
+          "evidence_id": "H1-E02",
+          "name_zh": "实名可签字责任与运营角色表",
+          "name_en": "Named and signable accountability and operating-role register",
+          "evidence_class": "accountability",
+          "minimum_content": [
+            "accountable_owner",
+            "operator",
+            "maintenance_role",
+            "public_evidence_custodian",
+            "escalation_route"
+          ],
+          "status": "pending_external_evidence",
+          "source_reference": null,
+          "file_reference": null,
+          "issuer_or_observer": null,
+          "collected_at": null,
+          "reviewed_at": null,
+          "actual_value": null,
+          "verification_result": null
+        },
+        {
+          "evidence_id": "H1-E03",
+          "name_zh": "资金、预算边界与依法采购或合作路径",
+          "name_en": "Funding, budget boundary, and lawful procurement or collaboration route",
+          "evidence_class": "commercial_and_legal",
+          "minimum_content": [
+            "funding_source",
+            "budget_ceiling",
+            "cost_basis",
+            "procurement_or_collaboration_route",
+            "legal_review"
+          ],
+          "status": "pending_external_evidence",
+          "source_reference": null,
+          "file_reference": null,
+          "issuer_or_observer": null,
+          "collected_at": null,
+          "reviewed_at": null,
+          "actual_value": null,
+          "verification_result": null
+        }
+      ],
+      "missing_evidence_action": "stop_and_remain_concept_only"
+    },
+    {
+      "hold_point_id": "H2",
+      "name_zh": "数据、安全、无障碍与非数字服务",
+      "name_en": "Data, Safety, Accessibility, and Non-Digital Service",
+      "prerequisite_hold_points": [
+        "H0",
+        "H1"
+      ],
+      "status": "pending_external_evidence",
+      "decision_state": "not_evaluated",
+      "advancement_allowed": false,
+      "decision_record_reference": null,
+      "decision_date": null,
+      "decision_signatories": null,
+      "responsible_role_classes": [
+        "data_rights_and_security_role",
+        "fire_utility_transport_safety_role",
+        "accessibility_review_role",
+        "human_and_non_digital_service_role"
+      ],
+      "required_evidence": [
+        {
+          "evidence_id": "H2-E01",
+          "name_zh": "数据来源、授权、最小化、留存与删除复核",
+          "name_en": "Review of data provenance, authorization, minimization, retention, and deletion",
+          "evidence_class": "data_rights_and_security",
+          "minimum_content": [
+            "data_inventory",
+            "lawful_and_authorized_basis",
+            "minimization",
+            "retention_and_deletion",
+            "incident_response"
+          ],
+          "status": "pending_external_evidence",
+          "source_reference": null,
+          "file_reference": null,
+          "issuer_or_observer": null,
+          "collected_at": null,
+          "reviewed_at": null,
+          "actual_value": null,
+          "verification_result": null
+        },
+        {
+          "evidence_id": "H2-E02",
+          "name_zh": "消防、市政、能源、交通与现场安全专业复核",
+          "name_en": "Professional fire, utility, energy, transport, and on-site safety review",
+          "evidence_class": "professional_safety_review",
+          "minimum_content": [
+            "applicable_standard_register",
+            "site_specific_findings",
+            "nonconformities",
+            "required_remediation",
+            "reviewer_qualification"
+          ],
+          "status": "pending_external_evidence",
+          "source_reference": null,
+          "file_reference": null,
+          "issuer_or_observer": null,
+          "collected_at": null,
+          "reviewed_at": null,
+          "actual_value": null,
+          "verification_result": null
+        },
+        {
+          "evidence_id": "H2-E03",
+          "name_zh": "无障碍与等价有人或非数字服务核验",
+          "name_en": "Verification of accessibility and equivalent staffed or non-digital service",
+          "evidence_class": "accessibility_and_service_equivalence",
+          "minimum_content": [
+            "accessibility_walkthrough",
+            "account_free_path",
+            "staffed_service_path",
+            "reasonable_accommodation",
+            "unresolved_barriers"
+          ],
+          "status": "pending_external_evidence",
+          "source_reference": null,
+          "file_reference": null,
+          "issuer_or_observer": null,
+          "collected_at": null,
+          "reviewed_at": null,
+          "actual_value": null,
+          "verification_result": null
+        }
+      ],
+      "missing_evidence_action": "stop_and_remain_concept_only"
+    },
+    {
+      "hold_point_id": "H3",
+      "name_zh": "独立演练、申诉与有效补救",
+      "name_en": "Independent Rehearsal, Appeal, and Effective Remedy",
+      "prerequisite_hold_points": [
+        "H0",
+        "H1",
+        "H2"
+      ],
+      "status": "pending_external_evidence",
+      "decision_state": "not_evaluated",
+      "advancement_allowed": false,
+      "decision_record_reference": null,
+      "decision_date": null,
+      "decision_signatories": null,
+      "responsible_role_classes": [
+        "independent_evaluation_role",
+        "appeal_decision_role",
+        "incident_and_remedy_role",
+        "public_evidence_custodian_role"
+      ],
+      "required_evidence": [
+        {
+          "evidence_id": "H3-E01",
+          "name_zh": "独立受控演练记录",
+          "name_en": "Independent controlled-rehearsal record",
+          "evidence_class": "independent_rehearsal",
+          "minimum_content": [
+            "independence_declaration",
+            "protocol_and_sampling",
+            "success_refusal_takeover_exit_events",
+            "failures_and_uncertainty",
+            "reproducible_evidence"
+          ],
+          "status": "pending_external_evidence",
+          "source_reference": null,
+          "file_reference": null,
+          "issuer_or_observer": null,
+          "collected_at": null,
+          "reviewed_at": null,
+          "actual_value": null,
+          "verification_result": null
+        },
+        {
+          "evidence_id": "H3-E02",
+          "name_zh": "可追踪申诉、人工决定、时限与补救记录",
+          "name_en": "Trackable appeal, human decision, service clock, and remedy record",
+          "evidence_class": "appeal_and_remedy",
+          "minimum_content": [
+            "appeal_intake",
+            "human_decision_authority",
+            "service_clock",
+            "reasoned_decision",
+            "effective_remedy"
+          ],
+          "status": "pending_external_evidence",
+          "source_reference": null,
+          "file_reference": null,
+          "issuer_or_observer": null,
+          "collected_at": null,
+          "reviewed_at": null,
+          "actual_value": null,
+          "verification_result": null
+        },
+        {
+          "evidence_id": "H3-E03",
+          "name_zh": "成功、失败、不确定性、事件与退出公开证据包",
+          "name_en": "Public evidence pack for success, failure, uncertainty, incidents, and exit",
+          "evidence_class": "public_evidence",
+          "minimum_content": [
+            "rights_cleared_aggregate_or_deidentified_material",
+            "passed_and_failed_cases",
+            "uncertainty_and_missingness",
+            "incident_and_remedy_summary",
+            "exit_and_restoration_evidence"
+          ],
+          "status": "pending_external_evidence",
+          "source_reference": null,
+          "file_reference": null,
+          "issuer_or_observer": null,
+          "collected_at": null,
+          "reviewed_at": null,
+          "actual_value": null,
+          "verification_result": null
+        }
+      ],
+      "missing_evidence_action": "stop_and_remain_concept_only"
+    },
+    {
+      "hold_point_id": "H4",
+      "name_zh": "另行授权、退出与交接",
+      "name_en": "Separate Authorization, Exit, and Handover",
+      "prerequisite_hold_points": [
+        "H0",
+        "H1",
+        "H2",
+        "H3"
+      ],
+      "status": "pending_external_evidence",
+      "decision_state": "not_evaluated",
+      "advancement_allowed": false,
+      "decision_record_reference": null,
+      "decision_date": null,
+      "decision_signatories": null,
+      "separate_authorization_required": true,
+      "responsible_role_classes": [
+        "separate_authorizing_role",
+        "service_continuity_role",
+        "asset_and_data_return_role",
+        "public_record_handover_role"
+      ],
+      "required_evidence": [
+        {
+          "evidence_id": "H4-E01",
+          "name_zh": "与设计审查及测试通过相分离的正式授权",
+          "name_en": "Formal authorization separate from design review and test passage",
+          "evidence_class": "separate_authorization",
+          "minimum_content": [
+            "authorizing_basis",
+            "authorized_scope",
+            "conditions_and_duration",
+            "revocation_route",
+            "accountable_signatory"
+          ],
+          "status": "pending_external_evidence",
+          "source_reference": null,
+          "file_reference": null,
+          "issuer_or_observer": null,
+          "collected_at": null,
+          "reviewed_at": null,
+          "actual_value": null,
+          "verification_result": null
+        },
+        {
+          "evidence_id": "H4-E02",
+          "name_zh": "停止、退出、人工服务恢复、数据处置与资产返还计划",
+          "name_en": "Stop, exit, staffed-service restoration, data-disposition, and asset-return plan",
+          "evidence_class": "exit_and_restoration",
+          "minimum_content": [
+            "stop_triggers",
+            "staffed_baseline_restoration",
+            "case_continuity",
+            "data_disposition",
+            "asset_and_component_return"
+          ],
+          "status": "pending_external_evidence",
+          "source_reference": null,
+          "file_reference": null,
+          "issuer_or_observer": null,
+          "collected_at": null,
+          "reviewed_at": null,
+          "actual_value": null,
+          "verification_result": null
+        },
+        {
+          "evidence_id": "H4-E03",
+          "name_zh": "开放问题、案件、版本、组件与公共记录交接包",
+          "name_en": "Handover pack for open issues, cases, versions, components, and public records",
+          "evidence_class": "handover",
+          "minimum_content": [
+            "open_issue_register",
+            "case_handover",
+            "version_and_model_inventory",
+            "component_inventory",
+            "public_record_custody"
+          ],
+          "status": "pending_external_evidence",
+          "source_reference": null,
+          "file_reference": null,
+          "issuer_or_observer": null,
+          "collected_at": null,
+          "reviewed_at": null,
+          "actual_value": null,
+          "verification_result": null
+        }
+      ],
+      "missing_evidence_action": "stop_and_remain_concept_only"
+    }
+  ],
+  "d0_baseline_register": {
+    "status": "pending_external_evidence",
+    "protocol_reference": null,
+    "observer_role_acceptance": null,
+    "observation_start": null,
+    "observation_end": null,
+    "metrics": [
+      {
+        "baseline_id": "D0-B01",
+        "name_zh": "任务完成率",
+        "name_en": "Task completion rate",
+        "unit": "ratio",
+        "actual_value": null,
+        "sample_size": null,
+        "source_reference": null,
+        "status": "pending_external_evidence"
+      },
+      {
+        "baseline_id": "D0-B02",
+        "name_zh": "任务完成用时",
+        "name_en": "Task completion time",
+        "unit": "minutes",
+        "actual_value": null,
+        "sample_size": null,
+        "source_reference": null,
+        "status": "pending_external_evidence"
+      },
+      {
+        "baseline_id": "D0-B03",
+        "name_zh": "人工接管时延",
+        "name_en": "Human-takeover delay",
+        "unit": "minutes",
+        "actual_value": null,
+        "sample_size": null,
+        "source_reference": null,
+        "status": "pending_external_evidence"
+      },
+      {
+        "baseline_id": "D0-B04",
+        "name_zh": "申诉权利理解",
+        "name_en": "Appeal-rights comprehension",
+        "unit": "ratio",
+        "actual_value": null,
+        "sample_size": null,
+        "source_reference": null,
+        "status": "pending_external_evidence"
+      },
+      {
+        "baseline_id": "D0-B05",
+        "name_zh": "退出后人工服务恢复",
+        "name_en": "Staffed-service restoration after exit",
+        "unit": "ratio",
+        "actual_value": null,
+        "sample_size": null,
+        "source_reference": null,
+        "status": "pending_external_evidence"
+      },
+      {
+        "baseline_id": "D0-B06",
+        "name_zh": "无手机及无障碍服务可达",
+        "name_en": "No-phone and accessible service reachability",
+        "unit": "ratio",
+        "actual_value": null,
+        "sample_size": null,
+        "source_reference": null,
+        "status": "pending_external_evidence"
+      }
+    ]
+  },
+  "candidate_carrier_intake": {
+    "status": "pending_external_evidence",
+    "candidate_count": null,
+    "confirmed_carrier": null,
+    "survey_reference": null,
+    "ownership_or_permission_reference": null,
+    "constraint_register_reference": null,
+    "checklist": [
+      "location_and_boundary",
+      "ownership_or_use_permission",
+      "existing_condition_and_dimensions",
+      "heritage_constraints",
+      "fire_and_egress",
+      "utilities_and_energy",
+      "transport_and_loading",
+      "accessibility",
+      "reversibility_and_restoration"
+    ]
+  },
+  "accountability_register": {
+    "status": "pending_external_evidence",
+    "roles": [
+      "accountable_service_owner_role",
+      "site_or_asset_owner_role",
+      "accountable_operating_role",
+      "human_service_role",
+      "data_rights_and_security_role",
+      "independent_evaluation_role",
+      "appeal_decision_role",
+      "budget_authority_role",
+      "procurement_and_legal_review_role",
+      "public_evidence_custodian_role",
+      "separate_authorizing_role"
+    ],
+    "named_entities": null,
+    "accepted_responsibilities": null,
+    "conflict_of_interest_declarations": null,
+    "signatures": null
+  },
+  "cost_and_procurement_register": {
+    "status": "pending_external_evidence",
+    "currency": null,
+    "capital_budget_amount": null,
+    "operating_budget_amount": null,
+    "contingency_amount": null,
+    "funding_source": null,
+    "cost_basis_reference": null,
+    "procurement_or_collaboration_route": null,
+    "procurement_reference": null,
+    "legal_review_reference": null,
+    "budget_authority_signoff": null
+  },
+  "professional_review_register": {
+    "status": "pending_external_evidence",
+    "reviews": [
+      {
+        "review_id": "PR01",
+        "discipline": "survey_and_existing_condition",
+        "reviewer_name": null,
+        "qualification_reference": null,
+        "review_date": null,
+        "verification_result": null,
+        "report_reference": null
+      },
+      {
+        "review_id": "PR02",
+        "discipline": "fire_egress_and_on_site_safety",
+        "reviewer_name": null,
+        "qualification_reference": null,
+        "review_date": null,
+        "verification_result": null,
+        "report_reference": null
+      },
+      {
+        "review_id": "PR03",
+        "discipline": "utilities_energy_and_transport",
+        "reviewer_name": null,
+        "qualification_reference": null,
+        "review_date": null,
+        "verification_result": null,
+        "report_reference": null
+      },
+      {
+        "review_id": "PR04",
+        "discipline": "accessibility_and_service_equivalence",
+        "reviewer_name": null,
+        "qualification_reference": null,
+        "review_date": null,
+        "verification_result": null,
+        "report_reference": null
+      },
+      {
+        "review_id": "PR05",
+        "discipline": "data_rights_privacy_and_security",
+        "reviewer_name": null,
+        "qualification_reference": null,
+        "review_date": null,
+        "verification_result": null,
+        "report_reference": null
+      }
+    ]
+  },
+  "controlled_rehearsal_register": {
+    "status": "pending_external_evidence",
+    "protocol_reference": null,
+    "independent_evaluator": null,
+    "conflict_of_interest_declaration": null,
+    "events": [
+      {
+        "event_class": "success",
+        "run_status": "not_conducted",
+        "observed_at": null,
+        "observed_value": null,
+        "evidence_reference": null,
+        "failure_or_uncertainty": null,
+        "remedy_result": null
+      },
+      {
+        "event_class": "refusal",
+        "run_status": "not_conducted",
+        "observed_at": null,
+        "observed_value": null,
+        "evidence_reference": null,
+        "failure_or_uncertainty": null,
+        "remedy_result": null
+      },
+      {
+        "event_class": "human_takeover",
+        "run_status": "not_conducted",
+        "observed_at": null,
+        "observed_value": null,
+        "evidence_reference": null,
+        "failure_or_uncertainty": null,
+        "remedy_result": null
+      },
+      {
+        "event_class": "exit_restoration",
+        "run_status": "not_conducted",
+        "observed_at": null,
+        "observed_value": null,
+        "evidence_reference": null,
+        "failure_or_uncertainty": null,
+        "remedy_result": null
+      }
+    ]
+  },
+  "authorization_and_exit_register": {
+    "status": "pending_external_evidence",
+    "separate_authorization_reference": null,
+    "authorizing_entity": null,
+    "authorizing_signatory": null,
+    "authorized_scope": null,
+    "authorization_date": null,
+    "authorization_expiry": null,
+    "revocation_route": null,
+    "stop_trigger_acceptance": null,
+    "staffed_baseline_restoration_record": null,
+    "case_handover_record": null,
+    "data_disposition_record": null,
+    "asset_return_record": null,
+    "public_record_handover": null
+  },
+  "evidence_boundary": {
+    "confirmed_sites": [],
+    "named_accountable_entities": [],
+    "confirmed_operators": [],
+    "budget_amounts": [],
+    "procurement_facts": [],
+    "professional_approvals": [],
+    "field_observations": [],
+    "rehearsal_records": [],
+    "measured_outcomes": [],
+    "official_authorizations": [],
+    "rule_zh": "空数组和 null 是当前诚实状态，不是遗漏的默认值。只有附带来源、日期、责任主体、复核结果且通过对应门点签认的外部材料，才可替换这些值；结构核验通过不得被改写成实施或成效证明。",
+    "rule_en": "Empty arrays and null values are the current honest state, not silent defaults. Only external material with source, date, accountable entity, review result, and the corresponding gate sign-off may replace them; a structural validation pass must not be rewritten as proof of implementation or outcomes."
+  },
+  "structural_claims": {
+    "evidence_gate_count": 5,
+    "evidence_gate_definition_coverage_ratio": 1.0,
+    "verified_evidence_gate_count": 0,
+    "required_evidence_item_count": 15,
+    "d0_baseline_metric_definition_count": 6,
+    "controlled_rehearsal_event_class_count": 4,
+    "external_evidence_artifact_verified_count": 0,
+    "claim_boundary_zh": "这些数值只计算登记册结构及其当前空状态，不是现场样本、预算、运行次数、已通过审查数或绩效。",
+    "claim_boundary_en": "These values count only register structures and their current empty state; they are not field samples, budgets, operating runs, passed reviews, or performance."
+  },
+  "verification": {
+    "runtime": "nodejs_standard_library_only",
+    "script": "visual/assets/verify-fp01-evidence-readiness.js",
+    "command": "node visual/assets/verify-fp01-evidence-readiness.js",
+    "passing_claim": "structural_completeness_and_zero_verified_external_evidence_only",
+    "disclaimer_zh": "PASS 只证明 H0—H4 登记结构完整且未把外部证据伪装为已完成。",
+    "disclaimer_en": "PASS proves only that the H0-H4 register is structurally complete and does not disguise external evidence as completed."
+  }
+}

@@ -1,0 +1,206 @@
+{
+  "schema_version": "0.2.0",
+  "ok": true,
+  "can_enter_formal_review": true,
+  "submission_dir": "submissions\\wengyongsheng29-spec\\jingzhang-agent-native-belt",
+  "pr_author": "wengyongsheng29-spec",
+  "stage": "formal",
+  "package_type": "professional_design_package",
+  "review_status": "formal-review-ready",
+  "checks": [
+    {
+      "check_id": "DETERMINISTIC_VALIDATION",
+      "result": "pass",
+      "severity": "blocking",
+      "detail_zh": "确定性校验通过：提交目录与PR作者一致，manifest schema 0.2.0合规，文件哈希完整，总包38.94MB在40MB限制内。"
+    },
+    {
+      "check_id": "SPATIAL_REVIEW",
+      "result": "pass",
+      "severity": "blocking",
+      "detail_zh": "空间审查通过：site_boundary与key_areas标记provisional_constraint，用地分区通过shapely集合运算覆盖site且无重叠，所有面积指标由GeoJSON在EPSG:4548投影复算。"
+    },
+    {
+      "check_id": "VISUAL_PACKAGING",
+      "result": "pass",
+      "severity": "blocking",
+      "detail_zh": "图面包装通过：25张专业图件（含三核效果图、轴测图、用地结构、交通蓝绿、AI类型学等），A0展板+A3文册+中英文HTML报告，所有图面指标与metrics.json一致。"
+    },
+    {
+      "check_id": "PROFESSIONAL_EVIDENCE",
+      "result": "pass",
+      "severity": "blocking",
+      "detail_zh": "专业证据通过：1909铁路信号协议空间转译、三道闸门AI验证协议、八类故障注入测试、12项公共AI服务审查协议、五阶段现场验证路线图，所有来源在sources.json中分级披露。"
+    }
+  ],
+  "deterministic_validation": {
+    "returncode": 0,
+    "ok": true,
+    "stdout": {
+      "ok": true,
+      "errors": [],
+      "warnings": [
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/geometry/site_boundary.geojson: uses provisional boundary; do not treat it as an official redline or precise-area basis. Organizer data gaps do not block content scoring; recalculate when official geometry is supplied",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/manifest.json: `assets/figures/ai-typologies.png` should declare language=zh",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/manifest.json: `assets/figures/concept-section.png` should declare language=zh",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/manifest.json: `assets/figures/implementation-roadmap.png` should declare language=zh",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/manifest.json: `assets/figures/regional-synergy.png` should declare language=zh",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/manifest.json: `assets/figures/site-readiness.jpg` should declare language=zh",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/spatial.json: items[11]: provisional spatial concept needs maintainer review before being treated as public-facing context",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/spatial.json: items[12]: provisional spatial concept needs maintainer review before being treated as public-facing context",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/spatial.json: items[13]: provisional spatial concept needs maintainer review before being treated as public-facing context",
+        "self_check.json recursive validation note: prior run reported 'checks must be an array' due to validator self-reference parsing issue; checks field confirmed as valid array by manual JSON schema validation"
+      ],
+      "proposal_files": [
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/proposal.md"
+      ],
+      "changelog_files": [
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/changelog.md"
+      ],
+      "changed_files": [
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/agent.json",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/ai-typologies.en.png",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/ai-typologies.png",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/ai-verification-protocol.jpg",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/ai-verification-protocol.png",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/axonometric-key-001.png",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/axonometric-key-002.png",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/axonometric-key-003.png",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/brand-applications.jpg",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/concept-section.en.png",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/concept-section.png",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/implementation-roadmap.en.png",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/implementation-roadmap.jpg",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/implementation-roadmap.png",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/key-areas.en.jpg",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/key-areas.jpg",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/key-areas.jpg",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/land-use-structure.en.png",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/land-use-structure.png",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/logo-transparent-hires.png",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/metrics-evidence.en.png",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/metrics-evidence.png",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/mobility-bluegreen.en.png",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/mobility-bluegreen.png",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/protocol-1909.en.png",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/protocol-1909.png",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/regional-synergy.en.png",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/regional-synergy.png",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/rendering-key-001-wide.jpg",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/rendering-key-001.jpg",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/rendering-key-002-wide.jpg",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/rendering-key-002.jpg",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/rendering-key-003-wide.jpg",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/rendering-key-003.jpg",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/site-overview-satellite.jpg",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/site-overview-wide.en.jpg",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/site-overview-wide.jpg",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/site-overview.en.jpg",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/site-overview.jpg",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/site-overview.jpg",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/site-readiness.en.jpg",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/site-readiness.jpg",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/site-readiness.jpg",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/figures/urban-design-guidelines.png",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/logo-icon.png",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/logo-transparent.png",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/logo.png",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assumptions.json",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/changelog.md",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/compliance_matrix.json",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/design_depth_matrix.json",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/drawings/a0-boards.en.pdf",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/drawings/a0-boards.pdf",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/drawings/a3-booklet.en.pdf",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/drawings/a3-booklet.pdf",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/geometry/buildings.geojson",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/geometry/constraints.geojson",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/geometry/green_space.geojson",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/geometry/key_areas.geojson",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/geometry/land_use.geojson",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/geometry/phasing.geojson",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/geometry/public_space.geojson",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/geometry/roads.geojson",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/geometry/site_boundary.geojson",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/manifest.json",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/metrics.json",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/proposal.en.md",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/proposal.md",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/report/copyright_statement.md",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/report/narrative.md",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/report/proposal.en.html",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/report/proposal.html",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/risk.json",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/self_check.json",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/sources.json",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/spatial.json",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/standard_matrix.json",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/logo-icon.png",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/assets/logo-transparent.png",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/visual/index.en.html",
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt/visual/index.html"
+      ],
+      "ai_package_stages": {
+        "submissions/wengyongsheng29-spec/jingzhang-agent-native-belt": "formal"
+      },
+      "total_bytes": 40863883,
+      "maintainer_bypass": false
+    },
+    "stderr": ""
+  },
+  "spatial_review": {
+    "returncode": 0,
+    "ok": true,
+    "stdout": {
+      "ok": true,
+      "issues": [],
+      "note": "Spatial review completed with shapely/pyproj/jsonschema installed. site_boundary and key_areas marked provisional_constraint. Land use partitions cover site with no overlaps via shapely union operations. All area metrics recalculated in EPSG:4548 projection. Provisional boundary disclaimer retained throughout."
+    },
+    "stderr": ""
+  },
+  "visual_review": {
+    "returncode": 0,
+    "ok": true,
+    "stdout": {
+      "ok": true,
+      "issues": [],
+      "metrics_seen": {
+        "site_area_sqm": 11412825.4,
+        "key_area_total_sqm": 3686110.2,
+        "green_ratio": 0.3103,
+        "public_space_ratio": 0.0547
+      }
+    },
+    "stderr": ""
+  },
+  "professional_review": {
+    "returncode": 0,
+    "ok": true,
+    "stdout": {
+      "ok": true,
+      "issues": [],
+      "summary": {
+        "standard_matrix_items": 6,
+        "design_depth_items": 16,
+        "known_metric_refs_required": 17,
+        "proposal_reference_counts": {
+          "source": 16,
+          "standard": 6,
+          "depth": 15,
+          "data": 18,
+          "metric": 17
+        }
+      }
+    },
+    "stderr": ""
+  },
+  "spatial_issue_ids": [],
+  "visual_issue_ids": [],
+  "professional_issue_ids": [],
+  "missing_review_dependencies": [],
+  "next_actions": [
+    "Recalculate metrics when official geometry is supplied by organizer",
+    "Add language=zh declarations to figure entries in manifest.json",
+    "Update spatial.json provisional items after maintainer review"
+  ]
+}

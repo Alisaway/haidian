@@ -1,0 +1,65 @@
+{
+  "schema_version": "0.1.0",
+  "assumptions": [
+    {
+      "id": "A-CONTROLS-001",
+      "status": "pending_professional_confirmation",
+      "statement": "容积率、建筑高度、密度、绿地率、退线等控规条件，以及道路红线、权属、市政管线与工程约束，必须以官方附件确认后才可用于法定用途。",
+      "impact": "本方案全部强度类指标保持 status=unknown，建筑规模与开发强度按概念建议表达，不构成法定控制值；官方数据到位后需整体复算。"
+    },
+    {
+      "id": "A-BOUNDARY-001",
+      "status": "pending_official_data",
+      "statement": "官方精确红线与三处重点区 official polygon 尚未公开取得，本方案使用 provisional_boundaries.geojson（与公告面积偏差 0.02%–0.43%）。",
+      "impact": "site_boundary/key_areas/land_use/buildings/roads/green_space/public_space/phasing 与全部面积指标均标为 provisional；官方 polygon 发布后整包复算，复算路径见 visual/index.html 与 self_check.json。"
+    },
+    {
+      "id": "A-HERITAGE-001",
+      "status": "pending_verification",
+      "statement": "清华园车站旧址、大钟寺（觉生寺）等文物保护单位的精确控制范围与文物事实，须以文物部门公开资料核实后引用。",
+      "impact": "方案中的文保要素以示意点与保守措辞表达（geometry_role=existing_condition, confidence=low），相关文化叙事不突破文保/绿地/蓝线约束。"
+    },
+    {
+      "id": "A-ROAD-001",
+      "status": "pending_official_data",
+      "statement": "现状道路中线为公开资料粗略示意，不代表道路红线、断面或工程线位。",
+      "impact": "roads.geojson 中现状道路标为 existing_condition、low confidence；规划慢行环与机器人服务环为 design_proposal 概念建议。"
+    },
+    {
+      "id": "A-CASE-001",
+      "status": "background_only",
+      "statement": "全球 AI 创新生态与机器人协作案例（Spot、Surtrac、Zipline、杭州城市大脑、ETH 腿足机器人等）仅引用公开报道事实，未编造投资额、产值或财政承诺。",
+      "impact": "案例仅作为可转化经验参照，不作为 formal 评分依据或本地落实承诺。"
+    },
+    {
+      "id": "A-MEDIA-001",
+      "status": "verified",
+      "statement": "全部图片、PDF、HTML 与三维交互由作者用本地脚本从 GeoJSON 与 metrics 派生生成；可选第三方生成视觉主体无辨识度人物、无真实商标或可辨识建筑。",
+      "impact": "采用 SIL OFL 1.1 许可开源字体（Source Han Sans SC）与自生成素材；生成方法、工具链与权利边界在 report/copyright_statement.md 声明。"
+    },
+    {
+      "id": "A-SERVICE-001",
+      "status": "conceptual_proposal",
+      "statement": "本方案中所有服务响应时限（如\"15分钟响应\"）、运营主体责任、开放通道安排均为概念建议与测试目标，不代表现行服务承诺或已获批准的运营安排，实际实施需经相关主管部门授权与专业确认。",
+      "impact": "场景卡中的投诉处置通道、响应时限等表述为拟议机制与SLA测试目标，待正式运营主体授权确认后调整；不构成对现有公共服务体系的替代或承诺。"
+    },
+    {
+      "id": "A-TRAFFIC-001",
+      "status": "conceptual_proposal",
+      "statement": "现状道路中线为公开资料粗略示意，不代表道路红线、断面或工程线位；绿波协调方案为概念建议，未经交通仿真验证。",
+      "impact": "roads.geojson 中现状道路标为 existing_condition、low confidence；绿波方案与慢行环、服务环的线位均为概念建议，待交通专业深化后方可用于实施。"
+    },
+    {
+      "id": "A-PHASING-001",
+      "status": "conceptual_proposal",
+      "statement": "分期建设时序（近期—中期—远期）为概念指引，不构成市政财政承诺或立项安排。",
+      "impact": "phasing.geojson 中三期范围为概念分区建议，实际建设时序、投资规模与资金安排须以发改部门立项批复为准。"
+    },
+    {
+      "id": "A-STANDARDS-001",
+      "status": "pending_verification",
+      "statement": "MOHURD（住建部）建筑类型与深度标准目前标为 data_gap，待获取正式文件后补充完善。",
+      "impact": "proposal 中与建筑深度、类型相关的标准引用为 provisional，正式标准文件到位后需对照复核并更新相关指标。"
+    }
+  ]
+}

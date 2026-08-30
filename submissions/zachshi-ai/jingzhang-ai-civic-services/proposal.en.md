@@ -10,7 +10,7 @@ license: "COMMUNITY-DISPLAY-ONLY"
 summary: "Taking the Jingzhang Railway heritage corridor as the main axis, this proposal links the subdistrict offices, community health centers, and legal aid points along the corridor into a single AI civic-service network. The proposal puts forward the overall concept of an 'AI Civic Service Spine': a one-stop government, health, and legal civic service hub is built in the AI Origin Community; citizen service stations are deployed along the main axis of the heritage park; and the belt is formed of 13 service passage segments, 6 civic-service buildings, 3 service hub plazas, and 5 street-side stations, supported by 12 AI scenario cards, 5 categories of user personas, and 3 civic-service landmark destinations. AI is used only for service navigation and public information Q&A; it does not diagnose and does not approve, and all content is manually reviewed by medical, legal, and data-security professionals."
 tracks: ["ai-public-services"]
 scenarios: ["ai-health-service-navigation"]
-iteration: "v1.0"
+iteration: "v7.1"
 ---
 
 # Jingzhang AI Civic Services Belt: A One-Stop Government, Health and Legal Services Network
@@ -47,11 +47,30 @@ The naming system includes: the belt's main name "AI Civic Service Spine" (Chine
 
 ### Three Positionings, Five Functions, and Three-Zones-Two-Wings Synergy
 
-The proposal responds to the three positionings in the announcement: the Centennial Jingzhang Culture Belt (service heritage), the Urban AI Life Experience Belt (service experience), and the AI Integration and Innovation Belt (service innovation) [source:official-announcement]. The five functions are placed as: one-stop government navigation services, health navigation community services, public-interest legal consulting services, service scenario testing and validation, and citizen data-literacy cultivation. The three-zones-two-wings synergy loop: Zhongzhiyuan provides talent health checkups and AI service technology validation; the Origin Community hosts one-stop daily government affairs, community healthcare, and legal aid handling; Dazhongsi develops the industrialization of legal consulting and enterprise civic services; the Zhongguancun service wing provides government data integration and AI service orchestration; and the Xiaoyuehe scenario wing provides a service-scenario testbed [source:agent-taskbook].
+The proposal responds to the three positionings in the announcement: the Centennial Jingzhang Culture Belt (service heritage), the Urban AI Life Experience Belt (service experience), and the AI Integration and Innovation Belt (service innovation) [source:official-announcement]. The five functions are each implemented item by item (not merely renaming service categories), and each function is given a spatial carrier, a responsibility mechanism, and a verification gate [source:agent-taskbook]:
+
+| Announcement's Five Functions | Item-by-Item Implementation in This Proposal | Spatial Carrier | Responsibility Mechanism and Verification |
+| --- | --- | --- | --- |
+| AI full-stack independent innovation system | Zhongzhiyuan talent health services and AI service technology validation segment: algorithmic filing, safety evaluation, and scenario testing of the AI navigation engine close the loop here | Zhongzhiyuan service validation area | Algorithmic filing + independent evaluation (G1/G2 gates) |
+| World-class AI innovation ecosystem | Seven-element map (service entry / catalog / identity / data / AI engine / human review / feedback) differentially configured across the three zones | Service nodes of the three zones | Human review by three categories of professionals (medical / legal / data security) |
+| New paradigm of AI+ scenario enablement | 12 scenario cards covering real scenarios: government affairs / health / legal / multilingual / elderly-friendly / accessibility / nighttime | 5 stations + 3 hubs | Each card paired with a guarantee receipt (Three Guarantees, One Verification) |
+| Intelligent AI-powered vibrant city | The Three Guarantees, One Verification guarantee chain translates AI services into auditable urban responsibility infrastructure | Whole-line service network | Independent quarterly verification (receipt sampling ≥100) |
+| Global discourse on AI governance | Guarantee receipts and independent verification can be exported as a public-service AI governance paradigm (international communication) | Origin Community hub | Verification reports made public + international communication copy |
+
+The three-zones-two-wings synergy loop: Zhongzhiyuan provides talent health checkups and AI service technology validation; the Origin Community hosts one-stop daily government affairs, community healthcare, and legal aid handling; Dazhongsi develops the industrialization of legal consulting and enterprise civic services; the Zhongguancun service wing provides government data integration and AI service orchestration; and the Xiaoyuehe scenario wing provides a service-scenario testbed. Every link of the synergy corresponds to a named responsibility position in the guarantee receipt, making the "three zones and two wings" not just a synergy diagram, but an auditable responsibility network [source:agent-taskbook].
 
 ### External Regional Coordination
 
 The proposal forms public-service coordination with the Beiwei Community, the Future Science City, the Huairou Science City, the Economic-Technological Development Area, and the Beijing-Tianjin-Hebei region. Through the concept of a "cross-district service one-code pass," it explores the possibility of cross-regional mutual recognition of government services, cross-regional navigation of health records, and cross-regional coordination of legal services; however, all cross-district mechanisms are conceptual suggestions and do not constitute policy commitments [source:agent-taskbook] [assumption:A-SERVICE-003].
+
+### Interlock with Sibling Proposals on the Same Corridor (v7)
+
+The premise of accountability is "there must be someone to hold accountable." Four sibling proposals on the same Jingzhang heritage corridor (submitted by the same author) each make service promises to citizens; this proposal's accountability spaces are their shared service backstop. The following are design-coordination proposals, subject to each party's detailed design [E:CIVIC-CROSS-INTERLOCK]:
+
+- **With robot-comobility (Cross-Section Grammar × Co-Mobility Signaling)**: robot delivery is proposed to join the "three guarantees, one verification" chain — delays, damage and loss have a named human responsible; accountability stands accept robot-related complaints, and guarantee receipts enter the dispatch-ledger audit.
+- **With silver-accessibility (Silver Relay × intergenerational connection stations)**: accountability stands keep staffed windows and large-print paper accountability cards, so elders who do not use smartphones equally receive a receipt with a named human behind it; connection-station volunteers can guide elders to the stands to complete their matters.
+- **With heritage-spine (Ren-Track × three conservation principles)**: public services at heritage nodes (guidance, ticketing, consultation) are proposed to join the three-guarantees chain — service promises inside heritage space equally need a named human behind them.
+- **With civic-data-commons (Data Receipt × Data Timetable)**: the stands' completion records (de-identified) are proposed for display on the data timetable — "what was done, who did it, what data was used" becomes visible at once; service accountability and data accountability meet on the same public wall.
 
 ### Case Studies of AI Civic-Service Ecosystems
 
@@ -70,6 +89,78 @@ This proposal studies 7 domestic and international public-service digitalization
 This proposal constructs seven elements of the civic-service AI ecosystem: service entry (one-stop navigation), service catalog (manually curated), identity authentication (unified), data foundation (public/authorized data), AI engine (Q&A and navigation), human review (three categories of professionals: medical, legal, and data security), and feedback mechanism (satisfaction analysis). The seven elements are differentially configured across the three key areas [standard:GENERATIVE-AI-INTERIM-MEASURES].
 
 ## Overall Design Area: Urban Renewal and Regulatory-Plan-Level Urban Design (Civic-Service Oriented)
+
+### Core Mechanism: The "Three Guarantees, One Verification" Service Guarantee Chain (Original to This Proposal)
+
+The chronic problem with AI in government services is "it answers very well, but when something cannot be done, no one is responsible." This proposal puts forward an original **"Three Guarantees, One Verification" service guarantee chain**: turning "getting it done" from a slogan into a verifiable chain of commitments [E:CIVIC-SERVICE-GUARANTEE-CHAIN]:
+
+**Guarantee One: Commitment (Guarantee of Commitment).** Every AI navigation service must declare who its human fallback is — the subdistrict-office integrated counter, the community health service desk, manual reception at the legal aid point, bilingual volunteers, silver-age service point specialists, and so on. AI only navigates and answers questions; the fallback responsibility always rests on named human positions [source:official-announcement].
+
+**Guarantee Two: Response Time (Guarantee of Response Time).** Every service promises that a real person must respond within a limited time: 30 minutes for nighttime emergencies, 2 hours for government-service navigation, 24 hours for health referrals, and 3 working days for legal aid. The time-limit commitment is written into the service contract, and overruns automatically escalate.
+
+**Guarantee Three: Receipt (Guarantee Receipt).** Every service generates an auditable receipt: what the AI did, what humans reviewed, the done/escalated/failed status, and the complaint channel. Receipt data boundary: only the matter name, handling status and timestamps are recorded — no applicant identity, document content, medical records or case facts are collected; the displayed handler "surname + ID + signature" is duty-disclosure information of a staff role, not a personal-data profile. The 90-day retention has an explicit basis (quarterly audit and appeal traceability), access is limited to audit roles, and details are deleted after anonymized aggregation on expiry. The receipt schema is at `visual/assets/guarantee-receipt.schema.json` [data:visual/assets/guarantee-receipt.schema.json#receipt].
+
+**One Verification: Independent Verification.** Every quarter, an independent third-party evaluation body randomly samples ≥100 receipts from the receipt ledger (covering all 12 scenarios) and verifies: guarantee-fulfillment rate ≥95%, response-time compliance rate ≥90%, receipt-completeness rate ≥98%, escalation-chain effectiveness rate ≥95%, and complaint-handling timeliness rate ≥95%. If any threshold is not met, AI navigation for the corresponding scenario is suspended and switched to human-window priority, and it resumes after passing re-verification the next quarter. The verification protocol is at `visual/assets/independent-verification-protocol.json`, and verification reports are made public (after desensitization) for public and regulatory review [depth:risk_missing_data].
+
+**Rule-closure validation.** `run_guarantee_tabletop.js` correctly classifies all 72 synthetic cases of 12 scenarios × 6 rule branches (complete / missing human fallback / missing time limit / missing receipt / missing escalation chain / time overrun) — 48 blocked / 12 guaranteed / 12 escalated — demonstrating that the guarantee-chain rule logic is closed. However, this only proves correct classification and does not constitute on-site service evidence; on-site performance remains null with status `not_authorized_not_run` [data:visual/assets/guarantee-tabletop-evidence.json#blocked].
+
+**Relationship to "someone is responsible when things cannot be done."** The core of the Three Guarantees, One Verification is not to make AI smarter, but to give "cannot be done" a clear responsible person, a clear time limit, auditable records, and an independent verifier. This is what distinguishes it from mature platforms such as City Brain, Suishenban, and Jingtong — those platforms provide navigation functions, while this proposal provides the **responsibility infrastructure** of navigation: behind every navigation there is a traceable guarantee receipt, and behind every receipt there is a named human responsibility position [source:shanghai-suishenban].
+
+### Core Mechanism: Accountability Spaces (Original to This Proposal, v5)
+
+The Three Guarantees, One Verification solves "someone is responsible when things cannot be done," but a more fundamental question still remains. This proposal puts forward a counter-intuitive fact: **the smarter government-service AI becomes, the less citizens know who to hold accountable** — AI stands between citizens and the clerks, and a matter may be "done" while no one acknowledges accountability for it. The core question of the Three Guarantees, One Verification is not "how standardly things are handled," but **"who signs, who is responsible, and who can see"** — using "accountability" as the lens (just as human-hours uses time as its lens, this proposal uses accountability as its lens) [E:CIVIC-ACCOUNTABILITY-SPACES].
+
+**Design principle: every service point grows an "accountability face."** Citizens can see with their own eyes who is handling their matter, how far it has progressed, and who signed it — just as a railway ticket window displays handling information. The Three Guarantees, One Verification is the institution; the accountability space is its **physical carrier** [data:visual/assets/accountability-stands.json#design-principle].
+
+**5 accountability stands (deployed along the corridor; full specifications at `visual/assets/accountability-stands.json`):**
+
+| Stand | Location | Displayed content | No-AI equivalent |
+| --- | --- | --- | --- |
+| AS-01 Origin Community accountability stand | Government service station | Matter / handler (name + position) / stage / time limit / signature / complaint | Paper accountability card (issued at the counter) |
+| AS-02 Zhongzhiyuan accountability stand | Talent health services segment | Matter / handler / stage / referral progress / signature | Paper accountability card |
+| AS-03 Dazhongsi accountability stand | Legal aid center | Aid matter / handling lawyer (desensitized) / stage / signature | Paper accountability card |
+| AS-04 Park central-section accountability stand | Central-section station | Matter / handler / stage / signature | Paper accountability card |
+| AS-05 Southern-end accountability stand | Southern-end node | Matter / handler / stage / signature | Paper accountability card |
+
+**Completion display (citizens see "who signed").** Completed or accepted matters are displayed at the accountability stand (desensitized): matter / handler (surname + employee number) / stage / signature / time limit / complaint entry. Full examples at `visual/assets/completion-display.json` [data:visual/assets/completion-display.json#displays]:
+
+| Matter | Handling | Stage | Signature |
+| --- | --- | --- | --- |
+| Social security card handling | Integrated counter Wang X (0231) | Accepted | Wang X 2026-10-02 |
+| Referral navigation | Health service desk Li X (0117) | Referred | Li X 2026-10-02 |
+| Aid application | Legal aid center Zhang X (4521) | Initial review | Zhang X 2026-10-02 |
+
+**Negative-space baseline.** Without any AI, the counter handler tells the citizen in person "who handles it, how far it has progressed, and whom to ask" — the accountability function does not depend on AI, and the paper accountability card and the electronic display carry the same content [data:visual/assets/accountability-stands.json#negative-baseline].
+
+**Rule-closure validation.** `run_accountability_tabletop.js` correctly classifies all 72 synthetic cases of 12 services × 6 rule branches (complete / no named handler / no signature / stage not visible / missing complaint channel / time limit unknown) — 36 blocked / 12 accountable / 24 flagged — demonstrating that the accountability rule logic is closed. However, this only proves correct classification and does not constitute evidence of on-site service, compliance, or authorization; on-site performance remains null with status `not_authorized_not_run` [data:visual/assets/accountability-tabletop-evidence.json#blocked].
+
+**Relationship to the Three Guarantees, One Verification.** The Three Guarantees, One Verification answers "who is responsible, how fast the response, how the trail is kept, and who verifies" (the institution), while the accountability space answers "where citizens can see responsibility" (the space) — the receipt is the content of accountability, and the accountability stand is the display surface of the receipt. Together the two guarantee: **the matters citizens handle not only get done, but citizens can also see who is handling them** [standard:GENERATIVE-AI-INTERIM-MEASURES].
+
+### Meta-Design Layer: Philosophy Enhancement (Original to This Proposal, v6)
+
+The accountability spaces answer "where citizens can see responsibility," and the Three Guarantees, One Verification answers "who is responsible, how the trail is kept, and who verifies." The meta-design layer of this proposal goes further by pursuing six questions at the logical and philosophical level — none of them externally imposed judgments; each **illuminates logic already implicit in the accountability lens**. The six directions correspond to six artifacts under `visual/assets/philosophy/`, each an explicit statement of the lens's own logic [E:CIVIC-PHILOSOPHY-META].
+
+**Value Theory — Value Trade-offs.** The accountability lens already implies a ranking of values; the value trade-off table makes implicit value conflicts explicit as "priority direction + cost" [data:visual/assets/philosophy/value-tradeoffs.json#tradeoffs]:
+
+| Value conflict | Priority | Encoded in | Cost |
+| --- | --- | --- | --- |
+| Accountability vs. efficiency | Accountability | Every service point grows an accountability face; handler signatures are visible | Service processes slow down |
+| Accountability vs. privacy | Privacy | The accountability face displays handlers' desensitized names, not citizens' documents | Information on the citizen side is not fully public |
+| Accountability vs. anonymity | Accountability | Handlers sign by name; services are traceable to individuals | Handlers must bear responsibility |
+
+The costs are accepted because the priority direction is a precondition for "public trust."
+
+**Teleology — Site Necessity.** Argues why the accountability mechanism fits Jingzhang — site specificity moves from background to necessary condition [data:visual/assets/philosophy/site-necessity.json#necessity_arguments]: (1) the Jingzhang corridor has a high density of public service nodes (the demand for accountability is real); (2) the Jingzhang Railway ticket windows embody the tradition of "visible handling information" (the source of legitimacy for the accountability face); (3) Jingzhang's design positioning is the "Civic Service Spine."
+
+**Phenomenology — First-Person Empathy Scripts.** First-person scripts verify whether every step of the accountability experience chain runs smoothly — engineering verification of the experience, not marketing narrative [data:visual/assets/philosophy/first-person-scripts.json#scripts]. Three scripts (a citizen sees responsibility / a handler signs and takes responsibility / a questioning citizen's complaint is accepted) each verify one accountability experience chain.
+
+**Epistemology — Epistemic Grading.** Every claim is graded as description / prediction / prescription, with its knowledge base stated — honesty about the boundaries of knowledge [data:visual/assets/philosophy/epistemic-grading.json#claim_grades].
+
+**Game Theory — Incentive Compatibility.** The core of mechanism design: make "accountability" the dominant strategy — handlers will only truly acknowledge accountability when they have a motive to do so [data:visual/assets/philosophy/incentive-compatibility.json#incentive_mechanisms]. Acknowledging accountability earns performance recognition, earns the "certified service" mark, and once acknowledged, services become checkable by citizens, making buck-passing impossible.
+
+**Temporal — Self-Update Protocol.** The proposal is not static; it defines trigger protocols specifying which parts of the accountability mechanism must be recalculated when the city changes [data:visual/assets/philosophy/self-update-protocol.json#triggers]. Changes in public service items → recalculate the accountability stand's display fields; changes in government service processes → recalculate the accountability stage definitions; changes in citizen trust levels → recalculate the accountability stand's presentation mode and complaint-channel design.
+
+**Relationship of the six directions to the accountability lens.** All six directions are logical extensions of the lens itself: the value table makes explicit the value ranking implicit in the lens; site necessity is the lens's site-based legitimacy; the empathy scripts are proof that the lens can be experienced; epistemic grading is the lens's honesty about its own cognitive boundaries; incentive compatibility is the mechanism guarantee that the lens will be followed; self-update is the lens's honesty about time. Together, the six upgrade "citizens can see responsibility" from a design principle into an engineering commitment self-consistent across six dimensions: value, site, experience, cognition, incentive, and time [depth:metrics_recalculation].
 
 ### Spatial Structure
 
@@ -104,6 +195,22 @@ The regeneration strategy adopts a "retain–renovate–new-build" classificatio
 **Service facilities:** Centrally deploy the AI Civic-Service Demonstration Hall (BLD-016), the Community Health Service AI Navigation Center (BLD-017), the AI Legal Aid Service Center (BLD-018), and the Subdistrict-Office AI Collaboration Service Building (BLD-021), forming a one-stop civic-service cluster [data:geometry/buildings.geojson#BLD-016] [data:geometry/buildings.geojson#BLD-017] [data:geometry/buildings.geojson#BLD-018]. Supporting facilities include the AI Civic-Service Demonstration Plaza (PS-006), the Jingzhang Health Park (GS-006), and the Central Service Station (PS-011) and Central-North Station (PS-010) [data:geometry/public_space.geojson#PS-006] [data:geometry/green_space.geojson#GS-006].
 
 **AI scenarios:** Deploy everyday scenarios such as AI + government service guidance, AI + health navigation, and AI + legal consultation, forming an experienceable one-stop service community. AI is used only for navigation and public information Q&A [standard:GENERATIVE-AI-INTERIM-MEASURES].
+
+**Minimal pilot (review requirement: a verifiable minimal pilot).** The Origin Community government-navigation pilot serves as the first on-the-ground validation of the Three Guarantees, One Verification mechanism, with all elements as follows (all are conceptual suggestions; the pilot starts only after confirmation by the local subdistrict and a professional team):
+
+| Element | Content |
+| --- | --- |
+| Current-state assumption | The Origin Community currently has one subdistrict-office integrated counter, one community health service center, and one legal aid point; the community population is mainly university faculty and students, young families, and elderly residents (baseline pending confirmation by on-site survey) |
+| Roles | Operator (station operating enterprise), subdistrict-office counter duty staff (human fallback), community health service desk guide (health fallback), legal aid receptionist (legal fallback), independent evaluation body (quarterly verification) |
+| Process | Resident comes to the station / calls the hotline → AI navigation (Q&A and guidance only) → guarantee receipt automatically generated → automatic escalation to human staff on time overrun → human handling / referral → receipt updated to completed status → quarterly sampled verification |
+| Equipment | AI interactive screen ×1 at the station (switchable to paper-based guidance), hotline line ×1, receipt printing terminal ×1 (replaceable by a fully paper-based process) |
+| Data | Only matter names, handling status and timestamps (aggregated); no identity, document content, medical records or case facts; location data is used within the service session only and not retained; 90-day retention is audit-role only, details deleted after anonymization |
+| Human positions | Counter duty staff 1 person/shift, health guide 1 person/shift, legal aid receptionist 1 person/shift (8:00–18:00 during the pilot period) |
+| Cost range | Equipment RMB 80,000–150,000 (conceptual estimate, including transferable modules), labor cost RMB 30,000–50,000/month (conceptual estimate), evaluation fee RMB 20,000–30,000/quarter (conceptual estimate); all amounts are rough ranges pending verification, not commitments |
+| Timeline | Month 1: current-state survey + demand baseline; Month 2: equipment installation + staff training + trial run of the receipt process; Months 3–6: formal pilot + first quarterly verification |
+| Acceptance thresholds | Guarantee-fulfillment rate ≥95%, response-time compliance rate ≥90%, receipt-completeness rate ≥98%, complaint-handling timeliness rate ≥95% (see the independent verification protocol) |
+| Failure fallback | Any threshold not met → suspend AI navigation and switch to human-window priority → re-verify the next quarter; two consecutive non-compliant quarters → pilot terminated, full manual process restored |
+| Suspension conditions | Any safety incident, unhandled complaint escalation, or data-boundary violation → immediate suspension and full review |
 
 ### Dazhongsi AI Industry Cluster (approx. 72.0 ha): Legal Consulting and Enterprise Civic Services Segment
 

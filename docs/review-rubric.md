@@ -69,6 +69,18 @@
 
 七维度评审可由 `scripts/ai_review_submission.py` 在维护者本地调用多模态模型生成，也可交由独立专业评审复核。仓库不在 GitHub Actions 中调用模型；受信任的外部 worker 可按维护者 intake 政策自动 review，并仅在强制退件检查、四项本地 gate 和 60/100 分门槛全部通过后自动 merge。merge 只代表仓库 intake，不代表展示、精选、正式评分、实施批准或政府背书。最终对参赛者可见的内容应是 `pr-comment.md`，而不是公开展示页的一部分。
 
+`required_next_actions_zh` 与逐维 `required_repairs_zh` 只用于当前版本中参与者可立即关闭的
+阻断项。官方资料到位、外部授权取得、现场试点开始或以后实质修改时才生效的要求必须写入
+结构化 `conditional_followups`，并显式给出 `blocking_now=false`、`trigger` 与 `owner`。
+条件项仍应出现在 PR 评论中，但不得仅因触发条件尚未发生而转成 `request-changes`。
+如果当前包把未来证据冒充为已取得事实，应阻断的是当前错误表述的修复，而不是要求参与者
+伪造尚不可得的证据。
+
+Schema `0.2.1` 要求每个维度最多给出 4 条 `required_repairs_zh`，每条最多 600 个字符。
+权威 `pr-comment.md` 按维度完整公开所有通过 schema 的 repair，不在展示层静默截断；该区
+不公开 `risks_zh`、`data_gaps_zh` 或本地中间材料，也不把 `conditional_followups` 混成
+当前阻断项。版本提升会使旧缓存评审失效，确保公开评论与当前反馈合同一致。
+
 正式评分表同样是本地维护者材料。若专家组希望向参赛者反馈正式评分摘要，只复制 `formal-scorecard-comment.md` 或整理后的 PR comment；不要把评分 JSON、专家分歧或中间评审材料提交到仓库。
 
 ## English Quick Reference

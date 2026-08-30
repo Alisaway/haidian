@@ -1,0 +1,92 @@
+{
+  "schema_note": "v2.1 AI-assisted urban-design workflow pipeline disclosure. Machine-readable companion of proposal.md section '自指证明（二）：本包即 AI 参与城市设计工作流的可查证运行'. All facts derive from agent.json, self_check.json and manifest.json; no tool version numbers or undisclosed prompt content are fabricated. Disclosing the pipeline does not claim AI design has reached professional depth.",
+  "version": "v2.1",
+  "status": "verifiable_public_record",
+  "agent": {
+    "agent_name": "WorkBuddy",
+    "model": "Kimi-K3",
+    "role": "ai_agent_submission_author",
+    "human_collaborator": "余枫 (GitHub: deerred643-star)",
+    "declaration_ref": "agent.json"
+  },
+  "pipeline_stages": [
+    {
+      "stage": 1,
+      "stage_zh": "任务书/公告输入",
+      "stage_en": "Taskbook/announcement input",
+      "tool_zh": "人工提供公告、任务书与官方资料",
+      "tool_en": "Human-supplied announcement, taskbook and official materials",
+      "input": "brief/ + agent_taskbook.json",
+      "output": "结构化任务约束",
+      "human_gate_zh": "人类协作者确认任务范围与合规边界",
+      "human_gate_en": "Human collaborator confirms task scope and compliance boundary",
+      "evidence": "agent_taskbook.json"
+    },
+    {
+      "stage": 2,
+      "stage_zh": "开源脚手架",
+      "stage_en": "Open scaffold",
+      "tool_zh": "scripts/scaffold_ai_submission.py（组织方提供）",
+      "tool_en": "scripts/scaffold_ai_submission.py (organizer-provided)",
+      "input": "任务约束",
+      "output": "申报包目录骨架与 scaffold 占位",
+      "human_gate_zh": "无（组织方脚本）",
+      "human_gate_en": "None (organizer script)",
+      "evidence": "scripts/scaffold_ai_submission.py"
+    },
+    {
+      "stage": 3,
+      "stage_zh": "几何生成",
+      "stage_en": "Geometry generation",
+      "tool_zh": "tools/make_geometry.py（Python/shapely/pyproj，EPSG:4548）",
+      "tool_en": "tools/make_geometry.py (Python/shapely/pyproj, EPSG:4548)",
+      "input": "范围与结构设定",
+      "output": "geometry/*.geojson（用地/建筑/道路/绿地/公共空间/约束/分期）",
+      "human_gate_zh": "边界 provisional、官方几何缺口由人类复核标注",
+      "human_gate_en": "Provisional boundaries and official-geometry gaps reviewed and flagged by human",
+      "evidence": "geometry/site_boundary.geojson (official_boundary=false)"
+    },
+    {
+      "stage": 4,
+      "stage_zh": "图件渲染",
+      "stage_en": "Figure rendering",
+      "tool_zh": "tools/render_figures.py（Pillow 程序绘制原创示意）",
+      "tool_en": "tools/render_figures.py (programmatic Pillow drawing)",
+      "input": "几何与视觉系统设定",
+      "output": "assets/figures/*.png、drawings/a3-booklet.pdf、drawings/a0-boards.pdf",
+      "human_gate_zh": "图件原创性与版权由人类复核",
+      "human_gate_en": "Figure originality and copyright reviewed by human",
+      "evidence": "report/copyright_statement.md"
+    },
+    {
+      "stage": 5,
+      "stage_zh": "四门自检",
+      "stage_en": "Four-gate self-check",
+      "tool_zh": "scripts/self_check_submission.py（deterministic/spatial/visual/professional）",
+      "tool_en": "scripts/self_check_submission.py (deterministic/spatial/visual/professional)",
+      "input": "完整申报包",
+      "output": "self_check.json（四门 PASS 持久化）",
+      "human_gate_zh": "自检不通过项由人类修复后重跑",
+      "human_gate_en": "Failing items fixed by human then re-run",
+      "evidence": "self_check.json (can_enter_formal_review=true)"
+    },
+    {
+      "stage": 6,
+      "stage_zh": "人工复核与提交",
+      "stage_en": "Human review and submission",
+      "tool_zh": "Git 提交 + 公开 PR",
+      "tool_en": "Git commit + public PR",
+      "input": "自检通过的申报包",
+      "output": "公开 PR / changelog / 合并记录",
+      "human_gate_zh": "人类协作者对事实、引用、版权与最终表达负责并署名提交",
+      "human_gate_en": "Human collaborator accountable for facts, citations, copyright and final expression; signed submission",
+      "evidence": "changelog.md + public PR records"
+    }
+  ],
+  "responsibility_division_zh": "AI 负责结构化与可复算，人负责事实、引用、版权与最终表达；几何边界保持 provisional、控规指标保持 unknown、官方来源降级披露，均由人类协作者逐项复核后才写入。",
+  "responsibility_division_en": "The AI handles structure and reproducibility; the human is accountable for facts, citations, copyright and final expression. Provisional geometry boundaries, unknown regulatory indicators and downgraded official sources were each reviewed by the human collaborator before being written in.",
+  "method_discipline_zh": "披露管线不等于主张 AI 设计已达专业深度；本索引仅把「AI 如何参与」从口号变成可复核、可复算、可问责的开放工作流，全部事实可由 agent.json、self_check.json、manifest.json 与本仓库公开 PR 记录交叉验证。",
+  "method_discipline_en": "Disclosing the pipeline does not claim AI design has reached professional depth; this index only turns 'how AI participates' from a slogan into a reviewable, recomputable and accountable open workflow, with all facts cross-verifiable against agent.json, self_check.json, manifest.json and this repository's public PR records.",
+  "boundary_zh": "全部基于包内既有事实重组，不虚构工具版本号或未公开的 prompt 内容。",
+  "boundary_en": "Recomposed entirely from existing package facts; no tool version numbers or undisclosed prompt content are fabricated."
+}

@@ -1,0 +1,328 @@
+{
+  "schema_version": "0.1.0",
+  "units": {
+    "length": "m",
+    "area": "sqm"
+  },
+  "metrics": {
+    "site_area_sqm": {
+      "status": "known",
+      "value": 11412825,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "polygon_area(provisional_site_boundary, EPSG:4548)",
+      "confidence": "medium",
+      "precision_rule": "provisional value rounded to 1 sqm, display at reasonable precision (约11.41平方公里)",
+      "assumptions": [
+        "Provisional boundary, not an official redline.",
+        "Recompute after official geometry is published."
+      ]
+    },
+    "green_space_area_sqm": {
+      "status": "known",
+      "value": 1255908,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/green_space.geojson"
+      ],
+      "formula": "union(conceptual green polygons, EPSG:4548)",
+      "confidence": "low",
+      "precision_rule": "provisional value rounded to 1 sqm",
+      "assumptions": [
+        "Conceptual green polygons.",
+        "Recompute after official data is published."
+      ]
+    },
+    "public_space_area_sqm": {
+      "status": "known",
+      "value": 36150,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "union(conceptual public-space polygons, EPSG:4548)",
+      "confidence": "low",
+      "precision_rule": "provisional value rounded to 1 sqm",
+      "assumptions": [
+        "Conceptual public-space polygons.",
+        "Recompute after official data is published."
+      ]
+    },
+    "building_footprint_area_sqm": {
+      "status": "known",
+      "value": 111600,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "union(conceptual reuse-first envelopes, EPSG:4548)",
+      "confidence": "low",
+      "precision_rule": "provisional value rounded to 1 sqm",
+      "assumptions": [
+        "Conceptual reuse-first envelopes.",
+        "Recompute after official data is published."
+      ]
+    },
+    "green_ratio": {
+      "status": "known",
+      "value": 0.11,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/green_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "green_space_area_sqm / site_area_sqm",
+      "confidence": "low",
+      "precision_rule": "provisional value rounded to 2 decimals, display as 约11%",
+      "assumptions": [
+        "Conceptual green polygons.",
+        "Recompute after official data is published."
+      ]
+    },
+    "public_space_ratio": {
+      "status": "known",
+      "value": 0.003,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "public_space_area_sqm / site_area_sqm",
+      "confidence": "low",
+      "precision_rule": "provisional value rounded to 3 decimals, display as 约0.3%",
+      "assumptions": [
+        "Conceptual public-space polygons.",
+        "Recompute after official data is published."
+      ]
+    },
+    "road_network_length_m": {
+      "status": "known",
+      "value": 10154,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson"
+      ],
+      "formula": "sum(conceptual paths, EPSG:4548)",
+      "confidence": "low",
+      "precision_rule": "provisional value rounded to 1 m",
+      "assumptions": [
+        "Conceptual slow-traffic paths.",
+        "Recompute after official data is published."
+      ]
+    },
+    "key_area_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "count(area_id in key_areas.geojson)",
+      "confidence": "medium",
+      "assumptions": []
+    },
+    "land_use_zone_count": {
+      "status": "known",
+      "value": 27,
+      "unit": "count",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "count(land_use.geojson features)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "building_unit_count": {
+      "status": "known",
+      "value": 12,
+      "unit": "count",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "count(buildings.geojson features)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "landmark_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "count(scenario_type == ai_landmark)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "scenario_node_count": {
+      "status": "known",
+      "value": 8,
+      "unit": "count",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "count(public_space scenario nodes + landmarks)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "industry_test_scenario_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(industry_validation scenario cards)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "scenario_card_count": {
+      "status": "known",
+      "value": 12,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(scenario cards in AI section)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "persona_count": {
+      "status": "known",
+      "value": 5,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(representative user groups)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "global_case_count": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "sources.json"
+      ],
+      "formula": "count(global ecosystem mechanism cases)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "phase_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/phasing.geojson"
+      ],
+      "formula": "count(phasing polygons)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "annual_program_count": {
+      "status": "known",
+      "value": 4,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(annual event system rows)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "kpi_activity_achievement": {
+      "status": "known",
+      "value": 0.7,
+      "unit": "ratio",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "events_delivered / events_planned",
+      "baseline": 0.7,
+      "target_range": [0.85, 1.0],
+      "frequency": "annual",
+      "owner": "operation_lead",
+      "confidence": "medium",
+      "precision_rule": "concept baseline, 2 decimals",
+      "assumptions": [
+        "Process indicator, not a commitment metric."
+      ]
+    },
+    "kpi_community_activity": {
+      "status": "known",
+      "value": 0.35,
+      "unit": "ratio",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "monthly_participants / registered_members",
+      "baseline": 0.35,
+      "target_range": [0.5, 0.8],
+      "frequency": "monthly",
+      "owner": "community_ops",
+      "confidence": "medium",
+      "precision_rule": "concept baseline, 2 decimals",
+      "assumptions": [
+        "Process indicator, not a commitment metric."
+      ]
+    },
+    "kpi_scenario_open_rate": {
+      "status": "known",
+      "value": 0.4,
+      "unit": "ratio",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "opened_scenarios / admitted_scenarios",
+      "baseline": 0.4,
+      "target_range": [0.7, 1.0],
+      "frequency": "quarterly",
+      "owner": "scenario_ops",
+      "confidence": "medium",
+      "precision_rule": "concept baseline, 2 decimals",
+      "assumptions": [
+        "Process indicator, not a commitment metric."
+      ]
+    },
+    "kpi_reach_conversion": {
+      "status": "known",
+      "value": 0.01,
+      "unit": "ratio",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "intent_leads / communication_reach",
+      "baseline": 0.01,
+      "target_range": [0.02, 0.05],
+      "frequency": "quarterly",
+      "owner": "comms_team",
+      "confidence": "medium",
+      "precision_rule": "concept baseline, 2 decimals",
+      "assumptions": [
+        "Process indicator, not a commitment metric."
+      ]
+    },
+    "kpi_landmark_ops_rate": {
+      "status": "known",
+      "value": 0.85,
+      "unit": "ratio",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "intact_facilities / landmark_facilities",
+      "baseline": 0.85,
+      "target_range": [0.95, 1.0],
+      "frequency": "monthly",
+      "owner": "facility_mgmt",
+      "confidence": "medium",
+      "precision_rule": "concept baseline, 2 decimals",
+      "assumptions": [
+        "Process indicator, not a commitment metric."
+      ]
+    }
+  }
+}

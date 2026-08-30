@@ -1,0 +1,28 @@
+{
+  "fixture_id": "ECR-FIXTURE-VALID-001",
+  "expected_result": "pass",
+  "claim": {
+    "claim_id": "ECR-FIXTURE-VALID-001",
+    "claim_zh": "G1 七类核验域是待现场填证的治理清单。",
+    "claim_en": "The seven G1 domains are a governance checklist awaiting site evidence.",
+    "claim_status": "pending_professional_confirmation",
+    "evidence_state": "package_structure_only",
+    "review_decision": "retain_with_boundary",
+    "adoption_status": "optional_crosswalk_concept_only",
+    "source_refs": ["AGENT-TASKBOOK"],
+    "snapshot_refs": ["SNAP-AUDIT"],
+    "metric_refs": ["g1_verification_domain_count"],
+    "metric_interpretation_zh": "7 是结构计数，不是现场通过率。",
+    "metric_interpretation_en": "Seven is a structure count, not a field pass rate.",
+    "responsible_roles": ["site_verification_professional"],
+    "stop_condition_ids": ["STOP-G1-001"],
+    "boundary_flags": {
+      "external_level_claim": false,
+      "official_endorsement": false,
+      "deployment_authorized": false,
+      "field_data": false,
+      "performance_result": false
+    },
+    "review_test": "Require evidence, role, threshold and pass/hold decision before opening."
+  }
+}

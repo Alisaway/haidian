@@ -1,0 +1,19 @@
+{
+  "schema_version": "0.1.0",
+  "units": {"length":"m","area":"sqm"},
+  "metrics": {
+    "site_area_sqm": {"status":"known","value":11412825.386,"unit":"sqm","source_files":["geometry/site_boundary.geojson"],"formula":"polygon_area(submitted_site_boundary); human display rounds to about 11.4 km2","confidence":"low","assumptions":["A-BOUNDARY-001"],"use_limit":"participant provisional model; not official area","recompute_trigger":"Replace with official boundary/CRS and publish a versioned geometry review; until then never display as a precise surveyed area."},
+    "building_footprint_area_sqm": {"status":"known","value":310807.184,"unit":"sqm","source_files":["geometry/buildings.geojson"],"formula":"sum(polygon_area(submitted_buildings))","confidence":"low","assumptions":["A-BASELINE-001"],"use_limit":"concept massing only"},
+    "green_ratio": {"status":"known","value":0.123423,"unit":"ratio","source_files":["geometry/green_space.geojson","geometry/site_boundary.geojson"],"formula":"green_space_area_sqm / site_area_sqm; human display rounds to about 12.3%","confidence":"low","assumptions":["A-BOUNDARY-001"],"use_limit":"participant provisional model","recompute_trigger":"Recompute after official land-use/green-line and boundary verification; do not treat the ratio as an existing-condition survey."},
+    "public_space_ratio": {"status":"known","value":0.073281,"unit":"ratio","source_files":["geometry/public_space.geojson","geometry/site_boundary.geojson"],"formula":"public_space_area_sqm / site_area_sqm; human display rounds to about 7.3%","confidence":"low","assumptions":["A-BOUNDARY-001"],"use_limit":"participant provisional model","recompute_trigger":"Recompute after official public-space boundary, access and ownership checks; record any geometry revision and affected visual surfaces."},
+    "floor_area_ratio": {"status":"unknown","value":null,"unit":"ratio","source_files":["geometry/site_boundary.geojson"],"formula":"total_floor_area_sqm / official_site_area_sqm","confidence":"unknown","assumptions":["A-CONTROLS-001"],"reason":"Official floor area, controls and site boundary are not available."},
+    "key_area_count": {"status":"known","value":3,"unit":"count","source_files":["geometry/key_areas.geojson"],"formula":"count(concept_key_areas)","confidence":"medium","assumptions":["A-BOUNDARY-001"]},
+    "scenario_card_count": {"status":"known","value":10,"unit":"count","source_files":["proposal.md"],"formula":"count(S01..S10)","confidence":"high","assumptions":[]},
+    "industry_test_scenario_count": {"status":"known","value":3,"unit":"count","source_files":["proposal.md"],"formula":"count(P1..P3)","confidence":"high","assumptions":[]},
+    "persona_count": {"status":"known","value":6,"unit":"count","source_files":["proposal.md"],"formula":"count(P1..P6 persona_groups)","confidence":"high","assumptions":[]},
+    "global_case_count": {"status":"known","value":5,"unit":"count","source_files":["proposal.md","sources.json"],"formula":"count(sources where review_status=verified_primary_page and usable_for_formal=mechanism_reference_only)","confidence":"high","assumptions":["2050 is retained as research_hypothesis and excluded from the formal count"]},
+    "phase_count": {"status":"known","value":3,"unit":"count","source_files":["proposal.md","geometry/phasing.geojson"],"formula":"count(near_mid_long_phases)","confidence":"high","assumptions":[]},
+    "annual_program_count": {"status":"known","value":4,"unit":"count","source_files":["proposal.md"],"formula":"count(concept_annual_programs)","confidence":"medium","assumptions":["A-OPERATIONS-001"]},
+    "operating_baseline": {"status":"unknown","value":null,"unit":"none","source_files":["assumptions.json"],"formula":"not_available","confidence":"unknown","assumptions":["A-BASELINE-001"],"reason":"Staffing, demand, budget, sample frame and workload baseline are not supplied."}
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "schema_version": "jingzhang-phase4-layout-contract-v1",
+  "canonical_project_name": "Jing-Zhang In Situ",
+  "authority_order": [
+    "geometry/*.geojson",
+    "metrics.json",
+    "standard_matrix.json + design_depth_matrix.json + compliance_matrix.json",
+    "manifest.json + sources.json + assumptions.json + self_check.json",
+    "proposal.md + proposal.en.md",
+    "F01-F11 figures",
+    "report HTML",
+    "A3/A0 PDF",
+    "Visual HTML + cover"
+  ],
+  "design_targets": {
+    "status": "internal presentation targets, not statutory standards or certification claims",
+    "a3": {
+      "page_size": "A3 landscape 420mm x 297mm",
+      "title_min_pt": 28,
+      "judgment_min_pt": 13,
+      "core_visible_text_min_pt": 9,
+      "metadata_min_pt": 8,
+      "one_main_judgment_per_page": true
+    },
+    "a0": {
+      "page_size": "A0 landscape 1189mm x 841mm",
+      "distant_title_min_pt": 68,
+      "midrange_section_min_pt": 34,
+      "near_read_core_min_pt": 18,
+      "metadata_min_pt": 14,
+      "three_distance_hierarchy": ["distant thesis", "midrange structure", "near-read evidence"]
+    },
+    "html": {
+      "minimum_body_css_px": 16,
+      "focus_ring_css_px": 4,
+      "zoom_test_percent": 200,
+      "reduced_motion": true,
+      "offline_only": true
+    }
+  },
+  "visual_language": {
+    "known": {"color": "#2D7980", "shape": "solid circle", "line": "solid", "label_zh": "已知 / 可复算", "label_en": "Known / recomputable"},
+    "provisional": {"color": "#B8893D", "shape": "diamond", "line": "dashed", "label_zh": "临时约束", "label_en": "Provisional constraint"},
+    "unknown": {"color": "#D84B2C", "shape": "square with diagonal slash", "line": "dotted", "label_zh": "未知 / 待补", "label_en": "Unknown / pending"},
+    "design_target": {"color": "#2A5F93", "shape": "double ring", "line": "double", "label_zh": "设计目标", "label_en": "Design target"},
+    "human_takeover": {"color": "#D84B2C", "shape": "hexagon with H", "line": "solid", "label_zh": "Human Takeover / 人工接管", "label_en": "Human Takeover"},
+    "stop_remove": {"color": "#162126", "shape": "bar with X", "line": "heavy", "label_zh": "停止 / 撤场", "label_en": "Stop / remove"}
+  },
+  "a3_pages": [
+    {"page": 1, "role": "cover", "main_judgment": "project + thesis + three prototypes + visible/take-over/verify/withdraw", "figures": ["F06"], "navigation": "30-second and 3-minute routes"},
+    {"page": 2, "role": "spatial-entry", "main_judgment": "three scales and one collaboration loop", "figures": ["F01"]},
+    {"page": 3, "role": "land-use", "main_judgment": "shared edges, zero gaps, zero overlaps", "figures": ["F02"]},
+    {"page": 4, "role": "prototypes", "main_judgment": "validation, translation, and public trial", "figures": ["F03"]},
+    {"page": 5, "role": "responsibility-transects", "main_judgment": "twelve unsurveyed candidates, three relational targets", "figures": ["F04"]},
+    {"page": 6, "role": "metrics-evidence", "main_judgment": "evidence before promise; six unknowns remain visible", "figures": ["F05"]},
+    {"page": 7, "role": "identity", "main_judgment": "one belt, three interfaces, one reversible grammar", "figures": ["F06"]},
+    {"page": 8, "role": "ecosystem", "main_judgment": "eight elements move through a gated internal loop; five regional interfaces remain detached and unauthorized", "figures": ["F07"]},
+    {"page": 9, "role": "scenario-authority", "main_judgment": "AI limits and Human Takeover are directly readable", "figures": ["F08"], "direct_summary": true},
+    {"page": 10, "role": "landmarks-components", "main_judgment": "reviewable, correctable, withdrawable contributions", "figures": ["F09"]},
+    {"page": 11, "role": "culture-wayfinding", "main_judgment": "three cultural strands, six-level wayfinding", "figures": ["F10"]},
+    {"page": 12, "role": "operations-exit", "main_judgment": "complaint, takeover, stop, removal, archive, adverse outcomes, and regional-interface readiness 5/0/0", "figures": ["F11"], "direct_summary": true}
+  ],
+  "a0_boards": [
+    {
+      "board": 1,
+      "role": "space-to-evidence",
+      "distant_read": "People, evidence, and responsibility become present at three urban prototypes",
+      "midrange_read": ["one belt", "three prototypes", "three scope levels", "six unknown metrics"],
+      "near_read": ["F01", "F02", "F03", "F04", "F05"],
+      "dominant_figures": ["F01", "F03", "F05"]
+    },
+    {
+      "board": 2,
+      "role": "scenario-to-exit",
+      "distant_read": "AI may assist; humans decide rights, safety, approval, stop, and reopen",
+      "midrange_read": ["SC01/SC05/SC10 flagships", "SC10+IM06 only", "Human Takeover", "13 adverse dispositions", "regional interfaces: 5 contracts / 0 authorized / 0 operating"],
+      "near_read": ["F06", "F07", "F08", "F09", "F10", "F11"],
+      "dominant_figures": ["F08", "F11"]
+    }
+  ],
+  "jury_paths": {
+    "thirty_seconds": ["cover", "F01", "F03", "F08", "F11", "three adverse or unknown results"],
+    "three_minutes": ["spatial evidence", "12 scenarios", "governance and red team", "implementation and exit", "limitations"]
+  },
+  "residual_boundaries": {
+    "unknown_metrics": ["floor area ratio", "building height", "road area", "footfall", "accessible pass rate", "heritage-control area"],
+    "provisional_key_areas": 3,
+    "controller_unknown": 12,
+    "incomplete_or_unauthorized": ["legal review", "accessibility audit", "safety certification", "site survey", "operator appointment", "official approval", "regional-interface authorization", "regional first-party factual basis and accountable interface roles"]
+  },
+  "outputs": [
+    {"path": "assets/media/cover.webp", "role": "media_poster", "language": "neutral bilingual"},
+    {"path": "drawings/a3-booklet.pdf", "role": "drawing_a3", "language": "zh", "pages": 12},
+    {"path": "drawings/a3-booklet.en.pdf", "role": "drawing_a3", "language": "en", "pages": 12},
+    {"path": "drawings/a0-boards.pdf", "role": "drawing_a0", "language": "zh", "pages": 2},
+    {"path": "drawings/a0-boards.en.pdf", "role": "drawing_a0", "language": "en", "pages": 2},
+    {"path": "report/proposal.html", "role": "rendered_report", "language": "zh"},
+    {"path": "report/proposal.en.html", "role": "rendered_report", "language": "en"},
+    {"path": "visual/index.html", "role": "visualization", "language": "zh"},
+    {"path": "visual/index.en.html", "role": "visualization", "language": "en"}
+  ]
+}

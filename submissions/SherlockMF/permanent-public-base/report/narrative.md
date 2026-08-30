@@ -1,0 +1,35 @@
+# 京张基态｜四级评审叙事
+
+## one_sentence
+
+以五条东西缝合线修复京张纵向基础设施造成的公共断裂，并把所有AI设备限制在可撤出的旁置接口中。
+
+## one_hundred_words
+
+京张基态以两条南北公共界面和五条东西候选缝合线定义不依赖AI的永久公共网络目标。当前五线共12个待核分段、7处未解断点、0条核验连续线；只有逐段通过权利、安全、无障碍与维护核验后，才进入永久公共基底。三类城市房间承接不同任务，唯一旗舰位于大钟寺。AI只进入不占公共净线目标的单侧微阶台；发生拥堵、故障或责任缺失时，由人工冻结、撤收并验收回归。
+
+## three_hundred_words
+
+场地的首要问题不是缺少更多数字服务，而是京张铁路及其伴生基础设施强化了南北联系，却在校园、社区、轨道、产业与水系之间留下多处东西断裂。方案以京张公共界面和小月河陆侧界面为两条纵向骨架，把北部换乘、清华东路、成府路、知春路和大钟寺组织为五个可独立核验、可分段实施、失败时有普通街道与公共交通后备的横向缝合包。三处重点区采用不同空间语法：众智园是有水侧禁入和机械锁定的测试后勤带；AI原点是安静、有人值守、可申诉的知识社区门槛；大钟寺是处理高峰与夜间到达、文保商业界面和活动撤场的梯田前场。大钟寺作为唯一旗舰，把公共净线、安全缓冲、旁置服务带、维护撤场带、状态与人工服务点五件构件落实到同一平面和剖面。BASE、ACTIVE、FREEZE、RETURN只改变旁置载体，已核公共分段和人工服务保持不变。90天试点先测无AI基线，再做影子建议和有限启用，最后演练冻结与回归；六项决策指标决定继续、停止或撤出。所有边界、尺寸、成本和工程接口均为待测量、待核权、待专业审查的竞赛控制目标。
+
+## three_minutes
+
+从11.413平方公里临时总体几何看，京张基础设施形成强烈南北方向，但公众日常跨越、校园社区联系、换乘到达和水系陆侧维护并未自动连续。方案不画一条假想绿轴，而把五处东西联系分别做成独立证据包：每条都记录现状问题、连接对象、证据等级、最小空间动作、责任角色、失败后备和分期。两条纵向公共界面由此成为可以被五次横向校正的城市骨架。三处重点区拒绝套模板：众智园以测试安全、机器人后勤、水侧NO-GO和维护接管为核心；AI原点以社区高校混合、无手机咨询、安静首层和申诉为核心；大钟寺以站前高峰、夜间到达、文保商业复合、活动撤场和人工疏导为核心。唯一旗舰落在大钟寺，因为这里最能检验AI服务是否会侵占真实公共到达。净线、人工服务、无障碍与撤场目标先作为准入控制，每段核验通过后才进入公共基底；AI载体只能从一侧插入。BASE时载体收纳，ACTIVE经人工批准展开，FREEZE机械锁定并由人员接管，RETURN撤收后按净线、地面、排水、标识和投诉状态验收。四类普通人——无智能手机者、轮椅使用者、老年人和夜间到达者——都必须在不登录、不使用AI的条件下完成同一任务。六项指标不伪造现值，只规定基线、测量窗口、停止阈值、恢复条件和责任角色。若正式边界、权属、竖向、消防、排水或文保条件不成立，系统缩回到永久公共基态，而不是用技术承诺掩盖缺口。
+
+# English
+
+## one_sentence
+
+Five east–west stitches repair civic breaks created by Jingzhang's longitudinal infrastructure, while every AI device is confined to a removable side interface.
+
+## one_hundred_words
+
+Ground State Jingzhang defines an AI-independent civic-network target through two longitudinal public interfaces and five candidate east–west stitches. They currently contain 12 pending segments, seven unresolved breaks and zero verified continuous routes. Only segments that pass rights, safety, accessibility and maintenance checks enter the Permanent Public Base. Three distinct rooms host different tasks, with Dazhongsi as the sole flagship. AI may occupy only a one-sided micro-terrace outside the public clear-line target. Congestion, failure or missing responsibility triggers human freeze, withdrawal and return acceptance.
+
+## three_hundred_words
+
+The primary site problem is not a shortage of digital services. Jingzhang rail infrastructure reinforces north–south movement while leaving east–west breaks among campuses, neighbourhoods, transit, industry and the river system. The proposal uses the Jingzhang public interface and the land-side Xiaoyue River interface as two longitudinal frames. North Transfer, Tsinghua East Road, Chengfu Road, Zhichun Road and Dazhongsi become five independently audited stitch packages, each phased separately and backed by ordinary streets and public transport when evidence fails. The three key areas use different spatial grammars: North Transfer is a testing and logistics edge with a waterside no-go line and mechanical lockout; AI Origin is a quiet, staffed and appealable knowledge-community threshold; Dazhongsi is a terraced forecourt for peak and night arrival, heritage–commercial interfaces and event withdrawal. As the sole flagship, Dazhongsi locates five physical components in one plan and section: public clear line, safety buffer, side service band, maintenance/withdrawal band, and state plus staffed-service point. BASE, ACTIVE, FREEZE and RETURN alter only the side carrier. Verified public segments and human service remain. A 90-day pilot measures the non-AI baseline, tests shadow advice and limited activation, then drills freeze and return. Six decision metrics determine continuation, stop or withdrawal. Boundary, dimensions, cost and engineering interfaces remain competition-stage controls pending survey, rights verification and professional review.
+
+## three_minutes
+
+Across the current 11.413-square-kilometre provisional geometry, Jingzhang infrastructure forms a strong north–south condition, but everyday crossings, campus–neighbourhood links, transfer arrival and land-side river maintenance are not automatically continuous. The proposal therefore refuses a fictional continuous green axis. It defines five independent east–west evidence packages, each with a site problem, connection object, evidence level, minimum spatial action, responsible role, fallback and phase. The two longitudinal public interfaces become a civic frame corrected by five transverse stitches. The three key areas do not share one template. North Transfer focuses on test safety, robotic logistics, a waterside no-go line and maintenance takeover. AI Origin focuses on campus–community mixing, no-phone consultation, quiet ground floors and appeal. Dazhongsi focuses on peak and night arrival, heritage–commercial coexistence, event withdrawal and human crowd guidance. Dazhongsi is the sole flagship because it most directly tests whether AI service occupies a real public arrival route. Clear-line, staffed-service, accessible-route and withdrawal targets are set first; each segment enters the public base only after verification, and AI may plug in only from one side. BASE stores the carrier, ACTIVE deploys it after human approval, FREEZE mechanically locks it while staff take over, and RETURN withdraws it before acceptance checks the route, surface, drainage, signs and complaints. Four everyday users—a person without a smartphone, a wheelchair user, an older person and a night arrival—must complete the same task without login or AI. Six metrics do not invent current values; they define a baseline, measurement window, stop threshold, recovery condition and responsible role. If formal boundary, rights, levels, fire, drainage or heritage conditions fail, the system returns to the public base rather than hiding the gap behind a technology claim.

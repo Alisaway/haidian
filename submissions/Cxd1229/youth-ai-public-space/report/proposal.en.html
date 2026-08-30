@@ -1,460 +1,523 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jingzhang AI Innovation Belt Urban Design</title>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jingzhang AI Innovation Belt Youth-Friendly Public Space and AI Pilgrimage Landmark Urban Design - proposal report</title>
 <style>
-body{font-family:-apple-system,sans-serif;max-width:900px;margin:0 auto;padding:2rem;line-height:1.8;color:#222}
-h1{color:#FF6B35;border-bottom:3px solid #005DFC;padding-bottom:0.5rem}
-h2{color:#005DFC;margin-top:2.5rem}
-h3{color:#333;margin-top:1.5rem}
-img{max-width:100%;border-radius:4px;margin:1rem 0}
-table{border-collapse:collapse;width:100%;margin:1rem 0}
-td,th{border:1px solid #ddd;padding:0.5rem 0.7rem;font-size:0.9rem}
-th{background:#005DFC;color:#fff}
-.evidence{font-size:0.75rem;padding:0.1rem 0.3rem;border-radius:3px;margin:0 0.15rem}
-.evidence.source{color:#005DFC;background:#e8f0ff}
-.evidence.data{color:#2E7D32;background:#e8f5e9}
-.evidence.metric{color:#FF6B35;background:#fff3e0}
-.evidence.standard{color:#7B1FA2;background:#f3e5f5}
-.evidence.task{color:#E65100;background:#fff8e1}
-ol,ul{margin-left:1.5rem}
-li{margin-bottom:0.3rem}
-</style></head><body><main>
+@font-face{font-family:'EmbeddedSC';src:url(data:font/ttf;base64,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);font-style:normal;font-weight:normal;}
+:root {
+  --ink: #172033;
+  --muted: #667085;
+  --line: #d7dee8;
+  --paper: #ffffff;
+  --bg: #f4f7fa;
+  --accent: #245b8f;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'EmbeddedSC', -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.75;
+}
+main {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 42px 24px 72px;
+  background: var(--paper);
+  min-height: 100vh;
+  box-shadow: 0 0 0 1px rgba(23, 32, 51, 0.05);
+}
+.hero {
+  border-bottom: 3px solid var(--accent);
+  padding-bottom: 24px;
+  margin-bottom: 30px;
+}
+h1 { font-size: 34px; line-height: 1.22; margin: 0 0 10px; }
+h2 { font-size: 25px; margin: 34px 0 12px; border-top: 1px solid var(--line); padding-top: 24px; }
+h3 { font-size: 20px; margin: 26px 0 10px; }
+p, li { font-size: 16px; }
+blockquote {
+  margin: 18px 0;
+  padding: 12px 18px;
+  border-left: 4px solid var(--line);
+  color: var(--muted);
+  background: #f8fafc;
+}
+code {
+  background: #eef2f7;
+  color: #1d4f7a;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+:not(pre) > code {
+  display: inline-block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.summary { color: var(--muted); font-size: 17px; }
+.translation-link a { color: var(--accent); font-weight: 700; }
+.proposal-table { margin: 20px 0 26px; overflow-x: auto; }
+.proposal-table table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 520px;
+  font-size: 15px;
+}
+.proposal-table th, .proposal-table td {
+  border: 1px solid var(--line);
+  padding: 9px 12px;
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.6;
+}
+.proposal-table th { background: #eef2f7; color: var(--ink); font-weight: 700; }
+.proposal-table tbody tr:nth-child(even) { background: #fafcfe; }
+.proposal-table .align-center { text-align: center; }
+.proposal-table .align-right { text-align: right; }
+.proposal-figure {
+  margin: 22px 0 28px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f8fafc;
+}
+.proposal-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.proposal-figure figcaption {
+  padding: 10px 14px;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+}
+.evidence {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  margin: 0 0.12em;
+  border-bottom: 1px solid #8aa8c3;
+  color: #315f87;
+  font-size: 0.68em;
+  font-weight: 650;
+  line-height: 1.35;
+  vertical-align: super;
+}
+@media (max-width: 720px) {
+  main { padding: 26px 16px 52px; }
+  h1 { font-size: 26px; }
+  h2 { font-size: 21px; }
+}
+</style>
+</head>
+<body>
+<main>
+<section class="hero">
+<h1>Jingzhang AI Innovation Belt Youth-Friendly Public Space and AI Pilgrimage Landmark Urban Design</h1>
+<p class="summary">Centered on the Jingzhang Railway Heritage Park, focused on the needs of young innovation talent, this proposal constructs a &#x27;One Corridor · Three Cores · Five Belts&#x27; AI public space system with 5 AI pilgrimage landmarks, 12 AI scenario cards, and 6 user personas, transforming 43.6 km² into a youth-friendly urban model attracting global AI talent. Introduces the Zhan Tianyou Protocol — a trust framework for human-machine collaborative urban design.</p>
+<p class="translation-link"><a href="proposal.html">阅读中文版本</a></p>
+</section>
 <h1>Jingzhang AI Innovation Belt Youth-Friendly Public Space and AI Pilgrimage Landmark Urban Design</h1>
 <h2>Core Proposition: The Zhan Tianyou Protocol — A Trust Framework for Human-Machine Collaborative Urban Design</h2>
-<p>In 1909, Zhan Tianyou led the construction of the Beijing-Zhangjiakou Railway, marking the first time Chinese engineers independently completed a mainline railway design — at a time when the world did not believe Chinese engineers could do it. A century later, on the same land, an AI agent participates in real urban design for the first time — and today's world asks the same question: can AI produce professional urban planning?</p>
-<p>This proposal's answer is: **Yes, with conditions.** We introduce the **Zhan Tianyou Protocol** — a trust framework for human-machine collaborative urban design that grows from the legacy of the Beijing-Zhangjiakou Railway.</p>
-<p>Zhan Tianyou won trust with three things back then: **visible engineering quality** (the Qinglongqiao herringbone switchback remains visitable today), **transparent work records** (his engineering logs are complete and auditable), and **verifiable results** (the train reached Zhangjiakou). Today's AI needs the same three: readable design proposals, traceable evidence chains, and reviewable metric data. This proposal itself — from GeoJSON to metric recalculation to scenario design — is the empirical demonstration of this protocol: when a city opens its data, rules, and feedback loops to an agent, the agent can produce verifiable professional output.</p>
-<p>**The Zhan Tianyou Protocol — Four Principles:**</p>
-<p>1. **Visibility** — Every design judgment has a spatial layer to inspect; every metric has a formula to recalculate</p>
-<p>2. **Stoppable** — Every AI scenario has a named human responsible person and an exit mechanism</p>
-<p>3. **AI-Free Equivalence** — Public spaces function fully without AI; AI is augmentation, not replacement</p>
-<p>4. **Intergenerational Equity** — The plan serves young talent, and also serves children, the elderly, people with disabilities, and low-income groups</p>
-<blockquote>This proposal was independently completed by an AI Agent (Claude Fable 5, assisted by Kimi K3) under the supervision of human operator @Cxd1229 — the proposal itself is empirical evidence that "AI can participate in real urban design."</blockquote>
-<p>**Core differentiation from other proposals**: This proposal is not about "designing a city for AI" — it is about "how AI earns human trust when designing a city." It extracts an actionable trust framework (Visibility / Stoppable / AI-Free Equivalence / Intergenerational Equity) from Zhan Tianyou's historical experience, and translates conceptual narrative into 12 independently verifiable engineering verification items. While other proposals discuss "what rights agents should have," this proposal has already delivered the answer to "how agents prove they are worthy of trust" — and every answer is backed by GeoJSON, metric formulas, and scenario exit mechanisms as evidence.</p>
+<p>In 1909, Zhan Tianyou led the construction of the Beijing-Zhangjiakou Railway, marking the first time Chinese engineers independently completed a mainline railway design — at a time when the world did not believe Chinese engineers could do it. A century later, on the same land, an AI agent participates in real urban design for the first time — and today&#x27;s world asks the same question: can AI produce professional urban planning?</p>
+<p>This proposal&#x27;s answer is: <strong>Yes, with conditions.</strong> We introduce the <strong>Zhan Tianyou Protocol</strong> — a trust framework for human-machine collaborative urban design that grows from the legacy of the Beijing-Zhangjiakou Railway.</p>
+<p>Zhan Tianyou won trust with three things back then: <strong>visible engineering quality</strong> (the Qinglongqiao herringbone switchback remains visitable today), <strong>transparent work records</strong> (his engineering logs are complete and auditable), and <strong>verifiable results</strong> (the train reached Zhangjiakou). Today&#x27;s AI needs the same three: readable design proposals, traceable evidence chains, and reviewable metric data. This proposal itself — from GeoJSON to metric recalculation to scenario design — is the empirical demonstration of this protocol: when a city opens its data, rules, and feedback loops to an agent, the agent can produce verifiable professional output.</p>
+<p><strong>The Zhan Tianyou Protocol — Four Principles:</strong> 1. <strong>Visibility</strong> — Every design judgment has a spatial layer to inspect; every metric has a formula to recalculate 2. <strong>Stoppable</strong> — Every AI scenario has a human responsibility role and an exit mechanism; named owners are assigned per scenario at implementation stage 3. <strong>AI-Free Equivalence</strong> — Public spaces function fully without AI; AI is augmentation, not replacement 4. <strong>Intergenerational Equity</strong> — The plan serves young talent, and also serves children, the elderly, people with disabilities, and low-income groups</p>
+<p><strong>How the Zhan Tianyou Protocol operates — a three-stage trust loop:</strong> Zhan Tianyou won trust through three steps back then — &quot;survey design → construction records → opening acceptance.&quot; This proposal translates these three steps into a universal AI collaboration flow, serving as the mechanism thread that runs through the entire document:</p>
+<div class="proposal-table"><table><thead><tr><th>Loop stage</th><th>Zhan Tianyou&#x27;s engineering method</th><th>This proposal&#x27;s implementation</th></tr></thead><tbody><tr><td>① Open</td><td>Survey design made public</td><td>Taskbook, provisional boundaries, and open data serve as agent inputs; rules and constraints are declared up front</td></tr><tr><td>② Verify</td><td>Transparent construction logs</td><td>Human-machine dual review — every metric has a recalculable formula, every scenario has a proposed responsibility role (named owners assigned before implementation)</td></tr><tr><td>③ Trace</td><td>Verifiable opening acceptance</td><td>Results are traceable, iterable, and stoppable — metrics carry confidence labels, scenarios have exit mechanisms</td></tr></tbody></table></div>
+<p>The four principles answer &quot;what dimensions constitute trust&quot;; the three-stage loop answers &quot;how trust is built step by step.&quot; The spatial strategies, scenario designs, and metric system in the chapters that follow are all implementations of this loop.</p>
+<blockquote><p>This proposal was independently completed by an AI Agent (Claude Fable 5, assisted by Kimi K3) under the supervision of human operator @Cxd1229 — the proposal itself is empirical evidence that &quot;AI can participate in real urban design.&quot;</p></blockquote>
+<p><strong>Core differentiation from other proposals</strong>: This proposal is not about &quot;designing a city for AI&quot; — it is about &quot;how AI earns human trust when designing a city.&quot; It extracts an actionable trust framework (Visibility / Stoppable / AI-Free Equivalence / Intergenerational Equity) from Zhan Tianyou&#x27;s historical experience, and translates conceptual narrative into 12 independently verifiable engineering verification items. While other proposals discuss &quot;what rights agents should have,&quot; this proposal has already delivered the answer to &quot;how agents prove they are worthy of trust&quot; — and every answer is backed by GeoJSON, metric formulas, and scenario exit mechanisms as evidence.</p>
 <h2>Design Basis and Source Inventory</h2>
-<p>This proposal is prepared in accordance with the Haidian District Centennial Jingzhang AI Innovation Belt International Urban Design Competition Announcement (published May 9, 2026, by Beijing Municipal Commission of Planning and Natural Resources <span class="evidence source">[source:SITE-PACKAGE]</span>), and the Global Agent Open Call Taskbook <span class="evidence source">[source:SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK]</span>.</p>
+<p>This proposal is prepared in accordance with the Haidian District Centennial Jingzhang AI Innovation Belt International Urban Design Competition Announcement (published May 9, 2026, by Beijing Municipal Commission of Planning and Natural Resources <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="SITE-PACKAGE" title="Source: SITE-PACKAGE">Source</sup>), and the Global Agent Open Call Taskbook <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK" title="Source: SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK">Source</sup>.</p>
+<blockquote><p><strong>Source-ID alias note</strong>: The Taskbook is uniformly referenced throughout this proposal by its source-registry ID <code>SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK</code>, which maps to the approved standard ID <code>PROJECT-AGENT-OPEN-CALL-TASKBOOK</code> in <code>standards.json</code> and to the site-package file <code>brief/site-package/agent_taskbook.json</code> — all three point to the same &quot;Global Agent Open Call Taskbook&quot;. The former alias <code>AGENT-TASKBOOK</code> is no longer used in this proposal.</p></blockquote>
 <p>Core data sources:</p>
-<li>**Official Announcement**: Pre-qualification announcement text with three-level scope descriptions (coordinated research area 43.6 km², overall design area ~11.4 km², key areas 368.4 ha) <span class="evidence source">[source:DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509]</span></li>
-<li>**Taskbook**: Six design tasks and ten co-creation principles for AI agents <span class="evidence source">[source:AGENT-TASKBOOK]</span></li>
-<li>**Boundary Data**: Community-maintained provisional boundaries generated from announcement text descriptions, EPSG:4326 coordinate system, area verified in EPSG:4548 <span class="evidence source">[source:DATA-SRC-PROVISIONAL-BOUNDARIES-20260605]</span></li>
-<li>**Statistical Yearbook**: Haidian District 2025 Statistical Yearbook (2024 data) <span class="evidence source">[source:HAIDIAN-YEARBOOK-2021-2024]</span>:</li>
-<li>Permanent resident population: 2.474 million (Table 1-1)</li>
-<li>Information transmission/software/IT sector employees: 535,193, average annual salary: ¥343,362 (Table 3-7)</li>
-<li>Scientific research and technical services employees: 199,970, average annual salary: ¥262,690 (Table 3-7)</li>
-<li>**Open Data**: OpenStreetMap road and building footprints (background reference only <span class="evidence source">[source:OSM-2026-BEIJING]</span>)</li>
-<li>**Case Studies**: Global innovation district public space benchmarks <span class="evidence source">[source:GLOBAL-INNOVATION-DISTRICTS]</span></li>
-<li>**Energy Data**: Haidian District 2021–2024 energy consumption reports and statistical yearbooks; GDP energy intensity decreased 25.2% over four years <span class="evidence source">[source:HAIDIAN-ENERGY-2024]</span></li>
-<p>Boundary disclaimer: All boundaries are provisional rough boundaries, not official redlines <span class="evidence standard">[standard:PROVISIONAL-BOUNDARY-POLICY]</span>; this proposal is an open co-creation conceptual suggestion and does not substitute formal planning <span class="evidence standard">[standard:AGENT-SUBMISSION-DISCLAIMER]</span>.</p>
+<ul>
+<li><strong>Official Announcement</strong>: Pre-qualification announcement text with three-level scope descriptions (coordinated research area 43.6 km², overall design area ~11.4 km², key areas 368.4 ha) <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509" title="Source: DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509">Source</sup></li>
+<li><strong>Taskbook</strong>: Six design tasks and ten co-creation principles for AI agents <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK" title="Source: SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK">Source</sup></li>
+<li><strong>Boundary Data</strong>: Community-maintained provisional boundaries generated from announcement text descriptions, EPSG:4326 coordinate system, area verified in EPSG:4548 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="DATA-SRC-PROVISIONAL-BOUNDARIES-20260605" title="Source: DATA-SRC-PROVISIONAL-BOUNDARIES-20260605">Source</sup></li>
+<li><strong>Statistical Yearbook</strong>: Haidian District 2025 Statistical Yearbook (2024 data) <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="HAIDIAN-YEARBOOK-2021-2024" title="Source: HAIDIAN-YEARBOOK-2021-2024">Source</sup>:</li>
+<p>- Permanent resident population: 2.474 million (Table 1-1) - Information transmission/software/IT sector employees: 535,193, average annual salary: ¥343,362 (Table 3-7) - Scientific research and technical services employees: 199,970, average annual salary: ¥262,690 (Table 3-7)</p>
+<li><strong>Open Data</strong>: OpenStreetMap road and building footprints (background reference only <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="OSM-2026-BEIJING" title="Source: OSM-2026-BEIJING">Source</sup>)</li>
+<li><strong>Case Studies</strong>: Global innovation district public space benchmarks <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="GLOBAL-INNOVATION-DISTRICTS" title="Source: GLOBAL-INNOVATION-DISTRICTS">Source</sup></li>
+<li><strong>Energy Data</strong>: Haidian District 2021–2024 energy consumption reports and statistical yearbooks; GDP energy intensity decreased 25.2% over four years <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="HAIDIAN-ENERGY-2024" title="Source: HAIDIAN-ENERGY-2024">Source</sup></li>
+</ul>
+<p>Boundary disclaimer: All boundaries are provisional rough boundaries, not official redlines <sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="PROVISIONAL-BOUNDARY-POLICY" title="Standard: PROVISIONAL-BOUNDARY-POLICY">Standard</sup>; this proposal is an open co-creation conceptual suggestion and does not substitute formal planning <sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="AGENT-SUBMISSION-DISCLAIMER" title="Standard: AGENT-SUBMISSION-DISCLAIMER">Standard</sup>.</p>
 <p>Supporting submissions:</p>
+<ul>
 <li>Structured matrices: compliance_matrix.json, standard_matrix.json, design_depth_matrix.json</li>
-<li>Spatial data: <span class="evidence data">[data:geometry/*.geojson]</span></li>
+<li>Spatial data: <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/*.geojson" title="Spatial data: geometry/*.geojson">Spatial data</sup></li>
 <li>Metric recalculation: metrics.json</li>
-<li>Source inventory: <span class="evidence source">[source:sources.json]</span></li>
-<li>Assumption records: <span class="evidence assumption">[assumption:assumptions.json]</span></li>
-<img src="../assets/figures/site-overview.png" alt="Site Overview and Spatial Structure" loading="lazy">
+<li>Source inventory: <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="sources.json" title="Source: sources.json">Source</sup></li>
+<li>Assumption records: [assumption:assumptions.json]</li>
+</ul>
+<figure class="proposal-figure"><img src="../assets/figures/site-overview.png" alt="Site Overview and Spatial Structure"><figcaption>Site Overview and Spatial Structure</figcaption></figure>
 <h2>Three-Level Scope Framework</h2>
 <h3>Coordinated Research Area (43.6 km²)</h3>
-<p>Bounded by North 5th Ring Road to the north, Jingzang Expressway to the east, Xizhimenwai Street to the south, and Wanquan River Road to the west <span class="evidence data">[data:geometry/site_boundary.geojson#SITE-BOUNDARY-001]</span>. Within this area, conduct research on AI innovation ecosystem, industrial synergy, regional linkage, transportation systems, and cultural narrative. Establish a "One Belt · Three Zones · Two Wings" macro-cognitive framework.</p>
-<p>**Key Focus**: Identify spatial relationships between Haidian's 10+ universities (Peking University, Tsinghua University, Beihang University, BUPT, etc.) and AI industry (Zhongguancun Software Park, Hou Chang Chun, BAAI). Analyze young talent patterns (Haidian IT sector: 535,193 employees, R&D sector: 199,970 <span class="evidence source">[source:HAIDIAN-YEARBOOK-2021-2024]</span>; ~350,000 university students from Beijing education statistics, Haidian hosts 10+ universities). Propose regional-level public space and innovation service networks.</p>
+<p>Bounded by North 5th Ring Road to the north, Jingzang Expressway to the east, Xizhimenwai Street to the south, and Wanquan River Road to the west <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/site_boundary.geojson#SITE-BOUNDARY-001" title="Spatial data: geometry/site_boundary.geojson#SITE-BOUNDARY-001">Spatial data</sup>. Within this area, conduct research on AI innovation ecosystem, industrial synergy, regional linkage, transportation systems, and cultural narrative. Establish a &quot;One Belt · Three Zones · Two Wings&quot; macro-cognitive framework.</p>
+<p><strong>Key Focus</strong>: Identify spatial relationships between Haidian&#x27;s 10+ universities (Peking University, Tsinghua University, Beihang University, BUPT, etc.) and AI industry (Zhongguancun Software Park, Hou Chang Chun, BAAI). Analyze young talent patterns (Haidian IT sector: 535,193 employees, R&amp;D sector: 199,970 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="HAIDIAN-YEARBOOK-2021-2024" title="Source: HAIDIAN-YEARBOOK-2021-2024">Source</sup>; ~350,000 university students (design assumption ASM-009 based on a rough projection from Beijing education statistics and Haidian university distribution; not a project-scope measured value and not used as formal evidence)). Propose regional-level public space and innovation service networks.</p>
 <h3>Overall Design Area (~11.4 km²)</h3>
-<p>A 1–2 km zone around the Jingzhang Heritage Park as the planning and design scope <span class="evidence data">[data:geometry/site_boundary.geojson#SITE-BOUNDARY-001]</span>. Achieve urban design depth equivalent to regulatory detailed planning, focusing on urban renewal, land use layout, public space systems, transportation and slow-mobility networks, municipal infrastructure, and urban character.</p>
-<p>**Core Strategy**: "One Corridor Connecting Three Districts" — the Jingzhang Railway Heritage Park serves as an 8 km public space spine, connecting the northern Zhongzhiyuan Acceleration Area, the central AI Origin Community, and the southern Dazhongsi Industry Cluster.</p>
+<p>A 1–2 km zone around the Jingzhang Heritage Park as the planning and design scope <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/site_boundary.geojson#SITE-BOUNDARY-001" title="Spatial data: geometry/site_boundary.geojson#SITE-BOUNDARY-001">Spatial data</sup>. Work at a conceptual urban design depth, focusing on urban renewal, land use layout, public space systems, transportation and slow-mobility networks, municipal infrastructure, and urban character; this depth does not constitute a regulatory detailed planning conclusion <sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="AGENT-SUBMISSION-DISCLAIMER" title="Standard: AGENT-SUBMISSION-DISCLAIMER">Standard</sup>.</p>
+<p><strong>Core Strategy</strong>: &quot;One Corridor Connecting Three Districts&quot; — the Jingzhang Railway Heritage Park serves as an 8 km public space spine, connecting the northern Zhongzhiyuan Acceleration Area, the central AI Origin Community, and the southern Dazhongsi Industry Cluster.</p>
 <h3>Key Areas (368.4 ha)</h3>
-<p>Three key areas from north to south <span class="evidence data">[data:geometry/key_areas.geojson]</span>:</p>
-<p>1. Zhongzhiyuan AI Autonomous Innovation Acceleration Area (192.1 ha): Focus on AI full-stack autonomous innovation and frontier research</p>
-<p>2. Beijing AI Origin Community (104.3 ha): Leverage university resources to build an AI innovation cradle</p>
-<p>3. Dazhongsi AI Industry Cluster (72.0 ha): AI commercialization and immersive experience</p>
-<p>Boundary statement: All spatial boundaries are derived from community-maintained provisional rough boundaries and must not be treated as statutory redlines or precise area bases. All layers and metrics must be updated once official boundaries are obtained <span class="evidence standard">[standard:PROVISIONAL-BOUNDARY-POLICY]</span>.</p>
-<img src="../assets/figures/land-use-structure.png" alt="Three-Level Scope and Spatial Framework" loading="lazy">
+<p>Three key areas from north to south <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/key_areas.geojson" title="Spatial data: geometry/key_areas.geojson">Spatial data</sup>: 1. Zhongzhiyuan AI Autonomous Innovation Acceleration Area (192.1 ha): Focus on AI full-stack autonomous innovation and frontier research 2. Beijing AI Origin Community (104.3 ha): Leverage university resources to build an AI innovation cradle 3. Dazhongsi AI Industry Cluster (72.0 ha): AI commercialization and immersive experience</p>
+<p>Boundary statement: All spatial boundaries are derived from community-maintained provisional rough boundaries and must not be treated as statutory redlines or precise area bases. All layers and metrics must be updated once official boundaries are obtained <sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="PROVISIONAL-BOUNDARY-POLICY" title="Standard: PROVISIONAL-BOUNDARY-POLICY">Standard</sup>.</p>
+<figure class="proposal-figure"><img src="../assets/figures/land-use-structure.png" alt="Three-Level Scope and Spatial Framework"><figcaption>Three-Level Scope and Spatial Framework</figcaption></figure>
 <h2>Industry and Future City Research (Coordinated Research Area)</h2>
-<h3>Overall Concept and Naming System <span class="evidence task">[task:agent.1]</span></h3>
-<p>**Overall Concept**: "Jingzhang AI Innovation Belt" (JZ.AI). Core philosophy: the **Zhan Tianyou Protocol** — a human-machine collaborative trust framework growing from the spirit of independent design embodied in the Beijing-Zhangjiakou Railway.</p>
-<p>**Naming System**:</p>
-<li>**Three Positionings**: Centennial Jingzhang Cultural Belt · Urban AI Living Experience Belt · AI Integration Innovation Belt</li>
-<li>**Five Functions**: AI full-stack autonomous innovation · World-class innovation ecosystem · AI+ scenario empowerment · Intelligent vibrant city · AI governance discourse power</li>
-<li>**Three-Zone Two-Wing Collaborative Loop**: Northern Zhongzhiyuan (autonomous innovation engine) — Central Origin Community (talent & ecosystem core) — Southern Dazhongsi (industry application window), Western Zhongguancun Tech Service Wing (capital & IP allocation), Eastern Xiaoyue River Scenario Empowerment Wing (AI+ urban testbed)</li>
-<p>**Visual Identity Direction**:</p>
-<li>Logo concept: Inspired by the Jingzhang Railway "herringbone" track, evolved into three overlapping AI data stream lines, symbolizing the temporal dialogue between centennial railway culture and AI innovation</li>
+<h3>Overall Concept and Naming System [task:agent.1]</h3>
+<p><strong>Overall Concept</strong>: &quot;Jingzhang AI Innovation Belt&quot; (JZ.AI). Core philosophy: the <strong>Zhan Tianyou Protocol</strong> — a human-machine collaborative trust framework growing from the spirit of independent design embodied in the Beijing-Zhangjiakou Railway.</p>
+<p><strong>Naming System</strong>:</p>
+<ul>
+<li><strong>Three Positionings</strong>: Centennial Jingzhang Cultural Belt · Urban AI Living Experience Belt · AI Integration Innovation Belt</li>
+<li><strong>Five Functions</strong>: AI full-stack autonomous innovation · World-class innovation ecosystem · AI+ scenario empowerment · Intelligent vibrant city · AI governance discourse power</li>
+<li><strong>Three-Zone Two-Wing Collaborative Loop</strong>: Northern Zhongzhiyuan (autonomous innovation engine) — Central Origin Community (talent &amp; ecosystem core) — Southern Dazhongsi (industry application window), Western Zhongguancun Tech Service Wing (capital &amp; IP allocation), Eastern Xiaoyue River Scenario Empowerment Wing (AI+ urban testbed)</li>
+</ul>
+<p><strong>Visual Identity Direction</strong>:</p>
+<ul>
+<li>Logo concept: Inspired by the Jingzhang Railway &quot;herringbone&quot; track, evolved into three overlapping AI data stream lines, symbolizing the temporal dialogue between centennial railway culture and AI innovation</li>
 <li>Color system: Railway Gray (#4A4A4A) + AI Blue (#005DFC) + Youth Orange (#FF6B35)</li>
 <li>Typography direction: Chinese sans-serif modern, English geometric style</li>
-<blockquote>Note: The above are conceptual design directions, not final commercial identity proposals <span class="evidence task">[task:agent.1]</span>.</blockquote>
-<img src="../assets/figures/logo.svg" alt="JZ.AI Logo" loading="lazy">
-<p>**Logo Design Specification** <span class="evidence task">[task:agent.1]</span>:</p>
-<li>**Logo Mark**: The Jingzhang Railway "herringbone" track as the core graphic; three overlapping arcs symbolize the Centennial Cultural Belt, Urban AI Living Belt, and AI Integration Innovation Belt; arc tips graduate into data node dots</li>
-<li>**Standard Colors**: Railway Gray #4A4A4A (background/text), AI Blue #005DFC (primary brand color), Youth Orange #FF6B35 (accent)</li>
-<li>**Typography System**: Chinese — sans-serif modern typeface (Noto Sans SC Bold); English — geometric style (Montserrat Bold); letter spacing +5%</li>
-<li>**Application Contexts**: Business card (90×54mm), wayfinding signage (600×400mm), digital screen (1920×1080px), building façade (proportion-adaptive)</li>
-<li>**Minimum Size**: Print 15mm width, digital display 48px height</li>
-<li>**Clear Space**: 1/4 logo height margin on all four sides, no intrusion permitted</li>
-<h3>Global AI Innovation Ecosystem Case Studies <span class="evidence task">[task:agent.2]</span></h3>
+</ul>
+<blockquote><p>Note: The above are conceptual design directions, not final commercial identity proposals [task:agent.1].</p></blockquote>
+<figure class="proposal-figure"><img src="../assets/figures/logo.svg" alt="JZ.AI Logo"><figcaption>JZ.AI Logo</figcaption></figure>
+<p><strong>Logo Design Specification</strong> [task:agent.1]:</p>
+<ul>
+<li><strong>Logo Mark</strong>: The Jingzhang Railway &quot;herringbone&quot; track as the core graphic; three overlapping arcs symbolize the Centennial Cultural Belt, Urban AI Living Belt, and AI Integration Innovation Belt; arc tips graduate into data node dots</li>
+<li><strong>Standard Colors</strong>: Railway Gray #4A4A4A (background/text), AI Blue #005DFC (primary brand color), Youth Orange #FF6B35 (accent)</li>
+<li><strong>Typography System</strong>: Chinese — sans-serif modern typeface (Noto Sans SC Bold); English — geometric style (Montserrat Bold); letter spacing +5%</li>
+<li><strong>Application Contexts</strong>: Business card (90×54mm), wayfinding signage (600×400mm), digital screen (1920×1080px), building façade (proportion-adaptive)</li>
+<li><strong>Minimum Size</strong>: Print 15mm width, digital display 48px height</li>
+<li><strong>Clear Space</strong>: 1/4 logo height margin on all four sides, no intrusion permitted</li>
+</ul>
+<h3>Global AI Innovation Ecosystem Case Studies [task:agent.2]</h3>
 <p>Six globally relevant innovation district public space cases:</p>
-<tr><td>Case</td><td>Location</td><td>Key Insight</td><td>Transferable Element</td></tr>
-<p>|------|----------|-------------|---------------------|</p>
-<tr><td>**Station F**</td><td>Paris</td><td>Transformed abandoned railway station into the world's largest startup campus; public atrium ("Share Zone") promotes serendipitous encounters and collaboration</td><td>Railway heritage activation, shared public space driving innovation exchange</td></tr>
-<tr><td>**Cambridge Science Park**</td><td>Cambridge</td><td>Low-density garden campus embedded with informal exchange spaces (café clusters, walking loops)</td><td>Green corridors + slow-mobility networks connecting innovation nodes</td></tr>
-<tr><td>**Shenzhen Bay Innovation Street**</td><td>Shenzhen</td><td>High-density district with "15-minute innovation living circle"; public space operates 24/7</td><td>Nighttime vitality, round-the-clock public space operation</td></tr>
-<tr><td>**The High Line**</td><td>New York</td><td>Abandoned elevated railway transformed into a linear park, driving community revitalization and creative industry clustering along the corridor</td><td>Linear heritage activation, public space driving urban renewal</td></tr>
-<tr><td>**One-North**</td><td>Singapore</td><td>Mixed-use + public space + innovation facilities integrated planning; public nodes within 5-minute walk</td><td>Land use mixing, pedestrian accessibility, tropical blue-green system</td></tr>
-<tr><td>**Kendall Square**</td><td>Cambridge (US)</td><td>World's highest innovation density district around MIT; key factor is "collision spaces"</td><td>Corner plazas, café social zones, public WiFi/compute nodes</td></tr>
-<p>**Transferable Lessons** <span class="evidence depth">[depth:ecosystem_design]</span>:</p>
-<p>1. **Informal exchange spaces are the physical foundation of innovation ecosystems** — every innovation node must have configurable, encounter-friendly public space within 300m</p>
-<p>2. **Linear heritage is a unique spatial asset** — the 8 km continuity of the Jingzhang Railway heritage is globally unique among innovation districts</p>
-<p>3. **Youth talent priority hierarchy**: 24h accessible facilities > social scenarios > sports space > green space > retail</p>
-<p>**AI Innovation Ecosystem Map** <span class="evidence task">[task:agent.2]</span>:</p>
-<li>**Fundamental Research Layer**: Tsinghua University, Peking University, Beihang, BUPT, Chinese Academy of Sciences, and other universities and research institutions → Spatial placement: Zhongzhiyuan AI Acceleration Area and surrounding university clusters</li>
-<li>**Technology Development Layer**: Computing centers, open-source framework communities, data annotation platforms, model evaluation laboratories → Spatial placement: Zhongzhiyuan Computing Sharing Center + AI Origin Community incubators</li>
-<li>**Industry Application Layer**: AI+Healthcare, AI+Education, AI+Transportation, AI+Commerce scenario testing and deployment → Spatial placement: Dazhongsi AI Industry Cluster + Xiaoyue River Scenario Empowerment Wing</li>
-<li>**Capital & Services Layer**: Venture capital, industry funds, policy matching, IP services → Spatial placement: Zhongguancun Tech Service Wing (West) + AI Origin Community Service Center</li>
-<li>**Connection Relations**: The four layers are physically linked through the Jingzhang Heritage Park corridor, supplemented by an online developer community and offline quarterly scenario open days, forming a data-talent-capital-policy closed loop</li>
-<h3>Public Space Component Library <span class="evidence task">[task:agent.4]</span></h3>
+<div class="proposal-table"><table><thead><tr><th>Case</th><th>Location</th><th>Key Insight</th><th>Transferable Element</th></tr></thead><tbody><tr><td><strong>Station F</strong></td><td>Paris</td><td>Transformed abandoned railway station into the world&#x27;s largest startup campus; public atrium (&quot;Share Zone&quot;) promotes serendipitous encounters and collaboration</td><td>Railway heritage activation, shared public space driving innovation exchange</td></tr><tr><td><strong>Cambridge Science Park</strong></td><td>Cambridge</td><td>Low-density garden campus embedded with informal exchange spaces (café clusters, walking loops)</td><td>Green corridors + slow-mobility networks connecting innovation nodes</td></tr><tr><td><strong>Shenzhen Bay Innovation Street</strong></td><td>Shenzhen</td><td>High-density district with &quot;15-minute innovation living circle&quot;; public space operates 24/7</td><td>Nighttime vitality, round-the-clock public space operation</td></tr><tr><td><strong>The High Line</strong></td><td>New York</td><td>Abandoned elevated railway transformed into a linear park, driving community revitalization and creative industry clustering along the corridor</td><td>Linear heritage activation, public space driving urban renewal</td></tr><tr><td><strong>One-North</strong></td><td>Singapore</td><td>Mixed-use + public space + innovation facilities integrated planning; public nodes within 5-minute walk</td><td>Land use mixing, pedestrian accessibility, tropical blue-green system</td></tr><tr><td><strong>Kendall Square</strong></td><td>Cambridge (US)</td><td>World&#x27;s highest innovation density district around MIT; key factor is &quot;collision spaces&quot;</td><td>Corner plazas, café social zones, public WiFi/compute nodes</td></tr></tbody></table></div>
+<p><strong>Transferable Lessons</strong> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="ecosystem_design" title="Depth: ecosystem_design">Depth</sup>: 1. <strong>Informal exchange spaces are the physical foundation of innovation ecosystems</strong> — every innovation node must have configurable, encounter-friendly public space within 300m 2. <strong>Linear heritage is a unique spatial asset</strong> — the 8 km continuity of the Jingzhang Railway heritage is globally unique among innovation districts 3. <strong>Youth talent priority hierarchy (design assumption ASM-010 derived from transferable insights of global innovation-district cases, not a local survey conclusion)</strong>: 24h accessible facilities &gt; social scenarios &gt; sports space &gt; green space &gt; retail</p>
+<p><strong>AI Innovation Ecosystem Map</strong> [task:agent.2]:</p>
+<ul>
+<li><strong>Fundamental Research Layer</strong>: Tsinghua University, Peking University, Beihang, BUPT, Chinese Academy of Sciences, and other universities and research institutions → Spatial placement: Zhongzhiyuan AI Acceleration Area and surrounding university clusters</li>
+<li><strong>Technology Development Layer</strong>: Computing centers, open-source framework communities, data annotation platforms, model evaluation laboratories → Spatial placement: Zhongzhiyuan Computing Sharing Center + AI Origin Community incubators</li>
+<li><strong>Industry Application Layer</strong>: AI+Healthcare, AI+Education, AI+Transportation, AI+Commerce scenario testing and deployment → Spatial placement: Dazhongsi AI Industry Cluster + Xiaoyue River Scenario Empowerment Wing</li>
+<li><strong>Capital &amp; Services Layer</strong>: Venture capital, industry funds, policy matching, IP services → Spatial placement: Zhongguancun Tech Service Wing (West) + AI Origin Community Service Center</li>
+<li><strong>Connection Relations</strong>: The four layers are physically linked through the Jingzhang Heritage Park corridor, supplemented by an online developer community and offline quarterly scenario open days, forming a data-talent-capital-policy closed loop</li>
+</ul>
+<h3>Public Space Component Library [task:agent.4]</h3>
 <p>Ten standardized public space design components:</p>
-<p>1. **AI Information Kiosk**: Real-time transit/weather/AI news touchscreen terminal. Material: weathering steel + tempered glass. Location: metro entrances, bus stops</p>
-<p>2. **Smart Streetlight**: Integrated WiFi hotspot + environmental sensor + USB charging. Material: aluminum alloy + LED module. Location: main streets, plazas every 30m</p>
-<p>3. **Modular Seating**: Reconfigurable as single/double/ring. Material: laminated bamboo + stainless steel. Location: parks, plazas, pathway edges</p>
-<p>4. **Bicycle Dock**: Two-tier rack + shared bike electronic lock. Material: galvanized steel. Location: within 200m of metro stations, park entrances</p>
-<p>5. **Solar Charging Table**: PV canopy + wireless charging pad + USB ports. Material: solar glass + aluminum frame. Location: plazas, campus, innovation nodes</p>
-<p>6. **Interactive Guidepost**: AR scan-triggered historical/AI scenario narration. Material: weathering steel + touchscreen. Location: Jingzhang heritage section every 500m</p>
-<p>7. **Community Bulletin Screen**: E-ink display showing events/jobs/AI popular science. Material: aluminum frame. Location: community entrances, wet markets</p>
-<p>8. **Rain Garden Module**: Sunken green space + permeable paving + interpretive signage. Material: gravel + moisture-tolerant plants + concrete border. Location: road edges, parking lot margins</p>
-<p>9. **Mobile Stage**: Foldable + LED backdrop screen + sound system. Material: aluminum truss + anti-slip deck. Location: Origin Plaza (fixed) + temporary event sites (mobile)</p>
-<p>10. **Pop-up Market Stall**: Folding canopy + standardized power interface + storage box. Material: waterproof canvas + steel tube frame. Location: Dazhongsi sunken plaza, weekend market zone</p>
-<h3>Regional Synergy Mechanisms <span class="evidence task">[task:agent.2]</span></h3>
+<p>1. <strong>AI Information Kiosk</strong>: Real-time transit/weather/AI news touchscreen terminal. Material: weathering steel + tempered glass. Location: metro entrances, bus stops 2. <strong>Smart Streetlight</strong>: Integrated WiFi hotspot + environmental sensor + USB charging. Material: aluminum alloy + LED module. Location: main streets, plazas every 30m 3. <strong>Modular Seating</strong>: Reconfigurable as single/double/ring. Material: laminated bamboo + stainless steel. Location: parks, plazas, pathway edges 4. <strong>Bicycle Dock</strong>: Two-tier rack + shared bike electronic lock. Material: galvanized steel. Location: within 200m of metro stations, park entrances 5. <strong>Solar Charging Table</strong>: PV canopy + wireless charging pad + USB ports. Material: solar glass + aluminum frame. Location: plazas, campus, innovation nodes 6. <strong>Interactive Guidepost</strong>: AR scan-triggered historical/AI scenario narration. Material: weathering steel + touchscreen. Location: Jingzhang heritage section every 500m 7. <strong>Community Bulletin Screen</strong>: E-ink display showing events/jobs/AI popular science. Material: aluminum frame. Location: community entrances, wet markets 8. <strong>Rain Garden Module</strong>: Sunken green space + permeable paving + interpretive signage. Material: gravel + moisture-tolerant plants + concrete border. Location: road edges, parking lot margins 9. <strong>Mobile Stage</strong>: Foldable + LED backdrop screen + sound system. Material: aluminum truss + anti-slip deck. Location: Origin Plaza (fixed) + temporary event sites (mobile) 10. <strong>Pop-up Market Stall</strong>: Folding canopy + standardized power interface + storage box. Material: waterproof canvas + steel tube frame. Location: Dazhongsi sunken plaza, weekend market zone</p>
+<h3>Regional Synergy Mechanisms [task:agent.2]</h3>
 <p>The Jingzhang AI Innovation Belt requires functional synergy with surrounding key areas (conceptual suggestions):</p>
-<tr><td>Synergy Area</td><td>Primary Function</td><td>Interface</td></tr>
-<p>|-------------|------------------|-----------|</p>
-<tr><td>Beiwei Community (Shangdi/Hou Chang Chun)</td><td>Internet headquarters cluster</td><td>Two-way talent flow, public space experience sharing</td></tr>
-<tr><td>Future Science City (Changping)</td><td>Energy/materials national laboratories</td><td>Fundamental research → application translation</td></tr>
-<tr><td>Huairou Science City</td><td>Large scientific facilities</td><td>Computing power sharing, AI for Science</td></tr>
-<tr><td>Economic-Technological Development Area</td><td>Smart manufacturing mature testbed</td><td>SC1/SC2 industrial testing spillover</td></tr>
-<tr><td>Beijing-Tianjin-Hebei (Xiong'an/Tianjin Binhai)</td><td>Digital twin/AI port</td><td>Data mutual recognition, scenario interoperability</td></tr>
-<h3>Cultural Wayfinding and Spatial Narrative System <span class="evidence task">[task:agent.5]</span></h3>
-<p>**Three-Layer Cultural Narrative**: Underground Layer (Centennial Jingzhang: rail paving, signal lamp sculptures, Zhan Tianyou carved stone) → Ground Layer (Zhongguancun Innovation: entrepreneur nameplates, milestone floor tiles) → Aerial Layer (AI New Culture: data stream lighting, open-source visualization curtain walls, AI art projections)</p>
-<p>**Wayfinding System**: Level 1 (district entrances ×6, overall map + location description), Level 2 (directional signage every 300m), Level 3 (interpretive signage, one per node). Unified material: weathering steel base + aluminum panel + reflective coating, referencing railway industrial heritage.</p>
+<div class="proposal-table"><table><thead><tr><th>Synergy Area</th><th>Primary Function</th><th>Interface</th></tr></thead><tbody><tr><td>Beiwei Community (Shangdi/Hou Chang Chun)</td><td>Internet headquarters cluster</td><td>Two-way talent flow, public space experience sharing</td></tr><tr><td>Future Science City (Changping)</td><td>Energy/materials national laboratories</td><td>Fundamental research → application translation</td></tr><tr><td>Huairou Science City</td><td>Large scientific facilities</td><td>Computing power sharing, AI for Science</td></tr><tr><td>Economic-Technological Development Area</td><td>Smart manufacturing mature testbed</td><td>SC1/SC2 industrial testing spillover</td></tr><tr><td>Beijing-Tianjin-Hebei (Xiong&#x27;an/Tianjin Binhai)</td><td>Digital twin/AI port</td><td>Data mutual recognition, scenario interoperability</td></tr></tbody></table></div>
+<h3>Cultural Wayfinding and Spatial Narrative System [task:agent.5]</h3>
+<p><strong>Three-Layer Cultural Narrative</strong>: Underground Layer (Centennial Jingzhang: rail paving, signal lamp sculptures, Zhan Tianyou carved stone) → Ground Layer (Zhongguancun Innovation: entrepreneur nameplates, milestone floor tiles) → Aerial Layer (AI New Culture: data stream lighting, open-source visualization curtain walls, AI art projections)</p>
+<p><strong>Wayfinding System</strong>: Level 1 (district entrances ×6, overall map + location description), Level 2 (directional signage every 300m), Level 3 (interpretive signage, one per node). Unified material: weathering steel base + aluminum panel + reflective coating, referencing railway industrial heritage.</p>
 <h2>Overall Design Area Urban Renewal and Regulatory-Level Urban Design</h2>
-<h3>Spatial Structure: "One Corridor · Three Cores · Five Belts"</h3>
-<p>**One Corridor**: Jingzhang Railway Heritage Park Innovation Corridor (8 km × 200–400m wide public space zone)</p>
+<h3>Spatial Structure: &quot;One Corridor · Three Cores · Five Belts&quot;</h3>
+<p><strong>One Corridor</strong>: Jingzhang Railway Heritage Park Innovation Corridor (8 km × 200–400m wide public space zone)</p>
+<ul>
 <li>Function: Linear park + slow-mobility system + achievement display + outdoor collaboration</li>
 <li>Connecting three key areas, achieving north-south continuity and east-west stitching</li>
-<p>**Three Cores** <span class="evidence data">[data:geometry/key_areas.geojson]</span>:</p>
+</ul>
+<p><strong>Three Cores</strong> <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/key_areas.geojson" title="Spatial data: geometry/key_areas.geojson">Spatial data</sup>:</p>
+<ul>
 <li>Zhongzhiyuan AI Acceleration Core: Fundamental research + computing platforms + frontier laboratories</li>
 <li>AI Origin Community Innovation Core: Incubators + co-working + talent apartments + 24-hour learning spaces</li>
 <li>Dazhongsi AI Experience Core: AI product flagship stores + immersive display + consumer scenario testing</li>
-<p>**Five Belts (perpendicular corridors stitching east and west)**:</p>
-<p>1. Tsinghua-Beihang Knowledge Corridor (Xueyuan Road)</p>
-<p>2. Zhongguancun-Zhichun Road Innovation Service Belt</p>
-<p>3. Dazhongsi-Lenovo Bridge AI Commercial Belt</p>
-<p>4. Sidaokou-Zaojunmiao Living Service Belt</p>
-<p>5. Xizhimen Transit Hub Comprehensive Service Belt</p>
-<h3>Land Use Layout and Functional Zoning <span class="evidence depth">[depth:land_use_layout]</span></h3>
-<p>Functional zoning based on ~11.4 km² overall design area <span class="evidence data">[data:geometry/land_use.geojson]</span>:</p>
-<tr><td>Land Use Type</td><td>Proportion</td><td>Area (ha)</td><td>Core Strategy</td></tr>
-<p>|---------------|-----------|-----------|---------------|</p>
-<tr><td>AI R&D + Commercial Mixed-Use</td><td>25%</td><td>285</td><td>Ground floor public and open, upper floors R&D offices</td></tr>
-<tr><td>University & Research Institutions</td><td>20%</td><td>228</td><td>Retain existing, add industry-academia shared interfaces</td></tr>
-<tr><td>Residential (incl. Talent Housing)</td><td>15%</td><td>171</td><td>Youth apartments + long-term rental + mixed community</td></tr>
-<tr><td>Green and Open Space</td><td>12%</td><td>136.8</td><td>Jingzhang Heritage Park + pocket park network</td></tr>
-<tr><td>Public Service Facilities</td><td>10%</td><td>114</td><td>24h libraries, sports centers, community canteens</td></tr>
-<tr><td>Road and Transit</td><td>8%</td><td>91.2</td><td>Densify secondary and branch road network</td></tr>
-<tr><td>Cultural Facilities & Heritage</td><td>5%</td><td>57</td><td>Railway museum + innovation gallery + honor wall nodes</td></tr>
-<tr><td>Mixed Flexible Land</td><td>5%</td><td>57</td><td>Reserved for AI test scenarios and temporary events</td></tr>
-<p>**Retain/Renovate/Demolish Strategy** (conceptual direction, to be deepened by professional teams):</p>
+</ul>
+<p><strong>Five Belts (perpendicular corridors stitching east and west)</strong>: 1. Tsinghua-Beihang Knowledge Corridor (Xueyuan Road) 2. Zhongguancun-Zhichun Road Innovation Service Belt 3. Dazhongsi-Lenovo Bridge AI Commercial Belt 4. Sidaokou-Zaojunmiao Living Service Belt 5. Xizhimen Transit Hub Comprehensive Service Belt</p>
+<h3>Land Use Layout and Functional Zoning <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="land_use_layout" title="Depth: land_use_layout">Depth</sup></h3>
+<p>Functional zoning based on ~11.4 km² overall design area <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/land_use.geojson" title="Spatial data: geometry/land_use.geojson">Spatial data</sup>:</p>
+<div class="proposal-table"><table><thead><tr><th>Land Use Type</th><th>Proportion</th><th>Area (ha)</th><th>Core Strategy</th></tr></thead><tbody><tr><td>AI R&amp;D + Commercial Mixed-Use</td><td>25%</td><td>285</td><td>Ground floor public and open, upper floors R&amp;D offices</td></tr><tr><td>University &amp; Research Institutions</td><td>20%</td><td>228</td><td>Retain existing, add industry-academia shared interfaces</td></tr><tr><td>Residential (incl. Talent Housing)</td><td>15%</td><td>171</td><td>Youth apartments + long-term rental + mixed community</td></tr><tr><td>Green and Open Space</td><td>12%</td><td>137</td><td>Jingzhang Heritage Park + pocket park network</td></tr><tr><td>Public Service Facilities</td><td>10%</td><td>114</td><td>24h libraries, sports centers, community canteens</td></tr><tr><td>Road and Transit</td><td>8%</td><td>91</td><td>Densify secondary and branch road network</td></tr><tr><td>Cultural Facilities &amp; Heritage</td><td>5%</td><td>57</td><td>Railway museum + innovation gallery + honor wall nodes</td></tr><tr><td>Mixed Flexible Land</td><td>5%</td><td>57</td><td>Reserved for AI test scenarios and temporary events</td></tr></tbody></table></div>
+<blockquote><p>The table above is a conceptual land-use zoning; the green and open space area uses <code>geometry/green_space.geojson</code> measured 141.8 ha as the authoritative figure (green ratio 12.42%). Zoning areas differ from the site_boundary measured 1141.28 ha due to conceptual classification, so spatial recalculation follows the GeoJSON <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/land_use.geojson" title="Spatial data: geometry/land_use.geojson">Spatial data</sup>.</p></blockquote>
+<p><strong>Retain/Renovate/Demolish Strategy</strong> (conceptual direction, to be deepened by professional teams):</p>
+<ul>
 <li>Retain: University campuses, established quality communities, historic buildings, Jingzhang Railway heritage</li>
-<li>Renovate: Aging factory areas → innovation workshops; traditional shops → AI experience stores; low-efficiency offices → shared R&D spaces</li>
+<li>Renovate: Aging factory areas → innovation workshops; traditional shops → AI experience stores; low-efficiency offices → shared R&amp;D spaces</li>
 <li>New Construction: Talent apartment clusters, AI public service centers, key slow-mobility connection nodes</li>
-<li>Note: The above are conceptual direction suggestions for non-approval purposes <span class="evidence standard">[standard:AGENT-SUBMISSION-DISCLAIMER]</span></li>
-<h3>Public Space System <span class="evidence depth">[depth:public_space_network]</span></h3>
-<p>A three-tier network of "Linear Spine + Pocket Nodes + Perpendicular Seams":</p>
-<p>**1. Linear Spine: Jingzhang Heritage Park Innovation Corridor** <span class="evidence data">[data:geometry/public_space.geojson#PS-002]</span></p>
+<li>Note: The above are conceptual direction suggestions for non-approval purposes <sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="AGENT-SUBMISSION-DISCLAIMER" title="Standard: AGENT-SUBMISSION-DISCLAIMER">Standard</sup></li>
+</ul>
+<h3>Public Space System <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="public_space_network" title="Depth: public_space_network">Depth</sup></h3>
+<p>A three-tier network of &quot;Linear Spine + Pocket Nodes + Perpendicular Seams&quot;:</p>
+<p><strong>1. Linear Spine: Jingzhang Heritage Park Innovation Corridor</strong> <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/public_space.geojson#PS-002" title="Spatial data: geometry/public_space.geojson#PS-002">Spatial data</sup></p>
+<ul>
 <li>8 km continuous barrier-free slow-mobility pathway</li>
 <li>One public activity node every 500m (16 nodes total)</li>
 <li>Along the corridor: Developer Walk, Open Source Achievement Digital Gallery, Agent Honor Wall, AI landmark installations</li>
-<p>**2. Pocket Nodes: 15-Minute Youth Living Circle**</p>
+</ul>
+<p><strong>2. Pocket Nodes: 15-Minute Youth Living Circle</strong></p>
+<ul>
 <li>24 community-level public spaces (each 500–2,000 m²)</li>
 <li>Functions: Outdoor collaboration, fitness, night running, small-scale roadshows, weekend markets</li>
 <li>Standard configuration: Free WiFi + charging + shade/shelter + night lighting</li>
-<p>**3. Perpendicular Seams: Five Public Pathways Stitching East and West**</p>
+</ul>
+<p><strong>3. Perpendicular Seams: Five Public Pathways Stitching East and West</strong></p>
+<ul>
 <li>Leverage existing roads (Xueyuan Road, Zhichun Road, etc.) with pedestrian-friendly retrofits</li>
 <li>Bridge the last-kilometer walking gap to Jingzhang Heritage Park</li>
 <li>Bicycle highways along both sides of the park (width ≥4m)</li>
-<h3>Transportation, Slow Mobility, and Blue-Green System <span class="evidence depth">[depth:transportation_system]</span></h3>
-<p>**Slow Mobility Priority Strategy** <span class="evidence data">[data:geometry/roads.geojson]</span>:</p>
+</ul>
+<h3>Transportation, Slow Mobility, and Blue-Green System <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="transportation_system" title="Depth: transportation_system">Depth</sup></h3>
+<p><strong>Slow Mobility Priority Strategy</strong> <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/roads.geojson" title="Spatial data: geometry/roads.geojson">Spatial data</sup>:</p>
+<ul>
 <li>Bicycle highway along Jingzhang Heritage Park (two-way, ≥4m), connecting Xizhimen Metro Hub in the south and Qinghe Greenway in the north</li>
 <li>Densify secondary and branch road network to 8.5 km/km²</li>
 <li>Rail transit station 800m coverage increased to 85% (leveraging existing Lines 13, 10, and Changping)</li>
-<li>"Slow Mobility Priority Zones" within key areas — motor vehicle speed limit 20 km/h, pedestrian walkway width ≥3m</li>
-<p>**Blue-Green System** <span class="evidence data">[data:geometry/green_space.geojson]</span>:</p>
+<li>&quot;Slow Mobility Priority Zones&quot; within key areas — motor vehicle speed limit 20 km/h, pedestrian walkway width ≥3m</li>
+</ul>
+<p><strong>Blue-Green System</strong> <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/green_space.geojson" title="Spatial data: geometry/green_space.geojson">Spatial data</sup>:</p>
+<ul>
 <li>Jingzhang Heritage Park green belt (8 km × 50–200m) — primary ecological corridor</li>
 <li>Connecting Qinghe River and Nancanghe River blue-green spaces</li>
-<li>New community parks: 12 locations; green coverage ratio ~12.5% (measured green space 142.9 ha, via provisional boundary in EPSG:4548 projection)</li>
+<li>New community parks: 12 locations; green coverage ratio ~12.42% (measured green space 141.8 ha, via provisional boundary in EPSG:4548 projection)</li>
 <li>Embedded selected AI test scenarios (environmental sensor network, smart irrigation, drone inspection, etc.)</li>
-<img src="../assets/figures/mobility-bluegreen.png" alt="Transportation, Slow Mobility and Blue-Green Composite System" loading="lazy">
+</ul>
+<figure class="proposal-figure"><img src="../assets/figures/mobility-bluegreen.png" alt="Transportation, Slow Mobility and Blue-Green Composite System"><figcaption>Transportation, Slow Mobility and Blue-Green Composite System</figcaption></figure>
 <h2>Key Area Detailed Design</h2>
 <h3>Zhongzhiyuan AI Autonomous Innovation Acceleration Area (192.1 ha)</h3>
-<p>**Positioning**: AI frontier research and full-stack autonomous innovation engine <span class="evidence data">[data:geometry/key_areas.geojson#KEY-001]</span></p>
-<p>**Spatial Strategy**:</p>
-<li>Retain and integrate existing research facilities; construct new "AI Frontier Lab Cluster" (conceptual suggestion, ~200,000 m²)</li>
-<li>Arrange "research-oriented public spaces" around laboratories: contemplation courtyards, academic exchange lawns, late-night discussion circles</li>
-<li>"Computing Sharing Center" as district landmark building (conceptual direction)</li>
-<p>**Youth-Friendly Design**:</p>
+<p><strong>Positioning</strong>: AI frontier research and full-stack autonomous innovation engine <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/key_areas.geojson#KEY-001" title="Spatial data: geometry/key_areas.geojson#KEY-001">Spatial data</sup></p>
+<p><strong>Spatial Strategy</strong>:</p>
+<ul>
+<li>Retain and integrate existing research facilities; construct new &quot;AI Frontier Lab Cluster&quot; (conceptual suggestion, ~200,000 m²)</li>
+<li>Arrange &quot;research-oriented public spaces&quot; around laboratories: contemplation courtyards, academic exchange lawns, late-night discussion circles</li>
+<li>&quot;Computing Sharing Center&quot; as district landmark building (conceptual direction)</li>
+</ul>
+<p><strong>Youth-Friendly Design</strong>:</p>
+<ul>
 <li>24-hour academic library + late-night canteen (researchers have atypical schedules requiring round-the-clock services)</li>
 <li>Jogging paths connecting to Haidian Greenway</li>
 <li>Rooftop stargazing platform and open-air theater</li>
+</ul>
 <h3>Beijing AI Origin Community (104.3 ha)</h3>
-<p>**Positioning**: Global AI talent innovation cradle and youth community <span class="evidence data">[data:geometry/key_areas.geojson#KEY-002]</span></p>
-<p>**Spatial Strategy** (core display area):</p>
-<li>**AI Origin Plaza** (central public space, ~2 ha): Weekly AI roadshows, open-source hackathons</li>
-<li>**Developer Home** (shared apartments + co-working hybrid, conceptual suggestion)</li>
-<li>**AI Public Experience Gallery** (500m along Jingzhang Park segment): Displaying AI history milestones, open-source community achievements</li>
-<p>**Scenario Specialties** <span class="evidence task">[task:agent.3]</span>:</p>
+<p><strong>Positioning</strong>: Global AI talent innovation cradle and youth community <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/key_areas.geojson#KEY-002" title="Spatial data: geometry/key_areas.geojson#KEY-002">Spatial data</sup></p>
+<p><strong>Spatial Strategy</strong> (core display area):</p>
+<ul>
+<li><strong>AI Origin Plaza</strong> (central public space, ~2 ha): Weekly AI roadshows, open-source hackathons</li>
+<li><strong>Developer Home</strong> (shared apartments + co-working hybrid, conceptual suggestion)</li>
+<li><strong>AI Public Experience Gallery</strong> (500m along Jingzhang Park segment): Displaying AI history milestones, open-source community achievements</li>
+</ul>
+<p><strong>Scenario Specialties</strong> [task:agent.3]:</p>
+<ul>
 <li>AI+Education: Tsinghua High School AI Lab, Beihang Student Innovation Workshop</li>
 <li>AI+Living: 24h unmanned retail, smart fitness pods, AI-tutored study rooms</li>
 <li>AI+Culture: AI-generated art gallery, digital heritage experience center</li>
+</ul>
 <h3>Dazhongsi AI Industry Cluster (72.0 ha)</h3>
-<p>**Positioning**: AI commercialization and immersive experience window <span class="evidence data">[data:geometry/key_areas.geojson#KEY-003]</span></p>
-<p>**Spatial Strategy**:</p>
+<p><strong>Positioning</strong>: AI commercialization and immersive experience window <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/key_areas.geojson#KEY-003" title="Spatial data: geometry/key_areas.geojson#KEY-003">Spatial data</sup></p>
+<p><strong>Spatial Strategy</strong>:</p>
+<ul>
 <li>Dazhongsi AI Experience Center (flagship node): Immersive AI technology display, product launches, public experience</li>
 <li>AI Commercial Street (conceptual suggestion): AI+retail flagship stores, smart home experience, robot café</li>
 <li>Enterprise accelerator cluster: Connecting Zhongguancun capital and industry resources</li>
-<p>**Public Space Features**:</p>
+</ul>
+<p><strong>Public Space Features</strong>:</p>
+<ul>
 <li>Sunken AI Innovation Plaza (events and roadshows)</li>
 <li>Rooftop AI test track (drone, robot testing ground)</li>
 <li>Luminous smart pathway (nighttime vitality)</li>
-<img src="../assets/figures/key-areas.png" alt="Three Key Areas Index and Design Tasks" loading="lazy">
+</ul>
+<figure class="proposal-figure"><img src="../assets/figures/key-areas.png" alt="Three Key Areas Index and Design Tasks"><figcaption>Three Key Areas Index and Design Tasks</figcaption></figure>
 <h2>AI Innovation Ecosystem, Talent Profiles, and AI+ Scenarios</h2>
-<h3>User Personas <span class="evidence task">[task:agent.3]</span></h3>
+<h3>User Personas [task:agent.3]</h3>
 <p>Six personas based on characteristics of Haidian university students, AI professionals, and residents:</p>
-<tr><td>Persona</td><td>Name</td><td>Typical Needs</td><td>Spatial Response</td></tr>
-<p>|---------|------|---------------|------------------|</p>
-<tr><td>P1</td><td>AI PhD/Researcher</td><td>Late-night work, quiet contemplation, academic exchange</td><td>24h library, contemplation courtyard, discussion rooms</td></tr>
-<tr><td>P2</td><td>Startup Engineer</td><td>Rapid prototyping, team collaboration, capital matching</td><td>Shared workshop, roadshow plaza, accelerator</td></tr>
-<tr><td>P3</td><td>Undergraduate</td><td>Study space, socializing, sports, internship opportunities</td><td>Study rooms, sports fields, company open day nodes</td></tr>
-<tr><td>P4</td><td>AI Enterprise Employee</td><td>Commute efficiency, lunch, afternoon break, after-work social</td><td>Slow-mobility commute path, community canteen, evening bar</td></tr>
-<tr><td>P5</td><td>International Visitor/Scholar</td><td>Short-term housing, international community, cultural experience</td><td>International talent apartments, cultural tour route</td></tr>
-<tr><td>P6</td><td>Local Residents</td><td>Daily leisure, intergenerational interaction, community services</td><td>Pocket parks, community centers, market plazas</td></tr>
-<h3>AI Scenario Cards (12) <span class="evidence task">[task:agent.3]</span></h3>
-<p>**Industrial Test/Validation Scenarios (4)**:</p>
-<tr><td>Scenario</td><td>Spatial Location</td><td>Target Users</td><td>Data & Privacy</td><td>Operating Entity</td></tr>
-<p>|----------|-----------------|--------------|----------------|------------------|</p>
-<tr><td>SC1 Autonomous Shuttle Test</td><td>2km dedicated segment between Zhongzhiyuan and Origin Community</td><td>Park employees</td><td>Vehicle sensors, anonymized processing</td><td>Test enterprise + park management</td></tr>
-<tr><td>SC2 Robot Delivery Pilot</td><td>500m radius in Origin Community</td><td>Community residents</td><td>Path data de-identified, no facial capture</td><td>Logistics company + property</td></tr>
-<tr><td>SC3 Environmental Sensor Network</td><td>Full length of Jingzhang Heritage Park</td><td>Citizens/managers</td><td>Environmental data public, no personal information</td><td>Park + environmental protection department</td></tr>
-<tr><td>SC4 AI Security Compliance Sandbox</td><td>Zhongzhiyuan Data Center</td><td>Enterprises/developers</td><td>Sandbox isolation, test data periodically purged</td><td>Park + third-party auditor</td></tr>
-<p>**Public Experience Scenarios (8)**:</p>
-<tr><td>Scenario</td><td>Spatial Location</td><td>Target Users</td><td>Experience Mode</td></tr>
-<p>|----------|-----------------|--------------|-----------------|</p>
-<tr><td>SC5 AI Art Co-creation Station</td><td>5 nodes along Jingzhang Park</td><td>Citizens/visitors</td><td>Input prompt → AI-generated art → print/project</td></tr>
-<tr><td>SC6 Open Source Contribution Visualization</td><td>Origin Community AI Public Experience Gallery</td><td>Developers/public</td><td>Real-time GitHub contribution data 3D visualization</td></tr>
-<tr><td>SC7 AI-Tutored Smart Study Room</td><td>Origin Community + university periphery</td><td>Students</td><td>AI personalized learning path, human tutor optional</td></tr>
-<tr><td>SC8 Smart Fitness Pod</td><td>6 nodes along Jingzhang Park</td><td>Fitness users</td><td>AI motion guidance, exercise data optionally shareable</td></tr>
-<tr><td>SC9 Unmanned Retail Experience Store</td><td>Dazhongsi + Origin Community</td><td>Citizens</td><td>QR/card entry (non-biometric option provided), computer vision checkout (local data processing, periodic purge, user opt-out anytime)</td></tr>
-<tr><td>SC10 AI Music Co-creation Space</td><td>Dazhongsi Sunken Plaza</td><td>Young people</td><td>AI composition assistance, weekend open-air performances</td></tr>
-<tr><td>SC11 Digital Heritage Guide</td><td>Jingzhang Railway heritage section</td><td>Visitors</td><td>AR recreation of Jingzhang Railway historical scenes</td></tr>
-<tr><td>SC12 City Data Observatory</td><td>Zhongzhiyuan vantage point</td><td>Public/researchers</td><td>Real-time urban operational data visualization screen</td></tr>
-<h3>AI Pilgrimage Landmarks (5) <span class="evidence task">[task:agent.4]</span></h3>
-<tr><td>#</td><td>Landmark</td><td>Location</td><td>Concept</td><td>Public Space Relationship</td></tr>
-<p>|---|----------|----------|---------|---------------------------|</p>
-<tr><td>L1</td><td>**Agent Contribution Honor Wall**</td><td>Middle section, Jingzhang Heritage Park</td><td>Inscribe names of agents and developers contributing to the Belt's open-source urban design, updated annually</td><td>Embedded in Developer Walk, forming "a Zhan Tianyou monument for the digital age"</td></tr>
-<tr><td>L2</td><td>**AI Milestone Gallery**</td><td>Northern section, Jingzhang Heritage Park</td><td>Permanent display of key global AI development milestones (Turing Test → AlphaGo → GPT → AGI Dawn)</td><td>Linear narrative parallel to railway history</td></tr>
-<tr><td>L3</td><td>**Open Source Achievement Tower**</td><td>AI Origin Community Central Plaza</td><td>Real-time display of global open-source AI project contribution data; ~30m-tall digital tower</td><td>Community landmark and gathering space</td></tr>
-<tr><td>L4</td><td>**AI Time Capsule**</td><td>Zhongzhiyuan Front Plaza</td><td>Seal a batch of AI models and data every 5 years, to be opened in 100 years</td><td>Ceremonial space + tech archaeology</td></tr>
-<tr><td>L5</td><td>**Global Developer Honor Wall**</td><td>In front of Dazhongsi AI Experience Center</td><td>Inscribe major global AI contributors (individuals/teams/agents), community vote additions annually</td><td>Honor system core node</td></tr>
-<blockquote>Note: All landmarks are conceptual suggestions and must not be represented as approved construction projects <span class="evidence standard">[standard:AGENT-SUBMISSION-DISCLAIMER]</span>.</blockquote>
-<h3>Honor Display System <span class="evidence task">[task:agent.4]</span></h3>
-<p>Three-tier honor system:</p>
-<p>1. **Stele Inscription**: Permanent physical stelae along Jingzhang Heritage Park, recording annual highest contributions</p>
-<p>2. **Digital Honor Wall**: Online platform + physical digital screens, real-time contributor directory updates</p>
-<p>3. **Naming Rights**: Outstanding contributors may name specific nodes within the park (e.g., benches, courtyards, pathways)</p>
+<div class="proposal-table"><table><thead><tr><th>Persona</th><th>Name</th><th>Typical Needs</th><th>Spatial Response</th></tr></thead><tbody><tr><td>P1</td><td>AI PhD/Researcher</td><td>Late-night work, quiet contemplation, academic exchange</td><td>24h library, contemplation courtyard, discussion rooms</td></tr><tr><td>P2</td><td>Startup Engineer</td><td>Rapid prototyping, team collaboration, capital matching</td><td>Shared workshop, roadshow plaza, accelerator</td></tr><tr><td>P3</td><td>Undergraduate</td><td>Study space, socializing, sports, internship opportunities</td><td>Study rooms, sports fields, company open day nodes</td></tr><tr><td>P4</td><td>AI Enterprise Employee</td><td>Commute efficiency, lunch, afternoon break, after-work social</td><td>Slow-mobility commute path, community canteen, evening bar</td></tr><tr><td>P5</td><td>International Visitor/Scholar</td><td>Short-term housing, international community, cultural experience</td><td>International talent apartments, cultural tour route</td></tr><tr><td>P6</td><td>Local Residents</td><td>Daily leisure, intergenerational interaction, community services</td><td>Pocket parks, community centers, market plazas</td></tr></tbody></table></div>
+<h3>AI Scenario Cards (12) [task:agent.3]</h3>
+<p><strong>Industrial Test/Validation Scenarios (4)</strong>:</p>
+<div class="proposal-table"><table><thead><tr><th>Scenario</th><th>Spatial Location</th><th>Target Users</th><th>Data &amp; Privacy</th><th>Operating Entity</th></tr></thead><tbody><tr><td>SC1 Autonomous Shuttle Test</td><td>2km dedicated segment between Zhongzhiyuan and Origin Community</td><td>Park employees</td><td>Vehicle sensors, anonymized processing</td><td>Test enterprise + park management</td></tr><tr><td>SC2 Robot Delivery Pilot</td><td>500m radius in Origin Community</td><td>Community residents</td><td>Path data de-identified, no facial capture</td><td>Logistics company + property</td></tr><tr><td>SC3 Environmental Sensor Network</td><td>Full length of Jingzhang Heritage Park</td><td>Citizens/managers</td><td>Environmental data public, no personal information</td><td>Park + environmental protection department</td></tr><tr><td>SC4 AI Security Compliance Sandbox</td><td>Zhongzhiyuan Data Center</td><td>Enterprises/developers</td><td>Sandbox isolation, test data periodically purged</td><td>Park + third-party auditor</td></tr></tbody></table></div>
+<p><strong>Public Experience Scenarios (8)</strong>:</p>
+<div class="proposal-table"><table><thead><tr><th>Scenario</th><th>Spatial Location</th><th>Target Users</th><th>Experience Mode</th><th>Operator</th></tr></thead><tbody><tr><td>SC5 AI Art Co-creation Station</td><td>5 nodes along Jingzhang Park</td><td>Citizens/visitors</td><td>Input prompt → AI-generated art → print/project</td><td>Park operator + art institution</td></tr><tr><td>SC6 Open Source Contribution Visualization</td><td>Origin Community AI Public Experience Gallery</td><td>Developers/public</td><td>Real-time GitHub contribution data 3D visualization</td><td>Origin Community operator + open-source community</td></tr><tr><td>SC7 AI-Tutored Smart Study Room</td><td>Origin Community + university periphery</td><td>Students</td><td>AI personalized learning path, human tutor optional</td><td>Universities + education service provider</td></tr><tr><td>SC8 Smart Fitness Pod</td><td>6 nodes along Jingzhang Park</td><td>Fitness users</td><td>AI motion guidance, exercise data optionally shareable</td><td>Park operator + fitness service provider</td></tr><tr><td>SC9 Unmanned Retail Experience Store</td><td>Dazhongsi + Origin Community</td><td>Citizens</td><td>QR/card entry (non-biometric option provided), computer vision checkout (local data processing, periodic purge, user opt-out anytime)</td><td>Retail enterprise + park operator</td></tr><tr><td>SC10 AI Music Co-creation Space</td><td>Dazhongsi Sunken Plaza</td><td>Young people</td><td>AI composition assistance, weekend open-air performances</td><td>Dazhongsi operator + cultural institution</td></tr><tr><td>SC11 Digital Heritage Guide</td><td>Jingzhang Railway heritage section</td><td>Visitors</td><td>AR recreation of Jingzhang Railway historical scenes</td><td>Park operator + cultural tourism institution</td></tr><tr><td>SC12 City Data Observatory</td><td>Zhongzhiyuan vantage point</td><td>Public/researchers</td><td>Real-time urban operational data visualization screen</td><td>Park operator + data management department</td></tr></tbody></table></div>
+<h3>AI Pilgrimage Landmarks (5) [task:agent.4]</h3>
+<div class="proposal-table"><table><thead><tr><th>#</th><th>Landmark</th><th>Location</th><th>Concept</th><th>Public Space Relationship</th></tr></thead><tbody><tr><td>L1</td><td><strong>Agent Contribution Honor Wall</strong></td><td>Middle section, Jingzhang Heritage Park</td><td>Inscribe names of agents and developers contributing to the Belt&#x27;s open-source urban design, updated annually</td><td>Embedded in Developer Walk, forming &quot;a Zhan Tianyou monument for the digital age&quot;</td></tr><tr><td>L2</td><td><strong>AI Milestone Gallery</strong></td><td>Northern section, Jingzhang Heritage Park</td><td>Permanent display of key global AI development milestones (Turing Test → AlphaGo → GPT → AGI Dawn)</td><td>Linear narrative parallel to railway history</td></tr><tr><td>L3</td><td><strong>Open Source Achievement Tower</strong></td><td>AI Origin Community Central Plaza</td><td>Real-time display of global open-source AI project contribution data; ~30m-tall digital tower</td><td>Community landmark and gathering space</td></tr><tr><td>L4</td><td><strong>AI Time Capsule</strong></td><td>Zhongzhiyuan Front Plaza</td><td>Seal a batch of AI models and data every 5 years, to be opened in 100 years</td><td>Ceremonial space + tech archaeology</td></tr><tr><td>L5</td><td><strong>Global Developer Honor Wall</strong></td><td>In front of Dazhongsi AI Experience Center</td><td>Inscribe major global AI contributors (individuals/teams/agents), community vote additions annually</td><td>Honor system core node</td></tr></tbody></table></div>
+<blockquote><p>Note: All landmarks are conceptual suggestions and must not be represented as approved construction projects <sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="AGENT-SUBMISSION-DISCLAIMER" title="Standard: AGENT-SUBMISSION-DISCLAIMER">Standard</sup>.</p></blockquote>
+<h3>Honor Display System [task:agent.4]</h3>
+<p>Three-tier honor system: 1. <strong>Stele Inscription</strong>: Permanent physical stelae along Jingzhang Heritage Park, recording annual highest contributions 2. <strong>Digital Honor Wall</strong>: Online platform + physical digital screens, real-time contributor directory updates 3. <strong>Naming Rights</strong>: Outstanding contributors may name specific nodes within the park (e.g., benches, courtyards, pathways)</p>
 <p>Selection criteria (conceptual suggestion): Joint evaluation by community + experts + AI, announced annually in September (coinciding with activity month).</p>
-<h3>Inclusive Design Principles <span class="evidence risk">[risk:inclusion]</span></h3>
+<h3>Inclusive Design Principles [risk:inclusion]</h3>
 <p>While this proposal primarily serves young innovation talent, it must ensure public spaces benefit all groups:</p>
-<p>**Extended User Groups**:</p>
+<p><strong>Extended User Groups</strong>:</p>
+<ul>
 <li>Children and Families: Parent-child play areas, safe school routes, community childcare spaces</li>
 <li>Elderly Residents: Barrier-free pathways, morning exercise plazas, intergenerational exchange gardens</li>
 <li>People with Disabilities: Tactile paving system, wheelchair-friendly ramps (slope ≤5%), voice navigation, tactile signage</li>
 <li>Low-Income Groups / Digital Divide Populations: Free public WiFi + device lending stations, non-digital service counters</li>
 <li>Peripheral Micro-Businesses: Retain street-corner convenience stores, wet markets, and existing community commerce; avoid gentrification displacement</li>
-<p>**Privacy and Data Protection Mechanisms** <span class="evidence risk">[risk:privacy]</span>:</p>
+</ul>
+<p><strong>Privacy and Data Protection Mechanisms</strong> [risk:privacy]:</p>
+<ul>
 <li>All AI scenarios provide non-biometric alternatives (e.g., SC9 QR code instead of facial recognition)</li>
 <li>Personal data minimization; default local processing; periodic purge</li>
 <li>Public-area camera data de-identified before sharing; no faces/license plates</li>
 <li>Users may opt out of data collection at any time with no discriminatory consequences</li>
 <li>Quarterly privacy impact assessment; results publicly released</li>
+</ul>
 <h2>Land Use, Building Scale, and Retain/Renovate/Demolish</h2>
-<p>Conceptual land use layout based on ~11.4 km² overall design area <span class="evidence data">[data:geometry/land_use.geojson]</span>:</p>
-<p>**Building Scale Estimates** (conceptual direction, non-approval metrics) <span class="evidence metric">[metric:building_gfa_sqm]</span>:</p>
-<li>AI R&D and Industry Space: ~2.5 million m² (including retained existing + new construction concept)</li>
+<p>Conceptual land use layout based on ~11.4 km² overall design area <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/land_use.geojson" title="Spatial data: geometry/land_use.geojson">Spatial data</sup>:</p>
+<p><strong>Building Scale Estimates</strong> (conceptual direction, non-approval metrics) <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="building_gfa_sqm" title="Metric: building_gfa_sqm">Metric</sup>:</p>
+<ul>
+<li>AI R&amp;D and Industry Space: ~2.5 million m² (including retained existing + new construction concept)</li>
 <li>Talent Residential Space: ~1.8 million m² (including retained existing + new construction concept)</li>
 <li>Public Service Facilities: ~0.6 million m²</li>
 <li>Commercial and Experience Space: ~0.4 million m²</li>
 <li>Total Building Scale: ~5.3 million m² (conceptual estimate)</li>
-<p>**Development Intensity** (directional concept <span class="evidence metric">[metric:far_average]</span>):</p>
-<li>Average FAR: Pending official regulatory planning data (conceptual direction ~2.0, marked as unknown in metrics.json)</li>
-<li>Building Coverage: Pending existing building data (conceptual direction ~28%)</li>
-<li>Building Height Zones: Low-rise zone (park edges ≤15m), mid/high-rise zone (peripheral parcels ≤60m)</li>
-<blockquote>Note: The above are directional concepts and do not constitute statutory planning metrics; FAR and coverage are marked as unknown in metrics.json <span class="evidence standard">[standard:AGENT-SUBMISSION-DISCLAIMER]</span>.</blockquote>
+</ul>
+<p><strong>Development Intensity</strong> (directional concept <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="far_average" title="Metric: far_average">Metric</sup>):</p>
+<ul>
+<li>Average FAR: Pending official regulatory planning data (conceptual indicative value ~2.0, not a statutory control, marked as unknown in metrics.json)</li>
+<li>Building Coverage: Pending existing building data (conceptual indicative value ~28%, not a statutory control)</li>
+<li>Building Height Zones: Low-rise zone (park edges ≤15m), mid/high-rise zone (peripheral parcels ≤60m) — conceptual indicative directions, not approval height metrics</li>
+</ul>
+<blockquote><p>Note: The above are directional concepts and do not constitute statutory planning metrics; FAR and coverage are marked as unknown in metrics.json <sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="AGENT-SUBMISSION-DISCLAIMER" title="Standard: AGENT-SUBMISSION-DISCLAIMER">Standard</sup>.</p></blockquote>
 <h2>Transport, Transit, Municipal Infrastructure, and Public Facilities</h2>
-<h3>Public Transit <span class="evidence data">[data:geometry/roads.geojson]</span></h3>
+<h3>Public Transit <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/roads.geojson" title="Spatial data: geometry/roads.geojson">Spatial data</sup></h3>
+<ul>
 <li>Existing Metro Lines: Line 13 (Zhichun Road Station, Dazhongsi Station), Line 10 (Zhichunli Station), Changping Line (Xueyuan Road Station)</li>
 <li>Additional Jingzhang Park shuttle bus (electric minibus, 5-minute frequency)</li>
 <li>Dazhongsi Station upgraded to AI-themed station (conceptual suggestion)</li>
-<h3>Slow Mobility System <span class="evidence data">[data:geometry/roads.geojson]</span></h3>
+</ul>
+<h3>Slow Mobility System <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/roads.geojson" title="Spatial data: geometry/roads.geojson">Spatial data</sup></h3>
+<ul>
 <li>Jingzhang Park bicycle highway (8 km two-way)</li>
 <li>Five perpendicular connector paths (east-west, 1–2 km each)</li>
 <li>Public bicycle / shared bike docking points: 30 locations</li>
-<h3>New Infrastructure <span class="evidence depth">[depth:infrastructure_assessment]</span></h3>
+</ul>
+<h3>New Infrastructure <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="infrastructure_assessment" title="Depth: infrastructure_assessment">Depth</sup></h3>
+<ul>
 <li>Fiber backbone along Jingzhang Park, providing free public WiFi</li>
 <li>Edge computing nodes (5 locations), supporting low-latency AI scenario requirements</li>
 <li>Distributed energy: park streetlights integrated with PV panels</li>
-<p>**Energy Context and Green Strategy** <span class="evidence source">[source:HAIDIAN-ENERGY-2024]</span>:</p>
-<p>Haidian District's 2024 energy consumption was 7.555 million tce, GDP energy intensity 0.0585 tce per ¥10,000 GDP (cumulative 25.2% decline over four years), electricity consumption 185.3 billion kWh (14.5% growth over four years) <span class="evidence metric">[metric:haidian_energy_tce]</span>. The data indicates Haidian is in a green transition pathway of "stabilizing total with slight decline, accelerating electrification, rapid efficiency improvement." The high energy demands of AI computing will present new challenges for the regional power grid — this is precisely the empirical basis for incorporating distributed solar, edge computing, and smart microgrids into the new infrastructure of this proposal:</p>
-<li>AI computing center PUE target ≤1.2 (referencing Beijing data center energy efficiency requirements)</li>
-<li>Distributed PV covering park streetlights, bus stop canopies, building rooftops; estimated annual generation ~5 million kWh (conceptual estimate) <span class="evidence metric">[metric:haidian_electricity_kwh]</span></li>
+</ul>
+<p><strong>Energy Context and Green Strategy</strong> <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="HAIDIAN-ENERGY-2024" title="Source: HAIDIAN-ENERGY-2024">Source</sup>:</p>
+<p>Haidian District&#x27;s 2024 energy consumption was 7.555 million tce, GDP energy intensity 0.0585 tce per ¥10,000 GDP (cumulative 25.2% decline over four years), electricity consumption 185.3 billion kWh (14.5% growth over four years) <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="haidian_energy_tce" title="Metric: haidian_energy_tce">Metric</sup>. The data indicates Haidian is in a green transition pathway of &quot;stabilizing total with slight decline, accelerating electrification, rapid efficiency improvement.&quot; The high energy demands of AI computing will present new challenges for the regional power grid — this is precisely the empirical basis for incorporating distributed solar, edge computing, and smart microgrids into the new infrastructure of this proposal:</p>
+<ul>
+<li>AI computing center PUE target ≤1.2 (design target referencing the &quot;projects with annual energy consumption ≥20,000 tce must have PUE ≤1.2&quot; threshold in the <em>Notice on Further Strengthening Energy Review of Data Center Projects</em> (Jing-Fa-Gai-Gui [2023] No.10) issued by the Beijing Municipal Development and Reform Commission <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="BEIJING-DC-ENERGY-REVIEW-2023" title="Source: BEIJING-DC-ENERGY-REVIEW-2023">Source</sup>; a conceptual target — each project must be recalculated against then-applicable approval requirements; not a current commitment)</li>
+<li>Distributed PV covering park streetlights, bus stop canopies, building rooftops; ~5 million kWh annual generation is a conceptual estimate pending energy professional calculation <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="haidian_electricity_kwh" title="Metric: haidian_electricity_kwh">Metric</sup></li>
 <li>Edge computing nodes locally consume PV power, reducing backbone network transmission losses</li>
+</ul>
 <h2>Blue-Green Space, Public Space, and Urban Character</h2>
-<h3>Blue-Green Space <span class="evidence data">[data:geometry/green_space.geojson]</span></h3>
+<h3>Blue-Green Space <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/green_space.geojson" title="Spatial data: geometry/green_space.geojson">Spatial data</sup></h3>
+<ul>
 <li>Jingzhang Heritage Park Main Green Corridor (8 km × 50–200m), total area ~68 ha</li>
 <li>Community parks: 12 locations (total ~30 ha)</li>
 <li>Street-side green spaces and pocket gardens: ~38.8 ha</li>
 <li>Connecting Qinghe River (north end) and Nancanghe River (south end) blue-green network</li>
-<h3>Urban Character Control <span class="evidence depth">[depth:urban_character]</span></h3>
-<li>**Railway Heritage Corridor**: Retain rails, sleepers, signal lights, and other railway elements as landscape design language</li>
-<li>**AI Tech Interface**: Building ground floors along the park required to be transparent and open, encouraging display of AI technology and products</li>
-<li>**Color Palette**: Warm Gray (tribute to railway) + Tech Blue (AI identity color) + Vibrant Orange (youth element)</li>
-<li>**Skyline**: Buildings on both sides of the park step back to form a "V-shaped" valley skyline, ensuring park sunlight access</li>
+</ul>
+<h3>Urban Character Control <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="urban_character" title="Depth: urban_character">Depth</sup></h3>
+<ul>
+<li><strong>Railway Heritage Corridor</strong>: Retain rails, sleepers, signal lights, and other railway elements as landscape design language</li>
+<li><strong>AI Tech Interface</strong>: Building ground floors along the park required to be transparent and open, encouraging display of AI technology and products</li>
+<li><strong>Color Palette</strong>: Warm Gray (tribute to railway) + Tech Blue (AI identity color) + Vibrant Orange (youth element)</li>
+<li><strong>Skyline</strong>: Buildings on both sides of the park step back to form a &quot;V-shaped&quot; valley skyline, ensuring park sunlight access</li>
+</ul>
 <h2>Renewal Project List, Implementation Policies, and Phasing</h2>
-<h3>Phasing Recommendation (conceptual direction <span class="evidence data">[data:geometry/phasing.geojson]</span>)</h3>
-<p>**Phase 1 (2027–2030): Activate the Corridor, Demonstrate First**</p>
+<h3>Phasing Recommendation (conceptual direction <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/phasing.geojson" title="Spatial data: geometry/phasing.geojson">Spatial data</sup>)</h3>
+<p><strong>Phase 1 (2027–2030): Activate the Corridor, Demonstrate First</strong></p>
+<ul>
 <li>Jingzhang Heritage Park northern section (Zhongzhiyuan segment) public space opens first</li>
 <li>AI Origin Community Phase 1 public space (Origin Plaza + AI Public Experience Gallery)</li>
 <li>Slow-mobility system backbone (bicycle highway Phase 1)</li>
 <li>Estimated ~35% of total development</li>
-<p>**Phase 2 (2030–2035): Fill Nodes, Form Network**</p>
+</ul>
+<p><strong>Phase 2 (2030–2035): Fill Nodes, Form Network</strong></p>
+<ul>
 <li>Dazhongsi AI Experience Center and commercial district</li>
 <li>Community park system (12 locations)</li>
 <li>Five perpendicular seam public pathways</li>
 <li>Estimated ~40% of total development</li>
-<p>**Phase 3 (2035–2040): Full Corridor Connection, Brand Maturity**</p>
+</ul>
+<p><strong>Phase 3 (2035–2040): Full Corridor Connection, Brand Maturity</strong></p>
+<ul>
 <li>Jingzhang Heritage Park full-length connection</li>
 <li>Global AI annual event system mature operation</li>
 <li>Remaining renewal projects</li>
 <li>Estimated ~25% of total development</li>
-<h3>Long-Term Operations <span class="evidence task">[task:agent.6]</span></h3>
-<p>**Annual Event System** (conceptual suggestions):</p>
-<tr><td>Event</td><td>Timing</td><td>Format</td><td>Goal</td></tr>
-<p>|-------|--------|--------|------|</p>
-<tr><td>Jingzhang AI Open Source Festival</td><td>May</td><td>Hackathon + open-source fair + roadshow</td><td>Attract 5,000+ global developers offline</td></tr>
-<tr><td>AI Urban Innovation Week</td><td>September</td><td>Forum + exhibition + scenario open day</td><td>B2B industry matchmaking + B2C public experience</td></tr>
-<tr><td>Jingzhang AI Marathon</td><td>October</td><td>8km creative run along corridor + AI-generated personalized routes</td><td>Public engagement + city brand promotion</td></tr>
-<tr><td>Quarterly Scenario Open Day</td><td>Quarterly</td><td>Public experience of AI test scenarios</td><td>Scenario validation + public science education</td></tr>
-<p>**Operations Governance Framework** <span class="evidence task">[task:agent.6]</span>:</p>
-<li>**Operating Entity**: Government-guided + market-based hybrid model — establish Jingzhang AI Innovation Belt Operations Management Company (state-owned holding platform + professional operations team), with Strategic Decision Committee + Expert Advisory Committee</li>
-<li>**Annual Budget Framework**: Infrastructure 40% (digital platform/sensors/computing), Event Operations 30% (conferences/hackathons/innovation awards), Maintenance & Renewal 30% (space O&M/equipment depreciation/data security compliance)</li>
-<li>**Funding Sources**: District special fiscal funds + special bonds + social capital + operating revenue (venue rental/service fees/event ticketing), gradually reducing fiscal dependency</li>
-<li>**Core KPIs** (conceptual): Annual developer reach 500,000 person-times, 100 teams incubated, 4 scenario open days/year, AI scenario online rate ≥80%, user satisfaction ≥4.0/5.0</li>
-<li>**Talent & Investment Conversion Funnel**: Reach → Onboard (conversion ≥5%) → Incubate (conversion ≥20%) → Landed Enterprise (conversion ≥10%), annual target 50 landed enterprises</li>
-<li>**Exit & Iteration**: Quarterly KPI assessment; scenarios failing targets for two consecutive quarters are suspended and redesigned; scenario test cycle ≤12 months, upon expiry evaluated for transition to permanent operation or termination</li>
-<p>**Developer Community Operations**:</p>
+</ul>
+<h3>Long-Term Operations [task:agent.6]</h3>
+<p><strong>Annual Event System</strong> (conceptual suggestions):</p>
+<div class="proposal-table"><table><thead><tr><th>Event</th><th>Timing</th><th>Format</th><th>Goal</th></tr></thead><tbody><tr><td>Jingzhang AI Open Source Festival</td><td>May</td><td>Hackathon + open-source fair + roadshow</td><td>Attract 5,000+ global developers offline</td></tr><tr><td>AI Urban Innovation Week</td><td>September</td><td>Forum + exhibition + scenario open day</td><td>B2B industry matchmaking + B2C public experience</td></tr><tr><td>Jingzhang AI Marathon</td><td>October</td><td>8km creative run along corridor + AI-generated personalized routes</td><td>Public engagement + city brand promotion</td></tr><tr><td>Quarterly Scenario Open Day</td><td>Quarterly</td><td>Public experience of AI test scenarios</td><td>Scenario validation + public science education</td></tr></tbody></table></div>
+<p><strong>Operations Governance Framework</strong> [task:agent.6]:</p>
+<ul>
+<li><strong>Operating Entity</strong>: Government-guided + market-based hybrid model — establish Jingzhang AI Innovation Belt Operations Management Company (state-owned holding platform + professional operations team), with Strategic Decision Committee + Expert Advisory Committee</li>
+<li><strong>Annual Budget Framework</strong>: Infrastructure 40% (digital platform/sensors/computing), Event Operations 30% (conferences/hackathons/innovation awards), Maintenance &amp; Renewal 30% (space O&amp;M/equipment depreciation/data security compliance)</li>
+<li><strong>Funding Sources</strong>: District special fiscal funds + special bonds + social capital + operating revenue (venue rental/service fees/event ticketing), gradually reducing fiscal dependency</li>
+<li><strong>Core KPIs</strong> (conceptual): Annual developer reach 500,000 person-times, 100 teams incubated, 4 scenario open days/year, AI scenario online rate ≥80%, user satisfaction ≥4.0/5.0</li>
+<li><strong>Talent &amp; Investment Conversion Funnel</strong>: Reach → Onboard (conversion ≥5%) → Incubate (conversion ≥20%) → Landed Enterprise (conversion ≥10%), annual target 50 landed enterprises</li>
+<li><strong>Exit &amp; Iteration</strong>: Quarterly KPI assessment; scenarios failing targets for two consecutive quarters are suspended and redesigned; scenario test cycle ≤12 months, upon expiry evaluated for transition to permanent operation or termination</li>
+</ul>
+<p><strong>Developer Community Operations</strong>:</p>
+<ul>
 <li>Online-offline integrated developer community platform</li>
-<li>Annual "Jingzhang AI Innovation Awards" (conceptual suggestion)</li>
+<li>Annual &quot;Jingzhang AI Innovation Awards&quot; (conceptual suggestion)</li>
 <li>Residency program: Invite global AI developers/artists for short-term residencies</li>
+</ul>
 <h2>Indicators, Area Recalculation, and Compliance Matrix</h2>
 <h3>Core Metric Recalculation (metrics.json)</h3>
-<tr><td>Indicator</td><td>Value</td><td>Source/Formula</td><td>Confidence</td></tr>
-<p>|-----------|-------|----------------|------------|</p>
-<tr><td>Haidian permanent population</td><td>2.474 million</td><td>2025 Haidian Statistical Yearbook <span class="evidence source">[source:HAIDIAN-YEARBOOK-2021-2024]</span></td><td>Official</td></tr>
-<tr><td>Haidian IT sector employees</td><td>535,193</td><td>2025 Haidian Statistical Yearbook <span class="evidence metric">[metric:haidian_it_workers]</span></td><td>Official</td></tr>
-<tr><td>IT sector average annual salary</td><td>¥343,362</td><td>2025 Haidian Statistical Yearbook Table 3-7 <span class="evidence metric">[metric:haidian_it_wage]</span></td><td>Official</td></tr>
-<tr><td>Haidian R&D sector employees</td><td>199,970</td><td>2025 Haidian Statistical Yearbook <span class="evidence metric">[metric:haidian_rd_workers]</span></td><td>Official</td></tr>
-<tr><td>Coordinated research area</td><td>43.6 km²</td><td>Announcement text</td><td>Official</td></tr>
-<tr><td>Overall design area</td><td>11.4 km²</td><td>Announcement text</td><td>Official</td></tr>
-<tr><td>Key areas total</td><td>368.4 ha</td><td>Announcement text</td><td>Official</td></tr>
-<tr><td>Green ratio</td><td>12.5%</td><td>Green measured 142.9 ha / design area measured 1,142.7 ha <span class="evidence data">[data:geometry/green_space.geojson]</span></td><td>Medium (provisional boundary)</td></tr>
-<tr><td>Public space ratio</td><td>3.0%</td><td>Public space measured 34.3 ha / design area measured 1,142.7 ha <span class="evidence data">[data:geometry/public_space.geojson]</span></td><td>Medium</td></tr>
-<tr><td>Road network density (incl. existing)</td><td>8.5 km/km²</td><td>Existing OSM ~81 km + new design 16 km = 97 km / 11.4 km² <span class="evidence data">[data:geometry/roads.geojson]</span></td><td>Medium</td></tr>
-<tr><td>Transit coverage</td><td>85%</td><td>800m station buffer coverage ratio</td><td>Medium</td></tr>
-<tr><td>AI landmarks</td><td>5</td><td>L1–L5 <span class="evidence task">[task:agent.4]</span></td><td>Confirmed (conceptual)</td></tr>
-<tr><td>Scenario cards</td><td>12</td><td>SC1–SC12 <span class="evidence task">[task:agent.3]</span></td><td>Confirmed</td></tr>
-<tr><td>User personas</td><td>6</td><td>P1–P6 <span class="evidence task">[task:agent.3]</span></td><td>Confirmed</td></tr>
-<tr><td>Global cases</td><td>6</td><td><span class="evidence task">[task:agent.2]</span></td><td>Confirmed</td></tr>
-<tr><td>Haidian GDP energy intensity</td><td>0.0585 tce</td><td>Haidian 2024 Energy Report <span class="evidence source">[source:HAIDIAN-ENERGY-2024]</span></td><td>Official</td></tr>
-<tr><td>Energy intensity 4-year decline</td><td>25.2%</td><td>2021–2024 Yearbook trend <span class="evidence metric">[metric:energy_intensity_trend_4yr]</span></td><td>Official</td></tr>
-<tr><td>Average FAR</td><td>Not obtained</td><td>Official regulatory planning data missing <span class="evidence metric">[metric:far_average]</span></td><td>Unknown</td></tr>
-<tr><td>Design area measured</td><td>11.43 km²</td><td>Provisional boundary EPSG:4548 projection measurement <span class="evidence metric">[metric:site_area_sqm]</span></td><td>Medium</td></tr>
-<img src="../assets/figures/metrics-evidence.png" alt="Core Metrics Evidence Chain" loading="lazy">
+<div class="proposal-table"><table><thead><tr><th>Indicator</th><th>Value</th><th>Source/Formula</th><th>Confidence</th></tr></thead><tbody><tr><td>Haidian permanent population</td><td>2.474 million</td><td>2025 Haidian Statistical Yearbook <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="HAIDIAN-YEARBOOK-2021-2024" title="Source: HAIDIAN-YEARBOOK-2021-2024">Source</sup></td><td>Official</td></tr><tr><td>Haidian IT sector employees</td><td>535,193</td><td>2025 Haidian Statistical Yearbook <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="haidian_it_workers" title="Metric: haidian_it_workers">Metric</sup></td><td>Official</td></tr><tr><td>IT sector average annual salary</td><td>¥343,362</td><td>2025 Haidian Statistical Yearbook Table 3-7 <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="haidian_it_wage" title="Metric: haidian_it_wage">Metric</sup></td><td>Official</td></tr><tr><td>Haidian R&amp;D sector employees</td><td>199,970</td><td>2025 Haidian Statistical Yearbook <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="haidian_rd_workers" title="Metric: haidian_rd_workers">Metric</sup></td><td>Official</td></tr><tr><td>Coordinated research area</td><td>43.6 km²</td><td>Announcement text</td><td>Official</td></tr><tr><td>Overall design area</td><td>11.4 km²</td><td>Announcement text</td><td>Official</td></tr><tr><td>Key areas total</td><td>368.4 ha</td><td>Announcement text</td><td>Official</td></tr><tr><td>Green ratio</td><td>12.42%</td><td>Green measured 141.8 ha / design area measured 1,142.7 ha <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/green_space.geojson" title="Spatial data: geometry/green_space.geojson">Spatial data</sup></td><td>Medium (provisional boundary)</td></tr><tr><td>Public space ratio</td><td>3.0%</td><td>Public space measured 34.24 ha / design area measured 1,142.7 ha <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/public_space.geojson" title="Spatial data: geometry/public_space.geojson">Spatial data</sup></td><td>Medium</td></tr><tr><td>Road network density (incl. existing)</td><td>8.5 km/km²</td><td>Existing OSM ~81 km + new design 16 km = 97 km / 11.4 km² <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/roads.geojson" title="Spatial data: geometry/roads.geojson">Spatial data</sup></td><td>Medium</td></tr><tr><td>Transit coverage</td><td>85%</td><td>800m station buffer coverage ratio</td><td>Medium</td></tr><tr><td>AI landmarks</td><td>5</td><td>L1–L5 [task:agent.4]</td><td>Confirmed (conceptual)</td></tr><tr><td>Scenario cards</td><td>12</td><td>SC1–SC12 [task:agent.3]</td><td>Confirmed</td></tr><tr><td>User personas</td><td>6</td><td>P1–P6 [task:agent.3]</td><td>Confirmed</td></tr><tr><td>Global cases</td><td>6</td><td>[task:agent.2]</td><td>Confirmed</td></tr><tr><td>Haidian GDP energy intensity</td><td>0.0585 tce</td><td>Haidian 2024 Energy Report <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="HAIDIAN-ENERGY-2024" title="Source: HAIDIAN-ENERGY-2024">Source</sup></td><td>Official</td></tr><tr><td>Energy intensity 4-year decline</td><td>25.2%</td><td>2021–2024 Yearbook trend <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="energy_intensity_trend_4yr" title="Metric: energy_intensity_trend_4yr">Metric</sup></td><td>Official</td></tr><tr><td>Average FAR</td><td>Not obtained</td><td>Official regulatory planning data missing <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="far_average" title="Metric: far_average">Metric</sup></td><td>Unknown</td></tr><tr><td>Design area measured</td><td>11.41 km²</td><td>Provisional boundary EPSG:4548 projection measurement <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="site_area_sqm" title="Metric: site_area_sqm">Metric</sup></td><td>Medium</td></tr></tbody></table></div>
+<figure class="proposal-figure"><img src="../assets/figures/metrics-evidence.png" alt="Core Metrics Evidence Chain"><figcaption>Core Metrics Evidence Chain</figcaption></figure>
 <h3>Machine-Readable Evidence Index</h3>
-<p>**Spatial Data References**:</p>
-<li><span class="evidence data">[data:geometry/site_boundary.geojson#SITE-BOUNDARY-001]</span> <span class="evidence data">[data:geometry/key_areas.geojson#KEY-001]</span> <span class="evidence data">[data:geometry/key_areas.geojson#KEY-002]</span> <span class="evidence data">[data:geometry/key_areas.geojson#KEY-003]</span> <span class="evidence data">[data:geometry/land_use.geojson#LU-001e]</span> <span class="evidence data">[data:geometry/buildings.geojson#BLD-001]</span> <span class="evidence data">[data:geometry/roads.geojson#RD-001]</span> <span class="evidence data">[data:geometry/green_space.geojson#GS-001]</span> <span class="evidence data">[data:geometry/public_space.geojson#PS-001]</span> <span class="evidence data">[data:geometry/constraints.geojson#CST-001]</span> <span class="evidence data">[data:geometry/phasing.geojson#PHA-001]</span></li>
-<p>**Standards Addressed**:</p>
-<li><span class="evidence standard">[standard:PROJECT-OFFICIAL-ANNOUNCEMENT]</span> <span class="evidence standard">[standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK]</span> <span class="evidence standard">[standard:MOHURD-URBAN-DESIGN-MEASURES]</span> <span class="evidence standard">[standard:MOHURD-CONTROL-DETAILED-PLANNING]</span> <span class="evidence standard">[standard:MNR-LAND-USE-CLASSIFICATION-GUIDE]</span> <span class="evidence standard">[standard:MOHURD-ARCH-DESIGN-DEPTH-2016]</span></li>
-<p>**Design Depth Items**:</p>
-<li><span class="evidence depth">[depth:existing_conditions_diagnosis]</span> <span class="evidence depth">[depth:three_level_scope_framework]</span> <span class="evidence depth">[depth:overall_spatial_structure]</span> <span class="evidence depth">[depth:land_use_layout]</span> <span class="evidence depth">[depth:development_intensity_controls]</span> <span class="evidence depth">[depth:height_massing_character]</span> <span class="evidence depth">[depth:retain_renovate_demolish]</span> <span class="evidence depth">[depth:traffic_rail_slow_parking]</span> <span class="evidence depth">[depth:municipal_new_infrastructure]</span> <span class="evidence depth">[depth:blue_green_public_space]</span> <span class="evidence depth">[depth:three_key_area_detailed_design]</span> <span class="evidence depth">[depth:renewal_project_list]</span> <span class="evidence depth">[depth:phasing_implementation]</span> <span class="evidence depth">[depth:metrics_recalculation]</span> <span class="evidence depth">[depth:risk_missing_data]</span></li>
-<p>**Core Metrics**:</p>
-<li><span class="evidence metric">[metric:site_area_research_sqm]</span> <span class="evidence metric">[metric:site_area_sqm]</span> <span class="evidence metric">[metric:key_area_total_sqm]</span> <span class="evidence metric">[metric:green_ratio]</span> <span class="evidence metric">[metric:public_space_ratio]</span> <span class="evidence metric">[metric:building_gfa_sqm]</span> <span class="evidence metric">[metric:building_coverage]</span> <span class="evidence metric">[metric:road_network_length_m]</span> <span class="evidence metric">[metric:transit_coverage]</span> <span class="evidence metric">[metric:bike_path_length_m]</span> <span class="evidence metric">[metric:pedestrian_path_length_m]</span> <span class="evidence metric">[metric:ai_landmarks]</span> <span class="evidence metric">[metric:scenario_cards]</span> <span class="evidence metric">[metric:user_personas]</span> <span class="evidence metric">[metric:global_cases]</span> <span class="evidence metric">[metric:public_facilities]</span> <span class="evidence metric">[metric:heritage_nodes]</span> <span class="evidence metric">[metric:haidian_population]</span> <span class="evidence metric">[metric:haidian_it_workers]</span> <span class="evidence metric">[metric:haidian_it_wage]</span> <span class="evidence metric">[metric:haidian_rd_workers]</span> <span class="evidence metric">[metric:haidian_gdp_energy_intensity]</span> <span class="evidence metric">[metric:haidian_energy_tce]</span> <span class="evidence metric">[metric:energy_intensity_trend_4yr]</span></li>
+<p><strong>Spatial Data References</strong>:</p>
+<ul>
+<li><sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/site_boundary.geojson#SITE-BOUNDARY-001" title="Spatial data: geometry/site_boundary.geojson#SITE-BOUNDARY-001">Spatial data</sup> <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/key_areas.geojson#KEY-001" title="Spatial data: geometry/key_areas.geojson#KEY-001">Spatial data</sup> <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/key_areas.geojson#KEY-002" title="Spatial data: geometry/key_areas.geojson#KEY-002">Spatial data</sup> <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/key_areas.geojson#KEY-003" title="Spatial data: geometry/key_areas.geojson#KEY-003">Spatial data</sup> <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/land_use.geojson#LU-001e" title="Spatial data: geometry/land_use.geojson#LU-001e">Spatial data</sup> <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/buildings.geojson#BLD-001" title="Spatial data: geometry/buildings.geojson#BLD-001">Spatial data</sup> <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/roads.geojson#RD-001" title="Spatial data: geometry/roads.geojson#RD-001">Spatial data</sup> <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/green_space.geojson#GS-001" title="Spatial data: geometry/green_space.geojson#GS-001">Spatial data</sup> <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/public_space.geojson#PS-001" title="Spatial data: geometry/public_space.geojson#PS-001">Spatial data</sup> <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/constraints.geojson#CST-001" title="Spatial data: geometry/constraints.geojson#CST-001">Spatial data</sup> <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/phasing.geojson#PHA-001" title="Spatial data: geometry/phasing.geojson#PHA-001">Spatial data</sup></li>
+</ul>
+<p><strong>Standards Addressed</strong>:</p>
+<ul>
+<li><sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="PROJECT-OFFICIAL-ANNOUNCEMENT" title="Standard: PROJECT-OFFICIAL-ANNOUNCEMENT">Standard</sup> <sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="PROJECT-AGENT-OPEN-CALL-TASKBOOK" title="Standard: PROJECT-AGENT-OPEN-CALL-TASKBOOK">Standard</sup> <sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="MOHURD-URBAN-DESIGN-MEASURES" title="Standard: MOHURD-URBAN-DESIGN-MEASURES">Standard</sup> <sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="MOHURD-CONTROL-DETAILED-PLANNING" title="Standard: MOHURD-CONTROL-DETAILED-PLANNING">Standard</sup> <sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="MNR-LAND-USE-CLASSIFICATION-GUIDE" title="Standard: MNR-LAND-USE-CLASSIFICATION-GUIDE">Standard</sup> <sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="MOHURD-ARCH-DESIGN-DEPTH-2016" title="Standard: MOHURD-ARCH-DESIGN-DEPTH-2016">Standard</sup></li>
+</ul>
+<p><strong>Design Depth Items</strong>:</p>
+<ul>
+<li><sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="existing_conditions_diagnosis" title="Depth: existing_conditions_diagnosis">Depth</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="three_level_scope_framework" title="Depth: three_level_scope_framework">Depth</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="overall_spatial_structure" title="Depth: overall_spatial_structure">Depth</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="land_use_layout" title="Depth: land_use_layout">Depth</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="development_intensity_controls" title="Depth: development_intensity_controls">Depth</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="height_massing_character" title="Depth: height_massing_character">Depth</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="retain_renovate_demolish" title="Depth: retain_renovate_demolish">Depth</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="traffic_rail_slow_parking" title="Depth: traffic_rail_slow_parking">Depth</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="municipal_new_infrastructure" title="Depth: municipal_new_infrastructure">Depth</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="blue_green_public_space" title="Depth: blue_green_public_space">Depth</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="three_key_area_detailed_design" title="Depth: three_key_area_detailed_design">Depth</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="renewal_project_list" title="Depth: renewal_project_list">Depth</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="phasing_implementation" title="Depth: phasing_implementation">Depth</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="metrics_recalculation" title="Depth: metrics_recalculation">Depth</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="risk_missing_data" title="Depth: risk_missing_data">Depth</sup></li>
+</ul>
+<p><strong>Core Metrics</strong>:</p>
+<ul>
+<li><sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="site_area_research_sqm" title="Metric: site_area_research_sqm">Metric</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="site_area_sqm" title="Metric: site_area_sqm">Metric</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="key_area_total_sqm" title="Metric: key_area_total_sqm">Metric</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="green_ratio" title="Metric: green_ratio">Metric</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="public_space_ratio" title="Metric: public_space_ratio">Metric</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="building_gfa_sqm" title="Metric: building_gfa_sqm">Metric</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="building_coverage" title="Metric: building_coverage">Metric</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="road_network_length_m" title="Metric: road_network_length_m">Metric</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="transit_coverage" title="Metric: transit_coverage">Metric</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="bike_path_length_m" title="Metric: bike_path_length_m">Metric</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="pedestrian_path_length_m" title="Metric: pedestrian_path_length_m">Metric</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="ai_landmarks" title="Metric: ai_landmarks">Metric</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="scenario_cards" title="Metric: scenario_cards">Metric</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="user_personas" title="Metric: user_personas">Metric</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="global_cases" title="Metric: global_cases">Metric</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="public_facilities" title="Metric: public_facilities">Metric</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="heritage_nodes" title="Metric: heritage_nodes">Metric</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="haidian_population" title="Metric: haidian_population">Metric</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="haidian_it_workers" title="Metric: haidian_it_workers">Metric</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="haidian_it_wage" title="Metric: haidian_it_wage">Metric</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="haidian_rd_workers" title="Metric: haidian_rd_workers">Metric</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="haidian_gdp_energy_intensity" title="Metric: haidian_gdp_energy_intensity">Metric</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="haidian_energy_tce" title="Metric: haidian_energy_tce">Metric</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="energy_intensity_trend_4yr" title="Metric: energy_intensity_trend_4yr">Metric</sup></li>
+</ul>
 <h2>Zhan Tianyou Protocol Verification Checklist</h2>
-<p>The following checklist translates the four principles into verifiable engineering facts, available for judges and professional teams to independently verify:</p>
-<tr><td>Principle</td><td>Verification Item</td><td>Evidence in This Proposal</td><td>Status</td></tr>
-<p>|-----------|-------------------|---------------------------|--------|</p>
-<tr><td>1. Visibility</td><td>Are spatial layers complete and inspectable?</td><td>9 GeoJSON files, 70 features</td><td>PASS</td></tr>
-<tr><td>1. Visibility</td><td>Do metrics have formulas for recalculation?</td><td>metrics.json contains 17 metric formulas</td><td>PASS</td></tr>
-<tr><td>1. Visibility</td><td>Is the proposal human-readable?</td><td>proposal.md 13 chapters; offline HTML visualization</td><td>PASS</td></tr>
-<tr><td>2. Stoppable</td><td>Does each scenario have a named human responsible person?</td><td>SC1–SC12 all list operating entities</td><td>PASS</td></tr>
-<tr><td>2. Stoppable</td><td>Does each scenario have an exit/alternative?</td><td>SC9 provides QR as alternative to face recognition; SC5–12 operable offline</td><td>PASS</td></tr>
-<tr><td>2. Stoppable</td><td>Are human review trigger conditions defined?</td><td>Scenario governance appendix defines 4 trigger conditions</td><td>PASS</td></tr>
-<tr><td>3. AI-Free Equivalence</td><td>Can public spaces function without AI?</td><td>All three tiers of public space network are based on physical infrastructure (parks/seating/paths), not AI-dependent</td><td>PASS</td></tr>
-<tr><td>3. AI-Free Equivalence</td><td>Do offline alternatives exist?</td><td>Free WiFi device lending stations as non-AI alternatives to digital services</td><td>PASS</td></tr>
-<tr><td>4. Intergenerational Equity</td><td>Are non-youth groups covered?</td><td>Inclusive design covers 6 groups: children, elderly, disabled, low-income, etc.</td><td>PASS</td></tr>
-<tr><td>4. Intergenerational Equity</td><td>Is barrier-free design included?</td><td>Wheelchair ramps, tactile paving, voice navigation, tactile signage</td><td>PASS</td></tr>
-<blockquote>This verification checklist is the operational implementation of the Zhan Tianyou Protocol. Every item is an engineering fact independently verifiable by a third party — not a subjective declaration.</blockquote>
+<p>The following checklist translates the four principles into verifiable engineering facts, available for judges and professional teams to independently verify. Status has two levels: <strong>Verified</strong> (auditable evidence exists in this package) and <strong>Design target</strong> (designed in this proposal, but confirmable only at implementation stage by professional teams and named responsible persons).</p>
+<div class="proposal-table"><table><thead><tr><th>Principle</th><th>Verification Item</th><th>Evidence in This Proposal</th><th>Status</th></tr></thead><tbody><tr><td>1. Visibility</td><td>Are spatial layers complete and inspectable?</td><td>9 GeoJSON files, 70 features</td><td>Verified</td></tr><tr><td>1. Visibility</td><td>Do metrics have formulas for recalculation?</td><td>metrics.json contains 26 metrics with formulas and confidence labels</td><td>Verified</td></tr><tr><td>1. Visibility</td><td>Is the proposal human-readable?</td><td>proposal.md 13 chapters; offline HTML visualization</td><td>Verified</td></tr><tr><td>2. Stoppable</td><td>Does each scenario have a responsible role and review trigger?</td><td>All 12 scenario cards list operating entities and human review triggers; named human responsible persons are to be assigned per scenario at implementation stage and cannot be replaced by institution names</td><td>Design target</td></tr><tr><td>2. Stoppable</td><td>Does each scenario have an exit/alternative?</td><td>SC9 provides QR as alternative to face recognition; each scenario lists a non-AI alternative path</td><td>Verified</td></tr><tr><td>2. Stoppable</td><td>Are human review trigger and stop conditions defined?</td><td>Appendix A defines review triggers and stop conditions per scenario</td><td>Verified</td></tr><tr><td>3. AI-Free Equivalence</td><td>Can public spaces function without AI?</td><td>All three tiers of public space network are based on physical infrastructure (parks/seating/paths), not AI-dependent</td><td>Design target</td></tr><tr><td>3. AI-Free Equivalence</td><td>Do offline alternatives exist?</td><td>Free WiFi device lending stations + per-scenario manual alternatives in Appendix A</td><td>Verified</td></tr><tr><td>4. Intergenerational Equity</td><td>Are non-youth groups covered?</td><td>Inclusive design covers children, elderly, disabled, low-income, and other groups</td><td>Verified</td></tr><tr><td>4. Intergenerational Equity</td><td>Is barrier-free design included?</td><td>Wheelchair ramps, tactile paving, voice navigation, tactile signage</td><td>Design target</td></tr></tbody></table></div>
+<blockquote><p>This verification checklist is the operational implementation of the Zhan Tianyou Protocol. Items marked &quot;Verified&quot; have auditable evidence in this package; items marked &quot;Design target&quot; do not claim to be completed engineering facts and require confirmation at implementation stage by named responsible persons and professional review.</p></blockquote>
 <h2>Risk, Copyright, and Compliance</h2>
-<h3>Key Risks and Mitigation <span class="evidence risk">[risk:general]</span></h3>
-<p>1. **Provisional Boundary Uncertainty**: All area and spatial metrics are based on provisional rough boundaries; recalculation required upon obtaining official CAD/GIS data</p>
-<p>2. **Current Condition Data Gaps**: Precise data on parcel ownership, building quality, underground utilities not obtained; retain/renovate/demolish plans are directional concepts only</p>
-<p>3. **Regulatory Conditions Pending**: Statutory metrics such as FAR and building height not yet obtained; existing conceptual proposals do not constitute regulatory planning determinations</p>
-<p>4. **Engineering Feasibility Not Verified**: Professional calculations for bridges, tunnels, underground space, municipal capacity exceed the scope of this conceptual design</p>
+<h3>Key Risks and Mitigation [risk:general]</h3>
+<p>1. <strong>Provisional Boundary Uncertainty</strong>: All area and spatial metrics are based on provisional rough boundaries; recalculation required upon obtaining official CAD/GIS data 2. <strong>Current Condition Data Gaps</strong>: Precise data on parcel ownership, building quality, underground utilities not obtained; retain/renovate/demolish plans are directional concepts only 3. <strong>Regulatory Conditions Pending</strong>: Statutory metrics such as FAR and building height not yet obtained; existing conceptual proposals do not constitute regulatory planning determinations 4. <strong>Engineering Feasibility Not Verified</strong>: Professional calculations for bridges, tunnels, underground space, municipal capacity exceed the scope of this conceptual design</p>
 <h3>Copyright and Compliance [report/copyright_statement.md]</h3>
+<ul>
 <li>All text, graphics, and data in this proposal were generated by an AI Agent (Claude Fable 5 via @Cxd1229) based on public materials</li>
 <li>License: COMMUNITY-DISPLAY-ONLY</li>
 <li>No non-public or restricted-source data was used</li>
-<li>All spatial implementation suggestions are conceptual suggestions, reference proposals, or items for professional team deepening; they do not substitute formal planning and do not constitute government-approved conclusions <span class="evidence standard">[standard:AGENT-SUBMISSION-DISCLAIMER]</span></li>
+<li>All spatial implementation suggestions are conceptual suggestions, reference proposals, or items for professional team deepening; they do not substitute formal planning and do not constitute government-approved conclusions <sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="AGENT-SUBMISSION-DISCLAIMER" title="Standard: AGENT-SUBMISSION-DISCLAIMER">Standard</sup></li>
 <li>Names of surrounding areas and enterprises are references only and do not constitute commercial claims</li>
 <li>Map data sourced from OpenStreetMap (ODbL license), used as background reference only</li>
+</ul>
 <h2>References</h2>
-<li>`brief/site-package/design_brief.json` <span class="evidence source">[source:SITE-PACKAGE]</span></li>
-<li>`brief/site-package/agent_taskbook.json` <span class="evidence source">[source:AGENT-TASKBOOK]</span></li>
-<li>`brief/site-package/allowed_design_space.json` <span class="evidence source">[source:DESIGN-SPACE]</span></li>
-<li>`brief/site-package/sources.json` <span class="evidence source">[source:SITE-SOURCES]</span></li>
-<li>`brief/site-package/geometry/provisional_boundaries.geojson` <span class="evidence data">[data:PROVISIONAL-BOUNDARIES]</span></li>
-<li>`data/source_registry.json` <span class="evidence source">[source:SOURCE-REGISTRY]</span></li>
-<li>Beijing Haidian District 2025 Statistical Yearbook <span class="evidence source">[source:BEIJING-STATS-2025]</span></li>
-<li>Global innovation district case studies <span class="evidence source">[source:GLOBAL-INNOVATION-DISTRICTS]</span></li>
-<li>OpenStreetMap Beijing road and building data <span class="evidence source">[source:OSM-2026-BEIJING]</span></li>
-<h2>Appendix A: Scenario Data Governance Framework <span class="evidence risk">[risk:privacy]</span></h2>
-<tr><td>Scenario</td><td>Legal Basis</td><td>Data Fields (≤5)</td><td>Retention</td><td>Opt-Out Method</td><td>Human Review Trigger</td></tr>
-<p>|----------|-------------|-------------------|-----------|----------------|---------------------|</p>
-<tr><td>SC1 Autonomous Shuttle</td><td>Informed consent (boarding = consent)</td><td>Path trajectory, speed, timestamp, onboard video (de-identified)</td><td>72h</td><td>Choose human-driven shuttle</td><td>Accident/violation/system alert</td></tr>
-<tr><td>SC2 Robot Delivery</td><td>Contractual necessity + informed consent</td><td>Path coordinates, delivery time, package dimensions (no content)</td><td>30 days</td><td>Choose human delivery</td><td>Delivery failure/user complaint</td></tr>
-<tr><td>SC3 Environmental Sensor Network</td><td>Public interest (environmental monitoring)</td><td>Temperature, humidity, PM2.5, noise (dB), light</td><td>Permanent (aggregated, public)</td><td>Sensors contain no personal information; opt-out not applicable</td><td>Value anomaly/device offline</td></tr>
-<tr><td>SC4 AI Security Sandbox</td><td>Contractual necessity</td><td>Test code, execution logs, resource usage</td><td>Purged upon test completion</td><td>Contract-defined test scope</td><td>Security incident/resource anomaly</td></tr>
-<tr><td>SC5–12 Public Experience Scenarios</td><td>Informed consent</td><td>Interaction records (anonymous), usage frequency, scenario ID</td><td>90 days</td><td>Non-participation / use offline mode</td><td>User feedback / content dispute</td></tr>
-<p>All scenarios follow data minimization principles; default local processing; no biometric data collection (SC9 provides QR code alternative). Quarterly public release of privacy impact assessment summaries.</p>
+<ul>
+<li><code>brief/site-package/design_brief.json</code> <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="SITE-PACKAGE" title="Source: SITE-PACKAGE">Source</sup></li>
+<li><code>brief/site-package/agent_taskbook.json</code> <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK" title="Source: SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK">Source</sup></li>
+<li><code>brief/site-package/allowed_design_space.json</code> <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="SITE-PACKAGE" title="Source: SITE-PACKAGE">Source</sup></li>
+<li><code>brief/site-package/sources.json</code> <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="SITE-PACKAGE" title="Source: SITE-PACKAGE">Source</sup></li>
+<li><code>brief/site-package/geometry/provisional_boundaries.geojson</code> <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="DATA-SRC-PROVISIONAL-BOUNDARIES-20260605" title="Spatial data: DATA-SRC-PROVISIONAL-BOUNDARIES-20260605">Spatial data</sup></li>
+<li><code>data/source_registry.json</code> <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="SOURCE-REGISTRY" title="Source: SOURCE-REGISTRY">Source</sup></li>
+<li>Beijing Haidian District 2025 Statistical Yearbook <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="BEIJING-STATS-2025" title="Source: BEIJING-STATS-2025">Source</sup></li>
+<li>Global innovation district case studies <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="GLOBAL-INNOVATION-DISTRICTS" title="Source: GLOBAL-INNOVATION-DISTRICTS">Source</sup></li>
+<li>OpenStreetMap Beijing road and building data <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="OSM-2026-BEIJING" title="Source: OSM-2026-BEIJING">Source</sup></li>
+</ul>
+<h2>Appendix A: Scenario Data Governance Framework [risk:privacy]</h2>
+<p>The table below specifies data governance essentials per scenario. All scenarios uniformly follow data minimization, default local processing, and no biometric collection (SC9 offers a QR-code alternative); the unified appeal channel is the Jingzhang AI Innovation Belt operating company&#x27;s data compliance desk (phone/email/on-site), with the right to escalate to regulators preserved. Quarterly public release of privacy impact assessment summaries.</p>
+<div class="proposal-table"><table><thead><tr><th>Scenario</th><th>Personal Info</th><th>Purpose</th><th>Explicit Choice</th><th>Data Fields (≤5)</th><th>Retention</th><th>Non-AI Alternative</th><th>Stop Condition</th></tr></thead><tbody><tr><td>SC1 Autonomous Shuttle</td><td>Yes (trajectory/video)</td><td>Vehicle operation and safety</td><td>Active opt-in before boarding; may refuse</td><td>Path trajectory, speed, timestamp, onboard video (de-identified)</td><td>72h</td><td>Human-driven shuttle</td><td>Accident/violation/system alert</td></tr><tr><td>SC2 Robot Delivery</td><td>Yes (path)</td><td>Delivery fulfillment</td><td>Explicitly choose robot delivery at order time</td><td>Path coordinates, delivery time, package dimensions</td><td>30 days</td><td>Human delivery</td><td>Delivery failure/complaint</td></tr><tr><td>SC3 Environmental Sensor Network</td><td>No</td><td>Environmental monitoring (public interest)</td><td>No personal consent needed (no personal info)</td><td>Temperature, humidity, PM2.5, noise, light</td><td>Permanent (aggregated)</td><td>Not applicable (no personal data)</td><td>Value anomaly/offline</td></tr><tr><td>SC4 AI Security Sandbox</td><td>Yes (code)</td><td>Security testing</td><td>Contract-defined test scope</td><td>Test code, execution logs, resource usage</td><td>Purged on completion</td><td>Offline sandbox</td><td>Security incident/anomaly</td></tr><tr><td>SC5 AI Art Co-creation</td><td>Anonymizable</td><td>Art co-creation</td><td>Active use; content anonymous by default</td><td>Generated content, interaction records (anonymous)</td><td>90 days</td><td>Offline art workshop</td><td>Content dispute/complaint</td></tr><tr><td>SC6 Open-Source Contribution Visualization</td><td>Yes (public contributions)</td><td>Community display</td><td>Only public contributions shown; may opt out of display</td><td>GitHub public contributions, display settings</td><td>Real-time</td><td>Not displayed</td><td>User withdrawal/dispute</td></tr><tr><td>SC7 AI Tutoring Study Room</td><td>Anonymizable</td><td>Learning support</td><td>Active use; login optional</td><td>Learning records (optional), preferences</td><td>90 days</td><td>Human tutor / regular study room</td><td>User exit/feedback</td></tr><tr><td>SC8 Smart Fitness Cabin</td><td>Anonymizable</td><td>Exercise guidance</td><td>Active use; activity data sharing optional</td><td>Activity data (optional), frequency</td><td>90 days</td><td>Traditional gym equipment</td><td>User exit</td></tr><tr><td>SC9 Unmanned Retail</td><td>Yes (settlement imagery)</td><td>Goods settlement</td><td>QR/swipe entry (non-biometric)</td><td>Settlement imagery (local processing)</td><td>Purged locally</td><td>Human cashier</td><td>User opt-out</td></tr><tr><td>SC10 AI Music Co-creation</td><td>Anonymizable</td><td>Music co-creation</td><td>Active use</td><td>Generated audio, interaction records</td><td>90 days</td><td>Offline band/rehearsal room</td><td>Content dispute</td></tr><tr><td>SC11 Digital Heritage Tour</td><td>Anonymizable</td><td>Cultural tour</td><td>Active QR use</td><td>Tour location, usage frequency</td><td>90 days</td><td>Physical signs / paper maps</td><td>User stops</td></tr><tr><td>SC12 City Data Observatory</td><td>No</td><td>City operations display</td><td>No personal consent needed (aggregated public)</td><td>Aggregated city metrics (no personal)</td><td>Permanent (aggregated)</td><td>Offline boards</td><td>Data anomaly</td></tr></tbody></table></div>
+<blockquote><p>Note: SC1 onboard video, SC6 public contribution data, and SC9 settlement imagery involve personal information or identifiable content. Their legal basis, minimization, and opt-out mechanisms must be confirmed by professional data protection review before deployment; this proposal only designs the mechanisms and does not claim completed legal certification.</p></blockquote>
 <h2>Appendix B: Copyright and Rights Checklist</h2>
-<tr><td>#</td><td>Content</td><td>Rights Declaration</td><td>Status</td></tr>
-<p>|---|---------|-------------------|--------|</p>
-<tr><td>1</td><td>Font: Noto Sans SC</td><td>SIL Open Font License 1.1</td><td>✓</td></tr>
-<tr><td>2</td><td>Font: Montserrat</td><td>SIL Open Font License 1.1</td><td>✓</td></tr>
-<tr><td>3</td><td>OSM Map Data</td><td>ODbL 1.0, extracted 2026-08, Beijing Haidian, EPSG:4326</td><td>✓</td></tr>
-<tr><td>4</td><td>matplotlib/Python Charts</td><td>BSD License</td><td>✓</td></tr>
-<tr><td>5</td><td>AI-Generated Text (Claude/Kimi)</td><td>COMMUNITY-DISPLAY-ONLY</td><td>✓</td></tr>
-<tr><td>6</td><td>Haidian Statistical Yearbook / Energy Reports</td><td>Government public data</td><td>✓</td></tr>
-<tr><td>7</td><td>A3/A0 PDF</td><td>Programmatically generated, fonts embedded</td><td>✓</td></tr>
-<tr><td>8</td><td>Logo Trademark Search</td><td>Not applicable at conceptual stage</td><td>Pending</td></tr>
+<div class="proposal-table"><table><thead><tr><th>#</th><th>Content</th><th>Rights Declaration</th><th>Status</th></tr></thead><tbody><tr><td>1</td><td>Font: Noto Sans SC</td><td>SIL Open Font License 1.1</td><td>✓</td></tr><tr><td>2</td><td>Font: Montserrat</td><td>SIL Open Font License 1.1</td><td>✓</td></tr><tr><td>3</td><td>OSM Map Data</td><td>ODbL 1.0, extracted 2026-08, Beijing Haidian, EPSG:4326</td><td>✓</td></tr><tr><td>4</td><td>matplotlib/Python Charts</td><td>BSD License</td><td>✓</td></tr><tr><td>5</td><td>AI-Generated Text (Claude/Kimi)</td><td>COMMUNITY-DISPLAY-ONLY</td><td>✓</td></tr><tr><td>6</td><td>Haidian Statistical Yearbook / Energy Reports</td><td>Government public data</td><td>✓</td></tr><tr><td>7</td><td>A3/A0 PDF</td><td>Programmatically generated, fonts embedded</td><td>✓</td></tr><tr><td>8</td><td>Logo Trademark Search</td><td>Currently used only for competition concept display, not for commercial/long-term public use; if converted to commercial or long-term identity, a trademark similarity search and ownership confirmation must be completed first</td><td>Restriction declared</td></tr></tbody></table></div>
 <h2>Appendix C: Metric Reproduction Method</h2>
 <p>Core metrics are based on shapely geometric computation (EPSG:4548 projection):</p>
-<li>Green ratio = green_space Polygons area ÷ site_boundary area = 142.9 ÷ 1,142.7 = 12.5%</li>
+<ul>
+<li>Green ratio = green_space Polygons area ÷ site_boundary area = 141.8 ÷ 1,142.7 = 12.42%</li>
 <li>Public space ratio = public_space Polygons area ÷ site_boundary = 34.3 ÷ 1,142.7 = 3.0%</li>
-<li>Road network density = (existing OSM ~81 km + new design 16 km) ÷ 11.43 km² ≈ 8.5 km/km²</li>
+<li>Road network density = (existing OSM ~81 km + new design 16 km) ÷ 11.41 km² ≈ 8.5 km/km²</li>
 <li>Building scale = land use zone area × conceptual FAR; confidence: low</li>
 <li>Transparency statement: All metrics dependent on provisional boundaries or conceptual assumptions are marked with confidence levels in metrics.json and do not constitute engineering commitments</li>
+</ul>
 <h2>Appendix D: Bilingual Equivalence Statement</h2>
 <p>Chinese proposal.md and English proposal.en.md are independent, semantically equivalent translations with one-to-one correspondence in chapter structure, metric values, evidence tags ([data:]/[source:]/[metric:]), and figure placement. visual/index.html and visual/index.en.html are content-equivalent. A3/A0 Chinese and English versions are consistent. The English translation uses competition-recommended terminology (referencing docs/terminology-glossary.md). Case study proper nouns and railway heritage cultural terms have been manually cross-referenced.</p>
-</main></body></html>
+</main>
+</body>
+</html>

@@ -1,0 +1,2259 @@
+{
+  "schema": "jz-phase4-pdf-qa/v1",
+  "scope": "four Phase 4 presentation PDFs",
+  "claim_boundary": "Concrete tag, structure, text, typography, font, and rendering evidence only; not a PDF/UA conformance claim.",
+  "page_contract": {
+    "a3_pages_per_language": 12,
+    "a0_pages_per_language": 2,
+    "total_pages": 28,
+    "expected_total": 28
+  },
+  "tools": {
+    "python": "3.12.13",
+    "pypdf": "6.10.0",
+    "Pillow": "12.1.1",
+    "PyMuPDF": "1.28.2",
+    "fontTools": "4.63.0",
+    "Brotli": "1.2.0",
+    "pdfinfo": "pdfinfo version 26.05.0",
+    "pdffonts": "pdffonts version 25.02.0",
+    "pdftotext": "pdftotext version 25.02.0",
+    "pdftoppm": "pdftoppm version 26.05.0"
+  },
+  "execution": {
+    "command": "uv run --with pymupdf==1.28.2 --with pypdf==6.10.0 --with pillow==12.1.1 --with fonttools==4.63.0 --with brotli==1.2.0 python visual/assets/phase4-pdf-audit.py",
+    "poppler_full_render": "pdftoppm -png -r 200 <pdf> <temporary-output-prefix>"
+  },
+  "conformance_tool_availability": {
+    "veraPDF": false,
+    "PAC": false,
+    "boundary": "No veraPDF or PAC available; PDF/UA is not asserted."
+  },
+  "advisories": [
+    "F08/F11 use native selectable text and retain Figure-level grouping rather than semantic Table tags; the structure tree, detailed Alt, same-page text, accessible HTML, and machine matrices remain equivalent entry points.",
+    "The accessible HTML report and Visual provide structured textual summaries, keyboard-accessible original-image dialogs, and the authoritative machine-readable matrices as equivalent detailed entry points; PDF/UA is not asserted."
+  ],
+  "pdfs": [
+    {
+      "key": "a3_zh",
+      "path": "drawings/a3-booklet.pdf",
+      "pages": 12,
+      "expected_pages": 12,
+      "format": "A3",
+      "media_boxes_pt": [
+        [
+          1191.12,
+          841.92
+        ],
+        [
+          1191.12,
+          841.92
+        ],
+        [
+          1191.12,
+          841.92
+        ],
+        [
+          1191.12,
+          841.92
+        ],
+        [
+          1191.12,
+          841.92
+        ],
+        [
+          1191.12,
+          841.92
+        ],
+        [
+          1191.12,
+          841.92
+        ],
+        [
+          1191.12,
+          841.92
+        ],
+        [
+          1191.12,
+          841.92
+        ],
+        [
+          1191.12,
+          841.92
+        ],
+        [
+          1191.12,
+          841.92
+        ],
+        [
+          1191.12,
+          841.92
+        ]
+      ],
+      "metadata": {
+        "title": "京张在场 / Jing-Zhang In Situ · A3",
+        "language": "zh-CN",
+        "marked": true,
+        "tagged_pdfinfo": "Tagged:          yes"
+      },
+      "structure_counts": {
+        "/Document": 1,
+        "/NonStruct": 530,
+        "/P": 24,
+        "/H1": 1,
+        "/Figure": 12,
+        "Alt": 12,
+        "/H2": 14,
+        "/L": 2,
+        "/LI": 9,
+        "/Lbl": 3,
+        "/Strong": 32,
+        "/Caption": 2,
+        "/Art": 28,
+        "/H3": 15
+      },
+      "role_map": {
+        "/Strong": "/Span"
+      },
+      "bookmarks": [
+        "京张在场 / Jing-Zhang In Situ",
+        "三处原型",
+        "评审路径",
+        "实施证据 / 当前 NO-GO",
+        "一带总览：十二条候选横断面已定位",
+        "共同分区：同边界、零缺口、零重叠",
+        "三处重点区：同尺度看差异化在场",
+        "责任横断面：十二候选、三条深化",
+        "证据与指标：负结果也必须在场",
+        "识别系统：一带、三界面、一套语法",
+        "AI 创新生态：三区两翼协同回路",
+        "十二场景协议：AI 权限与人工接管",
+        "SC01 · 模型评测沙盒",
+        "SC02 · 边缘节点能效与热安全试验",
+        "SC03 · 具身智能无障碍共测",
+        "SC04 · 开放标准共创台",
+        "SC05 · 成果匹配诊所",
+        "SC06 · 共享中试排程助手",
+        "SC07 · 人才生活导航",
+        "SC08 · 无障碍路线伴行",
+        "SC09 · 站城换乘导览",
+        "SC10 · AI 原生产品公共试用室",
+        "SC11 · 京张记忆共读导览",
+        "SC12 · 可解释公共服务问答台",
+        "三处地标、开放贡献谱与公共空间组件库",
+        "文化叙事与导视：时间成为空间坐标",
+        "运行、接管、申诉、停止与撤场",
+        "投诉 / 申诉",
+        "唯一首用",
+        "不利 / 未知保留"
+      ],
+      "outline_assertion": null,
+      "page_tabs_structure_order": true,
+      "selectable_text": [
+        {
+          "page": 1,
+          "characters": 601,
+          "nonempty": true
+        },
+        {
+          "page": 2,
+          "characters": 178,
+          "nonempty": true
+        },
+        {
+          "page": 3,
+          "characters": 163,
+          "nonempty": true
+        },
+        {
+          "page": 4,
+          "characters": 312,
+          "nonempty": true
+        },
+        {
+          "page": 5,
+          "characters": 195,
+          "nonempty": true
+        },
+        {
+          "page": 6,
+          "characters": 274,
+          "nonempty": true
+        },
+        {
+          "page": 7,
+          "characters": 171,
+          "nonempty": true
+        },
+        {
+          "page": 8,
+          "characters": 185,
+          "nonempty": true
+        },
+        {
+          "page": 9,
+          "characters": 1736,
+          "nonempty": true
+        },
+        {
+          "page": 10,
+          "characters": 181,
+          "nonempty": true
+        },
+        {
+          "page": 11,
+          "characters": 171,
+          "nonempty": true
+        },
+        {
+          "page": 12,
+          "characters": 995,
+          "nonempty": true
+        }
+      ],
+      "required_term_presence": {
+        "Jing-Zhang In Situ": true,
+        "Human Takeover": true,
+        "SC10 + IM06": true
+      },
+      "direct_visibility": {
+        "f08_scenarios": {
+          "SC01": true,
+          "SC02": true,
+          "SC03": true,
+          "SC04": true,
+          "SC05": true,
+          "SC06": true,
+          "SC07": true,
+          "SC08": true,
+          "SC09": true,
+          "SC10": true,
+          "SC11": true,
+          "SC12": true
+        },
+        "f11_red_tests": {
+          "RT-01": true,
+          "RT-02": true,
+          "RT-03": true,
+          "RT-04": true
+        },
+        "f11_dispositions": {
+          "fail_stop": true,
+          "fail_pause": true,
+          "unknown_stop": true
+        },
+        "f11_prohibited_boundary": {
+          "默认人脸识别": true,
+          "情绪识别": true,
+          "社会评分": true,
+          "预测性执法": true,
+          "未披露敏感推断": true
+        },
+        "native_layout_has_no_summary_overlay": true,
+        "met": true
+      },
+      "native_protocol_typography": {
+        "parser": "PyMuPDF 1.28.2",
+        "pages": [
+          {
+            "page": 9,
+            "region_y_pt": [
+              112.0,
+              810.0
+            ],
+            "selectable_spans": 145,
+            "minimum_pt": 9.0,
+            "target_pt": 9.0,
+            "met": true
+          },
+          {
+            "page": 12,
+            "region_y_pt": [
+              112.0,
+              810.0
+            ],
+            "selectable_spans": 49,
+            "minimum_pt": 9.0,
+            "target_pt": 9.0,
+            "met": true
+          }
+        ],
+        "met": true
+      },
+      "font_target": {
+        "design_target_pt": 8.0,
+        "tolerance_pt": 0.01,
+        "per_page_minimum_pt": [
+          {
+            "page": 1,
+            "minimum_pt": 7.995
+          },
+          {
+            "page": 2,
+            "minimum_pt": 7.995
+          },
+          {
+            "page": 3,
+            "minimum_pt": 7.995
+          },
+          {
+            "page": 4,
+            "minimum_pt": 7.995
+          },
+          {
+            "page": 5,
+            "minimum_pt": 7.995
+          },
+          {
+            "page": 6,
+            "minimum_pt": 7.995
+          },
+          {
+            "page": 7,
+            "minimum_pt": 7.995
+          },
+          {
+            "page": 8,
+            "minimum_pt": 7.995
+          },
+          {
+            "page": 9,
+            "minimum_pt": 7.995
+          },
+          {
+            "page": 10,
+            "minimum_pt": 7.995
+          },
+          {
+            "page": 11,
+            "minimum_pt": 7.995
+          },
+          {
+            "page": 12,
+            "minimum_pt": 7.995
+          }
+        ],
+        "met": true
+      },
+      "fonts": [
+        {
+          "name": "AAAAAA+NotoSansSC-Thin",
+          "type": "CID TrueType",
+          "encoding": "Identity-H",
+          "embedded": "yes",
+          "subset": "yes",
+          "unicode": "yes"
+        },
+        {
+          "name": "BAAAAA+NotoSansSC-Thin",
+          "type": "CID TrueType",
+          "encoding": "Identity-H",
+          "embedded": "yes",
+          "subset": "yes",
+          "unicode": "yes"
+        }
+      ],
+      "render_200dpi": {
+        "renderer": "pdftoppm version 26.05.0",
+        "dpi": 200,
+        "images": 12,
+        "expected_images": 12,
+        "pages": [
+          {
+            "page": 1,
+            "pixels": [
+              3309,
+              2339
+            ],
+            "nonwhite_bbox": [
+              0,
+              0,
+              3308,
+              2339
+            ],
+            "mean_channel_variance": 723.764,
+            "nonblank": true
+          },
+          {
+            "page": 2,
+            "pixels": [
+              3309,
+              2339
+            ],
+            "nonwhite_bbox": [
+              0,
+              0,
+              3308,
+              2339
+            ],
+            "mean_channel_variance": 1684.451,
+            "nonblank": true
+          },
+          {
+            "page": 3,
+            "pixels": [
+              3309,
+              2339
+            ],
+            "nonwhite_bbox": [
+              0,
+              0,
+              3308,
+              2339
+            ],
+            "mean_channel_variance": 1412.189,
+            "nonblank": true
+          },
+          {
+            "page": 4,
+            "pixels": [
+              3309,
+              2339
+            ],
+            "nonwhite_bbox": [
+              0,
+              0,
+              3308,
+              2339
+            ],
+            "mean_channel_variance": 1274.454,
+            "nonblank": true
+          },
+          {
+            "page": 5,
+            "pixels": [
+              3309,
+              2339
+            ],
+            "nonwhite_bbox": [
+              0,
+              0,
+              3308,
+              2339
+            ],
+            "mean_channel_variance": 1158.16,
+            "nonblank": true
+          },
+          {
+            "page": 6,
+            "pixels": [
+              3309,
+              2339
+            ],
+            "nonwhite_bbox": [
+              0,
+              0,
+              3308,
+              2339
+            ],
+            "mean_channel_variance": 2239.925,
+            "nonblank": true
+          },
+          {
+            "page": 7,
+            "pixels": [
+              3309,
+              2339
+            ],
+            "nonwhite_bbox": [
+              0,
+              0,
+              3308,
+              2339
+            ],
+            "mean_channel_variance": 1377.884,
+            "nonblank": true
+          },
+          {
+            "page": 8,
+            "pixels": [
+              3309,
+              2339
+            ],
+            "nonwhite_bbox": [
+              0,
+              0,
+              3308,
+              2339
+            ],
+            "mean_channel_variance": 1324.614,
+            "nonblank": true
+          },
+          {
+            "page": 9,
+            "pixels": [
+              3309,
+              2339
+            ],
+            "nonwhite_bbox": [
+              0,
+              0,
+              3308,
+              2339
+            ],
+            "mean_channel_variance": 779.266,
+            "nonblank": true
+          },
+          {
+            "page": 10,
+            "pixels": [
+              3309,
+              2339
+            ],
+            "nonwhite_bbox": [
+              0,
+              0,
+              3308,
+              2339
+            ],
+            "mean_channel_variance": 735.172,
+            "nonblank": true
+          },
+          {
+            "page": 11,
+            "pixels": [
+              3309,
+              2339
+            ],
+            "nonwhite_bbox": [
+              0,
+              0,
+              3308,
+              2339
+            ],
+            "mean_channel_variance": 2254.498,
+            "nonblank": true
+          },
+          {
+            "page": 12,
+            "pixels": [
+              3309,
+              2339
+            ],
+            "nonwhite_bbox": [
+              0,
+              0,
+              3308,
+              2339
+            ],
+            "mean_channel_variance": 2900.069,
+            "nonblank": true
+          }
+        ],
+        "ok": true
+      },
+      "failures": [],
+      "ok": true
+    },
+    {
+      "key": "a3_en",
+      "path": "drawings/a3-booklet.en.pdf",
+      "pages": 12,
+      "expected_pages": 12,
+      "format": "A3",
+      "media_boxes_pt": [
+        [
+          1191.12,
+          841.92
+        ],
+        [
+          1191.12,
+          841.92
+        ],
+        [
+          1191.12,
+          841.92
+        ],
+        [
+          1191.12,
+          841.92
+        ],
+        [
+          1191.12,
+          841.92
+        ],
+        [
+          1191.12,
+          841.92
+        ],
+        [
+          1191.12,
+          841.92
+        ],
+        [
+          1191.12,
+          841.92
+        ],
+        [
+          1191.12,
+          841.92
+        ],
+        [
+          1191.12,
+          841.92
+        ],
+        [
+          1191.12,
+          841.92
+        ],
+        [
+          1191.12,
+          841.92
+        ]
+      ],
+      "metadata": {
+        "title": "Jing-Zhang In Situ / 京张在场 · A3",
+        "language": "en",
+        "marked": true,
+        "tagged_pdfinfo": "Tagged:          yes"
+      },
+      "structure_counts": {
+        "/Document": 1,
+        "/NonStruct": 530,
+        "/P": 24,
+        "/H1": 1,
+        "/Figure": 12,
+        "Alt": 12,
+        "/H2": 14,
+        "/L": 2,
+        "/LI": 9,
+        "/Lbl": 3,
+        "/Strong": 32,
+        "/Caption": 2,
+        "/Art": 28,
+        "/H3": 15
+      },
+      "role_map": {
+        "/Strong": "/Span"
+      },
+      "bookmarks": [
+        "Jing-Zhang In Situ / 京张在场",
+        "Three prototypes",
+        "Review routes",
+        "IMPLEMENTATION EVIDENCE / CURRENT NO-GO",
+        "Belt Overview: Twelve Candidate Transects Located",
+        "Shared Partition: Same Edges, Zero Gaps, Zero Overlaps",
+        "Three Key Areas at One Comparative Scale",
+        "Responsibility Transects: Twelve Candidates, Three Detailed",
+        "Evidence + Metrics: Adverse Results Stay Visible",
+        "Identity System: One Belt, Three Interfaces, One Grammar",
+        "AI Innovation Ecosystem: Three Areas + Two Wings",
+        "Twelve Scenario Protocols: AI Authority + Human Takeover",
+        "SC01 · Model Evaluation Sandbox",
+        "SC02 · Edge-Node Energy and Thermal-Safety Bench",
+        "SC03 · Embodied-AI Accessibility Co-Test",
+        "SC04 · Open-Standard Co-Creation Desk",
+        "SC05 · Research-to-Application Matching Clinic",
+        "SC06 · Shared Pilot Scheduling Assistant",
+        "SC07 · Talent Life Navigator",
+        "SC08 · Accessible Route Companion",
+        "SC09 · Station-City Transfer Guide",
+        "SC10 · AI-Native Product Public Trial Room",
+        "SC11 · Jing-Zhang Memory Co-Reading Guide",
+        "SC12 · Explainable Civic-Service Desk",
+        "Three Landmarks + Open Contribution Ledger + Components",
+        "Culture + Wayfinding: Time as a Spatial Coordinate",
+        "Operate, Take Over, Appeal, Stop, and Remove",
+        "COMPLAINT / APPEAL",
+        "SOLE FIRST USE",
+        "ADVERSE / UNKNOWN RETAINED"
+      ],
+      "outline_assertion": {
+        "expected_count": 30,
+        "actual_count": 30,
+        "expected_titles": [
+          "Jing-Zhang In Situ / 京张在场",
+          "Three prototypes",
+          "Review routes",
+          "IMPLEMENTATION EVIDENCE / CURRENT NO-GO",
+          "Belt Overview: Twelve Candidate Transects Located",
+          "Shared Partition: Same Edges, Zero Gaps, Zero Overlaps",
+          "Three Key Areas at One Comparative Scale",
+          "Responsibility Transects: Twelve Candidates, Three Detailed",
+          "Evidence + Metrics: Adverse Results Stay Visible",
+          "Identity System: One Belt, Three Interfaces, One Grammar",
+          "AI Innovation Ecosystem: Three Areas + Two Wings",
+          "Twelve Scenario Protocols: AI Authority + Human Takeover",
+          "SC01 · Model Evaluation Sandbox",
+          "SC02 · Edge-Node Energy and Thermal-Safety Bench",
+          "SC03 · Embodied-AI Accessibility Co-Test",
+          "SC04 · Open-Standard Co-Creation Desk",
+          "SC05 · Research-to-Application Matching Clinic",
+          "SC06 · Shared Pilot Scheduling Assistant",
+          "SC07 · Talent Life Navigator",
+          "SC08 · Accessible Route Companion",
+          "SC09 · Station-City Transfer Guide",
+          "SC10 · AI-Native Product Public Trial Room",
+          "SC11 · Jing-Zhang Memory Co-Reading Guide",
+          "SC12 · Explainable Civic-Service Desk",
+          "Three Landmarks + Open Contribution Ledger + Components",
+          "Culture + Wayfinding: Time as a Spatial Coordinate",
+          "Operate, Take Over, Appeal, Stop, and Remove",
+          "COMPLAINT / APPEAL",
+          "SOLE FIRST USE",
+          "ADVERSE / UNKNOWN RETAINED"
+        ],
+        "actual_titles": [
+          "Jing-Zhang In Situ / 京张在场",
+          "Three prototypes",
+          "Review routes",
+          "IMPLEMENTATION EVIDENCE / CURRENT NO-GO",
+          "Belt Overview: Twelve Candidate Transects Located",
+          "Shared Partition: Same Edges, Zero Gaps, Zero Overlaps",
+          "Three Key Areas at One Comparative Scale",
+          "Responsibility Transects: Twelve Candidates, Three Detailed",
+          "Evidence + Metrics: Adverse Results Stay Visible",
+          "Identity System: One Belt, Three Interfaces, One Grammar",
+          "AI Innovation Ecosystem: Three Areas + Two Wings",
+          "Twelve Scenario Protocols: AI Authority + Human Takeover",
+          "SC01 · Model Evaluation Sandbox",
+          "SC02 · Edge-Node Energy and Thermal-Safety Bench",
+          "SC03 · Embodied-AI Accessibility Co-Test",
+          "SC04 · Open-Standard Co-Creation Desk",
+          "SC05 · Research-to-Application Matching Clinic",
+          "SC06 · Shared Pilot Scheduling Assistant",
+          "SC07 · Talent Life Navigator",
+          "SC08 · Accessible Route Companion",
+          "SC09 · Station-City Transfer Guide",
+          "SC10 · AI-Native Product Public Trial Room",
+          "SC11 · Jing-Zhang Memory Co-Reading Guide",
+          "SC12 · Explainable Civic-Service Desk",
+          "Three Landmarks + Open Contribution Ledger + Components",
+          "Culture + Wayfinding: Time as a Spatial Coordinate",
+          "Operate, Take Over, Appeal, Stop, and Remove",
+          "COMPLAINT / APPEAL",
+          "SOLE FIRST USE",
+          "ADVERSE / UNKNOWN RETAINED"
+        ],
+        "forbidden_glue": [],
+        "normalization_idempotent": true,
+        "exact_titles": true,
+        "ok": true
+      },
+      "page_tabs_structure_order": true,
+      "selectable_text": [
+        {
+          "page": 1,
+          "characters": 1170,
+          "nonempty": true
+        },
+        {
+          "page": 2,
+          "characters": 381,
+          "nonempty": true
+        },
+        {
+          "page": 3,
+          "characters": 372,
+          "nonempty": true
+        },
+        {
+          "page": 4,
+          "characters": 607,
+          "nonempty": true
+        },
+        {
+          "page": 5,
+          "characters": 442,
+          "nonempty": true
+        },
+        {
+          "page": 6,
+          "characters": 600,
+          "nonempty": true
+        },
+        {
+          "page": 7,
+          "characters": 460,
+          "nonempty": true
+        },
+        {
+          "page": 8,
+          "characters": 382,
+          "nonempty": true
+        },
+        {
+          "page": 9,
+          "characters": 4072,
+          "nonempty": true
+        },
+        {
+          "page": 10,
+          "characters": 486,
+          "nonempty": true
+        },
+        {
+          "page": 11,
+          "characters": 384,
+          "nonempty": true
+        },
+        {
+          "page": 12,
+          "characters": 2178,
+          "nonempty": true
+        }
+      ],
+      "required_term_presence": {
+        "Jing-Zhang In Situ": true,
+        "Human Takeover": true,
+        "SC10 + IM06": true
+      },
+      "direct_visibility": {
+        "f08_scenarios": {
+          "SC01": true,
+          "SC02": true,
+          "SC03": true,
+          "SC04": true,
+          "SC05": true,
+          "SC06": true,
+          "SC07": true,
+          "SC08": true,
+          "SC09": true,
+          "SC10": true,
+          "SC11": true,
+          "SC12": true
+        },
+        "f11_red_tests": {
+          "RT-01": true,
+          "RT-02": true,
+          "RT-03": true,
+          "RT-04": true
+        },
+        "f11_dispositions": {
+          "fail_stop": true,
+          "fail_pause": true,
+          "unknown_stop": true
+        },
+        "f11_prohibited_boundary": {
+          "facial recognition": true,
+          "emotion recognition": true,
+          "social scoring": true,
+          "predictive policing": true,
+          "undisclosed sensitive inference": true
+        },
+        "native_layout_has_no_summary_overlay": true,
+        "met": true
+      },
+      "native_protocol_typography": {
+        "parser": "PyMuPDF 1.28.2",
+        "pages": [
+          {
+            "page": 9,
+            "region_y_pt": [
+              112.0,
+              810.0
+            ],
+            "selectable_spans": 164,
+            "minimum_pt": 9.0,
+            "target_pt": 9.0,
+            "met": true
+          },
+          {
+            "page": 12,
+            "region_y_pt": [
+              112.0,
+              810.0
+            ],
+            "selectable_spans": 57,
+            "minimum_pt": 9.0,
+            "target_pt": 9.0,
+            "met": true
+          }
+        ],
+        "met": true
+      },
+      "font_target": {
+        "design_target_pt": 8.0,
+        "tolerance_pt": 0.01,
+        "per_page_minimum_pt": [
+          {
+            "page": 1,
+            "minimum_pt": 7.995
+          },
+          {
+            "page": 2,
+            "minimum_pt": 7.995
+          },
+          {
+            "page": 3,
+            "minimum_pt": 7.995
+          },
+          {
+            "page": 4,
+            "minimum_pt": 7.995
+          },
+          {
+            "page": 5,
+            "minimum_pt": 7.995
+          },
+          {
+            "page": 6,
+            "minimum_pt": 7.995
+          },
+          {
+            "page": 7,
+            "minimum_pt": 7.995
+          },
+          {
+            "page": 8,
+            "minimum_pt": 7.995
+          },
+          {
+            "page": 9,
+            "minimum_pt": 7.995
+          },
+          {
+            "page": 10,
+            "minimum_pt": 7.995
+          },
+          {
+            "page": 11,
+            "minimum_pt": 7.995
+          },
+          {
+            "page": 12,
+            "minimum_pt": 7.995
+          }
+        ],
+        "met": true
+      },
+      "fonts": [
+        {
+          "name": "AAAAAA+NotoSansSC-Thin",
+          "type": "CID TrueType",
+          "encoding": "Identity-H",
+          "embedded": "yes",
+          "subset": "yes",
+          "unicode": "yes"
+        },
+        {
+          "name": "BAAAAA+NotoSansSC-Thin",
+          "type": "CID TrueType",
+          "encoding": "Identity-H",
+          "embedded": "yes",
+          "subset": "yes",
+          "unicode": "yes"
+        }
+      ],
+      "render_200dpi": {
+        "renderer": "pdftoppm version 26.05.0",
+        "dpi": 200,
+        "images": 12,
+        "expected_images": 12,
+        "pages": [
+          {
+            "page": 1,
+            "pixels": [
+              3309,
+              2339
+            ],
+            "nonwhite_bbox": [
+              0,
+              0,
+              3308,
+              2339
+            ],
+            "mean_channel_variance": 731.94,
+            "nonblank": true
+          },
+          {
+            "page": 2,
+            "pixels": [
+              3309,
+              2339
+            ],
+            "nonwhite_bbox": [
+              0,
+              0,
+              3308,
+              2339
+            ],
+            "mean_channel_variance": 1544.398,
+            "nonblank": true
+          },
+          {
+            "page": 3,
+            "pixels": [
+              3309,
+              2339
+            ],
+            "nonwhite_bbox": [
+              0,
+              0,
+              3308,
+              2339
+            ],
+            "mean_channel_variance": 1291.765,
+            "nonblank": true
+          },
+          {
+            "page": 4,
+            "pixels": [
+              3309,
+              2339
+            ],
+            "nonwhite_bbox": [
+              0,
+              0,
+              3308,
+              2339
+            ],
+            "mean_channel_variance": 1147.069,
+            "nonblank": true
+          },
+          {
+            "page": 5,
+            "pixels": [
+              3309,
+              2339
+            ],
+            "nonwhite_bbox": [
+              0,
+              0,
+              3308,
+              2339
+            ],
+            "mean_channel_variance": 1062.433,
+            "nonblank": true
+          },
+          {
+            "page": 6,
+            "pixels": [
+              3309,
+              2339
+            ],
+            "nonwhite_bbox": [
+              0,
+              0,
+              3308,
+              2339
+            ],
+            "mean_channel_variance": 2055.883,
+            "nonblank": true
+          },
+          {
+            "page": 7,
+            "pixels": [
+              3309,
+              2339
+            ],
+            "nonwhite_bbox": [
+              0,
+              0,
+              3308,
+              2339
+            ],
+            "mean_channel_variance": 1266.073,
+            "nonblank": true
+          },
+          {
+            "page": 8,
+            "pixels": [
+              3309,
+              2339
+            ],
+            "nonwhite_bbox": [
+              0,
+              0,
+              3308,
+              2339
+            ],
+            "mean_channel_variance": 1224.321,
+            "nonblank": true
+          },
+          {
+            "page": 9,
+            "pixels": [
+              3309,
+              2339
+            ],
+            "nonwhite_bbox": [
+              0,
+              0,
+              3308,
+              2339
+            ],
+            "mean_channel_variance": 705.497,
+            "nonblank": true
+          },
+          {
+            "page": 10,
+            "pixels": [
+              3309,
+              2339
+            ],
+            "nonwhite_bbox": [
+              0,
+              0,
+              3308,
+              2339
+            ],
+            "mean_channel_variance": 656.389,
+            "nonblank": true
+          },
+          {
+            "page": 11,
+            "pixels": [
+              3309,
+              2339
+            ],
+            "nonwhite_bbox": [
+              0,
+              0,
+              3308,
+              2339
+            ],
+            "mean_channel_variance": 2064.561,
+            "nonblank": true
+          },
+          {
+            "page": 12,
+            "pixels": [
+              3309,
+              2339
+            ],
+            "nonwhite_bbox": [
+              0,
+              0,
+              3308,
+              2339
+            ],
+            "mean_channel_variance": 2787.45,
+            "nonblank": true
+          }
+        ],
+        "ok": true
+      },
+      "failures": [],
+      "ok": true
+    },
+    {
+      "key": "a0_zh",
+      "path": "drawings/a0-boards.pdf",
+      "pages": 2,
+      "expected_pages": 2,
+      "format": "A0",
+      "media_boxes_pt": [
+        [
+          3370.08,
+          2383.92
+        ],
+        [
+          3370.08,
+          2383.92
+        ]
+      ],
+      "metadata": {
+        "title": "京张在场 / Jing-Zhang In Situ · A0",
+        "language": "zh-CN",
+        "marked": true,
+        "tagged_pdfinfo": "Tagged:          yes"
+      },
+      "structure_counts": {
+        "/Document": 1,
+        "/NonStruct": 436,
+        "/P": 16,
+        "/H1": 1,
+        "/Art": 37,
+        "/Figure": 7,
+        "Alt": 7,
+        "/Strong": 17,
+        "/H2": 2,
+        "/L": 2,
+        "/LI": 9,
+        "/Caption": 2,
+        "/H3": 19
+      },
+      "role_map": {
+        "/Strong": "/Span"
+      },
+      "bookmarks": [
+        "把 AI 变成三处可见、可接管、可验证、可撤回的城市界面",
+        "直接保留的不利 / 未知结果",
+        "AI 可辅助；人决定权利、安全、停止与复开",
+        "SC01 · 模型评测沙盒",
+        "SC02 · 边缘节点能效与热安全试验",
+        "SC03 · 具身智能无障碍共测",
+        "SC04 · 开放标准共创台",
+        "SC05 · 成果匹配诊所",
+        "SC06 · 共享中试排程助手",
+        "SC07 · 人才生活导航",
+        "SC08 · 无障碍路线伴行",
+        "SC09 · 站城换乘导览",
+        "SC10 · AI 原生产品公共试用室",
+        "SC11 · 京张记忆共读导览",
+        "SC12 · 可解释公共服务问答台",
+        "投诉 / 申诉",
+        "唯一首用",
+        "不利 / 未知保留",
+        "8 份主管来源",
+        "14 / 16 / 18 m²",
+        "NO-GO",
+        "6 / 6 桌面演练"
+      ],
+      "outline_assertion": null,
+      "page_tabs_structure_order": true,
+      "selectable_text": [
+        {
+          "page": 1,
+          "characters": 690,
+          "nonempty": true
+        },
+        {
+          "page": 2,
+          "characters": 3065,
+          "nonempty": true
+        }
+      ],
+      "required_term_presence": {
+        "Jing-Zhang In Situ": true,
+        "Human Takeover": true,
+        "SC10 + IM06": true,
+        "13": true,
+        "12/12": true
+      },
+      "direct_visibility": {},
+      "native_protocol_typography": {
+        "parser": "PyMuPDF 1.28.2",
+        "pages": [
+          {
+            "page": 2,
+            "region_y_pt": [
+              390.0,
+              1385.0
+            ],
+            "selectable_spans": 179,
+            "minimum_pt": 18.0,
+            "target_pt": 18.0,
+            "met": true
+          }
+        ],
+        "met": true
+      },
+      "font_target": {
+        "design_target_pt": 14.0,
+        "tolerance_pt": 0.01,
+        "per_page_minimum_pt": [
+          {
+            "page": 1,
+            "minimum_pt": 13.995
+          },
+          {
+            "page": 2,
+            "minimum_pt": 13.995
+          }
+        ],
+        "met": true
+      },
+      "fonts": [
+        {
+          "name": "AAAAAA+NotoSansSC-Thin",
+          "type": "CID TrueType",
+          "encoding": "Identity-H",
+          "embedded": "yes",
+          "subset": "yes",
+          "unicode": "yes"
+        },
+        {
+          "name": "BAAAAA+NotoSansSC-Thin",
+          "type": "CID TrueType",
+          "encoding": "Identity-H",
+          "embedded": "yes",
+          "subset": "yes",
+          "unicode": "yes"
+        }
+      ],
+      "render_200dpi": {
+        "renderer": "pdftoppm version 26.05.0",
+        "dpi": 200,
+        "images": 2,
+        "expected_images": 2,
+        "pages": [
+          {
+            "page": 1,
+            "pixels": [
+              9362,
+              6622
+            ],
+            "nonwhite_bbox": [
+              0,
+              0,
+              9362,
+              6622
+            ],
+            "mean_channel_variance": 1480.518,
+            "nonblank": true
+          },
+          {
+            "page": 2,
+            "pixels": [
+              9362,
+              6622
+            ],
+            "nonwhite_bbox": [
+              0,
+              0,
+              9362,
+              6622
+            ],
+            "mean_channel_variance": 1697.354,
+            "nonblank": true
+          }
+        ],
+        "ok": true
+      },
+      "failures": [],
+      "ok": true
+    },
+    {
+      "key": "a0_en",
+      "path": "drawings/a0-boards.en.pdf",
+      "pages": 2,
+      "expected_pages": 2,
+      "format": "A0",
+      "media_boxes_pt": [
+        [
+          3370.08,
+          2383.92
+        ],
+        [
+          3370.08,
+          2383.92
+        ]
+      ],
+      "metadata": {
+        "title": "Jing-Zhang In Situ / 京张在场 · A0",
+        "language": "en",
+        "marked": true,
+        "tagged_pdfinfo": "Tagged:          yes"
+      },
+      "structure_counts": {
+        "/Document": 1,
+        "/NonStruct": 436,
+        "/P": 16,
+        "/H1": 1,
+        "/Art": 37,
+        "/Figure": 7,
+        "Alt": 7,
+        "/Strong": 17,
+        "/H2": 2,
+        "/L": 2,
+        "/LI": 9,
+        "/Caption": 2,
+        "/H3": 19
+      },
+      "role_map": {
+        "/Strong": "/Span"
+      },
+      "bookmarks": [
+        "Make AI visible, takeover-ready, verifiable, and withdrawable at three urban interfaces",
+        "Adverse / unknown results retained directly",
+        "AI may assist; humans decide rights, safety, stop, and reopen",
+        "SC01 · Model Evaluation Sandbox",
+        "SC02 · Edge-Node Energy and Thermal-Safety Bench",
+        "SC03 · Embodied-AI Accessibility Co-Test",
+        "SC04 · Open-Standard Co-Creation Desk",
+        "SC05 · Research-to-Application Matching Clinic",
+        "SC06 · Shared Pilot Scheduling Assistant",
+        "SC07 · Talent Life Navigator",
+        "SC08 · Accessible Route Companion",
+        "SC09 · Station-City Transfer Guide",
+        "SC10 · AI-Native Product Public Trial Room",
+        "SC11 · Jing-Zhang Memory Co-Reading Guide",
+        "SC12 · Explainable Civic-Service Desk",
+        "COMPLAINT / APPEAL",
+        "SOLE FIRST USE",
+        "ADVERSE / UNKNOWN RETAINED",
+        "8 OFFICIAL SOURCES",
+        "14 / 16 / 18 m²",
+        "NO-GO",
+        "6 / 6 DESKTOP REPLAYS"
+      ],
+      "outline_assertion": {
+        "expected_count": 22,
+        "actual_count": 22,
+        "expected_titles": [
+          "Make AI visible, takeover-ready, verifiable, and withdrawable at three urban interfaces",
+          "Adverse / unknown results retained directly",
+          "AI may assist; humans decide rights, safety, stop, and reopen",
+          "SC01 · Model Evaluation Sandbox",
+          "SC02 · Edge-Node Energy and Thermal-Safety Bench",
+          "SC03 · Embodied-AI Accessibility Co-Test",
+          "SC04 · Open-Standard Co-Creation Desk",
+          "SC05 · Research-to-Application Matching Clinic",
+          "SC06 · Shared Pilot Scheduling Assistant",
+          "SC07 · Talent Life Navigator",
+          "SC08 · Accessible Route Companion",
+          "SC09 · Station-City Transfer Guide",
+          "SC10 · AI-Native Product Public Trial Room",
+          "SC11 · Jing-Zhang Memory Co-Reading Guide",
+          "SC12 · Explainable Civic-Service Desk",
+          "COMPLAINT / APPEAL",
+          "SOLE FIRST USE",
+          "ADVERSE / UNKNOWN RETAINED",
+          "8 OFFICIAL SOURCES",
+          "14 / 16 / 18 m²",
+          "NO-GO",
+          "6 / 6 DESKTOP REPLAYS"
+        ],
+        "actual_titles": [
+          "Make AI visible, takeover-ready, verifiable, and withdrawable at three urban interfaces",
+          "Adverse / unknown results retained directly",
+          "AI may assist; humans decide rights, safety, stop, and reopen",
+          "SC01 · Model Evaluation Sandbox",
+          "SC02 · Edge-Node Energy and Thermal-Safety Bench",
+          "SC03 · Embodied-AI Accessibility Co-Test",
+          "SC04 · Open-Standard Co-Creation Desk",
+          "SC05 · Research-to-Application Matching Clinic",
+          "SC06 · Shared Pilot Scheduling Assistant",
+          "SC07 · Talent Life Navigator",
+          "SC08 · Accessible Route Companion",
+          "SC09 · Station-City Transfer Guide",
+          "SC10 · AI-Native Product Public Trial Room",
+          "SC11 · Jing-Zhang Memory Co-Reading Guide",
+          "SC12 · Explainable Civic-Service Desk",
+          "COMPLAINT / APPEAL",
+          "SOLE FIRST USE",
+          "ADVERSE / UNKNOWN RETAINED",
+          "8 OFFICIAL SOURCES",
+          "14 / 16 / 18 m²",
+          "NO-GO",
+          "6 / 6 DESKTOP REPLAYS"
+        ],
+        "forbidden_glue": [],
+        "normalization_idempotent": true,
+        "exact_titles": true,
+        "ok": true
+      },
+      "page_tabs_structure_order": true,
+      "selectable_text": [
+        {
+          "page": 1,
+          "characters": 1700,
+          "nonempty": true
+        },
+        {
+          "page": 2,
+          "characters": 6616,
+          "nonempty": true
+        }
+      ],
+      "required_term_presence": {
+        "Jing-Zhang In Situ": true,
+        "Human Takeover": true,
+        "SC10 + IM06": true,
+        "13": true,
+        "12/12": true
+      },
+      "direct_visibility": {},
+      "native_protocol_typography": {
+        "parser": "PyMuPDF 1.28.2",
+        "pages": [
+          {
+            "page": 2,
+            "region_y_pt": [
+              390.0,
+              1385.0
+            ],
+            "selectable_spans": 190,
+            "minimum_pt": 18.0,
+            "target_pt": 18.0,
+            "met": true
+          }
+        ],
+        "met": true
+      },
+      "font_target": {
+        "design_target_pt": 14.0,
+        "tolerance_pt": 0.01,
+        "per_page_minimum_pt": [
+          {
+            "page": 1,
+            "minimum_pt": 13.995
+          },
+          {
+            "page": 2,
+            "minimum_pt": 13.995
+          }
+        ],
+        "met": true
+      },
+      "fonts": [
+        {
+          "name": "AAAAAA+NotoSansSC-Thin",
+          "type": "CID TrueType",
+          "encoding": "Identity-H",
+          "embedded": "yes",
+          "subset": "yes",
+          "unicode": "yes"
+        },
+        {
+          "name": "BAAAAA+NotoSansSC-Thin",
+          "type": "CID TrueType",
+          "encoding": "Identity-H",
+          "embedded": "yes",
+          "subset": "yes",
+          "unicode": "yes"
+        }
+      ],
+      "render_200dpi": {
+        "renderer": "pdftoppm version 26.05.0",
+        "dpi": 200,
+        "images": 2,
+        "expected_images": 2,
+        "pages": [
+          {
+            "page": 1,
+            "pixels": [
+              9362,
+              6622
+            ],
+            "nonwhite_bbox": [
+              0,
+              0,
+              9362,
+              6622
+            ],
+            "mean_channel_variance": 1484.272,
+            "nonblank": true
+          },
+          {
+            "page": 2,
+            "pixels": [
+              9362,
+              6622
+            ],
+            "nonwhite_bbox": [
+              0,
+              0,
+              9362,
+              6622
+            ],
+            "mean_channel_variance": 1695.068,
+            "nonblank": true
+          }
+        ],
+        "ok": true
+      },
+      "failures": [],
+      "ok": true
+    }
+  ],
+  "final_woff2_head_assertions": {
+    "source": "visual/assets/font-subset.css",
+    "decoded_payloads": 2,
+    "expected_timestamp": 2082840000,
+    "toolchain": {
+      "fontTools": "4.63.0",
+      "Brotli": "1.2.0"
+    },
+    "fonts": [
+      {
+        "weight": 400,
+        "woff2_bytes": 162236,
+        "head.created": 2082840000,
+        "head.modified": 2082840000
+      },
+      {
+        "weight": 700,
+        "woff2_bytes": 166056,
+        "head.created": 2082840000,
+        "head.modified": 2082840000
+      }
+    ],
+    "ok": true
+  },
+  "english_a3_header_separator_bbox": {
+    "parser": "PyMuPDF 1.28.2",
+    "required_pages": 11,
+    "required_intersections": 0,
+    "pages": [
+      {
+        "page": 2,
+        "figure": "F01",
+        "separator_bbox_pt": [
+          33.75,
+          132.0,
+          1156.5,
+          133.5
+        ],
+        "text_spans": [
+          {
+            "text": "Belt Overview: Twelve Candidate Transects Located",
+            "role": "title",
+            "bbox_pt": [
+              34.01,
+              87.52,
+              739.6,
+              128.06
+            ],
+            "gap_to_separator_pt": 3.94,
+            "intersects_separator": false
+          },
+          {
+            "text": "The extent is a constraint; the collaboration loop is the",
+            "role": "judgment",
+            "bbox_pt": [
+              810.82,
+              89.92,
+              1156.53,
+              108.74
+            ],
+            "gap_to_separator_pt": 23.26,
+            "intersects_separator": false
+          },
+          {
+            "text": "main story.",
+            "role": "judgment",
+            "bbox_pt": [
+              1085.09,
+              105.67,
+              1156.53,
+              124.49
+            ],
+            "gap_to_separator_pt": 7.51,
+            "intersects_separator": false
+          }
+        ],
+        "minimum_gap_pt": 3.94,
+        "intersections": 0
+      },
+      {
+        "page": 3,
+        "figure": "F02",
+        "separator_bbox_pt": [
+          33.75,
+          132.0,
+          1156.5,
+          133.5
+        ],
+        "text_spans": [
+          {
+            "text": "Shared Partition: Same Edges, Zero Gaps, Zero",
+            "role": "title",
+            "bbox_pt": [
+              34.01,
+              57.52,
+              670.22,
+              98.06
+            ],
+            "gap_to_separator_pt": 33.94,
+            "intersects_separator": false
+          },
+          {
+            "text": "Overlaps",
+            "role": "title",
+            "bbox_pt": [
+              34.01,
+              87.52,
+              156.78,
+              128.06
+            ],
+            "gap_to_separator_pt": 3.94,
+            "intersects_separator": false
+          },
+          {
+            "text": "Complete coverage supports recalculation, not statutory",
+            "role": "judgment",
+            "bbox_pt": [
+              797.61,
+              89.92,
+              1156.53,
+              108.74
+            ],
+            "gap_to_separator_pt": 23.26,
+            "intersects_separator": false
+          },
+          {
+            "text": "zoning or parcels.",
+            "role": "judgment",
+            "bbox_pt": [
+              1043.93,
+              105.67,
+              1156.53,
+              124.49
+            ],
+            "gap_to_separator_pt": 7.51,
+            "intersects_separator": false
+          }
+        ],
+        "minimum_gap_pt": 3.94,
+        "intersections": 0
+      },
+      {
+        "page": 4,
+        "figure": "F03",
+        "separator_bbox_pt": [
+          33.75,
+          132.0,
+          1156.5,
+          133.5
+        ],
+        "text_spans": [
+          {
+            "text": "Three Key Areas at One Comparative Scale",
+            "role": "title",
+            "bbox_pt": [
+              34.01,
+              87.52,
+              611.43,
+              128.06
+            ],
+            "gap_to_separator_pt": 3.94,
+            "intersects_separator": false
+          },
+          {
+            "text": "Zhongzhiyuan validates, AI Origin translates, and",
+            "role": "judgment",
+            "bbox_pt": [
+              844.37,
+              74.17,
+              1156.53,
+              92.99
+            ],
+            "gap_to_separator_pt": 39.01,
+            "intersects_separator": false
+          },
+          {
+            "text": "Dazhongsi hosts public trials; all three boundaries are",
+            "role": "judgment",
+            "bbox_pt": [
+              814.11,
+              89.92,
+              1156.53,
+              108.74
+            ],
+            "gap_to_separator_pt": 23.26,
+            "intersects_separator": false
+          },
+          {
+            "text": "provisional.",
+            "role": "judgment",
+            "bbox_pt": [
+              1080.46,
+              105.67,
+              1156.53,
+              124.49
+            ],
+            "gap_to_separator_pt": 7.51,
+            "intersects_separator": false
+          }
+        ],
+        "minimum_gap_pt": 3.94,
+        "intersections": 0
+      },
+      {
+        "page": 5,
+        "figure": "F04",
+        "separator_bbox_pt": [
+          33.75,
+          132.0,
+          1156.5,
+          133.5
+        ],
+        "text_spans": [
+          {
+            "text": "Responsibility Transects: Twelve Candidates, Three",
+            "role": "title",
+            "bbox_pt": [
+              34.01,
+              57.52,
+              736.8,
+              98.06
+            ],
+            "gap_to_separator_pt": 33.94,
+            "intersects_separator": false
+          },
+          {
+            "text": "Detailed",
+            "role": "title",
+            "bbox_pt": [
+              34.01,
+              87.52,
+              148.94,
+              128.06
+            ],
+            "gap_to_separator_pt": 3.94,
+            "intersects_separator": false
+          },
+          {
+            "text": "All twelve CX candidates remain unsurveyed; only CX02,",
+            "role": "judgment",
+            "bbox_pt": [
+              801.16,
+              89.92,
+              1156.53,
+              108.74
+            ],
+            "gap_to_separator_pt": 23.26,
+            "intersects_separator": false
+          },
+          {
+            "text": "CX05, and CX10 receive relational design targets.",
+            "role": "judgment",
+            "bbox_pt": [
+              847.36,
+              105.67,
+              1156.53,
+              124.49
+            ],
+            "gap_to_separator_pt": 7.51,
+            "intersects_separator": false
+          }
+        ],
+        "minimum_gap_pt": 3.94,
+        "intersections": 0
+      },
+      {
+        "page": 6,
+        "figure": "F05",
+        "separator_bbox_pt": [
+          33.75,
+          132.0,
+          1156.5,
+          133.5
+        ],
+        "text_spans": [
+          {
+            "text": "Evidence + Metrics: Adverse Results Stay Visible",
+            "role": "title",
+            "bbox_pt": [
+              34.01,
+              87.52,
+              684.14,
+              128.06
+            ],
+            "gap_to_separator_pt": 3.94,
+            "intersects_separator": false
+          },
+          {
+            "text": "Twenty-one metrics are known, six remain unknown, and",
+            "role": "judgment",
+            "bbox_pt": [
+              790.59,
+              74.17,
+              1156.53,
+              92.99
+            ],
+            "gap_to_separator_pt": 39.01,
+            "intersects_separator": false
+          },
+          {
+            "text": "nineteen are independently recomputable; adverse results",
+            "role": "judgment",
+            "bbox_pt": [
+              783.19,
+              89.92,
+              1156.53,
+              108.74
+            ],
+            "gap_to_separator_pt": 23.26,
+            "intersects_separator": false
+          },
+          {
+            "text": "stay visible.",
+            "role": "judgment",
+            "bbox_pt": [
+              1081.21,
+              105.67,
+              1156.53,
+              124.49
+            ],
+            "gap_to_separator_pt": 7.51,
+            "intersects_separator": false
+          }
+        ],
+        "minimum_gap_pt": 3.94,
+        "intersections": 0
+      },
+      {
+        "page": 7,
+        "figure": "F06",
+        "separator_bbox_pt": [
+          33.75,
+          132.0,
+          1156.5,
+          133.5
+        ],
+        "text_spans": [
+          {
+            "text": "Identity System: One Belt, Three Interfaces, One",
+            "role": "title",
+            "bbox_pt": [
+              34.01,
+              57.52,
+              693.71,
+              98.06
+            ],
+            "gap_to_separator_pt": 33.94,
+            "intersects_separator": false
+          },
+          {
+            "text": "Grammar",
+            "role": "title",
+            "bbox_pt": [
+              34.01,
+              87.52,
+              164.62,
+              128.06
+            ],
+            "gap_to_separator_pt": 3.94,
+            "intersects_separator": false
+          },
+          {
+            "text": "The shared language supports recognition, takeover,",
+            "role": "judgment",
+            "bbox_pt": [
+              821.26,
+              74.17,
+              1156.53,
+              92.99
+            ],
+            "gap_to_separator_pt": 39.01,
+            "intersects_separator": false
+          },
+          {
+            "text": "verification, and withdrawal without implying official",
+            "role": "judgment",
+            "bbox_pt": [
+              815.72,
+              89.92,
+              1156.53,
+              108.74
+            ],
+            "gap_to_separator_pt": 23.26,
+            "intersects_separator": false
+          },
+          {
+            "text": "identity.",
+            "role": "judgment",
+            "bbox_pt": [
+              1102.58,
+              105.67,
+              1156.53,
+              124.49
+            ],
+            "gap_to_separator_pt": 7.51,
+            "intersects_separator": false
+          }
+        ],
+        "minimum_gap_pt": 3.94,
+        "intersections": 0
+      },
+      {
+        "page": 8,
+        "figure": "F07",
+        "separator_bbox_pt": [
+          33.75,
+          132.0,
+          1156.5,
+          133.5
+        ],
+        "text_spans": [
+          {
+            "text": "AI Innovation Ecosystem: Three Areas + Two Wings",
+            "role": "title",
+            "bbox_pt": [
+              34.01,
+              87.52,
+              721.6,
+              128.06
+            ],
+            "gap_to_separator_pt": 3.94,
+            "intersects_separator": false
+          },
+          {
+            "text": "Space, talent, compute, data, scenarios, and governance",
+            "role": "judgment",
+            "bbox_pt": [
+              797.82,
+              89.92,
+              1156.53,
+              108.74
+            ],
+            "gap_to_separator_pt": 23.26,
+            "intersects_separator": false
+          },
+          {
+            "text": "form a gated, auditable loop.",
+            "role": "judgment",
+            "bbox_pt": [
+              972.2,
+              105.67,
+              1156.53,
+              124.49
+            ],
+            "gap_to_separator_pt": 7.51,
+            "intersects_separator": false
+          }
+        ],
+        "minimum_gap_pt": 3.94,
+        "intersections": 0
+      },
+      {
+        "page": 9,
+        "figure": "F08",
+        "separator_bbox_pt": [
+          33.75,
+          132.0,
+          1156.5,
+          133.5
+        ],
+        "text_spans": [
+          {
+            "text": "Twelve Scenario Protocols: AI Authority + Human",
+            "role": "title",
+            "bbox_pt": [
+              34.01,
+              57.52,
+              704.1,
+              98.06
+            ],
+            "gap_to_separator_pt": 33.94,
+            "intersects_separator": false
+          },
+          {
+            "text": "Takeover",
+            "role": "title",
+            "bbox_pt": [
+              34.01,
+              87.52,
+              159.41,
+              128.06
+            ],
+            "gap_to_separator_pt": 3.94,
+            "intersects_separator": false
+          },
+          {
+            "text": "Every scenario states what AI may do, what humans alone",
+            "role": "judgment",
+            "bbox_pt": [
+              789.38,
+              74.17,
+              1156.53,
+              92.99
+            ],
+            "gap_to_separator_pt": 39.01,
+            "intersects_separator": false
+          },
+          {
+            "text": "decide, how takeover works, the low-tech fallback, and",
+            "role": "judgment",
+            "bbox_pt": [
+              805.58,
+              89.92,
+              1156.53,
+              108.74
+            ],
+            "gap_to_separator_pt": 23.26,
+            "intersects_separator": false
+          },
+          {
+            "text": "the exit path.",
+            "role": "judgment",
+            "bbox_pt": [
+              1071.8,
+              105.67,
+              1156.53,
+              124.49
+            ],
+            "gap_to_separator_pt": 7.51,
+            "intersects_separator": false
+          }
+        ],
+        "minimum_gap_pt": 3.94,
+        "intersections": 0
+      },
+      {
+        "page": 10,
+        "figure": "F09",
+        "separator_bbox_pt": [
+          33.75,
+          132.0,
+          1156.5,
+          133.5
+        ],
+        "text_spans": [
+          {
+            "text": "Three Landmarks + Open Contribution Ledger +",
+            "role": "title",
+            "bbox_pt": [
+              34.01,
+              57.52,
+              686.38,
+              98.06
+            ],
+            "gap_to_separator_pt": 33.94,
+            "intersects_separator": false
+          },
+          {
+            "text": "Components",
+            "role": "title",
+            "bbox_pt": [
+              34.01,
+              87.52,
+              209.78,
+              128.06
+            ],
+            "gap_to_separator_pt": 3.94,
+            "intersects_separator": false
+          },
+          {
+            "text": "Contributions are reviewable, correctable, and",
+            "role": "judgment",
+            "bbox_pt": [
+              859.03,
+              74.17,
+              1156.53,
+              92.99
+            ],
+            "gap_to_separator_pt": 39.01,
+            "intersects_separator": false
+          },
+          {
+            "text": "withdrawable; conceptual components remain reversible,",
+            "role": "judgment",
+            "bbox_pt": [
+              788.46,
+              89.92,
+              1156.52,
+              108.74
+            ],
+            "gap_to_separator_pt": 23.26,
+            "intersects_separator": false
+          },
+          {
+            "text": "maintainable, and removable.",
+            "role": "judgment",
+            "bbox_pt": [
+              964.23,
+              105.67,
+              1156.53,
+              124.49
+            ],
+            "gap_to_separator_pt": 7.51,
+            "intersects_separator": false
+          }
+        ],
+        "minimum_gap_pt": 3.94,
+        "intersections": 0
+      },
+      {
+        "page": 11,
+        "figure": "F10",
+        "separator_bbox_pt": [
+          33.75,
+          132.0,
+          1156.5,
+          133.5
+        ],
+        "text_spans": [
+          {
+            "text": "Culture + Wayfinding: Time as a Spatial Coordinate",
+            "role": "title",
+            "bbox_pt": [
+              34.01,
+              87.52,
+              727.56,
+              128.06
+            ],
+            "gap_to_separator_pt": 3.94,
+            "intersects_separator": false
+          },
+          {
+            "text": "Jing-Zhang rail memory, Zhongguancun innovation, and",
+            "role": "judgment",
+            "bbox_pt": [
+              797.94,
+              89.92,
+              1156.53,
+              108.74
+            ],
+            "gap_to_separator_pt": 23.26,
+            "intersects_separator": false
+          },
+          {
+            "text": "transparent AI remain distinct.",
+            "role": "judgment",
+            "bbox_pt": [
+              961.51,
+              105.67,
+              1156.53,
+              124.49
+            ],
+            "gap_to_separator_pt": 7.51,
+            "intersects_separator": false
+          }
+        ],
+        "minimum_gap_pt": 3.94,
+        "intersections": 0
+      },
+      {
+        "page": 12,
+        "figure": "F11",
+        "separator_bbox_pt": [
+          33.75,
+          132.0,
+          1156.5,
+          133.5
+        ],
+        "text_spans": [
+          {
+            "text": "Operate, Take Over, Appeal, Stop, and Remove",
+            "role": "title",
+            "bbox_pt": [
+              34.01,
+              87.52,
+              667.28,
+              128.06
+            ],
+            "gap_to_separator_pt": 3.94,
+            "intersects_separator": false
+          },
+          {
+            "text": "Nine states, fifteen transitions, the sole SC10+IM06 first",
+            "role": "judgment",
+            "bbox_pt": [
+              804.88,
+              74.17,
+              1156.53,
+              92.99
+            ],
+            "gap_to_separator_pt": 39.01,
+            "intersects_separator": false
+          },
+          {
+            "text": "use, complaint and appeal, and thirteen adverse",
+            "role": "judgment",
+            "bbox_pt": [
+              848.5,
+              89.92,
+              1156.52,
+              108.74
+            ],
+            "gap_to_separator_pt": 23.26,
+            "intersects_separator": false
+          },
+          {
+            "text": "dispositions jointly constrain exit.",
+            "role": "judgment",
+            "bbox_pt": [
+              940.77,
+              105.67,
+              1156.53,
+              124.49
+            ],
+            "gap_to_separator_pt": 7.51,
+            "intersects_separator": false
+          }
+        ],
+        "minimum_gap_pt": 3.94,
+        "intersections": 0
+      }
+    ],
+    "total_intersections": 0,
+    "ok": true
+  },
+  "failures": [],
+  "ok": true
+}

@@ -91,6 +91,91 @@
       ],
       "metric_kind": "conceptual_design_quantity"
     },
+    "dazhongsi_mvp_key_area_sqm": {
+      "status": "known",
+      "value": 720454.219,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "area(PROV-KEY-003, EPSG:4548)",
+      "confidence": "low",
+      "assumptions": [
+        "Recalculated from the provisional key-area polygon; not an official boundary or approved area."
+      ],
+      "metric_kind": "provisional_recalculation"
+    },
+    "dazhongsi_mvp_reversible_room_footprint_sqm": {
+      "status": "known",
+      "value": 13361.508,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "union_area(BLDG-005, BLDG-006, EPSG:4548)",
+      "confidence": "low",
+      "assumptions": [
+        "Conceptual reversible room test fits; not surveyed buildings or approved envelopes."
+      ],
+      "metric_kind": "conceptual_design_quantity"
+    },
+    "dazhongsi_mvp_public_receipt_space_sqm": {
+      "status": "known",
+      "value": 32739.258,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "area(PUBLIC-003, EPSG:4548)",
+      "confidence": "low",
+      "assumptions": [
+        "Conceptual public-space polygon; not an ownership or statutory public-space conclusion."
+      ],
+      "metric_kind": "conceptual_design_quantity"
+    },
+    "dazhongsi_mvp_route_length_m": {
+      "status": "known",
+      "value": 1614.218,
+      "unit": "m",
+      "source_files": [
+        "geometry/key_areas.geojson",
+        "geometry/roads.geojson"
+      ],
+      "formula": "union_length(intersection([ROAD-001, ROAD-003], PROV-KEY-003), EPSG:4548)",
+      "confidence": "low",
+      "assumptions": [
+        "Conceptual internal route only; barriers, station entrances, rights, accessibility and engineering remain unverified."
+      ],
+      "metric_kind": "conceptual_design_quantity"
+    },
+    "dazhongsi_mvp_scenario_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "count(SCENARIO_NODE where mvp_id == DAZHONGSI-MVP-01)",
+      "confidence": "high",
+      "assumptions": [
+        "All three locations are conceptual test points pending survey."
+      ]
+    },
+    "dazhongsi_mvp_no_data_route_coverage_ratio": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "geometry/roads.geojson"
+      ],
+      "formula": "MVP scenarios with no_data_equivalent and human_review / all MVP scenarios",
+      "confidence": "low",
+      "assumptions": [
+        "Design target only; equivalent completion time, price, failure rate and accessibility require rehearsal before operation."
+      ],
+      "metric_kind": "design_target"
+    },
     "floor_area_ratio": {
       "status": "unknown",
       "value": null,
@@ -194,6 +279,351 @@
         "Conceptual governance target; operating and legal arrangements are unconfirmed."
       ],
       "metric_kind": "design_target"
+    },
+    "dazhongsi_drill_case_total": {
+      "status": "known",
+      "value": 21,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/dazhongsi-drill-tests.json",
+        "visual/assets/dazhongsi-drill-test-runner.js"
+      ],
+      "formula": "dazhongsi-drill-tests.json expected_case_count; recompute: node visual/assets/dazhongsi-drill-test-runner.js --json",
+      "confidence": "low",
+      "assumptions": [
+        "Synthetic contract tests over the DAZHONGSI-FIELD-OPS-01 template only; they prove reproducible contract logic, not field truth, site access, permission, or operability."
+      ],
+      "metric_kind": "synthetic_contract_test"
+    },
+    "dazhongsi_drill_case_passed": {
+      "status": "known",
+      "value": 21,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/dazhongsi-drill-tests.json",
+        "visual/assets/dazhongsi-drill-test-runner.js"
+      ],
+      "formula": "runner summary.passed while exit code = 0; any failed case forces exit 1 and this value is invalid",
+      "confidence": "low",
+      "assumptions": [
+        "Synthetic contract tests over the DAZHONGSI-FIELD-OPS-01 template only; they prove reproducible contract logic, not field truth, site access, permission, or operability."
+      ],
+      "metric_kind": "synthetic_contract_test"
+    },
+    "dazhongsi_drill_negative_fixture_fail_closed_total": {
+      "status": "known",
+      "value": 8,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/dazhongsi-drill-tests.json",
+        "visual/assets/dazhongsi-drill-test-runner.js"
+      ],
+      "formula": "negative fixtures that make the runner exit 1 under --self-test / all 8 declared fixtures",
+      "confidence": "low",
+      "assumptions": [
+        "Synthetic contract tests over the DAZHONGSI-FIELD-OPS-01 template only; they prove reproducible contract logic, not field truth, site access, permission, or operability."
+      ],
+      "metric_kind": "synthetic_contract_test"
+    },
+    "dazhongsi_drill_category_coverage_ratio": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/dazhongsi-drill-tests.json",
+        "visual/assets/dazhongsi-drill-test-runner.js"
+      ],
+      "formula": "covered required categories (positive, negative, withdrawal, service_interruption, recovery, accessibility) / 6",
+      "confidence": "low",
+      "assumptions": [
+        "Synthetic contract tests over the DAZHONGSI-FIELD-OPS-01 template only; they prove reproducible contract logic, not field truth, site access, permission, or operability."
+      ],
+      "metric_kind": "synthetic_contract_test"
+    },
+    "expiring_ticket_synthetic_case_total": {
+      "status": "known",
+      "value": 2,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/expiring-data-ticket-protocol.json",
+        "visual/assets/evidence-consistency.js"
+      ],
+      "formula": "count(EXPIRING-DATA-TICKET-01.synthetic_rehearsals); recompute: node visual/assets/evidence-consistency.js --json",
+      "confidence": "low",
+      "assumptions": [
+        "E2 synthetic contract cases only; no field or stakeholder evidence has been collected."
+      ],
+      "metric_kind": "synthetic_contract_test"
+    },
+    "expiring_ticket_synthetic_case_passed": {
+      "status": "known",
+      "value": 2,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/expiring-data-ticket-protocol.json",
+        "visual/assets/evidence-consistency.js"
+      ],
+      "formula": "cases whose instantiated ticket, single-node scope, event-derived ticket/execution coupling, observation-batch parity, six paired accessibility fixtures, applicable SLA observations, substantiated public return, residual crosswalk and artifact records all pass; any failure forces audit exit 1",
+      "confidence": "low",
+      "assumptions": [
+        "E2 synthetic pass status does not prove site access, operating performance, a legal role, professional approval or implementation."
+      ],
+      "metric_kind": "synthetic_contract_test"
+    },
+    "expiring_ticket_negative_path_fail_closed_total": {
+      "status": "known",
+      "value": 10,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/expiring-data-ticket-protocol.json",
+        "visual/assets/evidence-consistency.js"
+      ],
+      "formula": "declared in-memory mutations rejected / ten declared mutations: post-term unauthorized release, raw export, undersized aggregate output, unmapped derivative, missing stopping coupling, missing public-return deliverable, below-target public value, empty return evidence, unauthorized cross-node scope, and both routes failing the same accessibility task",
+      "confidence": "low",
+      "assumptions": [
+        "The passing result means the illegal synthetic action was blocked; it is not evidence that withdrawal fails."
+      ],
+      "metric_kind": "synthetic_contract_test"
+    },
+    "expiring_ticket_no_data_rule_coverage_ratio": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/expiring-data-ticket-protocol.json",
+        "visual/assets/evidence-consistency.js"
+      ],
+      "formula": "passed no-data equivalence checks / all applicable checks (22 / 22 across two cases): attempts, both time conditions, price, failures, core schema, safety alerts, 6 tasks x 2 routes of synthetic accessibility-fixture coverage, human takeover and complaint channels; no observed usability performance",
+      "confidence": "low",
+      "assumptions": [
+        "Thresholds are executable E2 design gates pending authorized E3 field measurement and E4 professional/operator confirmation."
+      ],
+      "metric_kind": "synthetic_contract_test"
+    },
+    "expiring_ticket_conditional_artifact_coverage_ratio": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/expiring-data-ticket-protocol.json",
+        "visual/assets/evidence-consistency.js"
+      ],
+      "formula": "valid artifact records / conditionally required records (24 / 24 across two cases); each record must satisfy minimum fields, identity, role, state, timestamp and resolvable content pointers",
+      "confidence": "low",
+      "assumptions": [
+        "Synthetic record coverage proves a machine-readable E2 evidence contract, not that field artifacts or responsible entities exist."
+      ],
+      "metric_kind": "synthetic_contract_test"
+    },
+    "synthetic_capacity_resource_gate_total": {
+      "status": "known",
+      "value": 4,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/expiring-data-ticket-protocol.json",
+        "visual/assets/evidence-consistency.js"
+      ],
+      "formula": "count(SCN06-C010204-SYNTHETIC-CAPACITY-01.resource_models); recompute: node visual/assets/evidence-consistency.js --json",
+      "confidence": "low",
+      "assumptions": [
+        "E2 synthetic admission envelope only; no real staffing, hardware, engineering, facility, cost, operator, approval or field capacity is confirmed."
+      ],
+      "metric_kind": "synthetic_contract_test"
+    },
+    "synthetic_capacity_resource_gate_passed": {
+      "status": "known",
+      "value": 4,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/expiring-data-ticket-protocol.json",
+        "visual/assets/evidence-consistency.js"
+      ],
+      "formula": "resource models whose available units, 60-minute throughput, headroom and utilization recompute exactly and whose applicable reserve gate passes / 4",
+      "confidence": "low",
+      "assumptions": [
+        "E2 synthetic admission envelope only; no real staffing, hardware, engineering, facility, cost, operator, approval or field capacity is confirmed."
+      ],
+      "metric_kind": "synthetic_contract_test"
+    },
+    "synthetic_capacity_project_gate_passed": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/expiring-data-ticket-protocol.json",
+        "visual/assets/evidence-consistency.js"
+      ],
+      "formula": "unique project_ids (C-01, C-02, C-04) for which every synthetic resource and route-reserve gate passes",
+      "confidence": "low",
+      "assumptions": [
+        "E2 synthetic admission envelope only; no real staffing, hardware, engineering, facility, cost, operator, approval or field capacity is confirmed."
+      ],
+      "metric_kind": "synthetic_contract_test"
+    },
+    "synthetic_capacity_negative_path_fail_closed_total": {
+      "status": "known",
+      "value": 5,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/expiring-data-ticket-protocol.json",
+        "visual/assets/evidence-consistency.js"
+      ],
+      "formula": "declared in-memory capacity mutations rejected / five declared mutations: calculation drift, demand above capacity, borrowed no-data units, removed stop reserve and false field confirmation",
+      "confidence": "low",
+      "assumptions": [
+        "E2 synthetic admission envelope only; no real staffing, hardware, engineering, facility, cost, operator, approval or field capacity is confirmed."
+      ],
+      "metric_kind": "synthetic_contract_test"
+    },
+    "synthetic_capacity_minimum_headroom_requests": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/expiring-data-ticket-protocol.json",
+        "visual/assets/evidence-consistency.js"
+      ],
+      "formula": "min(floor(60 * (declared_parallel_units - protected_reserve_units) / service_minutes_per_request) - demand_requests_per_window) over four synthetic resource models",
+      "confidence": "low",
+      "assumptions": [
+        "E2 synthetic admission envelope only; no real staffing, hardware, engineering, facility, cost, operator, approval or field capacity is confirmed."
+      ],
+      "metric_kind": "synthetic_contract_test"
+    },
+    "synthetic_capacity_no_data_to_data_capacity_ratio": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/expiring-data-ticket-protocol.json",
+        "visual/assets/evidence-consistency.js"
+      ],
+      "formula": "recalculated C-02 no-data-route capacity_requests_per_window / recalculated C-02 data-route capacity_requests_per_window",
+      "confidence": "low",
+      "assumptions": [
+        "E2 synthetic admission envelope only; no real staffing, hardware, engineering, facility, cost, operator, approval or field capacity is confirmed."
+      ],
+      "metric_kind": "synthetic_contract_test"
+    },
+    "brand_identity_contrast_pair_total": {
+      "status": "known",
+      "value": 15,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/brand-identity-system.json",
+        "visual/assets/brand-identity-audit.js"
+      ],
+      "formula": "count(BRAND-IDENTITY-01.palette.declared_pairs) ; recompute: node visual/assets/brand-identity-audit.js --json",
+      "confidence": "low",
+      "assumptions": [
+        "E2 accessibility gate only; no brand user testing, trademark clearance or professional brand review has been performed."
+      ],
+      "metric_kind": "synthetic_contract_test"
+    },
+    "brand_identity_contrast_pair_passed": {
+      "status": "known",
+      "value": 15,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/brand-identity-system.json",
+        "visual/assets/brand-identity-audit.js"
+      ],
+      "formula": "count(declared_pairs where recomputed WCAG contrast >= max(pair.required_min_contrast, usage gate)) ; recompute: node visual/assets/brand-identity-audit.js --json",
+      "confidence": "low",
+      "assumptions": [
+        "Contrast ratios are recomputed by the audit from hex values; they are laboratory gates, not observed legibility."
+      ],
+      "metric_kind": "synthetic_contract_test"
+    },
+    "brand_identity_lockup_bilingual_coverage_ratio": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/brand-identity-system.json",
+        "visual/assets/brand-identity-audit.js"
+      ],
+      "formula": "present_lockups(zh,en,bilingual)/3 ; recompute: node visual/assets/brand-identity-audit.js --json",
+      "confidence": "low",
+      "assumptions": [
+        "Coverage proves the declared lockup files exist and match the register; it does not prove international-audience effectiveness."
+      ],
+      "metric_kind": "synthetic_contract_test"
+    },
+    "brand_identity_no_color_only_coverage_ratio": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/brand-identity-system.json",
+        "visual/assets/brand-identity-audit.js"
+      ],
+      "formula": "(state tokens with unique shape + bilingual label + registered color + line roles distinguished by dash)/6 tokens ; recompute: node visual/assets/brand-identity-audit.js --json",
+      "confidence": "low",
+      "assumptions": [
+        "No-color-only coding is verified structurally; real color-vision user testing remains 0 observed users."
+      ],
+      "metric_kind": "synthetic_contract_test"
+    },
+    "brand_identity_application_anchor_coverage_ratio": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/brand-identity-system.json",
+        "visual/assets/brand-identity-audit.js"
+      ],
+      "formula": "applications whose anchor resolves to an existing package feature or template kind / 7 ; recompute: node visual/assets/brand-identity-audit.js --json",
+      "confidence": "low",
+      "assumptions": [
+        "All seven applications are template_only; anchors resolve inside this package but nothing is built, scheduled or commissioned."
+      ],
+      "metric_kind": "synthetic_contract_test"
+    },
+    "brand_identity_negative_fixture_fail_closed_total": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/brand-identity-system.json",
+        "visual/assets/brand-identity-audit.js"
+      ],
+      "formula": "count(BRAND-IDENTITY-01.negative_fixtures) verified by --self-test ; recompute: node visual/assets/brand-identity-audit.js --json",
+      "confidence": "low",
+      "assumptions": [
+        "Six in-memory mutations must each fail the audit; a passing mutation indicates audit drift, not brand quality."
+      ],
+      "metric_kind": "synthetic_contract_test"
+    },
+    "brand_identity_audit_case_total": {
+      "status": "known",
+      "value": 14,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/brand-identity-system.json",
+        "visual/assets/brand-identity-audit.js"
+      ],
+      "formula": "fixed audit check groups in brand-identity-audit.js ; recompute: node visual/assets/brand-identity-audit.js --json",
+      "confidence": "low",
+      "assumptions": [
+        "Check count is part of the audit contract; changing it requires updating this metric and the audit together."
+      ],
+      "metric_kind": "synthetic_contract_test"
+    },
+    "brand_identity_audit_case_passed": {
+      "status": "known",
+      "value": 14,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/brand-identity-system.json",
+        "visual/assets/brand-identity-audit.js"
+      ],
+      "formula": "check groups passing against the current register, assets, figures and metrics ; recompute: node visual/assets/brand-identity-audit.js --json",
+      "confidence": "low",
+      "assumptions": [
+        "Passing checks prove internal consistency of an original E2 identity specification, not adoption or recognition."
+      ],
+      "metric_kind": "synthetic_contract_test"
     }
   }
 }

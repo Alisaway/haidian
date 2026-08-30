@@ -69,7 +69,7 @@ function draw(){
     if(ST[i+1].sb)leg++;
   }
   if(layer('rl-stitch')){
-    ctx.font='11px sans-serif';
+    ctx.font='11px "Noto Sans SC Embedded",sans-serif';
     STITCH.forEach(function(s){ctx.strokeStyle=s.pri?PAL.red:PAL.amber;ctx.lineWidth=s.pri?2.5:1.5;
       ctx.beginPath();ctx.moveTo(s.x-9,s.y-9);ctx.lineTo(s.x+9,s.y+9);ctx.moveTo(s.x+9,s.y-9);ctx.lineTo(s.x-9,s.y+9);ctx.stroke();
       ctx.fillStyle=PAL.grey;ctx.fillText(lang==='zh'?s.zh:s.en,s.x+13,s.y+4);});
@@ -85,10 +85,10 @@ function draw(){
       s.cards.forEach(function(c,j){var stt=CARDS[c].s;ctx.beginPath();ctx.arc(s.x+r+8+j*14,s.y-r-6,5,0,7);
         if(stt==='yellow'){ctx.fillStyle=PAL.amber;ctx.fill();}else{ctx.strokeStyle=PAL.green;ctx.lineWidth=2.5;ctx.stroke();}});
     }
-    ctx.fillStyle=PAL.ink;ctx.font=(s.origin?'bold 15px':'13px')+' sans-serif';
+    ctx.fillStyle=PAL.ink;ctx.font=(s.origin?'bold 15px':'13px')+' "Noto Sans SC Embedded",sans-serif';
     ctx.fillText(s.k+' '+(lang==='zh'?s.zh:s.en),s.x-r,s.y+r+17);
   });
-  ctx.fillStyle=PAL.grey;ctx.font='12px sans-serif';
+  ctx.fillStyle=PAL.grey;ctx.font='12px "Noto Sans SC Embedded",sans-serif';
   ctx.fillText(I18N[lang].dir,16,24);
   if(!reduced){raf=window.requestAnimationFrame(function(){pulse++;draw();});}
 }

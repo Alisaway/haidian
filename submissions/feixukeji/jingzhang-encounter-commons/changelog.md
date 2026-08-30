@@ -2,6 +2,32 @@
 
 Change log / 变更记录
 
+## v1.9 - 2026-08-27
+
+- Closed the review renderer blockers: both long-form reports now load regenerated offline `Encounter Sans` subsets covering every current HTML glyph; the English language switch and raster figures are fully English; and the required figure footers now match v1.9.
+- Completed the taskbook semantics behind the identifiers: the bilingual proposal now maps all three official positionings, five functions, and the Three Zones and Two Wings collaboration loop, and adds developer-community, international-communication, and attraction-to-conversion mechanisms with explicit authorisation and exit boundaries.
+- Added a bilingual, independently readable AI innovation ecosystem map connecting eight resources, Three Zones and Two Wings, and the reversible public-problem-to-review loop; the diagram is original, programmatically generated, non-geographic, and visible in the proposal, offline HTML, and updated A3/A0 publications.
+- Added unknown-but-computable contracts for the AI Innovation Index, talent density, and AI industry output, including formulas, missing-data reasons, data requirements, and recalculation triggers instead of fabricated values.
+- Expanded all three mandatory key-area responses into area-specific concept strategies, evidence gaps, and professional deepening triggers while preserving the provisional-boundary constraint.
+- Migrated the manifest to schema 0.2, declared every package file, converted the shared logo to a text-free neutral mark, and raised visual-page body-text contrast to WCAG 2.1 AA.
+- Closed the latest deterministic-review findings by limiting claim-adjacent citations to three, aligning glossary terms, removing a disallowed executable from the review package, and explicitly mapping “1+X+1,” innovation actors, AI+ verticals, service interfaces, and proportion-setting triggers.
+- Localised every AI-concept image notice in the four publications: Chinese PDFs now use Chinese-only captions and English PDFs use English-only captions, with larger single-line labels and no hidden bilingual residue.
+
+## v1.8 - 2026-08-26
+
+- Migrated `LU-003` from the superseded commercial-service code `05` to current code `09` under the numeric system in 自然资发〔2023〕234号; `05` is now treated only as wetland, and the bilingual land-use figure and generator follow the same registry.
+- Added independent `standard_ids` to all 23 compliance rows, removed dangling legacy self-check IDs, and kept source, standard, requirement, key-area, scenario, and simulation-case namespaces explicit and separate.
+- Reconciled evidence locators after the v1.7 publication reorder: drawing references now use zero-padded `A3 P01–P16` and `A0 B01–B07`, while land-use and blue-green claims point directly to the figures and GeoJSON that actually support them.
+- Replaced story-order numerals with namespaced `FLOW-A/B/C` labels plus fixed `PROV-KEY` mappings, clarified the two scenario-ID namespaces in `simulation.json`, removed unsupported inline assumption tokens from readable prose, and updated the publication metadata to v1.8.
+- Widened text-heavy figures in both offline HTML publications and added 22 visible, keyboard-focusable links to the full-resolution bilingual originals so detailed labels remain available at human reading scale.
+
+## v1.7 - 2026-08-26
+
+- Rebuilt the bilingual opening around one human journey, three commons experiences, and one implementation-readiness evidence set; shortened the claim and moved boundary language after the story.
+- Added a project-specific AI-generated cover visual, local subset fonts for reliable Chinese rendering, and an explicit media provenance record; the cover remains presentation-only, not site evidence.
+- Added a machine-readable offline simulation with 13 tasks, 18 passing assertions, all 64 spatial Boolean combinations, and 9 expected rejections; these are contract checks, not field or service performance.
+- Reworked the web and XeLaTeX publication fronts so the same human-scale narrative and proof hierarchy carries across the submission.
+
 ## v1.6 - 2026-08-10
 
 - Rewrote the bilingual proposal, offline visual pages, and publication microcopy in shorter, more direct language while preserving every evidence tag, metric, stop condition, and machine-readable status.

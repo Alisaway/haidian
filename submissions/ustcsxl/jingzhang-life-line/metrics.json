@@ -1,0 +1,397 @@
+{
+  "schema_version": "0.1.0",
+  "units": {
+    "length": "m",
+    "area": "sqm"
+  },
+  "metrics": {
+    "coordinated_research_area_sqm": {
+      "status": "known",
+      "value": 43600000,
+      "unit": "sqm",
+      "source_files": [
+        "brief/public-brief.md"
+      ],
+      "formula": "announced approximately 43.6 km2",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "announced_key_area_total_sqm": {
+      "status": "known",
+      "value": 3684000,
+      "unit": "sqm",
+      "source_files": [
+        "brief/public-brief.md"
+      ],
+      "formula": "192.1 ha + 104.3 ha + 72.0 ha",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "site_area_sqm": {
+      "status": "known",
+      "value": 11412825.386,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "area(EPSG:4548 submitted provisional site polygon)",
+      "confidence": "medium",
+      "assumptions": [
+        "A-BOUNDARY-001"
+      ]
+    },
+    "green_space_area_sqm": {
+      "status": "known",
+      "value": 3373435.043,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/green_space.geojson"
+      ],
+      "formula": "area(union of concept green-space polygons in EPSG:4548)",
+      "confidence": "low",
+      "assumptions": [
+        "A-BOUNDARY-001",
+        "A-HYDROLOGY-001"
+      ]
+    },
+    "public_space_area_sqm": {
+      "status": "known",
+      "value": 2022870.893,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "area(union of concept public-space polygons in EPSG:4548)",
+      "confidence": "low",
+      "assumptions": [
+        "A-BOUNDARY-001",
+        "A-SITE-VERIFY-001"
+      ]
+    },
+    "building_footprint_area_sqm": {
+      "status": "known",
+      "value": 478431.971,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "area(union of conceptual carrier envelopes in EPSG:4548)",
+      "confidence": "low",
+      "assumptions": [
+        "A-SITE-VERIFY-001"
+      ]
+    },
+    "green_ratio": {
+      "status": "known",
+      "value": 0.295583,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/green_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "green_space_area_sqm / site_area_sqm",
+      "confidence": "low",
+      "assumptions": [
+        "A-BOUNDARY-001",
+        "A-HYDROLOGY-001"
+      ]
+    },
+    "public_space_ratio": {
+      "status": "known",
+      "value": 0.177245,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "public_space_area_sqm / site_area_sqm",
+      "confidence": "low",
+      "assumptions": [
+        "A-BOUNDARY-001",
+        "A-SITE-VERIFY-001"
+      ]
+    },
+    "building_footprint_ratio": {
+      "status": "known",
+      "value": 0.041921,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/buildings.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "building_footprint_area_sqm / site_area_sqm",
+      "confidence": "low",
+      "assumptions": [
+        "A-SITE-VERIFY-001"
+      ]
+    },
+    "life_line_length_m": {
+      "status": "known",
+      "value": 9659.112,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson"
+      ],
+      "formula": "length(ROAD-LIFELINE-001 in EPSG:4548)",
+      "confidence": "low",
+      "assumptions": [
+        "A-ACCESS-001"
+      ]
+    },
+    "key_area_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "count(required key-area concept frames)",
+      "confidence": "high",
+      "assumptions": [
+        "A-KEYAREA-001"
+      ]
+    },
+    "resilience_station_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/key_areas.geojson",
+        "proposal.md"
+      ],
+      "formula": "count(three key-area resilience stations)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "connector_audit_count": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": [
+        "geometry/roads.geojson"
+      ],
+      "formula": "count(ROAD-SEAM-* accessible verification routes)",
+      "confidence": "high",
+      "assumptions": [
+        "A-ACCESS-001"
+      ]
+    },
+    "scenario_card_count": {
+      "status": "known",
+      "value": 12,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "simulation.json"
+      ],
+      "formula": "count(S01..S12 scenario cards)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "industrial_test_scenario_count": {
+      "status": "known",
+      "value": 4,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "simulation.json"
+      ],
+      "formula": "count(S05..S08 bounded test scenarios)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "persona_count": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(PER-01..PER-06 design personas)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "landmark_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(three contribution-oriented pilgrimage landmarks)",
+      "confidence": "high",
+      "assumptions": [
+        "A-HERITAGE-001"
+      ]
+    },
+    "project_count": {
+      "status": "known",
+      "value": 12,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "geometry/phasing.geojson"
+      ],
+      "formula": "count(P01..P12 implementation inventory)",
+      "confidence": "high",
+      "assumptions": [
+        "A-OPERATIONS-001"
+      ]
+    },
+    "phase_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/phasing.geojson"
+      ],
+      "formula": "count(concept evidence-gated implementation phases)",
+      "confidence": "high",
+      "assumptions": [
+        "A-OPERATIONS-001"
+      ]
+    },
+    "continuity_target_hours": {
+      "status": "known",
+      "value": 72,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "simulation.json"
+      ],
+      "formula": "design target for tabletop and pilot continuity tests; not measured performance",
+      "confidence": "low",
+      "assumptions": [
+        "A-CONTINUITY-TARGET-001"
+      ]
+    },
+    "manual_fallback_coverage_ratio": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "proposal.md",
+        "simulation.json"
+      ],
+      "formula": "12 scenario cards with account-free/manual fallback / 12 cards",
+      "confidence": "medium",
+      "assumptions": [
+        "A-OPERATIONS-001"
+      ]
+    },
+    "planned_rehearsal_count_per_year": {
+      "status": "known",
+      "value": 4,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "simulation.json"
+      ],
+      "formula": "one seasonal multi-stakeholder exercise per quarter as a concept operations target",
+      "confidence": "low",
+      "assumptions": [
+        "A-OPERATIONS-001"
+      ]
+    },
+    "floor_area_ratio": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "total_floor_area_sqm / official_site_area_sqm",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-CONTROLS-001"
+      ],
+      "reason": "No approved FAR control or official site boundary is available in the public package."
+    },
+    "building_height_m": {
+      "status": "unknown",
+      "value": null,
+      "unit": "m",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "approved height control or surveyed existing height",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-CONTROLS-001",
+        "A-SITE-VERIFY-001"
+      ],
+      "reason": "Official height controls and surveyed existing-building heights are unavailable."
+    },
+    "total_floor_area_sqm": {
+      "status": "unknown",
+      "value": null,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "sum(verified floor area by parcel and building)",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-CONTROLS-001",
+        "A-SITE-VERIFY-001"
+      ],
+      "reason": "Existing floors, ownership, structure and statutory development controls are unavailable."
+    },
+    "capital_cost": {
+      "status": "unknown",
+      "value": null,
+      "unit": "none",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "independent quantity survey and procurement plan",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-COST-001"
+      ],
+      "reason": "Scope, approvals, utilities, procurement and operator responsibilities remain unconfirmed."
+    },
+    "regional_interface_count": {
+      "status": "known",
+      "value": 5,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "assets/figures/regional-synergy-v150.webp"
+      ],
+      "formula": "count(auditable external regional synergy interfaces)",
+      "confidence": "high",
+      "assumptions": [
+        "A-REGIONAL-NONCOMMIT-001"
+      ]
+    },
+    "first_year_pilot_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "simulation.json"
+      ],
+      "formula": "count(reversible first-year pilot contracts Y1-01..Y1-03)",
+      "confidence": "high",
+      "assumptions": [
+        "A-PILOT-AUTH-001"
+      ]
+    },
+    "responsibility_seat_count": {
+      "status": "known",
+      "value": 7,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "simulation.json"
+      ],
+      "formula": "count(suggested functional responsibility seats)",
+      "confidence": "high",
+      "assumptions": [
+        "A-OPERATIONS-001"
+      ]
+    }
+  }
+}

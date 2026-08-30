@@ -9,7 +9,7 @@ license: "COMMUNITY-DISPLAY-ONLY"
 summary: "A public slow-mobility and cultural-memory spine links technical validation, open-source translation, and civic experience. One auditable proof ticket governs twelve AI scenarios. Every spatial output uses provisional rough geometry and carries a whole-package regeneration trigger."
 tracks: ["ai-traffic-walkability", "enterprise-services-ecosystem", "civic-agent-governance"]
 scenarios: ["ai-traffic-walkability", "enterprise-service-copilot", "public-safety-operations-review"]
-iteration: "v0.1"
+iteration: "v0.3"
 ---
 
 # Jing-Zhang Proofline: An AI Innovation Urban Commons for Public Verification
@@ -22,7 +22,7 @@ Organizer-supplied exact `SITE_BOUNDARY` and three `KEY_AREA` polygons are not a
 
 All outputs share one generation chain: lock the provisional constraints; partition the full boundary with shared topology; generate conceptual program envelopes, mobility lines, green and public space, scenario nodes, and phases; recompute metrics in one projection; then derive paired Chinese/English figures, HTML, and PDFs. When official polygons arrive, the response is not to swap a basemap. All nine GeoJSON files, every metric, five figure pairs, both HTML pairs, and four PDFs must be regenerated. FAR, height, road redlines, utility capacity, ownership, building survey, and parcel intervention therefore remain pending official data rather than being filled with guessed values [depth:existing_conditions_diagnosis] [standard:PROJECT-OFFICIAL-ANNOUNCEMENT].
 
-![Overview map showing the Proofline, three stations, scenario counts, and provisional-boundary notice](assets/figures/site-overview.en.png)
+![Overview map showing the Proofline, three stations, five unconfirmed regional interfaces, and provisional-boundary notice](assets/figures/site-overview.en.png)
 
 ## Three-Level Scope Framework
 
@@ -45,6 +45,18 @@ The provisional overall boundary remains a low-contrast dashed constraint in eve
 The three positionings become operational through the proof mechanism. The Centennial Jing-Zhang Cultural Belt preserves temporal evidence and shared memory. The Urban AI Life Experience Belt allows residents, commuters, seniors, and visitors to test services. The AI Integrated Innovation Belt connects models, compute, data, scenarios, and governance through reviewable translation. The five functions do not become five fenced parks. Full-stack innovation is tested in the north, the world-class ecosystem is translated in the center, AI+ scenarios and an active city are experienced in the south, and global governance credibility comes from open test rules, issue logs, and exit procedures [standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK] [depth:overall_spatial_structure].
 
 The “three areas and two wings” operate as an exchange of capabilities rather than an administrative collage. Zhongzhiyuan supplies testable technical components. AI Origin Community translates them into open tools, public explanations, and venture support. Dazhongsi tests whether AI-native services improve ordinary urban life. The Zhongguancun technology-service wing brings legal, standards, capital, talent, and international communication interfaces; the Xiaoyuehe scenario-empowerment wing brings continuous public space and real but controlled urban questions. The wings send problems and support to the stations, while the stations return disclosed boundaries, reproducible results, and failure lessons.
+
+Regional synergy is organized as five unconfirmed “proof interfaces,” not as invented partnerships, projects, investment, or data exchange. An interface accepts input only after formal public evidence or counterpart-authorized material identifies it. A specific Proofline venue then conducts a bounded test and returns only scope, method, results, failure, and exit records [standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK] [source:AGENT-TASKBOOK].
+
+| Unconfirmed interface | Suggested exchange resource | Conceptual Proofline carrier | Responsibility boundary and prohibited inference |
+| --- | --- | --- | --- |
+| Beiwei Community | Community-AI questions, low-digital experience, resident-feedback methods | South civic desk and City Debug Day | Community and local operating roles confirm together; no existing partnership may be claimed |
+| Future Science City | Research prototypes, test questions, and talent-exchange topics | North test gate and Central translation desk | Register the source and technical owner first; do not imply that outputs, institutions, or data are connected |
+| Huairou Science City | Public explanation of science, open questions, and validation methods | Central multilingual foyer and Open-source Proof Commons | Discuss a translation protocol only; do not imply a joint project, IP arrangement, or investment |
+| Beijing E-Town | Industrial AI, embodied applications, and manufacturing test questions | North safety sandbox and energy benchmark | Professional safety and data review precede entry; do not imply company participation or procurement interest |
+| Beijing-Tianjin-Hebei | Cross-regional mobility, industry collaboration, and open-event questions | South disruption desk and annual Proofline Week | Verify public evidence and accountable parties first; do not imply policy, route, or cross-region commitments |
+
+These interfaces are not drawn as confirmed links while evidence is missing. A later regional-synergy diagram may show only where a question originates, who confirms it, where it is tested, and what record is returned, with an unconfirmed state and withdrawal route for every relationship.
 
 The visual identity uses two parallel tracks, three open rings, and a crossing scale. Parallel tracks connect railway memory with public verification; the three incomplete rings remain enterable and challengeable; the scale links a century of history with prototype expiry. The palette combines railway brick red, public green, verification cyan, open-source yellow, and neutral black and white rather than relying on a single “technology blue.” Chinese and English names have equal status. The direction uses original geometry and system-font rendering only; it does not reuse company logos, unlicensed fonts, portraits, or historical images.
 
@@ -115,6 +127,15 @@ Each scenario card maps place, user, operating data, privacy boundary, human rev
 
 The proof ticket is the minimum governance unit across scenarios. `claim` states the intended improvement; `data boundary` states what is not used; `test` explains how error is found; `human owner` names the person responsible for explanation and remedy; `failure path` defines stop, appeal, and recovery; `expiry` prevents a trial from becoming permanent by default. A missing field blocks progression from display to pilot. Passing a pilot still does not mean government approval or unrestricted deployment [standard:GENERATIVE-AI-INTERIM-MEASURES] [depth:risk_missing_data].
 
+Four representative high-impact scenarios use one proposed acceptance template. The incident levels are not official standards: L1 is a display issue corrected on site without crossing a data or safety boundary; L2 suspends the affected function for professional review; L3 immediately stops the full service, preserves records, and enters formal handling when physical safety, health, material accessibility, or data-boundary harm is possible. Any real pilot must re-establish these gates through the applicable authority, profession, and ethics process.
+
+| Scenario | Pilot acceptance evidence | Data governance | Incident level and human takeover | Professional review and stop gate |
+| --- | --- | --- | --- | --- |
+| SCN-02 embodied pedestrian safety | In a closed setting, record every route, stop command, abnormal contact, and retrospective; no open foot traffic before sign-off | Synthetic data first; consented physical tests are separate, and imagery uses the shortest retention | A route-prompt defect is L1; failure to stop or physical contact is L3, with safety-officer takeover | Safety, accessibility, and venue operations sign together; any unintended contact stops the pilot |
+| SCN-05 accessible route co-pilot | User representatives and staff jointly walk entrances, turns, ramps, facility state, and offline alternatives | No continuous personal traces; separate feedback from identity and publish facility source/update time | Stale information is L1; an impassable route is L2, switching to print and staff guidance | Accessibility professionals and user representatives review; physical/digital mismatch removes the advice |
+| SCN-06 controlled medical AI | Synthetic or lawfully de-identified cases record explanation, consistency, refusal, error, and the human conclusion | No live care unless separately authorized; cases, logs, and access are role-separated | Expression error is L1; out-of-scope advice or sensitive leakage is L3, with full clinical takeover | A qualified medical body, ethics, and data protection review; any diagnostic implication without human confirmation stops the service |
+| SCN-09 commute disruption recovery | Public service states drive drills for alternatives, broadcasts, print, crowd transfer, and update time | No identity, travel history, or device-ownership requirement; retain anonymous option counts only | Copy error is L1; conflicting state or crowd transfer is L2, with unified staff communication | Transport and crowd-management review; personalized advice stops when current state cannot be confirmed |
+
 ## Land Use, Building Scale, and Retain-Renovate-Demolish Strategy
 
 The provisional boundary is partitioned once into six conceptual program bands with shared topology. Their areas add to the submitted boundary. The shares compare public, research, service, and flexible space; they are not a statutory land-use balance [data:geometry/land_use.geojson#LU-004] [standard:MNR-LAND-USE-CLASSIFICATION-GUIDE].
@@ -124,7 +145,7 @@ The provisional boundary is partitioned once into six conceptual program bands w
 | 0802 | Validation R&D and testing | 12.8% | Controlled tests, retrospectives, standards discussion |
 | 0804 | Open-source learning and culture | 13.1% | Courses, public explanation, and cultural narrative |
 | 1401 | Heritage park and proof commons spine | 18.2% | Continuous public framework and cross-station route |
-| 05 | Industry services and translation | 20.4% | Venture, legal, IP, and translation support |
+| 09 | Industry services and translation | 20.4% | Venture, legal, IP, and translation support |
 | 0702 | Community services and talent life | 19.6% | Care, daily service, and diverse talent life |
 | 16 | Flexible interface pending detailed study | 16.0% | Space for formal controls, facilities, and public negotiation |
 
@@ -154,6 +175,15 @@ Four AI pilgrimage and honor nodes are restrained public knowledge devices, not 
 
 The cultural narrative shifts from speed to traceable progress. Rail connects city and knowledge; open source connects contribution and reuse; public proof connects technology and responsibility. Wayfinding has three levels: the overall identity marks the belt, station colors distinguish technical/open/civic roles, and proof tickets identify individual prototypes. Historical facts, imagery, fonts, trademarks, and portraits require separate clearance. Generated content remains labeled as conceptual.
 
+The public-space component library starts with four removable elements before professional teams adapt them to verified site conditions. Brand use follows five rules: Chinese and English names appear together; color is never the only identifier; all six proof-ticket fields remain visible; company marks stay subordinate to public information and require separate clearance; every medium retains provisional geometry, conceptual status, and expiry.
+
+| Component | Minimum spatial function | Non-digital alternative | Brand and access rule | Exit check |
+| --- | --- | --- | --- | --- |
+| Proof Desk | Display input boundary, test method, accountable person, and expiry | Staff, printed ticket, phone/on-site appeal | Station color plus text/shape; scanning is never the entry condition | Close when no owner, print alternative, or appeal exists |
+| Access Kit | Connect entry, rest, tactile/audio explanation, and staff help | Legible signs, plain language, movable seating | Interactive equipment does not obstruct travel; accessibility review precedes use | Withdraw for a broken route, failed maintenance, or unavailable alternative |
+| Failure Wall | Publish unresolved issues, incident level, repair, and recovery state | Physical noticeboard and scheduled staff briefing | Failure is as visible as success; ranking cannot hide unresolved work | Stop publishing achievements when records or responsibility are stale |
+| Commons Rack | Publish cleared components, versions, licenses, maintainers, and reuse records | Printed catalog and bookable translation service | Contributor credit and license precede brand exposure; key bilingual terms receive human review | Remove for license dispute, missing maintainer, or expired version |
+
 ## Renewal Projects, Implementation Policy, and Phasing
 
 Projects follow “protocol first, temporary next, permanent only after evidence.” Each has entry and exit gates. Operator names are suggested roles, not confirmed institutions [data:geometry/phasing.geojson#PHASE-001] [depth:renewal_project_list].
@@ -173,15 +203,27 @@ The phasing map uses south, center, and north as a conceptual sequence, not a co
 
 Long-term operations use three rhythms: a monthly “City Debug Day” to collect ordinary failures; a quarterly “Open Checkpoint” to publish tests, fixes, and exits; and an annual “Proofline Week” for developers, residents, professionals, and international peers to review public value. Brands, recruitment, funding, and partners are co-creation directions, not government or investment commitments. Contributor credit, open licenses, resolved issues, and follow-on support enter a durable record so events produce shared knowledge rather than one-time promotion.
 
+Five long-term workstreams use a proposed RACI. `R` executes; each cycle must confirm one `A`; `C/I` identifies consulted and informed roles. Every institution below is a role type, not a confirmed organization. A workstream cannot open without a disclosed funding source, capped budget, procurement path, maintenance hours, stop capacity, and rollback reserve.
+
+| Workstream | R / A | C / I | Resource entry gate | Indicator and exit gate |
+| --- | --- | --- | --- | --- |
+| City Debug Day and quarterly checkpoint | Scenario operations R / public-operations lead A | User representatives, professional reviewers, public | Venue, facilitation, accessible material, incident records, remedy hours | Publish total, resolved, unresolved, and affected-user counting method; pause a scenario after two cycles without repair |
+| Developer community and open components | Community host R / component maintainer A | Legal, licensing, testers, reusers | Cleared repository, test environment, maintenance window, exit notice | Record reuse requests, passed/failed tests, unresolved license issues; remove when no maintainer or a license dispute exists |
+| Scenario access and professional acceptance | Scenario operator R / relevant professional owner A | Ethics, data protection, accessibility, safety, community | Funding source, risk review, human takeover, logs, rollback resources | Publish acceptance scope, incident level, stop and recovery time; L3 or boundary breach stops immediately |
+| International communication and Proofline Week | Bilingual editorial/event team R / public-operations lead A | Contributors, culture/copyright advisors, international participants | Bilingual editing, translation review, cleared material, accessible event support, contingency budget | Publish participant provenance, access issues, corrections, follow-on contributions; cancel or withdraw uncleared/uncorrectable material |
+| Talent and enterprise follow-on | Translation-service team R / public-interest reviewer A | Developers, companies, researchers, residents, policy/legal advisors | Transparent admission, conflict disclosure, service hours, data minimization, exit cost | Count each step from test to reuse, follow-on service, and sustained public value with attrition reasons; investment volume cannot replace public value, and two cycles without verifiable results trigger redesign |
+
+Targets are set only after a first pilot establishes a baseline. Each cycle must confirm possible funding channels, procurement and maintenance responsibility, and how talent or companies enter follow-on service. This package does not assume commitments from government, companies, or communities.
+
 ## Metrics, Area Recalculation, and Compliance Matrix
 
-Metrics fall into three groups. Design-derived quantities are the provisional area of 11,412,825.386 square meters, conceptual green area of 2,203,386.315 square meters, public space of 426,827.020 square meters, conceptual footprint of 478,039.035 square meters, and a 9,627.3-meter walking spine. Structural counts are three key areas, six land-use units, twelve scenarios, four industry tests, six personas, four landmarks, and three conceptual phases. Explicitly unknown controls are FAR, height, road redlines, utility capacity, and parcel demolition area [metric:public_space_ratio] [depth:metrics_recalculation].
+Metrics fall into three groups. Design-derived quantities are the provisional area of 11,412,825.386 square meters, conceptual green area of 2,203,386.315 square meters, public space of 426,827.020 square meters, conceptual footprint of 478,039.035 square meters, and a 9,627.3-meter walking spine. Structural counts are three key areas, six land-use units, twelve scenarios, four industry tests, six personas, four landmarks, three conceptual phases, plus five unconfirmed regional interfaces, four high-impact acceptance templates, four public components, and five operating workstreams added in this revision. Explicitly unknown controls are FAR, height, road redlines, utility capacity, and parcel demolition area [metric:public_space_ratio] [depth:metrics_recalculation].
 
 All areas are calculated by projecting WGS84 geometry to EPSG:4548. Green, public-space, and building values use union area, and each ratio uses the same submitted boundary denominator. `known` means only that the value can be reproduced from current files. Boundary-related values have medium confidence because the boundary is provisional; conceptual building footprint has low confidence. Official polygons trigger geometry, figures, HTML, PDF, manifest hashes, and the full four-gate run rather than a hand-edited number.
 
 The compliance matrix covers seventeen announcement tasks under sections 1.3, 1.4, and 1.5 plus agent.1 through agent.6, for twenty-three records. The standard matrix covers five mandatory standards and four additional governance/accessibility references. The design-depth matrix covers fifteen items. `complete` means that the proposal provides a readable answer, data location, and gap treatment; it never means missing official data has been obtained. Final author self-check must pass deterministic validation, spatial review, visual packaging, and professional evidence [standard:MOHURD-URBAN-DESIGN-MEASURES] [source:SOURCE-REGISTRY].
 
-![Metrics diagram separating design quantities from unknown controls and showing the evidence chain to four checks](assets/figures/metrics-evidence.en.png)
+![Metrics diagram showing design quantities, governance delivery counts, unknown controls, and the evidence chain to four checks](assets/figures/metrics-evidence.en.png)
 
 ## Risk, Copyright, and Compliance
 
@@ -189,7 +231,7 @@ The first risk is mistaking provisional geometry and conceptual quantities for o
 
 AI scenario risk is controlled through purpose limitation, minimum data, human accountability, appeal, stop, and expiry. Face data, continuous traces, health information, children's data, and hidden profiles cannot be conditions for public-space access or basic service. High-impact medical, transport, safety, and accessibility scenarios require qualified professionals to make final decisions. A passed test reports a bounded result; it is not certification, procurement approval, or permission for universal deployment [standard:GENERATIVE-AI-INTERIM-MEASURES] [source:BARRIER-FREE-LAW].
 
-Generation and rights are disclosed in `report/copyright_statement.md`. Narrative, GeoJSON, metrics, HTML, figure layout, and PDFs are original to this entry. Visuals use only package data and locally rasterized system fonts; they contain no third-party map tiles, news imagery, company logos, portraits, or scraped media. External cases contribute organization names, official URLs, and brief mechanism summaries only; no images, trademarks, page layouts, or extended passages are copied. The participating account is `hunya-ops`; model disclosure is in `agent.json`.
+Generation and rights are disclosed in `report/copyright_statement.md`. Narrative, GeoJSON, metrics, HTML, figure layout, and PDFs are original to this entry. Visuals use only package data and contain no third-party map tiles, news imagery, company logos, portraits, or scraped media. The Chinese offline HTML embeds an actual-glyph subset of Noto Sans SC from the official Google Fonts repository, redistributed under SIL OFL 1.1 with the complete license retained in the package [source:FONT-NOTO-SANS-SC]. External cases contribute organization names, official URLs, and brief mechanism summaries only; no images, trademarks, page layouts, or extended passages are copied. The participating account is `hunya-ops`; model disclosure is in `agent.json`.
 
 This is an open co-creation proposal. It does not replace formal planning or constitute government approval, investment, recruitment, construction, operation, or engineering-feasibility commitments. Human maintainers and professional teams retain final judgment. Any later user should inspect sources, assumptions, formulas, and self-check records rather than extracting a single presentation image.
 
@@ -207,3 +249,4 @@ The following materials materially shaped the task boundary, spatial method, or 
 8. Official pages of MaRS Discovery District and STATION F, used only for background comparison of innovation-support mechanisms.
 9. Official pages of JTC one-north, Tokyo Innovation Base, and UnternehmerTUM, used only for spatial and operating-mechanism comparison.
 10. Kendall Square Association official page, used only for background comparison of district stewardship.
+11. Google Fonts official Noto Sans SC files and SIL OFL 1.1, used for the Chinese offline HTML glyph subset.

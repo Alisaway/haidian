@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "units": {
     "length": "m",
     "area": "sqm"
@@ -55,21 +55,20 @@
     },
     "public_space_ratio": {
       "status": "known",
-      "value": 0.021912,
+      "value": 0.000336464,
       "unit": "ratio",
       "source_files": [
         "geometry/public_space.geojson",
-        "geometry/site_boundary.geojson"
+        "geometry/site_boundary.geojson",
+        "visual/assets/v2-evidence-summary.json"
       ],
-      "formula": "conceptual_public_room_area / provisional_site_area",
-      "confidence": "low",
-      "value_role": "concept_design_calculation",
-      "display_status_zh": "概念方案复算值",
-      "measurement_method_zh": "公共空间图层面积除以工作底图面积，并在土地平衡阶段复核重叠",
-      "owner_zh": "城市设计团队",
+      "formula": "sum(V2_12_service_node_20m_x_16m_module_footprints) / provisional_site_area",
+      "confidence": "medium",
+      "value_role": "concept_design_node_footprint_ratio",
       "assumptions": [
-        "May overlap the conceptual green armature and requires separate land-use balance accounting."
-      ]
+        "This is the footprint ratio of the twelve proposed service-node modules only; it is not a site-wide public-space provision ratio."
+      ],
+      "display_status_zh": "V2十二处服务节点模块占地比，不代表全场公共空间率"
     },
     "floor_area_ratio": {
       "status": "unknown",
@@ -101,11 +100,14 @@
       "value": 12,
       "unit": "count",
       "source_files": [
-        "geometry/public_space.geojson"
+        "geometry/public_space.geojson",
+        "visual/assets/v2-evidence-summary.json"
       ],
-      "formula": "count(PUBLIC_SPACE features)",
+      "formula": "count(V2 PUBLIC_SPACE service-node module features)",
       "confidence": "high",
-      "assumptions": []
+      "assumptions": [
+        "Eight V1 centers are retained and four low-efficiency slots are replaced by multi-objective consensus research sites; all remain conceptual/provisional."
+      ]
     },
     "ai_scenario_card_count": {
       "status": "known",
@@ -123,25 +125,26 @@
       "value": 1000,
       "unit": "m",
       "source_files": [
-        "proposal.md",
-        "assets/figures/implementation-section.png"
+        "geometry/roads.geojson",
+        "visual/assets/v2-evidence-summary.json"
       ],
-      "formula": "first_phase_design_target",
-      "confidence": "low",
+      "formula": "target length of ROAD-PILOT-V2-04 / CORRIDOR-04 lead research alignment",
+      "confidence": "medium",
       "assumptions": [
         "Scheme target for project comparison; final alignment and length follow survey, ownership and statutory review."
-      ]
+      ],
+      "value_role": "proposed_evidence_informed_target"
     },
     "prototype_service_node_area_sqm": {
       "status": "known",
       "value": 320,
       "unit": "sqm",
       "source_files": [
-        "proposal.md",
-        "assets/figures/service-node-kit.png"
+        "geometry/public_space.geojson",
+        "proposal.md"
       ],
-      "formula": "20 m * 16 m prototype module",
-      "confidence": "low",
+      "formula": "20m * 16m module; geometry materialized in EPSG:4548 then exported as WGS84 GeoJSON",
+      "confidence": "medium",
       "assumptions": [
         "Prototype value within the proposed 250-400 sqm range; site-specific design follows utility and access review."
       ]
@@ -183,17 +186,158 @@
       "confidence": "high",
       "assumptions": []
     },
+    "v2_modelled_population_2025": {
+      "status": "known",
+      "value": 192592.43,
+      "unit": "people_modelled",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json"
+      ],
+      "formula": "sum(WorldPop_Global2_2025_modelled_population_area_apportioned_to_100m_research_grid)",
+      "confidence": "medium",
+      "value_role": "observed_model_estimate",
+      "display_status_zh": "2025模型人口估计，非普查人口",
+      "assumptions": [
+        "WorldPop values are modelled estimates and are used for comparative population-weighted analysis only."
+      ]
+    },
+    "v2_service_gap1_population_ratio": {
+      "status": "known",
+      "value": 0.179496,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json"
+      ],
+      "formula": "modelled_population_outside_at_least_one_measured_15min_service_threshold / modelled_population",
+      "confidence": "medium",
+      "value_role": "observed_model_estimate"
+    },
+    "v2_service_gap2_population_ratio": {
+      "status": "known",
+      "value": 0.043939,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json"
+      ],
+      "formula": "modelled_population_outside_at_least_two_measured_15min_service_thresholds / modelled_population",
+      "confidence": "medium",
+      "value_role": "observed_model_estimate"
+    },
+    "v2_existing_12node_gap1_coverage_ratio": {
+      "status": "known",
+      "value": 0.394428,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json"
+      ],
+      "formula": "gap1_modelled_population_within_existing_12_node_800m_walk_catchments / total_gap1_modelled_population",
+      "confidence": "medium",
+      "value_role": "observed_design_audit"
+    },
+    "v2_balanced_12node_gap1_coverage_ratio": {
+      "status": "known",
+      "value": 0.630447,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json"
+      ],
+      "formula": "gap1_modelled_population_reached_by_retained_eight_plus_four_balanced_candidates / total_gap1_modelled_population",
+      "confidence": "medium",
+      "value_role": "modelled_scenario_not_built_outcome"
+    },
+    "v2_equity_12node_gap1_coverage_ratio": {
+      "status": "known",
+      "value": 0.745928,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json"
+      ],
+      "formula": "gap1_modelled_population_reached_by_retained_eight_plus_four_equity_candidates / total_gap1_modelled_population",
+      "confidence": "medium",
+      "value_role": "modelled_scenario_not_built_outcome"
+    },
+    "v2_consensus_12node_population_coverage_ratio": {
+      "status": "known",
+      "value": 0.576236,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json",
+        "geometry/public_space.geojson"
+      ],
+      "formula": "modelled_population_within_800m_walk_catchments_of_8_retained_plus_4_consensus_replacement_nodes / total_modelled_population",
+      "confidence": "medium",
+      "value_role": "modelled_scenario_not_built_outcome",
+      "assumptions": [
+        "Eight retained centers plus four consensus replacements; 800m walk-network proxy; not a built or observed outcome."
+      ]
+    },
+    "v2_consensus_12node_gap1_coverage_ratio": {
+      "status": "known",
+      "value": 0.619045,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json",
+        "geometry/public_space.geojson"
+      ],
+      "formula": "gap1_modelled_population_within_800m_walk_catchments_of_8_retained_plus_4_consensus_replacement_nodes / total_gap1_modelled_population",
+      "confidence": "medium",
+      "value_role": "modelled_scenario_not_built_outcome",
+      "assumptions": [
+        "Eight retained centers plus four consensus replacements; 800m walk-network proxy; not a built or observed outcome."
+      ]
+    },
+    "v2_consensus_12node_gap2_coverage_ratio": {
+      "status": "known",
+      "value": 0.515413,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json",
+        "geometry/public_space.geojson"
+      ],
+      "formula": "gap2_modelled_population_within_800m_walk_catchments_of_8_retained_plus_4_consensus_replacement_nodes / total_gap2_modelled_population",
+      "confidence": "medium",
+      "value_role": "modelled_scenario_not_built_outcome",
+      "assumptions": [
+        "Eight retained centers plus four consensus replacements; 800m walk-network proxy; not a built or observed outcome."
+      ]
+    },
+    "v2_pilot_corridor_top20_robust_probability": {
+      "status": "known",
+      "value": 0.9986,
+      "unit": "probability",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json"
+      ],
+      "formula": "share_of_5000_v04_weight_samples_where_CORRIDOR_04_ranks_in_top20_percent_with_explicit_Sentinel_green_dimension",
+      "confidence": "medium",
+      "value_role": "research_sensitivity_result"
+    },
+    "v2_observed_green_ratio": {
+      "status": "known",
+      "value": 0.262296,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json"
+      ],
+      "formula": "area-weighted fraction of valid Sentinel composite pixels with NDVI >= 0.35 across the provisional site",
+      "confidence": "medium",
+      "value_role": "observed_remote_sensing",
+      "assumptions": [
+        "Five unique summer dates; SCL masking; 100m reporting aggregation; spectral proxy only."
+      ]
+    },
     "osm_context_feature_count": {
       "status": "known",
-      "value": 7606,
+      "value": 9002,
       "unit": "count",
       "source_files": [
-        "sources.json"
+        "visual/assets/v2-evidence-summary.json"
       ],
-      "formula": "sum(Overpass feature counts by category)",
+      "formula": "count(raw elements in dated reproducible Overpass response)",
       "confidence": "medium",
+      "value_role": "observed_context_proxy",
       "assumptions": [
-        "Used for background context; feature completeness varies by category."
+        "OSM completeness varies by feature class; this replaces the unreproducible V1 count of 7,606."
       ]
     },
     "climate_heat_days_ge_35c_per_year": {
@@ -239,92 +383,525 @@
       "status": "known",
       "value": 3.0,
       "unit": "m",
-      "source_files": ["spatial.json", "proposal.md"],
+      "source_files": [
+        "spatial.json",
+        "proposal.md"
+      ],
       "formula": "proposed_design_control_for_pilot_comparison",
       "confidence": "low",
       "value_role": "proposed_target",
       "display_status_zh": "建议控制值，未实施",
       "measurement_method_zh": "建成后按连续通行最窄点逐段实测",
       "owner_zh": "建设单位与无障碍专项验收单位",
-      "assumptions": ["Subject to road redline, utilities, fire access and statutory review."]
+      "assumptions": [
+        "Subject to road redline, utilities, fire access and statutory review."
+      ]
     },
     "pilot_cycle_width_target_m": {
       "status": "known",
       "value": 4.0,
       "unit": "m",
-      "source_files": ["spatial.json", "proposal.md"],
+      "source_files": [
+        "spatial.json",
+        "proposal.md"
+      ],
       "formula": "proposed_two_way_cycle_clear_width",
       "confidence": "low",
       "value_role": "proposed_target",
       "display_status_zh": "建议控制值，未实施",
       "measurement_method_zh": "施工图复核并在建成后实测连续净宽",
       "owner_zh": "交通设计与建设单位",
-      "assumptions": ["Subject to traffic design, rail safety and fire access review."]
+      "assumptions": [
+        "Subject to traffic design, rail safety and fire access review."
+      ]
     },
     "rest_point_spacing_target_max_m": {
       "status": "known",
       "value": 150,
       "unit": "m",
-      "source_files": ["spatial.json", "proposal.md"],
+      "source_files": [
+        "spatial.json",
+        "proposal.md"
+      ],
       "formula": "maximum_proposed_spacing_between_accessible_rest_points",
       "confidence": "low",
       "value_role": "proposed_target",
       "display_status_zh": "建议控制值，未实施",
       "measurement_method_zh": "沿无障碍连续路径测量相邻有效休憩点距离",
       "owner_zh": "园林、街道与设施运营单位",
-      "assumptions": ["Final spacing follows detailed accessibility review and site conditions."]
+      "assumptions": [
+        "Final spacing follows detailed accessibility review and site conditions."
+      ]
     },
     "shade_coverage_target_ratio": {
       "status": "known",
-      "value": 0.70,
+      "value": 0.7,
       "unit": "ratio",
-      "source_files": ["spatial.json", "proposal.md"],
+      "source_files": [
+        "spatial.json",
+        "proposal.md"
+      ],
       "formula": "proposed_shaded_area / principal_stay_area_at_design_hour",
       "confidence": "low",
       "value_role": "proposed_target",
       "display_status_zh": "建议目标，未实施",
       "measurement_method_zh": "夏季设计时段日照分析与建成后现场抽测",
       "owner_zh": "景观设计与运营单位",
-      "assumptions": ["Target will be calibrated through solar analysis and tree-growth assumptions."]
+      "assumptions": [
+        "Target will be calibrated through solar analysis and tree-growth assumptions."
+      ]
     },
     "human_service_availability_target_ratio": {
       "status": "known",
       "value": 1.0,
       "unit": "ratio",
-      "source_files": ["visual/assets/implementation-operation-contract.json"],
+      "source_files": [
+        "visual/assets/implementation-operation-contract.json"
+      ],
       "formula": "available_human_or_non_digital_service_windows / published_service_windows",
       "confidence": "low",
       "value_role": "proposed_service_target",
       "display_status_zh": "运营目标，未实施",
       "measurement_method_zh": "按公布服务时段开展月度抽测并记录降级服务",
       "owner_zh": "场景运营单位与属地街道",
-      "assumptions": ["Requires funded staffing and an approved service agreement."]
+      "assumptions": [
+        "Requires funded staffing and an approved service agreement."
+      ]
     },
     "protocol_service_pass_count": {
       "status": "known",
       "value": 12,
       "unit": "count",
-      "source_files": ["visual/assets/growth-tabletop-evidence.json"],
+      "source_files": [
+        "visual/assets/growth-tabletop-evidence.json"
+      ],
       "formula": "count(valid_services_passing_all_protocol_rules)",
       "confidence": "high",
       "value_role": "tabletop_evidence",
       "display_status_zh": "协议桌面校验结果",
       "measurement_method_zh": "运行本地校验脚本，逐项检查八条准入规则",
       "owner_zh": "方案技术团队",
-      "assumptions": ["Tabletop validation does not prove authorization, site safety or service quality."]
+      "assumptions": [
+        "Tabletop validation does not prove authorization, site safety or service quality."
+      ]
     },
     "negative_test_caught_count": {
       "status": "known",
       "value": 8,
       "unit": "count",
-      "source_files": ["visual/assets/growth-tabletop-evidence.json"],
+      "source_files": [
+        "visual/assets/growth-tabletop-evidence.json"
+      ],
       "formula": "count(invalid_mutations_rejected_by_expected_rule)",
       "confidence": "high",
       "value_role": "tabletop_evidence",
       "display_status_zh": "负向测试结果",
       "measurement_method_zh": "将八类缺陷分别注入运行表并核对预期拦截规则",
       "owner_zh": "方案技术团队",
-      "assumptions": ["Mutation tests cover the declared protocol rules only."]
+      "assumptions": [
+        "Mutation tests cover the declared protocol rules only."
+      ]
+    },
+    "v2_osm_walk_way_count": {
+      "status": "known",
+      "value": 5273,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json"
+      ],
+      "formula": "count(walkable OSM ways retained by reproducible V2 extraction)",
+      "confidence": "medium",
+      "value_role": "observed_context_proxy",
+      "assumptions": []
+    },
+    "v2_osm_poi_count": {
+      "status": "known",
+      "value": 3217,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json"
+      ],
+      "formula": "count(classified OSM POIs in buffered V2 context)",
+      "confidence": "medium",
+      "value_role": "observed_context_proxy",
+      "assumptions": []
+    },
+    "v2_service_node_total_footprint_sqm": {
+      "status": "known",
+      "value": 3840.0,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "visual/assets/v2-evidence-summary.json"
+      ],
+      "formula": "sum(projected area of 12 V2 service-node modules in EPSG:4548)",
+      "confidence": "high",
+      "value_role": "concept_design_calculation",
+      "assumptions": []
+    },
+    "v2_rail_5min_population_coverage_ratio": {
+      "status": "known",
+      "value": 0.209519,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json"
+      ],
+      "formula": "modelled population weighted rail 5-minute network-access population share",
+      "confidence": "medium",
+      "value_role": "observed_model_estimate",
+      "assumptions": [
+        "Population is WorldPop modelled population; access inherits OSM network/POI completeness limitations."
+      ]
+    },
+    "v2_rail_10min_population_coverage_ratio": {
+      "status": "known",
+      "value": 0.588898,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json"
+      ],
+      "formula": "modelled population weighted rail 10-minute network-access population share",
+      "confidence": "medium",
+      "value_role": "observed_model_estimate",
+      "assumptions": [
+        "Population is WorldPop modelled population; access inherits OSM network/POI completeness limitations."
+      ]
+    },
+    "v2_rail_15min_population_coverage_ratio": {
+      "status": "known",
+      "value": 0.810191,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json"
+      ],
+      "formula": "modelled population weighted rail 15-minute network-access population share",
+      "confidence": "medium",
+      "value_role": "observed_model_estimate",
+      "assumptions": [
+        "Population is WorldPop modelled population; access inherits OSM network/POI completeness limitations."
+      ]
+    },
+    "v2_bus_10min_population_coverage_ratio": {
+      "status": "known",
+      "value": 0.961358,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json"
+      ],
+      "formula": "modelled population weighted bus-stop 10-minute network-access population share",
+      "confidence": "medium",
+      "value_role": "observed_model_estimate",
+      "assumptions": [
+        "Population is WorldPop modelled population; access inherits OSM network/POI completeness limitations."
+      ]
+    },
+    "v2_education_15min_population_coverage_ratio": {
+      "status": "known",
+      "value": 0.930755,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json"
+      ],
+      "formula": "modelled population weighted education 15-minute network-access population share",
+      "confidence": "medium",
+      "value_role": "observed_model_estimate",
+      "assumptions": [
+        "Population is WorldPop modelled population; access inherits OSM network/POI completeness limitations."
+      ]
+    },
+    "v2_health_15min_population_coverage_ratio": {
+      "status": "known",
+      "value": 0.851058,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json"
+      ],
+      "formula": "modelled population weighted health 15-minute network-access population share",
+      "confidence": "medium",
+      "value_role": "observed_model_estimate",
+      "assumptions": [
+        "Population is WorldPop modelled population; access inherits OSM network/POI completeness limitations."
+      ]
+    },
+    "v2_daily_service_15min_population_coverage_ratio": {
+      "status": "known",
+      "value": 0.982739,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json"
+      ],
+      "formula": "modelled population weighted daily-service 15-minute network-access population share",
+      "confidence": "medium",
+      "value_role": "observed_model_estimate",
+      "assumptions": [
+        "Population is WorldPop modelled population; access inherits OSM network/POI completeness limitations."
+      ]
+    },
+    "v2_osm_park_garden_direct_overlap_ratio": {
+      "status": "known",
+      "value": 0.052026,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json"
+      ],
+      "formula": "direct overlap of cached OSM leisure=park/garden polygons with provisional site / site area",
+      "confidence": "medium",
+      "value_role": "observed_context_proxy",
+      "assumptions": [
+        "Temporary public-green proxy only; not vegetation cover, NDVI or official green-space ratio."
+      ]
+    },
+    "v2_osm_park_garden_500m_population_share": {
+      "status": "known",
+      "value": 0.973028,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json"
+      ],
+      "formula": "WorldPop modelled population whose 100m research-cell centroid lies within 500m planar distance of cached OSM park/garden polygon",
+      "confidence": "medium",
+      "value_role": "observed_context_proxy",
+      "assumptions": [
+        "Planar distance to polygon, not entrance-based network access; OSM park/garden inventory is incomplete."
+      ]
+    },
+    "v2_robust_opportunity_v02_cell_count_top20_p75": {
+      "status": "known",
+      "value": 21,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json"
+      ],
+      "formula": "count(100m cells entering top 20% opportunity set in >=75% of 5000 Dirichlet weight samples)",
+      "confidence": "medium",
+      "value_role": "research_sensitivity_result",
+      "assumptions": []
+    },
+    "v2_dazhongsi_rail10_population_coverage_ratio": {
+      "status": "known",
+      "value": 0.25274,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json",
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "population-weighted rail 10-minute access share within provisional Dazhongsi key area",
+      "confidence": "medium",
+      "value_role": "observed_model_estimate",
+      "assumptions": [
+        "Key-area polygons are provisional constraints; population is modelled."
+      ]
+    },
+    "v2_dazhongsi_health15_population_coverage_ratio": {
+      "status": "known",
+      "value": 0.495686,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json",
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "population-weighted health 15-minute access share within provisional Dazhongsi key area",
+      "confidence": "medium",
+      "value_role": "observed_model_estimate",
+      "assumptions": [
+        "Key-area polygons are provisional constraints; population is modelled."
+      ]
+    },
+    "v2_dazhongsi_gap1_population_ratio": {
+      "status": "known",
+      "value": 0.536413,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json",
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "share of Dazhongsi modelled population outside at least one measured service threshold",
+      "confidence": "medium",
+      "value_role": "observed_model_estimate",
+      "assumptions": [
+        "Key-area polygons are provisional constraints; population is modelled."
+      ]
+    },
+    "v2_zhongzhiyuan_gap2_population_ratio": {
+      "status": "known",
+      "value": 0.154245,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json",
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "share of Zhongzhiyuan modelled population outside at least two measured service thresholds",
+      "confidence": "medium",
+      "value_role": "observed_model_estimate",
+      "assumptions": [
+        "Key-area polygons are provisional constraints; population is modelled."
+      ]
+    },
+    "v2_ai_origin_rail10_population_coverage_ratio": {
+      "status": "known",
+      "value": 0.866525,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json",
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "population-weighted rail 10-minute access share within provisional AI Origin Community",
+      "confidence": "medium",
+      "value_role": "observed_model_estimate",
+      "assumptions": [
+        "Key-area polygons are provisional constraints; population is modelled."
+      ]
+    },
+    "v2_ai_origin_health15_population_coverage_ratio": {
+      "status": "known",
+      "value": 0.634931,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json",
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "population-weighted health 15-minute access share within provisional AI Origin Community",
+      "confidence": "medium",
+      "value_role": "observed_model_estimate",
+      "assumptions": [
+        "Key-area polygons are provisional constraints; population is modelled."
+      ]
+    },
+    "v2_existing_12node_population_coverage_ratio": {
+      "status": "known",
+      "value": 0.550325,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json"
+      ],
+      "formula": "modelled population within 800m walk-network catchments of the V1 twelve-node set / total modelled population",
+      "confidence": "medium",
+      "value_role": "observed_design_audit",
+      "assumptions": [
+        "Audit uses WorldPop modelled population and OSM walk-network proxy."
+      ]
+    },
+    "v2_existing_12node_gap2_coverage_ratio": {
+      "status": "known",
+      "value": 0.288484,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json"
+      ],
+      "formula": "gap2 modelled population within V1 twelve-node 800m walk catchments / total gap2 modelled population",
+      "confidence": "medium",
+      "value_role": "observed_design_audit",
+      "assumptions": [
+        "Audit uses WorldPop modelled population and OSM walk-network/service proxy."
+      ]
+    },
+    "v2_dense_vegetation_ratio": {
+      "status": "known",
+      "value": 0.071219,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json"
+      ],
+      "formula": "area-weighted fraction of valid Sentinel composite pixels with NDVI >= 0.50",
+      "confidence": "medium",
+      "value_role": "observed_remote_sensing",
+      "assumptions": []
+    },
+    "v2_spectral_built_proxy_ratio": {
+      "status": "known",
+      "value": 0.259896,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json"
+      ],
+      "formula": "area-weighted fraction with NDBI > 0 and NDVI < 0.20",
+      "confidence": "medium",
+      "value_role": "observed_remote_sensing_proxy",
+      "assumptions": []
+    },
+    "v2_sentinel_valid_grid_count": {
+      "status": "known",
+      "value": 1244,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json"
+      ],
+      "formula": "count(100m research cells with valid five-date Sentinel composite pixels)",
+      "confidence": "medium",
+      "value_role": "observed_remote_sensing",
+      "assumptions": []
+    },
+    "v2_sentinel_scene_count": {
+      "status": "known",
+      "value": 5,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json"
+      ],
+      "formula": "count(unique-date low-cloud Sentinel-2 L2A scenes in final summer composite)",
+      "confidence": "medium",
+      "value_role": "observed_remote_sensing",
+      "assumptions": []
+    },
+    "v2_robust_opportunity_v04_cell_count_top20_p75": {
+      "status": "known",
+      "value": 37,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json"
+      ],
+      "formula": "count(100m cells entering top20 opportunity set in >=75% of 5000 v0.4 weight samples)",
+      "confidence": "medium",
+      "value_role": "research_sensitivity_result",
+      "assumptions": []
+    },
+    "v2_pilot_corridor_top10_robust_probability": {
+      "status": "known",
+      "value": 0.986,
+      "unit": "probability",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json"
+      ],
+      "formula": "share_of_5000_v04_weight_samples_where_CORRIDOR_04_ranks_in_top10_percent_with_explicit_Sentinel_green_dimension",
+      "confidence": "medium",
+      "value_role": "research_sensitivity_result",
+      "assumptions": []
+    },
+    "v2_official_validated_school_point_count": {
+      "status": "known",
+      "value": 36,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json"
+      ],
+      "formula": "count(site OSM school points conservatively reconciled to official Haidian compulsory-education directory)",
+      "confidence": "medium",
+      "value_role": "official_identity_osm_coordinate_validation",
+      "assumptions": []
+    },
+    "v2_official_validated_medical_point_count": {
+      "status": "known",
+      "value": 2,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json"
+      ],
+      "formula": "count(site OSM medical points conservatively reconciled to current Haidian health/medical-partner official pages)",
+      "confidence": "medium",
+      "value_role": "official_identity_osm_coordinate_validation",
+      "assumptions": []
+    },
+    "v2_official_validated_eldercare_point_count": {
+      "status": "known",
+      "value": 1,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/v2-evidence-summary.json"
+      ],
+      "formula": "count(site OSM eldercare points conservatively reconciled to current Haidian eldercare official pages)",
+      "confidence": "medium",
+      "value_role": "official_identity_osm_coordinate_validation",
+      "assumptions": []
     }
   }
 }

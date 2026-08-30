@@ -264,6 +264,7 @@ def build_self_check(
     submission_dir: Path,
     pr_author: str,
     *,
+    pr_author_id: int | None = None,
     allow_pending_self_check: bool = False,
 ) -> dict[str, Any]:
     repo_root = repo_root.resolve()
@@ -278,6 +279,8 @@ def build_self_check(
         pr_author,
         "--json",
     ]
+    if pr_author_id is not None:
+        validation_command.extend(["--pr-author-id", str(pr_author_id)])
     if allow_pending_self_check:
         validation_command.append("--allow-pending-self-check")
     validation = run_json_command(validation_command)
@@ -371,6 +374,14 @@ def format_markdown(report: dict[str, Any]) -> str:
     return "\n".join(lines)
 
 
+def force_utf8_output() -> None:
+    """Keep the report printable when the locale encoding cannot hold Chinese text."""
+    for stream in (sys.stdout, sys.stderr):
+        reconfigure = getattr(stream, "reconfigure", None)
+        if reconfigure is not None:
+            reconfigure(encoding="utf-8", errors="replace")
+
+
 def _self_check_gate_checks(report: dict[str, Any]) -> list[dict[str, str]]:
     gates = [
         ("DETERMINISTIC_VALIDATION", "deterministic_validation", "validate_local_submission.py"),
@@ -454,7 +465,8 @@ def mark_self_checked(submission_dir: Path, report: dict[str, Any]) -> tuple[boo
         self_check_item["sha256"] = hashlib.sha256(self_check_bytes).hexdigest()
         claim["readiness_contract"] = PERSISTED_READINESS_CONTRACT
         claim["self_checked"] = True
-        manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        with manifest_path.open("w", encoding="utf-8", newline="\n") as handle:
+            handle.write(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n")
     except OSError as exc:
         self_check_path.write_bytes(original_self_check)
         manifest_path.write_bytes(original_manifest)
@@ -463,6 +475,7 @@ def mark_self_checked(submission_dir: Path, report: dict[str, Any]) -> tuple[boo
 
 
 def main() -> int:
+    force_utf8_output()
     parser = argparse.ArgumentParser(
         description=__doc__,
         formatter_class=argparse.RawDescriptionHelpFormatter,
@@ -475,6 +488,11 @@ def main() -> int:
         "--pr-author",
         required=True,
         help="Exact GitHub login of the PR author; must match the directory owner",
+    )
+    parser.add_argument(
+        "--pr-author-id",
+        type=int,
+        help="Stable numeric GitHub user ID; required only for a maintainer-approved login alias",
     )
     parser.add_argument(
         "--repo-root",
@@ -505,6 +523,7 @@ def main() -> int:
         repo_root,
         submission_dir,
         args.pr_author,
+        pr_author_id=args.pr_author_id,
         allow_pending_self_check=args.mark_self_checked,
     )
     if args.mark_self_checked:
@@ -519,7 +538,12 @@ def main() -> int:
                 report.setdefault("next_actions", []).append(error)
                 report["self_checked_manifest_updated"] = False
             else:
-                verified = build_self_check(repo_root, submission_dir, args.pr_author)
+                verified = build_self_check(
+                    repo_root,
+                    submission_dir,
+                    args.pr_author,
+                    pr_author_id=args.pr_author_id,
+                )
                 if verified["ok"]:
                     report = verified
                     report["self_checked_manifest_updated"] = True

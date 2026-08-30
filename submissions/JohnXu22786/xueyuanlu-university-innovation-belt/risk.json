@@ -1,0 +1,120 @@
+{
+ "schema_version": "0.1.0",
+ "risks": [
+  {
+   "risk_id": "R-BOUNDARY",
+   "title_zh": "官方边界未发布导致的几何不确定性",
+   "category": "data_gap",
+   "severity": "medium",
+   "description_zh": "组织方尚未发布可验证坐标系的正式边界与重点区多边形,现有几何为 provisional;面积类指标若以临时几何计算会产生误导。",
+   "mitigation_zh": "坚持官方文本口径面积与约整展示,指标逐项标注 来源/公式/置信/用途限制/复算触发;官方数据发布后按同一公式复算并记录新旧口径差异。"
+  },
+  {
+   "risk_id": "R-TRANSIT",
+   "title_zh": "轨道保护与站城一体化条件未知",
+   "category": "policy",
+   "severity": "high",
+   "description_zh": "正式轨道保护区、站城一体化控制条件未公开;概念提出的站点接驳方向可能需按实际控制条件大幅调整。",
+   "mitigation_zh": "轨道内容仅表述为概念方向,明确 '须按法定程序与专业深化论证';不提供任何退线或结构结论。"
+  },
+  {
+   "risk_id": "R-PRIVACY",
+   "title_zh": "AI 场景数据与隐私边界风险",
+   "category": "data_boundary",
+   "severity": "medium",
+   "description_zh": "AI 场景可能收集行为与客流数据;若处置不当会造成隐私风险,违反最小化采集与匿名聚合原则。",
+   "mitigation_zh": "坚持端侧处理、匿名聚合、低于阈值不发布、涉人决策人工复核、年度公开审计,禁止个体追踪与无感人脸识别;无障碍场景人工兜底与一键关闭。"
+  },
+  {
+   "risk_id": "R-CONTROL",
+   "title_zh": "控规与审批程序不确定性",
+   "category": "statutory",
+   "severity": "medium",
+   "description_zh": "本方案涉及控规调整、首层用途变更与更新备案等法定程序;未经程序校核的结论可能被误读为审批意见。",
+   "mitigation_zh": "全文以概念建议表述,项目表逐项列明 许可/权属接口 与阶段决策门,明确 '不替代法定规划结论'。"
+  },
+  {
+   "risk_id": "R-TECH",
+   "title_zh": "AI 技术成熟度与设施运维风险",
+   "category": "technology",
+   "severity": "medium",
+   "description_zh": "伴随机器人、数字孪生沙盒等技术成熟度不一,试点效果可能不及预期。",
+   "mitigation_zh": "试点先行+灰度发布+人工复核;组件模块化可逆,支持撤收与移建;失败退出机制按项目表执行。"
+  },
+  {
+   "risk_id": "R-ACCEPTANCE",
+   "title_zh": "公众与校方接受度风险",
+   "category": "public_acceptance",
+   "severity": "medium",
+   "description_zh": "校城共享、柔性界面与年度活动可能受校方安防制度或居民接受度制约。",
+   "mitigation_zh": "以社区议事、意见答复闭环、试点评估与一键关闭机制降低阻力;校方保留随时收回权限。"
+  }
+ ],
+ "version": 1,
+ "dimensions": [
+  {
+   "id": "data_privacy",
+   "label": "数据隐私",
+   "score": 2,
+   "note": "AI 场景数据以匿名聚合与人工复核为边界",
+   "mitigation": "最小化采集、匿名聚合、人工复核、公开审计",
+   "human_review": "由 JohnXu22786 对概念、表述与证据边界进行人工复核;机器门禁只做确定性检查。"
+  },
+  {
+   "id": "implementation_complexity",
+   "label": "实施复杂度",
+   "score": 3,
+   "note": "项目包涉及校地权属与多类许可接口",
+   "mitigation": "项目表逐项列前置条件与决策门",
+   "human_review": "由 JohnXu22786 对概念、表述与证据边界进行人工复核;机器门禁只做确定性检查。"
+  },
+  {
+   "id": "public_acceptance",
+   "label": "公众接受度",
+   "score": 3,
+   "note": "共享开放依赖校方与居民接受",
+   "mitigation": "社区议事与试点评估",
+   "human_review": "由 JohnXu22786 对概念、表述与证据边界进行人工复核;机器门禁只做确定性检查。"
+  },
+  {
+   "id": "operations_cost",
+   "label": "运维成本",
+   "score": 2,
+   "note": "运营成本按量级与基期口径估算",
+   "mitigation": "弹性设计与撤收机制",
+   "human_review": "由 JohnXu22786 对概念、表述与证据边界进行人工复核;机器门禁只做确定性检查。"
+  },
+  {
+   "id": "policy_uncertainty",
+   "label": "政策不确定性",
+   "score": 3,
+   "note": "更新条例与首层激励政策口径待校",
+   "mitigation": "与法定程序衔接并留复算触发",
+   "human_review": "由 JohnXu22786 对概念、表述与证据边界进行人工复核;机器门禁只做确定性检查。"
+  },
+  {
+   "id": "spatial_dispute",
+   "label": "空间争议",
+   "score": 3,
+   "note": "provisional 边界可能引发空间表述争议",
+   "mitigation": "全部几何标注临时概念边界非官方红线",
+   "human_review": "由 JohnXu22786 对概念、表述与证据边界进行人工复核;机器门禁只做确定性检查。"
+  },
+  {
+   "id": "technology_maturity",
+   "label": "技术成熟度",
+   "score": 3,
+   "note": "端侧AI与沙盒技术成熟度不等",
+   "mitigation": "灰度发布+人工复核",
+   "human_review": "由 JohnXu22786 对概念、表述与证据边界进行人工复核;机器门禁只做确定性检查。"
+  },
+  {
+   "id": "equity_inclusion",
+   "label": "公平与包容性",
+   "score": 2,
+   "note": "无障碍与适老化基线数据缺失",
+   "mitigation": "无障碍实测优先,人工兜底与一键关闭",
+   "human_review": "由 JohnXu22786 对概念、表述与证据边界进行人工复核;机器门禁只做确定性检查。"
+  }
+ ]
+}

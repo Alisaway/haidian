@@ -1,11 +1,11 @@
 # 听得见的断点 / The Audible Break · 数据可听化档案与权利记录
 
-**关联媒体：** `assets/media/audible-break.m4a`（中文旁白版，81.2 秒）· `assets/media/audible-break-en.m4a`（英文旁白版，79.5 秒）；同步字幕 `audible-break.vtt` / `audible-break-en.vtt`
+**关联媒体：** `assets/media/audible-break.m4a`（中文旁白版，66.7 秒）· `assets/media/audible-break-en.m4a`（英文旁白版，73.9 秒）；同步字幕 `audible-break.vtt` / `audible-break-en.vtt`
 **性质：** OP-04 节点连通性档案数据的可听化（sonification）。概念交付物；程序合成，非实地录音，不产生任何绩效指标数值。
 
 ## 一、这是什么
 
-方案的核心命题是 AI 开启与 AI 关闭服务等价。OP-04 的证据链档案里有两组读数：AI 开启状态沿直接路径 605.811 米可达 OP-08；AI 关闭状态在接入段 88.816 米之后不存在连续路径。本音频把这两组数字翻译成声音——**声音停止的位置，就是数据里断点的位置**。数据的另一条感官通道：图版给眼睛（op04-detail），本档给耳朵。
+方案的核心命题是 AI 开启与 AI 关闭服务等价。OP-04 的证据链档案（v0.4.0，接口固定口径）里有两组读数：AI 开启状态沿直接路径 306.210 米可达 OP-08；AI 关闭状态下两个点位的物理接口线未声明等价，判定不可达——没有一米可走。本音频把这两组数字翻译成声音——**声音在起点即告静默，静默的位置，就是数据里接口缺失的位置**。数据的另一条感官通道：图版给眼睛（op04-detail），本档给耳朵。
 
 ## 二、数据 → 声音映射规则（逐项可核）
 
@@ -13,12 +13,12 @@
 | --- | --- | --- |
 | 时间比例 | 1 秒 = 20 米 | 设计常数 |
 | 行进声 | 五声音阶（C4/D4/E4/G4/A4 循环）木琴质感短音，每 0.5 秒一响（= 每 10 米一响）；无持续背景音 | 数波形脉冲数 |
-| 段一时长（AI 开启全程） | 605.811 ÷ 20 = 30.29 秒 | `seb-op04-chain-data.json` stage_4 BASE_ON 读数 |
-| 段二中断时刻（AI 关闭） | 88.816 ÷ 20 = 4.44 秒（段内） | 同档案 BASE_OFF 接入段读数 |
-| 到达音 | 明亮大三和弦（C5+E5+G5 同响） | 段一结尾 |
-| 断点表达 | 行进声戛然而止 → 1.6 秒静默 → 110 Hz 低音三响 | 段二结尾；静默区实测 RMS = 0 |
+| 段一时长（AI 开启全程） | 306.210 ÷ 20 = 15.31 秒 | `seb-op04-chain-data.json` stage_4 BASE_ON 读数 |
+| 段二（AI 关闭） | 接口缺席，0 米 = 0 秒——开场即静默 | 同档案 BASE_OFF reachable=false（接口固定口径） |
+| 到达音 | 上行三音（G4→A4→C5） | 段一结尾 |
+| 断点表达 | 开场 1.6 秒静默 → 110 Hz 低音三响 → 3 秒静默 | 段二全段；静默区实测 RMS = 0（编码后复测仍为 0） |
 
-中文版时间轴：段一起点 20.047s · 段二起点 62.859s · **断点时刻 67.3s** · 全长 81.167s。英文版对应 16.935/60.084/**64.525**/79.541s。
+中文版时间轴：段一（数据音·开启）起点 18.020s · 段二（数据音·关闭）起点 50.546s——**开场即静默** · 全长 66.656s。英文版对应 20.710s / 56.096s / 全长 73.886s。段一行进音波形实测 30 响（306.210 ÷ 10 = 30.6，取整 30），末响之后为上行三音到达音。历次读数版本（v0.2 的 30.29 秒行进 / 4.44 秒中断、v0.3.0 的 12.18 秒行进）均已随档案修订整体重制，本节为档案 v0.4.0 的现行读数。
 
 ## 三、生成方法与权利
 
@@ -30,4 +30,4 @@
 
 ## Rights and synthesis statement (English summary)
 
-This piece is a **data sonification** of two archived readings from the OP-04 connectivity chain (605.811 m reachable with AI on; no continuous route beyond the 88.816 m stub with AI off), at one second per twenty metres — where the sound stops is where the data holds no route. Data tones are pure program synthesis (sine waves, standard library, zero samples); narration uses the MiniMax preset synthetic voices under the same registered terms as the package's audio guides. No music, no field recording, no human voice. The silence at the break measures RMS 0. It is a desk-replay rendering, not a field measurement, and the break's spatial premise itself remains pending site audit.
+This piece is a **data sonification** of two archived readings from the OP-04 connectivity chain, archive v0.4.0 under the fixed-interface rule (306.210 m reachable with AI on; with AI off the physical interface line carries no equivalence declaration, so not one metre is walkable), at one second per twenty metres — the sound falls silent from the very start, and where the silence sits is where the data holds no interface. Data tones are pure program synthesis (sine waves, standard library, zero samples); narration uses the MiniMax preset synthetic voices under the same registered terms as the package's audio guides. No music, no field recording, no human voice. The silence at the break measures RMS 0. It is a desk-replay rendering, not a field measurement, and the break's spatial premise itself remains pending site audit.

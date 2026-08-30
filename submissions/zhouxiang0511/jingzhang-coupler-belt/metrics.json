@@ -1,0 +1,290 @@
+{
+  "schema_version": "0.1.0",
+  "units": {
+    "length": "m",
+    "area": "sqm"
+  },
+  "metrics": {
+    "site_area_sqm": {
+      "status": "known",
+      "value": 11412825.386,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "polygon_area(submitted_site_boundary, EPSG:4548)",
+      "confidence": "medium",
+      "assumptions": [
+        "provisional boundary; recompute after official polygon release"
+      ]
+    },
+    "green_space_area_sqm": {
+      "status": "known",
+      "value": 3581524.507,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/green_space.geojson"
+      ],
+      "formula": "union_area(green_space)",
+      "confidence": "medium",
+      "assumptions": []
+    },
+    "public_space_area_sqm": {
+      "status": "known",
+      "value": 565043.34,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "union_area(public_space)",
+      "confidence": "medium",
+      "assumptions": []
+    },
+    "building_footprint_area_sqm": {
+      "status": "known",
+      "value": 1008704.556,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "sum(polygon_area(building_footprints))",
+      "confidence": "low",
+      "assumptions": [
+        "conceptual massing only; not statutory scale"
+      ]
+    },
+    "land_use_area_sqm": {
+      "status": "known",
+      "value": 11412849.063,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "union_area(land_use)",
+      "confidence": "medium",
+      "assumptions": []
+    },
+    "green_ratio": {
+      "status": "known",
+      "value": 0.313816,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/green_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "green_space_area_sqm / site_area_sqm",
+      "confidence": "medium",
+      "assumptions": [
+        "provisional geometry; concept target ~0.22"
+      ]
+    },
+    "public_space_ratio": {
+      "status": "known",
+      "value": 0.04951,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "public_space_area_sqm / site_area_sqm",
+      "confidence": "medium",
+      "assumptions": []
+    },
+    "floor_area_ratio": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [],
+      "formula": "n/a",
+      "confidence": "unknown",
+      "assumptions": [
+        "待官方控规条件；不得伪装为法定控制值"
+      ],
+      "reason": "official regulatory controls not published"
+    },
+    "building_height_m": {
+      "status": "unknown",
+      "value": null,
+      "unit": "m",
+      "source_files": [],
+      "formula": "n/a",
+      "confidence": "unknown",
+      "assumptions": [
+        "待官方高度控制条件"
+      ],
+      "reason": "official height controls not published"
+    },
+    "ai_scenario_card_count": {
+      "status": "known",
+      "value": 12,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(scenario_cards)",
+      "confidence": "high",
+      "assumptions": [
+        "12 scenario cards in proposal"
+      ]
+    },
+    "user_persona_count": {
+      "status": "known",
+      "value": 7,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(personas)",
+      "confidence": "high",
+      "assumptions": [
+        "7 user personas in proposal"
+      ]
+    },
+    "pilgrimage_landmark_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(landmarks)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "industry_test_scenario_count": {
+      "status": "known",
+      "value": 4,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(test_scenarios)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "renewal_project_count": {
+      "status": "known",
+      "value": 21,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "geometry/phasing.geojson"
+      ],
+      "formula": "count(renewal_projects)",
+      "confidence": "medium",
+      "assumptions": [
+        "concept list"
+      ]
+    },
+    "key_area_total_sqm": {
+      "status": "known",
+      "value": 3692893.005,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "sum(key_area_areas)",
+      "confidence": "medium",
+      "assumptions": [
+        "provisional key-area polygons"
+      ]
+    },
+    "gate_protocol_record_count": {
+      "status": "known",
+      "value": 12,
+      "unit": "count",
+      "confidence": "high",
+      "source_files": [
+        "visual/assets/governance-protocol.json"
+      ],
+      "formula": "len(gate_records)",
+      "description": "共智契约 CEC-12 协议记录数(机器可验证)"
+    },
+    "human_authority_coverage": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "confidence": "high",
+      "source_files": [
+        "visual/assets/governance-audit.json"
+      ],
+      "formula": "verify-governance.js coverage.human_authority",
+      "description": "人工最终权限覆盖率"
+    },
+    "manual_fallback_coverage": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "confidence": "high",
+      "source_files": [
+        "visual/assets/governance-audit.json"
+      ],
+      "formula": "verify-governance.js coverage.manual_fallback",
+      "description": "无AI回退覆盖率"
+    },
+    "data_minimization_coverage": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "confidence": "high",
+      "source_files": [
+        "visual/assets/governance-audit.json"
+      ],
+      "formula": "verify-governance.js coverage.minimum_data",
+      "description": "数据最小化覆盖率"
+    },
+    "stop_trigger_coverage": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "confidence": "high",
+      "source_files": [
+        "visual/assets/governance-audit.json"
+      ],
+      "formula": "verify-governance.js coverage.stop_triggers",
+      "description": "停止触发覆盖率"
+    },
+    "exit_asset_coverage": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "confidence": "high",
+      "source_files": [
+        "visual/assets/governance-audit.json"
+      ],
+      "formula": "verify-governance.js coverage.exit_asset",
+      "description": "退出资产覆盖率"
+    },
+    "first_100_days_work_package_count": {
+      "status": "known",
+      "value": 5,
+      "unit": "count",
+      "confidence": "high",
+      "source_files": [
+        "visual/assets/governance-protocol.json"
+      ],
+      "formula": "len(implementation_projects)",
+      "description": "首百日可验收工作包数"
+    },
+    "field_verification_result_count": {
+      "status": "known",
+      "value": 0,
+      "unit": "count",
+      "confidence": "high",
+      "source_files": [],
+      "formula": "0",
+      "description": "现场验证记录数(获批试点前保持0,不伪装实测)"
+    },
+    "no_ai_baseline_required": {
+      "status": "known",
+      "value": 1,
+      "unit": "count",
+      "confidence": "high",
+      "source_files": [
+        "visual/assets/governance-protocol.json"
+      ],
+      "formula": "field_tests FT-03 required=1",
+      "description": "无AI基线对照为必需测试(1=必需)"
+    }
+  }
+}

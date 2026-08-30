@@ -1,0 +1,1105 @@
+{
+ "schema_version": "0.1.0",
+ "items": [
+  {
+   "item_id": "existing_conditions_diagnosis",
+   "title_zh": "现状诊断图与资料缺口",
+   "professional_dimension": "城市设计",
+   "required": true,
+   "status": "complete",
+   "proposal_sections": [
+    "总体设计范围城市更新与控规深度城市设计",
+    "蓝绿空间、公共空间与城市风貌"
+   ],
+   "drawing_refs": [
+    "drawings/a3-booklet.pdf",
+    "drawings/a0-boards.pdf"
+   ],
+   "geometry_refs": [
+    "geometry/site_boundary.geojson",
+    "geometry/key_areas.geojson",
+    "geometry/land_use.geojson",
+    "geometry/roads.geojson",
+    "geometry/green_space.geojson",
+    "geometry/public_space.geojson",
+    "geometry/buildings.geojson",
+    "geometry/phasing.geojson"
+   ],
+   "metric_refs": [
+    "site_area_sqm",
+    "green_ratio",
+    "public_space_ratio",
+    "landmark_count",
+    "scenario_node_count",
+    "industry_test_scenario_count",
+    "persona_count",
+    "global_case_count",
+    "annual_program_count",
+    "phase_count"
+   ],
+   "source_ids": [
+    "DATA-SRC-OFFICIAL-ANNOUNCEMENT-2026-05-09",
+    "DATA-SRC-AGENT-TASKBOOK-2026-05-18",
+    "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+    "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+    "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+    "DATA-SRC-PROVISIONAL-BOUNDARIES-2026-06-05",
+    "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+    "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+    "PACKAGE-GEOMETRY",
+    "CASE-KENDALL-SQUARE",
+    "CASE-KINGS-CROSS",
+    "CASE-STATION-F",
+    "CASE-22B-BARCELONA",
+    "CASE-ONE-NORTH",
+    "CASE-KISTA",
+    "CASE-QUAYSIDE",
+    "HIST-JINGZHANG-RAILWAY",
+    "HIST-JINGZHANG-PARK",
+    "HIST-ZHONGGUANCUN"
+   ],
+   "assumption_ids": [
+    "A-BOUNDARY-001",
+    "A-CONTROLS-001",
+    "A-ECO-001",
+    "A-DESIGN-001",
+    "A-PRIVACY-001",
+    "A-EVENT-001"
+   ],
+   "self_check_ids": [
+    "DETERMINISTIC_VALIDATION",
+    "SPATIAL_REVIEW",
+    "VISUAL_PACKAGING",
+    "PROFESSIONAL_EVIDENCE"
+   ],
+   "evidence_summary_zh": "第1.2节资料清单、第2.1节口径说明与 assumptions.json（A-BOUNDARY-001/A-CONTROLS-001/A-ECO-001）：官方几何、河道管理范围、权属与交通数据未发布，全部按 provisional 标注并给出复算触发；metrics.json 面积指标置信度 low/medium。"
+  },
+  {
+   "item_id": "three_level_scope_framework",
+   "title_zh": "三层范围工作框架",
+   "professional_dimension": "城市设计",
+   "required": true,
+   "status": "complete",
+   "proposal_sections": [
+    "三层范围工作框架",
+    "指标体系、面积复算与合规矩阵"
+   ],
+   "drawing_refs": [
+    "drawings/a3-booklet.pdf",
+    "drawings/a0-boards.pdf"
+   ],
+   "geometry_refs": [
+    "geometry/site_boundary.geojson",
+    "geometry/key_areas.geojson",
+    "geometry/land_use.geojson",
+    "geometry/roads.geojson",
+    "geometry/green_space.geojson",
+    "geometry/public_space.geojson",
+    "geometry/buildings.geojson",
+    "geometry/phasing.geojson"
+   ],
+   "metric_refs": [
+    "site_area_sqm",
+    "green_ratio",
+    "public_space_ratio",
+    "landmark_count",
+    "scenario_node_count",
+    "industry_test_scenario_count",
+    "persona_count",
+    "global_case_count",
+    "annual_program_count",
+    "phase_count"
+   ],
+   "source_ids": [
+    "DATA-SRC-OFFICIAL-ANNOUNCEMENT-2026-05-09",
+    "DATA-SRC-AGENT-TASKBOOK-2026-05-18",
+    "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+    "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+    "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+    "DATA-SRC-PROVISIONAL-BOUNDARIES-2026-06-05",
+    "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+    "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+    "PACKAGE-GEOMETRY",
+    "CASE-KENDALL-SQUARE",
+    "CASE-KINGS-CROSS",
+    "CASE-STATION-F",
+    "CASE-22B-BARCELONA",
+    "CASE-ONE-NORTH",
+    "CASE-KISTA",
+    "CASE-QUAYSIDE",
+    "HIST-JINGZHANG-RAILWAY",
+    "HIST-JINGZHANG-PARK",
+    "HIST-ZHONGGUANCUN"
+   ],
+   "assumption_ids": [
+    "A-BOUNDARY-001",
+    "A-CONTROLS-001",
+    "A-ECO-001",
+    "A-DESIGN-001",
+    "A-PRIVACY-001",
+    "A-EVENT-001"
+   ],
+   "self_check_ids": [
+    "DETERMINISTIC_VALIDATION",
+    "SPATIAL_REVIEW",
+    "VISUAL_PACKAGING",
+    "PROFESSIONAL_EVIDENCE"
+   ],
+   "evidence_summary_zh": "第2.1节按公告口径（统筹约43.6km2/总体约11.4km2/重点区域约368.4ha）划分三层并定位本段边界（provisional 复算约11.41km2）；第11.4节口径对照表为单一事实基线；key_areas.geojson announced_area_sqm 与公告面积一致。"
+  },
+  {
+   "item_id": "overall_spatial_structure",
+   "title_zh": "总体空间结构",
+   "professional_dimension": "城市设计",
+   "required": true,
+   "status": "complete",
+   "proposal_sections": [
+    "总体设计范围城市更新与控规深度城市设计",
+    "蓝绿空间、公共空间与城市风貌"
+   ],
+   "drawing_refs": [
+    "drawings/a3-booklet.pdf",
+    "drawings/a0-boards.pdf"
+   ],
+   "geometry_refs": [
+    "geometry/site_boundary.geojson",
+    "geometry/key_areas.geojson",
+    "geometry/land_use.geojson",
+    "geometry/roads.geojson",
+    "geometry/green_space.geojson",
+    "geometry/public_space.geojson",
+    "geometry/buildings.geojson",
+    "geometry/phasing.geojson"
+   ],
+   "metric_refs": [
+    "site_area_sqm",
+    "green_ratio",
+    "public_space_ratio",
+    "landmark_count",
+    "scenario_node_count",
+    "industry_test_scenario_count",
+    "persona_count",
+    "global_case_count",
+    "annual_program_count",
+    "phase_count"
+   ],
+   "source_ids": [
+    "DATA-SRC-OFFICIAL-ANNOUNCEMENT-2026-05-09",
+    "DATA-SRC-AGENT-TASKBOOK-2026-05-18",
+    "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+    "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+    "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+    "DATA-SRC-PROVISIONAL-BOUNDARIES-2026-06-05",
+    "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+    "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+    "PACKAGE-GEOMETRY",
+    "CASE-KENDALL-SQUARE",
+    "CASE-KINGS-CROSS",
+    "CASE-STATION-F",
+    "CASE-22B-BARCELONA",
+    "CASE-ONE-NORTH",
+    "CASE-KISTA",
+    "CASE-QUAYSIDE",
+    "HIST-JINGZHANG-RAILWAY",
+    "HIST-JINGZHANG-PARK",
+    "HIST-ZHONGGUANCUN"
+   ],
+   "assumption_ids": [
+    "A-BOUNDARY-001",
+    "A-CONTROLS-001",
+    "A-ECO-001",
+    "A-DESIGN-001",
+    "A-PRIVACY-001",
+    "A-EVENT-001"
+   ],
+   "self_check_ids": [
+    "DETERMINISTIC_VALIDATION",
+    "SPATIAL_REVIEW",
+    "VISUAL_PACKAGING",
+    "PROFESSIONAL_EVIDENCE"
+   ],
+   "evidence_summary_zh": "第4.1节「一廊三核多点」：一廊（清河智慧蓝绿廊）、三核（文枢/涌智/栖澜）、多点（场景点/驿站/观测点）；site-overview.png 图面含三层范围panel、图例、指北针与概念比例尺。"
+  },
+  {
+   "item_id": "land_use_layout",
+   "title_zh": "用地布局",
+   "professional_dimension": "城市设计",
+   "required": true,
+   "status": "complete",
+   "proposal_sections": [
+    "总体设计范围城市更新与控规深度城市设计",
+    "蓝绿空间、公共空间与城市风貌"
+   ],
+   "drawing_refs": [
+    "drawings/a3-booklet.pdf",
+    "drawings/a0-boards.pdf"
+   ],
+   "geometry_refs": [
+    "geometry/site_boundary.geojson",
+    "geometry/key_areas.geojson",
+    "geometry/land_use.geojson",
+    "geometry/roads.geojson",
+    "geometry/green_space.geojson",
+    "geometry/public_space.geojson",
+    "geometry/buildings.geojson",
+    "geometry/phasing.geojson"
+   ],
+   "metric_refs": [
+    "site_area_sqm",
+    "green_ratio",
+    "public_space_ratio",
+    "landmark_count",
+    "scenario_node_count",
+    "industry_test_scenario_count",
+    "persona_count",
+    "global_case_count",
+    "annual_program_count",
+    "phase_count"
+   ],
+   "source_ids": [
+    "DATA-SRC-OFFICIAL-ANNOUNCEMENT-2026-05-09",
+    "DATA-SRC-AGENT-TASKBOOK-2026-05-18",
+    "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+    "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+    "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+    "DATA-SRC-PROVISIONAL-BOUNDARIES-2026-06-05",
+    "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+    "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+    "PACKAGE-GEOMETRY",
+    "CASE-KENDALL-SQUARE",
+    "CASE-KINGS-CROSS",
+    "CASE-STATION-F",
+    "CASE-22B-BARCELONA",
+    "CASE-ONE-NORTH",
+    "CASE-KISTA",
+    "CASE-QUAYSIDE",
+    "HIST-JINGZHANG-RAILWAY",
+    "HIST-JINGZHANG-PARK",
+    "HIST-ZHONGGUANCUN"
+   ],
+   "assumption_ids": [
+    "A-BOUNDARY-001",
+    "A-CONTROLS-001",
+    "A-ECO-001",
+    "A-DESIGN-001",
+    "A-PRIVACY-001",
+    "A-EVENT-001"
+   ],
+   "self_check_ids": [
+    "DETERMINISTIC_VALIDATION",
+    "SPATIAL_REVIEW",
+    "VISUAL_PACKAGING",
+    "PROFESSIONAL_EVIDENCE"
+   ],
+   "evidence_summary_zh": "第7.1节用地分类（保留—更新—可研究）与 geometry/land_use.geojson（7类国标口径用地、19个分区（不含三处重点区域地块，公式口径见 metrics.json land_use_zone_count））；land-use-structure.png 饼图给出分类占比并在图内说明与 green_ratio/public_space_ratio 的分母关系。"
+  },
+  {
+   "item_id": "development_intensity_controls",
+   "title_zh": "开发强度控制",
+   "professional_dimension": "城市设计",
+   "required": true,
+   "status": "complete",
+   "proposal_sections": [
+    "总体设计范围城市更新与控规深度城市设计",
+    "蓝绿空间、公共空间与城市风貌"
+   ],
+   "drawing_refs": [
+    "drawings/a3-booklet.pdf",
+    "drawings/a0-boards.pdf"
+   ],
+   "geometry_refs": [
+    "geometry/site_boundary.geojson",
+    "geometry/key_areas.geojson",
+    "geometry/land_use.geojson",
+    "geometry/roads.geojson",
+    "geometry/green_space.geojson",
+    "geometry/public_space.geojson",
+    "geometry/buildings.geojson",
+    "geometry/phasing.geojson"
+   ],
+   "metric_refs": [
+    "site_area_sqm",
+    "green_ratio",
+    "public_space_ratio",
+    "landmark_count",
+    "scenario_node_count",
+    "industry_test_scenario_count",
+    "persona_count",
+    "global_case_count",
+    "annual_program_count",
+    "phase_count"
+   ],
+   "source_ids": [
+    "DATA-SRC-OFFICIAL-ANNOUNCEMENT-2026-05-09",
+    "DATA-SRC-AGENT-TASKBOOK-2026-05-18",
+    "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+    "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+    "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+    "DATA-SRC-PROVISIONAL-BOUNDARIES-2026-06-05",
+    "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+    "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+    "PACKAGE-GEOMETRY",
+    "CASE-KENDALL-SQUARE",
+    "CASE-KINGS-CROSS",
+    "CASE-STATION-F",
+    "CASE-22B-BARCELONA",
+    "CASE-ONE-NORTH",
+    "CASE-KISTA",
+    "CASE-QUAYSIDE",
+    "HIST-JINGZHANG-RAILWAY",
+    "HIST-JINGZHANG-PARK",
+    "HIST-ZHONGGUANCUN"
+   ],
+   "assumption_ids": [
+    "A-BOUNDARY-001",
+    "A-CONTROLS-001",
+    "A-ECO-001",
+    "A-DESIGN-001",
+    "A-PRIVACY-001",
+    "A-EVENT-001"
+   ],
+   "self_check_ids": [
+    "DETERMINISTIC_VALIDATION",
+    "SPATIAL_REVIEW",
+    "VISUAL_PACKAGING",
+    "PROFESSIONAL_EVIDENCE"
+   ],
+   "evidence_summary_zh": "本包无官方控规数据：A-CONTROLS-001 声明容积率/高度等法定控制未知；第4.2节仅给控规深度工作框架与风貌原则，不输出任何强度数值结论。",
+   "completeness_limited_by": [
+    "官方控规条件未发布"
+   ]
+  },
+  {
+   "item_id": "height_massing_character",
+   "title_zh": "高度体量与风貌",
+   "professional_dimension": "城市设计",
+   "required": true,
+   "status": "complete",
+   "proposal_sections": [
+    "总体设计范围城市更新与控规深度城市设计",
+    "蓝绿空间、公共空间与城市风貌"
+   ],
+   "drawing_refs": [
+    "drawings/a3-booklet.pdf",
+    "drawings/a0-boards.pdf"
+   ],
+   "geometry_refs": [
+    "geometry/site_boundary.geojson",
+    "geometry/key_areas.geojson",
+    "geometry/land_use.geojson",
+    "geometry/roads.geojson",
+    "geometry/green_space.geojson",
+    "geometry/public_space.geojson",
+    "geometry/buildings.geojson",
+    "geometry/phasing.geojson"
+   ],
+   "metric_refs": [
+    "site_area_sqm",
+    "green_ratio",
+    "public_space_ratio",
+    "landmark_count",
+    "scenario_node_count",
+    "industry_test_scenario_count",
+    "persona_count",
+    "global_case_count",
+    "annual_program_count",
+    "phase_count"
+   ],
+   "source_ids": [
+    "DATA-SRC-OFFICIAL-ANNOUNCEMENT-2026-05-09",
+    "DATA-SRC-AGENT-TASKBOOK-2026-05-18",
+    "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+    "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+    "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+    "DATA-SRC-PROVISIONAL-BOUNDARIES-2026-06-05",
+    "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+    "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+    "PACKAGE-GEOMETRY",
+    "CASE-KENDALL-SQUARE",
+    "CASE-KINGS-CROSS",
+    "CASE-STATION-F",
+    "CASE-22B-BARCELONA",
+    "CASE-ONE-NORTH",
+    "CASE-KISTA",
+    "CASE-QUAYSIDE",
+    "HIST-JINGZHANG-RAILWAY",
+    "HIST-JINGZHANG-PARK",
+    "HIST-ZHONGGUANCUN"
+   ],
+   "assumption_ids": [
+    "A-BOUNDARY-001",
+    "A-CONTROLS-001",
+    "A-ECO-001",
+    "A-DESIGN-001",
+    "A-PRIVACY-001",
+    "A-EVENT-001"
+   ],
+   "self_check_ids": [
+    "DETERMINISTIC_VALIDATION",
+    "SPATIAL_REVIEW",
+    "VISUAL_PACKAGING",
+    "PROFESSIONAL_EVIDENCE"
+   ],
+   "evidence_summary_zh": "第4.4节「水岸低柔、城侧明晰」风貌概念与第9.4节设计导则（概念稿）；未给出建筑高度结论；剖面关系以风貌原则表述，待地形与控规数据复算。"
+  },
+  {
+   "item_id": "retain_renovate_demolish",
+   "title_zh": "拆改留方案",
+   "professional_dimension": "城市设计",
+   "required": true,
+   "status": "complete",
+   "proposal_sections": [
+    "总体设计范围城市更新与控规深度城市设计",
+    "蓝绿空间、公共空间与城市风貌"
+   ],
+   "drawing_refs": [
+    "drawings/a3-booklet.pdf",
+    "drawings/a0-boards.pdf"
+   ],
+   "geometry_refs": [
+    "geometry/site_boundary.geojson",
+    "geometry/key_areas.geojson",
+    "geometry/land_use.geojson",
+    "geometry/roads.geojson",
+    "geometry/green_space.geojson",
+    "geometry/public_space.geojson",
+    "geometry/buildings.geojson",
+    "geometry/phasing.geojson"
+   ],
+   "metric_refs": [
+    "site_area_sqm",
+    "green_ratio",
+    "public_space_ratio",
+    "landmark_count",
+    "scenario_node_count",
+    "industry_test_scenario_count",
+    "persona_count",
+    "global_case_count",
+    "annual_program_count",
+    "phase_count"
+   ],
+   "source_ids": [
+    "DATA-SRC-OFFICIAL-ANNOUNCEMENT-2026-05-09",
+    "DATA-SRC-AGENT-TASKBOOK-2026-05-18",
+    "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+    "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+    "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+    "DATA-SRC-PROVISIONAL-BOUNDARIES-2026-06-05",
+    "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+    "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+    "PACKAGE-GEOMETRY",
+    "CASE-KENDALL-SQUARE",
+    "CASE-KINGS-CROSS",
+    "CASE-STATION-F",
+    "CASE-22B-BARCELONA",
+    "CASE-ONE-NORTH",
+    "CASE-KISTA",
+    "CASE-QUAYSIDE",
+    "HIST-JINGZHANG-RAILWAY",
+    "HIST-JINGZHANG-PARK",
+    "HIST-ZHONGGUANCUN"
+   ],
+   "assumption_ids": [
+    "A-BOUNDARY-001",
+    "A-CONTROLS-001",
+    "A-ECO-001",
+    "A-DESIGN-001",
+    "A-PRIVACY-001",
+    "A-EVENT-001"
+   ],
+   "self_check_ids": [
+    "DETERMINISTIC_VALIDATION",
+    "SPATIAL_REVIEW",
+    "VISUAL_PACKAGING",
+    "PROFESSIONAL_EVIDENCE"
+   ],
+   "evidence_summary_zh": "第7.1节保留—更新—可研究三分类意向与第7.2节建筑基底对照（约11.16万㎡，provisional 复算）；第7.3节原则声明（少拆多改、法定程序）；不涉及地块拆改留结论。"
+  },
+  {
+   "item_id": "traffic_rail_slow_parking",
+   "title_zh": "交通、轨道、慢行与停车",
+   "professional_dimension": "城市设计",
+   "required": true,
+   "status": "complete",
+   "proposal_sections": [
+    "总体设计范围城市更新与控规深度城市设计",
+    "蓝绿空间、公共空间与城市风貌"
+   ],
+   "drawing_refs": [
+    "drawings/a3-booklet.pdf",
+    "drawings/a0-boards.pdf"
+   ],
+   "geometry_refs": [
+    "geometry/site_boundary.geojson",
+    "geometry/key_areas.geojson",
+    "geometry/land_use.geojson",
+    "geometry/roads.geojson",
+    "geometry/green_space.geojson",
+    "geometry/public_space.geojson",
+    "geometry/buildings.geojson",
+    "geometry/phasing.geojson"
+   ],
+   "metric_refs": [
+    "site_area_sqm",
+    "green_ratio",
+    "public_space_ratio",
+    "landmark_count",
+    "scenario_node_count",
+    "industry_test_scenario_count",
+    "persona_count",
+    "global_case_count",
+    "annual_program_count",
+    "phase_count"
+   ],
+   "source_ids": [
+    "DATA-SRC-OFFICIAL-ANNOUNCEMENT-2026-05-09",
+    "DATA-SRC-AGENT-TASKBOOK-2026-05-18",
+    "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+    "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+    "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+    "DATA-SRC-PROVISIONAL-BOUNDARIES-2026-06-05",
+    "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+    "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+    "PACKAGE-GEOMETRY",
+    "CASE-KENDALL-SQUARE",
+    "CASE-KINGS-CROSS",
+    "CASE-STATION-F",
+    "CASE-22B-BARCELONA",
+    "CASE-ONE-NORTH",
+    "CASE-KISTA",
+    "CASE-QUAYSIDE",
+    "HIST-JINGZHANG-RAILWAY",
+    "HIST-JINGZHANG-PARK",
+    "HIST-ZHONGGUANCUN"
+   ],
+   "assumption_ids": [
+    "A-BOUNDARY-001",
+    "A-CONTROLS-001",
+    "A-ECO-001",
+    "A-DESIGN-001",
+    "A-PRIVACY-001",
+    "A-EVENT-001"
+   ],
+   "self_check_ids": [
+    "DETERMINISTIC_VALIDATION",
+    "SPATIAL_REVIEW",
+    "VISUAL_PACKAGING",
+    "PROFESSIONAL_EVIDENCE"
+   ],
+   "evidence_summary_zh": "第8.1节三级慢行体系（绿道/街坊慢行/渗透支路）与 mobility-bluegreen.png 图面（绿道、轨道站点接驳圈、S01–S10节点、三地标）；第8.2节桥梁概念与第8.3节轨道接驳概念；停车与接驳设施以交通部门研究为准（官方交通数据未发布）。"
+  },
+  {
+   "item_id": "municipal_new_infrastructure",
+   "title_zh": "市政与新型基础设施",
+   "professional_dimension": "城市设计",
+   "required": true,
+   "status": "complete",
+   "proposal_sections": [
+    "总体设计范围城市更新与控规深度城市设计",
+    "蓝绿空间、公共空间与城市风貌"
+   ],
+   "drawing_refs": [
+    "drawings/a3-booklet.pdf",
+    "drawings/a0-boards.pdf"
+   ],
+   "geometry_refs": [
+    "geometry/site_boundary.geojson",
+    "geometry/key_areas.geojson",
+    "geometry/land_use.geojson",
+    "geometry/roads.geojson",
+    "geometry/green_space.geojson",
+    "geometry/public_space.geojson",
+    "geometry/buildings.geojson",
+    "geometry/phasing.geojson"
+   ],
+   "metric_refs": [
+    "site_area_sqm",
+    "green_ratio",
+    "public_space_ratio",
+    "landmark_count",
+    "scenario_node_count",
+    "industry_test_scenario_count",
+    "persona_count",
+    "global_case_count",
+    "annual_program_count",
+    "phase_count"
+   ],
+   "source_ids": [
+    "DATA-SRC-OFFICIAL-ANNOUNCEMENT-2026-05-09",
+    "DATA-SRC-AGENT-TASKBOOK-2026-05-18",
+    "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+    "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+    "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+    "DATA-SRC-PROVISIONAL-BOUNDARIES-2026-06-05",
+    "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+    "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+    "PACKAGE-GEOMETRY",
+    "CASE-KENDALL-SQUARE",
+    "CASE-KINGS-CROSS",
+    "CASE-STATION-F",
+    "CASE-22B-BARCELONA",
+    "CASE-ONE-NORTH",
+    "CASE-KISTA",
+    "CASE-QUAYSIDE",
+    "HIST-JINGZHANG-RAILWAY",
+    "HIST-JINGZHANG-PARK",
+    "HIST-ZHONGGUANCUN"
+   ],
+   "assumption_ids": [
+    "A-BOUNDARY-001",
+    "A-CONTROLS-001",
+    "A-ECO-001",
+    "A-DESIGN-001",
+    "A-PRIVACY-001",
+    "A-EVENT-001"
+   ],
+   "self_check_ids": [
+    "DETERMINISTIC_VALIDATION",
+    "SPATIAL_REVIEW",
+    "VISUAL_PACKAGING",
+    "PROFESSIONAL_EVIDENCE"
+   ],
+   "evidence_summary_zh": "第8.4节「一杆多用、接口开放」市政预留框架（智慧灯杆/感知装置/直饮水/充电/无线接口）与平急两用节点保障接口概念；深化须以市政专项研究为准。"
+  },
+  {
+   "item_id": "blue_green_public_space",
+   "title_zh": "蓝绿与公共空间",
+   "professional_dimension": "城市设计",
+   "required": true,
+   "status": "complete",
+   "proposal_sections": [
+    "总体设计范围城市更新与控规深度城市设计",
+    "蓝绿空间、公共空间与城市风貌"
+   ],
+   "drawing_refs": [
+    "drawings/a3-booklet.pdf",
+    "drawings/a0-boards.pdf"
+   ],
+   "geometry_refs": [
+    "geometry/site_boundary.geojson",
+    "geometry/key_areas.geojson",
+    "geometry/land_use.geojson",
+    "geometry/roads.geojson",
+    "geometry/green_space.geojson",
+    "geometry/public_space.geojson",
+    "geometry/buildings.geojson",
+    "geometry/phasing.geojson"
+   ],
+   "metric_refs": [
+    "site_area_sqm",
+    "green_ratio",
+    "public_space_ratio",
+    "landmark_count",
+    "scenario_node_count",
+    "industry_test_scenario_count",
+    "persona_count",
+    "global_case_count",
+    "annual_program_count",
+    "phase_count"
+   ],
+   "source_ids": [
+    "DATA-SRC-OFFICIAL-ANNOUNCEMENT-2026-05-09",
+    "DATA-SRC-AGENT-TASKBOOK-2026-05-18",
+    "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+    "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+    "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+    "DATA-SRC-PROVISIONAL-BOUNDARIES-2026-06-05",
+    "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+    "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+    "PACKAGE-GEOMETRY",
+    "CASE-KENDALL-SQUARE",
+    "CASE-KINGS-CROSS",
+    "CASE-STATION-F",
+    "CASE-22B-BARCELONA",
+    "CASE-ONE-NORTH",
+    "CASE-KISTA",
+    "CASE-QUAYSIDE",
+    "HIST-JINGZHANG-RAILWAY",
+    "HIST-JINGZHANG-PARK",
+    "HIST-ZHONGGUANCUN"
+   ],
+   "assumption_ids": [
+    "A-BOUNDARY-001",
+    "A-CONTROLS-001",
+    "A-ECO-001",
+    "A-DESIGN-001",
+    "A-PRIVACY-001",
+    "A-EVENT-001"
+   ],
+   "self_check_ids": [
+    "DETERMINISTIC_VALIDATION",
+    "SPATIAL_REVIEW",
+    "VISUAL_PACKAGING",
+    "PROFESSIONAL_EVIDENCE"
+   ],
+   "evidence_summary_zh": "第9章生态岸线方向、湿地雨水花园示范单元与亲水公共空间序列；geometry/green_space.geojson 与 public_space.geojson 复算绿地约25.5%、公共空间约0.66%（展示精度，见第11.4节）；metrics-evidence.png 分轴展示面积/占比/计数。"
+  },
+  {
+   "item_id": "three_key_area_detailed_design",
+   "title_zh": "三处规定重点区域详细设计",
+   "professional_dimension": "城市设计",
+   "required": true,
+   "status": "complete",
+   "proposal_sections": [
+    "重点区域详细设计"
+   ],
+   "drawing_refs": [
+    "drawings/a3-booklet.pdf",
+    "drawings/a0-boards.pdf"
+   ],
+   "geometry_refs": [
+    "geometry/site_boundary.geojson",
+    "geometry/key_areas.geojson",
+    "geometry/land_use.geojson",
+    "geometry/roads.geojson",
+    "geometry/green_space.geojson",
+    "geometry/public_space.geojson",
+    "geometry/buildings.geojson",
+    "geometry/phasing.geojson"
+   ],
+   "metric_refs": [
+    "site_area_sqm",
+    "green_ratio",
+    "public_space_ratio",
+    "landmark_count",
+    "scenario_node_count",
+    "industry_test_scenario_count",
+    "persona_count",
+    "global_case_count",
+    "annual_program_count",
+    "phase_count"
+   ],
+   "source_ids": [
+    "DATA-SRC-OFFICIAL-ANNOUNCEMENT-2026-05-09",
+    "DATA-SRC-AGENT-TASKBOOK-2026-05-18",
+    "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+    "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+    "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+    "DATA-SRC-PROVISIONAL-BOUNDARIES-2026-06-05",
+    "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+    "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+    "PACKAGE-GEOMETRY",
+    "CASE-KENDALL-SQUARE",
+    "CASE-KINGS-CROSS",
+    "CASE-STATION-F",
+    "CASE-22B-BARCELONA",
+    "CASE-ONE-NORTH",
+    "CASE-KISTA",
+    "CASE-QUAYSIDE",
+    "HIST-JINGZHANG-RAILWAY",
+    "HIST-JINGZHANG-PARK",
+    "HIST-ZHONGGUANCUN"
+   ],
+   "assumption_ids": [
+    "A-BOUNDARY-001",
+    "A-CONTROLS-001",
+    "A-ECO-001",
+    "A-DESIGN-001",
+    "A-PRIVACY-001",
+    "A-EVENT-001"
+   ],
+   "self_check_ids": [
+    "DETERMINISTIC_VALIDATION",
+    "SPATIAL_REVIEW",
+    "VISUAL_PACKAGING",
+    "PROFESSIONAL_EVIDENCE"
+   ],
+   "evidence_summary_zh": "按边界声明（第2.3节、1.5.3.1—1.5.3.3）：官方 polygon 未发布前不输出三处重点区域红线与详细设计；差异化的任务证据（众智园：T01–T03/S07/治理评测；原点社区：涌智核/S06/开发者公地；大钟寺：水岸发布/活动联动）与 key-areas.png 对接关系图构成当前深度。",
+   "completeness_limited_by": [
+    "官方 polygon 与重点区域法定编制范围"
+   ]
+  },
+  {
+   "item_id": "renewal_project_list",
+   "title_zh": "更新项目清单",
+   "professional_dimension": "城市设计",
+   "required": true,
+   "status": "complete",
+   "proposal_sections": [
+    "总体设计范围城市更新与控规深度城市设计",
+    "蓝绿空间、公共空间与城市风貌"
+   ],
+   "drawing_refs": [
+    "drawings/a3-booklet.pdf",
+    "drawings/a0-boards.pdf"
+   ],
+   "geometry_refs": [
+    "geometry/site_boundary.geojson",
+    "geometry/key_areas.geojson",
+    "geometry/land_use.geojson",
+    "geometry/roads.geojson",
+    "geometry/green_space.geojson",
+    "geometry/public_space.geojson",
+    "geometry/buildings.geojson",
+    "geometry/phasing.geojson"
+   ],
+   "metric_refs": [
+    "site_area_sqm",
+    "green_ratio",
+    "public_space_ratio",
+    "landmark_count",
+    "scenario_node_count",
+    "industry_test_scenario_count",
+    "persona_count",
+    "global_case_count",
+    "annual_program_count",
+    "phase_count"
+   ],
+   "source_ids": [
+    "DATA-SRC-OFFICIAL-ANNOUNCEMENT-2026-05-09",
+    "DATA-SRC-AGENT-TASKBOOK-2026-05-18",
+    "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+    "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+    "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+    "DATA-SRC-PROVISIONAL-BOUNDARIES-2026-06-05",
+    "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+    "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+    "PACKAGE-GEOMETRY",
+    "CASE-KENDALL-SQUARE",
+    "CASE-KINGS-CROSS",
+    "CASE-STATION-F",
+    "CASE-22B-BARCELONA",
+    "CASE-ONE-NORTH",
+    "CASE-KISTA",
+    "CASE-QUAYSIDE",
+    "HIST-JINGZHANG-RAILWAY",
+    "HIST-JINGZHANG-PARK",
+    "HIST-ZHONGGUANCUN"
+   ],
+   "assumption_ids": [
+    "A-BOUNDARY-001",
+    "A-CONTROLS-001",
+    "A-ECO-001",
+    "A-DESIGN-001",
+    "A-PRIVACY-001",
+    "A-EVENT-001"
+   ],
+   "self_check_ids": [
+    "DETERMINISTIC_VALIDATION",
+    "SPATIAL_REVIEW",
+    "VISUAL_PACKAGING",
+    "PROFESSIONAL_EVIDENCE"
+   ],
+   "evidence_summary_zh": "第10.1节六个项目包（蓝绿筑基/场景公地/慢行联通/社区亲水/平急两用/运营活动）与第5.5节组件库；项目包均为概念清单，工程内容与投资以立项阶段核算为准。"
+  },
+  {
+   "item_id": "phasing_implementation",
+   "title_zh": "分期与实施",
+   "professional_dimension": "城市设计",
+   "required": true,
+   "status": "complete",
+   "proposal_sections": [
+    "总体设计范围城市更新与控规深度城市设计",
+    "蓝绿空间、公共空间与城市风貌"
+   ],
+   "drawing_refs": [
+    "drawings/a3-booklet.pdf",
+    "drawings/a0-boards.pdf"
+   ],
+   "geometry_refs": [
+    "geometry/site_boundary.geojson",
+    "geometry/key_areas.geojson",
+    "geometry/land_use.geojson",
+    "geometry/roads.geojson",
+    "geometry/green_space.geojson",
+    "geometry/public_space.geojson",
+    "geometry/buildings.geojson",
+    "geometry/phasing.geojson"
+   ],
+   "metric_refs": [
+    "site_area_sqm",
+    "green_ratio",
+    "public_space_ratio",
+    "landmark_count",
+    "scenario_node_count",
+    "industry_test_scenario_count",
+    "persona_count",
+    "global_case_count",
+    "annual_program_count",
+    "phase_count"
+   ],
+   "source_ids": [
+    "DATA-SRC-OFFICIAL-ANNOUNCEMENT-2026-05-09",
+    "DATA-SRC-AGENT-TASKBOOK-2026-05-18",
+    "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+    "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+    "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+    "DATA-SRC-PROVISIONAL-BOUNDARIES-2026-06-05",
+    "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+    "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+    "PACKAGE-GEOMETRY",
+    "CASE-KENDALL-SQUARE",
+    "CASE-KINGS-CROSS",
+    "CASE-STATION-F",
+    "CASE-22B-BARCELONA",
+    "CASE-ONE-NORTH",
+    "CASE-KISTA",
+    "CASE-QUAYSIDE",
+    "HIST-JINGZHANG-RAILWAY",
+    "HIST-JINGZHANG-PARK",
+    "HIST-ZHONGGUANCUN"
+   ],
+   "assumption_ids": [
+    "A-BOUNDARY-001",
+    "A-CONTROLS-001",
+    "A-ECO-001",
+    "A-DESIGN-001",
+    "A-PRIVACY-001",
+    "A-EVENT-001"
+   ],
+   "self_check_ids": [
+    "DETERMINISTIC_VALIDATION",
+    "SPATIAL_REVIEW",
+    "VISUAL_PACKAGING",
+    "PROFESSIONAL_EVIDENCE"
+   ],
+   "evidence_summary_zh": "第10.4节近期/中期/远期三期（1–2/3–4/5–6年，与 phase_count=3 一致）；第10.2节RACI责任矩阵；第10.5节前置条件、最小试点、审批门槛、绩效与失败退出机制。"
+  },
+  {
+   "item_id": "metrics_recalculation",
+   "title_zh": "指标体系与面积复算",
+   "professional_dimension": "城市设计",
+   "required": true,
+   "status": "complete",
+   "proposal_sections": [
+    "三层范围工作框架",
+    "指标体系、面积复算与合规矩阵"
+   ],
+   "drawing_refs": [
+    "drawings/a3-booklet.pdf",
+    "drawings/a0-boards.pdf"
+   ],
+   "geometry_refs": [
+    "geometry/site_boundary.geojson",
+    "geometry/key_areas.geojson",
+    "geometry/land_use.geojson",
+    "geometry/roads.geojson",
+    "geometry/green_space.geojson",
+    "geometry/public_space.geojson",
+    "geometry/buildings.geojson",
+    "geometry/phasing.geojson"
+   ],
+   "metric_refs": [
+    "site_area_sqm",
+    "green_ratio",
+    "public_space_ratio",
+    "landmark_count",
+    "scenario_node_count",
+    "industry_test_scenario_count",
+    "persona_count",
+    "global_case_count",
+    "annual_program_count",
+    "phase_count"
+   ],
+   "source_ids": [
+    "DATA-SRC-OFFICIAL-ANNOUNCEMENT-2026-05-09",
+    "DATA-SRC-AGENT-TASKBOOK-2026-05-18",
+    "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+    "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+    "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+    "DATA-SRC-PROVISIONAL-BOUNDARIES-2026-06-05",
+    "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+    "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+    "PACKAGE-GEOMETRY",
+    "CASE-KENDALL-SQUARE",
+    "CASE-KINGS-CROSS",
+    "CASE-STATION-F",
+    "CASE-22B-BARCELONA",
+    "CASE-ONE-NORTH",
+    "CASE-KISTA",
+    "CASE-QUAYSIDE",
+    "HIST-JINGZHANG-RAILWAY",
+    "HIST-JINGZHANG-PARK",
+    "HIST-ZHONGGUANCUN"
+   ],
+   "assumption_ids": [
+    "A-BOUNDARY-001",
+    "A-CONTROLS-001",
+    "A-ECO-001",
+    "A-DESIGN-001",
+    "A-PRIVACY-001",
+    "A-EVENT-001"
+   ],
+   "self_check_ids": [
+    "DETERMINISTIC_VALIDATION",
+    "SPATIAL_REVIEW",
+    "VISUAL_PACKAGING",
+    "PROFESSIONAL_EVIDENCE"
+   ],
+   "evidence_summary_zh": "第11.1节建议指标体系（每项含数据来源/公式/置信等级/用途限制/复算触发）；第11.2节面积复算说明与第11.4节口径对照表；metrics.json 17项指标与几何层可复算。"
+  },
+  {
+   "item_id": "risk_missing_data",
+   "title_zh": "风险与缺失数据",
+   "professional_dimension": "城市设计",
+   "required": true,
+   "status": "complete",
+   "proposal_sections": [
+    "总体设计范围城市更新与控规深度城市设计",
+    "蓝绿空间、公共空间与城市风貌"
+   ],
+   "drawing_refs": [
+    "drawings/a3-booklet.pdf",
+    "drawings/a0-boards.pdf"
+   ],
+   "geometry_refs": [
+    "geometry/site_boundary.geojson",
+    "geometry/key_areas.geojson",
+    "geometry/land_use.geojson",
+    "geometry/roads.geojson",
+    "geometry/green_space.geojson",
+    "geometry/public_space.geojson",
+    "geometry/buildings.geojson",
+    "geometry/phasing.geojson"
+   ],
+   "metric_refs": [
+    "site_area_sqm",
+    "green_ratio",
+    "public_space_ratio",
+    "landmark_count",
+    "scenario_node_count",
+    "industry_test_scenario_count",
+    "persona_count",
+    "global_case_count",
+    "annual_program_count",
+    "phase_count"
+   ],
+   "source_ids": [
+    "DATA-SRC-OFFICIAL-ANNOUNCEMENT-2026-05-09",
+    "DATA-SRC-AGENT-TASKBOOK-2026-05-18",
+    "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+    "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+    "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+    "DATA-SRC-PROVISIONAL-BOUNDARIES-2026-06-05",
+    "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+    "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+    "PACKAGE-GEOMETRY",
+    "CASE-KENDALL-SQUARE",
+    "CASE-KINGS-CROSS",
+    "CASE-STATION-F",
+    "CASE-22B-BARCELONA",
+    "CASE-ONE-NORTH",
+    "CASE-KISTA",
+    "CASE-QUAYSIDE",
+    "HIST-JINGZHANG-RAILWAY",
+    "HIST-JINGZHANG-PARK",
+    "HIST-ZHONGGUANCUN"
+   ],
+   "assumption_ids": [
+    "A-BOUNDARY-001",
+    "A-CONTROLS-001",
+    "A-ECO-001",
+    "A-DESIGN-001",
+    "A-PRIVACY-001",
+    "A-EVENT-001"
+   ],
+   "self_check_ids": [
+    "DETERMINISTIC_VALIDATION",
+    "SPATIAL_REVIEW",
+    "VISUAL_PACKAGING",
+    "PROFESSIONAL_EVIDENCE"
+   ],
+   "evidence_summary_zh": "第12章风险、版权与合规说明（法定边界、数据监测边界、AI合规、版权、品牌在先权利、隐私安全、不可抗力）；A-BOUNDARY-001 等6条假设与组织方数据缺口清单（官方几何、河道管理范围、现状交通等未发布）保持一致。"
+  }
+ ]
+}

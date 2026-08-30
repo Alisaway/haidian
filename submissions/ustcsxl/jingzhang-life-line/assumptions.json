@@ -1,0 +1,124 @@
+{
+  "schema_version": "0.1.0",
+  "assumptions": [
+    {
+      "id": "A-BOUNDARY-001",
+      "status": "pending_official_geometry",
+      "statement": "提交的总体范围是仓库维护者提供的 provisional rough geometry，不是官方红线。",
+      "impact": "所有面积、比例、位置、图件和缓冲区只支持方向性城市设计；官方边界到位后必须全量重算。",
+      "validation": "保持 official_boundary=false，在图件、正文和机器数据中持续显示 provisional 警示。"
+    },
+    {
+      "id": "A-KEYAREA-001",
+      "status": "pending_official_geometry",
+      "statement": "三处重点区域是按任务名称和公布近似面积构造的临时任务框，不是地块或权属边界。",
+      "impact": "三站方案只表达定位、空间原型和实施闸门，不形成精确选址或用地结论。",
+      "validation": "取得官方 polygon、权属和现场核验后替换全部 key-area geometry。"
+    },
+    {
+      "id": "A-CONTROLS-001",
+      "status": "pending_professional_confirmation",
+      "statement": "法定控规、道路红线、轨道保护、市政容量、建筑高度、容积率、地下条件和文保控制线未进入公开数据包。",
+      "impact": "高度、强度、总建筑量、停车和工程容量保持 unknown；概念图不得用于规划许可或施工。",
+      "validation": "由有资质团队读取正式控规、测绘、专项评估和工程资料后再形成专业结论。"
+    },
+    {
+      "id": "A-SITE-VERIFY-001",
+      "status": "pending_field_survey",
+      "statement": "建筑包络、入口、遮阴、设施和公共空间节点均为设计载体，不代表已核实现状、结构、消防、无障碍、运营或权属。",
+      "impact": "不能从本包推断任何现状建筑的保留、改造、拆除或开放状态。",
+      "validation": "逐点完成现状测绘、结构安全、消防、无障碍、噪声、运营和权属核验。"
+    },
+    {
+      "id": "A-PHASE2-ASBUILT-001",
+      "status": "pending_as_built_and_field_verification",
+      "statement": "公开资料描述京张遗址公园规划与阶段性建设，但本包没有清权的竣工边界、入口清单或实时开放状态。",
+      "impact": "生命线与六条核验缝不能冒充已建道路、已开放入口或连续无障碍路线。",
+      "validation": "取得竣工资料并踏勘宽度、坡度、过街、照明、开放时间和应急疏散。"
+    },
+    {
+      "id": "A-ACCESS-001",
+      "status": "pending_field_and_transport_review",
+      "statement": "生命线和六条连接是慢行与连续服务的审核问题，不是新增道路、桥隧或轨道工程线位。",
+      "impact": "交通组织、站城接口、停车和穿越方式均需专业审查。",
+      "validation": "在试点前完成交通、铁路保护、道路安全、产权和无障碍联合审查。"
+    },
+    {
+      "id": "A-HYDROLOGY-001",
+      "status": "pending_hydrology_and_soil_model",
+      "statement": "蓝绿缓冲区是概念海绵空间；没有降雨模型、汇水边界、土壤渗透、地下水和管网容量数据。",
+      "impact": "绿地面积可复算，但调蓄量、内涝削减和排水能力不得宣称为实测绩效。",
+      "validation": "以北京海绵城市标准为背景，由专项模型和工程勘察验证。"
+    },
+    {
+      "id": "A-CONTINUITY-TARGET-001",
+      "status": "concept_target",
+      "statement": "72 小时是桌面推演和试点验证的服务连续性设计目标，不是既有能力、承诺或认证。",
+      "impact": "每项服务必须先证明在断网、断电、模型异常或人员不足时可安全降级；未达标不扩展。",
+      "validation": "通过可复演日志、人工接管记录、服务恢复时间和第三方观察形成证据。"
+    },
+    {
+      "id": "A-DATA-001",
+      "status": "design_governance_commitment",
+      "statement": "AI 只匹配经授权的任务、资源、时间和空间，不建立个人信用、情绪、关系或行为画像。",
+      "impact": "禁止人脸识别、情绪推断、通讯录关系分析、持续精确轨迹和跨场景身份拼接。",
+      "validation": "最小数据、目的限定、短期删除、本地优先、可解释结果、人工复核、申诉和无账号等价路径。"
+    },
+    {
+      "id": "A-AI-SAFETY-001",
+      "status": "design_governance_commitment",
+      "statement": "所有公共 AI 场景都采用 fail-safe / graceful-degradation 合同，模型输出不直接触发高风险公共行动。",
+      "impact": "当置信度、数据新鲜度、网络、电力或审计条件不足时，系统降级为静态规则、人工服务或停止。",
+      "validation": "红队用例、失败注入、人工接管时钟、回滚、审计日志和公众投诉路径必须可复演。"
+    },
+    {
+      "id": "A-OPERATIONS-001",
+      "status": "pending_agreements",
+      "statement": "运营席位、值守班次、演练频次、服务时限和责任矩阵是概念建议。",
+      "impact": "不代表政府、园区、企业、社区、医院或应急机构已承诺参与。",
+      "validation": "逐个确认主体、责任、预算、采购、审批、保险、数据授权、投诉和停机权限。"
+    },
+    {
+      "id": "A-COST-001",
+      "status": "unknown",
+      "statement": "投资、运维、采购、能源、设备寿命和融资尚未估算。",
+      "impact": "本包不作财政、采购或投资承诺。",
+      "validation": "范围、场地、设施和审批明确后开展独立造价、全生命周期成本和资金计划。"
+    },
+    {
+      "id": "A-HERITAGE-001",
+      "status": "pending_heritage_review",
+      "statement": "京张文化叙事、导视和三处地标是原创概念，不代表文保部门批准，也不改变遗产实体。",
+      "impact": "任何安装、活动、灯光或施工都需文保、产权、消防和运营审查。",
+      "validation": "使用经核实的公共历史资料，由专业团队审核位置、内容、材料和可逆性。"
+    },
+    {
+      "id": "A-DAZHONGSI-ANCHOR-001",
+      "status": "known_geometry_warning",
+      "statement": "仓库 provisional 大钟寺重点区框并非以大钟寺站为锚点，不能据此形成站城一体化精确方案。",
+      "impact": "本方案将其作为南部连续服务任务框，不宣称与站点的精确距离、路径或产权关系。",
+      "validation": "官方范围和站点步行审计到位后整体替换该框。"
+    },
+    {
+      "id": "A-CLIMATE-THRESHOLD-001",
+      "status": "pending_local_public_health_protocol",
+      "statement": "高温、暴雨、拥挤和空气质量触发阈值必须由北京本地气象、卫健、应急与场地运营协议确定。",
+      "impact": "示意阈值仅用于原型测试，不形成公共预警或医疗建议。",
+      "validation": "接入权威预警、明确责任主体，并在公众界面显示来源、时间戳和人工确认。"
+    },
+    {
+      "id": "A-REGIONAL-NONCOMMIT-001",
+      "status": "concept_interface",
+      "statement": "五类区域协同均为待验证开放接口，不代表外部机构、资金、数据、采购或合作已经确定。",
+      "impact": "不得把接口图理解为范围外用地安排、签约关系或实施承诺。",
+      "validation": "只有授权、最小数据、责任、成本维护、投诉与退出机制可验证时才进入可逆试点。"
+    },
+    {
+      "id": "A-PILOT-AUTH-001",
+      "status": "pending_site_and_operator_authorization",
+      "statement": "Y1-01至Y1-03是首年可逆试点合同，不是已获场地、运营、预算或审批的项目。",
+      "impact": "未取得场地、消防、无障碍、安全、数据、保险与停机权协议前不得进入真实现场。",
+      "validation": "以书面授权、RACI、Go/No-Go记录、退出与回滚证据作为启动条件。"
+    }
+  ]
+}

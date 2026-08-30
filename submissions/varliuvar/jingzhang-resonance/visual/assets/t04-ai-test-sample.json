@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0.0",
+  "sample_id": "S-T04-AI-TEST",
+  "scenario_id": "T-04",
+  "status": "method_complete_external_evidence_pending",
+  "participant_complete": true,
+  "sample_scope": "Bounded embodied-AI campus test loop covering geofence, supervision, accessibility, privacy, incident response and rollback.",
+  "baseline": {
+    "status": "unknown_pending_field_measurement",
+    "measured_values": null,
+    "required_records": ["ordinary pedestrian and wheelchair route", "crossing and conflict points", "sensitive time windows", "lighting and visibility", "network and stop-control reliability", "existing incident and complaint route"]
+  },
+  "sampling": {
+    "scope": "Participant-authored method, not a result.",
+    "method": "Use versioned route segments and fixed observation windows; record exposure, interventions, near misses, accessibility obstruction, geofence events, overrides and data deletion/retention actions.",
+    "representativeness_limit": "A bounded desk or campus test does not establish public-space readiness."
+  },
+  "proposed_raci_role_types": {
+    "responsible": ["test_operator_role", "live_human_supervisor_role"],
+    "accountable": ["test_safety_owner_role", "data_controller_role"],
+    "consulted": ["privacy_reviewer_role", "accessibility_reviewer_role", "public_interest_reviewer_role", "site_operations_reviewer_role"],
+    "informed": ["affected_user_communication_role", "incident_contact_role"]
+  },
+  "prerequisite_permissions": [
+    {"permission": "verified_site_access", "status": "unconfirmed"},
+    {"permission": "data_processing_lawful_basis_and_notice", "status": "unconfirmed"},
+    {"permission": "safety_privacy_accessibility_review", "status": "unconfirmed"},
+    {"permission": "operator_and_live_stop_authority", "status": "unconfirmed"}
+  ],
+  "test_controls": {
+    "data_controller_role": "authorized_test_data_controller_role",
+    "human_reviewer_role": "safety_privacy_accessibility_public_interest_reviewer_roles",
+    "human_stop_authority": true,
+    "non_ai_alternative": "ordinary pedestrian circulation and human-led operation remain available",
+    "continue_condition": "Verified geofence, supervised operation, accessible movement, authorized minimal data use, reliable live stop and no unresolved serious incident.",
+    "pause_condition": "Missing baseline, geofence breach, supervision loss, near miss, accessibility obstruction, unauthorized data handling, unexplained output or unresolved complaint.",
+    "exit_condition": "Disable the test, remove temporary controls, restore ordinary circulation, close data access, execute retention/deletion decision and archive the record.",
+    "public_disclosure": "Publish method and version, aggregate exposure, failures, overrides, incidents, corrections, retention/deletion actions and unresolved limits without exposing personal data."
+  },
+  "cost_estimation": {
+    "amount": null,
+    "currency": null,
+    "method": "Build a versioned bill of equipment, software, network, staff hours, supervision, safety barriers, accessibility support, insurance, review, data governance, removal and restoration; apply dated cited unit rates only after the test boundary is verified.",
+    "fabricated_amount_prohibited": true
+  },
+  "maintenance_cycle": ["pre-run hardware, geofence, stop and route check", "per-run live supervision and log review", "post-run incident, override and data-action review", "scheduled model, software, sensor and security review"],
+  "emergency_escalation": {
+    "action": "Live supervisor stops the system, secures the loop, restores ordinary circulation, records the event and notifies accountable and reviewer roles.",
+    "restart_authority": "accountable safety owner and data controller after documented review",
+    "public_contact_required": true
+  },
+  "exit_acceptance": ["test disabled", "temporary controls removed", "ordinary accessible circulation restored", "data access closed", "retention or deletion confirmed", "incident and complaint routes closed or transferred", "acceptance evidence archived"],
+  "retest_template": ["hardware, software and model version", "route and field conditions", "inputs and expected outputs", "actual outputs and failures", "geofence events", "human overrides", "incidents and complaints", "data actions", "corrections", "reviewer roles", "continue, pause or exit decision"],
+  "institution_status": "unconfirmed",
+  "claim_boundary": "This is a participant-authored test and handoff method. It does not evidence site access, data permission, measured performance, cost, deployment, procurement, operator commitment or approval."
+}

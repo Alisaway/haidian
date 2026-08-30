@@ -1,0 +1,312 @@
+{
+  "schema_version": "0.1.0",
+  "units": {
+    "length": "m",
+    "area": "sqm"
+  },
+  "metrics": {
+    "site_area_sqm": {
+      "status": "known",
+      "value": 11412825.386,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "polygon_area(provisional_site_boundary, EPSG:4548)",
+      "confidence": "medium",
+      "assumptions": [
+        "Provisional boundary, not an official redline; display at reduced precision (0.1 km2), recompute on official geometry release."
+      ]
+    },
+    "green_space_area_sqm": {
+      "status": "known",
+      "value": 1341843.517,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/green_space.geojson"
+      ],
+      "formula": "union(conceptual green polygons, EPSG:4548)",
+      "confidence": "low",
+      "assumptions": []
+    },
+    "public_space_area_sqm": {
+      "status": "known",
+      "value": 51250.0,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "union(conceptual public-space polygons, EPSG:4548)",
+      "confidence": "low",
+      "assumptions": []
+    },
+    "building_footprint_area_sqm": {
+      "status": "known",
+      "value": 111600.0,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "union(conceptual reuse-first envelopes, EPSG:4548)",
+      "confidence": "low",
+      "assumptions": []
+    },
+    "green_ratio": {
+      "status": "known",
+      "value": 0.118,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/green_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "green_space_area_sqm / site_area_sqm; display at 3 decimals max (provisional)",
+      "confidence": "low",
+      "assumptions": [
+        "Provisional geometry; recompute on official green-space and boundary release."
+      ]
+    },
+    "public_space_ratio": {
+      "status": "known",
+      "value": 0.004,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "public_space_area_sqm / site_area_sqm; display at 3 decimals max (provisional)",
+      "confidence": "low",
+      "assumptions": [
+        "Provisional geometry; recompute on official public-space and boundary release."
+      ]
+    },
+    "road_network_length_m": {
+      "status": "known",
+      "value": 10154.4,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson"
+      ],
+      "formula": "sum(conceptual paths, EPSG:4548); display rounded to 1 decimal (provisional)",
+      "confidence": "low",
+      "assumptions": []
+    },
+    "key_area_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "count(area_id in key_areas.geojson)",
+      "confidence": "medium",
+      "assumptions": []
+    },
+    "land_use_zone_count": {
+      "status": "known",
+      "value": 27,
+      "unit": "count",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "count(land_use.geojson features)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "building_unit_count": {
+      "status": "known",
+      "value": 12,
+      "unit": "count",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "count(buildings.geojson features)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "landmark_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "count(scenario_type == ai_landmark)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "scenario_node_count": {
+      "status": "known",
+      "value": 9,
+      "unit": "count",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "count(scenario_node features, 6) + count(ai_landmark features, 3)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "industry_test_scenario_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(industry test scenario cards B1-B3 in proposal.md table)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "scenario_card_count": {
+      "status": "known",
+      "value": 10,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(AI+ scenario cards A1-A10 in proposal.md table)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "persona_count": {
+      "status": "known",
+      "value": 7,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(persona table rows in proposal.md)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "global_case_count": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "sources.json"
+      ],
+      "formula": "count(global ecosystem mechanism cases table rows)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "phase_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/phasing.geojson"
+      ],
+      "formula": "count(phasing polygons)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "annual_program_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(annual programme brands table rows)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "land_use_0701_residential_ratio": {
+      "status": "known",
+      "value": 0.113,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/land_use.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "sum(0701 area) / site_area, EPSG:4548; single caliber; recompute on official geometry release",
+      "confidence": "low",
+      "assumptions": []
+    },
+    "land_use_0802_research_ratio": {
+      "status": "known",
+      "value": 0.268,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/land_use.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "sum(0802 area) / site_area, EPSG:4548; single caliber; recompute on official geometry release",
+      "confidence": "low",
+      "assumptions": []
+    },
+    "land_use_0803_culture_ratio": {
+      "status": "known",
+      "value": 0.081,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/land_use.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "sum(0803 area) / site_area, EPSG:4548; single caliber; recompute on official geometry release",
+      "confidence": "low",
+      "assumptions": []
+    },
+    "land_use_0804_education_ratio": {
+      "status": "known",
+      "value": 0.024,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/land_use.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "sum(0804 area) / site_area, EPSG:4548; single caliber; recompute on official geometry release",
+      "confidence": "low",
+      "assumptions": []
+    },
+    "land_use_0805_sports_ratio": {
+      "status": "known",
+      "value": 0.044,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/land_use.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "sum(0805 area) / site_area, EPSG:4548; single caliber; recompute on official geometry release",
+      "confidence": "low",
+      "assumptions": []
+    },
+    "land_use_0901_commercial_ratio": {
+      "status": "known",
+      "value": 0.157,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/land_use.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "sum(0901 area) / site_area, EPSG:4548; single caliber; recompute on official geometry release",
+      "confidence": "low",
+      "assumptions": []
+    },
+    "land_use_0902_business_ratio": {
+      "status": "known",
+      "value": 0.091,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/land_use.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "sum(0902 area) / site_area, EPSG:4548; single caliber; recompute on official geometry release",
+      "confidence": "low",
+      "assumptions": []
+    },
+    "land_use_1401_park_green_ratio": {
+      "status": "known",
+      "value": 0.221,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/land_use.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "sum(1401 area) / site_area, EPSG:4548; single caliber; recompute on official geometry release",
+      "confidence": "low",
+      "assumptions": []
+    }
+  }
+}

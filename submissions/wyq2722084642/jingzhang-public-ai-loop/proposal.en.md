@@ -21,6 +21,8 @@ This is a concept and reference scheme. It is not a statutory plan, government a
 
 ![Jing-Zhang Civic Loop: one spine and three nodes](assets/figures/site-overview.en.png)
 
+All five core figures use one coordinate system to combine package geometry with OpenStreetMap road, rail, water, park and station context. OSM helps a reviewer recognise urban fabric only; it does not define boundaries, parcels, road redlines, engineering or approvals. Provisional extents remain faint and dashed, while retrieval time, extent, licence, and query/response hashes are recorded in the source register. [source:OSM-CONTEXT-20260818]
+
 ## 1. Evidence base, limits and scope
 
 Facts, inferences, design recommendations and items awaiting professional confirmation are kept separate. Registered official facts enter `sources.json` and `metrics.json`; design judgements remain in the narrative and matrices; missing statutory boundaries, ownership, utilities, heritage GIS and delivery responsibility remain in `assumptions.json`. Provisional geometry supports concept comparison and package checks only. [source:SITE-PACKAGE] [source:SOURCE-REGISTRY]
@@ -34,7 +36,8 @@ The proposal is based on the official call, Agent taskbook, registered public so
 | District statistics | At end-2025 Haidian reported 3.111 million residents, 92 national key laboratories and 123 registered large models; the bulletin marks 2025 figures as preliminary. [source:HD-STATS-2025] | Make services legible to residents, researchers, founders and mobile talent, with universal and human-assisted access. | Do not allocate district totals to the provisional site or use them to forecast users, floor area or returns. [metric:haidian_resident_population_2025] |
 | Existing park | Phase I of Jing-Zhang Railway Heritage Park, from Qinghua East Road to Zhichun Road, was reported as 2.5 km and 16.8 ha, with heritage retention, functional stitching and public-space goals. [source:JZ-PARK-PHASE1] | Plug into and repair an existing civic spine; audit breaks, entrances, rest points and service gaps before adding technology. | Do not combine Phase I area with the provisional proposal area or label unopened segments as complete. [metric:jingzhang_park_phase1_length_m] |
 | Planning procedure | A street-level regulatory-plan draft was displayed from December 2024 to January 2025. The response notice records revised or still-to-be-detailed road-junction treatment. [source:JZ-CONTROL-DRAFT-RESPONSE] | Treat major crossings as connectivity problems with alternative interfaces, not approved bridges, tunnels or redlines. | Do not treat the consultation response as the approved plan or reverse-engineer legal boundaries from webpage text. [assumption:A-CONTROL-PLAN-006] |
-| Existing service | AI Origin Community has a mobile talent-service station covering 17 high-frequency items, digital Q&A and human service officers. [source:AI-ORIGIN-TALENT-SERVICE-2026] | Extend the existing service with no-account access, quiet waiting, paper guidance, referral and failure review rather than duplicate it. | Do not claim the 17 services as proposal outputs or assume capacity, hours or system access. [metric:ai_origin_high_frequency_talent_services_2026] |
+| Existing service | AI Origin Community has a mobile talent-service station covering 17 high-frequency items, digital Q&A and human service officers. [source:AI-ORIGIN-TALENT-SERVICE-2026] | Retain it as an existing service reference for no-account access, paper guidance, human referral and failure review. | Do not claim the 17 services as proposal outputs. Public evidence does not establish the station's exact building, floor, capacity, hours or system access. [metric:ai_origin_high_frequency_talent_services_2026] |
+| Qinghe Station civic interface | An official axonometric diagram separates 2F, 1F, B1 and B2 and marks accessible lifts, underpasses and sunken squares/corridors. A current official page also states that the northern municipal underground walking passage connects buses, the west square and surrounding roads. [source:QH-STATION-MAP-2026] [source:QH-UNDERGROUND-WALK-2026] | Use the arrival—underground passage—B1 city corridor outside fare/security control as the sole small-site prototype, limited to a fixed overview, paper route card and human handoff. | The diagram is not a survey or building plan. Do not infer dimensions, levels, exact entrance, lift route, opening hours or operating boundary. [assumption:A-QH-MAP-009] |
 | Heritage control | The Beijing Municipal Cultural Heritage Bureau publishes protected and construction-control zones for the former Qinghuayuan Station, including restrictions on unrelated new construction. [source:QINGHUAYUAN-HERITAGE-CONTROLS-2026] | Turn the “First Railway” landmark into a movable, low-impact interpretation route; fix no new site near the station before official heritage GIS screening. | Do not digitise textual offsets as an authoritative polygon or propose excavation, fixed equipment or structures. [assumption:A-HERITAGE-005] |
 | Walking and greenways | Beijing’s programmes emphasise continuous walking/cycling rights, accessibility, shade and water-road-green integration. [source:BEIJING-SLOW-MOBILITY-2024] [source:BEIJING-GREENWAY-GUIDE-2025] | Audit six essentials first: network breaks, crossings, shade, tactile-paving conflict, stopping places and non-AI wayfinding. | Do not present citywide guidance as an approved site project or substitute it for professional road, landscape or accessibility design. |
 
@@ -58,9 +61,13 @@ The overall-design polygon remains a provisional working constraint: its package
 
 ## 2. Overall concept, naming and identity
 
-“Jing-Zhang” keeps the memory of railway engineering and regional connection. “Civic” centres public value. “Loop” requires every service to have an entrance, alternative path, human handoff, stop condition and feedback route. The spatial identity is one civic spine, three nodes, two collaborative wings and multiple small scenarios. The visual identity is a line that can return to its origin and three open nodes, using deep blue, cyan-green, warm orange and paper white. It uses no third-party logo, portrait or unauthorised railway imagery. [source:AGENT-TASKBOOK]
+“Jing-Zhang” keeps the memory of railway engineering and regional connection. “Civic” centres public value. “Loop” requires every service to have an entrance, alternative path, human handoff, stop condition and feedback route. The spatial identity is one civic spine, three nodes, two collaborative wings and multiple small scenarios. The reviewable identity sample is a return-to-origin line and three open nodes in deep blue, cyan-green and warm orange. The offline visual page shows the bilingual wordmark and geometric sample. It is an original concept mark for this proposal—not a registered trademark, approved wayfinding or existing railway sign—and uses only a system-font fallback. Font embedding, graphic reuse, name registration and every third-party asset require separate clearance before application. [source:AGENT-TASKBOOK] [assumption:A-RIGHTS-008]
 
 The three positionings are a century-old Jing-Zhang cultural belt, an urban AI living-experience belt and an AI-integrated innovation belt. The five functions are full-stack independent innovation, a global AI ecosystem, AI+ scenario enablement, an AI-enabled liveable city and globally relevant AI governance. AI Origin Community leads open collaboration; Zhongzhiyuan leads independent innovation and controlled testing; Dazhongsi provides industry-facing service and public explanation; the two wings connect science services and Xiaoyue River everyday scenarios.
+
+## Core concept and original mechanisms
+
+The original proposition is not another smart-equipment corridor but a **reversible civic-service loop**. AI enters only after an ordinary service baseline can complete the task independently, and every scenario has a visible boundary, human handoff, stop, appeal, withdrawal and restoration path. Three linked mechanisms make the concept operational. First, a **baseline mechanism** combines paper, staff, offline service and optional AI so that an account, scan or model never becomes the civic-service gate. Second, the **four-state mechanism** - OPEN, PILOT, PAUSE and RESTORE - binds spatial components, data authority and accountable roles into one operating system. Third, a **question-evidence-reuse-handoff mechanism** lets communities, firms, universities, professionals and regional exchange nodes share failure and repair rather than copy an unverified technical pattern. The nodes are intentionally different: Zhongzhiyuan tests isolation and recovery, AI Origin tests ordinary-user accessibility, and Dazhongsi tests whether industry display can become an auditable and withdrawable civic interface. “Loop” is therefore a name, spatial network, visual symbol, governance model and planning innovation that can be reviewed.
 
 ## 3. Coordinated study: innovation ecosystem and future city
 
@@ -77,6 +84,19 @@ The ecosystem is organised by capability, spatial carrier and public return—no
 | Paris-Saclay Gif-sur-Yvette | Combine research and education with housing, neighbourhood services, parks, public space and district infrastructure. [source:CASE-PARIS-SACLAY-GIF-2026] | Test each key area for research, daily life, public realm and infrastructure together. | French statutory procedures, transit schedules and delivery institutions. |
 
 Across the cases, innovation must be usable in everyday life; testing needs governance and exit; public space, mobility and community services should be designed with research facilities. The cases do not prove equivalent institutions, budgets, data or delivery capacity in Haidian.
+
+### 3.2 Full-stack ecosystem: capability–carrier–public-return map (concept)
+
+| Capability | Conceptual carrier | Ordinary baseline | Optional increment and public return | Unconfirmed boundary |
+| --- | --- | --- | --- | --- |
+| University research and open source | Origin Community concept node, Zhongzhiyuan test interface, movable civic-spine release point | Paper issue card, human explanation and published failure record | Rights-cleared code/protocol search and reproducibility explanation; return is a reusable method, not promotion | No university, team, site, programme or IP arrangement is confirmed |
+| Models, compute and recovery | Isolated Zhongzhiyuan test carrier; no equipment is sited in public green space | Human benchmark, offline explanation and ordinary information | After authority, record edge latency, energy and recovery failure; return is auditable evidence | Compute source, equipment, energy cap, network and responsibility are unknown |
+| Data, authority and audit | Reversible Dazhongsi display interface | Human rights check and paper purpose/withdrawal note | Item-cleared synthetic-data demonstration only; return is a legible rights chain | Data subject, brand, licence, retention and exhibit position are unknown |
+| Talent life and community service | Zhongguancun service wing, Origin Community and ordinary corridor points | Human enquiry, paper referral and no-account process | Optional multilingual explanation and appointment prompt; return is explicit takeover/stop | No population, post, housing, volume or employment result is inferred |
+| Capital, IP and professional services | Zhongguancun service wing and Dazhongsi human interface | Public service directory, human consultation and appeal | Optional material check, never automated decision; return is rights-clear referral | Institution, funding, fee, finance, patent and transfer outcome are unconfirmed |
+| Everyday scenarios and international explanation | Xiaoyue River scenario wing, civic spine and reversible event interface | Ordinary passage, human script and paper registration/exit | Translate verified scenarios into bilingual evidence cards and return failure; return is fit/non-fit knowledge | No existing programme, international partner, frequency, footfall or stable resource is claimed |
+
+This map only states what evidence may enter which carrier and what an ordinary person receives. It is not an industry roster, capital allocation, compute purchase, recruitment target or spatial placement. [assumption:A-CONTEXT-007] [assumption:A-RIGHTS-008] [depth:industry_future_city_research]
 
 The proposed structure is one civic spine + three innovation nodes + two collaborative wings + ten reusable scenarios. Every service uses an evidence card recording user, purpose, data boundary, non-AI alternative, stop condition and review owner.
 
@@ -122,17 +142,31 @@ The mobility figure reads the green and public-space layers together so continui
 
 ### 5.1 Zhongzhiyuan: test before scaling
 
-Zhongzhiyuan is a controlled sandbox for trustworthy testing and edge compute: bookable test rooms, low-disturbance explanation space, maintenance and human help, and shared validation for university and start-up teams. Every test needs authority, time limits, a data list, stop conditions and human review. No compute supply, investment, tenant or procurement commitment is implied. [data:geometry/key_areas.geojson#PROV-KEY-001] [depth:three_key_area_detailed_design]
+Zhongzhiyuan is a controlled sandbox for trustworthy testing and edge compute. Staffed benchmarks, isolated test rooms, a low-disturbance explanation gallery, maintenance space and human help form an outside-to-inside permission gradient. Visitors who never enter a test zone can still understand the purpose through paper notes, staffed explanation and offline exhibits. AI operates only in authorised units isolated from production. Purpose, data, device, energy/latency baseline, responsible person and recovery drill must be fixed before entry; a permission breach, inexplicable output or failed recovery stops the system, disconnects the interface and triggers human review. No compute supply, investment, tenant or procurement commitment is implied. [data:geometry/key_areas.geojson#PROV-KEY-001] [depth:three_key_area_detailed_design]
 
 ### 5.2 Beijing AI Origin Community: participation in ordinary life
 
-The Origin Community is a civic living room for open-source release, resident feedback and intergenerational collaboration. Since a talent-service station already covers 17 high-frequency items with digital and human support, the proposal extends rather than duplicates it: no-account terminals, paper guidance, quiet waiting, complex-case referral, workshops and reversible trials. People may decline AI or request human explanation. [source:AI-ORIGIN-TALENT-SERVICE-2026] [data:geometry/key_areas.geojson#PROV-KEY-002] [depth:three_key_area_detailed_design]
+The Origin Community is a civic living room for open-source release, resident feedback and intergenerational collaboration. Public evidence confirms a mobile talent-service station covering 17 high-frequency items with digital and human support, but not its exact building, floor or spatial interface. This iteration therefore attaches no desk or B1 route to a specific building. It retains one principle only: paper and human routes complete the task before explainable AI is compared with them; if any group is blocked, the alternative fails, collection exceeds notice or an appeal cannot be handled, AI triage stops. [source:AI-ORIGIN-TALENT-SERVICE-2026] [data:geometry/key_areas.geojson#PROV-KEY-002] [depth:three_key_area_detailed_design]
 
 Its provisional polygon is used only to locate this concept for comparison and must be replaced before any site-specific implementation judgement. [data:geometry/key_areas.geojson#PROV-KEY-002]
 
 ### 5.3 Dazhongsi: industry display as a public interface
 
-Dazhongsi is an interface for industry service, explainable data governance and international exchange. Auditable case galleries, an enterprise-service desk, a talent meeting place and transit-linked public space create an open ground floor. Every company case, brand, product, dataset and partnership requires rights clearance; none is presented as a confirmed tenant or investment outcome. [data:geometry/key_areas.geojson#PROV-KEY-003] [depth:three_key_area_detailed_design]
+Dazhongsi remains a conceptual civic interface for industry service, explainable data governance and international exchange. Because neither an exact key-area polygon nor a station interface is public, this iteration no longer assigns a continuous station-to-ground-floor route, fixed desk or scaled section. It retains paper rights notes, human explanation, rights-cleared synthetic demonstrations and withdrawable exhibits as governance requirements. Every company case, brand, product, dataset and partnership must be cleared item by item; unclear provenance, failed withdrawal or a broken audit chain removes the exhibit. Nothing is presented as a confirmed tenant or investment outcome. [data:geometry/key_areas.geojson#PROV-KEY-003] [assumption:A-BOUNDARY-002] [depth:three_key_area_detailed_design]
+
+### 5.4 Cross-scale civic-service prototype: “Transfer without a smartphone” at Qinghe Station
+
+One real small site now tests the whole-belt principle: west-square/bus arrival, the existing underground walking system, the B1 city corridor, and a human handoff outside fare/security control. Official evidence supports the multi-level relationship, underpass and B1 service-hall elements. [source:QH-STATION-MAP-2026] [source:QH-B1-SERVICE-HALL-2024] Official review also covers accessibility elements and a real human-handoff case, but not an exact entrance, turn, distance, level or post. [source:QH-ACCESS-AUDIT-2025] [source:QH-HUMAN-HANDOFF-2026] Every drawing is therefore NTS: not to scale and not positioned. Without an authorised base or survey, no 1:200 or 1:100 drawing follows. The inset marks Qinghe only as this iteration's small site within the Jing-Zhang corridor study context; it encodes no route, distance or statutory extent. [assumption:A-QH-SCALE-012]
+
+![Qinghe civic handoff ground-underground NTS section](assets/figures/qinghe-evidence-relationship.en.png)
+
+The sole task is for a first-time passenger without a smartphone, or choosing not to use one, to say “I need a step-free route to Line 13,” receive a paper explanation and reach a human handoff outside security/fare control. The ordinary chain is fixed overview—existing underground passage—B1 human inquiry—paper route card—existing lift—human handoff. Completion also includes a clear limitation and real human alternative when a lift or B1 is unavailable; AI may never invent a route. [data:spatial.json#qinghe-ground-arrival] [data:spatial.json#qinghe-human-handoff]
+
+![Qinghe complete non-AI service flow](assets/figures/qinghe-non-ai-service-flow.en.png)
+
+The proposal adds only a fixed non-electronic overview, a writable paper route card and a human-handoff marker. It adds no camera, voice capture, location tracking, account, fixed digital display or rail/metro-system interface. AI may assist translation, reading or dynamic prompts, but the chain is unchanged when AI is off. Network failure changes nothing; lift failure requires an honest “step-free transfer unavailable” message; B1 closure stops descent at ground level. Actual placement still requires lawful authority, which is not placed on a project timetable. [data:spatial.json#qinghe-fixed-overview] [data:spatial.json#qinghe-paper-route-card] [data:spatial.json#qinghe-handoff-marker]
+
+![Qinghe three reversible components and human handoff](assets/figures/qinghe-three-components.en.png)
 
 ## AI innovation ecosystem, talent profiles and AI+ scenarios
 
@@ -145,7 +179,7 @@ The spatial aim is not a fully automated city but a learning loop among research
 1. **Open-source release hall** — publish code, model notes and failure reviews; collect no identity trail.
 2. **Trustworthy test sandbox** — show protocol, red-team result and stop condition; connect to no production system.
 3. **Edge-compute station** — offer low-risk local inference; retain ordinary information when offline.
-4. **AI slow-mobility guide** — offer multilingual, low-stimulation routes; retain paper maps and human directions.
+4. **Qinghe non-AI transfer interface** — fixed overview, paper route card and human handoff complete the task first; AI is optional translation or read-aloud assistance.
 5. **Heritage oral-history workshop** — use authorised contributions; never label synthetic voices as archival originals.
 6. **Qinghe low-carbon learning corridor** — explain drainage, shade, cycling and energy; make no invented performance claim.
 7. **Research-transfer station** — connect university work with professional help; promise no patent, finance or transfer outcome.
@@ -159,9 +193,30 @@ Open-source developers need reproducible collaboration; start-ups need low-cost 
 
 ### 6.3 Three industry tests
 
-- **T1 civic-service accessibility:** compare AI guidance, paper signs and human explanation using anonymous aggregates; pause if any group cannot complete the task.
-- **T2 edge model and low-carbon operation:** compare local operation, delay, energy and recovery as a proof of concept only.
-- **T3 data authorisation and industry display:** use cleared synthetic data to demonstrate permission, withdrawal and audit; never imply compliance certification.
+| Test and location | Non-AI baseline | AI increment and minimum data | Entry gate | Stop, takeover and exit | Evidence produced |
+| --- | --- | --- | --- | --- | --- |
+| **T1 civic-service accessibility / Qinghe interface outside fare control** | Fixed overview, paper route card and human handoff require no phone, account or AI | AI may translate or read aloud only; retain no identity, voice or precise trail | Public evidence supports an NTS flow; any on-site test still needs site management and accessibility-user agreement | Stop honestly when a lift/B1 is unavailable or staff cannot confirm; a model may not fill route gaps | If testing is authorised, record completion/stop reason and repairs; report no completion rate without real tests |
+| **T2 edge model and low-carbon operation / Zhongzhiyuan** | Staffed benchmark, offline explanation and ordinary information work independently | Isolated comparison of local inference, delay, energy and recovery; no production data | Rights holder, professional and test owner sign purpose, boundary, baseline and recovery drill | Disconnect on permission breach, predeclared energy/latency ceiling breach or failed recovery; staff record and seal logs | Reproducible record, failure modes and continue/stop advice; not deployment permission or certification |
+| **T3 data authority and industry display / Dazhongsi** | Staffed rights check, paper note and in-person explanation support the visit | Item-cleared synthetic data demonstrates permission, withdrawal and audit | Provenance, licence, brand, purpose, retention and withdrawal are signed item by item | Remove the exhibit if withdrawal fails, provenance is unclear, audit breaks or viewers mistake data for real records; explain and delete manually | Rights register, withdrawal record and audit gaps; not compliance certification or tenant outcome |
+
+The shared grammar is baseline first, bounded entry, human watch, stop on failure and annual retain/revise/retire. The three tests keep different baselines, data, spatial carriers and stopping reasons. A result only determines whether another review cycle is worthwhile; it never triggers procurement, deployment, expansion or construction automatically. [metric:industry_validation_scenarios] [data:geometry/key_areas.geojson#PROV-KEY-001] [depth:three_key_area_detailed_design]
+
+### 6.4 Xiaoyue River scenario wing–ten-card operating map
+
+| Card | Primary conceptual carrier | Xiaoyue-wing interface | Ordinary baseline / stop gate |
+| --- | --- | --- | --- |
+| S01 Open-source release hall | Origin Community / movable civic-spine point | Receives rights-cleared release cards and failure reviews only | Paper index and human explanation; do not release without source/licence |
+| S02 Trustworthy test sandbox | Isolated Zhongzhiyuan carrier | Displays status card and reproducible result only; no test moves into public green space | Ordinary safety note; stop on production connection or failed recovery |
+| S03 Edge-compute station | Pending authorised indoor service node | The wing keeps ordinary information and explains results; no outdoor device is presumed | Offline information; no placement without confirmed equipment, energy, network and role |
+| S04 Qinghe non-AI transfer | Qinghe NTS interface outside fare/security control | Returns the reusable rule “ordinary chain first; stop on unknown” to the belt | Fixed overview, paper card and human handoff; stop honestly without on-duty confirmation |
+| S05 Heritage oral-history workshop | Jing-Zhang heritage spine / confirmed event point | Receives authorised stories and source cards; stores no unconsented voice | Human telling and paper card; remove on withdrawal or historical dispute |
+| S06 Qinghe low-carbon corridor | Qinghe and blue-green walking study interface | Observation sheet explains shade, drainage, cycling and energy | Ordinary wayfinding; report no environmental performance without measurement |
+| S07 Research-transfer station | Origin Community / Zhongguancun service wing | Human referral of participant-initiated enquiries to a pending professional role | Public directory and human referral; no finance, patent or transfer promise |
+| S08 Data-governance living room | Reversible Dazhongsi display | Synthetic data explains authority, purpose, withdrawal and audit | Paper rights note; remove on unknown source or failed withdrawal |
+| S09 Community service sample street | Xiaoyue-wing ordinary community-service interface | First tests a small task that is human-processable and scan-free | Paper/human completion; stop AI if the ordinary route is blocked |
+| S10 Global AI civic route | Civic spine and event interfaces confirmed one by one | Links confirmed nodes and bilingual evidence cards only; no date or partner is presumed | Ordinary route and human explanation; no start without organiser, authority and node confirmation |
+
+The Xiaoyue wing is a **scenario translation-and-return interface**, not the single physical home for all ten cards. This table creates no building, equipment or event authority. A card moves from document to P1/P2 only after its carrier, responsibility and rights are confirmed. [metric:ai_scenario_cards] [assumption:A-CONTEXT-007] [depth:overall_spatial_structure]
 
 ## 7. AI public space, pilgrimage landmarks and culture
 
@@ -169,11 +224,22 @@ The three conceptual landmarks are the **First Railway memory route**, using mov
 
 The cultural narrative moves from Zhan Tianyou and independent railway engineering, through Zhongguancun’s open innovation, to public co-creation in the AI era. It does not recreate people, companies, voices or community stories without rights. Every exhibit can be understood without scanning, registration or data provision.
 
+### 7.1 Belt-wide civic-space component library and honours-display rules (concept)
+
+| Family | Entry condition and ordinary baseline | Optional AI increment | Maintenance responsibility and gate | Removal / retirement |
+| --- | --- | --- | --- | --- |
+| **B01 Civic baseline** | Fixed non-electronic overview, paper card and human handoff first; no phone, account or scan as a condition | Switchable translation, read-aloud and prompts only; never confirms unknown site state | Enters P1 only after the space and public-service roles are assigned; the future operator maintains opening information, paper cards and complaints | Remove the AI layer when the ordinary route fails, responsibility is vacant or authority expires; retain paper and human service |
+| **B02 Cultural wayfinding** | Movable, low-impact source cards and text; heritage overlay and content rights checked first | Optional multilingual explanation; no invented quotation, history or exact route | Open only with recorded sources, image licence, authority check and accessible readability | Remove when a source fails, rights are withdrawn, heritage controls conflict or correction is impossible |
+| **B03 Activity interface** | Confirmed organiser, time, ordinary registration/help and a quiet-day baseline | Optional agenda Q&A and translation; registration data is not repurposed for profiling or recruitment | Confirm organiser, space, data, brand and safety boundary for each event; an annual concept grants nothing automatically | Remove temporary material after the event; do not start without a confirmed body, authority and ordinary service |
+| **B04 Honours display** | Verified public awards, certifications or open-source contributions only; evidence card states issuer, item, subject, date/status, expiry, source and rights | Search only within verified records and read-aloud; no generated ranking, judgement or endorsement | A future content role checks source, trademark/image rights, status and expiry item by item; no paid ranking or unverified logo | Remove when a source fails, status expires, rights are withdrawn, the subject objects or audit continuity breaks; never imply official endorsement or an existing honours wall |
+
+Four identities remain distinct: the **belt mark** identifies the overall method; **cultural wayfinding** explains Jing-Zhang history and sources; an **activity brand** belongs only to one confirmed event; an **honours display** belongs only to one revocable evidence record. None may borrow another’s authority or turn a concept sample into a claim about an existing facility, partnership or delivery. [assumption:A-CONTROLS-001] [assumption:A-HERITAGE-005] [assumption:A-RIGHTS-008] [depth:blue_green_public_space]
+
 ## Renewal project list, implementation policies and phasing
 
 The project list translates the overall concept into reviewable work packages. Each package has a spatial carrier, public value, dependencies, pause conditions and a later review object. The list is not project approval or a construction schedule; `phasing.geojson` expresses sequence only, while `assumptions.json` records missing title, budget, responsibility, heritage, utilities and approvals. Policy recommendations focus on data minimisation, parallel human service, open failure review, rights-cleared display and an annual retain/revise/retire decision. [data:geometry/phasing.geojson#PHASE-001] [depth:renewal_project_list] [depth:phasing_implementation]
 
-Reference work packages are: JZ-01 repair mobility breaks; JZ-02 Zhongzhiyuan–Qinghe innovation edge; JZ-03 Origin Community research-transfer street; JZ-04 Dazhongsi four-quadrant connections; JZ-05 civic-service and edge-compute nodes; JZ-06 global AI civic route. These depend on official boundaries, title, professional design and authority; they are review packages, not implementation commitments. [depth:renewal_project_list]
+Reference work packages are: JZ-01 repair heritage-park mobility breaks; JZ-02 Qinghe non-AI transfer interface outside fare control; JZ-03 Origin Community research-transfer street; JZ-04 Dazhongsi data-rights explanation interface; JZ-05 civic-service and edge-compute nodes; JZ-06 global AI civic route. These depend on official boundaries, title, professional design and authority; they are review packages, not implementation commitments. [depth:renewal_project_list]
 
 ## 8. Global activities, community operation and phasing
 
@@ -186,15 +252,59 @@ Long-term programmes include quarterly Problem Season, quarterly Open-source Sea
 
 `phasing.geojson` expresses sequence only, not dates, budget, owner or commitment. [data:geometry/phasing.geojson#PHASE-001] [depth:phasing_implementation]
 
+### 8.1 Responsibility, measurement and regional exchange
+
+Operations use explicit handoff rather than an undefined multi-party promise. The public-service operator runs the ordinary route, reception and appeal; the space steward is accountable for access; the AI operator is responsible only for a switchable assistive layer; the site safety lead has immediate stop authority; accessibility users and transport, fire and privacy professionals are consulted at stage gates. These are roles awaiting assignment, not claims that Qinghe Station or any existing organisation has agreed.
+
+Paper self-service, staffed service and optional AI assistance are compared only after on-site testing is authorised. The sample, period and user stratification are then set with the actual operator, accessibility users and relevant professionals; this proposal sets no threshold. Records include incomplete, aborted, fallback and complaint cases, and technical failures may not be removed. Without authorised testing, the proposal reports no completion rate, average delay or service performance. A blocked ordinary route, forced account or scan, undisclosed collection, model-invented route or unresolved safety event triggers PAUSE immediately.
+
+Regional collaboration is framed as question-evidence-reuse exchange, not invented partnership. North Latitude Community contributes founder and user questions; Future Science City contributes enterprise and research tasks; Huairou Science City contributes instrument and public-science cases; Beijing E-Town contributes engineering and pilot-verification questions; Jing-Jin-Ji cities contribute cross-city replication comparisons. A case enters annual Proof Week only after its relevant party confirms participation. International communication uses the same bilingual state words, evidence card and failure note, and never labels a proposed node as a partner. [source:AGENT-TASKBOOK]
+
+### 8.2 Developer community, scenario opening and international-conversion interfaces (pending)
+
+| Interface | Input | Output | Rights boundary and confirmation gate | Feedback loop |
+| --- | --- | --- | --- | --- |
+| **Developer issue clinic** | Reproducible issue, de-identified sample, ordinary baseline and failure note | Public issue card, test protocol and continue/stop advice | No production credential, personal data or uncleared code; organiser, data rights, ordinary access and maintenance role must be confirmed | Review fixes, unresolved items and retirement on an authorised cycle; no frequency or existing community is promised |
+| **Open scenario call** | Candidate ordinary civic task, non-AI completion chain, potential impact and stop condition | P1/P2 scenario brief, confirmation list and shutdown criteria | A call is not site, procurement or delivery authority; responsible body, rights, accessibility and professional review gate every upgrade | Record rejection, pause, failure and appeal; return to P0 when evidence is insufficient |
+| **Bilingual international explanation** | Verified case, source, limitation, status words and rights record | Chinese-English evidence card, human script and revocable publication pack | No uncleared asset and no partner, endorsement or delivered-project claim; translation review and rights clearance precede release | Check misunderstanding, correction and withdrawal after a confirmed event; claim no reach without one |
+| **Talent / company follow-up handoff** | Participant-initiated, explicitly consented enquiry | Minimal human referral record and explicit received/stopped state | No covert profiling, automated recruitment or outcome promise; receiver, purpose, retention and withdrawal must be confirmed | Record only takeover, withdrawal or missing material—not settlement, finance, employment or partnership outcome |
+| **Regional evidence exchange** | Party-confirmed question, reusable evidence and difference conditions | De-branded reuse card, fit/non-fit note and returned question | A node name is not a partnership; input/output, licence, communication scope and confirmer are registered per case | Receiver reports reuse, failure and revision; then retain, revise or retire |
+
+These are **interface specifications, not existing organisations, programmes, partnerships or conversion results**. Without a confirmed receiver, rights boundary, ordinary participation path and feedback cycle, each remains a P0 document and does not enter a site, recruitment or external release. [assumption:A-CONTEXT-007] [assumption:A-RIGHTS-008] [depth:phasing_implementation]
+
+### 8.3 Reusable responsibility–entry–measurement–resource templates
+
+| Template | Required fields | Veto / pause | Current state |
+| --- | --- | --- | --- |
+| **R1 Responsibility confirmation** | Legal/operating body, scope, site stop authority, ordinary-service receiver, complaint/withdrawal route, signature date, expiry and exit/handoff | No P0-to-site move while a role is unnamed or stop authority is unclear | Roles only; no existing organisation is treated as accepting them |
+| **G1 Entry evidence checklist** | Official boundary/title authority, independent ordinary path, accessibility review, heritage/fire/privacy advice, content/brand/data rights, human handoff, incident/appeal and restoration | Do not enter on AI-dependent baseline, unclear rights, professional veto or non-executable restoration | Qinghe has public NTS functional evidence only; site authority and professional review remain missing |
+| **M1 Post-authority measurement plan** | Task, denominator, period, strata, paper/human/optional-AI comparison, incomplete/aborted/complaint record, reviewer and stop gate | No measurement or publication without test authority, defined sample and retained failures | No site sample, completion rate, delay or threshold claim |
+| **L1 Long-term resource ledger** | Paper/sign update, human-service period, content clearance, accessibility maintenance, equipment/energy if any, funding source, procurement/renewal, retirement and archive responsibility | No continuity promise without responsible body, lawful funding/procurement, sufficient ordinary-service resource and known removal path | No amount, staff number, cost or funding promise; future responsible bodies must determine them lawfully |
+
+These are **blank checking structures** for future professional teams and responsible bodies. They replace no contract, approval, budget, measurement protocol or staffing plan; every unfilled field remains a blocker and is never inferred by AI. [depth:phasing_implementation]
+
+Four handoff packages close the loop. Planning and design receive the Qinghe evidence diagram, NTS path, component registry and missing official layers. Public-service operations receive the non-AI chain, failure branches, paper-card mock-up and responsibility list. Data and rights receive only the no-personal-data content list and prohibitions for optional AI. Communications receive bilingual signs, state language and limitation notes. If a recipient is unassigned, its work package may not move from P1 to P2.
+
 ## Metrics system, area recalculation and compliance matrix
 
 The metrics system turns the spatial narrative into a recalculable, explainable and challengeable evidence chain. Area metrics are read from GeoJSON and projected to EPSG:4548; scenarios, user profiles, industry tests and task coverage come from structured records. FAR, height, statutory green ratio, road redlines, service performance and participation are calculated only after official data and authority exist. Every metric records status, value, unit, formula, source files, confidence and assumptions. Replacing the official boundary must update geometry, figures, PDFs, HTML, matrices and manifest hashes together. [metric:site_area_sqm] [metric:green_ratio] [depth:metrics_recalculation]
 
 ## 9. Metrics, recalculation and compliance
 
-Within the provisional geometry, the submitted area recalculates to about 11,412,825 m²; green-space ratio is about 12.34%; public-space ratio is about 7.33%; and there are three key areas. These values describe only package geometry and are not statutory planning indicators.
+Within the provisional geometry, the submitted area recalculates to about 11,412,825 m²; green-space ratio is about 12.34%; public-space ratio is about 7.33%; and there are three key areas [metric:key_area_count]. These values describe only package geometry and are not statutory planning indicators.
 
-Six official context metrics are recorded separately: Haidian population, national key laboratories and registered large models; Phase I park length and area; and high-frequency talent-service items at Origin Community. They explain the need for mixed public service, real testing and connection to existing services. They do not size land, buildings, users or performance. [metric:haidian_national_key_labs_2025] [metric:jingzhang_park_phase1_area_sqm] [metric:ai_origin_high_frequency_talent_services_2026] [assumption:A-CONTEXT-007]
+Projected in EPSG:4548, the conceptual partition contains 2,674,562 m² of 0802 research land [metric:land_use_0802_area_sqm], 2,589,339 m² of 1401 park green space [metric:land_use_1401_area_sqm], 3,366,138 m² of 09 commercial and service land [metric:land_use_09_area_sqm], and 2,782,793 m² of 0702 community-service support [metric:land_use_0702_area_sqm]. These zones only complete the provisional package partition. Industry support is a programme mix within code 09; it is no longer mislabeled 05 (wetland), and none of the areas implies approved land use.
+
+| Additional recalculation | Result and limit |
+| --- | --- |
+| Concept building footprints | 310,807 m² [metric:building_footprint_area_sqm], about 2.72% of the provisional extent [metric:building_density]; neither existing nor statutory building coverage. |
+| Blue-green and public space | 1,408,601 m² in the green design layer [metric:green_space_area_sqm] and 836,346 m² in the public-space layer [metric:public_space_area_sqm]; both recalculate with official geometry. |
+| Reference phasing | 4,587,014 m² in reference work packages [metric:phasing_area_sqm]; sequence only, not construction scale or investment. |
+| Three key areas | Zhongzhiyuan 1,929,202 m² [metric:key_area_zhongzhiyuan_area_sqm]; AI Origin 1,043,237 m² [metric:key_area_ai_origin_area_sqm]; Dazhongsi 720,454 m² [metric:key_area_dazhongsi_area_sqm]. All come from provisional polygons and do not replace announced approximate areas or official redlines. |
+
+The road layer is a conceptual centreline without official redlines or sections, so road-area ratio remains unknown [metric:road_area_ratio]. Total floor area also remains unknown without an existing survey and approved conditions [metric:total_floor_area_sqm]. Each unknown is an explicit trigger for the next evidence update.
+
+Six official context metrics are recorded separately: Haidian population, national key laboratories and registered large models [metric:haidian_registered_large_models_2025]; Phase I park length and area; and high-frequency talent-service items at Origin Community. They explain the need for mixed public service, real testing and connection to existing services. They do not size land, buildings, users or performance. [metric:haidian_national_key_labs_2025] [metric:jingzhang_park_phase1_area_sqm] [metric:ai_origin_high_frequency_talent_services_2026]
 
 `metrics.json` records status, value, unit, formula, source files, confidence and assumptions. The compliance, standard and design-depth matrices connect announcement requirements to report sections, layers, metrics, drawings and review checks. Replacing official boundaries requires coordinated updates to geometry, metrics, figures, PDFs, HTML, matrices and manifest hashes. [depth:metrics_recalculation]
 
@@ -204,17 +314,19 @@ The compliance matrix covers call sections 1.3, 1.4 and 1.5 plus `agent.1`–`ag
 
 ## Risk, copyright and compliance statement
 
-Risk controls are designed so that an AI scenario can fail without excluding anyone from public service. Provisional boundaries use low-contrast dashed styling; every service keeps no-account and human paths; no identity, face, voice or precise trajectory is required; operations include stop, appeal, correction, withdrawal and retirement. Only public or rights-cleared material is used, and generated figures are labelled as concepts. The largest evidence gaps remain official boundaries, key-area polygons, title, heritage, roads, utilities, fire, accessibility and operating responsibility. [data:geometry/constraints.geojson#CONSTRAINTS] [source:SOURCE-REGISTRY] [depth:risk_missing_data]
+Risk controls are designed so that an AI scenario can fail without excluding anyone from public service. Provisional boundaries use low-contrast dashed styling, while Qinghe is represented only through NTS functional relationships. Every service keeps no-account and human paths; no identity, face, voice or precise trajectory is required; operations include stop, appeal, correction, withdrawal and retirement. [data:geometry/constraints.geojson#CONSTRAINTS] [depth:risk_missing_data] The official station diagram is used for verification and linking only, not copied into the proposal. Evidence gaps now also include Qinghe's exact public/operating boundary, entrance-to-lift route, opening state and staffed post. [source:SOURCE-REGISTRY] [assumption:A-QH-BOUNDARY-011]
 
 ## 10. Risk, copyright, legal boundaries and next actions
 
 The largest risk is precision theatre caused by provisional boundaries and missing base data. Other risks are treating concept services as deployed, generated figures as existing conditions, and proposed partners or programmes as commitments. Mitigation is explicit provisional styling, recalculable formulas, human and non-AI paths, stop/appeal/retirement rules, and professional review of roads, utilities, title, heritage, fire, accessibility, data security and operations. [data:geometry/constraints.geojson#CONSTRAINTS] [depth:risk_missing_data]
 
-This package uses no personal data, private map, unauthorised corporate mark, portrait, voice, music or third-party image. Its figures, HTML, GeoJSON and PDFs are proposal artefacts and do not represent official positions.
+This package uses no personal data, private map, unauthorised corporate mark, portrait, voice, music or third-party image. Its figures, HTML, GeoJSON and PDFs are proposal artefacts and do not represent official positions. The next action is local v0.1.5 consistency and visual review; any submission or push is a separate decision.
 
 ## References
 
-Primary local evidence comes from official Haidian/Beijing statistics, landscape, planning, transport, heritage and human-resources pages. Comparative cases come from official Singapore, Barcelona, Amsterdam, Cambridge and Paris-Saclay project pages. Complete titles, dates, retrieval dates, use and rights limits are recorded in `sources.json`. [source:HD-STATS-2025] [source:JZ-PARK-PHASE1] [source:QINGHUAYUAN-HERITAGE-CONTROLS-2026]
+Primary local evidence comes from official Haidian/Beijing statistics, landscape, planning, transport, station-area management, heritage and human-resources pages. [source:HD-STATS-2025] [source:JZ-PARK-PHASE1] The Qinghe station diagram and Qinghuayuan heritage controls use their own dedicated entries. [source:QH-STATION-MAP-2026] [source:QINGHUAYUAN-HERITAGE-CONTROLS-2026]
+
+Comparative cases come from official Singapore, Barcelona, Amsterdam, Cambridge and Paris-Saclay project pages. Complete titles, dates, retrieval dates, use and rights limits are recorded in `sources.json`. [source:SOURCE-REGISTRY]
 
 The reading order is the official call and Agent taskbook first, followed by the site package, allowed design space, public-source registry and provisional geometry, then this package's metrics, assumptions, matrices and drawings. Source and rights boundaries remain in structured records rather than unsupported narrative. [source:OFFICIAL-ANNOUNCEMENT] [source:AGENT-TASKBOOK]
 

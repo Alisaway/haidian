@@ -60,6 +60,73 @@
       "confidence": "high",
       "assumptions": []
     },
+    "built_corridor_length_km": {
+      "status": "known",
+      "value": 9.0,
+      "unit": "km",
+      "source_files": [
+        "sources.json#JZ-PARK-PHASE2-OPEN-20260806"
+      ],
+      "formula": "reported full corridor length after the public opening of Phase II",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "built_corridor_area_ha": {
+      "status": "known",
+      "value": 53.0,
+      "unit": "ha",
+      "source_files": [
+        "sources.json#JZ-PARK-PHASE2-OPEN-20260806"
+      ],
+      "formula": "reported park area after the public opening of Phase II",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "reported_service_community_count": {
+      "status": "known",
+      "value": 70,
+      "unit": "count",
+      "source_files": [
+        "sources.json#JZ-PARK-PHASE2-OPEN-20260806"
+      ],
+      "formula": "reported number of adjacent communities served; not a GIS-derived catchment",
+      "confidence": "medium",
+      "assumptions": []
+    },
+    "reported_service_population": {
+      "status": "known",
+      "value": 450000,
+      "unit": "people",
+      "source_files": [
+        "sources.json#JZ-PARK-PHASE2-OPEN-20260806"
+      ],
+      "formula": "reported approximate population served; not a modelled catchment",
+      "confidence": "medium",
+      "assumptions": []
+    },
+    "restored_track_length_km": {
+      "status": "known",
+      "value": 2.4,
+      "unit": "km",
+      "source_files": [
+        "sources.json#JZ-PARK-PHASE2-OPEN-20260806"
+      ],
+      "formula": "reported restored old-track length in the southern section",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "urban_patch_count": {
+      "status": "known",
+      "value": 1,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/urban_patch_001.json",
+        "visual/index.html"
+      ],
+      "formula": "count(auditable Urban Patch decision records)",
+      "confidence": "high",
+      "assumptions": []
+    },
     "ai_planning_loop_count": {
       "status": "known",
       "value": 3,
@@ -164,7 +231,7 @@
         "geometry/green_space.geojson"
       ],
       "formula": "polygon area encoded in this proposal layer; point review anchors contribute zero area and do not represent existing green space",
-      "confidence": "high",
+      "confidence": "low",
       "assumptions": [
         "A-BLUEGREEN-001"
       ]
@@ -178,7 +245,7 @@
         "geometry/site_boundary.geojson"
       ],
       "formula": "encoded proposal green polygon area / provisional working polygon area; a packaging value, not the current green ratio",
-      "confidence": "high",
+      "confidence": "low",
       "assumptions": [
         "A-BOUNDARY-001",
         "A-BLUEGREEN-001"
@@ -192,7 +259,7 @@
         "geometry/public_space.geojson"
       ],
       "formula": "polygon area encoded in this proposal layer; point pilot anchors contribute zero area and do not represent existing public space",
-      "confidence": "high",
+      "confidence": "low",
       "assumptions": [
         "A-PUBLICSPACE-001"
       ]
@@ -206,7 +273,7 @@
         "geometry/site_boundary.geojson"
       ],
       "formula": "encoded proposal public-space polygon area / provisional working polygon area; a packaging value, not the current public-space ratio",
-      "confidence": "high",
+      "confidence": "low",
       "assumptions": [
         "A-BOUNDARY-001",
         "A-PUBLICSPACE-001"

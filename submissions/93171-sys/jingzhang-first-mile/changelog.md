@@ -1,5 +1,26 @@
 # 方案迭代记录
 
+## v9.2 - 2026-08-27
+
+- Closed the formal-review readability blocker by adding a locally bundled Noto Sans SC glyph subset to both Chinese and English report/visual HTML files, declaring the SIL OFL 1.1 source and license, and assigning the same font to the Chinese Canvas labels.
+- Corrected three commercial and technology-service polygons from legacy land-use code `05` to current official code `09`, following the repository's 2026-08-16 enum correction; geometry and declared areas are unchanged.
+- Declared the two text-free concept images as language-neutral shared assets, updated the English reading paths and removed redundant byte-identical `.en.png` copies.
+- Kept the proposal scope, claims, spatial partition, metrics and implementation boundaries unchanged; this revision is a rules-alignment and packaging-quality repair.
+
+## v9.1 - 2026-08-16
+
+- Reworked the Chinese and English opening narrative around four plain questions: who owns the problem, who becomes the first user, who takes over operations and what evidence permits reuse.
+- Reduced repeated contrast formulas and machine-facing language in the human-reading layer while preserving every source, assumption, gate, stop condition and claim boundary.
+- Rewrote the visual-index first screen and twelve scenario-card summaries so a reviewer can identify the three-station chain, the 90-day pilot and each scenario's operating boundary without reading the full report.
+- Kept the submission scope unchanged: no new site, partnership, user result, order, funding or approval claim was introduced during copy editing.
+
+## v9.0 - 2026-08-15
+
+- Rebuilt all five mandatory bilingual review figures around the evidence that the official reviewer can see directly: OSM-based real-place orientation, the provisional land-use partition, three differentiated key areas, the ordinary-route/blue-green public baseline, and the G0-G4 delivery ledger.
+- Moved the real-place executive board to the first image of both proposals and the first section of both offline visual indexes, so spatial specificity, station duties, recomputable metrics and pending real-pilot outcomes appear within the fixed review viewport.
+- Replaced the first page of all four A3/A0 PDF sets with a bilingual A-series executive review board while preserving every later page.
+- Kept all adoption outcomes explicitly pending a real pilot; no user, operator, order, reuse or implementation result was invented during the score-entry redesign.
+
 ## v8.0 - 2026-08-15
 
 - Added a rights-declared custom gallery cover that turns the three-station handoff into one thumbnail-readable First-Mile Gate scene, with live bilingual title text and an explicit non-evidence label.

@@ -24,6 +24,8 @@
         "submissions/Chidoudou/jingzhang-ai-main-street/assets/figures/boundary-next-work.png",
         "submissions/Chidoudou/jingzhang-ai-main-street/assets/figures/component-kit.en.png",
         "submissions/Chidoudou/jingzhang-ai-main-street/assets/figures/component-kit.png",
+        "submissions/Chidoudou/jingzhang-ai-main-street/assets/figures/dazhongsi-field-evidence.en.png",
+        "submissions/Chidoudou/jingzhang-ai-main-street/assets/figures/dazhongsi-field-evidence.png",
         "submissions/Chidoudou/jingzhang-ai-main-street/assets/figures/delivery-roadmap.en.png",
         "submissions/Chidoudou/jingzhang-ai-main-street/assets/figures/delivery-roadmap.png",
         "submissions/Chidoudou/jingzhang-ai-main-street/assets/figures/jingzhang-main-street-logo.svg",
@@ -48,7 +50,13 @@
         "submissions/Chidoudou/jingzhang-ai-main-street/assets/figures/street-pass-protocol.en.png",
         "submissions/Chidoudou/jingzhang-ai-main-street/assets/figures/street-pass-protocol.png",
         "submissions/Chidoudou/jingzhang-ai-main-street/assets/figures/street-pass-protocol.svg",
+        "submissions/Chidoudou/jingzhang-ai-main-street/assets/figures/workflow-simulation.en.png",
+        "submissions/Chidoudou/jingzhang-ai-main-street/assets/figures/workflow-simulation.png",
         "submissions/Chidoudou/jingzhang-ai-main-street/assets/media/cover.webp",
+        "submissions/Chidoudou/jingzhang-ai-main-street/assets/media/field-dazhongsi-1733.webp",
+        "submissions/Chidoudou/jingzhang-ai-main-street/assets/media/field-dazhongsi-a-arrival.webp",
+        "submissions/Chidoudou/jingzhang-ai-main-street/assets/media/field-dazhongsi-line12-d.webp",
+        "submissions/Chidoudou/jingzhang-ai-main-street/assets/media/field-dazhongsi-underbridge.webp",
         "submissions/Chidoudou/jingzhang-ai-main-street/assets/renderings/ai-origin-translate-v22.jpg",
         "submissions/Chidoudou/jingzhang-ai-main-street/assets/renderings/dazhongsi-first-use-v22.jpg",
         "submissions/Chidoudou/jingzhang-ai-main-street/assets/renderings/zhongzhiyuan-prove-v22.jpg",
@@ -78,20 +86,24 @@
         "submissions/Chidoudou/jingzhang-ai-main-street/report/proposal.en.html",
         "submissions/Chidoudou/jingzhang-ai-main-street/report/proposal.html",
         "submissions/Chidoudou/jingzhang-ai-main-street/self_check.json",
+        "submissions/Chidoudou/jingzhang-ai-main-street/simulation.json",
         "submissions/Chidoudou/jingzhang-ai-main-street/sources.json",
         "submissions/Chidoudou/jingzhang-ai-main-street/standard_matrix.json",
+        "submissions/Chidoudou/jingzhang-ai-main-street/visual/assets/dazhongsi-90-day-gates.json",
+        "submissions/Chidoudou/jingzhang-ai-main-street/visual/assets/dazhongsi-field-evidence.json",
         "submissions/Chidoudou/jingzhang-ai-main-street/visual/assets/example-street-pass.json",
         "submissions/Chidoudou/jingzhang-ai-main-street/visual/assets/first-use-rights.json",
         "submissions/Chidoudou/jingzhang-ai-main-street/visual/assets/pilot-matrix.json",
         "submissions/Chidoudou/jingzhang-ai-main-street/visual/assets/spatial-prototypes.json",
         "submissions/Chidoudou/jingzhang-ai-main-street/visual/assets/street-pass.schema.json",
+        "submissions/Chidoudou/jingzhang-ai-main-street/visual/assets/verify-street-pass-simulation.js",
         "submissions/Chidoudou/jingzhang-ai-main-street/visual/index.en.html",
         "submissions/Chidoudou/jingzhang-ai-main-street/visual/index.html"
       ],
       "ai_package_stages": {
         "submissions/Chidoudou/jingzhang-ai-main-street": "formal"
       },
-      "total_bytes": 30078828,
+      "total_bytes": 34439297,
       "maintainer_bypass": false
     },
     "stderr": ""
@@ -150,8 +162,11 @@
       "issues": [],
       "metrics_seen": {
         "site_area_sqm": 11412825.385554,
+        "scenario_node_count": 12.0,
         "green_ratio": 0.123739,
-        "public_space_ratio": 0.066441
+        "public_space_ratio": 0.066441,
+        "simulation_success_rate": 0.916667,
+        "high_risk_intercept_rate": 1.0
       }
     },
     "stderr": ""
@@ -165,15 +180,15 @@
       "summary": {
         "standard_matrix_items": 6,
         "design_depth_items": 15,
-        "known_metric_refs_required": 28,
+        "known_metric_refs_required": 33,
         "proposal_format_version": "1",
         "evidence_contract": "legacy-exhaustive-inline",
         "proposal_reference_counts": {
-          "source": 18,
+          "source": 29,
           "standard": 6,
           "depth": 15,
-          "data": 17,
-          "metric": 28
+          "data": 15,
+          "metric": 33
         }
       }
     },

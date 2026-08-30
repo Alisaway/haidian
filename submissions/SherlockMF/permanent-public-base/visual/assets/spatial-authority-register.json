@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0",
+  "register_id": "SPATIAL-AUTHORITY",
+  "status": "accepted low-confidence recomputable design-model contract",
+  "confidence": "mixed",
+  "limitation": "The working boundary is not official and the key-area geometries remain provisional. The formal contract currently accepts low-confidence, recomputable participant design-model geometry and metrics; authoritative geometry triggers recalculation. This is a data limitation, not a current formal submission blocker.",
+  "entries": [
+    {
+      "evidence_id": "SA-01-OFFICIAL-SCOPE",
+      "claim_supported": "Official stated approximate scope",
+      "formal_artifact_path": "brief/site-package/ranges/planning_limits.json",
+      "source_ids": [
+        "F1-SRC-002-OFFICIAL-ANNOUNCEMENT"
+      ],
+      "status": "known approximate values",
+      "confidence": "high",
+      "limitation": "No exact organizer polygon; replace when published."
+    },
+    {
+      "evidence_id": "SA-02-PROVISIONAL",
+      "claim_supported": "Upstream provisional constraint",
+      "formal_artifact_path": "geometry/site_boundary.geojson",
+      "source_ids": [
+        "F1-SRC-003-PROVISIONAL-GEOMETRY"
+      ],
+      "status": "provisional",
+      "confidence": "low",
+      "limitation": "Not an official redline, property boundary, survey or official area; authoritative geometry triggers relocation and recalculation."
+    },
+    {
+      "evidence_id": "SA-03-VERIFIED-BASELINE",
+      "claim_supported": "Verified real-geospatial baseline and location authority",
+      "formal_artifact_path": "sources.json",
+      "source_ids": [
+        "F2-SRC-P81C-REAL-BASELINE",
+        "F2-SRC-OSM-BBBIKE-20260811"
+      ],
+      "status": "claim-scoped",
+      "confidence": "medium",
+      "limitation": "Control relationships do not establish official boundaries."
+    },
+    {
+      "evidence_id": "SA-04-CONCEPT-GEOMETRY",
+      "claim_supported": "Participant conceptual design geometry",
+      "formal_artifact_path": "geometry/public_space.geojson",
+      "source_ids": [
+        "F2-SRC-P82-APPROVED-SPATIAL",
+        "F2-SRC-P82R-SPATIAL-DRAWINGS"
+      ],
+      "status": "participant design model",
+      "confidence": "low",
+      "limitation": "Requires survey, access, river/project, ownership and engineering verification."
+    },
+    {
+      "evidence_id": "SA-05-METRIC-CONTRACT",
+      "claim_supported": "Accepted low-confidence participant metric model under the current formal contract",
+      "formal_artifact_path": "metrics.json",
+      "source_ids": [
+        "F21-SRC-LIVE-UPSTREAM-CONTRACT"
+      ],
+      "status": "accepted low-confidence recomputable participant metric model",
+      "confidence": "low",
+      "limitation": "All three core spatial metrics remain non-statutory and must be recalculated when authoritative geometry becomes available; this limitation is not a current formal submission blocker."
+    }
+  ]
+}

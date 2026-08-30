@@ -21,4 +21,20 @@ All submitted text, geometry, diagrams, PDFs, and static HTML assets are generat
 | 案例来源 URL ×11 | sources.json CASE-* 条目 | 公开网站/政府文件 | 子代理检索+核验 | 各站许可（公开信息合理引用） | 仅引用事实与链接 | 合理引用 | 各来源方 | background 用途；不转载原文 |
 | 中英译文 | *.en.* 文件 | 投稿 agent 翻译 | 手写/渲染 | — | 自译 | 允许 | — | 与中文等值审校见 proposal 审计记录 |
 
-> 备注：所有绘图脚本/处理脚本未随包提交（属工作流资产），其逻辑可在 narrative.md 的 Contextual Data Registry 追溯；如需脚本副本（CC BY-NC），可经仓库 issue 申请。字体为系统字体（无嵌入商业字体）。
+> 备注：所有绘图脚本/处理脚本未随包提交（属工作流资产），其逻辑可在 narrative.md 的 Contextual Data Registry 追溯；如需脚本副本（CC BY-NC），可经仓库 issue 申请。HTML 内嵌的是 Noto Sans CJK SC 字形子集，用于在无 CJK 系统字体的评审容器中避免中文方框；字体源自 Google Noto CJK / Adobe Source，© 2014–2021 Adobe，按 SIL Open Font License 1.1 分发，来源：https://github.com/googlefonts/noto-cjk。
+
+## Embedded Noto Sans CJK subset — SIL Open Font License 1.1
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1. The license is also available at http://scripts.sil.org/OFL.
+
+The OFL allows the licensed fonts to be used, studied, modified and redistributed freely as long as they are not sold by themselves. The fonts, including derivative works, can be bundled, embedded and redistributed with software provided that the reserved names are not used by derivative works.
+
+Permission is granted, free of charge, to use, study, copy, merge, embed, modify, redistribute, and sell modified and unmodified copies of the Font Software, subject to these conditions:
+
+1. Neither the Font Software nor any individual component may be sold by itself.
+2. Each distributed copy contains the copyright notice and this license.
+3. No Modified Version may use Reserved Font Names without permission.
+4. Copyright holders and authors are not used to promote a Modified Version except for acknowledgement or with permission.
+5. The Font Software must remain under this license.
+
+THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED. The full SIL Open Font License Version 1.1 text is incorporated by reference at the URL above.

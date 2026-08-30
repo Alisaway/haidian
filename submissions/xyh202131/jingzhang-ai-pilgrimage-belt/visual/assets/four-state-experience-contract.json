@@ -1,0 +1,268 @@
+{
+  "schema_version": "1.0.0",
+  "experience_id": "JZ-R59-FOUR-STATE-EXPERIENCE",
+  "revision": "R59",
+  "duration_seconds": 54,
+  "editorial_duration_only": true,
+  "audio_track_count": 0,
+  "language_mode": "language_neutral",
+  "concept_status": "concept_only_g0",
+  "frozen_counts": {
+    "scenario_count": 12,
+    "project_count": 8,
+    "key_area_count": 3,
+    "conceptual_land_use_unit_count": 36
+  },
+  "prototype_grammar": [
+    {
+      "prototype_id": "VERIFY",
+      "key_area_id": "KAE-001",
+      "ordinary_rule": "continuous_observation_bypass",
+      "verification_rule": "isolated_side_verification_edge",
+      "stop_rule": "physically_isolate_equipment_while_ordinary_path_remains",
+      "recovery_rule": "remove_reversible_elements_then_independently_recheck_place"
+    },
+    {
+      "prototype_id": "CO-CREATE",
+      "key_area_id": "KAE-002",
+      "ordinary_rule": "continuous_daily_street_with_paper_or_oral_entry",
+      "verification_rule": "voluntary_withdrawable_side_collearning",
+      "stop_rule": "stop_collection_and_matching_while_daily_service_remains",
+      "recovery_rule": "remove_reversible_elements_then_restore_resident_daily_use"
+    },
+    {
+      "prototype_id": "PUBLISH",
+      "key_area_id": "KAE-003",
+      "ordinary_rule": "continuous_four_way_commute_with_staffed_service",
+      "verification_rule": "source_bounded_off_route_navigation",
+      "stop_rule": "take_automated_output_offline_while_staffed_service_remains",
+      "recovery_rule": "correct_source_and_clear_reversible_elements_then_recheck_movement_arms"
+    }
+  ],
+  "state_grammar": [
+    {
+      "state_id": "S0",
+      "state_name": "ordinary",
+      "ordinary_layer": "open_first",
+      "verification_layer": "closed",
+      "failure_layer": "inactive",
+      "recovery_layer": "not_applicable"
+    },
+    {
+      "state_id": "S1",
+      "state_name": "proof_optional_aid",
+      "ordinary_layer": "continuous",
+      "verification_layer": "bounded_voluntary_announced_window_only",
+      "failure_layer": "inactive",
+      "recovery_layer": "not_applicable"
+    },
+    {
+      "state_id": "S2",
+      "state_name": "failure_stop",
+      "ordinary_layer": "continuous",
+      "verification_layer": "stopped_and_isolated",
+      "failure_layer": "staffed_handoff_non_ai_path_and_exit_visible",
+      "recovery_layer": "ordinary_ground_first"
+    },
+    {
+      "state_id": "S3",
+      "state_name": "recovery",
+      "ordinary_layer": "restored_first",
+      "verification_layer": "not_implied",
+      "failure_layer": "resolved_only_by_future_evidence",
+      "recovery_layer": "same_task_then_future_independent_recheck"
+    }
+  ],
+  "shots": [
+    {
+      "shot_id": "S01",
+      "start_seconds": 0,
+      "end_seconds": 6,
+      "title_zh": "双轨裁决：公共地面先连续",
+      "title_en": "Twin-track ruling: public ground first",
+      "prototype_ids": ["VERIFY", "CO-CREATE", "PUBLISH"],
+      "state_id": "S0",
+      "ordinary_object": "continuous_public_ground",
+      "verification_object": "side_bounded_optional_overlay",
+      "stop_object": "stop_covers_verification_only",
+      "handoff_object": "staffed_handoff_returns_to_ordinary_ground",
+      "recovery_object": "ordinary_ground_is_the_continuous_baseline",
+      "caption_zh": "完成普通任务所需的公共地面先连续成立；验证只在旁侧、限域、可选择的叠层中出现。",
+      "caption_en": "Public ground needed for the ordinary task is continuous first; verification appears only as a side, bounded, optional overlay.",
+      "evidence_refs": [
+        "proposal.md#一次空间裁决验证必须退到普通生活之外",
+        "visual/assets/key-area-evidence-matrix.json#twin_track_frontend_contract"
+      ],
+      "must_not_imply": ["existing_service", "field_result", "site_approval", "maturity_change"]
+    },
+    {
+      "shot_id": "S02",
+      "start_seconds": 6,
+      "end_seconds": 18,
+      "title_zh": "三种原型：轮廓不可互换",
+      "title_en": "Three prototypes: non-interchangeable outlines",
+      "prototype_ids": ["VERIFY", "CO-CREATE", "PUBLISH"],
+      "state_id": "S0",
+      "ordinary_object": "three_non_interchangeable_spatial_outlines",
+      "verification_object": "side_verification_relationship_only",
+      "stop_object": "distinct_stop_objects_stay_off_ordinary_paths",
+      "handoff_object": "controlled_or_staffed_handoff_points",
+      "recovery_object": "each_prototype_returns_to_its_own_ordinary_task",
+      "caption_zh": "众智园是并行带与旁侧验证庭；原点社区是一街两院与四个可撤回节点；大钟寺是四向通勤十字与路外厅台。",
+      "caption_en": "Zhongzhiyuan uses parallel bands and a side verification garden; Origin Community uses one street, two courts, and four withdrawable nodes; Dazhongsi uses a four-way commute cross and an off-route hall and desk.",
+      "evidence_refs": [
+        "proposal.md#一次空间裁决验证必须退到普通生活之外",
+        "visual/assets/non-ai-parity-contract.json#JZ-NON-AI-PARITY-V2"
+      ],
+      "must_not_imply": ["existing_service", "resident_confirmation", "field_result", "maturity_change"]
+    },
+    {
+      "shot_id": "S03",
+      "start_seconds": 18,
+      "end_seconds": 24,
+      "title_zh": "普通：不用 AI 也完成同一任务",
+      "title_en": "Ordinary: complete the same task without AI",
+      "prototype_ids": ["VERIFY", "CO-CREATE", "PUBLISH"],
+      "state_id": "S0",
+      "ordinary_object": "same_basic_task_non_ai_path",
+      "verification_object": "closed",
+      "stop_object": "visible_stop_boundary_without_ordinary_blockage",
+      "handoff_object": "paper_or_oral_or_staffed_path",
+      "recovery_object": "ordinary_task_remains_available",
+      "caption_zh": "纸面、口头、实体导视和人工路径可独立完成同一基本任务；账户、扫码、设备和 AI 都不是前提。",
+      "caption_en": "Paper, oral, physical-wayfinding, and staffed paths independently complete the same basic task; account, QR, device, and AI are not prerequisites.",
+      "evidence_refs": [
+        "proposal.md#一次空间裁决验证必须退到普通生活之外",
+        "visual/assets/key-area-evidence-matrix.json#twin_track_frontend_contract"
+      ],
+      "must_not_imply": ["current_window", "current_operator", "field_result", "maturity_change"]
+    },
+    {
+      "shot_id": "S04",
+      "start_seconds": 24,
+      "end_seconds": 30,
+      "title_zh": "验证：自愿进入旁侧叠层",
+      "title_en": "Verification: voluntary side overlay",
+      "prototype_ids": ["VERIFY", "CO-CREATE", "PUBLISH"],
+      "state_id": "S1",
+      "ordinary_object": "ordinary_path_not_occupied",
+      "verification_object": "voluntary_bounded_side_verification_overlay",
+      "stop_object": "verification_stop_boundary",
+      "handoff_object": "staffed_handoff_stays_visible",
+      "recovery_object": "ordinary_path_remains_continuous",
+      "caption_zh": "验证只在自愿、公告且前置条件满足的未来窗口旁置出现；普通路径不被占用，可随时退出。",
+      "caption_en": "Verification appears beside the route only in a future voluntary, announced window with preconditions met; the ordinary path is not occupied and exit remains available.",
+      "evidence_refs": [
+        "proposal.md#一次空间裁决验证必须退到普通生活之外",
+        "visual/assets/non-ai-parity-contract.json#JZ-NON-AI-PARITY-V2"
+      ],
+      "must_not_imply": ["current_service", "queue_result", "field_result", "maturity_change"]
+    },
+    {
+      "shot_id": "S05",
+      "start_seconds": 30,
+      "end_seconds": 36,
+      "title_zh": "故障：只停止验证对象",
+      "title_en": "Failure: stop verification objects only",
+      "prototype_ids": ["VERIFY", "CO-CREATE", "PUBLISH"],
+      "state_id": "S2",
+      "ordinary_object": "ordinary_life_continues",
+      "verification_object": "stopped_and_isolated",
+      "stop_object": "verification_objects_only_stop",
+      "handoff_object": "staffed_handoff",
+      "recovery_object": "ordinary_task_and_non_ai_path_remain_available",
+      "caption_zh": "故障只停止并隔离验证对象；普通生活、非 AI 同任务路径、人工交接、申诉和退出继续。",
+      "caption_en": "Failure stops and isolates verification objects only; ordinary life, the same-task non-AI path, staffed handoff, appeal, and exit continue.",
+      "evidence_refs": [
+        "proposal.md#一次空间裁决验证必须退到普通生活之外",
+        "visual/assets/non-ai-parity-contract.json#JZ-NON-AI-PARITY-V2"
+      ],
+      "must_not_imply": ["ordinary_path_blocked", "resolved_incident", "field_result", "maturity_change"]
+    },
+    {
+      "shot_id": "S06",
+      "start_seconds": 36,
+      "end_seconds": 42,
+      "title_zh": "恢复：先还原普通任务",
+      "title_en": "Recovery: restore the ordinary task first",
+      "prototype_ids": ["VERIFY", "CO-CREATE", "PUBLISH"],
+      "state_id": "S3",
+      "ordinary_object": "ordinary_task_restored_first",
+      "verification_object": "not_implied",
+      "stop_object": "verification_layer_remains_separate_from_ordinary_use",
+      "handoff_object": "staffed_handoff_and_physical_information_remain",
+      "recovery_object": "ordinary_task_staffed_service_physical_information_and_traceable_state",
+      "caption_zh": "恢复先还原普通任务、人工服务、实体信息和可追证状态；它不等于模型重启、授权、批准或进入 G1。",
+      "caption_en": "Recovery first restores the ordinary task, staffed service, physical information, and traceable state; it is not model restart, authorization, approval, or G1.",
+      "evidence_refs": [
+        "proposal.md#一次空间裁决验证必须退到普通生活之外",
+        "visual/assets/non-ai-parity-contract.json#JZ-NON-AI-PARITY-V2"
+      ],
+      "must_not_imply": ["ordinary_path_blocked", "resolved_incident", "field_result", "maturity_change"]
+    },
+    {
+      "shot_id": "S07",
+      "start_seconds": 42,
+      "end_seconds": 50,
+      "title_zh": "唯一专业交接候选：回到 H01—H07",
+      "title_en": "Sole professional handoff candidate: return to H01-H07",
+      "prototype_ids": ["PUBLISH"],
+      "state_id": "S3",
+      "ordinary_object": "same_basic_task_non_ai_baseline",
+      "verification_object": "not_implied",
+      "stop_object": "no_go_when_any_handoff_gate_is_open",
+      "handoff_object": "JZ-05_SCENE-011_T-02_H01-H07_open_pre_g1_professional_handoff",
+      "recovery_object": "ordinary_task_is_not_a_handoff_result",
+      "caption_zh": "唯一 pre-G1 候选是 JZ-05 × SCENE-011 × T-02；H01—H07 的现实关闭与接受均为 0，当前仍为 G0 / NO-GO。",
+      "caption_en": "The sole pre-G1 candidate is JZ-05 x SCENE-011 x T-02; real closure and acceptance of H01-H07 are both 0, so the current state remains G0 / NO-GO.",
+      "evidence_refs": [
+        "visual/assets/professional-handoff-candidate.json#H01_AUTHORITY",
+        "visual/assets/professional-handoff-candidate.json#H07_RETEST_DECISION",
+        "visual/assets/review-handoff-index.json#PRE-G1-JZ05-SCENE011-T02"
+      ],
+      "must_not_imply": ["field_recovery", "accepted_handoff", "maturity_change", "authorization"]
+    },
+    {
+      "shot_id": "S08",
+      "start_seconds": 50,
+      "end_seconds": 54,
+      "title_zh": "真实性边界：G0、NO-GO、临时约束、现实结果 0",
+      "title_en": "Truth boundary: G0, NO-GO, provisional, real results 0",
+      "prototype_ids": ["VERIFY", "CO-CREATE", "PUBLISH"],
+      "state_id": "S3",
+      "ordinary_object": "truth_boundary",
+      "verification_object": "not_implied",
+      "stop_object": "no_go_boundary",
+      "handoff_object": "review_handoff_index",
+      "recovery_object": "not_a_recovery_event",
+      "caption_zh": "G0、NO-GO、provisional、现实结果 0：本合同是概念表达，不构成现场、批准或官方边界证据。",
+      "caption_en": "G0, NO-GO, provisional, real results 0: this contract is conceptual expression, not site, approval, or official-boundary evidence.",
+      "evidence_refs": [
+        "visual/assets/review-handoff-index.json#fixed_boundaries"
+      ],
+      "must_not_imply": ["field_recovery", "site_acceptance", "maturity_change", "authorization"]
+    }
+  ],
+  "evidence_links": [
+    "proposal.md#一次空间裁决验证必须退到普通生活之外",
+    "visual/assets/key-area-evidence-matrix.json#twin_track_frontend_contract",
+    "visual/assets/non-ai-parity-contract.json#JZ-NON-AI-PARITY-V2",
+    "visual/assets/professional-handoff-candidate.json#H01_AUTHORITY",
+    "visual/assets/professional-handoff-candidate.json#H07_RETEST_DECISION",
+    "visual/assets/review-handoff-index.json#PRE-G1-JZ05-SCENE011-T02",
+    "visual/assets/review-handoff-index.json#fixed_boundaries"
+  ],
+  "forbidden_inferences": [
+    "editorial_duration_is_not_real_duration",
+    "no_media_is_added",
+    "no_current_service_or_field_result",
+    "no_site_or_professional_approval",
+    "no_maturity_change",
+    "no_authorization"
+  ],
+  "rights": {
+    "owner": "submission_contributor",
+    "license": "CC-BY-4.0",
+    "code_license_not_applicable": true
+  }
+}

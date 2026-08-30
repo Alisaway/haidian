@@ -1,0 +1,123 @@
+{
+  "schema": "slow-variables-group-acceptance/v1",
+  "status": "concept_only_all_field_values_unknown",
+  "title_zh": "分群体验收契约：总体平均不得掩盖任一群体的失败",
+  "principle_zh": "每个适用群体有独立判据与独立分母；任一群体未通过，即视为该场景未通过对应放行门。所有现场数值待授权基线，当前一律 unknown。",
+  "scenarios": [
+    {
+      "scenario": "03",
+      "scenario_zh": "无障碍路线共测",
+      "gate": "G2",
+      "groups": [
+        {
+          "group_id": "GROUP-WHEELCHAIR",
+          "group_zh": "轮椅使用者",
+          "criterion": "共测复测通过率按参与者逐人判定，不并入总体均值",
+          "denominator": "全部自愿报名的轮椅使用者，逐人",
+          "failure_action": "任一人连续两次复测未通过，该场景视为未通过 G2，暂停相关路线推荐"
+        },
+        {
+          "group_id": "GROUP-OLDER",
+          "group_zh": "老年人与低速步行者",
+          "criterion": "通行耗时按 P90 分位判定，不用平均值",
+          "denominator": "参与老年人逐次通行记录",
+          "failure_action": "P90 未改善即触发断点复检"
+        }
+      ]
+    },
+    {
+      "scenario": "04",
+      "scenario_zh": "儿童独行陪测",
+      "gate": "G2",
+      "groups": [
+        {
+          "group_id": "GROUP-CARER",
+          "group_zh": "儿童照护者",
+          "criterion": "知情同意与撤回 100% 可经纸质或口头完成",
+          "denominator": "全部登记照护者",
+          "failure_action": "任一撤回未被执行即整体停测"
+        }
+      ]
+    },
+    {
+      "scenario": "06",
+      "scenario_zh": "人工窗口排队助手",
+      "gate": "G2",
+      "groups": [
+        {
+          "group_id": "GROUP-OLDER",
+          "group_zh": "老年人",
+          "criterion": "老年人平均耗时单独报告，不并入全龄均值",
+          "denominator": "匿名聚合的老年人窗口使用次数",
+          "failure_action": "老年人耗时未降即视为未通过 G2，即便总体数字在下降"
+        },
+        {
+          "group_id": "GROUP-LOW-DIGITAL",
+          "group_zh": "低数字素养者",
+          "criterion": "不使用助手的任务完成率单独统计",
+          "denominator": "选择不使用助手的使用者，逐次",
+          "failure_action": "完成率显著更低即触发人工接管复核"
+        }
+      ]
+    },
+    {
+      "scenario": "09",
+      "scenario_zh": "低扰动照明",
+      "gate": "G3",
+      "groups": [
+        {
+          "group_id": "GROUP-RESIDENT",
+          "group_zh": "相邻居住界面居民（含老年人）",
+          "criterion": "投诉按居住界面逐单位计，不做街区平均",
+          "denominator": "示范段全部相邻居住界面",
+          "failure_action": "任一界面投诉持续上升，即对该界面降级或关闭"
+        },
+        {
+          "group_id": "GROUP-LOW-DIGITAL",
+          "group_zh": "低数字素养者",
+          "criterion": "投诉可经电话与纸质渠道提交，不依赖应用",
+          "denominator": "全部投诉渠道记录",
+          "failure_action": "非数字渠道缺失即视为该场景未通过 G3"
+        }
+      ]
+    },
+    {
+      "scenario": "12",
+      "scenario_zh": "年度慢变量陪审",
+      "gate": "G4",
+      "groups": [
+        {
+          "group_id": "GROUP-ALL-FOUR",
+          "group_zh": "轮椅使用者、老年人、儿童照护者、低数字素养者",
+          "criterion": "陪审证据包分群体呈现 03/04/06/09 结果，不设合并均值",
+          "denominator": "四群体 × 适用场景全覆盖",
+          "failure_action": "任一群体的结果缺席，陪审可据此否决当年扩点"
+        }
+      ]
+    }
+  ],
+  "coverage": {
+    "scenarios_with_group_criteria": 5,
+    "applicable_scenarios": 5,
+    "ratio": 1.0,
+    "formula": "scenarios_with_group_criteria / applicable_scenarios",
+    "notes": "适用场景为任务点名涉及具体群体的五张场景卡：03、04、06、09、12。"
+  },
+  "current_results": "unknown_not_measured",
+  "synthetic_persona": {
+    "name": "郑岚",
+    "status": "synthetic_design_test_persona_not_a_real_interviewee",
+    "declaration_zh": "合成设计测试人物，不是真实访谈对象；本方案没有做过居民访谈。",
+    "design_flaws_found_and_fixed": [
+      "非数字反馈箱原本无投递凭证；组件库已补带编号纸质回执",
+      "场景 03 共测默认白天工作时段；场景卡已改为每季度至少一次通勤或晚间时段",
+      "无障碍审计台原本只写功能；首层界面已补低位台面与轮椅容膝空间"
+    ]
+  },
+  "evidence_backlinks": {
+    "proposal_zh": "proposal.md#分群体验收总体平均不得掩盖任一群体的失败",
+    "proposal_en": "proposal.en.md#group-specific-acceptance-no-average-may-hide-a-groups-failure",
+    "metric": "metrics.json#group_specific_acceptance_coverage",
+    "assumption": "assumptions.json#A-INCLUSION-008"
+  }
+}

@@ -1,0 +1,979 @@
+{
+  "schema_version": "0.1.0",
+  "workbook_id": "OBR-2026-08-28-001",
+  "title_zh": "官方边界发布后的独立复算工作簿",
+  "title_en": "Independent recalculation workbook after official boundary release",
+  "prepared_at": "2026-08-28",
+  "prepared_from_commit": "818ddc11b2bfcb330d52e9b1f63d8102e37f67a2",
+  "status": "not_activated",
+  "adoption_status": "optional_crosswalk_concept_only",
+  "boundary_notice_zh": "本工作簿只登记未来在官方边界发布后如何独立复算；当前没有官方边界输入，不改变现有临时几何，也不产生官方红线、法定指标、实施授权或政府背书。",
+  "boundary_notice_en": "This workbook registers how to perform an independent recalculation after an official boundary release. No official boundary input is currently available; it does not change provisional geometry or create an official redline, statutory metric, implementation authorisation or government endorsement.",
+  "runbook_path": "assets/media/official-boundary-recalculation-runbook.md",
+  "activation": {
+    "current_state": "provisional_only",
+    "official_boundary_available": false,
+    "official_key_area_polygons_available": false,
+    "activation_trigger_zh": "只有在组织方或正式数据持有人发布可核验的总体边界、三处重点区 polygon 及其版本/坐标/来源元数据后，才可将本工作簿从 not_activated 切换为 intake_pending。",
+    "activation_trigger_en": "Move this workbook from not_activated to intake_pending only after the organizer or source-of-record publishes a verifiable site boundary, the three key-area polygons and version/CRS/provenance metadata.",
+    "current_reason_for_hold_zh": "当前来源登记只包含临时粗略范围；官方 polygon 尚未进入本包。",
+    "current_reason_for_hold_en": "The current source register contains only provisional rough extents; official polygons are not in this package.",
+    "current_stop_condition_ids": [
+      "STOP-BOUNDARY-001",
+      "STOP-METRIC-001"
+    ],
+    "do_not_do_now": [
+      "replace geometry/site_boundary.geojson with an inferred or hand-redrawn boundary",
+      "rename provisional areas as official redlines",
+      "publish precise official area, FAR, height, density or parcel controls",
+      "claim external protocol level, field performance or implementation authorisation",
+      "use a news map, basemap, screenshot or geocoder result as a substitute for the source-of-record polygon"
+    ]
+  },
+  "input_contract": {
+    "required_inputs": [
+      {
+        "input_id": "IN-BOUNDARY-001",
+        "name_zh": "官方总体边界 polygon",
+        "name_en": "Official site-boundary polygon",
+        "required": true,
+        "accepted_formats": [
+          "GeoJSON",
+          "GeoPackage feature layer",
+          "another lossless vector export with an accompanying schema and CRS record"
+        ],
+        "minimum_metadata": [
+          "source_of_record",
+          "publication_url_or_archive_reference",
+          "published_at",
+          "retrieved_at",
+          "dataset_or_layer_version",
+          "sha256",
+          "crs_or_epsg",
+          "linear_unit",
+          "scope_statement",
+          "license_or_access_basis"
+        ],
+        "expected_geometry": "one named site feature or an explicitly documented multipart site feature",
+        "current_state": "not_available",
+        "current_substitute": "geometry/site_boundary.geojson",
+        "current_substitute_status": "provisional_only",
+        "validation_test_ids": [
+          "GEO-001",
+          "GEO-002",
+          "GEO-003",
+          "GEO-004",
+          "GEO-005",
+          "GEO-008"
+        ]
+      },
+      {
+        "input_id": "IN-KEY-AREA-001",
+        "name_zh": "三处重点区 polygon",
+        "name_en": "Three key-area polygons",
+        "required": true,
+        "accepted_formats": [
+          "GeoJSON",
+          "GeoPackage feature layer",
+          "another lossless vector export with an accompanying schema and CRS record"
+        ],
+        "minimum_metadata": [
+          "source_of_record",
+          "publication_url_or_archive_reference",
+          "published_at",
+          "retrieved_at",
+          "dataset_or_layer_version",
+          "sha256",
+          "crs_or_epsg",
+          "linear_unit",
+          "stable_area_id_and_name",
+          "scope_statement"
+        ],
+        "expected_geometry": "three uniquely identified polygons or an explicitly documented multipart representation",
+        "current_state": "not_available",
+        "current_substitute": "geometry/key_areas.geojson",
+        "current_substitute_status": "provisional_only",
+        "validation_test_ids": [
+          "GEO-001",
+          "GEO-002",
+          "GEO-003",
+          "GEO-004",
+          "GEO-006",
+          "GEO-008"
+        ]
+      },
+      {
+        "input_id": "IN-PUBLICATION-001",
+        "name_zh": "发布与授权元数据",
+        "name_en": "Publication and use metadata",
+        "required": true,
+        "minimum_metadata": [
+          "who published or supplied the data",
+          "what the boundary covers and what it does not cover",
+          "publication date and version",
+          "CRS and measurement units",
+          "source URL or archive reference",
+          "checksum captured before processing",
+          "license, access basis and permitted reuse",
+          "whether the data is informational, planning-control or another official status"
+        ],
+        "current_state": "not_available",
+        "validation_test_ids": [
+          "GEO-001",
+          "GEO-002",
+          "GEO-008",
+          "GEO-009"
+        ]
+      }
+    ],
+    "conditionally_required_inputs": [
+      {
+        "input_id": "IN-CONTROLS-001",
+        "name_zh": "官方控制或专题图层",
+        "name_en": "Official control or thematic layers",
+        "required_when": "a claim concerns FAR, height, density, setbacks, parcel controls, heritage, road redlines, utilities, fire or another statutory/specialist condition",
+        "examples": [
+          "official parcel or planning-control layer",
+          "official road/rail or transport constraint layer",
+          "official heritage, fire, accessibility or utility layer",
+          "official building or land-use layer with a defined vintage"
+        ],
+        "absence_policy_zh": "缺失时将相应指标维持为 unknown 或 conceptual；不得由边界、底图或概念图形推导。",
+        "absence_policy_en": "If absent, keep the related metric unknown or conceptual; do not infer it from the boundary, basemap or concept geometry.",
+        "validation_test_ids": [
+          "GEO-009"
+        ]
+      }
+    ],
+    "forbidden_substitutions": [
+      "a hand-drawn redline based on a screenshot",
+      "a geocoded point buffer or parcel guess",
+      "a web basemap or satellite image without a source-of-record polygon",
+      "a boundary copied from a different publication vintage",
+      "a polygon whose CRS, unit, scope or checksum cannot be recovered"
+    ]
+  },
+  "baseline_snapshot": {
+    "package_id": "jingzhang-all-shifts",
+    "package_state": "ready_for_review",
+    "captured_at": "2026-08-28",
+    "boundary_state": "provisional_only",
+    "source_policy": "The snapshot freezes the current package before any future official input is ingested.",
+    "files": [
+      {
+        "path": "metrics.json",
+        "sha256": "c0f26e096518e49515a88a9cfb1345bb432331d3a448cbae402771a071d6f9a2",
+        "role": "derived_metric_baseline"
+      },
+      {
+        "path": "geometry/site_boundary.geojson",
+        "sha256": "66b8ab3db46dca00224c0662890a69c1bc0244902aa3390574f1ec20bc4348ff",
+        "role": "provisional_site_geometry"
+      },
+      {
+        "path": "geometry/key_areas.geojson",
+        "sha256": "566926817504a2938e081390879095fdc300a0df9328ddcbc6131b1e861718d3",
+        "role": "provisional_key_area_geometry"
+      },
+      {
+        "path": "assumptions.json",
+        "sha256": "451f630b5f40d86f94d85076034fb7f1090680673b88b7a7730612167aae883b",
+        "role": "assumption_register"
+      },
+      {
+        "path": "sources.json",
+        "sha256": "b542d7c36f04cc74ff609dc434a4ef5deac58eb8b335025873219049e4a00e72",
+        "role": "source_register"
+      },
+      {
+        "path": "visual/assets/evidence-chain-review.json",
+        "sha256": "6b7cde29442578151c7dc8ac748cd4d8d93c854ae5cdf5ed00a568e8ab53a410",
+        "role": "claim_evidence_baseline"
+      }
+    ],
+    "baseline_metrics": [
+      {
+        "metric_id": "site_area_sqm",
+        "status": "known_from_provisional_geometry",
+        "value": 11412825.386,
+        "unit": "sqm",
+        "formula": "polygon_area(submitted_site_boundary)",
+        "source_files": [
+          "geometry/site_boundary.geojson"
+        ],
+        "official_claim_allowed": false
+      },
+      {
+        "metric_id": "building_footprint_area_sqm",
+        "status": "known_from_concept_layer",
+        "value": 310807.184,
+        "unit": "sqm",
+        "formula": "sum(polygon_area(building_footprints))",
+        "source_files": [
+          "geometry/buildings.geojson"
+        ],
+        "official_claim_allowed": false
+      },
+      {
+        "metric_id": "green_ratio",
+        "status": "known_from_provisional_geometry",
+        "value": 0.123423,
+        "unit": "ratio",
+        "formula": "green_space_area_sqm / site_area_sqm",
+        "source_files": [
+          "geometry/green_space.geojson",
+          "geometry/site_boundary.geojson"
+        ],
+        "official_claim_allowed": false
+      },
+      {
+        "metric_id": "public_space_ratio",
+        "status": "known_from_provisional_geometry",
+        "value": 0.073281,
+        "unit": "ratio",
+        "formula": "public_space_area_sqm / site_area_sqm",
+        "source_files": [
+          "geometry/public_space.geojson",
+          "geometry/site_boundary.geojson"
+        ],
+        "official_claim_allowed": false
+      },
+      {
+        "metric_id": "key_area_count",
+        "status": "known_from_provisional_geometry",
+        "value": 3,
+        "unit": "count",
+        "formula": "count(key_detailed_design_areas)",
+        "source_files": [
+          "geometry/key_areas.geojson"
+        ],
+        "official_claim_allowed": false
+      },
+      {
+        "metric_id": "floor_area_ratio",
+        "status": "unknown",
+        "value": null,
+        "unit": "ratio",
+        "formula": "total_floor_area_sqm / official_site_area_sqm",
+        "source_files": [
+          "brief/site-package/ranges/planning_limits.json"
+        ],
+        "official_claim_allowed": false,
+        "hold_reason": "The official site area and approved floor-area controls are not available."
+      }
+    ]
+  },
+  "geometry_acceptance_tests": [
+    {
+      "test_id": "GEO-001",
+      "title_zh": "来源可追溯",
+      "title_en": "Traceable source",
+      "pass_criteria_zh": "能从发布页、档案或组织方登记回到 source-of-record，并记录发布者、版本、时间、许可与用途范围。",
+      "pass_criteria_en": "The source-of-record can be reached through a publication page, archive or organizer register, with publisher, version, dates, license and scope recorded.",
+      "owner_role": "official_spatial_data_owner",
+      "failure_action": "STOP-BOUNDARY-001"
+    },
+    {
+      "test_id": "GEO-002",
+      "title_zh": "坐标基准与单位明确",
+      "title_en": "CRS and units declared",
+      "pass_criteria_zh": "原始文件与登记元数据给出 CRS/EPSG、线性单位；等面积复算坐标仅用于派生副本。",
+      "pass_criteria_en": "The raw file and metadata declare CRS/EPSG and linear units; an equal-area CRS is used only for a derived processing copy.",
+      "owner_role": "independent_spatial_reviewer",
+      "failure_action": "STOP-BOUNDARY-002"
+    },
+    {
+      "test_id": "GEO-003",
+      "title_zh": "几何有效",
+      "title_en": "Geometry valid",
+      "pass_criteria_zh": "几何闭合且有效，无自交、零面积碎片或未记录的重叠；修复动作保留原始 hash 与修复日志。",
+      "pass_criteria_en": "Geometries are closed and valid, with no self-intersection, zero-area fragment or unexplained overlap; any repair preserves the raw hash and records the repair.",
+      "owner_role": "independent_spatial_reviewer",
+      "failure_action": "STOP-BOUNDARY-002"
+    },
+    {
+      "test_id": "GEO-004",
+      "title_zh": "范围与单位一致",
+      "title_en": "Extent and units consistent",
+      "pass_criteria_zh": "总体边界、重点区与派生图层的范围和单位可解释；面积结果经过单位核算。",
+      "pass_criteria_en": "The site, key areas and derived layers have explainable extents and units; area results pass a unit sanity check.",
+      "owner_role": "independent_spatial_reviewer",
+      "failure_action": "STOP-BOUNDARY-002"
+    },
+    {
+      "test_id": "GEO-005",
+      "title_zh": "总体边界唯一",
+      "title_en": "Unique site boundary",
+      "pass_criteria_zh": "已说明单一或多部件总体边界语义；不存在因合并、溶解或重复要素造成的面积双计。",
+      "pass_criteria_en": "Single-part or multipart site semantics are documented; dissolve, merge or duplicate features cannot double-count area.",
+      "owner_role": "independent_spatial_reviewer",
+      "failure_action": "STOP-BOUNDARY-002"
+    },
+    {
+      "test_id": "GEO-006",
+      "title_zh": "重点区落在总体边界内",
+      "title_en": "Key areas contained by site",
+      "pass_criteria_zh": "三处重点区 ID 唯一、数量符合发布记录，并完全落在总体边界内；若为跨界区必须有发布方解释。",
+      "pass_criteria_en": "The three key-area IDs are unique, the count matches the release record and each polygon is contained by the site; a cross-boundary area requires source-of-record explanation.",
+      "owner_role": "official_spatial_data_owner",
+      "failure_action": "STOP-BOUNDARY-002"
+    },
+    {
+      "test_id": "GEO-007",
+      "title_zh": "版本不混用",
+      "title_en": "No mixed vintages",
+      "pass_criteria_zh": "总体边界、重点区、专题图层与指标快照均记录 vintage；不同版本的混用有明确理由并由复核者签字。",
+      "pass_criteria_en": "The site, key areas, thematic layers and metric snapshots record their vintage; any cross-vintage use is justified and signed off by the reviewer.",
+      "owner_role": "independent_evidence_reviewer",
+      "failure_action": "STOP-BOUNDARY-002"
+    },
+    {
+      "test_id": "GEO-008",
+      "title_zh": "输入字节冻结",
+      "title_en": "Input bytes frozen",
+      "pass_criteria_zh": "处理前保存原始文件、SHA-256、下载/取得时间及登记表；所有派生副本指向原始 hash。",
+      "pass_criteria_en": "Before processing, retain the raw file, SHA-256, retrieval time and intake record; every derived copy points to the raw hash.",
+      "owner_role": "independent_evidence_reviewer",
+      "failure_action": "STOP-BOUNDARY-001"
+    },
+    {
+      "test_id": "GEO-009",
+      "title_zh": "不越过数据授权范围",
+      "title_en": "No unauthorized extrapolation",
+      "pass_criteria_zh": "只对发布或明确授权的图层复算；缺少官方控制图层时不推导 FAR、高度、密度、权属、消防、交通或文保结论。",
+      "pass_criteria_en": "Only released or explicitly authorized layers are recalculated; without official control layers, do not infer FAR, height, density, ownership, fire, transport or heritage conclusions.",
+      "owner_role": "professional_urban_design_reviewer",
+      "failure_action": "STOP-METRIC-001"
+    }
+  ],
+  "metric_recalculation_contract": [
+    {
+      "metric_id": "site_area_sqm",
+      "recalculate": true,
+      "formula": "area(equal_area(official_site_boundary))",
+      "required_inputs": [
+        "IN-BOUNDARY-001"
+      ],
+      "output_status_if_pass": "derived_from_official_input",
+      "output_status_if_input_missing": "provisional_only",
+      "rounding_rule": "retain full calculation precision; display rounding must be documented",
+      "interpretation_zh": "这是发布数据范围内的几何面积，不自动等于法定建设用地面积或可开发面积。",
+      "interpretation_en": "This is the geometric area of the released data scope; it is not automatically statutory developable or buildable area."
+    },
+    {
+      "metric_id": "key_area_count",
+      "recalculate": true,
+      "formula": "count(unique(official_key_area_id))",
+      "required_inputs": [
+        "IN-KEY-AREA-001"
+      ],
+      "output_status_if_pass": "derived_from_official_input",
+      "output_status_if_input_missing": "provisional_only",
+      "rounding_rule": "integer count with an ID-to-name reconciliation table",
+      "interpretation_zh": "只核对发布的重点区数量与身份，不将数量解释为优先级、批准状态或开发强度。",
+      "interpretation_en": "This reconciles the released key-area count and identity; it does not imply priority, approval or development intensity."
+    },
+    {
+      "metric_id": "building_footprint_area_sqm",
+      "recalculate": true,
+      "formula": "sum(area(intersection(concept_or_official_buildings, official_site_boundary)))",
+      "required_inputs": [
+        "IN-BOUNDARY-001",
+        "a versioned building layer"
+      ],
+      "output_status_if_pass": "derived_from_clipped_layer",
+      "output_status_if_layer_conceptual": "conceptual_clipped",
+      "output_status_if_layer_missing": "unknown",
+      "rounding_rule": "retain full calculation precision; record clipping and exclusions",
+      "interpretation_zh": "若建筑图层仍是概念图层，结果只能标为 conceptual_clipped；不能借正式边界把概念建筑面积升级为现状或法定建筑指标。",
+      "interpretation_en": "If the building layer remains conceptual, the result is conceptual_clipped; an official boundary cannot upgrade concept building area into existing or statutory building data."
+    },
+    {
+      "metric_id": "green_space_area_sqm",
+      "recalculate": true,
+      "formula": "sum(area(intersection(green_space_layer, official_site_boundary)))",
+      "required_inputs": [
+        "IN-BOUNDARY-001",
+        "a versioned green-space layer"
+      ],
+      "output_status_if_pass": "derived_from_clipped_layer",
+      "output_status_if_layer_conceptual": "conceptual_clipped",
+      "output_status_if_layer_missing": "unknown",
+      "interpretation_zh": "只有绿色空间图层的来源、语义和 vintage 也被确认时，才可讨论其发布范围内面积；不能把设计意向等同现状绿地。",
+      "interpretation_en": "Discuss area within the released scope only when the green-space layer's provenance, semantics and vintage are also confirmed; design intent is not existing green space."
+    },
+    {
+      "metric_id": "green_ratio",
+      "recalculate": true,
+      "formula": "green_space_area_sqm / site_area_sqm",
+      "required_inputs": [
+        "IN-BOUNDARY-001",
+        "a versioned green-space layer"
+      ],
+      "output_status_if_pass": "derived_ratio_with_scope_label",
+      "output_status_if_layer_conceptual": "conceptual_ratio",
+      "output_status_if_layer_missing": "unknown",
+      "rounding_rule": "store unrounded value and separately store display value",
+      "interpretation_zh": "比例必须同时携带分子/分母来源与范围标签，不称为法定绿地率或绩效结果。",
+      "interpretation_en": "The ratio must carry numerator/denominator sources and scope labels; do not call it a statutory green ratio or performance result."
+    },
+    {
+      "metric_id": "public_space_ratio",
+      "recalculate": true,
+      "formula": "public_space_area_sqm / site_area_sqm",
+      "required_inputs": [
+        "IN-BOUNDARY-001",
+        "a versioned public-space layer"
+      ],
+      "output_status_if_pass": "derived_ratio_with_scope_label",
+      "output_status_if_layer_conceptual": "conceptual_ratio",
+      "output_status_if_layer_missing": "unknown",
+      "rounding_rule": "store unrounded value and separately store display value",
+      "interpretation_zh": "比例只能表达经过边界裁切的图层关系，不称为现状公共服务覆盖率或实施绩效。",
+      "interpretation_en": "The ratio expresses the clipped layer relationship only; it is not existing public-service coverage or implementation performance."
+    },
+    {
+      "metric_id": "floor_area_ratio",
+      "recalculate": false,
+      "formula": "total_floor_area_sqm / official_site_area_sqm",
+      "required_inputs": [
+        "IN-BOUNDARY-001",
+        "official floor-area control",
+        "versioned floor-area data"
+      ],
+      "output_status_if_pass": "derived_only_if_all_controls_are_official_and_in_scope",
+      "output_status_if_input_missing": "unknown",
+      "rounding_rule": "do not display a number when any required control input is absent",
+      "interpretation_zh": "正式边界本身不提供 FAR；没有官方控制和总建筑面积就维持 unknown。",
+      "interpretation_en": "An official boundary does not provide FAR; retain unknown without official controls and total floor-area data."
+    }
+  ],
+  "workflow_steps": [
+    {
+      "step_id": "STEP-01",
+      "title_zh": "冻结基线",
+      "title_en": "Freeze the baseline",
+      "inputs": [
+        "baseline_snapshot"
+      ],
+      "outputs": [
+        "baseline hash table",
+        "read-only copy of current metrics and provisional geometry"
+      ],
+      "owner_role": "independent_evidence_reviewer",
+      "pass_evidence": "A dated baseline record and hashes are attached to the run record.",
+      "stop_condition_ids": [
+        "STOP-BOUNDARY-002"
+      ]
+    },
+    {
+      "step_id": "STEP-02",
+      "title_zh": "登记官方输入",
+      "title_en": "Register official inputs",
+      "inputs": [
+        "IN-BOUNDARY-001",
+        "IN-KEY-AREA-001",
+        "IN-PUBLICATION-001"
+      ],
+      "outputs": [
+        "input intake record",
+        "raw file hashes",
+        "scope and license record"
+      ],
+      "owner_role": "official_spatial_data_owner",
+      "pass_evidence": "Every required field in the input contract is complete and independently retrievable.",
+      "stop_condition_ids": [
+        "STOP-BOUNDARY-001"
+      ]
+    },
+    {
+      "step_id": "STEP-03",
+      "title_zh": "验证几何与版本",
+      "title_en": "Validate geometry and vintage",
+      "inputs": [
+        "registered raw inputs",
+        "geometry_acceptance_tests"
+      ],
+      "outputs": [
+        "geometry QA record",
+        "derived equal-area processing copy",
+        "repair log, if any"
+      ],
+      "owner_role": "independent_spatial_reviewer",
+      "pass_evidence": "GEO-001 through GEO-009 have pass/hold decisions and named reviewers.",
+      "stop_condition_ids": [
+        "STOP-BOUNDARY-002",
+        "STOP-METRIC-001"
+      ]
+    },
+    {
+      "step_id": "STEP-04",
+      "title_zh": "替换边界输入但保留原始文件",
+      "title_en": "Replace the boundary input while retaining raw bytes",
+      "inputs": [
+        "passed official boundary",
+        "passed key-area polygons",
+        "baseline provisional geometry"
+      ],
+      "outputs": [
+        "versioned official geometry copy",
+        "provisional-to-official mapping",
+        "old/new hash table"
+      ],
+      "owner_role": "participant_submission_author",
+      "pass_evidence": "The old provisional files remain recoverable; the new files are explicitly versioned and linked to raw hashes.",
+      "stop_condition_ids": [
+        "STOP-BOUNDARY-002"
+      ]
+    },
+    {
+      "step_id": "STEP-05",
+      "title_zh": "重算边界依赖指标",
+      "title_en": "Recalculate boundary-dependent metrics",
+      "inputs": [
+        "official geometry",
+        "versioned thematic layers",
+        "metric_recalculation_contract"
+      ],
+      "outputs": [
+        "new metrics snapshot",
+        "metric delta table",
+        "unknown/conceptual status decisions"
+      ],
+      "owner_role": "participant_submission_author",
+      "pass_evidence": "Each metric records formula, numerator/denominator source, scope, status, old value, new value and delta.",
+      "stop_condition_ids": [
+        "STOP-METRIC-001"
+      ]
+    },
+    {
+      "step_id": "STEP-06",
+      "title_zh": "追踪受影响交付物",
+      "title_en": "Trace impacted deliverables",
+      "inputs": [
+        "metric delta table",
+        "impacted_artifacts"
+      ],
+      "outputs": [
+        "artifact impact matrix",
+        "updated figures, pages and drawings where needed",
+        "stale-claim register"
+      ],
+      "owner_role": "participant_submission_author",
+      "pass_evidence": "Every affected artifact is updated, explicitly marked unchanged with a reason, or held from publication.",
+      "stop_condition_ids": [
+        "STOP-METRIC-001",
+        "STOP-VISUAL-001"
+      ]
+    },
+    {
+      "step_id": "STEP-07",
+      "title_zh": "独立复核证据链",
+      "title_en": "Independently recheck the evidence chain",
+      "inputs": [
+        "new source snapshots",
+        "metric delta table",
+        "claim register",
+        "role and stop-condition register"
+      ],
+      "outputs": [
+        "updated evidence-chain review",
+        "claim-by-claim decision record"
+      ],
+      "owner_role": "independent_evidence_reviewer",
+      "pass_evidence": "Each boundary-dependent claim has source, snapshot, metric, responsible role and stop condition; no claim exceeds its input.",
+      "stop_condition_ids": [
+        "STOP-METRIC-001",
+        "STOP-CROSSWALK-001"
+      ]
+    },
+    {
+      "step_id": "STEP-08",
+      "title_zh": "本地门与人工抽查",
+      "title_en": "Run local gates and human spot checks",
+      "inputs": [
+        "updated package",
+        "updated manifest",
+        "updated self-check",
+        "visual and bilingual artifacts"
+      ],
+      "outputs": [
+        "validation logs",
+        "visual spot-check record",
+        "review-ready candidate or hold decision"
+      ],
+      "owner_role": "maintainer_or_organizer",
+      "pass_evidence": "All deterministic gates pass, bilingual pages agree, and a human reviewer records the final intake decision.",
+      "stop_condition_ids": [
+        "STOP-VISUAL-001",
+        "STOP-PACKAGE-001",
+        "STOP-CROSSWALK-001"
+      ]
+    }
+  ],
+  "impacted_artifacts": [
+    {
+      "path": "geometry/site_boundary.geojson",
+      "dependency": "official site polygon",
+      "action": "replace only after GEO-001 through GEO-005 pass; retain the old provisional file in the run archive",
+      "required_status_note": "official_input_validated",
+      "owner_role": "participant_submission_author"
+    },
+    {
+      "path": "geometry/key_areas.geojson",
+      "dependency": "official key-area polygons",
+      "action": "replace only after GEO-006 passes; preserve ID/name reconciliation",
+      "required_status_note": "official_input_validated",
+      "owner_role": "participant_submission_author"
+    },
+    {
+      "path": "geometry/buildings.geojson",
+      "dependency": "site clipping and layer vintage",
+      "action": "clip and rehash if the layer is in scope; otherwise leave geometry unchanged and mark derived metric conceptual_clipped or unknown",
+      "required_status_note": "depends_on_layer_provenance",
+      "owner_role": "participant_submission_author"
+    },
+    {
+      "path": "geometry/green_space.geojson",
+      "dependency": "site clipping and green-space semantics",
+      "action": "reclip/recompute only when its vintage and semantics are documented",
+      "required_status_note": "depends_on_layer_provenance",
+      "owner_role": "professional_urban_design_reviewer"
+    },
+    {
+      "path": "geometry/public_space.geojson",
+      "dependency": "site clipping and public-space semantics",
+      "action": "reclip/recompute only when its vintage and semantics are documented",
+      "required_status_note": "depends_on_layer_provenance",
+      "owner_role": "professional_urban_design_reviewer"
+    },
+    {
+      "path": "geometry/land_use.geojson",
+      "dependency": "site and key-area spatial mapping",
+      "action": "audit all overlays; do not relabel concept land use as official zoning",
+      "required_status_note": "conceptual_or_official_by_layer",
+      "owner_role": "professional_urban_design_reviewer"
+    },
+    {
+      "path": "geometry/phasing.geojson",
+      "dependency": "key-area IDs and spatial mapping",
+      "action": "reconcile phase references and hold any moved or unmatched feature",
+      "required_status_note": "conceptual_pending_reconciliation",
+      "owner_role": "participant_submission_author"
+    },
+    {
+      "path": "geometry/roads.geojson",
+      "dependency": "boundary extent and transport source",
+      "action": "audit overlays; do not infer road redlines or transport approval from boundary change",
+      "required_status_note": "conceptual_or_official_by_layer",
+      "owner_role": "transport_reviewer"
+    },
+    {
+      "path": "geometry/constraints.geojson",
+      "dependency": "official constraint layers",
+      "action": "populate only from supplied official/professional evidence; an empty layer remains empty",
+      "required_status_note": "unknown_when_unsupplied",
+      "owner_role": "professional_urban_design_reviewer"
+    },
+    {
+      "path": "metrics.json",
+      "dependency": "all boundary-dependent geometry and layer status",
+      "action": "write old value, new value, delta, formula, scope and confidence; preserve unknown where inputs are absent",
+      "required_status_note": "recalculated_with_scope_label",
+      "owner_role": "participant_submission_author"
+    },
+    {
+      "path": "assets/figures/",
+      "dependency": "maps, labels, areas, ratios and boundary-dependent annotations",
+      "action": "identify each figure as update, unchanged-with-reason, or hold; regenerate only from the new structured data",
+      "required_status_note": "visual_recheck_required",
+      "owner_role": "visual_reviewer"
+    },
+    {
+      "path": "report/",
+      "dependency": "narrative metrics, maps, caveats and evidence links",
+      "action": "update claims and caveats; retain concept-only disclosures where thematic layers remain conceptual",
+      "required_status_note": "narrative_recheck_required",
+      "owner_role": "participant_submission_author"
+    },
+    {
+      "path": "visual/index.html",
+      "dependency": "interactive metric cards and map labels",
+      "action": "update boundary-dependent values and run bilingual/offline visual checks",
+      "required_status_note": "visual_recheck_required",
+      "owner_role": "visual_reviewer"
+    },
+    {
+      "path": "drawings/",
+      "dependency": "board maps, dimensions and captions",
+      "action": "re-export affected boards and visually inspect first pages and map labels",
+      "required_status_note": "visual_recheck_required",
+      "owner_role": "visual_reviewer"
+    },
+    {
+      "path": "visual/assets/evidence-chain-review.json",
+      "dependency": "new source and metric snapshots",
+      "action": "append a new boundary release snapshot and re-evaluate every affected claim",
+      "required_status_note": "independent_recheck_required",
+      "owner_role": "independent_evidence_reviewer"
+    },
+    {
+      "path": "manifest.json",
+      "dependency": "all file bytes",
+      "action": "refresh only after content changes are complete; then refresh self-check as the final local step",
+      "required_status_note": "hashes_current",
+      "owner_role": "participant_submission_author"
+    }
+  ],
+  "evidence_chain_template": {
+    "required_fields": [
+      "claim_id",
+      "claim_zh",
+      "claim_en",
+      "claim_status",
+      "source_refs",
+      "snapshot_refs",
+      "metric_refs",
+      "metric_interpretation_zh",
+      "metric_interpretation_en",
+      "responsible_roles",
+      "stop_condition_ids",
+      "boundary_flags",
+      "review_decision",
+      "review_test"
+    ],
+    "boundary_dependent_claim_rule_zh": "任何提及范围、面积、比例、重点区位置、分期或空间映射的主张，都必须绑定新官方输入的 source/snapshot，并说明其余图层是否仍为概念层。",
+    "boundary_dependent_claim_rule_en": "Every claim about extent, area, ratio, key-area location, phasing or spatial mapping must bind to the new official input source/snapshot and state whether the remaining layers are still conceptual.",
+    "allowed_statuses": [
+      "provisional_package_record",
+      "official_input_received",
+      "official_input_validated",
+      "derived_from_official_input",
+      "conceptual_clipped",
+      "unknown",
+      "hold_pending_evidence"
+    ],
+    "prohibited_statuses": [
+      "external_level_claim",
+      "implementation_authorized",
+      "field_verified_performance",
+      "government_endorsed"
+    ]
+  },
+  "roles": [
+    {
+      "role_id": "official_spatial_data_owner",
+      "responsibility_zh": "发布或确认官方边界、重点区及其版本、范围、坐标与使用边界。",
+      "responsibility_en": "Publishes or confirms the official site/key-area data, version, scope, CRS and use boundaries.",
+      "decision_right": "source-of-record and scope confirmation"
+    },
+    {
+      "role_id": "participant_submission_author",
+      "responsibility_zh": "登记输入、保留原始字节、执行派生复算、更新本包并披露状态。",
+      "responsibility_en": "Registers inputs, preserves raw bytes, performs derived recalculation, updates the package and discloses status.",
+      "decision_right": "package preparation, not official approval"
+    },
+    {
+      "role_id": "independent_spatial_reviewer",
+      "responsibility_zh": "独立检查 CRS、几何有效性、包含关系、版本一致性与面积算法。",
+      "responsibility_en": "Independently checks CRS, geometry validity, containment, vintage consistency and area calculations.",
+      "decision_right": "geometry pass/hold recommendation"
+    },
+    {
+      "role_id": "independent_evidence_reviewer",
+      "responsibility_zh": "复核主张—来源—快照—指标—责任角色—停止条件链条。",
+      "responsibility_en": "Rechecks the claim-source-snapshot-metric-role-stop-condition chain.",
+      "decision_right": "evidence-chain pass/hold recommendation"
+    },
+    {
+      "role_id": "professional_urban_design_reviewer",
+      "responsibility_zh": "判断专题图层的专业语义与是否足以支持规划、交通、文保或实施相关表述。",
+      "responsibility_en": "Assesses thematic-layer semantics and whether they support planning, transport, heritage or implementation language.",
+      "decision_right": "professional scope recommendation, not government authorization"
+    },
+    {
+      "role_id": "visual_reviewer",
+      "responsibility_zh": "抽查中英文地图、数值、标注、图纸与离线页面是否同步。",
+      "responsibility_en": "Spot-checks bilingual maps, values, labels, drawings and offline pages for consistency.",
+      "decision_right": "visual pass/hold recommendation"
+    },
+    {
+      "role_id": "maintainer_or_organizer",
+      "responsibility_zh": "决定是否接收更新，不将接收等同获奖、发布、实施授权或政府背书。",
+      "responsibility_en": "Decides whether to intake the update without equating intake with award, publication, implementation authorization or endorsement.",
+      "decision_right": "repository intake decision"
+    }
+  ],
+  "stop_conditions": [
+    {
+      "id": "STOP-BOUNDARY-001",
+      "title_zh": "官方输入不可核验",
+      "title_en": "Official input cannot be verified",
+      "trigger_zh": "缺少 source-of-record、版本、CRS、范围、许可或原始 hash。",
+      "trigger_en": "Source-of-record, version, CRS, scope, license or raw hash is missing.",
+      "action_zh": "不激活工作簿；保持 provisional_only，暂停边界替换和官方口径。",
+      "action_en": "Do not activate the workbook; keep provisional_only and hold replacement or official wording.",
+      "severity": "hard_stop"
+    },
+    {
+      "id": "STOP-BOUNDARY-002",
+      "title_zh": "几何或版本校验失败",
+      "title_en": "Geometry or vintage validation fails",
+      "trigger_zh": "几何无效、重点区越界、版本混用、单位不明或无法解释修复。",
+      "trigger_en": "Invalid geometry, key-area escape, mixed vintages, unknown units or unexplained repair occurs.",
+      "action_zh": "冻结新输入，保留原始文件，回退到 provisional_only。",
+      "action_en": "Freeze the new input, retain raw bytes and return to provisional_only.",
+      "severity": "hard_stop"
+    },
+    {
+      "id": "STOP-METRIC-001",
+      "title_zh": "指标来源或语义越界",
+      "title_en": "Metric provenance or semantics overreach",
+      "trigger_zh": "把裁切后的概念图层说成现状/法定数据，或使用边界推导缺失的控制指标。",
+      "trigger_en": "A clipped concept layer is presented as existing/statutory data, or missing controls are inferred from the boundary.",
+      "action_zh": "将指标降级为 conceptual、unknown 或 provisional，并暂停受影响主张。",
+      "action_en": "Downgrade the metric to conceptual, unknown or provisional and hold affected claims.",
+      "severity": "hard_stop"
+    },
+    {
+      "id": "STOP-VISUAL-001",
+      "title_zh": "中英文或图纸不同步",
+      "title_en": "Bilingual or drawing mismatch",
+      "trigger_zh": "中英文页面、图纸、图例、指标或边界标识不一致，或概念状态标签缺失。",
+      "trigger_en": "Bilingual pages, drawings, legends, metrics or boundary labels disagree, or concept-status labels are missing.",
+      "action_zh": "不请求复审；先更新所有受影响资产并重新抽查。",
+      "action_en": "Do not request review; update affected assets and repeat visual checks first.",
+      "severity": "hard_stop"
+    },
+    {
+      "id": "STOP-PACKAGE-001",
+      "title_zh": "本地门未通过",
+      "title_en": "Local gate fails",
+      "trigger_zh": "manifest、schema、证据链校验、自检或包体积门任一失败。",
+      "trigger_en": "Manifest, schema, evidence-chain check, self-check or package-size gate fails.",
+      "action_zh": "修复或回退，不提交为 review-ready。",
+      "action_en": "Fix or revert; do not mark the package review-ready.",
+      "severity": "hard_stop"
+    },
+    {
+      "id": "STOP-CROSSWALK-001",
+      "title_zh": "协议或实施语义越界",
+      "title_en": "Protocol or implementation overclaim",
+      "trigger_zh": "复算更新把 optional_crosswalk_concept_only 变成外部等级、正式采用、实测性能、部署授权或官方背书。",
+      "trigger_en": "The recalculation update turns optional_crosswalk_concept_only into an external level, formal adoption, measured performance, deployment authorization or endorsement.",
+      "action_zh": "拒绝该表述，恢复安全边界并重新复核证据链。",
+      "action_en": "Reject the wording, restore the safety boundary and recheck the evidence chain.",
+      "severity": "hard_stop"
+    }
+  ],
+  "state_machine": [
+    {
+      "state": "not_activated",
+      "meaning_zh": "没有可核验官方输入；当前状态。",
+      "meaning_en": "No verifiable official input exists; current state.",
+      "allowed_next": [
+        "intake_pending"
+      ],
+      "transition_condition": "required official inputs and metadata are published"
+    },
+    {
+      "state": "intake_pending",
+      "meaning_zh": "输入已收到但尚未通过来源、几何和版本门。",
+      "meaning_en": "Inputs are received but have not passed provenance, geometry and vintage gates.",
+      "allowed_next": [
+        "official_input_validated",
+        "not_activated"
+      ],
+      "transition_condition": "GEO-001 through GEO-009 receive pass decisions, or any hard stop returns the work to hold"
+    },
+    {
+      "state": "official_input_validated",
+      "meaning_zh": "官方输入的范围和几何通过工作包复核，但尚未完成所有派生指标和视觉更新。",
+      "meaning_en": "Official inputs pass the workbook's scope and geometry review; dependent metrics and visual updates are not yet complete.",
+      "allowed_next": [
+        "recalculated_package_ready",
+        "not_activated"
+      ],
+      "transition_condition": "raw hashes, geometry QA and source-of-record record are complete"
+    },
+    {
+      "state": "recalculated_package_ready",
+      "meaning_zh": "指标、证据链、受影响交付物和本地门均已更新；等待维护者决定。",
+      "meaning_en": "Metrics, evidence chain, impacted deliverables and local gates are updated; maintainer decision is pending.",
+      "allowed_next": [
+        "maintainer_accepted",
+        "hold_pending_revision"
+      ],
+      "transition_condition": "all required validation and visual spot checks pass"
+    },
+    {
+      "state": "maintainer_accepted",
+      "meaning_zh": "仅表示仓库接收该更新，不表示获奖、画廊发布、实施授权或政府背书。",
+      "meaning_en": "Repository intake only; not an award, gallery publication, implementation authorization or government endorsement.",
+      "allowed_next": [],
+      "transition_condition": "maintainer or organizer records an intake decision"
+    },
+    {
+      "state": "hold_pending_revision",
+      "meaning_zh": "至少一个输入、指标、证据链、视觉或边界安全门未通过。",
+      "meaning_en": "At least one input, metric, evidence, visual or boundary-safety gate has failed.",
+      "allowed_next": [
+        "intake_pending",
+        "not_activated"
+      ],
+      "transition_condition": "the failed condition is corrected and the relevant gate is rerun"
+    }
+  ],
+  "output_contract": {
+    "required_outputs": [
+      "raw official boundary and key-area files or retrievable archive references",
+      "input intake record with source, version, CRS, scope, license and SHA-256",
+      "geometry QA and repair log",
+      "old/new metric snapshot and delta table",
+      "provisional-to-official ID/name reconciliation",
+      "impacted-artifact matrix",
+      "updated claim-level evidence chain",
+      "validation logs and bilingual visual spot-check record",
+      "updated manifest and final self-check"
+    ],
+    "required_disclosures_zh": [
+      "官方边界发布了什么范围、没有发布什么范围",
+      "哪些指标由官方输入派生，哪些仍由概念图层派生，哪些仍 unknown",
+      "本次更新不构成外部协议等级、实施授权、政府承诺或官方背书"
+    ],
+    "required_disclosures_en": [
+      "what the official boundary covers and does not cover",
+      "which metrics derive from official inputs, which still derive from concept layers and which remain unknown",
+      "this update does not assert an external protocol level, implementation authorization, government commitment or endorsement"
+    ],
+    "retention_rule": "Keep raw inputs, hashes, processing notes and prior provisional baseline recoverable; never overwrite the only copy of the source-of-record input."
+  },
+  "run_record_template": {
+    "run_id": "OBR-RUN-YYYYMMDD-NNN",
+    "activated_at": null,
+    "activated_by": null,
+    "official_source_refs": [],
+    "raw_input_hashes": [],
+    "crs_and_units": [],
+    "geometry_qa_decisions": [],
+    "layer_vintages": [],
+    "metric_deltas": [],
+    "artifact_decisions": [],
+    "evidence_chain_decisions": [],
+    "stop_conditions_checked": [],
+    "local_validation_logs": [],
+    "visual_spot_check": null,
+    "maintainer_decision": null,
+    "notes": []
+  },
+  "review_questions": [
+    "Can another reviewer retrieve the exact official bytes and reproduce the source hash?",
+    "Does every official input state its CRS, unit, scope, vintage and permitted use?",
+    "Are key-area IDs and containment relationships explicitly reconciled?",
+    "Does each changed metric show old value, new value, delta, formula and source scope?",
+    "Did any concept layer silently become official because the boundary changed?",
+    "Were all maps, captions, report pages, drawings and bilingual labels audited?",
+    "Does the updated evidence chain still bind claim, source, snapshot, metric, role and stop condition?",
+    "Does the package remain optional_crosswalk_concept_only and free of implementation claims?"
+  ]
+}

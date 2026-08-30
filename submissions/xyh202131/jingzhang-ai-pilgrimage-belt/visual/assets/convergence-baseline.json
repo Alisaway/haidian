@@ -1,0 +1,106 @@
+{
+  "schema_version": "1.0",
+  "audit_type": "contributor_editorial_and_package_audit",
+  "record_role": "historical_before_state_baseline",
+  "baseline_red_status_semantics": "RED identifies reproducible findings at baseline_git_head; it is not the current unresolved status of the package.",
+  "audit_date": "2026-08-24",
+  "baseline_git_head": "37f5541dfab74d7f89aa0f57bf1c64ab542b036b",
+  "scope_note_zh": "本记录是投稿方对最新 canonical main 的编辑、出版、权利与交接审查，不是公众反馈、专家意见、现场观察、审批结论或评审结果。",
+  "scope_note_en": "This is the contributor's editorial, publication, rights and handoff audit of the latest canonical main. It is not public feedback, expert opinion, field observation, approval or a jury result.",
+  "baseline": {
+    "package_file_count": 156,
+    "package_bytes": 23720803,
+    "manifest_entry_count": 156,
+    "proposal_zh": {
+      "lines": 640,
+      "characters": 50440,
+      "bytes": 107289
+    },
+    "proposal_en": {
+      "lines": 640,
+      "characters": 132548,
+      "bytes": 133166
+    },
+    "optional_media_path_count": 9,
+    "drawing_page_contract": {
+      "a3_zh": 14,
+      "a3_en": 14,
+      "a0_zh": 8,
+      "a0_en": 8,
+      "total": 44
+    },
+    "core_metrics": {
+      "site_area_sqm": 11412825.385554,
+      "green_space_area_sqm": 1439811.398918,
+      "public_space_area_sqm": 146437.638474,
+      "building_footprint_area_sqm": 224486.287489,
+      "green_ratio": 0.126157,
+      "public_space_ratio": 0.012831
+    }
+  },
+  "frozen_git_blob_sha256": {
+    "metrics.json": "fbb26cd388d233c4ce606c75ce04b1435bd1f23700fc17c2ab4fdd1f4edc0701",
+    "geometry/buildings.geojson": "b70f1738d98fcb003f42b153019d84e35b374238417c0dc02e4132ad9b6f22ea",
+    "geometry/constraints.geojson": "d631f0698742199a3dd4d1dd492d4a87f1a617d526ace9ff2ed35e5e09190004",
+    "geometry/green_space.geojson": "a47fcc55b4b7316933557232c896c7dec3e6db5d532d4e9c95d93b6c7f42df1d",
+    "geometry/key_areas.geojson": "4259a94603465b1acace447860a5f00f3b5db2aa30fb6b5316b1aae5ef163d5c",
+    "geometry/land_use.geojson": "050d721c06b3c7992d7b62c989e5ad6e10db7de16d8c7ba88e4274306a5b6057",
+    "geometry/phasing.geojson": "a08a0be4cfec3448efc354d9271abc04e1aca41d7b25786b6c768cff6f8a7776",
+    "geometry/public_space.geojson": "bef762e118e328bd24a9e8cc2db228403b494e9292aece81ed54dd09837ece43",
+    "geometry/roads.geojson": "264fc1787ece25d3f10fdc5c56c2147dc2f5904f3cd4e7e21e76699bec18add3",
+    "geometry/site_boundary.geojson": "63f797eee66eceaf429724023319c3f76c61dad39f505fae4c16da5338daf28d"
+  },
+  "current_resolution_summary": {
+    "RED-01": "resolved_by_current_exact_package_component_specific_distribution_decision_with_future_use_gates_separated",
+    "RED-02": "superseded_in_R59_by_four_bounded_deterministic_contributor_media_paths_with_static_fallback_and_explicit_non_evidence_rights_boundary",
+    "RED-03": "resolved_by_one_ruling_three_prototypes_four_states_one_candidate_reading_route",
+    "RED-04": "resolved_by_single_pre_g1_candidate_with_all_real_h01_h07_acceptance_remaining_zero"
+  },
+  "repair_matrix": [
+    {
+      "id": "RED-01",
+      "status": "red",
+      "current_status": "resolved_current_exact_package_distribution_allowed_future_installation_and_professional_use_separately_gated",
+      "finding_zh": "manifest 同时声明 formal-review-ready 与 not_fully_cleared、public_or_professional_reuse=blocked，评审入口与真实发布边界互相冲突。",
+      "finding_en": "The manifest simultaneously claims formal-review-ready while rights remain not_fully_cleared and public/professional reuse is blocked.",
+      "target": "采用获授权的 CC BY 4.0 / MIT 双许可证边界，单列 ODbL 与第三方例外，并让 readiness 只陈述确定性校验状态。",
+      "resolution_zh": "当前精确投稿包 162/162 路径已有组件级处置，可用于仓库评审、展示与再分发；独立法律/商标审查以及未来装置、品牌和专业实施继续单列为未授权。",
+      "resolution_en": "All 162/162 paths in the current exact package have component-level decisions for repository review, display and redistribution; independent legal/trademark review and future installation, branding and professional implementation remain separately unauthorized."
+    },
+    {
+      "id": "RED-02",
+      "status": "red",
+      "current_status": "superseded_in_R59_by_bounded_deterministic_contributor_media_with_static_fallback_model_generated_media_count_still_zero",
+      "finding_zh": "9 个可选生成媒体路径增加真实性与许可负担，却不是理解双轨空间裁决、三处原型或 G0 交接所必需。",
+      "finding_en": "Nine optional generated-media paths add authenticity and licensing burden without being necessary to understand the spatial ruling, the three prototypes or the G0 handoff.",
+      "target": "清退非必要生成媒体，以可复现的原创图解、静态回退和默认封面替代。"
+    },
+    {
+      "id": "RED-03",
+      "status": "red",
+      "current_status": "resolved_single_timed_reading_route",
+      "finding_zh": "正文、visual、报告、图件与图纸之间的入口过多，主张—证据—权利—专业交接仍需跨越多个重复表面。",
+      "finding_en": "Proposal, visual, report, figures and drawings expose too many competing entrances; claim-to-evidence-to-rights-to-handoff tracing still crosses repeated surfaces.",
+      "target": "统一为 30 秒空间裁决、3 分钟四态与三处差异、15 分钟证据和专业交接三层阅读。"
+    },
+    {
+      "id": "RED-04",
+      "status": "red",
+      "current_status": "resolved_single_pre_g1_candidate_real_acceptance_still_zero",
+      "finding_zh": "现有 8 项更新项目与 12 个场景均保持 G0，但缺少一个足够聚焦、可供专业团队继续核验的首要移交对象。",
+      "finding_en": "All eight projects and twelve scenarios correctly remain at G0, but there is no single focused object for a professional team to verify next.",
+      "target": "仅将 JZ-05 × SCENE-011 × T-02 标为 pre-G1 专业移交候选；不升级成熟度、不承诺现场实施。"
+    }
+  ],
+  "frozen_scope": {
+    "master_concept": "双轨京张 / Twin-Track Jing-Zhang",
+    "key_area_prototypes": 3,
+    "scenarios": 12,
+    "renewal_projects": 8,
+    "conceptual_land_use_units": 36,
+    "real_world_execution_count": 0,
+    "maturity": "G0 / NO-GO",
+    "official_boundary": false,
+    "boundary_precision": "provisional_rough"
+  }
+}

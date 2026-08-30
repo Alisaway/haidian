@@ -51,8 +51,10 @@
       },
       {
         "axis": "service_state",
-        "allowed_values": ["ordinary_non_ai_available", "optional_ai_bounded", "automation_unavailable", "staffed_handoff_required", "service_retired"],
-        "current_value": "ordinary_non_ai_available_concept_requirement_not_verified_service",
+        "allowed_values": ["ordinary_non_ai_concept_requirement", "ordinary_non_ai_available", "optional_ai_bounded", "automation_unavailable", "staffed_handoff_required", "service_retired"],
+        "current_value": "ordinary_non_ai_concept_requirement",
+        "current_value_limit_zh": "当前值仅表示 G0 概念合同要求保留同任务非 AI 路径；不是现场服务可用性、授权、成熟度变化或现实结果。",
+        "current_value_limit_en": "The current value only records the G0 concept-contract requirement to retain a same-task non-AI path; it is not observed service availability, authorization, a maturity change, or a real-world result.",
         "public_question_zh": "公众现在实际还能获得什么服务？",
         "public_question_en": "What service can the public actually obtain now?"
       }
@@ -129,7 +131,7 @@
       },
       {
         "carrier_id": "CARRIER-CIVIC-TIMETABLE",
-        "existing_target": "visual/assets/key-area-evidence-matrix.json#twin_track_frontend_contract.civic_timetable",
+        "existing_target": "visual/assets/key-area-evidence-matrix.json#/twin_track_frontend_contract/civic_timetable",
         "required_fields": ["place_or_service", "public_runtime_state", "available_ordinary_path", "staffed_contact", "start_time", "review_time", "next_update", "source_and_version", "exit_or_detour"]
       },
       {

@@ -6,6 +6,14 @@ The proposal text, structured concept data, diagrams, A3/A0 layouts and offline 
 
 官方公告、任务书、仓库场地包与六个国际案例仅作文字事实或机制引用；本包未复制或嵌入其图片、地图、字体、网页代码或商标。完整来源、访问日期和用途边界见 `sources.json`。网页无远程脚本、地图瓦片、字体、API、iframe、表单或跟踪器。
 
+## 协议交叉映射与许可边界 / Protocol Crosswalk and Licence Boundary
+
+本次仅交叉映射字段语义，不复制外部图面、几何、叙事或运行数据。SEB v0.5.0 的 `node_schema` 由 lqqk7 以 **CC-BY-SA-4.0** 授权；Switchback v0.3.0 的字段/枚举/语义由 chucky1102 / RENLINE 以 **CC-BY-4.0** 授权，后者不覆盖本包内容；不认领 SEB L0–L4 或实时 Switchback 状态。
+
+This is a field crosswalk only: no external figures, geometry, narrative or operating data are copied. SEB v0.5.0 is **CC-BY-SA-4.0** by lqqk7; Switchback v0.3.0 is **CC-BY-4.0** by chucky1102 / RENLINE, limited to protocol semantics. No SEB level or live Switchback state is claimed.
+
+Sources, snapshot commits, SHA-256 values and scope are in `sources.json` and `visual/assets/three-area-operations-audit.json`: [SEB Issue #2549](https://github.com/open-city-ai/haidian/issues/2549) · [Switchback Issue #1119](https://github.com/open-city-ai/haidian/issues/1119). The crosswalk is not endorsement, adoption or implementation authorisation; this package remains **COMMUNITY-DISPLAY-ONLY** and future reuse must preserve attribution, hashes, licence scope and the pending-verification boundary.
+
 
 ## 第二阶段生成式图像 / Phase 2 Generative Images
 

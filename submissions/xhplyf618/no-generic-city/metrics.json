@@ -1,0 +1,302 @@
+{
+  "schema_version": "0.1.0",
+  "units": {
+    "length": "m",
+    "area": "sqm"
+  },
+  "metrics": {
+    "site_area_sqm": {
+      "status": "known",
+      "value": 11412825.386,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "projected_area(union(site_boundary), EPSG:4548)",
+      "confidence": "low",
+      "assumptions": [
+        "A-GEOM-001",
+        "A-METRIC-001"
+      ],
+      "model_status": "controlled_provisional_design_model",
+      "official_value_claimed": false
+    },
+    "green_space_area_sqm": {
+      "status": "known",
+      "value": 770344.492,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/green_space.geojson"
+      ],
+      "formula": "projected_area(union(green_space), EPSG:4548)",
+      "confidence": "low",
+      "assumptions": [
+        "A-GEOM-001",
+        "A-METRIC-001"
+      ],
+      "model_status": "controlled_provisional_design_model",
+      "official_value_claimed": false
+    },
+    "green_ratio": {
+      "status": "known",
+      "value": 0.067498,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/green_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "green_space_area_sqm / site_area_sqm",
+      "confidence": "low",
+      "assumptions": [
+        "A-GEOM-001",
+        "A-METRIC-001"
+      ],
+      "model_status": "controlled_provisional_design_model",
+      "official_value_claimed": false
+    },
+    "public_space_area_sqm": {
+      "status": "known",
+      "value": 585983.654,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "projected_area(union(public_space), EPSG:4548)",
+      "confidence": "low",
+      "assumptions": [
+        "A-GEOM-001",
+        "A-METRIC-001"
+      ],
+      "model_status": "controlled_provisional_design_model",
+      "official_value_claimed": false
+    },
+    "public_space_ratio": {
+      "status": "known",
+      "value": 0.051344,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "public_space_area_sqm / site_area_sqm",
+      "confidence": "low",
+      "assumptions": [
+        "A-GEOM-001",
+        "A-METRIC-001"
+      ],
+      "model_status": "controlled_provisional_design_model",
+      "official_value_claimed": false
+    },
+    "conceptual_building_envelope_area_sqm": {
+      "status": "known",
+      "value": 827856.709,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "projected_area(union(conceptual_building_envelopes), EPSG:4548)",
+      "confidence": "low",
+      "assumptions": [
+        "A-GEOM-001",
+        "A-METRIC-001"
+      ],
+      "model_status": "controlled_provisional_design_model",
+      "official_value_claimed": false
+    },
+    "building_footprint_area_sqm": {
+      "status": "unknown",
+      "value": null,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "sum(verified_existing_building_footprints)",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-CONTROLS-001"
+      ],
+      "reason": "The submitted building polygons are conceptual envelopes, not surveyed footprints."
+    },
+    "floor_area_ratio": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/buildings.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "verified_total_floor_area_sqm / official_site_area_sqm",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-CONTROLS-001"
+      ],
+      "reason": "Verified building floors, official controls, and an official site boundary are unavailable."
+    },
+    "submitted_key_area_geometry_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "count(submitted provisional key-area constraints)",
+      "confidence": "medium",
+      "assumptions": [
+        "A-GEOM-001"
+      ],
+      "model_status": "controlled_provisional_design_model",
+      "official_value_claimed": false
+    },
+    "spatial_law_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "geometry/land_use.geojson"
+      ],
+      "formula": "count(non-interchangeable spatial laws)",
+      "confidence": "high",
+      "assumptions": [
+        "A-GEOM-001",
+        "A-METRIC-001"
+      ],
+      "model_status": "controlled_provisional_design_model",
+      "official_value_claimed": false
+    },
+    "zzy_distributed_carrier_count": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "count(conceptual distributed carrier envelopes)",
+      "confidence": "low",
+      "assumptions": [
+        "A-GEOM-001",
+        "A-METRIC-001"
+      ],
+      "model_status": "controlled_provisional_design_model",
+      "official_value_claimed": false
+    },
+    "zzy_shared_service_interface_count": {
+      "status": "known",
+      "value": 4,
+      "unit": "count",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "count(distributed shared-service interfaces)",
+      "confidence": "low",
+      "assumptions": [
+        "A-GEOM-001",
+        "A-METRIC-001"
+      ],
+      "model_status": "controlled_provisional_design_model",
+      "official_value_claimed": false
+    },
+    "aio_small_use_unit_count": {
+      "status": "known",
+      "value": 12,
+      "unit": "count",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "count(conceptual small-use-unit envelopes)",
+      "confidence": "low",
+      "assumptions": [
+        "A-GEOM-001",
+        "A-METRIC-001"
+      ],
+      "model_status": "controlled_provisional_design_model",
+      "official_value_claimed": false
+    },
+    "aio_short_street_or_entry_link_count": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": [
+        "geometry/roads.geojson"
+      ],
+      "formula": "count(conceptual short-street and entry links)",
+      "confidence": "low",
+      "assumptions": [
+        "A-GEOM-001",
+        "A-METRIC-001"
+      ],
+      "model_status": "controlled_provisional_design_model",
+      "official_value_claimed": false
+    },
+    "dzs_cumulative_demand_type_count": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": [
+        "geometry/roads.geojson"
+      ],
+      "formula": "count(distinct cumulative demand types)",
+      "confidence": "high",
+      "assumptions": [
+        "A-GEOM-001",
+        "A-METRIC-001"
+      ],
+      "model_status": "controlled_provisional_design_model",
+      "official_value_claimed": false
+    },
+    "dzs_unique_public_improvement_register_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "count(public-improvement claim-register IDs)",
+      "confidence": "low",
+      "assumptions": [
+        "A-GEOM-001",
+        "A-METRIC-001"
+      ],
+      "model_status": "controlled_provisional_design_model",
+      "official_value_claimed": false
+    },
+    "dzs_joint_delivery_public_space_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "count(public-space packages requiring co-delivery)",
+      "confidence": "low",
+      "assumptions": [
+        "A-GEOM-001",
+        "A-METRIC-001"
+      ],
+      "model_status": "controlled_provisional_design_model",
+      "official_value_claimed": false
+    },
+    "dzs_independent_acceptance_public_space_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "count(public-space packages requiring independent acceptance)",
+      "confidence": "low",
+      "assumptions": [
+        "A-GEOM-001",
+        "A-METRIC-001"
+      ],
+      "model_status": "controlled_provisional_design_model",
+      "official_value_claimed": false
+    }
+  },
+  "metric_scope": {
+    "status": "low_confidence_controlled_provisional_design_model",
+    "official_existing_condition_or_control_claimed": false,
+    "source_commit": "a57cd13707ea5f65a8701fa3d0924aa2ee35d716",
+    "recalculation_trigger": "replace all provisional geometry and recompute every derived metric, figure, HTML field, drawing, manifest, and self-check after official or rights-cleared geometry is obtained"
+  }
+}

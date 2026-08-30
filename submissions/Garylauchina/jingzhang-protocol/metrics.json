@@ -244,14 +244,14 @@
         "A-METRICS-001"
       ]
     },
-    "land_use_05_area_sqm": {
+    "land_use_09_area_sqm": {
       "status": "known",
       "value": 4247444.882,
       "unit": "sqm",
       "source_files": [
         "geometry/land_use.geojson"
       ],
-      "formula": "sum(area where land_use_code=05)",
+      "formula": "sum(area where land_use_code=09)",
       "confidence": "medium",
       "assumptions": [
         "A-BOUNDARY-001",
@@ -1021,7 +1021,9 @@
         "A-FLAGSHIP-FP03",
         "A-FLAGSHIP-FP04",
         "A-FLAGSHIP-FP05",
-        "A-OPERATIONS-001"
+        "A-OPERATIONS-001",
+        "A-NATIONAL-STRATEGIC-FRAMING-001",
+        "A-APPLICATION-CAPABILITY-REPLICATION-001"
       ],
       "reason": "No accountable buyer, procurement route, budget or completed first-use record is confirmed.",
       "professional_follow_up_required": true
@@ -1041,7 +1043,9 @@
         "A-FLAGSHIP-FP03",
         "A-FLAGSHIP-FP04",
         "A-FLAGSHIP-FP05",
-        "A-OPERATIONS-001"
+        "A-OPERATIONS-001",
+        "A-NATIONAL-STRATEGIC-FRAMING-001",
+        "A-APPLICATION-CAPABILITY-REPLICATION-001"
       ],
       "reason": "The five pilots are concept proposals and no post-first-use adoption record exists.",
       "professional_follow_up_required": true
@@ -1061,7 +1065,9 @@
         "A-FLAGSHIP-FP03",
         "A-FLAGSHIP-FP04",
         "A-FLAGSHIP-FP05",
-        "A-OPERATIONS-001"
+        "A-OPERATIONS-001",
+        "A-NATIONAL-STRATEGIC-FRAMING-001",
+        "A-APPLICATION-CAPABILITY-REPLICATION-001"
       ],
       "reason": "Standard outputs are proposed lifecycle deliverables; no authorized issuer or publication exists.",
       "professional_follow_up_required": true
@@ -1081,7 +1087,9 @@
         "A-FLAGSHIP-FP03",
         "A-FLAGSHIP-FP04",
         "A-FLAGSHIP-FP05",
-        "A-OPERATIONS-001"
+        "A-OPERATIONS-001",
+        "A-NATIONAL-STRATEGIC-FRAMING-001",
+        "A-APPLICATION-CAPABILITY-REPLICATION-001"
       ],
       "reason": "No pilot is deployed and no dated baseline or one-year outcome series exists.",
       "professional_follow_up_required": true
@@ -1115,6 +1123,38 @@
         "A-SCENARIO-LOCATION-001"
       ],
       "population_filter": "network_role_anchor=true"
+    },
+    "application_capability_stage_count": {
+      "status": "known",
+      "value": 6.0,
+      "unit": "count",
+      "source_files": [
+        "assumptions.json"
+      ],
+      "formula": "count(A-APPLICATION-CAPABILITY-REPLICATION-001.application_capability_stages)",
+      "confidence": "high",
+      "assumptions": [
+        "A-NATIONAL-STRATEGIC-FRAMING-001",
+        "A-APPLICATION-CAPABILITY-REPLICATION-001"
+      ],
+      "population_filter": "stage_id in AC01_ORIGINATE,AC02_INTEGRATE,AC03_PROVE,AC04_DEPLOY,AC05_SCALE,AC06_RETAIN",
+      "scope_note": "Proposal-taxonomy structure only; the trusted-operations layer runs across all six stages and is not a seventh spatial node. This metric is not proof of official designation, implementation, external adoption, performance, replication or global leadership."
+    },
+    "application_capability_mapping_coverage_ratio": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "assumptions.json"
+      ],
+      "formula": "count(application_capability_stages with non-empty mapping_refs) / application_capability_stage_count",
+      "confidence": "high",
+      "assumptions": [
+        "A-NATIONAL-STRATEGIC-FRAMING-001",
+        "A-APPLICATION-CAPABILITY-REPLICATION-001"
+      ],
+      "population_filter": "A-APPLICATION-CAPABILITY-REPLICATION-001.application_capability_stages",
+      "scope_note": "Structural mapping completeness only; procurement, market diffusion, published standards and verified public benefit remain unknown."
     },
     "fp01_first_use_delivery_contract_template_count": {
       "status": "known",
@@ -1163,6 +1203,279 @@
       ],
       "scope_note": "Template-structure evidence only; not proof of execution, procurement, delivery or public benefit.",
       "formula": "count(required clauses C01 through C12 present in FP01-CONTRACT-001) / 12"
+    },
+    "fp01_concrete_service_problem_count": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/fp01-contract.json"
+      ],
+      "confidence": "high",
+      "assumptions": [
+        "A-FLAGSHIP-FP01",
+        "A-FP01-CONCRETE-PROTOTYPE-001"
+      ],
+      "scope_note": "Concept-structure evidence only; not observed performance, confirmed siting, procurement or delivery.",
+      "formula": "count(candidate service problems in visual/assets/fp01-contract.json with one primary user service)"
+    },
+    "fp01_receipt_event_type_coverage_ratio": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/fp01-contract.json"
+      ],
+      "confidence": "high",
+      "assumptions": [
+        "A-FLAGSHIP-FP01",
+        "A-FP01-CONCRETE-PROTOTYPE-001"
+      ],
+      "scope_note": "Concept-structure evidence only; not observed performance, confirmed siting, procurement or delivery.",
+      "formula": "count(distinct illustrative receipt event types success,refusal,human_takeover,exit_restoration) / 4"
+    },
+    "fp01_spatial_prototype_scale_count": {
+      "status": "known",
+      "value": 3.0,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/fp01-contract.json"
+      ],
+      "confidence": "high",
+      "assumptions": [
+        "A-FLAGSHIP-FP01",
+        "A-FP01-CONCRETE-PROTOTYPE-001"
+      ],
+      "scope_note": "Concept-structure evidence only; not observed performance, confirmed siting, procurement or delivery.",
+      "formula": "count(distinct concept spatial scales 1:500,1:100,1:50 in visual/assets/fp01-contract.json)"
+    },
+    "fp01_observed_human_baseline_task_completion_rate": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/fp01-contract.json"
+      ],
+      "formula": "completed baseline referral tasks / attempted baseline referral tasks at D0",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-FLAGSHIP-FP01",
+        "A-FP01-CONCRETE-PROTOTYPE-001"
+      ],
+      "reason": "No field baseline has been measured; the staffed paper/phone service task must be observed and agreed at D0.",
+      "professional_follow_up_required": true
+    },
+    "brand_architecture_layer_count": {
+      "status": "known",
+      "value": 5.0,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/brand-component-architecture.json"
+      ],
+      "formula": "count(distinct proposal architecture layers: master brand, flagship family, operating/event series, contribution/honor system, landmark and reversible-component family)",
+      "confidence": "high",
+      "assumptions": [
+        "A-BRAND-COMPONENT-001"
+      ],
+      "scope_note": "Proposal-structure evidence only; not proof of official adoption, logo approval, event implementation, awards, confirmed siting, operation, budget, procurement, construction or performance."
+    },
+    "brand_flagship_mapping_coverage_ratio": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/brand-component-architecture.json"
+      ],
+      "formula": "count(FP01 through FP05 with a non-empty master-brand endorsement and program-family mapping) / 5",
+      "confidence": "high",
+      "assumptions": [
+        "A-BRAND-COMPONENT-001"
+      ],
+      "scope_note": "Proposal-structure evidence only; not proof of official adoption, logo approval, event implementation, awards, confirmed siting, operation, budget, procurement, construction or performance."
+    },
+    "reversible_public_space_component_count": {
+      "status": "known",
+      "value": 6.0,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/brand-component-architecture.json"
+      ],
+      "formula": "count(distinct concept reversible public-space component records M01 through M06)",
+      "confidence": "high",
+      "assumptions": [
+        "A-BRAND-COMPONENT-001",
+        "A-DELIVERY-READINESS-001"
+      ],
+      "scope_note": "Proposal-structure evidence only; not proof of official adoption, logo approval, event implementation, awards, confirmed siting, operation, budget, procurement, construction or performance."
+    },
+    "landmark_component_mapping_coverage_ratio": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/brand-component-architecture.json"
+      ],
+      "formula": "count(LM01 through LM03 with one or more mapped reversible component records) / 3",
+      "confidence": "high",
+      "assumptions": [
+        "A-BRAND-COMPONENT-001",
+        "A-DELIVERY-READINESS-001"
+      ],
+      "scope_note": "Proposal-structure evidence only; not proof of official adoption, logo approval, event implementation, awards, confirmed siting, operation, budget, procurement, construction or performance."
+    },
+    "honor_contribution_class_count": {
+      "status": "known",
+      "value": 5.0,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/brand-component-architecture.json"
+      ],
+      "formula": "count(distinct proposal contribution classes: public_problem, open_build, independent_verification, rights_stewardship and failure_correction_and_capability_return)",
+      "confidence": "high",
+      "assumptions": [
+        "A-BRAND-COMPONENT-001"
+      ],
+      "scope_note": "Proposal-structure evidence only; not proof of official adoption, logo approval, event implementation, awards, confirmed siting, operation, budget, procurement, construction or performance."
+    },
+    "delivery_hold_point_coverage_ratio": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/brand-component-architecture.json"
+      ],
+      "formula": "count(required delivery hold points H0,H1,H2,H3,H4 with accountable role classes, required evidence and a stop action) / 5",
+      "confidence": "high",
+      "assumptions": [
+        "A-DELIVERY-READINESS-001"
+      ],
+      "scope_note": "Proposal-structure evidence only; not proof of official adoption, logo approval, event implementation, awards, confirmed siting, operation, budget, procurement, construction or performance."
+    },
+    "fp01_evidence_gate_count": {
+      "status": "known",
+      "value": 5.0,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/fp01-evidence-readiness.json"
+      ],
+      "formula": "count(distinct evidence gates H0 through H4)",
+      "confidence": "high",
+      "assumptions": [
+        "A-FP01-EVIDENCE-READINESS-001"
+      ],
+      "scope_note": "Evidence-register structure only; not proof that any gate has passed or that any external artifact exists."
+    },
+    "fp01_evidence_gate_definition_coverage_ratio": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/fp01-evidence-readiness.json"
+      ],
+      "formula": "count(H0 through H4 with required artifacts, accountable roles, independent review, stop action and transition) / 5",
+      "confidence": "high",
+      "assumptions": [
+        "A-FP01-EVIDENCE-READINESS-001"
+      ],
+      "scope_note": "Template-definition coverage only; not delivery readiness, due diligence, authorization or operating evidence."
+    },
+    "fp01_evidence_verified_gate_count": {
+      "status": "known",
+      "value": 0.0,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/fp01-evidence-readiness.json"
+      ],
+      "formula": "count(H0 through H4 with evidence_status=verified and complete dated, attributable, source-linked independent review metadata)",
+      "confidence": "high",
+      "assumptions": [
+        "A-FP01-EVIDENCE-READINESS-001"
+      ],
+      "scope_note": "Current evidence-register state, not a failure rate or operating-performance result. Zero is required until genuine external evidence is supplied and verified."
+    },
+    "fp01_external_evidence_artifact_verified_count": {
+      "status": "known",
+      "value": 0.0,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/fp01-evidence-readiness.json"
+      ],
+      "formula": "count(external evidence artifacts with verified status, date, accountable source, rights status and independent review record)",
+      "confidence": "high",
+      "assumptions": [
+        "A-FP01-EVIDENCE-READINESS-001"
+      ],
+      "scope_note": "Current evidence-register state only. No fieldwork, named operator, budget, professional opinion, rehearsal result or authorization is represented as obtained."
+    },
+    "key_area_interface_prototype_count": {
+      "status": "known",
+      "value": 3.0,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/fp01-delivery-control.json"
+      ],
+      "formula": "count(distinct concept interface prototypes for Zhongzhiyuan, Beijing AI Origin and Dazhongsi)",
+      "confidence": "high",
+      "assumptions": [
+        "A-FP01-DELIVERY-CONTROL-001"
+      ],
+      "scope_note": "Concept interface count only. Reference envelopes are design tests, not surveyed site dimensions, official siting, construction quantities or professional approvals."
+    },
+    "fp01_d0_measurement_method_coverage_ratio": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/fp01-delivery-control.json"
+      ],
+      "formula": "count(D0-B01 through D0-B06 with event boundaries, formula, missingness rule and reporting method) / 6",
+      "confidence": "high",
+      "assumptions": [
+        "A-FP01-DELIVERY-CONTROL-001"
+      ],
+      "scope_note": "Measurement-method coverage only. Actual sample sizes and observed values remain null; the formative floor is not a statistical or performance claim."
+    },
+    "fp01_hold_point_raci_coverage_ratio": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/fp01-delivery-control.json"
+      ],
+      "formula": "count(H0 through H4 with non-empty accountable, responsible, consulted and informed role classes plus empty sign-off slots) / 5",
+      "confidence": "high",
+      "assumptions": [
+        "A-FP01-DELIVERY-CONTROL-001"
+      ],
+      "scope_note": "Role-model coverage only. No entity, individual, responsibility acceptance, signature or authorization is represented as obtained."
+    },
+    "fp01_design_test_boq_item_count": {
+      "status": "known",
+      "value": 6.0,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/fp01-delivery-control.json"
+      ],
+      "formula": "count(M01 through M06 with a positive one-kit design-test quantity and null actual quantity, unit cost and amount)",
+      "confidence": "high",
+      "assumptions": [
+        "A-FP01-DELIVERY-CONTROL-001"
+      ],
+      "scope_note": "Design-test quantity structure only. It is not an actual BoQ, cost estimate, budget, quotation, procurement record or construction commitment."
+    },
+    "fp01_critical_dependency_step_count": {
+      "status": "known",
+      "value": 10.0,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/fp01-delivery-control.json"
+      ],
+      "formula": "count(ordered dependency steps K01 through K10 with valid predecessor references and null actual dates)",
+      "confidence": "high",
+      "assumptions": [
+        "A-FP01-DELIVERY-CONTROL-001"
+      ],
+      "scope_note": "Dependency-model structure only. It is not a committed schedule, staffing plan, authorization path, contract or completed activity record."
     }
   }
 }

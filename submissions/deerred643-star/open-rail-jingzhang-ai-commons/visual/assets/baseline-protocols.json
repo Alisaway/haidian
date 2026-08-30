@@ -1,0 +1,87 @@
+{
+  "schema_note": "v1.7 baseline measurement protocols responding to the inclusiveness review gap. Protocol design only — no field data exists; every indicator stays 'pending_baseline' until measured. Machine-readable companion of proposal.md section '现场基线测量方案'. P3 extended with tiered first-response SLA in v2.8; binding thresholds live in commitment-thresholds.json.",
+  "version": "v1.7",
+  "last_updated": "v2.8",
+  "status": "protocol_only_no_field_data",
+  "protocols": [
+    {
+      "id": "P1",
+      "name_zh": "无障碍节点覆盖率",
+      "name_en": "Accessibility-node coverage",
+      "object_zh": "六站厅与主线廊道出入口、坡道、电梯、无障碍卫生间",
+      "object_en": "Hall/corridor entrances, ramps, lifts, accessible toilets",
+      "definition": "compliant_nodes / required_nodes",
+      "frequency": "quarterly",
+      "disclosure": "90-day public review annex",
+      "dependencies": [
+        "SEB v0.5.0 node schema",
+        "field audit team"
+      ]
+    },
+    {
+      "id": "P2",
+      "name_zh": "非数字化等价路径可达率",
+      "name_en": "Non-digital equivalent-path availability",
+      "object_zh": "每个 AI 服务点的人工问询、纸质导览等等价路径",
+      "object_en": "Staffed desk / print guides at each AI service point",
+      "definition": "points_with_equivalents / all_ai_service_points",
+      "frequency": "quarterly",
+      "disclosure": "90-day public review annex",
+      "dependencies": [
+        "SEB v0.5.0 node schema"
+      ]
+    },
+    {
+      "id": "P3",
+      "name_zh": "投诉响应中位时长",
+      "name_en": "Complaint response median",
+      "object_zh": "站厅现场与线上渠道工单",
+      "object_en": "On-site and online tickets",
+      "definition": "median hours from receipt to first reply",
+      "frequency": "monthly",
+      "disclosure": "monthly digest",
+      "sla_tiers": [
+        {"tier_zh": "紧急类（安全相关）", "tier_en": "Urgent (safety-related)", "first_response_zh": "≤4 小时", "first_response_en": "≤4 hours"},
+        {"tier_zh": "普通类（设施与服务）", "tier_en": "Standard (facilities & services)", "first_response_zh": "≤24 小时", "first_response_en": "≤24 hours"},
+        {"tier_zh": "咨询类", "tier_en": "Inquiry", "first_response_zh": "≤48 小时", "first_response_en": "≤48 hours"}
+      ],
+      "dependencies": [
+        "ticketing log",
+        "public reporting template"
+      ]
+    },
+    {
+      "id": "P4",
+      "name_zh": "慢行断点与绕行系数",
+      "name_en": "Walkability breaks & detour ratio",
+      "object_zh": "高校—社区织补节点",
+      "object_en": "Campus-community stitching nodes",
+      "definition": "break_count; detour_ratio",
+      "frequency": "semi-annual",
+      "disclosure": "annual report",
+      "dependencies": [
+        "site survey team"
+      ]
+    },
+    {
+      "id": "P5",
+      "name_zh": "第三方无障碍专业审查",
+      "name_en": "Third-party accessibility audit",
+      "object_zh": "试点节点建成环境",
+      "object_en": "Pilot built nodes",
+      "definition": "professional audit report with remediation list",
+      "frequency": "pre-launch + annual",
+      "disclosure": "audit report",
+      "dependencies": [
+        "accredited accessibility auditor"
+      ]
+    }
+  ],
+  "discipline": {
+    "failed_samples": "retained_and_disclosed",
+    "self_check_limit": "machine-vision self-checks do not substitute for professional accessibility certification",
+    "no_data_policy": "unmeasured indicators remain pending_baseline; design-model values must not be reported as measured"
+  },
+  "boundary_zh": "概念协议；测量主体、预算与抽样框以试点正式立项为准，不构成任何实测结论。",
+  "boundary_en": "Conceptual protocols; measurement owner, budget and sampling frames pending formal pilot approval; no measured conclusions."
+}

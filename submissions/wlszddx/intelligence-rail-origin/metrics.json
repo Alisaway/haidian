@@ -1,0 +1,241 @@
+{
+ "schema_version": "0.1.0",
+ "units": {
+  "length": "m",
+  "area": "sqm"
+ },
+ "metrics": {
+  "site_area_sqm": {
+   "status": "known",
+   "value": 11412825.386,
+   "unit": "sqm",
+   "source_files": [
+    "geometry/site_boundary.geojson"
+   ],
+   "formula": "polygon_area(submitted_site_boundary, EPSG:4548)",
+   "confidence": "medium",
+   "assumptions": [
+    "Calculated from repository provisional rough boundary geometry; not suitable for official area claims."
+   ]
+  },
+  "land_use_total_sqm": {
+   "status": "known",
+   "value": 11412825.386,
+   "unit": "sqm",
+   "source_files": [
+    "geometry/land_use.geojson"
+   ],
+   "formula": "sum(polygon_area(land_use_cells))",
+   "confidence": "high",
+   "assumptions": [
+    "Partition equals the submitted boundary exactly."
+   ]
+  },
+  "building_footprint_area_sqm": {
+   "status": "known",
+   "value": 605472.0,
+   "unit": "sqm",
+   "source_files": [
+    "geometry/buildings.geojson"
+   ],
+   "formula": "sum(polygon_area(building_footprints))",
+   "confidence": "low",
+   "assumptions": [
+    "Conceptual massing footprints on design parcels; not survey data."
+   ]
+  },
+  "building_density": {
+   "status": "known",
+   "value": 0.053052,
+   "unit": "ratio",
+   "source_files": [
+    "geometry/buildings.geojson",
+    "geometry/site_boundary.geojson"
+   ],
+   "formula": "building_footprint_area_sqm / site_area_sqm",
+   "confidence": "low",
+   "assumptions": [
+    "Design-model output from conceptual massing; official density control pending."
+   ]
+  },
+  "green_ratio": {
+   "status": "known",
+   "value": 0.204838,
+   "unit": "ratio",
+   "source_files": [
+    "geometry/green_space.geojson",
+    "geometry/site_boundary.geojson"
+   ],
+   "formula": "green_space_area_sqm / site_area_sqm",
+   "confidence": "medium",
+   "assumptions": [
+    "Recomputable from submitted green_space polygons over the provisional boundary."
+   ]
+  },
+  "public_space_ratio": {
+   "status": "known",
+   "value": 0.003996,
+   "unit": "ratio",
+   "source_files": [
+    "geometry/public_space.geojson",
+    "geometry/site_boundary.geojson"
+   ],
+   "formula": "public_space_area_sqm / site_area_sqm",
+   "confidence": "medium",
+   "assumptions": [
+    "Recomputable from submitted public_space polygons over the provisional boundary."
+   ]
+  },
+  "road_total_length_m": {
+   "status": "known",
+   "value": 28683.92,
+   "unit": "m",
+   "source_files": [
+    "geometry/roads.geojson"
+   ],
+   "formula": "sum(line_length(roads, EPSG:4548))",
+   "confidence": "medium",
+   "assumptions": [
+    "Centerline length of the proposed network."
+   ]
+  },
+  "key_area_count": {
+   "status": "known",
+   "value": 3,
+   "unit": "count",
+   "source_files": [
+    "geometry/key_areas.geojson"
+   ],
+   "formula": "count(key_area_features)",
+   "confidence": "medium",
+   "assumptions": [
+    "Three organizer-declared key areas with provisional rough polygons."
+   ]
+  },
+  "key_areas_area_sqm": {
+   "status": "known",
+   "value": 3692893.005,
+   "unit": "sqm",
+   "source_files": [
+    "geometry/key_areas.geojson"
+   ],
+   "formula": "sum(polygon_area(key_areas))",
+   "confidence": "low",
+   "assumptions": [
+    "Provisional rough polygons; recalculate once official KEY_AREA arrives."
+   ]
+  },
+  "scenario_node_count": {
+   "status": "known",
+   "value": 12,
+   "unit": "count",
+   "source_files": [
+    "proposal.md",
+    "visual/index.html"
+   ],
+   "formula": "count(AI_scenario_cards_mapped_to_locations)",
+   "confidence": "high",
+   "assumptions": [
+    "Scenario-to-space mapping kept in proposal and visual page."
+   ]
+  },
+  "pilgrimage_landmark_count": {
+   "status": "known",
+   "value": 3,
+   "unit": "count",
+   "source_files": [
+    "proposal.md"
+   ],
+   "formula": "count(ai_pilgrimage_landmarks)",
+   "confidence": "high",
+   "assumptions": []
+  },
+  "renewal_project_count": {
+   "status": "known",
+   "value": 10,
+   "unit": "count",
+   "source_files": [
+    "proposal.md"
+   ],
+   "formula": "count(renewal_project_list_entries)",
+   "confidence": "medium",
+   "assumptions": [
+    "Conceptual project list for professional refinement."
+   ]
+  },
+  "phase1_area_sqm": {
+   "status": "known",
+   "value": 4538507.57,
+   "unit": "sqm",
+   "source_files": [
+    "geometry/phasing.geojson"
+   ],
+   "formula": "polygon_area(P1-ZONE)",
+   "confidence": "medium",
+   "assumptions": [
+    "Conceptual phasing partition of the submitted boundary."
+   ]
+  },
+  "phase2_area_sqm": {
+   "status": "known",
+   "value": 4162356.89,
+   "unit": "sqm",
+   "source_files": [
+    "geometry/phasing.geojson"
+   ],
+   "formula": "polygon_area(P2-ZONE)",
+   "confidence": "medium",
+   "assumptions": [
+    "Conceptual phasing partition of the submitted boundary."
+   ]
+  },
+  "phase3_area_sqm": {
+   "status": "known",
+   "value": 2711960.92,
+   "unit": "sqm",
+   "source_files": [
+    "geometry/phasing.geojson"
+   ],
+   "formula": "polygon_area(P3-ZONE)",
+   "confidence": "medium",
+   "assumptions": [
+    "Conceptual phasing partition of the submitted boundary."
+   ]
+  },
+  "conceptual_gfa_sqm": {
+   "status": "known",
+   "value": 2897888.0,
+   "unit": "sqm",
+   "source_files": [
+    "geometry/buildings.geojson"
+   ],
+   "formula": "sum(footprint_area * conceptual_floors)",
+   "confidence": "low",
+   "assumptions": [
+    "Conceptual design volume only; NOT statutory FAR evidence nor an approval basis."
+   ]
+  },
+  "floor_area_ratio": {
+   "status": "unknown",
+   "value": null,
+   "unit": "ratio",
+   "source_files": [
+    "brief/site-package/ranges/planning_limits.json"
+   ],
+   "formula": "total_floor_area / site_area",
+   "reason": "Approved regulatory planning conditions are missing from the cleared site package.",
+   "required_for_formal_submission": true
+  },
+  "building_height_m": {
+   "status": "unknown",
+   "value": null,
+   "unit": "m",
+   "source_files": [
+    "brief/site-package/ranges/planning_limits.json"
+   ],
+   "formula": "official height control",
+   "reason": "Height controls (incl. aviation/heritage constraints) pending official attachments.",
+   "required_for_formal_submission": true
+  }
+ }
+}

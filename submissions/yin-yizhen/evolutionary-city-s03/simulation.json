@@ -1,0 +1,377 @@
+{
+  "schema_version": "2.0.0",
+  "dataset_id": "ECS-S03-CITY-GENOME",
+  "title_zh": "演化城市：S03 城市基因引擎",
+  "title_en": "Evolutionary City: S03 City Genome Engine",
+  "updated_at": "2026-08-13",
+  "status": "local_review_candidate",
+  "random_seed": 20260813,
+  "task_count": 6,
+  "tasks": [
+    {"id": "SCN-AM-PEAK", "outcome": "proxy_review_success", "dispatch_schema_valid": true, "energy_used_kwh": 0.002, "energy_budget_kwh": 0.01, "audit_complete": true},
+    {"id": "SCN-HEAT", "outcome": "proxy_review_success", "dispatch_schema_valid": true, "energy_used_kwh": 0.002, "energy_budget_kwh": 0.01, "audit_complete": true},
+    {"id": "SCN-RAIN", "outcome": "proxy_review_success", "dispatch_schema_valid": true, "energy_used_kwh": 0.002, "energy_budget_kwh": 0.01, "audit_complete": true},
+    {"id": "SCN-EVENING", "outcome": "proxy_review_success", "dispatch_schema_valid": true, "energy_used_kwh": 0.002, "energy_budget_kwh": 0.01, "audit_complete": true},
+    {"id": "SCN-GROUND-FLOOR-CLOSED", "outcome": "conditional_review_success", "dispatch_schema_valid": true, "energy_used_kwh": 0.002, "energy_budget_kwh": 0.01, "audit_complete": true},
+    {"id": "SCN-EVIDENCE-DRIFT", "outcome": "risk_intercept_success", "dispatch_schema_valid": true, "energy_used_kwh": 0.002, "energy_budget_kwh": 0.01, "audit_complete": true}
+  ],
+  "engine": {
+    "digital_generations": 40,
+    "offspring_per_generation": 36,
+    "archive_capacity_per_niche": 2,
+    "key_generations": [0, 8, 17, 26, 40],
+    "selection_method": "quality_diversity_pareto_archive",
+    "single_aggregate_metric": false,
+    "description_zh": "D0 为证据基线，D1-D40 每代产生 36 个后代，共形成 1440 个被测试的城市个体；生态位内采用帕累托支配、证据可靠性与必要新颖性更新档案，不生成全局冠军。",
+    "description_en": "D0 is the evidence baseline. D1-D40 each produce 36 offspring, creating 1,440 tested urban individuals. Niche archives update through Pareto dominance, evidence reliability and necessary novelty without declaring a global winner."
+  },
+  "city_input": {
+    "city_id": "BEIJING-HAIDIAN-S03",
+    "site_id": "S03",
+    "name_zh": "成府路—五道口—清华园旧站演化断面",
+    "name_en": "Chengfu Road—Wudaokou—Old Tsinghuayuan Station Evolutionary Section",
+    "coordinate_mode": "normalized_conceptual_section",
+    "boundary": {"x": 0, "y": 0, "width": 100, "height": 54},
+    "scope_note_zh": "约 500 米的横向关系原型。下列演化单元是概念性更新单元，不是法定宗地；坐标仅用于展示空间关系和几何演化。",
+    "scope_note_en": "A roughly 500 m transverse relational prototype. Evolutionary cells are conceptual renewal units, not statutory parcels; coordinates only demonstrate spatial relationships and geometric evolution.",
+    "geometry_authority": "provisional_background_reference",
+    "formal_planning_controls": {
+      "far": null,
+      "height_limit_m": null,
+      "building_density": null,
+      "green_ratio_control": null,
+      "road_redlines": null,
+      "note_zh": "正式控规指标、道路红线、权属和地下工程条件均未获得，不得由系统推断。"
+    },
+    "verified_anchors": [
+      "成府路与五道口站构成东西向城市联系",
+      "京张铁路遗址公园五道口启动区已建成开放",
+      "清华园车站旧址属于受保护历史对象",
+      "原点大厦已承载人工智能展厅与服务功能"
+    ]
+  },
+  "constitution": {
+    "version": "C-1.1",
+    "authored_by": "human_lead_designer",
+    "value_statement_zh": "城市演化只表示对变化环境持续适应。系统不得用效率替代公共价值，不得把任何人类主体作为淘汰对象。",
+    "value_statement_en": "Urban evolution means continued adaptation to changing conditions. The system may not substitute efficiency for public value or treat any human subject as an object of elimination.",
+    "hard_constraints": [
+      {"id": "HC-01", "rule": "stay_inside_conceptual_boundary", "human_edit_only": true, "label_zh": "所有可变几何保持在概念断面边界内"},
+      {"id": "HC-02", "rule": "locked_cells_unchanged", "human_edit_only": true, "label_zh": "慢层、文保、轨道与基本道路对象保持只读"},
+      {"id": "HC-03", "rule": "no_human_subject_selection", "human_edit_only": true, "label_zh": "居民、社区、企业和群体不得成为选择或退出对象"},
+      {"id": "HC-04", "rule": "no_irreversible_move_under_low_evidence", "human_edit_only": true, "label_zh": "低置信证据不得支撑不可逆建设"},
+      {"id": "HC-05", "rule": "preserve_public_right_of_passage", "human_edit_only": true, "label_zh": "公共通行与无障碍连续性不得被运营策略取消"},
+      {"id": "HC-06", "rule": "heritage_buffer_no_new_permanent_structure", "human_edit_only": true, "label_zh": "旧站保护环境内不新增永久构筑物"},
+      {"id": "HC-07", "rule": "offline_and_traceable", "human_edit_only": true, "label_zh": "所有输入、代理指标、拒绝原因和谱系可离线追溯"}
+    ],
+    "human_only_actions": [
+      "modify_constitution",
+      "approve_irreversible_construction",
+      "resolve_public_rights_conflict",
+      "accept_low_evidence_exception",
+      "freeze_evolutionary_cell",
+      "isolate_agent_policy"
+    ],
+    "agent_forbidden_actions": [
+      "modify_constitution",
+      "declare_statutory_approval",
+      "delete_fossil_memory",
+      "select_or_rank_people",
+      "approve_irreversible_construction",
+      "invent_missing_measurements"
+    ]
+  },
+  "evidence": [
+    {
+      "id": "EVD-001",
+      "title_zh": "百年京张 AI 创新带城市设计 AI Agent 任务书",
+      "publisher": "Open City AI / 征集组织方",
+      "url": "../../../../brief/site-package/agent_taskbook.json",
+      "status": "verified",
+      "supports": ["competition_tasks", "human_final_judgment", "ai_scenarios"],
+      "limitations_zh": "任务书提供竞赛任务和方法要求，不提供 S03 工程级现状。"
+    },
+    {
+      "id": "EVD-002",
+      "title_zh": "清华园车站旧址保护范围及建设控制地带",
+      "publisher": "北京市文物局",
+      "url": "https://wwj.beijing.gov.cn/bjww/362771/362782/743928533/743928745/index.html",
+      "status": "verified",
+      "supports": ["heritage_lock", "no_permanent_structure_gate"],
+      "limitations_zh": "当前包内没有清权后的官方矢量保护边界。"
+    },
+    {
+      "id": "EVD-003",
+      "title_zh": "清华园车站旧址开放公告",
+      "publisher": "北京市海淀区人民政府 / 文旅海淀",
+      "url": "https://www.bjhd.gov.cn/ztzx/2023/qzwygjldj/yw/202304/t20230427_4599819.shtml",
+      "status": "verified",
+      "supports": ["published_opening_hours", "quiet_context"],
+      "limitations_zh": "公告发布于 2023 年，现行开放安排仍需运营方复核。"
+    },
+    {
+      "id": "EVD-004",
+      "title_zh": "京张铁路遗址公园五道口启动区",
+      "publisher": "北京市规划和自然资源委员会",
+      "url": "https://ghzrzyw.beijing.gov.cn/zhengwuxinxi/zxzt/wsghs/2021dej/d5j/202112/t20211216_2562970.html",
+      "status": "verified",
+      "supports": ["existing_park", "heritage_public_space", "participatory_precedent"],
+      "limitations_zh": "可确认既有项目和更新方法，不提供本断面精确设计边界。"
+    },
+    {
+      "id": "EVD-005",
+      "title_zh": "人工智能原点社区周边环境整治提升项目成交公告",
+      "publisher": "北京市公共资源交易服务平台",
+      "url": "https://ggzyfw.beijing.gov.cn/jyxxzbjggg/20250410/5029046.html",
+      "status": "verified",
+      "supports": ["recent_improvement_context"],
+      "limitations_zh": "竣工状态、竣工图和实际设施清单未知。"
+    },
+    {
+      "id": "EVD-006",
+      "title_zh": "S03 OpenStreetMap 定位参考",
+      "publisher": "OpenStreetMap contributors",
+      "url": "https://www.openstreetmap.org/?mlat=39.9916&mlon=116.3317#map=17/39.9916/116.3317",
+      "status": "background_reference",
+      "supports": ["relative_anchor_sequence", "named_locations"],
+      "limitations_zh": "仅作背景定位，不作为红线、产权、入口测绘或面积依据。"
+    },
+    {
+      "id": "EVD-007",
+      "title_zh": "原点大厦与人工智能原点社区现状报道",
+      "publisher": "北京市人民政府门户网站",
+      "url": "https://www.beijing.gov.cn/fuwu/lqfw/gggs/202604/t20260401_4571735.html",
+      "status": "verified",
+      "supports": ["origin_building_name", "existing_ai_services"],
+      "limitations_zh": "不提供首层门位、消防、容量和公共开放制度。"
+    },
+    {
+      "id": "EVD-008",
+      "title_zh": "MAP-Elites: Illuminating Search Spaces by Mapping Elites",
+      "publisher": "arXiv / GECCO",
+      "url": "https://arxiv.org/abs/1504.04909",
+      "status": "method_reference",
+      "supports": ["quality_diversity_archive", "niche_elites"],
+      "limitations_zh": "作为演化搜索方法参考，不构成城市规划价值标准。"
+    },
+    {
+      "id": "EVD-009",
+      "title_zh": "ARCH-Elites: Quality-Diversity for Urban Design",
+      "publisher": "arXiv",
+      "url": "https://arxiv.org/abs/2104.08774",
+      "status": "method_reference",
+      "supports": ["polygon_genome", "building_height_gene", "fixed_state_gene"],
+      "limitations_zh": "证明编码和搜索可行性，不意味着输出可直接实施。"
+    },
+    {
+      "id": "EVD-010",
+      "title_zh": "Cyclical Urban Planning",
+      "publisher": "arXiv",
+      "url": "https://arxiv.org/abs/2412.20505",
+      "status": "method_reference",
+      "supports": ["multi_agent_cycle", "planning_simulation_replanning"],
+      "limitations_zh": "用于多 Agent 循环结构参考，不替代专业仿真和公众审议。"
+    }
+  ],
+  "unknowns": [
+    {"id": "UNK-01", "title_zh": "成府路正式道路红线、断面和地下管线", "affects": ["curb", "crossing", "permanent_facility"], "robust_response_zh": "以可撤模块和关系型断面表达，不输出施工尺寸。"},
+    {"id": "UNK-02", "title_zh": "原点及沿街建筑首层门位、权属、消防和开放制度", "affects": ["ground_floor", "entrance", "opening_hours"], "robust_response_zh": "首层动作均为条件性接口，不承诺新增房间或永久开放。"},
+    {"id": "UNK-03", "title_zh": "五道口站净空、轨道工程和地下京张高铁保护条件", "affects": ["station_edge", "rail_safety", "structure"], "robust_response_zh": "站口只允许地面可撤设施，轨道与站体保持只读。"},
+    {"id": "UNK-04", "title_zh": "近期环境提升项目的竣工状态和设施清单", "affects": ["street_furniture", "paving", "wayfinding"], "robust_response_zh": "只表达增量规则，未来取得竣工图后执行冲突检查。"},
+    {"id": "UNK-05", "title_zh": "具有代表性的真实使用反馈", "affects": ["public_value_evidence", "real_world_cycle"], "robust_response_zh": "数字代只使用代理指标；R1 以后必须以依法组织且说明代表性的真实反馈更新证据。"}
+  ],
+  "evolutionary_cells": [
+    {"id": "CELL-WEST-GATE", "name_zh": "成府路西侧横向入口", "layer": "medium", "rect": [2, 8, 13, 14], "program": "mobility_threshold", "public_ratio": 0.42, "permeability": 0.48, "open_hours": 18, "reversibility": 0.82, "evidence_confidence": 0.62, "locked": false},
+    {"id": "CELL-ORIGIN", "name_zh": "原点大厦公共界面", "layer": "medium", "rect": [16, 8, 15, 14], "program": "ai_public_service", "public_ratio": 0.36, "permeability": 0.38, "open_hours": 10, "reversibility": 0.68, "evidence_confidence": 0.58, "locked": false},
+    {"id": "CELL-METRO-WEST", "name_zh": "五道口站西侧站前单元", "layer": "fast", "rect": [33, 8, 12, 14], "program": "station_forecourt", "public_ratio": 0.58, "permeability": 0.55, "open_hours": 20, "reversibility": 0.88, "evidence_confidence": 0.46, "locked": false},
+    {"id": "CELL-STATION", "name_zh": "五道口站口净空单元", "layer": "slow", "rect": [47, 8, 11, 14], "program": "rail_safety", "public_ratio": 0.32, "permeability": 0.72, "open_hours": 20, "reversibility": 1, "evidence_confidence": 0.72, "locked": true},
+    {"id": "CELL-PARK-PORTAL", "name_zh": "京张公园门户", "layer": "medium", "rect": [60, 8, 14, 14], "program": "heritage_park", "public_ratio": 0.76, "permeability": 0.68, "open_hours": 16, "reversibility": 0.8, "evidence_confidence": 0.78, "locked": false},
+    {"id": "CELL-OLD-STATION", "name_zh": "清华园旧站安静阈口", "layer": "slow", "rect": [76, 8, 14, 14], "program": "protected_heritage", "public_ratio": 0.44, "permeability": 0.38, "open_hours": 8, "reversibility": 1, "evidence_confidence": 0.82, "locked": true},
+    {"id": "CELL-ROAD", "name_zh": "成府路公共通行骨架", "layer": "slow", "rect": [2, 24, 96, 7], "program": "public_right_of_way", "public_ratio": 0.62, "permeability": 0.9, "open_hours": 24, "reversibility": 1, "evidence_confidence": 0.64, "locked": true},
+    {"id": "CELL-SOUTH-WEST", "name_zh": "西侧街角服务单元", "layer": "fast", "rect": [4, 33, 11, 14], "program": "daily_service", "public_ratio": 0.28, "permeability": 0.32, "open_hours": 12, "reversibility": 0.84, "evidence_confidence": 0.44, "locked": false},
+    {"id": "CELL-SOUTH-ORIGIN", "name_zh": "原点南侧共享首层", "layer": "medium", "rect": [17, 33, 14, 14], "program": "shared_ground_floor", "public_ratio": 0.34, "permeability": 0.4, "open_hours": 10, "reversibility": 0.66, "evidence_confidence": 0.42, "locked": false},
+    {"id": "CELL-SOUTH-METRO", "name_zh": "站口南侧骑行与停留单元", "layer": "fast", "rect": [33, 33, 17, 14], "program": "cycle_waiting", "public_ratio": 0.52, "permeability": 0.52, "open_hours": 18, "reversibility": 0.9, "evidence_confidence": 0.42, "locked": false},
+    {"id": "CELL-SOUTH-PARK", "name_zh": "公园南侧铁路时间路径", "layer": "fast", "rect": [52, 33, 21, 14], "program": "heritage_wayfinding", "public_ratio": 0.66, "permeability": 0.62, "open_hours": 18, "reversibility": 0.92, "evidence_confidence": 0.68, "locked": false},
+    {"id": "CELL-SOUTH-EAST", "name_zh": "旧站南侧安静生活单元", "layer": "medium", "rect": [75, 33, 16, 14], "program": "quiet_daily_life", "public_ratio": 0.38, "permeability": 0.36, "open_hours": 12, "reversibility": 0.76, "evidence_confidence": 0.5, "locked": false}
+  ],
+  "genomes": {
+    "gene_families": [
+      {"id": "geometry", "items": ["cell_polygon", "transverse_path", "ground_floor_edge", "public_space", "conceptual_footprint"]},
+      {"id": "program", "items": ["use_type", "mix_ratio", "public_service", "industry_test_scene"]},
+      {"id": "time", "items": ["opening_hours", "quiet_window", "loading_window", "seasonal_switch"]},
+      {"id": "state", "items": ["layer", "locked", "reversibility", "implementation_dependency"]},
+      {"id": "lineage", "items": ["parent_ids", "mutation_commands", "evidence_ids", "historical_performance"]}
+    ],
+    "mutation_operators": [
+      {"id": "OP-SPLIT", "agent_id": "AG-CELL", "command": "split_cell", "reversible": true, "changes": ["cell_polygon", "cell_count"]},
+      {"id": "OP-MERGE", "agent_id": "AG-CELL", "command": "merge_adjacent_cells", "reversible": true, "changes": ["cell_polygon", "cell_count"]},
+      {"id": "OP-SHIFT", "agent_id": "AG-CELL", "command": "shift_shared_boundary", "reversible": true, "changes": ["cell_polygon", "frontage"]},
+      {"id": "OP-NETWORK", "agent_id": "AG-NETWORK", "command": "adjust_passage_and_entrance", "reversible": true, "changes": ["permeability", "entrance_count"]},
+      {"id": "OP-PROGRAM-TIME", "agent_id": "AG-PROGRAM-TIME", "command": "recombine_program_and_time", "reversible": true, "changes": ["program", "open_hours", "quiet_window"]},
+      {"id": "OP-PUBLIC-SPACE", "agent_id": "AG-FORM-PUBLIC", "command": "expand_or_contract_public_space", "reversible": true, "changes": ["public_ratio", "conceptual_setback"]},
+      {"id": "OP-HERITAGE", "agent_id": "AG-HERITAGE", "command": "reveal_railway_time_layer", "reversible": true, "changes": ["heritage_visibility", "wayfinding"]}
+    ]
+  },
+  "individuals": [
+    {"id": "S03-D0-I000", "generation": 0, "parent_ids": [], "status": "baseline", "cell_ids": ["CELL-WEST-GATE", "CELL-ORIGIN", "CELL-METRO-WEST", "CELL-STATION", "CELL-PARK-PORTAL", "CELL-OLD-STATION", "CELL-ROAD", "CELL-SOUTH-WEST", "CELL-SOUTH-ORIGIN", "CELL-SOUTH-METRO", "CELL-SOUTH-PARK", "CELL-SOUTH-EAST"]}
+  ],
+  "agent_policies": [
+    {"id": "AG-EVIDENCE", "layer": "data", "name_zh": "证据智能体", "input": ["public_sources", "unknowns"], "output": ["evidence_status", "confidence", "conflict"], "can": ["classify_evidence", "flag_unknown"], "cannot": ["invent_measurement", "promote_background_without_source"], "human_confirmation": ["change_evidence_authority"]},
+    {"id": "AG-CONSTITUTION", "layer": "data", "name_zh": "宪法解释智能体", "input": ["human_constitution"], "output": ["machine_checkable_rules"], "can": ["translate_rules"], "cannot": ["author_values", "modify_constitution"], "human_confirmation": ["activate_new_rule"]},
+    {"id": "AG-CELL", "layer": "variation", "name_zh": "单元形态智能体", "input": ["parent_geometry", "operator_memory"], "output": ["MutationCommand"], "can": ["split_cell", "merge_adjacent_cells", "shift_shared_boundary"], "cannot": ["modify_locked_cell", "change_statutory_parcel"], "human_confirmation": []},
+    {"id": "AG-NETWORK", "layer": "variation", "name_zh": "网络智能体", "input": ["paths", "entrances", "mobility_conflicts"], "output": ["MutationCommand"], "can": ["adjust_passage", "adjust_entrance"], "cannot": ["modify_rail_structure", "remove_public_right_of_way"], "human_confirmation": []},
+    {"id": "AG-PROGRAM-TIME", "layer": "variation", "name_zh": "功能—时间智能体", "input": ["programs", "opening_rules", "quiet_windows"], "output": ["MutationCommand"], "can": ["recombine_program", "adjust_open_hours"], "cannot": ["promise_private_access", "remove_offline_service"], "human_confirmation": []},
+    {"id": "AG-FORM-PUBLIC", "layer": "variation", "name_zh": "形态—公共空间智能体", "input": ["cell_geometry", "public_edges"], "output": ["MutationCommand"], "can": ["adjust_public_ratio", "adjust_conceptual_setback"], "cannot": ["produce_construction_drawing", "exceed_unknown_controls"], "human_confirmation": ["irreversible_form_change"]},
+    {"id": "AG-HERITAGE", "layer": "variation", "name_zh": "遗产智能体", "input": ["heritage_evidence", "railway_time_layers"], "output": ["MutationCommand", "heritage_risk"], "can": ["add_reversible_wayfinding", "flag_heritage_conflict"], "cannot": ["alter_protected_object", "invent_history"], "human_confirmation": ["heritage_exception"]},
+    {"id": "AG-MOBILITY", "layer": "evaluation", "name_zh": "交通智能体", "input": ["geometry", "scenario"], "output": ["accessibility", "conflict_flags"], "can": ["calculate_proxy"], "cannot": ["claim_observed_flow"], "human_confirmation": []},
+    {"id": "AG-DIGITAL-USE", "layer": "evaluation", "name_zh": "数字使用模拟智能体", "input": ["public_map_network", "PlanVariant", "DigitalUser", "scenario"], "output": ["SimulationRun", "failure_events"], "can": ["route_synthetic_users", "compare_parallel_designs", "explain_route_failure"], "cannot": ["claim_observed_flow", "impersonate_public_feedback", "eliminate_human_subject", "approve_city_plan"], "human_confirmation": ["interpret_public_value_conflict"]},
+    {"id": "AG-CLIMATE", "layer": "evaluation", "name_zh": "气候—生态智能体", "input": ["public_ratio", "shade_proxy", "scenario"], "output": ["climate_resilience"], "can": ["calculate_proxy"], "cannot": ["claim_professional_simulation"], "human_confirmation": []},
+    {"id": "AG-PUBLIC-VALUE", "layer": "evaluation", "name_zh": "公共价值智能体", "input": ["accessibility", "publicness", "offline_service"], "output": ["public_value_vector"], "can": ["display_tradeoffs"], "cannot": ["define_public_values", "fabricate_consensus"], "human_confirmation": ["resolve_value_conflict"]},
+    {"id": "AG-FEASIBILITY", "layer": "evaluation", "name_zh": "实施智能体", "input": ["reversibility", "dependencies", "maintenance"], "output": ["feasibility", "dependency_flags"], "can": ["estimate_relative_dependency"], "cannot": ["approve_budget", "claim_cost_precision"], "human_confirmation": ["resource_commitment"]},
+    {"id": "AG-RISK", "layer": "evaluation", "name_zh": "风险审计智能体", "input": ["all_commands", "evidence", "constitution"], "output": ["hard_gate_result", "audit_log"], "can": ["reject_invalid_command", "flag_bias"], "cannot": ["waive_hard_rule", "delete_audit_log"], "human_confirmation": ["exception_review", "agent_isolation"]},
+    {"id": "AG-MEMORY", "layer": "evolution", "name_zh": "演化记忆智能体", "input": ["lineage", "selection_events", "agent_versions"], "output": ["living_archive", "fossil_archive"], "can": ["append_memory", "retrieve_conditional_success"], "cannot": ["delete_failure", "rewrite_reason"], "human_confirmation": ["correct_memory_record"]},
+    {"id": "AG-ADAPTATION", "layer": "evolution", "name_zh": "适应智能体", "input": ["archive", "failure_patterns", "scenario_shift"], "output": ["operator_probabilities", "agent_mix"], "can": ["adjust_operator_probability", "downgrade_agent_policy"], "cannot": ["train_base_model", "self_modify_weights", "approve_city_state"], "human_confirmation": ["isolate_or_replace_agent"]},
+    {"id": "GEOMETRY-KERNEL", "layer": "deterministic", "name_zh": "确定性几何内核", "input": ["MutationCommand", "locked_geometry"], "output": ["valid_geometry", "rejection_reason"], "can": ["execute_command", "validate_geometry"], "cannot": ["generate_values", "override_constitution"], "human_confirmation": []},
+    {"id": "QD-CONTROLLER", "layer": "deterministic", "name_zh": "质量—多样性控制器", "input": ["evaluation_vectors", "behavior_descriptors"], "output": ["niche_archive", "selection_event"], "can": ["pareto_compare", "preserve_novelty"], "cannot": ["create_aggregate_score", "declare_global_winner"], "human_confirmation": []}
+  ],
+  "evaluation_vectors": {
+    "dimensions": [
+      {"id": "accessibility", "label_zh": "步行、骑行与无障碍连续性", "type": "proxy", "direction": "contextual_high"},
+      {"id": "public_value", "label_zh": "公共性与日常生活支持", "type": "proxy", "direction": "contextual_high"},
+      {"id": "heritage_continuity", "label_zh": "京张历史技术连续性", "type": "evidence_proxy", "direction": "contextual_high"},
+      {"id": "climate_resilience", "label_zh": "遮阴、雨洪与热环境适应", "type": "proxy", "direction": "contextual_high"},
+      {"id": "feasibility", "label_zh": "运维与实施依赖", "type": "relative_proxy", "direction": "contextual_high"},
+      {"id": "reversibility", "label_zh": "可逆性", "type": "declared_attribute", "direction": "contextual_high"},
+      {"id": "evidence_confidence", "label_zh": "证据可靠性", "type": "source_derived", "direction": "contextual_high"}
+    ],
+    "aggregation": null,
+    "note_zh": "七项向量并列展示，不相加、不排序，不形成唯一适应度。"
+  },
+  "behavior_descriptors": {
+    "axes": [
+      {"id": "spatial_grain", "label_zh": "空间颗粒度", "bins": ["fine", "medium", "coarse"]},
+      {"id": "public_permeability", "label_zh": "公共渗透性", "bins": ["low", "medium", "high"]},
+      {"id": "temporal_plasticity", "label_zh": "时间可塑性", "bins": ["low", "medium", "high"]}
+    ]
+  },
+  "niche_archive": {
+    "policy": "pareto_evidence_novelty",
+    "global_ranking": false,
+    "replacement_rules": [
+      "候选在同一生态位内帕累托支配现存个体时替换被支配个体",
+      "互不支配时，证据更可靠且保持不同几何谱系者可并存",
+      "档案达到容量时，保留必要新颖性更高者；退出个体进入化石库",
+      "任何规则都不得把居民、社区、企业或群体作为竞争对象"
+    ],
+    "initial_entries": ["S03-D0-I000"]
+  },
+  "selection_events": [],
+  "lineage_events": [
+    {"id": "LIN-D0", "generation": 0, "type": "birth", "individual_id": "S03-D0-I000", "reason_zh": "由公开证据、锁定约束和明确未知构成基线。"}
+  ],
+  "human_interventions": [
+    {
+      "id": "HI-D17-QUIET",
+      "generation": 17,
+      "trigger": "public_rights_value_conflict",
+      "evidence_status": "provisional_demonstration",
+      "action": "modify_constitution_parameter",
+      "target": "quiet_window_near_old_station",
+      "before": "22:00",
+      "after": "20:00",
+      "affected_cell_ids": ["CELL-OLD-STATION", "CELL-SOUTH-EAST", "CELL-SOUTH-PARK"],
+      "reason_zh": "演示不可自动化解决的夜间公共活动与安静生活冲突；并非真实公众意见结果。",
+      "reason_en": "Demonstrates a night-time public activity versus residential quiet conflict that cannot be automated; it is not presented as actual public feedback.",
+      "allowed_followup": ["recompute_affected_lineages", "preserve_unaffected_archive"],
+      "forbidden_followup": ["manual_compose_winner", "reset_entire_population"]
+    }
+  ],
+  "real_world_cycles": [
+    {"id": "R0", "name_zh": "证据基线", "status": "current_public_evidence", "digital_source": "D0"},
+    {"id": "R1", "name_zh": "可逆试验候选", "status": "design_phenotype_not_implemented", "digital_source": "D40_niche_library", "human_gate": "professional_review_before_real_use"},
+    {"id": "R2", "name_zh": "真实反馈后的保留与调整", "status": "future", "required_evidence": ["actual_use", "representative_public_review", "maintenance_record"]},
+    {"id": "R3", "name_zh": "中期更新", "status": "future", "human_gate": "statutory_and_professional_review"}
+  ],
+  "scenarios": [
+    {"id": "SCN-AM-PEAK", "name_zh": "早高峰", "mobility": 0.95, "climate": 0.45, "public_service": 0.5, "quiet": 0.7},
+    {"id": "SCN-HEAT", "name_zh": "高温日", "mobility": 0.62, "climate": 0.95, "public_service": 0.62, "quiet": 0.65},
+    {"id": "SCN-RAIN", "name_zh": "强降雨", "mobility": 0.68, "climate": 0.88, "public_service": 0.58, "quiet": 0.72},
+    {"id": "SCN-EVENING", "name_zh": "晚间开放", "mobility": 0.5, "climate": 0.4, "public_service": 0.82, "quiet": 0.95},
+    {"id": "SCN-GROUND-FLOOR-CLOSED", "name_zh": "首层不可获得", "mobility": 0.55, "climate": 0.45, "public_service": 0.9, "quiet": 0.68},
+    {"id": "SCN-EVIDENCE-DRIFT", "name_zh": "证据或 Agent 漂移", "mobility": 0.5, "climate": 0.5, "public_service": 0.5, "quiet": 0.5}
+  ],
+  "digital_user_simulation": {
+    "schema_version": "1.0.0",
+    "purpose_zh": "让普通人看见 A/B/C 三套空间方案如何被数字使用者真实寻路、使用和暴露问题；结果属于设计推演，不是实测人流或真实公众反馈。",
+    "purpose_en": "Make it visible how digital users route through and test spatial variants A/B/C; results are design simulations, not observed flows or actual public feedback.",
+    "engine_file": "visual/assets/digital-user-simulator.js",
+    "generated_data_file": "visual/assets/digital-user-data.generated.js",
+    "public_evolution_engine": "visual/assets/public-evolution.js",
+    "public_evolution_data": "visual/assets/public-evolution.generated.js",
+    "sensitivity_data": "visual/assets/sensitivity.generated.js",
+    "random_seed": 20260820,
+    "network_source": "visual/assets/story-baseline.generated.js",
+    "network_derivation": "segment public-map road LineStrings into a deterministic walkable graph",
+    "pathfinder": "A-star",
+    "single_aggregate_metric": false,
+    "population": [
+      {"type": "commuter", "count": 40, "name_zh": "通勤与换乘者"},
+      {"type": "resident", "count": 25, "name_zh": "周边居民"},
+      {"type": "heritage_visitor", "count": 20, "name_zh": "旧站访客"},
+      {"type": "accessible", "count": 15, "name_zh": "老年人、轮椅使用者与照护者"}
+    ],
+    "scenario_ids": ["AM-COMMUTE", "DAILY-LIFE", "EVENING-QUIET", "PARTIAL-CLOSURE"],
+    "variant_ids": ["A-DIRECT-LINK", "B-PUBLIC-LIFE", "C-TIME-SHARE"],
+    "generation_rules": {
+      "round_1": "variation agents generate three parent phenotypes",
+      "round_2": "selection-state filtered genes cross over by complementary parent families",
+      "round_3": "four-scenario Pareto archives combine under public-need coverage and reversibility-first rules",
+      "manual_complete_variant_assembly": false
+    },
+    "sensitivity_contract": {"random_seeds": 5, "parameter_cases": 5, "field_calibrated": false, "stable_claims": ["backup_gene", "closure_arrival", "known_step_access", "dwell_reach"], "sensitive_outputs": ["absolute_travel", "crowd_proxy"]},
+    "parallel_metrics": ["arrival_rate", "median_distance_m", "p90_distance_m", "median_travel_time_s", "accessible_failures", "overloaded_edge_count", "quiet_conflict_count", "reached_dwell_node_count"],
+    "unknown_fields": ["pedestrian_flow", "verified_sidewalk_width", "verified_slope_and_kerb", "verified_gate_opening_hours", "real_public_feedback"],
+    "selection_objects": ["spatial_variant", "path_strategy", "facility", "operating_rule", "service_mechanism", "agent_policy"],
+    "forbidden_selection_objects": ["resident", "community", "enterprise", "human_group", "DigitalUser"],
+    "human_gate": ["law", "public_rights", "irreversible_construction", "evidence_gap", "agent_bias_or_drift"]
+  },
+  "transfer_tests": [
+    {
+      "id": "TRANSFER-PORT",
+      "name_zh": "港口型线性城市",
+      "type": "schematic_stress_test",
+      "input_shift": {"boundary_ratio": 3.4, "flood_pressure": 0.92, "logistics_conflict": 0.88, "heritage_lock": 0.25},
+      "expected_adaptation_zh": "形成滨水公共性、洪涝缓冲与物流时窗之间的多生态位结果。"
+    },
+    {
+      "id": "TRANSFER-MOUNTAIN",
+      "name_zh": "山地城市",
+      "type": "schematic_stress_test",
+      "input_shift": {"slope_pressure": 0.94, "accessibility_pressure": 0.9, "flood_pressure": 0.35, "heritage_lock": 0.4},
+      "expected_adaptation_zh": "减少大尺度合并，保留高差适应的小颗粒可达单元。"
+    },
+    {
+      "id": "TRANSFER-HISTORIC",
+      "name_zh": "历史老城",
+      "type": "schematic_stress_test",
+      "input_shift": {"heritage_lock": 0.96, "fine_grain_need": 0.9, "irreversibility_risk": 0.92, "flood_pressure": 0.3},
+      "expected_adaptation_zh": "优先保留细颗粒、可逆运营和历史结构显影。"
+    }
+  ],
+  "mutation_command_contract": {
+    "required": ["id", "agent_id", "operator_id", "target_ids", "source_ids", "reversible", "parameters", "generation", "parent_ids"],
+    "geometry_execution": "GEOMETRY-KERNEL",
+    "rejection_output": ["reason_code", "rule_id", "affected_targets", "lineage_event_id"]
+  },
+  "presentation": {
+    "name_zh": "城市基因观测站",
+    "name_en": "Urban Genome Observatory",
+    "specimen_note_zh": "关键代展示的是同一可追踪谱系中的标本，不是全局最优方案。D40 同时保留多个生态位精英。",
+    "legend": {
+      "living": "青绿色：当前生态位中的活体基因",
+      "dormant": "琥珀色：休眠或条件保留",
+      "fossil": "灰色：退出个体与失败记忆",
+      "human": "红色：人工介入刻痕"
+    }
+  }
+}

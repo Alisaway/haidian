@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jingzhang Adaptive Commons — Submission Release v1.0.3</title>
+
+<!-- Fonts: locally subsetted woff2 embedded as base64 data-URIs in assets/fonts.css (offline, zero remote requests) -- Noto Serif SC (display) + IBM Plex Mono (labels/metrics) -->
+<link rel="stylesheet" href="assets/fonts.css">
+
+<style>
+/* ===========================================
+   THEME — off-white paper + ink blue + copper + celadon
+   =========================================== */
+:root{
+  --paper:#fafaf8; --card:#ffffff; --ink:#1a1a2e; --text:#2d2d2d;
+  --muted:#6b7280; --copper:#c9a227; --celadon:#5ba4a4; --signal:#4a90d9;
+  --moss:#4caf50; --purple:#7a6fb5; --danger:#d95f4b; --border:#e8e6e1;
+
+  --font-display:"Noto Serif SC",Georgia,serif;
+  --font-mono:"IBM Plex Mono",Menlo,Consolas,monospace;
+
+  --ease-out-expo:cubic-bezier(0.16,1,0.3,1);
+  --duration-normal:.6s;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+/* ===========================================
+   VIEWPORT FITTING: MANDATORY BASE STYLES
+   (viewport-base.css — included in full)
+   =========================================== */
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+.slide {
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.slide-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-height: 100%;
+    overflow: hidden;
+    padding: var(--slide-padding);
+}
+:root {
+    --title-size: clamp(1.5rem, 5vw, 4rem);
+    --h2-size: clamp(1.25rem, 3.5vw, 2.5rem);
+    --h3-size: clamp(1rem, 2.5vw, 1.75rem);
+    --body-size: clamp(0.75rem, 1.5vw, 1.125rem);
+    --small-size: clamp(0.65rem, 1vw, 0.875rem);
+    --slide-padding: clamp(1rem, 4vw, 4rem);
+    --content-gap: clamp(0.5rem, 2vw, 2rem);
+    --element-gap: clamp(0.25rem, 1vw, 1rem);
+}
+.card, .container, .content-box {
+    max-width: min(90vw, 1000px);
+    max-height: min(80vh, 700px);
+}
+.feature-list, .bullet-list {
+    gap: clamp(0.4rem, 1vh, 1rem);
+}
+.feature-list li, .bullet-list li {
+    font-size: var(--body-size);
+    line-height: 1.4;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+    gap: clamp(0.5rem, 1.5vw, 1rem);
+}
+img, .image-container {
+    max-width: 100%;
+    max-height: min(50vh, 400px);
+    object-fit: contain;
+}
+@media (max-height: 700px) {
+    :root {
+        --slide-padding: clamp(0.75rem, 3vw, 2rem);
+        --content-gap: clamp(0.4rem, 1.5vw, 1rem);
+        --title-size: clamp(1.25rem, 4.5vw, 2.5rem);
+        --h2-size: clamp(1rem, 3vw, 1.75rem);
+    }
+}
+@media (max-height: 600px) {
+    :root {
+        --slide-padding: clamp(0.5rem, 2.5vw, 1.5rem);
+        --content-gap: clamp(0.3rem, 1vw, 0.75rem);
+        --title-size: clamp(1.1rem, 4vw, 2rem);
+        --body-size: clamp(0.7rem, 1.2vw, 0.95rem);
+    }
+    .nav-dots, .keyboard-hint, .decorative {
+        display: none;
+    }
+}
+@media (max-height: 500px) {
+    :root {
+        --slide-padding: clamp(0.4rem, 2vw, 1rem);
+        --title-size: clamp(1rem, 3.5vw, 1.5rem);
+        --h2-size: clamp(0.9rem, 2.5vw, 1.25rem);
+        --body-size: clamp(0.65rem, 1vw, 0.85rem);
+    }
+}
+@media (max-width: 600px) {
+    :root {
+        --title-size: clamp(1.25rem, 7vw, 2.5rem);
+    }
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.2s !important;
+    }
+    html { scroll-behavior: auto; }
+}
+
+/* ===========================================
+   BASE — paper typography
+   =========================================== */
+body{
+  font-family:var(--font-display);
+  background:var(--paper);
+  color:var(--text);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+.slide-content{width:100%;max-width:min(92vw,1280px);margin:0 auto}
+.slide{
+  background:
+    linear-gradient(rgba(26,26,46,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26,26,46,.025) 1px, transparent 1px),
+    var(--paper);
+  background-size:64px 64px,64px 64px,auto;
+}
+
+/* kicker label — monospace */
+.kicker{
+  font-family:var(--font-mono);font-size:var(--small-size);
+  letter-spacing:.22em;color:var(--copper);text-transform:uppercase;
+  margin-bottom:var(--element-gap);
+}
+h1{font-size:var(--title-size);color:var(--ink);font-weight:900;line-height:1.15}
+h2{
+  font-size:var(--h2-size);color:var(--ink);font-weight:700;line-height:1.2;
+  padding-bottom:.35em;margin-bottom:var(--content-gap);
+  border-bottom:2px solid var(--copper);
+}
+h3{font-size:var(--h3-size);color:var(--celadon);font-weight:700;line-height:1.3}
+p{font-size:var(--body-size)}
+.lede{font-size:clamp(.9rem,1.8vw,1.3rem);color:var(--ink);max-width:62ch}
+.muted{color:var(--muted)}
+.small{font-size:var(--small-size)}
+.mono{font-family:var(--font-mono)}
+.copper{color:var(--copper)}
+
+/* ===========================================
+   COMPONENTS
+   =========================================== */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:var(--element-gap)}
+.card{
+  background:var(--card);border:1px solid var(--border);border-radius:8px;
+  padding:clamp(.7rem,1.6vw,1.3rem);box-shadow:0 1px 4px rgba(0,0,0,.04);
+}
+.card h3{margin:0 0 .4em}
+.card p{font-size:var(--small-size);margin:.25em 0}
+.card .role{font-family:var(--font-mono);font-size:var(--small-size);color:var(--copper)}
+
+.metric-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:var(--element-gap)}
+.metric-card{
+  background:var(--card);border-left:4px solid var(--signal);border-radius:0 8px 8px 0;
+  padding:clamp(.6rem,1.4vw,1rem);text-align:center;
+}
+.metric-card .value{font-size:clamp(1.2rem,2.6vw,2rem);font-weight:700;color:var(--ink)}
+.metric-card .label{font-size:var(--small-size);color:var(--muted);margin-top:.2em}
+
+.badge{display:inline-block;padding:.12em .5em;border-radius:3px;font-size:var(--small-size);color:#fff;font-family:var(--font-mono)}
+.badge-pass{background:var(--moss)}
+.badge-concept{background:var(--copper)}
+.badge-open{background:var(--signal)}
+
+table{width:100%;border-collapse:collapse;font-size:var(--small-size);background:var(--card)}
+th{background:var(--ink);color:#fff;padding:.45em .7em;text-align:left;font-weight:600;white-space:nowrap}
+td{padding:.4em .7em;border-bottom:1px solid var(--border);vertical-align:top}
+tr:nth-child(even) td{background:rgba(0,0,0,.02)}
+td b{color:var(--ink)}
+
+.bullet-list{list-style:none;padding:0;display:flex;flex-direction:column}
+.bullet-list li{padding-left:1.4em;position:relative}
+.bullet-list li::before{content:"◆";position:absolute;left:0;color:var(--celadon);font-size:.7em;top:.4em}
+
+/* chain diagram — Nurture-Transfer-Use-Return */
+.chain{display:flex;align-items:stretch;gap:0;margin:var(--content-gap) 0}
+.chain .node{
+  flex:1;background:var(--card);border:1px solid var(--border);border-radius:8px;
+  padding:clamp(.5rem,1.2vw,1rem);text-align:center;
+}
+.chain .node b{display:block;color:var(--ink);font-size:var(--h3-size)}
+.chain .node span{font-size:var(--small-size);color:var(--muted)}
+.chain .arrow{display:flex;align-items:center;padding:0 .4em;color:var(--copper);font-size:1.2em}
+
+/* spine + five-layer network diagram */
+.netviz{display:flex;gap:clamp(.8rem,2.5vw,2.5rem);align-items:stretch}
+.axis-rail{position:relative;width:34%;min-width:220px;display:flex;flex-direction:column;justify-content:space-between;padding:1em 0}
+.axis-rail::before{content:"";position:absolute;left:50%;top:.6em;bottom:.6em;width:3px;background:var(--ink);transform:translateX(-50%);border-radius:2px}
+.axis-node{
+  position:relative;background:var(--card);border:1px solid var(--border);border-radius:8px;
+  padding:.5em .8em;margin:0 auto;text-align:center;min-width:78%;box-shadow:0 1px 4px rgba(0,0,0,.05);
+}
+.axis-node b{color:var(--ink);display:block}
+.axis-node span{font-size:var(--small-size);color:var(--muted)}
+.layers{display:flex;flex-direction:column;gap:.45em;flex:1;justify-content:center}
+.layer{
+  border-radius:6px;padding:.45em .9em;color:#fff;font-size:var(--small-size);
+  display:flex;justify-content:space-between;align-items:center;gap:1em;
+}
+.layer.l1{background:var(--celadon)} .layer.l2{background:var(--signal)}
+.layer.l3{background:var(--moss)} .layer.l4{background:var(--copper)}
+.layer.l5{background:var(--purple)}
+.layer span:last-child{font-family:var(--font-mono);opacity:.85;font-size:.85em}
+
+/* Jing-Zhang growth section */
+.profile{display:flex;flex-direction:column;gap:3px;border-radius:8px;overflow:hidden;border:1px solid var(--border)}
+.profile .stratum{padding:.5em 1em;font-size:var(--small-size);display:flex;justify-content:space-between;gap:1em;color:#fff}
+.profile .s1{background:#6b5f8f}.profile .s2{background:#b98a2e}.profile .s3{background:#c9a227}
+.profile .s4{background:#5ba4a4}.profile .s5{background:#1a1a2e}
+.profile .s6{background:#fff;color:var(--muted);border-top:1px dashed var(--border)}
+.profile .stratum span:last-child{font-family:var(--font-mono);opacity:.85}
+
+/* nine-step cycle */
+.journey{display:grid;grid-template-columns:repeat(9,1fr);gap:6px}
+.jstep{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.6em .5em;text-align:center;position:relative}
+.jstep .n{font-family:var(--font-mono);color:var(--copper);font-size:var(--small-size);display:block}
+.jstep b{font-size:var(--small-size);color:var(--ink);display:block;line-height:1.3;margin-top:.2em}
+.jstep span{font-size:calc(var(--small-size)*.85);color:var(--muted);display:block;line-height:1.35;margin-top:.25em}
+@media(max-width:900px){.journey{grid-template-columns:repeat(3,1fr)}}
+
+/* AI loop */
+.loop{display:flex;flex-wrap:wrap;align-items:center;gap:.4em;justify-content:center}
+.loop .box{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.5em .8em;font-size:var(--small-size);color:var(--ink)}
+.loop .box.decision{border-color:var(--copper);color:var(--copper);font-family:var(--font-mono)}
+.loop .arrow{color:var(--celadon)}
+
+.brand-system{display:grid;grid-template-columns:minmax(210px,.72fr) minmax(0,1.55fr);gap:var(--content-gap);align-items:center}
+.brand-mark{display:flex;align-items:center;justify-content:center;min-height:280px;border-right:1px solid var(--border);padding-right:var(--content-gap)}
+.brand-mark img{width:min(30vh,250px);height:auto}
+.brand-rules{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--element-gap)}
+.brand-rule{border-top:2px solid var(--copper);padding-top:.5em}
+.brand-rule p{font-size:var(--small-size);margin:.2em 0}
+@media(max-width:760px){.brand-system{grid-template-columns:1fr}.brand-mark{min-height:150px;border-right:0;border-bottom:1px solid var(--border);padding:0 0 var(--element-gap)}.brand-mark img{width:min(18vh,140px)}}
+
+/* review weight bars */
+.wbar{display:flex;flex-direction:column;gap:.4em}
+.wbar .row{display:flex;align-items:center;gap:.8em;font-size:var(--small-size)}
+.wbar .row .name{width:11em;flex-shrink:0;color:var(--ink);text-align:right}
+.wbar .row .track{flex:1;background:var(--border);border-radius:3px;height:.9em;overflow:hidden}
+.wbar .row .fill{height:100%;background:var(--copper);border-radius:3px}
+.wbar .row .w{font-family:var(--font-mono);color:var(--muted);width:2.5em}
+
+/* scenario chips */
+.chips{display:flex;flex-wrap:wrap;gap:.45em}
+.chip{
+  background:var(--card);border:1px solid var(--border);border-radius:99px;
+  padding:.3em .9em;font-size:var(--small-size);color:var(--ink);white-space:nowrap;
+}
+.chip .mono{color:var(--copper);margin-right:.4em}
+
+/* ===========================================
+   FIGURE SLIDES — one figure per page
+   =========================================== */
+.figure-slide .slide-content{align-items:center;text-align:center}
+.slide-figure{
+  max-width:min(92vw,1400px);
+  max-height:min(66vh,680px);
+  object-fit:contain;
+  background:var(--card);
+  border:1px solid var(--border);border-radius:8px;
+  box-shadow:0 4px 24px rgba(26,26,46,.08);
+}
+.figure-caption{margin-top:var(--element-gap);font-size:var(--small-size);color:var(--muted);font-family:var(--font-mono)}
+
+/* ===========================================
+   TITLE SLIDE
+   =========================================== */
+.title-slide .slide-content{align-items:center;text-align:center}
+.title-slide h1{font-size:clamp(2.2rem,7vw,5.5rem);letter-spacing:.04em}
+.title-slide .en{
+  font-family:var(--font-mono);font-size:clamp(.7rem,1.6vw,1.1rem);
+  letter-spacing:.42em;color:var(--celadon);margin-top:.6em;text-transform:uppercase;
+}
+.title-slide .rule{width:min(40vw,320px);height:2px;background:var(--copper);margin:1.4em auto}
+.title-slide .tagline{font-size:clamp(1rem,2.4vw,1.6rem);color:var(--ink)}
+.title-slide .meta{margin-top:2.2em;font-size:var(--small-size);color:var(--muted);font-family:var(--font-mono)}
+.rail-motif{position:absolute;left:0;right:0;bottom:0;height:22%;pointer-events:none;opacity:.5}
+
+/* ===========================================
+   CLOSING SLIDE
+   =========================================== */
+.closing{background:var(--ink);color:#e8e6e1}
+.closing h2{color:#fff;border-bottom-color:var(--copper)}
+.closing .kicker{color:var(--copper)}
+.closing .card{background:#232338;border-color:#3a3a52}
+.closing .card p{color:#c6c9d4}
+.closing .card h3{color:var(--celadon)}
+
+/* ===========================================
+   ANIMATIONS
+   =========================================== */
+.reveal{opacity:0;transform:translateY(28px);
+  transition:opacity var(--duration-normal) var(--ease-out-expo),transform var(--duration-normal) var(--ease-out-expo)}
+.slide.visible .reveal{opacity:1;transform:translateY(0)}
+.reveal:nth-child(1){transition-delay:.08s}.reveal:nth-child(2){transition-delay:.16s}
+.reveal:nth-child(3){transition-delay:.24s}.reveal:nth-child(4){transition-delay:.32s}
+.reveal:nth-child(5){transition-delay:.4s}.reveal:nth-child(6){transition-delay:.48s}
+
+/* ===========================================
+   TOP TABS
+   =========================================== */
+.top-tabs{
+  position:fixed;top:0;left:0;right:0;z-index:900;height:42px;
+  background:var(--ink);display:flex;align-items:center;gap:.2em;
+  padding:0 clamp(.5rem,2vw,1.5rem);overflow-x:auto;white-space:nowrap;
+  scrollbar-width:none;
+}
+.top-tabs::-webkit-scrollbar{display:none}
+.top-tabs a{
+  color:#aab;border-bottom:2px solid transparent;
+  font-family:var(--font-mono);font-size:clamp(.6rem,1vw,.78rem);letter-spacing:.05em;
+  padding:.45em .7em;border-radius:3px;transition:all .2s;text-decoration:none;flex-shrink:0;
+}
+.top-tabs a:hover{color:var(--copper);background:rgba(201,162,39,.1)}
+.top-tabs a.active{color:var(--copper);background:rgba(201,162,39,.12);border-bottom-color:var(--copper)}
+.top-tabs .brand{color:#fff;font-weight:600;margin-right:.6em;pointer-events:none}
+.top-tabs .brand em{font-style:normal;color:var(--copper)}
+
+/* ===========================================
+   PROGRESS BAR / NAV DOTS / HINT
+   =========================================== */
+.progress-bar{position:fixed;top:42px;left:0;height:3px;width:0;z-index:1000;
+  background:linear-gradient(90deg,var(--copper),var(--celadon));transition:width .2s ease}
+.nav-dots{position:fixed;right:14px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:8px;z-index:1000}
+.nav-dots a{width:9px;height:9px;border-radius:50%;background:var(--border);border:1px solid #d5d2ca;transition:all .25s;display:block}
+.nav-dots a.active{background:var(--copper);transform:scale(1.4)}
+.keyboard-hint{position:fixed;bottom:12px;left:16px;z-index:1000;font-family:var(--font-mono);
+  font-size:.65rem;color:var(--muted);letter-spacing:.08em}
+
+/* ===========================================
+   INLINE EDITING (opt-in)
+   =========================================== */
+.edit-hotzone{position:fixed;bottom:0;right:0;width:80px;height:80px;z-index:10000;cursor:pointer}
+.edit-toggle{
+  position:fixed;bottom:14px;right:14px;z-index:10001;width:40px;height:40px;border-radius:50%;
+  border:1px solid var(--border);background:var(--card);cursor:pointer;font-size:16px;
+  opacity:0;pointer-events:none;transition:opacity .3s ease;box-shadow:0 2px 8px rgba(0,0,0,.12);
+}
+.edit-toggle.show,.edit-toggle.active{opacity:1;pointer-events:auto}
+.edit-toggle.active{background:var(--copper);color:#fff;border-color:var(--copper)}
+.edit-toggle::before{
+  content:"";width:15px;height:5px;border:2px solid currentColor;border-radius:1px;
+  transform:rotate(-45deg);box-sizing:border-box;
+}
+.edit-toggle::after{
+  content:"";width:0;height:0;border-top:4px solid transparent;border-bottom:4px solid transparent;
+  border-left:6px solid currentColor;transform:rotate(-45deg);margin-left:-4px;
+}
+.edit-banner{
+  position:fixed;top:0;left:0;right:0;z-index:9999;background:var(--ink);color:#fff;
+  text-align:center;font-family:var(--font-mono);font-size:.72rem;padding:.45em 1em;
+  transform:translateY(-100%);transition:transform .3s ease;
+}
+.edit-banner.active{transform:translateY(0)}
+.edit-banner b{color:var(--copper)}
+body.edit-active [data-edit]{outline:1px dashed var(--copper);outline-offset:2px;cursor:text;border-radius:2px}
+body.edit-active .slide{scroll-snap-align:none}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+<nav class="top-tabs" id="topTabs" aria-label="Section navigation">
+  <span class="brand">JINGZHANG<em> ADAPTIVE COMMONS</em></span>
+  <a href="#" data-goto="0">Cover</a>
+  <a href="#" data-goto="1">Conclusion</a>
+  <a href="#" data-goto="2">Criteria</a>
+  <a href="#" data-goto="3">Propositions</a>
+  <a href="#" data-goto="4">Site Overview</a>
+  <a href="#" data-goto="5">Structure</a>
+  <a href="#" data-goto="6">Structure Map</a>
+  <a href="#" data-goto="7">N–S–U–R Chain</a>
+  <a href="#" data-goto="8">Key-Area Map</a>
+  <a href="#" data-goto="9">Six Node Types</a>
+  <a href="#" data-goto="10">Growth Section</a>
+  <a href="#" data-goto="11">Prototypes</a>
+  <a href="#" data-goto="12">Blue-Green Map</a>
+  <a href="#" data-goto="13">Scenarios</a>
+  <a href="#" data-goto="14">Nine-Step Loop</a>
+  <a href="#" data-goto="15">Packages</a>
+  <a href="#" data-goto="16">Protocols</a>
+  <a href="#" data-goto="17">Brand Anchors</a>
+  <a href="#" data-goto="18">AI Loop</a>
+  <a href="#" data-goto="19">Delivery</a>
+  <a href="#" data-goto="20">Evidence Board</a>
+  <a href="#" data-goto="21">Recognition Kit</a>
+  <a href="#" data-goto="22">Boundaries</a>
+</nav>
+<nav class="nav-dots" id="navDots" aria-label="Slide navigation"></nav>
+<div class="keyboard-hint">← → / Space to navigate · E to edit · Ctrl+S to export</div>
+
+<!-- Inline editing UI -->
+<div class="edit-hotzone" id="editHotzone" title="Edit mode"></div>
+<button class="edit-toggle" id="editToggle" title="Edit mode (E)" aria-label="Edit mode"></button>
+<div class="edit-banner" id="editBanner">EDIT MODE — click any text to edit · autosaved locally · <b>Ctrl/⌘+S to export HTML</b> · press E to exit</div>
+
+<!-- ==========================================
+     01 · Cover
+     ========================================== -->
+<section class="slide title-slide">
+  <svg class="rail-motif" viewBox="0 0 1200 240" preserveAspectRatio="none" aria-hidden="true">
+    <line x1="600" y1="0" x2="600" y2="240" stroke="#1a1a2e" stroke-width="3"/>
+    <line x1="150" y1="240" x2="1050" y2="240" stroke="#e8e6e1" stroke-width="1"/>
+    <circle cx="600" cy="45" r="9" fill="#fafaf8" stroke="#c9a227" stroke-width="3"/>
+    <circle cx="600" cy="120" r="9" fill="#fafaf8" stroke="#5ba4a4" stroke-width="3"/>
+    <circle cx="600" cy="195" r="9" fill="#fafaf8" stroke="#4a90d9" stroke-width="3"/>
+    <line x1="600" y1="45" x2="300" y2="90" stroke="#c9a227" stroke-width="1" stroke-dasharray="4 5"/>
+    <line x1="600" y1="120" x2="900" y2="150" stroke="#5ba4a4" stroke-width="1" stroke-dasharray="4 5"/>
+    <line x1="600" y1="195" x2="380" y2="220" stroke="#4a90d9" stroke-width="1" stroke-dasharray="4 5"/>
+    <line x1="600" y1="45" x2="880" y2="70" stroke="#c9a227" stroke-width="1" stroke-dasharray="4 5"/>
+  </svg>
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>Centennial Jing-Zhang AI Innovation Belt Urban Design · Submission Release v1.0.3</div>
+    <h1 class="reveal" data-edit>Jingzhang Adaptive Commons</h1>
+    <div class="en reveal" data-edit>京张生长网络</div>
+    <div class="rule reveal"></div>
+    <p class="tagline reveal" data-edit>Let innovation enter everyday urban life</p>
+    <p class="meta reveal" data-edit><strong>Release status</strong><br>Open co-creation proposal · not a formal plan · not an engineering conclusion · not officially approved<br>2026-08-26</p>
+  </div>
+</section>
+
+<!-- ==========================================
+     02 · Conclusion first
+     ========================================== -->
+<section class="slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>01 · Conclusion First</div>
+    <h2 class="reveal" data-edit>Not a landmark display axis — a growable network of public urban infrastructure</h2>
+    <div class="metric-grid reveal">
+      <div class="metric-card"><div class="value" data-edit>1</div><div class="label" data-edit>Public innovation spine</div></div>
+      <div class="metric-card" style="border-left-color:var(--copper)"><div class="value" data-edit data-metric="key_area_count" data-value="3">3</div><div class="label" data-edit>Key areas · Nurture–Transfer–Use–Return</div></div>
+      <div class="metric-card" style="border-left-color:var(--celadon)"><div class="value" data-edit>6</div><div class="label" data-edit>Distributed node types</div></div>
+      <div class="metric-card" style="border-left-color:var(--moss)"><div class="value" data-edit>5</div><div class="label" data-edit>Co-located composite network layers</div></div>
+    </div>
+    <div style="margin-top:var(--content-gap)">
+      <ul class="bullet-list reveal">
+        <li data-edit>Build a continuous public ground from railway heritage and the park system;</li>
+        <li data-edit>Use high-frequency cross-stitches to link communities, campuses, and parks on both sides of the railway; the two wings — Zhongguancun Technology Services Wing (west) and Xiaoyue River Scenario Enablement Wing (east) — join the spine at these stitching points;</li>
+        <li data-edit>Arrange innovation resources as complementary public nodes of varied size, with open ground floors and mixed uses;</li>
+        <li data-edit>Through monitoring, evaluation, and small iterative steps, construction keeps correcting itself — the city is no longer built all at once.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     03 · Design criteria: three questions
+     ========================================== -->
+<section class="slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>02 · Design Criteria</div>
+    <h2 class="reveal" data-edit>No spatial action is built unless it answers three questions</h2>
+    <p class="lede reveal" data-edit style="margin-bottom:var(--content-gap)">Along the Jing-Zhang corridor, the city is no longer built once — it renews through continuous exchange.</p>
+    <div class="cards">
+      <div class="card reveal" style="border-top:3px solid var(--copper)">
+        <h3 data-edit>Connect</h3>
+        <p data-edit>Which specific rupture does it stitch — across the railway, inside and outside walls, between old and new communities?</p>
+      </div>
+      <div class="card reveal" style="border-top:3px solid var(--celadon)">
+        <h3 data-edit>Exchange</h3>
+        <p data-edit>What resources does it make genuinely flow between which actors — space, equipment, materials, knowledge, data?</p>
+      </div>
+      <div class="card reveal" style="border-top:3px solid var(--signal)">
+        <h3 data-edit>Grow</h3>
+        <p data-edit>What interfaces does it leave behind, so the next phase can extend, adjust, or withdraw?</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     04 · Design propositions: five structural questions
+     ========================================== -->
+<section class="slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>03 · Design Propositions</div>
+    <h2 class="reveal" data-edit>Five structural questions, five responses</h2>
+    <table class="reveal">
+      <tr><th>Question</th><th>Common limitation</th><th>Our response</th></tr>
+      <tr><td data-edit>The railway corridor is continuous but cross-links are weak</td><td data-edit>The park treated as linear scenery only</td><td data-edit>High-frequency cross-stitches and cross-boundary public interfaces</td></tr>
+      <tr><td data-edit>Innovation resources are dense but closed to each other</td><td data-edit>Parks and campuses operate as isolated units</td><td data-edit>Shared facilities, joint experiments, and a results-showcasing network</td></tr>
+      <tr><td data-edit>AI scenarios easily become gadget displays</td><td data-edit>Chasing short-term tech spectacle</td><td data-edit>Focus on public services and real use loops</td></tr>
+      <tr><td data-edit>Heritage display detached from contemporary life</td><td data-edit>Isolated protected objects, single visiting route</td><td data-edit>Heritage spaces turned into public living rooms and innovation carriers</td></tr>
+      <tr><td data-edit>Weak operational drive after construction</td><td data-edit>Build space first, find content later</td><td data-edit>Projects, operators, and evaluation metrics enter the design together</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ==========================================
+     Figure 01 · Site overview: issues and opportunities
+     ========================================== -->
+<section class="slide figure-slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>Figure 01 · Site Overview: Issues and Opportunities</div>
+    <img class="slide-figure reveal" src="../assets/figures/site-overview.en.png" alt="Site overview with issues and opportunities: 43.6 km² Coordinated Research Area, the railway heritage spine, and three key areas">
+    <p class="figure-caption reveal" data-edit>Coordinated Research Area 43.6 km² · Overall Design Area <span data-metric="site_area_sqm" data-value="11412825.4">11.4 km²</span> · three key areas 368.4 ha (all provisional outlines)</p>
+  </div>
+</section>
+
+<!-- ==========================================
+     05 · Overall spatial structure
+     ========================================== -->
+<section class="slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>04 · Overall Structure</div>
+    <h2 class="reveal" data-edit>One Spine · Three Key Areas · Five-Layer Composite Network</h2>
+    <div class="netviz reveal">
+      <div class="axis-rail">
+        <div class="axis-node"><b data-edit>Zhongzhiyuan · Nurture</b><span data-edit>192.1 ha · garden-type innovation district</span></div>
+        <div class="axis-node"><b data-edit>AI Origin · Transfer</b><span data-edit>104.3 ha · campus-adjacent innovation district</span></div>
+        <div class="axis-node"><b data-edit>Dazhongsi · Use</b><span data-edit>72.0 ha · urban innovation district</span></div>
+      </div>
+      <div class="layers">
+        <div class="layer l1"><span data-edit>Public space network</span><span data-edit>continuous · exchange · quiet interfaces</span></div>
+        <div class="layer l2"><span data-edit>Walking, cycling &amp; transfer network</span><span data-edit>city / district / block-level stitches</span></div>
+        <div class="layer l3"><span data-edit>Ecology &amp; stormwater network</span><span data-edit>habitat · stormwater · microclimate corridors</span></div>
+        <div class="layer l4"><span data-edit>Innovation &amp; public service network</span><span data-edit>six types of distributed nodes</span></div>
+        <div class="layer l5"><span data-edit>Urban observation &amp; operations network</span><span data-edit>sensing · archiving · annual update decisions</span></div>
+      </div>
+    </div>
+    <p class="small muted reveal" data-edit style="margin-top:var(--element-gap)">The layers are co-located: one cross-stitch simultaneously handles walking/cycling crossings, stormwater retention, public services, night lighting, and heritage interpretation — not five separate engineering programs.</p>
+  </div>
+</section>
+
+<!-- ==========================================
+     Figure 02 · Overall structure and functional organization
+     ========================================== -->
+<section class="slide figure-slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>Figure 02 · Overall Structure and Functional Organization</div>
+    <img class="slide-figure reveal" src="../assets/figures/land-use-structure.en.png" alt="Overall structure and functional organization: one public spine, three key areas, six types of distributed nodes, five-layer composite network">
+    <p class="figure-caption reveal" data-edit>One public spine · Nurture–Transfer–Use–Return · east & west wings · six distributed node types · five-layer composite network (structural diagram, not geographically precise)</p>
+  </div>
+</section>
+
+<!-- ==========================================
+     06 · Nurture–Transfer–Use–Return
+     ========================================== -->
+<section class="slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>05 · Three Key Areas</div>
+    <h2 class="reveal" data-edit>Nurture–Transfer–Use–Return: an urban exchange chain that only makes sense on the Jing-Zhang corridor</h2>
+    <div class="chain reveal">
+      <div class="node"><b data-edit>Nurture</b><span data-edit>Zhongzhiyuan builds prototypes and completes testing</span></div>
+      <div class="arrow">→</div>
+      <div class="node"><b data-edit>Transfer</b><span data-edit>AI Origin turns them into teachable public knowledge</span></div>
+      <div class="arrow">→</div>
+      <div class="node"><b data-edit>Use</b><span data-edit>Dazhongsi tests them against real public life</span></div>
+      <div class="arrow">→</div>
+      <div class="node"><b data-edit>Return</b><span data-edit>Data and materials flow back into the next round of renewal</span></div>
+    </div>
+    <div class="cards">
+      <div class="card reveal">
+        <p class="role" data-edit>Zhongzhiyuan AI Independent Innovation Acceleration Area · 192.1 ha</p>
+        <h3 data-edit>Prototyping and proving ground</h3>
+        <p data-edit>Ecological test plots, material trial fields, and prototype yards become the district's everyday ground floor — making and verifying the future as a watchable public landscape.</p>
+      </div>
+      <div class="card reveal">
+        <p class="role" data-edit>Beijing AI Origin Community · 104.3 ha</p>
+        <h3 data-edit>Open R&amp;D and knowledge sharing</h3>
+        <p data-edit>Knowledge production in universities and institutes becomes visible and usable to daily community life, instead of facing each other across walls.</p>
+      </div>
+      <div class="card reveal">
+        <p class="role" data-edit>Dazhongsi AI Industry Cluster · 72.0 ha</p>
+        <h3 data-edit>A living room tested by public life</h3>
+        <p data-edit>An AI service or spatial prototype only counts when residents who don't use smartphones genuinely use it here.</p>
+      </div>
+    </div>
+    <p class="small muted reveal" data-edit style="margin-top:var(--element-gap)">Area names and sizes follow the open-call announcement (DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509); boundaries are provisional geometry and will be recalculated once the official planning boundary is released.</p>
+  </div>
+</section>
+
+<!-- ==========================================
+     Figure 03 · Key-area detailed design
+     ========================================== -->
+<section class="slide figure-slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>Figure 03 · Key-Area Detailed Design</div>
+    <img class="slide-figure reveal" src="../assets/figures/key-areas.en.png" alt="Detailed design of the three key areas — Zhongzhiyuan, AI Origin, Dazhongsi: conceptual layouts, growth-section cut locations, and day/night and weekday/weekend use scenarios">
+    <p class="figure-caption reveal" data-edit>Conceptual layouts + Jing-Zhang growth-section cut locations + day/night and weekday/weekend use scenarios (conceptual diagrams, not master plans)</p>
+  </div>
+</section>
+
+<!-- ==========================================
+     07 · Six types of distributed nodes
+     ========================================== -->
+<section class="slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>06 · Distributed Nodes</div>
+    <h2 class="reveal" data-edit>Public resources: a few core facilities plus many lightweight nodes</h2>
+    <table class="reveal">
+      <tr><th>Node type</th><th>Spatial carrier</th><th>Core functions</th><th>Build level</th></tr>
+      <tr><td data-edit><b>Research translation node</b></td><td data-edit>Renewed factory halls, shared lab buildings, courtyard R&amp;D units</td><td data-edit>Joint R&amp;D, prototyping, technical services</td><td data-edit>Core</td></tr>
+      <tr><td data-edit><b>Urban testing node</b></td><td data-edit>Open blocks, test roads, adaptable public spaces</td><td data-edit>Real-scenario testing, public participation, evaluation and display</td><td data-edit>Core / community</td></tr>
+      <tr><td data-edit><b>Public service node</b></td><td data-edit>Community halls, corner service stations, transfer interfaces</td><td data-edit>Education, health, civic affairs, accessibility services</td><td data-edit>Community</td></tr>
+      <tr><td data-edit><b>Youth living node</b></td><td data-edit>Mixed housing, shared kitchens, study spaces</td><td data-edit>Housing, social life, entrepreneurship, night-time vitality</td><td data-edit>District</td></tr>
+      <tr><td data-edit><b>Heritage &amp; culture node</b></td><td data-edit>Old station houses, railway structures, linear galleries</td><td data-edit>Memory display, public education, cultural events</td><td data-edit>Core / district</td></tr>
+      <tr><td data-edit><b>Ecology &amp; materials node</b></td><td data-edit>Outdoor test gardens, material workshops, observation stations</td><td data-edit>Habitat monitoring, restoration trials, circular-construction display</td><td data-edit>District / lightweight</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ==========================================
+     08 · Jing-Zhang growth section
+     ========================================== -->
+<section class="slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>07 · Core Section</div>
+    <h2 class="reveal" data-edit>The Jing-Zhang growth section: every interface is an exchange</h2>
+    <div class="profile reveal">
+      <div class="stratum s1"><span data-edit>Adaptable R&amp;D units — demountable envelopes and independent MEP modules, reconfigurable on a 3–5 year cycle</span><span data-edit>courtyard ↔ R&amp;D: exchanging results</span></div>
+      <div class="stratum s2"><span data-edit>Shared courtyards — the inter-institutional exchange interface: equipment, samples, courses, joint experiments</span><span data-edit>ground floor ↔ courtyard: exchanging users</span></div>
+      <div class="stratum s3"><span data-edit>Open ground floors — publicly accessible: exhibitions, courses, community services, small businesses</span><span data-edit>test plots ↔ ground floor: exchanging exhibits</span></div>
+      <div class="stratum s4"><span data-edit>Ecological restoration plots — productive landscape: habitat monitoring, stormwater retention, material trials</span><span data-edit>park ↔ plots: exchanging ecological data</span></div>
+      <div class="stratum s5"><span data-edit>Railway heritage park — the continuous public ground: walking/cycling spine, heritage narrative, urban observation</span><span data-edit>shared along the whole line</span></div>
+      <div class="stratum s6"><span data-edit>Background layer · urban observation and operations network — sensing, data archiving, maintenance routes</span><span data-edit>——</span></div>
+    </div>
+    <p class="small muted reveal" data-edit style="margin-top:var(--element-gap)">Different segments draw on different slices: Zhongzhiyuan shows all five layers; AI Origin strengthens courtyard–ground floor; Dazhongsi strengthens ground floor–park. The section is the criteria drawn as form: a design that cannot say "on which layer the exchange happens" does not proceed to detailing.</p>
+  </div>
+</section>
+
+<!-- ==========================================
+     09 · Building and public-space system
+     ========================================== -->
+<section class="slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>08 · Building System</div>
+    <h2 class="reveal" data-edit>Four building prototypes — no one-off sculptural gestures</h2>
+    <div class="cards reveal">
+      <div class="card">
+        <h3 data-edit>A · Adaptive innovation hall</h3>
+        <p data-edit>Adaptive reuse of existing factory halls; a central shared hall links labs, roadshows, exhibitions, and making; independent MEP modules adapt as teams change.</p>
+      </div>
+      <div class="card">
+        <h3 data-edit>B · Courtyard R&amp;D unit</h3>
+        <p data-edit>Small-scale R&amp;D buildings around shared courtyards; shared ground floors, divisible or joinable upper floors; bridges connect campuses, parks, and the spine.</p>
+      </div>
+      <div class="card">
+        <h3 data-edit>C · Permeable public block</h3>
+        <p data-edit>Multiple ground-floor entrances, shallow floorplates, high visibility; internal walking routes continue into surrounding communities — no closed enclaves.</p>
+      </div>
+      <div class="card">
+        <h3 data-edit>D · Lightweight public station</h3>
+        <p data-edit>Demountable structures, standardized interfaces, minimal foundations; deployed as pilots first, with location and function adjusted from usage data.</p>
+      </div>
+    </div>
+    <p class="small muted reveal" data-edit style="margin-top:var(--element-gap)">Clear structural grids · linear platforms and cross-track structures · legible old-and-new in brick, steel, timber, and reused components · identity comes from public activity and structural order, not one-off sculptural skins.</p>
+  </div>
+</section>
+
+<!-- ==========================================
+     Figure 04 · Walking, transfer & blue-green network
+     ========================================== -->
+<section class="slide figure-slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>Figure 04 · Walking, Transfer &amp; Blue-Green Network</div>
+    <img class="slide-figure reveal" src="../assets/figures/mobility-bluegreen.en.png" alt="Walking, transfer and blue-green network: the spine's walking/cycling main line, three levels of cross-stitches, transit stations, and stormwater-habitat corridors">
+    <p class="figure-caption reveal" data-edit>Three levels of cross-stitching · each stitch simultaneously handles walking/cycling crossings, stormwater retention, public services, and heritage interpretation</p>
+  </div>
+</section>
+
+<!-- ==========================================
+     10 · Scenario system
+     ========================================== -->
+<section class="slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>09 · Scenario System</div>
+    <h2 class="reveal" data-edit>12 tangible scenarios, 6 user groups</h2>
+    <div class="chips reveal">
+      <span class="chip"><span class="mono">S01</span><span data-edit>Jing-Zhang environmental observatory</span></span>
+      <span class="chip"><span class="mono">S02</span><span data-edit>Urban eco-restoration garden</span></span>
+      <span class="chip"><span class="mono">S03</span><span data-edit>AI community service station</span></span>
+      <span class="chip"><span class="mono">S04</span><span data-edit>Youth co-living residence</span></span>
+      <span class="chip"><span class="mono">S05</span><span data-edit>Accessible mobility assistant</span></span>
+      <span class="chip"><span class="mono">S06</span><span data-edit>Shared low-speed delivery corridor</span></span>
+      <span class="chip"><span class="mono">S07</span><span data-edit>Railway memory digital archive</span></span>
+      <span class="chip"><span class="mono">S08</span><span data-edit>Circular materials workshop</span></span>
+      <span class="chip"><span class="mono">S09</span><span data-edit>Urban test street</span></span>
+      <span class="chip"><span class="mono">S10</span><span data-edit>University–industry shared lab platform</span></span>
+      <span class="chip"><span class="mono">S11</span><span data-edit>International innovation forum</span></span>
+      <span class="chip"><span class="mono">S12</span><span data-edit>Four-season public calendar</span></span>
+    </div>
+    <div class="cards reveal" style="margin-top:var(--content-gap)">
+      <div class="card"><p data-edit><b>Community residents</b> — convenient services, environmental quality, privacy</p></div>
+      <div class="card"><p data-edit><b>Young researchers and students</b> — low-cost workspaces, short stays, shared equipment</p></div>
+      <div class="card"><p data-edit><b>Startups and corporate teams</b> — real-scenario validation and results display</p></div>
+      <div class="card"><p data-edit><b>Universities and research institutes</b> — cross-institutional platforms, long-term test plots</p></div>
+      <div class="card"><p data-edit><b>Children, seniors, and users with disabilities</b> — accessibility, low cognitive load</p></div>
+      <div class="card"><p data-edit><b>Visitors and international partners</b> — a clear narrative, legible demonstrations</p></div>
+    </div>
+    <p class="small muted reveal" data-edit style="margin-top:var(--element-gap)">Every scenario specifies its users, spatial carrier, operator, data boundaries, and exit conditions; maintenance and operations staff enter the back-of-house routing design as an implicit seventh user group.</p>
+  </div>
+</section>
+
+<!-- ==========================================
+     11 · The nine-step cycle of a single component
+     ========================================== -->
+<section class="slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>10 · Resource Journey</div>
+    <h2 class="reveal" data-edit>The nine-step cycle of a single component</h2>
+    <div class="journey reveal">
+      <div class="jstep"><span class="n">01</span><b data-edit>Register</b><span data-edit>Idle components enter the component bank and receive material passports</span></div>
+      <div class="jstep"><span class="n">02</span><b data-edit>Test</b><span data-edit>Third-party structural and hazardous-substance testing</span></div>
+      <div class="jstep"><span class="n">03</span><b data-edit>Grade</b><span data-edit>Structural reuse · non-structural · display only</span></div>
+      <div class="jstep"><span class="n">04</span><b data-edit>Publish</b><span data-edit>Searchable online; designers and communities can apply</span></div>
+      <div class="jstep"><span class="n">05</span><b data-edit>Redesign</b><span data-edit>Designers and community assemblies decide new uses together</span></div>
+      <div class="jstep"><span class="n">06</span><b data-edit>Reinstall</b><span data-edit>Reversible connections into public space</span></div>
+      <div class="jstep"><span class="n">07</span><b data-edit>Monitor</b><span data-edit>Usage frequency, maintenance, and feedback continuously recorded</span></div>
+      <div class="jstep"><span class="n">08</span><b data-edit>Assess</b><span data-edit>Repair, downgrade, or retire</span></div>
+      <div class="jstep"><span class="n">09</span><b data-edit>Return</b><span data-edit>Full lifecycle archive made public</span></div>
+    </div>
+    <p class="lede reveal" data-edit style="margin-top:var(--content-gap)">Every component carries a scannable origin story: which stretch of railway, which building it came from, how many lives it has lived — Jing-Zhang memory sits in the benches, canopies, and display racks citizens use every day.</p>
+  </div>
+</section>
+
+<!-- ==========================================
+     12 · Six innovation-ecosystem packages
+     ========================================== -->
+<section class="slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>11 · Project Packages</div>
+    <h2 class="reveal" data-edit>Six innovation-ecosystem packages: linking spatial construction with industrial operations</h2>
+    <table class="reveal">
+      <tr><th>Package</th><th>Spatial carrier</th><th>Partners</th><th>Public return</th></tr>
+      <tr><td data-edit><b class="mono copper">E01</b> Shared lab facilities</td><td data-edit>Innovation halls, R&amp;D courtyards</td><td data-edit>Universities, research institutes, enterprises</td><td data-edit>Open equipment hours, public courses</td></tr>
+      <tr><td data-edit><b class="mono copper">E02</b> Real-scenario urban testing</td><td data-edit>Test streets, community service stations</td><td data-edit>Enterprises, communities, authorities</td><td data-edit>Published results, exit mechanism for failures</td></tr>
+      <tr><td data-edit><b class="mono copper">E03</b> Youth residency &amp; co-creation</td><td data-edit>Youth residences, shared ground floors</td><td data-edit>Universities, foundations, operators</td><td data-edit>Community research topics, talent retention</td></tr>
+      <tr><td data-edit><b class="mono copper">E04</b> Circular construction platform</td><td data-edit>Material workshops, renewed buildings</td><td data-edit>Design institutes, contractors</td><td data-edit>Material passports, component bank, public training</td></tr>
+      <tr><td data-edit><b class="mono copper">E05</b> Open heritage archive</td><td data-edit>Memory platforms, digital archive rooms</td><td data-edit>Archives, communities, cultural teams</td><td data-edit>Publicly accessible archives and oral histories</td></tr>
+      <tr><td data-edit><b class="mono copper">E06</b> Public-value procurement</td><td data-edit>Distributed nodes, online platform</td><td data-edit>Public bodies, enterprises, third-party evaluators</td><td data-edit>Contract renewal based on verifiable public outcomes</td></tr>
+    </table>
+    <p class="small muted reveal" data-edit style="margin-top:var(--element-gap)">Unified rules for open hours, data logging, results archiving, and annual evaluation — space sharing never stays nominal.</p>
+  </div>
+</section>
+
+<!-- ==========================================
+     13 · Three falsifiable verification projects
+     ========================================== -->
+<section class="slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>12 · Early Verification</div>
+    <h2 class="reveal" data-edit>Three falsifiable protocols — with continue, stop, and restore written in</h2>
+    <div class="cards reveal">
+      <div class="card">
+        <p class="role" data-edit>P1 · Zhongzhiyuan</p>
+        <h3 data-edit>Ecological baseline &amp; restoration plots</h3>
+        <p data-edit>At least one full growing season of soil, habitat, and microclimate baselines; intervention and control plots side by side on the same site.</p>
+        <p data-edit><span class="badge badge-concept">FALSIFIER</span> If the intervention plot shows no meaningful improvement after a full cycle — publicly admit failure; the strategy leaves the toolkit.</p>
+      </div>
+      <div class="card">
+        <p class="role" data-edit>P2 · Dazhongsi</p>
+        <h3 data-edit>AI community services &amp; accessible public stations</h3>
+        <p data-edit>Human and digital services run in parallel long-term; data minimization, human fallback, opt-out.</p>
+        <p data-edit><span class="badge badge-concept">FALSIFIER</span> If vulnerable-group satisfaction falls below the human-only baseline — admit the AI intervention fails and revert to human service.</p>
+      </div>
+      <div class="card">
+        <p class="role" data-edit>P3 · Zhongzhiyuan workshop</p>
+        <h3 data-edit>Circular materials &amp; demountable components</h3>
+        <p data-edit>Reused and new components installed side by side and logged together; fire-safety and durability testing as a gate.</p>
+        <p data-edit><span class="badge badge-concept">FALSIFIER</span> If maintenance costs exceed the new-build control with no improvement path — scale back to display use; no rollout.</p>
+      </div>
+    </div>
+    <p class="small muted reveal" data-edit style="margin-top:var(--element-gap)">Threshold numbers stay blank until baseline studies are complete, then are confirmed and published by the review panel — no false precision. Auntie Wang doesn't need to know what a large model is; her waiting time decides whether this system continues to exist.</p>
+  </div>
+</section>
+
+<!-- ==========================================
+     14 · Three brand-defining public venues
+     ========================================== -->
+<section class="slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>13 · Brand Anchors</div>
+    <h2 class="reveal" data-edit>Master mark and visual identity rules</h2>
+    <div class="brand-system reveal">
+      <div class="brand-mark"><img src="../assets/figures/jingzhang-growth-mark.svg" alt="Original Jingzhang Growth Network mark: branching double rails, exchange nodes, and an open return loop"></div>
+      <div class="brand-rules">
+        <div class="brand-rule"><h3 data-edit>Construction</h3><p data-edit>Jing-Zhang double rails + 人 branching form + Nurture–Transfer–Use–Return node loop; original vector geometry.</p></div>
+        <div class="brand-rule"><h3 data-edit>Color</h3><p data-edit>Ink axis, copper exchange, celadon return, signal-blue growth interface; monochrome is all black or all white.</p></div>
+        <div class="brand-rule"><h3 data-edit>Size &amp; clear space</h3><p data-edit>Print ≥18 mm; screen ≥72 px; clear space ≥ central node diameter; no stretch, rotation, or shadow.</p></div>
+        <div class="brand-rule"><h3 data-edit>Bilingual hierarchy</h3><p data-edit>Primary: Noto Serif CJK SC 700; secondary: IBM Plex Mono 500; about 3:1.</p></div>
+        <div class="brand-rule"><h3 data-edit>agent.5 wayfinding</h3><p data-edit>Inherits rail lines, nodes, and color hierarchy only as directional syntax; subordinate to the master mark.</p></div>
+        <div class="brand-rule"><h3 data-edit>agent.6 events</h3><p data-edit>Master mark + event name + year; L1–L3 use names and node colors, never separate master logos.</p></div>
+      </div>
+    </div>
+    <p class="small muted reveal" data-edit style="margin-top:var(--element-gap)">Where we come from · how we read the present · where we go together: L1 Memory Platform, L2 Urban Intelligence Observatory, and L3 Future Public Life Hall carry one master identity, not competing marks.</p>
+  </div>
+</section>
+
+<!-- ==========================================
+     15 · AI in the spatial operations loop
+     ========================================== -->
+<section class="slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>14 · Operations Loop</div>
+    <h2 class="reveal" data-edit>AI inside the baseline–service–operations–evaluation loop</h2>
+    <div class="loop reveal" style="margin-bottom:var(--content-gap)">
+      <span class="box" data-edit>Environmental &amp; usage baseline</span><span class="arrow">→</span>
+      <span class="box" data-edit>Problem identification</span><span class="arrow">→</span>
+      <span class="box" data-edit>Small-scale spatial intervention</span><span class="arrow">→</span>
+      <span class="box" data-edit>Real-scenario operation</span><span class="arrow">→</span>
+      <span class="box" data-edit>Public feedback &amp; data evaluation</span><span class="arrow">→</span>
+      <span class="box decision" data-edit>continue / adjust / exit</span>
+    </div>
+    <div class="cards reveal">
+      <div class="card"><p data-edit>AI's role is limited to assisting identification, prediction, matching, and evaluation; major public decisions remain explainable and human-accountable.</p></div>
+      <div class="card"><p data-edit>Data boundaries: collection tied to explicit public purposes; anonymized aggregate data preferred; algorithmic scores never replace eligibility judgments for public services.</p></div>
+      <div class="card"><p data-edit>Before a scenario goes live: responsible party, retention period, appeal and exit mechanisms are defined; the observatory publishes indicator definitions, data timestamps, and uncertainty.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     16 · Implementation and operations
+     ========================================== -->
+<section class="slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>15 · Phasing &amp; Operations</div>
+    <h2 class="reveal" data-edit>Four implementation phases, a five-party operating structure</h2>
+    <table class="reveal">
+      <tr><th>Phase</th><th>Timeframe</th><th>Key actions</th><th>Outcomes</th></tr>
+      <tr><td data-edit><b>0 Baseline &amp; consensus</b></td><td data-edit>Months 0–12</td><td data-edit>Site surveys, heritage &amp; ecological baselines, temporary opening</td><td data-edit>Project list, baseline database, first operating partners</td></tr>
+      <tr><td data-edit><b>1 Early connections</b></td><td data-edit>Years 1–2</td><td data-edit>Cross-stitches, lightweight public stations, three verification projects</td><td data-edit>First usable public network segment and verification reports</td></tr>
+      <tr><td data-edit><b>2 Key areas</b></td><td data-edit>Years 2–5</td><td data-edit>Stock renewal, core nodes, public ground floors</td><td data-edit>Three key areas become recognizable models</td></tr>
+      <tr><td data-edit><b>3 Network expansion</b></td><td data-edit>Year 5+</td><td data-edit>Replicate nodes by evaluation, complete the network, update dynamically</td><td data-edit>Corridor-wide coordinated operations and an outward-facing toolkit</td></tr>
+    </table>
+    <div class="chips reveal" style="margin-top:var(--content-gap)">
+      <span class="chip"><span data-edit>Public platform authority · goals &amp; access</span></span>
+      <span class="chip"><span data-edit>Professional operating team · leasing &amp; maintenance</span></span>
+      <span class="chip"><span data-edit>University research alliance · monitoring &amp; review</span></span>
+      <span class="chip"><span data-edit>Community assembly mechanism · oversight &amp; feedback</span></span>
+      <span class="chip"><span data-edit>Enterprise project partners · technology &amp; risk-sharing</span></span>
+    </div>
+    <p class="small muted reveal" data-edit style="margin-top:var(--element-gap)">Timeframes are conceptual and must be corrected once ownership, approvals, funding, and engineering conditions are clear.</p>
+  </div>
+</section>
+
+<!-- ==========================================
+     Figure 05 · Phasing & evidence dashboard
+     ========================================== -->
+<section class="slide figure-slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>Figure 05 · Phasing &amp; Evidence Dashboard</div>
+    <img class="slide-figure reveal" src="../assets/figures/metrics-evidence.en.png" alt="Implementation phasing and evidence dashboard: four phases, three falsifiable verification protocol cards, and the baseline–intervention–evaluation loop">
+    <p class="figure-caption reveal" data-edit>Four-phase implementation · three falsifiable verification protocol cards · baseline–intervention–evaluation–scaling loop</p>
+  </div>
+</section>
+
+<!-- ==========================================
+     17 · agent.4 standalone output
+     ========================================== -->
+<section class="slide">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>16 · agent.4 Standalone Output</div>
+    <h2 class="reveal" data-edit>Recognition display system + public-space component library</h2>
+    <table class="reveal"><thead><tr><th data-edit>Governance / kit</th><th data-edit>Rule</th><th data-edit>Spatial mapping</th><th data-edit>Exit</th></tr></thead><tbody>
+      <tr><td data-edit><b>Candidate display</b></td><td data-edit>Public-value criteria → open nomination → evidence review → objection period; candidacy is not an award or endorsement</td><td data-edit>L1 memory · L2 data/failure archive · L3 open works</td><td data-edit>Annual review; remove invalid evidence, unresolved disputes, or lost public value and retain corrections</td></tr>
+      <tr><td data-edit><b>H Display/archive</b></td><td data-edit>High-contrast finding → easy-read text/diagram → QR/audio/full evidence; never phone-only</td><td data-edit>Modular panels at L1–L3; stations carry site-specific content only</td><td data-edit>Reversible modules return to storage; migrate digital links to archive</td></tr>
+      <tr><td data-edit><b>R Rest/exchange</b></td><td data-edit>Backs/arms, wheelchair companion space, shade/rain cover; preserve turning and clear passage</td><td data-edit>Quiet rest points at L1–L3; stations next to staffed service</td><td data-edit>Relocate/retire if passage or maintenance limits fail</td></tr>
+      <tr><td data-edit><b>W Wayfinding/service</b></td><td data-edit>At least two visual/tactile/audio/plain-language channels; Chinese/English + human explanation</td><td data-edit>One grammar across L1–L3; stations show services, accessible route, and exit</td><td data-edit>Cover and update wrong directions immediately; retain revision log</td></tr>
+    </tbody></table>
+    <p class="small muted reveal" data-edit style="margin-top:var(--element-gap)">Copyright red line: register author, license, source, AI assistance, and expiry; exclude unlicensed photos, institutional marks, personal information, and non-public data; pause disputed content. No physical installation before site, heritage, and operations permission.</p>
+  </div>
+</section>
+
+<!-- ==========================================
+     18 · Closing: boundaries and red lines
+     ========================================== -->
+<section class="slide closing">
+  <div class="slide-content">
+    <div class="kicker reveal" data-edit>17 · Boundary Statement</div>
+    <h2 class="reveal" data-edit>What we commit not to do</h2>
+    <div class="cards reveal">
+      <div class="card"><p data-edit>Never substitute robot counts, screen counts, or algorithm names for public value;</p></div>
+      <div class="card"><p data-edit>No claims of ecological improvement without baselines; no claims of pollution remediation without testing;</p></div>
+      <div class="card"><p data-edit>New bio-based materials are tested first and enter only tested non-structural scenarios;</p></div>
+      <div class="card"><p data-edit>All scopes, metrics, and phasing are labeled conceptual — none masquerade as statutory conclusions.</p></div>
+    </div>
+    <p class="reveal" data-edit style="margin-top:var(--content-gap);font-size:clamp(1rem,2.4vw,1.5rem);color:#fff">Along the Jing-Zhang corridor, the city is no longer built once — <span style="color:var(--copper)">it renews through continuous exchange.</span></p>
+    <p class="small reveal" data-edit style="margin-top:var(--element-gap);color:#9aa0b4;font-family:var(--font-mono)">JINGZHANG ADAPTIVE COMMONS · 京张生长网络 · Submission Release v1.0.3 · 2026-08-26</p>
+  </div>
+</section>
+
+<script>
+/* ===========================================
+   SLIDE PRESENTATION CONTROLLER
+   keyboard / wheel (native snap) / touch / progress bar / nav dots
+   =========================================== */
+class SlidePresentation {
+  constructor() {
+    this.slides = Array.from(document.querySelectorAll(".slide"));
+    this.currentSlide = 0;
+    this.navDotsContainer = document.getElementById("navDots");
+    this.topTabs = Array.from(document.querySelectorAll("#topTabs a[data-goto]"));
+    this.setupTopTabs();
+    this.setupNavDots();
+    this.setupIntersectionObserver();
+    this.setupKeyboardNav();
+    this.setupTouchNav();
+    this.setupProgressBar();
+  }
+  setupNavDots() {
+    // Always clear first — avoids duplicate dots if outerHTML was re-saved
+    this.navDotsContainer.innerHTML = "";
+    this.slides.forEach((_, i) => {
+      const a = document.createElement("a");
+      a.href = "#";
+      a.setAttribute("aria-label", "Slide " + (i + 1));
+      a.addEventListener("click", (e) => { e.preventDefault(); this.goTo(i); });
+      this.navDotsContainer.appendChild(a);
+    });
+  }
+  setupIntersectionObserver() {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          this.currentSlide = this.slides.indexOf(entry.target);
+          this.updateDots();
+        }
+      });
+    }, { threshold: 0.55 });
+    this.slides.forEach((s) => io.observe(s));
+    this.slides[0].classList.add("visible");
+  }
+  setupKeyboardNav() {
+    document.addEventListener("keydown", (e) => {
+      if (e.target.getAttribute && e.target.getAttribute("contenteditable") === "true") return;
+      const next = ["ArrowRight", "ArrowDown", " ", "PageDown"].includes(e.key);
+      const prev = ["ArrowLeft", "ArrowUp", "PageUp"].includes(e.key);
+      if (next) { e.preventDefault(); this.goTo(this.currentSlide + 1); }
+      else if (prev) { e.preventDefault(); this.goTo(this.currentSlide - 1); }
+      else if (e.key === "Home") { e.preventDefault(); this.goTo(0); }
+      else if (e.key === "End") { e.preventDefault(); this.goTo(this.slides.length - 1); }
+    });
+  }
+  setupTouchNav() {
+    let startY = null;
+    document.addEventListener("touchstart", (e) => { startY = e.touches[0].clientY; }, { passive: true });
+    document.addEventListener("touchend", (e) => {
+      if (startY === null) return;
+      const dy = startY - e.changedTouches[0].clientY;
+      if (Math.abs(dy) > 60) this.goTo(this.currentSlide + (dy > 0 ? 1 : -1));
+      startY = null;
+    }, { passive: true });
+  }
+  setupProgressBar() {
+    const bar = document.getElementById("progressBar");
+    const update = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + "%";
+    };
+    document.addEventListener("scroll", update, { passive: true });
+    update();
+  }
+  setupTopTabs() {
+    // Top tabs: click to jump to the matching slide
+    this.topTabs.forEach((a) => {
+      a.addEventListener("click", (e) => {
+        e.preventDefault();
+        this.goTo(parseInt(a.dataset.goto, 10));
+      });
+    });
+  }
+  updateDots() {
+    Array.from(this.navDotsContainer.children).forEach((d, i) =>
+      d.classList.toggle("active", i === this.currentSlide));
+    // Sync top-tab highlight and scroll the active tab into view
+    this.topTabs.forEach((a, i) => {
+      const active = parseInt(a.dataset.goto, 10) === this.currentSlide;
+      a.classList.toggle("active", active);
+      if (active) a.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+    });
+  }
+  goTo(i) {
+    const idx = Math.max(0, Math.min(this.slides.length - 1, i));
+    this.slides[idx].scrollIntoView({ behavior: "smooth" });
+  }
+}
+const deck = new SlidePresentation();
+
+/* ===========================================
+   INLINE EDITING
+   E key / corner hotzone to enter; autosave to localStorage; Ctrl/⌘+S to export
+   =========================================== */
+const LS_KEY = "jz-adaptive-commons-edits-en";
+const editor = {
+  isActive: false,
+  toggleEditMode() {
+    this.isActive = !this.isActive;
+    document.body.classList.toggle("edit-active", this.isActive);
+    document.getElementById("editToggle").classList.toggle("active", this.isActive);
+    document.getElementById("editBanner").classList.toggle("active", this.isActive);
+    document.querySelectorAll("[data-edit]").forEach((el) => {
+      if (this.isActive) el.setAttribute("contenteditable", "true");
+      else el.removeAttribute("contenteditable");
+    });
+    if (!this.isActive) this.save();
+  },
+  save() {
+    const data = {};
+    document.querySelectorAll("[data-edit]").forEach((el, i) => { data[i] = el.innerHTML; });
+    localStorage.setItem(LS_KEY, JSON.stringify(data));
+  },
+  load() {
+    try {
+      const data = JSON.parse(localStorage.getItem(LS_KEY) || "{}");
+      document.querySelectorAll("[data-edit]").forEach((el, i) => {
+        if (data[i] !== undefined) el.innerHTML = data[i];
+      });
+    } catch (e) { /* ignore corrupt storage */ }
+  },
+  exportFile() {
+    // Strip edit state before capturing outerHTML so the saved file opens cleanly
+    const editableEls = Array.from(document.querySelectorAll("[contenteditable]"));
+    editableEls.forEach((el) => el.removeAttribute("contenteditable"));
+    document.body.classList.remove("edit-active");
+    const toggle = document.getElementById("editToggle");
+    const banner = document.getElementById("editBanner");
+    toggle?.classList.remove("active", "show");
+    banner?.classList.remove("active", "show");
+
+    const html = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+
+    if (this.isActive) {
+      document.body.classList.add("edit-active");
+      editableEls.forEach((el) => el.setAttribute("contenteditable", "true"));
+      toggle?.classList.add("active");
+      banner?.classList.add("active");
+    }
+
+    const blob = new Blob([html], { type: "text/html" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "jingzhang-adaptive-commons.en.html";
+    a.click();
+    URL.revokeObjectURL(a.href);
+  }
+};
+editor.load();
+
+// Autosave on input while editing
+document.addEventListener("input", (e) => {
+  if (editor.isActive && e.target.hasAttribute && e.target.hasAttribute("data-edit")) editor.save();
+});
+
+// Toggle button click
+document.getElementById("editToggle").addEventListener("click", () => editor.toggleEditMode());
+
+// Hotzone hover with 400ms grace period (CSS ~ sibling approach breaks on pointer-events)
+const hotzone = document.getElementById("editHotzone");
+const editToggle = document.getElementById("editToggle");
+let hideTimeout = null;
+hotzone.addEventListener("mouseenter", () => { clearTimeout(hideTimeout); editToggle.classList.add("show"); });
+hotzone.addEventListener("mouseleave", () => {
+  hideTimeout = setTimeout(() => { if (!editor.isActive) editToggle.classList.remove("show"); }, 400);
+});
+editToggle.addEventListener("mouseenter", () => clearTimeout(hideTimeout));
+editToggle.addEventListener("mouseleave", () => {
+  hideTimeout = setTimeout(() => { if (!editor.isActive) editToggle.classList.remove("show"); }, 400);
+});
+hotzone.addEventListener("click", () => editor.toggleEditMode());
+
+// Keyboard: E toggles edit mode; Ctrl/⌘+S exports
+document.addEventListener("keydown", (e) => {
+  if ((e.key === "e" || e.key === "E") && !(e.target.getAttribute && e.target.getAttribute("contenteditable") === "true")) {
+    editor.toggleEditMode();
+  }
+  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "s") {
+    e.preventDefault();
+    editor.save();
+    editor.exportFile();
+  }
+});
+</script>
+</body>
+</html>

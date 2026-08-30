@@ -4,7 +4,7 @@
     {
       "id": "A-BOUNDARY-001",
       "status": "blocked_on_organizer_data",
-      "statement": "三层范围与三处重点区的精确官方 polygon 截至 2026-08-08 未公开发布；本包使用 brief/site-package/geometry/provisional_boundaries.geojson 的临时替代边界。",
+      "statement": "三层范围与三处重点区的精确官方 polygon 未公开发布；本包使用 brief/site-package/geometry/provisional_boundaries.geojson 的临时替代边界。**这句此前写作「截至 2026-08-08 未公开发布」——一个只有人去看才会更新的日期，而它所依据的条件本身是可查的**：组织方自己的来源登记册把该文件登记为 `SRC-PROVISIONAL-BOUNDARIES-2026`，`authority_level: provisional`，并在 `not_usable_for` 里排除 official redline、statutory planning control、precise area calculation 与 formal professional scoring 四项用途。闸门 `boundary_state_qa` 每次构建从 `upstream/main` 现读这条记录；它一旦不再如此，本条即失效并须改写，而不是让日期继续变旧（E312）。",
       "impact": "全部面积、比例与落位结论均为临时值，不得作为 official redline、审批依据或精确面积依据。官方数据发布后须整体重算，不得只替换单个文件。",
       "derivation_zh": "官方 polygon 未发布，因此三层范围与三处重点区的边界取自 `brief/site-package/geometry/provisional_boundaries.geojson`——由维护者依据公告文字四至绘制的临时几何。本包不另行推定边界，也不对该几何做平滑或外扩：**换一份边界就要整体重算，而不是局部微调**，因为面积、占比、剖分归属与三处重点区的相对位置全部由它派生。上游登记表把该文件记为 `usable_for_formal: provisional_only`，并把「精确面积计算」列入禁止用途；本包的面积数字因此一律标 `evidence_class: provisional`，并在正文与图纸上把它画成虚线。",
       "derivation_en": "The official polygon is unpublished, so the three scope levels and three key areas come from `brief/site-package/geometry/provisional_boundaries.geojson` — provisional geometry the maintainers drew from the announcement's written extents. This package does not infer its own boundary and does not smooth or buffer that one: **a different boundary means recomputing everything, not adjusting something**, because areas, shares, partition membership and the relative position of the three key areas all derive from it.",
@@ -17,7 +17,9 @@
         "building_footprint_area_sqm",
         "green_ratio",
         "green_ratio_in_partition",
+        "green_space_area_sqm",
         "industry_test_scenario_count",
+        "key_area_area_sqm",
         "key_area_count",
         "land_use_class_count",
         "land_use_feature_count",
@@ -25,18 +27,23 @@
         "phase_count",
         "phased_share_of_design_scope",
         "phasing_union_area_sqm",
+        "public_space_area_sqm",
         "public_space_ratio",
         "road_feature_count",
-        "site_area_sqm"
+        "robot_pilot_area_sqm",
+        "safety_review_area_sqm",
+        "site_area_sqm",
+        "test_field_area_sqm"
       ],
-      "affects_metric_count": 17,
+      "affects_metric_count": 23,
       "owner": "organizer",
       "next_action_zh": "组织方：发布三层范围与三处重点区的法定 polygon。在此之前本包全部面积类数字为临时值。",
       "next_action_en": "Organizer: publish the statutory polygons for the three scope levels and three key areas. Until then every area figure here is provisional.",
       "if_wrong_en": "If the official polygon differs materially from the provisional geometry, every area figure, the point-by-point land-use partition and the chainage of the three key areas must be recomputed. **The direction of the conclusions does not change — the closure mechanism does not depend on boundary precision — but every quantity does.** The distinction is written here because it decides which parts of this proposal have to be redone and which do not.",
       "what_would_close_it_en": "The authorities publish the statutory polygons for the three scope levels and the key areas.",
       "owner_means_zh": "只有主办方或相应主管部门发布数据才能关闭；本包再做多少工作都关不掉",
-      "owner_means_en": "closable only by the organiser or the relevant authority publishing data; no amount of work by this package closes it"
+      "owner_means_en": "closable only by the organiser or the relevant authority publishing data; no amount of work by this package closes it",
+      "statement_en": "The precise official polygons for the three scope levels and the three key areas are not published; this package uses the provisional stand-in boundaries in brief/site-package/geometry/provisional_boundaries.geojson. This sentence used to read 'not published as of 2026-08-08' - a date only a person re-reading it would update, while the condition behind it is checkable: the organisers' own source registry records that file as SRC-PROVISIONAL-BOUNDARIES-2026 with authority_level provisional, and its not_usable_for list rules out official redline, statutory planning control, precise area calculation and formal professional scoring. boundary_state_qa re-reads that record from upstream/main on every build; the moment it no longer reads this way, this assumption fails and must be rewritten rather than left with a date going quietly stale (E312)."
     },
     {
       "id": "A-CONTROLS-001",
@@ -61,7 +68,8 @@
       "if_wrong_en": "If the published controls conflict with this proposal's spatial intent, what is affected is **development intensity and massing**, not the levelling network. The design-depth matrix marks the affected entries with `completeness_limited_by` and separates ownership: the plot ratio is an organiser gap, the codes this package never obtained are its own.",
       "what_would_close_it_en": "The statutory control conditions or a dedicated study are published.",
       "owner_means_zh": "一部分待官方发布，一部分是本方案自己的欠缺——分开写，不合并到组织方名下",
-      "owner_means_en": "partly awaiting an official publication, partly this proposal's own shortfall — written separately rather than booked wholesale against the organiser"
+      "owner_means_en": "partly awaiting an official publication, partly this proposal's own shortfall — written separately rather than booked wholesale against the organiser",
+      "statement_en": "Floor area ratio, building height, building density, setbacks, road redlines, ownership, utilities and engineering constraints are governed by official regulatory-plan conditions and specialist appraisal, not by anything stated here."
     },
     {
       "id": "A-HERITAGE-001",
@@ -74,15 +82,16 @@
       "what_would_close_it_zh": "文物、水务与园林部门发布相应保护范围的 GIS 图层。",
       "affects_metrics": [],
       "affects_metric_count": 0,
-      "carries_no_metric_note_zh": "**本包没有任何已发布的数字建立在这条假设上。** 这不是疏漏，是这条假设的性质：它若失效，`metrics.json` 里不会有任何一个值改变，因此**任何对数字的检查都抓不到它**。上面的 `if_wrong_zh` 说明了失效会长什么样；能发现它的只有外部判断，不是本包的闸门。把它单列并写明这一点，是本方案能对它做的全部。",
-      "carries_no_metric_note_en": "**No published number in this package rests on this assumption.** That is not an oversight but the nature of it: if it fails, no value in `metrics.json` changes, so **no check on the numbers can catch it**. `if_wrong_zh` above says what failure would look like; only outside judgement can detect it, not this package's gates. Listing it separately and saying so is the whole of what this proposal can do about it.",
       "owner": "organizer",
       "next_action_zh": "组织方：由文物、水务与园林部门发布相应保护范围的 GIS 图层。",
       "next_action_en": "Organizer: have the heritage, water and parks authorities publish the GIS layers for their respective protection zones.",
       "if_wrong_en": "If a point falls inside a protection zone it can be removed without damage by the construction above, and the network stands with one third-order point fewer — a graded network allows points to be added and removed. **What does fail is that point's monthly reading date**, which must move to a neighbouring point.",
       "what_would_close_it_en": "The heritage, water and parks authorities publish the GIS layers for their protection zones.",
       "owner_means_zh": "只有主办方或相应主管部门发布数据才能关闭；本包再做多少工作都关不掉",
-      "owner_means_en": "closable only by the organiser or the relevant authority publishing data; no amount of work by this package closes it"
+      "owner_means_en": "closable only by the organiser or the relevant authority publishing data; no amount of work by this package closes it",
+      "statement_en": "Official GIS layers for heritage protection zones, construction control areas, blue lines and green lines - including the Tsinghua Garden station site - remain a data gap.",
+      "carries_no_metric_note_zh": "**本包没有任何已发布的数字建立在这条假设上。** 这不是疏漏，是这条假设的性质：它若失效，`metrics.json` 里不会有任何一个值改变，因此**任何对数字的检查都抓不到它**。上面的 `if_wrong_zh` 说明了失效会长什么样；能发现它的只有外部判断，不是本包的闸门。把它单列并写明这一点，是本方案能对它做的全部。",
+      "carries_no_metric_note_en": "**No published number in this package rests on this assumption.** That is not an oversight but the nature of it: if it fails, no value in `metrics.json` changes, so **no check on the numbers can catch it**. `if_wrong_zh` above says what failure would look like; only outside judgement can detect it, not this package's gates. Listing it separately and saying so is the whole of what this proposal can do about it."
     },
     {
       "id": "A-CLOSURE-001",
@@ -94,16 +103,21 @@
       "if_wrong_zh": "若首轮试验的 f 远超预期限差，机制的应答是**整段退回复测并降级为无AI等价服务**——这正是它设计出来要做的事，不是它的失败。真正会推翻本方案的结果是：**f 无法被稳定测出**（不同主体读数不可比），那说明限差口径本身没定义好。",
       "what_would_close_it_zh": "首轮闭合试验运行满一个复测周期并公开读数。",
       "affects_metrics": [
-        "benchmark_count"
+        "benchmark_count",
+        "non_ai_path_coverage",
+        "resident_initiated_remeasurement_count",
+        "scenario_closure_error_f",
+        "tolerance_pass_rate"
       ],
-      "affects_metric_count": 1,
+      "affects_metric_count": 5,
       "owner": "operator_after_award",
       "next_action_zh": "须由实施主体在授标后运行首轮闭合试验满一个复测周期并公开读数——投标阶段无法产生这个数，本包不假装有。",
       "next_action_en": "An operating body must run the first closure trial for a full re-survey cycle after award and publish the readings. No submission stage can produce this number, and this package does not pretend to have it.",
       "if_wrong_en": "If the first trial's f greatly exceeds the expected tolerance, the mechanism's response is to **send the stretch back for re-survey and fall back to the AI-off equivalent service** — which is what it was designed to do, not a failure of it. The result that would actually overturn this proposal is that **f cannot be measured stably at all** — readings by different parties not being comparable — which would mean the tolerance itself was never properly defined.",
       "what_would_close_it_en": "The first closure trial runs for a full re-survey cycle and its readings are published.",
       "owner_means_zh": "须由授标后的实施主体在真实运行中产生，投标阶段无法产生",
-      "owner_means_en": "must be produced in real operation by an implementing body after award; no submission stage can produce it"
+      "owner_means_en": "must be produced in real operation by an implementing body after award; no submission stage can produce it",
+      "statement_en": "Closure error f, the tolerance-F pass rate, non-AI equivalent path coverage and the count of resident-initiated re-measurements all currently have no baseline data."
     },
     {
       "id": "A-CLOSURE-002",
@@ -114,22 +128,26 @@
       "derivation_en": "This is the **most fragile assumption in the mechanism**, which is why it stands alone. For closure error to mean anything, the parties reading at each benchmark must be independent; if all four review categories are staffed by one institution, or use one question set and one model, the closure error shrinks systematically — **the mechanism reports \\u201cwithin tolerance\\u201d having measured nothing.**",
       "if_wrong_zh": "若独立性不成立，**本方案的核心量纲失效**，且失效方式是隐蔽的：f 会偏小而非偏大，所以看起来一切正常。这是本方案自己指出的、无法靠内部检查发现的失效模式——唯一的应答是把读数主体的构成也公开留档，供外部判断独立性是否成立。**本方案不声称已解决这一条。**",
       "what_would_close_it_zh": "把每次读数的主体归属公开留档，并由外部对独立性作独立判断——这不是一次性可闭合的假设，而是须持续监测的一条。",
-      "affects_metrics": [],
-      "affects_metric_count": 0,
-      "carries_no_metric_note_zh": "**本包没有任何已发布的数字建立在这条假设上。** 这不是疏漏，是这条假设的性质：它若失效，`metrics.json` 里不会有任何一个值改变，因此**任何对数字的检查都抓不到它**。上面的 `if_wrong_zh` 说明了失效会长什么样；能发现它的只有外部判断，不是本包的闸门。把它单列并写明这一点，是本方案能对它做的全部。",
-      "carries_no_metric_note_en": "**No published number in this package rests on this assumption.** That is not an oversight but the nature of it: if it fails, no value in `metrics.json` changes, so **no check on the numbers can catch it**. `if_wrong_zh` above says what failure would look like; only outside judgement can detect it, not this package's gates. Listing it separately and saying so is the whole of what this proposal can do about it.",
+      "affects_metrics": [
+        "non_ai_path_coverage",
+        "resident_initiated_remeasurement_count",
+        "scenario_closure_error_f",
+        "tolerance_pass_rate"
+      ],
+      "affects_metric_count": 4,
       "owner": "permanently_open",
       "next_action_zh": "无终结动作：读数主体构成逐次公开留档，独立性由外部持续判断。**本方案不声称已解决这一条**，把它写成一次性动作就是假装它可以被关掉。",
       "next_action_en": "No closing action exists: the composition of the reading parties is published each time and independence is judged continuously from outside. **This proposal does not claim to have solved it**, and writing it as a one-off action would be pretending it can be closed.",
       "if_wrong_en": "If independence does not hold, **this proposal's central quantity stops meaning anything**, and it fails invisibly: f comes out too small rather than too large, so everything looks fine. This is a failure mode this package names against itself and cannot detect by internal check — the only answer is to publish who took each reading and let independence be judged from outside.",
       "what_would_close_it_en": "Publishing who took each reading, with independence judged independently from outside — not a one-off closure but a condition to be monitored continuously.",
       "owner_means_zh": "没有终结动作；只能持续监测并公开留档",
-      "owner_means_en": "no closing action exists; it can only be monitored and published continuously"
+      "owner_means_en": "no closing action exists; it can only be monitored and published continuously",
+      "statement_en": "If the parties re-measuring are too alike, closure error shrinks systematically and stops meaning anything."
     },
     {
       "id": "A-CORPUS-001",
       "status": "self_collected_background_only",
-      "statement": "语料审计基于最近一次普查（2026-08-13）的 793 份已合入方案，权威源为 GitHub git tree；母题识别使用中文关键词正则，存在同义表述漏计；agent.json 的 model 字段留占位符不等于作者隐瞒模型。",
+      "statement": "语料审计基于最近一次普查（2026-08-21）的 941 份已合入方案，权威源为 GitHub git tree；母题识别使用中文关键词正则，存在同义表述漏计；agent.json 的 model 字段留占位符不等于作者隐瞒模型。",
       "impact": "结构收敛度为下界估计；披露率结论严格限于『机器可读字段为空或不可聚合，且闸门不检查它』。该来源定级 background_only，不作为空间或法定结论依据。语料每日增长，引用须重跑脚本复算。",
       "derivation_zh": "普查枚举 `upstream/main` 的 git tree（权威源，非会滞后的展示索引），逐份读取公开的 `proposal.md` front matter 与 `agent.json`。母题识别用中文关键词正则，规则公开在生成脚本里；**因此每个计数都是下界**：换了说法的方案不会被计入。占位符判定为 `model` 为空或等于脚手架默认值 `agent-declared-model`——**留占位符不等于作者隐瞒模型**，这条区分在正文里反复声明。",
       "derivation_en": "The census enumerates the git tree of `upstream/main` — the authoritative object, not the lagging gallery index — and reads each proposal's public front matter and `agent.json`. Motif detection uses published Chinese keyword regexes, so **every count is a lower bound**: a proposal wording something differently is not counted.",
@@ -141,20 +159,21 @@
       ],
       "affects_metric_count": 2,
       "owner": "participant",
-      "next_action_zh": "本包动作，且每次构建都在做：引用任何占比前重跑语料计数，并把读数与当时的语料规模一起公布。",
-      "next_action_en": "This package's action, performed on every build: re-run the corpus count before citing any share, and publish each reading together with the corpus size it was taken against.",
+      "next_action_zh": "本包动作，分两件事，此处按构建实际做的写：**普查按需重跑**（`build_all.py --census`，`CENSUS_STEPS` 只在带该开关时执行），每次读数与当时的语料规模、普查日期一起公布；**而每一次构建都做的是另一件**——`census_claims_qa` 断言正文里任何一处占比都与最近一次普查的读数一致，因此普查没重跑时，一处过期的占比同样会让构建失败。**此前这一栏写的是「每次构建都在做」重跑普查，而构建并不做**（E312）。",
+      "next_action_en": "This package's action, in two parts, written as the build actually behaves. **The census re-runs on request** - `build_all.py --census`, and CENSUS_STEPS runs only with that switch - with every reading published alongside the corpus size and census date it was taken against. **What every build does do is the other half**: census_claims_qa asserts that each share quoted in the prose matches the most recent census, so a stale share fails the build even on a run where the census was not re-taken. This field used to say the count was re-run on every build, and the build does not do that (E312).",
       "if_wrong_en": "If the keyword match undercounts badly, this package's judgements about which approaches are already saturated will **understate** saturation — **a direction that works against this proposal, not for it**, since it makes the lane this package chose look emptier than it is. The corpus grows daily, so every share must be re-measured before it is cited.",
       "what_would_close_it_en": "It cannot be closed: the corpus keeps growing, and the correct treatment of this assumption is to re-measure before each citation.",
       "owner_means_zh": "本方案自己能关、或每次构建都在关",
-      "owner_means_en": "this package can close it, or closes it on every build"
+      "owner_means_en": "this package can close it, or closes it on every build",
+      "statement_en": "The corpus audit rests on the most recent census (2026-08-13) of 793 merged proposals, with the GitHub git tree as the authority. Motif detection uses Chinese keyword regexes and will miss synonymous wording, and a placeholder in another package's agent.json model field is not evidence that its author concealed the model."
     },
     {
       "id": "A-SELF-COUNT-001",
       "status": "self_measured_package_internal",
       "statement": "本包的计数类指标（场景卡、画像、地标、案例、更新项目、分期、用地类别、勘误条目、权利台账条目、随包校验脚本等）由构建从随包产物重算，量的是**本包交付了什么**，不是场地或全场的任何事实。",
       "impact": "这类数字随本包内容变化而变化，不构成关于海淀、关于这条创新带、或关于其他方案的证据；它们的作用只有一个——让「本包声称交付了 N 件」这句话可被独立复算。此前它们错误地挂在 A-CORPUS-001 下，而那条讲的是对其他方案的语料普查：**引用解析得到不等于引用是对的**，这是本包记录在册的同型缺陷。",
-      "derivation_zh": "这些数量**量的是本包自己**，不对外声称任何事。它们由构建从随包产物重算——场景卡数来自 `scenario_cards.json`、勘误条目数来自 `errata.json`、画像数来自 `personas.json`，等等——因此不可能与被计数的文件不一致。`evidence_ceiling.json` 把它们的证据上限记为 `self_measured`：**精确，可复核，且不构成对外主张**。",
-      "derivation_en": "These counts **measure this package** and claim nothing about anything else. Each is recomputed by the build from the shipped artifact it counts, so it cannot disagree with the file it counts. Their evidence ceiling is `self_measured`: exact, checkable, and not a claim about the world.",
+      "derivation_zh": "这些数量**量的是本包自己**，不对外声称任何事。它们由构建从随包产物重算——场景卡数来自 `scenario_cards.json`、勘误条目数来自 `errata.json`、画像数来自 `personas.json`，等等——因此不可能与被计数的文件不一致。**其中十四条的证据上限是 `self_measured`：精确，可复核，且不构成对外主张。** 余下七条不是——`benchmark_first_order_count`、`benchmark_third_order_count`、`industry_test_scenario_count`、`land_use_class_count`、`land_use_feature_count`、`phase_count`、`road_feature_count` 在 `evidence_ceiling.json` 里是 `provisional`，因为它们数的是画在**推定边界**上的东西：数得准，而被数的那批要素本身要随官方 polygon 发布整体重算。**此前这条假设写作「把它们的证据上限记为 `self_measured`」，对其中三分之一不成立**——一句护身的话，恰恰在最需要它成立的七条上不成立（E198）。",
+      "derivation_en": "These counts **measure this package** and claim nothing about anything else. Each is recomputed by the build from the shipped artifact it counts, so it cannot disagree with the file it counts. **Fourteen of them have a `self_measured` evidence ceiling: exact, checkable, and not a claim about the world.** The other seven do not - benchmark_first_order_count, benchmark_third_order_count, industry_test_scenario_count, land_use_class_count, land_use_feature_count, phase_count and road_feature_count are `provisional` in evidence_ceiling.json, because what they count is drawn on the inferred boundary: the count is exact and the features counted must be recomputed whole when the official polygon is published. This assumption used to say the ceiling was `self_measured`, which was untrue of a third of its own list - a protective sentence failing on exactly the seven entries that needed it (E198).",
       "if_wrong_zh": "这一类不存在「假设错了」的情形——它们是枚举而非推断。**唯一的风险是把它们当成对外的成绩**，因此正文明确写出：63/63 的任务书覆盖是自评，其中有多少条靠的是最弱一档的证据。",
       "what_would_close_it_zh": "不适用：这不是一条待闭合的假设，而是一条口径声明。",
       "affects_metrics": [
@@ -187,7 +206,8 @@
       "if_wrong_en": "There is no \"the assumption was wrong\" case for this class — these are enumerations, not inferences. **The only risk is treating them as an external result**, so the prose states plainly that 63/63 taskbook coverage is self-assessed and how many of those entries rest on the weakest evidence class.",
       "what_would_close_it_en": "Not applicable: this is a scope declaration, not an assumption awaiting closure.",
       "owner_means_zh": "不是待闭合的假设，是一条口径声明",
-      "owner_means_en": "not an assumption awaiting closure but a scope declaration"
+      "owner_means_en": "not an assumption awaiting closure but a scope declaration",
+      "statement_en": "This package's counting metrics - scenario cards, personas, landmarks, cases, renewal projects, phases, land-use classes, errata entries, rights-ledger entries, shipped verification scripts and the like - are recomputed by the build from the shipped artifacts. They measure what this package delivered, not any fact about the site or about the field."
     },
     {
       "id": "A-OSM-001",
@@ -199,16 +219,28 @@
       "if_wrong_zh": "若公园的真实范围大于 OSM 已测绘部分，412.5 m 会缩小甚至归零。**本包的论点不依赖这个数的大小**——它依赖「两份几何来自不同来源、其差值可被独立复算」这件事本身。数变了，示范不变。",
       "what_would_close_it_zh": "官方发布公园法定范围的 GIS 图层。",
       "affects_metrics": [
-        "osm_vertices_shipped"
+        "existing_block_median_area_sqm",
+        "existing_building_coverage_ratio",
+        "existing_junction_count",
+        "existing_oversized_built_block_count",
+        "existing_street_density_m_per_sqm",
+        "existing_street_length_m",
+        "existing_walk_between_benchmarks_m",
+        "osm_vertices_shipped",
+        "stitching_point_count",
+        "walk10_benchmark_reach_built_buildings",
+        "walk10_benchmark_reach_gain_buildings",
+        "walk10_benchmark_reach_today_buildings"
       ],
-      "affects_metric_count": 1,
+      "affects_metric_count": 12,
       "owner": "organizer",
       "next_action_zh": "组织方：发布公园法定范围的 GIS 图层。在此之前 412.5 m 两端都不是官方几何。",
       "next_action_en": "Organizer: publish the GIS layer for the park's statutory extent. Until then neither end of the 412.5 m reading is official geometry.",
       "if_wrong_en": "If the park's true extent is larger than the part OSM has surveyed, the 412.5 m shrinks or goes to zero. **This package's argument does not depend on the size of that number** — it depends on two geometries coming from different sources with a difference anyone can recompute. The number can move; the demonstration does not.",
       "what_would_close_it_en": "The authorities publish the GIS layer for the park's statutory extent.",
       "owner_means_zh": "只有主办方或相应主管部门发布数据才能关闭；本包再做多少工作都关不掉",
-      "owner_means_en": "closable only by the organiser or the relevant authority publishing data; no amount of work by this package closes it"
+      "owner_means_en": "closable only by the organiser or the relevant authority publishing data; no amount of work by this package closes it",
+      "statement_en": "OpenStreetMap is crowd-sourced. Its park polygon covers only the built, mapped section rather than the planned corridor; arterial positions are as surveyed in OSM rather than official road centrelines; and the absence of a crossing in OSM is not the absence of one on the ground."
     },
     {
       "id": "A-GEOTECH-001",
@@ -221,15 +253,16 @@
       "what_would_close_it_zh": "工程勘察给出场地标准冻深与冻胀性分级，即可填数并核定标石造价。",
       "affects_metrics": [],
       "affects_metric_count": 0,
-      "carries_no_metric_note_zh": "**本包没有任何已发布的数字建立在这条假设上。** 这不是疏漏，是这条假设的性质：它若失效，`metrics.json` 里不会有任何一个值改变，因此**任何对数字的检查都抓不到它**。上面的 `if_wrong_zh` 说明了失效会长什么样；能发现它的只有外部判断，不是本包的闸门。把它单列并写明这一点，是本方案能对它做的全部。",
-      "carries_no_metric_note_en": "**No published number in this package rests on this assumption.** That is not an oversight but the nature of it: if it fails, no value in `metrics.json` changes, so **no check on the numbers can catch it**. `if_wrong_zh` above says what failure would look like; only outside judgement can detect it, not this package's gates. Listing it separately and saying so is the whole of what this proposal can do about it.",
       "owner": "operator_after_award",
       "next_action_zh": "须由工程勘察给出场地标准冻深与冻胀性分级，方可填数并核定标石造价——投标阶段填一个数就是伪造确定性，因此 FIG.16 给规则不给数。",
       "next_action_en": "A site investigation must give the local standard frost depth and the frost-susceptibility class before a number can be filled in and the stone's cost fixed. Typing a number at submission stage would be manufactured certainty, so FIG.16 ships the rule and not the number.",
       "if_wrong_en": "If D is taken too shallow, the stone moves after the first winter and every reading taken before it becomes uncomparable; if too deep, it costs some extra excavation and concrete. **The error is asymmetric, so the rule is written as a lower bound.**",
       "what_would_close_it_en": "A site investigation gives the local standard frost depth and frost-susceptibility class, which fills in the number and fixes the stone's cost.",
       "owner_means_zh": "须由授标后的实施主体在真实运行中产生，投标阶段无法产生",
-      "owner_means_en": "must be produced in real operation by an implementing body after award; no submission stage can produce it"
+      "owner_means_en": "must be produced in real operation by an implementing body after award; no submission stage can produce it",
+      "statement_en": "The local standard frost depth and the frost-heave behaviour of the subgrade are geotechnical data this package has not obtained.",
+      "carries_no_metric_note_zh": "**本包没有任何已发布的数字建立在这条假设上。** 这不是疏漏，是这条假设的性质：它若失效，`metrics.json` 里不会有任何一个值改变，因此**任何对数字的检查都抓不到它**。上面的 `if_wrong_zh` 说明了失效会长什么样；能发现它的只有外部判断，不是本包的闸门。把它单列并写明这一点，是本方案能对它做的全部。",
+      "carries_no_metric_note_en": "**No published number in this package rests on this assumption.** That is not an oversight but the nature of it: if it fails, no value in `metrics.json` changes, so **no check on the numbers can catch it**. `if_wrong_zh` above says what failure would look like; only outside judgement can detect it, not this package's gates. Listing it separately and saying so is the whole of what this proposal can do about it."
     },
     {
       "id": "A-LIGHTING-001",
@@ -242,22 +275,23 @@
       "what_would_close_it_zh": "取得地方照明标准中相邻居住建筑窗前垂直照度增量限值即可闭合。",
       "affects_metrics": [],
       "affects_metric_count": 0,
-      "carries_no_metric_note_zh": "**本包没有任何已发布的数字建立在这条假设上。** 这不是疏漏，是这条假设的性质：它若失效，`metrics.json` 里不会有任何一个值改变，因此**任何对数字的检查都抓不到它**。上面的 `if_wrong_zh` 说明了失效会长什么样；能发现它的只有外部判断，不是本包的闸门。把它单列并写明这一点，是本方案能对它做的全部。",
-      "carries_no_metric_note_en": "**No published number in this package rests on this assumption.** That is not an oversight but the nature of it: if it fails, no value in `metrics.json` changes, so **no check on the numbers can catch it**. `if_wrong_zh` above says what failure would look like; only outside judgement can detect it, not this package's gates. Listing it separately and saying so is the whole of what this proposal can do about it.",
       "owner": "participant",
       "next_action_zh": "本包缺口：取得地方照明标准中相邻居住建筑窗前垂直照度增量限值。**没拿到一份已公开的标准是本方案自己的欠缺**，不记在组织方名下。",
       "next_action_en": "This package's gap: obtain the vertical-illuminance increment limit at neighbouring dwellings' windows from the local lighting standard. **Not having obtained a published standard is this proposal's own shortfall**, and it is not booked against the organiser.",
       "if_wrong_en": "This proposal does not currently depend on the limit — fitting no luminaire produces no increment at a window. It is registered because \"not currently depended on\" and \"does not exist\" are not the same thing.",
       "what_would_close_it_en": "Obtaining the vertical-illuminance increment limit for neighbouring dwellings from the local lighting standard.",
       "owner_means_zh": "本方案自己能关、或每次构建都在关",
-      "owner_means_en": "this package can close it, or closes it on every build"
+      "owner_means_en": "this package can close it, or closes it on every build",
+      "statement_en": "The limit on added vertical illuminance at the windows of neighbouring dwellings depends on the local lighting standard, which this package has not obtained.",
+      "carries_no_metric_note_zh": "**本包没有任何已发布的数字建立在这条假设上。** 这不是疏漏，是这条假设的性质：它若失效，`metrics.json` 里不会有任何一个值改变，因此**任何对数字的检查都抓不到它**。上面的 `if_wrong_zh` 说明了失效会长什么样；能发现它的只有外部判断，不是本包的闸门。把它单列并写明这一点，是本方案能对它做的全部。",
+      "carries_no_metric_note_en": "**No published number in this package rests on this assumption.** That is not an oversight but the nature of it: if it fails, no value in `metrics.json` changes, so **no check on the numbers can catch it**. `if_wrong_zh` above says what failure would look like; only outside judgement can detect it, not this package's gates. Listing it separately and saying so is the whole of what this proposal can do about it."
     },
     {
       "id": "A-DEVICE-001",
       "status": "chosen_by_this_proposal",
       "statement": "FIG.24 的设备包络中，高度 1,300 mm、回转直径 1,800 mm、整备质量 ≤ 120 kg 三项由本方案自定，包内外均无可核来源。",
       "impact": "这三项决定储备空间的形状与容量（18 m² 容纳 8 台）。任一项改变，FIG.12 的储备空间下限与 FIG.24 的台数结论同时失效，须一并重算。",
-      "derivation_zh": "FIG.24 的七项包络里，三项能追到已发布内容：长宽由 FIG.12 的缘石开口反推，剩余净宽与 KIT-04 同值，标识规则与读数牌同源。**另外四项没有来源**：高度 1,300 mm 取在站立成人视线以下，回转直径 1,800 mm 取原地转向所需，整备质量 ≤ 120 kg 取一人断电后可推离的量级，场地速度 ≤ 6 km/h 取步行速度量级。**场地速度此前记作「按地方管理规定」**——而本包 22 份来源里没有一份涉及设备速度，「地方管理规定」也从未落成一个可引的编号。举不出编号的规定，与自定值没有分别，故改按自定值登记。四项都写着推理，但推理不是来源——图上以红色标出，此处登记。",
+      "derivation_zh": "FIG.24 的七项包络里，三项能追到已发布内容：长宽由 FIG.12 的缘石开口反推，剩余净宽与 KIT-04 同值，标识规则与读数牌同源。**另外四项没有来源**：高度 1,300 mm 取在站立成人视线以下，回转直径 1,800 mm 取原地转向所需，整备质量 ≤ 120 kg 取一人断电后可推离的量级，场地速度 ≤ 6 km/h 取步行速度量级。**场地速度此前记作「按地方管理规定」**——而本包 35 份来源里没有一份涉及设备速度，「地方管理规定」也从未落成一个可引的编号。举不出编号的规定，与自定值没有分别，故改按自定值登记。四项都写着推理，但推理不是来源——图上以红色标出，此处登记。",
       "derivation_en": "Three of FIG.24's seven envelope dimensions trace to something already published: length and width are derived from the kerb cut in FIG.12, the surviving clear width is the KIT-04 figure, and the marking rule is the reading plate's. **Four have no source**: the 1,300 mm height is set below standing eye level, the 1,800 mm turning circle is what a standing turn needs, the ≤ 120 kg mass is the order one person can push clear after a power failure, and the ≤ 6 km/h site speed is the order of walking pace. **The speed was previously recorded as following local regulation** — but none of this package's 22 sources covers device speed and no citable id was ever attached. A rule that cannot be named is not distinguishable from a choice, so it is registered as one. Each carries reasoning, and reasoning is not a source — marked red on the sheet and registered here.",
       "if_wrong_zh": "**错的方向不对称。** 三项取小了，真实设备进不来，缘石处每天出现被拒绝的设备，而 18 m² 里放不下宣称的 8 台；取大了，储备空间比需要的大，占掉的是人行道。受影响的是 FIG.12 与 FIG.24 的一致性结论，不是水准网机制本身——机制不依赖设备多大，只依赖「先把人的空间划出来」这条次序。",
       "what_would_close_it_zh": "取得拟接入设备类型的实际外廓与回转规格，或地方对低速配送设备的通行管理细则。",
@@ -270,8 +304,7 @@
       "owner_means_en": "this package can close it, or closes it on every build",
       "affects_metrics": [],
       "affects_metric_count": 0,
-      "carries_no_metric_note_zh": "**本包没有任何已发布的数字建立在这条假设上。** 这不是疏漏，是这条假设的性质：它若失效，`metrics.json` 里不会有任何一个值改变，因此**任何对数字的检查都抓不到它**。上面的 `if_wrong_zh` 说明了失效会长什么样；能发现它的只有外部判断，不是本包的闸门。把它单列并写明这一点，是本方案能对它做的全部。",
-      "carries_no_metric_note_en": "**No published number in this package rests on this assumption.** That is not an oversight but the nature of it: if it fails, no value in `metrics.json` changes, so **no check on the numbers can catch it**. `if_wrong_zh` above says what failure would look like; only outside judgement can detect it, not this package's gates. Listing it separately and saying so is the whole of what this proposal can do about it.",
+      "statement_en": "In the device envelope on FIG.24, three values are set by this proposal with no checkable source inside or outside the package: 1,300 mm height, 1,800 mm turning diameter, and kerb weight of 120 kg or less.",
       "depends_outside_metrics_zh": "**反向索引只看得见 `metrics.json`。** 本条不挂任何 metric，但下列已发布内容建立在它上面：FIG.24 的包络与「18 m² 容纳 8 台」。「不挂 metric」在这里不等于「没有东西依赖它」——只等于「metrics.json 里没有东西依赖它」。",
       "depends_outside_metrics_en": "**The reverse index can only see `metrics.json`.** This record carries no metric, and the following published material rests on it: FIG.24's envelope and its finding that 18 m² holds 8 devices. Carrying no metric does not mean nothing depends on it — only that nothing in `metrics.json` does."
     },
@@ -293,8 +326,7 @@
       "owner_means_en": "this package can close it, or closes it on every build",
       "affects_metrics": [],
       "affects_metric_count": 0,
-      "carries_no_metric_note_zh": "**本包没有任何已发布的数字建立在这条假设上。** 这不是疏漏，是这条假设的性质：它若失效，`metrics.json` 里不会有任何一个值改变，因此**任何对数字的检查都抓不到它**。上面的 `if_wrong_zh` 说明了失效会长什么样；能发现它的只有外部判断，不是本包的闸门。把它单列并写明这一点，是本方案能对它做的全部。",
-      "carries_no_metric_note_en": "**No published number in this package rests on this assumption.** That is not an oversight but the nature of it: if it fails, no value in `metrics.json` changes, so **no check on the numbers can catch it**. `if_wrong_zh` above says what failure would look like; only outside judgement can detect it, not this package's gates. Listing it separately and saying so is the whole of what this proposal can do about it.",
+      "statement_en": "The 2,400 mm instrument circle on FIG.25 is the 1,200 mm tripod spread plus a 600 mm operator ring (figures.PERSON_WIDTH_MM - the same quantity, defined in the same place, as the shoulder width on FIG.28). Both values are this proposal's own estimates for ordinary levelling work; no manufacturer specification or operating procedure was obtained.",
       "depends_outside_metrics_zh": "**反向索引只看得见 `metrics.json`。** 本条不挂任何 metric，但下列已发布内容建立在它上面：FIG.25 的 2,400 mm 架站圈与它对通行净宽的校验。「不挂 metric」在这里不等于「没有东西依赖它」——只等于「metrics.json 里没有东西依赖它」。",
       "depends_outside_metrics_en": "**The reverse index can only see `metrics.json`.** This record carries no metric, and the following published material rests on it: FIG.25's 2,400 mm setup circle and its clear-width check. Carrying no metric does not mean nothing depends on it — only that nothing in `metrics.json` does."
     },
@@ -303,7 +335,7 @@
       "status": "chosen_by_this_proposal",
       "statement": "FIG.26 的停止距离 2.59 m 由 FIG.24 的场地速度 ≤ 6 km/h 算出，其中反应时间 1.0 s 与减速度 1.5 m/s² 两项由本方案自定，未取得低速设备制动性能的可核来源。",
       "impact": "停止距离决定观测前沿前方必须留空的地面长度。取小了，场景在前沿末端停不住；取大了，前沿前方多留一段无法他用的地面。",
-      "derivation_zh": "停止距离 = 反应段 + 减速段 = v·t + v²/(2a)，v 取 FIG.24 已定的 6 km/h = 1.667 m/s，t = 1.0 s，a = 1.5 m/s²，得 1.67 + 0.93 = **2.59 m**。**三项都没有出处**：v 此前被记作有出处（「地方管理规定」），而那条规定从未被指名，22 份来源里也没有一份涉及设备速度——2.59 m 因此并非三分之一有据，而是全部自定。6 km/h 取步行速度量级，1.0 s 取一般人机反应量级，1.5 m/s² 取载物设备的舒适减速度。三项都写着理由，而理由不是来源。公式随图公布，换一组取值即可重算。",
+      "derivation_zh": "停止距离 = 反应段 + 减速段 = v·t + v²/(2a)，v 取 FIG.24 已定的 6 km/h = 1.667 m/s，t = 1.0 s，a = 1.5 m/s²，得 1.67 + 0.93 = **2.59 m**。**三项都没有出处**：v 此前被记作有出处（「地方管理规定」），而那条规定从未被指名，35 份来源里也没有一份涉及设备速度——2.59 m 因此并非三分之一有据，而是全部自定。6 km/h 取步行速度量级，1.0 s 取一般人机反应量级，1.5 m/s² 取载物设备的舒适减速度。三项都写着理由，而理由不是来源。公式随图公布，换一组取值即可重算。",
       "derivation_en": "Halt distance = reaction + braking = v·t + v²/(2a), with v the 6 km/h = 1.667 m/s FIG.24 already fixes, t = 1.0 s and a = 1.5 m/s², giving 1.67 + 0.93 = **2.59 m**. **None of the three has a source.** v was previously recorded as having one — \"local regulation\" — but that rule was never named and none of the 22 sources covers device speed, so 2.59 m is not one third grounded, it is entirely chosen. Six km/h is the order of walking pace, one second the order of a human reaction, 1.5 m/s² a comfortable deceleration for a loaded device. Each carries reasoning, and reasoning is not a source. The formula ships with the sheet, so substituting your own figures recomputes the ground.",
       "if_wrong_zh": "**取小了的后果落在人身上**：场景在观测前沿末端停不住，而前沿末端之后正是本图允许设置固定物与等候区的地方。取大了只是多留一段无法他用的地面。**误差不对称，因此这段距离按上限取而不是按典型值取**——与 A-GEOTECH-001 的冻深写成下限是同一条纪律。",
       "if_wrong_en": "**Too small and the cost lands on a person**: the scenario fails to stop at the end of the observed frontage, which is exactly where this sheet permits fixed objects and waiting areas to begin. Too large only reserves ground that could have been used for something else. **The error is asymmetric, so the distance is taken at a bound rather than at a typical value** — the same discipline as writing the frost depth as a lower bound in A-GEOTECH-001.",
@@ -316,8 +348,7 @@
       "owner_means_en": "this package can close it, or closes it on every build",
       "affects_metrics": [],
       "affects_metric_count": 0,
-      "carries_no_metric_note_zh": "**本包没有任何已发布的数字建立在这条假设上。** 这不是疏漏，是这条假设的性质：它若失效，`metrics.json` 里不会有任何一个值改变，因此**任何对数字的检查都抓不到它**。上面的 `if_wrong_zh` 说明了失效会长什么样；能发现它的只有外部判断，不是本包的闸门。把它单列并写明这一点，是本方案能对它做的全部。",
-      "carries_no_metric_note_en": "**No published number in this package rests on this assumption.** That is not an oversight but the nature of it: if it fails, no value in `metrics.json` changes, so **no check on the numbers can catch it**. `if_wrong_zh` above says what failure would look like; only outside judgement can detect it, not this package's gates. Listing it separately and saying so is the whole of what this proposal can do about it.",
+      "statement_en": "The 2.59 m stopping distance on FIG.26 follows from the 6 km/h site speed on FIG.24, with a 1.0 s reaction time and 1.5 m/s2 deceleration set by this proposal; no checkable source for the braking performance of low-speed devices was obtained.",
       "depends_outside_metrics_zh": "**反向索引只看得见 `metrics.json`。** 本条不挂任何 metric，但下列已发布内容建立在它上面：FIG.26 的停止距离 2.59 m 与前沿净空要求。「不挂 metric」在这里不等于「没有东西依赖它」——只等于「metrics.json 里没有东西依赖它」。",
       "depends_outside_metrics_en": "**The reverse index can only see `metrics.json`.** This record carries no metric, and the following published material rests on it: FIG.26's 2.59 m halt distance and the clearance it requires. Carrying no metric does not mean nothing depends on it — only that nothing in `metrics.json` does."
     },
@@ -339,8 +370,7 @@
       "owner_means_en": "this package can close it, or closes it on every build",
       "affects_metrics": [],
       "affects_metric_count": 0,
-      "carries_no_metric_note_zh": "**本包没有任何已发布的数字建立在这条假设上。** 这不是疏漏，是这条假设的性质：它若失效，`metrics.json` 里不会有任何一个值改变，因此**任何对数字的检查都抓不到它**。上面的 `if_wrong_zh` 说明了失效会长什么样；能发现它的只有外部判断，不是本包的闸门。把它单列并写明这一点，是本方案能对它做的全部。",
-      "carries_no_metric_note_en": "**No published number in this package rests on this assumption.** That is not an oversight but the nature of it: if it fails, no value in `metrics.json` changes, so **no check on the numbers can catch it**. `if_wrong_zh` above says what failure would look like; only outside judgement can detect it, not this package's gates. Listing it separately and saying so is the whole of what this proposal can do about it.",
+      "statement_en": "Where FIG.27 works back from legible height being roughly viewing distance over 250, the key figures on the plate are set at 12 mm, which is this proposal's own value. The ratio of 250 is not: this package has already checked every drawing against it.",
       "depends_outside_metrics_zh": "**反向索引只看得见 `metrics.json`。** 本条不挂任何 metric，但下列已发布内容建立在它上面：FIG.27 的 3.0 m 读数站位。「不挂 metric」在这里不等于「没有东西依赖它」——只等于「metrics.json 里没有东西依赖它」。",
       "depends_outside_metrics_en": "**The reverse index can only see `metrics.json`.** This record carries no metric, and the following published material rests on it: FIG.27's 3.0 m reading position. Carrying no metric does not mean nothing depends on it — only that nothing in `metrics.json` does."
     },
@@ -362,8 +392,7 @@
       "owner_means_en": "this package can close it, or closes it on every build",
       "affects_metrics": [],
       "affects_metric_count": 0,
-      "carries_no_metric_note_zh": "**本包没有任何已发布的数字建立在这条假设上。** 这不是疏漏，是这条假设的性质：它若失效，`metrics.json` 里不会有任何一个值改变，因此**任何对数字的检查都抓不到它**。上面的 `if_wrong_zh` 说明了失效会长什么样；能发现它的只有外部判断，不是本包的闸门。把它单列并写明这一点，是本方案能对它做的全部。",
-      "carries_no_metric_note_en": "**No published number in this package rests on this assumption.** That is not an oversight but the nature of it: if it fails, no value in `metrics.json` changes, so **no check on the numbers can catch it**. `if_wrong_zh` above says what failure would look like; only outside judgement can detect it, not this package's gates. Listing it separately and saying so is the whole of what this proposal can do about it.",
+      "statement_en": "In FIG.28's count of how many people can read at once, three values are set by this proposal - a 30 degree off-axis legible angle, a 600 mm shoulder width (figures.PERSON_WIDTH_MM, the same quantity and definition as FIG.25's operator ring) and 40 seconds per reading. The 600 mm plate width comes from FIG.16, the 3.0 m viewing distance from FIG.27 and the 1,500 mm clear width from FIG.24; those three are not new here.",
       "depends_outside_metrics_zh": "**反向索引只看得见 `metrics.json`。** 本条不挂任何 metric，但下列已发布内容建立在它上面：FIG.28 的 3.46 m 可读锥、5 人同时可读与 30 人 6 轮。「不挂 metric」在这里不等于「没有东西依赖它」——只等于「metrics.json 里没有东西依赖它」。",
       "depends_outside_metrics_en": "**The reverse index can only see `metrics.json`.** This record carries no metric, and the following published material rests on it: FIG.28's 3.46 m cone, five readers abreast and six rounds for thirty. Carrying no metric does not mean nothing depends on it — only that nothing in `metrics.json` does."
     },
@@ -385,8 +414,7 @@
       "owner_means_en": "this package can close it, or closes it on every build",
       "affects_metrics": [],
       "affects_metric_count": 0,
-      "carries_no_metric_note_zh": "**本包没有任何已发布的数字建立在这条假设上。** 这不是疏漏，是这条假设的性质：它若失效，`metrics.json` 里不会有任何一个值改变，因此**任何对数字的检查都抓不到它**。上面的 `if_wrong_zh` 说明了失效会长什么样；能发现它的只有外部判断，不是本包的闸门。把它单列并写明这一点，是本方案能对它做的全部。",
-      "carries_no_metric_note_en": "**No published number in this package rests on this assumption.** That is not an oversight but the nature of it: if it fails, no value in `metrics.json` changes, so **no check on the numbers can catch it**. `if_wrong_zh` above says what failure would look like; only outside judgement can detect it, not this package's gates. Listing it separately and saying so is the whole of what this proposal can do about it.",
+      "statement_en": "Where FIG.29 works back to the duration of one first-order closure, the 50 m sight distance and 5 minutes per station are set by this proposal, with no operating procedure obtained. Route length, walking speed and the first-order hour band are all already published by this package.",
       "depends_outside_metrics_zh": "**反向索引只看得见 `metrics.json`。** 本条不挂任何 metric，但下列已发布内容建立在它上面：FIG.29 由几何反算的 55/52 架站与 5.8/5.5 h。「不挂 metric」在这里不等于「没有东西依赖它」——只等于「metrics.json 里没有东西依赖它」。",
       "depends_outside_metrics_en": "**The reverse index can only see `metrics.json`.** This record carries no metric, and the following published material rests on it: FIG.29's 55 and 52 setups and its 5.8 h and 5.5 h durations. Carrying no metric does not mean nothing depends on it — only that nothing in `metrics.json` does."
     },
@@ -408,8 +436,7 @@
       "owner_means_en": "this package can close it, or closes it on every build",
       "affects_metrics": [],
       "affects_metric_count": 0,
-      "carries_no_metric_note_zh": "**本包没有任何已发布的数字建立在这条假设上。** 这不是疏漏，是这条假设的性质：它若失效，`metrics.json` 里不会有任何一个值改变，因此**任何对数字的检查都抓不到它**。上面的 `if_wrong_zh` 说明了失效会长什么样；能发现它的只有外部判断，不是本包的闸门。把它单列并写明这一点，是本方案能对它做的全部。",
-      "carries_no_metric_note_en": "**No published number in this package rests on this assumption.** That is not an oversight but the nature of it: if it fails, no value in `metrics.json` changes, so **no check on the numbers can catch it**. `if_wrong_zh` above says what failure would look like; only outside judgement can detect it, not this package's gates. Listing it separately and saying so is the whole of what this proposal can do about it.",
+      "statement_en": "Every attendance count and per-session hour band in the annual operating-cost model - datum 3 professional and 0 community at 5-8 h, first order 3/0 at 4-6 h, second order 2/2 at 2.5-4 h, third order 1/2 at 1.5-2.5 h - is set by this proposal. No surveying labour norm or comparable project was obtained as a source.",
       "depends_outside_metrics_zh": "**反向索引只看得见 `metrics.json`。** 本条不挂任何 metric，但下列已发布内容建立在它上面：年运营成本表（19,444–63,922 元）、付费 139–220 h、志愿 148–244 h、FIG.29 的时长相容断言、FIG.30 的年度排布、FIG.31 的志愿取舍。「不挂 metric」在这里不等于「没有东西依赖它」——只等于「metrics.json 里没有东西依赖它」。",
       "depends_outside_metrics_en": "**The reverse index can only see `metrics.json`.** This record carries no metric, and the following published material rests on it: the annual operating table, both hour totals, FIG.29's compatibility assertion, FIG.30's calendar and FIG.31's volunteer trade. Carrying no metric does not mean nothing depends on it — only that nothing in `metrics.json` does."
     },
@@ -431,20 +458,39 @@
       "owner_means_en": "this package can close it, or closes it on every build",
       "affects_metrics": [],
       "affects_metric_count": 0,
+      "statement_en": "FIG.32 works back to the smallest reader roster from a ceiling of four attendances a year for any one community reader. That ceiling is not invented by the drawing: personas.json describes P3 as the mainstay of the quarterly open day and P8 as performing the quarterly re-survey, and nobody in the table is described as attending more often, so four a year is the limit this package itself wrote down. The 88 community attendances across the year, and the count at each point, follow from the re-survey cycles in spatial.json and the crew model in A-STAFF-001.",
       "depends_outside_metrics_zh": "**反向索引只看得见 `metrics.json`。** 本条不挂任何 metric，但下列已发布内容建立在它上面：FIG.32 的独立性下限 22 人与各点最少读数人。「不挂 metric」在这里不等于「没有东西依赖它」——只等于「metrics.json 里没有东西依赖它」。",
       "depends_outside_metrics_en": "**The reverse index can only see `metrics.json`.** This record carries no metric, and the following published material rests on it: FIG.32's floor of twenty-two community readers and its per-point minimums. Carrying no metric does not mean nothing depends on it — only that nothing in `metrics.json` does."
+    },
+    {
+      "id": "A-SOURCE-001",
+      "status": "declared_gap",
+      "statement": "本包的来源登记册共 35 条，其中由北京市级或海淀区级机关发布的有 11 条：本次征集公告、京张铁路遗址公园二期开工消息（海淀区人民政府 2024-09-20）、市园林绿化局公园名录（2025-07-24）、《海淀区城市更新导则（2025 年版）》（**海政发〔2025〕4号**）、首批人工智能创新街区发布（中关村科学城 2026-01-05）、《中关村科学城人工智能全景赋能行动计划（2024—2026 年）》（2024-08-19）、HD00—1601 等街区控制性详细规划批复（2026-08-11 批复，2026-08-12 发布），以及**《关于京张铁路遗址公共空间改造提升工程（二期）实施方案的批复》（京发改（审）〔2024〕609号，北京市发展和改革委员会 2024-09-23）**。**此前依次是 1、3、5、6、7 条；五轮里每一轮都是本条自己点名的缺失文件被找到，因此这句话被改写五次，而不是让数字悄悄变大。** **本轮关上的是一个此前没点名的缺口**：本包一直引的是二期的**新闻稿**，而它背后的**批复**带文号、带受文单位、带建设单位（海淀区园林绿化局），一直没被登记；同一轮还给早已登记的城市更新导则补上了它的发文字号。**仍然缺的一样要说准**：区级 AI 产业政策的**正式文号**——本轮专门去查了这一条，`ncsti.gov.cn` 的发布页全文里「号」只出现 5 次，无一是发文字号；该计划也不在海淀区政策文件库（那个库对其它文件是登记发文字号的）。**因此这不是本包没找到，是它没有公开的文号。****本轮关上的是噪声测项的适用类别**：《北京市海淀区人民政府关于印发本区声环境功能区划实施细则的通知》（**海行规发〔2013〕9号**）给出海淀区不设 3 类区、铁路用地两侧 45 m 为 4b 类，主脊两侧即在此带内；同轮登记《声环境质量标准》**GB 3096—2008** 的标准条目，其全文在国家标准全文公开系统标注为暂无，**因此仍不给 dB 数值**——缺口从「连编号都没有」缩为「有编号有类别、无条文数值」，floor 就此抬高一格。**该次修复后的两个数就写在本句开头，不在此重复**：新增《海淀区2025年国民经济和社会发展统计公报》（海淀统计局队 2026-04-10）与《北京市2025年国民经济和社会发展统计公报》（北京市统计局、国家统计局北京调查总队 2026-03-24）——**本条此前写作三十与八，两份统计公报把它抬到三十二与十，旧句照登不删（E374）。**",
+      "impact": "任何需要区级规划文件才能成立的结论，本方案一律不作出：不给容积率、建筑高度、退线与道路红线（见 A-CONTROLS-001），不对京张遗址公园已实施区域提出改造结论，不判定任何地块的权属或拆改留。**这条不是把缺口说小，是把它量出来：35 条来源里 11 条。****这句尾巴此前写的是「22 条来源里 1 条」——那是第一版的数，而同一条记录的开头已经写着 29 与 7：一条记录里两份同一个事实，互相矛盾，且矛盾的方向是把本包自己的证据说少（E297）。**",
+      "derivation_zh": "逐条读 `sources.json`，按 `publisher` 字段是否含「北京」或「海淀」计数，**再加一份具名例外表**：中关村科学城管理委员会与其党工委——海淀区人民政府派出机构，中关村科学城全域在海淀区内，机构名里没有「海淀」二字，属地却是海淀。**例外写在这里，是因为只用字串规则的读者会数出 6 条而不是 7 条**：此前这份口径只写了字串规则，例外只存在于闸门源码里，而评审打不开闸门源码——一个「可复算」的口径，复算出来必须是同一个数（E297）。本包在别处反复要求「一个没有文件能支撑的数字不构成证据」，这条关于本包自己的自陈也照此办理，并由 `source_provenance_qa` 每次构建现算核对。组织方自己的 `data/source_registry.json` 同样只登记九条，其中同样没有区级规划文件——**所以这个缺口不是本包漏读了仓库里的东西，而是它需要仓库之外的资料**。",
+      "derivation_en": "Counted by reading sources.json entry by entry, testing whether the publisher field names Beijing or Haidian, **plus a named exception list**: the Zhongguancun Science City Administrative Committee and its Party working committee, dispatched organs of the Haidian District People's Government whose whole jurisdiction lies inside Haidian, and whose names contain neither word. **The exception is stated here because a reader applying the substring rule alone counts 6, not 7** - it used to live only in the gate's source, which a reviewer cannot open, and a rule described as recomputable has to recompute to the same number (E297). Recomputed by source_provenance_qa on every build. The organisers' own data/source_registry.json registers nine sources and likewise contains no district planning document, so this gap is not something this package failed to read in the repository; closing it needs material from outside it.",
+      "if_wrong_zh": "若实际存在本包未登记的区级文件，方向对本方案不利：本方案会因此在一些地方过度保守，把本可给出的结论留成缺口。**这条假设的错误方向是少说，不是多说。**",
+      "if_wrong_en": "If a district document exists that this package has not registered, the error runs against this proposal: it will have been over-cautious and left as gaps things it could have concluded. The direction of this assumption's error is saying too little, not too much.",
+      "what_would_close_it_zh": "登记控规批复文号与公示期、海淀城市更新导则、区级 AI 产业政策等文件，各带发布机关、发布日期与可核验的获取记录；在取得之前，本方案不引用它们，也不假装引用过。",
+      "what_would_close_it_en": "Registering the control-plan approval with its document number and publication window, the district renewal guideline, and district AI industry policy, each with its issuing body, date and a checkable access record. Until then this proposal neither cites them nor pretends to have.",
+      "affects_metrics": [],
+      "affects_metric_count": 0,
+      "owner": "participant",
+      "next_action_zh": "本包动作：在取得可核验的区级文件前，任何需要它们的结论继续留空，并由闸门核对本条所述条数与 `sources.json` 实测一致。",
+      "next_action_en": "This package's action: leave any conclusion needing those documents empty until a checkable district source exists, with a gate holding the count stated here to what sources.json actually contains.",
+      "owner_means_zh": "本方案自己能关、或每次构建都在关",
+      "owner_means_en": "this package can close it, or closes it on every build",
+      "statement_en": "The source registry holds 35 entries, 11 published by a Beijing municipal or Haidian district body: the open call; the district government's 2024-09-20 notice on phase 2 of the heritage park; the municipal park register of 2025-07-24; the Haidian urban renewal guideline, 2025 edition; the 2026-01-05 release naming Beijing's first AI innovation blocks; the Zhongguancun Science City AI panoramic empowerment action plan for 2024-2026; and **the approval of the block-level regulatory detailed plan HD00-1601 and adjacent blocks, approved 2026-08-11 and published 2026-08-12**. **The count was 1, then 3, then 5, then 6; in each of four rounds a document this very assumption named as missing was found, so this sentence has been rewritten four times rather than letting the number rise quietly.** **What closed this round is exactly what the previous version named**: the control-plan approval with its number and approval date. **What is still missing has to be stated precisely**: a formal document number for the district AI industry policy - the policy itself is registered, but its published page carries no issuing number, so this package can cite the policy and cannot cite a number. The noise item's class is settled: the Haidian acoustic zoning rules (**Haidian 2013 no. 9**) set no class 3 and put the 45 m band either side of railway land in class 4b, where the spine sits. **GB 3096-2008** is registered for number and status only — the registry marks its full text unavailable, **so no dB value is given**. After this repair it is 35 entries with 11 locally published: the Haidian 2025 statistical communique (Haidian statistics team, 2026-04-10) and the Beijing 2025 statistical communique (Beijing Municipal Bureau of Statistics with the NBS Beijing survey office, 2026-03-24) were added. This sentence previously read 30 and 8; the old wording is kept rather than overwritten (E374).",
+      "carries_no_metric_note_zh": "**本包没有任何已发布的数字建立在这条假设上。** 这不是疏漏，是这条假设的性质：它若失效，`metrics.json` 里不会有任何一个值改变，因此**任何对数字的检查都抓不到它**。上面的 `if_wrong_zh` 说明了失效会长什么样；能发现它的只有外部判断，不是本包的闸门。把它单列并写明这一点，是本方案能对它做的全部。",
+      "carries_no_metric_note_en": "**No published number in this package rests on this assumption.** That is not an oversight but the nature of it: if it fails, no value in `metrics.json` changes, so **no check on the numbers can catch it**. `if_wrong_zh` above says what failure would look like; only outside judgement can detect it, not this package's gates. Listing it separately and saying so is the whole of what this proposal can do about it."
     }
   ],
-  "note_zh": "**本文件是评审模型整份读取的九个文件之一，而 `geometry/` 与 `visual/assets/` 不是**（见 `scripts/review_submission.py::build_review_input`）。因此每条假设除了陈述，还写出：`derivation_zh`——这个读数实际是怎么得出的；`if_wrong_zh`——如果它错了，本方案的哪个结论会变、哪个不会；`what_would_close_it_zh`——什么能让它不再是假设；以及 `affects_metrics`——**由 metrics.json 的 assumption_ids 反向索引算出**，使读这份文件的人能看出每条假设承载了多少个数字。一条没有写出后果的假设是免责声明，不是假设。",
-  "note_en": "**This file is one of the nine the reviewing model receives whole; `geometry/` and `visual/assets/` are not** (see `scripts/review_submission.py::build_review_input`). So each assumption states, besides itself: how the reading was actually derived; what changes and what does not if it is wrong; what would stop it being an assumption; and `affects_metrics`, **computed by reversing `metrics.json`'s `assumption_ids`**, so someone reading this file can see how many numbers each assumption carries. An assumption with no stated consequence is a disclaimer, not an assumption.",
   "ownership_counts": {
     "mixed": 1,
     "not_applicable": 1,
     "operator_after_award": 2,
     "organizer": 3,
-    "participant": 10,
+    "participant": 11,
     "permanently_open": 1
-  },
-  "ownership_note_zh": "**每条假设除了「什么能关闭它」，还写明「谁能关闭它」。** 一份只说条件不说责任的登记表，会把两种情况混成一种：本方案还没做的，和本方案做不了的。本册 18 条的归属为 mixed 1、not_applicable 1、operator_after_award 2、organizer 3、participant 10、permanently_open 1。仓库的评审脚本只把以 `组织方：`／`主办方：` 开头的动作视为外部所有，其余一律 fail-closed 归还参与方（`is_organizer_owned_action`）；本包因此只在三条确属主管部门发布的项上使用该前缀，**A-CONTROLS-001 拆开写而不整条认领，A-LIGHTING-001 记为本方案自己的欠缺**——没拿到一份已公开的标准，不是别人的问题。",
-  "ownership_note_en": "**Each assumption states who can close it, not only what would close it.** A register that gives the condition but not the responsibility merges two different things: what this package has not done, and what this package cannot do. Across 18 records the split is mixed 1, not_applicable 1, operator_after_award 2, organizer 3, participant 10, permanently_open 1. The repository's review script treats an action as externally owned only when it begins `组织方：`/`主办方：` and returns everything else fail-closed to the participant (`is_organizer_owned_action`), so that prefix is used here for the three items that are genuinely an authority's publication and for nothing else — **A-CONTROLS-001 is split rather than claimed whole, and A-LIGHTING-001 is booked as this package's own shortfall**, because not having obtained a published standard is nobody else's fault."
+  }
 }

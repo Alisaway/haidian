@@ -1,0 +1,108 @@
+{
+  "adoption_id": "open-rail-switchback-adoption-v1",
+  "adopts": {
+    "spec": "Switchback Protocol v1.0",
+    "publisher": "chucky1102 / 人字线 RENLINE",
+    "registry": "open-city-ai/haidian Issue #1119",
+    "license": {
+      "spdx_id": "CC-BY-4.0",
+      "attribution_text": "Switchback Protocol by chucky1102 / RENLINE (open-city-ai/haidian Issue #1119)",
+      "scope": "protocol_spec_only",
+      "scope_note_zh": "许可仅覆盖折返协议规范本身（字段结构/枚举/语义）；本提交包的叙事、图面、几何与数据仍为 COMMUNITY-DISPLAY-ONLY。"
+    }
+  },
+  "adoption_claim": "self_declared_component_adoption",
+  "adoption_scope_zh": "组件级采纳：沿用协议的五组件命名（三色状态、数字化时限、90天公开复审、量化触发与恢复条件、三级留痕档案）与全带默认值，为本方案 4 张涉试点场景卡建立机器可读运营合约；未复用 RENLINE 包的任何文本、图面、几何或数据。",
+  "adoption_scope_en": "Component-level adoption: reuses the protocol's five component names and belt-wide defaults to build a machine-readable operating contract for this package's four pilot-related scenario cards; no text, figures, geometry or data from the RENLINE package is reused.",
+  "status_enum_note_zh": "本包全部卡片处于 green_candidate 预备态（协议字段齐备、待核准）：所有场景均为概念建议，尚未进入受控试点（黄）或常态运行（绿）。",
+  "belt_wide_defaults_adopted": {
+    "human_takeover_max_minutes": 5,
+    "non_smart_fallback": "15 分钟步行圈普通等价服务路径；非智能手机与无障碍路径并行设计",
+    "appeal_acknowledge_working_days": 1,
+    "appeal_resolve_working_days": 7,
+    "public_review_cycle_days": 90,
+    "review_options": [
+      "renew",
+      "reduce",
+      "pause",
+      "switch_back"
+    ],
+    "unreviewed_auto_red_after_cycles": 2,
+    "disclaimer_zh": "全部时限为设计目标值，非政府承诺；正式时限以运营协议为准。所有场景为概念建议，不表述为已批准运营。",
+    "disclaimer_en": "All time limits are design targets, not government commitments; formal limits per operating agreements. All scenarios are conceptual suggestions, never described as approved operations."
+  },
+  "cards": [
+    {
+      "id": "OR-T06",
+      "name_zh": "机器人低速配送测试（场景卡 6）",
+      "name_en": "Low-speed robot delivery test (scenario card 6)",
+      "type": "industry_test",
+      "status": "green_candidate",
+      "gate": null,
+      "anchor": "众智园测试环线（概念）",
+      "anchor_type": "text_only",
+      "takeover_max_minutes": 5,
+      "fallback": "配送回退至人工骑手；环线封闭/半封闭路段并行保留普通步行路径",
+      "data_boundary": "限定封闭/半封闭路段，限速可监管；无面部采集",
+      "human_review": "园区+企业联合运营，安全员现场值守；事件报告公开",
+      "ascent_grade": "G0",
+      "next_gate_needs": "主管部门测试许可 + 虚拟评测报告",
+      "evidence_status": "design_target"
+    },
+    {
+      "id": "OR-T11",
+      "name_zh": "开放街道自动驾驶接驳小巴（场景卡 11）",
+      "name_en": "Open-street autonomous shuttle bus (scenario card 11)",
+      "type": "industry_test",
+      "status": "green_candidate",
+      "gate": null,
+      "anchor": "大钟寺—知春路段（概念）",
+      "anchor_type": "text_only",
+      "takeover_max_minutes": 5,
+      "fallback": "并行普通公交线路与步行路径；接驳回退为常规公交",
+      "data_boundary": "限定路段、限速、安全员可接管；匿名化轨迹",
+      "human_review": "专业测试机构运营；每期测试安全签核；事件报告公开",
+      "ascent_grade": "G0",
+      "next_gate_needs": "主管部门测试许可 + 保险备案 + 受控场地报告",
+      "evidence_status": "design_target"
+    },
+    {
+      "id": "OR-T12",
+      "name_zh": "AI 治理沙箱——算法备案与影响评估公开试验（场景卡 12）",
+      "name_en": "AI governance sandbox: algorithm filing & impact assessment (scenario card 12)",
+      "type": "industry_test",
+      "status": "green_candidate",
+      "gate": null,
+      "anchor": "众智园治理试验场（概念）",
+      "anchor_type": "text_only",
+      "takeover_max_minutes": null,
+      "takeover_status": "not_applicable",
+      "fallback": "评估框架纸质公开 + 现场人工咨询台；试验暂停不影响既有备案渠道",
+      "data_boundary": "公开评估框架；参与企业数据授权使用；人工复核后发布",
+      "human_review": "治理研究机构运营；每次评估双人复核",
+      "ascent_grade": "G0",
+      "next_gate_needs": "治理研究机构章程 + 评估框架公开",
+      "evidence_status": "design_target"
+    },
+    {
+      "id": "OR-C13",
+      "name_zh": "AI 无障碍伴侣：适老化导航与非数字化等价路径（场景卡 13）",
+      "name_en": "AI accessibility companion: age-friendly wayfinding with non-digital equivalents (scenario card 13)",
+      "type": "public_service",
+      "status": "green_candidate",
+      "gate": null,
+      "anchor": "全域慢行网络与六站厅",
+      "anchor_type": "text_only",
+      "takeover_max_minutes": 5,
+      "fallback": "站厅服务台人工问询 + 纸质多语言导览图 + 实体标识系统（永久保留，非临时回退）",
+      "data_boundary": "公开设施数据；不采集生物特征；语音处理在设备端",
+      "human_review": "社区服务中心运营；无障碍共同设计评审后方可升级",
+      "ascent_grade": "G0",
+      "next_gate_needs": "无障碍共同设计评审 + 社区服务中心服务台到位",
+      "evidence_status": "design_target"
+    }
+  ],
+  "ledger_zh": "折返留痕档案（近失/折返/退役）按协议三线登记；本包尚无运行事件，档案为空属预期状态，不虚构条目。",
+  "boundary_zh": "本采纳声明为参与者自设通道的开放共创行为，不代表任何机构采用该协议；桌面字段齐备不证明任何场景已运行、已获批准或存在政府承诺。",
+  "boundary_en": "This adoption declaration is an open co-creation act on a participant-run channel; it represents adoption by no institution. Complete desktop fields prove no scenario is running, approved, or government-committed."
+}

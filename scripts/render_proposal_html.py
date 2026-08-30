@@ -50,6 +50,7 @@ import re
 import stat
 import tempfile
 from pathlib import Path, PurePosixPath
+from urllib.parse import unquote_to_bytes
 
 
 IMAGE_RE = re.compile(r"!\[([^\]]*)\]\(([^)\s]+)(?:\s+\"[^\"]*\")?\)")
@@ -93,23 +94,55 @@ def parse_front_matter(text: str) -> tuple[dict[str, str], str]:
     return metadata, text[end + 5 :]
 
 
-def normalize_image_src(submission_dir: Path, raw_src: str) -> str:
-    """Resolve *raw_src* to a report-relative local path.
+def _is_unsafe_url_path_segment(segment: str) -> bool:
+    """Return true when URL parsing could reinterpret a filesystem segment."""
+    decoded = unquote_to_bytes(segment)
+    return (
+        decoded in {b".", b".."}
+        or b"/" in decoded
+        or b"\\" in decoded
+        or re.match(rb"^[A-Za-z]:", decoded) is not None
+    )
 
-    Raises:
-        ValueError: If *raw_src* is a remote URL, an unsafe path (absolute or
-            containing ``..``), or if the target file does not exist.
-    """
+
+def resolve_local_image(submission_dir: Path, raw_src: str) -> tuple[Path, Path]:
+    """Resolve *raw_src* and prove that its target stays in the submission."""
     if re.match(r"^(?:https?:)?//", raw_src, re.I) or re.match(r"^(?:data|file|javascript):", raw_src, re.I):
         raise ValueError(f"remote or unsafe image source is not allowed: {raw_src}")
     clean = raw_src.split("#", 1)[0].split("?", 1)[0]
     pure = PurePosixPath(clean)
-    if pure.is_absolute() or ".." in pure.parts:
+    if (
+        not clean
+        or "\\" in clean
+        or pure.is_absolute()
+        or not pure.parts
+        or ".." in pure.parts
+        or any(re.match(r"^[A-Za-z]:", part) for part in pure.parts)
+        or any(_is_unsafe_url_path_segment(part) for part in pure.parts)
+    ):
         raise ValueError(f"image source must be a relative local path: {raw_src}")
-    image_path = submission_dir / pure.as_posix()
+    submission_root = submission_dir.resolve()
+    image_path = submission_root.joinpath(*pure.parts).resolve()
+    try:
+        relative = image_path.relative_to(submission_root)
+    except ValueError as exc:
+        raise ValueError(
+            f"image source must stay within the submission directory: {raw_src}"
+        ) from exc
     if not image_path.exists():
         raise ValueError(f"image source is missing: {raw_src}")
-    return "../" + pure.as_posix()
+    return image_path, relative
+
+
+def normalize_image_src(submission_dir: Path, raw_src: str) -> str:
+    """Resolve *raw_src* to a safe report-relative local path.
+
+    Raises:
+        ValueError: If *raw_src* is remote, unsafe, outside the submission, or
+            if the target file does not exist.
+    """
+    _, relative = resolve_local_image(submission_dir, raw_src)
+    return "../" + relative.as_posix()
 
 
 def contained_output_path(submission_dir: Path, raw_path: str) -> Path:
@@ -142,11 +175,10 @@ def render_inputs(submission_dir: Path, proposal_paths: list[Path]) -> list[Path
         text = proposal_path.read_text(encoding="utf-8")
         for match in IMAGE_RE.finditer(text):
             raw_src = match.group(2).strip()
-            clean = raw_src.split("#", 1)[0].split("?", 1)[0]
-            pure = PurePosixPath(clean)
-            if pure.is_absolute() or ".." in pure.parts:
+            try:
+                candidate, _ = resolve_local_image(submission_dir, raw_src)
+            except ValueError:
                 continue
-            candidate = submission_dir.joinpath(*pure.parts)
             if candidate.is_file():
                 inputs.append(candidate)
     return inputs
@@ -170,6 +202,7 @@ def write_text_atomically(path: Path, text: str) -> None:
             delete=False,
             mode="w",
             encoding="utf-8",
+            newline="\n",
         ) as handle:
             temporary = handle.name
             handle.write(text)
@@ -536,6 +569,12 @@ code {{
   color: #1d4f7a;
   padding: 0.1em 0.35em;
   border-radius: 4px;
+}}
+:not(pre) > code {{
+  display: inline-block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }}
 .summary {{ color: var(--muted); font-size: 17px; }}
 .translation-link a {{ color: var(--accent); font-weight: 700; }}

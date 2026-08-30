@@ -1,0 +1,251 @@
+{
+  "schema_version": "0.1.0",
+  "assumptions": [
+    {
+      "id": "A-CONTROLS-001",
+      "status": "pending_professional_confirmation",
+      "statement": "Detailed regulatory controls, road redlines, ownership, municipal utilities, and engineering constraints must be confirmed from official attachments before statutory use.",
+      "impact": "The package can be reviewed as a formal AI submission only for provided official boundaries and submitted design layers; statutory controls still need professional confirmation."
+    },
+    {
+      "id": "A-GEO-001",
+      "status": "measured_and_disclosed",
+      "statement": "Xiaoyuehe river segment xiaoyuehe-seg-07 (11 vertices) was point-in-polygon tested against the official provisional boundaries and falls outside PROV-RESEARCH-001, the coordinated research scope.",
+      "impact": "Narrative and drawings cite only the in-scope segments. Where the full river course is shown, the northern extension is labelled as background reference outside the research scope."
+    },
+    {
+      "id": "A-GEO-002",
+      "status": "measured_and_disclosed",
+      "statement": "The two industry anchors (Dongpan Innovation Center and the Zhongguancun Haidian Embodied AI Industrial Park) fall inside PROV-RESEARCH-001 only. They are not inside PROV-SITE-001 (overall design scope) or any of the three key detailed-design areas.",
+      "impact": "The narrative describes them as adjacent industrial-ecosystem partners within the coordinated research scope. It must not imply they sit inside the design scope or the key areas."
+    },
+    {
+      "id": "A-GEO-003",
+      "status": "low_confidence_disclosed",
+      "statement": "anchor-embodied-ai-industrial-park shares a single coordinate with the Dongpan Innovation Center because the location was derived from a street address rather than an independent survey point; confidence is recorded as low.",
+      "impact": "Any statement requiring the park's actual site boundary needs separate verification. No metric in metrics.json depends on this coordinate."
+    },
+    {
+      "id": "A-GEO-004",
+      "status": "measured_and_disclosed",
+      "statement": "Cycleway geometry was re-queried with Overpass `out geom` to obtain full linework. geometry/roads.geojson carries 421 cycleway segments (28 reverse-tagged `cycleway*=no` entries removed). Measured against the river geometry in EPSG:4548, 42 segments totalling 23.04 km lie within roughly 300 m of the Xiaoyuehe watercourse. This supersedes the earlier draft count of 26, which was computed before full linework was available.",
+      "impact": "Confidence raised from low to medium. The layer supports scenario-level route reasoning only. It is crowd-sourced data with no segment-by-segment field verification of continuity or lane type, and must not be used for engineering-grade right-of-way design."
+    },
+    {
+      "id": "A-GEO-005",
+      "status": "measured_and_disclosed",
+      "statement": "geometry/public_space.geojson retains university and research-institution POIs falling inside the coordinated research scope. Eight faculty-, classroom- or building-level sub-facilities were removed so every remaining entry is an institution in its own right. The filter is 'inside the research scope', which is broader than 'adjacent to the Xiaoyuehe scenario'.",
+      "impact": "The narrative must not cite the full institution list as 'adjacent'. Where adjacency matters, the measured distance-to-cycleway figure is cited instead: 14 institutions lie within 100 m of a legal lane."
+    },
+    {
+      "id": "A-GEO-006",
+      "status": "pending_professional_confirmation",
+      "statement": "The main Renmin University campus (OSM id 30725330) is confirmed outside the coordinated research scope. However, the Renmin University School of Continuing Education, at a different coordinate (116.3577, 40.0006), does fall inside the scope and is closer to the site.",
+      "impact": "Earlier project records did not distinguish the main campus from its branch. Whether the School of Continuing Education is a year-round independent campus or an affiliated office needs confirmation before it is cited as a talent-catchment anchor."
+    },
+    {
+      "id": "A-GEO-007",
+      "status": "medium_confidence_disclosed",
+      "statement": "All OSM-derived layers, including the 127 park and green-space entries, are crowd-sourced and may be incomplete, duplicated, or out of date; confidence is uniformly recorded as medium.",
+      "impact": "Consistent with docs/data-workflow.md section 6, OSM data is used only as existing_condition or provisional_constraint. It never serves as an official boundary and does not support precise green-ratio or coverage metrics."
+    },
+    {
+      "id": "A-NET-001",
+      "status": "method_choice_disclosed",
+      "statement": "The cycleway network graph in analysis_network.py is built by planarizing all segments at intersections, then snapping endpoints into shared nodes with an 8 m tolerance, in EPSG:4548. The 8 m tolerance is a method choice, not a measured property of the network.",
+      "impact": "A larger tolerance would merge genuinely disconnected links into false connections; a smaller one would split genuinely continuous links into false breaks. The reported figure of 62 connected components is therefore tolerance-dependent and must be reproduced with the stated parameter before being quoted."
+    },
+    {
+      "id": "A-NET-002",
+      "status": "pending_field_verification",
+      "statement": "The three shortest gaps between the largest component and its neighbours measure 9 m, 12 m, and 35 m. Gaps this small are as likely to be OSM mapping artefacts, where the lane is continuous on the ground but drawn as separate ways, as they are to be real physical breaks. The converse error is also possible: links continuous on the map may be severed on the ground by railings, kerbs, or grade changes.",
+      "impact": "Project JZ-07 is scoped as a field-verification task first and a construction task only on confirmation. The claim that 56 m of connection unlocks 30.21 km of additional network is a hypothesis to be tested on site, not a design conclusion. If the breaks prove to be artefacts, the item is struck from the project list."
+    },
+    {
+      "id": "A-NET-003",
+      "status": "out_of_scope_disclosed",
+      "statement": "The network analysis tests topological connectivity only. It carries no information on kerb ramp gradient, paving condition, clear width, turning radius, or any other physical property governing whether a low-speed robot can actually traverse a link.",
+      "impact": "Reachability results state whether a path exists in the graph, not whether it is passable. All robot-service scenarios remain conditional on traffic and municipal professionals confirming physical passability."
+    },
+    {
+      "id": "A-NET-004",
+      "status": "measured_and_disclosed",
+      "statement": "Robot reachability to elderly-care facilities was computed from a single candidate depot: the node inside the largest connected component lying closest to the watercourse, 22 m from the river. Measured from that depot, network-reachable facilities number 0 of 5.",
+      "impact": "The result is depot-dependent. A different depot inside another component would produce a different reachable set, though no component contains more than one facility with under 100 m of terminal access. The 0-of-5 finding is used to establish that the flagship scenario has an unmet precondition, not to rank candidate depot sites."
+    },
+    {
+      "id": "A-BLD-001",
+      "status": "measured_and_disclosed",
+      "statement": "Building footprints come from OpenStreetMap, not from a municipal building register. Coverage in this corridor is uneven and newly built or demolished structures may be missing or stale.",
+      "impact": "All building-derived figures (footprint area, coverage ratio, key-area density) are lower bounds of unknown tightness. They support relative comparison between key areas, which is what the proposal uses them for, and must be recomputed against official survey data before any regulatory use."
+    },
+    {
+      "id": "A-BLD-002",
+      "status": "measured_and_disclosed",
+      "statement": "Footprints that cross the provisional site boundary are excluded rather than clipped, because clipping a building produces a shape that is not a building.",
+      "impact": "The building count and footprint area are therefore slightly understated along the corridor edge. Clipping would have produced a marginally larger area at the cost of geometric meaning; the exclusion is the more conservative choice."
+    },
+    {
+      "id": "A-BLD-003",
+      "status": "measured_and_disclosed",
+      "statement": "Only 9.6 per cent of footprints in scope carry a storey count and almost none carry a height. This is a statement about data availability, not about the built stock.",
+      "impact": "No floor-area, plot-ratio or height conclusion can be derived from this layer. The proposal therefore leaves floor_area_ratio unknown and gives no height figures, and says so with this measurement rather than as a generic caveat."
+    },
+    {
+      "id": "A-LU-001",
+      "status": "measured_and_disclosed",
+      "statement": "Land use is mapped from OSM landuse/amenity/leisure tags onto the project code subset in brief/site-package/enums/land_use_codes.json. It is an observation of present conditions, not a statutory land-use plan.",
+      "impact": "Category areas are indicative and rest on volunteer tagging. They are used to describe the corridor's present composition, never as a zoning proposal or an area basis for control indicators."
+    },
+    {
+      "id": "A-LU-002",
+      "status": "measured_and_disclosed",
+      "statement": "46.4 per cent of the design scope carries no OSM land-use tag. That remainder is recorded as code 16 reserved land rather than being inferred from surrounding parcels.",
+      "impact": "The layer satisfies the full-coverage requirement without fabricating uses. Readers should treat code 16 areas as 'not established on present evidence'; official cadastral data will replace them wholesale."
+    },
+    {
+      "id": "A-LU-003",
+      "status": "measured_and_disclosed",
+      "statement": "Code 16 is used here in two distinct senses: parcels OSM tags as brownfield, greenfield, construction, military, farmyard, industrial or railway, for which the project code subset has no matching category; and the untagged remainder.",
+      "impact": "Neither sense is a proposal to reserve land. The project code table is an acknowledged subset and lacks an industrial category altogether, which is itself a finding reported in the land-use section."
+    },
+    {
+      "id": "A-NET-005",
+      "status": "measured_and_disclosed",
+      "statement": "Only 18 per cent of the analysed cycleway length lies inside the provisional design scope. Connectivity is a property of a whole network and cannot be assessed on a clipped fragment without inventing boundary breaks.",
+      "impact": "The network analysis necessarily extends into the coordinated research area. The three highest-leverage gaps lie 409 to 1,178 m outside the provisional design boundary, so gap closure is a coordinated-research-scope action, not a design-scope one. Since the boundary is itself provisional, this placement may change when official geometry is issued."
+    },
+    {
+      "id": "A-NET-006",
+      "status": "measured_and_disclosed",
+      "statement": "Clipping the network to the design scope and re-running the analysis yields 24.68 km in 28 components with the largest holding 15.4 per cent of nodes.",
+      "impact": "This is reported to show that the fragmentation diagnosis survives the clip rather than being an artefact of looking too widely. The clipped figures are not used as the operative numbers, because boundary-induced breaks are not real breaks."
+    },
+    {
+      "id": "A-PH-001",
+      "status": "measured_and_disclosed",
+      "statement": "Phase 1 polygons are 150 m radius circles centred on the midpoint of each measured gap. The radius is a survey working area, chosen to be legible at drawing scale.",
+      "impact": "It is not an engineering redline, a works boundary or a land requirement. If site verification shows a gap is an OSM artefact, the corresponding phase 1 item is struck from the programme rather than redrawn."
+    },
+    {
+      "id": "A-SVC-001",
+      "status": "measured_and_disclosed",
+      "statement": "The 596 m connection tree is built by taking the metric closure over the component graph and then a minimum spanning tree — the classical 2-approximation for the Steiner tree problem — over the eighteen largest components plus the five that contain facilities.",
+      "impact": "596 m is an upper bound on the true minimum, not the proven optimum, and the candidate pool excludes small components that could in principle serve as cheaper stepping stones. A tighter solution would only lower the figure, so the phasing conclusions built on it are conservative."
+    },
+    {
+      "id": "A-SVC-002",
+      "status": "measured_and_disclosed",
+      "statement": "'Facilities on the network' counts a facility once its nearest network node is within the time budget. It deliberately ignores the terminal distance from that node to the facility door.",
+      "impact": "Reported alone it would overstate the result: under a 100 m terminal test the count remains 0 even after all 596 m is built. The proposal reports both measures side by side precisely because the difference between them is the finding."
+    },
+    {
+      "id": "A-SVC-003",
+      "status": "measured_and_disclosed",
+      "statement": "Travel time converts network distance at a constant 15 km/h, the legal ceiling for delivery robots. Stops, signals, queueing, gradients and mixed-traffic slowdowns are not modelled.",
+      "impact": "All quoted minutes are lower bounds. They are used to compare depot sites and to rank links against each other, where the constant cancels, and not as a service-level promise."
+    },
+    {
+      "id": "A-SVC-004",
+      "status": "measured_and_disclosed",
+      "statement": "Terminal distance is the straight-line distance from the facility point to its nearest network node. A compliant walking route would be longer, and no such route has been surveyed.",
+      "impact": "The 1,950 m terminal total is therefore a lower bound, which strengthens rather than weakens the conclusion that terminal access dominates the network gaps."
+    },
+    {
+      "id": "A-SVC-005",
+      "status": "measured_and_disclosed",
+      "statement": "The 150 m threshold for an acceptable staff walk to a collection point is a judgement, not a measurement.",
+      "impact": "It decides how many facilities phase one can serve, so the proposal publishes the full sensitivity curve from 100 m to 700 m instead of a single figure. At 250 m two facilities qualify, at 450 m three."
+    },
+    {
+      "id": "A-POL-001",
+      "status": "measured_and_disclosed",
+      "statement": "The whole connectivity computation was rerun at snapping tolerances of 4, 6, 8, 10, 12, 15 and 20 m. Component counts range from 47 to 63 and the largest component's node share from 14.8 to 30.3 per cent; the count of network-reachable elderly facilities is zero at every setting.",
+      "impact": "The magnitudes are parameter-dependent and are always quoted with the 8 m setting stated. The two conclusions the proposal actually rests on — that the network is fragmented and that no facility is reachable — do not reverse anywhere in the swept range."
+    },
+    {
+      "id": "A-POL-002",
+      "status": "measured_and_disclosed",
+      "statement": "Terminal distance was measured for 1,619 destinations (5 elderly-care facilities, 50 universities and institutes, 2 industry anchors, 1,562 building centroids), not only for the five facilities that carry the flagship scenario.",
+      "impact": "Median terminal distance is 250 m for buildings and 77 per cent of buildings lie more than 150 m from any legal robot right of way. The terminal-gap finding is therefore a structural property of the corridor rather than a feature of a five-point sample."
+    },
+    {
+      "id": "A-POL-003",
+      "status": "measured_and_disclosed",
+      "statement": "The walking network is OSM footway, path, pedestrian and living_street ways with steps excluded. Its mapping completeness is visibly lower than that of the cycleway data: merging it raises the component count from 62 to 877, mostly short dead-end kerbside stubs.",
+      "impact": "Every figure for the footway scenario is a lower bound. The 6.5-fold reachable-network result and the 67-77 per cent terminal reduction would only improve with complete sidewalk data, so the policy conclusion is conservative. These lines are not submitted as a package layer and must not be used to claim that any particular segment is passable."
+    },
+    {
+      "id": "A-POL-004",
+      "status": "measured_and_disclosed",
+      "statement": "Across all policy scenarios the depot is held fixed at the minimax-optimal point (116.34627, 39.99979), with only the nearest node in each network selected.",
+      "impact": "Without this the comparison would measure a change of depot rather than a change of policy. It also means each scenario's absolute figures are not the best achievable under that policy; the comparison between rows is what carries the argument."
+    },
+    {
+      "id": "A-SIM-001",
+      "status": "measured_and_disclosed",
+      "statement": "The dispatch ledger uses ten destinations already present in geometry/public_space.geojson (five elderly-care facilities, two industry anchors, and the three university features nearest the depot), each dispatched under three right-of-way states. No destination was invented for the ledger.",
+      "impact": "The ledger measures this specific set of doors, not the whole belt. The three nearest universities are a deterministic selection rule, not a representative sample; the 1,619-destination distribution in the policy analysis carries the scale claim instead."
+    },
+    {
+      "id": "A-SIM-002",
+      "status": "assumed_and_flagged",
+      "statement": "A nominal energy rate of 0.00006 kWh/m is used to express both the per-task budget and the per-task consumption. The budget is straight-line distance x 1.5 x rate; consumption is route length x rate.",
+      "impact": "The rate appears on both sides and cancels, so energy_budget_violations is exactly the count of tasks whose legal route exceeds 1.5x the straight-line distance. This is deliberate: it keeps the metric a pure geometric measurement of how circuitous the legal network is, and it means the ledger makes no claim about any vehicle's battery, payload, or drivetrain."
+    },
+    {
+      "id": "A-SIM-003",
+      "status": "assumed_and_flagged",
+      "statement": "A task succeeds only if a Dijkstra path exists on the applicable right-of-way graph, travel time at the 15 km/h regulatory cap is within 15 minutes, and the terminal gap without right-of-way is at most 150 m (handled as a staffed handover, per scenario card 02).",
+      "impact": "The 150 m terminal cap and the 15-minute budget are design choices of this proposal, not regulatory thresholds. Loosening the terminal cap to 700 m raises servable facilities from 1 to 5 (see the policy-lever table); the ledger's low success rate is therefore a statement about the terminal condition under this proposal's own service standard, not a claim that delivery is impossible."
+    },
+    {
+      "id": "A-SIM-004",
+      "status": "measured_and_disclosed",
+      "statement": "audit_complete is false when a route depends on right-of-way that does not exist today (the proposed 596 m links in round B; footway permission in round C) or when a terminal gap remains at a destination for which this proposal names no human handover party.",
+      "impact": "audit_completeness measures traceability of the record, not task success, so a task that was never dispatched is not marked incomplete. The 0.3 reading is driven mainly by rounds B and C being conditional on rules that have not been granted, and by universities and industry anchors having no named handover party - a real operational gap this proposal does not close."
+    },
+    {
+      "id": "A-SIM-005",
+      "status": "measured_and_disclosed",
+      "statement": "Round C merges OSM footway geometry into the cycle-lane graph with steps excluded, because steps are impassable to both delivery robots and wheelchairs.",
+      "impact": "OSM footway mapping in this area is fragmented into many stub side-segments, so round C's connectivity is a lower bound and its success count must not be read as 'permitting footways makes delivery work'. Round C is evidence about terminal distance only; its component structure is a data-quality artefact."
+    },
+    {
+      "id": "A-IDX-001",
+      "status": "measured_and_disclosed",
+      "statement": "Machine accessibility is a pair-based rate over 1,619 real destinations (1,562 OSM building footprints, 50 universities, 5 elderly-care facilities, 2 industry anchors). A pair counts as reachable only if both terminal gaps fall within the cap and both destinations attach to the same connected component.",
+      "impact": "The measure assumes no origin, so unlike every other figure in this proposal it does not move when the depot moves. It is deliberately harsh: fragmentation enters quadratically, which is arithmetically correct for pairwise service but means the rate falls much faster than the attachment rate. Both are reported together for that reason."
+    },
+    {
+      "id": "A-IDX-002",
+      "status": "assumed_and_flagged",
+      "statement": "The 150 m terminal cap used for the headline rate is this proposal's own service standard, matching the dispatch ledger, not a regulatory threshold.",
+      "impact": "At a 100 m cap the rate falls to 0.17%; at 250 m it rises to 3.34%. The ordering of the comparison against the footway counterfactual holds at every cap tested, so the conclusion does not depend on the choice, but the absolute figure does."
+    },
+    {
+      "id": "A-IDX-003",
+      "status": "measured_and_disclosed",
+      "statement": "Attachment rate and accessibility rate measure different things: attachment is local (can this door reach the network at all), accessibility is global (can two doors reach each other).",
+      "impact": "Reporting only the accessibility rate would overstate the severity, and reporting only attachment would hide it. At a 150 m cap 23.2% of destinations attach, yet only 0.69% of pairs are mutually reachable - the gap between the two numbers is the fragmentation itself."
+    },
+    {
+      "id": "A-WHL-001",
+      "status": "measured_and_disclosed",
+      "statement": "The cost of making the whole network connected is a minimum spanning tree over all 62 components, with edge weight the nearest-point distance between two components' node sets.",
+      "impact": "It is a lower bound on real construction: it ignores buildings, watercourses, tenure and the requirement to follow a usable alignment. Real closure of any single gap will cost more than the straight-line figure, and some gaps will prove impossible."
+    },
+    {
+      "id": "A-WHL-002",
+      "status": "measured_and_disclosed",
+      "statement": "Eighteen of the 61 connections are shorter than 20 m and total only 253 m.",
+      "impact": "Gaps that short are the characteristic signature of OpenStreetMap omission rather than physical separation. The component count of 62 must therefore be read as an upper bound on real fragmentation, and every conclusion derived from it inherits that bound. Seven connections of 300 m or more, totalling 2,974 m, are by contrast too long to be mapping artefacts."
+    },
+    {
+      "id": "A-SVC-006",
+      "status": "assumed_and_flagged",
+      "statement": "The 596 m minimum connection set is a 2-approximation (metric closure plus MST over the component graph), and the candidate pool was restricted to the five facility components plus the eighteen largest components rather than all 62.",
+      "impact": "596 m is therefore an upper bound on the optimal connection cost twice over - once from the approximation ratio and once from the restricted search. The true optimum is at most 596 m and may be less; no conclusion in this proposal depends on it being exact, since the argument is about order of magnitude against the terminal cost of 1,841 m."
+    }
+  ]
+}

@@ -11,11 +11,41 @@
     "depth_m": 6,
     "area_sqm": 72,
     "zones": [
-      {"zone_id": "Z1", "name_zh": "普通服务与等候", "name_en": "ordinary service and waiting", "area_sqm": 14.4, "ai_dependency": false},
-      {"zone_id": "Z2", "name_zh": "知情与撤回", "name_en": "notice and withdrawal", "area_sqm": 10.8, "ai_dependency": false},
-      {"zone_id": "Z3", "name_zh": "隔离/平行校译", "name_en": "isolated or shadow proofing", "area_sqm": 18.0, "ai_dependency": true},
-      {"zone_id": "Z4", "name_zh": "人工复核与回执", "name_en": "human review and receipt", "area_sqm": 14.4, "ai_dependency": false},
-      {"zone_id": "Z5", "name_zh": "安静申诉与回退", "name_en": "quiet appeal and rollback", "area_sqm": 14.4, "ai_dependency": false}
+      {
+        "zone_id": "Z1",
+        "name_zh": "普通服务与等候",
+        "name_en": "ordinary service and waiting",
+        "area_sqm": 14.4,
+        "ai_dependency": false
+      },
+      {
+        "zone_id": "Z2",
+        "name_zh": "知情与撤回",
+        "name_en": "notice and withdrawal",
+        "area_sqm": 10.8,
+        "ai_dependency": false
+      },
+      {
+        "zone_id": "Z3",
+        "name_zh": "隔离/平行校译",
+        "name_en": "isolated or shadow proofing",
+        "area_sqm": 18.0,
+        "ai_dependency": true
+      },
+      {
+        "zone_id": "Z4",
+        "name_zh": "人工复核与回执",
+        "name_en": "human review and receipt",
+        "area_sqm": 14.4,
+        "ai_dependency": false
+      },
+      {
+        "zone_id": "Z5",
+        "name_zh": "安静申诉与回退",
+        "name_en": "quiet appeal and rollback",
+        "area_sqm": 14.4,
+        "ai_dependency": false
+      }
     ]
   },
   "minimum_open_shift_resources": {
@@ -34,14 +64,55 @@
     "Steward owns expiry, versioning, maintenance, and removal records."
   ],
   "states": [
-    {"state_id": "S0", "weeks": "1-2", "name_zh": "普通服务基线", "name_en": "ordinary-service baseline", "public_ai_output": false},
-    {"state_id": "S1", "weeks": "3-5", "name_zh": "隔离校译", "name_en": "isolated proofing", "public_ai_output": false},
-    {"state_id": "S2", "weeks": "6-8", "name_zh": "影子平行服务", "name_en": "shadow parallel service", "public_ai_output": false},
-    {"state_id": "S3", "weeks": "9-11", "name_zh": "公众校样", "name_en": "public proofing", "public_ai_output": true},
-    {"state_id": "S4", "weeks": "12", "name_zh": "采纳/重译/退场", "name_en": "adopt/retranslate/retire", "public_ai_output": null}
+    {
+      "state_id": "S0",
+      "weeks": "1-2",
+      "name_zh": "普通服务基线",
+      "name_en": "ordinary-service baseline",
+      "public_ai_output": false
+    },
+    {
+      "state_id": "S1",
+      "weeks": "3-5",
+      "name_zh": "隔离校译",
+      "name_en": "isolated proofing",
+      "public_ai_output": false
+    },
+    {
+      "state_id": "S2",
+      "weeks": "6-8",
+      "name_zh": "影子平行服务",
+      "name_en": "shadow parallel service",
+      "public_ai_output": false
+    },
+    {
+      "state_id": "S3",
+      "weeks": "9-11",
+      "name_zh": "公众校样",
+      "name_en": "public proofing",
+      "public_ai_output": true
+    },
+    {
+      "state_id": "S4",
+      "weeks": "12",
+      "name_zh": "采纳/重译/退场",
+      "name_en": "adopt/retranslate/retire",
+      "public_ai_output": null
+    }
   ],
-  "hard_gates": ["provenance", "consent", "access", "review", "rollback", "stewardship"],
-  "decision_options": ["limited_adoption", "return_for_retranslation", "retire_and_restore_baseline"],
+  "hard_gates": [
+    "provenance",
+    "consent",
+    "access",
+    "review",
+    "rollback",
+    "stewardship"
+  ],
+  "decision_options": [
+    "limited_adoption",
+    "return_for_retranslation",
+    "retire_and_restore_baseline"
+  ],
   "concept_targets_not_field_results": {
     "ordinary_service_availability_ratio": 1.0,
     "human_handoff_seconds_max": 120,
@@ -64,5 +135,452 @@
     "weeks_6_to_11": "authorized minimum case content after redaction; no biometric or continuous location data",
     "retained_evidence": "aggregate counts, rule version, anonymous token, decision, expiry, and rollback record",
     "personal_data_in_this_submission": false
+  },
+  "version": "v4.0",
+  "launch_conditions": [
+    {
+      "gate_id": "L1",
+      "name_zh": "场地与可逆性",
+      "evidence_required": "场地书面许可、撤除路线、恢复普通用途清单",
+      "current_status": "conditional_not_triggered",
+      "owner": "venue_custodian"
+    },
+    {
+      "gate_id": "L2",
+      "name_zh": "普通服务基线",
+      "evidence_required": "S0 纸质、人工、无障碍和双语路径演练记录",
+      "current_status": "design_ready_field_unmeasured",
+      "owner": "ordinary_service_operator"
+    },
+    {
+      "gate_id": "L3",
+      "name_zh": "角色与职责分离",
+      "evidence_required": "实名排班、RACI、供应方不得自批的签字确认",
+      "current_status": "concept_roles_unassigned",
+      "owner": "steward"
+    },
+    {
+      "gate_id": "L4",
+      "name_zh": "最小数据与权利",
+      "evidence_required": "用途、来源、保存期限、撤回和删除说明",
+      "current_status": "contract_defined_no_live_data",
+      "owner": "steward"
+    },
+    {
+      "gate_id": "L5",
+      "name_zh": "专业安全复核",
+      "evidence_required": "适用的消防、无障碍、结构、市政、网络安全复核",
+      "current_status": "conditional_not_triggered",
+      "owner": "professional_reviewer"
+    },
+    {
+      "gate_id": "L6",
+      "name_zh": "异常与回退演练",
+      "evidence_required": "合成案例下停止、转人工、申诉、删除和恢复记录",
+      "current_status": "synthetic_contract_verified",
+      "owner": "ordinary_service_operator"
+    },
+    {
+      "gate_id": "L7",
+      "name_zh": "公众告知与回执",
+      "evidence_required": "中英、大字、触觉/音频告知及八字段回执样张",
+      "current_status": "design_ready_field_unmeasured",
+      "owner": "community_witness"
+    },
+    {
+      "gate_id": "L8",
+      "name_zh": "物理停止与退场",
+      "evidence_required": "停止键测试、断网降级、资产复用和临时数据清除记录",
+      "current_status": "design_ready_field_unmeasured",
+      "owner": "steward"
+    }
+  ],
+  "raci_roles": [
+    {
+      "role_id": "venue_custodian",
+      "name_zh": "场地责任人",
+      "accountability": "场地安全、普通用途和可撤离条件"
+    },
+    {
+      "role_id": "ordinary_service_operator",
+      "name_zh": "普通服务员",
+      "accountability": "服务连续、人工接管、停止与恢复"
+    },
+    {
+      "role_id": "proofing_translator",
+      "name_zh": "校译操作员",
+      "accountability": "隔离运行、证据整理和不确定性标注"
+    },
+    {
+      "role_id": "professional_reviewer",
+      "name_zh": "专业复核员",
+      "accountability": "专业、权利、安全和六门放行判断"
+    },
+    {
+      "role_id": "community_witness",
+      "name_zh": "社区见证人",
+      "accountability": "可达、告知、申诉和退出见证，不查看个案内容"
+    },
+    {
+      "role_id": "steward",
+      "name_zh": "版本维护人",
+      "accountability": "版本、期限、证据、删除和退场记录"
+    },
+    {
+      "role_id": "ai_supplier",
+      "name_zh": "AI 供应方",
+      "accountability": "提交模型、数据和限制证据；不得批准自身输出"
+    }
+  ],
+  "raci_activities": [
+    {
+      "activity_id": "site_open",
+      "accountable": "venue_custodian",
+      "responsible": [
+        "ordinary_service_operator"
+      ],
+      "consulted": [
+        "professional_reviewer",
+        "community_witness"
+      ],
+      "informed": [
+        "steward",
+        "proofing_translator",
+        "ai_supplier"
+      ]
+    },
+    {
+      "activity_id": "minimum_data_intake",
+      "accountable": "steward",
+      "responsible": [
+        "proofing_translator"
+      ],
+      "consulted": [
+        "professional_reviewer"
+      ],
+      "informed": [
+        "ordinary_service_operator",
+        "community_witness",
+        "ai_supplier",
+        "venue_custodian"
+      ]
+    },
+    {
+      "activity_id": "isolated_ai_draft",
+      "accountable": "proofing_translator",
+      "responsible": [
+        "ai_supplier"
+      ],
+      "consulted": [
+        "professional_reviewer",
+        "steward"
+      ],
+      "informed": [
+        "ordinary_service_operator",
+        "community_witness",
+        "venue_custodian"
+      ]
+    },
+    {
+      "activity_id": "six_gate_decision",
+      "accountable": "professional_reviewer",
+      "responsible": [
+        "proofing_translator"
+      ],
+      "consulted": [
+        "community_witness",
+        "steward"
+      ],
+      "informed": [
+        "ordinary_service_operator",
+        "venue_custodian",
+        "ai_supplier"
+      ]
+    },
+    {
+      "activity_id": "public_service_and_handoff",
+      "accountable": "ordinary_service_operator",
+      "responsible": [
+        "ordinary_service_operator"
+      ],
+      "consulted": [
+        "professional_reviewer",
+        "community_witness"
+      ],
+      "informed": [
+        "steward",
+        "proofing_translator",
+        "venue_custodian",
+        "ai_supplier"
+      ]
+    },
+    {
+      "activity_id": "appeal_resolution",
+      "accountable": "ordinary_service_operator",
+      "responsible": [
+        "steward"
+      ],
+      "consulted": [
+        "professional_reviewer",
+        "community_witness"
+      ],
+      "informed": [
+        "venue_custodian",
+        "proofing_translator",
+        "ai_supplier"
+      ]
+    },
+    {
+      "activity_id": "stop_and_restore",
+      "accountable": "ordinary_service_operator",
+      "responsible": [
+        "ordinary_service_operator",
+        "steward"
+      ],
+      "consulted": [
+        "professional_reviewer"
+      ],
+      "informed": [
+        "venue_custodian",
+        "community_witness",
+        "proofing_translator",
+        "ai_supplier"
+      ]
+    },
+    {
+      "activity_id": "retire_and_reuse",
+      "accountable": "steward",
+      "responsible": [
+        "venue_custodian",
+        "ordinary_service_operator"
+      ],
+      "consulted": [
+        "professional_reviewer",
+        "community_witness"
+      ],
+      "informed": [
+        "proofing_translator",
+        "ai_supplier"
+      ]
+    }
+  ],
+  "user_types": [
+    "resident_without_smartphone",
+    "wheelchair_visitor",
+    "low_vision_researcher",
+    "international_visitor",
+    "youth_with_guardian",
+    "startup_tester"
+  ],
+  "minimum_data_contract": {
+    "ephemeral_inputs": [
+      "service_purpose",
+      "minimum_case_content",
+      "requested_language",
+      "session_access_channel"
+    ],
+    "persisted_receipt_fields": [
+      "anonymous_case_token",
+      "service_purpose",
+      "six_gate_states",
+      "human_owner_role",
+      "expiry_time",
+      "ordinary_service_route",
+      "appeal_route",
+      "rollback_status"
+    ],
+    "forbidden_by_default": [
+      "name",
+      "face",
+      "biometric",
+      "precise_or_continuous_location",
+      "contact_list",
+      "cross_service_identifier",
+      "raw_audio_or_video"
+    ],
+    "retention_rule": "Raw case content is not retained by default; the anonymous receipt expires with the trial cycle unless lawfully required otherwise.",
+    "deletion_control": "Steward records deletion or justified exception against the anonymous token; withdrawal stops further proofing immediately."
+  },
+  "ai_scope": [
+    "translate or reformat public/cleared minimum case content",
+    "draft a response for human review",
+    "surface provenance, uncertainty, and missing evidence",
+    "suggest ordinary-service or specialist routing"
+  ],
+  "ai_prohibited_actions": [
+    "approve its own Six-Gate decision",
+    "close an appeal",
+    "deny ordinary service",
+    "retain personal data by default",
+    "make legal, medical, planning, procurement, or approval decisions"
+  ],
+  "human_scope": [
+    "confirm purpose, notice, withdrawal, and accessible route",
+    "review factual, professional, rights, and safety boundaries",
+    "sign or refuse every public proof",
+    "take over service, handle complaints, stop, rollback, and retire the AI layer"
+  ],
+  "no_ai_fallback": {
+    "service": "staffed ordinary-service desk with paper and bilingual guidance",
+    "specialist_route": "scheduled human professional review",
+    "accessibility": "step-free route, large print/read-aloud, tactile guidance, quiet desk",
+    "data_capture": "no AI case capture; only the minimum ordinary-service record required by the future lawful operator"
+  },
+  "exception_playbook": [
+    {
+      "event": "provenance_or_rights_failure",
+      "immediate_action": "isolate output, suspend S3, restore ordinary service",
+      "evidence": "failure sample and deletion/hold record",
+      "owner": "professional_reviewer"
+    },
+    {
+      "event": "unsafe_or_materially_wrong_output",
+      "immediate_action": "withdraw output, human takeover, notify reviewer",
+      "evidence": "anonymous incident token and correction record",
+      "owner": "ordinary_service_operator"
+    },
+    {
+      "event": "accessibility_or_language_barrier",
+      "immediate_action": "move to accessible staffed route and stop the affected proof",
+      "evidence": "barrier observation without case content",
+      "owner": "community_witness"
+    },
+    {
+      "event": "handoff_target_missed",
+      "immediate_action": "ordinary operator assumes control and marks target failed",
+      "evidence": "timestamp pair and receipt state",
+      "owner": "ordinary_service_operator"
+    },
+    {
+      "event": "rollback_or_stop_failure",
+      "immediate_action": "physical isolation, retire AI layer, keep ordinary service open",
+      "evidence": "stop-control test and retirement record",
+      "owner": "steward"
+    },
+    {
+      "event": "privacy_or_security_incident",
+      "immediate_action": "disconnect workstation, preserve only authorized audit evidence, escalate under future operator policy",
+      "evidence": "incident classification and authorized disposition",
+      "owner": "steward"
+    }
+  ],
+  "complaint_and_appeal": {
+    "entry": "quiet staffed desk, paper form, or anonymous receipt token",
+    "acknowledgement_target": "within one open shift; concept target, unmeasured",
+    "decision_owner": "ordinary_service_operator with professional_reviewer consultation",
+    "user_remedy": "ordinary service, corrected proof, return for retranslation, or AI-layer retirement",
+    "no_retaliation": "ordinary service remains available regardless of withdrawal or complaint"
+  },
+  "degradation_modes": [
+    {
+      "mode": "D0",
+      "service": "ordinary staffed service; AI off",
+      "public_ai_output": false
+    },
+    {
+      "mode": "D1",
+      "service": "offline lookup/translation aid; output visible only to staff",
+      "public_ai_output": false
+    },
+    {
+      "mode": "D2",
+      "service": "shadow proofing with human review",
+      "public_ai_output": false
+    },
+    {
+      "mode": "D3",
+      "service": "limited receipted public proof after all gates",
+      "public_ai_output": true
+    }
+  ],
+  "acceptance_metrics": [
+    {
+      "metric_id": "ordinary_service_availability",
+      "threshold": "1.0 during every open shift",
+      "current_evidence": "design target only",
+      "field_status": "unmeasured",
+      "evidence_artifact": "shift log"
+    },
+    {
+      "metric_id": "human_handoff",
+      "threshold": "<=120 seconds concept target",
+      "current_evidence": "synthetic rule check",
+      "field_status": "unmeasured",
+      "evidence_artifact": "timestamp pair"
+    },
+    {
+      "metric_id": "withdrawal_acknowledgement",
+      "threshold": "<=1 open shift concept target",
+      "current_evidence": "contract defined",
+      "field_status": "unmeasured",
+      "evidence_artifact": "anonymous receipt update"
+    },
+    {
+      "metric_id": "receipt_completeness",
+      "threshold": "8/8 required fields",
+      "current_evidence": "12/12 synthetic journeys",
+      "field_status": "unmeasured",
+      "evidence_artifact": "receipt sample"
+    },
+    {
+      "metric_id": "six_gate_completeness",
+      "threshold": "6/6 gates evidenced; no compensation",
+      "current_evidence": "7/7 synthetic proof cases",
+      "field_status": "unmeasured",
+      "evidence_artifact": "gate decision record"
+    },
+    {
+      "metric_id": "inclusive_route_readiness",
+      "threshold": "12/12 synthetic positive/failure journeys as expected before field work",
+      "current_evidence": "12/12 synthetic journeys",
+      "field_status": "synthetic_only",
+      "evidence_artifact": "pilot-readiness-evidence.json"
+    },
+    {
+      "metric_id": "stop_and_restore",
+      "threshold": "1/1 rehearsal restores D0 ordinary service",
+      "current_evidence": "contract check only",
+      "field_status": "unmeasured",
+      "evidence_artifact": "stop-control rehearsal record"
+    },
+    {
+      "metric_id": "data_minimization",
+      "threshold": "0 prohibited default fields retained",
+      "current_evidence": "schema and fixture review",
+      "field_status": "unmeasured",
+      "evidence_artifact": "field inventory and deletion record"
+    }
+  ],
+  "evidence_outputs": [
+    "S0 ordinary-service baseline log",
+    "launch-gate checklist",
+    "RACI sign-off",
+    "data inventory and deletion record",
+    "six-gate decision record",
+    "eight-field receipt sample",
+    "incident/appeal/rollback record",
+    "S4 adopt-retranslate-retire decision and public change log"
+  ],
+  "exit_and_public_reuse": {
+    "remove": [
+      "AI workstation",
+      "supplier branding",
+      "temporary credentials",
+      "temporary case buffers"
+    ],
+    "retain_for_public_use": [
+      "staffed service desk",
+      "quiet appeal room",
+      "accessible guidance",
+      "community meeting furniture",
+      "repair and learning tables"
+    ],
+    "archive": [
+      "aggregate non-personal metrics",
+      "protocol version",
+      "retirement decision",
+      "maintenance lessons"
+    ],
+    "lock_in_rule": "Ordinary service and public furniture must remain usable without the AI supplier."
   }
 }

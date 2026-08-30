@@ -1,0 +1,232 @@
+{
+  "schema_version": "0.1.0",
+  "units": {
+    "length": "m",
+    "area": "sqm"
+  },
+  "metrics": {
+    "site_area_sqm": {
+      "status": "known",
+      "value": 11412825.386,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "polygon_area(site_boundary, EPSG:4548)",
+      "confidence": "low",
+      "assumptions": [
+        "边界为 provisional_rough 临时几何，不是官方红线，也不是精确面积依据。",
+        "正式 official boundary 发布后必须整体复算本指标及其派生比值。"
+      ]
+    },
+    "green_space_area_sqm": {
+      "status": "known",
+      "value": 2800524.399,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/green_space.geojson"
+      ],
+      "formula": "polygon_area(union(green_space), EPSG:4548)",
+      "confidence": "low",
+      "assumptions": [
+        "设计模型值，基于 provisional 边界推导的概念绿地结构。"
+      ]
+    },
+    "public_space_area_sqm": {
+      "status": "known",
+      "value": 899900.958,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "polygon_area(union(public_space), EPSG:4548)",
+      "confidence": "low",
+      "assumptions": [
+        "含三处朝圣地标广场与七处东西缝合口，均为概念建议。"
+      ]
+    },
+    "building_footprint_area_sqm": {
+      "status": "known",
+      "value": 144950.0,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "polygon_area(union(buildings), EPSG:4548)",
+      "confidence": "low",
+      "assumptions": [
+        "示意基底，不构成建筑方案、高度或开发强度结论。"
+      ]
+    },
+    "green_ratio": {
+      "status": "known",
+      "value": 0.245384,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/green_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "green_space_area_sqm / site_area_sqm",
+      "confidence": "low",
+      "assumptions": [
+        "分母为 provisional 边界面积，正式数据发布后复算。"
+      ]
+    },
+    "public_space_ratio": {
+      "status": "known",
+      "value": 0.07885,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "public_space_area_sqm / site_area_sqm",
+      "confidence": "low",
+      "assumptions": [
+        "分母为 provisional 边界面积，正式数据发布后复算。"
+      ]
+    },
+    "key_area_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "count(features[layer=KEY_AREA])",
+      "confidence": "medium",
+      "assumptions": [
+        "对应公告的三处重点详细设计区域。"
+      ]
+    },
+    "east_west_seam_count": {
+      "status": "known",
+      "value": 7,
+      "unit": "count",
+      "source_files": [
+        "geometry/roads.geojson",
+        "geometry/public_space.geojson"
+      ],
+      "formula": "count(features[road_class=pedestrian])",
+      "confidence": "medium",
+      "assumptions": [
+        "东西缝合口为概念建议，不涉及道路红线或工程线位结论。"
+      ]
+    },
+    "floor_area_ratio": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "brief/site-package/ranges/planning_limits.json"
+      ],
+      "formula": "total_floor_area_sqm / official_site_area_sqm",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "法定容积率控制条件和 official boundary 均未公开，按规则保持 unknown，不用占位值替代。"
+    },
+    "building_height_m": {
+      "status": "unknown",
+      "value": null,
+      "unit": "m",
+      "source_files": [
+        "brief/site-package/ranges/planning_limits.json"
+      ],
+      "formula": "max(building_height)",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "建筑限高属于法定管控内容，未公开，本方案不作结论。"
+    },
+    "simulation_task_count": {
+      "status": "known",
+      "value": 20,
+      "unit": "count",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "len(simulation.tasks)",
+      "confidence": "medium",
+      "assumptions": [
+        "读数来自离线合成演练，不是现场实测，不构成运营效果承诺。"
+      ]
+    },
+    "simulation_success_rate": {
+      "status": "known",
+      "value": 0.85,
+      "unit": "ratio",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "count(outcome==success or *_success) / len(tasks)",
+      "confidence": "medium",
+      "assumptions": [
+        "读数来自离线合成演练，不是现场实测，不构成运营效果承诺。"
+      ]
+    },
+    "tool_schema_pass_rate": {
+      "status": "known",
+      "value": 0.95,
+      "unit": "ratio",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "count(dispatch_schema_valid) / len(tasks)",
+      "confidence": "medium",
+      "assumptions": [
+        "读数来自离线合成演练，不是现场实测，不构成运营效果承诺。"
+      ]
+    },
+    "energy_budget_violations": {
+      "status": "known",
+      "value": 2,
+      "unit": "count",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "count(energy_used_kwh > energy_budget_kwh)",
+      "confidence": "medium",
+      "assumptions": [
+        "读数来自离线合成演练，不是现场实测，不构成运营效果承诺。"
+      ]
+    },
+    "audit_completeness": {
+      "status": "known",
+      "value": 0.9,
+      "unit": "ratio",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "count(audit_complete) / len(tasks)",
+      "confidence": "medium",
+      "assumptions": [
+        "读数来自离线合成演练，不是现场实测，不构成运营效果承诺。"
+      ]
+    },
+    "replan_p95_seconds": {
+      "status": "known",
+      "value": 8.5,
+      "unit": "none",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "nearest_rank_p95(tasks[].replan_seconds)",
+      "confidence": "medium",
+      "assumptions": [
+        "读数来自离线合成演练，不是现场实测，不构成运营效果承诺。"
+      ]
+    },
+    "high_risk_intercept_rate": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "count(high_risk_intercepted) / count(high_risk_attempt)",
+      "confidence": "medium",
+      "assumptions": [
+        "读数来自离线合成演练，不是现场实测，不构成运营效果承诺。"
+      ]
+    }
+  }
+}

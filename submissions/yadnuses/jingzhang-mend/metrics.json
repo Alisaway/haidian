@@ -204,6 +204,83 @@
       "confidence": "unknown",
       "assumptions": [],
       "reason": "Approved building-density controls are not present in the public site package; planning_limits.json marks building_density as missing. design_site_coverage_ratio is reported separately as a design value."
+    },
+    "simulation_task_count": {
+      "status": "known",
+      "value": 15,
+      "unit": "count",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "count(tasks in simulation.json)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "simulation_success_rate": {
+      "status": "known",
+      "value": 0.6666666666666666,
+      "unit": "ratio",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "count(outcome='success' or outcome.endswith('_success')) / count(tasks)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "tool_schema_pass_rate": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "count(dispatch_schema_valid=true) / count(tasks)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "energy_budget_violations": {
+      "status": "known",
+      "value": 0,
+      "unit": "count",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "count(energy_used_kwh > energy_budget_kwh)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "audit_completeness": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "count(audit_complete=true) / count(tasks)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "assertion_count": {
+      "status": "known",
+      "value": 60,
+      "unit": "count",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "sum(assertions per task) = task_count * 4",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "assertion_pass_rate": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "count(assertion.passed=true) / count(assertions)",
+      "confidence": "high",
+      "assumptions": []
     }
   }
 }

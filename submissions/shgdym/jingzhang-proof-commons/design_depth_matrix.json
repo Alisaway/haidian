@@ -8,11 +8,16 @@
       "required": true,
       "status": "complete",
       "proposal_sections": [
-        "设计依据与资料清单"
+        "设计依据与资料清单",
+        "重点区域详细设计"
       ],
       "drawing_refs": [
         "assets/figures/framework-overview.png",
+        "assets/figures/land-use-structure.png",
+        "assets/figures/key-areas.png",
+        "assets/figures/mobility-bluegreen.png",
         "assets/figures/metrics-evidence.png",
+        "visual/assets/site-context-results.json",
         "drawings/a3-booklet.pdf",
         "drawings/a0-boards.pdf"
       ],
@@ -21,15 +26,21 @@
         "geometry/constraints.geojson"
       ],
       "metric_refs": [
-        "site_area_sqm"
+        "site_area_sqm",
+        "osm_site_context_feature_count",
+        "osm_key_area_mapped_building_count",
+        "osm_key_area_walk_cycle_length_m",
+        "osm_context_recomputation_pass_count"
       ],
       "source_ids": [
         "SITE-PACKAGE",
-        "BOUNDARY-SOURCE"
+        "BOUNDARY-SOURCE",
+        "OSM-SITE-CONTEXT-20260817"
       ],
       "assumption_ids": [
         "A-BOUNDARY-001",
-        "A-CONTROLS-001"
+        "A-CONTROLS-001",
+        "A-OSM-CONTEXT-001"
       ],
       "self_check_ids": [
         "DETERMINISTIC_VALIDATION",
@@ -37,7 +48,7 @@
         "VISUAL_PACKAGING",
         "PROFESSIONAL_EVIDENCE"
       ],
-      "evidence_summary_zh": "以临时范围、资料状态和待补条件构成现状诊断；不以推测的建筑、权属或市政数据填补缺口。"
+      "evidence_summary_zh": "以可重跑 OSM 公开切片区分已绘制现状、概念动作与正式未知条件；不以公开地图推断建筑现状、权属、流量、无障碍或工程结论。"
     },
     {
       "item_id": "three_level_scope_framework",
@@ -269,7 +280,7 @@
       "status": "complete",
       "proposal_sections": [
         "交通、轨道、市政与公共服务设施",
-        "为什么是京张：从铁路运行文化长出的X"
+        "为什么只能从京张长出来"
       ],
       "drawing_refs": [
         "assets/figures/mobility-bluegreen.png",
@@ -351,7 +362,7 @@
         "VISUAL_PACKAGING",
         "PROFESSIONAL_EVIDENCE"
       ],
-      "evidence_summary_zh": "端侧算力、能源、排水、消防和通信采用前置条件、降级负荷与人工接管表达，不虚构容量或管位；具身AI以9事件生命周期穿过TEST、RELEASE、USE和RETURN，三类失败分别记录触发、人工动作、空间复原与再进入条件。"
+      "evidence_summary_zh": "端侧算力、能源、排水、消防和通信采用前置条件、降级负荷与人工接管表达，不虚构容量或管位；城市问题沿众智园共研、AI原点开放和大钟寺使用形成创新链，具身AI的9事件生命周期作为底层安全证据保留。"
     },
     {
       "item_id": "blue_green_public_space",
@@ -390,7 +401,7 @@
         "VISUAL_PACKAGING",
         "PROFESSIONAL_EVIDENCE"
       ],
-      "evidence_summary_zh": "日常绿脉、受控试场和城市试用三类剖面保持公众主链，技术功能可独立关闭。"
+      "evidence_summary_zh": "京张遗产走廊作为公共创新主线承接问题、原型、开放协作和真实使用；日常绿脉、受控试场和城市试用三类剖面保持公众主链，技术功能可独立关闭。"
     },
     {
       "item_id": "three_key_area_detailed_design",
@@ -400,7 +411,8 @@
       "status": "complete",
       "proposal_sections": [
         "重点区域详细设计",
-        "AI为何让三处空间长得不一样"
+        "三种共同开发关系如何改变空间",
+        "三站城市空间：做东西、开放东西、真正使用东西"
       ],
       "drawing_refs": [
         "assets/figures/key-areas.png",
@@ -410,10 +422,13 @@
         "assets/figures/station-handover.png",
         "assets/figures/failure-atlas.png",
         "assets/figures/station-topology-proof.png",
+        "assets/figures/three-station-flagship-contracts.png",
         "visual/assets/station-topology.json",
         "visual/assets/station-topology-results.json",
         "visual/assets/lived-lifecycle.json",
         "visual/assets/review-evidence.json",
+        "visual/assets/three-station-flagship-contracts.json",
+        "visual/assets/three-station-flagship-contract-results.json",
         "drawings/a3-booklet.pdf",
         "drawings/a0-boards.pdf"
       ],
@@ -427,20 +442,28 @@
         "pilgrimage_landmark_count",
         "lived_journey_step_count",
         "handover_ticket_type_count",
-        "minimum_pilot_duration_days",
+        "controlled_operating_shift_days",
+        "pre_pilot_readiness_review_window_days",
         "reversible_pilot_kit_type_count",
         "minimum_pilot_shift_role_count",
         "x_spatial_conflict_count",
         "station_topology_check_count",
-        "station_topology_pass_count"
+        "station_topology_pass_count",
+        "three_station_flagship_contract_count",
+        "three_station_contract_check_count",
+        "three_station_contract_pass_count",
+        "osm_key_area_mapped_building_count",
+        "osm_key_area_walk_cycle_length_m"
       ],
       "source_ids": [
         "KEY-AREA-SOURCE",
-        "AGENT-TASKBOOK"
+        "AGENT-TASKBOOK",
+        "OSM-SITE-CONTEXT-20260817"
       ],
       "assumption_ids": [
         "A-BOUNDARY-001",
-        "A-BUILDINGS-001"
+        "A-BUILDINGS-001",
+        "A-OSM-CONTEXT-001"
       ],
       "self_check_ids": [
         "DETERMINISTIC_VALIDATION",
@@ -448,7 +471,7 @@
         "VISUAL_PACKAGING",
         "PROFESSIONAL_EVIDENCE"
       ],
-      "evidence_summary_zh": "三站分别公开机器路权、发布权利和平等拒绝三类冲突，并以无旁路受控交叉、发布/权利/撤回共可见、非AI路径等价三项不同开场门形成受控验证院、开源转化街坊和城市试用界面；29项概念拓扑检查可重跑，不替代现场与规范复核。"
+      "evidence_summary_zh": "三站分别公开机器路权、发布权利和平等拒绝三类冲突，并把技术系统、数据边界、相对拓扑、90/180日证据门、人工签注和FAIL后普通用途固化为三份建议验收合同；29项拓扑检查与37项合同引用检查可重跑，均不替代现场与规范复核。"
     },
     {
       "item_id": "renewal_project_list",
@@ -498,6 +521,7 @@
       "drawing_refs": [
         "assets/figures/implementation-roadmap.png",
         "assets/figures/delivery-dashboard.png",
+        "visual/assets/formal-review-readiness-closure.json",
         "drawings/a3-booklet.pdf",
         "drawings/a0-boards.pdf"
       ],
@@ -521,7 +545,7 @@
         "VISUAL_PACKAGING",
         "PROFESSIONAL_EVIDENCE"
       ],
-      "evidence_summary_zh": "近期低扰动原型、中期受控验证和远期评估转化均设进入门、年度复盘和失败复原。"
+      "evidence_summary_zh": "近期低扰动原型、中期受控验证和远期评估转化均设进入门、年度复盘和失败复原；七项PRE-PILOT条件是未来现场启动闸门，不是当前概念包待修项。"
     },
     {
       "item_id": "metrics_recalculation",
@@ -534,6 +558,7 @@
       ],
       "drawing_refs": [
         "assets/figures/metrics-evidence.png",
+        "visual/assets/formal-review-readiness-closure.json",
         "drawings/a3-booklet.pdf",
         "drawings/a0-boards.pdf"
       ],
@@ -563,7 +588,7 @@
         "VISUAL_PACKAGING",
         "PROFESSIONAL_EVIDENCE"
       ],
-      "evidence_summary_zh": "每个数值保存状态、来源、公式与重算触发器；正式多边形到位后重建GeoJSON、指标、图件、网页和图册。"
+      "evidence_summary_zh": "每个数值保存状态、来源、公式与重算触发器；official polygon是尚未发布的组织方外部输入，发布后才触发参与者重建GeoJSON、指标、图件、网页、图册与差异报告，当前不存在可替代该输入的参与者动作。"
     },
     {
       "item_id": "risk_missing_data",
@@ -573,13 +598,14 @@
       "status": "complete",
       "proposal_sections": [
         "风险、版权与合规说明",
-        "附录：X Census赛道词汇检查"
+        "附录：内部语汇审计"
       ],
       "drawing_refs": [
         "assets/figures/metrics-evidence.png",
         "assets/figures/delivery-dashboard.png",
         "visual/assets/run-x-census.js",
         "visual/assets/x-census.json",
+        "visual/assets/formal-review-readiness-closure.json",
         "drawings/a3-booklet.pdf",
         "drawings/a0-boards.pdf"
       ],
@@ -611,7 +637,7 @@
         "VISUAL_PACKAGING",
         "PROFESSIONAL_EVIDENCE"
       ],
-      "evidence_summary_zh": "风险、未知数据、版权来源、人工接管和停止复原分别持久化；组织方缺口与参与者责任明确分开。"
+      "evidence_summary_zh": "风险、未知数据、版权来源、人工接管和停止复原分别持久化；当前双语与资产状态CLOSED，组织方边界输入EXTERNAL，现场授权FUTURE-TRIGGERED，仓库合成证据不作现场结论。"
     }
   ]
 }

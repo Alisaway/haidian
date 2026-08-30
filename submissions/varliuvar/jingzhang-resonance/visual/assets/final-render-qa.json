@@ -1,0 +1,124 @@
+{
+  "schema_version": "1.0.0",
+  "recorded_on": "2026-08-29",
+  "status": "participant_render_qa_complete",
+  "post_remediation_recheck": {
+    "completed": true,
+    "renderer": "PyMuPDF fitz 1.x local render",
+    "representative_pages": [
+      "drawings/a3-booklet.pdf#13",
+      "drawings/a3-booklet.pdf#20",
+      "drawings/a3-booklet.en.pdf#13",
+      "drawings/a3-booklet.en.pdf#20",
+      "drawings/a0-boards.pdf#2",
+      "drawings/a0-boards.pdf#3",
+      "drawings/a0-boards.en.pdf#2",
+      "drawings/a0-boards.en.pdf#3"
+    ],
+    "checks": [
+      "all selected pages nonblank",
+      "dependency-stage wording visible with no fixed-year claim",
+      "mobility interfaces described as proposed rather than verified",
+      "AR-010 attribution and AR-013 34/22 mixed-provider boundary visible where applicable",
+      "INTERNAL RESEARCH / 内部研究 absent from repaired derivatives",
+      "no observed clipping or overlap"
+    ],
+    "full_page_counts": {
+      "a3_booklet_zh": 21,
+      "a0_boards_zh": 3,
+      "a3_booklet_en": 21,
+      "a0_boards_en": 3
+    },
+    "claim_boundary": "Representative render QA does not replace human or certified translation review, accessibility certification, professional approval, rights clearance, or publication authorization."
+  },
+  "html": {
+    "artifacts": [
+      "visual/index.html",
+      "visual/index.en.html",
+      "report/proposal.html",
+      "report/proposal.en.html"
+    ],
+    "viewport": {
+      "width": 1440,
+      "height": 1600
+    },
+    "renderer": "Playwright Chromium 1228 headless local-file render",
+    "font_source": "visual/assets/review-font.css",
+    "font_codepoint_coverage": "Noto Sans SC subset covers 888/888 unique CJK codepoints across the four final HTML files; shared CSS linkage checked in both proposal HTML files and both visualization indexes",
+    "visual_checks": [
+      "no missing-glyph boxes",
+      "no incoherent overlap",
+      "no first-viewport clipping",
+      "AI review layer remains visually separated from human content"
+    ],
+    "preview_contact_sheet": "local QA evidence only; not shipped in the submission",
+    "browser_status": "pass_existing_layout_plus_current_font_coverage_audit_2026-08-29",
+    "browser_qa_evidence": "local participant QA report .superpowers/sdd/2026-08-27-jingzhang-score-repair-plan/browser_visual_qa-report.md; report and screenshots are not shipped"
+  },
+  "pdf": {
+    "artifacts": [
+      {
+        "path": "drawings/a3-booklet.pdf",
+        "pages": 21,
+        "rendering": "font_independent_image_only"
+      },
+      {
+        "path": "drawings/a3-booklet.en.pdf",
+        "pages": 21,
+        "rendering": "font_independent_image_only"
+      },
+      {
+        "path": "drawings/a0-boards.pdf",
+        "pages": 3,
+        "rendering": "font_independent_image_only"
+      },
+      {
+        "path": "drawings/a0-boards.en.pdf",
+        "pages": 3,
+        "rendering": "font_independent_image_only"
+      }
+    ],
+    "font_audit": "visual/assets/pdf-font-audit.json",
+    "rendering_tradeoff": "Image-only PDF export removes runtime font dependency, but text is not searchable or selectable.",
+    "visual_checks": [
+      "page counts verified for all four PDFs",
+      "font-independent image-only rendering recorded in pdf-font-audit.json",
+      "Esri credit and repaired R2 source wording retained; AR-013 pending-provenance wording removed"
+    ],
+    "compression_qa": {
+      "a3_zh": {
+        "pages": 21,
+        "dpi": 110,
+        "jpeg_quality": 75,
+        "min_preview_psnr_db": 27.97
+      },
+      "a0_zh": {
+        "pages": 3,
+        "dpi": 72,
+        "jpeg_quality": 75,
+        "min_preview_psnr_db": 28.63
+      },
+      "a3_en": {
+        "pages": 21,
+        "dpi": 110,
+        "jpeg_quality": 75,
+        "min_preview_psnr_db": 34.74
+      },
+      "a0_en": {
+        "pages": 3,
+        "dpi": 72,
+        "jpeg_quality": 75,
+        "min_preview_psnr_db": 33.38
+      },
+      "manual_detail_check": "not rerun in metadata sync; retained prior recorded parameters"
+    }
+  },
+  "english_figure_compression_qa": {
+    "method": "same-dimension 256-color PNG with Floyd-Steinberg dithering",
+    "minimum_psnr_db": 41.25,
+    "dimensions_match": true,
+    "manual_contact_sheet_check": "pass"
+  },
+  "artifact_hash_authority": "manifest.json",
+  "claim_boundary": "Participant visual QA checks rendering and layout. Rights clearance is recorded separately in the asset ledger; independent translation, accessibility, professional admission, and maintainer publication decisions remain separate."
+}

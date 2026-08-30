@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0.0",
+  "status": "concept_targets_not_surveyed_not_authorized",
+  "human_reference_height_m": 1.7,
+  "measurement_rule": "Widths are proposer-set interface targets used to test adjacency and reversibility. They are not road redlines, parcel boundaries, engineering dimensions, or proof of site fit.",
+  "verification_gate": "G0",
+  "verification_inputs": [
+    "official boundary and key-area geometry",
+    "topographic and building survey",
+    "ownership and operating-right records",
+    "rail and road interface conditions",
+    "fire and emergency access review",
+    "professional accessibility review"
+  ],
+  "areas": [
+    {
+      "id": "PROV-KEY-001",
+      "name_zh": "众智园",
+      "name_en": "Zhongzhiyuan",
+      "role_zh": "可信验证庭院",
+      "role_en": "Trust-assurance yard",
+      "context_zh": "铁路遗产边缘 / 科研与办公界面",
+      "context_en": "Rail-heritage edge / research and workplace interface",
+      "bands": [
+        {"id": "ordinary_route", "label_zh": "普通通行", "label_en": "Ordinary route", "target_width_m": 3.0, "ai_off_required": true},
+        {"id": "staffed_gate", "label_zh": "有人核验", "label_en": "Staffed gate", "target_width_m": 2.4, "ai_off_required": true},
+        {"id": "reversible_test_yard", "label_zh": "可撤测试庭院", "label_en": "Reversible test yard", "target_width_m": 4.0, "ai_off_required": false},
+        {"id": "service_maintenance", "label_zh": "维护与退出", "label_en": "Service and exit", "target_width_m": 2.5, "ai_off_required": true}
+      ],
+      "day_sequence_zh": ["早：普通通行", "昼：有人测试", "晚：AI-OFF 复原"],
+      "day_sequence_en": ["AM: ordinary passage", "MID: staffed test", "PM: AI-OFF restore"],
+      "first_evidence_zh": "安全、接管、来源与角色回执",
+      "first_evidence_en": "Safety, takeover, source and role receipt"
+    },
+    {
+      "id": "PROV-KEY-002",
+      "name_zh": "原点社区",
+      "name_en": "Origin Community",
+      "role_zh": "开源复现首层",
+      "role_en": "Open-release ground interface",
+      "context_zh": "园区开放首层 / 邻里缓冲",
+      "context_en": "Open campus ground floor / neighborhood buffer",
+      "bands": [
+        {"id": "open_ground", "label_zh": "日常开放首层", "label_en": "Everyday open ground", "target_width_m": 4.5, "ai_off_required": true},
+        {"id": "staffed_clinic", "label_zh": "人工门诊", "label_en": "Staffed clinic", "target_width_m": 2.4, "ai_off_required": true},
+        {"id": "reproducibility_room", "label_zh": "开源复现界面", "label_en": "Reproducibility room", "target_width_m": 3.6, "ai_off_required": false},
+        {"id": "neighborhood_buffer", "label_zh": "邻里缓冲", "label_en": "Neighborhood buffer", "target_width_m": 3.0, "ai_off_required": true}
+      ],
+      "day_sequence_zh": ["早：开放首层", "昼：复现门诊", "晚：纸图与人工工坊"],
+      "day_sequence_en": ["AM: open ground", "MID: reproducibility clinic", "PM: paper map + staffed workshop"],
+      "first_evidence_zh": "版本、模型卡、异议与维护清单",
+      "first_evidence_en": "Version, model card, dissent and maintenance list"
+    },
+    {
+      "id": "PROV-KEY-003",
+      "name_zh": "大钟寺",
+      "name_en": "Dazhongsi",
+      "role_zh": "公众使用与确认界面",
+      "role_en": "Public-use and confirmation interface",
+      "context_zh": "轨道到达 / 邻里商业与换乘",
+      "context_en": "Rail arrival / neighborhood commerce and transfer",
+      "bands": [
+        {"id": "arrival_route", "label_zh": "到达与普通通行", "label_en": "Arrival + ordinary route", "target_width_m": 3.0, "ai_off_required": true},
+        {"id": "no_app_desk", "label_zh": "无 App 柜台", "label_en": "No-app desk", "target_width_m": 2.4, "ai_off_required": true},
+        {"id": "ordinary_market", "label_zh": "普通市集", "label_en": "Ordinary market", "target_width_m": 4.0, "ai_off_required": true},
+        {"id": "contestable_ai_counter", "label_zh": "可申诉 AI 柜台", "label_en": "Contestable AI counter", "target_width_m": 2.4, "ai_off_required": false},
+        {"id": "back_office", "label_zh": "人工后台与下架", "label_en": "Human back office + takedown", "target_width_m": 2.5, "ai_off_required": true}
+      ],
+      "day_sequence_zh": ["早：普通到达", "昼：有人确认", "晚：普通交易与投诉"],
+      "day_sequence_en": ["AM: ordinary arrival", "MID: human confirmation", "PM: ordinary trade + complaint"],
+      "first_evidence_zh": "权限、确认、申诉与下架回执",
+      "first_evidence_en": "Permission, confirmation, appeal and takedown receipt"
+    }
+  ],
+  "current_result": null,
+  "operational_status": "not_authorized_not_run"
+}

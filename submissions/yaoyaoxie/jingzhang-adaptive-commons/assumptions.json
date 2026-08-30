@@ -1,0 +1,173 @@
+{
+  "assumptions_note_zh": "本清单对应交付检查清单 §13.2 必须披露的缺失资料八项，另加临时边界使用条件与已完成的图层枚举核对记录。每项给出影响与复算/复核触发器。所有 provisional 几何与派生指标不得作为官方红线、精确面积或法定控制指标使用；组织方数据缺口属于条件跟进，不作为参与者 known_blocker，也不阻断本轮内容评分。",
+  "assumptions": [
+    {
+      "id": "A-BOUNDARY-001",
+      "title_zh": "三层范围官方 polygon 缺失",
+      "category": "official_data_gap",
+      "status": "open",
+      "description_zh": "统筹研究范围（公告约 43.6 平方公里）与总体设计范围（公告约 11.4 平方公里）的官方精确 polygon 均未取得。统筹研究范围已有仓库 provisional 粗略轮廓 PROV-RESEARCH-001，存于 constraints.geojson，source_id=DATA-SRC-PROVISIONAL-BOUNDARIES-20260605、official_boundary=false、geometry_role=provisional_constraint、boundary_precision=provisional_rough；总体设计范围使用同层级的 PROV-SITE-001。",
+      "impact_zh": "PROV-RESEARCH-001 已按 polygon_area(constraints#PROV-RESEARCH-001) 在 EPSG:4548 下完成低置信度概念复算，research_area_sqm=43,609,232.558 平方米，与公告约 43.6 平方公里同量级，但不是官方面积、红线或控制依据。site_area_sqm、green_ratio、public_space_ratio 及全部用地分类面积同为 provisional 复算值。",
+      "recalculation_trigger_zh": "组织方发布带版本、坐标系、精度和适用范围说明的官方统筹研究范围/总体设计范围 polygon 后：分别替换 PROV-RESEARCH-001/PROV-SITE-001，重建受影响的 9 个几何图层，在正式坐标基准下重算 metrics.json 全部 known 指标，重绘五组中英图件与 visual/index*.html，刷新 manifest 哈希并产出差异报告。",
+      "related_files": [
+        "geometry/constraints.geojson",
+        "geometry/site_boundary.geojson",
+        "geometry/land_use.geojson"
+      ],
+      "related_metrics": [
+        "research_area_sqm",
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio"
+      ]
+    },
+    {
+      "id": "A-KEYAREA-002",
+      "title_zh": "三处重点区官方 polygon 缺失",
+      "category": "official_data_gap",
+      "status": "open",
+      "description_zh": "众智园AI自主创新加速区、北京AI原点社区、大钟寺AI产业聚集区的官方边界未取得；key_areas.geojson 三要素均为 provisional（official_boundary=false、geometry_role=provisional_constraint）。公告面积（约 192.1 / 104.3 / 72.0 公顷，合计 368.4 公顷）作为任务事实记录，不以 provisional polygon 复算值替代。",
+      "impact_zh": "重点区详细设计只能做到概念深度（空间结构、动作清单、首期项目包），无法形成可复算的总平面指标；片区面积与比例均不可作为正式依据。",
+      "recalculation_trigger_zh": "官方重点区 polygon 发布后：替换 key_areas.geojson，校验三要素位于总体边界内且互不重叠，重算片区面积并与公告/附件面积核对，重绘 key-areas.png 并同步正文表述。",
+      "related_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "related_metrics": [
+        "key_area_count"
+      ]
+    },
+    {
+      "id": "A-CONTROLS-003",
+      "title_zh": "控规条件、容积率、高度、密度与退线缺失",
+      "category": "official_data_gap",
+      "status": "open",
+      "description_zh": "正式控规条件（容积率、建筑高度、建筑密度、建筑退线）未公开；metrics.json 中对应指标全部保持 unknown，正文不作数值结论。",
+      "impact_zh": "开发强度与建筑体量只能表达为原型与策略层面的概念建议；无法做强度校核与日照/视线等定量分析。",
+      "recalculation_trigger_zh": "控规指标（资格预审文件附件或官方公开控规）发布后：核定 floor_area_ratio、building_density、building_height、building_setback 指标，校验概念建筑布局与强度边界的一致性并修正。",
+      "related_files": [
+        "geometry/buildings.geojson"
+      ],
+      "related_metrics": [
+        "floor_area_ratio",
+        "building_density",
+        "building_height",
+        "building_setback",
+        "statutory_green_ratio",
+        "total_floor_area_sqm"
+      ]
+    },
+    {
+      "id": "A-ROAD-004",
+      "title_zh": "道路红线、断面、交通流量与停车底数缺失",
+      "category": "official_data_gap",
+      "status": "open",
+      "description_zh": "道路红线与断面、交通流量、停车底数均未公开；roads.geojson 为概念线位（含主轴慢行主线、三级横向缝合与轨道站点），不表达工程线位；站点接驳断面改造、大钟寺四象限步行联系与静态交通策略的具体线位均标注待正式资料确认。",
+      "impact_zh": "交通章节只能做到网络与节点概念深度；road_area_ratio 无法计算；轨道接驳与过街改造无法落到工程断面。",
+      "recalculation_trigger_zh": "道路红线/断面与交通专项资料发布后：重建 roads.geojson（或新增道路面积图层），复算 road_area_ratio，校验慢行与缝合点线位。",
+      "related_files": [
+        "geometry/roads.geojson"
+      ],
+      "related_metrics": [
+        "road_redline",
+        "road_area_ratio"
+      ]
+    },
+    {
+      "id": "A-PARCEL-005",
+      "title_zh": "地块/宗地、权属与现状建筑测绘缺失",
+      "category": "official_data_gap",
+      "status": "open",
+      "description_zh": "宗地界线、土地权属、现状建筑测绘（层数、结构、质量、产权）未取得；buildings.geojson 14 个建筑基底为概念示意，拆改留判断为策略层面表达。",
+      "impact_zh": "保留/改造/拆除无法落到具体地块与建筑；更新项目清单无法做到地块级责任分解；现状诊断缺少实测依据。",
+      "recalculation_trigger_zh": "权属与现状测绘资料发布后：重建 buildings.geojson，形成地块级拆改留清单，复核更新项目清单与分期。",
+      "related_files": [
+        "geometry/buildings.geojson",
+        "geometry/constraints.geojson"
+      ],
+      "related_metrics": [
+        "total_floor_area_sqm"
+      ]
+    },
+    {
+      "id": "A-HERITAGE-006",
+      "title_zh": "文保范围与建设控制地带缺失",
+      "category": "official_data_gap",
+      "status": "open",
+      "description_zh": "京张铁路遗存（含大钟寺片区遗产对象、清华园站旧址）的文物保护范围与建设控制地带未公开；constraints.geojson 中 CON-001/002（大钟寺、清华园站房）为概念位置，正文涉及遗产干预处全部标注以文物部门公开资料为准。",
+      "impact_zh": "遗产更新客厅（L1/L3）与遗产叙事路径的空间落点为概念建议；无法校验建设活动与建控地带的合规关系。",
+      "recalculation_trigger_zh": "文物部门公开文保范围与建控地带资料后：替换 constraints.geojson 对应要素，复核遗产节点选址与干预深度表述。",
+      "related_files": [
+        "geometry/constraints.geojson"
+      ],
+      "related_metrics": []
+    },
+    {
+      "id": "A-UTIL-007",
+      "title_zh": "市政管线、消防、防洪排涝与容量缺失",
+      "category": "official_data_gap",
+      "status": "open",
+      "description_zh": "市政管线综合、消防、防洪排涝与市政容量资料未公开；constraints.geojson 中 CON-004/005（铁路用地权属、小月河蓝线）为概念范围。",
+      "impact_zh": "市政与新基建章节只能作策略表述；蓝绿廊道与雨洪策略无法与蓝线、排涝通道做空间校核。",
+      "recalculation_trigger_zh": "市政专项与蓝线资料发布后：替换约束要素，校核蓝绿廊道、雨水花园与样地选址。",
+      "related_files": [
+        "geometry/constraints.geojson",
+        "geometry/green_space.geojson"
+      ],
+      "related_metrics": [
+        "utility_capacity"
+      ]
+    },
+    {
+      "id": "A-PUBSVC-008",
+      "title_zh": "公共服务设施底数缺失",
+      "category": "official_data_gap",
+      "status": "open",
+      "description_zh": "现状公共服务设施（教育、医疗、养老、文化、体育等）底数与分布资料未取得；公共服务节点布局为概念配置。",
+      "impact_zh": "公共服务章节无法做设施缺口定量分析与服务半径校核。",
+      "recalculation_trigger_zh": "公共服务设施底数公开后：补充设施现状图层，校核公共服务节点（S03 等）选址与服务覆盖。",
+      "related_files": [],
+      "related_metrics": []
+    },
+    {
+      "id": "A-PROV-GEOM-009",
+      "title_zh": "临时边界使用条件与全局复算触发器",
+      "category": "provisional_geometry",
+      "status": "open",
+      "description_zh": "本包全部设计几何派生自 provisional 边界：site_boundary.geojson 与 key_areas.geojson 为既有 provisional 文件；其余 7 个图层由 build_geometry.py 程序化派生（design_proposal / provisional_constraint / concept 三种 geometry_role）。面积复算采用 EPSG:4548，方法与校核记录见 geometry/README_metrics.md。",
+      "impact_zh": "全部面积、比例与空间关系为概念设计模型值；图件与 HTML 均以 provisional 状态标注；任何数值不得引用为官方或精确结论。",
+      "recalculation_trigger_zh": "正式红线/官方重点片区几何发布后：运行 build_geometry.py 全链路重建，重算 metrics.json，重绘 assets/figures/ 与 visual/index.html，产出差异报告，刷新 manifest 哈希并重跑四道官方检查。",
+      "related_files": [
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson",
+        "geometry/build_geometry.py",
+        "geometry/README_metrics.md"
+      ],
+      "related_metrics": [
+        "site_area_sqm",
+        "green_space_area_sqm",
+        "green_ratio",
+        "public_space_area_sqm",
+        "public_space_ratio"
+      ]
+    },
+    {
+      "id": "A-ENUM-010",
+      "title_zh": "图层枚举与 geometry_role 取值核对完成",
+      "category": "schema_verification",
+      "status": "resolved",
+      "description_zh": "2026-08-26 已通过 GitHub API 读取主仓库 brief/site-package/enums/layers.json，并逐一核对本包 9 个 GeoJSON：使用的 SITE_BOUNDARY、KEY_AREA、LAND_USE、BUILDING_FOOTPRINT、ROAD_CENTERLINE、GREEN_SPACE、PUBLIC_SPACE、HERITAGE_PROTECTION、REGULATORY_CONTROL、PHASE 均在当前枚举内；geometry_role 仅使用已通过官方校验的 design_proposal 与 provisional_constraint。",
+      "impact_zh": "当前无 schema 枚举阻断；官方确定性校验与空间复核均通过。该核对不改变任何几何的 provisional 属性。",
+      "recalculation_trigger_zh": "仅在 site_package_version 或 enums/layers.json 更新时重新逐图层核对；如枚举变化，按新版修正后使用官方刷新脚本更新 manifest 并重跑四门检查。",
+      "related_files": [
+        "geometry/land_use.geojson",
+        "geometry/buildings.geojson",
+        "geometry/roads.geojson",
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson",
+        "geometry/constraints.geojson",
+        "geometry/phasing.geojson"
+      ],
+      "related_metrics": []
+    }
+  ]
+}

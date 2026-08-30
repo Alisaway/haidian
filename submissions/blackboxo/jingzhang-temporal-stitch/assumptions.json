@@ -1,0 +1,66 @@
+{
+  "schema_version": "0.1.0",
+  "assumptions": [
+    {
+      "id": "A-CONTROLS-001",
+      "status": "pending_professional_confirmation",
+      "statement": "Detailed regulatory controls, road redlines, ownership, municipal utilities, and engineering constraints must be confirmed from official attachments before statutory use.",
+      "impact": "The package can be reviewed as a formal AI submission only for provided official boundaries and submitted design layers; statutory controls still need professional confirmation."
+    },
+    {
+      "id": "A-BOUNDARY-001",
+      "status": "pending_official_data",
+      "statement": "Site boundary uses provisional polygon derived from announcement text. Official CAD/GIS boundary not yet publicly available.",
+      "impact": "All area calculations, ratios, and spatial claims are provisional and must be recalculated when official boundary is released."
+    },
+    {
+      "id": "A-TEMPORAL-001",
+      "status": "design_assumption",
+      "statement": "Temporal programming (multiple uses of same space at different times) is technically feasible with current IoT, sensor, and scheduling technology.",
+      "impact": "Core design concept depends on AI scheduling system; implementation requires validation through pilot testing at priority nodes."
+    },
+    {
+      "id": "A-TEMPORAL-002",
+      "status": "design_assumption",
+      "statement": "Community acceptance of time-shared public spaces can be achieved through phased introduction and participatory design.",
+      "impact": "Phase 1 focuses on low-friction temporal programs (markets, fitness) before introducing more complex scheduling in later phases."
+    },
+    {
+      "id": "A-CROSSING-001",
+      "status": "pending_professional_confirmation",
+      "statement": "9 east-west suture crossings are placed at locations where existing or planned road connections cross the railway park corridor. Exact positions require survey confirmation.",
+      "impact": "Node positions are conceptual; actual crossing feasibility depends on traffic engineering, utility conflicts, and land ownership."
+    },
+    {
+      "id": "A-POPULATION-001",
+      "status": "design_assumption",
+      "statement": "Approximately 450,000 residents in ~70 communities adjacent to the corridor would benefit from improved east-west connectivity.",
+      "impact": "Population estimate used for demand modeling and persona development; requires census verification."
+    },
+    {
+      "id": "A-HERITAGE-001",
+      "status": "pending_professional_confirmation",
+      "statement": "Heritage protection zones along the railway corridor allow for interface improvements (ramps, lighting, signage) without violating conservation requirements.",
+      "impact": "Physical interventions at heritage-sensitive nodes (especially Node 07) require heritage impact assessment."
+    },
+    {
+      "id": "ASM-PARK-OPENING",
+      "category": "background_fact",
+      "description": "2026年京张遗址公园建成开放作为本方案的背景事实前提",
+      "basis": "来自征集公告项目背景描述及公开新闻报道；征集公告以'京张铁路遗址公园9公里于2026年8月建成开放'为项目背景",
+      "impact_if_wrong": "若公园实际开放时间或建设范围不同，缝合节点的设计前提和空间条件需重新评估",
+      "resolution": "以组织方正式确认的公园竣工验收文件为准",
+      "status": "pending_verification",
+      "source_ref": "OFFICIAL-ANNOUNCEMENT"
+    },
+    {
+      "id": "ASM-008",
+      "category": "baseline_data",
+      "description": "公园两侧社区数量和受影响人口为设计假设推算值",
+      "basis": "基于海淀区统计年鉴2023公开数据中廊道沿线街道（清华园、五道口、中关村、北下关、北太平庄、花园路）常住人口合计推算",
+      "impact_if_wrong": "不影响空间设计逻辑，仅影响规模表述的精确度",
+      "resolution": "通过社区普查或街道统计确认精确数量",
+      "status": "unverified"
+    }
+  ]
+}

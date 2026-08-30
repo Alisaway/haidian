@@ -1,0 +1,245 @@
+{
+  "schema_version": "draft-v1",
+  "retrieved_at": "2026-08-26",
+  "source_registry_alignment": {
+    "formal_task_evidence": {
+      "source_id": "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+      "registry_path": "data/source_registry.json#DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+      "review_status": "approved",
+      "usable_for_formal": "yes",
+      "allowed_for": ["project name", "scope descriptions", "official task requirements", "submission depth"],
+      "not_allowed_for": ["official polygon", "road redline", "statutory control", "implementation commitment"]
+    },
+    "taskbook_evidence": {
+      "source_id": "DATA-SRC-AGENT-TASKBOOK-20260518",
+      "registry_path": "data/source_registry.json#DATA-SRC-AGENT-TASKBOOK-20260518",
+      "review_status": "approved",
+      "usable_for_formal": "yes",
+      "allowed_for": ["agent task coverage", "scenario and operation requirements"],
+      "not_allowed_for": ["official boundary", "engineering conclusion", "government approval"]
+    },
+    "spatial_context": {
+      "source_id": "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+      "registry_path": "data/source_registry.json#DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+      "review_status": "provisional",
+      "usable_for_formal": "provisional_only",
+      "allowed_for": ["temporary visualization", "design discussion", "intake self-check"],
+      "not_allowed_for": ["official boundary", "precise area", "statutory planning", "formal spatial scoring"]
+    },
+    "participant_context_sources": {
+      "review_status_legend": {
+        "background_only": "Context or method support; not a project-specific formal control or boundary.",
+        "peer_method_only": "Method comparison; no copied text, image, brand, policy or asset.",
+        "rights_pending": "Reserved status for a future external asset before audit; no current package item uses this status."
+      },
+      "background_only": ["OFFICIAL-CALL", "OFFICIAL-SKILL", "BEIJING-STAT-2025", "BEIJING-MASTER-PLAN", "BEIJING-AI-2025", "HAIDIAN-AI-2025", "BEIJING-TRANSPORT-2026", "OFFICIAL-RESILIENCE", "JZ-PLANNING-NOTICE"],
+      "peer_method_only": ["PEER-CIVIC-LOOP", "PEER-REN-AXIS"]
+    }
+  },
+  "sources": [
+    {
+      "id": "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+      "publisher": "北京市规划和自然资源委员会海淀分局",
+      "title": "百年京张AI创新带城市设计国际方案征集资格预审公告",
+      "url": "https://ghzrzyw.beijing.gov.cn/zhengwuxinxi/tzgg/hd/202605/t20260509_4643047.html",
+      "retrieved_at": "2026-08-26",
+      "coverage": "formal task, scope descriptions and required design depth",
+      "use": "approved formal task evidence via central source registry",
+      "license_or_reuse": "cite official public announcement; do not copy unlicensed media",
+      "limitation": "cannot establish an official polygon, statutory control or implementation commitment",
+      "review_status": "approved",
+      "usable_for_formal": "yes",
+      "source_registry_ref": "data/source_registry.json#DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509"
+    },
+    {
+      "id": "DATA-SRC-AGENT-TASKBOOK-20260518",
+      "publisher": "User-provided cleared document",
+      "title": "面向全球智能体开展百年京张AI创新带城市设计开源征集任务书摘录",
+      "url": "brief/site-package/agent_taskbook.json",
+      "retrieved_at": "2026-08-26",
+      "coverage": "agent.1-agent.6 tasks, scenario, branding and operation requirements",
+      "use": "approved taskbook evidence",
+      "license_or_reuse": "cleared for repository use and public task alignment",
+      "limitation": "not an official boundary, statutory control or engineering conclusion",
+      "review_status": "approved",
+      "usable_for_formal": "yes",
+      "source_registry_ref": "data/source_registry.json#DATA-SRC-AGENT-TASKBOOK-20260518"
+    },
+    {
+      "id": "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+      "publisher": "Repository maintainers",
+      "title": "百年京张AI创新带三层范围与三处重点区临时粗略 polygon",
+      "url": "brief/site-package/geometry/provisional_boundaries.geojson",
+      "retrieved_at": "2026-08-26",
+      "coverage": "temporary spatial context for visualization and intake checks",
+      "use": "provisional design model only",
+      "license_or_reuse": "repository-maintained provisional geometry; retain limitation notice",
+      "limitation": "not an official boundary, precise area basis, statutory control or formal scoring evidence",
+      "review_status": "provisional",
+      "usable_for_formal": "provisional_only",
+      "source_registry_ref": "data/source_registry.json#DATA-SRC-PROVISIONAL-BOUNDARIES-20260605"
+    },
+    {
+      "id": "SOURCE-REGISTRY",
+      "publisher": "open-city.ai / Haidian repository",
+      "title": "Central public source registry and processed source-use guidance",
+      "url": "data/source_registry.json",
+      "retrieved_at": "2026-08-26",
+      "coverage": "source authority, review status, formal usability and restrictions",
+      "use": "source-status mapping and citation workflow",
+      "license_or_reuse": "repository metadata; retain source IDs and limitations",
+      "limitation": "registry status does not make provisional geometry official and does not clear third-party assets",
+      "review_status": "approved",
+      "usable_for_formal": "yes"
+    },
+    {
+      "id": "OFFICIAL-CALL",
+      "publisher": "open-city.ai / Haidian",
+      "title": "百年京张·AI 创新带官方介绍",
+      "url": "https://haidian.open-city.ai/",
+      "retrieved_at": "2026-08-26",
+      "coverage": "征集范围、方向、重点区域、评审和合规规则",
+      "use": "formal-ready project brief",
+      "license_or_reuse": "link and cite; do not copy unlicensed media",
+      "limitation": "public announcement, not a substitute for statutory planning data"
+    },
+    {
+      "id": "OFFICIAL-SKILL",
+      "publisher": "open-city-ai / Haidian",
+      "title": "Urban Design AI Submission Skill",
+      "url": "https://github.com/open-city-ai/haidian/blob/main/skills/urban-design-ai-submission/SKILL.md",
+      "retrieved_at": "2026-08-26",
+      "coverage": "formal package, data boundaries, geometry, validation and PR rules",
+      "use": "submission contract",
+      "license_or_reuse": "workflow reference",
+      "limitation": "repository rules may change; rerun against latest main before submission"
+    },
+    {
+      "id": "BEIJING-STAT-2025",
+      "publisher": "北京市统计局 / 国家统计局北京调查总队",
+      "title": "北京市2025年国民经济和社会发展统计公报",
+      "url": "https://www.beijing.gov.cn/cs/gncs/zcwj/202603/t20260327_4568228.html",
+      "retrieved_at": "2026-08-26",
+      "coverage": "Beijing population, natural growth and macroeconomic context in 2025",
+      "use": "public demographic context",
+      "license_or_reuse": "cite public government statistics",
+      "limitation": "citywide data; cannot be allocated to the proposal boundary"
+    },
+    {
+      "id": "BEIJING-MASTER-PLAN",
+      "publisher": "北京市人民政府",
+      "title": "北京城市总体规划（2016年—2035年）",
+      "url": "https://www.beijing.gov.cn/gongkai/guihua/wngh/csztgh/201907/t20190701_100008.html",
+      "retrieved_at": "2026-08-26",
+      "coverage": "population stability, green space, transport and long-term planning principles",
+      "use": "upper-level planning context",
+      "license_or_reuse": "cite public government planning document",
+      "limitation": "does not confirm parcel-level conditions in the proposal"
+    },
+    {
+      "id": "BEIJING-AI-2025",
+      "publisher": "北京市经济和信息化局",
+      "title": "2025年北京人工智能核心产业规模预计达4500亿元",
+      "url": "https://jxj.beijing.gov.cn/ztzl/ywzt/lqjs/kfdt/202601/t20260116_4437047.html",
+      "retrieved_at": "2026-08-26",
+      "coverage": "Beijing AI industry scale, companies, talent and research ecosystem",
+      "use": "AI ecosystem context",
+      "license_or_reuse": "cite public government material",
+      "limitation": "citywide figures; no local employment or land-use inference"
+    },
+    {
+      "id": "HAIDIAN-AI-2025",
+      "publisher": "北京市科学技术委员会 / 中关村科技园区管理委员会",
+      "title": "北京2025年人工智能产业规模达4500亿元",
+      "url": "https://kw.beijing.gov.cn/xwdt/kcyx/xwdtcyfz/202603/t20260330_4569179.html",
+      "retrieved_at": "2026-08-26",
+      "coverage": "Haidian AI core output and enterprise context",
+      "use": "Haidian AI ecosystem context",
+      "license_or_reuse": "cite public government material",
+      "limitation": "reported industry figures; not a land-use or project approval source"
+    },
+    {
+      "id": "BEIJING-TRANSPORT-2026",
+      "publisher": "北京市人民政府 / 北京市交通委员会",
+      "title": "北京交通绿色转型成效显著",
+      "url": "https://www.beijing.gov.cn/ywdt/gzdt/202606/t20260623_4711057.html",
+      "retrieved_at": "2026-08-26",
+      "coverage": "green travel, rail-bus integration, slow mobility and station access",
+      "use": "mobility context and design rationale",
+      "license_or_reuse": "cite public government material",
+      "limitation": "citywide averages; no site-specific route or station geometry"
+    },
+    {
+      "id": "OFFICIAL-RESILIENCE",
+      "publisher": "北京市人民政府",
+      "title": "关于加快推进韧性城市建设的指导意见",
+      "url": "https://www.beijing.gov.cn/zhengce/zhengcefagui/202111/t20211111_2534214.html",
+      "retrieved_at": "2026-08-26",
+      "coverage": "resilience, emergency recovery, rainfall retention and city governance",
+      "use": "climate-resilience design context",
+      "license_or_reuse": "cite public government policy",
+      "limitation": "policy targets; not a site engineering design or measured performance"
+    },
+    {
+      "id": "JZ-PLANNING-NOTICE",
+      "publisher": "北京市规划和自然资源委员会海淀分局",
+      "title": "京张铁路遗址公园沿线人工智能创新街区重点地区规划草案公示采信情况",
+      "url": "https://ghzrzyw.beijing.gov.cn/chengxiangguihua/ghlgg/hd_ghlgg/202502/t20250207_4005553.html",
+      "retrieved_at": "2026-08-26",
+      "coverage": "public participation and planning context for the Jing-Zhang corridor",
+      "use": "planning-process context",
+      "license_or_reuse": "cite public planning notice",
+      "limitation": "public notice does not provide complete formal polygons or engineering conditions"
+    },
+    {
+      "id": "PEER-CIVIC-LOOP",
+      "publisher": "open-city-ai/haidian community proposal",
+      "title": "京张共生回路：面向日常公共服务的AI创新带",
+      "url": "https://github.com/open-city-ai/haidian/blob/main/submissions/wyq2722084642/jingzhang-public-ai-loop/proposal.md",
+      "retrieved_at": "2026-08-26",
+      "coverage": "peer method reference: public-service baseline, human handover, pause and restore",
+      "use": "peer design-method reference with attribution",
+      "license_or_reuse": "do not copy text or assets; cite method inspiration",
+      "limitation": "community proposal, not official evidence"
+    },
+    {
+      "id": "PEER-REN-AXIS",
+      "publisher": "open-city-ai/haidian community proposal",
+      "title": "人字轴 REN AXIS——百年京张AI创新带城市设计方案",
+      "url": "https://github.com/open-city-ai/haidian/blob/main/submissions/Abreto/ren-axis-jingzhang-ai-belt/proposal.md",
+      "retrieved_at": "2026-08-26",
+      "coverage": "peer method reference: railway narrative, spatial syntax and reproducible pipeline",
+      "use": "peer design-method reference with attribution",
+      "license_or_reuse": "do not copy text or assets; cite method inspiration",
+      "limitation": "community proposal, not official evidence"
+    },
+    {
+      "id": "SELF-GENERATED-PACKAGE",
+      "publisher": "Declared participant/agent",
+      "title": "Never-Off Jing-Zhang local proposal package assets",
+      "url": "submissions/ladidol/never-off-jingzhang/report/copyright_statement.md",
+      "retrieved_at": "2026-08-26",
+      "coverage": "original bilingual text, provisional conceptual geometry, raster diagrams, offline HTML and board composition",
+      "use": "asset provenance and repository/PR display rights record",
+      "license_or_reuse": "original proposal assets; no external pixels, map tiles, logos, screenshots or unlicensed media are redistributed",
+      "limitation": "does not constitute official approval, statutory planning control, construction authorization or a license for future external adaptations",
+      "review_status": "rights-cleared-for-this-package",
+      "usable_for_formal": "yes"
+    },
+    {
+      "id": "FONT-NOTO-SANS-CJK-SC",
+      "publisher": "Noto CJK project contributors",
+      "title": "Noto Sans CJK SC Regular",
+      "url": "https://github.com/notofonts/noto-cjk/blob/main/Sans/OTF/SimplifiedChinese/NotoSansCJKsc-Regular.otf",
+      "retrieved_at": "2026-08-26",
+      "coverage": "offline Chinese glyph rendering for the submitted HTML, visual page and PDF assets",
+      "use": "bundled subset font; no remote font request",
+      "license_or_reuse": "SIL Open Font License 1.1; the package records the license and attribution in report/copyright_statement.md",
+      "limitation": "Only the subset needed by this package is embedded in visual/assets/font.css; future font or text changes require a coverage and rights re-audit",
+      "review_status": "rights-cleared-for-this-package",
+      "usable_for_formal": "yes",
+      "license_file": "report/copyright_statement.md",
+      "embedded_asset": "visual/assets/font.css"
+    }
+  ]
+}

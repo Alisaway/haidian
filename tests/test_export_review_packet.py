@@ -171,6 +171,39 @@ class ExportReviewPacketTests(unittest.TestCase):
             self.assertIn("## 2. 方案 B", markdown)
             self.assertIn("| 2 | 方案 B | bob |", markdown)
 
+    def test_html_renders_proposal_tables_and_bold_without_touching_code(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            repo_root = Path(tmp)
+            submission_dir = make_submission(repo_root, "alice", "proposal-a", "方案 A")
+            proposal_path = submission_dir / "proposal.md"
+            proposal_path.write_text(
+                proposal_path.read_text(encoding="utf-8")
+                + """
+
+**核心结论**，字面代码为 `**not bold**`。
+
+| 场景 | **状态** | 说明 |
+| :--- | ---: | --- |
+| S01 | yellow | 人工复核 |
+| S02 | green | 包含转义竖线 A\\|B |
+""",
+                encoding="utf-8",
+            )
+
+            files = export_review_packet(
+                repo_root=repo_root,
+                submission_dirs=[submission_dir],
+                out_dir=repo_root / "packet",
+                title="测试评审包",
+            )
+            rendered = Path(files["html"]).read_text(encoding="utf-8")
+
+            self.assertIn("<strong>核心结论</strong>", rendered)
+            self.assertIn("<code>**not bold**</code>", rendered)
+            self.assertIn("<th>场景</th><th><strong>状态</strong></th><th>说明</th>", rendered)
+            self.assertIn("<td>S02</td><td>green</td><td>包含转义竖线 A|B</td>", rendered)
+            self.assertNotIn("| :--- | ---: | --- |", rendered)
+
     def test_pdf_export_reports_missing_engine(self) -> None:
         original_exists = Path.exists
 

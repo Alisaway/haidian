@@ -1,0 +1,56 @@
+{
+  "method": {
+    "crs": "EPSG:4548",
+    "snap_tolerance_m": 8.0,
+    "speed_limit_kmh": 15.0,
+    "planarized_at_intersections": true,
+    "inputs": [
+      "geometry/roads.geojson",
+      "geometry/green_space.geojson",
+      "geometry/public_space.geojson"
+    ],
+    "note": "Intermediate results for the connectivity analysis described in proposal.md. Reproducible from the package geometry with any GIS toolchain using the stated parameters."
+  },
+  "network": {
+    "snap_tolerance_m": 8.0,
+    "cycleway_segments": 421,
+    "graph_nodes": 571,
+    "network_length_km": 141.74,
+    "connected_components": 62,
+    "largest_component_nodes": 85,
+    "largest_component_share_pct": 14.9,
+    "largest_component_length_km": 27.56,
+    "elderly_network_reachable": 0,
+    "elderly_total": 5
+  },
+  "proximity": {
+    "xiaoyuehe_total_length_m": 10051.4,
+    "xiaoyuehe_segments_total": 8,
+    "xiaoyuehe_segments_in_design_scope": 5,
+    "xiaoyuehe_segments_in_zhongzhiyuan": 4,
+    "cycleway_total_length_km": 142.15,
+    "cycleway_segments_total": 421,
+    "cycleway_near_river_300m_segments": 42,
+    "cycleway_near_river_300m_length_km": 23.04,
+    "elderly_facilities_total": 5,
+    "elderly_facilities_within_100m_of_legal_lane": 1,
+    "universities_in_research_scope": 49,
+    "universities_within_100m_of_legal_lane": 14
+  },
+  "gaps_m": [
+    9,
+    12,
+    35,
+    467,
+    738,
+    1942,
+    2893,
+    5170
+  ],
+  "caveats": [
+    "A-NET-001",
+    "A-NET-002",
+    "A-NET-003",
+    "A-NET-004"
+  ]
+}

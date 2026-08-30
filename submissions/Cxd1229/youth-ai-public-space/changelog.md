@@ -1,15 +1,53 @@
 # 方案迭代记录
 
-## v1.0 - 2026-08-08
-- 初始提交：完整城市设计方案提案
-- 6 个全球AI创新生态案例研究（Station F、Cambridge Science Park、High Line、Shenzhen Bay、One-North、Kendall Square）
-- 12 张 AI 场景卡（4 个测试验证场景 + 8 个公共体验场景）
-- 5 个 AI 朝圣地标（荣誉墙 L1、里程碑长廊 L2、展示塔 L3、时间胶囊 L4、开发者荣誉墙 L5）
-- 6 类用户画像
-- 三期分期计划（2027-2030 / 2030-2035 / 2035-2040）
-- 9 个 GeoJSON 空间数据文件
-- 5 张城市设计图纸（场地总览、用地结构、重点区、交通蓝绿、指标证据）
-- 离线可视化 HTML 页面
-- A3/A0 出版 PDF
+## v3.6 - 2026-08-30
 
-- v1.1: Logo spec, ecosystem map, component library, regional synergy, cultural signage, operating model (K3-assisted)
+针对第6轮评审（针对 v3.5，73 分）剩余 2 个表达完整度阻断项修复：
+
+- **中文离线 HTML 字体方框**：`report/proposal.html` 此前由渲染脚本重新生成时丢失了内嵌中文字体，离线无中文字体环境下标题/正文/表格/引文/链接显示为方框。现按当前 HTML 实际用字，将开源字体 Noto Sans SC（OFL，Regular 权重）做字形子集并以 base64 `@font-face('EmbeddedSC')` 内嵌、置于字体栈首位；`report/proposal.en.html` 同步内嵌（仅含少量汉字的微型子集）。已用无头浏览器离线渲染逐段确认中文真实显示、零缺字（子集覆盖校验 MISSING=[]）。
+- **英文 A3 封面标题越界裁切**：`drawings/a3-booklet.en.pdf` 封面主标题/副标题单行过长、左右越出安全边距。主标题改两行（Centennial Jingzhang / AI Innovation Belt，44pt）、副标题改两行（26pt）；并为 A3 要点摘要框与 A0 三栏加入按实测字宽的中英文自动折行，清除全部页面的文本越界（程序化边距检查 0 处越界）。
+- 同步重建 `a3-booklet.pdf / a3-booklet.en.pdf / a0-boards.pdf / a0-boards.en.pdf`。
+
+## v3.5 - 2026-08-30
+
+针对第5轮评审（review-5）的 3 个阻塞项修复：
+
+- **可实施性**：统一中英文正文、HTML 与验证清单中「具名人类负责人」表述——当前仅有运营机构/责任角色，故改为「拟定责任角色 / 负责人机制，责任人在落地阶段逐场景具名指定」，不再写成当前 12 个场景已具名。
+- **风险合规**：完成中英文来源语义校核——
+  - 「高校在校生约35万人」改写为设计假设 ASM-009（基于北京市教育统计与海淀高校分布的粗略推算，非项目范围实测值，不作为正式证据）；
+  - 「青年人才需求优先级」改写为设计假设 ASM-010（全球创新区案例的可转化经验归纳，非本地调查结论）；
+  - 「PUE≤1.2」由笼统的「参照北京市要求」改为引用可核验来源 BEIJING-DC-ENERGY-REVIEW-2023（京发改规〔2023〕10号：年能耗≥2万吨标煤项目PUE≤1.2门槛），并标注为设计目标、非现状承诺；
+  - 统一任务书来源 ID：正文全部改用来源注册表 ID `SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK`，废弃旧别名 `AGENT-TASKBOOK`；新增来源ID别名说明，对应标准 ID `PROJECT-AGENT-OPEN-CALL-TASKBOOK` 与 site-package 文件 `agent_taskbook.json`。
+- **表达完整度**：重绘双语必交图件——
+  - `assets/figures/key-areas.en.png`：修复中部「AI Origin Community」标签裁切，警示文字改三行完整显示；
+  - `assets/figures/metrics-evidence.png / .en.png`：重排轴标题、来源说明与临时边界警示，消除叠压与裁切，修正警示文字乱码；
+  - 重建 `drawings/a3-booklet(.en).pdf` 与 `drawings/a0-boards(.en).pdf`：A3 图册采用「图左 + 要点摘要」竖版版面；A0 展板基于当前 GeoJSON 重绘场地地图与指标板，替换旧迭代中的错误内容（大栅栏/望京旧名、大智寺错字、旧四原则、错误指标 11.63km²/公共空间30%、错误日期 1989 等）。
+  - 重生成 `report/proposal.html` 与 `report/proposal.en.html`，同步视觉 HTML 图件引用。
+
+## v3.0 - 2026-08-28
+
+- 核心命题收束：将「詹天佑协议」从四项原则深化为「四原则 × 三阶信任回路」（开放提交 → 双重复核 → 可追溯迭代），使信任框架从静态声明变为贯穿全文的可操作机制主线，各章节回扣四项原则。
+- 修复表达硬伤：删除重复的空标题「品牌视觉与Logo概念设计」、修复正文残留引号、统一中英文证据标签 parity（[task:] 等标签逐条对齐）。
+- 补齐迭代记录与 manifest 元数据；明确 provisional boundary 与概念估算指标的置信度边界，避免把概念估算写成现场实测结论。
+
+## v2.4 - 2026-08-11
+
+- 11 项 bilingual translation_of 元数据对齐（PR #1885），双语完整版与差异化声明。
+
+## v2.2 - 2026-08-11
+
+- A0 展板重绘（消除空白、紧凑排版）、A3 方案册重绘、Logo 英文版（PR #1855）。
+
+## v2.1 - 2026-08-10
+
+- 「詹天佑协议」核心概念成形：可见性 / 可停止 / 无AI等价 / 代际公平四项原则 + Logo SVG + 信任验证清单 12 项 + Kimi 英文提案翻译（PR #1606）。
+
+## v1.0 - 2026-08-08
+
+- 初始提交：完整城市设计方案提案（13 章）。
+- 6 个全球 AI 创新生态案例、12 张 AI 场景卡、5 个 AI 朝圣地标、6 类用户画像。
+- 9 个 GeoJSON 空间数据文件、5 张城市设计图纸、A3/A0 PDF、离线可视化 HTML。
+
+## v1.1 - 2026-08-08
+
+- Logo 规范、AI 生态图谱、公共空间组件库、区域协同机制、文化导视、运营模型（Kimi K3 辅助）。

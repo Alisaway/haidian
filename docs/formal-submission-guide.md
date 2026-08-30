@@ -12,6 +12,8 @@
 
 无后缀文件是 `proposal.md` 所声明的主语言版本；译稿在扩展名前插入语言码，例如 `report/proposal.en.html`、`visual/index.en.html`、`drawings/a3-booklet.en.pdf` 和 `assets/figures/site-overview.en.png`。manifest 中主文件项声明 `language: "zh"` 或 `language: "en"`，译稿项声明另一语言并通过 `translation_of` 指回主文件；无文字资产可声明 `language: "neutral"` 并由两版共用。
 
+若译稿条目声明了 `translation_of`（或按语言后缀与主文件配对），且与对应主文件字节完全相同，同时双方都未声明 `language: "neutral"`，CI 会给出一条不阻断的提示（`report_identical_bilingual_artifacts`，随 #1689 于 2026-08-20 上线）：要么补上真正的译文渲染，要么在确实无文字/语言中立时把 `language` 补声明为 `"neutral"`。该提示只走 `warning`，不参与 PASS/FAIL 判定，也不会追溯历史包。
+
 英文主稿必须使用以下正式章节标题；中文译稿保持对应顺序。这样英文正文可独立通过结构校验，不依赖同一文件中的中文章节。
 
 | 中文章节 | 英文正式章节 |
@@ -195,7 +197,7 @@ python3 scripts/fetch_standard_references.py --update-standards
 
 ## 4. `compliance_matrix.json`
 
-`compliance_matrix.json` 是“任务响应表”。它告诉评审器和人类评审：官方公告 1.3、1.4、1.5 与面向智能体任务书 `agent.1` 至 `agent.6` 的每个必选任务，在方案中由哪些章节、图层、指标、图纸、HTML 页面、来源和自检项支撑。
+`compliance_matrix.json` 是“任务响应表”。它告诉评审器和人类评审：官方公告 1.3、1.4、1.5 与面向智能体任务书 `agent.1` 至 `agent.6` 的每个必选任务，在方案中由哪些章节、图层、指标、图纸、HTML 页面、来源、标准和自检项支撑。`source_ids` 只填写 `sources.json` / 中央来源登记中的来源 ID；专业标准 ID 应填写到独立的 `standard_ids`，并同时在 `standard_matrix.json` 中声明，不得混入 `source_ids`。
 
 必须覆盖这些 `requirement_id`：
 
@@ -238,6 +240,7 @@ agent.6 一带全球AI创新活动体系与长期运营设计
   "drawings": ["drawings/a3-booklet.pdf", "drawings/a0-boards.pdf"],
   "visual_sections": ["建筑与更新项目", "任务覆盖"],
   "source_ids": ["OFFICIAL-ANNOUNCEMENT", "OFFICIAL-DESIGN-BOUNDARY"],
+  "standard_ids": ["MOHURD-URBAN-DESIGN-MEASURES"],
   "assumption_ids": ["A-CONTROLS-001"],
   "self_check_ids": ["LAND_USE_TOPOLOGY", "BOUNDARY_TRUST"]
 }
@@ -321,7 +324,9 @@ agent.6 一带全球AI创新活动体系与长期运营设计
 
 这些图应由 GeoJSON、metrics、compliance/standard/depth 矩阵和自检结果派生；不得使用远程图片、data URI、未清权地图截图或把图片当作权威面积/边界来源。图是解释层，权威数据仍是 GeoJSON/JSON。
 
-如果提交包包含 `simulation.json`，仿真结果也必须能够从任务台账复算：`task_count` 要等于 `tasks.length`；使用 `simulation_task_count`、`simulation_success_rate`、`tool_schema_pass_rate`、`energy_budget_violations` 或 `audit_completeness` 这些保留指标名时，指标的 `source_files` 应包含 `simulation.json`，并与任务记录逐项一致。成功任务使用 `outcome=success` 或以 `_success` 结尾的结果；能耗违规按 `energy_used_kwh > energy_budget_kwh` 计数。若同时提供 `baselines.urban_llm_harness` 或 `visual/assets/evaluation-baseline.json`，同名聚合值必须一致：`urban_llm_harness` 被定义为任务台账的镜像，不能用一个 scope 字段绕过冲突。其他评测范围须放在不同、说明用途的基线名下，不能在同一个保留指标名下并列两个结果。`ready_for_review` / 双语 v2 包中的冲突会阻断校验，legacy v1 仅给出迁移警告。
+每张图片还会经过解码体积校验，校验的是解码后的像素数据体积，不是磁盘文件大小：`scripts/validate_submission.py` 依据 PNG `IHDR` 声明的宽、高、位深和颜色类型换算出未压缩字节数，单张图片不得超过 128 MiB（`MAX_PNG_INFLATED_BYTES`），全部 PNG 累计解码体积不得超过 1024 MiB（`MAX_TOTAL_PNG_INFLATED_BYTES`），按 manifest 声明顺序累加——排在后面的图片会消耗前面图片剩下的额度，不是每张各自独立的 128 MiB（`298500d70`，2026-08-19 上线）。这与压缩率无关：一张 7000×4000 像素以上的真彩色图，磁盘文件即使只有几百 KB，解码后仍可能占用 80 MiB 以上；多张高分辨率图片会快速消耗整包预算。命中上限时报错会直接给出换算出的字节数（如 `IHDR dimensions exceed the safe decoding limit`），修复方向是降低图片的像素分辨率到实际展示所需的程度，而不是继续调高压缩率。
+
+如果提交包包含 `simulation.json`，仿真结果也必须能够从任务台账复算：`task_count` 要等于 `tasks.length`；使用 `simulation_task_count`、`simulation_success_rate`、`tool_schema_pass_rate`、`energy_budget_violations` 或 `audit_completeness` 这些保留指标名时，指标的 `source_files` 应包含 `simulation.json`，并与任务记录逐项一致。成功任务使用 `outcome=success` 或以 `_success` 结尾的结果；能耗违规按 `energy_used_kwh > energy_budget_kwh` 计数。若同时提供 `baselines.urban_llm_harness` 或 `visual/assets/evaluation-baseline.json`，同名聚合值必须一致：`urban_llm_harness` 被定义为任务台账的镜像，不能用一个 scope 字段绕过冲突。其他评测范围须放在不同、说明用途的基线名下，不能在同一个保留指标名下并列两个结果。`ready_for_review` / 双语 v2 包中的冲突会阻断校验，legacy v1 仅给出迁移警告。字段说明、保留指标推导规则、baselines 边界和可复制模板见 [`docs/simulations.md`](simulations.md) 与 `templates/simulation.json`。
 
 ### 图面表达质量要求
 
@@ -465,7 +470,9 @@ HTML 是必交电子展示页面，用于让评审者快速看懂方案。它不
 - `green_ratio`
 - `public_space_ratio`
 
-HTML 展示值与 `metrics.json` 不一致会失败。
+这三项是 formal visual gate 的严格子集，不适用一般指标可保留 `unknown` 的兼容规则。它们必须是从投稿者提交的 `site_boundary`、`green_space` 和 `public_space` GeoJSON 可复算得到的 `status="known"` 有限数值，并在 HTML 中提供一致的数值 `data-value`。若底层几何为 provisional，可继续用低置信度的临时设计模型值，但必须保留 `provisional_constraint` / `provisional_rough` 标记、公式与来源文件，并说明正式几何发布后的复算触发条件；这不是宣称官方红线或法定控制指标。若三项之一尚不能从包内几何复算，投稿应保持 revision/scaffold 并先补齐或修复几何，不得用 `unknown`、`not_applicable` 或脱离几何的占位数绕过 gate。
+
+容积率、建筑高度等确实依赖尚未公开的官方控制条件的其他指标，仍可按一般契约使用 `status="unknown"`、`value: null` 和明确原因，也无需放入上述三项视觉声明。HTML 展示值与 `metrics.json` 不一致会失败。
 
 ## 10. 提交前自检
 

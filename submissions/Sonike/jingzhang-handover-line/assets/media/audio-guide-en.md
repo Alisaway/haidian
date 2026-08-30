@@ -75,3 +75,7 @@ Capability may move. Accountability must stay visible.
 
 Bring a problem you can state in public and a responsibility you are willing to carry, and
 complete one handover here that can be withdrawn, reproduced and handed on.
+
+---
+
+**Licence.** This package carries the `COMMUNITY-DISPLAY-ONLY` identifier; the rights holders additionally grant that **any use complying with CC BY-NC 4.0 (attribution, non-commercial, changes indicated) is licensed**, and the attribution must carry the sentence "this proposal is open co-creation advice and represents no government decision or approval". This paragraph is identical to the risk-and-compliance section of `proposal.md` and to `report/copyright_statement.md`. The audio and video are locally synthesised and procedurally generated, and contain no real likeness, no real voice sample and no third-party material.

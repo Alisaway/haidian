@@ -1,0 +1,371 @@
+{
+  "schema_version": "0.1.0",
+  "units": {
+    "length": "m",
+    "area": "sqm"
+  },
+  "metrics": {
+    "site_area_sqm": {
+      "status": "known",
+      "value": 11412825.386,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "polygon_area(submitted_site_boundary)",
+      "confidence": "high",
+      "assumptions": [
+        "Provisional boundary (PROV-SITE-001); recalculate after official polygon."
+      ]
+    },
+    "building_footprint_area_sqm": {
+      "status": "known",
+      "value": 1989361.826,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "sum(polygon_area(building_footprints))",
+      "confidence": "high",
+      "assumptions": [
+        "OSM public building footprints (overpass-api.de, 2026-08-29), EPSG:4548 union area; recalculate after official boundary."
+      ]
+    },
+    "building_density": {
+      "status": "known",
+      "value": 0.174309,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/buildings.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "building_footprint_area_sqm / site_area_sqm",
+      "confidence": "high",
+      "assumptions": [
+        "EPSG:4548 union area of OSM footprints over provisional site; recalculate after official boundary."
+      ]
+    },
+    "total_floor_area_sqm": {
+      "status": "unknown",
+      "value": null,
+      "unit": "sqm",
+      "source_files": [
+        "brief/site-package/ranges/planning_limits.json"
+      ],
+      "formula": "sum(floor_area)",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "Approved FAR controls and building scale are not present."
+    },
+    "floor_area_ratio": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "brief/site-package/ranges/planning_limits.json"
+      ],
+      "formula": "total_floor_area_sqm / site_area_sqm",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "Approved FAR controls are not present."
+    },
+    "green_space_area_sqm": {
+      "status": "known",
+      "value": 2603564.027,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/green_space.geojson"
+      ],
+      "formula": "sum(polygon_area(green_space))",
+      "confidence": "medium",
+      "assumptions": []
+    },
+    "green_ratio": {
+      "status": "known",
+      "value": 0.228126,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/green_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "green_space_area_sqm / site_area_sqm",
+      "confidence": "medium",
+      "assumptions": []
+    },
+    "public_space_area_sqm": {
+      "status": "known",
+      "value": 113816.67,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "sum(polygon_area(public_space))",
+      "confidence": "medium",
+      "assumptions": []
+    },
+    "public_space_ratio": {
+      "status": "known",
+      "value": 0.009973,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "public_space_area_sqm / site_area_sqm",
+      "confidence": "medium",
+      "assumptions": []
+    },
+    "road_centerline_length_m": {
+      "status": "known",
+      "value": 22372.752,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson"
+      ],
+      "formula": "sum(length(road_centerlines)) in EPSG:4548",
+      "confidence": "medium",
+      "assumptions": [
+        "Road centerlines are design proposals, not official road redlines."
+      ]
+    },
+    "road_area_sqm": {
+      "status": "known",
+      "value": 320861.857,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/roads.geojson"
+      ],
+      "formula": "sum(buffer(centerline, 8m) ∩ site)",
+      "confidence": "low",
+      "assumptions": [
+        "Road width assumed ~16m; not an official redline."
+      ]
+    },
+    "road_ratio": {
+      "status": "known",
+      "value": 0.028114,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/roads.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "road_area_sqm / site_area_sqm",
+      "confidence": "low",
+      "assumptions": [
+        "Assumed road width."
+      ]
+    },
+    "phasing_area_sqm": {
+      "status": "known",
+      "value": 16784801.733,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/phasing.geojson"
+      ],
+      "formula": "sum(polygon_area(phasing))",
+      "confidence": "medium",
+      "assumptions": [
+        "Phasing polygons may overlap across phases by design."
+      ]
+    },
+    "key_area_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "count(key_detailed_design_areas)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "employment_transition_rate": {
+      "status": "unknown",
+      "value": null,
+      "unit": "percent",
+      "source_files": [],
+      "formula": "AI_collaboration_jobs / total_transitioned_jobs",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "Requires operational and labor data; human-centric indicator group."
+    },
+    "skill_uplift_coverage": {
+      "status": "unknown",
+      "value": null,
+      "unit": "percent",
+      "source_files": [],
+      "formula": "residents_completing_ai_literacy / target_population",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "Requires program enrollment data."
+    },
+    "community_service_reach": {
+      "status": "unknown",
+      "value": null,
+      "unit": "percent",
+      "source_files": [],
+      "formula": "served_households / total_households",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "Requires service delivery data."
+    },
+    "public_participation_rate": {
+      "status": "unknown",
+      "value": null,
+      "unit": "percent",
+      "source_files": [],
+      "formula": "participating_residents / total_residents",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "Requires participation record data.",
+      "benchmark": "公开参考：北京市 12345 市民服务热线年均受理公众诉求量级（公开报道），社区议事会/业主大会参与率的一般区间（社区治理公开研究）；本方案 public_participation_rate 设计目标将在本项目参与记录形成后校准。"
+    },
+    "key_area_zhongzhiyuan_ai_acceleration_area_sqm": {
+      "status": "known",
+      "value": 1929201.877,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "polygon_area(key_area)",
+      "confidence": "medium",
+      "assumptions": [
+        "Provisional key-area polygon."
+      ]
+    },
+    "key_area_beijing_ai_origin_community_sqm": {
+      "status": "known",
+      "value": 1043236.909,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "polygon_area(key_area)",
+      "confidence": "medium",
+      "assumptions": [
+        "Provisional key-area polygon."
+      ]
+    },
+    "key_area_dazhongsi_ai_industry_cluster_sqm": {
+      "status": "known",
+      "value": 720454.219,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "polygon_area(key_area)",
+      "confidence": "medium",
+      "assumptions": [
+        "Provisional key-area polygon."
+      ]
+    },
+    "land_use_area_0701_sqm": {
+      "status": "known",
+      "value": 4361188.815,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "sum(area where code=0701)",
+      "confidence": "medium",
+      "assumptions": []
+    },
+    "land_use_area_0802_sqm": {
+      "status": "known",
+      "value": 2411196.936,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "sum(area where code=0802)",
+      "confidence": "medium",
+      "assumptions": []
+    },
+    "land_use_area_0804_sqm": {
+      "status": "known",
+      "value": 514890.246,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "sum(area where code=0804)",
+      "confidence": "medium",
+      "assumptions": []
+    },
+    "land_use_area_0901_sqm": {
+      "status": "known",
+      "value": 560706.5,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "sum(area where code=0901)",
+      "confidence": "medium",
+      "assumptions": []
+    },
+    "land_use_area_0902_sqm": {
+      "status": "known",
+      "value": 1075111.916,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "sum(area where code=0902)",
+      "confidence": "medium",
+      "assumptions": []
+    },
+    "land_use_area_1401_sqm": {
+      "status": "known",
+      "value": 2489748.175,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "sum(area where code=1401)",
+      "confidence": "medium",
+      "assumptions": []
+    },
+    "time_sharing_ratio": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [],
+      "formula": "co_track_hours_utilized / 24h",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "Time-sharing utilization of the co-track test line across a 24h cycle (data training / semi-open testing / closed testing / public opening).",
+      "benchmark": "公开参考：轨道交通/公共设施分时利用的行业研究区间（如城市公共空间昼夜/工作日-周末使用差异研究）；本方案 time_sharing_ratio 设计目标将在共轨试验线运营数据形成后校准。"
+    },
+    "growth_rate": {
+      "status": "unknown",
+      "value": null,
+      "unit": "percent_per_year",
+      "source_files": [],
+      "formula": "d(L(x,t))/dt",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "Growth rate of land-use share along the innovation diffusion S-curve."
+    },
+    "tidal_amplitude": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [],
+      "formula": "(peak_activity - trough_activity) / mean_activity",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "Amplitude of population/activity rhythm across workday, commute, and weekend tides.",
+      "benchmark": "北京地铁公开客流数据（2026-03，北京轨指中心/公开报道）：工作日日均约 1100 万人次 vs 全网日均约 950 万人次，休息日客流同比 +23.7%（2026 Q1 轨交运营报告）；早高峰集中度示例：昌平线沙河站早高峰两小时约 2.5 万人次。上述为城市场景潮汐强度的公开参考，本方案 tidal_amplitude 的设计目标将在本项目运营数据形成后校准。"
+    },
+    "innovation_diffusion_stage": {
+      "status": "unknown",
+      "value": null,
+      "unit": "stage",
+      "source_files": [],
+      "formula": "validation(0-2y) -> agglomeration(2-5y) -> anchoring(5-10y)",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "Current stage of industry diffusion; requires operational data to become known."
+    }
+  }
+}

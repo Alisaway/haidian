@@ -6,12 +6,14 @@ proposal_format_version: "2"
 bilingual_contract_version: "1"
 translation_of: "proposal.md"
 license: "COMMUNITY-DISPLAY-ONLY"
-summary: "In 1909 Zhan Tianyou invented the '人'-shaped switchback line to climb the impossible Badaling grade. In 2026 cities face three steep grades: productivity, quality of life, and global competition. The Switchback Line uses AI as this era's switchback: one spine, three poles, two wings, a 17-parcel design matrix, 14 AI scenario cards, an Innovation Timetable service contract, and a minimal executable pilot — every urban AI service can be publicly accepted, paused, and retired."
+summary: "AI enters the city, vouchers first. In 1909 Zhan Tianyou invented the '人'-shaped switchback line to climb the impossible Badaling grade; in 2026 cities face three steep grades: productivity, quality of life, and global competition. The Switchback Line uses AI as this era's switchback: one spine, three poles, two wings, three running vouchers, the Innovation Timetable, a 17-parcel design matrix and 14 AI scenario cards — every mechanism follows one fold-back logic: most reliable, not highest performance."
 tracks: ["ai-traffic-walkability", "jingzhang-heritage-narrative", "ai-origin-community"]
 scenarios: ["ai-traffic-walkability", "ai-cultural-guide", "ai-health-service-navigation", "enterprise-service-copilot", "robot-delivery-low-speed", "public-safety-operations-review"]
 ---
 
 # The Switchback Line: using AI to overcome urban steep grades
+
+> **Public slogan: AI enters the city, vouchers first.** Every urban AI service entering public space opens with one of three running vouchers — Test Receipt / Release Ticket / Public Verdict; when a voucher fails the service folds back, and everyday city life continues.
 
 > **The Switchback Line** — In 1909, Zhan Tianyou faced the Badaling grade and did not brute-force it. At Qinglongqiao he designed the '人'-shaped switchback line, **using creativity to overcome what seemed an impossible slope** `[source:HISTORY-ZHAN-TIANYOU]`. In 2026, the Centennial Jing-Zhang AI Innovation Belt is not asking "how to build another AI park"; it is asking: **when cities face the triple steep grade, can AI be this era's switchback line — intelligent creativity to overcome the urban grades?** `[source:HISTORY-JINGZHANG-1909]`
 
@@ -37,6 +39,17 @@ A railway runs only when track, signal, timetable and accountability hold at the
 
 The three vouchers do not substitute for one another: a technical pass cannot override a rights judgment or a public decision, and an old failure cannot be erased by a new pass — the same engineering logic as the '人'-shaped switchback: **changing direction is not erasing the path already travelled, but folding back while preserving the previous state** `[source:HISTORY-ZHAN-TIANYOU]`.
 
+**Operating doctrine: every mechanism follows the same fold-back logic.** Zhan Tianyou's switchback was not a compromise — it was how a train keeps climbing an impossible grade. Each mechanism in this proposal is the same logic projected onto a different layer — **most reliable, not highest performance**:
+
+| Mechanism | Fold-back action | Folds back to |
+|---|---|---|
+| Three vouchers (Test / Release / Public Verdict) | voucher fails → service stays closed | everyday city mode |
+| Innovation Timetable six steps | any step fails → degrade to human | human and non-digital channels |
+| R0-R3 resilience states | rain / offline / power loss → pause | physical signage + human fallback |
+| SC-04 seven gates | any gate lacks evidence → stay in prior state | sandbox and synthetic orders |
+| G6 retirement | pilot expires → revoke, purge data, restore site | original site condition + public receipt |
+| Minimum-regret priority | unacceptable worst case → degrade or stop | P-ensure physical fallback |
+
 Every urban AI service entering public space follows the same **Innovation Timetable** (borrowing the openness and accountability of a railway timetable, turning abstract "AI governance" into a public contract that is visible in space and traceable in operations; not a statutory indicator, but a reference scheme calibrated by professionals, operators and the public `[assumption:A-IMPLEMENTATION-001]`):
 
 | Step | Meaning | Spatial requirement | If unmet |
@@ -50,7 +63,18 @@ Every urban AI service entering public space follows the same **Innovation Timet
 
 `Urban problem enters → Innovation Pole translates → Life Pole experiences → Industry Pole scales → Public verdict → continue, revise, or retire`
 
-The proposal consists of one spine (Jing-Zhang Innovation Spine), three poles (Innovation/Life/Industry) and two wings (Zhongguancun tech-services wing / Xiaoyuehe scenario-testing wing), unfolding north–centre–south along the ~9 km Jing-Zhang Railway Heritage Park green belt `[source:HERITAGE-PARK]`.
+The proposal consists of one spine (Jing-Zhang Innovation Spine), three poles (Innovation/Life/Industry) and two wings (Zhongguancun tech-services wing / Xiaoyuehe scenario-testing wing), unfolding north–centre–south along the ~9 km Jing-Zhang Railway Heritage Park green belt `[source:HERITAGE-PARK]`, aiming at the **global AI industry highland** goal and the **AI pilgrimage** vision `[standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK]`.
+
+**One day on the Switchback Line, 2030** (scenario-perceptibility sketch):
+
+- **7:40, Life Pole · Origin Life Plaza** — retired teacher Ms. Li finishes a blood-pressure check at the health station; the AI pre-screen flags an anomaly and the human window next door connects her straight to the community doctor (S5; non-digital channels and human review are the spatial promise of Timetable step ③). Tactile guidance paving leads her to the breakfast stall — the paving shows no advertising.
+- **9:00, Innovation Pole · benchmark field** — researcher Chen's team files a benchmark-reproduction request; the staffed controlled crossing verifies data provenance and issues a Test Receipt, opening the test zone. At the viewing platform, school students watch a live evaluation through glass (landmark ③'s public honor display).
+- **12:30, Industry Pole · Dazhongsi** — a corporate visitor files an objection to a recommendation at the complaint point; the Public Verdict surface shows "human review, response within 24h". On the same street, a human-run shop and an intelligence-native store open side by side — the non-AI path is no longer than the AI path.
+- **17:00, Xiaoyuehe wing** — a founder books next week's scenario-testing slot at the open-application entrance; edge-node latency is public on the governance board (S11).
+- **22:00, rainy night** — rainfall passes 50 mm/24h; state R1 triggers: the robot delivery lane physically locks, human delivery and shelters take over; the sunset notice lights up, to be cleared after a morning check.
+- **23:30, governance duty room** — the SC-04 duty officer re-runs the human fallback of boundary condition 3 in a tabletop drill; the receipt enters the public evidence chain — not one byte of personal data left the local edge today.
+
+Not a single advertising screen appears all day: AI schedules in the background while the city surface stays material and quiet (screens-recede principle).
 
 ## Design basis and source inventory
 
@@ -61,7 +85,7 @@ Submitted to the [Centennial Jing-Zhang AI Innovation Belt open call](https://gi
 - **Professional standards**: urban design measures `[standard:MOHURD-URBAN-DESIGN-MEASURES]`, regulatory-plan compilation measures `[standard:MOHURD-CONTROL-DETAILED-PLANNING]`, land-use classification guide `[standard:MNR-LAND-USE-CLASSIFICATION-GUIDE]`.
 - **Source grading**: verified via `data/source_registry.json` — announcement/taskbook/standards are `usable_for_formal=yes`; the provisional boundary is `provisional_only` `[source:PROVISIONAL-BOUNDARY]`.
 
-Evidence chain: `proposal.md` (human-readable body) → `geometry/*.geojson` (spatial evidence) → `metrics.json` (metric recalculation) → three coverage matrices (compliance/standard/design_depth) → `self_check.json` (local self-check). The text uses five verifiable citation types: `[source:...]` `[standard:...]` `[depth:...]` `[data:...]` `[metric:...]`. All spatial recommendations are "conceptual suggestions / reference schemes / for professional teams to deepen", not a substitute for formal planning `[standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK]`.
+Evidence chain: `proposal.md` (human-readable body) → `geometry/*.geojson` (spatial evidence) → `metrics.json` (metric recalculation) → three coverage matrices (compliance/standard/design_depth) → `self_check.json` (local self-check). The text uses five verifiable citation types: `[source:...]` `[standard:...]` `[depth:...]` `[data:...]` `[metric:...]`. Multimodal deliverable loop: body (zh/en) + 6 figures (zh/en) + A3/A0 drawing PDFs (zh/en) + HTML reports (zh/en) + visual portals (zh/en) + 9 GeoJSON layers + metrics and matrix JSON. All spatial recommendations are "conceptual suggestions / reference schemes / for professional teams to deepen", not a substitute for formal planning `[standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK]`.
 
 ![Site, evidence and overall concept](assets/figures/site-overview.png)
 
@@ -83,6 +107,8 @@ The three tiers narrow step by step, landing the Switchback Line concept into th
 
 **Overall concept: The Switchback Line / 京张人字新线**. In 1909 Zhan Tianyou climbed the grade with a '人'-shaped switchback — engineering wisdom rather than brute force `[source:HISTORY-ZHAN-TIANYOU]`; this belt makes AI the switchback of our era, letting data, compute, scenarios, talent, enterprises and governance interoperate under one standard — not an AI label on a traditional park, but standards and engineering method to answer "how AI serves people, enterprises and society" `[standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK]`.
 
+**Three orientations answered**: the centennial heritage belt — the Switchback Line translates rail heritage into an engineering-standard narrative for the AI era (five story segments + three pilgrimage landmarks); the urban AI life-experience belt — the Life Pole embeds AI into residents' daily routines (S5/S6/S7 + non-digital channels); the AI-fusion innovation belt — Innovation and Industry Poles back independent innovation and industrial conversion with an engineering benchmark (S1/S2 + pilot-scale accelerator). **Five functions mapped**: full-stack AI innovation → benchmark field and shared compute; world-class ecosystem → three-pole two-wing map; AI+ scenario empowerment → 14 scenario cards; intelligent vibrant city → spine + blue-green + component library; global voice in AI governance → Innovation Timetable + three vouchers + equity ledger.
+
 **Naming system** (agent.1):
 
 | Tier | Chinese | English | Metaphor |
@@ -94,7 +120,7 @@ The three tiers narrow step by step, landing the Switchback Line concept into th
 | Area · Dazhongsi | 产业极 | Industry Pole | Intelligence-native new business |
 | Two wings | 中关村/小月河道岔 | Switchbacks | Factor flow and scenario enablement |
 
-**Logo and visual direction** (agent.1; directional suggestion, final assets must be rights-cleared `[standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK]`): master mark recomposes the gauge symbol (═══) with an AI node network (•—•—•) — a "standard + connection" composite; primary Jing-Zhang engineering blue `#1d4ed8`, amber `#b45309` (provisional warning / historical warmth), slate grey `#475569`, WCAG-AA contrast; three pole accent colours (blue / magenta `#db2777` / violet `#7c3aed`); sans-serif Chinese + geometric sans English + monospaced numerals (direction); applied to spine signage, pole entrances, scenario notices, guide posts, honor walls, event materials; no unauthorized trademarks, portraits or paper figures; provisional boundaries always dashed/low-contrast in visuals.
+**Logo and visual direction** (agent.1; directional suggestion, final assets must be rights-cleared `[standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK]`): master mark recomposes the gauge symbol (═══) with an AI node network (•—•—•) — a "standard + connection" composite; primary Jing-Zhang engineering blue `#1d4ed8`, amber `#b45309` (provisional warning / historical warmth), slate grey `#475569`, WCAG-AA contrast; three pole accent colours (blue / magenta `#db2777` / violet `#7c3aed`); sans-serif Chinese + geometric sans English + monospaced numerals (direction); applied to spine signage, pole entrances, scenario notices, guide posts, honor walls, event materials; no unauthorized trademarks, portraits or paper figures; provisional boundaries always dashed/low-contrast in visuals. Brand-identity goal: recognizable in one mark (gauge + node composite), memorable in one colour (engineering blue), transmissible in one phrase (人字新线 / The Switchback Line), extended consistently across space, print and digital.
 
 **Three-pole two-wing loop**: Zhongzhi Garden (R&D) → AI Origin Community (conversion & experience) → Dazhongsi (scaling); the Zhongguancun wing injects capital and IP, the Xiaoyuehe wing opens test scenarios, forming a "R&D—life—industry—service—testing" loop `[data:geometry/key_areas.geojson#PROV-KEY-001]`.
 
@@ -138,7 +164,7 @@ The overall design extent (~11.4 km², provisional `[data:geometry/site_boundary
 
 Numeric indices live in `metrics.json` (`land_use_area_{code}_sqm` / `land_use_ratio_{code}` series); codes follow the national land-use classification guide `[standard:MNR-LAND-USE-CLASSIFICATION-GUIDE]`. The division in `geometry/land_use.geojson` `[data:geometry/land_use.geojson#LU-0802-A1]` is a complete partition: 5 bands refined into 17 parcels `[metric:land_use_count]`; union = site boundary, no overlap, no gap; same-code parcel union = original band area.
 
-**Four mechanisms moving AI from a service layer to a generative layer** — if AI is only a service skin, the city is not different because of AI `[depth:overall_spatial_structure]` `[depth:height_massing_character]`:
+**Four mechanisms moving AI from a service layer to a generative layer** — this is the proposal's planning-innovation claim on "space-industry integration" in spatial planning: if AI is only a service skin, the city is not different because of AI; only when AI sinks from a service layer into a **generative layer** does urban form truly change `[depth:overall_spatial_structure]` `[depth:height_massing_character]`:
 
 1. **Compute goes underground**: INNO-A2/INF-E2 underground space is driven by compute demand — B2 liquid-cooled halls (6–8 m clear height, heavy loads, dedicated cooling routes), B1 edge-inference cabinet corridors, ground level only equipment hatches and ventilation shafts, leaving ground for public space `[depth:municipal_new_infrastructure]`.
 2. **Dynamic space allocation**: LIFE-D3 is a pedestrian retail street by day, a robot low-speed delivery corridor at night (bollards rise to split a 2 m lane), a festival market on weekends — function becomes a time slice under AI scheduling.
@@ -195,7 +221,7 @@ The three key areas line up north–centre–south along the corridor (provision
 
 ## AI innovation ecosystem, personas and AI+ scenarios
 
-**Ecosystem map** (agent.2): the Switchback Line standards layer (Innovation Timetable six steps) as base, connecting six factor layers — compute/data/scenarios/talent/capital/governance — with three poles and two wings as nodes, a four-layer "standards → factors → nodes → scenarios" map; Innovation Pole produces, Life Pole converts, Industry Pole scales, wings inject capital/scenarios, every layer auditable `[standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK]`.
+**Ecosystem map** (agent.2): the Switchback Line standards layer (Innovation Timetable six steps) as base, connecting six factor layers — compute/data/scenarios/talent/capital/governance — with three poles and two wings as nodes, a four-layer "standards → factors → nodes → scenarios" map; Innovation Pole produces, Life Pole converts, Industry Pole scales, wings inject capital/scenarios, every layer auditable `[standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK]`. **Industry-support mechanisms**: factor-guarantee interfaces for compute/data/capital/talent (Zhongguancun wing), open-application technical testing at INNO-A3, and one scenario-opening flow shared by all 14 scenarios (apply – test – human review – release – reversible).
 
 **Personas** (agent.3, six): ① AI researchers/engineers (compute, test fields, peers → Innovation Pole); ② founders/developers (low-cost space, capital, scenario entry → wings); ③ enterprise teams (HQ, showcase, conversion → Industry Pole); ④ residents/families (convenience, health, education, safety → Life Pole); ⑤ visitors/students (experienceable public AI interface → public space); ⑥ urban governors (re-verifiable, reversible, accountable → charter and evidence chain).
 
@@ -219,6 +245,21 @@ The three key areas line up north–centre–south along the corridor (provision
 | S14 public-interest audit | equity-ledger review committee | quarterly review + anonymized event log | weakest-20% experience worsens → pause `[data:visual/assets/edge-matrix.json]` |
 
 Three public baselines run through all scenarios: **100% final human confirmation for high-impact decisions; zero default biometric or continuous personal-track retention; non-digital channels preserved for basic services** (voice, buttons, paper, human windows) `[depth:ai_governance_charter]`.
+
+**Switchback work order** — any party submitting an urban-AI request along the "problem enters → voucher acceptance → fold back or retire" chain must complete the following fields (each with a missing-field handling rule; none may be skipped):
+
+| Field | Question answered | If missing |
+|---|---|---|
+| Problem & receiving pole | which of the three poles takes it, in which spatial type | no pole-zone matching |
+| Running voucher | which of Test Receipt / Release Ticket / Public Verdict applies | voucher undefined → no G1 |
+| Timetable commitment | time limits and duty points for each of the six steps | no registration, no opening |
+| Non-AI baseline | how the same task is done today | no improvement claims |
+| Data boundary | minimal dataset and retention period | undeclared data must not be collected |
+| Human takeover point | who takes over when, where is the non-digital channel | no takeover point → closed |
+| Failure signals & pause line | which observations trigger a pause | no pause line → no G5 |
+| Fold-back path | how to return while preserving prior state on failure | no fold-back path → no pilot |
+| Recovery evidence | what records restore operation | unmet → stay degraded |
+| Retirement & site restoration | when it ends, who restores site and data | must not start |
 
 **Minimal executable pilot**: S1 converges into the single pilot SC-04, selecting 3 of 12 boundary conditions first (wheelchair/cane, night rain/snow, weak network), each generating one synthetic work order plus one control sample (4 total). Synthetic orders only trigger human fallbacks and stop conditions — no real services, no real personal data `[assumption:A-OPERATIONS-001]`. The pilot advances through G0 topic → G1 site → G2 data → G3 system rights → G4 human gate → G5 limited trial → G6 rollback/retirement; any gate lacking evidence stays in the previous state; the goal is to prove **"stop, exit, recover" logic can be independently re-run by a third party**, not that benchmarks pass. A companion offline tabletop pack (12 scenarios × pass/reject = 24 cases) verifies the rules execute under zero network, zero personal data, zero field input `[assumption:A-EVIDENCE-001]`.
 
@@ -247,7 +288,7 @@ Land use follows the five-band zoning refined into 17 parcels (matrix in the key
 
 ## Blue-green space, public space and urban character
 
-**Blue-green system** `[depth:blue_green_public_space]`: heritage park green band (north–south `[data:geometry/green_space.geojson#GR-001]`) + three-area green rings, green ratio `[metric:green_ratio]`; sponge/retention is directional, pending hydrology `[assumption:A-GREEN-BLUE-CONCEPT-001]`. **Public space**: New Gauge Central Plaza `[data:geometry/public_space.geojson#PS-001]` + three pole plazas, public-space ratio `[metric:public_space_ratio]`.
+**Blue-green system** `[depth:blue_green_public_space]`: heritage park green band (north–south `[data:geometry/green_space.geojson#GR-001]`) + three-area green rings, green ratio `[metric:green_ratio]`; sponge/retention is directional, pending hydrology `[assumption:A-GREEN-BLUE-CONCEPT-001]`. **Public space**: Switchback Line Central Plaza `[data:geometry/public_space.geojson#PS-001]` + three pole plazas, public-space ratio `[metric:public_space_ratio]`.
 
 **AI pilgrimage landmarks** (agent.4; three; conceptual, rights-cleared assets required `[standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK]`): ① Switchback Monument (central plaza, minimal engineering art on the '人' motif); ② Switchback Experience Hall (AI Origin; rail heritage + AI history); ③ Benchmark Field Viewing Platform (Zhongzhi Garden; public honor node watching AI benchmarks run). **Honor display system** (agent.4): along the spine — benchmark leaderboard wall (Zhongzhi) — developer contribution constellation (Origin) — enterprise innovation gallery (Dazhongsi), unified visuals, publicly auditable.
 
@@ -262,7 +303,7 @@ Land use follows the five-band zoning refined into 17 parcels (matrix in the key
 | Accessible ramp unit | 1:12 | level transition (double handrails) |
 | Smart lighting pole | 4 m | lighting, sensing, charging (low glare) |
 
-**Cultural signage and spatial storyline** (agent.5): "from standard gauge to the AI switchback" as the thread, five story segments along the park — ① railway origins (1909, interpretive boards, weathering steel + bronze); ② standard founding (inset 1435 mm gauge line); ③ innovative turn (interactive guide posts, '人' motif); ④ AI-native (digital + physical hybrid, node graph); ⑤ century inheritance (monumental marker, timeline). Signage must be accessible: audio guide, high-contrast large type, tactile maps, wheelchair-reachable heights; portraits and rail imagery must be rights-cleared. **International communication** (agent.5): *"The Switchback Line — climbing the city's steepest slopes with AI, inspired by the Jing-Zhang Railway's legacy of engineering ingenuity."*; narrative from Zhan Tianyou's engineering pioneering to AI-era standard building; channels: international planning/AI conferences, developer communities, design media (directional). **Urban character**: engineering blue + amber palette, technical diagrams, dashboards, blueprint style; no over-entertainment `[standard:MOHURD-URBAN-DESIGN-MEASURES]`.
+**Cultural signage and spatial storyline** (agent.5): "from standard gauge to the AI switchback" as the thread, five story segments along the park — ① railway origins (1909, interpretive boards, weathering steel + bronze); ② standard founding (inset 1435 mm gauge line); ③ innovative turn (interactive guide posts, '人' motif); ④ AI-native (digital + physical hybrid, node graph); ⑤ century inheritance (monumental marker, timeline). Signage must be accessible: audio guide, high-contrast large type, tactile maps, wheelchair-reachable heights; portraits and rail imagery must be rights-cleared. **International communication** (agent.5): *"The Switchback Line — climbing the city's steepest slopes with AI, inspired by the Jing-Zhang Railway's legacy of engineering ingenuity."*; narrative from Zhan Tianyou's engineering pioneering to AI-era standard building; channels: international planning/AI conferences, developer communities, design media (directional). The full deliverable set is already bilingual: all 6 figures, the A3/A0 drawing PDFs, the HTML reports and the visual portals have English counterparts (see manifest); international reviewers and media can cite the English set directly. **Urban character**: engineering blue + amber palette, technical diagrams, dashboards, blueprint style; no over-entertainment `[standard:MOHURD-URBAN-DESIGN-MEASURES]`.
 
 ## Renewal project list, implementation policy and phasing
 
@@ -295,6 +336,15 @@ Land use follows the five-band zoning refined into 17 parcels (matrix in the key
 | C10 | integrated Go/No-Go & drill | any missing → package HOLD |
 
 **Implementation timeline** (rolling three years, conceptual `[assumption:A-IMPLEMENTATION-001]`): T0 pre-study (Y0–1, redline, plan, survey); T1 green belt (Y1–2, GRN-B1+B2 linked); T2 SC-04 pilot (Y1–3, G0–G4 + 4 synthetic orders); T3 Innovation Pole (Y2–4, benchmark field + compute center); T4 Life Pole (Y3–5, convenience nodes + spine); T5 Industry Pole (Y4–7, Dazhongsi + wings). RACI (conceptual): redline/plan = government R/A; pilot = alliance R, government A; scenario open/rollback = enterprise R, government A, community C; equity-ledger review = community R; resilience drills = enterprise + community R. All windows and leads adjust after official confirmation `[assumption:A-OPERATIONS-001]`.
+
+**Zero-dependency starter pack** (can begin without the official redline; outputs are public artifacts `[assumption:A-IMPLEMENTATION-001]`):
+
+| Starter | Output | Dependency | Candidate actors |
+|---|---|---|---|
+| Timetable notice templates | open-source template pack for the six-step notices (notice board / feedback wall / sunset notice) | none | community + design volunteers |
+| Tabletop pack extension | extend the 24-case pack to cover S13 emergency rollback / S14 public-interest audit | none | governance union preparatory group |
+| Storyline archive | public source list + multilingual interpretation drafts for the five story segments | none | heritage volunteers + universities |
+| Equity-ledger protocol | measurement definitions and co-testing protocol for 6 groups × 5 fields (paper + human executable) | none | community institutions + disability/elder representatives |
 
 **Urban resilience and all-state degradation** — maturity is graceful degradation under failure, not peak performance:
 

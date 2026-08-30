@@ -1,0 +1,269 @@
+{
+  "schema_version": "0.1.0",
+  "units": {
+    "length": "m",
+    "area": "sqm"
+  },
+  "metrics": {
+    "site_area_sqm": {
+      "metric_id": "site_area_sqm",
+      "status": "known",
+      "value": 11412825.4,
+      "unit": "sqm",
+      "formula": "EPSG:4548 projected area of PROV-SITE-001",
+      "source_files": [
+        "geometry/site_boundary.geojson"
+      ],
+      "confidence": "medium",
+      "assumption_ids": [
+        "A-BOUNDARY-001"
+      ],
+      "note": "provisional boundary 校核面积，约11.4km²，与公告一致。"
+    },
+    "research_area_sqm": {
+      "metric_id": "research_area_sqm",
+      "status": "known",
+      "value": 43609232.6,
+      "unit": "sqm",
+      "formula": "EPSG:4548 projected area of PROV-RESEARCH-001",
+      "source_files": [
+        "brief/site-package/geometry/provisional_boundaries.geojson"
+      ],
+      "confidence": "medium",
+      "assumption_ids": [
+        "A-BOUNDARY-001"
+      ],
+      "note": "统筹研究范围约43.6km²。"
+    },
+    "key_area_total_sqm": {
+      "metric_id": "key_area_total_sqm",
+      "status": "known",
+      "value": 3686110.2,
+      "unit": "sqm",
+      "formula": "sum of KEY-001/002/003 EPSG:4548 areas",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "confidence": "medium",
+      "assumption_ids": [
+        "A-BOUNDARY-002"
+      ],
+      "note": "三核几何复算约368.6ha（众智园191.9+AI原点104.3+大钟寺72.4）；公告口径约368.4ha（192.1+104.3+72.0），差异源于provisional边界精度。"
+    },
+    "land_use_total_sqm": {
+      "metric_id": "land_use_total_sqm",
+      "status": "known",
+      "value": 11412330.6,
+      "unit": "sqm",
+      "formula": "sum of land_use partition areas (3 cores + spine + 2 wings)",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "confidence": "medium",
+      "assumption_ids": [
+        "A-LANDUSE-001"
+      ]
+    },
+    "green_ratio": {
+      "metric_id": "green_ratio",
+      "status": "known",
+      "value": 0.3103,
+      "unit": "fraction",
+      "formula": "(green_spine + pocket_parks) / site_area",
+      "source_files": [
+        "geometry/green_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "confidence": "medium",
+      "assumption_ids": [
+        "A-LANDUSE-001"
+      ],
+      "note": "绿廊+社区公园+口袋公园+道路绿带union面积占比；绿廊沿京张铁路遗址公园走向，三核内绿廊计入用地分区。依据《城市绿地规划标准》GB/T 51346及《北京市城市绿化条例》，新建区域绿地率不低于30%。"
+    },
+    "public_space_ratio": {
+      "metric_id": "public_space_ratio",
+      "status": "known",
+      "value": 0.0547,
+      "unit": "fraction",
+      "formula": "sum(public_space plazas) / site_area",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "confidence": "medium",
+      "assumption_ids": [
+        "A-LANDUSE-001"
+      ],
+      "note": "广场/步行街等硬质公共空间占比；含绿廊在内的公共开放空间合计约36.5%。依据《城市居住区规划设计标准》GB 50180人均公共空间要求。"
+    },
+    "building_footprint_area_sqm": {
+      "metric_id": "building_footprint_area_sqm",
+      "status": "known",
+      "value": 653876.031,
+      "unit": "sqm",
+      "formula": "sum of organic perimeter-block building footprints in 3 cores, clipped to key area bounds, de-overlapped",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "confidence": "low",
+      "assumption_ids": [
+        "A-BUILD-001"
+      ],
+      "note": "概念体量示意，三核内建筑密度约18%（≤35%导则要求），采用圆角C形/U形围合式街坊布局，建筑沿街道周边布置、内部留庭院，含3栋保留工业遗产，非审批建筑面积。空间复算值653876.031㎡（约65.4ha），与几何union面积一致。"
+    },
+    "ai_scenario_nodes": {
+      "metric_id": "ai_scenario_nodes",
+      "status": "known",
+      "value": 18,
+      "unit": "count",
+      "formula": "count of scenario cards in proposal.md",
+      "source_files": [
+        "proposal.md"
+      ],
+      "confidence": "high",
+      "assumption_ids": [],
+      "note": "18张场景卡（SC-01至SC-18），含7张测试验证（SC-03/04/08/09/16/17/18），其中SC-16/17/18对接世界人形机器人运动会实景挑战方向。"
+    },
+    "key_areas_count": {
+      "metric_id": "key_areas_count",
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "formula": "count of KEY_AREA features",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "confidence": "high",
+      "assumption_ids": []
+    },
+    "ai_pilgrimage_landmarks": {
+      "metric_id": "ai_pilgrimage_landmarks",
+      "status": "known",
+      "value": 4,
+      "unit": "count",
+      "formula": "count of pilgrimage landmarks in proposal.md",
+      "source_files": [
+        "proposal.md"
+      ],
+      "confidence": "high",
+      "assumption_ids": []
+    },
+    "talent_apartment_ratio": {
+      "metric_id": "talent_apartment_ratio",
+      "status": "known",
+      "value": 0.2,
+      "unit": "fraction",
+      "formula": "proposed talent/affordable housing as fraction of residential GFA",
+      "source_files": [
+        "proposal.md"
+      ],
+      "confidence": "low",
+      "assumption_ids": [
+        "A-POLICY-001"
+      ],
+      "note": "建议性指标，非审批要求，待政策研究确定。"
+    },
+    "investment_estimate_total_yi": {
+      "metric_id": "investment_estimate_total_yi",
+      "status": "known",
+      "value": 150,
+      "unit": "count",
+      "formula": "conceptual order-of-magnitude total investment estimate (100M CNY)",
+      "source_files": [
+        "proposal.md"
+      ],
+      "confidence": "low",
+      "assumption_ids": [
+        "A-FINANCE-001"
+      ],
+      "note": "远期总投资概念占位值（100–150亿元区间上限，含社会资本为主），非已核投资承诺；精确值待权属核查、控规编制和工程可研后由专业机构测算（待可研变量）"
+    },
+    "urban_os_phased_years": {
+      "metric_id": "urban_os_phased_years",
+      "status": "known",
+      "value": 10,
+      "unit": "count",
+      "formula": "proposed full build-out timeline in years",
+      "source_files": [
+        "proposal.md"
+      ],
+      "confidence": "low",
+      "assumption_ids": [
+        "A-POLICY-001"
+      ],
+      "note": "概念性分期，近期1-3年/中期3-5年/远期5-10年。"
+    },
+    "public_benefit_categories": {
+      "metric_id": "public_benefit_categories",
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "formula": "count of public benefit categories in proposal.md",
+      "source_files": [
+        "proposal.md"
+      ],
+      "confidence": "high",
+      "assumption_ids": [],
+      "note": "人才安居/全龄友好/社区参与/反绅士化/数字包容/无障碍。"
+    },
+    "building_count": {
+      "metric_id": "building_count",
+      "status": "known",
+      "value": 441,
+      "unit": "count",
+      "formula": "count of building footprint features",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "confidence": "low",
+      "assumption_ids": [
+        "A-BUILD-001"
+      ],
+      "note": "圆角C形/U形围合式街坊建筑段数量（众智园256/AI原点109/大钟寺76），非实际建筑栋数。"
+    },
+    "transit_accessibility_index": {
+      "metric_id": "transit_accessibility_index",
+      "status": "known",
+      "value": 0.72,
+      "unit": "fraction",
+      "formula": "provisional index based on transit network coverage within 800m of key areas",
+      "source_files": [
+        "geometry/roads.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "confidence": "medium",
+      "assumption_ids": [],
+      "note": "重点区交通可达性指标，基于轨道站点与道路网络的初步评估。"
+    },
+    "road_network_density_km_per_sqkm": {
+      "metric_id": "road_network_density_km_per_sqkm",
+      "status": "known",
+      "value": 4.8,
+      "unit": "km_per_sqkm",
+      "formula": "total road centerline length / site area in km²",
+      "source_files": [
+        "geometry/roads.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "confidence": "medium",
+      "assumption_ids": [],
+      "note": "重点区路网密度指标，概念性路网骨架密度评估。"
+    },
+    "ai_landing_nodes": {
+      "metric_id": "ai_landing_nodes",
+      "status": "known",
+      "value": 15,
+      "unit": "count",
+      "formula": "count of physically landable scenario nodes in demonstration segment (spatial layer, distinct from scenario-card count)",
+      "source_files": [
+        "proposal.md",
+        "assets/figures/mobility-bluegreen.png"
+      ],
+      "confidence": "medium",
+      "assumptions": [
+        "provisional boundary",
+        "concept layer vs landing layer distinction per proposal.md"
+      ],
+      "note": "空间落位层节点数，与 ai_scenario_nodes(18 场景卡)不等同；场景卡可在节点复合承载"
+    }
+  }
+}

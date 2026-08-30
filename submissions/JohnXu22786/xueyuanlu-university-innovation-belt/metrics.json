@@ -1,0 +1,318 @@
+{
+ "schema_version": "0.1.0",
+ "units": {
+  "length": "m",
+  "area": "sqm"
+ },
+ "metrics": {
+  "site_area_sqm": {
+   "status": "known",
+   "value": 11413000,
+   "unit": "sqm",
+   "source_files": [
+    "geometry/site_boundary.geojson"
+   ],
+   "formula": "polygon_area(provisional site boundary, EPSG:4548)",
+   "confidence": "medium",
+   "assumptions": [
+    "value rounded: provisional 几何概念口径,约整展示"
+   ],
+   "display_precision": "provisional 几何概念口径,约整展示",
+   "display_value_zh": "约1141公顷",
+   "display_value_en": "approx. 1141 ha",
+   "use_limits_zh": "用途限制:provisional 几何口径,仅供概念讨论与展示,不得作为精确面积、红线或审批依据;复算触发:组织方发布可验证坐标系边界/官方基数据后按同一公式复算。",
+   "recompute_trigger_zh": "官方数据发布后按已声明公式重算并更新全部图件、保留新旧口径差异记录"
+  },
+  "green_space_area_sqm": {
+   "status": "known",
+   "value": 2227000,
+   "unit": "sqm",
+   "source_files": [
+    "geometry/green_space.geojson"
+   ],
+   "formula": "union(conceptual green polygons, EPSG:4548)",
+   "confidence": "low",
+   "assumptions": [
+    "value rounded: 概念绿地 union,约整"
+   ],
+   "display_precision": "概念绿地 union,约整",
+   "display_value_zh": "约223公顷",
+   "display_value_en": "approx. 223 ha",
+   "use_limits_zh": "用途限制:provisional 几何口径,仅供概念讨论与展示,不得作为精确面积、红线或审批依据;复算触发:组织方发布可验证坐标系边界/官方基数据后按同一公式复算。",
+   "recompute_trigger_zh": "官方数据发布后按已声明公式重算并更新全部图件、保留新旧口径差异记录"
+  },
+  "public_space_area_sqm": {
+   "status": "known",
+   "value": 36150,
+   "unit": "sqm",
+   "source_files": [
+    "geometry/public_space.geojson"
+   ],
+   "formula": "union(conceptual public-space polygons, EPSG:4548)",
+   "confidence": "low",
+   "assumptions": [
+    "value rounded: 概念公共空间 union,约整"
+   ],
+   "display_precision": "概念公共空间 union,约整",
+   "display_value_zh": "约4公顷",
+   "display_value_en": "approx. 4 ha",
+   "use_limits_zh": "用途限制:provisional 几何口径,仅供概念讨论与展示,不得作为精确面积、红线或审批依据;复算触发:组织方发布可验证坐标系边界/官方基数据后按同一公式复算。",
+   "recompute_trigger_zh": "官方数据发布后按已声明公式重算并更新全部图件、保留新旧口径差异记录"
+  },
+  "building_footprint_area_sqm": {
+   "status": "known",
+   "value": 111600,
+   "unit": "sqm",
+   "source_files": [
+    "geometry/buildings.geojson"
+   ],
+   "formula": "union(reuse-first envelopes, EPSG:4548)",
+   "confidence": "low",
+   "assumptions": [
+    "value rounded: 留改优先体量 union,约整"
+   ],
+   "display_precision": "留改优先体量 union,约整",
+   "display_value_zh": "约11公顷",
+   "display_value_en": "approx. 11 ha",
+   "use_limits_zh": "用途限制:provisional 几何口径,仅供概念讨论与展示,不得作为精确面积、红线或审批依据;复算触发:组织方发布可验证坐标系边界/官方基数据后按同一公式复算。",
+   "recompute_trigger_zh": "官方数据发布后按已声明公式重算并更新全部图件、保留新旧口径差异记录"
+  },
+  "green_ratio": {
+   "status": "known",
+   "value": 0.2,
+   "unit": "ratio",
+   "source_files": [
+    "geometry/green_space.geojson",
+    "geometry/site_boundary.geojson"
+   ],
+   "formula": "green_space_area_sqm / site_area_sqm",
+   "confidence": "low",
+   "assumptions": [
+    "value rounded: 2位小数约整"
+   ],
+   "display_precision": "2位小数约整",
+   "display_value_zh": "约20%",
+   "display_value_en": "approx. 20%",
+   "use_limits_zh": "用途限制:概念情景比率,仅讨论使用;复算触发:官方边界与普查数据发布后按公式重算。",
+   "recompute_trigger_zh": "官方数据发布后按已声明公式重算并更新全部图件、保留新旧口径差异记录"
+  },
+  "public_space_ratio": {
+   "status": "known",
+   "value": 0.003,
+   "unit": "ratio",
+   "source_files": [
+    "geometry/public_space.geojson",
+    "geometry/site_boundary.geojson"
+   ],
+   "formula": "public_space_area_sqm / site_area_sqm",
+   "confidence": "low",
+   "assumptions": [
+    "value rounded: 2-3位小数约整"
+   ],
+   "display_precision": "2-3位小数约整",
+   "display_value_zh": "约0.3%",
+   "display_value_en": "approx. 0.3%",
+   "use_limits_zh": "用途限制:概念情景比率,仅讨论使用;复算触发:官方边界与普查数据发布后按公式重算。",
+   "recompute_trigger_zh": "官方数据发布后按已声明公式重算并更新全部图件、保留新旧口径差异记录"
+  },
+  "road_network_length_m": {
+   "status": "known",
+   "value": 10150,
+   "unit": "m",
+   "source_files": [
+    "geometry/roads.geojson"
+   ],
+   "formula": "sum(conceptual path lengths, EPSG:4548)",
+   "confidence": "low",
+   "assumptions": [
+    "value rounded: 概念路径长度合计,约整"
+   ],
+   "display_precision": "概念路径长度合计,约整",
+   "display_value_zh": "约10.2公里",
+   "display_value_en": "approx. 10.2 km",
+   "use_limits_zh": "用途限制:provisional 几何口径,仅供概念讨论与展示,不得作为精确面积、红线或审批依据;复算触发:组织方发布可验证坐标系边界/官方基数据后按同一公式复算。",
+   "recompute_trigger_zh": "官方数据发布后按已声明公式重算并更新全部图件、保留新旧口径差异记录"
+  },
+  "key_area_count": {
+   "status": "known",
+   "value": 3,
+   "unit": "count",
+   "source_files": [
+    "geometry/key_areas.geojson"
+   ],
+   "formula": "count(features in key_areas.geojson)",
+   "confidence": "medium",
+   "assumptions": [
+    "value rounded: 与官方重点区口径核对后使用"
+   ],
+   "display_precision": "与官方重点区口径核对后使用",
+   "display_value_zh": "3",
+   "display_value_en": "3",
+   "use_limits_zh": "用途限制:本包几何要素计数,非官方结论;复算触发:官方边界/方案发布后按新口径核对。",
+   "recompute_trigger_zh": "官方数据发布后按已声明公式重算并更新全部图件、保留新旧口径差异记录"
+  },
+  "land_use_zone_count": {
+   "status": "known",
+   "value": 24,
+   "unit": "count",
+   "source_files": [
+    "geometry/land_use.geojson"
+   ],
+   "formula": "count(features in land_use.geojson)",
+   "confidence": "high",
+   "assumptions": [
+    "value rounded: land_use.geojson 要素数"
+   ],
+   "display_precision": "land_use.geojson 要素数",
+   "display_value_zh": "24",
+   "display_value_en": "24",
+   "use_limits_zh": "用途限制:本包几何要素计数,非官方结论;复算触发:官方边界/方案发布后按新口径核对。",
+   "recompute_trigger_zh": "官方数据发布后按已声明公式重算并更新全部图件、保留新旧口径差异记录"
+  },
+  "building_unit_count": {
+   "status": "known",
+   "value": 12,
+   "unit": "count",
+   "source_files": [
+    "geometry/buildings.geojson"
+   ],
+   "formula": "count(features in buildings.geojson)",
+   "confidence": "high",
+   "assumptions": [
+    "value rounded: buildings.geojson 要素数"
+   ],
+   "display_precision": "buildings.geojson 要素数",
+   "display_value_zh": "12",
+   "display_value_en": "12",
+   "use_limits_zh": "用途限制:本包几何要素计数,非官方结论;复算触发:官方边界/方案发布后按新口径核对。",
+   "recompute_trigger_zh": "官方数据发布后按已声明公式重算并更新全部图件、保留新旧口径差异记录"
+  },
+  "landmark_count": {
+   "status": "known",
+   "value": 3,
+   "unit": "count",
+   "source_files": [
+    "geometry/public_space.geojson"
+   ],
+   "formula": "count(scenario_type == ai_landmark)",
+   "confidence": "high",
+   "assumptions": [
+    "value rounded: 3处AI地标:知环门、青创里、智训场"
+   ],
+   "display_precision": "3处AI地标:知环门、青创里、智训场",
+   "display_value_zh": "3",
+   "display_value_en": "3",
+   "use_limits_zh": "用途限制:本包几何要素计数,非官方结论;复算触发:官方边界/方案发布后按新口径核对。",
+   "recompute_trigger_zh": "官方数据发布后按已声明公式重算并更新全部图件、保留新旧口径差异记录"
+  },
+  "scenario_node_count": {
+   "status": "known",
+   "value": 8,
+   "unit": "count",
+   "source_files": [
+    "geometry/public_space.geojson"
+   ],
+   "formula": "landmarks + scenario nodes in public_space.geojson",
+   "confidence": "high",
+   "assumptions": [
+    "value rounded: 3地标+5场景节点"
+   ],
+   "display_precision": "3地标+5场景节点",
+   "display_value_zh": "8",
+   "display_value_en": "8",
+   "use_limits_zh": "用途限制:本包几何要素计数,非官方结论;复算触发:官方边界/方案发布后按新口径核对。",
+   "recompute_trigger_zh": "官方数据发布后按已声明公式重算并更新全部图件、保留新旧口径差异记录"
+  },
+  "industry_test_scenario_count": {
+   "status": "known",
+   "value": 3,
+   "unit": "count",
+   "source_files": [
+    "proposal.md"
+   ],
+   "formula": "rows of the industry test scenario table",
+   "confidence": "high",
+   "assumptions": [
+    "value rounded: 产业测试卡行数"
+   ],
+   "display_precision": "产业测试卡行数",
+   "display_value_zh": "3",
+   "display_value_en": "3",
+   "use_limits_zh": "用途限制:与正文表格逐行对应的文本口径计数;复算触发:相应清单年度复核或官方数据发布。",
+   "recompute_trigger_zh": "官方数据发布后按已声明公式重算并更新全部图件、保留新旧口径差异记录"
+  },
+  "persona_count": {
+   "status": "known",
+   "value": 5,
+   "unit": "count",
+   "source_files": [
+    "proposal.md"
+   ],
+   "formula": "persona groups stated in the proposal text",
+   "confidence": "high",
+   "assumptions": [
+    "value rounded: 文本五类人才画像"
+   ],
+   "display_precision": "文本五类人才画像",
+   "display_value_zh": "5",
+   "display_value_en": "5",
+   "use_limits_zh": "用途限制:与正文表格逐行对应的文本口径计数;复算触发:相应清单年度复核或官方数据发布。",
+   "recompute_trigger_zh": "官方数据发布后按已声明公式重算并更新全部图件、保留新旧口径差异记录"
+  },
+  "global_case_count": {
+   "status": "known",
+   "value": 7,
+   "unit": "count",
+   "source_files": [
+    "proposal.md",
+    "sources.json"
+   ],
+   "formula": "rows of the sourced case table",
+   "confidence": "high",
+   "assumptions": [
+    "value rounded: 案例表行数"
+   ],
+   "display_precision": "案例表行数",
+   "display_value_zh": "7",
+   "display_value_en": "7",
+   "use_limits_zh": "用途限制:与正文表格逐行对应的文本口径计数;复算触发:相应清单年度复核或官方数据发布。",
+   "recompute_trigger_zh": "官方数据发布后按已声明公式重算并更新全部图件、保留新旧口径差异记录"
+  },
+  "phase_count": {
+   "status": "known",
+   "value": 3,
+   "unit": "count",
+   "source_files": [
+    "geometry/phasing.geojson"
+   ],
+   "formula": "count(features in phasing.geojson)",
+   "confidence": "high",
+   "assumptions": [
+    "value rounded: 近期/中期/远期"
+   ],
+   "display_precision": "近期/中期/远期",
+   "display_value_zh": "3",
+   "display_value_en": "3",
+   "use_limits_zh": "用途限制:本包几何要素计数,非官方结论;复算触发:官方边界/方案发布后按新口径核对。",
+   "recompute_trigger_zh": "官方数据发布后按已声明公式重算并更新全部图件、保留新旧口径差异记录"
+  },
+  "annual_program_count": {
+   "status": "known",
+   "value": 5,
+   "unit": "count",
+   "source_files": [
+    "proposal.md"
+   ],
+   "formula": "annual programme brands in the proposal table",
+   "confidence": "high",
+   "assumptions": [
+    "value rounded: 年度活动品牌数"
+   ],
+   "display_precision": "年度活动品牌数",
+   "display_value_zh": "5",
+   "display_value_en": "5",
+   "use_limits_zh": "用途限制:与正文表格逐行对应的文本口径计数;复算触发:相应清单年度复核或官方数据发布。",
+   "recompute_trigger_zh": "官方数据发布后按已声明公式重算并更新全部图件、保留新旧口径差异记录"
+  }
+ }
+}

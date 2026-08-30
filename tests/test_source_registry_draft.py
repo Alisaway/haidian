@@ -20,6 +20,93 @@ def write_csv(path: Path, rows: list[dict[str, str]], fields: list[str]) -> None
 
 
 class SourceRegistryDraftTests(unittest.TestCase):
+    def test_malformed_url_is_skipped_without_aborting_valid_rows(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "data").mkdir()
+            existing_path = root / "data" / "source_registry.json"
+            existing_path.write_text(
+                json.dumps(
+                    {
+                        "schema_version": "0.1.0",
+                        "updated_date": "2026-06-07",
+                        "sources": [{"source_id": "BROKEN", "url": "https://[::1"}],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            seed_path = root / "seed.csv"
+            write_csv(
+                seed_path,
+                [
+                    {
+                        "id": "broken_001",
+                        "title": "Malformed IPv6 URL",
+                        "url": "https://[",
+                    },
+                    {
+                        "id": "broken_002",
+                        "title": "Malformed netloc URL",
+                        "url": "https://example.com：443/source",
+                    },
+                    {
+                        "id": "broken_003",
+                        "title": "Nonnumeric port URL",
+                        "url": "https://example.com:bad/source",
+                    },
+                    {
+                        "id": "broken_004",
+                        "title": "Out-of-range port URL",
+                        "url": "https://example.com:99999/source",
+                    },
+                    {
+                        "id": "broken_005",
+                        "title": "Whitespace in hostname URL",
+                        "url": "https://exa mple.com/source",
+                    },
+                    {
+                        "id": "broken_006",
+                        "title": "Whitespace in path URL",
+                        "url": "https://example.com/path with spaces",
+                    },
+                    {
+                        "id": "valid_001",
+                        "title": "Valid source",
+                        "url": "https://example.com/source",
+                    },
+                ],
+                ["id", "title", "url"],
+            )
+            out_path = root / "draft.json"
+
+            completed = subprocess.run(
+                [
+                    sys.executable,
+                    str(REPO_ROOT / "scripts" / "prepare_source_registry_draft.py"),
+                    "--repo-root",
+                    str(root),
+                    "--input",
+                    str(seed_path),
+                    "--existing-registry",
+                    str(existing_path),
+                    "--out",
+                    str(out_path),
+                    "--json",
+                ],
+                capture_output=True,
+                text=True,
+                check=False,
+            )
+
+            self.assertEqual(completed.returncode, 0, completed.stdout + completed.stderr)
+            self.assertNotIn("Traceback", completed.stderr)
+            summary = json.loads(completed.stdout)
+            self.assertEqual(summary["source_count"], 1)
+            self.assertEqual(summary["skipped_invalid_urls"], 6)
+            self.assertEqual(summary["validation_errors"], [])
+            draft = json.loads(out_path.read_text(encoding="utf-8"))
+            self.assertEqual(["DRAFT-VALID-001"], [source["source_id"] for source in draft["sources"]])
+
     def test_seed_csv_generates_needs_review_draft_and_skips_existing_urls(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

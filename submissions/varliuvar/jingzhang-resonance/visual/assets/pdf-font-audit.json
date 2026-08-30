@@ -1,0 +1,118 @@
+{
+  "schema_version": "1.0.0",
+  "generated_on": "2026-08-29",
+  "font_source": {
+    "name": "Noto Sans SC",
+    "local_font_internal_version": "Version 2.04;241114210130;non-release",
+    "local_source_path_at_build_time": "C:\\Windows\\Fonts\\NotoSansSC-VF.ttf",
+    "upstream_project_url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+    "upstream_file_match_status": "not_verified_against_current_upstream_bytes",
+    "license": "SIL Open Font License 1.1",
+    "source_sha256": "763146584cf0710223441356b4395e279021b0806c196614377a7a0174ae074a",
+    "html_subset_sha256": "b20850d04bc247a9e6dbe6468a318088bfc492510171c99dfdd44e66cd801ecd",
+    "subset_tool": "fontTools 4.63.0",
+    "local_intermediate_build_script": ".maintainer-review/jingzhang-resonance/work-cache/scripts/rebuild_bilingual_pdfs.py",
+    "local_intermediate_build_script_sha256": "202dfab628a7beb3257bc73f692131616fa0bb75d658008d03444eb6e57a2531",
+    "build_script_scope": "Rebuilds the four shipped PDFs from the locked baseline, final English core figures, the approved cover, and the two sanitized Chinese analysis pages; it does not rebuild the audited HTML font subset.",
+    "finalization_provenance_status": "final artifact hashes and deterministic properties audited; byte-for-byte rebuild recipe not shipped",
+    "license_text_bundled_in": "visual/assets/review-font.css",
+    "license_verification": "complete_ofl_1_1_core_text_normalized_match_local_build_copy",
+    "redistribution_note": "The local subset is bundled for HTML only; all four final PDFs are image-only and carry no font resource."
+  },
+  "html_artifacts": [
+    "visual/index.html",
+    "visual/index.en.html",
+    "report/proposal.html",
+    "report/proposal.en.html"
+  ],
+  "html_font_audit": {
+    "audited_on": "2026-08-29",
+    "method": "Decode the data URI font in review-font.css with fontTools and compare its cmap against every CJK character in the four final HTML files.",
+    "cjk_ranges": [
+      "U+3400-U+4DBF",
+      "U+4E00-U+9FFF",
+      "U+F900-U+FAFF"
+    ],
+    "unique_cjk_total": 888,
+    "covered_cjk_total": 888,
+    "missing_cjk_total": 0,
+    "repaired_codepoints": [
+      "U+51E0",
+      "U+552F",
+      "U+6362",
+      "U+80CC"
+    ],
+    "artifacts": [
+      {
+        "path": "report/proposal.html",
+        "sha256": "685707ecfe6ebfcd3ef5fb535b20767991afbe410cbea0ff04dd9cad21e78592",
+        "unique_cjk": 884,
+        "missing_cjk": 0
+      },
+      {
+        "path": "report/proposal.en.html",
+        "sha256": "ac71b1c4b60f2eb9a8a634efb3b15b1b6a2b4082fbfcafeead43216c40c43271",
+        "unique_cjk": 6,
+        "missing_cjk": 0
+      },
+      {
+        "path": "visual/index.html",
+        "sha256": "aaa0a0b864f7038d6229f7230be4f4132c19687948e8f6ba14f96be726323890",
+        "unique_cjk": 340,
+        "missing_cjk": 0
+      },
+      {
+        "path": "visual/index.en.html",
+        "sha256": "dddbbca872b107ae805c574dcb5daf6aa5983dd8843d1ae652784b60e156c7c4",
+        "unique_cjk": 0,
+        "missing_cjk": 0
+      }
+    ]
+  },
+  "pdf_strategy": {
+    "implementation": "font_independent_image_only",
+    "scope": "four Chinese and English A3/A0 PDFs",
+    "font_resource_count_total": 0,
+    "tradeoff": "PDF text is not searchable or selectable by design."
+  },
+  "artifacts": [
+    {
+      "path": "drawings/a3-booklet.pdf",
+      "sha256": "ad4cd63bb7c22cfd57a0e6c6bb30a01223e589fab75ada6d8fe1bb04da2b8385",
+      "page_count": 21,
+      "font_resource_count": 0,
+      "fonts": {},
+      "portable_rendering": "font_independent_image_only",
+      "text_layer": "absent_not_searchable_or_selectable"
+    },
+    {
+      "path": "drawings/a0-boards.pdf",
+      "sha256": "61dd1d47190f656eec150e46d37c4560ff3f9565e37415874ff5ec14ed7c9a35",
+      "page_count": 3,
+      "font_resource_count": 0,
+      "fonts": {},
+      "portable_rendering": "font_independent_image_only",
+      "text_layer": "absent_not_searchable_or_selectable"
+    },
+    {
+      "path": "drawings/a3-booklet.en.pdf",
+      "sha256": "3bd79b46ccdcd13cf44f53641cc9469a22a6def6f16123bda0e42b8de68b0c6f",
+      "page_count": 21,
+      "font_resource_count": 0,
+      "fonts": {},
+      "portable_rendering": "font_independent_image_only",
+      "text_layer": "absent_not_searchable_or_selectable"
+    },
+    {
+      "path": "drawings/a0-boards.en.pdf",
+      "sha256": "8b259ec3b8dbbc8476732ce7c6c825608bc90e00c57562ffbfe4c5dabe1e6c3c",
+      "page_count": 3,
+      "font_resource_count": 0,
+      "fonts": {},
+      "portable_rendering": "font_independent_image_only",
+      "text_layer": "absent_not_searchable_or_selectable"
+    }
+  ],
+  "claim_boundary": "This deterministic audit proves current HTML CJK coverage, PDF page counts, hashes, and zero PDF font resources. Rights clearance is recorded separately in the asset ledger; professional and maintainer decisions remain separate.",
+  "recorded_on": "2026-08-29"
+}

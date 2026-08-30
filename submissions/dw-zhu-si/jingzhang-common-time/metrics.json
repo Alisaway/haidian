@@ -362,6 +362,177 @@
         "A-COST-001"
       ],
       "reason": "CAPEX, OPEX, labor and supplier quotations are unavailable."
+    },
+    "field_baseline_protocol_count": {
+      "status": "known",
+      "value": 1,
+      "unit": "protocol",
+      "source_files": [
+        "proposal.md",
+        "report/narrative.md"
+      ],
+      "formula": "one locked four-day/four-time-band field protocol with a weekday 24-hour acoustic run and weekend comparison",
+      "confidence": "high",
+      "assumptions": [
+        "A-BASELINE-001"
+      ]
+    },
+    "stakeholder_threshold_protocol_count": {
+      "status": "known",
+      "value": 1,
+      "unit": "protocol",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "hearing + implementation coordination + 30/90-day effect review, with versioned signatures and no silent threshold changes",
+      "confidence": "high",
+      "assumptions": [
+        "A-VALIDATION-001"
+      ]
+    },
+    "independent_evaluation_role_count": {
+      "status": "known",
+      "value": 7,
+      "unit": "roles",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "commissioner/governance + implementation + principal evaluator + data custodian + professional verifier + public/user group + appeal reviewer",
+      "confidence": "high",
+      "assumptions": [
+        "A-VALIDATION-001"
+      ]
+    },
+    "official_geometry_recalculation_step_count": {
+      "status": "known",
+      "value": 10,
+      "unit": "steps",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "source freeze through independent reproduction and published difference decision",
+      "confidence": "high",
+      "assumptions": [
+        "A-BND-001"
+      ]
+    },
+    "real_capex_opex_total_cny": {
+      "status": "unknown",
+      "value": null,
+      "unit": "CNY",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "rights-cleared quantities × dated auditable unit prices + taxes + contingency + full-life OPEX + restoration/retirement",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-COST-001"
+      ],
+      "reason": "Official geometry, bills of quantities, site conditions, quotations or quota evidence, funding decisions and budget approvals are not available."
+    },
+    "decision_replay_fixture_count": {
+      "status": "known",
+      "value": 1,
+      "unit": "synthetic_fixture",
+      "source_files": [
+        "proposal.md",
+        "design_depth_matrix.json",
+        "assets/figures/metrics-evidence.png"
+      ],
+      "formula": "count of disclosed tabletop logic fixtures; explicitly not field performance or authority evidence",
+      "confidence": "high",
+      "assumptions": [
+        "A-VALIDATION-001"
+      ]
+    },
+    "decision_replay_independent_method_count": {
+      "status": "known",
+      "value": 2,
+      "unit": "calculation_methods",
+      "source_files": [
+        "proposal.md",
+        "design_depth_matrix.json",
+        "assets/figures/metrics-evidence.png"
+      ],
+      "formula": "one direct hard-gate-product plus lexicographic calculation and one independent row-enumeration calculation; both return K1 on the synthetic fixture",
+      "confidence": "high",
+      "assumptions": [
+        "A-VALIDATION-001"
+      ]
+    },
+    "decision_replay_mutation_count": {
+      "status": "known",
+      "value": 1,
+      "unit": "deliberate_mutations",
+      "source_files": [
+        "proposal.md",
+        "design_depth_matrix.json",
+        "assets/figures/metrics-evidence.png"
+      ],
+      "formula": "set K1 offline_parity from 1 to 0; expected deterministic result changes from K1 to K0 without moving any gate",
+      "confidence": "high",
+      "assumptions": [
+        "A-VALIDATION-001"
+      ]
     }
+  },
+  "decision_replay": {
+    "id": "DR-01",
+    "evidence_class": "synthetic_tabletop_logic_qa",
+    "real_world_claim": false,
+    "question": "Which reversible P-L01 kit may enter D31-D60 after all non-compensable hard gates pass?",
+    "gate_order": [
+      "authority",
+      "fire_access",
+      "quiet_edge",
+      "offline_parity",
+      "privacy",
+      "human_takeover",
+      "reversibility",
+      "exit_reserve"
+    ],
+    "ranking_rule": "filter product(gates)=1; then lexicographically maximize evidence_channels, removable_parts, negative_fixed_parts",
+    "fixture": [
+      {
+        "id": "K0",
+        "label": "paper material plus staffed service baseline",
+        "gates": [1, 1, 1, 1, 1, 1, 1, 1],
+        "evidence_channels": 2,
+        "removable_parts": 4,
+        "fixed_parts": 0
+      },
+      {
+        "id": "K1",
+        "label": "movable learning island plus rights-cleared digital aid",
+        "gates": [1, 1, 1, 1, 1, 1, 1, 1],
+        "evidence_channels": 4,
+        "removable_parts": 5,
+        "fixed_parts": 0
+      },
+      {
+        "id": "K2",
+        "label": "fixed personalised kiosk",
+        "gates": [1, 1, 1, 0, 0, 1, 0, 1],
+        "evidence_channels": 5,
+        "removable_parts": 1,
+        "fixed_parts": 3
+      }
+    ],
+    "method_a_result": "K1",
+    "method_b_result": "K1",
+    "mutation": {
+      "change": "K1.offline_parity: 1 -> 0",
+      "expected_result": "K0",
+      "prohibited_response": "reweight, average away or silently move the failed gate"
+    },
+    "current_real_project_status": "HOLD",
+    "external_requirements_still_pending": [
+      "title and operating authority",
+      "field baseline",
+      "co-signed thresholds",
+      "real CAPEX and OPEX",
+      "independent appointment",
+      "official geometry"
+    ]
   }
 }

@@ -1,0 +1,457 @@
+{
+  "schema_version": "0.1.0",
+  "sources": [
+    {
+      "id": "SITE-PACKAGE",
+      "path": "brief/site-package/",
+      "source_type": "official_public",
+      "authority_level": "repository_formal_input",
+      "accessed_date": "2026-08-07",
+      "usage": "项目范围层级、允许设计空间、枚举、schema、专业标准和提交规则。",
+      "not_usable_for": [
+        "把缺失的 official polygon、控规或工程条件推定为已知"
+      ]
+    },
+    {
+      "id": "SOURCE-REGISTRY",
+      "path": "data/source_registry.json",
+      "source_type": "repository_public_registry",
+      "authority_level": "repository_source_registry",
+      "accessed_date": "2026-08-07",
+      "usage": "区分 formal、background_only 与 provisional_only 资料。",
+      "not_usable_for": [
+        "把 provisional 资料升级为官方结论"
+      ]
+    },
+    {
+      "id": "PROCESSED-FACT-PACK",
+      "path": "data/processed/agent_fact_pack.md",
+      "source_type": "repository_processed_reference",
+      "authority_level": "navigation_only",
+      "accessed_date": "2026-08-07",
+      "usage": "导航三层范围、23 项任务、来源用途和资料缺口；事实仍回引原始来源。",
+      "not_usable_for": [
+        "作为新的权威来源"
+      ]
+    },
+    {
+      "id": "BOUNDARY-SOURCE",
+      "path": "brief/site-package/geometry/provisional_boundaries.geojson",
+      "source_type": "agent_inferred_from_public_data",
+      "authority_level": "provisional_only",
+      "accessed_date": "2026-08-07",
+      "usage": "临时方案生成、离线展示、拓扑自检和公开讨论。",
+      "not_usable_for": [
+        "official redline",
+        "精确面积",
+        "审批",
+        "实施"
+      ]
+    },
+    {
+      "id": "KEY-AREA-SOURCE",
+      "path": "brief/site-package/geometry/provisional_boundaries.geojson",
+      "source_type": "agent_inferred_from_public_data",
+      "authority_level": "provisional_only",
+      "accessed_date": "2026-08-07",
+      "usage": "三处重点区临时索引与方案讨论。",
+      "not_usable_for": [
+        "official key-area polygons",
+        "用地权属或开发规模结论"
+      ]
+    },
+    {
+      "id": "OFFICIAL-ANNOUNCEMENT",
+      "url": "https://ghzrzyw.beijing.gov.cn/zhengwuxinxi/tzgg/hd/202605/t20260509_4643047.html",
+      "source_type": "official_public",
+      "authority_level": "A0",
+      "accessed_date": "2026-08-07",
+      "usage": "项目名称、三层范围的文字说明与约面积、三处重点区、设计任务和成果语境。",
+      "not_usable_for": [
+        "精确 polygon",
+        "道路红线",
+        "项目特定控规指标"
+      ]
+    },
+    {
+      "id": "AGENT-TASKBOOK",
+      "path": "brief/site-package/agent_taskbook.json",
+      "source_type": "user_provided_cleared",
+      "authority_level": "cleared_task_input",
+      "accessed_date": "2026-08-07",
+      "usage": "十条共创原则、三大定位、五大功能、三区两翼、agent.1-agent.6 与统一边界条款。",
+      "not_usable_for": [
+        "官方红线",
+        "控规或工程结论",
+        "政府承诺"
+      ]
+    },
+    {
+      "id": "CN-ACCESSIBILITY-LAW",
+      "url": "https://gxca.miit.gov.cn/zwgk/zcwj/flfg/art/2024/art_340a68cb6a8e45ae81c121630dd37346.html",
+      "source_type": "official_public",
+      "authority_level": "national_law",
+      "accessed_date": "2026-08-10",
+      "usage": "以无障碍格式、国家通用盲文和保留人工服务等条款校准多格式线下信息与非数字服务计划。",
+      "not_usable_for": [
+        "声称尚未制作的手册、触觉地图或场地已经合规、认证或交付",
+        "代替适用条款的法律专业复核"
+      ]
+    },
+    {
+      "id": "CN-BRAILLE-LAYOUT-44725-2024",
+      "url": "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=724E7E79DD866A0D29A2EF7B1F2755B0",
+      "source_type": "official_public",
+      "authority_level": "current_national_standard",
+      "accessed_date": "2026-08-10",
+      "usage": "国家标准全文公开系统显示 GB/T 44725—2024《盲文出版物版式》现行并于 2025-02-01 实施；本方案将其用于盲文文字版式参考，并另行要求专业转写与双检。",
+      "not_usable_for": [
+        "替代触觉地图、定向行走或实体无障碍设施的专项标准",
+        "在专业转写、双检和盲人使用者共测前声称成品已经符合标准"
+      ]
+    },
+    {
+      "id": "CASE-VECTOR",
+      "url": "https://vectorinstitute.ai/about/",
+      "source_type": "official_public",
+      "authority_level": "background_case",
+      "accessed_date": "2026-08-07",
+      "usage": "非营利研究机构连接研究、人才、产业采用与可信 AI 的机制案例。",
+      "not_usable_for": [
+        "京张投资额、人才数量或空间规模预测"
+      ]
+    },
+    {
+      "id": "CASE-MILA",
+      "url": "https://mila.quebec/en",
+      "source_type": "official_public",
+      "authority_level": "background_case",
+      "accessed_date": "2026-08-07",
+      "usage": "研究、转化、跨界活动和负责任 AI 长期共处的机制案例。",
+      "not_usable_for": [
+        "机构声誉替代本地场景证据"
+      ]
+    },
+    {
+      "id": "CASE-KNOWLEDGE-QUARTER",
+      "url": "https://www.knowledgequarter.london/",
+      "source_type": "official_public",
+      "authority_level": "background_case",
+      "accessed_date": "2026-08-07",
+      "usage": "步行可达知识邻里与成员制协作网络的机制案例。",
+      "not_usable_for": [
+        "直接复制伦敦机构密度或产权尺度"
+      ]
+    },
+    {
+      "id": "CASE-LAUNCHPAD",
+      "url": "https://www.jtc.gov.sg/about-jtc/news-and-stories/press-releases/jtc-unveils-refreshed-masterplan-for-launchpad",
+      "source_type": "official_public",
+      "authority_level": "background_case",
+      "accessed_date": "2026-08-07",
+      "usage": "共享验证设施、短期项目空间与人才服务并置的机制案例。",
+      "not_usable_for": [
+        "复制政策激励、密度或实施承诺"
+      ]
+    },
+    {
+      "id": "CASE-SEOUL-AI-HUB",
+      "url": "https://english.seoul.go.kr/seoul-policy-archive/seoul-ai-hub/",
+      "source_type": "official_public",
+      "authority_level": "background_case",
+      "accessed_date": "2026-08-07",
+      "usage": "多站点人才、孵化、研发与产学研支持的机制案例。",
+      "not_usable_for": [
+        "照搬当地政策、投资或规划控制"
+      ]
+    },
+    {
+      "id": "CASE-STATION-F",
+      "url": "https://stationf.co/about",
+      "source_type": "official_public",
+      "authority_level": "background_case",
+      "accessed_date": "2026-08-07",
+      "usage": "历史建筑更新、多类项目与共享服务入口的机制案例。",
+      "not_usable_for": [
+        "复制品牌、企业名单或商业收费结构"
+      ]
+    },
+    {
+      "id": "INT-UN-SDG11",
+      "url": "https://sdgs.un.org/goals/goal11",
+      "source_type": "official_public",
+      "authority_level": "international_reference",
+      "accessed_date": "2026-08-07",
+      "usage": "校准可达交通、包容性绿色公共空间以及按年龄和残障状态分组的公共价值指标。",
+      "not_usable_for": [
+        "替代中国强制标准、北京地方规范或场地实测"
+      ]
+    },
+    {
+      "id": "INT-UN-NUA",
+      "url": "https://unhabitat.org/about-us/new-urban-agenda",
+      "source_type": "official_public",
+      "authority_level": "international_reference",
+      "accessed_date": "2026-08-07",
+      "usage": "校准可持续、包容、可参与的城市公共生活愿景。",
+      "not_usable_for": [
+        "作为本项目法定规划或国际认证"
+      ]
+    },
+    {
+      "id": "INT-UN-CRPD9",
+      "url": "https://www.un.org/development/desa/disabilities/convention-on-the-rights-of-persons-with%20-disabilities/article-9-accessibility.html",
+      "source_type": "official_public",
+      "authority_level": "international_reference",
+      "accessed_date": "2026-08-07",
+      "usage": "校准建筑、道路、交通、信息、数字与应急服务的完整无障碍。",
+      "not_usable_for": [
+        "替代本地建筑与无障碍工程审查"
+      ]
+    },
+    {
+      "id": "INT-UN-CRPD19",
+      "url": "https://www.un.org/disabilities/documents/convention/convention_accessible_pdf.pdf",
+      "source_type": "official_public",
+      "authority_level": "international_reference",
+      "accessed_date": "2026-08-07",
+      "usage": "支持残障人士独立生活、社区参与和普通公共设施同等开放。",
+      "not_usable_for": [
+        "推定本地服务已达到公约要求"
+      ]
+    },
+    {
+      "id": "INT-WHO-AGE-FRIENDLY",
+      "url": "https://www.who.int/activities/creating-age-friendly-cities-and-communities",
+      "source_type": "official_public",
+      "authority_level": "international_reference",
+      "accessed_date": "2026-08-07",
+      "usage": "校准安全交通、无障碍建筑、座椅、卫生设施、社会联系与代际参与。",
+      "not_usable_for": [
+        "把适老化缩减为单一设施清单"
+      ]
+    },
+    {
+      "id": "INT-CHILD-SPACES",
+      "url": "https://www.who.int/publications/i/item/9789240116313",
+      "source_type": "official_public",
+      "authority_level": "international_reference",
+      "accessed_date": "2026-08-07",
+      "usage": "以 Safety、Play、Access、Child Health、Equity、Sustainability 校准儿童公共空间。",
+      "not_usable_for": [
+        "把儿童友好等同于设置单一游乐场"
+      ]
+    },
+    {
+      "id": "INT-UNESCO-AI-ETHICS",
+      "url": "https://www.unesco.org/en/artificial-intelligence/recommendation-ethics",
+      "source_type": "official_public",
+      "authority_level": "international_reference",
+      "accessed_date": "2026-08-07",
+      "usage": "校准人的尊严、包容、环境与生态、比例性、人工监督和 AI 素养；本方案据此设置人工入口和技术退出测试。",
+      "not_usable_for": [
+        "作为具体系统安全认证或采购批准"
+      ]
+    },
+    {
+      "id": "INT-W3C-WCAG22",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "source_type": "official_public",
+      "authority_level": "international_reference",
+      "accessed_date": "2026-08-07",
+      "usage": "作为网页内容的可访问性验收目标；对非网页终端只作补充检查线索。",
+      "not_usable_for": [
+        "替代物理空间、交通和人工服务无障碍",
+        "声称实体设施或所有数字终端已经通过 WCAG 认证"
+      ]
+    },
+    {
+      "id": "INT-UNEP-NBS",
+      "url": "https://www.unep.org/resources/report/smart-sustainable-and-resilient-cities-power-nature-based-solutions",
+      "source_type": "official_public",
+      "authority_level": "international_reference",
+      "accessed_date": "2026-08-07",
+      "usage": "校准蓝绿基础设施对降温、雨洪、水管理和城市韧性的贡献。",
+      "not_usable_for": [
+        "在缺少完整季节监测时声称生态成效"
+      ]
+    },
+    {
+      "id": "VISUAL-HERO-JINGZHANG-COMMONS",
+      "title": "京张共生脊雨夜公共生活概念图 / Jingzhang Commons Rainy-Night Concept Visual",
+      "publisher": "黄鑫 / Huang Xin (@huangxin-design)",
+      "path": "assets/visuals/jingzhang-commons-hero-v2.png",
+      "source_type": "agent_generated_design",
+      "authority_level": "concept_visual_only",
+      "accessed_date": "2026-08-27",
+      "file_record": {
+        "format": "PNG",
+        "width_px": 1672,
+        "height_px": 941,
+        "sha256": "5F53F9DD14AE14BB1A114B74BDA4FBE202357039E3CE88BC89F90B5851392F3E"
+      },
+      "generation_record": {
+        "tool": "OpenAI 内置图像生成 / OpenAI built-in image generation",
+        "model_version": "unknown",
+        "generation_date": "unknown",
+        "prompt_or_task_id": "unknown",
+        "record_note": "项目现存记录仅能确认使用 OpenAI 内置图像生成；未保存可独立核验的具体模型/版本、生成日期、原始提示词或任务 ID，因此不作事后补写。"
+      },
+      "responsible_author": "黄鑫 / Huang Xin (@huangxin-design)",
+      "rights_and_license": {
+        "license_label": "COMMUNITY-DISPLAY-ONLY",
+        "rights_basis": "为本方案定制生成的概念视觉；黄鑫承担选用、复核、署名和提交责任。",
+        "allowed_scope": "本次赛事投稿与评审、与本方案直接相关的项目说明和非商业展示，以及必要的裁切、缩放和版式派生。",
+        "outside_scope": "其他项目复用、独立再发布、转售或再许可须由作者另行确认，并同时遵守生成服务适用条款。"
+      },
+      "synthetic_content": {
+        "people": "画面人物是合成场景角色，不意图也不主张对应任何可识别真实个人。",
+        "privacy_note": "项目现存记录未发现真实人物肖像作为来源；原始提示词和参考链未完整保留，因此不主张已完成独立身份或肖像核验。"
+      },
+      "usage": "A3 文册中英文版第 1、17、18 页；A0 展板中英文版第 1 页。",
+      "not_usable_for": [
+        "现场照片或既有状况证据",
+        "建成实景或工程完成证明",
+        "精确场地、建筑、植被、人物或照明复原",
+        "法定规划、审批、投资或实施依据"
+      ]
+    },
+    {
+      "id": "VISUAL-COMMON-GATEWAY-RAINY-NIGHT",
+      "title": "共益门廊雨夜概念图 / Common Gateway Rainy-Night Concept Visual",
+      "publisher": "黄鑫 / Huang Xin (@huangxin-design)",
+      "path": "assets/visuals/common-gateway-rainy-night.jpg",
+      "source_type": "agent_generated_design",
+      "authority_level": "concept_visual_only",
+      "accessed_date": "2026-08-27",
+      "file_record": {
+        "format": "JPEG",
+        "width_px": 1600,
+        "height_px": 900,
+        "sha256": "792B6B7A54DDCF3218E5B81193453A1DF95DE602A6B2817FA896158F6A3C10CF"
+      },
+      "generation_record": {
+        "tool": "OpenAI 内置图像生成 / OpenAI built-in image generation",
+        "model_version": "unknown",
+        "generation_date": "unknown",
+        "prompt_or_task_id": "unknown",
+        "record_note": "项目现存记录仅能确认使用 OpenAI 内置图像生成；未保存可独立核验的具体模型/版本、生成日期、原始提示词或任务 ID，因此不作事后补写。"
+      },
+      "responsible_author": "黄鑫 / Huang Xin (@huangxin-design)",
+      "rights_and_license": {
+        "license_label": "COMMUNITY-DISPLAY-ONLY",
+        "rights_basis": "为本方案定制生成的概念视觉；黄鑫承担选用、复核、署名和提交责任。",
+        "allowed_scope": "本次赛事投稿与评审、与本方案直接相关的项目说明和非商业展示，以及必要的裁切、缩放和版式派生。",
+        "outside_scope": "其他项目复用、独立再发布、转售或再许可须由作者另行确认，并同时遵守生成服务适用条款。"
+      },
+      "synthetic_content": {
+        "people": "画面人物是合成场景角色，不意图也不主张对应任何可识别真实个人。",
+        "privacy_note": "项目现存记录未发现真实人物肖像作为来源；原始提示词和参考链未完整保留，因此不主张已完成独立身份或肖像核验。"
+      },
+      "usage": "A3 文册中英文版第 7、9、11、12 页；A0 展板中英文版第 3、4 页。",
+      "not_usable_for": [
+        "现场照片或既有状况证据",
+        "建成实景或工程完成证明",
+        "精确场地、建筑、植被、人物或照明复原",
+        "法定规划、审批、投资或实施依据"
+      ]
+    },
+    {
+      "id": "VISUAL-HUMAN-SERVICE-PAVILION-DAY",
+      "title": "人工服务亭日景概念图 / Human-Service Pavilion Daytime Concept Visual",
+      "publisher": "黄鑫 / Huang Xin (@huangxin-design)",
+      "path": "assets/visuals/human-service-pavilion-day.jpg",
+      "source_type": "agent_generated_design",
+      "authority_level": "concept_visual_only",
+      "accessed_date": "2026-08-27",
+      "file_record": {
+        "format": "JPEG",
+        "width_px": 1600,
+        "height_px": 900,
+        "sha256": "9939BE04D62DABAF31992FD3FF917F2C8297C708E8DC8782068770113E3E1988"
+      },
+      "generation_record": {
+        "tool": "OpenAI 内置图像生成 / OpenAI built-in image generation",
+        "model_version": "unknown",
+        "generation_date": "unknown",
+        "prompt_or_task_id": "unknown",
+        "record_note": "项目现存记录仅能确认使用 OpenAI 内置图像生成；未保存可独立核验的具体模型/版本、生成日期、原始提示词或任务 ID，因此不作事后补写。"
+      },
+      "responsible_author": "黄鑫 / Huang Xin (@huangxin-design)",
+      "rights_and_license": {
+        "license_label": "COMMUNITY-DISPLAY-ONLY",
+        "rights_basis": "为本方案定制生成的概念视觉；黄鑫承担选用、复核、署名和提交责任。",
+        "allowed_scope": "本次赛事投稿与评审、与本方案直接相关的项目说明和非商业展示，以及必要的裁切、缩放和版式派生。",
+        "outside_scope": "其他项目复用、独立再发布、转售或再许可须由作者另行确认，并同时遵守生成服务适用条款。"
+      },
+      "synthetic_content": {
+        "people": "画面人物是合成场景角色，不意图也不主张对应任何可识别真实个人。",
+        "privacy_note": "项目现存记录未发现真实人物肖像作为来源；原始提示词和参考链未完整保留，因此不主张已完成独立身份或肖像核验。"
+      },
+      "usage": "A3 文册中英文版第 8、9、10、13、16 页；A0 展板中英文版第 3 页。",
+      "not_usable_for": [
+        "现场照片或既有状况证据",
+        "建成实景或工程完成证明",
+        "精确场地、建筑、植被、人物或照明复原",
+        "法定规划、审批、投资或实施依据"
+      ]
+    },
+    {
+      "id": "VISUAL-HABITAT-CORRIDOR-RAINY-NIGHT",
+      "title": "水土生境廊道雨夜概念图 / Habitat Corridor Rainy-Night Concept Visual",
+      "publisher": "黄鑫 / Huang Xin (@huangxin-design)",
+      "path": "assets/visuals/habitat-corridor-rainy-night.jpg",
+      "source_type": "agent_generated_design",
+      "authority_level": "concept_visual_only",
+      "accessed_date": "2026-08-27",
+      "file_record": {
+        "format": "JPEG",
+        "width_px": 1600,
+        "height_px": 900,
+        "sha256": "40EF1F7BE2D8F189D02CC9831695CB6FF635F0A9400923BD016C612FA6F5E2B0"
+      },
+      "generation_record": {
+        "tool": "OpenAI 内置图像生成 / OpenAI built-in image generation",
+        "model_version": "unknown",
+        "generation_date": "unknown",
+        "prompt_or_task_id": "unknown",
+        "record_note": "项目现存记录仅能确认使用 OpenAI 内置图像生成；未保存可独立核验的具体模型/版本、生成日期、原始提示词或任务 ID，因此不作事后补写。"
+      },
+      "responsible_author": "黄鑫 / Huang Xin (@huangxin-design)",
+      "rights_and_license": {
+        "license_label": "COMMUNITY-DISPLAY-ONLY",
+        "rights_basis": "为本方案定制生成的概念视觉；黄鑫承担选用、复核、署名和提交责任。",
+        "allowed_scope": "本次赛事投稿与评审、与本方案直接相关的项目说明和非商业展示，以及必要的裁切、缩放和版式派生。",
+        "outside_scope": "其他项目复用、独立再发布、转售或再许可须由作者另行确认，并同时遵守生成服务适用条款。"
+      },
+      "synthetic_content": {
+        "people": "画面人物是合成场景角色，不意图也不主张对应任何可识别真实个人。",
+        "privacy_note": "项目现存记录未发现真实人物肖像作为来源；原始提示词和参考链未完整保留，因此不主张已完成独立身份或肖像核验。"
+      },
+      "usage": "A3 文册中英文版第 9、14、15 页；A0 展板中英文版第 2、3 页。",
+      "not_usable_for": [
+        "现场照片或既有状况证据",
+        "建成实景或工程完成证明",
+        "精确场地、建筑、植被、人物或照明复原",
+        "法定规划、审批、投资或实施依据"
+      ]
+    },
+    {
+      "id": "FONT-NOTO-SANS-SC",
+      "url": "https://github.com/notofonts/noto-cjk",
+      "source_type": "official_open_data",
+      "authority_level": "open_font_license",
+      "accessed_date": "2026-08-27",
+      "file_record": {
+        "format": "WOFF2",
+        "sha256": "CE6BBDCDDB93479DC2750154AB19AC3C9FE5B0EBC17B673661D6B0EE23246D3E",
+        "license": "SIL Open Font License 1.1",
+        "distribution": "Base64-encoded offline subset embedded directly in the four HTML files"
+      },
+      "usage": "A3/A0 PDF 与派生 PNG 使用 Noto Sans SC；四份离线 HTML 直接内嵌同字体的 WOFF2 项目字形子集。PDF 仅内嵌所需字形，HTML 子集依据 SIL Open Font License 1.1 使用。",
+      "not_usable_for": [
+        "品牌所有权声明"
+      ]
+    }
+  ]
+}

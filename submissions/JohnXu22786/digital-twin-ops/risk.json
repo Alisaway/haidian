@@ -1,0 +1,128 @@
+{
+  "schema_version": "0.1.0",
+  "risks": [
+    {
+      "risk_id": "R-BOUNDARY",
+      "title_zh": "边界精度",
+      "category": "data_gap",
+      "severity": "medium",
+      "description_zh": "全部几何基于 provisional 边界；组织方尚未发布可验证坐标系的正式总体范围与三处重点区域polygon，正式图形到位后需按同一口径重新计算面积与指标并调整图件与图册。",
+      "mitigation_zh": "已在正文、矩阵、图件与图册中标明 provisional 状态与复算触发条件，不据此得出法定规划结论。"
+    },
+    {
+      "risk_id": "R-DATA",
+      "title_zh": "组织方数据缺口",
+      "category": "data_gap",
+      "severity": "medium",
+      "description_zh": "缺少正式现状用地、控规条件、道路与轨道保护边界、绿线蓝线、文物与历史建筑线索、市政管网容量及可合法使用的客流/能耗基线，五类AI场景尚不能设定可信基准值。",
+      "mitigation_zh": "全部缺口在缺失数据说明与 assumptions.json 中如实登记为待补，不以估算值填补；AI场景以协议化测试先行，官方数据发布后再定基准。"
+    },
+    {
+      "risk_id": "R-PRIVACY",
+      "title_zh": "感知与公众数据边界",
+      "category": "data_boundary",
+      "severity": "medium",
+      "description_zh": "运行监测与公众参与若边界不清可能涉及个人隐私或过度监控疑虑。",
+      "mitigation_zh": "仅处理匿名聚合数据，不进行个体识别式追踪；个人与轨迹数据不跨场景留存；关键决策人工复核；禁止过度监控，设施可一键关闭。"
+    },
+    {
+      "risk_id": "R-CONTROL",
+      "title_zh": "法定控制缺位",
+      "category": "statutory",
+      "severity": "medium",
+      "description_zh": "控规指标与轨道保护区控制未公开，开发强度与退距表述仅限概念层面，本方案不替代控制性详细规划法定内容。",
+      "mitigation_zh": "不给出容积率、高度、拆改留等结论性数值，全部表述为可供专业团队深化研究的概念建议。"
+    },
+    {
+      "risk_id": "R-TECH",
+      "title_zh": "数字孪生模型与感知技术成熟度",
+      "category": "technology",
+      "severity": "medium",
+      "description_zh": "预测推演、设施诊断、能耗碳排模型依赖数据质量，技术仍迭代中，运维成本存在不确定性。",
+      "mitigation_zh": "以成熟技术与人工值守兜底，AI输出仅作参考；产业测试验证场景先测后扩，含模型评测、误差分群与运行监测协议。"
+    },
+    {
+      "risk_id": "R-ACCEPTANCE",
+      "title_zh": "监测设施与街区活力接受度",
+      "category": "public_acceptance",
+      "severity": "medium",
+      "description_zh": "感知设施与数字展示存在隐私与过度科技化疑虑，可能影响街区活力与公众接受度。",
+      "mitigation_zh": "设施以低侵入、可关闭、可逆设计为主；开放意见通道与复议渠道，重大事项依法公示并纳入年度评估。"
+    },
+    {
+      "risk_id": "R-OPERATION",
+      "title_zh": "共智运营权责与成本",
+      "category": "operations_cost",
+      "severity": "medium",
+      "description_zh": "多主体共营的权责边界、数据开放政策与持续运维成本存在不确定性。",
+      "mitigation_zh": "实施矩阵按RACI明确牵头/协作角色与停止/退出条件；投资按低/中/高定性分级；设施维护与年度评估纳入工作包。"
+    }
+  ],
+  "version": 1,
+  "dimensions": [
+    {
+      "id": "data_privacy",
+      "label": "数据隐私",
+      "score": 2,
+      "note": "运行与公众数据仅采用匿名聚合，不做个体识别，禁止过度监控；AI生成内容全部人工复核后发布。",
+      "mitigation": "在正文、图件与图册中声明仅聚合不识别、可一键关闭，发布流程设人工复核岗。",
+      "human_review": "由 JohnXu22786 在汇总阶段逐项人工核对该条目（AI生成初稿后人工复核）。"
+    },
+    {
+      "id": "implementation_complexity",
+      "label": "实施复杂度",
+      "score": 3,
+      "note": "CIM底座、感知网络与多主体共营跨越数据、规划、市政多专业协同，概念到落地跨度大。",
+      "mitigation": "方案明确为概念建议，实施矩阵给出试点先行、验收指标、失败降级与退出机制。",
+      "human_review": "由 JohnXu22786 在汇总阶段逐项人工核对该条目（AI生成初稿后人工复核）。"
+    },
+    {
+      "id": "public_acceptance",
+      "label": "公众接受度",
+      "score": 3,
+      "note": "AI观测装置与数据展示可能引发隐私与过度科技化疑虑。",
+      "mitigation": "匿名聚合+人工复核边界明确披露，设施以低侵入、可关闭、可逆设计为主，意见通道畅通。",
+      "human_review": "由 JohnXu22786 在汇总阶段逐项人工核对该条目（AI生成初稿后人工复核）。"
+    },
+    {
+      "id": "operations_cost",
+      "label": "运维成本",
+      "score": 2,
+      "note": "监测设备、数据平台与公共设施存在持续运维成本。",
+      "mitigation": "统一建设、多元运营模式建议，投资按低/中/高定性分级，设施采用模块化可逆设计并纳入年度维护评估。",
+      "human_review": "由 JohnXu22786 在汇总阶段逐项人工核对该条目（AI生成初稿后人工复核）。"
+    },
+    {
+      "id": "policy_uncertainty",
+      "label": "政策不确定性",
+      "score": 3,
+      "note": "数据开放与AI治理政策仍在演进，审批路径未定型。",
+      "mitigation": "以现行法规为参照，保留弹性接口；生成式AI法规引用仅限其适用范围，正式实施前完成法定程序。",
+      "human_review": "由 JohnXu22786 在汇总阶段逐项人工核对该条目（AI生成初稿后人工复核）。"
+    },
+    {
+      "id": "spatial_dispute",
+      "label": "空间争议",
+      "score": 3,
+      "note": "全部几何基于 provisional 边界，正式边界发布后面积与指标可能有变。",
+      "mitigation": "已在 geometry、矩阵、图件与复算说明中标注 provisional 状态与复算条件。",
+      "human_review": "由 JohnXu22786 在汇总阶段逐项人工核对该条目（AI生成初稿后人工复核）。"
+    },
+    {
+      "id": "technology_maturity",
+      "label": "技术成熟度",
+      "score": 3,
+      "note": "预测推演与设施诊断模型仍在迭代，基准数据缺失。",
+      "mitigation": "以成熟技术与人工值守兜底，产业测试验证场景先测试后规模化，含模型评测与误差分群协议。",
+      "human_review": "由 JohnXu22786 在汇总阶段逐项人工核对该条目（AI生成初稿后人工复核）。"
+    },
+    {
+      "id": "equity_inclusion",
+      "label": "公平与包容性",
+      "score": 2,
+      "note": "数字体验设施可能造成使用门槛，需兼顾老年人、儿童、残障人士与低数字能力群体。",
+      "mitigation": "无障碍与适老化标准同步设计，多语服务、传统柜台、现场帮助与紧急降级提供离线人工替代路径。",
+      "human_review": "由 JohnXu22786 在汇总阶段逐项人工核对该条目（AI生成初稿后人工复核）。"
+    }
+  ]
+}

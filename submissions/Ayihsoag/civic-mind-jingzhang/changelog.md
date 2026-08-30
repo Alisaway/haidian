@@ -1,5 +1,12 @@
 # 方案迭代记录
 
+## 2026-08-28 — 证据与实施机制深化（本地待确认）
+
+- 中英文补充北纬社区协作界面、无障碍服务纠错链和三项试点验收机制；不宣称已建立合作或开展实测。
+- 展示页新增可展开的合成证据记录，保留原有筛选与图件；四份PDF保留原页并增补三页证据内容。
+- 提供标准库Python规则源码（JSON封装）与回放结果：21个指定用例、768组条件组合。仅验证规则原型，不代表模型或真实场景绩效。
+- Added bilingual collaboration, correction and pilot evidence; preserved existing artwork and added three PDF pages. Synthetic rule tests do not establish real-world performance.
+
 ## v2.1 - 2026-08-13
 
 - 将首页“方案状态”调整为轻量边界说明，避免遮挡治理网络主视觉。

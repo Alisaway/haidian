@@ -13,7 +13,9 @@ import json
 import math
 import os
 import re
+import struct
 import sys
+import zlib
 from dataclasses import dataclass, field
 from pathlib import Path, PurePosixPath
 from typing import Iterable
@@ -21,6 +23,7 @@ from typing import Iterable
 from front_matter import parse_front_matter
 from git_blob_hashes import git_blob_sha256
 from metric_types import is_json_number
+from svg_asset_safety import visual_svg_asset_issues
 
 
 POLICY_ROOT = Path(__file__).resolve().parents[1]
@@ -185,6 +188,7 @@ ALLOWED_VISUAL_ASSET_EXTENSIONS = {".css", ".js", ".json", ".svg", ".png", ".jpg
 PARTICIPANT_PROTECTED_GLOBAL_FILES = {
     "submissions-data.js",
     "gallery-publication.json",
+    "data/participant_owner_aliases.json",
 }
 MAINTAINER_CONTROLLED_SUBMISSIONS_ROOT_FILES = {
     "submissions/README.md",
@@ -299,6 +303,19 @@ MAX_AUDIO_BYTES = 8 * 1024 * 1024
 MAX_DRAWING_BYTES = 10 * 1024 * 1024
 MAX_HTML_BYTES = 2 * 1024 * 1024
 MAX_VISUAL_ASSET_BYTES = 5 * 1024 * 1024
+MAX_PNG_INFLATED_BYTES = 128 * 1024 * 1024
+MAX_TOTAL_PNG_INFLATED_BYTES = 1024 * 1024 * 1024
+MAX_SINGLE_FILE_BYTES = max(
+    MAX_MARKDOWN_BYTES,
+    MAX_JSON_BYTES,
+    MAX_GEOJSON_BYTES,
+    MAX_ASSET_BYTES,
+    MAX_VIDEO_BYTES,
+    MAX_AUDIO_BYTES,
+    MAX_DRAWING_BYTES,
+    MAX_HTML_BYTES,
+    MAX_VISUAL_ASSET_BYTES,
+)
 MAX_TOTAL_BYTES = 40 * 1024 * 1024
 MIN_FORMAL_PROPOSAL_COMPACT_CHARS = 5000
 MIN_REQUIRED_SECTION_COMPACT_CHARS = 280
@@ -338,6 +355,7 @@ FORBIDDEN_HTML_PATTERNS = [
     (re.compile(r"\bWebSocket\b", re.I), "HTML report must not open WebSocket connections"),
     (re.compile(r"\bsendBeacon\s*\(", re.I), "HTML report must not send beacon requests"),
     (re.compile(r"(?:src|href)\s*=\s*['\"]?(?:https?:)?//", re.I), "HTML report must not load remote resources"),
+    (re.compile(r"@import\s+(?:url\s*\(\s*)?['\"]?(?:https?:)?//", re.I), "HTML report CSS must not import remote styles"),
     (re.compile(r"url\s*\(\s*['\"]?(?:https?:)?//", re.I), "HTML report CSS must not load remote assets"),
 ]
 FORBIDDEN_VISUAL_HTML_PATTERNS = [
@@ -348,7 +366,7 @@ FORBIDDEN_VISUAL_HTML_PATTERNS = [
     (re.compile(r"\bWebSocket\b", re.I), "visual HTML must not open WebSocket connections"),
     (re.compile(r"\bEventSource\b", re.I), "visual HTML must not open EventSource connections"),
     (re.compile(r"\bsendBeacon\s*\(", re.I), "visual HTML must not send beacon requests"),
-    (re.compile(r"@import\s+url\s*\(\s*['\"]?(?:https?:)?//", re.I), "visual HTML/CSS must not import remote styles"),
+    (re.compile(r"@import\s+(?:url\s*\(\s*)?['\"]?(?:https?:)?//", re.I), "visual HTML/CSS must not import remote styles"),
     (re.compile(r"url\s*\(\s*['\"]?(?:https?:)?//", re.I), "visual HTML CSS must not load remote assets"),
     (re.compile(r"<script\b[^>]*\bsrc\s*=\s*['\"]?(?:https?:)?//", re.I), "visual HTML must not load remote scripts"),
     (re.compile(r"<link\b[^>]*\bhref\s*=\s*['\"]?(?:https?:)?//", re.I), "visual HTML must not load remote linked resources"),
@@ -367,6 +385,7 @@ class ValidationReport:
     changed_files: list[str] = field(default_factory=list)
     ai_package_stages: dict[str, str] = field(default_factory=dict)
     total_bytes: int = 0
+    png_inflated_bytes: int = 0
     maintainer_bypass: bool = False
     strict_manifest_paths: set[str] = field(default_factory=set)
 
@@ -706,6 +725,232 @@ def media_signature_is_valid(path: Path) -> bool:
     if extension == ".ogg":
         return data.startswith(b"OggS")
     return True
+
+
+PNG_SIGNATURE = b"\x89PNG\r\n\x1a\n"
+PNG_VALID_BIT_DEPTHS = {
+    0: {1, 2, 4, 8, 16},
+    2: {8, 16},
+    3: {1, 2, 4, 8},
+    4: {8, 16},
+    6: {8, 16},
+}
+PNG_CHANNELS = {0: 1, 2: 3, 3: 1, 4: 2, 6: 4}
+PNG_ADAM7_PASSES = (
+    (0, 0, 8, 8),
+    (4, 0, 8, 8),
+    (0, 4, 4, 8),
+    (2, 0, 4, 4),
+    (0, 2, 2, 4),
+    (1, 0, 2, 2),
+    (0, 1, 1, 2),
+)
+
+
+def _png_row_payload_sizes(
+    width: int, height: int, bit_depth: int, color_type: int, interlace: int
+) -> Iterable[int]:
+    channels = PNG_CHANNELS[color_type]
+    if interlace == 0:
+        row_bytes = (width * channels * bit_depth + 7) // 8
+        for _ in range(height):
+            yield row_bytes
+        return
+    for x_start, y_start, x_step, y_step in PNG_ADAM7_PASSES:
+        if width <= x_start or height <= y_start:
+            continue
+        pass_width = (width - x_start + x_step - 1) // x_step
+        pass_height = (height - y_start + y_step - 1) // y_step
+        row_bytes = (pass_width * channels * bit_depth + 7) // 8
+        for _ in range(pass_height):
+            yield row_bytes
+
+
+def png_integrity_result(
+    path: Path, *, max_inflated_bytes: int = MAX_PNG_INFLATED_BYTES
+) -> tuple[str | None, int]:
+    """Return an integrity error and decoded byte count for a PNG."""
+    try:
+        if path.stat().st_size > MAX_ASSET_BYTES:
+            return f"file exceeds the {MAX_ASSET_BYTES}-byte PNG validation limit", 0
+        raw = path.read_bytes()
+    except OSError as exc:
+        return f"cannot read file: {exc}", 0
+    if not raw.startswith(PNG_SIGNATURE):
+        return "signature is invalid", 0
+
+    offset = len(PNG_SIGNATURE)
+    ihdr: tuple[int, int, int, int, int] | None = None
+    idat_parts: list[bytes] = []
+    seen_plte = False
+    seen_iend = False
+    idat_ended = False
+    while offset < len(raw):
+        if len(raw) - offset < 12:
+            return "chunk header or checksum is truncated", 0
+        length = struct.unpack(">I", raw[offset : offset + 4])[0]
+        chunk_type = raw[offset + 4 : offset + 8]
+        if not all(65 <= byte <= 90 or 97 <= byte <= 122 for byte in chunk_type) or not (
+            65 <= chunk_type[2] <= 90
+        ):
+            return "chunk type is invalid", 0
+        chunk_end = offset + 12 + length
+        if chunk_end > len(raw):
+            return f"{chunk_type.decode('ascii')} chunk is truncated", 0
+        payload = raw[offset + 8 : offset + 8 + length]
+        declared_crc = struct.unpack(">I", raw[offset + 8 + length : chunk_end])[0]
+        actual_crc = zlib.crc32(chunk_type)
+        actual_crc = zlib.crc32(payload, actual_crc) & 0xFFFFFFFF
+        if declared_crc != actual_crc:
+            return f"{chunk_type.decode('ascii')} chunk checksum is invalid", 0
+
+        if offset == len(PNG_SIGNATURE) and chunk_type != b"IHDR":
+            return "IHDR is not the first chunk", 0
+        if 65 <= chunk_type[0] <= 90 and chunk_type not in {b"IHDR", b"PLTE", b"IDAT", b"IEND"}:
+            return f"unknown critical chunk {chunk_type.decode('ascii')}", 0
+        if chunk_type == b"IHDR":
+            if ihdr is not None:
+                return "contains more than one IHDR chunk", 0
+            if length != 13:
+                return "IHDR chunk has an invalid length", 0
+            width, height, bit_depth, color_type, compression, filtering, interlace = struct.unpack(
+                ">IIBBBBB", payload
+            )
+            if width == 0 or height == 0:
+                return "IHDR declares a zero dimension", 0
+            if bit_depth not in PNG_VALID_BIT_DEPTHS.get(color_type, set()):
+                return "IHDR declares an invalid color type or bit depth", 0
+            if compression != 0 or filtering != 0 or interlace not in {0, 1}:
+                return "IHDR declares an unsupported compression, filter, or interlace method", 0
+            ihdr = (width, height, bit_depth, color_type, interlace)
+        elif chunk_type == b"PLTE":
+            if ihdr is None:
+                return "PLTE appears before IHDR", 0
+            if seen_plte:
+                return "contains more than one PLTE chunk", 0
+            if idat_parts:
+                return "PLTE appears after IDAT", 0
+            if ihdr[3] in {0, 4}:
+                return "PLTE is not allowed for grayscale color types", 0
+            if length == 0 or length % 3 != 0 or length > 768:
+                return "PLTE chunk has an invalid length", 0
+            if ihdr[3] == 3 and length // 3 > 2 ** ihdr[2]:
+                return "PLTE has more entries than the indexed bit depth permits", 0
+            seen_plte = True
+        elif chunk_type == b"IDAT":
+            if ihdr is None:
+                return "IDAT appears before IHDR", 0
+            if idat_ended:
+                return "IDAT chunks are not consecutive", 0
+            idat_parts.append(payload)
+        elif chunk_type == b"IEND":
+            if length != 0:
+                return "IEND chunk has an invalid length", 0
+            if not idat_parts:
+                return "IEND appears before IDAT", 0
+            seen_iend = True
+            offset = chunk_end
+            if offset != len(raw):
+                return "contains bytes after IEND", 0
+            break
+        elif idat_parts:
+            idat_ended = True
+        offset = chunk_end
+
+    if ihdr is None:
+        return "IHDR chunk is missing", 0
+    if not idat_parts:
+        return "IDAT chunk is missing", 0
+    if not seen_iend:
+        return "IEND chunk is missing", 0
+    if ihdr[3] == 3 and not seen_plte:
+        return "indexed-color PNG is missing PLTE", 0
+
+    width, height, bit_depth, color_type, interlace = ihdr
+    channels = PNG_CHANNELS[color_type]
+    if interlace == 0:
+        expected_bytes = height * (1 + ((width * channels * bit_depth + 7) // 8))
+    else:
+        expected_bytes = 0
+        for x_start, y_start, x_step, y_step in PNG_ADAM7_PASSES:
+            if width <= x_start or height <= y_start:
+                continue
+            pass_width = (width - x_start + x_step - 1) // x_step
+            pass_height = (height - y_start + y_step - 1) // y_step
+            row_bytes = (pass_width * channels * bit_depth + 7) // 8
+            expected_bytes += pass_height * (1 + row_bytes)
+    if expected_bytes > max_inflated_bytes:
+        return (
+            "IHDR dimensions exceed the safe decoding limit "
+            f"({expected_bytes} > {max_inflated_bytes} bytes)",
+            0,
+        )
+
+    decompressor = zlib.decompressobj()
+    inflated_bytes = 0
+    rows = iter(_png_row_payload_sizes(width, height, bit_depth, color_type, interlace))
+    row_remaining = -1
+
+    def consume_scanlines(output: bytes) -> str | None:
+        nonlocal row_remaining
+        cursor = 0
+        while cursor < len(output):
+            if row_remaining < 0:
+                try:
+                    row_remaining = next(rows)
+                except StopIteration:
+                    return "IDAT stream contains more scanlines than IHDR declares"
+                if output[cursor] > 4:
+                    return f"scanline uses invalid filter type {output[cursor]}"
+                cursor += 1
+            consumed = min(row_remaining, len(output) - cursor)
+            cursor += consumed
+            row_remaining -= consumed
+            if row_remaining == 0:
+                row_remaining = -1
+        return None
+
+    try:
+        for part in idat_parts:
+            pending = part
+            while pending:
+                output = decompressor.decompress(pending, 65536)
+                inflated_bytes += len(output)
+                if inflated_bytes > expected_bytes:
+                    return "IDAT stream expands beyond the IHDR dimensions", inflated_bytes
+                scanline_issue = consume_scanlines(output)
+                if scanline_issue:
+                    return scanline_issue, inflated_bytes
+                pending = decompressor.unconsumed_tail
+            while True:
+                output = decompressor.decompress(b"", 65536)
+                if not output:
+                    break
+                inflated_bytes += len(output)
+                if inflated_bytes > expected_bytes:
+                    return "IDAT stream expands beyond the IHDR dimensions", inflated_bytes
+                scanline_issue = consume_scanlines(output)
+                if scanline_issue:
+                    return scanline_issue, inflated_bytes
+    except zlib.error as exc:
+        return f"IDAT stream cannot be decoded: {exc}", inflated_bytes
+    if not decompressor.eof:
+        return "IDAT stream is incomplete", inflated_bytes
+    if decompressor.unused_data:
+        return "IDAT stream contains trailing compressed data", inflated_bytes
+    if inflated_bytes != expected_bytes:
+        return (
+            "IDAT stream size does not match IHDR dimensions "
+            f"(expected {expected_bytes}, got {inflated_bytes})",
+            inflated_bytes,
+        )
+    if row_remaining >= 0 or next(rows, None) is not None:
+        return "IDAT stream contains fewer scanlines than IHDR declares", inflated_bytes
+    return None, inflated_bytes
+
+
+def png_integrity_issue(path: Path) -> str | None:
+    return png_integrity_result(path)[0]
 
 
 def validate_media_manifest_entries(
@@ -1612,6 +1857,17 @@ def validate_manifest_file(report: ValidationReport, repo_root: Path, proposal_d
                 else:
                     report.add_error(message)
                 continue
+            if listed_file.suffix.lower() == ".png":
+                remaining_budget = MAX_TOTAL_PNG_INFLATED_BYTES - report.png_inflated_bytes
+                integrity_issue, inflated_bytes = png_integrity_result(
+                    listed_file,
+                    max_inflated_bytes=min(MAX_PNG_INFLATED_BYTES, remaining_budget),
+                )
+                report.png_inflated_bytes += inflated_bytes
+                if integrity_issue:
+                    report.add_error(
+                        f"{proposal_dir}/manifest.json: invalid PNG `{safe_path}`: {integrity_issue}"
+                    )
             declared_digest = item.get("sha256")
             if safe_path != "manifest.json" and not declared_digest:
                 message = f"{proposal_dir}/manifest.json: listed file `{safe_path}` needs sha256"
@@ -1821,7 +2077,12 @@ def validate_readiness_claim(
         )
 
 
-def validate_compliance_matrix_file(report: ValidationReport, path: Path, display_path: str) -> None:
+def validate_compliance_matrix_file(
+    report: ValidationReport,
+    path: Path,
+    display_path: str,
+    known_standard_ids: set[str] | None = None,
+) -> None:
     data = load_json_file(report, path, display_path)
     if not isinstance(data, dict):
         return
@@ -1859,6 +2120,32 @@ def validate_compliance_matrix_file(report: ValidationReport, path: Path, displa
             value = item.get(key)
             if not isinstance(value, list) or not value or not all(isinstance(v, str) and v for v in value):
                 report.add_error(f"{label}: {key} must be a non-empty string array")
+        standard_ids = item.get("standard_ids")
+        if standard_ids is not None and (
+            not isinstance(standard_ids, list)
+            or not standard_ids
+            or not all(isinstance(value, str) and value for value in standard_ids)
+        ):
+            report.add_error(f"{label}: standard_ids must be a non-empty string array when present")
+        source_ids = item.get("source_ids")
+        if known_standard_ids and isinstance(source_ids, list):
+            misplaced = sorted(
+                value for value in source_ids if value in known_standard_ids
+            )
+            if misplaced:
+                report.add_warning(
+                    f"{label}: source_ids contains standard IDs that belong in standard_ids: "
+                    f"{', '.join(misplaced)}"
+                )
+        if known_standard_ids and isinstance(standard_ids, list):
+            unknown = sorted(
+                value for value in standard_ids if value not in known_standard_ids
+            )
+            if unknown:
+                report.add_warning(
+                    f"{label}: standard_ids references IDs not declared in standard_matrix.json: "
+                    f"{', '.join(unknown)}"
+                )
 
     missing = sorted(ALL_REQUIRED_TASK_IDS - covered)
     if missing:
@@ -2241,6 +2528,105 @@ def validate_proposal_evidence_references(
                 report.add_error(f"{proposal_dir}/proposal.md: missing design depth reference [depth:{item_id}]")
 
 
+def report_identical_bilingual_artifacts(
+    report: ValidationReport,
+    repo_root: Path,
+    proposal_dir: str,
+    manifest_items: dict[str, dict],
+) -> None:
+    """Hint at translated files that are byte-identical to their primary file.
+
+    Identical bytes are a signal, not a verdict: a figure without text or a
+    language-independent PDF may legitimately be shared by both versions. The
+    package declares that intent with `language: "neutral"` instead of a
+    translation contract, so only entries that actually claim a translation are
+    inspected, neutral entries are skipped, and the result is always a
+    non-blocking warning that leaves historical packages passing unchanged.
+
+    The advisory reads package files, so it must not widen the path boundary
+    that `validate_manifest_file()` enforces. `validate_manifest_file()` reports
+    an unsafe manifest path and keeps validating, so a raw entry can still reach
+    this function; every path is therefore re-normalized here and any entry that
+    escapes the package or crosses a symbolic link is skipped instead of read.
+    """
+    base = repo_root / proposal_dir
+
+    def contained_file(raw_path: str) -> Path | None:
+        """Return the package-relative file for a manifest path, or None."""
+        try:
+            safe_path = normalize_changed_path(raw_path)
+        except (ValueError, TypeError):
+            return None
+        if first_symbolic_link(base, safe_path) is not None:
+            return None
+        candidate = base / safe_path
+        if not candidate.is_file():
+            return None
+        try:
+            candidate.resolve().relative_to(base.resolve())
+        except (OSError, ValueError):
+            return None
+        return candidate
+
+    digests: dict[str, str | None] = {}
+
+    def declared_digest(path: str) -> str | None:
+        declared = manifest_items.get(path, {}).get("sha256")
+        if isinstance(declared, str) and declared.strip():
+            return declared.strip().lower()
+        return None
+
+    def digest_for(path: str, resolved: Path) -> str | None:
+        # Declared digests are pending *Git blob* digests (see git_blob_sha256),
+        # while hashing here reads worktree bytes; the two differ whenever the
+        # worktree keeps CRLF line endings. Never mix the two sources in one
+        # comparison - reuse declared digests only when both sides declare one.
+        if path not in digests:
+            try:
+                digests[path] = hashlib.sha256(resolved.read_bytes()).hexdigest()
+            except OSError:
+                digests[path] = None
+        return digests[path]
+
+    for path in sorted(manifest_items):
+        item = manifest_items[path]
+        language = item.get("language")
+        if language == "neutral":
+            continue
+        primary_path = item.get("translation_of")
+        if not isinstance(primary_path, str) or not primary_path:
+            localized = primary_path_from_localized(path)
+            if localized is None or language != localized[1]:
+                continue
+            primary_path = localized[0]
+        if primary_path == path:
+            continue
+        primary_item = manifest_items.get(primary_path)
+        if primary_item is not None and primary_item.get("language") == "neutral":
+            continue
+        translated_file = contained_file(path)
+        primary_file = contained_file(primary_path)
+        if translated_file is None or primary_file is None:
+            continue
+        translated_declared = declared_digest(path)
+        primary_declared = declared_digest(primary_path)
+        if translated_declared is not None and primary_declared is not None:
+            translated_digest = translated_declared
+            primary_digest: str | None = primary_declared
+        else:
+            translated_digest = digest_for(path, translated_file)
+            primary_digest = digest_for(primary_path, primary_file)
+        if translated_digest is None or translated_digest != primary_digest:
+            continue
+        report.add_warning(
+            f"{proposal_dir}/{path}: byte-identical to `{primary_path}`; if the translation is "
+            "still missing, replace it with a rendering in the declared language, and if the file "
+            "carries no language-specific content, declare language=neutral once and share it "
+            "between both versions (see docs/formal-submission-guide.md); this notice does not "
+            "block review"
+        )
+
+
 def validate_bilingual_display(
     report: ValidationReport,
     repo_root: Path,
@@ -2390,6 +2776,8 @@ def validate_bilingual_display(
                     f"{proposal_dir}/{translation_file}: front matter should set translation_of=proposal.md"
                 )
 
+    report_identical_bilingual_artifacts(report, repo_root, proposal_dir, manifest_items)
+
 
 def validate_ai_package_dir(
     report: ValidationReport,
@@ -2452,17 +2840,22 @@ def validate_ai_package_dir(
             strict=strict_simulation,
         )
 
-    compliance_path = base / "compliance_matrix.json"
-    if compliance_path.exists():
-        validate_compliance_matrix_file(
-            report, compliance_path, f"{proposal_dir}/compliance_matrix.json"
-        )
-
     standard_matrix: dict | None = None
     standard_path = base / "standard_matrix.json"
     if standard_path.exists():
         standard_matrix = validate_standard_matrix_file(
             report, repo_root, standard_path, f"{proposal_dir}/standard_matrix.json"
+        )
+
+    compliance_path = base / "compliance_matrix.json"
+    if compliance_path.exists():
+        validate_compliance_matrix_file(
+            report,
+            compliance_path,
+            f"{proposal_dir}/compliance_matrix.json",
+            collect_json_ids(standard_matrix, "standards", "standard_id")
+            if isinstance(standard_matrix, dict)
+            else set(),
         )
 
     design_depth_matrix: dict | None = None
@@ -2495,6 +2888,8 @@ def validate_ai_package_dir(
                 f"{proposal_dir}/visual/{visual_name}",
                 translation_advisory=visual_name != "index.html" and not strict_bilingual,
             )
+    for rel_path, message in visual_svg_asset_issues(base):
+        report.add_error(f"{proposal_dir}/{rel_path}: {message}")
 
     for geometry_name in sorted(ALLOWED_GEOMETRY_FILES):
         geometry_path = base / "geometry" / geometry_name
@@ -2526,6 +2921,7 @@ def validate_proposal_file(
     proposal_path: str,
     pr_author: str,
     path_author: str,
+    legacy_owner_authorized: bool = False,
 ) -> None:
     full_path = repo_root / proposal_path
     try:
@@ -2545,7 +2941,12 @@ def validate_proposal_file(
             report.add_error(f"{proposal_path}: missing front matter field `{key}`")
 
     author = metadata.get("author_github", "")
-    if author and author.lower() != pr_author.lower() and not report.maintainer_bypass:
+    if (
+        author
+        and author.lower() != pr_author.lower()
+        and not report.maintainer_bypass
+        and not legacy_owner_authorized
+    ):
         report.add_error(
             f"{proposal_path}: author_github `{author}` must match PR author `{pr_author}`"
         )
@@ -2848,6 +3249,8 @@ def validate_submission(
     allow_pending_self_check: bool = False,
     required_readiness_contract_dirs: Iterable[str] = (),
     strict_manifest_paths: Iterable[str] = (),
+    authorized_legacy_submission_dirs: Iterable[str] = (),
+    blocked_submission_owners: Iterable[str] = (),
 ) -> ValidationReport:
     report = ValidationReport()
     repo_root = repo_root.resolve()
@@ -2861,6 +3264,15 @@ def validate_submission(
     }
     report.strict_manifest_paths = {
         normalize_changed_path(path) for path in strict_manifest_paths
+    }
+    authorized_legacy_dirs = {
+        normalize_changed_path(path).rstrip("/")
+        for path in authorized_legacy_submission_dirs
+    }
+    blocked_owners = {
+        str(owner).strip().casefold()
+        for owner in blocked_submission_owners
+        if str(owner).strip()
     }
 
     if not pr_author or not GITHUB_LOGIN_RE.match(pr_author):
@@ -2912,7 +3324,7 @@ def validate_submission(
         if not report.maintainer_bypass:
             if path in PARTICIPANT_PROTECTED_GLOBAL_FILES:
                 report.add_error(
-                    f"{path}: participants must not edit maintainer-controlled gallery publication data"
+                    f"{path}: participants must not edit maintainer-controlled gallery publication data or global policy"
                 )
                 continue
             if parts[0] != "submissions" or len(parts) < 2:
@@ -2920,7 +3332,14 @@ def validate_submission(
                     f"{path}: participant PRs may only change submissions/{pr_author}/"
                 )
                 continue
-            if parts[1] != pr_author:
+            proposal_dir = "/".join(parts[:3]) if len(parts) >= 3 else ""
+            if parts[1].casefold() in blocked_owners:
+                report.add_error(
+                    f"{path}: submission owner `{parts[1]}` is a reserved historical login "
+                    "bound to a different stable GitHub user ID"
+                )
+                continue
+            if parts[1] != pr_author and proposal_dir not in authorized_legacy_dirs:
                 report.add_error(
                     f"{path}: submission directory `{parts[1]}` must exactly match "
                     f"GitHub PR author `{pr_author}`, including letter case"
@@ -3104,7 +3523,15 @@ def validate_submission(
         if not (repo_root / proposal_path).exists():
             continue
         path_author = proposal_path.split("/")[1]
-        validate_proposal_file(report, repo_root, proposal_path, pr_author, path_author)
+        proposal_dir = str(PurePosixPath(proposal_path).parent)
+        validate_proposal_file(
+            report,
+            repo_root,
+            proposal_path,
+            pr_author,
+            path_author,
+            proposal_dir in authorized_legacy_dirs,
+        )
 
     for proposal_dir in sorted(ai_package_dirs):
         if proposal_dir in unsafe_submission_dirs:

@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0.0",
+  "truth_policy": "real_public_inputs_plus_explicitly_labelled_design_simulation",
+  "sources": [
+    {
+      "schema_version": "1.0.0",
+      "source_id": "OSM-S03-20260820",
+      "source_url": "https://api.openstreetmap.org/api/0.6/map?bbox=116.322%2C39.985%2C116.343%2C39.998",
+      "requested_bbox_wgs84": [
+        116.322,
+        39.985,
+        116.343,
+        39.998
+      ],
+      "bbox_role": "derived_analysis_window_not_official_boundary",
+      "accessed_at": "2026-08-20T12:35:45.041721+00:00",
+      "content_type": "application/xml; charset=utf-8",
+      "byte_length": 2760177,
+      "sha256": "7c6f6c56ee8ee7e238e289be7ef715efad6e7d8f56492d10d1c817e9fa6f47b5",
+      "license": "ODbL-1.0",
+      "attribution": "© OpenStreetMap contributors",
+      "copyright_url": "https://www.openstreetmap.org/copyright",
+      "title_zh": "S03 OpenStreetMap 固定快照",
+      "publisher": "OpenStreetMap contributors",
+      "evidence_status": "observed_public",
+      "limitations_zh": "众包数据；建筑高度、门位、产权和现状完整性不保证。"
+    },
+    {
+      "source_id": "OFFICIAL-S03-OLD-STATION-20230427",
+      "title_zh": "清华园车站旧址正式开放公告",
+      "publisher": "北京市海淀区人民政府 / 文旅海淀",
+      "url": "https://zyk.bjhd.gov.cn/ywdt/hdywx/202304/t20230427_4599717.shtml?type=computer",
+      "published_date": "2023-04-27",
+      "accessed_date": "2026-08-20",
+      "evidence_status": "official_public",
+      "supports": [
+        "old_station_address",
+        "published_opening_hours",
+        "reservation_policy",
+        "residential_quiet_context"
+      ],
+      "limitations_zh": "2023年公开信息；当前开放时间仍需运营方复核。"
+    },
+    {
+      "source_id": "OFFICIAL-COMPETITION-20260509",
+      "title_zh": "百年京张AI创新带城市设计国际方案征集资格预审公告",
+      "publisher": "北京市规划和自然资源委员会海淀分局",
+      "url": "https://ghzrzyw.beijing.gov.cn/zhengwuxinxi/tzgg/hd/202605/t20260509_4643047.html",
+      "published_date": "2026-05-09",
+      "accessed_date": "2026-08-20",
+      "evidence_status": "official_public",
+      "supports": [
+        "project_purpose",
+        "textual_scope",
+        "design_tasks"
+      ],
+      "limitations_zh": "不提供可验证坐标的精确总体红线或重点区polygon。"
+    }
+  ],
+  "unknowns": [
+    {
+      "id": "UNK-ROAD",
+      "label_zh": "成府路正式红线、断面与地下管线",
+      "impact_zh": "不输出永久路缘和施工尺寸。"
+    },
+    {
+      "id": "UNK-GROUND-FLOOR",
+      "label_zh": "首层门位、产权、消防与开放权",
+      "impact_zh": "只提出条件性、可逆接口。"
+    },
+    {
+      "id": "UNK-HEIGHT",
+      "label_zh": "多数建筑可靠高度与层数",
+      "impact_zh": "现状地图保持二维，不补造高度。"
+    },
+    {
+      "id": "UNK-FLOW",
+      "label_zh": "真实交通流量与行为样本",
+      "impact_zh": "不展示实测拥堵或客流结论。"
+    },
+    {
+      "id": "UNK-FEEDBACK",
+      "label_zh": "代表性公众反馈",
+      "impact_zh": "D17只作为演示性价值冲突。"
+    }
+  ]
+}

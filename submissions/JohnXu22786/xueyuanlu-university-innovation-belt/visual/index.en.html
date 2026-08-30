@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KnowRing - visual index</title>
+<style>@font-face{font-family:'Noto Sans SC Subset';src:url(data:font/woff;base64,AAEAAAARAQAABAAQQkFTRYwGwEgAAAOgAAABCkdQT1NEdkx1AAAErAAAACBHU1VCbTRZLgAABMwAAABCT1MvMlU7UqEAAAGYAAAAYFNUQVR5nW6hAAAFEAAAADJjbWFwAAAAAAAAAfwAAAAEZ2FzcAAAAAsAAAOYAAAACGdseWYAAAAAAAACBAAAAAFoZWFkInxWKwAAARwAAAA2aGhlYQPqAyIAAAFUAAAAJGhtdHgD6ABkAAAB+AAAAARsb2NhAAAAAAAAAgAAAAAEbWF4cAACAAEAAAF4AAAAIG5hbWUX+09yAAACCAAAAXBwb3N0/4YAMgAAA3gAAAAgdmhlYQH3EfUAAAVEAAAAJHZtdHgD6AAAAAAFaAAAAAQAAQAAAAIKPYSqKZVfDzz1AAMD6AAAAADcsCSnAAAAAOa05mQAAAAAAAAAAAAAAAYAAgAAAAAAAAABAAAD6P84AAAD6AAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAQABAAAAAQAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAMD3gGQAAUAAAKKAlgAAABLAooCWAAAAV4AMgFFAAACCwIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEFEQk8AAAAg//8DcP+IAAAEiAEgAAAAAQAAAAACHwLdAAAAIAAGA+gAZAAAAAAAAAAAAAAAAAAAAAwAlgADAAEECQABABgAAAADAAEECQACAA4AGAADAAEECQADAEAAJgADAAEECQAEABgAAAADAAEECQAFAEoAZgADAAEECQAGAB4AsAADAAEECQEAAA4AGAADAAEECQEFAA4AGAADAAEECQEJAAwAzgADAAEIBAABABgAAAADAAEIBAACAA4AGAADAAEIBAAEABgAAABOAG8AdABvACAAUwBhAG4AcwAgAFMAQwBSAGUAZwB1AGwAYQByADIALgAwADAANAA7AEEARABCAE8AOwBOAG8AdABvAFMAYQBuAHMAUwBDAC0AVABoAGkAbgA7AEEARABPAEIARQBWAGUAcgBzAGkAbwBuACAAMgAuADAANAA7ADIANAAxADEAMQA0ADIAMQAwADEAMwAwADsAbgBvAG4ALQByAGUAbABlAGEAcwBlAE4AbwB0AG8AUwBhAG4AcwBTAEMALQBUAGgAaQBuAFcAZQBpAGcAaAB0AAMAAAAAAAD/gwAyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAB//8ACgABAAEADABqAAAA6gBiAAQABkRGTFQAJmN5cmwAOGdyZWsAOGhhbmkAJmthbmEAJmxhdG4AOAAGAAAAAAACAAQAHgAkACoApgAGAAAAAAADAAQADAASABgAlAAD/70AdgADAzsAfAAB/4gABAAWAARpY2ZiaWNmdGlkZW9yb21uAAZERkxUACZjeXJsADhncmVrADhoYW5pACZrYW5hACZsYXRuADgABgAAAAAAAgAEAB4AKgA2ADoABgAAAAAAAwAEAAwAGAAkACgAAwA1AAYAAAAAgAAAAwOzAAYAAAABgAAAAQAAAAEAeAABAAAADAABAAAAFgABAAEAAEAAQAAAAgAAAAEAAOUbAAAAAQAAAAoAHAAeAAFERkxUAAgABAAAAAD//wAAAAAAAAABAAAACgA+AEAABkRGTFQAJmN5cmwAMGdyZWsAMGhhbmkAMGthbmEAMGxhdG4AMAAEAAAAAP//AAAAAAAAAAAAAAAAAAEAAQAIAAEAAAAUAAEAAAAcAQB3Z2h0AQkAAAACAAIAAAACAQUBkAAAAZAAAAHzAAAAAAABEAAB9P4MAAAD6AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAQPoAAA=) format('woff');font-weight:normal;font-style:normal;font-display:block;}
+html,body,body *{font-family:'Noto Sans SC Subset','PingFang SC','Microsoft YaHei','Noto Sans CJK SC',sans-serif !important;}
+@font-face{font-family:'NotoSansSC-Static';src:url(data:font/truetype;base64,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) format('truetype');font-weight:400;font-style:normal;font-display:block;}
+html,body,body *{font-family:'NotoSansSC-Static','PingFang SC','Microsoft YaHei','Noto Sans CJK SC',sans-serif !important;}
+html,body{margin:0;background:#eef2f6;color:#162033;line-height:1.6}
+header{background:#0f172a;color:#fff;padding:26px 22px}
+.wrap{max-width:1080px;margin:auto}
+h1{margin:0 0 8px;font-size:30px}
+.pill{display:inline-block;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:3px 10px;font-size:12px;margin:4px 6px 0 0;color:#e2e8f0}
+main{padding:18px 22px 40px}
+.sheet{background:#fff;border:1px solid #d7dee8;border-radius:8px;padding:16px 20px;margin-bottom:14px}
+h2{font-size:20px;margin:0 0 10px;border-left:5px solid #1d4ed8;padding-left:10px}
+.stat{display:inline-block;min-width:210px;border:1px solid #dfe6ef;border-radius:8px;padding:10px 14px;margin:6px 8px 6px 0;vertical-align:top;background:#f8fafc}
+.stat b{display:block;font-size:21px;margin-top:4px;color:#0f172a}
+.stat span{color:#667085;font-size:12px}
+table{border-collapse:collapse;width:100%;font-size:13.5px;margin:8px 0}
+th,td{border:1px solid #d7dee8;padding:6px 8px;text-align:left;vertical-align:top}
+th{background:#eef2f7}
+.warn{background:#fff1f2;border:1px solid #fda4af;border-radius:6px;padding:8px 12px;color:#be123c;font-size:13px}
+svg{width:100%;height:auto;border:1px solid #b9c4d3;border-radius:8px;background:#f8fafc}
+</style></head>
+<body><header><div class="wrap"><h1>KnowRing - Xueyuan Road Campus Innovation Belt (Concept)</h1>
+<p>Offline visual index. Authoritative data lives in GeoJSON, metrics.json, the matrices and self_check.json; this page renders the overview map, three-level scope, key areas, land use, slow traffic, blue-green network, buildings, renewal projects, AI scenarios, core indicators, task coverage, self-check status, sources and assumptions as readable visuals.</p>
+<span class="pill">campus-city</span><span class="pill">knowledge loop</span><span class="pill">youth co-creation</span><span class="pill">reversible facilities</span><span class="pill">provisional intake</span></div></header>
+<main class="wrap">
+
+<section class="sheet"><h2>Overview map</h2>
+<svg viewBox="0 0 1120 470" role="img" aria-label="schematic overview map">
+<rect x="30" y="20" width="1060" height="430" rx="12" fill="#f1f5f9" stroke="#162033" stroke-width="3"/>
+<path d="M120 380 Q 300 60 520 120 T 890 200" stroke="#7c3aed" stroke-width="14" fill="none" opacity="0.85"/>
+<circle cx="240" cy="150" r="52" fill="#4f46e5" stroke="#0f172a" stroke-width="3"/>
+<circle cx="560" cy="170" r="52" fill="#15803d" stroke="#0f172a" stroke-width="3"/>
+<circle cx="880" cy="130" r="52" fill="#b7791f" stroke="#0f172a" stroke-width="3"/>
+<text x="240" y="158" text-anchor="middle" font-size="16" fill="#fff" font-weight="bold">Gate</text>
+<text x="560" y="178" text-anchor="middle" font-size="16" fill="#fff" font-weight="bold">Youth Lane</text>
+<text x="880" y="138" text-anchor="middle" font-size="16" fill="#fff" font-weight="bold">AI Ground</text>
+<text x="60" y="60" font-size="15" fill="#334155">Jingzhang Heritage Park green belt (public reports)</text>
+<text x="60" y="410" font-size="14" fill="#7f1d1d">Schematic base: provisional concept geometry - not an official redline - recompute after official data</text>
+</svg>
+
+<p>Three concept nodes (Knowledge Ring Gate, Youth Innovation Lane, AI Training Ground) and the conceptual knowledge loop; schematic base from provisional geometry with public site references (Xueyuan Road, Zhichun Road, Jingzhang Heritage Park).</p></section>
+
+<section class="sheet"><h2>Three-level scope</h2>
+<p>Coordinated research area approx. 43.6 km2 (official text caliber); overall design area approx. 11.4 km2 (official text caliber); key detailed-design areas approx. 368.4 ha in total (official text caliber). This package's sub-scope is the campus-innovation belt inside the overall design area (concept); all geometry is provisional.</p></section>
+
+<section class="sheet"><h2>Key areas</h2>
+<p>Three areas and two wings: Zhongzhiyuan AI acceleration area, Beijing AI Origin Community, Dazhongsi AI industry cluster + Zhongguancun tech-service wing, Xiaoyue River scenario wing; coordination nodes include Beiwei Community, Future Science City, Huairou Science City, E-Town and Jing-Jin-Ji (concept assumptions; see the regional coordination figure).</p></section>
+
+<section class="sheet"><h2>Land use</h2>
+<p>Single caliber (each land-use code area divided by the site-boundary area); 24 zone units; official baseline not yet published, so this section is a scenario assumption recomputed with the same formula when official data arrives.</p></section>
+
+<section class="sheet"><h2>Slow traffic</h2>
+<p>Walking- and cycling-first knowledge loop; conceptual rail connections via real nodes such as Qinghe and Zhichun Road; MaaS integrating shared bikes, feeder buses and accessible ride-hailing; see the mobility-bluegreen figure for the street-section concept.</p></section>
+
+<section class="sheet"><h2>Blue-green network</h2>
+<p>One spine, one loop, many points: Jingzhang Heritage Park green spine (public-report caliber) + campus knowledge loop + pocket parks and open campus green spaces; facilities are modular and reversible.</p></section>
+
+<section class="sheet"><h2>Buildings</h2>
+<p>Stock-first, increment-second: open campus interfaces and youth-oriented retrofit of existing buildings; only punctual new construction with strictly limited height; 12 retention-first concept volumes in buildings.geojson.</p></section>
+
+<section class="sheet"><h2>Renewal projects</h2>
+<p>8 concept projects plus a transformable project table (lead/collaborator roles, preconditions, permit/ownership interfaces, cost tiers, stage gates, KPIs, acceptance evidence, human fallback, fail-exit); phasing 2026-2028 / 2029-2031 / 2032-2035; two consecutive missed KPIs stop investment and trigger withdrawal.</p></section>
+
+<section class="sheet"><h2>AI scenarios</h2>
+<p>10 scenario cards plus 3 industry test scenarios; 8 scenario points (3 AI landmarks + 5 scenario nodes); all scenario data anonymized and human-reviewed, no individual tracking.</p></section>
+
+<section class="sheet"><h2>Core indicators</h2>
+<p>All values rounded (reduced-precision provisional caliber; ratios and counts charted separately in the metrics-evidence figure):</p>
+<span class="stat"><span>site_area_sqm</span><b data-metric="site_area_sqm" data-value="11413000">approx. 1141 ha</b></span>
+<span class="stat"><span>green_ratio</span><b data-metric="green_ratio" data-value="0.2">approx. 20%</b></span>
+<span class="stat"><span>public_space_ratio</span><b data-metric="public_space_ratio" data-value="0.003">approx. 0.3%</b></span>
+<span class="stat"><span>Cards / industry tests</span><b>10 / 3</b></span>
+<span class="stat"><span>Cases / personas / programmes</span><b>7 / 5 / 5</b></span>
+<span class="stat"><span>Landmarks / points / zones</span><b>3 / 8 / 24</b></span>
+<p>Per-indicator source / formula / confidence / use limits / recompute trigger: metrics.json and the indicator table in proposal.md.</p></section>
+
+<section class="sheet"><h2>Task coverage</h2>
+<p>The compliance matrix covers 23 tasks (announcement 1.3-1.5 plus agent open-call 1-6); agent.1-6 deliveries (Logo/VI and regional coordination map, 7 global cases, 10 scenario cards + 3 industry tests, honor system and component library, international communication copy, developer community and investment funnel) are in the corresponding proposal sections; standard and design-depth matrices are in their JSON files.</p></section>
+
+<section class="sheet"><h2>Self-check status</h2>
+<p>See self_check.json: the package records the four valroot gates (deterministic/spatial/visual/professional) and known minor provisional-boundary notices truthfully.</p></section>
+
+<section class="sheet"><h2>Sources</h2>
+<p>sources.json lists the organizer announcement and taskbook, national standards and regulations, the Jingzhang Heritage Park government report, 7 official institutional pages of global cases, and package asset entries (Logo, figures, font, maps, components) each with author, generation method, source, license and limits.</p></section>
+
+<section class="sheet"><h2>Assumptions</h2>
+<p>Six key assumptions in assumptions.json: provisional boundary, unknown statutory controls, missing baselines, concept design nature, privacy boundary, programme and cost caliber; each is re-checked and recomputed when official data is published.</p>
+<p class="warn">Boundary notice: this page uses provisional boundaries and rounded indicators for intake display and discussion only; it is not a formal scoring drawing or an approval basis.</p></section>
+
+</main></body></html>

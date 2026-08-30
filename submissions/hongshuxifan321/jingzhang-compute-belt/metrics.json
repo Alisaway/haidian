@@ -224,11 +224,14 @@
       "source_files": [
         "sources.json"
       ],
-      "formula": "haidian_2025_tech_contract_total / provisional_site_area",
+      "display_label": "技术合同强度指数（背景指标：全区公报分子 ÷ 临时范围分母，地理口径不匹配、非场地实测；低置信度；禁止用于场地绩效或实施/投资决策） / Tech-contract intensity index (background metric: district numerator over provisional denominator, geographies not aligned, low confidence; prohibited for site-performance or implementation/investment use)",
+      "formula": "haidian_2025_tech_contract_total (district-wide) / provisional_site_area (design-boundary, non-aligned geographies)",
       "confidence": "low",
       "assumptions": [
         "数值单位为 CNY/sqm（4,053.1 亿元 ÷ 总体设计范围 11.4 km²），全区公报数据推导，非场地实测",
-        "source: 海淀区2025年统计公报（2026-04-10 发布）"
+        "source: 海淀区2025年统计公报（2026-04-10 发布）",
+        "地理范围不匹配：分子为海淀区全区口径（公报），分母为临时概念设计边界面积，二者不构成地理对应关系；本指标不表示走廊或场地内的技术合同强度",
+        "禁止用途：仅作探索性背景指标，不得用于场地绩效评估/比较、建设强度论证或任何实施、投资、决策依据；正式绩效数据须待官方场地级统计口径"
       ]
     },
     "lab_density_per_research_area": {
@@ -238,11 +241,14 @@
       "source_files": [
         "sources.json"
       ],
-      "formula": "national_key_labs_92 / coordinated_research_area_43.6sqkm",
+      "display_label": "全国重点实验室密度（背景指标：全区 92 家 ÷ 临时研究范围，地理口径不匹配、非场地实测；低置信度；禁止用于场地绩效或实施/投资决策） / Key-lab density (background metric: 92 district labs over provisional research area, geographies not aligned, low confidence; prohibited for site-performance or implementation/investment use)",
+      "formula": "national_key_labs_92 (district-wide) / coordinated_research_area_43.6sqkm (conceptual, non-aligned geographies)",
       "confidence": "low",
       "assumptions": [
         "数值单位为 家/km²（全国重点实验室 92 家 ÷ 统筹研究范围 43.6 km²），全区公报数据推导",
-        "source: 海淀区2025年统计公报（2026-04-10 发布）"
+        "source: 海淀区2025年统计公报（2026-04-10 发布）",
+        "地理范围不匹配：分子 92 家为海淀区全区总量（公报），分母 43.6 km² 为临时统筹研究范围（概念性），实验室并未全部分布于该范围内；本指标不表示走廊或场地内的实验室密度",
+        "禁止用途：仅作探索性背景指标，不得用于场地绩效评估/比较、机构选址或任何实施、投资、决策依据；正式密度数据须待官方场地级统计口径"
       ]
     },
     "floor_area_ratio": {

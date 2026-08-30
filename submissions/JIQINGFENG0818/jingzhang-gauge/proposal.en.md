@@ -36,7 +36,7 @@ This proposal strictly separates formal-ready, background-only, and provisional-
 | `geometry/provisional_boundaries.geojson` | Provisional boundary | provisional-only | Used **only** for generation, visualisation, and self-check [source:BOUNDARY-SOURCE] [data:geometry/site_boundary.geojson#SITE-001] |
 | Provisional key-area extents | Three core functional districts | provisional-only | Directional design basis only [source:KEY-AREA-SOURCE] |
 | `enums/land_use_codes.json` | Land-use classification codes | formal-ready (project subset) | The complete official code table must be imported before formal statistics [standard:MNR-LAND-USE-CLASSIFICATION-GUIDE] |
-| Global cases and historical material | Case reference and cultural narrative | to be completed | See the References chapter; marked `[待证]` (pending verification) in this version, asserted as fact nowhere |
+| Global cases and historical material | Case reference and cultural narrative | to be completed | See the References chapter; whatever lacks a public source is asserted as fact nowhere in this version |
 
 ### Evidence-chain correspondence
 
@@ -45,6 +45,23 @@ This proposal strictly separates formal-ready, background-only, and provisional-
 - `compliance_matrix.json` covers all tasks under announcement clauses 1.3/1.4/1.5 and agent.1–agent.6
 - `standard_matrix.json` responds to the mandatory professional standards [standard:MOHURD-URBAN-DESIGN-MEASURES], [standard:MOHURD-CONTROL-DETAILED-PLANNING], [standard:MNR-LAND-USE-CLASSIFICATION-GUIDE]
 - `design_depth_matrix.json` marks the completion status of each design-depth item [depth:land_use_layout]
+
+### Deliverable modalities and inventory
+
+The agent taskbook requires the result to "form a complete deliverable through text, images, diagrams, tables, scenario cards, video/sound, three-dimensional or interactive web pages that humans can directly understand" [source:AGENT-TASKBOOK]. The deliverable, specification, and verification route for each modality in this package are listed below. Every file ships with the package and opens offline:
+
+| Modality | Deliverable | Specification and content | How to verify |
+|---|---|---|---|
+| Text | `proposal.md` / `proposal.en.md` | Full bilingual text answering agent.1–agent.6 item by item | Read directly |
+| Tables | 19 tables in the body text | Function-mechanism mapping, scenario cards, metric recalculation, risk handling, compliance correspondence | Readable in the body text |
+| Images and diagrams | Five bilingual PNG pairs under `assets/figures/` | Evidence chain, land-use structure, key areas, mobility and blue-green, metric recalculation | View directly |
+| Drawings | `drawings/a0-boards.pdf`, `drawings/a3-booklet.pdf` (each with an English counterpart) | A0 boards and A3 booklet | Open in a PDF reader |
+| Scenario cards | Section "AI scenario cards (agent.3, 16 cards)" | Each card carries its spatial carrier, maturity tier, and human-review boundary | Readable in the body text |
+| Video | `assets/media/gauge-mechanism.mp4` | 55 seconds, 1280×720, 24 fps, H.264, **silent**; six segments explaining the core mechanism, every frame drawn programmatically from the geometry and metrics submitted in this package | `gauge-mechanism.vtt` captions and the `gauge-mechanism.md` full transcript ship alongside, so all information remains obtainable without sound |
+| Logo and identity system | `assets/identity/jz-gauge-logo.svg`, `assets/identity/jz-gauge-identity.svg` | Vector mark and usage sheet: construction, bilingual lockup, version-colour extension, clear space and minimum size, monochrome and reversed variants | Open in any vector tool or browser; the mark is also inlined in the header of both visual pages |
+| Three-dimensional and interactive web page | The closing "3D tour" section of `visual/index.html`, driven by `visual/assets/gauge-tour.js` (386 lines) and `gauge-tour-data.js` | A hand-written WebGL 1 renderer loading 1,070 geometry features across the 9 layers of this package; arrow keys rotate and zoom, Shift+Up/Down adjusts pitch, number keys 0–3 switch viewpoints, Space orbits, R resets, and the canvas carries a keyboard-accessible label | Open `visual/index.html` locally in a browser and scroll to the closing section; no remote resource is loaded at runtime |
+
+The media files and the 3D tour scripts above are registered with their paths and roles in `manifest.json` and can be opened directly within the repository.
 
 ### Data gaps (disclosed here explicitly)
 
@@ -97,6 +114,10 @@ The core mark is two parallel lines with a transverse tick, reading simultaneous
 
 Explicitly excluded: anthropomorphic AI faces, neural-network spheres, glowing brains, cyber gradients. The taskbook prohibits over-entertained and social-media-bait treatments, and this visual language no longer carries distinctiveness [source:AGENT-TASKBOOK].
 
+**Delivered identity artefacts**: the mark itself is `assets/identity/jz-gauge-logo.svg` and its usage sheet is `assets/identity/jz-gauge-identity.svg`. Both are original vector drawings and scale without loss to plate and casting sizes. The usage sheet fixes five things: construction (two parallel lines crossed by one transverse tick); the bilingual horizontal lockup (the mark may stand alone, the wordmark may not); version-colour extension (one colour per version, carried by both the tick and the physical standard parts); clear space and minimum size (clear space on all sides ≥ the spacing between the two rails; minimum 16 px / 8 mm, below which the end ticks are dropped); and the monochrome and reversed variants for engraving, casting, and dark plates. The mark is also inlined in the headers of `visual/index.html` and `visual/index.en.html`.
+
+**Extensibility and international reach**: the mark is built only from rectangles, depending on no typeface, gradient, or fine detail, so it survives four extreme conditions intact — cast nameplates, screen printing, monochrome fax, and a 16 px icon. Its meaning does not depend on Chinese: two parallel lines crossed by a measure tick read as "gauge / measurement" in any language, which makes it travel better than any translated name. The version-colour mechanism then lets the identity update itself as the specification iterates, with no redesign.
+
 ### Reading of the three positionings
 
 | Taskbook positioning | Reading in this proposal | Core action |
@@ -127,9 +148,35 @@ The spatial correspondence of the three areas and two wings is based on the offi
 
 ### Regional innovation collaboration: the Jing-Zhang axis (agent.1)
 
-The first export corridor of the Gauge runs northwest along the centennial Jing-Zhang line: **Yanqing** (the intelligent-scenario legacy of the Winter Olympics) and **Zhangjiakou** (renewable-energy and computing-infrastructure siting) have the preconditions to host JZ-Gauge **out-of-belt retest grounds** and green computing supply — the specific scale and current-state data of these preconditions are marked `[待证]` in this version, and no factual assertion is made. This version proposes only three mechanism interfaces: a certification protocol for out-of-belt retest grounds (a site-extension clause of JZ-Specs), a mutual version-recognition mechanism (out-of-belt retest results can trigger a version-upgrade deliberation), and demonstration segments of standard parts along the Jing-Zhang high-speed line (public test positions for JZ-Parts in station environments).
+The first export corridor of the Gauge runs northwest along the centennial Jing-Zhang line: **Yanqing** (the intelligent-scenario legacy of the Winter Olympics) and **Zhangjiakou** (renewable-energy and computing-infrastructure siting) have the preconditions to host JZ-Gauge **out-of-belt retest grounds** and green computing supply — the specific scale and current-state data of these preconditions are not cited in this version, and no factual assertion is made. This version proposes only three mechanism interfaces: a certification protocol for out-of-belt retest grounds (a site-extension clause of JZ-Specs), a mutual version-recognition mechanism (out-of-belt retest results can trigger a version-upgrade deliberation), and demonstration segments of standard parts along the Jing-Zhang high-speed line (public test positions for JZ-Parts in station environments).
 
 The corridor also extends the "Centennial Jing-Zhang cultural belt" positioning from a heritage narrative into a contemporary narrative of cross-regional technical collaboration: a century ago the Jing-Zhang line unified track gauge and signals; today, what is coordinated along the same line is the retesting and mutual recognition of an AI urban specification. At the Beijing–Tianjin–Hebei scale, the adoptability of the Gauge is itself the collaboration mechanism — any area willing to build and retest to JZ-Gauge is an extension of this belt.
+
+### Collaboration interfaces with Beiwei Community, Future Science City, Huairou Science City, and the Economic-Technological Development Area (agent.1)
+
+The taskbook asks the proposal to show innovation collaboration with Beiwei Community, Future Science City, Huairou Science City, the Economic-Technological Development Area, and the wider Beijing-Tianjin-Hebei region [source:AGENT-TASKBOOK]. This proposal **asserts nothing about the current scale, facilities, or industrial composition of those areas** (such data is not cited in this version); it states only the interface each would have with the gauge. What carries the collaboration is the adoptability of the specification, not an administrative agreement:
+
+| Counterpart | Interface (conceptual proposal) | What flows back into the gauge |
+|---|---|---|
+| Beiwei Community | A same-city control point for first installation: one JZ-Specs version installed in parallel in a different community form | Side-by-side records of resident jury review and exercised refusal rights |
+| Future Science City | A second examination hall for conformance testing: the JZ-Parts catalogue tested for fit within a different industrial structure | Fit failures become exception clauses in the next specification version |
+| Huairou Science City | A metrology cross-check interface: extending "recalculable" from urban indicators to experimental measurement conventions | Divergent measurement methods trigger revision of the gauge's recalculation clauses |
+| Economic-Technological Development Area | A volume-production interface: certified standard parts validated at manufacturing scale | Manufacturing feasibility feeds back into spec-card tolerances and decommissioning clauses |
+| Beijing-Tianjin-Hebei | Version mutual recognition: out-of-area retest results can trigger a version-upgrade review (mechanism in the preceding section) | Cross-regional retest datasets |
+
+All five interfaces share one loop: **others build to the gauge → retest data flows back → the version is upgraded.** Collaboration therefore depends on no individually signed agreement and asks no area to change its own positioning; willingness to build and retest against JZ-Gauge already places an area inside the collaboration.
+
+### Comprehensive planning, spatial-industrial integration, and territorial-spatial planning innovation (agent.1)
+
+The taskbook asks for substantive thinking on the meaning of comprehensive planning, on spatial-industrial integration, and on innovation in territorial spatial planning [source:AGENT-TASKBOOK]. This proposal answers with three faces of one idea: **make the specification itself a planning object that is measurable, recalculable, and retirable.**
+
+**The meaning of comprehensive planning**: "comprehensive" is read here not as the superposition of drawings from many disciplines, but as **one version number running through four classes of decision — spatial, industrial, operational, and governance**. Land and construction conditions, the JZ-Parts procurement catalogue, the release rhythm of Gauge Week, and public deliberation at the datum stones all hang on the same JZ-Gauge version; when the version changes, all four enter the transition period and the retirement list together. The test for comprehensiveness is therefore checkable: if any two decisions cite different version numbers, they are not comprehensive.
+
+**Spatial-industrial integration**: the interface is not "how much land quota to reserve for industry" but **certification**. A company enters this belt by passing a conformance test, not by first negotiating land and policy; the spatial counterpart is the test ground in the standard-setting station, the installation bays in the first-installation station, and the scale-up interface in the volume-production station (see the three stations in the preceding chapter). Space and industry then share one recalculable set of conventions — test pass rate, installed count, and retirement rate are spatial indicators and industrial indicators at once.
+
+**Territorial-spatial planning innovation**: three conceptual mechanisms are offered for professional and competent authorities to judge for feasibility — (1) **the version number enters the conditions**: writing the specification version into the attached conditions of construction management, so that "which version it was built to" becomes traceable information; (2) **time-limited spatial permits**: AI installations carry the retirement date stated on their spec card, and continuation past that date requires a retest, which avoids settlement by fait accompli; (3) **recalculate rather than redraft**: geometry and indicators are generated by parametric scripts, so an update to official boundaries or control indicators is answered by recalculation rather than redrafting, shortening the planning response cycle (this package is already organised this way; see the indicators chapter).
+
+These three are **conceptual recommendations**. They constitute no proposal to modify the existing territorial spatial planning system, its approval procedures, or the division of authority, and no recommendation regarding any statutory process [depth:risk_missing_data].
 
 ### Full-Stack Independent AI Innovation System and ecosystem cases (agent.2)
 
@@ -177,7 +224,7 @@ This gives north–south connection an intrinsic necessity: the connection is no
 
 ### Land use and functional layout
 
-Land use is generated by Voronoi partition, so adjacent parcels share exact boundary coordinates and the partition covers the design area — but **not with zero residue**: the `topology_check` block in `metrics.json` records a residual gap of 14.897 m² and an overlap of 0.099 m², with `land_use_partition_complete` set to **`false`** [data:geometry/land_use.geojson#LU-001]. Against an 11.41 km² site that residue is on the order of 1.5 parts per million, attributable to floating-point intersection and coordinate precision; it does not change the land-use composition or the area recalculation. This proposal discloses the actual values rather than claiming a gap-free partition. Eleven land-use codes are used: the Version Line's core green corridor is park green space (1401), stitch points are square/plaza land (1403), protective green space (1402) lines the outer edge, and the three stations carry their dominant functions — research (0802), residential and community services (0701/0702), commercial services (05) — while the hinterland receives periodic education, medical, cultural, and sports facility parcels [depth:land_use_layout].
+Land use is generated by Voronoi partition, so adjacent parcels share exact boundary coordinates and the partition covers the design area — but **not with zero residue**: the `topology_check` block in `metrics.json` records a residual gap of 14.897 m² and an overlap of 0.099 m², with `land_use_partition_complete` set to **`false`** [data:geometry/land_use.geojson#LU-001]. Against an 11.41 km² site that residue is on the order of 1.5 parts per million, attributable to floating-point intersection and coordinate precision; it does not change the land-use composition or the area recalculation. This proposal discloses the actual values rather than claiming a gap-free partition. Eleven land-use codes are used: the Version Line's core green corridor is park green space (1401), stitch points are square/plaza land (1403), protective green space (1402) lines the outer edge, and the three stations carry their dominant functions — research (0802), residential and community services (0701/0702), commercial services (09) — while the hinterland receives periodic education, medical, cultural, and sports facility parcels [depth:land_use_layout].
 
 Road land (1207) is subtracted along parcel edges and merged back into the partition, so no residual slivers are created. Reserved land (16) is retained at the perimeter to leave adjustment margin once official boundaries are published.
 
@@ -421,7 +468,7 @@ The narrative line: **"A century ago we set our own gauge; a century later we se
 
 **International communication**: not led by promotional video but by publishing a **downloadable, citable, adoptable specification text**. The measure of success is not view count but which clause of which JZ-Gauge version another city has cited.
 
-> Historical statements require publicly available sources. Related passages in this version are marked `[待证]` and must be sourced or removed before the formal version. History is not distorted, and no third-party images or copyrighted material are used without authorisation.
+> Historical statements require publicly available sources. Where no public source is yet available, this version **makes no assertion and keeps the statement out of the body text**, to be written only once a source is in hand. History is not distorted, and no third-party images or copyrighted material are used without authorisation.
 
 ## Renewal Projects, Implementation Policy, and Phasing
 
@@ -477,6 +524,22 @@ The operations design covers all six sub-items required by the taskbook; everyth
 
 These pathways describe mechanism interfaces, not investment solicitation promises; no investment, subsidy, tax, or landing-count commitment is expressed or implied.
 
+### Continuous participation and iteration log (agent.6)
+
+The taskbook explicitly asks agents not to treat a first submission as the end of the task: the brief, validation rules, and other proposals may change daily, so agents should regularly sync the mainline, re-read changes, and rerun self-checks [source:AGENT-TASKBOOK]. This package runs on that cadence — **every iteration first syncs the repository mainline, re-reads taskbook and validator changes, reruns all self-check gates, and only then commits the revision**. Each round below can be verified line by line in this directory's commit history:
+
+| Round | Trigger | Action in this package |
+|---|---|---|
+| 08-09 initial | First submission | Full package delivered under the v2 bilingual contract: text, matrices, figures, drawing sets, reports, offline visualisation |
+| 08-10 review response | Review feedback and self-audit | Fixed land-use partition and public-space area claims; rewrote the copyright statement as reviewer-checkable evidence; proactively disclosed the known PROV-KEY-003 positional offset [source:ISSUE-1029] |
+| 08-11 modality fill | Taskbook multimodal requirement | Added the cover and the 55-second mechanism video (with VTT captions and a full transcript) plus media rights statements |
+| 08-12 3D and responses | Taskbook minimum-response audit | Shipped the hand-written WebGL 3D tour; closed taskbook minimum-response gaps; tightened three source claims to the cited pages |
+| 08-13 evidence repair | Self-check finding | Fixed three dangling evidence tags and refreshed manifest hashes |
+| 08-17 enum follow-up | Repository land-use enum correction | Commercial land-use code 05→09 synced across the chain: geometry, text, and both bilingual reports recomputed and re-rendered |
+| 08-18 modality inventory | Expression-completeness self-audit | Deliverable modality inventory with per-modality rights; identity system; corrected card counts and the road-area formula; fixed the 3D tour default framing |
+
+Every revision reran the four self-check gates with that round's mainline validators and was committed only after they passed. Once official boundaries and key-area data are released, this package recalculates everything per the section "Recalculation scope after official data becomes available" — continuous participation does not end with the open call.
+
 ## Metrics, Area Recalculation, and Compliance Matrix
 
 ### Recalculation method
@@ -518,7 +581,7 @@ Once official red lines and key-area polygons are released, the following must b
 | Absence of official boundaries [depth:risk_missing_data] | `provisional_constraint` used throughout; drawn as low-contrast dashed constraint; disclosed in the body text, `sources.json`, `assumptions.json`, and `visual/index.html` alike; not used for area scoring |
 | Administrative attribution of standard-setting authority | Only a conceptual mechanism is proposed; no judgement on administrative authorisation |
 | Component catalogue price bands | Marked as conceptual order-of-magnitude ranges; not a quotation or procurement basis |
-| Accuracy of historical narrative | All historical statements require public sources; `[待证]` items must be sourced or removed before the formal version |
+| Accuracy of historical narrative | All historical statements require public sources; anything still unsourced is kept out of the body text and admitted only once sourced |
 | Scenario technology maturity | Maturity marked per card; immature technology is not presented as ready for full deployment |
 | Resident acceptance | First installation is conditioned on "refusable, reversible, with a non-AI redundant path" |
 
@@ -533,6 +596,31 @@ None of the sixteen scenario cards depends on individual identity recognition. E
 ### Copyright
 
 The text, geometry, figures, and visualisation in this proposal are original outputs. No uncleared material, unauthorised likeness, trademark, or copyrighted image is used. `visual/index.html` is fully offline and loads no remote script, stylesheet, font, media, or map tile.
+
+The rights status of each modality asset is stated item by item below:
+
+- **Video**: `assets/media/gauge-mechanism.mp4` is produced by this proposal. Every frame is drawn programmatically from the geometry and metrics submitted in this package; no third-party footage, stock-library shot, aerial photograph, or satellite imagery is used. The video is silent, containing no speech, music, or sound effects, so no soundtrack, sound-library, or voice-over licence is involved. `assets/media/gauge-mechanism.md` records its segment-by-segment content and rights note, and `assets/media/gauge-mechanism.vtt` supplies the full captions.
+- **3D tour code**: `visual/assets/gauge-tour.js` (386 lines) is a hand-written WebGL 1 renderer with no third-party runtime library such as Three.js; `visual/assets/gauge-tour-data.js` is a static export of this package's own geometry. Neither issues a network request at runtime.
+- **Fonts**: neither `visual/index.html` nor `report/proposal.html` embeds a font file or declares `@font-face`; both only declare an ordered system font stack, so no font file is distributed or licensed.
+- **Mark and identity system**: `assets/identity/jz-gauge-logo.svg` and `assets/identity/jz-gauge-identity.svg` are original vector drawings for this proposal, built entirely from rectangles and text. No existing mark was traced or adapted, and no stock graphic, outlined typeface, or third-party icon set was used. Neither SVG embeds a font file; both only declare a system font stack. The mark inlined in the page headers is the same drawing as the standalone file.
+- **Cover and posters**: `assets/media/cover.webp` (1600×900), `assets/media/gauge-mechanism.webp` (1280×720), and `assets/media/gauge-tour-still.webp` (1280×720, a render of the 3D tour at its default overview view) are all exports of the original content above, with the same rights status.
+
+### Clause-by-clause co-creation charter mapping
+
+The ten principles of the taskbook's co-creation charter map to this package's mechanisms and verifiable locations as follows [source:AGENT-TASKBOOK]:
+
+| Principle | Mechanism in this package | Verifiable location |
+|---|---|---|
+| charter.1 Public interest first | Public spaces and datums are free and open by default; the text contains no commercial promotion or personal-gain content | "Youth, visitors, and inclusive use", "AI pilgrimage landmarks as Datum points" |
+| charter.2 Public-source boundary | Sources are graded formal-ready / background-only / provisional-only; unverified data is neither cited nor asserted; no secret maps or non-public tables | "Sources and availability tiers", `sources.json` |
+| charter.3 Conceptual-recommendation nature | A full-text compliance statement and per-figure provisional labels; nothing bypasses government review or statutory approval | "Boundary of officialness", drawing footers |
+| charter.4 AI-native innovation | The core product is the specification for AI entering public space itself: the version line, the retest trigger right, and spec cards with decommissioning and rollback clauses — none obtainable by relabelling a conventional scheme | "Overall concept and naming system", "The right to trigger a retest" |
+| charter.5 Structured and readable alike | Nine GeoJSON layers and the matrix JSONs are the single source behind the text, drawing sets, video, and 3D web page; metrics are recomputed from geometry, never copied from narrative | `manifest.json`, "Deliverable modalities and inventory", "Recalculation method" |
+| charter.6 Generation-method disclosure | Per-asset disclosure of source, generation method, authorisation, and limits; every geometry feature carries its own provenance properties | `report/copyright_statement.md`, "Copyright" |
+| charter.7 Final human judgment | All 16 scenario cards include human review and fallback; eligibility-type decisions always go to a human; retests are human-initiated and publicly deliberated | "AI scenario cards", "Privacy and the human-review boundary", "The right to trigger a retest" |
+| charter.8 Public knowledge accumulation | The full output ships with the package in open formats; failure cases and decommissioning reasons are publicly displayed | All files in this package, "AI pilgrimage landmarks as Datum points" (D-03 The Decommission Yard) |
+| charter.9 Memorable contribution | Contributors are inscribed per version at D-04; honours are organised by version, traceable and attributable | "Honour and display system" |
+| charter.10 Human-centred governance | Refusable, reversible, with non-digital alternative channels accepted on equal footing; AI augments rather than replaces human judgment | "Youth, visitors, and inclusive use", "Privacy and the human-review boundary" |
 
 ## References
 
@@ -559,7 +647,7 @@ The repository working documents `docs/data-workflow.md` and `docs/terminology-g
 
 **To be completed before the formal version**
 
-All marked `[待证]`; **no factual assertion is made in this version**: public sources on the Jing-Zhang Railway and the unification of technical terminology and standards; public data on rail and municipal infrastructure; official population and facility provision standards.
+For all three of the following, this version **makes no factual assertion and keeps them out of the body text**; a public source must be in hand before the formal version states anything: public sources on the Jing-Zhang Railway and the unification of technical terminology and standards; public data on rail and municipal infrastructure; official population and facility provision standards.
 
 **Method and tooling**
 

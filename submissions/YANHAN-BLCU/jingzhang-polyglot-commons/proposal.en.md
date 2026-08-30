@@ -39,6 +39,12 @@ The overall structure is **one spine, three commons, five links and twelve nodes
 
 The Chinese name is “万语京张” and the English name is **JINGZHANG POLYGLOT COMMONS**. The logo direction uses two parallel rail lines to form an open dialogue frame, with twelve dots for scenario nodes. Red identifies the public-responsibility spine, cyan the cross-links and green the blue-green network. No third-party trademark, portrait or restricted font is used. Naming scales from the belt (Polyglot Commons) to three Commons, five Links and twelve Nodes, allowing the identity to double as a wayfinding and scenario-access system.
 
+### Standalone identity direction
+
+To make the taskbook requirement for a name, logo and identity system directly reviewable, V2 adds a standalone geometric identity direction. Two open rail lines represent the Jing-Zhang railway and cross-lingual dialogue; twelve nodes represent service scenarios that can pause or transfer to a person. Red, cyan, green and violet encode the spine, links, public space and evidence state. This is a conceptual identity draft, not a registered mark or construction wayfinding set. The mark is stored as a font-free SVG so a professional team can revise proportions, materials and bilingual lockups [depth:overall_spatial_structure] [source:AGENT-TASKBOOK].
+
+![Standalone identity direction: rails, nodes and four states](assets/figures/identity-system.svg)
+
 The three official positioning statements are translated as follows: the Centennial Jing-Zhang Cultural Belt becomes a history spine readable in many languages; the Metropolitan AI Living Experience Belt becomes everyday service with human takeover; the AI Convergent Innovation Belt becomes an auditable cross-lingual testing network. The five functions map to cross-lingual model evaluation, global collaboration, real-service validation, public interfaces and transparent testing protocols. Among the Three Zones and Two Wings, Zhongzhiyuan validates, AI Origin co-translates and Dazhongsi releases; the Zhongguancun Technology Services Wing supplies legal, capital and knowledge services, while the Xiaoyue River Scenario Enablement Wing supplies everyday applications and feedback [standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK].
 
 ![Seven program bands and scope transfer](assets/figures/land-use-structure.en.png)
@@ -60,7 +66,36 @@ The following six cases inform mechanisms only. They do not support any boundary
 
 The lesson is not to copy landmarks. It is to define who may enter, where collaboration occurs, how systems are tested, who takes over when they fail, and how useful knowledge remains public. Every mechanism requires local demand validation, rights review and professional adaptation before use.
 
-Seven topology-safe program bands organize multilingual model validation and research, global-talent arrival services, university collaboration, the Jing-Zhang cultural interpretation park, multilingual public culture and release, talent living and inclusive services, and Dazhongsi global exchange and AI-native commerce [data:geometry/land_use.geojson#LU-001] [depth:land_use_layout]. Land-use terminology follows the Ministry of Natural Resources classification logic, but the design is not an approved land-use plan [standard:MNR-LAND-USE-CLASSIFICATION-GUIDE].
+## Regional Coordination and the Eight-Element Ecosystem
+
+The taskbook's named regional relationships cannot be replaced by a generic “global case to Jing-Zhang” statement. V2 treats Beiwei Community, Future Science City, Huairou Science City, Beijing Economic-Technological Development Area, and the Beijing-Tianjin-Hebei region as conceptual interfaces to be negotiated. None is described as an established partnership or government arrangement. Each interface records a role, inputs, outputs, boundary and responsibility status [source:OFFICIAL-ANNOUNCEMENT] [source:AGENT-TASKBOOK] [metric:regional_interface_count].
+
+| Interface | Concept role | Exchangeable inputs | Exchangeable outputs | Boundary and current status |
+| --- | --- | --- | --- | --- |
+| Beiwei Community | Resident co-translation and daily-service feedback | Language barriers, accessibility needs, service complaints with consent | Plain-language terms, correction records, offline-service feedback | No sensitive personal data; community and professional co-confirmation required, pending |
+| Future Science City | Fundamental research and validation partner | Evaluation methods, researchers, compute needs | Reusable test cards, summarized failures, talent exchange | No promise of shared compute or tenancy; institution and data-owner confirmation required, pending |
+| Huairou Science City | High-risk science scenarios and long-cycle evaluation | Scientific facilities scenarios, science communication needs | Safety boundaries, scientific terminology, public explanations | No facility control or safety approval is implied; knowledge interface only, pending |
+| Beijing Economic-Technological Development Area | Manufacturing, device and industrialization validation partner | Prototypes, supply-chain scenarios, quality and maintenance feedback | Maintainable components, device tests, adoption review | No orders, industrial rollout or investment promise; enterprise and park confirmation required, pending |
+| Beijing-Tianjin-Hebei | Cross-region talent and public-knowledge network | Talent mobility, terminology differences, transport-service issues | Portable terminology versions, cross-city service interfaces, annual comparison | No administrative coordination or unified platform is implied; authorization and data agreements required, pending |
+
+The flow is explicit: Beiwei feedback enters the AI Origin Co-Translation Commons; Future and Huairou evaluation methods enter Zhongzhiyuan; E-Town device and maintenance feedback enters the five links; Beijing-Tianjin-Hebei terminology and talent questions are reviewed publicly at Dazhongsi. Each flow has four audit points: minimum necessary data, accountable human, version record and exit. Without them, the work remains desk research and does not open live service.
+
+The eight elements are recorded in one responsibility table:
+
+| Element | Minimum input | Receiving space | Output and audit point | Current gap |
+| --- | --- | --- | --- | --- |
+| Land | Official use, ownership and redlines | Seven program bands and three commons | Compatibility list and redline review | Official controls and ownership pending |
+| Space | Survey, buildings, roads and public realm | Spine, five links and twelve nodes | Reversible-interface list and accessibility check | Survey pending |
+| Industry | Test questions, company scenarios, maintenance needs | Validation platform and E-Town interface | Test card, failures and adoption review | Operators pending |
+| Finance | Cost class, maintenance budget, procurement conditions | P01-P06 phasing | Funding and exit records | Funding and procurement pending |
+| Talent | Co-design sample, residency and training needs | AI Origin and five links | Participation, service difference, conversion | Survey sample pending |
+| Compute | Workloads, capacity and energy constraints | Validation commons and science interfaces | Queue, capacity ceiling and stop conditions | Compute and municipal capacity pending |
+| Data | Rights-cleared corpus, privacy tier, version record | Co-Translation Court, test room and terminology bank | Source, consent, access and withdrawal audit | Data agreements pending |
+| Scenarios | Service flow, risk level, human takeover | Twelve nodes and public windows | Availability, takeover and exit record | Baseline not measured |
+
+This table turns regional coordination into exchangeable material and responsibility, without presenting unknown conditions as implementation commitments [depth:metrics_recalculation] [depth:phasing_implementation].
+
+Seven topology-safe program bands organize multilingual model validation and research, global-talent arrival services, university collaboration, the Jing-Zhang cultural interpretation park, multilingual public culture and release, talent living and inclusive services, and Dazhongsi global exchange and AI-native commerce [data:geometry/land_use.geojson#LU-001] [depth:land_use_layout]. LU-007 uses the current `0901` commercial-land enum because its stated concept function is AI-native commerce. Land-use terminology follows the Ministry of Natural Resources classification logic, but the design is not an approved land-use plan [data:geometry/land_use.geojson#LU-007] [standard:MNR-LAND-USE-CLASSIFICATION-GUIDE].
 
 ## Overall Design Area: Urban Renewal and Regulatory-Plan-Level Urban Design
 
@@ -114,6 +149,19 @@ All twelve cards are spatially registered as `SCENARIO_NODE` features and requir
 
 Every scenario is a verifiable service prototype, not an approved operating project. AI may not independently decide sensitive medical, legal, mobility or public-service outcomes.
 
+## Co-Design and Inclusion Validation Plan
+
+The six personas remain design hypotheses. V2 turns “research later” into a test protocol: first recruit 24 participants without collecting identity documents (at least four per persona, with at least four older or Deaf participants); then run task walkthroughs with community translators, health/legal service staff and city operators; only after risks are human-reviewed, run low-risk, withdrawable field stress tests. The sample count is a target, not completed evidence [source:AGENT-TASKBOOK] [metric:co_design_sample_target].
+
+| Test | Participants and task | Recorded measures | Gate and exit |
+| --- | --- | --- | --- |
+| Co-design workshop | Four people per persona; map arrival, help and appeal journeys | Completion, misunderstood terms, human-transfer reasons | Stop a prototype if a critical service cannot transfer to a person |
+| Deaf and caption walkthrough | Deaf users, older users and caption reviewers; event, wayfinding and failure simulation | Caption latency, error rate, contrast readability, offline fallback reach | Roll back if captions are unreadable or failure blocks movement |
+| Multilingual service-difference test | Chinese, English and participant-selected language; medical/civic navigation only | Completion-time difference, takeover rate, appeal response | Do not publish automated output when language difference exceeds threshold |
+| Version and withdrawal audit | Participants inspect terms, attribution, withdrawal and correction | Correction time, withdrawal completion, traceability | Pause a dataset if source or withdrawal cannot be traced |
+
+Baselines must be registered as “not yet measured” before testing; targets must never be presented as results. Suggested public summaries are `co-design/round-01`, `accessibility/round-01` and `service-difference/round-01`, retaining aggregate findings only and excluding identity, sensitive corpora and recordings without consent [metric:language_service_difference] [metric:accessibility_test_completion] [metric:correction_time_hours].
+
 ## Land Use, Building Scale, and Retain-Renovate-Demolish Strategy
 
 Seven land-use bands cover the submitted provisional boundary and transfer functions through one north-south commons spine and five east-west links. Research, education, culture, community service, commerce and park categories use common classification codes, but compatibility still requires formal Regulatory Detailed Planning [data:geometry/land_use.geojson#LU-004] [standard:MNR-LAND-USE-CLASSIFICATION-GUIDE].
@@ -159,6 +207,19 @@ The cultural narrative moves from “building an independent railway” to “co
 
 `PHASE` geometry divides implementation into three stages [data:geometry/phasing.geojson#PHASE-001] [metric:phase_count]. Phase 1 (2026-2027) validates lightweight services and governance protocols. Phase 2 (2028-2030) connects public spaces and deepens the three commons when formal data permits. Phase 3 (2031+) establishes long-term operation, annual review and asset retirement [depth:phasing_implementation].
 
+To avoid a phased plan without responsibility, each project now has a conceptual role and condition-driven gate. The roles are pending interfaces rather than contracted entities; funding, approvals and maintenance sources remain unconfirmed.
+
+| Project | Responsibility role (pending) | Gate | Operating baseline / target | Pause or exit |
+| --- | --- | --- | --- | --- |
+| P01 Commons Spine | Heritage/public-realm team and accessibility advisor | Official boundary, transport safety and heritage review | Walking breaks and caption readability | If boundary or safety fails, use removable components |
+| P02 Validation Platforms | Test lead and data/safety lead | Rights-cleared set, risk tier and safety officer | Published test cards and human takeover | Stop immediately when high-risk takeover is unavailable |
+| P03 Co-Translation Court | Community co-design group and language-service team | Co-design sample complete and offline window open | Correction time and offline reach | Stop collection if personal data cannot be withdrawn |
+| P04 Release Foyer | Release operator and human policy advisors | Station, ownership, fire and accountable operator clear | Participation and appeal response | Without an accountable operator/budget, temporary events only |
+| P05 Five Links | Transport and landscape professionals | Road redline, traffic, walking and municipal conditions | Walking breaks and accessible reach | Move alignment when engineering or safety fails |
+| P06 Component Library | Design-system maintainer and rights reviewer | Font, rights, maintenance and version protocol clear | Maintainability and withdrawal completion | Retire at end of life when rights or maintenance fail |
+
+The gate sequence is “materials ready—low-risk prototype—professional review—limited opening—annual review.” Each gate records unmet items, responsible role and next review date; without a responsible role, a project is not marked ready.
+
 Policy concepts include one scenario-access register, cross-lingual data and terminology governance, minimum human-takeover requirements, a non-digital service floor, annual public deliberation, failure and exit records, attributed contribution and withdrawal. Operators, funding, approval and exact schedules remain unconfirmed.
 
 An annual **Polyglot AI Week** combines public cross-lingual model tests, an open terminology editathon, a global-talent city walk, accessible-caption stress testing and the Global AI Civic Forum. Developer residencies, a community translator network, quarterly scenario-access days and annual exit review create the longer cycle. These are operating recommendations, not confirmed government events.
@@ -176,6 +237,8 @@ Walking/cycling centerline length, twelve scenario nodes, three key areas and th
 ![Metrics, unknowns and evidence chain](assets/figures/metrics-evidence.en.png)
 
 The task-coverage matrix maps every requirement in announcement sections 1.3, 1.4 and 1.5 plus agent.1-agent.6. The professional-standard matrix maps five mandatory references. The design-depth matrix covers diagnosis, scope, structure, land use, intensity, building form, DRR, transport, municipal systems, blue-green space, key areas, projects, phasing, metrics and risk. Matrices retain the complete machine index; prose keeps evidence adjacent to decisions.
+
+V2 also locates the six agent tasks in inspectable outputs: agent.1's naming and logo map to the standalone SVG and identity hierarchy; agent.2's six cases, eight elements and test protocol map to the research and regional-coordination sections; agent.3's twelve scenario cards and three industry tests map to `constraints.geojson#SCENARIO-001` and the co-design table; agent.4's spine, five links and three landmarks map to the road, green and public-space layers; agent.5's Jing-Zhang—Zhongguancun—AI culture narrative maps to the character section and Centennial Language-Rail Milestones; agent.6's Polyglot AI Week, residencies, translator network and annual exit review map to the implementation policy and gate table. All are conceptual recommendations pending professional and stakeholder confirmation [source:AGENT-TASKBOOK] [depth:phasing_implementation].
 
 ## Risk, Copyright, and Compliance
 

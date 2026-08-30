@@ -1,37 +1,815 @@
 {
   "type": "FeatureCollection",
-  "name": "roads_conceptual_design",
-  "evidence_status": "conceptual_design",
-  "confidence": "medium",
-  "boundary_dependency": "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
-  "description": "Agent-generated conceptual slow-mobility alignment; not a surveyed road, road centerline, redline or approved transport scheme.",
+  "name": "phase2_candidate_responsibility_cross_sections",
+  "evidence_status": "candidate_not_surveyed",
+  "confidence": "low",
+  "description": "One comparative spine plus CX01–CX12 candidate responsibility transects. Coordinates are analysis helpers clipped to the provisional site, not surveyed roads or engineering alignments.",
   "features": [
     {
       "type": "Feature",
-      "id": "ROAD-001",
+      "id": "SPINE-001",
       "properties": {
-        "id": "ROAD-001",
+        "id": "SPINE-001",
         "layer": "ROAD_CENTERLINE",
-        "source_type": "agent_generated_design",
-        "confidence": "medium",
-        "geometry_role": "design_proposal",
-        "road_class": "greenway",
-        "name_zh": "慢行与创新服务廊道"
+        "source_type": "agent_inferred_from_public_data",
+        "confidence": "low",
+        "geometry_role": "analysis_helper",
+        "status": "candidate_not_surveyed",
+        "name_zh": "在场脊柱候选路径",
+        "name_en": "Candidate in-situ spine",
+        "selection_basis": "Links the three provisional key-area envelopes for comparative testing only.",
+        "primary_users": "cross_area_public_users",
+        "conflict": "Continuity, ownership, rail/road crossings and accessibility remain unverified.",
+        "source_ids": [
+          "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+          "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605"
+        ],
+        "field_verification_items": [
+          "continuous lawful access",
+          "crossing control",
+          "surface and gradient",
+          "shade and rest",
+          "night safety",
+          "maintenance responsibility"
+        ]
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
           [
-            116.340948,
-            39.9845
+            116.3477,
+            39.94
           ],
           [
-            116.35374,
-            39.9845
+            116.3471,
+            39.965
+          ],
+          [
+            116.3479,
+            39.99
+          ],
+          [
+            116.3488,
+            40.0255
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "CX01",
+      "properties": {
+        "id": "CX01",
+        "layer": "ROAD_CENTERLINE",
+        "source_type": "agent_generated_design",
+        "confidence": "low",
+        "geometry_role": "analysis_helper",
+        "status": "candidate_not_surveyed",
+        "name_zh": "河岸研发",
+        "name_en": "Riverfront R&D",
+        "cross_section_type": "riverfront_research",
+        "selection_basis": "Candidate responsibility transect at PROV-KEY-001; chosen to test the named conflict, not to assert a road alignment.",
+        "primary_users": "researchers_and_park_users",
+        "conflict": "研发出入口与滨水慢行交叉；岸线连续性待核",
+        "source_ids": [
+          "DATA-SRC-AGENT-TASKBOOK-20260518",
+          "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605"
+        ],
+        "carrier_id": "PROV-KEY-001",
+        "candidate_status": "candidate",
+        "survey_status": "not_surveyed",
+        "surveyed": false,
+        "accessibility_audited": false,
+        "pedestrian_flow_surveyed": false,
+        "detailed_representative": false,
+        "representative_design": null,
+        "field_verification_items": [
+          "exact lawful path and ownership",
+          "existing width and obstructions",
+          "surface and gradient",
+          "crossing wait and signal",
+          "shade/rest points",
+          "wheelchair turning",
+          "day/night user counts",
+          "maintenance and emergency access"
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            116.34252926829268,
+            40.023
+          ],
+          [
+            116.35510821917808,
+            40.023
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "CX02",
+      "properties": {
+        "id": "CX02",
+        "layer": "ROAD_CENTERLINE",
+        "source_type": "agent_generated_design",
+        "confidence": "low",
+        "geometry_role": "analysis_helper",
+        "status": "candidate_not_surveyed",
+        "name_zh": "公园门户",
+        "name_en": "Park gateway",
+        "cross_section_type": "park_gateway",
+        "selection_basis": "Candidate responsibility transect at PROV-KEY-001; chosen to test the named conflict, not to assert a road alignment.",
+        "primary_users": "wheelchair_users_caregivers_and_visitors",
+        "conflict": "公园到验证界面的无障碍、遮阴与服务交接",
+        "source_ids": [
+          "DATA-SRC-AGENT-TASKBOOK-20260518",
+          "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605"
+        ],
+        "carrier_id": "PROV-KEY-001",
+        "candidate_status": "candidate",
+        "survey_status": "not_surveyed",
+        "surveyed": false,
+        "accessibility_audited": false,
+        "pedestrian_flow_surveyed": false,
+        "detailed_representative": true,
+        "representative_design": {
+          "detail_level": "representative_relationship_section",
+          "all_dimensions_are_design_targets": true,
+          "bands": [
+            {
+              "name": "slow_mobility",
+              "width_m": 4.0,
+              "dimension_status": "design-target",
+              "id": "CX02-D01"
+            },
+            {
+              "name": "shade_and_rest",
+              "width_m": 3.0,
+              "dimension_status": "design-target",
+              "id": "CX02-D02"
+            },
+            {
+              "name": "human_takeover_apron",
+              "width_m": 3.0,
+              "dimension_status": "design-target",
+              "id": "CX02-D03"
+            },
+            {
+              "name": "reversible_test_edge",
+              "width_m": 4.0,
+              "dimension_status": "design-target",
+              "id": "CX02-D04"
+            }
+          ],
+          "existing_total_width_m": {
+            "value": null,
+            "dimension_status": "unknown",
+            "id": "CX02-D05"
+          },
+          "road_redline_width_m": {
+            "value": null,
+            "dimension_status": "unknown",
+            "id": "CX02-D06"
+          },
+          "survey_status": "not_surveyed"
+        },
+        "field_verification_items": [
+          "exact lawful path and ownership",
+          "existing width and obstructions",
+          "surface and gradient",
+          "crossing wait and signal",
+          "shade/rest points",
+          "wheelchair turning",
+          "day/night user counts",
+          "maintenance and emergency access"
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            116.34228536585366,
+            40.018
+          ],
+          [
+            116.35483424657534,
+            40.018
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "CX03",
+      "properties": {
+        "id": "CX03",
+        "layer": "ROAD_CENTERLINE",
+        "source_type": "agent_generated_design",
+        "confidence": "low",
+        "geometry_role": "analysis_helper",
+        "status": "candidate_not_surveyed",
+        "name_zh": "研发庭院",
+        "name_en": "Research courtyard",
+        "cross_section_type": "research_courtyard",
+        "selection_basis": "Candidate responsibility transect at PROV-KEY-001; chosen to test the named conflict, not to assert a road alignment.",
+        "primary_users": "researchers_service_staff_and_visitors",
+        "conflict": "受控测试与公众可见之间的门槛",
+        "source_ids": [
+          "DATA-SRC-AGENT-TASKBOOK-20260518",
+          "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605"
+        ],
+        "carrier_id": "PROV-KEY-001",
+        "candidate_status": "candidate",
+        "survey_status": "not_surveyed",
+        "surveyed": false,
+        "accessibility_audited": false,
+        "pedestrian_flow_surveyed": false,
+        "detailed_representative": false,
+        "representative_design": null,
+        "field_verification_items": [
+          "exact lawful path and ownership",
+          "existing width and obstructions",
+          "surface and gradient",
+          "crossing wait and signal",
+          "shade/rest points",
+          "wheelchair turning",
+          "day/night user counts",
+          "maintenance and emergency access"
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            116.34204146341463,
+            40.013
+          ],
+          [
+            116.35456027397261,
+            40.013
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "CX04",
+      "properties": {
+        "id": "CX04",
+        "layer": "ROAD_CENTERLINE",
+        "source_type": "agent_generated_design",
+        "confidence": "low",
+        "geometry_role": "analysis_helper",
+        "status": "candidate_not_surveyed",
+        "name_zh": "校园公共首层",
+        "name_en": "Campus public ground floor",
+        "cross_section_type": "campus_public_ground_floor",
+        "selection_basis": "Candidate responsibility transect at SPINE-001; chosen to test the named conflict, not to assert a road alignment.",
+        "primary_users": "students_researchers_and_neighbours",
+        "conflict": "校园边界、公共进入与夜间关闭冲突",
+        "source_ids": [
+          "DATA-SRC-AGENT-TASKBOOK-20260518",
+          "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605"
+        ],
+        "carrier_id": "SPINE-001",
+        "candidate_status": "candidate",
+        "survey_status": "not_surveyed",
+        "surveyed": false,
+        "accessibility_audited": false,
+        "pedestrian_flow_surveyed": false,
+        "detailed_representative": false,
+        "representative_design": null,
+        "field_verification_items": [
+          "exact lawful path and ownership",
+          "existing width and obstructions",
+          "surface and gradient",
+          "crossing wait and signal",
+          "shade/rest points",
+          "wheelchair turning",
+          "day/night user counts",
+          "maintenance and emergency access"
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            116.3417,
+            40.006
+          ],
+          [
+            116.35417671232877,
+            40.006
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "CX05",
+      "properties": {
+        "id": "CX05",
+        "layer": "ROAD_CENTERLINE",
+        "source_type": "agent_generated_design",
+        "confidence": "low",
+        "geometry_role": "analysis_helper",
+        "status": "candidate_not_surveyed",
+        "name_zh": "成果转译",
+        "name_en": "Research translation",
+        "cross_section_type": "research_translation",
+        "selection_basis": "Candidate responsibility transect at PROV-KEY-002; chosen to test the named conflict, not to assert a road alignment.",
+        "primary_users": "researchers_smes_and_public_advisers",
+        "conflict": "成果说明、人工转译与受控演示并置",
+        "source_ids": [
+          "DATA-SRC-AGENT-TASKBOOK-20260518",
+          "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605"
+        ],
+        "carrier_id": "PROV-KEY-002",
+        "candidate_status": "candidate",
+        "survey_status": "not_surveyed",
+        "surveyed": false,
+        "accessibility_audited": false,
+        "pedestrian_flow_surveyed": false,
+        "detailed_representative": true,
+        "representative_design": {
+          "detail_level": "representative_relationship_section",
+          "all_dimensions_are_design_targets": true,
+          "bands": [
+            {
+              "name": "public_walk",
+              "width_m": 4.0,
+              "dimension_status": "design-target",
+              "id": "CX05-D01"
+            },
+            {
+              "name": "translation_clinic",
+              "width_m": 4.0,
+              "dimension_status": "design-target",
+              "id": "CX05-D02"
+            },
+            {
+              "name": "controlled_demo",
+              "width_m": 5.0,
+              "dimension_status": "design-target",
+              "id": "CX05-D03"
+            },
+            {
+              "name": "quiet_bypass",
+              "width_m": 3.0,
+              "dimension_status": "design-target",
+              "id": "CX05-D04"
+            }
+          ],
+          "existing_total_width_m": {
+            "value": null,
+            "dimension_status": "unknown",
+            "id": "CX05-D05"
+          },
+          "road_redline_width_m": {
+            "value": null,
+            "dimension_status": "unknown",
+            "id": "CX05-D06"
+          },
+          "survey_status": "not_surveyed"
+        },
+        "field_verification_items": [
+          "exact lawful path and ownership",
+          "existing width and obstructions",
+          "surface and gradient",
+          "crossing wait and signal",
+          "shade/rest points",
+          "wheelchair turning",
+          "day/night user counts",
+          "maintenance and emergency access"
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            116.34079677419355,
+            39.992
+          ],
+          [
+            116.3534095890411,
+            39.992
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "CX06",
+      "properties": {
+        "id": "CX06",
+        "layer": "ROAD_CENTERLINE",
+        "source_type": "agent_generated_design",
+        "confidence": "low",
+        "geometry_role": "analysis_helper",
+        "status": "candidate_not_surveyed",
+        "name_zh": "人才生活",
+        "name_en": "Talent life",
+        "cross_section_type": "talent_life",
+        "selection_basis": "Candidate responsibility transect at PROV-KEY-002; chosen to test the named conflict, not to assert a road alignment.",
+        "primary_users": "talent_families_and_service_workers",
+        "conflict": "工作、照护与社区服务时段错位",
+        "source_ids": [
+          "DATA-SRC-AGENT-TASKBOOK-20260518",
+          "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605"
+        ],
+        "carrier_id": "PROV-KEY-002",
+        "candidate_status": "candidate",
+        "survey_status": "not_surveyed",
+        "surveyed": false,
+        "accessibility_audited": false,
+        "pedestrian_flow_surveyed": false,
+        "detailed_representative": false,
+        "representative_design": null,
+        "field_verification_items": [
+          "exact lawful path and ownership",
+          "existing width and obstructions",
+          "surface and gradient",
+          "crossing wait and signal",
+          "shade/rest points",
+          "wheelchair turning",
+          "day/night user counts",
+          "maintenance and emergency access"
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            116.34060322580645,
+            39.989
+          ],
+          [
+            116.35338,
+            39.989
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "CX07",
+      "properties": {
+        "id": "CX07",
+        "layer": "ROAD_CENTERLINE",
+        "source_type": "agent_generated_design",
+        "confidence": "low",
+        "geometry_role": "analysis_helper",
+        "status": "candidate_not_surveyed",
+        "name_zh": "社区缝合",
+        "name_en": "Community stitch",
+        "cross_section_type": "community_stitch",
+        "selection_basis": "Candidate responsibility transect at PROV-KEY-002; chosen to test the named conflict, not to assert a road alignment.",
+        "primary_users": "residents_students_and_delivery_workers",
+        "conflict": "校园与社区通行、配送和安静需求冲突",
+        "source_ids": [
+          "DATA-SRC-AGENT-TASKBOOK-20260518",
+          "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605"
+        ],
+        "carrier_id": "PROV-KEY-002",
+        "candidate_status": "candidate",
+        "survey_status": "not_surveyed",
+        "surveyed": false,
+        "accessibility_audited": false,
+        "pedestrian_flow_surveyed": false,
+        "detailed_representative": false,
+        "representative_design": null,
+        "field_verification_items": [
+          "exact lawful path and ownership",
+          "existing width and obstructions",
+          "surface and gradient",
+          "crossing wait and signal",
+          "shade/rest points",
+          "wheelchair turning",
+          "day/night user counts",
+          "maintenance and emergency access"
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            116.34040967741934,
+            39.986
+          ],
+          [
+            116.35362,
+            39.986
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "CX08",
+      "properties": {
+        "id": "CX08",
+        "layer": "ROAD_CENTERLINE",
+        "source_type": "agent_generated_design",
+        "confidence": "low",
+        "geometry_role": "analysis_helper",
+        "status": "candidate_not_surveyed",
+        "name_zh": "小月河无障碍界面",
+        "name_en": "Xiaoyue accessible interface",
+        "cross_section_type": "xiaoyue_accessible_interface",
+        "selection_basis": "Candidate responsibility transect at SPINE-001; chosen to test the named conflict, not to assert a road alignment.",
+        "primary_users": "older_people_wheelchair_users_and_caregivers",
+        "conflict": "连续坡度、过街等待与人工协助未知",
+        "source_ids": [
+          "DATA-SRC-AGENT-TASKBOOK-20260518",
+          "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605"
+        ],
+        "carrier_id": "SPINE-001",
+        "candidate_status": "candidate",
+        "survey_status": "not_surveyed",
+        "surveyed": false,
+        "accessibility_audited": false,
+        "pedestrian_flow_surveyed": false,
+        "detailed_representative": false,
+        "representative_design": null,
+        "field_verification_items": [
+          "exact lawful path and ownership",
+          "existing width and obstructions",
+          "surface and gradient",
+          "crossing wait and signal",
+          "shade/rest points",
+          "wheelchair turning",
+          "day/night user counts",
+          "maintenance and emergency access"
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            116.33995806451613,
+            39.979
+          ],
+          [
+            116.35418,
+            39.979
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "CX09",
+      "properties": {
+        "id": "CX09",
+        "layer": "ROAD_CENTERLINE",
+        "source_type": "agent_generated_design",
+        "confidence": "low",
+        "geometry_role": "analysis_helper",
+        "status": "candidate_not_surveyed",
+        "name_zh": "轨道—公园连接",
+        "name_en": "Rail–park connection",
+        "cross_section_type": "rail_park_connection",
+        "selection_basis": "Candidate responsibility transect at SPINE-001; chosen to test the named conflict, not to assert a road alignment.",
+        "primary_users": "commuters_cyclists_and_park_users",
+        "conflict": "换乘、骑行与公园步行流线交叉",
+        "source_ids": [
+          "DATA-SRC-AGENT-TASKBOOK-20260518",
+          "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605"
+        ],
+        "carrier_id": "SPINE-001",
+        "candidate_status": "candidate",
+        "survey_status": "not_surveyed",
+        "surveyed": false,
+        "accessibility_audited": false,
+        "pedestrian_flow_surveyed": false,
+        "detailed_representative": false,
+        "representative_design": null,
+        "field_verification_items": [
+          "exact lawful path and ownership",
+          "existing width and obstructions",
+          "surface and gradient",
+          "crossing wait and signal",
+          "shade/rest points",
+          "wheelchair turning",
+          "day/night user counts",
+          "maintenance and emergency access"
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            116.34000555555555,
+            39.964
+          ],
+          [
+            116.3553,
+            39.964
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "CX10",
+      "properties": {
+        "id": "CX10",
+        "layer": "ROAD_CENTERLINE",
+        "source_type": "agent_generated_design",
+        "confidence": "low",
+        "geometry_role": "analysis_helper",
+        "status": "candidate_not_surveyed",
+        "name_zh": "站城客厅",
+        "name_en": "Station-city living room",
+        "cross_section_type": "station_city_living_room",
+        "selection_basis": "Candidate responsibility transect at PROV-KEY-003; chosen to test the named conflict, not to assert a road alignment.",
+        "primary_users": "commuters_consumers_hosts_and_wheelchair_users",
+        "conflict": "到达、试用、投诉与撤场必须同屏",
+        "source_ids": [
+          "DATA-SRC-AGENT-TASKBOOK-20260518",
+          "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605"
+        ],
+        "carrier_id": "PROV-KEY-003",
+        "candidate_status": "candidate",
+        "survey_status": "not_surveyed",
+        "surveyed": false,
+        "accessibility_audited": false,
+        "pedestrian_flow_surveyed": false,
+        "detailed_representative": true,
+        "representative_design": {
+          "detail_level": "representative_relationship_section",
+          "all_dimensions_are_design_targets": true,
+          "bands": [
+            {
+              "name": "arrival_clear_zone",
+              "width_m": 5.0,
+              "dimension_status": "design-target",
+              "id": "CX10-D01"
+            },
+            {
+              "name": "public_trial_room",
+              "width_m": 6.0,
+              "dimension_status": "design-target",
+              "id": "CX10-D02"
+            },
+            {
+              "name": "human_complaint_desk",
+              "width_m": 3.0,
+              "dimension_status": "design-target",
+              "id": "CX10-D03"
+            },
+            {
+              "name": "removal_and_service_lane",
+              "width_m": 4.0,
+              "dimension_status": "design-target",
+              "id": "CX10-D04"
+            }
+          ],
+          "existing_total_width_m": {
+            "value": null,
+            "dimension_status": "unknown",
+            "id": "CX10-D05"
+          },
+          "road_redline_width_m": {
+            "value": null,
+            "dimension_status": "unknown",
+            "id": "CX10-D06"
+          },
+          "survey_status": "not_surveyed"
+        },
+        "field_verification_items": [
+          "exact lawful path and ownership",
+          "existing width and obstructions",
+          "surface and gradient",
+          "crossing wait and signal",
+          "shade/rest points",
+          "wheelchair turning",
+          "day/night user counts",
+          "maintenance and emergency access"
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            116.3404361111111,
+            39.9485
+          ],
+          [
+            116.3553,
+            39.9485
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "CX11",
+      "properties": {
+        "id": "CX11",
+        "layer": "ROAD_CENTERLINE",
+        "source_type": "agent_generated_design",
+        "confidence": "low",
+        "geometry_role": "analysis_helper",
+        "status": "candidate_not_surveyed",
+        "name_zh": "市集文化首层",
+        "name_en": "Market–culture ground floor",
+        "cross_section_type": "market_culture_ground_floor",
+        "selection_basis": "Candidate responsibility transect at PROV-KEY-003; chosen to test the named conflict, not to assert a road alignment.",
+        "primary_users": "residents_vendors_and_cultural_visitors",
+        "conflict": "摊位经营、文化展示与消防疏散冲突",
+        "source_ids": [
+          "DATA-SRC-AGENT-TASKBOOK-20260518",
+          "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605"
+        ],
+        "carrier_id": "PROV-KEY-003",
+        "candidate_status": "candidate",
+        "survey_status": "not_surveyed",
+        "surveyed": false,
+        "accessibility_audited": false,
+        "pedestrian_flow_surveyed": false,
+        "detailed_representative": false,
+        "representative_design": null,
+        "field_verification_items": [
+          "exact lawful path and ownership",
+          "existing width and obstructions",
+          "surface and gradient",
+          "crossing wait and signal",
+          "shade/rest points",
+          "wheelchair turning",
+          "day/night user counts",
+          "maintenance and emergency access"
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            116.34050555555555,
+            39.946
+          ],
+          [
+            116.3553,
+            39.946
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "CX12",
+      "properties": {
+        "id": "CX12",
+        "layer": "ROAD_CENTERLINE",
+        "source_type": "agent_generated_design",
+        "confidence": "low",
+        "geometry_role": "analysis_helper",
+        "status": "candidate_not_surveyed",
+        "name_zh": "安静照护",
+        "name_en": "Quiet care",
+        "cross_section_type": "quiet_care",
+        "selection_basis": "Candidate responsibility transect at SPINE-001; chosen to test the named conflict, not to assert a road alignment.",
+        "primary_users": "older_people_children_caregivers_and_neighbours",
+        "conflict": "安静、照护、配送与夜间照明冲突",
+        "source_ids": [
+          "DATA-SRC-AGENT-TASKBOOK-20260518",
+          "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605"
+        ],
+        "carrier_id": "SPINE-001",
+        "candidate_status": "candidate",
+        "survey_status": "not_surveyed",
+        "surveyed": false,
+        "accessibility_audited": false,
+        "pedestrian_flow_surveyed": false,
+        "detailed_representative": false,
+        "representative_design": null,
+        "field_verification_items": [
+          "exact lawful path and ownership",
+          "existing width and obstructions",
+          "surface and gradient",
+          "crossing wait and signal",
+          "shade/rest points",
+          "wheelchair turning",
+          "day/night user counts",
+          "maintenance and emergency access"
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            116.34064444444444,
+            39.941
+          ],
+          [
+            116.3553,
+            39.941
           ]
         ]
       }
     }
-  ],
-  "x-design-method": "twelve lived sections; conceptual and provisional"
+  ]
 }

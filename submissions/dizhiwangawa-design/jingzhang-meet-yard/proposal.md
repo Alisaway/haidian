@@ -11,6 +11,21 @@ scenarios: ["ai-traffic-walkability", "enterprise-service-copilot", "public-safe
 ---
 # 会车场 / MEET YARD
 
+## 一页评审摘要
+
+> 本表为评审导航，完整证据见后文各章与机器文件；所有空间与指标结论均为 provisional 边界下的概念建议。
+
+| 评审会问 | 本方案的回答 | 可核验的东西 |
+| --- | --- | --- |
+| 核心命题是什么 | 让智能先会人，再进城。以铁路"会车"运营纪律为原型：任何 AI 服务进入公共空间前须完成七步会车协议（预约—披露—互证—人审—试行—回退—归档），试点默认到期，续期以公开证据为前提 | 七步协议 8 值 `status_code` 状态机（06.1）；绿/琥珀/红三级风险分级；7 类角色权限矩阵 |
+| 机制能否被第三方检验 | 能。协议字段、状态枚举与日志字段全部登记在机器文件（`decision_log_id`/`credential_exchange_log_id`）；31 条 required_outputs 全 verified、40 条 changelog 处置全 resolved、命名压力测试留日志 | `compliance_matrix.json`、`changelog.md`、`claim_register.json`（机制判定 3 条，2 条 rejected 留档） |
+| 空间上做了什么 | 一脊三站两翼、多点会车：9.6–9.8 km 会车脊；造解站/互证站/试行站三站；9 个 GeoJSON 图层、24 项 EPSG:4548 复算指标（绿地并集率 19.07%、用地覆盖率 1.0、协议演练 14/14） | `geometry/*.geojson`、`metrics.json`、`recompute-log.jsonl` |
+| 三条服务底线凭什么可执行 | 无障碍安静湾与非数字入口（C05/C07 组件）、人工替代与"不采用匿名追踪"、停止与回退是协议步骤而非例外 | 组件库 C01–C08；场景卡 S01–S14 的停止触发/回退字段；06.3.2 阈值草案 |
+| 公共价值落在谁身上 | 居民可就影响自己的服务读数发起质询（公共复核与质询窗口）；骑手、老年残障、低数字素养者画像绑定组件 | P01–P07 画像、PS-C04/05/06 组件、OPS-WIN-01 指标（公式待验证） |
+| 近期能做什么 | 阶段一仅核验（约 400 ha），不启动工程；轻量设施、运营活动与服务平台先行；每个场景先"申请—披露"再谈试行 | 10.3 分期计划；场景卡 `record_status=draft` 初始态 |
+| 刻意不给什么 | 容积率、高度、密度、退线、拆改留结论、工程线位、投资测算——保持 unknown 或概念建议 | `metrics.json` unknown 指标；12.3 越界措辞闸门 |
+| 数据可信到什么程度 | 全部几何基于 provisional 边界（`official_boundary=false`）；官方 polygon 发布后整体重算而非逐文件修补；CS01–08 案例状态逐条登记 | 12.1 重算承诺；`sources.json`；`case-source-ledger.json` |
+
 ## 设计依据与资料清单
 
 ### 设计意图
@@ -53,6 +68,14 @@ scenarios: ["ai-traffic-walkability", "enterprise-service-copilot", "public-safe
 | 总体设计范围 | 约 11.4 km²：京张遗址公园周边 1–2 公里城市地区（provisional） | 城市更新总体框架、产业空间布局、交通市政支撑、城市风貌控制 | 控制性详细规划的城市设计深度 | land_use/roads/green_space/public_space/buildings/phasing 九层图 | [data:geometry/site_boundary.geojson#SITE-001] [metric:SCOPE-OVERALL-01] |
 | 重点区域范围 | 约 368.4 ha：三处重点片区（provisional） | 三区功能业态、建筑规模、拆改留分类、公共空间连通、交通组织 | 规划综合实施方案的城市设计深度 | 三区独立小方案、会车台组件网络 | [data:geometry/key_areas.geojson#PROV-KEY-001] [metric:SCOPE-KEY-01] |
 
+三层范围工作模式（设计问题 → 方案回答 → 数据落点 → 退出条件）：
+
+| 层级 | 设计问题 | 方案回答 | 数据落点 | 退出条件 |
+| --- | --- | --- | --- | --- |
+| 统筹研究范围 | AI 产业生态与未来城市形态如何组织 | 会车场命题：产业生态、命名体系、三区两翼协同回路与未来城市形态研究 | `compliance_matrix.json`、`standard_matrix.json`、生态图谱八要素 | 无法说明公共价值的场景不进入总体设计 |
+| 总体设计范围 | 产业空间、城市更新、交通市政与风貌如何落图 | 一脊三站两翼结构、九层 GeoJSON、更新项目与分期实施 | [data:geometry/site_boundary.geojson#SITE-001]、[metric:SCOPE-OVERALL-01] | 无来源或无法维护的空间动作回到核验 |
+| 重点区域范围 | 三处片区如何达到详细设计深度 | 造解站/互证站/试行站三套小方案 + 三站契约表 + 会车台组件网络 | [data:geometry/key_areas.geojson#PROV-KEY-001]、[metric:SCOPE-KEY-01] | 未过七步协议第 4 步人审的服务不得宣称进入试行 |
+
 三层范围在 `compliance_matrix.json` 中逐条映射，保证公告 1.3、1.4、1.5 与 agent.1–agent.6 的必选任务都有章节、图层、指标、图纸与 HTML 证据；深度项由 [depth:three_level_scope_framework] 与 [depth:overall_spatial_structure] 约束，任务依据以 [standard:PROJECT-OFFICIAL-ANNOUNCEMENT] 为准，范围索引以 `PROCESSED-FACT-PACK` 中 `project_scope_summary.csv` 的三层范围表为导航 [source:PROCESSED-FACT-PACK]。
 
 ### 为什么这样划分三层
@@ -61,7 +84,7 @@ scenarios: ["ai-traffic-walkability", "enterprise-service-copilot", "public-safe
 
 ### 证据支撑与边界纪律
 
-三层边界在 `constraints.geojson` 中分别登记为 CST-RESEARCH-001（43.6 km² 研究范围）、CST-SITE-001（11.4 km² 总体范围）、CST-KEY-SCOPE-001（368.4 ha 重点范围），均为 provisional_rough 约束，面积仅作参考尺度 [data:geometry/constraints.geojson#CST-RESEARCH-001] [data:geometry/constraints.geojson#CST-KEY-SCOPE-001]。三区面积核对：众智园 192.9 ha、AI 原点社区 104.3 ha、大钟寺 72.0 ha，三区之和与重点范围汇总的关系已在 `metrics.json` 登记 [metric:AREA-ZZY-01] [metric:AREA-ORIGIN-01] [metric:AREA-DZS-01]。任何无法从结构化数据复算的面积、比例、规模或项目数量，不得写入正式结论；替换官方 polygons 后，land use、roads、green space、public space、buildings、phasing 与全部指标需整体重算（设计方向 §07.3）。
+三层边界在 `constraints.geojson` 中分别登记为 CST-RESEARCH-001（43.6 km² 研究范围）、CST-SITE-001（11.4 km² 总体范围）、CST-KEY-SCOPE-001（368.4 ha 重点范围），均为 provisional_rough 约束，面积仅作参考尺度 [data:geometry/constraints.geojson#CST-RESEARCH-001] [data:geometry/constraints.geojson#CST-KEY-SCOPE-001]。三区面积核对（polygon 复算值，公告参考面积分别为 192.1 / 104.3 / 72.0 ha）：众智园约 192.9 ha、AI 原点社区约 104.3 ha、大钟寺约 72.0 ha，三区之和与重点范围汇总的关系已在 `metrics.json` 登记 [metric:AREA-ZZY-01] [metric:AREA-ORIGIN-01] [metric:AREA-DZS-01]。任何无法从结构化数据复算的面积、比例、规模或项目数量，不得写入正式结论；替换官方 polygons 后，land use、roads、green space、public space、buildings、phasing 与全部指标需整体重算（设计方向 §07.3）。
 
 ### 数据缺口
 
@@ -86,6 +109,19 @@ scenarios: ["ai-traffic-walkability", "enterprise-service-copilot", "public-safe
 ### 三大定位与五大功能
 
 三大定位（设计方向 §01.4）：百年京张文化带——历史工程方法与 AI 时代公共治理在会车脊上相遇；都市 AI 生活体验带——居民、骑手、学生、老人、访客与智能体在可审查、可退出的日常场景中相遇；AI 融合创新带——科研、产业、资本、人才、数据、场景与公共需求在三区两翼之间相遇并完成验证。五大功能使用任务书官方标签逐字转译：AI全栈自主创新体系→众智园"造解站"；世界级AI创新生态→AI原点社区"互证站"＋中关村科技服务翼；AI+场景赋能新范式→小月河场景赋能翼＋三站会车台；智能化AI活力城市→会车脊、公共空间组件与生活验证节点；AI治理全球话语权→会车协议、会车档案与全球会车大会（概念建议）[standard:PROJECT-OFFICIAL-ANNOUNCEMENT]。
+
+| 任务书定位/功能 | 本方案载体 | 可验收含义 |
+| --- | --- | --- |
+| 百年京张文化带 | 会车脊、证据窗（C03）、成果/失败档案架（C08）、文化叙事四法 | 遗产不是布景：来源、版权、争议与清权过程可见（§06.8） |
+| 都市 AI 生活体验带 | 十二端口式场景卡 S01–S14、会车台（C02）、无障碍安静湾（C05）、非数字入口（C07） | 体验可拒绝、可申诉、可退回人工或非 AI（§06.3 阈值草案） |
+| AI 融合创新带 | 三站两翼、产业验证场景 V01–V04、全球会车大会 | 研究—验证—试行—复盘—归档形成闭环（§06.4/§06.10） |
+| AI 全栈自主创新体系 | 众智园造解站（模型体检、失败边界验证） | 安全、标准、物理 AI、边缘算力与接管测试（S07/S13） |
+| 世界级 AI 创新生态 | AI 原点社区互证站 + 中关村科技服务翼 + 八要素生态图谱 | 开源研究、转化、人才日常与独立评议（§06.2/§06.5） |
+| AI+ 场景赋能新范式 | 小月河场景赋能翼 + 三站会车台 + 场景卡阈值 | 场景卡、最少数据、人工复核与日落条款（§06.3.2） |
+| 智能化 AI 活力城市 | 会车脊、公共空间组件库、生活验证节点 | 无 App、无障碍、低扰动的日常公共体验（§06.7） |
+| AI 治理全球话语权 | 会车协议七步状态机、公开运行板、会车档案、全球会车大会 | 协议字段与演练证据可被第三方检验（§06.1、GOV-OBS-04/05/06） |
+
+
 
 ### 全球 AI 创新生态案例（agent.2，8 个方向）
 
@@ -151,6 +187,19 @@ AI 创新生态图谱须包含八要素：土地、空间、产业、资金、�
 ### 设计意图与总则
 
 对众智园 AI 自主创新加速区、北京 AI 原点社区、大钟寺 AI 产业聚集区分别开展详细设计，达到规划综合实施方案的城市设计深度（设计方向 §03.3）[source:OFFICIAL-ANNOUNCEMENT] [standard:MOHURD-URBAN-DESIGN-MEASURES]。三区 polygon 均为 provisional_rough，面积只能作方向性参考，任何结论不得作为官方红线或精确面积依据；三区各自拥有不可替代的站点契约：固定输入、核心动作、责任角色、最低组件组合、固定输出、最小验收指标、回退/退出路径与不得越过的门槛（设计方向 §03.3 三站契约表）。每个重点区按"定位＋空间结构＋建筑更新＋交通慢行＋公共空间＋AI 场景＋实施风险"组织小方案，并引用 `geometry/key_areas.geojson` 对应 feature 与组件图层 [depth:three_key_area_detailed_design]。
+
+三站契约汇总如下（角色与指标均为概念建议或待验证口径，责任角色待确认）：
+
+| 契约字段 | 造解站（众智园） | 互证站（AI 原点社区） | 试行站（大钟寺） |
+| --- | --- | --- | --- |
+| 固定输入 | 待验证的问题、模型、算力与测试申请 | 候选解法、公共议题与质询 | 经互证的能力与产品 |
+| 核心动作 | 造解—体检—复盘：模型体检、失败边界验证、开源工具链共享 | 公共翻译—公共学习—居民反馈：质询、互证、解释与异议记录 | 街廊试行—验证大厅—企业测试三级界面 |
+| 责任角色（待确认） | 独立测试评审 + 现场安全角色 | 公共服务值守 + 社区联络角色 | 现场安全角色 + 商业运营主体 |
+| 最低组件组合 | PS-C02-001 会车台、PS-C04-001 人审点、PS-C03-001 证据窗、PS-C07-001 回退标记 | PS-C01-001 会车总台、PS-C04-002 人审点、PS-C05-001 安静湾、PS-C08-001 档案架 | PS-C02-003 会车台、PS-C04-003 人审点、PS-C06-001 交接湾、PS-C07-003 回退标记、PS-C08-002 档案架 |
+| 固定输出 | 带版本、证据与限制条件的"可测试解法" | 经互证与质询记录的公共知识（会车档案） | 公开的试行结果、事故与回退记录 |
+| 最小验收指标 | AREA-ZZY-01（面积口径，provisional）；复现率、失败覆盖率（GOV-OBS 组，公式待验证） | AREA-ORIGIN-01；异议关闭率、转人工率（INCLUSION-SERVICE 组，公式待验证） | AREA-DZS-01；人工接管成功率、退出成功率、异常闭环时长（OPS-WIN 组，公式待验证） |
+| 回退/退出路径 | 测试暂停并恢复人工流程；不合格模型阻断公共试行 | 分歧未闭合不放行；异议与退出记录公开 | 触发停止即恢复人工服务；未结事故不得续期 |
+| 不得越过的门槛 | 不宣布城市部署或永久认证；不越级使用未清权数据 | 不替代法定审批；不强制自动化 | 不描述为已批准规模化运营、招商或投资承诺 |
 
 ### 众智园 AI 自主创新加速区——造解站（约 192.1 ha，provisional）
 
@@ -298,26 +347,43 @@ AI 创新生态图谱须包含八要素：土地、空间、产业、资金、�
 
 治理绩效指标在 `metrics.json` 中登记为待定义项，不预填目标值：`GOV-OBS-01=credential_pair_completeness`（双向凭证互证界面的凭证对完整率）、`GOV-OBS-02=decision_log_link_rate`（人审决定日志关联率）、`GOV-OBS-03=status_snapshot_freshness`（治理状态索引快照新鲜度）；`credential_exchange_log` 是过程证据，不得伪装成绩效指标 [metric:GOV-OBS-01]。
 
+会车协议状态机已固化为机器可读工件：`visual/assets/data/meet-protocol.schema.json`（8 值 `status_code` + `record_status` 双字段、状态转移规则、绿/琥珀/红风险枚举、7 类角色四字段、分状态必填字段），配套确定性演练脚本 `visual/assets/check_meet_protocol.js`（14 项检查：转移合法性、全状态可达性、ARCHIVED 终态、PAUSED 恢复规则、合法/非法/未知序列 fixture 等，全部通过，证据见 `visual/assets/data/meet-protocol-drill.json`，逐字节可复跑）[metric:GOV-OBS-04] [metric:GOV-OBS-05] [metric:GOV-OBS-06]。
+
 ### 06.2 全球 AI 创新生态案例（agent.2，8 个方向）
 
 #### 06.2.1 案例证据闸门与使用边界
 
-以下 8 个案例方向依据设计契约 06.1 提炼**可迁移机制**，用于机制借鉴而非复制城市形态；任务书允许 5–8 个，本方案锁定 8 个 [source:AGENT-TASKBOOK] [standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK]。每个案例必须记录 `case_id/source_id/publisher/url/retrieved_at/current_status/license_or_use_basis/claimed_mechanism/measured_result_or_unknown/limitation/transfer_condition/non_transferable_condition`。当前工作区尚未取得各案例的一手公开来源与当前运营状态核验（见 `assumptions.json` 与设计契约 07.2 数据缺口 9），因此本章各案例的量化效果、组织结构和最新状态一律标**待核验**，仅作为机制线索；正式提交前须补充一手来源并把本表升级为正式比较证据，未核验前不进入正式评分依据。
+以下 8 个案例方向依据设计契约 06.1 提炼**可迁移机制**，用于机制借鉴而非复制城市形态；任务书允许 5–8 个，本方案锁定 8 个 [source:AGENT-TASKBOOK] [standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK]。每个案例必须记录 `case_id/source_id/publisher/url/retrieved_at/current_status/license_or_use_basis/claimed_mechanism/measured_result_or_unknown/limitation/transfer_condition/non_transferable_condition`。各案例官方来源 URL 已于 2026-08-15 核验并登记于 `sources.json`（CS01–CS08：URL、检索日期与使用限制逐条记录；核验明细见 `case-source-ledger.json`）；量化效果、组织结构与最新运营状态仍待一手来源与专业复核，未核验前不进入正式评分依据。
 
 #### 06.2.2 案例对照表（CS01–CS08）
 
 | case_id | 案例方向 | 可迁移机制 | 到会车场的转译（概念建议） | 来源状态 |
 | --- | --- | --- | --- | --- |
-| CS01 | 新加坡榜鹅数码园区 Punggol Digital District | 园区级数字孪生、共享运营系统与真实企业/公共服务测试结合，形成“同一空间底图支撑试行、监测与复盘”的地区运营机制 | 众智园造解站可研究以同一套空间底图承载模型体检、公共演示与失败复盘，避免多套系统互不相通 | 待核验（公开来源与最新状态待补充） |
-| CS02 | 芬兰赫尔辛基 Kalasatama | 居民、企业、研究机构和城市共同参与的小规模生活实验持续迭代 | 小月河场景赋能翼可迁移“真实问题招募 + 限域试行 + 居民复盘”，S01/S06/S08 场景可研究其参与式迭代节奏 | 待核验 |
-| CS03 | 西班牙巴塞罗那 22@ 与 Decidim | 创新街区建设与可追踪的数字参与流程结合，公共提案、反馈状态和决策留痕 | 会车协议的公共提案、异议与决策留痕可研究借鉴 Decidim 式的状态可视化，落实为公开运行板 | 待核验 |
-| CS04 | 荷兰阿姆斯特丹 Marineterrein | 可逆、阶段化的场地开放方式承载技术测试和公共活动 | 遗址公园与园区边界的临时会车台（C02）可研究其“先轻量开放、按阶段升级、可随时收回”的场地策略 | 待核验 |
-| CS05 | 韩国首尔 AI Hub / Sangam 数字创新集群 | 共享设施、创业支持、人才训练和城市试验连接研发与市场 | 众智园—大钟寺之间的“造解—试行”通道可研究其共享设施与人才训练的组合方式 | 待核验 |
-| CS06 | 加拿大蒙特利尔 Mila 人工智能生态 | 以高水平研究机构为核心连接人才培养、企业合作、开放社区和负责任 AI | AI 原点社区互证站可研究其“研究—社区公共接口”，把负责任 AI 议题转为公共学习内容 | 待核验 |
-| CS07 | 英国 Alan Turing Institute 公共领域合作方向 | 研究机构、公共部门和责任审查协同推进数据与 AI 项目 | 高风险场景“专业人审 + 证据公开 + 限制用途”治理框架可研究其三方协同与责任审查机制 | 待核验 |
-| CS08 | 法国巴黎 Station F 创新社区 | 创业工作空间、公共活动、服务机构和国际网络集中于可持续运营平台 | 会车总台的社区运营与访客转化路径可研究其空间—服务—网络一体化运营模型 | 待核验 |
+| CS01 | 新加坡榜鹅数码园区 Punggol Digital District | 园区级数字孪生、共享运营系统与真实企业/公共服务测试结合，形成“同一空间底图支撑试行、监测与复盘”的地区运营机制 | 众智园造解站可研究以同一套空间底图承载模型体检、公共演示与失败复盘，避免多套系统互不相通 | URL 已核验（2026-08-15）；机制/效果待复核 [source:CS01] |
+| CS02 | 芬兰赫尔辛基 Kalasatama | 居民、企业、研究机构和城市共同参与的小规模生活实验持续迭代 | 小月河场景赋能翼可迁移“真实问题招募 + 限域试行 + 居民复盘”，S01/S06/S08 场景可研究其参与式迭代节奏 | URL 已核验（2026-08-15） [source:CS02] |
+| CS03 | 西班牙巴塞罗那 22@ 与 Decidim | 创新街区建设与可追踪的数字参与流程结合，公共提案、反馈状态和决策留痕 | 会车协议的公共提案、异议与决策留痕可研究借鉴 Decidim 式的状态可视化，落实为公开运行板 | URL 已核验（2026-08-15） [source:CS03] |
+| CS04 | 荷兰阿姆斯特丹 Marineterrein | 可逆、阶段化的场地开放方式承载技术测试和公共活动 | 遗址公园与园区边界的临时会车台（C02）可研究其“先轻量开放、按阶段升级、可随时收回”的场地策略 | URL 已核验（2026-08-15） [source:CS04] |
+| CS05 | 韩国首尔 AI Hub / Sangam 数字创新集群 | 共享设施、创业支持、人才训练和城市试验连接研发与市场 | 众智园—大钟寺之间的“造解—试行”通道可研究其共享设施与人才训练的组合方式 | URL 已核验（2026-08-15） [source:CS05] |
+| CS06 | 加拿大蒙特利尔 Mila 人工智能生态 | 以高水平研究机构为核心连接人才培养、企业合作、开放社区和负责任 AI | AI 原点社区互证站可研究其“研究—社区公共接口”，把负责任 AI 议题转为公共学习内容 | URL 已核验（2026-08-15） [source:CS06] |
+| CS07 | 英国 Alan Turing Institute 公共领域合作方向 | 研究机构、公共部门和责任审查协同推进数据与 AI 项目 | 高风险场景“专业人审 + 证据公开 + 限制用途”治理框架可研究其三方协同与责任审查机制 | URL 已核验（2026-08-15） [source:CS07] |
+| CS08 | 法国巴黎 Station F 创新社区 | 创业工作空间、公共活动、服务机构和国际网络集中于可持续运营平台 | 会车总台的社区运营与访客转化路径可研究其空间—服务—网络一体化运营模型 | URL 已核验（2026-08-15） [source:CS08] |
 
 每个案例的不可迁移条件（示例）：榜鹅的园区权属与运营主体结构与海淀多主体街区不同；Decidim 的线上参与不能替代线下无障碍入口；Station F 的单一运营主体模式不能直接套用于公共空间的多元共治。执行端在补充一手来源时须同步记录上述 `non_transferable_condition`。
+
+#### 06.2.4 政策与现状锚点（v1.5 新增，background）
+
+以下政策与现状事实已于 2026-08-15 经公开来源核验并登记（`sources.json`），用途为背景叙事与机制参考，**不升级为空间控制结论**；涉及地块强度、权属、审批的数值一律以官方审定图则为准：
+
+| 锚点 | 事实（公开报道/政府公开文件口径） | 来源 |
+| --- | --- | --- |
+| 沿线街区控规获批 | 京张铁路遗址公园沿线街区控制性详细规划获批，一条"绿带"建设引领区域城市更新（2026-08 公开报道） | [source:POLICY-CONTROL-PLAN] |
+| 相邻更新项目 | 蓝景丽家将变身国际交流中心，作为百年京张 AI 创新带海淀新动作（2026-08-03 北京日报） | [source:POLICY-LANJINGLIJIA] |
+| AI 原点社区定位 | 北京 AI 原点社区被公开报道为"从 0 到 1"的试验田（北京日报） | [source:POLICY-ORIGIN-COMMUNITY] |
+| 海淀 AI 街区产业 | 海淀 3 平方公里 AI 街区，超七成企业涉人工智能（2026-06 光明网） | [source:POLICY-AI-DISTRICT-3KM] |
+| 城市更新导则 | 《海淀区城市更新导则（2025 年版）》已正式印发（2025-11 区政府门户公布） | [source:POLICY-RENEWAL-GUIDELINE-2025] |
+| 遗址公园现状 | 京张铁路遗址公园二期全线开放，形成 9 公里复合型城市遗址绿廊（2026-08-06 北京日报） | [source:FACT-PARK-PHASE2] |
+
+**对方案的影响（概念建议）**：控规获批与公园二期开放是"官方 polygon 发布前"最接近现状的事实锚点——本包主脊叙事（9.6–9.8 km，待核验）与公园公开的 9 公里口径可互为参照，但精确中心线、边界与法定控制指标仍以官方审定图则为准（§12.1 重算承诺不变）；蓝景丽家等相邻项目数值只属于具名地块，不移植到本方案三处 provisional 重点区 [source:POLICY-LANJINGLIJIA] [depth:risk_missing_data]。
 
 #### 06.2.3 八要素生态图谱（agent.2 ecosystem_map）
 
@@ -546,6 +612,29 @@ AI 创新生态图谱必须包含八类要素：**土地、空间、产业、资
 | S13 | PS-C02-001、RD-CONN-002、PS-C07-001 | C02、C04、C07 | s_quarterly 试验窗口（概念） | 专业安全 + 现场接管 | GOV-OBS、INCLUSION-SERVICE |
 | S14 | PS-C01-001、BLD-SVC-001 | C01、C04、C07 | s_weekly 服务日 | 法律服务专业审核 + 公共服务值守 | INCLUSION-SERVICE、GOV-OBS |
 
+#### 06.3.2 阈值化草案与校准原则（v1.2 新增）
+
+为把治理承诺落到可核查层面，下表为 14 张场景卡给出**成功阈值、停止阈值与人工替代基线的概念草案**。阈值均为草案值，仅用于试点设计与评审讨论，**不构成承诺值**；任何试点启动前须以真实场地基线、数据与专业复核校准后写入正式运行规则（对应 GOV-OBS / OPS-WIN / INCLUSION-SERVICE 组指标的公式待验证状态）。
+
+| 卡 | 成功阈值草案 | 停止阈值草案 | 人工替代基线 |
+| --- | --- | --- | --- |
+| S01 城市问题会诊台 | 可核实率≥80%、异议关闭率≥70% | 引用不可核实、个人信息进入、被误作行政决定；同类有效异议累计 3 次即停 | 人工工单与线下窗口，24 小时内响应 |
+| S02 静音无障碍寻路 | 路线核验率 100%（数据变更即重审） | 路线数据过期、障碍未标、用户报告危险累计 2 起即停 | 静态无障碍地图与人工问路 |
+| S03 骑手—机器人交接湾 | 行人冲突 0、越界 0、平均等待≤2 分钟 | 任何人身冲突或越界即停机；同类有效投诉累计 3 次停试 | 恢复人工配送与现场调度 |
+| S04 校园算力共享班 | 预约利用率≥70%、平均排队≤30 分钟 | 资源超限、敏感任务泄露、系统异常 | 恢复原资源调度流程 |
+| S05 京张遗址问答台 | 来源完整率 100%、发布前版权核验完成 | 来源缺失、争议被隐藏、版权不明 | 人工导览与静态说明 |
+| S06 公共空间排班器 | 冲突解决率≥90%、安静时段零被覆盖 | 噪声投诉累计 3 次或安静/无障碍需求被覆盖 | 恢复人工排班 |
+| S07 模型体检场 | 复现率 100%、失败覆盖率≥80% | 数据越权、无法复现、不合格模型进入公共试行 | 上一有效人工测试流程 |
+| S08 社区照护转接站 | 正确转接率≥90%、误作医疗判断 0 | 误作医疗/资格判断 1 起即停 | 电话与线下窗口 |
+| S09 街区小修复共识台 | 现场核验率 100%、重复报修率≤20% | 未现场核验即给出优先级建议 | 人工巡查与工单系统 |
+| S10 多语种夜间会客厅 | 字幕/翻译端到端延迟≤5 秒 | 隐私泄露、字幕错误累计 3 次 | 人工翻译与字幕服务 |
+| S11 可退出的智能消费 | 退出成功率≥95%、不依赖人脸识别 | 退出请求 24 小时未响应 | 人工服务台 |
+| S12 开源成果复用台 | 知识包审核完成率 100%、复用条件登记 | 未审核内容发布、许可不明 | 人工审核流程 |
+| S13 低速接驳沙盒 | 紧急接管成功率 100%、接管时间≤10 秒 | 任何人身伤害或越界即停（红色：仅人类主导） | 人类驾驶员接管 |
+| S14 公共法律导航 | 来源可追溯率 100%、误作法律意见 0 | 被误作律师或行政决定 1 起即停 | 人工窗口与官方渠道 |
+
+**校准原则**：① 阈值须按场景的真实基线（试点前测量）校准，基线数据与校准记录写入会车档案；② 停止阈值一经触发不得由系统自行解除，恢复须经人审与互证（七步第 4–5 步）；③ 人工替代基线保证非数字入口在停止期间服务不断线；④ 任何阈值调整须登记 changelog 并重新进入披露—互证流程 [metric:GOV-OBS-01] [metric:OPS-WIN-01] [metric:INCLUSION-SERVICE-01]。
+
 ### 06.4 产业验证场景（agent.3，V01–V04，4 个）
 
 产业验证场景是“AI 产业测试验证”类场景的集中表达，满足任务书“不少于 3 个”的要求（本方案提供 4 个）。所有验证内容均为概念建议，验证结论只对当次限定条件有效，不构成永久认证或已批准规模化运营 [source:AGENT-TASKBOOK] [depth:three_key_area_detailed_design]。
@@ -633,6 +722,9 @@ AI 创新生态图谱必须包含八类要素：**土地、空间、产业、资
 
 组件与公共空间面的关系：`geometry/public_space.geojson` 中另有四处公共广场面（PS-PLAZA-001–004），作为会车台、人审点与安静湾的场地载体，广场面面积计入公共空间指标 [metric:BLUEGREEN-PUBLIC-02]；组件为点/面要素，不计入广场面积统计。
 
+**会车台落位规则与分级（v1.4 新增）**：会车台（C02）是"多点会车"的空间落点，落位判定规则为：① 沿会车脊与横向道路/缝合线交点（RD-CONN 候选点）布置；② 与三站站前公共广场相邻（PS-PLAZA-001/002/003）；③ 与骑手—机器人交接湾（C06）协同布置以处理交接冲突；④ 跨路节点优先考虑人行优先的低速限域。分级建议（概念）：一级＝会车总台（C01，1 处，承载全站申请与公开评审）；二级＝会车台（C02，3 处，PS-C02-001 造解站/PS-C02-002 原点社区/PS-C02-003 试行站，承载限定时段协商试行）；三级＝候场与交接节点（C06，2 处，PS-C06-001/002）。会车台节点数由 `geometry/public_space.geojson` 可复算（component_id=C02 共 3 处），登记为 `NODE-SCENARIO-01` [metric:NODE-SCENARIO-01] [data:geometry/public_space.geojson#PS-C02-001] [data:geometry/public_space.geojson#PS-C02-003]。
+
+
 ### 06.8 文化叙事（agent.5）
 
 #### 06.8.1 主叙事与四种方法
@@ -685,6 +777,36 @@ AI 创新生态图谱必须包含八类要素：**土地、空间、产业、资
 - **命名测试**：执行端须记录至少一次中文理解测试、一次英文母语/高水平使用者测试、一次商标/域名/近似名称检索；测试未完成时名称状态保持 `concept_name_unverified`。已记录的候选误读检查：`双路签`/`Twin Staff`（易误读为铁路路签器具，`decision=rejected`，对外退回“双向凭证互证界面（凭证互换）”）、`状态灯带`/`Signal Ribbon`（易误读为实体灯具，`decision=rejected`，对外退回“状态索引条 / 治理状态索引”）、`会车时刻/The Meet Hour`（易误读为固定 60 分钟活动，`decision=rejected`，对外退回“公共复核与质询窗口”概念建议候选）。三项候选均记录于命名测试日志 `candidate_label` 域，任一重大误读触发 `decision=rejected` 并退回功能描述基线。
 - **国际活动定位**：邀请外部团队带来可复核的方法、数据和失败案例，而不是只做城市宣传；所有招商、资金、政策、人才落地和活动安排写为建议、意向或待协商事项，不表述为已确定承诺。
 
+#### 06.9.3 品牌视觉规范（v1.6 新增，概念建议）
+
+品牌 IP 不是一张 Logo，而是一套可延展、可授权、可撤回的系统。以下规范均为概念建议，最终采用前须完成商标检索、字体替换与图形权利审查（约束 `A-BRAND-001`）。
+
+**标识层级与强制规则**：
+
+| 层级 | 内容 | 强制规则 |
+| --- | --- | --- |
+| 基础层 | 中文"会车场 / MEET YARD"+ 英文完整名 + 主 Logo（两条相向开放轨迹 + 中央人审方点） | 任何导视、组件库与出版物共用同一套标识规则；节点号、版本、责任人、更新时间、人工求助方式五项信息必须同时出现，缺一项即视为标识不完整（对齐组件 C01–C08 字段纪律） |
+| 应用层 | 导视、公共空间组件、数字屏、纸质地图 | 导视使用单色线形变体；深底版仅用于数字屏；24px 缩略测试版仅用于图标与 favicon |
+| 活动层 | 四个年度活动子品牌（三班会车、开放会车日、跨域会车周、全球会车大会） | 各自有活动副标但共用基础层标识系统；副标逐年回收，不另起无关概念 |
+| 授权层 | 非商业公共传播、学术与社区活动可免费使用；商业使用须另行授权 | 文化标识与整带 Logo 系统分列、不互相替代；任何使用不得暗示政府背书或实施承诺；不得与政府标识或企业商标混用 |
+
+**Logo 变体（概念）**：主标（双色：京张砖红轨迹 + 石墨黑人审方点）；单色线形版（用于导视与黑白打印）；深底版（用于数字屏与夜间场景）；24px 缩略版（图标/favicon，须在 16px 与 24px 两档保持轨迹与人审方点可辨）。保护区：主标四周保留不小于方点直径的空间；不旋转、不压扁、不加投影、不与其他图形叠加 [source:AGENT-TASKBOOK]。
+
+**概念色板令牌**（与第 2 章色板同源，语义化命名）：
+
+| 令牌 | 色值建议（概念） | 语义用途 | 禁用场景 |
+| --- | --- | --- | --- |
+| `ink-black` 石墨黑 | 深灰近黑 | 正文、既有条件与责任边界 | 不作氛围铺色 |
+| `paper-white` 纸张白 | 暖白 | 底、留白与开放界面 | 不作发光色 |
+| `jz-brick` 京张砖红 | 砖红 | 遗产、会车轨迹与主标 | 不用于风险分级 |
+| `signal-amber` 信号琥珀 | 琥珀 | 风险分级琥珀 + 警示 | 不单独作"放行"含义 |
+| `civic-blue` 公民蓝 | 蓝 | 公民界面、人审方点 | 不用于装饰渐变 |
+| `eco-green` 生态绿 | 绿 | 蓝绿空间与风险分级绿 | 不覆盖状态文字 |
+
+颜色**不能作为唯一识别手段**：治理状态（申请中…已归档）用文字与状态码表达，风险分级（绿/琥珀/红）可保留颜色但须并列文字；色觉无障碍要求颜色对比度与文字标注双通道 [standard:BARRIER-FREE-ENVIRONMENT-LAW]。
+
+**小尺寸与无障碍规则**：24px 缩略版只保留"轨迹 + 方点"两要素；16px 图标档去掉轨迹细节仅保留方点与留白；深底版不得低于对比度要求；所有变体须通过黑白打印测试。执行端在任何对外发布前完成商标/近似名称检索并记录于命名测试日志，名称状态在测试未完成时保持 `concept_name_unverified`（§06.9.2）。
+
 ### 06.10 长期运营机制（agent.6）
 
 #### 06.10.1 年度活动体系与四级节律（agent.6 annual_event_system）
@@ -731,7 +853,7 @@ AI 创新生态图谱必须包含八类要素：**土地、空间、产业、资
 
 ### 06.11 指标与证据链小结
 
-本章场景卡与运营机制的指标全部回指 `metrics.json` 与设计契约 07.1 的固定 `group_id`（`SCOPE-RESEARCH/SCOPE-OVERALL/SCOPE-KEY/AREA-ZZY/AREA-ORIGIN/AREA-DZS/SPINE-JZ/LANDUSE-COVERAGE/BLUEGREEN-PUBLIC/MOBILITY-NETWORK/NODE-SCENARIO/BUILDING-RENEWAL/GOV-OBS/OPS-WIN/INCLUSION-SERVICE`），不另起自由指标名称；其中 NODE-SCENARIO 当前仅保留为非指标概念主张，未进入 `metrics.json` 计算。衍生指标须挂 `parent_metric_id` [metric:GOV-OBS-01] [metric:GOV-OBS-02] [metric:GOV-OBS-03]；其余治理与运营指标详见：[metric:OPS-WIN-01] [metric:OPS-WIN-02] [metric:INCLUSION-SERVICE-01]。
+本章场景卡与运营机制的指标全部回指 `metrics.json` 与设计契约 07.1 的固定 `group_id`（`SCOPE-RESEARCH/SCOPE-OVERALL/SCOPE-KEY/AREA-ZZY/AREA-ORIGIN/AREA-DZS/SPINE-JZ/LANDUSE-COVERAGE/BLUEGREEN-PUBLIC/MOBILITY-NETWORK/NODE-SCENARIO/BUILDING-RENEWAL/GOV-OBS/OPS-WIN/INCLUSION-SERVICE`），不另起自由指标名称；其中 NODE-SCENARIO-01（会车台节点数 3）已进入 `metrics.json` 计算，CLM-009 仍仅作非指标概念主张。衍生指标须挂 `parent_metric_id` [metric:GOV-OBS-01] [metric:GOV-OBS-02] [metric:GOV-OBS-03]；其余治理与运营指标详见：[metric:OPS-WIN-01] [metric:OPS-WIN-02] [metric:INCLUSION-SERVICE-01]。
 
 `GOV-OBS-*`、`OPS-WIN-*`、`INCLUSION-SERVICE-01` 当前为待定义/待验证指标，不预填目标值，正式提交前置条件为完成 `status/value/unit/source_files/formula/confidence/assumptions` 定义。
 
@@ -812,7 +934,7 @@ AI 创新生态图谱必须包含八类要素：**土地、空间、产业、资
 
 蓝绿空间以京张遗址公园会车脊为骨架，贯通清河、小月河方向与高校、企业、社区出行需求，形成南北贯通、东西连通的步道、骑行道与绿色空间体系 [depth:blue_green_public_space]。`geometry/green_space.geojson` 的 6 个要素全部为概念建议（`source=concept`、`confidence=low`）：GRN-SPINE-001（会车脊公园绿地，与 LU-1401-01 同源，约 207.5 ha）、GRN-ORIGIN-001（原点社区绿地）、GRN-GAOXIAO-001（高校带绿地）、GRN-DZS-001（大钟寺片区绿地）、GRN-WEST-001 与 GRN-NORTH-001（西侧、北侧片区绿地）[data:geometry/green_space.geojson#GRN-SPINE-001]。
 
-蓝绿面积合计约 220.8 万平方米，占提交边界约 19.4% [metric:BLUEGREEN-PUBLIC-01]。该比例是概念结构比例，未含现状绿地核验（assumptions 已注明），官方 polygon 与现状绿地数据发布后须重算。绿地率的完整公式、来源与置信度保存在 metrics.json [metric:BLUEGREEN-PUBLIC-01]。
+蓝绿面积按绿地 polygon 几何并集计约 217.6 万平方米（要素面积总和约 220.8 万 m²，重叠约 3.19 万 m² 只计一次），占提交边界约 19.07% [metric:BLUEGREEN-PUBLIC-01]。该比例是概念结构比例，未含现状绿地核验（assumptions 已注明），官方 polygon 与现状绿地数据发布后须重算。绿地率的完整公式、来源与置信度保存在 metrics.json [metric:BLUEGREEN-PUBLIC-01]。
 
 ### 9.2 公共空间与组件库
 
@@ -822,6 +944,8 @@ AI 创新生态图谱必须包含八类要素：**土地、空间、产业、资
 
 **图面视觉语法**（贯穿五张图与 visual/index.html）固定为：双向主体关系 + 中央人审界面 + 证据状态标签 + 责任角色标记 + 回退/人工入口 + 低对比虚线 provisional 边界 [source:AGENT-TASKBOOK]。状态标签使用"申请中、已披露、待互证、已人审、限域试行、已暂停、已回退、已归档"等文字，不以颜色作为唯一识别手段；风险分级（绿/琥珀/红）独立于治理状态，颜色冲突时风险分级保留颜色、治理状态退回文字与状态码。provisional 边界在图面中只以低对比虚线呈现，视觉主角是设计意图、节点关系、公共路径、治理状态与证据链，不以矩形边界或大色块主导构图 [data:geometry/constraints.geojson#CST-DISCIPLINE-001]。
 
+
+**现状对照说明**：公共空间占比（`public_space_ratio≈1.63%`，仅统计概念广场面）为概念结构比例，公开渠道暂无可复算的现状公共空间基底数据可作对照；现状核验与对照基准待官方数据发布后补充（对应 §12.1 数据缺口），不把概念比例表述为现状结论。
 ### 9.3 城市风貌与文化展示
 
 城市风貌融合京张铁路历史文化、中关村创新文化与 AI 创新文化，使用清华园火车站等文化资源，提出城市基调、建筑风貌、屋顶形态、体量与界面引导。风貌控制严格区分三层：官方管控（无文保与控规依据时不设伪精确控制线）、设计建议（概念层面）、待确认条件（正式深化前置）。文化导视与总体 Logo 分层使用：总体品牌识别方案、文化标识说明资源、场景状态标识说明运行状态，三者不混用。
@@ -837,15 +961,15 @@ AI 朝圣地标与荣誉展示节点（L01 会车总台、L02 百年问题台、
 
 更新项目清单以"可审查、可复核、可回退"为组织原则 [depth:renewal_project_list]。项目分为四类，均标注类型、空间位置、依赖条件与责任主体类型：
 
-| 项目 | 类型 | 空间落点 | 主要依赖条件 | 证据引用 |
-| --- | --- | --- | --- | --- |
-| 会车脊慢行断点缝合研究 | 公共空间/慢行 | RD-CONN-001/002/003 候选点 | 道路红线、桥下空间、交通与文保复核 | [data:geometry/roads.geojson#RD-CONN-001] |
-| 众智园造解站公共验证界面 | 蓝绿/产业展示 | GRN-SPINE-001、BLD-ZZY-001 | 河道蓝线、生态与防洪条件 | [data:geometry/green_space.geojson#GRN-SPINE-001] |
-| 原点社区近校成果转化街 | 城市更新/产业服务 | BLD-ORIGIN-001、PS-C01-001 | 校区边界、权属、首层业态 | [data:geometry/buildings.geojson#BLD-ORIGIN-001] |
-| 大钟寺站四象限步行连通研究 | 轨道一体化/慢行 | PS-PLAZA-001、RD-PED-001 | 轨道站点、道路交叉口、市政管线 | [data:geometry/public_space.geojson#PS-PLAZA-001] |
-| 骑手—机器人交接湾试点 | 场景验证/运营 | PS-C06-001/002 | 场地许可、安全值守、劳动评议 | [data:geometry/public_space.geojson#PS-C06-001] |
-| AI 公共服务与端侧算力节点 | 新基建/公共服务 | BLD-SVC-001 | 能源、算力、安全与运营主体 | [data:geometry/buildings.geojson#BLD-SVC-001] |
-| 全球会车大会与年度活动体系 | 运营/品牌 | L01 会车总台、PS-C01-001 | 公共空间许可、活动安全、版权清权 | [data:geometry/public_space.geojson#PS-C01-001] |
+| 项目 | 类型 | 空间落点 | 主要依赖条件 | 责任主体类型（待确认） | 证据引用 |
+| --- | --- | --- | --- | --- | --- |
+| 会车脊慢行断点缝合研究 | 公共空间/慢行 | RD-CONN-001/002/003 候选点 | 道路红线、桥下空间、交通与文保复核 | 交通/街道管理部门 | [data:geometry/roads.geojson#RD-CONN-001] |
+| 众智园造解站公共验证界面 | 蓝绿/产业展示 | GRN-SPINE-001、BLD-ZZY-001 | 河道蓝线、生态与防洪条件 | 园区运营方 / 区更新平台 | [data:geometry/green_space.geojson#GRN-SPINE-001] |
+| 原点社区近校成果转化街 | 城市更新/产业服务 | BLD-ORIGIN-001、PS-C01-001 | 校区边界、权属、首层业态 | 高校 / 街道 / 运营方 | [data:geometry/buildings.geojson#BLD-ORIGIN-001] |
+| 大钟寺站四象限步行连通研究 | 轨道一体化/慢行 | PS-PLAZA-001、RD-PED-001 | 轨道站点、道路交叉口、市政管线 | 轨道主体 / 街道 | [data:geometry/public_space.geojson#PS-PLAZA-001] |
+| 骑手—机器人交接湾试点 | 场景验证/运营 | PS-C06-001/002 | 场地许可、安全值守、劳动评议 | 配送平台 / 现场安全角色 | [data:geometry/public_space.geojson#PS-C06-001] |
+| AI 公共服务与端侧算力节点 | 新基建/公共服务 | BLD-SVC-001 | 能源、算力、安全与运营主体 | 公共服务运营主体 | [data:geometry/buildings.geojson#BLD-SVC-001] |
+| 全球会车大会与年度活动体系 | 运营/品牌 | L01 会车总台、PS-C01-001 | 公共空间许可、活动安全、版权清权 | 活动主办方（待确认） | [data:geometry/public_space.geojson#PS-C01-001] |
 
 项目清单不承诺实施：没有权属、资金、实施主体与审批路径的项目一律写为实施风险与深化方向 [depth:phasing_implementation]。年度活动体系、开发者社区运营、场景开放日、公共体验路线与国际传播机制均按 agent.6 要求写清运营对象、频率建议、责任边界、转化路径与风险，所有时段、规模、主办、资源和批准状态在责任主体确认前为概念建议（rhythm_id：s_daily/s_weekly/s_quarterly/s_annual）[source:AGENT-TASKBOOK]。
 
@@ -857,12 +981,12 @@ AI 朝圣地标与荣誉展示节点（L01 会车总台、L02 百年问题台、
 
 `geometry/phasing.geojson` 的 13 个分期要素按四阶段组织，与设计契约的"会车"推进逻辑一致 [data:geometry/phasing.geojson#PH-001] [depth:phasing_implementation]：
 
-| 阶段 | 概念内容 | 参考面积（EPSG:4548） | 分期要素 |
-| --- | --- | --- | --- |
-| 阶段一 核验 | 核验现状条件、公开史料与公共需求；建立会车脊叙事与数据链，不启动工程 | 约 400.0 ha | PH-001 |
-| 阶段二 造解/互证先行 | 众智园造解站与 AI 原点社区互证站先行；模型体检、开源协作、公共评议 | 约 233.7 ha | PH-002-01～04 |
-| 阶段三 限域试行 | 大钟寺试行站与小月河场景翼限域试行；用户选择、人工接管、失败回退 | 约 288.7 ha | PH-003-01～03 |
-| 阶段四 复盘扩展 | 跨域复盘、失败归档、知识包发布；扩展条件成熟后再议 | 约 218.9 ha | PH-004-01～05 |
+| 阶段 | 概念内容 | 参考面积（EPSG:4548） | 分期要素 | 主责主体类型（待确认） | 建议窗口（概念建议） | 验收与退出触发 |
+| --- | --- | --- | --- | --- | --- | --- |
+| 阶段一 核验 | 核验现状条件、公开史料与公共需求；建立会车脊叙事与数据链，不启动工程 | 约 400.0 ha | PH-001 | 区更新统筹平台 / 街道 | 启动期 0–1 年 | 验收：史料、数据链与需求登记齐备；退出：缺公开资料则维持核验，不启动工程 |
+| 阶段二 造解/互证先行 | 众智园造解站与 AI 原点社区互证站先行；模型体检、开源协作、公共评议 | 约 233.7 ha | PH-002-01～04 | 区更新平台 / 园区运营方 / 高校 | 1–3 年 | 验收：首个公共验证界面完成"申请—披露—互证"闭环并归档；退出：责任角色缺失或异议未闭合不放行 |
+| 阶段三 限域试行 | 大钟寺试行站与小月河场景翼限域试行；用户选择、人工接管、失败回退 | 约 288.7 ha | PH-003-01～03 | 街道 / 商业运营主体 / 现场安全角色 | 2–4 年 | 验收：限域试行完成一次完整七步闭环并归档；退出：停止触发累计或人工接管失败则回退 |
+| 阶段四 复盘扩展 | 跨域复盘、失败归档、知识包发布；扩展条件成熟后再议 | 约 218.9 ha | PH-004-01～05 | 运营联盟 / 档案维护角色 | 4 年起 | 验收：知识包发布且复用条件登记；退出：条件不成熟保持现状或回退 |
 
 四阶段合计覆盖提交边界（约 1141.3 ha），各阶段面积随官方 polygon 发布后整体重算。分期逻辑与征集周期区分：征集周期是提交成果的时间要求，实施分期是城市更新推进路径。近期以轻量设施、运营活动与服务平台启动，中期等待正式控规、市政、交通与权属条件确认，长期形成治理框架。任何阶段的扩展都遵循"核验→造解/互证→限域试行→复盘扩展"的循环，条件不成熟时保持现状或回退，不强行推进 [data:geometry/phasing.geojson#PH-004-01]。
 
@@ -884,9 +1008,9 @@ AI 朝圣地标与荣誉展示节点（L01 会车总台、L02 百年问题台、
 | 用地覆盖 | LANDUSE-COVERAGE | LANDUSE-COVERAGE-01（覆盖率 1.0） | known（high） |
 | 蓝绿与公共空间 | BLUEGREEN-PUBLIC | BLUEGREEN-PUBLIC-01/02（绿地并集 2,176,274.715 m²；要素面积总和 2,208,160.093 m²、重叠 31,885.379 m²；广场 185,906 m²） | known（low，待现状核验） |
 | 步行/骑行/公交网络 | MOBILITY-NETWORK | MOBILITY-NETWORK-01（概念网络 20,757 m） | known（low，覆盖率待核验） |
-| 会车台与场景分布 | NODE-SCENARIO | 待定义（CLM-009 仅作非指标概念主张，不进入 `metrics.json` 计算） | 待定义 |
+| 会车台与场景分布 | NODE-SCENARIO | NODE-SCENARIO-01（会车台节点数 3：PS-C02-001/002/003）；CLM-009 仍为非指标概念主张 | known（geometry 可复算） |
 | 建筑与更新分类 | BUILDING-RENEWAL | BUILDING-RENEWAL-01（概念组团基底 774,225 m²） | known（low，非拆改留结论） |
-| 治理绩效 | GOV-OBS | GOV-OBS-01/02/03（凭证对完整率、决定日志关联率、状态快照新鲜度） | unknown（待定义，不预填目标值） |
+| 治理绩效 | GOV-OBS | GOV-OBS-01/02/03（凭证对完整率、决定日志关联率、状态快照新鲜度，待定义）；GOV-OBS-04/05/06（协议步骤 7、状态码 8、演练通过 14/14） | 01–03 unknown；04–06 known（机器工件可复跑） |
 | 运营绩效 | OPS-WIN | OPS-WIN-01/02（公共复核产出率、开放场次/维护者留存/知识包复用） | unknown（待定义） |
 | 包容与服务连续性 | INCLUSION-SERVICE | INCLUSION-SERVICE-01（无障碍连续性/人工替代/可退出成功率） | unknown（待定义） |
 
@@ -932,13 +1056,35 @@ known 指标全部可由 GeoJSON 或可信来源复算，公式、来源文件�
 
 ### 12.4 责任与合规口径
 
-本方案为 AI 参与的开放共创建议：所有空间落地内容均为概念建议、参考方案或可供专业团队深化研究的材料，不替代正式规划，不构成政府审定、投资、建设、审批或运营承诺。AI 不具有城市治理主体资格或独立决策权；高风险事项由人类专业人员主导，每个场景有责任人、版本、日志、人工接管、停止条件、回退流程与异常通知。本方案不声称官方批准、审定控规、最终土地权属、最终建设规模或保证实施；AI agent 对事实、来源、版权、空间数据、指标与表达负责，维护者与专业评审可依据自检结果、空间复核与合规矩阵要求返修或拒绝 [source:SITE-PACKAGE] [standard:PROJECT-OFFICIAL-ANNOUNCEMENT]。
+本方案为 AI 参与的开放共创建议：所有空间落地内容均为概念建议、参考方案或可供专业团队深化研究的材料，不替代正式规划，不构成政府审定、投资、建设、审批或运营承诺。AI 不具有城市治理主体资格或独立决策权；高风险事项由人类专业人员主导，每个场景有责任人、版本、日志、人工接管、停止条件、回退流程与异常通知。本方案不声称官方批准、审定控规、最终土地权属、最终建设规模或保证实施；AI 生成内容的事实、来源、版权、空间数据、指标与表达由提交方（人类参与者）负责，维护者与专业评审可依据自检结果、空间复核与合规矩阵要求返修或拒绝；AI 系统不承担法律或治理主体责任 [source:SITE-PACKAGE] [standard:PROJECT-OFFICIAL-ANNOUNCEMENT]。
 
 <!-- PART3-DONE -->
 
-## 参考资料
+### 12.5 公开质疑与回应台账（v1.3 新增）
+
+| 来源 | 质疑/提示 | 本方案的回应 | 处理状态 |
+| --- | --- | --- | --- |
+| Issue #846（open-city-ai/haidian） | 仓库临时总体设计范围多边形与 OSM 测绘的京张铁路遗址公园不相交（最近约 412.5 m，可复现） | 本包全部几何均标注 provisional（`official_boundary=false`）；边界与遗址公园的空间关系不作为精确结论；官方 polygon 发布后按 §12.1 整体重算而非逐文件修补 | 已登记为不利证据；随官方 polygon 重算后复核 |
+| Issue #1029 | 临时几何 PROV-KEY-003（大钟寺）质心与公告位置疑似偏移（约 2.26 km） | 本包 key_areas 直接继承仓库登记几何并标注 provisional；不用于精确面积、红线或审批结论 | 已登记；待官方 polygon 裁决 |
+| Issue #1061「城市建设不能打表演赛」 | 质疑 Agent 参与规划设计的边界，并指出部分计划书措辞模棱两可 | 七步协议第 4 步人审（人类最终判断不可外包）为设计核心（§06.1.3）；§12.3 越界措辞闸门禁止"规划为/将落地/已批准"类表述；§12.4 明确 AI 不承担法律或治理主体责任、高风险事项由人类专业人员主导 | 采纳为质量提醒；正文措辞已按纪律约束，边界声明见 §01 与本章 |
+| Issue #1071 | 建议澄清"只开放给 Agent"的概念研究边界与公共流程边界 | 本包以"概念建议、参考方案、供专业团队深化"为统一表述边界（§01 措辞纪律）；不声称政府审定、实施或投资承诺；征集流程与实施分期分离（§10.3） | 部分采纳；后续随官方文案更新同步 |
+
+本台账仅登记与本方案直接相关的公开质疑；其余议题见仓库 Issue 讨论。台账内容随每次迭代更新，处置状态不虚构"已解决"。
 
 ## 参考资料
+
+| 编号 | 来源 | 分级/类型 | URL 或路径 | 检索日期 | 用途 |
+| --- | --- | --- | --- | --- | --- |
+| OFFICIAL-ANNOUNCEMENT | 百年京张 AI 创新带城市设计国际方案征集资格预审公告（北京市规自委海淀分局） | formal | https://ghzrzyw.beijing.gov.cn/zhengwuxinxi/tzgg/hd/202605/t20260509_4643047.html | 2026-08-15 | 项目名称、三层范围、三处重点区、设计任务 |
+| AGENT-TASKBOOK | 面向智能体任务书摘录 | formal | brief/site-package/agent_taskbook.json | 2026-08-15 | agent.1–6 必选任务与共创原则 |
+| SITE-PACKAGE | 仓库机器可读资料包 | formal | brief/site-package/ | 2026-08-15 | 任务、枚举、坐标政策、指标范围、schema |
+| SOURCE-REGISTRY | 公开资料登记表 | formal | data/source_registry.json | 2026-08-15 | 来源分级与使用边界 |
+| PROCESSED-FACT-PACK | 处理资料导航层 | background | data/processed/agent_fact_pack.md | 2026-08-15 | 阅读导航，不新增权威 |
+| BOUNDARY-SOURCE / KEY-AREA-SOURCE | 仓库临时粗略边界 | provisional | brief/site-package/geometry/provisional_boundaries.geojson | 2026-08-15 | 概念生成与自检，非官方红线 |
+| CS01–CS08 | 全球案例官方来源（PDD/Kalasatama/Decidim/Marineterrein/Seoul AI Hub/Mila/Turing/Station F） | background（机制借鉴） | 见 `sources.json` 各条目 | 2026-08-15 | 机制借鉴；量化效果与运营状态待复核 |
+
+完整字段（来源状态、许可、时空范围、局限与不可迁移条件）见 `sources.json`；核验明细见 `case-source-ledger.json`。
+
 
 本方案的全部设计主张均基于公开资料与仓库登记的机器可读输入构建，证据链按 `data/source_registry.json` 的四级来源分级（formal/background/provisional/no）管理：官方公告与任务书作为第一依据 [source:OFFICIAL-ANNOUNCEMENT] [source:AGENT-TASKBOOK]；仓库 site-package（design_brief、allowed_design_space、enums、ranges、schemas、standards）作为机器可读输入 [source:SITE-PACKAGE]；provisional 边界仅用于生成与展示 [source:BOUNDARY-SOURCE] [source:KEY-AREA-SOURCE]，不得作为官方红线或精确面积依据。
 

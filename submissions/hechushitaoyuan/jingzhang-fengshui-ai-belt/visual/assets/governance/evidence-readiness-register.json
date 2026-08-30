@@ -1,0 +1,156 @@
+{
+ "schema_version": "1.0",
+ "register_id": "qi-pulse-evidence-readiness",
+ "package_id": "jingzhang-fengshui-ai-belt",
+ "honesty_note_zh": "当前全部场景处于 H0（概念态·未启动）；本登记表刻意要求升级证据字段保持空缺——字段非空即构成对未发生事实的虚构。验证器会拒绝任何非空值。",
+ "honesty_note_en": "All scenarios are honestly at H0 (concept stage, not started). The register deliberately requires evidence fields to stay empty; any non-empty value would fabricate facts that do not exist, and the verifier rejects it.",
+ "scenarios": {
+  "#4 配送港": {
+   "current_level": "H0",
+   "gates": [
+    {
+     "scenario": "#4 配送港",
+     "gate": "H1",
+     "gate_name": "H1 材料就绪",
+     "status": "未达成",
+     "required_materials": "路段范围图、风险识别清单、基线采集协议、无 AI/人工接管核验单",
+     "responsible_roles": "产业测试验证场景主持人 + 实施主体 + 无障碍守护者",
+     "review_requirement": "独立复核者确认材料完整且可追溯",
+     "fallback_if_missing": "若材料缺项或不可追溯，则维持 H0",
+     "transition_condition": "若全部材料经会签确认，则 H0→H1"
+    },
+    {
+     "scenario": "#4 配送港",
+     "gate": "H2",
+     "gate_name": "H2 授权就绪",
+     "status": "未达成",
+     "required_materials": "书面路权口径、交通与安全接口确认、测试时段公示草案",
+     "responsible_roles": "实施主体 + 交通与安全主管类型岗",
+     "review_requirement": "独立复核者核对授权边界与公示范围一致",
+     "fallback_if_missing": "若授权缺失、撤回或越界，则维持/退回 H1 并停用",
+     "transition_condition": "若授权文件与公示边界经会签确认，则 H1→H2"
+    },
+    {
+     "scenario": "#4 配送港",
+     "gate": "H3",
+     "gate_name": "H3 基线完成",
+     "status": "未达成",
+     "required_materials": "开放前人工配送与慢行对照基线、测量设备校准记录、采样点位台账",
+     "responsible_roles": "实施主体 + 专业机构",
+     "review_requirement": "独立复核者复算抽样记录并签署基线版本",
+     "fallback_if_missing": "若基线来源不可核或校准失效，则不得进入 H4",
+     "transition_condition": "若基线数据与口径经第三方可复算确认，则 H2→H3"
+    },
+    {
+     "scenario": "#4 配送港",
+     "gate": "H4",
+     "gate_name": "H4 可开放",
+     "status": "未达成",
+     "required_materials": "标定阈值、停止与接管预案、数据治理规则、公众告知文本",
+     "responsible_roles": "场景主持人 + 公共运营机构 + 独立复核者",
+     "review_requirement": "独立复核者与无障碍守护者共同会签开放条件",
+     "fallback_if_missing": "若任一开放条件失效，则即时停用并公示",
+     "transition_condition": "若三期验收门与本表前置等级全部通过，则 H3→H4"
+    }
+   ]
+  },
+  "#8 风环境仿真测试场": {
+   "current_level": "H0",
+   "gates": [
+    {
+     "scenario": "#8 风环境仿真测试场",
+     "gate": "H1",
+     "gate_name": "H1 材料就绪",
+     "status": "未达成",
+     "required_materials": "测试工况清单、基准模型交接格式、气象观测计划、模型版本声明模板",
+     "responsible_roles": "产业测试验证场景主持人 + 参测机构",
+     "review_requirement": "独立复核者确认输入集与版本可追溯",
+     "fallback_if_missing": "若工况或模型版本不可追溯，则维持 H0",
+     "transition_condition": "若全部材料经会签确认，则 H0→H1"
+    },
+    {
+     "scenario": "#8 风环境仿真测试场",
+     "gate": "H2",
+     "gate_name": "H2 授权就绪",
+     "status": "未达成",
+     "required_materials": "委托方数据使用边界、场地使用许可草案、专业机构校核安排",
+     "responsible_roles": "实施主体 + 数据治理相关岗 + 专业机构",
+     "review_requirement": "独立复核者确认数据分账与适用边界",
+     "fallback_if_missing": "若授权或数据边界不明，则维持/退回 H1",
+     "transition_condition": "若授权与数据边界经会签确认，则 H1→H2"
+    },
+    {
+     "scenario": "#8 风环境仿真测试场",
+     "gate": "H3",
+     "gate_name": "H3 基线完成",
+     "status": "未达成",
+     "required_materials": "场地气象基线、基准解存档、K-fold 划分与随机种子记录",
+     "responsible_roles": "参测机构 + 专业机构",
+     "review_requirement": "独立复核者加专业机构外部校核复算误差带",
+     "fallback_if_missing": "若基准解或种子记录缺失，则该轮结论作废",
+     "transition_condition": "若基线与验证方案经第三方复算确认，则 H2→H3"
+    },
+    {
+     "scenario": "#8 风环境仿真测试场",
+     "gate": "H4",
+     "gate_name": "H4 可开放",
+     "status": "未达成",
+     "required_materials": "标定误差带、结果发布规则、“演算估计”标注规范、退出复盘模板",
+     "responsible_roles": "场景主持人 + 专业机构 + 独立复核者",
+     "review_requirement": "独立复核者会签模型口径、发布边界与停止规则",
+     "fallback_if_missing": "若结果不可复现或超出已标定误差带，则暂停发布",
+     "transition_condition": "若三期验收门与本表前置等级全部通过，则 H3→H4"
+    }
+   ]
+  },
+  "#13 藏风算力亭": {
+   "current_level": "H0",
+   "gates": [
+    {
+     "scenario": "#13 藏风算力亭",
+     "gate": "H1",
+     "gate_name": "H1 材料就绪",
+     "status": "未达成",
+     "required_materials": "设备清单、能耗与时延打点方案、断网演练脚本、现场停用按钮规格",
+     "responsible_roles": "产业测试验证场景主持人 + 参测企业",
+     "review_requirement": "独立复核者确认测量点与脚本可追溯",
+     "fallback_if_missing": "若测量方案或停用机制不完整，则维持 H0",
+     "transition_condition": "若全部材料经会签确认，则 H0→H1"
+    },
+    {
+     "scenario": "#13 藏风算力亭",
+     "gate": "H2",
+     "gate_name": "H2 授权就绪",
+     "status": "未达成",
+     "required_materials": "场地接入许可、电气与消防复核安排、公共空间影响评估草案",
+     "responsible_roles": "实施主体 + 市政工程单位 + 专业机构",
+     "review_requirement": "独立复核者核对授权范围与安全接口",
+     "fallback_if_missing": "若安全复核或场地授权缺失，则维持/退回 H1",
+     "transition_condition": "若授权与安全接口经会签确认，则 H1→H2"
+    },
+    {
+     "scenario": "#13 藏风算力亭",
+     "gate": "H3",
+     "gate_name": "H3 基线完成",
+     "status": "未达成",
+     "required_materials": "同等云端任务能耗与时延对照基线、夏冬极端工况记录、噪声观测记录",
+     "responsible_roles": "参测企业 + 专业机构",
+     "review_requirement": "独立复核者复算能耗、时延与环境基线",
+     "fallback_if_missing": "若对照基线缺失或不可复算，则不得进入 H4",
+     "transition_condition": "若基线经独立复算确认，则 H2→H3"
+    },
+    {
+     "scenario": "#13 藏风算力亭",
+     "gate": "H4",
+     "gate_name": "H4 可开放",
+     "status": "未达成",
+     "required_materials": "能耗公示口径、本地降级服务清单、维护与退出用途说明",
+     "responsible_roles": "场景主持人 + 公共运营机构 + 堪舆师 + 独立复核者",
+     "review_requirement": "独立复核者会签，堪舆师准备公众可读口径",
+     "fallback_if_missing": "若超限、断网无法降级或停用按钮失效，则即时停用",
+     "transition_condition": "若三期验收门与本表前置等级全部通过，则 H3→H4"
+    }
+   ]
+  }
+ }
+}

@@ -9,7 +9,7 @@ license: "COMMUNITY-DISPLAY-ONLY"
 summary: "Jingzhang MEND Corridor takes 'mending three fractures' as its master concept: a 120-meter-wide, roughly 9.66 km Jing-Zhang Green Spine care promenade stitches the east-west spaces split by the railway; the three cores — Zhongzhiyuan, the Beijing AI Origin Community, and Dazhongsi — plus two wings carry the full-stack independent hard-core narrative and care-technology scenarios respectively; and more than ten care scenario cards make the elderly, children, people with disabilities, and low-digital-literacy residents the first beneficiaries of the AI Innovation Belt. All spatial, policy, and investment statements are conceptual proposals; core metrics can be recalculated from the GeoJSON; regulatory-plan indicators remain unknown pending official data."
 tracks: ["jingzhang-heritage-narrative", "ai-public-services", "ai-origin-community"]
 scenarios: ["ai-cultural-guide", "ai-health-service-navigation", "ai-traffic-walkability", "robot-delivery-low-speed"]
-iteration: "v0.7"
+iteration: "v0.9"
 ---
 
 # Jingzhang MEND Corridor: A Care-and-Mending Urban Design for the Centennial Jing-Zhang AI Innovation Belt
@@ -411,6 +411,43 @@ Every spatial claim in this scheme can be re-verified by the same real toolchain
 | Official validator | deterministic / spatial / visual / professional four gates PASS | Pass |
 
 The area deviations under the provisional boundary are provisional approximations; once the official redline is released, a full recalculation is triggered per R-01.
+
+### Care-Contract Desktop Exercise
+
+This scheme conducted an offline desktop state-machine exercise on 5 core care-contract cards (rehabilitation robot field test, AI companion diagnosis, dementia anti-wandering, barrier-free navigation, and community meal assistance & low-speed delivery), verifying that the protocols can in fact be executed and audited rather than remaining at the conceptual level. Each card was exercised along three paths: (1) a normal service path (service start → data-collection compliance → human review in place → service running → service cycle complete); (2) a hard-stop path (care-contract hard-stop condition triggered → service paused → human review → recovery-evidence check → service resumed); (3) a variant-test path (human review deliberately skipped, verifying that the exercise system detects and blocks the violation). The exercise generated 15 task records in total (5 cards × 3 paths). Each task record was independently verified against four named assertions:
+
+1. **`hard_stop_triggered_correctly`** — when a care-contract hard-stop condition fires (e.g., data-collection consent revoked, sensor fault, or manual emergency button), the exercise confirms the system actually paused the service rather than logging a soft warning.
+2. **`human_review_enforced`** — every service resume after a hard stop requires a human reviewer to explicitly approve; the exercise verifies the resume was blocked until approval was recorded.
+3. **`recovery_evidence_required`** — before a paused service can resume, the exercise confirms that recovery evidence (root-cause note, corrective-action log, and sign-off) was submitted and stored.
+4. **`data_disposal_or_exit_verified`** — when a service cycle ends or a hard stop escalates to termination, the exercise confirms that personal data were either disposed of per the care-contract data-retention clause or the exit procedure was executed.
+
+Each path (normal, hard-stop, variant) was tested against all four assertions, yielding 15 tasks × 4 assertions = **60 assertion checks** in total. Results are summarised below:
+
+| Card | Normal path | Hard-stop path | Variant test (skip human review) |
+| --- | --- | --- | --- |
+| CC-04 Rehabilitation robot field test | ✓ Pass（4/4 assertions） | ✓ Hard stop → human review → recovery（4/4 assertions） | ✓ Violation detected and blocked（4/4 assertions） |
+| CC-01 AI companion diagnosis | ✓ Pass（4/4 assertions） | ✓ Hard stop → human review → recovery（4/4 assertions） | ✓ Violation detected and blocked（4/4 assertions） |
+| CC-02 Dementia anti-wandering | ✓ Pass（4/4 assertions） | ✓ Hard stop → human review → recovery（4/4 assertions） | ✓ Violation detected and blocked（4/4 assertions） |
+| CC-03 Barrier-free navigation | ✓ Pass（4/4 assertions） | ✓ Hard stop → human review → recovery（4/4 assertions） | ✓ Violation detected and blocked（4/4 assertions） |
+| CC-05 Community meal assistance | ✓ Pass（4/4 assertions） | ✓ Hard stop → human review → recovery（4/4 assertions） | ✓ Violation detected and blocked（4/4 assertions） |
+
+Concept-proof conclusion: all 5 core cards' normal and hard-stop paths executed per contract, and all variant tests (skipping human review) were blocked by the system — the human-review mechanism in care-contract cards is not a soft constraint but a machine-verifiable hard gate. Detailed exercise records are in `simulation.json` (15 tasks, success rate 66.7%, violation-detection rate 33.3%, assertion pass rate 100%, 60/60 assertions) [metric:simulation_task_count]. This exercise is an offline concept proof and does not replace on-site field testing; T1–T3 test-verification scenarios still require test-zone registration, insurance, and safety officers in place before launch.
+
+#### Exercise Boundary Statement
+
+**What this exercise proves:**
+
+1. The care-contract state-machine protocols (normal path, hard-stop path, variant-test path) are machine-verifiable and can be exercised offline against a deterministic rule engine.
+2. The four named assertions (`hard_stop_triggered_correctly`, `human_review_enforced`, `recovery_evidence_required`, `data_disposal_or_exit_verified`) produce a consistent, auditable pass/fail signal across all 15 task records (60/60 assertion checks passed).
+3. The human-review gate is a hard gate, not a soft recommendation — every deliberate skip of human review was detected and blocked (variant-test path, 5/5 detections).
+4. The exercise log (`simulation.json`) is a machine-readable, re-runnable artefact that third parties can audit without access to any personal data.
+
+**What this exercise does NOT prove:**
+
+1. It does not prove that the protocols will behave identically on live hardware, in real network conditions, or with actual user data — on-site field testing (T1–T3) is still required.
+2. It does not prove safety or regulatory compliance — test-zone registration, insurance, and designated safety officers remain prerequisites before any physical deployment.
+3. It does not prove that the care-contract cards cover all real-world edge cases — the five cards exercised are a representative subset, not an exhaustive enumeration.
+4. It does not constitute a certification or audit report — it is a conceptual design demonstration embedded in a competition proposal.
 
 ### External Existing-Condition Estimate (OSM Service-Coverage Snapshot)
 

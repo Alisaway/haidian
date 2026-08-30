@@ -407,6 +407,89 @@
         "A-ROAD-001"
       ],
       "reason": "Official road redlines and cross-sections are missing."
+    },
+    "taskbook_required_task_count": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": [
+        "brief/site-package/agent_taskbook.json"
+      ],
+      "formula": "count(required_agent_tasks)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "taskbook_required_output_count": {
+      "status": "known",
+      "value": 31,
+      "unit": "count",
+      "source_files": [
+        "brief/site-package/agent_taskbook.json"
+      ],
+      "formula": "sum(count(required_outputs) for agent.1..agent.6)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "taskbook_mapped_output_count": {
+      "status": "known",
+      "value": 31,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/taskbook-response-index.json"
+      ],
+      "formula": "sum(count(output_evidence) for agent.1..agent.6)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "pilot_launch_gate_count": {
+      "status": "known",
+      "value": 8,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/pilot-operations-plan.json"
+      ],
+      "formula": "count(launch_conditions)",
+      "confidence": "medium",
+      "assumptions": [
+        "A-PILOT-MODULE-001"
+      ]
+    },
+    "pilot_raci_role_count": {
+      "status": "known",
+      "value": 7,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/pilot-operations-plan.json"
+      ],
+      "formula": "count(raci_roles)",
+      "confidence": "medium",
+      "assumptions": [
+        "A-PILOT-MODULE-001"
+      ]
+    },
+    "pilot_acceptance_metric_count": {
+      "status": "known",
+      "value": 8,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/pilot-operations-plan.json"
+      ],
+      "formula": "count(acceptance_metrics)",
+      "confidence": "medium",
+      "assumptions": [
+        "A-PILOT-TARGET-001"
+      ]
+    },
+    "conditional_followup_count": {
+      "status": "known",
+      "value": 9,
+      "unit": "count",
+      "source_files": [
+        "assumptions.json"
+      ],
+      "formula": "count(conditional_followups)",
+      "confidence": "high",
+      "assumptions": []
     }
   }
 }

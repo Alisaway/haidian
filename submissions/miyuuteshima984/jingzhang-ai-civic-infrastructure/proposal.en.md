@@ -6,10 +6,10 @@ proposal_format_version: "2"
 bilingual_contract_version: "1"
 translation_of: "proposal.md"
 license: "COMMUNITY-DISPLAY-ONLY"
-summary: "Uses City Completeness as the spatial review method for the Centennial Jing-Zhang AI Innovation Belt: seven ordinary-city capabilities—HOME, LEARN, CARE, MOVE, GREEN, WORK and COMMON LIFE—form a durable everyday base first, while AI enters research, community, mobility and commerce as an optional enhancement layer. The structure is one public green spine, six completeness segments, six east-west stitching links and three key areas; the three key areas bind three dual-track spatial contracts: ARRIVE WITHOUT APP, CARE WITHOUT ACCOUNT and TEST WITHOUT BLOCKING, manifested as built typologies, physical clearances and deterministic S0-S3 operational states; Shuangfen Fortress remains only a community-name easter egg inside AI Origin Community."
+summary: "City Completeness treats the ordinary city as the host and AI as a reversible sidecar. v0.15.s keeps three invariant routes fixed while test, care and arrival enhancements attach only to nine existing building/public-space hosts, with no AI-only land-use category."
 tracks: ["ai-origin-community", "ai-public-services", "ai-traffic-walkability"]
 scenarios: ["ai-traffic-walkability", "robot-delivery-low-speed", "enterprise-service-copilot", "ai-cultural-guide", "ai-health-service-navigation"]
-iteration: "v0.13"
+iteration: "v0.16"
 ---
 
 # JING-ZHANG CITY COMPLETENESS
@@ -19,6 +19,29 @@ iteration: "v0.13"
 > AI may increase urban capability, but it cannot substitute for housing, schools, care, public transport, green space, work space or common life that remains accessible without an account.
 
 This is a conceptual urban-design submission for the open call. The current `SITE_BOUNDARY` and three `KEY_AREA` features use repository-maintained provisional rough geometry only for generation, topology checks, relative relationships, visualisation and package-level recalculation. They are not statutory redlines, parcels, ownership boundaries, road redlines, regulatory plans or engineering implementation conclusions. [source:BOUNDARY-SOURCE] [source:ALLOWED-DESIGN-SPACE]
+
+
+<!-- V016-CORE-START -->
+## v0.16.s Core Judgment | CLEAN EXIT CITY
+
+**AI must not only switch off; the city must be able to remove it cleanly.** v0.15.s established that the ordinary city is the host and AI is only a sidecar. v0.16.s turns reversibility into a spatial lifecycle: **BASE CITY → ATTACH → OPERATE → CLEAN EXIT**. [metric:sidecar_lifecycle_stage_count] [metric:clean_exit_host_count]
+
+Every AI attachment must answer two questions at entry: where does it attach, and what ordinary-city use returns after removal? `ROAD-009 / 010 / 011` remain the same ordinary civic routes across all four lifecycle stages. Only the lateral layer on nine existing hosts changes. [metric:clean_exit_restore_use_coverage_ratio] [metric:ai_off_route_preservation_ratio]
+
+| Key area | BASE CITY | ATTACH / OPERATE | Restored after CLEAN EXIT | Invariant public promise |
+| --- | --- | --- | --- | --- |
+| Zhongzhiyuan | R&D ground floors, food/rest, green spine and public exchange | `TEST POCKET` stays at side yards/service edges for bounded tests and temporary interfaces | removal restores ordinary courtyards, work/rest and public exchange without relocating `ROAD-009` | **TEST WITHOUT BLOCKING** |
+| AI Origin | homes, human help, shared learning, public ground floors and civic commons | `CARE PORCH` adds only opt-in navigation, matching and care prompts | removal leaves staffed service, public ground floors and community life intact without relocating `ROAD-010` | **CARE WITHOUT ACCOUNT** |
+| Dazhongsi | fixed wayfinding, staffed help, ordinary waiting/retail and the Jing-Zhang public interface | `ARRIVAL SIDECAR` adds only dynamic translation, information and crowd assistance | removal leaves fixed wayfinding and human service intact without relocating `ROAD-011` | **ARRIVE WITHOUT APP** |
+
+All nine sidecar hosts receive `ordinary_restore_use`, `clean_exit_mode` and `field_check_required`; the three routes receive `clean_exit_route_preserved=true`. These are relationship and lifecycle semantics only. They do not change building, public-space or road geometry and they create no eighth AI land-use class. [metric:new_ai_land_use_code_count]
+
+**CLEAN EXIT is more than AI OFF.** Switching off proves software stops. Clean exit additionally requires temporary equipment, interfaces, signs and operating dependencies to be removable so the host returns to ordinary city use with human service, fixed wayfinding, everyday routes and public access intact. Real de-installation methods, fire safety, utilities, ownership and asset disposal remain project-stage questions rather than fabricated engineering parameters.
+
+Dazhongsi remains **REAL LEVEL DATA REQUIRED**. Until real station entrances, levels, bridges/tunnels, passenger capacity, ownership and operating roles are verified, clean exit is not drawn as a fake engineering alignment. [data:geometry/key_areas.geojson#PROV-KEY-003]
+
+![Three key areas from base city to AI sidecar to clean exit: ordinary routes and uses remain continuous](assets/figures/key-areas.en.png)
+<!-- V016-CORE-END -->
 
 ## Design Basis and Source List
 
@@ -86,11 +109,11 @@ The public green spine and slow-mobility line form the north-south backbone. Six
 
 ## Detailed Design of Key Areas
 
-**Zhongzhiyuan: from R&D park to complete innovation campus (Courtyard & Porous Grid + Linear Test Spine).** Research, pilot testing, incubation and enterprise services remain central, but the public green spine, transverse walking, food/rest, community interfaces, public exchange and controlled test space must exist at the same time. The spatial morphology adopts a "courtyard porous grid + linear test spine", establishing a +15cm physical curb/hedge barrier separating the 3.5m shared robotics test envelope from the 2.0m unobstructed pedestrian corridor. Embodied-AI tests operate within clear, stoppable and auditable boundaries with mechanical retractable bollards for instant AI-OFF isolation; ordinary public circulation is never a default test track. [data:geometry/key_areas.geojson#PROV-KEY-001]
+**Zhongzhiyuan: complete innovation campus + TEST POCKET.** Research, pilot work, incubation and enterprise services remain central, but ordinary work, food/rest, the public green spine and open exchange must first form one legible daily chain. `ROAD-009` is the AI-independent host route. `BLDG-012`, `BLDG-013` and `PUBLIC-006` are sidecar hosts for stoppable tests, temporary equipment and replaceable service interfaces only. Real test boundaries, clearances, speeds, emergency-stop design, permits and safety performance require field survey and professional review; this proposal does not pre-set engineering values. [data:geometry/roads.geojson#ROAD-009] [data:geometry/buildings.geojson#BLDG-012] [data:geometry/public_space.geojson#PUBLIC-006]
 
-**AI Origin Community: long-term community and near-campus innovation together (Pocket Commons & Woonerf + Multi-generational Care Core).** Housing is not an accessory to “talent accommodation”. Long-term homes, childcare/education, community care, shared work, ordinary retail, green space and civic commons create a short-distance daily chain. The spatial morphology adopts fine-grained living streets (Woonerf) equipped with 1.8m continuous tactile and high-contrast guidance paving, supported by a "Zero-ID Community Service Desk" within a 400m walking radius offering staffed and paper-based services. Researchers may change projects, families will include children and older people, and service workers share the same public network. One residential area is named **Shuangfen Fortress Community / 爽粉堡垒社区**, but the name is only an easter egg: no fortress-shaped architecture, closed walls, road changes, density changes or functional changes follow from the name. [data:geometry/buildings.geojson#BLDG-007] [data:geometry/key_areas.geojson#PROV-KEY-002]
+**AI Origin Community: complete long-term neighborhood + CARE PORCH.** Homes, shared learning, human help, ordinary retail, green space and civic commons form an account-free everyday chain. `ROAD-010` remains the ordinary-city host route. Public-ground-floor and commons interfaces in `BLDG-007`, `BLDG-009` and `PUBLIC-004` host opt-in navigation, service matching and care prompts. Real accessibility dimensions, service catchments, staffing and response times require field and operating evidence; the proposal fixes only the rule that refusing login or data consent still reaches people and services on the same physical route. [data:geometry/roads.geojson#ROAD-010] [data:geometry/buildings.geojson#BLDG-007] [data:geometry/public_space.geojson#PUBLIC-004]
 
-**Dazhongsi: station-city, commerce and ordinary urban life together (Multi-level Transit Deck & Heritage Interface).** The southern area strengthens transfer, everyday retail, culture and public arrival. The spatial morphology builds a "multi-level transit deck and heritage continuous interface" featuring 100% visible static color-coded illuminated signs and app-free physical gating, maintaining $\ge 4.5\text{m}$ clear transfer corridor width and $\ge 2.5\text{m}$ signage vertical clearance. The provisional key-area rectangle is only a task locator and cannot serve as a real station-city engineering boundary. The three detailed designs differ because their physical spatial sections and urban capability gaps differ, not because they receive three visual themes. [data:geometry/key_areas.geojson#PROV-KEY-003] [depth:three_key_area_detailed_design]
+**Dazhongsi: complete station-city arrival + ARRIVAL SIDECAR.** Ordinary arrival, fixed wayfinding, staffed help, waiting/retail and the Jing-Zhang public interface form the host. Dynamic translation, information and crowd assistance remain lateral enhancements to `ROAD-011`. `BLDG-001`, `BLDG-002` and `PUBLIC-001` are conceptual host relationships only. Because `PROV-KEY-003` has a known absolute-location risk, real station entrances, levels, bridges/tunnels, vertical circulation, corridor widths, passenger capacity, ownership and operations remain **REAL LEVEL DATA REQUIRED** rather than being fabricated from concept geometry. [data:geometry/roads.geojson#ROAD-011] [data:geometry/public_space.geojson#PUBLIC-001] [data:geometry/key_areas.geojson#PROV-KEY-003]; additional evidence: [depth:three_key_area_detailed_design]
 
 Public exchange space accompanies all three tasks: an open exchange yard in Zhongzhiyuan, the AI Origin civic commons and a southern public interface. Each solves an everyday use first and takes on communication or landmark value second. [data:geometry/public_space.geojson#PUBLIC-004] [metric:public_space_count]
 
@@ -126,7 +149,7 @@ v0.7 no longer treats a reviewer index as the first visual. The three key areas 
 
 ### How AI Changes Urban Form, Not Just Screens
 
-The spatial effect of AI is reduced to six reversible prototypes: test pockets, accessible help nodes, continuous station-city arrival interfaces, replaceable small service nodes, people-first public ground floors, and a reversible spatial version chain—observe, bounded prototype, public/professional review, merge or rollback. This answers how AI changes spatial organization and planning method rather than merely attaching more digital interfaces to existing space.
+AI still changes urban form through six reversible prototypes: test pockets, accessible/human help nodes, continuous station-city arrival interfaces, replaceable service nodes, people-first public ground floors, and a reversible spatial version chain. v0.15.s regroups the first five into three legible interfaces—TEST POCKET, CARE PORCH and ARRIVAL SIDECAR—and writes their host features into geometry; the sixth becomes their shared physical version-management method. AI's spatial delta can therefore be located, switched off, removed and reviewed without redrawing the ordinary-city host. [metric:ai_sidecar_type_count] [metric:ai_sidecar_host_feature_count]
 
 ![How AI changes urban form: six reversible physical interfaces](assets/figures/ai-urban-form-change.en.svg)
 
@@ -146,50 +169,20 @@ v0.10 keeps the **design-first** hierarchy of the 86-point v0.7 baseline and abs
 All five response rules are machine-readable in `visual/assets/reality-constraint-register.json`. The fixed `mobility-bluegreen.en.png` is rebuilt to distinguish ordinary stitching, the underpass/vertical-continuity condition, people-first green-corridor frontage, station-city arrival, and the future official-data recomputation trigger.
 <!-- V09-REALITY-END -->
 
-<!-- V012-CONTRACTS-START -->
-<!-- V012-CONTRACTS-START -->
-### v0.13.g | Three Public Promises as Dual-Track Spatial Contracts: Built Typologies and S0–S3 Operational States
+<!-- V016-LIFECYCLE-START -->
+### v0.16.s | Four-Step Spatial Lifecycle: BASE CITY → ATTACH → OPERATE → CLEAN EXIT
 
-v0.13.g formally elevates the Dual-Track Spatial Contracts into physical architectural typologies and **deterministic four-state operational bylaws (S0–S3 Operational States)**. The inviolable iron rule is: **the physical, analog city base (the C7 baseline) retains absolute, non-negotiable physical fail-safe priority over soft algorithmic scheduling (the optional AI layer)**. The spatial contracts anchor ethical rights directly to key-area cross-sections, physical clearances, accountable actors, and circuit-breaker triggers. [depth:three_key_area_detailed_design] [metric:public_promise_count]
+These four steps are not another governance state machine. They are the **spatial handover sequence** every sidecar must satisfy. `BASE CITY` proves the ordinary city works independently; `ATTACH` permits only a lateral, legible and removable layer; `OPERATE` preserves human takeover and ordinary routes; `CLEAN EXIT` returns the host to ordinary use and leaves reviewable exit evidence. [metric:sidecar_lifecycle_stage_count]
 
-![Three Dual-Track Spatial Contracts and Physical Circuit-Breaker Protocols](assets/figures/three-public-promises.en.svg)
+| Lifecycle | Spatial question | Zhongzhiyuan | AI Origin | Dazhongsi |
+| --- | --- | --- | --- | --- |
+| BASE CITY | What is here without AI? | ordinary R&D/work courtyard + public green spine | homes + staffed service + public ground floor | fixed wayfinding + staffed help + waiting/retail |
+| ATTACH | Where can AI enter without occupying the main route? | test side yard / service edge | public ground floor / care porch | arrival side band / information interface |
+| OPERATE | What may AI never take over? | `ROAD-009` and ordinary work/rest chain | `ROAD-010`, human help and account-free entry | `ROAD-011`, fixed wayfinding and staffed help |
+| CLEAN EXIT | What ordinary city returns after removal? | remove equipment/interfaces; restore courtyard/public exchange | remove digital interface; retain staffed service and public ground floor | remove dynamic layer; retain fixed wayfinding, help and ordinary waiting |
 
-#### Contract SC-01 | ARRIVE WITHOUT APP (Dazhongsi Station-City Zero-Friction Arrival Contract)
-* **Anchor Key Area & Spatial Typology**: Dazhongsi Key Area | Multi-level transit concourse deck and railway heritage seam.
-* **Spatial Prerequisite & Clearances**: Minimum 4.5m unobstructed transfer concourse width; minimum 2.5m vertical signage clearance; direct line-of-sight between primary decision nodes; zero advertising or commercial encroachment into the wayfinding envelope. [source:HD-URBAN-RENEWAL-GUIDE-2025]
-* **S0–S3 Deterministic Operational States**:
-  - **S0 Non-AI Base**: 100% dependency on continuous 50m sight-line high-contrast photoluminescent wayfinding, static maps, and permanently staffed kiosks, ensuring 12,000 pph throughput without smartphones.
-  - **S1 AI-Enhanced**: Infrared crowd density sensing, dynamic large-screen crowd diversion, and opt-in web-based multilingual audio/visual accessible routing.
-  - **S2 Human Fallback**: If display latency $>2\text{s}$ or crowd density $>2.5\text{ p/m}^2$, transit stewards deploy within 30 seconds with manual directional signs and open bypass gates.
-  - **S3 AI-OFF Mechanical Break**: Instant physical cutoff ($\le 0.1\text{s}$) upon network or power failure, with 100% fail-open gravity/mechanical turnstiles guaranteeing evacuation safety.
-* **Accountable Actor**: Beijing Subway / Line 13 Operations + Beixiaoguan Sub-district Office + Station-City Operating Consortium.
-* **Acceptance & GO/STOP Trigger**: 100% arrival success rate for non-smartphone users; any algorithm-induced congestion triggers an immediate STOP reverting to pure physical throughput.
-
-#### Contract SC-02 | CARE WITHOUT ACCOUNT (AI Origin Zero-Account All-Age Community Living Room Contract)
-* **Anchor Key Area & Spatial Typology**: AI Origin Community | Fine-grained living street (Woonerf) and all-age community care core.
-* **Spatial Prerequisite & Clearances**: Minimum $15\text{m}^2$ physical footprint per analog civic kiosk; minimum 2.5m clear sidewalk width; continuous 1.8m tactile guidance paving and ramps (slope $\le 1:12$). [source:HD-AI-DISTRICT-PROGRESS-2025Q4]
-* **S0–S3 Deterministic Operational States**:
-  - **S0 Non-AI Base**: A 400m continuous shaded walking corridor connecting homes to the clinic; staffed kiosks spaced every 200m providing paper workflows, push-button phones, and copper-wire alarms—free of accounts or biometric scans.
-  - **S1 AI-Enhanced**: Opt-in ambient wellness monitoring for chronic-disease elders and automated community shared-space reservation.
-  - **S2 Human Fallback**: When residents opt out or algorithms fail, neighborhood care aides and family doctors provide 100% direct in-person service.
-  - **S3 AI-OFF Mechanical Break**: Instant rollback to paper-based filing and analog service desks upon data privacy anomalies or server outages, cutting digital links physically.
-* **Accountable Actor**: Zhongguancun Sub-district Office + Community Residents Committee + Haidian Community Health Service Center.
-* **Acceptance & GO/STOP Trigger**: 100% coverage of public services via non-digital channels; any unauthorized data breach triggers an immediate STOP pending a civic hearing.
-
-#### Contract SC-03 | TEST WITHOUT BLOCKING (Zhongzhiyuan Physical Test Sandbox Isolation & Circuit-Breaker Contract)
-* **Anchor Key Area & Spatial Typology**: Zhongzhiyuan Key Area | Porous campus courtyard grid and linear research test spine.
-* **Spatial Prerequisite & Clearances**: Autonomous delivery lanes (width $\ge 1.8\text{m}$) and pedestrian corridors (width $\ge 2.0\text{m}$) are physically grade-separated by +15cm raised curbs; automatic pneumatic drop-bollards at intersections; red emergency stop (E-Stop) buttons spaced every 50m. [source:AGENT-TASKBOOK]
-* **S0–S3 Deterministic Operational States**:
-  - **S0 Non-AI Base**: Campus workers and students maintain independent, unobstructed daily circulation; everyday public space is never an involuntary test ground.
-  - **S1 AI-Enhanced**: Low-speed autonomous delivery vehicles operate within designated time windows (10:00–11:30, 14:00–16:30) and speed limits ($\le 8\text{km/h}$).
-  - **S2 Human Fallback**: Remote safety operators immediately take over control whenever vehicles deviate from track centerlines or approach curb boundaries.
-  - **S3 AI-OFF Mechanical Break**: Pressing any E-Stop raises mechanical bollards within $\le 0.5\text{s}$, cutting vehicle drive power; the test zone returns to ordinary pedestrian space within 10 minutes.
-* **Accountable Actor**: Zhongguancun Science City Administrative Committee + Campus Property Management + Enterprise AI Testing Consortium.
-* **Acceptance & GO/STOP Trigger**: 0% pedestrian delay caused by testing; any autonomous vehicle boundary violation or pedestrian obstruction $\ge 1$ time/week immediately triggers a STOP revoking test permits.
-
-#### Dual-Track Spatial Governance & Black-Sky Resilience Protocol
-The proposal institutes a "Dual-Track Normal Operations, Instant Physical Fail-Safe" standard: a quarterly regional "AI-OFF Black-Sky Drill" simulates a 48-hour total network/power blackout to ensure 100% physical reliability for Dazhongsi transit evacuation, AI Origin emergency care, and Zhongzhiyuan campus mobility.
-<!-- V012-CONTRACTS-END -->
+Each host's `ordinary_restore_use` is a qualitative spatial use, not a claim that field conditions are already built or verified. Real attachment and exit require before/after field checks. Reversibility therefore becomes a designed return state rather than a future promise. [metric:clean_exit_restore_use_coverage_ratio]
+<!-- V016-LIFECYCLE-END -->
 
 ## Land Use, Building Scale, and Retain-Renovate-Demolish Strategy
 

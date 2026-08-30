@@ -347,6 +347,72 @@
         "A-PROTOTYPE-001"
       ]
     },
+    "simulation_task_count": {
+      "status": "known",
+      "value": 12,
+      "unit": "count",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "count(simulation.tasks)",
+      "confidence": "high",
+      "assumptions": [
+        "A-PILOT-001"
+      ]
+    },
+    "simulation_success_rate": {
+      "status": "known",
+      "value": 0.9166666666666666,
+      "unit": "ratio",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "count(outcome == success or outcome endswith _success) / simulation_task_count",
+      "confidence": "high",
+      "assumptions": [
+        "A-PILOT-001"
+      ]
+    },
+    "tool_schema_pass_rate": {
+      "status": "known",
+      "value": 0.9166666666666666,
+      "unit": "ratio",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "count(dispatch_schema_valid == true) / simulation_task_count",
+      "confidence": "high",
+      "assumptions": [
+        "A-PILOT-001"
+      ]
+    },
+    "audit_completeness": {
+      "status": "known",
+      "value": 0.9166666666666666,
+      "unit": "ratio",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "count(audit_complete == true) / simulation_task_count",
+      "confidence": "high",
+      "assumptions": [
+        "A-PILOT-001"
+      ]
+    },
+    "high_risk_intercept_rate": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "simulation.json",
+        "visual/assets/verify-street-pass-simulation.js"
+      ],
+      "formula": "count(high_risk == true and release_decision == hold) / count(high_risk == true)",
+      "confidence": "high",
+      "assumptions": [
+        "A-PILOT-001"
+      ]
+    },
     "total_floor_area_sqm": {
       "status": "unknown",
       "value": null,

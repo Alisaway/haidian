@@ -19,7 +19,7 @@ All submitted text, geometry, diagrams, PDFs, and static HTML assets are generat
 | 11 | geometry/phasing.geojson | Agent-generated phasing zones | Concept; provisional |
 | 12 | assets/figures/*.png (6 figures × zh/en, 12 files) | Agent-rendered from submitted geometry and metrics (matplotlib, fixed-canvas render) | Agent-generated; no third-party imagery |
 | 13 | drawings/a3-booklet.pdf, a0-boards.pdf (zh/en, 4 files) | Agent-rendered from submitted geometry and metrics (reportlab) | Agent-generated; no third-party imagery |
-| 14 | report/proposal.html, report/proposal.en.html, visual/index.html, visual/index.en.html (4 files) | Agent-generated single-file static HTML | Zero external requests; no remote scripts, tiles, fonts, iframes, forms, or APIs |
+| 14 | report/proposal.html, report/proposal.en.html, visual/index.html, visual/index.en.html (4 files) | Agent-generated single-file static HTML | Zero external requests; no remote scripts, tiles, fonts, iframes, forms, or APIs; embeds a self-subsetted Noto Sans CJK SC woff2 as inline base64 data URI (see #34) |
 | 15 | visual/assets/state-machine.json | Agent-authored machine-readable lifecycle state machine | Agent-generated; COMMUNITY-DISPLAY-ONLY |
 | 16 | visual/assets/governance-raci.json | Agent-authored RACI + constitutional clauses | Agent-generated; COMMUNITY-DISPLAY-ONLY |
 | 17 | visual/assets/dividend-contracts.json | Agent-authored 4-segment exit-dividend contracts (15 services) | Agent-generated; COMMUNITY-DISPLAY-ONLY |
@@ -39,7 +39,7 @@ All submitted text, geometry, diagrams, PDFs, and static HTML assets are generat
 | 31 | changelog.md, report/copyright_statement.md, report/narrative.md | Agent-authored | COMMUNITY-DISPLAY-ONLY |
 | 32 | Visual identity (logo motif, color system, VI spec) | Agent-designed concept | Concept suggestion pending official approval |
 | 33 | Base map / imagery | No OSM or third-party base map is embedded; all map content is drawn from submitted GeoJSON geometry | n/a |
-| 34 | Fonts | System fonts only: SimHei (Windows, licensed with OS), DejaVu Sans (OFL, bundled with matplotlib) | No font files are copied or redistributed in this package |
+| 34 | Fonts | Generation-time: SimHei (Windows, licensed with OS), DejaVu Sans (OFL, bundled with matplotlib). Runtime: self-subsetted Noto Sans CJK SC subset (SIL OFL 1.1, (c) Adobe & Google) embedded as base64 woff2 data URI inside report/*.html and visual/*.html; family renamed 'Pulse SC Subset' per OFL Reserved Font Name rule | No separate font file is copied or redistributed; the embedded subset is covered by SIL OFL 1.1 (full license text appended below) |
 | 35 | TTS voice | edge-tts online neural voice (Microsoft Edge TTS service), used at generation time only; no voice data shipped | n/a |
 
 ## Notes
@@ -49,3 +49,31 @@ All submitted text, geometry, diagrams, PDFs, and static HTML assets are generat
 - **Figure accessibility**: all six figures (zh/en) carry bilingual captions and descriptive alternative text in the narrative, the figure annotations, and the HTML; every caption states its source layers and provisional status.
 - The logo motif and VI specification are concept proposals; brand marks, fonts, images, portraits, and enterprise marks referenced in narrative text require cleared sources before implementation.
 - `visual/index.html` loads no remote content of any kind and tracks no reviewer behavior.
+
+## SIL Open Font License 1.1 — Noto Sans CJK SC subset
+
+Copyright 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'. Noto Sans CJK is co-developed by Adobe and Google.
+
+The embedded font is a self-generated subset of Noto Sans CJK SC Regular (source: https://github.com/googlefonts/noto-cjk), embedded under SIL Open Font License 1.1:
+
+**PREAMBLE** The goals of the Open Font License (OFL) are to stimulate worldwide development of collaborative font projects, to support the font creation efforts of academic and linguistic communities, and to provide a free and open framework in which fonts may be shared and improved in partnership with others.
+
+The OFL allows the licensed fonts to be used, studied, modified and redistributed freely as long as they are not sold by themselves. The fonts, including any derivative works, can be bundled, embedded, redistributed and/or sold with any software provided that any reserved names are not used by derivative works. The fonts and derivatives, however, cannot be released under any other type of license. The requirement for fonts to remain under this license does not apply to any document created using the fonts or their derivatives.
+
+**DEFINITIONS** "Font Software" refers to the set of files released by the Copyright Holder(s) under this license and clearly marked as such. This may include source files, build scripts and documentation. "Reserved Font Name" refers to any names specified as such after the copyright statement(s). "Original Version" refers to the collection of Font Software components as distributed by the Copyright Holder(s). "Modified Version" refers to any derivative made by adding to, deleting, or substituting — in part or in whole — any of the components of the Original Version, by changing formats or by porting the Font Software to a new environment. "Author" refers to any designer, engineer, programmer, technical writer or other person who contributed to the Font Software.
+
+**PERMISSION & CONDITIONS** Permission is hereby granted, free of charge, to any person obtaining a copy of the Font Software, to use, study, copy, merge, embed, modify, redistribute, and sell modified and unmodified copies of the Font Software, subject to the following conditions:
+
+1) Neither the Font Software nor any of its individual components, in Original or Modified Versions, may be sold by itself.
+
+2) Original or Modified Versions of the Font Software may be bundled, redistributed and/or sold with any software, provided that each copy contains the above copyright notice and this license. These can be included either as stand-alone text files, human-readable headers or in the appropriate machine-readable metadata fields within text or binary files as long as those fields can be easily viewed by the user.
+
+3) No Modified Version of the Font Software may use the Reserved Font Name(s) unless explicit written permission is granted by the corresponding Copyright Holder. This restriction only applies to the primary font name as presented to the users.
+
+4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font Software shall not be used to promote, endorse or advertise any Modified Version, except to acknowledge the contribution(s) of the Copyright Holder(s) and the Author(s) or with their explicit written permission.
+
+5) The Font Software, modified or unmodified, in part or in whole, must be distributed entirely under this license, and must not be distributed under any other license. The requirement for fonts to remain under this license does not apply to any document created using the Font Software.
+
+**TERMINATION** This license becomes null and void if any of the above conditions are not met.
+
+**DISCLAIMER** THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM OTHER DEALINGS IN THE FONT SOFTWARE.

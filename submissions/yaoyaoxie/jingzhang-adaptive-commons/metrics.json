@@ -1,0 +1,352 @@
+{
+  "schema_version": "0.1.0",
+  "units": {
+    "length": "m",
+    "area": "sqm"
+  },
+  "metrics_note_zh": "全部已知指标均由概念几何生成与复算脚本（项目根 tools/build_geometry.py，过程脚本，未随包提交）从 provisional 几何在 EPSG:4548 下复算，过程记录见项目根 reports/README_metrics.md（未随包提交）。全部为概念设计模型值（provisional，低置信度），非官方规划指标；正式红线与控规资料发布后必须复算。未知指标保持 status=unknown、value=null，并说明缺失原因与所需资料。",
+  "coordinate_reference": {
+    "exchange_crs": "EPSG:4326",
+    "area_calculation_crs": "EPSG:4548"
+  },
+  "metrics": {
+    "site_area_sqm": {
+      "status": "known",
+      "value": 11412825.4,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "polygon_area(site_boundary)",
+      "confidence": "low",
+      "assumptions": [
+        "Calculated from repository provisional rough boundary geometry; not suitable for official area claims.",
+        "复算对象为 PROV-SITE-001（总体设计范围 provisional 边界），约 1141.28 公顷，与公告约 11.4 平方公里同量级但非官方确认值。",
+        "正式边界发布后必须复算。"
+      ]
+    },
+    "research_area_sqm": {
+      "status": "known",
+      "value": 43609232.558,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/constraints.geojson"
+      ],
+      "formula": "polygon_area(constraints#PROV-RESEARCH-001)",
+      "confidence": "low",
+      "assumptions": [
+        "官方统筹研究范围 polygon 尚未取得；复算对象为 constraints.geojson 中的 provisional_only 粗略轮廓 PROV-RESEARCH-001（source_id=DATA-SRC-PROVISIONAL-BOUNDARIES-20260605，official_boundary=false，boundary_precision=provisional_rough）。",
+        "按 polygon_area(constraints#PROV-RESEARCH-001) 在 EPSG:4548 下得到 43,609,232.558 平方米，与公告约 43.6 平方公里同量级；这是低置信度概念设计模型值，不是官方面积、红线或控制指标。",
+        "组织方发布带版本、坐标系、精度和适用范围说明的官方 polygon 后，替换临时轮廓、在正式坐标基准下复算本指标并重绘中英图件，差异进入报告。"
+      ]
+    },
+    "green_space_area_sqm": {
+      "status": "known",
+      "value": 3190468.0,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/green_space.geojson"
+      ],
+      "formula": "sum(polygon_area(f) for f in green_space)",
+      "confidence": "low",
+      "assumptions": [
+        "绿地面积为概念设计模型输出：取用地分区中 land_use_code=green_water 的全部地块（遗产公园主轴绿带、小月河蓝绿廊道、众智园生境廊道与生态样地）。",
+        "Calculated from repository provisional rough boundary geometry; not suitable for official area claims.",
+        "正式边界、控规与场地测绘资料发布后必须复算。"
+      ]
+    },
+    "green_ratio": {
+      "status": "known",
+      "value": 0.2796,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/green_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "green_space_area / site_area",
+      "confidence": "low",
+      "assumptions": [
+        "由概念设计模型绿地面积除以 provisional 总体设计范围面积得到，非法定绿地率，不得作为控规指标引用。",
+        "Calculated from repository provisional rough boundary geometry; not suitable for official area claims.",
+        "正式边界与绿地测绘资料发布后必须复算。"
+      ]
+    },
+    "public_space_area_sqm": {
+      "status": "known",
+      "value": 1267931.0,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "sum(polygon_area(f) for f in public_space)",
+      "confidence": "low",
+      "assumptions": [
+        "公共空间面积为概念设计模型输出：取 land_use_code=public_space 的三处城市级缝合节点广场加四条 12m 进深公共首层界面带，与绿地层互不重叠、不存在重复计面积。",
+        "Calculated from repository provisional rough boundary geometry; not suitable for official area claims.",
+        "正式边界与公共空间测绘资料发布后必须复算。"
+      ]
+    },
+    "public_space_ratio": {
+      "status": "known",
+      "value": 0.1111,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "public_space_area / site_area",
+      "confidence": "low",
+      "assumptions": [
+        "由概念设计模型公共空间面积除以 provisional 总体设计范围面积得到，非官方控制指标。",
+        "Calculated from repository provisional rough boundary geometry; not suitable for official area claims.",
+        "正式边界与公共空间测绘资料发布后必须复算。"
+      ]
+    },
+    "land_use_area_commercial_service_sqm": {
+      "status": "known",
+      "value": 982397.0,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "sum(polygon_area(f) for f in land_use if f.land_use_code == 'commercial_service')",
+      "confidence": "low",
+      "assumptions": [
+        "概念用地分区参考值，provisional 边界网格切分产物，非法定用地性质与面积。",
+        "正式边界与控规发布后必须复算。"
+      ]
+    },
+    "land_use_area_education_research_sqm": {
+      "status": "known",
+      "value": 2432877.0,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "sum(polygon_area(f) for f in land_use if f.land_use_code == 'education_research')",
+      "confidence": "low",
+      "assumptions": [
+        "概念用地分区参考值，provisional 边界网格切分产物，非法定用地性质与面积。",
+        "正式边界与控规发布后必须复算。"
+      ]
+    },
+    "land_use_area_green_water_sqm": {
+      "status": "known",
+      "value": 3190468.0,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "sum(polygon_area(f) for f in land_use if f.land_use_code == 'green_water')",
+      "confidence": "low",
+      "assumptions": [
+        "概念用地分区参考值，provisional 边界网格切分产物，非法定用地性质与面积。",
+        "与 green_space.geojson 复算口径一致。",
+        "正式边界与控规发布后必须复算。"
+      ]
+    },
+    "land_use_area_industrial_research_sqm": {
+      "status": "known",
+      "value": 2067467.0,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "sum(polygon_area(f) for f in land_use if f.land_use_code == 'industrial_research')",
+      "confidence": "low",
+      "assumptions": [
+        "概念用地分区参考值，provisional 边界网格切分产物，非法定用地性质与面积。",
+        "正式边界与控规发布后必须复算。"
+      ]
+    },
+    "land_use_area_public_space_sqm": {
+      "status": "known",
+      "value": 1253531.0,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "sum(polygon_area(f) for f in land_use if f.land_use_code == 'public_space')",
+      "confidence": "low",
+      "assumptions": [
+        "概念用地分区参考值，provisional 边界网格切分产物，非法定用地性质与面积。",
+        "public_space.geojson 的 1,267,931.0 sqm 另含四条 12m 进深公共首层界面带，与本值口径不同，非重复计面积。",
+        "正式边界与控规发布后必须复算。"
+      ]
+    },
+    "land_use_area_residential_support_sqm": {
+      "status": "known",
+      "value": 1486086.0,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "sum(polygon_area(f) for f in land_use if f.land_use_code == 'residential_support')",
+      "confidence": "low",
+      "assumptions": [
+        "概念用地分区参考值，provisional 边界网格切分产物，非法定用地性质与面积。",
+        "正式边界与控规发布后必须复算。"
+      ]
+    },
+    "key_area_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "count(features where layer == 'KEY_AREA')",
+      "confidence": "low",
+      "assumptions": [
+        "三处重点区域（众智园AI自主创新加速区、北京AI原点社区、大钟寺AI产业聚集区）名称与公告面积为任务事实，来自征集公告。",
+        "当前 polygon 为 provisional 几何；公告口径面积约 192.1 / 104.3 / 72.0 公顷（合计 368.4 公顷），不以 provisional polygon 复算值替代公告面积。",
+        "正式重点区边界发布后必须复算并核对。"
+      ]
+    },
+    "total_floor_area_sqm": {
+      "status": "unknown",
+      "value": null,
+      "unit": "sqm",
+      "source_files": [],
+      "formula": "sum(floor_area(b) for b in buildings)",
+      "confidence": "unknown",
+      "reason": "总建筑面积需要各建筑层数与建筑面积依据；本包 buildings.geojson 仅含概念建筑基底，无层数与建筑面积数据，且控规条件未公开，无法给出可信总量。",
+      "required_for_formal_submission": true,
+      "assumptions": [
+        "需资料：正式控规条件、现状建筑测绘与地块权属资料。"
+      ]
+    },
+    "floor_area_ratio": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [],
+      "formula": "total_floor_area / site_area",
+      "confidence": "unknown",
+      "reason": "容积率依赖尚未公开的控规条件与总建筑面积；本包不提供概念容积率数值，避免被误读为规划结论。",
+      "required_for_formal_submission": true,
+      "assumptions": [
+        "需资料：资格预审文件或正式任务书附件中的控规指标（容积率、建筑密度、高度、退线）。"
+      ]
+    },
+    "building_density": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [],
+      "formula": "sum(footprint_area(b) for b in buildings) / site_area",
+      "confidence": "unknown",
+      "reason": "建筑密度的官方控制值未公开；概念建筑基底虽可复算，但汇总值会被误读为控制指标，故保持 unknown。",
+      "required_for_formal_submission": true,
+      "assumptions": [
+        "需资料：正式控规条件；复算时以官方边界与核准建筑基底为准。"
+      ]
+    },
+    "building_height": {
+      "status": "unknown",
+      "value": null,
+      "unit": "m",
+      "source_files": [],
+      "formula": null,
+      "confidence": "unknown",
+      "reason": "建筑高度控制（限高、分区高度）未公开；方案正文仅以建筑原型与体量策略作概念表达，未设定高度数值。",
+      "required_for_formal_submission": true,
+      "assumptions": [
+        "需资料：正式控规高度分区与相关专项（如文保建控地带、机场/气象限高）资料。"
+      ]
+    },
+    "statutory_green_ratio": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [],
+      "formula": null,
+      "confidence": "unknown",
+      "reason": "法定绿地率为控规控制指标，官方值未公开；本包 green_ratio=0.2796 为概念设计模型输出，与法定绿地率严格区分。",
+      "required_for_formal_submission": true,
+      "assumptions": [
+        "需资料：正式控规绿地率控制指标。"
+      ]
+    },
+    "building_setback": {
+      "status": "unknown",
+      "value": null,
+      "unit": "m",
+      "source_files": [],
+      "formula": null,
+      "confidence": "unknown",
+      "reason": "建筑退线要求（退道路红线、退边界、退文保范围）未公开；正文涉及处均标注待正式资料确认。",
+      "required_for_formal_submission": true,
+      "assumptions": [
+        "需资料：正式控规退线规定、道路红线与文保建设控制地带资料。"
+      ]
+    },
+    "road_redline": {
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_files": [],
+      "formula": null,
+      "confidence": "unknown",
+      "reason": "道路红线、断面、交通流量与停车底数未公开；roads.geojson 为概念线位（geometry_role 按任务要求标注 concept），不表达工程线位，因此无法定义红线宽度或面积指标。",
+      "required_for_formal_submission": true,
+      "assumptions": [
+        "需资料：道路红线与断面资料、交通专项、轨道站点资料。"
+      ]
+    },
+    "road_area_ratio": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [],
+      "formula": "road_area / site_area",
+      "confidence": "unknown",
+      "reason": "roads.geojson 为 LineString/Point 概念线位，无道路面积多边形；道路面积需以正式红线断面资料生成后再复算。",
+      "required_for_formal_submission": false,
+      "assumptions": [
+        "需资料：道路红线与断面资料；复算触发条件为官方道路资料发布。"
+      ]
+    },
+    "utility_capacity": {
+      "status": "unknown",
+      "value": null,
+      "unit": null,
+      "source_files": [],
+      "formula": null,
+      "confidence": "unknown",
+      "reason": "市政管线、消防、防洪排涝与容量资料未公开；方案仅作概念性市政与新基建策略表述，无任何容量数值。",
+      "required_for_formal_submission": true,
+      "assumptions": [
+        "需资料：市政专项规划与管线综合资料、防洪排涝与消防专项资料。"
+      ]
+    },
+    "investment_estimate": {
+      "status": "unknown",
+      "value": null,
+      "unit": "CNY",
+      "source_files": [],
+      "formula": null,
+      "confidence": "unknown",
+      "reason": "投资额缺乏测算依据（无工程量、造价指标与实施主体边界）；按统一边界条款不作投资测算承诺。",
+      "required_for_formal_submission": false,
+      "assumptions": [
+        "需资料：实施主体、工程量清单与造价指标；分期与权属条件明确后方可估算。"
+      ]
+    },
+    "phasing_area_sqm": {
+      "status": "unknown",
+      "value": null,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/phasing.geojson"
+      ],
+      "formula": "sum(polygon_area(f) for f in phasing if f.phase in [1,2,3])",
+      "confidence": "unknown",
+      "reason": "phasing.geojson 各分期要素带有概念面积，但 PH-0 为全域非排他叠加层、分期口径需与正式项目清单对齐，汇总值暂未核定，故保持 unknown。",
+      "required_for_formal_submission": false,
+      "assumptions": [
+        "复算触发条件：正式边界发布且分期实施计划经实施主体确认后。"
+      ]
+    }
+  }
+}

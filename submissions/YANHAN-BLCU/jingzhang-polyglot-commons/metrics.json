@@ -182,6 +182,68 @@
         "A-CONTROLS-001"
       ],
       "reason": "Approved regulatory building coverage controls are pending."
+    },
+    "regional_interface_count": {
+      "status": "known",
+      "value": 5,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "proposal.en.md"
+      ],
+      "formula": "count(named_regional_interfaces)",
+      "confidence": "medium",
+      "assumptions": [
+        "A-REGIONAL-COORDINATION-001"
+      ]
+    },
+    "co_design_sample_target": {
+      "status": "unknown",
+      "value": null,
+      "unit": "count",
+      "source_files": [],
+      "formula": "target_participants_before_first_validation_round",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-INCLUSION-VALIDATION-001"
+      ],
+      "reason": "Twenty-four participants are a proposed sampling target; no recruitment or survey has been completed."
+    },
+    "language_service_difference": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [],
+      "formula": "max_completion_time_difference_by_language / median_completion_time",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-INCLUSION-VALIDATION-001"
+      ],
+      "reason": "Language service parity has not been measured; record aggregate results only after consented co-design."
+    },
+    "accessibility_test_completion": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [],
+      "formula": "completed_accessibility_tasks / assigned_accessibility_tasks",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-INCLUSION-VALIDATION-001"
+      ],
+      "reason": "No accessibility walkthrough has yet been conducted."
+    },
+    "correction_time_hours": {
+      "status": "unknown",
+      "value": null,
+      "unit": "hours",
+      "source_files": [],
+      "formula": "median(timestamp_correction_applied - timestamp_issue_logged)",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-OPERATIONS-BASELINE-001"
+      ],
+      "reason": "The terminology and public-service correction workflow has no operating baseline."
     }
   }
 }

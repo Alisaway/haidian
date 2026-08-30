@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "status": "conceptual_recommendation",
+  "title_zh": "城市智能体公共运行协议",
+  "title_en": "Common Public Operating Protocol for Urban Agents",
+  "applies_to_scenarios": [
+    "city-sensing-grid",
+    "policy-simulation-sandbox",
+    "multi-agent-collab",
+    "governance-knowledge-base",
+    "public-review-stand",
+    "scenario-marketplace",
+    "data-trust-hub",
+    "comply-boost",
+    "ai-civic-navigator",
+    "community-health-sentinel",
+    "ai-legal-aid"
+  ],
+  "mandatory_contract_fields": [
+    "issue_intake",
+    "minimum_data",
+    "agent_authority",
+    "accountable_role",
+    "human_takeover",
+    "non_digital_alternative",
+    "exit_condition",
+    "evidence_receipt"
+  ],
+  "lifecycle": [
+    {"id": "intake", "continue_when": "source, users and civic necessity are explainable", "stop_or_fallback": "reject unclear or unnecessary uses and record the reason"},
+    {"id": "triage", "continue_when": "purpose, retention, prohibited uses, risk and accountable role are confirmed", "stop_or_fallback": "route unclear authority or purpose to existing human service"},
+    {"id": "controlled_test", "continue_when": "isolation, evaluation, failure injection and exit resources are ready", "stop_or_fallback": "stop on unauthorised access, material bias or unexplainable output and revoke access"},
+    {"id": "human_review", "continue_when": "an authorised person independently examines the evidence version", "stop_or_fallback": "return to the existing workflow and record override reasons"},
+    {"id": "public_release", "continue_when": "scope, AI involvement, owner and appeal route are accessible", "stop_or_fallback": "do not scale when explanation or remedy is inaccessible"},
+    {"id": "correction_or_exit", "continue_when": "remediation, deletion, revocation and recovery are verified", "stop_or_fallback": "provide progress and a checkable receipt to affected users"},
+    {"id": "knowledge_update", "continue_when": "sources, editor, version, validity and review date are complete", "stop_or_fallback": "retire disputed or expired content"}
+  ],
+  "negative_tests": [
+    "unauthorised_access_rejection",
+    "misclassification_human_override",
+    "cross_agency_conflict_pause",
+    "accessibility_failure_fallback"
+  ],
+  "pilot_windows": [
+    {"weeks": "1-2", "task": "lock baseline and accountable roles"},
+    {"weeks": "3-4", "task": "reproducible desktop replay"},
+    {"weeks": "5-6", "task": "isolated test and failure injection"},
+    {"weeks": "7-8", "task": "limited public and accessibility walkthrough"},
+    {"weeks": "9-10", "task": "coordination, appeal and recovery drill"},
+    {"weeks": "11-12", "task": "independent stage review"}
+  ],
+  "evidence_ledgers": ["spatial_ledger", "scenario_ledger", "version_ledger"],
+  "boundary_note": "This file defines a proposed verification contract. It does not report completed field tests, approved thresholds, appointed public bodies or deployed government systems."
+}

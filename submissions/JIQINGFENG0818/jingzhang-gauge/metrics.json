@@ -114,13 +114,14 @@
    "value": 2405375.969369,
    "unit": "sqm",
    "source_files": [
-    "geometry/roads.geojson"
+    "geometry/land_use.geojson"
    ],
-   "formula": "area(buffer(road_centerline, class_width)) ∩ site",
+   "formula": "sum(polygon_area(land_use where land_use_code=1207)) @EPSG:4548",
    "confidence": "medium",
    "assumptions": [
     "基于 provisional_constraint 临时边界，非官方精确面积",
-    "路网沿用地剖分边界生成；红线宽度为概念假设值：主线44m/次干26m/支路16m"
+    "路网沿用地剖分边界生成；红线宽度为概念假设值：主线44m/次干26m/支路16m",
+    "道路用地面积取自用地剖分中 1207 城镇村道路用地图斑的并集面积；路网中心线（geometry/roads.geojson）用于生成该图斑，不再单独按等级缓冲复算，避免同一面积出现两套口径。"
    ]
   },
   "road_area_ratio": {
@@ -128,7 +129,8 @@
    "value": 0.210761,
    "unit": "ratio",
    "source_files": [
-    "geometry/roads.geojson"
+    "geometry/land_use.geojson",
+    "geometry/site_boundary.geojson"
    ],
    "formula": "road_area / site_area",
    "confidence": "low",
@@ -192,14 +194,14 @@
  ],
  "breakdowns": {
   "land_use_area_by_code_sqm": {
-   "05": {
+   "09": {
     "status": "known",
     "value": 308141.518653,
     "unit": "sqm",
     "source_files": [
      "geometry/land_use.geojson"
     ],
-    "formula": "sum(polygon_area(land_use where land_use_code=05)) @EPSG:4548",
+    "formula": "sum(polygon_area(land_use where land_use_code=09)) @EPSG:4548",
     "confidence": "medium",
     "assumptions": [
      "基于 provisional_constraint 临时边界，非官方精确面积"

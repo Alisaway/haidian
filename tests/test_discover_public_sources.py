@@ -1,7 +1,12 @@
+import contextlib
+import io
+import json
+import tempfile
 import unittest
 
 import sys
 from pathlib import Path
+from unittest.mock import patch
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -12,6 +17,8 @@ from discover_public_sources import (  # noqa: E402
     classify_recency,
     content_type_kind,
     extract_links_from_html,
+    is_probably_supported_url,
+    main as discover_main,
     parse_dateish,
     parse_html_metadata,
     score_candidate,
@@ -19,6 +26,64 @@ from discover_public_sources import (  # noqa: E402
 
 
 class DiscoverPublicSourcesTests(unittest.TestCase):
+    def test_malformed_seed_urls_are_skipped_before_discovery(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            seed_path = root / "seeds.csv"
+            seed_path.write_text(
+                "type,url\n"
+                "auto_html,https://[\n"
+                "auto_html,https://example.com:bad/path\n"
+                "auto_html,https://example.com:99999/path\n",
+                encoding="utf-8",
+            )
+            output_dir = root / "output"
+
+            stdout = io.StringIO()
+            with (
+                contextlib.redirect_stdout(stdout),
+                patch("discover_public_sources.fetch_url") as fetch_mock,
+            ):
+                result = discover_main(
+                    [
+                        "--seed-csv",
+                        str(seed_path),
+                        "--output-dir",
+                        str(output_dir),
+                        "--no-search",
+                        "--no-default-queries",
+                        "--pause",
+                        "0",
+                    ]
+                )
+
+            self.assertEqual(0, result)
+            fetch_mock.assert_not_called()
+            self.assertIn("wrote 0 candidates", stdout.getvalue())
+            summary = json.loads((output_dir / "run-summary.json").read_text(encoding="utf-8"))
+            self.assertEqual(0, summary["candidate_count"])
+            self.assertEqual(0, summary["discovered_counts"]["seed"])
+
+    def test_supported_url_check_validates_structure_and_ports(self) -> None:
+        self.assertTrue(is_probably_supported_url("HTTPS://Example.COM/source"))
+        for url in [
+            "https://[",
+            "https://example.com:bad/path",
+            "https://example.com:99999/path",
+            "https://exa mple.com/path",
+            "https://example.com/path with spaces",
+            "ftp://example.com/source",
+        ]:
+            with self.subTest(url=url):
+                self.assertFalse(is_probably_supported_url(url))
+
+    def test_malformed_page_link_does_not_hide_valid_links(self) -> None:
+        links = extract_links_from_html(
+            '<a href="https://[">Broken</a><a href="/valid.html">Valid</a>',
+            "https://example.com/root/index.html",
+        )
+        self.assertEqual([("https://example.com/valid.html", "Valid")], links)
+
     def test_parse_html_metadata_extracts_title_meta_and_links(self) -> None:
         metadata = parse_html_metadata(
             """

@@ -1,0 +1,184 @@
+{
+  "schema_version": "0.1.0",
+  "sources": [
+    {
+      "id": "SITE-PACKAGE",
+      "path": "brief/site-package/",
+      "source_type": "official_public",
+      "usage": "项目任务书结构化场地包：范围层级、枚举、允许设计空间、指标口径、校验 schema。formal 设计依据。"
+    },
+    {
+      "id": "SOURCE-REGISTRY",
+      "path": "data/source_registry.json",
+      "source_type": "repository_public_registry",
+      "usage": "公开/清权/临时资料可用性登记表；区分 formal-ready、background_only、provisional_only。用于判断每份资料可支撑的结论级别。"
+    },
+    {
+      "id": "PROCESSED-FACT-PACK",
+      "path": "data/processed/agent_fact_pack.md",
+      "source_type": "repository_processed_reference",
+      "usage": "面向智能体的资料导航层：范围结构、任务要求、资料用途边界与缺口清单；不替代原始来源。"
+    },
+    {
+      "id": "BOUNDARY-SOURCE",
+      "path": "brief/site-package/geometry/provisional_boundaries.geojson",
+      "source_type": "agent_inferred_from_public_data",
+      "usage": "提交的总体设计范围边界几何来源（provisional_constraint，boundary_precision=provisional_rough）。仅用于临时生成、展示与自检，不作官方红线。"
+    },
+    {
+      "id": "KEY-AREA-SOURCE",
+      "path": "brief/site-package/geometry/provisional_boundaries.geojson",
+      "source_type": "agent_inferred_from_public_data",
+      "usage": "三处重点区域边界几何来源（provisional_constraint）。公告口径面积：众智园约192.1ha、AI原点社区约104.3ha、大钟寺约72.0ha。"
+    },
+    {
+      "id": "OFFICIAL-ANNOUNCEMENT",
+      "url": "https://ghzrzyw.beijing.gov.cn/zhengwuxinxi/tzgg/hd/202605/t20260509_4643047.html",
+      "source_type": "official_public",
+      "usage": "北京市规划和自然资源委员会海淀分局《百年京张AI创新带城市设计国际方案征集资格预审公告》：任务、范围层级、面积口径与成果要求的第一权威依据。"
+    },
+    {
+      "id": "AGENT-TASKBOOK",
+      "path": "brief/site-package/agent_taskbook.json",
+      "source_type": "user_provided_cleared",
+      "usage": "面向智能体任务书摘录：十条共创原则、三大定位、五大功能、三区两翼、六项必答任务、评审维度与边界条款。"
+    },
+    {
+      "id": "JINGZHANG-HERITAGE-PARK",
+      "url": "https://www.beijing.gov.cn/",
+      "source_type": "official_public",
+      "usage": "京张铁路遗址公园公开报道与建设信息（北京市/海淀区公开发布）。仅作背景与文化叙事依据（background_only），不作空间控制依据。"
+    },
+    {
+      "id": "QINGHUAYUAN-STATION-HERITAGE",
+      "url": "https://wwj.beijing.gov.cn/",
+      "source_type": "official_public",
+      "usage": "北京市文物局公开的清华园车站旧址文物保护信息。仅作文化资源背景依据（background_only），具体保护范围与建控地带以文物部门正式公布为准。"
+    },
+    {
+      "id": "BEIJING-OPEN-DATA",
+      "url": "https://data.beijing.gov.cn/",
+      "source_type": "official_public",
+      "usage": "北京市公共数据开放平台（人口、交通、公共设施等公开统计口径）。仅作背景参照（background_only），本版未将其用于任何 formal 空间结论。"
+    },
+    {
+      "id": "GLOBAL-AI-ECOSYSTEM-CASES",
+      "source_type": "public_background_knowledge",
+      "usage": "全球AI创新生态公开案例（硅谷/肯德尔广场/Station F/慕尼黑工业大学创新廊道/深圳南山/上海张江等）的公开通识研究。仅作生态机制类比的背景依据，具体数据以各案例官方发布为准。"
+    },
+    {
+      "id": "TERMINOLOGY-GLOSSARY",
+      "path": "docs/terminology-glossary.md",
+      "source_type": "repository_processed_reference",
+      "usage": "赛事中英术语表：双语译稿术语一致性依据。"
+    },
+    {
+      "id": "HD00-1601-CONTROL-PLAN-APPROVAL",
+      "url": "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202608/t20260812_4819212.html",
+      "source_type": "official_public",
+      "usage": "《北京海淀区京张铁路遗址公园沿线（人工智能创新街区重点地区）HD00-1601等街区控制性详细规划（街区层面）（2024年—2035年）》获批消息（北京市人民政府门户网站转载北京日报，批复日期2026-08-11，共9个街区约1668.2公顷，空间结构一带一轴两心多点）。用途限于背景参照：提及「一带」与本方案开源主线所沿的京张铁路遗址公园产业创新带、「两心」含大钟寺与五道口，支持「控规之上的概念深化」定位方向（概念建议）。该来源尚未进入 data/source_registry.json 的 approved_formal_sources，按待来源登记复核的公开背景信息使用，不作法定依据或正式实施证据。它是新闻通稿口径而非图则：不给地块红线、容积率、建筑高度或退线数值，本包不据它产生任何控制指标，相关指标保持 unknown。"
+    },
+    {
+      "id": "JINGZHANG-PARK-PHASE2-APPROVAL",
+      "url": "https://fgw.beijing.gov.cn/fgwzwgk/ysqzzdgk/202409/t20240923_3902988.htm",
+      "source_type": "official_public",
+      "usage": "北京市发展和改革委员会《关于京张铁路遗址公共空间改造提升工程（二期）实施方案的批复》（京发改（审）〔2024〕609号，2024-09-23，受文单位海淀区发展和改革委员会，建设单位北京市海淀区园林绿化局，西直门至知春路段用地约23.08公顷）。用于更新项目①⑦的实施背景参照。该来源尚未进入 data/source_registry.json 的 approved_formal_sources，按待来源登记复核的公开背景信息使用，不作法定依据或正式实施证据。批复不构成对本方案的认可，不提供红线或控制指标。"
+    },
+    {
+      "id": "HD-FYP-PLAN-2026",
+      "url": "https://zyk.bjhd.gov.cn/zwdt/zcwj/202604/t20260428_4813297.shtml",
+      "source_type": "official_public",
+      "usage": "北京市海淀区人民政府关于印发《北京市海淀区国民经济和社会发展第十五个五年规划纲要》的通知（海政发〔2026〕5号，2026-01-09 区人代会批准，2026-04-28 印发，现行有效；区政府门户网站原文）。本包作者已于原网址逐项自行核验后登记。引用口径：十四五末海淀成为全国首个经济总量破万亿的地市级区县、GDP 占北京市 26% 左右；人工智能核心产业规模超 2800 亿元、为全国人工智能领域产业基础最好/人力资源最密集/产品迭代最活跃的地区；清华园车站旧址对公众开放、进京赶考之路（北京段）全线贯通；京张铁路遗址公园（一期）等建成开放。用途限于产业与文化叙事的公开统计口径背景参照（background 参照），不用于任何空间结论、控制指标或实施承诺；不据其产生本包任何数值。"
+    },
+    {
+      "id": "HD-GOV-REPORT-2026",
+      "url": "https://zyk.bjhd.gov.cn/zwdt/xxgk/zfgzbg/202602/t20260209_4805226_hd.shtml",
+      "source_type": "official_public",
+      "usage": "北京市海淀区人民政府关于印发 2026 年《政府工作报告》的通知（2026-01-07 区十七届人大六次会议审议通过，区政府门户网站原文）。本包作者已于原网址逐项自行核验后登记。引用口径：京张铁路遗址公园沿线街区控规通过技术审查；备案大模型累计 122 款、全市占比近 60%；依托 AI 原点社区、AI 北纬社区和京张铁路遗址公园创新带打造人工智能创新街区。用途限于规划衔接与产业背景参照：佐证本方案三区两翼与官方部署同向、佐证沿线控规程序进展；控规技术审查不等于图则发布，本包不据其产生任何控制指标，强度/高度/退线保持 unknown。"
+    },
+    {
+      "id": "HD-QIANXIAN-ARTICLE-2026",
+      "url": "https://peking.bjd.com.cn/content/s6a210605e4b0e45f3fd28654.html",
+      "source_type": "official_public",
+      "usage": "中共北京市海淀区委书记张革署名文章《推动创新关键变量成为发展最大增量》，《前线》杂志 2026 年第 6 期；北京日报客户端「北京海淀官方发布」（区政府官方发布渠道）2026-06-04 全文转载。本包作者已于原网址逐项自行核验后登记。引用口径：2025 年全区 GDP 近 1.37 万亿元、增速 7.2%、占全市 26%；人工智能核心企业超 2000 家、2025 年产业规模 3575 亿元；PCT 国际专利申请量占全市 47%、有效发明专利 35 万件占全市 46%。用途限于产业底盘的公开口径背景参照（最新年度数据），不用于任何空间结论或数值承诺。"
+    },
+    {
+      "id": "SWITCHBACK-PROTOCOL",
+      "url": "https://github.com/open-city-ai/haidian/issues/1119",
+      "source_type": "community_open_spec",
+      "usage": "折返协议 Switchback Protocol v1.0（chucky1102/人字线 RENLINE，CC-BY-4.0，规范文本许可）。组件级采纳：为场景卡 6/11/12/13 建立机器可读运营合约（三色状态、数字化时限、90 天复审、折返留痕）；采用声明见 visual/assets/switchback-adoption.json。它是社区开放贡献的治理合约模板，不是官方标准，不代表任何机构背书。"
+    },
+    {
+      "id": "SEB-SPEC",
+      "url": "https://github.com/open-city-ai/haidian/issues/2549",
+      "source_type": "community_open_spec",
+      "usage": "服务等价基准 SEB v0.5.0（lqqk7/万感京张，CC BY-SA 4.0，条文与 schema 许可）。组件级采纳：仅节点 schema 组件（五项必填字段），为六座站厅服务节点声明 AI 关闭后等价路径；采用声明见 visual/assets/seb-adoption.json。它是社区开放贡献的判据集，不是官方标准，本包不认领任何 SEB 开放等级。"
+    },
+    {
+      "id": "WEBFONT-NOTOSANS-SC-SUBSET",
+      "url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "source_type": "community_open_spec",
+      "usage": "Noto Sans SC 可变字体字符子集（OFL-1.1）：内联于本包四份 HTML 的 base64 woff2，作为离线中英文字体回退，消除无 CJK 字体环境下的方框；覆盖证据与 SHA-256 见 visual/assets/webfont-coverage-evidence.json。OFL-1.1 允许再分发与子集化，要求保留版权声明；本包未修改字形。"
+    },
+    {
+      "id": "GB-55019-ACCESSIBILITY-CODE",
+      "url": "https://www.gov.cn/zhengce/zhengceku/2022-03/30/content_5682480.htm",
+      "source_type": "official_public",
+      "usage": "住房和城乡建设部公告 2021年第174号发布的国家标准《建筑与市政工程无障碍通用规范》（GB 55019-2021，2022-04-01 起实施，全文强制性工程建设规范共 108 条；国务院政策文件库收录的发布公告页，规范全文于住建部门户网站公开）。用途限于无障碍设计意图映射（visual/assets/accessibility-mapping.json）：本包仅主张设计意图与规范要求领域一致（design-intent alignment，待现场认证），不主张任何现场认证结论；条目级现场认证由 P5 第三方无障碍专业审查承担。映射按规范五大组成部分的主题领域引用，不作条款号级转述；中文原名为权威口径。"
+    },
+    {
+      "id": "OM-PRICE-STD-BJ2021",
+      "url": "https://yllhj.beijing.gov.cn/zwgk/2024nzcwj/2024nqtwj/202406/t20240625_3729981.shtml",
+      "source_type": "official_public",
+      "usage": "北京市园林绿化局《北京市城镇绿地养护管理投资标准的意见》（京绿办发〔2021〕300号，2021-12-06 发布，2022-01-01 实施，现行有效；发文机关门户网站原文页，本包作者已于原网址逐项核验后登记）。引用口径：特级绿地新建 25 元/平方米·年、成熟 22；一级 20/17；二级 12/9；三级 8/6；中心城区按 1.2 系数上调（海淀属中心城区）；标准口径含人工/水/农药/肥料/机械/运输/综合管理费，不含园林设施维护、花卉摆放、应急抢险与古树名木。用途限于 visual/assets/om-funding-gap.json 空间养护科目绿地部分的单价区间推导（ROM 概念估算低端=二级成熟 9×1.2、高端=特级新建 25×1.2）：仅锚定量级，不构成对本方案的资金安排认定、预算结论或任何审批暗示。"
+    },
+    {
+      "id": "OM-PRICE-GP-CROSS",
+      "url": "https://ggzyfw.beijing.gov.cn/jyxxzbjggg/20260413/5493718.html",
+      "source_type": "official_public",
+      "usage": "北京市公共资源交易服务平台公开中标公告两则（本包作者已于原网址逐项核验后登记）：其一，房山区 2026 年城市园林绿地养护项目（11011126210200029211-XM001，2026-04-13 公示，五标段合计 7544.960303 万元；标段一 1440.048818 万元/养护面积 2,266,409.33 平方米≈6.36 元/平方米·年、标段二 1671.024246 万元/2,709,835.43 平方米≈6.17 元/平方米·年，服务含绿地养护+设施维护+保洁+安保全口径，合同期 12 个月）；其二，昌平区回天地区公园绿地管理中心郊野公园管护项目（回龙观生态休闲公园，11011426210200033496-XM001，2026-06-24 公示，121.05 万元/179,333.33 平方米，服务期 9 个月即 2026-07-01 至 2027-03-31，年化约 9.0 元/平方米·年；公告 URL：http://www.ccgp-beijing.gov.cn/xxgg/qjxxgg/qjzbggs/2026/6/9dabb985884045d6affbc157af05a5d6.htm）。用途限于 om-funding-gap.json 硬质公共空间管护单价区间 [6.2, 9.0] 元/平方米·年的公开交叉参照（ROM 概念估算，非承诺）：两案均为政府公开采购实际成交价，仅锚定量级，不代表本方案获得任何采购结论。"
+    },
+    {
+      "id": "OM-EVENT-GP-RANGE",
+      "url": "http://www.bjft.gov.cn/xxfb/zfgg/202605/t20260527_214186.shtml",
+      "source_type": "official_public",
+      "usage": "政府采购公开成交/中标公告区间（本包作者已于原网址逐项核验后登记）：丰台区 2026 年「花开丰台」端午游园会 29.80 万元/场（区文旅局公告）；同口径公开案例：北京市园林绿化局花开北京·2026 花卉文化活动 69.95 万元（https://yllhj.beijing.gov.cn/zwgk/zfcg/cgjg/202603/t20260319_4561848.shtml）、北京市公园管理中心服贸会公园展区服务项目 80.226279 万元（https://gygl.beijing.gov.cn/xxgk/cgyxgs/202608/t20260814_4823327.html）、孔庙和国子监博物馆十三经主题展览 98.99395 万元（https://ggzyfw.beijing.gov.cn/jyxxzbjggg/20260512/5527841.html）。用途限于 om-funding-gap.json 活动策展科目单价区间 [29.8, 99.0] 万元/场的公开参照（ROM 概念估算，非承诺）：均为政府公开采购实际成交价，仅锚定量级，不代表本方案获得任何采购结论。"
+    },
+    {
+      "id": "HERITAGE-BOUNDARY-ROSTER-2025",
+      "url": "https://www.beijing.gov.cn/zhengce/zhengcefagui/202501/t20250114_3989104.html",
+      "source_type": "official_public",
+      "usage": "北京市人民政府《关于公布第十一批文物保护单位保护范围及建设控制地带的通知》（京政发〔2025〕3号，2025-01-11成文、2025-01-14发布，现行有效，51项名单）。本包作者已于原网址核验登记。第26项为清华园车站旧址（本包文保地段要素所在地）。用途限于 statutory-reconciliation.json 触发事实登记：名单层公布事实成立，保护范围及建控地带说明及其图纸由市文物局、市规划自然资源委另行印发，不作地块开发依据。"
+    },
+    {
+      "id": "QINGHUAYUAN-BOUNDARY-DESCRIPTION",
+      "url": "https://wwj.beijing.gov.cn/bjww/362771/362782/743928533/743928745/index.html",
+      "source_type": "official_public",
+      "usage": "北京市文物局官网文博数据「第十一批划定文保单位的保护范围及建控地带」数据库清华园车站旧址条目（条目日期2026-02-14）。本包作者已于原网址核验登记。文字边界说明：保护范围为东至站房（J01）东墙以东8米平行线、南至南房（J03）南墙以南2米平行线、西至西侧墙体遗存（Y01）以西2米平行线、北至北房（J02）北墙以北2米平行线；建设控制地带含Ⅰ类（东至保护范围西界及其延长线、南至南界以南20米平行线、西至西界以西8米平行线、北至北界以北17米平行线）及Ⅴ类3个分区（含不得新建建（构）筑物、有条件应腾退拆除等管控要求）。坐标与图纸未见公开，边界级坐标校核待图纸。用途限于文保地段要素从严校核的文字边界依据。"
+    },
+    {
+      "id": "HD00-1601-CONTROL-PLAN-PUBLIC",
+      "url": "https://www.ncsti.gov.cn/kjdt/tzgg/202608/t20260826_254431.html",
+      "source_type": "official_public",
+      "usage": "《北京海淀区京张铁路遗址公园沿线（人工智能创新街区重点地区）HD00-1601等街区控制性详细规划（街区层面）（2024年—2035年）》公开版全文（北京市海淀区人民政府、北京市规划和自然资源委员会，编制单位中国城市规划设计研究院；区政府网2026-08-17首发页面已撤稿，此为国家科技信息平台2026-08-26镜像，附件PDF为文本+图纸+图则）。本包作者已于原网址逐项核验登记。引用口径：规划范围16.7平方公里9个街区、规划总建筑规模2408.0万平方米、75个主导功能分区、基准强度分区（五级1个/四级19个/三级41个/二级4个）、基准高度分区（36/45/60/80/100米6类）、市政设施专项（第57-63条）、第83条「推动人工智能创新街区建设」。用途限于设计模型公开对照基准登记（街区层面，待来源登记复核，不构成法定依据）：地块级容积率/退线等图则数值需读图获取，本包不据其产生任何地块级控制数值，强度/高度地块级数值保持 unknown。"
+    },
+    {
+      "id": "DZS-UTILITY-CAPACITY-2025",
+      "url": "https://ggzyfw.beijing.gov.cn/cmsbj/u/cms/cn.gov.bjggzyfw.www/202601/8651375391270.pdf",
+      "source_type": "official_public",
+      "usage": "《海淀区蓝景丽家项目HD00-1603-01等地块市政交通规划综合方案》（北京市首都规划设计工程咨询开发有限公司，2025年7月，北京市公共资源交易服务平台公开）。本包作者已于原网址核验登记。引用口径：项目南侧现状大钟寺110千伏变电站，现状安装4台50兆伏安变压器，剩余可用出线间隔2回，近期高峰负荷期间负载率分别为60%、63%、51%、79%；项目西侧拟建青云220千伏变电站，计划安装2台180兆伏安变压器，投运时间为2026年；方案受北京海开城市更新建设发展有限责任公司委托（大钟寺先导区供地实施主体）。用途限于 capacity-preassessment.json 边缘算力节点选址电力容量预评估的公开锚点：仅锚定量级与可对照状态，不代表本方案获得任何供电批复。"
+    },
+    {
+      "id": "JINGZHANG-PARK-PHASE2-OPEN",
+      "url": "https://www.bjwmb.gov.cn/wmdt/hdq/10133094.html",
+      "source_type": "official_public",
+      "usage": "《海淀区：京张铁路遗址公园二期建成开放》（海淀报，2026-08-07）。本包作者已于原网址核验登记。引用口径：2026-08-06京张铁路遗址公园二期全面建成开放，与一期2.4公里串联西直门至北五环形成总长9公里都市文化绿廊；南段社区活力段占地23.08万平方米、覆盖70个社区45万居民、拆除全线硬质围挡、打通9条城市支路；北段全长2.6公里、占地30.01公顷、新增3条鱼骨状慢行通道。用途限于本方案「开源主线贯通主张」的实体实证登记（贯通廊道的公共空间基底已全线建成开放），不构成对本方案任何设计内容的认可。"
+    },
+    {
+      "id": "JINGZHANG-PARK-OPERATION-MODEL",
+      "url": "https://peking.bjd.com.cn/content/s692e4592e4b076b012788e6f.html",
+      "source_type": "official_public",
+      "usage": "《京张铁路遗址公园：见证「城市疤痕」变「活力秀带」》（北京海淀官方发布，2025-12-02）。本包作者已于原网址核验登记。引用口径：海淀区园林绿化局与海淀市政集团合作形成京张铁路遗址公园运营模式（园长负责制，现任园长李景承）；另据北京青年报2024-09-06（https://www.bjwmb.gov.cn/yw/10077964.html）2022年中国铁路北京局集团有限公司将清华园车站旧址文物管理权移交海淀区（央地合作「海淀模式」）。用途限于 operator-qualification.json 具名化转换协议的公开先例登记：类别主体→具名主体的转换在带内已有实名先例，不构成对本方案任何运营安排的承诺。"
+    }
+  ]
+}

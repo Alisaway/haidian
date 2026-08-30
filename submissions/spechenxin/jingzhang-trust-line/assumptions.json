@@ -1,0 +1,35 @@
+{
+ "schema_version": "0.1.0",
+ "assumptions": [
+  {
+   "id": "A-CONTROLS-001",
+   "status": "pending_professional_confirmation",
+   "statement": "Detailed regulatory controls, road redlines, ownership, municipal utilities, and engineering constraints must be confirmed from official attachments before statutory use.",
+   "impact": "The package can be reviewed as a formal AI submission only for provided official boundaries and submitted design layers; statutory controls still need professional confirmation."
+  },
+  {
+   "id": "A-PROV-BOUNDARY-001",
+   "status": "pending_professional_confirmation",
+   "statement": "官方精确红线未公开，全部边界使用仓库 provisional 临时边界（official_boundary=false、provisional_rough）。官方 polygon 发布后，site_boundary/key_areas/land_use/green_space/public_space/buildings/roads/phasing 与全部指标、图纸、HTML 必须全量复算。",
+   "impact": "所有面积与比例指标为低置信度设计模型值，不用于官方红线、审批或精确面积依据。"
+  },
+  {
+   "id": "A-CONCEPT-VOLUME-001",
+   "status": "pending_professional_confirmation",
+   "statement": "80 处建筑基底为概念体量（confidence=low），仅表达三处重点区产业空间供给方向，非现状测绘、非法定建设规模。",
+   "impact": "building_footprint_area_sqm 为设计模型值；容积率/限高/密度保持 unknown。"
+  },
+  {
+   "id": "A-STATION-CONCEPT-001",
+   "status": "pending_professional_confirmation",
+   "statement": "十二信任站、三个朝圣地标、活动体系与信任凭证机制均为概念建议/参考方案，供专业团队深化研究，不构成工程可行性、政府安排或投资承诺。",
+   "impact": "所有空间落地建议以概念建议表述；道路线位、轨道线位、桥隧工程不给出结论。"
+  },
+  {
+   "id": "A-HERITAGE-001",
+   "status": "pending_professional_confirmation",
+   "statement": "清华园车站旧址等文保范围、建设控制地带与京张遗址公园精确边界待官方数据；概念叙事不涉及文物本体的任何改造结论。",
+   "impact": "涉及文保的空间表达均为叙事性概念，待官方文保图层后校核。"
+  }
+ ]
+}

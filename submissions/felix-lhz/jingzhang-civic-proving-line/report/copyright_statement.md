@@ -1,10 +1,20 @@
 # 版权、生成方式与权利边界 / Copyright, generation and rights boundary
 
-- V3 城市参照层使用 2026-08-13 冻结并抽稀的 OpenStreetMap 快照，仅作低对比展示背景。署名：**Map data © OpenStreetMap contributors**；数据库许可：**ODbL 1.0**；版权说明：https://www.openstreetmap.org/copyright/。所有要素均标为 `open_data_context / reference_only / display_context_only`，不进入设计量、法定或绩效主张。
+- **开放底图 / open context.** A frozen, simplified OpenStreetMap snapshot dated 2026-08-13 is used only as low-contrast display context. Attribution: **Map data © OpenStreetMap contributors**; licence: **ODbL 1.0**; https://www.openstreetmap.org/copyright/. It is registered as `open_data_context / reference_only / display_context_only` and never supports statutory, ownership, survey, area or field-performance claims.
+- **政府公开资料 / official public sources.** Government pages and documents listed in `sources.json` support only the facts explicitly published by their issuing bodies. They do not establish a competition redline, partnership, implementation commitment or endorsement.
+- **设计内容 / design content.** Text, GeoJSON design objects, diagrams, forms, HTML and drawings were produced for this submission by the Agent. Boundaries, dimensions, buildings, interfaces and quantities marked as design assumptions require survey and professional review.
+- **概念生成图 / generated concept images.** `assets/media/*.webp` were generated with OpenAI’s built-in image-generation tool on 2026-08-12 and 2026-08-20. They are concept views, not site photographs, survey evidence, public opinion or approval evidence; prompts, intended use and limits are registered in `sources.json`.
+- **字体与出版 / fonts and publishing.** The four offline HTML deliverables embed `JZ Civic CJK`, a renamed glyph subset derived from Source Han Sans 2.005R under the SIL Open Font License 1.1. The base64 WOFF2 bundle, OFL text, upstream SHA-256, glyph manifest and derivation metadata are distributed as validator-compatible JSON in `visual/assets/`. No CDN, remote font, tile, API, iframe or tracker is requested at runtime. The PDF publication chain remains unchanged.
+- **验证边界 / verification boundary.** Geometry audits and synthetic contract tests establish design consistency only. The twelve measurement contracts contain no field result; cost, energy, footfall, efficiency, satisfaction and recovery time remain `unknown / not_field_run`.
+- **许可 / permitted display.** The package is submitted under `COMMUNITY-DISPLAY-ONLY` for repository review and competition display. Third-party rights remain with their owners; place and institution names are contextual references, not project marks or evidence of endorsement.
 
-- 正文、结构化数据、GeoJSON、图表、HTML 与图纸由参赛 Agent 基于仓库公开资料、公开网页资料和概念设计生成，按 `COMMUNITY-DISPLAY-ONLY` 参加社区展示；不得据此推断第三方授权或政府背书。
-- `assets/media/*.webp` 为 OpenAI 内置图像生成工具于 2026-08-12 生成的概念体验图；完整提示词意图、用途与限制登记在 `sources.json`。图像不是现状照片、测绘、公众意见或审批证据。
-- 国际案例仅以官方/第一手页面提取机制，版权归原发布者；本包不转载其原图或长段文字。
-- 京张、地名和机构名称仅用于项目语境；未使用第三方商标作为项目标识。
-- 项目标志以代码生成的线、虚线和共同确认点构成；颜色为遗产石墨、公共绿色、候选琥珀、证据蓝。
-- 临时边界、概念建筑包络和 AI 场景须由规划、建筑、景观、交通、市政、无障碍、安全、法务与运营团队继续深化。
+- **V13 ALT-C experience view.** `assets/media/dazhongsi-alt-c-v13.webp` follows the selected design geometry as a generated concept view. It is not field evidence; vector plan, section and geometry audit remain authoritative for scale and selection.
+## V15 concept-generated architectural experience images
+
+- assets/media/verification-ring-v15.webp / .jpg
+- assets/media/translation-gate-v15.webp / .jpg
+- assets/media/receipt-porch-v15.webp / .jpg
+
+Generated with OpenAI built-in image generation on 2026-08-21. They communicate the Ring, Gate and Porch architectural prototypes only and are not site photographs, surveys, field evidence, consultation records or approvals. Text, dimensions, IDs and evidence status are added by local vector layers; professional judgement relies on the plans, sections, structured data and cited public sources.
+
+- `GENERATED-RECEIPT-PORCH-V17-DAY` and `GENERATED-RECEIPT-PORCH-V17-NIGHT`: OpenAI built-in image-generation edits, 2026-08-21. Competition-display use only. They communicate a same-camera concept state and are not site photographs, measured conditions, approvals or field results.

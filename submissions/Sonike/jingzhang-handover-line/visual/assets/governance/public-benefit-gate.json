@@ -1,0 +1,52 @@
+{
+  "contract_version": "1.0",
+  "evidence_level": "E2_preregistered_public_value_contract",
+  "activation_state": "specified_not_observed",
+  "decision_rule": {
+    "public_benefit_is_entry_condition": true,
+    "public_life_precedes_technology_display": true,
+    "smart_layer_closes_when_public_floor_fails": true,
+    "basic_service_continues_after_closure": true,
+    "decision_zh": "一个场景只有同时证明公共收益、分配公平和可退出，才通过第三道‘服务’门；技术效果好但挤占通行、制造消费门槛、扩大群体差距或伤害日常生态时，仍判失败。"
+  },
+  "beneficiary_groups": [
+    {"group_id": "residents", "name_zh": "居民与家庭", "name_en": "Residents and families", "public_value_zh": "日常通行、照护、维修、安静休息和社区记忆优先，不因示范活动被挤出。", "no_ai_access_zh": "固定导视、有人窗口、电话、纸本和值班簿；非消费空间持续开放。", "evidence_to_collect": ["日常任务成功与等待时间", "噪声、照明、通行和投诉记录"], "status": "specified_not_observed", "observed_participant_count": 0},
+    {"group_id": "youth_talent", "name_zh": "青年人才与学习者", "name_en": "Youth talent and learners", "public_value_zh": "获得可复现的测试、开源学习和失败记录，而不是只观看品牌展示。", "no_ai_access_zh": "人工导师、纸本实验卡、开放目录和线下成果交接。", "evidence_to_collect": ["学习任务可完成性", "授权、署名与失败记录可理解性"], "status": "specified_not_observed", "observed_participant_count": 0},
+    {"group_id": "enterprises", "name_zh": "企业与创业团队", "name_en": "Enterprises and founders", "public_value_zh": "用小规模、可拒收的验证降低试错成本，同时不得把公共空间和居民变成无偿测试资源。", "no_ai_access_zh": "人工评审、纸本风险登记、线下许可与专业服务窗口。", "evidence_to_collect": ["验证任务与退出成本", "公共影响、责任与修复记录"], "status": "specified_not_observed", "observed_participant_count": 0},
+    {"group_id": "universities", "name_zh": "高校与研究机构", "name_en": "Universities and research institutions", "public_value_zh": "把研究成果、方法、限制和负结果以可复核方式交给城市使用者。", "no_ai_access_zh": "人工策展、开放索引、纸本方法卡和现场解释。", "evidence_to_collect": ["方法与限制的可复现性", "许可、撤回和公众质疑响应"], "status": "specified_not_observed", "observed_participant_count": 0},
+    {"group_id": "visitors", "name_zh": "国内外访客", "name_en": "Domestic and international visitors", "public_value_zh": "无需熟悉园区、中文、App 或消费即可理解线路、文化与服务责任。", "no_ai_access_zh": "中英固定导视、多语纸本、志愿者/有人窗口和普通公园通行。", "evidence_to_collect": ["首次到访任务成功与迷失点", "多语安全信息与求助可达性"], "status": "specified_not_observed", "observed_participant_count": 0},
+    {"group_id": "marginalized_groups", "name_zh": "被忽略与高排斥风险群体", "name_en": "Marginalized and exclusion-risk groups", "public_value_zh": "老人、残障者、儿童、无设备者、非中文使用者和拒绝算法者都保有同一基础服务、申诉与退出权。", "no_ai_access_zh": "连续无障碍面、坐姿窗口、触觉/口述、大字易读、电话纸本、无账号路线和异议角色。", "evidence_to_collect": ["逐需求模式的成功、时间、求助和失败", "拒绝设备/算法后的队列、费用、安全信息和结果等价"], "status": "specified_not_observed", "observed_participant_count": 0}
+  ],
+  "cross_cutting_protections": [
+    {"protection_id": "public_life_before_technology_display", "requirement_zh": "日常通行、服务、休息和照护优先于技术展示与活动流量。", "failure_action": "smart_layer_off; remove_or_reduce_display"},
+    {"protection_id": "non_consumption_access", "requirement_zh": "基本通行、座椅、导视、求助、文化浏览和投诉不与消费、会员或门票绑定。", "failure_action": "smart_layer_off; restore_free_public_floor"},
+    {"protection_id": "no_mandatory_personal_device", "requirement_zh": "不得强制手机、App、扫码、账号或个人网络连接。", "failure_action": "smart_layer_off; use_staff_paper_phone"},
+    {"protection_id": "no_mandatory_face_recognition", "requirement_zh": "基本服务不得以人脸识别、情绪识别或持续个体跟踪为入口。", "failure_action": "smart_layer_off; stop_collection_and_delete_temporary_records"},
+    {"protection_id": "human_responsibility_and_appeal", "requirement_zh": "权利、健康、照护、安全与退出决定必须有人类责任角色、申诉和停用回执。", "failure_action": "smart_layer_off; route_decision_to_human"},
+    {"protection_id": "minimum_data_and_deletion", "requirement_zh": "只采任务必需的最小信息，拒绝、撤回和当班删除不降低服务。", "failure_action": "smart_layer_off; stop_collection_and_issue_delete_receipt"},
+    {"protection_id": "child_older_and_disability_safety", "requirement_zh": "儿童、老人和残障者的连续路线、停留、陪同与无倒计时服务是必备项。", "failure_action": "smart_layer_off; repair_access_and_staffing_first"},
+    {"protection_id": "shade_rest_low_light_low_noise", "requirement_zh": "树荫、非消费座椅、低眩光、低噪声和夜间生态连续性优先于屏幕、音响和机器带。", "failure_action": "smart_layer_off; remove_intrusive_equipment"}
+  ],
+  "scenario_public_value_gates": [
+    {"scenario_id": "SCN-01", "primary_group_ids": ["enterprises", "universities", "youth_talent"], "public_benefit_zh": "把模型风险、适用边界和负结果变成可查询的共同知识，降低重复试错。", "harm_to_avoid_zh": "把一次沙盒结果包装成安全认证，或让公众承担未披露风险。", "safeguards": ["公开失败与未决项", "仅用清权/合成样本", "接入方独立拒收", "不把测试结论写成审批"], "stop_condition_zh": "范围越界、失败隐去或接入证据不足即关闭智能层。", "non_tech_remainder_zh": "人工评审桌、纸本风险登记和公开失败目录继续存在。", "status": "specified_not_observed"},
+    {"scenario_id": "SCN-02", "primary_group_ids": ["enterprises", "residents", "visitors", "marginalized_groups"], "public_benefit_zh": "让机器人在封闭小尺度内证明停机、避让和维护能力，不占用普通道路。", "harm_to_avoid_zh": "碰撞、噪声、围挡、机器优先路权和对通行者的影像追踪。", "safeguards": ["封闭测试与公众路线分离", "安全员物理停机", "不采人脸和连续轨迹", "噪声与通行硬门槛"], "stop_condition_zh": "公众路线变窄、发生近失事件、越界或噪声扰民即关闭智能层。", "non_tech_remainder_zh": "连续公共通道、固定隔离和安全员服务继续存在。", "status": "specified_not_observed"},
+    {"scenario_id": "SCN-03", "primary_group_ids": ["enterprises", "universities", "residents"], "public_benefit_zh": "公开任务负载、能耗、温升和停机条件，让产业验证承担真实资源责任。", "harm_to_avoid_zh": "以局部效率数字绿洗，或把热、噪声和电力压力转嫁给周边。", "safeguards": ["独立电表", "热与噪声边界", "容量不足不扩容", "完整任务分母公开"], "stop_condition_zh": "温升、噪声、消防或电力容量越界即关闭智能层并人工停机。", "non_tech_remainder_zh": "离线电表、人工停机与公开能耗记录继续存在。", "status": "specified_not_observed"},
+    {"scenario_id": "SCN-04", "primary_group_ids": ["residents", "visitors", "marginalized_groups"], "public_benefit_zh": "让同意、拒绝、撤回、删除和申诉成为看得见的公共服务。", "harm_to_avoid_zh": "以服务资格诱导同意，强制人脸/账号，或撤回后仍保留记录。", "safeguards": ["参与与基础服务分离", "不使用人脸识别", "最小字段", "当场删除回执", "异议角色可单方停用"], "stop_condition_zh": "拒绝后降级、撤回失败或无法删除临时记录即关闭智能层。", "non_tech_remainder_zh": "线下授权单、人工解释与纸本删除回执继续存在。", "status": "specified_not_observed"},
+    {"scenario_id": "SCN-05", "primary_group_ids": ["residents", "visitors", "marginalized_groups", "youth_talent"], "public_benefit_zh": "任何人无需手机、中文或被跟踪，都能得到同一条可达路径、风险提示和人工帮助。", "harm_to_avoid_zh": "错误无障碍路线、强制定位、复杂操作和把求助者排进次级队列。", "safeguards": ["触觉地图与人工问路先存在", "不连续跟踪位置", "同队列零加价", "坐姿窗口与可触及停用", "八类真实共测"], "stop_condition_zh": "任一必备路线、安全信息或拒绝等价任务失败即关闭智能层。", "non_tech_remainder_zh": "触觉地图、固定导视、有人窗口、电话与纸本路线继续存在。", "status": "specified_not_observed"},
+    {"scenario_id": "SCN-06", "primary_group_ids": ["visitors", "residents", "enterprises", "marginalized_groups"], "public_benefit_zh": "降低语言门槛，同时让涉及权利、安全和资格的内容回到人工确认。", "harm_to_avoid_zh": "机器误译导致权利损失，或只向会中文/有设备的人提供完整信息。", "safeguards": ["中英核心纸本", "权利决定人工复核", "安全信息同等", "无需个人设备"], "stop_condition_zh": "关键权益文本无法人工核对或多语安全信息缺失即关闭智能层。", "non_tech_remainder_zh": "多语纸本、人工窗口和口述服务继续存在。", "status": "specified_not_observed"},
+    {"scenario_id": "SCN-07", "primary_group_ids": ["youth_talent", "universities", "enterprises", "residents"], "public_benefit_zh": "让高校成果以许可、限制、作者和失败记录完整的形式进入公共学习与创业验证。", "harm_to_avoid_zh": "抹去作者、泄露未授权成果、制造虚假成熟度或把公共学习设为付费入口。", "safeguards": ["只展示授权元数据", "许可与限制同屏", "作者可撤回", "人工策展复核", "基础目录免费"], "stop_condition_zh": "来源、许可或作者状态不清即关闭智能层并隐藏条目。", "non_tech_remainder_zh": "人工策展、开放目录和纸本方法卡继续存在。", "status": "specified_not_observed"},
+    {"scenario_id": "SCN-08", "primary_group_ids": ["residents", "enterprises", "marginalized_groups"], "public_benefit_zh": "把报修、责任、响应和重复故障公开，让维护成为公共价值而非后台黑箱。", "harm_to_avoid_zh": "强制账号、采集报修人位置身份、无人负责或只展示工单不解决问题。", "safeguards": ["匿名电话/纸本报修", "明确责任与时限", "重复故障公开", "危险故障人工封闭"], "stop_condition_zh": "工单无人负责、危险未隔离或匿名渠道不可用即关闭智能层。", "non_tech_remainder_zh": "值班簿、电话报修、人工派单和危险隔离继续存在。", "status": "specified_not_observed"},
+    {"scenario_id": "SCN-09", "primary_group_ids": ["residents", "marginalized_groups"], "public_benefit_zh": "支持老人、照护者和社区服务人员安排服务，同时保持人工判断和拒绝权。", "harm_to_avoid_zh": "算法拒绝照护、形成健康诊断、对儿童/老人自动画像或把低数字能力者排后。", "safeguards": ["不作诊断", "不自动拒绝服务", "工作人员逐单确认", "电话与纸本排班", "未成年人和老人数据最小化"], "stop_condition_zh": "出现自动拒绝、医疗化结论、容量不安全或人工责任缺失即关闭智能层。", "non_tech_remainder_zh": "社区工作人员电话排班、纸本名册和人工回访继续存在。", "status": "specified_not_observed"},
+    {"scenario_id": "SCN-10", "primary_group_ids": ["residents", "visitors", "marginalized_groups"], "public_benefit_zh": "提供不依赖识别个人的夜间基础照明、人工巡查和可达求助。", "harm_to_avoid_zh": "人脸/情绪识别、过度照明、噪声、生态干扰和把安全感等同于监控强度。", "safeguards": ["不采人脸", "低眩光低色温策略待专业核验", "人工巡查", "居民投诉可停用", "树冠与暗夜连续"], "stop_condition_zh": "发生眩光、生态干扰、监控越界或固定照明不足即关闭智能层。", "non_tech_remainder_zh": "固定基础照明、人工巡查、求助点和安静步行环境继续存在。", "status": "specified_not_observed"},
+    {"scenario_id": "SCN-11", "primary_group_ids": ["residents", "youth_talent", "universities", "visitors", "marginalized_groups"], "public_benefit_zh": "让京张历史以有出处、可撤回、可质疑的方式跨代和跨语言共享。", "harm_to_avoid_zh": "生成虚构史实、合成真人引语、忽略讲述者权利或把社区记忆商品化。", "safeguards": ["清权索引优先", "不生成无出处事实", "不合成真人引语", "讲述者可撤回", "纸本目录与人工讲解"], "stop_condition_zh": "史实出处、讲述者授权或撤回状态不清即关闭智能层并隐藏内容。", "non_tech_remainder_zh": "人工讲解、纸本目录、清权档案索引和非消费停留继续存在。", "status": "specified_not_observed"},
+    {"scenario_id": "SCN-12", "primary_group_ids": ["residents", "youth_talent", "enterprises", "universities", "visitors", "marginalized_groups"], "public_benefit_zh": "把测试、开源、文化与服务串成无门票、可休息、可退出的一日公共线路。", "harm_to_avoid_zh": "拥挤、营销围挡、强制消费、儿童走失、无障碍断点和活动后遗留构筑物。", "safeguards": ["非消费入口", "容量与疏散门", "儿童与陪同安全", "连续无障碍路线", "安静休息点", "当日撤场"], "stop_condition_zh": "容量、疏散、儿童安全、无障碍或撤场任一失败即关闭智能层并缩小/取消活动。", "non_tech_remainder_zh": "普通公园、固定导视、志愿者服务、座椅和日常通行继续存在。", "status": "specified_not_observed"}
+  ],
+  "summary": {
+    "rubric_group_count": 6,
+    "scenario_public_value_gate_count": 12,
+    "cross_cutting_protection_count": 8,
+    "real_participant_observation_count": 0,
+    "real_participant_pass_count": 0,
+    "field_status": "not_observed"
+  }
+}

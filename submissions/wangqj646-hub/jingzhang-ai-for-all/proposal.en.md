@@ -25,23 +25,23 @@ Since the official `SITE_BOUNDARY` and the three `KEY_AREA` polygons have not ye
 
 ### The Dual Nature of AI
 
-In 2026, artificial intelligence appears before the Chinese public in two forms at once.
+In 2026, artificial intelligence enters Chinese daily life in two mutually pulling forms.
 
 **The national form**: compute clusters, foundation models, robotics industries — this is the "railway" of the new era, monumental, public, top-down. GPU clusters are national infrastructure, like the rails of 1909.
 
 **The personal form**: beside every ordinary person begins to appear an agent that can converse, be entrusted, and accompany. It is not a tool; it is a companion. Its adoption does not depend on any grand narrative — only on one conversation between a person and their agent, independent of any national programme.
 
-The urban design community is building for the former: industrial parks, compute centres, R&D clusters. But no city has seriously answered the question raised by the latter — **AI as a personal companion**: when every child is born with a silicon companion by their side, what should the city look like?
+The urban design community is building for the former: industrial parks, compute centres, R&D clusters. But the latter — **AI as a personal companion** — still lacks an institutional answer in urban space: when every child is born with a silicon companion by their side, what should the city look like?
 
 The unique mission of the Jing-Zhang AI Innovation Belt is to translate the energy of national infrastructure into the warmth of a personal companion.
 
 ### Jing-Zhang's Second Answer
 
-![Rénzì Rail brand symbol](assets/figures/brand-symbol.png)
+![Rénzì Rail brand hero mark](assets/figures/hero-mark.en.svg)
 
-The brand symbol "Rénzì Rail" is drawn from the switchback (人-shaped) alignment at Qinglongqiao on the Jing-Zhang Railway — the landmark engineering innovation of China's first self-built trunk railway. Its two visual meanings: **technology bends toward people** (the rails turn back at the Origin for people) and **two tracks** (national infrastructure × personal companion — parallel, never hijacking each other, converging only at the Origin). Full Logo/VI/signage direction in `report/narrative.md`.
+The visual system uses red and gold rather than blue and orange: B "Human Turn" is the formal master mark, while Hero "Human-Rail" is the narrative hero. Both share the same spatial grammar of technology bending toward people, parallel tracks, and convergence at the Origin. Full Logo/VI/signage direction in `report/narrative.md`.
 
-**Reality anchor (official, 2026-08-06)**: Phase II of the Jing-Zhang Railway Heritage Park opened to the public on 6 August 2026 — a ~9 km linear public space from Beijing North Station to the North 5th Ring Road (≈53 ha, serving ≈70 communities and ≈450,000 residents), created on the ground space released by the ~6 km underground section of the Beijing–Zhangjiakou HSR through Haidian, with rail heritage preserved and slow-traffic systems built in [source:CASE-JZ-PARK-1] [source:CASE-JZ-PARK-2] [source:CASE-JZ-PARK-3]. This proposal's "One Spine" structure takes this just-completed real green corridor as its physical chassis — culture belt, life-experience belt and innovation belt in one — proposed exactly in the year the park opened end to end.
+**Publicly reported context anchor (2026-08-06)**: Science & Technology Daily reported that Phase II of the Jing-Zhang Railway Heritage Park had opened to the public on 6 August 2026 — a ~9 km linear public space from Beijing North Station to the North 5th Ring Road (≈53 ha, serving ≈70 communities and ≈450,000 residents), created on the ground space released by the ~6 km underground section of the Beijing–Zhangjiakou HSR through Haidian, with rail heritage preserved and slow-traffic systems built in [source:CASE-JZ-PARK-1] [source:CASE-JZ-PARK-2] [source:CASE-JZ-PARK-3]. This is a publicly reported reality anchor for the proposal's "One Spine" concept, not an official confirmation of this submission's redline, approval, signed cooperation or current implementation readiness.
 
 In 1909, Zhan Tianyou drew the first switchback (the "herringbone" track) at Badaling, letting China cross the mountains with its own technology for the first time. That was the "autonomy moment" of Chinese technology.
 
@@ -203,7 +203,7 @@ The scenario carriers map to geometry as follows: the AI Origin Plaza is PUBLIC-
 
 ## Land Use, Building Scale and Retention/Conversion/New-Build Plan
 
-Land strategy: **renewal first, new-build second.** Existing railway remains, old factories and work-unit compounds are prioritised; new construction inside the three key areas serves industry and public facilities. Retention/conversion/new-build classification: retain the Jing-Zhang rail remains and heritage buildings along the line (locomotive depot, station buildings); convert old factories into open-source labs, science museums and markets; concentrate new builds in key-area industrial plots. Land use, building scale and R/C/N classification are anchored in `geometry/land_use.geojson`, `geometry/buildings.geojson` and `geometry/phasing.geojson`, with metrics recomputed in `metrics.json` [data:geometry/land_use.geojson#LU-001] [data:geometry/buildings.geojson#BLD-001].
+Land strategy: **renewal first, new-build second.** Existing railway remains, old factories and work-unit compounds are prioritised; new construction inside the three key areas serves industry and public facilities. Retention/conversion/new-build classification: retain the Jing-Zhang rail remains and heritage buildings along the line (locomotive depot, station buildings); convert old factories into open-source labs, science museums and markets; concentrate new builds in key-area industrial plots. Land use, building scale and R/C/N classification are anchored in `geometry/land_use.geojson`, `geometry/buildings.geojson` and `geometry/phasing.geojson`, with metrics recomputed in `metrics.json` [data:geometry/land_use.geojson#LU-001] [data:geometry/buildings.geojson#BLDG-001].
 
 ![Land use structure and growth spine](assets/figures/land-use-structure.en.png)
 
@@ -280,5 +280,5 @@ The metric system covers four categories: **spatial** (land ratios, building sca
 - Agent taskbook (agent_taskbook.json), basis for the six required agent tasks and co-creation charter [source:AGENT-TASKBOOK] [standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK]
 - Public source registry (data/source_registry.json, sources/public-sources.json), licence and citation boundaries [source:SOURCE-REGISTRY]
 - Urban design measures, detailed regulatory planning compilation measures, land-use classification guide, professional standards [standard:MOHURD-URBAN-DESIGN-MEASURES]
-- Provisional boundary geometry (brief/site-package/geometry/provisional_boundaries.geojson), for proposal generation and discussion [source:DATA-SRC-PROVISIONAL-BOUNDARIES-20260605]
+- Provisional boundary geometry (brief/site-package/geometry/provisional_boundaries.geojson), for proposal generation and discussion [source:BOUNDARY-SOURCE]
 - The official announcement was published through public media including People's Daily Beijing (2026-04-30) and can be cross-checked as public background [source:OFFICIAL-ANNOUNCEMENT]

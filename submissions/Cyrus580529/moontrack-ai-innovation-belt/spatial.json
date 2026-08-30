@@ -1,0 +1,268 @@
+{
+  "$schema": "../../../schema/spatial.schema.json",
+  "version": 1,
+  "disclaimer": "concept-only",
+  "summary": "概念节点、廊道与区域清单。空间位置一律为文字示意，不含坐标、红线、权属或审定线位；带数字的条目其数值来自本包 GeoJSON 的实测复算，位置本身仍是概念表述。",
+  "items": [
+    {
+      "id": "corridor-xiaoyuehe-comobility",
+      "type": "corridor",
+      "title": "小月河机器人共行走廊（旗舰）",
+      "summary": "旗舰场景所在走廊。实测非机动车道网络碎为 62 个连通分量，五家适老机构沿法定路权的网络可达数为 0，这条走廊的问题是网络形状而非设备能力。",
+      "source": "geometry/roads.geojson 与 analysis_network.py 实测",
+      "public_level": "public",
+      "linked_scenarios": [
+        "robot-delivery-low-speed",
+        "ai-traffic-walkability"
+      ],
+      "order": 1,
+      "geometry": {
+        "mode": "concept",
+        "label": "小月河沿岸非机动车道，京张遗址公园主轴以西"
+      }
+    },
+    {
+      "id": "node-phase1-depot",
+      "type": "node",
+      "title": "一期驿站（极小化最远点选址）",
+      "summary": "以极小化最远服务点求出的驿站位置，并网后最远一家 14.01 分钟。选址只用了路网与机构位置，事后发现距最近轨道站仅 34 米。",
+      "source": "analysis_service.py 计算结果",
+      "public_level": "public",
+      "linked_scenarios": [
+        "robot-delivery-low-speed"
+      ],
+      "order": 2,
+      "geometry": {
+        "mode": "concept",
+        "label": "六道口站附近，小月河东岸"
+      }
+    },
+    {
+      "id": "node-gap-a",
+      "type": "node",
+      "title": "关键缺口 A（12 米）",
+      "summary": "三处关键缺口中最短的一处，补建 12 米即可并接两个连通分量。是否为制图假断点须现场核验，核验为假即销项。",
+      "source": "geometry/roads.geojson 与 analysis_service.py",
+      "public_level": "public",
+      "linked_scenarios": [
+        "ai-traffic-walkability"
+      ],
+      "order": 3,
+      "geometry": {
+        "mode": "concept",
+        "label": "小月河东岸，两段非机动车道之间"
+      }
+    },
+    {
+      "id": "node-gap-b",
+      "type": "node",
+      "title": "关键缺口 B（35 米）",
+      "summary": "第二处缺口，补建 35 米。三处缺口合计 129 米，是整张项目清单里投入产出比最高的一项。",
+      "source": "geometry/roads.geojson 与 analysis_service.py",
+      "public_level": "public",
+      "linked_scenarios": [
+        "ai-traffic-walkability"
+      ],
+      "order": 4,
+      "geometry": {
+        "mode": "concept",
+        "label": "小月河沿线，众智园重点区域附近"
+      }
+    },
+    {
+      "id": "node-gap-c",
+      "type": "node",
+      "title": "关键缺口 C（82 米）",
+      "summary": "第三处缺口，补建 82 米，把一期唯一可服务机构接入主网。一期只做这一段，其余留待末端工程。",
+      "source": "geometry/roads.geojson 与 analysis_service.py",
+      "public_level": "public",
+      "linked_scenarios": [
+        "robot-delivery-low-speed",
+        "ai-health-service-navigation"
+      ],
+      "order": 5,
+      "geometry": {
+        "mode": "concept",
+        "label": "清华园老龄大学一侧"
+      }
+    },
+    {
+      "id": "area-elderly-terminals",
+      "type": "area",
+      "title": "适老服务末端群（五处，合计 1,841 米）",
+      "summary": "五家适老机构的末端无路权段落，中位数 420 米、最远 652 米。补建 596 米把网连起来后末端纹丝不动：瓶颈在门口不在网上。",
+      "source": "geometry/public_space.geojson 与 analysis_policy.py",
+      "public_level": "public",
+      "linked_scenarios": [
+        "ai-health-service-navigation",
+        "robot-delivery-low-speed"
+      ],
+      "order": 6,
+      "geometry": {
+        "mode": "concept",
+        "label": "小月河沿线社区与院校内的适老服务设施周边"
+      }
+    },
+    {
+      "id": "area-zhongzhiyuan",
+      "type": "area",
+      "title": "众智园AI自主创新加速区",
+      "summary": "全栈自主体系承载区，兼具身智能测试沙盒。边界为组织方临时多边形，不得作为红线或审批依据。",
+      "source": "geometry/key_areas.geojson（组织方 provisional 多边形）",
+      "public_level": "provisional",
+      "linked_scenarios": [
+        "enterprise-service-copilot"
+      ],
+      "order": 7,
+      "geometry": {
+        "mode": "concept",
+        "label": "京张遗址公园主轴北段"
+      }
+    },
+    {
+      "id": "area-ai-origin-community",
+      "type": "area",
+      "title": "北京AI原点社区",
+      "summary": "开源发布与近校成果转化区，承接高校策源到企业转化的一段。边界为组织方临时多边形。",
+      "source": "geometry/key_areas.geojson（组织方 provisional 多边形）",
+      "public_level": "provisional",
+      "linked_scenarios": [
+        "enterprise-service-copilot",
+        "ai-cultural-guide"
+      ],
+      "order": 8,
+      "geometry": {
+        "mode": "concept",
+        "label": "京张遗址公园主轴中段，紧邻高校集群"
+      }
+    },
+    {
+      "id": "area-dazhongsi",
+      "type": "area",
+      "title": "大钟寺AI产业集聚区",
+      "summary": "智能原生消费与国际路演承载区，同时是轨道一体化最集中的一处。边界为组织方临时多边形。",
+      "source": "geometry/key_areas.geojson（组织方 provisional 多边形）",
+      "public_level": "provisional",
+      "linked_scenarios": [
+        "enterprise-service-copilot"
+      ],
+      "order": 9,
+      "geometry": {
+        "mode": "concept",
+        "label": "京张遗址公园主轴南端，大钟寺站周边"
+      }
+    },
+    {
+      "id": "corridor-heritage-spine",
+      "type": "corridor",
+      "title": "京张遗址公园主轴",
+      "summary": "官方任务书给定的南北主轴，自北向南串起三处重点区域，与小月河蓝绿廊道在空间上高度重叠。",
+      "source": "brief/site-package/agent_taskbook.json",
+      "public_level": "public",
+      "linked_scenarios": [
+        "ai-cultural-guide",
+        "ai-traffic-walkability"
+      ],
+      "order": 10,
+      "geometry": {
+        "mode": "concept",
+        "label": "京张铁路遗址公园沿线"
+      }
+    },
+    {
+      "id": "corridor-east-west-stitch",
+      "type": "corridor",
+      "title": "东西缝合概念廊道",
+      "summary": "跨主轴的东西向慢行缝合方向，回应主轴两侧被铁路走廊长期分隔的问题。概念方向，不含线位。",
+      "source": "brief/site-package/agent_taskbook.json",
+      "public_level": "public",
+      "linked_scenarios": [
+        "ai-traffic-walkability"
+      ],
+      "order": 11,
+      "geometry": {
+        "mode": "concept",
+        "label": "主轴两侧街区之间若干横向联系"
+      }
+    },
+    {
+      "id": "node-gateway-qinghe",
+      "type": "node",
+      "title": "清河站跨区域门户（距带界 3,256 米）",
+      "summary": "京张高铁始发站，向北接延庆与张家口。区域协同与百年京张叙事在这条线上是同一件事。",
+      "source": "OpenStreetMap 轨道站点数据与 analysis_region.py",
+      "public_level": "public",
+      "order": 12,
+      "geometry": {
+        "mode": "concept",
+        "label": "总体设计范围以北，清河站一带"
+      }
+    },
+    {
+      "id": "node-landmark-chevron-ramp",
+      "type": "node",
+      "title": "朝圣地标 · 人字坡道",
+      "summary": "关沟人字形展线的几何母题落成无障碍坡道：同一约束下的同一解法，轮椅与低速机器人共用。",
+      "source": "本方案构件图版 assets/figures/component-chevron-ramp.png",
+      "public_level": "public",
+      "linked_scenarios": [
+        "ai-cultural-guide"
+      ],
+      "order": 13,
+      "geometry": {
+        "mode": "concept",
+        "label": "京张遗址公园主轴与小月河交汇处附近"
+      }
+    },
+    {
+      "id": "node-landmark-platform-unit",
+      "type": "node",
+      "title": "朝圣地标 · 月台单元",
+      "summary": "一期交付物。柜体只朝街道开、室内侧不设开口，形态由“不进室内、不接触老人本人”的交接边界决定。",
+      "source": "本方案构件图版 assets/figures/component-platform-unit.png",
+      "public_level": "public",
+      "linked_scenarios": [
+        "robot-delivery-low-speed",
+        "ai-health-service-navigation"
+      ],
+      "order": 14,
+      "geometry": {
+        "mode": "concept",
+        "label": "一期驿站与适老机构之间的街道侧"
+      }
+    },
+    {
+      "id": "node-landmark-observation-point",
+      "type": "node",
+      "title": "朝圣地标 · 观察点",
+      "summary": "可解释性设施。说明牌必须回答“它在做什么、数据怎么处理、谁在监管”，三问缺一不得进入试点。",
+      "source": "本方案构件图版 assets/figures/component-observation-point.png",
+      "public_level": "public",
+      "linked_scenarios": [
+        "ai-traffic-walkability",
+        "ai-cultural-guide"
+      ],
+      "order": 15,
+      "geometry": {
+        "mode": "concept",
+        "label": "小月河沿岸可停留处，正对机器人运行段"
+      }
+    },
+    {
+      "id": "corridor-footway-counterfactual",
+      "type": "corridor",
+      "title": "路权反事实对照廊道（研究性）",
+      "summary": "与共行走廊同一批目的地、改按步行网度量的对照面。末端中位数由 249.6 米降到 82.8 米，15 分钟可达网络 6.5 倍：这是“只准走非机动车道”这条规则的价钱。",
+      "source": "analysis_policy.py 反事实测算",
+      "public_level": "public",
+      "linked_scenarios": [
+        "ai-traffic-walkability"
+      ],
+      "order": 16,
+      "geometry": {
+        "mode": "concept",
+        "label": "与共行走廊同一区段，对照口径"
+      }
+    }
+  ]
+}

@@ -1,0 +1,595 @@
+{
+  "schema_version": "jingzhang-regional-interface-contracts-v1",
+  "artifact_role": "im12_candidate_regional_interface_register",
+  "authority": {
+    "implementation_item": "IM12",
+    "status": "participant_authored_design_hypothesis",
+    "taskbook_anchor": "brief/site-package/agent_taskbook.json#agent.1",
+    "assumption_anchor": "assumptions.json#A-REGION-001",
+    "non_claim": "These records define candidate exchange interfaces only. They do not evidence a partnership, appointment, authorization, resource commitment, operating relationship, or implementation result.",
+    "does_not_create": [
+      "IM14",
+      "SC13",
+      "F12",
+      "new_claim_framework",
+      "external_partnership"
+    ]
+  },
+  "language_contract": {
+    "required_languages": [
+      "zh",
+      "en"
+    ],
+    "parity_fields": [
+      "target_scope",
+      "purpose",
+      "status",
+      "first_exchange_deliverable",
+      "prohibited_inputs",
+      "authorization_gate",
+      "stop_rule"
+    ]
+  },
+  "status_vocabulary": {
+    "candidate_not_authorized": {
+      "zh": "候选 / 未授权",
+      "en": "CANDIDATE / NOT AUTHORIZED"
+    }
+  },
+  "interfaces": [
+    {
+      "interface_id": "RI01",
+      "target_scope": {
+        "code": "beiwei_community",
+        "name_zh": "北纬社区",
+        "name_en": "Beiwei Community",
+        "entity_resolution_status": "taskbook_named_scope_only"
+      },
+      "status": "candidate_not_authorized",
+      "taskbook_basis": [
+        "brief/site-package/agent_taskbook.json#agent.1",
+        "assumptions.json#A-REGION-001"
+      ],
+      "internal_anchor_refs": [
+        "SC08",
+        "SC12"
+      ],
+      "purpose": {
+        "zh": "检验京张候选 AI 公共服务在社区尺度是否同时保留可理解、可申诉、可人工接管的日常服务等效路径；不是社区合作或服务上线声明。",
+        "en": "Test whether a candidate Jing-Zhang AI public service retains an understandable, appealable, human-takeover equivalent path at community scale; this is not a community partnership or service-launch claim."
+      },
+      "jingzhang_outbound_artifacts": {
+        "zh": [
+          "SC08 / SC12 日常服务路径卡",
+          "AI、人工、纸面或低技术四路等效路径核对表",
+          "白话告知、人工接管、投诉与失败转接模板"
+        ],
+        "en": [
+          "SC08 / SC12 everyday-service pathway card",
+          "AI, human, paper, or low-tech four-path equivalence checklist",
+          "plain-language notice, Human Takeover, complaint, and failure-handoff template"
+        ]
+      },
+      "minimum_inbound_artifacts": {
+        "zh": [
+          "经授权、去身份化的公共服务问题分类（不含个案自由文本）",
+          "经登记的一手公共服务目录、服务时段与基本场景说明",
+          "经授权公开的服务入口、开放条件与无障碍说明"
+        ],
+        "en": [
+          "authorized de-identified public-service issue taxonomy with no free-text individual cases",
+          "registered first-party public-service catalogue, service window, and basic-scenario brief",
+          "authorized public service entry, access conditions, and accessibility notice"
+        ]
+      },
+      "first_exchange_deliverable": {
+        "zh": "日常公共服务等效路径包",
+        "en": "Everyday Public-Service Equivalent-Path Package"
+      },
+      "acceptance_criteria": {
+        "zh": [
+          "同一服务任务同时列出 AI 路径、人工路径、纸面或低技术路径及失败转接点，并保留投诉与退出",
+          "所有事实均能回指登记的一手材料，未知项保持 unknown",
+          "未出现合作、试点、已接入或已上线措辞"
+        ],
+        "en": [
+          "the same service task exposes AI, human, paper or low-tech paths and the failure-handoff point, with complaint and exit retained",
+          "every fact traces to registered first-party material and unknowns remain unknown",
+          "no partnership, pilot, integration, or launch wording appears"
+        ]
+      },
+      "prohibited_inputs": {
+        "zh": [
+          "居民名册、个人画像或个体服务记录",
+          "人脸、情绪、健康、未成年人或其他敏感个人信息",
+          "未经授权的内部工单、投诉或联系方式"
+        ],
+        "en": [
+          "resident rosters, personal profiles, or individual service records",
+          "face, emotion, health, minor, or other sensitive personal data",
+          "unauthorized internal tickets, complaints, or contact details"
+        ]
+      },
+      "accountable_role_type": {
+        "jingzhang": {
+          "zh": "IM12 区域接口责任人",
+          "en": "IM12 regional-interface accountable lead"
+        },
+        "counterparty_after_authorization": {
+          "zh": "社区公共服务接口角色",
+          "en": "community public-service interface role"
+        },
+        "reviewer": {
+          "zh": "无障碍、投诉与等效路径人工复核角色",
+          "en": "human reviewer for accessibility, complaints, and equivalent paths"
+        }
+      },
+      "authorization_gate": {
+        "gate_status": "not_passed",
+        "zh": "双方书面授权范围、登记的一手事实依据、具名接口角色及公开措辞复核全部齐备后，方可进入首次交换；此前保持候选 / 未授权。",
+        "en": "First exchange requires written authorization scope on both sides, registered first-party factual basis, named interface roles, and public-wording review; until then it remains Candidate / Not Authorized."
+      },
+      "review_trigger": {
+        "zh": "服务目录、访问条件、授权范围、数据要求、对外措辞或不利反馈任一变化即复核。",
+        "en": "Re-review upon any change to the service catalogue, access conditions, authorization scope, data request, public wording, or adverse feedback."
+      },
+      "stop_rule": {
+        "zh": "授权或一手依据缺失、要求禁止数据、等效路径不可用、人工接管不可达或出现误导性合作表述，立即停止并撤回交换材料。",
+        "en": "Stop and withdraw exchange material if authorization or first-party basis is missing, prohibited data is requested, the equivalent path or Human Takeover is unavailable, or partnership wording is misleading."
+      },
+      "evidence_status": {
+        "status": "participant_authored_design_hypothesis_pending_first_party_evidence",
+        "external_authorization_evidence_refs": [],
+        "field_or_live_exchange_evidence_refs": [],
+        "field_or_live_exchange_count": 0
+      }
+    },
+    {
+      "interface_id": "RI02",
+      "target_scope": {
+        "code": "future_science_city",
+        "name_zh": "未来科学城",
+        "name_en": "Future Science City",
+        "entity_resolution_status": "taskbook_named_scope_only"
+      },
+      "status": "candidate_not_authorized",
+      "taskbook_basis": [
+        "brief/site-package/agent_taskbook.json#agent.1",
+        "assumptions.json#A-REGION-001"
+      ],
+      "internal_anchor_refs": [
+        "TVS-1",
+        "TVS-2",
+        "TVS-3"
+      ],
+      "purpose": {
+        "zh": "把可公开的研究问题转成可在京张场景中审查的城市验证任务，明确证据、人工 Gate 与停止条件；不转移未公开科研内容，也不声称联合研究。",
+        "en": "Translate a public research question into an urban-validation task reviewable in a Jing-Zhang scenario, with evidence, human gates, and stop conditions; no unpublished research is transferred and no joint research is claimed."
+      },
+      "jingzhang_outbound_artifacts": {
+        "zh": [
+          "TVS-1—3 测试规范与京张城市验证场景边界卡",
+          "证据字段—专业 Gate—停止条件模板",
+          "公共价值与低技术替代核对表"
+        ],
+        "en": [
+          "TVS-1–3 test specifications and Jing-Zhang urban-validation scenario-boundary card",
+          "evidence-field–professional-Gate–stop-condition template",
+          "public-value and low-tech-alternative checklist"
+        ]
+      },
+      "minimum_inbound_artifacts": {
+        "zh": [
+          "经授权公开的研究问题陈述",
+          "可公开的适用边界、已知限制与评价问题",
+          "用途约束、安全等级与数据等级说明"
+        ],
+        "en": [
+          "authorized public research-question statement",
+          "public applicability boundary, known limitations, and evaluation question",
+          "use constraints, safety class, and data classification"
+        ]
+      },
+      "first_exchange_deliverable": {
+        "zh": "研究问题—城市验证任务卡",
+        "en": "Research-Question-to-Urban-Validation Task Card"
+      },
+      "acceptance_criteria": {
+        "zh": [
+          "任务卡逐项写明问题→可测试假设→京张场景→确定性约束→人工或专业复核→停止条件，并保留证据状态与非外推边界",
+          "输入仅限可公开且获授权材料，未知项保持 unknown",
+          "不得把候选任务写成联合研究、技术转移或已验证成果"
+        ],
+        "en": [
+          "the task card states question → testable hypothesis → Jing-Zhang scenario → determinacy constraints → human or professional review → stop condition, retaining evidence status and non-extrapolation boundary",
+          "inputs are public and authorized only, with unknowns retained",
+          "the candidate task is not described as joint research, technology transfer, or a validated result"
+        ]
+      },
+      "prohibited_inputs": {
+        "zh": [
+          "未发表论文、未公开实验数据、源代码或专利秘密",
+          "个人科研档案、评价排序或未授权联系人信息",
+          "可用于安全绕过、设施攻击或敏感能力推断的材料"
+        ],
+        "en": [
+          "unpublished papers, non-public experimental data, source code, or patent secrets",
+          "personal research files, ranking data, or unauthorized contact information",
+          "material enabling security bypass, facility attack, or sensitive capability inference"
+        ]
+      },
+      "accountable_role_type": {
+        "jingzhang": {
+          "zh": "IM12 城市验证接口责任人",
+          "en": "IM12 urban-validation interface accountable lead"
+        },
+        "counterparty_after_authorization": {
+          "zh": "科研问题接口角色",
+          "en": "research-question interface role"
+        },
+        "reviewer": {
+          "zh": "安全等级与专业验证 Gate 复核角色",
+          "en": "safety-class and professional-validation Gate reviewer"
+        }
+      },
+      "authorization_gate": {
+        "gate_status": "not_passed",
+        "zh": "研究问题公开许可、双方书面授权范围、材料权利复核、具名接口角色和场景适用边界齐备后方可交换。",
+        "en": "Exchange requires permission to disclose the research question, written authorization scope on both sides, rights review, named interface roles, and a bounded scenario applicability statement."
+      },
+      "review_trigger": {
+        "zh": "研究问题、权利状态、适用边界、评价问题、数据需求或公开措辞变化即复核。",
+        "en": "Re-review when the research question, rights status, applicability boundary, evaluation question, data need, or public wording changes."
+      },
+      "stop_rule": {
+        "zh": "出现未授权科研内容、禁止输入、越出适用边界、缺少人工决定或联合研究误导表述时立即停止并封存候选任务卡。",
+        "en": "Stop and seal the candidate task card upon unauthorized research content, prohibited input, scope overreach, missing human decision, or misleading joint-research wording."
+      },
+      "evidence_status": {
+        "status": "participant_authored_design_hypothesis_pending_first_party_evidence",
+        "external_authorization_evidence_refs": [],
+        "field_or_live_exchange_evidence_refs": [],
+        "field_or_live_exchange_count": 0
+      }
+    },
+    {
+      "interface_id": "RI03",
+      "target_scope": {
+        "code": "huairou_science_city",
+        "name_zh": "怀柔科学城",
+        "name_en": "Huairou Science City",
+        "entity_resolution_status": "taskbook_named_scope_only"
+      },
+      "status": "candidate_not_authorized",
+      "taskbook_basis": [
+        "brief/site-package/agent_taskbook.json#agent.1",
+        "assumptions.json#A-REGION-001"
+      ],
+      "internal_anchor_refs": [
+        "F10",
+        "SC11",
+        "SC12"
+      ],
+      "purpose": {
+        "zh": "检验科学内容在进入京张公共界面前，能否经白话转译、无障碍访问、误导风险和人工接管的桌面压力测试；不声称科普活动或场地合作已成立。",
+        "en": "Test, before science content enters a Jing-Zhang public interface, whether plain-language translation, accessible access, misleading-risk control, and Human Takeover survive a tabletop stress test; no science-engagement event or venue partnership is claimed."
+      },
+      "jingzhang_outbound_artifacts": {
+        "zh": [
+          "F10 双语状态导视与公共界面受众路径卡",
+          "SC11 来源复核及白话、双语与无障碍转译模板",
+          "SC12 静态 / 人工兜底与错误信息回退机制"
+        ],
+        "en": [
+          "F10 bilingual status wayfinding and public-interface audience-path card",
+          "SC11 source review plus plain-language, bilingual, and accessible-translation template",
+          "SC12 static / human fallback and misinformation rollback mechanism"
+        ]
+      },
+      "minimum_inbound_artifacts": {
+        "zh": [
+          "经授权公开的科学内容摘要与权利说明",
+          "经授权公开的访问规则、受众边界与必要警示",
+          "具名科普接口角色及书面授权范围"
+        ],
+        "en": [
+          "authorized public science-content summary and rights notice",
+          "authorized public access rule, audience boundary, and required caution",
+          "named science-communication interface role and written authorization scope"
+        ]
+      },
+      "first_exchange_deliverable": {
+        "zh": "科普与访问桌面压力测试包",
+        "en": "Science-Communication-and-Access Tabletop Stress-Test Package"
+      },
+      "acceptance_criteria": {
+        "zh": [
+          "桌面测试逐项覆盖正常、拥挤、断网、AI 错译、内容不确定与人工接管六种状态，并保留原意、无障碍替代、投诉和撤回路径",
+          "每条科学事实、权利和警示均可回指获授权材料",
+          "压力测试明确标为合成桌面测试，不写成公众活动或实测绩效"
+        ],
+        "en": [
+          "the tabletop test covers normal, crowding, offline, AI mistranslation, content-uncertain, and Human-Takeover states, retaining source meaning, accessible alternatives, complaint, and withdrawal paths",
+          "each scientific fact, right, and caution traces to authorized material",
+          "the stress test is labelled synthetic tabletop work, not a public event or measured performance"
+        ]
+      },
+      "prohibited_inputs": {
+        "zh": [
+          "未公开科研、设施安全、精确敏感位置或访问凭证",
+          "未成年人、访客或工作人员个人数据",
+          "无权使用的图像、论文全文、模型输出或展陈素材"
+        ],
+        "en": [
+          "non-public research, facility security details, precise sensitive locations, or access credentials",
+          "personal data of minors, visitors, or staff",
+          "images, full papers, model outputs, or exhibition material without usage rights"
+        ]
+      },
+      "accountable_role_type": {
+        "jingzhang": {
+          "zh": "IM12 公共转译接口责任人",
+          "en": "IM12 public-translation interface accountable lead"
+        },
+        "counterparty_after_authorization": {
+          "zh": "科普与访问接口角色",
+          "en": "science-communication and access interface role"
+        },
+        "reviewer": {
+          "zh": "科学事实、转译、无障碍与访问边界复核角色",
+          "en": "reviewer for science facts, translation, accessibility, and access boundaries"
+        }
+      },
+      "authorization_gate": {
+        "gate_status": "not_passed",
+        "zh": "内容公开权、素材权利、双方书面授权范围、具名接口角色、访问与安全边界全部齐备后方可交换。",
+        "en": "Exchange requires disclosure rights, material rights, written authorization scope on both sides, named interface roles, and defined access and safety boundaries."
+      },
+      "review_trigger": {
+        "zh": "内容版本、权利、受众、访问规则、警示、转译或投诉风险变化即复核。",
+        "en": "Re-review when content version, rights, audience, access rules, cautions, translation, or complaint risk changes."
+      },
+      "stop_rule": {
+        "zh": "权利或授权缺失、科学含义被扭曲、无障碍替代或人工接管不可用、要求禁止数据或误写成合作活动时立即停止并撤回。",
+        "en": "Stop and withdraw when rights or authorization are missing, scientific meaning is distorted, accessible alternatives or Human Takeover are unavailable, prohibited data is requested, or the work is misrepresented as a joint event."
+      },
+      "evidence_status": {
+        "status": "participant_authored_design_hypothesis_pending_first_party_evidence",
+        "external_authorization_evidence_refs": [],
+        "field_or_live_exchange_evidence_refs": [],
+        "field_or_live_exchange_count": 0
+      }
+    },
+    {
+      "interface_id": "RI04",
+      "target_scope": {
+        "code": "economic_technological_development_area",
+        "name_zh": "经开区",
+        "name_en": "Economic-Technological Development Area",
+        "entity_resolution_status": "taskbook_named_scope_only_exact_entity_pending_authorization"
+      },
+      "status": "candidate_not_authorized",
+      "taskbook_basis": [
+        "brief/site-package/agent_taskbook.json#agent.1",
+        "assumptions.json#A-REGION-001"
+      ],
+      "internal_anchor_refs": [
+        "C01—C09",
+        "SC10"
+      ],
+      "purpose": {
+        "zh": "把京张可逆公共空间构件的制造、安装、维护、拆除与责任缺口写成可交接的候选接口；不声称制造能力、供应商、价格或采购关系已经确认。",
+        "en": "Turn manufacturing, installation, maintenance, removal, and accountability gaps for a reversible Jing-Zhang public-space component into a handover-ready candidate interface; no capability, supplier, price, or procurement relationship is claimed."
+      },
+      "jingzhang_outbound_artifacts": {
+        "zh": [
+          "C01—C09 可逆构件功能、断电与拆装边界卡",
+          "候选材料、维护、人工替代与撤场责任表",
+          "SC10 停止日志、禁止用途与失效处理清单"
+        ],
+        "en": [
+          "C01–C09 reversible-component function, power-off, and assembly-boundary card",
+          "candidate material, maintenance, human-substitution, and removal responsibility sheet",
+          "SC10 stop log, prohibited-use, and failure-disposition checklist"
+        ]
+      },
+      "minimum_inbound_artifacts": {
+        "zh": [
+          "供应商中立的可制造性意见与适用限制",
+          "供应商中立的材料、安全、维护与可拆除性反馈",
+          "已知失效模式及人工替代条件"
+        ],
+        "en": [
+          "supplier-neutral manufacturability opinion and applicability limits",
+          "supplier-neutral material, safety, maintenance, and disassembly feedback",
+          "known failure modes and human-substitution conditions"
+        ]
+      },
+      "first_exchange_deliverable": {
+        "zh": "可逆原型制造—维护交接单",
+        "en": "Reversible-Prototype Manufacturing–Maintenance Handover Sheet"
+      },
+      "acceptance_criteria": {
+        "zh": [
+          "交接单逐项回答构件是什么、谁维护、何种故障必须停、如何断电与人工替代、如何拆除恢复，并写明责任角色",
+          "没有单价、总价、供应商、认证或可生产结论，未知项保持 unknown",
+          "只有在权利与授权齐备后才允许形成下一轮候选技术问答"
+        ],
+        "en": [
+          "the sheet states what the component is, who maintains it, which failure requires stop, how power-off and human substitution work, how removal/restoration works, and the accountable roles",
+          "no unit rate, total cost, supplier, certification, or manufacturability conclusion is asserted; unknowns remain unknown",
+          "a next-round candidate technical query is allowed only after rights and authorization are complete"
+        ]
+      },
+      "prohibited_inputs": {
+        "zh": [
+          "商业秘密、未公开 CAD/BOM、供应链安全信息或访问凭证",
+          "未经核实的单价、报价、认证、产能或供应商名单",
+          "可用于监控、识别、惩戒或绕过人工责任的构件要求"
+        ],
+        "en": [
+          "trade secrets, non-public CAD/BOM, supply-chain security information, or access credentials",
+          "unverified unit rates, quotations, certifications, capacity, or supplier lists",
+          "component requirements enabling surveillance, identification, sanction, or bypass of human accountability"
+        ]
+      },
+      "accountable_role_type": {
+        "jingzhang": {
+          "zh": "IM12 可逆构件接口责任人",
+          "en": "IM12 reversible-component interface accountable lead"
+        },
+        "counterparty_after_authorization": {
+          "zh": "制造维护接口角色",
+          "en": "manufacturing-maintenance interface role"
+        },
+        "reviewer": {
+          "zh": "制造、维护、安全、人工替代与撤场复核角色",
+          "en": "reviewer for manufacture, maintenance, safety, human substitution, and removal"
+        }
+      },
+      "authorization_gate": {
+        "gate_status": "not_passed",
+        "zh": "双方书面授权范围、知识产权与保密边界、具名接口角色、候选构件用途和禁止用途齐备后方可交换。",
+        "en": "Exchange requires written authorization scope on both sides, intellectual-property and confidentiality boundaries, named interface roles, and defined candidate and prohibited component uses."
+      },
+      "review_trigger": {
+        "zh": "构件用途、材料、维护、拆装、安全、权利、数据或外部措辞变化即复核。",
+        "en": "Re-review upon change to component use, material, maintenance, assembly, safety, rights, data, or external wording."
+      },
+      "stop_rule": {
+        "zh": "要求商业秘密或禁止用途、授权或权利缺失、维护/撤场责任无人承担，或出现供应/采购/落地误导表述时立即停止。",
+        "en": "Stop upon a request for trade secrets or prohibited use, missing authorization or rights, unassigned maintenance/removal accountability, or misleading supply, procurement, or deployment wording."
+      },
+      "evidence_status": {
+        "status": "participant_authored_design_hypothesis_pending_first_party_evidence",
+        "external_authorization_evidence_refs": [],
+        "field_or_live_exchange_evidence_refs": [],
+        "field_or_live_exchange_count": 0
+      }
+    },
+    {
+      "interface_id": "RI05",
+      "target_scope": {
+        "code": "beijing_tianjin_hebei",
+        "name_zh": "京津冀",
+        "name_en": "Beijing–Tianjin–Hebei",
+        "entity_resolution_status": "taskbook_named_regional_scope_only"
+      },
+      "status": "candidate_not_authorized",
+      "taskbook_basis": [
+        "brief/site-package/agent_taskbook.json#agent.1",
+        "assumptions.json#A-REGION-001"
+      ],
+      "internal_anchor_refs": [
+        "shared_state_machine:9_states_15_transitions",
+        "phase3-red-team:negative_and_unknown_register",
+        "phase3-data-governance:evidence_grades_and_human_takeover"
+      ],
+      "purpose": {
+        "zh": "用同一套证据状态、人工 Gate、等效服务与停止规则比较不同城市情境，显露哪些结论可复用、哪些必须留在本地；不作区域排名、推广或协同落地声明。",
+        "en": "Compare different urban contexts through the same evidence-status, human-Gate, equivalent-service, and stop rules, exposing what transfers and what must remain local; no regional ranking, rollout, or implemented coordination is claimed."
+      },
+      "jingzhang_outbound_artifacts": {
+        "zh": [
+          "京张九状态、十五转换与禁止自动执行规则基线卡",
+          "同规则 / 异情境比较模板及证据等级",
+          "负结果、人工接管、停止、不可比与非外推台账"
+        ],
+        "en": [
+          "Jing-Zhang nine-state, fifteen-transition, and no-auto rule-baseline card",
+          "same-rule / different-context comparison template with evidence grades",
+          "negative-result, Human-Takeover, stop, non-comparability, and non-extrapolation register"
+        ]
+      },
+      "minimum_inbound_artifacts": {
+        "zh": [
+          "经登记的一手公开规则或情境说明",
+          "经授权公开的适用范围、数据口径与不可比项",
+          "每一参与情境的具名接口角色及书面授权范围"
+        ],
+        "en": [
+          "registered first-party public rule or context statement",
+          "authorized public scope, data definition, and non-comparability note",
+          "named interface role and written authorization scope for each participating context"
+        ]
+      },
+      "first_exchange_deliverable": {
+        "zh": "同规则 / 异情境比较包",
+        "en": "Same-Rule / Different-Context Comparison Package"
+      },
+      "acceptance_criteria": {
+        "zh": [
+          "比较包使用同一冻结协议字段，逐项归入可直接迁移、需要当地事实、明确失败、不可比较四类，并保留来源日期、口径、unknown 与停止条件",
+          "只报告差异与可迁移条件，不生成排名、绩效或推广结论",
+          "每个情境均有独立授权与一手事实依据；缺一则不进入比较"
+        ],
+        "en": [
+          "the package uses one frozen protocol field set and classifies each item as directly transferable, requires local facts, explicit failure, or not comparable, retaining source date, definition, unknown, and stop condition",
+          "it reports differences and transfer conditions only, with no ranking, performance, or rollout conclusion",
+          "each context has independent authorization and first-party factual basis; otherwise it is excluded"
+        ]
+      },
+      "prohibited_inputs": {
+        "zh": [
+          "个人或小样本微观数据、未公开行政数据与精确敏感设施数据",
+          "口径不一致却被强行合并的数据",
+          "区域排名、政策优劣推断、复制推广或既有协同证明"
+        ],
+        "en": [
+          "personal or small-sample microdata, non-public administrative data, and precise sensitive-facility data",
+          "data forced together despite incompatible definitions",
+          "regional rankings, policy-superiority inference, rollout claims, or proof of existing coordination"
+        ]
+      },
+      "accountable_role_type": {
+        "jingzhang": {
+          "zh": "IM12 跨情境比较接口责任人",
+          "en": "IM12 cross-context comparison accountable lead"
+        },
+        "counterparty_after_authorization": {
+          "zh": "各情境规则与数据接口角色",
+          "en": "rule-and-data interface role for each context"
+        },
+        "reviewer": {
+          "zh": "协议一致性、证据等级与不可比项独立复核角色",
+          "en": "independent reviewer for protocol consistency, evidence grades, and non-comparability"
+        }
+      },
+      "authorization_gate": {
+        "gate_status": "not_passed",
+        "zh": "每一情境分别完成书面授权范围、一手事实登记、口径与权利复核、具名接口角色后，方可纳入首次比较。",
+        "en": "Each context enters first comparison only after separate written authorization scope, first-party fact registration, definition and rights review, and a named interface role."
+      },
+      "review_trigger": {
+        "zh": "任一情境的规则、来源日期、口径、权利、授权、不可比项或对外结论变化即全包复核。",
+        "en": "Re-review the full package when any context changes its rule, source date, definition, rights, authorization, non-comparability, or public conclusion."
+      },
+      "stop_rule": {
+        "zh": "任一情境缺少独立授权或一手依据、出现口径强并、禁止数据、排名/绩效/推广推断或协同误导表述时，立即停止比较并撤回结论。",
+        "en": "Stop and withdraw conclusions when any context lacks independent authorization or first-party basis, definitions are forced together, prohibited data appears, ranking/performance/rollout is inferred, or coordination wording is misleading."
+      },
+      "evidence_status": {
+        "status": "participant_authored_design_hypothesis_pending_first_party_evidence",
+        "external_authorization_evidence_refs": [],
+        "field_or_live_exchange_evidence_refs": [],
+        "field_or_live_exchange_count": 0
+      }
+    }
+  ],
+  "integrity_rules": [
+    "interface_id set must equal RI01, RI02, RI03, RI04, RI05",
+    "all interface_id values must be unique",
+    "all current status values must equal candidate_not_authorized",
+    "all authorization_gate.gate_status values must equal not_passed",
+    "external authorization, field exchange, operation, partnership, procurement, and implementation claims remain zero unless separately evidenced"
+  ],
+  "computed_summary": {
+    "regional_interface_contract_count": 5,
+    "regional_interface_authorized_count": 0,
+    "operating_count": 0,
+    "activation_condition": {
+      "zh": "书面授权 + 一手事实依据 + 具名接口责任人",
+      "en": "written authorization + first-party factual basis + named accountable interface lead"
+    }
+  }
+}

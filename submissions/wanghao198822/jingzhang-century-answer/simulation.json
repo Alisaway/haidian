@@ -1,0 +1,205 @@
+{
+  "schema_version": "1.0",
+  "title": "百年应答离线场景演练台账",
+  "summary": "本台账用于可复放的离线合成场景演练，不是效果承诺，也不代表现场实测。",
+  "status": "validated_offline_synthetic",
+  "method": "固定 seed 的离线合成轨迹；用例语义为人工设计的确定性清单，仅能耗与重规划耗时由 seed 驱动；不调用在线模型、不接入真实机器人、不使用任何个人数据；任何人可按 seed 与 gen_simulation.py 重放。",
+  "seed": 20260828,
+  "replan_p95_method": "nearest-rank percentile over tasks[].replan_seconds",
+  "task_count": 16,
+  "tasks": [
+    {
+      "task_id": "SIM-001",
+      "scenario_id": "ai-traffic-walkability",
+      "outcome": "success",
+      "dispatch_schema_valid": true,
+      "audit_complete": true,
+      "energy_budget_kwh": 3.0,
+      "energy_used_kwh": 1.37,
+      "replan_seconds": 0.0,
+      "note_zh": "大钟寺西南象限：站厅出入口到广场外环的轮椅路径，全程无台阶、无二次过街"
+    },
+    {
+      "task_id": "SIM-002",
+      "scenario_id": "ai-traffic-walkability",
+      "outcome": "failure",
+      "dispatch_schema_valid": true,
+      "audit_complete": true,
+      "energy_budget_kwh": 3.0,
+      "energy_used_kwh": 1.31,
+      "replan_seconds": 12.4,
+      "note_zh": "西北象限横跨三块板：路径建议与实际可通行状态不一致，按本方案退出条件应关停AI建议、保留固定版信息"
+    },
+    {
+      "task_id": "SIM-003",
+      "scenario_id": "ai-traffic-walkability",
+      "outcome": "replanned_success",
+      "dispatch_schema_valid": true,
+      "audit_complete": true,
+      "energy_budget_kwh": 3.0,
+      "energy_used_kwh": 2.06,
+      "replan_seconds": 8.3,
+      "note_zh": "东南象限受铁路走廊限制，重规划后绕行系数仍不大于1.5"
+    },
+    {
+      "task_id": "SIM-004",
+      "scenario_id": "ai-traffic-walkability",
+      "outcome": "success",
+      "dispatch_schema_valid": true,
+      "audit_complete": true,
+      "energy_budget_kwh": 0.5,
+      "energy_used_kwh": 0.29,
+      "replan_seconds": 0.0,
+      "note_zh": "断网降级：主机位无网络时仍输出固定版四象限步行图与语音播报"
+    },
+    {
+      "task_id": "SIM-005",
+      "scenario_id": "ai-traffic-walkability",
+      "outcome": "success",
+      "dispatch_schema_valid": true,
+      "audit_complete": true,
+      "energy_budget_kwh": 1.0,
+      "energy_used_kwh": 0.45,
+      "replan_seconds": 0.0,
+      "note_zh": "应答门无障碍导览：语音播报、大字模式、实体触感标识三通道，不以扫码为唯一入口"
+    },
+    {
+      "task_id": "SIM-006",
+      "scenario_id": "robot-delivery-low-speed",
+      "outcome": "success",
+      "dispatch_schema_valid": true,
+      "audit_complete": true,
+      "energy_budget_kwh": 2.5,
+      "energy_used_kwh": 1.51,
+      "replan_seconds": 0.0,
+      "note_zh": "低速配送机器人以铺装内铜道钉为物理定位锚点，沿步道边缘读取带行进，不额外供电、不额外联网"
+    },
+    {
+      "task_id": "SIM-007",
+      "scenario_id": "robot-delivery-low-speed",
+      "outcome": "success",
+      "dispatch_schema_valid": true,
+      "audit_complete": true,
+      "energy_budget_kwh": 2.5,
+      "energy_used_kwh": 2.13,
+      "replan_seconds": 5.3,
+      "note_zh": "人字之跃坡道会车：触发\"轮椅优先、机器人强制停让\"，机器人停让后重规划通过"
+    },
+    {
+      "task_id": "SIM-008",
+      "scenario_id": "robot-delivery-low-speed",
+      "outcome": "success",
+      "dispatch_schema_valid": true,
+      "audit_complete": true,
+      "energy_budget_kwh": 2.0,
+      "energy_used_kwh": 2.78,
+      "replan_seconds": 0.0,
+      "note_zh": "满载爬升 6.0 米（1:20 坡道两段各 62 米）能耗超出本任务预算——不利读数，如实入账"
+    },
+    {
+      "task_id": "SIM-009",
+      "scenario_id": "robot-delivery-low-speed",
+      "outcome": "declined_by_resident",
+      "dispatch_schema_valid": true,
+      "audit_complete": true,
+      "energy_budget_kwh": 2.5,
+      "energy_used_kwh": 1.37,
+      "replan_seconds": 0.0,
+      "note_zh": "应答门敲门被社区认领人拒绝进入。从配送任务完成度看未达成，计为非成功；但拒绝可执行正是机制按设计工作的证据"
+    },
+    {
+      "task_id": "SIM-010",
+      "scenario_id": "robot-delivery-low-speed",
+      "outcome": "success",
+      "dispatch_schema_valid": true,
+      "audit_complete": false,
+      "energy_budget_kwh": 2.5,
+      "energy_used_kwh": 1.73,
+      "replan_seconds": 0.0,
+      "note_zh": "夜间低照度下道钉阴刻识别成功，但本条任务的过程影像留存缺口，审计链不完整——不利读数，如实入账"
+    },
+    {
+      "task_id": "SIM-011",
+      "scenario_id": "ai-cultural-guide",
+      "outcome": "success",
+      "dispatch_schema_valid": true,
+      "audit_complete": true,
+      "energy_budget_kwh": 1.0,
+      "energy_used_kwh": 0.29,
+      "replan_seconds": 0.0,
+      "note_zh": "扫钉即应答：读出四字段并给出国家公告附件的可核对指引，输出带AI生成标识"
+    },
+    {
+      "task_id": "SIM-012",
+      "scenario_id": "ai-cultural-guide",
+      "outcome": "blocked_pending_review",
+      "dispatch_schema_valid": true,
+      "audit_complete": true,
+      "energy_budget_kwh": 1.0,
+      "energy_used_kwh": 0.25,
+      "replan_seconds": 0.0,
+      "note_zh": "居民口述史未通过文史三审，内容不上线。计为非成功：内容确未交付"
+    },
+    {
+      "task_id": "SIM-013",
+      "scenario_id": "ai-cultural-guide",
+      "outcome": "success",
+      "dispatch_schema_valid": true,
+      "audit_complete": true,
+      "energy_budget_kwh": 0.1,
+      "energy_used_kwh": 0.06,
+      "replan_seconds": 0.0,
+      "note_zh": "无AI等价路径：纸质手册完成同一次讲述，零采集、零联网"
+    },
+    {
+      "task_id": "SIM-014",
+      "scenario_id": "enterprise-service-copilot",
+      "outcome": "success",
+      "dispatch_schema_valid": true,
+      "audit_complete": true,
+      "energy_budget_kwh": 1.5,
+      "energy_used_kwh": 0.84,
+      "replan_seconds": 0.0,
+      "note_zh": "要素服务驿站备案辅导：生成材料清单，经人工窗口复核后出具"
+    },
+    {
+      "task_id": "SIM-015",
+      "scenario_id": "enterprise-service-copilot",
+      "outcome": "halted_missing_field",
+      "dispatch_schema_valid": true,
+      "audit_complete": true,
+      "energy_budget_kwh": 1.5,
+      "energy_used_kwh": 0.3,
+      "replan_seconds": 0.0,
+      "note_zh": "待钉模型的四个可审计字段在国家公告附件中核不到，按\"宁缺勿造\"停止铸钉动作。计为非成功：动作确实停了"
+    },
+    {
+      "task_id": "SIM-016",
+      "scenario_id": "enterprise-service-copilot",
+      "outcome": "failure",
+      "dispatch_schema_valid": false,
+      "audit_complete": true,
+      "energy_budget_kwh": 1.5,
+      "energy_used_kwh": 0.9,
+      "replan_seconds": 0.0,
+      "note_zh": "派单结构不合 schema 被拦截，任务未执行——工具调用结构校验的不利读数"
+    }
+  ],
+  "baselines": {
+    "urban_llm_harness": {
+      "success_rate": 0.6875,
+      "tool_schema_pass_rate": 0.9375,
+      "high_risk_intercept_rate": null,
+      "high_risk_metric_note": "not_applicable: 本任务清单未包含高风险拦截用例，SIM-009/SIM-015 属授权拒绝与缺证即停，不是高风险内容拦截",
+      "energy_budget_violations": 1,
+      "replan_p95_seconds": 12.4,
+      "audit_completeness": 0.9375,
+      "scope_note_zh": "离线合成口径，与现场实测无关"
+    },
+    "ai_off_equivalent": {
+      "manual_fallback_available_count": 16,
+      "manual_fallback_available_rate": 1.0,
+      "scope_note_zh": "每条任务是否存在等效的无AI人工路径（纸质手册、人工窗口、断网固定版信息）。与 urban_llm_harness 不是同一口径，不可并列比较"
+    }
+  }
+}

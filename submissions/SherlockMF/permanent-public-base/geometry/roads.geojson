@@ -1,0 +1,595 @@
+{
+  "type": "FeatureCollection",
+  "name": "p818_two_longitudinal_five_transverse_network",
+  "metadata": {
+    "schema_version": "0.1.0",
+    "coordinate_reference_system": "EPSG:4326",
+    "network_status": "participant_conceptual_design",
+    "official_boundary": false,
+    "derivation": "Two longitudinal diagram lines and five latitude-indexed transverse concepts clipped to PROV-SITE-001; S1-S5 are segmented at OSM background obstacle envelopes and do not claim continuous routes."
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "L1",
+      "properties": {
+        "id": "L1",
+        "layer": "ROAD_CENTERLINE",
+        "network_role": "longitudinal_interface",
+        "name_zh": "西侧永久公共界面",
+        "name_en": "West permanent civic interface",
+        "source_type": "agent_generated_design",
+        "confidence": "low",
+        "geometry_role": "design_proposal",
+        "official_boundary": false,
+        "provisional_status": "participant_conceptual_design",
+        "limitation": "Diagrammatic continuous interface inside PROV-SITE-001; exact route, rights, grade, crossing and construction alignment remain TBC."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            116.342196,
+            39.939
+          ],
+          [
+            116.342196,
+            40.01616800000006
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "L2",
+      "properties": {
+        "id": "L2",
+        "layer": "ROAD_CENTERLINE",
+        "network_role": "longitudinal_interface",
+        "name_zh": "东侧永久公共界面",
+        "name_en": "East permanent civic interface",
+        "source_type": "agent_generated_design",
+        "confidence": "low",
+        "geometry_role": "design_proposal",
+        "official_boundary": false,
+        "provisional_status": "participant_conceptual_design",
+        "limitation": "Diagrammatic continuous interface inside PROV-SITE-001; exact route, rights, grade, crossing and construction alignment remain TBC."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            116.35280399999999,
+            39.939
+          ],
+          [
+            116.35280399999999,
+            40.0265
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "S1",
+      "properties": {
+        "id": "S1",
+        "layer": "ROAD_CENTERLINE",
+        "network_role": "transverse_stitch",
+        "name_zh": "北部换乘缝合",
+        "name_en": "North transfer stitch",
+        "problem_zh": "多层交通设施使东西向换乘末端容易形成绕行与公共净线中断。",
+        "connection_objects_zh": "西侧社区、陆侧换乘入口与清河换乘门厅",
+        "evidence_level": "provisional relationship + field audit required",
+        "minimum_action_zh": "逐段核验陆侧公共净线，再设置旁置服务湾",
+        "responsible_role": "test-safety and maintenance marshal",
+        "fallback_zh": "回到现状街道与公共交通换乘",
+        "delivery_phase": "PHASE_3",
+        "mechanism_zh": "待核陆侧步行骑行分段与旁置服务湾",
+        "node_zh": "清河换乘门厅",
+        "metric": "S1_verified_continuous_public_route",
+        "source_type": "agent_generated_design",
+        "confidence": "low",
+        "geometry_role": "design_proposal",
+        "official_boundary": false,
+        "provisional_status": "participant_conceptual_design",
+        "continuity_status": "not_verified_as_continuous",
+        "continuity_verified": false,
+        "verified_segment_count": 0,
+        "pending_segment_count": 4,
+        "unresolved_break_count": 3,
+        "segment_register": [
+          {
+            "segment_id": "S1-P1",
+            "geometry_member_index": 0,
+            "status": "pending_field_verification",
+            "verified_continuity": false
+          },
+          {
+            "segment_id": "S1-P2",
+            "geometry_member_index": 1,
+            "status": "pending_field_verification",
+            "verified_continuity": false
+          },
+          {
+            "segment_id": "S1-P3",
+            "geometry_member_index": 2,
+            "status": "pending_field_verification",
+            "verified_continuity": false
+          },
+          {
+            "segment_id": "S1-P4",
+            "geometry_member_index": 3,
+            "status": "pending_field_verification",
+            "verified_continuity": false
+          }
+        ],
+        "gap_register": [
+          {
+            "break_id": "S1-G1",
+            "status": "unresolved_discontinuity",
+            "background_basis_zh": "昌平线南延背景轨迹",
+            "background_source_id": "F2-SRC-OSM-BBBIKE-20260811",
+            "background_feature_ids": [
+              "OSM-WAY-602693103",
+              "OSM-WAY-929144130"
+            ],
+            "provisional_longitude_range": [
+              116.34525,
+              116.34575
+            ],
+            "required_next_check": "Survey legal crossing, clear width, gradient, levels, ownership and emergency access before connecting the adjacent segments."
+          },
+          {
+            "break_id": "S1-G2",
+            "status": "unresolved_discontinuity",
+            "background_basis_zh": "小月河背景线与水面",
+            "background_source_id": "F2-SRC-OSM-BBBIKE-20260811",
+            "background_feature_ids": [
+              "OSM-WAY-27065953",
+              "OSM-WAY-929726058"
+            ],
+            "provisional_longitude_range": [
+              116.34675,
+              116.34715
+            ],
+            "required_next_check": "Survey legal crossing, clear width, gradient, levels, ownership and emergency access before connecting the adjacent segments."
+          },
+          {
+            "break_id": "S1-G3",
+            "status": "unresolved_discontinuity",
+            "background_basis_zh": "京藏高速与G6辅路背景廊道",
+            "background_source_id": "F2-SRC-OSM-BBBIKE-20260811",
+            "background_feature_ids": [
+              "OSM-WAY-29235323",
+              "OSM-WAY-48051223",
+              "OSM-WAY-121399160"
+            ],
+            "provisional_longitude_range": [
+              116.34965,
+              116.35255
+            ],
+            "required_next_check": "Survey legal crossing, clear width, gradient, levels, ownership and emergency access before connecting the adjacent segments."
+          }
+        ],
+        "background_source_ids": [
+          "F2-SRC-OSM-BBBIKE-20260811"
+        ],
+        "limitation": "Segmented conceptual stitch clipped to PROV-SITE-001 and cut at OSM background obstacle envelopes. No segment is a surveyed public right or verified crossing; endpoints, rights, grade, clear width, levels and construction alignment remain TBC."
+      },
+      "geometry": {
+        "type": "MultiLineString",
+        "coordinates": [
+          [
+            [
+              116.34223658536585,
+              40.017
+            ],
+            [
+              116.34525,
+              40.017
+            ]
+          ],
+          [
+            [
+              116.34575,
+              40.017
+            ],
+            [
+              116.34675,
+              40.017
+            ]
+          ],
+          [
+            [
+              116.34715,
+              40.017
+            ],
+            [
+              116.34965,
+              40.017
+            ]
+          ],
+          [
+            [
+              116.35255,
+              40.017
+            ],
+            [
+              116.3547794520548,
+              40.017
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "S2",
+      "properties": {
+        "id": "S2",
+        "layer": "ROAD_CENTERLINE",
+        "network_role": "transverse_stitch",
+        "name_zh": "学清路创新缝合",
+        "name_en": "Xueqing innovation stitch",
+        "problem_zh": "园区边界和廊道界面可能把创新活动封闭在地块内部。",
+        "connection_objects_zh": "园区公共侧、学清路过街点与测试后勤入口",
+        "evidence_level": "candidate interface; rights and crossings TBC",
+        "minimum_action_zh": "开放首层公共门槛并分段核验过街",
+        "responsible_role": "test-safety and maintenance marshal",
+        "fallback_zh": "保持现状园区入口与既有道路",
+        "delivery_phase": "PHASE_3",
+        "mechanism_zh": "园区首层开放界面与慢行过街序列",
+        "node_zh": "众智园共享前场",
+        "metric": "S2_audited_east_west_access_points",
+        "source_type": "agent_generated_design",
+        "confidence": "low",
+        "geometry_role": "design_proposal",
+        "official_boundary": false,
+        "provisional_status": "participant_conceptual_design",
+        "continuity_status": "not_verified_as_continuous",
+        "continuity_verified": false,
+        "verified_segment_count": 0,
+        "pending_segment_count": 2,
+        "unresolved_break_count": 1,
+        "segment_register": [
+          {
+            "segment_id": "S2-P1",
+            "geometry_member_index": 0,
+            "status": "pending_field_verification",
+            "verified_continuity": false
+          },
+          {
+            "segment_id": "S2-P2",
+            "geometry_member_index": 1,
+            "status": "pending_field_verification",
+            "verified_continuity": false
+          }
+        ],
+        "gap_register": [
+          {
+            "break_id": "S2-G1",
+            "status": "unresolved_discontinuity",
+            "background_basis_zh": "昌平线南延背景轨迹",
+            "background_source_id": "F2-SRC-OSM-BBBIKE-20260811",
+            "background_feature_ids": [
+              "OSM-WAY-602693103",
+              "OSM-WAY-929144130"
+            ],
+            "provisional_longitude_range": [
+              116.34605,
+              116.34658
+            ],
+            "required_next_check": "Survey legal crossing, clear width, gradient, levels, ownership and emergency access before connecting the adjacent segments."
+          }
+        ],
+        "background_source_ids": [
+          "F2-SRC-OSM-BBBIKE-20260811"
+        ],
+        "limitation": "Segmented conceptual stitch clipped to PROV-SITE-001 and cut at OSM background obstacle envelopes. No segment is a surveyed public right or verified crossing; endpoints, rights, grade, clear width, levels and construction alignment remain TBC."
+      },
+      "geometry": {
+        "type": "MultiLineString",
+        "coordinates": [
+          [
+            [
+              116.34163548387097,
+              40.005
+            ],
+            [
+              116.34605,
+              40.005
+            ]
+          ],
+          [
+            [
+              116.34658,
+              40.005
+            ],
+            [
+              116.35385,
+              40.005
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "S3",
+      "properties": {
+        "id": "S3",
+        "layer": "ROAD_CENTERLINE",
+        "network_role": "transverse_stitch",
+        "name_zh": "五道口知识缝合",
+        "name_en": "Wudaokou knowledge stitch",
+        "problem_zh": "高峰人流、安静需求和封闭院落之间缺少稳定的公共门槛。",
+        "connection_objects_zh": "五道口社区、高校公共侧与成府路人工服务点",
+        "evidence_level": "mapped public-side context; legal continuity TBC",
+        "minimum_action_zh": "设置安静知识门廊与有人服务旁带",
+        "responsible_role": "public knowledge and appeal steward",
+        "fallback_zh": "使用现状步行街道和人工窗口",
+        "delivery_phase": "PHASE_2",
+        "mechanism_zh": "知识门廊与安静侧置服务界面",
+        "node_zh": "AI原点公共门槛",
+        "metric": "S3_staffed_fallback_service_points",
+        "source_type": "agent_generated_design",
+        "confidence": "low",
+        "geometry_role": "design_proposal",
+        "official_boundary": false,
+        "provisional_status": "participant_conceptual_design",
+        "continuity_status": "not_verified_as_continuous",
+        "continuity_verified": false,
+        "verified_segment_count": 0,
+        "pending_segment_count": 2,
+        "unresolved_break_count": 1,
+        "segment_register": [
+          {
+            "segment_id": "S3-P1",
+            "geometry_member_index": 0,
+            "status": "pending_field_verification",
+            "verified_continuity": false
+          },
+          {
+            "segment_id": "S3-P2",
+            "geometry_member_index": 1,
+            "status": "pending_field_verification",
+            "verified_continuity": false
+          }
+        ],
+        "gap_register": [
+          {
+            "break_id": "S3-G1",
+            "status": "unresolved_discontinuity",
+            "background_basis_zh": "昌平线南延背景轨迹",
+            "background_source_id": "F2-SRC-OSM-BBBIKE-20260811",
+            "background_feature_ids": [
+              "OSM-WAY-1545095425",
+              "OSM-WAY-1545095426"
+            ],
+            "provisional_longitude_range": [
+              116.3468,
+              116.34745
+            ],
+            "required_next_check": "Survey legal crossing, clear width, gradient, levels, ownership and emergency access before connecting the adjacent segments."
+          }
+        ],
+        "background_source_ids": [
+          "F2-SRC-OSM-BBBIKE-20260811"
+        ],
+        "limitation": "Segmented conceptual stitch clipped to PROV-SITE-001 and cut at OSM background obstacle envelopes. No segment is a surveyed public right or verified crossing; endpoints, rights, grade, clear width, levels and construction alignment remain TBC."
+      },
+      "geometry": {
+        "type": "MultiLineString",
+        "coordinates": [
+          [
+            [
+              116.34057096774194,
+              39.9885
+            ],
+            [
+              116.3468,
+              39.9885
+            ]
+          ],
+          [
+            [
+              116.34745,
+              39.9885
+            ],
+            [
+              116.35342,
+              39.9885
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "S4",
+      "properties": {
+        "id": "S4",
+        "layer": "ROAD_CENTERLINE",
+        "network_role": "transverse_stitch",
+        "name_zh": "学院南路社区缝合",
+        "name_en": "Xueyuan South community stitch",
+        "problem_zh": "多重边界造成社区日常服务绕行，弱势使用者承担更高到达成本。",
+        "connection_objects_zh": "社区公共侧、学院南路与无障碍分段",
+        "evidence_level": "candidate neighbourhood link; levels TBC",
+        "minimum_action_zh": "逐段修补无障碍净线与社区客厅",
+        "responsible_role": "public knowledge and appeal steward",
+        "fallback_zh": "保持现状社区道路与人工引导",
+        "delivery_phase": "PHASE_2",
+        "mechanism_zh": "社区客厅串联的无障碍横向路径",
+        "node_zh": "社区服务客厅",
+        "metric": "S4_verified_barrier_free_segments",
+        "source_type": "agent_generated_design",
+        "confidence": "low",
+        "geometry_role": "design_proposal",
+        "official_boundary": false,
+        "provisional_status": "participant_conceptual_design",
+        "continuity_status": "not_verified_as_continuous",
+        "continuity_verified": false,
+        "verified_segment_count": 0,
+        "pending_segment_count": 2,
+        "unresolved_break_count": 1,
+        "segment_register": [
+          {
+            "segment_id": "S4-P1",
+            "geometry_member_index": 0,
+            "status": "pending_field_verification",
+            "verified_continuity": false
+          },
+          {
+            "segment_id": "S4-P2",
+            "geometry_member_index": 1,
+            "status": "pending_field_verification",
+            "verified_continuity": false
+          }
+        ],
+        "gap_register": [
+          {
+            "break_id": "S4-G1",
+            "status": "unresolved_discontinuity",
+            "background_basis_zh": "小月河与昌平线南延叠加背景廊道",
+            "background_source_id": "F2-SRC-OSM-BBBIKE-20260811",
+            "background_feature_ids": [
+              "OSM-WAY-142101069",
+              "OSM-WAY-989032283",
+              "OSM-WAY-1138263477",
+              "OSM-WAY-1138263478"
+            ],
+            "provisional_longitude_range": [
+              116.34715,
+              116.3487
+            ],
+            "required_next_check": "Survey legal crossing, clear width, gradient, levels, ownership and emergency access before connecting the adjacent segments."
+          }
+        ],
+        "background_source_ids": [
+          "F2-SRC-OSM-BBBIKE-20260811"
+        ],
+        "limitation": "Segmented conceptual stitch clipped to PROV-SITE-001 and cut at OSM background obstacle envelopes. No segment is a surveyed public right or verified crossing; endpoints, rights, grade, clear width, levels and construction alignment remain TBC."
+      },
+      "geometry": {
+        "type": "MultiLineString",
+        "coordinates": [
+          [
+            [
+              116.33989444444444,
+              39.968
+            ],
+            [
+              116.34715,
+              39.968
+            ]
+          ],
+          [
+            [
+              116.3487,
+              39.968
+            ],
+            [
+              116.35506,
+              39.968
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "S5",
+      "properties": {
+        "id": "S5",
+        "layer": "ROAD_CENTERLINE",
+        "network_role": "transverse_stitch",
+        "name_zh": "大钟寺门户缝合",
+        "name_en": "Dazhongsi gateway stitch",
+        "problem_zh": "站前到遗产及产业界面的到达链缺少一条在运营故障时仍连续的公共主线。",
+        "connection_objects_zh": "站口候选侧、待核到达净线分段与遗产产业门户",
+        "evidence_level": "provisional station-edge relationship; exit and heritage controls TBC",
+        "minimum_action_zh": "逐段核验到达净线，再插入单侧微阶台",
+        "responsible_role": "arrival marshal and return-acceptance lead",
+        "fallback_zh": "关闭载体，保留现状站口与人工疏导",
+        "delivery_phase": "PHASE_1",
+        "mechanism_zh": "待核到达净线分段、单侧微阶台与人工问询",
+        "node_zh": "大钟寺梯田前场",
+        "metric": "S5_verified_arrival_line_uptime",
+        "source_type": "agent_generated_design",
+        "confidence": "low",
+        "geometry_role": "design_proposal",
+        "official_boundary": false,
+        "provisional_status": "participant_conceptual_design",
+        "continuity_status": "not_verified_as_continuous",
+        "continuity_verified": false,
+        "verified_segment_count": 0,
+        "pending_segment_count": 2,
+        "unresolved_break_count": 1,
+        "segment_register": [
+          {
+            "segment_id": "S5-P1",
+            "geometry_member_index": 0,
+            "status": "pending_field_verification",
+            "verified_continuity": false
+          },
+          {
+            "segment_id": "S5-P2",
+            "geometry_member_index": 1,
+            "status": "pending_field_verification",
+            "verified_continuity": false
+          }
+        ],
+        "gap_register": [
+          {
+            "break_id": "S5-G1",
+            "status": "unresolved_discontinuity",
+            "background_basis_zh": "京包客专、13号线与转河叠加背景廊道",
+            "background_source_id": "F2-SRC-OSM-BBBIKE-20260811",
+            "background_feature_ids": [
+              "OSM-WAY-109369075",
+              "OSM-WAY-122019975",
+              "OSM-WAY-122090416",
+              "OSM-WAY-941729553"
+            ],
+            "provisional_longitude_range": [
+              116.34475,
+              116.3508
+            ],
+            "required_next_check": "Survey legal crossing, clear width, gradient, levels, ownership and emergency access before connecting the adjacent segments."
+          }
+        ],
+        "background_source_ids": [
+          "F2-SRC-OSM-BBBIKE-20260811"
+        ],
+        "limitation": "Segmented conceptual stitch clipped to PROV-SITE-001 and cut at OSM background obstacle envelopes. No segment is a surveyed public right or verified crossing; endpoints, rights, grade, clear width, levels and construction alignment remain TBC."
+      },
+      "geometry": {
+        "type": "MultiLineString",
+        "coordinates": [
+          [
+            [
+              116.34047777777778,
+              39.947
+            ],
+            [
+              116.34475,
+              39.947
+            ]
+          ],
+          [
+            [
+              116.3508,
+              39.947
+            ],
+            [
+              116.3553,
+              39.947
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

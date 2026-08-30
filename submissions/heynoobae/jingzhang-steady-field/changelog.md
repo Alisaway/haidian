@@ -1,11 +1,26 @@
 # 方案迭代记录
 
-JINGZHANG STEADY FIELD / 京张稳场
+## v1.3 - 2026-08-25
+
+- 为四个离线 HTML 页面增加共享的 Noto Sans SC 页面字符子集，消除无系统中文字体环境中的缺字方框，并同步字体权利记录。
+
+## v1.2 - 2026-08-24
+
+- 将 PR-05 全载体统一为换位/转专项人工处置与另行签署的横切 STOP 决定，删除残留的取消/CANCEL 语义。
+- 将仿真、盲测与 commissioning 状态降级为协议草案未运行，并明确真实任务绑定和签署预注册仍待完成。
+- 为英文网页补齐十二张场景卡的逐卡位置与停止门槛，保持与中文及结构化台账等义。
+- 将 A0 第一页改为单一概念英雄页、第二页保留四图证据矩阵，并清理英文封面的非必要中文与网页封面裁切标签。
+
+## v1.1 - 2026-08-20
+
+- 将 D/T/S 从互斥空间分类改为逐事件的源—路径—接收角色，将 U 收为 E0 未测的视觉别名，并增加 E0—E3 证据等级。
+- 把英雄试点收敛为同一处真实冲突链、D/T1/T2/S 四个逻辑点和六类人工处置；三区承担不同服务，不组织跨站产品旅行。
+- 新增可签署的 commissioning 协议：RACI、QA/QC、同预算盲测、A-B-A、分层 STOP、采购工作包和带分母的五项公开读数。
+- 补齐七个国际机制案例、专业测量/厂商服务边界、无障碍与智能服务适用边界，以及字体权利记录。
+- 将 23 项任务、9 项标准和 15 项设计深度改为逐项证据映射；商业服务业用地代码按最新枚举由 05 修正为 09。
+- 重构中英五图、离线网页和 A3/A0 生成源；所有渲染明确标注概念类型研究与临时边界。
 
 ## v0.1 - 2026-08-14
 
-- Locked the `Jingzhang Steady Field` concept after independent Codex and Kimi cross-review.
-- Added official local engineering, embodied-AI platform and paid testing-demand evidence with explicit limitations.
-- Reframed AI as Physical AI planning/test object; reduced the only algorithmic role to deletable event attribution.
-- Replaced a proposed shared laboratory with the mobile `Stability Clinic`; kept Dazhongsi as an unmeasured type section.
-- Added twelve scenario contracts, five public readings, L0-L3 gates and bilingual deliverable structure.
+- 提交京张稳场初版：三种原型、十二张场景卡、五项待测公开读数、L0—L3 和 90 天候选试点。
+- 将算法角色限制为可删除的事件归因，明确不作安全、法定达标、文保或公共空间放行结论。

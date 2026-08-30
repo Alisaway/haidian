@@ -136,6 +136,23 @@ class PublicSourcesTests(unittest.TestCase):
             report = validate_source_index(root)
             self.assertTrue(report.ok, report.errors)
 
+    def test_non_string_enum_fields_report_errors_without_crashing(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "brief").mkdir()
+            (root / "brief" / "public-brief.md").write_text("# brief", encoding="utf-8")
+            bad_index = copy.deepcopy(VALID_INDEX)
+            bad_index["sources"][0]["type"] = {"unexpected": "object"}
+            bad_index["sources"][0]["public_status"] = ["public-draft"]
+            self.write_json(root, "sources/public-sources.json", bad_index)
+
+            report = validate_source_index(root)
+
+            self.assertFalse(report.ok)
+            joined = "\n".join(report.errors)
+            self.assertIn("missing required string field `type`", joined)
+            self.assertIn("missing required string field `public_status`", joined)
+
 
 if __name__ == "__main__":
     unittest.main()

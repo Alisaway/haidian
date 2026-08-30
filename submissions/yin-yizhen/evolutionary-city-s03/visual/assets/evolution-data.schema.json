@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://open-city-ai.example/schemas/city-genome-engine-2.0.0.json",
+  "title": "Evolutionary City Genome Engine Configuration",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "dataset_id",
+    "random_seed",
+    "engine",
+    "city_input",
+    "constitution",
+    "evidence",
+    "unknowns",
+    "evolutionary_cells",
+    "genomes",
+    "individuals",
+    "agent_policies",
+    "evaluation_vectors",
+    "behavior_descriptors",
+    "niche_archive",
+    "selection_events",
+    "lineage_events",
+    "human_interventions",
+    "real_world_cycles",
+    "digital_user_simulation",
+    "transfer_tests"
+  ],
+  "properties": {
+    "schema_version": {"const": "2.0.0"},
+    "random_seed": {"type": "integer"},
+    "engine": {
+      "type": "object",
+      "required": ["digital_generations", "offspring_per_generation", "selection_method", "single_aggregate_metric"],
+      "properties": {
+        "digital_generations": {"const": 40},
+        "offspring_per_generation": {"const": 36},
+        "single_aggregate_metric": {"const": false}
+      }
+    },
+    "evolutionary_cells": {
+      "type": "array",
+      "minItems": 8,
+      "items": {
+        "type": "object",
+        "required": ["id", "name_zh", "layer", "rect", "program", "public_ratio", "permeability", "open_hours", "reversibility", "evidence_confidence", "locked"],
+        "properties": {
+          "layer": {"enum": ["slow", "medium", "fast"]},
+          "rect": {
+            "type": "array",
+            "minItems": 4,
+            "maxItems": 4,
+            "items": {"type": "number"}
+          }
+        }
+      }
+    },
+    "agent_policies": {"type": "array", "minItems": 17},
+    "digital_user_simulation": {
+      "type": "object",
+      "required": ["random_seed", "population", "scenario_ids", "variant_ids", "single_aggregate_metric"],
+      "properties": {
+        "random_seed": {"type": "integer"},
+        "single_aggregate_metric": {"const": false},
+        "population": {"type": "array", "minItems": 4, "maxItems": 4},
+        "scenario_ids": {"type": "array", "minItems": 4, "maxItems": 4},
+        "variant_ids": {"type": "array", "minItems": 3, "maxItems": 3}
+      }
+    },
+    "transfer_tests": {"type": "array", "minItems": 3, "maxItems": 3}
+  }
+}

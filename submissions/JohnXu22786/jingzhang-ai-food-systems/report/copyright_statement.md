@@ -1,0 +1,5 @@
+# Copyright, license and naming note
+
+This concept package is supplied under `COMMUNITY-DISPLAY-ONLY` for community display and review. The proposal text, geometry, diagrams and PDF boards are original participant-authored concept material. The four HTML surfaces embed per-page subsets of `NotoSansSC-Static.ttf` as data-URI WOFF fonts; the exact source metadata, SHA-256, embedded hashes and license basis are recorded in `visual/assets/asset_rights_ledger.json`. The font metadata states SIL Open Font License 1.1; no broader legal clearance is claimed.
+
+Six external food-system and ecosystem references are listed in `sources.json` with publisher, URL, retrieval date, license and prohibited uses. They are `reference_only`; no external image, logo, page chrome or protected asset is copied, and no partnership, endorsement or adoption is implied. `FoodChain JZ`, `食链智证`, `一桌一策`, `三审三退` and `谷粒公约` are internal working codenames pending rights review. This file is not a trademark clearance or legal opinion.

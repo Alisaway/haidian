@@ -1,0 +1,1052 @@
+{
+  "schema_version": "1.0",
+  "id": "PILOT-A-EXECUTION-142",
+  "status": "unsigned_design_draft",
+  "version": "1.5.0",
+  "preimplementation_ref": "visual/assets/preimplementation-package.json#JZAC-P0-ORIGIN-RELAY-01",
+  "title": {
+    "zh": "PILOT-A：执行、协同与条件清单",
+    "en": "PILOT-A: execution, collaboration and conditions"
+  },
+  "boundary": {
+    "zh": "本附件为待审协议草案。全部角色待任命，签字为空；合成演练可离线复现，现场服务尚未授权。",
+    "en": "This is an unsigned protocol draft. Roles are unappointed and signatures are empty; the synthetic drill can run offline, but field service is not authorized."
+  },
+  "regional_interfaces": [
+    {
+      "id": "REG-01",
+      "region": {
+        "zh": "北纬社区",
+        "en": "Beiwei Community"
+      },
+      "sender": {
+        "zh": "社区联络角色",
+        "en": "community liaison"
+      },
+      "input": {
+        "zh": "经同意且去标识的问题描述、无屏任务",
+        "en": "consented, de-identified questions and screenless tasks"
+      },
+      "receiver": {
+        "zh": "原点受理角色",
+        "en": "Origin intake steward"
+      },
+      "output": {
+        "zh": "任务卡、沟通障碍记录、同渠道答复",
+        "en": "task card, communication barriers and same-channel reply"
+      },
+      "authorization": {
+        "zh": "参与及用途授权",
+        "en": "participation and purpose permission"
+      },
+      "retest": {
+        "zh": "沟通方式或任务版本改变",
+        "en": "communication method or task version changes"
+      },
+      "exit": {
+        "zh": "撤回问题材料、通知受理角色、保留非个人状态记录",
+        "en": "withdraw question material, notify intake, retain non-personal status"
+      },
+      "status": "candidate_unsigned",
+      "signed_entity": null
+    },
+    {
+      "id": "REG-02",
+      "region": {
+        "zh": "未来科学城",
+        "en": "Future Science City"
+      },
+      "sender": {
+        "zh": "候选研发团队",
+        "en": "candidate research team"
+      },
+      "input": {
+        "zh": "模型版本、许可测试样本和局限",
+        "en": "model version, licensed samples and limitations"
+      },
+      "receiver": {
+        "zh": "众智园评测角色",
+        "en": "Zhongzhiyuan evaluation lead"
+      },
+      "output": {
+        "zh": "失败档案、可复现重测任务",
+        "en": "failure dossier and reproducible retest task"
+      },
+      "authorization": {
+        "zh": "模型、样本及发布范围授权",
+        "en": "model, sample and disclosure permission"
+      },
+      "retest": {
+        "zh": "模型、样本或适用用途改变",
+        "en": "model, sample or intended purpose changes"
+      },
+      "exit": {
+        "zh": "撤销测试许可、失效收据、通知采用端",
+        "en": "revoke test permission, expire receipts, notify adopters"
+      },
+      "status": "candidate_unsigned",
+      "signed_entity": null
+    },
+    {
+      "id": "REG-03",
+      "region": {
+        "zh": "怀柔科学城",
+        "en": "Huairou Science City"
+      },
+      "sender": {
+        "zh": "候选科研材料保管角色",
+        "en": "candidate research-material custodian"
+      },
+      "input": {
+        "zh": "经许可的仪器说明、出处和解释问题",
+        "en": "licensed instrument notes, provenance and interpretation questions"
+      },
+      "receiver": {
+        "zh": "众智园与原点复核角色",
+        "en": "Zhongzhiyuan and Origin reviewers"
+      },
+      "output": {
+        "zh": "证据边界说明、公众解释修订",
+        "en": "evidence limitations and revised public explanation"
+      },
+      "authorization": {
+        "zh": "材料用途及公开解释授权",
+        "en": "material-use and public-explanation permission"
+      },
+      "retest": {
+        "zh": "仪器版本、资料或解释主张改变",
+        "en": "instrument version, material or claim changes"
+      },
+      "exit": {
+        "zh": "停止展示、撤回副本并回送修订通知",
+        "en": "stop display, withdraw copies and return revision notice"
+      },
+      "status": "candidate_unsigned",
+      "signed_entity": null
+    },
+    {
+      "id": "REG-04",
+      "region": {
+        "zh": "北京经开区",
+        "en": "Beijing E-Town"
+      },
+      "sender": {
+        "zh": "候选产业场景责任角色",
+        "en": "candidate industrial scenario owner"
+      },
+      "input": {
+        "zh": "脱敏任务、供应商声明、退出要求",
+        "en": "redacted tasks, supplier claims and exit requirements"
+      },
+      "receiver": {
+        "zh": "大钟寺采购与众智园重测角色",
+        "en": "Dazhongsi procurement and Zhongzhiyuan retest roles"
+      },
+      "output": {
+        "zh": "压力测试档案、采购修订建议、迁移检查单",
+        "en": "stress-test dossier, procurement revision advice and migration checklist"
+      },
+      "authorization": {
+        "zh": "企业材料、测试环境和采购用途授权",
+        "en": "enterprise material, test-environment and procurement-use permission"
+      },
+      "retest": {
+        "zh": "供应商、流程或退出能力改变",
+        "en": "supplier, process or exit capability changes"
+      },
+      "exit": {
+        "zh": "停止采用、隔离样本、撤销接口并核对导出",
+        "en": "stop adoption, isolate samples, revoke interface and verify export"
+      },
+      "status": "candidate_unsigned",
+      "signed_entity": null
+    },
+    {
+      "id": "REG-05",
+      "region": {
+        "zh": "京津冀节点",
+        "en": "Jing-Jin-Ji nodes"
+      },
+      "sender": {
+        "zh": "候选接收地服务角色",
+        "en": "candidate receiving-site service owner"
+      },
+      "input": {
+        "zh": "最小协议、适用边界和失败样例",
+        "en": "minimal protocol, scope limitations and failure examples"
+      },
+      "receiver": {
+        "zh": "原点交接与接收地复核角色",
+        "en": "Origin handover and receiving-site reviewers"
+      },
+      "output": {
+        "zh": "迁移差异表、属地复核结果、退出记录",
+        "en": "transfer-difference table, local review result and exit record"
+      },
+      "authorization": {
+        "zh": "逐用途许可与属地责任确认",
+        "en": "purpose-specific permission and local responsibility confirmation"
+      },
+      "retest": {
+        "zh": "接收场地、人群或渠道改变",
+        "en": "receiving site, population or channel changes"
+      },
+      "exit": {
+        "zh": "撤回接口、逐接收方通知，禁止直接搬运个人案件",
+        "en": "withdraw interface, notify each recipient; no transfer of personal case files"
+      },
+      "status": "candidate_unsigned",
+      "signed_entity": null
+    }
+  ],
+  "full_stack": [
+    {
+      "id": "STACK-1",
+      "element": {
+        "zh": "数据",
+        "en": "Data"
+      },
+      "handover": {
+        "zh": "资料保管角色→众智园",
+        "en": "Material custodian → Zhongzhiyuan"
+      },
+      "deliverable": {
+        "zh": "许可、样本版本、用途→最小测试包；撤回即停用样本",
+        "en": "Permission, sample version, purpose → minimal test bundle; withdrawal stops sample use"
+      },
+      "status": "proposed_unappointed"
+    },
+    {
+      "id": "STACK-2",
+      "element": {
+        "zh": "算力环境",
+        "en": "Compute environment"
+      },
+      "handover": {
+        "zh": "隔离环境运维角色→评测角色",
+        "en": "Isolated-environment operator → evaluator"
+      },
+      "deliverable": {
+        "zh": "环境版本、隔离配置→可复现运行日志；日志缺失不采用",
+        "en": "Environment version, isolation setup → reproducible run log; missing logs block adoption"
+      },
+      "status": "proposed_unappointed"
+    },
+    {
+      "id": "STACK-3",
+      "element": {
+        "zh": "模型工具",
+        "en": "Models and tools"
+      },
+      "handover": {
+        "zh": "候选研发角色→众智园",
+        "en": "Candidate developer → Zhongzhiyuan"
+      },
+      "deliverable": {
+        "zh": "版本、限制、导出能力→失败档案；版本变化重测",
+        "en": "Version, limits, export capability → failure dossier; version change triggers retest"
+      },
+      "status": "proposed_unappointed"
+    },
+    {
+      "id": "STACK-4",
+      "element": {
+        "zh": "独立评测",
+        "en": "Independent evaluation"
+      },
+      "handover": {
+        "zh": "领域复核角色→原点",
+        "en": "Domain reviewer → Origin"
+      },
+      "deliverable": {
+        "zh": "证据与异议→有期限复核意见；利益冲突需回避",
+        "en": "Evidence and dissent → expiring review; conflicts require recusal"
+      },
+      "status": "proposed_unappointed"
+    },
+    {
+      "id": "STACK-5",
+      "element": {
+        "zh": "场景与空间",
+        "en": "Scenarios and space"
+      },
+      "handover": {
+        "zh": "原点/场地角色→大钟寺",
+        "en": "Origin / site role → Dazhongsi"
+      },
+      "deliverable": {
+        "zh": "服务与无屏走查→适配及恢复清单；不宣称工程可行",
+        "en": "Service and screenless walkthrough → adaptation and recovery checklist; no engineering approval"
+      },
+      "status": "proposed_unappointed"
+    },
+    {
+      "id": "STACK-6",
+      "element": {
+        "zh": "人才与企业服务",
+        "en": "Talent and enterprise services"
+      },
+      "handover": {
+        "zh": "科技服务翼候选角色→采用角色",
+        "en": "Candidate technology-service role → adopter"
+      },
+      "deliverable": {
+        "zh": "培训、交接、资源依据→交接单及成本结构；无资金承诺",
+        "en": "Training, handover and resource basis → handover record and cost structure; no funding promise"
+      },
+      "status": "proposed_unappointed"
+    }
+  ],
+  "roles": [
+    {
+      "id": "host_operator",
+      "label": {
+        "zh": "场地主体",
+        "en": "Host operator"
+      },
+      "appointee": null,
+      "status": "unappointed"
+    },
+    {
+      "id": "pilot_steward",
+      "label": {
+        "zh": "试点负责人",
+        "en": "Pilot steward"
+      },
+      "appointee": null,
+      "status": "unappointed"
+    },
+    {
+      "id": "case_steward",
+      "label": {
+        "zh": "案件受理人",
+        "en": "Case steward"
+      },
+      "appointee": null,
+      "status": "unappointed"
+    },
+    {
+      "id": "channel_owner",
+      "label": {
+        "zh": "原渠道责任人",
+        "en": "Original-channel owner"
+      },
+      "appointee": null,
+      "status": "unappointed"
+    },
+    {
+      "id": "independent_reviewer",
+      "label": {
+        "zh": "独立领域复核人",
+        "en": "Independent domain reviewer"
+      },
+      "appointee": null,
+      "status": "unappointed"
+    },
+    {
+      "id": "evaluation_lead",
+      "label": {
+        "zh": "重测负责人",
+        "en": "Retest lead"
+      },
+      "appointee": null,
+      "status": "unappointed"
+    },
+    {
+      "id": "data_custodian",
+      "label": {
+        "zh": "数据保管人",
+        "en": "Data custodian"
+      },
+      "appointee": null,
+      "status": "unappointed"
+    },
+    {
+      "id": "service_owner",
+      "label": {
+        "zh": "采用/停用责任人",
+        "en": "Adoption/retirement owner"
+      },
+      "appointee": null,
+      "status": "unappointed"
+    },
+    {
+      "id": "accessibility_reviewer",
+      "label": {
+        "zh": "无障碍共测负责人",
+        "en": "Accessibility co-test lead"
+      },
+      "appointee": null,
+      "status": "unappointed"
+    }
+  ],
+  "raci": [
+    {
+      "id": "ACTION-1",
+      "work": {
+        "zh": "授权与启动",
+        "en": "Authorize and start"
+      },
+      "accountable": "host_operator",
+      "responsible": "pilot_steward",
+      "consulted": [
+        "data_custodian",
+        "accessibility_reviewer"
+      ],
+      "informed": [
+        "case_steward"
+      ],
+      "acceptance": {
+        "zh": "授权清单与人员任命齐备",
+        "en": "Complete permission checklist and role appointments"
+      }
+    },
+    {
+      "id": "ACTION-2",
+      "work": {
+        "zh": "无屏受理",
+        "en": "Screenless intake"
+      },
+      "accountable": "pilot_steward",
+      "responsible": "case_steward",
+      "consulted": [
+        "accessibility_reviewer"
+      ],
+      "informed": [
+        "channel_owner"
+      ],
+      "acceptance": {
+        "zh": "纸面案件号与完整渠道清单",
+        "en": "Paper case ID and complete channel inventory"
+      }
+    },
+    {
+      "id": "ACTION-3",
+      "work": {
+        "zh": "暂停传播",
+        "en": "Pause propagation"
+      },
+      "accountable": "channel_owner",
+      "responsible": "case_steward",
+      "consulted": [
+        "independent_reviewer"
+      ],
+      "informed": [
+        "service_owner"
+      ],
+      "acceptance": {
+        "zh": "逐渠道暂停回执",
+        "en": "Pause acknowledgement for each channel"
+      }
+    },
+    {
+      "id": "ACTION-4",
+      "work": {
+        "zh": "独立事实复核",
+        "en": "Independent fact review"
+      },
+      "accountable": "independent_reviewer",
+      "responsible": "independent_reviewer",
+      "consulted": [
+        "data_custodian"
+      ],
+      "informed": [
+        "case_steward"
+      ],
+      "acceptance": {
+        "zh": "依据、异议、结论或无法确定、有效期",
+        "en": "Basis, dissent, conclusion or uncertainty, expiry"
+      }
+    },
+    {
+      "id": "ACTION-5",
+      "work": {
+        "zh": "同渠道更正",
+        "en": "Same-channel correction"
+      },
+      "accountable": "channel_owner",
+      "responsible": "case_steward",
+      "consulted": [
+        "independent_reviewer"
+      ],
+      "informed": [
+        "service_owner"
+      ],
+      "acceptance": {
+        "zh": "逐渠道版本与签收；遗漏即保持暂停",
+        "en": "Version and receipt per channel; omissions keep service paused"
+      }
+    },
+    {
+      "id": "ACTION-6",
+      "work": {
+        "zh": "产品与发布重测",
+        "en": "Product and publication retest"
+      },
+      "accountable": "evaluation_lead",
+      "responsible": "evaluation_lead",
+      "consulted": [
+        "independent_reviewer"
+      ],
+      "informed": [
+        "service_owner"
+      ],
+      "acceptance": {
+        "zh": "可复现失败样例与复测结果",
+        "en": "Reproducible failure fixture and retest result"
+      }
+    },
+    {
+      "id": "ACTION-7",
+      "work": {
+        "zh": "数据及场地恢复",
+        "en": "Data and site recovery"
+      },
+      "accountable": "service_owner",
+      "responsible": "data_custodian",
+      "consulted": [
+        "host_operator",
+        "accessibility_reviewer"
+      ],
+      "informed": [
+        "channel_owner"
+      ],
+      "acceptance": {
+        "zh": "资产、缓存、材料和备份的逐项记录",
+        "en": "Itemized asset, cache, material and backup records"
+      }
+    },
+    {
+      "id": "ACTION-8",
+      "work": {
+        "zh": "采用/修改/退役",
+        "en": "Adopt / modify / retire"
+      },
+      "accountable": "service_owner",
+      "responsible": "pilot_steward",
+      "consulted": [
+        "independent_reviewer",
+        "host_operator"
+      ],
+      "informed": [
+        "channel_owner",
+        "case_steward"
+      ],
+      "acceptance": {
+        "zh": "独立意见、签字、剩余问题和下次复核日",
+        "en": "Independent opinion, signatures, remaining issues and next review date"
+      }
+    }
+  ],
+  "independence": {
+    "zh": "原发布者、供应商及材料制作人不得担任本案独立复核；利益冲突记录为必填。复核人缺席或结论无法确定时保持暂停并提供人工说明，不自动生成不利结论。",
+    "en": "The original publisher, supplier and material author cannot independently review their own case. Conflict disclosure is mandatory. Unavailable review or unresolved facts keep the case paused with human explanation, not an automatic adverse finding."
+  },
+  "channels": [
+    {
+      "id": "CHANNEL-SIGN-01",
+      "medium": {
+        "zh": "演练实体展签",
+        "en": "drill physical exhibit label"
+      },
+      "responsible": "channel_owner",
+      "version_before": null,
+      "version_after": null,
+      "paused_at": null,
+      "corrected_at": null,
+      "acknowledged_by": null,
+      "evidence_ref": null,
+      "live_public_release": false
+    },
+    {
+      "id": "CHANNEL-WEB-01",
+      "medium": {
+        "zh": "演练离线网页",
+        "en": "drill offline webpage"
+      },
+      "responsible": "channel_owner",
+      "version_before": null,
+      "version_after": null,
+      "paused_at": null,
+      "corrected_at": null,
+      "acknowledged_by": null,
+      "evidence_ref": null,
+      "live_public_release": false
+    }
+  ],
+  "channel_rule": {
+    "zh": "更正覆盖全部已登记原渠道并逐一签收才完成；只改后台、漏发或未签收均保持暂停。渠道清单与签收数不能互相代替。",
+    "en": "Completion requires correction and acknowledgement on every registered original channel. Backend-only changes, omissions or missing receipts keep service paused. Inventory and acknowledgement counts are not interchangeable."
+  },
+  "data_protocol": {
+    "status": "impact_assessment_draft_not_legal_opinion",
+    "purpose": {
+      "zh": "仅支持遗产内容误标的受理、复核、更正和恢复；当前只用合成材料。",
+      "en": "Only intake, review, correction and recovery of mislabeled heritage content; current material is synthetic only."
+    },
+    "fields": [
+      "case_id",
+      "claim_version",
+      "source_ref",
+      "permission_ref",
+      "channel_ids",
+      "reviewer_role",
+      "conflict_check",
+      "review_basis",
+      "decision_or_uncertainty",
+      "pause_and_correction_events",
+      "retest_ref",
+      "recovery_ref",
+      "expiry"
+    ],
+    "excluded": {
+      "zh": "不收集人脸、身份证号、健康记录、跨场景画像；联系方式如现场确需使用，须另行授权、隔离保存并提供无联系方式办理路线。",
+      "en": "No faces, ID numbers, health records or cross-scenario profiles. Any field contact detail needs separate permission and isolation, with a no-contact-detail service route."
+    },
+    "records": [
+      {
+        "type": {
+          "zh": "公开纠错回执",
+          "en": "Public correction receipt"
+        },
+        "access": {
+          "zh": "公众可读；不含案件原件或直接标识",
+          "en": "Public; no original case material or direct identifiers"
+        },
+        "retention": {
+          "zh": "结案后90天复核公开必要性；属建议周期，非法律期限",
+          "en": "Review need for publication 90 days after closure; proposed interval, not a legal deadline"
+        }
+      },
+      {
+        "type": {
+          "zh": "受限案件材料",
+          "en": "Restricted case material"
+        },
+        "access": {
+          "zh": "仅受理、资料保管和独立复核角色按需访问",
+          "en": "Need-to-know intake, custodian and independent reviewer"
+        },
+        "retention": {
+          "zh": "结案且申诉处理完毕后30天内建议删除；现场前由责任人与专业审查确认",
+          "en": "Proposed deletion within 30 days after closure and completed appeals; owner and professional review must confirm before field use"
+        }
+      },
+      {
+        "type": {
+          "zh": "最小审计事件",
+          "en": "Minimal audit events"
+        },
+        "access": {
+          "zh": "受限审计；不默认公开个人材料或可关联哈希",
+          "en": "Restricted audit; no default publication of personal material or linkable hashes"
+        },
+        "retention": {
+          "zh": "拟每90天审查必要性；最终期限及依据在现场授权前确定",
+          "en": "Proposed necessity review every 90 days; final duration and basis must be set before field authorization"
+        }
+      }
+    ],
+    "deletion": {
+      "zh": "按原件、派生副本、缓存、导出和备份逐项清理或隔离。备份尚未清除不得写“全部删除”；记录计划到期及恢复时再删除要求。保全例外必须记录依据、批准人、复核日及访问限制。",
+      "en": "Track originals, derivatives, caches, exports and backups separately. Pending backup removal cannot be called complete deletion; record expiry and re-delete-on-restore controls. Any preservation exception requires basis, approver, review date and restricted access."
+    },
+    "impact_checks": {
+      "zh": "逐项评估错误标签的声誉影响、过度公开、二次传播、复核冲突、拒绝服务和无屏排斥；每项记录控制、剩余风险、责任人和是否可接受。未通过则不开放真实渠道。",
+      "en": "Assess reputational harm, over-disclosure, secondary propagation, reviewer conflicts, service denial and screenless exclusion. Record controls, residual risk, owner and acceptability for each; no live channels before acceptance."
+    },
+    "approved_by": null,
+    "approved_at": null,
+    "impact_register": [
+      {
+        "id": "IMPACT-1",
+        "risk": {
+          "zh": "声誉伤害",
+          "en": "Reputational harm"
+        },
+        "control": {
+          "zh": "不利标签暂停；事实、检测及来源分栏；提供申诉",
+          "en": "Pause adverse labels; separate facts, detection and provenance; offer appeal"
+        },
+        "owner": "independent_reviewer",
+        "residual": {
+          "zh": "已传播的印象不能保证完全消除",
+          "en": "Prior impressions cannot be guaranteed reversible"
+        },
+        "accepted_by": null,
+        "status": "draft_requires_pre_field_review"
+      },
+      {
+        "id": "IMPACT-2",
+        "risk": {
+          "zh": "过度公开与二次传播",
+          "en": "Over-disclosure and secondary propagation"
+        },
+        "control": {
+          "zh": "公开回执去标识；原件受限；逐渠道更正及撤回通知",
+          "en": "De-identify public receipts; restrict originals; correct each channel and notify withdrawal"
+        },
+        "owner": "data_custodian",
+        "residual": {
+          "zh": "外部截图或转述仍需人工后续处理",
+          "en": "External screenshots or retellings still require human follow-up"
+        },
+        "accepted_by": null,
+        "status": "draft_requires_pre_field_review"
+      },
+      {
+        "id": "IMPACT-3",
+        "risk": {
+          "zh": "利益冲突",
+          "en": "Conflict of interest"
+        },
+        "control": {
+          "zh": "发布者与供应商回避；无独立复核不得继续",
+          "en": "Publisher and supplier recusal; no continuation without independent review"
+        },
+        "owner": "independent_reviewer",
+        "residual": {
+          "zh": "合格独立人员尚待任命",
+          "en": "Qualified independent personnel remain unappointed"
+        },
+        "accepted_by": null,
+        "status": "draft_requires_pre_field_review"
+      },
+      {
+        "id": "IMPACT-4",
+        "risk": {
+          "zh": "数字排斥",
+          "en": "Digital exclusion"
+        },
+        "control": {
+          "zh": "无账户无手机受理、纸面回执、辅助沟通共测",
+          "en": "No-account/no-phone intake, paper receipts and assisted-communication co-tests"
+        },
+        "owner": "accessibility_reviewer",
+        "residual": {
+          "zh": "场地与实际用户尚待测试",
+          "en": "Site and actual-user testing remain pending"
+        },
+        "accepted_by": null,
+        "status": "draft_requires_pre_field_review"
+      },
+      {
+        "id": "IMPACT-5",
+        "risk": {
+          "zh": "误删或过度留存",
+          "en": "Incorrect deletion or excessive retention"
+        },
+        "control": {
+          "zh": "分类保留、受限保全例外、备份清理台账及复核日期",
+          "en": "Classified retention, restricted preservation exceptions, backup ledger and review dates"
+        },
+        "owner": "data_custodian",
+        "residual": {
+          "zh": "备份未关闭时不能宣称完全删除",
+          "en": "No complete-deletion claim while backup actions remain open"
+        },
+        "accepted_by": null,
+        "status": "draft_requires_pre_field_review"
+      }
+    ]
+  },
+  "accessibility": {
+    "status": "planned_not_tested",
+    "participants": null,
+    "consent": {
+      "zh": "经同意自愿参与，可随时停止；不要求披露诊断，不默认录音录像；退出不影响服务。",
+      "en": "Voluntary informed participation, stoppable at any time; no diagnosis disclosure or default recording; withdrawal does not affect service."
+    },
+    "tasks": {
+      "zh": "无手机完成受理和纸面回执；低视力读出状态及限制；轮椅路线从入口到私密复核和离开；通过易读或辅助沟通解释“来源有效≠事实真实”。",
+      "en": "Complete intake and paper receipt without a phone; read status and limits with low vision; follow wheelchair route from entrance through private review to exit; explain provenance versus truth using easy-read or assisted communication."
+    },
+    "record_fields": [
+      "task_id",
+      "communication_mode",
+      "consent_record",
+      "completed_without_phone",
+      "assistance_requested",
+      "barrier",
+      "revision",
+      "retest_result"
+    ],
+    "acceptance": {
+      "zh": "同一决定、申诉及更正权利；发现核心任务无法完成即修改后重测。此为共测计划，不是建筑无障碍合规认证。",
+      "en": "Equivalent decision, appeal and correction rights; blocked core tasks require revision and retesting. This is a co-test plan, not built-environment accessibility certification."
+    }
+  },
+  "measurement": [
+    {
+      "id": "MEASURE-1",
+      "label": {
+        "zh": "人工接管",
+        "en": "Human handover"
+      },
+      "method": {
+        "zh": "request_at → human_accept_at；失败和未接管单列",
+        "en": "request_at → human_accept_at; failures and unaccepted cases reported separately"
+      },
+      "collector": "case_steward",
+      "baseline": null,
+      "field_target": null,
+      "observed": null,
+      "target_setting": "before_field_start_by_owner_and_independent_reviewer"
+    },
+    {
+      "id": "MEASURE-2",
+      "label": {
+        "zh": "同渠道更正",
+        "en": "Same-channel correction"
+      },
+      "method": {
+        "zh": "人工更正决定→最后一个原渠道签收；分母为全部登记原渠道",
+        "en": "correction decision → last original-channel acknowledgement; denominator is all inventoried original channels"
+      },
+      "collector": "channel_owner",
+      "baseline": null,
+      "field_target": null,
+      "observed": null,
+      "target_setting": "before_field_start_by_owner_and_independent_reviewer"
+    },
+    {
+      "id": "MEASURE-3",
+      "label": {
+        "zh": "无屏等价完成",
+        "en": "Screenless parity"
+      },
+      "method": {
+        "zh": "按沟通方式分别报告完成/尝试数、退出及所需协助；不删失败样本",
+        "en": "report completed/attempted tasks, withdrawals and assistance by communication mode; retain failures"
+      },
+      "collector": "accessibility_reviewer",
+      "baseline": null,
+      "field_target": null,
+      "observed": null,
+      "target_setting": "before_field_start_by_owner_and_independent_reviewer"
+    },
+    {
+      "id": "MEASURE-4",
+      "label": {
+        "zh": "申诉处理",
+        "en": "Appeal handling"
+      },
+      "method": {
+        "zh": "已决定申诉中改判数/已决定申诉数；未结案另列",
+        "en": "reversals/decided appeals; pending cases reported separately"
+      },
+      "collector": "independent_reviewer",
+      "baseline": null,
+      "field_target": null,
+      "observed": null,
+      "target_setting": "before_field_start_by_owner_and_independent_reviewer"
+    },
+    {
+      "id": "MEASURE-5",
+      "label": {
+        "zh": "理解度",
+        "en": "Understanding"
+      },
+      "method": {
+        "zh": "能解释来源不等于真相的人数/同意回答人数；注明未答",
+        "en": "correct explanations of provenance vs truth/consenting respondents; show nonresponses"
+      },
+      "collector": "accessibility_reviewer",
+      "baseline": null,
+      "field_target": null,
+      "observed": null,
+      "target_setting": "before_field_start_by_owner_and_independent_reviewer"
+    },
+    {
+      "id": "MEASURE-6",
+      "label": {
+        "zh": "恢复完成",
+        "en": "Recovery completion"
+      },
+      "method": {
+        "zh": "有证据关闭项/全部应恢复项；备份与场地分开",
+        "en": "evidence-closed recovery items/all required items; separate backups and site"
+      },
+      "collector": "data_custodian",
+      "baseline": null,
+      "field_target": null,
+      "observed": null,
+      "target_setting": "before_field_start_by_owner_and_independent_reviewer"
+    }
+  ],
+  "disposition": {
+    "choices": [
+      "adopt",
+      "modify",
+      "retire"
+    ],
+    "current": "not_authorized_for_field_use",
+    "signatures": [
+      {
+        "role": "host_operator",
+        "signatory": null,
+        "signed_at": null,
+        "evidence_ref": null
+      },
+      {
+        "role": "service_owner",
+        "signatory": null,
+        "signed_at": null,
+        "evidence_ref": null
+      },
+      {
+        "role": "independent_reviewer",
+        "signatory": null,
+        "signed_at": null,
+        "evidence_ref": null
+      }
+    ],
+    "rule": {
+      "zh": "采用须完成授权、复核、全部渠道更正、重测及恢复并签字；可修复问题选修改并保持暂停；不可恢复或授权撤销选退役。草案空签字不阻断提案讨论，但禁止现场采用。",
+      "en": "Adoption requires authorization, review, all-channel correction, retest, recovery and signatures. Repairable issues mean modify while paused; irrecoverable issues or withdrawn permission mean retire. Empty draft signatures do not block proposal discussion but prohibit field adoption."
+    }
+  },
+  "conditional_followups": [
+    {
+      "blocking_now": false,
+      "trigger": "before_any_live_pilot",
+      "owner": "host_operator",
+      "action": {
+        "zh": "确认实名运营主体、场地许可、人员时段及经审查的数据规则；否则只保留合成演练",
+        "en": "Confirm named operator, site permission, staffing hours and reviewed data rules; otherwise remain synthetic only"
+      }
+    },
+    {
+      "blocking_now": false,
+      "trigger": "official_geometry_and_controls_released",
+      "owner": "planning_team",
+      "action": {
+        "zh": "九个GeoJSON、指标、五组图、HTML及PDF联动复算，记录来源版本、公式和差异",
+        "en": "Recompute nine GeoJSON layers, metrics, five paired figures, HTML and PDFs; preserve source versions, formulas and differences"
+      }
+    },
+    {
+      "blocking_now": false,
+      "trigger": "before_physical_adaptation",
+      "owner": "host_operator",
+      "action": {
+        "zh": "取得权属、建筑、结构、消防、无障碍与工程数量及成本依据",
+        "en": "Obtain ownership, building, structural, fire, accessibility, quantity and cost evidence"
+      }
+    }
+  ],
+  "resource_rule": {
+    "zh": "维持S/M/L档位。成本结构为人员工时×有依据单价＋适配工程量×单价＋设备＋独立复核＋无障碍共测＋恢复与运维；数量、单价、总额均待确认，不据此承诺投资。",
+    "en": "Retain S/M/L bands. Cost structure: staff hours × sourced rates + adaptation quantities × rates + equipment + independent review + accessibility co-test + recovery and operation. Quantities, rates and totals remain pending; no investment promise."
+  },
+  "operating_slots": [
+    {
+      "stage": {
+        "zh": "演练受理窗口",
+        "en": "Drill intake window"
+      },
+      "proposed_slot": {
+        "zh": "单次60分钟合成演练；现场时段待场地确认",
+        "en": "One 60-minute synthetic drill; field opening hours pending host confirmation"
+      },
+      "roles": [
+        "case_steward",
+        "channel_owner"
+      ],
+      "spaces": {
+        "zh": "无屏受理台、等候及纸面回执位",
+        "en": "Screenless counter, waiting and paper-receipt position"
+      },
+      "equipment": {
+        "zh": "纸面案件卡、可替换展签、离线网页终端；不采集身份材料",
+        "en": "Paper case card, replaceable label, offline terminal; no identity-material collection"
+      }
+    },
+    {
+      "stage": {
+        "zh": "复核与恢复窗口",
+        "en": "Review and recovery window"
+      },
+      "proposed_slot": {
+        "zh": "T+20至T+60为合成脚本时刻，非真实服务承诺",
+        "en": "T+20 to T+60 are synthetic script moments, not live service promises"
+      },
+      "roles": [
+        "independent_reviewer",
+        "evaluation_lead",
+        "data_custodian",
+        "service_owner"
+      ],
+      "spaces": {
+        "zh": "私密复核、受控重测、退出与恢复位",
+        "en": "Private review, controlled retest, exit and recovery positions"
+      },
+      "equipment": {
+        "zh": "许可材料清单、版本日志、隔离存储、恢复检查表",
+        "en": "Permission inventory, version log, isolated storage and recovery checklist"
+      }
+    }
+  ],
+  "compliance_evidence": [
+    {
+      "topic": {
+        "zh": "字体与素材",
+        "en": "Fonts and materials"
+      },
+      "evidence": "sources.json; report/copyright_statement.md; visual/assets/font-coverage.json",
+      "state": {
+        "zh": "包内来源与许可可核对；不认证其他未提供材料",
+        "en": "Packaged sources/licences can be checked; no certification of unsupplied material"
+      },
+      "owner": "pilot_steward"
+    },
+    {
+      "topic": {
+        "zh": "数据最小化与期限",
+        "en": "Data minimization and periods"
+      },
+      "evidence": "execution-contract.json#data_protocol",
+      "state": {
+        "zh": "已有草案，未获现场专业批准",
+        "en": "Draft exists; no field professional approval"
+      },
+      "owner": "data_custodian"
+    },
+    {
+      "topic": {
+        "zh": "独立复核",
+        "en": "Independent review"
+      },
+      "evidence": "execution-contract.json#independence",
+      "state": {
+        "zh": "回避规则可审查；具体人员待任命",
+        "en": "Recusal rules reviewable; personnel unappointed"
+      },
+      "owner": "independent_reviewer"
+    },
+    {
+      "topic": {
+        "zh": "无障碍与场地",
+        "en": "Accessibility and site"
+      },
+      "evidence": "execution-contract.json#accessibility",
+      "state": {
+        "zh": "共测任务及记录表已设计；现场未测",
+        "en": "Co-test tasks and records designed; no field testing"
+      },
+      "owner": "host_operator"
+    },
+    {
+      "topic": {
+        "zh": "授权与采用",
+        "en": "Authorization and adoption"
+      },
+      "evidence": "execution-contract.json#disposition",
+      "state": {
+        "zh": "签字空白，禁止现场采用；不阻断提案讨论",
+        "en": "Signatures empty: no field adoption; proposal discussion remains possible"
+      },
+      "owner": "service_owner"
+    }
+  ]
+}

@@ -1,0 +1,658 @@
+{
+  "schema_version": "0.1.0",
+  "status": "protocol_draft_not_run",
+  "preregistration_status": "pending_real_task_binding_and_signed_preregistration",
+  "canonical_refs": {
+    "gates_and_stop": "visual/assets/pilot-gates.json",
+    "public_readings": "visual/assets/public-readings.json",
+    "ai_benchmark": "simulation.json",
+    "scenario_ids": [
+      "SC-01",
+      "SC-02",
+      "SC-10",
+      "SC-12"
+    ],
+    "assumption_ids": [
+      "A-VIBRATION-001",
+      "A-USERS-001",
+      "A-AI-001",
+      "A-PUBLIC-001",
+      "A-COST-001"
+    ]
+  },
+  "evidence_model": {
+    "physical_role_enum": [
+      "D",
+      "T",
+      "S"
+    ],
+    "evidence_level_enum": [
+      "E0",
+      "E1",
+      "E2",
+      "E3"
+    ],
+    "rules": {
+      "role_is_event_specific": true,
+      "u_is_visual_alias_for_e0_not_a_physical_role": true,
+      "e_level_is_not_l_implementation_level": true,
+      "chain_level_is_weakest_of_d_t_s": true,
+      "e3_is_not_safety_compliance_heritage_or_release_approval": true
+    },
+    "levels": [
+      {
+        "id": "E0",
+        "meaning_zh": "候选、未绑定或未测",
+        "meaning_en": "candidate, unbound or unmeasured",
+        "minimum_evidence": [
+          "candidate_object_ref",
+          "unknown_reason",
+          "next_gate"
+        ]
+      },
+      {
+        "id": "E1",
+        "meaning_zh": "授权观察且QA通过",
+        "meaning_en": "authorised observation with QA pass",
+        "minimum_evidence": [
+          "permission_ref",
+          "measurement_plan_ref",
+          "raw_data_ref",
+          "raw_sha256",
+          "calibration_refs",
+          "sync_check_ref",
+          "qc_disposition"
+        ]
+      },
+      {
+        "id": "E2",
+        "meaning_zh": "同工况配对的可逆决策证据",
+        "meaning_en": "matched provisional evidence for a reversible decision",
+        "minimum_evidence": [
+          "e1_refs",
+          "matched_comparison_ref",
+          "preregistered_rule_ref",
+          "human_disposition_ref"
+        ]
+      },
+      {
+        "id": "E3",
+        "meaning_zh": "独立复测且绑定对象与条件",
+        "meaning_en": "independently repeated, object- and condition-bound evidence",
+        "minimum_evidence": [
+          "e2_ref",
+          "independent_repeat_ref",
+          "named_object_and_condition",
+          "professional_interpretation_ref"
+        ]
+      }
+    ],
+    "event_record_required": [
+      "campaign_id",
+      "chain_id",
+      "event_id",
+      "run_id",
+      "phase_id",
+      "physical_role",
+      "point_id",
+      "evidence_level",
+      "evidence_level_reason",
+      "object_ref",
+      "site_scope_ref",
+      "user_need_ref",
+      "permission_ref",
+      "measurement_plan_ref",
+      "natural_or_controlled",
+      "started_at",
+      "ended_at",
+      "timezone",
+      "operating_state_ref",
+      "robot_configuration_ref",
+      "payload_class",
+      "route_or_action_ref",
+      "receiver_state_ref",
+      "instrument_id",
+      "channel_id",
+      "axis_orientation",
+      "mounting_method",
+      "sample_rate_hz",
+      "frequency_band_hz",
+      "clock_source",
+      "sync_check_ref",
+      "calibration_before_ref",
+      "calibration_after_ref",
+      "raw_data_ref",
+      "raw_sha256",
+      "processing_version",
+      "processing_parameters_ref",
+      "qa_flags",
+      "qc_disposition",
+      "comparison_ref",
+      "reading_eligibility",
+      "privacy_status",
+      "human_disposition_ref",
+      "prohibited_conclusions_ack"
+    ]
+  },
+  "hero_pilot": {
+    "id": "HP-01",
+    "status": "candidate_pending_real_user_permission_and_professional_plan",
+    "subject": {
+      "type": "one_authorised_task_and_source_object",
+      "asset_ref": null
+    },
+    "measurement_points": [
+      {
+        "id": "MP-D",
+        "role": "D",
+        "logical_position": "source near-field reference",
+        "exact_location": null
+      },
+      {
+        "id": "MP-T1",
+        "role": "T",
+        "logical_position": "source support or first path interface",
+        "exact_location": null
+      },
+      {
+        "id": "MP-T2",
+        "role": "T",
+        "logical_position": "far path interface or ordinary-side reference",
+        "exact_location": null
+      },
+      {
+        "id": "MP-S",
+        "role": "S",
+        "logical_position": "specific receiver or stable reference",
+        "exact_location": null
+      }
+    ],
+    "disposition_enum": [
+      "KEEP",
+      "REPAIR_SOURCE",
+      "RESCHEDULE",
+      "RELOCATE",
+      "REVERSIBLE_LOCAL",
+      "REFER_SPECIALIST"
+    ],
+    "stop_is_cross_cutting_not_a_seventh_disposition": true,
+    "prohibited_outputs": [
+      "structural_safety",
+      "statutory_compliance",
+      "heritage_safety",
+      "public_space_release"
+    ]
+  },
+  "raci": {
+    "roles": [
+      {
+        "role_id": "pilot_owner",
+        "assignee": null,
+        "assignment_status": "unassigned"
+      },
+      {
+        "role_id": "site_authorizer",
+        "assignee": null,
+        "assignment_status": "unassigned"
+      },
+      {
+        "role_id": "real_user_rep",
+        "assignee": null,
+        "assignment_status": "unassigned"
+      },
+      {
+        "role_id": "measurement_lead",
+        "assignee": null,
+        "assignment_status": "unassigned"
+      },
+      {
+        "role_id": "independent_professional_reviewer",
+        "assignee": null,
+        "assignment_status": "unassigned"
+      },
+      {
+        "role_id": "robot_operator",
+        "assignee": null,
+        "assignment_status": "unassigned"
+      },
+      {
+        "role_id": "safety_access_lead",
+        "assignee": null,
+        "assignment_status": "unassigned"
+      },
+      {
+        "role_id": "site_operator",
+        "assignee": null,
+        "assignment_status": "unassigned"
+      },
+      {
+        "role_id": "data_steward",
+        "assignee": null,
+        "assignment_status": "unassigned"
+      },
+      {
+        "role_id": "benchmark_custodian",
+        "assignee": null,
+        "assignment_status": "unassigned"
+      },
+      {
+        "role_id": "human_decision_panel",
+        "assignee": null,
+        "assignment_status": "unassigned"
+      },
+      {
+        "role_id": "human_decision_chair",
+        "assignee": null,
+        "assignment_status": "unassigned"
+      },
+      {
+        "role_id": "public_reporting_owner",
+        "assignee": null,
+        "assignment_status": "unassigned"
+      },
+      {
+        "role_id": "restoration_lead",
+        "assignee": null,
+        "assignment_status": "unassigned"
+      },
+      {
+        "role_id": "public_access_rep",
+        "assignee": null,
+        "assignment_status": "unassigned"
+      }
+    ],
+    "tasks": [
+      {
+        "task_id": "bind_user_and_permission",
+        "responsible": [
+          "pilot_owner"
+        ],
+        "accountable": [
+          "site_authorizer"
+        ],
+        "consulted": [
+          "real_user_rep",
+          "measurement_lead",
+          "safety_access_lead"
+        ],
+        "informed": [
+          "data_steward"
+        ],
+        "required_before_gate": "L1"
+      },
+      {
+        "task_id": "freeze_measurement_plan",
+        "responsible": [
+          "measurement_lead"
+        ],
+        "accountable": [
+          "independent_professional_reviewer"
+        ],
+        "consulted": [
+          "robot_operator",
+          "safety_access_lead",
+          "data_steward"
+        ],
+        "informed": [
+          "pilot_owner"
+        ],
+        "required_before_gate": "L1"
+      },
+      {
+        "task_id": "run_and_hard_stop",
+        "responsible": [
+          "robot_operator",
+          "measurement_lead"
+        ],
+        "accountable": [
+          "safety_access_lead"
+        ],
+        "consulted": [
+          "site_operator"
+        ],
+        "informed": [
+          "pilot_owner",
+          "site_authorizer",
+          "real_user_rep"
+        ],
+        "required_before_gate": "L1"
+      },
+      {
+        "task_id": "seal_data_and_denominators",
+        "responsible": [
+          "data_steward"
+        ],
+        "accountable": [
+          "independent_professional_reviewer"
+        ],
+        "consulted": [
+          "measurement_lead"
+        ],
+        "informed": [
+          "pilot_owner",
+          "real_user_rep"
+        ],
+        "required_before_gate": "E2"
+      },
+      {
+        "task_id": "blind_ai_baseline_test",
+        "responsible": [
+          "benchmark_custodian"
+        ],
+        "accountable": [
+          "independent_professional_reviewer"
+        ],
+        "consulted": [
+          "data_steward",
+          "measurement_lead"
+        ],
+        "informed": [
+          "pilot_owner"
+        ],
+        "required_before_gate": "E2"
+      },
+      {
+        "task_id": "pass_revise_stop",
+        "responsible": [
+          "human_decision_panel"
+        ],
+        "accountable": [
+          "human_decision_chair"
+        ],
+        "consulted": [
+          "site_authorizer",
+          "safety_access_lead",
+          "measurement_lead",
+          "real_user_rep"
+        ],
+        "informed": [
+          "public_reporting_owner"
+        ],
+        "required_before_gate": "E3"
+      },
+      {
+        "task_id": "remove_and_restore",
+        "responsible": [
+          "restoration_lead"
+        ],
+        "accountable": [
+          "site_authorizer"
+        ],
+        "consulted": [
+          "safety_access_lead",
+          "public_access_rep"
+        ],
+        "informed": [
+          "pilot_owner",
+          "real_user_rep",
+          "public_reporting_owner"
+        ],
+        "required_before_gate": "campaign_close"
+      }
+    ],
+    "validation_rules": [
+      "every task has exactly one accountable role",
+      "all L1 prerequisites are assigned and signed before collection"
+    ]
+  },
+  "measurement_qaqc": {
+    "preregistration_lock": [
+      "complete-event unit",
+      "four logical points",
+      "operating condition",
+      "matching variables",
+      "reading denominators",
+      "exclusion and STOP rules",
+      "processing version"
+    ],
+    "pre_run": [
+      "instrument model and serial",
+      "valid calibration evidence",
+      "mounting method and axis",
+      "clock source and sync check",
+      "functional check",
+      "permission and privacy scope"
+    ],
+    "during_run": [
+      "operator intervention log",
+      "natural or controlled flag",
+      "clipping, saturation or dropout",
+      "clock drift",
+      "public-route and physical-stop state"
+    ],
+    "post_run": [
+      "post functional check",
+      "immutable raw data and SHA-256",
+      "raw/derived separation",
+      "code and parameter version",
+      "missing-data record",
+      "independent QC signature"
+    ],
+    "qc_disposition_enum": [
+      "PASS",
+      "CONDITIONAL",
+      "REJECT"
+    ],
+    "reject_reason_enum": [
+      "permission_invalid",
+      "calibration_invalid",
+      "sync_invalid",
+      "mount_changed",
+      "clipping_or_dropout",
+      "raw_hash_missing",
+      "condition_mismatch",
+      "privacy_scope_breach"
+    ],
+    "numeric_parameters": {
+      "sync_tolerance_ms": null,
+      "missingness_limit": null,
+      "frequency_band_hz": null,
+      "sample_rate_hz": null,
+      "set_by": "signed_professional_measurement_plan"
+    }
+  },
+  "reversible_aba": {
+    "purpose_zh": "只检验可撤回措施在同一对象与工况下是否支持人工处置",
+    "purpose_en": "test only whether a reversible measure supports a disposition for the matched object and condition",
+    "sequence": [
+      "A1 matched baseline",
+      "B reversible intervention",
+      "A2 withdrawn and restored repeat"
+    ],
+    "eligible_actions": [
+      "reschedule",
+      "relocate",
+      "removable surface or pad",
+      "temporary reference base"
+    ],
+    "prohibited_actions": [
+      "withdraw necessary repair",
+      "recreate a dangerous state",
+      "remove an irreversible measure for experiment"
+    ],
+    "match_fields": [
+      "robot version",
+      "payload",
+      "route/action/speed",
+      "four-point mounting",
+      "receiver state",
+      "event class",
+      "operating window",
+      "environment context"
+    ],
+    "result_enum": [
+      "SUPPORTED_FOR_SCOPE",
+      "NOT_SUPPORTED",
+      "INCONCLUSIVE",
+      "HARM_STOP"
+    ],
+    "mismatch_result": "INCONCLUSIVE",
+    "scope_boundary": "no extrapolation to safety, statutory compliance or whole-site effect"
+  },
+  "procurement_packages": [
+    {
+      "id": "WP01",
+      "scope": "professional measurement plan and site walk",
+      "pricing_unit": "professional_service_lot",
+      "trigger": "L1 candidate",
+      "quantity": null,
+      "budget": null,
+      "vendor": null,
+      "required_submittals": [
+        "signed plan",
+        "logical-point and permission diagram",
+        "exit plan"
+      ],
+      "acceptance_evidence": [
+        "independent review signature"
+      ],
+      "exclusions": [
+        "site compliance certification"
+      ],
+      "stop_ref": "NO_L3_SCALE"
+    },
+    {
+      "id": "WP02",
+      "scope": "synchronised four-point measurement and calibration evidence",
+      "pricing_unit": "measurement_channel_day",
+      "trigger": "signed L1 plan",
+      "quantity": null,
+      "budget": null,
+      "vendor": null,
+      "required_submittals": [
+        "serials",
+        "calibration",
+        "sync",
+        "raw hashes",
+        "QC package"
+      ],
+      "acceptance_evidence": [
+        "QC disposition"
+      ],
+      "exclusions": [
+        "invented threshold"
+      ],
+      "stop_ref": "DATA_RUN_REJECT"
+    },
+    {
+      "id": "WP03",
+      "scope": "authorised source operation, physical stop and public continuity",
+      "pricing_unit": "operator_day",
+      "trigger": "valid permission",
+      "quantity": null,
+      "budget": null,
+      "vendor": null,
+      "required_submittals": [
+        "operator authority",
+        "STOP drill",
+        "route check"
+      ],
+      "acceptance_evidence": [
+        "signed drill record"
+      ],
+      "exclusions": [
+        "public deployment approval"
+      ],
+      "stop_ref": "IMMEDIATE_SITE_STOP"
+    },
+    {
+      "id": "WP04",
+      "scope": "one reversible local component",
+      "pricing_unit": "reversible_component_lot",
+      "trigger": "E2 evidence",
+      "quantity": null,
+      "budget": null,
+      "vendor": null,
+      "required_submittals": [
+        "install/remove/restore method"
+      ],
+      "acceptance_evidence": [
+        "A-B-A record",
+        "restoration acceptance"
+      ],
+      "exclusions": [
+        "permanent structure"
+      ],
+      "stop_ref": "INTERVENTION_REMOVE"
+    },
+    {
+      "id": "WP05",
+      "scope": "data custody and blind benchmark",
+      "pricing_unit": "benchmark_campaign",
+      "trigger": "sealed events",
+      "quantity": null,
+      "budget": null,
+      "vendor": null,
+      "required_submittals": [
+        "split hash",
+        "blind key",
+        "locked dispositions",
+        "reveal record"
+      ],
+      "acceptance_evidence": [
+        "independent benchmark review"
+      ],
+      "exclusions": [
+        "safety or compliance decision"
+      ],
+      "stop_ref": "AI_DELETE"
+    },
+    {
+      "id": "WP06",
+      "scope": "independent repeat and professional interpretation",
+      "pricing_unit": "independent_repeat_campaign",
+      "trigger": "E2 candidate",
+      "quantity": null,
+      "budget": null,
+      "vendor": null,
+      "required_submittals": [
+        "independent plan and scope"
+      ],
+      "acceptance_evidence": [
+        "signed interpretation and limitations"
+      ],
+      "exclusions": [
+        "statutory approval"
+      ],
+      "stop_ref": "NO_L3_SCALE"
+    },
+    {
+      "id": "WP07",
+      "scope": "removal and restoration",
+      "pricing_unit": "restoration_lot",
+      "trigger": "campaign close or STOP",
+      "quantity": null,
+      "budget": null,
+      "vendor": null,
+      "required_submittals": [
+        "path, site, equipment and data clearance list"
+      ],
+      "acceptance_evidence": [
+        "site authoriser sign-off"
+      ],
+      "exclusions": [
+        "unfunded residual maintenance"
+      ],
+      "stop_ref": "IMMEDIATE_SITE_STOP"
+    },
+    {
+      "id": "WP08",
+      "scope": "optional AI benchmark arm",
+      "pricing_unit": "optional_benchmark_campaign",
+      "trigger": "same-data non-AI baseline ready",
+      "quantity": null,
+      "budget": null,
+      "vendor": null,
+      "required_submittals": [
+        "versioned model and refusal schema"
+      ],
+      "acceptance_evidence": [
+        "held-out gain or deletion record"
+      ],
+      "exclusions": [
+        "binding WP01-WP07 to AI purchase"
+      ],
+      "stop_ref": "AI_DELETE"
+    }
+  ]
+}

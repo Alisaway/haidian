@@ -54,7 +54,8 @@
       ],
       "source_ids": [
         "OFFICIAL-ANNOUNCEMENT",
-        "AGENT-TASKBOOK"
+        "AGENT-TASKBOOK",
+        "OSM-SITE-CONTEXT-20260817"
       ],
       "geojson_layers": [
         "geometry/land_use.geojson",
@@ -65,7 +66,10 @@
         "land_use_feature_count",
         "conceptual_building_interface_count",
         "east_west_stitch_count",
-        "station_topology_pass_count"
+        "station_topology_pass_count",
+        "osm_site_context_feature_count",
+        "osm_key_area_mapped_building_count",
+        "osm_key_area_walk_cycle_length_m"
       ],
       "drawings": [
         "assets/figures/land-use-structure.png",
@@ -80,10 +84,12 @@
         "慢行蓝绿网络",
         "visual/assets/station-topology.json",
         "visual/assets/station-topology-results.json",
+        "visual/assets/site-context-results.json",
         "visual/assets/review-evidence.json"
       ],
       "assumption_ids": [
-        "A-CONTROLS-001"
+        "A-CONTROLS-001",
+        "A-OSM-CONTEXT-001"
       ],
       "self_check_ids": [
         "DETERMINISTIC_VALIDATION",
@@ -98,7 +104,7 @@
       "mandatory": true,
       "report_sections": [
         "AI 创新生态、人才画像与 AI+ 场景",
-        "周阿姨的上午：没有手机也能让城市停止一次AI"
+        "周阿姨的上午：没有手机也能直接参与改产品"
       ],
       "source_ids": [
         "AGENT-TASKBOOK"
@@ -309,7 +315,8 @@
       "mandatory": true,
       "report_sections": [
         "更新项目清单、实施政策与分期计划",
-        "最小试点：十四天只回答一个问题"
+        "90日准备评估窗口：现场运行仅D1—D14",
+        "十四天运行班次与PRE-PILOT READINESS GATE"
       ],
       "source_ids": [
         "AGENT-TASKBOOK"
@@ -330,7 +337,8 @@
       "visual_sections": [
         "JZ-01至JZ-12责任资源验收退出",
         "专业移交十件套",
-        "visual/assets/review-evidence.json"
+        "visual/assets/review-evidence.json",
+        "visual/assets/formal-review-readiness-closure.json"
       ],
       "assumption_ids": [
         "A-OPERATIONS-001",
@@ -543,7 +551,8 @@
       "visual_sections": [
         "指标状态来源公式触发器",
         "临时精度与全链重算",
-        "visual/assets/review-evidence.json"
+        "visual/assets/review-evidence.json",
+        "visual/assets/formal-review-readiness-closure.json"
       ],
       "assumption_ids": [
         "A-CONTROLS-001"
@@ -561,7 +570,7 @@
       "mandatory": true,
       "report_sections": [
         "重点区域详细设计",
-        "AI为何让三处空间长得不一样"
+        "三种共同开发关系如何改变空间"
       ],
       "source_ids": [
         "KEY-AREA-SOURCE",
@@ -575,12 +584,16 @@
       "metrics": [
         "conceptual_building_interface_count",
         "station_topology_check_count",
-        "station_topology_pass_count"
+        "station_topology_pass_count",
+        "three_station_flagship_contract_count",
+        "three_station_contract_check_count",
+        "three_station_contract_pass_count"
       ],
       "drawings": [
         "assets/figures/key-areas.png",
         "assets/figures/station-design-atlas.png",
         "assets/figures/station-topology-proof.png",
+        "assets/figures/three-station-flagship-contracts.png",
         "drawings/a3-booklet.pdf",
         "drawings/a0-boards.pdf"
       ],
@@ -589,7 +602,9 @@
         "重点区共同证据模板",
         "visual/assets/station-topology.json",
         "visual/assets/station-topology-results.json",
-        "visual/assets/review-evidence.json"
+        "visual/assets/review-evidence.json",
+        "visual/assets/three-station-flagship-contracts.json",
+        "visual/assets/three-station-flagship-contract-results.json"
       ],
       "assumption_ids": [
         "A-CONTROLS-001"
@@ -690,7 +705,7 @@
       "mandatory": true,
       "report_sections": [
         "6.3 大钟寺：城市试用界面",
-        "周阿姨的上午：没有手机也能让城市停止一次AI"
+        "周阿姨的上午：没有手机也能直接参与改产品"
       ],
       "source_ids": [
         "KEY-AREA-SOURCE",
@@ -777,7 +792,7 @@
       "mandatory": true,
       "report_sections": [
         "统筹研究范围产业与未来城市研究",
-        "附录：X Census赛道词汇检查"
+        "附录：内部语汇审计"
       ],
       "source_ids": [
         "CASE-CAMBRIDGE",
@@ -833,9 +848,9 @@
       "mandatory": true,
       "report_sections": [
         "AI 创新生态、人才画像与 AI+ 场景",
-        "一件AI产品如何穿过三站：从0.8失败到0.10复测",
-        "三站交接：三张票据不是三枚印章",
-        "最小试点：十四天只回答一个问题",
+        "一件AI产品如何穿过三站：从0.8失败到0.10返回",
+        "治理底盘：前台看问题怎样被解决，后台保留完整历史",
+        "90日准备评估窗口与十四天运行班次的详细顺序",
         "三种失败：技术、权利与公众使用分别怎样收场"
       ],
       "source_ids": [
@@ -856,7 +871,8 @@
         "product_lifecycle_event_count",
         "handover_ticket_type_count",
         "ticket_hash_chain_target_percent",
-        "minimum_pilot_duration_days",
+        "controlled_operating_shift_days",
+        "pre_pilot_readiness_review_window_days",
         "reversible_pilot_kit_type_count",
         "minimum_pilot_shift_role_count",
         "failure_case_count",
@@ -865,7 +881,10 @@
         "x_lifecycle_pass_count",
         "x_spatial_conflict_count",
         "station_topology_check_count",
-        "station_topology_pass_count"
+        "station_topology_pass_count",
+        "three_station_flagship_contract_count",
+        "three_station_contract_check_count",
+        "three_station_contract_pass_count"
       ],
       "drawings": [
         "assets/figures/scenario-operations.png",
@@ -874,23 +893,27 @@
         "assets/figures/station-handover.png",
         "assets/figures/failure-atlas.png",
         "assets/figures/x-operating-proof.png",
+        "assets/figures/three-station-flagship-contracts.png",
         "drawings/a3-booklet.pdf",
         "drawings/a0-boards.pdf"
       ],
       "visual_sections": [
-        "四旗舰场景完整RACI",
+        "三站城市空间：做东西、开放东西、真正使用东西",
         "SC-03 X Receipt技术栈与四工况合成演练",
-        "SC-03从0.8失败至0.10复测的九事件生命周期",
+        "SC-03从0.8失败至0.10返回的九事件生命周期",
         "三票据哈希交接与拒绝路径",
-        "十四天最小试点及三类失败复原",
+        "三站十四天受控运行班次、90日准备评估窗口及三类失败复原",
         "visual/assets/lived-lifecycle.json",
         "visual/assets/x-receipt.schema.json",
         "visual/assets/verify-x-lifecycle.js",
         "visual/assets/x-lifecycle-test-results.json",
         "visual/assets/station-topology.json",
         "visual/assets/station-topology-results.json",
+        "visual/assets/three-station-flagship-contracts.json",
+        "visual/assets/verify-three-station-contracts.js",
+        "visual/assets/three-station-flagship-contract-results.json",
         "visual/assets/sc03-tabletop-evidence.json",
-        "90日与180日门槛",
+        "三站技术边界、90日与180日证据门及FAIL后空间复原",
         "八储备场景登记册",
         "visual/assets/review-evidence.json"
       ],
@@ -952,7 +975,7 @@
       "report_sections": [
         "蓝绿空间、公共空间与城市风貌",
         "agent.5 百年 X京张文化导览线：1909—2026—2126",
-        "为什么是京张：从铁路运行文化长出的X"
+        "为什么只能从京张长出来"
       ],
       "source_ids": [
         "AGENT-TASKBOOK",
@@ -1022,7 +1045,8 @@
         "scenario_card_count",
         "annual_operating_season_count",
         "annual_public_decision_register_count",
-        "minimum_pilot_duration_days",
+        "controlled_operating_shift_days",
+        "pre_pilot_readiness_review_window_days",
         "handover_ticket_type_count"
       ],
       "drawings": [
@@ -1039,7 +1063,7 @@
         "visual/assets/x-operations-cycle.json",
         "开发者社区章程",
         "场景开放与转化闭环",
-        "十四天最小试点与三站票据交接",
+        "三站十四天运行班次、90日准备评估窗口与三站票据交接",
         "visual/assets/lived-lifecycle.json",
         "visual/assets/review-evidence.json"
       ],

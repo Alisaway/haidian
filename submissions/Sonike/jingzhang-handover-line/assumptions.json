@@ -6,63 +6,263 @@
       "status": "pending_professional_confirmation",
       "statement": "总体设计范围与三处重点区域采用仓库 provisional_boundaries.geojson；它们不是官方红线。",
       "impact": "面积、比例、长度和分区仅用于方案比较，官方边界替换后必须全量复算。",
-      "recalculation_trigger": "官方盖章或权威发布的范围几何可用。"
+      "recalculation_trigger": "官方盖章或权威发布的范围几何可用。",
+      "affected_files": [
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson",
+        "geometry/land_use.geojson",
+        "metrics.json",
+        "assets/figures/site-overview.png",
+        "assets/figures/key-areas.png",
+        "assets/figures/land-use-structure.png",
+        "drawings/a0-boards.pdf",
+        "drawings/a3-booklet.pdf",
+        "proposal.md"
+      ],
+      "responsible_role": "R-PUBLIC-SPACE",
+      "resolution_evidence": "取得清权后的官方 official polygon（盖章或权威发布），并可核对其坐标系与发布时点。",
+      "recalculation_scope": "九类几何与全部面积/比例/长度指标全量重算；26 张图件与四套 PDF 中所有依赖该边界的图面重出；正文与 HTML 中的面积表述同步订正。",
+      "risk_statement_zh": "临时边界被误读为正式红线。"
     },
     {
       "id": "A-CONTROLS-001",
       "status": "pending_professional_confirmation",
       "statement": "容积率、建筑高度、密度、绿地率、退界、道路红线和停车指标均无公开审定值。",
       "impact": "所有空间结构、建筑单元和分期均为城市设计概念建议，不构成控规或工程结论。",
-      "recalculation_trigger": "获得审定控规与专项条件。"
+      "recalculation_trigger": "获得审定控规与专项条件。",
+      "affected_files": [
+        "metrics.json",
+        "visual/assets/governance/measurement-protocol.json",
+        "proposal.md",
+        "design_depth_matrix.json"
+      ],
+      "responsible_role": "R-PUBLIC-SPACE",
+      "resolution_evidence": "正式控规、规划条件与技术审查结论；含容积率、高度、密度、退界与停车指标的审定值。",
+      "recalculation_scope": "六项 unknown 控制指标由 null 转为实测值；强度分区与形态原则据此复核；不改变几何。",
+      "risk_statement_zh": "概念用地与强度被误读为控规。"
     },
     {
       "id": "A-BASELINE-001",
       "status": "pending_professional_confirmation",
       "statement": "缺少正式现状用地、树木、水文、地形、公共空间与生态本底数据。",
       "impact": "蓝绿与公共空间面积是新增概念结构，不能解读为现状净增量。",
-      "recalculation_trigger": "完成现状测绘、生态调查与海绵专项。"
+      "recalculation_trigger": "完成现状测绘、生态调查与海绵专项。",
+      "affected_files": [
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson",
+        "metrics.json",
+        "proposal.md"
+      ],
+      "responsible_role": "R-PUBLIC-SPACE",
+      "resolution_evidence": "正式现状用地、树木、水文、地形、公共空间与生态本底调查成果。",
+      "recalculation_scope": "绿地与公共空间的面积与比例重算；蓝绿策略据实况复核；场景选点复核。",
+      "risk_statement_zh": "缺少正式现状本底，绿地与公共空间口径只能按概念几何成立。"
     },
     {
       "id": "A-TRANSPORT-001",
       "status": "pending_professional_confirmation",
       "statement": "道路、铁路、站点、慢行、公交、停车及消防资料不完整。",
       "impact": "交接线与八条缝合支线只表达连接意图，不表达红线、断面、桥隧或工程可行性。",
-      "recalculation_trigger": "道路红线、轨道保护、交通模型与消防条件完成核验。"
+      "recalculation_trigger": "道路红线、轨道保护、交通模型与消防条件完成核验。",
+      "affected_files": [
+        "geometry/roads.geojson",
+        "metrics.json",
+        "assets/figures/mobility-bluegreen.png",
+        "proposal.md"
+      ],
+      "responsible_role": "R-PUBLIC-SPACE",
+      "resolution_evidence": "道路红线、轨道、交通量、市政与结构资料，以及消防车道与回车条件。",
+      "recalculation_scope": "道路面积与道路率由 null 转实测；八条缝合支线的线位与断面由交通专业复核；慢行断点处理方案据实况重做。",
+      "risk_statement_zh": "连接意图被误读为工程线位。"
     },
     {
       "id": "A-HERITAGE-001",
       "status": "pending_professional_confirmation",
       "statement": "文物本体、保护范围、建设控制地带、历史建筑和工业遗存名录尚未形成正式几何底图。",
       "impact": "文化节点均采用可逆、轻介入方向，具体选址与高度须接受文保前置审查。",
-      "recalculation_trigger": "取得文保部门确认的名录、边界与控制要求。"
+      "recalculation_trigger": "取得文保部门确认的名录、边界与控制要求。",
+      "affected_files": [
+        "geometry/constraints.geojson",
+        "geometry/public_space.geojson",
+        "proposal.md"
+      ],
+      "responsible_role": "R-CULTURE-VENUE",
+      "resolution_evidence": "文物保护范围、建设控制地带与历史建筑名录的正式几何底图，及文物影响评估结论。",
+      "recalculation_scope": "文化节点选点与口述史问答亭位置复核；涉及保护范围的空间动作重新判定；不改变总体结构。",
+      "risk_statement_zh": "文化节点与文保范围冲突。"
     },
     {
       "id": "A-MUNICIPAL-001",
       "status": "pending_professional_confirmation",
       "statement": "电力、算力、通信、给排水、热力、环卫与地下管线容量未知。",
       "impact": "边缘算力与场景接口仅为需求框架，不能据此承诺容量、投资或接入时间。",
-      "recalculation_trigger": "市政普查与容量评估完成。"
+      "recalculation_trigger": "市政普查与容量评估完成。",
+      "affected_files": [
+        "geometry/constraints.geojson",
+        "metrics.json",
+        "proposal.md"
+      ],
+      "responsible_role": "R-TEST-SAFETY",
+      "resolution_evidence": "市政主管部门核定的电力、算力、通信、给排水、热力、环卫与地下管线容量及接入条件。",
+      "recalculation_scope": "端侧能耗试验站与算力栈的接入规模据核定容量复核；不改变几何，仅改变可承载规模的表述。",
+      "risk_statement_zh": "市政接口被误读为容量承诺。"
     },
     {
       "id": "A-BUILDING-001",
       "status": "pending_professional_confirmation",
       "statement": "缺少完整现状建筑、结构安全、产权、租赁与使用状况调查。",
       "impact": "buildings.geojson 仅为二十个更新类型试验单元，拆改留坚持保留优先并逐栋核查。",
-      "recalculation_trigger": "逐栋测绘、权属核验、结构鉴定和利益相关方协商完成。"
+      "recalculation_trigger": "逐栋测绘、权属核验、结构鉴定和利益相关方协商完成。",
+      "affected_files": [
+        "geometry/buildings.geojson",
+        "metrics.json",
+        "proposal.md"
+      ],
+      "responsible_role": "R-PUBLIC-SPACE",
+      "resolution_evidence": "逐栋建筑、权属、结构安全、消防与社会影响调查成果。",
+      "recalculation_scope": "二十个更新类型单元由类型试验转为具体对象或撤销；联合基底面积重算；拆改留判断据调查重做。",
+      "risk_statement_zh": "概念建筑单元被误读为拆改留结论。"
     },
     {
       "id": "A-OPERATIONS-001",
-      "status": "pending_professional_confirmation",
-      "statement": "十二个AI场景是治理与空间原型，未获采购、经营或正式部署批准。",
-      "impact": "每个场景必须小规模测试、人工复核、保留无AI等价服务，并设置退出阈值。",
-      "recalculation_trigger": "完成算法、隐私、安全、无障碍与公共利益影响评估。"
+      "status": "offline_tabletop_complete_field_authorisation_pending",
+      "statement": "十二个AI场景已完成不连接真实服务的离线接管桌面演练；SCN-05 另完成参赛者可控的空间、容量、排班、成本敏感性、维护、撤场和替代方案预可研筛查。尚未获得真实场地、采购、经营或正式部署授权，也未进行现场或公众测试。",
+      "impact": "数字状态机、角色接口和回滚顺序已有 12/12 场景、48/48 断言的可复算记录；P0 预可研另有 12/12 组算术与边界检查。前者只证明协议可逐条执行，后者只证明参赛者输入内部自洽；两者都不证明现场安全、法定容量、无障碍、正式造价、服务绩效或获批状态。",
+      "recalculation_trigger": "p0-delivery-contract.json 的八道进入门全部取得真实证据且由独立角色复核后，启动 SCN-05 单场景 90 天程序；D0 先验证人工底盘，D31—60 才开展至少 24 个真实任务场次，D90 独立决定继续、修复或终止。未全过不得扩展第二场景。",
+      "affected_files": [
+        "geometry/public_space.geojson",
+        "simulation.json",
+        "metrics.json",
+        "assets/figures/metrics-evidence.png",
+        "assets/figures/metrics-evidence.en.png",
+        "drawings/a3-booklet.pdf",
+        "drawings/a3-booklet.en.pdf",
+        "drawings/a0-boards.pdf",
+        "drawings/a0-boards.en.pdf",
+        "visual/assets/governance/shift-ledger-suite.json",
+        "visual/assets/governance/role-spec.json",
+        "visual/assets/governance/measurement-protocol.json",
+        "visual/assets/governance/p0-delivery-contract.json",
+        "visual/assets/governance/p0-pre-feasibility-envelope.json",
+        "visual/assets/governance/jury-evidence-index.json",
+        "visual/assets/governance/build-p0-feasibility-figure.js",
+        "visual/assets/governance/public-benefit-gate.json",
+        "visual/assets/governance/p0-readiness-audit.js",
+        "visual/index.html",
+        "visual/index.en.html",
+        "proposal.md",
+        "proposal.en.md",
+        "report/proposal.html",
+        "report/proposal.en.html"
+      ],
+      "responsible_role": "R-SERVICE-OPS",
+      "participant_controlled_evidence": "simulation.json：十二个场景的智能层关闭、人工接管、合成记录清零与回滚四项断言，12/12任务、48/48断言通过；p0-pre-feasibility-envelope.json：7.2×7.2m参考外框、6×6m操作面、公众8人＋岗位3席＋排队6人、260开放小时／780岗位工时、约12–29万元／90天与约30–65万元／年敏感性、四个替代方案及4人×4小时未实测撤场目标。现场演练仍为0/12。",
+      "first_pilot_cost_class": "S / 小型可移动公共界面；不含固定土建与市政工程。参赛者敏感性公式给出约12–29万元／90天和约30–65万元／年，只用于比较方案与识别人工成本敏感性；场地、保险、税费、法定服务、未知市政和永久工程均未计价。正式金额仍须授权后至少三方同口径询价并取得持续预算。",
+      "responsible_organisation_types": [
+        "场地资产管理或区属平台类型",
+        "场景服务运营类型",
+        "独立专业复核类型",
+        "社区与无障碍公共利益代表类型",
+        "数据与档案责任类型",
+        "设施维护与现场安全类型"
+      ],
+      "resolution_evidence": "八门真实证据索引、十项 RACI 签认、十二项构件三方同口径询价、保险与 90 天持续预算、消防交通市政及安全无障碍复核、至少 24 个匿名真实任务场次、八项预注册判据复算、失败—修复—复测、投诉/停用/删除回执和同日撤场恢复记录。",
+      "recalculation_scope": "先以真实场地测量与专业结论替换概念包络，以三方同口径报价、保险、税费和持续预算替换参赛者敏感性变量，再把 SCN-05 的角色、授权和 observed_value 从 unassigned/null/not_observed 替换为经授权记录；现场演练由0/12变为1/12、真实观察由0变为实数后，逐项重跑成本、服务等价与P0就绪审计，再由D90独立结论决定是否扩展。",
+      "risk_statement_zh": "场景试点长期化、无法退出。",
+      "statement_zh": "六个行动包的规模区间由提交几何直接推演（主轴9.50公里、二十个更新单元合计基底221,014.099㎡、十二个场景节点为点状），不是工程量清单。P0 以十二项构件敏感性、三席排班、专业复核、合理便利、维护和10%撤场储备形成约12–29万元／90天与约30–65万元／年的参赛者试算；它不是预算承诺或询价结果，且明确排除场地、保险、税费、法定服务、未知市政和永久工程。三个真实报价槽、正式预算、保险与主体仍为null/unassigned，须在授权后取得真实证据。"
     },
     {
       "id": "A-CASES-001",
       "status": "pending_professional_confirmation",
       "statement": "六个国际案例仅提取公开网页中的组织机制，不进行效果因果推断。",
       "impact": "案例只作为机制对照，不能直接类比北京治理、土地或资金条件。",
-      "recalculation_trigger": "专业团队开展现场访谈和二手证据交叉核验。"
+      "recalculation_trigger": "专业团队开展现场访谈和二手证据交叉核验。",
+      "affected_files": [
+        "sources.json",
+        "proposal.md"
+      ],
+      "responsible_role": "R-INDEPENDENT-REVIEW",
+      "resolution_evidence": "案例所在城市的制度条件核实，或案例方公开的可比较绩效数据。",
+      "recalculation_scope": "仅影响正文对案例的转译表述；不涉及任何几何、指标或图件。",
+      "risk_statement_zh": "国际案例被误读为效果承诺或可直接移植的经验。"
+    },
+    {
+      "id": "A-FONT-001",
+      "status": "resolved",
+      "statement": "v1.11 用 Ghostscript + cidfmap 换嵌中文字体时留下两处缺陷，2026-08-17 已修复并复验。其一，A3 中文本第 6 页分隔符 `·`(U+00B7) 在嵌入子集中无字形，该行 7 处渲染为 .notdef 方框；其二，四套图纸的中文 /ToUnicode 写的是 code→字形索引而非 code→Unicode（如 <0020>→<003f>、<0041>→<0060>），导致渲染正确但文本抽取错字。两者同源于换嵌那一轮。",
+      "impact": "修复前：图面出现 7 处缺字方框；PDF 内中文的检索、复制与屏幕阅读器读取不可靠。修复后两项均已消除，本包对无障碍的表述在「图纸内文本可被辅助技术读取」这一项上重新成立。",
+      "recalculation_trigger": "已于 2026-08-17 修复；v2.0 更换四套 PDF 首页后已按 v2_reverification 复验。后续任何一轮重建 PDF 仍须重跑同组检查。",
+      "affected_files": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a3-booklet.en.pdf",
+        "drawings/a0-boards.pdf",
+        "drawings/a0-boards.en.pdf"
+      ],
+      "responsible_role": "R-INDEPENDENT-REVIEW",
+      "resolution_evidence": "① `pdftoppm -f 6 -l 6 -r 200 drawings/a3-booklet.pdf -` 渲染后该行分隔符为顿号，无 .notdef 方框；抽取结果 `·` 计数 0、`、` 计数 7（2026-08-22 复验仍成立）。② **这一条改过两次，2026-08-22 第二次改动时才真正修好。** 第一次（同日上午）纠正的是它原来那句不实陈述——原文称三引擎抽取「与图面相符」，而 A0 第 1 页当时仍抽成「銺㬪銯㾲」，即它自己所说的「修复前」状态。第一次改动**只把范围写准、没有动 PDF**，并据此写下一个错误结论：「**当前不可修**：这两页正是生成器已丢失／已撤回的那两页，重建即会换掉页面内容。」**那个结论是错的——它把「不能重建页面」当成了「不能修 ToUnicode」，而修法本来就写在本条的 `recalculation_scope` 里，只改字体资源的 ToUnicode 流、根本不触碰页面内容。** 第二次改动执行了那个修法，同时把范围又纠正一次：**受影响的不只是两套中文本的第 1 页，四套图纸里所有用 CID 中文字体排的文字都受影响**，只是英文本里那些字被错映成拉丁与中日韩标点形状的乱码（`ihmfLyg`mf?g`mcnudq?khmd` 应为 `JING-ZHANG HANDOVER LINE`），按「中文乱码字数」扫会漏掉，因此第一次实测误判为「两套英文版无乱码」。修复后的逐页实测（`pdftotext -f N -l N`，判据为码位落在私用区、CJK 扩展 A 或 CJK 兼容表意区的字数）：`a0-boards.pdf` 6 页 **乱码 220 → 0**、可读中文 2040 → 2487；`a3-booklet.pdf` 13 页 **乱码 121 → 0**、可读中文 1810 → 2054；两套英文本的标题与副标题由乱码恢复为 `JING-ZHANG HANDOVER LINE`、`SITE OVERVIEW` 等正确英文。**渲染证明未变**：四套共 38 页在 72 dpi（评审送入的同一分辨率）下逐页重渲染，**38/38 页 PNG 字节完全相同**；`qpdf --check` 四套仍全 PASS；`pdftotext | grep -c 'PACKAGE v1.15'` 仍为 6/6、6/6、13/13、13/13；体积各减 0.3–1.4 KB（恒等 CMap 比原来 215 条映射的表短）。复现命令：`pdftotext -f 1 -l 1 drawings/a0-boards.pdf - | head -3`。**影响**：机器文本抽取、屏幕阅读器与辅助技术现在能读到图纸上的文字；图面与评审视觉输入不受任何影响。 ③ 四套 `qpdf --check` 全 PASS，页数与 `PACKAGE v1.15` 命中数相等（13/13、13/13、6/6、6/6），CID 中文字体未嵌入数为 0（2026-08-22 复验：四套的 CID 子集均 `emb=yes`）。",
+      "recalculation_scope": "修法：内容流的 CJK 走十六进制串且编码为 UniGB-UCS2-H，串内即 UCS-2 码位，因此正确的 ToUnicode 是恒等映射——把每个 ToUnicode 流整体换成一条 `<0000><ffff><0000>` 的 bfrange，流长由 fix-qdf 重算；缺字则在十六进制串的 4 位码元边界上把 `00b7` 换成 `3001`，全文恰好 7 处、无过匹配。已验证不可采用的修法：在 `(...)` 字面量里按裸字节替换 `\\x00\\xb7` 一次命中 68 处，全是跨字边界的巧合，会损坏其它文字——CJK 根本不走字面量。",
+      "v2_reverification": "2026-08-24：四套 PDF 的第 1 页为冠军版首页，页 2 至末页技术图面内容保持不变；技术内页内容流中的等长 ASCII 包版本字段为 PACKAGE v2.0，不改变任何几何、图层、字体或 ToUnicode 映射。qpdf --check 四套 PASS，页数 13／13／6／6，纸张 A3 横版／A0 竖版。pdftotext 逐套得到 PACKAGE v2.0 为 13／13／6／6 处，PACKAGE v1.15 均为 0；私用区、CJK 兼容表意区与 U+FFFD 均为 0。pdffonts 显示首页 NotoSansCJKsc-Medium 与技术内页 NotoSerifSC 仍全部 emb=yes；新首页外层标题、主张、图注、指标与边界可检索。另由 version-audit.js 从 A0 中英首页各抽取两张嵌入栅格，解码后与当前 site-overview／key-areas v2.0 源图逐像素比对，4/4 完全一致，故嵌入 PNG 内部虽仍按栅格处理，其可见版本也已纳入机器核验。",
+      "risk_statement_zh": "若后续重建 PDF 而未重跑上述三项核验，两处缺陷可能回归而不被察觉。"
+    },
+    {
+      "id": "A-CONTRAST-001",
+      "status": "open",
+      "statement": "本包 26 张栅格图件的文字前景色已按 WCAG 2.1 SC 1.4.3 逐色测量并全部达到 4.5:1 以上（最低 4.60:1）；11 种填充色的正常与三类色觉模拟 ΔE00 也已逐对量化。三对色值本身仍偏近（红色盲下 0701／1401 为 2.8，蓝色盲下 0702／0803 为 0.4，09／值班黄约 2.3 但分属不同图层角色）。2026-08-24 已在不改 LAND_USE_COLORS、几何、指标与代码的前提下，为七类用地增加七种唯一纹理，并同步覆盖中英 F/02 与四套送审 PDF 第 2 页共六个载体；颜色不再是唯一视觉手段。**仍未完成的是低视力与色觉障碍真实用户共测**，客观计算和包内纹理都不等于真实用户可读性已经验证。",
+      "impact": "直接的色觉混淆风险已由两层非颜色信息缓解：F/02 图斑与图例保留用地代码，七类用地又分别使用竖线、反斜线、短横、横线、正斜线、交叉线与点纹；A0／A3 第 2 页也把同一纹理同步到走廊图斑与图例。六个载体逐像素审计 7 类 × 6 载体、98 个区域全部在位，且原色值仍保留为主填充。该改动不改变几何、面积、比例或语义绑定。仍不能据此声称低视力或色觉障碍真实用户已经验证；配色值本身若要调整，仍须与共用 LAND_USE_COLORS 的全套图纸同批重出。",
+      "recalculation_trigger": "满足以下任一条即复核并更新 figure-contrast-report.json、public-service-equivalence-contract.json 与相关载体：(a) 七类用地的任一色值、纹理 ID、纹理周期或载体范围改变；(b) 三对偏近色值中的任一对被提高到 ΔE00 ≥ 10，或改用其他色觉障碍模拟模型（如 Machado 2009）复算得出不同结论；(c) 组织一次含低视力与色觉障碍参与者的可读性共测并留下失败与修复记录；(d) 视觉系统新增第五种语义色；(e) 八类无障碍需求夹具、十二条基础路线或拒绝不降级规则发生变化。",
+      "affected_files": [
+        "visual/assets/governance/figure-contrast-report.json",
+        "visual/assets/governance/apply-land-use-patterns.js",
+        "visual/assets/governance/land-use-pattern-audit.js",
+        "visual/assets/governance/public-service-equivalence-contract.json",
+        "visual/assets/governance/public-service-equivalence-audit.js",
+        "metrics.json",
+        "proposal.md",
+        "proposal.en.md",
+        "report/proposal.html",
+        "report/proposal.en.html",
+        "compliance_matrix.json",
+        "drawings/a0-boards.en.pdf",
+        "drawings/a0-boards.pdf",
+        "drawings/a3-booklet.en.pdf",
+        "drawings/a3-booklet.pdf",
+        "assets/figures/adaptive-model.en.png",
+        "assets/figures/adaptive-model.png",
+        "assets/figures/delivery-contract.en.png",
+        "assets/figures/delivery-contract.png",
+        "assets/figures/ecosystem-map.en.png",
+        "assets/figures/ecosystem-map.png",
+        "assets/figures/handover-scene.en.jpg",
+        "assets/figures/handover-scene.jpg",
+        "assets/figures/key-areas.en.png",
+        "assets/figures/key-areas.png",
+        "assets/figures/land-use-structure.en.png",
+        "assets/figures/land-use-structure.png",
+        "assets/figures/logo-identity.en.png",
+        "assets/figures/logo-identity.png",
+        "assets/figures/metrics-evidence.en.png",
+        "assets/figures/metrics-evidence.png",
+        "assets/figures/mobility-bluegreen.en.png",
+        "assets/figures/mobility-bluegreen.png",
+        "assets/figures/renewal-structure.en.png",
+        "assets/figures/renewal-structure.png",
+        "assets/figures/shift-ledger.en.png",
+        "assets/figures/shift-ledger.png",
+        "assets/figures/site-overview.en.png",
+        "assets/figures/site-overview.png",
+        "assets/figures/spatial-prototype.en.png",
+        "assets/figures/spatial-prototype.png",
+        "standard_matrix.json",
+        "sources.json"
+      ],
+      "responsible_role": "参赛者（图面表达）；深化阶段应由无障碍专业人员与真实用户共同复核",
+      "resolution_evidence": "2026-08-24 完成两层包内缓解。第一层：`node visual/assets/governance/apply-land-use-patterns.js --json` 首次对六个载体写入 57,987 个纹理像素，再跑为 0（像素幂等）；`node visual/assets/governance/land-use-pattern-audit.js --json` 对 7 类 × 6 载体共 42 对、98 个图斑／构成条／图例区域逐像素核验通过。第二层：`node visual/assets/governance/public-service-equivalence-audit.js --json` 把十二条无 AI 基础路线、24 条人工渠道与八类无障碍需求夹具逐项绑定，结果 12/12、24/24、8/8；同一份合同同时锁定真实观察 0、真实通过 0、field_test_status=not_observed。中英 F/02 与中英 A0／A3 第 2 页均经实际渲染目检；四套 PDF 的文字层、页数、字体、v2.0 页脚与 A0 首页 4/4 嵌图绑定另由既有审计复核。两层证据只证明包内非颜色冗余和设计需求覆盖，不关闭真实用户共测。",
+      "recalculation_scope": "本轮采用形状／纹理冗余而不改填充色值：七种原色仍占每类图斑多数像素，深纹理由原色 60% ＋ COAL 40% 确定生成；因此不会让 F/02、F/03 与 A0／A3 的共享色值分叉，也不改变几何、面积、代码或语义。新增的七项指标只分开记录 12/12 基础路线、8/8 设计夹具与真实观察／通过 0/0，不把设计覆盖计作用户测试。若以后改用高区分度色值，须与全部共享 LAND_USE_COLORS 的载体同批重出；若开展真实用户测试，则应由无障碍专业人员主持并保留失败、修复与复测记录。",
+      "risk_statement_zh": "风险在于把「对比度达标」或「需求夹具 8/8」误读为「无障碍已验证」。本包在正文、standard_matrix.json 的 WCAG-CONTRAST 条目、figure-contrast-report.json 的 not_claimed 与公共服务等价合同四处同时写明这一条不成立，并把真实观察和真实通过都硬编码为 0，避免设计覆盖被当作真实结果。",
+      "statement_zh": "图件文字与填充色的可辨性已按两项客观指标完成测量，并为七类用地增加逐类唯一的非颜色纹理；未完成的是真实用户测试。（一）26 张栅格图件文字色最低对比度 4.60:1。（二）11 种填充色在正常／绿色盲／红色盲／蓝色盲模拟下的中位 ΔE00 为 38.0／25.2／26.9／55.5。（三）中英 F/02 与四套送审 PDF 第 2 页共六个载体均保留代码或图例，并以七种纹理覆盖全部七类用地。",
+      "verification_method_zh": "对比度按 WCAG 2.1 相对亮度公式逐色计算；色觉区分度用 Viénot 1999 模拟矩阵加 CIEDE2000；纹理由固定像素谓词生成，`land-use-pattern-audit.js` 直接解码两张 PNG，并以 pdftoppm 按 72 dpi 渲染四套 PDF 第 2 页，逐像素核对原色、纹理色、纹理坐标与图斑／构成条／图例区域覆盖。",
+      "verification_result_zh": "三对例外：09 科技服务与商务与值班黄在任何视觉下约 2.3（分处填充与强调两种角色，不在同一图层内比较）；红色盲下 0701 人才生活与 1401 连续公园绿地为 2.8；蓝色盲下 0702 社区服务与 0803 文化公共服务为 0.4。",
+      "residual_risk_zh": "F/02 已同时使用代码与七种唯一纹理，A0／A3 第 2 页也把纹理同步到图斑与图例，故颜色不再是唯一视觉手段（WCAG 2.1 SC 1.4.1）。仍保留两条边界：第一，两对用地色值本身在模拟下仍接近；虽然已有最小扰动替代色值可把四种视觉条件下的最小 ΔE00 由 5.92 提到 14.00，但共享 LAND_USE_COLORS 的载体必须同批换色，不能逐图分叉。第二，**低视力与色觉障碍的真实用户测试尚未进行**；包内计算、纹理与目检都不能替代真实参与者共测，本假设因此保持 open。"
     }
   ]
 }

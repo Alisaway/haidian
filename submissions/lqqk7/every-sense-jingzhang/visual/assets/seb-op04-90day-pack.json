@@ -2,12 +2,12 @@
  "package_id": "seb-op04-90day-implementation-pack",
  "package_name_zh": "OP-04 节点九十天实施包（概念级建议）",
  "package_name_en": "OP-04 node ninety-day implementation pack (concept-level recommendation)",
- "version": "0.1.0",
+ "version": "0.2.0",
  "issued_on": "2026-08-15",
  "status": "draft_concept_recommendation",
  "baseline_spec": {
   "spec_id": "service-equivalence-baseline",
-  "required_version": "0.3.1"
+  "required_version": "0.4.0"
  },
  "node": {
   "node_id": "OP-04",
@@ -345,7 +345,7 @@
     "phase_id": "本包之外",
     "gate_id": "G3",
     "level_id": "L3",
-    "gate_evidence_required_zh": "八项风险条目的停止与恢复证据逐项核对、非参与者影响审查登记、公开回执",
+    "gate_evidence_required_zh": "十二项风险条目的停止与恢复证据逐项核对、非参与者影响审查登记、公开回执",
     "evidence_owner_zh": "未参与制作的独立专业人员（待填）",
     "reviewer_zh": "参与者代表与数据治理（待填）",
     "default_if_unclosed_zh": "本轮复核结论不成立",
@@ -377,10 +377,10 @@
      "P3_low": 0.0,
      "P3_high": 0.0
     },
-    "covers_zh": "东西向 AI 关闭态连续通道存在性核验；OP-08 与 OP-09 接入段的可通行性逐段核验；坡度、路缘、通行净宽与休息位的现场无障碍审计；ALT-A 走向约 615 米与 ALT-B 走向约 273 米两条备选的地面连续性踏勘。",
-    "covers_en": "Verification that an east–west AI-off continuous route exists; segment-by-segment walkability checks of the access stubs to OP-08 and OP-09; a site accessibility audit of gradient, kerb, clear width, and rest positions; and ground-continuity walkovers of the roughly 615 m ALT-A alignment and the roughly 273 m ALT-B alignment.",
-    "basis_zh": "按公开市场常识性区间估计。折算锚点为第一期 8—14 人日中归属审计与测绘的部分，以及两条备选走向合计约 889 米的踏勘工作量；长度读数取自 seb-op04-chain-data.json 的入档值，属概念口径，不代表工程测绘精度。",
-    "basis_en": "Estimated from commonly known public-market ranges, anchored on the audit and survey share of the eight to fourteen person-days in phase one and on walkovers of the roughly 889 m of the two alignments combined. The length figures are the archived concept-level readings and do not imply engineering survey accuracy."
+    "covers_zh": "东西向 AI 关闭态连续通道存在性核验；OP-08 与 OP-09 接入段的可通行性逐段核验；坡度、路缘、通行净宽与休息位的现场无障碍审计；ALT-A 走向约 333 米与 ALT-B 走向约 400 米两条备选的地面连续性踏勘。",
+    "covers_en": "Verification that an east–west AI-off continuous route exists; segment-by-segment walkability checks of the access stubs to OP-08 and OP-09; a site accessibility audit of gradient, kerb, clear width, and rest positions; and ground-continuity walkovers of the roughly 333 m ALT-A alignment and the roughly 400 m ALT-B alignment.",
+    "basis_zh": "按公开市场常识性区间估计。折算锚点为第一期 8—14 人日中归属审计与测绘的部分，以及两条备选走向合计约 733 米的踏勘工作量；长度读数取自 seb-op04-chain-data.json 的入档值（v0.4.0，线位加密后），属概念口径，不代表工程测绘精度。",
+    "basis_en": "Estimated from commonly known public-market ranges, anchored on the audit and survey share of the eight to fourteen person-days in phase one and on walkovers of the roughly 733 m of the two alignments combined. The length figures are the archived concept-level readings (archive v0.4.0, after the centreline densification) and do not imply engineering survey accuracy."
    },
    {
     "item_id": "B2",
@@ -1048,14 +1048,14 @@
     "本轮若未发生任何参与者测试，登记表为零行，且必须写明零行的理由——零行不表示「本轮无失败」，而表示本轮尚未发生任何一次测试。这两者被混同，就是把没做过说成做好了。",
     "受影响但未参与群体登记表必须填写：登记本轮改动可能影响但未参与的人群及其知会方式；登记为空须给出理由；缺少该登记，本轮复核结论不成立。",
     "第一期的否定结论本身须登记为失败样本并以变更回执发布：一条已经写在数据里、通过了全部字段校验的等价路径断言被空间核算退回，这是本包最应当被公开保留的一条记录。不得静默删除 OP-04，不得以其他点位替代，不得只改结论不交证据。",
-    "chain-data 待办 OI-01 已登记的同类问题（OP-08 与 OP-09 在 AI 关闭状态下的接入距离分别为 AI 开启状态的 1.924 倍与 6.157 倍）在本包范围之外，退出时须原样移交下一轮，不得在本轮静默处理。"
+    "chain-data 待办 OI-01 已登记的同类问题（OP-08 与 OP-09 的物理接口线同为未声明 AI 关闭等价的 ROAD-004，接口固定口径下关闭态两点均无接入）在本包范围之外，退出时须原样移交下一轮，不得在本轮静默处理。"
    ],
    "obligations_en": [
     "All four denominator categories are reported together — completed, withdrawn, technical fault, other non-completion — and dropping any one voids the measurement under code DENOMINATOR_SAMPLE_DROPPED. The rule covers the five participant-task metrics, including human-handover success rate and response time.",
     "Where no participant test took place, the register holds zero rows and must state why. Zero rows do not mean the round had no failures; they mean no test has yet happened. Conflating the two is how never having done something gets reported as having done it well.",
     "The register of affected non-participants must be completed, recording who this round's changes might affect without their taking part and how they were notified. An empty register requires a reason, and without the register the round's review conclusion does not stand.",
     "A negative finding in phase one is itself registered as a failed sample and published as a change receipt: an equivalence claim that already sat in the data and passed every field check, sent back by a spatial computation, is the record this pack should most insist on keeping public. OP-04 may not be quietly deleted, no other node may be substituted, and no conclusion may change without evidence.",
-    "The related fault already registered as open item OI-01 — that with AI off the approach stubs of OP-08 and OP-09 run at 1.924 and 6.157 times their AI-on length — lies outside this pack's scope and is handed to the next round unchanged at exit rather than quietly handled here."
+    "The related fault already registered as open item OI-01 — that OP-08 and OP-09 share the same physical interface line, ROAD-004, undeclared for AI-off equivalence, leaving neither with any attachment once AI is off — lies outside this pack's scope and is handed to the next round unchanged at exit rather than quietly handled here."
    ]
   },
   "what_exit_does_not_mean_zh": "退出不解除三件事：已发布的变更回执不得改写；已登记的失败样本不得删除；已作出的知会不得撤回。已发布的记录留在原地，后续结论以追加方式呈现——这与 OP-04 的 ai_off_path 原文一字未改、结论以追加字段登记，是同一条纪律。",
@@ -1112,7 +1112,7 @@
     "proposal.md 同章 · 首批试点点位选取准则 · 物理可达行",
     "visual/assets/seb-op04-chain-data.json · stage_5 · adjudication D1／D2／D3",
     "visual/assets/seb-spec.json · level_definitions · gate_binding",
-    "risk.json R-01—R-08"
+    "risk.json R-01—R-12"
    ]
   },
   {
@@ -1169,7 +1169,7 @@
   {
    "module": "exit_plan",
    "sources": [
-    "proposal.md 同章 · 开放机制表 L1 与 L4 行",
+    "proposal.md 同章 · 开放机制表 L1 与 L4a/L4b 行",
     "proposal.md 同章 · 变更回执机制",
     "visual/assets/ethics-protocol.json · protocols P6 · registers",
     "visual/assets/seb-spec.json · scoring_definitions · denominator_integrity_required_categories",
@@ -1198,5 +1198,36 @@
    "zh": "应急与退出预留的 10%—15% 是本文件首次给出的比例，没有任何本包既有条文支持，也没有真实项目数据支持。它的唯一依据是本节点空间前提未证成立这一事实所隐含的返工概率，属判断而不是测算；取得真实条件后应替换为有依据的比例。",
    "en": "The 10 to 15 per cent contingency is stated here for the first time, supported by no existing package text and by no real project data. Its only ground is the rework probability implied by this node's unproven spatial premise, which is a judgement rather than a calculation and should be replaced with a grounded figure once real conditions exist."
   }
- ]
+ ],
+ "ai_off_day_drill": {
+  "since_version": "0.2.0",
+  "name_zh": "AI 关闭日演练",
+  "name_en": "AI-off day drill",
+  "design_zh": "G2 封闭成对测试收尾设连续一个完整测试日的全程关闭态运行：AI 层整日关闭，全部任务只经固定导视、触觉引导与人工通道尝试并完整记录；演练记录含每项任务的完成/未完成与原因、接管班次记录与值守者反馈，未完成任务不得从记录中删除；该记录为 G3 独立复核的必交证据。",
+  "design_en": "G2 closed paired testing ends with one full consecutive test day in the off state: the AI layer stays off all day, every task attempted and fully recorded through fixed signage, tactile guidance and staffed channels only; the drill record holds each task's completion or non-completion with causes, shift takeover records and steward feedback, and no incomplete task may be dropped; the record is a mandatory exhibit for the G3 review.",
+  "produces_no_metric_value": true
+ },
+ "independent_takeover_drill_items": {
+  "since_version": "0.2.0",
+  "name_zh": "独立接管演练六项清单（SEB v0.4 L4a 就绪证据的展开）",
+  "name_en": "Independent takeover drill, six checkable items (unfolding the SEB v0.4 L4a readiness evidence)",
+  "rule_zh": "两名非原团队人员在无供应商在场条件下逐项完成并签收；培训签收单与服务等级承诺随演练记录同卷归档。",
+  "rule_en": "Two people from outside the original team complete and sign each item with no vendor present; the training sign-off and the service-level commitment file alongside the drill record.",
+  "items_zh": [
+   "无供应商在场完成开机与关机",
+   "执行一次完整双联交接（交出/接收异角色署名，未决项随单移交，接收/拒收/暂缓三选一）",
+   "按维护卡处置一项标准故障",
+   "演示 AI 关闭态下的全部人工服务路径",
+   "签发一份退出回执",
+   "调取并解释最近一次演练记录"
+  ],
+  "items_en": [
+   "complete power-up and shutdown with no vendor present",
+   "execute one full two-part handover (different roles signing, open items carried on the slip, accept/refuse/hold chosen once)",
+   "handle one standard fault by the maintenance card",
+   "demonstrate every staffed service path in the AI-off state",
+   "issue one exit receipt",
+   "retrieve and explain the latest drill record"
+  ]
+ }
 }

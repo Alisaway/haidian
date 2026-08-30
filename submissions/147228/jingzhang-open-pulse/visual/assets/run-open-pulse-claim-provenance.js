@@ -41,8 +41,11 @@ const zhTokens = new Set(metricTokens(proposalZh));
 const enTokens = new Set(metricTokens(proposalEn));
 const bilingualVisibleTokens = [...zhTokens].filter((token) => enTokens.has(token)).sort();
 const registeredTokens = [...new Set((register.records || []).map((record) => record.claim_id))].sort();
-if (JSON.stringify(bilingualVisibleTokens) !== JSON.stringify(registeredTokens)) {
-  fail(`bilingual visible tokens=${bilingualVisibleTokens.join(',')} registered=${registeredTokens.join(',')}`);
+if (JSON.stringify([...zhTokens].sort()) !== JSON.stringify([...enTokens].sort())) {
+  fail(`bilingual visible-token mismatch: zh=${[...zhTokens].sort().join(',')} en=${[...enTokens].sort().join(',')}`);
+}
+for (const token of bilingualVisibleTokens) {
+  if (!registeredTokens.includes(token)) fail(`${token}: visible metric has no claim-provenance record`);
 }
 if (registeredTokens.length !== register.records.length) fail('claim_id values must be unique');
 
@@ -60,10 +63,12 @@ for (const record of register.records || []) {
     const report = rel.includes('.en.') ? reportEn : reportZh;
     if (!report.includes(reportPath)) fail(`${record.claim_id}: report missing ${reportPath}`);
   }
-  if (!proposalZh.includes(record.proposal_token)) fail(`${record.claim_id}: zh proposal token missing`);
-  if (!proposalEn.includes(record.proposal_token)) fail(`${record.claim_id}: en proposal token missing`);
-  if (!reportZh.includes(`data-evidence-value="${record.claim_id}"`)) fail(`${record.claim_id}: zh report metric marker missing`);
-  if (!reportEn.includes(`data-evidence-value="${record.claim_id}"`)) fail(`${record.claim_id}: en report metric marker missing`);
+  if (bilingualVisibleTokens.includes(record.claim_id)) {
+    if (!proposalZh.includes(record.proposal_token)) fail(`${record.claim_id}: zh proposal token missing`);
+    if (!proposalEn.includes(record.proposal_token)) fail(`${record.claim_id}: en proposal token missing`);
+    if (!reportZh.includes(`data-evidence-value="${record.claim_id}"`)) fail(`${record.claim_id}: zh report metric marker missing`);
+    if (!reportEn.includes(`data-evidence-value="${record.claim_id}"`)) fail(`${record.claim_id}: en report metric marker missing`);
+  }
   if (record.evidence_class === 'model_output_not_field_result') {
     if (!record.boundary_zh || !record.boundary_en) fail(`${record.claim_id}: model-output boundary missing`);
     if (!(record.source_files || []).some((rel) => rel.endsWith('.json') || rel.endsWith('.js'))) {
@@ -88,7 +93,9 @@ if (failures.length) {
 console.log(JSON.stringify({
   status: 'PASS',
   records_checked: register.records.length,
+  visible_records_checked: bilingualVisibleTokens.length,
+  archived_records_not_forced_into_review_copy: register.records.length - bilingualVisibleTokens.length,
   unknown_baseline_records: register.records.filter((record) => record.evidence_class === 'unmeasured_unknown_baseline').length,
   boundary: register.boundary_en,
-  checked: ['record count', 'bilingual visible-token coverage', 'raw value and status', 'source files', 'figure files', 'bilingual proposal tokens', 'bilingual report metric markers', 'unknown-baseline boundaries']
+  checked: ['record count', 'bilingual visible-token equivalence', 'visible-token registration', 'raw value and status', 'source files', 'figure files', 'visible bilingual proposal tokens', 'visible bilingual report metric markers', 'unknown-baseline boundaries']
 }, null, 2));

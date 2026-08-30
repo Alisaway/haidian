@@ -9,7 +9,7 @@ license: "COMMUNITY-DISPLAY-ONLY"
 summary: "轨忆智链把百年京张 AI 创新带定义为公共 AI 记忆基础设施：让每一次智能进入城市，都留下可复核的公共记忆。方案以一轨三库两翼十二忆点组织空间、产业、文化与治理，所有空间动作均为概念建议或参考方案，需由专业团队在官方数据补齐后深化。"
 tracks: ["ai-traffic-walkability", "enterprise-services-ecosystem", "civic-agent-governance"]
 scenarios: ["ai-traffic-walkability", "enterprise-service-copilot", "public-safety-operations-review"]
-iteration: "v0.2"
+iteration: "v0.8"
 ---
 
 # 轨忆智链 / Rail Memory AI Commons
@@ -18,7 +18,11 @@ iteration: "v0.2"
 
 ## 设计依据与资料清单
 
-本方案的核心判断是：百年京张 AI 创新带不只是 AI 企业和场景的展示走廊，而应成为一套“公共 AI 记忆基础设施”。每一个 AI 场景、空间改变、文化解释、数据集、模型、维护动作和公共决策，都需要生成一条 Memory Link，记录来源、权利、版本、人工 steward、有效期、失效或退出条件，以及需要重新计算或重新审议的触发条件。这一工作方法回应公开征集对 AI 创新生态、未来城市形态和智能体共创任务的要求 [source:OFFICIAL-ANNOUNCEMENT] [source:AGENT-TASKBOOK] [depth:existing_conditions_diagnosis]。
+本方案的核心判断是：百年京张 AI 创新带不只是 AI 企业和场景的展示走廊，而应成为一套“公共 AI 记忆基础设施”。每一个 AI 场景、空间改变、文化解释、数据集、模型、维护动作和公共决策，都需要生成一条 Memory Link，记录来源、权利、版本、人工 steward、有效期、失效或退出条件，以及需要重新计算或重新审议的触发条件。为避免把“已处理”误写成“已解决”，每条记录还应经历“登记 - 认领 - 处理中 - 待结案复核 - 重开或升级 - 归档”的生命周期：拟结案时提供受影响者或指定公共利益复核者可理解的复核窗口；若结论被质疑，则沿原记录重开或升级并保留版本与责任历史。这一工作方法回应公开征集对 AI 创新生态、未来城市形态和智能体共创任务的要求 [source:OFFICIAL-ANNOUNCEMENT] [source:AGENT-TASKBOOK] [depth:existing_conditions_diagnosis]。
+
+一条 Memory Link 只有在建成后仍可维护，才算完整。它还应登记资产或服务对象、责任所有方、日常运营方、资金状态、检查频率与最低服务要求、更换或退役触发、以及退出后的交接路径。这里的“资金状态”只说明是否已有经确认来源、缺口或待核实条件，不把建议写成预算或投资承诺；状态感知只面向设施与环境，不采集作业人员定位、工时排名或效率画像。
+
+一条 Memory Link 也不能只展示预期收益。它还应建立影响账，登记基线、预期公共收益、受益群体、资源消耗、额外工作量、隐私与环境代价、实际承担这些代价的群体、责任角色、纠偏触发和退出条件。影响账只登记可被复核的定义和状态；没有真实试点、公众参与和专业测量时，不能填造效果或公平结论。
 
 当前几何为临时约束范围：`geometry/site_boundary.geojson` 和 `geometry/key_areas.geojson` 用于内容生成、空间讨论、图纸表达和自检，不是官方红线、精确边界或审批依据；内容评审就绪也不等于正式专业评分、规划批准或实施承诺。凡涉及边界、面积、建筑规模、道路红线、管线、市政、权属、文保和控规条件的判断，均须在官方或清权数据补齐后重算与复核 [data:geometry/site_boundary.geojson#SITE-001] [metric:site_area_sqm]。
 
@@ -72,7 +76,7 @@ NIST AI RMF 的 Govern/Map/Measure/Manage 逻辑被转译为 Memory Link 治理�
 
 本方案设置 8 类用户画像：开源开发者、模型安全研究员、机器人运维工程师、初创企业创始人、头部企业产品负责人、高校师生、周边居民、公共治理与社区组织者。每类画像都不采集个人轨迹或敏感身份，而只定义空间需求、公共服务、复核责任和退出权利。城市智能体可辅助汇总公开反馈和设施状态，但不能替代人工复核或专业判断 [data:geometry/public_space.geojson#PUBLIC-SPINE-01] [depth:municipal_new_infrastructure]。
 
-十二张场景卡对应十二忆点：01 模型安全回放室，02 数据权利登记台，03 机器人低速混行测试庭，04 开源发布厅，05 大学-社区转译桌，06 人才与权利诊所，07 企业 copilot 公众预览廊，08 智能终端可用性试场，09 内容生成版权提示站，10 慢行断点记忆灯标，11 蓝绿维护复算驿站，12 公共决策版本墙。每张卡都记录服务对象、空间载体、运行数据、隐私边界、人工 steward、失败退出和重新计算条件 [standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK] [depth:renewal_project_list]。
+十二张场景卡对应十二忆点：01 模型安全回放室，02 数据权利登记台，03 机器人低速混行测试庭，04 开源发布厅，05 大学-社区转译桌，06 人才与权利诊所，07 企业 copilot 公众预览廊，08 智能终端可用性试场，09 内容生成版权提示站，10 慢行断点记忆灯标，11 蓝绿维护复算驿站，12 公共决策版本墙。每张卡都记录服务对象、空间载体、运行数据、隐私边界、人工 steward、失败退出和重新计算条件；其中 12 号忆点还公开当前状态、责任 steward、下次复核日期、结案依据及重开或结构升级路径 [standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK] [depth:renewal_project_list]。
 
 其中至少 4 类为行业验证场景：模型安全与红队测试、机器人低速混行验证、企业 copilot 公共采用验证、智能终端无障碍和耐久验证；另含数据权利、内容版权、慢行维护和蓝绿复算等公共验证。行业验证不得以“试点成功”预设结论，而应把失败样本、公众异议、停用条件和替代方案纳入 Memory Link。运营主体建议由 Steward Council 登记，具体权责待专业和法律深化确认。
 
@@ -90,11 +94,11 @@ NIST AI RMF 的 Govern/Map/Measure/Manage 逻辑被转译为 Memory Link 治理�
 
 ![交通慢行与蓝绿公共空间复合系统图](assets/figures/mobility-bluegreen.png)
 
-新型基础设施不是单纯加设备，而是把端侧算力、传感、能源、维护、隐私和人工复核做成同一套公共台账。建议在三处原型和十二忆点设置轻量化 Memory Link 入口：公众能看到“这个 AI 场景是什么、谁维护、用什么数据、何时过期、如何退出”，专业团队能看到指标和故障记录，运营方能看到复算触发。市政管线、供电、排水、消防和网络安全条件目前均为待补资料 [data:geometry/constraints.geojson#CONSTRAINT-PROV-01] [depth:municipal_new_infrastructure]。
+新型基础设施不是单纯加设备，而是把端侧算力、传感、能源、维护、隐私和人工复核做成同一套公共台账。建议在三处原型和十二忆点设置轻量化 Memory Link 入口：公众能看到“这个 AI 场景是什么、谁维护、用什么数据、何时过期、如何退出”，专业团队能看到指标和故障记录，运营方能看到复算触发。资产和环境状态可用于养护排程，但不得把一线人员变成被持续定位或排名的对象；任何设施上线前都需写清日常运营方、检查节奏、最低服务、资金状态和更换/退役路径。市政管线、供电、排水、消防和网络安全条件目前均为待补资料 [data:geometry/constraints.geojson#CONSTRAINT-PROV-01] [depth:municipal_new_infrastructure]。
 
 ## 蓝绿空间、公共空间与城市风貌
 
-蓝绿公共空间承担“公共记忆可见化”的角色。京张铁路遗址公园、清河、小月河、站点广场、企业界面和社区节点被组织成一条可步行、可停留、可解释的公共路线；Memory Link 不应隐藏在后台，而应以低调导视、二维码、开放看板或活动记录让公众理解 AI 场景如何影响城市。绿地和公共空间比例的意义由指标说明支撑，具体数值以 `metrics.json` 为准 [data:geometry/green_space.geojson#GREEN-SPINE-01] [metric:green_ratio] [depth:blue_green_public_space]。
+蓝绿公共空间承担“公共记忆可见化”的角色。京张铁路遗址公园、清河、小月河、站点广场、企业界面和社区节点被组织成一条可步行、可停留、可解释的公共路线；Memory Link 不应隐藏在后台，而应以低调导视、二维码、开放看板或活动记录让公众理解 AI 场景如何影响城市。公开界面既说明预期收益，也必须显示资源与维护状态、责任角色、已知代价和纠偏/退出入口；不得用聚合收益掩盖特定群体承担的额外工作、隐私或环境负担。绿地和公共空间比例的意义由指标说明支撑，具体数值以 `metrics.json` 为准 [data:geometry/green_space.geojson#GREEN-SPINE-01] [metric:green_ratio] [depth:blue_green_public_space]。
 
 四个朝圣/荣誉节点作为概念建议：清华园车站记忆门，纪念京张铁路与近代工程知识；中关村开源贡献墙，记录开源项目、贡献者和公共许可；Stack Memory Forge 荣誉台，展示通过复核的模型、数据和机器人验证；大钟寺公共采用钟庭，用可撤回的公众反馈记录 AI 产品进入城市前的解释过程。节点名称、图形、人物、企业标识和历史文本必须清权，且不得把概念地标写成已批准建设 [source:SOURCE-REGISTRY] [standard:MOHURD-URBAN-DESIGN-MEASURES]。
 
@@ -104,13 +108,19 @@ NIST AI RMF 的 Govern/Map/Measure/Manage 逻辑被转译为 Memory Link 治理�
 
 更新项目按“先记忆、再试验、后固化”分期。近期可做开源资料整理、公众解释导视、轻量活动、低风险场景卡和反馈机制；中期在三处原型推进专业深化、交通慢行缝合、首层公共界面和新型基础设施协同；长期形成 Steward Council、年度全球 AI 活动、场景开放制度、公共采用档案和持续复算机制。所有安排均为概念建议，需政府、产权、运营、法律和专业团队确认 [data:geometry/phasing.geojson#PHASE-01] [depth:phasing_implementation]。
 
-Steward Council 建议由规划、社区、企业、高校、开源社区、法务版权、运维和无障碍代表组成，职责是维护 Memory Link 规则、审阅过期和失败案例、登记版权和数据边界、组织公众反馈、决定哪些场景需要暂停或重算。它不是法定审批机构，而是公共协作和审议机制的参考方案。
+Steward Council 建议由规划、社区、企业、高校、开源社区、法务版权、运维和无障碍代表组成，职责是维护 Memory Link 规则、审阅过期和失败案例、登记版权和数据边界、组织公众反馈、决定哪些场景需要暂停或重算。Council 可以提出结案，但不能由单一运营方静默归档；同样，不能在运营方、资金状态、检查频率、最低服务和退役交接均未登记时把设施列为“可持续运行”。场景续期还应同时复核谁获得收益、谁承担资源/工作/隐私/环境代价，以及纠偏是否实际可用。正式运营前仍需由专业团队明确谁可确认或重开、复核窗口多长、如何保护隐私，以及重复失败何时升级为结构性问题。它不是法定审批机构，而是公共协作和审议机制的参考方案。
 
 长期运营包括 Rail Memory Week、Open Memory Clinic、Public Adoption Day、Robot Maintenance Walk、AI Rights Desk、Global AI Commons Forum 等活动品牌。活动只在已清权内容、公开空间许可和安全条件满足时开展；招商、资金、媒体传播和国际合作均不得写成已确定政府安排。
 
 ## 指标体系、面积复算与合规矩阵
 
 指标体系分为三类。第一类是可由当前 GeoJSON 和 metrics 复算的空间指标，如总体范围、绿地、公共空间、建筑基底和重点区数量；第二类是待正式控规、道路、市政和建筑资料确认的控制指标，如容积率、建筑高度、道路红线和设施标准；第三类是运营后持续记录的公共记忆指标，如 Memory Link 完整率、过期处理率、失败案例公开率、公众反馈回复率和人工复核时效。本稿不硬编码几何推导数值，只引用 metric ID [metric:site_area_sqm] [metric:public_space_ratio] [depth:metrics_recalculation]。
+
+新增的“结案确认率”只登记计算合同，不预设目标值：分子是经过受影响者或指定公共利益复核者确认、或完成公开复核窗口后归档的 Memory Link，分母是全部拟结案记录。运营主体、同意与隐私流程、复核窗口、申诉渠道和基线尚未确定，因此当前状态保持待正式运营设计补齐 [metric:memory_link_closure_confirmation_rate]。
+
+“运维契约覆盖率”同样只登记计算合同：分子是已同时登记责任所有方、日常运营方、资金状态、检查频率、最低服务、更换或退役触发及交接路径的活跃 Memory Link，分母是全部活跃记录。当前没有获确认的运营组织、预算、服务等级或资产台账，指标保持待正式运营与财务设计补齐 [metric:memory_link_maintenance_contract_coverage]。
+
+“分配性影响覆盖率”只检查记录是否完整，不判断方案是否公平：分子是已登记基线、预期收益、受益群体、资源/工作/隐私/环境代价、代价承担群体、责任角色、纠偏触发与退出条件的活跃 Memory Link，分母是全部活跃记录。当前没有试点基线、受影响群体参与程序或经审计的代价口径，指标保持待正式影响评估补齐 [metric:memory_link_distributional_impact_coverage]。
 
 ![核心指标复算与证据链图](assets/figures/metrics-evidence.png)
 

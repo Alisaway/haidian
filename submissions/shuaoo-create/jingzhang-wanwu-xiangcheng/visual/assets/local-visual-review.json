@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.1",
+  "review_id": "LOCAL-VISUAL-REVIEW-04",
+  "status": "PASS_LOCAL_MANUAL_REVIEW",
+  "reviewed_at": "2026-08-30T15:36:35+09:00",
+  "method": "Rebuilt all bilingual figures and all four PDFs; rendered every page at 200 dpi with PyMuPDF; inspected original-resolution figures, full-page renders and contact sheets; ran page-count, non-empty and forbidden-text checks; then loaded the revised Chinese report and visual site in real Chrome through a local HTTP server, verified the bundled Noto Sans SC subset through document.fonts, and visually inspected the hero, regional-synergy section and public-space component toolkit.",
+  "artifacts": [
+    {
+      "path": "drawings/a3-booklet.pdf",
+      "pages": 12,
+      "finding": "pass_200dpi_manual_and_programmatic_review",
+      "file_size_bytes": 1692483
+    },
+    {
+      "path": "drawings/a3-booklet.en.pdf",
+      "pages": 12,
+      "finding": "pass_200dpi_manual_and_programmatic_review",
+      "file_size_bytes": 1435124
+    },
+    {
+      "path": "drawings/a0-boards.pdf",
+      "pages": 4,
+      "finding": "pass_200dpi_manual_and_programmatic_review",
+      "file_size_bytes": 1880954
+    },
+    {
+      "path": "drawings/a0-boards.en.pdf",
+      "pages": 4,
+      "finding": "pass_200dpi_manual_and_programmatic_review",
+      "file_size_bytes": 1624535
+    }
+  ],
+  "resolved_issues": [
+    "Resolved the PR #4255 Chinese tofu/missing-glyph blocker by bundling a rights-recorded Noto Sans SC WOFF2 subset and loading it locally in both report and visual HTML without CDN or remote-font dependency.",
+    "Added and visually checked the bilingual regional-synergy interface section and the three-landmark/six-component public-space toolkit requested in PR #4255.",
+    "Removed a duplicated L7 gate from the key-area diagrams so every prototype shows exactly L7 plus D6 before HOLD.",
+    "Kept NOT_READY_FOR_FIELD_OPERATION intact on one line while adding a separate human-readable readiness statement.",
+    "Separated the three English key-area headings and gate captions with centred column typography and independent capsule labels."
+  ],
+  "checks": [
+    "The Chinese report and visual pages report document.fonts.check=true for Noto Sans SC Local; all visible Chinese characters in both HTML files are covered by the bundled font subset, and Chrome screenshots show no tofu or missing glyphs.",
+    "Regional synergy names all five requested nodes with exchange, interface role, G-stage and evidence boundary; the public-space toolkit visibly connects three landmarks to six removable components with L7/D6 and human/AI-off information.",
+    "17/17 PNG artifacts exist, are 3000 by 2000 pixels, non-empty and visually reviewed.",
+    "4/4 PDFs exist with expected page counts of 12, 12, 4 and 4.",
+    "32/32 pages rendered at 200 dpi and were reviewed through full-page renders and six bilingual contact sheets.",
+    "No material clipping, overlap, blank page, black-square glyph, unreadable footer or mid-word machine identifier break was found.",
+    "PDF text extraction contains none of the retired collision terms checked by the rebuild QA.",
+    "Real Chrome review at a 1600 by 1000 viewport loaded all six local figures on each language page, found all 14 Chinese task markers and exact machine metrics, and reported no horizontal overflow, remote request, failed request or console error."
+  ],
+  "qa_distribution": "Temporary 200-dpi renders, contact sheets, generator, QA script and machine results are local review artifacts outside the submission and are not package dependencies.",
+  "truth_boundary": "Local visual QA only; not organiser review, field evidence, statutory approval, legal clearance or professional sign-off."
+}

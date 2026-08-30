@@ -1,0 +1,120 @@
+{
+ "schema_version": "0.1.0",
+ "risks": [
+  {
+   "risk_id": "R-BOUNDARY",
+   "title_zh": "边界精度",
+   "category": "data_gap",
+   "severity": "medium",
+   "description_zh": "全部几何基于 provisional 边界；正式图形到位后需重新计算面积与指标并调整图件。",
+   "mitigation_zh": "已在正文、矩阵与图件中标明 provisional 状态与复算触发条件。"
+  },
+  {
+   "risk_id": "R-SURVEY",
+   "title_zh": "现状无障碍调查数据缺失",
+   "category": "data_gap",
+   "severity": "high",
+   "description_zh": "缺少统一时点的现状无障碍调查数据：人行道连续性、坡度与高差、缘石坡道、无障碍电梯、轨道出入口、过街设施、休憩座椅、遮荫、厕所、导视与故障维护记录。",
+   "mitigation_zh": "仅开展概念级用户旅程，不声称代表真实需求规模；官方调查发布后复算。"
+  },
+  {
+   "risk_id": "R-PRIVACY",
+   "title_zh": "感知与反馈数据边界",
+   "category": "data_boundary",
+   "severity": "medium",
+   "description_zh": "空间感知与需求反馈若未设边界可能涉及人员信息。",
+   "mitigation_zh": "仅处理匿名聚合数据，最小必要采集、限期删除，关键决策人工复核，禁止过度监控，字段级治理表见风险节。"
+  },
+  {
+   "risk_id": "R-CONTROL",
+   "title_zh": "法定控制缺位",
+   "category": "statutory",
+   "severity": "medium",
+   "description_zh": "道路红线、轨道安全保护区、文保范围与建设控制地带、绿线蓝线、现行控规与土地权属未公开，开发强度与退距表述仅限概念层面。",
+   "mitigation_zh": "不给出数值结论，全部表述为可供专业团队深化研究。"
+  },
+  {
+   "risk_id": "R-TECH",
+   "title_zh": "AI 技术成熟度与运维稳定",
+   "category": "technology",
+   "severity": "medium",
+   "description_zh": "路径规划、设施识别与语音服务模型依赖数据质量，技术仍在迭代，运维成本较高。",
+   "mitigation_zh": "以模型评测、误报率基准与运行监测兜底，新场景先测试验证后规模化，设停止条件与退出机制。"
+  },
+  {
+   "risk_id": "R-ACCEPTANCE",
+   "title_zh": "公众接受度",
+   "category": "public_acceptance",
+   "severity": "medium",
+   "description_zh": "感知设备与信息服务可能引发隐私与过度科技化疑虑。",
+   "mitigation_zh": "透明公示数据使用、开放居民意见通道，设施以低侵入、可关闭为原则，重大事项依法公示。"
+  }
+ ],
+ "version": 1,
+ "dimensions": [
+  {
+   "id": "data_privacy",
+   "label": "数据隐私",
+   "score": 3,
+   "note": "人流与反馈数据仅采用匿名聚合，不做个体识别；感知数据最小化采集、限期删除；AI生成内容全部人工复核后发布。",
+   "mitigation": "在文本与图件中声明仅聚合不识别，发布流程设人工复核岗，数据使用说明定期公示。",
+   "human_review": "由 JohnXu22786 在汇总阶段逐项人工核对该条目（AI生成初稿后人工复核）。"
+  },
+  {
+   "id": "implementation_complexity",
+   "label": "实施复杂度",
+   "score": 3,
+   "note": "无障碍改造涉及规划、交通、市政与产权多主体协同，时序与职责划分复杂。",
+   "mitigation": "分期分级实施、牵头与协作矩阵、阶段门与停止条件前置。",
+   "human_review": "由 JohnXu22786 在汇总阶段逐项人工核对该条目（AI生成初稿后人工复核）。"
+  },
+  {
+   "id": "public_acceptance",
+   "label": "公众接受度",
+   "score": 3,
+   "note": "AI观测装置与数据展示可能引发隐私与过度科技化疑虑。",
+   "mitigation": "匿名聚合+人工复核边界明确披露，设施以低侵入、可关闭设计为主，年度公示与意见通道。",
+   "human_review": "由 JohnXu22786 在汇总阶段逐项人工核对该条目（AI生成初稿后人工复核）。"
+  },
+  {
+   "id": "operations_cost",
+   "label": "运维成本",
+   "score": 2,
+   "note": "设施维护、数字服务与志愿者体系存在持续运维成本。",
+   "mitigation": "统一建设、多元运营模式建议；设施模块化可逆；维护责任写入公约与台账。",
+   "human_review": "由 JohnXu22786 在汇总阶段逐项人工核对该条目（AI生成初稿后人工复核）。"
+  },
+  {
+   "id": "policy_uncertainty",
+   "label": "政策不确定性",
+   "score": 3,
+   "note": "无障碍与适老化相关政策及地方标准仍在演进，审批路径未定型。",
+   "mitigation": "以现行法律法规为参照，保留弹性接口；正式实施前完成法定审批与多部门联审。",
+   "human_review": "由 JohnXu22786 在汇总阶段逐项人工核对该条目（AI生成初稿后人工复核）。"
+  },
+  {
+   "id": "spatial_dispute",
+   "label": "空间争议",
+   "score": 3,
+   "note": "全部几何基于 provisional 边界，正式边界发布后面积与指标可能有变。",
+   "mitigation": "已在 geometry、矩阵与指标复算说明中标注 provisional 状态与复算条件。",
+   "human_review": "由 JohnXu22786 在汇总阶段逐项人工核对该条目（AI生成初稿后人工复核）。"
+  },
+  {
+   "id": "technology_maturity",
+   "label": "技术成熟度",
+   "score": 3,
+   "note": "AI路径规划、设施识别与语音服务模型仍在迭代。",
+   "mitigation": "模型评测、误报率基准与运行监测兜底，测试验证通过后方可扩展，设停止条件。",
+   "human_review": "由 JohnXu22786 在汇总阶段逐项人工核对该条目（AI生成初稿后人工复核）。"
+  },
+  {
+   "id": "equity_inclusion",
+   "label": "公平与包容性",
+   "score": 2,
+   "note": "数字服务可能造成使用门槛，需兼顾视力、听力、认知、轮椅等不同需求。",
+   "mitigation": "非数字渠道与现场人工协助同步设计，多语大字号导视、语音交互与人工兜底。",
+   "human_review": "由 JohnXu22786 在汇总阶段逐项人工核对该条目（AI生成初稿后人工复核）。"
+  }
+ ]
+}

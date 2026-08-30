@@ -1,0 +1,78 @@
+{
+ "schema_version": "1.0",
+ "register_id": "qi-pulse-measurement-protocols",
+ "protocols": [
+  {
+   "id": "M01",
+   "testbed_ref": "#4 净宽保持率",
+   "measurement_object": null,
+   "definition": "若开展采样，则为满足深化阶段标定的无障碍净宽条件的控制点数 ÷ 采样控制点总数",
+   "data_source_type": null,
+   "sampling_frequency": null,
+   "review_roles": "无障碍守护者 + 独立复核者",
+   "registry_location": "最小验收矩阵及未来测试日志台账",
+   "value": null,
+   "note_zh": "数值留白：标定前不预设任何实测数字；口径框架为标定阶段的结构模板。"
+  },
+  {
+   "id": "M02",
+   "testbed_ref": "#8 MAE 相对误差",
+   "measurement_object": null,
+   "definition": "若执行验证，则为代理模型输出相对基准解的平均绝对误差占基准解量级的比例",
+   "data_source_type": null,
+   "sampling_frequency": null,
+   "review_roles": "专业机构 + 独立复核者",
+   "registry_location": "模型版本档案及验证报告台账",
+   "value": null,
+   "note_zh": "数值留白：标定前不预设任何实测数字；口径框架为标定阶段的结构模板。"
+  },
+  {
+   "id": "M03",
+   "testbed_ref": "#8 推理时延",
+   "measurement_object": null,
+   "definition": "若部署测试，则为任务端到端时延的 p95，并随模型版本、硬件与工况分组登记",
+   "data_source_type": null,
+   "sampling_frequency": null,
+   "review_roles": "专业机构 + 独立复核者",
+   "registry_location": "运行日志聚合表及验证报告台账",
+   "value": null,
+   "note_zh": "数值留白：标定前不预设任何实测数字；口径框架为标定阶段的结构模板。"
+  },
+  {
+   "id": "M04",
+   "testbed_ref": "#13 单位推理能耗",
+   "measurement_object": null,
+   "definition": "若计量，则为实测功率 × 计量时长 ÷ 成功推理次数，并注明云端对照任务口径",
+   "data_source_type": null,
+   "sampling_frequency": null,
+   "review_roles": "专业机构 + 独立复核者",
+   "registry_location": "能耗公示台账及退出复盘附件",
+   "value": null,
+   "note_zh": "数值留白：标定前不预设任何实测数字；口径框架为标定阶段的结构模板。"
+  },
+  {
+   "id": "M05",
+   "testbed_ref": "#13 断网可用度",
+   "measurement_object": null,
+   "definition": "若演练，则为断网期间可完成的核心功能次数 ÷ 应完成核心功能次数",
+   "data_source_type": null,
+   "sampling_frequency": null,
+   "review_roles": "独立复核者 + 无障碍守护者",
+   "registry_location": "断网演练台账及季度复核简报",
+   "value": null,
+   "note_zh": "数值留白：标定前不预设任何实测数字；口径框架为标定阶段的结构模板。"
+  },
+  {
+   "id": "M06",
+   "testbed_ref": "共性复现性",
+   "measurement_object": null,
+   "definition": "若重复运行，则为同一输入、同一软件与硬件版本多次输出的偏差，种子与版本必须锁定",
+   "data_source_type": null,
+   "sampling_frequency": null,
+   "review_roles": "专业机构 + 独立复核者",
+   "registry_location": "版本指纹库及可复现性核查表",
+   "value": null,
+   "note_zh": "数值留白：标定前不预设任何实测数字；口径框架为标定阶段的结构模板。"
+  }
+ ]
+}

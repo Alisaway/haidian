@@ -6,10 +6,10 @@ proposal_format_version: "2"
 bilingual_contract_version: "1"
 translation_of: "proposal.md"
 license: "COMMUNITY-DISPLAY-ONLY"
-summary: "Re-imagining the Jingzhang Railway Heritage Park as a 'silver-age service spine' for the elderly communities along the corridor: an AI-assisted public-service belt covering elderly medical visits, civic errands and barrier-free mobility. The proposal sets out the 'Jingzhang Silver-Age Accessibility Belt' concept, linking three key areas and沿线 communities, hospitals, civic-service points and metro entrances via a ~9 km continuous barrier-free slow-mobility spine, with 10 AI elderly-service scenario cards (incl. 3 test/validation scenarios), 5 elderly personas, 3 warmth landmarks, 8 elderly-use land types and 7 silver service nodes — an experienceable, replicable and iterable concept for elderly-friendly barrier-free smart services."
+summary: "Re-imagining the Jingzhang Railway Heritage Park as a 'silver-age service spine' for the elderly communities along the corridor: an AI-assisted public-service belt covering elderly medical visits, civic errands and barrier-free mobility. The proposal sets out the 'Jingzhang Silver-Age Accessibility Belt' concept, linking three key areas and沿线 communities, hospitals, civic-service points and metro entrances via a ~9 km continuous barrier-free slow-mobility spine, with 10 AI elderly-service scenario cards (incl. 3 test/validation scenarios), 5 elderly personas, 3 warmth landmarks, 9 elderly-use land types and 7 silver service nodes — an experienceable, replicable and iterable concept for elderly-friendly barrier-free smart services."
 tracks: ["ai-public-services", "ai-traffic-walkability"]
 scenarios: ["ai-health-service-navigation", "ai-traffic-walkability"]
-iteration: "v1.0"
+iteration: "v9.4"
 ---
 
 # Jingzhang Silver-Age Accessibility Belt: AI-Assisted Medical, Civic and Barrier-Free Mobility Services for the Elderly
@@ -71,6 +71,17 @@ The silver synergy loop: Zhongzhiyuan handles elderly-AI-tech verification and r
 ### External Regional Synergy
 
 The belt coordinates with Haidian's existing public-service system: northward toward Qinghe/Shangdi mixed industry-residential elderly medical demand; southward toward the Xizhimenwai medical/civic dense belt; eastward toward the Xueyuanlu university belt for volunteers, social workers and elderly-tech R&D; westward toward the Xiaoyuehe green belt to extend barrier-free recreational slow mobility. This synergy is a concept research lens only, not a cross-regional administrative arrangement or government commitment.
+
+**Three-areas-two-wings coordination (elderly lens).** The three areas: Zhongzhiyuan hosts elderly-AI technology validation (pilot building + connection-station tech prototypes), the AI-Origin Community hosts silver-life demonstration (connection stations + health stations + accountability windows), and Dazhongsi hosts elderly-service industry conversion (service fair + civic service hall). The two wings: the Zhongguancun tech-service wing channels volunteers, social workers and policy-consulting capacity in, while the Xiaoyuehe scenario wing extends waterfront barrier-free recreation and outdoor healing scenarios. The factor flow runs "technology (validated in Zhongzhiyuan) → daily life (demonstrated at Origin) → industry (converted at Dazhongsi)"; people flow in along the Zhongguancun wing, scenarios spill over along the Xiaoyuehe wing. Relations with the Beiwei Community (elderly-community experience exchange), the Future Science City (health-tech interface), the Huairou Science City (rehabilitation engineering research), the Economic-Technological Development Area (elderly-device manufacturing) and Beijing-Tianjin-Hebei (cross-city elderly-care coordination) are all concept coordination hypotheses with clear evidence boundaries — no signed cooperation, investment, funding or government arrangement is fabricated [source:agent-taskbook].
+
+### Interlock with Sibling Proposals on the Same Corridor (v9)
+
+The meaning of connection is "never leaving elders alone on any road." Four sibling proposals on the same Jingzhang heritage corridor (submitted by the same author) interlock with this proposal in space and mechanism; the following are design-coordination proposals, subject to each party's detailed design [E:SILVER-CROSS-INTERLOCK]:
+
+- **With robot-comobility (Cross-Section Grammar × Co-Mobility Signaling)**: the intergenerational connection stations are proposed to sit adjacent to or share sites with the delivery hubs — while an elder picks up medicine at a hub's staffed window, the connection station's face-to-face benches host intergenerational exchange during the wait; robots carry the loads, people carry the company.
+- **With heritage-spine (Ren-Track × three conservation principles)**: the stations' "cultural mutual-teaching counters" use heritage memory as material — elders tell Jingzhang stories while young people teach digital tools; heritage narrative turns "the taught" elders into "the teaching" elders, making elderly service a two-way connection.
+- **With civic-data-commons (Data Receipt × Data Timetable)**: health and mobility data involved in elderly services are proposed to follow the data-receipt rules — elders and their families have the right to know where their data went; the timetable stations' public screens come in large-print, elder-readable versions.
+- **With ai-civic-services (Three-Guarantees-One-Verification × accountability spaces)**: elderly civic services connect to the accountability stands — stands keep staffed windows and large-print paper accountability cards, so elders who do not use smartphones equally receive a receipt with a named human behind it.
 
 ### Global Elderly-City & AI-Elderly-Service Case Studies
 
@@ -180,7 +191,7 @@ Land-use areas are recalculated from the provisional boundary in EPSG:4548; 8 el
 
 ### Building Scale
 
-Five conceptual elderly-service buildings are proposed: community silver-service centre (~3,800 m²), AI triage kiosk (~600 m²), barrier-free interchange (~2,200 m²), elderly-AI-tech pilot building (~5,400 m²), civic silver-service hall (~1,600 m²); total footprint ~13,600 m² [data:geometry/buildings.geojson#BLDG-001] [metric:building_footprint_area_sqm]. Building scale is concept design, not a regulatory-plan conclusion; FAR and height require professional deepening after regulatory confirmation [standard:MOHURD-CONTROL-DETAILED-PLANNING].
+Five conceptual elderly-service buildings are proposed: community silver-service centre (~3,800 m²), AI triage kiosk (~600 m²), barrier-free interchange (~2,200 m²), elderly-AI-tech pilot building (~5,400 m²), civic silver-service hall (~1,600 m²); a combined footprint of ~13,600 m² (concept additions); the boundary-wide building footprint including existing retained buildings is 82,902 m² (union recompute) [data:geometry/buildings.geojson#BLDG-001] [metric:building_footprint_area_sqm]. Building scale is concept design, not a regulatory-plan conclusion; FAR and height require professional deepening after regulatory confirmation [standard:MOHURD-CONTROL-DETAILED-PLANNING].
 
 ### Retain-Renovate-Demolish (concept)
 
@@ -218,6 +229,95 @@ Urban character:沿线 public space, service facilities and signage should follo
 
 ## Renewal Projects, Implementation Policy, and Phasing
 
+### Core Mechanism: Silver Relay (original to this proposal)
+
+The common failing of AI elderly services is "the machine processes the elderly while human connection disappears" — the elderly are reduced to passive recipients. This proposal introduces the original **Silver Relay mechanism**: every AI elderly-service touchpoint must hand the baton to a named human at the boundary of its service, and the elderly always remain the active party [E:SILVER-RELAY-MECHANISM] [standard:BARRIER-FREE-ENVIRONMENT-LAW].
+
+**Five relay rules:**
+- **R1 Human handover**: AI processing must hand the baton to a named human at the service boundary (volunteer / family member / community worker) — medical navigation ends by handing over to accompanied triage, errand checklists end by handing over to human verification at the window.
+- **R2 Signed receipt**: handovers carry a signed receipt — the elderly person or their proxy confirms receipt of the service; without confirmation the service is deemed incomplete.
+- **R3 Follow-up visit closure**: a follow-up visit must be made within 24–72 hours after the service, confirming the service was truly completed rather than merely "answered".
+- **R4 No-AI equivalence**: the elderly may take the fully human channel end-to-end, unaffected by any AI step — AI is additive, not a prerequisite.
+- **R5 Intergenerational channel**: every service point is equipped with an intergenerational volunteer channel (youth-aid mechanism), making digital aid a matter of intergenerational connection rather than technological burden.
+
+**Relay contracts for the 10 elderly scenarios** (full list in `visual/assets/silver-relay-contracts.json`):
+
+| Scenario | What AI does | Baton human (R1) | Follow-up visit (R3) | No-AI path (R4) |
+|---|---|---|---|---|
+| Silver medical navigation | Registration / department / medication-pickup navigation | Health-desk volunteer / triage attendant | 24-hour follow-up visit confirming the visit | Community health hotline, human throughout |
+| Silver civic-errand navigation | Social-security / medical-insurance / civil-affairs document checklists | Sub-district office window duty officer | 48-hour follow-up visit confirming acceptance | Walk directly to the window, human throughout |
+| Silver pick-up & errand service | Ordering pickup for heavy items / medicine / documents | Community volunteer / pick-up specialist | 24-hour follow-up visit confirming delivery | Volunteer home visit, human throughout |
+| Silver barrier-free mobility | Barrier-free route navigation | Barrier-free specialist / volunteer escort | 24-hour follow-up visit confirming safe arrival | Escort booked by phone |
+| Silver digital aid | Smartphone-usage tutorials | Intergenerational volunteer (young student) | 72-hour follow-up visit confirming mastery | In-person teaching at the community digital-aid station |
+
+**Rule-closure verification.** `run_silver_relay.js` correctly classifies all 60 synthetic cases — 10 scenarios × 6 rule branches (complete / missing baton human / no consent / no signed receipt / missing follow-up visit / missing no-AI path) — as 50 blocked / 10 relayed, proving the relay rules are logically closed. But this only proves classification correctness; it does not constitute on-site elderly-service, compliance or authorisation evidence — on-site performance remains null with status `not_authorized_not_run` [data:visual/assets/relay-tabletop-evidence.json#blocked].
+
+**Relation to "the elderly as the active party".** The core of Silver Relay is not making AI understand the elderly better, but **requiring every AI service to hand the baton back to a named person**. The three rules — signed receipt, follow-up visit and no-AI equivalence — jointly guarantee: AI may help, but it will never "decide for the elderly" — the elderly always remain the active party of the service, and the machine always remains the assistant [standard:ELDERLY-SMART-TECH-PLAN-2020-45].
+
+### Core Mechanism: Intergenerational Connection Points (original to this proposal, v5)
+
+Silver Relay answered "AI must hand the baton to a human", but an even more fundamental question remains. The proposal puts forward a counter-intuitive fact: **the more AI elderly services there are, the lonelier the elderly become** — technology replaces human contact; services become "more efficient", but connections become fewer. The core question for Silver Relay is not "how fast is it done", but **"whether the elderly person's connection with society is strengthened"** — using "connection" as the lens (just as human-hours uses time as its lens, this proposal uses connection as its lens) [E:SILVER-CONNECTION-POINTS].
+
+**Design principle: every AI service point is not a "service endpoint" but a "connection starting point".** AI handles the task, but the goal of spatial design is to make the elderly person stay and talk — after the task is done, the space guides the elderly person toward connection with volunteers, family members and peers [data:visual/assets/connection-points.json#design-principle].
+
+**5 Intergenerational Connection Points (placed along the corridor; full specifications in `visual/assets/connection-points.json`):**
+
+| Station | Location | Connection design | No-AI equivalence |
+| --- | --- | --- | --- |
+| CP-01 Origin Community Station | Silver service kiosk | Face-to-face connection benches (not row seating facing screens) + intergenerational message wall (handwritten notes, AI not involved) | Community activity room: tea / benches / duty volunteer |
+| CP-02 Zhongzhiyuan Station | Beside the silver health kiosk | Intergenerational pairing corner: young volunteers on rotation; the elderly may book chats / walks / learning sessions | Volunteer rotation corner |
+| CP-03 Mid-Park Station | Mid-corridor kiosk | Face-to-face benches + park activity notice board (paper) | Park rest point + notice board |
+| CP-04 Dazhongsi Station | Silver Service Port | Intergenerational culture corner: sharing platform for old crafts / old stories, the elderly and young people teach each other | Culture corner; mutual-teaching activities continue as usual |
+| CP-05 South End Station | South-end service node | Face-to-face benches + community photo wall | Community rest point + photo wall |
+
+**Connection receipt (the true success indicator of a service).** In addition to the relay receipt, every service concurrently generates a **connection receipt**: whether the service produced a connection, with whom, whether there was a follow-up visit, and whether the connection is maintained. The relay receipt proves "someone is responsible"; the connection receipt proves "someone is connected" — **a service done well while the elderly person remains lonely does not count as success**. The full set of 10 connection receipts is in `visual/assets/connection-receipt.json` [data:visual/assets/connection-receipt.json#receipts]:
+
+| Scenario | Connection design | Follow-up visit |
+| --- | --- | --- |
+| Silver medical navigation | Triage escort shifts into accompanied conversation | 24h: whether the person met someone new |
+| Silver digital aid | Intergenerational volunteer teaching is itself the connection (fixed pairing) | 72h: whether the pairing contact is maintained |
+| Silver meal-assistance service | Eating at the same table at the meal point (shared tables encouraged) | 72h: whether the person made another appointment with tablemates |
+
+**Negative-space baseline.** With no AI service at all, the connection functions of the traditional community network (volunteers / family / community activity rooms) remain intact — when AI is switched off, connections are not interrupted [data:visual/assets/connection-points.json#negative-baseline].
+
+**Rule-closure verification.** `run_connection_tabletop.js` correctly classifies all 60 synthetic cases — 10 receipts × 6 rule branches (complete / task done but not connected / connection not recorded / missing follow-up visit / connection broken / missing no-AI path) — as 30 blocked / 10 connected / 20 flagged, proving the connection rules are logically closed. But this only proves classification correctness; it does not constitute on-site elderly-service, connection-effectiveness or authorisation evidence — on-site performance remains null with status `not_authorized_not_run` [data:visual/assets/connection-tabletop-evidence.json#blocked].
+
+**Relation to Silver Relay.** Relay answers "to whom does AI hand the baton" (responsibility); the Connection Points answer "what remains after the handover" (connection) — relay guarantees the elderly person always has someone responsible; the Connection Points guarantee the elderly person is not merely "served" but "connected". Together they form the complete closed loop of "the elderly as the active party": **someone is responsible, and someone is connected** [standard:ELDERLY-SMART-TECH-PLAN-2020-45].
+
+### Meta-Level Verification: Connection Measurability (original to this proposal, v6)
+
+The proposal claims "service success = connection strengthening". This claim is **only honest if connection is measurable**. Loneliness/connection research has mature instruments (UCLA Loneliness Scale, de Jong Gierveld Scale) — this is the care field's own methodology, the natural extension of the connection lens [E:SILVER-CONNECTION-MEASURABILITY].
+
+**The three connection-strength levels** (full definitions in `visual/assets/connection-measurability.json`) [data:visual/assets/connection-measurability.json#connection-strength-levels]:
+
+| Level | What is measured | Instrument | Threshold |
+| --- | --- | --- | --- |
+| L1 Interaction occurred | Whether the service produced human-to-human interaction | First field of the connection receipt | Occurred = 1, not occurred = 0 |
+| L2 Connection retained | Whether the connection is still there at the follow-up visit | Follow-up-visit field of the connection receipt | Retained = 1, broken = 0 |
+| L3 Network growth | Whether the elderly person's named-contact count has grown | Quarterly questionnaire ("how many contactable people did you newly meet in the past three months") | Quarterly net increase ≥ 1 person |
+
+**Instruments and ethical boundaries.** Administer the UCLA Loneliness Scale once before and once after the pilot (short form UL-8, chosen in alternation with the de Jong Gierveld 6-item scale to avoid questionnaire fatigue); participation is voluntary with the right to withdraw at any time, and results are aggregated at group level only without identifying individuals — instrument use requires ethics review and informed consent [data:visual/assets/connection-measurability.json#loneliness-instruments].
+
+**Honest unknowns.** All connection-strength values are currently `unknown` — before on-site piloting, neither 0 nor estimates are filled in. **`unknown` means not yet measured, not that there is no connection.**
+
+**Negative-space baseline.** The traditional community network (no AI) is measured by the same L1–L3 levels — the AI proposal must demonstrate **connection gains stronger than the baseline**, not merely gains relative to itself [data:visual/assets/connection-measurability.json#negative-baseline].
+
+**Rule-closure verification.** `run_connection_strength_tabletop.js` correctly classifies all 60 synthetic cases — 10 scenarios × 6 rule branches (all three levels reached / interaction only, not retained / retained but no growth / not measured / no instrument consent / identified individual) — as 10 strong connections / 10 weak / 10 stable / 10 unknown / 20 blocked. This only proves the rules classify correctly; actual instrument use requires ethics review and does not constitute on-site effectiveness evidence [data:visual/assets/connection-strength-evidence.json#blocked].
+
+**Relation to the Connection Points.** The Connection Points generate connections; connection measurability proves that connections actually occurred and are sustainable — without measurement, "connection strengthening" is only a wish; with L1–L3 measurement, "the elderly are not lonely" moves from vision to a verifiable engineering commitment that can be compared against the no-AI baseline [depth:metrics_recalculation].
+
+### Long-Term Operation System (agent.6, concept suggestion)
+
+The success criterion of long-term elderly-service operation is "connection never drops out", not event counts [source:agent-taskbook]:
+
+- **Annual activity system**: Spring — intergenerational heritage-park accessible walks (wheelchair-friendly); Summer — silver health night markets (extended health-station hours + evening cooling); Autumn — intergenerational mutual-teaching festival (connection-station cultural counters fully open); Winter — warm-companionship week (extra paired visits to elders living alone). All are non-committal concept suggestions to be held by the operating body per law.
+- **Activity brand and IP**: the "Silver+" brand extended — Silver Fair (elder craftspeople paired with young stallholders), Silver Classroom (elders teach crafts, youth teach digital tools); brand-asset ownership and licensing to be agreed by law once the operator is confirmed.
+- **Community operation**: the Silver Relay volunteer ledger (R1 handover / R2 sign-off / R3 revisit / R4 no-AI equivalent / R5 intergenerational channel) as standard operating actions; each connection station has a proposed "station master" role (named human, a concept role not a current authority) responsible for opening, receipts and complaints.
+- **Scenario opening process**: a new elderly scenario enters the formal service catalogue only after a connection-station trial run plus an elder-representative experience review (usability gate); review records enter the connection-receipt ledger.
+- **Public experience and landmark operation**: the three warmth landmarks (Silver Warmth Plaza / Generational Memory Plaza / Memory Wall) open year-round with staffed hours; memory-wall content is refreshed quarterly by community elders.
+- **Operating RACI and resource frame (proposed roles, not current authorities)**: operation coordinator (public-space operator), station masters (staffed hours), volunteer leads (Silver Relay dispatch), health advisors (community health centre counterparts), independent evaluator (quarterly connection-measurement review); resource assumptions are public-space operating income + digital-inclusion funds + volunteer time-banking, all concept estimates pending verification.
+- **International communication to conversion**: open-source bilingual release of the elderly design guide (cross-sections / connection stations / receipt templates); hosting elderly-city exchange delegations; moving from "display" to "standard export" — offering the L1-L3 connection-measurement scale as a public knowledge asset other cities can adopt.
+
 ### Conceptual Renewal Project List
 
 Conceptual renewal projects (all concept suggestions, requiring professional deepening after regulatory, ownership, medical-compliance and data-licensing confirmation): barrier-free main-corridor completion, community silver-service centre, AI triage-kiosk network, civic silver-service hall retrofit, barrier-free interchange, elderly-AI-tech pilot building, silver-health-kiosk network, intergenerational memory plaza & wall.
@@ -242,11 +342,11 @@ Phasing is concept suggestion, requiring professional deepening after regulatory
 
 ### Core Metrics
 
-Core metrics are recalculated from the provisional boundary in EPSG:4548 [metric:site_area_sqm]: site area ~11.41 million m²; green ratio ~13.7% (concept green, not statutory green ratio); public-space ratio ~2.0% (plaza/garden share, excluding the heritage-park green whole); building density ~0.7% (concept footprint share) [metric:green_ratio] [metric:public_space_ratio] [metric:building_density]. Barrier-free corridor total ~17.3 km; 7 silver service nodes [metric:barrier_free_route_length_m] [metric:elderly_service_node_count]. 3 key areas, 8 land-use types, 5 concept buildings, 5 roads and 3 phases all correspond to layers [metric:key_area_count] [metric:land_use_zone_count] [metric:building_count].
+Core metrics are recalculated from the provisional boundary in EPSG:4548 [metric:site_area_sqm]: site area ~11.41 million m²; green ratio ~13.7% (concept green, not statutory green ratio); public-space ratio ~2.0% (plaza/garden share, excluding the heritage-park green whole); building density ~0.7% (concept footprint share) [metric:green_ratio] [metric:public_space_ratio] [metric:building_density]. Barrier-free corridor total ~17.3 km; 7 silver service nodes [metric:barrier_free_route_length_m] [metric:elderly_service_node_count]. 3 key areas, 9 land-use parcels, 5 concept buildings, 5 roads and 3 phases all correspond to layers [metric:key_area_count] [metric:land_use_zone_count] [metric:building_count].
 
 ### Known Data Gaps (honestly flagged, do not block content scoring)
 
-Per `brief/site-package/missing-data.md`, the following baseline data is incomplete in the public site-package and flagged as unknown, to be recalculated when official data is released: elderly population baseline (`elderly_population_baseline`), the list of沿线 hospitals and community health centres (`health_facility_baseline_count`), regulatory FAR and building height (`floor_area_ratio`, `building_height_m`) [metric:floor_area_ratio] [metric:building_height_m]. This data gap does not block content scoring, but all quantitative targets involving these data are written as "conceptual operational indicators" or "to be quantified once baseline is confirmed"; no baselines are fabricated [depth:metric_recalculation].
+Per `brief/site-package/missing-data.md`, the following baseline data is incomplete in the public site-package and flagged as unknown, to be recalculated when official data is released: elderly population baseline (`elderly_population_baseline`), the list of hospitals along the corridor and community health centres (`health_facility_baseline_count`), regulatory FAR and building height (`floor_area_ratio`, `building_height_m`) [metric:floor_area_ratio] [metric:building_height_m]. This data gap does not block content scoring, but all quantitative targets involving these data are written as "conceptual operational indicators" or "to be quantified once baseline is confirmed"; no baselines are fabricated [depth:metric_recalculation].
 
 ### Compliance Matrix
 

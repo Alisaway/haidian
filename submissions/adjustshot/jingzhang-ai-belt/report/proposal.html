@@ -131,6 +131,25 @@ code {
   box-shadow: 0 2px 8px rgba(23, 32, 51, 0.18);
 }
 .evidence:hover::after { display: block; }
+.exec-summary {
+  margin: 6px 0 26px;
+  padding: 14px 16px;
+  border: 1px solid #d7e0ea;
+  border-left: 4px solid var(--accent, #2c5f8a);
+  border-radius: 8px;
+  background: #f7fafc;
+}
+.exec-summary h2 { margin: 0 0 4px; font-size: 17px; border: none; }
+.exec-intro { margin: 0 0 10px; color: var(--muted, #5c6b7a); font-size: 13px; }
+.exec-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.exec-card {
+  display: flex; flex-direction: column; gap: 4px;
+  padding: 8px 10px; background: #ffffff;
+  border: 1px solid #e3e9f0; border-radius: 6px;
+}
+.exec-tag { font-weight: 700; font-size: 12.5px; color: var(--accent, #2c5f8a); }
+.exec-text { font-size: 12px; line-height: 1.5; color: #33414f; }
+@media (max-width: 720px) { .exec-grid { grid-template-columns: 1fr; } }
 .evidence-index { margin-top: 42px; border-top: 2px solid var(--accent); padding-top: 10px; }
 .evidence-index h2 { border-top: none; padding-top: 0; }
 .evidence-index-intro { color: var(--muted); font-size: 14px; }
@@ -141,6 +160,8 @@ code {
 </head>
 <body>
 <main>
+<section class="exec-summary" id="exec-summary"><h2>方案速览 · Executive Summary</h2><p class="exec-intro">六要素一屏读懂方案：定位 · 结构 · 场景 · 指标 · 实施 · 合规</p><div class="exec-grid"><div class="exec-card"><span class="exec-tag">定位</span><span class="exec-text">百年京张文化带 × 都市 AI 生活体验带 × AI 融合创新带；智脉京张 JZ-IA，人字形铁路→人字形智网</span></div><div class="exec-card"><span class="exec-tag">结构</span><span class="exec-text">一廊三核两翼多点：9km 智脉廊 · 众智园/原点社区/大钟寺三核 · 中关村服务翼/小月河场景翼</span></div><div class="exec-card"><span class="exec-tag">场景</span><span class="exec-text">12 张 AI 场景卡 + 3 个测试验证场景 + 6 类用户画像，场景—空间—运营—KPI 全映射</span></div><div class="exec-card"><span class="exec-tag">指标</span><span class="exec-text">建筑量三档情景 16.1/18.8/21.7M㎡（概念）；五类空间指标可由 GeoJSON 复算</span></div><div class="exec-card"><span class="exec-tag">实施</span><span class="exec-text">三步走（点火→成网→成片）× 6 项更新项目 × 主体权责矩阵 × 验证→规模化机制</span></div><div class="exec-card"><span class="exec-tag">合规</span><span class="exec-text">provisional 边界已标注；所有指标/拆改留为概念建议；双语完整对等</span></div></div></section>
+
 <section class="hero">
 <h1>智脉京张：百年铁路遗产上的AI创新共生带城市设计提案</h1>
 <p class="summary">以百年京张自主创新精神为文化内核，以&#x27;人字形铁路→人字形智网&#x27;为空间母题，围绕文化、创新、活力、品质四要素，提出一廊三核两翼多点的触媒激活网络，形成可感知、可体验、可生长的都市AI生活创新带。基于provisional边界生成，保留精度警示，待正式数据发布后复算。</p>
@@ -362,6 +383,16 @@ code {
 <li><strong>资金与自我造血</strong>：空间租金+服务收费+活动运营+投资分成的多元收益模型，降低一次性财政投入依赖。</li>
 <li><strong>数据与治理</strong>：所有场景遵守隐私与人本边界，AI 生成内容标注、人工复核兜底、弱势群体保留人工通道 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="AGENT-TASKBOOK" title="来源: Agent-facing open-call principles, six required agent tasks, scenario/branding/operation requirements, and boundary clause. Per registry scope: covers agent task, scenario, branding, and event/operation requirements — does NOT prove statistic or regulatory approval status. · brief/site-package/agent_taskbook.json">来源: AGENT-TASKBOOK</sup>。</li>
 <li><strong>风险控制</strong>：涉及高度、强度、道路红线、权属等结论，一律&quot;待正式控规条件确认&quot;；活动与运营表述为概念建议，不构成政府承诺。</li>
+</ul>
+<p><strong>③ 实施保障体系（concept framework，待政策对接深化）</strong> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="phasing_implementation" title="深度: 分期实施计划 [status: complete]">深度: phasing_implementation</sup> <sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="MOHURD-CONTROL-DETAILED-PLANNING" title="标准: 控规深度相关结论必须区分已知控制条件、设计建议和待确认事项。 [status: addressed]">标准: MOHURD-CONTROL-DETAILED-PLANNING</sup>：</p>
+<ul>
+<li><strong>主体权责矩阵（概念建议）</strong>：按&quot;公共品—准公共品—市场化&quot;三分界定实施主体，避免责任悬空——</li>
+</ul>
+<div class="proposal-table"><table><thead><tr><th>实施类别</th><th>代表项目</th><th>主导主体（概念）</th><th>权责边界</th><th>出资方式（概念）</th></tr></thead><tbody><tr><td>公共品</td><td>绿廊缝合、站城连通、公共空间组件库</td><td>市公园中心/属地街道/轨道集团</td><td>规划衔接、建设实施、运维标准</td><td>政府财政+专项债（概念）</td></tr><tr><td>准公共品</td><td>AI 公共服务节点、场景试验场、荣誉展示体系</td><td>园区管委会+市科委+高校院所</td><td>场景准入、数据治理、公益兜底</td><td>政府引导基金+国资平台（概念）</td></tr><tr><td>市场化</td><td>产业服务综合体、AI 原生消费、运营活动</td><td>市场化主体+运营机构</td><td>投资收益、品牌运营、持续造血</td><td>社会资本+自我造血（概念）</td></tr></tbody></table></div>
+<ul>
+<li><strong>资金测算框架（concept，非正式预算）</strong>：按&quot;政府引导+社会资本+自我造血&quot;三源测算——近期以政府引导（专项债+城市更新基金）撬动公共品；中期以国资平台+产业基金承接准公共品；远期以租金/服务/活动/分成四类收益支撑市场化项目，逐步降低财政依赖。<strong>所有金额与占比为概念测算方向，非正式预算承诺</strong>，待可行性研究深化后替换。</li>
+<li><strong>审批路径建议（concept）</strong>：方案定位为&quot;控规之下的概念深化&quot;，落地沿&quot;街区控规（已获批，见 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="REGULATORY-PLAN-APPROVED-20260811" title="来源: 《北京海淀区京张铁路遗址公园沿线（人工智能创新街区重点地区）HD00—1601等街区控制性详细规划（街区层面）（2024—2035年）》获批复的官方媒体证据：规划范围东至新街口外大街、西至中关村大街、北至成府路、南至西直门外大街，含9个建设主导街区、总用地约1668.2公顷；官方空间结构&#x27;一带一轴，两心多点&#x27;（大钟寺中心、五道口中心）。支持方案与正式控规结构的呼应表述。 · https://bj.people.com.cn/BIG5/n2/2026/0812/c82840-41665678.html · 北京日报（记者 陈雪柠；转自北京市规划和自然资源委员会信息）">来源: REGULATORY-PLAN-APPROVED-20260811</sup>）→ 地块层面城市设计/实施方案 → 立项（项目建议书/可研）→ 规划许可与工程许可 → 建设运营&quot;链条推进；正式控规图则、权属与工程条件到位后逐项落图，不替代法定审批。</li>
+<li><strong>场景&quot;验证→规模化&quot;转化机制（concept）</strong>：12 场景卡先以&quot;试点验证&quot;进入（TRL≥6、取得许可、人工兜底），达到退出条件中 KPI 阈值后升级为&quot;规模化推广&quot;；未达标即退出或降级，形成可审查的验证台账，避免场景停留在概念或过度承诺 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="AGENT-TASKBOOK" title="来源: Agent-facing open-call principles, six required agent tasks, scenario/branding/operation requirements, and boundary clause. Per registry scope: covers agent task, scenario, branding, and event/operation requirements — does NOT prove statistic or regulatory approval status. · brief/site-package/agent_taskbook.json">来源: AGENT-TASKBOOK</sup>。</li>
 </ul>
 <h2>指标体系、面积复算与合规矩阵</h2>
 <p>指标体系至少覆盖总体设计范围面积、重点区域面积、绿地与公共空间比例、建筑基底、更新项目数量、AI 场景节点、慢行连通指标、产业空间指标、人才服务指标和自检状态 <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="metrics_recalculation" title="深度: 指标复算 [status: complete]">深度: metrics_recalculation</sup>。所有 known 指标必须能从 GeoJSON 或可信来源复算；unknown 指标必须给出原因和正式提交前置条件。指标分三类：可由提交几何直接复算的空间指标（边界面积、绿地比例、公共空间比例、建筑基底面积、分期面积）；需要官方控规支撑的管控指标（容积率、建筑高度、建筑密度、退线、道路红线）；需要运营数据不断校准的绩效指标（AI 创新指数、人才密度、活动参与度、场景使用频次）。三类指标分别进入 <code>metrics.json</code>、<code>assumptions.json</code> 和 <code>compliance_matrix.json</code> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="site_area_sqm" title="指标: value=11412825.386 sqm · geometry/site_boundary.geojson · confidence=medium">指标: site_area_sqm</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="key_area_count" title="指标: value=3 count · geometry/key_areas.geojson · confidence=high">指标: key_area_count</sup> 。</p>

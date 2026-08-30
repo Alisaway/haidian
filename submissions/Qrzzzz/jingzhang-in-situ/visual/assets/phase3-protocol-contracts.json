@@ -1,0 +1,5429 @@
+{
+  "schema_version": "phase3-scenario-operating-contracts-v1",
+  "authority": {
+    "project_zh": "京张在场",
+    "project_en": "Jing-Zhang In Situ",
+    "phase": "phase3_governance_protocols",
+    "phase2_frozen_head": "554979e4bc66f21fbdf53e4cde85ed94afe4421c",
+    "status": "design-target",
+    "machine_authority": "This file is authoritative for SC01-SC12 operating fields, the shared lifecycle, flagship flows, and SC10+IM06 preflight.",
+    "not_claimed": [
+      "legal compliance",
+      "consent obtained",
+      "operator appointment",
+      "official approval",
+      "site survey",
+      "accessibility audit",
+      "safety certification",
+      "funding or partnership"
+    ]
+  },
+  "shared_state_machine": {
+    "states": [
+      {
+        "state_id": "preflight",
+        "label_zh": "预检",
+        "label_en": "Preflight",
+        "public_status_zh": "概念建议 / 待现场核验",
+        "public_status_en": "Conceptual Recommendation / Pending Site Verification",
+        "service_rule_zh": "不向公众运行；只核对来源、权限、人员、低技替代、投诉、停止和撤场。",
+        "service_rule_en": "No public operation; verify sources, authority, staff, low-tech fallback, complaint, stop, and removal."
+      },
+      {
+        "state_id": "limited-open",
+        "label_zh": "限量开放",
+        "label_en": "Limited Open",
+        "public_status_zh": "受控测试",
+        "public_status_en": "Controlled Test",
+        "service_rule_zh": "书面范围、期限和人员内开放。",
+        "service_rule_en": "Open only within written scope, term, and staffing."
+      },
+      {
+        "state_id": "operating",
+        "label_zh": "运行",
+        "label_en": "Operating",
+        "public_status_zh": "运行中 / 人工入口可见",
+        "public_status_en": "Operating / Human Entry Visible",
+        "service_rule_zh": "只执行已批准的低风险功能。",
+        "service_rule_en": "Run only approved low-risk functions."
+      },
+      {
+        "state_id": "degraded",
+        "label_zh": "降级",
+        "label_en": "Degraded",
+        "public_status_zh": "降级服务 / 静态或人工",
+        "public_status_en": "Degraded / Static or Human",
+        "service_rule_zh": "关闭受影响自动功能，保留等效服务。",
+        "service_rule_en": "Disable affected automation and retain equivalent service."
+      },
+      {
+        "state_id": "human-takeover",
+        "label_zh": "人工接管",
+        "label_en": "Human Takeover",
+        "public_status_zh": "Human Takeover / 人工正在负责",
+        "public_status_en": "Human Takeover / Human Accountable",
+        "service_rule_zh": "AI 输出隔离，责任人解释、纠正并决定下一状态。",
+        "service_rule_en": "Isolate AI output; accountable human explains, corrects, and chooses the next state."
+      },
+      {
+        "state_id": "paused",
+        "label_zh": "暂停",
+        "label_en": "Paused",
+        "public_status_zh": "暂停服务",
+        "public_status_en": "Paused",
+        "service_rule_zh": "不产生新 AI 输出；保全证据并复核。",
+        "service_rule_en": "No new AI output; preserve evidence and review."
+      },
+      {
+        "state_id": "stopped",
+        "label_zh": "停止",
+        "label_en": "Stopped",
+        "public_status_zh": "已停止 / 投诉入口保留",
+        "public_status_en": "Stopped / Complaint Entry Retained",
+        "service_rule_zh": "断开服务，禁止自动复开。",
+        "service_rule_en": "Disconnect service; automatic reopening is prohibited."
+      },
+      {
+        "state_id": "removed",
+        "label_zh": "撤场",
+        "label_en": "Removed",
+        "public_status_zh": "已撤场 / 记录可申诉",
+        "public_status_en": "Removed / Record Appealable",
+        "service_rule_zh": "移除设备、状态和未授权内容，执行保留删除。",
+        "service_rule_en": "Remove equipment, status, and unauthorized content; execute retention/deletion."
+      },
+      {
+        "state_id": "archive",
+        "label_zh": "归档",
+        "label_en": "Archive",
+        "public_status_zh": "已归档 / 结论与限制可查",
+        "public_status_en": "Archived / Findings and Limits Available",
+        "service_rule_zh": "只保留获准证据；后续重开必须从预检重新开始。",
+        "service_rule_en": "Retain only authorized evidence; any reopening restarts at preflight."
+      }
+    ],
+    "transitions": [
+      {
+        "from_state": "preflight",
+        "to_state": "limited-open",
+        "trigger_zh": "所有适用书面 Gate 与具名值守席位均有证据",
+        "trigger_en": "all applicable written gates and named duty roles are evidenced",
+        "authorized_role_keys": [
+          "scenario_service_owner",
+          "safety_professional",
+          "data_steward",
+          "accessibility_lead"
+        ],
+        "required_evidence_zh": [
+          "范围与期限",
+          "数据台账",
+          "值守与替补",
+          "低技术替代测试",
+          "投诉与撤场演练"
+        ],
+        "required_evidence_en": [
+          "scope and term",
+          "data register",
+          "duty and substitute roster",
+          "low-tech fallback test",
+          "complaint and removal rehearsal"
+        ],
+        "public_status_zh": "受控测试",
+        "public_status_en": "Controlled Test",
+        "rollback_zh": "留在 preflight",
+        "rollback_en": "remain in preflight",
+        "prohibited_automation_zh": "AI 不得批准或静默开放",
+        "prohibited_automation_en": "AI may not approve or silently open"
+      },
+      {
+        "from_state": "limited-open",
+        "to_state": "operating",
+        "trigger_zh": "受限开放复核通过且该场景获准进入运行",
+        "trigger_en": "limited-open review passes and the scenario is authorized for operation",
+        "authorized_role_keys": [
+          "scenario_service_owner",
+          "safety_professional"
+        ],
+        "required_evidence_zh": [
+          "测试日志",
+          "接管演练",
+          "等效服务检查",
+          "书面放行"
+        ],
+        "required_evidence_en": [
+          "test log",
+          "takeover rehearsal",
+          "equivalent-service check",
+          "written release"
+        ],
+        "public_status_zh": "运行中 / 人工入口可见",
+        "public_status_en": "Operating / Human Entry Visible",
+        "rollback_zh": "先暂停，再限量复测",
+        "rollback_en": "pause, then return to limited-open",
+        "prohibited_automation_zh": "AI 不得扩张用户、目的、数据、期限或权限",
+        "prohibited_automation_en": "AI may not expand users, purpose, data, term, or authority"
+      },
+      {
+        "from_state": "limited-open",
+        "to_state": "degraded",
+        "trigger_zh": "非关键依赖失败且安全的人工或静态替代可用",
+        "trigger_en": "a non-critical dependency fails while a safe human or static fallback is available",
+        "authorized_role_keys": [
+          "on_site_host",
+          "facilities_maintenance"
+        ],
+        "required_evidence_zh": [
+          "故障记录",
+          "影响范围",
+          "替代启用"
+        ],
+        "required_evidence_en": [
+          "fault record",
+          "affected scope",
+          "fallback activation"
+        ],
+        "public_status_zh": "降级服务 / 静态或人工",
+        "public_status_en": "Degraded / Static or Human",
+        "rollback_zh": "进入暂停后再限量复测",
+        "rollback_en": "enter paused before a limited retest",
+        "prohibited_automation_zh": "不得静默降级",
+        "prohibited_automation_en": "silent degradation is prohibited"
+      },
+      {
+        "from_state": "operating",
+        "to_state": "degraded",
+        "trigger_zh": "来源、模型、网络、接口、语言或无障碍质量低于 design-target",
+        "trigger_en": "source, model, network, interface, language, or accessibility quality falls below design-target",
+        "authorized_role_keys": [
+          "on_site_host",
+          "facilities_maintenance",
+          "data_steward"
+        ],
+        "required_evidence_zh": [
+          "故障记录",
+          "影响范围",
+          "替代启用"
+        ],
+        "required_evidence_en": [
+          "fault record",
+          "affected scope",
+          "fallback activation"
+        ],
+        "public_status_zh": "降级服务 / 静态或人工",
+        "public_status_en": "Degraded / Static or Human",
+        "rollback_zh": "进入暂停后再限量复测",
+        "rollback_en": "enter paused before a limited retest",
+        "prohibited_automation_zh": "AI 不得自证恢复",
+        "prohibited_automation_en": "AI may not self-certify recovery"
+      },
+      {
+        "from_state": "limited-open",
+        "to_state": "human-takeover",
+        "trigger_zh": "伤害、权利、投诉、权限、不确定性或用户请求触发",
+        "trigger_en": "a harm, rights, complaint, authority, uncertainty, or user-request trigger occurs",
+        "authorized_role_keys": [
+          "on_site_host",
+          "scenario_service_owner",
+          "complaint_appeal_lead"
+        ],
+        "required_evidence_zh": [
+          "触发记录",
+          "隔离输出",
+          "具名人工负责人"
+        ],
+        "required_evidence_en": [
+          "trigger record",
+          "isolated output",
+          "named human owner"
+        ],
+        "public_status_zh": "Human Takeover / 人工正在负责",
+        "public_status_en": "Human Takeover / Human Accountable",
+        "rollback_zh": "转入 paused 后再限量复测",
+        "rollback_en": "move to paused before a limited retest",
+        "prohibited_automation_zh": "AI 不得压制接管",
+        "prohibited_automation_en": "AI may not suppress takeover"
+      },
+      {
+        "from_state": "operating",
+        "to_state": "human-takeover",
+        "trigger_zh": "伤害、权利、投诉、高风险不确定、越权或用户请求触发",
+        "trigger_en": "harm, rights, complaint, high-risk uncertainty, authority overreach, or a user request triggers",
+        "authorized_role_keys": [
+          "on_site_host",
+          "scenario_service_owner",
+          "complaint_appeal_lead"
+        ],
+        "required_evidence_zh": [
+          "触发记录",
+          "受影响用户告知",
+          "隔离输出"
+        ],
+        "required_evidence_en": [
+          "trigger record",
+          "affected-user notice",
+          "isolated output"
+        ],
+        "public_status_zh": "Human Takeover / 人工正在负责",
+        "public_status_en": "Human Takeover / Human Accountable",
+        "rollback_zh": "转入 paused 后再限量复测",
+        "rollback_en": "move to paused before a limited retest",
+        "prohibited_automation_zh": "AI 不得决定权利、结案或复开",
+        "prohibited_automation_en": "AI may not decide rights, close a case, or reopen"
+      },
+      {
+        "from_state": "degraded",
+        "to_state": "human-takeover",
+        "trigger_zh": "替代失败或影响变为高风险或 unknown",
+        "trigger_en": "fallback fails or impact becomes high-risk or unknown",
+        "authorized_role_keys": [
+          "scenario_service_owner",
+          "on_site_host",
+          "safety_professional"
+        ],
+        "required_evidence_zh": [
+          "替代失败",
+          "影响范围",
+          "具名人工负责人"
+        ],
+        "required_evidence_en": [
+          "fallback failure",
+          "impact scope",
+          "named human owner"
+        ],
+        "public_status_zh": "Human Takeover / 人工正在负责",
+        "public_status_en": "Human Takeover / Human Accountable",
+        "rollback_zh": "转入 paused 后再限量复测",
+        "rollback_en": "move to paused before a limited retest",
+        "prohibited_automation_zh": "AI 不得推断安全范围",
+        "prohibited_automation_en": "AI may not infer a safe scope"
+      },
+      {
+        "from_state": "degraded",
+        "to_state": "paused",
+        "trigger_zh": "影响范围 unknown、证据不完整或等效服务不可达",
+        "trigger_en": "impact scope is unknown, evidence is incomplete, or equivalent service is unreachable",
+        "authorized_role_keys": [
+          "scenario_service_owner",
+          "data_steward",
+          "accessibility_lead"
+        ],
+        "required_evidence_zh": [
+          "暂停决定",
+          "证据保全",
+          "未决问题清单"
+        ],
+        "required_evidence_en": [
+          "pause decision",
+          "evidence hold",
+          "open-issue register"
+        ],
+        "public_status_zh": "暂停服务",
+        "public_status_en": "Paused",
+        "rollback_zh": "留在 degraded 直至暂停动作完成",
+        "rollback_en": "remain degraded until pause actions complete",
+        "prohibited_automation_zh": "禁止自动恢复",
+        "prohibited_automation_en": "automatic recovery is prohibited"
+      },
+      {
+        "from_state": "human-takeover",
+        "to_state": "paused",
+        "trigger_zh": "即时伤害已控制但原因或投诉仍未闭环",
+        "trigger_en": "immediate harm is contained but cause or complaint remains unresolved",
+        "authorized_role_keys": [
+          "scenario_service_owner",
+          "complaint_appeal_lead"
+        ],
+        "required_evidence_zh": [
+          "暂停决定",
+          "未结投诉",
+          "证据保全"
+        ],
+        "required_evidence_en": [
+          "pause decision",
+          "open complaints",
+          "evidence hold"
+        ],
+        "public_status_zh": "暂停服务",
+        "public_status_en": "Paused",
+        "rollback_zh": "回到 human-takeover 继续人工处置",
+        "rollback_en": "return to human-takeover for continued human action",
+        "prohibited_automation_zh": "AI 不得结案或恢复",
+        "prohibited_automation_en": "AI may not close the case or resume"
+      },
+      {
+        "from_state": "human-takeover",
+        "to_state": "stopped",
+        "trigger_zh": "安全、权利、权限、投诉或接管无法闭环",
+        "trigger_en": "safety, rights, authority, complaint, or takeover cannot be closed",
+        "authorized_role_keys": [
+          "scenario_service_owner",
+          "safety_professional",
+          "complaint_appeal_lead"
+        ],
+        "required_evidence_zh": [
+          "停止决定",
+          "服务隔离",
+          "影响范围记录"
+        ],
+        "required_evidence_en": [
+          "stop decision",
+          "service isolation",
+          "affected-scope record"
+        ],
+        "public_status_zh": "已停止 / 投诉入口保留",
+        "public_status_en": "Stopped / Complaint Entry Retained",
+        "rollback_zh": "不得回退；只能撤场或未来新建实例",
+        "rollback_en": "no rollback; removal or a future new instance only",
+        "prohibited_automation_zh": "禁止自动复开",
+        "prohibited_automation_en": "automatic reopening is prohibited"
+      },
+      {
+        "from_state": "limited-open",
+        "to_state": "stopped",
+        "trigger_zh": "伤害、权利违规、无人接管、必填日志缺失或书面期限届满",
+        "trigger_en": "harm, rights violation, absent takeover, mandatory-log gap, or written-term expiry",
+        "authorized_role_keys": [
+          "scenario_service_owner",
+          "on_site_host",
+          "safety_professional"
+        ],
+        "required_evidence_zh": [
+          "停止决定",
+          "服务隔离",
+          "投诉证据保全"
+        ],
+        "required_evidence_en": [
+          "stop decision",
+          "service isolation",
+          "complaint-evidence preservation"
+        ],
+        "public_status_zh": "已停止 / 投诉入口保留",
+        "public_status_en": "Stopped / Complaint Entry Retained",
+        "rollback_zh": "不得回退；只能撤场或未来新建实例",
+        "rollback_en": "no rollback; removal or a future new instance only",
+        "prohibited_automation_zh": "AI 不得推翻停止",
+        "prohibited_automation_en": "AI may not override stop"
+      },
+      {
+        "from_state": "paused",
+        "to_state": "limited-open",
+        "trigger_zh": "书面修复与受限复测获人工批准",
+        "trigger_en": "written remediation and restricted retest receive human approval",
+        "authorized_role_keys": [
+          "scenario_service_owner",
+          "safety_professional"
+        ],
+        "required_evidence_zh": [
+          "修复记录",
+          "复测范围",
+          "人员",
+          "公众告知"
+        ],
+        "required_evidence_en": [
+          "remediation record",
+          "retest scope",
+          "staffing",
+          "public notice"
+        ],
+        "public_status_zh": "受控测试",
+        "public_status_en": "Controlled Test",
+        "rollback_zh": "回到 paused",
+        "rollback_en": "return to paused",
+        "prohibited_automation_zh": "AI 不得扩大复测",
+        "prohibited_automation_en": "AI may not widen the retest"
+      },
+      {
+        "from_state": "paused",
+        "to_state": "stopped",
+        "trigger_zh": "修复失败、投诉仍不可达或责任与权限缺失",
+        "trigger_en": "remediation fails, complaint remains unreachable, or owner and authority are absent",
+        "authorized_role_keys": [
+          "scenario_service_owner",
+          "complaint_appeal_lead"
+        ],
+        "required_evidence_zh": [
+          "复核记录",
+          "未决问题清单"
+        ],
+        "required_evidence_en": [
+          "review record",
+          "unresolved-issue register"
+        ],
+        "public_status_zh": "已停止 / 投诉入口保留",
+        "public_status_en": "Stopped / Complaint Entry Retained",
+        "rollback_zh": "不得回退；只能撤场或未来新建实例",
+        "rollback_en": "no rollback; removal or a future new instance only",
+        "prohibited_automation_zh": "不得把暂停静默改为结案",
+        "prohibited_automation_en": "pause may not be converted into silent closure"
+      },
+      {
+        "from_state": "stopped",
+        "to_state": "removed",
+        "trigger_zh": "经授权撤场完成并有场地、访问与数据证据",
+        "trigger_en": "authorized removal completes with site, access, and data evidence",
+        "authorized_role_keys": [
+          "scenario_service_owner",
+          "facilities_maintenance",
+          "data_steward",
+          "rights_content_reviewer"
+        ],
+        "required_evidence_zh": [
+          "清单",
+          "断开",
+          "访问撤销",
+          "数据动作",
+          "场地检查"
+        ],
+        "required_evidence_en": [
+          "inventory",
+          "disconnection",
+          "access revocation",
+          "data action",
+          "site check"
+        ],
+        "public_status_zh": "已撤场 / 记录可申诉",
+        "public_status_en": "Removed / Record Appealable",
+        "rollback_zh": "撤场不完整则保持 stopped",
+        "rollback_en": "remain stopped when removal is incomplete",
+        "prohibited_automation_zh": "AI 不得证明物理撤场完成",
+        "prohibited_automation_en": "AI may not certify physical removal"
+      },
+      {
+        "from_state": "removed",
+        "to_state": "archive",
+        "trigger_zh": "保留删除、投诉状态、证据索引和公众复盘完成",
+        "trigger_en": "retention/deletion, complaint status, evidence index, and public findings are complete",
+        "authorized_role_keys": [
+          "records_steward",
+          "complaint_appeal_lead",
+          "rights_content_reviewer"
+        ],
+        "required_evidence_zh": [
+          "归档索引",
+          "保留删除记录",
+          "投诉状态",
+          "公众结论"
+        ],
+        "required_evidence_en": [
+          "archive index",
+          "retention/deletion record",
+          "complaint status",
+          "public findings"
+        ],
+        "public_status_zh": "已归档 / 结论与限制可查",
+        "public_status_en": "Archived / Findings and Limits Available",
+        "rollback_zh": "缺口未闭合则保持 removed",
+        "rollback_en": "remain removed until archive gaps close",
+        "prohibited_automation_zh": "不得删除申诉证据或由 AI 宣布结案",
+        "prohibited_automation_en": "AI may not delete appeal evidence or declare closure"
+      }
+    ],
+    "f10_term_mapping": {
+      "preflight": [
+        "Conceptual Recommendation",
+        "Pending Site Verification"
+      ],
+      "limited-open": [
+        "Controlled Test"
+      ],
+      "human-takeover": [
+        "Human Takeover"
+      ],
+      "paused": [
+        "Paused"
+      ]
+    },
+    "archive_semantics": {
+      "terminal_for_run_instance": true,
+      "outbound_transition_allowed": false,
+      "future_use_requires_new_run_instance": true,
+      "future_use_rule_zh": "未来使用不是复开归档实例；必须创建新的 run_instance_id，从 preflight 开始。",
+      "future_use_rule_en": "Future use does not reopen an archived instance; it creates a new run_instance_id beginning at preflight."
+    }
+  },
+  "authority_model": {
+    "ai_may": [
+      "suggest",
+      "sort",
+      "translate",
+      "assist verification",
+      "prompt"
+    ],
+    "human_only": [
+      "approve implementation",
+      "change rights or entitlements",
+      "sanction",
+      "deny resources",
+      "make medical/legal/fire/safety conclusions",
+      "stop",
+      "remove",
+      "reopen"
+    ],
+    "prohibited": [
+      "default facial recognition",
+      "emotion recognition",
+      "social scoring",
+      "predictive policing",
+      "undisclosed sensitive inference",
+      "hidden monitoring",
+      "bypassing human accountability"
+    ]
+  },
+  "scenarios": [
+    {
+      "scenario_id": "SC01",
+      "title_zh": "模型评测沙盒",
+      "title_en": "Model Evaluation Sandbox",
+      "flagship": true,
+      "purpose_and_spatial_carrier": {
+        "purpose_zh": "在众智园公开受控模型评测证据与异常，不把分数当批准。",
+        "purpose_en": "Expose controlled model-evaluation evidence and anomalies at Zhongzhiyuan without treating scores as approval.",
+        "carrier_id": "PROV-KEY-001",
+        "carrier_zh": "众智园验证庭 / CX02 人工接管前场",
+        "carrier_en": "Zhongzhiyuan validation court / CX02 Human Takeover apron",
+        "feature_refs": [
+          "geometry/key_areas.geojson#PROV-KEY-001",
+          "geometry/roads.geojson#CX02",
+          "geometry/roads.geojson#CX02-D03"
+        ]
+      },
+      "users": {
+        "primary": [
+          "U1",
+          "U2",
+          "U3"
+        ],
+        "affected": [
+          "public observers",
+          "test subjects represented by benchmarks"
+        ]
+      },
+      "inputs": {
+        "allowed_zh": [
+          "公开或清权基准",
+          "合成数据",
+          "测试协议",
+          "匿名异常"
+        ],
+        "allowed_en": [
+          "public or cleared benchmarks",
+          "synthetic data",
+          "test protocol",
+          "anonymous anomalies"
+        ],
+        "prohibited_zh": [
+          "未清权个人数据",
+          "隐藏身份标签",
+          "用单一分数作批准"
+        ],
+        "prohibited_en": [
+          "uncleared personal data",
+          "hidden identity labels",
+          "approval from a single score"
+        ]
+      },
+      "data_and_evidence": {
+        "source_ids": [
+          "DATA-SRC-AGENT-TASKBOOK-20260518",
+          "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES"
+        ],
+        "evidence_grade": "design-target + cleared test source required",
+        "no_personal_data_required": true
+      },
+      "minimum_necessary_data": {
+        "zh": [
+          "模型/版本",
+          "协议版本",
+          "基准版本",
+          "输出与异常",
+          "人工放行"
+        ],
+        "en": [
+          "model/version",
+          "protocol version",
+          "benchmark version",
+          "output/anomaly",
+          "human release"
+        ]
+      },
+      "outputs": {
+        "zh": [
+          "带限制的评测摘要",
+          "异常清单",
+          "人工决定"
+        ],
+        "en": [
+          "qualified evaluation summary",
+          "anomaly list",
+          "human decision"
+        ]
+      },
+      "ai_authority": {
+        "zh": "只计算、排序、解释和提示异常。",
+        "en": "Only calculate, rank, explain, and flag anomalies."
+      },
+      "human_only_decisions": {
+        "zh": [
+          "基准适用",
+          "安全放行",
+          "发布",
+          "停止/复开"
+        ],
+        "en": [
+          "benchmark fitness",
+          "safety release",
+          "publication",
+          "stop/reopen"
+        ]
+      },
+      "frontstage_notice": {
+        "zh": "受控评测，不是认证；显示来源、版本、限制、人工入口和状态。",
+        "en": "Controlled evaluation, not certification; show source, version, limits, human entry, and state."
+      },
+      "lawful_basis_or_no_collection": {
+        "status": "no personal data required",
+        "zh": "默认只用公开/清权或合成材料。",
+        "en": "Default to public/cleared or synthetic material."
+      },
+      "human_takeover": {
+        "triggers": {
+          "zh": [
+            "来源无效",
+            "无法解释的异常",
+            "权利投诉",
+            "安全复核人缺席"
+          ],
+          "en": [
+            "invalid source",
+            "unexplained anomaly",
+            "rights complaint",
+            "missing safety reviewer"
+          ]
+        },
+        "responsible_role_keys": [
+          "data_steward",
+          "safety_professional"
+        ],
+        "responsible_role_label_zh": "数据治理责任人与安全专业 Gate 责任人",
+        "responsible_role_label_en": "data steward and safety professional",
+        "visible_action_zh": "CX02 前场亮起 Human Takeover，隔离输出并由安全人员解释。",
+        "visible_action_en": "Show Human Takeover at the CX02 apron, isolate output, and hand explanation to safety staff."
+      },
+      "low_tech_alternative": {
+        "zh": "离线测试脚本、纸面协议和人工异常登记。",
+        "en": "Offline test script, paper protocol, and human anomaly register."
+      },
+      "complaints_and_appeals": {
+        "summary_zh": "前场/纸面登记→独立安全或权利复核→纠正、暂停或停止→书面结果。",
+        "summary_en": "Frontstage/paper record → independent safety/rights review → correct, pause, or stop → written outcome.",
+        "channels_zh": [
+          "现场人工",
+          "纸面",
+          "电话或等效非 AI 渠道"
+        ],
+        "channels_en": [
+          "on-site human",
+          "paper",
+          "phone or equivalent non-AI channel"
+        ],
+        "anonymous_allowed": true,
+        "intake_role_keys": [
+          "on_site_host",
+          "complaint_appeal_lead"
+        ],
+        "receipt_zh": "登记 ticket_id、范围与接收状态，并由人工提供可保存回执；数字时限为 design-target。",
+        "receipt_en": "Record ticket_id, scope, and receipt state, and provide a durable human-issued receipt; any numeric window is design-target.",
+        "independent_review_role_keys": [
+          "independent_appeal_reviewer"
+        ],
+        "independence_rule_zh": "复核人必须与原决定者、运营者和产品方分离。",
+        "independence_rule_en": "The reviewer must be separate from the original decision maker, operator, and provider.",
+        "outcome_notice_zh": "以可访问形式告知事实、理由、纠正/暂停/停止决定及未决 unknown。",
+        "outcome_notice_en": "Give an accessible notice of facts, reasons, correction/pause/stop decision, and unresolved unknowns.",
+        "reappeal_zh": "可向另一名具名独立复核人再次申诉；不得由 AI 结案。",
+        "reappeal_en": "A re-appeal may go to a different named independent reviewer; AI may not close the case.",
+        "human_takeover_on_unreachable": true,
+        "closure_criteria_zh": "回执、独立复核、结果告知、证据保全和再申诉入口均可验证。",
+        "closure_criteria_en": "Receipt, independent review, outcome notice, evidence hold, and re-appeal entry are all verifiable.",
+        "logs_category_ref": "phase3-data-governance.json#/data_categories[category=logs_appeal_materials]",
+        "retention_deletion_ref": "phase3-data-governance.json#/scenario_profiles[scenario_id=SC01].control_overrides.retention_deletion"
+      },
+      "logging_audit": {
+        "fields": [
+          "model_version",
+          "protocol_version",
+          "source_hash",
+          "input_class",
+          "output_hash",
+          "anomaly",
+          "human_reviewer",
+          "state_transition",
+          "complaint_ref"
+        ],
+        "audit_role_keys": [
+          "data_steward",
+          "records_steward"
+        ]
+      },
+      "retention_deletion": {
+        "zh": "期限和访问由书面协议设定；删除原始非必要输入，保留获准协议/异常/申诉证据；数字期限为 design-target。",
+        "en": "Written protocol sets term/access; delete unnecessary raw inputs and retain authorized protocol/anomaly/appeal evidence; numeric term is design-target."
+      },
+      "lifecycle": {
+        "normal_path": [
+          "preflight",
+          "limited-open",
+          "operating"
+        ],
+        "degraded_path": [
+          "operating",
+          "degraded",
+          "human-takeover",
+          "paused"
+        ],
+        "human_takeover_path": [
+          "operating",
+          "human-takeover",
+          "paused"
+        ],
+        "exit_path": [
+          "paused",
+          "stopped",
+          "removed",
+          "archive"
+        ],
+        "archive_is_terminal": true,
+        "future_use_requires_new_run_instance": true
+      },
+      "evaluation": {
+        "window_zh": "书面设定的 design-target 复核窗口",
+        "window_en": "written design-target review window",
+        "measures_zh": [
+          "协议完整性",
+          "异常闭环",
+          "接管演练"
+        ],
+        "measures_en": [
+          "protocol completeness",
+          "anomaly closure",
+          "takeover rehearsal"
+        ],
+        "review_triggers_zh": [
+          "来源或版本变化",
+          "无法解释的异常",
+          "投诉"
+        ],
+        "review_triggers_en": [
+          "source/version change",
+          "unexplained anomaly",
+          "complaint"
+        ]
+      },
+      "dependencies": {
+        "zh": [
+          "清权基准",
+          "数据治理责任人",
+          "安全或专业复核人",
+          "可见前台"
+        ],
+        "en": [
+          "cleared benchmark",
+          "test steward",
+          "safety/professional reviewer",
+          "visible interface"
+        ]
+      },
+      "qualitative_cost": "M",
+      "maintenance": {
+        "zh": "每次版本或来源变化重做预检。",
+        "en": "Repeat preflight for every model or source change."
+      },
+      "stop_exit": {
+        "conditions_zh": [
+          "来源无效",
+          "安全未决",
+          "权利失败",
+          "无责任人",
+          "必填日志缺失"
+        ],
+        "conditions_en": [
+          "invalid source",
+          "unresolved safety",
+          "rights failure",
+          "no owner",
+          "mandatory log missing"
+        ],
+        "actions_zh": [
+          "隔离",
+          "停止",
+          "移除访问",
+          "归档证据",
+          "仅可书面复测"
+        ],
+        "actions_en": [
+          "isolate",
+          "stop",
+          "remove access",
+          "archive evidence",
+          "reopen only in writing"
+        ],
+        "stop_authority_role_keys": [
+          "scenario_service_owner",
+          "on_site_host",
+          "safety_professional",
+          "complaint_appeal_lead"
+        ],
+        "removal_authority_role_keys": [
+          "scenario_service_owner",
+          "facilities_maintenance",
+          "data_steward"
+        ],
+        "future_use_rule_zh": "stopped、removed 或 archive 后不得复开原实例；未来使用须新建 run_instance_id 并从 preflight 开始。",
+        "future_use_rule_en": "After stopped, removed, or archive, the original instance cannot reopen; future use creates a new run_instance_id at preflight."
+      },
+      "frontstage_summary": {
+        "ai_may_zh": "计算、排序、解释、提示异常",
+        "ai_may_en": "Calculate, rank, explain, flag",
+        "human_only_zh": "安全放行、发布、停止/复开",
+        "human_only_en": "Safety release, publish, stop/reopen",
+        "takeover_zh": "CX02 前场亮牌、隔离输出、安全人员解释",
+        "takeover_en": "CX02 sign, isolate output, safety staff explain",
+        "low_tech_zh": "离线脚本＋纸面协议",
+        "low_tech_en": "Offline script + paper protocol",
+        "lifecycle_zh": "来源/异常失败→接管→未解即停并归档",
+        "lifecycle_en": "Source/anomaly fail → takeover → stop/archive if unresolved"
+      },
+      "failure_modes": {
+        "zh": [
+          "来源无效",
+          "安全未决",
+          "权利失败",
+          "无责任人",
+          "必填日志缺失"
+        ],
+        "en": [
+          "invalid source",
+          "unresolved safety",
+          "rights failure",
+          "no owner",
+          "mandatory log missing"
+        ]
+      },
+      "data_governance_ref": "phase3-data-governance.json#/scenario_profiles[scenario_id=SC01]"
+    },
+    {
+      "scenario_id": "SC02",
+      "title_zh": "边缘节点能效与热安全试验",
+      "title_en": "Edge-Node Energy and Thermal-Safety Bench",
+      "flagship": false,
+      "purpose_and_spatial_carrier": {
+        "purpose_zh": "在众智园受控验证清权设备的能效与热安全，不推断市政容量。",
+        "purpose_en": "Test cleared edge-node energy and thermal safety at Zhongzhiyuan without inferring utility capacity.",
+        "carrier_id": "PROV-KEY-001",
+        "carrier_zh": "众智园可逆证据前场",
+        "carrier_en": "Zhongzhiyuan reversible evidence apron",
+        "feature_refs": [
+          "geometry/key_areas.geojson#PROV-KEY-001",
+          "geometry/public_space.geojson#PUBLIC-001"
+        ]
+      },
+      "users": {
+        "primary": [
+          "U1",
+          "U2",
+          "U3"
+        ],
+        "affected": [
+          "staff",
+          "nearby visitors",
+          "maintenance workers"
+        ]
+      },
+      "inputs": {
+        "allowed_zh": [
+          "清权设备遥测",
+          "人工阈值",
+          "设备状态"
+        ],
+        "allowed_en": [
+          "cleared device telemetry",
+          "human-set thresholds",
+          "device state"
+        ],
+        "prohibited_zh": [
+          "身份跟踪",
+          "未验证消防/能源结论",
+          "自动继续越阈运行"
+        ],
+        "prohibited_en": [
+          "identity tracking",
+          "unverified fire/energy conclusions",
+          "automatic continued operation beyond thresholds"
+        ]
+      },
+      "data_and_evidence": {
+        "source_ids": [
+          "DATA-SRC-AGENT-TASKBOOK-20260518"
+        ],
+        "evidence_grade": "design-target; professional threshold unknown",
+        "no_personal_data_required": true
+      },
+      "minimum_necessary_data": {
+        "zh": [
+          "设备 ID",
+          "时间",
+          "功率/温度",
+          "阈值版本",
+          "人工状态"
+        ],
+        "en": [
+          "device ID",
+          "time",
+          "power/temperature",
+          "threshold version",
+          "human state"
+        ]
+      },
+      "outputs": {
+        "zh": [
+          "异常提示",
+          "人工确认的隔离状态"
+        ],
+        "en": [
+          "anomaly flag",
+          "human-confirmed isolation state"
+        ]
+      },
+      "ai_authority": {
+        "zh": "只检测和提示异常。",
+        "en": "Only detect and flag anomalies."
+      },
+      "human_only_decisions": {
+        "zh": [
+          "专业阈值",
+          "继续/隔离",
+          "消防与能源结论",
+          "复开"
+        ],
+        "en": [
+          "professional threshold",
+          "continue/isolate",
+          "fire and energy conclusion",
+          "reopen"
+        ]
+      },
+      "frontstage_notice": {
+        "zh": "受控设备试验；显示设备状态、人工负责人和断电入口。",
+        "en": "Controlled device test; show device state, accountable human, and power-off entry."
+      },
+      "lawful_basis_or_no_collection": {
+        "status": "no personal data required",
+        "zh": "只读运营非个人遥测。",
+        "en": "Read only operational non-personal telemetry."
+      },
+      "human_takeover": {
+        "triggers": {
+          "zh": [
+            "阈值越界",
+            "传感故障",
+            "供电或消防不确定",
+            "日志不完整"
+          ],
+          "en": [
+            "threshold exceeded",
+            "sensor fault",
+            "power/fire uncertainty",
+            "incomplete log"
+          ]
+        },
+        "responsible_role_keys": [
+          "facilities_maintenance",
+          "safety_professional"
+        ],
+        "responsible_role_label_zh": "设施维护责任人与安全专业 Gate 责任人",
+        "responsible_role_label_en": "facilities owner and safety professional",
+        "visible_action_zh": "状态转人工接管，现场断电/隔离并标示不可用。",
+        "visible_action_en": "Switch to Human Takeover, power off/isolate on site, and mark unavailable."
+      },
+      "low_tech_alternative": {
+        "zh": "独立仪表、断电开关、纸面巡检。",
+        "en": "Independent meter, power-off switch, and paper inspection."
+      },
+      "complaints_and_appeals": {
+        "summary_zh": "现场工作人员登记噪声/热/安全问题，转专业复核。",
+        "summary_en": "Staff log noise/heat/safety concerns for professional review.",
+        "channels_zh": [
+          "现场人工",
+          "纸面",
+          "电话或等效非 AI 渠道"
+        ],
+        "channels_en": [
+          "on-site human",
+          "paper",
+          "phone or equivalent non-AI channel"
+        ],
+        "anonymous_allowed": true,
+        "intake_role_keys": [
+          "on_site_host",
+          "complaint_appeal_lead"
+        ],
+        "receipt_zh": "登记 ticket_id、范围与接收状态，并由人工提供可保存回执；数字时限为 design-target。",
+        "receipt_en": "Record ticket_id, scope, and receipt state, and provide a durable human-issued receipt; any numeric window is design-target.",
+        "independent_review_role_keys": [
+          "independent_appeal_reviewer"
+        ],
+        "independence_rule_zh": "复核人必须与原决定者、运营者和产品方分离。",
+        "independence_rule_en": "The reviewer must be separate from the original decision maker, operator, and provider.",
+        "outcome_notice_zh": "以可访问形式告知事实、理由、纠正/暂停/停止决定及未决 unknown。",
+        "outcome_notice_en": "Give an accessible notice of facts, reasons, correction/pause/stop decision, and unresolved unknowns.",
+        "reappeal_zh": "可向另一名具名独立复核人再次申诉；不得由 AI 结案。",
+        "reappeal_en": "A re-appeal may go to a different named independent reviewer; AI may not close the case.",
+        "human_takeover_on_unreachable": true,
+        "closure_criteria_zh": "回执、独立复核、结果告知、证据保全和再申诉入口均可验证。",
+        "closure_criteria_en": "Receipt, independent review, outcome notice, evidence hold, and re-appeal entry are all verifiable.",
+        "logs_category_ref": "phase3-data-governance.json#/data_categories[category=logs_appeal_materials]",
+        "retention_deletion_ref": "phase3-data-governance.json#/scenario_profiles[scenario_id=SC02].control_overrides.retention_deletion"
+      },
+      "logging_audit": {
+        "fields": [
+          "device_id",
+          "sensor_version",
+          "telemetry_range",
+          "threshold_version",
+          "alarm",
+          "human_action",
+          "state_transition"
+        ],
+        "audit_role_keys": [
+          "data_steward",
+          "records_steward"
+        ]
+      },
+      "retention_deletion": {
+        "zh": "遥测按书面试验期保留；删除无关原始流，保留事故/申诉证据。",
+        "en": "Retain telemetry for the written test term; delete unrelated raw streams and keep incident/appeal evidence."
+      },
+      "lifecycle": {
+        "normal_path": [
+          "preflight",
+          "limited-open",
+          "operating"
+        ],
+        "degraded_path": [
+          "operating",
+          "degraded",
+          "human-takeover",
+          "paused"
+        ],
+        "human_takeover_path": [
+          "operating",
+          "human-takeover",
+          "paused"
+        ],
+        "exit_path": [
+          "paused",
+          "stopped",
+          "removed",
+          "archive"
+        ],
+        "archive_is_terminal": true,
+        "future_use_requires_new_run_instance": true
+      },
+      "evaluation": {
+        "window_zh": "书面设定的 design-target 复核窗口",
+        "window_en": "per written test cycle",
+        "measures_zh": [
+          "报警追踪",
+          "人工隔离",
+          "日志完整"
+        ],
+        "measures_en": [
+          "alarm trace",
+          "manual isolation",
+          "log completeness"
+        ],
+        "review_triggers_zh": [
+          "阈值事件",
+          "设备或版本变化"
+        ],
+        "review_triggers_en": [
+          "threshold event",
+          "device/version change"
+        ]
+      },
+      "dependencies": {
+        "zh": [
+          "专业阈值",
+          "安全断电",
+          "设施责任人",
+          "消防与能源复核"
+        ],
+        "en": [
+          "professional thresholds",
+          "safe power isolation",
+          "facility role",
+          "fire/energy review"
+        ]
+      },
+      "qualitative_cost": "M",
+      "maintenance": {
+        "zh": "校核传感器、开关、散热和日志。",
+        "en": "Check sensors, switches, cooling, and logs."
+      },
+      "stop_exit": {
+        "conditions_zh": [
+          "故障",
+          "阈值越界",
+          "专业限值 unknown",
+          "日志缺失"
+        ],
+        "conditions_en": [
+          "fault",
+          "threshold breach",
+          "unknown professional limit",
+          "missing log"
+        ],
+        "actions_zh": [
+          "隔离",
+          "断电",
+          "停止",
+          "撤除设备",
+          "归档"
+        ],
+        "actions_en": [
+          "isolate",
+          "power off",
+          "stop",
+          "remove device",
+          "archive"
+        ],
+        "stop_authority_role_keys": [
+          "scenario_service_owner",
+          "on_site_host",
+          "safety_professional",
+          "complaint_appeal_lead"
+        ],
+        "removal_authority_role_keys": [
+          "scenario_service_owner",
+          "facilities_maintenance",
+          "data_steward"
+        ],
+        "future_use_rule_zh": "stopped、removed 或 archive 后不得复开原实例；未来使用须新建 run_instance_id 并从 preflight 开始。",
+        "future_use_rule_en": "After stopped, removed, or archive, the original instance cannot reopen; future use creates a new run_instance_id at preflight."
+      },
+      "frontstage_summary": {
+        "ai_may_zh": "检测设备异常",
+        "ai_may_en": "Detect device anomalies",
+        "human_only_zh": "阈值、隔离、消防/能源与复开",
+        "human_only_en": "Threshold, isolate, fire/energy, reopen",
+        "takeover_zh": "断电隔离并标示不可用",
+        "takeover_en": "Power off, isolate, mark unavailable",
+        "low_tech_zh": "仪表＋断电开关＋纸检",
+        "low_tech_en": "Meter + power switch + paper check",
+        "lifecycle_zh": "故障/越阈→隔离→未解即撤",
+        "lifecycle_en": "Fault/limit → isolate → remove if unresolved"
+      },
+      "failure_modes": {
+        "zh": [
+          "故障",
+          "阈值越界",
+          "专业限值 unknown",
+          "日志缺失"
+        ],
+        "en": [
+          "fault",
+          "threshold breach",
+          "unknown professional limit",
+          "missing log"
+        ]
+      },
+      "data_governance_ref": "phase3-data-governance.json#/scenario_profiles[scenario_id=SC02]"
+    },
+    {
+      "scenario_id": "SC03",
+      "title_zh": "具身智能无障碍共测",
+      "title_en": "Embodied-AI Accessibility Co-Test",
+      "flagship": false,
+      "purpose_and_spatial_carrier": {
+        "purpose_zh": "在众智园以自愿任务共测具身 AI 的可达与安全，保留人工陪同。",
+        "purpose_en": "Co-test embodied-AI access and safety through voluntary tasks at Zhongzhiyuan with human escort retained.",
+        "carrier_id": "PROV-KEY-001",
+        "carrier_zh": "众智园验证庭 / CX02",
+        "carrier_en": "Zhongzhiyuan validation court / CX02",
+        "feature_refs": [
+          "geometry/key_areas.geojson#PROV-KEY-001",
+          "geometry/roads.geojson#CX02"
+        ]
+      },
+      "users": {
+        "primary": [
+          "U2",
+          "U3",
+          "U6"
+        ],
+        "affected": [
+          "companions",
+          "bystanders",
+          "safety staff"
+        ]
+      },
+      "inputs": {
+        "allowed_zh": [
+          "自愿任务",
+          "环境状态",
+          "匿名近失"
+        ],
+        "allowed_en": [
+          "voluntary task",
+          "environment state",
+          "anonymous near miss"
+        ],
+        "prohibited_zh": [
+          "身份画像",
+          "默认生物识别",
+          "无安全员运行"
+        ],
+        "prohibited_en": [
+          "identity profiling",
+          "default biometrics",
+          "operation without safety host"
+        ]
+      },
+      "data_and_evidence": {
+        "source_ids": [
+          "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+          "DATA-SRC-AGENT-TASKBOOK-20260518"
+        ],
+        "evidence_grade": "design-target; field accessibility audit not conducted",
+        "no_personal_data_required": true
+      },
+      "minimum_necessary_data": {
+        "zh": [
+          "任务类型",
+          "环境状态",
+          "设备状态",
+          "人工接管",
+          "近失"
+        ],
+        "en": [
+          "task type",
+          "environment state",
+          "device state",
+          "human takeover",
+          "near miss"
+        ]
+      },
+      "outputs": {
+        "zh": [
+          "辅助提示",
+          "安全员决定",
+          "近失记录"
+        ],
+        "en": [
+          "assistive prompt",
+          "safety-host decision",
+          "near-miss record"
+        ]
+      },
+      "ai_authority": {
+        "zh": "只提示和辅助任务。",
+        "en": "Only prompt and assist the task."
+      },
+      "human_only_decisions": {
+        "zh": [
+          "参与适宜性",
+          "安全界限",
+          "停止",
+          "伤害处置"
+        ],
+        "en": [
+          "participation fitness",
+          "safety boundary",
+          "stop",
+          "harm response"
+        ]
+      },
+      "frontstage_notice": {
+        "zh": "自愿共测，可拒绝 AI；显示安全员、停止按钮和人工路线。",
+        "en": "Voluntary co-test with AI refusal; show safety host, stop control, and human route."
+      },
+      "lawful_basis_or_no_collection": {
+        "status": "no personal data required",
+        "zh": "默认不识别身份；个案记录需另行法律/伦理审查。",
+        "en": "No identity recognition by default; case records require separate legal/ethics review."
+      },
+      "human_takeover": {
+        "triggers": {
+          "zh": [
+            "近失",
+            "无障碍失败",
+            "传感或接口故障",
+            "参与者要求",
+            "安全主持缺席"
+          ],
+          "en": [
+            "near miss",
+            "accessibility failure",
+            "sensor/interface fault",
+            "participant request",
+            "safety host absent"
+          ]
+        },
+        "responsible_role_keys": [
+          "on_site_host",
+          "safety_professional",
+          "accessibility_lead"
+        ],
+        "responsible_role_label_zh": "现场主持、安全专业 Gate 与无障碍责任人",
+        "responsible_role_label_en": "on-site host, safety professional, and accessibility lead",
+        "visible_action_zh": "CX02 人工接管前场停机，安全员陪同到低技术路线。",
+        "visible_action_en": "Stop at the CX02 Human Takeover apron and escort the participant to the low-tech route."
+      },
+      "low_tech_alternative": {
+        "zh": "人工陪同、实体标线、手动控制。",
+        "en": "Human escort, physical markings, and manual control."
+      },
+      "complaints_and_appeals": {
+        "summary_zh": "现场/照护者登记→独立无障碍与安全复核→纠正或停止。",
+        "summary_en": "Participant/carer record → independent accessibility and safety review → correct or stop.",
+        "channels_zh": [
+          "现场人工",
+          "纸面",
+          "电话或等效非 AI 渠道"
+        ],
+        "channels_en": [
+          "on-site human",
+          "paper",
+          "phone or equivalent non-AI channel"
+        ],
+        "anonymous_allowed": true,
+        "intake_role_keys": [
+          "on_site_host",
+          "complaint_appeal_lead"
+        ],
+        "receipt_zh": "登记 ticket_id、范围与接收状态，并由人工提供可保存回执；数字时限为 design-target。",
+        "receipt_en": "Record ticket_id, scope, and receipt state, and provide a durable human-issued receipt; any numeric window is design-target.",
+        "independent_review_role_keys": [
+          "independent_appeal_reviewer"
+        ],
+        "independence_rule_zh": "复核人必须与原决定者、运营者和产品方分离。",
+        "independence_rule_en": "The reviewer must be separate from the original decision maker, operator, and provider.",
+        "outcome_notice_zh": "以可访问形式告知事实、理由、纠正/暂停/停止决定及未决 unknown。",
+        "outcome_notice_en": "Give an accessible notice of facts, reasons, correction/pause/stop decision, and unresolved unknowns.",
+        "reappeal_zh": "可向另一名具名独立复核人再次申诉；不得由 AI 结案。",
+        "reappeal_en": "A re-appeal may go to a different named independent reviewer; AI may not close the case.",
+        "human_takeover_on_unreachable": true,
+        "closure_criteria_zh": "回执、独立复核、结果告知、证据保全和再申诉入口均可验证。",
+        "closure_criteria_en": "Receipt, independent review, outcome notice, evidence hold, and re-appeal entry are all verifiable.",
+        "logs_category_ref": "phase3-data-governance.json#/data_categories[category=logs_appeal_materials]",
+        "retention_deletion_ref": "phase3-data-governance.json#/scenario_profiles[scenario_id=SC03].control_overrides.retention_deletion"
+      },
+      "logging_audit": {
+        "fields": [
+          "task_type",
+          "environment_state",
+          "device_version",
+          "near_miss",
+          "takeover_time",
+          "human_action",
+          "state_transition"
+        ],
+        "audit_role_keys": [
+          "data_steward",
+          "records_steward"
+        ]
+      },
+      "retention_deletion": {
+        "zh": "删除无关原始感知流；按书面规则保留匿名安全和申诉证据。",
+        "en": "Delete unrelated raw sensing streams; retain anonymous safety/appeal evidence under written rules."
+      },
+      "lifecycle": {
+        "normal_path": [
+          "preflight",
+          "limited-open"
+        ],
+        "degraded_path": [
+          "limited-open",
+          "degraded",
+          "paused"
+        ],
+        "human_takeover_path": [
+          "limited-open",
+          "human-takeover",
+          "paused"
+        ],
+        "exit_path": [
+          "paused",
+          "stopped",
+          "removed",
+          "archive"
+        ],
+        "archive_is_terminal": true,
+        "future_use_requires_new_run_instance": true
+      },
+      "evaluation": {
+        "window_zh": "书面设定的 design-target 复核窗口",
+        "window_en": "per session + written review window",
+        "measures_zh": [
+          "近失",
+          "接管可达",
+          "等效服务"
+        ],
+        "measures_en": [
+          "near miss",
+          "takeover reachability",
+          "equivalent service"
+        ],
+        "review_triggers_zh": [
+          "任一近失",
+          "无障碍投诉",
+          "设备变化"
+        ],
+        "review_triggers_en": [
+          "any near miss",
+          "access complaint",
+          "device change"
+        ]
+      },
+      "dependencies": {
+        "zh": [
+          "安全主持",
+          "现场无障碍复核",
+          "停止控制",
+          "清晰路线"
+        ],
+        "en": [
+          "safety host",
+          "field accessibility review",
+          "stop control",
+          "clear route"
+        ]
+      },
+      "qualitative_cost": "M",
+      "maintenance": {
+        "zh": "每场检查路线、设备、按钮与人员。",
+        "en": "Check route, device, stop control, and staff every session."
+      },
+      "stop_exit": {
+        "conditions_zh": [
+          "近失",
+          "隐私问题",
+          "无安全主持",
+          "替代不可达"
+        ],
+        "conditions_en": [
+          "near miss",
+          "privacy issue",
+          "no safety host",
+          "inaccessible fallback"
+        ],
+        "actions_zh": [
+          "停机",
+          "人工陪同",
+          "保全证据",
+          "复测前撤除"
+        ],
+        "actions_en": [
+          "stop device",
+          "escort",
+          "preserve evidence",
+          "remove until retest"
+        ],
+        "stop_authority_role_keys": [
+          "scenario_service_owner",
+          "on_site_host",
+          "safety_professional",
+          "complaint_appeal_lead"
+        ],
+        "removal_authority_role_keys": [
+          "scenario_service_owner",
+          "facilities_maintenance",
+          "data_steward"
+        ],
+        "future_use_rule_zh": "stopped、removed 或 archive 后不得复开原实例；未来使用须新建 run_instance_id 并从 preflight 开始。",
+        "future_use_rule_en": "After stopped, removed, or archive, the original instance cannot reopen; future use creates a new run_instance_id at preflight."
+      },
+      "frontstage_summary": {
+        "ai_may_zh": "提示、辅助任务",
+        "ai_may_en": "Prompt and assist",
+        "human_only_zh": "安全界限、参与与停止",
+        "human_only_en": "Safety boundary, participation, stop",
+        "takeover_zh": "停机＋安全员陪同",
+        "takeover_en": "Stop device + safety escort",
+        "low_tech_zh": "人工陪同＋实体标线",
+        "low_tech_en": "Human escort + physical markings",
+        "lifecycle_zh": "近失/无障碍失败→立即接管停止",
+        "lifecycle_en": "Near miss/access fail → immediate takeover/stop"
+      },
+      "failure_modes": {
+        "zh": [
+          "近失",
+          "隐私问题",
+          "无安全主持",
+          "替代不可达"
+        ],
+        "en": [
+          "near miss",
+          "privacy issue",
+          "no safety host",
+          "inaccessible fallback"
+        ]
+      },
+      "data_governance_ref": "phase3-data-governance.json#/scenario_profiles[scenario_id=SC03]"
+    },
+    {
+      "scenario_id": "SC04",
+      "title_zh": "开放标准共创台",
+      "title_en": "Open-Standard Co-Creation Desk",
+      "flagship": false,
+      "purpose_and_spatial_carrier": {
+        "purpose_zh": "在众智园归纳公开标准、Issue 与异议，由人确认每条记录。",
+        "purpose_en": "Summarize public standards, issues, and objections at Zhongzhiyuan with human confirmation of every record.",
+        "carrier_id": "PROV-KEY-001",
+        "carrier_zh": "众智园公开议题界面",
+        "carrier_en": "Zhongzhiyuan public issue interface",
+        "feature_refs": [
+          "geometry/key_areas.geojson#PROV-KEY-001",
+          "geometry/public_space.geojson#PUBLIC-001"
+        ]
+      },
+      "users": {
+        "primary": [
+          "U1",
+          "U2",
+          "U3",
+          "U7"
+        ],
+        "affected": [
+          "attributed contributors",
+          "rights holders"
+        ]
+      },
+      "inputs": {
+        "allowed_zh": [
+          "公开标准",
+          "公开 Issue",
+          "匿名异议"
+        ],
+        "allowed_en": [
+          "public standards",
+          "public issues",
+          "anonymous objections"
+        ],
+        "prohibited_zh": [
+          "未清权全文",
+          "隐藏署名",
+          "自动采纳"
+        ],
+        "prohibited_en": [
+          "uncleared full text",
+          "hidden attribution",
+          "automatic adoption"
+        ]
+      },
+      "data_and_evidence": {
+        "source_ids": [
+          "DATA-SRC-AGENT-TASKBOOK-20260518",
+          "REPO-SOURCE-REGISTRY"
+        ],
+        "evidence_grade": "registered public/repository evidence",
+        "no_personal_data_required": true
+      },
+      "minimum_necessary_data": {
+        "zh": [
+          "来源 ID",
+          "版本/日期",
+          "议题摘要",
+          "异议",
+          "人工状态"
+        ],
+        "en": [
+          "source ID",
+          "version/date",
+          "issue summary",
+          "objection",
+          "human state"
+        ]
+      },
+      "outputs": {
+        "zh": [
+          "带来源议题摘要",
+          "纠正记录",
+          "人工采纳/拒绝"
+        ],
+        "en": [
+          "sourced issue summary",
+          "correction record",
+          "human accept/reject"
+        ]
+      },
+      "ai_authority": {
+        "zh": "只归纳、聚类和转译。",
+        "en": "Only summarize, cluster, and translate."
+      },
+      "human_only_decisions": {
+        "zh": [
+          "归因",
+          "版权判断",
+          "采纳/拒绝",
+          "下线"
+        ],
+        "en": [
+          "attribution",
+          "rights decision",
+          "accept/reject",
+          "take-down"
+        ]
+      },
+      "frontstage_notice": {
+        "zh": "AI 摘要待主持人确认；提供匿名纸面异议和纠正入口。",
+        "en": "AI summary awaits facilitator confirmation; anonymous paper objection and correction are available."
+      },
+      "lawful_basis_or_no_collection": {
+        "status": "no personal data required",
+        "zh": "匿名 Issue 为默认；署名/联系字段为可选且需法律审查。",
+        "en": "Anonymous issues by default; optional attribution/contact requires legal review.",
+        "conditional_path_ref": "phase3-data-governance.json#/scenario_profiles[scenario_id=SC04].conditional_personal_data"
+      },
+      "human_takeover": {
+        "triggers": {
+          "zh": [
+            "归属错误",
+            "权利投诉",
+            "恶意输入",
+            "无主持人"
+          ],
+          "en": [
+            "misattribution",
+            "rights complaint",
+            "malicious input",
+            "no facilitator"
+          ]
+        },
+        "responsible_role_keys": [
+          "on_site_host",
+          "rights_content_reviewer"
+        ],
+        "responsible_role_label_zh": "现场主持与权利内容复核人",
+        "responsible_role_label_en": "on-site host and rights/content reviewer",
+        "visible_action_zh": "隐藏争议摘要，显示人工复核与纸面议题墙。",
+        "visible_action_en": "Hide disputed summary and show human review plus the paper issue wall."
+      },
+      "low_tech_alternative": {
+        "zh": "纸面议题墙、人工会议记录。",
+        "en": "Paper issue wall and human minutes."
+      },
+      "complaints_and_appeals": {
+        "summary_zh": "匿名/署名异议→独立主持或权利复核→更正/撤回。",
+        "summary_en": "Anonymous/attributed objection → independent facilitation/rights review → correct/withdraw.",
+        "channels_zh": [
+          "现场人工",
+          "纸面",
+          "电话或等效非 AI 渠道"
+        ],
+        "channels_en": [
+          "on-site human",
+          "paper",
+          "phone or equivalent non-AI channel"
+        ],
+        "anonymous_allowed": true,
+        "intake_role_keys": [
+          "on_site_host",
+          "complaint_appeal_lead"
+        ],
+        "receipt_zh": "登记 ticket_id、范围与接收状态，并由人工提供可保存回执；数字时限为 design-target。",
+        "receipt_en": "Record ticket_id, scope, and receipt state, and provide a durable human-issued receipt; any numeric window is design-target.",
+        "independent_review_role_keys": [
+          "independent_appeal_reviewer"
+        ],
+        "independence_rule_zh": "复核人必须与原决定者、运营者和产品方分离。",
+        "independence_rule_en": "The reviewer must be separate from the original decision maker, operator, and provider.",
+        "outcome_notice_zh": "以可访问形式告知事实、理由、纠正/暂停/停止决定及未决 unknown。",
+        "outcome_notice_en": "Give an accessible notice of facts, reasons, correction/pause/stop decision, and unresolved unknowns.",
+        "reappeal_zh": "可向另一名具名独立复核人再次申诉；不得由 AI 结案。",
+        "reappeal_en": "A re-appeal may go to a different named independent reviewer; AI may not close the case.",
+        "human_takeover_on_unreachable": true,
+        "closure_criteria_zh": "回执、独立复核、结果告知、证据保全和再申诉入口均可验证。",
+        "closure_criteria_en": "Receipt, independent review, outcome notice, evidence hold, and re-appeal entry are all verifiable.",
+        "logs_category_ref": "phase3-data-governance.json#/data_categories[category=logs_appeal_materials]",
+        "retention_deletion_ref": "phase3-data-governance.json#/scenario_profiles[scenario_id=SC04].control_overrides.retention_deletion"
+      },
+      "logging_audit": {
+        "fields": [
+          "source_id",
+          "source_version",
+          "summary_hash",
+          "attribution_status",
+          "human_decision",
+          "correction",
+          "state_transition"
+        ],
+        "audit_role_keys": [
+          "data_steward",
+          "records_steward"
+        ]
+      },
+      "retention_deletion": {
+        "zh": "公开议题按版本保留；删除可选联系字段，权利/申诉材料按书面规则隔离。",
+        "en": "Retain public issues by version; delete optional contact fields and isolate rights/appeal material under written rules."
+      },
+      "lifecycle": {
+        "normal_path": [
+          "preflight",
+          "limited-open",
+          "operating"
+        ],
+        "degraded_path": [
+          "operating",
+          "degraded",
+          "human-takeover",
+          "paused"
+        ],
+        "human_takeover_path": [
+          "operating",
+          "human-takeover",
+          "paused"
+        ],
+        "exit_path": [
+          "paused",
+          "stopped",
+          "removed",
+          "archive"
+        ],
+        "archive_is_terminal": true,
+        "future_use_requires_new_run_instance": true
+      },
+      "evaluation": {
+        "window_zh": "书面设定的 design-target 复核窗口",
+        "window_en": "per issue cycle",
+        "measures_zh": [
+          "来源追踪",
+          "更正",
+          "申诉可达"
+        ],
+        "measures_en": [
+          "source trace",
+          "correction",
+          "appeal reachability"
+        ],
+        "review_triggers_zh": [
+          "来源更新",
+          "权利投诉",
+          "无人维护"
+        ],
+        "review_triggers_en": [
+          "source update",
+          "rights complaint",
+          "no maintainer"
+        ]
+      },
+      "dependencies": {
+        "zh": [
+          "维护人",
+          "权利复核",
+          "公开来源台账"
+        ],
+        "en": [
+          "maintainer",
+          "rights review",
+          "public source registry"
+        ]
+      },
+      "qualitative_cost": "S",
+      "maintenance": {
+        "zh": "更新来源、议题状态和纠正记录。",
+        "en": "Maintain sources, issue states, and corrections."
+      },
+      "stop_exit": {
+        "conditions_zh": [
+          "权利失败",
+          "虚假归属",
+          "无人维护"
+        ],
+        "conditions_en": [
+          "rights failure",
+          "false attribution",
+          "no maintainer"
+        ],
+        "actions_zh": [
+          "隐藏",
+          "更正",
+          "暂停",
+          "归档撤回"
+        ],
+        "actions_en": [
+          "hide",
+          "correct",
+          "pause",
+          "archive withdrawal"
+        ],
+        "stop_authority_role_keys": [
+          "scenario_service_owner",
+          "on_site_host",
+          "safety_professional",
+          "complaint_appeal_lead"
+        ],
+        "removal_authority_role_keys": [
+          "scenario_service_owner",
+          "facilities_maintenance",
+          "data_steward"
+        ],
+        "future_use_rule_zh": "stopped、removed 或 archive 后不得复开原实例；未来使用须新建 run_instance_id 并从 preflight 开始。",
+        "future_use_rule_en": "After stopped, removed, or archive, the original instance cannot reopen; future use creates a new run_instance_id at preflight."
+      },
+      "frontstage_summary": {
+        "ai_may_zh": "归纳、聚类、转译",
+        "ai_may_en": "Summarize, cluster, translate",
+        "human_only_zh": "归因、版权、采纳/撤回",
+        "human_only_en": "Attribution, rights, accept/withdraw",
+        "takeover_zh": "隐藏争议＋人工复核",
+        "takeover_en": "Hide dispute + human review",
+        "low_tech_zh": "纸面议题墙",
+        "low_tech_en": "Paper issue wall",
+        "lifecycle_zh": "错归/权利失败→人工→下线",
+        "lifecycle_en": "Misattribute/rights fail → human → take down"
+      },
+      "failure_modes": {
+        "zh": [
+          "权利失败",
+          "虚假归属",
+          "无人维护"
+        ],
+        "en": [
+          "rights failure",
+          "false attribution",
+          "no maintainer"
+        ]
+      },
+      "data_governance_ref": "phase3-data-governance.json#/scenario_profiles[scenario_id=SC04]"
+    },
+    {
+      "scenario_id": "SC05",
+      "title_zh": "成果匹配诊所",
+      "title_en": "Research-to-Application Matching Clinic",
+      "flagship": true,
+      "purpose_and_spatial_carrier": {
+        "purpose_zh": "在 AI 原点以人工顾问决定成果与需求引荐，AI 只排候选。",
+        "purpose_en": "At AI Origin, let human advisers decide research-demand referrals while AI only ranks candidates.",
+        "carrier_id": "PROV-KEY-002",
+        "carrier_zh": "AI 原点成果转译诊所 / CX05",
+        "carrier_en": "AI Origin translation clinic / CX05",
+        "feature_refs": [
+          "geometry/key_areas.geojson#PROV-KEY-002",
+          "geometry/roads.geojson#CX05",
+          "geometry/buildings.geojson#BLDG-003"
+        ]
+      },
+      "users": {
+        "primary": [
+          "U1",
+          "U2",
+          "U3"
+        ],
+        "affected": [
+          "referred organizations",
+          "non-selected participants"
+        ]
+      },
+      "inputs": {
+        "allowed_zh": [
+          "主动提交且允许匹配的摘要",
+          "公开需求",
+          "主动偏好"
+        ],
+        "allowed_en": [
+          "voluntarily submitted match-permitted summaries",
+          "public needs",
+          "active preferences"
+        ],
+        "prohibited_zh": [
+          "敏感个人数据",
+          "秘密画像",
+          "自动引荐/拒绝"
+        ],
+        "prohibited_en": [
+          "sensitive personal data",
+          "secret profiling",
+          "automatic referral/rejection"
+        ]
+      },
+      "data_and_evidence": {
+        "source_ids": [
+          "DATA-SRC-AGENT-TASKBOOK-20260518"
+        ],
+        "evidence_grade": "design-target; lawful basis and controller require legal review",
+        "no_personal_data_required": false
+      },
+      "minimum_necessary_data": {
+        "zh": [
+          "摘要",
+          "允许用途",
+          "公开需求",
+          "联系通道分离字段",
+          "人工决定"
+        ],
+        "en": [
+          "summary",
+          "permitted purpose",
+          "public need",
+          "separate contact channel",
+          "human decision"
+        ]
+      },
+      "outputs": {
+        "zh": [
+          "候选匹配及理由",
+          "顾问引荐/拒绝",
+          "纠正记录"
+        ],
+        "en": [
+          "candidate matches and reasons",
+          "adviser referral/rejection",
+          "correction record"
+        ]
+      },
+      "ai_authority": {
+        "zh": "只检索、排序、解释候选。",
+        "en": "Only retrieve, rank, and explain candidates."
+      },
+      "human_only_decisions": {
+        "zh": [
+          "用途与合法依据",
+          "是否联系/引荐",
+          "利益冲突",
+          "暂停/复开"
+        ],
+        "en": [
+          "purpose/lawful basis",
+          "contact/referral",
+          "conflict of interest",
+          "pause/reopen"
+        ]
+      },
+      "frontstage_notice": {
+        "zh": "AI 只给候选；可拒绝 AI、改走顾问/纸面并撤回摘要。",
+        "en": "AI only proposes candidates; refuse AI, use adviser/paper, and withdraw the summary."
+      },
+      "lawful_basis_or_no_collection": {
+        "status": "requires legal review",
+        "zh": "主动提交不等于一揽子同意；用途、控制者、联系与撤回需逐项确认。",
+        "en": "Voluntary submission is not blanket consent; confirm purpose, controller, contact, and withdrawal separately.",
+        "conditional_path_ref": "phase3-data-governance.json#/scenario_profiles[scenario_id=SC05].conditional_personal_data"
+      },
+      "human_takeover": {
+        "triggers": {
+          "zh": [
+            "参与者要求",
+            "误配",
+            "偏差",
+            "泄露",
+            "冒用",
+            "无顾问"
+          ],
+          "en": [
+            "participant request",
+            "mismatch",
+            "bias",
+            "leak",
+            "impersonation",
+            "no adviser"
+          ]
+        },
+        "responsible_role_keys": [
+          "scenario_service_owner",
+          "complaint_appeal_lead"
+        ],
+        "responsible_role_label_zh": "人工顾问责任席位与投诉闭环责任人",
+        "responsible_role_label_en": "human-adviser service owner and complaint lead",
+        "visible_action_zh": "CX05 诊所切换人工顾问/纸面，停止候选输出并显示纠正入口。",
+        "visible_action_en": "At CX05 switch to adviser/paper, stop candidate output, and show correction entry."
+      },
+      "low_tech_alternative": {
+        "zh": "预约台账、纸面摘要、人工顾问。",
+        "en": "Booking ledger, paper summary, and human adviser."
+      },
+      "complaints_and_appeals": {
+        "summary_zh": "柜台/纸面纠错→独立顾问复核→删除、重排、拒绝引荐或暂停。",
+        "summary_en": "Counter/paper correction → independent adviser review → delete, rerank, refuse referral, or pause.",
+        "channels_zh": [
+          "现场人工",
+          "纸面",
+          "电话或等效非 AI 渠道"
+        ],
+        "channels_en": [
+          "on-site human",
+          "paper",
+          "phone or equivalent non-AI channel"
+        ],
+        "anonymous_allowed": true,
+        "intake_role_keys": [
+          "on_site_host",
+          "complaint_appeal_lead"
+        ],
+        "receipt_zh": "登记 ticket_id、范围与接收状态，并由人工提供可保存回执；数字时限为 design-target。",
+        "receipt_en": "Record ticket_id, scope, and receipt state, and provide a durable human-issued receipt; any numeric window is design-target.",
+        "independent_review_role_keys": [
+          "independent_appeal_reviewer"
+        ],
+        "independence_rule_zh": "复核人必须与原决定者、运营者和产品方分离。",
+        "independence_rule_en": "The reviewer must be separate from the original decision maker, operator, and provider.",
+        "outcome_notice_zh": "以可访问形式告知事实、理由、纠正/暂停/停止决定及未决 unknown。",
+        "outcome_notice_en": "Give an accessible notice of facts, reasons, correction/pause/stop decision, and unresolved unknowns.",
+        "reappeal_zh": "可向另一名具名独立复核人再次申诉；不得由 AI 结案。",
+        "reappeal_en": "A re-appeal may go to a different named independent reviewer; AI may not close the case.",
+        "human_takeover_on_unreachable": true,
+        "closure_criteria_zh": "回执、独立复核、结果告知、证据保全和再申诉入口均可验证。",
+        "closure_criteria_en": "Receipt, independent review, outcome notice, evidence hold, and re-appeal entry are all verifiable.",
+        "logs_category_ref": "phase3-data-governance.json#/data_categories[category=logs_appeal_materials]",
+        "retention_deletion_ref": "phase3-data-governance.json#/scenario_profiles[scenario_id=SC05].control_overrides.retention_deletion"
+      },
+      "logging_audit": {
+        "fields": [
+          "purpose",
+          "summary_version",
+          "permission_state",
+          "candidate_reasons",
+          "adviser_decision",
+          "correction",
+          "withdrawal",
+          "state_transition"
+        ],
+        "audit_role_keys": [
+          "data_steward",
+          "records_steward"
+        ]
+      },
+      "retention_deletion": {
+        "zh": "摘要、联系字段和日志分离；撤回即删除非必要副本，申诉证据按书面规则保留。",
+        "en": "Separate summary, contact, and logs; withdrawal deletes unnecessary copies while appeal evidence follows written retention."
+      },
+      "lifecycle": {
+        "normal_path": [
+          "preflight",
+          "limited-open",
+          "operating"
+        ],
+        "degraded_path": [
+          "operating",
+          "degraded",
+          "human-takeover",
+          "paused"
+        ],
+        "human_takeover_path": [
+          "operating",
+          "human-takeover",
+          "paused"
+        ],
+        "exit_path": [
+          "paused",
+          "stopped",
+          "removed",
+          "archive"
+        ],
+        "archive_is_terminal": true,
+        "future_use_requires_new_run_instance": true
+      },
+      "evaluation": {
+        "window_zh": "书面设定的 design-target 复核窗口",
+        "window_en": "written design-target clinic cycle",
+        "measures_zh": [
+          "许可追踪",
+          "误配纠正",
+          "拒绝 AI 的等效性"
+        ],
+        "measures_en": [
+          "permission trace",
+          "mismatch correction",
+          "refusal equivalence"
+        ],
+        "review_triggers_zh": [
+          "持续误配",
+          "偏差投诉",
+          "泄露",
+          "顾问缺席"
+        ],
+        "review_triggers_en": [
+          "repeated mismatch",
+          "bias complaint",
+          "leak",
+          "adviser absent"
+        ]
+      },
+      "dependencies": {
+        "zh": [
+          "人工顾问",
+          "目的台账",
+          "分离联系信息库",
+          "投诉复核人"
+        ],
+        "en": [
+          "human adviser",
+          "purpose register",
+          "separated contact store",
+          "complaint reviewer"
+        ]
+      },
+      "qualitative_cost": "M",
+      "maintenance": {
+        "zh": "更新公开需求、用途和顾问值守。",
+        "en": "Maintain public needs, purpose records, and adviser coverage."
+      },
+      "stop_exit": {
+        "conditions_zh": [
+          "泄露",
+          "持续误配",
+          "偏差",
+          "冒用",
+          "无顾问"
+        ],
+        "conditions_en": [
+          "leak",
+          "persistent mismatch",
+          "bias",
+          "impersonation",
+          "no adviser"
+        ],
+        "actions_zh": [
+          "停止排序",
+          "切换人工",
+          "删除或撤回",
+          "暂停服务",
+          "书面复测"
+        ],
+        "actions_en": [
+          "stop ranking",
+          "switch human",
+          "delete/withdraw",
+          "pause service",
+          "written reopen"
+        ],
+        "stop_authority_role_keys": [
+          "scenario_service_owner",
+          "on_site_host",
+          "safety_professional",
+          "complaint_appeal_lead"
+        ],
+        "removal_authority_role_keys": [
+          "scenario_service_owner",
+          "facilities_maintenance",
+          "data_steward"
+        ],
+        "future_use_rule_zh": "stopped、removed 或 archive 后不得复开原实例；未来使用须新建 run_instance_id 并从 preflight 开始。",
+        "future_use_rule_en": "After stopped, removed, or archive, the original instance cannot reopen; future use creates a new run_instance_id at preflight."
+      },
+      "frontstage_summary": {
+        "ai_may_zh": "检索、排序、解释候选",
+        "ai_may_en": "Retrieve, rank, explain candidates",
+        "human_only_zh": "联系、引荐、拒绝与复开",
+        "human_only_en": "Contact, refer, reject, reopen",
+        "takeover_zh": "CX05 人工顾问＋停止候选输出",
+        "takeover_en": "CX05 adviser + stop candidate output",
+        "low_tech_zh": "预约台账＋纸面摘要",
+        "low_tech_en": "Booking ledger + paper summary",
+        "lifecycle_zh": "误配/泄露/无顾问→接管暂停",
+        "lifecycle_en": "Mismatch/leak/no adviser → takeover/pause"
+      },
+      "failure_modes": {
+        "zh": [
+          "泄露",
+          "持续误配",
+          "偏差",
+          "冒用",
+          "无顾问"
+        ],
+        "en": [
+          "leak",
+          "persistent mismatch",
+          "bias",
+          "impersonation",
+          "no adviser"
+        ]
+      },
+      "data_governance_ref": "phase3-data-governance.json#/scenario_profiles[scenario_id=SC05]"
+    },
+    {
+      "scenario_id": "SC06",
+      "title_zh": "共享中试排程助手",
+      "title_en": "Shared Pilot Scheduling Assistant",
+      "flagship": false,
+      "purpose_and_spatial_carrier": {
+        "purpose_zh": "在 AI 原点辅助共享设施时段排序，资格与批准由管理员决定。",
+        "purpose_en": "Assist shared-facility slot ordering at AI Origin while administrators decide eligibility and approval.",
+        "carrier_id": "PROV-KEY-002",
+        "carrier_zh": "AI 原点共享中试界面",
+        "carrier_en": "AI Origin shared pilot interface",
+        "feature_refs": [
+          "geometry/key_areas.geojson#PROV-KEY-002",
+          "geometry/buildings.geojson#BLDG-004"
+        ]
+      },
+      "users": {
+        "primary": [
+          "U1",
+          "U2",
+          "U3"
+        ],
+        "affected": [
+          "other applicants",
+          "facility staff"
+        ]
+      },
+      "inputs": {
+        "allowed_zh": [
+          "公开时段",
+          "设备标签",
+          "申请状态",
+          "最小资格字段"
+        ],
+        "allowed_en": [
+          "public slots",
+          "equipment tags",
+          "application state",
+          "minimum eligibility fields"
+        ],
+        "prohibited_zh": [
+          "敏感画像",
+          "秘密优先级",
+          "自动审批/拒绝"
+        ],
+        "prohibited_en": [
+          "sensitive profiling",
+          "secret priority",
+          "automatic approval/rejection"
+        ]
+      },
+      "data_and_evidence": {
+        "source_ids": [
+          "DATA-SRC-AGENT-TASKBOOK-20260518"
+        ],
+        "evidence_grade": "design-target; facility authority unknown",
+        "no_personal_data_required": false
+      },
+      "minimum_necessary_data": {
+        "zh": [
+          "申请 ID",
+          "时段",
+          "设备能力",
+          "资格状态",
+          "人工决定"
+        ],
+        "en": [
+          "application ID",
+          "slot",
+          "equipment capability",
+          "eligibility state",
+          "human decision"
+        ]
+      },
+      "outputs": {
+        "zh": [
+          "候选时段",
+          "冲突提示",
+          "管理员决定"
+        ],
+        "en": [
+          "candidate slots",
+          "conflict alert",
+          "administrator decision"
+        ]
+      },
+      "ai_authority": {
+        "zh": "只排序和提示冲突。",
+        "en": "Only order slots and flag conflicts."
+      },
+      "human_only_decisions": {
+        "zh": [
+          "资格",
+          "优先规则",
+          "设备安全",
+          "批准/拒绝"
+        ],
+        "en": [
+          "eligibility",
+          "priority rule",
+          "equipment safety",
+          "approve/reject"
+        ]
+      },
+      "frontstage_notice": {
+        "zh": "候选时段非批准；显示规则、管理员和人工表格。",
+        "en": "Candidate slot is not approval; show rule, administrator, and manual form."
+      },
+      "lawful_basis_or_no_collection": {
+        "status": "requires legal review for contact/application data",
+        "zh": "公开排程不需个人数据；申请联系字段需分离并审查。",
+        "en": "Public scheduling needs no personal data; application contact must be separated and reviewed.",
+        "conditional_path_ref": "phase3-data-governance.json#/scenario_profiles[scenario_id=SC06].conditional_personal_data"
+      },
+      "human_takeover": {
+        "triggers": {
+          "zh": [
+            "许可冲突",
+            "设备条件 unknown",
+            "故障",
+            "偏差投诉",
+            "冒用"
+          ],
+          "en": [
+            "permission conflict",
+            "unknown equipment",
+            "outage",
+            "bias complaint",
+            "impersonation"
+          ]
+        },
+        "responsible_role_keys": [
+          "scenario_service_owner",
+          "facilities_maintenance"
+        ],
+        "responsible_role_label_zh": "场景服务责任人与设施维护责任人",
+        "responsible_role_label_en": "scenario service owner and facilities owner",
+        "visible_action_zh": "停止自动排程，管理员用人工表格处理并标注待核。",
+        "visible_action_en": "Stop automated scheduling; administrator uses a manual form and marks pending review."
+      },
+      "low_tech_alternative": {
+        "zh": "人工排程表和电话/柜台申请。",
+        "en": "Manual schedule and telephone/counter application."
+      },
+      "complaints_and_appeals": {
+        "summary_zh": "申请人索取规则与记录→独立管理员复核→更正排序或维持决定。",
+        "summary_en": "Applicant requests rule/record → independent administrator review → correct ordering or uphold decision.",
+        "channels_zh": [
+          "现场人工",
+          "纸面",
+          "电话或等效非 AI 渠道"
+        ],
+        "channels_en": [
+          "on-site human",
+          "paper",
+          "phone or equivalent non-AI channel"
+        ],
+        "anonymous_allowed": true,
+        "intake_role_keys": [
+          "on_site_host",
+          "complaint_appeal_lead"
+        ],
+        "receipt_zh": "登记 ticket_id、范围与接收状态，并由人工提供可保存回执；数字时限为 design-target。",
+        "receipt_en": "Record ticket_id, scope, and receipt state, and provide a durable human-issued receipt; any numeric window is design-target.",
+        "independent_review_role_keys": [
+          "independent_appeal_reviewer"
+        ],
+        "independence_rule_zh": "复核人必须与原决定者、运营者和产品方分离。",
+        "independence_rule_en": "The reviewer must be separate from the original decision maker, operator, and provider.",
+        "outcome_notice_zh": "以可访问形式告知事实、理由、纠正/暂停/停止决定及未决 unknown。",
+        "outcome_notice_en": "Give an accessible notice of facts, reasons, correction/pause/stop decision, and unresolved unknowns.",
+        "reappeal_zh": "可向另一名具名独立复核人再次申诉；不得由 AI 结案。",
+        "reappeal_en": "A re-appeal may go to a different named independent reviewer; AI may not close the case.",
+        "human_takeover_on_unreachable": true,
+        "closure_criteria_zh": "回执、独立复核、结果告知、证据保全和再申诉入口均可验证。",
+        "closure_criteria_en": "Receipt, independent review, outcome notice, evidence hold, and re-appeal entry are all verifiable.",
+        "logs_category_ref": "phase3-data-governance.json#/data_categories[category=logs_appeal_materials]",
+        "retention_deletion_ref": "phase3-data-governance.json#/scenario_profiles[scenario_id=SC06].control_overrides.retention_deletion"
+      },
+      "logging_audit": {
+        "fields": [
+          "application_id",
+          "rule_version",
+          "slot_data",
+          "conflict",
+          "human_decision",
+          "appeal",
+          "state_transition"
+        ],
+        "audit_role_keys": [
+          "data_steward",
+          "records_steward"
+        ]
+      },
+      "retention_deletion": {
+        "zh": "排程与联系字段分离；时段结束删除非必要申请数据，申诉另行保留。",
+        "en": "Separate schedule/contact; delete unnecessary application data after slot and retain appeal separately."
+      },
+      "lifecycle": {
+        "normal_path": [
+          "preflight",
+          "limited-open",
+          "operating"
+        ],
+        "degraded_path": [
+          "operating",
+          "degraded",
+          "human-takeover",
+          "paused"
+        ],
+        "human_takeover_path": [
+          "operating",
+          "human-takeover",
+          "paused"
+        ],
+        "exit_path": [
+          "paused",
+          "stopped",
+          "removed",
+          "archive"
+        ],
+        "archive_is_terminal": true,
+        "future_use_requires_new_run_instance": true
+      },
+      "evaluation": {
+        "window_zh": "书面设定的 design-target 复核窗口",
+        "window_en": "per scheduling cycle",
+        "measures_zh": [
+          "冲突处理",
+          "人工回退",
+          "申诉追踪"
+        ],
+        "measures_en": [
+          "conflict resolution",
+          "manual fallback",
+          "appeal trace"
+        ],
+        "review_triggers_zh": [
+          "规则变化",
+          "故障",
+          "偏差投诉"
+        ],
+        "review_triggers_en": [
+          "rule change",
+          "outage",
+          "bias complaint"
+        ]
+      },
+      "dependencies": {
+        "zh": [
+          "设施责任人",
+          "经核验设备台账",
+          "公开规则",
+          "人工渠道"
+        ],
+        "en": [
+          "facility manager",
+          "verified equipment register",
+          "published rule",
+          "manual channel"
+        ]
+      },
+      "qualitative_cost": "S/M",
+      "maintenance": {
+        "zh": "更新时段、设备能力与规则版本。",
+        "en": "Maintain slots, capabilities, and rule versions."
+      },
+      "stop_exit": {
+        "conditions_zh": [
+          "设备条件 unknown",
+          "许可冲突",
+          "故障",
+          "无责任人"
+        ],
+        "conditions_en": [
+          "unknown equipment",
+          "permission conflict",
+          "outage",
+          "no manager"
+        ],
+        "actions_zh": [
+          "关闭自动排程",
+          "改用人工表格",
+          "暂停",
+          "停止并撤场",
+          "归档"
+        ],
+        "actions_en": [
+          "disable automation",
+          "manual form",
+          "pause",
+          "archive"
+        ],
+        "stop_authority_role_keys": [
+          "scenario_service_owner",
+          "on_site_host",
+          "safety_professional",
+          "complaint_appeal_lead"
+        ],
+        "removal_authority_role_keys": [
+          "scenario_service_owner",
+          "facilities_maintenance",
+          "data_steward"
+        ],
+        "future_use_rule_zh": "stopped、removed 或 archive 后不得复开原实例；未来使用须新建 run_instance_id 并从 preflight 开始。",
+        "future_use_rule_en": "After stopped, removed, or archive, the original instance cannot reopen; future use creates a new run_instance_id at preflight."
+      },
+      "frontstage_summary": {
+        "ai_may_zh": "排候选时段、提示冲突",
+        "ai_may_en": "Order candidate slots, flag conflicts",
+        "human_only_zh": "资格、优先、设备安全与批准",
+        "human_only_en": "Eligibility, priority, safety, approval",
+        "takeover_zh": "管理员人工表格",
+        "takeover_en": "Administrator manual form",
+        "low_tech_zh": "排程表＋电话/柜台",
+        "low_tech_en": "Schedule sheet + phone/counter",
+        "lifecycle_zh": "冲突/断网/设备未知→人工",
+        "lifecycle_en": "Conflict/outage/unknown device → human"
+      },
+      "failure_modes": {
+        "zh": [
+          "设备条件 unknown",
+          "许可冲突",
+          "故障",
+          "无责任人"
+        ],
+        "en": [
+          "unknown equipment",
+          "permission conflict",
+          "outage",
+          "no manager"
+        ]
+      },
+      "data_governance_ref": "phase3-data-governance.json#/scenario_profiles[scenario_id=SC06]"
+    },
+    {
+      "scenario_id": "SC07",
+      "title_zh": "人才生活导航",
+      "title_en": "Talent Life Navigator",
+      "flagship": false,
+      "purpose_and_spatial_carrier": {
+        "purpose_zh": "在 AI 原点检索带来源的公共服务信息并转人工，不作资格或法律结论。",
+        "purpose_en": "Retrieve sourced public-service information at AI Origin and transfer to humans without eligibility or legal conclusions.",
+        "carrier_id": "PROV-KEY-002",
+        "carrier_zh": "AI 原点照护服务节点",
+        "carrier_en": "AI Origin care-service node",
+        "feature_refs": [
+          "geometry/key_areas.geojson#PROV-KEY-002",
+          "geometry/public_space.geojson#PUBLIC-001"
+        ]
+      },
+      "users": {
+        "primary": [
+          "U1",
+          "U2",
+          "U4",
+          "U7"
+        ],
+        "affected": [
+          "families",
+          "service providers"
+        ]
+      },
+      "inputs": {
+        "allowed_zh": [
+          "带来源/日期的公开信息",
+          "主动选择的主题/语言"
+        ],
+        "allowed_en": [
+          "dated sourced public information",
+          "actively selected topic/language"
+        ],
+        "prohibited_zh": [
+          "隐性身份推断",
+          "自动资格决定",
+          "无来源建议"
+        ],
+        "prohibited_en": [
+          "hidden identity inference",
+          "automatic eligibility decision",
+          "unsourced advice"
+        ]
+      },
+      "data_and_evidence": {
+        "source_ids": [
+          "DATA-SRC-ELDERLY-SMART-TECH-PLAN-2020-45",
+          "DATA-SRC-AGENT-TASKBOOK-20260518"
+        ],
+        "evidence_grade": "public source; local service availability unknown",
+        "no_personal_data_required": true
+      },
+      "minimum_necessary_data": {
+        "zh": [
+          "主题",
+          "语言",
+          "来源",
+          "日期",
+          "人工转接状态"
+        ],
+        "en": [
+          "topic",
+          "language",
+          "source",
+          "date",
+          "human-transfer state"
+        ]
+      },
+      "outputs": {
+        "zh": [
+          "带来源答案",
+          "不确定提示",
+          "人工转接"
+        ],
+        "en": [
+          "sourced answer",
+          "uncertainty notice",
+          "human transfer"
+        ]
+      },
+      "ai_authority": {
+        "zh": "只检索、转译和提示。",
+        "en": "Only retrieve, translate, and prompt."
+      },
+      "human_only_decisions": {
+        "zh": [
+          "资格/权利",
+          "个案建议",
+          "纠错",
+          "暂停/复开"
+        ],
+        "en": [
+          "eligibility/rights",
+          "case advice",
+          "correction",
+          "pause/reopen"
+        ]
+      },
+      "frontstage_notice": {
+        "zh": "仅公共信息；显示来源日期、人工柜台、纸图和可拒绝 AI。",
+        "en": "Public information only; show source/date, human counter, paper map, and AI refusal."
+      },
+      "lawful_basis_or_no_collection": {
+        "status": "no personal data required",
+        "zh": "默认不保存身份；可选回访联系需分离并法律审查。",
+        "en": "No identity retained by default; optional follow-up contact is separated and legally reviewed.",
+        "conditional_path_ref": "phase3-data-governance.json#/scenario_profiles[scenario_id=SC07].conditional_personal_data"
+      },
+      "human_takeover": {
+        "triggers": {
+          "zh": [
+            "来源过期",
+            "高风险问题",
+            "语言歧义",
+            "偏差投诉",
+            "人工请求"
+          ],
+          "en": [
+            "stale source",
+            "high-risk question",
+            "language ambiguity",
+            "bias complaint",
+            "human request"
+          ]
+        },
+        "responsible_role_keys": [
+          "on_site_host",
+          "rights_content_reviewer"
+        ],
+        "responsible_role_label_zh": "现场人工服务与权利内容复核人",
+        "responsible_role_label_en": "on-site human service and rights/content reviewer",
+        "visible_action_zh": "屏幕显示 Human Takeover，柜台人员接续并提供纸图。",
+        "visible_action_en": "Show Human Takeover; counter staff continue with a paper map."
+      },
+      "low_tech_alternative": {
+        "zh": "柜台、纸图、电话和公告板。",
+        "en": "Counter, paper map, telephone, and notice board."
+      },
+      "complaints_and_appeals": {
+        "summary_zh": "柜台/电话登记→内容维护者外的人工复核→更正、标过期或暂停。",
+        "summary_en": "Counter/phone record → human review independent of content maintainer → correct, expire, or pause.",
+        "channels_zh": [
+          "现场人工",
+          "纸面",
+          "电话或等效非 AI 渠道"
+        ],
+        "channels_en": [
+          "on-site human",
+          "paper",
+          "phone or equivalent non-AI channel"
+        ],
+        "anonymous_allowed": true,
+        "intake_role_keys": [
+          "on_site_host",
+          "complaint_appeal_lead"
+        ],
+        "receipt_zh": "登记 ticket_id、范围与接收状态，并由人工提供可保存回执；数字时限为 design-target。",
+        "receipt_en": "Record ticket_id, scope, and receipt state, and provide a durable human-issued receipt; any numeric window is design-target.",
+        "independent_review_role_keys": [
+          "independent_appeal_reviewer"
+        ],
+        "independence_rule_zh": "复核人必须与原决定者、运营者和产品方分离。",
+        "independence_rule_en": "The reviewer must be separate from the original decision maker, operator, and provider.",
+        "outcome_notice_zh": "以可访问形式告知事实、理由、纠正/暂停/停止决定及未决 unknown。",
+        "outcome_notice_en": "Give an accessible notice of facts, reasons, correction/pause/stop decision, and unresolved unknowns.",
+        "reappeal_zh": "可向另一名具名独立复核人再次申诉；不得由 AI 结案。",
+        "reappeal_en": "A re-appeal may go to a different named independent reviewer; AI may not close the case.",
+        "human_takeover_on_unreachable": true,
+        "closure_criteria_zh": "回执、独立复核、结果告知、证据保全和再申诉入口均可验证。",
+        "closure_criteria_en": "Receipt, independent review, outcome notice, evidence hold, and re-appeal entry are all verifiable.",
+        "logs_category_ref": "phase3-data-governance.json#/data_categories[category=logs_appeal_materials]",
+        "retention_deletion_ref": "phase3-data-governance.json#/scenario_profiles[scenario_id=SC07].control_overrides.retention_deletion"
+      },
+      "logging_audit": {
+        "fields": [
+          "topic",
+          "language",
+          "source_id",
+          "source_date",
+          "answer_hash",
+          "uncertainty",
+          "human_transfer",
+          "correction"
+        ],
+        "audit_role_keys": [
+          "data_steward",
+          "records_steward"
+        ]
+      },
+      "retention_deletion": {
+        "zh": "默认只留非个人查询/来源日志；可选联系信息独立删除。",
+        "en": "Retain only non-personal query/source logs by default; delete optional contact separately."
+      },
+      "lifecycle": {
+        "normal_path": [
+          "preflight",
+          "limited-open",
+          "operating"
+        ],
+        "degraded_path": [
+          "operating",
+          "degraded",
+          "human-takeover",
+          "paused"
+        ],
+        "human_takeover_path": [
+          "operating",
+          "human-takeover",
+          "paused"
+        ],
+        "exit_path": [
+          "paused",
+          "stopped",
+          "removed",
+          "archive"
+        ],
+        "archive_is_terminal": true,
+        "future_use_requires_new_run_instance": true
+      },
+      "evaluation": {
+        "window_zh": "书面设定的 design-target 复核窗口",
+        "window_en": "source review cycle",
+        "measures_zh": [
+          "来源新鲜度",
+          "人工转接",
+          "语言纠正"
+        ],
+        "measures_en": [
+          "source freshness",
+          "human transfer",
+          "language correction"
+        ],
+        "review_triggers_zh": [
+          "来源到期",
+          "偏差或语言投诉",
+          "无人维护"
+        ],
+        "review_triggers_en": [
+          "source expiry",
+          "bias/language complaint",
+          "maintainer absent"
+        ]
+      },
+      "dependencies": {
+        "zh": [
+          "有维护的公开来源",
+          "现场服务人员",
+          "双语材料",
+          "非数字渠道"
+        ],
+        "en": [
+          "maintained public sources",
+          "service staff",
+          "bilingual material",
+          "non-digital channel"
+        ]
+      },
+      "qualitative_cost": "S/M",
+      "maintenance": {
+        "zh": "按来源日期复核，过期即隐藏。",
+        "en": "Review by source date and hide expired material."
+      },
+      "stop_exit": {
+        "conditions_zh": [
+          "来源过期",
+          "偏差结果",
+          "无人维护",
+          "人工转接不可达"
+        ],
+        "conditions_en": [
+          "stale source",
+          "biased result",
+          "no maintainer",
+          "human transfer unavailable"
+        ],
+        "actions_zh": [
+          "降级为静态服务",
+          "人工接管",
+          "暂停",
+          "停止并撤场",
+          "归档更正"
+        ],
+        "actions_en": [
+          "degrade static",
+          "human takeover",
+          "pause",
+          "archive correction"
+        ],
+        "stop_authority_role_keys": [
+          "scenario_service_owner",
+          "on_site_host",
+          "safety_professional",
+          "complaint_appeal_lead"
+        ],
+        "removal_authority_role_keys": [
+          "scenario_service_owner",
+          "facilities_maintenance",
+          "data_steward"
+        ],
+        "future_use_rule_zh": "stopped、removed 或 archive 后不得复开原实例；未来使用须新建 run_instance_id 并从 preflight 开始。",
+        "future_use_rule_en": "After stopped, removed, or archive, the original instance cannot reopen; future use creates a new run_instance_id at preflight."
+      },
+      "frontstage_summary": {
+        "ai_may_zh": "检索、转译、提示",
+        "ai_may_en": "Retrieve, translate, prompt",
+        "human_only_zh": "资格/权利、个案、纠错与复开",
+        "human_only_en": "Eligibility/rights, casework, correct, reopen",
+        "takeover_zh": "柜台接续＋纸图",
+        "takeover_en": "Counter handover + paper map",
+        "low_tech_zh": "柜台＋纸图＋电话",
+        "low_tech_en": "Counter + paper map + phone",
+        "lifecycle_zh": "过期/偏差/语言误导→降级暂停",
+        "lifecycle_en": "Stale/bias/language risk → degrade/pause"
+      },
+      "failure_modes": {
+        "zh": [
+          "来源过期",
+          "偏差结果",
+          "无人维护",
+          "人工转接不可达"
+        ],
+        "en": [
+          "stale source",
+          "biased result",
+          "no maintainer",
+          "human transfer unavailable"
+        ]
+      },
+      "data_governance_ref": "phase3-data-governance.json#/scenario_profiles[scenario_id=SC07]"
+    },
+    {
+      "scenario_id": "SC08",
+      "title_zh": "无障碍路线伴行",
+      "title_en": "Accessible Route Companion",
+      "flagship": false,
+      "purpose_and_spatial_carrier": {
+        "purpose_zh": "为在场脊柱提供经现场核验的路线选项与人工带领，不把候选路径当审计结果。",
+        "purpose_en": "Offer field-verified route options and human escort along the in-situ spine without treating candidate paths as an audit.",
+        "carrier_id": "SPINE-001",
+        "carrier_zh": "在场脊柱跨区支持 / CX01—CX12",
+        "carrier_en": "In-situ spine cross-area support / CX01-CX12",
+        "feature_refs": [
+          "geometry/roads.geojson#SPINE-001",
+          "geometry/roads.geojson#CX01",
+          "geometry/roads.geojson#CX12"
+        ]
+      },
+      "users": {
+        "primary": [
+          "U4",
+          "U5",
+          "U6"
+        ],
+        "affected": [
+          "companions",
+          "other path users"
+        ]
+      },
+      "inputs": {
+        "allowed_zh": [
+          "经日期/责任人核验的障碍",
+          "目的地",
+          "主动选择的无障碍需求"
+        ],
+        "allowed_en": [
+          "dated accountable barrier checks",
+          "destination",
+          "actively chosen access need"
+        ],
+        "prohibited_zh": [
+          "持续定位身份",
+          "未调查路线作安全承诺",
+          "敏感推断"
+        ],
+        "prohibited_en": [
+          "continuous identity location",
+          "safety promise from unsurveyed route",
+          "sensitive inference"
+        ]
+      },
+      "data_and_evidence": {
+        "source_ids": [
+          "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+          "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605"
+        ],
+        "evidence_grade": "candidate/not surveyed until field audit",
+        "no_personal_data_required": true
+      },
+      "minimum_necessary_data": {
+        "zh": [
+          "起终点类别",
+          "障碍 ID/日期",
+          "路线状态",
+          "人工求助状态"
+        ],
+        "en": [
+          "origin/destination class",
+          "barrier ID/date",
+          "route state",
+          "human-help state"
+        ]
+      },
+      "outputs": {
+        "zh": [
+          "路线选项与未知提示",
+          "人工求助入口"
+        ],
+        "en": [
+          "route option with unknown notice",
+          "human-help entry"
+        ]
+      },
+      "ai_authority": {
+        "zh": "只排序已核验路线并提示未知。",
+        "en": "Only rank verified routes and flag unknowns."
+      },
+      "human_only_decisions": {
+        "zh": [
+          "路线开放/关闭",
+          "现场安全",
+          "带领",
+          "复开"
+        ],
+        "en": [
+          "route open/close",
+          "field safety",
+          "escort",
+          "reopen"
+        ]
+      },
+      "frontstage_notice": {
+        "zh": "候选路线非无障碍审计；显示核验日期、人工服务点和纸图。",
+        "en": "Candidate route is not an accessibility audit; show check date, human service point, and paper map."
+      },
+      "lawful_basis_or_no_collection": {
+        "status": "no personal data required",
+        "zh": "不持续定位身份；仅处理当次主动选择。",
+        "en": "No continuous identity location; process only the active session choice."
+      },
+      "human_takeover": {
+        "triggers": {
+          "zh": [
+            "障碍 unknown",
+            "路线或接口故障",
+            "无障碍失败",
+            "人工请求",
+            "求助不可达"
+          ],
+          "en": [
+            "unknown barrier",
+            "route/interface fault",
+            "accessibility failure",
+            "human request",
+            "help unreachable"
+          ]
+        },
+        "responsible_role_keys": [
+          "accessibility_lead",
+          "on_site_host"
+        ],
+        "responsible_role_label_zh": "无障碍责任人与现场人工服务",
+        "responsible_role_label_en": "accessibility lead and on-site human service",
+        "visible_action_zh": "沿既有脊柱服务点亮起 Human Takeover，关闭路线并人工带领。",
+        "visible_action_en": "Show Human Takeover at existing spine service points, close the route, and provide human escort."
+      },
+      "low_tech_alternative": {
+        "zh": "纸质无障碍图、固定标识、人工带领。",
+        "en": "Paper access map, fixed signs, and human escort."
+      },
+      "complaints_and_appeals": {
+        "summary_zh": "服务点/电话报告障碍→独立无障碍复核→关闭、更正或复开。",
+        "summary_en": "Service point/phone barrier report → independent access review → close, correct, or reopen.",
+        "channels_zh": [
+          "现场人工",
+          "纸面",
+          "电话或等效非 AI 渠道"
+        ],
+        "channels_en": [
+          "on-site human",
+          "paper",
+          "phone or equivalent non-AI channel"
+        ],
+        "anonymous_allowed": true,
+        "intake_role_keys": [
+          "on_site_host",
+          "complaint_appeal_lead"
+        ],
+        "receipt_zh": "登记 ticket_id、范围与接收状态，并由人工提供可保存回执；数字时限为 design-target。",
+        "receipt_en": "Record ticket_id, scope, and receipt state, and provide a durable human-issued receipt; any numeric window is design-target.",
+        "independent_review_role_keys": [
+          "independent_appeal_reviewer"
+        ],
+        "independence_rule_zh": "复核人必须与原决定者、运营者和产品方分离。",
+        "independence_rule_en": "The reviewer must be separate from the original decision maker, operator, and provider.",
+        "outcome_notice_zh": "以可访问形式告知事实、理由、纠正/暂停/停止决定及未决 unknown。",
+        "outcome_notice_en": "Give an accessible notice of facts, reasons, correction/pause/stop decision, and unresolved unknowns.",
+        "reappeal_zh": "可向另一名具名独立复核人再次申诉；不得由 AI 结案。",
+        "reappeal_en": "A re-appeal may go to a different named independent reviewer; AI may not close the case.",
+        "human_takeover_on_unreachable": true,
+        "closure_criteria_zh": "回执、独立复核、结果告知、证据保全和再申诉入口均可验证。",
+        "closure_criteria_en": "Receipt, independent review, outcome notice, evidence hold, and re-appeal entry are all verifiable.",
+        "logs_category_ref": "phase3-data-governance.json#/data_categories[category=logs_appeal_materials]",
+        "retention_deletion_ref": "phase3-data-governance.json#/scenario_profiles[scenario_id=SC08].control_overrides.retention_deletion"
+      },
+      "logging_audit": {
+        "fields": [
+          "route_id",
+          "barrier_id",
+          "check_date",
+          "status",
+          "help_request",
+          "takeover",
+          "closure",
+          "retest"
+        ],
+        "audit_role_keys": [
+          "data_steward",
+          "records_steward"
+        ]
+      },
+      "retention_deletion": {
+        "zh": "不保留身份轨迹；保留障碍、关闭、申诉和复测记录。",
+        "en": "Retain no identity trail; retain barrier, closure, appeal, and retest records."
+      },
+      "lifecycle": {
+        "normal_path": [
+          "preflight",
+          "limited-open",
+          "operating"
+        ],
+        "degraded_path": [
+          "operating",
+          "degraded",
+          "human-takeover",
+          "paused"
+        ],
+        "human_takeover_path": [
+          "operating",
+          "human-takeover",
+          "paused"
+        ],
+        "exit_path": [
+          "paused",
+          "stopped",
+          "removed",
+          "archive"
+        ],
+        "archive_is_terminal": true,
+        "future_use_requires_new_run_instance": true
+      },
+      "evaluation": {
+        "window_zh": "书面设定的 design-target 复核窗口",
+        "window_en": "after every field update/complaint",
+        "measures_zh": [
+          "现场核验新鲜度",
+          "求助可达",
+          "障碍闭合"
+        ],
+        "measures_en": [
+          "field check freshness",
+          "help reachability",
+          "barrier closure"
+        ],
+        "review_triggers_zh": [
+          "障碍报告",
+          "路线变化",
+          "求助不可用"
+        ],
+        "review_triggers_en": [
+          "barrier report",
+          "route change",
+          "help unavailable"
+        ]
+      },
+      "dependencies": {
+        "zh": [
+          "现场无障碍审计",
+          "既有服务点",
+          "人工陪同",
+          "纸图"
+        ],
+        "en": [
+          "field accessibility audit",
+          "service points",
+          "staffed escort",
+          "paper map"
+        ]
+      },
+      "qualitative_cost": "M",
+      "maintenance": {
+        "zh": "逐路线更新障碍、日期、关闭与复测。",
+        "en": "Maintain barriers, dates, closure, and retest per route."
+      },
+      "stop_exit": {
+        "conditions_zh": [
+          "路线风险 unknown",
+          "求助不可达",
+          "现场不一致",
+          "无障碍失败"
+        ],
+        "conditions_en": [
+          "unknown route risk",
+          "help unreachable",
+          "field mismatch",
+          "access failure"
+        ],
+        "actions_zh": [
+          "关闭路线",
+          "人工陪同",
+          "更正地图",
+          "停止并撤场",
+          "复测后再开"
+        ],
+        "actions_en": [
+          "close route",
+          "human escort",
+          "correct map",
+          "retest before reopen"
+        ],
+        "stop_authority_role_keys": [
+          "scenario_service_owner",
+          "on_site_host",
+          "safety_professional",
+          "complaint_appeal_lead"
+        ],
+        "removal_authority_role_keys": [
+          "scenario_service_owner",
+          "facilities_maintenance",
+          "data_steward"
+        ],
+        "future_use_rule_zh": "stopped、removed 或 archive 后不得复开原实例；未来使用须新建 run_instance_id 并从 preflight 开始。",
+        "future_use_rule_en": "After stopped, removed, or archive, the original instance cannot reopen; future use creates a new run_instance_id at preflight."
+      },
+      "frontstage_summary": {
+        "ai_may_zh": "排序已核验路线、提示未知",
+        "ai_may_en": "Rank verified routes, flag unknowns",
+        "human_only_zh": "开放/关闭、现场安全与复开",
+        "human_only_en": "Open/close, field safety, reopen",
+        "takeover_zh": "脊柱服务点关闭路线＋人工带领",
+        "takeover_en": "Spine service point closes route + escort",
+        "low_tech_zh": "纸图＋固定标识＋带领",
+        "low_tech_en": "Paper map + fixed signs + escort",
+        "lifecycle_zh": "风险 unknown/求助不可达→关闭",
+        "lifecycle_en": "Unknown risk/unreachable help → close"
+      },
+      "failure_modes": {
+        "zh": [
+          "路线风险 unknown",
+          "求助不可达",
+          "现场不一致",
+          "无障碍失败"
+        ],
+        "en": [
+          "unknown route risk",
+          "help unreachable",
+          "field mismatch",
+          "access failure"
+        ]
+      },
+      "data_governance_ref": "phase3-data-governance.json#/scenario_profiles[scenario_id=SC08]"
+    },
+    {
+      "scenario_id": "SC09",
+      "title_zh": "站城换乘导览",
+      "title_en": "Station-City Transfer Guide",
+      "flagship": false,
+      "purpose_and_spatial_carrier": {
+        "purpose_zh": "在大钟寺解释经确认的公开换乘信息，应急时退回静态图与现场人员。",
+        "purpose_en": "Explain verified public interchange information at Dazhongsi and fall back to static maps/staff in emergencies.",
+        "carrier_id": "PROV-KEY-003",
+        "carrier_zh": "大钟寺四象限到达环 / CX10",
+        "carrier_en": "Dazhongsi four-quadrant arrival loop / CX10",
+        "feature_refs": [
+          "geometry/key_areas.geojson#PROV-KEY-003",
+          "geometry/roads.geojson#CX10"
+        ]
+      },
+      "users": {
+        "primary": [
+          "U4",
+          "U6",
+          "U7"
+        ],
+        "affected": [
+          "commuters",
+          "staff",
+          "emergency users"
+        ]
+      },
+      "inputs": {
+        "allowed_zh": [
+          "经确认的公开交通信息",
+          "状态公告",
+          "主动语言选择"
+        ],
+        "allowed_en": [
+          "verified public transit information",
+          "status notice",
+          "active language choice"
+        ],
+        "prohibited_zh": [
+          "身份追踪",
+          "预测执法",
+          "未经确认的实时指令"
+        ],
+        "prohibited_en": [
+          "identity tracking",
+          "predictive policing",
+          "unverified live instruction"
+        ]
+      },
+      "data_and_evidence": {
+        "source_ids": [
+          "DATA-SRC-AGENT-TASKBOOK-20260518"
+        ],
+        "evidence_grade": "public source; live station interface unknown",
+        "no_personal_data_required": true
+      },
+      "minimum_necessary_data": {
+        "zh": [
+          "线路/出口",
+          "来源",
+          "更新时间",
+          "应急状态",
+          "人工点"
+        ],
+        "en": [
+          "route/exit",
+          "source",
+          "update time",
+          "emergency state",
+          "human point"
+        ]
+      },
+      "outputs": {
+        "zh": [
+          "带来源换乘说明",
+          "静态图/人工切换"
+        ],
+        "en": [
+          "sourced transfer explanation",
+          "static-map/human switch"
+        ]
+      },
+      "ai_authority": {
+        "zh": "只解释、转译和排序公开选项。",
+        "en": "Only explain, translate, and rank public options."
+      },
+      "human_only_decisions": {
+        "zh": [
+          "应急指挥",
+          "路线关闭",
+          "现场安全",
+          "复开"
+        ],
+        "en": [
+          "emergency command",
+          "route closure",
+          "field safety",
+          "reopen"
+        ]
+      },
+      "frontstage_notice": {
+        "zh": "以现场/官方最新信息为准；显示静态图、人员与更新时间。",
+        "en": "Follow latest on-site/official information; show static map, staff, and update time."
+      },
+      "lawful_basis_or_no_collection": {
+        "status": "no personal data required",
+        "zh": "不采集身份或持续路径。",
+        "en": "Collect no identity or continuous path."
+      },
+      "human_takeover": {
+        "triggers": {
+          "zh": [
+            "应急",
+            "数据过期或冲突",
+            "接口故障",
+            "语言歧义"
+          ],
+          "en": [
+            "emergency",
+            "stale or conflicting data",
+            "interface fault",
+            "language ambiguity"
+          ]
+        },
+        "responsible_role_keys": [
+          "on_site_host",
+          "rights_content_reviewer"
+        ],
+        "responsible_role_label_zh": "现场人工服务与交通内容复核人",
+        "responsible_role_label_en": "on-site human service and transport-content reviewer",
+        "visible_action_zh": "到达环显示 Human Takeover，切静态图并由现场人员指引。",
+        "visible_action_en": "Show Human Takeover at the arrival loop, switch to static map, and let staff guide."
+      },
+      "low_tech_alternative": {
+        "zh": "静态导览图、广播和现场人员。",
+        "en": "Static map, announcement, and on-site staff."
+      },
+      "complaints_and_appeals": {
+        "summary_zh": "现场/电话报告错误→交通信息维护者外的人工复核→更正或关闭。",
+        "summary_en": "On-site/phone error report → human review independent of data maintainer → correct or close.",
+        "channels_zh": [
+          "现场人工",
+          "纸面",
+          "电话或等效非 AI 渠道"
+        ],
+        "channels_en": [
+          "on-site human",
+          "paper",
+          "phone or equivalent non-AI channel"
+        ],
+        "anonymous_allowed": true,
+        "intake_role_keys": [
+          "on_site_host",
+          "complaint_appeal_lead"
+        ],
+        "receipt_zh": "登记 ticket_id、范围与接收状态，并由人工提供可保存回执；数字时限为 design-target。",
+        "receipt_en": "Record ticket_id, scope, and receipt state, and provide a durable human-issued receipt; any numeric window is design-target.",
+        "independent_review_role_keys": [
+          "independent_appeal_reviewer"
+        ],
+        "independence_rule_zh": "复核人必须与原决定者、运营者和产品方分离。",
+        "independence_rule_en": "The reviewer must be separate from the original decision maker, operator, and provider.",
+        "outcome_notice_zh": "以可访问形式告知事实、理由、纠正/暂停/停止决定及未决 unknown。",
+        "outcome_notice_en": "Give an accessible notice of facts, reasons, correction/pause/stop decision, and unresolved unknowns.",
+        "reappeal_zh": "可向另一名具名独立复核人再次申诉；不得由 AI 结案。",
+        "reappeal_en": "A re-appeal may go to a different named independent reviewer; AI may not close the case.",
+        "human_takeover_on_unreachable": true,
+        "closure_criteria_zh": "回执、独立复核、结果告知、证据保全和再申诉入口均可验证。",
+        "closure_criteria_en": "Receipt, independent review, outcome notice, evidence hold, and re-appeal entry are all verifiable.",
+        "logs_category_ref": "phase3-data-governance.json#/data_categories[category=logs_appeal_materials]",
+        "retention_deletion_ref": "phase3-data-governance.json#/scenario_profiles[scenario_id=SC09].control_overrides.retention_deletion"
+      },
+      "logging_audit": {
+        "fields": [
+          "source_id",
+          "update_time",
+          "query_class",
+          "answer_hash",
+          "emergency_state",
+          "human_switch",
+          "correction"
+        ],
+        "audit_role_keys": [
+          "data_steward",
+          "records_steward"
+        ]
+      },
+      "retention_deletion": {
+        "zh": "只留非个人来源/错误/切换日志；按书面周期删除普通查询。",
+        "en": "Retain non-personal source/error/switch logs only; delete ordinary queries on written cycle."
+      },
+      "lifecycle": {
+        "normal_path": [
+          "preflight",
+          "limited-open",
+          "operating"
+        ],
+        "degraded_path": [
+          "operating",
+          "degraded",
+          "human-takeover",
+          "paused"
+        ],
+        "human_takeover_path": [
+          "operating",
+          "human-takeover",
+          "paused"
+        ],
+        "exit_path": [
+          "paused",
+          "stopped",
+          "removed",
+          "archive"
+        ],
+        "archive_is_terminal": true,
+        "future_use_requires_new_run_instance": true
+      },
+      "evaluation": {
+        "window_zh": "书面设定的 design-target 复核窗口",
+        "window_en": "source update + incident window",
+        "measures_zh": [
+          "信息新鲜度",
+          "静态回退",
+          "语言纠正"
+        ],
+        "measures_en": [
+          "freshness",
+          "static fallback",
+          "language correction"
+        ],
+        "review_triggers_zh": [
+          "应急",
+          "来源冲突",
+          "错误投诉"
+        ],
+        "review_triggers_en": [
+          "emergency",
+          "source conflict",
+          "error complaint"
+        ]
+      },
+      "dependencies": {
+        "zh": [
+          "经核验公开交通来源",
+          "现场人员",
+          "静态图",
+          "应急权限"
+        ],
+        "en": [
+          "verified public transit source",
+          "site staff",
+          "static map",
+          "emergency authority"
+        ]
+      },
+      "qualitative_cost": "S/M",
+      "maintenance": {
+        "zh": "按更新时间更换地图、来源和状态。",
+        "en": "Maintain maps, sources, and status by update time."
+      },
+      "stop_exit": {
+        "conditions_zh": [
+          "应急",
+          "来源过期或冲突",
+          "人工不可用"
+        ],
+        "conditions_en": [
+          "emergency",
+          "stale/conflicting source",
+          "human unavailable"
+        ],
+        "actions_zh": [
+          "切换静态模式",
+          "人工接管",
+          "关闭受影响指引",
+          "停止并撤场",
+          "归档更正"
+        ],
+        "actions_en": [
+          "static mode",
+          "human takeover",
+          "close affected guide",
+          "archive correction"
+        ],
+        "stop_authority_role_keys": [
+          "scenario_service_owner",
+          "on_site_host",
+          "safety_professional",
+          "complaint_appeal_lead"
+        ],
+        "removal_authority_role_keys": [
+          "scenario_service_owner",
+          "facilities_maintenance",
+          "data_steward"
+        ],
+        "future_use_rule_zh": "stopped、removed 或 archive 后不得复开原实例；未来使用须新建 run_instance_id 并从 preflight 开始。",
+        "future_use_rule_en": "After stopped, removed, or archive, the original instance cannot reopen; future use creates a new run_instance_id at preflight."
+      },
+      "frontstage_summary": {
+        "ai_may_zh": "解释、转译、排序公开选项",
+        "ai_may_en": "Explain, translate, rank public options",
+        "human_only_zh": "应急、关闭、现场安全与复开",
+        "human_only_en": "Emergency, closure, field safety, reopen",
+        "takeover_zh": "到达环静态图＋现场人员",
+        "takeover_en": "Arrival-loop static map + staff",
+        "low_tech_zh": "静态图＋广播＋人员",
+        "low_tech_en": "Static map + announcement + staff",
+        "lifecycle_zh": "应急/信息失真→静态/人工",
+        "lifecycle_en": "Emergency/data error → static/human"
+      },
+      "failure_modes": {
+        "zh": [
+          "应急",
+          "来源过期或冲突",
+          "人工不可用"
+        ],
+        "en": [
+          "emergency",
+          "stale/conflicting source",
+          "human unavailable"
+        ]
+      },
+      "data_governance_ref": "phase3-data-governance.json#/scenario_profiles[scenario_id=SC09]"
+    },
+    {
+      "scenario_id": "SC10",
+      "title_zh": "AI 原生产品公共试用室",
+      "title_en": "AI-Native Product Public Trial Room",
+      "flagship": true,
+      "purpose_and_spatial_carrier": {
+        "purpose_zh": "在大钟寺以唯一 SC10＋IM06 有期限试用展示产品，主持人可停止并撤场。",
+        "purpose_en": "Host the only time-bounded SC10+IM06 product trial at Dazhongsi with a host able to stop and remove it.",
+        "carrier_id": "PROV-KEY-003",
+        "carrier_zh": "大钟寺公众试用室 / CX10 人工投诉台与撤场通道",
+        "carrier_en": "Dazhongsi public trial room / CX10 human complaint desk and removal lane",
+        "feature_refs": [
+          "geometry/key_areas.geojson#PROV-KEY-003",
+          "geometry/buildings.geojson#BLDG-005",
+          "geometry/roads.geojson#CX10",
+          "geometry/roads.geojson#CX10-D03",
+          "geometry/roads.geojson#CX10-D04"
+        ]
+      },
+      "users": {
+        "primary": [
+          "U2",
+          "U3",
+          "U4",
+          "U7"
+        ],
+        "affected": [
+          "consumers",
+          "bystanders",
+          "staff",
+          "rights holders"
+        ]
+      },
+      "inputs": {
+        "allowed_zh": [
+          "清权产品说明",
+          "非个人运营状态",
+          "匿名反馈",
+          "可选联系信息分离"
+        ],
+        "allowed_en": [
+          "cleared product notice",
+          "non-personal operational state",
+          "anonymous feedback",
+          "separate optional contact"
+        ],
+        "prohibited_zh": [
+          "默认人脸/情绪识别",
+          "自动购买/准入",
+          "隐藏监控",
+          "敏感推断",
+          "误导营销"
+        ],
+        "prohibited_en": [
+          "default face/emotion recognition",
+          "automatic purchase/admission",
+          "hidden monitoring",
+          "sensitive inference",
+          "misleading marketing"
+        ]
+      },
+      "data_and_evidence": {
+        "source_ids": [
+          "DATA-SRC-AGENT-TASKBOOK-20260518",
+          "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES"
+        ],
+        "evidence_grade": "design-target; legal/site/product/safety review required",
+        "no_personal_data_required": true
+      },
+      "minimum_necessary_data": {
+        "zh": [
+          "产品/版本",
+          "说明/限制",
+          "书面期限",
+          "匿名反馈",
+          "主持/状态/投诉/撤场"
+        ],
+        "en": [
+          "product/version",
+          "notice/limits",
+          "written term",
+          "anonymous feedback",
+          "host/state/complaint/removal"
+        ]
+      },
+      "outputs": {
+        "zh": [
+          "受控演示",
+          "带限制说明",
+          "人工决定",
+          "投诉/退出记录"
+        ],
+        "en": [
+          "controlled demonstration",
+          "qualified notice",
+          "human decision",
+          "complaint/exit record"
+        ]
+      },
+      "ai_authority": {
+        "zh": "只演示获准功能、解释和提示。",
+        "en": "Only demonstrate approved functions, explain, and prompt."
+      },
+      "human_only_decisions": {
+        "zh": [
+          "产品/场地准入",
+          "购买/交易",
+          "安全/消费者权益",
+          "停止/撤场/复开"
+        ],
+        "en": [
+          "product/site admission",
+          "purchase/transaction",
+          "safety/consumer rights",
+          "stop/remove/reopen"
+        ]
+      },
+      "frontstage_notice": {
+        "zh": "唯一首用、书面期限、可拒绝 AI；显示主持人、纸面反馈、投诉、停止和撤场状态。",
+        "en": "Single first use with written term and AI refusal; show host, paper feedback, complaint, stop, and removal state."
+      },
+      "lawful_basis_or_no_collection": {
+        "status": "no personal data required for core trial; optional contact requires legal review",
+        "zh": "匿名反馈为默认；可选联系信息单独说明、分离并可撤回。",
+        "en": "Anonymous feedback by default; optional contact is separately noticed, stored, and withdrawable.",
+        "conditional_path_ref": "phase3-data-governance.json#/scenario_profiles[scenario_id=SC10].conditional_personal_data"
+      },
+      "human_takeover": {
+        "triggers": {
+          "zh": [
+            "伤害或近失",
+            "权利或冒用",
+            "误导营销",
+            "人工请求",
+            "投诉不可达",
+            "主持缺席",
+            "必填日志缺失"
+          ],
+          "en": [
+            "harm or near miss",
+            "rights/impersonation",
+            "misleading marketing",
+            "human request",
+            "complaint unreachable",
+            "host absent",
+            "mandatory log missing"
+          ]
+        },
+        "responsible_role_keys": [
+          "on_site_host",
+          "safety_professional",
+          "rights_content_reviewer"
+        ],
+        "responsible_role_label_zh": "现场主持、安全专业 Gate 与权利内容复核人",
+        "responsible_role_label_en": "on-site host, safety professional, and rights/content reviewer",
+        "visible_action_zh": "CX10 人工投诉台亮起 Human Takeover，主持人停演示、转人工说明并启动撤场通道。",
+        "visible_action_en": "Show Human Takeover at the CX10 complaint desk; host stops demo, explains manually, and activates removal lane."
+      },
+      "low_tech_alternative": {
+        "zh": "人工说明、纸面产品说明/反馈和可直接离场路线。",
+        "en": "Human explanation, paper product notice/feedback, and direct exit route."
+      },
+      "complaints_and_appeals": {
+        "summary_zh": "现场/纸面/电话投诉→与产品方分离的人工复核→纠正、退款/权利转专业、停止或撤场→可再申诉。",
+        "summary_en": "On-site/paper/phone complaint → human review independent of provider → correct, refer rights/refund, stop/remove → re-appeal.",
+        "channels_zh": [
+          "现场人工",
+          "纸面",
+          "电话或等效非 AI 渠道"
+        ],
+        "channels_en": [
+          "on-site human",
+          "paper",
+          "phone or equivalent non-AI channel"
+        ],
+        "anonymous_allowed": true,
+        "intake_role_keys": [
+          "on_site_host",
+          "complaint_appeal_lead"
+        ],
+        "receipt_zh": "登记 ticket_id、范围与接收状态，并由人工提供可保存回执；数字时限为 design-target。",
+        "receipt_en": "Record ticket_id, scope, and receipt state, and provide a durable human-issued receipt; any numeric window is design-target.",
+        "independent_review_role_keys": [
+          "independent_appeal_reviewer"
+        ],
+        "independence_rule_zh": "复核人必须与原决定者、运营者和产品方分离。",
+        "independence_rule_en": "The reviewer must be separate from the original decision maker, operator, and provider.",
+        "outcome_notice_zh": "以可访问形式告知事实、理由、纠正/暂停/停止决定及未决 unknown。",
+        "outcome_notice_en": "Give an accessible notice of facts, reasons, correction/pause/stop decision, and unresolved unknowns.",
+        "reappeal_zh": "可向另一名具名独立复核人再次申诉；不得由 AI 结案。",
+        "reappeal_en": "A re-appeal may go to a different named independent reviewer; AI may not close the case.",
+        "human_takeover_on_unreachable": true,
+        "closure_criteria_zh": "回执、独立复核、结果告知、证据保全和再申诉入口均可验证。",
+        "closure_criteria_en": "Receipt, independent review, outcome notice, evidence hold, and re-appeal entry are all verifiable.",
+        "logs_category_ref": "phase3-data-governance.json#/data_categories[category=logs_appeal_materials]",
+        "retention_deletion_ref": "phase3-data-governance.json#/scenario_profiles[scenario_id=SC10].control_overrides.retention_deletion"
+      },
+      "logging_audit": {
+        "fields": [
+          "product_version",
+          "notice_version",
+          "written_term",
+          "state",
+          "host",
+          "feedback_class",
+          "complaint",
+          "takeover",
+          "stop",
+          "removal",
+          "data_action"
+        ],
+        "audit_role_keys": [
+          "data_steward",
+          "records_steward"
+        ]
+      },
+      "retention_deletion": {
+        "zh": "期限届满删除非必要反馈与联系副本；保留获准安全、投诉、撤场和申诉证据，规则须书面并经法律审查。",
+        "en": "At expiry delete unnecessary feedback/contact copies; retain authorized safety, complaint, removal, and appeal evidence under written legally reviewed rules."
+      },
+      "lifecycle": {
+        "normal_path": [
+          "preflight",
+          "limited-open"
+        ],
+        "degraded_path": [
+          "limited-open",
+          "degraded",
+          "paused"
+        ],
+        "human_takeover_path": [
+          "limited-open",
+          "human-takeover",
+          "paused"
+        ],
+        "exit_path": [
+          "paused",
+          "stopped",
+          "removed",
+          "archive"
+        ],
+        "archive_is_terminal": true,
+        "future_use_requires_new_run_instance": true
+      },
+      "evaluation": {
+        "window_zh": "书面设定的 design-target 复核窗口",
+        "window_en": "written design-target term + post-removal review",
+        "measures_zh": [
+          "自愿退出",
+          "投诉可达",
+          "接管与撤场完成"
+        ],
+        "measures_en": [
+          "voluntary exit",
+          "complaint reachability",
+          "takeover/removal completion"
+        ],
+        "review_triggers_zh": [
+          "任一伤害或投诉",
+          "产品或版本变化",
+          "期限届满",
+          "主持缺席"
+        ],
+        "review_triggers_en": [
+          "any harm/complaint",
+          "product/version change",
+          "term expiry",
+          "host absence"
+        ]
+      },
+      "dependencies": {
+        "zh": [
+          "书面许可",
+          "产品与场地权利",
+          "在场主持",
+          "消费者与无障碍复核",
+          "投诉渠道",
+          "已测试撤场通道"
+        ],
+        "en": [
+          "written permissions",
+          "product/site rights",
+          "staffed host",
+          "consumer/accessibility review",
+          "complaint channel",
+          "tested removal lane"
+        ]
+      },
+      "qualitative_cost": "M",
+      "maintenance": {
+        "zh": "每次开放前核对产品、状态牌、人员、纸面替代、投诉和撤场。",
+        "en": "Before every opening check product, status, staff, paper fallback, complaint, and removal."
+      },
+      "stop_exit": {
+        "conditions_zh": [
+          "伤害",
+          "权利或冒用",
+          "误导营销",
+          "主持、投诉或日志失败",
+          "期限届满",
+          "撤场失败"
+        ],
+        "conditions_en": [
+          "harm",
+          "rights/impersonation",
+          "misleading marketing",
+          "host/complaint/log failure",
+          "term expiry",
+          "removal failure"
+        ],
+        "actions_zh": [
+          "停止演示",
+          "断开服务",
+          "人工解释",
+          "撤除设备与状态",
+          "执行数据动作",
+          "归档",
+          "公众复盘",
+          "未来只能新建实例"
+        ],
+        "actions_en": [
+          "stop demo",
+          "disconnect",
+          "human explain",
+          "remove equipment/status",
+          "govern data",
+          "archive",
+          "public review",
+          "written reopen only"
+        ],
+        "stop_authority_role_keys": [
+          "scenario_service_owner",
+          "on_site_host",
+          "safety_professional",
+          "complaint_appeal_lead"
+        ],
+        "removal_authority_role_keys": [
+          "scenario_service_owner",
+          "facilities_maintenance",
+          "data_steward"
+        ],
+        "future_use_rule_zh": "stopped、removed 或 archive 后不得复开原实例；未来使用须新建 run_instance_id 并从 preflight 开始。",
+        "future_use_rule_en": "After stopped, removed, or archive, the original instance cannot reopen; future use creates a new run_instance_id at preflight."
+      },
+      "frontstage_summary": {
+        "ai_may_zh": "只演示获准功能、解释、提示",
+        "ai_may_en": "Demonstrate approved function, explain, prompt",
+        "human_only_zh": "准入、交易、安全、停止/撤场/复开",
+        "human_only_en": "Admission, transaction, safety, stop/remove/reopen",
+        "takeover_zh": "CX10 投诉台停演示＋人工说明＋撤场",
+        "takeover_en": "CX10 desk stops demo + human explains + removal",
+        "low_tech_zh": "人工说明＋纸面反馈＋直接离场",
+        "low_tech_en": "Human explanation + paper feedback + direct exit",
+        "lifecycle_zh": "伤害/权利/投诉失败→接管停止撤场",
+        "lifecycle_en": "Harm/rights/complaint fail → takeover/stop/remove"
+      },
+      "failure_modes": {
+        "zh": [
+          "伤害",
+          "权利或冒用",
+          "误导营销",
+          "主持、投诉或日志失败",
+          "期限届满",
+          "撤场失败"
+        ],
+        "en": [
+          "harm",
+          "rights/impersonation",
+          "misleading marketing",
+          "host/complaint/log failure",
+          "term expiry",
+          "removal failure"
+        ]
+      },
+      "data_governance_ref": "phase3-data-governance.json#/scenario_profiles[scenario_id=SC10]"
+    },
+    {
+      "scenario_id": "SC11",
+      "title_zh": "京张记忆共读导览",
+      "title_en": "Jing-Zhang Memory Co-Reading Guide",
+      "flagship": false,
+      "purpose_and_spatial_carrier": {
+        "purpose_zh": "在大钟寺检索清权档案与经同意口述材料，史实和权利由人复核。",
+        "purpose_en": "Retrieve cleared archives and consented oral material at Dazhongsi with human fact and rights review.",
+        "carrier_id": "PROV-KEY-003",
+        "carrier_zh": "大钟寺市集文化界面",
+        "carrier_en": "Dazhongsi market-culture interface",
+        "feature_refs": [
+          "geometry/key_areas.geojson#PROV-KEY-003",
+          "geometry/buildings.geojson#BLDG-006"
+        ]
+      },
+      "users": {
+        "primary": [
+          "U4",
+          "U5",
+          "U6",
+          "U7"
+        ],
+        "affected": [
+          "narrators",
+          "descendants",
+          "rights holders"
+        ]
+      },
+      "inputs": {
+        "allowed_zh": [
+          "清权档案",
+          "经同意口述材料",
+          "公开史料",
+          "纠错"
+        ],
+        "allowed_en": [
+          "cleared archives",
+          "consented oral material",
+          "public history",
+          "corrections"
+        ],
+        "prohibited_zh": [
+          "未清权影像/全文",
+          "敏感身份推断",
+          "自动判定史实"
+        ],
+        "prohibited_en": [
+          "uncleared image/full text",
+          "sensitive identity inference",
+          "automatic historical truth"
+        ]
+      },
+      "data_and_evidence": {
+        "source_ids": [
+          "DATA-SRC-AGENT-TASKBOOK-20260518"
+        ],
+        "evidence_grade": "cleared/consented source required; history review provisional",
+        "no_personal_data_required": false
+      },
+      "minimum_necessary_data": {
+        "zh": [
+          "来源/权利",
+          "片段",
+          "日期",
+          "同意/撤回状态",
+          "人工校订"
+        ],
+        "en": [
+          "source/rights",
+          "excerpt",
+          "date",
+          "consent/withdrawal state",
+          "human edit"
+        ]
+      },
+      "outputs": {
+        "zh": [
+          "带来源共读说明",
+          "争议/撤回标记",
+          "人工校订"
+        ],
+        "en": [
+          "sourced co-reading note",
+          "dispute/withdrawal flag",
+          "human edit"
+        ]
+      },
+      "ai_authority": {
+        "zh": "只检索、转译和提出阅读线索。",
+        "en": "Only retrieve, translate, and propose reading cues."
+      },
+      "human_only_decisions": {
+        "zh": [
+          "史实判断",
+          "权利/同意",
+          "公开/隐藏",
+          "校订/复开"
+        ],
+        "en": [
+          "historical judgment",
+          "rights/consent",
+          "publish/hide",
+          "edit/reopen"
+        ]
+      },
+      "frontstage_notice": {
+        "zh": "显示来源、权利、争议与人工校订；可要求撤回相关口述材料。",
+        "en": "Show source, rights, dispute, and human edit; oral material can be withdrawn."
+      },
+      "lawful_basis_or_no_collection": {
+        "status": "requires legal/rights review",
+        "zh": "口述材料逐项同意和撤回；不以展出推定永久许可。",
+        "en": "Oral material uses item-level consent/withdrawal; display never implies perpetual permission.",
+        "conditional_path_ref": "phase3-data-governance.json#/scenario_profiles[scenario_id=SC11].conditional_personal_data"
+      },
+      "human_takeover": {
+        "triggers": {
+          "zh": [
+            "事实争议",
+            "权利撤回",
+            "归属错误",
+            "语言伤害"
+          ],
+          "en": [
+            "fact dispute",
+            "rights withdrawal",
+            "misattribution",
+            "language harm"
+          ]
+        },
+        "responsible_role_keys": [
+          "rights_content_reviewer",
+          "data_steward"
+        ],
+        "responsible_role_label_zh": "权利内容复核人与数据治理责任人",
+        "responsible_role_label_en": "rights/content reviewer and data steward",
+        "visible_action_zh": "隐藏争议内容，改用清权文字/音频或人工讲解并显示复核中。",
+        "visible_action_en": "Hide disputed content, use cleared text/audio or human narration, and show under review."
+      },
+      "low_tech_alternative": {
+        "zh": "清权文字展板、人工讲解、可撤换音频。",
+        "en": "Cleared text panel, human narration, and removable audio."
+      },
+      "complaints_and_appeals": {
+        "summary_zh": "现场/权利人登记→独立史实与权利复核→校订、隐藏或撤回→结果告知。",
+        "summary_en": "Visitor/rights-holder record → independent fact/rights review → edit, hide, or withdraw → notice.",
+        "channels_zh": [
+          "现场人工",
+          "纸面",
+          "电话或等效非 AI 渠道"
+        ],
+        "channels_en": [
+          "on-site human",
+          "paper",
+          "phone or equivalent non-AI channel"
+        ],
+        "anonymous_allowed": true,
+        "intake_role_keys": [
+          "on_site_host",
+          "complaint_appeal_lead"
+        ],
+        "receipt_zh": "登记 ticket_id、范围与接收状态，并由人工提供可保存回执；数字时限为 design-target。",
+        "receipt_en": "Record ticket_id, scope, and receipt state, and provide a durable human-issued receipt; any numeric window is design-target.",
+        "independent_review_role_keys": [
+          "independent_appeal_reviewer"
+        ],
+        "independence_rule_zh": "复核人必须与原决定者、运营者和产品方分离。",
+        "independence_rule_en": "The reviewer must be separate from the original decision maker, operator, and provider.",
+        "outcome_notice_zh": "以可访问形式告知事实、理由、纠正/暂停/停止决定及未决 unknown。",
+        "outcome_notice_en": "Give an accessible notice of facts, reasons, correction/pause/stop decision, and unresolved unknowns.",
+        "reappeal_zh": "可向另一名具名独立复核人再次申诉；不得由 AI 结案。",
+        "reappeal_en": "A re-appeal may go to a different named independent reviewer; AI may not close the case.",
+        "human_takeover_on_unreachable": true,
+        "closure_criteria_zh": "回执、独立复核、结果告知、证据保全和再申诉入口均可验证。",
+        "closure_criteria_en": "Receipt, independent review, outcome notice, evidence hold, and re-appeal entry are all verifiable.",
+        "logs_category_ref": "phase3-data-governance.json#/data_categories[category=logs_appeal_materials]",
+        "retention_deletion_ref": "phase3-data-governance.json#/scenario_profiles[scenario_id=SC11].control_overrides.retention_deletion"
+      },
+      "logging_audit": {
+        "fields": [
+          "source_id",
+          "rights_status",
+          "consent_version",
+          "excerpt_hash",
+          "human_editor",
+          "dispute",
+          "withdrawal",
+          "state_transition"
+        ],
+        "audit_role_keys": [
+          "data_steward",
+          "records_steward"
+        ]
+      },
+      "retention_deletion": {
+        "zh": "撤回即停止公开并删除非必要发布副本；依法/书面保留申诉与权利证据。",
+        "en": "Withdrawal stops publication and deletes unnecessary copies; retain appeal/rights evidence only under written lawful rule."
+      },
+      "lifecycle": {
+        "normal_path": [
+          "preflight",
+          "limited-open",
+          "operating"
+        ],
+        "degraded_path": [
+          "operating",
+          "degraded",
+          "human-takeover",
+          "paused"
+        ],
+        "human_takeover_path": [
+          "operating",
+          "human-takeover",
+          "paused"
+        ],
+        "exit_path": [
+          "paused",
+          "stopped",
+          "removed",
+          "archive"
+        ],
+        "archive_is_terminal": true,
+        "future_use_requires_new_run_instance": true
+      },
+      "evaluation": {
+        "window_zh": "书面设定的 design-target 复核窗口",
+        "window_en": "per source/rights update",
+        "measures_zh": [
+          "来源追踪",
+          "撤回完成",
+          "更正告知"
+        ],
+        "measures_en": [
+          "source trace",
+          "withdrawal completion",
+          "correction notice"
+        ],
+        "review_triggers_zh": [
+          "事实争议",
+          "权利或许可变化",
+          "归属错误"
+        ],
+        "review_triggers_en": [
+          "fact dispute",
+          "rights/consent change",
+          "misattribution"
+        ]
+      },
+      "dependencies": {
+        "zh": [
+          "清权档案",
+          "史实或编辑复核",
+          "权利台账",
+          "撤回机制"
+        ],
+        "en": [
+          "cleared archive",
+          "historian/editor",
+          "rights ledger",
+          "withdrawal mechanism"
+        ]
+      },
+      "qualitative_cost": "S/M",
+      "maintenance": {
+        "zh": "逐条维护来源、权利、校订与撤回。",
+        "en": "Maintain source, rights, edit, and withdrawal item by item."
+      },
+      "stop_exit": {
+        "conditions_zh": [
+          "事实争议未决",
+          "权利撤回",
+          "虚假归属"
+        ],
+        "conditions_en": [
+          "unresolved fact dispute",
+          "rights withdrawal",
+          "false attribution"
+        ],
+        "actions_zh": [
+          "隐藏内容",
+          "人工讲解",
+          "撤回副本",
+          "停止并撤场",
+          "归档更正"
+        ],
+        "actions_en": [
+          "hide item",
+          "human narration",
+          "withdraw copies",
+          "archive correction"
+        ],
+        "stop_authority_role_keys": [
+          "scenario_service_owner",
+          "on_site_host",
+          "safety_professional",
+          "complaint_appeal_lead"
+        ],
+        "removal_authority_role_keys": [
+          "scenario_service_owner",
+          "facilities_maintenance",
+          "data_steward"
+        ],
+        "future_use_rule_zh": "stopped、removed 或 archive 后不得复开原实例；未来使用须新建 run_instance_id 并从 preflight 开始。",
+        "future_use_rule_en": "After stopped, removed, or archive, the original instance cannot reopen; future use creates a new run_instance_id at preflight."
+      },
+      "frontstage_summary": {
+        "ai_may_zh": "检索、转译、提出线索",
+        "ai_may_en": "Retrieve, translate, cue",
+        "human_only_zh": "史实、权利、公开/隐藏与复开",
+        "human_only_en": "Facts, rights, publish/hide, reopen",
+        "takeover_zh": "隐藏争议＋史实/权利复核",
+        "takeover_en": "Hide dispute + fact/rights review",
+        "low_tech_zh": "清权展板＋人工讲解",
+        "low_tech_en": "Cleared panel + human narration",
+        "lifecycle_zh": "史实/权利争议→隐藏撤回",
+        "lifecycle_en": "Fact/rights dispute → hide/withdraw"
+      },
+      "failure_modes": {
+        "zh": [
+          "事实争议未决",
+          "权利撤回",
+          "虚假归属"
+        ],
+        "en": [
+          "unresolved fact dispute",
+          "rights withdrawal",
+          "false attribution"
+        ]
+      },
+      "data_governance_ref": "phase3-data-governance.json#/scenario_profiles[scenario_id=SC11]"
+    },
+    {
+      "scenario_id": "SC12",
+      "title_zh": "可解释公共服务问答台",
+      "title_en": "Explainable Civic-Service Desk",
+      "flagship": false,
+      "purpose_and_spatial_carrier": {
+        "purpose_zh": "在三处原型共用带来源公共 FAQ 与人工转接，不替代专业结论。",
+        "purpose_en": "Share sourced public FAQs and human transfer across all three prototypes without replacing professional conclusions.",
+        "carrier_id": "all-three-prototypes",
+        "carrier_zh": "众智园、AI 原点、大钟寺三处公共服务点",
+        "carrier_en": "Public service points at Zhongzhiyuan, AI Origin, and Dazhongsi",
+        "feature_refs": [
+          "geometry/key_areas.geojson#PROV-KEY-001",
+          "geometry/key_areas.geojson#PROV-KEY-002",
+          "geometry/key_areas.geojson#PROV-KEY-003",
+          "geometry/public_space.geojson#PUBLIC-001"
+        ]
+      },
+      "users": {
+        "primary": [
+          "U4",
+          "U5",
+          "U6",
+          "U7"
+        ],
+        "affected": [
+          "service staff",
+          "children/carers",
+          "non-Chinese speakers"
+        ]
+      },
+      "inputs": {
+        "allowed_zh": [
+          "带来源/日期公共 FAQ",
+          "主动选择主题/语言",
+          "匿名纠错"
+        ],
+        "allowed_en": [
+          "dated sourced public FAQ",
+          "active topic/language",
+          "anonymous correction"
+        ],
+        "prohibited_zh": [
+          "个人案情",
+          "自动法律/医疗/消防结论",
+          "无来源答复",
+          "敏感推断"
+        ],
+        "prohibited_en": [
+          "personal case details",
+          "automatic legal/medical/fire conclusion",
+          "unsourced answer",
+          "sensitive inference"
+        ]
+      },
+      "data_and_evidence": {
+        "source_ids": [
+          "DATA-SRC-AGENT-TASKBOOK-20260518",
+          "DATA-SRC-ELDERLY-SMART-TECH-PLAN-2020-45"
+        ],
+        "evidence_grade": "public source; service owner/availability unknown",
+        "no_personal_data_required": true
+      },
+      "minimum_necessary_data": {
+        "zh": [
+          "主题",
+          "语言",
+          "来源/日期",
+          "答案版本",
+          "人工转接状态"
+        ],
+        "en": [
+          "topic",
+          "language",
+          "source/date",
+          "answer version",
+          "human-transfer state"
+        ]
+      },
+      "outputs": {
+        "zh": [
+          "带来源 FAQ",
+          "不确定/专业转介",
+          "人工转接"
+        ],
+        "en": [
+          "sourced FAQ",
+          "uncertainty/professional referral",
+          "human transfer"
+        ]
+      },
+      "ai_authority": {
+        "zh": "只检索、转译、辅助验证和提示。",
+        "en": "Only retrieve, translate, assist verification, and prompt."
+      },
+      "human_only_decisions": {
+        "zh": [
+          "个案服务",
+          "权利/资格",
+          "专业结论",
+          "停止/复开"
+        ],
+        "en": [
+          "case service",
+          "rights/eligibility",
+          "professional conclusion",
+          "stop/reopen"
+        ]
+      },
+      "frontstage_notice": {
+        "zh": "只答公共 FAQ；显示来源日期、人工转接、纸面目录和可拒绝 AI。",
+        "en": "Public FAQ only; show source/date, human transfer, paper directory, and AI refusal."
+      },
+      "lawful_basis_or_no_collection": {
+        "status": "no personal data required",
+        "zh": "不输入个人案情；可选回访联系分离并需法律审查。",
+        "en": "Do not enter personal cases; optional follow-up contact is separated and legally reviewed.",
+        "conditional_path_ref": "phase3-data-governance.json#/scenario_profiles[scenario_id=SC12].conditional_personal_data"
+      },
+      "human_takeover": {
+        "triggers": {
+          "zh": [
+            "高风险问题",
+            "错误或过期答案",
+            "语言歧义",
+            "投诉",
+            "转接不可达"
+          ],
+          "en": [
+            "high-risk question",
+            "wrong/stale answer",
+            "language ambiguity",
+            "complaint",
+            "transfer unavailable"
+          ]
+        },
+        "responsible_role_keys": [
+          "on_site_host",
+          "safety_professional"
+        ],
+        "responsible_role_label_zh": "现场人工服务与专业转介责任人",
+        "responsible_role_label_en": "on-site human service and professional referral owner",
+        "visible_action_zh": "三处既有服务点显示 Human Takeover，停止回答并由人员/纸面目录转介。",
+        "visible_action_en": "At each existing service point show Human Takeover, stop answering, and transfer via staff/paper directory."
+      },
+      "low_tech_alternative": {
+        "zh": "柜台、纸面目录、电话、人工解释。",
+        "en": "Counter, paper directory, telephone, and human explanation."
+      },
+      "complaints_and_appeals": {
+        "summary_zh": "任一服务点/电话登记→独立内容或专业复核→更正、转介、暂停/停止→结果与再申诉。",
+        "summary_en": "Any service point/phone record → independent content/professional review → correct, refer, pause/stop → outcome/re-appeal.",
+        "channels_zh": [
+          "现场人工",
+          "纸面",
+          "电话或等效非 AI 渠道"
+        ],
+        "channels_en": [
+          "on-site human",
+          "paper",
+          "phone or equivalent non-AI channel"
+        ],
+        "anonymous_allowed": true,
+        "intake_role_keys": [
+          "on_site_host",
+          "complaint_appeal_lead"
+        ],
+        "receipt_zh": "登记 ticket_id、范围与接收状态，并由人工提供可保存回执；数字时限为 design-target。",
+        "receipt_en": "Record ticket_id, scope, and receipt state, and provide a durable human-issued receipt; any numeric window is design-target.",
+        "independent_review_role_keys": [
+          "independent_appeal_reviewer"
+        ],
+        "independence_rule_zh": "复核人必须与原决定者、运营者和产品方分离。",
+        "independence_rule_en": "The reviewer must be separate from the original decision maker, operator, and provider.",
+        "outcome_notice_zh": "以可访问形式告知事实、理由、纠正/暂停/停止决定及未决 unknown。",
+        "outcome_notice_en": "Give an accessible notice of facts, reasons, correction/pause/stop decision, and unresolved unknowns.",
+        "reappeal_zh": "可向另一名具名独立复核人再次申诉；不得由 AI 结案。",
+        "reappeal_en": "A re-appeal may go to a different named independent reviewer; AI may not close the case.",
+        "human_takeover_on_unreachable": true,
+        "closure_criteria_zh": "回执、独立复核、结果告知、证据保全和再申诉入口均可验证。",
+        "closure_criteria_en": "Receipt, independent review, outcome notice, evidence hold, and re-appeal entry are all verifiable.",
+        "logs_category_ref": "phase3-data-governance.json#/data_categories[category=logs_appeal_materials]",
+        "retention_deletion_ref": "phase3-data-governance.json#/scenario_profiles[scenario_id=SC12].control_overrides.retention_deletion"
+      },
+      "logging_audit": {
+        "fields": [
+          "topic",
+          "language",
+          "source_id",
+          "source_date",
+          "answer_hash",
+          "risk_flag",
+          "human_transfer",
+          "complaint",
+          "correction"
+        ],
+        "audit_role_keys": [
+          "data_steward",
+          "records_steward"
+        ]
+      },
+      "retention_deletion": {
+        "zh": "默认只留非个人来源/错误/转接日志；删除普通查询和可选联系副本，申诉证据隔离。",
+        "en": "Retain non-personal source/error/transfer logs; delete ordinary queries/optional contact copies and isolate appeal evidence."
+      },
+      "lifecycle": {
+        "normal_path": [
+          "preflight",
+          "limited-open",
+          "operating"
+        ],
+        "degraded_path": [
+          "operating",
+          "degraded",
+          "human-takeover",
+          "paused"
+        ],
+        "human_takeover_path": [
+          "operating",
+          "human-takeover",
+          "paused"
+        ],
+        "exit_path": [
+          "paused",
+          "stopped",
+          "removed",
+          "archive"
+        ],
+        "archive_is_terminal": true,
+        "future_use_requires_new_run_instance": true
+      },
+      "evaluation": {
+        "window_zh": "书面设定的 design-target 复核窗口",
+        "window_en": "source cycle + complaint review",
+        "measures_zh": [
+          "来源新鲜度",
+          "转接可达",
+          "双语更正等义"
+        ],
+        "measures_en": [
+          "source freshness",
+          "transfer reachability",
+          "correction parity"
+        ],
+        "review_triggers_zh": [
+          "来源到期",
+          "错误或高风险答案",
+          "语言或无障碍投诉",
+          "人员不可用"
+        ],
+        "review_triggers_en": [
+          "source expiry",
+          "wrong/high-risk answer",
+          "language/access complaint",
+          "staff unavailable"
+        ]
+      },
+      "dependencies": {
+        "zh": [
+          "有维护的 FAQ 责任人",
+          "在场人工转接",
+          "纸面目录",
+          "双语与无障碍支持"
+        ],
+        "en": [
+          "maintained FAQ owner",
+          "staffed human transfer",
+          "paper directory",
+          "bilingual/access support"
+        ]
+      },
+      "qualitative_cost": "M",
+      "maintenance": {
+        "zh": "三处同步更新来源、日期、转介和状态。",
+        "en": "Synchronize source, date, referral, and state across three sites."
+      },
+      "stop_exit": {
+        "conditions_zh": [
+          "来源过期或错误",
+          "高风险答案",
+          "转接或投诉不可达",
+          "无人维护"
+        ],
+        "conditions_en": [
+          "stale/wrong source",
+          "high-risk answer",
+          "transfer/complaint unavailable",
+          "no maintainer"
+        ],
+        "actions_zh": [
+          "停止受影响答案",
+          "纸面或人工转介",
+          "暂停服务",
+          "停止并撤场",
+          "归档更正"
+        ],
+        "actions_en": [
+          "stop affected answer",
+          "paper/human transfer",
+          "pause service",
+          "archive correction"
+        ],
+        "stop_authority_role_keys": [
+          "scenario_service_owner",
+          "on_site_host",
+          "safety_professional",
+          "complaint_appeal_lead"
+        ],
+        "removal_authority_role_keys": [
+          "scenario_service_owner",
+          "facilities_maintenance",
+          "data_steward"
+        ],
+        "future_use_rule_zh": "stopped、removed 或 archive 后不得复开原实例；未来使用须新建 run_instance_id 并从 preflight 开始。",
+        "future_use_rule_en": "After stopped, removed, or archive, the original instance cannot reopen; future use creates a new run_instance_id at preflight."
+      },
+      "frontstage_summary": {
+        "ai_may_zh": "检索、转译、辅助验证、提示",
+        "ai_may_en": "Retrieve, translate, assist verify, prompt",
+        "human_only_zh": "个案、权利、专业结论与复开",
+        "human_only_en": "Casework, rights, professional conclusion, reopen",
+        "takeover_zh": "三处服务点停止回答＋人工转介",
+        "takeover_en": "Three service points stop answer + human transfer",
+        "low_tech_zh": "柜台＋纸面目录＋电话",
+        "low_tech_en": "Counter + paper directory + phone",
+        "lifecycle_zh": "过期/高风险/转接失败→降级或停",
+        "lifecycle_en": "Stale/high-risk/transfer fail → degrade/stop"
+      },
+      "failure_modes": {
+        "zh": [
+          "来源过期或错误",
+          "高风险答案",
+          "转接或投诉不可达",
+          "无人维护"
+        ],
+        "en": [
+          "stale/wrong source",
+          "high-risk answer",
+          "transfer/complaint unavailable",
+          "no maintainer"
+        ]
+      },
+      "data_governance_ref": "phase3-data-governance.json#/scenario_profiles[scenario_id=SC12]"
+    }
+  ],
+  "flagships": {
+    "SC01": {
+      "end_to_end_sequence": [
+        "submit cleared/synthetic test",
+        "steward preflight",
+        "safety/professional release",
+        "controlled evaluation",
+        "public qualified result",
+        "review or stop/archive"
+      ],
+      "role_swimlanes": [
+        {
+          "role_key": "external_provider",
+          "actions_zh": [
+            "声明来源与版本",
+            "响应异常"
+          ],
+          "actions_en": [
+            "declare source and version",
+            "respond to anomaly"
+          ]
+        },
+        {
+          "role_key": "data_steward",
+          "actions_zh": [
+            "核对协议",
+            "运行与记录",
+            "隔离输出"
+          ],
+          "actions_en": [
+            "check protocol",
+            "operate and log",
+            "isolate output"
+          ]
+        },
+        {
+          "role_key": "safety_professional",
+          "actions_zh": [
+            "放行",
+            "接管",
+            "停止或限量复测"
+          ],
+          "actions_en": [
+            "release",
+            "take over",
+            "stop or authorize limited retest"
+          ]
+        },
+        {
+          "role_key": "affected_user",
+          "actions_zh": [
+            "阅读限制",
+            "投诉或申诉"
+          ],
+          "actions_en": [
+            "read limits",
+            "complain or appeal"
+          ]
+        }
+      ],
+      "normal_path": [
+        "preflight",
+        "limited-open",
+        "operating"
+      ],
+      "degraded_path": [
+        "operating",
+        "degraded",
+        "human-takeover",
+        "paused"
+      ],
+      "human_takeover_path": [
+        "operating",
+        "human-takeover",
+        "paused"
+      ],
+      "removal_path": [
+        "paused",
+        "stopped",
+        "removed",
+        "archive"
+      ],
+      "archive_rule_zh": "archive 终结当前运行实例；未来使用只能新建实例并从 preflight 开始。",
+      "archive_rule_en": "Archive closes the current run instance; future use requires a new instance beginning at preflight."
+    },
+    "SC05": {
+      "end_to_end_sequence": [
+        "visitor states purpose/permission",
+        "staff checks minimum",
+        "AI ranks candidates",
+        "human adviser decides contact/referral",
+        "visitor corrects/refuses/withdraws",
+        "review or pause/delete"
+      ],
+      "role_swimlanes": [
+        {
+          "role_key": "affected_user",
+          "actions_zh": [
+            "提交或撤回摘要",
+            "拒绝 AI",
+            "申诉"
+          ],
+          "actions_en": [
+            "submit or withdraw summary",
+            "refuse AI",
+            "appeal"
+          ]
+        },
+        {
+          "role_key": "on_site_host",
+          "actions_zh": [
+            "告知与用途核对",
+            "纸面替代"
+          ],
+          "actions_en": [
+            "notice and purpose check",
+            "paper fallback"
+          ]
+        },
+        {
+          "role_key": "scenario_service_owner",
+          "actions_zh": [
+            "决定引荐",
+            "人工接管",
+            "记录理由"
+          ],
+          "actions_en": [
+            "decide referral",
+            "take over",
+            "record reason"
+          ]
+        },
+        {
+          "role_key": "independent_appeal_reviewer",
+          "actions_zh": [
+            "独立复核",
+            "纠正、删除或停止"
+          ],
+          "actions_en": [
+            "independent review",
+            "correct, delete, or stop"
+          ]
+        }
+      ],
+      "normal_path": [
+        "preflight",
+        "limited-open",
+        "operating"
+      ],
+      "degraded_path": [
+        "operating",
+        "degraded",
+        "human-takeover",
+        "paused"
+      ],
+      "human_takeover_path": [
+        "operating",
+        "human-takeover",
+        "paused"
+      ],
+      "removal_path": [
+        "paused",
+        "stopped",
+        "removed",
+        "archive"
+      ],
+      "archive_rule_zh": "archive 终结当前运行实例；未来使用只能新建实例并从 preflight 开始。",
+      "archive_rule_en": "Archive closes the current run instance; future use requires a new instance beginning at preflight."
+    },
+    "SC10": {
+      "end_to_end_sequence": [
+        "provider submits cleared product/notice",
+        "operator and reviewers pass written preflight",
+        "host opens limited trial",
+        "public uses/refuses/complains",
+        "host takes over on trigger",
+        "stop/remove/archive/public review"
+      ],
+      "role_swimlanes": [
+        {
+          "role_key": "external_provider",
+          "actions_zh": [
+            "声明产品、限制与权利",
+            "支持撤场"
+          ],
+          "actions_en": [
+            "declare product, limits, and rights",
+            "support removal"
+          ]
+        },
+        {
+          "role_key": "on_site_host",
+          "actions_zh": [
+            "告知",
+            "值守",
+            "接管",
+            "停止与断开"
+          ],
+          "actions_en": [
+            "give notice",
+            "host",
+            "take over",
+            "stop and disconnect"
+          ]
+        },
+        {
+          "role_key": "safety_professional",
+          "actions_zh": [
+            "预检 Gate",
+            "伤害与权利复核",
+            "决定限量复测"
+          ],
+          "actions_en": [
+            "preflight gate",
+            "harm and rights review",
+            "decide limited retest"
+          ]
+        },
+        {
+          "role_key": "complaint_appeal_lead",
+          "actions_zh": [
+            "接收拒绝、纸面/电话投诉与再申诉",
+            "投诉不可达即停"
+          ],
+          "actions_en": [
+            "receive refusal, paper/phone complaint, and re-appeal",
+            "stop when complaint is unreachable"
+          ]
+        }
+      ],
+      "normal_path": [
+        "preflight",
+        "limited-open"
+      ],
+      "degraded_path": [
+        "limited-open",
+        "degraded",
+        "paused"
+      ],
+      "human_takeover_path": [
+        "limited-open",
+        "human-takeover",
+        "paused"
+      ],
+      "removal_path": [
+        "paused",
+        "stopped",
+        "removed",
+        "archive"
+      ],
+      "archive_rule_zh": "archive 终结当前运行实例；未来使用只能新建实例并从 preflight 开始。",
+      "archive_rule_en": "Archive closes the current run instance; future use requires a new instance beginning at preflight."
+    }
+  },
+  "first_use_trial": {
+    "binding": "SC10+IM06 only",
+    "scenario_id": "SC10",
+    "implementation_id": "IM06",
+    "status": "design-target_not_opened",
+    "written_term": {
+      "zh": "由获授权场地与运营责任人书面设定；无依据的日期、持续时间和响应窗口均为 design-target。",
+      "en": "Authorized site and operating roles set it in writing; unevidenced dates, duration, and response windows are design-target."
+    },
+    "approval_and_accountability": {
+      "role_keys": [
+        "facilities_maintenance",
+        "scenario_service_owner",
+        "on_site_host",
+        "safety_professional",
+        "rights_content_reviewer",
+        "accessibility_lead",
+        "complaint_appeal_lead",
+        "records_steward"
+      ],
+      "status_zh": "责任席位为 design-target；具名委任与批准均 unknown。",
+      "status_en": "Responsibility seats are design-target; named appointments and approvals are unknown."
+    },
+    "minimum_data": {
+      "zh": [
+        "清权产品与版本告知",
+        "书面期限与状态",
+        "非个人运营状态",
+        "默认匿名反馈",
+        "主持、投诉与撤场证据"
+      ],
+      "en": [
+        "cleared product/version notice",
+        "written term and state",
+        "non-personal operational state",
+        "anonymous feedback by default",
+        "host/complaint/removal evidence"
+      ]
+    },
+    "prohibited_data": {
+      "zh": [
+        "默认人脸或情绪识别",
+        "社会评分",
+        "预测性执法",
+        "未说明敏感推断",
+        "无关身份追踪",
+        "隐藏监控"
+      ],
+      "en": [
+        "default face/emotion recognition",
+        "social scoring",
+        "predictive policing",
+        "undisclosed sensitive inference",
+        "unrelated identity tracking",
+        "hidden monitoring"
+      ]
+    },
+    "opening_conditions": {
+      "zh": [
+        "产品权利与限制有记录",
+        "场地许可有记录",
+        "具名责任人员已排班",
+        "消费者权益复核",
+        "无障碍复核",
+        "投诉渠道已演练",
+        "供电与服务隔离已测试",
+        "撤场通道与清单已测试",
+        "纸面或人工替代在场"
+      ],
+      "en": [
+        "product rights and limitations documented",
+        "site permission documented",
+        "accountable staff rostered",
+        "consumer-rights review",
+        "accessibility review",
+        "complaint channels rehearsed",
+        "power/service isolation tested",
+        "removal lane and inventory tested",
+        "paper/human fallback present"
+      ]
+    },
+    "staffed_human_takeover": {
+      "zh": "主持人在开放全程可见可达；缺席即不开或立即停止。",
+      "en": "Host remains visible and reachable throughout opening; absence means no opening or immediate stop."
+    },
+    "harm_complaint_thresholds": {
+      "status": "design-target",
+      "immediate_takeover_zh": [
+        "任一伤害或近失",
+        "可信的迫近伤害",
+        "权利或冒用投诉",
+        "误导营销",
+        "投诉渠道不可达",
+        "必填日志缺失",
+        "主持缺席",
+        "影响范围 unknown"
+      ],
+      "immediate_takeover_en": [
+        "any injury or near miss",
+        "credible imminent harm",
+        "rights or impersonation complaint",
+        "misleading marketing",
+        "complaint channel unreachable",
+        "mandatory log missing",
+        "host absent",
+        "unknown impact scope"
+      ]
+    },
+    "pause_stop_triggers": {
+      "zh": [
+        "伤害或近失",
+        "权利或身份失败",
+        "误导表述",
+        "Human Takeover 不可用",
+        "投诉闭环失败",
+        "日志不完整",
+        "书面期限届满",
+        "撤场失败"
+      ],
+      "en": [
+        "harm/near miss",
+        "rights or identity failure",
+        "misleading claim",
+        "unavailable Human Takeover",
+        "complaint-loop failure",
+        "log incompleteness",
+        "written term expiry",
+        "removal failure"
+      ]
+    },
+    "removal_steps": {
+      "zh": [
+        "显示 stopped 并保留投诉入口",
+        "断开网络、供电与服务",
+        "冻结获准事件与申诉证据",
+        "按台账删除或封存数据",
+        "沿既有 CX10 通道撤除产品、设备与标识",
+        "核对场地清单与状况",
+        "记录未决残余风险"
+      ],
+      "en": [
+        "show stopped status and retain complaint entry",
+        "disconnect network/power/service",
+        "freeze authorized incident/appeal evidence",
+        "delete/seal data per register",
+        "remove product/equipment/signage through existing CX10 lane",
+        "site inventory and condition check",
+        "record unresolved residual risk"
+      ]
+    },
+    "evidence_archive": {
+      "zh": [
+        "许可与期限",
+        "数据台账",
+        "值守清单",
+        "状态与转换日志",
+        "伤害、投诉与申诉",
+        "停止、撤场与数据动作",
+        "复测与决定理由"
+      ],
+      "en": [
+        "permission and term",
+        "data register",
+        "staff roster",
+        "state/transition logs",
+        "harm/complaint/appeal",
+        "stop/removal/data action",
+        "retest and decision rationale"
+      ]
+    },
+    "public_review": {
+      "zh": "公开说明发生了什么、做了何种接管/停止/撤场、哪些仍 unknown；不得公开个人申诉材料。",
+      "en": "Publish what happened, takeover/stop/removal actions, and remaining unknowns without publishing personal appeal material."
+    },
+    "reopening_conditions": {
+      "zh": [
+        "书面独立人工或专业复核",
+        "全部开放条件重新取证",
+        "投诉与残余风险已有处置",
+        "Human Takeover 与撤场演练通过",
+        "未来使用创建新的 run_instance_id、书面期限与公众告知"
+      ],
+      "en": [
+        "written independent human/professional review",
+        "all opening conditions re-evidenced",
+        "complaint and residual risk disposition",
+        "Human Takeover and removal rehearsal passed",
+        "future use creates a new run_instance_id with a written term and public notice"
+      ]
+    },
+    "not_claimed": {
+      "zh": [
+        "更换 MVP",
+        "其他 pilot",
+        "试验已经开放",
+        "已获批准",
+        "法律审查完成",
+        "场地、无障碍或安全认证",
+        "实测绩效"
+      ],
+      "en": [
+        "MVP change",
+        "other pilot",
+        "opened trial",
+        "approval",
+        "legal review complete",
+        "site/accessibility/safety certification",
+        "measured performance"
+      ]
+    },
+    "archive_semantics": {
+      "terminal_for_run_instance": true,
+      "outbound_transition_allowed": false,
+      "future_use_rule_zh": "未来使用不是复开归档实例；必须创建新的 run_instance_id，从 preflight 开始。",
+      "future_use_rule_en": "Future use does not reopen an archived instance; it creates a new run_instance_id beginning at preflight."
+    }
+  },
+  "role_registry": {
+    "canonical_roles": [
+      {
+        "role_key": "scenario_service_owner",
+        "title_zh": "场景服务责任人",
+        "title_en": "Scenario service owner",
+        "duties_zh": [
+          "确认书面范围、期限与具名值守",
+          "批准受限开放、暂停、停止与同一实例复测",
+          "确保低技术替代、投诉和撤场可执行"
+        ],
+        "duties_en": [
+          "confirm written scope, term, and named duty roster",
+          "authorize limited opening, pause, stop, and same-instance retest",
+          "ensure low-tech fallback, complaint, and removal are executable"
+        ],
+        "must_be_human": true,
+        "may_stop": true,
+        "may_reopen_to_limited_open": true,
+        "substitute_role_keys": [
+          "safety_professional"
+        ]
+      },
+      {
+        "role_key": "on_site_host",
+        "title_zh": "现场主持与人工服务",
+        "title_en": "On-site host and human service",
+        "duties_zh": [
+          "保持前台状态与人工入口可见",
+          "接收求助、投诉、拒绝和退出",
+          "隔离输出并切换人工、纸面或静态服务"
+        ],
+        "duties_en": [
+          "keep public state and human entry visible",
+          "receive help, complaint, refusal, and exit requests",
+          "isolate output and switch to human, paper, or static service"
+        ],
+        "must_be_human": true,
+        "may_stop": true,
+        "may_reopen_to_limited_open": false,
+        "substitute_role_keys": [
+          "scenario_service_owner"
+        ]
+      },
+      {
+        "role_key": "safety_professional",
+        "title_zh": "安全与专业 Gate 责任人",
+        "title_en": "Safety and professional-gate owner",
+        "duties_zh": [
+          "在专业边界内放行或拒绝放行",
+          "隔离设备、危险接口和高风险输出",
+          "登记伤害、近失、复测条件与限制"
+        ],
+        "duties_en": [
+          "release or refuse release within the professional boundary",
+          "isolate equipment, hazardous interfaces, and high-risk output",
+          "record harm, near miss, retest conditions, and limits"
+        ],
+        "must_be_human": true,
+        "may_stop": true,
+        "may_reopen_to_limited_open": true,
+        "substitute_role_keys": [
+          "scenario_service_owner"
+        ]
+      },
+      {
+        "role_key": "data_steward",
+        "title_zh": "数据治理与审计责任人",
+        "title_en": "Data governance and audit steward",
+        "duties_zh": [
+          "核对目的、最小字段、访问与保存删除",
+          "冻结冲突来源、漂移版本或不完整日志",
+          "保全审计、删除与归档索引"
+        ],
+        "duties_en": [
+          "check purpose, minimum fields, access, retention, and deletion",
+          "freeze conflicting sources, drifting versions, or incomplete logs",
+          "preserve audit, deletion, and archive indexes"
+        ],
+        "must_be_human": true,
+        "may_stop": true,
+        "may_reopen_to_limited_open": false,
+        "substitute_role_keys": [
+          "rights_content_reviewer"
+        ]
+      },
+      {
+        "role_key": "accessibility_lead",
+        "title_zh": "无障碍与等效服务责任人",
+        "title_en": "Accessibility and equivalent-service lead",
+        "duties_zh": [
+          "核对六类受保护用户的等效入口",
+          "确认非数字入口、人工解释和安全绕行",
+          "关闭不可达服务并规定复测"
+        ],
+        "duties_en": [
+          "check equivalent entry for the six protected-user groups",
+          "confirm non-digital entry, human explanation, and safe bypass",
+          "close inaccessible service and specify retest"
+        ],
+        "must_be_human": true,
+        "may_stop": true,
+        "may_reopen_to_limited_open": false,
+        "substitute_role_keys": [
+          "safety_professional"
+        ]
+      },
+      {
+        "role_key": "facilities_maintenance",
+        "title_zh": "设施、连续性与撤场责任人",
+        "title_en": "Facilities, continuity, and removal owner",
+        "duties_zh": [
+          "监测供电、网络、传感、接口与设施状态",
+          "执行隔离、断电、静态回退和物理撤场",
+          "保留维修、断开、清点与场地恢复证据"
+        ],
+        "duties_en": [
+          "monitor power, network, sensor, interface, and facility state",
+          "isolate, power off, fall back to static service, and remove physically",
+          "retain maintenance, disconnection, inventory, and site-restoration evidence"
+        ],
+        "must_be_human": true,
+        "may_stop": true,
+        "may_reopen_to_limited_open": false,
+        "substitute_role_keys": [
+          "scenario_service_owner"
+        ]
+      },
+      {
+        "role_key": "complaint_appeal_lead",
+        "title_zh": "投诉受理与闭环责任人",
+        "title_en": "Complaint intake and closure lead",
+        "duties_zh": [
+          "维护非 AI 可达的匿名与具名入口",
+          "确认回执、分派、结果告知与再申诉",
+          "投诉不可达或闭环失败时触发停服"
+        ],
+        "duties_en": [
+          "maintain anonymous and named channels reachable without AI",
+          "confirm receipt, assignment, outcome notice, and re-appeal",
+          "trigger service stop when complaint reachability or closure fails"
+        ],
+        "must_be_human": true,
+        "may_stop": true,
+        "may_reopen_to_limited_open": false,
+        "substitute_role_keys": [
+          "on_site_host"
+        ]
+      },
+      {
+        "role_key": "independent_appeal_reviewer",
+        "title_zh": "独立申诉复核人",
+        "title_en": "Independent appeal reviewer",
+        "duties_zh": [
+          "与原决定者、运营者和产品方分离",
+          "复核记录、权利影响、纠正和停止决定",
+          "给出书面结果并指定不同人员承接再申诉"
+        ],
+        "duties_en": [
+          "remain separate from the original decision maker, operator, and provider",
+          "review records, rights impact, correction, and stop decisions",
+          "issue a written outcome and assign a different person for re-appeal"
+        ],
+        "must_be_human": true,
+        "may_stop": true,
+        "may_reopen_to_limited_open": false,
+        "substitute_role_keys": [
+          "rights_content_reviewer"
+        ]
+      },
+      {
+        "role_key": "rights_content_reviewer",
+        "title_zh": "权利、事实、语言与内容复核人",
+        "title_en": "Rights, fact, language, and content reviewer",
+        "duties_zh": [
+          "核对来源、许可、史实、双语与营销表述",
+          "隐藏争议内容并执行更正、撤回和下架",
+          "不得用责任席位冒充法律结论或已获清权"
+        ],
+        "duties_en": [
+          "check sources, rights, facts, bilingual parity, and marketing claims",
+          "hide disputed content and correct, withdraw, or take it down",
+          "never treat a responsibility seat as a legal conclusion or completed clearance"
+        ],
+        "must_be_human": true,
+        "may_stop": true,
+        "may_reopen_to_limited_open": false,
+        "substitute_role_keys": [
+          "data_steward"
+        ]
+      },
+      {
+        "role_key": "records_steward",
+        "title_zh": "记录与归档责任人",
+        "title_en": "Records and archive steward",
+        "duties_zh": [
+          "核对删除、保留、申诉状态与公开复盘",
+          "封存获准证据并拒绝删除申诉证据",
+          "确认归档终态但不得批准未来运行"
+        ],
+        "duties_en": [
+          "check deletion, retention, appeal status, and public review",
+          "seal authorized evidence and refuse deletion of appeal evidence",
+          "confirm the terminal archive state without authorizing future operation"
+        ],
+        "must_be_human": true,
+        "may_stop": false,
+        "may_reopen_to_limited_open": false,
+        "substitute_role_keys": [
+          "data_steward"
+        ]
+      },
+      {
+        "role_key": "external_provider",
+        "title_zh": "外部提交者或产品提供方",
+        "title_en": "External submitter or product provider",
+        "duties_zh": [
+          "声明来源、版本、限制与权利",
+          "响应异常、纠正、停止和撤场要求"
+        ],
+        "duties_en": [
+          "declare source, version, limits, and rights",
+          "respond to anomaly, correction, stop, and removal requests"
+        ],
+        "must_be_human": true,
+        "may_stop": false,
+        "may_reopen_to_limited_open": false,
+        "substitute_role_keys": []
+      },
+      {
+        "role_key": "affected_user",
+        "title_zh": "服务使用者或受影响公众",
+        "title_en": "Service user or affected public",
+        "duties_zh": [
+          "可拒绝 AI、退出、纠正、投诉和申诉",
+          "可要求人工接管但不承担运营责任"
+        ],
+        "duties_en": [
+          "may refuse AI, exit, correct, complain, and appeal",
+          "may request Human Takeover without carrying operating responsibility"
+        ],
+        "must_be_human": true,
+        "may_stop": false,
+        "may_reopen_to_limited_open": false,
+        "substitute_role_keys": []
+      }
+    ],
+    "alias_to_canonical": {
+      "accountable_operator": "scenario_service_owner",
+      "professional_reviewer": "safety_professional",
+      "service_steward": "scenario_service_owner",
+      "complaint_officer": "complaint_appeal_lead",
+      "site_asset_role": "facilities_maintenance",
+      "test_steward": "data_steward",
+      "safety_reviewer": "safety_professional",
+      "test_submitter": "external_provider",
+      "public_observer": "affected_user",
+      "facility_role": "facilities_maintenance",
+      "safety_host": "safety_professional",
+      "facilitator": "on_site_host",
+      "rights_reviewer": "rights_content_reviewer",
+      "human_adviser": "scenario_service_owner",
+      "complaint_reviewer": "independent_appeal_reviewer",
+      "clinic_steward": "scenario_service_owner",
+      "facility_manager": "facilities_maintenance",
+      "service_staff": "on_site_host",
+      "access_role": "accessibility_lead",
+      "site_staff": "on_site_host",
+      "safety_rights_reviewer": "safety_professional",
+      "trial_steward": "scenario_service_owner",
+      "historian_editor": "rights_content_reviewer",
+      "professional_referral_role": "safety_professional",
+      "removal_lead": "facilities_maintenance",
+      "rights_consumer_reviewer": "rights_content_reviewer",
+      "accessibility_reviewer": "accessibility_lead",
+      "product_provider": "external_provider",
+      "visitor": "affected_user",
+      "appeal_reviewer": "independent_appeal_reviewer",
+      "public_complaint_role": "affected_user",
+      "test_operations": "data_steward",
+      "energy_fire_noise_professional": "safety_professional",
+      "on_site_safety_host": "safety_professional",
+      "content_maintenance": "rights_content_reviewer",
+      "data_governance": "data_steward",
+      "complaint_handler": "complaint_appeal_lead",
+      "facility_administrator": "facilities_maintenance",
+      "talent_service_staff": "on_site_host",
+      "research_translation": "scenario_service_owner",
+      "route_maintenance": "facilities_maintenance",
+      "accessibility_service_point": "accessibility_lead",
+      "human_escort": "on_site_host",
+      "on_site_information_role": "on_site_host",
+      "transport_content_reviewer": "rights_content_reviewer",
+      "consumer_rights": "rights_content_reviewer",
+      "public_operations": "scenario_service_owner",
+      "history_reviewer": "rights_content_reviewer",
+      "translator": "rights_content_reviewer",
+      "human_transfer_role": "on_site_host",
+      "public_service_role": "on_site_host",
+      "scenario_service_owner": "scenario_service_owner",
+      "on_site_host": "on_site_host",
+      "safety_professional": "safety_professional",
+      "data_steward": "data_steward",
+      "accessibility_lead": "accessibility_lead",
+      "facilities_maintenance": "facilities_maintenance",
+      "complaint_appeal_lead": "complaint_appeal_lead",
+      "independent_appeal_reviewer": "independent_appeal_reviewer",
+      "rights_content_reviewer": "rights_content_reviewer",
+      "records_steward": "records_steward",
+      "external_provider": "external_provider",
+      "affected_user": "affected_user"
+    },
+    "authority_contract": {
+      "human_only_stop_authority_role_keys": [
+        "scenario_service_owner",
+        "on_site_host",
+        "safety_professional",
+        "data_steward",
+        "accessibility_lead",
+        "facilities_maintenance",
+        "complaint_appeal_lead",
+        "independent_appeal_reviewer",
+        "rights_content_reviewer"
+      ],
+      "human_only_same_instance_reopen_role_keys": [
+        "scenario_service_owner",
+        "safety_professional"
+      ],
+      "substitution_rule_zh": "每次开放前记录具名责任人、联系方式、值守时段和注册表允许的替补；替补未到位即不开或停止。",
+      "substitution_rule_en": "Before every opening, record the named person, contact, duty window, and a registry-listed substitute; no substitute means no opening or stop.",
+      "archive_rule_zh": "archive 是当前 run_instance_id 的终态，没有 archive→preflight。未来使用须创建新的 run_instance_id，从 preflight 重新取证。",
+      "archive_rule_en": "Archive is terminal for the current run_instance_id and has no archive-to-preflight edge. Future use creates a new run_instance_id and re-evidences preflight.",
+      "ai_prohibited_zh": "AI 不得停止、复开、批准、替换责任人或创建新的运行实例。",
+      "ai_prohibited_en": "AI may not stop, reopen, approve, replace an accountable person, or create a new run instance."
+    }
+  }
+}

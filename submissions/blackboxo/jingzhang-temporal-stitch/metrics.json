@@ -1,0 +1,178 @@
+{
+  "schema_version": "0.1.0",
+  "units": {
+    "length": "m",
+    "area": "sqm"
+  },
+  "metrics": {
+    "site_area_sqm": {
+      "status": "known",
+      "value": 11412825.386,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "ST_Area(site_boundary projected to EPSG:4548)",
+      "confidence": "medium",
+      "assumptions": [
+        "Provisional boundary from maintainer-derived polygon; official boundary not yet available."
+      ]
+    },
+    "green_ratio": {
+      "status": "known",
+      "value": 0.241741,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/green_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "green_space_area_sqm / site_area_sqm = 2758949.843 / 11412825.386 = 0.241741",
+      "confidence": "medium",
+      "assumptions": [
+        "Computed from GeoJSON green_space layer union area (EPSG:4548 projection). Includes linear park corridor, riverside belts, pocket parks, and campus permeation zones."
+      ]
+    },
+    "public_space_ratio": {
+      "status": "known",
+      "value": 0.104389,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "public_space_area_sqm / site_area_sqm = 1191371.811 / 11412825.386 = 0.104389",
+      "confidence": "medium",
+      "assumptions": [
+        "Computed from GeoJSON public_space layer union area (EPSG:4548 projection). Includes 9 suture node plazas plus connecting corridors."
+      ]
+    },
+    "building_footprint_area_sqm": {
+      "status": "known",
+      "value": 295043.23,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "sum(polygon_area(building_footprints))",
+      "confidence": "medium",
+      "assumptions": [
+        "Representative buildings only; full building layer requires survey data."
+      ]
+    },
+    "floor_area_ratio": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "brief/site-package/ranges/planning_limits.json"
+      ],
+      "formula": "total_floor_area_sqm / official_site_area_sqm",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "Approved FAR controls and official site boundary are not present in the public site package."
+    },
+    "key_area_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "count(key_detailed_design_areas)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "suture_node_count": {
+      "status": "known",
+      "value": 9,
+      "unit": "count",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "count(public_space features with node_type property)",
+      "confidence": "high",
+      "assumptions": [
+        "9 east-west suture interfaces along the railway park corridor"
+      ]
+    },
+    "temporal_programs_per_node": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "3 temporal layers per node (day-clock, season-clock, era-clock)",
+      "confidence": "medium",
+      "assumptions": [
+        "3 temporal layers (Day Clock, Season Clock, Era Clock) per node; each layer contains multiple operational programs but this metric counts clock layers only."
+      ]
+    },
+    "total_temporal_programs": {
+      "status": "known",
+      "value": 27,
+      "unit": "count",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "9 suture nodes × 3 temporal layers (day-clock, season-clock, era-clock) = 27",
+      "confidence": "medium",
+      "assumptions": []
+    },
+    "east_west_crossing_count": {
+      "status": "known",
+      "value": 9,
+      "unit": "count",
+      "source_files": [
+        "geometry/roads.geojson"
+      ],
+      "formula": "count(road features with road_class=pedestrian) = 9 primary east-west crossing locations",
+      "confidence": "medium",
+      "assumptions": [
+        "Each suture node has 1 primary east-west pedestrian crossing. Additional secondary crossings may be added during detailed design."
+      ]
+    },
+    "park_corridor_length_m": {
+      "status": "known",
+      "value": 9000,
+      "unit": "m",
+      "source_files": [
+        "geometry/green_space.geojson"
+      ],
+      "formula": "approximate length of GREEN-001 linear park feature",
+      "confidence": "medium",
+      "assumptions": [
+        "Based on railway heritage park from Xizhimen to North 5th Ring"
+      ]
+    },
+    "implementation_phases": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/phasing.geojson"
+      ],
+      "formula": "count(phase features)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "green_space_area_sqm": {
+      "value": 2758949.843,
+      "unit": "sqm",
+      "status": "known",
+      "confidence": "medium",
+      "source": "geometry/green_space.geojson",
+      "formula": "sum of green_space feature areas (EPSG:4548)",
+      "notes": "Computed from design model geometry"
+    },
+    "public_space_area_sqm": {
+      "value": 1191371.811,
+      "unit": "sqm",
+      "status": "known",
+      "confidence": "medium",
+      "source": "geometry/public_space.geojson",
+      "formula": "sum of public_space feature areas (EPSG:4548)",
+      "notes": "Computed from design model geometry"
+    }
+  }
+}

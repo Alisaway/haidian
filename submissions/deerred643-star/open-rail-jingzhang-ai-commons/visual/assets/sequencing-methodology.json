@@ -1,0 +1,69 @@
+{
+  "schema_note": "v1.8 sequencing and cost-benefit methodology responding to the implementability review gap (score 4/5: sequencing and cost-benefit not verifiable at concept stage). Framework only — no ranking conclusions, cost estimates or benefit figures; every step is trigger-gated. Machine-readable companion of proposal.md section '项目排序与成本效益方法论'.",
+  "version": "v1.8",
+  "status": "methodology_only_no_field_data",
+  "steps": [
+    {
+      "id": "S1-DATA",
+      "name_zh": "数据基线",
+      "name_en": "Data baseline",
+      "input_state": "existing buildings, ownership, utility capacity, measured flows and statutory controls all unknown",
+      "method_zh": "依 A-BOUNDARY-002 复算全部指标 + 主管部门数据对接",
+      "method_en": "Recompute all metrics per A-BOUNDARY-002 + authority data hookup",
+      "trigger_zh": "官方几何与控规图则发布",
+      "trigger_en": "Official geometry and statutory plan released",
+      "responsible": "participant + organizer"
+    },
+    {
+      "id": "S2-SCORE",
+      "name_zh": "优先级评分",
+      "name_en": "Priority scoring",
+      "input_state": "8 renewal projects defined in implementation cards",
+      "method_zh": "公共利益 / 可逆性 / 资金路径成熟度 / 文保约束四维加权，权重待协商",
+      "method_en": "Weighted scoring across public benefit, reversibility, funding-path maturity, heritage constraint; weights negotiable",
+      "trigger_zh": "S1-DATA 完成",
+      "trigger_en": "S1-DATA done",
+      "responsible": "participant"
+    },
+    {
+      "id": "S3-COST",
+      "name_zh": "成本科目",
+      "name_en": "Cost lines",
+      "input_state": "concept line-item framework, no estimates",
+      "method_zh": "土地整理 / 建安 / 市政 / 运营四科目分列",
+      "method_en": "Land, construction, utilities, operations listed separately",
+      "trigger_zh": "进入工程深化阶段",
+      "trigger_en": "Entering design development",
+      "responsible": "participant + named operator"
+    },
+    {
+      "id": "S4-BENEFIT",
+      "name_zh": "效益维度",
+      "name_en": "Benefit lines",
+      "input_state": "P1-P5 indicators pending baseline",
+      "method_zh": "公共效益（无障碍/等价路径/投诉响应）与经济代理指标分列",
+      "method_en": "Public benefit (accessibility, equivalent paths, complaints) separated from economic proxies",
+      "trigger_zh": "试点基线测量完成（见 baseline-protocols.json）",
+      "trigger_en": "Pilot baseline measured (see baseline-protocols.json)",
+      "responsible": "participant"
+    },
+    {
+      "id": "S5-SENSITIVITY",
+      "name_zh": "敏感性检验",
+      "name_en": "Sensitivity",
+      "input_state": "boundary / FAR / flow parameters as perturbation inputs",
+      "method_zh": "单参数扰动下的排序稳定性检验，输出稳健区间而非单点结论",
+      "method_en": "Single-parameter perturbation of ranking stability; robust intervals, not point conclusions",
+      "trigger_zh": "S2-SCORE 与 S4-BENEFIT 完成",
+      "trigger_en": "S2-SCORE and S4-BENEFIT done",
+      "responsible": "participant"
+    }
+  ],
+  "discipline": {
+    "no_numeric_commitments": "no ranking, cost or benefit figures are produced before all triggers are satisfied",
+    "publication_path": "conclusions jointly reviewed by district authority and named operator, rolled forward with the 90-day public review",
+    "data_gap_disclosure": "organizer data gaps (official geometry, statutory plan, field baselines) remain disclosed; they do not block content scoring"
+  },
+  "boundary_zh": "概念方法论；不含任何数值结论，全部以触发条件与正式决策为准。",
+  "boundary_en": "Conceptual methodology; no numeric conclusions; everything pending triggers and formal decisions."
+}

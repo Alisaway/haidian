@@ -1,0 +1,435 @@
+{
+  "schema_version": "1.0.0",
+  "register_id": "IMPLEMENTATION-READINESS-01",
+  "submission_id": "dvd233/data-coop-line",
+  "evidence_level": "E2_design_handoff_only",
+  "current_status": "not_ready_for_field_operation",
+  "purpose_zh": "把九项更新项目、四道实施门、试点指标、停止条件和待确认角色放在同一份可复核的交接台账中。",
+  "purpose_en": "Keep the nine renewal projects, four implementation gates, pilot metrics, stop conditions, and unconfirmed roles in one reviewable handoff register.",
+  "truth_boundary": {
+    "field_authorization": "unknown",
+    "observed_workflow": "not_observed",
+    "operator_assignment": "unknown",
+    "professional_confirmation": "unknown",
+    "signoff_status": "not_signed",
+    "implementation_commitment": "not_confirmed",
+    "observed_users": 0,
+    "permitted_claim": "The register makes a conditional handoff reproducible; it does not prove a site, operator, capacity, approval, or implementation.",
+    "prohibited_inference": [
+      "A role slot is not a named or confirmed entity.",
+      "A design target or synthetic pass is not observed performance.",
+      "A gate with a complete template is not a gate that has opened.",
+      "A pilot area reference is not an official boundary, right of way, or access permission."
+    ]
+  },
+  "gate_status_legend": {
+    "blocked_by_unknown": "A required external fact or confirmation is still unknown.",
+    "conditional_template": "The participant-controlled handoff fields are specified, but the gate is not open.",
+    "synthetic_pass_only": "A local synthetic or paper check passed; field readiness remains blocked."
+  },
+  "implementation_gates": [
+    {
+      "gate_id": "GATE-0",
+      "name_zh": "证据与共同议定",
+      "name_en": "Evidence and collective agenda-setting",
+      "current_status": "blocked_by_unknown",
+      "owner_role_slot": "implementation_lead",
+      "owner_entity": null,
+      "owner_status": "unknown",
+      "entry_requirements": [
+        "official boundary and current professional base data",
+        "legal, ethics, accessibility, and public-review route",
+        "need statement and no-data-equivalent baseline"
+      ],
+      "exit_artifacts": [
+        "versioned evidence ledger",
+        "recorded objections and disposition",
+        "approved E3 field-test brief"
+      ],
+      "external_confirmation_required": [
+        "official geometry",
+        "legal and ethics review",
+        "authorized field contact"
+      ],
+      "stop_if": [
+        "an official or professional prerequisite is missing",
+        "a public objection has no disposition",
+        "the no-data route is omitted from the test brief"
+      ]
+    },
+    {
+      "gate_id": "GATE-1",
+      "name_zh": "可逆原型",
+      "name_en": "Reversible prototype",
+      "current_status": "conditional_template",
+      "owner_role_slot": "site_operator",
+      "owner_entity": null,
+      "owner_status": "unknown",
+      "entry_requirements": [
+        "GATE-0 exit artifacts",
+        "synthetic, paper, or explicitly licensed minimum materials",
+        "two service lines, human review, and emergency stop path"
+      ],
+      "exit_artifacts": [
+        "purpose-ticket and receipt records",
+        "paired data/no-data test report",
+        "stop, correction, and recovery log"
+      ],
+      "external_confirmation_required": [
+        "written operating responsibility",
+        "site access and route permission",
+        "accessibility and safety review"
+      ],
+      "stop_if": [
+        "real personal data or payment is required",
+        "the two lines are not equivalent on the declared test basis",
+        "manual or offline withdrawal cannot be exercised"
+      ]
+    },
+    {
+      "gate_id": "GATE-2",
+      "name_zh": "受控场景",
+      "name_en": "Controlled scenario",
+      "current_status": "blocked_by_unknown",
+      "owner_role_slot": "site_operator",
+      "owner_entity": null,
+      "owner_status": "unknown",
+      "entry_requirements": [
+        "authorized E3 field observations",
+        "independent evaluation of safety, accessibility, privacy, and service parity",
+        "confirmed operator, stop authority, and incident escalation"
+      ],
+      "exit_artifacts": [
+        "redacted field evidence bundle",
+        "E4 operator and professional review",
+        "go/no-go decision with expiry date"
+      ],
+      "external_confirmation_required": [
+        "field authorization",
+        "operator and professional signoff",
+        "site, fire, utility, ownership, and route confirmation"
+      ],
+      "stop_if": [
+        "a field measurement contradicts the design threshold",
+        "a safety, accessibility, privacy, or rights boundary is unresolved",
+        "the stop authority or evidence custodian is not available"
+      ]
+    },
+    {
+      "gate_id": "GATE-3",
+      "name_zh": "空间深化",
+      "name_en": "Spatial development",
+      "current_status": "blocked_by_unknown",
+      "owner_role_slot": "implementation_lead",
+      "owner_entity": null,
+      "owner_status": "unknown",
+      "entry_requirements": [
+        "GATE-2 decision and current official geometry",
+        "transport, utility, ownership, heritage, and fire studies",
+        "funding, procurement, approval, and maintenance route"
+      ],
+      "exit_artifacts": [
+        "professionally coordinated design package",
+        "approved implementation and maintenance responsibilities",
+        "public-return and accessibility acceptance record"
+      ],
+      "external_confirmation_required": [
+        "statutory and engineering controls",
+        "funding and procurement authority",
+        "adopted operator and maintenance arrangement"
+      ],
+      "stop_if": [
+        "a permanent work is proposed from provisional geometry",
+        "an approval or funding claim cannot be sourced",
+        "maintenance and public-return responsibility is absent"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "project_id": "C-01",
+      "name_zh": "共数议事与用途票工具包",
+      "name_en": "Co-data assembly and purpose-ticket toolkit",
+      "phase": "GATE-1",
+      "pilot_area_refs": ["PROV-KEY-001", "SCN-06"],
+      "current_status": "template_only",
+      "evidence_level": "E2",
+      "accountable_role_slot": "site_operator",
+      "accountable_entity": null,
+      "accountable_status": "unknown",
+      "inputs": ["synthetic or licensed minimum material", "purpose and expiry fields", "objection record"],
+      "outputs": ["bilingual purpose ticket", "amendment and objection receipt", "expiry/withdrawal handoff"],
+      "acceptance_metrics": [
+        {"metric_id": "synthetic_capacity_resource_gate_passed", "metric_state": "synthetic_pass_only"},
+        {"metric_id": "derivative_receipt_completion_target_ratio", "metric_state": "design_target"}
+      ],
+      "exit_artifacts": ["paired route report", "receipt-chain audit", "E3/E4 replacement record"],
+      "stop_conditions": ["purpose or licence is unclear", "no-data route is unavailable", "receipt chain is incomplete"]
+    },
+    {
+      "project_id": "C-02",
+      "name_zh": "无数据等价服务改造",
+      "name_en": "No-data-equivalent service retrofit",
+      "phase": "GATE-1",
+      "pilot_area_refs": ["SCN-08", "SCN-05", "SCN-09", "SCN-10"],
+      "current_status": "template_only",
+      "evidence_level": "E2",
+      "accountable_role_slot": "site_operator",
+      "accountable_entity": null,
+      "accountable_status": "unknown",
+      "inputs": ["staffed window template", "paper and offline route", "paired service task"],
+      "outputs": ["same-core-service comparison", "manual takeover record", "complaint and stop receipt"],
+      "acceptance_metrics": [
+        {"metric_id": "synthetic_capacity_no_data_to_data_capacity_ratio", "metric_state": "synthetic_pass_only"},
+        {"metric_id": "no_data_equivalent_service_target_ratio", "metric_state": "design_target"}
+      ],
+      "exit_artifacts": ["E3 accessibility task log", "paired completion-time report", "E4 accessibility review"],
+      "stop_conditions": ["price or priority differs", "manual takeover fails", "any core safety output is missing"]
+    },
+    {
+      "project_id": "C-03",
+      "name_zh": "AI 原点数据劳动工坊",
+      "name_en": "AI Origin data-labor workshop",
+      "phase": "GATE-1",
+      "pilot_area_refs": ["PROV-KEY-002"],
+      "current_status": "template_only",
+      "evidence_level": "E2",
+      "accountable_role_slot": "field_validation_lead",
+      "accountable_entity": null,
+      "accountable_status": "unknown",
+      "inputs": ["labour and consent agenda", "training and correction template", "dispute route"],
+      "outputs": ["pre-shift record", "correction and dispute receipt", "public-return proposal"],
+      "acceptance_metrics": [
+        {"metric_id": "public_return_acceptance_target_ratio", "metric_state": "design_target"},
+        {"metric_id": "derivative_receipt_completion_target_ratio", "metric_state": "design_target"}
+      ],
+      "exit_artifacts": ["redacted participation record", "labour and accessibility review", "E4 role confirmation"],
+      "stop_conditions": ["labour terms are not readable", "dispute route is absent", "participation is coerced"]
+    },
+    {
+      "project_id": "C-04",
+      "name_zh": "众智园受控计算站",
+      "name_en": "Zhongzhiyuan controlled-compute station",
+      "phase": "GATE-2",
+      "pilot_area_refs": ["PROV-KEY-001"],
+      "current_status": "template_only",
+      "evidence_level": "E2",
+      "accountable_role_slot": "site_operator",
+      "accountable_entity": null,
+      "accountable_status": "unknown",
+      "inputs": ["isolated compute design", "output review rule", "energy and stop log template"],
+      "outputs": ["controlled execution log", "disclosure review", "teardown and recovery record"],
+      "acceptance_metrics": [
+        {"metric_id": "synthetic_capacity_project_gate_passed", "metric_state": "synthetic_pass_only"},
+        {"metric_id": "synthetic_capacity_minimum_headroom_requests", "metric_state": "synthetic_pass_only"}
+      ],
+      "exit_artifacts": ["E3 resource observation", "E4 cybersecurity/energy/fire review", "operator signoff"],
+      "stop_conditions": ["capacity is inferred from abstract units", "raw data leaves its control domain", "fire, power, cooling, or security review is absent"]
+    },
+    {
+      "project_id": "C-05",
+      "name_zh": "三类产业测试场",
+      "name_en": "Three industry test grounds",
+      "phase": "GATE-2",
+      "pilot_area_refs": ["SCN-02", "SCN-03", "SCN-11"],
+      "current_status": "template_only",
+      "evidence_level": "E2",
+      "accountable_role_slot": "field_validation_lead",
+      "accountable_entity": null,
+      "accountable_status": "unknown",
+      "inputs": ["synthetic/public test data", "test protocol", "insurance and stop template"],
+      "outputs": ["scenario comparison", "risk and failure report", "go/no-go record"],
+      "acceptance_metrics": [
+        {"metric_id": "industry_test_scenario_count", "metric_state": "concept_count_only"},
+        {"metric_id": "dazhongsi_drill_case_passed", "metric_state": "synthetic_pass_only"}
+      ],
+      "exit_artifacts": ["redacted E3 test record", "independent evaluation", "E4 safety and operator review"],
+      "stop_conditions": ["test data or insurance is not cleared", "failure response is not staffed", "scenario is mistaken for deployment"]
+    },
+    {
+      "project_id": "C-06",
+      "name_zh": "大钟寺公共回报结算桌",
+      "name_en": "Dazhongsi public-return settlement table",
+      "phase": "GATE-1",
+      "pilot_area_refs": ["PROV-KEY-003", "SCN-10"],
+      "current_status": "template_only",
+      "evidence_level": "E2",
+      "accountable_role_slot": "site_operator",
+      "accountable_entity": null,
+      "accountable_status": "unknown",
+      "inputs": ["beneficiary and due-date fields", "acceptance scope", "objection route"],
+      "outputs": ["bilingual public audit card", "delivery/undelivered state", "appeal and conflict record"],
+      "acceptance_metrics": [
+        {"metric_id": "public_return_acceptance_target_ratio", "metric_state": "design_target"},
+        {"metric_id": "expiring_ticket_synthetic_case_passed", "metric_state": "synthetic_pass_only"}
+      ],
+      "exit_artifacts": ["redacted acceptance record", "financial/conflict review", "E4 custodian confirmation"],
+      "stop_conditions": ["beneficiary or due date is unclear", "return is framed as consent purchase", "undelivered state is hidden"]
+    },
+    {
+      "project_id": "C-07",
+      "name_zh": "派生链回执服务",
+      "name_en": "Derivative-chain receipt service",
+      "phase": "GATE-1",
+      "pilot_area_refs": ["SCN-09", "PROV-KEY-003"],
+      "current_status": "template_only",
+      "evidence_level": "E2",
+      "accountable_role_slot": "evidence_custodian",
+      "accountable_entity": null,
+      "accountable_status": "unknown",
+      "inputs": ["version inventory", "withdrawal request", "residual-impact vocabulary"],
+      "outputs": ["machine-readable receipt", "residual disclosure", "appeal and re-evaluation record"],
+      "acceptance_metrics": [
+        {"metric_id": "derivative_receipt_completion_target_ratio", "metric_state": "design_target"},
+        {"metric_id": "expiring_ticket_conditional_artifact_coverage_ratio", "metric_state": "synthetic_pass_only"}
+      ],
+      "exit_artifacts": ["derivative map", "E3 withdrawal task record", "E4 legal/data-governance review"],
+      "stop_conditions": ["a derivative is unmapped", "residual impact is concealed", "offline withdrawal is unavailable"]
+    },
+    {
+      "project_id": "C-08",
+      "name_zh": "三地标与遗产导引",
+      "name_en": "Three landmarks and heritage wayfinding",
+      "phase": "GATE-3",
+      "pilot_area_refs": ["PROV-KEY-001", "PROV-KEY-002", "PROV-KEY-003"],
+      "current_status": "template_only",
+      "evidence_level": "E1/E2",
+      "accountable_role_slot": "accessibility_reviewer",
+      "accountable_entity": null,
+      "accountable_status": "unknown",
+      "inputs": ["original identity specification", "heritage and accessibility review", "maintenance brief"],
+      "outputs": ["wayfinding lockup", "black/high-contrast/tactile variants", "maintenance and replacement record"],
+      "acceptance_metrics": [
+        {"metric_id": "brand_identity_lockup_bilingual_coverage_ratio", "metric_state": "synthetic_pass_only"},
+        {"metric_id": "brand_identity_no_color_only_coverage_ratio", "metric_state": "design_target"}
+      ],
+      "exit_artifacts": ["real-user legibility test", "trademark/right clearance", "E4 brand and heritage review"],
+      "stop_conditions": ["official identity conflict is unresolved", "a third-party asset lacks clearance", "wayfinding implies approval or implementation"]
+    },
+    {
+      "project_id": "C-09",
+      "name_zh": "蓝绿慢行断点修补",
+      "name_en": "Blue-green walking and cycling repairs",
+      "phase": "GATE-3",
+      "pilot_area_refs": ["ROAD-001", "ROAD-003", "PROV-KEY-003"],
+      "current_status": "template_only",
+      "evidence_level": "E1/E2",
+      "accountable_role_slot": "accessibility_reviewer",
+      "accountable_entity": null,
+      "accountable_status": "unknown",
+      "inputs": ["official road/river/tree/utility layers", "accessibility route survey", "maintenance brief"],
+      "outputs": ["barrier and shade repair list", "accessible transfer detail", "ecology and maintenance record"],
+      "acceptance_metrics": [
+        {"metric_id": "dazhongsi_mvp_no_data_route_coverage_ratio", "metric_state": "design_target"},
+        {"metric_id": "green_ratio", "metric_state": "provisional_concept_quantity"}
+      ],
+      "exit_artifacts": ["authorized route survey", "professional transport/accessibility review", "maintenance acceptance"],
+      "stop_conditions": ["route or right of way is inferred", "a barrier remains unmeasured", "ecological or utility conflict is unresolved"]
+    }
+  ],
+  "role_slots": [
+    {"role_slot": "field_validation_lead", "entity": null, "status": "unknown", "signoff_status": "not_signed"},
+    {"role_slot": "site_operator", "entity": null, "status": "unknown", "signoff_status": "not_signed"},
+    {"role_slot": "accessibility_reviewer", "entity": null, "status": "unknown", "signoff_status": "not_signed"},
+    {"role_slot": "data_and_licence_reviewer", "entity": null, "status": "unknown", "signoff_status": "not_signed"},
+    {"role_slot": "safety_and_stop_reviewer", "entity": null, "status": "unknown", "signoff_status": "not_signed"},
+    {"role_slot": "evidence_custodian", "entity": null, "status": "unknown", "signoff_status": "not_signed"}
+  ],
+  "handoff_clusters": [
+    {
+      "cluster_id": "H-01",
+      "topic_zh": "官方边界、权属与法定控制",
+      "topic_en": "Official boundary, ownership, and statutory controls",
+      "current_status": "unknown",
+      "current_evidence_level": "E2_provisional",
+      "upgrade_to": "E3/E4",
+      "required_artifacts": ["official polygon", "current control documents", "rights and constraint ledger"],
+      "prohibited_claim": "No precise redline, ownership, FAR, height, approval, or permanent siting claim."
+    },
+    {
+      "cluster_id": "H-02",
+      "topic_zh": "站口、路线与无障碍",
+      "topic_en": "Entrances, routes, and accessibility",
+      "current_status": "not_observed",
+      "current_evidence_level": "E2_template",
+      "upgrade_to": "E3",
+      "required_artifacts": ["authorized route log", "paired accessibility tasks", "manual-takeover record"],
+      "prohibited_claim": "No entrance, right-of-way, travel-time, failure-rate, or accessibility performance claim."
+    },
+    {
+      "cluster_id": "H-03",
+      "topic_zh": "运营主体与唯一问责",
+      "topic_en": "Operating entity and single accountability",
+      "current_status": "unknown",
+      "current_evidence_level": "E2_role_template",
+      "upgrade_to": "E4",
+      "required_artifacts": ["named operating entity", "responsibility acceptance", "incident escalation"],
+      "prohibited_claim": "A role slot does not prove a person, organization, qualification, or commitment."
+    },
+    {
+      "cluster_id": "H-04",
+      "topic_zh": "容量、供配电、散热与消防",
+      "topic_en": "Capacity, power, cooling, and fire safety",
+      "current_status": "unknown",
+      "current_evidence_level": "E2_synthetic_only",
+      "upgrade_to": "E3/E4",
+      "required_artifacts": ["field demand/service measurements", "engineering resource review", "fire and utility review"],
+      "prohibited_claim": "Abstract units and synthetic headroom are not people, hardware, power, cooling, premises, or cost."
+    },
+    {
+      "cluster_id": "H-05",
+      "topic_zh": "法律、伦理、数据与版权",
+      "topic_en": "Legal, ethics, data, and copyright",
+      "current_status": "unknown",
+      "current_evidence_level": "E2_template",
+      "upgrade_to": "E4",
+      "required_artifacts": ["licence ledger", "privacy and ethics review", "trademark and asset clearance"],
+      "prohibited_claim": "Synthetic or public inputs do not prove legal clearance for future live operation."
+    },
+    {
+      "cluster_id": "H-06",
+      "topic_zh": "公共回报与维护责任",
+      "topic_en": "Public return and maintenance responsibility",
+      "current_status": "unknown",
+      "current_evidence_level": "E2_template",
+      "upgrade_to": "E4",
+      "required_artifacts": ["beneficiary and due-date record", "acceptance and dispute record", "maintenance owner"],
+      "prohibited_claim": "A proposed public return is not a delivered benefit or consent purchase."
+    }
+  ],
+  "promotion_rules": [
+    {
+      "from": "E2",
+      "to": "E3",
+      "requires": ["written field authorization", "redacted observation protocol", "same-basis measurements", "privacy-safe evidence custody"],
+      "current_state": "not_authorized"
+    },
+    {
+      "from": "E3",
+      "to": "E4",
+      "requires": ["named operator", "professional and accessibility review", "safety/legal/ethics review", "co-signed go/no-go decision"],
+      "current_state": "not_confirmed"
+    },
+    {
+      "from": "E4",
+      "to": "E5",
+      "requires": ["adopted implementation decision", "approved funding/procurement route", "public accountability record"],
+      "current_state": "not_claimed"
+    }
+  ],
+  "recalculation_triggers": [
+    "When official geometry arrives, rebuild all spatial derivatives and carriers from the official source.",
+    "When an authorized field test occurs, replace only the corresponding E2 template fields with redacted E3 records and rerun all gates.",
+    "When a role or professional signoff is confirmed, record the source and scope; do not infer confirmation for other clusters.",
+    "When a stop condition fires, preserve the failed record and keep the gate closed until same-basis remeasurement and required co-signature."
+  ],
+  "audit_contract": {
+    "command": "node visual/assets/implementation-readiness-audit.js --json",
+    "self_test_command": "node visual/assets/implementation-readiness-audit.js --self-test --json",
+    "expected_project_count": 9,
+    "expected_gate_count": 4,
+    "expected_role_slot_count": 6,
+    "expected_handoff_cluster_count": 6,
+    "self_test_mutation": "An in-memory actor confirmation must fail the boundary audit; the source file is never modified."
+  }
+}

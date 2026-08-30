@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0.0",
+  "sample_id": "S-LOW-DISTURBANCE-SPATIAL",
+  "status": "method_complete_external_evidence_pending",
+  "participant_complete": true,
+  "sample_scope": "Heritage-park entrance package combining bilingual wayfinding, accessible slow movement, removable seating and seasonal shade.",
+  "location_status": "unconfirmed_pending_verified_site_boundary_and_survey",
+  "design_components": [
+    {"component": "bilingual_wayfinding", "installation": "reversible", "ordinary_use_priority": true},
+    {"component": "accessible_slow_route", "installation": "marking_and_clearance_method_only", "ordinary_use_priority": true},
+    {"component": "removable_seating", "installation": "non_foundation_or_reversible_fixing_subject_to_review", "ordinary_use_priority": true},
+    {"component": "seasonal_shade", "installation": "temporary_or_existing_canopy_first_subject_to_heritage_and_tree_review", "ordinary_use_priority": true}
+  ],
+  "proposed_raci_role_types": {
+    "responsible": ["public_space_designer_role", "accessibility_coordinator_role"],
+    "accountable": ["authorized_site_steward_role"],
+    "consulted": ["heritage_reviewer_role", "accessibility_reviewer_role", "fire_and_safety_reviewer_role", "tree_and_maintenance_reviewer_role"],
+    "informed": ["public_user_communication_role", "adjacent_operator_role"]
+  },
+  "prerequisite_permissions": [
+    {"permission": "verified_site_access_and_property_boundary", "status": "unconfirmed"},
+    {"permission": "heritage_review", "status": "unconfirmed"},
+    {"permission": "accessibility_and_fire_clearance_review", "status": "unconfirmed"},
+    {"permission": "tree_root_and_utility_review", "status": "unconfirmed"}
+  ],
+  "dimension_template": {
+    "measured_values": null,
+    "required_field_records": ["route clear width", "cross slope", "turning and resting space", "fire access", "tree and utility clearance", "entry sight lines"],
+    "method": "Record surveyed values and reviewer decisions without inferring dimensions from generated visuals."
+  },
+  "cost_estimation": {
+    "amount": null,
+    "currency": null,
+    "method": "Create a verified quantity takeoff for each removable component, multiply by dated and cited unit-rate sources, then add installation, traffic/access management, maintenance, removal, restoration, tax and contingency assumptions as separate lines.",
+    "fabricated_amount_prohibited": true
+  },
+  "maintenance_cycle": [
+    {"stage": "pre_opening", "check": "route clearance, fixing, sharp edges, shade stability, sign accuracy and emergency access"},
+    {"stage": "routine", "frequency": "to_be_set_by_material_and_operator_review", "check": "cleaning, damage, obstruction, legibility and accessibility"},
+    {"stage": "seasonal", "frequency": "before_and_after_shade_season", "check": "shade removal or adjustment, tree condition and drainage"},
+    {"stage": "incident", "frequency": "immediate", "check": "close affected element, record event, repair or remove before reopening"}
+  ],
+  "emergency_escalation": {
+    "trigger": ["blocked accessible route", "unstable element", "heritage or tree damage", "fire access conflict", "injury or near miss"],
+    "action": "Authorized site steward pauses use, secures the location, restores an ordinary accessible route, records the event and escalates to the relevant reviewer roles.",
+    "restart_authority": "accountable site steward after documented reviewer clearance"
+  },
+  "exit_acceptance": ["remove temporary elements", "restore accessible ordinary use", "inspect substrate, heritage and tree condition", "close defects", "archive photographs, measurements and reviewer acceptance"],
+  "retest_template": ["sample and drawing version", "verified dimensions", "accessibility and fire checks", "maintenance findings", "incidents and complaints", "corrections", "reviewer role", "continue, pause or exit decision"],
+  "institution_status": "unconfirmed",
+  "claim_boundary": "This is a participant-authored handoff method. It is not a construction drawing, surveyed site record, permit, cost commitment, installation order or institutional approval."
+}

@@ -257,13 +257,13 @@ function validateContracts(checks, document) {
 
   checks.require(sameSet(byId.keys(), SCENARIO_IDS), "contracts must cover S01-S12 exactly");
 
-  const s06 = byId.get("S06")["实施切片_90日"];
-  checks.require(isObject(s06), "S06 must include 实施切片_90日");
+  const s06 = byId.get("S06")["实施切片_100日"];
+  checks.require(isObject(s06), "S06 must include 实施切片_100日");
   checks.require(
     s06.status === "conceptual_pre_registration_not_an_approved_schedule",
-    "S06 90-day slice must remain a conceptual preregistration",
+    "S06 100-day slice must remain a conceptual preregistration",
   );
-  for (const segment of ["days_0_30", "days_31_60", "days_61_90"]) {
+  for (const segment of ["days_0_30", "days_31_60", "days_61_90", "days_91_100"]) {
     checks.require(isObject(s06[segment]), `S06 missing ${segment}`);
     checks.require(isNonempty(s06[segment].purpose), `S06 ${segment} purpose missing`);
     checks.require(isNonempty(s06[segment].required_actions), `S06 ${segment} actions missing`);
@@ -497,9 +497,9 @@ function runSuite(contractsPath, casesPath, receiptPath) {
     decision_counts: sortedObject(decisionCounts),
     reason_counts: sortedObject(reasonCounts),
     scenario_branch_counts: scenarioCounts,
-    s06_90_day_slice: {
+    s06_100_day_slice: {
       present: true,
-      segments: ["days_0_30", "days_31_60", "days_61_90"],
+      segments: ["days_0_30", "days_31_60", "days_61_90", "days_91_100"],
       exit_resource_standard: "verified_itemised_resources_sufficient_for_restoration",
       exit_resource_amount_status: "unpriced_unapproved",
       status: "conceptual_pre_registration_not_an_approved_schedule",

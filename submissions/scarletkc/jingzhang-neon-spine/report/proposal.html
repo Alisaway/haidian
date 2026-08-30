@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>百年京张·霓光脊：可见、可问、可停的公民 AI 创新带 - proposal report</title>
+<link rel="stylesheet" href="../visual/assets/noto-sans-sc.woff2.css">
 <style>
 :root {
   --ink: #172033;
@@ -16,7 +17,7 @@
 * { box-sizing: border-box; }
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  font-family: "Neon Spine Sans", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
   color: var(--ink);
   background: var(--bg);
   line-height: 1.75;
@@ -50,6 +51,12 @@ code {
   color: #1d4f7a;
   padding: 0.1em 0.35em;
   border-radius: 4px;
+}
+:not(pre) > code {
+  display: inline-block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .summary { color: var(--muted); font-size: 17px; }
 .translation-link a { color: var(--accent); font-weight: 700; }
@@ -161,7 +168,7 @@ code {
 <div class="proposal-table"><table><thead><tr><th>ID</th><th>合成条件</th><th>验收逻辑</th><th>预期</th></tr></thead><tbody><tr><td>F0</td><td>无 App 正常路径</td><td>责任、来源、无障碍、人工解释和纸质证据齐备</td><td>ADMIT</td></tr><tr><td>F1</td><td>无障碍主链阻断</td><td>即使模型可用也不得开放</td><td>STOP；恢复非 AI 可达路径后重测</td></tr><tr><td>F2</td><td>同意撤回但仍有 4 条原始反馈</td><td>下个 Gate 前且 24 小时内删除</td><td>STOP；4→0 后留存删除证据</td></tr><tr><td>F3</td><td>来源被篡改且问责角色缺岗</td><td>不能用技术性能掩盖溯源与责任缺口</td><td>STOP；恢复来源并任命角色</td></tr></tbody></table></div>
 <p>四项测试必须先发布方法、事件记录、修复状态和停止条件，再讨论扩展。技术指标只回答系统是否工作，公众评价还要回答无障碍、投诉、接管、数字排斥、能源与维护成本。公民 AI 护照由场景运营者维护，独立评议席审查高风险变更，现场责任人拥有即时停用权；行政、医疗、法律、支付等高风险结果始终由具备权限的人确认。（假设登记：A-AI-001）</p>
 <h2>用地、建筑规模与拆改留方案</h2>
-<p>用地分区使用科研用地 0802、公园绿地 1401、文化用地 0803、商业服务业用地 05 和社区服务设施用地 0702 五类代码，形成从研究、公共公地、开源文化、产业服务到日常配套的横向梯度。分区覆盖当前提交边界且不重叠，面积在 EPSG:4548 下逐 feature 声明；它们是概念性城市设计分区，后续必须与 official land-use plan 和权属核对。<sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="MNR-LAND-USE-CLASSIFICATION-GUIDE" title="标准：MNR-LAND-USE-CLASSIFICATION-GUIDE">标准</sup></p>
+<p>用地分区使用科研用地 0802、公园绿地 1401、文化用地 0803、商业服务业用地 09 和社区服务设施用地 0702 五类代码，形成从研究、公共公地、开源文化、产业服务到日常配套的横向梯度。分区覆盖当前提交边界且不重叠，面积在 EPSG:4548 下逐 feature 声明；它们是概念性城市设计分区，后续必须与 official land-use plan 和权属核对。<sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="MNR-LAND-USE-CLASSIFICATION-GUIDE" title="标准：MNR-LAND-USE-CLASSIFICATION-GUIDE">标准</sup></p>
 <p>建筑策略先分类再定量。保留适配类优先利用既有空间承载孵化、人才与企业服务；改造类用于开放首层、测试工坊、文化展示与市集；新概念类仅提示边缘算力试验舱所需的安全、能源和设备边界。提交图层的建筑基底合计约 16.59 公顷，但它不是现状普查或审定建筑量。FAR 与高度仍为 unknown，任何拆除决定也未形成。<sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/buildings.geojson#BLDG-001" title="空间数据：geometry/buildings.geojson#BLDG-001">空间数据</sup></p>
 <p>拆改留核验顺序为：测绘与结构安全、产权和租赁、文保与工业遗产价值、消防和无障碍、运营需求、全生命周期碳，再讨论保留、修缮、改造或新建。所有概念载体优先允许小尺度、可逆和共享使用；若专业核验发现文保、消防、市政或权属冲突，方案功能应迁移而不是强行保留图面位置。<sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="retain_renovate_demolish" title="深度：retain_renovate_demolish">深度</sup></p>
 <p>建筑风貌采用深色金属、再利用砖混、透明工坊界面与可更换状态条的组合，但物理霓虹不是强制材料。屋顶、体量和夜景照明以低眩光、可维护、分时和邻里低扰动为原则。准确材质、构造、荷载、节能和高度控制须由专业团队在后续阶段深化。（假设登记：A-BUILDING-001）</p>
@@ -186,6 +193,11 @@ code {
 <p>数据生命周期为登记、摄入、互动、复核、公开、删除/导出六步。T2 默认只用公开、清权或合成数据，不默认采集生物识别或设备标识；自愿反馈的原始记录默认最长 7 天，撤回后在下个 Gate 前且不晚于 24 小时删除；公开层只保留非身份化聚合、主张溯源、事件状态和修复证据。退出供应商前先导出可迁移审计记录，再删除或隔离受影响原始数据。<sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="PASSPORT-EVIDENCE" title="来源：PASSPORT-EVIDENCE">来源</sup></p>
 <p>七项公众首用权是知情、无惩罚选择、无 App 等价、人工复核、更正/删除、具名申诉、退出与非 AI 恢复。基本通行、安全信息、咨询、投诉和申诉不得要求购买设备、订阅、账户或额外付费；未来运营方必须在 G4 前落实人工、无障碍与非数字等价的资金来源，这是一项自设准入条件，不是现行政府承诺。<sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="public_right_count" title="指标：public_right_count">指标</sup></p>
 <p>成本不编人民币总额，人员、空间、设备、数据/许可/合规、维护、退出/删除/恢复六本账全部保持 unknown。G1 前每本账必须有所有者、资金来源、报价或工时基础、维护与退出准备，任何一本空缺都不得进入公共 Gate。（假设登记：A-COST-001）</p>
+<h3>当前投稿可交付边界与 G1 成本基线</h3>
+<p>当前投稿已经固定角色任命记录的必填字段、六本成本账的所有者角色与估算方法，以及 G0-G2 三张收件回执。角色记录必须包含具名 A/R、权限、专业或能力依据、到岗与替补、利益冲突和停机义务；角色标签和机构建议不能代替签署。每本账还必须在 G1 前补入经授权的金额、资金凭证和报价或工时依据。当前 <code>amount_cny</code> 与三张现场 Gate 结果保持 null，概念合同可接受内容审查，现场启动仍保持拒绝状态。<sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="PASSPORT-EVIDENCE" title="来源：PASSPORT-EVIDENCE">来源</sup></p>
+<div class="proposal-table"><table><thead><tr><th>成本账</th><th>所有者角色</th><th>已固定估算方法</th><th>G1 必收凭证</th></tr></thead><tbody><tr><td>人员</td><td>项目控制与人力负责人</td><td>经批准活动清单 × 复核工时 × 有依据费率，加交接与替补</td><td>预算编码、签署赞助或人员实物投入；岗位费率与工时计算</td></tr><tr><td>空间</td><td>场地与空间负责人</td><td>核验面积 × 授权使用期 × 有依据场地费率，加临时工程与恢复</td><td>场地授权和预算/实物投入；测绘量与临时工程依据</td></tr><tr><td>设备</td><td>技术采购与安全负责人</td><td>经批准设备清单 × 可比报价，加安装、测试、保险与备件</td><td>采购资金或带责任分配的设备投入；至少两份可比报价或公开框架价</td></tr><tr><td>数据/许可/合规</td><td>数据保护、许可与法务负责人</td><td>数据清单 × 复核工时，加许可、安全评估与独立复核费用</td><td>合规工作包；工作范围、许可或审计报价</td></tr><tr><td>维护</td><td>运营维护负责人</td><td>资产/服务清单 × 巡检频次 × 人工与备件费率，覆盖完整试用期</td><td>独立运维资金；SLA 工时、备件和待命依据</td></tr><tr><td>退出/删除/恢复</td><td>退出与场地恢复负责人</td><td>拆除工时、运输、安全删除证明、恢复工程量与预备费</td><td>G1 前锁定的退出准备金；拆除、删除核验和恢复方法</td></tr></tbody></table></div>
+<p><code>simulation.json</code> 把已提交的一正三负演练展开成 4 条可复算任务。四条 observed decision 均与预设 admit/stop 相符，合成期望匹配率与审计完整率均为 1.0；其中三条成功结果代表预期停机被执行。台账不含现场任务、公众用户或真实系统绩效，<code>field_claim</code> 全部为 false。<sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="simulation_task_count" title="指标：simulation_task_count">指标</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="simulation_success_rate" title="指标：simulation_success_rate">指标</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="audit_completeness" title="指标：audit_completeness">指标</sup></p>
+<p>这组材料完成当前投稿能够负责的合同定义、估算方法和离线规则证据。具名主体、真实资金、市场报价、official geometry、专业签认与许可在相应触发发生后进入 G0-G4，当前未授权状态保持不变。<sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="tool_schema_pass_rate" title="指标：tool_schema_pass_rate">指标</sup></p>
 <p>严重安全或隐私事件、现场责任人缺岗、来源失真、关键无障碍路径中断、撤回后数据未删，任一项都触发即时停机：保留人工或非 AI 路径、最小化保存事件记录、删除/隔离受影响数据、恢复原公共空间和可迁移接口，再公开初步通知、修复证据与继续/修改/日落决定。<sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="negative_fixture_count" title="指标：negative_fixture_count">指标</sup></p>
 <p>第 100 天交接包固定包含：G0-G5 日志、来源与主张登记、角色任命记录、无障碍/无 App 验收、事件与投诉台账、数据删除/可迁移导出证明、维护状态和 AI-OFF 空间恢复图。这些项目汇成机器可读的 <code>g5_completion_receipt</code>；当前结果为 null，缺任一项只能日落或补证，不能带缺口扩展。<sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="PASSPORT-EVIDENCE" title="来源：PASSPORT-EVIDENCE">来源</sup></p>
 <p>一期核验并点亮建议 0-12 个月聚焦北部众智园，建立资料基线、公民 AI 公约、双账本、独立评议机制和协议灯塔 100 天合同；JZ-01 作为全带断点核验先行，不据此宣称全线施工。二期连接并转化建议 1-3 年聚焦原点社区和小月河支线。三期扩展并共治建议 3-5 年聚焦大钟寺人本接驳、智能体市集与贡献轨，只扩展通过公开评价的场景。phasing.geojson 为每期明列 project_ids；这些时段仍是概念顺序，不是政府计划或建设承诺。<sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/phasing.geojson#PHASE-001" title="空间数据：geometry/phasing.geojson#PHASE-001">空间数据</sup></p>

@@ -1,0 +1,140 @@
+{
+  "schema_version": "0.1.0",
+  "sources": [
+    {
+      "id": "SITE-PACKAGE",
+      "path": "brief/site-package/",
+      "source_type": "official_public",
+      "usage": "Project brief, enums, allowed design space, ranges, schemas, and geometry status.",
+      "limits": "Use only according to the source registry and geometry precision labels."
+    },
+    {
+      "id": "SOURCE-REGISTRY",
+      "path": "data/source_registry.json",
+      "source_type": "official_public",
+      "usage": "Determines formal-ready, background-only, provisional-only, and needs-review use.",
+      "limits": "Registry status controls downstream claims."
+    },
+    {
+      "id": "PROCESSED-FACT-PACK",
+      "path": "data/processed/agent_fact_pack.md",
+      "source_type": "official_public",
+      "usage": "Navigation layer for scopes, tasks, and missing data.",
+      "limits": "Not an independent authority source."
+    },
+    {
+      "id": "BOUNDARY-SOURCE",
+      "path": "brief/site-package/geometry/provisional_boundaries.geojson",
+      "source_type": "agent_inferred_from_public_data",
+      "usage": "Provisional site boundary for generation, figures, and recomputation.",
+      "limits": "Not an official redline, precise-area basis, approval basis, or engineering control."
+    },
+    {
+      "id": "KEY-AREA-SOURCE",
+      "path": "brief/site-package/geometry/provisional_boundaries.geojson",
+      "source_type": "agent_inferred_from_public_data",
+      "usage": "Three provisional key-area polygons.",
+      "limits": "Dazhongsi location relationship and all exact key-area positions require official confirmation."
+    },
+    {
+      "id": "OFFICIAL-ANNOUNCEMENT",
+      "url": "https://ghzrzyw.beijing.gov.cn/zhengwuxinxi/tzgg/hd/202605/t20260509_4643047.html",
+      "source_type": "official_public",
+      "usage": "Official scope, goals, tasks, and deliverable context.",
+      "retrieved_at": "2026-08-11"
+    },
+    {
+      "id": "AGENT-TASKBOOK",
+      "path": "brief/site-package/agent_taskbook.json",
+      "source_type": "user_provided_cleared",
+      "usage": "Six agent tasks, scenario, identity, culture, landmark, and operating requirements."
+    },
+    {
+      "id": "MOHURD-URBAN-DESIGN",
+      "path": "brief/site-package/standards/references/mohurd-urban-design-measures.md",
+      "source_type": "official_public",
+      "usage": "Urban-design method, public-space, character, and implementation response."
+    },
+    {
+      "id": "MOHURD-CONTROL-PLAN",
+      "path": "brief/site-package/standards/references/mohurd-control-detailed-planning.md",
+      "source_type": "official_public",
+      "usage": "Regulatory-plan-level response structure and control-data gap handling."
+    },
+    {
+      "id": "MNR-LAND-USE",
+      "path": "brief/site-package/standards/references/mnr-land-use-classification-guide.md",
+      "source_type": "official_public",
+      "usage": "Land-use code semantics."
+    },
+    {
+      "id": "GENERATIVE-AI-RULES",
+      "path": "brief/site-package/standards/references/generative-ai-interim-measures.md",
+      "source_type": "official_public",
+      "usage": "AI content, safety, labeling, and responsibility boundaries."
+    },
+    {
+      "id": "BARRIER-FREE-LAW",
+      "path": "brief/site-package/standards/references/barrier-free-environment-law.md",
+      "source_type": "official_public",
+      "usage": "Accessibility, equitable service, and non-digital fallback principles."
+    },
+    {
+      "id": "NOTO-SANS-CJK",
+      "url": "https://github.com/notofonts/noto-cjk",
+      "source_type": "open_source_font",
+      "usage": "Embedded offline subset of the Noto CJK Simplified Chinese regular face for readable proposal HTML; font data is embedded locally and is not used as design evidence.",
+      "license": "SIL Open Font License 1.1",
+      "retrieved_at": "2026-08-26",
+      "limits": "Presentation dependency only; subset contains characters used by this package and does not support any spatial, planning, or implementation claim."
+    },
+    {
+      "id": "HELSINKI-KALASATAMA",
+      "url": "https://www.hel.fi/en/urban-environment-and-traffic/urban-planning-and-construction/urban-development/kalasatama",
+      "source_type": "official_public",
+      "usage": "Background case for phased district operation and public-route integration.",
+      "limits": "Method reference only; no Helsinki metric is transferred to Beijing.",
+      "retrieved_at": "2026-08-11"
+    },
+    {
+      "id": "JTC-PUNGGOL",
+      "url": "https://www.jtc.gov.sg/punggoldigitaldistrict",
+      "source_type": "official_public",
+      "usage": "Background case for district digital platforms and industry-academia testbeds.",
+      "limits": "Method reference only; not evidence of site conditions.",
+      "retrieved_at": "2026-08-11"
+    },
+    {
+      "id": "SEOUL-TESTBED",
+      "url": "https://www.seoul.go.kr/news/news_report.do?nttNo=455021",
+      "source_type": "official_public",
+      "usage": "Background case for public-space technology testing and adoption pathways.",
+      "limits": "Method reference only; local regulation and procurement require separate confirmation.",
+      "retrieved_at": "2026-08-11"
+    },
+    {
+      "id": "AMSTERDAM-SENSING",
+      "url": "https://www.amsterdam.nl/innovatie/digitalisering-technologie/digitale-veiligheid/sensoren-openbare-ruimte/",
+      "source_type": "official_public",
+      "usage": "Background case for transparent, privacy-aware public sensing.",
+      "limits": "Principle reference only; does not authorize sensing in Beijing.",
+      "retrieved_at": "2026-08-11"
+    },
+    {
+      "id": "PARIS-OASIS",
+      "url": "https://www.paris.fr/pages/les-cours-oasis-7389",
+      "source_type": "official_public",
+      "usage": "Background case for cooling, shade, water, and public use.",
+      "limits": "Method reference only; no climate baseline is transferred.",
+      "retrieved_at": "2026-08-11"
+    },
+    {
+      "id": "BARCELONA-CLIMATE-SHELTERS",
+      "url": "https://ajuntament.barcelona.cat/serveissocials/es/noticia/crece-la-red-de-refugios-climaticos-para-protegerse-del-calor_1523924",
+      "source_type": "official_public",
+      "usage": "Background case for accessible climate-shelter networks.",
+      "limits": "Method reference only; targets and service radii must be locally measured.",
+      "retrieved_at": "2026-08-11"
+    }
+  ]
+}

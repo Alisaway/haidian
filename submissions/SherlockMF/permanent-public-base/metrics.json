@@ -1,0 +1,975 @@
+{
+  "schema_version": "0.1.0",
+  "units": {
+    "length": "m",
+    "area": "sqm"
+  },
+  "metrics": {
+    "site_area_sqm": {
+      "status": "known",
+      "value": 11412825.385553982,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "area(union(site_boundary), EPSG:4548)",
+      "confidence": "medium",
+      "assumptions": [
+        "A-F21-01"
+      ],
+      "name_zh": "临时总体设计范围几何面积",
+      "evidence_classification": "KNOWN_PROVISIONAL_GEOMETRY_VALUE",
+      "official_or_statutory": false,
+      "recalculation_trigger": "Recompute after any accepted geometry change or replacement by an official or cleared boundary."
+    },
+    "public_space_ratio": {
+      "status": "known",
+      "value": 0.03261625453851162,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "area(intersection(union(public_space), site_boundary), EPSG:4548) / area(site_boundary, EPSG:4548)",
+      "confidence": "medium",
+      "assumptions": [
+        "A-F21-01"
+      ],
+      "name_zh": "临时总体设计范围内概念公共空间率",
+      "evidence_classification": "KNOWN_PROVISIONAL_GEOMETRY_VALUE",
+      "numerator_area_sqm": 372243.61777881574,
+      "denominator_area_sqm": 11412825.385553982,
+      "official_or_statutory": false,
+      "recalculation_trigger": "Recompute after any accepted geometry change or replacement by an official or cleared boundary."
+    },
+    "green_ratio": {
+      "status": "known",
+      "value": 0.002576304425745594,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/green_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "area(intersection(union(green_space), site_boundary), EPSG:4548) / area(site_boundary, EPSG:4548)",
+      "confidence": "medium",
+      "assumptions": [
+        "A-F21-01"
+      ],
+      "name_zh": "临时总体设计范围内概念绿地率",
+      "evidence_classification": "KNOWN_PROVISIONAL_GEOMETRY_VALUE",
+      "numerator_area_sqm": 29402.91255106439,
+      "denominator_area_sqm": 11412825.385553982,
+      "official_or_statutory": false,
+      "recalculation_trigger": "Recompute after any accepted geometry change or replacement by an official or cleared boundary."
+    },
+    "official_coordinated_research_area_sqm": {
+      "status": "known",
+      "value": 43600000,
+      "unit": "sqm",
+      "source_files": [
+        "brief/site-package/ranges/planning_limits.json"
+      ],
+      "formula": "Official stated approximate area; no provisional-polygon recomputation.",
+      "confidence": "high",
+      "assumptions": [],
+      "name_zh": "公告约统筹研究范围面积",
+      "evidence_classification": "OBSERVED_OFFICIAL_STATED",
+      "source_ids": [
+        "F1-SRC-002-OFFICIAL-ANNOUNCEMENT"
+      ]
+    },
+    "official_overall_design_area_sqm": {
+      "status": "known",
+      "value": 11400000,
+      "unit": "sqm",
+      "source_files": [
+        "brief/site-package/ranges/planning_limits.json"
+      ],
+      "formula": "Official stated approximate area; no provisional-polygon recomputation.",
+      "confidence": "high",
+      "assumptions": [],
+      "name_zh": "公告约总体设计范围面积",
+      "evidence_classification": "OBSERVED_OFFICIAL_STATED",
+      "source_ids": [
+        "F1-SRC-002-OFFICIAL-ANNOUNCEMENT"
+      ]
+    },
+    "official_key_detailed_design_area_sqm": {
+      "status": "known",
+      "value": 3684000,
+      "unit": "sqm",
+      "source_files": [
+        "brief/site-package/ranges/planning_limits.json"
+      ],
+      "formula": "Official stated approximate area; no provisional-polygon recomputation.",
+      "confidence": "high",
+      "assumptions": [],
+      "name_zh": "公告约重点区域合计面积",
+      "evidence_classification": "OBSERVED_OFFICIAL_STATED",
+      "source_ids": [
+        "F1-SRC-002-OFFICIAL-ANNOUNCEMENT"
+      ]
+    },
+    "official_zhongzhiyuan_area_sqm": {
+      "status": "known",
+      "value": 1921000,
+      "unit": "sqm",
+      "source_files": [
+        "brief/site-package/ranges/planning_limits.json"
+      ],
+      "formula": "Official stated approximate area; no provisional-polygon recomputation.",
+      "confidence": "high",
+      "assumptions": [],
+      "name_zh": "公告约众智园重点区面积",
+      "evidence_classification": "OBSERVED_OFFICIAL_STATED",
+      "source_ids": [
+        "F1-SRC-002-OFFICIAL-ANNOUNCEMENT"
+      ]
+    },
+    "official_ai_origin_area_sqm": {
+      "status": "known",
+      "value": 1043000,
+      "unit": "sqm",
+      "source_files": [
+        "brief/site-package/ranges/planning_limits.json"
+      ],
+      "formula": "Official stated approximate area; no provisional-polygon recomputation.",
+      "confidence": "high",
+      "assumptions": [],
+      "name_zh": "公告约AI原点重点区面积",
+      "evidence_classification": "OBSERVED_OFFICIAL_STATED",
+      "source_ids": [
+        "F1-SRC-002-OFFICIAL-ANNOUNCEMENT"
+      ]
+    },
+    "official_dazhongsi_area_sqm": {
+      "status": "known",
+      "value": 720000,
+      "unit": "sqm",
+      "source_files": [
+        "brief/site-package/ranges/planning_limits.json"
+      ],
+      "formula": "Official stated approximate area; no provisional-polygon recomputation.",
+      "confidence": "high",
+      "assumptions": [],
+      "name_zh": "公告约大钟寺重点区面积",
+      "evidence_classification": "OBSERVED_OFFICIAL_STATED",
+      "source_ids": [
+        "F1-SRC-002-OFFICIAL-ANNOUNCEMENT"
+      ]
+    },
+    "positioning_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/taskbook-deliverables.json"
+      ],
+      "formula": "Count of explicit frozen F1 content records.",
+      "confidence": "high",
+      "assumptions": [],
+      "name_zh": "三大定位",
+      "evidence_classification": "OBSERVED_CONTENT_AUTHORITY",
+      "source_ids": [
+        "F1-SRC-001-AGENT-TASKBOOK"
+      ]
+    },
+    "function_count": {
+      "status": "known",
+      "value": 5,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/taskbook-deliverables.json"
+      ],
+      "formula": "Count of explicit frozen F1 content records.",
+      "confidence": "high",
+      "assumptions": [],
+      "name_zh": "五大功能",
+      "evidence_classification": "OBSERVED_CONTENT_AUTHORITY",
+      "source_ids": [
+        "F1-SRC-001-AGENT-TASKBOOK"
+      ]
+    },
+    "area_role_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/taskbook-deliverables.json"
+      ],
+      "formula": "Count of explicit frozen F1 content records.",
+      "confidence": "high",
+      "assumptions": [],
+      "name_zh": "三区角色",
+      "evidence_classification": "OBSERVED_CONTENT_AUTHORITY",
+      "source_ids": [
+        "F1-SRC-001-AGENT-TASKBOOK"
+      ]
+    },
+    "wing_role_count": {
+      "status": "known",
+      "value": 2,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/taskbook-deliverables.json"
+      ],
+      "formula": "Count of explicit frozen F1 content records.",
+      "confidence": "high",
+      "assumptions": [],
+      "name_zh": "两翼机制",
+      "evidence_classification": "OBSERVED_CONTENT_AUTHORITY",
+      "source_ids": [
+        "F1-SRC-001-AGENT-TASKBOOK"
+      ]
+    },
+    "carrier_family_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/design-system-register.json"
+      ],
+      "formula": "Count of frozen reversible carrier families: EDGE-HOUSE, TERRACED FORECOURT and LINEAR SIDE-BAY.",
+      "confidence": "high",
+      "assumptions": [],
+      "name_zh": "可逆载体家族",
+      "evidence_classification": "OBSERVED_CONTENT_AUTHORITY",
+      "source_ids": [
+        "F1-SRC-001-AGENT-TASKBOOK",
+        "F2-SRC-P82-APPROVED-SPATIAL"
+      ]
+    },
+    "precedent_case_count": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/taskbook-deliverables.json"
+      ],
+      "formula": "Count of explicit frozen F1 content records.",
+      "confidence": "high",
+      "assumptions": [],
+      "name_zh": "先例卡",
+      "evidence_classification": "OBSERVED_CONTENT_AUTHORITY",
+      "source_ids": [
+        "F1-SRC-001-AGENT-TASKBOOK"
+      ]
+    },
+    "ecosystem_factor_count": {
+      "status": "known",
+      "value": 8,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/taskbook-deliverables.json"
+      ],
+      "formula": "Count of explicit frozen F1 content records.",
+      "confidence": "high",
+      "assumptions": [],
+      "name_zh": "创新生态要素",
+      "evidence_classification": "OBSERVED_CONTENT_AUTHORITY",
+      "source_ids": [
+        "F1-SRC-001-AGENT-TASKBOOK"
+      ]
+    },
+    "persona_count": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/taskbook-deliverables.json"
+      ],
+      "formula": "Count of explicit frozen F1 content records.",
+      "confidence": "high",
+      "assumptions": [],
+      "name_zh": "人才与市民画像",
+      "evidence_classification": "OBSERVED_CONTENT_AUTHORITY",
+      "source_ids": [
+        "F1-SRC-001-AGENT-TASKBOOK"
+      ]
+    },
+    "scenario_card_count": {
+      "status": "known",
+      "value": 12,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/taskbook-deliverables.json"
+      ],
+      "formula": "Count of explicit frozen F1 content records.",
+      "confidence": "high",
+      "assumptions": [],
+      "name_zh": "场景卡",
+      "evidence_classification": "OBSERVED_CONTENT_AUTHORITY",
+      "source_ids": [
+        "F1-SRC-001-AGENT-TASKBOOK"
+      ]
+    },
+    "industrial_test_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/taskbook-deliverables.json"
+      ],
+      "formula": "Count of explicit frozen F1 content records.",
+      "confidence": "high",
+      "assumptions": [],
+      "name_zh": "产业测试",
+      "evidence_classification": "OBSERVED_CONTENT_AUTHORITY",
+      "source_ids": [
+        "F1-SRC-001-AGENT-TASKBOOK"
+      ]
+    },
+    "landmark_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/design-system-register.json"
+      ],
+      "formula": "Count of explicit frozen F1 content records.",
+      "confidence": "high",
+      "assumptions": [],
+      "name_zh": "AI朝圣地标",
+      "evidence_classification": "OBSERVED_CONTENT_AUTHORITY",
+      "source_ids": [
+        "F1-SRC-001-AGENT-TASKBOOK"
+      ]
+    },
+    "public_space_component_count": {
+      "status": "known",
+      "value": 11,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/design-system-register.json"
+      ],
+      "formula": "Count of explicit frozen F1 content records.",
+      "confidence": "high",
+      "assumptions": [],
+      "name_zh": "公共空间组件",
+      "evidence_classification": "OBSERVED_CONTENT_AUTHORITY",
+      "source_ids": [
+        "F1-SRC-001-AGENT-TASKBOOK"
+      ]
+    },
+    "calendar_month_count": {
+      "status": "known",
+      "value": 12,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/design-system-register.json"
+      ],
+      "formula": "Count of explicit frozen F1 content records.",
+      "confidence": "high",
+      "assumptions": [],
+      "name_zh": "年度日历月份",
+      "evidence_classification": "OBSERVED_CONTENT_AUTHORITY",
+      "source_ids": [
+        "F1-SRC-001-AGENT-TASKBOOK"
+      ]
+    },
+    "crosswalk_row_count": {
+      "status": "known",
+      "value": 34,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/taskbook-deliverables.json"
+      ],
+      "formula": "Count of explicit frozen F1 content records.",
+      "confidence": "high",
+      "assumptions": [],
+      "name_zh": "六任务交叉表行",
+      "evidence_classification": "OBSERVED_CONTENT_AUTHORITY",
+      "source_ids": [
+        "F1-SRC-001-AGENT-TASKBOOK"
+      ]
+    },
+    "base_uptime_ratio": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "future operator log",
+        "future closure log"
+      ],
+      "formula": "verified BASE-open minutes / required public-service minutes",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-F2-09",
+        "A-F2-10"
+      ],
+      "reason": "No approved pilot, baseline, operator or data agreement exists.",
+      "name_zh": "公共基底可用率",
+      "evidence_classification": "FUTURE_EVALUATION_KPI",
+      "baseline_required": true,
+      "source_ids": [
+        "F1-SRC-001-AGENT-TASKBOOK"
+      ]
+    },
+    "clear_path_conflict_rate": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "future incident log",
+        "future independent accessibility audit"
+      ],
+      "formula": "verified obstruction or conflict events / audited operating hours",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-F2-09",
+        "A-F2-10"
+      ],
+      "reason": "No approved pilot, baseline, operator or data agreement exists.",
+      "name_zh": "清晰通行冲突率",
+      "evidence_classification": "FUTURE_EVALUATION_KPI",
+      "baseline_required": true,
+      "source_ids": [
+        "F1-SRC-001-AGENT-TASKBOOK"
+      ]
+    },
+    "transition_failure_rate": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "future transition checklist",
+        "future maintenance log"
+      ],
+      "formula": "failed or aborted transitions / attempted transitions",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-F2-09",
+        "A-F2-10"
+      ],
+      "reason": "No approved pilot, baseline, operator or data agreement exists.",
+      "name_zh": "状态转换失败率",
+      "evidence_classification": "FUTURE_EVALUATION_KPI",
+      "baseline_required": true,
+      "source_ids": [
+        "F1-SRC-001-AGENT-TASKBOOK"
+      ]
+    },
+    "override_freeze_rate": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "future recommendation log",
+        "future signed decision log"
+      ],
+      "formula": "human veto or emergency freeze events / AI recommendations",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-F2-09",
+        "A-F2-10"
+      ],
+      "reason": "No approved pilot, baseline, operator or data agreement exists.",
+      "name_zh": "人工否决与冻结率",
+      "evidence_classification": "FUTURE_EVALUATION_KPI",
+      "baseline_required": true,
+      "source_ids": [
+        "F1-SRC-001-AGENT-TASKBOOK"
+      ]
+    },
+    "appeal_remedy_time": {
+      "status": "unknown",
+      "value": null,
+      "unit": "none",
+      "source_files": [
+        "future appeal register",
+        "future remedy record"
+      ],
+      "formula": "median signed receipt-to-remedy elapsed time",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-F2-09",
+        "A-F2-10"
+      ],
+      "reason": "No approved pilot, baseline, operator or data agreement exists.",
+      "name_zh": "申诉补救时长",
+      "evidence_classification": "FUTURE_EVALUATION_KPI",
+      "baseline_required": true,
+      "source_ids": [
+        "F1-SRC-001-AGENT-TASKBOOK"
+      ],
+      "dimension": "time",
+      "intended_unit": "minutes"
+    },
+    "maintenance_staff_time": {
+      "status": "unknown",
+      "value": null,
+      "unit": "none",
+      "source_files": [
+        "future staff timesheet"
+      ],
+      "formula": "staff time by carrier, state and service hour; never added to closure duration or event counts",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-F2-09",
+        "A-F2-10"
+      ],
+      "reason": "No approved pilot, baseline, operator or data agreement exists.",
+      "name_zh": "维护工时",
+      "evidence_classification": "FUTURE_EVALUATION_KPI",
+      "baseline_required": true,
+      "source_ids": [
+        "F1-SRC-001-AGENT-TASKBOOK"
+      ],
+      "dimension": "time",
+      "intended_unit": "staff-hours"
+    },
+    "closure_duration": {
+      "status": "unknown",
+      "value": null,
+      "unit": "none",
+      "source_files": [
+        "future closure log"
+      ],
+      "formula": "closure duration by cause and carrier",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-F2-09",
+        "A-F2-10"
+      ],
+      "reason": "No approved pilot, baseline, operator or data agreement exists.",
+      "name_zh": "关闭时长",
+      "evidence_classification": "FUTURE_EVALUATION_KPI",
+      "baseline_required": true,
+      "source_ids": [
+        "F1-SRC-001-AGENT-TASKBOOK"
+      ],
+      "dimension": "time",
+      "intended_unit": "hours"
+    },
+    "replacement_event_count": {
+      "status": "unknown",
+      "value": null,
+      "unit": "count",
+      "source_files": [
+        "future maintenance log"
+      ],
+      "formula": "count of component replacement events by carrier and cause",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-F2-09",
+        "A-F2-10"
+      ],
+      "reason": "No approved pilot, baseline, operator or data agreement exists.",
+      "name_zh": "更换事件数",
+      "evidence_classification": "FUTURE_EVALUATION_KPI",
+      "baseline_required": true,
+      "source_ids": [
+        "F1-SRC-001-AGENT-TASKBOOK"
+      ]
+    },
+    "equity_access_success_gap": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "future aggregate equity audit",
+        "future appeal register"
+      ],
+      "formula": "maximum audited difference in service-success ratio across approved privacy-preserving user conditions",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-F2-09",
+        "A-F2-10"
+      ],
+      "reason": "No approved pilot, baseline, operator or data agreement exists.",
+      "name_zh": "可达服务成功差距",
+      "evidence_classification": "FUTURE_EVALUATION_KPI",
+      "baseline_required": true,
+      "source_ids": [
+        "F1-SRC-001-AGENT-TASKBOOK"
+      ]
+    },
+    "public_service_duration_gain": {
+      "status": "unknown",
+      "value": null,
+      "unit": "none",
+      "source_files": [
+        "future comparison protocol",
+        "future aggregated service log"
+      ],
+      "formula": "AI-assisted service minutes minus best static/manual comparator under identical constraints",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-F2-09",
+        "A-F2-10"
+      ],
+      "reason": "No approved pilot, baseline, operator or data agreement exists.",
+      "name_zh": "公共服务时长增益",
+      "evidence_classification": "FUTURE_EVALUATION_KPI",
+      "baseline_required": true,
+      "source_ids": [
+        "F1-SRC-001-AGENT-TASKBOOK"
+      ],
+      "dimension": "time",
+      "intended_unit": "minutes"
+    },
+    "public_service_fulfilled_request_gain": {
+      "status": "unknown",
+      "value": null,
+      "unit": "count",
+      "source_files": [
+        "future comparison protocol",
+        "future aggregated service log"
+      ],
+      "formula": "AI-assisted fulfilled public requests minus best static/manual comparator under identical constraints",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-F2-09",
+        "A-F2-10"
+      ],
+      "reason": "No approved pilot, baseline, operator or data agreement exists.",
+      "name_zh": "完成公共请求增益",
+      "evidence_classification": "FUTURE_EVALUATION_KPI",
+      "baseline_required": true,
+      "source_ids": [
+        "F1-SRC-001-AGENT-TASKBOOK"
+      ]
+    },
+    "non_ai_task_completion_ratio": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "intended_unit": "ratio",
+      "source_files": [
+        "future 90-day pilot observation log",
+        "future staffed-service and state-event log"
+      ],
+      "formula": "pilot measurement contract for non_ai_task_completion_ratio",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-F2-09",
+        "A-F2-10"
+      ],
+      "reason": "No approved pilot, operator, baseline observation or data agreement exists; this record defines a future measurement and stop contract only.",
+      "name_zh": "非AI任务完成率",
+      "name_en": "Non-AI task completion",
+      "evidence_classification": "FUTURE_EVALUATION_KPI",
+      "non_ai_baseline": "DAY 0–30 staffed BASE observation",
+      "measurement_window": "daily sample by persona and time band",
+      "stop_threshold": "below 0.95 in any protected persona group",
+      "recovery_condition": "two consecutive verified windows at or above 0.95",
+      "responsible_role": "public-service lead",
+      "official_or_statutory": false
+    },
+    "no_login_task_completion_ratio": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "intended_unit": "ratio",
+      "source_files": [
+        "future 90-day pilot observation log",
+        "future staffed-service and state-event log"
+      ],
+      "formula": "pilot measurement contract for no_login_task_completion_ratio",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-F2-09",
+        "A-F2-10"
+      ],
+      "reason": "No approved pilot, operator, baseline observation or data agreement exists; this record defines a future measurement and stop contract only.",
+      "name_zh": "无登录任务完成率",
+      "name_en": "No-login task completion",
+      "evidence_classification": "FUTURE_EVALUATION_KPI",
+      "non_ai_baseline": "DAY 0–30 paper and staffed route",
+      "measurement_window": "all sampled tasks requiring no account",
+      "stop_threshold": "below 0.95 or any login-only public task",
+      "recovery_condition": "paper/staffed route restored and independently retested",
+      "responsible_role": "service-access lead",
+      "official_or_statutory": false
+    },
+    "state_switch_time_minutes": {
+      "status": "unknown",
+      "value": null,
+      "unit": "none",
+      "intended_unit": "minutes",
+      "source_files": [
+        "future 90-day pilot observation log",
+        "future staffed-service and state-event log"
+      ],
+      "formula": "pilot measurement contract for state_switch_time_minutes",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-F2-09",
+        "A-F2-10"
+      ],
+      "reason": "No approved pilot, operator, baseline observation or data agreement exists; this record defines a future measurement and stop contract only.",
+      "name_zh": "状态切换时间",
+      "name_en": "State-switch time",
+      "evidence_classification": "FUTURE_EVALUATION_KPI",
+      "non_ai_baseline": "timed human drill before activation",
+      "measurement_window": "each ACTIVE→FREEZE event",
+      "stop_threshold": "over 3 minutes or any ambiguous authority",
+      "recovery_condition": "mechanical lock and role drill pass twice",
+      "responsible_role": "site operations lead",
+      "official_or_statutory": false
+    },
+    "ai_closure_duration_minutes": {
+      "status": "unknown",
+      "value": null,
+      "unit": "none",
+      "intended_unit": "minutes",
+      "source_files": [
+        "future 90-day pilot observation log",
+        "future staffed-service and state-event log"
+      ],
+      "formula": "pilot measurement contract for ai_closure_duration_minutes",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-F2-09",
+        "A-F2-10"
+      ],
+      "reason": "No approved pilot, operator, baseline observation or data agreement exists; this record defines a future measurement and stop contract only.",
+      "name_zh": "AI关闭时长",
+      "name_en": "AI closure duration",
+      "evidence_classification": "FUTURE_EVALUATION_KPI",
+      "non_ai_baseline": "timed isolation drill",
+      "measurement_window": "trigger to carrier-safe confirmation",
+      "stop_threshold": "over 2 minutes or public route affected",
+      "recovery_condition": "safe isolation verified with public route open",
+      "responsible_role": "safety and maintenance lead",
+      "official_or_statutory": false
+    },
+    "return_acceptance_time_minutes": {
+      "status": "unknown",
+      "value": null,
+      "unit": "none",
+      "intended_unit": "minutes",
+      "source_files": [
+        "future 90-day pilot observation log",
+        "future staffed-service and state-event log"
+      ],
+      "formula": "pilot measurement contract for return_acceptance_time_minutes",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-F2-09",
+        "A-F2-10"
+      ],
+      "reason": "No approved pilot, operator, baseline observation or data agreement exists; this record defines a future measurement and stop contract only.",
+      "name_zh": "回归验收时间",
+      "name_en": "Return-acceptance time",
+      "evidence_classification": "FUTURE_EVALUATION_KPI",
+      "non_ai_baseline": "BASE surface and route record",
+      "measurement_window": "withdrawal start to signed acceptance",
+      "stop_threshold": "over 15 minutes or any unresolved defect",
+      "recovery_condition": "route, surface, drainage, signs and complaints all cleared",
+      "responsible_role": "return-acceptance lead",
+      "official_or_statutory": false
+    },
+    "equity_access_burden_gap_minutes": {
+      "status": "unknown",
+      "value": null,
+      "unit": "none",
+      "intended_unit": "minutes",
+      "source_files": [
+        "future 90-day pilot observation log",
+        "future staffed-service and state-event log"
+      ],
+      "formula": "pilot measurement contract for equity_access_burden_gap_minutes",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-F2-09",
+        "A-F2-10"
+      ],
+      "reason": "No approved pilot, operator, baseline observation or data agreement exists; this record defines a future measurement and stop contract only.",
+      "name_zh": "公平负担差",
+      "name_en": "Equity access burden gap",
+      "evidence_classification": "FUTURE_EVALUATION_KPI",
+      "non_ai_baseline": "median staffed BASE journey by persona",
+      "measurement_window": "weekly journey sample",
+      "stop_threshold": "protected-group median exceeds reference by over 5 minutes",
+      "recovery_condition": "gap at or below 5 minutes for two windows",
+      "responsible_role": "public-interest reviewer",
+      "official_or_statutory": false
+    },
+    "dazhongsi_base_active_service_area_sqm": {
+      "status": "known",
+      "value": 734.93,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/phasing.geojson",
+        "visual/assets/dazhongsi-operating-envelope.json"
+      ],
+      "formula": "area(D1 + D2, EPSG:4548); retain unrounded projected component areas and round display to 0.01 sqm",
+      "confidence": "low",
+      "assumptions": [
+        "A-M2-01"
+      ],
+      "name_zh": "大钟寺基准情景主动服务面积",
+      "name_en": "Dazhongsi Base active service area",
+      "evidence_classification": "PARTICIPANT_ASSUMPTION_DERIVED",
+      "range_low": 367.47,
+      "range_high": 1102.4,
+      "range_unit": "sqm",
+      "official_or_statutory": false,
+      "recalculation_trigger": "Recalculate after any D1-D3 geometry, component-selection or survey update."
+    },
+    "dazhongsi_base_capacity_persons": {
+      "status": "known",
+      "value": 29,
+      "unit": "count",
+      "intended_unit": "persons",
+      "source_files": [
+        "visual/assets/dazhongsi-operating-envelope.json"
+      ],
+      "formula": "round_half_up(734.93 sqm * 0.40 usable fraction / 10 sqm per person, 1 person)",
+      "confidence": "low",
+      "assumptions": [
+        "A-M2-02"
+      ],
+      "name_zh": "大钟寺基准情景算术容量",
+      "name_en": "Dazhongsi Base arithmetic capacity",
+      "evidence_classification": "PARTICIPANT_ASSUMPTION_DERIVED",
+      "range_low": 20,
+      "range_high": 44,
+      "range_unit": "persons",
+      "official_or_statutory": false,
+      "recalculation_trigger": "Replace after verified occupancy, fire, accessibility and operating-layout review."
+    },
+    "dazhongsi_base_annual_open_hours": {
+      "status": "known",
+      "value": 1350,
+      "unit": "none",
+      "intended_unit": "hours/year",
+      "source_files": [
+        "visual/assets/dazhongsi-operating-envelope.json"
+      ],
+      "formula": "Base participant operating assumption; low/base/high = 900/1350/1800 hours per year",
+      "confidence": "low",
+      "assumptions": [
+        "A-M2-02"
+      ],
+      "name_zh": "大钟寺基准情景年度开放小时",
+      "name_en": "Dazhongsi Base annual open hours",
+      "evidence_classification": "PARTICIPANT_ASSUMPTION",
+      "range_low": 900,
+      "range_high": 1800,
+      "range_unit": "hours/year",
+      "official_or_statutory": false,
+      "recalculation_trigger": "Recalculate when an approved calendar or operator plan differs by more than 10%."
+    },
+    "dazhongsi_base_fte_required": {
+      "status": "known",
+      "value": 3.0,
+      "unrounded_value": 2.986875,
+      "unit": "none",
+      "intended_unit": "FTE",
+      "source_files": [
+        "visual/assets/dazhongsi-operating-envelope.json"
+      ],
+      "formula": "fte_required_unrounded = 3 staffed positions * 1350 open hours/year * 1.18 coverage factor / 1600 productive hours/FTE-year = 2.986875 FTE; display fte_required = round_half_up(2.986875, 0.1 FTE) = 3.0 FTE",
+      "confidence": "low",
+      "assumptions": [
+        "A-M2-03"
+      ],
+      "name_zh": "大钟寺基准情景所需FTE",
+      "name_en": "Dazhongsi Base FTE required",
+      "evidence_classification": "PARTICIPANT_ASSUMPTION_DERIVED",
+      "range_low": 1.3,
+      "range_high": 5.3,
+      "range_unit": "FTE",
+      "official_or_statutory": false,
+      "recalculation_trigger": "Recalculate after approved hours, positions, coverage or productive-hours inputs."
+    },
+    "dazhongsi_base_capex_rom_cny": {
+      "status": "known",
+      "value": 4650000,
+      "unit": "none",
+      "intended_unit": "CNY ROM",
+      "source_files": [
+        "visual/assets/dazhongsi-operating-envelope.json"
+      ],
+      "formula": "round_half_up((734.93 sqm * 4200 CNY/sqm + 800000 CNY equipment allowance) * 1.20, 50000 CNY)",
+      "confidence": "low",
+      "assumptions": [
+        "A-M2-04"
+      ],
+      "name_zh": "大钟寺基准情景CAPEX数量级",
+      "name_en": "Dazhongsi Base CAPEX ROM",
+      "evidence_classification": "PARTICIPANT_ASSUMPTION_DERIVED",
+      "range_low": 2650000,
+      "range_high": 8050000,
+      "range_unit": "CNY ROM",
+      "official_or_statutory": false,
+      "recalculation_trigger": "Replace when a professional estimate changes any rate or allowance by more than 20%."
+    },
+    "dazhongsi_base_opex_annual_rom_cny": {
+      "status": "known",
+      "value": 1190000,
+      "unit": "none",
+      "intended_unit": "CNY/year ROM",
+      "source_files": [
+        "visual/assets/dazhongsi-operating-envelope.json"
+      ],
+      "formula": "round_half_up(2.986875 unrounded FTE * 200000 CNY/FTE-year + 1350 hours * 140 CNY/open-hour + 400000 CNY fixed allowance, 10000 CNY) = 1190000 CNY/year ROM",
+      "fte_required_unrounded": 2.986875,
+      "confidence": "low",
+      "assumptions": [
+        "A-M2-04"
+      ],
+      "name_zh": "大钟寺基准情景年度OPEX数量级",
+      "name_en": "Dazhongsi Base annual OPEX ROM",
+      "evidence_classification": "PARTICIPANT_ASSUMPTION_DERIVED",
+      "range_low": 510000,
+      "range_high": 2530000,
+      "range_unit": "CNY/year ROM",
+      "official_or_statutory": false,
+      "recalculation_trigger": "Replace after approved staffing, hours, wage, service-hour and fixed-cost inputs."
+    },
+    "dazhongsi_no_build_capex_rom_cny": {
+      "status": "known",
+      "value": 900000,
+      "unit": "none",
+      "intended_unit": "CNY ROM",
+      "source_files": [
+        "visual/assets/dazhongsi-operating-envelope.json"
+      ],
+      "formula": "base: 250000 CNY clear-line markings and bilingual wayfinding + 400000 CNY seating/shade + 250000 CNY staffed-window setup = 900000 CNY ROM; low/high use the corresponding published component bands",
+      "component_ranges_cny_rom": {
+        "clear_line_markings_and_fixed_wayfinding": [150000, 250000, 400000],
+        "seating_and_shade_package": [250000, 400000, 650000],
+        "staffed_window_setup": [150000, 250000, 400000]
+      },
+      "confidence": "low",
+      "assumptions": [
+        "A-M2-05"
+      ],
+      "name_zh": "大钟寺不建设情景公共基底CAPEX数量级",
+      "name_en": "Dazhongsi No-build public-base CAPEX ROM",
+      "evidence_classification": "PARTICIPANT_ASSUMPTION_DERIVED",
+      "range_low": 550000,
+      "range_high": 1450000,
+      "range_unit": "CNY ROM",
+      "official_or_statutory": false,
+      "recalculation_trigger": "Replace after a professional public-base estimate and operator plan."
+    },
+    "dazhongsi_no_build_opex_annual_rom_cny": {
+      "status": "known",
+      "value": 290000,
+      "unit": "none",
+      "intended_unit": "CNY/year ROM",
+      "source_files": [
+        "visual/assets/dazhongsi-operating-envelope.json"
+      ],
+      "formula": "base: round_half_up(0.66375 unrounded FTE * 200000 CNY/FTE-year + 160000 CNY fixed manual-service allowance, 10000 CNY) = 290000 CNY/year ROM; low/high use the corresponding published bands",
+      "fte_required_unrounded_range": [0.4425, 0.66375, 1.77],
+      "fixed_manual_service_allowance_cny_range": [110000, 160000, 250000],
+      "confidence": "low",
+      "assumptions": [
+        "A-M2-05"
+      ],
+      "name_zh": "大钟寺不建设情景年度OPEX数量级",
+      "name_en": "Dazhongsi No-build annual OPEX ROM",
+      "evidence_classification": "PARTICIPANT_ASSUMPTION_DERIVED",
+      "range_low": 170000,
+      "range_high": 750000,
+      "range_unit": "CNY/year ROM",
+      "official_or_statutory": false,
+      "recalculation_trigger": "Replace after approved staffed-window hours and loaded staff cost."
+    }
+  }
+}

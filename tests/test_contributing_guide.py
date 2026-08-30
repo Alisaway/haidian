@@ -30,6 +30,14 @@ class ContributingGuideTests(unittest.TestCase):
         self.assertIn("python3 -m py_compile", guide)
         self.assertIn("git diff --check", guide)
 
+    def test_readme_uses_the_supported_test_runner(self) -> None:
+        readme = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
+        self.assertIn("requirements-validation.txt", readme)
+        self.assertIn("requirements-review.txt", readme)
+        self.assertIn("requirements-translation.txt", readme)
+        self.assertIn("python3 -m unittest discover -s tests -v", readme)
+        self.assertNotIn("python -m pytest", readme)
+
     def test_contributing_guide_mentions_codeowner_review(self) -> None:
         guide = (REPO_ROOT / "CONTRIBUTING.md").read_text(encoding="utf-8")
         self.assertIn("CODEOWNER", guide)

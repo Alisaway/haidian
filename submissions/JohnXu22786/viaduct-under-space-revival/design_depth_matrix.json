@@ -1,0 +1,905 @@
+{
+ "schema_version": "0.1.0",
+ "items": [
+  {
+   "item_id": "existing_conditions_diagnosis",
+   "title_zh": "现状诊断图与资料缺口",
+   "professional_dimension": "城市设计",
+   "required": true,
+   "status": "complete",
+   "proposal_sections": [
+    "设计依据与资料清单"
+   ],
+   "drawing_refs": [
+    "drawings/a3-booklet.pdf",
+    "drawings/a0-boards.pdf"
+   ],
+   "geometry_refs": [
+    "geometry/site_boundary.geojson",
+    "geometry/key_areas.geojson",
+    "geometry/land_use.geojson",
+    "geometry/buildings.geojson",
+    "geometry/roads.geojson",
+    "geometry/green_space.geojson",
+    "geometry/public_space.geojson",
+    "geometry/phasing.geojson"
+   ],
+   "metric_refs": [
+    "site_area_sqm",
+    "green_ratio",
+    "public_space_ratio",
+    "landmark_count",
+    "scenario_node_count",
+    "industry_test_scenario_count",
+    "persona_count",
+    "global_case_count",
+    "annual_program_count",
+    "phase_count"
+   ],
+   "source_ids": [
+    "DATA-SRC-OFFICIAL-ANNOUNCEMENT",
+    "DATA-SRC-AGENT-TASKBOOK",
+    "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+    "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+    "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+    "DATA-SRC-PROVISIONAL-BOUNDARIES",
+    "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES"
+   ],
+   "assumption_ids": [
+    "A-BOUNDARY-001",
+    "A-CONTROLS-001",
+    "A-STRUCTURE-001",
+    "A-DATA-001",
+    "A-PRIVACY-001",
+    "A-CONTENT-001"
+   ],
+   "self_check_ids": [
+    "BOUNDARY_TRUST",
+    "KEY_AREAS_TRUST",
+    "LAND_USE_TOPOLOGY",
+    "VISUAL_STATIC"
+   ],
+   "evidence_summary_zh": "现状诊断以概念方式组织：无官方现状图件，正文「设计依据与资料清单」列出现状资料缺口清单；provisional 几何仅作生成与讨论输入，所有现状条件（净空、轨道保护区、权属、消防、无障碍）标注待调查。"
+  },
+  {
+   "item_id": "three_level_scope_framework",
+   "title_zh": "三层范围工作框架",
+   "professional_dimension": "城市设计",
+   "required": true,
+   "status": "complete",
+   "proposal_sections": [
+    "三层范围工作框架"
+   ],
+   "drawing_refs": [
+    "drawings/a3-booklet.pdf",
+    "drawings/a0-boards.pdf"
+   ],
+   "geometry_refs": [
+    "geometry/site_boundary.geojson",
+    "geometry/key_areas.geojson",
+    "geometry/land_use.geojson",
+    "geometry/buildings.geojson",
+    "geometry/roads.geojson",
+    "geometry/green_space.geojson",
+    "geometry/public_space.geojson",
+    "geometry/phasing.geojson"
+   ],
+   "metric_refs": [
+    "site_area_sqm",
+    "green_ratio",
+    "public_space_ratio",
+    "landmark_count",
+    "scenario_node_count",
+    "industry_test_scenario_count",
+    "persona_count",
+    "global_case_count",
+    "annual_program_count",
+    "phase_count"
+   ],
+   "source_ids": [
+    "DATA-SRC-OFFICIAL-ANNOUNCEMENT",
+    "DATA-SRC-AGENT-TASKBOOK",
+    "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+    "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+    "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+    "DATA-SRC-PROVISIONAL-BOUNDARIES",
+    "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES"
+   ],
+   "assumption_ids": [
+    "A-BOUNDARY-001",
+    "A-CONTROLS-001",
+    "A-STRUCTURE-001",
+    "A-DATA-001",
+    "A-PRIVACY-001",
+    "A-CONTENT-001"
+   ],
+   "self_check_ids": [
+    "BOUNDARY_TRUST",
+    "KEY_AREAS_TRUST",
+    "LAND_USE_TOPOLOGY",
+    "VISUAL_STATIC"
+   ],
+   "evidence_summary_zh": "三层范围按公告文本口径（约43.6/11.4/368.4，非官方核发）转述；本包 site_boundary 作为总体设计范围的临时替代边界；任何 polygon 均标注 provisional 并在官方发布后复算。"
+  },
+  {
+   "item_id": "overall_spatial_structure",
+   "title_zh": "总体空间结构",
+   "professional_dimension": "城市设计",
+   "required": true,
+   "status": "complete",
+   "proposal_sections": [
+    "总体设计范围城市更新与控规深度城市设计"
+   ],
+   "drawing_refs": [
+    "drawings/a3-booklet.pdf",
+    "drawings/a0-boards.pdf"
+   ],
+   "geometry_refs": [
+    "geometry/site_boundary.geojson",
+    "geometry/key_areas.geojson",
+    "geometry/land_use.geojson",
+    "geometry/buildings.geojson",
+    "geometry/roads.geojson",
+    "geometry/green_space.geojson",
+    "geometry/public_space.geojson",
+    "geometry/phasing.geojson"
+   ],
+   "metric_refs": [
+    "site_area_sqm",
+    "green_ratio",
+    "public_space_ratio",
+    "landmark_count",
+    "scenario_node_count",
+    "industry_test_scenario_count",
+    "persona_count",
+    "global_case_count",
+    "annual_program_count",
+    "phase_count"
+   ],
+   "source_ids": [
+    "DATA-SRC-OFFICIAL-ANNOUNCEMENT",
+    "DATA-SRC-AGENT-TASKBOOK",
+    "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+    "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+    "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+    "DATA-SRC-PROVISIONAL-BOUNDARIES",
+    "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES"
+   ],
+   "assumption_ids": [
+    "A-BOUNDARY-001",
+    "A-CONTROLS-001",
+    "A-STRUCTURE-001",
+    "A-DATA-001",
+    "A-PRIVACY-001",
+    "A-CONTENT-001"
+   ],
+   "self_check_ids": [
+    "BOUNDARY_TRUST",
+    "KEY_AREAS_TRUST",
+    "LAND_USE_TOPOLOGY",
+    "VISUAL_STATIC"
+   ],
+   "evidence_summary_zh": "总体空间结构为「一环三节点」：一条沿轨道高架的桥下连续概念通道串联活力馆-绿径-市集场；图件（总体设计总览）附带比例尺、指北针、图例与 provisional 印章。"
+  },
+  {
+   "item_id": "land_use_layout",
+   "title_zh": "用地布局",
+   "professional_dimension": "城市设计",
+   "required": true,
+   "status": "complete",
+   "proposal_sections": [
+    "用地、建筑规模与拆改留方案"
+   ],
+   "drawing_refs": [
+    "drawings/a3-booklet.pdf",
+    "drawings/a0-boards.pdf"
+   ],
+   "geometry_refs": [
+    "geometry/site_boundary.geojson",
+    "geometry/key_areas.geojson",
+    "geometry/land_use.geojson",
+    "geometry/buildings.geojson",
+    "geometry/roads.geojson",
+    "geometry/green_space.geojson",
+    "geometry/public_space.geojson",
+    "geometry/phasing.geojson"
+   ],
+   "metric_refs": [
+    "site_area_sqm",
+    "green_ratio",
+    "public_space_ratio",
+    "landmark_count",
+    "scenario_node_count",
+    "industry_test_scenario_count",
+    "persona_count",
+    "global_case_count",
+    "annual_program_count",
+    "phase_count"
+   ],
+   "source_ids": [
+    "DATA-SRC-OFFICIAL-ANNOUNCEMENT",
+    "DATA-SRC-AGENT-TASKBOOK",
+    "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+    "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+    "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+    "DATA-SRC-PROVISIONAL-BOUNDARIES",
+    "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES"
+   ],
+   "assumption_ids": [
+    "A-BOUNDARY-001",
+    "A-CONTROLS-001",
+    "A-STRUCTURE-001",
+    "A-DATA-001",
+    "A-PRIVACY-001",
+    "A-CONTENT-001"
+   ],
+   "self_check_ids": [
+    "BOUNDARY_TRUST",
+    "KEY_AREAS_TRUST",
+    "LAND_USE_TOPOLOGY",
+    "VISUAL_STATIC"
+   ],
+   "evidence_summary_zh": "用地布局采用单一口径 8 类（国标二级代码命名），占比由 land_use.geojson 在 EPSG:4548 聚合复算；公式、置信等级与复算触发见「指标体系」节，全包无第二套占比。"
+  },
+  {
+   "item_id": "development_intensity_controls",
+   "title_zh": "开发强度控制",
+   "professional_dimension": "城市设计",
+   "required": true,
+   "status": "complete",
+   "proposal_sections": [
+    "指标体系、面积复算与合规矩阵"
+   ],
+   "drawing_refs": [
+    "drawings/a3-booklet.pdf",
+    "drawings/a0-boards.pdf"
+   ],
+   "geometry_refs": [
+    "geometry/site_boundary.geojson",
+    "geometry/key_areas.geojson",
+    "geometry/land_use.geojson",
+    "geometry/buildings.geojson",
+    "geometry/roads.geojson",
+    "geometry/green_space.geojson",
+    "geometry/public_space.geojson",
+    "geometry/phasing.geojson"
+   ],
+   "metric_refs": [
+    "site_area_sqm",
+    "green_ratio",
+    "public_space_ratio",
+    "landmark_count",
+    "scenario_node_count",
+    "industry_test_scenario_count",
+    "persona_count",
+    "global_case_count",
+    "annual_program_count",
+    "phase_count"
+   ],
+   "source_ids": [
+    "DATA-SRC-OFFICIAL-ANNOUNCEMENT",
+    "DATA-SRC-AGENT-TASKBOOK",
+    "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+    "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+    "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+    "DATA-SRC-PROVISIONAL-BOUNDARIES",
+    "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES"
+   ],
+   "assumption_ids": [
+    "A-BOUNDARY-001",
+    "A-CONTROLS-001",
+    "A-STRUCTURE-001",
+    "A-DATA-001",
+    "A-PRIVACY-001",
+    "A-CONTENT-001"
+   ],
+   "self_check_ids": [
+    "BOUNDARY_TRUST",
+    "KEY_AREAS_TRUST",
+    "LAND_USE_TOPOLOGY",
+    "VISUAL_STATIC"
+   ],
+   "evidence_summary_zh": "开发强度不给出结论：容积率、建筑高度等依赖未公开官方控制条件，保持 unknown（value null）；不代替控规审批，仅说明复算契约。"
+  },
+  {
+   "item_id": "height_massing_character",
+   "title_zh": "高度体量风貌",
+   "professional_dimension": "城市设计",
+   "required": true,
+   "status": "complete",
+   "proposal_sections": [
+    "蓝绿空间、公共空间与城市风貌"
+   ],
+   "drawing_refs": [
+    "drawings/a3-booklet.pdf",
+    "drawings/a0-boards.pdf"
+   ],
+   "geometry_refs": [
+    "geometry/site_boundary.geojson",
+    "geometry/key_areas.geojson",
+    "geometry/land_use.geojson",
+    "geometry/buildings.geojson",
+    "geometry/roads.geojson",
+    "geometry/green_space.geojson",
+    "geometry/public_space.geojson",
+    "geometry/phasing.geojson"
+   ],
+   "metric_refs": [
+    "site_area_sqm",
+    "green_ratio",
+    "public_space_ratio",
+    "landmark_count",
+    "scenario_node_count",
+    "industry_test_scenario_count",
+    "persona_count",
+    "global_case_count",
+    "annual_program_count",
+    "phase_count"
+   ],
+   "source_ids": [
+    "DATA-SRC-OFFICIAL-ANNOUNCEMENT",
+    "DATA-SRC-AGENT-TASKBOOK",
+    "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+    "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+    "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+    "DATA-SRC-PROVISIONAL-BOUNDARIES",
+    "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES"
+   ],
+   "assumption_ids": [
+    "A-BOUNDARY-001",
+    "A-CONTROLS-001",
+    "A-STRUCTURE-001",
+    "A-DATA-001",
+    "A-PRIVACY-001",
+    "A-CONTENT-001"
+   ],
+   "self_check_ids": [
+    "BOUNDARY_TRUST",
+    "KEY_AREAS_TRUST",
+    "LAND_USE_TOPOLOGY",
+    "VISUAL_STATIC"
+   ],
+   "evidence_summary_zh": "高度体量风貌以概念方式表达：延续京张铁路工程美学与中关村务实气质，材料耐久易换低眩光；不给出任何高度指标。"
+  },
+  {
+   "item_id": "retain_renovate_demolish",
+   "title_zh": "拆改留方案",
+   "professional_dimension": "城市设计",
+   "required": true,
+   "status": "complete",
+   "proposal_sections": [
+    "用地、建筑规模与拆改留方案"
+   ],
+   "drawing_refs": [
+    "drawings/a3-booklet.pdf",
+    "drawings/a0-boards.pdf"
+   ],
+   "geometry_refs": [
+    "geometry/site_boundary.geojson",
+    "geometry/key_areas.geojson",
+    "geometry/land_use.geojson",
+    "geometry/buildings.geojson",
+    "geometry/roads.geojson",
+    "geometry/green_space.geojson",
+    "geometry/public_space.geojson",
+    "geometry/phasing.geojson"
+   ],
+   "metric_refs": [
+    "site_area_sqm",
+    "green_ratio",
+    "public_space_ratio",
+    "landmark_count",
+    "scenario_node_count",
+    "industry_test_scenario_count",
+    "persona_count",
+    "global_case_count",
+    "annual_program_count",
+    "phase_count"
+   ],
+   "source_ids": [
+    "DATA-SRC-OFFICIAL-ANNOUNCEMENT",
+    "DATA-SRC-AGENT-TASKBOOK",
+    "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+    "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+    "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+    "DATA-SRC-PROVISIONAL-BOUNDARIES",
+    "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES"
+   ],
+   "assumption_ids": [
+    "A-BOUNDARY-001",
+    "A-CONTROLS-001",
+    "A-STRUCTURE-001",
+    "A-DATA-001",
+    "A-PRIVACY-001",
+    "A-CONTENT-001"
+   ],
+   "self_check_ids": [
+    "BOUNDARY_TRUST",
+    "KEY_AREAS_TRUST",
+    "LAND_USE_TOPOLOGY",
+    "VISUAL_STATIC"
+   ],
+   "evidence_summary_zh": "拆改留执行四步概念顺序（核实-保留-轻改-移位或删除）；没有调查不提出拆除结论；拆除量保持待确认。"
+  },
+  {
+   "item_id": "traffic_rail_slow_parking",
+   "title_zh": "交通轨道慢行停车",
+   "professional_dimension": "城市设计",
+   "required": true,
+   "status": "complete",
+   "proposal_sections": [
+    "交通、轨道、市政与公共服务设施"
+   ],
+   "drawing_refs": [
+    "drawings/a3-booklet.pdf",
+    "drawings/a0-boards.pdf"
+   ],
+   "geometry_refs": [
+    "geometry/site_boundary.geojson",
+    "geometry/key_areas.geojson",
+    "geometry/land_use.geojson",
+    "geometry/buildings.geojson",
+    "geometry/roads.geojson",
+    "geometry/green_space.geojson",
+    "geometry/public_space.geojson",
+    "geometry/phasing.geojson"
+   ],
+   "metric_refs": [
+    "site_area_sqm",
+    "green_ratio",
+    "public_space_ratio",
+    "landmark_count",
+    "scenario_node_count",
+    "industry_test_scenario_count",
+    "persona_count",
+    "global_case_count",
+    "annual_program_count",
+    "phase_count"
+   ],
+   "source_ids": [
+    "DATA-SRC-OFFICIAL-ANNOUNCEMENT",
+    "DATA-SRC-AGENT-TASKBOOK",
+    "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+    "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+    "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+    "DATA-SRC-PROVISIONAL-BOUNDARIES",
+    "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES"
+   ],
+   "assumption_ids": [
+    "A-BOUNDARY-001",
+    "A-CONTROLS-001",
+    "A-STRUCTURE-001",
+    "A-DATA-001",
+    "A-PRIVACY-001",
+    "A-CONTENT-001"
+   ],
+   "self_check_ids": [
+    "BOUNDARY_TRUST",
+    "KEY_AREAS_TRUST",
+    "LAND_USE_TOPOLOGY",
+    "VISUAL_STATIC"
+   ],
+   "evidence_summary_zh": "交通概念：桥下慢行缝合通道组织东西缝合与南北贯通，含 3 处东西向穿越点（待核）与南北连续路径；不给出道路线形、红线与工程量结论。"
+  },
+  {
+   "item_id": "municipal_new_infrastructure",
+   "title_zh": "市政与新型基础设施",
+   "professional_dimension": "城市设计",
+   "required": true,
+   "status": "complete",
+   "proposal_sections": [
+    "交通、轨道、市政与公共服务设施"
+   ],
+   "drawing_refs": [
+    "drawings/a3-booklet.pdf",
+    "drawings/a0-boards.pdf"
+   ],
+   "geometry_refs": [
+    "geometry/site_boundary.geojson",
+    "geometry/key_areas.geojson",
+    "geometry/land_use.geojson",
+    "geometry/buildings.geojson",
+    "geometry/roads.geojson",
+    "geometry/green_space.geojson",
+    "geometry/public_space.geojson",
+    "geometry/phasing.geojson"
+   ],
+   "metric_refs": [
+    "site_area_sqm",
+    "green_ratio",
+    "public_space_ratio",
+    "landmark_count",
+    "scenario_node_count",
+    "industry_test_scenario_count",
+    "persona_count",
+    "global_case_count",
+    "annual_program_count",
+    "phase_count"
+   ],
+   "source_ids": [
+    "DATA-SRC-OFFICIAL-ANNOUNCEMENT",
+    "DATA-SRC-AGENT-TASKBOOK",
+    "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+    "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+    "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+    "DATA-SRC-PROVISIONAL-BOUNDARIES",
+    "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES"
+   ],
+   "assumption_ids": [
+    "A-BOUNDARY-001",
+    "A-CONTROLS-001",
+    "A-STRUCTURE-001",
+    "A-DATA-001",
+    "A-PRIVACY-001",
+    "A-CONTENT-001"
+   ],
+   "self_check_ids": [
+    "BOUNDARY_TRUST",
+    "KEY_AREAS_TRUST",
+    "LAND_USE_TOPOLOGY",
+    "VISUAL_STATIC"
+   ],
+   "evidence_summary_zh": "市政以现状条件为前提：照明电源、排水、植栽接口均为概念接口示意，不提出管线迁改或容量测算结论；公共服务设施与三节点合并设置并具资产编号与停用条件。"
+  },
+  {
+   "item_id": "blue_green_public_space",
+   "title_zh": "蓝绿空间与公共空间",
+   "professional_dimension": "城市设计",
+   "required": true,
+   "status": "complete",
+   "proposal_sections": [
+    "蓝绿空间、公共空间与城市风貌"
+   ],
+   "drawing_refs": [
+    "drawings/a3-booklet.pdf",
+    "drawings/a0-boards.pdf"
+   ],
+   "geometry_refs": [
+    "geometry/site_boundary.geojson",
+    "geometry/key_areas.geojson",
+    "geometry/land_use.geojson",
+    "geometry/buildings.geojson",
+    "geometry/roads.geojson",
+    "geometry/green_space.geojson",
+    "geometry/public_space.geojson",
+    "geometry/phasing.geojson"
+   ],
+   "metric_refs": [
+    "site_area_sqm",
+    "green_ratio",
+    "public_space_ratio",
+    "landmark_count",
+    "scenario_node_count",
+    "industry_test_scenario_count",
+    "persona_count",
+    "global_case_count",
+    "annual_program_count",
+    "phase_count"
+   ],
+   "source_ids": [
+    "DATA-SRC-OFFICIAL-ANNOUNCEMENT",
+    "DATA-SRC-AGENT-TASKBOOK",
+    "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+    "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+    "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+    "DATA-SRC-PROVISIONAL-BOUNDARIES",
+    "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES"
+   ],
+   "assumption_ids": [
+    "A-BOUNDARY-001",
+    "A-CONTROLS-001",
+    "A-STRUCTURE-001",
+    "A-DATA-001",
+    "A-PRIVACY-001",
+    "A-CONTENT-001"
+   ],
+   "self_check_ids": [
+    "BOUNDARY_TRUST",
+    "KEY_AREAS_TRUST",
+    "LAND_USE_TOPOLOGY",
+    "VISUAL_STATIC"
+   ],
+   "evidence_summary_zh": "蓝绿空间：「桥下雨养廊」（耐阴种植、雨水花园、透水铺装）为低影响排水意向；公共空间免费开放、分时共享、共治公约与年度评估公示；图例采用颜色+图形双编码。"
+  },
+  {
+   "item_id": "three_key_area_detailed_design",
+   "title_zh": "三处重点区域详细设计",
+   "professional_dimension": "城市设计",
+   "required": true,
+   "status": "complete",
+   "proposal_sections": [
+    "重点区域详细设计"
+   ],
+   "drawing_refs": [
+    "drawings/a3-booklet.pdf",
+    "drawings/a0-boards.pdf"
+   ],
+   "geometry_refs": [
+    "geometry/site_boundary.geojson",
+    "geometry/key_areas.geojson",
+    "geometry/land_use.geojson",
+    "geometry/buildings.geojson",
+    "geometry/roads.geojson",
+    "geometry/green_space.geojson",
+    "geometry/public_space.geojson",
+    "geometry/phasing.geojson"
+   ],
+   "metric_refs": [
+    "site_area_sqm",
+    "green_ratio",
+    "public_space_ratio",
+    "landmark_count",
+    "scenario_node_count",
+    "industry_test_scenario_count",
+    "persona_count",
+    "global_case_count",
+    "annual_program_count",
+    "phase_count"
+   ],
+   "source_ids": [
+    "DATA-SRC-OFFICIAL-ANNOUNCEMENT",
+    "DATA-SRC-AGENT-TASKBOOK",
+    "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+    "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+    "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+    "DATA-SRC-PROVISIONAL-BOUNDARIES",
+    "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES"
+   ],
+   "assumption_ids": [
+    "A-BOUNDARY-001",
+    "A-CONTROLS-001",
+    "A-STRUCTURE-001",
+    "A-DATA-001",
+    "A-PRIVACY-001",
+    "A-CONTENT-001"
+   ],
+   "self_check_ids": [
+    "BOUNDARY_TRUST",
+    "KEY_AREAS_TRUST",
+    "LAND_USE_TOPOLOGY",
+    "VISUAL_STATIC"
+   ],
+   "evidence_summary_zh": "三处重点区域详细设计含平面、剖面、昼夜体验、无障碍与可逆构件表达（图件均标注待核）；三处朝圣地标与 6 个功能节点落位见 public_space.geojson（计数=9）。"
+  },
+  {
+   "item_id": "renewal_project_list",
+   "title_zh": "更新项目清单",
+   "professional_dimension": "城市设计",
+   "required": true,
+   "status": "complete",
+   "proposal_sections": [
+    "更新项目清单、实施政策与分期计划"
+   ],
+   "drawing_refs": [
+    "drawings/a3-booklet.pdf",
+    "drawings/a0-boards.pdf"
+   ],
+   "geometry_refs": [
+    "geometry/site_boundary.geojson",
+    "geometry/key_areas.geojson",
+    "geometry/land_use.geojson",
+    "geometry/buildings.geojson",
+    "geometry/roads.geojson",
+    "geometry/green_space.geojson",
+    "geometry/public_space.geojson",
+    "geometry/phasing.geojson"
+   ],
+   "metric_refs": [
+    "site_area_sqm",
+    "green_ratio",
+    "public_space_ratio",
+    "landmark_count",
+    "scenario_node_count",
+    "industry_test_scenario_count",
+    "persona_count",
+    "global_case_count",
+    "annual_program_count",
+    "phase_count"
+   ],
+   "source_ids": [
+    "DATA-SRC-OFFICIAL-ANNOUNCEMENT",
+    "DATA-SRC-AGENT-TASKBOOK",
+    "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+    "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+    "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+    "DATA-SRC-PROVISIONAL-BOUNDARIES",
+    "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES"
+   ],
+   "assumption_ids": [
+    "A-BOUNDARY-001",
+    "A-CONTROLS-001",
+    "A-STRUCTURE-001",
+    "A-DATA-001",
+    "A-PRIVACY-001",
+    "A-CONTENT-001"
+   ],
+   "self_check_ids": [
+    "BOUNDARY_TRUST",
+    "KEY_AREAS_TRUST",
+    "LAND_USE_TOPOLOGY",
+    "VISUAL_STATIC"
+   ],
+   "evidence_summary_zh": "更新项目清单按功能活化、缝合网络、治理机制三类组织（概念，非已立项工程）；配套使用清单与准入机制、分时共享预约与共治公约。"
+  },
+  {
+   "item_id": "phasing_implementation",
+   "title_zh": "分期实施",
+   "professional_dimension": "城市设计",
+   "required": true,
+   "status": "complete",
+   "proposal_sections": [
+    "更新项目清单、实施政策与分期计划"
+   ],
+   "drawing_refs": [
+    "drawings/a3-booklet.pdf",
+    "drawings/a0-boards.pdf"
+   ],
+   "geometry_refs": [
+    "geometry/site_boundary.geojson",
+    "geometry/key_areas.geojson",
+    "geometry/land_use.geojson",
+    "geometry/buildings.geojson",
+    "geometry/roads.geojson",
+    "geometry/green_space.geojson",
+    "geometry/public_space.geojson",
+    "geometry/phasing.geojson"
+   ],
+   "metric_refs": [
+    "site_area_sqm",
+    "green_ratio",
+    "public_space_ratio",
+    "landmark_count",
+    "scenario_node_count",
+    "industry_test_scenario_count",
+    "persona_count",
+    "global_case_count",
+    "annual_program_count",
+    "phase_count"
+   ],
+   "source_ids": [
+    "DATA-SRC-OFFICIAL-ANNOUNCEMENT",
+    "DATA-SRC-AGENT-TASKBOOK",
+    "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+    "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+    "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+    "DATA-SRC-PROVISIONAL-BOUNDARIES",
+    "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES"
+   ],
+   "assumption_ids": [
+    "A-BOUNDARY-001",
+    "A-CONTROLS-001",
+    "A-STRUCTURE-001",
+    "A-DATA-001",
+    "A-PRIVACY-001",
+    "A-CONTENT-001"
+   ],
+   "self_check_ids": [
+    "BOUNDARY_TRUST",
+    "KEY_AREAS_TRUST",
+    "LAND_USE_TOPOLOGY",
+    "VISUAL_STATIC"
+   ],
+   "evidence_summary_zh": "分期实施为概念节奏（近期1-3年/中期3-5年/远期5-10年），非开发时序结论；实施机制矩阵明确试点筛选条件、牵头协作主体、审查节点与停用条件。"
+  },
+  {
+   "item_id": "metrics_recalculation",
+   "title_zh": "指标复算",
+   "professional_dimension": "城市设计",
+   "required": true,
+   "status": "complete",
+   "proposal_sections": [
+    "指标体系、面积复算与合规矩阵"
+   ],
+   "drawing_refs": [
+    "drawings/a3-booklet.pdf",
+    "drawings/a0-boards.pdf"
+   ],
+   "geometry_refs": [
+    "geometry/site_boundary.geojson",
+    "geometry/key_areas.geojson",
+    "geometry/land_use.geojson",
+    "geometry/buildings.geojson",
+    "geometry/roads.geojson",
+    "geometry/green_space.geojson",
+    "geometry/public_space.geojson",
+    "geometry/phasing.geojson"
+   ],
+   "metric_refs": [
+    "site_area_sqm",
+    "green_ratio",
+    "public_space_ratio",
+    "landmark_count",
+    "scenario_node_count",
+    "industry_test_scenario_count",
+    "persona_count",
+    "global_case_count",
+    "annual_program_count",
+    "phase_count"
+   ],
+   "source_ids": [
+    "DATA-SRC-OFFICIAL-ANNOUNCEMENT",
+    "DATA-SRC-AGENT-TASKBOOK",
+    "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+    "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+    "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+    "DATA-SRC-PROVISIONAL-BOUNDARIES",
+    "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES"
+   ],
+   "assumption_ids": [
+    "A-BOUNDARY-001",
+    "A-CONTROLS-001",
+    "A-STRUCTURE-001",
+    "A-DATA-001",
+    "A-PRIVACY-001",
+    "A-CONTENT-001"
+   ],
+   "self_check_ids": [
+    "BOUNDARY_TRUST",
+    "KEY_AREAS_TRUST",
+    "LAND_USE_TOPOLOGY",
+    "VISUAL_STATIC"
+   ],
+   "evidence_summary_zh": "指标复算：三项 formal 核心指标按本包 provisional 几何在 EPSG:4548 复算并同步写入 metrics.json 与 visual 页面；官方数据发布后按同一公式复算替换；显示精度按降精度约定执行。"
+  },
+  {
+   "item_id": "risk_missing_data",
+   "title_zh": "风险与资料缺口",
+   "professional_dimension": "城市设计",
+   "required": true,
+   "status": "complete",
+   "proposal_sections": [
+    "风险、版权与合规说明"
+   ],
+   "drawing_refs": [
+    "drawings/a3-booklet.pdf",
+    "drawings/a0-boards.pdf"
+   ],
+   "geometry_refs": [
+    "geometry/site_boundary.geojson",
+    "geometry/key_areas.geojson",
+    "geometry/land_use.geojson",
+    "geometry/buildings.geojson",
+    "geometry/roads.geojson",
+    "geometry/green_space.geojson",
+    "geometry/public_space.geojson",
+    "geometry/phasing.geojson"
+   ],
+   "metric_refs": [
+    "site_area_sqm",
+    "green_ratio",
+    "public_space_ratio",
+    "landmark_count",
+    "scenario_node_count",
+    "industry_test_scenario_count",
+    "persona_count",
+    "global_case_count",
+    "annual_program_count",
+    "phase_count"
+   ],
+   "source_ids": [
+    "DATA-SRC-OFFICIAL-ANNOUNCEMENT",
+    "DATA-SRC-AGENT-TASKBOOK",
+    "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+    "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+    "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+    "DATA-SRC-PROVISIONAL-BOUNDARIES",
+    "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES"
+   ],
+   "assumption_ids": [
+    "A-BOUNDARY-001",
+    "A-CONTROLS-001",
+    "A-STRUCTURE-001",
+    "A-DATA-001",
+    "A-PRIVACY-001",
+    "A-CONTENT-001"
+   ],
+   "self_check_ids": [
+    "BOUNDARY_TRUST",
+    "KEY_AREAS_TRUST",
+    "LAND_USE_TOPOLOGY",
+    "VISUAL_STATIC"
+   ],
+   "evidence_summary_zh": "风险与资料缺口：组织方未发布官方边界/轨道保护区/权属/设施现状等数据，本方案在风险节逐项列明对策并保持待核；不在概念几何上推断现状数值。"
+  }
+ ]
+}

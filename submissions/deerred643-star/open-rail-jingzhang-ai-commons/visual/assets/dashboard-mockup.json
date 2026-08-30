@@ -1,0 +1,74 @@
+{
+  "schema_note": "v2.2 public dashboard prototype (static mockup). Machine-readable companion of proposal.md section '公开仪表盘原型（静态概念）'. One static page mirroring four already-public evidence chains inside the package — baseline indicators (P1-P5), failure-mode early warnings (F1-F7), 90-day public review status, and four-gate self-check results. No dynamic backend, no new data source: every cell re-discloses an existing machine-readable entry; unmeasured values stay pending_baseline.",
+  "version": "v2.2",
+  "status": "static_conceptual_prototype",
+  "page_anchor": "visual/index.html#dashboard",
+  "data_policy": "static_re-disclosure_only_no_backend",
+  "panels": [
+    {
+      "id": "indicators",
+      "title_zh": "核心指标（P1—P5，待基线）",
+      "title_en": "Key indicators (P1-P5, pending baseline)",
+      "source_ref": "visual/assets/baseline-protocols.json",
+      "cells": [
+        {"id": "P1", "name_zh": "无障碍节点覆盖率", "name_en": "Accessibility-node coverage", "value": "pending_baseline", "frequency": "quarterly", "disclosure": "90-day public review annex"},
+        {"id": "P2", "name_zh": "非数字化等价路径可达率", "name_en": "Non-digital equivalent-path availability", "value": "pending_baseline", "frequency": "quarterly", "disclosure": "90-day public review annex"},
+        {"id": "P3", "name_zh": "投诉响应中位时长", "name_en": "Complaint response median", "value": "pending_baseline", "frequency": "monthly", "disclosure": "monthly digest"},
+        {"id": "P4", "name_zh": "慢行断点与绕行系数", "name_en": "Walkability breaks & detour ratio", "value": "pending_baseline", "frequency": "semi-annual", "disclosure": "annual report"},
+        {"id": "P5", "name_zh": "第三方无障碍专业审查", "name_en": "Third-party accessibility audit", "value": "pending_baseline", "frequency": "pre-launch + annual", "disclosure": "audit report"}
+      ]
+    },
+    {
+      "id": "failure_warnings",
+      "title_zh": "失败模式预警（F1—F7）",
+      "title_en": "Failure-mode early warnings (F1-F7)",
+      "source_ref": "visual/assets/failure-modes.json",
+      "cells": [
+        {"id": "F1", "name_zh": "贯通中断", "name_en": "Continuity broken", "state": "no_baseline", "linked_contract": "SWITCHBACK-PROTOCOL"},
+        {"id": "F2", "name_zh": "场景停用", "name_en": "Scenarios deactivated", "state": "no_baseline", "linked_contract": "SWITCHBACK-PROTOCOL"},
+        {"id": "F3", "name_zh": "等价路径缺失", "name_en": "Equivalent paths missing", "state": "no_baseline", "linked_contract": "SEB-SPEC"},
+        {"id": "F4", "name_zh": "商户挤出", "name_en": "Businesses displaced", "state": "no_baseline", "linked_contract": "conflict_negotiation_three_tier"},
+        {"id": "F5", "name_zh": "运营断档", "name_en": "Operations stalled", "state": "no_baseline", "linked_contract": "lifecycle_om_framework"},
+        {"id": "F6", "name_zh": "复审空转", "name_en": "Reviews idling", "state": "no_baseline", "linked_contract": "SWITCHBACK-PROTOCOL"},
+        {"id": "F7", "name_zh": "投诉恶化", "name_en": "Complaints degrading", "state": "no_baseline", "linked_contract": "conflict_negotiation_three_tier"}
+      ],
+      "state_legend": {
+        "no_baseline_zh": "尚无实测基线，预警未激活（非「正常」结论）",
+        "no_baseline_en": "No measured baseline yet; warning not armed (not a 'normal' verdict)"
+      }
+    },
+    {
+      "id": "review_status",
+      "title_zh": "90 天公开复审状态",
+      "title_en": "90-day public review status",
+      "source_ref": "visual/assets/switchback-adoption.json",
+      "cells": [
+        {"id": "R1", "name_zh": "复审周期", "name_en": "Review cycle", "value_zh": "未启动（试点启动后开始）", "value_en": "Not started (begins after pilot launch)"},
+        {"id": "R2", "name_zh": "折返协议状态", "name_en": "Switchback Protocol state", "value_zh": "概念采纳，未进入试点执行", "value_en": "Adopted as concept; not yet in pilot execution"},
+        {"id": "R3", "name_zh": "四选一处置记录", "name_en": "Four-option disposition log", "value_zh": "空（无试点场景）", "value_en": "Empty (no pilot scenarios)"}
+      ]
+    },
+    {
+      "id": "self_check",
+      "title_zh": "本包四门自检结果",
+      "title_en": "Package four-gate self-check",
+      "source_ref": "self_check.json",
+      "cells": [
+        {"id": "G1", "gate": "DETERMINISTIC_VALIDATION", "result": "pass"},
+        {"id": "G2", "gate": "SPATIAL_REVIEW", "result": "pass"},
+        {"id": "G3", "gate": "VISUAL_PACKAGING", "result": "pass"},
+        {"id": "G4", "gate": "PROFESSIONAL_EVIDENCE", "result": "pass"}
+      ],
+      "boundary_zh": "自检覆盖申报包完整性与指标可复算性，不替代建成环境专业认证；P5 专业审查独立登记。",
+      "boundary_en": "Self-check covers package integrity and metric recalculability; it does not substitute for built-environment professional certification (P5 registered separately)."
+    }
+  ],
+  "discipline": {
+    "no_fabrication_zh": "仪表盘只再披露包内已公开的机器可读条目；无实测一律 pending_baseline，不以设计模型值冒充实测值；失败样本全保留。",
+    "no_fabrication_en": "The dashboard only re-discloses machine-readable entries already public in the package; unmeasured values stay pending_baseline and design-model values are never shown as measured; failed samples are never dropped.",
+    "update_path_zh": "试点后由 baseline-protocols / failure-modes / switchback / self_check 四个既有数据源静态重建页面，不引入运行时后端。",
+    "update_path_en": "After pilot launch the page is statically rebuilt from the four existing data sources (baseline-protocols / failure-modes / switchback / self_check); no runtime backend is introduced."
+  },
+  "boundary_zh": "静态概念原型；页面数值为披露占位，不构成任何实测结论或运营承诺。",
+  "boundary_en": "Static conceptual prototype; page values are disclosure placeholders, not measured conclusions or operating commitments."
+}

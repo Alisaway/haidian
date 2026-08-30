@@ -1,0 +1,45 @@
+{
+  "schema_version": "draft-v1",
+  "assumptions": [
+    {
+      "id": "A-PROVISIONAL-GEOMETRY",
+      "status": "active",
+      "statement": "Official SITE_BOUNDARY and KEY_AREA polygons are not bundled in this local draft; geometry is provisional and must be replaced and fully recomputed when official data is available.",
+      "impact": "All geometry-derived areas, ratios, route lengths and figure extents are conceptual only.",
+      "trigger_to_recalculate": "Organizer publishes official boundary and key-area GeoJSON or equivalent machine-readable polygons.",
+      "owner": "participant and future professional team"
+    },
+    {
+      "id": "A-KEY-AREA-ROLES",
+      "status": "conceptual",
+      "statement": "AI Origin Community, Dazhongsi and Zhongzhiyuan are used as conceptual role anchors for daily service, transfer/night interface and controlled testing.",
+      "impact": "This does not confirm official land use, ownership, program, access, capacity or operator.",
+      "trigger_to_recalculate": "Official key-area polygons, planning documents, ownership, transport and operational conditions are confirmed.",
+      "owner": "professional planning team"
+    },
+    {
+      "id": "A-RIGHTS",
+      "status": "audited-cleared-for-repository-display",
+      "statement": "External pages and peer proposals remain citation-only references; every submitted diagram, chart, HTML page, PDF, raster figure, geometry layer and embedded font bundle has a row in the detailed file-level ledger in report/copyright_statement.md. Proposal text, geometry and visual compositions are original local assets; the embedded Noto Sans CJK SC subset is used under the SIL Open Font License 1.1.",
+      "impact": "The current repository package and PR display have a documented rights basis. This clearance does not authorize adding external images, logos, map tiles, screenshots, datasets or fonts without a new ledger row and license record.",
+      "trigger_to_recalculate": "Before any future public-display adaptation or asset addition, re-audit every visual asset, font rendering dependency, source URL, license and attribution record; unresolved rows must block that adaptation.",
+      "owner": "participant"
+    },
+    {
+      "id": "A-TRANSPORT-CONCEPT",
+      "status": "conceptual",
+      "statement": "The proposal discusses route continuity and transfer experience, not approved roads, rail projects, station entrances, traffic-control plans or engineering layouts.",
+      "impact": "Transport geometry remains a design test and must be checked against official transport and safety data.",
+      "trigger_to_recalculate": "Official transport base map, station interfaces, road hierarchy, accessibility survey and professional review become available.",
+      "owner": "transport and accessibility professionals"
+    },
+    {
+      "id": "A-DATA-MINIMIZATION",
+      "status": "active",
+      "statement": "The concept uses aggregated or synthetic events and does not require personal trajectories, health records, child identity or sensitive behavior data.",
+      "impact": "Any pilot requiring personal data needs a separate privacy, security, consent and governance review.",
+      "trigger_to_recalculate": "A real pilot defines data fields, retention, access, consent and incident response.",
+      "owner": "data-governance and legal professionals"
+    }
+  ]
+}

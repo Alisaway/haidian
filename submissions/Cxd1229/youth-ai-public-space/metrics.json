@@ -33,13 +33,13 @@
     },
     "green_ratio": {
       "status": "known",
-      "value": 0.125055,
+      "value": 0.124246,
       "unit": "ratio",
       "source_files": [
         "geometry/green_space.geojson",
         "geometry/site_boundary.geojson"
       ],
-      "formula": "142.9ha / 1142.7ha 实测面积",
+      "formula": "141.8ha / 1141.28ha 实测面积",
       "confidence": "medium",
       "assumptions": [
         "基于概念性绿地布局估算，待官方数据校正"
@@ -47,13 +47,13 @@
     },
     "public_space_ratio": {
       "status": "known",
-      "value": 0.030002,
+      "value": 0.030001,
       "unit": "ratio",
       "source_files": [
         "geometry/public_space.geojson",
         "geometry/site_boundary.geojson"
       ],
-      "formula": "34.3ha / 1142.7ha 实测面积",
+      "formula": "34.24ha / 1141.28ha 实测面积",
       "confidence": "medium",
       "assumptions": [
         "基于概念性公共空间节点估算"
@@ -70,7 +70,7 @@
       "formula": "各用地分区容积率估算加总",
       "confidence": "low",
       "assumptions": [
-        "无控规数据，容积率为概念估算"
+        "概念估算：各用地分区容积率估算加总，无控规数据"
       ]
     },
     "far_average": {
@@ -97,7 +97,7 @@
       "formula": "建筑基底总面积/总用地面积",
       "confidence": "low",
       "assumptions": [
-        "概念估算"
+        "概念估算：建筑覆盖率基于概念用地布局，待现状建筑数据校核"
       ]
     },
     "road_network_length_m": {
@@ -117,11 +117,13 @@
       "status": "known",
       "value": 0.85,
       "unit": "ratio",
-      "source_files": [],
+      "source_files": [
+        "geometry/roads.geojson"
+      ],
       "formula": "800m轨道站点缓冲区覆盖比例",
       "confidence": "medium",
       "assumptions": [
-        "基于既有13/10/昌平线站点计算"
+        "设计目标：轨道站点800m覆盖率提升至85%，现状值待交通客流调查确认"
       ]
     },
     "bike_path_length_m": {
@@ -134,36 +136,42 @@
       "formula": "设计骑行道8km(双向)+设计连接道合计16km",
       "confidence": "low",
       "assumptions": [
-        "概念设计值"
+        "设计目标：骑行道8km(双向)+连接道16km为设计值，非现状"
       ]
     },
     "pedestrian_path_length_m": {
       "status": "known",
       "value": 65000,
       "unit": "m",
-      "source_files": [],
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
       "formula": "概念估算: 设计范围步行网络长度含既有道路人行道",
       "confidence": "low",
       "assumptions": [
-        "概念设计值"
+        "概念估算：含既有道路人行道，待详细设计复核"
       ]
     },
     "ai_landmarks": {
       "status": "known",
       "value": 5,
       "unit": "count",
-      "source_files": [],
+      "source_files": [
+        "proposal.md"
+      ],
       "formula": "L1-L5朝圣地标",
       "confidence": "high",
       "assumptions": [
-        "概念设计值，非已批准建设"
+        "设计目标：L1-L5五个AI朝圣地标为概念设计，非已批准建设"
       ]
     },
     "scenario_cards": {
       "status": "known",
       "value": 12,
       "unit": "count",
-      "source_files": [],
+      "source_files": [
+        "proposal.md"
+      ],
       "formula": "SC1-SC12场景卡",
       "confidence": "high",
       "assumptions": [
@@ -174,7 +182,9 @@
       "status": "known",
       "value": 6,
       "unit": "count",
-      "source_files": [],
+      "source_files": [
+        "proposal.md"
+      ],
       "formula": "P1-P6用户画像",
       "confidence": "high",
       "assumptions": [
@@ -185,7 +195,9 @@
       "status": "known",
       "value": 6,
       "unit": "count",
-      "source_files": [],
+      "source_files": [
+        "proposal.md"
+      ],
       "formula": "6个全球创新区案例",
       "confidence": "high",
       "assumptions": [
@@ -196,33 +208,37 @@
       "status": "known",
       "value": 25,
       "unit": "count",
-      "source_files": [],
+      "source_files": [
+        "proposal.md"
+      ],
       "formula": "公共服务设施概念数量",
       "confidence": "low",
       "assumptions": [
-        "概念设计值"
+        "概念估算：公共服务设施为设计概念数量，非现状统计"
       ]
     },
     "heritage_nodes": {
       "status": "known",
       "value": 12,
       "unit": "count",
-      "source_files": [],
+      "source_files": [
+        "proposal.md"
+      ],
       "formula": "京张铁路沿线文化遗产节点",
       "confidence": "low",
       "assumptions": [
-        "待文保部门确认"
+        "概念估算：文化遗产节点为设计概念，待文保清单确认"
       ]
     },
     "site_area_sqm": {
       "status": "known",
-      "value": 11427387,
+      "value": 11412825,
       "unit": "sqm",
       "source_files": [
         "geometry/site_boundary.geojson",
         "brief/site-package/design_brief.json"
       ],
-      "formula": "EPSG:4548实测面积 1142.7ha = 11.43km2",
+      "formula": "EPSG:4548实测面积 1141.28ha = 11.41km2",
       "confidence": "high",
       "assumptions": [
         "临时边界，面积需官方CAD/GIS复核"

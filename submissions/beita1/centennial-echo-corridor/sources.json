@@ -1,0 +1,318 @@
+{
+  "schema_version": "0.1.0",
+  "accessed_date": "2026-08-25",
+  "sources": [
+    {
+      "id": "SITE-PACKAGE",
+      "path": "brief/site-package/",
+      "source_type": "official_public",
+      "authority_level": "repository_site_package",
+      "usage": "Project brief, enums, allowed design space, ranges, schemas, and metric conventions; machine-readable basis of all structured data in this package.",
+      "not_usable_for": [
+        "official redline",
+        "statutory planning control"
+      ]
+    },
+    {
+      "id": "SOURCE-REGISTRY",
+      "path": "data/source_registry.json",
+      "source_type": "official_public",
+      "authority_level": "repository_public_registry",
+      "usage": "Public/cleared/provisional source usability registry; this package selects formal evidence only from entries with review_status=approved and usable_for_formal=yes, and labels background-only and provisional-only material accordingly.",
+      "not_usable_for": [
+        "upgrading background or provisional sources into formal authority"
+      ]
+    },
+    {
+      "id": "PROCESSED-FACT-PACK",
+      "path": "data/processed/agent_fact_pack.md",
+      "source_type": "official_public",
+      "authority_level": "repository_processed_reference",
+      "usage": "Agent-readable navigation layer for scopes, required tasks, source-use boundaries, and the missing-data checklist; not a new authority source - factual claims trace back to the registered originals.",
+      "not_usable_for": [
+        "independent factual authority"
+      ]
+    },
+    {
+      "id": "BOUNDARY-SOURCE",
+      "path": "brief/site-package/geometry/provisional_boundaries.geojson",
+      "source_type": "agent_inferred_from_public_data",
+      "authority_level": "provisional_repository",
+      "registry_source_id": "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+      "usage": "Submitted site boundary geometry (PROV-SITE-001): maintainer-derived rough provisional polygon checked against the announced approx. 11.4 sq km in EPSG:4548. Used with official_boundary=false, geometry_role=provisional_constraint, boundary_precision=provisional_rough.",
+      "not_usable_for": [
+        "official redline",
+        "approval basis",
+        "precise area calculation",
+        "formal professional scoring",
+        "statutory planning control"
+      ],
+      "recalculation_trigger": "Replace with official or cleared boundary geometry (with recorded source, CRS, and conversion method), then regenerate all design layers and recompute all area metrics."
+    },
+    {
+      "id": "KEY-AREA-SOURCE",
+      "path": "brief/site-package/geometry/provisional_boundaries.geojson",
+      "source_type": "agent_inferred_from_public_data",
+      "authority_level": "provisional_repository",
+      "registry_source_id": "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+      "usage": "Three required key detailed-design area polygons (PROV-KEY-001/002/003): rough provisional extents checked against announced areas (approx. 192.1 / 104.3 / 72.0 ha). Rectangular edges must not be read as parcel or road redlines.",
+      "not_usable_for": [
+        "official key-area polygon",
+        "approval basis",
+        "precise area calculation",
+        "formal professional scoring"
+      ],
+      "recalculation_trigger": "Replace with official key-area polygons and recompute key-area metrics and all dependent detailed-design conclusions."
+    },
+    {
+      "id": "OFFICIAL-ANNOUNCEMENT",
+      "title": "百年京张AI创新带城市设计国际方案征集资格预审公告",
+      "publisher": "北京市规划和自然资源委员会海淀分局",
+      "url": "https://ghzrzyw.beijing.gov.cn/zhengwuxinxi/tzgg/hd/202605/t20260509_4643047.html",
+      "published_date": "2026-05-09",
+      "accessed_date": "2026-08-23",
+      "source_type": "official_public",
+      "authority_level": "A0",
+      "registry_source_id": "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+      "usage": "Official project name, organizers, three scope levels with announced areas, three key areas, design tasks, and deliverable depth. Primary formal basis of this proposal.",
+      "not_usable_for": [
+        "precise official polygon boundary",
+        "road redline",
+        "statutory planning control",
+        "confirmed implementation commitment"
+      ]
+    },
+    {
+      "id": "AGENT-TASKBOOK",
+      "title": "面向全球智能体开展「百年京张AI创新带城市设计开源征集」的任务书摘录",
+      "publisher": "User-provided cleared document",
+      "path": "brief/site-package/agent_taskbook.json",
+      "published_date": "2026-05-18",
+      "accessed_date": "2026-08-23",
+      "source_type": "user_provided_cleared",
+      "authority_level": "CLEARED_USER_DOCUMENT",
+      "registry_source_id": "DATA-SRC-AGENT-TASKBOOK-20260518",
+      "usage": "Agent-facing open-call principles, three positionings, five functions, three zones and two wings, six required agent tasks, review dimensions, and the unified boundary clause. Basis for naming, scenario cards, personas, landmarks, cultural narrative, and operations chapters.",
+      "not_usable_for": [
+        "official redline",
+        "statutory planning control",
+        "engineering feasibility conclusion",
+        "government approval or implementation commitment"
+      ]
+    },
+    {
+      "id": "SRC-THREE-AREAS-WINGS",
+      "title": "「三区两翼」打造世界级AI集聚地",
+      "publisher": "北京市科学技术委员会、中关村科技园区管理委员会",
+      "url": "https://kw.beijing.gov.cn/xwdt/kcyx/xwdtcyfz/202604/t20260403_4573808.html",
+      "published_date": "2026-04-03",
+      "accessed_date": "2026-08-23",
+      "source_type": "official_public",
+      "authority_level": "A1",
+      "registry_source_id": "SRC-2026-BJ-KW-THREE-AREAS-WINGS",
+      "usage": "Background context for the three-areas-two-wings industrial narrative and innovation-belt setting. Background use only.",
+      "not_usable_for": [
+        "planning-control conclusions",
+        "boundary or area evidence",
+        "formal scoring evidence beyond background context"
+      ]
+    },
+    {
+      "id": "SRC-HAIDIAN-1X1",
+      "title": "海淀区发布「1+X+1」现代化产业体系建设布局",
+      "publisher": "北京市海淀区人民政府",
+      "url": "https://www.bjhd.gov.cn/ztzx/2026/2026jjshgzlfzdh/yw/202603/t20260303_4806875.shtml",
+      "published_date": "2026-03-02",
+      "accessed_date": "2026-08-23",
+      "source_type": "official_public",
+      "authority_level": "A1",
+      "registry_source_id": "SRC-2026-HAIDIAN-1X1",
+      "usage": "Background context for Haidian's industrial positioning with AI as a core industry and for the factor-mechanism discussion. Background use only.",
+      "not_usable_for": [
+        "planning-control conclusions",
+        "funding or policy commitments"
+      ]
+    },
+    {
+      "id": "CASE-STATIONF",
+      "title": "Station F - the world's biggest startup campus (official site)",
+      "publisher": "Station F, Paris",
+      "url": "https://stationf.co/",
+      "accessed_date": "2026-08-23",
+      "source_type": "official_public",
+      "authority_level": "institutional_public_page",
+      "license_note": "Publicly accessible institutional web page cited as bibliographic background; no content is reproduced beyond factual description.",
+      "usage": "Global AI/innovation ecosystem case (campus prototype): single mega-structure startup campus with integrated release/roadshow/media mechanism. Background and mechanism reference only.",
+      "not_usable_for": [
+        "planning-control conclusions",
+        "site-specific evidence for this project"
+      ]
+    },
+    {
+      "id": "CASE-ONE-NORTH",
+      "title": "one-north development, JTC Corporation (official page)",
+      "publisher": "JTC Corporation, Singapore",
+      "url": "https://www.jtc.gov.sg/find-space/one-north",
+      "accessed_date": "2026-08-23",
+      "source_type": "official_public",
+      "authority_level": "institutional_public_page",
+      "license_note": "Publicly accessible institutional web page cited as bibliographic background.",
+      "usage": "Global innovation ecosystem case (district prototype): government-led ~200 ha innovation district with phased land release and themed quarters. Background and mechanism reference only.",
+      "not_usable_for": [
+        "planning-control conclusions",
+        "site-specific evidence for this project"
+      ]
+    },
+    {
+      "id": "CASE-KENDALL",
+      "title": "Kendall Square Association (official site)",
+      "publisher": "Kendall Square Association, Cambridge MA",
+      "url": "https://kendallsquare.org/",
+      "accessed_date": "2026-08-23",
+      "source_type": "official_public",
+      "authority_level": "institutional_public_page",
+      "license_note": "Publicly accessible institutional web page cited as bibliographic background.",
+      "usage": "Global innovation ecosystem case (near-campus street prototype): lab + street-retail mixed ground floors adjacent to MIT. Background and mechanism reference only.",
+      "not_usable_for": [
+        "planning-control conclusions",
+        "site-specific evidence for this project"
+      ]
+    },
+    {
+      "id": "CASE-KX",
+      "title": "Knowledge Quarter, King's Cross (official site)",
+      "publisher": "Knowledge Quarter, London",
+      "url": "https://www.knowledgequarter.london/",
+      "accessed_date": "2026-08-23",
+      "source_type": "official_public",
+      "authority_level": "institutional_public_page",
+      "license_note": "Publicly accessible institutional web page cited as bibliographic background.",
+      "usage": "Global innovation ecosystem case (station-renewal prototype): rail-heritage assets translated into public retail and cultural space around King's Cross. Background and mechanism reference only.",
+      "not_usable_for": [
+        "planning-control conclusions",
+        "site-specific evidence for this project"
+      ]
+    },
+    {
+      "id": "CASE-ZHANGJIANG",
+      "title": "上海张江人工智能岛（张江集团公开页面）",
+      "publisher": "上海张江（集团）有限公司",
+      "url": "https://www.zjpark.com/",
+      "accessed_date": "2026-08-23",
+      "source_type": "official_public",
+      "authority_level": "institutional_public_page",
+      "license_note": "Publicly accessible institutional web page cited as bibliographic background.",
+      "usage": "Global innovation ecosystem case (small AI-themed campus prototype): whole-area scenario openness where the campus itself serves as a standing AI test field. Background and mechanism reference only.",
+      "not_usable_for": [
+        "planning-control conclusions",
+        "site-specific evidence for this project"
+      ]
+    },
+    {
+      "id": "CASE-MARS",
+      "title": "MaRS Discovery District (official site)",
+      "publisher": "MaRS Discovery District, Toronto",
+      "url": "https://www.marsdd.com/",
+      "accessed_date": "2026-08-23",
+      "source_type": "official_public",
+      "authority_level": "institutional_public_page",
+      "license_note": "Publicly accessible institutional web page cited as bibliographic background.",
+      "usage": "Global innovation ecosystem case (conversion-hub prototype): non-profit operator coordinating incubation, investment, and policy experiments between hospitals and universities. Reference for Echo Commons operating mechanism. Background only.",
+      "not_usable_for": [
+        "planning-control conclusions",
+        "site-specific evidence for this project"
+      ]
+    },
+    {
+      "id": "TOOLING-RENDER-STACK",
+      "title": "Figure/drawing rendering toolchain (Python, matplotlib, shapely, pyproj, Pillow)",
+      "publisher": "Open-source communities (PSF/matplotlib/shapely/pyproj/Pillow maintainers)",
+      "accessed_date": "2026-08-23",
+      "source_type": "official_public",
+      "authority_level": "software_dependency",
+      "license_note": "matplotlib (PSF-based license), shapely (BSD-3-Clause), pyproj (MIT), Pillow (MIT-CMU), fontTools (MIT). Used as build tools only; no library code is redistributed inside the package. Figures and PDFs are rendered with macOS system CJK fonts (Hiragino Sans GB / Arial Unicode MS) rasterised into PNG/PDF; the only font redistributed with the package is the OFL-licensed Noto Sans SC woff2 subset embedded in the HTML pages (see FONT-NOTO-SANS-SC).",
+      "usage": "Generation method record for the seven derived figures (zh/en), A3/A0 PDFs, metric recomputation, and the HTML webfont subsetting. See report/copyright_statement.md.",
+      "not_usable_for": [
+        "design evidence"
+      ]
+    },
+    {
+      "id": "COVER-GENERATED-IMAGE",
+      "title": "Participant-authored generated cover image (assets/media/cover.webp)",
+      "publisher": "AI image generation via ListenHub gen_image (declared in copyright statement)",
+      "accessed_date": "2026-08-23",
+      "source_type": "agent_generated_design",
+      "authority_level": "generated_media",
+      "license_note": "Generated from a text prompt authored by the submitting agent; conceptual illustration only. It depicts no real site condition, implies no official rendering or approved plan, and contains no third-party trademark, likeness, or copyrighted material.",
+      "usage": "Optional gallery cover registered through manifest.cover_image with role=media_poster.",
+      "not_usable_for": [
+        "site evidence",
+        "official rendering",
+        "boundary or planning claims"
+      ]
+    },
+    {
+      "id": "SRC-BJ-STIC-REGULATION",
+      "title": "北京国际科技创新中心建设条例",
+      "publisher": "北京市人民代表大会常务委员会（国际科技创新中心网络服务平台刊载）",
+      "url": "https://www.ncsti.gov.cn/zcfg/flfg/202401/t20240126_148167.html",
+      "published_date": "2024-01-26",
+      "accessed_date": "2026-08-25",
+      "source_type": "official_public",
+      "authority_level": "A1",
+      "license_note": "Publicly accessible legal text cited as bibliographic background for the regional-synergy matrix (roles of Future Science City, Huairou Science City, the innovation-cluster demonstration area, and Beijing-Tianjin-Hebei collaboration). No content reproduced beyond factual description.",
+      "usage": "Background basis for the source-supported facts column of the regional innovation-synergy matrix: statutory roles of the main platforms and the BTH collaborative-innovation mandate. Background use only.",
+      "not_usable_for": [
+        "planning-control conclusions",
+        "boundary or area evidence",
+        "any claim that cross-regional cooperation for this proposal has been agreed"
+      ]
+    },
+    {
+      "id": "SRC-AI-BEIWEI-RECRUIT",
+      "title": "中关村AI北纬社区启动全球招募 首期开放6万平方米优质产业空间",
+      "publisher": "北京市海淀区人民政府门户网站",
+      "url": "https://www.bjhd.gov.cn/ztzx/2025/aifuture/jq/bwsq/202507/t20250716_4779018.shtml",
+      "published_date": "2025-07-16",
+      "accessed_date": "2026-08-25",
+      "source_type": "official_public",
+      "authority_level": "A1",
+      "license_note": "Publicly accessible district-government news page cited as bibliographic background; no content reproduced beyond factual description.",
+      "usage": "Background fact for the regional-synergy matrix: location and positioning of the Zhongguancun AI Beiwei Community. Background use only.",
+      "not_usable_for": [
+        "planning-control conclusions",
+        "any claim of agreed cooperation between the Beiwei Community and this proposal"
+      ]
+    },
+    {
+      "id": "SRC-BEIWEI-ORIGIN-OPC",
+      "title": "中关村AI北纬社区、北京AI原点社区荣膺「OPC先锋社区」",
+      "publisher": "北京国际科技创新中心网络服务平台（信息来源：中关村科学城微信公众号）",
+      "url": "https://www.ncsti.gov.cn/kjdt/scyq/zgckxc/zgcdt/202607/t20260707_250889.html",
+      "published_date": "2026-07-07",
+      "accessed_date": "2026-08-25",
+      "source_type": "official_public",
+      "authority_level": "A2",
+      "license_note": "Publicly accessible platform news page cited as bibliographic background; no content reproduced beyond factual description.",
+      "usage": "Background fact for the regional-synergy matrix: the Beiwei Community and the Beijing AI Origin Community were jointly named OPC Pioneer Communities in 2026, evidencing an existing ecosystem link between the two communities. Background use only.",
+      "not_usable_for": [
+        "planning-control conclusions",
+        "any claim that the two communities have agreed to the mechanisms suggested in this proposal"
+      ]
+    },
+    {
+      "id": "FONT-NOTO-SANS-SC",
+      "title": "Noto Sans SC variable font (Google Fonts, ofl/notosanssc)",
+      "publisher": "Google LLC / Adobe (design); distributed via the google/fonts repository",
+      "url": "https://fonts.google.com/noto/specimen/Noto+Sans+SC",
+      "accessed_date": "2026-08-25",
+      "source_type": "official_public",
+      "authority_level": "software_dependency",
+      "license_note": "SIL Open Font License 1.1 (Copyright 2014-2021 Adobe, Reserved Font Name 'Source'; Copyright Google LLC, Reserved Font Name 'Noto'). The package embeds pyftsubset-generated woff2 subsets (weights 400/700, characters actually used) base64-inlined in report/proposal.html, report/proposal.en.html, visual/index.html, and visual/index.en.html for offline CJK rendering. Per the OFL Reserved Font Name clause the subsets are renamed ('EchoBelt Han Subset'). The full OFL text is reproduced in report/copyright_statement.md's font section reference and ships with the upstream font.",
+      "usage": "Embedded webfont subsets so the bilingual HTML deliverables render Chinese in offline review environments without system CJK fonts.",
+      "not_usable_for": [
+        "design evidence"
+      ]
+    }
+  ]
+}

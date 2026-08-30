@@ -6,12 +6,14 @@ proposal_format_version: "2"
 bilingual_contract_version: "1"
 translation_file: "proposal.en.md"
 license: "COMMUNITY-DISPLAY-ONLY"
-summary: "1909年詹天佑发明'人'字形折返线攻克八达岭陡坡；2026年城市面临生产力、生活品质、全球竞争三重陡坡。京张人字新线以AI为这个时代的折返线：一轴三极两翼、17子块设计矩阵、14张AI场景卡、创新时刻表服务契约与最小可执行试点，每项城市AI都要能被公众验收、暂停与退回。"
+summary: "AI入城，先领凭证。1909年詹天佑发明'人'字形折返线攻克八达岭陡坡；2026年城市面临生产力、生活品质、全球竞争三重陡坡。京张人字新线以AI为这个时代的折返线：一轴三极两翼、三张运行凭证、创新时刻表、17子块设计矩阵与14张AI场景卡——每个机制遵循同一条折返逻辑：最可靠，而非最高性能。"
 tracks: ["ai-traffic-walkability", "jingzhang-heritage-narrative", "ai-origin-community"]
 scenarios: ["ai-traffic-walkability", "ai-cultural-guide", "ai-health-service-navigation", "enterprise-service-copilot", "robot-delivery-low-speed", "public-safety-operations-review"]
 ---
 
 # 京张人字新线：以AI攻克城市陡坡
+
+> **公众口号：AI入城，先领凭证。** 每一项进入公共空间的城市AI服务，凭 Test Receipt / Release Ticket / Public Verdict 三张凭证之一开门；凭证失效，服务折返，城市日常继续。
 
 > **人字新线 / The Switchback Line** — 1909年，詹天佑面对八达岭的陡坡没有蛮干。他在青龙桥设计了"人"字形折返线，**用创造力攻克了看似不可能的坡度** `[source:HISTORY-ZHAN-TIANYOU]`。2026年，百年京张AI创新带要回答的问题不是"再建一个AI园区"，而是：**当城市面临三重陡坡时，我们能否以AI为这个时代的人字线，用智能创造力攻克城市陡坡？** `[source:HISTORY-JINGZHANG-1909]`
 
@@ -37,6 +39,17 @@ scenarios: ["ai-traffic-walkability", "ai-cultural-guide", "ai-health-service-na
 
 三张凭证互不替代：技术通过不能覆盖权利判断或公众决定，旧的失败记录不能被新的通过抹去——这与"人"字形折返的工程逻辑一致：**改变方向不是抹去来路，而是保留前段状态后折返** `[source:HISTORY-ZHAN-TIANYOU]`。
 
+**运行总纲：一切机制遵循同一条折返逻辑。** 詹天佑的折返线不是妥协，而是让列车在不可能的坡度上继续前进的方案；本方案的每个机制都是同一条逻辑在不同层的投影——**最可靠，而非最高性能**：
+
+| 机制 | 折返动作 | 折返回到哪里 |
+|---|---|---|
+| 三凭证（Test/Release/Public Verdict） | 凭证不成立→服务不开 | 城市日常模式 |
+| 创新时刻表六步 | 任一步失效→降级转人工 | 人工与非数字通道 |
+| R0-R3 韧性态 | 雨/断网/断电→服务暂停 | 物理标识+人工兜底 |
+| SC-04 七道 Gate | 任一 Gate 缺证据→停留上一状态 | 沙箱与合成工单 |
+| G6 退役 | 试点到期→停权、清数据、恢复场地 | 场地原状+公开回执 |
+| 最低后悔优先级 | 最差情况不可接受→降级或停止 | P-确保级物理兜底 |
+
 每项进入公共空间的城市AI服务，遵守同一张**创新时刻表**（借鉴铁路时刻表的公开性与可问责性，把抽象的"AI治理"转化为空间中可见、运营中留痕的公共契约；它不是法定指标，是可由专业团队、运营主体与公众共同校准的参考方案 `[assumption:A-IMPLEMENTATION-001]`）：
 
 | 步骤 | 含义 | 空间要求 | 不满足时 |
@@ -50,7 +63,18 @@ scenarios: ["ai-traffic-walkability", "ai-cultural-guide", "ai-health-service-na
 
 `城市问题进入 → 创新极转译 → 生活极体验 → 产业极规模化 → 公众验收 → 继续、修改或退役`
 
-方案由一轴（京张人字创新主轴）三极（创新极/生活极/产业极）两翼（中关村科技服务翼/小月河场景赋能翼）组成，沿京张铁路遗址公园约9km绿带 `[source:HERITAGE-PARK]` 北中南展开。
+方案由一轴（京张人字创新主轴）三极（创新极/生活极/产业极）两翼（中关村科技服务翼/小月河场景赋能翼）组成，沿京张铁路遗址公园约9km绿带 `[source:HERITAGE-PARK]` 北中南展开，面向**全球人工智能产业高地**目标与**AI朝圣地**愿景 `[standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK]`。
+
+**2030年，人字线上的一天**（场景可感知度示意）：
+
+- **7:40 生活极·原点生活广场**——退休教师李阿姨在健康驿站测完血压，AI预筛提示异常，旁边的人工窗口当场转接社区医生（S5；非数字通道与人工复核是创新时刻表第③步的空间承诺）。脚下触觉导引铺装引她到早餐摊——铺装不显示任何广告。
+- **9:00 创新极·基准测试场**——研究员陈博的团队提交基准复现申请，受控交叉点值守人员核验数据来源后发放 Test Receipt，测试区开放；观景台上一群中学生隔着玻璃看评测跑分（朝圣地标③的公共荣誉展示）。
+- **12:30 产业极·大钟寺**——企业访客在投诉点提交对推荐结果的异议，Public Verdict 界面显示"人工复核中，24h内回应"；同一条街上，人工导购与智能体验店并排开门——非AI路径不长于AI路径。
+- **17:00 小月河翼**——创业者在开放申请入口预约下周的场景测试时段，边缘节点延迟读数公开在治理看板上（S11）。
+- **22:00 雨夜**——降雨超过50mm/24h，R1雨天态触发：机器人配送道物理闭锁，人工配送与避雨点接管；退场告示亮起，明早雨停人工检查后恢复。
+- **23:30 治理值班室**——SC-04值守员在桌面演练中复跑第3条边界条件的人工退路，回执写入公共证据链——这一天没有一条个人数据离开本地。
+
+这一天里没有一块广告屏：AI在后台调度，城市表面保持物质与安静（屏幕退场原则）。
 
 ## 设计依据与资料清单
 
@@ -61,7 +85,7 @@ scenarios: ["ai-traffic-walkability", "ai-cultural-guide", "ai-health-service-na
 - **专业标准**：城市设计管理办法 `[standard:MOHURD-URBAN-DESIGN-MEASURES]`、控规编制审批办法 `[standard:MOHURD-CONTROL-DETAILED-PLANNING]`、国土空间用地用海分类指南 `[standard:MNR-LAND-USE-CLASSIFICATION-GUIDE]`。
 - **资料分级**：经 `data/source_registry.json` 核验，公告/任务书/专业标准为 `usable_for_formal=yes`；provisional边界为 `provisional_only` `[source:PROVISIONAL-BOUNDARY]`。
 
-证据链：`proposal.md`（人类可读主体）→ `geometry/*.geojson`（空间证据）→ `metrics.json`（指标复算）→ 三个覆盖矩阵（compliance/standard/design_depth）→ `self_check.json`（本地自检）。正文使用 `[source:...]` `[standard:...]` `[depth:...]` `[data:...]` `[metric:...]` 五类可校验引用。所有空间落地建议均表述为"概念建议/参考方案/可供专业团队深化研究"，不替代正式规划 `[standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK]`。
+证据链：`proposal.md`（人类可读主体）→ `geometry/*.geojson`（空间证据）→ `metrics.json`（指标复算）→ 三个覆盖矩阵（compliance/standard/design_depth）→ `self_check.json`（本地自检）。正文使用 `[source:...]` `[standard:...]` `[depth:...]` `[data:...]` `[metric:...]` 五类可校验引用。多模态成果闭环：正文（中英）+ 6张图件（中英）+ A3/A0图纸PDF（中英）+ HTML报告（中英）+ 视觉门户（中英）+ 9个GeoJSON + 指标与矩阵JSON。所有空间落地建议均表述为"概念建议/参考方案/可供专业团队深化研究"，不替代正式规划 `[standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK]`。
 
 ![场地、证据与总体概念](assets/figures/site-overview.png)
 
@@ -83,6 +107,8 @@ scenarios: ["ai-traffic-walkability", "ai-cultural-guide", "ai-health-service-na
 
 **总体概念：京张人字新线 / The Switchback Line**。1909年詹天佑用"人"字形折返线攻克陡坡，用工程智慧而非蛮力解决问题 `[source:HISTORY-ZHAN-TIANYOU]`；本带以AI为这个时代的折返线，让数据、算力、场景、人才、企业、治理在统一标准下互通——不是给传统园区贴AI标签，而是用标准与工程方法解决"AI如何服务人、企业与社会"的问题 `[standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK]`。
 
+**三大定位呼应**：百年京张文化带——人字新线把铁路遗产转译为AI时代的工程标准叙事（五段故事线+三处朝圣地标）；都市AI生活体验带——生活极把AI嵌入居民日常（S5/S6/S7+非数字通道）；AI融合创新带——创新极+产业极以工程基准支撑自主创新与产业转化（S1/S2+中试加速器）。**五大功能映射**：AI全栈自主创新体系→创新极基准测试场与共享算力；世界级AI创新生态→三极两翼生态图谱；AI+场景赋能新范式→14张场景卡；智能化AI活力城市→主轴+蓝绿+公共空间组件库；AI治理全球话语权→创新时刻表+三凭证+公平账本。
+
 **命名体系**（agent.1）：
 
 | 层级 | 中文 | 英文 | 隐喻 |
@@ -94,7 +120,7 @@ scenarios: ["ai-traffic-walkability", "ai-cultural-guide", "ai-health-service-na
 | 三区·大钟寺 | 产业极 | Industry Pole | 智能原生新业态 |
 | 两翼 | 中关村/小月河道岔 | Switchbacks | 要素流转与场景赋能 |
 
-**Logo与视觉方向**（agent.1，方向性建议，成品须清权 `[standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK]`）：主图形为轨距符号（═══）与AI节点网络（•—•—•）的几何重组，"标准+连接"复合符号；主色京张工程蓝 `#1d4ed8`、辅色琥珀 `#b45309`（provisional警示/历史温度）、中性石板灰 `#475569`，对比度满足WCAG-AA；三极子色（蓝/品红 `#db2777`/紫 `#7c3aed`）区分功能区；中文无衬线+英文几何无衬线+等宽数字（方向）；应用于主轴标识、三区入口、场景告示、导览桩、荣誉墙、活动物料；不使用未授权商标、人物肖像、论文图像，provisional边界在视觉中以虚线/低对比明确标注。
+**Logo与视觉方向**（agent.1，方向性建议，成品须清权 `[standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK]`）：主图形为轨距符号（═══）与AI节点网络（•—•—•）的几何重组，"标准+连接"复合符号；主色京张工程蓝 `#1d4ed8`、辅色琥珀 `#b45309`（provisional警示/历史温度）、中性石板灰 `#475569`，对比度满足WCAG-AA；三极子色（蓝/品红 `#db2777`/紫 `#7c3aed`）区分功能区；中文无衬线+英文几何无衬线+等宽数字（方向）；应用于主轴标识、三区入口、场景告示、导览桩、荣誉墙、活动物料；不使用未授权商标、人物肖像、论文图像，provisional边界在视觉中以虚线/低对比明确标注。品牌识别度目标：一图可辨（轨距+节点复合符号）、一色可记（工程蓝）、一词可传（人字新线 / The Switchback Line），空间-印刷-数字三媒介统一延展。
 
 **三区两翼协同回路**：众智园（研发）→AI原点社区（转化体验）→大钟寺（规模化）；中关村科技服务翼注入资本与IP，小月河场景赋能翼开放测试场景，形成"研发—生活—产业—服务—测试"闭环 `[data:geometry/key_areas.geojson#PROV-KEY-001]`。
 
@@ -138,7 +164,7 @@ scenarios: ["ai-traffic-walkability", "ai-cultural-guide", "ai-health-service-na
 
 各带数值索引见 `metrics.json`（`land_use_area_{code}_sqm` / `land_use_ratio_{code}` 系列），用地代码遵循国土空间用地用海分类指南 `[standard:MNR-LAND-USE-CLASSIFICATION-GUIDE]`。用地划分在 `geometry/land_use.geojson` `[data:geometry/land_use.geojson#LU-0802-A1]` 中为完整分区：5带细化为17子块 `[metric:land_use_count]`，union=site boundary，无重叠、无空洞；同代码子块union面积=原带面积。
 
-**AI从服务层下沉到生成层的四种机制**——若AI只是贴在传统空间上的服务层，城市并未因AI而不同 `[depth:overall_spatial_structure]` `[depth:height_massing_character]`：
+**AI从服务层下沉到生成层的四种机制**——这是本方案对国土空间规划"空间产业融合"的规划创新主张：若AI只是贴在传统空间上的服务层，城市并未因AI而不同；让AI从服务层下沉为**空间生成层**，城市形态才真正因AI而改变 `[depth:overall_spatial_structure]` `[depth:height_massing_character]`：
 
 1. **算力入地**：INNO-A2/INF-E2地下空间由算力需求驱动——地下二层液冷机房（6-8m层高、高承重、专用冷却路由），地下一层边缘推理柜走廊，地面仅留设备搬运口与通风井，把地面留给公共空间 `[depth:municipal_new_infrastructure]`。
 2. **动态空间分配**：LIFE-D3日间为步行商业街，夜间切换为机器人低速配送走廊（阻尼桩升起分隔2m专用道），周末切换为节事集市——空间功能成为AI调度下的时间切片。
@@ -195,7 +221,7 @@ scenarios: ["ai-traffic-walkability", "ai-cultural-guide", "ai-health-service-na
 
 ## AI 创新生态、人才画像与 AI+ 场景
 
-**生态图谱**（agent.2）：以"人字新线标准层"（创新时刻表六步）为底座，连接算力/数据/场景/人才/资本/治理六要素层，三极两翼为节点，形成"标准→要素→节点→场景"四层图谱；创新极产研→生活极转化→产业极规模化，两翼注入资本/场景，每层可审计 `[standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK]`。
+**生态图谱**（agent.2）：以"人字新线标准层"（创新时刻表六步）为底座，连接算力/数据/场景/人才/资本/治理六要素层，三极两翼为节点，形成"标准→要素→节点→场景"四层图谱；创新极产研→生活极转化→产业极规模化，两翼注入资本/场景，每层可审计 `[standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK]`。**产业支撑机制**：算力/数据/资本/人才的要素保障接口（中关村翼）、INNO-A3技术测试开放申请制、14场景统一的场景开放流程（申请-测试-人工复核-放行-可回滚）。
 
 **用户画像**（agent.3，6类）：①AI研究员/工程师（算力、测试场、同行交流→创新极）；②创业者/开发者（低成本空间、资本、场景入口→两翼）；③企业团队（总部、展示、转化→产业极）；④居民/家庭（便民、健康、教育、安全→生活极）；⑤访客/学生（可体验的公共AI界面→公共空间）；⑥城市治理者（可复核、可回滚、可问责→共创公约与证据链）。
 
@@ -219,6 +245,21 @@ scenarios: ["ai-traffic-walkability", "ai-cultural-guide", "ai-health-service-na
 | S14 公共利益审计 | 公平账本复核委员会 | 季度复核+匿名化事件登记 | 最弱20%体验恶化→暂停 `[data:visual/assets/edge-matrix.json]` |
 
 三条公共底线贯穿全部场景：**高影响决定100%人工最终确认；默认生物识别与连续个人轨迹留存=0；基本服务保留非数字通道**（语音、按键、纸质、人工窗口）`[depth:ai_governance_charter]`。
+
+**城市问题工单**——任何主体沿"问题进入→凭证验收→折返或退役"主链提交城市AI需求时，工单须包含以下字段（每字段都有缺失处理，缺一不进入下一环节）：
+
+| 字段 | 回答的问题 | 缺失时 |
+|---|---|---|
+| 问题与落点极 | 三极中哪一极承接，对应哪类空间 | 不进入极区匹配 |
+| 运行凭证 | 需要Test Receipt / Release Ticket / Public Verdict中哪张 | 凭证未定不进入G1 |
+| 时刻表承诺 | 创新时刻表六步各自的时限与责任点 | 不登记不得开放 |
+| 非AI基线 | 现状怎样完成同一任务 | 不得声称AI改善 |
+| 数据边界 | 最小数据集与留存期限 | 超界数据不得采集 |
+| 人工接管点 | 何人何时接管，非数字通道在哪 | 无接管点不开放 |
+| 失败信号与暂停线 | 何种观测触发暂停 | 无暂停线不进入G5 |
+| 折返路径 | 失败时如何保留前段状态退回 | 无折返路径不试点 |
+| 恢复证据 | 恢复运行须出示什么记录 | 不满足保持降级 |
+| 退役与场地恢复 | 何时结束，谁恢复场地与数据 | 不得启动 |
 
 **最小可执行试点**：把S1收敛为唯一试点SC-04，从12条边界条件中选3条最先验证（轮椅/盲杖、夜间雨雪、弱网断网），各生成1份合成工单+1份控制样本（共4份）。合成工单只触发人工退路与停止条件，不连接真实服务、不处理真实个人数据 `[assumption:A-OPERATIONS-001]`。试点经G0选题→G1场地→G2数据→G3系统权限→G4人工Gate→G5限域试用→G6回滚/退役七道Gate推进，任一Gate缺证据即停留在上一状态；目标是证明**"停止、退出、恢复"逻辑可被第三方独立复跑**，而非证明基准测试通过。配套离线桌面演练包（12场景×通过/拒绝两分支=24案例）在零网络、零个人数据、零现场输入条件下验证规则可执行 `[assumption:A-EVIDENCE-001]`。
 
@@ -247,7 +288,7 @@ scenarios: ["ai-traffic-walkability", "ai-cultural-guide", "ai-health-service-na
 
 ## 蓝绿空间、公共空间与城市风貌
 
-**蓝绿系统** `[depth:blue_green_public_space]`：京张遗址公园绿带（南北向 `[data:geometry/green_space.geojson#GR-001]`）+三区绿环，绿地率 `[metric:green_ratio]`；海绵/调蓄为概念方向，须水文模型 `[assumption:A-GREEN-BLUE-CONCEPT-001]`。**公共空间**：新轨中央广场 `[data:geometry/public_space.geojson#PS-001]`+三区广场，公共空间率 `[metric:public_space_ratio]`。
+**蓝绿系统** `[depth:blue_green_public_space]`：京张遗址公园绿带（南北向 `[data:geometry/green_space.geojson#GR-001]`）+三区绿环，绿地率 `[metric:green_ratio]`；海绵/调蓄为概念方向，须水文模型 `[assumption:A-GREEN-BLUE-CONCEPT-001]`。**公共空间**：人字线中央广场 `[data:geometry/public_space.geojson#PS-001]`+三区广场，公共空间率 `[metric:public_space_ratio]`。
 
 **AI朝圣地标**（agent.4，3个，概念建议须清权 `[standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK]`）：①人字线纪念碑（中央广场，"人"字形折返母题的极简工程艺术装置）；②人字线体验馆（AI原点社区，铁路遗产+AI历史的可体验节点）；③基准测试场观景台（众智园，可观摩AI基准测试的公共荣誉展示节点）。**荣誉展示体系**（agent.4）：沿主轴设基准测试排行榜墙（众智园）—开发者贡献星谱（AI原点）—企业创新荣誉廊（大钟寺），统一视觉、公开可审计。
 
@@ -262,7 +303,7 @@ scenarios: ["ai-traffic-walkability", "ai-cultural-guide", "ai-health-service-na
 | 无障碍坡道标准件 | 1:12坡比 | 高差过渡（双侧扶手） |
 | 智能照明杆 | 4m高 | 照明、传感、充电（低眩光） |
 
-**文化导视与空间故事线**（agent.5）：以"从标准轨距到AI人字新线"为主线，沿遗址公园设五段故事节点——①铁路起源(1909，历史解说牌，耐候钢+铜刻)；②标准奠基（地面嵌入1435mm实体轨距刻线）；③创新转向（交互导览桩，人字形折返图案）；④AI原生（数字+物理混合，节点网络图）；⑤百年传承（纪念碑式标识，时间轴）。导视须满足无障碍：语音导览、大字高对比、触觉地图、轮椅可达高度；历史人物肖像/铁路图像须清权。**国际传播**（agent.5）：英文主张 *"The Switchback Line — climbing the city's steepest slopes with AI, inspired by the Jing-Zhang Railway's legacy of engineering ingenuity."*；叙事从詹天佑工程开拓精神到AI时代标准共建；渠道方向为国际规划/AI会议、开发者社区、城市设计媒体（概念建议）。**城市风貌**：工程蓝+琥珀基调，技术图解、仪表盘、蓝图风格，避免过度娱乐化 `[standard:MOHURD-URBAN-DESIGN-MEASURES]`。
+**文化导视与空间故事线**（agent.5）：以"从标准轨距到AI人字新线"为主线，沿遗址公园设五段故事节点——①铁路起源(1909，历史解说牌，耐候钢+铜刻)；②标准奠基（地面嵌入1435mm实体轨距刻线）；③创新转向（交互导览桩，人字形折返图案）；④AI原生（数字+物理混合，节点网络图）；⑤百年传承（纪念碑式标识，时间轴）。导视须满足无障碍：语音导览、大字高对比、触觉地图、轮椅可达高度；历史人物肖像/铁路图像须清权。**国际传播**（agent.5）：英文主张 *"The Switchback Line — climbing the city's steepest slopes with AI, inspired by the Jing-Zhang Railway's legacy of engineering ingenuity."*；叙事从詹天佑工程开拓精神到AI时代标准共建；渠道方向为国际规划/AI会议、开发者社区、城市设计媒体（概念建议）。全套交付物已双语：6张图件、A3/A0图纸PDF、HTML报告与视觉门户均有英文对应件（见manifest），国际评审与传播可直接引用英文版。**城市风貌**：工程蓝+琥珀基调，技术图解、仪表盘、蓝图风格，避免过度娱乐化 `[standard:MOHURD-URBAN-DESIGN-MEASURES]`。
 
 ## 更新项目清单、实施政策与分期计划
 
@@ -295,6 +336,15 @@ scenarios: ["ai-traffic-walkability", "ai-cultural-guide", "ai-health-service-na
 | C10 | 综合Go/No-Go与演练 | 任一项缺失→整包HOLD |
 
 **实施时间线**（三年滚动，概念级 `[assumption:A-IMPLEMENTATION-001]`）：T0前期研究（Year 0-1，官方红线补齐、控规落实、现状测绘）；T1绿带贯通（Y1-2，GRN-B1+B2连通）；T2 SC-04试点（Y1-3，G0-G4通过+4份合成工单测试）；T3创新极启动（Y2-4，基准测试场+算力中心建成）；T4生活极推进（Y3-5，便民节点+慢行主轴）；T5产业极深化（Y4-7，大钟寺更新+两翼协同）。责任矩阵（RACI概念级）：红线控规=政府R/A；试点推进=企业联盟R、政府A；场景开放与回滚=企业R、政府A、社区C；公平账本复核=社区机构R；韧性态年度演练=企业+社区R。所有时间窗与主责主体待官方确认后调整 `[assumption:A-OPERATIONS-001]`。
+
+**零依赖启动包**（不需要官方红线即可开始，产出均为公开工件 `[assumption:A-IMPLEMENTATION-001]`）：
+
+| 启动项 | 产出 | 依赖 | 候选主体 |
+|---|---|---|---|
+| 创新时刻表告示模板 | 六步告示的开源模板包（告示牌/反馈墙/退场告示版式） | 无 | 社区+设计志愿者 |
+| 桌面演练扩展 | 24案例演练包扩展覆盖S13应急回滚/S14公共利益审计 | 无 | 治理联合体筹备组 |
+| 故事线史料整理 | 五段故事节点公开史料清单+多语种解说文案草案 | 无 | 文保志愿者+高校 |
+| 公平账本口径 | 6人群×5字段测量口径与共测协议（纸面+人工可执行） | 无 | 社区机构+残障/老人代表 |
 
 **城市韧性与全状态降级**——成熟的标志不是性能最高，而是失效时优雅降级：
 

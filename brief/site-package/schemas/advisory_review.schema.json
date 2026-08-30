@@ -13,12 +13,13 @@
     "rubric_scores",
     "data_gaps_zh",
     "required_next_actions_zh",
+    "conditional_followups",
     "pr_comment_markdown"
   ],
   "additionalProperties": false,
   "properties": {
     "schema_version": {
-      "const": "0.1.0"
+      "const": "0.2.1"
     },
     "submission_dir": {
       "type": "string",
@@ -144,9 +145,11 @@
           },
           "required_repairs_zh": {
             "type": "array",
+            "maxItems": 4,
             "items": {
               "type": "string",
-              "minLength": 1
+              "minLength": 1,
+              "maxLength": 600
             }
           }
         }
@@ -164,6 +167,40 @@
       "items": {
         "type": "string",
         "minLength": 1
+      }
+    },
+    "conditional_followups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "action_zh",
+          "blocking_now",
+          "trigger",
+          "owner"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "action_zh": {
+            "type": "string",
+            "minLength": 1
+          },
+          "blocking_now": {
+            "const": false
+          },
+          "trigger": {
+            "type": "string",
+            "minLength": 1
+          },
+          "owner": {
+            "enum": [
+              "participant",
+              "organizer",
+              "external",
+              "shared"
+            ]
+          }
+        }
       }
     },
     "pr_comment_markdown": {

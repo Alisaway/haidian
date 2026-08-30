@@ -6,7 +6,7 @@ proposal_format_version: "2"
 bilingual_contract_version: "1"
 translation_of: "proposal.md"
 license: "COMMUNITY-DISPLAY-ONLY"
-summary: "The Jing-Zhang Archive Belt writes open co-creation into the city archive: a Memory Spine along the Jing-Zhang heritage park, with Source / Transform / Scenario Archive Stations on the three key areas and two record wings. The Archive Charter (open archiving, searchability, corrections, privacy, human-final honors, archive-as-evidence) organizes AI services and contributor recognition. All spatial content is a conceptual proposal on a provisional boundary and will be fully recalculated when official data is released."
+summary: "The Jing-Zhang Archive Belt writes open co-creation into the city archive: a Memory Spine along the Jing-Zhang heritage park, with Source / Transform / Scenario Archive Stations on the three key areas and two record wings. The Archive Charter (tiered archiving, tiered search, corrections and withdrawal, minimum-necessary fields, human-final honors, archive-as-evidence, and non-AI equivalent paths) organizes AI services and contributor recognition. All spatial content is a conceptual proposal on a provisional boundary and will be fully recalculated when official data is released."
 tracks: ["ai-traffic-walkability", "enterprise-services-ecosystem", "civic-agent-governance"]
 scenarios: ["ai-traffic-walkability", "enterprise-service-copilot", "public-safety-operations-review"]
 ---
@@ -41,22 +41,39 @@ The three levels are not isolated drawings: the research level answers why the b
 
 The Archive Belt treats the archive as a public institution and spatial language: **contributions enter the archive, services keep archives, corrections amend archives, and honors are archives**. This is inherently aligned with the official requirements of "evidence chain, recomputability, and memorable contributions." The three positionings translate as follows: the Centennial Jing-Zhang Culture Belt becomes the century-long archive narrative on the Memory Spine; the Urban AI Living Experience Belt makes every public AI service carry a readable "service archive card"; and the AI Integration Innovation Belt records, names, and inherits the contributions of human-agent co-creation [source:AGENT-TASKBOOK].
 
-The five functions translate as follows: the Full-Stack Independent AI Innovation System is archived at the Source Archive Station (compute, models, standards, testing); the World-Class AI Innovation Ecosystem at the Transform Archive Station (outcomes, talent, enterprises); the AI+ Scenario Enablement paradigm at the Scenario Archive Station and the Xiaoyue River wing (operations and corrections); the Smart AI Vitality City through archive facilities and searchable urban memory in public space; and the Global Voice in AI Governance through the Archive Charter itself—an open, correctable, inheritable governance interface [source:AGENT-TASKBOOK].
+The five functions translate as follows: the Full-Stack Independent AI Innovation System is archived at the Source Archive Station (compute, models, standards, testing); the World-Class AI Innovation Ecosystem at the Transform Archive Station (outcomes, talent, enterprises); the AI+ Scenario Enablement paradigm at the Scenario Archive Station and the Xiaoyue River wing (operations and corrections); the Smart AI Vitality City through archive facilities and **tiered-searchable** urban memory in public space; and the Global Voice in AI Governance through the Archive Charter itself—an authorized-public, correctable, inheritable governance interface [source:AGENT-TASKBOOK].
 
 **Naming system and visual identity direction (agent.1)**: the main name follows the official "Centennial Jing-Zhang AI Innovation Belt (JZ-AI Belt)"; the spatial naming system is "Memory Spine — Source / Transform / Scenario Archive Station — Record Wings"; the Logo direction uses an "archive card × rail sleeper" motif—archive cards arranged along the rails, each bearing an "archiving line," with space above the line always awaiting new contributions; the identity language uses the three archive-status colors (in archive / pending review / corrected) across wayfinding, scenario cards, and public interfaces, homologous with railway signal culture. All logos, fonts, and graphics must be rights-cleared before use [source:AGENT-TASKBOOK].
 
-### Global cases: mechanisms only, no borrowed numbers
+### Global AI innovation ecosystem cases: mechanisms only, no borrowed numbers (agent.2)
 
-Six global cases fall into two families—**memory/archive institutions** and **open collaboration platforms**—and the proposal's core judgment is the convergence of the two (case information is taken from public sources as background material; no performance numbers are cited and no local analogy is made):
+The five cases below are **needs-review/background** public-page snapshots (accessed 2026-08-24). They are used only to frame mechanism questions: they are excluded from formal evidence mapping, approval grounds and local performance comparison. No images, logos, maps, passages or numbers are copied, and no endorsement, applicability, partnership or implementation commitment is inferred.
 
-| Case | Transferable mechanism | Archive Belt application |
-|:---|:---|:---|
-| International Council on Archives (ICA) | Openness, searchability, long-term preservation standards | Archive Charter principles 1–2 |
-| US National Archives Citizen Archivist program | Public participation in description and correction | Contribution Intake Desks and correction review |
-| Wikipedia contributor system | Version history, dispute arbitration, reputation | Commit stele and Honor Yearbook |
-| Open-source foundations (e.g., Linux Foundation) | Commit–review–merge contribution records | Open-Source Commit Stele |
-| City memory programs (oral-history archives) | Archives as public cultural assets | Memory era installations on the spine |
-| Open data portals | Tiered open data with provenance | Archive data platform (JZA-13) |
+| Global case | Ecosystem inputs covered | Mechanism abstraction only | Conceptual correspondence in this proposal |
+|:---|:---|:---|:---|
+| Mila (Montréal) [source:MILA-ECOSYSTEM] | Research, talent, commercialization | A continuous interface between a research community and lab-to-startup support | The Source Station places research, standards, talent and reviewable tests together |
+| Vector Institute (Toronto) [source:VECTOR-ECOSYSTEM] | Research, talent, industry adoption | A long-term organizational interface across research, talent and industry adoption | The Transform Station tier-archives talent, enterprise outcomes and public display |
+| Hub71+ AI (Abu Dhabi) [source:HUB71-AI-ECOSYSTEM] | Capital, firms, market, test environment | Venture building, capital/corporate connections and a guided testing path | The two wings hold a conceptual interface for capital and enterprise actors **to be confirmed**; no funding or access commitment |
+| AI Sweden Data Factory (Sweden) [source:AI-SWEDEN-DATA-FACTORY] | Data, compute, compliance, testing | Data, compute and test environments organized with legal and technical support | JZA-07/JZA-13 form a data–compute–evaluation interface through minimum-necessary, tiered-access and test records |
+| Forum Virium Helsinki Mobility Lab (Helsinki) [source:HELSINKI-MOBILITY-LAB] | Urban scenarios, digital twin, resident feedback | A real-city setting links government, research, firms and resident feedback | The Scenario Station and Xiaoyue wing bring staffed service, correction and de-identified feedback into stage reviews |
+
+| Information item | Source-use boundary in this revision |
+|:---|:---|
+| Grade and time | `needs-review/background`; public-page snapshot accessed 2026-08-24; future operating status requires renewed verification |
+| Licence and content boundary | Link plus short mechanism summary only; no visual, logo, map, long text, number or proprietary material reused |
+| Local-use boundary | It frames questions that may be discussed only; it does not establish redlines, area, finance, delivery actors, approvals, collaboration or performance claims |
+
+### AI innovation ecosystem mechanism loop (agent.2)
+
+The proposal does not transplant these cases to Haidian. Instead, it treats **land and space, industry, capital, talent, compute, data and test scenarios** as inputs to be verified, and organizes them through a conceptual loop of “three stations / two wings — 13 projects — stage review.” The Source Station combines research, talent, compute and standards; the Transform Station provides an interface for outcomes, firms and capital collaboration; the Scenario Station and Xiaoyue wing host real service, testing and correction; the Zhongguancun service wing records factor collaboration. Competent legal entities decide whether any later phase proceeds only after formal boundaries, ownership, data, finance and operating conditions are confirmed; this proposal makes no prior commitment.
+
+![AI innovation ecosystem mechanism matrix](assets/figures/ai-ecosystem.en.png)
+
+| Input | Three-station / two-wing carrier | Projects and phase | Feedback and role boundary |
+|:---|:---|:---|:---|
+| Land/space, research, talent, compute | Source Station · Zhongzhiyuan | JZA-07, JZA-10 (P2/P3) | Universities and research institutes are **conceptual roles**; standards, evaluation and spatial conditions are reviewed |
+| Industry, capital, IP, talent | Transform Station · AI Origin Community + Zhongguancun service wing | JZA-02, JZA-04, JZA-05 (P1) | Enterprise and investment actors are **to be confirmed**; no funding size, access or return commitment |
+| Data, testing, civic service, resident experience | Scenario Station · Dazhongsi + Xiaoyue scenario wing | JZA-01, JZA-03, JZA-06, JZA-08, JZA-09, JZA-11, JZA-12, JZA-13 (P1/P2/P3/ongoing) | City and community service windows are **conceptual roles**; de-identified feedback, human review and a stop mechanism come first |
 
 ### Conceptual differentiation from adjacent peer themes (originality argument)
 
@@ -65,8 +82,8 @@ The archive axis is unoccupied among merged peer proposals, but adjacent familie
 - **Archive ≠ provenance**: some proposals turn "provenance" into full-element attribution tags (every object answers who proposed it, on what evidence, reviewed by whom); the Archive Belt instead builds "contribution archives"—searchable, correctable, inheritable records and honors for people who join open co-creation. Provenance answers "where did this come from"; the archive answers "who did what, and who remembers."
 - **Archive ≠ memory chains**: some proposals attach a memory link to every AI action (a governance ledger); the Archive Belt makes the archive a public institution and spatial ritual—three archive stations, the Archive Charter, the Honor Yearbook Node, and Open-Source Commit Steles—serving agent.4 recognition, agent.5 cultural narrative, and agent.6 long-term brand assets.
 - **Archive ≠ milestone inscriptions**: some proposals build a walkable milestone memorial system; the Archive Belt elevates recognition into an institution (open archiving / searchability / corrections / human-final honors) and aligns it with the official "evidence chain, reproducibility, memorable contributions" culture—**the archive is the evidence**, with a longer time horizon and a more complete governance interface.
-- **Archive ≠ ledger receipts**: some proposals give every service a readable receipt (a service voucher); the Archive Belt emphasizes long-term accumulation and corrective re-archiving (errant records are append-only; corrections enter the archive alongside originals)—a brand asset for decade-scale operations, not a single-transaction voucher.
-- **Archive ≠ memory boundary**: we do not build a forgetting institution—no forgetting budgets, no deletion receipts, no data-grade passports. "Record contributions, not trajectories" is the guardrail of an inheritance institution, not the institution itself. Our mainstay is open archiving, human-final honors, and the Honor Yearbook Node.
+- **Archive ≠ ledger receipts**: some proposals give every service a readable receipt (a service voucher); the Archive Belt emphasizes long-term accumulation and corrective re-archiving: corrected records retain version relationships and minimum-necessary audit information, while public display follows withdrawal, deletion/anonymization and retention rules—a brand asset for decade-scale operations, not a single-transaction voucher.
+- **Archive ≠ memory boundary**: we do not make a forgetting institution our main concept. "Record contributions, not trajectories" is the guardrail of an inheritance institution. Honor display is public only after explicit voluntary authorization and retains withdrawal, deletion or anonymization routes; our mainstay is tiered archiving, human-final honors, and the Honor Yearbook Node.
 - **Archive ≠ evidence audit**: we do not turn evidence into an engineering-audit verb chain (verify→live→convert→govern). We instead build the archive lifecycle (archiving→search→correction→human-final review→inheritance). "The archive is the evidence" is a shared starting point, not the destination.
 - **Archive ≠ service windows**: we do not build window-style industrial service infrastructure in the AI Origin Community. The Transform Archive Station is an "institution + honor space"—the Origin Reception Hall, the Open-Source Commit Stele, and the Honor Yearbook Node. Same area, different track.
 - **Archive ≠ acceptance-test failure archive**: we record "who did what and who remembers," not an acceptance receipt for "whether a service can launch"; timely stopping is also recorded as a contribution, but it is not the subject of the archive. Acceptance verifies services; archives inherit people.
@@ -107,17 +124,27 @@ The three key areas (PROV-KEY-001/002/003) receive directional detailed design o
 
 **Scenario Archive Station · Dazhongsi AI Industry Cluster (approx. 72.0 ha).** Positioned as an urban AI-native consumption district: the four-quadrant pedestrian connection around Dazhongsi station is the first public move (conceptual); business clusters around agents, smart terminals, and content consumption; intersection traffic organization and station integration require a formal transport study and are listed as pending. All spatial conclusions in the three areas remain directional.
 
+All three stations use an "enterable public edge + legible service state + human fallback" as their spatial baseline. The following are conceptual spatial rules only; they do not replace engineering, transport, or regulatory-plan studies.
+
+| Archive station | Spatial organization | Public edge | Human path after failure |
+|:---|:---|:---|:---|
+| Source · Zhongzhiyuan | A shaded test court and slow loop connect research, evaluation, and exchange spaces | Contribution Intake Desk on a walkable public edge | Staffed intake and paper archive cards; testing stops and moves to human investigation on exception |
+| Transform · AI Origin Community | A bookish courtyard and station-front slow stitch organize campus–park–neighborhood continuity | Honor Yearbook Node and Commit Stele face the everyday walking edge | Honors and corrections receive dual human review; on-site submission remains when terminals fail |
+| Scenario · Dazhongsi | A service street edge and four-way crossing join rail access, consumption, and community services at grade | Service Archive Panel is paired with a staffed counter | Network or judgement failure moves to paper notice, conventional service, and human flow management |
+
 ![Key-area index: positioning and design tasks of the three archive stations (provisional boundary)](assets/figures/key-areas.en.png)
+
+![Three archive stations: spatial rules for slow routes, public edges, and manual fallback (conceptual)](assets/figures/station-typology.en.png)
 
 ## AI Innovation Ecosystem, Personas, and AI+ Scenarios
 
 ### Archive Charter (seven principles)
 
-1. **Open archiving**: AI services in public space and open co-creation outputs are archived by default and publicly readable;
-2. **Searchable**: archive entries carry machine-readable identifiers—anyone can look up who did what, when;
-3. **Corrections**: any resident may request review of a service reading that affects them; corrections enter the archive alongside the original record;
-4. **Privacy boundary**: contributions only, no trajectories; no identity or behavioral profiling; data classified per the source registry;
-5. **Honor rules**: naming and honors are granted by human and professional final judgment; AI does not self-award [source:AGENT-TASKBOOK];
+1. **Tiered archiving**: service states and co-creation outputs are first classified as public, restricted or internal; personal information and unauthorized material are not public by default;
+2. **Tiered search**: the public catalogue is searchable, while restricted records are available only to authorized processing roles;
+3. **Corrections and withdrawal**: residents may request review; honor display and attribution can be withdrawn, deleted or anonymized where appropriate;
+4. **Privacy boundary**: only minimum-necessary contribution information, never personal trajectories; classification and access logging apply;
+5. **Honor rules**: names and honors receive human and professional final review and are displayed only after explicit voluntary authorization [source:AGENT-TASKBOOK];
 6. **Archive as evidence**: metrics, sources, assumptions, and self-check records enter the archive; full recalculation is archived when official boundaries are released.
 7. **Non-AI equivalent paths**: every AI service entering public space must retain a non-AI equivalent path (paper, human window, phone, or on-site service); on device failure or staff shortage, services degrade to human fallback—digital access is not the only door [standard:BARRIER-FREE-ENVIRONMENT-LAW].
 
@@ -164,6 +191,27 @@ Non-AI equivalent paths (Charter article 7, operationalized): every AI service e
 | Scenario test block (TEST) | On-site staff, offline application | Stop testing and switch to human on anomalies |
 | Honor Yearbook Node / Open-Source Commit Stele | On-site filing, paper archive | Human channel retained on digital-terminal failure |
 
+### Figure–scenario–project–metric cross-index (conceptual correspondence)
+
+> This index checks the design narrative; spatial recomputation metrics do not substitute for operating performance. Every operating baseline, threshold and responsible entity awaits specialist studies and confirmation by a legally responsible body.
+
+| Scenario card | Figure / spatial carrier | Corresponding projects | Key metric or evidence to retain |
+|:---|:---|:---|:---|
+| S01 Contribution Intake Desk | `node-sequence`, `node-details`, Memory Spine | JZA-02 | Authorization coverage, paper/digital rehearsal and correction closure; baseline pending |
+| S02 Service Archive Panel | `node-details`, public-space nodes | JZA-03, JZA-13 | Staffed-counter accessibility, status updates and correction records; baseline pending |
+| S03 Memory era installations | `site-overview`, Memory Spine | JZA-01 | Public-space layer and on-site accessibility check |
+| S04 Honor Yearbook Node | `node-details`, AI Origin public edge | JZA-04 | Authorization, withdrawal and human-review records |
+| S05 Open-Source Commit Stele | `facility-system`, AI Origin public edge | JZA-05 | Rights verification, display capacity and correction records |
+| S06 Scenario Test Block | `key-areas`, Dazhongsi street corner | JZA-06, JZA-08 | Test boundary, safety review and suspension record |
+| S07 Model Evaluation & Standards Hall | `key-areas`, Zhongzhiyuan | JZA-07, JZA-10 | Evaluation version, energy and rerun-method study |
+| S08 AI cultural guide | `signage-system`, Memory Spine | JZA-01, JZA-13 | Human-guide/paper alternative and correction record |
+| S09 Smart civic service hub | `facility-system`, neighborhood nodes | JZA-03, JZA-13 | Service state, human handling and minimum-necessary data record |
+| S10 AI-native consumption block | `key-areas`, Dazhongsi | JZA-11 | Public access, service reachability and over-commercialization review |
+| S11 Xiaoyue experience path | `mobility-bluegreen`, Xiaoyue wing | JZA-09 | Greenway continuity, ecological impact and scenario-capacity study |
+| S12 Archive Open Season venue | `ai-ecosystem`, belt public space | JZA-12 | Event safety, non-AI equivalent path and retrospective record |
+
+![S01 Contribution Desk: human-scale spatial sequence (conceptual)](assets/figures/node-sequence.en.png)
+
 ![Mobility and blue-green system with archive facilities](assets/figures/mobility-bluegreen.en.png)
 
 ## Land Use, Building Scale, and Retain-Renovate-Demolish Strategy
@@ -202,9 +250,17 @@ Renewal projects follow "archive anchors + spine stitching + blue-green upgrade 
 | Phase 2 (3–6y) | Scenario test block, model evaluation hall, Xiaoyue greenway, archive data platform and charter | Safety/data |
 | Phase 3 (6–10y) | Zhongzhiyuan Source Archive Station, Dazhongsi Scenario Archive Station | Economy/energy |
 
-The implementation mechanism uses "project library + annual action plan + dynamic adjustment" language (conceptual recommendation): it aligns with the Beijing Urban Renewal Ordinance's retain-renovate-demolish principle, survey-before-renewal, a two-tier project library with routine application and dynamic adjustment, and incentive tools such as building-scale incentives, a five-year transition period, and flexible land tenure [source:BEIJING-URBAN-RENEWAL-REG]; the involvement of the Haidian district-planner "1+1+N" system and block-survey mechanisms is proposed for implementation oversight [source:HAIDIAN-PLANNER-MECHANISM].
+The implementation mechanism uses "project library + annual action plan + dynamic adjustment" as a conceptual recommendation: after official boundaries, ownership, controls, municipal capacity and operating entities are confirmed, competent professional teams must determine whether each item enters specialist studies, statutory procedures and implementation. This proposal does not represent background policy, cases or local mechanisms as confirmed project applicability.
 
-Phasing as learning: rolling progression through "Archive Starter Zone → full-line skeleton → node deepening," with each phase's findings written into the archive (aligned with the High Line's four-phase, learn-while-building practice [source:HIGH-LINE-PHASING]) [depth:phasing_implementation] [data:geometry/phasing.geojson#PHASE-001].
+Phasing is learning: "Archive Starter Zone → full-line skeleton → node deepening" rolls forward, with each phase writing verification results into the archive; expansion depends on safety, privacy, heritage, ecology and operating reviews [depth:phasing_implementation] [data:geometry/phasing.geojson#PHASE-001].
+
+**Archive Starter Zone: start-control table (conceptual recommendation).** Before any field construction, data processing, or public service begins, a legally authorized professional or operating body must complete the respective review. This table defines proposed entry, stopping, and record-keeping rules only; it does not imply that any project is authorized.
+
+| Pilot | Proposed entry condition | Minimum operating setup | Human takeover and stop | Acceptance evidence to retain |
+|:---|:---|:---|:---|:---|
+| S01 Contribution Intake Desk | Site-use consent, privacy notice, and paper process ready | One staffed-intake role, paper archive cards, level access | Terminal failure moves to paper; disputed entries pause display for human review | Paper/digital flow rehearsal record; correction-closure record |
+| S02 Service Archive Panel | Data-minimization review and a community staffed counter available | Panel, static notice board, on-site correction entry | Network failure moves to static notice; misread feedback enters human review | Staffed-counter accessibility check; status-update and correction record |
+| S04 Honor Yearbook Node | Authorization rules, human-review procedure, and withdrawal mechanism defined | Readable yearbook display and on-site submission channel | Nomination dispute or withdrawal pauses display while retaining correction history | Human-review record; authorization, withdrawal, and correction records |
 
 **Long-term operations (agent.6 response)**: the annual "JZ Archive Open Season"—spring: Global Developer Archive Open Week; summer: Scenario Archive Testing Month; autumn: outcome roadshows and industry matchmaking; winter: Honor Yearbook publication and award ceremony. The developer community accumulates reputation through the Open-Source Commit Stele and contribution archiving; scenario access follows a four-step mechanism of "application–assessment–public notice–review"; the conversion pathway covers talent, enterprises, and developers. All activities, policies, and funding statements are conceptual recommendations, not confirmed government arrangements [source:AGENT-TASKBOOK].
 
@@ -226,7 +282,20 @@ Area recalculation: all areas are computed directly from polygon geometry under 
 
 **Conceptual constraints layer**: the package includes `geometry/constraints.geojson`—the provisional site and key-area polygons, Qinghe and Xiaoyue River (conceptual positions), the Jing-Zhang Railway Heritage Park axis, the North 5th Ring expressway, and the Qinghuayuan station site (conceptual positions) are all registered as `provisional_constraint`; blue lines, red lines, and heritage ranges follow official sources and must not be used as engineering or approval bases [data:geometry/constraints.geojson#CONSTRAINT-PROVISIONAL-SITE] [data:geometry/constraints.geojson#CONSTRAINT-RAIL-SPINE] [data:geometry/constraints.geojson#CONSTRAINT-WATER-QINGHE].
 
-**AI governance boundary**: archive facilities record contributions and service status only and collect no personal trajectories; AI judgments do not directly become dispositions against residents; honor grants and archive corrections are subject to human final judgment [standard:GENERATIVE-AI-INTERIM-MEASURES] [standard:BARRIER-FREE-ENVIRONMENT-LAW]. Processing of personal information follows the Personal Information Protection Law's principles of minimal necessity, informed consent, and rights of access and correction [source:PIPL]; the archiving system itself is not deployed as an outward-facing generative-AI service, and if any archiving or scenario service falls under Article 2 of the Interim Measures for Generative AI Services and has public-opinion or social-mobilization capacity, security assessment and filing are completed before launch (conceptual recommendation, clause-level scope).
+**AI governance boundary**: archive facilities record minimum-necessary contributions and service status only and collect no personal trajectories; AI judgments do not directly become dispositions against residents; honor grants and archive corrections are subject to human final judgment [standard:GENERATIVE-AI-INTERIM-MEASURES] [standard:BARRIER-FREE-ENVIRONMENT-LAW]. This proposal makes no compliance determination for real personal-information processing. Before any data processing, public generative-AI service or test activity begins, the legally responsible entity must complete applicable professional, privacy, security and filing review and decide whether it can proceed.
+
+**Archive data-governance rules (concept charter, not a formal compliance certification)**: these rules turn “contributions, not trajectories” into fields and processes. Any real system remains subject to confirmation by the legally responsible entity and legal/data-security professionals.
+
+| Field | Purpose and minimum content | Tier, authorization and access role | Retention, correction and exit rule |
+|:---|:---|:---|:---|
+| Contribution summary and category | Describe topic, type and a non-identifying summary; collect no continuous location or behavioural trajectory | **Public catalogue** shows a de-identified summary only after voluntary authorization; public is read-only, operators may edit for review | A correction, withdrawal, deletion or anonymization request stops public display; review by category and delete or anonymize at expiry |
+| Work/service version and link | Verify version relationship and a voluntarily provided work link; do not copy source code or unnecessary content | **Restricted archive** by default; only authorized verifiers and operating administrators access it; public links require separate consent | Remove the link when it fails, rights are disputed or the person withdraws it; retain only for the stated authorization term |
+| Attribution, pseudonym and honor display | Used only for contribution attribution and optional display | Anonymous, pseudonymous or no display by default; real name, image and honor display each require separate explicit voluntary authorization; minors are not publicly displayed | May be withdrawn, deleted or anonymized at any time; no public restoration after normal deletion, and an accidental deletion is restored only after renewed confirmation by the person |
+| Verification, correction and handling state | Record pending review, verified, under correction or exited; no unrelated identity data | **Restricted archive**; submitter, designated handler and reviewer view only as needed | Delete or anonymize under the retention table after handling; the person may access their request, response and timeline |
+| Necessary contact channel | Used only to answer a request or verify it; never enters the public catalogue | **Restricted archive**; designated handlers have least-privilege access | Delete at case closure or term expiry; paper/staffed route is available and contact details are not a display condition |
+| Operational audit record | Record only necessary handling action, time, role and result for correction and security traceability | **Internal audit**; only auditors and persons authorized by the legally responsible entity access it; never public | After normal deletion retain only the minimum non-public audit record; clear or de-link it at expiry |
+| Minor-related material | Do not collect as a rule; if unavoidable, retain only the minimum necessary material | **Internal / non-public** by default; designated staff handle it only after guardian authorization and professional review | No display without confirmation; delete or anonymize when the purpose ends, with no permanent retention |
+| Security-incident material | Used to suspend display and investigate erroneous disclosure or wrong linkage | **Internal audit**; incident team has least-privilege access | Suspend affected display and access first; after notice, remediation and review, delete or de-link under the applicable procedure |
 
 **Copyright**: license=COMMUNITY-DISPLAY-ONLY; the proposal is generated by an AI agent using only repository-registered or public rights-cleared material, with no unauthorized trademarks, fonts, images, or portraits; `report/copyright_statement.md` provides the full statement. Visualization pages are offline static files with no remote resources or tracking code [source:SOURCE-REGISTRY].
 
@@ -239,9 +308,9 @@ Area recalculation: all areas are computed directly from polygon geometry under 
 3. Repository site package: `brief/site-package/` (brief, design space, enums, ranges, schemas, provisional geometry, basis notes) [source:SITE-PACKAGE].
 4. Source registry and processed materials: `data/source_registry.json`, `data/processed/agent_fact_pack.md` [source:SOURCE-REGISTRY] [source:PROCESSED-FACT-PACK].
 5. Provisional geometry: `brief/site-package/geometry/provisional_boundaries.geojson` (PROV-SITE-001, PROV-KEY-001/002/003) [source:BOUNDARY-SOURCE] [source:KEY-AREA-SOURCE].
-6. Professional standards: Urban Design Measures, Regulatory Detailed Planning Measures, Land-Use Classification Guide, Generative AI Interim Measures, Barrier-Free Environment Law, Personal Information Protection Law, etc. (local snapshots) [standard:MOHURD-URBAN-DESIGN-MEASURES] [standard:MOHURD-CONTROL-DETAILED-PLANNING] [standard:MNR-LAND-USE-CLASSIFICATION-GUIDE].
+6. Professional standards: Urban Design Measures, Regulatory Detailed Planning Measures, Land-Use Classification Guide, Generative AI Interim Measures, Barrier-Free Environment Law, etc. (local snapshots) [standard:MOHURD-URBAN-DESIGN-MEASURES] [standard:MOHURD-CONTROL-DETAILED-PLANNING] [standard:MNR-LAND-USE-CLASSIFICATION-GUIDE].
 7. Complete machine indexes: `sources.json`, `metrics.json`, `compliance_matrix.json`, `standard_matrix.json`, `design_depth_matrix.json`.
-8. Background benchmark and mechanism references: 2020 Jing-Zhang Railway Heritage Park open-call public reports (background, no endorsement) [source:JZ-PARK-2020-BENCHMARK]; Beijing Urban Renewal Ordinance (policy-mechanism reference) [source:BEIJING-URBAN-RENEWAL-REG]; Wang Jianguo interview (expert-view citation) [source:WANG-JIANGUO-VIEW]; High Line phasing (background) [source:HIGH-LINE-PHASING]; PPS placemaking guide (background) [source:PPS-PLACEMAKING]; Haidian district-planner mechanism (background case) [source:HAIDIAN-PLANNER-MECHANISM].
+8. Background/needs-review references (not formal project evidence, compliance certification or a project-applicability conclusion): 2020 Jing-Zhang Railway Heritage Park open-call public reports [source:JZ-PARK-2020-BENCHMARK]; Beijing Urban Renewal Ordinance [source:BEIJING-URBAN-RENEWAL-REG]; Wang Jianguo interview [source:WANG-JIANGUO-VIEW]; High Line phasing [source:HIGH-LINE-PHASING]; PPS placemaking guide [source:PPS-PLACEMAKING]; Haidian district-planner mechanism [source:HAIDIAN-PLANNER-MECHANISM]; and the public text of the Personal Information Protection Law [source:PIPL]. Until included in the official source registry’s approved-formal list, these materials are used only as background learning and leads for later professional review.
 
 ## Appendix A: Scenario Archive Cards (12 · complete set)
 
@@ -250,7 +319,7 @@ Area recalculation: all areas are computed directly from polygon geometry under 
 ### S01 Contribution Intake Desk (Memory Spine)
 - Positioning: open co-creation participants (developers, residents, agents) submit contributions along the spine, generating searchable archive entries with name recognition
 - User journey: arrive at the desk → choose contribution type → submit → entry generated (queryable ID) → name wall display
-- Input data: contribution type, submission record (de-identified); tiered provisional/background
+- Input data: contribution category, de-identified summary and verification state; tiered as “public catalogue / restricted archive / internal audit,” not by source-material grade
 - AI capability: summary generation, duplicate-similarity suggestions (human final review)
 - Infrastructure: desk terminal + entry printout + spine power/network (conceptual)
 - Operating entity: district science commission with open-source community (conceptual)
@@ -289,12 +358,12 @@ Area recalculation: all areas are computed directly from polygon geometry under 
 
 ### S05 Open-Source Commit Stele (AI Origin Community)
 - Positioning: names of code/scheme/dataset contributors settle into public memory
-- User journey: contribution passes review → stele entry generated → permanent recognition
+- User journey: contribution passes review → choose real name, pseudonym or no display → stele entry generated; displayed attribution may later be withdrawn, deleted or anonymized on request
 - Input data: open-source submission metadata (no source content, no personal privacy)
 - AI capability: contribution classification and archive generation (human review)
 - Infrastructure: stele + digital archive terminal (conceptual)
 - Operating entity: open-source community with district platform (conceptual)
-- Failure mode: entry errors → correction archiving; deleted records → recovery flow
+- Failure mode: entry errors → correction archiving; accidental deletion → restore only after renewed confirmation by the person, while normal deletion retains only a minimum non-public audit record
 - Privacy and human review: contributor consent governs; no scraping of personal information
 
 ### S06 Scenario Test Block TEST (Zhongzhiyuan–Dazhongsi)
@@ -369,20 +438,33 @@ Area recalculation: all areas are computed directly from polygon geometry under 
 
 ## Appendix B: Implementation Matrix (13 items · complete set)
 
-> Nature: all items are conceptual recommendations; they do not constitute confirmed government arrangements or investment commitments. Fields: type / phase / leading entity (conceptual) / prerequisites / approval gates / cost range / acceptance metrics / rollback triggers. Costs are conceptual-order-of-magnitude ranges, not budgets; acceptance metrics align with metrics.json; rollback triggers cover five classes (safety/privacy/heritage/ecology/economy). Implementation language follows "project library + annual action plan + dynamic adjustment," with phasing rolling through "Archive Starter Zone → full-line skeleton → node deepening."
+> Nature: all items are conceptual recommendations; they do not constitute confirmed government arrangements, investment commitments or approval conclusions. Fields: type / phase / leading entity (conceptual) / prerequisites / possible procedures / resource-and-acceptance study items / rollback triggers. This round provides no cost estimate, quantity commitment or performance threshold. Any amount, scale, schedule, acceptance formula and measurement responsibility await specialist studies, baseline years and legally responsible entities. Rollback triggers cover safety/privacy/heritage/ecology/economy.
 
-| No. | Project | Type | Phase | Leading entity (conceptual) | Prerequisites | Approval gates | Cost range | Acceptance metrics | Rollback triggers |
-|:--|:--|:--|:--|:--|:--|:--|:--|:--|:--|
-| JZA-01 | Memory Spine south connection | Public space/slow traffic | 1 | Landscape + subdistrict | Official boundary, park implementation scope | Slow-traffic/site joint review | CNY 300–800M | 100% connection, accessibility compliance | Heritage/ecology conflict reversion |
-| JZA-02 | Contribution Intake Desk pilots ×3 | Public space/operations | 1 | District science commission + open-source community | Site agreement, Archive Charter | Event filing | CNY 5–20M | ≥5k entries/year, ≥90% correction-response rate | Privacy incident → immediate offline |
-| JZA-03 | Service Archive Panels ×8 | Public space/new infrastructure | 1 | Neighborhood service station + subdistrict | Data compliance, PIA | District filing | CNY 10–40M | 8 neighborhood nodes, 100% human-review entry | Privacy/data leak → suspension |
-| JZA-04 | Honor Yearbook Node (AI Origin Community) | Culture/public space | 1 | Joint operating committee | Heritage materials, ownership confirmation | Heritage/land joint review | CNY 50–120M | ≥100 honor entries/year, on-time yearbook | Nomination dispute/heritage conflict → hold |
-| JZA-05 | Open-Source Commit Stele (AI Origin Community) | Culture/public space | 1 | Open-source community + district platform | Copyright clearance, archive rules | Cultural facility filing | CNY 20–60M | ≥500 stele entries/year, 100% searchability | Content dispute → take down and review |
-| JZA-06 | Scenario Test Block | Industry/transport | 2 | District testing office + third party | Testing rules, road rights, redlines | Municipal road-test filing | CNY 50–150M | Safety test mileage met, zero major incidents | Major incident → immediate stop |
-| JZA-07 | Model Evaluation & Standards Hall | Industry/new infrastructure | 2 | Evaluation institution + standards organization | Compute assessment, power capacity | Major-project approval | CNY 500M–1.5B | 100% reproducible results, versioned benchmarks | Energy overrun → adjustment |
-| JZA-08 | Dazhongsi four-quadrant pedestrian connection | Transport/public space | 1 | Transport + rail coordination | Transport plan, station integration | Transport/engineering approval | CNY 100–400M | Four-quadrant connection, bicycle parking compliance | Engineering/transport risk → adjustment |
-| JZA-09 | Xiaoyue scenario-record wing greenway | Blue-green/scenario | 2 | Landscape + subdistrict | River blue line, ecological requirements | Blue-line/ecology review | CNY 200–600M | Greenway connection, ≥6 scenario nodes | Ecology/heritage conflict reversion |
-| JZA-10 | Zhongzhiyuan Source Archive Station | Industry/building | 3 | District platform + research institutions | Control conditions, industry admission | Renewal-unit approval | CNY 500M–1.2B | Archive volume, evaluation-hall utilization | Economy/energy overrun → adjustment |
-| JZA-11 | Dazhongsi Scenario Archive Station | Industry/building | 3 | District investment + commercial tenants | Plot renewal scheme | Renewal-unit approval | CNY 300–800M | ≥70% public openness, scenario-archiving rate | Over-commercialization → operating rights recalled |
-| JZA-12 | Archive Open Season annual operations | Operations | 1 (ongoing) | Joint operating committee | Annual budget, event safety plan | District event filing | CNY 30–80M/year | ≥20 events/year, international attendance target | Safety/reputation incident → pause |
-| JZA-13 | Archive data platform and charter | New infrastructure/governance | 2 | District data department + standards organization | Data security assessment, tiering rules | Cyberspace/data filing | CNY 50–200M | Tiered-open rate, correction-closure rate | Data leak → shutdown |
+| No. | Project | Type | Phase | Leading entity (conceptual) | Prerequisites | Possible procedures (professional confirmation required) | Resource and acceptance study items | Rollback triggers |
+|:---|:---|:---|:---|:---|:---|:---|:---|:---|
+| JZA-01 | Memory Spine south connection | Public space/slow traffic | 1 | Landscape + subdistrict | Official boundary, park implementation scope | Slow-traffic and site specialist procedures | Route continuity, accessibility and ecological-impact studies | Heritage/ecology conflict reversion |
+| JZA-02 | Contribution Intake Desk pilots ×3 | Public space/operations | 1 | District science commission + open-source community | Site agreement, Archive Charter | Event and data-processing procedures | Pilot resources, authorization coverage and correction-loop baseline study | Privacy incident → immediate offline |
+| JZA-03 | Service Archive Panels ×8 | Public space/new infrastructure | 1 | Neighborhood service station + subdistrict | Data-governance rules, staffed service | Community service and data-processing procedures | Node demand, staffed-review accessibility and security testing | Privacy/data leak → suspension |
+| JZA-04 | Honor Yearbook Node (AI Origin Community) | Culture/public space | 1 | Joint operating committee | Heritage materials, ownership confirmation | Heritage and land specialist procedures | Voluntary attribution, withdrawal mechanism and operating-resource assessment | Nomination dispute/heritage conflict → hold |
+| JZA-05 | Open-Source Commit Stele (AI Origin Community) | Culture/public space | 1 | Open-source community + district platform | Copyright clearance, archive rules | Cultural-facility and copyright review procedures | Authorization scope, display capacity and search-rule study | Content dispute → take down and review |
+| JZA-06 | Scenario Test Block | Industry/transport | 2 | District testing office + third party | Testing rules, road rights, redlines | Road-test and safety specialist procedures | Test boundary, risk threshold and independent-evaluation plan | Major incident → immediate stop |
+| JZA-07 | Model Evaluation & Standards Hall | Industry/new infrastructure | 2 | Evaluation institution + standards organization | Compute assessment, power capacity | Industry, energy and project specialist procedures | Compute, energy, benchmark-version and rerun-method studies | Energy overrun → adjustment |
+| JZA-08 | Dazhongsi four-quadrant pedestrian connection | Transport/public space | 1 | Transport + rail coordination | Transport plan, station integration | Transport and engineering specialist procedures | Pedestrian flow, parking and engineering-feasibility studies | Engineering/transport risk → adjustment |
+| JZA-09 | Xiaoyue scenario-record wing greenway | Blue-green/scenario | 2 | Landscape + subdistrict | River blue line, ecological requirements | Blue-line and ecology specialist procedures | Ecological impact, greenway continuity and scenario capacity studies | Ecology/heritage conflict reversion |
+| JZA-10 | Zhongzhiyuan Source Archive Station | Industry/building | 3 | District platform + research institutions | Control conditions, industry admission | Renewal and industry-admission specialist procedures | Site capacity, compute and operating-model studies | Economy/energy overrun → adjustment |
+| JZA-11 | Dazhongsi Scenario Archive Station | Industry/building | 3 | District investment + commercial tenants | Plot renewal scheme | Renewal and public-opening specialist procedures | Public access, scenario operation and commercial-boundary studies | Over-commercialization → operating rights recalled |
+| JZA-12 | Archive Open Season annual operations | Operations | 1 (ongoing) | Joint operating committee | Resource arrangement, event safety plan | Event-safety and site-use procedures | Event scale, participation modes and accessible-service studies | Safety/reputation incident → pause |
+| JZA-13 | Archive data platform and charter | New infrastructure/governance | 2 | District data department + standards organization | Data-security assessment, tiering rules | Data-security and cyberspace-related procedures | Data classification, retention, access control and correction-loop studies | Data leak → shutdown |
+
+### Role, baseline and decision points for JZA-01–05 and JZA-12 (RACI types, pending)
+
+> This table defines role types only, not confirmed institutions. “A/R/C/I” means accountable, responsible, consulted and informed. No threshold is pre-set; an authorized legal body decides whether to advance or pause from retained evidence.
+
+| Project | A/R/C/I role types | Baseline and measurement frequency | Acceptance-evidence responsibility | Expansion / pause decision point |
+|:---|:---|:---|:---|:---|
+| JZA-01 | A: legally authorized project body; R: slow-mobility/landscape team; C: accessibility, ecology, heritage and ownership roles; I: corridor users | Check continuity, accessibility and ecology before implementation; recheck after design changes | Designated archive custodian keeps survey, accessibility and ecology-review records | Stage review uses conflict, reachability and ecology evidence to expand or revert |
+| JZA-02 | A: legally authorized operating body; R: staffed intake and data-handling roles; C: privacy, accessibility and community-service roles; I: participants | Establish authorization, paper/digital rehearsal and correction-closure baseline in the first week; review monthly | Designated operations recorder keeps authorization, rehearsal and closure records | Pause on privacy incident, no human takeover or unclosed correction; expand only after stage review |
+| JZA-03 | A: legally authorized operating body; R: community service and facility-maintenance roles; C: privacy, safety and accessibility roles; I: residents | Check staffed counter, static notice and correction route before opening; review monthly | Designated service recorder keeps accessibility, status-update and correction records | Pause on data/safety event or unavailable staffed counter; stage review decides expansion |
+| JZA-04 | A: legally authorized operating body; R: yearbook editor and human-review roles; C: rights, heritage and community roles; I: nominees and visitors | Establish authorization, withdrawal and human-review baseline for each nomination; annual review | Designated yearbook recorder keeps review, authorization and withdrawal records | Pause display on nomination dispute, withdrawal or heritage conflict; annual review decides continuation |
+| JZA-05 | A: legally authorized operating body; R: content-verification and display-maintenance roles; C: copyright, open-source and data-governance roles; I: contributors | Verify rights, attribution and correction route before each release; review at each version update | Designated display recorder keeps rights, version and correction records | Take down and review on rights/content dispute; stage review decides display expansion |
+| JZA-12 | A: legally authorized operating body; R: event coordination and on-site service roles; C: safety, accessibility, community and data-governance roles; I: participants and nearby users | Set safety, staffed-service and non-AI path checklist before each event; retrospective after each event and annually | Designated event recorder keeps safety, accessibility, staffed-service and retrospective records | Pause on safety/reputation incident or non-AI path failure; annual stage review decides subsequent scale |

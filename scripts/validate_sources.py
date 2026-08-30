@@ -130,12 +130,12 @@ def validate_source_item(
         seen_ids.add(source_id)
 
     source_type = source.get("type")
-    if source_type and source_type not in ALLOWED_TYPES:
+    if isinstance(source_type, str) and source_type and source_type not in ALLOWED_TYPES:
         allowed = ", ".join(sorted(ALLOWED_TYPES))
         report.add_error(f"{prefix}: type must be one of {allowed}")
 
     public_status = source.get("public_status")
-    if public_status and public_status not in ALLOWED_PUBLIC_STATUSES:
+    if isinstance(public_status, str) and public_status and public_status not in ALLOWED_PUBLIC_STATUSES:
         allowed = ", ".join(sorted(ALLOWED_PUBLIC_STATUSES))
         report.add_error(f"{prefix}: public_status must be one of {allowed}")
 

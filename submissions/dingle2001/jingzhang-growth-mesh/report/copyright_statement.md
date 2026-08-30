@@ -19,7 +19,7 @@
 | Logo与品牌图形 | `landmarks*.png`中的品牌规范及PDF／HTML标题标识 | dingle2001／Agent工作流 | 京张轨迹、圆点、线段与字标的原创几何组合 | 作者声明＋生成文件SHA-256；不使用第三方图标包 | 商标检索、注册和遗产标识审批尚未完成；不得暗示企业合作 |
 | 图标与装饰元素 | 北针、比例尺、箭头、节点、人物／机器人比例参照、状态章 | dingle2001／Agent工作流 | 代码绘制的线、圆、矩形、路径和文字 | 原创基础几何；未调用外部图标库 | 仅随本方案整体展示 |
 | AI概念视景 | `concept-overall-ai*`、`concept-zhongzhiyuan-ai*`、`concept-origin-ai*`、`concept-dazhongsi-ai*`、`concept-district-overall*`及标注衍生图 | dingle2001通过OpenAI图像生成服务生成，Agent辅助提示与版面标注 | 文本提示生成；后续裁切、压缩、加注释 | 按OpenAI现行服务协议，在投稿者与服务商之间、在法律允许范围内，投稿者拥有输出；见`[source:RIGHTS-OPENAI-OUTPUT]` | 非唯一且可能与第三方内容相似；投稿者仍负责侵权检查。未输入第三方摄影、Logo或需授权人物素材；只作概念体验，不作事实、工程或审批证据 |
-| 字体 | 四份PDF嵌入Noto Sans SC Regular／Bold字形子集；HTML使用本地系统回退栈 | Google Noto项目 | 构建时从Noto Sans SC可变字体提取两种字重；PDF只嵌入用到的字形；HTML不下载字体 | SIL Open Font License 1.1，见`[source:RIGHTS-NOTO-OFL]`；投稿包不含`.ttf/.ttc/.woff`独立字体文件 | `visual/assets/qa-proofing-record.json`逐份登记PDF实际字体，非OFL字体必须为0；不同设备HTML可使用本地回退字体 |
+| 字体 | 四份PDF嵌入Noto Sans SC Regular／Bold字形子集；四个HTML入口共用本地Noto Sans SC WOFF2字形子集 | Google Noto项目 | 构建时从Noto Sans SC可变字体提取PDF字重，并按四个HTML实际字符生成单一离线Web子集；WOFF2以data URL封装在本地CSS中 | SIL Open Font License 1.1，见`[source:RIGHTS-NOTO-OFL]`及`visual/assets/fonts/OFL.json` | `visual/assets/qa-proofing-record.json`校验PDF字体、HTML本地CSS引用与全部中文码点覆盖；浏览器QA另验证字体实际加载与方框替代字形 |
 | 成品版式与模板 | A0、A3、HTML、双语结构 | dingle2001／Agent工作流 | 自建网格、色板、页眉、图签和响应式CSS | 未使用商业PPT／网页模板、CDN、远程字体、地图瓦片或跟踪代码 | 整体以COMMUNITY-DISPLAY-ONLY展示 |
 | 外部软件 | Python及上述渲染库 | 各开源项目维护者 | 构建工具，不是投稿内容 | 各自开源许可证适用于软件；投稿不再分发其源码或二进制 | 不把软件许可扩张为对第三方素材的授权 |
 

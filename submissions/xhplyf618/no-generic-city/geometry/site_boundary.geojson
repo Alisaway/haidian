@@ -1,0 +1,88 @@
+{
+  "type": "FeatureCollection",
+  "name": "site_boundary",
+  "metadata": {
+    "status": "repository_provisional_constraint",
+    "geometry_policy": "replaceable_provisional_constraints",
+    "source_id": "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+    "source_commit": "a57cd13707ea5f65a8701fa3d0924aa2ee35d716",
+    "coordinate_reference_system": "EPSG:4326",
+    "area_check_crs": "EPSG:4548",
+    "official_boundary": false,
+    "confidence": "low",
+    "reason_zh": "仓库维护的总体设计范围粗略替代边界，仅作为本轮概念模型统一裁切与复算底盘。",
+    "reason_en": "The repository-maintained rough overall-design boundary is used only as the clipping and recomputation base for this conceptual model.",
+    "recalculation_trigger": "replace and recompute all derived layers and artifacts when official or rights-cleared geometry appears"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "PROV-SITE-001",
+      "properties": {
+        "id": "PROV-SITE-001",
+        "layer": "SITE_BOUNDARY",
+        "scope_id": "overall_design_area",
+        "name_zh": "总体设计范围粗略替代边界",
+        "source_type": "agent_inferred_from_public_data",
+        "confidence": "low",
+        "geometry_role": "provisional_constraint",
+        "official_boundary": false,
+        "boundary_precision": "provisional_rough",
+        "source_id": "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+        "derived_from_source_ids": [
+          "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509"
+        ],
+        "source_title": "依据公告文字四至、约11.4平方公里面积约束和道路名称形成的临时粗略范围",
+        "derivation_method": "以公告所述京张遗址公园周边1—2公里城市地区和产业区为走廊，以北五环路、学院路/西土城路、西直门外大街、大钟寺东路/荷清路等文字四至定位，并在EPSG:4548下校核至公告约11.4平方公里；道路名称仅用于粗略定位，不代表道路红线。",
+        "area_sqm_declared": 11400000,
+        "area_sqm_calculated": 11412825.386,
+        "usage_note": "Repository-maintained rough geometry used as a replaceable constraint only; not an official redline, survey, statutory control, ownership record, or engineering basis.",
+        "source_commit": "a57cd13707ea5f65a8701fa3d0924aa2ee35d716",
+        "submission_usage": "controlled_provisional"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.3407,
+              39.939
+            ],
+            [
+              116.3553,
+              39.939
+            ],
+            [
+              116.3553,
+              39.965
+            ],
+            [
+              116.3533,
+              39.99
+            ],
+            [
+              116.3553,
+              40.0265
+            ],
+            [
+              116.3427,
+              40.0265
+            ],
+            [
+              116.3417,
+              40.006
+            ],
+            [
+              116.3397,
+              39.975
+            ],
+            [
+              116.3407,
+              39.939
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -98,8 +98,11 @@
         "confidence": "low",
         "geometry_role": "design_proposal",
         "name_zh": "公共回执广场",
-        "name_en": "Public Receipt Square",
-        "co_op_role": "public_return_and_withdrawal_receipt",
+      "name_en": "Public Receipt Square",
+      "key_area_ref": "PROV-KEY-003",
+      "mvp_id": "DAZHONGSI-MVP-01",
+      "mvp_role": "staffed_receipt_and_public_return_acceptance_space",
+      "co_op_role": "public_return_and_withdrawal_receipt",
         "universal_access": "no_account_no_scan_no_data_equivalent_route_required",
         "area_sqm_declared": 32739.258
       },
@@ -245,19 +248,28 @@
         "confidence": "low",
         "geometry_role": "design_proposal",
         "name_zh": "临时用途许可舱",
-        "name_en": "Temporary-Use Licence Cell",
-        "scenario_type": "testing_validation",
-        "co_op_gate": "expiry",
+      "name_en": "Temporary-Use Licence Cell",
+      "scenario_type": "testing_validation",
+      "key_area_ref": "PROV-KEY-003",
+      "mvp_id": "DAZHONGSI-MVP-01",
+      "mvp_stage": 1,
+      "mvp_role": "synthetic_order_purpose_ticket_and_expiry_test",
+      "co_op_gate": "expiry",
         "no_data_equivalent": true,
         "human_review": true,
-        "data_rule": "synthetic_public_or_explicitly_rights_cleared_only_for_demo",
-        "status": "conceptual_test_location_pending_survey"
+      "data_rule": "synthetic_public_or_explicitly_rights_cleared_only_for_demo",
+      "stop_conditions": [
+        "unproven_provenance_or_permission",
+        "live_payment_or_personal_trajectory_required",
+        "no_data_compatibility_report_not_equivalent"
+      ],
+      "status": "conceptual_test_location_pending_survey"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          116.3508,
-          40.013
+        116.351,
+        39.946
         ]
       }
     },
@@ -349,13 +361,22 @@
         "confidence": "low",
         "geometry_role": "design_proposal",
         "name_zh": "派生链撤回演练",
-        "name_en": "Derivative-Chain Withdrawal Drill",
-        "scenario_type": "public_service",
-        "co_op_gate": "withdrawal",
+      "name_en": "Derivative-Chain Withdrawal Drill",
+      "scenario_type": "public_service",
+      "key_area_ref": "PROV-KEY-003",
+      "mvp_id": "DAZHONGSI-MVP-01",
+      "mvp_stage": 2,
+      "mvp_role": "derivative_status_and_withdrawal_receipt_drill",
+      "co_op_gate": "withdrawal",
         "no_data_equivalent": true,
         "human_review": true,
-        "data_rule": "synthetic_public_or_explicitly_rights_cleared_only_for_demo",
-        "status": "conceptual_test_location_pending_survey"
+      "data_rule": "synthetic_public_or_explicitly_rights_cleared_only_for_demo",
+      "stop_conditions": [
+        "derivative_mapping_incomplete",
+        "residual_effect_not_disclosed",
+        "staffed_or_offline_withdrawal_route_unavailable"
+      ],
+      "status": "conceptual_test_location_pending_survey"
       },
       "geometry": {
         "type": "Point",
@@ -375,13 +396,22 @@
         "confidence": "low",
         "geometry_role": "design_proposal",
         "name_zh": "公共回报年度结算厅",
-        "name_en": "Annual Public-Return Settlement Hall",
-        "scenario_type": "public_service",
-        "co_op_gate": "public_return",
+      "name_en": "Annual Public-Return Settlement Hall",
+      "scenario_type": "public_service",
+      "key_area_ref": "PROV-KEY-003",
+      "mvp_id": "DAZHONGSI-MVP-01",
+      "mvp_stage": 3,
+      "mvp_role": "beneficiary_due_date_and_acceptance_review",
+      "co_op_gate": "public_return",
         "no_data_equivalent": true,
         "human_review": true,
-        "data_rule": "synthetic_public_or_explicitly_rights_cleared_only_for_demo",
-        "status": "conceptual_test_location_pending_survey"
+      "data_rule": "synthetic_public_or_explicitly_rights_cleared_only_for_demo",
+      "stop_conditions": [
+        "beneficiary_group_unnamed",
+        "due_date_or_acceptance_record_missing",
+        "return_described_as_payment_for_consent"
+      ],
+      "status": "conceptual_test_location_pending_survey"
       },
       "geometry": {
         "type": "Point",

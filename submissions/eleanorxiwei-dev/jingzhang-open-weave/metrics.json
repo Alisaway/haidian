@@ -1,0 +1,147 @@
+{
+  "schema_version": "0.1.0",
+  "units": {
+    "length": "m",
+    "area": "sqm"
+  },
+  "metrics": {
+    "site_area_sqm": {
+      "status": "known",
+      "value": 11412825.386,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "project_to_EPSG4548_then_polygon_area(site_boundary)",
+      "confidence": "medium",
+      "assumptions": [
+        "边界为仓库临时粗略边界，数值仅用于内部一致性复算，不是官方面积结论。"
+      ]
+    },
+    "building_footprint_area_sqm": {
+      "status": "known",
+      "value": 1961078.365,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "sum(projected_building_footprint_area)",
+      "confidence": "medium",
+      "assumptions": [
+        "原型建筑基底为概念建议。"
+      ]
+    },
+    "green_space_area_sqm": {
+      "status": "known",
+      "value": 2235069.719,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/green_space.geojson"
+      ],
+      "formula": "projected_polygon_area(green_space)",
+      "confidence": "medium",
+      "assumptions": [
+        "概念性蓝绿网络。"
+      ]
+    },
+    "green_ratio": {
+      "status": "known",
+      "value": 0.195838,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/green_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "green_space_area_sqm/site_area_sqm",
+      "confidence": "medium",
+      "assumptions": [
+        "不等同于法定绿地率。"
+      ]
+    },
+    "public_space_area_sqm": {
+      "status": "known",
+      "value": 1003925.55,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "projected_polygon_area(public_space)",
+      "confidence": "medium",
+      "assumptions": [
+        "概念性公共界面。"
+      ]
+    },
+    "public_space_ratio": {
+      "status": "known",
+      "value": 0.087965,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "public_space_area_sqm/site_area_sqm",
+      "confidence": "medium",
+      "assumptions": [
+        "不等同于法定公共空间指标。"
+      ]
+    },
+    "road_centerline_length_m": {
+      "status": "known",
+      "value": 11051.42,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson"
+      ],
+      "formula": "sum(projected_linestring_length)",
+      "confidence": "medium",
+      "assumptions": [
+        "仅统计概念性慢行与接驳联系，不是工程里程。"
+      ]
+    },
+    "key_area_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "count(key_area_features)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "land_use_zone_count": {
+      "status": "known",
+      "value": 9,
+      "unit": "count",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "count(land_use_features)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "phase_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/phasing.geojson"
+      ],
+      "formula": "count(phase_features)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "floor_area_ratio": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "brief/site-package/ranges/planning_limits.json"
+      ],
+      "formula": "total_floor_area_sqm/official_site_area_sqm",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "公开 site package 未提供已批容积率条件与官方精确边界。"
+    }
+  }
+}

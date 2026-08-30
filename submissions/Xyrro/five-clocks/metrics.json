@@ -1,0 +1,446 @@
+{
+  "schema_version": "0.1.0",
+  "units": {
+    "length": "m",
+    "area": "sqm"
+  },
+  "metrics": {
+    "site_area_sqm": {
+      "status": "known",
+      "value": 11412825.386,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "polygon_area(submitted_site_boundary) in EPSG:4548",
+      "confidence": "low",
+      "assumptions": [
+        "Calculated from repository provisional rough boundary geometry; not suitable for official area claims."
+      ]
+    },
+    "green_space_area_sqm": {
+      "status": "known",
+      "value": 2461652.454,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/green_space.geojson"
+      ],
+      "formula": "sum(polygon_area(green_space)) in EPSG:4548",
+      "confidence": "low",
+      "assumptions": [
+        "Calculated from repository provisional rough boundary geometry; not suitable for official area claims."
+      ]
+    },
+    "green_ratio": {
+      "status": "known",
+      "value": 0.215692,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/green_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "green_space_area_sqm / site_area_sqm",
+      "confidence": "low",
+      "assumptions": [
+        "Calculated from repository provisional rough boundary geometry; not suitable for official area claims."
+      ]
+    },
+    "public_space_area_sqm": {
+      "status": "known",
+      "value": 461509.323,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "area(union(public_space)) in EPSG:4548",
+      "confidence": "low",
+      "assumptions": [
+        "Calculated from repository provisional rough boundary geometry; not suitable for official area claims."
+      ]
+    },
+    "public_space_ratio": {
+      "status": "known",
+      "value": 0.040438,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "public_space_area_sqm / site_area_sqm",
+      "confidence": "low",
+      "assumptions": [
+        "Calculated from repository provisional rough boundary geometry; not suitable for official area claims."
+      ]
+    },
+    "building_footprint_area_sqm": {
+      "status": "known",
+      "value": 52736.712,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "sum(polygon_area(building_footprints)) in EPSG:4548",
+      "confidence": "low",
+      "assumptions": [
+        "Calculated from repository provisional rough boundary geometry; not suitable for official area claims.",
+        "Conceptual demonstration footprints only (Section Tower, lease station, youth housing, test-field services); not a build-out plan."
+      ]
+    },
+    "key_area_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "count(key_detailed_design_areas)",
+      "confidence": "high",
+      "assumptions": [
+        "Three provisional key-area polygons from the repository site package."
+      ]
+    },
+    "floor_area_ratio": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "brief/site-package/ranges/planning_limits.json"
+      ],
+      "formula": "total_floor_area_sqm / official_site_area_sqm",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "Approved FAR controls and official site boundary are not published; conceptual massing only. Pending official regulatory conditions (see A-CONTROLS-001)."
+    },
+    "slow_layer_change_count": {
+      "status": "known",
+      "value": 0,
+      "unit": "count",
+      "source_files": [
+        "geometry/green_space.geojson",
+        "geometry/roads.geojson"
+      ],
+      "formula": "count(approved changes to L1 blue-green line, L2 alignment-protection plan, L3 grain guideline outside their proposal-defined change windows)",
+      "confidence": "high",
+      "assumptions": [
+        "Design baseline: the first metric of the proposal. Target stays 0 between Repave Assemblies (A-ASSEMBLY-001)."
+      ]
+    },
+    "reserved_row_count": {
+      "status": "known",
+      "value": 4,
+      "unit": "count",
+      "source_files": [
+        "geometry/roads.geojson"
+      ],
+      "formula": "count(ROW-EW-1, ROW-EW-2, ROW-EW-3, ROW-NS-SLOW)",
+      "confidence": "high",
+      "assumptions": [
+        "Conceptual corridors, not engineering alignments (A-ROW-001)."
+      ]
+    },
+    "reserved_row_length_m": {
+      "status": "known",
+      "value": 13150.9,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson"
+      ],
+      "formula": "sum(length(reserved corridor centerlines)) in EPSG:4548",
+      "confidence": "low",
+      "assumptions": [
+        "Calculated from repository provisional rough boundary geometry; not suitable for official area claims.",
+        "Conceptual corridors, not engineering alignments (A-ROW-001)."
+      ]
+    },
+    "easement_passage_count": {
+      "status": "known",
+      "value": 2,
+      "unit": "count",
+      "source_files": [
+        "geometry/roads.geojson",
+        "geometry/public_space.geojson"
+      ],
+      "formula": "count(EASE-1, EASE-2)",
+      "confidence": "high",
+      "assumptions": [
+        "Conceptual through-passages in an unnamed campus cluster (A-EASE-001)."
+      ]
+    },
+    "easement_length_m": {
+      "status": "known",
+      "value": 819.9,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson"
+      ],
+      "formula": "sum(length(easement centerlines)) in EPSG:4548",
+      "confidence": "low",
+      "assumptions": [
+        "Calculated from repository provisional rough boundary geometry; not suitable for official area claims.",
+        "Conceptual through-passages (A-EASE-001)."
+      ]
+    },
+    "easement_coverage_ratio": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/roads.geojson"
+      ],
+      "formula": "length(open through-passages) / length(required per grain guideline across superblocks)",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "Denominator requires the R-02 superblock census, which could not run in this session (network policy blocked OSM endpoints; see A-GRAIN-001)."
+    },
+    "superblock_area_share": {
+      "status": "known",
+      "value": 0.8478,
+      "unit": "ratio",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "area(blocks > 4 ha) / total_block_area from street-network polygonization (R-02 v5, strict street classes, edge-buffered fetch +0.012 deg)",
+      "confidence": "medium",
+      "assumptions": [
+        "OSM street-network topology on the 2026-08-21 snapshot, not legal property enclosure; provisional bbox, not an official boundary.",
+        "344 blocks in reporting bbox; total block area 1298.0 ha vs bbox 1294.7 ha (+0.25% tiling validation).",
+        "Inclusive sensitivity bound 0.6898 (adds service|living_street): counts compound-internal service roads as public streets and therefore OVERSTATES public permeability; 0.8478 is the better public-realm estimate (A-GRAIN-001)."
+      ]
+    },
+    "median_block_area_ha": {
+      "status": "known",
+      "value": 0.662,
+      "unit": "ha",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "median(polygon_area(street blocks)) in EPSG:4548 (R-02 v5)",
+      "confidence": "medium",
+      "assumptions": [
+        "OSM street-network topology on the 2026-08-21 snapshot, not legal property enclosure; provisional bbox, not an official boundary.",
+        "Mean 3.773 ha (5.7x skew); inclusive-filter median 0.523 ha (A-GRAIN-001)."
+      ]
+    },
+    "ew_crossing_count": {
+      "status": "known",
+      "value": 8,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(E-W street crossings of the at-grade 京包线 surface component, 6504.7 m, tunnel/covered segments excluded, 50 m dedup) (R-02 v5)",
+      "confidence": "low",
+      "assumptions": [
+        "OSM street-network topology on the 2026-08-21 snapshot, not legal property enclosure; provisional bbox, not an official boundary.",
+        "Mean spacing 813.1 m; max gap 1110.2 m; five gaps >400 m total 4550.1 m (70% of the at-grade line); worst 3243.2 m band (lat 39.9568-39.9847) has 2 crossings = 1/1622 m.",
+        "Only 18.5% of the measured line lies inside the strict provisional envelope - a limitation of the supplied provisional geometry (A-BND-001), not of the measurement.",
+        "京包客专线 (HSR) is 84.4% tunnel in the study latitudes (13487.6 of 15986.7 m) and is not an at-grade barrier; the unnamed disused/razed line is fragmented in OSM (components <=862 m) and is reported as a located gap inventory only (A-GRAIN-001)."
+      ]
+    },
+    "device_band_coverage_km": {
+      "status": "known",
+      "value": 1.555,
+      "unit": "km",
+      "source_files": [
+        "geometry/roads.geojson",
+        "geometry/public_space.geojson"
+      ],
+      "formula": "length(DEV-BAND-ST demonstration street) in EPSG:4548 / 1000",
+      "confidence": "low",
+      "assumptions": [
+        "Calculated from repository provisional rough boundary geometry; not suitable for official area claims.",
+        "One reversible demonstration street in Zhongzhiyuan (R-04); belt-wide coverage is a later-phase target."
+      ]
+    },
+    "lease_active_count": {
+      "status": "unknown",
+      "value": null,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(active L5 leases in registry)",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "Operational metric; registry (R-05) not yet running. Scenario cards S01-S12 define the intended first cohort."
+    },
+    "lease_return_rate": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(leases restored on expiry) / count(expired leases)",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "Operational metric; measured after first lease cycle."
+    },
+    "lease_default_exit_rate": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(default exits executed automatically) / count(expired unrenewed leases)",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "Operational metric; the design default is 1.0 by construction of the default-exit rule (A-LEASE-001)."
+    },
+    "deposit_pool_balance": {
+      "status": "unknown",
+      "value": null,
+      "unit": "CNY",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "sum(active lease deposits)",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "Illustrative mechanism only; requires a licensed financial custodian and regulatory compliance before any real balance exists (A-FUND-001)."
+    },
+    "corridor_conduit_headroom_years": {
+      "status": "unknown",
+      "value": null,
+      "unit": "years",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "projected years until conduit capacity exhaustion at observed demand growth (R-09 assessment)",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "Requires the R-09 utility assessment; current conduit occupancy is not public (A-COND-001)."
+    },
+    "section_redundancy_ratio": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "reserve width in elastic sections / total section width",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "Requires surveyed sections; the three elastic standard sections are conceptual (A-SEC-001)."
+    },
+    "non_ai_parity_coverage": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(scenario cards whose text carries the proposal-defined mandatory contract clause for a non-AI parity path — document coverage, not an existing legal obligation and not tested accessibility) / count(scenario cards)",
+      "confidence": "high",
+      "assumptions": [
+        "Design-document basis: 12 of 12 scenario cards carry a parity-path clause (A-PARITY-001); operational coverage audited annually on Chassis Day."
+      ]
+    },
+    "annual_silent_drill_completion": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "completed parity-path audits during the annual Chassis Day drill / planned audits",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "Operational metric; first drill scheduled with the first lease cohort."
+    },
+    "centennial_review_interval_years": {
+      "status": "known",
+      "value": 25,
+      "unit": "years",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "design_declared(Repave Assembly interval)",
+      "confidence": "high",
+      "assumptions": [
+        "Institutional design declaration (A-ASSEMBLY-001): 2026 baseline, then 2051/2076/2101/2126."
+      ]
+    },
+    "timeline_paving_length_m": {
+      "status": "known",
+      "value": 1000,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson",
+        "proposal.md"
+      ],
+      "formula": "design_declared(phase-1 timeline paving along SPINE-WALK southern segment)",
+      "confidence": "medium",
+      "assumptions": [
+        "Phase-1 design declaration (A-PAVING-001); full spine is ~9.7 km in the provisional model."
+      ]
+    },
+    "speed_diversity_index": {
+      "status": "unknown",
+      "value": null,
+      "unit": "index",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "H' = -sum(p_i * ln(p_i)) over tenant speed classes L2-L5",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "Requires tenant speed-class registry data collected via the lease system (A-DIVERSITY-001)."
+    },
+    "component_library_items": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(component families: boundary markers, ledger plates, lease posts, graduated paving, five-color wayfinding, timeline nodes)",
+      "confidence": "high",
+      "assumptions": [
+        "Design declaration of the open-source public-space component library v1."
+      ]
+    },
+    "scenario_card_count": {
+      "status": "known",
+      "value": 12,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(scenario cards S01-S12)",
+      "confidence": "high",
+      "assumptions": [
+        "All cards use the unified lease format; 3 test-validation walkthroughs (S01/S02/S08)."
+      ]
+    },
+    "superblock_count": {
+      "status": "known",
+      "value": 66,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(blocks > 4 ha) in reporting bbox (R-02 v5)",
+      "confidence": "medium",
+      "assumptions": [
+        "OSM street-network topology on the 2026-08-21 snapshot, not legal property enclosure; provisional bbox, not an official boundary.",
+        "66 of 344 blocks (19.2%) hold 84.8% of block area; mean superblock 16.7 ha vs 0.71 ha for the rest (23x) (A-GRAIN-001)."
+      ]
+    },
+    "spine_to_corridor_offset_m": {
+      "status": "known",
+      "value": 1247.2,
+      "unit": "m",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "median perpendicular distance from package SPINE-WALK to OSM rail geometry, 61 samples (R-02 v5)",
+      "confidence": "medium",
+      "assumptions": [
+        "Mean 1060.9 m, max 2446.9 m; quantifies the misplacement of the supplied provisional geometry (A-BND-001); another entrant independently reported ~906 m.",
+        "OSM street-network topology on the 2026-08-21 snapshot, not legal property enclosure; provisional bbox, not an official boundary."
+      ]
+    }
+  }
+}

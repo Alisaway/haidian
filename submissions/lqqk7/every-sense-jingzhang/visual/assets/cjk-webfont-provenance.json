@@ -1,0 +1,232 @@
+{
+  "file_id": "cjk-webfont-provenance",
+  "schema_version": "0.1.0",
+  "version": "0.1.2",
+  "issued": "2026-08-30",
+  "document_zh": "中文离线字体子集溯源与许可合规登记（visual/assets/cjk-webfont.css）",
+  "document_en": "Provenance and licence-compliance register for the offline Chinese font subset (visual/assets/cjk-webfont.css)",
+  "component": "Source Han Sans SC",
+  "component_version": "2.005R",
+  "license": "SIL Open Font License 1.1",
+  "spdx_license_identifier": "OFL-1.1-RFN",
+  "copyright": "Copyright 2014-2025 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'.",
+  "licence_text_carrier": "visual/assets/font-license-ofl.json",
+  "purpose_zh": "本包的两份中文 HTML（report/proposal.html 与 visual/index.html）此前只在 font-family 栈里列系统字体名，不携带任何中文字面。在没有安装 CJK 字体的干净浏览器里，中文因此大面积退化为方框。本件登记为消除该缺陷而随包收录的中文字面子集：其上游发布物、上游哈希、子集参数、更名依据与包内产物哈希。",
+  "purpose_en": "The two Chinese HTML deliverables (report/proposal.html and visual/index.html) previously named only system fonts in their font-family stacks and shipped no Chinese glyph data. In a clean browser without any CJK font installed, Chinese text therefore degraded to tofu boxes. This file registers the Chinese glyph subset added to remove that defect: its upstream release, upstream hashes, subsetting parameters, renaming rationale and in-package artefact hashes.",
+  "why_this_face_zh": "选用 Source Han Sans SC 而非另引一款字体，理由有三：其一，四册图纸 PDF 已经内嵌该字体的子集（见 report/copyright_statement.md §四字体台账），HTML 与 PDF 用同一字面可使评审在两种载体上看到一致的字形；其二，其 SIL OFL 1.1 许可正本已随包收录于 visual/assets/font-license-ofl.json，本轮不需要再引入第二份许可文本；其三，本轮下载的发布物内 LICENSE.txt 的 SHA-256 与该文件已登记的 plain_text_sha256 逐位相同，溯源链自上游发布物到包内许可正本可闭合验证。",
+  "why_this_face_en": "Source Han Sans SC was chosen rather than introducing a second typeface for three reasons. First, the four drawing PDFs already embed subsets of this face (see report/copyright_statement.md, font ledger), so HTML and PDF now present identical letterforms to a reviewer. Second, its SIL OFL 1.1 licence text already ships in visual/assets/font-license-ofl.json, so no second licence document is needed. Third, the SHA-256 of LICENSE.txt inside the release downloaded for this round is bit-for-bit equal to the plain_text_sha256 already registered in that file, closing the provenance chain from upstream release to the in-package licence text.",
+  "upstream_release": {
+    "asset_name": "09_SourceHanSansSC.zip",
+    "download_url": "https://github.com/adobe-fonts/source-han-sans/releases/download/2.005R/09_SourceHanSansSC.zip",
+    "release_tag": "2.005R",
+    "bytes": 95177106,
+    "sha256": "ef7364f7ac2564be1ae9c1d74276de2653fe38b73449070398c4fc0b7e032ff1",
+    "retrieved_date": "2026-08-25"
+  },
+  "upstream_licence_file": {
+    "path_in_release": "LICENSE.txt",
+    "bytes": 4463,
+    "sha256": "fcac737e761ec63dbfbdce11030a1780161920d80315edba9c8beff1c2bac5a2",
+    "matches_packaged_licence_text": true,
+    "note_zh": "该值与 visual/assets/font-license-ofl.json 的 plain_text_sha256 相同，本轮实测比对相等。",
+    "note_en": "This value equals plain_text_sha256 in visual/assets/font-license-ofl.json; the two were measured and compared in this round."
+  },
+  "upstream_source_face": {
+    "path_in_release": "OTF/SimplifiedChinese/SourceHanSansSC-Regular.otf",
+    "bytes": 16529832,
+    "sha256": "f1d8611151880c6c336aabeac4640ef434fa13cbfbf1ffe82d0a71b2a5637256",
+    "name_id_1": "Source Han Sans SC",
+    "name_id_5": "Version 2.005;addfeatures 5.0.0b21",
+    "glyph_count": 65535,
+    "cmap_entries": 44853,
+    "outline_format": "CFF"
+  },
+  "subset": {
+    "tool": "fontTools 4.63.0 (fontTools.subset.Subsetter), brotli for woff2 compression",
+    "python": "Haidian_OC_toolchain/venv, CPython 3.14",
+    "character_set_source_zh": "从包内 11 个交付文件中提取全部非 ASCII 字符的并集：report/proposal.html、report/proposal.en.html、visual/index.html、visual/index.en.html，以及 visual/assets/ 下 7 个会向 DOM 注入文案的脚本（scene-data.js、scene.js、seb-crosscheck-run.js、seb-op04-chain-run.js、seb-tabletop-run.js、spine3d.js、three.min.js）。",
+    "character_set_source_en": "Union of every non-ASCII character found in eleven delivered files: report/proposal.html, report/proposal.en.html, visual/index.html, visual/index.en.html, and the seven scripts under visual/assets/ that inject copy into the DOM (scene-data.js, scene.js, seb-crosscheck-run.js, seb-op04-chain-run.js, seb-tabletop-run.js, spine3d.js, three.min.js).",
+    "codepoints_requested": 1323,
+    "cjk_unified_ideographs": 1290,
+    "other_codepoints": 33,
+    "options": {
+      "flavor": "woff2",
+      "desubroutinize": true,
+      "hinting": false,
+      "layout_features": [],
+      "glyph_names": false,
+      "notdef_outline": false,
+      "name_IDs": "*",
+      "name_legacy": true,
+      "name_languages": "*",
+      "drop_tables_added": [
+        "DSIG",
+        "VORG",
+        "vhea",
+        "vmtx",
+        "BASE"
+      ]
+    },
+    "drop_tables_rationale_zh": "VORG、vhea、vmtx、BASE 是竖排书写所需的度量与基线表；本包四份 HTML 与三份样式表中 writing-mode 与 text-orientation 的出现次数为 0，全部为横排，故删除这四张表不改变任何一处渲染结果。DSIG 为数字签名表，子集化后必然失效。",
+    "drop_tables_rationale_en": "VORG, vhea, vmtx and BASE carry vertical-writing metrics and baselines; writing-mode and text-orientation occur zero times across the package's four HTML files and three stylesheets, so dropping them changes no rendered result. DSIG is a digital-signature table that is void once the font is subsetted.",
+    "output_bytes": 198300,
+    "output_sha256": "c9427b9129530703b7cc4c775e9ff26fa60fb2efa61d404d24a21d1042b80de7",
+    "output_glyph_count": 1326,
+    "output_cmap_entries": 1325,
+    "output_tables": [
+      "CFF ",
+      "GPOS",
+      "GSUB",
+      "OS/2",
+      "cmap",
+      "head",
+      "hhea",
+      "hmtx",
+      "maxp",
+      "name",
+      "post"
+    ]
+  },
+  "reserved_font_name_compliance": {
+    "clause_zh": "OFL 1.1 第 3 条：Modified Version 不得使用 Reserved Font Name。字形子集属 Modified Version。",
+    "clause_en": "OFL 1.1 clause 3: no Modified Version may use a Reserved Font Name. A glyph subset is a Modified Version.",
+    "reserved_font_name": "Source",
+    "renamed_family": "ESJZ Sans Subset",
+    "renamed_postscript_name": "ESJZSansSubset-Regular",
+    "renamed_unique_id": "ESJZSansSubset-Regular;subset-of-SourceHanSansSC-2.005",
+    "name_ids_rewritten": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      16,
+      17
+    ],
+    "name_ids_preserved_verbatim": [
+      0,
+      13,
+      14
+    ],
+    "preserved_note_zh": "name ID 0（版权声明，含 Reserved Font Name 'Source' 字样）、name ID 13（许可声明）与 name ID 14（许可 URL）在子集内逐字保留，以满足 OFL 1.1 第 2 条「每份副本都必须附带上述版权声明与本许可」。所有语言的族名记录（含中文「思源黑体」记录）一并改名，未留下任何仍使用保留名的族名字段。",
+    "preserved_note_en": "name ID 0 (the copyright notice, which itself states the Reserved Font Name 'Source'), name ID 13 (licence statement) and name ID 14 (licence URL) are kept verbatim inside the subset to satisfy OFL 1.1 clause 2, which requires the copyright notice and licence to travel with each copy. Family-name records in every language, including the Chinese record, were renamed, so no family-name field still carries the reserved name."
+  },
+  "packaged_artifact": {
+    "path": "visual/assets/cjk-webfont.css",
+    "bytes": 265631,
+    "sha256": "a826a972ef68705a071ff6a4449ac5ea0cd57951033a234aecc2599589f1daee",
+    "carrier_zh": "本仓库的校验器把 visual/assets/ 的扩展名白名单限定为 .css/.js/.json/.svg/.png/.jpg/.jpeg/.webp，.woff2 不在其内；report/ 目录的文件集是封闭枚举，不能新增文件。因此字体只能以 base64 data URI 内嵌进一份 CSS 承载，两份中文 HTML 与两份英文 HTML 以相对路径共用这一份，全包只存一份字面数据。",
+    "carrier_en": "The repository validator restricts visual/assets/ to .css/.js/.json/.svg/.png/.jpg/.jpeg/.webp, which excludes .woff2, and the report/ directory has a closed file whitelist that admits no new file. The font can therefore only travel as a base64 data URI inside one CSS file, shared by relative reference from all four HTML pages, so the package stores exactly one copy of the glyph data.",
+    "font_family": "ESJZ Sans Subset",
+    "font_weight": 400,
+    "font_display": "swap",
+    "unicode_range": "U+A0-B6, U+B8-2012, U+2015-2017, U+201A-201B, U+201E-2025, U+2027-10FFFF",
+    "unicode_range_exclusions": [
+      "U+00B7",
+      "U+2013",
+      "U+2014",
+      "U+2018",
+      "U+2019",
+      "U+201C",
+      "U+201D",
+      "U+2026"
+    ],
+    "unicode_range_rationale_zh": "被排除的八个码位是 · – — ‘ ’ “ ” …，全部为西文排印标点。它们仍被打进子集（覆盖断言因此仍为零缺字），但 unicode-range 不认领，使英文页的破折号与引号继续由页面既有西文字体栈渲染，不会被换成中文字面的全角形态。任何带拉丁覆盖的字体都含这八个码位，排除它们不会产生新的缺字。",
+    "unicode_range_rationale_en": "The eight excluded codepoints are the Western typographic punctuation · – — ‘ ’ “ ” … . They remain inside the subset, so the coverage assertion still reports zero missing glyphs, but unicode-range does not claim them, which keeps dashes and quotation marks on the English page rendering from the page's existing Western stack rather than switching to full-width Chinese forms. Every font with Latin coverage carries these eight codepoints, so excluding them introduces no new tofu.",
+    "ua_stylesheet_override_selector": "code, pre, kbd, samp",
+    "ua_stylesheet_override_stack": "\"ESJZ Sans Subset\", ui-monospace, SFMono-Regular, Menlo, Consolas, \"Liberation Mono\", monospace",
+    "ua_stylesheet_override_rationale_zh": "浏览器 UA 样式表给 code／pre／kbd／samp 指定 monospace，该声明绕过页面自身的 font-family 栈。v9.8 的浏览器实测扫查证实：不加这条修正，`report/proposal.html` 的 `<code>` 元素内 309 个汉字仍退回系统字体，在无 CJK 字体的环境里照样是方框。本 CSS 因此把子集前置到同一条等宽族链首位，其后保留完整等宽栈；子集不含任何 ASCII 字形，西文与代码的等宽外观不受影响。该规则写在本 CSS 内而不是逐份写进四份 HTML，故四份页面只要引用本文件即同时得到修正。",
+    "ua_stylesheet_override_rationale_en": "Browser user-agent stylesheets set `monospace` on code, pre, kbd and samp, and that declaration bypasses the page's own font-family stack. The browser sweep run for v9.8 showed that without this correction 309 Han characters inside `<code>` elements of `report/proposal.html` still fell back to a system font and would still be tofu where no CJK font is installed. The CSS therefore places the subset first in the same monospace chain and keeps the full monospace stack behind it; the subset contains no ASCII glyphs, so Latin text and code keep their monospace appearance. Putting the rule in this CSS rather than in each of the four HTML files means every page that references this file is corrected at once."
+  },
+  "consumers": [
+    {
+      "path": "report/proposal.html",
+      "reference": "../visual/assets/cjk-webfont.css",
+      "injected_by": "Haidian_OC_toolchain/wpe3/post_render_report.py"
+    },
+    {
+      "path": "report/proposal.en.html",
+      "reference": "../visual/assets/cjk-webfont.css",
+      "injected_by": "Haidian_OC_toolchain/wpe3/post_render_report.py"
+    },
+    {
+      "path": "visual/index.html",
+      "reference": "assets/cjk-webfont.css",
+      "injected_by": "hand-maintained"
+    },
+    {
+      "path": "visual/index.en.html",
+      "reference": "assets/cjk-webfont.css",
+      "injected_by": "hand-maintained"
+    },
+    {
+      "path": "visual/assets/scene.css",
+      "reference": "font-family stack only",
+      "injected_by": "hand-maintained"
+    },
+    {
+      "path": "visual/assets/spine3d.css",
+      "reference": "font-family stack only",
+      "injected_by": "hand-maintained"
+    }
+  ],
+  "verification": {
+    "tool": "Haidian_OC_toolchain/wpe3/font_coverage_check.py",
+    "assertions": 19,
+    "failures": 0,
+    "run_date": "2026-08-30",
+    "checks_zh": [
+      "A 承载资产：CSS 内的 data URI 可 base64 解码、解码结果以 wOF2 魔数开头、可被 fontTools 打开、族名已改名、unicode-range 已声明",
+      "B 覆盖：11 个来源文件的 1323 个唯一非 ASCII 字符全部在子集 cmap 内，缺字 0 个；四份 HTML 的 1301 个唯一非 ASCII 字符缺字 0 个",
+      "C 字体栈首位：四份 HTML 与两份场景样式表共 23 条 font-family 声明，第一个族名全部是子集族名",
+      "D 引用可解析：四份 HTML 各有且仅有一条对该 CSS 的相对路径引用，且该路径在磁盘上存在",
+      "E1 UA 样式表等宽族修正在位，且子集排在该族链首位",
+      "E unicode-range 例外如实登记：落在 range 之外的 7 个字符全部属于本文件登记的八项白名单"
+    ],
+    "checks_en": [
+      "A carrier: the data URI decodes from base64, starts with the wOF2 magic, opens in fontTools, carries the renamed family, and declares a unicode-range",
+      "B coverage: all 1,323 unique non-ASCII characters across eleven source files are present in the subset cmap, zero missing; the four HTML files contribute 1,301 unique non-ASCII characters, zero missing",
+      "C stack position: across the four HTML files and two scene stylesheets, all 23 font-family declarations name the subset family first",
+      "D references resolve: each HTML file carries exactly one relative reference to the CSS and that path exists on disk",
+      "E1 the user-agent monospace override is present and names the subset first in that family chain",
+      "E unicode-range exceptions are registered: the 7 characters falling outside the range all belong to the eight-item whitelist recorded in this file"
+    ],
+    "browser_render_sweep": {
+      "tool": "Haidian_OC_toolchain/wpe3/font_render_sweep.js (zero-dependency CDP client, Node 26 global WebSocket)",
+      "browser": "Google Chrome 151.0.7922.172, headless（以独立 user-data-dir 启动，不使用任何用户配置）",
+      "method_zh": "对四份 HTML 逐份加载，遍历全部可见文本节点，按元素的层叠 font-family 计算值分组，为每一条承载中文的字体栈建一个隐藏探针 span 并放入该栈下出现过的全部唯一非 ASCII 字符（不含 unicode-range 刻意排除的八个西文标点），再用 CDP `CSS.getPlatformFontsForNode` 读出渲染器实际用来绘制这些字符的字体与字形数",
+      "method_en": "Load each of the four HTML files, walk every visible text node, group them by the element's computed font-family, create one hidden probe span per Chinese-bearing stack holding all unique non-ASCII characters that occur under it (excluding the eight Western punctuation marks deliberately left out of the unicode-range), and read back, via the CDP `CSS.getPlatformFontsForNode` command, which fonts the renderer actually used and how many glyphs each supplied",
+      "result_zh": "2026-08-30 复扫：九条承载栈全部只用到一款字体且为 `ESJZ Sans Subset`，字形数与探针字符数逐条相等，回退 0 次——`report/proposal.html` 正文栈 1,265 字与等宽栈 309 字；`report/proposal.en.html` 正文栈 16 字与等宽栈 156 字；`visual/index.html` 三条栈 743／136／257 字；`visual/index.en.html` 两条栈 48／2 字。本轮同批更正本字段两处停留读数：其一，中文报告页正文栈自 v9.9 起即为 1,265 字，本字段仍写 1,263（v9.8 时点值），v9.9 把新读数写进了 `changelog.md` 而未回写本字段；其二，`visual/index.html` 正文栈本字段登记为 744 字，本轮以同一构建对该文件的 v9.9 出包版本（与当前版本在非 ASCII 字符集上逐字相同）复扫得 743 字，即 744 自登记时起即为误记。两处均按「登记读数与被判对象脱钩」一类如实更正，旧读数移入 `superseded_result`。",
+      "result_en": "Re-swept 2026-08-30: all nine Chinese-bearing stacks resolve to exactly one font, `ESJZ Sans Subset`, with glyph counts equal to the probe character counts and zero fallbacks — the body stack of `report/proposal.html` at 1,265 characters and its monospace stack at 309; `report/proposal.en.html` at 16 and 156; the three stacks of `visual/index.html` at 743, 136 and 257; the two stacks of `visual/index.en.html` at 48 and 2. Two stale readings in this field were corrected in the same batch. First, the body stack of the Chinese report page has measured 1,265 since v9.9 while this field still read 1,263, its v9.8 value: v9.9 wrote the new reading into `changelog.md` and never wrote it back here. Second, the body stack of `visual/index.html` was registered here as 744, whereas re-sweeping the v9.9 shipped copy of that file with the same browser build (a copy identical to the current one in its non-ASCII character set) yields 743 — so 744 was mis-registered from the outset. Both are corrected as instances of a register drifting from the thing it describes, and the old readings are moved to `superseded_result`.",
+      "limitation_zh": "本扫查在装有中文系统字体的机器上进行。它证明的是「页面用来绘制汉字的是随包子集而不是系统字体」，这一结论与「在没有系统中文字体的机器上也能正常显示」等价，但不是在无字体机器上的直接实测。",
+      "limitation_en": "The sweep ran on a machine that does have Chinese system fonts. What it proves is that the pages draw Han characters with the bundled subset rather than with a system font, which is equivalent to rendering correctly on a machine with no Chinese font, but it is not a direct measurement on such a machine.",
+      "run_date": "2026-08-30",
+      "superseded_result_zh": "九条承载栈全部只用到一款字体且为 `ESJZ Sans Subset`，字形数与探针字符数逐条相等，回退 0 次：report/proposal.html 正文栈 1,263 字与等宽栈 309 字；report/proposal.en.html 正文栈 16 字与等宽栈 156 字；visual/index.html 三条栈 744／136／257 字；visual/index.en.html 两条栈 48／2 字。首轮扫查曾在两份报告页的等宽栈上报红（307／154 字由系统字体绘制），该缺陷由本轮补入的 UA 等宽族修正消除，修正后复扫全绿。",
+      "superseded_result_en": "All nine Chinese-bearing stacks resolve to exactly one font, `ESJZ Sans Subset`, with glyph counts equal to the probe character counts and zero fallbacks: the body stack of report/proposal.html at 1,263 characters and its monospace stack at 309; report/proposal.en.html at 16 and 156; the three stacks of visual/index.html at 744, 136 and 257; the two stacks of visual/index.en.html at 48 and 2. The first sweep failed on the monospace stack of both report pages, where 307 and 154 characters were drawn by a system font; the user-agent monospace override added this round removed that defect and the re-run is fully green."
+    }
+  },
+  "limitations_zh": [
+    "只随包一个字重（Regular 400）。加粗文本由浏览器合成加粗渲染，不是真正的 Bold 字面。再收一份 Bold 子集需再增约 26 万字节，本包剩余字节预算不足以承载，故本轮不做。",
+    "子集只覆盖本轮出包时四份 HTML 与七个脚本中实际出现的字符。今后正文新增当前未出现的汉字，必须重跑子集与 font_coverage_check.py，否则新字将缺字。该断言的存在正是为了让这一步无法被遗忘。",
+    "unicode-range 排除的八个西文排印标点依赖阅读环境自带的西文字体。这一依赖是刻意的（见上文理由），不是遗漏。",
+    "上述浏览器扫查在装有中文系统字体的机器上进行，结论以「实际用字为随包子集」为据，而非在无 CJK 字体的机器上直接实测；两者等价但不是同一件事，如实登记。"
+  ],
+  "limitations_en": [
+    "Only one weight ships (Regular 400). Bold text is rendered with browser-synthesised emphasis rather than a true Bold face. Shipping a Bold subset would add roughly 260,000 further bytes, which the package's remaining byte budget cannot absorb, so it is not done in this round.",
+    "The subset covers only the characters actually present in the four HTML files and seven scripts at the time this package was cut. Any future prose introducing a Han character not already present requires re-running the subset and font_coverage_check.py, otherwise the new character will be missing. The assertion exists precisely so that this step cannot be forgotten.",
+    "The eight Western typographic punctuation marks excluded from unicode-range rely on the reading environment's own Western fonts. That dependency is deliberate, as explained above, not an oversight.",
+    "The browser sweep above ran on a machine that has Chinese system fonts; its conclusion rests on which font actually drew the glyphs rather than on a direct measurement on a machine without any CJK font. The two are equivalent but not the same thing, and the distinction is registered as fact."
+  ],
+  "revision_history": [
+    {
+      "version": "v9.9",
+      "date": "2026-08-28",
+      "reason_zh": "v9.9 双语正文新挂两段与两处段末定位句，重渲后的 report/proposal.html 出现两个此前未在包内任何交付文件中出现过的汉字（「她」与「悔」）。子集只覆盖出包时点实际出现的字符，这两字若不重出子集即为缺字——这正是 v9.8 在 limitations 中预告、并由 font_coverage_check.py 的 B 项断言负责拦截的情形，本轮由该断言在正文改动后首次实拦。处置：按 v9.8 登记的同一套参数、同一份上游源字体重跑子集。上游源字体本轮以本机留存副本复用，其 SHA-256 与本文件 upstream_source_face.sha256 逐位相同（f1d86111…5637256），溯源链未因复用而中断。",
+      "reason_en": "At v9.9 two paragraphs and two sentence-level additions were mounted in the bilingual prose, and the re-rendered report/proposal.html introduced two Han characters that had never appeared in any delivered file of the package (她 and 悔). The subset covers only the characters present at packaging time, so without a rebuild those two would have been missing glyphs — exactly the case foreseen in the v9.8 limitations and guarded by check B of font_coverage_check.py, which caught it here for the first time after a prose change. The subset was rebuilt with the same parameters and the same upstream source face registered in this file. The source face was reused from a local copy whose SHA-256 is bit-for-bit equal to upstream_source_face.sha256 (f1d86111…5637256), so the provenance chain is unbroken.",
+      "deltas_zh": "字符集 1,321 → 1,323（CJK 统一表意 1,288 → 1,290，其余 33 不变）；woff2 198,180 → 198,300 字节；字形 1,324 → 1,326；cmap 1,323 → 1,325；CSS 265,471 → 265,631 字节。子集参数、更名清单、unicode-range 与等宽族修正一字未改。",
+      "deltas_en": "Character set 1,321 to 1,323 (CJK unified ideographs 1,288 to 1,290, the other 33 unchanged); woff2 198,180 to 198,300 bytes; glyphs 1,324 to 1,326; cmap 1,323 to 1,325; CSS 265,471 to 265,631 bytes. Subsetting parameters, the renaming list, unicode-range and the monospace-family correction are unchanged.",
+      "superseded_output_sha256": "dcc5dbeb91dbd806d78dca33f53bdd19018add76c9ae850db9f6e0fc0cb3b094",
+      "superseded_packaged_sha256": "2c71b0434ade177622154a74f3b6c80b5ea74a2e3215ad7fa1b9d031e5332a3b"
+    }
+  ]
+}

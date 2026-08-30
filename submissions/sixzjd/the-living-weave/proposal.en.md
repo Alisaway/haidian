@@ -15,7 +15,6 @@ scenarios: ["ai-traffic-walkability", "enterprise-service-copilot", "public-safe
 
 > A city is not a machine; a city is a living fabric. The railway is the warp, the transverse paths are the weft, and AI is the Jacquard mechanism — the first programmable machine in human history. We are not planning a city; we are re-threading the loom, so that the warp and weft of the century-old Jingzhang line may weave the future once more.
 
----
 
 ## 1. Design Basis and Source Inventory
 
@@ -27,7 +26,7 @@ The second warp thread is the *Agent Task Book* [source:AGENT-TASKBOOK], which t
 
 A supplementary navigation layer includes the Processed Fact Pack [source:PROCESSED-FACT-PACK] — it helps designers quickly grasp the three scope tiers, the task list, and data gaps, but does not itself constitute a new authoritative source. All factual determinations must still trace back to the registered original materials.
 
-![Source evidence chain and site overview](assets/figures/site-overview.png)
+![Source evidence chain and site overview](assets/figures/site-overview.en.png)
 
 ### 1.2 "Fabric Quality Control" of Source Reliability
 
@@ -53,7 +52,6 @@ This proposal uses five categories of evidence markers to help reviewers trace f
 
 Each paragraph of main text uses at most 3 markers, keeping the evidence chain clear without overwhelming the narrative. Full source relationships are maintained in `sources.json`, `standard_matrix.json`, and `compliance_matrix.json`; machine indexes are not repeated in the body text.
 
----
 
 ## 2. Three-Tier Scope Working Framework
 
@@ -67,7 +65,7 @@ The structure of a fabric depends on warp density and the way weft threads inter
 - **Weft 3 — Dazhongsi Structured Weave**: 72.0 hectares, a stable corporate pattern. Headquarters economy, business services, and AI deployment are woven like warp-knit fabric — structurally explicit, predictable, and capable of sustaining large-scale industrial operations.
 - **Cross-Weave**: Transverse connections — rail transit interchanges, green corridors, data infrastructure — stitch the three wefts together with the warp into a single, integrated whole.
 
-![Three-tier scope and spatial structure analysis](assets/figures/land-use-structure.png)
+![Three-tier scope and spatial structure analysis](assets/figures/land-use-structure.en.png)
 
 ### 2.2 Depth Correspondence of the Three-Tier Working Framework
 
@@ -89,7 +87,6 @@ A city is not a homogeneous textile. If every district were woven at the same de
 
 This density gradient is not static zoning but a dynamic weaving logic: as technology evolves and demand shifts, open weave districts can gradually intensify, and dense weave districts can loosen locally — just as a Jacquard mechanism can adjust the lift pattern of every individual warp thread in real time according to different pattern cards.
 
----
 
 ## 3. Coordinated Research Scope: Industrial and Future City Study
 
@@ -115,6 +112,14 @@ The branding core of the proposal is **"The Living Weave"** [source:AGENT-TASKBO
 
 The visual identity system proposes "warp-weft interlace" as its core graphic motif, abstracting the crossing relationship between the parallel lines of railway tracks (warp) and transverse connections (weft) into a logo system. All brand typography, imagery, and logos must use cleared sources; no unauthorized third-party intellectual property may be used.
 
+On this basis, the proposal turns the brand guidelines into verifiable deliverables: two original vector assets ship with the package — `visual/assets/brand/living-weave-mark.svg` (the mark: three warp threads and two weft threads interlacing over-and-under, with one weft in the accent color to signify "a new weft woven into an old warp") and `visual/assets/brand/living-weave-pattern.svg` (a tileable pattern for signage backgrounds and event materials). Key guidelines:
+
+- **Color**: primary "Jingzhang Teal" (#1F4E46, from green rolling stock and riverside water), secondary "Warp-Weft Cream" (#F2EDE4, rice paper and track ballast), accent "Jacquard Orange" (#D2622A, Jacquard loom timber and safety signalling), body-text charcoal (#26262B). Color combinations must meet WCAG AA text contrast.
+- **Typography**: Source Han Sans (SIL OFL 1.1) is recommended for Chinese, Inter (SIL OFL 1.1) for Latin text and figures; both are open-licensed and clearable. No unauthorized commercial fonts.
+- **Graphic extension**: minimum mark size 24 px; pattern density comes in open, medium, and dense grades, matching the signage backgrounds of the open-weave, weft, and dense-weave districts. Distortion, drop shadows, and rotated warp/weft directions are prohibited (warp stays vertical, weft stays horizontal).
+- **Media application**: four templates — signage totems, event materials, document headers, and offline web footers; bilingual signage appears as a horizontal pair, Chinese above English.
+- **Bilingual tagline pair**: Chinese "百年京张，织就未来" and English "Weaving a century into what's next." The two lines must always be used as a pair, never alone.
+
 ### 3.3 Future Urban Form: How AI Changes the Fabric's Pattern
 
 Artificial intelligence is transforming the way people work, live, socialize, learn, commute, and access public services. The proposal translates these changes into spatial responses:
@@ -134,24 +139,36 @@ These spatial responses are not vague technology visions; they are realized as l
 
 The proposal selects the following global cases as benchmarks, each representing a distinct "weaving method" [source:AGENT-TASKBOOK]:
 
-| Case | Weaving Type | Benchmark Insight |
-| --- | --- | --- |
-| Shenzhen Huaqiangbei | Bottom-up dense weave | Spontaneous weaving from electronics market to hardware innovation ecosystem |
-| Shenzhen Qianhai | Policy-guided structured weave | How a reclaimed new town rapidly formed its network through institutional innovation |
-| Boston Innovation District | University-community open weave | How MIT/Harvard-area innovation districts connect fragmented parcels through slow-traffic systems and public space |
-| Tel Aviv | Nationwide startup weave | How a national innovation ecosystem spilled over from military technology into civilian entrepreneurship |
-| Singapore Jurong Lake District | Integrated city-industry new weave | The transformation path from industrial zone to "Life Sciences and AI Innovation Hub" |
-| The Silk Road | Civilization-scale weave network | China's earliest "cross-civilization innovation network" — how technology and culture interlaced through trade routes |
+| Case | Weaving Type | Benchmark Insight | Source |
+| --- | --- | --- | --- |
+| Shenzhen Huaqiangbei | Bottom-up dense weave | Spontaneous weaving from electronics market to hardware innovation ecosystem | [source:CASE-SZ-HUAQIANGBEI] |
+| Boston Innovation District (Seaport, South Boston) | University-community open weave | How MIT/Harvard-area innovation districts connect fragmented parcels through slow-traffic systems and public space | [source:CASE-BOSTON-SEAPORT] |
+| Tel Aviv (Silicon Wadi) | Nationwide startup weave | How a national innovation ecosystem spilled over from military technology into civilian entrepreneurship | [source:CASE-IL-TELAVIV] |
+| Singapore Jurong Lake District | Integrated city-industry new weave | The transformation path from industrial zone to "Life Sciences and AI Innovation Hub" | [source:CASE-SG-JURONG] |
+| London King's Cross | Rail-yard infill weave | A former rail goods yard regenerated into a mixed-use district — how rail heritage weaves into contemporary city life | [source:CASE-LDN-KINGSX] |
+| Barcelona 22@ and Superblocks | Fine-grained service-radius weave | Weaving slow traffic and service radii into the existing street grid through superblocks | [source:CASE-BCN-22A] |
 
-Detailed analysis of benchmark cases, applicability assessments, and localization recommendations are stored in `report/ecosystem_cases.md`.
+The six cases correspond one-to-one with the six original abstract case cards under `assets/cases/` and the per-case CASE-* entries in `sources.json`; detailed analysis, applicability assessment, and localization recommendations are stored in the "Global benchmark cases" section of `report/narrative.md`.
 
----
+### 3.5 Stitching the Two Wings: Aligning with the Official "Three Zones, Two Wings" Structure
+
+An April 2026 public article on the website of the Beijing Municipal Science and Technology Commission (and Zhongguancun Science Park Management Committee) describes the belt as "Three Zones, Two Wings": the Xuebeiyuan AI Self-Driven Innovation Acceleration Zone in the north, the AI Origin Community in the center, the Dazhongsi AI Industry Cluster Zone in the south, flanked by the Zhongguancun Sci-Tech Service Wing on the west and the Xiaoyuehe Scenario-Empowerment Wing on the east, with a publicly reported total area of about 37 km² [source:KW-SANQU-LIANGYI] [assumption:ASSUMP-013]. The proposal's "One Warp, Three Wefts" weave aligns with this structure item by item; in the fabric language, the two wings are the **selvage** — the two lateral bands that lock the structure and keep the fabric from unraveling.
+
+Scale note: the public reporting uses roughly 37 km², while the coordinated research scope of this taskbook is 43.6 km²; the difference stems from boundary demarcation and statistical methods [assumption:ASSUMP-013]. All area metrics in this proposal are recomputed strictly from the taskbook's three scope tiers and the provisional boundary; the two figures are never mixed. The wings are a coordination-layer structure and add no new floor-area assumptions.
+
+- **Central AI Origin Community and Southern Dazhongsi AI Industry Cluster Zone**: these correspond directly to the two key areas in Sections 5.3 and 5.4.
+- **Northern Xuebeiyuan AI Self-Driven Innovation Acceleration Zone**: this corresponds to the Zhongzhiyuan Open Weave District in Section 5.2 (taskbook area A1). "Zhongzhiyuan" is this proposal's name and "Xuebeiyuan" the public-reporting name for the same area; official documents take precedence.
+- **Western Zhongguancun Sci-Tech Service Wing**: this is not new developable land. It "stitches" Zhongguancun Street's existing sci-tech service capacity — IP, legal, consulting, testing, and pilot-scale matching — into the Jingzhang warp. The stitching nodes are the two "selvage seams" at Dazhongsi Station and Wudaokou Station: the four-quadrant pedestrian loop at Dazhongsi (JZ-06) faces the Zhongguancun east office side, and the technology-transfer street (JZ-04) faces the Xueyuan Road university side; the service frontage stays within walking reach along the wefts.
+- **Eastern Xiaoyuehe Scenario-Empowerment Wing**: the Xiaoyuehe canal flows north into the Qinghe, roughly parallel to the Jingzhang warp. The proposal introduces the **Xiaoyuehe Continuous Public Experience Path** as a conceptual corridor: a continuous slow-traffic experience line along the canal and its riverside green edges, linking the Qinghe innovation frontage (JZ-02) at its north end and passing university east gates, community pocket parks, and waterfront walks, with AI scenario experience points (slow-traffic navigation, environmental sensing, community service terminals) along the way [data:geometry/roads.geojson#ROAD-001] [depth:scenario_evidence]. Scenario cards thereby gain two continuous public carriers — the warp (heritage park) and the east wing (Xiaoyuehe) — answering the "scenario empowerment" positioning. The path is a conceptual suggestion; alignment, ownership, and blue-line conditions await official waterway and utility data.
+
+The two wings share the same scenario-governance, permitting, and exit mechanisms as the three key areas and the annual operations (Section 9.5). All wing content is woven into existing streets, canal blue lines, and public space, with no new development-intensity assumptions.
+
 
 ## 4. Overall Design Scope: Urban Regeneration and Regulatory-Plan-Depth Urban Design
 
 ### 4.1 "Ripping the Warp, Threading the Weft" of Urban Regeneration
 
-The overall design scope (11.4 km²) requires urban design depth at the level of a detailed regulatory plan [standard:MOHURD-CONTROL-DETAILED-PLANNING]. The proposal understands urban regeneration as a "rip the warp, thread the weft" operation — not demolishing all the warp threads and starting over, but preserving the historical warp (Jingzhang Railway heritage, Qinghuayuan Railway Station, university campus fabric) while threading new weft (innovation functions, public services, green infrastructure).
+The overall design scope (11.4 km²) is organized with reference to the depth requirements of a detailed regulatory plan, forming a concept-level framework that professional teams can deepen [standard:MOHURD-CONTROL-DETAILED-PLANNING]. The proposal understands urban regeneration as a "rip the warp, thread the weft" operation — not demolishing all the warp threads and starting over, but preserving the historical warp (Jingzhang Railway heritage, Qinghuayuan Railway Station, university campus fabric) while threading new weft (innovation functions, public services, green infrastructure).
 
 The land-use structure plan takes [data:geometry/land_use.geojson#LU-001] as its spatial carrier, forming a complete, closed, seamless land-use zoning scheme. Land-use classification follows [standard:MNR-LAND-USE-CLASSIFICATION-GUIDE], covering residential, commercial, R&D office, public service, green space and plaza, transport facility, and municipal facility categories. The current land-use plan is generated on the basis of a provisional boundary and may serve as statutory basis only after formal regulatory-plan conditions are confirmed [assumption:A-CONTROLS-001].
 
@@ -186,15 +203,14 @@ Through overlay analysis of current land use and industrial performance, the pro
 
 Each regeneration strategy is paired with a "Reversible Weft" mechanism (see Section 10), ensuring that the regeneration process is testable, evaluable, and adjustable.
 
----
 
 ## 5. Key Area Detailed Design
 
 ### 5.1 Overview
 
-The three key areas are the specific siting of the "One Warp, Three Wefts" weaving method. Each area achieves the urban design depth of a comprehensive implementation plan [depth:three_key_area_detailed_design], covering functional programming, building scale, architectural form, retain-renovate-demolish classification, public space systems, traffic organization, and implementation projects.
+The three key areas are the specific siting of the "One Warp, Three Wefts" weaving method. Each area is organized with reference to the depth requirements of a comprehensive implementation plan, as a concept-level framework for professional teams to deepen [depth:three_key_area_detailed_design], covering functional programming, building scale, architectural form, retain-renovate-demolish classification, public space systems, traffic organization, and implementation projects.
 
-![Overview of the three key area designs](assets/figures/key-areas.png)
+![Overview of the three key area designs](assets/figures/key-areas.en.png)
 
 ### 5.2 Weft 1: Zhongzhiyuan Open Weave District (192.1 ha)
 
@@ -249,7 +265,6 @@ Dazhongsi is the most structurally stable of the three weft districts. Its weavi
 
 **Pilgrimage Landmark (3): Warp-Weft Tower** — Located at the highest point of the Dazhongsi district, this observation tower commands a view of the entire Jingzhang Railway corridor. The tower's structure takes the interlacing of warp (vertical) and weft (ascending spiral) as its formal motif. A panoramic observation deck at the top lets visitors see the "entire fabric" — from Qinghuayuan Railway Station in the south to Qinghe in the north, from the openness of Zhongzhiyuan to the density of AI Origin and the solidity of Dazhongsi. Inside the tower, a "Pattern Exhibition Hall" presents the history, present, and future of the AI Innovation Belt.
 
----
 
 ## 6. AI Innovation Ecosystem, Talent Personas, and AI+ Scenarios
 
@@ -311,7 +326,6 @@ Entry into the Pattern Library does not automatically authorize any of the twelv
 
 People can participate or complain through a staffed desk, paper form, telephone, and accessible web page. A smartphone, account registration, or algorithmic score must never be a precondition for service. Pilots must publish participation capacity, free or low-cost rules, construction notice for nearby businesses, and complaint-response time limits. Older people, children, people with disabilities, people with low digital literacy, tenants, and small businesses receive a specific access and disturbance review. A safety, privacy, discrimination, accessibility, or unresolved-complaint event pauses the relevant function and returns service to staff, telephone, paper wayfinding, or the existing public-service channel [depth:risk_missing_data].
 
----
 
 ## 7. Land Use, Building Scale, and Retain-Renovate-Demolish
 
@@ -352,7 +366,6 @@ The retain-renovate-demolish plan is not simply "demolish the old, build the new
 
 Retain-renovate-demolish conclusions must be based on ownership, structural assessment, and regulatory-plan conditions. Where these are absent, the proposal can only present methodology and a to-be-calibrated list; it must not fabricate definitive conclusions.
 
----
 
 ## 8. Transport, Rail, Municipal Infrastructure, and Public Services
 
@@ -368,7 +381,7 @@ The transport plan responds to the competition notice's requirements for the fol
 - **External Traffic**: Strengthen connections with the North Fifth Ring Road, Xueyuan Road, Zhichun Road, and other arterial roads.
 - **Parking and Non-Motorized Transport**: Reasonably plan motor-vehicle parking supply and non-motorized-vehicle parking, preventing parking from encroaching on public space.
 
-![Integrated map of slow-traffic, transit, and blue-green public space](assets/figures/mobility-bluegreen.png)
+![Integrated map of slow-traffic, transit, and blue-green public space](assets/figures/mobility-bluegreen.en.png)
 
 ### 8.2 Municipal and New-Type Infrastructure
 
@@ -394,7 +407,6 @@ Public service facilities cover the following categories:
 
 Facility standards, spatial layout, service radii, and operating models — where official conditions are absent — are listed as design recommendations, pending formal regulatory-plan confirmation.
 
----
 
 ## 9. Blue-Green Public Space and Urban Character
 
@@ -443,14 +455,39 @@ The proposal recommends establishing a wayfinding signage system with "warp-weft
 - Be bilingual (Chinese and English), prioritizing the competition's recommended translations.
 - Provide multilingual guided tours and digital narration at the three pilgrimage landmarks.
 - Propose a "Living Weave" cultural-symbol system and an AI-contributor honor-display scheme.
+- Reuse the original mark and pattern assets under `visual/assets/brand/` (guidelines in Section 3.2) so that full-line signage, event materials, and the offline web pages stay visually consistent.
+
+### 9.4.1 Public-Space Component Library and Honor-Display System
+
+To turn "public-space components" from a directional statement into a verifiable deliverable, the proposal provides a component catalog and an honor-display mechanism. All components follow the same baseline: reversible installation, no new permanent floor area, built-in accessibility and safety requirements, and restoration on exit.
+
+| Component | Applicable space | Accessibility & safety | Data / power boundary | Reversible installation | Maintainer | Exit rule |
+| --- | --- | --- | --- | --- | --- | --- |
+| Reversible signage totem | Warp paths, rail-station exits | Rounded corners, reflective film, braille plate | No data; no power | Ballast base, no casting | Urban-management coordination group | Remove or retain after 90-day review |
+| Modular seating & planters | Pocket plazas, waterfront walks | Seat height 450mm, wheelchair turning space | No data; no power | Individually movable | Street operator | Removed within 48h after events |
+| Community service terminal | Community centers, station plazas | Screen ≤1200mm, voice + paper channels | Anonymous queries only; existing municipal circuit | Bolt-down base | Licensed operator | Deactivate and restore on retirement |
+| Open-source code wall & honor wall | Jacquard Square, Weave Origin | Reading height 900—1600mm | Public repo metadata only; no personal data | Modular hanging | Community-culture operator | Takedown per honor mechanism |
+| Heritage trail marker band | Railway heritage walkway | High contrast, no obstruction of tactile paving | No data; no power | Precast surface-mounted elements | Park operator | Adjust on conservation changes |
+| Temporary event power pile | Event lawns, pitch areas | Earth-leakage protection, screened during use | Metered; no load beyond lighting | Reserved interface box | Event organizing committee | De-energized and stored after events |
+| Movable children's play kit | Community gardens, Qinghe frontage | Soft surfacing, EN 1176 reference | No data; no power | No hardened foundation | Street operator | Suspended on complaint or incident |
+| Accessibility ramp kit | Existing level differences | Slope ≤1:12, double handrails | No data; no power | Aluminum modular ramp | Urban-management coordination group | Removed once permanent works complete |
+
+The honor-display system follows "verifiable contribution, revocable attribution": the AI-contributor honor wall lists a voluntary GitHub ID with public contribution links (PR/commit), published only after the contributor's confirmation; content is licensed at display level under CC BY 4.0, and unauthorized third-party branding is not accepted; the list is refreshed annually, complaints are reviewed within 10 working days, and entries are removed and archived when a license lapses, on the contributor's request, or on failed verification. Honor display does not constitute a competition rating, acceptance promise, or official endorsement [assumption:ASSUMP-016].
 
 ### 9.5 Annual Operations and Regional Collaboration
 
 Living Weave is not a one-off festival identity, but an annual operating framework: an open-source and university-transfer week in spring, public scenario test days in summer, an international pitch and developer week in autumn, and a Jingzhang railway-culture and accessible-walking season in winter. Every activity is conditional on permits, safety, accessibility, consultation with nearby businesses, and a published post-event review; routes can change within permitted public space and never presume priority over residents' daily life.
 
-The research scope organizes collaboration as “university origination - Haidian conversion - Jingzhang coordination - global communication”: universities and institutes provide voluntary showcases, park service organizations support enterprise conversion, and the two cities coordinate talent, events, and industrial services only within their respective approvals and authorizations. Operating KPIs are limited to accessible participation, participant satisfaction, voluntary local-business feedback, completed enterprise-service referrals, and complaint closure. They are not investment promises or governmental performance findings [source:AGENT-TASKBOOK].
+The research scope organizes collaboration as “university origination - Haidian conversion - Jingzhang coordination - global communication.” Regional collaboration is grounded in five nameable counterparts, all conceptual directions that constitute no agreement, authorization, or promise [assumption:ASSUMP-014]:
 
----
+- **North: Zhongguancun AI Beiwai Community.** Haidian's public "Two Zones, One Belt" AI innovation street uses the Jingzhang Railway Heritage Park green belt to link the AI Origin Community in the south with the Zhongguancun AI Beiwai Community in the north — "southern origination, northern conversion, belt as the link" [source:HAIDIAN-TWO-ZONES-ONE-BELT]. The three key areas of this proposal sit in the middle segment of the "belt" and connect northward along the Jingzhang corridor for collaboration and spillover in technology conversion and industrial space.
+- **The "Three Cities and One Area" main platform.** Beijing designates Zhongguancun Science City, Huairou Science City, Future Science City, and the Innovative Industry Cluster Demonstration Area (including the Beijing Economic-Technological Development Area) as the main platform for building the international S&T innovation center [source:BEIJING-THREE-CITIES-ONE-AREA]. Conceptual collaboration directions: Zhongguancun Science City — same-domain articulation of original research and sci-tech services (the west wing of Section 3.5); Huairou Science City — data and computing demands from large scientific facilities validated as application scenarios in the belt; Future Science City — collaboration on energy and central-enterprise R&D resources; the Development Area (Yizhuang) — two-way exchange of mature intelligent-manufacturing supply and scaled autonomous-driving scenarios.
+- **Beijing-Tianjin-Hebei and Zhangjiakou.** The Jingzhang Railway's terminus was Zhangjiakou; the Jingzhang high-speed railway and green electricity are its contemporary continuation. The conceptual direction with Zhangjiakou is green computing and ice-snow tourism scenarios, echoing the century-old Jingzhang narrative of "speed and connection." No agreement exists or is implied; this is open, narrative-level docking only.
+- **Neighboring sub-districts and communities.** Communities and businesses of Qinghe, Xueyuan Road, Beixiaguan and nearby streets participate through the community review and business-consultation mechanisms of Section 6.5; collaboration is voluntary, appealable, and exitable, never top-down assignment.
+- **Global nodes.** Through the Global AI Activity Week (JZ-09) and the international reception functions of the three pilgrimage landmarks, the belt keeps an open connection to the global innovation network, with communication following the bilingual guidelines of Section 3.2.
+
+Operating KPIs are limited to accessible participation, participant satisfaction, voluntary local-business feedback, completed enterprise-service referrals, and complaint closure. They are not investment promises or governmental performance findings [source:AGENT-TASKBOOK].
+
 
 ## 10. Regeneration Project List, Implementation Policy, and Phasing
 
@@ -515,7 +552,6 @@ The phasing plan takes [data:geometry/phasing.geojson#PHASE-001] as its spatial 
 
 Phased implementation is not the same as the competition design cycle (100 days). The competition cycle is the timeline for delivering submission materials; the implementation phasing is the urban-regeneration pathway. Near-term pilots can begin with lightweight facilities, operational activities, and service platforms; medium- and long-term projects must await formal regulatory-plan, municipal, and ownership confirmations.
 
----
 
 ## 11. Indicator System, Area Recalculation, and Compliance Matrix
 
@@ -541,7 +577,9 @@ Floor-area ratio, building height, building density, setback lines, road red lin
 
 AI innovation index, talent density, industrial-service satisfaction, slow-traffic accessibility, event participation, scenario usage frequency — these indicators must be continuously collected and calibrated during the operational phase; only the framework is proposed at this stage.
 
-![Core indicator recalculation and evidence chain](assets/figures/metrics-evidence.png)
+Among them, the accessible-route completion rate (`accessibility_completion`) is honestly registered as `unknown`, but its measurement path is explicit: the numerator is the length of continuous accessible routes (segments with complete curb ramps, dropped kerbs, and crossing facilities), the denominator is the total planned accessible-route length, and the data comes from on-site sidewalk audits; during operation it is re-measured quarterly and published. Until real audit data exists, no number is entered, avoiding false precision [metric:accessibility_completion].
+
+![Core indicator recalculation and evidence chain](assets/figures/metrics-evidence.en.png)
 
 ### 11.2 Compliance Matrix
 
@@ -552,14 +590,15 @@ Key coverage relationships:
 - Notice 1.3 (Build a world-class AI innovation ecosystem) -> Sections 2, 3
 - Notice 1.4 (Overall design scope urban regeneration) -> Sections 4, 7, 8
 - Notice 1.5 (Key area detailed design) -> Section 5
-- agent.1 (Overall concept and functional coordination) -> Sections 2 and 4
+- agent.1 (Overall concept and functional coordination) -> Sections 2, 3 and 4
 - agent.2 (Full-stack innovation ecosystem) -> Sections 3 and 5
-- agent.3 (AI-enabled scenarios) -> Section 6
+- agent.3 (AI-enabled scenarios) -> Sections 3 and 6
 - agent.4 (Public space, native AI services and landmarks) -> Sections 5 and 9
 - agent.5 (Jing-Zhang, Zhongguancun and AI cultural narrative) -> Sections 3, 8 and 9
-- agent.6 (Global activities and long-term operations) -> Section 10
+- agent.6 (Global activities and long-term operations) -> Sections 9 and 10
 
----
+Among them, the "two-wing stitching" of Section 3.5 simultaneously serves agent.1 (structural coordination), agent.3 (scenario carriers), and agent.6 (regional collaboration); it is this proposal's direct response to the official "Three Zones, Two Wings" structure.
+
 
 ## 12. Risk, Copyright, and Compliance
 
@@ -582,6 +621,8 @@ All images, drawings, icons, data, and code assets have their sources, licenses,
 - All brands, fonts, images, portraits, and corporate logos must have cleared sources.
 - The proposal recommends original design and cleared resources.
 
+The offline HTML pages embed a subset of Source Han Sans (SIL OFL 1.1) as a woff2 font covering exactly the characters used, so real Chinese glyphs render offline even on review machines without CJK fonts; no remote resource is loaded.
+
 `report/copyright_statement.md` records the creator/generation method, input provenance, and redistribution status for figures, case cards, PDFs, and offline pages. OpenStreetMap, historical material, and global cases remain background references in `sources.json`; this package does not reproduce their photographs, logos, tiles, or proprietary drawings, and does not use them as statutory planning evidence.
 
 ### 12.3 Bilingual Requirement
@@ -603,6 +644,13 @@ The primary proposal document is in Chinese; a complete English counterpart tran
 | Open Weave (疏织) | Open Weave |
 | Dense Weave (密织) | Dense Weave |
 | Structured Weave (结构织) | Structured Weave |
+| Three Zones, Two Wings (三区两翼) | Three Zones, Two Wings |
+| Two Wings / Selvage (两翼 / 织边) | Two Wings / Selvage |
+| Zhongguancun Sci-Tech Service Wing (中关村科技服务翼) | Zhongguancun Sci-Tech Service Wing |
+| Xiaoyuehe Scenario-Empowerment Wing (小月河场景赋能翼) | Xiaoyuehe Scenario-Empowerment Wing |
+| Two Zones, One Belt (两区一带) | Two Zones, One Belt |
+| Brand Guidelines (品牌规范) | Brand Guidelines |
+| Xiaoyuehe Continuous Public Experience Path (小月河连续公共体验路径) | Xiaoyuehe Continuous Public Experience Path |
 
 ### 12.4 Compliance Statement
 
@@ -616,7 +664,6 @@ This proposal complies with the following requirements:
 - All spatial statements are labeled as conceptual proposals.
 - The distinction between provisional and official data is clearly stated.
 
----
 
 ## 13. References
 
@@ -635,6 +682,9 @@ This proposal complies with the following requirements:
 - [source:SOURCE-REGISTRY] Source Registry
 - [source:PROCESSED-FACT-PACK] Processed Fact Pack navigation layer
 - [source:SITE-PACKAGE] Site materials package
+- [source:KW-SANQU-LIANGYI] Beijing Municipal Science & Technology Commission website article: "Three Zones, Two Wings Build a World-Class AI Agglomeration" (2026-04, background reference)
+- [source:BEIJING-THREE-CITIES-ONE-AREA] Beijing Municipal Science & Technology Commission website: "Three Cities and One Area" topic page (background reference)
+- [source:HAIDIAN-TWO-ZONES-ONE-BELT] Beijing Daily (official Haidian account): "Haidian Builds the 'Two Zones, One Belt' AI Innovation Street" (2026-01, background reference)
 
 ### 13.3 Structured Indexes
 
@@ -665,6 +715,5 @@ This proposal complies with the following requirements:
 - The Silk Road: China's earliest "cross-civilization innovation network" — silk, papermaking, gunpowder, and other technologies spread through trade routes, forming a knowledge web spanning Asia and Europe.
 - Zhongguancun: From electronics marketplace to China's AI innovation heart — over four decades, it has re-woven China's digital fabric.
 
----
 
 > **Epilogue**: The Living Weave is not yet another grand urban-planning vision. It is a Jacquard loom — a machine that lets residents, enterprises, and AI agents together "load cards and weave cloth." Each scenario card is a harness raise, each weft thread is an urban experiment, and each bolt of fabric is the city we share. A century ago, Zhan Tianyou folded the impossible on the Jingzhang Railway; today, on that same warp, we weave new patterns. The city is a living fabric — and it is still being woven.

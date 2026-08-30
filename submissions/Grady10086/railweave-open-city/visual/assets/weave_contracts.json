@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1.0",
   "project_id": "railweave-open-city",
-  "artifact_id": "railweave-weave-contracts-v1",
+  "artifact_id": "railweave-weave-contracts",
   "title_zh": "RailWeave 织入契约",
   "title_en": "RailWeave Weave Contracts",
   "status": "conceptual_protocol_for_synthetic_verification_only",
@@ -113,11 +113,12 @@
       "残留维护物": {"artifacts": ["触觉与易读地图", "人工巡检卡", "纸质导览", "障碍闭环台账"], "steward_role": "IE", "maintenance_horizon": "如依法纳入普通公共信息服务，则按后续确定的运营责任和期限维护；未确定前不承诺持续服务"},
       "织体成熟门": {"gate_kind": "spatial_delivery_maturity", "independent": true, "cannot_substitute": "线程准入门", "decision_owner": "IE", "required_checks": [{"check_id": "FM-S06-01", "question": "连续路径、固定导视、人工服务和无障碍设施是否先行核验？", "required_evidence": "专业与代表性用户共同路线审计"}, {"check_id": "FM-S06-02", "question": "巡检、内容更新、电话和现场服务班次是否有资源？", "required_evidence": "人员与运维排班"}, {"check_id": "FM-S06-03", "question": "导视、数据、接口、设备、场地和人工服务恢复所需资源是否逐项核验并获得合法保障？", "required_evidence": "经核验的退出事项、工程量、取价、责任与资金来源记录"}]},
       "线程准入门": {"gate_kind": "ai_service_admission", "independent": true, "cannot_substitute": "织体成熟门", "decision_owner": "PO", "required_checks": [{"check_id": "TA-S06-01", "question": "动态建议是否只使用已巡检、最小必要信息？", "required_evidence": "字段清单、巡检状态和更新时限"}, {"check_id": "TA-S06-02", "question": "人工复核和拒绝 AI 无惩罚是否经代表性用户测试？", "required_evidence": "正向与反事实路径测试"}, {"check_id": "TA-S06-03", "question": "错误路线、画像和普通服务失效能否触发解编？", "required_evidence": "停止与恢复演练"}]},
-      "实施切片_90日": {
+      "实施切片_100日": {
         "status": "conceptual_pre_registration_not_an_approved_schedule",
         "days_0_30": {"purpose": "建立无 AI 基线并核验普通服务", "required_actions": ["专业与代表性用户共同审计关键路径", "记录纸质、电话、人工和固定导视的完成率、等待、距离和费用", "确认数据字段、巡检责任和申诉渠道"], "gate": "普通路径或人工服务存在关键阻断则不得进入下一段"},
         "days_31_60": {"purpose": "封闭合成与影子验证", "required_actions": ["只用合成路线事件测试错误、过期、断网和画像禁区", "AI 建议不向公众生效，由人工逐条比较", "演练停止、数据清理和固定导视恢复"], "gate": "禁区数据、不可解释误导或解编失败则返回整改"},
-        "days_61_90": {"purpose": "在授权成立时开展限量共测", "required_actions": ["限定空间、时段和参与规模", "保留人工与非数字等价路径", "逐次记录红牌、求助、差别待遇与无障碍阻断", "第 90 日作续期、整改、暂停或退出建议"], "gate": "未获场地、数据、专业、公众与运营授权时保持未启动"},
+        "days_61_90": {"purpose": "在授权成立时开展限量共测", "required_actions": ["限定空间、时段和参与规模", "保留人工与非数字等价路径", "逐次记录红牌、求助、差别待遇与无障碍阻断", "第 90 日完成强制收尾并移交退出复原"], "gate": "未获场地、数据、专业、公众与运营授权时保持未启动"},
+        "days_91_100": {"purpose": "完成退出复原并形成书面决定", "required_actions": ["撤销测试权限并依法处置测试数据", "拆除临时设备、恢复饰面并校正固定导视", "确认人工和非数字服务持续可用", "第 100 日形成保留、优化、移除或不推进的书面决定"], "gate": "六项退出事项未全部签收，或普通服务未恢复，不得作继续推进决定"},
         "exit_reserve": {"basis": "verified_exit_items_and_lawfully_confirmed_resource_plan", "amount_status": "unpriced_unapproved", "percentage_status": "not_prescribed", "sufficiency_standard_zh": "经核验且足以覆盖全部退出恢复事项，不得以任意固定比例替代逐项测算。", "covered_items": ["动态接口停用", "数据清理与访问撤销", "导视校正", "人工服务恢复", "设备撤离与场地修复", "独立退出复核"], "required_evidence": ["退出事项与工程量", "可追溯取价与日期", "责任主体与书面接收", "预算或其他合法资金来源", "恢复完成回执"], "boundary_zh": "当前不设固定比例或金额；这不是报价、预算批复、采购条件或资金承诺，资源范围与金额须经核验并依法确定。"}
       }
     },

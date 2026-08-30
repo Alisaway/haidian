@@ -1,0 +1,781 @@
+{
+  "schema_version": "1.0",
+  "title": "万感京张 离线场景演练台账（十六张场景卡的固定 seed 离线合成复算）",
+  "title_en": "Every-Sense Jingzhang offline scenario rehearsal ledger (fixed-seed offline synthetic recomputation of sixteen scenario cards)",
+  "summary": "把包内十六张 AI 场景卡（S01—S16，性质为测试脚本草稿）送进一次固定 seed 的离线合成演练，逐张登记三项机器可判、离线可复算的读数：调度字段是否通过包内既有 schema 判据、审计链要素是否齐备、以及该卡在离线推演中的结论。台账登记不利读数：一条失败、十二条阻塞、十三处审计链缺口。本文件不是效果承诺，不代表现场实测，也不宣称任何场景已获批准或已建成。",
+  "summary_en": "The package's sixteen AI scenario cards (S01–S16, drafted test scripts by nature) are put through one fixed-seed offline synthetic rehearsal, and three machine-decidable, offline-recomputable readings are registered card by card: whether the dispatch fields clear the schema criteria already in the package, whether the audit-chain elements are complete, and what the offline inference concludes for that card. The ledger registers adverse readings: one failure, twelve blocked tasks and thirteen audit-chain gaps. It is not a performance promise, does not represent site measurement, and claims for no scenario that it is approved or built.",
+  "status": "validated_offline_synthetic",
+  "method": "从包内结构化登记逐条推演，不调用在线模型、不接入真实机器人、无真实参与者、无现场数据、不使用任何个人数据。三项读数全部由包内既有判据与既有登记机器判定：调度字段判定按 visual/assets/seb-spec.json 第一组件 node_schema 的五个必填字段与两条 constraint_machine_rule 对 geometry/constraints.geojson 的 SCENARIO_NODE 要素执行；交接台账判定取 visual/assets/seb-tabletop-fixtures.json 中十条节点双联交接正例，其判定由 visual/assets/seb-tabletop-run.js 复演（在 visual/assets 目录下执行 node seb-tabletop-run.js，退出码为零表示六十二条样例判定与预期完全一致）；停止条件绑定取 risk.json 中 dimensions[].scenario_links 的直接绑定关系。全过程不产生任何现场读数，不新增任何设计主张。",
+  "method_en": "Every entry is inferred from structured registrations already in the package: no online model is called, no real robot is engaged, no real participant takes part, no site data and no personal data are used. All three readings are decided by machine against criteria and registrations the package already holds. The dispatch check runs the five required fields and two constraint_machine_rule entries of the node_schema component in visual/assets/seb-spec.json against the SCENARIO_NODE features of geometry/constraints.geojson. The handover check takes the ten node-level two-part handover positives in visual/assets/seb-tabletop-fixtures.json, whose verdicts are replayed by visual/assets/seb-tabletop-run.js (run `node seb-tabletop-run.js` inside visual/assets; exit code zero means all sixty-two fixtures match expectation). Stop-condition binding is read from the direct scenario_links relation in dimensions[] of risk.json. The run produces no site reading and adds no design claim.",
+  "seed": 20260825,
+  "seed_use_zh": "seed 只用于任务排序等确定性用途：任务按场景卡编号 S01—S16 的自然顺序登记，seed 与卡号的 SHA-256 摘要作为并列时的确定性次序键。本演练不含任何随机过程，因此 seed 不改变任何读数——同一份包在任何机器上按本文件 method 复算，得到的三项读数逐项相同。",
+  "seed_use_en": "The seed serves determinism only: tasks are registered in the natural order of the card numbers S01–S16, with the SHA-256 digest of seed and card number as a tie-breaking key. The rehearsal contains no random process, so the seed changes no reading — recomputing this package on any machine by the method above yields the same three readings, item by item.",
+  "claim_scope_zh": "离线合成演练读数，非现场绩效。三项读数衡量的是包内文件之间是否自洽、可复算，衡量不了任何服务在真实场地上的表现。本包七项包容性实测指标与十项待实测指标保持 unknown，不因本台账改变。",
+  "claim_scope_en": "Offline synthetic rehearsal readings, not field performance. The three readings measure whether the package's files are mutually consistent and recomputable; they measure nothing about how any service performs on a real site. The package's pending measured metrics stay unknown and are not changed by this ledger.",
+  "scenario_id_scope": "in_package_scenario_card",
+  "scenario_id_scope_note_zh": "本文件 tasks[].scenario_id 取包内场景卡编号 S01—S16（见 proposal.md 场景卡表与 geometry/constraints.geojson 的 scenario_card_id 属性），不是仓库 scenarios/*.json 的标准场景标识。十六张卡与仓库六个标准场景不属同一分类体系，逐张强行对应会制造包内并不存在的关联，故不映射。",
+  "scenario_id_scope_note_en": "The scenario_id values here are the package's own card numbers S01–S16 (see the scenario-card table in proposal.md and the scenario_card_id attribute in geometry/constraints.geojson), not the standard scenario identifiers under scenarios/*.json. The sixteen cards and the repository's six standard scenarios do not share one taxonomy, and forcing a card-by-card mapping would manufacture a relation the package does not hold, so none is declared.",
+  "card_nature_zh": "十六张卡为测试脚本草稿，不是已获批准的试点，也不是已完成的用户研究；每张卡成立与否由 G2 封闭成对测试逐张判定。本台账登记的是这些草稿在离线状态下的复算结果，卡的数量与本台账的成功计数均不构成需求覆盖度。",
+  "card_nature_en": "The sixteen cards are drafted test scripts, neither approved pilots nor completed user research; whether a card holds is decided card by card at the G2 closed paired test. This ledger registers how those drafts recompute offline, and neither the card count nor the success count here constitutes requirement coverage.",
+  "decision_rules": [
+    {
+      "rule_id": "DR-1",
+      "field": "dispatch_schema_valid",
+      "rule_zh": "对该卡承载的每一个 SCENARIO_NODE 要素执行 node_schema 判定：ai_off_path、human_handoff、gate_id、operating_mode、responsible_role 五个必填字段须存在且非空；gate_id 取值须落在 G0—G3 枚举内；ai_off_path 不得命中 forbidden_dependency 词表（命中即 NODE_CONSTRAINT_VIOLATION:ai_off_path）；human_handoff 须至少命中一个 required_role_token（未命中即 NODE_CONSTRAINT_VIOLATION:human_handoff）。复用多个节点的卡按合取判定，全部节点通过才为 true。",
+      "rule_en": "The node_schema check runs on every SCENARIO_NODE feature the card rests on: the five required fields ai_off_path, human_handoff, gate_id, operating_mode and responsible_role must be present and non-empty; gate_id must fall inside the G0–G3 enumeration; ai_off_path must not hit the forbidden_dependency lexicon (a hit records NODE_CONSTRAINT_VIOLATION:ai_off_path); and human_handoff must hit at least one required_role_token (a miss records NODE_CONSTRAINT_VIOLATION:human_handoff). A card reusing several nodes is judged by conjunction: every node must pass.",
+      "source_files": [
+        "visual/assets/seb-spec.json#components.node_schema",
+        "geometry/constraints.geojson"
+      ]
+    },
+    {
+      "rule_id": "DR-2",
+      "field": "audit_complete",
+      "rule_zh": "三项要素须同时齐备：其一，责任角色——承载节点的 responsible_role 与 human_handoff 均非空；其二，回执与交接——该节点在 seb-tabletop-fixtures.json 中存在一条双联交接正例且经校验器判为接收（accept），复用多节点的卡须每个节点各有一条；其三，停止条件——risk.json 的 dimensions[].scenario_links 中存在直接指向该卡编号的风险条目。任一要素缺失即为 false。第三项刻意不接受间接推断：通过节点、工作包或空间要素转手推得的关联不计入，缺口按其原样登记。",
+      "rule_en": "Three elements must all be present. First, the accountable role: the carrying node has non-empty responsible_role and human_handoff. Second, the receipt and handover: the node has a two-part handover positive in seb-tabletop-fixtures.json accepted by the checker, and a card reusing several nodes needs one for each. Third, the stop condition: a risk entry in dimensions[].scenario_links of risk.json points directly at this card number. Any missing element makes the value false. The third element deliberately refuses indirect inference — a relation reached through a node, a work package or a spatial feature does not count, and the gap is registered as it stands.",
+      "source_files": [
+        "geometry/constraints.geojson",
+        "visual/assets/seb-tabletop-fixtures.json",
+        "visual/assets/seb-tabletop-run.js",
+        "risk.json#dimensions"
+      ]
+    },
+    {
+      "rule_id": "DR-3",
+      "field": "outcome",
+      "rule_zh": "按优先级取第一个命中项：(1) 承载节点带 ai_off_continuity_status 且取值非空 → failure；(2) 承载节点所在的公共空间要素上，登记了当前结论为 no-go 的开办条件档案 → blocked_carrier_readiness_no_go；(3) audit_complete 为 false → blocked_audit_chain_incomplete；(4) 以上均不命中 → success。本轮实跑中 (2) 唯一可能命中的节点为 OP-04，其已先被 (1) 命中，故 blocked_carrier_readiness_no_go 在本轮无任务取值，服务桌 no-go 作为第二条不利依据登记在该任务的 note 中。",
+      "rule_en": "The first matching branch wins: (1) the carrying node has a non-empty ai_off_continuity_status → failure; (2) the public-space feature carrying the node registers a readiness file whose current verdict is no-go → blocked_carrier_readiness_no_go; (3) audit_complete is false → blocked_audit_chain_incomplete; (4) none of the above → success. In this run the only node branch (2) could match is OP-04, which branch (1) already claims, so blocked_carrier_readiness_no_go is taken by no task and the service-desk no-go is registered as a second adverse ground in that task's note.",
+      "source_files": [
+        "geometry/constraints.geojson",
+        "geometry/public_space.geojson",
+        "visual/assets/service-desk-gonogo.json#overall_decision",
+        "visual/assets/seb-op04-chain-data.json"
+      ]
+    }
+  ],
+  "not_applicable_fields": {
+    "energy_used_kwh": null,
+    "energy_budget_kwh": null,
+    "energy_metric_note": "not_applicable: 本演练不执行任何计算负载、不驱动任何设备，逐任务的能耗预算与实际能耗都不存在可测量的对象；填写 0 或任何估算值都是编造，故整项不适用并保持为空。",
+    "energy_metric_note_en": "not_applicable: the rehearsal runs no compute load and drives no device, so neither a per-task energy budget nor an actual consumption has anything measurable behind it; writing 0 or any estimate would be fabrication, so the whole item is inapplicable and left empty.",
+    "replan_seconds": null,
+    "replan_metric_note": "not_applicable: 本演练不含在线重规划过程，没有可计时的重规划事件，因此不登记 replan_seconds，也不声明 replan_p95_seconds 与百分位算法。",
+    "replan_metric_note_en": "not_applicable: the rehearsal contains no online replanning, so there is no replanning event to time; replan_seconds is not registered and neither replan_p95_seconds nor a percentile method is declared."
+  },
+  "task_count": 16,
+  "tasks": [
+    {
+      "task_id": "SIM-001",
+      "scenario_id": "S01",
+      "scenario_card_title_zh": "多模态无障碍寻路",
+      "scenario_card_title_en": "Multimodal accessible wayfinding",
+      "dispatch_nodes": [
+        "OP-01"
+      ],
+      "node_binding_zh": "该卡承载自有场景节点。",
+      "node_binding_en": "The card carries its own scenario node.",
+      "outcome": "success",
+      "dispatch_schema_valid": true,
+      "dispatch_violations": [],
+      "audit_complete": true,
+      "audit_elements": {
+        "responsible_role_declared": true,
+        "handover_ledger_accepted": [
+          "HL-P1"
+        ],
+        "handover_receipt_actions": {
+          "OP-01": [
+            "accept"
+          ]
+        },
+        "stop_condition_bound": [
+          "R-01",
+          "R-02",
+          "R-03",
+          "R-04",
+          "R-05",
+          "R-06",
+          "R-07",
+          "R-08"
+        ]
+      },
+      "outcome_note_zh": "三项检查全部通过：节点调度字段通过 SEB v0.5.0 节点 schema 机器判定，交接台账正例经校验器判为接收，且该卡在风险台账中有直接绑定的停止条件。成功指的是这条调度链在离线状态下可被完整复算，不指该场景已获批准、已建成或已被实测。",
+      "outcome_note_en": "All three checks pass: the node dispatch fields clear the machine criteria of the SEB v0.5.0 node schema, the handover-ledger positive fixture is accepted by the checker, and the card has a stop condition bound to it directly in the risk register. Success here means the dispatch chain can be recomputed in full offline; it does not mean the scenario is approved, built or measured on site.",
+      "evidence_refs": [
+        "geometry/constraints.geojson#OP-01",
+        "visual/assets/seb-spec.json#components.node_schema",
+        "visual/assets/seb-tabletop-fixtures.json#HL-P1",
+        "risk.json#dimensions.R-01",
+        "risk.json#dimensions.R-02",
+        "risk.json#dimensions.R-03",
+        "risk.json#dimensions.R-04",
+        "risk.json#dimensions.R-05",
+        "risk.json#dimensions.R-06",
+        "risk.json#dimensions.R-07",
+        "risk.json#dimensions.R-08",
+        "proposal.md#场景卡表 S01—S16"
+      ]
+    },
+    {
+      "task_id": "SIM-002",
+      "scenario_id": "S02",
+      "scenario_card_title_zh": "低刺激安静路线与安静时段",
+      "scenario_card_title_en": "Lower-stimulation quiet route and quiet hours",
+      "dispatch_nodes": [
+        "OP-02"
+      ],
+      "node_binding_zh": "该卡承载自有场景节点。",
+      "node_binding_en": "The card carries its own scenario node.",
+      "outcome": "blocked_audit_chain_incomplete",
+      "dispatch_schema_valid": true,
+      "dispatch_violations": [],
+      "audit_complete": false,
+      "audit_elements": {
+        "responsible_role_declared": true,
+        "handover_ledger_accepted": [
+          "HL-P2"
+        ],
+        "handover_receipt_actions": {
+          "OP-02": [
+            "accept"
+          ]
+        },
+        "stop_condition_bound": []
+      },
+      "outcome_note_zh": "调度字段与交接台账均通过，但该卡在 risk.json 的 scenario_links 中没有任何直接绑定的停止条件，审计链缺一要素，演练在审计闸门处停住。停止条件绑定当前只覆盖 S01、S05、S08 三张代表场景，这与正文自述一致，缺口如实登记而不以间接推断补齐。",
+      "outcome_note_en": "The dispatch fields and the handover ledger both pass, but the card carries no stop condition bound to it in the scenario_links of risk.json, so one element of the audit chain is missing and the rehearsal halts at the audit gate. Stop-condition binding currently covers only the three representative cards S01, S05 and S08, which agrees with the prose; the gap is registered as it stands rather than filled in by inference.",
+      "evidence_refs": [
+        "geometry/constraints.geojson#OP-02",
+        "visual/assets/seb-spec.json#components.node_schema",
+        "visual/assets/seb-tabletop-fixtures.json#HL-P2",
+        "risk.json#dimensions.scenario_links",
+        "proposal.md#场景卡表 S01—S16"
+      ]
+    },
+    {
+      "task_id": "SIM-003",
+      "scenario_id": "S03",
+      "scenario_card_title_zh": "手语、字幕、语音、易读文本同屏服务",
+      "scenario_card_title_en": "Sign language, captions, speech and easy-read on one screen",
+      "dispatch_nodes": [
+        "OP-03"
+      ],
+      "node_binding_zh": "该卡承载自有场景节点。",
+      "node_binding_en": "The card carries its own scenario node.",
+      "outcome": "blocked_audit_chain_incomplete",
+      "dispatch_schema_valid": true,
+      "dispatch_violations": [],
+      "audit_complete": false,
+      "audit_elements": {
+        "responsible_role_declared": true,
+        "handover_ledger_accepted": [
+          "HL-P3"
+        ],
+        "handover_receipt_actions": {
+          "OP-03": [
+            "accept"
+          ]
+        },
+        "stop_condition_bound": []
+      },
+      "outcome_note_zh": "调度字段与交接台账均通过，但该卡在 risk.json 的 scenario_links 中没有任何直接绑定的停止条件，审计链缺一要素，演练在审计闸门处停住。停止条件绑定当前只覆盖 S01、S05、S08 三张代表场景，这与正文自述一致，缺口如实登记而不以间接推断补齐。",
+      "outcome_note_en": "The dispatch fields and the handover ledger both pass, but the card carries no stop condition bound to it in the scenario_links of risk.json, so one element of the audit chain is missing and the rehearsal halts at the audit gate. Stop-condition binding currently covers only the three representative cards S01, S05 and S08, which agrees with the prose; the gap is registered as it stands rather than filled in by inference.",
+      "evidence_refs": [
+        "geometry/constraints.geojson#OP-03",
+        "visual/assets/seb-spec.json#components.node_schema",
+        "visual/assets/seb-tabletop-fixtures.json#HL-P3",
+        "risk.json#dimensions.scenario_links",
+        "proposal.md#场景卡表 S01—S16"
+      ]
+    },
+    {
+      "task_id": "SIM-004",
+      "scenario_id": "S04",
+      "scenario_card_title_zh": "轮椅与婴儿车连续通行辅助",
+      "scenario_card_title_en": "Continuous passage assistance for wheelchairs and prams",
+      "dispatch_nodes": [
+        "OP-04"
+      ],
+      "node_binding_zh": "该卡承载自有场景节点。",
+      "node_binding_en": "The card carries its own scenario node.",
+      "outcome": "failure",
+      "dispatch_schema_valid": true,
+      "dispatch_violations": [],
+      "audit_complete": false,
+      "audit_elements": {
+        "responsible_role_declared": true,
+        "handover_ledger_accepted": [
+          "HL-P4"
+        ],
+        "handover_receipt_actions": {
+          "OP-04": [
+            "hold"
+          ]
+        },
+        "stop_condition_bound": []
+      },
+      "outcome_note_zh": "该卡承载节点带 ai_off_continuity_status = premise_unproven_pending_site_audit：按提交几何复算，AI 关闭状态下不存在一条不依赖 AI 的连续路径连接本节点与同区节点，卡所依赖的空间前提被包内自己的证据链退回未证成立状态。该节点的交接台账实例登记为暂缓在岗态而非已完成交接。此外，其所在公共空间要素上安装的万感服务桌，七项开办条件当前登记为 no-go、无一具备。",
+      "outcome_note_en": "The node this card rests on carries ai_off_continuity_status = premise_unproven_pending_site_audit: recomputed on the submitted geometry, no AI-independent continuous route connects this node to its same-area neighbours once AI is off, so the spatial premise the card depends on has been returned to unproven by the package's own evidence chain. The node's handover instance is registered as a hold with staff still on duty, not as a completed handover. Separately, the Every-Sense service desk installed on the same public-space feature stands at no-go on all seven readiness conditions, none of them met.",
+      "evidence_refs": [
+        "geometry/constraints.geojson#OP-04",
+        "visual/assets/seb-spec.json#components.node_schema",
+        "visual/assets/seb-tabletop-fixtures.json#HL-P4",
+        "risk.json#dimensions.scenario_links",
+        "visual/assets/seb-op04-chain-data.json",
+        "visual/assets/seb-change-receipt-op04.json#CR-2026-08-12-003",
+        "geometry/public_space.geojson#PUBLIC-007",
+        "visual/assets/service-desk-gonogo.json#overall_decision",
+        "proposal.md#场景卡表 S01—S16"
+      ]
+    },
+    {
+      "task_id": "SIM-005",
+      "scenario_id": "S05",
+      "scenario_card_title_zh": "服务机器人礼让与可预测交互",
+      "scenario_card_title_en": "Service-robot yielding and predictable interaction",
+      "dispatch_nodes": [
+        "OP-05"
+      ],
+      "node_binding_zh": "该卡承载自有场景节点。",
+      "node_binding_en": "The card carries its own scenario node.",
+      "outcome": "success",
+      "dispatch_schema_valid": true,
+      "dispatch_violations": [],
+      "audit_complete": true,
+      "audit_elements": {
+        "responsible_role_declared": true,
+        "handover_ledger_accepted": [
+          "HL-P5"
+        ],
+        "handover_receipt_actions": {
+          "OP-05": [
+            "accept"
+          ]
+        },
+        "stop_condition_bound": [
+          "R-01",
+          "R-02",
+          "R-03",
+          "R-04",
+          "R-05",
+          "R-07",
+          "R-08"
+        ]
+      },
+      "outcome_note_zh": "三项检查全部通过：节点调度字段通过 SEB v0.5.0 节点 schema 机器判定，交接台账正例经校验器判为接收，且该卡在风险台账中有直接绑定的停止条件。成功指的是这条调度链在离线状态下可被完整复算，不指该场景已获批准、已建成或已被实测。",
+      "outcome_note_en": "All three checks pass: the node dispatch fields clear the machine criteria of the SEB v0.5.0 node schema, the handover-ledger positive fixture is accepted by the checker, and the card has a stop condition bound to it directly in the risk register. Success here means the dispatch chain can be recomputed in full offline; it does not mean the scenario is approved, built or measured on site.",
+      "evidence_refs": [
+        "geometry/constraints.geojson#OP-05",
+        "visual/assets/seb-spec.json#components.node_schema",
+        "visual/assets/seb-tabletop-fixtures.json#HL-P5",
+        "risk.json#dimensions.R-01",
+        "risk.json#dimensions.R-02",
+        "risk.json#dimensions.R-03",
+        "risk.json#dimensions.R-04",
+        "risk.json#dimensions.R-05",
+        "risk.json#dimensions.R-07",
+        "risk.json#dimensions.R-08",
+        "proposal.md#场景卡表 S01—S16"
+      ]
+    },
+    {
+      "task_id": "SIM-006",
+      "scenario_id": "S06",
+      "scenario_card_title_zh": "认知友好办事导航",
+      "scenario_card_title_en": "Cognitively accessible service navigation",
+      "dispatch_nodes": [
+        "OP-06"
+      ],
+      "node_binding_zh": "该卡承载自有场景节点。",
+      "node_binding_en": "The card carries its own scenario node.",
+      "outcome": "blocked_audit_chain_incomplete",
+      "dispatch_schema_valid": true,
+      "dispatch_violations": [],
+      "audit_complete": false,
+      "audit_elements": {
+        "responsible_role_declared": true,
+        "handover_ledger_accepted": [
+          "HL-P6"
+        ],
+        "handover_receipt_actions": {
+          "OP-06": [
+            "accept"
+          ]
+        },
+        "stop_condition_bound": []
+      },
+      "outcome_note_zh": "调度字段与交接台账均通过，但该卡在 risk.json 的 scenario_links 中没有任何直接绑定的停止条件，审计链缺一要素，演练在审计闸门处停住。停止条件绑定当前只覆盖 S01、S05、S08 三张代表场景，这与正文自述一致，缺口如实登记而不以间接推断补齐。",
+      "outcome_note_en": "The dispatch fields and the handover ledger both pass, but the card carries no stop condition bound to it in the scenario_links of risk.json, so one element of the audit chain is missing and the rehearsal halts at the audit gate. Stop-condition binding currently covers only the three representative cards S01, S05 and S08, which agrees with the prose; the gap is registered as it stands rather than filled in by inference.",
+      "evidence_refs": [
+        "geometry/constraints.geojson#OP-06",
+        "visual/assets/seb-spec.json#components.node_schema",
+        "visual/assets/seb-tabletop-fixtures.json#HL-P6",
+        "risk.json#dimensions.scenario_links",
+        "proposal.md#场景卡表 S01—S16"
+      ]
+    },
+    {
+      "task_id": "SIM-007",
+      "scenario_id": "S07",
+      "scenario_card_title_zh": "触觉、声音、视觉三通道遗产解说",
+      "scenario_card_title_en": "Heritage interpretation across touch, sound and sight",
+      "dispatch_nodes": [
+        "OP-07"
+      ],
+      "node_binding_zh": "该卡承载自有场景节点。",
+      "node_binding_en": "The card carries its own scenario node.",
+      "outcome": "blocked_audit_chain_incomplete",
+      "dispatch_schema_valid": true,
+      "dispatch_violations": [],
+      "audit_complete": false,
+      "audit_elements": {
+        "responsible_role_declared": true,
+        "handover_ledger_accepted": [
+          "HL-P7"
+        ],
+        "handover_receipt_actions": {
+          "OP-07": [
+            "accept"
+          ]
+        },
+        "stop_condition_bound": []
+      },
+      "outcome_note_zh": "调度字段与交接台账均通过，但该卡在 risk.json 的 scenario_links 中没有任何直接绑定的停止条件，审计链缺一要素，演练在审计闸门处停住。停止条件绑定当前只覆盖 S01、S05、S08 三张代表场景，这与正文自述一致，缺口如实登记而不以间接推断补齐。",
+      "outcome_note_en": "The dispatch fields and the handover ledger both pass, but the card carries no stop condition bound to it in the scenario_links of risk.json, so one element of the audit chain is missing and the rehearsal halts at the audit gate. Stop-condition binding currently covers only the three representative cards S01, S05 and S08, which agrees with the prose; the gap is registered as it stands rather than filled in by inference.",
+      "evidence_refs": [
+        "geometry/constraints.geojson#OP-07",
+        "visual/assets/seb-spec.json#components.node_schema",
+        "visual/assets/seb-tabletop-fixtures.json#HL-P7",
+        "risk.json#dimensions.scenario_links",
+        "proposal.md#场景卡表 S01—S16"
+      ]
+    },
+    {
+      "task_id": "SIM-008",
+      "scenario_id": "S08",
+      "scenario_card_title_zh": "无障碍智能零售与支付替代路径",
+      "scenario_card_title_en": "Accessible smart retail and alternative payment routes",
+      "dispatch_nodes": [
+        "OP-08"
+      ],
+      "node_binding_zh": "该卡承载自有场景节点。",
+      "node_binding_en": "The card carries its own scenario node.",
+      "outcome": "success",
+      "dispatch_schema_valid": true,
+      "dispatch_violations": [],
+      "audit_complete": true,
+      "audit_elements": {
+        "responsible_role_declared": true,
+        "handover_ledger_accepted": [
+          "HL-P8"
+        ],
+        "handover_receipt_actions": {
+          "OP-08": [
+            "accept"
+          ]
+        },
+        "stop_condition_bound": [
+          "R-01",
+          "R-02",
+          "R-03",
+          "R-04",
+          "R-05",
+          "R-07",
+          "R-08"
+        ]
+      },
+      "outcome_note_zh": "三项检查全部通过：节点调度字段通过 SEB v0.5.0 节点 schema 机器判定，交接台账正例经校验器判为接收，且该卡在风险台账中有直接绑定的停止条件。成功指的是这条调度链在离线状态下可被完整复算，不指该场景已获批准、已建成或已被实测。",
+      "outcome_note_en": "All three checks pass: the node dispatch fields clear the machine criteria of the SEB v0.5.0 node schema, the handover-ledger positive fixture is accepted by the checker, and the card has a stop condition bound to it directly in the risk register. Success here means the dispatch chain can be recomputed in full offline; it does not mean the scenario is approved, built or measured on site.",
+      "evidence_refs": [
+        "geometry/constraints.geojson#OP-08",
+        "visual/assets/seb-spec.json#components.node_schema",
+        "visual/assets/seb-tabletop-fixtures.json#HL-P8",
+        "risk.json#dimensions.R-01",
+        "risk.json#dimensions.R-02",
+        "risk.json#dimensions.R-03",
+        "risk.json#dimensions.R-04",
+        "risk.json#dimensions.R-05",
+        "risk.json#dimensions.R-07",
+        "risk.json#dimensions.R-08",
+        "proposal.md#场景卡表 S01—S16"
+      ]
+    },
+    {
+      "task_id": "SIM-009",
+      "scenario_id": "S09",
+      "scenario_card_title_zh": "大型活动感官负荷调节",
+      "scenario_card_title_en": "Sensory-load management at large events",
+      "dispatch_nodes": [
+        "OP-09"
+      ],
+      "node_binding_zh": "该卡承载自有场景节点。",
+      "node_binding_en": "The card carries its own scenario node.",
+      "outcome": "blocked_audit_chain_incomplete",
+      "dispatch_schema_valid": true,
+      "dispatch_violations": [],
+      "audit_complete": false,
+      "audit_elements": {
+        "responsible_role_declared": true,
+        "handover_ledger_accepted": [
+          "HL-P9"
+        ],
+        "handover_receipt_actions": {
+          "OP-09": [
+            "accept"
+          ]
+        },
+        "stop_condition_bound": []
+      },
+      "outcome_note_zh": "调度字段与交接台账均通过，但该卡在 risk.json 的 scenario_links 中没有任何直接绑定的停止条件，审计链缺一要素，演练在审计闸门处停住。停止条件绑定当前只覆盖 S01、S05、S08 三张代表场景，这与正文自述一致，缺口如实登记而不以间接推断补齐。",
+      "outcome_note_en": "The dispatch fields and the handover ledger both pass, but the card carries no stop condition bound to it in the scenario_links of risk.json, so one element of the audit chain is missing and the rehearsal halts at the audit gate. Stop-condition binding currently covers only the three representative cards S01, S05 and S08, which agrees with the prose; the gap is registered as it stands rather than filled in by inference.",
+      "evidence_refs": [
+        "geometry/constraints.geojson#OP-09",
+        "visual/assets/seb-spec.json#components.node_schema",
+        "visual/assets/seb-tabletop-fixtures.json#HL-P9",
+        "risk.json#dimensions.scenario_links",
+        "proposal.md#场景卡表 S01—S16"
+      ]
+    },
+    {
+      "task_id": "SIM-010",
+      "scenario_id": "S10",
+      "scenario_card_title_zh": "AI 关闭后的等价求助与疏散",
+      "scenario_card_title_en": "Equivalent help and evacuation once AI is off",
+      "dispatch_nodes": [
+        "OP-10"
+      ],
+      "node_binding_zh": "该卡承载自有场景节点。",
+      "node_binding_en": "The card carries its own scenario node.",
+      "outcome": "blocked_audit_chain_incomplete",
+      "dispatch_schema_valid": true,
+      "dispatch_violations": [],
+      "audit_complete": false,
+      "audit_elements": {
+        "responsible_role_declared": true,
+        "handover_ledger_accepted": [
+          "HL-P10"
+        ],
+        "handover_receipt_actions": {
+          "OP-10": [
+            "accept"
+          ]
+        },
+        "stop_condition_bound": []
+      },
+      "outcome_note_zh": "调度字段与交接台账均通过，但该卡在 risk.json 的 scenario_links 中没有任何直接绑定的停止条件，审计链缺一要素，演练在审计闸门处停住。停止条件绑定当前只覆盖 S01、S05、S08 三张代表场景，这与正文自述一致，缺口如实登记而不以间接推断补齐。",
+      "outcome_note_en": "The dispatch fields and the handover ledger both pass, but the card carries no stop condition bound to it in the scenario_links of risk.json, so one element of the audit chain is missing and the rehearsal halts at the audit gate. Stop-condition binding currently covers only the three representative cards S01, S05 and S08, which agrees with the prose; the gap is registered as it stands rather than filled in by inference.",
+      "evidence_refs": [
+        "geometry/constraints.geojson#OP-10",
+        "visual/assets/seb-spec.json#components.node_schema",
+        "visual/assets/seb-tabletop-fixtures.json#HL-P10",
+        "risk.json#dimensions.scenario_links",
+        "proposal.md#场景卡表 S01—S16"
+      ]
+    },
+    {
+      "task_id": "SIM-011",
+      "scenario_id": "S11",
+      "scenario_card_title_zh": "多感官应急演练与信息回执",
+      "scenario_card_title_en": "Multisensory emergency drill with an information receipt",
+      "dispatch_nodes": [
+        "OP-09",
+        "OP-10"
+      ],
+      "node_binding_zh": "该卡不新增空间设施，复用既有节点 OP-09、OP-10；其调度判定按合取继承被复用节点的判定结果。",
+      "node_binding_en": "The card adds no spatial facility and reuses the existing node(s) OP-09, OP-10; its dispatch verdict is inherited by conjunction over the reused nodes.",
+      "outcome": "blocked_audit_chain_incomplete",
+      "dispatch_schema_valid": true,
+      "dispatch_violations": [],
+      "audit_complete": false,
+      "audit_elements": {
+        "responsible_role_declared": true,
+        "handover_ledger_accepted": [
+          "HL-P10",
+          "HL-P9"
+        ],
+        "handover_receipt_actions": {
+          "OP-09": [
+            "accept"
+          ],
+          "OP-10": [
+            "accept"
+          ]
+        },
+        "stop_condition_bound": []
+      },
+      "outcome_note_zh": "调度字段与交接台账均通过，但该卡在 risk.json 的 scenario_links 中没有任何直接绑定的停止条件，审计链缺一要素，演练在审计闸门处停住。停止条件绑定当前只覆盖 S01、S05、S08 三张代表场景，这与正文自述一致，缺口如实登记而不以间接推断补齐。",
+      "outcome_note_en": "The dispatch fields and the handover ledger both pass, but the card carries no stop condition bound to it in the scenario_links of risk.json, so one element of the audit chain is missing and the rehearsal halts at the audit gate. Stop-condition binding currently covers only the three representative cards S01, S05 and S08, which agrees with the prose; the gap is registered as it stands rather than filled in by inference.",
+      "evidence_refs": [
+        "geometry/constraints.geojson#OP-09",
+        "geometry/constraints.geojson#OP-10",
+        "visual/assets/seb-spec.json#components.node_schema",
+        "visual/assets/seb-tabletop-fixtures.json#HL-P10",
+        "visual/assets/seb-tabletop-fixtures.json#HL-P9",
+        "risk.json#dimensions.scenario_links",
+        "proposal.md#场景卡表 S01—S16"
+      ]
+    },
+    {
+      "task_id": "SIM-012",
+      "scenario_id": "S12",
+      "scenario_card_title_zh": "跨语言与跨文化到访者独立办事",
+      "scenario_card_title_en": "Independent transactions for cross-language visitors",
+      "dispatch_nodes": [
+        "OP-03",
+        "OP-07"
+      ],
+      "node_binding_zh": "该卡不新增空间设施，复用既有节点 OP-03、OP-07；其调度判定按合取继承被复用节点的判定结果。",
+      "node_binding_en": "The card adds no spatial facility and reuses the existing node(s) OP-03, OP-07; its dispatch verdict is inherited by conjunction over the reused nodes.",
+      "outcome": "blocked_audit_chain_incomplete",
+      "dispatch_schema_valid": true,
+      "dispatch_violations": [],
+      "audit_complete": false,
+      "audit_elements": {
+        "responsible_role_declared": true,
+        "handover_ledger_accepted": [
+          "HL-P3",
+          "HL-P7"
+        ],
+        "handover_receipt_actions": {
+          "OP-03": [
+            "accept"
+          ],
+          "OP-07": [
+            "accept"
+          ]
+        },
+        "stop_condition_bound": []
+      },
+      "outcome_note_zh": "调度字段与交接台账均通过，但该卡在 risk.json 的 scenario_links 中没有任何直接绑定的停止条件，审计链缺一要素，演练在审计闸门处停住。停止条件绑定当前只覆盖 S01、S05、S08 三张代表场景，这与正文自述一致，缺口如实登记而不以间接推断补齐。",
+      "outcome_note_en": "The dispatch fields and the handover ledger both pass, but the card carries no stop condition bound to it in the scenario_links of risk.json, so one element of the audit chain is missing and the rehearsal halts at the audit gate. Stop-condition binding currently covers only the three representative cards S01, S05 and S08, which agrees with the prose; the gap is registered as it stands rather than filled in by inference.",
+      "evidence_refs": [
+        "geometry/constraints.geojson#OP-03",
+        "geometry/constraints.geojson#OP-07",
+        "visual/assets/seb-spec.json#components.node_schema",
+        "visual/assets/seb-tabletop-fixtures.json#HL-P3",
+        "visual/assets/seb-tabletop-fixtures.json#HL-P7",
+        "risk.json#dimensions.scenario_links",
+        "proposal.md#场景卡表 S01—S16"
+      ]
+    },
+    {
+      "task_id": "SIM-013",
+      "scenario_id": "S13",
+      "scenario_card_title_zh": "就医全流程的多感官导引与人工兜底",
+      "scenario_card_title_en": "Multisensory guidance and human fallback across a hospital visit",
+      "dispatch_nodes": [
+        "OP-03",
+        "OP-06"
+      ],
+      "node_binding_zh": "该卡不新增空间设施，复用既有节点 OP-03、OP-06；其调度判定按合取继承被复用节点的判定结果。",
+      "node_binding_en": "The card adds no spatial facility and reuses the existing node(s) OP-03, OP-06; its dispatch verdict is inherited by conjunction over the reused nodes.",
+      "outcome": "blocked_audit_chain_incomplete",
+      "dispatch_schema_valid": true,
+      "dispatch_violations": [],
+      "audit_complete": false,
+      "audit_elements": {
+        "responsible_role_declared": true,
+        "handover_ledger_accepted": [
+          "HL-P3",
+          "HL-P6"
+        ],
+        "handover_receipt_actions": {
+          "OP-03": [
+            "accept"
+          ],
+          "OP-06": [
+            "accept"
+          ]
+        },
+        "stop_condition_bound": []
+      },
+      "outcome_note_zh": "调度字段与交接台账均通过，但该卡在 risk.json 的 scenario_links 中没有任何直接绑定的停止条件，审计链缺一要素，演练在审计闸门处停住。停止条件绑定当前只覆盖 S01、S05、S08 三张代表场景，这与正文自述一致，缺口如实登记而不以间接推断补齐。",
+      "outcome_note_en": "The dispatch fields and the handover ledger both pass, but the card carries no stop condition bound to it in the scenario_links of risk.json, so one element of the audit chain is missing and the rehearsal halts at the audit gate. Stop-condition binding currently covers only the three representative cards S01, S05 and S08, which agrees with the prose; the gap is registered as it stands rather than filled in by inference.",
+      "evidence_refs": [
+        "geometry/constraints.geojson#OP-03",
+        "geometry/constraints.geojson#OP-06",
+        "visual/assets/seb-spec.json#components.node_schema",
+        "visual/assets/seb-tabletop-fixtures.json#HL-P3",
+        "visual/assets/seb-tabletop-fixtures.json#HL-P6",
+        "risk.json#dimensions.scenario_links",
+        "proposal.md#场景卡表 S01—S16"
+      ]
+    },
+    {
+      "task_id": "SIM-014",
+      "scenario_id": "S14",
+      "scenario_card_title_zh": "公共空间中可停可跳过的学习界面",
+      "scenario_card_title_en": "A pausable, skippable learning interface in public space",
+      "dispatch_nodes": [
+        "OP-02",
+        "OP-07"
+      ],
+      "node_binding_zh": "该卡不新增空间设施，复用既有节点 OP-02、OP-07；其调度判定按合取继承被复用节点的判定结果。",
+      "node_binding_en": "The card adds no spatial facility and reuses the existing node(s) OP-02, OP-07; its dispatch verdict is inherited by conjunction over the reused nodes.",
+      "outcome": "blocked_audit_chain_incomplete",
+      "dispatch_schema_valid": true,
+      "dispatch_violations": [],
+      "audit_complete": false,
+      "audit_elements": {
+        "responsible_role_declared": true,
+        "handover_ledger_accepted": [
+          "HL-P2",
+          "HL-P7"
+        ],
+        "handover_receipt_actions": {
+          "OP-02": [
+            "accept"
+          ],
+          "OP-07": [
+            "accept"
+          ]
+        },
+        "stop_condition_bound": []
+      },
+      "outcome_note_zh": "调度字段与交接台账均通过，但该卡在 risk.json 的 scenario_links 中没有任何直接绑定的停止条件，审计链缺一要素，演练在审计闸门处停住。停止条件绑定当前只覆盖 S01、S05、S08 三张代表场景，这与正文自述一致，缺口如实登记而不以间接推断补齐。",
+      "outcome_note_en": "The dispatch fields and the handover ledger both pass, but the card carries no stop condition bound to it in the scenario_links of risk.json, so one element of the audit chain is missing and the rehearsal halts at the audit gate. Stop-condition binding currently covers only the three representative cards S01, S05 and S08, which agrees with the prose; the gap is registered as it stands rather than filled in by inference.",
+      "evidence_refs": [
+        "geometry/constraints.geojson#OP-02",
+        "geometry/constraints.geojson#OP-07",
+        "visual/assets/seb-spec.json#components.node_schema",
+        "visual/assets/seb-tabletop-fixtures.json#HL-P2",
+        "visual/assets/seb-tabletop-fixtures.json#HL-P7",
+        "risk.json#dimensions.scenario_links",
+        "proposal.md#场景卡表 S01—S16"
+      ]
+    },
+    {
+      "task_id": "SIM-015",
+      "scenario_id": "S15",
+      "scenario_card_title_zh": "低速自动驾驶接驳的行人可预测性",
+      "scenario_card_title_en": "Pedestrian predictability of low-speed automated shuttles",
+      "dispatch_nodes": [
+        "OP-05"
+      ],
+      "node_binding_zh": "该卡不新增空间设施，复用既有节点 OP-05；其调度判定按合取继承被复用节点的判定结果。",
+      "node_binding_en": "The card adds no spatial facility and reuses the existing node(s) OP-05; its dispatch verdict is inherited by conjunction over the reused nodes.",
+      "outcome": "blocked_audit_chain_incomplete",
+      "dispatch_schema_valid": true,
+      "dispatch_violations": [],
+      "audit_complete": false,
+      "audit_elements": {
+        "responsible_role_declared": true,
+        "handover_ledger_accepted": [
+          "HL-P5"
+        ],
+        "handover_receipt_actions": {
+          "OP-05": [
+            "accept"
+          ]
+        },
+        "stop_condition_bound": []
+      },
+      "outcome_note_zh": "调度字段与交接台账均通过，但该卡在 risk.json 的 scenario_links 中没有任何直接绑定的停止条件，审计链缺一要素，演练在审计闸门处停住。停止条件绑定当前只覆盖 S01、S05、S08 三张代表场景，这与正文自述一致，缺口如实登记而不以间接推断补齐。",
+      "outcome_note_en": "The dispatch fields and the handover ledger both pass, but the card carries no stop condition bound to it in the scenario_links of risk.json, so one element of the audit chain is missing and the rehearsal halts at the audit gate. Stop-condition binding currently covers only the three representative cards S01, S05 and S08, which agrees with the prose; the gap is registered as it stands rather than filled in by inference.",
+      "evidence_refs": [
+        "geometry/constraints.geojson#OP-05",
+        "visual/assets/seb-spec.json#components.node_schema",
+        "visual/assets/seb-tabletop-fixtures.json#HL-P5",
+        "risk.json#dimensions.scenario_links",
+        "proposal.md#场景卡表 S01—S16"
+      ]
+    },
+    {
+      "task_id": "SIM-016",
+      "scenario_id": "S16",
+      "scenario_card_title_zh": "无人配送与连续通行的路权交接",
+      "scenario_card_title_en": "Delivery robots and the handover of right of way",
+      "dispatch_nodes": [
+        "OP-08"
+      ],
+      "node_binding_zh": "该卡不新增空间设施，复用既有节点 OP-08；其调度判定按合取继承被复用节点的判定结果。",
+      "node_binding_en": "The card adds no spatial facility and reuses the existing node(s) OP-08; its dispatch verdict is inherited by conjunction over the reused nodes.",
+      "outcome": "blocked_audit_chain_incomplete",
+      "dispatch_schema_valid": true,
+      "dispatch_violations": [],
+      "audit_complete": false,
+      "audit_elements": {
+        "responsible_role_declared": true,
+        "handover_ledger_accepted": [
+          "HL-P8"
+        ],
+        "handover_receipt_actions": {
+          "OP-08": [
+            "accept"
+          ]
+        },
+        "stop_condition_bound": []
+      },
+      "outcome_note_zh": "调度字段与交接台账均通过，但该卡在 risk.json 的 scenario_links 中没有任何直接绑定的停止条件，审计链缺一要素，演练在审计闸门处停住。停止条件绑定当前只覆盖 S01、S05、S08 三张代表场景，这与正文自述一致，缺口如实登记而不以间接推断补齐。",
+      "outcome_note_en": "The dispatch fields and the handover ledger both pass, but the card carries no stop condition bound to it in the scenario_links of risk.json, so one element of the audit chain is missing and the rehearsal halts at the audit gate. Stop-condition binding currently covers only the three representative cards S01, S05 and S08, which agrees with the prose; the gap is registered as it stands rather than filled in by inference.",
+      "evidence_refs": [
+        "geometry/constraints.geojson#OP-08",
+        "visual/assets/seb-spec.json#components.node_schema",
+        "visual/assets/seb-tabletop-fixtures.json#HL-P8",
+        "risk.json#dimensions.scenario_links",
+        "proposal.md#场景卡表 S01—S16"
+      ]
+    }
+  ],
+  "aggregates_zh": "逐项复算结果：任务十六条；成功三条（S01、S05、S08），成功率 0.1875；调度 schema 通过十六条，通过率 1.0；审计链齐备三条，完整率 0.1875；失败一条（S04）；阻塞十二条。三项聚合值均可由上方 tasks 数组按 docs/simulations.md 的推导规则重算。",
+  "aggregates_en": "Recomputed item by item: sixteen tasks; three successes (S01, S05, S08) for a rate of 0.1875; sixteen dispatch-schema passes for a rate of 1.0; three complete audit chains for a rate of 0.1875; one failure (S04); twelve blocked. All three aggregates recompute from the tasks array above under the derivation rules of docs/simulations.md.",
+  "adverse_findings_zh": [
+    "一条失败：S04 依托的 OP-04，其 AI 关闭等价路径的空间前提被本包自己的证据链退回未证成立状态，原字段一字未改，回执 CR-2026-08-12-003 随包提交。",
+    "十二条阻塞：停止条件的直接绑定当前只覆盖 S01、S05、S08 三张代表场景，其余十三张卡（含 S04）在风险台账中没有直接绑定的停止条件，审计链因此不完整。",
+    "一处载体不具备开办条件：安装于 PUBLIC-007 的万感服务桌，七项开办条件当前登记为 no-go，无一具备；该要素承接的正是 OP-04。",
+    "成功率 0.1875 明显低于 schema 通过率 1.0，两者的差距本身是本台账最主要的读数：文件层的字段判据已经全部满足，制度层的停止条件绑定与载体开办条件远未满足。把这个差距抹平的唯一办法是补齐制度层证据，而不是调整判据。"
+  ],
+  "adverse_findings_en": [
+    "One failure: the spatial premise of the AI-off equivalent route at OP-04, which S04 rests on, was returned to unproven by the package's own evidence chain; the original field is unchanged and receipt CR-2026-08-12-003 ships with the package.",
+    "Twelve blocked: direct stop-condition binding currently covers only the three representative cards S01, S05 and S08, so the remaining thirteen cards (S04 among them) carry no directly bound stop condition in the risk register and their audit chains are incomplete.",
+    "One carrier not ready to open: the Every-Sense service desk installed on PUBLIC-007 stands at no-go on all seven readiness conditions, none of them met; that feature is the one carrying OP-04.",
+    "The success rate of 0.1875 sits far below the schema pass rate of 1.0, and the gap between them is this ledger's principal reading: the field-level criteria are fully met while the institutional layer — stop-condition binding and carrier readiness — is far from met. The only way to close that gap is to supply the institutional evidence, never to adjust the criteria."
+  ],
+  "baselines": {
+    "urban_llm_harness": {
+      "status": "validated_offline_synthetic",
+      "claim_scope": "离线合成演练读数，非现场实测；本基线按定义镜像上方任务台账的聚合值，不承载任何其他评测口径。",
+      "claim_scope_en": "Offline synthetic rehearsal readings, not site measurement; by definition this baseline mirrors the aggregates of the task ledger above and carries no other evaluation scope.",
+      "replayable": true,
+      "success_rate": 0.1875,
+      "tool_schema_pass_rate": 1.0,
+      "audit_completeness": 0.1875,
+      "energy_budget_violations": null,
+      "energy_metric_note": "not_applicable: 本演练不执行计算负载也不驱动设备，无能耗预算与实际能耗可比。",
+      "replan_p95_seconds": null,
+      "replan_metric_note": "not_applicable: 本演练不含在线重规划过程，无可计时的重规划事件。",
+      "high_risk_intercept_rate": null,
+      "high_risk_metric_note": "not_applicable: 本任务清单不含高风险拦截用例；本包的高风险处置走停止条件与闸门机制，不以拦截率表达。"
+    }
+  },
+  "baselines_note_zh": "本文件只登记 urban_llm_harness 一个基线。模板示范的 ai_off_equivalent（AI 关闭后的人工兜底等价基准）刻意不挂：本包尚未进行任何 AI 开启与关闭的成对任务测试，ai_off_service_equivalence_gap 在 metrics.json 中保持 unknown，挂一个没有读数支撑的等价基线会让读者误以为关闭态已被测过。scenario_exit_path_coverage 为 1.0 是文件完整性口径，不是演练读数，不得转写为等价基线。",
+  "baselines_note_en": "Only one baseline is registered here. The template's ai_off_equivalent — the human-fallback equivalence baseline for when AI is off — is deliberately omitted: the package has run no paired AI-on/AI-off task test, ai_off_service_equivalence_gap stays unknown in metrics.json, and posting an equivalence baseline with no reading behind it would suggest the AI-off state had been measured. The value 1.0 for scenario_exit_path_coverage is a document-completeness measure, not a rehearsal reading, and may not be rewritten as an equivalence baseline.",
+  "metric_class_relation_zh": "本台账产出的四项指标构成本包指标体系的第四类：离线可复算演练读数。既有三类分别是——其一，按临时几何复算的几何类读数（如 site_area_sqm、green_ratio），精度受组织方数据缺口限定，待官方边界供给后整体重算；其二，待官方资料确认的读数，在官方边界与权属资料到位前不予声明；其三，待现场实测的绩效读数（如 independent_task_completion_rate、ai_off_service_equivalence_gap），在获授权的 G2 协议下实测前一律保持 unknown。第四类与前三类的边界是清楚的：它既不依赖临时几何，也不等待官方资料，更不冒充现场绩效——它只声明\"包内既有结构化登记之间是否自洽、能否被任何人按同一规则重算出同一结果\"。第四类读数为 known 描述的是复算本身成立，不是任何场景已经成立。",
+  "metric_class_relation_en": "The four metrics this ledger produces form a fourth class in the package: offline recomputable rehearsal readings. The three existing classes are, first, geometry readings recomputed on provisional geometry (site_area_sqm, green_ratio and the like), whose precision is bounded by the organiser data gaps and which will be recomputed in full once official boundaries are supplied; second, readings awaiting official material, not declared until official boundaries and tenure records arrive; and third, field performance readings (independent_task_completion_rate, ai_off_service_equivalence_gap and the rest) which stay unknown until measured under an authorised G2 protocol. The fourth class draws a clear line against all three: it rests on no provisional geometry, waits for no official material, and impersonates no field performance — it states only whether the structured registrations already in the package are mutually consistent and whether anyone can recompute the same result by the same rule. Where a fourth-class metric reads known, what is known is the recomputation, not the establishment of any scenario.",
+  "limitations_zh": [
+    "本文件不是效果承诺，不代表现场实测，不宣称任何场景已获批准、已建成、已配员或已被用户使用。",
+    "三项读数只覆盖包内结构化登记之间的自洽性。调度 schema 通过率 1.0 说明的是十个节点的字段全部满足既有判据，不说明这些字段在真实场地上可执行。",
+    "S11—S16 六张卡在 geometry/constraints.geojson 中没有自己的节点，其调度判定按合取继承被复用节点，因而无法独立验证；这是继承关系的诚实边界，不是通过。",
+    "停止条件绑定只采认 risk.json 的直接绑定。若日后为其余场景补登记 scenario_links，audit_completeness 与 simulation_success_rate 将随之上升——上升的是证据，不是演练表现，复算说明须随之提交。",
+    "本文件不产生任何现场绩效数值；metrics.json 中的待实测指标保持 unknown，不因本台账改变。"
+  ],
+  "limitations_en": [
+    "This file is not a performance promise, does not represent site measurement, and claims for no scenario that it is approved, built, staffed or used.",
+    "The three readings cover only the mutual consistency of structured registrations inside the package. A dispatch pass rate of 1.0 says the fields of ten nodes meet the existing criteria; it does not say those fields are executable on a real site.",
+    "The six cards S11–S16 hold no node of their own in geometry/constraints.geojson, so their dispatch verdict is inherited by conjunction over reused nodes and cannot be verified independently; that is an honest boundary of the inheritance, not a pass.",
+    "Only direct binding in risk.json counts as a stop condition. If scenario_links are later registered for the remaining cards, audit_completeness and simulation_success_rate will rise — what rises is the evidence, not the rehearsal performance, and a recalculation note must accompany the change.",
+    "The file produces no field performance value; the pending measured metrics in metrics.json stay unknown and are not changed by this ledger."
+  ],
+  "derived_from": [
+    "proposal.md#场景卡表 S01—S16",
+    "geometry/constraints.geojson",
+    "geometry/public_space.geojson#PUBLIC-007",
+    "risk.json#dimensions",
+    "visual/assets/seb-spec.json",
+    "visual/assets/seb-tabletop-fixtures.json",
+    "visual/assets/seb-tabletop-run.js",
+    "visual/assets/seb-op04-chain-data.json",
+    "visual/assets/seb-change-receipt-op04.json",
+    "visual/assets/service-desk-gonogo.json"
+  ]
+}

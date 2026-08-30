@@ -1,0 +1,2660 @@
+{
+  "format": "jingzhang-phase2-visual-generation-v1",
+  "generator": "visual/assets/phase2-visual-generator-source.json",
+  "generator_sha256": "8ad3da25a97be6b782ef67f5844d9a955221fa75ce662774497ea421267910a0",
+  "generator_snapshot_sha256": "198d752a038de55160dfe0d9d25556aa5fd3fb8fb46cf6dff1552a6c67b6ab15",
+  "base_phase1_generator": "visual/assets/rebuild-visuals-source.json",
+  "base_phase1_generator_sha256": "b0033d2e4cf3f49f0672dfb8ea25b9e9552becbefcf93d1c5b26b798907b0175",
+  "toolchain": {
+    "Pillow": "12.2.0",
+    "fonttools": "4.63.0",
+    "Brotli": "1.2.0",
+    "reportlab": "5.0.0"
+  },
+  "inputs": {
+    "metrics.json": "111bca3622fffe098f0f41121aab496099f38dcca7e8a141a33426ba8d68f16d",
+    "geometry/site_boundary.geojson": "a3ff9ef96c4ac626044a40b794e7868c2a3e4dafed466ed84665916ba31156fb",
+    "geometry/land_use.geojson": "d1db782861ac49c2ca4fb2cfb89998c8e29c7355c0c2d4dcda5f63d60f83454d",
+    "geometry/key_areas.geojson": "914cf53d4242a81cd445d8271e2718e3dc7750800d0da421688ed21425a09d23",
+    "geometry/roads.geojson": "52eaf020fd0728169e707fc068dee0b908713dbb43d09ee525c30a3595c08fd3",
+    "geometry/buildings.geojson": "2f1643d5d22928ef62584ec8f2170624f2c3e02633f5b27508c700fc771c5795",
+    "geometry/green_space.geojson": "a3e132c65a67f974152b800e4700fc15e40355c68f837c843c4fdc90c164ce3b",
+    "geometry/public_space.geojson": "63608b4d8bb39ee756ef01ba59f4cd31fb65828270fe0c70e0292c960732e852",
+    "geometry/phasing.geojson": "622d8cd4f38036bcef54633ae7393fa7d3ee119e05206d373d8c004e914c6429",
+    "visual/assets/r3-site-context.json": "b4db339331b4a69b0302153c355d2bb4089b26e148ec2cbac487ae2701117c92",
+    "visual/assets/r3-site-context-builder-source.json": "ce0e540d815993da7c9f0d881420a3d29da9039007eb7fb8dc0be839594384ca",
+    "visual/assets/r3-osm-corridor-snapshot.json": "3cf9aa0c56cf4abdfcc4e380927ac88d3f14b5fae4f3000847abba95c043537a",
+    "visual/assets/r3-osm-zhongzhiyuan-snapshot.json": "57f575b3c3f858482d9b2d9c9501834dc3fd367c0444e2e5e7a15f4711a678c5",
+    "visual/assets/r3-osm-ai_origin-snapshot.json": "2c806a2f87f003dbf5ec4dd462624715780d1b3db7a63ec66ddbccc4a29f1770",
+    "visual/assets/r3-osm-dazhongsi-snapshot.json": "94530599dddd00b9dfd604ce7e8454c238e7bfa4980f54d5a5c22475a2aaf1fa"
+  },
+  "outputs": {
+    "assets/figures/site-overview.png": "fc939523b5b8b9ad549a3085e35279abee114634b2da1ba2fa5a4fd65e4d5fb8",
+    "assets/figures/site-overview.en.png": "66ceef624ad90c80074d7c529af8060f309ea63c989527b31e816d3e59bea612",
+    "assets/figures/land-use-structure.png": "b8271accbf0c383b0759c7ba8914d45faf01c581472e99d26c87237fa31f1e54",
+    "assets/figures/land-use-structure.en.png": "a12b84849ca3bf84c37b0a0e512f8077b2495240c5c20d3ebe9f16dd2c7b2b7e",
+    "assets/figures/key-areas.png": "42b219d5f09d69f14fb6b87db6bfafd65d3df0364d3181d2040c33adec4c6bb2",
+    "assets/figures/key-areas.en.png": "a54fdd736b326cd1b4c86a142c5b3495914d10637fe0e6f382e5192a1111a29b",
+    "assets/figures/mobility-bluegreen.png": "5b411f1d964e8948bef10dc6f1cba78220faa93e4a0d6aa50f59dbfc4c450090",
+    "assets/figures/mobility-bluegreen.en.png": "a11d03bbbfe75ab039003c20cfd59fae72d92ea9de64cf9c9b0b4b1523041e01",
+    "assets/figures/metrics-evidence.png": "a13efe09955f6775d40ade8c4665400f7214effde47465439ba741a8aff30996",
+    "assets/figures/metrics-evidence.en.png": "93f24f3abb10ca72b8f9650ba67727f2eebb6aa15633b8e04911a3dc5aa6e9ee",
+    "visual/index.html": "a7664e30031dcb3283acc61bc4cbee831c94d6ec6394e16bf577c1c4557e013c",
+    "visual/index.en.html": "c29f52a9c342ad6597f4d39a0f01a86ce41e53678b68404ae00abf63797801f5",
+    "visual/assets/font-subset.css": "c2383f16bf2c84f2de76164c9614bb9168d9dad04c2038681674b870b6098c53",
+    "visual/assets/visual.css": "333a1e596904e7e4b3dcf32c12a489aec9064bd501cb69192720eb84d4b5c166",
+    "visual/assets/visual.js": "d85c6d386803b1f65e99e1c8ab206453b74e2e3289e65795704ae9ae10e122f4"
+  },
+  "phase1_frozen_assets": {
+    "identity-system.png": "3676a31d2118a649450ca4834fe3f2f2c63f662a02028812edcedf7f832b28ef",
+    "identity-system.en.png": "aa3dd469e5f06d84bbf2e6f81cbccdde073d20274dfbf203af110b6a858dba37",
+    "ai-ecosystem.png": "413a3083c6463c9ab5d113fb3fbcebee8b48d39280e68d15ae47a5c1c0f0655c",
+    "ai-ecosystem.en.png": "154bf31c7b06fc66000d9a98900c52e56a79bce2641ef004e92d60f899a158cb",
+    "scenario-matrix.png": "aaf483eb87332c30ed624e630108ade4ba6885c46702449a3f6dad6fabf85747",
+    "scenario-matrix.en.png": "ea07fda8815c88827b189662189a78c980033f095c67681d27253baff7f369fc",
+    "landmarks-components.png": "bae37413b53d87a08846ca4cffaf861ef3019d0fc4a53fcf85ef007a6cd31163",
+    "landmarks-components.en.png": "61f8f586512e1cf1f6a0b221150a2020ef17bf7aca31e39f4892db6cd0d0033e",
+    "culture-wayfinding.png": "5972815d26671e0fd905afe4dd17cd5ff30a50d08638a75bbe5f183f744ff790",
+    "culture-wayfinding.en.png": "8c1a02d02e58f28f0c9e2b5d05a63d2f099b9a15613e71fa04bfa68bf979e22c",
+    "operations-pathway.png": "c4b29de5657934ccef645db914ab9aa56d62100906e47432639fd654614231c3",
+    "operations-pathway.en.png": "d6e600f2fa58aad8f964e989986cbf8a5cb19cde58636fdd6fdf1593a321480c"
+  },
+  "phase1_frozen_assets_unchanged": true,
+  "f01_readability_assertion": {
+    "required_intersections": 0,
+    "minimum_label_marker_gap_px": 12,
+    "minimum_effective_attribution_px_at_1440_preview": 10,
+    "assertions": [
+      {
+        "element": "F01 map attribution",
+        "language": "zh",
+        "font_px": 18,
+        "effective_px_at_1440_preview": 10.8,
+        "bbox_px": [
+          94,
+          1314,
+          809,
+          1334
+        ],
+        "background_bbox_px": [
+          87,
+          1309,
+          816,
+          1339
+        ],
+        "bottom_clearance_px": 31,
+        "inside_map": true
+      },
+      {
+        "element": "F01 Chinese candidate metric card",
+        "language": "zh",
+        "value_bbox_px": [
+          1288,
+          350,
+          1344,
+          387
+        ],
+        "label_bbox_px": [
+          1288,
+          409,
+          1442,
+          431
+        ],
+        "marker_bbox_px": [
+          1288,
+          448,
+          1622,
+          467
+        ],
+        "label_marker_gap_px": 17,
+        "inside_card": true,
+        "intersections": 0
+      },
+      {
+        "element": "F01 map attribution",
+        "language": "en",
+        "font_px": 18,
+        "effective_px_at_1440_preview": 10.8,
+        "bbox_px": [
+          94,
+          1316,
+          1009,
+          1334
+        ],
+        "background_bbox_px": [
+          87,
+          1311,
+          1016,
+          1339
+        ],
+        "bottom_clearance_px": 31,
+        "inside_map": true
+      },
+      {
+        "element": "F01 English candidate metric card",
+        "language": "en",
+        "value_bbox_px": [
+          1288,
+          350,
+          1344,
+          387
+        ],
+        "label_bbox_px": [
+          1288,
+          410,
+          1553,
+          456
+        ],
+        "marker_bbox_px": [
+          1288,
+          473,
+          1622,
+          492
+        ],
+        "label_marker_gap_px": 17,
+        "inside_card": true,
+        "intersections": 0
+      }
+    ]
+  },
+  "f02_legend_bbox_assertion": {
+    "required_intersections": 0,
+    "minimum_gap_px": 36,
+    "rows": [
+      {
+        "language": "zh",
+        "row": 1,
+        "code": "LU-001 · 0802",
+        "label": "科研 / R&D",
+        "code_bbox_px": [
+          1580,
+          900,
+          1717,
+          914
+        ],
+        "label_bbox_px": [
+          1810,
+          898,
+          1901,
+          917
+        ],
+        "gap_px": 93,
+        "intersections": 0
+      },
+      {
+        "language": "zh",
+        "row": 2,
+        "code": "LU-002 · 1401",
+        "label": "公园绿地 / PARK",
+        "code_bbox_px": [
+          1580,
+          952,
+          1717,
+          966
+        ],
+        "label_bbox_px": [
+          1810,
+          950,
+          1950,
+          969
+        ],
+        "gap_px": 93,
+        "intersections": 0
+      },
+      {
+        "language": "zh",
+        "row": 3,
+        "code": "LU-003 · 05",
+        "label": "商业 / COMMERCIAL",
+        "code_bbox_px": [
+          1580,
+          1004,
+          1695,
+          1018
+        ],
+        "label_bbox_px": [
+          1810,
+          1001,
+          1985,
+          1021
+        ],
+        "gap_px": 115,
+        "intersections": 0
+      },
+      {
+        "language": "zh",
+        "row": 4,
+        "code": "LU-004 · 0702",
+        "label": "居住 / RESIDENTIAL",
+        "code_bbox_px": [
+          1580,
+          1056,
+          1717,
+          1070
+        ],
+        "label_bbox_px": [
+          1810,
+          1053,
+          1983,
+          1073
+        ],
+        "gap_px": 93,
+        "intersections": 0
+      },
+      {
+        "language": "en",
+        "row": 1,
+        "code": "LU-001 · 0802",
+        "label": "科研 / R&D",
+        "code_bbox_px": [
+          1580,
+          900,
+          1717,
+          914
+        ],
+        "label_bbox_px": [
+          1810,
+          898,
+          1901,
+          917
+        ],
+        "gap_px": 93,
+        "intersections": 0
+      },
+      {
+        "language": "en",
+        "row": 2,
+        "code": "LU-002 · 1401",
+        "label": "公园绿地 / PARK",
+        "code_bbox_px": [
+          1580,
+          952,
+          1717,
+          966
+        ],
+        "label_bbox_px": [
+          1810,
+          950,
+          1950,
+          969
+        ],
+        "gap_px": 93,
+        "intersections": 0
+      },
+      {
+        "language": "en",
+        "row": 3,
+        "code": "LU-003 · 05",
+        "label": "商业 / COMMERCIAL",
+        "code_bbox_px": [
+          1580,
+          1004,
+          1695,
+          1018
+        ],
+        "label_bbox_px": [
+          1810,
+          1001,
+          1985,
+          1021
+        ],
+        "gap_px": 115,
+        "intersections": 0
+      },
+      {
+        "language": "en",
+        "row": 4,
+        "code": "LU-004 · 0702",
+        "label": "居住 / RESIDENTIAL",
+        "code_bbox_px": [
+          1580,
+          1056,
+          1717,
+          1070
+        ],
+        "label_bbox_px": [
+          1810,
+          1053,
+          1983,
+          1073
+        ],
+        "gap_px": 93,
+        "intersections": 0
+      }
+    ]
+  },
+  "r3_site_context": {
+    "source_id": "DATA-SRC-OSM-CONTEXT-20260828",
+    "authority": "background_only",
+    "required_design_geojson_modified": false,
+    "visible_attribution": {
+      "zh": "© OpenStreetMap 贡献者 · ODbL 1.0 · 开放资料推导背景；非测绘/法定控制/道路红线",
+      "en": "© OpenStreetMap contributors · ODbL 1.0 · open-data-derived context; not survey/statutory/road redline"
+    },
+    "cartographic_assertions": [
+      {
+        "map_id": "F01-corridor",
+        "crs": "EPSG:4548",
+        "viewport_m": [
+          440716.08,
+          4422792.23,
+          447216.08,
+          4432792.23
+        ],
+        "box_px": [
+          80,
+          315,
+          1220,
+          1370
+        ],
+        "px_per_m": 0.1055,
+        "scale_bar_m": 1000,
+        "expected_px": 105.5,
+        "actual_px": 105.5,
+        "recalculated_m": 1000.0,
+        "error_m": 0.0,
+        "north_up": true
+      },
+      {
+        "map_id": "F02-corridor",
+        "crs": "EPSG:4548",
+        "viewport_m": [
+          440716.08,
+          4422792.23,
+          447216.08,
+          4432792.23
+        ],
+        "box_px": [
+          80,
+          315,
+          1500,
+          1370
+        ],
+        "px_per_m": 0.1055,
+        "scale_bar_m": 1000,
+        "expected_px": 105.5,
+        "actual_px": 105.5,
+        "recalculated_m": 1000.0,
+        "error_m": 0.0,
+        "north_up": true
+      },
+      {
+        "map_id": "F02-corridor-overlay",
+        "crs": "EPSG:4548",
+        "viewport_m": [
+          440716.08,
+          4422792.23,
+          447216.08,
+          4432792.23
+        ],
+        "box_px": [
+          80,
+          315,
+          1500,
+          1370
+        ],
+        "px_per_m": 0.1055,
+        "scale_bar_m": 1000,
+        "expected_px": 105.5,
+        "actual_px": 105.5,
+        "recalculated_m": 1000.0,
+        "error_m": 0.0,
+        "north_up": true
+      },
+      {
+        "map_id": "F03-zhongzhiyuan",
+        "crs": "EPSG:4548",
+        "viewport_m": [
+          443884.57,
+          4431405.97,
+          444884.57,
+          4432055.97
+        ],
+        "box_px": [
+          108,
+          475,
+          772,
+          907
+        ],
+        "px_per_m": 0.664,
+        "scale_bar_m": 200,
+        "expected_px": 132.8,
+        "actual_px": 132.8,
+        "recalculated_m": 200.0,
+        "error_m": 0.0,
+        "north_up": true
+      },
+      {
+        "map_id": "F03-ai_origin",
+        "crs": "EPSG:4548",
+        "viewport_m": [
+          443739.63,
+          4428519.94,
+          444739.63,
+          4429169.94
+        ],
+        "box_px": [
+          868,
+          475,
+          1532,
+          907
+        ],
+        "px_per_m": 0.664,
+        "scale_bar_m": 200,
+        "expected_px": 132.8,
+        "actual_px": 132.8,
+        "recalculated_m": 200.0,
+        "error_m": 0.0,
+        "north_up": true
+      },
+      {
+        "map_id": "F03-dazhongsi",
+        "crs": "EPSG:4548",
+        "viewport_m": [
+          443695.73,
+          4423689.96,
+          444695.73,
+          4424339.96
+        ],
+        "box_px": [
+          1628,
+          475,
+          2292,
+          907
+        ],
+        "px_per_m": 0.664,
+        "scale_bar_m": 200,
+        "expected_px": 132.8,
+        "actual_px": 132.8,
+        "recalculated_m": 200.0,
+        "error_m": 0.0,
+        "north_up": true
+      },
+      {
+        "map_id": "F04-corridor",
+        "crs": "EPSG:4548",
+        "viewport_m": [
+          440716.08,
+          4422792.23,
+          447216.08,
+          4432792.23
+        ],
+        "box_px": [
+          80,
+          315,
+          1130,
+          1370
+        ],
+        "px_per_m": 0.1055,
+        "scale_bar_m": 1000,
+        "expected_px": 105.5,
+        "actual_px": 105.5,
+        "recalculated_m": 1000.0,
+        "error_m": 0.0,
+        "north_up": true
+      },
+      {
+        "map_id": "F01-corridor",
+        "crs": "EPSG:4548",
+        "viewport_m": [
+          440716.08,
+          4422792.23,
+          447216.08,
+          4432792.23
+        ],
+        "box_px": [
+          80,
+          315,
+          1220,
+          1370
+        ],
+        "px_per_m": 0.1055,
+        "scale_bar_m": 1000,
+        "expected_px": 105.5,
+        "actual_px": 105.5,
+        "recalculated_m": 1000.0,
+        "error_m": 0.0,
+        "north_up": true
+      },
+      {
+        "map_id": "F02-corridor",
+        "crs": "EPSG:4548",
+        "viewport_m": [
+          440716.08,
+          4422792.23,
+          447216.08,
+          4432792.23
+        ],
+        "box_px": [
+          80,
+          315,
+          1500,
+          1370
+        ],
+        "px_per_m": 0.1055,
+        "scale_bar_m": 1000,
+        "expected_px": 105.5,
+        "actual_px": 105.5,
+        "recalculated_m": 1000.0,
+        "error_m": 0.0,
+        "north_up": true
+      },
+      {
+        "map_id": "F02-corridor-overlay",
+        "crs": "EPSG:4548",
+        "viewport_m": [
+          440716.08,
+          4422792.23,
+          447216.08,
+          4432792.23
+        ],
+        "box_px": [
+          80,
+          315,
+          1500,
+          1370
+        ],
+        "px_per_m": 0.1055,
+        "scale_bar_m": 1000,
+        "expected_px": 105.5,
+        "actual_px": 105.5,
+        "recalculated_m": 1000.0,
+        "error_m": 0.0,
+        "north_up": true
+      },
+      {
+        "map_id": "F03-zhongzhiyuan",
+        "crs": "EPSG:4548",
+        "viewport_m": [
+          443884.57,
+          4431405.97,
+          444884.57,
+          4432055.97
+        ],
+        "box_px": [
+          108,
+          475,
+          772,
+          907
+        ],
+        "px_per_m": 0.664,
+        "scale_bar_m": 200,
+        "expected_px": 132.8,
+        "actual_px": 132.8,
+        "recalculated_m": 200.0,
+        "error_m": 0.0,
+        "north_up": true
+      },
+      {
+        "map_id": "F03-ai_origin",
+        "crs": "EPSG:4548",
+        "viewport_m": [
+          443739.63,
+          4428519.94,
+          444739.63,
+          4429169.94
+        ],
+        "box_px": [
+          868,
+          475,
+          1532,
+          907
+        ],
+        "px_per_m": 0.664,
+        "scale_bar_m": 200,
+        "expected_px": 132.8,
+        "actual_px": 132.8,
+        "recalculated_m": 200.0,
+        "error_m": 0.0,
+        "north_up": true
+      },
+      {
+        "map_id": "F03-dazhongsi",
+        "crs": "EPSG:4548",
+        "viewport_m": [
+          443695.73,
+          4423689.96,
+          444695.73,
+          4424339.96
+        ],
+        "box_px": [
+          1628,
+          475,
+          2292,
+          907
+        ],
+        "px_per_m": 0.664,
+        "scale_bar_m": 200,
+        "expected_px": 132.8,
+        "actual_px": 132.8,
+        "recalculated_m": 200.0,
+        "error_m": 0.0,
+        "north_up": true
+      },
+      {
+        "map_id": "F04-corridor",
+        "crs": "EPSG:4548",
+        "viewport_m": [
+          440716.08,
+          4422792.23,
+          447216.08,
+          4432792.23
+        ],
+        "box_px": [
+          80,
+          315,
+          1130,
+          1370
+        ],
+        "px_per_m": 0.1055,
+        "scale_bar_m": 1000,
+        "expected_px": 105.5,
+        "actual_px": 105.5,
+        "recalculated_m": 1000.0,
+        "error_m": 0.0,
+        "north_up": true
+      }
+    ],
+    "label_bbox_assertions": [
+      {
+        "map_id": "F01-corridor",
+        "language": "zh",
+        "landmark": "CX01",
+        "osm_ref": null,
+        "label": "CX01",
+        "bbox_px": [
+          638.6843789441372,
+          364.07636080315797,
+          663.6843789441372,
+          372.07636080315797
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F01-corridor",
+        "language": "zh",
+        "landmark": "CX02",
+        "osm_ref": null,
+        "label": "CX02",
+        "bbox_px": [
+          641.6803717354715,
+          422.6729507846071,
+          666.6803717354715,
+          430.6729507846071
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F01-corridor",
+        "language": "zh",
+        "landmark": "CX03",
+        "osm_ref": null,
+        "label": "CX03",
+        "bbox_px": [
+          639.0116994244586,
+          481.2280830654837,
+          664.0116994244586,
+          489.2280830654837
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F01-corridor",
+        "language": "zh",
+        "landmark": "CX04",
+        "osm_ref": null,
+        "label": "CX04",
+        "bbox_px": [
+          640.8948248827085,
+          563.2462925553727,
+          666.8948248827085,
+          571.2462925553727
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F01-corridor",
+        "language": "zh",
+        "landmark": "CX05",
+        "osm_ref": null,
+        "label": "CX05",
+        "bbox_px": [
+          637.4774108023097,
+          727.2297918613165,
+          662.4774108023097,
+          735.2297918613165
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F01-corridor",
+        "language": "zh",
+        "landmark": "CX06",
+        "osm_ref": null,
+        "label": "CX06",
+        "bbox_px": [
+          635.8441526370074,
+          762.3624451714611,
+          660.8441526370074,
+          770.3624451714611
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F01-corridor",
+        "language": "zh",
+        "landmark": "CX07",
+        "osm_ref": null,
+        "label": "CX07",
+        "bbox_px": [
+          634.8181066765736,
+          797.4994818188377,
+          659.8181066765736,
+          805.4994818188377
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F01-corridor",
+        "language": "zh",
+        "landmark": "CX08",
+        "osm_ref": null,
+        "label": "CX08",
+        "bbox_px": [
+          638.8321449128198,
+          879.5327379104225,
+          663.8321449128198,
+          887.5327379104225
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F01-corridor",
+        "language": "zh",
+        "landmark": "CX09",
+        "osm_ref": null,
+        "label": "CX09",
+        "bbox_px": [
+          633.975334687167,
+          1055.219928215482,
+          658.975334687167,
+          1063.219928215482
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F01-corridor",
+        "language": "zh",
+        "landmark": "CX10",
+        "osm_ref": null,
+        "label": "CX10",
+        "bbox_px": [
+          635.5512697293204,
+          1236.8115773291736,
+          660.5512697293204,
+          1244.8115773291736
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F01-corridor",
+        "language": "zh",
+        "landmark": "CX11",
+        "osm_ref": null,
+        "label": "CX11",
+        "bbox_px": [
+          635.8056166032906,
+          1266.1005062773997,
+          660.8056166032906,
+          1274.1005062773997
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F01-corridor",
+        "language": "zh",
+        "landmark": "CX12",
+        "osm_ref": null,
+        "label": "CX12",
+        "bbox_px": [
+          636.314446832316,
+          1324.6783252459227,
+          661.314446832316,
+          1332.6783252459227
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F01-corridor",
+        "language": "zh",
+        "landmark": "LM-01",
+        "osm_ref": "way/122348403",
+        "label": "京张铁路遗址公园",
+        "bbox_px": [
+          567.5115300000023,
+          827.6184924999765,
+          663.5115300000023,
+          840.6184924999765
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F01-corridor",
+        "language": "zh",
+        "landmark": "LM-02",
+        "osm_ref": "way/122100032",
+        "label": "清华园老站站房",
+        "bbox_px": [
+          500.9800650000017,
+          723.8695574999844,
+          584.9800650000017,
+          736.8695574999844
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F01-corridor",
+        "language": "zh",
+        "landmark": "LM-03",
+        "osm_ref": "way/42411602",
+        "label": "大钟寺",
+        "bbox_px": [
+          556.5711800000071,
+          986.5761624999213,
+          592.5711800000071,
+          999.5761624999213
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F01-corridor",
+        "language": "zh",
+        "landmark": "LM-04",
+        "osm_ref": "way/388355720",
+        "label": "北京电影学院",
+        "bbox_px": [
+          715.6494950000026,
+          957.8031474999725,
+          789.6494950000026,
+          970.8031474999725
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F01-corridor",
+        "language": "zh",
+        "landmark": "LM-05",
+        "osm_ref": "node/5442237543",
+        "label": "五道口站",
+        "bbox_px": [
+          556.072165000003,
+          709.527887499941,
+          604.072165000003,
+          722.527887499941
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F01-corridor",
+        "language": "zh",
+        "landmark": "LM-06",
+        "osm_ref": "node/3379245690",
+        "label": "清华东路西口站",
+        "bbox_px": [
+          574.0978950000015,
+          617.9823724998939,
+          658.0978950000015,
+          630.9823724998939
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F01-corridor",
+        "language": "zh",
+        "landmark": "LM-07",
+        "osm_ref": "node/6617852356",
+        "label": "大钟寺站",
+        "bbox_px": [
+          619.6802250000073,
+          1016.9886474999726,
+          667.6802250000073,
+          1029.9886474999726
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F02-corridor",
+        "language": "zh",
+        "landmark": "LM-01",
+        "osm_ref": "way/122348403",
+        "label": "京张铁路遗址公园",
+        "bbox_px": [
+          707.5115300000023,
+          791.6184924999765,
+          803.5115300000023,
+          804.6184924999765
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F02-corridor",
+        "language": "zh",
+        "landmark": "LM-02",
+        "osm_ref": "way/122100032",
+        "label": "清华园老站站房",
+        "bbox_px": [
+          640.9800650000017,
+          723.8695574999844,
+          724.9800650000017,
+          736.8695574999844
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F02-corridor",
+        "language": "zh",
+        "landmark": "LM-03",
+        "osm_ref": "way/42411602",
+        "label": "大钟寺",
+        "bbox_px": [
+          696.5711800000071,
+          986.5761624999213,
+          732.5711800000071,
+          999.5761624999213
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F02-corridor",
+        "language": "zh",
+        "landmark": "CX01",
+        "osm_ref": null,
+        "label": "CX01",
+        "bbox_px": [
+          778.6843789441372,
+          364.07636080315797,
+          803.6843789441372,
+          372.07636080315797
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F02-corridor",
+        "language": "zh",
+        "landmark": "CX02",
+        "osm_ref": null,
+        "label": "CX02",
+        "bbox_px": [
+          781.6803717354715,
+          422.6729507846071,
+          806.6803717354715,
+          430.6729507846071
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F02-corridor",
+        "language": "zh",
+        "landmark": "CX03",
+        "osm_ref": null,
+        "label": "CX03",
+        "bbox_px": [
+          779.0116994244586,
+          481.2280830654837,
+          804.0116994244586,
+          489.2280830654837
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F02-corridor",
+        "language": "zh",
+        "landmark": "CX04",
+        "osm_ref": null,
+        "label": "CX04",
+        "bbox_px": [
+          780.8948248827085,
+          563.2462925553727,
+          806.8948248827085,
+          571.2462925553727
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F02-corridor",
+        "language": "zh",
+        "landmark": "CX05",
+        "osm_ref": null,
+        "label": "CX05",
+        "bbox_px": [
+          777.4774108023097,
+          727.2297918613165,
+          802.4774108023097,
+          735.2297918613165
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F02-corridor",
+        "language": "zh",
+        "landmark": "CX06",
+        "osm_ref": null,
+        "label": "CX06",
+        "bbox_px": [
+          775.8441526370074,
+          762.3624451714611,
+          800.8441526370074,
+          770.3624451714611
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F02-corridor",
+        "language": "zh",
+        "landmark": "CX07",
+        "osm_ref": null,
+        "label": "CX07",
+        "bbox_px": [
+          802.8181066765736,
+          775.4994818188377,
+          827.8181066765736,
+          783.4994818188377
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F02-corridor",
+        "language": "zh",
+        "landmark": "CX08",
+        "osm_ref": null,
+        "label": "CX08",
+        "bbox_px": [
+          778.8321449128198,
+          879.5327379104225,
+          803.8321449128198,
+          887.5327379104225
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F02-corridor",
+        "language": "zh",
+        "landmark": "CX09",
+        "osm_ref": null,
+        "label": "CX09",
+        "bbox_px": [
+          773.975334687167,
+          1055.219928215482,
+          798.975334687167,
+          1063.219928215482
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F02-corridor",
+        "language": "zh",
+        "landmark": "CX10",
+        "osm_ref": null,
+        "label": "CX10",
+        "bbox_px": [
+          775.5512697293204,
+          1236.8115773291736,
+          800.5512697293204,
+          1244.8115773291736
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F02-corridor",
+        "language": "zh",
+        "landmark": "CX11",
+        "osm_ref": null,
+        "label": "CX11",
+        "bbox_px": [
+          775.8056166032906,
+          1266.1005062773997,
+          800.8056166032906,
+          1274.1005062773997
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F02-corridor",
+        "language": "zh",
+        "landmark": "CX12",
+        "osm_ref": null,
+        "label": "CX12",
+        "bbox_px": [
+          776.314446832316,
+          1324.6783252459227,
+          801.314446832316,
+          1332.6783252459227
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F03-zhongzhiyuan",
+        "language": "zh",
+        "landmark": "CX02",
+        "osm_ref": null,
+        "label": "CX02",
+        "bbox_px": [
+          427.556782205825,
+          686.9919664423019,
+          452.556782205825,
+          694.9919664423019
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F03-zhongzhiyuan",
+        "language": "zh",
+        "landmark": "SL-01",
+        "osm_ref": "way/1055429169",
+        "label": "学清路",
+        "bbox_px": [
+          304.5083999999846,
+          670.1951200000494,
+          340.5083999999846,
+          683.1951200000494
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F03-zhongzhiyuan",
+        "language": "zh",
+        "landmark": "SL-02",
+        "osm_ref": "way/919970121",
+        "label": "小月河公园",
+        "bbox_px": [
+          149.21207999998146,
+          509.845759999901,
+          209.21207999998146,
+          522.845759999901
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F03-zhongzhiyuan",
+        "language": "zh",
+        "landmark": "SL-03",
+        "osm_ref": "way/374385905",
+        "label": "清河—小月河水闸",
+        "bbox_px": [
+          352.13712000001084,
+          714.643279999703,
+          448.13712000001084,
+          727.643279999703
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F03-ai_origin",
+        "language": "zh",
+        "landmark": "CX05",
+        "osm_ref": null,
+        "label": "CX05",
+        "bbox_px": [
+          1187.1819020799348,
+          686.9889591286181,
+          1212.1819020799348,
+          694.9889591286181
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F03-ai_origin",
+        "language": "zh",
+        "landmark": "SL-04",
+        "osm_ref": "way/1154052181",
+        "label": "学院路",
+        "bbox_px": [
+          1215.9336000000155,
+          664.6374399999752,
+          1251.9336000000155,
+          677.6374399999752
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F03-ai_origin",
+        "language": "zh",
+        "landmark": "SL-05",
+        "osm_ref": "way/544023366",
+        "label": "凌霜园",
+        "bbox_px": [
+          1129.3280799999816,
+          517.6252000004947,
+          1165.3280799999816,
+          528.6252000004947
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F03-ai_origin",
+        "language": "zh",
+        "landmark": "SL-06",
+        "osm_ref": "way/162970619",
+        "label": "成府路",
+        "bbox_px": [
+          907.5321600000016,
+          671.3504800001979,
+          943.5321600000016,
+          684.3504800001979
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F03-dazhongsi",
+        "language": "zh",
+        "landmark": "CX10",
+        "osm_ref": null,
+        "label": "CX10",
+        "bbox_px": [
+          1954.083851599044,
+          687.0311673495776,
+          1979.083851599044,
+          695.0311673495776
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F03-dazhongsi",
+        "language": "zh",
+        "landmark": "CX11",
+        "osm_ref": null,
+        "label": "CX11",
+        "bbox_px": [
+          1954.902660797468,
+          871.3651219508591,
+          1979.902660797468,
+          879.3651219508591
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F03-dazhongsi",
+        "language": "zh",
+        "landmark": "SL-07",
+        "osm_ref": "way/1181036692",
+        "label": "京包客专线",
+        "bbox_px": [
+          1917.7804800000047,
+          629.3856800000742,
+          1977.7804800000047,
+          642.3856800000742
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F03-dazhongsi",
+        "language": "zh",
+        "landmark": "SL-08",
+        "osm_ref": "way/120492009",
+        "label": "西直门北大街",
+        "bbox_px": [
+          2140.6056000000153,
+          670.1685600000246,
+          2212.6056000000153,
+          683.1685600000246
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F03-dazhongsi",
+        "language": "zh",
+        "landmark": "SL-09",
+        "osm_ref": "way/200877422",
+        "label": "交通大学路",
+        "bbox_px": [
+          1848.844,
+          774.9079200001731,
+          1908.844,
+          787.9079200001731
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F04-corridor",
+        "language": "zh",
+        "landmark": "CX01",
+        "osm_ref": null,
+        "label": "CX01",
+        "bbox_px": [
+          593.6843789441372,
+          364.07636080315797,
+          618.6843789441372,
+          372.07636080315797
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F04-corridor",
+        "language": "zh",
+        "landmark": "CX02",
+        "osm_ref": null,
+        "label": "CX02",
+        "bbox_px": [
+          596.6803717354715,
+          422.6729507846071,
+          621.6803717354715,
+          430.6729507846071
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F04-corridor",
+        "language": "zh",
+        "landmark": "CX03",
+        "osm_ref": null,
+        "label": "CX03",
+        "bbox_px": [
+          594.0116994244586,
+          481.2280830654837,
+          619.0116994244586,
+          489.2280830654837
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F04-corridor",
+        "language": "zh",
+        "landmark": "CX04",
+        "osm_ref": null,
+        "label": "CX04",
+        "bbox_px": [
+          595.8948248827085,
+          563.2462925553727,
+          621.8948248827085,
+          571.2462925553727
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F04-corridor",
+        "language": "zh",
+        "landmark": "CX05",
+        "osm_ref": null,
+        "label": "CX05",
+        "bbox_px": [
+          592.4774108023097,
+          727.2297918613165,
+          617.4774108023097,
+          735.2297918613165
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F04-corridor",
+        "language": "zh",
+        "landmark": "CX06",
+        "osm_ref": null,
+        "label": "CX06",
+        "bbox_px": [
+          590.8441526370074,
+          762.3624451714611,
+          615.8441526370074,
+          770.3624451714611
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F04-corridor",
+        "language": "zh",
+        "landmark": "CX07",
+        "osm_ref": null,
+        "label": "CX07",
+        "bbox_px": [
+          589.8181066765736,
+          797.4994818188377,
+          614.8181066765736,
+          805.4994818188377
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F04-corridor",
+        "language": "zh",
+        "landmark": "CX08",
+        "osm_ref": null,
+        "label": "CX08",
+        "bbox_px": [
+          593.8321449128198,
+          879.5327379104225,
+          618.8321449128198,
+          887.5327379104225
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F04-corridor",
+        "language": "zh",
+        "landmark": "CX09",
+        "osm_ref": null,
+        "label": "CX09",
+        "bbox_px": [
+          588.975334687167,
+          1055.219928215482,
+          613.975334687167,
+          1063.219928215482
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F04-corridor",
+        "language": "zh",
+        "landmark": "CX10",
+        "osm_ref": null,
+        "label": "CX10",
+        "bbox_px": [
+          590.5512697293204,
+          1236.8115773291736,
+          615.5512697293204,
+          1244.8115773291736
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F04-corridor",
+        "language": "zh",
+        "landmark": "CX11",
+        "osm_ref": null,
+        "label": "CX11",
+        "bbox_px": [
+          590.8056166032906,
+          1266.1005062773997,
+          615.8056166032906,
+          1274.1005062773997
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F04-corridor",
+        "language": "zh",
+        "landmark": "CX12",
+        "osm_ref": null,
+        "label": "CX12",
+        "bbox_px": [
+          591.314446832316,
+          1324.6783252459227,
+          616.314446832316,
+          1332.6783252459227
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F04-corridor",
+        "language": "zh",
+        "landmark": "LM-01",
+        "osm_ref": "way/122348403",
+        "label": "京张铁路遗址公园",
+        "bbox_px": [
+          522.5115300000023,
+          827.6184924999765,
+          618.5115300000023,
+          840.6184924999765
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F04-corridor",
+        "language": "zh",
+        "landmark": "LM-02",
+        "osm_ref": "way/122100032",
+        "label": "清华园老站站房",
+        "bbox_px": [
+          455.9800650000017,
+          723.8695574999844,
+          539.9800650000017,
+          736.8695574999844
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F04-corridor",
+        "language": "zh",
+        "landmark": "LM-03",
+        "osm_ref": "way/42411602",
+        "label": "大钟寺",
+        "bbox_px": [
+          511.5711800000071,
+          986.5761624999213,
+          547.5711800000071,
+          999.5761624999213
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F04-corridor",
+        "language": "zh",
+        "landmark": "LM-04",
+        "osm_ref": "way/388355720",
+        "label": "北京电影学院",
+        "bbox_px": [
+          670.6494950000026,
+          957.8031474999725,
+          744.6494950000026,
+          970.8031474999725
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F04-corridor",
+        "language": "zh",
+        "landmark": "LM-05",
+        "osm_ref": "node/5442237543",
+        "label": "五道口站",
+        "bbox_px": [
+          511.07216500000294,
+          709.527887499941,
+          559.072165000003,
+          722.527887499941
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F04-corridor",
+        "language": "zh",
+        "landmark": "LM-06",
+        "osm_ref": "node/3379245690",
+        "label": "清华东路西口站",
+        "bbox_px": [
+          529.0978950000015,
+          617.9823724998939,
+          613.0978950000015,
+          630.9823724998939
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F04-corridor",
+        "language": "zh",
+        "landmark": "LM-07",
+        "osm_ref": "node/6617852356",
+        "label": "大钟寺站",
+        "bbox_px": [
+          574.6802250000073,
+          1016.9886474999726,
+          622.6802250000073,
+          1029.9886474999726
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F01-corridor",
+        "language": "en",
+        "landmark": "CX01",
+        "osm_ref": null,
+        "label": "CX01",
+        "bbox_px": [
+          638.6843789441372,
+          364.07636080315797,
+          663.6843789441372,
+          372.07636080315797
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F01-corridor",
+        "language": "en",
+        "landmark": "CX02",
+        "osm_ref": null,
+        "label": "CX02",
+        "bbox_px": [
+          641.6803717354715,
+          422.6729507846071,
+          666.6803717354715,
+          430.6729507846071
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F01-corridor",
+        "language": "en",
+        "landmark": "CX03",
+        "osm_ref": null,
+        "label": "CX03",
+        "bbox_px": [
+          639.0116994244586,
+          481.2280830654837,
+          664.0116994244586,
+          489.2280830654837
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F01-corridor",
+        "language": "en",
+        "landmark": "CX04",
+        "osm_ref": null,
+        "label": "CX04",
+        "bbox_px": [
+          640.8948248827085,
+          563.2462925553727,
+          666.8948248827085,
+          571.2462925553727
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F01-corridor",
+        "language": "en",
+        "landmark": "CX05",
+        "osm_ref": null,
+        "label": "CX05",
+        "bbox_px": [
+          637.4774108023097,
+          727.2297918613165,
+          662.4774108023097,
+          735.2297918613165
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F01-corridor",
+        "language": "en",
+        "landmark": "CX06",
+        "osm_ref": null,
+        "label": "CX06",
+        "bbox_px": [
+          635.8441526370074,
+          762.3624451714611,
+          660.8441526370074,
+          770.3624451714611
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F01-corridor",
+        "language": "en",
+        "landmark": "CX07",
+        "osm_ref": null,
+        "label": "CX07",
+        "bbox_px": [
+          634.8181066765736,
+          797.4994818188377,
+          659.8181066765736,
+          805.4994818188377
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F01-corridor",
+        "language": "en",
+        "landmark": "CX08",
+        "osm_ref": null,
+        "label": "CX08",
+        "bbox_px": [
+          638.8321449128198,
+          879.5327379104225,
+          663.8321449128198,
+          887.5327379104225
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F01-corridor",
+        "language": "en",
+        "landmark": "CX09",
+        "osm_ref": null,
+        "label": "CX09",
+        "bbox_px": [
+          633.975334687167,
+          1055.219928215482,
+          658.975334687167,
+          1063.219928215482
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F01-corridor",
+        "language": "en",
+        "landmark": "CX10",
+        "osm_ref": null,
+        "label": "CX10",
+        "bbox_px": [
+          635.5512697293204,
+          1236.8115773291736,
+          660.5512697293204,
+          1244.8115773291736
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F01-corridor",
+        "language": "en",
+        "landmark": "CX11",
+        "osm_ref": null,
+        "label": "CX11",
+        "bbox_px": [
+          635.8056166032906,
+          1266.1005062773997,
+          660.8056166032906,
+          1274.1005062773997
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F01-corridor",
+        "language": "en",
+        "landmark": "CX12",
+        "osm_ref": null,
+        "label": "CX12",
+        "bbox_px": [
+          636.314446832316,
+          1324.6783252459227,
+          661.314446832316,
+          1332.6783252459227
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F01-corridor",
+        "language": "en",
+        "landmark": "LM-01",
+        "osm_ref": "way/122348403",
+        "label": "Jing-Zhang Railway Heritage Park",
+        "bbox_px": [
+          567.5115300000023,
+          828.6184924999765,
+          780.5115300000023,
+          841.6184924999765
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F01-corridor",
+        "language": "en",
+        "landmark": "LM-02",
+        "osm_ref": "way/122100032",
+        "label": "Old Tsinghuayuan Station",
+        "bbox_px": [
+          468.9800650000017,
+          724.8695574999844,
+          635.9800650000017,
+          737.8695574999844
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F01-corridor",
+        "language": "en",
+        "landmark": "LM-03",
+        "osm_ref": "way/42411602",
+        "label": "Dazhong Temple",
+        "bbox_px": [
+          556.5711800000071,
+          987.5761624999213,
+          661.5711800000071,
+          1000.5761624999213
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F01-corridor",
+        "language": "en",
+        "landmark": "LM-04",
+        "osm_ref": "way/388355720",
+        "label": "Beijing Film Academy",
+        "bbox_px": [
+          716.6494950000026,
+          958.8031474999725,
+          849.6494950000026,
+          971.8031474999725
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F01-corridor",
+        "language": "en",
+        "landmark": "LM-05",
+        "osm_ref": "node/5442237543",
+        "label": "Wudaokou Station",
+        "bbox_px": [
+          556.072165000003,
+          710.527887499941,
+          673.072165000003,
+          720.527887499941
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F01-corridor",
+        "language": "en",
+        "landmark": "LM-06",
+        "osm_ref": "node/3379245690",
+        "label": "Qinghua Donglu Xikou Station",
+        "bbox_px": [
+          574.0978950000015,
+          618.9823724998939,
+          764.0978950000015,
+          631.9823724998939
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F01-corridor",
+        "language": "en",
+        "landmark": "LM-07",
+        "osm_ref": "node/6617852356",
+        "label": "Dazhongsi Station",
+        "bbox_px": [
+          619.6802250000073,
+          1017.9886474999726,
+          736.6802250000073,
+          1030.9886474999726
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F02-corridor",
+        "language": "en",
+        "landmark": "LM-01",
+        "osm_ref": "way/122348403",
+        "label": "Jing-Zhang Railway Heritage Park",
+        "bbox_px": [
+          707.5115300000023,
+          792.6184924999765,
+          920.5115300000023,
+          805.6184924999765
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F02-corridor",
+        "language": "en",
+        "landmark": "LM-02",
+        "osm_ref": "way/122100032",
+        "label": "Old Tsinghuayuan Station",
+        "bbox_px": [
+          640.9800650000017,
+          724.8695574999844,
+          807.9800650000017,
+          737.8695574999844
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F02-corridor",
+        "language": "en",
+        "landmark": "LM-03",
+        "osm_ref": "way/42411602",
+        "label": "Dazhong Temple",
+        "bbox_px": [
+          696.5711800000071,
+          987.5761624999213,
+          801.5711800000071,
+          1000.5761624999213
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F02-corridor",
+        "language": "en",
+        "landmark": "CX01",
+        "osm_ref": null,
+        "label": "CX01",
+        "bbox_px": [
+          778.6843789441372,
+          364.07636080315797,
+          803.6843789441372,
+          372.07636080315797
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F02-corridor",
+        "language": "en",
+        "landmark": "CX02",
+        "osm_ref": null,
+        "label": "CX02",
+        "bbox_px": [
+          781.6803717354715,
+          422.6729507846071,
+          806.6803717354715,
+          430.6729507846071
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F02-corridor",
+        "language": "en",
+        "landmark": "CX03",
+        "osm_ref": null,
+        "label": "CX03",
+        "bbox_px": [
+          779.0116994244586,
+          481.2280830654837,
+          804.0116994244586,
+          489.2280830654837
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F02-corridor",
+        "language": "en",
+        "landmark": "CX04",
+        "osm_ref": null,
+        "label": "CX04",
+        "bbox_px": [
+          780.8948248827085,
+          563.2462925553727,
+          806.8948248827085,
+          571.2462925553727
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F02-corridor",
+        "language": "en",
+        "landmark": "CX05",
+        "osm_ref": null,
+        "label": "CX05",
+        "bbox_px": [
+          805.4774108023097,
+          705.2297918613165,
+          830.4774108023097,
+          713.2297918613165
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F02-corridor",
+        "language": "en",
+        "landmark": "CX06",
+        "osm_ref": null,
+        "label": "CX06",
+        "bbox_px": [
+          775.8441526370074,
+          762.3624451714611,
+          800.8441526370074,
+          770.3624451714611
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F02-corridor",
+        "language": "en",
+        "landmark": "CX07",
+        "osm_ref": null,
+        "label": "CX07",
+        "bbox_px": [
+          802.8181066765736,
+          775.4994818188377,
+          827.8181066765736,
+          783.4994818188377
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F02-corridor",
+        "language": "en",
+        "landmark": "CX08",
+        "osm_ref": null,
+        "label": "CX08",
+        "bbox_px": [
+          778.8321449128198,
+          879.5327379104225,
+          803.8321449128198,
+          887.5327379104225
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F02-corridor",
+        "language": "en",
+        "landmark": "CX09",
+        "osm_ref": null,
+        "label": "CX09",
+        "bbox_px": [
+          773.975334687167,
+          1055.219928215482,
+          798.975334687167,
+          1063.219928215482
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F02-corridor",
+        "language": "en",
+        "landmark": "CX10",
+        "osm_ref": null,
+        "label": "CX10",
+        "bbox_px": [
+          775.5512697293204,
+          1236.8115773291736,
+          800.5512697293204,
+          1244.8115773291736
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F02-corridor",
+        "language": "en",
+        "landmark": "CX11",
+        "osm_ref": null,
+        "label": "CX11",
+        "bbox_px": [
+          775.8056166032906,
+          1266.1005062773997,
+          800.8056166032906,
+          1274.1005062773997
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F02-corridor",
+        "language": "en",
+        "landmark": "CX12",
+        "osm_ref": null,
+        "label": "CX12",
+        "bbox_px": [
+          776.314446832316,
+          1324.6783252459227,
+          801.314446832316,
+          1332.6783252459227
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F03-zhongzhiyuan",
+        "language": "en",
+        "landmark": "CX02",
+        "osm_ref": null,
+        "label": "CX02",
+        "bbox_px": [
+          427.556782205825,
+          686.9919664423019,
+          452.556782205825,
+          694.9919664423019
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F03-zhongzhiyuan",
+        "language": "en",
+        "landmark": "SL-01",
+        "osm_ref": "way/1055429169",
+        "label": "Xueqing Road",
+        "bbox_px": [
+          304.5083999999846,
+          671.1951200000494,
+          390.5083999999846,
+          684.1951200000494
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F03-zhongzhiyuan",
+        "language": "en",
+        "landmark": "SL-02",
+        "osm_ref": "way/919970121",
+        "label": "Xiaoyue River Park",
+        "bbox_px": [
+          149.21207999998146,
+          510.845759999901,
+          265.2120799999815,
+          523.845759999901
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F03-zhongzhiyuan",
+        "language": "en",
+        "landmark": "SL-03",
+        "osm_ref": "way/374385905",
+        "label": "Qinghe–Xiaoyue sluice",
+        "bbox_px": [
+          352.13712000001084,
+          715.643279999703,
+          494.13712000001084,
+          728.643279999703
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F03-ai_origin",
+        "language": "en",
+        "landmark": "CX05",
+        "osm_ref": null,
+        "label": "CX05",
+        "bbox_px": [
+          1187.1819020799348,
+          686.9889591286181,
+          1212.1819020799348,
+          694.9889591286181
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F03-ai_origin",
+        "language": "en",
+        "landmark": "SL-04",
+        "osm_ref": "way/1154052181",
+        "label": "Xueyuan Road",
+        "bbox_px": [
+          1215.9336000000155,
+          665.6374399999752,
+          1304.9336000000155,
+          678.6374399999752
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F03-ai_origin",
+        "language": "en",
+        "landmark": "SL-05",
+        "osm_ref": "way/544023366",
+        "label": "Lingshuang Garden",
+        "bbox_px": [
+          1129.3280799999816,
+          517.6252000004947,
+          1251.3280799999816,
+          530.6252000004947
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F03-ai_origin",
+        "language": "en",
+        "landmark": "SL-06",
+        "osm_ref": "way/162970619",
+        "label": "Chengfu Road",
+        "bbox_px": [
+          907.5321600000016,
+          672.3504800001979,
+          993.5321600000016,
+          685.3504800001979
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F03-dazhongsi",
+        "language": "en",
+        "landmark": "CX10",
+        "osm_ref": null,
+        "label": "CX10",
+        "bbox_px": [
+          1954.083851599044,
+          687.0311673495776,
+          1979.083851599044,
+          695.0311673495776
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F03-dazhongsi",
+        "language": "en",
+        "landmark": "CX11",
+        "osm_ref": null,
+        "label": "CX11",
+        "bbox_px": [
+          1954.902660797468,
+          871.3651219508591,
+          1979.902660797468,
+          879.3651219508591
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F03-dazhongsi",
+        "language": "en",
+        "landmark": "SL-07",
+        "osm_ref": "way/1181036692",
+        "label": "Jingbao passenger railway",
+        "bbox_px": [
+          1917.7804800000047,
+          630.3856800000742,
+          2085.780480000005,
+          643.3856800000742
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F03-dazhongsi",
+        "language": "en",
+        "landmark": "SL-08",
+        "osm_ref": "way/120492009",
+        "label": "Xizhimen North Street",
+        "bbox_px": [
+          2140.6056000000153,
+          671.1685600000246,
+          2279.6056000000153,
+          681.1685600000246
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F03-dazhongsi",
+        "language": "en",
+        "landmark": "SL-09",
+        "osm_ref": "way/200877422",
+        "label": "Jiaotong University Road",
+        "bbox_px": [
+          1848.844,
+          775.9079200001731,
+          2007.844,
+          788.9079200001731
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F04-corridor",
+        "language": "en",
+        "landmark": "CX01",
+        "osm_ref": null,
+        "label": "CX01",
+        "bbox_px": [
+          593.6843789441372,
+          364.07636080315797,
+          618.6843789441372,
+          372.07636080315797
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F04-corridor",
+        "language": "en",
+        "landmark": "CX02",
+        "osm_ref": null,
+        "label": "CX02",
+        "bbox_px": [
+          596.6803717354715,
+          422.6729507846071,
+          621.6803717354715,
+          430.6729507846071
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F04-corridor",
+        "language": "en",
+        "landmark": "CX03",
+        "osm_ref": null,
+        "label": "CX03",
+        "bbox_px": [
+          594.0116994244586,
+          481.2280830654837,
+          619.0116994244586,
+          489.2280830654837
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F04-corridor",
+        "language": "en",
+        "landmark": "CX04",
+        "osm_ref": null,
+        "label": "CX04",
+        "bbox_px": [
+          595.8948248827085,
+          563.2462925553727,
+          621.8948248827085,
+          571.2462925553727
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F04-corridor",
+        "language": "en",
+        "landmark": "CX05",
+        "osm_ref": null,
+        "label": "CX05",
+        "bbox_px": [
+          592.4774108023097,
+          727.2297918613165,
+          617.4774108023097,
+          735.2297918613165
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F04-corridor",
+        "language": "en",
+        "landmark": "CX06",
+        "osm_ref": null,
+        "label": "CX06",
+        "bbox_px": [
+          590.8441526370074,
+          762.3624451714611,
+          615.8441526370074,
+          770.3624451714611
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F04-corridor",
+        "language": "en",
+        "landmark": "CX07",
+        "osm_ref": null,
+        "label": "CX07",
+        "bbox_px": [
+          589.8181066765736,
+          797.4994818188377,
+          614.8181066765736,
+          805.4994818188377
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F04-corridor",
+        "language": "en",
+        "landmark": "CX08",
+        "osm_ref": null,
+        "label": "CX08",
+        "bbox_px": [
+          593.8321449128198,
+          879.5327379104225,
+          618.8321449128198,
+          887.5327379104225
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F04-corridor",
+        "language": "en",
+        "landmark": "CX09",
+        "osm_ref": null,
+        "label": "CX09",
+        "bbox_px": [
+          588.975334687167,
+          1055.219928215482,
+          613.975334687167,
+          1063.219928215482
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F04-corridor",
+        "language": "en",
+        "landmark": "CX10",
+        "osm_ref": null,
+        "label": "CX10",
+        "bbox_px": [
+          590.5512697293204,
+          1236.8115773291736,
+          615.5512697293204,
+          1244.8115773291736
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F04-corridor",
+        "language": "en",
+        "landmark": "CX11",
+        "osm_ref": null,
+        "label": "CX11",
+        "bbox_px": [
+          590.8056166032906,
+          1266.1005062773997,
+          615.8056166032906,
+          1274.1005062773997
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F04-corridor",
+        "language": "en",
+        "landmark": "CX12",
+        "osm_ref": null,
+        "label": "CX12",
+        "bbox_px": [
+          591.314446832316,
+          1324.6783252459227,
+          616.314446832316,
+          1332.6783252459227
+        ],
+        "intersections": 0,
+        "status": "candidate_not_surveyed"
+      },
+      {
+        "map_id": "F04-corridor",
+        "language": "en",
+        "landmark": "LM-01",
+        "osm_ref": "way/122348403",
+        "label": "Jing-Zhang Railway Heritage Park",
+        "bbox_px": [
+          522.5115300000023,
+          828.6184924999765,
+          735.5115300000023,
+          841.6184924999765
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F04-corridor",
+        "language": "en",
+        "landmark": "LM-02",
+        "osm_ref": "way/122100032",
+        "label": "Old Tsinghuayuan Station",
+        "bbox_px": [
+          423.9800650000017,
+          724.8695574999844,
+          590.9800650000017,
+          737.8695574999844
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F04-corridor",
+        "language": "en",
+        "landmark": "LM-03",
+        "osm_ref": "way/42411602",
+        "label": "Dazhong Temple",
+        "bbox_px": [
+          511.5711800000071,
+          987.5761624999213,
+          616.5711800000071,
+          1000.5761624999213
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F04-corridor",
+        "language": "en",
+        "landmark": "LM-04",
+        "osm_ref": "way/388355720",
+        "label": "Beijing Film Academy",
+        "bbox_px": [
+          671.6494950000026,
+          958.8031474999725,
+          804.6494950000026,
+          971.8031474999725
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F04-corridor",
+        "language": "en",
+        "landmark": "LM-05",
+        "osm_ref": "node/5442237543",
+        "label": "Wudaokou Station",
+        "bbox_px": [
+          511.07216500000294,
+          710.527887499941,
+          628.072165000003,
+          720.527887499941
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F04-corridor",
+        "language": "en",
+        "landmark": "LM-06",
+        "osm_ref": "node/3379245690",
+        "label": "Qinghua Donglu Xikou Station",
+        "bbox_px": [
+          529.0978950000015,
+          618.9823724998939,
+          719.0978950000015,
+          631.9823724998939
+        ],
+        "intersections": 0
+      },
+      {
+        "map_id": "F04-corridor",
+        "language": "en",
+        "landmark": "LM-07",
+        "osm_ref": "node/6617852356",
+        "label": "Dazhongsi Station",
+        "bbox_px": [
+          574.6802250000073,
+          1017.9886474999726,
+          691.6802250000073,
+          1030.9886474999726
+        ],
+        "intersections": 0
+      }
+    ],
+    "common_scale_assertions": [
+      {
+        "language": "zh",
+        "site": "zhongzhiyuan",
+        "section": "CX02",
+        "viewport_width_m": 1000.0,
+        "viewport_height_m": 650.0,
+        "px_per_m": 0.664,
+        "scale_contract": "200 m graphic scale; common 1000 m x 650 m EPSG:4548 viewport; no fixed print ratio is claimed",
+        "same_scale_group": "F03-three-key-areas"
+      },
+      {
+        "language": "zh",
+        "site": "ai_origin",
+        "section": "CX05",
+        "viewport_width_m": 1000.0,
+        "viewport_height_m": 650.0,
+        "px_per_m": 0.664,
+        "scale_contract": "200 m graphic scale; common 1000 m x 650 m EPSG:4548 viewport; no fixed print ratio is claimed",
+        "same_scale_group": "F03-three-key-areas"
+      },
+      {
+        "language": "zh",
+        "site": "dazhongsi",
+        "section": "CX10",
+        "viewport_width_m": 1000.0,
+        "viewport_height_m": 650.0,
+        "px_per_m": 0.664,
+        "scale_contract": "200 m graphic scale; common 1000 m x 650 m EPSG:4548 viewport; no fixed print ratio is claimed",
+        "same_scale_group": "F03-three-key-areas"
+      },
+      {
+        "language": "en",
+        "site": "zhongzhiyuan",
+        "section": "CX02",
+        "viewport_width_m": 1000.0,
+        "viewport_height_m": 650.0,
+        "px_per_m": 0.664,
+        "scale_contract": "200 m graphic scale; common 1000 m x 650 m EPSG:4548 viewport; no fixed print ratio is claimed",
+        "same_scale_group": "F03-three-key-areas"
+      },
+      {
+        "language": "en",
+        "site": "ai_origin",
+        "section": "CX05",
+        "viewport_width_m": 1000.0,
+        "viewport_height_m": 650.0,
+        "px_per_m": 0.664,
+        "scale_contract": "200 m graphic scale; common 1000 m x 650 m EPSG:4548 viewport; no fixed print ratio is claimed",
+        "same_scale_group": "F03-three-key-areas"
+      },
+      {
+        "language": "en",
+        "site": "dazhongsi",
+        "section": "CX10",
+        "viewport_width_m": 1000.0,
+        "viewport_height_m": 650.0,
+        "px_per_m": 0.664,
+        "scale_contract": "200 m graphic scale; common 1000 m x 650 m EPSG:4548 viewport; no fixed print ratio is claimed",
+        "same_scale_group": "F03-three-key-areas"
+      }
+    ],
+    "common_scale_ok": true,
+    "scale_bars_recalculate": true,
+    "label_intersections": 0,
+    "unique_first_use_causal_path": "Dazhongsi station arrival + heritage/retail edge -> candidate CX10 conflict -> SC10 + IM06 only -> Human Takeover; no evidenced Gate, no opening"
+  },
+  "pdf_contract": {
+    "contract": "rendered-pixel-equivalence",
+    "bit_for_bit_claimed": false,
+    "nondeterministic_boundary": "ReportLab may vary PDF creation/modification metadata, trailer identifiers, object ordering, and compressed byte streams across runs or platforms. Review the rendered pages, page geometry, text, and embedded-font chain; do not use whole-file SHA equality as the reproduction contract."
+  }
+}

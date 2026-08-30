@@ -1,0 +1,160 @@
+{
+  "schema_version": "0.1.0",
+  "units": {
+    "length": "m",
+    "area": "sqm"
+  },
+  "metrics": {
+    "site_area_sqm": {
+      "status": "known",
+      "value": 11412825.386,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "polygon_area(site_boundary, projected CRS)",
+      "confidence": "low",
+      "assumptions": [
+        "A-BOUNDARY-001"
+      ],
+      "display": "approx. 11.41 sq km (raw computed value 11412825.386 sqm; provisional participant model)",
+      "use_limit": "Not an official area, redline or survey.",
+      "recompute_trigger": "Replace boundary and CRS with official checked geometry, then regenerate all derived layers and displays."
+    },
+    "green_ratio": {
+      "status": "known",
+      "value": 0.123423,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/green_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "union(green_space polygons) / polygon_area(site_boundary)",
+      "confidence": "low",
+      "assumptions": [
+        "A-BOUNDARY-001"
+      ],
+      "display": "approx. 12.3% (raw ratio 0.123423; provisional participant model)",
+      "recompute_trigger": "Recompute after official green-line and boundary verification."
+    },
+    "public_space_ratio": {
+      "status": "known",
+      "value": 0.073281,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "union(public_space polygons) / polygon_area(site_boundary)",
+      "confidence": "low",
+      "assumptions": [
+        "A-BOUNDARY-001"
+      ],
+      "display": "approx. 7.3% (raw ratio 0.073281; provisional participant model)",
+      "recompute_trigger": "Recompute after official ownership, access and boundary checks."
+    },
+    "key_area_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "count(provisional key-area features)",
+      "confidence": "high",
+      "assumptions": [
+        "A-BOUNDARY-001"
+      ]
+    },
+    "scenario_card_count": {
+      "status": "known",
+      "value": 12,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "proposal.en.md"
+      ],
+      "formula": "count(S01-S12)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "industry_test_protocol_count": {
+      "status": "known",
+      "value": 4,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "proposal.en.md"
+      ],
+      "formula": "count(T01-T04)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "persona_count": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "proposal.en.md"
+      ],
+      "formula": "count(P01-P06)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "phase_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "proposal.en.md"
+      ],
+      "formula": "count(P0-P2)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "floor_area_ratio": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "assumptions.json"
+      ],
+      "formula": "total_floor_area / official_site_area",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-CONTROLS-001"
+      ],
+      "reason": "Official controls and floor-area baseline are not supplied."
+    },
+    "building_height_m": {
+      "status": "unknown",
+      "value": null,
+      "unit": "m",
+      "source_files": [
+        "assumptions.json"
+      ],
+      "formula": "official_control_height",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-CONTROLS-001"
+      ],
+      "reason": "Official height controls are not supplied."
+    },
+    "operating_baseline": {
+      "status": "unknown",
+      "value": null,
+      "unit": "none",
+      "source_files": [
+        "assumptions.json"
+      ],
+      "formula": "not_available_before_P0_baseline",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-BASELINE-001"
+      ],
+      "reason": "No verified demand, staffing, budget or workload baseline is supplied."
+    }
+  }
+}

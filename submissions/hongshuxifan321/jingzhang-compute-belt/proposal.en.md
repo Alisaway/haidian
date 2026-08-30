@@ -10,14 +10,14 @@ license: "COMMUNITY-DISPLAY-ONLY"
 summary: "Defines the century-old Jing-Zhang railway corridor as an infrastructure belt of the intelligent era: compute as the new public infrastructure, organized as a five-stage innovation chain (basic research - open-source acceleration - industrial agglomeration - technology services - scenario living) across the three areas and two wings, anchored on Haidian public statistics and the open-source compute stack 'Zhongzhi', forming a recomputable and evolvable urban design proposal."
 tracks: ["ai-public-services", "robotics-autonomous-mobility", "enterprise-services-ecosystem"]
 scenarios: ["robot-delivery-low-speed", "ai-health-service-navigation", "ai-cultural-guide", "ai-traffic-walkability", "enterprise-service-copilot"]
-iteration: "v0.1"
+iteration: "v1.4"
 ---
 
 # Jing-Zhang Compute Belt
 
 > Let the same corridor complete its second infrastructure leap.
 
-One hundred years ago, Zhan Tianyou presided over the construction of China's first self-designed trunk railway here; the full line opened to traffic on 1909-09-24, with the opening ceremony held at Nankou on 1909-10-02.[source:JHZ-PEOPLE-1909] [source:JHZ-ARCHIVES] Today, the corridor flanking the Jing-Zhang railway heritage park concentrates 60% of Beijing's registered large models and 17.9% of the nation's key national laboratories. This proposal defines **the corridor as an infrastructure belt of the intelligent era - the "Compute Belt"**. Rails were the infrastructure of the industrial era; compute is the infrastructure of the intelligent era. The corridor's leap from "rail belt" to "compute belt" is the second unfolding of infrastructure logic on the same land.[source:OFFICIAL-ANNOUNCEMENT] [source:GONGBAO-2025] [standard:PROJECT-OFFICIAL-ANNOUNCEMENT]
+One hundred years ago, Zhan Tianyou presided over the construction of China's first self-designed trunk railway here; the full line opened to traffic on 1909-09-24, with the opening ceremony held at Nankou on 1909-10-02.[source:JHZ-PEOPLE-1909] [source:JHZ-ARCHIVES] Today, the Haidian District where this corridor is located concentrates 60% of Beijing's registered large models and 17.9% of the nation's key national laboratories - all figures are district-level statistical returns from the 2025 Statistical Bulletin, not corridor-side field measurements (see "Data and Evidence"). This proposal defines **the corridor as an infrastructure belt of the intelligent era - the "Compute Belt"**. Rails were the infrastructure of the industrial era; compute is the infrastructure of the intelligent era. The corridor's leap from "rail belt" to "compute belt" is the second unfolding of infrastructure logic on the same land.[source:OFFICIAL-ANNOUNCEMENT] [source:GONGBAO-2025] [standard:PROJECT-OFFICIAL-ANNOUNCEMENT]
 
 ![Overall concept and system boundary](assets/figures/site-overview.en.png)
 
@@ -25,9 +25,11 @@ One hundred years ago, Zhan Tianyou presided over the construction of China's fi
 
 This proposal is based on the qualification pre-announcement, the agent-facing task book, the provisional site package boundary, the Haidian 2025 Statistical Bulletin, and OpenStreetMap public mapping. Spatial generation uses only the registered provisional rough boundaries in the repository; district-level economic data serve as background and derivation only, not parcel-level assertions.[source:OFFICIAL-ANNOUNCEMENT] [source:AGENT-TASKBOOK] [source:BOUNDARY-PROVISIONAL]; additionally, [source:GONGBAO-2025] [source:OSM-2026]
 
-Official `SITE_BOUNDARY` and `KEY_AREA` polygons are not yet available. All locked boundaries in this proposal are marked `official_boundary=false`, `geometry_role=provisional_constraint`, `boundary_precision=provisional_rough`; they support concept generation, content review, and recomputation after replacement, but not redlines, property rights, regulatory controls, or engineering basis.[source:BOUNDARY-PROVISIONAL] [data:geometry/site_boundary.geojson#SITE-001] [depth:existing_conditions_diagnosis]
+Official `SITE_BOUNDARY` and `KEY_AREA` polygons are not yet available. All locked boundaries in this proposal are marked `official_boundary=false`, `geometry_role=provisional_constraint`, `boundary_precision=provisional_rough`; they support concept generation, content review, and recomputation after replacement, but not redlines, property rights, regulatory controls, or engineering basis.[source:BOUNDARY-PROVISIONAL] [data:geometry/site_boundary.geojson#PROV-SITE-001] [depth:existing_conditions_diagnosis]
 
 Planning-control conditions (FAR, building height, building density, green ratio, setbacks) have not been published by the organizer; `planning_limits.json` marks them `missing`. The corresponding metrics are uniformly `status=unknown` with the recomputation path stated for when official data arrives; no conceptual volume is presented as a statutory control value.[source:OFFICIAL-ANNOUNCEMENT] [metric:floor_area_ratio] [depth:development_intensity_controls]
+
+**Source tiers (explicit distinction to prevent misinterpretation)**: evidence is tagged in three tiers, indexed by `registry_tier` in `sources.json` and by figure footnotes - (1) **approved_formal** (approved by the organizer, usable as formal basis): the qualification-announcement, the agent task book, and site-package provisional boundaries (geometry treated separately as provisional); (2) **self_collected_review** (participant-collected, pending professional review / background evidence): the Haidian 2025 statistical bulletin, OpenStreetMap (ODbL), international institutional cases, and regional-collaboration public reporting - background and mechanism comparison only, not statutory controls, established cooperation, or official endorsement, with key figures and applicability to be professionally re-verified; (3) **provisional_only**: all geometry (provisional rough boundaries). All citations and figure footnotes follow these tiers; economic-derivation metrics of district-numerator over provisional-denominator (technology-contract intensity, laboratory density) are flagged low-confidence background indicators and are prohibited for site performance comparison or implementation/investment decisions.[source:SOURCE-REGISTRY] [source:OSM-2026]
 
 ## Three-Level Scope Framework
 
@@ -80,7 +82,7 @@ The three areas and two wings are not five parallel parks but the spatial mappin
 | Punggol Digital District, Singapore | Digital platform linked with real-environment trials | Centralized surveillance architecture, unexamined data scope |
 | Kalasatama, Helsinki | Small-scale, time-boxed agile trials with real users; expiry-and-exit decisions | Mandatory citizen participation |
 | Seoul AI Hub | Staged services: education-incubation-research-open innovation | Funding scale and policy commitments |
-| The Foundry, Cambridge | Innovation district with a no-card community interface | Fixed area metrics |
+| The Foundry, Cambridge (MA) | City-owned community arts & STEAM centre: free community interface, sliding-scale card-free reservations | Fixed area metrics |
 | Shenzhen | AI decomposed into accountable scenario lists | Skyline, density, city-wide platform scale |
 | Chongqing | Small-cut closed loops (verify-warn-classify-coordinate) | Mountainous form, internet-famous landscaping |
 | Station F, Paris | Project + daily amenities for startup services | Campus scale, operating model replication |
@@ -90,7 +92,7 @@ These cases come from public institutional or project pages; they support mechan
 
 ### Haidian's Data Base: Why This Corridor Can Be a Compute Belt
 
-Public district data show innovation factors already agglomerating here: 123 registered large models (60% of Beijing), 92 national key laboratories (63.4% of the city, 17.9% of the nation), 405.31 billion CNY technology contract turnover (+6.5%), 188.71 billion CNY computer/communication/electronics manufacturing output (+7.7%), and information/software/IT-services investment growing 1.5x. These data are the macro evidence for the Compute Belt positioning - the corridor already hosts the densest AI factors in the city, and this proposal's spatial design gives existing agglomeration a structure.[source:GONGBAO-2025] [metric:tech_contract_strength_index] [metric:lab_density_per_research_area]
+Public district data show innovation factors already agglomerating here: 123 registered large models (60% of Beijing), 92 national key laboratories (63.4% of the city, 17.9% of the nation), 405.31 billion CNY technology contract turnover (+6.5%), 188.71 billion CNY computer/communication/electronics manufacturing output (+7.7%), and information/software/IT-services investment growing 1.5x. These data are the macro evidence for the Compute Belt positioning - Haidian District already hosts the densest AI factors in the city, and this proposal's spatial design gives existing agglomeration a structure. Two derived indices (tech-contract intensity, lab density) are background metrics: district numerator over provisional denominator, geographies not aligned, low confidence, background reference only - not to be used for site-performance comparison or implementation/investment decisions (see display_label and prohibited-use statements in metrics.json).[source:GONGBAO-2025] [metric:tech_contract_strength_index] [metric:lab_density_per_research_area]
 
 ### Regional Synergy: How the Compute Belt Fits the Jing-Jin-Ji Innovation Network
 
@@ -133,7 +135,7 @@ All four interfaces are conceptual suggestions: mechanisms involving cross-regio
 
 The overall spatial structure is **one spine (heritage park vitality belt), five stages (innovation-chain relay), two wings (Zhongguancun technology service wing, XiaoYue River scenario wing)**. The heritage park belt is the physical spine and "bus" - the rail imagery converts into a data-bus imagery that threads the five stages; the stages unfold along the corridor sharing one talent pool and public-service network.[source:AGENT-TASKBOOK] [data:geometry/land_use.geojson#LU-001] [depth:overall_spatial_structure]
 
-The land-use intention uses nine fully tiled zones (cut from the provisional boundary, sharing boundary coordinates, no gaps and no overlaps) to demonstrate that machine recomputation and functional structure agree; the zoning is a conceptual intention, not statutory parcels cut from a temporary boundary.[data:geometry/land_use.geojson] [metric:site_area_sqm] [depth:land_use_layout]
+The land-use intention uses fourteen fully tiled zones (cut from the provisional boundary, sharing boundary coordinates, no gaps and no overlaps) to demonstrate that machine recomputation and functional structure agree; the zoning is a conceptual intention, not statutory parcels cut from a temporary boundary.[data:geometry/land_use.geojson] [metric:site_area_sqm] [depth:land_use_layout]
 
 ### Five-Stage Relay: Why Spatial Proximity Determines Innovation Efficiency
 
@@ -153,11 +155,17 @@ Positioned as an open-source validation field that "proves it can stop safely be
 
 ### 2. Beijing AI Origin Community: Service Pole (Service Duty Hall)
 
-Positioned as an AI public-service community interface where "services work without an app", anchored on the university laboratory colocation circle. Spatial structure: no-login human service counters + community feedback studio + cultural display nodes (Agent Contribution Honor Wall, Open-Source Achievement Gallery). Functions: AI+health navigation (scenario card 4), community elderly companion (scenario card 6), and civic service counters (scenario card 7). All services keep non-digital alternatives (paper, counters, phones); no automation of medical, legal, or administrative decisions - only information navigation, material prompts, and human referral.[source:AGENT-TASKBOOK] [data:geometry/key_areas.geojson#PROV-KEY-002] [depth:three_key_area_detailed_design]
+Positioned as an AI public-service community interface where "services work without an app", anchored on the university laboratory colocation circle. Spatial structure: no-login human service counters + community feedback studio + cultural display nodes (Agent Contribution Honor Wall, Open-Source Achievement Gallery). Functions: AI+health navigation (scenario card 4, service counter in the XiaoYue River wing), community elderly companion (scenario card 6), and civic service counters (scenario card 7, counters in the Zhongguancun wing). All services keep non-digital alternatives (paper, counters, phones); no automation of medical, legal, or administrative decisions - only information navigation, material prompts, and human referral.[source:AGENT-TASKBOOK] [data:geometry/key_areas.geojson#PROV-KEY-002] [depth:three_key_area_detailed_design]
 
 ### 3. Dazhongsi: Operation Pole (Operation Duty Hall)
 
 Positioned as the standing home of the Compute Belt Open Day and an AI-native business operation node on the accessibility of the Dazhongsi transport hub. Spatial structure: AI-native mixed-use complex + compute open-market plaza + developer community space. Functions: Compute Belt Open Day (scenario card 10), the southern end of the autonomous shuttle demo line (scenario card 3), and the home of the annual event system. Risk note: the industry-residential mix ratio and parking/freight organization depend on regulatory-plan and transport data and are listed as pending confirmation.[source:AGENT-TASKBOOK] [data:geometry/key_areas.geojson#PROV-KEY-003] [depth:three_key_area_detailed_design]
+
+### Key-Area Local Prototypes: Section and Node Concepts
+
+Beyond the overall and zoning scales, the proposal adds conceptual "section/node" prototypes for the three key areas, showing how three interface logics land in space - controlled-vs-public (Zhongzhiyuan: controlled evaluation layer, public plaza interface, observation deck), digital-vs-human (AI Origin: digital interface, human counter with low desk plus paper/phone/human paths and no-login entry, social-worker duty), and operation-vs-safety (Dazhongsi: open-market plaza, stepped platform with accessible ramp, egress and standby route). Prototypes are conceptual illustrations (not construction drawings); dimensions and facility configuration follow regulatory-plan and special studies. [depth:three_key_area_detailed_design]
+
+![Key-area local prototypes: section and node concepts](assets/figures/local-prototypes.en.png)
 
 ## AI Innovation Ecosystem, Talent Profiles, and AI+ Scenarios
 
@@ -169,7 +177,11 @@ Positioned as the standing home of the Compute Belt Open Day and an AI-native bu
 4. **Community elder (70)**: XiaoYue River resident, needs no-login human services and fully non-digital alternatives.
 5. **School-family**: college-district residents, need AI education space and safe public grounds.
 
-The five personas map to five space-and-service demands, linked to scenario cards and spatial layers; personas are inferred from public population structure (33% migrant population) and facility bases (183 primary/secondary schools, 239 community health centers), not from field research.[source:GONGBAO-2025] [metric:persona_count]
+The five personas map to five space-and-service demands, linked to scenario cards and spatial layers; personas are inferred from public population structure (33% migrant population) and facility bases (183 primary/secondary schools, 239 community health centers), not from field research. **Persona status: draft awaiting verification** (draft-level, not resident-validated final). [source:GONGBAO-2025] [metric:persona_count]
+
+#### Participatory verification: mandatory gate before pilots
+
+Personas, non-digital alternative paths, and public-interest KPIs are inferred from district-level materials and have not been validated with in-place users - this is our explicit validation gap and planned remedy, not a completed achievement: (1) **Gate**: no pilot, scenario deepening, or public-interface launch before participatory verification is complete; unverified scenarios cannot enter M4 controlled trial (see "Implementation Milestones"); (2) **Populations and methods**: cover representatives of older adults, persons with disabilities, caregivers, teachers/students, general residents, and frontline service staff, using neighbourhood walk-through surveys, focus groups, and accessibility walk-throughs (including simulated elderly/disabled perspectives), sampled against public population structure and facility distribution; (3) **Auditable result backfill**: verification outputs (interview notes, walk-through reports, revised personas, alternative-path checklists) enter the P1 pilot review materials and backfill personas (draft awaiting verification -> verified), non-digital alternative paths, and public-interest KPIs; revisions are published through the annual evolution cycle; (4) **Boundary**: this proposal does not fabricate verification results or resident opinions; all current personas, persona KPIs, and satisfaction-type metrics in the scenario cards are provisional values and carry no performance commitment until verified.[source:GONGBAO-2025] [metric:persona_count]
 
 ### Ten AI Scenario Cards
 
@@ -192,30 +204,30 @@ All three industry-test scenarios (1-3) set a "shutdown threshold": precision de
 
 **Ten-item duty table template**: seven items are implementability elements - input data, model role, maturity, human-takeover trigger, responsible party, public-interest KPIs, and spatial/facility requirements - alongside service hours, non-digital alternatives, and recovery and maintenance from the duty discipline; maturity maps to the three-phase implementation (phase 1 trusted service, phase 2 controlled trials, phase 3 sustainable operations). The three industry-test scenarios add admission conditions, forming pilot gates (admission - human takeover - stop - evaluation).[source:AGENT-TASKBOOK] [standard:GENERATIVE-AI-INTERIM-MEASURES] [metric:scenario_card_count]
 
-#### Scenario Card 1: Open Model Evaluation Field (Zhongzhi Garden - industry test)
+#### Scenario Card 1: Open Model Evaluation Field (Zhongzhiyuan - industry test)
 
 | Duty item | Content |
 | --- | --- |
 | Service hours | Weekdays 10:00-18:00 evaluation field open; nights reserved for scheduled controlled evaluations |
 | Input data | Benchmarks and model weights (submitter-declared public parts only), evaluation logs, site sensor state; non-public inputs are not retained |
 | Model role | Deterministic benchmark scoring and report generation; no scoring or ranking decisions |
-| Maturity | P2 pilot (phase 2, Zhongzhi Garden); the toolchain already runs in open-source communities, site integration is pilot-level |
+| Maturity | P2 pilot (phase 2, Zhongzhiyuan); the toolchain already runs in open-source communities, site integration is pilot-level |
 | Human-takeover trigger | Precision anomaly, evaluation-environment excursion, abnormal complaint, or equipment fault triggers automatic degradation and on-duty human review |
-| Responsible party | Zhongzhi Garden operator (concept) on-duty evaluator + escalation contact; pilot launch needs operator review |
+| Responsible party | Zhongzhiyuan operator (concept) on-duty evaluator + escalation contact; pilot launch needs operator review |
 | Public-interest KPIs | Public evaluation hours/month, public evaluation results/month, 7-day complaint closure rate target 100% |
 | Spatial/facility requirements | Public evaluation plaza, evaluation stations, shared boundary with Card 2 test ring, open-source protocol market |
 | Non-digital alternative | Manual registration desk, paper benchmark brochure, phone consultation |
 | Recovery and maintenance | Work order, version, cause, and human review records before recovery |
 | Admission conditions | Submitter confirms the data-boundary agreement; equipment self-check passes before entry (pilot gate) |
 
-#### Scenario Card 2: Low-Speed Robot Delivery Test Ring (Zhongzhi Garden - industry test)
+#### Scenario Card 2: Low-Speed Robot Delivery Test Ring (Zhongzhiyuan - industry test)
 
 | Duty item | Content |
 | --- | --- |
 | Service hours | Test hours separated from public hours (e.g. 09:00-11:00, 14:00-16:00); no runs during public hours |
 | Input data | Test-ring real-time sensors (pedestrians/obstacles), weather data, test delivery orders, low-speed localization (GPS+LiDAR); no public identity data collected |
 | Model role | Low-speed path planning and obstacle avoidance inside the isolated ring (speed cap 5 km/h); no open-right-of-way coverage |
-| Maturity | P2 pilot (phase 2, Zhongzhi Garden); ring is trial-level, commercial delivery is out of scope |
+| Maturity | P2 pilot (phase 2, Zhongzhiyuan); ring is trial-level, commercial delivery is out of scope |
 | Human-takeover trigger | Pedestrian intrusion, sensor loss, speed excursion, or gale/snow-rain weather alert triggers emergency stop and remote human takeover |
 | Responsible party | Test-ring operator + on-site safety officer; the public is not included in tests by default |
 | Public-interest KPIs | Public intrusion incidents during test hours (target 0), safety-event response time, safety drills/month |
@@ -235,7 +247,7 @@ All three industry-test scenarios (1-3) set a "shutdown threshold": precision de
 | Human-takeover trigger | On-board safety officer takeover; excursion/fault/abnormal ridership stops the service |
 | Responsible party | Demo-line operator + on-board safety officer; operating permit needs transport special review (approval gate) |
 | Public-interest KPIs | Demo on-time rate, monthly ridership, safety incidents (target 0) |
-| Spatial/facility requirements | Shuttle stops (north end Zhongzhi Garden, south end Dazhongsi), roadside perception nodes, depot (pending confirmation) |
+| Spatial/facility requirements | Shuttle stops (north end Zhongzhiyuan, south end Dazhongsi), roadside perception nodes, depot (pending confirmation) |
 | Non-digital alternative | Regular bus and walking alternatives retained |
 | Recovery and maintenance | Stop-cause records, recovery after re-inspection |
 | Admission conditions | Certified on-board safety officer, minimum road-test mileage, transport special review passed before demo (pilot gate) |
@@ -345,11 +357,86 @@ All three industry-test scenarios (1-3) set a "shutdown threshold": precision de
 | Non-digital alternative | On-site registration, paper schedules |
 | Recovery and maintenance | Event review, annual improvements |
 
-Accessibility and elder-friendly requirements run through all scenarios: public interfaces keep no-login human service paths and continuous accessible design, in line with the barrier-free environment law and the convenience requirements for elderly smart-technology use; no AI service introduction may come at the cost of accessibility for vulnerable groups.[standard:BARRIER-FREE-ENVIRONMENT-LAW] [standard:ELDERLY-SMART-TECH-PLAN-2020-45]
+Accessibility and elder-friendly requirements run through all scenarios: public interfaces keep no-login human service paths and continuous accessible design, in line with the barrier-free environment law; the 2020 State Council plan on easing elderly use of smart technology is additionally referenced as background policy (registered as background_only, not a statutory control in this proposal); no AI service introduction may come at the cost of accessibility for vulnerable groups.[standard:BARRIER-FREE-ENVIRONMENT-LAW] [standard:ELDERLY-SMART-TECH-PLAN-2020-45]
+
+### Phase-1 Priority Scenario Operations Package: RACI, KPI Baselines, Audit and Cost Categories
+
+To turn the three-phase plan from a conceptual staging into an auditable operations package, the Phase-1 priority scenarios (Cards 1-3 industry tests + Card 4 health navigation) receive the governance and cost framework below. Three principles: **baselines first, performance commitments second**; **every KPI defines sampling and audit rules**; **costs are framed by category without preset amounts** (to be detailed by professional cost consultants after formal project approval - this proposal does not state government budgeting).
+
+### KPI baselines, sampling and audit rules
+
+| Scenario | KPI | Baseline treatment | Sampling | Audit |
+| --- | --- | --- | --- | --- |
+| Card 1 evaluation ground | Monthly open hours, public result entries, 7-day complaint closure rate | First 6 months = observation window (monthly mini-sample), no performance target; after baseline confirmed, rolling target of "baseline +5%" | Monthly data extract (automated toolchain) + 10% on-site manual check | Quarterly third-party 5% sample; semi-annual public Dashboard (desensitized) |
+| Card 2 delivery ring | Public intrusion events (target 0), safety-response time, monthly safety drills | First 3 months acceptance period (response time recorded, not scored) | Event-by-event immediate logging; monthly summary | Quarterly third-party safety audit + sub-district/community briefing |
+| Card 3 shuttle line | On-time rate, monthly ridership, safety events (target 0) | First month trial: record only, no scoring | Automatic vehicle telemetry + shuttle safety-officer spot reports | Transport special-review recheck + semi-annual operations report |
+| Card 4 health navigation | Navigation accuracy (spot check), monthly senior usage, human-transfer response time | First 6 months observation; accuracy judged against the health authority's public catalogue | Monthly 100-item spot check + service logs | Quarterly social-worker representative review + public correction ledger |
+
+Baseline values are confirmed by the operating entity with the sub-district/community at pilot launch; this proposal assumes no commitment values.
+
+### RACI assignment (conceptual roles; formal entities per licensing documents)
+
+| Scenario | Organizer (A approve) | Operating entity (R execute) | Vendor/model provider (C consult) | Sub-district/community (C consult) | Third-party audit (I inform) |
+| --- | --- | --- | --- | --- | --- |
+| Card 1 evaluation ground | Pilot scheme approval | Evaluation scheduling, review, complaint closure | Benchmark and toolchain submission | Hearing and pilot feedback | Quarterly sample + annual audit |
+| Card 2 delivery ring | Pilot operation approval | On-site safety dispatch, stop, recovery | Device and algorithm iteration | Circulation and public-notice suggestions | Annual safety audit |
+| Card 3 shuttle line | Demonstration approval (transport special review) | Operations, onboard safety, dispatch | Vehicle and algorithm | Station siting and peak-offset suggestions | Semi-annual operations audit |
+| Card 4 health navigation | Service launch confirmation | Counter duty, catalogue maintenance | Public catalogue and interface | Social-worker review and feedback | Content-accuracy spot check |
+
+### Cost-category framework (no preset amounts)
+
+| Category | Coverage | Recording and trigger |
+| --- | --- | --- |
+| Human watchkeeping | On-duty evaluators/safety officers/social workers, escalation contacts, pilot-launch review | Funded per pilot duration from the pilot budget; formal breakdown pending project approval |
+| Equipment maintenance | Test benches, LiDAR, vehicles, charging points, roadside sensing nodes - inspection and spares | Equipment ledger + published annual maintenance plan |
+| Insurance | Public-event liability, delivery-test third-party liability, shuttle demonstration passenger liability | Pilot on/off condition: no start before coverage is in force |
+| Exit and recovery | Removal/restoration/data deletion after stop, incident review, failed-run archive | Triggered via "shutdown threshold - recovery process"; accessible alternatives kept after exit |
+
+This framework links with the existing "pilot gate - shutdown threshold - failed-run archive - annual evolvability loop": KPI sampling data also feeds the annual evaluation, and exit cost categories are already included (no separate estimation). [depth:renewal_project_list] [depth:phasing_implementation]
+
+#### Implementation checklist (Cards 1-4, concept-level; amounts are order-of-magnitude estimates only - neither commitments nor budgets before formal approval)
+
+| Scenario | Pre-conditions | Licence/approval type | Conceptual responsible role | CAPEX/OPEX order of magnitude (pending professional estimate) | Cycle | Insurance | Exit/recovery and data deletion |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Card 1 evaluation ground | Site ownership and power self-check | Pilot filing (not a planning-control permit) | Zhongzhiyuan operating entity + on-duty evaluator | 10^6-10^7 CNY (equipment and fit-out) | Monthly windows / 6-month observation | Public-event liability | Bench removal/restoration; evaluation logs deletable after 90 days (proposed) |
+| Card 2 delivery ring | Circulation, footfall and on-site obstacle survey | Pilot filing + safety-run rules publication | Ring operator + on-site safety officer | 10^6-10^7 CNY (ring equipment and fit-out) | 3-month acceptance period | Third-party liability | Barrier removal; test data deletable after 90 days (proposed) |
+| Card 3 shuttle line | Rail/transport special data (pre-requisite) | Transport special review + demonstration licence | Demo-line operator + onboard safety officer | 10^7 CNY (vehicles and station works) | Demonstration phase (months, renewed annually) | Passenger liability | Stop and exit; vehicle disposal and station restoration |
+| Card 4 health navigation | Healthcare catalogue field verification | Service-launch confirmation (not an administrative permit) | Community service operator + social worker | 10^5-10^6 CNY (counter and catalogue upkeep) | Continuous / 6-month observation | Public-event liability | Retirement and rollback; catalogue corrections and public ledger |
+
+Roles above are conceptual pending confirmation of formal entities; licence types are expected categories subject to competent-authority approval. CAPEX/OPEX figures are coarse order-of-magnitude estimates from analogous public projects, assumption status "pending professional estimate" - neither quotations nor budgets; the proposed 90-day deletable record applies subject to a data-protection impact assessment (DPIA) confirming the applicable conditions and legal basis.
+
+#### Implementation milestones (M1-M7: expanding the card 1-4 ledger into a seven-stage path)
+
+The ledger's pre-surveys, licences, costs, cycles, and exit/data deletion are not a one-off checklist but a seven-stage path; each stage has explicit outputs, and the next stage is gated on them. Participatory verification and DPIA complete before pilot launch (M2/M3 gates), never retrofitted.
+
+| Stage | Key work | Scenarios | Stage outputs | Gate to next stage |
+| --- | --- | --- | --- | --- |
+| M1 Site survey and data filing | Ownership, power, and circulation surveys; rail/transport special-data prerequisites; existing building and ownership screening | Cards 1-4 | Survey checklist, missing-data ledger | Survey complete, gaps itemized |
+| M2 Compliance preparation (pre-pilot) | Pilot filing procedures, safety operating rules, DPIA draft, insurance quotes, participatory verification kick-off | Cards 1-4, 10 | DPIA draft, participatory verification report, insurance plan | DPIA and participatory verification complete |
+| M3 Build and equipment self-check | Test benches, isolation ring, shuttle stops, service counters built/fitted; equipment self-check and safety officer on duty | Cards 1-4 | Completion self-check report, equipment records | Self-check passed, safety officer on duty |
+| M4 Controlled trial and baseline observation | Isolated-hours operation, monthly small-sample values, public-intrusion events (target 0) recorded, complaint closure | Cards 1-4 | Baseline data (Cards 1/4: 6 months; Card 2: 3-month acceptance period; Card 3: first trial month) | Observation window complete with full baseline |
+| M5 Baseline calibration and rolling commitments | Rolling targets at "baseline + 5%"; KPI sampling and audit rules take effect | Cards 1-4 | Performance-commitment table (with audit frequency) | Baseline confirmed with operator and sub-district/community |
+| M6 Public opening and community interaction | Public hours, Open Day, public Dashboard (desensitized), quarterly third-party sampling audit | Cards 1-4, 10 | Public Dashboard, semi-annual audit report | Semi-annual audit passed |
+| M7 Annual evolution and escalation | Annual evaluation (maturity escalation/deprecation), failure-run archive update, participatory verification re-check | All scenarios | Annual route update, next-phase plan | Connects to the annual evolution cycle |
+
+#### Data-protection matrix (cards 1-7 and card 10; all provisional pending DPIA)
+
+| Scenario | Data classes | Use | Collection minimization | Retention and deletion (proposed) | Access control | DPIA status |
+| --- | --- | --- | --- | --- | --- | --- |
+| Card 1 evaluation | Benchmarks and model weights (declared-public parts only), evaluation logs, sensor status | Deterministic scoring and reports | No non-public inputs retained | 90 days, deletable | Duty evaluator + Zhongzhiyuan operator | Pending DPIA |
+| Card 2 delivery ring | Ring sensors (pedestrians/obstacles), weather, delivery orders, low-speed positioning | Path planning and safety monitoring | No public-person identity data collected | 90 days, deletable | Site safety officer + ring operator | Pending DPIA |
+| Card 3 shuttle | Station flows, weather, vehicle telemetry | Operation and safety review | Station-level aggregation | Per licensed operating rules | Line operator + onboard safety officer | Pending DPIA |
+| Card 4 health navigation | Public health-resource directory, map data | Information navigation and human transfer | No personal health data collected | Service logs cleared after catalogue-update period | Community operator + social worker | Pending DPIA |
+| Card 5 classroom | Textbooks and cleared public resources, anonymized exercise responses | Adaptive practice and learning reports | Minimal student personal data | Deleted on decommission | Pilot school + education operator | Pending DPIA + school-pilot licence |
+| Card 6 elderly companion | Public community resources, user-authorized preferences | Companionship and reminders | No health/medical data collected | Retained only within authorization | Community operator + social worker | Pending DPIA |
+| Card 7 civic counter | Public service guides, document checklists | Document prompts and pre-checks | No personal data beyond service necessity | Not retained, or per government procedures | Civic operator + counter staff | Pending DPIA (government procedures prevail) |
+| Card 10 Open Day | Public event information, authorized registration data | Event organization and recommendations | No sensitive personal data | Deleted after event | Dazhongsi operator + organizing committee | Pending DPIA |
+
+Data-protection-matrix status note: all entries are proposed designs; before formal implementation a project-level DPIA (business justification, legal basis, retention periods, deletion mechanisms) must confirm and finalize them; until then, no scenario may collect or retain data beyond the minimum necessary. The "90-day deletable" is a proposed value whose applicable conditions and legal basis follow the DPIA conclusion.
 
 ## Land Use, Building Scale, and Retain/Renovate/Demolish/New
 
-The land-use layout covers nine tiled zones (research 0802, education-research 0802, industry-commerce 05, residential 0701, green 1401, reserved 16); every zone area is recomputable from `geometry/land_use.geojson`. Concept building envelopes total 11 (footprint ~1.099 million m², all conceptual illustrations, not existing or approved buildings).[data:geometry/land_use.geojson] [data:geometry/buildings.geojson] [metric:building_footprint_area_sqm]; additionally, [depth:land_use_layout]. Concept envelopes follow the architectural design-depth regulation (a deepening reminder until the official document is available).[standard:MOHURD-ARCH-DESIGN-DEPTH-2016]
+The land-use layout covers fourteen tiled zones (research 0802, industry-commerce 05, residential 0701, park green 1401, coded per the 2023 Land Use and Sea Classification Guide; the university-colocation circle is counted under research 0802 by dominant use); every zone area is recomputable from `geometry/land_use.geojson`. Concept building envelopes total 11 (footprint ~1.099 million m², all conceptual illustrations, not existing or approved buildings).[data:geometry/land_use.geojson] [data:geometry/buildings.geojson] [metric:building_footprint_area_sqm]; additionally, [depth:land_use_layout]. Concept envelopes follow the architectural design-depth regulation (a deepening reminder until the official document is available).[standard:MOHURD-ARCH-DESIGN-DEPTH-2016]
 
 Regulatory-plan metrics (FAR, height, density, setback) are all `status=unknown`: the organizer has not published regulatory-plan conditions, so any number would be fabricated; once official controls arrive, the concept volumes can be recalibrated by formula.[metric:floor_area_ratio] [metric:building_height_m] [depth:development_intensity_controls]
 
@@ -417,7 +504,7 @@ Full sources, formulas, confidence, and assumptions live in `metrics.json`; task
 - **Concept status**: all spatial landing suggestions are conceptual suggestions, reference schemes, or material for professional teams to deepen; they do not constitute government-approved conclusions or implementation commitments.
 - **"Zhongzhi" anchor**: the naming connection between the "Zhongzhi" compute stack and "Zhongzhiyuan" is an inference (the Bulletin does not state it directly) and is phrased as "naming echo".
 - **AI-generated disclosure**: this proposal was generated by Claude Code (an AI Agent); sources and generation methods are in `report/copyright_statement.md`; generated imagery/media are interpretive layers only and do not impersonate on-site conditions, resident opinions, official boundaries, or measured data.
-- **Missing data**: official polygons, regulatory-plan conditions, existing buildings and property rights, municipal surveys, rail data - each is listed in the gap registry of `sources.json`.[depth:risk_missing_data]
+- **Missing data**: official polygons, regulatory-plan conditions, existing buildings and property rights, municipal surveys, rail data - each is covered by the upstream brief's missing-data checklist and `sources.json` layer notes.[depth:risk_missing_data]
 
 ## References
 
@@ -441,3 +528,25 @@ Full sources, formulas, confidence, and assumptions live in `metrics.json`; task
 18. China News Service: "A Century-Long Leap of the Jing-Zhang Railway", 2019-09-23.[source:JHZ-CHINANEWS]
 19. "Law of the People's Republic of China on the Construction of a Barrier-Free Environment", effective 2023-09-01.[standard:BARRIER-FREE-ENVIRONMENT-LAW]
 20. General Office of the State Council: "Implementation Plan on Properly Solving Difficulties of the Elderly in Using Intelligent Technology" (Guobanfa [2020] No. 45), 2020.[standard:ELDERLY-SMART-TECH-PLAN-2020-45]
+
+## Appendix A: Bilingual Equivalence Checklist
+
+Manual equivalence check between `proposal.en.md` (en) and `proposal.md` (zh) under bilingual contract v1 (checked by: hongshuxifan321 with Claude Code; iteration v1.4-fixes r7, 2026-08-25). Equivalence definition: chapter correspondence, semantically equivalent claims, identical metric values and units, preserved sources and warnings, consistent numbering, complete figure pairs; both versions independently pass structural validation.
+
+| # | Item | zh location | English location | Verdict |
+| --- | --- | --- | --- | --- |
+| 1 | Key claims: first infrastructure leap (1909 opening, compute-belt naming, rails-to-compute) | Intro paras 1-2 | Intro paras 1-2 | Equal |
+| 2 | Three-level scope 43.6 / 11.4 / 3.684 km² | Three-Level Scope Framework table | Same table in zh | Equal |
+| 3 | Site area 1,141.28 ha, with per-language unit conventions | Metrics section / metrics.json | Metrics section | Equal |
+| 4 | Green ratio 9.3%, public-space ratio 1.1%, building footprint 1.099M m² / 109.9 wan m², roads 83 km / 8.3 wan m | Metrics section | Metrics section | Equal |
+| 5 | Source tiers (approved / self-collected / provisional) | Design Basis and Source Inventory | Same section in zh | Equal |
+| 6 | Low-confidence warning: economic-derivation metric scope mismatch, prohibited uses | Metrics section + metrics-evidence figure caveat | Same in zh | Equal |
+| 7 | Scenario numbering: cards 1-10, names and locations | Scenario cards 1-10 table | Same in zh | Equal |
+| 8 | Approval limits: pilot gates, shutdown thresholds, licences "subject to competent-authority approval" | Admission conditions, RACI, ledger notes | Same in zh | Equal |
+| 9 | Data-protection matrix: 90-day proposed, pending DPIA | Implementation milestones + data-protection matrix | Same in zh | Equal |
+| 10 | Figure placement: 5 figures + local-prototypes, zh/en pairs, order consistent | In-text figure references | Corresponding `.en.png` references | Equal |
+| 11 | English in-figure phrasing fixes: "Scenario-led living", "Open-source acceleration", "Provisional boundary (unofficial)" | assets/figures/*.en.png | - | Equal (zh figures keep "scenario life", "open-source acceleration", "provisional (unofficial)" equivalents) |
+| 12 | Persona status "draft awaiting verification" + participatory verification gate | Personas + participatory verification | Same in zh | Equal |
+| 13 | Terminology: pending professional estimate / pending DPIA | Throughout | Throughout zh text | Equal |
+
+**Figure & PDF pairing**: 10 PNGs (5 figures x zh/en) generated by `build_figures.py`, paired and structurally identical (this revision fixes English title auto-scaling, adaptive legend wrapping, bottom contrast); `a3-booklet(.en).pdf` and `a0-boards(.en).pdf` generated by `build_pdfs.py` (first-page small type enlarged); `visual/index(.en).html` and `report/proposal(.en).html` generated from the bilingual proposal. This table does not cover pixel-level comparison of embedded PDF figures (translation equivalence is re-checked by maintainers).

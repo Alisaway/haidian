@@ -6,13 +6,13 @@
 - 四份中英 PDF 由 OpenAI Codex 使用 ReportLab 本地生成。
 - 公民 AI 护照 schema、合成 fixture、evidence JSON 与 Node.js `--check` runner 为本次原创的离线证据资产；它们不访问网络、不接入真实系统、不处理个人数据。
 - Markdown、HTML、JSON 与 GeoJSON 为本次投稿原创生成，并按仓库 COMMUNITY-DISPLAY-ONLY 许可提交。
-- PDF 和核心图统一使用 Noto Sans SC。400/700 静态实例由本机安装的变量字体通过 fontTools 4.63.0 生成；PDF 按 SIL Open Font License 1.1 嵌入字体子集。独立字体文件不进入投稿包，但 PDF 嵌字本身属于分发，许可证与来源已登记在 sources.json。
+- PDF、核心图与双语 HTML 统一使用 Noto Sans SC。400/700 静态实例由本机安装的变量字体通过 fontTools 4.63.0 生成；PDF 按 SIL Open Font License 1.1 嵌入字体子集。双语 HTML 共用 306292-byte WOFF2 子集，字体数据与 OFL 1.1 文本自包含于 visual/assets/noto-sans-sc.woff2.css，并登记在 sources.json。
 
-Five bilingual core-figure pairs were generated locally from package GeoJSON and metrics.json with Pillow. Four bilingual PDFs were generated with ReportLab. The Passport schema, synthetic fixture, evidence JSON and Node.js `--check` runner are original offline evidence assets with no network, live system or personal data. Markdown, HTML, JSON and GeoJSON are original to this submission and submitted under COMMUNITY-DISPLAY-ONLY. Noto Sans SC 400/700 instances were created locally with fontTools 4.63.0; PDF subsets are embedded under SIL Open Font License 1.1. Standalone font files are not included, while the embedding itself is disclosed as distribution.
+Five bilingual core-figure pairs were generated locally from package GeoJSON and metrics.json with Pillow. Four bilingual PDFs were generated with ReportLab. The Passport schema, synthetic fixture, evidence JSON and Node.js `--check` runner are original offline evidence assets with no network, live system or personal data. Markdown, HTML, JSON and GeoJSON are original to this submission and submitted under COMMUNITY-DISPLAY-ONLY. Noto Sans SC 400/700 instances were created locally with fontTools 4.63.0 for the PDFs. Both HTML versions share a 306292-byte WOFF2 subset whose font data and OFL 1.1 text are self-contained in visual/assets/noto-sans-sc.woff2.css and registered in sources.json.
 
 ## 可选封面 / Optional cover
 
-assets/visible-stack-hero.png was generated with the OpenAI built-in image-generation tool, without an external reference image. It is illustrative only, not an evidence map, site view, approved design or geographic claim.
+assets/media/cover.png was generated with the OpenAI built-in image-generation tool, without an external reference image. It is illustrative only, not an evidence map, site view, approved design or geographic claim.
 
 Exact prompt:
 

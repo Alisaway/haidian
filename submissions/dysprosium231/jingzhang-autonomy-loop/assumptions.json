@@ -2,6 +2,50 @@
   "schema_version": "0.1.0",
   "assumptions": [
     {
+      "id": "A-REGIONAL-COORD-001",
+      "status": "concept_only",
+      "statement": "北纬社区、未来科学城、怀柔科学城、经开区和京津冀的角色、双向要素流与京张带接口均为本方案的区域协同假设，不表示既有合作、资金、数据共享或政府安排。",
+      "statement_en": "The roles, two-way flows, and Jing-Zhang interfaces proposed for Beiwei Community, Future Science City, Huairou Science City, E-Town, and Beijing-Tianjin-Hebei are coordination hypotheses, not existing partnerships, funding, data sharing, or government arrangements.",
+      "impact": "区域协同内容只能作为概念建议与待核验接口，不能作为既有合作事实、产业规模、交通联系、算力供给或实施主体依据。",
+      "recalculation_trigger": "取得相关区域公开规划、主体授权、现场调查或专业协同确认",
+      "affected_files": [
+        "proposal.md",
+        "proposal.en.md",
+        "assets/figures/regional-coordination.png",
+        "assets/figures/regional-coordination.en.png",
+        "report/proposal.html",
+        "report/proposal.en.html",
+        "visual/index.html",
+        "visual/index.en.html",
+        "compliance_matrix.json"
+      ],
+      "required_for_formal_submission": true
+    },
+    {
+      "id": "A-KEY003-ANCHOR-001",
+      "status": "provisional_data_in_use",
+      "statement": "公开 Issue #1029 记录，仓库临时要素 PROV-KEY-003 的质心距大钟寺地铁站约 2.26 公里并落在北京北站一带；公告中的大钟寺站任务锚点与当前临时 polygon 不能视为同一空间证据。",
+      "statement_en": "Public Issue #1029 records that the repository's provisional PROV-KEY-003 centroid is about 2.26 km from Dazhongsi metro station and lies around Beijing North Railway Station; the announcement's Dazhongsi task anchor must not be treated as the same spatial evidence as the current provisional polygon.",
+      "impact": "大钟寺片区的站城一体化、四象限步行连通、零号站台及其关联道路、公共空间、用地、建筑、分期、指标、图件和双语展示均只能表达概念建议，不能把临时 polygon 解释为车站周边或地块边界。",
+      "recalculation_trigger": "官方 KEY_AREA polygon 或明确的官方站点/道路锚定关系发布",
+      "affected_files": [
+        "geometry/key_areas.geojson",
+        "geometry/land_use.geojson",
+        "geometry/public_space.geojson",
+        "geometry/roads.geojson",
+        "geometry/buildings.geojson",
+        "geometry/phasing.geojson",
+        "metrics.json",
+        "proposal.md",
+        "proposal.en.md",
+        "report/proposal.html",
+        "report/proposal.en.html",
+        "visual/index.html",
+        "visual/index.en.html"
+      ],
+      "required_for_formal_submission": true
+    },
+    {
       "id": "A-BOUNDARY-001",
       "status": "provisional_data_in_use",
       "statement": "提交包的 site_boundary 与 key_areas 使用仓库登记的临时粗略 polygon，非官方红线。",

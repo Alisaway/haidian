@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0.0",
+  "status": "concept_handoff_pending_human_and_professional_signoff",
+  "records": [
+    {
+      "id": "SJ-Z",
+      "area": "zhongzhiyuan",
+      "input_evidence": [
+        "time_count",
+        "conflict_map",
+        "equipment_and_safety_constraints"
+      ],
+      "agent_assist": [
+        "compile_conflict_windows",
+        "compare_closable_test_layouts",
+        "draft_test_log"
+      ],
+      "human_decision": [
+        "problem_owner_confirms_test_need",
+        "safety_professional_signs_boundary",
+        "operator_accepts_recovery_duty"
+      ],
+      "spatial_action": "closable_test_loop_observation_edge_and_separate_loading",
+      "non_ai_path": "manual_booking_physical_barrier_and_paper_test_log",
+      "stop_and_recovery": "stop on unclosed high risk; remove temporary equipment and restore public passage"
+    },
+    {
+      "id": "SJ-O",
+      "area": "ai_origin",
+      "input_evidence": [
+        "user_interviews",
+        "day_night_use_log",
+        "sound_and_family_support_baseline"
+      ],
+      "agent_assist": [
+        "cluster_project_needs",
+        "draft_time_share_options",
+        "flag_noise_and_access_conflicts"
+      ],
+      "human_decision": [
+        "community_operator_selects_program",
+        "acoustic_fire_access_professionals_sign",
+        "resident_representatives_co_review"
+      ],
+      "spatial_action": "time_shared_open_clinic_residency_and_quiet_buffer",
+      "non_ai_path": "staffed_clinic_paper_booking_and_physical_wayfinding",
+      "stop_and_recovery": "stop night mode on unresolved disturbance or deprivation; restore shared daytime use"
+    },
+    {
+      "id": "SJ-D",
+      "area": "dazhongsi",
+      "input_evidence": [
+        "station_exit_and_flow_count",
+        "demand_brief",
+        "egress_and_compliance_review"
+      ],
+      "agent_assist": [
+        "match_demand_to_validated_projects",
+        "draft_flow_separation",
+        "compile_compliance_questions"
+      ],
+      "human_decision": [
+        "demand_owner_confirms_need",
+        "procurement_legal_and_egress_roles_sign",
+        "operator_accepts_disclosure_and_exit"
+      ],
+      "spatial_action": "open_ground_floor_service_street_booked_launch_zone_and_daily_bypass",
+      "non_ai_path": "staffed_desk_walk_in_service_and_printed_compliance_list",
+      "stop_and_recovery": "stop event mode on flow or compliance failure; reopen full daily passage"
+    }
+  ],
+  "field_results": null
+}

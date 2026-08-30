@@ -3,10 +3,12 @@ import importlib.util
 import json
 import os
 import shlex
+import struct
 import subprocess
 import sys
 import tempfile
 import unittest
+import zlib
 from pathlib import Path
 from unittest import mock
 
@@ -134,6 +136,27 @@ class SelfCheckEncodingTests(unittest.TestCase):
                 self.assertFalse(result["ok"])
                 self.assertIn(expected_error, result["stderr"])
 
+    @unittest.skipIf(sys.platform == "win32", "LC_ALL does not select the Windows code page")
+    def test_force_utf8_output_prints_chinese_under_non_utf8_locale(self) -> None:
+        chinese_section = "设计依据与资料清单"
+        script = (
+            f"import sys; sys.path.insert(0, {ascii(str(REPO_ROOT / 'scripts'))});"
+            "import self_check_submission as module;"
+            "module.force_utf8_output();"
+            f"print({ascii(chinese_section)})"
+        )
+        environment = os.environ.copy()
+        environment.update({"LC_ALL": "C", "PYTHONUTF8": "0", "PYTHONCOERCECLOCALE": "0"})
+        completed = subprocess.run(
+            [sys.executable, "-c", script],
+            capture_output=True,
+            encoding="utf-8",
+            env=environment,
+            check=False,
+        )
+        self.assertEqual(completed.returncode, 0, completed.stderr)
+        self.assertIn(chinese_section, completed.stdout)
+
 
 def run_scaffold(output_dir: Path, stage: str = "formal", cwd: Path = REPO_ROOT) -> subprocess.CompletedProcess:
     return subprocess.run(
@@ -157,6 +180,24 @@ def run_scaffold(output_dir: Path, stage: str = "formal", cwd: Path = REPO_ROOT)
     )
 
 
+def mark_png_participant_revision(path: Path) -> None:
+    raw = path.read_bytes()
+    iend_offset = raw.rfind(b"\x00\x00\x00\x00IEND")
+    if iend_offset < 0:
+        raise ValueError(f"PNG has no IEND chunk: {path}")
+    chunk_type = b"tEXt"
+    payload = b"Revision\x00participant-revision"
+    checksum = zlib.crc32(chunk_type)
+    checksum = zlib.crc32(payload, checksum) & 0xFFFFFFFF
+    chunk = (
+        struct.pack(">I", len(payload))
+        + chunk_type
+        + payload
+        + struct.pack(">I", checksum)
+    )
+    path.write_bytes(raw[:iend_offset] + chunk + raw[iend_offset:])
+
+
 def complete_scaffold(
     output_dir: Path,
     synchronized_paths: tuple[str, ...] = (),
@@ -178,7 +219,7 @@ def complete_scaffold(
         "assets/figures/metrics-evidence.png",
     ]:
         path = output_dir / rel
-        path.write_bytes(path.read_bytes() + b"participant-revision")
+        mark_png_participant_revision(path)
     geometry = output_dir / "geometry" / "land_use.geojson"
     geometry.write_text(geometry.read_text(encoding="utf-8") + "\n", encoding="utf-8")
     drawing = b"%PDF-1.4\n3 0 obj<</Type/Page/Parent 2 0 R>>endobj\n" + b"0" * 4096
@@ -295,6 +336,7 @@ def official_feature(feature_id: str, layer: str, geometry: dict, **props) -> di
 
 
 def write_official_site_package(root: Path) -> None:
+    write_land_use_registry(root)
     geometry_dir = root / "brief" / "site-package" / "geometry"
     geometry_dir.mkdir(parents=True, exist_ok=True)
     features = [
@@ -324,7 +366,15 @@ def write_official_site_package(root: Path) -> None:
     )
 
 
+def write_land_use_registry(root: Path) -> None:
+    enum_dir = root / "brief" / "site-package" / "enums"
+    enum_dir.mkdir(parents=True, exist_ok=True)
+    source = REPO_ROOT / "brief" / "site-package" / "enums" / "land_use_codes.json"
+    (enum_dir / "land_use_codes.json").write_bytes(source.read_bytes())
+
+
 def write_provisional_site_package(root: Path) -> None:
+    write_land_use_registry(root)
     geometry_dir = root / "brief" / "site-package" / "geometry"
     geometry_dir.mkdir(parents=True, exist_ok=True)
     source = REPO_ROOT / "brief" / "site-package" / "geometry" / "provisional_boundaries.geojson"
@@ -375,6 +425,20 @@ class AgentScaffoldAndSelfCheckTests(unittest.TestCase):
                 "Replace GITHUB_LOGIN with the exact PR author login.",
                 result["next_command_note"],
             )
+
+    def test_finalize_and_mark_self_checked_write_lf_only_manifest(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            write_official_site_package(root)
+            submission_dir = root / "submissions" / "alice" / "lf-line-endings"
+            self.assertEqual(run_scaffold(submission_dir, cwd=root).returncode, 0)
+            self.assertEqual(complete_scaffold(submission_dir).returncode, 0)
+            manifest_bytes = (submission_dir / "manifest.json").read_bytes()
+            self.assertNotIn(b"\r", manifest_bytes, "finalize_submission must not emit CR bytes")
+            self.assertEqual(mark_self_checked(submission_dir).returncode, 0)
+            manifest_bytes = (submission_dir / "manifest.json").read_bytes()
+            self.assertNotIn(b"\r", manifest_bytes, "mark_self_checked must not emit CR bytes")
+            self.assertTrue(manifest_bytes.endswith(b"\n"))
 
     def test_ready_package_manifest_refresh_restores_missing_hashes(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -485,6 +549,33 @@ class AgentScaffoldAndSelfCheckTests(unittest.TestCase):
             self.assertEqual(expected, {key: agent[key] for key in expected})
             self.assertEqual(expected, {key: manifest["agent"][key] for key in expected})
 
+    def test_scaffold_land_use_code_labels_match_registry(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            output_dir = Path(tmp) / "submissions" / "alice" / "land-use-codes"
+            scaffold = run_scaffold(output_dir)
+            self.assertEqual(0, scaffold.returncode, scaffold.stdout + scaffold.stderr)
+
+            land_use = json.loads(
+                (output_dir / "geometry" / "land_use.geojson").read_text(encoding="utf-8")
+            )
+            registry = json.loads(
+                (REPO_ROOT / "brief/site-package/enums/land_use_codes.json").read_text(
+                    encoding="utf-8"
+                )
+            )
+            labels = {item["code"]: item["label_zh"] for item in registry["codes"]}
+            generated = {
+                feature["properties"]["land_use_code"]: feature["properties"]["name_zh"]
+                for feature in land_use["features"]
+            }
+
+            self.assertEqual(
+                {code: labels[code] for code in generated},
+                generated,
+            )
+            self.assertIn("09", generated)
+            self.assertNotIn("05", generated)
+
     def test_finalize_blocks_v2_package_without_required_bilingual_files(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             output_dir = Path(tmp) / "submissions" / "alice" / "missing-bilingual"
@@ -507,7 +598,7 @@ class AgentScaffoldAndSelfCheckTests(unittest.TestCase):
                 "assets/figures/metrics-evidence.png",
             ]:
                 path = output_dir / rel
-                path.write_bytes(path.read_bytes() + b"participant-revision")
+                mark_png_participant_revision(path)
             geometry = output_dir / "geometry" / "land_use.geojson"
             geometry.write_text(geometry.read_text(encoding="utf-8") + "\n", encoding="utf-8")
             drawing = b"%PDF-1.4\n3 0 obj<</Type/Page/Parent 2 0 R>>endobj\n" + b"0" * 4096

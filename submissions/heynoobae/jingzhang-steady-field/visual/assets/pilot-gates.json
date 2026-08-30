@@ -3,49 +3,205 @@
   "levels": [
     {
       "id": "L0",
-      "name_zh": "无建设",
+      "name_zh": "无建设运营调整",
+      "name_en": "no-build operational adjustment",
       "actions": [
-        "清单",
-        "换位",
-        "分时",
-        "维修",
-        "路径调整"
+        "inventory",
+        "repair source",
+        "reschedule",
+        "relocate",
+        "adjust service path"
       ],
-      "entry": "真实主体与运营许可",
-      "exit": "可立即恢复"
+      "entry": "real task owner and operating permission",
+      "exit": "immediately reversible"
     },
     {
       "id": "L1",
-      "name_zh": "测量与移动预检",
+      "name_zh": "授权四点测量",
+      "name_en": "authorised four-point measurement",
       "actions": [
-        "自然事件成对测量",
-        "移动稳检",
-        "传统基线"
+        "bind D/T1/T2/S",
+        "record matched natural or controlled events",
+        "seal non-AI baseline"
       ],
-      "entry": "书面许可与专业计划",
-      "exit": "90天无决策性冲突或无用户即STOP"
+      "entry": "written permission and signed professional measurement plan",
+      "exit": "reject invalid runs; stop at day 90 without a decision-changing conflict"
     },
     {
       "id": "L2",
-      "name_zh": "可逆局部",
+      "name_zh": "一项可逆局部措施",
+      "name_en": "one reversible local intervention",
       "actions": [
-        "可拆测试面",
-        "脚垫",
-        "临时参考基座"
+        "reschedule",
+        "relocate",
+        "removable surface or pad",
+        "temporary reference base"
       ],
-      "entry": "L1真实冲突",
-      "exit": "同工况复测失败即撤除"
+      "entry": "E2 matched evidence and signed human disposition",
+      "exit": "remove and restore when A-B-A is unsupported, inconclusive or harmful"
     },
     {
       "id": "L3",
-      "name_zh": "永久工程",
+      "name_zh": "永久专项工程",
+      "name_en": "permanent specialist engineering",
       "actions": [
-        "独立基础",
-        "结构接缝",
-        "专项工程"
+        "independent foundation",
+        "structural joint",
+        "other specialist work"
       ],
-      "entry": "证据+专业设计+审批+预算",
-      "exit": "本概念不承诺"
+      "entry": "E3 independent repeat plus professional design, statutory approval and budget",
+      "exit": "NO-GO in this concept whenever any prerequisite is missing"
+    }
+  ],
+  "pilot_segments": [
+    {
+      "id": "P0",
+      "name_zh": "授权与对象绑定",
+      "name_en": "permission and object binding",
+      "duration_days": 15
+    },
+    {
+      "id": "P1",
+      "name_zh": "安装、同步与QA",
+      "name_en": "installation, synchronisation and QA",
+      "duration_days": 20
+    },
+    {
+      "id": "P2",
+      "name_zh": "基线冻结与盲测",
+      "name_en": "baseline freeze and blind comparison",
+      "duration_days": 20
+    },
+    {
+      "id": "P3",
+      "name_zh": "可逆措施与A-B-A",
+      "name_en": "reversible action and A-B-A",
+      "duration_days": 20
+    },
+    {
+      "id": "P4",
+      "name_zh": "独立复测、签署与恢复",
+      "name_en": "independent repeat, disposition and restoration",
+      "duration_days": 15
+    }
+  ],
+  "stop_rules": [
+    {
+      "id": "IMMEDIATE_SITE_STOP",
+      "name_zh": "现场立即停止",
+      "name_en": "immediate site stop",
+      "trigger": [
+        "permission invalid or out of scope",
+        "human takeover or physical stop fails",
+        "injury, near miss or reported discomfort",
+        "ordinary accessible or emergency route blocked",
+        "privacy boundary breached",
+        "unexpected structure or equipment damage",
+        "restoration cannot follow plan"
+      ],
+      "immediate_action": "stop, take human control, protect people and restore the ordinary route",
+      "restart_authority": "site authoriser and safety/access lead",
+      "restart_evidence": "incident record, restored route and signed restart decision",
+      "public_record": true,
+      "linked_reading_ids": [
+        "PR-01",
+        "PR-04"
+      ]
+    },
+    {
+      "id": "DATA_RUN_REJECT",
+      "name_zh": "数据批次作废",
+      "name_en": "reject data run",
+      "trigger": [
+        "calibration, synchronisation, mounting, dropout, clipping, raw hash or matched-condition failure"
+      ],
+      "immediate_action": "exclude the run without inferring that the site is safe or unsafe",
+      "restart_authority": "measurement lead and independent reviewer",
+      "restart_evidence": "corrected plan and clean QA record",
+      "public_record": false,
+      "linked_reading_ids": []
+    },
+    {
+      "id": "AI_DELETE",
+      "name_zh": "删除可选AI",
+      "name_en": "delete optional AI",
+      "trigger": [
+        "event leakage",
+        "budget inequality",
+        "no preregistered stable held-out gain"
+      ],
+      "immediate_action": "delete the AI arm and retain measurement, non-AI baseline and human decision",
+      "restart_authority": "new preregistration only",
+      "restart_evidence": "independent benchmark approval",
+      "public_record": true,
+      "linked_reading_ids": []
+    },
+    {
+      "id": "INTERVENTION_REMOVE",
+      "name_zh": "撤除可逆措施",
+      "name_en": "remove reversible intervention",
+      "trigger": [
+        "A-B-A result NOT_SUPPORTED, INCONCLUSIVE without a valid repeat, or HARM_STOP"
+      ],
+      "immediate_action": "remove B and restore A",
+      "restart_authority": "site authoriser and public-continuity lead",
+      "restart_evidence": "restoration acceptance",
+      "public_record": true,
+      "linked_reading_ids": [
+        "PR-01",
+        "PR-03"
+      ]
+    },
+    {
+      "id": "DAY90_PILOT_STOP",
+      "name_zh": "第90日停止升级",
+      "name_en": "day-90 stop",
+      "trigger": [
+        "no real user",
+        "no authorised reviewable dataset",
+        "no attributable conflict that changes a siting, operating or equipment decision"
+      ],
+      "immediate_action": "stop escalation, publish the bounded negative result and restore the site",
+      "restart_authority": "a new authorised campaign",
+      "restart_evidence": "new real task and signed plan",
+      "public_record": true,
+      "linked_reading_ids": [
+        "PR-02",
+        "PR-03",
+        "PR-05"
+      ]
+    },
+    {
+      "id": "NO_L3_SCALE",
+      "name_zh": "永久工程不放行",
+      "name_en": "no L3 scale",
+      "trigger": [
+        "E3 independent repeat, professional design, statutory approval or budget is missing"
+      ],
+      "immediate_action": "keep permanent work at NO-GO",
+      "restart_authority": "relevant professional and statutory authorities",
+      "restart_evidence": "all four prerequisites",
+      "public_record": true,
+      "linked_reading_ids": []
+    },
+    {
+      "id": "PUBLIC_CLAIM_WITHDRAWAL",
+      "name_zh": "撤回公共收益主张",
+      "name_en": "withdraw public-benefit claim",
+      "trigger": [
+        "the five readings show no interpretable public improvement"
+      ],
+      "immediate_action": "withdraw the benefit claim without pretending every L0 operating adjustment has no value",
+      "restart_authority": "human decision panel",
+      "restart_evidence": "new preregistered public evidence",
+      "public_record": true,
+      "linked_reading_ids": [
+        "PR-01",
+        "PR-02",
+        "PR-03",
+        "PR-04",
+        "PR-05"
+      ]
     }
   ]
 }

@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>京张共智回路 / Jing-Zhang Civic AI Loop - proposal report</title>
+<link rel="stylesheet" href="../visual/assets/noto-sans-sc-subset.css">
+<style>
+:root {
+  --ink: #172033;
+  --muted: #667085;
+  --line: #d7dee8;
+  --paper: #ffffff;
+  --bg: #f4f7fa;
+  --accent: #245b8f;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "JZ Noto Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.75;
+}
+main {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 42px 24px 72px;
+  background: var(--paper);
+  min-height: 100vh;
+  box-shadow: 0 0 0 1px rgba(23, 32, 51, 0.05);
+}
+.hero {
+  border-bottom: 3px solid var(--accent);
+  padding-bottom: 24px;
+  margin-bottom: 30px;
+}
+h1 { font-size: 34px; line-height: 1.22; margin: 0 0 10px; }
+h2 { font-size: 25px; margin: 34px 0 12px; border-top: 1px solid var(--line); padding-top: 24px; }
+h3 { font-size: 20px; margin: 26px 0 10px; }
+p, li { font-size: 16px; }
+blockquote {
+  margin: 18px 0;
+  padding: 12px 18px;
+  border-left: 4px solid var(--line);
+  color: var(--muted);
+  background: #f8fafc;
+}
+code {
+  background: #eef2f7;
+  color: #1d4f7a;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+:not(pre) > code {
+  display: inline-block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.summary { color: var(--muted); font-size: 17px; }
+.translation-link a { color: var(--accent); font-weight: 700; }
+.proposal-table { margin: 20px 0 26px; overflow-x: auto; }
+.proposal-table table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 520px;
+  font-size: 15px;
+}
+.proposal-table th, .proposal-table td {
+  border: 1px solid var(--line);
+  padding: 9px 12px;
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.6;
+}
+.proposal-table th { background: #eef2f7; color: var(--ink); font-weight: 700; }
+.proposal-table tbody tr:nth-child(even) { background: #fafcfe; }
+.proposal-table .align-center { text-align: center; }
+.proposal-table .align-right { text-align: right; }
+.proposal-figure {
+  margin: 22px 0 28px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f8fafc;
+}
+.proposal-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.proposal-figure figcaption {
+  padding: 10px 14px;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+}
+.evidence {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  margin: 0 0.12em;
+  border-bottom: 1px solid #8aa8c3;
+  color: #315f87;
+  font-size: 0.68em;
+  font-weight: 650;
+  line-height: 1.35;
+  vertical-align: super;
+}
+@media (max-width: 720px) {
+  main { padding: 26px 16px 52px; }
+  h1 { font-size: 26px; }
+  h2 { font-size: 21px; }
+}
+</style>
+</head>
+<body>
+<main>
+<section class="hero">
+<h1>京张共智回路 / Jing-Zhang Civic AI Loop</h1>
+<p class="summary">以京张遗址公园为公共空间骨架，构建“一脊三核两翼双门双场一网三流”的城市共智回路：青年与真实问题从双门户进入，经众智园研发审查，在小月河与遗址公园限域验证，于大钟寺完成价值转化，并将收益、知识与能力回流公共创新。</p>
+<p class="translation-link"><a href="proposal.en.html">Read in English</a></p>
+</section>
+<h1>京张共智回路 / Jing-Zhang Civic AI Loop</h1>
+<h2>设计依据与资料清单</h2>
+<p>“京张共智回路”是对百年京张 AI 创新带的参赛概念，不另造法定规划名称。方案以官方公告、面向智能体任务书、公开资料登记表和当前场地包为依据，把城市设计判断拆成可读正文、空间图层、可复算指标和显式假设。所有方案动作均为概念建议，不能替代法定规划、审批、工程论证或实施决定 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="OFFICIAL-ANNOUNCEMENT" title="来源：OFFICIAL-ANNOUNCEMENT">来源</sup> <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="AGENT-TASKBOOK" title="来源：AGENT-TASKBOOK">来源</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="existing_conditions_diagnosis" title="深度：existing_conditions_diagnosis">深度</sup>。</p>
+<p>本包尚未取得可信的官方总体边界和三处重点区精确 polygon，因此采用官方仓库登记的临时粗略几何建立设计模型。该几何只用于概念生成、空间关系讨论、临时指标复算和投稿自检，不是官方红线或精确面积依据；正式几何发布后，需联动重算用地、道路、绿地、公共空间、建筑、分期、图件与指标 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="BOUNDARY-SOURCE" title="来源：BOUNDARY-SOURCE">来源</sup> <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/site_boundary.geojson#SITE-001" title="空间数据：geometry/site_boundary.geojson#SITE-001">空间数据</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="site_area_sqm" title="指标：site_area_sqm">指标</sup>。</p>
+<figure class="proposal-figure"><img src="../assets/figures/site-overview.png" alt="资料证据链与提交包关系图"><figcaption>资料证据链与提交包关系图</figcaption></figure>
+<p>方案同时使用已完成的九案例研究、八要素生态矩阵、十二场景目录、三地标与荣誉体系等参与者原创研究。案例只证明某种机制在原环境中存在，不证明海淀已具备相同制度、资金、土地或运营条件 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="CASE-RESEARCH" title="来源：CASE-RESEARCH">来源</sup> <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="ECOSYSTEM-MATRIX" title="来源：ECOSYSTEM-MATRIX">来源</sup>。</p>
+<h2>三层范围工作框架</h2>
+<p>三层范围承担不同问题：约 43.6 km² 的统筹研究范围讨论 AI 产业生态、区域协同和未来城市假设；约 11.4 km² 的总体设计范围把产业策略转成更新结构、蓝绿慢行、公共空间与设施支撑；三处重点区域合计约 368.4 ha，分别验证研发审查、青年共创和价值转化的空间原型。现阶段面积口径来自公告与临时设计模型，正式边界到位后复核 <sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="PROJECT-OFFICIAL-ANNOUNCEMENT" title="标准：PROJECT-OFFICIAL-ANNOUNCEMENT">标准</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="three_level_scope_framework" title="深度：three_level_scope_framework">深度</sup> <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/key_areas.geojson#PROV-KEY-001" title="空间数据：geometry/key_areas.geojson#PROV-KEY-001">空间数据</sup>。</p>
+<figure class="proposal-figure"><img src="../assets/figures/land-use-structure.png" alt="三层范围与空间工作框架图"><figcaption>三层范围与空间工作框架图</figcaption></figure>
+<p>三层范围通过“一脊三核两翼双门双场一网三流”衔接：一脊是京张公共空间与项目证据主脊；三核是 AI 原点社区、众智园和大钟寺；两翼是中关村科技服务翼和小月河场景赋能翼；双门是原点社区与大钟寺两个同权青年入口；双场是小月河与京张遗址公园两处平行基本验证场；一网是条件触发的海淀协作广测网；三流分别是人的参与流、项目与证据流、资金—知识—能力回流 <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="overall_spatial_structure" title="深度：overall_spatial_structure">深度</sup> <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/land_use.geojson#LU-001" title="空间数据：geometry/land_use.geojson#LU-001">空间数据</sup>。</p>
+<h2>统筹研究范围产业与未来城市研究</h2>
+<p>品牌层级保持唯一且可扩展：官方项目母名为“百年京张 AI 创新带”，本方案主名为“京张共智回路 / Jing-Zhang Civic AI Loop”，空间语法为“一脊三核两翼双门双场一网三流”，共智原点、验证灯塔、回流公场是三处运营型地标子名。Logo 方向采用京张轨道线、项目状态节点和回流箭头，不直接使用企业标识、人物肖像或未经授权字体 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="MASTER-PLAN" title="来源：MASTER-PLAN">来源</sup> <sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="PROJECT-AGENT-OPEN-CALL-TASKBOOK" title="标准：PROJECT-AGENT-OPEN-CALL-TASKBOOK">标准</sup>。</p>
+<p>方案以一套回路同时回应三大定位和五大功能：</p>
+<div class="proposal-table"><table><thead><tr><th>官方命题</th><th>本方案的空间与运营回应</th></tr></thead><tbody><tr><td>百年京张文化带</td><td>以遗址公园、文化共创导览和可核验内容档案延续京张历史</td></tr><tr><td>都市 AI 生活体验带</td><td>以双门户、日常第三空间、慢行与公共服务场景形成低门槛体验</td></tr><tr><td>AI 融合创新带</td><td>以原点社区—众智园—双验证场—大钟寺串联研发、验证、转化和回流</td></tr><tr><td>AI 全栈自主创新体系</td><td>众智园提供分级研发、算力、数据、安全、伦理和持续审查接口</td></tr><tr><td>世界级 AI 创新生态</td><td>土地、空间、产业、资金、人才、算力、数据、场景八要素形成服务合同</td></tr><tr><td>AI+ 场景赋能新范式</td><td>十二场景和三项主产业测试把技术放入真实任务与停止机制</td></tr><tr><td>智能化 AI 活力城市</td><td>小月河与遗址公园保持公共通行优先，在限域条件下承载可逆测试</td></tr><tr><td>AI 治理全球话语权</td><td>项目护照、人工复核、失败记录、双账回流和公众纠错形成可审计治理</td></tr></tbody></table></div>
+<p>九案例研究采用八个主案例和一个补充参照，不做形象复制，只转译可验证机制 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="CASE-RESEARCH" title="来源：CASE-RESEARCH">来源</sup>：</p>
+<div class="proposal-table"><table><thead><tr><th>案例</th><th>可迁移机制</th><th>京张转译</th><th>不直接照搬</th></tr></thead><tbody><tr><td>Dubai AI Campus / DIFC <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="CASE-DUBAI" title="来源：CASE-DUBAI">来源</sup></td><td>制度、资本、客户和活动共同形成商业入口</td><td>大钟寺的客户、首单、专业服务和公共回流接口</td><td>特定牌照、资金与金融制度</td></tr><tr><td>Seoul AI Hub / Yangjae <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="CASE-SEOUL" title="来源：CASE-SEOUL">来源</sup></td><td>人才研发、Physical AI 与城市测试场联动</td><td>众智园研发审查与双场限域验证</td><td>建设时序和公共投资规模</td></tr><tr><td>Punggol Digital District <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="CASE-PUNGGOL" title="来源：CASE-PUNGGOL">来源</sup></td><td>数字底座、大学产业融合与 Living Lab</td><td>项目护照、运营数据和空间状态联动</td><td>统一开发运营权和新城条件</td></tr><tr><td>West Bund AI Valley <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="CASE-WESTBUND" title="来源：CASE-WESTBUND">来源</sup></td><td>AI、文化、滨水公共空间与城市品牌叠加</td><td>遗址文化翻译和大钟寺公共展示</td><td>总部政策与企业数量口径</td></tr><tr><td>STATION F <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="CASE-STATIONF" title="来源：CASE-STATIONF">来源</sup></td><td>创业成长链、社群、导师和资本协同</td><td>双门户组队、原型门诊与转化日</td><td>封闭会员制和超大单体</td></tr><tr><td>Masdar City <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="CASE-MASDAR" title="来源：CASE-MASDAR">来源</sup></td><td>可持续母品牌与城市技术试验</td><td>双场低碳验证和长期运营品牌</td><td>新城土地与能源资本条件</td></tr><tr><td>Cyber Valley <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="CASE-CYBERVALLEY" title="来源：CASE-CYBERVALLEY">来源</sup></td><td>科研转化、孵化和公众参与</td><td>众智园技术转化与失败/伦理公开讨论</td><td>德国科研资助和机构结构</td></tr><tr><td>Vector Institute <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="CASE-VECTOR" title="来源：CASE-VECTOR">来源</sup></td><td>知识机构连接人才、企业采用和商业化</td><td>服务翼的可信中介和企业采用支持</td><td>加拿大教育、资金和企业网络</td></tr><tr><td>河套深港合作区（补充）<sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="CASE-HETAO" title="来源：CASE-HETAO">来源</sup></td><td>跨区域科研、中试与专业服务协同</td><td>服务翼的规则接口和科研转化方法</td><td>跨境特殊制度和确定政策</td></tr></tbody></table></div>
+<p>八要素不是资源清单，而是同一项目护照上的服务责任：土地和空间说明准入与恢复，产业和资金说明真实客户、成本与双账，人才和算力说明能力与用量，数据和场景说明最小化、授权、人工责任与停止。原点社区承接人才与问题，众智园承接研发、算力、数据和审查，双场承接真实任务，大钟寺承接交易与回流，服务翼提供 IP、法律、资本、人才和国际化支持 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="ECOSYSTEM-MATRIX" title="来源：ECOSYSTEM-MATRIX">来源</sup>。</p>
+<h2>总体设计范围城市更新与控规深度城市设计</h2>
+<p>总体设计不新增封闭 AI 园区，而是以临时设计模型协调四类混合功能：研发与验证、蓝绿城市测试、商业服务与价值转化、青年社区与公共创新。用地 polygon 是概念分区，不是法定地类边界；相邻分区共享坐标并覆盖当前提交边界 <sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="MOHURD-CONTROL-DETAILED-PLANNING" title="标准：MOHURD-CONTROL-DETAILED-PLANNING">标准</sup> <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/land_use.geojson#LU-001" title="空间数据：geometry/land_use.geojson#LU-001">空间数据</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="land_use_layout" title="深度：land_use_layout">深度</sup>。</p>
+<p>更新采用四种研究性动作：保留并激活仍有公共或历史价值的空间；对具备条件的存量建筑进行适应性利用；修复街道、公园和建筑首层之间的公共界面；在真实需求成立后插入可逆模块。每一动作都以逐栋现状、权属、消防、文保、结构和运营复核为前置，不给出地块级拆除、法定强度或工程可行性结论 <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/buildings.geojson#BLDG-001" title="空间数据：geometry/buildings.geojson#BLDG-001">空间数据</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="retain_renovate_demolish" title="深度：retain_renovate_demolish">深度</sup>。</p>
+<figure class="proposal-figure"><img src="../assets/figures/land-use-structure.png" alt="概念用地与城市更新结构图"><figcaption>概念用地与城市更新结构图</figcaption></figure>
+<p>总体空间把普通市民的日常权利放在测试之前：固定导视、人工服务、连续步行与无障碍路径始终可用；AI 导航、机器人、活动和临时设备只是增强层。项目流、公众流、设备物流和应急流按空间或时段分离，正式道路断面、轨道接驳、市政容量和消防条件由专业团队深化。</p>
+<h2>重点区域详细设计</h2>
+<p>三处重点区承担不同但可往返的角色。设计落位只在临时约束范围内表达功能、流线、权限和运营接口，不声称真实权属、建筑规模或审批结果 <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="three_key_area_detailed_design" title="深度：three_key_area_detailed_design">深度</sup>。</p>
+<div class="proposal-table"><table><thead><tr><th>重点区</th><th>定位与空间结构</th><th>AI 场景和运营</th><th>专业前置与风险</th></tr></thead><tbody><tr><td>众智园 AI 自主创新加速区 <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/key_areas.geojson#PROV-KEY-001" title="空间数据：geometry/key_areas.geojson#PROV-KEY-001">空间数据</sup></td><td>“验证灯塔”：公共观察界面、方法展台、受控研发、设备物流和独立应急后场</td><td>分级研发、模型与交互沙盒、测试协议、安全/伦理/数据审查、失败证据回流</td><td>清河、防洪、交通、消防、设备、算力和敏感数据条件</td></tr><tr><td>北京 AI 原点社区 <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/key_areas.geojson#PROV-KEY-002" title="空间数据：geometry/key_areas.geojson#PROV-KEY-002">空间数据</sup></td><td>“共智原点”：公共开放桌、单人创作位、可选共创桌、服务接力和保密后场</td><td>城市问题诊所、青年第三空间、文化共创、服务导航和原型门诊</td><td>校园园区边界、首层权属、夜间开放、无障碍和隐私</td></tr><tr><td>大钟寺 AI 产业集聚区 <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/key_areas.geojson#PROV-KEY-003" title="空间数据：geometry/key_areas.geojson#PROV-KEY-003">空间数据</sup></td><td>“回流公场”：成长展线、公众反馈与交易前场、能力—价值会诊、合同财务后场</td><td>国际路演、真实试用、首单、公共性 AI 会诊、双账与回流展示</td><td>轨道站点、四象限步行、市政、商业秘密、利益冲突和公共空间侵占</td></tr></tbody></table></div>
+<figure class="proposal-figure"><img src="../assets/figures/key-areas.png" alt="三处重点区域索引与设计任务图"><figcaption>三处重点区域索引与设计任务图</figcaption></figure>
+<p>三个地标不形成等级：青年可从原点社区或大钟寺任一门户进入；项目在众智园审查后可返回修改；验证完成后既可转化，也可暂停、退出或重新进入问题库。</p>
+<h2>AI 创新生态、人才画像与 AI+ 场景</h2>
+<p>六类 persona 覆盖青年居民/工作者、学生通勤者与访客、开发者/研究者/创业者、文化研究与内容创作者、企业与投资者、场地与公共服务运营者。每类人都保有知情、拒绝、人工替代、投诉纠错和必要时撤回数据的权利 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="MASTER-PLAN" title="来源：MASTER-PLAN">来源</sup> <sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="PROJECT-AGENT-OPEN-CALL-TASKBOOK" title="标准：PROJECT-AGENT-OPEN-CALL-TASKBOOK">标准</sup>。</p>
+<div class="proposal-table"><table><thead><tr><th>Persona</th><th>真实任务</th><th>空间响应</th><th>关键边界</th></tr></thead><tbody><tr><td>青年居民/工作者</td><td>通勤、学习、社交并获得可信服务</td><td>双门户非消费座位、夜间学习和问题诊所</td><td>不以画像做商业推荐</td></tr><tr><td>学生、通勤者与访客</td><td>换乘、识路、短停和选择参与</td><td>连续慢行、固定导视、轻量体验</td><td>无需注册也可使用基本服务</td></tr><tr><td>开发者/研究者/创业者</td><td>找到问题、伙伴、测试和转化路径</td><td>原点社区—众智园—双场—大钟寺</td><td>核心 IP 分级保护，验证边界公开</td></tr><tr><td>文化研究与创作者</td><td>准确讲述京张与创新文化</td><td>遗址公园共创路径和人工事实校核</td><td>来源、版权、肖像与声音清权</td></tr><tr><td>企业与投资者</td><td>验证需求、客户、成本和长期责任</td><td>大钟寺试用、首单、会诊和服务翼</td><td>不以曝光替代采用，不披露商业秘密</td></tr><tr><td>场地与公共服务运营者</td><td>安全运行、维护和人工接管</td><td>各节点后场、值守和停止接口</td><td>有权报告不可维护并触发停止</td></tr></tbody></table></div>
+<p>十二场景按四阶段组织，至少三项明确作为产业测试。每场景都绑定用户、空间、最小数据、人工责任、运营角色和停止条件 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="SCENARIO-CATALOG" title="来源：SCENARIO-CATALOG">来源</sup>：</p>
+<div class="proposal-table"><table><thead><tr><th>ID / 场景</th><th>主要用户与空间</th><th>数据与人工责任</th><th>运营/停止</th></tr></thead><tbody><tr><td>SCN-001 城市问题诊所</td><td>青年、居民；双门户</td><td>主动提交和人工二次确认</td><td>门户运营；问题不真实或无责任人则不进入</td></tr><tr><td>SCN-002 青年共创第三空间</td><td>青年；原点社区/大钟寺</td><td>最小登记，个人可独立创作</td><td>门户运营；骚扰、排斥或版权不清即停止</td></tr><tr><td>SCN-003 无障碍慢行与换乘助手</td><td>不同能力使用者；双场与接驳点</td><td>主动输入、人工纠错、固定导视备份</td><td>场地/交通角色；路径数据失真即暂停</td></tr><tr><td>SCN-004 京张文化共创导览</td><td>青年、公众、研究者；遗址公园</td><td>公开史料、人工事实与版权复核</td><td>文化运营；历史幻觉或侵权即下线</td></tr><tr><td>SCN-005 AI 创新服务导航与人工接力</td><td>个人/团队；双门户和服务翼</td><td>最小服务单，专业结论由真人承担</td><td>服务翼；人工通道失效即降级</td></tr><tr><td>SCN-006 低速机器人共路测试</td><td>行人、运营者；双场</td><td>不做身份识别，现场人工接管</td><td>场地/设备责任人；安全或接管失败即停</td></tr><tr><td>SCN-007 活动日慢行与接驳协同</td><td>活动公众；双场活动节点</td><td>匿名计数和人工报告</td><td>活动运营；拥挤或指令冲突即人工接管</td></tr><tr><td>SCN-008 公园生态维护助手</td><td>养护人员、公众；双场</td><td>低敏环境/设施数据，专业人员判读</td><td>公园运营；误报影响安全即停用</td></tr><tr><td>SCN-009 青年夜间学习与活动协同</td><td>青年；原点社区第三空间</td><td>不追踪个人学习行为</td><td>门户运营；噪声、安全或排斥无法纠正即调整</td></tr><tr><td>SCN-010 开发者开放测试周</td><td>开发者、问题方、公众；全链路</td><td>项目护照、分级审查和现场值守</td><td>联合运营；越权采集或无退出方案则不开放</td></tr><tr><td>SCN-011 公共性 AI 可持续性会诊</td><td>公共项目方、运营者；大钟寺</td><td>成本、责任和效果由人工复核</td><td>独立会诊；无维护主体或资金路径则暂停</td></tr><tr><td>SCN-012 AI 原生商业与公共回流</td><td>企业、客户、公众；大钟寺</td><td>交易、成本和回流分账，独立核验</td><td>转化运营；虚假披露、回流违约或公共成本失控即停</td></tr></tbody></table></div>
+<p>三项主产业测试为：TEST-01 青年 AI 创意原型公开测试（SCN-002＋010），验证问题—原型—公众反馈；TEST-02 京张 AI 文化共创实验（SCN-004），验证事实、版权和多语言理解；TEST-03 AI 原生产品与公共回流实验（SCN-011＋012），验证真实试用、首单、维护成本、商业账与公共账。每项测试均为 3–8 周或另行确认的限域周期，正式启动前必须签署数据、场地、人工值守、成本、停止和恢复协议。</p>
+<h2>用地、建筑规模与拆改留方案</h2>
+<p>当前用地和建筑图层表达概念功能关系，不表达法定地类、真实产权或逐栋工程结论。四类功能可在运营上复合，但在结构化几何中保持拓扑闭合；建筑基底面积可由设计模型复算，容积率、建筑高度、建筑密度、退线和建筑控制线因缺少官方控规与现状资料保持待确认 <sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="MNR-LAND-USE-CLASSIFICATION-GUIDE" title="标准：MNR-LAND-USE-CLASSIFICATION-GUIDE">标准</sup> <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/buildings.geojson#BLDG-001" title="空间数据：geometry/buildings.geojson#BLDG-001">空间数据</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="building_footprint_area_sqm" title="指标：building_footprint_area_sqm">指标</sup>。</p>
+<p>拆改留采用“先调查、后分类”的方法：有使用或历史价值的空间优先保留并激活；具备结构、消防、文保和运营条件的存量建筑研究适应性利用；界面破碎处优先修复公共空间；新增体量只在存量无法满足经验证需求时研究。无比例功能平面和面积泡泡图只用于容量与邻接讨论，不构成建筑轮廓或规划指标 <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="height_massing_character" title="深度：height_massing_character">深度</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="development_intensity_controls" title="深度：development_intensity_controls">深度</sup>。</p>
+<h2>交通、轨道、市政与公共服务设施</h2>
+<p>交通框架优先修复轨道站点、既有街道、京张遗址公园、小月河和三核之间的步行、骑行与无障碍联系。北五环跨越、五道口、清华东路西口、大钟寺站和重点企业周边是后续专业核查节点；当前道路图层只表达概念联系，不替代道路红线、断面或交通组织审批 <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/roads.geojson#ROAD-001" title="空间数据：geometry/roads.geojson#ROAD-001">空间数据</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="traffic_rail_slow_parking" title="深度：traffic_rail_slow_parking">深度</sup>。</p>
+<figure class="proposal-figure"><img src="../assets/figures/mobility-bluegreen.png" alt="交通慢行与蓝绿公共空间复合系统图"><figcaption>交通慢行与蓝绿公共空间复合系统图</figcaption></figure>
+<p>市政和公共服务采用“常规设施＋新型基础设施接口”的分层策略：固定导视、人工服务、消防、排水、供电和日常维护必须独立成立；端侧算力、感知设备、机器人充换电和分布式能源仅在容量、许可、网络安全、低碳和运维责任确认后接入。管线、防洪、消防、能源与算力负荷均列为深化前置条件 <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/constraints.geojson#CONSTRAINTS" title="空间数据：geometry/constraints.geojson#CONSTRAINTS">空间数据</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="municipal_new_infrastructure" title="深度：municipal_new_infrastructure">深度</sup>。</p>
+<h2>蓝绿空间、公共空间与城市风貌</h2>
+<p>小月河与京张遗址公园是地位平行、按任务匹配的两处基本验证场。普通通行、休憩、文化体验和无障碍使用始终优先；每个试点都要公开边界、时段、数据、设备、人工接力、非 AI 替代和停止条件，不能把遗产与公共绿地变成封闭产品展场 <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/green_space.geojson#GREEN-001" title="空间数据：geometry/green_space.geojson#GREEN-001">空间数据</sup> <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/public_space.geojson#PUBLIC-001" title="空间数据：geometry/public_space.geojson#PUBLIC-001">空间数据</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="blue_green_public_space" title="深度：blue_green_public_space">深度</sup>。</p>
+<p>城市风貌把京张铁路历史、中关村创新文化和 AI 新文化组织成“历史线索—开放协作—负责任验证—公共回流”的叙事。视觉语言采用暖白、石墨灰、低饱和绿和克制铜色信息点，以轨道尺度、节点编号和时间刻度形成识别，不做表面仿古或高亮科技秀。</p>
+<p>三处 AI 朝圣地标是可运营公共空间，不是三座夸张建筑 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="LANDMARK-SYSTEM" title="来源：LANDMARK-SYSTEM">来源</sup>：</p>
+<div class="proposal-table"><table><thead><tr><th>地标</th><th>公共任务</th><th>最小空间原型</th><th>荣誉内容</th></tr></thead><tbody><tr><td>共智原点 / AI 原点社区</td><td>让问题和早期想法被平等接住</td><td>开放桌、单人/共创位、服务接力、保密后场</td><td>问题贡献、首次原型、协作和事实纠错</td></tr><tr><td>验证灯塔 / 众智园</td><td>让规则、证据、责任和停止可被理解</td><td>状态界面、方法展台、受控研发、应急后场</td><td>测试协议、人工接管、主动停止和可信失败</td></tr><tr><td>回流公场 / 大钟寺</td><td>让成长、交易、公共成本和回流共同可见</td><td>成长展线、反馈交易前场、会诊桌、财务后场</td><td>真实采用、长期维护、公共回流和开放资产复用</td></tr></tbody></table></div>
+<h2>更新项目清单、实施政策与分期计划</h2>
+<p>六类更新项目把空间、运营和条件绑定，均以“概念建议＋触发条件”表达 <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/phasing.geojson#PHASE-001" title="空间数据：geometry/phasing.geojson#PHASE-001">空间数据</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="renewal_project_list" title="深度：renewal_project_list">深度</sup>：</p>
+<div class="proposal-table"><table><thead><tr><th>项目</th><th>近期试点</th><th>中长期深化</th><th>责任与触发条件</th></tr></thead><tbody><tr><td>JZ-01 京张慢行断点缝合</td><td>标识、临时过渡和无障碍核查</td><td>路口、跨线和连续界面专业设计</td><td>交通/场地责任人；道路红线和安全复核</td></tr><tr><td>JZ-02 众智园—清河创新界面</td><td>验证状态界面和低扰动活动</td><td>蓝绿、研发、设备与公共界面更新</td><td>园区/河道角色；防洪、生态、消防条件</td></tr><tr><td>JZ-03 原点社区近校共创街</td><td>开放桌、第三空间和服务接力</td><td>存量适应性利用与连续首层</td><td>门户运营；权属、校园边界和夜间管理</td></tr><tr><td>JZ-04 大钟寺回流公场</td><td>成长展线、会诊桌和转化日</td><td>轨道一体化、四象限步行和商业公共界面</td><td>站区/商业/公共角色；交通、市政和保密</td></tr><tr><td>JZ-05 双场公共验证组件</td><td>预约、限域、人工值守和恢复包</td><td>经验证的长期服务接口</td><td>场地运营；许可、保险、数据和停止协议</td></tr><tr><td>JZ-06 全球活动与开发者社区</td><td>每周开放桌、月度门诊、季度测试周</td><td>年度旗舰活动与国际合作转化</td><td>联合运营；预算、安全、版权和真实合作结果</td></tr></tbody></table></div>
+<p>运营节奏采用日常—周—月—季—年五层：日常开放个人进入和项目查询；每周运行 AI 原点开放桌；每月举行原型门诊、文化共创和公共性 AI 会诊；每季度运行开放测试周与大钟寺转化日；每年发布问题、成果、失败、贡献和公共回流摘要。国际传播以人才、项目、客户或研究合作的实际转化衡量，不以曝光量替代公共价值 <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="phasing_implementation" title="深度：phasing_implementation">深度</sup>。</p>
+<h2>指标体系、面积复算与合规矩阵</h2>
+<p>当前三项核心视觉指标由临时设计几何复算：总体设计模型面积为 11,412,825.386 m²，绿地比例为 12.3423%，公共空间比例为 7.3281%。它们是低置信度设计模型值，不是官方面积或法定指标；其意义是检验当前分区是否为日常交往、蓝绿连续和公共验证保留了可见空间，正式边界替换后必须整体重算 <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="site_area_sqm" title="指标：site_area_sqm">指标</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="green_ratio" title="指标：green_ratio">指标</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="public_space_ratio" title="指标：public_space_ratio">指标</sup>。</p>
+<p>建筑基底设计模型面积为 310,807.184 m²，仅用于当前概念量体复核；容积率和高度保持待正式数据补齐。重点区数量为三处，数量来自任务书，具体边界仍为临时约束 <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="building_footprint_area_sqm" title="指标：building_footprint_area_sqm">指标</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="key_area_count" title="指标：key_area_count">指标</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="metrics_recalculation" title="深度：metrics_recalculation">深度</sup>。</p>
+<p>最新造价图采用参与者编制的内部概念模型 <code>visual/assets/economics_model.json</code>，有效日期为 2026-08-29。标准实施情景以 17.21 万 m² 激活建筑面积、9.52 km 公共界面和 12＋12 个模块/节点为数量输入：建筑更新 6.37 亿元、公共界面 1.14 亿元、公园/廊道/模块与智慧系统 0.94 亿元；三项直接费用合计 8.45 亿元，再计设计管理费 12%（1.014 亿元）、预备费 15%（1.2675 亿元）和 18 个月启动金 0.4085 亿元，形成 11.14 亿元概念总投入。上述单价是为当前方案比较建立的参与者输入，不是市场询价、批准概算或采购依据 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="ECONOMIC-MODEL" title="来源：ECONOMIC-MODEL">来源</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="standard_scenario_capex_cny" title="指标：standard_scenario_capex_cny">指标</sup>。</p>
+<p>成熟期运营情景按 75% 稳定入住率和激活面积的 70% 可运营比例计算，年营收 2.26 亿元、年运营成本 1.24 亿元、年净运营收益 1.02 亿元，静态无杠杆回收期为 <code>11.14 / 1.02 = 10.92</code> 年，图中取“约 11 年”。当入住率分别为 60%/75%/90% 时，模型回收期为 16.7/10.9/8.1 年；当投入在基准值上变化 ±15% 时，回收期为 9.3—12.6 年。模型排除征拆、融资及未列税费、重大结构加固、文保专项、地下工程、市政扩容、审批成本、价格上涨和终值，不构成收益承诺或投资结论 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="ECONOMIC-MODEL" title="来源：ECONOMIC-MODEL">来源</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="standard_scenario_annual_noi_cny" title="指标：standard_scenario_annual_noi_cny">指标</sup>。</p>
+<figure class="proposal-figure"><img src="../assets/figures/metrics-evidence.png" alt="核心指标复算与证据链图"><figcaption>核心指标复算与证据链图</figcaption></figure>
+<p>合规矩阵分别映射 agent.1 的品牌与总体结构、agent.2 的九案例与八要素、agent.3 的六类 persona/十二场景/三项测试、agent.4 的双场/三地标/组件库、agent.5 的京张—中关村—AI 文化叙事、agent.6 的五层运营与公共回流。结构化文件保存完整索引，正文只保留与判断相邻的证据标记。</p>
+<h2>风险、版权与合规说明</h2>
+<p>临时边界、控规、道路红线、权属、现状建筑、市政、消防、文保、交通和运营成本是当前主要数据缺口。所有依赖这些条件的结论均降级为概念建议，并写入假设与复算触发；高影响、隐私敏感、安全相关和财务相关动作必须由人类与相应专业主体最终判断 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="SITE-PACKAGE" title="来源：SITE-PACKAGE">来源</sup> <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/constraints.geojson#CONSTRAINTS" title="空间数据：geometry/constraints.geojson#CONSTRAINTS">空间数据</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="risk_missing_data" title="深度：risk_missing_data">深度</sup>。</p>
+<p>项目只使用依法公开或已清权资料，排除涉密内容、个人隐私和许可不清资产。生成图件与效果表达标注为 conceptual/synthetic，不作为现状、公众同意或审批证据。人物、字体、Logo、论文图片、地图与外部案例资产须按版权声明清权；案例研究只引用公开事实和机制，不复制外部图片或商标。</p>
+<p>截至 2026-08-30，双语正文、40 图顺序、A3/A0、网页、离线中文字体、manifest 哈希与四门自检均已按本版刷新，本包已达到“可进入专业评审”的文件就绪状态。该状态只说明交付物完整且自检通过；数据置信度仍为“临时几何＋内部概念测算的混合状态”，不代表官方边界、法定指标、工程可行性、投资批准或现实运营条件已经确认。</p>
+<h2>参考资料</h2>
+<p>1. 北京市规划和自然资源委员会海淀分局：《百年京张 AI 创新带城市设计国际方案征集资格预审公告》，2026 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="OFFICIAL-ANNOUNCEMENT" title="来源：OFFICIAL-ANNOUNCEMENT">来源</sup>。 2. 百年京张 AI 创新带开源征集：《面向全球智能体开展城市设计开源征集任务书摘录》，2026 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="AGENT-TASKBOOK" title="来源：AGENT-TASKBOOK">来源</sup>。 3. open-city-ai/haidian：场地包、临时边界、专业标准与公开资料登记表，持续更新 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="SITE-PACKAGE" title="来源：SITE-PACKAGE">来源</sup>。 4. 参与者研究：《全球 AI 创新生态九案例研究》，2026-08-25 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="CASE-RESEARCH" title="来源：CASE-RESEARCH">来源</sup>。 5. 参与者研究：《八要素 AI 创新生态图谱与案例证据矩阵》，2026-08 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="ECOSYSTEM-MATRIX" title="来源：ECOSYSTEM-MATRIX">来源</sup>。 6. 参与者策划：《百年京张 AI 创新带：策划总纲与场景运营机制》，2026-08 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="MASTER-PLAN" title="来源：MASTER-PLAN">来源</sup>。 7. 参与者策划：《十二场景全量对照与产业测试候选》，2026-08 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="SCENARIO-CATALOG" title="来源：SCENARIO-CATALOG">来源</sup>。 8. 参与者策划：《三处 AI 朝圣地标角色与荣誉体系》，2026-08 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="LANDMARK-SYSTEM" title="来源：LANDMARK-SYSTEM">来源</sup>。 9. 住房和城乡建设部：《城市设计管理办法》及《城市、镇控制性详细规划编制审批办法》本地参考快照 <sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="MOHURD-URBAN-DESIGN-MEASURES" title="标准：MOHURD-URBAN-DESIGN-MEASURES">标准</sup>。 10. 自然资源部：《国土空间调查、规划、用途管制用地用海分类指南》本地参考快照 <sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="MNR-LAND-USE-CLASSIFICATION-GUIDE" title="标准：MNR-LAND-USE-CLASSIFICATION-GUIDE">标准</sup>。</p>
+<h2>空间原型与运营机制补充图集</h2>
+<p>以下中英文配对图件均为概念性、无比例或待专业深化的解释层，不构成法定规划、真实建筑面积、拆改留、工程定位或审批结论。</p>
+<figure class="proposal-figure"><img src="../assets/text-figures/d89cb283c76dde2a.webp" alt="AI原点社区“共智原点”无比例功能平面"><figcaption>AI原点社区“共智原点”无比例功能平面</figcaption></figure>
+<figure class="proposal-figure"><img src="../assets/text-figures/ec9fdaccd836a277.webp" alt="双门户现代简约设计语言渲染"><figcaption>双门户现代简约设计语言渲染</figcaption></figure>
+<figure class="proposal-figure"><img src="../assets/text-figures/874ffe169b119b42.webp" alt="众智园“验证灯塔”无比例功能平面"><figcaption>众智园“验证灯塔”无比例功能平面</figcaption></figure>
+<figure class="proposal-figure"><img src="../assets/text-figures/800922d0dd812566.webp" alt="小月河与京张铁路遗址公园平行基本验证场"><figcaption>小月河与京张铁路遗址公园平行基本验证场</figcaption></figure>
+<figure class="proposal-figure"><img src="../assets/text-figures/73803acade6b69c6.webp" alt="双门户现代简约设计语言控制板"><figcaption>双门户现代简约设计语言控制板</figcaption></figure>
+<figure class="proposal-figure"><img src="../assets/text-figures/d89cb283c76dde2a.webp" alt="双门户无比例功能关系平面"><figcaption>双门户无比例功能关系平面</figcaption></figure>
+<figure class="proposal-figure"><img src="../assets/text-figures/02cc0f080aeb6d86.webp" alt="双门户面积比例泡泡图：无比例、非规划指标"><figcaption>双门户面积比例泡泡图：无比例、非规划指标</figcaption></figure>
+<figure class="proposal-figure"><img src="../assets/text-figures/e990c403759935e6.webp" alt="双门户六种场景切换"><figcaption>双门户六种场景切换</figcaption></figure>
+<figure class="proposal-figure"><img src="../assets/text-figures/800922d0dd812566.webp" alt="双门户空间原型组合"><figcaption>双门户空间原型组合</figcaption></figure>
+<figure class="proposal-figure"><img src="../assets/text-figures/d89cb283c76dde2a.webp" alt="双门户分区、流线与门槛控制"><figcaption>双门户分区、流线与门槛控制</figcaption></figure>
+<figure class="proposal-figure"><img src="../assets/text-figures/e990c403759935e6.webp" alt="三大核心场景空间、运营与治理控制板"><figcaption>三大核心场景空间、运营与治理控制板</figcaption></figure>
+<figure class="proposal-figure"><img src="../assets/text-figures/1da557e0cdb177f4.webp" alt="三处AI朝圣地标角色与分布式荣誉体系"><figcaption>三处AI朝圣地标角色与分布式荣誉体系</figcaption></figure>
+<figure class="proposal-figure"><img src="../assets/text-figures/73803acade6b69c6.webp" alt="公共空间组件库：可组合、可预约、可停止"><figcaption>公共空间组件库：可组合、可预约、可停止</figcaption></figure>
+<figure class="proposal-figure"><img src="../assets/text-figures/81b9bf8ee8aa52bb.webp" alt="大钟寺“回流公场”无比例功能平面"><figcaption>大钟寺“回流公场”无比例功能平面</figcaption></figure>
+<p>&lt;!-- FINAL_TEXT_FIGURE_SEQUENCE_START --&gt;</p>
+<h2>附录：用户最终确认的正式文本图件顺序（40 张）</h2>
+<h3>001 00COVER_鸟瞰全景_数字孪生科技版_v4.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/01556a5f0f7029a6.webp" alt="00COVER_鸟瞰全景_数字孪生科技版_v4.png"><figcaption>00COVER_鸟瞰全景_数字孪生科技版_v4.png</figcaption></figure>
+<h3>002 COVER_鸟瞰全景_白天文字版_v5.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/60bf246c89689dc0.webp" alt="COVER_鸟瞰全景_白天文字版_v5.png"><figcaption>COVER_鸟瞰全景_白天文字版_v5.png</figcaption></figure>
+<h3>003 FIG-00A_设计依据与设计资料来源说明_v1.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/73a18cd1ac55799c.webp" alt="FIG-00A_设计依据与设计资料来源说明_v1.png"><figcaption>FIG-00A_设计依据与设计资料来源说明_v1.png</figcaption></figure>
+<h3>004 FIG-19_AI原点社区_节点级设计鸟瞰_v1.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/14dbbbb2876412a4.webp" alt="FIG-19_AI原点社区_节点级设计鸟瞰_v1.png"><figcaption>FIG-19_AI原点社区_节点级设计鸟瞰_v1.png</figcaption></figure>
+<h3>005 FIG-20_众智园_验证灯塔_节点级设计鸟瞰_无字底图_v1.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/8a7f70551fe9c977.webp" alt="FIG-20_众智园_验证灯塔_节点级设计鸟瞰_无字底图_v1.png"><figcaption>FIG-20_众智园_验证灯塔_节点级设计鸟瞰_无字底图_v1.png</figcaption></figure>
+<h3>006 FIG-21_大钟寺_回流公场_节点级设计鸟瞰_无字底图_v1.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/9a4aa30335c93a95.webp" alt="FIG-21_大钟寺_回流公场_节点级设计鸟瞰_无字底图_v1.png"><figcaption>FIG-21_大钟寺_回流公场_节点级设计鸟瞰_无字底图_v1.png</figcaption></figure>
+<h3>007 FIG-00_总体概念与空间结构_v2.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/523e55222f692bc8.webp" alt="FIG-00_总体概念与空间结构_v2.png"><figcaption>FIG-00_总体概念与空间结构_v2.png</figcaption></figure>
+<h3>008 FIG-01_现状问题与在地资源底盘总图_v1.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/80d301457fb909d8.webp" alt="FIG-01_现状问题与在地资源底盘总图_v1.png"><figcaption>FIG-01_现状问题与在地资源底盘总图_v1.png</figcaption></figure>
+<h3>009 FIG-01_总体空间结构与全场景点位_分析图_v6.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/9c52da8a8cdb2fde.webp" alt="FIG-01_总体空间结构与全场景点位_分析图_v6.png"><figcaption>FIG-01_总体空间结构与全场景点位_分析图_v6.png</figcaption></figure>
+<h3>010 FIG-01_总体正南北与三重点区场景点位_美化v4.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/fc6ef83488c49700.webp" alt="FIG-01_总体正南北与三重点区场景点位_美化v4.png"><figcaption>FIG-01_总体正南北与三重点区场景点位_美化v4.png</figcaption></figure>
+<h3>011 FIG-02_总体空间结构概念用地与城市更新_v2.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/0b65a6d6a243c863.webp" alt="FIG-02_总体空间结构概念用地与城市更新_v2.png"><figcaption>FIG-02_总体空间结构概念用地与城市更新_v2.png</figcaption></figure>
+<h3>012 FIG-04_慢行蓝绿遗产空间底盘_v7.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/e570e31e9e3ba894.webp" alt="FIG-04_慢行蓝绿遗产空间底盘_v7.png"><figcaption>FIG-04_慢行蓝绿遗产空间底盘_v7.png</figcaption></figure>
+<h3>013 FIG-05 四类更新动作_原始地形底图定位_v2.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/e7311f59c30430f0.webp" alt="FIG-05 四类更新动作_原始地形底图定位_v2.png"><figcaption>FIG-05 四类更新动作_原始地形底图定位_v2.png</figcaption></figure>
+<h3>014 FIG-06四类更新动作_四列说明与空间意向_v1.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/73803acade6b69c6.webp" alt="FIG-06四类更新动作_四列说明与空间意向_v1.png"><figcaption>FIG-06四类更新动作_四列说明与空间意向_v1.png</figcaption></figure>
+<h3>015 FIG-07_众智园—小月河片区_四类更新动作落位_v1.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/ab89c85db7385bc1.webp" alt="FIG-07_众智园—小月河片区_四类更新动作落位_v1.png"><figcaption>FIG-07_众智园—小月河片区_四类更新动作落位_v1.png</figcaption></figure>
+<h3>016 FIG-08_AI原点社区片区_四类更新动作落位_v1.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/723d8495151fc085.webp" alt="FIG-08_AI原点社区片区_四类更新动作落位_v1.png"><figcaption>FIG-08_AI原点社区片区_四类更新动作落位_v1.png</figcaption></figure>
+<h3>017 FIG-09_大钟寺片区_四类更新动作落位_v1.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/0650a791622ab8bf.webp" alt="FIG-09_大钟寺片区_四类更新动作落位_v1.png"><figcaption>FIG-09_大钟寺片区_四类更新动作落位_v1.png</figcaption></figure>
+<h3>018 FIG-19_AI原点社区_节点级设计鸟瞰_直排文字_v2.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/ec9fdaccd836a277.webp" alt="FIG-19_AI原点社区_节点级设计鸟瞰_直排文字_v2.png"><figcaption>FIG-19_AI原点社区_节点级设计鸟瞰_直排文字_v2.png</figcaption></figure>
+<h3>019 FIG-20_众智园_验证灯塔_节点级设计鸟瞰_直排文字_v1.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/ee7e180a5deaa29a.webp" alt="FIG-20_众智园_验证灯塔_节点级设计鸟瞰_直排文字_v1.png"><figcaption>FIG-20_众智园_验证灯塔_节点级设计鸟瞰_直排文字_v1.png</figcaption></figure>
+<h3>020 FIG-21_大钟寺_回流公场_节点级设计鸟瞰_直排文字_v1.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/5f0b8e219b8ccb13.webp" alt="FIG-21_大钟寺_回流公场_节点级设计鸟瞰_直排文字_v1.png"><figcaption>FIG-21_大钟寺_回流公场_节点级设计鸟瞰_直排文字_v1.png</figcaption></figure>
+<h3>021 FIG-10_设计实施规模与经济测算_v1.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/02cc0f080aeb6d86.webp" alt="FIG-10_设计实施规模与经济测算_v1.png"><figcaption>FIG-10_设计实施规模与经济测算_v1.png</figcaption></figure>
+<h3>022 FIG-10处AI朝圣地标角色与荣誉体系_v1.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/1da557e0cdb177f4.webp" alt="FIG-10处AI朝圣地标角色与荣誉体系_v1.png"><figcaption>FIG-10处AI朝圣地标角色与荣誉体系_v1.png</figcaption></figure>
+<h3>023 FIG-11双门户_分区流线与门槛控制_v2.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/d89cb283c76dde2a.webp" alt="FIG-11双门户_分区流线与门槛控制_v2.png"><figcaption>FIG-11双门户_分区流线与门槛控制_v2.png</figcaption></figure>
+<h3>024 FIG-12众智园_验证灯塔无比例功能平面_v1.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/874ffe169b119b42.webp" alt="FIG-12众智园_验证灯塔无比例功能平面_v1.png"><figcaption>FIG-12众智园_验证灯塔无比例功能平面_v1.png</figcaption></figure>
+<h3>025 FIG-13小月河与遗址公园_平行基本验证场空间原型_v1.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/800922d0dd812566.webp" alt="FIG-13小月河与遗址公园_平行基本验证场空间原型_v1.png"><figcaption>FIG-13小月河与遗址公园_平行基本验证场空间原型_v1.png</figcaption></figure>
+<h3>026 FIG-14大钟寺_回流公场无比例功能平面_v1.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/81b9bf8ee8aa52bb.webp" alt="FIG-14大钟寺_回流公场无比例功能平面_v1.png"><figcaption>FIG-14大钟寺_回流公场无比例功能平面_v1.png</figcaption></figure>
+<h3>027 FIG-14十二场景_四阶段三层级总逻辑图_v1.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/e990c403759935e6.webp" alt="FIG-14十二场景_四阶段三层级总逻辑图_v1.png"><figcaption>FIG-14十二场景_四阶段三层级总逻辑图_v1.png</figcaption></figure>
+<h3>028 FIG-15 PERSONA-01_六类共智者_正式横版_v1.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/15c16257799c3870.webp" alt="FIG-15 PERSONA-01_六类共智者_正式横版_v1.png"><figcaption>FIG-15 PERSONA-01_六类共智者_正式横版_v1.png</figcaption></figure>
+<h3>029 SCN-001_Bilingual_Edge_Layout_DRAFT.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/a55d076e7bb46293.webp" alt="SCN-001_Bilingual_Edge_Layout_DRAFT.png"><figcaption>SCN-001_Bilingual_Edge_Layout_DRAFT.png</figcaption></figure>
+<h3>030 SCN-002_Bilingual_Edge_Layout_CANDIDATE.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/9a7d7d9af249974e.webp" alt="SCN-002_Bilingual_Edge_Layout_CANDIDATE.png"><figcaption>SCN-002_Bilingual_Edge_Layout_CANDIDATE.png</figcaption></figure>
+<h3>031 SCN-003_Bilingual_Edge_Layout_DRAFT.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/7c67c839a5b19132.webp" alt="SCN-003_Bilingual_Edge_Layout_DRAFT.png"><figcaption>SCN-003_Bilingual_Edge_Layout_DRAFT.png</figcaption></figure>
+<h3>032 SCN-004_Bilingual_Edge_Layout_FINAL.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/82a1cf636999423a.webp" alt="SCN-004_Bilingual_Edge_Layout_FINAL.png"><figcaption>SCN-004_Bilingual_Edge_Layout_FINAL.png</figcaption></figure>
+<h3>033 SCN-005_Bilingual_Edge_Layout_DRAFT.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/e897fc4e7025dd28.webp" alt="SCN-005_Bilingual_Edge_Layout_DRAFT.png"><figcaption>SCN-005_Bilingual_Edge_Layout_DRAFT.png</figcaption></figure>
+<h3>034 SCN-006_Bilingual_Edge_Layout_DRAFT.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/4ef970462fda6e9d.webp" alt="SCN-006_Bilingual_Edge_Layout_DRAFT.png"><figcaption>SCN-006_Bilingual_Edge_Layout_DRAFT.png</figcaption></figure>
+<h3>035 SCN-007_Bilingual_Edge_Layout_DRAFT.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/36fe13d8a057fdf0.webp" alt="SCN-007_Bilingual_Edge_Layout_DRAFT.png"><figcaption>SCN-007_Bilingual_Edge_Layout_DRAFT.png</figcaption></figure>
+<h3>036 SCN-008_Bilingual_Edge_Layout_DRAFT.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/33926505f306de5d.webp" alt="SCN-008_Bilingual_Edge_Layout_DRAFT.png"><figcaption>SCN-008_Bilingual_Edge_Layout_DRAFT.png</figcaption></figure>
+<h3>037 SCN-009_Bilingual_Edge_Layout_DRAFT.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/8247b24567b9a969.webp" alt="SCN-009_Bilingual_Edge_Layout_DRAFT.png"><figcaption>SCN-009_Bilingual_Edge_Layout_DRAFT.png</figcaption></figure>
+<h3>038 SCN-010_Bilingual_Edge_Layout_FINAL.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/dbcda0af14c20e8b.webp" alt="SCN-010_Bilingual_Edge_Layout_FINAL.png"><figcaption>SCN-010_Bilingual_Edge_Layout_FINAL.png</figcaption></figure>
+<h3>039 SCN-011_Bilingual_Edge_Layout_DRAFT.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/124f3002df8fb0e4.webp" alt="SCN-011_Bilingual_Edge_Layout_DRAFT.png"><figcaption>SCN-011_Bilingual_Edge_Layout_DRAFT.png</figcaption></figure>
+<h3>040 SCN-012_Bilingual_Edge_Layout_FINAL.png</h3>
+<figure class="proposal-figure"><img src="../assets/text-figures/9308e5e3d569ba11.webp" alt="SCN-012_Bilingual_Edge_Layout_FINAL.png"><figcaption>SCN-012_Bilingual_Edge_Layout_FINAL.png</figcaption></figure>
+<p>&lt;!-- FINAL_TEXT_FIGURE_SEQUENCE_END --&gt;</p>
+</main>
+</body>
+</html>

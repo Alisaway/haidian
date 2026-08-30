@@ -1,0 +1,105 @@
+{
+  "schema_version": "0.1.0",
+  "data_gaps": [
+    {
+      "gap_id": "GAP-OFFICIAL-GEOMETRY",
+      "statement_zh": "组织方尚未提供可验证坐标系的官方总体范围、总体设计范围与三处重点区域 polygon；当前边界仅为 provisional 临时粗略约束，不能作为正式红线或精确面积依据。",
+      "statement_en": "Organizer-side gap: no verifiable-CRS official polygons for the three scope levels or key areas yet; current boundaries are provisional only.",
+      "handling_zh": "已在正文、图件与矩阵中分层标注：官方口径（43.6 km² / 11.4 km² / 368.4 ha）仅按公告文本引用，本包几何仅用于内容设计与机器校验；官方几何发布后整体复算。",
+      "blocks_content_scoring": false
+    },
+    {
+      "gap_id": "GAP-STATUTORY-CONTROLS",
+      "statement_zh": "缺少官方控规图则、容积率和高度等法定控制、道路红线、土地权籍、现状测绘、市政管线容量、消防条件及地下空间资料。",
+      "statement_en": "Organizer-side gap: official regulatory-plan drawings, statutory controls, road redlines, ownership, surveys, utility capacities, fire conditions and underground-space data are absent.",
+      "handling_zh": "本方案不给出任何法定控制数值结论；相关条目列入概念工作底图需求清单与复算触发条件。",
+      "blocks_content_scoring": false
+    },
+    {
+      "gap_id": "GAP-AIRSPACE-OPERATIONS",
+      "statement_zh": "缺少可用于节点落位的正式空域边界、禁限飞区、航线/高度规则、航空器类型与性能、气象基线和运行安全分类数据。",
+      "statement_en": "Organizer-side gap: official airspace boundaries, no-fly zones, route/altitude rules, aircraft types/performance, weather baselines and safety classifications are absent.",
+      "handling_zh": "净空走廊与运行阈值均按概念假设处理并注明专业评估待办；节点落位留待空域管理审定。",
+      "blocks_content_scoring": false
+    },
+    {
+      "gap_id": "GAP-HERITAGE-GREEN",
+      "statement_zh": "缺少经核验的文物保护范围、遗址构筑物价值评估、绿地与生态管控边界；遗址公园设施只能保持可逆概念建议。",
+      "statement_en": "Organizer-side gap: verified heritage-protection scopes, heritage-value assessments and green/ecological control boundaries are absent; heritage-park facilities remain reversible conceptual suggestions.",
+      "handling_zh": "遗址公园相关内容全部标注以官方文保与保留方案为准并采用可逆零开挖概念设计。",
+      "blocks_content_scoring": false
+    },
+    {
+      "gap_id": "GAP-FIELD-SURVEYS",
+      "statement_zh": "缺少现场交通流量、轨道客流、步行可达性、噪声背景、配送需求、居民意见和弱势群体使用需求调查；这些数据在后续试点或专业深化阶段用于校准，不阻塞当前概念内容评分。",
+      "statement_en": "Organizer-side gap: on-site traffic flows, rail ridership, walkability, noise baselines, delivery demand, resident opinions and vulnerable-group needs surveys are absent; they calibrate later pilot/professional phases and do not block concept scoring.",
+      "handling_zh": "正文已把专项调研放在正式实施前；意愿性指标目标待试点数据复算校准。",
+      "blocks_content_scoring": false
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "A-BOUNDARY-001",
+      "statement_zh": "组织方尚未发布官方总体边界与重点区域 polygon，本方案全部几何为 provisional 临时粗略约束，仅用于内容设计与机器校验；官方图形发布后必须整体复算。",
+      "statement_en": "No official boundary or key-area polygons are published yet; all geometry here is provisional and must be recomputed when official data arrives.",
+      "category": "boundary",
+      "status": "accepted_limitation"
+    },
+    {
+      "assumption_id": "A-CONTROLS-001",
+      "statement_zh": "容积率、建筑高度、净空限制、道路红线、权籍与管线容量等法定控制条件未知，本方案不给出任何具体数值结论；净空安全表述以现行空域管理法规与公开标准为方向性参照。",
+      "statement_en": "Statutory controls (FAR, height, airspace limits, road redlines, ownership, utility capacities) are unknown; this proposal makes no numeric conclusions about them.",
+      "category": "statutory_control",
+      "status": "accepted_limitation"
+    },
+    {
+      "assumption_id": "A-DESIGN-001",
+      "statement_zh": "低空设施（起降坪、机巢、智杆、观景台）均为原创概念建议，指向示范性、可逆化的模块化设施，不构成建设承诺。",
+      "statement_en": "All low-altitude facilities are original reversible conceptual proposals, not construction commitments.",
+      "category": "design_proposal",
+      "status": "concept"
+    },
+    {
+      "assumption_id": "A-THRESHOLD-001",
+      "statement_zh": "运行阈值（净空走廊带宽 180—260 米、隔离区 3/5 米、停飞风速 6/8 米每秒、T1/T2 退出条件 30 天/1000 架次、事故与投诉阈值、配送 KPI）均为方案自设概念值或设计假设；除已标注公开参照（GB 42590-2023 抗风与感知避让要求的方向性叠加）外，正式实施前须经专业评估核定，无法由本包证明的数值一律以待专业评估结果为准。",
+      "statement_en": "Operational thresholds (clearance 180-260 m, isolation 3/5 m, ground-stop wind 6/8 m/s, T1/T2 exits 30 days/1,000 flights, incident/complaint thresholds, delivery KPIs) are scheme-set concept values or design assumptions subject to professional evaluation before implementation; values this package cannot prove are treated as design assumptions pending professional assessment.",
+      "category": "operation",
+      "status": "design_assumption"
+    },
+    {
+      "assumption_id": "A-AIRCRAFT-001",
+      "statement_zh": "通勤接驳近中期仅表述为「非载人勤务+地面接驳协同」，不承诺载人运营；远期载人通勤按 eVTOL 概念机型方向研究，以民航适航审定、运营人运行合格审定、空域与航线批准、起降场设施审定四类前置条件为前提（概念路径，逐项核验）。",
+      "statement_en": "Commuter shuttle is near-to-mid term non-passenger services plus ground coordination only; long-term passenger commuting is an eVTOL research direction preconditioned on airworthiness certification, operator certification, airspace/route approval and vertiport certification.",
+      "category": "aircraft_operation",
+      "status": "concept"
+    },
+    {
+      "assumption_id": "A-CASES-001",
+      "statement_zh": "全球七案例仅按公开机构页面作机制对照研究（逐条登记于 sources.json），不构成对本方案任何安排、数据或承诺的依据；案例运营数据以来源页面口径为准。",
+      "statement_en": "The seven global cases are mechanism-benchmark studies based on public institutional pages only (registered in sources.json); they constitute no basis for any arrangement, data or commitment of this proposal.",
+      "category": "case_study",
+      "status": "concept"
+    },
+    {
+      "assumption_id": "A-FONT-001",
+      "statement_zh": "本包 HTML 与图件嵌入 Noto Sans SC（含中英文，OFL-1.1 许可）字体子集，未使用微软雅黑等未清权字体；正式应用前完成字体授权复核（台账见 report/copyright_statement.md）。",
+      "statement_en": "This package embeds an OFL-1.1 licensed Noto Sans SC subset (zh+en) in HTML and figures; no uncleared fonts are used; font-license re-verification precedes formal use (ledger: report/copyright_statement.md).",
+      "category": "font_license",
+      "status": "cleared_for_repo_display"
+    },
+    {
+      "assumption_id": "A-PRIVACY-001",
+      "statement_zh": "航迹与客流数据仅以匿名聚合与人工复核兜底，不设个体识别采集，不设无法人工终止的自动决定。",
+      "statement_en": "Flight-path and crowd data use anonymous aggregation with human review; no individual identification or irreversible automated decisions.",
+      "category": "privacy",
+      "status": "concept"
+    },
+    {
+      "assumption_id": "A-EVENT-001",
+      "statement_zh": "年度活动体系与运营机制均为建议性设计，不代表已确定的政府安排或投资承诺。",
+      "statement_en": "The annual event system is a design suggestion, not a confirmed government arrangement.",
+      "category": "operation",
+      "status": "concept"
+    }
+  ]
+}

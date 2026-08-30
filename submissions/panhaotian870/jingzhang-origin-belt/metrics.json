@@ -1,0 +1,292 @@
+{
+  "schema_version": "0.1.0",
+  "units": {
+    "length": "m",
+    "area": "sqm"
+  },
+  "metrics": {
+    "site_area_sqm": {
+      "name_zh": "总体设计范围面积",
+      "name_en": "Overall Design Area",
+      "status": "known",
+      "value": 11412825.386,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/site_boundary.geojson#PROV-SITE-001"
+      ],
+      "formula": "EPSG:4548 area of overall design area polygon",
+      "confidence": "medium"
+    },
+    "green_space_area_sqm": {
+      "name_zh": "绿地面积",
+      "name_en": "Green Space Area",
+      "status": "known",
+      "value": 3459592.119,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/green_space.geojson"
+      ],
+      "formula": "EPSG:4548 union of green-space polygons",
+      "confidence": "medium"
+    },
+    "public_space_area_sqm": {
+      "name_zh": "公共空间面积",
+      "name_en": "Public Space Area",
+      "status": "known",
+      "value": 256145.883,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "EPSG:4548 union of public-space polygons",
+      "confidence": "low"
+    },
+    "building_footprint_area_sqm": {
+      "name_zh": "建筑基底面积",
+      "name_en": "Building Footprint Area",
+      "status": "known",
+      "value": 284457.956,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "EPSG:4548 union of building footprints",
+      "confidence": "low"
+    },
+    "green_ratio": {
+      "name_zh": "绿地率",
+      "name_en": "Green Space Ratio",
+      "status": "known",
+      "value": 0.303132,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/green_space.geojson",
+        "geometry/site_boundary.geojson#PROV-SITE-001"
+      ],
+      "formula": "green_space_area_sqm / site_area_sqm",
+      "confidence": "medium"
+    },
+    "public_space_ratio": {
+      "name_zh": "公共空间比例",
+      "name_en": "Public Space Ratio",
+      "status": "known",
+      "value": 0.022444,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "geometry/site_boundary.geojson#PROV-SITE-001"
+      ],
+      "formula": "public_space_area_sqm / site_area_sqm",
+      "confidence": "low"
+    },
+    "MT-AREA-RESEARCH": {
+      "name_zh": "统筹研究范围面积",
+      "name_en": "Coordinated Research Area",
+      "status": "known",
+      "value": 43609232.558,
+      "unit": "sqm",
+      "source_files": [
+        "brief/site-package/geometry/provisional_boundaries.geojson#PROV-RESEARCH-001"
+      ],
+      "formula": "Announcement ~43.6 km2 coordinated research area (provisional)",
+      "confidence": "medium"
+    },
+    "MT-AREA-KEY": {
+      "name_zh": "重点区域总面积",
+      "name_en": "Key Areas Total Area",
+      "status": "known",
+      "value": 3692893.005,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "Sum of three key-area areas",
+      "confidence": "medium",
+      "assumptions": [
+        "Sum of three provisional key-area polygons; not official red-line area"
+      ]
+    },
+    "MT-LENGTH-HERITAGE": {
+      "name_zh": "遗址公园长度",
+      "name_en": "Heritage Park Length",
+      "status": "known",
+      "value": 9000,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson#RD-HERITAGE-PATH-001"
+      ],
+      "formula": "Approximate length of Developer Walk",
+      "confidence": "low"
+    },
+    "MT-APM-LINE": {
+      "name_zh": "京张APM线长度",
+      "name_en": "Jing-Zhang APM Line Length",
+      "status": "known",
+      "value": 8866.52,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson#RD-APM-001"
+      ],
+      "confidence": "low",
+      "formula": "EPSG:4548 length of geometry/roads.geojson#RD-APM-001",
+      "assumptions": [
+        "Provisional alignment; operational length may shift once official GIS/CAD alignment is issued"
+      ]
+    },
+    "MT-LANDUSE-MIX": {
+      "name_zh": "用地构成比例",
+      "name_en": "Land Use Mix",
+      "status": "known",
+      "value": 0.93,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "confidence": "low"
+    },
+    "MT-SCENARIO-CARDS": {
+      "name_zh": "AI场景卡数量",
+      "name_en": "AI Scenario Card Count",
+      "status": "known",
+      "value": 10,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "confidence": "high"
+    },
+    "MT-TEST-SCENARIOS": {
+      "name_zh": "AI测试验证场景数量",
+      "name_en": "AI Test/Validation Scenario Count",
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "confidence": "high"
+    },
+    "MT-PERSONAS": {
+      "name_zh": "用户画像数量",
+      "name_en": "User Persona Count",
+      "status": "known",
+      "value": 5,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "confidence": "high"
+    },
+    "MT-LANDMARKS": {
+      "name_zh": "AI朝圣地标数量",
+      "name_en": "AI Pilgrimage Landmark Count",
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "geometry/buildings.geojson"
+      ],
+      "confidence": "high"
+    },
+    "MT-CASES": {
+      "name_zh": "全球AI创新生态案例数量",
+      "name_en": "Global AI Innovation Case Count",
+      "status": "known",
+      "value": 8,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "confidence": "high"
+    },
+    "MT-APM-CAPACITY": {
+      "name_zh": "APM单向高峰小时运能",
+      "name_en": "APM Peak Hour Directional Capacity",
+      "status": "known",
+      "value": 5400,
+      "unit": "pass/h",
+      "source_files": [
+        "proposal.md"
+      ],
+      "confidence": "low",
+      "formula": "定员约90人/列 × 60列/h（3600s ÷ 60s发车间隔）= 5400人次/h（概念情景）",
+      "assumptions": [
+        "定员与发车间隔均为假设，非正式核验值，须经APM车型选型与运营方案论证后复核"
+      ]
+    },
+    "MT-APM-DAILY": {
+      "name_zh": "APM日均客流预测",
+      "name_en": "APM Daily Ridership Forecast",
+      "status": "known",
+      "value": 16000,
+      "unit": "pass/day",
+      "source_files": [
+        "proposal.md"
+      ],
+      "confidence": "low",
+      "assumptions": [
+        "需求模型（Logit方式分担）推算，非实测OD，须经居民出行调查与手机信令校核"
+      ]
+    },
+    "MT-EXPRESSWAY-CAPACITY": {
+      "name_zh": "京新快速路延伸通行能力",
+      "name_en": "Jingxin Expressway Extension Capacity",
+      "status": "known",
+      "value": 5504,
+      "unit": "index",
+      "source_files": [
+        "proposal.md"
+      ],
+      "confidence": "medium",
+      "formula": "CJJ37-2012 saturation-flow method: 4 lanes (2+2) x 1650 pcu/h/ln x 0.97 x 0.95 x 1.00, tunnel reduction factor 0.90 (bidirectional)",
+      "assumptions": [
+        "Bidirectional tunnel-reduced capacity; definitive value needs traffic-impact study and OD survey"
+      ]
+    },
+    "MT-CARBON-SINK": {
+      "name_zh": "年碳汇能力",
+      "name_en": "Annual Carbon Sequestration",
+      "status": "known",
+      "value": 2187,
+      "unit": "index",
+      "source_files": [
+        "proposal.md"
+      ],
+      "confidence": "medium"
+    },
+    "MT-HEAT-ISLAND": {
+      "name_zh": "热岛降温效果",
+      "name_en": "Heat Island Cooling Effect",
+      "status": "known",
+      "value": 2.25,
+      "unit": "index",
+      "source_files": [
+        "proposal.md"
+      ],
+      "confidence": "medium"
+    },
+    "MT-ENTERPRISE-FORECAST": {
+      "name_zh": "远期AI企业数量预测",
+      "name_en": "Long-term AI Enterprise Forecast",
+      "status": "known",
+      "value": 2000,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "confidence": "low"
+    },
+    "MT-OUTPUT-FORECAST": {
+      "name_zh": "远期年产值预测",
+      "name_en": "Long-term Annual Output Forecast",
+      "status": "known",
+      "value": 1500,
+      "unit": "index",
+      "source_files": [
+        "proposal.md"
+      ],
+      "confidence": "low"
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+ "schema_version": "0.1.0",
+ "assumptions": [
+  {
+   "assumption_id": "A-BOUNDARY-001",
+   "title_zh": "总体设计范围边界为临时粗略边界",
+   "detail_zh": "采用仓库维护者提供的 provisional SITE_BOUNDARY（不规则多边形），非官方红线，面积校核至公告约11.4km²。",
+   "official_boundary": false,
+   "category": "boundary"
+  },
+  {
+   "assumption_id": "A-BOUNDARY-002",
+   "title_zh": "三处重点区为临时粗略矩形",
+   "detail_zh": "KEY-001/002/003 为矩形近似，矩形边不代表地块或道路红线，待官方附件替换后复算。",
+   "official_boundary": false,
+   "category": "boundary"
+  },
+  {
+   "assumption_id": "A-LANDUSE-001",
+   "title_zh": "用地分区为概念建议",
+   "detail_zh": "三核两翼一主轴的功能分区依据任务书定位推导，非法定用地性质，待控规复核。两翼由site减去三核与绿廊后按中线分割。",
+   "official_boundary": false,
+   "category": "land_use"
+  },
+  {
+   "assumption_id": "A-BUILD-001",
+   "title_zh": "建筑体量为概念示意",
+   "detail_zh": "建筑footprint为三核内网格状概念体量，不代表具体建筑方案、高度或面积审批。",
+   "official_boundary": false,
+   "category": "building"
+  },
+  {
+   "assumption_id": "A-SPINE-001",
+   "title_zh": "铁路绿廊为概念性线形",
+   "detail_zh": "绿廊轴线为近似京张铁路走向的折线buffer，非铁路实际红线或文保范围，待专项设计核定。",
+   "official_boundary": false,
+   "category": "infrastructure"
+  },
+  {
+   "assumption_id": "A-COORD-001",
+   "title_zh": "坐标系与投影",
+   "detail_zh": "GeoJSON 交换用 EPSG:4326，面积复算用 EPSG:4548（CGCS2000 / 3° GK CM 117E）。",
+   "official_boundary": true,
+   "category": "coordinate"
+  },
+  {
+   "assumption_id": "A-POLICY-001",
+   "title_zh": "公共利益与实施政策为概念建议",
+   "detail_zh": "人才公寓比例、社区参与机制、反绅士化措施、治理结构等均为政策建议，待政府研究、公众参与和法定程序确定。",
+   "official_boundary": false,
+   "category": "policy"
+  },
+  {
+   "assumption_id": "A-FINANCE-001",
+   "title_zh": "投资估算为概念性量级",
+   "detail_zh": "分期投资数字基于同类城市更新项目经验推算，未经工程可行性研究和财务评估，不构成投资承诺或政府决策依据。",
+   "official_boundary": false,
+   "category": "finance"
+  }
+ ]
+}

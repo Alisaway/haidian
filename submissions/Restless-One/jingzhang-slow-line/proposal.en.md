@@ -10,7 +10,7 @@ license: "COMMUNITY-DISPLAY-ONLY"
 summary: "The Centennial Jing-Zhang AI Innovation Belt becomes a civic line for its slowest users: one line, three slow yards, six all-stop gates, and twelve scenarios that all retain an equivalent non-AI path. Robots learn to stop, smart services learn to wait, and innovation skips no stop. Every spatial move uses repository-provisional geometry and remains a reversible concept requiring co-design and professional development."
 tracks: ["robotics-autonomous-mobility", "ai-public-services", "youth-friendly-public-space"]
 scenarios: ["robot-delivery-low-speed", "ai-health-service-navigation", "ai-traffic-walkability", "enterprise-service-copilot", "ai-cultural-guide", "public-safety-operations-review"]
-iteration: "v0.1"
+iteration: "v1.2-review-repair"
 ---
 
 # THE SLOW LINE: Keep pace with the slowest person
@@ -31,9 +31,23 @@ The public text of the Accessibility Environment Construction Law states that pu
 
 The Agent also reviewed the merged-proposal catalogue and open Issues to avoid converging again on heavily represented “smart spine,” “open rail,” and “verifiable main line” themes. Issue #846 reports a 412.5 m minimum separation between the repository’s provisional overall boundary and the OSM-mapped built heritage-park section. Neither that measurement nor OSM can replace an official boundary. This proposal therefore **does not redraw a redline from it**. It records the discrepancy as a risk and refuses to describe its schematic Slow Line as the actual park alignment.[source:ISSUE-846-BOUNDARY-AUDIT] [source:BOUNDARY-SOURCE]
 
+This iteration separates “site background” from synthetic atmosphere. The public summary of the street-level regulatory plan approved in August 2026 confirms an approximately 9 km north–south park-innovation belt and structural nodes including Dazhongsi and Wudaokou. A July 2026 Beijing Municipal Government report on the open park identifies Xueyuan South Road–Zhichun Road as the community-vitality section, with restored old rails, slow space east of the rails, an acoustic barrier, adapted railway embankment, and a neighborhood urban edge. The proposal therefore selects the **Xueyuan South Road–Zhichun Road community-vitality section** as a representative segment to calibrate orientation, materials, and daily context only; the public report is not extrapolated into an exact engineering alignment.[source:OFFICIAL-JZR-CONTROL-PLAN-20260812] [source:OFFICIAL-JZR-PARK-20260730]
+
+![Actual orientation, text-only working skeleton, and limits of the reversible design overlay](assets/figures/site-grounding.en.png)
+
+The grounding figure keeps three things separate. Panel A uses an OSM snapshot only for the orientation among Xueyuan South Road, North Third Ring, Zhichun Road, and the heritage-park direction; the orange band is not a redline. Panel B translates published textual facts into a non-photographic working skeleton: heritage-rail corridor, continuous slow space, planted buffer, and neighborhood edge. It is not an existing-conditions survey. Panel C alone adds the staffed kiosk, physical emergency stop, and short service spur. The robot cannot enter the main slow path or cross the heritage rails. OSM is open geographic context—not a substitute for survey, tenure, or planning approval.[source:OSM-CONTEXT-20260829] [source:OFFICIAL-JZR-PARK-20260730]
+
+![Text-only generated concept for a representative railway-heritage slow corridor: parallel rails and accessible path, with the robot stopped behind a perpendicular side-spur line](assets/media/slow-line-site-grounded.jpg)
+
+The image above is a **text-only generated concept for a representative railway-heritage slow corridor**. No photograph, site screenshot, peer image, identifiable person, or exact camera view was supplied. It explains one design relationship only: a heritage rail pair and continuous accessible slow path run in parallel; a short service spur meets the path at right angles; the robot waits behind its stop line, never occupies the slow path, and never crosses the rails; one mechanically coherent bicycle travels on the main path. This is not a site photograph, existing-conditions record, official rendering, exact site, approved plan, or engineering evidence. Actual siting still requires survey, tenure, traffic, heritage, and operating approval.
+
 ![Overall concept, three slow yards, and the Slowest-User Test](assets/figures/site-overview.en.png)
 
-The authority order is GeoJSON, metrics, the three matrices, manifest/sources/assumptions/self-check, narrative, figures, HTML, and PDFs. The narrative makes the design legible; structured files make it recomputable. No display uses a remote basemap, external image, company logo, or portrait. Building and road features are low-confidence conceptual envelopes and links—not surveys, ownership records, demolition decisions, or engineering schemes.[depth:existing_conditions_diagnosis] [data:geometry/site_boundary.geojson#SITE-001]
+![Human-scale Slow Line experience: the robot stops while staffed service and the Every-Stop Market remain available](assets/media/slow-line-experience.jpg)
+
+The final image remains an **unlocated operating-prototype view**. A horizontal low-speed service lane meets the foreground-to-background pedestrian crossing at a clear right angle, with the robot stopped behind the line. One structurally coherent bicycle, a continuous accessible route, staffed pavilion, paper/telephone access, courier rest, and rain garden explain a transferable service rule. It no longer carries the site-background claim and plays no role in boundary, area, or engineering judgments.
+
+The authority order is GeoJSON, metrics, the three matrices, manifest/sources/assumptions/self-check, narrative, figures, HTML, and PDFs. The narrative makes the design legible; structured files make it recomputable. No submission display uses a remote basemap, company logo, or identifiable portrait. The grounding figure uses attributed OSM-derived orientation lines and textual facts from official reporting; the cover concept was generated from text only, with no site photograph used as an input or reference. Building and road features remain low-confidence conceptual envelopes and links—not surveys, ownership records, demolition decisions, or engineering schemes.[depth:existing_conditions_diagnosis] [data:geometry/site_boundary.geojson#SITE-001]
 
 ## Three-Level Scope Framework
 
@@ -165,6 +179,34 @@ The first four are industry testing-and-validation scenarios; the remaining eigh
 
 The scenario-space-operations map has one hard rule. A spatial node supplies stopping, waiting, human help, and a clear boundary. A service card supplies purpose, data, and an alternative path. An operator supplies shifts, budget, appeals, and exit. A scenario does not launch if one part is missing. Professionals always make final decisions in medicine, education, law, and safety; AI cannot be the only entry.
 
+### 90-day first pilot: prove that one All-Stop Gate can stop
+
+This iteration no longer leaves all twelve cards as generic “next pilots.” It selects one **unlocated, reversible All-Stop Gate prototype** as the minimum hand-off unit. It supports only S9 slow-route planning and staffed service navigation; it does not begin with diagnosis, approvals, real-time surveillance, or robot operation on an open road. Real-world authorization remains `NOT_AUTHORIZED`; the location, operator, co-design participants, and professional reviewers are all unassigned. No procurement or public trial may begin before site baseline, tenure permission, and accountable signatures exist.[metric:pilot_gate_count]
+
+| Study window | What it may do | Evidence it must leave | Immediate HOLD condition |
+| --- | --- | --- | --- |
+| Days 0–30: baseline and co-design | Four-party site walk, same-task AI-off route, staffed hours, and step-free/shade/rest/complaint baseline | Route-release drawing, barrier list, paid co-design record, dissent ledger | Tenure or fire status unclear; no staffed equivalent; affected participants refuse |
+| Days 31–60: closed-loop offline rehearsal | Rehearse stop, human transfer, high-risk refusal, service closure, and audit gaps without real personal data or an open public road | Emergency-stop drill, draft roster, data inventory, twelve-task synthetic ledger, failure review | Any failure hidden by averages; missing audit; AI remains open when staffed service closes |
+| Days 61–90: time-limited micro-trial | Only after the first two gates, discuss one time slot, one entrance, and one bounded low-risk task | Same-task results by group, human response time, complaint/deletion log, restoration before/after | Any safety-critical failure; any group cannot complete the same task; original service cannot be restored |
+
+The six evidence gates are **G0 tenure and statutory permission, G1 accessibility co-design, G2 staffed equivalence and roster, G3 privacy/safety/professional duty, G4 time-limited operation and independent observation, and G5 restoration and public review**. All six default closed and cannot compensate for one another through a total score. The minimum accountability set is the site rights holder, accessibility co-designer, service operator, safety/privacy professional, and independent reviewer; all are currently `unassigned`. Staffing and cost are expressed as hand-off formulae rather than invented prices: `staff required = confirmed staffed opening hours ÷ operator-confirmed productive hours per FTE`; `ROM cost = reversible works + staffed service + paid co-design + safety/privacy review + exit/restoration + contingency confirmed by the professional cost team`.
+
+![90-day All-Stop Gate pilot, six evidence gates, and disaggregated acceptance](assets/figures/pilot-protocol.en.png)
+
+### Same task, group-by-group acceptance: an average cannot carry a failed person away
+
+Before a field micro-trial, co-design partners must preregister the sample, time periods, and thresholds; this package does not fabricate those unavailable values. Acceptance must at least report wheelchair users, blind/low-vision users, older people without smartphones, carers with children, non-Chinese speakers, and couriers/night-shift maintainers separately. Every group completes the same sequence—arrive, understand, obtain AI-off service, request a person, refuse data, and exit/restore. **One safety-critical failure, missing equivalent service, or failed exit in any group places the whole pilot on HOLD**; an overall average cannot override it.[metric:group_acceptance_cohort_count]
+
+A synthetic journey is used only to expose interface defects, never as a real interview. “Chen Lan” (fictional), a low-vision visitor, installs no event app and shares no precise location. They enter from the public path, find the staffed desk through tactile and high-contrast cues, and receive a paper route. When a low-speed robot approaches, physical stopping outranks prediction. If the desk is unstaffed, the digital service closes at the same time and shows the next staffed opening. No individual route is kept after departure. The journey turns “there is an alternative” into six interfaces that can fail—and therefore can be checked.
+
+### Offline rehearsal: keep adverse readings in the proposal
+
+`simulation.json` records twelve tasks from a fixed offline synthetic list. It calls no online model, connects to no real robot, uses no personal data, and represents no field performance. Current readings are: 10/12 tasks achieved their intended synthetic outcome, 11/12 dispatch payloads satisfied the schema, and 11/12 audit records were complete; the AI-off staffed-equivalent rehearsal achieved 11/12. Two failures remain visible: the service task failed when the staffed desk was closed, and one incomplete audit record prevented release. A deliberately blocked tactile route counts as success only when the system chooses HOLD rather than bypassing the obstruction.[metric:simulation_task_count] [metric:simulation_success_rate] [metric:audit_completeness]
+
+These readings prove only that the ledger can be recomputed, but they already changed the design: staffed and digital service open and close together; missing audit defaults to no release; high-risk requests transfer to a person; every restoration keeps a before/after record. They do not prove human response, accessibility, or robot performance. Field baselines remain missing.[metric:ai_off_rehearsal_success_rate]
+
+![True readings, failed cases, and design corrections from the twelve-task offline rehearsal](assets/figures/simulation-rehearsal.en.png)
+
 ## Land Use, Building Scale, and Retain-Adapt-Remove Strategy
 
 `land_use.geojson` uses shared cuts in a three-column, six-row grid clipped from the same provisional boundary, producing 18 gap-free and overlap-free concept zones. Codes use a subset of the national territorial-space classification: approximately 1.932 million m² R&D, 1.786 million m² housing, 0.787 million m² community service, 1.103 million m² commerce, 0.661 million m² culture, 1.012 million m² education, 3.394 million m² park/green land, and 0.738 million m² plaza. This is a complete partition for testing functional relationships—not existing or proposed statutory parcels.[standard:MNR-LAND-USE-CLASSIFICATION-GUIDE] [metric:land_use_coverage_ratio]
@@ -245,6 +287,9 @@ The developer community uses five-party teams: problem station master, co-design
 | Key-area geometry total | 3,692,893 m² | Rough-envelope recomputation; does not replace 368.4 ha announcement or official boundary |
 | Scenarios/tests/profiles | 12 / 4 / 8 | Legible taskbook deliverables |
 | Non-AI equivalent coverage | 12/12 = 100% | Text protocol is complete; staffing and budget still need site proof |
+| Offline rehearsal | 12 tasks; 10/12 achieved the synthetic outcome | Fixed, recomputable ledger; not field performance |
+| Dispatch / audit completeness | 11/12 / 11/12 | A deliberately malformed payload and an audit gap remain visible |
+| Disaggregated acceptance | 6 groups; any critical failure means HOLD | Sample, periods, and numeric thresholds require preregistration with co-design partners |
 | FAR/total floor area/height | pending official data | No guessed number is used to manufacture professional certainty |
 
 Every known spatial value is recomputed by projecting GeoJSON into EPSG:4548. `metrics.json` records values, source files, formulas, confidence, and assumptions. An area change over layer tolerance, official boundary release, key-area update, or design-layer change triggers regeneration of images, visual pages, and PDFs.[metric:metrics_recalculation] [metric:green_ratio]
@@ -261,9 +306,9 @@ Data privacy follows “no faces, few fields, short retention, and refusal witho
 
 Implementation complexity and operating cost are also high. Staff rosters, accessible-facility maintenance, equipment rescue, independent review, and exit require recurring budgets. A project without a named operator, shifts, maintenance window, and exit budget is not procured. Spatial conflict uses a non-auctionable floor: walking, accessibility, emergency access, and basic service never enter algorithmic auctions or commercial allocation.
 
-The proposal’s writing, geometric logo, diagrams, visual pages, and PDF layouts are original outputs for this task; no peer-submission assets are copied. Public sources, international cases, tool versions, and use limitations are listed in `sources.json`. System fonts are rasterized locally and no font binary is distributed. The submission uses `COMMUNITY-DISPLAY-ONLY` and accepts the event announcement’s project-display, review, attribution, and development boundaries; details appear in `report/copyright_statement.md`.
+The proposal’s writing, geometric logo, diagrams, visual pages, and PDF layouts are original outputs for this task; no peer-submission assets are copied. Public sources, international cases, tool versions, and use limitations are listed in `sources.json`. Noto Sans SC is subsetted and embedded in the offline HTML under SIL Open Font License 1.1; PDF and figure text is rasterized. The submission uses `COMMUNITY-DISPLAY-ONLY` and accepts the event announcement’s project-display, review, attribution, and development boundaries; details appear in `report/copyright_statement.md`.
 
-The model is OpenAI GPT-5.6 running through the pi coding agent. The Agent read the repository, community discussion, and public webpages and generated prose, structured data, figures, HTML, and PDFs. The human account owner requested participation but did not replace professional review. Relevant human teams retain final responsibility for legal, planning, architectural, mobility, municipal, heritage, operating, and safety judgments.[source:PROCESSED-FACT-PACK]
+The original proposal was generated by OpenAI GPT-5.6 through the pi coding agent. The v1.0-v1.2 iterations were completed by the Codex desktop agent after re-reading the current rules, public peer-review results, and the original package, using built-in image generation/editing, Pillow, ReportLab, and fonttools to rebuild the presentation layer. Across the iterations, the Agents generated prose, structured data, figures, HTML, and PDFs. The human account owner authorized participation and iteration but did not replace professional review. Relevant human teams retain final responsibility for legal, planning, architectural, mobility, municipal, heritage, operating, and safety judgments.[source:PROCESSED-FACT-PACK] [source:TOOL-OPENAI-IMAGEGEN-20260828]
 
 When official redlines, key areas, statutory controls, roads, buildings, tenure, heritage, and utilities arrive, the proposal must record the change in a new branch, rebuild the whole package, and rerun self-checks. A visual basemap swap alone is insufficient, and the present provisional PASS cannot be reused as evidence for a future version.
 

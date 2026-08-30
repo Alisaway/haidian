@@ -10,7 +10,7 @@
   "prompt_language": "English",
   "candidates_per_scene": 2,
   "annotation_layer": "Hand-written HTML overlay (package design system: header band, bilingual title, coral badge 概念意象 · AI 生成 · 非工程依据, annotation cards, footer rights pointer), rendered with Chromium via Playwright at device scale factor 4",
-  "post_processing": "PIL/Pillow: resize to 3000 px wide (LANCZOS), encode WebP quality 88 method 6",
+  "post_processing": "PIL/Pillow: resize to 3000 px wide (LANCZOS), encode WebP quality 88 method 6. Package revision v7.7 re-encoded the six shipped files from those q88 files to reduce package weight, with Pillow WebP method 6 at quality 75 (scene-dual-state, scene-interface-yard, both languages) and quality 55 (scene-corridor-aerial, both languages); measured SSIM against the q88 files is 0.9805/0.9811, 0.9820/0.9807 and 0.9706/0.9704 (zh/en, all-plane). No resampling, no crop, no annotation change: pixel dimensions and drawn content are unchanged.",
   "no_third_party_material": "Prompts reference no third-party artwork or style name; no unlicensed third-party material entered any generation call. The only image input (scene 3, geographic layout reference) was the package's own site-overview.png, which itself contains OpenStreetMap basemap elements used and attributed under ODbL — see the OSM entries in sources.json and the rights ledger.",
   "no_third_party_material_zh": "提示词不引用任何第三方作品或风格名；任何生成调用均未输入未经许可的第三方素材。唯一图像输入（场景三，地理布局参照）为本包自绘 site-overview.png，其内含按 ODbL 许可使用并署名的 OpenStreetMap 底图要素——见 sources.json 与权利台账 OSM 条目。"
  },
@@ -24,13 +24,15 @@
    "files": {
     "zh": {
      "path": "assets/figures/scene-dual-state.webp",
-     "sha256": "52b249f32f331f1f28269922512c3034e16ddaf4cb220dcfe3425631b4c0f987"
+     "sha256": "86367ec9c7455f8882f0512d320b9a49c24680075b9760d7ab563aeaab58323f"
     },
     "en": {
      "path": "assets/figures/scene-dual-state.en.webp",
-     "sha256": "788a53ab616b0a4daee552b8720db76897295c6b0baa7e47a34cfdab5a0d66c5"
+     "sha256": "7b2ee533421474bac89d29eb6b0b59d6f16d21ab06d19a0323f39657de128255"
     }
-   }
+   },
+   "revision_v6_4_zh": "v6.4 同源重制：审查发现原成图的左右两幅为一次生成的双联、并非同一场景的两种状态（挡墙材质、触觉带宽度、信息牌与人物均存在双影级差异），与图版「同一空间·同一批人·同一任务」的声明不符。本版以原左幅（AI 开启态）为唯一底图，右幅由其经局部图像编辑生成——仅熄灭地面流光导引带、信息立牌屏面与挡墙嵌光条（掩膜内去饱和压暗），人物、建筑、材质、路灯与构图逐像素保持；编辑后全图像素变化率 3.7%（8% 容差下 2.8%），变化区域仅限灯光要素。左右两幅自此为真实的同源受控对照。",
+   "revision_v6_4_en": "v6.4 same-source remake: review found the original left and right panels were a single twin-panel generation, not two states of one scene (wall material, tactile-band width, totems and figures all drifted). This edition keeps the original left panel (AI on) as the sole base; the right panel is derived from it by local image editing — only the flowing guidance strip, totem screens and wall-mounted light strip are extinguished (masked desaturate-and-darken); people, buildings, materials, street lamps and composition remain pixel-identical. Post-edit pixel change is 3.7% (2.8% at 8% fuzz), confined to lighting elements. The two panels are now a genuine same-source controlled pair."
   },
   {
    "scene_id": "S2",
@@ -41,11 +43,11 @@
    "files": {
     "zh": {
      "path": "assets/figures/scene-interface-yard.webp",
-     "sha256": "26da5b1616b96d212809ff43a9ea308b2af599590e1368c932925a71a6359255"
+     "sha256": "d3d175ec02434a965b40a1c8dde9ce0ba2cf000cb64c1fc1b079e9f1892ff18b"
     },
     "en": {
      "path": "assets/figures/scene-interface-yard.en.webp",
-     "sha256": "f21f4169a351c36af54019beba0325c2d57239f2f54f3a83172ea00205d7a774"
+     "sha256": "cd4a574f15d795d7a5235c02c7e78fa4ef7411af71f888b26590da12c979e051"
     }
    }
   },
@@ -59,11 +61,11 @@
    "files": {
     "zh": {
      "path": "assets/figures/scene-corridor-aerial.webp",
-     "sha256": "f4600e56e6978ed0b2a13e951b56d20d7b58bc51681da95d9929d34954ec0679"
+     "sha256": "a9359bb0b01dd184a1b665820a2b5d49b439ccebd1ee4d0400e1fa6da3de8a56"
     },
     "en": {
      "path": "assets/figures/scene-corridor-aerial.en.webp",
-     "sha256": "e7da962be9870cbf8f43e14714398b0fcc53a1a212036eaaacb8e5f4117e1aa5"
+     "sha256": "7be9b575a12c2e702fe6d23760083699e57a3eca342b564316877acfc85a8cf5"
     }
    }
   }
@@ -79,7 +81,7 @@
  "rights_source_id": "OPENAI-TERMS-OF-USE-20260814",
  "limitations_zh": "生成服务本身不提供逐次调用的第三方签名回执；本档案登记的是方案方可提供的全部输入与输出证据（提示词、工具链、哈希、条款快照），不构成平台出具的交易凭证。",
  "landmark_coordinate_table": {
-  "note_zh": "S3 图上地标标签的方位与距离依据下表 WGS84 坐标推算;视点 39.992N 116.337E(五道口段上空),镜头朝向约 167°。大钟寺条目指古钟博物馆古建本体(图中所绘对象),非本包大钟寺重点区临时多边形;按包内 geometry/key_areas.geojson 复算,大钟寺重点区质心距视点约 5.2 km、众智园重点区位于视点北侧(镜头后方,不在画面内),图内说明框与本表口径一致。",
+  "note_zh": "S3 图上地标标签的方位与距离依据下表 WGS84 坐标推算;视点 39.992N 116.337E(五道口段上空),镜头朝向约 167°。大钟寺条目指古钟博物馆古建本体(图中所绘对象),非本包大钟寺重点区临时多边形;按包内 geometry/key_areas.geojson 复算(v6.4 重点区几何归位后),大钟寺重点区质心距视点约 3.1 km、众智园重点区位于视点北侧(镜头后方,不在画面内),图内说明框与本表口径一致。",
   "viewpoint": {
    "lat": 39.992,
    "lon": 116.337,
@@ -132,7 +134,7 @@
     "lon": 116.332,
     "bearing_deg": 334,
     "distance_km": 1.0,
-    "printed": "(近景,无距离标)"
+    "printed": "(不上图;位于镜头正后方,画面前景站亭为概念意象,不指认该建筑)"
    }
   ]
  },

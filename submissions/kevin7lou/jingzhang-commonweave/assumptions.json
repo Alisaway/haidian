@@ -1,47 +1,77 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "assumptions": [
     {
       "id": "A-BOUNDARY-001",
-      "status": "pending_official_geometry",
-      "statement": "总体设计边界和三处重点区使用仓库 provisional rough polygons，不是官方红线或精确面积依据。",
-      "impact": "全部设计图层、面积、比例、图、HTML 和 PDF 必须在 official polygons 到位后整体重算。"
+      "topic": "overall design boundary",
+      "assumption": "Repository provisional rough boundary is used only for submission intake, concept generation and EPSG:4548 recalculation.",
+      "confidence": "low",
+      "impact": "All areas, ratios, figures and spatial relationships must be recalculated when an official polygon is available.",
+      "trigger_for_revision": "Official Overall Design Area polygon is published or provided as a rights-cleared file."
+    },
+    {
+      "id": "A-KEY-AREAS-001",
+      "topic": "three key areas",
+      "assumption": "Repository provisional polygons locate Zhongzhiyuan, AI Origin and Dazhongsi for intake discussion only.",
+      "confidence": "low",
+      "impact": "Landmark placement, service access and area-sensitive claims require complete recomputation.",
+      "trigger_for_revision": "Official Key-Area Detailed Design polygons become available."
     },
     {
       "id": "A-CONTROLS-001",
-      "status": "pending_professional_confirmation",
-      "statement": "容积率、建筑高度、建筑密度、退线、道路红线和法定设施控制尚无官方附件。",
-      "impact": "相关指标保持 unknown；功能、体量和界面只表达概念原则。"
-    },
-    {
-      "id": "A-ROAD-001",
-      "status": "concept_relationship_only",
-      "statement": "一脊六缝只表达慢行和公共空间关系，未使用正式道路断面、轨道接口或工程线位。",
-      "impact": "概念线长不可转译为道路里程、工程量或施工方案。"
+      "topic": "statutory planning controls",
+      "assumption": "Official FAR, BCR, height, road redline, setbacks, heritage, greenline and engineering controls are unavailable.",
+      "confidence": "unknown",
+      "impact": "Land-use bands, buildings and phasing remain conceptual and cannot support approval or construction.",
+      "trigger_for_revision": "Official regulatory-plan and special-study controls are provided."
     },
     {
       "id": "A-EXISTING-001",
-      "status": "pending_existing_conditions_survey",
-      "statement": "缺少现状建筑轮廓、高度、用途、年代、结构安全和权属资料。",
-      "impact": "buildings.geojson 的 12 个 polygon 仅为载体类型样本，不能支撑现状建筑或拆改留结论。"
+      "topic": "existing buildings and ownership",
+      "assumption": "Concept building polygons represent fourteen service-capacity carriers, not surveyed existing buildings or proposed construction quantities.",
+      "confidence": "low",
+      "impact": "No parcel, acquisition, demolition, floor-area or investment conclusion may be drawn.",
+      "trigger_for_revision": "Verified building, ownership, use, structure, fire and heritage surveys are completed."
     },
     {
-      "id": "A-HERITAGE-001",
-      "status": "pending_heritage_review",
-      "statement": "京张铁路遗址公园、清华园车站旧址等文保范围与建设控制条件尚未进入 site package。",
-      "impact": "文化节点、导视和公共空间组件必须保持可逆，并在文保审查后定位。"
+      "id": "A-ROAD-001",
+      "topic": "mobility alignments",
+      "assumption": "The Life Corridor and seven cross-links express desired relationships, not road redlines, transport capacity or engineering alignments.",
+      "confidence": "low",
+      "impact": "The 17.56 km figure is a concept-line length only; road area and the 8/80 pass rate remain unknown.",
+      "trigger_for_revision": "Official road, transit, crossing, topography, accessibility and pedestrian-flow data are available."
     },
     {
-      "id": "A-MUNICIPAL-001",
-      "status": "pending_engineering_data",
-      "statement": "市政管线、能源、排水、防洪、消防和设施容量尚无可审查底数。",
-      "impact": "端侧算力、分布式能源和服务节点只提出体系建议，不作容量或可行性判断。"
+      "id": "A-SERVICE-RADIUS-001",
+      "topic": "15-minute life-support circles",
+      "assumption": "Seven circles are schematic service units. They are not network isochrones and do not prove that every service is reachable in fifteen minutes.",
+      "confidence": "low",
+      "impact": "The seven-circle count is known as a design construct, while actual service coverage requires routing and field audits.",
+      "trigger_for_revision": "A verified pedestrian network, service inventory, opening hours and barrier survey are available."
     },
     {
       "id": "A-OPERATIONS-001",
-      "status": "pending_governance_design",
-      "statement": "场景主办、许可、预算、采购、数据责任、保险和退出机制尚未确定。",
-      "impact": "十二场景和年度活动均为运营参考方案；试点前需逐项通过五道闸门。"
+      "topic": "operators and ten-year budgets",
+      "assumption": "Operators, budgets, policies, activities and Public-Benefit Contracts are proposal mechanisms, not confirmed government or partner commitments.",
+      "confidence": "low",
+      "impact": "No landmark or smart facility may proceed without named responsibility, a ten-year operating budget, maintenance and exit terms.",
+      "trigger_for_revision": "Government, community, professional and enterprise partners approve an operating agreement."
+    },
+    {
+      "id": "A-BYTEDANCE-001",
+      "topic": "ByteDance and Dazhongsi",
+      "assumption": "Official public sources establish a Beixiaguan headquarters project entry and a volunteer-teaching connection at the Dazhongsi AI night school; they do not establish endorsement of this proposal.",
+      "confidence": "medium",
+      "impact": "The Dazhongsi role is a public-value concept. It uses no corporate logo, private data, land-control claim or partnership promise.",
+      "trigger_for_revision": "A directly relevant current corporate or government planning document is officially released."
+    },
+    {
+      "id": "A-AI-RIGHTS-001",
+      "topic": "public AI rights",
+      "assumption": "The six rights are participant-defined design safeguards and service requirements, not a claim that a specific law already mandates this exact list.",
+      "confidence": "high",
+      "impact": "They must be translated into procurement, interface, staffing, appeal and shutdown clauses before implementation.",
+      "trigger_for_revision": "Applicable laws, standards or approved service rules impose stronger safeguards."
     }
   ]
 }

@@ -49,18 +49,23 @@ from pathlib import Path, PurePosixPath
 from typing import Any
 
 from validate_submission import (
+    MAX_SINGLE_FILE_BYTES,
     PARTICIPANT_PROTECTED_GLOBAL_FILES,
     PROTECTED_REVIEW_ARTIFACT_PREFIXES,
     ValidationReport,
     format_report,
     validate_submission,
 )
+from participant_owner_aliases import (
+    PARTICIPANT_OWNER_ALIASES_PATH,
+    authorized_legacy_submission_dirs,
+)
 
 
 COMMENT_MARKER = "<!-- haidian-submission-validation -->"
 API_ROOT = "https://api.github.com"
 MAX_API_ATTEMPTS = 4
-MAX_DOWNLOAD_BYTES = 10 * 1024 * 1024
+MAX_DOWNLOAD_BYTES = MAX_SINGLE_FILE_BYTES
 MAX_RETRY_DELAY_SECONDS = 30
 RETRYABLE_METHODS = frozenset({"GET", "HEAD", "OPTIONS"})
 # A fork's Contents API can briefly lag the PR event's head commit. Keep 404
@@ -410,14 +415,50 @@ def strict_manifest_paths_for(files: list[dict]) -> list[str]:
     return sorted(paths)
 
 
-def is_review_queue_candidate(changed_files: list[str], pr_author: str) -> bool:
+def reserved_legacy_login_user_id(repo_root: Path, login: str) -> int | None:
+    """Return the trusted user ID that owns a released historical login."""
+    try:
+        policy = json.loads(
+            (repo_root / PARTICIPANT_OWNER_ALIASES_PATH).read_text(encoding="utf-8")
+        )
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError):
+        return None
+    aliases = policy.get("aliases") if isinstance(policy, dict) else None
+    if not isinstance(aliases, list):
+        return None
+    for item in aliases:
+        if not isinstance(item, dict):
+            continue
+        legacy_login = item.get("legacy_login")
+        user_id = item.get("github_user_id")
+        if (
+            isinstance(legacy_login, str)
+            and legacy_login.casefold() == login.casefold()
+            and isinstance(user_id, int)
+            and not isinstance(user_id, bool)
+        ):
+            return user_id
+    return None
+
+
+def is_review_queue_candidate(
+    changed_files: list[str],
+    pr_author: str,
+    authorized_legacy_dirs: set[str] | None = None,
+) -> bool:
     """Return true only for a single participant-owned submission directory."""
+    authorized_legacy_dirs = authorized_legacy_dirs or set()
     roots: set[str] = set()
     for filename in changed_files:
         parts = filename.split("/")
-        if len(parts) < 4 or parts[0] != "submissions" or parts[1].casefold() != pr_author.casefold():
+        proposal_dir = "/".join(parts[:3])
+        if (
+            len(parts) < 4
+            or parts[0] != "submissions"
+            or (parts[1].casefold() != pr_author.casefold() and proposal_dir not in authorized_legacy_dirs)
+        ):
             return False
-        roots.add("/".join(parts[:3]))
+        roots.add(proposal_dir)
     return bool(changed_files) and len(roots) == 1
 
 
@@ -555,6 +596,9 @@ def run_trusted_review_gates(
                 cwd=trusted_repo_root,
                 capture_output=True,
                 text=True,
+                encoding="utf-8",
+                errors="replace",
+                env={**os.environ, "PYTHONUTF8": "1", "PYTHONIOENCODING": "utf-8"},
                 timeout=TRUSTED_REVIEW_GATE_TIMEOUT_SECONDS,
                 check=False,
             )
@@ -596,6 +640,7 @@ def main() -> int:
 
     pr_number = int(pull_request["number"])
     pr_author = pull_request["user"]["login"]
+    pr_user_id = pull_request["user"].get("id")
     head_repo = pull_request["head"]["repo"]["full_name"]
     head_sha = pull_request["head"]["sha"]
     base = pull_request.get("base") or {}
@@ -624,8 +669,18 @@ def main() -> int:
         if item.strip()
     ]
     maintainer_bypass = pr_author.lower() in {item.lower() for item in bypass}
+    trusted_repo_root = Path(__file__).resolve().parent.parent
+    authorized_legacy_dirs = authorized_legacy_submission_dirs(
+        trusted_repo_root, pr_user_id, pr_author
+    )
+    reserved_legacy_user_id = reserved_legacy_login_user_id(trusted_repo_root, pr_author)
+    blocked_submission_owners = (
+        {pr_author}
+        if reserved_legacy_user_id is not None and reserved_legacy_user_id != pr_user_id
+        else set()
+    )
     validation_files = validation_paths_for(files, maintainer_bypass)
-    queue_candidate = is_review_queue_candidate(changed_files, pr_author)
+    queue_candidate = is_review_queue_candidate(changed_files, pr_author, authorized_legacy_dirs)
 
     # Code/docs/test PRs do not need participant-package hydration.  Decide
     # this immediately after the file listing so a non-submission change
@@ -711,12 +766,13 @@ def main() -> int:
                 bypass,
                 strict_manifest_paths=strict_manifest_paths_for(files),
                 required_readiness_contract_dirs=required_readiness_contract_dirs,
+                authorized_legacy_submission_dirs=authorized_legacy_dirs,
+                blocked_submission_owners=blocked_submission_owners,
             )
             if validation_files and not base_sha:
                 validation.add_error(
                     "pull_request.base.sha is required to establish the trusted readiness migration boundary"
                 )
-            trusted_repo_root = Path(__file__).resolve().parent.parent
             for proposal_path in sorted(proposal_paths):
                 run_trusted_review_gates(
                     validation,

@@ -1,0 +1,192 @@
+{
+  "schema_note": "v3.0 statutory reconciliation rules responding to the implementability review gap 'statutory controls unresolved'. As of v3.0 the trigger has partially materialised: the heritage-protection roster is published (Jing Zheng Fa [2025] No. 3, 2025-01-14); the textual boundary description of the Qinghuayuan Station site's protection scope and construction-control zones is public in the municipal heritage authority's database (entry dated 2026-02-14); and the full text of the public edition of the regulatory plan is mirrored online (2026-08-26). A first real reconciliation has been executed and recorded in reconciliation_log. Plot-level statutory-drawing values and the coordinate drawings of the heritage boundaries remain to be obtained, and the related values stay unknown. The framework of three bilingual conflict levels (L1/L2/L3) and the six-row element-by-control matrix is unchanged; every reconciliation is logged in a difference ledger disclosed with the 90-day public review.",
+  "version": "v3.0",
+  "status": "partially_triggered_roster_and_text_boundary_released_district_level_benchmarks_available",
+  "trigger": {
+    "condition_zh": "触发已于部分层面成为事实：2025-01-14 文保名单公布（京政发〔2025〕3号）；2026-02-14 清华园车站旧址保护范围与建控地带文字边界说明公开；2026-08-26 控规公开版全文镜像挂网；地块级图则数值与文保边界坐标图纸仍待获取。",
+    "condition_en": "The trigger has partially materialised: the heritage roster was published on 2025-01-14 (Jing Zheng Fa [2025] No. 3); the textual boundary description of the Qinghuayuan Station site's protection scope and construction-control zones became public on 2026-02-14; and the full text of the public regulatory-plan edition was mirrored online on 2026-08-26. Plot-level statutory values and heritage-boundary coordinate drawings remain to be obtained."
+  },
+  "conflict_levels": [
+    {
+      "level": "L1",
+      "definition_zh": "局部参数偏离：设计模型值与图则管控值存在参数级差异，不改变要素功能。",
+      "definition_en": "Local parameter deviation: design-model values differ from statutory control values at parameter level without changing the element's function.",
+      "disposition_zh": "校核并更新设计模型值，差异记入台账。",
+      "disposition_en": "Check and update the design-model values; record the difference in the ledger."
+    },
+    {
+      "level": "L2",
+      "definition_zh": "功能冲突：管控要求使要素功能无法按原设计成立。",
+      "definition_en": "Functional conflict: control requirements render the element's function unworkable as designed.",
+      "disposition_zh": "要素降级为概念占位，待专项深化。",
+      "disposition_en": "Downgrade the element to a conceptual placeholder pending specialist deepening."
+    },
+    {
+      "level": "L3",
+      "definition_zh": "红线冲突：要素触及法定红线或文保保护红线。",
+      "definition_en": "Red-line conflict: the element touches a statutory red line or a heritage-protection red line.",
+      "disposition_zh": "撤回要素并登记差异台账，随 90 天公开复审公开。",
+      "disposition_en": "Withdraw the element, record it in the difference ledger and disclose it with the 90-day public review."
+    }
+  ],
+  "matrix": [
+    {
+      "element_zh": "概念建筑体量（1107 个基底）",
+      "element_en": "Conceptual building massing (1,107 footprints)",
+      "controls": [
+        {
+          "control_zh": "容积率",
+          "control_en": "Floor-area ratio"
+        },
+        {
+          "control_zh": "建筑高度",
+          "control_en": "Building height"
+        },
+        {
+          "control_zh": "退线",
+          "control_en": "Setback lines"
+        },
+        {
+          "control_zh": "用地性质",
+          "control_en": "Land-use designation"
+        }
+      ],
+      "check_rule_zh": "图则发布后逐地块比对容积率、建筑高度、退线与用地性质；参数级差异按 L1 处置，功能或红线冲突按 L2/L3 处置。控规公开版已提供街区层面基准强度分区（五级1/四级19/三级41/二级4）与基准高度分区（36/45/60/80/100米），作为强度/高度的街区层面对照基准已登记；地块级容积率/退线/用地性质数值仍需图则读图，保持 unknown。",
+      "check_rule_en": "After the statutory drawings are released, compare floor-area ratio, building height, setbacks and land-use designation plot by plot; parameter-level deviations are handled as L1, functional or red-line conflicts as L2/L3. The public edition of the regulatory plan now provides district-level benchmark intensity zoning (Grade-5: 1 / Grade-4: 19 / Grade-3: 41 / Grade-2: 4 districts) and benchmark height zoning (36/45/60/80/100 m), registered as the district-level comparison benchmark for intensity and height; plot-level floor-area-ratio, setback and land-use values still require reading the statutory drawings and remain unknown.",
+      "conflict_disposition_zh": "L1 参数校核更新 / L2 降级概念占位 / L3 撤回并登记台账（处置细则见 conflict_levels）。",
+      "conflict_disposition_en": "L1 parameter check-and-update / L2 downgrade to conceptual placeholder / L3 withdrawal with ledger entry (see conflict_levels for dispositions)."
+    },
+    {
+      "element_zh": "六站厅节点",
+      "element_en": "Six hall nodes",
+      "controls": [
+        {
+          "control_zh": "用地边界",
+          "control_en": "Plot boundaries"
+        },
+        {
+          "control_zh": "接驳与道路红线",
+          "control_en": "Connections and road red lines"
+        },
+        {
+          "control_zh": "高度管控",
+          "control_en": "Height controls"
+        }
+      ],
+      "check_rule_zh": "图则发布后逐站厅比对用地边界、接驳与道路红线及高度管控；站厅节点与管控线的关系按 L1/L2/L3 分级校核。控规公开版第36-37条轨道一体化管控与轨道微中心要求已公开，作为站厅节点一体化设计对照。",
+      "check_rule_en": "After the statutory drawings are released, compare each hall's plot boundaries, connections, road red lines and height controls; the relation between hall nodes and control lines is checked and graded as L1/L2/L3. Articles 36-37 of the public regulatory-plan edition, on rail-transit integrated control and rail micro-centre requirements, are now published and serve as the comparison reference for integrated design at the hall nodes.",
+      "conflict_disposition_zh": "L1 参数校核更新 / L2 降级概念占位 / L3 撤回并登记台账（处置细则见 conflict_levels）。",
+      "conflict_disposition_en": "L1 parameter check-and-update / L2 downgrade to conceptual placeholder / L3 withdrawal with ledger entry (see conflict_levels for dispositions)."
+    },
+    {
+      "element_zh": "开源主线贯通",
+      "element_en": "Open-source spine through-route",
+      "controls": [
+        {
+          "control_zh": "公园绿地边界",
+          "control_en": "Park and green-space boundaries"
+        },
+        {
+          "control_zh": "路权",
+          "control_en": "Right of way"
+        }
+      ],
+      "check_rule_zh": "图则与公园管理口径发布后，比对开源主线线位与公园绿地边界及路权；在不损失贯通性的前提下按 L1/L2/L3 分级处置。公园二期2026-08-06全线建成开放（9公里），开源主线所依托的公共空间基底贯通性已获实体实证，路权细节仍按原图则待获取处理。",
+      "check_rule_en": "After the statutory drawings and park-management provisions are released, compare the spine alignment with park/green-space boundaries and right of way; graded L1/L2/L3 dispositions apply without losing through-route continuity. Phase II of the park was completed and opened in full on 2026-08-06 (9 km), physically substantiating the through-continuity of the public-space base the open-source spine relies on; right-of-way details remain treated as pending, awaiting the statutory drawings as before.",
+      "conflict_disposition_zh": "L1 参数校核更新 / L2 降级概念占位 / L3 撤回并登记台账（处置细则见 conflict_levels）。",
+      "conflict_disposition_en": "L1 parameter check-and-update / L2 downgrade to conceptual placeholder / L3 withdrawal with ledger entry (see conflict_levels for dispositions)."
+    },
+    {
+      "element_zh": "边缘算力节点",
+      "element_en": "Edge-compute nodes",
+      "controls": [
+        {
+          "control_zh": "市政廊道",
+          "control_en": "Utility corridors"
+        },
+        {
+          "control_zh": "供电容量",
+          "control_en": "Power-supply capacity"
+        },
+        {
+          "control_zh": "公园用地管制",
+          "control_en": "Park land-use controls"
+        }
+      ],
+      "check_rule_zh": "市政专项资料发布后，比对边缘算力节点选址与市政廊道、供电容量及公园用地管制；与管制冲突的选址按 L1/L2/L3 分级处置。大钟寺110千伏变电站（4×50兆伏安、剩余出线间隔2回）与拟建青云220千伏变电站（2×180兆伏安、2026年投运）公开容量数据已登记于 capacity-preassessment.json，供电容量对照已可执行。",
+      "check_rule_en": "After utility special-plan data are released, compare edge-compute node siting against utility corridors, power-supply capacity and park land-use controls; siting conflicts are graded L1/L2/L3. Published capacity data for the Dazhongsi 110 kV substation (4x50 MVA, 2 remaining outgoing-line bays) and the proposed Qingyun 220 kV substation (2x180 MVA, commissioning in 2026) are registered in capacity-preassessment.json, making the power-supply capacity comparison executable.",
+      "conflict_disposition_zh": "L1 参数校核更新 / L2 降级概念占位 / L3 撤回并登记台账（处置细则见 conflict_levels）。",
+      "conflict_disposition_en": "L1 parameter check-and-update / L2 downgrade to conceptual placeholder / L3 withdrawal with ledger entry (see conflict_levels for dispositions)."
+    },
+    {
+      "element_zh": "场景设施与组件库",
+      "element_en": "Scenario facilities and component library",
+      "controls": [
+        {
+          "control_zh": "公共空间管制",
+          "control_en": "Public-space controls"
+        },
+        {
+          "control_zh": "市容",
+          "control_en": "Cityscape and appearance"
+        }
+      ],
+      "check_rule_zh": "公共空间管制与市容口径明确后，比对场景设施与组件库布置和管制要求；占位类设施按 L1/L2/L3 分级处置。",
+      "check_rule_en": "Once public-space and cityscape provisions are clarified, compare the placement of scenario facilities and the component library against them; placeholder facilities are graded L1/L2/L3.",
+      "conflict_disposition_zh": "L1 参数校核更新 / L2 降级概念占位 / L3 撤回并登记台账（处置细则见 conflict_levels）。",
+      "conflict_disposition_en": "L1 parameter check-and-update / L2 downgrade to conceptual placeholder / L3 withdrawal with ledger entry (see conflict_levels for dispositions)."
+    },
+    {
+      "element_zh": "文保地段要素（清华园车站旧址周边）",
+      "element_en": "Heritage-section elements (around the Qinghuayuan Station site)",
+      "controls": [
+        {
+          "control_zh": "文物保护边界",
+          "control_en": "Heritage-protection boundaries"
+        },
+        {
+          "control_zh": "建控地带",
+          "control_en": "Construction-control zones"
+        }
+      ],
+      "check_rule_zh": "清华园车站旧址已列入京政发〔2025〕3号第十一批名单（第26项），市文物局数据库已公布文字边界说明（保护范围：站房东墙以东8米/南房南墙以南2米/西侧墙体遗存以西2米/北房北墙以北2米平行线；建控地带Ⅰ类＋Ⅴ类3分区）；从严校核现在可按文字边界执行，坐标级校核待图纸。",
+      "check_rule_en": "The Qinghuayuan Station site is listed as item 26 of the eleventh batch under Jing Zheng Fa [2025] No. 3, and the municipal heritage authority's database has published a textual boundary description (protection scope: parallel lines 8 m east of the station building's east wall / 2 m south of the south building's south wall / 2 m west of the western wall remains / 2 m north of the north building's north wall; construction-control zones: Class I plus Class V, 3 zones). Heightened-severity checking can now proceed against the textual boundaries; coordinate-level checking awaits the drawings.",
+      "conflict_disposition_zh": "从严处置：触及文物保护红线即按 L3（撤回要素并登记差异台账、随 90 天公开复审公开）；出现 L2 功能冲突即撤回要素，不适用降级占位。",
+      "conflict_disposition_en": "Heightened severity: touching the heritage-protection red line is handled as L3 (withdrawal, difference-ledger entry and disclosure with the 90-day public review); an L2 functional conflict also withdraws the element, with no downgrade to placeholder."
+    }
+  ],
+  "ledger_discipline": {
+    "entry_fields_zh": "每次校核登记 before/after（校核前设计模型值与校核后更新值）、触发版本（进入 approved_formal_sources 的官方资料版本）与处置结果（L1/L2/L3 及对应动作）。",
+    "entry_fields_en": "Each reconciliation logs before/after (pre-check design-model values and post-check updated values), the trigger version (the official release that entered approved_formal_sources) and the disposition outcome (L1/L2/L3 with the corresponding action).",
+    "history_policy_zh": "台账不删历史；差异台账随 90 天公开复审公开。",
+    "history_policy_en": "The ledger never deletes history; the difference ledger is disclosed with the 90-day public review."
+  },
+  "reconciliation_log": [
+    {
+      "element_zh": "文保地段要素（清华园车站旧址周边）",
+      "element_en": "Heritage-section elements (around the Qinghuayuan Station site)",
+      "trigger_zh": "京政发〔2025〕3号＋市文物局数据库文字边界说明（2025-01-14/2026-02-14）",
+      "trigger_en": "Jing Zheng Fa [2025] No. 3 roster plus the municipal heritage authority's database textual boundary description (2025-01-14 / 2026-02-14)",
+      "before_zh": "边界未知，仅方法论校核。",
+      "before_en": "Boundaries unknown; methodology-only checking.",
+      "after_zh": "文字边界说明已公开可对照；本包概念体量（1,107基底）为概念占位精度，未细化至与边界米级平行线对照的深度，未发现触及保护范围的记录，但概念精度不足以完成坐标级排除。",
+      "after_en": "The textual boundary description is published and available for comparison; this package's conceptual massing (1,107 footprints) is at conceptual-placeholder resolution, not refined to the depth of metre-level parallel-line comparison against the boundary. No record of touching the protection scope was found, but conceptual resolution is insufficient for coordinate-level exclusion.",
+      "disposition_zh": "按既有 L2 规则维持概念占位处置；坐标级校核待文物部门图纸公开后执行（图纸另行印发未公开）。",
+      "disposition_en": "Retain the existing L2 conceptual-placeholder disposition; coordinate-level checking will be executed after the heritage authority's drawings are published (to be issued separately and not yet public)."
+    },
+    {
+      "element_zh": "概念建筑体量（1107 个基底）· 强度与高度",
+      "element_en": "Conceptual building massing (1,107 footprints) — intensity and height",
+      "trigger_zh": "HD00-1601等街区控规公开版全文挂网（2026-08-26 镜像）",
+      "trigger_en": "Full text of the public editions of the HD00-1601 and other district regulatory plans posted online (2026-08-26 mirror)",
+      "before_zh": "管控参数 unknown。",
+      "before_en": "Control parameters unknown.",
+      "after_zh": "街区层面基准强度分区（五级1/四级19/三级41/二级4）与基准高度分区（36/45/60/80/100米）已登记为公开对照基准（待来源登记复核）；总建筑规模2408.0万平方米、规划范围16.7平方公里。",
+      "after_en": "District-level benchmark intensity zoning (Grade-5: 1 / Grade-4: 19 / Grade-3: 41 / Grade-2: 4 districts) and benchmark height zoning (36/45/60/80/100 m) are registered as public comparison benchmarks (pending source-registry review); total building scale 24.08 million square metres, planning scope 16.7 square kilometres.",
+      "disposition_zh": "L1 待地块级图则读图后逐地块执行；地块级数值维持 unknown，不预设不推断。",
+      "disposition_en": "L1 to be executed plot by plot after the plot-level statutory drawings are read; plot-level values remain unknown — nothing presumed, nothing inferred."
+    }
+  ],
+  "boundary_zh": "文保名单与文字边界说明已公布、控规公开版街区层面基准已登记；地块级图则数值与文保边界坐标图纸仍未公开，本包对未公开数值仍不预设、不推断，全部校核与处置以正式发布资料与属地主管复核为准。",
+  "boundary_en": "The heritage roster and textual boundary descriptions are published, and district-level benchmarks from the public regulatory-plan edition are registered; plot-level statutory-drawing values and heritage-boundary coordinate drawings remain unpublished, and this package still presumes or infers no unpublished values; all reconciliation and dispositions are subject to formally released materials and district-authority review."
+}

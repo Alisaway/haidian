@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "model-card.schema.json",
+  "title_zh": "模型卡最小字段模板",
+  "title_en": "Model-card minimum field template",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "model_version",
+    "training_data_boundary",
+    "applicable_scope",
+    "failure_modes"
+  ],
+  "properties": {
+    "model_version": {
+      "type": "string",
+      "minLength": 1,
+      "label_zh": "模型版本",
+      "label_en": "Model version"
+    },
+    "training_data_boundary": {
+      "type": "string",
+      "minLength": 1,
+      "label_zh": "训练数据边界",
+      "label_en": "Training-data boundary"
+    },
+    "applicable_scope": {
+      "type": "string",
+      "minLength": 1,
+      "label_zh": "适用范围",
+      "label_en": "Applicable scope"
+    },
+    "failure_modes": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 },
+      "label_zh": "失效模式",
+      "label_en": "Failure modes"
+    }
+  }
+}

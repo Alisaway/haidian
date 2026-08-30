@@ -188,7 +188,7 @@
 
     /* ---------- camera state ---------- */
     var span = data.span || 8000;
-    var HOME = { tx: 0, tz: 0, dist: span * 0.85, az: 0.6, el: 0.86 };
+    var HOME = { tx: 0, tz: span * 0.12, dist: span * 1.10, az: 0.6, el: 0.86 };
     var cam = null, target = null, anim = null, orbiting = false, zScale = 1;
     var viewIdx = 0;
 

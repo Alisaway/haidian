@@ -292,7 +292,7 @@ footer .disc{border-top:1px solid #2b323c;margin-top:18px;padding-top:14px;font-
   <div class="sec-head">
     <span class="sec-no">01</span>
     <h2>核心指标</h2>
-    <span class="sec-sub">数据读取自 metrics.json（21 项登记：15 known / 6 unknown；含 3 项标准指标镜像）并硬编码；数值为 EPSG:4548 复算值</span>
+    <span class="sec-sub">数据读取自 metrics.json（25 项登记：19 known / 6 unknown；含 3 项标准指标镜像）并硬编码；数值为 EPSG:4548 复算值</span>
   </div>
 
   <!-- 三层范围 -->
@@ -395,7 +395,7 @@ footer .disc{border-top:1px solid #2b323c;margin-top:18px;padding-top:14px;font-
   <!-- 指标登记总表 -->
   <div class="sheet">
     <div class="sheet-head">
-      <h3>指标登记总表（metrics.json · 21 项）</h3>
+      <h3>指标登记总表（metrics.json · 25 项）</h3>
       <span class="src">known 15 · unknown 6（待定义，不预填目标值）</span>
     </div>
     <div class="sheet-body tbl-scroll">
@@ -419,6 +419,10 @@ footer .disc{border-top:1px solid #2b323c;margin-top:18px;padding-top:14px;font-
           <tr><td class="id">GOV-OBS-01</td><td>双向凭证互证界面（凭证互换）凭证对完整率</td><td>—</td><td>待定义</td><td><span class="pill warn">unknown</span></td><td><span class="conf medium">—</span></td><td class="id">credential_pair_completeness（不预填目标值）</td></tr>
           <tr><td class="id">GOV-OBS-02</td><td>人审决定日志关联率</td><td>—</td><td>待定义</td><td><span class="pill warn">unknown</span></td><td><span class="conf medium">—</span></td><td class="id">decision_log_link_rate</td></tr>
           <tr><td class="id">GOV-OBS-03</td><td>治理状态索引快照新鲜度</td><td>—</td><td>待定义</td><td><span class="pill warn">unknown</span></td><td><span class="conf medium">—</span></td><td class="id">status_snapshot_freshness</td></tr>
+<tr><td class="id">GOV-OBS-04</td><td>会车协议步骤数</td><td>7</td><td>七步主序列（meet-protocol.schema.json）</td><td><span class="pill warn">unknown</span></td><td><span class="conf medium">—</span></td><td class="id">status_snapshot_freshness</td></tr>
+<tr><td class="id">GOV-OBS-05</td><td>治理状态码数</td><td>8</td><td>8 值 status_code（meet-protocol.schema.json）</td><td><span class="pill warn">unknown</span></td><td><span class="conf medium">—</span></td><td class="id">status_snapshot_freshness</td></tr>
+<tr><td class="id">GOV-OBS-06</td><td>协议演练通过数</td><td>14/14</td><td>check_meet_protocol.py 确定性演练</td><td><span class="pill warn">unknown</span></td><td><span class="conf medium">—</span></td><td class="id">status_snapshot_freshness</td></tr>
+<tr><td class="id">NODE-SCENARIO-01</td><td>会车台节点数</td><td>3</td><td>PS-C02-001/002/003（public_space.geojson）</td><td><span class="pill warn">unknown</span></td><td><span class="conf medium">—</span></td><td class="id">status_snapshot_freshness</td></tr>
           <tr><td class="id">INCLUSION-SERVICE-01</td><td>包容与服务连续性（每场景至少绑定一项）</td><td>—</td><td>待定义</td><td><span class="pill warn">unknown</span></td><td><span class="conf medium">—</span></td><td class="id">无障碍路径连续性 / 人工替代可达性 / 可退出成功率</td></tr>
           <tr><td class="id">OPS-WIN-01</td><td>公共复核与质询窗口产出率</td><td>—</td><td>待定义</td><td><span class="pill warn">unknown</span></td><td><span class="conf medium">—</span></td><td class="id">public_review_window_output_rate</td></tr>
           <tr><td class="id">OPS-WIN-02</td><td>运营绩效（开放场次/维护者留存/知识包复用）</td><td>—</td><td>待定义</td><td><span class="pill warn">unknown</span></td><td><span class="conf medium">—</span></td><td class="id">open_sessions / maintainer_retention / knowledge_package_reuse</td></tr>
@@ -614,7 +618,7 @@ footer .disc{border-top:1px solid #2b323c;margin-top:18px;padding-top:14px;font-
     <figure class="figure"><img src="../assets/figures/land-use-structure.png" alt="会车场用地结构概念图" width="1600" height="1000"><figcaption><b>图02 · 用地结构</b> · 图例：20 个用地分区；来源：geometry/land_use.geojson + EPSG:4548；provisional。</figcaption></figure>
     <figure class="figure"><img src="../assets/figures/key-areas.png" alt="三处重点区域详图" width="1600" height="1000"><figcaption><b>图03 · 三处重点区域</b> · 图例：三站与 C01–C08；来源：key_areas / public_space；provisional。</figcaption></figure>
     <figure class="figure"><img src="../assets/figures/mobility-bluegreen.png" alt="交通与蓝绿网络概念图" width="1600" height="1000"><figcaption><b>图09 · 交通与蓝绿网络</b> · 图例：慢行、公共空间、绿地；来源：roads / green_space / public_space；union 口径，provisional。</figcaption></figure>
-    <figure class="figure"><img src="../assets/figures/metrics-evidence.png" alt="指标证据面板" width="1600" height="1000"><figcaption><b>图11 · 指标证据</b> · 21 项，15 known / 6 unknown；绿地并集 2,176,274.715 m² / 19.07%；来源：metrics + recompute-log；provisional。</figcaption></figure>
+    <figure class="figure"><img src="../assets/figures/metrics-evidence.png" alt="指标证据面板" width="1600" height="1000"><figcaption><b>图11 · 指标证据</b> · 25 项，19 known / 6 unknown；绿地并集 2,176,274.715 m² / 19.07%；来源：metrics + recompute-log；provisional。</figcaption></figure>
   </div>
 
   <!-- 命名层级 -->

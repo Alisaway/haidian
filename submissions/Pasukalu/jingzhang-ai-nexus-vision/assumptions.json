@@ -1,0 +1,75 @@
+{
+  "schema_version": "0.1.0",
+  "assumptions": [
+    {
+      "id": "A-BOUNDARY-001",
+      "status": "pending_official_geometry",
+      "statement": "总体设计范围和三处重点区域采用仓库提供的临时粗略替代边界，不是官方红线。",
+      "impact": "面积和叠加分析可用于方案内一致性复算，但不能用于权属、征拆、许可或精确工程量。",
+      "recalculation_trigger": "组织方发布正式 polygon 后，替换 boundary/key-area 图层并重算全部空间指标、图纸和项目位置。"
+    },
+    {
+      "id": "A-CONTROLS-001",
+      "status": "pending_professional_confirmation",
+      "statement": "容积率、高度、建筑密度、退线、道路红线和设施控制条件尚无可用于本投稿的官方完整附件。",
+      "impact": "正文只给出形态与更新策略，不把设计建议高度或面积写成法定控制。",
+      "recalculation_trigger": "取得现行控规与专项条件后，由规划和建筑专业团队复核。"
+    },
+    {
+      "id": "A-SURVEY-001",
+      "status": "pending_site_survey",
+      "statement": "现状建筑、结构安全、建成年代、使用、空置和产权数据未完成逐栋调查。",
+      "impact": "拆改留分类是概念筛选；任何拆除、新建或改造须先完成测绘、鉴定、产权和利益相关者协商。",
+      "recalculation_trigger": "逐栋调查和结构鉴定完成后更新 buildings 图层与项目成本带。"
+    },
+    {
+      "id": "A-INFRA-001",
+      "status": "pending_specialist_inputs",
+      "statement": "地下管线、供电容量、能源站、海绵/防洪、消防、轨道保护和交通容量条件待补。",
+      "impact": "市政与低碳算力策略为接口预留，不构成工程容量结论。",
+      "recalculation_trigger": "专项普查和管理部门条件齐套后进入项目 G0/G1 决策门。"
+    },
+    {
+      "id": "A-HERITAGE-001",
+      "status": "pending_heritage_inventory",
+      "statement": "铁路遗产、历史建筑和景观要素的价值、保护范围与建设控制地带需由官方名录和专业调查确认。",
+      "impact": "三处地标均采用可逆、可识别的当代语言，不占用或仿造真实遗产；位置和尺度待审。",
+      "recalculation_trigger": "取得文保名录、价值评估和保护条件后校正地标与公共空间。"
+    },
+    {
+      "id": "A-OPERATIONS-001",
+      "status": "baseline_to_be_established",
+      "statement": "场景使用、能耗、通行、投诉、可达性、参与代表性和产业转化缺少统一现状基线。",
+      "impact": "运营 KPI 采用‘先冻结基线、再设阈值’；只对安全、资料完整和人工替代等可预注册项给出硬门槛。",
+      "recalculation_trigger": "P0 调研完成后公开基线、样本和计算口径。"
+    },
+    {
+      "id": "A-COST-001",
+      "status": "conceptual_resource_band",
+      "statement": "S/M/L 是概念资源等级，不是投资估算、预算或财政承诺。",
+      "impact": "项目可比较复杂度，但不能据此决定投资。",
+      "recalculation_trigger": "工程量、权属、运营和全生命周期成本测算完成后形成正式估算。"
+    },
+    {
+      "id": "A-DATA-001",
+      "status": "scenario_specific_review_required",
+      "statement": "每个 AI 场景的数据类别、合法基础、系统边界、网络安全和服务适用法律取决于实际运营方式。",
+      "impact": "本方案只提出最小化、合成优先、人工复核、投诉和日落框架，不替代个案合规评估。",
+      "recalculation_trigger": "实际运营者、数据流和用户群明确后逐场景完成 DPIA/安全/伦理/法律审查。"
+    },
+    {
+      "id": "A-ACCESS-001",
+      "status": "professional_dimensioning_required",
+      "statement": "无障碍连续性和共评机制已进入方案，但具体坡度、净宽、转弯、铺装、声光和设施尺寸须按现状与现行标准深化。",
+      "impact": "图中路线是设计承诺框架，不是施工图。",
+      "recalculation_trigger": "实测、专项设计和残障/老年人代表共评后锁定尺寸。"
+    },
+    {
+      "id": "A-CASES-001",
+      "status": "background_transfer_only",
+      "statement": "八个案例只用于提炼已核实机制，制度、土地、资金和文化差异不允许简单复制。",
+      "impact": "案例数字不进入本项目指标；所有本地转译均需经本地调研和决策门。",
+      "recalculation_trigger": "若用于专项论证，补充同行评审或正式规划资料并更新局限。"
+    }
+  ]
+}

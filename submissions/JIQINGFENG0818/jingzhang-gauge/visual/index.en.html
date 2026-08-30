@@ -16,7 +16,7 @@ body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
   font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
 .wrap{max-width:1240px;margin:0 auto;padding:0 26px 90px 26px}
 
-/* ── 签名元素：左侧量规标尺 ── */
+/* -- signature element: the gauge rule on the left -- */
 .gauge{position:fixed;left:0;top:0;bottom:0;width:58px;border-right:1px solid var(--line);
   background:var(--paper);z-index:10}
 .gauge .tick{position:absolute;right:0;height:1px;background:var(--line)}
@@ -31,7 +31,7 @@ body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
 @media(max-width:940px){.gauge{display:none}}
 @media(min-width:941px){body{padding-left:58px}}
 
-/* ── 规格表页眉 ── */
+/* -- spec table header -- */
 header.plate{border-bottom:2px solid var(--ink);padding:34px 0 16px;margin-bottom:30px}
 .plate .eyebrow{font:600 10px/1 var(--mono);letter-spacing:.3em;color:var(--rail);
   text-transform:uppercase;margin-bottom:20px}
@@ -106,6 +106,22 @@ ul.plain{margin:10px 0;padding-left:19px} ul.plain li{margin:5px 0}
 footer{margin-top:58px;padding-top:20px;border-top:2px solid var(--ink);
   font:500 12px var(--mono);color:var(--rail);display:flex;flex-wrap:wrap;gap:8px 26px}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ── Deliverable modalities (page head) ── */
+.plate .mark{display:block;height:54px;width:auto;margin:0 0 16px}
+.modes{margin:0 0 34px}
+.modes .mhead{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-bottom:11px}
+.modes .mhead b{font:600 10px/1 var(--mono);letter-spacing:.3em;color:var(--rail)}
+.modes .mhead span{font-size:12.5px;color:var(--rail)}
+.mgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;
+  background:var(--line);border:1px solid var(--line)}
+.mcard{background:var(--paper);padding:10px 12px 12px;display:flex;flex-direction:column;gap:8px}
+.mcard img{display:block;width:100%;height:150px;object-fit:contain;background:var(--ground);
+  border:1px solid var(--line)}
+.mcard .mt{font:600 9px/1.4 var(--mono);letter-spacing:.16em;color:var(--rail);text-transform:uppercase}
+.mcard .md{font-size:12.5px;line-height:1.5}
+.mcard .md b{font-weight:600}
+.mcard a{color:var(--version);text-decoration:none;border-bottom:1px solid var(--version)}
 </style>
 </head>
 <body>
@@ -118,6 +134,7 @@ footer{margin-top:58px;padding-top:20px;border-top:2px solid var(--ink);
 <div class="wrap">
 
 <header class="plate">
+  <svg class="mark" viewBox="0 0 120 120" role="img" aria-label="The Jing-Zhang Gauge mark"><rect x="41" y="12" width="7" height="96" fill="#17262E"/><rect x="72" y="12" width="7" height="96" fill="#17262E"/><rect x="26" y="56" width="68" height="8" fill="#C2431F"/><rect x="26" y="46" width="3" height="28" fill="#C2431F"/><rect x="91" y="46" width="3" height="28" fill="#C2431F"/></svg>
   <div class="eyebrow">Centennial Jing-Zhang AI Innovation Belt · Urban Design Proposal</div>
   <h1>The Jing-Zhang<br>Gauge<em>CENTENNIAL JING-ZHANG AI INNOVATION BELT</em></h1>
   <div class="specrow">
@@ -125,24 +142,53 @@ footer{margin-top:58px;padding-top:20px;border-top:2px solid var(--ink);
     <div><dt>Projection</dt><dd>EPSG:4548</dd></div>
     <div><dt>Boundary state</dt><dd style="color:#8A6A16">provisional</dd></div>
     <div><dt>Spatial review</dt><dd style="color:#2C6B62">PASS</dd></div>
-    <div><dt>Land-use parcels</dt><dd>145</dd></div>
-    <div><dt>Building footprints</dt><dd>677</dd></div>
+    <div><dt>Land-use parcels</dt><dd>167</dd></div>
+    <div><dt>Building footprints</dt><dd>552</dd></div>
   </div>
 </header>
 
+<section class="modes" id="s-modes" aria-label="Deliverable modalities at a glance">
+  <div class="mhead">
+    <b>DELIVERABLE MODALITIES</b>
+    <span>Text · tables · figures · drawings · scenario cards · video · an interactive 3D web page · logo and identity system — all shipped with the package and openable offline.</span>
+  </div>
+  <div class="mgrid">
+    <div class="mcard">
+      <img src="../assets/media/cover.webp" alt="Proposal cover: Jing-Zhang Gauge visual identity over the overall design scope">
+      <div class="mt">Cover</div>
+      <div class="md"><b>Proposal cover</b>　1600×900, drawn from the package's own geometry and visual identity.</div>
+    </div>
+    <div class="mcard">
+      <img src="../assets/media/gauge-mechanism.webp" alt="Poster for the 55-second mechanism explainer: a still from the three-stations sequence">
+      <div class="mt">Video</div>
+      <div class="md"><b>55-second mechanism explainer</b>　1280×720, 24 fps, <b>silent</b>; WebVTT captions and a full transcript ship alongside, so nothing is lost without sound. See <code>assets/media/gauge-mechanism.mp4</code>.</div>
+    </div>
+    <div class="mcard">
+      <img src="../assets/media/gauge-tour-still.webp" alt="Still from the 3D tour: axonometric view of the full three-strip corridor">
+      <div class="mt">3D / Interactive</div>
+      <div class="md"><b>3D tour</b>　A hand-written WebGL renderer loading 1,070 geometry features across 9 layers, operable by keyboard. The interactive version is in the <a href="#s-tour">3D tour</a> section at the end of this page.</div>
+    </div>
+    <div class="mcard">
+      <img src="../assets/identity/jz-gauge-identity.svg" alt="Jing-Zhang Gauge identity usage sheet: construction, bilingual lockup, version-colour extension, clear space and minimum size, monochrome and reversed variants">
+      <div class="mt">Logo</div>
+      <div class="md"><b>Identity system</b>　The mark and its usage sheet: construction, bilingual lockup, version-colour extension, clear space and minimum size, monochrome and reversed variants. See <code>assets/identity/</code>.</div>
+    </div>
+  </div>
+</section>
+
 <section id="s-concept">
   <h2><span>00</span>The Concept</h2>
-  <p class="lede">这条带子最终输出的不是建筑，而是一套<b>公制</b>——一份任何人都能照着建、照着接、照着查的 AI 城市公共规范。一百年前京张铁路自己定下了轨距，一百年后这里自己定下 AI 进入公共空间的规格。掌握规范的人不必拥有设备，就获得了网络的话语权。</p>
-  <div class="note">全部空间内容为<b>概念建议</b>，供专业团队深化，不构成法定规划、审定结论、实施承诺或工程可行性结论。所依据的边界为临时替代边界，不得作为官方红线或精确面积依据。</div>
+  <p class="lede">What this belt ultimately produces is not buildings but a <b>gauge</b> — a public specification for AI in urban space that anyone can build to, connect to, and audit against. A century ago the Jing-Zhang Railway set its own track gauge; a century later, this place sets its own specification for AI entering public space. Whoever holds the specification gains discourse power over the network without owning a single device.</p>
+  <div class="note">All spatial content is a <b>conceptual recommendation</b> for further development by qualified professional teams. It does not constitute statutory planning, an approved conclusion, an implementation commitment, or an engineering feasibility conclusion. The boundary used is a provisional substitute boundary and must not be treated as an official red line or a basis for precise area figures.</div>
 </section>
 
 <section id="s-map">
   <h2><span>01</span>Overview Map</h2>
-  <p class="lede">下图由本方案的 GeoJSON 现场绘制，与指标同源，无远程瓦片与外部依赖。红色刻度线为<b>版本线 Version Line</b>——一个标准件从制标到量产的全过程，在空间上走完一次南北路程。</p>
-  <svg viewBox="0 0 1180 992" class="map" role="img" aria-label="百年京张AI创新带总体设计范围三联条带总览地图">
+  <p class="lede">The map below is drawn on the spot from this proposal's GeoJSON, sharing one source with the metrics, with no remote tiles and no external dependency. The red tick line is the <b>Version Line</b> — the full journey of a standard part from standard-setting to volume deployment, walked once north to south across the site.</p>
+  <svg viewBox="0 0 1180 992" class="map" role="img" aria-label="Overview map of the overall design scope of the Centennial Jing-Zhang AI Innovation Belt, shown as three strips">
 <rect x="0" y="0" width="1180" height="992" fill="#F2F3F0"/>
-<text x="0" y="14" class="ftitle">京张公制 · 总体设计范围总览（三联条带，自北向南）</text>
-<text x="0" y="31" class="fsub">THE JING-ZHANG GAUGE / OVERALL DESIGN SCOPE · EPSG:4548 · JZ-Gauge v0.1 · 临时边界 provisional</text>
+<text x="0" y="14" class="ftitle">The Jing-Zhang Gauge · Overall design scope (three strips, north to south)</text>
+<text x="0" y="31" class="fsub">THE JING-ZHANG GAUGE / OVERALL DESIGN SCOPE · EPSG:4548 · JZ-Gauge v0.1 · provisional boundary</text>
 <defs>
 <clipPath id="cp0"><rect x="0" y="0" width="382.7" height="870.1"/></clipPath>
 <clipPath id="cp1"><rect x="0" y="0" width="382.7" height="870.1"/></clipPath>
@@ -1154,9 +1200,9 @@ footer{margin-top:58px;padding-top:20px;border-top:2px solid var(--ink);
 <path d="M12.0,1504.2 L63.2,606.0 L89.9,12.0 L370.7,14.1 L318.4,1071.7 L357.8,1796.6 L352.3,2550.2 L26.6,2547.8 L12.0,1504.2 Z" fill="none" stroke="#17262E" stroke-opacity="0.34" stroke-width="1.3" stroke-dasharray="3 4"/></g>
 <rect x="0" y="0" width="382.7" height="870.1" fill="none" stroke="#C3C7C0"/>
 <text x="0" y="-20" class="pnum">GW</text>
-<text x="26" y="-20" class="pname">制标区 Gauge Works</text>
-<text x="0" y="-6" class="fsub">规范编制 · 一致性测试 · 认证</text>
-<text x="380.7" y="-6" class="fsub" text-anchor="end">条带 1/3</text>
+<text x="26" y="-20" class="pname">Gauge Works</text>
+<text x="0" y="-6" class="fsub">Spec drafting · Conformance testing · Certification</text>
+<text x="380.7" y="-6" class="fsub" text-anchor="end">Strip 1/3</text>
 </g>
 <g transform="translate(398.7,88.0)">
 <g clip-path="url(#cp1)"><rect x="0" y="0" width="383" height="870" fill="#EDEEEA"/>
@@ -2164,9 +2210,9 @@ footer{margin-top:58px;padding-top:20px;border-top:2px solid var(--ink);
 <path d="M12.0,658.1 L63.2,-240.0 L89.9,-834.1 L370.7,-832.0 L318.4,225.6 L357.8,950.5 L352.3,1704.1 L26.6,1701.7 L12.0,658.1 Z" fill="none" stroke="#17262E" stroke-opacity="0.34" stroke-width="1.3" stroke-dasharray="3 4"/></g>
 <rect x="0" y="0" width="382.7" height="870.1" fill="none" stroke="#C3C7C0"/>
 <text x="0" y="-20" class="pnum">PB</text>
-<text x="26" y="-20" class="pname">首装区 Proto Blocks</text>
-<text x="0" y="-6" class="fsub">标准件首装 · 居民陪审 · 迭代退版</text>
-<text x="380.7" y="-6" class="fsub" text-anchor="end">条带 2/3</text>
+<text x="26" y="-20" class="pname">Proto Blocks</text>
+<text x="0" y="-6" class="fsub">First installation · Resident jury · Iterative rollback</text>
+<text x="380.7" y="-6" class="fsub" text-anchor="end">Strip 2/3</text>
 </g>
 <g transform="translate(797.3,88.0)">
 <g clip-path="url(#cp2)"><rect x="0" y="0" width="383" height="870" fill="#EDEEEA"/>
@@ -3174,9 +3220,9 @@ footer{margin-top:58px;padding-top:20px;border-top:2px solid var(--ink);
 <path d="M12.0,-187.9 L63.2,-1086.1 L89.9,-1680.1 L370.7,-1678.1 L318.4,-620.5 L357.8,104.5 L352.3,858.1 L26.6,855.7 L12.0,-187.9 Z" fill="none" stroke="#17262E" stroke-opacity="0.34" stroke-width="1.3" stroke-dasharray="3 4"/></g>
 <rect x="0" y="0" width="382.7" height="870.1" fill="none" stroke="#C3C7C0"/>
 <text x="0" y="-20" class="pnum">MF</text>
-<text x="26" y="-20" class="pname">量产区 Market Floor</text>
-<text x="0" y="-6" class="fsub">认证标准件规模化部署</text>
-<text x="380.7" y="-6" class="fsub" text-anchor="end">条带 3/3</text>
+<text x="26" y="-20" class="pname">Market Floor</text>
+<text x="0" y="-6" class="fsub">Scaled deployment of certified standard parts</text>
+<text x="380.7" y="-6" class="fsub" text-anchor="end">Strip 3/3</text>
 </g>
 <path d="M1160.0,94.0 L1167.0,119.0 L1160.0,112.0 L1153.0,119.0 Z" fill="#17262E"/>
 <text x="1160.0" y="133.0" class="fsub" text-anchor="middle">N</text>
@@ -3184,194 +3230,195 @@ footer{margin-top:58px;padding-top:20px;border-top:2px solid var(--ink);
 <line x1="0" y1="977.0618161166204" x2="0" y2="987.0618161166204" stroke="#17262E" stroke-width="2"/>
 <line x1="261.0" y1="977.0618161166204" x2="261.0" y2="987.0618161166204" stroke="#17262E" stroke-width="2"/>
 <text x="270.0" y="986.0618161166204" class="fsub">1 km</text>
-<text x="1180" y="986.0618161166204" class="fsub" text-anchor="end">概念建议 · 非法定成果 · 不得作为官方红线或精确面积依据</text>
+<text x="1180" y="986.0618161166204" class="fsub" text-anchor="end">Conceptual recommendation · Not a statutory deliverable · Not to be used as an official red line or a basis for precise areas</text>
 </svg>
   <div class="mapkey">
-    <span><b>—</b> 版本线（含刻度）</span><span><b>▢</b> 缝合口 Stitch</span>
-    <span><b>◎</b> 基准点 Datum</span><span><b>┈</b> 临时边界与重点区域（provisional）</span>
+    <span><b>—</b> Version Line (with ticks)</span><span><b>▢</b> Stitch</span>
+    <span><b>◎</b> Datum</span><span><b>┈</b> Provisional boundary and key areas (provisional)</span>
   </div>
-  <ul class="legend"><li><i style="background:#CBD6D8"></i>科研用地</li><li><i style="background:#DFD2C4"></i>商业服务业用地</li><li><i style="background:#EDE9DE"></i>社区服务设施用地</li><li><i style="background:#DCD7E0"></i>文化用地</li><li><i style="background:#DEE3D3"></i>教育用地</li><li><i style="background:#D9E2DA"></i>体育用地</li><li><i style="background:#E4D9D9"></i>医疗卫生用地</li><li><i style="background:#A9C6AE"></i>公园绿地</li><li><i style="background:#BDCDB8"></i>防护绿地</li><li><i style="background:#E3D3A8"></i>广场用地</li><li><i style="background:#F0F1EE"></i>城镇村道路用地</li></ul>
+  <ul class="legend"><li><i style="background:#CBD6D8"></i>Scientific research land</li><li><i style="background:#DFD2C4"></i>Commercial and business facilities land</li><li><i style="background:#EDE9DE"></i>Community service facilities land</li><li><i style="background:#DCD7E0"></i>Cultural facilities land</li><li><i style="background:#DEE3D3"></i>Education land</li><li><i style="background:#D9E2DA"></i>Sports land</li><li><i style="background:#E4D9D9"></i>Medical and health land</li><li><i style="background:#A9C6AE"></i>Park green space</li><li><i style="background:#BDCDB8"></i>Protective green space</li><li><i style="background:#E3D3A8"></i>Square land</li><li><i style="background:#F0F1EE"></i>Urban and rural road land</li></ul>
 </section>
 
 <section id="s-scope">
   <h2><span>02</span>Three-Level Scope</h2>
-  <p class="lede">统筹研究、总体设计、重点精细化三层嵌套。本方案的几何与指标复算覆盖总体设计范围，重点区域采用组织方提供的临时替代范围。</p>
+  <p class="lede">Coordinated research, overall design, and key detailed design nest as three levels. The geometry and metric recalculation in this proposal cover the overall design area; the key areas use the provisional substitute extents supplied by the organiser.</p>
   <table>
-    <thead><tr><th>层级</th><th>范围</th><th class="num">官方公布面积</th><th class="num">本方案复算</th><th>状态</th></tr></thead>
+    <thead><tr><th>Level</th><th>Extent</th><th class="num">Official area</th><th class="num">Recalculated here</th><th>Status</th></tr></thead>
     <tbody>
-      <tr><td>统筹研究范围</td><td>北五环—西直门外大街</td><td class="mono num">43.60 km²</td><td class="mono num">—</td><td><span class="pill wip">未复算</span></td></tr>
-      <tr><td>总体设计范围</td><td>遗址公园周边 1–2 km</td><td class="mono num">11.40 km²</td><td class="mono num">11.413 km²</td><td><span class="pill ok">偏差 0.11%</span></td></tr>
-      <tr><td>重点精细化设计</td><td>三大核心功能分区</td><td class="mono num">368.40 ha</td><td class="mono num">368.40 ha</td><td><span class="pill wip">临时范围</span></td></tr>
+      <tr><td>Coordinated research area</td><td>North Fifth Ring Road—Xizhimenwai Avenue</td><td class="mono num">43.60 km²</td><td class="mono num">—</td><td><span class="pill wip">Not recalculated</span></td></tr>
+      <tr><td>Overall design area</td><td>1–2 km around the heritage park</td><td class="mono num">11.40 km²</td><td class="mono num">11.413 km²</td><td><span class="pill ok">Deviation 0.11%</span></td></tr>
+      <tr><td>Key detailed design</td><td>Three core functional districts</td><td class="mono num">368.40 ha</td><td class="mono num">368.40 ha</td><td><span class="pill wip">Provisional extent</span></td></tr>
     </tbody>
   </table>
 </section>
 
 <section id="s-key">
   <h2><span>03</span>Key Areas</h2>
-  <p class="lede">三个重点区在本方案中不是三块并列的产业用地，而是同一条生产线上的三个工位。</p>
+  <p class="lede">In this proposal the three key areas are not three parallel blocks of industrial land but three stations on one production line.</p>
   <div class="grid">
-    <div><div class="k">Gauge Works</div><div class="v" style="font-size:19px">制标区</div>
-      <div class="u">众智园 AI 自主创新加速区 · 192.1 ha<br>规范编制、一致性测试实验室、红队与认证</div></div>
-    <div><div class="k">Proto Blocks</div><div class="v" style="font-size:19px">首装区</div>
-      <div class="u">北京 AI 原点社区 · 104.3 ha<br>标准件首次实装、居民陪审、快速迭代退版</div></div>
-    <div><div class="k">Market Floor</div><div class="v" style="font-size:19px">量产区</div>
-      <div class="u">大钟寺 AI 产业聚集区 · 72.0 ha<br>通过认证的标准件进入商业规模部署</div></div>
+    <div><div class="k">Gauge Works</div><div class="v" style="font-size:19px">Standard-setting station</div>
+      <div class="u">Zhongzhiyuan AI Independent Innovation Acceleration Area · 192.1 ha<br>Specification drafting, conformance testing laboratory, red-teaming and certification</div></div>
+    <div><div class="k">Proto Blocks</div><div class="v" style="font-size:19px">First-installation station</div>
+      <div class="u">Beijing AI Origin Community · 104.3 ha<br>First installation of standard parts, resident jury, rapid iteration and version rollback</div></div>
+    <div><div class="k">Market Floor</div><div class="v" style="font-size:19px">Volume-production station</div>
+      <div class="u">Dazhongsi AI Industry Cluster · 72.0 ha<br>Certified standard parts enter commercial-scale deployment</div></div>
   </div>
-  <h3>两翼</h3>
+  <h3>The two wings</h3>
   <ul class="plain">
-    <li><b>接入翼</b>（中关村科技服务翼）：资本、IP 与全球要素通过认证接口进入，而非行政对接。</li>
-    <li><b>实测翼</b>（小月河场景赋能翼）：真实水岸与社区环境下的场景压力测试，失败案例公开。</li>
+    <li><b>Access Wing</b> (Zhongguancun technology services wing): capital, IP, and global factors enter through a certification interface rather than administrative liaison.</li>
+    <li><b>Field Wing</b> (Xiaoyue River scenario enablement wing): scenario stress testing in real waterfront and community conditions, with failure cases published.</li>
   </ul>
 </section>
 
 <section id="s-lu">
   <h2><span>04</span>Land Use</h2>
-  <p class="lede">用地采用 Voronoi 剖分生成，相邻图斑共享精确边界坐标，覆盖设计范围但并非完全无缝：topology_check 记录残留缝隙 14.897 m²、重叠 0.099 m²，land_use_partition_complete=false，相对 11.41 km² 约为百万分之一点五量级。道路用地沿地块边界扣除，不产生夹缝地。</p>
+  <p class="lede">Land use is generated by Voronoi partition, so adjacent parcels share exact boundary coordinates and the partition covers the design area, but not with zero residue: topology_check records a residual gap of 14.897 m² and an overlap of 0.099 m², with land_use_partition_complete=false; against 11.41 km² that is on the order of one-and-a-half parts per million. Road land is subtracted along parcel edges, so no residual slivers are created.</p>
   <table>
-    <thead><tr><th>代码</th><th>用地类别</th><th class="num">面积 (ha)</th><th>占比</th><th class="num">%</th></tr></thead>
-    <tbody><tr><td class="mono">1207</td><td>城镇村道路用地</td><td class="mono num">240.5</td><td class="bar"><i style="width:21.08%;background:#F0F1EE"></i></td><td class="mono num">21.08%</td></tr>
-<tr><td class="mono">0802</td><td>科研用地</td><td class="mono num">198.2</td><td class="bar"><i style="width:17.37%;background:#CBD6D8"></i></td><td class="mono num">17.37%</td></tr>
-<tr><td class="mono">0803</td><td>文化用地</td><td class="mono num">197.7</td><td class="bar"><i style="width:17.32%;background:#DCD7E0"></i></td><td class="mono num">17.32%</td></tr>
-<tr><td class="mono">1401</td><td>公园绿地</td><td class="mono num">165.4</td><td class="bar"><i style="width:14.49%;background:#A9C6AE"></i></td><td class="mono num">14.49%</td></tr>
-<tr><td class="mono">1402</td><td>防护绿地</td><td class="mono num">126.8</td><td class="bar"><i style="width:11.11%;background:#BDCDB8"></i></td><td class="mono num">11.11%</td></tr>
-<tr><td class="mono">0702</td><td>社区服务设施用地</td><td class="mono num">87.6</td><td class="bar"><i style="width:7.68%;background:#EDE9DE"></i></td><td class="mono num">7.68%</td></tr>
-<tr><td class="mono">0804</td><td>教育用地</td><td class="mono num">46.5</td><td class="bar"><i style="width:4.07%;background:#DEE3D3"></i></td><td class="mono num">4.07%</td></tr>
-<tr><td class="mono">05</td><td>商业服务业用地</td><td class="mono num">30.8</td><td class="bar"><i style="width:2.70%;background:#DFD2C4"></i></td><td class="mono num">2.70%</td></tr>
-<tr><td class="mono">0806</td><td>医疗卫生用地</td><td class="mono num">25.0</td><td class="bar"><i style="width:2.19%;background:#E4D9D9"></i></td><td class="mono num">2.19%</td></tr>
-<tr><td class="mono">0805</td><td>体育用地</td><td class="mono num">16.5</td><td class="bar"><i style="width:1.44%;background:#D9E2DA"></i></td><td class="mono num">1.44%</td></tr>
-<tr><td class="mono">1403</td><td>广场用地</td><td class="mono num">6.3</td><td class="bar"><i style="width:0.55%;background:#E3D3A8"></i></td><td class="mono num">0.55%</td></tr></tbody>
+    <thead><tr><th>Code</th><th>Land-use class</th><th class="num">Area (ha)</th><th>Share</th><th class="num">%</th></tr></thead>
+    <tbody><tr><td class="mono">1207</td><td>Urban and rural road land</td><td class="mono num">240.5</td><td class="bar"><i style="width:21.08%;background:#F0F1EE"></i></td><td class="mono num">21.08%</td></tr>
+<tr><td class="mono">0802</td><td>Scientific research land</td><td class="mono num">198.2</td><td class="bar"><i style="width:17.37%;background:#CBD6D8"></i></td><td class="mono num">17.37%</td></tr>
+<tr><td class="mono">0803</td><td>Cultural facilities land</td><td class="mono num">197.7</td><td class="bar"><i style="width:17.32%;background:#DCD7E0"></i></td><td class="mono num">17.32%</td></tr>
+<tr><td class="mono">1401</td><td>Park green space</td><td class="mono num">165.4</td><td class="bar"><i style="width:14.49%;background:#A9C6AE"></i></td><td class="mono num">14.49%</td></tr>
+<tr><td class="mono">1402</td><td>Protective green space</td><td class="mono num">126.8</td><td class="bar"><i style="width:11.11%;background:#BDCDB8"></i></td><td class="mono num">11.11%</td></tr>
+<tr><td class="mono">0702</td><td>Community service facilities land</td><td class="mono num">87.6</td><td class="bar"><i style="width:7.68%;background:#EDE9DE"></i></td><td class="mono num">7.68%</td></tr>
+<tr><td class="mono">0804</td><td>Education land</td><td class="mono num">46.5</td><td class="bar"><i style="width:4.07%;background:#DEE3D3"></i></td><td class="mono num">4.07%</td></tr>
+<tr><td class="mono">09</td><td>Commercial and business facilities land</td><td class="mono num">30.8</td><td class="bar"><i style="width:2.70%;background:#DFD2C4"></i></td><td class="mono num">2.70%</td></tr>
+<tr><td class="mono">0806</td><td>Medical and health land</td><td class="mono num">25.0</td><td class="bar"><i style="width:2.19%;background:#E4D9D9"></i></td><td class="mono num">2.19%</td></tr>
+<tr><td class="mono">0805</td><td>Sports land</td><td class="mono num">16.5</td><td class="bar"><i style="width:1.44%;background:#D9E2DA"></i></td><td class="mono num">1.44%</td></tr>
+<tr><td class="mono">1403</td><td>Square land</td><td class="mono num">6.3</td><td class="bar"><i style="width:0.55%;background:#E3D3A8"></i></td><td class="mono num">0.55%</td></tr></tbody>
   </table>
 </section>
 
 <section id="s-mob">
   <h2><span>05</span>Walking and Cycling</h2>
-  <p class="lede">路网沿用地剖分边界生成，与地块边界严格一致。版本线兼作全带主慢行骨架，六处缝合口提供东西向横穿，回应铁路两侧的割裂问题。</p>
+  <p class="lede">The road network is generated along the edges of the land-use partition and coincides exactly with parcel boundaries. The Version Line doubles as the main walking and cycling spine of the whole belt, and six stitch points provide east–west crossings, answering the severance between the two sides of the railway.</p>
   <div class="grid">
-    <div><div class="k">道路面积率</div><div class="v">21.1<span style="font-size:15px">%</span></div><div class="u">沿地块边界生成后复算</div></div>
-    <div><div class="k">缝合口</div><div class="v">6</div><div class="u">东西向横穿节点，兼作组件库实体样板断面</div></div>
-    <div><div class="k">红线宽度假设</div><div class="v" style="font-size:19px">44 / 26 / 16 m</div><div class="u">主线 / 次干 / 支路，概念假设值</div></div>
+    <div><div class="k">Road area ratio</div><div class="v">21.1<span style="font-size:15px">%</span></div><div class="u">Recalculated after generation along parcel edges</div></div>
+    <div><div class="k">Stitch points</div><div class="v">6</div><div class="u">East–west crossing nodes, doubling as physical demonstration sections of the component catalogue</div></div>
+    <div><div class="k">Assumed right-of-way widths</div><div class="v" style="font-size:19px">44 / 26 / 16 m</div><div class="u">Arterial / secondary / local, conceptual assumed values</div></div>
   </div>
 </section>
 
 <section id="s-green">
   <h2><span>06</span>Blue-Green &amp; Public Space</h2>
-  <p class="lede">版本线核心绿廊贯穿南北，外缘配置防护绿地，缝合口与基准点构成公共空间节点网络。</p>
+  <p class="lede">The Version Line's core green corridor runs the full north–south length, protective green space lines the outer edge, and stitch points together with Datum landmarks form a network of public space nodes.</p>
   <div class="grid">
-    <div><div class="k">绿地率</div>
+    <div><div class="k">Green ratio</div>
       <div class="v" data-metric="green_ratio" data-value="0.261556">26.16<span style="font-size:15px">%</span></div>
-      <div class="u">由 green_space.geojson 并集复算</div></div>
-    <div><div class="k">公共空间率</div>
+      <div class="u">Recalculated from the union of green_space.geojson</div></div>
+    <div><div class="k">Public space ratio</div>
       <div class="v" data-metric="public_space_ratio" data-value="0.04589">4.59<span style="font-size:15px">%</span></div>
-      <div class="u">缝合口广场与基准点节点并集</div></div>
-    <div><div class="k">基准点地标</div><div class="v">3</div>
-      <div class="u">零号基准 / 公议台 / 退役场</div></div>
+      <div class="u">Union of stitch plazas and Datum nodes</div></div>
+    <div><div class="k">Datum landmarks</div><div class="v">4</div>
+      <div class="u">Datum Zero / The Objection Stand / The Decommission Yard / The Contributor Register</div></div>
   </div>
-  <h3>基准点：不做打卡雕塑，做有实测功能的纪念物</h3>
+  <h3>Datum points: not photo-op sculptures but monuments carrying an actual measurement function</h3>
   <ul class="plain">
-    <li><b>D-01 零号基准</b>　规范版本的物理发布点，每次版本更新在此实体刻录版本号与主要变更。</li>
-    <li><b>D-02 公议台</b>　市民对任一标准件提出异议的实体登记点，异议编号与处理状态公开可查。</li>
-    <li><b>D-03 退役场</b>　陈列被淘汰的标准件实物与退役原因。展示失败是这套体系的可信度来源。</li>
+    <li><b>D-01 Datum Zero</b> — The physical release point of each specification version; the version number and the principal changes are physically inscribed here at every update.</li>
+    <li><b>D-02 The Objection Stand</b> — A physical registration point for citizen objections to any standard part; objection numbers and handling status are publicly traceable.</li>
+    <li><b>D-03 The Decommission Yard</b> — Displays retired standard parts and the reasons for retirement. Showing failure is the source of this system's credibility.</li>
+    <li><b>D-04 The Contributor Register</b> — Adopted revisions to the specification are physically inscribed by version; a reviewer's standing comes from a traceable record of reproduction, not from title.</li>
   </ul>
 </section>
 
 <section id="s-bld">
   <h2><span>07</span>Buildings &amp; Massing</h2>
-  <p class="lede">建筑基底按用地类别差异化布设，为概念性体量示意，非建筑设计成果。官方容积率、建筑高度与密度控制指标在公开场地包中缺失，本方案不代填。</p>
+  <p class="lede">Building footprints are laid out differentially by land-use class as a conceptual massing indication, not an architectural design output. The official floor area ratio, building height, and building density control indicators are absent from the public site package, and this proposal does not fill them in.</p>
   <div class="grid">
-    <div><div class="k">建筑基底面积</div><div class="v">117<span style="font-size:15px"> ha</span></div><div class="u">677 个基底并集</div></div>
-    <div><div class="k">建筑密度</div><div class="v">10.3<span style="font-size:15px">%</span></div><div class="u">概念推算</div></div>
-    <div><div class="k">概念容积率</div><div class="v">0.92</div><div class="u">层数为假设值，<b>非</b>法定控制指标</div></div>
-    <div><div class="k">法定容积率</div><div class="v" style="color:#8A6A16;font-size:19px">unknown</div><div class="u">官方控制指标缺失，保持未知</div></div>
+    <div><div class="k">Building footprint area</div><div class="v">117<span style="font-size:15px"> ha</span></div><div class="u">Union of 552 footprints</div></div>
+    <div><div class="k">Building coverage ratio</div><div class="v">10.3<span style="font-size:15px">%</span></div><div class="u">Conceptual estimate</div></div>
+    <div><div class="k">Conceptual FAR</div><div class="v">0.92</div><div class="u">Storey counts are assumed values; <b>not</b> a statutory control indicator</div></div>
+    <div><div class="k">Statutory FAR</div><div class="v" style="color:#8A6A16;font-size:19px">unknown</div><div class="u">Official control indicator missing; left unknown</div></div>
   </div>
 </section>
 
 <section id="s-scen">
   <h2><span>08</span>AI Scenarios</h2>
-  <p class="lede">16 张场景卡，全部具备人工复核规则与失败回退路径。<b>没有一张卡依赖个体身份识别</b>——这是主动的设计约束，不是被动的合规声明。</p>
-  <ol class="scen"><li><b class="mono">S-01</b><span>版本可见的街道照明</span><em>版本线沿线</em></li><li><b class="mono">S-02</b><span>遗址公园无人配送接驳</span><em>缝合口</em></li><li><b class="mono">S-03</b><span>施工与设施异常市民上报</span><em>全带</em></li><li><b class="mono">S-04</b><span>铁路遗产分层导览</span><em>遗址公园</em></li><li><b class="mono">S-05</b><span>首装区社区服务窗口</span><em>首装区</em></li><li><b class="mono">S-06</b><span>公共空间人流疏导</span><em>三区节点</em></li><li><b class="mono">S-07</b><span>大钟寺智能原生商业</span><em>量产区</em></li><li><b class="mono">S-08</b><span>小月河水岸环境监测</span><em>实测翼</em></li><li><b class="mono">S-09</b><span>无障碍与适老导引</span><em>缝合口</em></li><li><b class="mono">S-10</b><span>开发者现场调试通道</span><em>制标区/实测翼</em></li><li><b class="mono">S-11</b><span>标准件异议受理</span><em>D-02 公议台</em></li><li><b class="mono">S-12</b><span>设施退役与数据销毁</span><em>D-03 退役场</em></li><li><b class="mono">S-13</b><span>AI+教育 学习助教</span><em>首装区</em></li><li><b class="mono">S-14</b><span>AI+医疗 辅助导诊</span><em>首装区</em></li><li><b class="mono">S-15</b><span>机器人 公共空间服务</span><em>缝合口/量产区</em></li><li><b class="mono">S-16</b><span>自动驾驶 低速接驳测试</span><em>实测翼</em></li></ol>
-  <h3>产业测试验证场景</h3>
+  <p class="lede">16 scenario cards, all carrying human-review rules and a failure fallback path. <b>No card depends on individual identity recognition</b> — this is an active design constraint, not a passive compliance statement.</p>
+  <ol class="scen"><li><b class="mono">S-01</b><span>Street lighting with visible version</span><em>Along the Version Line</em></li><li><b class="mono">S-02</b><span>Autonomous delivery shuttle in the heritage park</span><em>Stitch points</em></li><li><b class="mono">S-03</b><span>Citizen reporting of construction and facility faults</span><em>Belt-wide</em></li><li><b class="mono">S-04</b><span>Layered interpretation of railway heritage</span><em>Heritage park</em></li><li><b class="mono">S-05</b><span>Community service desk in Proto Blocks</span><em>Proto Blocks</em></li><li><b class="mono">S-06</b><span>Public space crowd guidance</span><em>District nodes</em></li><li><b class="mono">S-07</b><span>AI-native commerce in Dazhongsi</span><em>Market Floor</em></li><li><b class="mono">S-08</b><span>Xiaoyue River waterfront environmental monitoring</span><em>Field Wing</em></li><li><b class="mono">S-09</b><span>Accessibility and age-friendly guidance</span><em>Stitch points</em></li><li><b class="mono">S-10</b><span>Developer on-site debugging channel</span><em>Gauge Works / Field Wing</em></li><li><b class="mono">S-11</b><span>Standard-part objection intake</span><em>D-02 The Objection Stand</em></li><li><b class="mono">S-12</b><span>Facility decommissioning and data destruction</span><em>D-03 The Decommission Yard</em></li><li><b class="mono">S-13</b><span>AI+Education: learning assistant</span><em>Proto Blocks</em></li><li><b class="mono">S-14</b><span>AI+Health: assisted triage</span><em>Proto Blocks</em></li><li><b class="mono">S-15</b><span>Robotics: public space service</span><em>Stitch points / Market Floor</em></li><li><b class="mono">S-16</b><span>Autonomous driving: low-speed shuttle test</span><em>Field Wing</em></li></ol>
+  <h3>Industry testing and validation scenarios</h3>
   <ul class="plain">
-    <li><b>T-01 一致性测试实验室</b>　验证标准件是否符合 JZ-Gauge 规范，认证结果公开。</li>
-    <li><b>T-02 首装陪审</b>　真实居民环境下的可接受度与实际效用，输出迭代建议或退版决定。</li>
-    <li><b>T-03 红队压力测试</b>　恶意输入、极端天气、断网条件下的失效行为，失效模式清单公开。</li>
+    <li><b>T-01 Conformance testing laboratory</b> — Verifies whether a standard part meets the JZ-Gauge specification; certification results are published.</li>
+    <li><b>T-02 First-installation jury</b> — Acceptability and real utility under actual resident conditions; outputs iteration recommendations or a rollback decision.</li>
+    <li><b>T-03 Red-team stress testing</b> — Failure behaviour under adversarial input, extreme weather, and network loss; the failure-mode list is published.</li>
   </ul>
 </section>
 
 <section id="s-renew">
   <h2><span>09</span>Renewal &amp; Phasing</h2>
-  <p class="lede">分期按三工位就近划分，为概念建议，不构成实施计划或投资承诺。</p>
+  <p class="lede">Phases are divided by proximity to the three stations; they are a conceptual recommendation and do not constitute an implementation plan or an investment commitment.</p>
   <table>
-    <thead><tr><th>期</th><th>阶段</th><th>更新项目重点</th><th>标志性成果</th></tr></thead>
+    <thead><tr><th>Phase</th><th>Stage</th><th>Renewal focus</th><th>Signature outcome</th></tr></thead>
     <tbody>
-      <tr><td class="mono">一期</td><td>制标</td><td>一致性测试实验室、认证与红队能力建设、组件库 v1.0 编制</td><td>D-01 零号基准落成</td></tr>
-      <tr><td class="mono">二期</td><td>首装</td><td>缝合口断面实装、居民陪审机制建立、场景卡分批上线</td><td>D-02 公议台启用</td></tr>
-      <tr><td class="mono">三期</td><td>量产</td><td>通过认证的标准件规模化部署、智能原生业态导入</td><td>D-03 退役场开放</td></tr>
+      <tr><td class="mono">I</td><td>Standard-setting</td><td>Conformance testing laboratory, certification and red-team capability building, component catalogue v1.0 drafted</td><td>D-01 Datum Zero completed</td></tr>
+      <tr><td class="mono">II</td><td>First installation</td><td>Stitch-point sections installed, resident jury established, scenario cards launched in batches</td><td>D-02 The Objection Stand opened</td></tr>
+      <tr><td class="mono">III</td><td>Volume deployment</td><td>Scale deployment of certified standard parts, introduction of AI-native business forms</td><td>D-03 The Decommission Yard opened</td></tr>
     </tbody>
   </table>
-  <h3>组件库规格卡字段</h3>
-  <p class="lede">每件标准件均须给出：功能定义 / 物理规格 / 数据行为 / 人工复核触发条件 / 价格带 / 全生命周期 / <b>退役与回滚</b> / 版本兼容性。城市 AI 设施的真实风险不是装不上，是拆不掉、责任找不到人、数据不知去向——写清楚怎么拆，比写清楚怎么装更能体现治理能力。</p>
+  <h3>Component catalogue spec-card fields</h3>
+  <p class="lede">Every standard part must state: function definition / physical specification / data behaviour / human-review triggers / price band / whole life cycle / <b>decommissioning and rollback</b> / version compatibility. The real risk of urban AI installations is not that they cannot be installed — it is that they cannot be removed, that no one is accountable, and that no one knows where the data went; writing down how to take something out demonstrates governance capability more than writing down how to put it in.</p>
 </section>
 
 <section id="s-metrics">
   <h2><span>10</span>Core Metrics</h2>
-  <p class="lede">以下数值全部由 GeoJSON 在 EPSG:4548 下复算，与 <span class="mono">metrics.json</span> 严格一致。</p>
+  <p class="lede">All figures below are recalculated from GeoJSON in EPSG:4548 and are strictly consistent with <span class="mono">metrics.json</span>.</p>
   <div class="grid">
-    <div><div class="k">设计范围面积</div>
+    <div><div class="k">Design area</div>
       <div class="v" data-metric="site_area_sqm" data-value="11412827.155821">11.413<span style="font-size:15px"> km²</span></div>
-      <div class="u">官方公布 11.40 km²，偏差 0.11%</div></div>
-    <div><div class="k">绿地率</div><div class="v">26.16<span style="font-size:15px">%</span></div><div class="u">green_ratio</div></div>
-    <div><div class="k">公共空间率</div><div class="v">4.59<span style="font-size:15px">%</span></div><div class="u">public_space_ratio</div></div>
-    <div><div class="k">道路面积率</div><div class="v">21.08<span style="font-size:15px">%</span></div><div class="u">road_area_ratio</div></div>
-    <div><div class="k">用地剖分缝隙</div><div class="v" style="color:#2C6B62">14.897<span style="font-size:15px"> ㎡</span></div><div class="u">占总面积 0.00013%</div></div>
-    <div><div class="k">用地剖分重叠</div><div class="v" style="color:#2C6B62">0.099<span style="font-size:15px"> ㎡</span></div><div class="u">占总面积 0.00000087%</div></div>
+      <div class="u">Official figure 11.40 km², deviation 0.11%</div></div>
+    <div><div class="k">Green ratio</div><div class="v">26.16<span style="font-size:15px">%</span></div><div class="u">green_ratio</div></div>
+    <div><div class="k">Public space ratio</div><div class="v">4.59<span style="font-size:15px">%</span></div><div class="u">public_space_ratio</div></div>
+    <div><div class="k">Road area ratio</div><div class="v">21.08<span style="font-size:15px">%</span></div><div class="u">road_area_ratio</div></div>
+    <div><div class="k">Land-use partition gap</div><div class="v" style="color:#2C6B62">14.897<span style="font-size:15px"> ㎡</span></div><div class="u">0.00013% of the total area</div></div>
+    <div><div class="k">Land-use partition overlap</div><div class="v" style="color:#2C6B62">0.099<span style="font-size:15px"> ㎡</span></div><div class="u">0.00000087% of the total area</div></div>
   </div>
 </section>
 
 <section id="s-tasks">
   <h2><span>11</span>Task Coverage</h2>
-  <p class="lede">对 <span class="mono">agent_taskbook.json</span> 六项必答任务的回应状态。</p>
+  <p class="lede">Response status for the six mandatory tasks in <span class="mono">agent_taskbook.json</span>.</p>
   <table>
-    <thead><tr><th>编号</th><th>任务</th><th>本方案回应</th><th>状态</th></tr></thead>
-    <tbody><tr><td class="mono">agent.1</td><td>一带总体概念与功能统筹</td><td>京张公制命名体系、量规视觉方向、一线三工位两接口结构</td><td><span class="pill ok">已覆盖</span></td></tr>
-<tr><td class="mono">agent.2</td><td>全栈自主体系与创新生态</td><td>制标区一致性测试链、接入翼要素通道、7 类案例参照方向</td><td><span class="pill wip">部分覆盖</span></td></tr>
-<tr><td class="mono">agent.3</td><td>AI+场景与活力城市</td><td>12 张场景卡、3 类产业测试场、6 类用户画像</td><td><span class="pill ok">已覆盖</span></td></tr>
-<tr><td class="mono">agent.4</td><td>公共空间、新业态与朝圣地标</td><td>缝合口断面、标准件组件库、4 处基准点地标</td><td><span class="pill ok">已覆盖</span></td></tr>
-<tr><td class="mono">agent.5</td><td>文化融合叙事</td><td>自主—公开—互通三段叙事、规格标牌导视系统</td><td><span class="pill ok">已覆盖</span></td></tr>
-<tr><td class="mono">agent.6</td><td>全球活动体系与长期运营</td><td>定标周、开发者社区、场景开放与认证转化路径</td><td><span class="pill wip">部分覆盖</span></td></tr></tbody>
+    <thead><tr><th>ID</th><th>Task</th><th>Response in this proposal</th><th>Status</th></tr></thead>
+    <tbody><tr><td class="mono">agent.1</td><td>Overall concept and functional coordination of the belt</td><td>The Jing-Zhang Gauge naming system, gauge-derived visual direction, one-line/three-station/two-interface structure</td><td><span class="pill ok">Covered</span></td></tr>
+<tr><td class="mono">agent.2</td><td>Full-stack independent system and innovation ecosystem</td><td>Conformance testing chain in Gauge Works, factor channel of the Access Wing, 7 case-reference directions</td><td><span class="pill wip">Partly covered</span></td></tr>
+<tr><td class="mono">agent.3</td><td>AI+ scenarios and a vibrant city</td><td>16 scenario cards, 3 industry test grounds, 6 personas</td><td><span class="pill ok">Covered</span></td></tr>
+<tr><td class="mono">agent.4</td><td>Public space, new business forms, and pilgrimage landmarks</td><td>Stitch-point sections, the standard-part component catalogue, 4 Datum landmarks</td><td><span class="pill ok">Covered</span></td></tr>
+<tr><td class="mono">agent.5</td><td>Cultural convergence narrative</td><td>The self-reliance—openness—interoperability three-part narrative, the spec-plate wayfinding system</td><td><span class="pill ok">Covered</span></td></tr>
+<tr><td class="mono">agent.6</td><td>Global event system and long-term operations</td><td>Gauge Week, developer community, scenario opening and certification conversion pathways</td><td><span class="pill wip">Partly covered</span></td></tr></tbody>
   </table>
 </section>
 
 <section id="s-check">
   <h2><span>12</span>Self-Check Status</h2>
   <table>
-    <thead><tr><th>检查项</th><th>结果</th><th>说明</th></tr></thead>
+    <thead><tr><th>Check</th><th>Result</th><th>Note</th></tr></thead>
     <tbody>
-      <tr><td>空间审查 spatial_review</td><td><span class="pill ok">PASS</span></td><td>无越界；用地剖分残留缝隙 14.897 m²、重叠 0.099 m²，land_use_partition_complete=false</td></tr>
-      <tr><td>重点区域几何</td><td><span class="pill wip">provisional</span></td><td>Official boundary not released; a provisional substitute extent is used. Recalculation is required once official data is published; eligibility and scoring are for the maintainers and reviewers to judge under the formal rules</td></tr>
-      <tr><td>法定控制指标</td><td><span class="pill wip">missing</span></td><td>容积率、建筑高度、密度、绿地率、退线均缺失，保持 unknown 未代填</td></tr>
-      <tr><td>可视化打包检查</td><td><span class="pill ok">离线</span></td><td>无远程脚本、样式、字体、媒体与地图瓦片；地图由本地 GeoJSON 现场生成</td></tr>
+      <tr><td>Spatial review spatial_review</td><td><span class="pill ok">PASS</span></td><td>No out-of-boundary features; residual land-use partition gap 14.897 m², overlap 0.099 m², land_use_partition_complete=false</td></tr>
+      <tr><td>Key-area geometry</td><td><span class="pill wip">provisional</span></td><td>Official boundary not released; a provisional substitute extent is used. Recalculation is required once official data is published; eligibility and scoring are for the maintainers and reviewers to judge under the formal rules</td></tr>
+      <tr><td>Statutory control indicators</td><td><span class="pill wip">missing</span></td><td>Floor area ratio, building height, building density, green ratio, and setback are all missing; kept as unknown and not filled in</td></tr>
+      <tr><td>Visual packaging check</td><td><span class="pill ok">Offline</span></td><td>No remote script, stylesheet, font, media, or map tile; the map is generated on the spot from local GeoJSON</td></tr>
     </tbody>
   </table>
 </section>
 
 <section id="s-src">
   <h2><span>13</span>Sources &amp; Assumptions</h2>
-  <h3>来源</h3>
+  <h3>Sources</h3>
   <ul class="plain">
-    <li>面积口径：<span class="mono">brief/site-package/ranges/planning_limits.json</span>（来源 SRC-2026-BJ-GH-QUAL-PREANNOUNCEMENT）</li>
-    <li>临时边界与重点区域：<span class="mono">brief/site-package/geometry/provisional_boundaries.geojson</span></li>
-    <li>用地代码：<span class="mono">brief/site-package/enums/land_use_codes.json</span>（项目子集，正式统计前须导入完整官方代码表）</li>
-    <li>必答任务口径：<span class="mono">brief/site-package/agent_taskbook.json</span></li>
-    <li>案例参照与文化史料：正式稿中逐条补齐可公开来源，本版尚未引用具体案例数据</li>
+    <li>Area basis: <span class="mono">brief/site-package/ranges/planning_limits.json</span> (source SRC-2026-BJ-GH-QUAL-PREANNOUNCEMENT)</li>
+    <li>Provisional boundary and key areas: <span class="mono">brief/site-package/geometry/provisional_boundaries.geojson</span></li>
+    <li>Land-use codes: <span class="mono">brief/site-package/enums/land_use_codes.json</span> (project subset; the complete official code table must be imported before formal statistics)</li>
+    <li>Mandatory task basis: <span class="mono">brief/site-package/agent_taskbook.json</span></li>
+    <li>Case references and cultural historical material: public sources are to be completed item by item in the formal version; this version cites no specific case data</li>
   </ul>
-  <h3>假设</h3>
+  <h3>Assumptions</h3>
   <ul class="plain">
-    <li>设计范围采用 <span class="mono">provisional_constraint</span> 临时边界，仅用于概念生成、可视化与自检，<b>不得</b>作为官方红线、审批依据或精确面积结论。</li>
-    <li>道路红线宽度（主线 44 m / 次干 26 m / 支路 16 m）为概念假设值。</li>
-    <li>建筑层数按用地类别设定假设值，用于概念体量推算，非审定容积率依据。</li>
-    <li>组件库价格带为概念性量级区间，非报价、非采购依据。</li>
-    <li>分期划分为概念建议，不构成实施计划、投资承诺或时序安排。</li>
-    <li>本方案不提供桥隧、地下空间或任何工程可行性结论，不涉及地块权属与拆迁判断。</li>
+    <li>The design area uses the <span class="mono">provisional_constraint</span> provisional boundary, used only for provisional generation, visualisation, and self-check; it <b>must not</b> be used as an official red line, an approval basis, or a precise area conclusion.</li>
+    <li>Right-of-way widths (44 m arterial / 26 m secondary / 16 m local) are conceptual assumed values.</li>
+    <li>Storey counts are assumed values set by land-use class and are used for conceptual massing estimates; they are not a basis for an approved floor area ratio.</li>
+    <li>Component catalogue price bands are conceptual order-of-magnitude ranges; they are not a quotation or a procurement basis.</li>
+    <li>The phase division is a conceptual recommendation and does not constitute an implementation plan, an investment commitment, or a schedule.</li>
+    <li>This proposal provides no bridge, tunnel, underground space, or engineering feasibility conclusion, and makes no judgement on parcel ownership or demolition.</li>
   </ul>
 </section>
 
@@ -3415,10 +3462,10 @@ footer{margin-top:58px;padding-top:20px;border-top:2px solid var(--ink);
 <script src="assets/gauge-tour.js" defer></script>
 
 <footer>
-  <span>京张公制 THE JING-ZHANG GAUGE</span>
+  <span>THE JING-ZHANG GAUGE</span>
   <span>JZ-Gauge v0.1</span>
   <span>EPSG:4548</span>
-  <span>概念建议 · 非法定规划成果</span>
+  <span>Conceptual recommendation · not a statutory planning outcome</span>
 </footer>
 
 </div>

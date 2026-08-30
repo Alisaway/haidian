@@ -58,6 +58,26 @@ summary: >-
         self.assertEqual(parse_front_matter("Body"), ({}, "Body"))
         self.assertEqual(parse_front_matter("---\nsummary: x"), ({}, "---\nsummary: x"))
 
+    def test_crlf_front_matter_preserves_crlf_body(self) -> None:
+        text = '---\r\ntitle: "CRLF proposal"\r\nsummary: >-\r\n  First line.\r\n  Second line.\r\n---\r\nBody\r\n'
+
+        metadata, body = parse_front_matter(text)
+
+        self.assertEqual(metadata["title"], "CRLF proposal")
+        self.assertEqual(metadata["summary"], "First line. Second line.")
+        self.assertEqual(body, "Body\r\n")
+        self.assertEqual(parse_gallery_front_matter(text), metadata)
+
+    def test_delimiter_must_occupy_the_complete_line(self) -> None:
+        for false_delimiter in ("---suffix", "----"):
+            with self.subTest(false_delimiter=false_delimiter):
+                text = f"---\ntitle: Test\n{false_delimiter}\nBody\n"
+                self.assertEqual(parse_front_matter(text), ({}, text))
+
+        metadata, body = parse_front_matter("---  \ntitle: Test\n---\t\nBody\n")
+        self.assertEqual(metadata, {"title": "Test"})
+        self.assertEqual(body, "Body\n")
+
 
 if __name__ == "__main__":
     unittest.main()

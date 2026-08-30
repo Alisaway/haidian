@@ -10,7 +10,10 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from auto_review_queue import (  # noqa: E402
+    Decision,
     WorkerError,
+    acquire_worker_lock,
+    apply_review,
     ci_state,
     decide,
     load_cached_review,
@@ -23,12 +26,79 @@ from generate_submissions_data import package_sha256  # noqa: E402
 
 
 class AutoReviewQueueTests(unittest.TestCase):
+    def test_merge_is_bound_to_reviewed_head_for_all_merge_modes(self) -> None:
+        head_sha = "a" * 40
+        live = {
+            "headRefOid": head_sha,
+            "state": "OPEN",
+            "isDraft": False,
+            "mergeable": "MERGEABLE",
+            "statusCheckRollup": [
+                {"name": "submission-validation", "conclusion": "SUCCESS"}
+            ],
+        }
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        comment_file = Path(tmp.name) / "pr-comment.md"
+        comment_file.write_text(
+            "# AI Agent 评审意见\n\n## 七维评分\n- **任务书对齐 4/5**：证据充分。\n",
+            encoding="utf-8",
+        )
+        for admin_merge in (False, True):
+            with self.subTest(admin_merge=admin_merge):
+                with (
+                    patch("auto_review_queue.pr_meta", return_value=live),
+                    patch("auto_review_queue.run") as run_mock,
+                ):
+                    apply_review(
+                        "open-city-ai/haidian",
+                        42,
+                        head_sha,
+                        Decision("accept", 90, "accepted"),
+                        comment_file,
+                        ROOT,
+                        admin_merge=admin_merge,
+                    )
+
+                    review_call = next(
+                        call
+                        for call in run_mock.call_args_list
+                        if call.args[0][:3] == ["gh", "pr", "review"]
+                    )
+                    review_body = review_call.args[0][review_call.args[0].index("--body") + 1]
+                    self.assertIn("no rejection condition was triggered", review_body)
+                    self.assertIn("review-readiness checks also passed", review_body)
+                    self.assertIn("Accepted for repository intake only", review_body)
+                    self.assertIn("## 七维评分", review_body)
+                    self.assertIn("任务书对齐 4/5", review_body)
+                    run_mock.assert_any_call(
+                        [
+                            "gh",
+                            "pr",
+                            "merge",
+                            "42",
+                            "--repo",
+                            "open-city-ai/haidian",
+                            "--merge",
+                            "--match-head-commit",
+                            head_sha,
+                            *(["--admin"] if admin_merge else []),
+                        ],
+                        cwd=ROOT,
+                    )
+                    review_command = next(
+                        call.args[0]
+                        for call in run_mock.call_args_list
+                        if call.args[0][:3] == ["gh", "pr", "review"]
+                    )
+                    self.assertIn("no rejection condition was triggered", review_command[-1])
+
     def test_default_image_budget_matches_bilingual_packet(self) -> None:
         with patch.object(sys, "argv", ["auto_review_queue"]):
             args = parse_args()
         self.assertEqual(18, args.max_images)
 
-    def test_accepts_score_at_threshold_when_all_gates_pass(self) -> None:
+    def test_accepts_score_at_threshold_when_intake_ready_even_if_not_publishable(self) -> None:
         review = {
             "mandatory_rejection": {"result": "pass"},
             "gate_checks": {
@@ -40,8 +110,130 @@ class AutoReviewQueueTests(unittest.TestCase):
                     "professional_evidence_review",
                 ]
             },
+            "recommendation": "formal-review-ready",
+            "can_enter_formal_review": True,
+            "required_next_actions_zh": [],
         }
-        self.assertEqual("accept", decide(review, {"weighted_score_100": 60}, 60).action)
+        decision = {
+            "weighted_score_100": 60,
+            "publication_recommendation": "do-not-publish",
+        }
+        self.assertEqual("accept", decide(review, decision, 60).action)
+
+    def test_conditional_followups_do_not_block_intake(self) -> None:
+        review = {
+            "mandatory_rejection": {"result": "pass"},
+            "gate_checks": {
+                name: {"status": "pass"}
+                for name in [
+                    "deterministic_validation",
+                    "spatial_review",
+                    "visual_review",
+                    "professional_evidence_review",
+                ]
+            },
+            "recommendation": "formal-review-ready",
+            "can_enter_formal_review": True,
+            "required_next_actions_zh": [],
+            "conditional_followups": [
+                {
+                    "action_zh": "正式边界发布后，从拓扑开始重算全部空间载体。",
+                    "blocking_now": False,
+                    "trigger": "official-data-available",
+                    "owner": "participant",
+                }
+            ],
+        }
+        outcome = decide(review, {"weighted_score_100": 90}, 60)
+        self.assertEqual("accept", outcome.action)
+
+    def test_invalid_conditional_followup_fails_closed(self) -> None:
+        review = {
+            "mandatory_rejection": {"result": "pass"},
+            "gate_checks": {
+                name: {"status": "pass"}
+                for name in [
+                    "deterministic_validation",
+                    "spatial_review",
+                    "visual_review",
+                    "professional_evidence_review",
+                ]
+            },
+            "recommendation": "formal-review-ready",
+            "can_enter_formal_review": True,
+            "required_next_actions_zh": [],
+            "conditional_followups": [
+                {
+                    "action_zh": "立即修复当前错误声明。",
+                    "blocking_now": True,
+                    "trigger": "now",
+                    "owner": "participant",
+                }
+            ],
+        }
+        outcome = decide(review, {"weighted_score_100": 90}, 60)
+        self.assertEqual("request-changes", outcome.action)
+        self.assertIn("conditional_followups", outcome.reason)
+
+    def test_non_formal_recommendation_blocks_intake(self) -> None:
+        review = {
+            "mandatory_rejection": {"result": "pass"},
+            "gate_checks": {
+                name: {"status": "pass"}
+                for name in [
+                    "deterministic_validation",
+                    "spatial_review",
+                    "visual_review",
+                    "professional_evidence_review",
+                ]
+            },
+            "recommendation": "request-changes",
+            "can_enter_formal_review": True,
+            "required_next_actions_zh": [],
+        }
+        outcome = decide(review, {"weighted_score_100": 90}, 60)
+        self.assertEqual("request-changes", outcome.action)
+        self.assertEqual("intake blocked by review fields: recommendation", outcome.reason)
+
+    def test_false_formal_review_flag_blocks_intake(self) -> None:
+        review = {
+            "mandatory_rejection": {"result": "pass"},
+            "gate_checks": {
+                name: {"status": "pass"}
+                for name in [
+                    "deterministic_validation",
+                    "spatial_review",
+                    "visual_review",
+                    "professional_evidence_review",
+                ]
+            },
+            "recommendation": "formal-review-ready",
+            "can_enter_formal_review": False,
+            "required_next_actions_zh": [],
+        }
+        outcome = decide(review, {"weighted_score_100": 90}, 60)
+        self.assertEqual("request-changes", outcome.action)
+        self.assertEqual("intake blocked by review fields: can_enter_formal_review", outcome.reason)
+
+    def test_required_participant_actions_block_intake(self) -> None:
+        review = {
+            "mandatory_rejection": {"result": "pass"},
+            "gate_checks": {
+                name: {"status": "pass"}
+                for name in [
+                    "deterministic_validation",
+                    "spatial_review",
+                    "visual_review",
+                    "professional_evidence_review",
+                ]
+            },
+            "recommendation": "formal-review-ready",
+            "can_enter_formal_review": True,
+            "required_next_actions_zh": ["补充权属证明。"],
+        }
+        outcome = decide(review, {"weighted_score_100": 90}, 60)
+        self.assertEqual("request-changes", outcome.action)
+        self.assertEqual("intake blocked by review fields: required_next_actions_zh", outcome.reason)
 
     def test_low_score_is_not_merged(self) -> None:
         review = {
@@ -79,6 +271,18 @@ class AutoReviewQueueTests(unittest.TestCase):
         self.assertEqual("submissions/Alice/plan", submission_dir_from_files(paths, "alice"))
         with self.assertRaises(WorkerError):
             submission_dir_from_files(paths + ["README.md"], "alice")
+
+    def test_worker_lock_rejects_second_holder_until_released(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            lock_path = Path(tmp) / ".worker.lock"
+            first = acquire_worker_lock(lock_path)
+            try:
+                with self.assertRaises(WorkerError):
+                    acquire_worker_lock(lock_path)
+            finally:
+                first.close()
+            third = acquire_worker_lock(lock_path)
+            third.close()
 
     def test_pr_file_paths_preserve_unicode_from_paginated_json(self) -> None:
         payload = [[
@@ -200,12 +404,25 @@ class AutoReviewQueueTests(unittest.TestCase):
             checkout = Path(temp_dir) / "checkout"
             submission = checkout / "submissions" / "alice" / "plan"
             submission.mkdir(parents=True)
+            schema_path = (
+                checkout
+                / "brief"
+                / "site-package"
+                / "schemas"
+                / "advisory_review.schema.json"
+            )
+            schema_path.parent.mkdir(parents=True)
+            schema_path.write_text(
+                json.dumps({"properties": {"schema_version": {"const": "0.2.1"}}}),
+                encoding="utf-8",
+            )
             (submission / "proposal.md").write_text("proposal", encoding="utf-8")
             (submission / "manifest.json").write_text('{"files": []}', encoding="utf-8")
             digest = package_sha256(submission)
             audit = Path(temp_dir) / "audit"
             audit.mkdir()
             review = {
+                "schema_version": "0.2.1",
                 "submission_dir": "submissions/alice/plan",
                 "mandatory_rejection": {"result": "pass"},
                 "gate_checks": {
@@ -217,11 +434,15 @@ class AutoReviewQueueTests(unittest.TestCase):
                         "professional_evidence_review",
                     ]
                 },
+                "recommendation": "formal-review-ready",
+                "can_enter_formal_review": True,
+                "required_next_actions_zh": [],
             }
             decision = {
                 "submission_dir": "submissions/alice/plan",
                 "reviewed_package_sha256": digest,
                 "weighted_score_100": 61,
+                "publication_recommendation": "publish-qualified",
                 "dry_run": False,
                 "model_output_schema_valid": True,
             }
@@ -233,6 +454,13 @@ class AutoReviewQueueTests(unittest.TestCase):
             self.assertIsNotNone(cached)
             assert cached is not None
             self.assertEqual("accept", cached[2].action)
+
+            review["schema_version"] = "0.2.0"
+            (audit / "ai-review.json").write_text(json.dumps(review), encoding="utf-8")
+            self.assertIsNone(load_cached_review(audit, "submissions/alice/plan", checkout, 60))
+
+            review["schema_version"] = "0.2.1"
+            (audit / "ai-review.json").write_text(json.dumps(review), encoding="utf-8")
 
             (submission / "proposal.md").write_text("updated", encoding="utf-8")
             self.assertIsNone(load_cached_review(audit, "submissions/alice/plan", checkout, 60))

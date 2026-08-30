@@ -1,42 +1,199 @@
 {
   "schema_version": "2.0.0",
   "audit_status": "completed",
-  "audit_date": "2026-08-13",
+  "audit_date": "2026-08-29",
   "scope": "human_facing_primary_deliverables",
-  "review_method": "逐项人工比对中文与英文的标题、正文主张、数字、单位、时序、图位、证据状态和实施条件，并完成 PDF 逐页渲染检查。",
+  "review_method": "逐项比对中英文标题、正文主张、数字、单位、时序、图位、证据状态和实施条件；本轮针对 88 分评审重新从 GeoJSON/v0.4 网格生成 site-overview 与 metrics-evidence，并将四份 PDF 共 44 页全部渲染为最终 PNG 截图，检查空白、越界、裁切、关键图可读性和英文翻译残留。",
   "pair_count": 23,
   "missing_count": 0,
   "pairs": [
-    {"zh":"proposal.md","en":"proposal.en.md","status":"equivalent"},
-    {"zh":"report/proposal.html","en":"report/proposal.en.html","status":"equivalent"},
-    {"zh":"visual/index.html","en":"visual/index.en.html","status":"equivalent"},
-    {"zh":"drawings/a3-booklet.pdf","en":"drawings/a3-booklet.en.pdf","status":"equivalent","page_count":18},
-    {"zh":"drawings/a0-boards.pdf","en":"drawings/a0-boards.en.pdf","status":"equivalent","page_count":4},
-    {"zh":"assets/figures/site-overview.png","en":"assets/figures/site-overview.en.png","status":"equivalent","checks":["11.41 km²","3","6","0–24 mo"]},
-    {"zh":"assets/figures/land-use-structure.png","en":"assets/figures/land-use-structure.en.png","status":"equivalent"},
-    {"zh":"assets/figures/key-areas.png","en":"assets/figures/key-areas.en.png","status":"equivalent"},
-    {"zh":"assets/figures/mobility-bluegreen.png","en":"assets/figures/mobility-bluegreen.en.png","status":"equivalent"},
-    {"zh":"assets/figures/metrics-evidence.png","en":"assets/figures/metrics-evidence.en.png","status":"equivalent"},
-    {"zh":"assets/figures/implementation-protocol.png","en":"assets/figures/implementation-protocol.en.png","status":"equivalent"},
-    {"zh":"assets/figures/inclusion-incidence.png","en":"assets/figures/inclusion-incidence.en.png","status":"equivalent"},
-    {"zh":"assets/figures/area-action-plan.png","en":"assets/figures/area-action-plan.en.png","status":"equivalent"},
-    {"zh":"assets/figures/implementation-section.png","en":"assets/figures/implementation-section.en.png","status":"equivalent"},
-    {"zh":"assets/figures/service-node-kit.png","en":"assets/figures/service-node-kit.en.png","status":"equivalent"},
-    {"zh":"assets/figures/regional-collaboration.png","en":"assets/figures/regional-collaboration.en.png","status":"equivalent"},
-    {"zh":"assets/figures/ai-governance.png","en":"assets/figures/ai-governance.en.png","status":"equivalent"},
-    {"zh":"assets/figures/delivery-program.png","en":"assets/figures/delivery-program.en.png","status":"equivalent"},
-    {"zh":"assets/figures/brand-system.png","en":"assets/figures/brand-system.en.png","status":"equivalent"},
-    {"zh":"assets/figures/rights-evidence.png","en":"assets/figures/rights-evidence.en.png","status":"equivalent"},
-    {"zh":"assets/figures/ecosystem-benchmark.png","en":"assets/figures/ecosystem-benchmark.en.png","status":"equivalent"},
-    {"zh":"assets/figures/culture-landmarks.png","en":"assets/figures/culture-landmarks.en.png","status":"equivalent"},
-    {"zh":"assets/figures/annual-operation.png","en":"assets/figures/annual-operation.en.png","status":"equivalent"}
+    {
+      "zh": "proposal.md",
+      "en": "proposal.en.md",
+      "status": "equivalent"
+    },
+    {
+      "zh": "report/proposal.html",
+      "en": "report/proposal.en.html",
+      "status": "equivalent"
+    },
+    {
+      "zh": "visual/index.html",
+      "en": "visual/index.en.html",
+      "status": "equivalent"
+    },
+    {
+      "zh": "drawings/a3-booklet.pdf",
+      "en": "drawings/a3-booklet.en.pdf",
+      "status": "equivalent",
+      "page_count": 18
+    },
+    {
+      "zh": "drawings/a0-boards.pdf",
+      "en": "drawings/a0-boards.en.pdf",
+      "status": "equivalent",
+      "page_count": 4
+    },
+    {
+      "zh": "assets/figures/site-overview.png",
+      "en": "assets/figures/site-overview.en.png",
+      "status": "equivalent",
+      "checks": [
+        "same V6 direct-GeoJSON layout and title hierarchy in Chinese and English",
+        "same geometry/evidence: provisional working boundary, three key areas, 8 retained nodes + 4 consensus replacements, CORRIDOR-04 lead window and 37 robust opportunity cells at P(top20)>=0.75",
+        "same key metrics: 11.413 km² provisional working base, 2025 WorldPop modelled population, 17.9% gap1 population, 61.9% V2 consensus gap1 coverage, CORRIDOR-04 top20 robustness 99.86%",
+        "same three key-area roles: Zhongzhiyuan=validation+everyday-service completion, AI Origin=talent/family/health support, Dazhongsi=station-city connectivity first",
+        "same prominent concept/provisional/not-official-redline/not-built-scene warning",
+        "long north-south belt is horizontally unrolled with cross-axis x2 explicitly disclosed for legibility; map labels use IDs/symbols while full labels stay in sidebar to prevent collisions",
+        "HTML references the corresponding same-semantic figure pair; A3/A0 were rebuilt from these files"
+      ]
+    },
+    {
+      "zh": "assets/figures/land-use-structure.png",
+      "en": "assets/figures/land-use-structure.en.png",
+      "status": "equivalent",
+      "checks": [
+        "same topic: six mixed-use functions grow along one spine",
+        "same six-function order and conceptual mix: 18% / 17% / 15% / 15% / 20% / 15%",
+        "same caveat: design comparison subject to statutory land-use, tenure, building survey and implementation verification",
+        "A3/A0 captions and insertion positions updated to the mixed-use theme",
+        "English raster contains English-only formal annotations"
+      ]
+    },
+    {
+      "zh": "assets/figures/key-areas.png",
+      "en": "assets/figures/key-areas.en.png",
+      "status": "equivalent",
+      "checks": [
+        "panel order: Zhongzhiyuan / AI Origin Community / Dazhongsi",
+        "Zhongzhiyuan=validation + everyday-service completion",
+        "AI Origin=shared ground floor for talent/family/health",
+        "Dazhongsi=station-city connectivity first",
+        "English panel text is English-only"
+      ]
+    },
+    {
+      "zh": "assets/figures/mobility-bluegreen.png",
+      "en": "assets/figures/mobility-bluegreen.en.png",
+      "status": "equivalent",
+      "checks": [
+        "English file regenerated from clean source layout instead of raster title patching",
+        "CORRIDOR-04 remains the 1.0 km first-phase window",
+        "full-axis wording is conceptual",
+        "no unsupported exact whole-axis length"
+      ]
+    },
+    {
+      "zh": "assets/figures/metrics-evidence.png",
+      "en": "assets/figures/metrics-evidence.en.png",
+      "status": "equivalent",
+      "checks": [
+        "same V6 four-class structure: baseline/model, design response, scenario effect, delivery control",
+        "same core values: 192.6k modelled population, gap1 17.9%, Sentinel-2 vegetation proxy, 12 nodes, 320 m² node module, 1.0 km CORRIDOR-04 window, gap1 39.4%→61.9%, gap2 51.5%, P(top20)=99.86%",
+        "titles and descriptions occupy separate fixed cards rather than the former collision-prone timeline layout",
+        "same re-check triggers and built-outcome caveat",
+        "A3/A0 and HTML reference the corresponding same-semantic figure pair"
+      ]
+    },
+    {
+      "zh": "assets/figures/implementation-protocol.png",
+      "en": "assets/figures/implementation-protocol.en.png",
+      "status": "equivalent"
+    },
+    {
+      "zh": "assets/figures/inclusion-incidence.png",
+      "en": "assets/figures/inclusion-incidence.en.png",
+      "status": "equivalent"
+    },
+    {
+      "zh": "assets/figures/area-action-plan.png",
+      "en": "assets/figures/area-action-plan.en.png",
+      "status": "equivalent"
+    },
+    {
+      "zh": "assets/figures/implementation-section.png",
+      "en": "assets/figures/implementation-section.en.png",
+      "status": "equivalent"
+    },
+    {
+      "zh": "assets/figures/service-node-kit.png",
+      "en": "assets/figures/service-node-kit.en.png",
+      "status": "equivalent"
+    },
+    {
+      "zh": "assets/figures/regional-collaboration.png",
+      "en": "assets/figures/regional-collaboration.en.png",
+      "status": "equivalent"
+    },
+    {
+      "zh": "assets/figures/ai-governance.png",
+      "en": "assets/figures/ai-governance.en.png",
+      "status": "equivalent"
+    },
+    {
+      "zh": "assets/figures/delivery-program.png",
+      "en": "assets/figures/delivery-program.en.png",
+      "status": "equivalent"
+    },
+    {
+      "zh": "assets/figures/brand-system.png",
+      "en": "assets/figures/brand-system.en.png",
+      "status": "equivalent"
+    },
+    {
+      "zh": "assets/figures/rights-evidence.png",
+      "en": "assets/figures/rights-evidence.en.png",
+      "status": "equivalent"
+    },
+    {
+      "zh": "assets/figures/ecosystem-benchmark.png",
+      "en": "assets/figures/ecosystem-benchmark.en.png",
+      "status": "equivalent"
+    },
+    {
+      "zh": "assets/figures/culture-landmarks.png",
+      "en": "assets/figures/culture-landmarks.en.png",
+      "status": "equivalent"
+    },
+    {
+      "zh": "assets/figures/annual-operation.png",
+      "en": "assets/figures/annual-operation.en.png",
+      "status": "equivalent"
+    }
   ],
   "substantive_checks": {
     "numbers_and_units": "pass",
-    "qualifiers_and_policy_status": "pass",
+    "qualifiers_and_policy_status": "pass; the unsupported exact whole-axis length was replaced by explicit conceptual/full-axis wording while the registered 1.0 km CORRIDOR-04 pilot remains unchanged",
     "evidence_markers": "pass",
     "figure_order_and_page_count": "pass",
-    "translation_residue": "pass; English site overview uses 0–24 mo",
-    "rendering": "pass; 18 Chinese and 18 English A3 pages rendered without clipping or blank pages"
+    "site_overview_semantic_equivalence": "pass; V6 Chinese and English overview figures are generated from the same submitted GeoJSON and v0.4 opportunity grid. The final map is horizontally unrolled with the cross-axis x2 disclosure, shows the provisional boundary, three key areas, 8+4 node classes, CORRIDOR-04 and 37 robust cells, and moves full labels to a sidebar to remove central label collisions.",
+    "public_space_ratio_dashboard": "pass; visual/index.html and visual/index.en.html render public_space_ratio=0.000336464 as 0.0336%, label it as the V2 twelve-service-node module footprint over the working base, and explicitly state that it is neither site-wide public-space provision nor a planning-control metric; targeted headless-Chrome screenshots verify the rendered value and qualifiers in both languages",
+    "translation_residue": "pass for final English figure set; all 18 .en.png figures were resized and OCR-scanned with chi_sim+eng and returned zero 2+ CJK sequences. V6 English SVG generation additionally hard-fails on any CJK codepoint, preventing reviewer-reported Chinese-unit residues. Final PDF screenshots retain the English 192.6k expression.",
+    "rendering": "pass at deterministic screenshot-QA level; all 18 Chinese + 18 English A3 pages and 4 Chinese + 4 English A0 boards (44 pages total) were rendered to individual PNG screenshots. qa_drawings_v2 reports all_pass=true and bilingual_page_count_match=true with no blank pages, text-block bounds errors, or outer-edge clipping flags. OCR of final English screenshot appearances recognizes the V6 spatial/metric titles and core values. Local Codex image-model visual calls were attempted but exceeded the connector single-call limit, so this record does not claim a separate model-human visual pass."
+  },
+  "font_embedding": {
+    "family": "Noto Sans SC",
+    "license": "SIL Open Font License 1.1",
+    "html": "subset WOFF2 embedded as a data URI in Chinese and English report/visual HTML where CJK proper nouns or navigation appear; no remote font dependency",
+    "pdf": "TrueType/OpenType subset embedded in Chinese A3 and A0 PDFs",
+    "verification": "PDF font descriptors contain embedded font streams; the unified offline HTML subset was regenerated from the current four HTML files and covers 865 distinct CJK codepoints with missing=0; headless Chrome reports document.fonts=loaded, JZ-NotoSC available and JZ-NotoSC as the computed body/title family on report/proposal.en.html and visual/index.en.html; rendered Chinese HTML screenshots are OCR-readable"
+  },
+  "publication_blocker_repairs": {
+    "chinese_font_rendering": "closed",
+    "english_key_area_panel_mapping_and_translation": "closed",
+    "unsupported_exact_whole_axis_length_claim": "closed",
+    "english_mobility_title_overlap": "closed",
+    "english_visible_text_translation_residue": "closed",
+    "key_area_role_mapping": "closed",
+    "english_land_use_translation_pair": "closed",
+    "english_metrics_evidence_translation_pair": "closed",
+    "english_html_cjk_tofu": "closed",
+    "english_metrics_55_0_57_6_overlap": "closed",
+    "site_overview_translation_pair": "closed",
+    "site_overview_provisional_boundary_warning": "closed",
+    "public_space_ratio_dashboard_label_and_precision": "closed",
+    "site_overview_blank_map_and_label_collision": "closed by V6 direct-GeoJSON redraw and long-axis unrolling",
+    "site_overview_english_19_3_wan_residue": "closed; English expression is 192.6k and CJK is generation-blocked",
+    "english_metrics_title_description_overlap": "closed by V6 four-card fixed layout"
   }
 }

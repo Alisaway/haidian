@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0.0",
+  "recorded_on": "2026-08-29",
+  "scope": "Participant-controlled finalization gates for the AI review remediation batch.",
+  "gate_authorities": [
+    {
+      "gate_id": "AI_REVIEW_LAYER_CONSISTENCY",
+      "command": "node visual/assets/check-ai-review-layer.js --check",
+      "result_authority": "command exit status at final verification",
+      "participant_status": "pass_2026-08-29"
+    },
+    {
+      "gate_id": "REPOSITORY_SELF_CHECK",
+      "command": "python scripts/self_check_submission.py <submission> --pr-author varliuvar --mark-self-checked --json",
+      "result_authority": "self_check.json",
+      "participant_status": "pass_four_official_gates_self_checked_manifest_updated_2026-08-29"
+    },
+    {
+      "gate_id": "MANIFEST_INTEGRITY",
+      "command": "python scripts/refresh_submission_manifest.py <submission> --json",
+      "result_authority": "manifest.json",
+      "participant_status": "pass_final_declared_file_hashes_refreshed_before_self_check_2026-08-29"
+    },
+    {
+      "gate_id": "BILINGUAL_AND_FONT_QA",
+      "result_authority": "visual/assets/bilingual-equivalence.json and visual/assets/pdf-font-audit.json",
+      "participant_status": "pass_888_of_888_cjk_current_html_and_four_image_only_pdfs_2026-08-29_human_certification_not_claimed"
+    },
+    {
+      "gate_id": "RIGHTS_AND_PUBLICATION",
+      "result_authority": "visual/assets/asset-rights-ledger.json and visual/assets/asset-clearance-disposition.json",
+      "participant_status": "pass_participant_declared_noncommercial_static_review_scope_without_provider_terms_evidence_pending_maintainer_re_review",
+      "evidence_scope": "generation_lineage_and_participant_limited_release_authorization",
+      "output_use_basis": "Participant-controlled inputs, reproducible local run evidence, exact shipped-component mapping, and participant authorization for this PR and noncommercial static community review only.",
+      "provider_terms_evidence": null,
+      "provider_terms_authorization_claimed": false,
+      "commercial_or_standalone_reuse": false
+    },
+    {
+      "gate_id": "PACKAGE_SIZE",
+      "result_authority": "self_check.json deterministic_validation.stdout.total_bytes",
+      "participant_status": "pass_final_byte_count_under_40_mib_limit_2026-08-29"
+    },
+    {
+      "gate_id": "ADVISORY_PROPOSAL_SCORE",
+      "command": "python scripts/score_submission.py <submission>/proposal.md --repo-root . --json",
+      "result_authority": "command output; advisory only",
+      "participant_status": "ready_true_6_pass_2_needs_work_0_missing_2026-08-28_advisory_only"
+    }
+  ],
+  "remaining_external_decisions": [
+    "maintainer human semantic spot-check and final maintainer QA under the repository workflow",
+    "official-register trademark review before formal public-brand use",
+    "maintainer admission to professional review and publication decision"
+  ],
+  "claim_boundary": "All participant-controlled R1/R2 repairs are complete for the declared PR and noncommercial static-review scope. AR-013 cleared_with_evidence means complete generation lineage plus participant limited-release authorization, not provider terms authorization; Tokai provider IDs and terms remain null. Maintainer approval, professional admission, planning approval, commercial reuse, standalone-source redistribution, and broader publication authorization are not asserted."
+}

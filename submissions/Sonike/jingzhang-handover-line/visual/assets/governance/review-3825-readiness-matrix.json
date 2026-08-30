@@ -1,0 +1,220 @@
+{
+  "schema_version": "1.0.0",
+  "reviewed_at": "2026-08-24T18:23:31+08:00",
+  "repaired_at": "2026-08-30",
+  "baseline_git_sha": "96fd146fff4beb1ddafda31b58962aec9fb2a0b4",
+  "baseline_official_review": {
+    "recommendation": "request-changes",
+    "can_enter_formal_review": false,
+    "weighted_score_100": 96,
+    "implementation_feasibility_score_5": 4,
+    "public_interest_inclusion_score_5": 5,
+    "deterministic_gate": "PASS",
+    "spatial_gate": "PASS",
+    "visual_gate": "PASS",
+    "professional_evidence_gate": "PASS",
+    "rendered_mandatory_hit_count": 0,
+    "numbered_next_action_count": 7
+  },
+  "scope_note_zh": "这是参与者对当前概念投稿包的事实核对与修复归类，不是官方接收、获奖、规划审定、采购、现场许可或政府背书。CLOSED_FOR_FORMAL_REVIEW 只表示参与者可控制的当前投稿材料已闭合，可交给评委评分；真实现场、公众绩效主张和正式几何复算继续由各自前置门阻断。",
+  "scope_note_en": "This is the participant's factual package audit and repair classification, not official acceptance, an award, planning determination, procurement, site permission or government endorsement. CLOSED_FOR_FORMAL_REVIEW means only that participant-controlled submission materials are closed and may be handed to jurors for scoring; field activation, public-performance claims and official-geometry recalculation remain separately blocked.",
+  "current_round_participant_controlled_additions": {
+    "updated_at": "2026-08-30",
+    "status": "E2_PARTICIPANT_PRE_FEASIBILITY_SCREENING_ADDED",
+    "purpose_zh": "针对基线评审中唯一的4/5维度，补齐参赛者在没有真实场地、报价和专业签认时仍能诚实完成的预可研内容，不改写基线官方评分，也不宣称现场门已通过。",
+    "evidence_added": [
+      "7.2×7.2m参考控制外框与6×6m可逆操作面",
+      "公众8人、岗位3席、排队6人、36个缓冲任务时段／日",
+      "260个计划开放小时与780个岗位工时",
+      "约12–29万元／90天和约30–65万元／年的参赛者成本敏感性",
+      "四级维护、4人×4小时未实测撤场目标与四个替代方案",
+      "30秒／3分钟／15分钟评委证据索引"
+    ],
+    "evidence_refs": [
+      "visual/assets/governance/p0-pre-feasibility-envelope.json",
+      "visual/assets/governance/jury-evidence-index.json",
+      "assets/figures/metrics-evidence.png",
+      "proposal.md#p0-实施先搭一张桌再决定是否建一条线"
+    ],
+    "external_evidence_still_absent": [
+      "site",
+      "named_operator",
+      "professional_signoff",
+      "three_market_quotes",
+      "insurance",
+      "approved_budget",
+      "field_observation"
+    ],
+    "effect_on_baseline_official_review": "none; baseline score and recommendation are historical facts",
+    "effect_on_field_pilot_result": "none; remains BLOCKED_EXTERNAL_PRE_PILOT"
+  },
+  "eligibility_evidence": [
+    {
+      "check_id": "privacy_personal_or_nonpublic_data",
+      "rejection_condition_observed": false,
+      "finding_zh": "包内只使用已登记公开来源与明确标为临时的概念几何；离线原型不联网、不持久化、不采姓名、联系方式、连续位置、人脸或证件字段，真实参与者记录当前为 0。",
+      "finding_en": "The package uses registered public sources and explicitly provisional concept geometry only. The offline prototype has no network, persistence, name, contact, continuous-location, facial or identity-document fields, and real-participant records remain zero.",
+      "evidence_refs": [
+        "sources.json#sources",
+        "visual/index.html#p0-prototype",
+        "visual/assets/governance/p0-delivery-contract.json#current_evidence"
+      ]
+    },
+    {
+      "check_id": "fabricated_official_endorsement",
+      "rejection_condition_observed": false,
+      "finding_zh": "正文、图件、HTML 与权利声明均把成果限定为概念建议，并明确自检、入库或评审通过都不构成政府背书、批准、采购、认证或获奖。",
+      "finding_en": "The narrative, figures, HTML and rights statement all bound the work as a concept proposal and state that validation, repository intake or review does not constitute government endorsement, approval, procurement, certification or an award.",
+      "evidence_refs": [
+        "proposal.md#风险与版权边界",
+        "report/copyright_statement.md",
+        "assets/figures/site-overview.png"
+      ]
+    },
+    {
+      "check_id": "unlawful_discriminatory_malicious",
+      "rejection_condition_observed": false,
+      "finding_zh": "包内没有攻击、歧视、恶意或违法用途；相反，公共利益合同把拒绝算法不受罚、无 AI 等价、无障碍、匿名异议和失败后继续基础服务设为全部十二场景的硬门。",
+      "finding_en": "No attacking, discriminatory, malicious or unlawful use is present. The public-benefit contract instead makes penalty-free algorithm refusal, no-AI equivalence, accessibility, anonymous dissent and continued basic service after failure hard gates across all twelve scenarios.",
+      "evidence_refs": [
+        "visual/assets/governance/public-benefit-gate.json",
+        "visual/assets/governance/public-service-equivalence-contract.json",
+        "proposal.md#公共利益是开闸条件"
+      ]
+    },
+    {
+      "check_id": "material_irrelevance",
+      "rejection_condition_observed": false,
+      "finding_zh": "方案按约 43.6 km² 统筹研究层、约 11.4 km² 总体设计层、三处重点区与公告任务组织，全部任务入口均有正文、图层、指标、图纸与失败条件映射。",
+      "finding_en": "The proposal is organised around the approximately 43.6 km² strategic layer, approximately 11.4 km² overall-design layer, three focus areas and the brief, with narrative, layer, metric, drawing and failure-condition mappings for every task entry.",
+      "evidence_refs": [
+        "compliance_matrix.json#requirements",
+        "design_depth_matrix.json#depth_items",
+        "proposal.md#三层范围与唯一空间结构"
+      ]
+    },
+    {
+      "check_id": "agent_taskbook_coverage",
+      "rejection_condition_observed": false,
+      "finding_zh": "agent.1—agent.6 六项任务均有唯一任务入口、成果载体、证据引用与失败条件；不是仅列名而未回应。",
+      "finding_en": "All six agent.1-agent.6 tasks have unique task entries, deliverable carriers, evidence references and failure conditions; they are substantively mapped rather than merely named.",
+      "evidence_refs": [
+        "compliance_matrix.json#requirements",
+        "compliance_matrix.json#taskbook_entry_map",
+        "agent.json#tasks"
+      ]
+    },
+    {
+      "check_id": "settled_government_decision",
+      "rejection_condition_observed": false,
+      "finding_zh": "所有空间量、边界、主体、预算、报价、授权、专业签认与现场绩效都按概念、临时、待定、空值或 0 呈现；没有把建议写成已确定的政府决定或实施安排。",
+      "finding_en": "All spatial quantities, boundaries, actors, budgets, quotes, authorisations, professional sign-offs and field performance are presented as conceptual, provisional, pending, null or zero; no proposal is represented as a settled government decision or implementation arrangement.",
+      "evidence_refs": [
+        "assumptions.json#assumptions",
+        "metrics.json#precision_policy_zh",
+        "visual/assets/governance/p0-delivery-contract.json#current_evidence"
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "review_item_id": "R96-01",
+      "review_action_zh": "正式评审中完整比较中英成果与四份 PDF；若发现差异再同步修正。",
+      "classification": "formal_jury_review_procedure",
+      "participant_controlled_current_repair": false,
+      "repair_zh": "参与者已完成版本 2 映射、四套 PDF 全页文字层与字体审计、中英指标计数一致性及四个 HTML 离线视觉检查；人类评委的实质等价比较仍保留为正式评分程序，当前没有已知差异可供修复。",
+      "status": "JURY_PROCEDURE_REMAINS",
+      "evidence_refs": [
+        "self_check.json#deterministic_validation",
+        "visual/assets/governance/version-audit.js",
+        "visual/assets/governance/webfont-audit.js",
+        "visual/assets/governance/claims-audit.js#M9"
+      ]
+    },
+    {
+      "review_item_id": "R96-02",
+      "review_action_zh": "维持临时边界、概念尺寸、非道路红线和现场 0/12 等警示；变更后重跑四道 Gate。",
+      "classification": "current_package_invariant",
+      "participant_controlled_current_repair": false,
+      "repair_zh": "全部警示保持显著；本轮完成后重跑确定性、空间、视觉、专业证据四道可信 Gate，并只在四项均 PASS 时提交。",
+      "status": "CLOSED_FOR_CURRENT_PACKAGE",
+      "evidence_refs": [
+        "proposal.md",
+        "assets/figures/metrics-evidence.png",
+        "self_check.json"
+      ]
+    },
+    {
+      "review_item_id": "R96-03",
+      "review_action_zh": "取得正式边界或官方控制数据后按 EPSG:4548 公式联动复算。",
+      "classification": "organizer_owned_future_data_trigger",
+      "participant_controlled_current_repair": false,
+      "repair_zh": "复算公式、责任角色、影响文件和保守回退已预登记；输入尚未由组织方提供，因此当前保持概念精度，不构成投稿缺件。",
+      "status": "BLOCKED_ORGANIZER_DATA",
+      "evidence_refs": [
+        "assumptions.json#A-BOUNDARY-001",
+        "metrics.json#site_area_sqm",
+        "geometry/site_boundary.geojson"
+      ]
+    },
+    {
+      "review_item_id": "R96-04",
+      "review_action_zh": "SCN-05 现场启动前补齐八门、RACI 指派、询价、保险、预算与专业签认。",
+      "classification": "external_pre_pilot_readiness_gate",
+      "participant_controlled_current_repair": false,
+      "repair_zh": "字段、证据槽、责任分工、十二项构件和失败回退已完整交付；本轮再补7.2×7.2m参考包络、6×6m操作面、保守容量与排队、三席排班、90天及年度成本敏感性、维护撤场和四个替代方案。它们只关闭参赛者可控的预可研空白；真实主体、签字、报价、保险、预算与许可不得由投稿者虚构，任一缺失时智能层保持关闭、现场时钟不启动。",
+      "status": "BLOCKED_EXTERNAL_PRE_PILOT",
+      "evidence_refs": [
+        "visual/assets/governance/p0-delivery-contract.json#entry_gates",
+        "visual/assets/governance/p0-delivery-contract.json#raci_work_packages",
+        "visual/assets/governance/p0-delivery-contract.json#procurement",
+        "visual/assets/governance/p0-pre-feasibility-envelope.json",
+        "assets/figures/metrics-evidence.png"
+      ]
+    },
+    {
+      "review_item_id": "R96-05",
+      "review_action_zh": "发布公众可用性、包容性或现场绩效主张前完成至少 24 个真实任务场次。",
+      "classification": "future_public_claim_gate",
+      "participant_controlled_current_repair": false,
+      "repair_zh": "当前只主张设计覆盖、离线功能与预注册判据，真实观察和真实通过均为 0；24 场、八类需求、失败—修复—复测是任何未来现场绩效主张的发布门，不是本概念投稿的既成成果。",
+      "status": "BLOCKED_UNTIL_FIELD_EVIDENCE",
+      "evidence_refs": [
+        "visual/assets/governance/p0-delivery-contract.json#cotesting_protocol",
+        "visual/assets/governance/public-benefit-gate.json#current_evidence",
+        "metrics.json#real_user_accessibility_observation_count"
+      ]
+    },
+    {
+      "review_item_id": "R96-06",
+      "review_action_zh": "正式复用或传播时继续保留作者授权、字体许可、生成来源和非政府决定声明。",
+      "classification": "satisfied_persistent_rights_duty",
+      "participant_controlled_current_repair": false,
+      "repair_zh": "四类随行声明在当前包中已经存在并由 manifest 权利清单、直接作者授权、字体 OFL 与生成资产记录闭合；后续载体必须继续保留，不是当前缺项。",
+      "status": "CLOSED_AND_MUST_PERSIST",
+      "evidence_refs": [
+        "manifest.json#rights_inventory",
+        "manifest.json#license",
+        "report/copyright_statement.md"
+      ]
+    },
+    {
+      "review_item_id": "R96-07",
+      "review_action_zh": "完成七维评分中列出的两项详细 required repairs。",
+      "classification": "aggregate_reference_to_mapped_items",
+      "participant_controlled_current_repair": false,
+      "repair_zh": "该条是对详细项的汇总而非第三个独立缺陷：双语与完整翻阅归 R96-01，实施前真实条件归 R96-04/R96-05；当前投稿的可控制修复与边界表达已在本矩阵逐项闭合。",
+      "status": "CLOSED_BY_ITEM_MAPPING",
+      "evidence_refs": [
+        "visual/assets/governance/review-3825-readiness-matrix.json#issues",
+        "compliance_matrix.json#formal_review_readiness_boundary"
+      ]
+    }
+  ],
+  "package_result": "CLOSED_FOR_FORMAL_REVIEW",
+  "participant_controlled_open_repair_count": 0,
+  "field_pilot_result": "BLOCKED_EXTERNAL_PRE_PILOT",
+  "public_performance_claim_result": "BLOCKED_UNTIL_24_REAL_TASKS",
+  "official_geometry_result": "WAITING_ORGANIZER_INPUT",
+  "human_jury_result": "REVIEW_PROCEDURE_NOT_PARTICIPANT_REPAIR"
+}

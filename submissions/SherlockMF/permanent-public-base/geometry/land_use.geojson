@@ -1,0 +1,122 @@
+{
+  "type": "FeatureCollection",
+  "properties": {
+    "name": "G1B-B2A formal concept programme partition",
+    "crs": "EPSG:4326",
+    "concept_stage": true,
+    "statutory": false,
+    "official_boundary": false,
+    "exclusive_partition": true,
+    "overlay_exclusions": [
+      "CIVIC_STITCH_SUPPORT",
+      "Permanent Public Base",
+      "blue-green",
+      "heritage",
+      "Two Wings",
+      "AI/manual state"
+    ],
+    "not_for_area_scoring": true,
+    "classification_contract": "concept_programme_only_pending_official_mapping"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "LU-BASE",
+      "properties": {
+        "id": "LU-BASE",
+        "layer": "LAND_USE",
+        "source_type": "agent_generated_design",
+        "confidence": "low",
+        "geometry_role": "design_proposal",
+        "concept_programme_class": "RETAINED_EXISTING_CONDITION_BASE",
+        "title_zh": "保留既有条件基底",
+        "title_en": "Retained Existing-Condition Base",
+        "design_decision": "Intentional no-conversion field produced by the human-authorised selective-intervention rule; retain by default outside three exact approved intervention footprints.",
+        "source_feature_ids": [
+          "PROV-SITE-001"
+        ],
+        "source_ids": [
+          "F1-SRC-003-PROVISIONAL-GEOMETRY",
+          "F2-SRC-P82-APPROVED-SPATIAL",
+          "F2-SRC-P82R-SPATIAL-DRAWINGS"
+        ],
+        "assumption_ids": [
+          "A-G1B2A-01",
+          "A-G1B2A-02",
+          "A-G1B2A-05"
+        ],
+        "official_boundary": false,
+        "statutory": false,
+        "statutory_land_use_code": null,
+        "classification_mapping_status": "pending_official_data",
+        "concept_stage": true,
+        "recalculate_on_authoritative_geometry": true,
+        "area_sqm_declared": 11412825.385553986,
+        "calculation_crs": "EPSG:4548",
+        "cannot_claim": [
+          "statutory existing land use",
+          "unassigned residual land",
+          "future development reserve",
+          "survey accuracy"
+        ],
+        "limitations": "Participant working-boundary topology only; current use, ownership and statutory classification require official data and professional remapping.",
+        "derivation_method": "site_boundary_minus_exact_three_human_authorised_intervention_footprints",
+        "rejected_method": "previous_99.950566_percent_validator_residual_filler_and_B1_frame_copy",
+        "not_for_area_scoring": true
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              116.3553,
+              39.939
+            ],
+            [
+              116.3407,
+              39.939
+            ],
+            [
+              116.3397,
+              39.975
+            ],
+            [
+              116.3417,
+              40.006
+            ],
+            [
+              116.3427,
+              40.0265
+            ],
+            [
+              116.3553,
+              40.0265
+            ],
+            [
+              116.3533,
+              39.99
+            ],
+            [
+              116.3553,
+              39.965
+            ],
+            [
+              116.3553,
+              39.939
+            ]
+          ]
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "action_palette": [
+      "retain",
+      "repair",
+      "adapt",
+      "reversible_insert",
+      "no_intervention"
+    ],
+    "action_policy": "Default retain/no-intervention applies to the full partition; repair, adapt and reversible insertion occur only in separately registered design layers after evidence gates pass."
+  }
+}

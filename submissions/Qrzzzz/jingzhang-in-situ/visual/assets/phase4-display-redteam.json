@@ -1,0 +1,182 @@
+{
+  "schema": "jz-phase4-display-redteam/v1",
+  "scope": "Presentation-layer failure modes only; no authority-layer semantic edits",
+  "perspectives": [
+    "30-second jury scan",
+    "3-minute evidence route",
+    "mobile",
+    "projection",
+    "A3 print",
+    "A0 far/mid/near viewing",
+    "screen reader and keyboard"
+  ],
+  "summary": {
+    "tests": 17,
+    "closed": 13,
+    "mitigated_with_advisory": 2,
+    "retained_advisory": 1,
+    "usage_guidance": 1,
+    "semantic_drift": 0
+  },
+  "tests": [
+    {
+      "id": "D01",
+      "failure_mode": "A0 media size silently falls back to six Letter pages, destroying the two-board contract.",
+      "perspective": "A0 print",
+      "severity": "stop",
+      "resolution": "The generation source now uses an explicit A0 landscape page box and asserts two pages per language.",
+      "evidence": ["phase4-generation-contract.json#page_contract", "phase4-pdf-qa.json#page_contract"],
+      "status": "closed"
+    },
+    {
+      "id": "D02",
+      "failure_mode": "System-font fallback changes line breaks or removes Chinese glyphs on another host.",
+      "perspective": "A3/A0 print",
+      "severity": "stop",
+      "resolution": "A reproducible Noto Sans SC subset is built from a source with a locked SHA-256; all PDF fonts are embedded, subset, and ToUnicode-enabled.",
+      "evidence": ["phase4-presentation-sources.json#sources[restore_as=phase4-font-subset.py]", "font-subset.css", "phase4-pdf-qa.json#pdfs/*/fonts"],
+      "status": "closed"
+    },
+    {
+      "id": "D03",
+      "failure_mode": "A shared cover communicates the rights boundary in only one language.",
+      "perspective": "3-second cover scan",
+      "severity": "high",
+      "resolution": "The deterministic cover and its PDF caption carry the same Chinese and English conceptual-use and prohibited-use statement.",
+      "evidence": ["../../assets/media/cover.webp", "phase4-presentation-sources.json#sources[restore_as=phase4-presentation-generator.mjs]"],
+      "status": "closed"
+    },
+    {
+      "id": "D04",
+      "failure_mode": "A mobile reader can open a dense figure but cannot pan or reach the evidence at a legible scale.",
+      "perspective": "390x844 mobile",
+      "severity": "high",
+      "resolution": "All eleven figures open in a scrollable modal with 100/150/200 percent controls and keyboard focus management.",
+      "evidence": ["phase4-browser-qa.json#summary", "phase4-browser-qa.json#results", "visual.js"],
+      "status": "closed"
+    },
+    {
+      "id": "D05",
+      "failure_mode": "Zoom is visual-only: keyboard users cannot operate it or return to their triggering figure.",
+      "perspective": "keyboard",
+      "severity": "high",
+      "resolution": "The dialog traps focus, supports Escape/close, restores focus, and exposes semantic title and summary text.",
+      "evidence": ["phase4-browser-qa.json#summary", "phase4-browser-qa.json#results", "visual.js"],
+      "status": "closed"
+    },
+    {
+      "id": "D06",
+      "failure_mode": "Seven wide report tables become unreachable clipping zones at narrow widths.",
+      "perspective": "mobile and 200-percent reflow",
+      "severity": "high",
+      "resolution": "Every table wrapper is a labelled, focusable horizontal-scroll region with a visible focus treatment and non-color cue.",
+      "evidence": ["phase4-browser-qa.json#summary", "phase4-browser-qa.json#results"],
+      "status": "closed"
+    },
+    {
+      "id": "D07",
+      "failure_mode": "The Visual evidence drawer leaves background controls focusable or loses the return point.",
+      "perspective": "screen reader and keyboard",
+      "severity": "high",
+      "resolution": "Opening the drawer makes peers inert, traps focus, supports Escape, and restores focus to the trigger.",
+      "evidence": ["visual.js", "phase4-browser-qa.json#summary", "phase4-browser-qa.json#results"],
+      "status": "closed"
+    },
+    {
+      "id": "D08",
+      "failure_mode": "F08 and F11 use native selectable text but remain Figure-grouped in tagged PDF, so a screen reader cannot navigate them cell by cell as semantic tables.",
+      "perspective": "screen reader",
+      "severity": "high",
+      "resolution": "Retain Figure+Alt, native selectable text, and same-page summaries in PDF; direct readers to the accessible HTML summaries and machine-readable matrices for detailed navigation.",
+      "evidence": ["phase4-pdf-qa.json#advisories"],
+      "status": "retained_advisory",
+      "claim_boundary": "No PDF/UA claim"
+    },
+    {
+      "id": "D09",
+      "failure_mode": "A decorative figure wrapper around the cover creates an unnamed duplicate Figure in the PDF structure tree.",
+      "perspective": "screen reader",
+      "severity": "medium",
+      "resolution": "The cover wrapper is a section; final structure counts match Figure and Alt exactly: 12/12 in A3 and 7/7 in A0.",
+      "evidence": ["phase4-pdf-qa.json#pdfs/*/structure_counts"],
+      "status": "closed"
+    },
+    {
+      "id": "D10",
+      "failure_mode": "A0 governance conclusions are technically present but too small to support far/mid/near reading.",
+      "perspective": "A0 far/mid/near",
+      "severity": "high",
+      "resolution": "Board headlines, primary panels, and direct-result bands use separate tiers; core direct summaries are at least 18pt and the document-wide metadata target is 14pt.",
+      "evidence": ["phase4-layout-contract.json#design_targets/a0", "phase4-pdf-qa.json#pdfs/*/native_protocol_typography"],
+      "status": "closed"
+    },
+    {
+      "id": "D11",
+      "failure_mode": "A0 uses a strip of illegible figure thumbnails as evidence theatre.",
+      "perspective": "A0 near reading",
+      "severity": "high",
+      "resolution": "The support strip is a four-card judgement index for F06/F07/F09/F10, while full figures remain in A3/HTML.",
+      "evidence": ["phase4-layout-contract.json#design_targets/a0", "phase4-layout-contract.json#a0_boards[board=2]"],
+      "status": "closed"
+    },
+    {
+      "id": "D12",
+      "failure_mode": "F08/F11 remain dense enough that a projection or casual screen view cannot expose every row.",
+      "perspective": "projection and small screen",
+      "severity": "medium",
+      "resolution": "Native PDF summaries expose all twelve scenarios, authority, Human Takeover, exit, SC10+IM06 only, thirteen retained negative outcomes, and unknowns; original-image dialogs and structured sources remain the detail path.",
+      "evidence": ["phase4-figure-registry.json#figures[id=F08]", "phase4-figure-registry.json#figures[id=F11]", "phase4-browser-qa.json#summary"],
+      "status": "mitigated_with_advisory"
+    },
+    {
+      "id": "D13",
+      "failure_mode": "An operator projects the A0 PDF as if it were a presentation and the audience cannot read it.",
+      "perspective": "projection",
+      "severity": "medium",
+      "resolution": "Use the responsive Visual or the sequential A3 route for projection; reserve A0 for large-format far/mid/near viewing.",
+      "evidence": ["phase4-layout-contract.json#jury_paths"],
+      "status": "usage_guidance"
+    },
+    {
+      "id": "D14",
+      "failure_mode": "A reader lands on F08 or F11 without knowing its place in the 30-second or 3-minute route.",
+      "perspective": "3-minute jury route",
+      "severity": "medium",
+      "resolution": "A3 pages use route breadcrumbs, stable F identifiers, A3 page numbers, and next-stage references.",
+      "evidence": ["phase4-layout-contract.json#jury_paths"],
+      "status": "closed"
+    },
+    {
+      "id": "D15",
+      "failure_mode": "The exit page foregrounds lifecycle graphics while hiding the six unknown metrics, twelve controller unknowns, and incomplete authorizations.",
+      "perspective": "30-second jury scan",
+      "severity": "stop",
+      "resolution": "F11 and A0 Board 2 place retained negative outcomes and unknown/incomplete boundaries in direct summary bands at normal view.",
+      "evidence": ["phase4-figure-registry.json#figures[id=F11]", "phase4-layout-contract.json#a0_boards[board=2]"],
+      "status": "closed"
+    },
+    {
+      "id": "D16",
+      "failure_mode": "The inner frozen F-figure page counter can be mistaken for the outer A3 document page counter.",
+      "perspective": "A3 print",
+      "severity": "low",
+      "resolution": "The presentation shell labels its counter explicitly as A3 PAGE and the inner number remains part of the frozen F-figure caption layer.",
+      "evidence": ["phase4-presentation-sources.json#sources[restore_as=phase4-presentation-generator.mjs]"],
+      "status": "mitigated_with_advisory"
+    },
+    {
+      "id": "D17",
+      "failure_mode": "Only F08/F11 can be enlarged, creating an inconsistent keyboard and evidence path across F01-F11.",
+      "perspective": "cross-media navigation",
+      "severity": "medium",
+      "resolution": "All four HTML outputs expose the same eleven figure identifiers, captions, alternative texts, semantic summaries, and zoom controls from one registry.",
+      "evidence": ["phase4-figure-registry.json#figures", "phase4-browser-qa.json#summary", "phase4-browser-qa.json#results"],
+      "status": "closed"
+    }
+  ],
+  "retained_boundaries": [
+    "No geometry, metric, source, governance, protocol, red-team authority, or numbering family was changed to close a display finding.",
+    "Negative, zero, provisional, and unknown results remain visible.",
+    "The PDFs are independently structure-checked tagged PDFs, not asserted PDF/UA documents."
+  ]
+}

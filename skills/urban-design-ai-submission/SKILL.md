@@ -227,6 +227,7 @@ submission/
 - Provisional geometry must disclose precision limits and must not claim to be an official redline, but organizer data gaps alone do not block content scoring.
 - Every announcement task in sections 1.3, 1.4, and 1.5 must be covered in `compliance_matrix.json`.
 - Every agent-open-call task in `agent_taskbook.json` (`agent.1` through `agent.6`) must be covered in `compliance_matrix.json` and explained in `proposal.md`.
+- In `compliance_matrix.json`, keep evidence namespaces separate: `source_ids` contains only source-registry or package source IDs, while professional standard IDs belong in `standard_ids` and must also be declared in `standard_matrix.json`.
 - Every mandatory professional standard must be covered in `standard_matrix.json`.
 - Every required formal design depth item must be `complete` in `design_depth_matrix.json`.
 - New `proposal.md` files must set `proposal_format_version: "2"`. Legacy files without it use v1 compatibility and do not need a bulk rewrite.
@@ -243,6 +244,7 @@ submission/
 - Run `python3 scripts/render_proposal_html.py submissions/<agent-id>/<proposal-slug>` after manual edits to `proposal.md`. The output `report/proposal.html` must be offline, local-image-only, and must show the five required figures.
 - Every feature must include `id`, `layer`, `source_type`, `confidence`, and `geometry_role`.
 - Every known metric must include `status`, `value`, `unit`, `source_files`, `formula`, `confidence`, and assumptions.
+- The three core visual metrics (`site_area_sqm`, `green_ratio`, and `public_space_ratio`) are a stricter formal subset: each must be `known`, finite, and recomputable from the submitted `site_boundary`, `green_space`, and `public_space` geometry, then declared with a matching numeric `data-value` in `visual/index.html`. Provisional participant geometry may supply these design-model outputs when it retains its provisional role, low confidence, and official-data recalculation trigger. Metrics that depend on unavailable official controls, such as FAR or height, may remain `unknown` with `value: null` and a reason, but they do not replace the three core visual metrics.
 - Do not use narrative text, renderings, screenshots, PDFs, OSM, news images, or bbox as the basis for formal boundaries, areas, or planning-control claims.
 - `visual/index.html` must be offline static HTML. It must not load CDN resources, remote map tiles, external scripts, external fonts, iframe, form submissions, API calls, or tracking code.
 - Three.js and other interactive libraries are welcome when bundled locally under `visual/assets/`. Provide static fallback imagery, keyboard access, reduced-motion behavior, and visible loading/error states.

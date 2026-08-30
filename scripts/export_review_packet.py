@@ -22,7 +22,9 @@ from render_proposal_html import parse_front_matter
 DEFAULT_OUTPUT_ROOT = ".maintainer-review"
 IMAGE_RE = re.compile(r"!\[([^\]]*)\]\(([^)\s]+)(?:\s+\"[^\"]*\")?\)")
 INLINE_CODE_RE = re.compile(r"`([^`]+)`")
+BOLD_RE = re.compile(r"\*\*([^*\n]+?)\*\*")
 REFERENCE_RE = re.compile(r"\[(source|standard|depth|data|metric):([^\]\s]+)\]")
+TABLE_SEPARATOR_CELL_RE = re.compile(r"^:?-{3,}:?$")
 
 KEY_REVIEW_FILES = [
     ("方案正文", "proposal.md"),
@@ -70,13 +72,20 @@ class SubmissionPacket:
     key_files: list[dict[str, Any]]
 
 
-def read_json(path: Path) -> Any:
+def read_json(path: Path) -> dict[str, Any] | None:
     if not path.exists():
         return None
     try:
-        return json.loads(path.read_text(encoding="utf-8"))
-    except (UnicodeDecodeError, json.JSONDecodeError):
-        return None
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except UnicodeDecodeError as exc:
+        raise ReviewPacketError(f"{path}: JSON file must be UTF-8") from exc
+    except json.JSONDecodeError as exc:
+        raise ReviewPacketError(f"{path}: invalid JSON: {exc}") from exc
+    except OSError as exc:
+        raise ReviewPacketError(f"{path}: could not read JSON: {exc}") from exc
+    if not isinstance(data, dict):
+        raise ReviewPacketError(f"{path}: JSON root must be an object")
+    return data
 
 
 def as_dict(value: Any) -> dict[str, Any]:
@@ -497,14 +506,43 @@ def render_markdown(packets: list[SubmissionPacket], title: str, output_dir: Pat
 
 def render_inline(value: str) -> str:
     escaped = html.escape(value)
-    escaped = INLINE_CODE_RE.sub(lambda match: f"<code>{html.escape(match.group(1))}</code>", escaped)
+    code_spans: list[str] = []
+
+    def replace_code(match: re.Match[str]) -> str:
+        marker = f"\x00CODE{len(code_spans)}\x00"
+        code_spans.append(f"<code>{match.group(1)}</code>")
+        return marker
+
+    escaped = INLINE_CODE_RE.sub(replace_code, escaped)
+    escaped = BOLD_RE.sub(lambda match: f"<strong>{match.group(1)}</strong>", escaped)
 
     def replace_ref(match: re.Match[str]) -> str:
         kind = match.group(1)
         ref = match.group(2)
         return f'<span class="evidence evidence-{kind}">[{kind}:{html.escape(ref)}]</span>'
 
-    return REFERENCE_RE.sub(replace_ref, escaped)
+    escaped = REFERENCE_RE.sub(replace_ref, escaped)
+    for index, code_span in enumerate(code_spans):
+        escaped = escaped.replace(f"\x00CODE{index}\x00", code_span)
+    return escaped
+
+
+def split_markdown_table_row(value: str) -> list[str] | None:
+    stripped = value.strip()
+    if "|" not in stripped:
+        return None
+    if stripped.startswith("|"):
+        stripped = stripped[1:]
+    if stripped.endswith("|") and not stripped.endswith(r"\|"):
+        stripped = stripped[:-1]
+    cells = re.split(r"(?<!\\)\|", stripped)
+    if len(cells) < 2:
+        return None
+    return [cell.strip().replace(r"\|", "|") for cell in cells]
+
+
+def is_markdown_table_separator(cells: list[str] | None) -> bool:
+    return bool(cells) and all(TABLE_SEPARATOR_CELL_RE.fullmatch(cell) for cell in cells)
 
 
 def image_src_for_packet(submission_dir: Path, output_dir: Path, raw_src: str) -> str | None:
@@ -537,8 +575,37 @@ def render_proposal_body_html(packet: SubmissionPacket, output_dir: Path) -> str
             blocks.append("</ul>")
             in_list = False
 
-    for raw_line in packet.proposal_body.splitlines():
+    lines = packet.proposal_body.splitlines()
+    index = 0
+    while index < len(lines):
+        raw_line = lines[index]
         line = raw_line.rstrip()
+        header_cells = split_markdown_table_row(line)
+        separator_cells = (
+            split_markdown_table_row(lines[index + 1]) if index + 1 < len(lines) else None
+        )
+        if (
+            header_cells
+            and is_markdown_table_separator(separator_cells)
+            and len(header_cells) == len(separator_cells or [])
+        ):
+            flush_paragraph()
+            close_list()
+            rows: list[list[str]] = []
+            next_index = index + 2
+            while next_index < len(lines):
+                row = split_markdown_table_row(lines[next_index])
+                if row is None or is_markdown_table_separator(row):
+                    break
+                if len(row) < len(header_cells):
+                    row.extend([""] * (len(header_cells) - len(row)))
+                rows.append(row[: len(header_cells)])
+                next_index += 1
+            blocks.append(html_table(header_cells, rows, render_cells=True))
+            index = next_index
+            continue
+
+        index += 1
         if not line.strip():
             flush_paragraph()
             close_list()
@@ -585,13 +652,16 @@ def render_proposal_body_html(packet: SubmissionPacket, output_dir: Path) -> str
     return "\n".join(blocks) if blocks else "<p>未提供正文。</p>"
 
 
-def html_table(headers: list[str], rows: list[list[Any]]) -> str:
+def html_table(
+    headers: list[str], rows: list[list[Any]], *, render_cells: bool = False
+) -> str:
     if not rows:
         return '<p class="empty">暂无。</p>'
-    head = "".join(f"<th>{html.escape(header)}</th>" for header in headers)
+    render = render_inline if render_cells else lambda value: html.escape(compact(value, 320))
+    head = "".join(f"<th>{render(header)}</th>" for header in headers)
     body_rows = []
     for row in rows:
-        cells = "".join(f"<td>{html.escape(compact(cell, 320))}</td>" for cell in row)
+        cells = "".join(f"<td>{render(cell)}</td>" for cell in row)
         body_rows.append(f"<tr>{cells}</tr>")
     return f"<table><thead><tr>{head}</tr></thead><tbody>{''.join(body_rows)}</tbody></table>"
 
@@ -841,6 +911,8 @@ def render_pdf(html_path: Path, pdf_path: Path, engine: str = "auto") -> None:
                 [binary, "--quiet", "--print-media-type", html_path.as_posix(), pdf_path.as_posix()],
                 capture_output=True,
                 text=True,
+                encoding="utf-8",
+                errors="replace",
                 check=False,
             )
         elif candidate == "chromium":
@@ -869,6 +941,8 @@ def render_pdf(html_path: Path, pdf_path: Path, engine: str = "auto") -> None:
                 ],
                 capture_output=True,
                 text=True,
+                encoding="utf-8",
+                errors="replace",
                 check=False,
             )
         else:

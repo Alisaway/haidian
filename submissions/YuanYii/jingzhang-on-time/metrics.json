@@ -58,28 +58,32 @@
    ]
   },
   "tod_500m_union_pct": {
-   "status": "unknown",
-   "value": null,
+   "status": "known",
+   "value": 20.6,
    "unit": "pct",
-   "source_files": [],
-   "formula": "三站点 500m 圈并集",
-   "confidence": "low",
-   "assumptions": [
-    "待现场核验"
+   "source_files": [
+    "visual/assets/baseline_registry.json#BL-03"
    ],
-   "reason": "待官方路网/站点数据与现场核验"
+   "formula": "三站点 500m 圈并集（EPSG:4548 包内复算）",
+   "confidence": "medium",
+   "assumptions": [
+    "synthetic 情景测算",
+    "待官方路网/站点数据现场核验后复算"
+   ]
   },
   "green_300m_coverage_pct": {
-   "status": "unknown",
-   "value": null,
+   "status": "known",
+   "value": 85.6,
    "unit": "pct",
-   "source_files": [],
-   "formula": "绿地 300m 缓冲区覆盖",
-   "confidence": "low",
-   "assumptions": [
-    "待现场核验"
+   "source_files": [
+    "visual/assets/baseline_registry.json#BL-04"
    ],
-   "reason": "待官方绿地斑块与现场核验"
+   "formula": "绿地斑块 300m 缓冲区覆盖（EPSG:4548 包内复算）",
+   "confidence": "medium",
+   "assumptions": [
+    "synthetic 情景测算",
+    "待官方绿地斑块数据现场核验后复算"
+   ]
   },
   "greenway_gaps": {
    "status": "known",

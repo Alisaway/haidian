@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "data-card.schema.json",
+  "title_zh": "数据卡最小字段模板",
+  "title_en": "Data-card minimum field template",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "data_version",
+    "source_and_authorisation_boundary",
+    "aggregation_anonymisation_basis",
+    "suspension_and_deletion_path"
+  ],
+  "properties": {
+    "data_version": {
+      "type": "string",
+      "minLength": 1,
+      "label_zh": "数据版本",
+      "label_en": "Data version"
+    },
+    "source_and_authorisation_boundary": {
+      "type": "string",
+      "minLength": 1,
+      "label_zh": "来源与授权边界",
+      "label_en": "Source and authorisation boundary"
+    },
+    "aggregation_anonymisation_basis": {
+      "type": "string",
+      "minLength": 1,
+      "label_zh": "聚合/匿名口径",
+      "label_en": "Aggregation/anonymisation basis"
+    },
+    "suspension_and_deletion_path": {
+      "type": "string",
+      "minLength": 1,
+      "label_zh": "停用与删除路径",
+      "label_en": "Suspension and deletion path"
+    }
+  }
+}

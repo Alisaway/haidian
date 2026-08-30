@@ -1,0 +1,213 @@
+{
+  "schema_version": "0.1.0",
+  "sources": [
+    {
+      "id": "SITE-PACKAGE",
+      "path": "brief/site-package/",
+      "source_type": "official_public",
+      "usage": "Project brief, enums, allowed design space, ranges, and schemas."
+    },
+    {
+      "id": "SOURCE-REGISTRY",
+      "path": "data/source_registry.json",
+      "source_type": "repository_public_registry",
+      "usage": "Public/cleared/provisional source usability registry; distinguishes formal-ready, background-only, provisional-only, and needs-review materials."
+    },
+    {
+      "id": "PROCESSED-FACT-PACK",
+      "path": "data/processed/agent_fact_pack.md",
+      "source_type": "repository_processed_reference",
+      "usage": "Agent-readable navigation layer for scopes, required tasks, source-use boundaries, and missing-data checklist; not a new authority source."
+    },
+    {
+      "id": "BOUNDARY-SOURCE",
+      "path": "brief/site-package/geometry/provisional_boundaries.geojson",
+      "source_type": "agent_inferred_from_public_data",
+      "usage": "Submitted site boundary geometry source (provisional)."
+    },
+    {
+      "id": "KEY-AREA-SOURCE",
+      "path": "brief/site-package/geometry/provisional_boundaries.geojson",
+      "source_type": "agent_inferred_from_public_data",
+      "usage": "Three required detailed-design key area boundaries (provisional)."
+    },
+    {
+      "id": "OFFICIAL-ANNOUNCEMENT",
+      "url": "https://ghzrzyw.beijing.gov.cn/zhengwuxinxi/tzgg/hd/202605/t20260509_4643047.html",
+      "source_type": "official_public",
+      "usage": "Official announcement tasks, scope levels, key areas, language, and deliverable context."
+    },
+    {
+      "id": "AGENT-TASKBOOK",
+      "path": "brief/site-package/agent_taskbook.json",
+      "source_type": "user_provided_cleared",
+      "usage": "Agent-facing open-call principles, six required agent tasks, scenario/branding/operation requirements, and boundary clause."
+    },
+    {
+      "id": "PHYSARUM-METHOD",
+      "url": "https://doi.org/10.1126/science.1177894",
+      "source_type": "official_public",
+      "usage": "Tero A. et al. (2010) Rules for biologically inspired adaptive network design, Science 327(5964): 439-442. Methodological basis for the bio-Physarum adaptive network."
+    },
+    {
+      "id": "NSGA-II-METHOD",
+      "url": "https://doi.org/10.1109/4235.996017",
+      "source_type": "official_public",
+      "usage": "Deb K. et al. (2002) A fast and elitist multiobjective genetic algorithm: NSGA-II, IEEE TEVC 6(2): 182-197. Optimization method for the four-objective network renewal problem."
+    },
+    {
+      "id": "PHYSARUM-RUN-RESULTS",
+      "source_type": "agent_generated_design",
+      "usage": "Author's real Physarum + NSGA-II run (167-edge network, optimal efficiency 19.20, heritage objective f3≡f2 [degenerates to cost; no independent site heritage conclusion], Plan03 UDS 80.34). Method-validation evidence only; located ~2-3 km west of the provisional boundary, so not entered as formal geometry. Recorded as metric values in metrics.json and as narrative in proposal.md, not as a geometry layer.",
+      "note": "Run artifacts are not committed as geometry; the coordinate offset makes direct spatial reuse invalid for this site."
+    },
+    {
+      "id": "COST-ESTIMATE-PLAN03",
+      "source_type": "agent_generated_design",
+      "usage": "Road-network municipal cost estimate (Plan03 fusion round 2, author run artifact). Itemized: 主干路 740.2 m @ 8000 元/m = 592.2 万元; 次干路 1744.1 m @ 5000 元/m = 872.0 万元; 支路 3679.9 m @ 3000 元/m = 1104.0 万元; 微循环 2648.8 m @ 1500 元/m = 397.3 万元; 合计 8813.0 m = 2965.5 万元 (平均 3365 元/m).",
+      "note": "Skeleton length 8813.0 m from the real Physarum+NSGA-II run (see PHYSARUM-RUN-RESULTS); unit prices are public Beijing municipal reference levels (公开综合单价, 非定额), 2026 Q2 price level, concept estimate ±30%, pre-allowance 10%. Not a priced bill of quantities or tender/budget figure. Source: output/phase4/plan_03_fusion_round2/10_cost_estimate.md."
+    },
+    {
+      "id": "COST-UNIT-BEIJING-001",
+      "source_type": "official_public",
+      "url": "https://zjw.beijing.gov.cn/bjjs/gcjs/zczjxx/jjyjxt/de/index.shtml",
+      "accessed_date": "2026-08-25",
+      "usage": "《北京市建设工程计价依据——预算消耗量标准（市政工程）》第二册道路工程 (北京市住建委, 京建发〔2021〕201号, issued 2021-09, effective 2022-01-01). Official 计价依据 (pricing basis) for municipal road engineering. This is a CONSUMPTION standard (人工/材料/机械消耗量) — it defines consumption quantities only and contains NO unit prices (无人材机基价与费用标准). Cited only as the methodological pricing basis.",
+      "note": "The four unit prices (8000/5000/3000/1500 元/m) used in COST-ESTIMATE-PLAN03 are NOT from this standard (which has no prices). They are the AUTHOR'S CONCEPTUAL ASSUMPTIONS based on public Beijing composite price reference levels (公开综合单价/《北京工程造价信息》信息价), 2026 Q2 price level, ±30% sensitivity interval — not tender results, not priced bills of quantities.",
+      "known_limitations": "Consumption standard with no unit prices; the unit prices cited are author conceptual assumptions, not verifiable official unit-price schedules."
+    },
+    {
+      "id": "CASE-QUAYSIDE",
+      "source_type": "official_public",
+      "url": "https://www.waterfrontoronto.ca/",
+      "accessed_date": "2026-08-25",
+      "usage": "Sidewalk Labs Quayside (Toronto). Public-reporting reference for data-governance commitment mechanisms (sensor network, adaptive building, data trust; launched 2017, cancelled 2020). Used for method comparison only, not replicated.",
+      "note": "Public reporting / official project material; quantitative indicators to be verified against official sources (待核实).",
+      "location": "Toronto, Canada",
+      "period": "2017-2020 (cancelled)"
+    },
+    {
+      "id": "CASE-MASDAR",
+      "source_type": "official_public",
+      "url": "https://masdarcity.ae/",
+      "accessed_date": "2026-08-25",
+      "usage": "Masdar City (Abu Dhabi). Public-reporting reference for low-carbon block and new feeder mobility (passive cooling, early PRT pilot). Used for method comparison only.",
+      "note": "Public reporting / official project material; some zero-carbon targets were later adjusted; indicators to be verified (待核实).",
+      "location": "Abu Dhabi, UAE",
+      "period": "2006-"
+    },
+    {
+      "id": "CASE-SONGDO",
+      "source_type": "official_public",
+      "url": "https://www.ifez.go.kr/",
+      "accessed_date": "2026-08-25",
+      "usage": "Songdo International Business District (Incheon). Public-reporting reference for new-infrastructure and urban-sensing integration (U-City, central pneumatic waste collection). Used for method comparison only.",
+      "note": "Public reporting / official project material; indicators to be verified (待核实).",
+      "location": "Incheon, South Korea",
+      "period": "2001-"
+    },
+    {
+      "id": "CASE-AMSTERDAM",
+      "source_type": "official_public",
+      "url": "https://amsterdamsmartcity.com/",
+      "accessed_date": "2026-08-25",
+      "usage": "Amsterdam Smart City (Netherlands). Public-reporting reference for incremental renewal and multi-party governance (living-lab pilots on energy/water/mobility). Used for method comparison only.",
+      "note": "Public reporting / official project material; indicators to be verified (待核实).",
+      "location": "Amsterdam, Netherlands",
+      "period": "2009-"
+    },
+    {
+      "id": "CASE-XIONGAN",
+      "source_type": "official_public",
+      "url": "http://www.xiongan.gov.cn/",
+      "accessed_date": "2026-08-25",
+      "usage": "Xiong'an New Area (Hebei). Public-reporting reference for CIM digital twin, blue-green network, underground utility tunnels, and green mobility. Used for method comparison only; this proposal is renewal, not a new town.",
+      "note": "Public reporting / official project material; indicators to be verified (待核实).",
+      "location": "Hebei, China",
+      "period": "2017-"
+    },
+    {
+      "id": "OSM-SUBWAY",
+      "url": "https://www.openstreetmap.org/copyright",
+      "source_type": "osm",
+      "license": "ODbL 1.0; © OpenStreetMap contributors",
+      "accessed_date": "2026-08-08",
+      "query_extent": "Provisional site boundary and surrounding Line 13 subway stations (Dazhongsi, Weigongcun); roads/parks/railways screened as background only.",
+      "usage": "Subway station coordinates (3 OSM nodes, osm_id 6617852356 / 12435287603 / 7861046853) used as measured anchors in visual/assets/demo_data.json. Background screening of OSM roads/parks/railways informed the Physarum network context. Not used as official boundary, road redline, or engineering geometry."
+    },
+    {
+      "id": "CASE-SHIBUYA",
+      "source_type": "official_public",
+      "url": "https://www.toshiseibi.metro.tokyo.lg.jp/",
+      "accessed_date": "2026-08-25",
+      "usage": "Shibuya Station area redevelopment (Tokyo, 2012–): rail-station integration and four-quadrant walking network. Referenced in the case comparison table for TOD integration and four-quadrant connectivity; method reference only.",
+      "note": "Official project / public reporting; quantitative indicators to be verified against official sources (待核实).",
+      "location": "Tokyo, Japan",
+      "period": "2012-"
+    },
+    {
+      "id": "CASE-SUPERILLES",
+      "source_type": "official_public",
+      "url": "https://ajuntament.barcelona.cat/superilles/en",
+      "accessed_date": "2026-08-25",
+      "usage": "Barcelona Superilles / superblocks (2016–): street pedestrianization, speed limits, street-as-public-space. Referenced for street pedestrianization; method reference only.",
+      "note": "Official project / public reporting; quantitative indicators to be verified (待核实).",
+      "location": "Barcelona, Spain",
+      "period": "2016-"
+    },
+    {
+      "id": "CASE-COPENHAGEN",
+      "source_type": "official_public",
+      "url": "https://urbandevelopmentcph.kk.dk/mobility-cycling/copenhagen-the-best-cycling-city-in-the-world",
+      "accessed_date": "2026-08-25",
+      "usage": "Copenhagen bicycle-priority network and dedicated bridges (2006–). Referenced for slow-mobility priority and dedicated facilities; method reference only.",
+      "note": "Official project / public reporting; quantitative indicators to be verified (待核实).",
+      "location": "Copenhagen, Denmark",
+      "period": "2006-"
+    },
+    {
+      "id": "CASE-PUNGGOL",
+      "source_type": "official_public",
+      "url": "https://www.ura.gov.sg/news/articles/punggol-digital-district/",
+      "accessed_date": "2026-08-25",
+      "usage": "Punggol Digital District (Singapore, 2018–): district-wide digital twin and open digital platform. Referenced for the digital foundation of industry-university-research integration; method reference only.",
+      "note": "Official project / public reporting; quantitative indicators to be verified (待核实).",
+      "location": "Singapore",
+      "period": "2018-"
+    },
+    {
+      "id": "CASE-CHEONGGYECHEON",
+      "source_type": "official_public",
+      "url": "https://english.seoul.go.kr/20-year-milestone-of-the-cheonggyecheon-stream-sets-the-stage-for-water-seoul-2025-international-conference/",
+      "accessed_date": "2026-08-25",
+      "usage": "Cheonggyecheon restoration (Seoul, 2003–2005): elevated-highway removal and stream restoration into blue-green public space. Referenced for blue-green restoration and elevated-highway removal; method reference only.",
+      "note": "Official project / public reporting; quantitative indicators to be verified (待核实).",
+      "location": "Seoul, South Korea",
+      "period": "2003-2005"
+    },
+    {
+      "id": "STD-GB50763-2012",
+      "source_type": "official_public",
+      "usage": "GB 50763-2012《无障碍设计规范》(Code for accessibility design), mandatory national standard (MOHURD + AQSIQ, 2012). Used as the accessibility-threshold basis (无障碍阈值) throughout the proposal and the T-01/T-03 test scenarios.",
+      "note": "Official national standard; full text disclosed via 国家标准全文公开系统 (openstd.samr.gov.cn)."
+    },
+    {
+      "id": "STD-GBT51328-2018",
+      "source_type": "official_public",
+      "usage": "GB/T 51328-2018《城市综合交通体系规划标准》(Standard for urban comprehensive transport system planning), recommended national standard. Used as the basis for transport/rail/slow-travel planning in the test scenarios.",
+      "note": "Official national standard; full text disclosed via 国家标准全文公开系统 (openstd.samr.gov.cn)."
+    },
+    {
+      "id": "STD-GB50014",
+      "source_type": "official_public",
+      "usage": "GB 50014《室外排水设计标准》(Standard for design of outdoor wastewater engineering), national engineering-construction standard. Used as the basis for stormwater/drainage resilience in the T-02 Xiaoyue River sponge-city test scenario.",
+      "note": "Official national standard; current edition GB 50014-2021; full text disclosed via 国家标准全文公开系统 (openstd.samr.gov.cn)."
+    },
+    {
+      "id": "STD-SPONGE-GUIDE-2014",
+      "source_type": "official_public",
+      "usage": "《海绵城市建设技术指南——低影响开发雨水系统构建（试行）》(MOHURD, 2014). Used as the sponge-city technical-guide basis for permeable-paving and green-infiltration ratios in the T-02 test scenario.",
+      "note": "Official MOHURD technical guide (试行)."
+    }
+  ]
+}

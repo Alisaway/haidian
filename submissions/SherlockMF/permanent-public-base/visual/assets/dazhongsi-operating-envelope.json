@@ -1,0 +1,498 @@
+{
+  "schema_version": "1.0.0",
+  "model_id": "DAZHONGSI-OPERATING-ENVELOPE-V1",
+  "title_zh": "大钟寺90天旗舰资源与运营包络",
+  "title_en": "Dazhongsi 90-day flagship resource and operating envelope",
+  "status": "participant_assumption_low_confidence",
+  "approval_status": "not_approved",
+  "currency": "CNY",
+  "price_basis": "ROM participant assumptions only; not Beijing quotations, budget, procurement, operator commitment or construction commitment",
+  "source_geometry": {
+    "path": "geometry/phasing.geojson",
+    "feature_id": "PH-P819-01-DAZHONGSI",
+    "component_ids": [
+      "D1",
+      "D2",
+      "D3"
+    ],
+    "source_sha256_at_recalculation": "001f5f220e6f1987b221b161b7c5655f18805d1af721968f91711237661b96c0",
+    "exchange_crs": "EPSG:4326",
+    "calculation_crs": "EPSG:4548",
+    "method": "Project each D1-D3 polygon from EPSG:4326 to EPSG:4548 with always_xy=true, calculate planar polygon area, then sum only the components selected by each scenario.",
+    "confidence": "low",
+    "geometry_status": "concept_geometry_not_surveyed",
+    "recalculated_components": [
+      {
+        "component_id": "D1",
+        "area_sqm_unrounded": 367.46657555803057,
+        "area_sqm_display": 367.47
+      },
+      {
+        "component_id": "D2",
+        "area_sqm_unrounded": 367.46653795379916,
+        "area_sqm_display": 367.47
+      },
+      {
+        "component_id": "D3",
+        "area_sqm_unrounded": 367.46650038994454,
+        "area_sqm_display": 367.47
+      }
+    ],
+    "total_area_sqm_unrounded": 1102.3996139017743,
+    "total_area_sqm_display": 1102.4,
+    "area_rounding_rule": "Keep unrounded projected areas for calculation; display sqm to 0.01 using round-half-up."
+  },
+  "global_assumptions": {
+    "classification": "participant_assumption",
+    "confidence": "low",
+    "not_claimed": [
+      "Beijing market quotation",
+      "approved budget",
+      "procurement estimate",
+      "operator staffing commitment",
+      "approved opening calendar",
+      "measured capacity",
+      "construction feasibility"
+    ],
+    "capacity_inputs": {
+      "usable_public_fraction": {
+        "low": 0.32,
+        "base": 0.4,
+        "high": 0.48,
+        "unit": "ratio",
+        "status": "participant_assumption",
+        "confidence": "low"
+      },
+      "gross_sqm_per_person": {
+        "low": 12,
+        "base": 10,
+        "high": 8,
+        "unit": "sqm/person",
+        "status": "participant_assumption",
+        "confidence": "low"
+      },
+      "formula": "capacity = active_service_area_sqm * usable_public_fraction / gross_sqm_per_person",
+      "rounding_rule": "Round half up to the nearest whole person; never treat the result as an approved life-safety occupancy."
+    },
+    "fte_inputs": {
+      "coverage_factor": {
+        "value": 1.18,
+        "unit": "ratio",
+        "status": "participant_assumption",
+        "confidence": "low"
+      },
+      "productive_hours_per_fte_year": {
+        "value": 1600,
+        "unit": "hours/FTE-year",
+        "status": "participant_assumption",
+        "confidence": "low"
+      },
+      "formula": "fte_required = staffed_positions * annual_open_hours * coverage_factor / productive_hours_per_fte_year",
+      "rounding_rule": "Publish fte_required_unrounded at full arithmetic precision; publish fte_required as round-half-up to 0.1 FTE. OPEX always uses fte_required_unrounded, never the display-rounded FTE."
+    },
+    "capex_inputs": {
+      "rom_unit_cost_cny_per_sqm": {
+        "low": 2600,
+        "base": 4200,
+        "high": 6800,
+        "unit": "CNY/sqm",
+        "status": "participant_assumption",
+        "confidence": "low"
+      },
+      "contingency_ratio": {
+        "low": 0.1,
+        "base": 0.2,
+        "high": 0.3,
+        "unit": "ratio",
+        "status": "participant_assumption",
+        "confidence": "low"
+      },
+      "formula": "capex_rom = (active_service_area_sqm * rom_unit_cost_cny_per_sqm + scenario_equipment_allowance_cny) * (1 + contingency_ratio)",
+      "rounding_rule": "Round half up to the nearest CNY 50,000."
+    },
+    "opex_inputs": {
+      "loaded_staff_cost_cny_per_fte_year": {
+        "low": 140000,
+        "base": 200000,
+        "high": 280000,
+        "unit": "CNY/FTE-year",
+        "status": "participant_assumption",
+        "confidence": "low"
+      },
+      "service_hour_cost_cny_per_open_hour": {
+        "low": 80,
+        "base": 140,
+        "high": 220,
+        "unit": "CNY/open-hour",
+        "status": "participant_assumption",
+        "confidence": "low"
+      },
+      "formula": "opex_annual_raw = fte_required_unrounded * loaded_staff_cost_cny_per_fte_year + annual_open_hours * service_hour_cost_cny_per_open_hour + scenario_fixed_annual_allowance_cny; opex_annual_cny = round_half_up(opex_annual_raw, CNY 10,000)",
+      "rounding_rule": "Use the published pre-display-rounding FTE value, then round the final annual total half up to the nearest CNY 10,000."
+    }
+  },
+  "scenarios": [
+    {
+      "id": "MICRO",
+      "label_zh": "微型情景",
+      "label_en": "Micro",
+      "selected_components": [
+        "D2"
+      ],
+      "active_service_area_sqm": 367.47,
+      "active_service_area_formula": "area(D2, EPSG:4548)",
+      "capacity_persons": {
+        "low": 10,
+        "base": 15,
+        "high": 22
+      },
+      "annual_open_hours": {
+        "low": 600,
+        "base": 900,
+        "high": 1200,
+        "unit": "hours/year"
+      },
+      "staffed_positions": {
+        "low": 1,
+        "base": 2,
+        "high": 3,
+        "unit": "positions/open-hour"
+      },
+      "fte_required": {
+        "low": 0.4,
+        "base": 1.3,
+        "high": 2.7,
+        "unit": "FTE"
+      },
+      "fte_required_unrounded": {
+        "low": 0.4425,
+        "base": 1.3275,
+        "high": 2.655,
+        "unit": "FTE",
+        "status": "participant_assumption_derived",
+        "confidence": "low"
+      },
+      "scenario_equipment_allowance_cny": {
+        "low": 300000,
+        "base": 500000,
+        "high": 800000
+      },
+      "scenario_fixed_annual_allowance_cny": {
+        "low": 150000,
+        "base": 250000,
+        "high": 400000
+      },
+      "capex_rom_cny": {
+        "low": 1400000,
+        "base": 2450000,
+        "high": 4300000,
+        "unit": "CNY ROM"
+      },
+      "opex_annual_cny": {
+        "low": 260000,
+        "base": 640000,
+        "high": 1410000,
+        "unit": "CNY/year ROM"
+      }
+    },
+    {
+      "id": "BASE",
+      "label_zh": "基准情景",
+      "label_en": "Base",
+      "selected_components": [
+        "D1",
+        "D2"
+      ],
+      "active_service_area_sqm": 734.93,
+      "active_service_area_formula": "area(D1 + D2, EPSG:4548)",
+      "capacity_persons": {
+        "low": 20,
+        "base": 29,
+        "high": 44
+      },
+      "annual_open_hours": {
+        "low": 900,
+        "base": 1350,
+        "high": 1800,
+        "unit": "hours/year"
+      },
+      "staffed_positions": {
+        "low": 2,
+        "base": 3,
+        "high": 4,
+        "unit": "positions/open-hour"
+      },
+      "fte_required": {
+        "low": 1.3,
+        "base": 3.0,
+        "high": 5.3,
+        "unit": "FTE"
+      },
+      "fte_required_unrounded": {
+        "low": 1.3275,
+        "base": 2.986875,
+        "high": 5.31,
+        "unit": "FTE",
+        "status": "participant_assumption_derived",
+        "confidence": "low"
+      },
+      "scenario_equipment_allowance_cny": {
+        "low": 500000,
+        "base": 800000,
+        "high": 1200000
+      },
+      "scenario_fixed_annual_allowance_cny": {
+        "low": 250000,
+        "base": 400000,
+        "high": 650000
+      },
+      "capex_rom_cny": {
+        "low": 2650000,
+        "base": 4650000,
+        "high": 8050000,
+        "unit": "CNY ROM"
+      },
+      "opex_annual_cny": {
+        "low": 510000,
+        "base": 1190000,
+        "high": 2530000,
+        "unit": "CNY/year ROM"
+      }
+    },
+    {
+      "id": "EXTENDED",
+      "label_zh": "扩展情景",
+      "label_en": "Extended",
+      "selected_components": [
+        "D1",
+        "D2",
+        "D3"
+      ],
+      "active_service_area_sqm": 1102.4,
+      "active_service_area_formula": "area(D1 + D2 + D3, EPSG:4548)",
+      "capacity_persons": {
+        "low": 29,
+        "base": 44,
+        "high": 66
+      },
+      "annual_open_hours": {
+        "low": 1200,
+        "base": 1800,
+        "high": 2400,
+        "unit": "hours/year"
+      },
+      "staffed_positions": {
+        "low": 3,
+        "base": 4,
+        "high": 6,
+        "unit": "positions/open-hour"
+      },
+      "fte_required": {
+        "low": 2.7,
+        "base": 5.3,
+        "high": 10.6,
+        "unit": "FTE"
+      },
+      "fte_required_unrounded": {
+        "low": 2.655,
+        "base": 5.31,
+        "high": 10.62,
+        "unit": "FTE",
+        "status": "participant_assumption_derived",
+        "confidence": "low"
+      },
+      "scenario_equipment_allowance_cny": {
+        "low": 700000,
+        "base": 1200000,
+        "high": 1800000
+      },
+      "scenario_fixed_annual_allowance_cny": {
+        "low": 350000,
+        "base": 600000,
+        "high": 900000
+      },
+      "capex_rom_cny": {
+        "low": 3900000,
+        "base": 7000000,
+        "high": 12100000,
+        "unit": "CNY ROM"
+      },
+      "opex_annual_cny": {
+        "low": 820000,
+        "base": 1910000,
+        "high": 4400000,
+        "unit": "CNY/year ROM"
+      }
+    },
+    {
+      "id": "NO_BUILD",
+      "label_zh": "不建设情景",
+      "label_en": "No-build",
+      "selected_components": [],
+      "active_service_area_sqm": 0,
+      "active_service_area_formula": "No reversible carrier is deployed.",
+      "capacity_persons": {
+        "status": "not_applicable",
+        "value": null,
+        "reason": "No carrier occupancy is asserted; ordinary public passage remains governed by future site and safety verification."
+      },
+      "annual_open_hours": {
+        "low": 600,
+        "base": 900,
+        "high": 1200,
+        "unit": "staffed manual-service hours/year"
+      },
+      "staffed_positions": {
+        "low": 1,
+        "base": 1,
+        "high": 2,
+        "unit": "positions/open-hour"
+      },
+      "fte_required": {
+        "low": 0.4,
+        "base": 0.7,
+        "high": 1.8,
+        "unit": "FTE",
+        "formula_note": "Uses the same FTE formula; base adopts one staffed position for 900 hours with the global coverage factor."
+      },
+      "fte_required_unrounded": {
+        "low": 0.4425,
+        "base": 0.66375,
+        "high": 1.77,
+        "unit": "FTE",
+        "status": "participant_assumption_derived",
+        "confidence": "low"
+      },
+      "no_build_cost": {
+        "capex_rom_cny": {
+          "low": 550000,
+          "base": 900000,
+          "high": 1450000,
+          "formula": "clear_line_markings_and_fixed_wayfinding_cny + seating_and_shade_package_cny + staffed_window_setup_cny",
+          "rounding_rule": "Sum the published component allowances by low/base/high band; values are already expressed to the nearest CNY 50,000.",
+          "unit": "CNY ROM",
+          "status": "participant_assumption_derived",
+          "confidence": "low",
+          "components": {
+            "clear_line_markings_and_fixed_wayfinding_cny": {
+              "low": 150000,
+              "base": 250000,
+              "high": 400000,
+              "unit": "CNY ROM",
+              "status": "participant_assumption",
+              "confidence": "low"
+            },
+            "seating_and_shade_package_cny": {
+              "low": 250000,
+              "base": 400000,
+              "high": 650000,
+              "unit": "CNY ROM",
+              "status": "participant_assumption",
+              "confidence": "low"
+            },
+            "staffed_window_setup_cny": {
+              "low": 150000,
+              "base": 250000,
+              "high": 400000,
+              "unit": "CNY ROM",
+              "status": "participant_assumption",
+              "confidence": "low"
+            }
+          }
+        },
+        "opex_annual_cny": {
+          "low": 170000,
+          "base": 290000,
+          "high": 750000,
+          "formula": "round_half_up(fte_required_unrounded * loaded_staff_cost_cny_per_fte_year + fixed_manual_service_allowance_cny, CNY 10,000)",
+          "rounding_rule": "Use published pre-display-rounding FTE and the corresponding low/base/high loaded staff cost and fixed allowance; round the final total half up to the nearest CNY 10,000.",
+          "unit": "CNY/year ROM",
+          "status": "participant_assumption_derived",
+          "confidence": "low",
+          "fixed_manual_service_allowance_cny": {
+            "low": 110000,
+            "base": 160000,
+            "high": 250000,
+            "unit": "CNY/year ROM",
+            "status": "participant_assumption",
+            "confidence": "low"
+          }
+        }
+      },
+      "retained_public_base": [
+        "continuous public clear line",
+        "staffed manual-service window",
+        "fixed seating",
+        "fixed shade",
+        "fixed bilingual wayfinding",
+        "paper rules and appeal route"
+      ]
+    }
+  ],
+  "sensitivity": {
+    "reference_scenario": "BASE",
+    "tests": [
+      {
+        "input": "rom_unit_cost_cny_per_sqm",
+        "change": "+/-20% from CNY 4,200/sqm",
+        "output": "BASE capex_rom changes by approximately +/- CNY 0.75 million before rounding; this is arithmetic sensitivity, not a quotation."
+      },
+      {
+        "input": "annual_open_hours",
+        "change": "+/-20% from 1,350 hours/year with three staffed positions",
+        "output": "FTE changes by approximately +/-0.6 and annual staff-plus-service-hour cost changes by approximately +/- CNY 0.16 million before fixed allowance."
+      },
+      {
+        "input": "selected D1-D3 component count",
+        "change": "one component fewer or more",
+        "output": "Active area changes by approximately 367.47 sqm; use the Micro/Base/Extended columns rather than interpolating an approval or budget."
+      },
+      {
+        "input": "usable_public_fraction and gross_sqm_per_person",
+        "change": "0.32/12 to 0.48/8",
+        "output": "BASE arithmetic capacity range is 20-44 persons; life-safety occupancy remains unverified."
+      }
+    ]
+  },
+  "decision_gates": [
+    {
+      "id": "G1-GEOMETRY",
+      "condition": "Surveyed station-exit, arrival, fire, heritage, rights and utility geometry confirms that every selected component can remain wholly outside the permanent public clear line.",
+      "failure_action": "NO_BUILD or remove the failed component and recalculate."
+    },
+    {
+      "id": "G2-PUBLIC-BASE",
+      "condition": "Clear passage, staffed manual service, fixed seating/shade and wayfinding remain usable in BASE, FREEZE, RETURN and AI_OFF.",
+      "failure_action": "FREEZE, human takeover and RETURN; do not reduce the public base to preserve the carrier."
+    },
+    {
+      "id": "G3-ACCESS-SAFETY",
+      "condition": "Independent accessibility and fire review accepts the arrangement and operating state changes.",
+      "failure_action": "NO_BUILD."
+    },
+    {
+      "id": "G4-OPERATOR",
+      "condition": "A named future operator accepts staffing, maintenance, complaint handling, mechanical lockout and return acceptance.",
+      "failure_action": "Retain no-build public base and manual service only."
+    },
+    {
+      "id": "G5-RESOURCE",
+      "condition": "Professional estimates, funding, insurance and procurement review fit an approved envelope.",
+      "failure_action": "Choose a smaller scenario or NO_BUILD; participant ROM values cannot authorize expenditure."
+    },
+    {
+      "id": "G6-DATA-AI",
+      "condition": "Data permission, transparent rules, human override, appeal and AI_OFF fallback pass the six stop-indicator protocol.",
+      "failure_action": "Stop AI advice, keep manual service, freeze the carrier if needed, then RETURN."
+    }
+  ],
+  "recalculation_triggers": [
+    "Any coordinate or component change in geometry/phasing.geojson#PH-P819-01-DAZHONGSI.",
+    "Replacement of provisional geometry by official or cleared survey geometry.",
+    "Verified clear-line, fire, heritage, rights, station-exit or utility constraints move any component by more than 0.5 m or change selected area by more than 5%.",
+    "A professional estimate or tender-ready quote changes a ROM unit rate or allowance by more than 20%.",
+    "Approved annual opening hours, staffed positions, coverage factor or productive hours differ by more than 10% from a participant assumption.",
+    "An accessibility, safety, operator, procurement, maintenance, complaint or AI-governance gate fails.",
+    "Any decision to select Micro, Base, Extended or No-build."
+  ]
+}

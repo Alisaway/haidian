@@ -1,0 +1,194 @@
+{
+  "schema_version": "0.1.0",
+  "artifact_id": "breathing-public-value-acceptance-v1",
+  "artifact_status": "conceptual_acceptance_contract_not_field_result",
+  "pilot": {
+    "duration_days": 90,
+    "pilot_lungs": 3,
+    "scenario_records": 12,
+    "non_ai_route_records": 1,
+    "activation_state": "not_authorized_not_run"
+  },
+  "roles": [
+    {
+      "role": "approval_authority",
+      "responsibility": "Approve site use and public operation",
+      "assignment": "competent authority TBC"
+    },
+    {
+      "role": "pilot_operator",
+      "responsibility": "Own daily service, takeover, maintenance, and exit",
+      "assignment": "authorized site operator TBC"
+    },
+    {
+      "role": "technical_verifier",
+      "responsibility": "Verify calibration, data lineage, and failure records",
+      "assignment": "independent technical reviewer TBC"
+    },
+    {
+      "role": "accessibility_reviewer",
+      "responsibility": "Lead three-lung journey walk-throughs",
+      "assignment": "qualified accessibility reviewer TBC"
+    },
+    {
+      "role": "community_public_health_reviewer",
+      "responsibility": "Review notices, equity, and health-language limits",
+      "assignment": "community and public-health reviewers TBC"
+    }
+  ],
+  "gates": [
+    {
+      "gate_id": "EQ-01",
+      "name_zh": "无数字等价服务",
+      "name_en": "Non-digital service equivalence",
+      "test": "Walk every active scenario without a phone, account, or live sensor and record the staffed alternative.",
+      "pass_rule": "12/12 scenario records identify a usable non-digital equivalent before activation.",
+      "stop_rule": "Any active scenario without an equivalent service returns to staffed-only operation.",
+      "evidence": "signed scenario walk-through register",
+      "status": "not_run"
+    },
+    {
+      "gate_id": "PRIV-01",
+      "name_zh": "最小采集与匿名性",
+      "name_en": "Minimum collection and anonymity",
+      "test": "Review the data dictionary, sample payloads, retention, and deletion path for every active sensor.",
+      "pass_rule": "Zero unauthorized personal identifiers in the reviewed pilot payloads.",
+      "stop_rule": "An unauthorized identifier or untraceable field stops collection and triggers review.",
+      "evidence": "data dictionary and payload review log",
+      "status": "not_run"
+    },
+    {
+      "gate_id": "TAKE-01",
+      "name_zh": "人工接管演练",
+      "name_en": "Human takeover drill",
+      "test": "Stage an anomaly for every active scenario and record the responsible person's takeover action.",
+      "pass_rule": "Every active scenario completes a documented takeover drill before public operation.",
+      "stop_rule": "A failed or unowned takeover drill keeps automatic advice off.",
+      "evidence": "time-stamped drill and incident record",
+      "status": "not_run"
+    },
+    {
+      "gate_id": "ACC-01",
+      "name_zh": "无障碍全程走查",
+      "name_en": "Accessible journey walk-through",
+      "test": "Complete a staffed origin-to-service-to-exit journey in each of the three pilot lungs.",
+      "pass_rule": "No unresolved accessibility blocker remains on an activated pilot journey.",
+      "stop_rule": "A blocked journey disables the associated digital guidance and routes service to staff.",
+      "evidence": "three-lung accessibility walk-through and defect log",
+      "status": "not_run"
+    },
+    {
+      "gate_id": "DATA-01",
+      "name_zh": "设备与数据可追溯",
+      "name_en": "Device and data traceability",
+      "test": "Check device ID, precision, calibration time, retention, operator, and public notice.",
+      "pass_rule": "100% of active pilot devices have complete registry fields and a visible notice.",
+      "stop_rule": "An unregistered or overdue device produces no public advice.",
+      "evidence": "device register and calibration certificate index",
+      "status": "not_run"
+    },
+    {
+      "gate_id": "OPS-01",
+      "name_zh": "运维责任与成本边界",
+      "name_en": "Operations ownership and cost boundary",
+      "test": "Assign an operator, maintenance window, consumable list, removal path, and quoted cost heading.",
+      "pass_rule": "Every activated unit has a named authorized operator and an approved, withdrawable cost envelope.",
+      "stop_rule": "An ownerless or unfunded unit does not activate or expand.",
+      "evidence": "operator sign-off, quantity sheet, and local quotes",
+      "status": "not_run"
+    }
+  ],
+  "decision_rule": {
+    "expand": "All applicable gates pass and field-performance evidence supports public value.",
+    "hold_local": "Safety gates pass but performance, workload, or affordability remains uncertain.",
+    "exit": "A stop rule persists, public value is not evidenced, or operation lacks authorization or funding."
+  },
+  "quantity_and_cost_boundary": {
+    "known_design_quantities": [
+      {
+        "item": "scenario records",
+        "quantity": 12,
+        "unit": "record",
+        "source": "metrics.json#scenario_card_count"
+      },
+      {
+        "item": "pilot lungs",
+        "quantity": 3,
+        "unit": "area",
+        "source": "metrics.json#key_area_count"
+      },
+      {
+        "item": "continuous non-AI routes",
+        "quantity": 1,
+        "unit": "route",
+        "source": "metrics.json#human_fallback_route_count"
+      },
+      {
+        "item": "conceptual building carriers",
+        "quantity": 6,
+        "unit": "feature",
+        "source": "metrics.json#concept_building_count"
+      }
+    ],
+    "cost_headings": [
+      "site verification and permits",
+      "baseline survey",
+      "reversible public-space works",
+      "devices and calibration",
+      "staffed service",
+      "accessibility review",
+      "maintenance and removal",
+      "public reporting"
+    ],
+    "cost_status": "unknown_pending_quantity_survey_local_quotes_permissions_and_operator_assignment",
+    "currency_total": null
+  },
+  "regional_collaboration": [
+    {
+      "partner_scope": "北纬社区",
+      "partner_scope_en": "Beiwei Community",
+      "status": "conceptual_proposal_pending_negotiation",
+      "resource_or_question": "resident questions, daily-service feedback, and community accessibility observations",
+      "interface": "paper and on-site question desk, staffed route feedback, and anonymized issue briefs",
+      "conversion_path": "community question -> scenario brief -> staffed validation -> public review record",
+      "evidence_boundary": "No partnership, consent, venue, or activity is confirmed."
+    },
+    {
+      "partner_scope": "未来科学城",
+      "partner_scope_en": "Future Science City",
+      "status": "conceptual_proposal_pending_negotiation",
+      "resource_or_question": "engineering and industry pilot questions, methods, and test capacity",
+      "interface": "standards, data-compliance, insurance, and bounded test handoff through the technology-service wing",
+      "conversion_path": "engineering question -> controlled prototype -> recalibrated public-service method",
+      "evidence_boundary": "No institutional or resource commitment is confirmed."
+    },
+    {
+      "partner_scope": "怀柔科学城",
+      "partner_scope_en": "Huairou Science City",
+      "status": "conceptual_proposal_pending_negotiation",
+      "resource_or_question": "science-research themes and environmental or public-health measurement methods",
+      "interface": "blue-green observation nodes, method exchange, and documented field-protocol review",
+      "conversion_path": "research question -> measurement protocol -> local calibration record",
+      "evidence_boundary": "No research collaboration or data access is confirmed."
+    },
+    {
+      "partner_scope": "经开区",
+      "partner_scope_en": "Beijing E-Town",
+      "status": "conceptual_proposal_pending_negotiation",
+      "resource_or_question": "manufacturing, device integration, maintenance, and procurement questions",
+      "interface": "calibration and maintenance evidence exchanged through bounded enterprise-service interfaces",
+      "conversion_path": "validated pilot -> maintainable device package -> locally reviewed adoption option",
+      "evidence_boundary": "No supplier, procurement, investment, or deployment commitment is confirmed."
+    },
+    {
+      "partner_scope": "京津冀协同节点",
+      "partner_scope_en": "Beijing-Tianjin-Hebei collaboration nodes",
+      "status": "conceptual_proposal_pending_negotiation",
+      "resource_or_question": "cross-region test scenarios, open methods, and comparable public-service questions",
+      "interface": "portable protocols, bilingual evidence summaries, and cross-site comparison with local review",
+      "conversion_path": "local evidence -> comparable method -> regional learning and re-calibration",
+      "evidence_boundary": "No regional agreement, data exchange, or implementation arrangement is confirmed."
+    }
+  ],
+  "precision_notice": "This contract makes evidence requirements explicit. It does not prove approval, field performance, affordability, or implementation commitment."
+}

@@ -198,3 +198,13 @@ iteration: v0.3
 ## 参考资料
 
 本方案参考以下公开资料：《百年京张 AI 创新带城市设计开源征集公告》《Agent 开放征集任务书》《城市设计管理办法》《控制性详细规划编制技术指引》《国土空间用地用海分类指南》，以及京张铁路 heritage 公开史料、海淀分区规划公开资料、清河站与 13 号线上地站公开数据、打工人爸爸一手生活笔记与仓库维护者临时边界数据[source:SRC-OFFICIAL-ANNOUNCEMENT][source:SRC-AGENT-OPEN-CALL-TASKBOOK][source:SRC-MNR-LAND-USE-CLASSIFICATION-GUIDE]。上述用地分类与控规技术指引同时构成合规矩阵的制度锚点[source:SRC-CONTROL-DETAILED-PLANNING]。
+
+## 附图：区域协同廊道与 15 分钟生活圈（概念示意）
+
+![区域协同廊道示意（概念）](assets/figures/region-corridor.png)
+
+区域协同廊道以京张生活带为骨，向北衔接怀柔科学城、未来科学城，向南联动经开区，向东融入京津冀创新走廊，向西对接海淀北部（北纬社区）[depth:regional_synergy][source:SRC-MAP-SKELETON-CONCEPTUAL]。
+
+![15 分钟步行可达性生活圈（概念示意）](assets/figures/walkability-15min.png)
+
+15 分钟步行生活圈以三座「爸爸驿站」为锚点，沿慢行廊道形成连续可达覆盖；清河站作为轨交换乘枢纽纳入生活圈第一圈层[depth:traffic_rail_slow_parking][source:SRC-MAP-SKELETON-CONCEPTUAL]。

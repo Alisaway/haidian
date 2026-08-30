@@ -59,6 +59,7 @@ import argparse
 import hashlib
 import html
 import json
+import os
 import re
 import subprocess
 from pathlib import Path
@@ -100,12 +101,70 @@ def display_path(path: Path) -> str:
         return path.as_posix()
 
 
-def submission_dirs(repo_root: Path, only: list[str]) -> list[Path]:
-    dirs = sorted(path.parent for path in (repo_root / "submissions").glob("*/*/proposal.md"))
+def is_symlink_free_contained_path(path: Path, root: Path) -> bool:
+    try:
+        relative = path.relative_to(root)
+    except ValueError:
+        return False
+    current = root
+    for part in relative.parts:
+        current /= part
+        if current.is_symlink():
+            return False
+    return path.resolve().is_relative_to(root.resolve())
+
+
+def package_is_symlink_free(directory: Path) -> bool:
+    def raise_walk_error(error: OSError) -> None:
+        raise error
+
+    try:
+        for current, names, files in os.walk(
+            directory, followlinks=False, onerror=raise_walk_error
+        ):
+            if any((Path(current) / name).is_symlink() for name in [*names, *files]):
+                return False
+    except OSError:
+        return False
+    return True
+
+
+def resolve_only_selection(found: list[Path], only: list[str], repo_root: Path) -> list[Path]:
     if not only:
-        return dirs
-    wanted = set(only)
-    return [directory for directory in dirs if directory.name in wanted or directory.as_posix() in wanted]
+        return found
+    selected: list[Path] = []
+    resolved = {path: path.resolve() for path in found}
+    for raw in only:
+        candidate = Path(raw)
+        if candidate.is_absolute():
+            target = candidate.resolve()
+            matches = [path for path in found if resolved[path] == target]
+        elif "/" in raw or "\\" in raw:
+            target = (repo_root / candidate).resolve()
+            matches = [path for path in found if resolved[path] == target]
+        else:
+            matches = [path for path in found if path.name == raw]
+            if len(matches) > 1:
+                choices = ", ".join(path.relative_to(repo_root).as_posix() for path in matches)
+                raise ValueError(f"--only `{raw}` is ambiguous; use an exact path: {choices}")
+        if not matches:
+            raise ValueError(f"--only `{raw}` did not match a discovered submission")
+        if matches[0] not in selected:
+            selected.append(matches[0])
+    return sorted(selected)
+
+
+def submission_dirs(repo_root: Path, only: list[str]) -> list[Path]:
+    submissions_root = repo_root / "submissions"
+    if submissions_root.is_symlink():
+        raise ValueError(f"submissions root must not be a symbolic link: {submissions_root}")
+    dirs = sorted(
+        path.parent
+        for path in submissions_root.glob("*/*/proposal.md")
+        if is_symlink_free_contained_path(path, submissions_root)
+        and package_is_symlink_free(path.parent)
+    )
+    return resolve_only_selection(dirs, only, repo_root)
 
 
 def languages(submission_dir: Path) -> tuple[str, str]:
@@ -213,6 +272,8 @@ def ocr_image(path: Path, source_language: str) -> str:
             ["tesseract", str(path), "stdout", "-l", language, "--psm", psm],
             capture_output=True,
             text=True,
+            encoding="utf-8",
+            errors="replace",
             check=False,
         )
         if completed.returncode != 0:
@@ -596,7 +657,10 @@ def main() -> int:
     parser.add_argument("--force", action="store_true")
     args = parser.parse_args()
     repo_root = args.repo_root.resolve()
-    dirs = submission_dirs(repo_root, args.only)
+    try:
+        dirs = submission_dirs(repo_root, args.only)
+    except ValueError as exc:
+        parser.error(str(exc))
     changed = 0
     if args.mode in {"figures", "all"}:
         zh_to_en, en_to_zh = load_glossary(repo_root / "docs" / "terminology-glossary.md")

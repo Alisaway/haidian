@@ -1,0 +1,334 @@
+{
+ "schema_version": "0.1.0",
+ "units": {
+  "length": "m",
+  "area": "sqm"
+ },
+ "metrics": {
+  "site_area_sqm": {
+   "status": "known",
+   "value": 11412842.258,
+   "unit": "sqm",
+   "source_files": [
+    "geometry/site_boundary.geojson"
+   ],
+   "formula": "polygon_area(submitted_provisional_site_boundary)",
+   "confidence": "medium",
+   "assumptions": [
+    "Site boundary is the repository provisional polygon PROV-SITE-001; official polygon must trigger recalculation."
+   ]
+  },
+  "green_space_area_sqm": {
+   "status": "known",
+   "value": 2404818.148,
+   "unit": "sqm",
+   "source_files": [
+    "geometry/green_space.geojson",
+    "geometry/site_boundary.geojson"
+   ],
+   "formula": "sum(polygon_area(green_space_features))",
+   "confidence": "medium",
+   "assumptions": [
+    "Green space is the concept spine park corridor plus pocket parks/green wedges; provisional values."
+   ]
+  },
+  "public_space_area_sqm": {
+   "status": "known",
+   "value": 663865.779,
+   "unit": "sqm",
+   "source_files": [
+    "geometry/public_space.geojson",
+    "geometry/site_boundary.geojson"
+   ],
+   "formula": "sum(polygon_area(public_space_features))",
+   "confidence": "medium",
+   "assumptions": [
+    "Public space is six coupler node plazas plus the service-depot plaza; provisional values."
+   ]
+  },
+  "building_footprint_area_sqm": {
+   "status": "known",
+   "value": 953303.936,
+   "unit": "sqm",
+   "source_files": [
+    "geometry/buildings.geojson"
+   ],
+   "formula": "sum(polygon_area(building_features))",
+   "confidence": "low",
+   "assumptions": [
+    "Concept massing footprints only, not an inventory of existing buildings; no demolition/renovation conclusions."
+   ]
+  },
+  "green_ratio": {
+   "status": "known",
+   "value": 0.210712,
+   "unit": "ratio",
+   "source_files": [
+    "geometry/green_space.geojson",
+    "geometry/site_boundary.geojson"
+   ],
+   "formula": "green_space_area_sqm / site_area_sqm",
+   "confidence": "medium",
+   "assumptions": [
+    "Concept ratio under provisional boundary; recalibrate when official polygons arrive."
+   ]
+  },
+  "public_space_ratio": {
+   "status": "known",
+   "value": 0.058168,
+   "unit": "ratio",
+   "source_files": [
+    "geometry/public_space.geojson",
+    "geometry/site_boundary.geojson"
+   ],
+   "formula": "public_space_area_sqm / site_area_sqm",
+   "confidence": "medium",
+   "assumptions": [
+    "Concept ratio under provisional boundary; recalibrate when official polygons arrive."
+   ]
+  },
+  "spine_length_m": {
+   "status": "known",
+   "value": 19446,
+   "unit": "m",
+   "source_files": [
+    "geometry/roads.geojson"
+   ],
+   "formula": "sum(linestring_length(roads where road_class=greenway))",
+   "confidence": "medium",
+   "assumptions": [
+    "Spine + wings greenway network lengths; indicative alignment, not engineering lines."
+   ]
+  },
+  "flank_road_length_m": {
+   "status": "known",
+   "value": 11006.8,
+   "unit": "m",
+   "source_files": [
+    "geometry/roads.geojson"
+   ],
+   "formula": "sum(linestring_length(roads where road_class in arterial/secondary/transit_connection))",
+   "confidence": "medium",
+   "assumptions": [
+    "Indicative stitching corridors; not road redlines."
+   ]
+  },
+  "land_use_parcel_count": {
+   "status": "known",
+   "value": 24,
+   "unit": "count",
+   "source_files": [
+    "geometry/land_use.geojson"
+   ],
+   "formula": "count(land_use features)",
+   "confidence": "high",
+   "assumptions": [
+    "Partition fully covers the submitted provisional boundary without gaps or overlaps."
+   ]
+  },
+  "coupler_node_count": {
+   "status": "known",
+   "value": 6,
+   "unit": "count",
+   "source_files": [
+    "geometry/public_space.geojson",
+    "geometry/land_use.geojson"
+   ],
+   "formula": "count(public_space features with space_type=coupler_node_plaza)",
+   "confidence": "high",
+   "assumptions": [
+    "Six coupler nodes along the spine anchor the coupling/uncoupling mechanism."
+   ]
+  },
+  "scenario_card_count": {
+   "status": "known",
+   "value": 12,
+   "unit": "count",
+   "source_files": [
+    "proposal.md"
+   ],
+   "formula": "count(scenario cards in proposal AI-scenario chapter)",
+   "confidence": "high",
+   "assumptions": [
+    "Twelve scenario cards, each with a coupling route table."
+   ]
+  },
+  "industry_test_scenario_count": {
+   "status": "known",
+   "value": 4,
+   "unit": "count",
+   "source_files": [
+    "proposal.md"
+   ],
+   "formula": "count(scenario cards typed as industry test/validation)",
+   "confidence": "high",
+   "assumptions": [
+    "Four of the twelve cards are industry test-and-validation scenarios."
+   ]
+  },
+  "persona_count": {
+   "status": "known",
+   "value": 5,
+   "unit": "count",
+   "source_files": [
+    "proposal.md"
+   ],
+   "formula": "count(user persona classes in proposal)",
+   "confidence": "high",
+   "assumptions": [
+    "Five user persona classes define coupling permissions."
+   ]
+  },
+  "ai_ecosystem_case_count": {
+   "status": "known",
+   "value": 7,
+   "unit": "count",
+   "source_files": [
+    "proposal.md"
+   ],
+   "formula": "count(global AI ecosystem cases summarised)",
+   "confidence": "high",
+   "assumptions": [
+    "Seven cases used only for mechanism transfer, not for claims about the cases themselves."
+   ]
+  },
+  "landmark_count": {
+   "status": "known",
+   "value": 4,
+   "unit": "count",
+   "source_files": [
+    "proposal.md"
+   ],
+   "formula": "count(AI pilgrimage landmarks / honour nodes)",
+   "confidence": "high",
+   "assumptions": [
+    "Four conceptual landmarks, all reversible and requiring heritage review before touching the site."
+   ]
+  },
+  "renewal_project_count": {
+   "status": "known",
+   "value": 10,
+   "unit": "count",
+   "source_files": [
+    "proposal.md"
+   ],
+   "formula": "count(renewal project packages)",
+   "confidence": "high",
+   "assumptions": [
+    "Ten independently pausable project packages."
+   ]
+  },
+  "phasing_stage_count": {
+   "status": "known",
+   "value": 3,
+   "unit": "count",
+   "source_files": [
+    "geometry/phasing.geojson"
+   ],
+   "formula": "count(phasing features)",
+   "confidence": "high",
+   "assumptions": [
+    "Near/mid/far term phases; concept scope only."
+   ]
+  },
+  "coupling_route_table_coverage_ratio": {
+   "status": "known",
+   "value": 1,
+   "unit": "ratio",
+   "source_files": [
+    "proposal.md"
+   ],
+   "formula": "scenario cards with coupling route table / scenario_card_count",
+   "confidence": "high",
+   "assumptions": [
+    "Every scenario card carries a route table with coupling state, data boundary, human review and uncoupling path."
+   ]
+  },
+  "fallback_drill_count": {
+   "status": "known",
+   "value": 12,
+   "unit": "count",
+   "source_files": [
+    "proposal.md"
+   ],
+   "formula": "monthly uncoupling drills x 12",
+   "confidence": "medium",
+   "assumptions": [
+    "Concept operating rhythm; actual frequency to be set by operations team."
+   ]
+  },
+  "key_area_total_sqm": {
+   "status": "known",
+   "value": 3692893.028,
+   "unit": "sqm",
+   "source_files": [
+    "geometry/key_areas.geojson"
+   ],
+   "formula": "sum(polygon_area(key_area features))",
+   "confidence": "medium",
+   "assumptions": [
+    "Announced values are 3,684,000 sqm; provisional rectangles are indicative only."
+   ]
+  },
+  "floor_area_ratio": {
+   "status": "unknown",
+   "value": null,
+   "unit": "ratio",
+   "source_files": [],
+   "formula": "",
+   "confidence": "unknown",
+   "assumptions": [
+    "Official control conditions not published; cannot be estimated."
+   ],
+   "reason": "容积率依赖官方控规条件与地块边界,当前无发布数据,不反推不估值。"
+  },
+  "building_height_control_m": {
+   "status": "unknown",
+   "value": null,
+   "unit": "m",
+   "source_files": [],
+   "formula": "",
+   "confidence": "unknown",
+   "assumptions": [
+    "Official height controls not published."
+   ],
+   "reason": "建筑高度控制依赖官方控规与高度分区,未发布;概念体量不代表法定控制值。"
+  },
+  "green_ratio_statutory": {
+   "status": "unknown",
+   "value": null,
+   "unit": "ratio",
+   "source_files": [],
+   "formula": "",
+   "confidence": "unknown",
+   "assumptions": [
+    "Statutory green ratio requires official redlines and municipal codes."
+   ],
+   "reason": "法定绿地率需官方红线与配套绿地数据,当前仅为概念几何复算,不宣称法定值。"
+  },
+  "construction_demolition_scale": {
+   "status": "unknown",
+   "value": null,
+   "unit": "none",
+   "source_files": [],
+   "formula": "",
+   "confidence": "unknown",
+   "assumptions": [
+    "No demolition/renovation conclusions without official building and ownership data."
+   ],
+   "reason": "拆改留规模需现状建筑、权属与年代调查,证据不足时不产生拆除清单。"
+  },
+  "live_service_success_rate": {
+   "status": "unknown",
+   "value": null,
+   "unit": "ratio",
+   "source_files": [],
+   "formula": "",
+   "confidence": "unknown",
+   "assumptions": [
+    "Field performance requires licensed baselines; not filled with estimates."
+   ],
+   "reason": "现场服务成功率需许可基线与运行数据,基线建立前保持 null。"
+  }
+ }
+}

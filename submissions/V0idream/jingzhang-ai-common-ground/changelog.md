@@ -1,5 +1,15 @@
 # 方案迭代记录
 
+## v4.0 - 2026-08-26
+
+- 基于已合并且 Review Agent 得分 86/100 的 V3 做增量更新；不改“京张译场—三译院—六门”、已通过几何或稳定指标，不把旧分数推测为官方分项扣分。
+- 面向 advisory review schema 0.2.1，把九类未来资料/授权/现场条件从含糊“待完善”改为 `blocking_now=false + trigger + owner + action`，并保留当前可审查处理方式。
+- 新增 agent.1—agent.6 一页成果导航和 31/31 required outputs 机器索引；`compliance_matrix.json` 补齐独立 `standard_ids`，不再把来源和专业标准放进同一命名空间。
+- 将 TG-PILOT-01 扩展为可逆 MVP 契约：八项启动门、七角色 RACI、最小数据、AI/人工/无 AI 边界、六类异常、四档降级、八项验收指标、证据产物和退场后公共复用。
+- 补齐逐源访问日期、用途、evidence level、复用范围和权利说明；Microsoft YaHei/Arial 仅用于本机栅格化且不分发，PDF 不嵌入字体程序。根据 90/100 首轮 review 的唯一 current repair，四份 HTML 又内联 Noto Sans SC OFL-1.1 字符子集，并补充完整许可、源/子集 SHA 与覆盖证据，消除受信任 Linux/Chromium 截图中的 CJK 方框字。
+- 根据 91/100 第二轮 review 的两项 current repairs：将 agent.2—agent.6 的悬空 `geometry/scenario_nodes.geojson` 全部改接实际承载场景的 `geometry/public_space.geojson`；英文 HTML 改为 `TG CJK` 首选字体，并重排英文总览图左栏文字、移除不受 Arial 支持的勾选符号，重新生成中英 PDF。
+- 新增中英评审导航、MVP 实施契约和任务书映射图，重排 A3/A0 首屏；全部新增证据为本方案原创或程序化派生，不复制其他投稿。
+
 ## v3.0 - 2026-08-13
 
 - 在 V2 已合并且 Review Agent 得分 82/100 的基础上，针对公开 rubric 中的可实施性、公共包容与表达完整度继续独立深化；公开 review 未提供七维明细，因此不把推测写成官方失分结论。

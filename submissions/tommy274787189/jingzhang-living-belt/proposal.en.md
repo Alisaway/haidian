@@ -174,3 +174,13 @@ The greatest risk of this proposal comes from data gaps: **the provisional bound
 ## References
 
 This proposal references the following public materials: the Centennial Jing-Zhang AI Innovation Belt Open Call Announcement, the Agent Open Call Taskbook, the Urban Design Administrative Measures, the Technical Guidelines for Regulatory Detailed Planning, the National Land Use Classification Guide, public historical materials on Jing-Zhang heritage, public planning materials of the Haidian District Plan, public transfer data of Qinghe Station and Line 13 Shangdi Station, the working dad's firsthand life notes, and the repository maintainers' provisional boundary data[source:SRC-OFFICIAL-ANNOUNCEMENT][source:SRC-AGENT-OPEN-CALL-TASKBOOK][source:SRC-MNR-LAND-USE-CLASSIFICATION-GUIDE]. The land-use classification and regulatory-planning technical guidelines also form the institutional anchors of the compliance matrix[source:SRC-CONTROL-DETAILED-PLANNING].
+
+## Supplementary Figures: Regional Corridor and 15-Minute Living Circle (Conceptual)
+
+![Regional Synergy Corridor (conceptual)](assets/figures/region-corridor.en.png)
+
+The regional synergy corridor takes the Jingzhang Living Belt as its spine, linking northward to Huairou Science City and Future Science City, southward to the E-Tech Zone, eastward into the Jing-Jin-Ji innovation corridor, and westward to northern Haidian (Beiwei Community)[depth:regional_synergy][source:SRC-MAP-SKELETON-CONCEPTUAL].
+
+![15-Minute Walkable Living Circle (conceptual)](assets/figures/walkability-15min.en.png)
+
+The 15-minute walkable living circle is anchored by three Dad Stations and forms a continuous walkable coverage belt along the slow-traffic corridor; Qinghe Station is integrated as a first-ring transit-transfer hub[depth:traffic_rail_slow_parking][source:SRC-MAP-SKELETON-CONCEPTUAL].

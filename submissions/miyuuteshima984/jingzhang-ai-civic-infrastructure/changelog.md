@@ -1,5 +1,14 @@
 # 方案迭代记录
 
+## v0.15.s — AI SIDECAR CITY / AI 侧挂城市
+
+- 将 v0.14.s 的三条 invariant civic routes 升级为“普通城市主机 + 可逆 AI sidecar”：TEST POCKET、CARE PORCH、ARRIVAL SIDECAR。
+- 在 `buildings.geojson`、`public_space.geojson` 和 `roads.geojson` 中为 9 个宿主 feature 建立 sidecar / route / AI OFF-ON 机器可读关系；不修改 Polygon 或 LineString 几何。
+- 删除重点区域正文中遗留的 3.5m、2.0m、1.8m、400m、多层甲板、通廊净宽等无正式依据的伪工程精度；大钟寺继续 `REAL LEVEL DATA REQUIRED`。
+- 新增 `ai_sidecar_type_count=3`、`ai_sidecar_host_feature_count=9`、`ai_off_route_preservation_ratio=1.0`、`new_ai_land_use_code_count=0` 等设计事实指标。
+- 重建 5 组中英 canonical PNG、双语 A3/A0、visual 首页；AI OFF/ON 在同一图中对照，普通路线位置保持不变。
+- 清理 v0.14.s review 反馈：visual 图片补齐 alt；HTML 保持可读格式；report section markers 后处理为真实注释；旧 v0.13.g section refs 从 evidence matrices 移除。
+
 ## v0.13 - 2026-08-15
 
 - **SPATIAL CONTRACTS AS BUILT TYPOLOGIES (v0.13.g)**: Formally integrated the Dual-Track Spatial Contracts into high-density architectural typologies and physical clearances across the three key areas:
@@ -109,3 +118,17 @@
 
 - Created branch `submission/miyuuteshima984/jingzhang-ai-civic-infrastructure`.
 - Created first proposal skeleton with a research → testing → public use → market conversion → public review loop.
+
+## v0.14.s — INVARIANT CIVIC ROUTES
+- Added ROAD-009/010/011 as conceptual pedestrian routes with `ai_dependency=none`, binding the three everyday journeys to machine-readable geometry without changing area polygons.
+- Replaced v0.13.g false engineering precision and S0–S3-first narration with route-first spatial contracts and explicit evidence boundaries.
+- Rebuilt all five canonical figure pairs, bilingual A3/A0 first pages, visual HTML and structured evidence mappings around three differentiated urban types.
+- Preserved v0.7 everyday journeys, six reversible AI urban-form interfaces and two implementation paths; restored geometry-derived fixed quantities to canonical recomputation values.
+
+## v0.16 - 2026-08-16
+
+- CLEAN EXIT CITY：把 v0.15.s 的可逆 sidecar 升级为 BASE CITY → ATTACH → OPERATE → CLEAN EXIT 四步空间生命周期。
+- 九个既有 sidecar host 写入 ordinary_restore_use / clean_exit_mode / field_check_required；三条 invariant routes 在完整生命周期内保持不变。
+- phasing 增加 clean-exit 交接规则，不改变任何 phase polygon 或锁定面积指标。
+- 重建 key-area lifecycle hero、metrics evidence、双语 visual 与 A3/A0，令“AI 如何进入并完整退出城市”直接进入 Review Agent 多模态首屏。
+- 不新增 AI 用地，不虚构站口、高差、桥隧、净宽、吞吐、FAR、高度或已确认运营主体。

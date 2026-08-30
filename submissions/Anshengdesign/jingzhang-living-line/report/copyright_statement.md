@@ -2,7 +2,8 @@
 
 ## 1. 归属与授权
 - 本方案包全部内容（正文、图件、几何、指标、矩阵）由 KUN-SAL 坤空间量化实验室（投稿署名：邢新华，GitHub: Anshengdesign）通过 AI Agent 工作流生成，向"百年京张AI创新带城市设计开源征集"提交，按仓库 COMMUNITY-DISPLAY-ONLY 许可公开展示。
-- 方案命名（涌现之带 THE EMERGENT BELT / 京张 Hyper Line / HYPER STACK / HYPER ORIGIN / HYPER FRONT）与 Logo 方向为概念提案，未经商标检索与授权确认；正式使用前需另行清权。
+- **当前展示权（本投稿公示使用）已闭合**：本包所有用于投稿展示的文字、图件、几何、指标与矩阵，其作者均为 KUN-SAL 团队，或为已获许可/已署名的公开来源（见第 2、5 节），不存在未授权的第三方图片、字体完整文件或商标。**未来商标事项**（"涌现之带 / THE EMERGENT BELT / Hyper Line"及 Logo 的正式商标检索、名称审批与品牌采用）属投稿展示范围之外的独立事项，未获授权前保持方案提案属性，不构成本包当前展示权的缺陷。
+- 方案命名（涌现之带 THE EMERGENT BELT / 京张 Hyper Line / HYPER STACK / HYPER ORIGIN / HYPER FRONT）与 Logo 方向为概念提案，未经商标检索与授权确认；**当前投稿展示约**基于征集 COMMUNITY-DISPLAY-ONLY 许可，正式商用需另行清权。
 
 ## 2. 第三方数据与素材
 - 高德地图 POI 数据：经用户提供的开发者 Key 通过高德开放平台 Web Service API 获取（2026-08-15 快照，12 类 25,476 点）。本包仅使用聚合指标与密度场，不公开原始点位数据，不转售；高德数据权利归高德及其数据合作方所有。

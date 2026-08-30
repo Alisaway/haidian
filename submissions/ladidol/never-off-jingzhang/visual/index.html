@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Never-Off City · Jing-Zhang Civic Loop</title>
+  <link rel="stylesheet" href="assets/font.css">
+  <style>
+    :root{--ink:#152336;--muted:#6c7d91;--line:#dbe4ed;--paper:#f6f8fa;--blue:#163b67;--orange:#e58a36;--green:#16836a;--violet:#7357a8;--red:#c84c47}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 "Noto CJK SC Local",-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}header{background:var(--blue);color:white;padding:38px max(22px,calc((100% - 1260px)/2));position:relative;overflow:hidden}header:after{content:"";position:absolute;width:520px;height:520px;border:1px solid #ffffff25;border-radius:50%;right:-120px;top:-310px;box-shadow:0 0 0 34px #ffffff0b,0 0 0 70px #ffffff08}header h1{font-size:clamp(34px,6vw,72px);line-height:1;margin:10px 0 14px;letter-spacing:-.05em}header p{max-width:760px;font-size:18px;color:#d9e7f3}.tag{color:#ffbc70;font-size:12px;letter-spacing:.14em;font-weight:700}.wrap{max-width:1260px;margin:0 auto;padding:26px 22px 80px}.layout{display:grid;grid-template-columns:1.55fr .85fr;gap:18px}.panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 12px 30px #17355408}.panel h2{font-size:22px;margin:0 0 14px}.map{min-height:410px;background:linear-gradient(135deg,#f0f5f8,#fff8f1);overflow:hidden}.legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.legend span{font-size:12px;padding:4px 8px;border-radius:999px;background:#eef3f7}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}.statebar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}.statebar button{border:1px solid var(--line);background:#fff;border-radius:10px;padding:9px 11px;cursor:pointer;color:var(--ink)}.statebar button.active{color:white;background:var(--blue);border-color:var(--blue)}.state-copy{padding:12px;border-left:4px solid var(--green);background:#f3faf7}.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.scene{border:1px solid var(--line);border-radius:12px;padding:12px;background:#fff}.scene b{display:block;font-size:14px}.scene small{color:var(--muted)}.metric{padding:12px;border-bottom:1px solid var(--line)}.metric:last-child{border-bottom:0}.metric b{display:block}.metric small{color:var(--muted)}.figure-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.figure-grid figure{margin:0;border:1px solid var(--line);border-radius:12px;padding:10px;background:#fbfcfd}.figure-grid img{display:block;width:100%;height:auto;border-radius:8px}.figure-grid figcaption{font-size:12px;color:var(--muted);padding-top:8px}.warning{border-left:5px solid var(--orange);background:#fff7ec;padding:12px 14px}.task-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.task-grid .scene{min-height:126px}.foot{margin-top:18px;color:var(--muted);font-size:12px}@media(max-width:900px){.layout{grid-template-columns:1fr}.task-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.cards,.figure-grid,.task-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<header><div class="tag">NEVER-OFF CITY · LOCAL DRAFT · v0.1</div><h1>城市永不掉线</h1><p>以京张铁路遗址公园为公共脊，让普通服务先在线，让 AI 只作为可解释、可暂停、可人工接管的辅助层。</p></header>
+<main class="wrap">
+  <section class="panel warning"><b>精度声明 / Provisional accuracy</b><br>当前 site boundary 与三处 key areas 是临时粗略 polygon，约 93.88 km² 仅为设计模型显示值，不是官方 43.6 km² 边界、红线或精确面积。正式数据发布后，图层、指标、图纸和网页整体复算。<br><small>证据：DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509 · DATA-SRC-PROVISIONAL-BOUNDARIES-20260605 · A-PROVISIONAL-GEOMETRY</small></section>
+  <section class="panel" style="margin-top:18px"><h2>图件证据总览 / Evidence figures</h2><div class="figure-grid">
+    <figure><img src="../assets/figures/site-overview.png" alt="京张公共服务脊、节点、方向和三层范围概念图"><figcaption>图 1 · 一脊三类节点、方向、图例与比例提示</figcaption></figure>
+    <figure><img src="../assets/figures/key-areas.png" alt="三处重点区域及其公共服务责任"><figcaption>图 2 · AI 原点社区、大钟寺、众智园的责任分工</figcaption></figure>
+    <figure><img src="../assets/figures/land-use-structure.png" alt="用地、建筑、道路、蓝绿与公共服务图层"><figcaption>图 3 · 用地—空间—服务层对应关系</figcaption></figure>
+    <figure><img src="../assets/figures/mobility-bluegreen.png" alt="慢行、换乘、蓝绿节点和人工接管回路"><figcaption>图 4 · 换乘最后一段路与蓝绿韧性回路</figcaption></figure>
+    <figure><img src="../assets/figures/metrics-evidence.png" alt="核心指标、公式、来源和复算触发条件"><figcaption>图 5 · 指标—证据—复算链</figcaption></figure>
+  </div></section>
+  <div class="layout">
+    <section class="panel map">
+      <h2>一脊 · 三类节点</h2>
+      <svg viewBox="0 0 720 360" role="img" aria-label="概念公共服务脊和节点示意">
+        <defs><pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#dbe4ed" stroke-width="1"/></pattern></defs>
+        <rect width="720" height="360" fill="url(#grid)"/>
+        <path d="M92 300 C165 260 165 195 245 170 S360 210 430 145 S555 110 640 50" fill="none" stroke="#163b67" stroke-width="20" stroke-linecap="round"/>
+        <path d="M120 40 L200 300 M310 35 L390 300 M500 30 L560 300" stroke="#16836a" stroke-width="6" stroke-dasharray="12 12" opacity=".65"/>
+        <circle cx="170" cy="245" r="22" fill="#e58a36"/><circle cx="365" cy="190" r="22" fill="#16836a"/><circle cx="560" cy="100" r="22" fill="#7357a8"/>
+        <text x="132" y="292" fill="#152336" font-size="16">安心节点</text><text x="326" y="235" fill="#152336" font-size="16">换乘节点</text><text x="520" y="145" fill="#152336" font-size="16">测试节点</text>
+        <text x="38" y="340" fill="#6c7d91" font-size="14">概念公共脊 · 不代表官方道路或红线</text>
+      </svg>
+      <div class="legend"><span><i class="dot" style="background:#163b67"></i>公共脊</span><span><i class="dot" style="background:#e58a36"></i>安心</span><span><i class="dot" style="background:#16836a"></i>换乘</span><span><i class="dot" style="background:#7357a8"></i>测试</span></div>
+    </section>
+    <section class="panel">
+      <h2>运行状态</h2>
+      <div class="statebar" role="tablist"><button class="active" data-state="OPEN">OPEN</button><button data-state="ALERT">ALERT</button><button data-state="HUMAN">HUMAN</button><button data-state="RESTORE">RESTORE</button><button data-state="RETIRE">RETIRE</button></div>
+      <div class="state-copy" id="stateCopy"><b>常态服务</b><br>普通服务和 AI 辅助均可用；用户可以选择不使用 AI。</div>
+      <div class="metric"><b>普通服务基线</b><small>纸质地图 · 实体标识 · 电话 · 人工服务 · 座椅 · 饮水</small></div>
+      <div class="metric"><b>AI 辅助层</b><small>天气风险 · 无障碍路线 · 绕行提示 · 语言解释 · 机器人协同</small></div>
+      <div class="metric"><b>韧性治理层</b><small>状态 · 责任 · 暂停条件 · 恢复记录 · 公众反馈</small></div>
+    </section>
+  </div>
+  <section class="panel" style="margin-top:18px"><h2>十类场景卡</h2><div class="cards">
+    <div class="scene"><b>SC-01 高温避护</b><small>遮阴、饮水、休息与安全路线</small></div>
+    <div class="scene"><b>SC-02 暴雨绕行</b><small>封闭提示、雨水节点与替代路径</small></div>
+    <div class="scene"><b>SC-03 无手机通行</b><small>不登录、不扫码仍可完成路线和求助</small></div>
+    <div class="scene"><b>SC-04 全龄慢行</b><small>按休息、遮阴与过街条件组织路径</small></div>
+    <div class="scene"><b>SC-05 无障碍路径</b><small>发现断点并提供人工接驳</small></div>
+    <div class="scene"><b>SC-06 夜间换乘</b><small>照明、开放客厅与人工服务</small></div>
+    <div class="scene"><b>SC-07 机器人共享</b><small>低速、让行、暂停、撤回</small></div>
+    <div class="scene"><b>SC-08 社区健康咨询</b><small>信息解释与人工转介，不做自动诊断</small></div>
+    <div class="scene"><b>SC-09 学校公园接送</b><small>时段风险提示与家长/教师确认</small></div>
+    <div class="scene"><b>SC-10 故障回放</b><small>公开事件、处理和恢复结果</small></div>
+  </div></section>
+  <section class="layout" style="margin-top:18px"><section class="panel"><h2>三处概念样板</h2><div class="cards"><div class="scene"><b>AI 原点社区</b><small>日常服务与全龄可达</small></div><div class="scene"><b>大钟寺</b><small>换乘与夜间公共界面</small></div><div class="scene"><b>众智园</b><small>安全测试与恢复演练</small></div></div></section><section class="panel"><h2>设计边界</h2><p class="muted">所有空间边界、面积、道路、建筑强度和设施落位均为 provisional 概念建议。当前不包含官方红线、个人轨迹、健康记录或外部媒体素材。</p><p class="foot">证据：../sources.json<br>假设：../assumptions.json<br>主叙事：../proposal.md</p></section></section>
+  <section class="panel" style="margin-top:18px"><h2>总览地图 · 三层范围 · 重点区域</h2><div class="legend"><span>用地分区</span><span>交通慢行</span><span>蓝绿公共空间</span><span>建筑</span><span>更新项目</span><span>AI 场景</span><span>任务覆盖</span><span>自检状态</span><span>来源</span><span>假设</span></div><div class="cards" style="margin-top:12px"><div class="scene"><b>核心指标</b><small data-metric="site_area_sqm" data-value="93882767.665">site_area_sqm · 93,882,767.665 sqm</small><small data-metric="green_ratio" data-value="0.136364">green_ratio · 0.136364</small><small data-metric="public_space_ratio" data-value="0.065862">public_space_ratio · 0.065862</small></div><div class="scene"><b>自检状态</b><small>本地离线结构检查通过；正式边界仍为 provisional。</small><small>来源见 sources.json；假设见 assumptions.json。</small></div></div></section>
+  <section class="panel" style="margin-top:18px"><h2>六项任务的可核对入口</h2><div class="task-grid">
+    <div class="scene" id="task-agent-1"><b>agent.1 · 总体概念</b><small>三大定位 · 五大功能 · 三区两翼 · 区域协同 · Logo</small></div>
+    <div class="scene" id="task-agent-2"><b>agent.2 · 全栈生态</b><small>7 个案例 · 八项要素机制 · 生态—空间映射</small></div>
+    <div class="scene" id="task-agent-3"><b>agent.3 · AI 场景</b><small>10 场景 · 3 验证 · 5 用户 · 小月河场景翼</small></div>
+    <div class="scene" id="task-agent-4"><b>agent.4 · 公共空间</b><small>东西缝合 · 南北贯通 · 3 地标 · 组件库</small></div>
+    <div class="scene" id="task-agent-5"><b>agent.5 · 文化叙事</b><small>京张 · 中关村 · AI 新文化 · 双语导视</small></div>
+    <div class="scene" id="task-agent-6"><b>agent.6 · 长期运营</b><small>年度活动 · 开发者 · 场景开放 · 国际转化</small></div>
+  </div></section>
+</main>
+<script>
+  const copy={OPEN:['常态服务','普通服务和 AI 辅助均可用；用户可以选择不使用 AI。'],ALERT:['风险预警','高温、暴雨、拥堵或设备异常触发提示；优先引导安全绕行。'],HUMAN:['人工接管','暂停高风险自动功能；纸质、电话和现场人员服务恢复。'],RESTORE:['恢复复盘','记录事件、修复、用户反馈和是否重新开放。'],RETIRE:['退役替换','撤除反复造成风险的 AI 设施，同时保留普通服务基线。']};
+  document.querySelectorAll('[data-state]').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('[data-state]').forEach(x=>x.classList.remove('active'));btn.classList.add('active');const v=copy[btn.dataset.state];document.querySelector('#stateCopy').innerHTML='<b>'+v[0]+'</b><br>'+v[1];}));
+</script>
+</body>
+</html>

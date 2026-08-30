@@ -84,7 +84,7 @@
     "GOV-OBS-01": {
       "assumptions": [],
       "confidence": "unknown",
-      "formula": "credential_pair_completeness（待定义）",
+      "formula": "credential_pair_completeness = 完成双向凭证互证的试行场景数 ÷ 进入试行的场景总数（试行档案统计口径，公式待验证）",
       "reason": "待定义：双向凭证互证界面（凭证互换）的凭证对完整率；不预填目标值",
       "source_files": [],
       "status": "unknown",
@@ -94,7 +94,7 @@
     "GOV-OBS-02": {
       "assumptions": [],
       "confidence": "unknown",
-      "formula": "decision_log_link_rate（待定义）",
+      "formula": "decision_log_link_rate = 带可复核链接证据的决策日志数 ÷ 决策日志总数（试行档案统计口径，公式待验证）",
       "reason": "待定义：人审决定日志关联率",
       "source_files": [],
       "status": "unknown",
@@ -104,7 +104,7 @@
     "GOV-OBS-03": {
       "assumptions": [],
       "confidence": "unknown",
-      "formula": "status_snapshot_freshness（待定义）",
+      "formula": "status_snapshot_freshness = 状态快照实际刷新间隔与承诺刷新周期之差的合规比例（试行档案统计口径，公式待验证）",
       "reason": "待定义：治理状态索引快照新鲜度",
       "source_files": [],
       "status": "unknown",
@@ -114,7 +114,7 @@
     "INCLUSION-SERVICE-01": {
       "assumptions": [],
       "confidence": "unknown",
-      "formula": "无障碍路径连续性 / 人工替代可达性 / 可退出成功率（待定义）",
+      "formula": "无障碍路径连续性 = 覆盖无障碍/人工替代入口的公共组件节点比例（geometry/public_space.geojson 统计口径，公式待验证）",
       "reason": "待定义：包容与服务连续性；每个场景至少绑定一项",
       "source_files": [],
       "status": "unknown",
@@ -151,7 +151,7 @@
     "OPS-WIN-01": {
       "assumptions": [],
       "confidence": "unknown",
-      "formula": "public_review_window_output_rate（公共复核与质询窗口，待定义）",
+      "formula": "public_review_window_output_rate = 公共复核与质询窗口内完成答复并归档的意见数 ÷ 窗口意见总数（试行档案统计口径，公式待验证）",
       "reason": "待定义：公共复核与质询窗口产出率；不预填目标值",
       "source_files": [],
       "status": "unknown",
@@ -161,7 +161,7 @@
     "OPS-WIN-02": {
       "assumptions": [],
       "confidence": "unknown",
-      "formula": "open_sessions / maintainer_retention / knowledge_package_reuse（待定义）",
+      "formula": "open_sessions / maintainer_retention / knowledge_package_reuse 三项运营统计（统计口径待验证）",
       "reason": "待定义：运营绩效（开放场次、维护者留存、知识包复用量）",
       "source_files": [],
       "status": "unknown",
@@ -259,6 +259,51 @@
       "confidence": "medium",
       "assumptions": [
         "基于 provisional 边界；概念公共空间"
+      ]
+    },
+    "GOV-OBS-04": {
+      "status": "known",
+      "value": 7,
+      "formula": "len(protocol_steps)（visual/assets/data/meet-protocol.schema.json）",
+      "assumptions": [
+        "七步主序列：预约—披露—互证—人审—试行—回退—归档（proposal §06.1.2）"
+      ],
+      "source_files": [
+        "visual/assets/data/meet-protocol.schema.json"
+      ]
+    },
+    "GOV-OBS-05": {
+      "status": "known",
+      "value": 8,
+      "formula": "len(status_codes)（visual/assets/data/meet-protocol.schema.json）",
+      "assumptions": [
+        "8 值 status_code：申请中/已披露/待互证/已人审/限域试行/已暂停/已回退/已归档"
+      ],
+      "source_files": [
+        "visual/assets/data/meet-protocol.schema.json"
+      ]
+    },
+    "GOV-OBS-06": {
+      "status": "known",
+      "value": 14,
+      "formula": "drill_pass（visual/assets/check_meet_protocol.js 确定性演练输出）",
+      "assumptions": [
+        "drill_total=14, drill_pass=14（2026-08-15 生成，脚本逐字节可复跑）；证据见 visual/assets/data/meet-protocol-drill.json"
+      ],
+      "source_files": [
+        "visual/assets/check_meet_protocol.js",
+        "visual/assets/data/meet-protocol-drill.json"
+      ]
+    },
+    "NODE-SCENARIO-01": {
+      "status": "known",
+      "value": 3,
+      "formula": "count(component_id=C02)（geometry/public_space.geojson）",
+      "assumptions": [
+        "会车台节点 PS-C02-001（造解站）/PS-C02-002（原点社区）/PS-C02-003（试行站），共 3 处；一级会车总台 C01 与三级交接湾 C06 另计，不重复计入"
+      ],
+      "source_files": [
+        "geometry/public_space.geojson"
       ]
     }
   },

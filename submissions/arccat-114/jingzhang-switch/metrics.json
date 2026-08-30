@@ -356,15 +356,30 @@
     },
     "ai_pilgrimage_landmark_count": {
       "status": "known",
-      "value": 4,
+      "value": 5,
       "unit": "count",
       "source_files": [
-        "proposal.md"
+        "proposal.md",
+        "visual/assets/catalogs.json"
       ],
-      "formula": "count(ai_pilgrimage_landmarks)",
+      "formula": "count(visual/assets/catalogs.json#landmarks)",
       "confidence": "high",
       "assumptions": [
-        "4 处 AI 朝圣地标节点：岔心纪念碑、0公里桩、数字钟塔、信号塔。"
+        "L1 清华园车站遗址、L2 零号基线碑、L3 异议站台、L4 大钟寺十年总账墙、L5 放行门信号群；均为概念建议，落位待专业深化。"
+      ]
+    },
+    "renewal_project_count": {
+      "status": "known",
+      "value": 18,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "visual/assets/catalogs.json"
+      ],
+      "formula": "count(visual/assets/catalogs.json#renewal_projects)",
+      "confidence": "high",
+      "assumptions": [
+        "P01–P18 是六个启动包中的概念项目目录，不代表已立项、已授权或已实施。"
       ]
     },
     "user_persona_count": {
@@ -576,6 +591,19 @@
       "assumptions": [
         "OSM 概念级量测，非测绘成果；覆盖率仅作量级参照。"
       ]
+    },
+    "slow_variable_baseline": {
+      "status": "unknown",
+      "value": null,
+      "unit": "multi_metric_baseline",
+      "source_files": [
+        "visual/assets/validation-ledger.json",
+        "proposal.md"
+      ],
+      "formula": "one_year_public_baseline_measurement",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "No cleared corridor-wide baseline exists; the proposal requires one year of measurement before setting improvement thresholds."
     }
   }
 }

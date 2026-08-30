@@ -1,0 +1,38 @@
+{
+  "schema": "slow-variables-alternatives-register/v1",
+  "project_ref": "P2",
+  "title_zh": "P2 开放基线实验室备选方案对照登记册",
+  "admission_rule_zh": "备选必须在至少一个具名维度（造价、启用速度、退出成本）上真正优于主案，才准入册；每个备选同时是某一前置条件未放行时的自动回退分支。",
+  "alternative_pairs": [
+    {
+      "alt_id": "ALT-P2-01",
+      "area": "zhongzhiyuan_p2_open_baseline_lab",
+      "option_a_zh": "闲置首层修缮：开放基线实验室＋失败样本园（P2 主案）",
+      "option_b_zh": "租用现有社区空间改造",
+      "dimension_b_wins": ["capital_cost", "speed_to_open"],
+      "reason_a_selected_zh": "租用空间的开放时段与数据管理权受制于业主；跨年度连续测量与失败样本的公开保存需要稳定场所。",
+      "fallback_trigger_zh": "场地授权到位但造价门未放行时，自动回退到本备选。",
+      "status": "participant_design_comparison_not_an_approval"
+    },
+    {
+      "alt_id": "ALT-P2-02",
+      "area": "zhongzhiyuan_p2_open_baseline_lab",
+      "option_a_zh": "闲置首层修缮：开放基线实验室＋失败样本园（P2 主案）",
+      "option_b_zh": "只做露天基线点网络，不做室内（并入 P1 基线设施包）",
+      "dimension_b_wins": ["capital_cost", "exit_cost"],
+      "reason_a_selected_zh": "冬季与汛期露天测量中断；人工复核厅与开放帮助点需要室内场所，放行门 G2 无法只在露天成立。",
+      "fallback_trigger_zh": "P2 的权属与使用授权未放行时，自动回退到本备选。",
+      "status": "participant_design_comparison_not_an_approval"
+    }
+  ],
+  "pair_count": 2,
+  "approved_option_count": 0,
+  "authorised_field_comparison_count": 0,
+  "comparison_basis": "participant_design_judgement_not_field_tested",
+  "selection_authority": null,
+  "evidence_backlinks": {
+    "proposal_zh": "proposal.md#p0-样板p2-开放基线实验室的公式级测算",
+    "proposal_en": "proposal.en.md#the-p0-demonstrator-formula-level-calculation-for-the-p2-open-baseline-lab",
+    "assumption": "assumptions.json#A-COST-006"
+  }
+}

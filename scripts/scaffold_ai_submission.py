@@ -195,16 +195,16 @@ def load_boundary(repo_root: Path, stage: str) -> tuple[dict[str, Any], str, str
     return boundary
 
 
-def land_use_features(site_geom: Any) -> list[dict[str, Any]]:
+def land_use_features(site_geom: Any, land_use_labels: dict[str, str]) -> list[dict[str, Any]]:
     minx, miny, maxx, maxy = site_geom.bounds
     cuts = [
-        (minx, minx + (maxx - minx) * PARTITION_FRACTIONS[0], "0802", "AI研发创新用地"),
-        (minx + (maxx - minx) * PARTITION_FRACTIONS[0], minx + (maxx - minx) * PARTITION_FRACTIONS[1], "1401", "公园绿地与开敞空间"),
-        (minx + (maxx - minx) * PARTITION_FRACTIONS[1], minx + (maxx - minx) * PARTITION_FRACTIONS[2], "05", "产业服务与商业服务用地"),
+        (minx, minx + (maxx - minx) * PARTITION_FRACTIONS[0], "0802"),
+        (minx + (maxx - minx) * PARTITION_FRACTIONS[0], minx + (maxx - minx) * PARTITION_FRACTIONS[1], "1401"),
+        (minx + (maxx - minx) * PARTITION_FRACTIONS[1], minx + (maxx - minx) * PARTITION_FRACTIONS[2], "09"),
     ]
     generated = []
     features = []
-    for index, (left, right, code, name_zh) in enumerate(cuts, start=1):
+    for index, (left, right, code) in enumerate(cuts, start=1):
         geom = polygonal(site_geom.intersection(box(left, miny, right, maxy)))
         if geom.is_empty:
             continue
@@ -215,7 +215,7 @@ def land_use_features(site_geom: Any) -> list[dict[str, Any]]:
                 "LAND_USE",
                 geom,
                 land_use_code=code,
-                name_zh=name_zh,
+                name_zh=land_use_labels[code],
             )
         )
     remainder = polygonal(site_geom.difference(unary_union(generated)))
@@ -226,7 +226,7 @@ def land_use_features(site_geom: Any) -> list[dict[str, Any]]:
                 "LAND_USE",
                 remainder,
                 land_use_code="0702",
-                name_zh="社区服务与配套用地",
+                name_zh=land_use_labels["0702"],
             )
         )
     return features
@@ -956,6 +956,8 @@ def make_package(submission_dir: Path, repo_root: Path, stage: str, agent_id: st
     site_props = dict(boundary_feature.get("properties") or {})
     site_props["area_sqm_declared"] = round(projected_area(site_geom), 3)
     source_registry_summary = summarize_source_registry(load_source_registry(repo_root))
+    land_use_registry = load_json(repo_root / "brief" / "site-package" / "enums" / "land_use_codes.json")
+    land_use_labels = {item["code"]: item["label_zh"] for item in land_use_registry["codes"]}
 
     green_geom = derived_polygon(site_geom, 0.30, 0.16, 0.46, 0.84)
     public_geom = derived_polygon(site_geom, 0.49, 0.32, 0.66, 0.70)
@@ -976,7 +978,9 @@ def make_package(submission_dir: Path, repo_root: Path, stage: str, agent_id: st
             ],
         ),
         "key_areas.geojson": collection("key_areas_official", key_area_features),
-        "land_use.geojson": collection("land_use_topology_partition", land_use_features(site_geom)),
+        "land_use.geojson": collection(
+            "land_use_topology_partition", land_use_features(site_geom, land_use_labels)
+        ),
         "buildings.geojson": collection(
             "building_footprints_scaffold",
             [feature("BLDG-001", "BUILDING_FOOTPRINT", building_geom, building_type="ai_r_and_d", name_zh="AI研发示范建筑基底")],

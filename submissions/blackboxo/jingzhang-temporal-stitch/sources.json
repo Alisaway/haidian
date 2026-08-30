@@ -1,0 +1,210 @@
+{
+  "schema_version": "0.1.0",
+  "sources": [
+    {
+      "id": "OFFICIAL-ANNOUNCEMENT",
+      "url": "https://ghzrzyw.beijing.gov.cn/zhengwuxinxi/tzgg/hd/202605/t20260509_4643047.html",
+      "source_type": "official_public",
+      "publisher": "北京市规划和自然资源委员会海淀分局",
+      "publication_date": "2026-05-09",
+      "usage": "Official announcement defining project scope, three levels, three key areas, deliverable requirements, and design depth standards."
+    },
+    {
+      "id": "AGENT-TASKBOOK",
+      "path": "brief/site-package/agent_taskbook.json",
+      "source_type": "user_provided_cleared",
+      "usage": "Agent-facing open-call principles, six required agent tasks (agent.1-agent.6), scenario requirements, branding and identity requirements, and boundary clause."
+    },
+    {
+      "id": "SITE-PACKAGE",
+      "path": "brief/site-package/",
+      "source_type": "official_public",
+      "usage": "Project brief, enums, allowed design space, ranges, schemas, coordinate policy, and visual style recommendations."
+    },
+    {
+      "id": "SOURCE-REGISTRY",
+      "path": "data/source_registry.json",
+      "source_type": "repository_public_registry",
+      "usage": "Public/cleared/provisional source usability registry; distinguishes formal-ready, background-only, provisional-only, and needs-review materials."
+    },
+    {
+      "id": "PROCESSED-FACT-PACK",
+      "path": "data/processed/agent_fact_pack.md",
+      "source_type": "repository_processed_reference",
+      "usage": "Agent-readable navigation layer for scopes, required tasks, source-use boundaries, and missing-data checklist; not a new authority source."
+    },
+    {
+      "id": "BOUNDARY-SOURCE",
+      "path": "brief/site-package/geometry/provisional_boundaries.geojson",
+      "source_type": "agent_inferred_from_public_data",
+      "source_id": "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+      "usage": "Provisional site boundary and key area geometry derived from official announcement text descriptions and area constraints. Not official redline."
+    },
+    {
+      "id": "TEMPORAL-STITCH-CONCEPT",
+      "source_type": "agent_design_reasoning",
+      "usage": "Design concept 'Temporal Stitch' developed through analysis of railway-as-barrier urban condition, community feedback in Issue #2955, and gap analysis of 700+ existing submissions showing lack of interface-focused and time-dimension approaches."
+    },
+    {
+      "id": "HAIDIAN-POPULATION-DATA",
+      "source_type": "official_public",
+      "publisher": "北京市海淀区统计局",
+      "usage": "Background demographic data for estimating corridor-adjacent population (~450,000 residents in ~70 communities). Used for persona development and temporal demand modeling."
+    },
+    {
+      "id": "OSM-NETWORK-2024",
+      "title": "OpenStreetMap 路网数据（海淀区京张廊道沿线）",
+      "publisher": "OpenStreetMap Contributors",
+      "date": "2024-06-01",
+      "license": "ODbL 1.0",
+      "url": "https://www.openstreetmap.org/",
+      "scope": "公园两侧各500m缓冲区内路网",
+      "method": "QGIS Network Analysis 最短路径分析",
+      "status": "background_only",
+      "notes": "用于初步可达性估算，尚未经独立复核"
+    },
+    {
+      "id": "ZHAN-TIANYOU-RAILWAY-HISTORY",
+      "title": "《詹天佑与中国铁路》",
+      "publisher": "中国铁道出版社",
+      "date": "2019",
+      "license": "published_book",
+      "scope": "京张铁路历史与詹天佑工程贡献",
+      "status": "background_only",
+      "notes": "文化叙事参考，历史唯一性判断以铁路史学界共识为准"
+    },
+    {
+      "id": "PARK-OPENING-2026",
+      "title": "京张铁路遗址公园2026年8月建成开放",
+      "publisher": "北京市规划和自然资源委员会海淀分局",
+      "date": "2026-05-09",
+      "license": "government_public",
+      "scope": "征集公告项目背景明确写明京张铁路遗址公园9公里于2026年8月建成开放",
+      "status": "formal",
+      "url": "https://ghzrzyw.beijing.gov.cn/zhengwuxinxi/tzgg/hd/202605/t20260509_4643047.html",
+      "notes": "公园建成开放事实直接引用征集公告正式文本中的项目背景描述"
+    },
+    {
+      "id": "HAIDIAN-STATS-2023",
+      "title": "海淀区统计年鉴2023",
+      "publisher": "北京市海淀区统计局",
+      "date": "2023",
+      "license": "government_public",
+      "scope": "廊道沿线街道常住人口统计",
+      "status": "background_only",
+      "notes": "用于社区和人口规模推算，具体数值待社区普查确认"
+    },
+    {
+      "id": "CASE-HIGH-LINE",
+      "title": "The High Line Effect",
+      "publisher": "Friends of the High Line / various academic sources",
+      "date": "2019",
+      "license": "published_research",
+      "scope": "线性公园对周边创新集聚和经济溢出的催化效应",
+      "status": "background_only",
+      "notes": "案例参考：纽约High Line对周边地产和创新区的影响。用于类比论证，不作为本方案定量依据。具体机制判断以多篇同行评审文献综合结论为准。",
+      "source_type": "background_only",
+      "usage": "Background inspiration for linear park catalytic effects. Specific economic claims are widely reported but not independently verified for this proposal; used as design inspiration only, not as evidence for this project's outcomes.",
+      "allowed_use": "background_reference_only",
+      "access_date": "2026-08"
+    },
+    {
+      "id": "CASE-BARCELONA-SUPERBLOCKS",
+      "title": "Barcelona Superblocks Programme",
+      "publisher": "Ajuntament de Barcelona / BCNecologia",
+      "date": "2016-2024",
+      "license": "government_public",
+      "scope": "街区单元时间分配与慢行优先空间重构",
+      "status": "background_only",
+      "notes": "案例参考：巴塞罗那超级街区的时间编排先例。用于设计概念论证，不直接转用其参数。",
+      "source_type": "background_only",
+      "usage": "Background reference for temporal allocation in street design. No quantitative claims from this case are transferred to this proposal.",
+      "allowed_use": "background_reference_only",
+      "access_date": "2026-08"
+    },
+    {
+      "id": "CASE-HELSINKI-KALASATAMA",
+      "title": "Smart Kalasatama — One More Hour a Day",
+      "publisher": "Forum Virium Helsinki",
+      "date": "2018-2023",
+      "license": "public_report",
+      "scope": "AI时间优化作为智慧城市KPI",
+      "status": "background_only",
+      "notes": "案例参考：赫尔辛基智慧城市项目。'节省一小时'为其宣传表述，具体验证方法须参考原始报告。",
+      "allowed_use": "background_reference_only",
+      "access_date": "2026-08",
+      "source_type": "background_only",
+      "usage": "Background reference for time-saving as smart city KPI. The '1 hour saved' claim is the project's own stated goal (not verified outcome); cited here as design inspiration for temporal optimization framing, not as evidence."
+    },
+    {
+      "id": "CASE-SEOUL-CHEONGGYECHEON",
+      "title": "Seoul Cheonggyecheon Stream Restoration",
+      "publisher": "Seoul Metropolitan Government",
+      "date": "2005",
+      "license": "government_public",
+      "scope": "高架拆除后的东西向城市缝合与公共空间恢复",
+      "status": "background_only",
+      "notes": "案例参考：首尔清溪川复原工程。基础设施移除后界面修复的经典案例。",
+      "allowed_use": "background_reference_only",
+      "access_date": "2026-08",
+      "source_type": "background_only",
+      "usage": "Background reference for infrastructure removal and urban suture precedent. No quantitative claims transferred."
+    },
+    {
+      "id": "CASE-SINGAPORE-ONENORTH",
+      "title": "one-north Master Plan",
+      "publisher": "JTC Corporation / Urban Redevelopment Authority Singapore",
+      "date": "2001-2023",
+      "license": "government_public",
+      "scope": "产学研混合全时段街区规划",
+      "status": "background_only",
+      "notes": "案例参考：新加坡one-north的功能混合与时间编排。",
+      "source_type": "background_only",
+      "usage": "Background reference for mixed-use innovation district with temporal programming.",
+      "allowed_use": "background_reference_only",
+      "access_date": "2026-08"
+    },
+    {
+      "id": "CASE-SIDEWALK-QUAYSIDE",
+      "title": "Sidewalk Labs Toronto Quayside Plan",
+      "publisher": "Sidewalk Labs (Alphabet)",
+      "date": "2019",
+      "license": "public_report",
+      "scope": "动态路缘石、可变功能街道和实时空间管理",
+      "status": "background_only",
+      "notes": "案例参考：已终止项目的技术概念，用于可变功能空间的技术路径参考。项目未实施，仅提取概念方法论。",
+      "source_type": "background_only",
+      "usage": "Background reference for dynamic curb and flexible street concepts. Project was cancelled; cited for technical concept inspiration only, not as evidence of successful implementation.",
+      "allowed_use": "background_reference_only",
+      "access_date": "2026-08"
+    },
+    {
+      "id": "CASE-SHENZHEN-QIANHAI",
+      "title": "深圳前海合作区AI治理与开放平台",
+      "publisher": "前海管理局/公开报道",
+      "date": "2020-2024",
+      "license": "government_public",
+      "scope": "中国语境下AI创新带的治理经验",
+      "status": "background_only",
+      "notes": "案例参考：中国城市AI治理实践。具体治理架构以官方发布的管理办法为准。",
+      "source_type": "background_only",
+      "usage": "Background reference for Chinese AI governance and open platform model in innovation zones.",
+      "allowed_use": "background_reference_only",
+      "access_date": "2026-08"
+    },
+    {
+      "id": "CASE-MIT-LIVING-LAB",
+      "title": "MIT Media Lab City Science / Living Lab Model",
+      "publisher": "MIT Media Lab",
+      "date": "2015-2024",
+      "license": "academic_public",
+      "scope": "大学周边社区作为持续实验场的运营模式",
+      "status": "background_only",
+      "notes": "案例参考：学术机构带动社区创新的活体实验室模式。用于概念类比，不直接引用其研究结论。",
+      "source_type": "background_only",
+      "usage": "Background reference for university-adjacent living laboratory operational model.",
+      "allowed_use": "background_reference_only",
+      "access_date": "2026-08"
+    }
+  ]
+}

@@ -1,5 +1,11 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
+  "v2_evidence_policy": {
+    "observed": "可复算现状证据；模型估计必须明确标注模型属性。",
+    "design_response": "由现状证据推导的概念性/暂定设计响应，不表述为法定或已实施事实。",
+    "expected_impact": "模型情景或设计目标，不与现状观测混写。",
+    "unresolved": "无法合法获取或尚未成功计算的数据保留为缺口，不填充推测值。"
+  },
   "sources": [
     {
       "id": "SITE-PACKAGE",
@@ -112,6 +118,60 @@
       "usage": "Urban texture, street, rail, water and amenity analysis; statutory redlines, ownership and survey conditions follow authoritative records."
     },
     {
+      "id": "OSM-CONTEXT-V2-20260824",
+      "url": "https://www.openstreetmap.org/copyright",
+      "source_type": "observed_open_data",
+      "retrieved": "2026-08-24",
+      "license": "OpenStreetMap contributors, ODbL 1.0",
+      "provenance": "visual/assets/v2-evidence-summary.json",
+      "usage": "Reproducible V2 walk network, intersections, POI mix, service-access proxies, innovation/culture context and public-green proxy; query and raw-response hashes are retained.",
+      "limitation": "Not a statutory road/ownership survey and not a complete official facility or enterprise registry."
+    },
+    {
+      "id": "WORLDPOP-GLOBAL2-2025",
+      "url": "https://api.worldpop.org/v2/",
+      "source_type": "model_estimated_population",
+      "data_vintage": "2025",
+      "usage": "Population-weighted transit/service diagnostics and service-node scenario comparison on the V2 100m analysis grid.",
+      "limitation": "Modelled population, not census observation. Public API constraints required ~200m support polygons over an underlying 100m product, followed by area apportionment to the research grid."
+    },
+    {
+      "id": "BJ-DESIGNATED-MEDICAL-20260813",
+      "url": "https://data.beijing.gov.cn/zyml/ajg/sybj/17425.htm",
+      "source_type": "official_public_directory_pending_spatialization",
+      "updated": "2026-08-13",
+      "records": 4877,
+      "usage": "Official medical-facility cross-check when authorized file access/geocoding is available.",
+      "limitation": "Portal metadata is verified, but no authorized spatialized file is currently used to replace OSM spatial service points."
+    },
+    {
+      "id": "BJ-ELDERCARE-STATIONS-20260119",
+      "url": "https://data.beijing.gov.cn/zyml/ajg/smzj/18244.htm",
+      "source_type": "official_public_directory_pending_spatialization",
+      "updated": "2026-01-19",
+      "records": 1651,
+      "usage": "Official eldercare-service cross-check when authorized file access/geocoding is available.",
+      "limitation": "Address directory verified; spatialization remains pending authorized download and documented geocoding."
+    },
+    {
+      "id": "BJ-PRIMARY-SCHOOLS-20250729",
+      "url": "https://data.beijing.gov.cn/zyml/wnkfsj/11c54f255e8f45c99869c1b348e250dc.htm",
+      "source_type": "official_public_directory_pending_spatialization",
+      "updated": "2025-07-29",
+      "records": 664,
+      "usage": "Official education-service cross-check when authorized file access/geocoding is available.",
+      "limitation": "Directory provides school names/addresses/types but has not yet been spatialized in the V2 analysis."
+    },
+    {
+      "id": "SENTINEL2-L2A-PC-2026-SUMMER",
+      "url": "https://planetarycomputer.microsoft.com/api/stac/v1",
+      "source_type": "observed_remote_sensing_derivative",
+      "time_window": "2026-06-01/2026-08-24",
+      "usage": "Completed five-date summer Sentinel-2 L2A vegetation/dense-vegetation/built-spectral proxy composite on the V2 100m grid.",
+      "limitation": "NDVI/NDBI are spectral proxies, not statutory green-space/cadastral land-use area; ten research cells lack valid composite pixels.",
+      "retrieved": "2026-08-25"
+    },
+    {
       "id": "NASA-POWER-2015-2024",
       "url": "https://power.larc.nasa.gov/docs/services/api/temporal/daily/",
       "source_type": "background_only_climate_data",
@@ -183,6 +243,46 @@
       "path": "assets/generated-scenes/",
       "source_type": "agent_generated_concept_imagery",
       "usage": "Design-intent scenes informed by the project spatial parameters and Blender massing studies; existing conditions follow survey records."
+    },
+    {
+      "id": "HAIDIAN-COMPULSORY-SCHOOLS-20250309",
+      "url": "https://zyk.bjhd.gov.cn/sjkf/jyzy/202505/t20250509_4768788.shtml",
+      "source_type": "official_public_directory",
+      "published": "2025-03-09",
+      "usage": "Official identity/address validation for site education POIs.",
+      "limitation": "2024-2025 compulsory-education directory; matched coordinates remain OSM-derived."
+    },
+    {
+      "id": "HAIDIAN-MEDICAL-PUBLIC-20260708",
+      "url": "https://zyk.bjhd.gov.cn/jbdt/auto4504/zdly/bzxzf_59597/fjzl_41766/",
+      "source_type": "official_public_directory",
+      "updated": "2026-07-08",
+      "usage": "Official identity/address validation for district health facilities.",
+      "limitation": "District list does not cover all central/university hospitals in the study area."
+    },
+    {
+      "id": "HAIDIAN-MEDICAL-PARTNERS-20260730",
+      "url": "https://www.bjhd.gov.cn/ztzx/2026/fwyz/",
+      "source_type": "official_public_directory",
+      "updated": "2026-07-30",
+      "usage": "Supplementary official medical-partner identity/address validation.",
+      "limitation": "Programme network, not a complete medical-facility registry."
+    },
+    {
+      "id": "HAIDIAN-ELDERCARE-STATIONS-20250813",
+      "url": "https://zyk.bjhd.gov.cn/jbdt/auto4493_51788/auto4493_52468/auto4493/lnrshjz/202411/t20241121_4738206_hd.shtml",
+      "source_type": "official_public_directory",
+      "updated": "2025-08-13",
+      "usage": "Official eldercare-station identity/address validation.",
+      "limitation": "Coordinates in the validation layer remain OSM-derived."
+    },
+    {
+      "id": "HAIDIAN-ELDERCARE-INSTITUTIONS-20260708",
+      "url": "https://zyk.bjhd.gov.cn/jbdt/auto4493_51788/auto4493_52468/auto4493/lnrshjz/202607/t20260710_4821582.shtml",
+      "source_type": "official_public_directory",
+      "updated": "2026-07-08",
+      "usage": "Current eldercare-institution identity/address validation.",
+      "limitation": "Unmatched official institutions are not treated as absent."
     }
   ]
 }

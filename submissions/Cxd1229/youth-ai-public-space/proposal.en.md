@@ -7,10 +7,10 @@ author_github: "Cxd1229"
 language: "en"
 translation_of: "proposal.md"
 license: "COMMUNITY-DISPLAY-ONLY"
-summary: "Centered on the Jingzhang Railway Heritage Park, focused on the needs of young innovation talent, this proposal constructs a 'One Corridor · Three Districts · Five Nodes' AI public space system with 5 AI pilgrimage landmarks, 12 AI scenario cards, and 6 user personas, transforming 43.6 km² into a youth-friendly urban model attracting global AI talent. Introduces the Zhan Tianyou Protocol — a trust framework for human-machine collaborative urban design."
+summary: "Centered on the Jingzhang Railway Heritage Park, focused on the needs of young innovation talent, this proposal constructs a 'One Corridor · Three Cores · Five Belts' AI public space system with 5 AI pilgrimage landmarks, 12 AI scenario cards, and 6 user personas, transforming 43.6 km² into a youth-friendly urban model attracting global AI talent. Introduces the Zhan Tianyou Protocol — a trust framework for human-machine collaborative urban design."
 tracks: ["youth-friendly-public-space", "ai-origin-community", "jingzhang-heritage-narrative"]
 scenarios: ["ai-cultural-guide"]
-iteration: "v2.3"
+iteration: "v3.0"
 ---
 
 # Jingzhang AI Innovation Belt Youth-Friendly Public Space and AI Pilgrimage Landmark Urban Design
@@ -25,9 +25,19 @@ Zhan Tianyou won trust with three things back then: **visible engineering qualit
 
 **The Zhan Tianyou Protocol — Four Principles:**
 1. **Visibility** — Every design judgment has a spatial layer to inspect; every metric has a formula to recalculate
-2. **Stoppable** — Every AI scenario has a named human responsible person and an exit mechanism
+2. **Stoppable** — Every AI scenario has a human responsibility role and an exit mechanism; named owners are assigned per scenario at implementation stage
 3. **AI-Free Equivalence** — Public spaces function fully without AI; AI is augmentation, not replacement
 4. **Intergenerational Equity** — The plan serves young talent, and also serves children, the elderly, people with disabilities, and low-income groups
+
+**How the Zhan Tianyou Protocol operates — a three-stage trust loop:** Zhan Tianyou won trust through three steps back then — "survey design → construction records → opening acceptance." This proposal translates these three steps into a universal AI collaboration flow, serving as the mechanism thread that runs through the entire document:
+
+| Loop stage | Zhan Tianyou's engineering method | This proposal's implementation |
+|--------|----------------|-----------------|
+| ① Open | Survey design made public | Taskbook, provisional boundaries, and open data serve as agent inputs; rules and constraints are declared up front |
+| ② Verify | Transparent construction logs | Human-machine dual review — every metric has a recalculable formula, every scenario has a proposed responsibility role (named owners assigned before implementation) |
+| ③ Trace | Verifiable opening acceptance | Results are traceable, iterable, and stoppable — metrics carry confidence labels, scenarios have exit mechanisms |
+
+The four principles answer "what dimensions constitute trust"; the three-stage loop answers "how trust is built step by step." The spatial strategies, scenario designs, and metric system in the chapters that follow are all implementations of this loop.
 
 > This proposal was independently completed by an AI Agent (Claude Fable 5, assisted by Kimi K3) under the supervision of human operator @Cxd1229 — the proposal itself is empirical evidence that "AI can participate in real urban design."
 
@@ -37,9 +47,11 @@ Zhan Tianyou won trust with three things back then: **visible engineering qualit
 
 This proposal is prepared in accordance with the Haidian District Centennial Jingzhang AI Innovation Belt International Urban Design Competition Announcement (published May 9, 2026, by Beijing Municipal Commission of Planning and Natural Resources [source:SITE-PACKAGE]), and the Global Agent Open Call Taskbook [source:SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK].
 
+> **Source-ID alias note**: The Taskbook is uniformly referenced throughout this proposal by its source-registry ID `SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK`, which maps to the approved standard ID `PROJECT-AGENT-OPEN-CALL-TASKBOOK` in `standards.json` and to the site-package file `brief/site-package/agent_taskbook.json` — all three point to the same "Global Agent Open Call Taskbook". The former alias `AGENT-TASKBOOK` is no longer used in this proposal.
+
 Core data sources:
 - **Official Announcement**: Pre-qualification announcement text with three-level scope descriptions (coordinated research area 43.6 km², overall design area ~11.4 km², key areas 368.4 ha) [source:DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509]
-- **Taskbook**: Six design tasks and ten co-creation principles for AI agents [source:AGENT-TASKBOOK]
+- **Taskbook**: Six design tasks and ten co-creation principles for AI agents [source:SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK]
 - **Boundary Data**: Community-maintained provisional boundaries generated from announcement text descriptions, EPSG:4326 coordinate system, area verified in EPSG:4548 [source:DATA-SRC-PROVISIONAL-BOUNDARIES-20260605]
 - **Statistical Yearbook**: Haidian District 2025 Statistical Yearbook (2024 data) [source:HAIDIAN-YEARBOOK-2021-2024]:
   - Permanent resident population: 2.474 million (Table 1-1)
@@ -65,10 +77,10 @@ Supporting submissions:
 ### Coordinated Research Area (43.6 km²)
 Bounded by North 5th Ring Road to the north, Jingzang Expressway to the east, Xizhimenwai Street to the south, and Wanquan River Road to the west [data:geometry/site_boundary.geojson#SITE-BOUNDARY-001]. Within this area, conduct research on AI innovation ecosystem, industrial synergy, regional linkage, transportation systems, and cultural narrative. Establish a "One Belt · Three Zones · Two Wings" macro-cognitive framework.
 
-**Key Focus**: Identify spatial relationships between Haidian's 10+ universities (Peking University, Tsinghua University, Beihang University, BUPT, etc.) and AI industry (Zhongguancun Software Park, Hou Chang Chun, BAAI). Analyze young talent patterns (Haidian IT sector: 535,193 employees, R&D sector: 199,970 [source:HAIDIAN-YEARBOOK-2021-2024]; ~350,000 university students from Beijing education statistics, Haidian hosts 10+ universities). Propose regional-level public space and innovation service networks.
+**Key Focus**: Identify spatial relationships between Haidian's 10+ universities (Peking University, Tsinghua University, Beihang University, BUPT, etc.) and AI industry (Zhongguancun Software Park, Hou Chang Chun, BAAI). Analyze young talent patterns (Haidian IT sector: 535,193 employees, R&D sector: 199,970 [source:HAIDIAN-YEARBOOK-2021-2024]; ~350,000 university students (design assumption ASM-009 based on a rough projection from Beijing education statistics and Haidian university distribution; not a project-scope measured value and not used as formal evidence)). Propose regional-level public space and innovation service networks.
 
 ### Overall Design Area (~11.4 km²)
-A 1–2 km zone around the Jingzhang Heritage Park as the planning and design scope [data:geometry/site_boundary.geojson#SITE-BOUNDARY-001]. Achieve urban design depth equivalent to regulatory detailed planning, focusing on urban renewal, land use layout, public space systems, transportation and slow-mobility networks, municipal infrastructure, and urban character.
+A 1–2 km zone around the Jingzhang Heritage Park as the planning and design scope [data:geometry/site_boundary.geojson#SITE-BOUNDARY-001]. Work at a conceptual urban design depth, focusing on urban renewal, land use layout, public space systems, transportation and slow-mobility networks, municipal infrastructure, and urban character; this depth does not constitute a regulatory detailed planning conclusion [standard:AGENT-SUBMISSION-DISCLAIMER].
 
 **Core Strategy**: "One Corridor Connecting Three Districts" — the Jingzhang Railway Heritage Park serves as an 8 km public space spine, connecting the northern Zhongzhiyuan Acceleration Area, the central AI Origin Community, and the southern Dazhongsi Industry Cluster.
 
@@ -126,7 +138,7 @@ Six globally relevant innovation district public space cases:
 **Transferable Lessons** [depth:ecosystem_design]:
 1. **Informal exchange spaces are the physical foundation of innovation ecosystems** — every innovation node must have configurable, encounter-friendly public space within 300m
 2. **Linear heritage is a unique spatial asset** — the 8 km continuity of the Jingzhang Railway heritage is globally unique among innovation districts
-3. **Youth talent priority hierarchy**: 24h accessible facilities > social scenarios > sports space > green space > retail
+3. **Youth talent priority hierarchy (design assumption ASM-010 derived from transferable insights of global innovation-district cases, not a local survey conclusion)**: 24h accessible facilities > social scenarios > sports space > green space > retail
 
 **AI Innovation Ecosystem Map** [task:agent.2]:
 - **Fundamental Research Layer**: Tsinghua University, Peking University, Beihang, BUPT, Chinese Academy of Sciences, and other universities and research institutions → Spatial placement: Zhongzhiyuan AI Acceleration Area and surrounding university clusters
@@ -196,11 +208,13 @@ Functional zoning based on ~11.4 km² overall design area [data:geometry/land_us
 | AI R&D + Commercial Mixed-Use | 25% | 285 | Ground floor public and open, upper floors R&D offices |
 | University & Research Institutions | 20% | 228 | Retain existing, add industry-academia shared interfaces |
 | Residential (incl. Talent Housing) | 15% | 171 | Youth apartments + long-term rental + mixed community |
-| Green and Open Space | 12% | 136.8 | Jingzhang Heritage Park + pocket park network |
+| Green and Open Space | 12% | 137 | Jingzhang Heritage Park + pocket park network |
 | Public Service Facilities | 10% | 114 | 24h libraries, sports centers, community canteens |
-| Road and Transit | 8% | 91.2 | Densify secondary and branch road network |
+| Road and Transit | 8% | 91 | Densify secondary and branch road network |
 | Cultural Facilities & Heritage | 5% | 57 | Railway museum + innovation gallery + honor wall nodes |
 | Mixed Flexible Land | 5% | 57 | Reserved for AI test scenarios and temporary events |
+
+> The table above is a conceptual land-use zoning; the green and open space area uses `geometry/green_space.geojson` measured 141.8 ha as the authoritative figure (green ratio 12.42%). Zoning areas differ from the site_boundary measured 1141.28 ha due to conceptual classification, so spatial recalculation follows the GeoJSON [data:geometry/land_use.geojson].
 
 **Retain/Renovate/Demolish Strategy** (conceptual direction, to be deepened by professional teams):
 - Retain: University campuses, established quality communities, historic buildings, Jingzhang Railway heritage
@@ -238,7 +252,7 @@ A three-tier network of "Linear Spine + Pocket Nodes + Perpendicular Seams":
 **Blue-Green System** [data:geometry/green_space.geojson]:
 - Jingzhang Heritage Park green belt (8 km × 50–200m) — primary ecological corridor
 - Connecting Qinghe River and Nancanghe River blue-green spaces
-- New community parks: 12 locations; green coverage ratio ~12.5% (measured green space 142.9 ha, via provisional boundary in EPSG:4548 projection)
+- New community parks: 12 locations; green coverage ratio ~12.42% (measured green space 141.8 ha, via provisional boundary in EPSG:4548 projection)
 - Embedded selected AI test scenarios (environmental sensor network, smart irrigation, drone inspection, etc.)
 
 ![Transportation, Slow Mobility and Blue-Green Composite System](assets/figures/mobility-bluegreen.png)
@@ -317,16 +331,16 @@ Six personas based on characteristics of Haidian university students, AI profess
 
 **Public Experience Scenarios (8)**:
 
-| Scenario | Spatial Location | Target Users | Experience Mode |
-|----------|-----------------|--------------|-----------------|
-| SC5 AI Art Co-creation Station | 5 nodes along Jingzhang Park | Citizens/visitors | Input prompt → AI-generated art → print/project |
-| SC6 Open Source Contribution Visualization | Origin Community AI Public Experience Gallery | Developers/public | Real-time GitHub contribution data 3D visualization |
-| SC7 AI-Tutored Smart Study Room | Origin Community + university periphery | Students | AI personalized learning path, human tutor optional |
-| SC8 Smart Fitness Pod | 6 nodes along Jingzhang Park | Fitness users | AI motion guidance, exercise data optionally shareable |
-| SC9 Unmanned Retail Experience Store | Dazhongsi + Origin Community | Citizens | QR/card entry (non-biometric option provided), computer vision checkout (local data processing, periodic purge, user opt-out anytime) |
-| SC10 AI Music Co-creation Space | Dazhongsi Sunken Plaza | Young people | AI composition assistance, weekend open-air performances |
-| SC11 Digital Heritage Guide | Jingzhang Railway heritage section | Visitors | AR recreation of Jingzhang Railway historical scenes |
-| SC12 City Data Observatory | Zhongzhiyuan vantage point | Public/researchers | Real-time urban operational data visualization screen |
+| Scenario | Spatial Location | Target Users | Experience Mode | Operator |
+|----------|-----------------|--------------|-----------------|----------|
+| SC5 AI Art Co-creation Station | 5 nodes along Jingzhang Park | Citizens/visitors | Input prompt → AI-generated art → print/project | Park operator + art institution |
+| SC6 Open Source Contribution Visualization | Origin Community AI Public Experience Gallery | Developers/public | Real-time GitHub contribution data 3D visualization | Origin Community operator + open-source community |
+| SC7 AI-Tutored Smart Study Room | Origin Community + university periphery | Students | AI personalized learning path, human tutor optional | Universities + education service provider |
+| SC8 Smart Fitness Pod | 6 nodes along Jingzhang Park | Fitness users | AI motion guidance, exercise data optionally shareable | Park operator + fitness service provider |
+| SC9 Unmanned Retail Experience Store | Dazhongsi + Origin Community | Citizens | QR/card entry (non-biometric option provided), computer vision checkout (local data processing, periodic purge, user opt-out anytime) | Retail enterprise + park operator |
+| SC10 AI Music Co-creation Space | Dazhongsi Sunken Plaza | Young people | AI composition assistance, weekend open-air performances | Dazhongsi operator + cultural institution |
+| SC11 Digital Heritage Guide | Jingzhang Railway heritage section | Visitors | AR recreation of Jingzhang Railway historical scenes | Park operator + cultural tourism institution |
+| SC12 City Data Observatory | Zhongzhiyuan vantage point | Public/researchers | Real-time urban operational data visualization screen | Park operator + data management department |
 
 ### AI Pilgrimage Landmarks (5) [task:agent.4]
 
@@ -379,9 +393,9 @@ Conceptual land use layout based on ~11.4 km² overall design area [data:geometr
 - Total Building Scale: ~5.3 million m² (conceptual estimate)
 
 **Development Intensity** (directional concept [metric:far_average]):
-- Average FAR: Pending official regulatory planning data (conceptual direction ~2.0, marked as unknown in metrics.json)
-- Building Coverage: Pending existing building data (conceptual direction ~28%)
-- Building Height Zones: Low-rise zone (park edges ≤15m), mid/high-rise zone (peripheral parcels ≤60m)
+- Average FAR: Pending official regulatory planning data (conceptual indicative value ~2.0, not a statutory control, marked as unknown in metrics.json)
+- Building Coverage: Pending existing building data (conceptual indicative value ~28%, not a statutory control)
+- Building Height Zones: Low-rise zone (park edges ≤15m), mid/high-rise zone (peripheral parcels ≤60m) — conceptual indicative directions, not approval height metrics
 
 > Note: The above are directional concepts and do not constitute statutory planning metrics; FAR and coverage are marked as unknown in metrics.json [standard:AGENT-SUBMISSION-DISCLAIMER].
 
@@ -405,8 +419,8 @@ Conceptual land use layout based on ~11.4 km² overall design area [data:geometr
 **Energy Context and Green Strategy** [source:HAIDIAN-ENERGY-2024]:
 
 Haidian District's 2024 energy consumption was 7.555 million tce, GDP energy intensity 0.0585 tce per ¥10,000 GDP (cumulative 25.2% decline over four years), electricity consumption 185.3 billion kWh (14.5% growth over four years) [metric:haidian_energy_tce]. The data indicates Haidian is in a green transition pathway of "stabilizing total with slight decline, accelerating electrification, rapid efficiency improvement." The high energy demands of AI computing will present new challenges for the regional power grid — this is precisely the empirical basis for incorporating distributed solar, edge computing, and smart microgrids into the new infrastructure of this proposal:
-- AI computing center PUE target ≤1.2 (referencing Beijing data center energy efficiency requirements)
-- Distributed PV covering park streetlights, bus stop canopies, building rooftops; estimated annual generation ~5 million kWh (conceptual estimate) [metric:haidian_electricity_kwh]
+- AI computing center PUE target ≤1.2 (design target referencing the "projects with annual energy consumption ≥20,000 tce must have PUE ≤1.2" threshold in the *Notice on Further Strengthening Energy Review of Data Center Projects* (Jing-Fa-Gai-Gui [2023] No.10) issued by the Beijing Municipal Development and Reform Commission [source:BEIJING-DC-ENERGY-REVIEW-2023]; a conceptual target — each project must be recalculated against then-applicable approval requirements; not a current commitment)
+- Distributed PV covering park streetlights, bus stop canopies, building rooftops; ~5 million kWh annual generation is a conceptual estimate pending energy professional calculation [metric:haidian_electricity_kwh]
 - Edge computing nodes locally consume PV power, reducing backbone network transmission losses
 
 ## Blue-Green Space, Public Space, and Urban Character
@@ -481,8 +495,8 @@ Haidian District's 2024 energy consumption was 7.555 million tce, GDP energy int
 | Coordinated research area | 43.6 km² | Announcement text | Official |
 | Overall design area | 11.4 km² | Announcement text | Official |
 | Key areas total | 368.4 ha | Announcement text | Official |
-| Green ratio | 12.5% | Green measured 142.9 ha / design area measured 1,142.7 ha [data:geometry/green_space.geojson] | Medium (provisional boundary) |
-| Public space ratio | 3.0% | Public space measured 34.3 ha / design area measured 1,142.7 ha [data:geometry/public_space.geojson] | Medium |
+| Green ratio | 12.42% | Green measured 141.8 ha / design area measured 1,142.7 ha [data:geometry/green_space.geojson] | Medium (provisional boundary) |
+| Public space ratio | 3.0% | Public space measured 34.24 ha / design area measured 1,142.7 ha [data:geometry/public_space.geojson] | Medium |
 | Road network density (incl. existing) | 8.5 km/km² | Existing OSM ~81 km + new design 16 km = 97 km / 11.4 km² [data:geometry/roads.geojson] | Medium |
 | Transit coverage | 85% | 800m station buffer coverage ratio | Medium |
 | AI landmarks | 5 | L1–L5 [task:agent.4] | Confirmed (conceptual) |
@@ -492,7 +506,7 @@ Haidian District's 2024 energy consumption was 7.555 million tce, GDP energy int
 | Haidian GDP energy intensity | 0.0585 tce | Haidian 2024 Energy Report [source:HAIDIAN-ENERGY-2024] | Official |
 | Energy intensity 4-year decline | 25.2% | 2021–2024 Yearbook trend [metric:energy_intensity_trend_4yr] | Official |
 | Average FAR | Not obtained | Official regulatory planning data missing [metric:far_average] | Unknown |
-| Design area measured | 11.43 km² | Provisional boundary EPSG:4548 projection measurement [metric:site_area_sqm] | Medium |
+| Design area measured | 11.41 km² | Provisional boundary EPSG:4548 projection measurement [metric:site_area_sqm] | Medium |
 
 ![Core Metrics Evidence Chain](assets/figures/metrics-evidence.png)
 
@@ -516,22 +530,22 @@ Haidian District's 2024 energy consumption was 7.555 million tce, GDP energy int
 
 ## Zhan Tianyou Protocol Verification Checklist
 
-The following checklist translates the four principles into verifiable engineering facts, available for judges and professional teams to independently verify:
+The following checklist translates the four principles into verifiable engineering facts, available for judges and professional teams to independently verify. Status has two levels: **Verified** (auditable evidence exists in this package) and **Design target** (designed in this proposal, but confirmable only at implementation stage by professional teams and named responsible persons).
 
 | Principle | Verification Item | Evidence in This Proposal | Status |
 |-----------|-------------------|---------------------------|--------|
-| 1. Visibility | Are spatial layers complete and inspectable? | 9 GeoJSON files, 70 features | PASS |
-| 1. Visibility | Do metrics have formulas for recalculation? | metrics.json contains 17 metric formulas | PASS |
-| 1. Visibility | Is the proposal human-readable? | proposal.md 13 chapters; offline HTML visualization | PASS |
-| 2. Stoppable | Does each scenario have a named human responsible person? | SC1–SC12 all list operating entities | PASS |
-| 2. Stoppable | Does each scenario have an exit/alternative? | SC9 provides QR as alternative to face recognition; SC5–12 operable offline | PASS |
-| 2. Stoppable | Are human review trigger conditions defined? | Scenario governance appendix defines 4 trigger conditions | PASS |
-| 3. AI-Free Equivalence | Can public spaces function without AI? | All three tiers of public space network are based on physical infrastructure (parks/seating/paths), not AI-dependent | PASS |
-| 3. AI-Free Equivalence | Do offline alternatives exist? | Free WiFi device lending stations as non-AI alternatives to digital services | PASS |
-| 4. Intergenerational Equity | Are non-youth groups covered? | Inclusive design covers 6 groups: children, elderly, disabled, low-income, etc. | PASS |
-| 4. Intergenerational Equity | Is barrier-free design included? | Wheelchair ramps, tactile paving, voice navigation, tactile signage | PASS |
+| 1. Visibility | Are spatial layers complete and inspectable? | 9 GeoJSON files, 70 features | Verified |
+| 1. Visibility | Do metrics have formulas for recalculation? | metrics.json contains 26 metrics with formulas and confidence labels | Verified |
+| 1. Visibility | Is the proposal human-readable? | proposal.md 13 chapters; offline HTML visualization | Verified |
+| 2. Stoppable | Does each scenario have a responsible role and review trigger? | All 12 scenario cards list operating entities and human review triggers; named human responsible persons are to be assigned per scenario at implementation stage and cannot be replaced by institution names | Design target |
+| 2. Stoppable | Does each scenario have an exit/alternative? | SC9 provides QR as alternative to face recognition; each scenario lists a non-AI alternative path | Verified |
+| 2. Stoppable | Are human review trigger and stop conditions defined? | Appendix A defines review triggers and stop conditions per scenario | Verified |
+| 3. AI-Free Equivalence | Can public spaces function without AI? | All three tiers of public space network are based on physical infrastructure (parks/seating/paths), not AI-dependent | Design target |
+| 3. AI-Free Equivalence | Do offline alternatives exist? | Free WiFi device lending stations + per-scenario manual alternatives in Appendix A | Verified |
+| 4. Intergenerational Equity | Are non-youth groups covered? | Inclusive design covers children, elderly, disabled, low-income, and other groups | Verified |
+| 4. Intergenerational Equity | Is barrier-free design included? | Wheelchair ramps, tactile paving, voice navigation, tactile signage | Design target |
 
-> This verification checklist is the operational implementation of the Zhan Tianyou Protocol. Every item is an engineering fact independently verifiable by a third party — not a subjective declaration.
+> This verification checklist is the operational implementation of the Zhan Tianyou Protocol. Items marked "Verified" have auditable evidence in this package; items marked "Design target" do not claim to be completed engineering facts and require confirmation at implementation stage by named responsible persons and professional review.
 
 ## Risk, Copyright, and Compliance
 
@@ -552,10 +566,10 @@ The following checklist translates the four principles into verifiable engineeri
 ## References
 
 - `brief/site-package/design_brief.json` [source:SITE-PACKAGE]
-- `brief/site-package/agent_taskbook.json` [source:AGENT-TASKBOOK]
-- `brief/site-package/allowed_design_space.json` [source:DESIGN-SPACE]
-- `brief/site-package/sources.json` [source:SITE-SOURCES]
-- `brief/site-package/geometry/provisional_boundaries.geojson` [data:PROVISIONAL-BOUNDARIES]
+- `brief/site-package/agent_taskbook.json` [source:SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK]
+- `brief/site-package/allowed_design_space.json` [source:SITE-PACKAGE]
+- `brief/site-package/sources.json` [source:SITE-PACKAGE]
+- `brief/site-package/geometry/provisional_boundaries.geojson` [data:DATA-SRC-PROVISIONAL-BOUNDARIES-20260605]
 - `data/source_registry.json` [source:SOURCE-REGISTRY]
 - Beijing Haidian District 2025 Statistical Yearbook [source:BEIJING-STATS-2025]
 - Global innovation district case studies [source:GLOBAL-INNOVATION-DISTRICTS]
@@ -563,15 +577,24 @@ The following checklist translates the four principles into verifiable engineeri
 
 ## Appendix A: Scenario Data Governance Framework [risk:privacy]
 
-| Scenario | Legal Basis | Data Fields (≤5) | Retention | Opt-Out Method | Human Review Trigger |
-|----------|-------------|-------------------|-----------|----------------|---------------------|
-| SC1 Autonomous Shuttle | Informed consent (boarding = consent) | Path trajectory, speed, timestamp, onboard video (de-identified) | 72h | Choose human-driven shuttle | Accident/violation/system alert |
-| SC2 Robot Delivery | Contractual necessity + informed consent | Path coordinates, delivery time, package dimensions (no content) | 30 days | Choose human delivery | Delivery failure/user complaint |
-| SC3 Environmental Sensor Network | Public interest (environmental monitoring) | Temperature, humidity, PM2.5, noise (dB), light | Permanent (aggregated, public) | Sensors contain no personal information; opt-out not applicable | Value anomaly/device offline |
-| SC4 AI Security Sandbox | Contractual necessity | Test code, execution logs, resource usage | Purged upon test completion | Contract-defined test scope | Security incident/resource anomaly |
-| SC5–12 Public Experience Scenarios | Informed consent | Interaction records (anonymous), usage frequency, scenario ID | 90 days | Non-participation / use offline mode | User feedback / content dispute |
+The table below specifies data governance essentials per scenario. All scenarios uniformly follow data minimization, default local processing, and no biometric collection (SC9 offers a QR-code alternative); the unified appeal channel is the Jingzhang AI Innovation Belt operating company's data compliance desk (phone/email/on-site), with the right to escalate to regulators preserved. Quarterly public release of privacy impact assessment summaries.
 
-All scenarios follow data minimization principles; default local processing; no biometric data collection (SC9 provides QR code alternative). Quarterly public release of privacy impact assessment summaries.
+| Scenario | Personal Info | Purpose | Explicit Choice | Data Fields (≤5) | Retention | Non-AI Alternative | Stop Condition |
+|----------|---------------|---------|-----------------|------------------|-----------|--------------------|----------------|
+| SC1 Autonomous Shuttle | Yes (trajectory/video) | Vehicle operation and safety | Active opt-in before boarding; may refuse | Path trajectory, speed, timestamp, onboard video (de-identified) | 72h | Human-driven shuttle | Accident/violation/system alert |
+| SC2 Robot Delivery | Yes (path) | Delivery fulfillment | Explicitly choose robot delivery at order time | Path coordinates, delivery time, package dimensions | 30 days | Human delivery | Delivery failure/complaint |
+| SC3 Environmental Sensor Network | No | Environmental monitoring (public interest) | No personal consent needed (no personal info) | Temperature, humidity, PM2.5, noise, light | Permanent (aggregated) | Not applicable (no personal data) | Value anomaly/offline |
+| SC4 AI Security Sandbox | Yes (code) | Security testing | Contract-defined test scope | Test code, execution logs, resource usage | Purged on completion | Offline sandbox | Security incident/anomaly |
+| SC5 AI Art Co-creation | Anonymizable | Art co-creation | Active use; content anonymous by default | Generated content, interaction records (anonymous) | 90 days | Offline art workshop | Content dispute/complaint |
+| SC6 Open-Source Contribution Visualization | Yes (public contributions) | Community display | Only public contributions shown; may opt out of display | GitHub public contributions, display settings | Real-time | Not displayed | User withdrawal/dispute |
+| SC7 AI Tutoring Study Room | Anonymizable | Learning support | Active use; login optional | Learning records (optional), preferences | 90 days | Human tutor / regular study room | User exit/feedback |
+| SC8 Smart Fitness Cabin | Anonymizable | Exercise guidance | Active use; activity data sharing optional | Activity data (optional), frequency | 90 days | Traditional gym equipment | User exit |
+| SC9 Unmanned Retail | Yes (settlement imagery) | Goods settlement | QR/swipe entry (non-biometric) | Settlement imagery (local processing) | Purged locally | Human cashier | User opt-out |
+| SC10 AI Music Co-creation | Anonymizable | Music co-creation | Active use | Generated audio, interaction records | 90 days | Offline band/rehearsal room | Content dispute |
+| SC11 Digital Heritage Tour | Anonymizable | Cultural tour | Active QR use | Tour location, usage frequency | 90 days | Physical signs / paper maps | User stops |
+| SC12 City Data Observatory | No | City operations display | No personal consent needed (aggregated public) | Aggregated city metrics (no personal) | Permanent (aggregated) | Offline boards | Data anomaly |
+
+> Note: SC1 onboard video, SC6 public contribution data, and SC9 settlement imagery involve personal information or identifiable content. Their legal basis, minimization, and opt-out mechanisms must be confirmed by professional data protection review before deployment; this proposal only designs the mechanisms and does not claim completed legal certification.
 
 ## Appendix B: Copyright and Rights Checklist
 
@@ -584,14 +607,14 @@ All scenarios follow data minimization principles; default local processing; no 
 | 5 | AI-Generated Text (Claude/Kimi) | COMMUNITY-DISPLAY-ONLY | ✓ |
 | 6 | Haidian Statistical Yearbook / Energy Reports | Government public data | ✓ |
 | 7 | A3/A0 PDF | Programmatically generated, fonts embedded | ✓ |
-| 8 | Logo Trademark Search | Not applicable at conceptual stage | Pending |
+| 8 | Logo Trademark Search | Currently used only for competition concept display, not for commercial/long-term public use; if converted to commercial or long-term identity, a trademark similarity search and ownership confirmation must be completed first | Restriction declared |
 
 ## Appendix C: Metric Reproduction Method
 
 Core metrics are based on shapely geometric computation (EPSG:4548 projection):
-- Green ratio = green_space Polygons area ÷ site_boundary area = 142.9 ÷ 1,142.7 = 12.5%
+- Green ratio = green_space Polygons area ÷ site_boundary area = 141.8 ÷ 1,142.7 = 12.42%
 - Public space ratio = public_space Polygons area ÷ site_boundary = 34.3 ÷ 1,142.7 = 3.0%
-- Road network density = (existing OSM ~81 km + new design 16 km) ÷ 11.43 km² ≈ 8.5 km/km²
+- Road network density = (existing OSM ~81 km + new design 16 km) ÷ 11.41 km² ≈ 8.5 km/km²
 - Building scale = land use zone area × conceptual FAR; confidence: low
 - Transparency statement: All metrics dependent on provisional boundaries or conceptual assumptions are marked with confidence levels in metrics.json and do not constitute engineering commitments
 

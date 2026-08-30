@@ -48,7 +48,7 @@
       "land_use_code": "1401",
       "label_zh": "公园绿地与开敞空间 / Reviewable public memory ground"
     },
-    "land_use_area_05_sqm": {
+    "land_use_area_09_sqm": {
       "status": "known",
       "value": 3366138.181,
       "unit": "sqm",
@@ -60,7 +60,7 @@
       "assumptions": [
         "A-PROVISIONAL-BOUNDARY-001"
       ],
-      "land_use_code": "05",
+      "land_use_code": "09",
       "label_zh": "商业服务业用地 / Adoption exchange and AI-native service"
     },
     "land_use_area_0702_sqm": {
@@ -457,14 +457,43 @@
           "title_zh": "蓝绿维护复算驿站",
           "theme": "blue_green_recalculation",
           "anchor": "SERVICE-WING-TECH",
-          "primary_users": "绿地运维、环境研究者与居民"
+          "primary_users": "绿地运维、环境研究者与居民",
+          "maintenance_covenant_fields": [
+            "accountable_owner",
+            "day_to_day_operator",
+            "funding_status",
+            "inspection_interval",
+            "minimum_service_requirement",
+            "replacement_or_retirement_trigger",
+            "handover_route"
+          ],
+          "sensing_boundary": "asset_and_environment_only_no_personnel_tracking"
         },
         {
           "id": "MEM-12",
           "title_zh": "公共决策版本墙",
           "theme": "public_decision_versioning",
           "anchor": "SERVICE-WING-SCENARIO",
-          "primary_users": "运营方、研究团队"
+          "primary_users": "受影响公众、运营方、社区代表与研究团队",
+          "memory_link_lifecycle": [
+            "registered",
+            "assigned",
+            "in_action",
+            "awaiting_closure_review",
+            "reopened_or_escalated",
+            "archived"
+          ],
+          "closure_review_required": true,
+          "impact_ledger_fields": [
+            "baseline",
+            "intended_public_benefit",
+            "beneficiary_groups",
+            "resource_workload_privacy_environmental_costs",
+            "cost_bearing_groups",
+            "responsible_role",
+            "correction_trigger",
+            "exit_condition"
+          ]
         }
       ]
     },
@@ -653,6 +682,89 @@
         "A-PRIVACY-001"
       ],
       "equivalent_metric": "scenario_card_count"
+    },
+    "memory_link_closure_confirmation_rate": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "proposal.md",
+        "proposal.en.md",
+        "geometry/public_space.geojson"
+      ],
+      "formula": "count(Memory Links archived after affected-person or designated public-interest confirmation, or after a completed public review window) / count(Memory Links proposed for closure)",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-OPERATIONS-001",
+        "A-PRIVACY-001",
+        "A-CLOSURE-001"
+      ],
+      "reason": "No operator, consent and privacy process, review window, appeal route, service level, case registry, or baseline has been confirmed.",
+      "lifecycle_states": [
+        "registered",
+        "assigned",
+        "in_action",
+        "awaiting_closure_review",
+        "reopened_or_escalated",
+        "archived"
+      ]
+    },
+    "memory_link_maintenance_contract_coverage": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "proposal.md",
+        "proposal.en.md",
+        "geometry/public_space.geojson"
+      ],
+      "formula": "count(active Memory Links with accountable owner, day-to-day operator, funding status, inspection interval, minimum service requirement, replacement or retirement trigger, and handover route) / count(active Memory Links)",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-OPERATIONS-001",
+        "A-PRIVACY-001",
+        "A-MAINTENANCE-001"
+      ],
+      "reason": "No operating organization, funding source, service level, asset registry, inspection baseline, replacement cycle, or retirement handover has been confirmed.",
+      "required_fields": [
+        "accountable_owner",
+        "day_to_day_operator",
+        "funding_status",
+        "inspection_interval",
+        "minimum_service_requirement",
+        "replacement_or_retirement_trigger",
+        "handover_route"
+      ],
+      "sensing_boundary": "Asset and environmental condition data only; no worker location, time-ranking, or productivity profiling."
+    },
+    "memory_link_distributional_impact_coverage": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "proposal.md",
+        "proposal.en.md",
+        "geometry/public_space.geojson"
+      ],
+      "formula": "count(active Memory Links with baseline, intended public benefit, beneficiary groups, resource/workload/privacy/environmental costs, cost-bearing groups, responsible role, correction trigger, and exit condition) / count(active Memory Links)",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-OPERATIONS-001",
+        "A-PRIVACY-001",
+        "A-IMPACT-001"
+      ],
+      "reason": "No pilot baseline, affected-group participation process, audited resource or workload method, privacy impact assessment, environmental assessment, or correction threshold has been confirmed.",
+      "required_fields": [
+        "baseline",
+        "intended_public_benefit",
+        "beneficiary_groups",
+        "resource_workload_privacy_environmental_costs",
+        "cost_bearing_groups",
+        "responsible_role",
+        "correction_trigger",
+        "exit_condition"
+      ],
+      "interpretation_boundary": "Coverage measures whether distributional effects are documented; it does not by itself prove fairness, effectiveness, or public consent."
     }
   }
 }

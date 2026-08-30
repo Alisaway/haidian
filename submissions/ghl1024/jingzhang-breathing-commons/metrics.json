@@ -1,0 +1,168 @@
+{
+  "schema_version": "0.1.0",
+  "units": {
+    "length": "m",
+    "area": "sqm"
+  },
+  "metrics": {
+    "site_area_sqm": {
+      "status": "known",
+      "value": 11412825.386,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "area(project(site_boundary, EPSG:4548))",
+      "confidence": "low",
+      "assumptions": [
+        "The value is recomputed from provisional geometry and is not an official planning-control indicator."
+      ]
+    },
+    "land_use_zone_count": {
+      "status": "known",
+      "value": 5,
+      "unit": "count",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "count(land-use design polygons)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "concept_building_count": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "count(conceptual building carrier features)",
+      "confidence": "high",
+      "assumptions": [
+        "Conceptual design carriers only; this count does not describe surveyed existing buildings or approved construction."
+      ]
+    },
+    "building_footprint_area_sqm": {
+      "status": "known",
+      "value": 69600.0,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "area(union(conceptual_building_footprints), EPSG:4548)",
+      "confidence": "medium",
+      "assumptions": [
+        "Conceptual design footprints only; retain-renovate-demolish decisions await existing-building and ownership data."
+      ]
+    },
+    "green_ratio": {
+      "status": "known",
+      "value": 0.126076,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/green_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "area(union(green_space)) / area(site_boundary)",
+      "confidence": "low",
+      "assumptions": [
+        "The value is recomputed from provisional geometry and is not an official planning-control indicator."
+      ]
+    },
+    "public_space_ratio": {
+      "status": "known",
+      "value": 0.008918,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "area(union(public_space)) / area(site_boundary)",
+      "confidence": "low",
+      "assumptions": [
+        "The value is recomputed from provisional geometry and is not an official planning-control indicator."
+      ]
+    },
+    "breathing_spine_length_m": {
+      "status": "known",
+      "value": 9242.5,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson#ROAD-BREATH-001"
+      ],
+      "formula": "length(ROAD-BREATH-001, EPSG:4548)",
+      "confidence": "medium",
+      "assumptions": [
+        "The value is recomputed from provisional geometry and is not an official planning-control indicator."
+      ]
+    },
+    "scenario_card_count": {
+      "status": "known",
+      "value": 12,
+      "unit": "count",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "count(features where id starts PUBLIC-SCENARIO-)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "human_fallback_route_count": {
+      "status": "known",
+      "value": 1,
+      "unit": "count",
+      "source_files": [
+        "geometry/roads.geojson#ROAD-FALLBACK-001"
+      ],
+      "formula": "count(non-AI equivalent route features)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "phase_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/phasing.geojson"
+      ],
+      "formula": "count(phase polygons)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "key_area_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "count(required key areas)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "floor_area_ratio": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "brief/site-package/ranges/planning_limits.json"
+      ],
+      "formula": "total_floor_area_sqm / official_site_area_sqm",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "Approved FAR controls, official boundaries, and verified existing-building data are absent."
+    },
+    "building_height_m": {
+      "status": "unknown",
+      "value": null,
+      "unit": "m",
+      "source_files": [
+        "brief/site-package/ranges/planning_limits.json"
+      ],
+      "formula": "approved_height_control",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "Approved height controls and aviation, heritage, and view-corridor constraints are absent."
+    }
+  }
+}

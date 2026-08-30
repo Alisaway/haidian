@@ -1,0 +1,555 @@
+{
+  "schema_version": "0.1.0",
+  "items": [
+    {
+      "item_id": "existing_conditions_diagnosis",
+      "title_zh": "现状诊断",
+      "professional_dimension": "总体概念与三核两翼空间结构",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "现状基底与真实数据锚点（§京张铁路遗址公园已建成9km绿廊）",
+        "三核周边真实锚点：高校、科研院所与AI企业",
+        "海淀AI产业：全国最密集的创新雨林",
+        "交通与人口基底"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/site_boundary.geojson",
+        "geometry/green_space.geojson"
+      ],
+      "metric_refs": [
+        "green_ratio",
+        "research_area_sqm"
+      ],
+      "source_ids": [
+        "SITE-PACKAGE",
+        "OFFICIAL-ANNOUNCEMENT"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-002"
+      ],
+      "self_check_ids": [
+        "BOUNDARY_TRUST",
+        "METRIC_RECOMPUTE"
+      ],
+      "evidence_summary_zh": "现状诊断基于公开数据：绿廊二期2026.8.6开放（9km/53ha/70社区45万人）；海淀2024年GDP 12907.1亿、AI核心产业2822亿、1900+企业、51独角兽、104大模型、646院士、R&D 12%+；13号线拆分/18号线开通。所有数据标注来源与年份。"
+    },
+    {
+      "item_id": "three_level_scope_framework",
+      "title_zh": "三层范围",
+      "professional_dimension": "总体概念与三核两翼空间结构",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "三层范围工作框架（统筹研究范围43.6km²/总体设计范围11.4km²/重点区域368.6ha）"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "metric_refs": [
+        "research_area_sqm",
+        "site_area_sqm",
+        "key_area_total_sqm"
+      ],
+      "source_ids": [
+        "SITE-PACKAGE",
+        "AGENT-TASKBOOK"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001"
+      ],
+      "self_check_ids": [
+        "BOUNDARY_TRUST"
+      ],
+      "evidence_summary_zh": "三层范围：统筹研究43.61km²（research_area_sqm=43,609,232.6）、总体设计11.41km²（site_area_sqm=11,412,825.4）、重点区域368.6ha（key_area_total_sqm=3,686,110.2）；site_boundary.geojson定义设计范围边界。"
+    },
+    {
+      "item_id": "overall_spatial_structure",
+      "title_zh": "总体结构",
+      "professional_dimension": "总体概念与三核两翼空间结构",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "主概念：智脉京张",
+        "三核一轴两翼协同回路",
+        "方案定位声明（三带定位）"
+      ],
+      "drawing_refs": [
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/key_areas.geojson",
+        "geometry/green_space.geojson"
+      ],
+      "metric_refs": [
+        "key_area_total_sqm",
+        "green_ratio"
+      ],
+      "source_ids": [
+        "AGENT-TASKBOOK"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001"
+      ],
+      "self_check_ids": [
+        "METRIC_RECOMPUTE"
+      ],
+      "evidence_summary_zh": "一轴（京张绿廊主脉约9km）三核（众智园191.9ha/AI原点社区104.3ha/大钟寺72.4ha）两翼（西翼科技服务298.7ha/东翼场景赋能338.7ha）；三带定位：百年京张文化带/都市AI生活体验带/AI融合创新带。"
+    },
+    {
+      "item_id": "land_use_layout",
+      "title_zh": "用地布局",
+      "professional_dimension": "总体概念与三核两翼空间结构",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "用地、建筑规模与拆改留方案",
+        "总体设计范围城市更新与控规深度城市设计"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/land_use.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "metric_refs": [
+        "site_area_sqm",
+        "land_use_total_sqm",
+        "green_ratio",
+        "public_space_ratio"
+      ],
+      "source_ids": [
+        "SITE-PACKAGE",
+        "AGENT-TASKBOOK"
+      ],
+      "assumption_ids": [
+        "A-LANDUSE-001"
+      ],
+      "self_check_ids": [
+        "LAND_USE_TOPOLOGY",
+        "METRIC_RECOMPUTE"
+      ],
+      "evidence_summary_zh": "用地构成：绿地31.03%（354.1ha）、道路及其他57.8%、建筑基底5.74%（65.5ha）、公共空间5.47%（62.4ha）；land_use.geojson面积合计11,412,330.6m²与site_area一致（差0.004%）；三核功能差异化布局。"
+    },
+    {
+      "item_id": "development_intensity_controls",
+      "title_zh": "开发强度/待确认控规",
+      "professional_dimension": "总体概念与三核两翼空间结构",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "用地、建筑规模与拆改留方案",
+        "AI原点社区城市设计导则（示例深化）"
+      ],
+      "drawing_refs": [
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/buildings.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "metric_refs": [
+        "building_count",
+        "building_footprint_area_sqm"
+      ],
+      "source_ids": [
+        "AGENT-TASKBOOK"
+      ],
+      "assumption_ids": [
+        "A-LANDUSE-001"
+      ],
+      "self_check_ids": [
+        "METRIC_RECOMPUTE"
+      ],
+      "evidence_summary_zh": "441栋建筑块（buildings.geojson逐要素计数），含圆角C形/U形围合式街坊布局，建筑沿街道周边布置、内部留庭院，3栋保留工业遗产以虚线标识；基底65.5ha（5.74%），层数1-16层（conceptual massing，confidence: low）；AI原点社区导则定义高度/界面/退线控制；具体控规指标待官方确认，已标注provisional。"
+    },
+    {
+      "item_id": "height_massing_character",
+      "title_zh": "建筑高度体量风貌",
+      "professional_dimension": "重点区域详细设计",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "蓝绿空间、公共空间与城市风貌",
+        "AI原点社区城市设计导则（示例深化）",
+        "原创机制二：AI原生空间类型学"
+      ],
+      "drawing_refs": [
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/buildings.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "metric_refs": [
+        "building_count"
+      ],
+      "source_ids": [
+        "AGENT-TASKBOOK"
+      ],
+      "assumption_ids": [
+        "A-LANDUSE-001"
+      ],
+      "self_check_ids": [
+        "METRIC_RECOMPUTE"
+      ],
+      "evidence_summary_zh": "4-8层低密街区，铁路遗产工业质感+AI原生数字美学；算力水塔为竖向地标；AI原点社区导则定义界面/高度/材质/照明；441栋建筑块为conceptual massing，非建筑方案。"
+    },
+    {
+      "item_id": "retain_renovate_demolish",
+      "title_zh": "拆改留",
+      "professional_dimension": "总体概念与三核两翼空间结构",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "用地、建筑规模与拆改留方案",
+        "空间版本控制（Spatial Versioning）"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/buildings.geojson",
+        "geometry/phasing.geojson"
+      ],
+      "metric_refs": [
+        "building_count",
+        "urban_os_phased_years"
+      ],
+      "source_ids": [
+        "AGENT-TASKBOOK"
+      ],
+      "assumption_ids": [
+        "A-LANDUSE-001"
+      ],
+      "self_check_ids": [
+        "METRIC_RECOMPUTE"
+      ],
+      "evidence_summary_zh": "以留改为主、拆改为辅；旧厂房改造为模型机房/开源展示廊（LM-02）；空间版本控制支持渐进式更新（feature分支试点→merge主干→rollback回退）；三期分期对应拆改留节奏。"
+    },
+    {
+      "item_id": "traffic_rail_slow_parking",
+      "title_zh": "交通轨道慢行停车",
+      "professional_dimension": "公共空间与朝圣地标",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "交通、轨道、市政与公共服务设施",
+        "现状基底：交通与人口基底"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/roads.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "metric_refs": [
+        "site_area_sqm"
+      ],
+      "source_ids": [
+        "SITE-PACKAGE",
+        "OFFICIAL-ANNOUNCEMENT"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-002"
+      ],
+      "self_check_ids": [
+        "BOUNDARY_TRUST"
+      ],
+      "evidence_summary_zh": "13号线拆分（西直门→大钟寺→知春路→五道口），知春路站31万/日；18号线开通释放运能；绿廊三道一绿无断点，南接回龙观自行车专用路；SC-09自动驾驶接驳、SC-08低速机器人配送为测试验证场景。"
+    },
+    {
+      "item_id": "municipal_new_infrastructure",
+      "title_zh": "市政新基建",
+      "professional_dimension": "AI+场景赋能与用户画像",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "智脉城市OS：AI原生空间操作系统（物理层）",
+        "交通、轨道、市政与公共服务设施",
+        "原创机制一：1909协议"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/key_areas.geojson",
+        "geometry/roads.geojson"
+      ],
+      "metric_refs": [
+        "key_area_total_sqm"
+      ],
+      "source_ids": [
+        "AGENT-TASKBOOK"
+      ],
+      "assumption_ids": [
+        "A-LANDUSE-001"
+      ],
+      "self_check_ids": [
+        "METRIC_RECOMPUTE"
+      ],
+      "evidence_summary_zh": "物理层：神经绿廊（传感器/边缘计算/光纤沿9km绿廊敷设）；算力水塔为分布式算力节点；1909协议信号机为智能市政接口；SC-04开放算力沙盒为算力共享测试床。"
+    },
+    {
+      "item_id": "blue_green_public_space",
+      "title_zh": "蓝绿公共空间",
+      "professional_dimension": "公共空间与朝圣地标",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "蓝绿空间、公共空间与城市风貌",
+        "公共空间与朝圣地标（LM-01至LM-04）",
+        "京张铁路遗址公园：已建成的9公里绿廊"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson"
+      ],
+      "metric_refs": [
+        "green_ratio",
+        "public_space_ratio",
+        "ai_pilgrimage_landmarks"
+      ],
+      "source_ids": [
+        "OFFICIAL-ANNOUNCEMENT",
+        "AGENT-TASKBOOK"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-002"
+      ],
+      "self_check_ids": [
+        "METRIC_RECOMPUTE"
+      ],
+      "evidence_summary_zh": "绿地354.1ha（31.03%，green_space.geojson 13要素）、公共空间62.4ha（5.47%，public_space.geojson 12要素）；4处朝圣地标；绿廊9km/53ha已建成（二期2026.8.6开放）；智脉心跳数据光河沿绿廊布置。"
+    },
+    {
+      "item_id": "three_key_area_detailed_design",
+      "title_zh": "三处重点区详细设计",
+      "professional_dimension": "重点区域详细设计",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "众智园AI自主创新加速区（北，191.9ha）[data:geometry/key_areas.geojson#KEY-001]",
+        "北京AI原点社区（中，104.3ha）[data:geometry/key_areas.geojson#KEY-002]",
+        "大钟寺AI产业集聚区（南，72.4ha）[data:geometry/key_areas.geojson#KEY-003]",
+        "AI原点社区城市设计导则（示例深化）",
+        "小月河场景赋能翼（东翼）深化设计"
+      ],
+      "drawing_refs": [
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/key_areas.geojson",
+        "geometry/buildings.geojson",
+        "geometry/public_space.geojson"
+      ],
+      "metric_refs": [
+        "key_area_total_sqm",
+        "key_areas_count",
+        "building_count"
+      ],
+      "source_ids": [
+        "SITE-PACKAGE",
+        "AGENT-TASKBOOK"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-LANDUSE-001"
+      ],
+      "self_check_ids": [
+        "METRIC_RECOMPUTE"
+      ],
+      "evidence_summary_zh": "三核均含定位/功能/空间/旗舰项目/指标：KEY-001众智园（算力水塔/模型机房/红队测试床）、KEY-002 AI原点社区（提示广场/道岔广场/城市设计导则）、KEY-003大钟寺（AI里程碑亭/Open Week主会场）；东翼小月河场景深化。"
+    },
+    {
+      "item_id": "renewal_project_list",
+      "title_zh": "更新项目清单",
+      "professional_dimension": "全球活动体系与长期运营",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "更新项目清单、实施政策与分期计划（N-01至N-06近期项目）",
+        "投资估算（10年累计百亿级，远期总100-150亿元，待可研）"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/phasing.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "metric_refs": [
+        "investment_estimate_total_yi",
+        "urban_os_phased_years"
+      ],
+      "source_ids": [
+        "AGENT-TASKBOOK"
+      ],
+      "assumption_ids": [
+        "A-LANDUSE-001"
+      ],
+      "self_check_ids": [
+        "METRIC_RECOMPUTE"
+      ],
+      "evidence_summary_zh": "近期N-01至N-06示范项目（15-25亿）：智脉原点碑/算力水塔示范/提示广场/绿廊传感器/开源展示廊/红队测试床；中期40-60亿、远期60-100亿；10年累计百亿级（远期总100-150亿元，中值约150亿，待可研变量）。"
+    },
+    {
+      "item_id": "phasing_implementation",
+      "title_zh": "分期实施",
+      "professional_dimension": "全球活动体系与长期运营",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "更新项目清单、实施政策与分期计划",
+        "空间版本控制（Spatial Versioning）"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/phasing.geojson"
+      ],
+      "metric_refs": [
+        "urban_os_phased_years",
+        "investment_estimate_total_yi"
+      ],
+      "source_ids": [
+        "AGENT-TASKBOOK"
+      ],
+      "assumption_ids": [
+        "A-LANDUSE-001"
+      ],
+      "self_check_ids": [
+        "METRIC_RECOMPUTE"
+      ],
+      "evidence_summary_zh": "三期10年：近期（1-3年）示范启动15-25亿、中期（4-7年）系统展开40-60亿、远期（8-10年）全域成型60-100亿；phasing.geojson定义分期空间边界；空间版本控制支持渐进式merge。"
+    },
+    {
+      "item_id": "metrics_recalculation",
+      "title_zh": "指标复算",
+      "professional_dimension": "指标体系与合规矩阵",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "指标体系、面积复算与合规矩阵"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/land_use.geojson",
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson",
+        "geometry/buildings.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "metric_refs": [
+        "site_area_sqm",
+        "research_area_sqm",
+        "key_area_total_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "building_count",
+        "building_footprint_area_sqm",
+        "ai_scenario_nodes",
+        "ai_pilgrimage_landmarks",
+        "talent_apartment_ratio"
+      ],
+      "source_ids": [
+        "SITE-PACKAGE",
+        "AGENT-TASKBOOK"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-LANDUSE-001"
+      ],
+      "self_check_ids": [
+        "BOUNDARY_TRUST",
+        "LAND_USE_TOPOLOGY",
+        "METRIC_RECOMPUTE"
+      ],
+      "evidence_summary_zh": "全部15项指标从GeoJSON属性在EPSG:4548投影下复算：site 11.41km²、research 43.61km²、三核368.6ha、绿地31.03%、公共空间5.47%、建筑441栋/65.5ha（含3栋保留遗产）、15个物理落位节点（含4个首期测试节点）、4地标、人才公寓20%；图面与metrics.json一致性已校验。"
+    },
+    {
+      "item_id": "risk_missing_data",
+      "title_zh": "风险和缺资料清单",
+      "professional_dimension": "指标体系与合规矩阵",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "风险、版权与合规说明",
+        "风险缓释与争议解决"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/site_boundary.geojson",
+        "geometry/constraints.geojson"
+      ],
+      "metric_refs": [
+        "site_area_sqm",
+        "building_footprint_area_sqm"
+      ],
+      "source_ids": [
+        "AGENT-TASKBOOK"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-BOUNDARY-002",
+        "A-LANDUSE-001"
+      ],
+      "self_check_ids": [
+        "BOUNDARY_TRUST"
+      ],
+      "evidence_summary_zh": "risk.json列10类风险（数据精度/产权/技术成熟度/隐私安全/绅士化/运营/投资/合规/具身机器人物理安全/人机共存），评分2-4分，均有mitigation和human_review；assumptions.json列3项关键假设；所有空间建议标注'概念建议/参考方案'，不构成审批结论。"
+    },
+    {
+      "item_id": "embodied_ai_spatial_guidelines",
+      "title_zh": "具身智能空间导则",
+      "professional_dimension": "AI+场景赋能与用户画像",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "原创机制四：具身智能空间导则（Embodied AI Spatial Guidelines）",
+        "东翼小月河具身智能原生街区（示例）"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/key_areas.geojson",
+        "geometry/public_space.geojson"
+      ],
+      "metric_refs": [
+        "ai_scenario_nodes"
+      ],
+      "source_ids": [
+        "AGENT-TASKBOOK",
+        "REF-WHRG-2026"
+      ],
+      "assumption_ids": [
+        "A-LANDUSE-001"
+      ],
+      "self_check_ids": [
+        "METRIC_RECOMPUTE"
+      ],
+      "evidence_summary_zh": "新增具身智能空间导则：通道净宽（专用道≥1.5m/共享道≥3.0m/无障碍≥1.8m）、坡道≤1:12、交互界面高度1.1-1.5m、安全设施间距200m、东翼小月河定位为具身智能原生街区（人机共享带/机器人换乘站/测试广场/充电驿站）；导则与1909协议G1/G2/G3闸门对应，构成具身智能城市准入完整框架；对接第二届世界人形机器人运动会21项实景挑战。"
+    }
+  ]
+}

@@ -4,6 +4,64 @@
 
 > 本文件记录方案包的版本演进、每次迭代响应了什么反馈、以及仍然开放的问题。全部空间内容始终为概念建议,不构成审定结论。
 
+## v1.8 - 2026-08-19
+
+**展示层同步与元数据修正版**
+
+**动机**:响应内部 portal/visual 展示通道审计(`review/PORTAL-AUDIT-20260820.md`)发现的两项低成本缺口——①`manifest.json.generated_at` 自 v1.0 脚手架后从未更新,官方列表画廊管线按该字段降序排序,v1.6/v1.7 两轮实质性内容更新后仍被排在"12天未更新"的位置,对评委造成内容停滞的错误印象;②v1.6 新增的 `phasing-plan.png`/`scenario-index.png` 两图已在 `manifest.json` 与 `proposal.md` 正文注册引用,但未镜像进 `visual/assets/` 也未被 `visual/index.html`/`index.en.html` 引用,visual 展示通道图面覆盖率(10图)落后于 `assets/figures` 已具备的水平(12图)。本版不改概念、不新增任何图纸、不改任何既有正文内容,仅做展示层装配与一处元数据字段更新。
+
+- **`manifest.generated_at` 刷新**:从 v1.0 遗留值 `2026-08-07T16:52:50Z` 更新为本次改动实际执行时间 `2026-08-19T16:05:35Z`;该字段是官方列表画廊管线(`scripts/generate_submissions_data.py` → `submissions-data.js`)按日期降序排序的排序键(已读源码确认),不在文件级 sha256 校验范围内,单独更新不影响哈希链。
+- **`phasing-plan`/`scenario-index` 图装配进 visual 通道**:两图(各含中英,共4张 PNG)从 `assets/figures/` 原样复制到 `visual/assets/`(与 `key-area-*` 系列已有镜像模式一致,复制后字节与源文件逐一 sha256 核对 MATCH,不重新生成);`visual/index.html`/`visual/index.en.html` 分别在"分期实施"/"Phased Implementation"章 h2 后插入 `phasing-plan(.en).png` 的 `<figure>`,在"AI 场景节点"/"AI Scenario Nodes"章 h2 后插入 `scenario-index(.en).png` 的 `<figure>`,套用页内既有 `<figure><img><figcaption></figure>` 模式,中英各插入2处、逐位对称;BeautifulSoup 解析确认新增4个 `<img src>` 全部可在 `visual/assets/` 目录下落地解析,无断链。
+- **manifest 新增4条 `visual_asset` 条目**:`visual/assets/{phasing-plan,scenario-index}{,.en}.png`,`role` 与既有 `key-area-*` 镜像条目一致(`visual_asset`,`required: false`);连带用当前 main 的 `scripts/refresh_submission_manifest.py` 统一刷新受影响文件 sha256(含新增4条,以及因插入图引用而改动的 `visual/index.html`/`visual/index.en.html` 两份);`schema_version` 保持 `0.1.0` 不变,未设置 `readiness_contract`(与 v1.5-v1.7 一致)。
+- 自检:当前 main 校验脚本下 `validate_local_submission` 与 `self_check_submission` 四门全部 PASS;双语契约检查通过(证据标签序列 zh/en 与 v1.7 基线完全一致,未增未减);详见 `contrib/V18/VERIFICATION.md`。
+
+## v1.7 - 2026-08-19
+
+**评审通道图像完整性与展板可读性修复版**
+
+**动机**:响应内部红队预演(`review/RED-TEAM-20260819.md`)发现的具体缺口——官方"专家离线评审包"工具(`export_review_packet.py`)按 `proposal.md` 正文顺序原样内嵌 `![]()` 引用的图片渲染给人工评委,A3/A0 图纸本身不会被这条通道读取;而"总体概念与命名体系"(agent.1)整章此前零图像引用,是评委经这条通道阅读时唯一读不到图的正文主章。同时响应展板专项审计(`review/A0-AUDIT-20260819.md`)对 A0 展板的"3秒测试"不及格判定、A0内嵌位图仅~100dpi的实测瓶颈,以及 v1.6 新增的分期图/场景索引图未传导到 A0 的缺口。本版不改概念、不改任何既有图纸的构图与配色、不动 `tools/gen_drawings.py` 的 A3 生成代码。
+
+- **评审包通道图像修复**:`proposal.md`/`proposal.en.md` "总体概念与命名体系"(agent.1)章内,紧贴"总体空间结构为一撇一捺一顶点"段落后各插入一行既有图引用(复用 `site-overview(.en).png`,该图已在"设计依据与资料清单"章出现,此处按内容对应重复引用,不新增图像资产);中英各增 1 行,逐位同步,证据标签序列不变。核查确认"分期实施地图→phasing-plan.png"与"场景章→scenario-index.png"两处 v1.6 已插入到位,本版无需重复处理。
+- **A0-1 总览板重设计(3秒测试)**:人字形主意象由"页顶3%宽小logo"放大为版面视觉锚点——复用既有 `ren_mark()` 抽象标记逻辑(未新建PNG资产、未改动5张既有正式图纸),尺寸/线宽显著放大(横向占页面宽度约3%→约15%,线宽约×2.4~2.6倍),置于品牌区与内容区之间的独立醒目位置,并标注"一撇·记忆线/一捺·智能线"双语小注;`site-overview.png`/`key-areas.png` 两行相应收窄(高度约0.39→0.28页面分数)但保留完整,30秒读结构的信息链未被削弱。`scenario-index.png`(v1.6产物)以窄高比例插入嵌入 `key-areas.png` 行右侧新增小图列,首次上A0板。
+- **A0-2 系统板重设计(文字密度)**:面板标题字号提升(21/20pt→24/22pt);每行由"读图要点标题+4条项目符号+免责声明"精简为单条最具信息量的要点(原4条项目符号选其一,不改写原文措辞、逐字取自既有文案),免责声明由每行重复改为页尾单条共享;文字块由实测29个降至12个。同时新增第5行 `phasing-plan.png`(JZ-2026-11,v1.6产物,此前未上A0),行距/图框高度按比例收窄以容纳新增行。
+- **A0 内嵌位图 dpi 100→150**:定位到 `tools/gen_drawings.py` 的 `page()` 函数——A0/A3 共享该函数创建 matplotlib figure 时未显式传 `dpi`,统一沿用 rcParams 默认 100dpi 在嵌入 PDF 时重新采样图片,与源PNG本身150dpi无关(根因见 `review/A0-AUDIT-20260819.md` 第3节复现实验)。修复方式:给 `page()` 新增可选形参 `dpi=None`(不传即保留原行为,A3 全部调用点未改、行为不变),仅在 A0-1/A0-2 两处 `page()` 调用显式传 `dpi=150`。`pdfimages -list` 实测:A0 内嵌位图 x-ppi/y-ppi 由 100/100 提升到 150/150。目标值定为150而非审计建议的"200左右":150为 `gen_figures.py` 源PNG的原生dpi(`new_fig()` 用 `dpi=150`),150已是"不丢失源信息"的上限,200会对150dpi的源像素做无意义插值放大且体积更大;实测改为200会使提交包总体积(38.3MB→约41MB)超过 `validate_submission.py` 的40MiB硬限制(`MAX_TOTAL_BYTES`,已实测触发 `changed files total ... exceeds 41943040` 错误),150在体积与清晰度之间是当前约束下的可行折中,如实记录未采纳200的原因。
+- **A3 回归验证**:`tools/gen_drawings.py` 的 A3 生成代码段本身未改动一行;曾用改动后的脚本重渲 A3 验证页数与内容,确认中英均保持 16 页、`cmp -l` 逐字节比对显示仅 PDF 内部 `/CreationDate` 时间戳(4字节,位于文件尾部 trailer)与 v1.6 不同、其余字节相同;为避免这一与代码改动无关的时间戳差异被计入本次改动的文件体积与diff,最终提交物保留 v1.6 原始 `a3-booklet(.en).pdf` 字节(sha256 与 v1.6 完全一致),不采用重渲后的副本,确认 A3 零回归。
+- **manifest 刷新**:`drawings/a0-boards(.en).pdf`(中英各1份)因 A0 重设计与 dpi 提升重渲,体积从约3.06/3.14MB增至约4.04/4.20MB;`drawings/a3-booklet(.en).pdf` 保持 v1.6 原始字节不变;`proposal.md`/`proposal.en.md` 各新增1行图引用、frontmatter `iteration` 由 `v1.5` 更新为 `v1.7`(此前 v1.6 未同步更新此字段,一并修正);`report/proposal(.en).html` 随 `proposal.md`/`.en.md` 改动用当前 main 的 `scripts/render_proposal_html.py` 重渲;`manifest.json` 用当前 main 的 `scripts/refresh_submission_manifest.py` 统一刷新受影响文件 sha256;`schema_version` 保持 `0.1.0` 不变;未设置 `readiness_contract`(与 v1.5/v1.6 一致,避免把既有4条 legacy advisory WARNING 升级为阻断 ERROR);提交包总体积由34.5MB增至约36.5MB,在40MiB硬限制内(margin约3.5MB)。
+- 自检:当前 main 校验脚本下 `validate_local_submission` 与 `self_check_submission` 四门全部 PASS;双语契约检查通过(证据标签序列 zh/en 完全一致);详见 `contrib/V17/VERIFICATION.md`。
+
+## v1.6 - 2026-08-19
+
+**图面增强版:响应图面可读性审计,补齐显示面必填项**
+
+**动机**:响应 issue #2955 对图面可读性的批评方向("场景卡是没意义的东西"“文字替代空间”),并对照内部图面审计(`review/FIGURE-AUDIT-20260819.md`)与展示面情报(`review/SEPT-INTEL-20260819.md`)补齐两项此前缺失的显示面必填项(`risk.json`、`manifest.cover_image`)。本版不改概念、不改既有5张正式图纸的构图与配色,只做增量标注与全新补充图。
+
+- **道路真实路名标注**:在 `site-overview`/`key-areas`/`mobility-bluegreen` 三图(中英共6张PNG)上,取 `roads.geojson` 中10条"现状参照"道路,按可见范围与文字实际字宽做避让式标注(中文用简称、英文用拼音),自建避障算法与已放置标注互相让位,避免与站名、重点区编号徽标重叠;拥挤处按净空不足自动跳过而非强行压字。三图五道口—学院路一带最终中文标注8/10条、英文标注视文字宽度略少,均如实以算法结果为准,不手工凑数。
+- **分期实施地图(新增 JZ-2026-11)**:按 `phasing.geojson` 的三期几何,套用本包既有蓝图绿色系(`#2F6B50`/`#3E8663`/`#5FA083`)三级色阶绘制 `phasing-plan.png`(中英),标注 PH-1/2/3 期号,图例含年份(近期2026-2028/中期2028-2031/远期2031-2035,与 proposal.md 分期段落逐字一致)与阶段门摘要;`gen_drawings.py` 在 A3 图册"实施与运营"页(原 P14)后插入该图新页(中英 PDF 均为 16 页,原风险合规页顺延为 P16)。
+- **12场景卡定位小图(新增)**:`public_space.geojson` 中已有 `layer=SCENARIO_NODE` 的12个场景锚点真实坐标(非质心近似),据此绘制 `scenario-index.png`(中英),嵌入 A3 图册场景卡页(原 P13)右侧新增小图列(卡片本身仅按比例收窄、文字内容未改动);同图追加到 `proposal.md`/`proposal.en.md` 场景表之后。
+- **P2 概念页缩略图**:复用已有 `site-overview.png`(未新生成图像),以缩略图形式插入 P2"一句话方案"框内既有留白处,中英 A3 同步。
+- **`risk.json` 新增**:据 proposal.md 风险登记册 R-01~R-09,按 `schema/risk.schema.json` 归并为8个维度(`policy_uncertainty` 合并承载 R-01+R-04,其余 R-02/03/05/06/07/08/09 各占一维,原文各条款均以"(R-0X)"标注在 note 字段中保留可追溯性),写入包根并在 `manifest.json` 注册(`role: risk_matrix`,参照同 schema_version 0.1.0 的 `budoyh/jingzhang-168` 包用法)。
+- **`manifest.cover_image` 新增**:复制 `site-overview.png` 为 `assets/media/cover.png`,`manifest.json` 顶层新增 `cover_image` 字段并在 `files[]` 注册(`role: media_poster`,参照 `budoyh/jingzhang-168` 包格式)。
+- **正文小改**:`proposal.md`/`proposal.en.md` 场景表后与分期段落后各插入一行新图引用(合计4行,含中英各2处),格式与既有图引用一致;证据标签序列未增未减。
+- **报告与manifest重渲**:用当前 main 的 `scripts/render_proposal_html.py` 重新生成 `report/proposal.html`/`report/proposal.en.html`;`visual/index.html`/`visual/index.en.html` 引用路径未变,内容未改动,但其对应的 `visual/assets/{site-overview,key-areas,mobility-bluegreen}{,.en}.png` 6个副本随改动图同步刷新(此前发现这6个副本是独立文件而非同一路径,不同步会导致 visual 画廊仍显示图面增强前的旧图);`drawings/*.pdf` 中英各2份因新增图册页与图面变化全部重渲;所有改动/新增文件 sha256 按 `scripts/refresh_submission_manifest.py` 统一刷新;`schema_version` 保持 `0.1.0` 不变,未设置 `readiness_contract`。
+- 自检:当前 main 校验脚本下 `validate_local_submission` 与 `self_check_submission` 四门全部 PASS;双语契约检查通过(证据标签序列 zh/en 完全一致);详见 `contrib/V16/VERIFICATION.md`。
+
+## v1.5 - 2026-08-16
+
+**风险、资金与规则化治理的正文深化**
+
+**动机**:响应评审反馈中反复出现的三类关切——风险披露停留在原则层、实施章几乎不谈资金闭合、治理承诺缺少"什么情况下必须停"的规则化表述。本版不改概念、不改数值、不加交付物品类,只把这三类内容以成段插入与小节扩写的方式补进 `proposal.md` 正文,并同步等义英文。
+
+- **风险章新增「风险登记册」**:九类风险(边界与数据缺口、隐私与数据治理、公平包容与数字鸿沟、文保与风貌、权属与实施协调、交通测试与人身安全、资金与运营可持续、场景失效与运维、治理公信与叙事)逐类登记四个字段——触发条件 / 缓解 / 退出 / 残余风险。残余风险为必填项,如实写出无法由本方案消除的部分。
+- **场景章新增「十二张卡的逐卡风险注记」**:每张场景卡一行,写明本卡最主要的一类风险、触发条件与"触发即停"的否定条件;与既有「治理四件套」表配套,不新增场景卡、不改动既有表格。
+- **实施章新增「资金机制」节**:分期概算逻辑(只说概算应当怎么组织,不给造价与投资测算)、资金来源三档分档表(财政与政策工具 / 社会资本 / 运营自平衡,每档附使用边界的否定条件)、四个资金调节阀(顺序、比例、退出、公开),以及与阶段门的接口。**全节为概念层表述,不预设金额、不构成政府资金承诺,政策适用性一律标注待官方条件确认。**
+- **指标章新增「指标主张的使用边界」**:八条否定条件式规则,明确本方案的数值不得被拿去做什么(未经官方红线确认不得用于法定用途、校验值不得被引用为强度诉求、unknown 项不得赋值、版本号不一致的数值不得混用等),不预设任何新阈值。
+- **公共空间章新增「包容性验收」**:七处公共空间节点开放前的四条走查线路(轮椅与婴儿车 / 视障与听障 / 老龄与适老 / 无智能终端),仅当无障碍验收通过方可开放,并如实写出走查覆盖不到的残余风险。
+- **另新增两处小节**:更新项目清单后的「清单的读法」(按是否新增建设量分组、依赖条件为硬前置、与登记册的对应关系),运营 KPI 表后的「阈值、停用与风险的公众参与接口」(议定—触发—复核三步)。
+- **正文增量**:`proposal.md` +132 行 / +8,960 字符(47,810 → 56,770 字符);`proposal.en.md` 逐段等义对译 +132 行,证据标签逐位对齐(322/322 序列完全一致)。**未删除任何既有内容,未改动任何既有证据标签、任何指标数值、任何几何与图纸,未新增交付物品类。**
+- **报告重渲**:用当前 main 的 `scripts/render_proposal_html.py` 重新生成 `report/proposal.html` 与 `report/proposal.en.html`。修复英文报告中 301 处中文证据角标残留(`来源/标准/深度/空间数据/指标`),现全部为英文标签(`Source/Standard/Depth/Spatial data/Metric`),英文报告内证据角标的中文残留归零。
+- **manifest**:所有改动文件 sha256 按仓库字节刷新;`schema_version` 保持 `0.1.0` 不变,未设置 `readiness_contract`(避免在 `self_check.json` 门 ID 未同步的情况下把既有 4 条 legacy advisory WARNING 升级为阻断性 ERROR)。
+- 自检:当前 main 校验脚本下 `validate_local_submission` 与 `self_check_submission` 四门全部 PASS;双语契约检查通过。
+
 ## v1.4.3 - 2026-08-11
 
 **文保保护范围示范性补登**

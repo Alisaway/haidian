@@ -13,3 +13,49 @@ All submitted text, geometry, diagrams, PDFs, and static HTML assets are generat
 - `assets/media/renline-soundscape.m4a` (100s instrumental) is synthesized entirely in code (Python/NumPy additive synthesis, inharmonic bell partials); no samples, no speech, no third-party material, no quotation of existing melodies. Companion `renline-soundscape.vtt` (descriptive captions) and `renline-soundscape.md` (transcript & rights note).
 - `assets/media/renline-walkthrough.mp4` (59s, silent narration — instrumental score only) is rendered frame-by-frame in code (Python/Pillow, 712 frames) and assembled with ffmpeg (libx264/aac); companions: `renline-walkthrough.vtt`, `renline-walkthrough.md`, poster `renline-explorer-walkthrough.webp`. System fonts rendered as bitmaps only.
 - `visual/assets/switchback-protocol.schema.json`, `visual/assets/fixtures/*`, `visual/assets/run-switchback-validation.js` and `visual/assets/switchback-validation-receipt.json` are original machine-readable contract assets; the validator uses Node built-ins only. Validation passing certifies protocol logic only, never field performance.
+
+## Field-survey photographs (v1.7)
+
+- The 16 photographs under `assets/site-photos/` were taken on 2026-08-24 by the human account owner (chucky1102) in person, on public streets and in open park areas along the belt. The photographer holds the rights and clears them for display within this package under COMMUNITY-DISPLAY-ONLY. Original GPS and capture-time EXIF are deliberately retained as evidence; no identifiable faces are included; no fenced or railway land was entered. Per-photo registration (original filename, UTC time, coordinates, supported claims) lives in `visual/assets/field-survey-register.json`. They are field-observation evidence of conditions on that morning only — never official renderings, boundary, tenure or engineering conclusions.
+
+## v1.7 amend — consolidated rights ledger (fonts, drawings, media)
+
+### Fonts
+
+| Asset | Font | Version/source | License | Usage |
+| --- | --- | --- | --- | --- |
+| `report/proposal.html`, `report/proposal.en.html`, `visual/index.html`, `visual/index.en.html` | Noto Sans SC (variable, wght 100–900) | google/fonts repository, `ofl/notosanssc`, © Adobe/Google | SIL OFL 1.1 | Embedded as base64 **woff2 subsets** covering only characters used in each file, so the pages render identically on machines without Chinese system fonts; declared first in every `font-family` stack with system CJK fallbacks retained |
+| `drawings/a0-boards*.pdf`, `drawings/a3-booklet*.pdf` | Noto Sans SC (variable) | same as above | SIL OFL 1.1 | Embedded by the PDF renderer as glyph subsets; no proprietary system fonts embedded in the v1.7 drawing set |
+| `assets/figures/*.png` — all seven figure pairs (`site-overview`, `land-use-structure`, `key-areas`, `mobility-bluegreen`, `metrics-evidence`, `public-section`, `street-interface`) | Noto Sans SC (static Regular / Bold instances cut from the variable font at wght 400 / 700) | same as above | SIL OFL 1.1 | Rasterised to bitmap by the figure generator. **Corrected in v1.8:** the five pre-existing figure pairs were previously rasterised from the proprietary system faces PingFang SC / Hiragino Sans GB; they have been regenerated from the OFL face so that every figure in the package now derives its glyphs from an open-licensed typeface. Layout is unchanged (per-figure pixel difference 1.9–3.8%, canvas sizes identical) |
+
+OFL permits embedding and redistribution of subsets; the license text ships with the font upstream and is not modified. No other typefaces are embedded anywhere in the package. Two remaining assets still rasterise system fonts to bitmaps and are documented in their own sections above: `assets/media/cover.webp` and the `renline-walkthrough.mp4` frames. They are listed here so the exception is explicit rather than implied.
+
+### Drawings (regenerated 2026-08-25, v1.7)
+
+- The four PDFs under `drawings/` were rebuilt from scratch as code-authored HTML boards printed via headless Chromium. Inputs are exclusively package assets: `assets/figures/*.png` (code-generated maps/diagrams, see below), `assets/figures/renline-logo.svg` (original), `assets/site-photos/*.jpg` (field photographs, 3:2 center-crop derivatives used on boards), and package text. No external imagery, map tiles, templates or third-party graphics.
+- This rebuild also corrects the legacy v0.5 boards: Origin Station is now consistently **K5** (mileage zero K0 remains at the southern gateway), the build version reads v1.7, and the previously near-empty boards 4/6 now carry the field-survey evidence and scenario/implementation content.
+
+### Figures and media generation record (consolidated)
+
+| Asset group | Generation method | Third-party material |
+| --- | --- | --- |
+| `assets/figures/*.png` (5 map/diagram pairs zh+en, survey-track) | Python (matplotlib/Pillow) from package GeoJSON + field-survey GPS | none |
+| `assets/figures/renline-logo.svg` | hand-written SVG | none |
+| `assets/media/cover.webp` | Python/Pillow code drawing | none |
+| `assets/media/renline-soundscape.m4a` (+vtt/md) | Python/NumPy additive synthesis | none (no samples) |
+| `assets/media/renline-walkthrough.mp4` (+vtt/md/poster) | Python/Pillow frames + ffmpeg | none |
+| `assets/site-photos/*.jpg` (16) | photographs by the human account owner, 2026-08-24 | photographer-owned, cleared for in-package display |
+| `visual/assets/*.js/.json` | hand-written code and schemas | Node/browser built-ins only |
+
+Third-party mechanism references (switchback archive, near-miss triage, evidence ladder, etc.) are **attributed idea-level references** registered in `sources.json` and credited inline in the proposal; no text, images, geometry or data files were copied from other submission packages except where an explicit open license is cited (e.g. the E0–E5 evidence-ladder concept under CC-BY-SA-4.0, independently re-expressed).
+
+## Third-party openly licensed photographs (v1.7 amend 3)
+
+Two Wikimedia Commons photographs are included under `assets/reference-photos/`, clearly separated from the account owner's field-survey photographs (`assets/site-photos/`, which remain exclusively the owner's own work):
+
+| File | Source & author | License | Changes | Role in this package |
+| --- | --- | --- | --- | --- |
+| `qinghuayuan-station-1908-building-2023.jpg` | [Wikimedia Commons: QINGHUAYUAN STATION OLD HOUSE 202310.jpg](https://commons.wikimedia.org/wiki/File:QINGHUAYUAN_STATION_OLD_HOUSE_202310.jpg), photo by 李汉宗 (Lhzss8), 2023-10-03 | CC BY-SA 4.0 | proportionally rescaled to 1600 px width | Visual reference for the old Qinghuayuan Station anchor, which the 2026-08-24 survey did not reach; counts as G1 public-source support only and does not change the anchor's evidence grade |
+| `wudaokou-night-2008.jpg` | [Wikimedia Commons: Wudaokou.jpg](https://commons.wikimedia.org/wiki/File:Wudaokou.jpg), photo by Mfrk, 2008-04-06 | CC BY-SA 3.0 | none | Historical illustration of Wudaokou's night-time tradition; explicitly labeled as not depicting 2026 conditions and not field evidence for scenario card 9 |
+
+Both are attributed inline at each point of use (proposal text and HTML, zh & en) and registered in `sources.json` (`WIKIMEDIA-QHY-OLDHOUSE-2023`, `WIKIMEDIA-WUDAOKOU-NIGHT-2008`). Per the ShareAlike condition, these two image files remain under their respective CC BY-SA licenses; their inclusion does not alter the licensing of any other package asset, and the package-level COMMUNITY-DISPLAY-ONLY notice does not restrict rights the CC licenses grant in these two files.

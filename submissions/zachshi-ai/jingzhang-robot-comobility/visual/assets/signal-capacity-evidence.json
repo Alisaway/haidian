@@ -1,0 +1,28 @@
+{
+  "ok": true,
+  "checks": [
+    {
+      "id": "C1_geometry_consistent",
+      "pass": true,
+      "detail": "signaled 13.1 + connector 5.68 == total 18.78 km"
+    },
+    {
+      "id": "C2_p1_below_kpi",
+      "pass": true,
+      "detail": "P1 capacity 232-348 < 2000 (honest gap)"
+    },
+    {
+      "id": "C3_p2_covers_kpi",
+      "pass": true,
+      "detail": "P2 capacity 1440-2160 covers 2000"
+    },
+    {
+      "id": "C4_block_sum_matches",
+      "pass": true,
+      "detail": "block sum 13.10 == signaled 13.1 km"
+    }
+  ],
+  "field_performance": null,
+  "generated_by": "run_signal_capacity.js --check",
+  "note_zh": "容量一致性核验：几何闭合、初期容量低于 KPI（诚实差距）、区间细分后可达、区间长度闭合。"
+}

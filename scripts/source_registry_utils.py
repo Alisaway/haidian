@@ -110,14 +110,14 @@ def summarize_source_registry(registry: dict[str, Any], limit: int = 8) -> dict[
         _increment(counts["by_usable_for_formal"], formal_use)
         _increment(counts["by_authority_level"], authority)
         compact = _compact_source(source)
-        if review_status == "approved" and formal_use == "yes":
+        if review_status == "needs_review":
+            needs_review.append(compact)
+        elif review_status == "approved" and formal_use == "yes":
             approved_formal.append(compact)
         elif formal_use == "provisional_only":
             provisional.append(compact)
         elif formal_use == "background_only":
             background.append(compact)
-        elif review_status == "needs_review":
-            needs_review.append(compact)
     return {
         "registry_path": DEFAULT_SOURCE_REGISTRY_PATH,
         "updated_date": registry.get("updated_date") if isinstance(registry, dict) else None,

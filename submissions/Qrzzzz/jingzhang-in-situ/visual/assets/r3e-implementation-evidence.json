@@ -1,0 +1,805 @@
+{
+  "schema": "jingzhang-r3e-implementation-evidence/v1",
+  "generated_at": "2026-08-29",
+  "authority": {
+    "layer": "supporting_implementation_readiness",
+    "status": "desktop_review_ready_not_implementation_ready",
+    "phase3_authority_changed": false,
+    "required_geometry_changed": false,
+    "metrics_changed": false,
+    "proposal_markdown_changed": true,
+    "not_claimed": [
+      "official GIS/CAD or parcel geometry",
+      "field survey or measured capacity",
+      "appointed operator or controller",
+      "procurement price, investment commitment or engineering estimate",
+      "legal, accessibility, safety, fire or heritage professional sign-off",
+      "site rehearsal, operating performance, approval or opening"
+    ],
+    "proposal_change_scope": "Bilingual additive implementation-maturity evidence, claim-adjacent citations, and English CX terminology only; no canonical ID, Phase 3 authority, geometry, metric, approval, or implementation-status change."
+  },
+  "protected_baseline": {
+    "existing_source_record_count": 20,
+    "existing_source_records_canonical_sha256": "3a34c125690c2cc3f5159ee0f0222b6303ca6d4130508bdc1d6f1af97fede7bd",
+    "files": {
+      "proposal.md": "66115cdbf6bfcb667dcbcb369443326c865529eef9f95266b51b327c6dffc0dd",
+      "proposal.en.md": "b813b96d46babcf5a59fa9846c939314c571b8c9e6c07fd0b444feda9acaceba",
+      "metrics.json": "1cb26da847988e642359f290d8008de440dde51e34906c3a9917acdb12844c51",
+      "assumptions.json": "e6da4b5a7545b7a3bd66a31a07a4d0a646fcb80b65b395b9f0a8f812f45c2957",
+      "visual/assets/phase3-protocol-contracts.json": "5cd87aa06b7a4248e8f2fd358571ff8373c4166298e6010e536bbb10629cf606",
+      "visual/assets/phase3-data-governance.json": "2dfd4d0c2ee0f1dff0fe2ee186fa8fe997d7de69a088d838914d56470df0bc35",
+      "visual/assets/phase3-red-team.json": "58f607dc7971dc25c1674b186de576d11a1240038ac08ec3c3558e9ec64a2c4d",
+      "visual/assets/phase4-presentation-sources.json": "094251bc60899960831cc85e09b23f86fb2005bb50cd1387e04ed200d21aea7b"
+    }
+  },
+  "retained_boundaries": {
+    "provisional_site_boundary_warnings": 1,
+    "provisional_key_areas": 3,
+    "surveyed_cross_sections": 0,
+    "unknown_metrics": 6,
+    "unknown_controllers": 12,
+    "legal_review_complete": false,
+    "accessibility_audit_complete": false,
+    "safety_or_fire_review_complete": false,
+    "site_survey_complete": false,
+    "operator_appointed": false,
+    "official_approval_complete": false,
+    "pdf_ua_claimed": false
+  },
+  "official_source_interfaces": {
+    "snapshot_path": "visual/assets/r3e-official-source-snapshots.json",
+    "source_ids": [
+      "DATA-SRC-R3E-JINGZHANG-CONTROL-PLAN-RESPONSE-20250208",
+      "DATA-SRC-R3E-PARCEL-ACCESS-LIMITATION-2015",
+      "DATA-SRC-R3E-QINGHUAYUAN-HERITAGE-TEXT-20260214",
+      "DATA-SRC-R3E-DAZHONGSI-HERITAGE-REGISTER-20171027",
+      "DATA-SRC-R3E-JINGZHANG-PARK-PLANNING-INTERPRETATION-20211216",
+      "DATA-SRC-R3E-GB55019-2021-ACCESSIBILITY",
+      "DATA-SRC-R3E-GB55037-2022-FIRE",
+      "DATA-SRC-R3E-DB11-1761-2020-WALK-CYCLE"
+    ],
+    "official_project_geometry_available": false,
+    "geometry_generation_allowed": false,
+    "finding_zh": "主管来源补强了道路等级、文保审查、权属查询限制及专业标准入口，但没有提供可随包合法复验的项目级 GIS/CAD、道路红线、宗地或消防线位。",
+    "finding_en": "Official sources strengthen road-class, heritage-review, title-access and professional-standard interfaces, but provide no legally package-verifiable project GIS/CAD, road redline, parcel or fire-control geometry."
+  },
+  "cx_implementation_readiness": [
+    {
+      "site_id": "PROV-KEY-001",
+      "site_zh": "众智园",
+      "site_en": "Zhongzhiyuan",
+      "cx_id": "CX02",
+      "scenario_anchor": "SC01",
+      "action_zh": "把公园门户拆为慢行、遮阴休息、Human Takeover 前场与可逆测试边四个可撤回带。",
+      "action_en": "Split the park gateway into withdrawable slow-mobility, shade/rest, Human-Takeover apron and reversible-test bands.",
+      "dimension_source": "geometry/roads.geojson#CX02.properties.representative_design",
+      "bands": [
+        {
+          "id": "CX02-D01",
+          "name": "slow_mobility",
+          "width_m": 4,
+          "status": "design-target"
+        },
+        {
+          "id": "CX02-D02",
+          "name": "shade_and_rest",
+          "width_m": 3,
+          "status": "design-target"
+        },
+        {
+          "id": "CX02-D03",
+          "name": "human_takeover_apron",
+          "width_m": 3,
+          "status": "design-target"
+        },
+        {
+          "id": "CX02-D04",
+          "name": "reversible_test_edge",
+          "width_m": 4,
+          "status": "design-target"
+        }
+      ],
+      "normalized_quantity": {
+        "basis_length_m": 1,
+        "band_area_sqm_per_linear_m": 14,
+        "status": "design-target_normalized_only"
+      },
+      "unknowns": [
+        "lawful alignment",
+        "ownership",
+        "existing total width",
+        "road redline",
+        "intervention length",
+        "field condition",
+        "operator",
+        "unit rates"
+      ],
+      "construction_interfaces": [
+        "surveyed clear route",
+        "drainage and utility conflict check",
+        "reversible fixing method",
+        "emergency access retained"
+      ],
+      "operating_interfaces": [
+        "visible staffed takeover",
+        "paper fallback",
+        "daily opening/closing inspection",
+        "complaint entry"
+      ],
+      "maintenance_accountability": "unknown_pending_written_operator_and_facilities_appointment",
+      "stop_conditions": [
+        "lawful path not evidenced",
+        "safe/accessible route not professionally signed",
+        "takeover unavailable",
+        "maintenance owner absent"
+      ],
+      "recalculation_triggers": [
+        "surveyed alignment and length",
+        "rights/permission record",
+        "professional access/fire review",
+        "dated unit-rate evidence"
+      ]
+    },
+    {
+      "site_id": "PROV-KEY-002",
+      "site_zh": "AI 原点",
+      "site_en": "AI Origin",
+      "cx_id": "CX05",
+      "scenario_anchor": "SC05",
+      "action_zh": "把成果转译界面拆为公共步行、人工转译门诊、受控演示和安静绕行四个带。",
+      "action_en": "Split the translation interface into public walk, human matching clinic, controlled demo and quiet-bypass bands.",
+      "dimension_source": "geometry/roads.geojson#CX05.properties.representative_design",
+      "bands": [
+        {
+          "id": "CX05-D01",
+          "name": "public_walk",
+          "width_m": 4,
+          "status": "design-target"
+        },
+        {
+          "id": "CX05-D02",
+          "name": "translation_clinic",
+          "width_m": 4,
+          "status": "design-target"
+        },
+        {
+          "id": "CX05-D03",
+          "name": "controlled_demo",
+          "width_m": 5,
+          "status": "design-target"
+        },
+        {
+          "id": "CX05-D04",
+          "name": "quiet_bypass",
+          "width_m": 3,
+          "status": "design-target"
+        }
+      ],
+      "normalized_quantity": {
+        "basis_length_m": 1,
+        "band_area_sqm_per_linear_m": 16,
+        "status": "design-target_normalized_only"
+      },
+      "unknowns": [
+        "lawful alignment",
+        "ownership",
+        "existing total width",
+        "road redline",
+        "intervention length",
+        "field condition",
+        "operator",
+        "unit rates"
+      ],
+      "construction_interfaces": [
+        "surveyed clear route",
+        "power/network isolation plan",
+        "reversible demo fittings",
+        "quiet bypass continuously available"
+      ],
+      "operating_interfaces": [
+        "human mediator roster",
+        "cleared-content register",
+        "manual/static fallback",
+        "complaint and correction route"
+      ],
+      "maintenance_accountability": "unknown_pending_written_operator_and_facilities_appointment",
+      "stop_conditions": [
+        "mediator absent",
+        "rights/source unresolved",
+        "quiet bypass obstructed",
+        "network or power isolation untested"
+      ],
+      "recalculation_triggers": [
+        "surveyed alignment and length",
+        "rights/permission record",
+        "professional access/fire review",
+        "dated unit-rate evidence"
+      ]
+    },
+    {
+      "site_id": "PROV-KEY-003",
+      "site_zh": "大钟寺",
+      "site_en": "Dazhongsi",
+      "cx_id": "CX10",
+      "scenario_anchor": "SC10 + IM06 only",
+      "action_zh": "把唯一首用界面拆为到达净区、公众试用室、人工投诉台和撤场/服务通道四个带。",
+      "action_en": "Split the sole-first-use interface into arrival clear zone, public trial room, human complaint desk and removal/service-lane bands.",
+      "dimension_source": "geometry/roads.geojson#CX10.properties.representative_design",
+      "bands": [
+        {
+          "id": "CX10-D01",
+          "name": "arrival_clear_zone",
+          "width_m": 5,
+          "status": "design-target"
+        },
+        {
+          "id": "CX10-D02",
+          "name": "public_trial_room",
+          "width_m": 6,
+          "status": "design-target"
+        },
+        {
+          "id": "CX10-D03",
+          "name": "human_complaint_desk",
+          "width_m": 3,
+          "status": "design-target"
+        },
+        {
+          "id": "CX10-D04",
+          "name": "removal_and_service_lane",
+          "width_m": 4,
+          "status": "design-target"
+        }
+      ],
+      "normalized_quantity": {
+        "basis_length_m": 1,
+        "band_area_sqm_per_linear_m": 18,
+        "status": "design-target_normalized_only"
+      },
+      "unknowns": [
+        "lawful alignment",
+        "ownership",
+        "existing total width",
+        "road redline",
+        "heritage interface",
+        "intervention length",
+        "field condition",
+        "operator/controller",
+        "unit rates"
+      ],
+      "construction_interfaces": [
+        "heritage and title overlay from authorized CAD",
+        "surveyed arrival/exit route",
+        "power/network/service isolation",
+        "reversible equipment inventory and removal path"
+      ],
+      "operating_interfaces": [
+        "named host and substitute",
+        "Human Takeover in direct sight",
+        "paper/phone complaint",
+        "stop/removal log and public findings"
+      ],
+      "maintenance_accountability": "unknown_pending_written_operator_controller_and_facilities_appointment",
+      "stop_conditions": [
+        "any opening Gate unproven",
+        "host/takeover/complaint unreachable",
+        "rights/safety/accessibility uncertainty",
+        "mandatory log or removal failure"
+      ],
+      "recalculation_triggers": [
+        "authorized GIS/CAD and survey",
+        "heritage/title/site permissions",
+        "named operator/controller",
+        "professional signatures",
+        "dated unit-rate evidence"
+      ]
+    }
+  ],
+  "cost_and_resource_model": {
+    "status": "conceptual_parametric_model_total_unknown",
+    "price_date": "2026-08-28",
+    "currency": "CNY",
+    "credible_unit_rate_records": 0,
+    "procurement_or_investment_commitment": false,
+    "formula": "variable_cost = sum(band_width_m) * surveyed_intervention_length_m * dated_unit_rate_cny_per_sqm; total = variable_cost + fixed_preparation + staffing + maintenance + removal + contingency",
+    "packages": [
+      {
+        "cx_id": "CX02",
+        "normalized_area_sqm_per_linear_m": 14,
+        "surveyed_intervention_length_m": null,
+        "dated_unit_rate_cny_per_sqm": null,
+        "fixed_preparation_cny": null,
+        "staffing_cny": null,
+        "maintenance_cny": null,
+        "removal_cny": null,
+        "contingency_rate": null,
+        "total_cny": null,
+        "status": "unknown"
+      },
+      {
+        "cx_id": "CX05",
+        "normalized_area_sqm_per_linear_m": 16,
+        "surveyed_intervention_length_m": null,
+        "dated_unit_rate_cny_per_sqm": null,
+        "fixed_preparation_cny": null,
+        "staffing_cny": null,
+        "maintenance_cny": null,
+        "removal_cny": null,
+        "contingency_rate": null,
+        "total_cny": null,
+        "status": "unknown"
+      },
+      {
+        "cx_id": "CX10",
+        "normalized_area_sqm_per_linear_m": 18,
+        "surveyed_intervention_length_m": null,
+        "dated_unit_rate_cny_per_sqm": null,
+        "fixed_preparation_cny": null,
+        "staffing_cny": null,
+        "maintenance_cny": null,
+        "removal_cny": null,
+        "contingency_rate": null,
+        "total_cny": null,
+        "status": "unknown"
+      }
+    ],
+    "sensitivity": [
+      {
+        "input_change": "+10 m surveyed intervention length",
+        "CX02_area_delta_sqm": 140,
+        "CX05_area_delta_sqm": 160,
+        "CX10_area_delta_sqm": 180,
+        "monetary_delta": "multiply the applicable area delta by a dated, scoped unit rate"
+      },
+      {
+        "input_change": "+/-10% unit rate",
+        "monetary_delta": "+/-10% of variable cost only",
+        "fixed_staffing_maintenance_removal_effect": "none unless separately updated"
+      }
+    ],
+    "resource_inputs_required": [
+      "survey team and method",
+      "professional review hours",
+      "permissions/insurance",
+      "materials and reversible-fixing schedule",
+      "power/network isolation",
+      "named staffing roster",
+      "maintenance frequency",
+      "removal logistics",
+      "tax/fees/contingency basis"
+    ],
+    "exclusions": [
+      "land acquisition",
+      "underground/bridge works",
+      "utility diversion",
+      "heritage works",
+      "permanent buildings",
+      "unknown statutory fees",
+      "financing",
+      "inflation beyond the price date"
+    ],
+    "recalculation_gate": "No CNY result may be emitted until each non-null unit rate has a publisher, URL/file, date, scope, licence/reuse note and SHA-256, and surveyed quantities are signed."
+  },
+  "responsibility_and_handover": {
+    "operator_appointed": false,
+    "controller_unknown_count": 12,
+    "controller_slots": [
+      {
+        "scenario_id": "SC01",
+        "status": "unknown"
+      },
+      {
+        "scenario_id": "SC02",
+        "status": "unknown"
+      },
+      {
+        "scenario_id": "SC03",
+        "status": "unknown"
+      },
+      {
+        "scenario_id": "SC04",
+        "status": "unknown"
+      },
+      {
+        "scenario_id": "SC05",
+        "status": "unknown"
+      },
+      {
+        "scenario_id": "SC06",
+        "status": "unknown"
+      },
+      {
+        "scenario_id": "SC07",
+        "status": "unknown"
+      },
+      {
+        "scenario_id": "SC08",
+        "status": "unknown"
+      },
+      {
+        "scenario_id": "SC09",
+        "status": "unknown"
+      },
+      {
+        "scenario_id": "SC10",
+        "status": "unknown"
+      },
+      {
+        "scenario_id": "SC11",
+        "status": "unknown"
+      },
+      {
+        "scenario_id": "SC12",
+        "status": "unknown"
+      }
+    ],
+    "candidate_public_role_interfaces": [
+      {
+        "role": "planning_and_natural_resources_review",
+        "basis": "control-plan/urban-design/land-use/rights review functions",
+        "acceptance": "not_requested_or_evidenced"
+      },
+      {
+        "role": "heritage_review",
+        "basis": "registered heritage and protection-control review",
+        "acceptance": "not_requested_or_evidenced"
+      },
+      {
+        "role": "fire_and_life_safety_review",
+        "basis": "mandatory fire-code applicability and professional review",
+        "acceptance": "not_requested_or_evidenced"
+      },
+      {
+        "role": "accessibility_review",
+        "basis": "barrier-free law and mandatory code applicability",
+        "acceptance": "not_requested_or_evidenced"
+      },
+      {
+        "role": "street_or_park_facilities_interface",
+        "basis": "public-space, walking/cycling, maintenance and emergency-access interface",
+        "acceptance": "not_requested_or_evidenced"
+      }
+    ],
+    "raci_gap_rows": [
+      {
+        "work": "site/rights permission",
+        "responsible_placeholder": "rights_content_reviewer",
+        "accountable": "unknown",
+        "consulted_candidate": "planning/title/heritage interfaces",
+        "informed": "affected public",
+        "gate": "written permission and authorized CAD"
+      },
+      {
+        "work": "field survey and dimensional sign-off",
+        "responsible_placeholder": "accessibility_lead",
+        "accountable": "unknown",
+        "consulted_candidate": "licensed survey/access/fire professionals",
+        "informed": "scenario host",
+        "gate": "dated method, coverage, instrument and signed record"
+      },
+      {
+        "work": "operator and controller appointment",
+        "responsible_placeholder": "scenario_service_owner",
+        "accountable": "unknown",
+        "consulted_candidate": "site rights holder and legal/data counsel",
+        "informed": "users and affected public",
+        "gate": "named signed mandate, scope, term and substitute"
+      },
+      {
+        "work": "opening and daily operation",
+        "responsible_placeholder": "on_site_host",
+        "accountable": "unknown",
+        "consulted_candidate": "safety/accessibility/data roles",
+        "informed": "users",
+        "gate": "roster, fallback, complaint and isolation test"
+      },
+      {
+        "work": "maintenance and inspection",
+        "responsible_placeholder": "facilities_maintenance",
+        "accountable": "unknown",
+        "consulted_candidate": "site/operator/professionals",
+        "informed": "host and public status",
+        "gate": "asset register, frequency, defects and response path"
+      },
+      {
+        "work": "complaint and appeal",
+        "responsible_placeholder": "complaint_appeal_lead",
+        "accountable": "unknown",
+        "consulted_candidate": "independent_appeal_reviewer",
+        "informed": "complainant",
+        "gate": "reachable non-AI entry, receipt, independence and re-appeal"
+      },
+      {
+        "work": "stop/removal/data action",
+        "responsible_placeholder": "scenario_service_owner",
+        "accountable": "unknown",
+        "consulted_candidate": "facilities_maintenance/data_steward/rights reviewer",
+        "informed": "affected public",
+        "gate": "inventory, isolation, access revocation, data action and site check"
+      },
+      {
+        "work": "archive/public findings",
+        "responsible_placeholder": "records_steward",
+        "accountable": "unknown",
+        "consulted_candidate": "complaint and rights reviewers",
+        "informed": "public without personal appeal material",
+        "gate": "evidence index, retention/deletion record and unresolved-risk register"
+      }
+    ],
+    "minimum_acceptance_package": [
+      "authorized site/CAD and rights record",
+      "field survey",
+      "professional applicability matrix and signatures",
+      "named operator/controller mandate",
+      "cost/resource inputs",
+      "staff/substitute roster",
+      "complaint/appeal contacts",
+      "maintenance/removal plan",
+      "go/no-go decision and public notice"
+    ],
+    "current_go_no_go": "NO_GO_ALL_OPENING_GATES_NOT_EVIDENCED"
+  },
+  "professional_review_checklist": [
+    {
+      "check_id": "R3E-P01",
+      "clause_or_basis": "控规编制审批办法第8—10、14—15条；京张街区公示采信通告",
+      "design_action": "CX02/CX05/CX10 只保留候选关系剖面；待正式控规、道路红线、权属和公共安全资料逐项套核",
+      "required_evidence": "批准文本/图表、授权 GIS/CAD、权属/道路/公共安全接口记录",
+      "responsible_role": "planning_and_natural_resources_review",
+      "status": "desktop_reference_registered_pending_authority_input"
+    },
+    {
+      "check_id": "R3E-P02",
+      "clause_or_basis": "城市设计管理办法第10—11、14—15、20条",
+      "design_action": "公共空间、交通、市政、历史文化和建筑接口须与有权城市设计/控规要求一致",
+      "required_evidence": "适用城市设计要求、控规承接关系、审查意见",
+      "responsible_role": "planning_and_natural_resources_review",
+      "status": "desktop_reference_registered_pending_professional_review"
+    },
+    {
+      "check_id": "R3E-P03",
+      "clause_or_basis": "清华园车站旧址文字保护范围；觉生寺（大钟寺）登记页",
+      "design_action": "不从文字偏移或地址生成文保线；CX10 进入任何深化前叠合授权图件",
+      "required_evidence": "官方保护范围/建控地带图件、权威锚点、测绘坐标、文保专业意见",
+      "responsible_role": "heritage_review",
+      "status": "desktop_reference_registered_pending_authority_geometry_and_signature"
+    },
+    {
+      "check_id": "R3E-P04",
+      "clause_or_basis": "不动产登记暂行条例第27—28条",
+      "design_action": "不推断宗地或权属；所有场地开放、固定、施工、撤场权限逐项书面取证",
+      "required_evidence": "有权查询或权利主体提供的登记/授权材料及用途限制",
+      "responsible_role": "rights_content_reviewer",
+      "status": "desktop_gap_confirmed_rights_unknown"
+    },
+    {
+      "check_id": "R3E-P05",
+      "clause_or_basis": "无障碍环境建设法第12—16、39条；GB 55019-2021 全部强制条文",
+      "design_action": "三条 CX 的连续通行、衔接、标识、人工服务和低技术替代均须现场测量、适用条款核对和专业签署",
+      "required_evidence": "测量记录、适用条款矩阵、图纸/照片、用户参与、专业审查和验收/未通过项",
+      "responsible_role": "accessibility_lead",
+      "status": "desktop_reference_registered_pending_site_audit_and_signature"
+    },
+    {
+      "check_id": "R3E-P06",
+      "clause_or_basis": "GB 55037-2022 全部强制条文",
+      "design_action": "CX10 试用室、到达、疏散、消防救援、供电/断电、设备和人数条件只由消防/安全专业确定",
+      "required_evidence": "使用性质/人数、平面与疏散、消防车/救援接口、材料设备、供电隔离、专业审查",
+      "responsible_role": "safety_professional",
+      "status": "desktop_reference_registered_pending_fire_review_and_signature"
+    },
+    {
+      "check_id": "R3E-P07",
+      "clause_or_basis": "DB11/1761-2020；包内 CX 现场核验清单",
+      "design_action": "候选慢行带不作为现状断面；须核对净宽、障碍、坡度、过街、盲道、休息、流量、维护和应急通行",
+      "required_evidence": "授权断面、昼夜调查、障碍/坡度/过街记录、专业适用性核对",
+      "responsible_role": "accessibility_lead",
+      "status": "desktop_checklist_ready_surveyed_zero"
+    },
+    {
+      "check_id": "R3E-P08",
+      "clause_or_basis": "生成式人工智能服务管理暂行办法第7、9—11、14—15条的场景适用性待法律判断",
+      "design_action": "SC10 默认匿名、最小数据、可见告知、Human Takeover、投诉申诉、停止和记录；不得由 AI 批准、结案或复开",
+      "required_evidence": "产品/服务适用性法律意见、数据台账、告知、投诉时限依据、人工责任与日志",
+      "responsible_role": "data_steward_and_legal_review",
+      "status": "desktop_contract_ready_pending_legal_review"
+    },
+    {
+      "check_id": "R3E-P09",
+      "clause_or_basis": "Phase 3 shared state machine and SC10+IM06 only contract",
+      "design_action": "任一开门 Gate 未证即留在 preflight；伤害、权利、接管、投诉、日志、期限或撤场失败触发接管/停止",
+      "required_evidence": "具名角色、书面期限、桌面演练后再做现场演练、故障注入、状态/证据日志",
+      "responsible_role": "scenario_service_owner",
+      "status": "desktop_synthetic_rehearsal_only_not_opened"
+    },
+    {
+      "check_id": "R3E-P10",
+      "clause_or_basis": "专业签署与批准边界",
+      "design_action": "法律、无障碍、安全、消防、现场、运营和正式批准各自独立签署，不以自检或桌面核对代替",
+      "required_evidence": "具名资质/授权、签署日期、范围、保留意见、版本和附件哈希",
+      "responsible_role": "unknown_pending_written_appointment",
+      "status": "all_professional_signatures_pending"
+    }
+  ],
+  "tabletop_exercises": [
+    {
+      "test_id": "R3E-T01",
+      "kind": "negative",
+      "title_zh": "开门 Gate 缺失",
+      "title_en": "Opening gates absent",
+      "initial_state": "preflight",
+      "input": {
+        "written_gates_evidenced": false,
+        "named_roles": false
+      },
+      "expected_path": [
+        "preflight"
+      ],
+      "expected_disposition": "deny_open_unknown",
+      "field_or_operational_test": false
+    },
+    {
+      "test_id": "R3E-T02",
+      "kind": "negative",
+      "title_zh": "限量开放时主持缺席",
+      "title_en": "Host absent during limited-open",
+      "initial_state": "limited-open",
+      "input": {
+        "host_reachable": false
+      },
+      "expected_path": [
+        "limited-open",
+        "stopped"
+      ],
+      "expected_disposition": "fail_stop",
+      "field_or_operational_test": false
+    },
+    {
+      "test_id": "R3E-T03",
+      "kind": "negative",
+      "title_zh": "投诉入口不可达",
+      "title_en": "Complaint entry unreachable",
+      "initial_state": "operating",
+      "input": {
+        "complaint_reachable": false,
+        "immediate_harm_contained": true
+      },
+      "expected_path": [
+        "operating",
+        "human-takeover",
+        "paused"
+      ],
+      "expected_disposition": "fail_pause",
+      "field_or_operational_test": false
+    },
+    {
+      "test_id": "R3E-T04",
+      "kind": "unknown",
+      "title_zh": "撤场现场核对缺失",
+      "title_en": "Removal site check missing",
+      "initial_state": "stopped",
+      "input": {
+        "inventory": true,
+        "disconnected": true,
+        "site_check": false
+      },
+      "expected_path": [
+        "stopped"
+      ],
+      "expected_disposition": "unknown_stop",
+      "field_or_operational_test": false
+    },
+    {
+      "test_id": "R3E-T05",
+      "kind": "zero",
+      "title_zh": "归档实例尝试复开",
+      "title_en": "Attempted reopening of archived instance",
+      "initial_state": "archive",
+      "input": {
+        "reopen_same_run_instance": true
+      },
+      "expected_path": [
+        "archive"
+      ],
+      "expected_disposition": "zero_outbound_transition",
+      "field_or_operational_test": false
+    },
+    {
+      "test_id": "R3E-T06",
+      "kind": "zero",
+      "title_zh": "核心试用不采个人数据",
+      "title_en": "No personal data in core trial",
+      "initial_state": "preflight",
+      "input": {
+        "core_trial": true,
+        "personal_fields_submitted": 0
+      },
+      "expected_path": [
+        "preflight"
+      ],
+      "expected_disposition": "zero_personal_fields",
+      "field_or_operational_test": false
+    }
+  ],
+  "minimum_external_inputs": [
+    {
+      "gap": "official project spatial controls",
+      "accepted_formats": [
+        "GeoPackage",
+        "GeoJSON with CRS/precision metadata",
+        "DWG/DXF with layer legend",
+        "signed PDF plus coordinate schedule"
+      ],
+      "authority_or_license": "issuing authority or rights holder; redistribution permission or metadata-only restriction recorded",
+      "ingest_location": "new evidence/context snapshot first; required geometry only after explicit authority review"
+    },
+    {
+      "gap": "field survey",
+      "accepted_formats": [
+        "signed survey PDF",
+        "CSV/GeoJSON observations",
+        "geotagged photos with consent/rights",
+        "instrument/export files"
+      ],
+      "authority_or_license": "named collector, date, method, coverage, consent, reviewer and reuse rights",
+      "ingest_location": "supporting survey evidence, then metrics/geometry only through a separately authorized status change"
+    },
+    {
+      "gap": "operator/controller appointment",
+      "accepted_formats": [
+        "signed letter",
+        "MoU with exact non-binding/binding scope",
+        "role appointment and substitute roster"
+      ],
+      "authority_or_license": "signatory authority, scope, term, responsibilities, data role and maintenance/removal commitments",
+      "ingest_location": "responsibility register and Phase 3-compatible handoff without renaming canonical roles"
+    },
+    {
+      "gap": "cost/resource inputs",
+      "accepted_formats": [
+        "official cost-information extract",
+        "supplier quote",
+        "priced bill of quantities",
+        "staff/resource rate sheet"
+      ],
+      "authority_or_license": "publisher/vendor, date, geographic and technical scope, tax basis, validity and SHA-256",
+      "ingest_location": "cost model inputs; never directly into canonical metrics without authorization"
+    },
+    {
+      "gap": "professional reviews",
+      "accepted_formats": [
+        "signed clause matrix",
+        "review letter",
+        "marked drawings",
+        "test certificate"
+      ],
+      "authority_or_license": "named qualified/authorized reviewer, version, scope, exclusions, date and attachments",
+      "ingest_location": "professional checklist evidence; status changes must list before/after"
+    },
+    {
+      "gap": "field protocol rehearsal and public performance",
+      "accepted_formats": [
+        "signed drill plan/log",
+        "incident/complaint records with lawful redaction",
+        "removal inventory/site check",
+        "observation-window dataset"
+      ],
+      "authority_or_license": "site/operator authorization, privacy and reuse basis, responsible witnesses",
+      "ingest_location": "new run_instance evidence; never represented by the synthetic desktop log"
+    }
+  ],
+  "proposal_change_contract": {
+    "primary_authority": "proposal.md remains the human-readable source; report HTML must be rendered from the bilingual Markdown before presentation enhancement",
+    "allowed_changes": [
+      "add the R3-E implementation-maturity subsection before the sole-first-use paragraph",
+      "add claim-adjacent citations to the eight R3-E official references and the background-only OSM record",
+      "standardize English visible prose on responsibility cross-section"
+    ],
+    "forbidden_changes": [
+      "canonical SC/CX/IM/AP/claim/agent numbering",
+      "Phase 3 protocol/governance/red-team authority",
+      "SC10 + IM06 only sole first use",
+      "provisional geometry, surveyed=0, six unknown metrics, twelve unknown controllers, or professional/approval gaps"
+    ]
+  }
+}

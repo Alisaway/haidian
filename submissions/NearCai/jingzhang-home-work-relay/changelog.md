@@ -1,17 +1,11 @@
 # 方案迭代记录
 
-## v1.6 - 2026-08-15
+## v1.3 - spatial-first refinement - 2026-08-16
 
-- 新增 `visual/assets/review-adversarial-audit.json`、`run-review-adversarial-audit.js` 和持久化结果 `review-adversarial-audit.validation.json`，把临时几何、指标漂移、授权边界、AI 决策禁区、无 AI 路径、私宅撤回、负例分母、RACI、离线 HTML、中英锚点、原创性和退役回流做成 12 个可运行负向探针。
-- 新增 `adversarial_audit_probe_count`、`adversarial_negative_probe_count`、`remote_resource_violation_count` 三项指标，并在中英 proposal 与离线展示页显式呈现；审计结果 PASS 只证明包内一致性，不证明现场安全、公平、容量、预算、审批或专业签字。
-- 修订评分证据 map、假设清单和 v1.5 评分资产版本号，使 v1.6 的“可审计证据链”在 Markdown、HTML、metrics、assumptions、manifest 和验证脚本之间保持可追踪。
-
-## v1.5 - 2026-08-14
-
-- 按 Review Agent 七维评分机制前置“评分证据索引”：把任务书相关性、可实施性、AI规划创新、表达完整度、原创性、公共利益包容、风险合规逐项连接到正文、矩阵、指标、图件、HTML 和结构化证据文件。
-- 新增 `visual/assets/review-score-evidence-map.json`、`score-sprint-100-days.json`、`scenario-negative-fixtures.json`，登记 7 个评分证据项、G0-G4 五道证据门、100 天八步行动、6 类 RACI 角色、12 个场景合同和 72 条合成负例分支。
-- 重新强调 `not_authorized_not_run`、unknown 不是 pass、AI 不作资格/租金/分配/评分/安全/医疗/法律决定；所有新增计数只证明包内对象存在，不证明现场运行、预算、许可、机构合作或专业签字。
-- 学习近期高分 PR 的“执行摘要/证据地图/闸门/负例/现实降级”结构方法，但不复制同伴命名、口号、文本、图件、数据、几何、字段表或视觉资产。
+- 从 93 分基线 PR #1901 的提交快照重新生成；不继承后续低分 PR 的内容、图件、数据或几何。
+- 将封面和离线展示页的首屏阅读顺序改为公共主线、三站、四种居住状态与六条接力，合同、指标和自检后置。
+- 新增 `visual/assets/station-spatial-proof.json`，为三个 provisional key area 提供互不重复的相对拓扑、节点、边界与来源锚点；新增 `visual/assets/review-route.json`，记录设计优先的包内复核路径。
+- 采用高分投稿中“先呈现空间结果、重点区各自成图、再展示可验证责任机制”的评审方法；不复制任何同伴文本、图件、数据、口号、精确指标或版式。
 
 ## v1.2 - 2026-08-11
 

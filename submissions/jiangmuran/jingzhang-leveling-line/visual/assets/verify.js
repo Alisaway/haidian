@@ -125,8 +125,22 @@ const spine = (() => {
 })();
 const publicFeatures = read('geometry/public_space.geojson').features;
 
+const fabric = read('visual/assets/osm_fabric.json');
+function constraintArea(id) {
+  const f = read('geometry/constraints.geojson').features
+    .find((x) => String(x.properties.id) === id);
+  if (!f) throw new Error(`constraints.geojson has no ${id}; the prose states its area`);
+  return geomArea(f.geometry);
+}
+
 const computed = {
   site_area_sqm: site,
+  // The two areas the organisers' own spatial review computes from these same
+  // layers and hands the reviewer as trusted evidence. Until E363 they lived
+  // here only as the numerators of the two ratios below, so the reviewer could
+  // not join their report to metrics.json row by row.
+  green_space_area_sqm: layerArea('green_space.geojson'),
+  public_space_area_sqm: publicFeatures.reduce((a, f) => a + geomArea(f.geometry), 0),
   green_ratio: layerArea('green_space.geojson') / site,
   // Two layers describe the same corridor and give different areas, because
   // the partition assigns the part inside the key areas to their dominant use.
@@ -142,6 +156,17 @@ const computed = {
   // would mean the phases had started overlapping again.
   phasing_union_area_sqm: layerArea('phasing.geojson'),
   key_area_count: read('geometry/key_areas.geojson').features.length,
+  // Five quantities the prose stated and no sent file carried: the key-area
+  // total, the eleven stitching points and the three controlled extents.
+  // They were cited only to geometry/, which the review never receives, so
+  // every one of them was correct and none was checkable (E311).
+  // stitching_point_count is deliberately absent: its positions come from
+  // the OSM fabric, so it is background_only rather than class 1, and this
+  // table covers exactly class 1 in both directions.
+  key_area_area_sqm: layerArea('key_areas.geojson'),
+  test_field_area_sqm: constraintArea('CONSTRAINT-001'),
+  robot_pilot_area_sqm: constraintArea('CONSTRAINT-002'),
+  safety_review_area_sqm: constraintArea('CONSTRAINT-003'),
   leveling_spine_length_m: spine,
   benchmark_count: publicFeatures.filter((f) => f.properties.benchmark_id).length,
 
@@ -163,7 +188,26 @@ const computed = {
   benchmark_third_order_count: publicFeatures.filter(
     (f) => f.properties.benchmark_order === 'third').length,
   phased_share_of_design_scope: layerArea('phasing.geojson') / site,
+
+  // The measured existing fabric, from the shipped `osm_fabric.json`. Two are
+  // re-derived from that file's own components — density from length and area,
+  // coverage from footprint and area — and four are the readings it carries,
+  // checked here against the copies in metrics.json. Copying a number into a
+  // second file is how two copies of one fact start to drift.
+  //
+  // Written out rather than spread in from a helper: the coverage gate reads
+  // the keys of this literal, so a key it cannot see here is a metric nobody
+  // can tell is covered.
+  existing_street_length_m: fabric.streets.total_km * 1000,
+  existing_street_density_m_per_sqm:
+    (fabric.streets.total_km * 1000) / (fabric.boundary.area_km2 * 1e6),
+  existing_junction_count: fabric.streets.junctions,
+  existing_block_median_area_sqm: fabric.blocks.median_ha * 1e4,
+  existing_oversized_built_block_count: fabric.blocks.oversized_built_count,
+  existing_building_coverage_ratio:
+    (fabric.buildings.footprint_km2 * 1e6) / (fabric.boundary.area_km2 * 1e6),
 };
+
 
 // Areas are compared with a relative tolerance: this file re-implements the
 // projection independently, so agreement to 1e-4 is the meaningful claim, not
@@ -339,10 +383,17 @@ check('every class-1 table row quotes the current building footprint',
 // This closes that door from the reader's side rather than the author's.
 const cards = read('visual/assets/scenario_cards.json').cards;
 const tableIds = [...prose.matchAll(/^\| (S\d\d) \|/gm)].map((m) => m[1]);
-check('the card table carries every card in scenario_cards.json, in both editions',
-      tableIds.length === cards.length * 2 &&
-      cards.every((c) => tableIds.filter((id) => id === c.id).length === 2),
-      `${cards.length} cards, ${tableIds.length} table rows across both editions`);
+// Two tables per edition now carry the cards: the card table itself and the
+// verification table added with E265, which states for each card what "it
+// worked" would mean and what it is compared against. The count below was
+// `* 2` when there was one table, and raising it to `* 4` makes the check
+// stricter rather than looser: every card must appear in BOTH tables in BOTH
+// editions, so a card that gains a scenario and no way of finding out whether
+// it helped fails here.
+check('both card tables carry every card in scenario_cards.json, in both editions',
+      tableIds.length === cards.length * 4 &&
+      cards.every((c) => tableIds.filter((id) => id === c.id).length === 4),
+      `${cards.length} cards, ${tableIds.length} table rows across two tables and both editions`);
 
 check('floor_area_ratio stays unknown until official FAR controls exist',
       metrics.floor_area_ratio.status === 'unknown' && metrics.floor_area_ratio.value === null,

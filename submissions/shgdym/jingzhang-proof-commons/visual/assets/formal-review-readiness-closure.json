@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0.0",
+  "review_context": {
+    "pull_request": 3928,
+    "reviewed_exact_head": "1266ab4805b6718ebd0cd5daed9b10346d6ed72f",
+    "purpose": "Classify review follow-ups without upgrading external or field evidence into current submission claims."
+  },
+  "current_participant_controlled_blockers": [],
+  "trusted_gates": {
+    "deterministic_validation": "PASS",
+    "spatial_review": "PASS",
+    "visual_packaging": "PASS",
+    "professional_evidence": "PASS"
+  },
+  "closures": [
+    {
+      "id": "FR-01-BILINGUAL",
+      "item": "Current-version bilingual parity",
+      "classification": "ALREADY_SATISFIED_CONTINUING_RULE",
+      "current_status": "CLOSED",
+      "evidence": [
+        "visual/assets/bilingual-qa.json",
+        "visual/assets/visual-qa.json",
+        "self_check.json"
+      ],
+      "note": "The current Chinese and English text, figures, HTML, A3/A0, metrics and evidence anchors are synchronised. Later paired maintenance is not an outstanding repair in this version."
+    },
+    {
+      "id": "FR-02-OFFICIAL-BOUNDARY",
+      "item": "Official overall and key-area polygons",
+      "classification": "ORGANIZER_OWNED_GAP",
+      "current_status": "EXTERNAL",
+      "trigger": "Organizer publishes official polygons and CRS.",
+      "participant_action_after_trigger": "Rebuild GeoJSON, metrics, figures, bilingual HTML, A3/A0 and a full-chain old/new difference report.",
+      "current_participant_action": "NONE_POSSIBLE_WITHOUT_ORGANIZER_INPUT",
+      "evidence": [
+        "assumptions.json#A-BOUNDARY-001",
+        "sources.json#BOUNDARY-SOURCE",
+        "sources.json#KEY-AREA-SOURCE"
+      ]
+    },
+    {
+      "id": "FR-03-PRE-PILOT",
+      "item": "Operator, permission, insurance, safety responsibility, data controller, accessibility reviewer and restoration funding",
+      "classification": "FUTURE_FIELD_CONDITION",
+      "current_status": "FUTURE-TRIGGERED",
+      "trigger": "A real field pilot is proposed for launch.",
+      "effect": "Any open item blocks field launch, not formal professional review of the current concept package.",
+      "evidence": [
+        "assumptions.json#A-OPERATIONS-001",
+        "metrics.json#pre_pilot_readiness_review_window_days",
+        "proposal.md#十四天共同开发班次同一个问题由四类人共同修改"
+      ]
+    },
+    {
+      "id": "FR-04-EVIDENCE-LEVELS",
+      "item": "Synthetic, conceptual and field evidence separation",
+      "classification": "CURRENT_DEFECT_REVIEWED",
+      "current_status": "CLOSED",
+      "legend": {
+        "PACKAGE_SYNTHETIC": "Rule, fixture, hash-chain and repository consistency only.",
+        "CONCEPT_PROVISIONAL": "Conceptual spatial relationships and provisional geometry only.",
+        "FIELD_REAL_WORLD": "Not run, not authorised and not claimed."
+      },
+      "prohibited_inference": "24/24, 29/29, 37/37 and 8/8 do not prove product safety, field compliance, accessibility certification, operational approval, public acceptance or government approval.",
+      "evidence": [
+        "proposal.md#附录可重跑专业证据",
+        "visual/assets/x-lifecycle-test-results.json",
+        "visual/assets/station-topology-results.json",
+        "visual/assets/three-station-flagship-contract-results.json",
+        "visual/assets/sc03-tabletop-evidence.json"
+      ]
+    },
+    {
+      "id": "FR-05-ASSET-RIGHTS",
+      "item": "Current asset provenance and redistribution evidence",
+      "classification": "ALREADY_SATISFIED_CONTINUING_RULE",
+      "current_status": "CLOSED",
+      "evidence": [
+        "report/copyright_statement.md",
+        "sources.json#COPYRIGHT-LEDGER",
+        "manifest.json"
+      ],
+      "note": "All assets introduced or replaced for the reviewed version are registered. Registration of later assets is a continuing rule, not an outstanding repair in this package."
+    }
+  ],
+  "rubric_repair_closure": [
+    {
+      "dimension": "brief_alignment",
+      "possible_hidden_repair": "Keep paired deliverables and evidence anchors synchronised.",
+      "classification": "ALREADY_SATISFIED_CONTINUING_RULE",
+      "status": "CLOSED"
+    },
+    {
+      "dimension": "originality",
+      "possible_hidden_repair": "Do not use the internal census as originality proof.",
+      "classification": "ALREADY_SATISFIED_CONTINUING_RULE",
+      "status": "CLOSED"
+    },
+    {
+      "dimension": "ai_planning_innovation",
+      "possible_hidden_repair": "Keep synthetic protocol evidence distinct from field performance.",
+      "classification": "CURRENT_DEFECT_REVIEWED",
+      "status": "CLOSED"
+    },
+    {
+      "dimension": "implementation_feasibility",
+      "possible_hidden_repair": "Close legal operator, permission, insurance, budget and professional approvals.",
+      "classification": "FUTURE_FIELD_CONDITION",
+      "status": "FUTURE-TRIGGERED"
+    },
+    {
+      "dimension": "public_interest_inclusion",
+      "possible_hidden_repair": "Do not present synthetic public journeys as observed participation or acceptance.",
+      "classification": "ALREADY_SATISFIED_CONTINUING_RULE",
+      "status": "CLOSED"
+    },
+    {
+      "dimension": "risk_compliance",
+      "possible_hidden_repair": "Recalculate after official polygons and maintain provenance for later assets.",
+      "classification": "ORGANIZER_OWNED_GAP_AND_CONTINUING_RULE",
+      "status": "EXTERNAL_AND_CURRENTLY_CLOSED"
+    },
+    {
+      "dimension": "expression_completeness",
+      "possible_hidden_repair": "Humanly compare full bilingual claims, metrics, evidence qualifiers and figure positions.",
+      "classification": "ALREADY_SATISFIED",
+      "status": "CLOSED"
+    }
+  ],
+  "package_status": "CLOSED_FOR_FORMAL_PROFESSIONAL_REVIEW",
+  "field_pilot_status": "BLOCKED_UNTIL_FUTURE_FIELD_CONDITIONS_CLOSE"
+}

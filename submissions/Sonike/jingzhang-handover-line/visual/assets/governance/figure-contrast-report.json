@@ -1,0 +1,147 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-08-24T06:30:00+00:00",
+  "scope": "本包自有视觉系统的 26 张栅格图件文字前景色，以及 F/02 中英栅格图与四套送审 PDF 第 2 页的用地非颜色冗余编码",
+  "scope_en": "foreground text colours of the package's 26 raster figures, plus non-colour land-use redundancy in the bilingual F/02 rasters and page 2 of all four review PDFs",
+  "standard": {
+    "name": "WCAG 2.1 SC 1.4.3 Contrast (Minimum)",
+    "threshold_normal_text": 4.5,
+    "threshold_large_text": 3.0,
+    "formula": "(L_lighter + 0.05) / (L_darker + 0.05), L = 0.2126R + 0.7152G + 0.0722B on sRGB-linearised channels"
+  },
+  "backgrounds": {
+    "PAPER": "#f1ecdf",
+    "CARD": "#faf7ef"
+  },
+  "text_colours": [
+    {
+      "role": "text",
+      "name": "COAL",
+      "hex": "#161918",
+      "contrast_on_paper": 15.01,
+      "contrast_on_card": 16.53,
+      "meets_wcag_aa_normal_text": true
+    },
+    {
+      "role": "text",
+      "name": "GRAY",
+      "hex": "#606560",
+      "contrast_on_paper": 5.05,
+      "contrast_on_card": 5.56,
+      "meets_wcag_aa_normal_text": true
+    },
+    {
+      "role": "text",
+      "name": "BLUE",
+      "hex": "#3b6486",
+      "contrast_on_paper": 5.31,
+      "contrast_on_card": 5.85,
+      "meets_wcag_aa_normal_text": true
+    },
+    {
+      "role": "text",
+      "name": "RED_TEXT",
+      "hex": "#c72d1e",
+      "contrast_on_paper": 4.66,
+      "contrast_on_card": 5.13,
+      "meets_wcag_aa_normal_text": true
+    },
+    {
+      "role": "text",
+      "name": "TEAL_TEXT",
+      "hex": "#00746f",
+      "contrast_on_paper": 4.78,
+      "contrast_on_card": 5.26,
+      "meets_wcag_aa_normal_text": true
+    },
+    {
+      "role": "text",
+      "name": "YELLOW_TEXT",
+      "hex": "#83660a",
+      "contrast_on_paper": 4.6,
+      "contrast_on_card": 5.07,
+      "meets_wcag_aa_normal_text": true
+    },
+    {
+      "role": "text",
+      "name": "GREEN_TEXT",
+      "hex": "#4d7349",
+      "contrast_on_paper": 4.61,
+      "contrast_on_card": 5.08,
+      "meets_wcag_aa_normal_text": true
+    }
+  ],
+  "minimum_text_contrast": 4.6,
+  "all_text_colours_pass_aa": true,
+  "superseded_fill_colours_previously_used_as_text": [
+    {
+      "role": "fill_only",
+      "name": "RED",
+      "hex": "#e24a3b",
+      "contrast_on_paper": 3.37,
+      "contrast_on_card": 3.72,
+      "text_replacement": "#c72d1e"
+    },
+    {
+      "role": "fill_only",
+      "name": "TEAL",
+      "hex": "#00a7a0",
+      "contrast_on_paper": 2.53,
+      "contrast_on_card": 2.79,
+      "text_replacement": "#00746f"
+    },
+    {
+      "role": "fill_only",
+      "name": "YELLOW",
+      "hex": "#f1c84a",
+      "contrast_on_paper": 1.36,
+      "contrast_on_card": 1.5,
+      "text_replacement": "#83660a"
+    },
+    {
+      "role": "fill_only",
+      "name": "GREEN",
+      "hex": "#a9c6a6",
+      "contrast_on_paper": 1.57,
+      "contrast_on_card": 1.73,
+      "text_replacement": "#4d7349"
+    }
+  ],
+  "change_note_zh": "四色亮版此前被直接用作文字色（最低 1.50:1，最严重处为重点区卡片的复算面积大数字）。2026-08-17 起亮版只用于填充、色条与图例色块，文字改用同色相的深版；色相与语义绑定不变。",
+  "change_note_en": "The four bright colours were previously used directly as text (lowest 1.50:1; worst case the recalculated-area figure on the key-area cards). Since 2026-08-17 the bright versions are used only for fills, colour bars and legend swatches; text uses darker variants of the same hues. Hue-to-meaning binding is unchanged.",
+  "v2_reverification": "2026-08-23：重画 key-areas.png／key-areas.en.png 时，生成器显式对齐本报告两种底色与七种文字色；RED／TEAL／YELLOW／GREEN 四种亮色只作填充、线、图例色块与非文字符号。黄色停用符号内的 × 改用 COAL，三场编号、责任链、断面总宽与参考断面提示均改用同色相深版。",
+  "non_color_redundancy": {
+    "status": "implemented_pending_real_user_validation",
+    "implemented_at": "2026-08-24T06:30:00+00:00",
+    "base_colours_unchanged": true,
+    "real_user_testing_completed": false,
+    "carriers_expected": 6,
+    "carriers": [
+      "assets/figures/land-use-structure.png",
+      "assets/figures/land-use-structure.en.png",
+      "drawings/a0-boards.pdf#page=2",
+      "drawings/a0-boards.en.pdf#page=2",
+      "drawings/a3-booklet.pdf#page=2",
+      "drawings/a3-booklet.en.pdf#page=2"
+    ],
+    "method_zh": "保留七种 LAND_USE_COLORS 原值与全部几何、面积、代码和比例不变；按全局像素坐标给每个用地代码叠加一种唯一的深色纹理。F/02 同时覆盖走廊图斑、面积构成条与图例，PDF 第 2 页同时覆盖走廊图斑与图例。纹理色固定为原填充色 60% ＋ COAL #161918 40%，不承担新的数据语义。",
+    "method_en": "All seven LAND_USE_COLORS values, geometries, areas, codes and ratios are retained. Each land-use code receives one unique deterministic dark texture. F/02 applies it to the corridor polygons, mix bar and legend; PDF page 2 applies it to the corridor polygons and legend. Pattern pixels are a fixed 60% base fill plus 40% COAL #161918 and add no new data meaning.",
+    "land_use_encodings": [
+      { "code": "0802", "base_rgb": [52, 84, 121], "pattern_id": "vertical", "pattern_rgb": [40, 60, 82] },
+      { "code": "0804", "base_rgb": [128, 133, 178], "pattern_id": "diagonal_back", "pattern_rgb": [86, 90, 116] },
+      { "code": "09", "base_rgb": [235, 195, 82], "pattern_id": "dash", "pattern_rgb": [150, 127, 59] },
+      { "code": "0701", "base_rgb": [216, 168, 130], "pattern_id": "horizontal", "pattern_rgb": [138, 111, 88] },
+      { "code": "0702", "base_rgb": [206, 143, 162], "pattern_id": "diagonal_forward", "pattern_rgb": [132, 96, 107] },
+      { "code": "0803", "base_rgb": [219, 126, 68], "pattern_id": "crosshatch", "pattern_rgb": [140, 86, 50] },
+      { "code": "1401", "base_rgb": [122, 158, 118], "pattern_id": "dots", "pattern_rgb": [82, 105, 80] }
+    ],
+    "verification": "node visual/assets/governance/land-use-pattern-audit.js",
+    "not_claimed_zh": "这是对 A-CONTRAST-001 的包内非颜色缓解，不是低视力或色觉障碍真实用户可读性验证；真实用户共测仍须在公众部署前完成。"
+  },
+  "verification": "python3 -c \"import json;d=json.load(open('visual/assets/governance/figure-contrast-report.json'));print(d['minimum_text_contrast'],d['all_text_colours_pass_aa'])\"",
+  "not_claimed": [
+    "填充色值本身在两组色觉模拟下仍偏近；本报告以七种唯一纹理消除对颜色的单一依赖，不声称色值本身已经拉开",
+    "report/proposal[.en].html 由仓库公共渲染器生成，样式不在本包可改范围内，未纳入本报告",
+    "未做真实用户可读性测试；对比度达标不等于低视力用户实际可读"
+  ]
+}

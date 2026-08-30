@@ -1,0 +1,297 @@
+{
+ "schema_version": "0.2.0",
+ "unified_bilingual_schema": true,
+ "register_note_zh": "统一双语结构；每条绑定具体评审意见、数据源或证据指针（source_refs）；语义重叠项已合并。",
+ "assumptions": [
+  {
+   "id": "A-AUTH-001",
+   "status": "statutory_boundary",
+   "category": "legal_boundary",
+   "statement_zh": "本方案全部内容为概念建议与设计构想，未获任何行政审批、规划许可或法定授权。",
+   "statement_en": "本方案全部内容为概念建议与设计构想，未获任何行政审批、规划许可或法定授权。",
+   "impact_zh": "所有空间设计与治理协议在落地前须按法定程序报批。",
+   "impact_en": "所有空间设计与治理协议在落地前须按法定程序报批。",
+   "affected_files": [
+    "proposal.md",
+    "proposal.en.md"
+   ],
+   "source_refs": [
+    "review-history:v1.0-inherited"
+   ]
+  },
+  {
+   "id": "A-BACKGROUND-CORPUS-001",
+   "status": "background_level_only",
+   "category": "corpus_boundary",
+   "statement_zh": "全球案例、铁路史与车站史料为背景级整理，未转化为经专业审阅的权威证据语料；若后续作为法定或遗产设计依据，须先行专业审校。",
+   "statement_en": "Global cases, railway and station histories remain background-level compilations, not an authoritative professionally-reviewed corpus for statutory or heritage-design use.",
+   "impact_zh": "文化叙事层引用不受影响；法定用途须先行转化。",
+   "impact_en": "Cultural-narrative references are unaffected; statutory use requires prior conversion.",
+   "affected_files": [
+    "proposal.md",
+    "report/narrative.md"
+   ],
+   "source_refs": [
+    "review:#4027-data-gaps-last(background-corpus)",
+    "review:#4040-data-gaps-last"
+   ]
+  },
+  {
+   "id": "A-BOUNDARY-OFFICIAL-001",
+   "status": "provisional_constraint",
+   "category": "epistemic_boundary",
+   "statement_zh": "官方精确红线与三处重点区域正式 polygon 尚未公开；本方案全部空间图层派生自仓库 provisional 粗略边界（DATA-SRC-PROVISIONAL-BOUNDARIES-20260605）。",
+   "statement_en": "Official precise redlines and formal polygons for the three key areas have not been released; all spatial layers derive from repository provisional rough boundaries (DATA-SRC-PROVISIONAL-BOUNDARIES-20260605).",
+   "impact_zh": "全部面积、比例与长度指标为临时几何口径的设计模型值；正式数据发布后需按同一脚本流程复算更新。",
+   "impact_en": "All areas, ratios and lengths are provisional-geometry design-model values; recalculated by the same scripted pipeline once official data is released.",
+   "affected_files": [
+    "geometry/site_boundary.geojson",
+    "geometry/key_areas.geojson",
+    "metrics.json"
+   ],
+   "source_refs": [
+    "review:#4024-data-gaps-1(provisional-boundary)",
+    "review:#4027-data-gaps-1",
+    "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605"
+   ]
+  },
+  {
+   "id": "A-BUILDINGS-001",
+   "status": "design_model",
+   "category": "design_model",
+   "statement_zh": "buildings.geojson 为概念体量示意（点式/条式网格生成），不代表建筑高度、容积率、地块拆分或权属结论。",
+   "statement_en": "buildings.geojson 为概念体量示意（点式/条式网格生成），不代表建筑高度、容积率、地块拆分或权属结论。",
+   "impact_zh": "建筑基底面积与密度仅为设计意图量级参考；法定指标待官方控规条件公开后由专业团队确定。",
+   "impact_en": "建筑基底面积与密度仅为设计意图量级参考；法定指标待官方控规条件公开后由专业团队确定。",
+   "affected_files": [
+    "geometry/buildings.geojson"
+   ],
+   "source_refs": [
+    "review-history:v1.0-inherited"
+   ]
+  },
+  {
+   "id": "A-CONTROLS-FAR-HEIGHT-001",
+   "status": "pending_statutory_data",
+   "category": "epistemic_boundary",
+   "statement_zh": "地块控规条件、道路红线、权属、市政管线与工程约束须经官方附件确认后方可用于法定用途。容积率（floor_area_ratio）与建筑控制高度（building_height_m）因官方控规指标未公开，保持待补齐状态，不用占位数字替代。",
+   "statement_en": "Detailed regulatory controls, road redlines, ownership, municipal utilities and engineering constraints require confirmation from official attachments before statutory use; FAR and building-height controls remain deliberately unknown until official planning indicators are published.",
+   "impact_zh": "本包可作为正式 AI 投稿评审，但法定管控仍需专业确认。 避免误导法定审批；控规参数公开后可按标准地块划分复算。",
+   "impact_en": "The package is reviewable as a formal AI submission, but statutory controls still need professional confirmation; avoiding misleading statutory approval means no placeholder numbers.",
+   "affected_files": [
+    "metrics.json",
+    "geometry/constraints.geojson"
+   ],
+   "source_refs": [
+    "review:#4024-dim-implementation_feasibility(external-unverifiable)",
+    "review:#4027-data-gaps-2(statutory-controls)",
+    "metrics.json#/floor_area_ratio",
+    "metrics.json#/building_height_m"
+   ]
+  },
+  {
+   "id": "A-COST-LEVEL-CONCEPT-001",
+   "status": "conceptual_estimate",
+   "category": "scope_boundary",
+   "statement_zh": "更新项目行动包的成本级（S/M/L）为概念估算类别（S<500万/M 500-2000万/L>2000万），非投资测算或财政承诺。",
+   "statement_en": "Cost tiers for renewal action packages (S/M/L) are conceptual estimate classes (S<¥5M / M ¥5–20M / L>¥20M), not investment calculations or fiscal commitments.",
+   "impact_zh": "供深化阶段投资策划参考，不构成法定预算分配。",
+   "impact_en": "For deepening-stage investment planning reference; not a statutory budget allocation.",
+   "affected_files": [
+    "proposal.md",
+    "proposal.en.md"
+   ],
+   "source_refs": [
+    "review:#4006-comparability(S-M-L-tiers)",
+    "changelog-v1.5-Wave-9(cost-tier-definition)",
+    "DP-06"
+   ]
+  },
+  {
+   "id": "A-FUNDING-SOURCE-001",
+   "status": "conditional_followup",
+   "category": "funding_boundary",
+   "statement_zh": "若项目推进至实施准备，则资金来源可在财政投资、社会资本、场景运营自平衡三类中组合选择；本方案不预设任何比例、金额或承诺。",
+   "statement_en": "If the project advances toward implementation readiness, funding may combine fiscal investment, social capital and scenario-operation self-balancing; this proposal presets no ratio, amount or commitment.",
+   "impact_zh": "为深化阶段提供来源类型框架，实际融资结构与审计安排须经主管部门和专业机构确认。",
+   "impact_en": "Provides a source-type framework for deepening; actual financing structure, return boundaries, public-asset safeguards and audit arrangements require competent-authority and professional confirmation.",
+   "affected_files": [
+    "proposal.md",
+    "proposal.en.md"
+   ],
+   "source_refs": [
+    "PR-#4040(v2.1-wave-15)",
+    "DP-06"
+   ]
+  },
+  {
+   "id": "A-IMPL-001",
+   "status": "conditional_followup",
+   "category": "phasing_boundary",
+   "statement_zh": "分期推进节奏取决于各期进入门与验收门通过情况（blocking_now=false），不设固定年份时间表。",
+   "statement_en": "分期推进节奏取决于各期进入门与验收门通过情况（blocking_now=false），不设固定年份时间表。",
+   "impact_zh": "实施时序为条件门机制，避免概念阶段做出不可控时间承诺。",
+   "impact_en": "实施时序为条件门机制，避免在概念阶段做出不可控的时间承诺。",
+   "affected_files": [
+    "proposal.md",
+    "proposal.en.md"
+   ],
+   "source_refs": [
+    "review-history:v1.0-inherited"
+   ]
+  },
+  {
+   "id": "A-IMPL-002",
+   "status": "conditional_followup",
+   "category": "raci_boundary",
+   "statement_zh": "RACI 工作包矩阵中的责任主体（R/A/C/I）使用组织类型泛称，具体执行主体在深化阶段由项目协调机制议定。",
+   "statement_en": "RACI 工作包矩阵中的责任主体（R/A/C/I）使用组织类型泛称，具体执行主体在深化阶段由项目协调机制议定。",
+   "impact_zh": "工作包界定权责分工结构，不预设具体企业或单位的法定授权。",
+   "impact_en": "工作包界定权责分工结构，不预设具体企业或单位的法定授权。",
+   "affected_files": [
+    "proposal.md",
+    "proposal.en.md"
+   ],
+   "source_refs": [
+    "review-history:v1.1-inherited"
+   ]
+  },
+  {
+   "id": "A-INCLUSION-001",
+   "status": "voluntary_standard",
+   "category": "commitment_boundary",
+   "statement_zh": "全场景保留等价非 AI 通道（no-AI-equivalent route）与人工服务界面，智能层失效或停用时服务品质不低于基线。 真人参与式无障碍验证（视障/老年/行动不便/非智能手机用户）被列为开放前触发条件——机器色差核验不能替代之。",
+   "statement_en": "Every scenario retains an equivalent no-AI route and human service interface; when the intelligence layer fails or retires, service quality does not drop below baseline. Participatory accessibility verification (visually-impaired / elderly / mobility-limited / non-smartphone users) is a pre-opening trigger — machine colour simulation cannot substitute for it.",
+   "impact_zh": "弱势群体权益与公共客厅属性得到结构性制度兜底。",
+   "impact_en": "Vulnerable-group rights and the public-room character receive structural institutional backstop.",
+   "affected_files": [
+    "visual/assets/a11y-color-check.json",
+    "proposal.md"
+   ],
+   "source_refs": [
+    "review:#4024-dim-public_interest(human-testing-pending)",
+    "review:#4032-conditional-5(user-testing)",
+    "metric:no_ai_equivalent_route_count"
+   ]
+  },
+  {
+   "id": "A-MEDIA-INDEPENDENT-REVIEW-001",
+   "status": "self_generated_declared",
+   "category": "media_boundary",
+   "statement_zh": "音频导览、概念视频与封面均为本地确定性生成并登记方法链，未经第三方独立检视。",
+   "statement_en": "Audio guides, concept video and cover are locally generated with disclosed method chains, not independently inspected by third parties.",
+   "impact_zh": "媒体属概念氛围层，非空间证据；字幕与文稿随包提供。",
+   "impact_en": "Media belong to the concept-atmosphere layer, not spatial evidence; transcripts and subtitles ship with the package.",
+   "affected_files": [
+    "assets/media",
+    "sources.json"
+   ],
+   "source_refs": [
+    "sources.json#SRC-MEDIA-RENDER-V11"
+   ]
+  },
+  {
+   "id": "A-PROV-KEY003-DISPUTE-001",
+   "status": "community_flagged",
+   "category": "epistemic_boundary",
+   "statement_zh": "社区 Issue #1029 指出临时重点区 PROV-KEY-003（大钟寺）质心相对大钟寺站存在约 2.26km 偏移争议。",
+   "statement_en": "Community issue #1029 flags that provisional key area PROV-KEY-003 (Dazhongsi) sits roughly 2.26 km from Dazhongsi station by centroid.",
+   "impact_zh": "本方案仅将三处重点区作为南北序列中的粗略定位，不据此推导精确面积、四至或权属结论。",
+   "impact_en": "Key areas serve as rough positioning within a north-south sequence only; no precise areas, boundaries or ownership conclusions are derived.",
+   "affected_files": [
+    "geometry/key_areas.geojson"
+   ],
+   "source_refs": [
+    "review:#3816-data-gaps(PROV-KEY-003)",
+    "community-issue:#1029",
+    "review:#4024-data-gaps"
+   ]
+  },
+  {
+   "id": "A-ROLES-GOVERNANCE-001",
+   "status": "governance_model",
+   "category": "governance_boundary",
+   "statement_zh": "气数协议（QP-1~QP-7）与八类岗位规格为概念治理建议（v0.1），独立复核者与运营岗互斥以保证复核公信力。 八类岗位规格 assignment_status=unassigned 为刻意设计：岗位先于人选，缺岗则绑定场景不开放。",
+   "statement_en": "The Qi-as-Data protocol (QP-1~QP-7) and eight role specifications are conceptual governance proposals (v0.1); the independent reviewer is mutually exclusive with operating roles to protect review credibility. All eight roles carry assignment_status=unassigned by design: roles before names, and a vacant role closes its bound scenarios.",
+   "impact_zh": "提供可复算的治理演练范式，实际运营体制依主管部门决定设立。 岗位任命机制与互斥规则登记于 role-spec.json 与正文治理章。",
+   "impact_en": "Provides a recomputable governance rehearsal paradigm; the actual operating system is established per competent-authority decisions. Appointment mechanism and exclusivity rules live in role-spec.json and the governance chapter.",
+   "affected_files": [
+    "visual/assets/governance/role-spec.json",
+    "visual/assets/governance/qi-protocol.json"
+   ],
+   "source_refs": [
+    "review:#4024-dim-implementation_feasibility(roles-unassigned)",
+    "visual/assets/governance/role-spec.json"
+   ]
+  },
+  {
+   "id": "A-SCENARIO-POINT-INDEX-001",
+   "status": "design_metric_only",
+   "category": "spatial_boundary",
+   "statement_zh": "场景节点坐标为重点区内面积级索引点，非勘测安装坐标。",
+   "statement_en": "Scenario node coordinates are area-level spatial indices inside key areas, not surveyed installation coordinates.",
+   "impact_zh": "节点仅证明概念性任务指派，不证明地块可得性、施工可行性或点位许可。",
+   "impact_en": "Nodes prove conceptual assignment only, not parcel availability or siting permits.",
+   "affected_files": [
+    "visual/assets/governance/qi-protocol.json"
+   ],
+   "source_refs": [
+    "qi-protocol.json#scenario-nodes"
+   ]
+  },
+  {
+   "id": "A-SITE-VERIFICATION-001",
+   "status": "pending_professional_survey",
+   "category": "verification_boundary",
+   "statement_zh": "权属、现状建筑安全、消防通行、交通运行与市政容量未经专业核实；拆改留与体量布局为概念建议，一期开工令以 DP 表逐项确认为前提。",
+   "statement_en": "Ownership, existing-building safety, fire access, traffic operation and municipal capacity are not professionally verified; retention/demolition and massing are conceptual, and the Phase-1 works notice requires item-by-item DP-table confirmation.",
+   "impact_zh": "DP-01 至 DP-08 的降级动作构成未确认情形下的唯一合法执行路径。",
+   "impact_en": "The DP-01..DP-08 fallback actions form the only legitimate execution path while items remain unconfirmed.",
+   "affected_files": [
+    "proposal.md",
+    "proposal.en.md"
+   ],
+   "source_refs": [
+    "review:#4024-dim-implementation_feasibility",
+    "review:#4032-required-1",
+    "DP-01..DP-08"
+   ]
+  },
+  {
+   "id": "A-STATUTORY-LINES-001",
+   "status": "pending_official_data",
+   "category": "epistemic_boundary",
+   "statement_zh": "道路红线、文保范围及建控地带、水体蓝线、生态控制线与市政管线容量等法定空间管控线尚未获得权威空间数据。",
+   "statement_en": "Statutory control lines (road redlines, heritage protection/construction zones, water blue lines, ecological control lines, municipal corridors) lack authoritative spatial data.",
+   "impact_zh": "相关约束仅以文字性谨慎表述进入方案，不作空间叠加分析。",
+   "impact_en": "Related constraints enter the proposal only as cautious textual statements; no spatial overlay analysis is performed.",
+   "affected_files": [
+    "geometry/constraints.geojson"
+   ],
+   "source_refs": [
+    "review:#4024-data-gaps-3(statutory-lines)",
+    "review:#4027-data-gaps-2"
+   ]
+  },
+  {
+   "id": "A-TESTBED-BASELINE-001",
+   "status": "not_started",
+   "category": "epistemic_boundary",
+   "statement_zh": "AI+ 场景与三个产业测试验证场景（#4 配送港/#8 风环境/#13 算力亭）的验收条件为概念指引区间，当前均如实处于 H0（概念态·未启动）：无现场基线、无标定数据集、无主管部门授权、无实测结果。",
+   "statement_en": "Acceptance conditions for the AI+ scenarios and the three industry testbeds (#4 delivery port / #8 wind-environment / #13 compute pavilion) remain concept guidance ranges; all three sit honestly at H0 (concept, not started): no field baseline, no calibration dataset, no authorization, no measured results.",
+   "impact_zh": "实际验收阈值与测试协议须由实施主体会同专业机构在试点启动前标定公示；就绪等级升级判据见 evidence-readiness-register。",
+   "impact_en": "Actual thresholds must be calibrated and published by the implementation body with professional institutions before pilots start; upgrade criteria live in the evidence-readiness register.",
+   "affected_files": [
+    "proposal.md",
+    "metrics.json",
+    "visual/assets/governance/evidence-readiness-register.json"
+   ],
+   "source_refs": [
+    "review:#4024-data-gaps-5(testbed-baseline)",
+    "review:#4032-conditional-3(testbed-trigger)",
+    "proposal.md#最小验收矩阵",
+    "evidence-readiness-register"
+   ]
+  }
+ ]
+}

@@ -25,23 +25,23 @@ scenarios: ["ai-traffic-walkability", "enterprise-service-copilot", "public-safe
 
 ### 时代命题：AI 的双重性质
 
-2026 年，人工智能第一次同时以两种面貌出现在中国人面前。
+2026 年，人工智能以两种相互牵引的面貌进入中国人的日常。
 
 **国家面貌**：算力集群、大模型、机器人产业——这是新时代的"铁路"，宏大、公共、自上而下。GPU 集群是国家基建，如同 1909 年的铁轨。
 
 **个人面貌**：每一个普通人身边开始出现一个可以对话、可以托付、可以陪伴的 Agent。它不是工具，是伙伴。它的普及不依赖任何宏大叙事，只需要一个人和一个智能体之间的一次对话——无关于任何国家工程。
 
-城市设计界正在为前者建设：产业园、算力中心、研发集群。但后一种面貌——**AI 作为个人伙伴**——还没有一座城市认真回答过：当每个孩子一出生就拥有一个硅基伙伴，城市应该长什么样？
+城市设计界正在为前者建设：产业园、算力中心、研发集群。但后一种面貌——**AI 作为个人伙伴**——仍缺少被城市空间认真回答的制度化方案：当每个孩子一出生就拥有一个硅基伙伴，城市应该长什么样？
 
 京张 AI 创新带的独特使命，就是把国家基建的能量，转译为个人伙伴的温度。
 
 ### 京张的第二次回答
 
-![人字轨品牌符号](assets/figures/brand-symbol.png)
+![人字轨品牌主视觉](assets/figures/hero-mark.svg)
 
-品牌符号「人字轨」取自京张铁路青龙桥人字形展线——中国自主修建的第一条铁路上的标志性工程创新。两重视觉语义：**技术向人低头**（铁轨在原点为人折返）与**两条轨道**（国家基础设施 × 个人伙伴，并行不绑架、只在原点汇合）。完整 Logo/VI/导视方向见 `report/narrative.md`。
+品牌视觉系统采用红金而非蓝橙：B「人字转向」作为正式主标，Hero「人字轨」作为叙事型主视觉；两者共享同一套“技术向人低头、双轨并行、原点交汇”的空间语法。完整 Logo/VI/导视方向见 `report/narrative.md`。
 
-**现实锚点（2026-08-06 官方确认）**：京张铁路遗址公园二期已于 2026 年 8 月 6 日建成全线贯通——依托京张高铁海淀段约 6 公里入地释放的地面空间，形成南起北京北站、北至北五环、全长约 9 公里的带状公共空间（总用地约 53 公顷，直接服务沿线约 70 个社区、约 45 万居民），分南段社区活力段与北段自然休闲段，完整保留铁轨等工业遗存 [source:CASE-JZ-PARK-1] [source:CASE-JZ-PARK-2] [source:CASE-JZ-PARK-3]。本方案「一带」空间结构即以这条刚全线贯通的真实绿廊为现实底盘：文化带、生活体验带、创新带三带合一，恰逢公园全线开放之年提出，具备当期实施条件。
+**公开报道背景锚点（2026-08-06）**：科技日报于 2026 年 8 月 6 日报道，京张铁路遗址公园二期已对公众开放——形成南起北京北站、北至北五环、全长约 9 公里的带状公共空间（总用地约 53 公顷，服务沿线约 70 个社区、约 45 万居民），依托京张高铁海淀段约 6 公里入地释放的地面空间建设，并保留铁路遗存、配置慢行系统 [source:CASE-JZ-PARK-1] [source:CASE-JZ-PARK-2] [source:CASE-JZ-PARK-3]。该信息仅作为本方案「一带」空间结构的公开报道背景锚点，不构成本投稿红线、审批、签约合作或当期实施条件的官方确认。
 
 1909 年，詹天佑在八达岭画下第一道人字形，让中国第一次用自己的技术翻过了大山。那是中国技术史上的"自主时刻"。
 
@@ -199,7 +199,7 @@ scenarios: ["ai-traffic-walkability", "enterprise-service-copilot", "public-safe
 
 ## 用地、建筑规模与拆改留方案
 
-用地策略：**以更新为主、以新建为辅**。优先盘活既有铁路遗存、老厂房、单位大院；三处重点区内部新增建设用地用于产业与公共设施。拆改留分类：保留京张铁路遗存及沿线历史建筑（机车库、站房）；改造老厂房为开源实验室、科普馆、市集；新建集中于重点区产业地块。用地、建筑规模与拆改留分类以 `geometry/land_use.geojson`、`geometry/buildings.geojson`、`geometry/phasing.geojson` 为准，指标在 `metrics.json` 中复算 [data:geometry/land_use.geojson#LU-001] [data:geometry/buildings.geojson#BLD-001]。
+用地策略：**以更新为主、以新建为辅**。优先盘活既有铁路遗存、老厂房、单位大院；三处重点区内部新增建设用地用于产业与公共设施。拆改留分类：保留京张铁路遗存及沿线历史建筑（机车库、站房）；改造老厂房为开源实验室、科普馆、市集；新建集中于重点区产业地块。用地、建筑规模与拆改留分类以 `geometry/land_use.geojson`、`geometry/buildings.geojson`、`geometry/phasing.geojson` 为准，指标在 `metrics.json` 中复算 [data:geometry/land_use.geojson#LU-001] [data:geometry/buildings.geojson#BLDG-001]。
 
 ![用地结构与成长主轴](assets/figures/land-use-structure.png)
 
@@ -278,5 +278,5 @@ scenarios: ["ai-traffic-walkability", "enterprise-service-copilot", "public-safe
 - 面向智能体任务书（agent_taskbook.json），六大必做任务与共创章程依据 [source:AGENT-TASKBOOK] [standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK]
 - 公开资料来源登记（data/source_registry.json、sources/public-sources.json），资料许可与引用边界 [source:SOURCE-REGISTRY]
 - 城市设计管理办法、控制性详细规划编制审批办法、国土空间用地分类指南，专业标准引用 [standard:MOHURD-URBAN-DESIGN-MEASURES]
-- 临时边界几何数据（brief/site-package/geometry/provisional_boundaries.geojson），用于方案生成与讨论 [source:DATA-SRC-PROVISIONAL-BOUNDARIES-20260605]
+- 临时边界几何数据（brief/site-package/geometry/provisional_boundaries.geojson），用于方案生成与讨论 [source:BOUNDARY-SOURCE]
 - 官方公告经人民网北京频道等公共媒体公开发布（2026-04-30），可作为公开背景资料交叉核对 [source:OFFICIAL-ANNOUNCEMENT]

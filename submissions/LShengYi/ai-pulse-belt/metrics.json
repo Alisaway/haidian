@@ -16,7 +16,8 @@
       "confidence": "high",
       "assumptions": [
         "No official boundary in site package; PROV-SITE-001 provisional boundary used.",
-        "Official planning limit 11400000 sqm; computed fit deviation 0.11%."
+        "Official planning limit 11400000 sqm; computed fit deviation 0.11%.",
+        "Value is a temporary model-computed figure; not for precise area or formal planning evidence."
       ]
     },
     "building_footprint_area_sqm": {
@@ -83,7 +84,8 @@
       "formula": "sum(area_sqm_calculated) over 3 key areas in EPSG:4548",
       "confidence": "high",
       "assumptions": [
-        "Areas measured on provisional key-area scopes; per-area deviations disclosed in ASSUME-002."
+        "Areas measured on provisional key-area scopes; per-area deviations disclosed in ASSUME-002.",
+        "Values are temporary model-computed figures; not for precise area or formal planning evidence."
       ]
     },
     "land_parcel_count": {
@@ -203,14 +205,14 @@
         "Concept layer recomputation; not official land-use figures"
       ]
     },
-    "commercial_05_ratio": {
+    "commercial_09_ratio": {
       "status": "known",
       "value": 0.070292,
       "unit": "ratio",
       "source_files": [
         "geometry/land_use.geojson"
       ],
-      "formula": "sum(area of 05 commerce) / total land-use area in EPSG:4548",
+      "formula": "sum(area of 09 commerce) / total land-use area in EPSG:4548",
       "confidence": "medium",
       "assumptions": [
         "Concept layer recomputation; not official land-use figures"
@@ -392,11 +394,10 @@
       "source_files": [
         "simulation.json"
       ],
-      "formula": "15 public-AI services x 8 variants (1 qualified + 7 failure branches) = 120 synthetic rehearsals, all with deterministic receipt_sha256",
+      "formula": "task_count in simulation.json: 120 rehearsal tasks (15 qualified + 105 failure branches)",
       "confidence": "high",
       "assumptions": [
-        "Counts are declared proposal elements, auditable in the named files.",
-        "All tasks are offline synthetic rule rehearsals; field_run=false by design."
+        "Counts are declared proposal elements, auditable in the named files."
       ]
     },
     "funding_channel_count": {
@@ -414,12 +415,12 @@
     },
     "investment_item_count": {
       "status": "known",
-      "value": 11,
+      "value": 12,
       "unit": "count",
       "source_files": [
         "proposal.md#S10"
       ],
-      "formula": "declared count: 11 one-off construction items JZ-01..JZ-11",
+      "formula": "declared count: 12 one-off construction items JZ-01..JZ-12",
       "confidence": "high",
       "assumptions": [
         "Counts are declared proposal elements, auditable in the named files."
@@ -672,7 +673,7 @@
       "formula": "public funds reserved for relocation/compensation",
       "confidence": "unknown",
       "assumptions": [],
-      "reason": "Budget figures are concept assumptions only (see ASSUME-005), not commitments."
+      "reason": "Withdrawn / non-operative (v10.14.15): no monetary range is claimed - budget figures are deleted because unit prices lack publisher/date/region/calibre/licence and per-item recomputation chains (see ASSUME-005); not a commitment."
     },
     "compute_capacity": {
       "status": "unknown",
@@ -732,7 +733,7 @@
       "formula": "annual operation cost of scenario ecosystem",
       "confidence": "unknown",
       "assumptions": [],
-      "reason": "Concept range 5-15 M CNY/year (JZ-12 caliber) registered as an assumption in ASSUME-005, not a commitment."
+      "reason": "Withdrawn / non-operative (v10.14.15): the previous annual-operation range was deleted because it lacked publisher/date/region/calibre/licence and a per-item recomputation chain; not a commitment. Value stays unknown pending the official investment plan."
     },
     "ai_innovation_index": {
       "status": "unknown",
@@ -769,227 +770,6 @@
       "confidence": "unknown",
       "assumptions": [],
       "reason": "Official economic statistics absent; indicator declared per announcement 1.5(2), computable after data release."
-    },
-    "synthetic_negative_branch_count": {
-      "status": "known",
-      "value": 105,
-      "unit": "count",
-      "source_files": [
-        "simulation.json"
-      ],
-      "formula": "15 services x 7 failure branches (missing_responsible_role / data_exceeds_declared_ceiling / same_task_human_route_unavailable / cannot_pause / revision_not_public / bequest_dividend_missing / post_exit_service_lapses) = 105 negative branches, all blocked (negative_blocked)",
-      "confidence": "high",
-      "assumptions": [
-        "100% of failure branches intercepted: releasing any of the 105 would fail the whole rehearsal."
-      ]
-    },
-    "service_passport_required_field_count": {
-      "status": "known",
-      "value": 11,
-      "unit": "count",
-      "source_files": [
-        "proposal.md"
-      ],
-      "formula": "declared fields: service & location / target users / non-AI baseline / data ceiling / responsible role / operator / same-task human route / success evidence / failure signals / appeal & pause / retirement & recovery",
-      "confidence": "high",
-      "assumptions": [
-        "Passport gates every public AI service; a service without all 11 fields is not registered."
-      ]
-    },
-    "operational_evidence_gate_count": {
-      "status": "known",
-      "value": 5,
-      "unit": "count",
-      "source_files": [
-        "proposal.md"
-      ],
-      "formula": "declared gates E0-E4: register / baseline & rights / supervised pilot / independent re-test / continue or retire",
-      "confidence": "high",
-      "assumptions": [
-        "Gates map to P1-P4 phases; no service is released without passing E4 human decision."
-      ]
-    },
-    "first_100_days_action_count": {
-      "status": "known",
-      "value": 8,
-      "unit": "count",
-      "source_files": [
-        "proposal.md"
-      ],
-      "formula": "declared 8 steps D1-14 ... D91-100 in JZ-01 pilot table",
-      "confidence": "high",
-      "assumptions": [
-        "First 100 days: census baseline, public registration, pilot protocol, evidence collection, independent re-test, decision point."
-      ]
-    },
-    "same_task_equivalence_scenario_count": {
-      "status": "known",
-      "value": 12,
-      "unit": "count",
-      "source_files": [
-        "proposal.md"
-      ],
-      "formula": "12 scenario cards each with declared same-task human / low-tech route and pre-release proof content",
-      "confidence": "high",
-      "assumptions": [
-        "Equivalence register: every AI service must prove a same-task non-AI route exists before release."
-      ]
-    },
-    "contract_coverage_ratio": {
-      "status": "known",
-      "value": 1.0,
-      "unit": "ratio",
-      "source_files": [
-        "visual/assets/dividend-contracts.json"
-      ],
-      "formula": "15 public-AI services x 4 clauses (BASE non-AI baseline / BOOST AI gain and boundary / BLACKOUT stop arrangement / BEQUEST exit contract) = 15/15 contracts complete",
-      "confidence": "high",
-      "assumptions": [
-        "100% contract coverage: a service without a bequest clause may not be released."
-      ]
-    },
-    "blackout_clause_coverage_ratio": {
-      "status": "known",
-      "value": 1.0,
-      "unit": "ratio",
-      "source_files": [
-        "visual/assets/dividend-contracts.json"
-      ],
-      "formula": "each contract has a blackout clause paired one-to-one with the five rollback triggers",
-      "confidence": "high",
-      "assumptions": [
-        "100% of services have an arranged stop path and a same-task human route."
-      ]
-    },
-    "bequest_clause_coverage_ratio": {
-      "status": "known",
-      "value": 1.0,
-      "unit": "ratio",
-      "source_files": [
-        "visual/assets/dividend-contracts.json"
-      ],
-      "formula": "each contract has a bequest clause: retirement condition, data disposition, site restoration, archive",
-      "confidence": "high",
-      "assumptions": [
-        "100% of services have a pre-declared exit; no service may remain in pilot indefinitely."
-      ]
-    },
-    "state_machine_state_count": {
-      "status": "known",
-      "value": 8,
-      "unit": "count",
-      "source_files": [
-        "visual/assets/state-machine.json"
-      ],
-      "formula": "states: proposed / baseline_verified / sandboxed / live / blackout_drill / bequest_audit / retained_or_modified / removed_archived",
-      "confidence": "high",
-      "assumptions": [
-        "blackout_drill and bequest_audit are not skippable; removed_archived requires bequest_audit or hard stop."
-      ]
-    },
-    "state_machine_gate_count": {
-      "status": "known",
-      "value": 8,
-      "unit": "count",
-      "source_files": [
-        "visual/assets/state-machine.json"
-      ],
-      "formula": "8 documented transitions each carrying role_ids, gate_ids and conditions",
-      "confidence": "high",
-      "assumptions": [
-        "Every transition cites the service passport and evidence gates E0-E4 it depends on."
-      ]
-    },
-    "dual_gateway_gate_count": {
-      "status": "known",
-      "value": 16,
-      "unit": "count",
-      "source_files": [
-        "visual/assets/implementation-gates.json"
-      ],
-      "formula": "project gates G0-G7 (no-go until authorized ... review and retirement) + scenario gates C0-C7 (card registration ... exit contract) = 16",
-      "confidence": "high",
-      "assumptions": [
-        "No gate may be replaced by calendar order; G0 blocks all un-authorized advancement."
-      ]
-    },
-    "governance_role_count": {
-      "status": "known",
-      "value": 8,
-      "unit": "count",
-      "source_files": [
-        "visual/assets/governance-raci.json"
-      ],
-      "formula": "roles: accountable lead / operations / safety / data / public-baseline steward / independent evaluator / maintenance / affected public",
-      "confidence": "high",
-      "assumptions": [
-        "Each role lists passport fields, responsible-for, must-not-impersonate and fallback-if-absent."
-      ]
-    },
-    "governance_constitutional_rule_count": {
-      "status": "known",
-      "value": 5,
-      "unit": "count",
-      "source_files": [
-        "visual/assets/governance-raci.json"
-      ],
-      "formula": "constitutional rules: single accountable lead / steward and safety may stop independently / no operator certifies its own bequest audit / affected public never burdened with professional liability / roles are concepts not authorities",
-      "confidence": "high",
-      "assumptions": [
-        "Constitutional rules bind the roles; they are proposal concepts, not current authorities."
-      ]
-    },
-    "simulation_rerun_receipt_ratio": {
-      "status": "known",
-      "value": 1.0,
-      "unit": "ratio",
-      "source_files": [
-        "visual/assets/simulate-check.js"
-      ],
-      "formula": "all 120 receipts re-derivable from (service_id, variant, seed) via node simulate-check.js with exit-code contract 0/1/2",
-      "confidence": "high",
-      "assumptions": [
-        "Reviewers can re-run the check offline; status is fixed as offline_complete_field_not_authorized_not_run."
-      ]
-    },
-    "review_evidence_dimension_count": {
-      "status": "known",
-      "value": 7,
-      "unit": "count",
-      "source_files": [
-        "visual/assets/review-evidence-index.json"
-      ],
-      "formula": "seven evaluation dimensions each indexed to openable sections and files (brief_alignment / originality / ai_planning_innovation / implementation_feasibility / public_interest_inclusion / risk_compliance / expression_completeness)",
-      "confidence": "high",
-      "assumptions": [
-        "Every review claim points to a machine-readable file or proposal section that can be opened."
-      ]
-    },
-    "issue_ledger_entry_count": {
-      "status": "known",
-      "value": 3,
-      "unit": "count",
-      "source_files": [
-        "proposal.md"
-      ],
-      "formula": "public issue ledger entries: #846 site-polygon vs railway park 412.5m mismatch, #1029 PROV-KEY-003 centroid offset at Dazhongsi, #1368 provisional-boundary review-ready semantics (see evidence chapter)",
-      "confidence": "high",
-      "assumptions": [
-        "Real open issues are registered and answered; omissions are disclosed rather than hidden."
-      ]
-    },
-    "evidence_level_declared_count": {
-      "status": "known",
-      "value": 5,
-      "unit": "count",
-      "source_files": [
-        "proposal.md"
-      ],
-      "formula": "evidence levels L1 (official documents) / L2 (public sources) / L3 (derived calculations) / L4 (concept suggestions) / L5 (provisional assumptions)",
-      "confidence": "high",
-      "assumptions": [
-        "Every claim carries an evidence level; L5 items never masquerade as official facts."
-      ]
     }
   }
 }

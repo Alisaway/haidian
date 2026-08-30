@@ -1,0 +1,542 @@
+{
+  "schema_version": "0.2.0",
+  "units": {
+    "area": "sqm",
+    "length": "m",
+    "ratio": "dimensionless"
+  },
+  "calculation_crs": "EPSG:4548",
+  "mnr_land_use_classification": {
+    "source_standard": "自然资发〔2023〕234号《国土空间调查、规划、用途管制用地用海分类指南》项目子集",
+    "standard_id": "MNR-LAND-USE-CLASSIFICATION-GUIDE",
+    "note": "本表采用提交 geometry/land_use.geojson 的直接代码面积；08/14 为直接写入几何的一级代码板块，0803/1401 为直接写入几何的二级代码板块，父子代码在直接代码表中分列且不重复相加。绿色覆盖层另按 green_space.geojson 溶解重叠后复算，不能与 MNR 14/1401 用地面积互换。",
+    "code_mapping": [
+      {
+        "code": "07",
+        "label_zh": "居住用地",
+        "level": 1,
+        "metrics_key": "land_use_07_sqm"
+      },
+      {
+        "code": "08",
+        "label_zh": "公共管理与公共服务用地",
+        "level": 1,
+        "metrics_key": "land_use_08_sqm"
+      },
+      {
+        "code": "0803",
+        "label_zh": "文化用地",
+        "level": 2,
+        "metrics_key": "land_use_0803_sqm",
+        "parent": "08"
+      },
+      {
+        "code": "09",
+        "label_zh": "商业服务业用地",
+        "level": 1,
+        "metrics_key": "land_use_09_sqm"
+      },
+      {
+        "code": "1207",
+        "label_zh": "城镇村道路用地",
+        "level": 2,
+        "metrics_key": "land_use_1207_sqm"
+      },
+      {
+        "code": "14",
+        "label_zh": "绿地与开敞空间用地",
+        "level": 1,
+        "metrics_key": "land_use_14_sqm"
+      },
+      {
+        "code": "1401",
+        "label_zh": "公园绿地",
+        "level": 2,
+        "metrics_key": "land_use_1401_sqm",
+        "parent": "14"
+      }
+    ],
+    "aggregation_basis": {
+      "direct_code_rows": "Each exact land_use_code is unioned and measured independently in EPSG:4548.",
+      "parent_child_rule": "0803 is a child of 08 and 1401 is a child of 14 in the MNR hierarchy; direct-code rows are not summed across parent and child.",
+      "parent_14_inclusive_sqm": 2126217.393,
+      "parent_14_inclusive_ha": 212.622,
+      "parent_14_inclusive_share_of_site_ratio": 0.1863007,
+      "direct_land_use_total_sqm": 11412724.584,
+      "inside_boundary_uncovered_sqm": 100.801,
+      "green_overlay_area_sqm": 3127039.43,
+      "green_overlay_area_ha": 312.704,
+      "green_overlay_share_of_site_ratio": 0.27399264,
+      "stale_draft_value_12_4_ha": "withdrawn; not a value in the frozen package"
+    }
+  },
+  "metrics": {
+    "site_area_sqm": {
+      "status": "known",
+      "value": 11412825.4,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "polygon_area(site_boundary) in EPSG:4548",
+      "confidence": "low",
+      "assumptions": [
+        "由仓库临时粗略边界（provisional rough boundary）复算；官方边界发布后需整体复算，不适用于官方面积声明。",
+        "公告约1140万㎡；复算偏差+0.11%。"
+      ]
+    },
+    "green_space_area_sqm": {
+      "status": "known",
+      "value": 3127039.43,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/green_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "area(unary_union(green_space polygons)) in EPSG:4548; overlapping polygons dissolved before area calculation",
+      "confidence": "low",
+      "assumptions": [
+        "由仓库临时粗略边界（provisional rough boundary）复算；官方边界发布后需整体复算，不适用于官方面积声明。"
+      ]
+    },
+    "public_space_area_sqm": {
+      "status": "known",
+      "value": 502225.67,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "area(public_space minus green_space overlap)",
+      "confidence": "low",
+      "assumptions": [
+        "由仓库临时粗略边界（provisional rough boundary）复算；官方边界发布后需整体复算，不适用于官方面积声明。",
+        "public_space 图层与 green_space 图层互不重叠，面积可直接相加。"
+      ]
+    },
+    "green_ratio": {
+      "status": "known",
+      "value": 0.273993,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/site_boundary.geojson",
+        "geometry/green_space.geojson"
+      ],
+      "formula": "union_area(green_space intersect site_boundary) / area(site_boundary)",
+      "confidence": "low",
+      "assumptions": [
+        "由仓库临时粗略边界（provisional rough boundary）复算；官方边界发布后需整体复算，不适用于官方面积声明。"
+      ]
+    },
+    "public_space_ratio": {
+      "status": "known",
+      "value": 0.044005,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/site_boundary.geojson",
+        "geometry/public_space.geojson",
+        "geometry/green_space.geojson"
+      ],
+      "formula": "public_space_area / site_area (layers disjoint)",
+      "confidence": "low",
+      "assumptions": [
+        "由仓库临时粗略边界（provisional rough boundary）复算；官方边界发布后需整体复算，不适用于官方面积声明。"
+      ]
+    },
+    "building_footprint_area_sqm": {
+      "status": "known",
+      "value": 3710756.504,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "sum(polygon_area(buildings)) in EPSG:4548",
+      "confidence": "low",
+      "assumptions": [
+        "由仓库临时粗略边界（provisional rough boundary）复算；官方边界发布后需整体复算，不适用于官方面积声明。",
+        "为概念体量基底合计，非现状测绘、非审批规模。"
+      ]
+    },
+    "buildings_count": {
+      "status": "known",
+      "value": 54,
+      "unit": "count",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "feature_count(buildings)",
+      "confidence": "low",
+      "assumptions": []
+    },
+    "road_network_length_m": {
+      "status": "known",
+      "value": 50618.2,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson"
+      ],
+      "formula": "sum(length(road_centerline))",
+      "confidence": "low",
+      "assumptions": [
+        "现状线路为公开资料粗略示意，不代表红线。"
+      ],
+      "description": "道路网络总长度，含现状主干路与规划道路中线（GeoJSON 复算值）。proposal 正文约数 ≈ 50.6 km。"
+    },
+    "slow_service_network_length_m": {
+      "status": "known",
+      "value": 16898.8,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson"
+      ],
+      "formula": "sum(length(design_proposal centerlines))",
+      "confidence": "low",
+      "assumptions": [],
+      "description": "慢行及服务网络设计长度（非现状或审批承诺）：绿道 RD-101 约 8.7 km，机器人/本地服务 RD-102—RD-104 约 8.2 km，合计 GeoJSON 复算值约 16.9 km；proposal 展示值应以此为准。"
+    },
+    "land_use_07_sqm": {
+      "status": "known",
+      "value": 420345.461,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "sum(polygon_area(intersection(land_use, site_boundary)) by land_use_code) in EPSG:4548",
+      "confidence": "low",
+      "mnr_code": "07",
+      "mnr_label_zh": "居住用地",
+      "assumptions": [
+        "land_use.geojson 的每个要素已严格裁剪到 site_boundary.geojson；面积按裁剪后几何在 EPSG:4548 中复算。",
+        "由仓库临时粗略边界（provisional rough boundary）复算；官方边界发布后需整体复算，不适用于官方面积声明。"
+      ],
+      "mnr_label_en": "Residential land",
+      "area_ha": 42.035,
+      "share_of_site_ratio": 0.03683097,
+      "aggregation_basis": "direct geometry features with exact land_use_code; parent and child rows are reported separately and never added in the direct-code table"
+    },
+    "land_use_08_sqm": {
+      "status": "known",
+      "value": 1821306.553,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "sum(polygon_area(intersection(land_use, site_boundary)) by land_use_code) in EPSG:4548",
+      "confidence": "low",
+      "mnr_code": "08",
+      "mnr_label_zh": "公共管理与公共服务用地",
+      "assumptions": [
+        "land_use.geojson 的每个要素已严格裁剪到 site_boundary.geojson；面积按裁剪后几何在 EPSG:4548 中复算。",
+        "由仓库临时粗略边界（provisional rough boundary）复算；官方边界发布后需整体复算，不适用于官方面积声明。"
+      ],
+      "mnr_label_en": "Public administration and public services land",
+      "area_ha": 182.131,
+      "share_of_site_ratio": 0.1595842,
+      "aggregation_basis": "direct geometry features with exact land_use_code; parent and child rows are reported separately and never added in the direct-code table"
+    },
+    "land_use_0803_sqm": {
+      "status": "known",
+      "value": 780826.039,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "sum(polygon_area(intersection(land_use, site_boundary)) by land_use_code) in EPSG:4548",
+      "confidence": "low",
+      "mnr_code": "0803",
+      "mnr_label_zh": "文化用地",
+      "mnr_parent_code": "08",
+      "assumptions": [
+        "land_use.geojson 的每个要素已严格裁剪到 site_boundary.geojson；面积按裁剪后几何在 EPSG:4548 中复算。",
+        "由仓库临时粗略边界（provisional rough boundary）复算；官方边界发布后需整体复算，不适用于官方面积声明。"
+      ],
+      "mnr_label_en": "Cultural land",
+      "area_ha": 78.083,
+      "share_of_site_ratio": 0.06841654,
+      "aggregation_basis": "direct geometry features with exact land_use_code; parent and child rows are reported separately and never added in the direct-code table"
+    },
+    "land_use_09_sqm": {
+      "status": "known",
+      "value": 2591270.47,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "sum(polygon_area(intersection(land_use, site_boundary)) by land_use_code) in EPSG:4548",
+      "confidence": "low",
+      "mnr_code": "09",
+      "mnr_label_zh": "商业服务业用地",
+      "assumptions": [
+        "land_use.geojson 的每个要素已严格裁剪到 site_boundary.geojson；面积按裁剪后几何在 EPSG:4548 中复算。",
+        "由仓库临时粗略边界（provisional rough boundary）复算；官方边界发布后需整体复算，不适用于官方面积声明。"
+      ],
+      "mnr_label_en": "Commercial and service land",
+      "area_ha": 259.127,
+      "share_of_site_ratio": 0.22704899,
+      "aggregation_basis": "direct geometry features with exact land_use_code; parent and child rows are reported separately and never added in the direct-code table"
+    },
+    "land_use_1207_sqm": {
+      "status": "known",
+      "value": 3672758.669,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "sum(polygon_area(intersection(land_use, site_boundary)) by land_use_code) in EPSG:4548",
+      "confidence": "low",
+      "mnr_code": "1207",
+      "mnr_label_zh": "城镇村道路用地",
+      "assumptions": [
+        "land_use.geojson 的每个要素已严格裁剪到 site_boundary.geojson；面积按裁剪后几何在 EPSG:4548 中复算。",
+        "由仓库临时粗略边界（provisional rough boundary）复算；官方边界发布后需整体复算，不适用于官方面积声明。"
+      ],
+      "mnr_label_en": "Urban and rural road land",
+      "area_ha": 367.276,
+      "share_of_site_ratio": 0.32180977,
+      "aggregation_basis": "direct geometry features with exact land_use_code; parent and child rows are reported separately and never added in the direct-code table"
+    },
+    "land_use_14_sqm": {
+      "status": "known",
+      "value": 2017737.218,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "sum(polygon_area(intersection(land_use, site_boundary)) by land_use_code) in EPSG:4548",
+      "confidence": "low",
+      "mnr_code": "14",
+      "mnr_label_zh": "绿地与开敞空间用地",
+      "assumptions": [
+        "land_use.geojson 的每个要素已严格裁剪到 site_boundary.geojson；面积按裁剪后几何在 EPSG:4548 中复算。",
+        "由仓库临时粗略边界（provisional rough boundary）复算；官方边界发布后需整体复算，不适用于官方面积声明。"
+      ],
+      "mnr_label_en": "Green and open space land",
+      "area_ha": 201.774,
+      "share_of_site_ratio": 0.17679559,
+      "aggregation_basis": "direct geometry features with exact land_use_code; parent and child rows are reported separately and never added in the direct-code table"
+    },
+    "land_use_1401_sqm": {
+      "status": "known",
+      "value": 108480.175,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "sum(polygon_area(intersection(land_use, site_boundary)) by land_use_code) in EPSG:4548",
+      "confidence": "low",
+      "mnr_code": "1401",
+      "mnr_label_zh": "公园绿地",
+      "mnr_parent_code": "14",
+      "mnr_note": "2023 MNR 分类中 1401 = 公园绿地，隶属于 14 绿地与开敞空间用地；本项目实际采用 1401，不是 1301。1301 不是本项目 2023 MNR 公园绿地编码。",
+      "assumptions": [
+        "land_use.geojson 的每个要素已严格裁剪到 site_boundary.geojson；面积按裁剪后几何在 EPSG:4548 中复算。",
+        "由仓库临时粗略边界（provisional rough boundary）复算；官方边界发布后需整体复算，不适用于官方面积声明。"
+      ],
+      "mnr_label_en": "Park green space",
+      "area_ha": 10.848,
+      "share_of_site_ratio": 0.00950511,
+      "aggregation_basis": "direct geometry features with exact land_use_code; parent and child rows are reported separately and never added in the direct-code table"
+    },
+    "key_area_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "feature_count(key_areas)",
+      "confidence": "low",
+      "assumptions": []
+    },
+    "key_area_zhongzhiyuan_ai_acceleration_area_sqm": {
+      "status": "known",
+      "value": 1929201.9,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "polygon_area(zhongzhiyuan_ai_acceleration_area) in EPSG:4548",
+      "confidence": "low",
+      "assumptions": [
+        "由仓库临时粗略边界（provisional rough boundary）复算；官方边界发布后需整体复算，不适用于官方面积声明。",
+        "GeoJSON 几何复算值为 1,929,201.9 sqm（约 192.9 ha）；公告参考值约 192.1 ha（1,921,000 sqm），两者不可混写。本指标采用 GeoJSON 几何复算值。"
+      ]
+    },
+    "key_area_beijing_ai_origin_community_sqm": {
+      "status": "known",
+      "value": 1043236.9,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "polygon_area(beijing_ai_origin_community) in EPSG:4548",
+      "confidence": "low",
+      "assumptions": [
+        "由仓库临时粗略边界（provisional rough boundary）复算；官方边界发布后需整体复算，不适用于官方面积声明。"
+      ]
+    },
+    "key_area_dazhongsi_ai_industry_cluster_sqm": {
+      "status": "known",
+      "value": 720454.2,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "polygon_area(dazhongsi_ai_industry_cluster) in EPSG:4548",
+      "confidence": "low",
+      "assumptions": [
+        "由仓库临时粗略边界（provisional rough boundary）复算；官方边界发布后需整体复算，不适用于官方面积声明。"
+      ]
+    },
+    "phase_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/phasing.geojson"
+      ],
+      "formula": "feature_count(phasing)",
+      "confidence": "low",
+      "assumptions": []
+    },
+    "phase_phase_near_sqm": {
+      "status": "known",
+      "value": 1594087.4,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/phasing.geojson"
+      ],
+      "formula": "polygon_area(phase_near)",
+      "confidence": "low",
+      "assumptions": [
+        "由仓库临时粗略边界（provisional rough boundary）复算；官方边界发布后需整体复算，不适用于官方面积声明。"
+      ]
+    },
+    "phase_phase_mid_sqm": {
+      "status": "known",
+      "value": 2973621.4,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/phasing.geojson"
+      ],
+      "formula": "polygon_area(phase_mid)",
+      "confidence": "low",
+      "assumptions": [
+        "由仓库临时粗略边界（provisional rough boundary）复算；官方边界发布后需整体复算，不适用于官方面积声明。"
+      ]
+    },
+    "phase_phase_long_sqm": {
+      "status": "known",
+      "value": 3922799.3,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/phasing.geojson"
+      ],
+      "formula": "polygon_area(phase_long)",
+      "confidence": "low",
+      "assumptions": [
+        "由仓库临时粗略边界（provisional rough boundary）复算；官方边界发布后需整体复算，不适用于官方面积声明。"
+      ]
+    },
+    "heritage_constraint_features": {
+      "status": "known",
+      "value": 2,
+      "unit": "count",
+      "source_files": [
+        "geometry/constraints.geojson"
+      ],
+      "formula": "count(constraints where constraint_type startswith heritage)",
+      "confidence": "low",
+      "assumptions": []
+    },
+    "co_gov_handover_stations_planned": {
+      "status": "known",
+      "value": 9,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "design commitment count from proposal narrative",
+      "confidence": "medium",
+      "assumptions": [
+        "九处人机交接站为概念布局数量，位置待专业深化确定。"
+      ]
+    },
+    "ai_scenario_cards_total": {
+      "status": "known",
+      "value": 12,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "scenario card count in proposal chapter 6",
+      "confidence": "low",
+      "assumptions": []
+    },
+    "ai_validation_scenarios_total": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "validation scenario card count",
+      "confidence": "low",
+      "assumptions": []
+    },
+    "user_persona_types_total": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "persona count in proposal",
+      "confidence": "low",
+      "assumptions": []
+    },
+    "ai_pilgrimage_landmarks_total": {
+      "status": "known",
+      "value": 4,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "landmark catalog count",
+      "confidence": "low",
+      "assumptions": []
+    },
+    "floor_area_ratio": {
+      "status": "unknown",
+      "value": null,
+      "unit": "dimensionless",
+      "source_files": [],
+      "formula": "",
+      "confidence": "low",
+      "assumptions": [],
+      "reason": "控规容积率条件未公开（planning_limits.json status=missing）；本方案仅提供概念体量基底，不推算法定容积率。",
+      "required_for_final_submission": true
+    },
+    "building_height_m_max": {
+      "status": "unknown",
+      "value": null,
+      "unit": "m",
+      "source_files": [],
+      "formula": "",
+      "confidence": "low",
+      "assumptions": [],
+      "reason": "建筑高度控制未公开；航空/文保/景观限高须以官方控制条件为准。",
+      "required_for_final_submission": true
+    },
+    "building_density_official": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [],
+      "formula": "",
+      "confidence": "low",
+      "assumptions": [],
+      "reason": "官方建筑密度控制条件缺失。",
+      "required_for_final_submission": true
+    }
+  }
+}

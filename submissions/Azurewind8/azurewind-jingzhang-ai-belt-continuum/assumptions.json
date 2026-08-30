@@ -1,0 +1,40 @@
+{
+  "schema_version": "0.1.0",
+  "assumptions": [
+    {
+      "id": "A-CONTROLS-001",
+      "status": "pending_professional_confirmation",
+      "statement": "Detailed regulatory controls, road redlines, ownership, municipal utilities, and engineering constraints must be confirmed from official attachments before statutory use. 法定控规指标（容积率、高度、密度、绿地率、退线）、道路红线、权属和市政承载条件均未随公开资料包发布，本包相应指标记为待正式数据补齐。",
+      "impact": "The package can be reviewed as a formal AI submission only for provided provisional boundaries and submitted design layers; statutory controls still need professional confirmation. constraints.geojson 因无官方管控矢量而有意留空。",
+      "recalculation_trigger": "官方控规条件、红线或管控矢量公布后，statutory_* 指标与 constraints.geojson 需补齐并重新自检。"
+    },
+    {
+      "id": "A-BOUNDARY-001",
+      "status": "provisional_geometry_in_use",
+      "statement": "总体设计范围与三处重点区均使用仓库发布的临时粗略polygon（PROV-SITE-001、PROV-KEY-001/002/003），official_boundary=false、geometry_role=provisional_constraint、boundary_precision=provisional_rough。公告仅提供文字四至与约数面积（总体11.4平方公里；重点区192.1/104.3/72.0公顷）。",
+      "impact": "本包所有面积、比例与分区均为临时边界上的复算设计值（如 site_area_sqm=11412825.386 平方米），与公告约数存在正常偏差；一切数值不得作为官方红线或精确面积声明。",
+      "recalculation_trigger": "官方 SITE_BOUNDARY / KEY_AREA 矢量公布后，需以官方边界重跑 generate 流程，重算 metrics.json 全部面积类指标、五张图件、visual 与图纸，并重新运行四道自检。"
+    },
+    {
+      "id": "A-CONCEPT-002",
+      "status": "concept_design_quantity",
+      "statement": "建筑基底、概念层数（storeys_concept）、概念总建筑规模（concept_total_floor_area_sqm）与概念强度（concept_far、building_density_concept）均为AI生成的概念体量，用于说明空间形态与产业空间供给方向，置信度低。",
+      "impact": "上述概念设计量不等于法定容积率、法定建筑密度或审定建设规模，不构成拆改留结论；正式控规条件与现状建筑数据到位后需由专业团队重新校核。",
+      "recalculation_trigger": "获得官方控规条件、现状建筑普查或权属数据后，由专业团队重新测算并替换概念设计量。"
+    },
+    {
+      "id": "A-SCENARIO-003",
+      "status": "concept_design_quantity",
+      "statement": "12个AI场景节点（SN-01至SN-12）、场景卡、测试验证场景与朝圣地标均为概念场景建议，点位沿京张遗址公园AI学习脊布置，不代表已确定的建设或运营安排。",
+      "impact": "场景落地需经隐私影响评估、人工复核机制设计与运营主体确认；所有涉及数据采集的场景以最小化采集与可人工复核为前提。",
+      "recalculation_trigger": "场景试点获得运营主体与合规确认后，将概念节点升级为实施项目并更新 phasing 与更新项目清单。"
+    },
+    {
+      "id": "A-INNOVATION-METRICS-001",
+      "status": "pending_professional_confirmation",
+      "statement": "The four innovation indicators (AI innovation density, scenario openness, slow-mobility connectivity, talent affordability) have locked formulas and conventions, but their baselines and current values depend on a launch-year census, operating records, and ownership/employment data, so they are recorded as pending official data. 四组创新指标（AI创新密度、场景开放度、慢行连通度、人才可负担性）公式与口径已锁定，但基线与现值依赖启动年普查、运营记录与权属就业数据，现记为待正式数据补齐。",
+      "impact": "The four metrics are registered as status=unknown with formulas and conceptual acceptance thresholds; no attainment claim is made before operations data exists. 四项指标以 unknown 状态登记公式与概念性验收阈值，运营数据产生前不作任何达标声明；阈值须由专业团队与运营主体确认。",
+      "recalculation_trigger": "启动年普查与首年运营数据产生后复算基线与现值，并复核验收阈值。"
+    }
+  ]
+}

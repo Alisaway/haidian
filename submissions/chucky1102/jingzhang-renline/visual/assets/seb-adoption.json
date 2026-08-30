@@ -1,0 +1,154 @@
+{
+  "adoption_id": "renline-seb-adoption-v1",
+  "adopts": {
+    "spec": "Service Equivalence Baseline (SEB)",
+    "component": "node_schema",
+    "schema_version": "0.5.0",
+    "publisher": "lqqk7 / 万感京张 EVERY SENSE JING-ZHANG",
+    "registry": "open-city-ai/haidian Issue #2549",
+    "canonical_path": "submissions/lqqk7/every-sense-jingzhang/visual/assets/seb-spec.json",
+    "exact_commit": "949f6b9406ad2de56695487d15ceac4fe8aa860c",
+    "content_sha256": "adb930c32768e6b58a2a9096cf20f8f33581434f9236ebdaa4172d63b852149d",
+    "license": {
+      "spdx_id": "CC-BY-SA-4.0",
+      "attribution_text": "Service Equivalence Baseline by lqqk7 / EVERY SENSE JING-ZHANG (open-city-ai/haidian Issue #2549)",
+      "scope": "spec_text_and_schema_only",
+      "scope_note_zh": "许可仅覆盖基准条文与 schema(字段结构、枚举、语义与判定规则文本);本提交包的叙事、图面、几何与数据不在此许可内,另有各自来源登记与授权。",
+      "scope_note_en": "The licence covers only the baseline text and schema (field structure, enumerations, semantics and adjudication-rule text); this package's narrative, figures, geometry and data are not covered and carry their own source registrations."
+    }
+  },
+  "adoption_claim": "self_declared_component_adoption",
+  "adoption_scope_zh": "组件级采纳:仅采纳 SEB 节点 schema 组件(五项必填字段及其 constraint_machine_rule 机器判据),用于 K标十驿 K0-K9 十处公共节点的 AI 关闭后等价路径声明。不认领任何 SEB 开放等级(L0-L4),不采用评分口径、等级定义、判定规则、AI 权限边界与双联交接台账五个组件。本包七项 SEB 包容性指标无实测数据,在 metrics.json 中保持 unknown。",
+  "adoption_scope_en": "Component-level adoption: adopts only the SEB node_schema component (five required fields and their constraint_machine_rule machine criteria) to declare the AI-off equivalent route at the ten K-marker public nodes K0-K9. Claims no SEB open level (L0-L4) and adopts none of the other five components (scoring calibres, level definitions, adjudication rules, AI authority boundary, dual-copy handover ledger). This package has no measured data for the seven SEB inclusivity indicators; they remain unknown in metrics.json.",
+  "adopter_lexicon_note_zh": "本采用未声明 adopter_lexicon:全部 human_handoff 取值均命中 SEB 规范本体的 13 项角色词表,无需本地化扩充。",
+  "adopter_lexicon_note_en": "No adopter_lexicon is declared: every human_handoff value hits the spec's own 13-token role list, so no localisation extension is required.",
+  "node_source_of_record": "visual/assets/seb-adoption.json",
+  "node_design_note_zh": "十处节点的 ai_off_path 逐点不同,不使用统一模板:等价路径必须由该节点的实际空间条件决定(碑刻、展板、门岗、公告栏、纸本、实体导视各有适用处),统一填写同一句话等于没有逐点设计。",
+  "node_design_note_en": "The ten ai_off_path values differ node by node rather than repeating one template: an equivalent route has to follow the actual spatial conditions of that node (inscriptions, boards, gate posts, notice walls, printed matter and physical wayfinding each apply in different places). One sentence repeated ten times would mean no per-node design at all.",
+  "nodes": [
+    {
+      "id": "K0",
+      "name_zh": "南门户驿",
+      "name_en": "South Gateway Stop",
+      "location_zh": "西直门外大街北界(临时边界南界)",
+      "ai_off_path": "实体里程零点碑与铸刻方向牌常设可读;南入口取阅架常备纸质全带折页地图,含十驿位置与步行时长",
+      "human_handoff": "南门户入口问询岗值守人员",
+      "gate_id": "G0",
+      "operating_mode": "concept_design_not_operating",
+      "responsible_role": "公共空间运营 / 导视设计"
+    },
+    {
+      "id": "K1",
+      "name_zh": "钟声广场",
+      "name_en": "Bell Plaza",
+      "location_zh": "大钟寺片区",
+      "ai_off_path": "敲钟仪式改由现场主持人口播并发放纸质节目单;钟声博物馆实体展签与离线语音导览机(服务台借还,不需个人身份信息)",
+      "human_handoff": "钟声广场活动主持人",
+      "gate_id": "G0",
+      "operating_mode": "concept_design_not_operating",
+      "responsible_role": "文物与文化运营"
+    },
+    {
+      "id": "K2",
+      "name_zh": "大钟寺站驿",
+      "name_en": "Dazhongsi Station Stop",
+      "location_zh": "大钟寺站 TOD 缝合口",
+      "ai_off_path": "站口实体换乘导视牌与纸质接驳时刻表;市政 AI 体检(卡 T3)结论改以现场公告栏定期张贴,附纸质留言与申诉表格",
+      "human_handoff": "站口接驳引导岗值守人员",
+      "gate_id": "G0",
+      "operating_mode": "concept_design_not_operating",
+      "responsible_role": "交通与轨道接驳"
+    },
+    {
+      "id": "K3",
+      "name_zh": "交大缝合口",
+      "name_en": "Jiaotong University Stitch",
+      "location_zh": "交大东路缝合街",
+      "ai_off_path": "桥下空间实体指路牌与常亮照明;校园界面开放时段以门岗实体公示牌为准,不依赖任何智能终端",
+      "human_handoff": "桥下空间日常维护者",
+      "gate_id": "G0",
+      "operating_mode": "concept_design_not_operating",
+      "responsible_role": "桥下空间与市政"
+    },
+    {
+      "id": "K4",
+      "name_zh": "知春折返广场",
+      "name_en": "Zhichun Switchback Plaza",
+      "location_zh": "知春路缝合街口",
+      "ai_off_path": "折返桥实体铭牌与镌刻说明常设;AR 历史层(卡 4)的同一内容以桥面固定图文展板并置呈现,不持设备者获得同等信息",
+      "human_handoff": "折返广场公共空间值守人员",
+      "gate_id": "G0",
+      "operating_mode": "concept_design_not_operating",
+      "responsible_role": "公共空间运营"
+    },
+    {
+      "id": "K5",
+      "name_zh": "原点广场",
+      "name_en": "Origin Plaza",
+      "location_zh": "AI 原点社区中心 · 人字交点",
+      "ai_off_path": "AI 零公里碑与荣誉墙/折返墙均为实体镌刻;贡献者名录同步印制年度纸本置于碑侧取阅架;智能体市集(卡 10)设纸质摊位登记表与现场人工仲裁席",
+      "human_handoff": "市集运营专员",
+      "gate_id": "G0",
+      "operating_mode": "concept_design_not_operating",
+      "responsible_role": "公共空间运营 / 社区运营"
+    },
+    {
+      "id": "K6",
+      "name_zh": "赶考驿",
+      "name_en": "Examination Road Stop",
+      "location_zh": "成府路缝合街 · 清华园车站旧址侧",
+      "ai_off_path": "文化动线以地面实体嵌条与铸铭牌连续指引;文史内容另出纸质折页,旧址本体只引用不改造",
+      "human_handoff": "文化动线讲解服务员",
+      "gate_id": "G0",
+      "operating_mode": "concept_design_not_operating",
+      "responsible_role": "文物与文化运营"
+    },
+    {
+      "id": "K7",
+      "name_zh": "学院路缝合广场",
+      "name_en": "Xueyuan Road Stitch Plaza",
+      "location_zh": "学院路高校开放带",
+      "ai_off_path": "校企实习匹配(卡 8)设线下窗口与纸质登记表,受理与结果均出纸质回执;围墙打开段的开放范围与时段以实体导视及门岗公示牌为准",
+      "human_handoff": "校企对接窗口专员",
+      "gate_id": "G0",
+      "operating_mode": "concept_design_not_operating",
+      "responsible_role": "校地合作运营"
+    },
+    {
+      "id": "K8",
+      "name_zh": "月泉驿",
+      "name_en": "Yuequan Stop",
+      "location_zh": "月泉路缝合街 · 学清路口袋公园",
+      "ai_off_path": "科普驿实体展板与纸质活动单;生态传感(卡 11)读数以现场公示牌每日更新,读数口径与单位一并印在牌面",
+      "human_handoff": "科普驿驻点值守人员",
+      "gate_id": "G0",
+      "operating_mode": "concept_design_not_operating",
+      "responsible_role": "社区运营 / 生态"
+    },
+    {
+      "id": "K9",
+      "name_zh": "登顶广场",
+      "name_en": "Summit Plaza",
+      "location_zh": "众智园北端",
+      "ai_off_path": "人字塔展廊为实体时间线展板;人字线大会设纸质议程与现场引导岗;机器人测试场(卡 T2)边界以实体围挡、地面标线与警示牌界定,不依赖任何联网提示",
+      "human_handoff": "大会现场引导岗位人员",
+      "gate_id": "G0",
+      "operating_mode": "concept_design_not_operating",
+      "responsible_role": "会展与测试场运营"
+    }
+  ],
+  "self_check": {
+    "ai_off_path_forbidden_targets_hit": 0,
+    "human_handoff_role_token_missing": 0,
+    "gate_id_enum_violations": 0,
+    "required_field_missing": 0,
+    "checked_against": "seb-spec.json v0.5.0 components[0].required_fields constraint_machine_rule",
+    "checked_on": "2026-08-28",
+    "note_zh": "本自检只复算 SEB 节点 schema 的机器判据(禁用词命中、角色词命中、枚举合法、字段齐备),不产生任何等级、评分或绩效结论。",
+    "note_en": "This self-check recomputes only the node_schema machine criteria (forbidden-token hits, role-token hits, enum validity, field presence). It yields no level, score or performance conclusion."
+  },
+  "boundary_zh": "全部节点 gate_id 均为 G0、operating_mode 均为 concept_design_not_operating:本方案没有任何一处节点在运行,以上等价路径是概念设计承诺而非既有服务。判据自洽不等于现场有效;不代表机构采纳、批准、现场验证或官方背书。",
+  "boundary_en": "Every node is at gate_id G0 with operating_mode concept_design_not_operating: no node in this proposal is operating, and the routes above are design commitments rather than existing services. Self-consistent criteria are not field effectiveness; nothing here implies institutional adoption, approval, field verification or official endorsement.",
+  "reciprocity_note_zh": "登记互采:SEB v0.2 发布文本在机制谱系中署名折返协议(Issue #1119)为其体裁与开放方式的来源先例;本文件是反向的组件级采用。两个方向均为自愿采用登记,不构成任何一方对另一方的背书。",
+  "reciprocity_note_en": "Mutual adoption, registered: the SEB v0.2 release text credits the Switchback Protocol (Issue #1119) as the precedent for its format and mode of opening; this file is the component-level adoption in the reverse direction. Both directions are voluntary adoption registrations and neither constitutes an endorsement of one party by the other."
+}

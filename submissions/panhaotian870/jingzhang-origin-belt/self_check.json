@@ -1,0 +1,57 @@
+{
+  "schema_version": "0.1.0",
+  "checks": [
+    {
+      "check_id": "DETERMINISTIC_VALIDATION",
+      "result": "pass",
+      "severity": "blocking",
+      "target": "manifest.json",
+      "message": "All required files present, all GeoJSON valid, all JSON schemas consistent"
+    },
+    {
+      "check_id": "BILINGUAL_PACKAGING",
+      "result": "pass",
+      "severity": "major",
+      "target": "proposal.md",
+      "message": "proposal.md (zh primary) and proposal.en.md (en translation) both present with correct frontmatter"
+    },
+    {
+      "check_id": "SPATIAL_REVIEW",
+      "result": "pass",
+      "severity": "blocking",
+      "target": "geometry/",
+      "message": "All 9 GeoJSON files present with required properties (id, layer, source_type, confidence, geometry_role)"
+    },
+    {
+      "check_id": "VISUAL_PACKAGING",
+      "result": "pass",
+      "severity": "blocking",
+      "target": "visual/index.html",
+      "message": "visual/index.html present as offline static HTML, report/proposal.html present"
+    },
+    {
+      "check_id": "PROFESSIONAL_EVIDENCE",
+      "result": "pass",
+      "severity": "blocking",
+      "target": "metrics.json",
+      "message": "sources.json, metrics.json, assumptions.json, compliance_matrix.json, standard_matrix.json, design_depth_matrix.json all present and consistent"
+    },
+    {
+      "check_id": "AGENT_TASK_COVERAGE",
+      "result": "pass",
+      "severity": "major",
+      "target": "compliance_matrix.json",
+      "message": "All 6 agent tasks (agent.1 through agent.6) covered in compliance_matrix.json and proposal.md"
+    },
+    {
+      "check_id": "REQUIRED_FIGURES",
+      "result": "pass",
+      "severity": "blocking",
+      "target": "assets/figures/",
+      "message": "All 5 required figure files declared in manifest.json"
+    }
+  ],
+  "ok": true,
+  "can_enter_formal_review": true,
+  "package_type": "professional_design_package"
+}

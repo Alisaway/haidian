@@ -1,0 +1,1079 @@
+{
+  "$schema": "local://jingzhang/fp01-contract-evidence/v1",
+  "artifact_id": "FP01-CONTRACT-EVIDENCE-001",
+  "artifact_version": "0.1.0",
+  "contract_id": "FP01-CONTRACT-001",
+  "pilot_id": "FP01",
+  "title_zh": "AI原点首用站：学习与职业服务100日首用合同证据包",
+  "title_en": "AI Origin First-Use Station: 100-Day Learning and Career Service Contract Evidence Pack",
+  "language_contract": "embedded_bilingual_fields",
+  "artifact_status": {
+    "proposal_status": "proposed_not_executed",
+    "contract_status": "concept_template_unexecuted",
+    "authorization_status": "not_authorized",
+    "procurement_status": "not_procured",
+    "deployment_status": "not_deployed",
+    "fieldwork_status": "not_conducted",
+    "measurement_status": "pending_measurement",
+    "outcome_status": "unknown",
+    "scope_note_zh": "本文件是可机器校验的设计合同与合成回执夹具，不是签署合同、采购文件、政府授权、实地调研、运行记录、绩效结果或实施证明。",
+    "scope_note_en": "This file is a machine-checkable design contract with synthetic receipt fixtures. It is not a signed contract, procurement instrument, government authorization, field study, operating record, performance result, or evidence of delivery."
+  },
+  "single_problem_rule": {
+    "rule": "S07_is_the_only_user_service_problem_S03_is_evaluation_S04_is_interface_support",
+    "service_problem_scenario_id": "S07",
+    "evaluation_scenario_id": "S03",
+    "interface_support_scenario_id": "S04",
+    "scenario_roles": [
+      {
+        "scenario_id": "S07",
+        "feature_id": "SCENARIO-S07",
+        "role": "only_user_service_problem",
+        "is_user_service_problem": true,
+        "title_zh": "学习与职业协作工作室",
+        "title_en": "Learning and Career Studio"
+      },
+      {
+        "scenario_id": "S03",
+        "feature_id": "SCENARIO-S03",
+        "role": "evaluation_only",
+        "is_user_service_problem": false,
+        "title_zh": "城市多模态评测实验室",
+        "title_en": "Urban Multimodal Evaluation Lab"
+      },
+      {
+        "scenario_id": "S04",
+        "feature_id": "SCENARIO-S04",
+        "role": "interface_support_only",
+        "is_user_service_problem": false,
+        "title_zh": "AI City API场景接入台",
+        "title_en": "AI City API Gateway"
+      }
+    ]
+  },
+  "service_problem": {
+    "problem_id": "FP01-S07-PROBLEM-001",
+    "status": "design_question_not_field_verified",
+    "question_zh": "一位早期职业阶段使用者能否在协议零号站，不依赖智能手机或 AI-only 路径，找到并经人工确认一项合适的学习或职业服务，并拿到可申诉、可删除、可退出的回执？",
+    "question_en": "Can an early-career user at Protocol Station Zero find one suitable learning or career service, have it confirmed by a person, and receive an appealable, deletable, and exit-enabled receipt without depending on a smartphone or an AI-only path?",
+    "user_outcome_zh": "找到一项由人工确认的合适服务，或得到有理由、可申诉且不降低原有人工服务可达性的拒绝；两种结果都附带删除与退出权利。",
+    "user_outcome_en": "Receive either one human-confirmed suitable service or a reasoned and appealable refusal that does not reduce access to the prior human service; both outcomes carry deletion and exit rights.",
+    "service_scope": "learning_or_career_service_discovery_and_human_confirmed_referral",
+    "excluded_decisions": [
+      "admission_eligibility",
+      "employment_eligibility",
+      "hiring_or_rejection",
+      "benefit_eligibility",
+      "credential_award",
+      "automated_ranking_of_people"
+    ],
+    "success_definition_status": "proposed_not_measured"
+  },
+  "design_persona": {
+    "persona_id": "FP01-PERSONA-COMPOSITE-001",
+    "label_zh": "早期职业阶段使用者（虚构复合设计人物）",
+    "label_en": "Early-career user (fictional composite design persona)",
+    "persona_type": "fictional_composite_design_persona",
+    "is_real_person": false,
+    "is_research_participant": false,
+    "is_fieldwork_subject": false,
+    "evidence_basis": "design_reasoning_only_not_empirical_user_research",
+    "direct_identifiers": [],
+    "mobility_mode_for_design_test": "wheelchair_user",
+    "mobility_mode_status": "synthetic_accessibility_design_test_condition",
+    "situation_zh": "正在探索一次学习或职业方向调整，希望先了解可用的课程、辅导或公共职业服务，但不希望被迫安装应用、注册 AI 账户或接受自动资格判断。",
+    "situation_en": "Exploring an early-career learning or work transition and seeking available courses, mentoring, or public career services without being forced to install an app, create an AI account, or accept an automated eligibility decision.",
+    "design_needs": [
+      "walk_in_or_staffed_access",
+      "no_smartphone_required",
+      "non_ai_catalogue_available",
+      "plain_language_explanation",
+      "human_confirmation_before_referral",
+      "appeal_route",
+      "deletion_route",
+      "exit_and_baseline_restoration"
+    ],
+    "limitation_zh": "该人物仅用于检查服务旅程和回执结构，不代表任何真实个人、群体规模、用户偏好、需求频率或调研结论。",
+    "limitation_en": "This persona exists only to test the service journey and receipt structure. It represents no actual person, population size, preference distribution, demand frequency, or research finding.",
+    "mobility_limitation_zh": "轮椅使用仅是检验无障碍通行、服务台与人工接管界面的合成设计条件，不是观察到的真实人物或群体特征，也不是实地调研结论。",
+    "mobility_limitation_en": "Wheelchair use is a synthetic condition for testing accessible circulation, the service desk, and the human-takeover interface. It is not an observed trait of an actual person or population and is not a field-research finding."
+  },
+  "site_binding": {
+    "binding_status": "provisional_concept_binding",
+    "provisional": true,
+    "official_siting": false,
+    "survey_status": "unknown",
+    "ownership_status": "unknown",
+    "operating_permission_status": "unknown",
+    "required_feature_ids": [
+      "ROOM-TEST-001",
+      "PUBLIC-TEST-001",
+      "PROV-KEY-002"
+    ],
+    "features": [
+      {
+        "feature_id": "ROOM-TEST-001",
+        "role": "protocol_ticket_checking_room",
+        "name_zh": "协议验票室",
+        "name_en": "Protocol Ticket-Checking Room",
+        "status": "conceptual_evidence_window_pending_survey"
+      },
+      {
+        "feature_id": "PUBLIC-TEST-001",
+        "role": "parent_public_space",
+        "name_zh": "协议零号站",
+        "name_en": "Protocol Station Zero",
+        "status": "provisional_concept_carrier"
+      },
+      {
+        "feature_id": "PROV-KEY-002",
+        "role": "provisional_key_area_context",
+        "name_zh": "北京AI原点社区粗略范围",
+        "name_en": "Provisional Beijing AI Origin Community extent",
+        "status": "provisional_constraint_not_official_boundary"
+      }
+    ],
+    "limitation_zh": "绑定仅引用现有临时粗略几何与概念公共空间。它不确认精确点位、房间、边界、产权、运营许可、建设条件或实施安排。",
+    "limitation_en": "The binding references existing provisional rough geometry and a conceptual public space only. It confirms no precise site, room, boundary, ownership, operating permission, construction condition, or implementation arrangement."
+  },
+  "spatial_prototypes": [
+    {
+      "scale_id": "SCALE-1-500",
+      "drawing_scale": "1:500",
+      "prototype_type": "room_test_001_evidence_window_plan",
+      "title_zh": "协议验票室临时证据窗口",
+      "title_en": "Protocol Ticket-Checking Room provisional evidence window",
+      "status": "concept_spatial_prototype_not_executed",
+      "dimension_status": "concept_dimension_pending_survey",
+      "official_siting": false,
+      "existing_condition_claim": false,
+      "survey_status": "pending",
+      "required_feature_ids": [
+        "ROOM-TEST-001",
+        "PUBLIC-TEST-001",
+        "PROV-KEY-002"
+      ],
+      "primary_binding_feature_id": "ROOM-TEST-001",
+      "concept_dimensions": [
+        {
+          "dimension_id": "SCALE-1-500-WIDTH",
+          "dimension": "concept_evidence_window_width",
+          "value": 140.0,
+          "unit": "m",
+          "status": "concept_dimension_pending_survey"
+        },
+        {
+          "dimension_id": "SCALE-1-500-LENGTH",
+          "dimension": "concept_evidence_window_length",
+          "value": 180.0,
+          "unit": "m",
+          "status": "concept_dimension_pending_survey"
+        }
+      ],
+      "program_bindings": [
+        "S07_user_service",
+        "S03_independent_evaluation",
+        "S04_interface_support",
+        "staffed_and_no_smartphone_entry"
+      ],
+      "limitation_zh": "140×180米仅为1:500设计测试包络，不替代GeoJSON登记面积，也不代表现状测绘、正式选址、地块边界、建设范围或审批结论。",
+      "limitation_en": "The 140 by 180 metre envelope is a 1:500 design test only. It does not replace the registered GeoJSON area or represent an existing-condition survey, formal siting, parcel boundary, construction extent, or approval."
+    },
+    {
+      "scale_id": "SCALE-1-100",
+      "drawing_scale": "1:100",
+      "prototype_type": "reversible_service_module_plan",
+      "title_zh": "18×12米可逆服务模块",
+      "title_en": "18 by 12 metre reversible service module",
+      "status": "concept_spatial_prototype_not_executed",
+      "dimension_status": "concept_dimension_pending_survey",
+      "official_siting": false,
+      "existing_condition_claim": false,
+      "survey_status": "pending",
+      "primary_binding_feature_id": "ROOM-TEST-001",
+      "reversible_module": true,
+      "concept_dimensions": [
+        {
+          "dimension_id": "SCALE-1-100-WIDTH",
+          "dimension": "module_width",
+          "value": 18.0,
+          "unit": "m",
+          "status": "concept_dimension_pending_survey"
+        },
+        {
+          "dimension_id": "SCALE-1-100-DEPTH",
+          "dimension": "module_depth",
+          "value": 12.0,
+          "unit": "m",
+          "status": "concept_dimension_pending_survey"
+        },
+        {
+          "dimension_id": "SCALE-1-100-AREA",
+          "dimension": "derived_test_module_area",
+          "value": 216.0,
+          "unit": "sqm",
+          "formula": "18.0 * 12.0",
+          "status": "concept_dimension_pending_survey"
+        },
+        {
+          "dimension_id": "SCALE-1-100-TURNING",
+          "dimension": "wheelchair_turning_circle_diameter_design_test",
+          "value": 1.5,
+          "unit": "m",
+          "status": "concept_dimension_pending_survey"
+        }
+      ],
+      "reversible_zones": [
+        "staffed_or_optional_ai_choice",
+        "s07_learning_and_career_service",
+        "waiting_and_ordinary_catalogue",
+        "human_confirmation",
+        "paper_or_portable_receipt",
+        "appeal_deletion_export_and_exit"
+      ],
+      "reversibility_rule": "Use demountable partitions, portable service furniture, and supplier-neutral interfaces so the module can return to an ordinary staffed service layout without AI-only dependencies.",
+      "limitation_zh": "18×12米、216平方米和1.50米回转直径均为待测绘、待无障碍专业复核的设计测试尺寸，不表示现状房间、正式点位、合规结论或建设承诺。",
+      "limitation_en": "The 18 by 12 metre envelope, 216 square metre derived area, and 1.50 metre turning diameter are design-test dimensions pending survey and professional accessibility review. They do not represent an existing room, formal site, compliance conclusion, or construction commitment."
+    },
+    {
+      "scale_id": "SCALE-1-50",
+      "drawing_scale": "1:50",
+      "prototype_type": "human_takeover_interface_and_section",
+      "title_zh": "人工接管界面与剖面",
+      "title_en": "Human-takeover interface and section",
+      "status": "concept_spatial_prototype_not_executed",
+      "dimension_status": "concept_dimension_pending_survey",
+      "official_siting": false,
+      "existing_condition_claim": false,
+      "survey_status": "pending",
+      "primary_binding_feature_id": "ROOM-TEST-001",
+      "concept_dimensions": [
+        {
+          "dimension_id": "SCALE-1-50-COUNTER",
+          "dimension": "service_counter_height_design_test",
+          "value": 0.85,
+          "unit": "m",
+          "status": "concept_dimension_pending_survey"
+        },
+        {
+          "dimension_id": "SCALE-1-50-CLEAR-PASSAGE",
+          "dimension": "minimum_clear_passage_width_design_test",
+          "value": 1.2,
+          "unit": "m",
+          "operator": ">=",
+          "status": "concept_dimension_pending_survey"
+        }
+      ],
+      "interface_components": [
+        "staffed_human_window",
+        "publicly_visible_ai_paused_or_emergency_takeover_state",
+        "paper_receipt_with_version_human_authority_and_appeal_reference",
+        "no_smartphone_route_without_account_or_qr_code",
+        "exit_link_to_human_baseline_and_portable_data_choice"
+      ],
+      "section_test_rule": "After AI is paused, the person-to-person service line, visible responsibility, printed receipt, clear circulation, and exit route remain usable.",
+      "limitation_zh": "0.85米服务台与不小于1.20米净通行宽度是待测绘、待现行标准和专业团队复核的概念设计测试尺寸，不是现状设施、无障碍合规证明、正式选址或施工图。",
+      "limitation_en": "The 0.85 metre service counter and at least 1.20 metre clear passage are conceptual design-test dimensions pending survey, current-standard review, and professional confirmation. They are not existing facilities, proof of accessibility compliance, formal siting, or construction drawings."
+    }
+  ],
+  "service_channels": {
+    "smartphone_required": false,
+    "ai_only_path_allowed": false,
+    "ai_assistance_optional": true,
+    "account_required_for_entry": false,
+    "required_channels": [
+      "staffed_walk_in_desk",
+      "paper_or_staffed_non_ai_catalogue",
+      "accessible_plain_language_explanation",
+      "human_confirmation_and_appeal_desk"
+    ],
+    "continuity_rule": "The staffed and non-AI catalogue path remains available whenever the optional AI-assisted path is offered.",
+    "human_authority_rule": "A named service professional, not a model or supplier, confirms a referral, confirms a refusal, resolves an appeal, and authorizes exit restoration."
+  },
+  "accountability_roles": [
+    {
+      "role_id": "FP01-ROLE-SERVICE-OWNER",
+      "role": "accountable_service_owner",
+      "status": "unconfirmed_design_role",
+      "may_authorize": [
+        "service_problem_definition",
+        "human_service_continuity",
+        "go_revise_stop_recommendation"
+      ],
+      "may_not_delegate_to_ai": [
+        "service_referral_confirmation",
+        "reasoned_refusal_confirmation",
+        "baseline_restoration"
+      ]
+    },
+    {
+      "role_id": "FP01-ROLE-SERVICE-PROFESSIONAL",
+      "role": "learning_or_career_service_professional",
+      "status": "unconfirmed_design_role",
+      "may_authorize": [
+        "service_referral_confirmation",
+        "reasoned_refusal_confirmation",
+        "human_takeover"
+      ],
+      "may_not_delegate_to_ai": [
+        "admission_or_employment_eligibility",
+        "appeal_disposition"
+      ]
+    },
+    {
+      "role_id": "FP01-ROLE-EVALUATOR",
+      "role": "independent_s03_evaluator",
+      "status": "unconfirmed_design_role",
+      "may_authorize": [
+        "evidence_replay_assessment",
+        "threshold_attainment_assessment"
+      ],
+      "separation_rule": "The evaluator must not be the supplier self-certifying the service."
+    },
+    {
+      "role_id": "FP01-ROLE-INTERFACE",
+      "role": "s04_interface_steward",
+      "status": "unconfirmed_design_role",
+      "may_authorize": [
+        "receipt_schema_conformance",
+        "portability_test"
+      ],
+      "separation_rule": "The interface steward cannot approve a service outcome or appeal."
+    },
+    {
+      "role_id": "FP01-ROLE-APPEAL",
+      "role": "independent_human_appeal_role",
+      "status": "unconfirmed_design_role",
+      "may_authorize": [
+        "appeal_disposition",
+        "remedy_instruction"
+      ],
+      "separation_rule": "The appeal role must be reachable without an AI account and independent of the initial model output."
+    },
+    {
+      "role_id": "FP01-ROLE-DATA-RIGHTS",
+      "role": "service_exit_and_data_rights_steward",
+      "status": "unconfirmed_design_role",
+      "may_authorize": [
+        "deletion_completion_or_exception_acknowledgement",
+        "exit_restoration_acknowledgement"
+      ],
+      "separation_rule": "A fixture or supplier assertion cannot substitute for the steward's accountable acknowledgement."
+    },
+    {
+      "role_id": "FP01-ROLE-PROCUREMENT",
+      "role": "separate_lawful_procurement_authority",
+      "status": "unconfirmed_design_role",
+      "may_authorize": [
+        "procurement_only_after_separate_legal_and_professional_review"
+      ],
+      "separation_rule": "No D0-D90 design gate, test fixture, evaluator result, or service recommendation constitutes procurement authorization."
+    }
+  ],
+  "service_catalogue_contract": {
+    "status": "illustrative_structure_pending_accountable_source",
+    "live_catalogue_entry_count": {
+      "knowledge_status": "unknown",
+      "measurement_status": "pending_measurement",
+      "actual_value": null,
+      "unit": "count"
+    },
+    "illustrative_reference": "ILLUSTRATIVE-SERVICE-CATALOGUE-001",
+    "illustrative_reference_is_live_service": false,
+    "required_entry_fields": [
+      "supplier_neutral_service_ref",
+      "accountable_publisher",
+      "published_service_scope",
+      "published_access_conditions",
+      "accessibility_channels",
+      "ordinary_contact_route",
+      "effective_date_and_review_state"
+    ],
+    "selection_constraints": [
+      "catalogue_entry_is_traceable_to_an_accountable_source",
+      "ordinary_non_ai_catalogue_shows_the_same_in_scope_entries",
+      "ai_may_explain_but_not_invent_or_suppress_entries",
+      "human_professional_confirms_any_referral_or_reasoned_refusal",
+      "no_person_eligibility_or_employment_decision"
+    ]
+  },
+  "service_journey": [
+    {
+      "step_id": "J01",
+      "stage": "arrive",
+      "action_zh": "使用者凭现场标识进入人工服务台；无需智能手机、应用或 AI 账户。",
+      "action_en": "The user follows on-site signs to a staffed desk; no smartphone, app, or AI account is required.",
+      "human_or_non_ai_control": "staffed_walk_in_desk"
+    },
+    {
+      "step_id": "J02",
+      "stage": "choose_channel",
+      "action_zh": "使用者选择普通目录与人工咨询，或自愿选择 AI 辅助；拒绝 AI 不影响服务等级。",
+      "action_en": "The user chooses the ordinary catalogue and human consultation or opts into AI assistance; declining AI does not reduce service access.",
+      "human_or_non_ai_control": "paper_or_staffed_non_ai_catalogue"
+    },
+    {
+      "step_id": "J03",
+      "stage": "state_minimum_need",
+      "action_zh": "只记录完成服务所需的目标类别、可达性选择和服务范围，不采集直接身份信息或原始自由文本。",
+      "action_en": "Only the goal category, accessibility choice, and service scope needed to complete the task are recorded; no direct identifiers or raw free text are collected.",
+      "human_or_non_ai_control": "minimum_necessary_staffed_intake"
+    },
+    {
+      "step_id": "J04",
+      "stage": "compare_catalogue",
+      "action_zh": "普通目录始终可见；AI 可以生成候选解释，但不得决定录取、就业、资格或人员排序。",
+      "action_en": "The ordinary catalogue remains visible; AI may explain candidate services but cannot decide admission, employment, eligibility, or ranking of people.",
+      "human_or_non_ai_control": "ordinary_catalogue_is_source_of_continuity"
+    },
+    {
+      "step_id": "J05",
+      "stage": "human_confirmation",
+      "action_zh": "服务专业人员核对服务范围、公开条件和使用者陈述的目标，人工确认一项转介或给出有理由的拒绝。",
+      "action_en": "A service professional checks the service scope, published conditions, and user-stated goal, then confirms one referral or issues a reasoned refusal.",
+      "human_or_non_ai_control": "named_human_confirmation_required"
+    },
+    {
+      "step_id": "J06",
+      "stage": "issue_receipt",
+      "action_zh": "向使用者提供纸质或可携带回执，写明结果、人工责任、AI 是否参与、理由码、申诉、删除和退出路径。",
+      "action_en": "The user receives a paper or portable receipt stating the outcome, human accountability, whether AI assisted, reason code, and appeal, deletion, and exit routes.",
+      "human_or_non_ai_control": "paper_or_portable_receipt"
+    },
+    {
+      "step_id": "J07",
+      "stage": "appeal_delete_or_exit",
+      "action_zh": "使用者可由人工处理申诉、提出删除请求或退出 AI 辅助；退出后恢复普通目录与人工服务，不得降低原有服务。",
+      "action_en": "The user may seek a human-handled appeal, request deletion, or leave AI assistance; exit restores the ordinary catalogue and human service without degrading the prior service.",
+      "human_or_non_ai_control": "human_appeal_and_baseline_restoration"
+    }
+  ],
+  "d0_human_service_baseline": {
+    "baseline_id": "FP01-D0-HUMAN-BASELINE-001",
+    "definition_status": "proposed_control_pending_site_confirmation",
+    "knowledge_status": "unknown",
+    "measurement_status": "pending_measurement",
+    "actual_service_status": "unknown",
+    "actual_values_claimed": false,
+    "comparison_service_zh": "现场人工服务台加普通学习与职业服务目录；不使用 AI 也能完成询问、人工确认、转介、拒绝解释和申诉登记。",
+    "comparison_service_en": "A staffed desk plus an ordinary learning and career service catalogue through which enquiry, human confirmation, referral, refusal explanation, and appeal registration can be completed without AI.",
+    "baseline_measurements": [
+      {
+        "measure_id": "D0-M01",
+        "measure": "service_discovery_completion_ratio",
+        "unit": "ratio",
+        "knowledge_status": "unknown",
+        "measurement_status": "pending_measurement",
+        "actual_value": null
+      },
+      {
+        "measure_id": "D0-M02",
+        "measure": "human_confirmed_referral_completion_ratio",
+        "unit": "ratio",
+        "knowledge_status": "unknown",
+        "measurement_status": "pending_measurement",
+        "actual_value": null
+      },
+      {
+        "measure_id": "D0-M03",
+        "measure": "elapsed_minutes_to_referral_or_reasoned_refusal",
+        "unit": "minutes",
+        "knowledge_status": "unknown",
+        "measurement_status": "pending_measurement",
+        "actual_value": null
+      },
+      {
+        "measure_id": "D0-M04",
+        "measure": "no_smartphone_path_availability_ratio",
+        "unit": "ratio",
+        "knowledge_status": "unknown",
+        "measurement_status": "pending_measurement",
+        "actual_value": null
+      },
+      {
+        "measure_id": "D0-M05",
+        "measure": "appeal_route_comprehension_ratio",
+        "unit": "ratio",
+        "knowledge_status": "unknown",
+        "measurement_status": "pending_measurement",
+        "actual_value": null
+      },
+      {
+        "measure_id": "D0-M06",
+        "measure": "deletion_and_exit_request_completion_ratio",
+        "unit": "ratio",
+        "knowledge_status": "unknown",
+        "measurement_status": "pending_measurement",
+        "actual_value": null
+      }
+    ],
+    "measurement_preconditions": [
+      "surveyed_and_authorized_service_carrier",
+      "accountable_human_service_owner",
+      "rights_cleared_measurement_protocol",
+      "independent_review_of_definitions_and_denominators",
+      "accessible_and_non_ai_participation_route",
+      "no_direct_personal_data_in_public_evidence"
+    ],
+    "anti_fabrication_rule": "No D0 or later actual value may be populated from this design pack. Actual values require dated, rights-cleared, independently reviewable measurement records."
+  },
+  "work_packages": [
+    {
+      "work_package_id": "FP01-WP-S07",
+      "scenario_id": "S07",
+      "role": "service_delivery_problem",
+      "status": "proposed_not_executed",
+      "output": "human_confirmed_learning_or_career_service_referral_or_reasoned_refusal_with_rights_receipt"
+    },
+    {
+      "work_package_id": "FP01-WP-S03",
+      "scenario_id": "S03",
+      "role": "independent_evaluation",
+      "status": "proposed_not_executed",
+      "output": "replayable_evaluation_of_access_human_confirmation_receipt_and_exit_controls"
+    },
+    {
+      "work_package_id": "FP01-WP-S04",
+      "scenario_id": "S04",
+      "role": "interface_support",
+      "status": "proposed_not_executed",
+      "output": "supplier_neutral_receipt_and_rights_event_interface_without_central_raw_personal_data_pool"
+    }
+  ],
+  "contract_gates": [
+    {
+      "gate_id": "D0",
+      "status": "proposed_not_executed",
+      "required_output": "one_service_problem_persona_provisional_site_and_human_non_ai_baseline_measurement_plan",
+      "decision": "pending"
+    },
+    {
+      "gate_id": "D30",
+      "status": "proposed_not_executed",
+      "required_output": "named_roles_fixed_versions_data_boundary_service_catalogue_and_design_thresholds",
+      "decision": "pending"
+    },
+    {
+      "gate_id": "D60",
+      "status": "proposed_not_executed",
+      "required_output": "sandbox_or_shadow_replay_of_success_refusal_human_takeover_and_exit_restoration_receipts",
+      "decision": "pending"
+    },
+    {
+      "gate_id": "D90",
+      "status": "proposed_not_executed",
+      "required_output": "independent_evidence_pack_with_failures_uncertainty_and_go_revise_stop_record",
+      "decision": "pending"
+    },
+    {
+      "gate_id": "D100",
+      "status": "proposed_not_executed",
+      "required_output": "separately_authorized_revocable_acceptance_or_baseline_restoration_data_disposal_and_closeout",
+      "decision": "pending"
+    }
+  ],
+  "contract_clauses": [
+    {
+      "clause_id": "C01",
+      "title": "public_problem_human_baseline_users_and_prohibited_automation",
+      "status": "proposed_not_executed",
+      "acceptance_state": "pending",
+      "evidence_paths": [
+        "service_problem",
+        "design_persona",
+        "d0_human_service_baseline"
+      ]
+    },
+    {
+      "clause_id": "C02",
+      "title": "separated_procurement_operation_evaluation_and_appeal_roles",
+      "status": "proposed_not_executed",
+      "acceptance_state": "pending",
+      "evidence_paths": [
+        "accountability_roles",
+        "work_packages"
+      ]
+    },
+    {
+      "clause_id": "C03",
+      "title": "version_provenance_and_capability_limits",
+      "status": "proposed_not_executed",
+      "acceptance_state": "pending",
+      "evidence_paths": [
+        "artifact_version",
+        "service_problem.excluded_decisions",
+        "service_catalogue_contract"
+      ]
+    },
+    {
+      "clause_id": "C04",
+      "title": "site_funding_data_term_and_stop_thresholds",
+      "status": "proposed_not_executed",
+      "acceptance_state": "pending",
+      "evidence_paths": [
+        "site_binding",
+        "data_minimization",
+        "design_thresholds"
+      ],
+      "unresolved_inputs": [
+        "funding_source",
+        "authorized_term",
+        "precise_site_and_operator"
+      ]
+    },
+    {
+      "clause_id": "C05",
+      "title": "interoperability_and_portability_evidence",
+      "status": "proposed_not_executed",
+      "acceptance_state": "pending",
+      "evidence_paths": [
+        "receipt_contract",
+        "illustrative_receipts",
+        "work_packages.FP01-WP-S04"
+      ]
+    },
+    {
+      "clause_id": "C06",
+      "title": "account_free_accessibility_and_human_takeover",
+      "status": "proposed_not_executed",
+      "acceptance_state": "pending",
+      "evidence_paths": [
+        "service_channels",
+        "service_journey",
+        "illustrative_receipts.human_takeover"
+      ]
+    },
+    {
+      "clause_id": "C07",
+      "title": "incident_appeal_and_public_record",
+      "status": "proposed_not_executed",
+      "acceptance_state": "pending",
+      "evidence_paths": [
+        "receipt_contract.rights_required_on_every_receipt",
+        "illustrative_receipts",
+        "data_minimization.public_evidence_rule"
+      ]
+    },
+    {
+      "clause_id": "C08",
+      "title": "stop_baseline_restoration_and_data_disposal_drill",
+      "status": "proposed_not_executed",
+      "acceptance_state": "pending",
+      "evidence_paths": [
+        "exit_and_restoration_protocol",
+        "illustrative_receipts.exit_restoration"
+      ]
+    },
+    {
+      "clause_id": "C09",
+      "title": "public_evidence_pack_passes_failures_and_uncertainty",
+      "status": "proposed_not_executed",
+      "acceptance_state": "pending",
+      "evidence_paths": [
+        "artifact_status",
+        "d0_human_service_baseline",
+        "verification"
+      ]
+    },
+    {
+      "clause_id": "C10",
+      "title": "independent_go_revise_stop_decision_and_dissent",
+      "status": "proposed_not_executed",
+      "acceptance_state": "pending",
+      "evidence_paths": [
+        "accountability_roles.FP01-ROLE-EVALUATOR",
+        "contract_gates.D90"
+      ]
+    },
+    {
+      "clause_id": "C11",
+      "title": "separate_lawful_authorization_before_revocable_acceptance",
+      "status": "proposed_not_executed",
+      "acceptance_state": "pending",
+      "evidence_paths": [
+        "artifact_status.authorization_status",
+        "accountability_roles.FP01-ROLE-PROCUREMENT",
+        "contract_gates.D100"
+      ]
+    },
+    {
+      "clause_id": "C12",
+      "title": "no_outcome_payment_baseline_restoration_data_disposal_asset_return_and_failure_record",
+      "status": "proposed_not_executed",
+      "acceptance_state": "pending",
+      "evidence_paths": [
+        "exit_and_restoration_protocol",
+        "data_minimization",
+        "contract_gates.D100"
+      ],
+      "payment_status": "not_applicable_no_procurement_or_execution"
+    }
+  ],
+  "design_thresholds": [
+    {
+      "threshold_id": "FP01-T01",
+      "measure": "no_smartphone_and_non_ai_path_availability_ratio",
+      "operator": ">=",
+      "target_value": 1.0,
+      "unit": "ratio",
+      "status": "proposed_not_measured",
+      "actual_value": null,
+      "gate_effect": "stop_if_unavailable_for_any_in_scope_service_session"
+    },
+    {
+      "threshold_id": "FP01-T02",
+      "measure": "human_confirmation_before_referral_or_refusal_ratio",
+      "operator": ">=",
+      "target_value": 1.0,
+      "unit": "ratio",
+      "status": "proposed_not_measured",
+      "actual_value": null,
+      "gate_effect": "stop_if_any_in_scope_outcome_lacks_named_human_confirmation"
+    },
+    {
+      "threshold_id": "FP01-T03",
+      "measure": "required_receipt_event_class_fixture_coverage_ratio",
+      "operator": ">=",
+      "target_value": 1.0,
+      "unit": "ratio",
+      "status": "proposed_not_measured",
+      "actual_value": null,
+      "gate_effect": "revise_if_any_required_event_contract_is_missing"
+    },
+    {
+      "threshold_id": "FP01-T04",
+      "measure": "appeal_deletion_and_exit_field_coverage_ratio",
+      "operator": ">=",
+      "target_value": 1.0,
+      "unit": "ratio",
+      "status": "proposed_not_measured",
+      "actual_value": null,
+      "gate_effect": "stop_if_any_issued_receipt_omits_a_required_right"
+    },
+    {
+      "threshold_id": "FP01-T05",
+      "measure": "direct_personal_identifier_count_in_receipt_payload",
+      "operator": "==",
+      "target_value": 0,
+      "unit": "count",
+      "status": "proposed_not_measured",
+      "actual_value": null,
+      "gate_effect": "stop_and_delete_if_direct_identifier_enters_the_receipt_payload"
+    },
+    {
+      "threshold_id": "FP01-T06",
+      "measure": "unresolved_severity_one_safety_or_rights_defect_count",
+      "operator": "==",
+      "target_value": 0,
+      "unit": "count",
+      "status": "proposed_not_measured",
+      "actual_value": null,
+      "gate_effect": "stop_until_independently_closed"
+    },
+    {
+      "threshold_id": "FP01-T07",
+      "measure": "verified_exit_to_human_non_ai_baseline_restoration_ratio",
+      "operator": ">=",
+      "target_value": 1.0,
+      "unit": "ratio",
+      "status": "proposed_not_measured",
+      "actual_value": null,
+      "gate_effect": "stop_if_exit_reduces_access_or_leaves_ai_only_dependency"
+    }
+  ],
+  "data_minimization": {
+    "direct_personal_data_allowed": false,
+    "central_raw_personal_data_pool_allowed": false,
+    "raw_free_text_allowed_in_receipt": false,
+    "biometric_data_allowed": false,
+    "allowed_receipt_payload_fields": [
+      "synthetic_case_ref",
+      "event_class",
+      "service_catalogue_ref",
+      "reason_code",
+      "ai_assistance_state",
+      "human_confirmation_state",
+      "rights_routes",
+      "expected_state_transition"
+    ],
+    "prohibited_direct_identifier_fields": [
+      "name",
+      "full_name",
+      "email",
+      "phone",
+      "postal_address",
+      "government_id",
+      "id_card",
+      "passport_number",
+      "wechat_id",
+      "device_id",
+      "ip_address",
+      "biometric_template",
+      "face_image",
+      "raw_free_text"
+    ],
+    "retention_period_status": "unknown_pending_legal_and_operational_review",
+    "retention_period_value": null,
+    "deletion_rule": "A deletion request must produce a separate human-accountable completion or exception acknowledgement; an illustrative fixture cannot prove deletion.",
+    "public_evidence_rule": "Only rights-cleared aggregate, synthetic, or appropriately de-identified evidence may enter the public pack."
+  },
+  "receipt_contract": {
+    "receipt_schema_version": "fp01-receipt-fixture-v1",
+    "required_event_classes": [
+      "success",
+      "refusal",
+      "human_takeover",
+      "exit_restoration"
+    ],
+    "required_fields": [
+      "receipt_id",
+      "event_class",
+      "fixture_status",
+      "synthetic_case_ref",
+      "smartphone_required",
+      "ai_only_path",
+      "ai_assistance_state",
+      "human_confirmation",
+      "service_outcome",
+      "rights",
+      "expected_state_transition",
+      "direct_personal_data"
+    ],
+    "rights_required_on_every_receipt": [
+      "appeal",
+      "deletion",
+      "exit"
+    ],
+    "execution_boundary": "Receipt objects below are synthetic fixtures for schema and transition tests. They are not observed service events, completed rights requests, or outcome evidence."
+  },
+  "illustrative_receipts": [
+    {
+      "receipt_id": "FP01-FIXTURE-SUCCESS-001",
+      "event_class": "success",
+      "fixture_status": "illustrative_not_observed",
+      "synthetic_case_ref": "SYNTHETIC-FP01-CASE-A",
+      "smartphone_required": false,
+      "ai_only_path": false,
+      "ai_assistance_state": "optional_assistance_in_fixture",
+      "human_confirmation": {
+        "required": true,
+        "authority_role": "learning_or_career_service_professional",
+        "fixture_state": "human_confirmed_referral_example_not_observed"
+      },
+      "service_outcome": {
+        "outcome_code": "human_confirmed_service_referral_example",
+        "service_catalogue_ref": "ILLUSTRATIVE-SERVICE-CATALOGUE-001",
+        "service_category_zh": "学习或职业服务（示例类别）",
+        "service_category_en": "Learning or career service (illustrative category)",
+        "eligibility_decision_made": false,
+        "reason_code": "PUBLIC_CATALOGUE_SCOPE_AND_USER_STATED_GOAL_ALIGNED"
+      },
+      "rights": {
+        "appeal": {
+          "available": true,
+          "route": "staffed_desk_or_paper_reference",
+          "handler": "independent_human_appeal_role"
+        },
+        "deletion": {
+          "available": true,
+          "route": "staffed_desk_or_paper_reference",
+          "completion_requires_separate_acknowledgement": true
+        },
+        "exit": {
+          "available": true,
+          "route": "staffed_desk_or_paper_reference",
+          "restoration_target": "human_and_non_ai_baseline"
+        }
+      },
+      "expected_state_transition": [
+        "portable_receipt_offered",
+        "ordinary_catalogue_remains_available",
+        "no_ai_account_dependency_created"
+      ],
+      "direct_personal_data": {
+        "present": false,
+        "fields": []
+      }
+    },
+    {
+      "receipt_id": "FP01-FIXTURE-REFUSAL-001",
+      "event_class": "refusal",
+      "fixture_status": "illustrative_not_observed",
+      "synthetic_case_ref": "SYNTHETIC-FP01-CASE-B",
+      "smartphone_required": false,
+      "ai_only_path": false,
+      "ai_assistance_state": "optional_assistance_declined_or_insufficient",
+      "human_confirmation": {
+        "required": true,
+        "authority_role": "learning_or_career_service_professional",
+        "fixture_state": "reasoned_refusal_human_confirmed_example_not_observed"
+      },
+      "service_outcome": {
+        "outcome_code": "no_suitable_service_confirmed_from_current_catalogue_example",
+        "service_catalogue_ref": "ILLUSTRATIVE-SERVICE-CATALOGUE-001",
+        "eligibility_decision_made": false,
+        "reason_code": "NO_CURRENT_CATALOGUE_ENTRY_MATCHES_DECLARED_SCOPE",
+        "continuity_offer": "staffed_catalogue_review_and_appeal"
+      },
+      "rights": {
+        "appeal": {
+          "available": true,
+          "route": "staffed_desk_or_paper_reference",
+          "handler": "independent_human_appeal_role"
+        },
+        "deletion": {
+          "available": true,
+          "route": "staffed_desk_or_paper_reference",
+          "completion_requires_separate_acknowledgement": true
+        },
+        "exit": {
+          "available": true,
+          "route": "staffed_desk_or_paper_reference",
+          "restoration_target": "human_and_non_ai_baseline"
+        }
+      },
+      "expected_state_transition": [
+        "reason_code_explained_by_human",
+        "ordinary_catalogue_and_appeal_remain_available",
+        "no_adverse_person_profile_created"
+      ],
+      "direct_personal_data": {
+        "present": false,
+        "fields": []
+      }
+    },
+    {
+      "receipt_id": "FP01-FIXTURE-HUMAN-TAKEOVER-001",
+      "event_class": "human_takeover",
+      "fixture_status": "illustrative_not_observed",
+      "synthetic_case_ref": "SYNTHETIC-FP01-CASE-C",
+      "smartphone_required": false,
+      "ai_only_path": false,
+      "ai_assistance_state": "paused_for_human_takeover_in_fixture",
+      "human_confirmation": {
+        "required": true,
+        "authority_role": "learning_or_career_service_professional",
+        "fixture_state": "human_takeover_example_not_observed"
+      },
+      "service_outcome": {
+        "outcome_code": "human_service_continues_after_ai_pause_example",
+        "service_catalogue_ref": "ILLUSTRATIVE-SERVICE-CATALOGUE-001",
+        "eligibility_decision_made": false,
+        "reason_code": "USER_REQUEST_OR_AMBIGUOUS_AI_OUTPUT_TRIGGERED_HUMAN_TAKEOVER"
+      },
+      "rights": {
+        "appeal": {
+          "available": true,
+          "route": "staffed_desk_or_paper_reference",
+          "handler": "independent_human_appeal_role"
+        },
+        "deletion": {
+          "available": true,
+          "route": "staffed_desk_or_paper_reference",
+          "completion_requires_separate_acknowledgement": true
+        },
+        "exit": {
+          "available": true,
+          "route": "staffed_desk_or_paper_reference",
+          "restoration_target": "human_and_non_ai_baseline"
+        }
+      },
+      "expected_state_transition": [
+        "ai_assistance_paused",
+        "human_professional_assumes_service_control",
+        "ordinary_catalogue_remains_available",
+        "takeover_reason_added_to_portable_receipt"
+      ],
+      "direct_personal_data": {
+        "present": false,
+        "fields": []
+      }
+    },
+    {
+      "receipt_id": "FP01-FIXTURE-EXIT-RESTORATION-001",
+      "event_class": "exit_restoration",
+      "fixture_status": "illustrative_not_observed",
+      "synthetic_case_ref": "SYNTHETIC-FP01-CASE-D",
+      "smartphone_required": false,
+      "ai_only_path": false,
+      "ai_assistance_state": "disabled_by_exit_request_in_fixture",
+      "human_confirmation": {
+        "required": true,
+        "authority_role": "service_exit_and_data_rights_steward",
+        "fixture_state": "exit_and_restoration_acknowledgement_example_not_observed"
+      },
+      "service_outcome": {
+        "outcome_code": "exit_requested_and_non_ai_baseline_restoration_expected",
+        "service_catalogue_ref": "ILLUSTRATIVE-SERVICE-CATALOGUE-001",
+        "eligibility_decision_made": false,
+        "reason_code": "USER_CHOSE_TO_EXIT_AI_ASSISTANCE",
+        "deletion_completion_status": "unknown_requires_separate_human_accountable_acknowledgement"
+      },
+      "rights": {
+        "appeal": {
+          "available": true,
+          "route": "staffed_desk_or_paper_reference",
+          "handler": "independent_human_appeal_role"
+        },
+        "deletion": {
+          "available": true,
+          "route": "staffed_desk_or_paper_reference",
+          "completion_requires_separate_acknowledgement": true
+        },
+        "exit": {
+          "available": true,
+          "route": "staffed_desk_or_paper_reference",
+          "restoration_target": "human_and_non_ai_baseline"
+        }
+      },
+      "expected_state_transition": [
+        "ai_assistance_disabled",
+        "human_and_non_ai_baseline_restored",
+        "deletion_request_registered_for_separate_acknowledgement",
+        "portable_exit_receipt_offered",
+        "no_loss_of_ordinary_service_access"
+      ],
+      "direct_personal_data": {
+        "present": false,
+        "fields": []
+      }
+    }
+  ],
+  "exit_and_restoration_protocol": {
+    "status": "proposed_not_executed",
+    "trigger_routes": [
+      "user_requests_exit",
+      "user_requests_human_takeover",
+      "critical_rights_or_safety_defect",
+      "non_ai_path_unavailable",
+      "authorization_missing_or_withdrawn"
+    ],
+    "required_sequence": [
+      "pause_optional_ai_assistance",
+      "hand_control_to_named_human_role",
+      "restore_staffed_and_non_ai_catalogue_path",
+      "register_deletion_or_portability_request_if_requested",
+      "issue_portable_exit_receipt",
+      "obtain_separate_completion_or_exception_acknowledgement",
+      "retain_only_rights_cleared_failure_evidence"
+    ],
+    "non_degradation_rule": "Exit must not make the ordinary human or non-AI service less available than the measured D0 baseline.",
+    "actual_restoration_status": "unknown_pending_measurement"
+  },
+  "verification": {
+    "script": "visual/assets/verify-fp01-contract.js",
+    "command": "node visual/assets/verify-fp01-contract.js",
+    "runtime": "nodejs_standard_library_only",
+    "verified_claim_scope": "structure_and_fixture_contract_only",
+    "excluded_verification_claims": [
+      "contract_execution",
+      "government_authorization",
+      "site_confirmation",
+      "service_operation",
+      "baseline_value",
+      "threshold_attainment",
+      "deletion_completion",
+      "public_benefit"
+    ]
+  }
+}

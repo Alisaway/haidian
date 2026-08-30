@@ -537,6 +537,128 @@
         "A-BOUNDARY-001",
         "A-KEYAREAS-001"
       ]
+    },
+    "pilot_gate_count": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(G0,G1,G2,G3,G4,G5)",
+      "confidence": "high",
+      "assumptions": [
+        "A-PILOT-001"
+      ]
+    },
+    "pilot_study_window_days": {
+      "status": "known",
+      "value": 90,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "30 + 30 + 30 day study windows",
+      "confidence": "high",
+      "assumptions": [
+        "A-PILOT-001"
+      ]
+    },
+    "group_acceptance_cohort_count": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(separately_reported_acceptance_groups)",
+      "confidence": "high",
+      "assumptions": [
+        "A-EQUITY-001",
+        "A-PILOT-001"
+      ]
+    },
+    "simulation_task_count": {
+      "status": "known",
+      "value": 12,
+      "unit": "count",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "count(simulation.tasks)",
+      "confidence": "high",
+      "assumptions": [
+        "A-SIMULATION-001"
+      ]
+    },
+    "simulation_success_rate": {
+      "status": "known",
+      "value": 0.8333333333333334,
+      "unit": "ratio",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "tasks with outcome=success or outcome ending _success / simulation_task_count",
+      "confidence": "high",
+      "assumptions": [
+        "A-SIMULATION-001"
+      ]
+    },
+    "tool_schema_pass_rate": {
+      "status": "known",
+      "value": 0.9166666666666666,
+      "unit": "ratio",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "tasks with dispatch_schema_valid=true / simulation_task_count",
+      "confidence": "high",
+      "assumptions": [
+        "A-SIMULATION-001"
+      ]
+    },
+    "audit_completeness": {
+      "status": "known",
+      "value": 0.9166666666666666,
+      "unit": "ratio",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "tasks with audit_complete=true / simulation_task_count",
+      "confidence": "high",
+      "assumptions": [
+        "A-SIMULATION-001"
+      ]
+    },
+    "ai_off_rehearsal_success_rate": {
+      "status": "known",
+      "value": 0.9166666666666666,
+      "unit": "ratio",
+      "source_files": [
+        "simulation.json",
+        "proposal.md"
+      ],
+      "formula": "synthetic same-task cases completed through staffed, paper, telephone or fixed spatial alternatives / simulation_task_count",
+      "confidence": "medium",
+      "assumptions": [
+        "A-SIMULATION-001",
+        "A-OPERATIONS-001"
+      ]
+    },
+    "metrics_recalculation": {
+      "status": "known",
+      "value": 1,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "metrics.json"
+      ],
+      "formula": "count(full_package_recalculation_protocol)",
+      "confidence": "high",
+      "assumptions": [
+        "A-BOUNDARY-001",
+        "A-KEYAREAS-001"
+      ]
     }
   }
 }

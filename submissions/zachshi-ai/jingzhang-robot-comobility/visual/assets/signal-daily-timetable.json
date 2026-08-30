@@ -1,0 +1,353 @@
+{
+  "schema_version": "0.1.0",
+  "concept": "共行信号时刻表 (Co-Mobility Signal Daily Timetable)",
+  "concept_note_zh": "v5 闭塞区间表是静态的'全时段同一规则'；时刻表把它推演为时段×区间的运行模式矩阵。信号管安全（谁可进入），时刻表管时间（何时开放）——铁路运行图与信号系统一体两面。",
+  "concept_note_en": "The v5 block table is static ('same rule all day'); the timetable projects it into a period x block mode matrix. Signaling governs safety (who may enter); the timetable governs time (when) — a railway working diagram and its signaling are two faces of one system.",
+  "grammar_dependency": "visual/assets/signaling-grammar.json (v9 rule completion applied)",
+  "synthetic_only": true,
+  "field_status": "not_authorized_not_run",
+  "blocks": [
+    {
+      "id": "BLK-01",
+      "section_type": "dedicated",
+      "speed_kmh": 15,
+      "interlock_rules": [
+        "pedestrian_surge_blocks",
+        "weather_degradation_blocks",
+        "maintenance_blocks",
+        "conflict_alert_blocks"
+      ]
+    },
+    {
+      "id": "BLK-02",
+      "section_type": "dedicated",
+      "speed_kmh": 15,
+      "interlock_rules": [
+        "pedestrian_surge_blocks",
+        "conflict_alert_blocks",
+        "maintenance_blocks",
+        "weather_degradation_blocks"
+      ]
+    },
+    {
+      "id": "BLK-03",
+      "section_type": "dedicated",
+      "speed_kmh": 15,
+      "interlock_rules": [
+        "pedestrian_surge_blocks",
+        "station_surge_blocks",
+        "weather_degradation_blocks",
+        "maintenance_blocks",
+        "conflict_alert_blocks"
+      ]
+    },
+    {
+      "id": "BLK-04",
+      "section_type": "shared",
+      "speed_kmh": 10,
+      "interlock_rules": [
+        "pedestrian_surge_blocks",
+        "conflict_alert_blocks",
+        "weather_degradation_blocks",
+        "maintenance_blocks"
+      ]
+    },
+    {
+      "id": "BLK-05",
+      "section_type": "shared",
+      "speed_kmh": 10,
+      "interlock_rules": [
+        "pedestrian_surge_blocks",
+        "school_peak_blocks",
+        "weather_degradation_blocks",
+        "maintenance_blocks",
+        "conflict_alert_blocks"
+      ]
+    },
+    {
+      "id": "BLK-06",
+      "section_type": "pedestrian_priority",
+      "speed_kmh": 5,
+      "interlock_rules": [
+        "always_pedestrian_priority",
+        "robot_follows_flow",
+        "heritage_event_blocks",
+        "weather_degradation_blocks",
+        "maintenance_blocks",
+        "conflict_alert_blocks",
+        "crowd_event_blocks"
+      ]
+    },
+    {
+      "id": "BLK-07",
+      "section_type": "pedestrian_priority",
+      "speed_kmh": 5,
+      "interlock_rules": [
+        "always_pedestrian_priority",
+        "event_blocks",
+        "weather_degradation_blocks",
+        "maintenance_blocks",
+        "conflict_alert_blocks",
+        "crowd_event_blocks"
+      ]
+    },
+    {
+      "id": "BLK-08",
+      "section_type": "test_trail",
+      "speed_kmh": 8,
+      "interlock_rules": [
+        "closed_testing_only",
+        "protocol_blocks",
+        "weather_degradation_blocks",
+        "maintenance_blocks",
+        "conflict_alert_blocks"
+      ]
+    }
+  ],
+  "status_legend": {
+    "nominal": "按断面限速运行 (15/10/8 km/h)",
+    "degraded_10": "降速 10 km/h",
+    "degraded_8": "降速 8 km/h",
+    "degraded_5": "降速 5 km/h",
+    "follow": "随流 5 km/h（行人优先段）",
+    "warmup": "空驶巡检 8 km/h（不载客）",
+    "test_only": "封闭测试（不对公众配送开放）",
+    "blocked": "禁止机器人进入",
+    "night_off": "停运，空间 100% 归还行人"
+  },
+  "trigger_effects": {
+    "school_peak": "blocked",
+    "station_surge": "degraded_8",
+    "pedestrian_surge": "blocked",
+    "weather_degradation": "blocked",
+    "maintenance": "blocked",
+    "conflict_alert": "blocked",
+    "heritage_event": "blocked",
+    "event": "blocked",
+    "crowd_event": "blocked"
+  },
+  "periods": [
+    {
+      "id": "P1",
+      "name_zh": "夜间归还窗",
+      "name_en": "Night return window",
+      "time": "00:00-06:00",
+      "profile": {
+        "dedicated": "night_off",
+        "shared": "night_off",
+        "pedestrian_priority": "night_off",
+        "test_trail": "test_only"
+      },
+      "triggers": []
+    },
+    {
+      "id": "P2",
+      "name_zh": "晨检上线",
+      "name_en": "Morning inspection",
+      "time": "06:00-07:00",
+      "profile": {
+        "dedicated": "warmup",
+        "shared": "warmup",
+        "pedestrian_priority": "night_off",
+        "test_trail": "test_only"
+      },
+      "triggers": []
+    },
+    {
+      "id": "P3",
+      "name_zh": "早高峰",
+      "name_en": "Morning peak",
+      "time": "07:00-09:00",
+      "profile": {
+        "dedicated": "nominal",
+        "shared": "degraded_8",
+        "pedestrian_priority": "follow",
+        "test_trail": "test_only"
+      },
+      "triggers": [
+        {
+          "id": "school_peak",
+          "scope": null
+        }
+      ]
+    },
+    {
+      "id": "P4",
+      "name_zh": "平峰",
+      "name_en": "Off-peak",
+      "time": "09:00-17:00",
+      "profile": {
+        "dedicated": "nominal",
+        "shared": "nominal",
+        "pedestrian_priority": "follow",
+        "test_trail": "test_only"
+      },
+      "triggers": []
+    },
+    {
+      "id": "P5",
+      "name_zh": "晚高峰",
+      "name_en": "Evening peak",
+      "time": "17:00-19:00",
+      "profile": {
+        "dedicated": "nominal",
+        "shared": "degraded_8",
+        "pedestrian_priority": "follow",
+        "test_trail": "test_only"
+      },
+      "triggers": [
+        {
+          "id": "station_surge",
+          "scope": null
+        }
+      ]
+    },
+    {
+      "id": "P6",
+      "name_zh": "晚间降速",
+      "name_en": "Evening calm",
+      "time": "19:00-24:00",
+      "profile": {
+        "dedicated": "degraded_10",
+        "shared": "degraded_5",
+        "pedestrian_priority": "follow",
+        "test_trail": "degraded_5"
+      },
+      "triggers": []
+    }
+  ],
+  "events": [
+    {
+      "id": "E1",
+      "name_zh": "极端人流聚集",
+      "name_en": "Extreme crowd surge",
+      "kind": "event",
+      "profile": {
+        "dedicated": "nominal",
+        "shared": "nominal",
+        "pedestrian_priority": "follow",
+        "test_trail": "test_only"
+      },
+      "triggers": [
+        {
+          "id": "pedestrian_surge",
+          "scope": null
+        },
+        {
+          "id": "crowd_event",
+          "scope": null
+        }
+      ]
+    },
+    {
+      "id": "E2",
+      "name_zh": "暴雨冰雪告警",
+      "name_en": "Storm/snow alert",
+      "kind": "event",
+      "profile": {
+        "dedicated": "nominal",
+        "shared": "nominal",
+        "pedestrian_priority": "follow",
+        "test_trail": "test_only"
+      },
+      "triggers": [
+        {
+          "id": "weather_degradation",
+          "scope": null
+        }
+      ]
+    },
+    {
+      "id": "E3",
+      "name_zh": "计划维护窗（BLK-02）",
+      "name_en": "Planned maintenance (BLK-02)",
+      "kind": "event",
+      "profile": {
+        "dedicated": "nominal",
+        "shared": "nominal",
+        "pedestrian_priority": "follow",
+        "test_trail": "test_only"
+      },
+      "triggers": [
+        {
+          "id": "maintenance",
+          "scope": "BLK-02"
+        }
+      ]
+    },
+    {
+      "id": "E4",
+      "name_zh": "遗产活动日",
+      "name_en": "Heritage event day",
+      "kind": "event",
+      "profile": {
+        "dedicated": "nominal",
+        "shared": "nominal",
+        "pedestrian_priority": "follow",
+        "test_trail": "test_only"
+      },
+      "triggers": [
+        {
+          "id": "heritage_event",
+          "scope": "BLK-06"
+        },
+        {
+          "id": "event",
+          "scope": "BLK-07"
+        }
+      ]
+    },
+    {
+      "id": "E5",
+      "name_zh": "单区间冲突告警（BLK-04）",
+      "name_en": "Single-block conflict alert (BLK-04)",
+      "kind": "event",
+      "profile": {
+        "dedicated": "nominal",
+        "shared": "nominal",
+        "pedestrian_priority": "follow",
+        "test_trail": "test_only"
+      },
+      "triggers": [
+        {
+          "id": "conflict_alert",
+          "scope": "BLK-04"
+        }
+      ]
+    }
+  ],
+  "assertions": [
+    {
+      "id": "A1",
+      "zh": "行人优先段（BLK-06/07）在任何场景下不快于步行（≤5 km/h）"
+    },
+    {
+      "id": "A2",
+      "zh": "夜间归还窗 00:00-06:00 全部 7 个运营区间 night_off（走廊每天 6 小时 100% 归还行人）"
+    },
+    {
+      "id": "A3",
+      "zh": "单点事件（E3/E4/E5）只闭锁目标区间，其余区间保持可运行（调度集中隔离能力）"
+    },
+    {
+      "id": "A4",
+      "zh": "极端人流（E1）全部运营区间禁入（行人绝对优先兜底）"
+    },
+    {
+      "id": "A5",
+      "zh": "暴雨冰雪（E2）全部区间停运（低速机器人在湿滑混行环境的安全标准就是停）"
+    },
+    {
+      "id": "A6",
+      "zh": "测试步道（BLK-08）在任何场景下不对公众配送开放"
+    },
+    {
+      "id": "A7",
+      "zh": "早高峰（P3）临校共享段西支（BLK-05）必禁入"
+    },
+    {
+      "id": "A8",
+      "zh": "每个区间每日至少有一个可服务窗口（nominal/degraded/follow/warmup/test_only）"
+    }
+  ]
+}

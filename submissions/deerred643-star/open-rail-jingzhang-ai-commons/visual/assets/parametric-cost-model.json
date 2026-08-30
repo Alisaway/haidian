@@ -1,0 +1,116 @@
+{
+  "schema_note": "v2.8 parametric cost-model skeleton responding to the implementability review gap 'costs unresolved'. Four cost subjects (land preparation, construction and installation, utilities works, operations) carry dimension placeholders only, and three sensitivity parameters take ±20% perturbations feeding sequencing-methodology steps ③ and ⑤. The model outputs robust intervals rather than point conclusions and holds no estimates before all triggers are satisfied.",
+  "version": "v2.8",
+  "status": "skeleton_only_no_estimates",
+  "cost_subjects": [
+    {
+      "subject_zh": "土地整理",
+      "subject_en": "Land preparation",
+      "dimensions": [
+        {
+          "name_zh": "整治面积",
+          "name_en": "Preparation area",
+          "unit": "ha",
+          "value_status": "pending_baseline"
+        },
+        {
+          "name_zh": "整治强度等级",
+          "name_en": "Preparation intensity grade",
+          "unit": "pending_definition",
+          "value_status": "pending_baseline"
+        }
+      ]
+    },
+    {
+      "subject_zh": "建安",
+      "subject_en": "Construction and installation",
+      "dimensions": [
+        {
+          "name_zh": "建筑面积",
+          "name_en": "Floor area",
+          "unit": "㎡",
+          "value_status": "pending_baseline"
+        },
+        {
+          "name_zh": "构造等级",
+          "name_en": "Construction grade",
+          "unit": "pending_definition",
+          "value_status": "pending_baseline"
+        }
+      ]
+    },
+    {
+      "subject_zh": "市政",
+      "subject_en": "Utilities works",
+      "dimensions": [
+        {
+          "name_zh": "管线长度",
+          "name_en": "Pipeline length",
+          "unit": "km",
+          "value_status": "pending_baseline"
+        },
+        {
+          "name_zh": "容量等级",
+          "name_en": "Capacity grade",
+          "unit": "pending_definition",
+          "value_status": "pending_baseline"
+        }
+      ]
+    },
+    {
+      "subject_zh": "运营",
+      "subject_en": "Operations",
+      "dimensions": [
+        {
+          "name_zh": "运营年限",
+          "name_en": "Operation term",
+          "unit": "a",
+          "value_status": "pending_baseline"
+        },
+        {
+          "name_zh": "科目基数（挂接 lifecycle-om-framework）",
+          "name_en": "Subject base (linked to lifecycle-om-framework)",
+          "unit": "pending_definition",
+          "value_status": "pending_baseline"
+        }
+      ]
+    }
+  ],
+  "sensitivity_parameters": [
+    {
+      "name_zh": "边界几何",
+      "name_en": "Boundary geometry",
+      "perturbation": "±20%",
+      "affects_zh": "全部科目量纲基数。",
+      "affects_en": "Dimensional bases of all cost subjects."
+    },
+    {
+      "name_zh": "容积率",
+      "name_en": "Floor-area ratio",
+      "perturbation": "±20%",
+      "affects_zh": "建安科目。",
+      "affects_en": "The construction-and-installation subject."
+    },
+    {
+      "name_zh": "实测人流",
+      "name_en": "Measured pedestrian flow",
+      "perturbation": "±20%",
+      "affects_zh": "运营科目与效益代理指标。",
+      "affects_en": "The operations subject and benefit proxy indicators."
+    }
+  ],
+  "linkage": {
+    "sequencing_methodology_zh": "挂接排序方法论环节③（S3-COST 成本科目）：四科目分列即该环节的机器可读骨架；环节⑤（S5-SENSITIVITY 敏感性检验）：三参数 ±20% 扰动即该环节的输入（见 visual/assets/sequencing-methodology.json）。",
+    "sequencing_methodology_en": "Hooked to step ③ of the sequencing methodology (S3-COST cost lines): the four subjects are its machine-readable skeleton; and to step ⑤ (S5-SENSITIVITY): the three ±20% perturbation parameters are its inputs (see visual/assets/sequencing-methodology.json).",
+    "output_semantics_zh": "输出稳健区间而非单点结论。",
+    "output_semantics_en": "Outputs robust intervals rather than point conclusions."
+  },
+  "discipline": {
+    "no_estimate_policy_zh": "本文件不含任何估算值；全部量纲参数保持 pending_baseline。",
+    "no_estimate_policy_en": "This file contains no estimates; all dimensional parameters remain pending_baseline.",
+    "publication_policy_zh": "结论仅在全部触发条件满足后，由属地主管与具名运营方联合复核发布。",
+    "publication_policy_en": "Conclusions are published only after all triggers are satisfied and jointly reviewed by the district authority and the named operator."
+  },
+  "boundary_zh": "成本模型骨架（无任何估算值）：全部量纲参数 pending_baseline，输出稳健区间而非单点结论；结论以全部触发条件满足后属地主管与具名运营方联合复核发布为准。",
+  "boundary_en": "Cost-model skeleton with no estimates: all dimensional parameters remain pending_baseline and outputs are robust intervals rather than point conclusions; conclusions rest on joint review by the district authority and the named operator after all triggers are satisfied."
+}

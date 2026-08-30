@@ -28,7 +28,7 @@
       "formula": "sum(projected areas of three reversible conceptual facility envelopes)",
       "confidence": "low",
       "assumptions": [
-        "Concept typology envelopes only; not surveyed existing buildings, approved footprints or development capacity."
+        "Conceptual typology footprints only; not existing buildings or approved development capacity."
       ]
     },
     "green_ratio": {
@@ -180,6 +180,102 @@
       "confidence": "unknown",
       "assumptions": [],
       "reason": "No event dataset or benchmark has been collected."
+    },
+    "global_case_study_count": {
+      "status": "known",
+      "value": 7,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "sources.json"
+      ],
+      "formula": "count(NIST AML, MIT.nano, CMU RIC, Mcity, one-north, imec, Brainport)",
+      "confidence": "high",
+      "assumptions": [
+        "Counts cited mechanism precedents in the deliverable, not partnerships or transferred performance."
+      ]
+    },
+    "persona_count": {
+      "status": "known",
+      "value": 7,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "visual/assets/scenario-cards.json"
+      ],
+      "formula": "count(seven user-role groups explicitly described in the proposal)",
+      "confidence": "high",
+      "assumptions": [
+        "Counts deliverable persona groups, not confirmed participants."
+      ]
+    },
+    "landmark_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(three working honour-node types, one per prototype)",
+      "confidence": "high",
+      "assumptions": [
+        "Counts conceptual deliverable elements, not built landmarks."
+      ]
+    },
+    "annual_event_count": {
+      "status": "known",
+      "value": 5,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(demand call, controlled open test, forum, annual negative-result and maintenance record, quarterly clinic)",
+      "confidence": "high",
+      "assumptions": [
+        "Counts proposed operating formats, not confirmed events."
+      ]
+    },
+    "measurement_point_count": {
+      "status": "known",
+      "value": 4,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "visual/assets/commissioning-protocol.json"
+      ],
+      "formula": "count(MP-D,MP-T1,MP-T2,MP-S)",
+      "confidence": "high",
+      "assumptions": [
+        "Counts logical point roles; physical sensor count remains plan-specific."
+      ]
+    },
+    "human_disposition_count": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "visual/assets/commissioning-protocol.json"
+      ],
+      "formula": "count(KEEP,REPAIR_SOURCE,RESCHEDULE,RELOCATE,REVERSIBLE_LOCAL,REFER_SPECIALIST)",
+      "confidence": "high",
+      "assumptions": [
+        "Counts allowed human dispositions; STOP is a cross-cutting gate, not a seventh disposition."
+      ]
+    },
+    "evidence_grade_count": {
+      "status": "known",
+      "value": 4,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "visual/assets/commissioning-protocol.json"
+      ],
+      "formula": "count(E0,E1,E2,E3)",
+      "confidence": "high",
+      "assumptions": [
+        "Counts deliverable evidence states, not achieved site evidence."
+      ]
     }
   }
 }

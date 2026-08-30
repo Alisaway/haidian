@@ -1,5 +1,7 @@
 """Dependency-free parsing for the repository's Markdown front matter."""
 
+import re
+
 BLOCK_SCALARS = {">", ">-", "|", "|-"}
 
 
@@ -35,14 +37,17 @@ def _block_value(lines: list[str], style: str) -> str:
 
 def parse_front_matter(text: str) -> tuple[dict[str, str], str]:
     """Parse scalar front matter, including folded and literal block strings."""
-    text = text.lstrip("\ufeff\n")
-    if not text.startswith("---\n"):
+    text = text.lstrip("\ufeff\r\n")
+    opening = re.match(r"^---[ \t]*\r?\n", text)
+    if opening is None:
         return {}, text
-    end = text.find("\n---", 4)
-    if end == -1:
+    closing = re.search(r"(?m)^---[ \t]*\r?$", text[opening.end() :])
+    if closing is None:
         return {}, text
-    lines = text[4:end].splitlines()
-    body = text[end + len("\n---") :].lstrip("\n")
+    closing_start = opening.end() + closing.start()
+    closing_end = opening.end() + closing.end()
+    lines = text[opening.end() : closing_start].splitlines()
+    body = text[closing_end:].lstrip("\r\n")
     metadata: dict[str, str] = {}
     index = 0
     while index < len(lines):

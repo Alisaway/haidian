@@ -212,6 +212,58 @@
       "confidence": "medium",
       "assumptions": []
     },
+    "simulation_task_count": {
+      "status": "known",
+      "value": 4,
+      "unit": "count",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "count(simulation.tasks)",
+      "confidence": "high",
+      "assumptions": [
+        "Synthetic offline rule tests only; no field task or public-user claim."
+      ]
+    },
+    "simulation_success_rate": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "count(outcome == success or outcome ends with _success) / task_count",
+      "confidence": "high",
+      "assumptions": [
+        "Success means the observed admit or stop decision matched its declared synthetic expectation."
+      ]
+    },
+    "tool_schema_pass_rate": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "count(dispatch_schema_valid == true) / task_count",
+      "confidence": "high",
+      "assumptions": [
+        "This checks the local passport decision input schema, not an online tool or model API."
+      ]
+    },
+    "audit_completeness": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "simulation.json"
+      ],
+      "formula": "count(audit_complete == true) / task_count",
+      "confidence": "high",
+      "assumptions": [
+        "Completeness applies to four committed synthetic task records only."
+      ]
+    },
     "public_right_count": {
       "status": "known",
       "value": 7,

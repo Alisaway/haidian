@@ -11,9 +11,11 @@ import sys
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from backfill_bilingual_artifacts import (  # noqa: E402
+    backfill_html,
     backfill_manifests,
     create_localized_figure,
     localize_translation_image_paths,
+    submission_dirs,
 )
 from backfill_bilingual_submissions import (  # noqa: E402
     LocalTranslator,
@@ -26,6 +28,143 @@ from backfill_bilingual_submissions import (  # noqa: E402
 
 
 class BilingualBackfillTests(unittest.TestCase):
+    def test_artifact_discovery_rejects_symlinked_packages_and_files(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp) / "repo"
+            submissions = root / "submissions"
+            regular = submissions / "alice" / "regular"
+            regular.mkdir(parents=True)
+            (regular / "proposal.md").write_text("regular", encoding="utf-8")
+
+            outside_package = Path(tmp) / "outside-package"
+            outside_package.mkdir()
+            (outside_package / "proposal.md").write_text("outside", encoding="utf-8")
+            outside_manifest = outside_package / "manifest.json"
+            outside_manifest.write_text('{"files": []}\n', encoding="utf-8")
+            (submissions / "alice" / "linked-package").symlink_to(
+                outside_package,
+                target_is_directory=True,
+            )
+
+            linked_file = submissions / "alice" / "linked-file"
+            linked_file.mkdir()
+            (linked_file / "proposal.md").symlink_to(outside_package / "proposal.md")
+
+            outside_owner = Path(tmp) / "outside-owner"
+            owner_package = outside_owner / "linked-owner-package"
+            owner_package.mkdir(parents=True)
+            (owner_package / "proposal.md").write_text("outside owner", encoding="utf-8")
+            (submissions / "linked-owner").symlink_to(
+                outside_owner,
+                target_is_directory=True,
+            )
+
+            found = submission_dirs(root, [])
+            self.assertEqual([regular], found)
+            backfill_manifests(found)
+            self.assertEqual('{"files": []}\n', outside_manifest.read_text(encoding="utf-8"))
+
+    def test_artifact_discovery_reports_symlinked_submissions_root(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp) / "repo"
+            root.mkdir()
+            outside = Path(tmp) / "outside-submissions"
+            package = outside / "alice" / "sample"
+            package.mkdir(parents=True)
+            (package / "proposal.md").write_text("outside", encoding="utf-8")
+            (root / "submissions").symlink_to(outside, target_is_directory=True)
+
+            with self.assertRaisesRegex(ValueError, "submissions root must not be a symbolic link"):
+                submission_dirs(root, [])
+
+    def test_artifact_discovery_rejects_internal_file_and_directory_symlinks(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            workspace = Path(tmp)
+            root = workspace / "repo"
+
+            manifest_package = root / "submissions" / "alice" / "linked-manifest"
+            manifest_package.mkdir(parents=True)
+            (manifest_package / "proposal.md").write_text(
+                '---\nlanguage: "en"\n---\n# Proposal\n', encoding="utf-8"
+            )
+            outside_manifest = workspace / "outside-manifest.json"
+            original_manifest = b'{"files": []}\n'
+            outside_manifest.write_bytes(original_manifest)
+            try:
+                (manifest_package / "manifest.json").symlink_to(outside_manifest)
+            except OSError as exc:
+                self.skipTest(f"symlinks unavailable: {exc}")
+
+            output_package = root / "submissions" / "bob" / "linked-output"
+            output_package.mkdir(parents=True)
+            (output_package / "proposal.md").write_text(
+                '---\nlanguage: "en"\n---\n# Proposal\n', encoding="utf-8"
+            )
+            (output_package / "proposal.zh.md").write_text(
+                '---\nlanguage: "zh"\n---\n# 方案\n', encoding="utf-8"
+            )
+            outside_report = workspace / "outside-report"
+            outside_visual = workspace / "outside-visual"
+            outside_report.mkdir()
+            outside_visual.mkdir()
+            (output_package / "report").symlink_to(
+                outside_report, target_is_directory=True
+            )
+            (output_package / "visual").symlink_to(
+                outside_visual, target_is_directory=True
+            )
+
+            found = submission_dirs(root, [])
+
+            self.assertEqual([], found)
+            self.assertEqual(0, backfill_manifests(found))
+            self.assertEqual(0, backfill_html(found))
+            self.assertEqual(original_manifest, outside_manifest.read_bytes())
+            self.assertEqual([], list(outside_report.iterdir()))
+            self.assertEqual([], list(outside_visual.iterdir()))
+
+    def test_artifact_only_rejects_ambiguous_slug_and_empty_selection(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp) / "repo"
+            first = root / "submissions" / "alice" / "same-slug"
+            second = root / "submissions" / "bob" / "same-slug"
+            for package in (first, second):
+                package.mkdir(parents=True)
+                (package / "proposal.md").write_text(
+                    '---\nlanguage: "en"\n---\n# Proposal\n', encoding="utf-8"
+                )
+
+            with self.assertRaisesRegex(ValueError, "ambiguous"):
+                submission_dirs(root, ["same-slug"])
+            self.assertEqual(
+                [first], submission_dirs(root, ["submissions/alice/same-slug"])
+            )
+            with self.assertRaisesRegex(ValueError, "did not match"):
+                submission_dirs(root, ["missing"])
+
+    def test_artifact_only_resolves_paths_below_symlinked_ancestor(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            workspace = Path(tmp)
+            real = workspace / "real"
+            alias = workspace / "alias"
+            real.mkdir()
+            try:
+                alias.symlink_to(real, target_is_directory=True)
+            except OSError as exc:
+                self.skipTest(f"symlinks unavailable: {exc}")
+            root = alias / "repo"
+            first = root / "submissions" / "alice" / "same-slug"
+            second = root / "submissions" / "bob" / "same-slug"
+            for package in (first, second):
+                package.mkdir(parents=True)
+                (package / "proposal.md").write_text("proposal", encoding="utf-8")
+
+            self.assertEqual(
+                [first], submission_dirs(root, ["submissions/alice/same-slug"])
+            )
+            self.assertEqual([first], submission_dirs(root, [str(first)]))
+            self.assertEqual([first], submission_dirs(root, [str(first.resolve())]))
+
     def test_front_matter_parser_accepts_utf8_bom(self) -> None:
         front, body = parse_front_matter("\ufeff---\nlanguage: zh\n---\n正文\n")
         self.assertEqual(["language: zh"], front)

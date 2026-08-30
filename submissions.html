@@ -518,7 +518,32 @@ const T = {
   }
 };
 
-let lang = localStorage.getItem('lang') || (navigator.language.startsWith('zh') ? 'zh' : 'en');
+function normalizeLanguage(value) {
+  return value === 'zh' || value === 'en' ? value : null;
+}
+
+function initialLanguage() {
+  let stored = null;
+  try {
+    stored = localStorage.getItem('lang');
+  } catch {
+    stored = null;
+  }
+  const validStored = normalizeLanguage(stored);
+  if (validStored) return validStored;
+  const browserLanguage = String(navigator.language || '').toLowerCase();
+  return browserLanguage.startsWith('zh') ? 'zh' : 'en';
+}
+
+function rememberLanguage(value) {
+  try {
+    localStorage.setItem('lang', value);
+  } catch {
+    // Restricted storage should not prevent the page from switching language.
+  }
+}
+
+let lang = initialLanguage();
 
 const STATUS_META = {
   formal_review_ready: {
@@ -777,7 +802,7 @@ window.addEventListener('popstate', () => {
 });
 
 function applyLang(l) {
-  lang = l; localStorage.setItem('lang', l);
+  lang = l; rememberLanguage(l);
   document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en';
   document.title = T[l]['page.title'];
   document.getElementById('langToggle').textContent = T[l]['lang.toggle'];

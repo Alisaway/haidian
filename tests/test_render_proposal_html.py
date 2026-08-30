@@ -9,10 +9,18 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT / "scripts"))
 
-from render_proposal_html import render_html  # noqa: E402
+from render_proposal_html import render_html, render_inputs, write_text_atomically  # noqa: E402
 
 
 class RenderProposalHtmlTests(unittest.TestCase):
+    def test_write_text_atomically_emits_lf_only_bytes_on_every_platform(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            target = Path(tmp) / "report.html"
+            write_text_atomically(target, "<p>alpha</p>\n<p>beta</p>\n")
+            self.assertEqual(target.read_bytes(), b"<p>alpha</p>\n<p>beta</p>\n")
+            write_text_atomically(target, "<p>gamma</p>\n")
+            self.assertEqual(target.read_bytes(), b"<p>gamma</p>\n")
+
     def test_render_html_supports_emphasis_without_reformatting_inline_code(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             submission_dir = Path(tmp)
@@ -36,6 +44,30 @@ class RenderProposalHtmlTests(unittest.TestCase):
                 html,
             )
             self.assertNotIn("0.4 <em>", html)
+
+    def test_render_html_wraps_unbroken_inline_code_without_reformatting_fenced_code(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            submission_dir = Path(tmp)
+            long_token = "urn:haidian:data-coop:" + ("A" * 256)
+            (submission_dir / "proposal.md").write_text(
+                f"Short `SCN-06`.\n\nInline `{long_token}`.\n\n```text\n{long_token}\n```\n",
+                encoding="utf-8",
+            )
+
+            html = render_html(submission_dir)
+
+            self.assertIn("<code>SCN-06</code>", html)
+            self.assertIn(f"<code>{long_token}</code>", html)
+            self.assertIn(f"<pre><code>{long_token}</code></pre>", html)
+            self.assertIn(
+                ":not(pre) > code {\n"
+                "  display: inline-block;\n"
+                "  max-width: 100%;\n"
+                "  overflow-wrap: anywhere;\n"
+                "  word-break: break-word;\n"
+                "}",
+                html,
+            )
 
     def test_render_html_supports_blockquotes(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -207,6 +239,105 @@ summary: "离线阅读版"
 
             with self.assertRaisesRegex(ValueError, "remote or unsafe image source"):
                 render_html(submission_dir)
+
+    def test_render_html_rejects_windows_absolute_unc_and_backslash_traversal_images(self) -> None:
+        unsafe_sources = [
+            "C:/escape/x.png",
+            "./D:/escape/x.png",
+            r"\\server\share\x.png",
+            r"..\escape.png",
+        ]
+        for source in unsafe_sources:
+            with self.subTest(source=source), tempfile.TemporaryDirectory() as tmp:
+                submission_dir = Path(tmp)
+                (submission_dir / "proposal.md").write_text(
+                    f"![unsafe]({source})\n",
+                    encoding="utf-8",
+                )
+
+                with self.assertRaisesRegex(ValueError, "relative local path"):
+                    render_html(submission_dir)
+
+    def test_render_html_rejects_url_encoded_path_escape_segments(self) -> None:
+        unsafe_sources = [
+            "assets/%2e%2e/%2e%2e/out.png",
+            "assets/%2E%2E/%2E%2E/out.png",
+            "assets/.%2e/.%2e/out.png",
+            "assets/%2e./%2e./out.png",
+            "assets/%2fescape/out.png",
+            "assets/%5cescape/out.png",
+            "C%3a/escape/out.png",
+        ]
+        for source in unsafe_sources:
+            with self.subTest(source=source), tempfile.TemporaryDirectory() as tmp:
+                submission_dir = Path(tmp)
+                image = submission_dir / source
+                image.parent.mkdir(parents=True)
+                image.write_bytes(b"not a safe browser URL")
+                proposal = submission_dir / "proposal.md"
+                proposal.write_text(
+                    f"![encoded]({source})\n",
+                    encoding="utf-8",
+                )
+
+                with self.assertRaisesRegex(ValueError, "relative local path"):
+                    render_html(submission_dir)
+                self.assertEqual([proposal], render_inputs(submission_dir, [proposal]))
+
+    @unittest.skipUnless(os.name == "nt", "Windows drive-path behavior")
+    def test_render_html_rejects_existing_image_outside_submission_by_drive_path(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            submission_dir = root / "submission"
+            submission_dir.mkdir()
+            outside_image = root / "outside.png"
+            outside_image.write_bytes(b"not an in-package image")
+            (submission_dir / "proposal.md").write_text(
+                f"![escaped]({outside_image.as_posix()})\n",
+                encoding="utf-8",
+            )
+
+            with self.assertRaisesRegex(ValueError, "relative local path"):
+                render_html(submission_dir)
+
+    def test_render_html_rejects_symlink_escape_from_submission_directory(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp, tempfile.TemporaryDirectory() as outside:
+            submission_dir = Path(tmp)
+            outside_image = Path(outside) / "outside.png"
+            outside_image.write_bytes(b"not an in-package image")
+            linked_image = submission_dir / "linked.png"
+            try:
+                linked_image.symlink_to(outside_image)
+            except (NotImplementedError, OSError) as exc:
+                self.skipTest(f"local symlink creation is unavailable: {exc}")
+            (submission_dir / "proposal.md").write_text(
+                "![escaped](linked.png)\n",
+                encoding="utf-8",
+            )
+
+            with self.assertRaisesRegex(ValueError, "stay within the submission directory"):
+                render_html(submission_dir)
+
+    def test_render_html_resolves_internal_symlink_to_safe_relative_path(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            submission_dir = Path(tmp)
+            image = submission_dir / "assets" / "figures" / "overview.png"
+            image.parent.mkdir(parents=True)
+            image.write_bytes(b"in-package image")
+            linked_image = submission_dir / "linked.png"
+            try:
+                linked_image.symlink_to(image)
+            except (NotImplementedError, OSError) as exc:
+                self.skipTest(f"local symlink creation is unavailable: {exc}")
+            (submission_dir / "proposal.md").write_text(
+                "![linked](linked.png)\n",
+                encoding="utf-8",
+            )
+
+            html = render_html(submission_dir)
+
+            self.assertIn('src="../assets/figures/overview.png"', html)
+            self.assertNotIn('src="../linked.png"', html)
 
     def test_render_english_proposal_marks_both_languages(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

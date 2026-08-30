@@ -1,0 +1,333 @@
+{
+  "schema_version": "1.0",
+  "stage": "P8.4G1B-B2A",
+  "projects": [
+    {
+      "project_id": "PB-01",
+      "title_zh": "分段永久公共基底",
+      "title_en": "Segmented Permanent Public Base",
+      "site": "ALL",
+      "problem": "局部公共到达与服务缺乏可持续底线",
+      "permanent_action": "三段本地净线与人工服务",
+      "reversible_action": "可逆设施",
+      "public_value": "常开公共底线",
+      "dependencies": [
+        "测绘",
+        "无障碍",
+        "维护"
+      ],
+      "approval_status": "not_approved",
+      "operator_status": "unconfirmed",
+      "phase": "BASE",
+      "AI_role": "AI仅建议",
+      "human_authority": "人类最终决定",
+      "AI_off_mode": "人工BASE",
+      "failure_rule": "任何本地安全门失败即收回可逆层",
+      "failure_rule_en": "Any local safety-gate failure → remove the reversible layer",
+      "retirement_rule": "任何本地安全门失败即收回可逆层",
+      "retirement_rule_en": "Any local safety-gate failure → remove the reversible layer",
+      "evidence_refs": [
+        "assets/publication/depth/a07-renewal-project-register.png"
+      ],
+      "source_ids": [
+        "F2-SRC-P82-APPROVED-SPATIAL",
+        "F2-SRC-P82R-SPATIAL-DRAWINGS"
+      ],
+      "assumption_ids": [
+        "A-G1B2A-03",
+        "A-G1B2A-08"
+      ]
+    },
+    {
+      "project_id": "ST-01",
+      "title_zh": "AI原点缝合候选",
+      "title_en": "AI Origin Stitch Candidate",
+      "site": "AI_ORIGIN",
+      "problem": "映射关系尚未成为可用后备",
+      "permanent_action": "证据准入而非路线实施",
+      "reversible_action": "无",
+      "public_value": "候选关系透明",
+      "dependencies": [
+        "通行权",
+        "交叉口",
+        "无障碍"
+      ],
+      "approval_status": "not_approved",
+      "operator_status": "unconfirmed",
+      "phase": "CANDIDATE",
+      "AI_role": "不调度",
+      "human_authority": "人类核验后方可准入",
+      "AI_off_mode": "不作为fallback",
+      "failure_rule": "证据失败则保持未准入",
+      "failure_rule_en": "Evidence failure → remain unadmitted",
+      "retirement_rule": "证据失败则保持未准入",
+      "retirement_rule_en": "Evidence failure → remain unadmitted",
+      "evidence_refs": [
+        "assets/publication/depth/a07-renewal-project-register.png"
+      ],
+      "source_ids": [
+        "F2-SRC-P82-APPROVED-SPATIAL",
+        "F2-SRC-P82R-SPATIAL-DRAWINGS"
+      ],
+      "assumption_ids": [
+        "A-G1B2A-03",
+        "A-G1B2A-08"
+      ]
+    },
+    {
+      "project_id": "ST-02",
+      "title_zh": "大钟寺缝合候选",
+      "title_en": "Dazhongsi Stitch Candidate",
+      "site": "DAZHONGSI",
+      "problem": "站城关系未核",
+      "permanent_action": "证据准入而非路线实施",
+      "reversible_action": "无",
+      "public_value": "避免虚假换乘连续性",
+      "dependencies": [
+        "站口",
+        "高差",
+        "人流"
+      ],
+      "approval_status": "not_approved",
+      "operator_status": "unconfirmed",
+      "phase": "CANDIDATE",
+      "AI_role": "不调度",
+      "human_authority": "人类核验后方可准入",
+      "AI_off_mode": "不作为fallback",
+      "failure_rule": "证据失败则保持未准入",
+      "failure_rule_en": "Evidence failure → remain unadmitted",
+      "retirement_rule": "证据失败则保持未准入",
+      "retirement_rule_en": "Evidence failure → remain unadmitted",
+      "evidence_refs": [
+        "assets/publication/depth/a07-renewal-project-register.png"
+      ],
+      "source_ids": [
+        "F2-SRC-P82-APPROVED-SPATIAL",
+        "F2-SRC-P82R-SPATIAL-DRAWINGS"
+      ],
+      "assumption_ids": [
+        "A-G1B2A-03",
+        "A-G1B2A-08"
+      ]
+    },
+    {
+      "project_id": "ST-03",
+      "title_zh": "北段缝合候选",
+      "title_en": "Northern Stitch Candidate",
+      "site": "NORTHERN",
+      "problem": "项目—公共—河道关系未核",
+      "permanent_action": "证据准入而非路线实施",
+      "reversible_action": "无",
+      "public_value": "显示边界与终止",
+      "dependencies": [
+        "项目",
+        "水务",
+        "公共权利"
+      ],
+      "approval_status": "not_approved",
+      "operator_status": "unconfirmed",
+      "phase": "CANDIDATE",
+      "AI_role": "不调度",
+      "human_authority": "人类核验后方可准入",
+      "AI_off_mode": "不作为fallback",
+      "failure_rule": "任一门失败即删除",
+      "failure_rule_en": "Any gate failure → delete candidate",
+      "retirement_rule": "任一门失败即删除",
+      "retirement_rule_en": "Any gate failure → delete candidate",
+      "evidence_refs": [
+        "assets/publication/depth/a07-renewal-project-register.png"
+      ],
+      "source_ids": [
+        "F2-SRC-P82-APPROVED-SPATIAL",
+        "F2-SRC-P82R-SPATIAL-DRAWINGS"
+      ],
+      "assumption_ids": [
+        "A-G1B2A-03",
+        "A-G1B2A-08"
+      ]
+    },
+    {
+      "project_id": "AI-01",
+      "title_zh": "AI原点 EDGE-HOUSE",
+      "title_en": "AI Origin EDGE-HOUSE",
+      "site": "AI_ORIGIN",
+      "problem": "知识交流缺少受控公共接口",
+      "permanent_action": "保留本地BASE",
+      "reversible_action": "一座低位可逆边屋",
+      "public_value": "知识交流与人工服务",
+      "dependencies": [
+        "host",
+        "消防",
+        "通行权",
+        "运营"
+      ],
+      "approval_status": "not_approved",
+      "operator_status": "unconfirmed",
+      "phase": "P1_CONCEPT",
+      "AI_role": "约束匹配建议",
+      "human_authority": "批准/否决/冻结/申诉/退役",
+      "AI_off_mode": "人工课表+服务台",
+      "failure_rule": "失败返回BASE并移除附件",
+      "failure_rule_en": "Failure → return to BASE and remove attachment",
+      "retirement_rule": "失败返回BASE并移除附件",
+      "retirement_rule_en": "Failure → return to BASE and remove attachment",
+      "evidence_refs": [
+        "assets/publication/depth/a07-renewal-project-register.png"
+      ],
+      "source_ids": [
+        "F2-SRC-P82-APPROVED-SPATIAL",
+        "F2-SRC-P82R-SPATIAL-DRAWINGS"
+      ],
+      "assumption_ids": [
+        "A-G1B2A-03",
+        "A-G1B2A-08"
+      ]
+    },
+    {
+      "project_id": "DZ-01",
+      "title_zh": "大钟寺阶台前场",
+      "title_en": "Dazhongsi Terraced Forecourt",
+      "site": "DAZHONGSI",
+      "problem": "到达、等候与咨询冲突",
+      "permanent_action": "连续主线",
+      "reversible_action": "三处不连续侧阶台",
+      "public_value": "服务/咨询/原型交流",
+      "dependencies": [
+        "站口",
+        "高差",
+        "流量",
+        "消防"
+      ],
+      "approval_status": "not_approved",
+      "operator_status": "unconfirmed",
+      "phase": "LATER",
+      "AI_role": "只建议选中单元",
+      "human_authority": "人工批准单元动作",
+      "AI_off_mode": "受控撤收回BASE",
+      "failure_rule": "关闭时正常撤收",
+      "failure_rule_en": "Normal close → controlled return to BASE",
+      "retirement_rule": "关闭时正常撤收",
+      "retirement_rule_en": "Normal close → controlled return to BASE",
+      "evidence_refs": [
+        "assets/publication/depth/a07-renewal-project-register.png"
+      ],
+      "source_ids": [
+        "F2-SRC-P82-APPROVED-SPATIAL",
+        "F2-SRC-P82R-SPATIAL-DRAWINGS"
+      ],
+      "assumption_ids": [
+        "A-G1B2A-03",
+        "A-G1B2A-08"
+      ]
+    },
+    {
+      "project_id": "NR-01",
+      "title_zh": "北段线性侧湾",
+      "title_en": "Northern Linear Side-Bay",
+      "site": "NORTHERN",
+      "problem": "项目边缘验证缺少安全接口",
+      "permanent_action": "陆侧本地BASE",
+      "reversible_action": "三处侧湾仅选中一处",
+      "public_value": "验证创新与观察",
+      "dependencies": [
+        "项目",
+        "水务",
+        "公共",
+        "运营"
+      ],
+      "approval_status": "not_approved",
+      "operator_status": "unconfirmed",
+      "phase": "LATER",
+      "AI_role": "近失事件比较",
+      "human_authority": "人工批准/安全复核",
+      "AI_off_mode": "机械锁定+FREEZE",
+      "failure_rule": "任一门失败删除",
+      "failure_rule_en": "Any gate failure → delete side-bay layer",
+      "retirement_rule": "任一门失败删除",
+      "retirement_rule_en": "Any gate failure → delete side-bay layer",
+      "evidence_refs": [
+        "assets/publication/depth/a07-renewal-project-register.png"
+      ],
+      "source_ids": [
+        "F2-SRC-P82-APPROVED-SPATIAL",
+        "F2-SRC-P82R-SPATIAL-DRAWINGS"
+      ],
+      "assumption_ids": [
+        "A-G1B2A-03",
+        "A-G1B2A-08"
+      ]
+    },
+    {
+      "project_id": "HM-01",
+      "title_zh": "历史记忆解释层",
+      "title_en": "Heritage and Memory Layer",
+      "site": "ALL",
+      "problem": "铁路历史与新介入需可读分层",
+      "permanent_action": "不附着未经核实遗产",
+      "reversible_action": "可移除解释媒介",
+      "public_value": "历史×科技公共记忆",
+      "dependencies": [
+        "文保核验",
+        "内容审校"
+      ],
+      "approval_status": "not_approved",
+      "operator_status": "unconfirmed",
+      "phase": "CONCEPT",
+      "AI_role": "只辅助检索",
+      "human_authority": "人工策展",
+      "AI_off_mode": "静态解释",
+      "failure_rule": "权威或附着条件不满足即撤除",
+      "failure_rule_en": "Authority/attachment failure → remove interpretation layer",
+      "retirement_rule": "权威或附着条件不满足即撤除",
+      "retirement_rule_en": "Authority/attachment failure → remove interpretation layer",
+      "evidence_refs": [
+        "assets/publication/depth/a07-renewal-project-register.png"
+      ],
+      "source_ids": [
+        "F2-SRC-P82-APPROVED-SPATIAL",
+        "F2-SRC-P82R-SPATIAL-DRAWINGS"
+      ],
+      "assumption_ids": [
+        "A-G1B2A-03",
+        "A-G1B2A-08"
+      ]
+    },
+    {
+      "project_id": "OP-01",
+      "title_zh": "人工运营与申诉",
+      "title_en": "Human Operation and Remedy",
+      "site": "ALL",
+      "problem": "AI建议需公共权力边界",
+      "permanent_action": "人工岗位与公开规则",
+      "reversible_action": "可逆数字层",
+      "public_value": "否决、冻结、申诉、退役",
+      "dependencies": [
+        "运营",
+        "隐私",
+        "保险",
+        "审计"
+      ],
+      "approval_status": "not_approved",
+      "operator_status": "unconfirmed",
+      "phase": "CONCEPT",
+      "AI_role": "输出有界建议",
+      "human_authority": "人类最终判断",
+      "AI_off_mode": "完整人工流程",
+      "failure_rule": "无法审计即停用AI层",
+      "failure_rule_en": "If unauditable → disable the AI layer",
+      "retirement_rule": "无法审计即停用AI层",
+      "retirement_rule_en": "If unauditable → disable the AI layer",
+      "evidence_refs": [
+        "assets/publication/depth/a07-renewal-project-register.png"
+      ],
+      "source_ids": [
+        "F2-SRC-P82-APPROVED-SPATIAL",
+        "F2-SRC-P82R-SPATIAL-DRAWINGS"
+      ],
+      "assumption_ids": [
+        "A-G1B2A-03",
+        "A-G1B2A-08"
+      ]
+    }
+  ]
+}

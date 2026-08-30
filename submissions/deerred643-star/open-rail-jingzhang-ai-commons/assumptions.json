@@ -1,0 +1,40 @@
+{
+  "schema_version": "0.1.0",
+  "assumptions": [
+    {
+      "id": "A-CONTROLS-001",
+      "status": "pending_professional_confirmation",
+      "statement": "公开报道显示 HD00-1601 等街区控规已获批复（2026-08-11）；该报道尚未进入 approved_formal_sources，作为待来源登记复核的公开背景信息，不构成法定底盘依据。控规图则指标（容积率、建筑高度、退线、道路红线）、权属、市政管线和工程条件数值仍须在官方附件取得后由专业机构确认。",
+      "statement_zh": "公开报道显示 HD00-1601 等街区控规已获批复（2026-08-11）；该报道尚未进入 approved_formal_sources，作为待来源登记复核的公开背景信息，不构成法定底盘依据。控规图则指标（容积率、建筑高度、退线、道路红线）、权属、市政管线和工程条件数值仍须在官方附件取得后由专业机构确认。",
+      "impact": "本包所有空间落地内容均为概念建议/参考方案；「控规之上的概念深化」为概念定位方向，不依据未登记来源形成法定结论；容积率、建筑高度、拆改留等法定控制数值一律记为 unknown。"
+    },
+    {
+      "id": "A-BOUNDARY-002",
+      "status": "provisional_in_use",
+      "statement": "总体设计范围与三处重点区域使用仓库 provisional_boundaries.geojson（依据公告文字四至与面积约束推定，provisional_rough）。",
+      "statement_zh": "总体设计范围与三处重点区域使用仓库 provisional_boundaries.geojson（依据公告文字四至与面积约束推定，provisional_rough）。",
+      "impact": "全部几何图层与 site_area_sqm、green_ratio、public_space_ratio 等指标均为临时设计模型值；官方精确边界发布后，须按 assumptions 中登记的复算路径重算全部图层与指标。"
+    },
+    {
+      "id": "A-DERIVED-003",
+      "status": "design_assumption",
+      "statement": "开源主线廊道、站厅广场、用地分区、建筑基底、道路中心线等为本 Agent 生成的概念性设计图层（design_proposal），线位与形状为示意性表达。",
+      "statement_zh": "开源主线廊道、站厅广场、用地分区、建筑基底、道路中心线等为本 Agent 生成的概念性设计图层（design_proposal），线位与形状为示意性表达。",
+      "impact": "图层可用于评审设计意图与指标量级，不得被引用为道路红线、地块边界或工程线位。"
+    },
+    {
+      "id": "A-CRS-004",
+      "status": "method_note",
+      "statement": "GeoJSON 交换坐标系为 EPSG:4326；面积与长度复算在 EPSG:4548（CGCS2000 三度带，中央经线117E）下进行；由 4326 到 4548 的投影转换存在毫米级数值差异。",
+      "statement_zh": "GeoJSON 交换坐标系为 EPSG:4326；面积与长度复算在 EPSG:4548（CGCS2000 三度带，中央经线117E）下进行；由 4326 到 4548 的投影转换存在毫米级数值差异。",
+      "impact": "复算结果与本包登记值之间可能出现小于 0.01% 的尾差，属正常投影与坐标取整（7 位小数）误差。"
+    },
+    {
+      "id": "A-COMPOSITE-005",
+      "status": "design_assumption",
+      "statement": "公共空间图层与绿地图层存在有意的复合利用（滨水绿带兼作公共开放空间、口袋广场位于社区公园内），两图层面积指标分别独立计算，不应相加。",
+      "statement_zh": "公共空间图层与绿地图层存在有意的复合利用（滨水绿带兼作公共开放空间、口袋广场位于社区公园内），两图层面积指标分别独立计算，不应相加。",
+      "impact": "green_ratio 与 public_space_ratio 分别对应各自图层，相加会高估开放空间总量；合并口径须在专业深化阶段重新定义。"
+    }
+  ]
+}

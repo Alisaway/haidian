@@ -7,14 +7,41 @@
       "professional_dimension": "规划",
       "required": true,
       "status": "complete",
-      "proposal_sections": ["设计依据与资料清单", "三层范围工作框架", "风险、版权与合规说明"],
-      "drawing_refs": ["drawings/a3-booklet.pdf", "drawings/a0-boards.pdf"],
-      "geometry_refs": ["geometry/site_boundary.geojson", "geometry/key_areas.geojson", "geometry/constraints.geojson"],
-      "metric_refs": ["site_area_sqm", "key_area_count"],
-      "source_ids": ["DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509", "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605", "REPO-PROCESSED-FACT-PACK"],
-      "assumption_ids": ["A-GEOM-001", "A-SURVEY-001", "A-CONTROLS-001"],
-      "self_check_ids": ["SPATIAL_REVIEW", "PROFESSIONAL_EVIDENCE"],
-      "evidence_summary_zh": "F01 只显示临时范围、三区两翼和待调查横断面；正文逐项列出正式边界、逐栋现状、道路、无障碍、市政、文保和运营缺口。complete 表示诊断与缺口表达完整，不表示现场调查已经完成。"
+      "proposal_sections": [
+        "设计依据与资料清单",
+        "三层范围工作框架",
+        "风险、版权与合规说明"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson",
+        "geometry/constraints.geojson"
+      ],
+      "metric_refs": [
+        "cross_section_surveyed_count",
+        "osm_heritage_park_intersection_ratio",
+        "osm_named_street_average_offset_m"
+      ],
+      "source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+        "DATA-SRC-PROVISIONAL-BOUNDARY-BASIS-20260814"
+      ],
+      "assumption_ids": [
+        "A-GEOM-001",
+        "A-SURVEY-001",
+        "A-CONTROLS-001",
+        "A-OPEN-DATA-NEGATIVE-001"
+      ],
+      "self_check_ids": [
+        "SPATIAL_REVIEW",
+        "PROFESSIONAL_EVIDENCE"
+      ],
+      "evidence_summary_zh": "来源冻结、OSM 负结果与 survey=0 明确诊断证据边界；不把背景核对写成现场或官方空间事实。"
     },
     {
       "item_id": "three_level_scope_framework",
@@ -22,14 +49,53 @@
       "professional_dimension": "规划",
       "required": true,
       "status": "complete",
-      "proposal_sections": ["设计依据与资料清单", "三层范围工作框架", "统筹研究范围产业与未来城市研究", "重点区域详细设计"],
-      "drawing_refs": ["drawings/a3-booklet.pdf", "drawings/a0-boards.pdf"],
-      "geometry_refs": ["geometry/site_boundary.geojson", "geometry/key_areas.geojson"],
-      "metric_refs": ["site_area_sqm", "key_area_count"],
-      "source_ids": ["DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509", "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605"],
-      "assumption_ids": ["A-GEOM-001", "A-REGION-001"],
-      "self_check_ids": ["SPATIAL_REVIEW", "DETERMINISTIC_VALIDATION"],
-      "evidence_summary_zh": "F01 和正文分别说明统筹研究、总体设计、重点区域三层职责；范围图均以 provisional 状态表达，正式 polygon 到位后触发九类图层和全部载体重算。"
+      "proposal_sections": [
+        "设计依据与资料清单",
+        "三层范围工作框架",
+        "统筹研究范围产业与未来城市研究",
+        "重点区域详细设计"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/site_boundary.geojson#SITE-001",
+        "geometry/roads.geojson#SPINE-001",
+        "geometry/roads.geojson#CX01",
+        "geometry/roads.geojson#CX02",
+        "geometry/roads.geojson#CX03",
+        "geometry/roads.geojson#CX04",
+        "geometry/roads.geojson#CX05",
+        "geometry/roads.geojson#CX06",
+        "geometry/roads.geojson#CX07",
+        "geometry/roads.geojson#CX08",
+        "geometry/roads.geojson#CX09",
+        "geometry/roads.geojson#CX10",
+        "geometry/roads.geojson#CX11",
+        "geometry/roads.geojson#CX12"
+      ],
+      "metric_refs": [
+        "cross_section_candidate_count",
+        "cross_section_surveyed_count",
+        "detailed_cross_section_count",
+        "candidate_cross_section_total_length_m"
+      ],
+      "source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605"
+      ],
+      "assumption_ids": [
+        "A-GEOM-001",
+        "A-SURVEY-001",
+        "A-CX-001",
+        "A-DIMENSION-001"
+      ],
+      "self_check_ids": [
+        "SPATIAL_REVIEW",
+        "DETERMINISTIC_VALIDATION"
+      ],
+      "evidence_summary_zh": "一条候选脊柱加 CX01—CX12 全部可定位；12/12 candidate/not surveyed，仅 CX02/CX05/CX10 为关系性设计目标。"
     },
     {
       "item_id": "overall_spatial_structure",
@@ -37,13 +103,39 @@
       "professional_dimension": "城市设计",
       "required": true,
       "status": "complete",
-      "proposal_sections": ["三层范围工作框架", "统筹研究范围产业与未来城市研究", "总体设计范围城市更新与控规深度城市设计"],
-      "drawing_refs": ["drawings/a3-booklet.pdf", "drawings/a0-boards.pdf"],
-      "geometry_refs": ["geometry/site_boundary.geojson", "geometry/key_areas.geojson", "geometry/roads.geojson", "geometry/public_space.geojson"],
-      "metric_refs": ["site_area_sqm", "key_area_count", "public_space_ratio"],
-      "source_ids": ["DATA-SRC-AGENT-TASKBOOK-20260518", "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509"],
-      "assumption_ids": ["A-GEOM-001", "A-REGION-001", "A-SURVEY-001"],
-      "self_check_ids": ["SPATIAL_REVIEW", "VISUAL_PACKAGING"],
+      "proposal_sections": [
+        "三层范围工作框架",
+        "统筹研究范围产业与未来城市研究",
+        "总体设计范围城市更新与控规深度城市设计"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson",
+        "geometry/roads.geojson",
+        "geometry/public_space.geojson"
+      ],
+      "metric_refs": [
+        "site_area_sqm",
+        "key_area_count",
+        "public_space_ratio"
+      ],
+      "source_ids": [
+        "DATA-SRC-AGENT-TASKBOOK-20260518",
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509"
+      ],
+      "assumption_ids": [
+        "A-GEOM-001",
+        "A-REGION-001",
+        "A-SURVEY-001"
+      ],
+      "self_check_ids": [
+        "SPATIAL_REVIEW",
+        "VISUAL_PACKAGING"
+      ],
       "evidence_summary_zh": "T01/F01 以南北遗产公园骨架、十二东西横断面、三区工作节点、两翼服务网络和候选区域接口构成总体结构；F07 补充研究—测试—公共场景—反馈回路，外部合作仍为待授权候选接口。"
     },
     {
@@ -52,14 +144,37 @@
       "professional_dimension": "规划",
       "required": true,
       "status": "complete",
-      "proposal_sections": ["总体设计范围城市更新与控规深度城市设计", "用地、建筑规模与拆改留方案", "指标体系、面积复算与合规矩阵"],
-      "drawing_refs": ["drawings/a3-booklet.pdf", "drawings/a0-boards.pdf"],
-      "geometry_refs": ["geometry/site_boundary.geojson", "geometry/land_use.geojson"],
-      "metric_refs": ["site_area_sqm"],
-      "source_ids": ["DATA-SRC-PROVISIONAL-BOUNDARIES-20260605", "REPO-SOURCE-REGISTRY"],
-      "assumption_ids": ["A-GEOM-001", "A-CONTROLS-001"],
-      "self_check_ids": ["DETERMINISTIC_VALIDATION", "SPATIAL_REVIEW"],
-      "evidence_summary_zh": "land_use 图层提供共享边界与完整覆盖，正文解释公共开放、创新服务、生活照护和蓝绿连续的关系；F02 明确其为临时边界上的情景布局，不是法定用地或现状调查结论。"
+      "proposal_sections": [
+        "总体设计范围城市更新与控规深度城市设计",
+        "用地、建筑规模与拆改留方案",
+        "指标体系、面积复算与合规矩阵"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/site_boundary.geojson",
+        "geometry/land_use.geojson"
+      ],
+      "metric_refs": [
+        "land_use_partition_area_sqm",
+        "land_use_gap_area_sqm",
+        "land_use_overlap_area_sqm"
+      ],
+      "source_ids": [
+        "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+        "REPO-SOURCE-REGISTRY"
+      ],
+      "assumption_ids": [
+        "A-GEOM-001",
+        "A-CONTROLS-001"
+      ],
+      "self_check_ids": [
+        "DETERMINISTIC_VALIDATION",
+        "SPATIAL_REVIEW"
+      ],
+      "evidence_summary_zh": "四块情景分区共用边界坐标并完整覆盖 SITE-001，缺口与重叠均为 0；不是法定用地或宗地。"
     },
     {
       "item_id": "development_intensity_controls",
@@ -67,13 +182,36 @@
       "professional_dimension": "控规",
       "required": true,
       "status": "complete",
-      "proposal_sections": ["设计依据与资料清单", "总体设计范围城市更新与控规深度城市设计", "用地、建筑规模与拆改留方案", "指标体系、面积复算与合规矩阵"],
-      "drawing_refs": ["drawings/a3-booklet.pdf", "drawings/a0-boards.pdf"],
-      "geometry_refs": ["geometry/site_boundary.geojson", "geometry/buildings.geojson", "geometry/constraints.geojson"],
-      "metric_refs": ["floor_area_ratio", "building_footprint_area_sqm"],
-      "source_ids": ["DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509", "REPO-SOURCE-REGISTRY"],
-      "assumption_ids": ["A-CONTROLS-001", "A-GEOM-001"],
-      "self_check_ids": ["PROFESSIONAL_EVIDENCE"],
+      "proposal_sections": [
+        "设计依据与资料清单",
+        "总体设计范围城市更新与控规深度城市设计",
+        "用地、建筑规模与拆改留方案",
+        "指标体系、面积复算与合规矩阵"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/site_boundary.geojson",
+        "geometry/buildings.geojson",
+        "geometry/constraints.geojson"
+      ],
+      "metric_refs": [
+        "floor_area_ratio",
+        "building_footprint_area_sqm"
+      ],
+      "source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "REPO-SOURCE-REGISTRY"
+      ],
+      "assumption_ids": [
+        "A-CONTROLS-001",
+        "A-GEOM-001"
+      ],
+      "self_check_ids": [
+        "PROFESSIONAL_EVIDENCE"
+      ],
       "evidence_summary_zh": "FAR、高度、密度和容量均保持待正式数据补齐；正文只讨论先共享时段和可逆活动的 INTENSIFY。complete 表示未知控制、禁止推断和复算触发器已完整登记，不表示存在已知控规值。"
     },
     {
@@ -82,13 +220,33 @@
       "professional_dimension": "建筑",
       "required": true,
       "status": "complete",
-      "proposal_sections": ["总体设计范围城市更新与控规深度城市设计", "用地、建筑规模与拆改留方案", "蓝绿空间、公共空间与城市风貌"],
-      "drawing_refs": ["drawings/a3-booklet.pdf", "drawings/a0-boards.pdf"],
-      "geometry_refs": ["geometry/buildings.geojson", "geometry/public_space.geojson"],
-      "metric_refs": ["building_footprint_area_sqm"],
-      "source_ids": ["DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509"],
-      "assumption_ids": ["A-CONTROLS-001", "A-SURVEY-001"],
-      "self_check_ids": ["PROFESSIONAL_EVIDENCE", "VISUAL_PACKAGING"],
+      "proposal_sections": [
+        "总体设计范围城市更新与控规深度城市设计",
+        "用地、建筑规模与拆改留方案",
+        "蓝绿空间、公共空间与城市风貌"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/buildings.geojson",
+        "geometry/public_space.geojson"
+      ],
+      "metric_refs": [
+        "building_footprint_area_sqm"
+      ],
+      "source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509"
+      ],
+      "assumption_ids": [
+        "A-CONTROLS-001",
+        "A-SURVEY-001"
+      ],
+      "self_check_ids": [
+        "PROFESSIONAL_EVIDENCE",
+        "VISUAL_PACKAGING"
+      ],
       "evidence_summary_zh": "正文把建筑表达限定为待核验的公共首层、界面通透、退让、屋顶使用和可逆构件；未给建筑高度或体量结论，F09 组件库也明确结构、消防和施工可行性待专业深化。"
     },
     {
@@ -97,13 +255,34 @@
       "professional_dimension": "建筑",
       "required": true,
       "status": "complete",
-      "proposal_sections": ["总体设计范围城市更新与控规深度城市设计", "用地、建筑规模与拆改留方案", "更新项目清单、实施政策与分期计划"],
-      "drawing_refs": ["drawings/a3-booklet.pdf", "drawings/a0-boards.pdf"],
-      "geometry_refs": ["geometry/buildings.geojson", "geometry/land_use.geojson", "geometry/phasing.geojson"],
-      "metric_refs": ["building_footprint_area_sqm"],
-      "source_ids": ["DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509", "CASE-AMSTERDAM-MARINETERREIN"],
-      "assumption_ids": ["A-CONTROLS-001", "A-SURVEY-001"],
-      "self_check_ids": ["PROFESSIONAL_EVIDENCE"],
+      "proposal_sections": [
+        "总体设计范围城市更新与控规深度城市设计",
+        "用地、建筑规模与拆改留方案",
+        "更新项目清单、实施政策与分期计划"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/buildings.geojson",
+        "geometry/land_use.geojson",
+        "geometry/phasing.geojson"
+      ],
+      "metric_refs": [
+        "building_footprint_area_sqm"
+      ],
+      "source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "CASE-AMSTERDAM-MARINETERREIN"
+      ],
+      "assumption_ids": [
+        "A-CONTROLS-001",
+        "A-SURVEY-001"
+      ],
+      "self_check_ids": [
+        "PROFESSIONAL_EVIDENCE"
+      ],
       "evidence_summary_zh": "F02 使用 KEEP/OPEN/INTENSIFY 作为可逆更新动作，不替代逐栋拆改留；T06 规定在权属、结构、消防、日照、管线与文保任一前提失败时退回公共空间或运营试点。"
     },
     {
@@ -112,14 +291,43 @@
       "professional_dimension": "交通",
       "required": true,
       "status": "complete",
-      "proposal_sections": ["三层范围工作框架", "交通、轨道、市政与公共服务设施", "蓝绿空间、公共空间与城市风貌"],
-      "drawing_refs": ["drawings/a3-booklet.pdf", "drawings/a0-boards.pdf"],
-      "geometry_refs": ["geometry/roads.geojson", "geometry/public_space.geojson", "geometry/constraints.geojson"],
-      "metric_refs": ["public_space_ratio"],
-      "source_ids": ["DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509"],
-      "assumption_ids": ["A-SURVEY-001", "A-CONTROLS-001"],
-      "self_check_ids": ["SPATIAL_REVIEW", "PROFESSIONAL_EVIDENCE"],
-      "evidence_summary_zh": "F04 表达步行、无障碍、骑行、公交接驳和必要机动车的概念优先级，SC08/SC09 提供人工与静态回退；道路红线、断面、客流、停车和站口现状缺失被登记为现场调查前置条件。"
+      "proposal_sections": [
+        "三层范围工作框架",
+        "交通、轨道、市政与公共服务设施",
+        "蓝绿空间、公共空间与城市风貌"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/roads.geojson#SPINE-001",
+        "geometry/roads.geojson#CX02",
+        "geometry/roads.geojson#CX05",
+        "geometry/roads.geojson#CX10"
+      ],
+      "metric_refs": [
+        "cross_section_candidate_count",
+        "cross_section_surveyed_count",
+        "detailed_cross_section_count",
+        "pedestrian_flow_count",
+        "accessible_route_pass_rate"
+      ],
+      "source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW"
+      ],
+      "assumption_ids": [
+        "A-SURVEY-001",
+        "A-CONTROLS-001",
+        "A-CX-001",
+        "A-DIMENSION-001"
+      ],
+      "self_check_ids": [
+        "SPATIAL_REVIEW",
+        "PROFESSIONAL_EVIDENCE"
+      ],
+      "evidence_summary_zh": "十二条候选均带逐条现场核验清单；三条代表关系剖面只表达设计目标，客流、无障碍和道路红线仍 unknown。"
     },
     {
       "item_id": "municipal_new_infrastructure",
@@ -127,14 +335,36 @@
       "professional_dimension": "市政",
       "required": true,
       "status": "complete",
-      "proposal_sections": ["AI 创新生态、人才画像与 AI+ 场景", "交通、轨道、市政与公共服务设施", "风险、版权与合规说明"],
-      "drawing_refs": ["drawings/a3-booklet.pdf", "drawings/a0-boards.pdf"],
-      "geometry_refs": ["geometry/public_space.geojson", "geometry/constraints.geojson"],
-      "metric_refs": ["public_space_ratio"],
-      "source_ids": ["DATA-SRC-AGENT-TASKBOOK-20260518"],
-      "assumption_ids": ["A-CONTROLS-001", "A-OPS-001"],
-      "self_check_ids": ["PROFESSIONAL_EVIDENCE"],
-      "evidence_summary_zh": "SC02 将边缘节点限定为清权设备的受控能效与热安全试验，不能推断市政容量；正文逐项列出供电、散热、噪声、网络安全、消防、排涝和维护的专业 Gate，并要求异常时隔离设备。"
+      "proposal_sections": [
+        "AI 创新生态、人才画像与 AI+ 场景",
+        "交通、轨道、市政与公共服务设施",
+        "风险、版权与合规说明"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/public_space.geojson",
+        "geometry/constraints.geojson"
+      ],
+      "metric_refs": [
+        "public_space_ratio"
+      ],
+      "source_ids": [
+        "DATA-SRC-AGENT-TASKBOOK-20260518",
+        "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES"
+      ],
+      "assumption_ids": [
+        "A-CONTROLS-001",
+        "A-OPS-001",
+        "A-PROTOCOL-001"
+      ],
+      "self_check_ids": [
+        "PROFESSIONAL_EVIDENCE"
+      ],
+      "evidence_summary_zh": "SC02 将边缘节点限定为清权设备的受控能效与热安全试验，不能推断市政容量；十二场景协议把断网、断电、传感/接口、专业阈值、人工接管与隔离/停止留痕写入同一状态机，现场容量、消防、能源和运营人员仍待专业确认。",
+      "phase3_protocol_refs": ["visual/assets/phase3-protocol-contracts.json", "visual/assets/phase3-data-governance.json", "visual/assets/phase3-red-team.json", "assets/figures/scenario-matrix.png", "assets/figures/operations-pathway.png"]
     },
     {
       "item_id": "blue_green_public_space",
@@ -142,13 +372,36 @@
       "professional_dimension": "景观",
       "required": true,
       "status": "complete",
-      "proposal_sections": ["交通、轨道、市政与公共服务设施", "蓝绿空间、公共空间与城市风貌"],
-      "drawing_refs": ["drawings/a3-booklet.pdf", "drawings/a0-boards.pdf"],
-      "geometry_refs": ["geometry/green_space.geojson", "geometry/public_space.geojson", "geometry/roads.geojson"],
-      "metric_refs": ["green_ratio", "public_space_ratio"],
-      "source_ids": ["DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509", "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605"],
-      "assumption_ids": ["A-GEOM-001", "A-SURVEY-001"],
-      "self_check_ids": ["SPATIAL_REVIEW", "VISUAL_PACKAGING"],
+      "proposal_sections": [
+        "交通、轨道、市政与公共服务设施",
+        "蓝绿空间、公共空间与城市风貌"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson",
+        "geometry/roads.geojson"
+      ],
+      "metric_refs": [
+        "green_ratio",
+        "public_space_ratio"
+      ],
+      "source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+        "DATA-SRC-ELDERLY-SMART-TECH-PLAN-2020-45"
+      ],
+      "assumption_ids": [
+        "A-GEOM-001",
+        "A-SURVEY-001"
+      ],
+      "self_check_ids": [
+        "SPATIAL_REVIEW",
+        "VISUAL_PACKAGING"
+      ],
       "evidence_summary_zh": "F04 将清河、小月河、遗址公园、十二横断面和公共体验路线统一表达；正文要求现场校核树冠、雨水、照明、座椅、盲道与骑行冲突，并声明情景比例不是法定绿地率。"
     },
     {
@@ -157,14 +410,44 @@
       "professional_dimension": "城市设计",
       "required": true,
       "status": "complete",
-      "proposal_sections": ["重点区域详细设计", "AI 创新生态、人才画像与 AI+ 场景", "蓝绿空间、公共空间与城市风貌"],
-      "drawing_refs": ["drawings/a3-booklet.pdf", "drawings/a0-boards.pdf"],
-      "geometry_refs": ["geometry/key_areas.geojson", "geometry/public_space.geojson", "geometry/green_space.geojson", "geometry/roads.geojson"],
-      "metric_refs": ["key_area_count", "green_ratio", "public_space_ratio"],
-      "source_ids": ["DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509", "DATA-SRC-AGENT-TASKBOOK-20260518", "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605"],
-      "assumption_ids": ["A-GEOM-001", "A-CONTROLS-001", "A-OPS-001"],
-      "self_check_ids": ["SPATIAL_REVIEW", "VISUAL_PACKAGING", "PROFESSIONAL_EVIDENCE"],
-      "evidence_summary_zh": "F03 分别交付众智园河岸验证界面、AI原点开放首层校园和大钟寺站城四象限客厅，并配清河验证庭、原点发布台、城市窗口；每区关联不同 SC 卡和风险条件，临时边界与工程缺口显式标注。"
+      "proposal_sections": [
+        "重点区域详细设计",
+        "AI 创新生态、人才画像与 AI+ 场景",
+        "蓝绿空间、公共空间与城市风貌"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/key_areas.geojson",
+        "geometry/public_space.geojson",
+        "geometry/green_space.geojson",
+        "geometry/roads.geojson"
+      ],
+      "metric_refs": [
+        "key_area_count",
+        "background_observation_count",
+        "spatial_action_count",
+        "detailed_cross_section_count"
+      ],
+      "source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "DATA-SRC-AGENT-TASKBOOK-20260518",
+        "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605"
+      ],
+      "assumption_ids": [
+        "A-GEOM-001",
+        "A-SURVEY-001",
+        "A-CX-001",
+        "A-DIMENSION-001"
+      ],
+      "self_check_ids": [
+        "SPATIAL_REVIEW",
+        "VISUAL_PACKAGING",
+        "PROFESSIONAL_EVIDENCE"
+      ],
+      "evidence_summary_zh": "三处 provisional 重点区各有 5 条背景观察、3 项空间动作、共同 400m 设计目标画布、关系剖面及 open/human/stop/remove 运营状态。"
     },
     {
       "item_id": "renewal_project_list",
@@ -172,14 +455,1110 @@
       "professional_dimension": "实施",
       "required": true,
       "status": "complete",
-      "proposal_sections": ["更新项目清单、实施政策与分期计划", "风险、版权与合规说明"],
-      "drawing_refs": ["drawings/a3-booklet.pdf", "drawings/a0-boards.pdf"],
-      "geometry_refs": ["geometry/key_areas.geojson", "geometry/public_space.geojson", "geometry/phasing.geojson"],
-      "metric_refs": ["key_area_count", "public_space_ratio"],
-      "source_ids": ["DATA-SRC-AGENT-TASKBOOK-20260518", "CASE-AMSTERDAM-MARINETERREIN"],
-      "assumption_ids": ["A-OPS-001", "A-CONTROLS-001", "A-REGION-001", "A-RIGHTS-001"],
-      "self_check_ids": ["PROFESSIONAL_EVIDENCE"],
-      "evidence_summary_zh": "T06 列出 IM01-IM13，覆盖资料基线、横断面调查、治理协议、三类TVS、三区服务、三地标、组件库、文化导视、贡献谱、年度运营、区域接口和全量重算；每行包含责任、依赖、成本级别、维护、评价、人工接管和退出。"
+      "proposal_sections": [
+        "更新项目清单、实施政策与分期计划",
+        "风险、版权与合规说明"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/key_areas.geojson",
+        "geometry/public_space.geojson",
+        "geometry/phasing.geojson"
+      ],
+      "metric_refs": [
+        "key_area_count",
+        "public_space_ratio"
+      ],
+      "source_ids": [
+        "DATA-SRC-AGENT-TASKBOOK-20260518",
+        "CASE-AMSTERDAM-MARINETERREIN"
+      ],
+      "assumption_ids": [
+        "A-OPS-001",
+        "A-CONTROLS-001",
+        "A-REGION-001",
+        "A-RIGHTS-001",
+        "A-PROTOCOL-001"
+      ],
+      "self_check_ids": [
+        "PROFESSIONAL_EVIDENCE"
+      ],
+      "evidence_summary_zh": "T06 只承担 AP1-AP7 的前台聚合与 Gate 导航；IM01-IM13 的逐项责任、依赖、定性成本、证据、维护、评价、人工接管及停止/退出字段，以本对象 implementation_projects 数组为机器审计权威层。",
+      "implementation_backend_path": "design_depth_matrix.json#/items/11/implementation_projects",
+      "implementation_backend_contract": "phase1-audit-repair-v1",
+      "phase3_protocol_contract": "visual/assets/phase3-protocol-contracts.json#/scenarios",
+      "phase3_governance_contract": "visual/assets/phase3-data-governance.json#/scenario_profiles",
+      "phase3_red_team_contract": "visual/assets/phase3-red-team.json#/red_team_tests",
+      "implementation_project_count": 13,
+      "qualitative_cost_legend": {
+        "S": {
+          "zh": "研究、内容、协调或轻量组件",
+          "en": "research, content, coordination, or lightweight components"
+        },
+        "M": {
+          "zh": "需要场地运营、可逆适配或持续人员",
+          "en": "site operations, reversible adaptation, or sustained staffing"
+        },
+        "L": {
+          "zh": "仅在正式资料和工程深化后讨论",
+          "en": "discussion only after official data and engineering deepening"
+        }
+      },
+      "implementation_projects": [
+        {
+          "implementation_id": "IM01",
+          "action_package_id": "AP1",
+          "title_zh": "正式边界与资料基线",
+          "title_en": "Official Geometry and Data Baseline",
+          "concept_status": "conceptual_recommendation",
+          "scenario_refs": [],
+          "responsible_roles": {
+            "zh": [
+              "数据管理角色",
+              "持证专业团队"
+            ],
+            "en": [
+              "data-steward role",
+              "licensed professional team"
+            ]
+          },
+          "dependencies": {
+            "zh": [
+              "正式附件",
+              "权威版本登记"
+            ],
+            "en": [
+              "official attachments",
+              "authoritative-version register"
+            ]
+          },
+          "qualitative_cost": {
+            "classes": [
+              "S"
+            ],
+            "not_an_investment_estimate": true
+          },
+          "evidence_maintenance_evaluation": {
+            "evidence": {
+              "zh": [
+                "版本台账",
+                "差异记录",
+                "重算范围"
+              ],
+              "en": [
+                "version register",
+                "difference record",
+                "recomputation scope"
+              ]
+            },
+            "maintenance": {
+              "zh": "每次来源更新即复核。",
+              "en": "Recheck on every source update."
+            },
+            "evaluation": {
+              "zh": [
+                "权威顺序一致性",
+                "重算范围完整性"
+              ],
+              "en": [
+                "authority-order consistency",
+                "recomputation-scope completeness"
+              ]
+            }
+          },
+          "human_takeover": {
+            "zh": "来源冲突交由数据管理角色与持证专业团队判定。",
+            "en": "Source conflicts return to the data steward and licensed professional team."
+          },
+          "stop_exit": {
+            "zh": "来源冲突即冻结派生指标。",
+            "en": "Freeze derived metrics when sources conflict."
+          }
+        },
+        {
+          "implementation_id": "IM02",
+          "action_package_id": "AP2",
+          "title_zh": "十二横断面现场审计",
+          "title_en": "Field Audit of Twelve Cross-Sections",
+          "concept_status": "conceptual_recommendation",
+          "scenario_refs": [
+            "SC08"
+          ],
+          "responsible_roles": {
+            "zh": [
+              "城市设计",
+              "交通",
+              "无障碍",
+              "社区共设计"
+            ],
+            "en": [
+              "urban design",
+              "transport",
+              "accessibility",
+              "community co-design"
+            ]
+          },
+          "dependencies": {
+            "zh": [
+              "调查许可",
+              "现场安全安排"
+            ],
+            "en": [
+              "survey permission",
+              "field-safety arrangements"
+            ]
+          },
+          "qualitative_cost": {
+            "classes": [
+              "M"
+            ],
+            "not_an_investment_estimate": true
+          },
+          "evidence_maintenance_evaluation": {
+            "evidence": {
+              "zh": [
+                "断点台账",
+                "共设计反馈",
+                "调查版本"
+              ],
+              "en": [
+                "barrier register",
+                "co-design feedback",
+                "survey version"
+              ]
+            },
+            "maintenance": {
+              "zh": "建议 4-8 周首轮并做季节复查。",
+              "en": "A suggested 4-8-week first pass plus seasonal review."
+            },
+            "evaluation": {
+              "zh": [
+                "横断面覆盖",
+                "调查质量",
+                "无障碍连续性"
+              ],
+              "en": [
+                "cross-section coverage",
+                "survey quality",
+                "accessible continuity"
+              ]
+            }
+          },
+          "human_takeover": {
+            "zh": "交通、无障碍与社区共设计人员共同确认断点和替代路线。",
+            "en": "Transport, accessibility, and community co-design roles confirm barriers and fallback routes."
+          },
+          "stop_exit": {
+            "zh": "无许可或质量不足时只保留待调查清单。",
+            "en": "Keep only a pending-survey list when permission or quality is insufficient."
+          }
+        },
+        {
+          "implementation_id": "IM03",
+          "action_package_id": "AP2",
+          "title_zh": "状态、人工接管与申诉协议",
+          "title_en": "Status, Human Takeover, and Appeal Protocol",
+          "concept_status": "conceptual_recommendation",
+          "scenario_refs": [
+            "SC08",
+            "SC12"
+          ],
+          "responsible_roles": {
+            "zh": [
+              "运营",
+              "伦理",
+              "法务",
+              "无障碍"
+            ],
+            "en": [
+              "operations",
+              "ethics",
+              "legal",
+              "accessibility"
+            ]
+          },
+          "dependencies": {
+            "zh": [
+              "责任清单",
+              "申诉入口",
+              "停止权限"
+            ],
+            "en": [
+              "responsibility list",
+              "appeal channel",
+              "stop authority"
+            ]
+          },
+          "qualitative_cost": {
+            "classes": [
+              "S"
+            ],
+            "not_an_investment_estimate": true
+          },
+          "evidence_maintenance_evaluation": {
+            "evidence": {
+              "zh": [
+                "接管日志",
+                "投诉台账",
+                "协议修订记录"
+              ],
+              "en": [
+                "takeover log",
+                "complaint register",
+                "protocol revision record"
+              ]
+            },
+            "maintenance": {
+              "zh": "每个场景进入前测试并按季度复盘。",
+              "en": "Test before scenario entry and review quarterly."
+            },
+            "evaluation": {
+              "zh": [
+                "人工接管可达性",
+                "投诉闭环",
+                "高风险误答处置"
+              ],
+              "en": [
+                "human-takeover reachability",
+                "complaint closure",
+                "high-risk answer handling"
+              ]
+            }
+          },
+          "human_takeover": {
+            "zh": "责任角色接管服务、记录申诉并提供低技术替代。",
+            "en": "The accountable role takes over service, records the appeal, and provides a low-tech fallback."
+          },
+          "stop_exit": {
+            "zh": "高风险误答或投诉无法闭环即停服。",
+            "en": "Stop service when a high-risk error or complaint cannot be closed."
+          }
+        },
+        {
+          "implementation_id": "IM04",
+          "action_package_id": "AP3",
+          "title_zh": "众智园三类产业验证场景",
+          "title_en": "Three Zhongzhiyuan Industry-Validation Scenarios",
+          "concept_status": "conceptual_recommendation",
+          "scenario_refs": [
+            "SC01",
+            "SC02",
+            "SC03",
+            "SC04"
+          ],
+          "responsible_roles": {
+            "zh": [
+              "测试运营",
+              "安全",
+              "设施"
+            ],
+            "en": [
+              "test operations",
+              "safety",
+              "facilities"
+            ]
+          },
+          "dependencies": {
+            "zh": [
+              "权属条件",
+              "消防条件",
+              "能源条件",
+              "测试协议"
+            ],
+            "en": [
+              "ownership conditions",
+              "fire conditions",
+              "energy conditions",
+              "test protocol"
+            ]
+          },
+          "qualitative_cost": {
+            "classes": [
+              "M"
+            ],
+            "not_an_investment_estimate": true
+          },
+          "evidence_maintenance_evaluation": {
+            "evidence": {
+              "zh": [
+                "异常记录",
+                "放行记录",
+                "停止记录"
+              ],
+              "en": [
+                "anomaly record",
+                "release record",
+                "stop record"
+              ]
+            },
+            "maintenance": {
+              "zh": "仅在有期限的受控测试窗口内逐次维护。",
+              "en": "Maintain per run within a time-limited controlled-test window."
+            },
+            "evaluation": {
+              "zh": [
+                "专业 Gate 完整性",
+                "异常闭环",
+                "停止可执行性"
+              ],
+              "en": [
+                "professional-gate completeness",
+                "anomaly closure",
+                "stop executability"
+              ]
+            }
+          },
+          "human_takeover": {
+            "zh": "安全或设施角色拒绝放行、隔离设备或结束测试。",
+            "en": "Safety or facility roles refuse release, isolate equipment, or end the test."
+          },
+          "stop_exit": {
+            "zh": "专业条件或责任角色缺失即停止。",
+            "en": "Stop when professional conditions or an accountable role are missing."
+          }
+        },
+        {
+          "implementation_id": "IM05",
+          "action_package_id": "AP4",
+          "title_zh": "AI 原点成果匹配与共享中试",
+          "title_en": "AI Origin Matching and Shared Pilots",
+          "concept_status": "conceptual_recommendation",
+          "scenario_refs": [
+            "SC05",
+            "SC06",
+            "SC07"
+          ],
+          "responsible_roles": {
+            "zh": [
+              "研究转化",
+              "设施",
+              "人才服务",
+              "人工顾问"
+            ],
+            "en": [
+              "research translation",
+              "facilities",
+              "talent services",
+              "human adviser"
+            ]
+          },
+          "dependencies": {
+            "zh": [
+              "数据用途许可",
+              "设施条件",
+              "人工顾问在场"
+            ],
+            "en": [
+              "data-use permission",
+              "facility conditions",
+              "human adviser present"
+            ]
+          },
+          "qualitative_cost": {
+            "classes": [
+              "M"
+            ],
+            "not_an_investment_estimate": true
+          },
+          "evidence_maintenance_evaluation": {
+            "evidence": {
+              "zh": [
+                "匹配记录",
+                "拒绝记录",
+                "纠错记录"
+              ],
+              "en": [
+                "matching record",
+                "refusal record",
+                "correction record"
+              ]
+            },
+            "maintenance": {
+              "zh": "建议 8-12 周服务原型并持续核验设施与权限。",
+              "en": "A suggested 8-12-week service prototype with continuing facility and permission checks."
+            },
+            "evaluation": {
+              "zh": [
+                "同意与拒绝",
+                "误配与纠错",
+                "数据泄露事件"
+              ],
+              "en": [
+                "consent and refusal",
+                "mismatch and correction",
+                "data-leak incidents"
+              ]
+            }
+          },
+          "human_takeover": {
+            "zh": "人工顾问决定引荐、纠错或退回非 AI 服务。",
+            "en": "A human adviser decides referral, correction, or reversion to a non-AI service."
+          },
+          "stop_exit": {
+            "zh": "泄露、持续误配或设施条件不明即回退人工。",
+            "en": "Revert to humans for leakage, persistent mismatch, or unknown facility conditions."
+          }
+        },
+        {
+          "implementation_id": "IM06",
+          "action_package_id": "AP5",
+          "title_zh": "大钟寺产品试用与城市窗口",
+          "title_en": "Dazhongsi Product Trials and Urban Window",
+          "concept_status": "conceptual_recommendation",
+          "scenario_refs": [
+            "SC09",
+            "SC10",
+            "SC11"
+          ],
+          "responsible_roles": {
+            "zh": [
+              "公共运营",
+              "消费者权益",
+              "文化",
+              "现场主持"
+            ],
+            "en": [
+              "public operations",
+              "consumer rights",
+              "culture",
+              "on-site host"
+            ]
+          },
+          "dependencies": {
+            "zh": [
+              "场地许可",
+              "产品许可",
+              "投诉与撤场许可"
+            ],
+            "en": [
+              "site permission",
+              "product permission",
+              "complaint and removal authority"
+            ]
+          },
+          "qualitative_cost": {
+            "classes": [
+              "M"
+            ],
+            "not_an_investment_estimate": true
+          },
+          "evidence_maintenance_evaluation": {
+            "evidence": {
+              "zh": [
+                "试用退出记录",
+                "投诉记录",
+                "撤场记录"
+              ],
+              "en": [
+                "trial-exit record",
+                "complaint record",
+                "removal record"
+              ]
+            },
+            "maintenance": {
+              "zh": "限时轮换并逐场维护。",
+              "en": "Use time-limited rotations with per-event maintenance."
+            },
+            "evaluation": {
+              "zh": [
+                "自愿退出",
+                "投诉闭环",
+                "权利与误导风险"
+              ],
+              "en": [
+                "voluntary exit",
+                "complaint closure",
+                "rights and misleading-marketing risk"
+              ]
+            }
+          },
+          "human_takeover": {
+            "zh": "现场主持人随时停止 AI 展示、转人工说明并启动投诉流程。",
+            "en": "The on-site host can stop the AI display, switch to a human explanation, and open the complaint process."
+          },
+          "stop_exit": {
+            "zh": "安全、权利、误导营销或投诉闭环失败即撤场。",
+            "en": "Withdraw for safety, rights, misleading marketing, or failed complaint closure."
+          },
+          "single_first_use": {
+            "binding": "SC10+IM06 only",
+            "preflight_ref": "visual/assets/phase3-protocol-contracts.json#/first_use_trial",
+            "red_team_refs": ["RT-04", "RT-05", "RT-07", "RT-09", "RT-10", "RT-12", "RT-13", "RT-14", "RT-16"],
+            "threshold_status": "design-target or unknown unless externally evidenced",
+            "not_claimed": ["opened", "approved", "legally reviewed", "safety certified", "staffed", "measured performance"]
+          }
+        },
+        {
+          "implementation_id": "IM07",
+          "action_package_id": "AP6",
+          "title_zh": "三处公共地标原型",
+          "title_en": "Three Public-Landmark Prototypes",
+          "concept_status": "conceptual_recommendation",
+          "scenario_refs": [],
+          "responsible_roles": {
+            "zh": [
+              "城市设计",
+              "文化",
+              "无障碍",
+              "运营"
+            ],
+            "en": [
+              "urban design",
+              "culture",
+              "accessibility",
+              "operations"
+            ]
+          },
+          "dependencies": {
+            "zh": [
+              "权属确认",
+              "文保、生态、交通和结构专业条件"
+            ],
+            "en": [
+              "ownership confirmation",
+              "heritage, ecology, traffic, and structural conditions"
+            ]
+          },
+          "qualitative_cost": {
+            "classes": [
+              "M",
+              "L"
+            ],
+            "not_an_investment_estimate": true
+          },
+          "evidence_maintenance_evaluation": {
+            "evidence": {
+              "zh": [
+                "纸面/临时原型",
+                "公众理解记录",
+                "维护审查"
+              ],
+              "en": [
+                "paper/temporary prototype",
+                "public-understanding record",
+                "maintenance review"
+              ]
+            },
+            "maintenance": {
+              "zh": "纸面或临时原型先行，进入前复核专业条件。",
+              "en": "Start with paper or temporary prototypes and recheck professional conditions before entry."
+            },
+            "evaluation": {
+              "zh": [
+                "可理解性",
+                "无障碍",
+                "维护责任"
+              ],
+              "en": [
+                "legibility",
+                "accessibility",
+                "maintenance accountability"
+              ]
+            }
+          },
+          "human_takeover": {
+            "zh": "专业团队或运营角色可拒绝落地并保留纸面方案。",
+            "en": "Professional or operating roles can refuse implementation and keep the proposal on paper."
+          },
+          "stop_exit": {
+            "zh": "文保、生态、交通、结构或权属不满足即不落地。",
+            "en": "Do not implement when heritage, ecology, traffic, structure, or ownership conditions fail."
+          }
+        },
+        {
+          "implementation_id": "IM08",
+          "action_package_id": "AP6",
+          "title_zh": "公共空间组件库",
+          "title_en": "Public-Space Component Library",
+          "concept_status": "conceptual_recommendation",
+          "scenario_refs": [
+            "SC12"
+          ],
+          "responsible_roles": {
+            "zh": [
+              "设计",
+              "维护",
+              "无障碍",
+              "信息治理"
+            ],
+            "en": [
+              "design",
+              "maintenance",
+              "accessibility",
+              "information governance"
+            ]
+          },
+          "dependencies": {
+            "zh": [
+              "场地核验",
+              "维护责任",
+              "安全与无障碍复核"
+            ],
+            "en": [
+              "site verification",
+              "maintenance responsibility",
+              "safety and accessibility review"
+            ]
+          },
+          "qualitative_cost": {
+            "classes": [
+              "M"
+            ],
+            "not_an_investment_estimate": true
+          },
+          "evidence_maintenance_evaluation": {
+            "evidence": {
+              "zh": [
+                "故障记录",
+                "使用反馈",
+                "撤除记录"
+              ],
+              "en": [
+                "failure record",
+                "use feedback",
+                "removal record"
+              ]
+            },
+            "maintenance": {
+              "zh": "小批量可逆试装并按月检查。",
+              "en": "Use a small reversible installation and inspect monthly."
+            },
+            "evaluation": {
+              "zh": [
+                "安全通行",
+                "可达性",
+                "故障与维护响应"
+              ],
+              "en": [
+                "safe passage",
+                "accessibility",
+                "failure and maintenance response"
+              ]
+            }
+          },
+          "human_takeover": {
+            "zh": "维护或无障碍角色关闭信息功能并改用人工/静态组件。",
+            "en": "Maintenance or accessibility roles disable information functions and use human/static components."
+          },
+          "stop_exit": {
+            "zh": "无维护主体、妨碍安全或不可达即撤除。",
+            "en": "Remove when no maintainer exists, safety is obstructed, or accessibility fails."
+          }
+        },
+        {
+          "implementation_id": "IM09",
+          "action_package_id": "AP6",
+          "title_zh": "文化导视与国际传播",
+          "title_en": "Cultural Wayfinding and International Communication",
+          "concept_status": "conceptual_recommendation",
+          "scenario_refs": [],
+          "responsible_roles": {
+            "zh": [
+              "历史",
+              "翻译",
+              "版权",
+              "无障碍"
+            ],
+            "en": [
+              "history",
+              "translation",
+              "rights",
+              "accessibility"
+            ]
+          },
+          "dependencies": {
+            "zh": [
+              "来源可追溯",
+              "内容清权",
+              "双语人工复核"
+            ],
+            "en": [
+              "traceable sources",
+              "content clearance",
+              "manual bilingual review"
+            ]
+          },
+          "qualitative_cost": {
+            "classes": [
+              "S",
+              "M"
+            ],
+            "not_an_investment_estimate": true
+          },
+          "evidence_maintenance_evaluation": {
+            "evidence": {
+              "zh": [
+                "来源台账",
+                "译文对照",
+                "更正与下架记录"
+              ],
+              "en": [
+                "source register",
+                "translation comparison",
+                "correction and takedown record"
+              ]
+            },
+            "maintenance": {
+              "zh": "内容先审后展并按季度纠错。",
+              "en": "Review before display and correct quarterly."
+            },
+            "evaluation": {
+              "zh": [
+                "史实准确",
+                "翻译等义",
+                "权利与可达性"
+              ],
+              "en": [
+                "historical accuracy",
+                "translation equivalence",
+                "rights and accessibility"
+              ]
+            }
+          },
+          "human_takeover": {
+            "zh": "历史、翻译或版权角色人工复核并替换争议内容。",
+            "en": "History, translation, or rights roles manually review and replace disputed content."
+          },
+          "stop_exit": {
+            "zh": "史实争议、翻译误导或权利撤回即下架。",
+            "en": "Remove disputed history, misleading translation, or withdrawn rights."
+          }
+        },
+        {
+          "implementation_id": "IM10",
+          "action_package_id": "AP6",
+          "title_zh": "京张开放贡献谱",
+          "title_en": "Jing-Zhang Open Contribution Ledger",
+          "concept_status": "conceptual_recommendation",
+          "scenario_refs": [],
+          "responsible_roles": {
+            "zh": [
+              "社区运营",
+              "版权",
+              "数据治理"
+            ],
+            "en": [
+              "community operations",
+              "rights",
+              "data governance"
+            ]
+          },
+          "dependencies": {
+            "zh": [
+              "贡献者同意",
+              "证据记录",
+              "纠错与撤回入口"
+            ],
+            "en": [
+              "contributor consent",
+              "evidence record",
+              "correction and withdrawal channel"
+            ]
+          },
+          "qualitative_cost": {
+            "classes": [
+              "S"
+            ],
+            "not_an_investment_estimate": true
+          },
+          "evidence_maintenance_evaluation": {
+            "evidence": {
+              "zh": [
+                "贡献证据",
+                "同意记录",
+                "状态与撤回记录"
+              ],
+              "en": [
+                "contribution evidence",
+                "consent record",
+                "status and withdrawal record"
+              ]
+            },
+            "maintenance": {
+              "zh": "持续维护并每半年复核。",
+              "en": "Maintain continuously and review semiannually."
+            },
+            "evaluation": {
+              "zh": [
+                "证据完整",
+                "同意有效",
+                "纠错与撤回可达"
+              ],
+              "en": [
+                "evidence completeness",
+                "valid consent",
+                "reachable correction and withdrawal"
+              ]
+            }
+          },
+          "human_takeover": {
+            "zh": "社区运营与数据治理角色处理纠错、状态变更和撤回。",
+            "en": "Community operations and data-governance roles handle corrections, status changes, and withdrawal."
+          },
+          "stop_exit": {
+            "zh": "无证据、无同意或不可纠错的记录即移除。",
+            "en": "Remove records without evidence, consent, or correction access."
+          }
+        },
+        {
+          "implementation_id": "IM11",
+          "action_package_id": "AP7",
+          "title_zh": "年度活动与开发者社区",
+          "title_en": "Annual Programme and Developer Community",
+          "concept_status": "conceptual_recommendation",
+          "scenario_refs": [],
+          "responsible_roles": {
+            "zh": [
+              "社区",
+              "场景",
+              "安全",
+              "传播"
+            ],
+            "en": [
+              "community",
+              "scenario operations",
+              "safety",
+              "communications"
+            ]
+          },
+          "dependencies": {
+            "zh": [
+              "逐项活动许可",
+              "责任人",
+              "资源与风险 Gate"
+            ],
+            "en": [
+              "permission per event",
+              "accountable owner",
+              "resource and risk gate"
+            ]
+          },
+          "qualitative_cost": {
+            "classes": [
+              "S",
+              "M"
+            ],
+            "not_an_investment_estimate": true
+          },
+          "evidence_maintenance_evaluation": {
+            "evidence": {
+              "zh": [
+                "逐项批准记录",
+                "参与与后续记录",
+                "取消记录"
+              ],
+              "en": [
+                "item-level approval record",
+                "participation and follow-up record",
+                "cancellation record"
+              ]
+            },
+            "maintenance": {
+              "zh": "按候选年历逐项申请、复核和批准。",
+              "en": "Apply, review, and approve item by item against the candidate calendar."
+            },
+            "evaluation": {
+              "zh": [
+                "许可状态",
+                "责任与资源",
+                "风险 Gate"
+              ],
+              "en": [
+                "permission status",
+                "responsibility and resources",
+                "risk gate"
+              ]
+            }
+          },
+          "human_takeover": {
+            "zh": "活动责任人可取消 AI 环节、切换人工流程或取消活动。",
+            "en": "The event owner can cancel the AI element, switch to a human process, or cancel the event."
+          },
+          "stop_exit": {
+            "zh": "无责任人、资源或风险 Gate 不通过即取消。",
+            "en": "Cancel when responsibility, resources, or a risk gate are missing."
+          }
+        },
+        {
+          "implementation_id": "IM12",
+          "action_package_id": "AP7",
+          "title_zh": "外部区域候选协同接口",
+          "title_en": "Candidate External Collaboration Interfaces",
+          "concept_status": "conceptual_recommendation",
+          "regional_interfaces_ref": "visual/assets/regional-interface-contracts.json#/interfaces",
+          "regional_interface_ids": [
+            "RI01",
+            "RI02",
+            "RI03",
+            "RI04",
+            "RI05"
+          ],
+          "current_readiness": {
+            "contract_count": 5,
+            "authorized_count": 0,
+            "operating_count": 0,
+            "activation": "written authorization + first-party factual basis + named accountable interface lead"
+          },
+          "scenario_refs": [],
+          "responsible_roles": {
+            "zh": [
+              "项目联络",
+              "研究",
+              "专业团队"
+            ],
+            "en": [
+              "project liaison",
+              "research",
+              "professional team"
+            ]
+          },
+          "dependencies": {
+            "zh": [
+              "机构授权",
+              "事实依据",
+              "非约束议题清单",
+              "RI01—RI05 逐接口授权范围与具名责任角色"
+            ],
+            "en": [
+              "institutional authorization",
+              "factual basis",
+              "non-binding issue list",
+              "per-interface authorization scope and named accountable roles for RI01–RI05"
+            ]
+          },
+          "qualitative_cost": {
+            "classes": [
+              "S"
+            ],
+            "not_an_investment_estimate": true
+          },
+          "evidence_maintenance_evaluation": {
+            "evidence": {
+              "zh": [
+                "授权记录",
+                "议题与接口台账",
+                "对外措辞复核",
+                "visual/assets/regional-interface-contracts.json 中五域首件交付与停止合同"
+              ],
+              "en": [
+                "authorization record",
+                "issue and interface register",
+                "external-wording review",
+                "five-domain first-deliverable and stop contracts in visual/assets/regional-interface-contracts.json"
+              ]
+            },
+            "maintenance": {
+              "zh": "先维护非约束议题清单；每次授权变化即复核。",
+              "en": "Maintain a non-binding issue list first and recheck whenever authorization changes."
+            },
+            "evaluation": {
+              "zh": [
+                "授权有效性",
+                "事实可追溯",
+                "合作措辞边界",
+                "五项合同、零授权、零运行的状态一致性"
+              ],
+              "en": [
+                "authorization validity",
+                "factual traceability",
+                "partnership-wording boundary",
+                "state consistency of five contracts, zero authorizations, and zero operating interfaces"
+              ]
+            }
+          },
+          "human_takeover": {
+            "zh": "项目联络人与机构授权角色人工确认每个对外接口。",
+            "en": "Project liaisons and authorized institutional roles manually confirm every external interface."
+          },
+          "stop_exit": {
+            "zh": "任一接口无逐范围书面授权、一手事实依据或具名京张责任角色，不得交换、运行或公开称合作；出现禁止输入、误导措辞或停止条件即撤回该接口材料。",
+            "en": "Without per-scope written authorization, first-party factual basis, and a named Jing-Zhang accountable role, an interface may not exchange, operate, or be described as a partnership; prohibited input, misleading wording, or a stop trigger withdraws its material."
+          }
+        },
+        {
+          "implementation_id": "IM13",
+          "action_package_id": "AP1",
+          "title_zh": "正式资料到位后的全量重算",
+          "title_en": "Full Recomputation after Official Data",
+          "concept_status": "conceptual_recommendation",
+          "scenario_refs": [],
+          "responsible_roles": {
+            "zh": [
+              "数据",
+              "规划",
+              "交通",
+              "市政",
+              "图纸团队"
+            ],
+            "en": [
+              "data",
+              "planning",
+              "transport",
+              "municipal",
+              "drawing teams"
+            ]
+          },
+          "dependencies": {
+            "zh": [
+              "权威资料版本",
+              "替换范围清单",
+              "复算责任人"
+            ],
+            "en": [
+              "authoritative data version",
+              "replacement-scope list",
+              "recomputation owner"
+            ]
+          },
+          "qualitative_cost": {
+            "classes": [
+              "M"
+            ],
+            "not_an_investment_estimate": true
+          },
+          "evidence_maintenance_evaluation": {
+            "evidence": {
+              "zh": [
+                "新旧差异",
+                "输入与输出哈希",
+                "九类图层及全部载体重算清单"
+              ],
+              "en": [
+                "old/new differences",
+                "input and output hashes",
+                "recomputation list for nine layers and all carriers"
+              ]
+            },
+            "maintenance": {
+              "zh": "每次权威资料变化触发同批重算。",
+              "en": "Trigger one-batch recomputation on every authoritative change."
+            },
+            "evaluation": {
+              "zh": [
+                "跨载体一致性",
+                "差异闭环",
+                "旧指标撤回"
+              ],
+              "en": [
+                "cross-carrier consistency",
+                "difference closure",
+                "withdrawal of stale metrics"
+              ]
+            }
+          },
+          "human_takeover": {
+            "zh": "各专业责任人复核替换范围并决定重新发布。",
+            "en": "Accountable professionals review the replacement scope and decide republication."
+          },
+          "stop_exit": {
+            "zh": "新旧版本不一致时暂停发布旧指标。",
+            "en": "Suspend publication of old metrics when versions conflict."
+          }
+        }
+      ]
     },
     {
       "item_id": "phasing_implementation",
@@ -187,14 +1566,35 @@
       "professional_dimension": "实施",
       "required": true,
       "status": "complete",
-      "proposal_sections": ["更新项目清单、实施政策与分期计划"],
-      "drawing_refs": ["drawings/a3-booklet.pdf", "drawings/a0-boards.pdf"],
-      "geometry_refs": ["geometry/phasing.geojson", "geometry/key_areas.geojson"],
-      "metric_refs": ["key_area_count"],
-      "source_ids": ["DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509", "CASE-DUBAI-FUTURE-ACCELERATORS", "CASE-AMSTERDAM-MARINETERREIN"],
-      "assumption_ids": ["A-OPS-001", "A-CONTROLS-001"],
-      "self_check_ids": ["PROFESSIONAL_EVIDENCE"],
-      "evidence_summary_zh": "近期只安排资料、调查、治理协议和可逆原型；中期取决于权属与专业确认；远期容量和永久工程需控规、交通、市政与工程专题。T06 以 Gate 和退出动作替代既定开发时序。"
+      "proposal_sections": [
+        "更新项目清单、实施政策与分期计划"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/phasing.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "metric_refs": [
+        "key_area_count"
+      ],
+      "source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "CASE-DUBAI-FUTURE-ACCELERATORS",
+        "CASE-AMSTERDAM-MARINETERREIN"
+      ],
+      "assumption_ids": [
+        "A-OPS-001",
+        "A-CONTROLS-001",
+        "A-PROTOCOL-001"
+      ],
+      "self_check_ids": [
+        "PROFESSIONAL_EVIDENCE"
+      ],
+      "evidence_summary_zh": "近期只安排资料、调查、治理协议和可逆原型；十二场景按 preflight/limited-open/operating/degraded/human-takeover/paused/stopped/removed/archive 运行，转换必须留触发、角色、证据、公众状态、回退和禁止自动执行；中远期仍取决于权属、法律和专业确认。",
+      "phase3_protocol_refs": ["visual/assets/phase3-protocol-contracts.json#/shared_state_machine", "visual/assets/phase3-protocol-contracts.json#/first_use_trial", "assets/figures/operations-pathway.png"]
     },
     {
       "item_id": "metrics_recalculation",
@@ -202,14 +1602,63 @@
       "professional_dimension": "校核",
       "required": true,
       "status": "complete",
-      "proposal_sections": ["设计依据与资料清单", "指标体系、面积复算与合规矩阵"],
-      "drawing_refs": ["drawings/a3-booklet.pdf", "drawings/a0-boards.pdf"],
-      "geometry_refs": ["geometry/site_boundary.geojson", "geometry/buildings.geojson", "geometry/green_space.geojson", "geometry/public_space.geojson", "geometry/key_areas.geojson"],
-      "metric_refs": ["site_area_sqm", "building_footprint_area_sqm", "green_ratio", "public_space_ratio", "floor_area_ratio", "key_area_count"],
-      "source_ids": ["DATA-SRC-PROVISIONAL-BOUNDARIES-20260605", "REPO-SOURCE-REGISTRY"],
-      "assumption_ids": ["A-GEOM-001", "A-CONTROLS-001"],
-      "self_check_ids": ["DETERMINISTIC_VALIDATION", "SPATIAL_REVIEW", "VISUAL_PACKAGING"],
-      "evidence_summary_zh": "F05 区分图层可计算的临时面积/比例与待补的法定指标，要求合理精度和紧邻临时状态说明；IM13 规定正式几何或控制资料变化时同步重算九类图层、指标、图件、HTML 与 PDF。"
+      "proposal_sections": [
+        "设计依据与资料清单",
+        "指标体系、面积复算与合规矩阵"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/site_boundary.geojson",
+        "geometry/buildings.geojson",
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "metric_refs": [
+        "site_area_sqm",
+        "land_use_partition_area_sqm",
+        "land_use_gap_area_sqm",
+        "land_use_overlap_area_sqm",
+        "cross_section_candidate_count",
+        "cross_section_surveyed_count",
+        "detailed_cross_section_count",
+        "candidate_cross_section_total_length_m",
+        "key_area_count",
+        "background_observation_count",
+        "spatial_action_count",
+        "building_footprint_area_sqm",
+        "building_feature_count",
+        "green_space_area_sqm",
+        "green_ratio",
+        "public_space_area_sqm",
+        "public_space_ratio",
+        "public_space_feature_count",
+        "phasing_feature_count"
+      ],
+      "source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "DATA-SRC-AGENT-TASKBOOK-20260518",
+        "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+        "DATA-SRC-PROVISIONAL-BOUNDARY-BASIS-20260814"
+      ],
+      "assumption_ids": [
+        "A-GEOM-001",
+        "A-SURVEY-001",
+        "A-CONTROLS-001",
+        "A-CX-001",
+        "A-DIMENSION-001",
+        "A-OPEN-DATA-NEGATIVE-001",
+        "A-PROTOCOL-001"
+      ],
+      "self_check_ids": [
+        "DETERMINISTIC_VALIDATION",
+        "SPATIAL_REVIEW",
+        "VISUAL_PACKAGING"
+      ],
+      "evidence_summary_zh": "21 项已知/记录指标中 19 项随包独立复算；面积/长度误差门槛 ≤0.5%，计数完全一致；负、零、未知结果保留。"
     },
     {
       "item_id": "risk_missing_data",
@@ -217,14 +1666,49 @@
       "professional_dimension": "合规",
       "required": true,
       "status": "complete",
-      "proposal_sections": ["设计依据与资料清单", "指标体系、面积复算与合规矩阵", "风险、版权与合规说明"],
-      "drawing_refs": ["drawings/a3-booklet.pdf", "drawings/a0-boards.pdf"],
-      "geometry_refs": ["geometry/constraints.geojson", "geometry/site_boundary.geojson", "geometry/key_areas.geojson"],
-      "metric_refs": ["site_area_sqm", "floor_area_ratio"],
-      "source_ids": ["DATA-SRC-PROVISIONAL-BOUNDARIES-20260605", "REPO-SOURCE-REGISTRY", "DATA-SRC-AGENT-TASKBOOK-20260518"],
-      "assumption_ids": ["A-GEOM-001", "A-SURVEY-001", "A-CONTROLS-001", "A-OPS-001", "A-REGION-001", "A-RIGHTS-001", "A-BILINGUAL-001"],
-      "self_check_ids": ["DETERMINISTIC_VALIDATION", "SPATIAL_REVIEW", "VISUAL_PACKAGING", "PROFESSIONAL_EVIDENCE"],
-      "evidence_summary_zh": "正文和七项假设覆盖临时边界、现场调查、控规工程、运营、区域合作、资产权利和双语等价性风险；每类风险都有暂停声明、等待授权、人工复核、替换资产、重算或退出动作。"
+      "proposal_sections": [
+        "设计依据与资料清单",
+        "指标体系、面积复算与合规矩阵",
+        "风险、版权与合规说明"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/constraints.geojson",
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "metric_refs": [
+        "site_area_sqm",
+        "floor_area_ratio"
+      ],
+      "source_ids": [
+        "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+        "DATA-SRC-PROVISIONAL-BOUNDARY-BASIS-20260814",
+        "REPO-SOURCE-REGISTRY"
+      ],
+      "assumption_ids": [
+        "A-GEOM-001",
+        "A-SURVEY-001",
+        "A-CONTROLS-001",
+        "A-OPS-001",
+        "A-REGION-001",
+        "A-RIGHTS-001",
+        "A-BILINGUAL-001",
+        "A-CX-001",
+        "A-DIMENSION-001",
+        "A-OPEN-DATA-NEGATIVE-001"
+      ],
+      "self_check_ids": [
+        "DETERMINISTIC_VALIDATION",
+        "SPATIAL_REVIEW",
+        "VISUAL_PACKAGING",
+        "PROFESSIONAL_EVIDENCE"
+      ],
+      "evidence_summary_zh": "正式边界、控规、权属、文保、工程、客流和无障碍继续 unknown；具名运营主体、个案合法依据、投诉数字窗口、人工配置与现场撤场可行性保留 requires legal review/design-target/unknown；16 项反方测试中 12 项保留 fail_stop、unknown_stop 或 fail_pause。",
+      "phase3_protocol_refs": ["visual/assets/phase3-data-governance.json#/uncertainty_register", "visual/assets/phase3-red-team.json#/red_team_tests", "visual/assets/phase3-protocol-contracts.json#/first_use_trial"]
     }
   ]
 }

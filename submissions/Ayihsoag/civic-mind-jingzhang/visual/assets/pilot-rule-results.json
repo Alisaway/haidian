@@ -1,0 +1,346 @@
+{
+  "evidence_type": "synthetic_rule_regression",
+  "fieldwork": false,
+  "limitation": "Tests this Boolean rule prototype only; not model quality, legality, field safety or clinical efficacy.",
+  "cases": [
+    {
+      "id": "S03-normal",
+      "input": {
+        "authorised": true,
+        "withdrawn": false,
+        "staffed": true,
+        "evidence": true,
+        "signed": true,
+        "conflict": false,
+        "maintenance_owner": true,
+        "sample_sufficient": true
+      },
+      "expected": "eligible_for_next_review",
+      "actual": "eligible_for_next_review",
+      "passed": true
+    },
+    {
+      "id": "S03-missing_permission",
+      "input": {
+        "authorised": false,
+        "withdrawn": false,
+        "staffed": true,
+        "evidence": true,
+        "signed": true,
+        "conflict": false,
+        "maintenance_owner": true,
+        "sample_sufficient": true
+      },
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true
+    },
+    {
+      "id": "S03-withdrawal",
+      "input": {
+        "authorised": true,
+        "withdrawn": true,
+        "staffed": true,
+        "evidence": true,
+        "signed": true,
+        "conflict": false,
+        "maintenance_owner": true,
+        "sample_sufficient": true
+      },
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true
+    },
+    {
+      "id": "S03-no_staff",
+      "input": {
+        "authorised": true,
+        "withdrawn": false,
+        "staffed": false,
+        "evidence": true,
+        "signed": true,
+        "conflict": false,
+        "maintenance_owner": true,
+        "sample_sufficient": true
+      },
+      "expected": "pause",
+      "actual": "pause",
+      "passed": true
+    },
+    {
+      "id": "S03-missing_evidence",
+      "input": {
+        "authorised": true,
+        "withdrawn": false,
+        "staffed": true,
+        "evidence": false,
+        "signed": true,
+        "conflict": false,
+        "maintenance_owner": true,
+        "sample_sufficient": true
+      },
+      "expected": "insufficient_evidence",
+      "actual": "insufficient_evidence",
+      "passed": true
+    },
+    {
+      "id": "S03-missing_signoff",
+      "input": {
+        "authorised": true,
+        "withdrawn": false,
+        "staffed": true,
+        "evidence": true,
+        "signed": false,
+        "conflict": false,
+        "maintenance_owner": true,
+        "sample_sufficient": true
+      },
+      "expected": "human_review",
+      "actual": "human_review",
+      "passed": true
+    },
+    {
+      "id": "S06-normal",
+      "input": {
+        "authorised": true,
+        "withdrawn": false,
+        "staffed": true,
+        "evidence": true,
+        "signed": true,
+        "conflict": false,
+        "maintenance_owner": true,
+        "sample_sufficient": true
+      },
+      "expected": "eligible_for_next_review",
+      "actual": "eligible_for_next_review",
+      "passed": true
+    },
+    {
+      "id": "S06-missing_permission",
+      "input": {
+        "authorised": false,
+        "withdrawn": false,
+        "staffed": true,
+        "evidence": true,
+        "signed": true,
+        "conflict": false,
+        "maintenance_owner": true,
+        "sample_sufficient": true
+      },
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true
+    },
+    {
+      "id": "S06-withdrawal",
+      "input": {
+        "authorised": true,
+        "withdrawn": true,
+        "staffed": true,
+        "evidence": true,
+        "signed": true,
+        "conflict": false,
+        "maintenance_owner": true,
+        "sample_sufficient": true
+      },
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true
+    },
+    {
+      "id": "S06-no_staff",
+      "input": {
+        "authorised": true,
+        "withdrawn": false,
+        "staffed": false,
+        "evidence": true,
+        "signed": true,
+        "conflict": false,
+        "maintenance_owner": true,
+        "sample_sufficient": true
+      },
+      "expected": "pause",
+      "actual": "pause",
+      "passed": true
+    },
+    {
+      "id": "S06-missing_evidence",
+      "input": {
+        "authorised": true,
+        "withdrawn": false,
+        "staffed": true,
+        "evidence": false,
+        "signed": true,
+        "conflict": false,
+        "maintenance_owner": true,
+        "sample_sufficient": true
+      },
+      "expected": "insufficient_evidence",
+      "actual": "insufficient_evidence",
+      "passed": true
+    },
+    {
+      "id": "S06-missing_signoff",
+      "input": {
+        "authorised": true,
+        "withdrawn": false,
+        "staffed": true,
+        "evidence": true,
+        "signed": false,
+        "conflict": false,
+        "maintenance_owner": true,
+        "sample_sufficient": true
+      },
+      "expected": "human_review",
+      "actual": "human_review",
+      "passed": true
+    },
+    {
+      "id": "S10-normal",
+      "input": {
+        "authorised": true,
+        "withdrawn": false,
+        "staffed": true,
+        "evidence": true,
+        "signed": true,
+        "conflict": false,
+        "maintenance_owner": true,
+        "sample_sufficient": true
+      },
+      "expected": "eligible_for_next_review",
+      "actual": "eligible_for_next_review",
+      "passed": true
+    },
+    {
+      "id": "S10-missing_permission",
+      "input": {
+        "authorised": false,
+        "withdrawn": false,
+        "staffed": true,
+        "evidence": true,
+        "signed": true,
+        "conflict": false,
+        "maintenance_owner": true,
+        "sample_sufficient": true
+      },
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true
+    },
+    {
+      "id": "S10-withdrawal",
+      "input": {
+        "authorised": true,
+        "withdrawn": true,
+        "staffed": true,
+        "evidence": true,
+        "signed": true,
+        "conflict": false,
+        "maintenance_owner": true,
+        "sample_sufficient": true
+      },
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true
+    },
+    {
+      "id": "S10-no_staff",
+      "input": {
+        "authorised": true,
+        "withdrawn": false,
+        "staffed": false,
+        "evidence": true,
+        "signed": true,
+        "conflict": false,
+        "maintenance_owner": true,
+        "sample_sufficient": true
+      },
+      "expected": "pause",
+      "actual": "pause",
+      "passed": true
+    },
+    {
+      "id": "S10-missing_evidence",
+      "input": {
+        "authorised": true,
+        "withdrawn": false,
+        "staffed": true,
+        "evidence": false,
+        "signed": true,
+        "conflict": false,
+        "maintenance_owner": true,
+        "sample_sufficient": true
+      },
+      "expected": "insufficient_evidence",
+      "actual": "insufficient_evidence",
+      "passed": true
+    },
+    {
+      "id": "S10-missing_signoff",
+      "input": {
+        "authorised": true,
+        "withdrawn": false,
+        "staffed": true,
+        "evidence": true,
+        "signed": false,
+        "conflict": false,
+        "maintenance_owner": true,
+        "sample_sufficient": true
+      },
+      "expected": "human_review",
+      "actual": "human_review",
+      "passed": true
+    },
+    {
+      "id": "S03-conflict",
+      "input": {
+        "authorised": true,
+        "withdrawn": false,
+        "staffed": true,
+        "evidence": true,
+        "signed": true,
+        "conflict": true,
+        "maintenance_owner": true,
+        "sample_sufficient": true
+      },
+      "expected": "human_review",
+      "actual": "human_review",
+      "passed": true
+    },
+    {
+      "id": "S06-missing_owner",
+      "input": {
+        "authorised": true,
+        "withdrawn": false,
+        "staffed": true,
+        "evidence": true,
+        "signed": true,
+        "conflict": false,
+        "maintenance_owner": false,
+        "sample_sufficient": true
+      },
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true
+    },
+    {
+      "id": "S10-small_sample",
+      "input": {
+        "authorised": true,
+        "withdrawn": false,
+        "staffed": true,
+        "evidence": true,
+        "signed": true,
+        "conflict": false,
+        "maintenance_owner": true,
+        "sample_sufficient": false
+      },
+      "expected": "insufficient_evidence",
+      "actual": "insufficient_evidence",
+      "passed": true
+    }
+  ],
+  "passed": 21,
+  "total": 21,
+  "invariant_combinations": 768
+}

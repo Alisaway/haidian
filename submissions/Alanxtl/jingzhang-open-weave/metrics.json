@@ -1,0 +1,369 @@
+{
+  "schema_version": "0.1.0",
+  "units": {
+    "length": "m",
+    "area": "sqm"
+  },
+  "metrics": {
+    "site_area_sqm": {
+      "status": "known",
+      "value": 11412825.386,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "polygon_area(site_boundary)",
+      "confidence": "medium",
+      "assumptions": [
+        "Calculated from repository provisional rough boundary; not suitable for official area claims."
+      ]
+    },
+    "green_space_area_sqm": {
+      "status": "known",
+      "value": 2441718.476,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/green_space.geojson"
+      ],
+      "formula": "sum(polygon_area(green_space_features))",
+      "confidence": "medium",
+      "assumptions": [
+        "Conceptual green network clipped to provisional site boundary."
+      ]
+    },
+    "green_ratio": {
+      "status": "known",
+      "value": 0.213945,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/green_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "green_space_area_sqm / site_area_sqm",
+      "confidence": "medium",
+      "assumptions": [
+        "Design-model ratio; re-compute after official boundary and green-line data are released."
+      ]
+    },
+    "public_space_area_sqm": {
+      "status": "known",
+      "value": 250398.269,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "sum(polygon_area(public_space_features))",
+      "confidence": "medium",
+      "assumptions": [
+        "Conceptual commons nodes clipped to provisional site boundary."
+      ]
+    },
+    "public_space_ratio": {
+      "status": "known",
+      "value": 0.02194,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "public_space_area_sqm / site_area_sqm",
+      "confidence": "medium",
+      "assumptions": [
+        "Design-model ratio; re-compute after official boundary and public-space control data are released."
+      ]
+    },
+    "building_footprint_area_sqm": {
+      "status": "known",
+      "value": 915337.337,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "sum(polygon_area(building_footprints))",
+      "confidence": "medium",
+      "assumptions": [
+        "Conceptual review units, not cadastral or approved building footprints."
+      ]
+    },
+    "building_density": {
+      "status": "known",
+      "value": 0.080203,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/buildings.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "building_footprint_area_sqm / site_area_sqm",
+      "confidence": "medium",
+      "assumptions": [
+        "Design-model footprint ratio only; no development-control conclusion."
+      ]
+    },
+    "slow_mobility_length_m": {
+      "status": "known",
+      "value": 22566.396,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson"
+      ],
+      "formula": "sum(line_length(road_centerlines))",
+      "confidence": "medium",
+      "assumptions": [
+        "Conceptual centerlines are not engineering alignments."
+      ]
+    },
+    "key_area_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "count(key_detailed_design_areas)",
+      "confidence": "high",
+      "assumptions": [
+        "The three required key areas are carried as provisional polygons."
+      ]
+    },
+    "key_area_announced_total_sqm": {
+      "status": "known",
+      "value": 3684000,
+      "unit": "sqm",
+      "source_files": [
+        "brief/site-package/design_brief.json"
+      ],
+      "formula": "sum(announced key-area values)",
+      "confidence": "high",
+      "assumptions": [
+        "Announcement value, not a geometry-derived area claim."
+      ]
+    },
+    "ai_scenario_card_count": {
+      "status": "known",
+      "value": 10,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(documented AI scenario cards)",
+      "confidence": "medium",
+      "assumptions": [
+        "Scenario cards are conceptual test briefs and require human review."
+      ]
+    },
+    "user_persona_count": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(documented user personas)",
+      "confidence": "medium",
+      "assumptions": [
+        "Personas are design hypotheses, not surveyed populations."
+      ]
+    },
+    "ai_landmark_count": {
+      "status": "known",
+      "value": 4,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "geometry/public_space.geojson"
+      ],
+      "formula": "count(proposed AI pilgrimage landmarks)",
+      "confidence": "medium",
+      "assumptions": [
+        "Landmarks are conceptual public-space components, not approved construction."
+      ]
+    },
+    "regional_interface_count": {
+      "status": "known",
+      "value": 5,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "brief/site-package/agent_taskbook.json"
+      ],
+      "formula": "count(regional collaboration interfaces documented with role and verification)",
+      "confidence": "medium",
+      "assumptions": [
+        "Interfaces are conceptual proposals triggered by the taskbook regional-coordination criterion; they are not existing agreements."
+      ]
+    },
+    "annual_operation_quarter_count": {
+      "status": "known",
+      "value": 4,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(quarterly operating cycle entries)",
+      "confidence": "medium",
+      "assumptions": [
+        "The calendar is a conceptual operating target, not a confirmed event schedule."
+      ]
+    },
+    "renewal_project_package_count": {
+      "status": "known",
+      "value": 8,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "geometry/phasing.geojson"
+      ],
+      "formula": "count(JZ implementation packages)",
+      "confidence": "medium",
+      "assumptions": [
+        "Project packages are professional-deepening units, not approved construction projects."
+      ]
+    },
+    "priority_ai_pilot_count": {
+      "status": "known",
+      "value": 4,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(priority pilots with a minimum acceptance loop)",
+      "confidence": "medium",
+      "assumptions": [
+        "Priority pilots are design targets and require professional thresholds before public testing."
+      ]
+    },
+    "ai_interface_layer_count": {
+      "status": "known",
+      "value": 5,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(conceptual AI architecture layers from civic access to edge infrastructure)",
+      "confidence": "medium",
+      "assumptions": [
+        "Layers are a vendor-neutral professional handoff model, not a deployed system architecture."
+      ]
+    },
+    "ai_evaluation_baseline_count": {
+      "status": "known",
+      "value": 4,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(priority pilots with an explicit comparison baseline)",
+      "confidence": "medium",
+      "assumptions": [
+        "Baselines are conceptual paper/human comparison protocols; field thresholds remain unknown/null."
+      ]
+    },
+    "floor_area_ratio": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "brief/site-package/ranges/planning_limits.json"
+      ],
+      "formula": "total_floor_area_sqm / official_site_area_sqm",
+      "confidence": "unknown",
+      "assumptions": [
+        "Official regulatory controls and official boundary are not public."
+      ],
+      "reason": "待正式控规条件、建筑规模和官方边界补齐。"
+    },
+    "building_height_m": {
+      "status": "unknown",
+      "value": null,
+      "unit": "m",
+      "source_files": [
+        "brief/site-package/ranges/planning_limits.json"
+      ],
+      "formula": "official height control",
+      "confidence": "unknown",
+      "assumptions": [
+        "Heritage, aviation, landscape and regulatory height controls are not public."
+      ],
+      "reason": "待正式控规、文保和专业条件补齐。"
+    },
+    "setback_m": {
+      "status": "unknown",
+      "value": null,
+      "unit": "m",
+      "source_files": [
+        "brief/site-package/ranges/planning_limits.json"
+      ],
+      "formula": "official building control line setback",
+      "confidence": "unknown",
+      "assumptions": [
+        "Road redlines and control lines are not public."
+      ],
+      "reason": "待正式道路红线和控规条件补齐。"
+    },
+    "land_use_0702_area_sqm": {
+      "status": "known",
+      "value": 1325461.798,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "sum(polygon_area(land_use where land_use_code=0702))",
+      "confidence": "medium",
+      "assumptions": [
+        "Complete design partition of the provisional boundary; not a statutory land-use decision."
+      ]
+    },
+    "land_use_0802_area_sqm": {
+      "status": "known",
+      "value": 2452144.851,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "sum(polygon_area(land_use where land_use_code=0802))",
+      "confidence": "medium",
+      "assumptions": [
+        "Complete design partition of the provisional boundary; not a statutory land-use decision."
+      ]
+    },
+    "land_use_0803_area_sqm": {
+      "status": "known",
+      "value": 2987696.901,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "sum(polygon_area(land_use where land_use_code=0803))",
+      "confidence": "medium",
+      "assumptions": [
+        "Complete design partition of the provisional boundary; not a statutory land-use decision."
+      ]
+    },
+    "land_use_09_area_sqm": {
+      "status": "known",
+      "value": 1991796.54,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "sum(polygon_area(land_use where land_use_code=09))",
+      "confidence": "medium",
+      "assumptions": [
+        "Complete design partition of the provisional boundary; not a statutory land-use decision."
+      ]
+    },
+    "land_use_1401_area_sqm": {
+      "status": "known",
+      "value": 2655732.695,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "sum(polygon_area(land_use where land_use_code=1401))",
+      "confidence": "medium",
+      "assumptions": [
+        "Complete design partition of the provisional boundary; not a statutory land-use decision."
+      ]
+    }
+  }
+}

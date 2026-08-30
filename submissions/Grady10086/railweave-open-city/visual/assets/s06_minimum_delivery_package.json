@@ -19,9 +19,9 @@
     "implementation_register": "implementation_register.json#/project_registers/0",
     "verification_handoff": "verification_handoff_register.json#/records/2",
     "cost_evidence": "cost_evidence_plan.json#/items/5",
-    "test_receipt": "receipt.json#/s06_90_day_slice",
-    "spatial_audit_segments": ["../../geometry/roads.geojson#AUD-V21-SPINE-01", "../../geometry/roads.geojson#AUD-V21-SPINE-06"],
-    "candidate_component": "../../geometry/public_space.geojson#DC-V21-AI-001"
+    "test_receipt": "receipt.json#/s06_100_day_slice",
+    "spatial_audit_segments": ["../../geometry/roads.geojson#AUD-SPINE-01", "../../geometry/roads.geojson#AUD-SPINE-06"],
+    "candidate_component": "../../geometry/public_space.geojson#DC-AI-001"
   },
   "common_controls": {
     "ordinary_service_first_zh": "固定导视、触觉与易读信息、纸质导览、电话和人工服务必须先于AI可用，并在全周期保持等价。",
@@ -33,8 +33,8 @@
     "no_penalty_rule_en": "Declining or disabling AI shall add no fee, unreasonable wait, or off-site journey."
   },
   "pilot_definition": {
-    "candidate_anchor_id": "AN-V21-005",
-    "candidate_component_id": "DC-V21-AI-001",
+    "candidate_anchor_id": "AN-005",
+    "candidate_component_id": "DC-AI-001",
     "site_status": "G0_pending_field_verification",
     "controlled_route_length_m": {"low": 100, "high": 150, "status": "design_control_pending_survey"},
     "decision_point_count": {"low": 3, "high": 5, "status": "design_control_pending_survey"},
@@ -51,8 +51,8 @@
     {"days": "11-30", "output": "E1_baseline_1_to_1_mockup_and_affected_user_walkthrough", "go_no_go": "all_applicable_essential_groups_pass"},
     {"days": "31-45", "output": "E4_boq_three_quote_normalisation_and_signed_raci", "go_no_go": "quantities_confirmed_and_quote_coverage_at_least_80_percent"},
     {"days": "46-60", "output": "E2_version_data_takeover_and_unweaving_receipts", "go_no_go": "all_high_risk_takeover_branches_pass"},
-    {"days": "61-90", "output": "E3_authorised_bounded_same_task_comparison", "go_no_go": "ordinary_service_not_degraded_and_zero_severe_event"},
-    {"days": "91-100", "output": "E5_exit_receipts_and_E6_reasoned_decision", "go_no_go": "retain_modify_remove_or_do_not_advance_signed"}
+    {"days": "61-90", "output": "E3_authorised_bounded_same_task_comparison_and_D90_mandatory_closeout_handover", "go_no_go": "ordinary_service_not_degraded_and_zero_severe_event"},
+    {"days": "91-100", "output": "E5_exit_receipts_and_E6_sole_D100_reasoned_decision", "go_no_go": "retain_modify_remove_or_do_not_advance_signed"}
   ],
   "appointment_receipts": {
     "current_status": "all_named_role_holders_unassigned",
@@ -153,8 +153,8 @@
       "role_archetypes": {"accountable": "DO", "responsible": ["IE", "TO"], "consulted": ["IV", "DC", "PO", "PF", "CM"], "informed": []},
       "minimum_inputs_zh": ["P2独立意见与关闭问题", "依法成立的场地、数据和参与授权", "限定空间、时段、服务对象和停止权限", "人工服务与普通服务排班", "退出事项、责任与合法资源计划"],
       "minimum_inputs_en": ["P2 independent finding and closed issues", "Lawfully established site, data, and participation authorisations", "Bounded space, time, users, and stop authority", "Staffed and ordinary-service schedule", "Exit items, accountability, and lawful resource plan"],
-      "field_outputs_zh": ["每次建议、人工确认和实际选择的最小记录", "求助、误导、差别待遇和无障碍阻断台账", "普通与数字路径的距离、等待、费用和完成率对照", "公众意见与更正记录", "第90日续期、整改、暂停或退出建议"],
-      "field_outputs_en": ["Minimal record of each advice, human confirmation, and actual choice", "Assistance, misdirection, unequal-treatment, and accessibility-barrier register", "Comparison of ordinary and digital route distance, wait, cost, and completion", "Public input and correction record", "Day-90 renewal, correction, pause, or exit recommendation"],
+      "field_outputs_zh": ["每次建议、人工确认和实际选择的最小记录", "求助、误导、差别待遇和无障碍阻断台账", "普通与数字路径的距离、等待、费用和完成率对照", "公众意见与更正记录", "第90日强制收尾交接单（不作续期决定）"],
+      "field_outputs_en": ["Minimal record of each advice, human confirmation, and actual choice", "Assistance, misdirection, unequal-treatment, and accessibility-barrier register", "Comparison of ordinary and digital route distance, wait, cost, and completion", "Public input and correction record", "Day-90 mandatory close-out handover, with no renewal decision"],
       "acceptance_records": [
         {"record_id": "P3-AR-01", "zh": "DO对服务目的、人工最终决定和申诉责任的签收", "en": "DO receipt for service purpose, human final decision, and appeal accountability"},
         {"record_id": "P3-AR-02", "zh": "PO对拒绝AI无惩罚和代表性用户体验的复核", "en": "PO review of no-penalty AI refusal and representative-user experience"},
@@ -169,7 +169,7 @@
       ],
       "stop_triggers_zh": ["任一必要授权撤回或不存在", "严重安全、隐私或公平事件", "普通或人工服务中断", "误导持续或关键阻断未关闭", "参与者承担额外费用、不合理等待或异地行程", "退出责任或资源不可用"],
       "stop_triggers_en": ["Any required authorisation is absent or withdrawn", "Severe safety, privacy, or fairness incident", "Ordinary or staffed service interruption", "Persistent misdirection or unresolved critical barrier", "Participants bear extra cost, unreasonable wait, or off-site journey", "Exit accountability or resources unavailable"],
-      "exit_outputs_zh": ["动态接口停用回执", "数据清理和访问撤销证明", "设备撤离与场地恢复记录", "固定导视校正和人工服务恢复确认", "参与者通知与申诉接续", "第90日有理由的续期、整改、暂停或退出决定"],
+      "exit_outputs_zh": ["动态接口停用回执", "数据清理和访问撤销证明", "设备撤离与场地恢复记录", "固定导视校正和人工服务恢复确认", "参与者通知与申诉接续", "第90日向强制收尾阶段移交证据"],
       "exit_outputs_en": ["Dynamic-interface shutdown receipt", "Data-clearing and access-revocation proof", "Equipment removal and site-restoration record", "Fixed-sign correction and staffed-service restoration confirmation", "Participant notice and appeal handoff", "Day-90 evidence handoff to the mandatory close-out phase"]
     },
     {

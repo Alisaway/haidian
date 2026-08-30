@@ -114,3 +114,6 @@ Any future third-party image, font, code library, map layer, institutional logo 
 ## v0.10 新增资产 / New assets
 
 - `three-public-promises*.svg`, rebuilt `site-overview*.png`, and `visual/assets/public-promises-contract.json`: submission-authored v0.10 design synthesis; no third-party visual asset embedded.
+
+### v0.14.s generated design assets
+The v0.14.s canonical PNG pairs, bilingual A3/A0 PDFs, visual HTML and route diagrams are original/AI-assisted geometric and typographic design outputs for this submission. They embed no third-party logos, remote imagery, map tiles or font files.

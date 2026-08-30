@@ -106,6 +106,22 @@ ul.plain{margin:10px 0;padding-left:19px} ul.plain li{margin:5px 0}
 footer{margin-top:58px;padding-top:20px;border-top:2px solid var(--ink);
   font:500 12px var(--mono);color:var(--rail);display:flex;flex-wrap:wrap;gap:8px 26px}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ── 成果模态一览（页首） ── */
+.plate .mark{display:block;height:54px;width:auto;margin:0 0 16px}
+.modes{margin:0 0 34px}
+.modes .mhead{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-bottom:11px}
+.modes .mhead b{font:600 10px/1 var(--mono);letter-spacing:.3em;color:var(--rail)}
+.modes .mhead span{font-size:12.5px;color:var(--rail)}
+.mgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;
+  background:var(--line);border:1px solid var(--line)}
+.mcard{background:var(--paper);padding:10px 12px 12px;display:flex;flex-direction:column;gap:8px}
+.mcard img{display:block;width:100%;height:150px;object-fit:contain;background:var(--ground);
+  border:1px solid var(--line)}
+.mcard .mt{font:600 9px/1.4 var(--mono);letter-spacing:.16em;color:var(--rail);text-transform:uppercase}
+.mcard .md{font-size:12.5px;line-height:1.5}
+.mcard .md b{font-weight:600}
+.mcard a{color:var(--version);text-decoration:none;border-bottom:1px solid var(--version)}
 </style>
 </head>
 <body>
@@ -118,6 +134,7 @@ footer{margin-top:58px;padding-top:20px;border-top:2px solid var(--ink);
 <div class="wrap">
 
 <header class="plate">
+  <svg class="mark" viewBox="0 0 120 120" role="img" aria-label="京张公制标志 The Jing-Zhang Gauge mark"><rect x="41" y="12" width="7" height="96" fill="#17262E"/><rect x="72" y="12" width="7" height="96" fill="#17262E"/><rect x="26" y="56" width="68" height="8" fill="#C2431F"/><rect x="26" y="46" width="3" height="28" fill="#C2431F"/><rect x="91" y="46" width="3" height="28" fill="#C2431F"/></svg>
   <div class="eyebrow">Centennial Jing-Zhang AI Innovation Belt · Urban Design Proposal</div>
   <h1>京张公制<em>THE JING-ZHANG GAUGE</em></h1>
   <div class="specrow">
@@ -125,10 +142,39 @@ footer{margin-top:58px;padding-top:20px;border-top:2px solid var(--ink);
     <div><dt>投影坐标系</dt><dd>EPSG:4548</dd></div>
     <div><dt>边界状态</dt><dd style="color:#8A6A16">provisional</dd></div>
     <div><dt>空间审查</dt><dd style="color:#2C6B62">PASS</dd></div>
-    <div><dt>用地图斑</dt><dd>145</dd></div>
-    <div><dt>建筑基底</dt><dd>677</dd></div>
+    <div><dt>用地图斑</dt><dd>167</dd></div>
+    <div><dt>建筑基底</dt><dd>552</dd></div>
   </div>
 </header>
+
+<section class="modes" id="s-modes" aria-label="成果模态一览">
+  <div class="mhead">
+    <b>DELIVERABLE MODALITIES</b>
+    <span>成果模态：文本 · 表格 · 图件 · 图纸 · 场景卡 · 视频 · 三维交互网页 · Logo 与识别系统，均随包提交并可离线打开。</span>
+  </div>
+  <div class="mgrid">
+    <div class="mcard">
+      <img src="../assets/media/cover.webp" alt="方案封面：京张公制视觉识别与总体设计范围">
+      <div class="mt">封面 / Cover</div>
+      <div class="md"><b>方案封面</b>　1600×900，由本包自有几何与视觉识别体系绘制。</div>
+    </div>
+    <div class="mcard">
+      <img src="../assets/media/gauge-mechanism.webp" alt="55 秒机制说明视频海报：三工位段静帧">
+      <div class="mt">视频 / Video</div>
+      <div class="md"><b>55 秒机制说明</b>　1280×720、24 fps、<b>无声</b>；配 WebVTT 字幕与全文字稿，无声亦可完整获取信息。文件见 <code>assets/media/gauge-mechanism.mp4</code>。</div>
+    </div>
+    <div class="mcard">
+      <img src="../assets/media/gauge-tour-still.webp" alt="三维巡览静帧：三联条带走廊全貌轴测视图">
+      <div class="mt">三维交互 / 3D</div>
+      <div class="md"><b>三维巡览</b>　自写 WebGL 渲染器，载入 9 图层 1070 个几何要素，键盘可操作。可交互版本见本页末节 <a href="#s-tour">三维巡览</a>。</div>
+    </div>
+    <div class="mcard">
+      <img src="../assets/identity/jz-gauge-identity.svg" alt="京张公制视觉识别用法表：标志构成、双语组合、版本色延展、留白与最小尺寸、单色与反白变体">
+      <div class="mt">标志 / Logo</div>
+      <div class="md"><b>视觉识别系统</b>　标志本体与用法表，含构成、双语组合、版本色延展、留白与最小尺寸、单色与反白变体。文件见 <code>assets/identity/</code>。</div>
+    </div>
+  </div>
+</section>
 
 <section id="s-concept">
   <h2><span>00</span>总体概念</h2>
@@ -3236,7 +3282,7 @@ footer{margin-top:58px;padding-top:20px;border-top:2px solid var(--ink);
 <tr><td class="mono">1402</td><td>防护绿地</td><td class="mono num">126.8</td><td class="bar"><i style="width:11.11%;background:#BDCDB8"></i></td><td class="mono num">11.11%</td></tr>
 <tr><td class="mono">0702</td><td>社区服务设施用地</td><td class="mono num">87.6</td><td class="bar"><i style="width:7.68%;background:#EDE9DE"></i></td><td class="mono num">7.68%</td></tr>
 <tr><td class="mono">0804</td><td>教育用地</td><td class="mono num">46.5</td><td class="bar"><i style="width:4.07%;background:#DEE3D3"></i></td><td class="mono num">4.07%</td></tr>
-<tr><td class="mono">05</td><td>商业服务业用地</td><td class="mono num">30.8</td><td class="bar"><i style="width:2.70%;background:#DFD2C4"></i></td><td class="mono num">2.70%</td></tr>
+<tr><td class="mono">09</td><td>商业服务业用地</td><td class="mono num">30.8</td><td class="bar"><i style="width:2.70%;background:#DFD2C4"></i></td><td class="mono num">2.70%</td></tr>
 <tr><td class="mono">0806</td><td>医疗卫生用地</td><td class="mono num">25.0</td><td class="bar"><i style="width:2.19%;background:#E4D9D9"></i></td><td class="mono num">2.19%</td></tr>
 <tr><td class="mono">0805</td><td>体育用地</td><td class="mono num">16.5</td><td class="bar"><i style="width:1.44%;background:#D9E2DA"></i></td><td class="mono num">1.44%</td></tr>
 <tr><td class="mono">1403</td><td>广场用地</td><td class="mono num">6.3</td><td class="bar"><i style="width:0.55%;background:#E3D3A8"></i></td><td class="mono num">0.55%</td></tr></tbody>
@@ -3263,14 +3309,15 @@ footer{margin-top:58px;padding-top:20px;border-top:2px solid var(--ink);
     <div><div class="k">公共空间率</div>
       <div class="v" data-metric="public_space_ratio" data-value="0.04589">4.59<span style="font-size:15px">%</span></div>
       <div class="u">缝合口广场与基准点节点并集</div></div>
-    <div><div class="k">基准点地标</div><div class="v">3</div>
-      <div class="u">零号基准 / 公议台 / 退役场</div></div>
+    <div><div class="k">基准点地标</div><div class="v">4</div>
+      <div class="u">零号基准 / 公议台 / 退役场 / 贡献者刻录</div></div>
   </div>
   <h3>基准点：不做打卡雕塑，做有实测功能的纪念物</h3>
   <ul class="plain">
     <li><b>D-01 零号基准</b>　规范版本的物理发布点，每次版本更新在此实体刻录版本号与主要变更。</li>
     <li><b>D-02 公议台</b>　市民对任一标准件提出异议的实体登记点，异议编号与处理状态公开可查。</li>
     <li><b>D-03 退役场</b>　陈列被淘汰的标准件实物与退役原因。展示失败是这套体系的可信度来源。</li>
+    <li><b>D-04 贡献者刻录</b>　规范修订的采纳者按版本实体刻录，评审人资格来自可查的复现记录而非头衔。</li>
   </ul>
 </section>
 
@@ -3278,7 +3325,7 @@ footer{margin-top:58px;padding-top:20px;border-top:2px solid var(--ink);
   <h2><span>07</span>建筑与体量</h2>
   <p class="lede">建筑基底按用地类别差异化布设，为概念性体量示意，非建筑设计成果。官方容积率、建筑高度与密度控制指标在公开场地包中缺失，本方案不代填。</p>
   <div class="grid">
-    <div><div class="k">建筑基底面积</div><div class="v">117<span style="font-size:15px"> ha</span></div><div class="u">677 个基底并集</div></div>
+    <div><div class="k">建筑基底面积</div><div class="v">117<span style="font-size:15px"> ha</span></div><div class="u">552 个基底并集</div></div>
     <div><div class="k">建筑密度</div><div class="v">10.3<span style="font-size:15px">%</span></div><div class="u">概念推算</div></div>
     <div><div class="k">概念容积率</div><div class="v">0.92</div><div class="u">层数为假设值，<b>非</b>法定控制指标</div></div>
     <div><div class="k">法定容积率</div><div class="v" style="color:#8A6A16;font-size:19px">unknown</div><div class="u">官方控制指标缺失，保持未知</div></div>
@@ -3334,7 +3381,7 @@ footer{margin-top:58px;padding-top:20px;border-top:2px solid var(--ink);
     <thead><tr><th>编号</th><th>任务</th><th>本方案回应</th><th>状态</th></tr></thead>
     <tbody><tr><td class="mono">agent.1</td><td>一带总体概念与功能统筹</td><td>京张公制命名体系、量规视觉方向、一线三工位两接口结构</td><td><span class="pill ok">已覆盖</span></td></tr>
 <tr><td class="mono">agent.2</td><td>全栈自主体系与创新生态</td><td>制标区一致性测试链、接入翼要素通道、7 类案例参照方向</td><td><span class="pill wip">部分覆盖</span></td></tr>
-<tr><td class="mono">agent.3</td><td>AI+场景与活力城市</td><td>12 张场景卡、3 类产业测试场、6 类用户画像</td><td><span class="pill ok">已覆盖</span></td></tr>
+<tr><td class="mono">agent.3</td><td>AI+场景与活力城市</td><td>16 张场景卡、3 类产业测试场、6 类用户画像</td><td><span class="pill ok">已覆盖</span></td></tr>
 <tr><td class="mono">agent.4</td><td>公共空间、新业态与朝圣地标</td><td>缝合口断面、标准件组件库、4 处基准点地标</td><td><span class="pill ok">已覆盖</span></td></tr>
 <tr><td class="mono">agent.5</td><td>文化融合叙事</td><td>自主—公开—互通三段叙事、规格标牌导视系统</td><td><span class="pill ok">已覆盖</span></td></tr>
 <tr><td class="mono">agent.6</td><td>全球活动体系与长期运营</td><td>定标周、开发者社区、场景开放与认证转化路径</td><td><span class="pill wip">部分覆盖</span></td></tr></tbody>

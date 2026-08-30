@@ -657,7 +657,7 @@
     },
     "public_context_clipped_feature_count": {
       "status": "known",
-      "value": 901.0,
+      "value": 985.0,
       "unit": "count",
       "source_files": [
         "visual/assets/public-context.json"
@@ -667,7 +667,7 @@
       "assumptions": [
         "A-EXISTING-001"
       ],
-      "interpretation_rule": "901 retained features after zero-pad strict vertex-run clipping and sampling; not a complete inventory or surveyed base"
+      "interpretation_rule": "985 retained features after zero-pad strict vertex-run clipping and sampling, including the added Dazhongsi public-map road and rail extract; not a complete inventory or surveyed base"
     },
     "statutory_heritage_anchor_count": {
       "status": "known",
@@ -906,13 +906,61 @@
         "visual/assets/public-context.json",
         "visual/assets/permit-compiler-runner.js"
       ],
-      "formula": "bbox intersections of selected actions with sampled public-map buildings plus desktop exclusion zones",
+      "formula": "bbox intersections with sampled public-map buildings and desktop exclusions, plus exact segment intersections between the selected Dazhongsi line and registered public-map road/rail lines",
       "confidence": "medium",
       "assumptions": [
         "A-EXISTING-001",
         "A-OPERATIONS-001"
       ],
-      "interpretation_rule": "zero desktop collisions is a coarse pre-screen, not proof of rights, fire, traffic, heritage, engineering clearance or field feasibility"
+      "interpretation_rule": "zero desktop collisions now includes the Dazhongsi road/rail conflict that invalidated the prior selected line; it remains a desktop pre-screen, not proof of rights, fire, traffic, heritage, engineering clearance or field feasibility"
+    },
+    "selected_spatial_band_count": {
+      "status": "known",
+      "value": 3.0,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/design-actions-public-context.json",
+        "visual/assets/permit-compiler-runner.js",
+        "assets/figures/key-areas.png"
+      ],
+      "formula": "count(conditionally selected actions with a complete site-specific spatial_band)",
+      "confidence": "medium",
+      "assumptions": [
+        "A-EXISTING-001",
+        "A-OPERATIONS-001"
+      ],
+      "interpretation_rule": "three conditional design bands share an ordinary route, memory seam and removable AI side-band but have different permanent edges; all widths remain field-pending targets"
+    },
+    "ordinary_clear_route_target_m_each": {
+      "status": "known",
+      "value": 3.0,
+      "unit": "m",
+      "source_files": [
+        "visual/assets/design-actions-public-context.json",
+        "visual/assets/permit-compiler-runner.js"
+      ],
+      "formula": "spatial_band.ordinary_clear_route_target_m for every selected action",
+      "confidence": "medium",
+      "assumptions": [
+        "A-EXISTING-001"
+      ],
+      "interpretation_rule": "self-defined minimum design target for the ordinary step-free line; not a surveyed existing width or statutory road requirement"
+    },
+    "dazhongsi_selected_public_map_road_rail_intersection_count": {
+      "status": "known",
+      "value": 0.0,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/design-actions-public-context.json",
+        "visual/assets/public-context.json",
+        "visual/assets/permit-compiler-runner.js"
+      ],
+      "formula": "exact segment intersections of selected DA-DZS-B with registered Dazhongsi public-map road and railway LineStrings",
+      "confidence": "medium",
+      "assumptions": [
+        "A-EXISTING-001"
+      ],
+      "interpretation_rule": "the previous diagonal selected line was rejected after added public-map road/rail context exposed crossings; zero for the revised north-side service-foyer line remains desktop-only and does not prove field clearance"
     },
     "public_context_processing_pad_deg": {
       "status": "known",
@@ -927,6 +975,232 @@
         "A-EXISTING-001"
       ],
       "interpretation_rule": "zero processing pad closes the prior edge-buffer ambiguity; boundary-crossing segments without in-window source vertices remain conservatively absent"
+    },
+    "ai_spatial_option_case_count": {
+      "status": "known",
+      "value": 3.0,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/spatiotemporal-permits.json",
+        "visual/assets/permit-compiler-runner.js"
+      ],
+      "formula": "count(cases with one ordinary baseline, three spatial options, one field-pending desktop preference, one permit and one restore state)",
+      "confidence": "high",
+      "assumptions": [
+        "A-OPERATIONS-001",
+        "A-AI-TRACE-001"
+      ],
+      "interpretation_rule": "AI-assisted desktop planning cases, not professional selection, public consent, statutory approval or field performance"
+    },
+    "ai_rank_one_hard_constraint_override_count": {
+      "status": "known",
+      "value": 2.0,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/spatiotemporal-permits.json",
+        "visual/assets/permit-compiler-runner.js"
+      ],
+      "formula": "count(cases where the AI rank-one option differs from the design-team field-pending preference after an explicit city hard gate)",
+      "confidence": "high",
+      "assumptions": [
+        "A-OPERATIONS-001",
+        "A-AI-TRACE-001"
+      ],
+      "interpretation_rule": "transparent human override evidence; it does not imply that AI or the design team approved deployment"
+    },
+    "ai_candidate_evaluation_cell_count": {
+      "status": "known",
+      "value": 45.0,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/ai-spatial-options-output.json",
+        "visual/assets/ai-spatial-decision-log.json",
+        "visual/assets/permit-compiler-runner.js"
+      ],
+      "formula": "3 site cases × 3 coordinate candidates × 5 site-specific objectives, each recorded as PASS, HOLD, FAIL or UNKNOWN with at least one evidence reference",
+      "confidence": "high",
+      "assumptions": [
+        "A-OPERATIONS-001",
+        "A-AI-TRACE-001"
+      ],
+      "interpretation_rule": "complete desktop comparison cells, not model-inference reproducibility, field performance, professional selection, public consent or statutory approval"
+    },
+    "ai_counterfactual_chain_count": {
+      "status": "known",
+      "value": 3.0,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/ai-spatial-options-output.json",
+        "visual/assets/ai-spatial-decision-log.json",
+        "visual/assets/permit-compiler-runner.js"
+      ],
+      "formula": "count(site cases with one content-addressed AI rank-one option → independently derived city hard gate → field-pending design-team conditional preference → professional/public selection=false chain)",
+      "confidence": "high",
+      "assumptions": [
+        "A-OPERATIONS-001",
+        "A-AI-TRACE-001"
+      ],
+      "interpretation_rule": "counterfactual decision traceability only; it does not claim that the retained option is approved or performs better in the field"
+    },
+    "preregistered_validation_protocol_count": {
+      "status": "known",
+      "value": 3.0,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/preregistered-validation-protocols.json",
+        "visual/assets/permit-compiler-runner.js"
+      ],
+      "formula": "count(protocols binding baseline, location, sample, frequency, method, pass, hold, missing-data, roles, evidence outputs and restore to one selected spatial option)",
+      "confidence": "high",
+      "assumptions": [
+        "A-OPERATIONS-001"
+      ],
+      "interpretation_rule": "pre-activation protocol completeness, not implementation completion or measured performance"
+    },
+    "preregistered_validation_chain_coverage_ratio": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/preregistered-validation-protocols.json",
+        "visual/assets/permit-compiler-runner.js"
+      ],
+      "formula": "protocols with complete baseline/sample/method/threshold/role/evidence/restore chain divided by all three protocols",
+      "confidence": "high",
+      "assumptions": [
+        "A-OPERATIONS-001"
+      ],
+      "interpretation_rule": "schema coverage only; field_performance remains null and professional/public sign-off remains false"
+    },
+    "dazhongsi_inquiry_ready_validation_unit_length_target_m": {
+      "status": "known",
+      "value": 12.0,
+      "unit": "m",
+      "source_files": [
+        "visual/assets/preregistered-validation-protocols.json"
+      ],
+      "formula": "CT-03.inquiry_ready_validation_unit.length_target_m",
+      "confidence": "medium",
+      "assumptions": [
+        "A-EXISTING-001",
+        "A-OPERATIONS-001"
+      ],
+      "interpretation_rule": "conditional inquiry-performance-brief target within the 98.6 m desktop candidate; not a surveyed length, purchase order, approved footprint or construction commitment"
+    },
+    "dazhongsi_inquiry_ready_component_type_count": {
+      "status": "known",
+      "value": 6.0,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/preregistered-validation-protocols.json"
+      ],
+      "formula": "count(CT-03.inquiry_ready_validation_unit.components)",
+      "confidence": "medium",
+      "assumptions": [
+        "A-OPERATIONS-001"
+      ],
+      "interpretation_rule": "countable performance-brief component types; final quantities, dimensions, specifications and quotations require professional and supplier confirmation"
+    },
+    "ai_prompt_output_content_addressed_ratio": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/ai-spatial-generation-prompt.json",
+        "visual/assets/ai-spatial-options-output.json",
+        "visual/assets/ai-spatial-decision-log.json",
+        "visual/assets/permit-compiler-runner.js"
+      ],
+      "formula": "content-addressed prompt and captured output pairs divided by registered AI design sessions",
+      "confidence": "high",
+      "assumptions": ["A-OPERATIONS-001", "A-AI-TRACE-001"],
+      "interpretation_rule": "prompt, frozen inputs and captured output are hash-addressed; exact service build and seed are unavailable, so bitwise model replay is explicitly false"
+    },
+    "deterministic_city_gate_replayable": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "boolean_ratio",
+      "source_files": [
+        "visual/assets/design-actions-public-context.json",
+        "visual/assets/spatiotemporal-permits.json",
+        "visual/assets/ai-spatial-decision-log.json",
+        "visual/assets/permit-compiler-runner.js"
+      ],
+      "formula": "sessions where the zero-network runner independently derives all nine option gates from structured facts and mapped collisions, then matches every permit and decision-log result, divided by registered AI design sessions",
+      "confidence": "high",
+      "assumptions": ["A-OPERATIONS-001", "A-AI-TRACE-001"],
+      "interpretation_rule": "all nine city-gate results are independently derived from structured access, public-learning, public-translation, persistent-rights-service, ordinary-ground-service, engineering/statutory-evidence and mapped-collision facts; stochastic model generation and planning approval remain unreproducible"
+    },
+    "ai_site_specific_objective_vector_count": {
+      "status": "known",
+      "value": 3.0,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/ai-spatial-options-output.json",
+        "visual/assets/ai-spatial-decision-log.json",
+        "visual/assets/permit-compiler-runner.js",
+        "assets/figures/land-use-structure.png"
+      ],
+      "formula": "count(cases with a five-part site-specific planning objective vector, three same-coordinate options and a deterministic gate result)",
+      "confidence": "high",
+      "assumptions": ["A-EXISTING-001", "A-OPERATIONS-001", "A-AI-TRACE-001"],
+      "interpretation_rule": "the objective vectors explain why the three sites are not interchangeable; they are design-team comparison criteria, not calibrated public weights"
+    },
+    "bounded_international_mechanism_comparison_count": {
+      "status": "known",
+      "value": 6.0,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/mechanism-lineage.json",
+        "sources.json",
+        "proposal.md"
+      ],
+      "formula": "count(registered cases with mechanism, explicit non-transfer, local translation and visible spatial output)",
+      "confidence": "high",
+      "assumptions": ["A-OPERATIONS-001"],
+      "interpretation_rule": "bounded comparison only; no global-uniqueness, performance-transfer, partnership or investment claim"
+    },
+    "dazhongsi_reference_spatial_beat_count": {
+      "status": "known",
+      "value": 4.0,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/dazhongsi-component-library.json",
+        "visual/assets/permit-compiler-runner.js",
+        "assets/figures/public-acceptance-street.png"
+      ],
+      "formula": "count(3 m reference beats within the 12 m desktop performance envelope)",
+      "confidence": "medium",
+      "assumptions": ["A-EXISTING-001", "A-OPERATIONS-001"],
+      "interpretation_rule": "notice, staffed service, offline co-acceptance and appeal/restoration are design beats, not surveyed chainage or final set-out"
+    },
+    "dazhongsi_component_placement_count": {
+      "status": "known",
+      "value": 15.0,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/dazhongsi-component-library.json",
+        "visual/assets/permit-compiler-runner.js",
+        "assets/figures/public-acceptance-street.png"
+      ],
+      "formula": "sum(reference placement instances across P01-P06)",
+      "confidence": "medium",
+      "assumptions": ["A-EXISTING-001", "A-OPERATIONS-001"],
+      "interpretation_rule": "countable desktop placements inside a conditional 12 m x 8.4 m envelope; final quantity, specification, set-out and supplier evidence remain pending"
+    },
+    "dazhongsi_assembly_principle_node_count": {
+      "status": "known",
+      "value": 2.0,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/dazhongsi-component-library.json",
+        "visual/assets/permit-compiler-runner.js",
+        "assets/figures/public-acceptance-street.png"
+      ],
+      "formula": "count(reference 1:20 assembly-principle nodes)",
+      "confidence": "medium",
+      "assumptions": ["A-OPERATIONS-001"],
+      "interpretation_rule": "assembly principles only, explicitly not construction details; structural, fire, accessibility, electrical and supplier confirmation remain null"
     },
     "building_public_interface_typology_count": {
       "status": "known",

@@ -6,6 +6,29 @@
   "public_test_en": "If an error cannot be corrected through every channel that carried it, the AI service must not remain in Jing-Zhang.",
   "core_judgement_zh": "百年京张的现代性不只是一组铁路意象，而是一套可测量、可交接、可维护、出错后可检修的公共工程制度。JZAC把这套制度转译为AI时代的证据、责任、纠错与恢复空间。",
   "core_judgement_en": "The modernity of the century-old Jing-Zhang Railway is not a visual railway motif but a public-works discipline of measurement, handover, maintenance and repair. JZAC translates that discipline into spaces for AI evidence, responsibility, correction and recovery.",
+  "verification_layers": [
+    {
+      "id": "V1",
+      "name_zh": "来源与传播可追溯",
+      "name_en": "Trace provenance and propagation",
+      "test": "source_version_purpose_expiry_and_every_delivery_channel_are_recorded",
+      "boundary": "Provenance evidence does not by itself prove factual truth."
+    },
+    {
+      "id": "V2",
+      "name_zh": "独立人工事实复核",
+      "name_en": "Independent human fact review",
+      "test": "a_named_domain_reviewer_separates_source_records_detector_outputs_and_human_judgement",
+      "boundary": "The proposal does not create a universal automated truth score."
+    },
+    {
+      "id": "V3",
+      "name_zh": "纠错后果可执行",
+      "name_en": "Make correction consequences executable",
+      "test": "pause_correct_every_original_channel_retest_update_procurement_and_recover_or_retire",
+      "boundary": "A correction that exists only in the backend does not pass."
+    }
+  ],
   "rights": [
     {
       "id": "R1",
@@ -44,6 +67,26 @@
       "retest, procurement update and product revision"
     ]
   },
+  "pilot_a_three_area_relay": [
+    {
+      "order": 1,
+      "area_id": "beijing_ai_origin_community",
+      "action_zh": "无屏受理、原渠道清点、人工暂停、独立事实复核与公众可见更正",
+      "action_en": "screenless intake, channel inventory, human pause, independent fact review and public correction"
+    },
+    {
+      "order": 2,
+      "area_id": "zhongzhiyuan_ai_acceleration_area",
+      "action_zh": "把误标转成产品与发布流程的失效重测任务",
+      "action_en": "convert the mislabel into a failure retest for the product and publishing workflow"
+    },
+    {
+      "order": 3,
+      "area_id": "dazhongsi_ai_industry_cluster",
+      "action_zh": "更新采购证据、执行退出测试并确认空间与数据恢复",
+      "action_en": "update procurement evidence, test exit and confirm spatial and data recovery"
+    }
+  ],
   "spatial_prototypes": [
     {
       "area_id": "zhongzhiyuan_ai_acceleration_area",

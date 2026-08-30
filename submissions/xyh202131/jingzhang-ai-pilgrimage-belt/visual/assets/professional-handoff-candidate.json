@@ -1,0 +1,517 @@
+{
+  "schema_version": "2.0",
+  "candidate_id": "PRE-G1-JZ05-SCENE011-T02",
+  "packet_version": "2.1.0",
+  "as_of": "2026-08-24",
+  "status": "g0_no_go_professional_review_packet_ready_external_acceptance_open",
+  "selection_reason_zh": "唯一同时具有来源边界、拒答、停止、人工交接、恢复和无 PII 合成回放的既有对象组合；选择不代表成熟度更高。",
+  "selection_reason_en": "The sole existing combination with source boundaries, refusal, stop, staffed handoff, recovery and PII-free synthetic replay; selection does not imply greater maturity.",
+  "existing_objects": {
+    "renewal_project": "JZ-05",
+    "scenario": "SCENE-011",
+    "protocol": "T-02",
+    "preregistration_record": "G1-PREREG-011",
+    "key_area": "PROV-KEY-003",
+    "key_area_status": "provisional_low_confidence_not_official"
+  },
+  "review_scope": {
+    "in_scope_zh": "由专业团队审查来源维护、程序边界、同任务非 AI 基线、人工转接、停止恢复、无障碍共测和独立复测设计是否足以进入现实材料收集。",
+    "in_scope_en": "Professional review of whether source maintenance, procedure boundaries, the same-task non-AI baseline, staffed handoff, stop/recovery, accessibility co-testing and independent retest design are sufficient to begin real-material intake.",
+    "out_of_scope": [
+      "site selection or approval",
+      "formal procedure or eligibility decision",
+      "service operation",
+      "procurement or budget commitment",
+      "field performance or accessibility result",
+      "G1 authorization"
+    ]
+  },
+  "current_evidence": {
+    "fixed_questions": 5,
+    "synthetic_replay_cases": 10,
+    "exact_decision_matches": 10,
+    "negative_controls": 13,
+    "stop_recovery_branches": 4,
+    "network_calls": 0,
+    "model_calls": 0,
+    "real_service_interactions": 0,
+    "field_tests": 0,
+    "approvals": 0,
+    "accepted_professional_duties": 0,
+    "independent_real_retests": 0,
+    "evidence_refs": [
+      "visual/assets/g0-offline-enterprise-service-baseline.json",
+      "visual/assets/t02-g0-g1-replay-fixtures.json",
+      "visual/assets/t02-g0-g1-replay-result.json",
+      "visual/assets/g1-preregistration-register.json#G1-PREREG-011"
+    ]
+  },
+  "frontstage_duty_acceptance_decision": {
+    "question_zh": "普通人完成任务后，谁可以让验证继续？",
+    "question_en": "After a person completes the task, who may let verification continue?",
+    "role_groups": [
+      {
+        "group_id": "accountability_and_operations",
+        "required_role_types": [
+          "accountable owner",
+          "operating lead",
+          "reachable stop chain"
+        ],
+        "assignment_status": "unconfirmed",
+        "accepted_count": 0
+      },
+      {
+        "group_id": "public_parity",
+        "required_role_types": [
+          "affected-group co-test representatives",
+          "accessibility reviewer",
+          "staffed same-task service"
+        ],
+        "assignment_status": "unconfirmed",
+        "accepted_count": 0
+      },
+      {
+        "group_id": "independent_retest",
+        "required_role_types": [
+          "independent real-world retester"
+        ],
+        "assignment_status": "unconfirmed",
+        "accepted_count": 0
+      }
+    ],
+    "decision_groups": [
+      {
+        "group_id": "authority_and_scope",
+        "gates": ["H01_AUTHORITY", "H02_APPROVAL_SCOPE"],
+        "accepted_count": 0
+      },
+      {
+        "group_id": "field_safety_and_recovery",
+        "gates": ["H03_BASELINE", "H04_DATA_SAFETY", "H05_STOP_RECOVERY"],
+        "accepted_count": 0
+      },
+      {
+        "group_id": "public_parity_and_independent_judgement",
+        "gates": ["H06_PUBLIC_PARITY", "H07_RETEST_DECISION"],
+        "accepted_count": 0
+      }
+    ],
+    "missing_item_action": "refuse real-world start and retain G0 / NO-GO",
+    "all_items_closed_action": "may consider a scoped G1 request; never automatic authorization, approval or restart",
+    "ordinary_life_floor": "The continuous ordinary route, printed or staffed same-task service, correction, complaint, withdrawal and exit do not wait for duty acceptance. Failure stops verification only.",
+    "current_result": "0/7 accepted; G0 / NO-GO",
+    "truth_boundary": "This is a contributor-authored reading contract over existing H01-H07 fields, not a new governance contract, accepted duty, professional opinion, approval or field result."
+  },
+  "source_maintenance_contract": {
+    "accountable_role_id": "service_information_owner",
+    "responsible_role_id": "source_pack_custodian",
+    "assignment_status": "unconfirmed",
+    "permitted_source_ids": [
+      "SITE-PACKAGE",
+      "SOURCE-REGISTRY",
+      "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+      "HAIDIAN-JZ-PHASE2-OPEN-2026",
+      "BEIJING-AI-ORIGIN-2026",
+      "HAIDIAN-15FYP-2026"
+    ],
+    "source_snapshot_ref": "sources.json",
+    "maintenance_actions": [
+      "record issuer, URL, source class, retrieval date, applicable scope and limitation",
+      "check the source immediately before any approved collection window",
+      "freeze the reviewed source snapshot and digest before collection",
+      "stop the affected answer path when a source is stale, missing or conflicting",
+      "publish a correction and version transition before any reconsideration"
+    ],
+    "required_real_acceptance": "A real source owner and source-pack custodian must sign the exact source scope, maintenance frequency, expiry rule and reachable escalation path.",
+    "current_acceptance_count": 0
+  },
+  "formal_procedure_boundary": {
+    "allowed": [
+      "show the registered source status, date, scope and limitation",
+      "navigate to a responsible published or staffed channel",
+      "refuse an out-of-scope, stale, conflicting or precision-seeking request",
+      "record a minimized, non-personal failure category"
+    ],
+    "prohibited": [
+      "accept or process a formal application",
+      "decide or predict eligibility, approval or enforcement",
+      "retain identity documents outside an authorized transaction",
+      "infer eligibility from conversation history",
+      "replace the responsible authority or staffed service channel"
+    ],
+    "substantive_answer_output_count": 0,
+    "formal_procedure_execution_count": 0
+  },
+  "staffed_service_window": {
+    "site_id": null,
+    "site_status": "unapproved",
+    "service_owner": null,
+    "staffed_handoff_lead": null,
+    "coverage_start": null,
+    "coverage_end": null,
+    "opening_hours": null,
+    "backup_channel": null,
+    "reachable_stop_contact": null,
+    "assignment_status": "not_provided",
+    "gate_rule": "No shadow task may start unless the staffed and published non-AI channels cover the same approved task and window."
+  },
+  "ordinary_task_baseline": {
+    "task_zh": "使用同一份带时间戳的正式来源清单、纸质流程和人工窗口，完成五类固定来源导航、拒答与转接任务。",
+    "task_en": "Complete the same five fixed source-navigation, refusal and handoff task classes using a timestamped official-source list, printed process and staffed counter.",
+    "same_task_required": true,
+    "ai_account_required": false,
+    "qr_or_device_required": false,
+    "ordinary_route_must_remain_open": true,
+    "baseline_site": null,
+    "baseline_window": null,
+    "baseline_sample_size": null,
+    "completed_real_baseline_count": 0,
+    "acceptance_rule": "The baseline must be completed before any shadow comparison and must remain available throughout fault and recovery."
+  },
+  "primary_metric_contract": {
+    "metric_id": "G1-M-011",
+    "name_zh": "来源正确且成功转接的服务任务率",
+    "name_en": "Service-task ratio with correct sources and successful handoff",
+    "numerator": "tasks_with_correct_current_source_and_successful_required_handoff",
+    "denominator": "all_started_service_tasks",
+    "formula": "tasks_with_correct_current_source_and_successful_required_handoff / all_started_service_tasks",
+    "unit": "ratio",
+    "current_value": null,
+    "sample_size": null,
+    "performance_threshold": null,
+    "threshold_lock_rule": "After an approved-site baseline and before outcome collection, the accountable owner, community co-test representatives and independent retester jointly lock the threshold and denominator rules.",
+    "hard_gate_precedence": "Any safety, rights, stale-source, source-conflict, human-path or prohibited-data stop overrides a numerical result.",
+    "synthetic_10_of_10_is_service_accuracy": false
+  },
+  "accessibility_and_public_parity_cotest": {
+    "task": "same fixed source-navigation, refusal and staffed-handoff task",
+    "required_groups": [
+      "residents",
+      "older people",
+      "disabled and mobility-limited users",
+      "low-digital-literacy users",
+      "commuters",
+      "visitors"
+    ],
+    "comparison_paths": [
+      "published non-AI source path",
+      "staffed path",
+      "bounded G1 shadow path"
+    ],
+    "required_observations": [
+      "task start and completion by group and path",
+      "barrier and failed-handoff category",
+      "time and cost under the same denominator",
+      "withdrawal, complaint and correction availability",
+      "screen-free and no-account completion"
+    ],
+    "privacy_rule": "Record group-level task outcomes without identity documents, raw conversation trails or cross-service profiles.",
+    "co_test_facilitator": null,
+    "accessibility_reviewer": null,
+    "completed_real_cotest_count": 0
+  },
+  "stop_thresholds": [
+    {
+      "event_id": "STOP-STALE-SOURCE",
+      "trigger": "a stale source is presented without a visible warning",
+      "immediate_action": "disable the affected answer path and route every task to the frozen published or staffed channel",
+      "reconsideration_evidence": "corrected source pack, version transition, complete fixed-set replay and independent review"
+    },
+    {
+      "event_id": "STOP-SOURCE-CONFLICT",
+      "trigger": "two applicable sources conflict and the responsible source owner has not resolved the conflict",
+      "immediate_action": "refuse the substantive answer and escalate to the responsible human channel",
+      "reconsideration_evidence": "signed resolution, updated source snapshot and complete independent rerun"
+    },
+    {
+      "event_id": "STOP-HUMAN-PATH-UNAVAILABLE",
+      "trigger": "the required staffed or same-task non-AI path is unavailable",
+      "immediate_action": "stop the shadow path while preserving ordinary published information and complaint access",
+      "reconsideration_evidence": "restored staffed/non-AI path, group-specific same-task check and independent confirmation"
+    },
+    {
+      "event_id": "STOP-PROHIBITED-DATA",
+      "trigger": "identity documents, cross-user conversation reuse or eligibility inference appears outside an authorized workflow",
+      "immediate_action": "refuse and do not retain the prohibited data; open the privacy incident route",
+      "reconsideration_evidence": "incident closure, deletion/retention record, data-safety review and complete independent rerun"
+    }
+  ],
+  "approval_scope_contract": {
+    "competent_issuer": null,
+    "approved_activity": null,
+    "approved_site": null,
+    "approved_start": null,
+    "approved_end": null,
+    "approved_participant_scope": null,
+    "approved_data_scope": null,
+    "conditions": null,
+    "expiry": null,
+    "withdrawal_route": null,
+    "approval_count": 0,
+    "rule": "A PR, machine PASS, public policy direction, provisional geometry or source licence is not an approval."
+  },
+  "independent_real_retest_plan": {
+    "required_role_id": "independent_real_retester",
+    "assignment_status": "unconfirmed",
+    "independence_rule": "The retester must not maintain the source pack, operate the staffed counter, deliver the shadow path or own the outcome decision.",
+    "frozen_inputs": [
+      "approved scope and window",
+      "versioned source snapshot and digest",
+      "fixed question set and expected action classes",
+      "same-task baseline protocol and denominator",
+      "four stop/recovery event mappings",
+      "group-specific public-parity protocol"
+    ],
+    "required_outputs": [
+      "conflict-of-interest attestation",
+      "input hashes and protocol version",
+      "deviation register",
+      "decision and stop/recovery differences",
+      "signed independent finding",
+      "signed GO/NO-GO minute by the accountable owner"
+    ],
+    "completed_real_retest_count": 0
+  },
+  "future_field_preregistration": {
+    "status": "structure_ready_external_authority_and_site_access_required",
+    "preregistration_must_be_frozen_before_any_outcome_collection": true,
+    "lawful_start_prerequisites": [
+      "H01 written responsibility acceptance and reachable stop chain",
+      "H02 competent approval for the exact activity, site, time, participant and data envelope",
+      "lawful site access and an identified site custodian",
+      "accessible notice, consent, withdrawal, complaint and safeguarding routes",
+      "approved retention, deletion and public-release rules"
+    ],
+    "dated_walkthrough_record": {
+      "walkthrough_date": null,
+      "start_time": null,
+      "end_time": null,
+      "site_and_route_version": null,
+      "authorized_coverage": null,
+      "weather_and_operating_context": null,
+      "collector": null,
+      "site_custodian": null,
+      "professional_reviewers": [],
+      "before_state_artifact_refs": [],
+      "completed_count": 0
+    },
+    "observation_windows": {
+      "peak_window_definition": null,
+      "peak_window_basis": null,
+      "quiet_window_definition": null,
+      "quiet_window_basis": null,
+      "ordinary_day_comparator_window": null,
+      "approved_window_ref": null,
+      "completed_peak_observation_count": 0,
+      "completed_quiet_observation_count": 0,
+      "rule": "Window definitions and denominators must be signed and frozen before observation; retrospective selection from favorable outcomes is prohibited."
+    },
+    "ordinary_and_non_ai_baseline_lock": {
+      "task_version": null,
+      "five_fixed_question_set_hash": null,
+      "published_source_pack_hash": null,
+      "paper_path_version": null,
+      "staffed_path_version": null,
+      "all_started_task_denominator_definition": null,
+      "exclusion_rules": null,
+      "group_reporting_rule": null,
+      "performance_threshold": null,
+      "lock_minute_ref": null,
+      "baseline_completed_count": 0,
+      "rule": "The ordinary and same-task non-AI baseline is collected first. Neither a target nor the G0 replay may populate a baseline field."
+    },
+    "accessibility_cotest_execution": {
+      "accessible_information_version": null,
+      "co_test_facilitator": null,
+      "accessibility_professional": null,
+      "affected_group_representative_roles": [],
+      "consent_record_ref": null,
+      "withdrawal_and_correction_route_ref": null,
+      "group_specific_denominators_locked": false,
+      "completed_real_cotest_count": 0,
+      "universal_accessibility_claim_allowed": false
+    },
+    "exact_restoration_object_register": [
+      {
+        "object_id": "RESTORE-01-ORDINARY-ROUTE",
+        "object": "ordinary four-way commuting and no-account path",
+        "before_state_ref": null,
+        "removal_or_restoration_action": null,
+        "after_state_ref": null,
+        "accepting_role": null,
+        "accepted_at": null,
+        "status": "not_recorded"
+      },
+      {
+        "object_id": "RESTORE-02-STAFFED-PATH",
+        "object": "staffed same-task handoff and complaint path",
+        "before_state_ref": null,
+        "removal_or_restoration_action": null,
+        "after_state_ref": null,
+        "accepting_role": null,
+        "accepted_at": null,
+        "status": "not_recorded"
+      },
+      {
+        "object_id": "RESTORE-03-PUBLIC-SIGNAL",
+        "object": "public source-status, stop and recovery signal",
+        "before_state_ref": null,
+        "removal_or_restoration_action": null,
+        "after_state_ref": null,
+        "accepting_role": null,
+        "accepted_at": null,
+        "status": "not_recorded"
+      },
+      {
+        "object_id": "RESTORE-04-SOURCE-AND-DATA-PACK",
+        "object": "frozen source snapshot, temporary data and correction record",
+        "before_state_ref": null,
+        "removal_or_restoration_action": null,
+        "after_state_ref": null,
+        "accepting_role": null,
+        "accepted_at": null,
+        "status": "not_recorded"
+      }
+    ],
+    "outcome_collection_lock_sequence": [
+      "accept H01-H02 and lawful site access",
+      "freeze dated before-state and route coverage",
+      "freeze ordinary/non-AI task, source pack, denominator, exclusions and group reporting",
+      "freeze peak, quiet and ordinary comparator windows",
+      "freeze sole primary metric threshold and hard-stop precedence",
+      "freeze exact restoration objects and independent retest inputs",
+      "only then collect bounded shadow outcomes"
+    ],
+    "current_real_record_counts": {
+      "dated_walkthroughs": 0,
+      "ordinary_non_ai_baselines": 0,
+      "peak_observations": 0,
+      "quiet_observations": 0,
+      "accessibility_cotests": 0,
+      "restoration_objects_accepted": 0
+    },
+    "no_go_rule": "Any null prerequisite, unlocked denominator or threshold, missing before-state, unavailable ordinary/staffed path, absent stop holder, unaccepted restoration object or missing independent retester keeps the candidate at G0 / NO-GO."
+  },
+  "handoff_gate_matrix": [
+    {
+      "gate_id": "H01_AUTHORITY",
+      "required_closure": "real accountable owner, source custodian, staffed lead and reachable immediate-stop chain accept their exact duties in writing",
+      "current_state": "open",
+      "accepted_count": 0
+    },
+    {
+      "gate_id": "H02_APPROVAL_SCOPE",
+      "required_closure": "competent decisions identify activity, site, time, participant/data scope, conditions, expiry and withdrawal",
+      "current_state": "open",
+      "accepted_count": 0
+    },
+    {
+      "gate_id": "H03_BASELINE",
+      "required_closure": "dated ordinary-task and same-task non-AI baseline is collected under the approved scope before shadow outcomes",
+      "current_state": "open",
+      "accepted_count": 0
+    },
+    {
+      "gate_id": "H04_DATA_SAFETY",
+      "required_closure": "prohibited-data controls, source-side retention, minimization, incident handling and deletion are independently reproducible",
+      "current_state": "open",
+      "accepted_count": 0
+    },
+    {
+      "gate_id": "H05_STOP_RECOVERY",
+      "required_closure": "a named stop holder completes every critical stop and restoration rehearsal while ordinary service remains available",
+      "current_state": "open",
+      "accepted_count": 0
+    },
+    {
+      "gate_id": "H06_PUBLIC_PARITY",
+      "required_closure": "affected groups complete the same task through published non-AI, staffed and shadow paths with group differences reported",
+      "current_state": "open",
+      "accepted_count": 0
+    },
+    {
+      "gate_id": "H07_RETEST_DECISION",
+      "required_closure": "an independent retester repeats baseline, stop and recovery checks and the accountable owner signs a scoped GO/NO-GO minute",
+      "current_state": "open",
+      "accepted_count": 0
+    }
+  ],
+  "candidate_material_register": [
+    {
+      "replacement_id": "D01_OFFICIAL_GEOMETRY",
+      "candidate_need": "issued overall/key-area geometry with CRS, version, purpose and difference report against PROV-KEY-003",
+      "source_role": "organizer or competent planning authority",
+      "status": "not_submitted",
+      "artifact_count": 0
+    },
+    {
+      "replacement_id": "D02_EXISTING_CONDITION_SURVEY",
+      "candidate_need": "dated Dazhongsi access, route, service-interface and before-state survey within an authorized coverage envelope",
+      "source_role": "qualified survey and accessibility team with site custodian",
+      "status": "not_submitted",
+      "artifact_count": 0
+    },
+    {
+      "replacement_id": "D03_REGULATORY_OWNERSHIP",
+      "candidate_need": "applicable controls, ownership/use basis and exact permission boundaries for the candidate activity",
+      "source_role": "competent planning authority, verified rights holder and legal reviewer",
+      "status": "not_submitted",
+      "artifact_count": 0
+    },
+    {
+      "replacement_id": "D04_ACCESSIBILITY_PUBLIC_PARITY",
+      "candidate_need": "consented, group-specific same-task baseline and parity record for published non-AI, staffed and shadow paths",
+      "source_role": "accessibility reviewer and affected-user co-test facilitator",
+      "status": "not_submitted",
+      "artifact_count": 0
+    },
+    {
+      "replacement_id": "D05_TRANSPORT_AND_PEAK_CONTINUITY",
+      "candidate_need": "dated four-way commuting and queue-spill baseline for the exact proposed window and ordinary route",
+      "source_role": "transport professional and route custodian",
+      "status": "not_submitted",
+      "artifact_count": 0
+    },
+    {
+      "replacement_id": "D06_SPECIALIST_CONSTRAINTS",
+      "candidate_need": "applicable transport, fire, railway, municipal, structure, lighting, data and accessibility findings with veto conditions",
+      "source_role": "competent discipline reviewers",
+      "status": "not_submitted",
+      "artifact_count": 0
+    },
+    {
+      "replacement_id": "D07_RESPONSIBILITY_OPERATIONS",
+      "candidate_need": "signed source maintenance, staffed coverage, stop/restart, complaint, maintenance, labour and budget duties",
+      "source_role": "future accountable owner and operating team",
+      "status": "not_submitted",
+      "artifact_count": 0
+    },
+    {
+      "replacement_id": "D08_RIGHTS_AND_REUSE",
+      "candidate_need": "scope-specific data, content, consent, translation, public release and independent file-level rights findings",
+      "source_role": "rights holders, data-protection reviewer and independent rights auditor",
+      "status": "not_submitted",
+      "artifact_count": 0
+    }
+  ],
+  "professional_review_sequence": [
+    "Verify that the five fixed questions remain navigation/refusal/handoff questions and contain no substantive procedure answer.",
+    "Confirm the real source owner, source custodian, staffed lead, stop holder and escalation chain.",
+    "Define and approve an exact site, activity, time, participant and data envelope.",
+    "Collect the ordinary and same-task non-AI baseline before any shadow outcome.",
+    "Lock the source snapshot, task set, primary metric denominator, threshold and four stop mappings before collection.",
+    "Run the group-specific public-parity co-test with withdrawal and complaint routes.",
+    "Have an independent retester repeat the frozen baseline, failure and recovery checks.",
+    "Issue a signed GO/NO-GO minute; any missing, rejected, expired or conflicting item returns NO-GO."
+  ],
+  "current_decision": {
+    "gate": "G0",
+    "decision": "NO-GO",
+    "prepared_handoff_gate_count": 7,
+    "accepted_handoff_gate_count": 0,
+    "prepared_candidate_material_slot_count": 8,
+    "submitted_candidate_material_count": 0,
+    "reason": "The review packet is specific and complete as a handoff design, but no real party, approval, field baseline, operating window, co-test, recovery rehearsal or independent real retest has been accepted."
+  },
+  "non_equivalence": "Professional review packet readiness is not a pilot application, approval, procurement, deployment, field result, recovery duration, accessibility result, professional acceptance or G1."
+}

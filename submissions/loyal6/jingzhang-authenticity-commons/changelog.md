@@ -1,5 +1,42 @@
 # 方案迭代记录
 
+## v1.5 candidate - 2026-08-30
+
+- Preserved the v1.4.2 public test, bidirectional spine, three verification layers, three-area relay, 11 cases, 15 scenarios, 12 journeys and existing geometry; this is an implementation-evidence revision, not a concept reset.
+- Added one AI Origin P0 Civic Review and Correction Relay Cell as a separate 12 m by 8 m participant reference test fit. The source 12 by 8 adjacency diagram remains non-metric; no measured site, approved area, fire conclusion or accessibility certification is claimed.
+- Added computable participant screening for six zones, a two-case-per-hour bottleneck, an eight-person waiting limit, five concurrent seats, 780 ninety-day staff-hours and a six-package percentage cost structure. Field baselines, annual FTE, currency, quantities, rates, quotes and funding remain null.
+- Added ten external release gates, all `HOLD`, plus four gate-bound safe states. These preserve screenless intake, independent review, same-channel correction and recovery while explicitly prohibiting permanent-space, field-performance, automatic-correction or live-data claims when evidence is absent.
+- Added per-session, weekly, day-45, day-70 and day-90 maintenance/recovery actions; separated currently judgeable package evidence from field-dependent observations.
+- Added 30-second, 3-minute and 15-minute review paths. The peer full-score case in PR #4236 is disclosed only as a method benchmark; no concept, identity, A/B/H mechanism, dimensions, costs or spatial types are copied.
+- Video remains deferred. All new physical and operating values are participant pre-implementation assumptions and cannot release field service without named parties, evidence and signatures.
+
+## v1.4.2 execution and expression repair - 2026-08-27
+
+- Retained the v1.4 design scope, geometry, metrics, 11 cases, 15 scenarios, 12 journeys, four rights and three-area relay; this is not a concept reset.
+- Extended one embedded OFL font to all four bilingual main/visual HTML entries including embedded execution annexes and dynamic states. Source/cmap tests complement browser screenshots; neither alone proves visual accessibility.
+- Added unsigned bilingual execution drafts: five regional delivery/exit interfaces, six full-stack handovers, eight RACI actions, original-channel receipts, privacy-impact controls, retention/deletion proposals, accessibility co-tests, KPI collection and disposition sign-off. Real appointees, authorizations, signatures and field observations remain null.
+- Replaced cosmetic fail-state buttons and prewritten pass labels with an actual fail-closed evaluator and reproducible synthetic software tests. No live factual verification or field performance is claimed.
+- Redrew only the key-area figure pair as distinct spatial-adjacency prototypes on a shared non-metric grid. Replaced PDF pages 5, 9 and 10 while preserving all four ten-page documents and their other content.
+- Treat future authorization, official geometry and physical works as conditional follow-ups, not fabricated present achievements. Local verification does not guarantee the Review Agent score or expert approval.
+- Submission uses the existing participant branch and PR #3853; no new proposal or PR is created.
+- Applied a separately scoped generative obstruction repair to the Chinese site-overview PNG only. Its English counterpart and copies embedded in PDFs retain their prior rendering; see the rights statement for the tool, method and limitations.
+- To meet the official file allowlist, execution annexes are embedded at `visual/index.html#execution` and its English counterpart. Local Python build tools are outside the submission; portable Node verification scripts remain in `visual/assets`. Historical HTML screenshots are explicitly labelled as such; current browser visual acceptance is still pending.
+
+## v1.4.1 expression-completeness repair - 2026-08-24
+
+- Bundled one local CSS file containing a 281 KB Noto Sans SC WOFF2 subset and linked both Chinese HTML entrypoints to it, so they render without system CJK fonts, CDN access or runtime network requests.
+- Added visible and machine-readable offline font smoke checks for `京张验真公地`, `公众判据`, `临时边界`, `概念建议` and `待授权实测`.
+- Recorded the upstream font source, full SIL Open Font License 1.1, 857-CJK-glyph scope and fallback strategy; no proposal claim, metric, geometry or PDF content changed.
+
+## v1.4 candidate - 2026-08-24
+
+- Rebased the local candidate on official `upstream/main` commit `68f39f2883e1f593e9b1c1208dc70b8356d4ce86`; no commit, push or PR is part of this candidate pass.
+- Corrected `LU-001` to the latest official land-use code `09` and added separate official `standard_ids` to all compliance rows.
+- Kept the public test—an AI service cannot remain if an error cannot return through every channel that carried it—and clarified three verification layers: provenance/propagation tracing, independent human fact review and executable consequences.
+- Rebuilt PILOT-A as one controlled synthetic three-area relay: AI Origin intake/review/correction, Zhongzhiyuan failure retest, and Dazhongsi procurement update/exit/recovery.
+- Rebuilt five bilingual core figures as spatial evidence, not protocol-only cards, and rebuilt the bilingual offline first screen plus four 10-page PDFs with larger review-scale typography.
+- Added no cases, scenarios, personas, fabricated KPI, statutory-boundary claim or base video; field performance remains unknown until an authorized pilot.
+
 ## v1.3.0 - 2026-08-15
 
 - Replaced the metric-heavy opening with one public test: if an error cannot be corrected through every channel that carried it, the AI service must not remain in Jing-Zhang.

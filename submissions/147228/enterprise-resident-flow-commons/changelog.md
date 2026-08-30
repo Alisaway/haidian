@@ -1,5 +1,18 @@
 # 方案迭代记录
 
+## v2.2 - 2026-08-21
+
+- Rebuilt the bilingual `key-areas` figure as three distinct spatial prototypes: the Zhongzhiyuan River Forecourt, AI Origin Care Loop and Dazhongsi Four-Quadrant Hall. Each now carries a concept plan, indicative section, enterprise request, resident return, stop condition and evidence request.
+- Kept the Dazhongsi announcement task anchor separate from the unresolved `PROV-KEY-003` coordinates documented in Issue #1029; no participant-side geometry shift or station-condition claim was introduced.
+- Reduced the bilingual proposal from 491/432 to 311/254 lines by consolidating four delivery screens into hard gates, keeping only population-scale results that change spatial decisions, and removing the duplicate evidence-readback tail. Detailed runners remain available in `visual/assets`.
+- Restored exact bilingual parity for all ten scenario cards and linked the three-key-area depth record directly to the new prototype chapter, Issue #1029 and the `A-KEY003-POSITION-001` recalculation assumption.
+
+## v2.1 - 2026-08-12
+
+- Replaced the migrated Mobility Commons first-screen pair with an independent bilingual reciprocity gate for `enterprise-resident-flow-commons`; aligned the proposal title, agent provenance, operation-contract scope and visual identity.
+- Bound four enterprise–resident conflict windows to six release conditions and reused the existing fallback, accessibility, responsibility-transfer, denominator and failure-governance readouts instead of adding a parallel ledger. The deterministic runner passes 15 checks and four blocking fixtures.
+- Kept `G0 package replay=PASS` separate from `G1 field release=HOLD`: dated route audits, accepted transfers, locked denominators, field incidents, appeals and operating authorizations remain zero; no service or performance outcome is claimed.
+
 ## v1.23 - 2026-08-12
 
 - Added an explicit first/last-mile completion guard to the dynamic preference screen, separating station-to-block continuity from the transit leg and keeping the air candidate at zero agents.
@@ -22,7 +35,6 @@
 - Added a bilingual mode-competition guard for rail/bus-first, capped feeder, unmanaged feeder expansion and ground-first air scenarios.
 - Added explicit synthetic thresholds for transit displacement, feeder share, vehicle-kilometres and worst-group access; unmanaged expansion and air operation fail closed.
 - Added a primary-source method note without importing coefficients or claiming local ridership, vehicle-kilometres, satisfaction or operations.
-
 ## v1.19 - 2026-08-12
 
 - Added a bilingual mobility failure-governance and appeal-writeback screen for six transport failure classes across the existing eight interfaces.

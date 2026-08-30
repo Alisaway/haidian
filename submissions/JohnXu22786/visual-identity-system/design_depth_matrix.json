@@ -1,0 +1,515 @@
+{
+  "schema_version": "0.1.0",
+  "items": [
+    {
+      "item_id": "existing_conditions_diagnosis",
+      "title_zh": "现状诊断图与资料缺口",
+      "professional_dimension": "城市设计",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "设计依据与资料清单"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson",
+        "geometry/land_use.geojson",
+        "geometry/buildings.geojson",
+        "geometry/roads.geojson",
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson",
+        "geometry/phasing.geojson"
+      ],
+      "metric_refs": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio"
+      ],
+      "source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "DATA-SRC-AGENT-TASKBOOK-20260518",
+        "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-DATA-001"
+      ],
+      "self_check_ids": [
+        "BOUNDARY_TRUST",
+        "KEY_AREAS_TRUST"
+      ],
+      "evidence_summary_zh": "设计依据与资料清单节逐条列出公告、任务书、京张铁路遗址公园公开口径、规范文件与全球案例的机构、链接与日期；现状缺口（无官方 GIS/CAD polygon、无绿地蓝线与文保控制附件、无现场踏勘基线）已按 A-BOUNDARY-001 与 A-DATA-001 在 assumptions.json 中登记，证据边界全程标注 provisional。"
+    },
+    {
+      "item_id": "three_level_scope_framework",
+      "title_zh": "三层范围工作框架",
+      "professional_dimension": "城市设计",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "三层范围工作框架"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson",
+        "geometry/phasing.geojson"
+      ],
+      "metric_refs": [
+        "site_area_sqm",
+        "phase_count"
+      ],
+      "source_ids": [
+        "DATA-SRC-AGENT-TASKBOOK-20260518",
+        "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001"
+      ],
+      "self_check_ids": [
+        "BOUNDARY_TRUST",
+        "KEY_AREAS_TRUST"
+      ],
+      "evidence_summary_zh": "三层范围以表格形式给出统筹研究约 43.6 平方千米、总体设计约 11.4 平方千米、重点区域约 368.4 公顷的概念口径；每层附主要工作、关键证据与复算触发，边界全部标注 provisional；geometry/phasing.geojson 与本表形成 3 阶段面积对位。"
+    },
+    {
+      "item_id": "overall_spatial_structure",
+      "title_zh": "总体空间结构",
+      "professional_dimension": "城市设计",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "总体设计范围城市更新与控规深度城市设计"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/site_boundary.geojson",
+        "geometry/land_use.geojson",
+        "geometry/buildings.geojson",
+        "geometry/green_space.geojson"
+      ],
+      "metric_refs": [
+        "land_use_park_green_share",
+        "land_use_zone_count",
+        "building_unit_count"
+      ],
+      "source_ids": [
+        "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+        "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311"
+      ],
+      "assumption_ids": [
+        "A-CONTROLS-001",
+        "A-DATA-001"
+      ],
+      "self_check_ids": [
+        "LAND_USE_TOPOLOGY"
+      ],
+      "evidence_summary_zh": "总体空间结构以京张铁路遗址公园绿带为骨架，'区域-节点-设施'三级视觉识别层级与用地六类占比（公园绿地 27.3%、科研 26.1%、商务金融 16.7%、商业 13.1%、住宅 8.8%、文化 8.1%）直接由 geometry/land_use.geojson 复算，口径 A 与蓝绿口径 B/C 分别标注、不可混算。"
+    },
+    {
+      "item_id": "land_use_layout",
+      "title_zh": "用地布局",
+      "professional_dimension": "城市设计",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "用地、建筑规模与拆改留方案"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/land_use.geojson",
+        "geometry/buildings.geojson",
+        "geometry/green_space.geojson"
+      ],
+      "metric_refs": [
+        "land_use_zone_count",
+        "land_use_park_green_share",
+        "building_unit_count"
+      ],
+      "source_ids": [
+        "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311"
+      ],
+      "assumption_ids": [
+        "A-DATA-001"
+      ],
+      "self_check_ids": [
+        "LAND_USE_TOPOLOGY"
+      ],
+      "evidence_summary_zh": "用地布局按国土空间调查规划用途管制用地用海分类指南的公开子集展开；拆改留坚持留改拆并举、以留为主；'可逆公共空间组件库'原创机制覆盖座椅、灯杆、信息板等模块化组件的可拆装、可轮换、可分级复用；不预设拆改留数值。"
+    },
+    {
+      "item_id": "development_intensity_controls",
+      "title_zh": "开发强度控制",
+      "professional_dimension": "城市设计",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "指标体系、面积复算与合规矩阵"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/site_boundary.geojson",
+        "geometry/land_use.geojson",
+        "geometry/buildings.geojson"
+      ],
+      "metric_refs": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "land_use_park_green_share"
+      ],
+      "source_ids": [
+        "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING"
+      ],
+      "assumption_ids": [
+        "A-DATA-001"
+      ],
+      "self_check_ids": [
+        "DETERMINISTIC_VALIDATION"
+      ],
+      "evidence_summary_zh": "开发强度控制仅以三项 formal 核心指标（site_area_sqm、green_ratio、public_space_ratio）与一项用地分类口径（land_use_park_green_share）形式回应，全部由本包 geometry 复算；本专项不替代法定控规审查，容积率、建筑高度等结论性数字一律不出现。"
+    },
+    {
+      "item_id": "height_massing_character",
+      "title_zh": "高度体量风貌",
+      "professional_dimension": "城市设计",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "蓝绿空间、公共空间与城市风貌"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson"
+      ],
+      "metric_refs": [
+        "green_ratio",
+        "public_space_ratio"
+      ],
+      "source_ids": [
+        "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES"
+      ],
+      "assumption_ids": [
+        "A-CONTROLS-001"
+      ],
+      "self_check_ids": [
+        "VISUAL_STATIC"
+      ],
+      "evidence_summary_zh": "高度体量风貌以'绿带为轴、节点公园为珠'的蓝绿公共空间体系回应，风貌延续京张铁路工业记忆语汇并与创新有序的新氛围对话；本节不给出建筑高度、强度或天际线结论，仅作城市设计概念原则的可逆布置。"
+    },
+    {
+      "item_id": "retain_renovate_demolish",
+      "title_zh": "拆改留方案",
+      "professional_dimension": "城市设计",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "用地、建筑规模与拆改留方案"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/buildings.geojson",
+        "geometry/green_space.geojson"
+      ],
+      "metric_refs": [
+        "building_unit_count",
+        "building_footprint_area_sqm"
+      ],
+      "source_ids": [
+        "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311"
+      ],
+      "assumption_ids": [
+        "A-CONTROLS-001"
+      ],
+      "self_check_ids": [
+        "LAND_USE_TOPOLOGY"
+      ],
+      "evidence_summary_zh": "拆改留以'留中加、改中嵌、拆后补'布局原则与'可逆公共空间组件库'原创机制回应；优先保留遗址公园肌理与铁路历史遗存，存量建筑以功能置换和视觉接口预留为改造方向，拆除仅限经个案论证的局部疏通慢行零星建筑；不预设数值。"
+    },
+    {
+      "item_id": "traffic_rail_slow_parking",
+      "title_zh": "交通轨道慢行停车",
+      "professional_dimension": "城市设计",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "交通、轨道、市政与公共服务设施"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/roads.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "metric_refs": [
+        "road_network_length_m"
+      ],
+      "source_ids": [
+        "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+        "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW"
+      ],
+      "assumption_ids": [
+        "A-CONTROLS-001"
+      ],
+      "self_check_ids": [
+        "BOUNDARY_TRUST"
+      ],
+      "evidence_summary_zh": "交通组织以慢行优先机制回应，'连续慢行轴贯通主视台、导视廊、叙视厅'作为原创机制；与既有站内导视衔接预留余量；标识照明与市政设施一体化以减少独立立杆；不给出道路线形、轨道线位、桥隧工程等结论性方案。"
+    },
+    {
+      "item_id": "municipal_new_infrastructure",
+      "title_zh": "市政与新型基础设施",
+      "professional_dimension": "城市设计",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "交通、轨道、市政与公共服务设施"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/roads.geojson",
+        "geometry/green_space.geojson"
+      ],
+      "metric_refs": [
+        "road_network_length_m"
+      ],
+      "source_ids": [
+        "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES"
+      ],
+      "assumption_ids": [
+        "A-CONTROLS-001"
+      ],
+      "self_check_ids": [
+        "VISUAL_STATIC"
+      ],
+      "evidence_summary_zh": "市政以集约共享为原则，标识照明等设施与建筑一体化概念、优先利用现状设施条件；无障碍信息按四级层级（标准/大字/语音与触觉/人工兜底）呈现；不预设工程数值与技术参数。"
+    },
+    {
+      "item_id": "blue_green_public_space",
+      "title_zh": "蓝绿空间与公共空间",
+      "professional_dimension": "城市设计",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "蓝绿空间、公共空间与城市风貌"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson"
+      ],
+      "metric_refs": [
+        "green_ratio",
+        "public_space_ratio",
+        "scenario_node_count"
+      ],
+      "source_ids": [
+        "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311"
+      ],
+      "assumption_ids": [
+        "A-CONTROLS-001"
+      ],
+      "self_check_ids": [
+        "VISUAL_STATIC"
+      ],
+      "evidence_summary_zh": "蓝绿公共空间以'绿带为轴、节点公园为珠'体系回应；标识与展示设施与公园融合布置、宜轻宜透宜可逆，不遮挡历史遗迹与绿带视线；三套口径（口径 A 用地分类、口径 B 绿地率、口径 C 公共空间率）分母相同但对象不同、分别标注、不可混算。"
+    },
+    {
+      "item_id": "three_key_area_detailed_design",
+      "title_zh": "三处重点区域详细设计",
+      "professional_dimension": "城市设计",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "重点区域详细设计"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/key_areas.geojson"
+      ],
+      "metric_refs": [
+        "key_area_count",
+        "landmark_count"
+      ],
+      "source_ids": [
+        "DATA-SRC-AGENT-TASKBOOK-20260518",
+        "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-DESIGN-001"
+      ],
+      "self_check_ids": [
+        "KEY_AREAS_TRUST"
+      ],
+      "evidence_summary_zh": "三处重点区域以原创机制'主视台-导视廊-叙视厅'示范-验证-传播闭环回应：三节点分别承担'示范中枢-现场验证-叙事传播'，共享'铁轨语序'与'可逆公共空间组件库'两套原创机制；选址均为概念点位，须经现场踏勘、资料核验、主管部门评估与公众意见后重新落位。"
+    },
+    {
+      "item_id": "renewal_project_list",
+      "title_zh": "更新项目清单",
+      "professional_dimension": "城市设计",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "更新项目清单、实施政策与分期计划"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/key_areas.geojson",
+        "geometry/phasing.geojson"
+      ],
+      "metric_refs": [
+        "annual_program_count",
+        "phase_count"
+      ],
+      "source_ids": [
+        "DATA-SRC-AGENT-TASKBOOK-20260518"
+      ],
+      "assumption_ids": [
+        "A-EVENT-001"
+      ],
+      "self_check_ids": [
+        "VISUAL_STATIC"
+      ],
+      "evidence_summary_zh": "更新项目清单与 F 章以 metrics.json 的 annual_programs 单一源锁定 AP01–AP04 四项年度活动；每项在中英文正文展开品牌、频次、人群、节点、RACI、资源前提、双语触点、隐私/无障碍边界、KPI、阶段门和退出条件。活动均为概念建议；规模与投资估算不填具体金额，不构成政府或运营方承诺。"
+    },
+    {
+      "item_id": "phasing_implementation",
+      "title_zh": "分期实施",
+      "professional_dimension": "城市设计",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "更新项目清单、实施政策与分期计划"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/phasing.geojson"
+      ],
+      "metric_refs": [
+        "phase_count",
+        "annual_program_count"
+      ],
+      "source_ids": [
+        "DATA-SRC-AGENT-TASKBOOK-20260518"
+      ],
+      "assumption_ids": [
+        "A-EVENT-001"
+      ],
+      "self_check_ids": [
+        "KEY_AREAS_TRUST"
+      ],
+      "evidence_summary_zh": "分期实施以 1-3 年（近期，规范编制与导视廊试点）、3-5 年（中期，三节点落地与骨架展开）、5-10 年（远期，全域体系与年度更新）三阶段回应；每阶段给出牵头、协作、阶段门、停止条件与退出机制；6 类参与主体（主管部门、运营机构、高校、企业、社区居民、志愿者）按阶段差异组合。"
+    },
+    {
+      "item_id": "metrics_recalculation",
+      "title_zh": "指标复算",
+      "professional_dimension": "城市设计",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "指标体系、面积复算与合规矩阵"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/site_boundary.geojson",
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson",
+        "geometry/land_use.geojson"
+      ],
+      "metric_refs": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "land_use_park_green_share"
+      ],
+      "source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509"
+      ],
+      "assumption_ids": [
+        "A-DATA-001"
+      ],
+      "self_check_ids": [
+        "DETERMINISTIC_VALIDATION"
+      ],
+      "evidence_summary_zh": "指标复算以三项 formal 核心指标（site_area_sqm、green_ratio、public_space_ratio）由本包 geometry 复算为准；面积以官方文本口径为底数，不另行取值；五项概念指标（识别覆盖率/导视完整率/规范符合率/更新率/反馈处理率）以参考值形式给出；全部标注数据来源、公式、置信等级、用途限制与复算触发。"
+    },
+    {
+      "item_id": "risk_missing_data",
+      "title_zh": "风险与资料缺口",
+      "professional_dimension": "城市设计",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "风险、版权与合规说明"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/site_boundary.geojson"
+      ],
+      "metric_refs": [
+        "site_area_sqm"
+      ],
+      "source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+        "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW"
+      ],
+      "assumption_ids": [
+        "A-TM-001",
+        "A-PRIVACY-001",
+        "A-DATA-001"
+      ],
+      "self_check_ids": [
+        "DETERMINISTIC_VALIDATION"
+      ],
+      "evidence_summary_zh": "风险与资料缺口以五维度风险（商标与在先权利、标识与历史遗存风貌协调、导视信息准确性、AI 内容版权、公众接受度波动）+ AI 治理三句式（仅匿名聚合/关键决策人工复核/禁止过度监控）+ 品牌在先权利与使用边界回应；不替代法定审查、不构成政府承诺。"
+    }
+  ]
+}

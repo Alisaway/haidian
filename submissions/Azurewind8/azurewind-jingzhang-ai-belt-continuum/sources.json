@@ -1,0 +1,183 @@
+{
+  "schema_version": "0.1.0",
+  "sources": [
+    {
+      "id": "SITE-PACKAGE",
+      "path": "brief/site-package/",
+      "source_type": "official_public",
+      "title_zh": "百年京张AI创新带公开资料包（design_brief、enums、ranges、schemas、standards）",
+      "title_en": "Centennial Jing-Zhang AI Belt cleared site package",
+      "retrieved": "2026-08-12",
+      "license": "repository-cleared",
+      "usage": "Project brief, enums, allowed design space, ranges, standards snapshots, and schemas.",
+      "limitations": "官方精确边界与法定控规条件未包含；仅含公告文字面积与临时粗略polygon。"
+    },
+    {
+      "id": "SOURCE-REGISTRY",
+      "path": "data/source_registry.json",
+      "source_type": "official_public",
+      "title_zh": "公开来源可用性登记表",
+      "title_en": "Public source usability registry",
+      "retrieved": "2026-08-12",
+      "license": "repository-cleared",
+      "usage": "Distinguishes formal-ready, background-only, provisional-only, and needs-review materials; all formal claims in this package rely on usable_for_formal=yes entries or clearly labeled provisional geometry.",
+      "limitations": "登记表本身不生成新事实，仅约束用途。"
+    },
+    {
+      "id": "PROCESSED-FACT-PACK",
+      "path": "data/processed/agent_fact_pack.md",
+      "source_type": "official_public",
+      "title_zh": "智能体事实导航包（范围、任务、来源边界、缺数据清单）",
+      "title_en": "Agent-readable fact pack",
+      "retrieved": "2026-08-12",
+      "license": "repository-cleared",
+      "usage": "Navigation layer for scopes, required tasks, source-use boundaries, and missing-data checklist; not a new authority source.",
+      "limitations": "仅为导航层，不作为新的权威来源。"
+    },
+    {
+      "id": "OFFICIAL-ANNOUNCEMENT",
+      "url": "https://ghzrzyw.beijing.gov.cn/zhengwuxinxi/tzgg/hd/202605/t20260509_4643047.html",
+      "source_type": "official_public",
+      "title_zh": "百年京张AI创新带城市设计国际方案征集资格预审公告（北京市规划和自然资源委员会，2026-05-09）",
+      "title_en": "Official prequalification announcement (Beijing Municipal Commission of Planning and Natural Resources, 2026-05-09)",
+      "published": "2026-05-09",
+      "retrieved": "2026-08-12",
+      "license": "official-public-document",
+      "usage": "三层范围文字四至与面积（统筹研究43.6平方公里、总体设计11.4平方公里、重点区域368.4公顷及三个重点区面积）、设计任务1.3/1.4/1.5、成果深度要求。",
+      "limitations": "公告仅给出文字四至与约数面积，未附精确边界矢量；本包所有精确面积均为临时边界复算值。"
+    },
+    {
+      "id": "AGENT-TASKBOOK",
+      "path": "brief/site-package/agent_taskbook.json",
+      "source_type": "user_provided_cleared",
+      "title_zh": "面向全球智能体开展百年京张AI创新带城市设计开源征集任务书摘录（2026-05-18）",
+      "title_en": "Agent open-call taskbook excerpt (2026-05-18)",
+      "published": "2026-05-18",
+      "retrieved": "2026-08-12",
+      "license": "user-provided-cleared-summary",
+      "usage": "三大定位、五大功能、三区两翼、共创宪章、agent.1-agent.6六项任务、评审维度与边界条款；本方案命名体系、场景卡、朝圣地标、文化叙事和长期运营章节直接回应该任务书。",
+      "limitations": "为清权摘录，非公告全文；空间落地要求均按其边界条款表述为概念建议。"
+    },
+    {
+      "id": "BOUNDARY-SOURCE",
+      "path": "brief/site-package/geometry/provisional_boundaries.geojson",
+      "source_type": "agent_inferred_from_public_data",
+      "title_zh": "临时粗略总体设计范围 PROV-SITE-001",
+      "title_en": "Provisional rough overall design boundary PROV-SITE-001",
+      "retrieved": "2026-08-12",
+      "license": "repository-provisional",
+      "usage": "Submitted site boundary geometry source (provisional). 全部设计图层与面积复算基于此临时边界。",
+      "limitations": "provisional_only：不得作为官方红线、审批依据、法定管控或精确面积声明依据；官方矢量公布后所有精度敏感指标需整体重算。"
+    },
+    {
+      "id": "KEY-AREA-SOURCE",
+      "path": "brief/site-package/geometry/provisional_boundaries.geojson",
+      "source_type": "agent_inferred_from_public_data",
+      "title_zh": "三处重点区临时粗略范围 PROV-KEY-001/002/003",
+      "title_en": "Provisional rough key-area polygons PROV-KEY-001/002/003",
+      "retrieved": "2026-08-12",
+      "license": "repository-provisional",
+      "usage": "Three required detailed-design key area boundaries (provisional)：众智园AI自主创新加速区、北京AI原点社区、大钟寺AI产业聚集区。",
+      "limitations": "provisional_only：矩形边不得解释为地块或道路红线；面积以公告约数为准（192.1/104.3/72.0公顷），复算值仅校核用。"
+    },
+    {
+      "id": "STANDARD-SNAPSHOTS",
+      "path": "brief/site-package/standards/references/",
+      "source_type": "official_public",
+      "title_zh": "强制专业标准本地快照（城市设计管理办法、控规编制审批办法、用地用海分类指南、建筑设计深度规定、生成式AI暂行办法、无障碍环境建设法等）",
+      "title_en": "Local snapshots of mandatory professional standards",
+      "retrieved": "2026-08-12",
+      "license": "official-public-document",
+      "usage": "standard_matrix.json 中全部标准响应均以本地快照为准（source_url 仅作溯源）。",
+      "limitations": "快照为项目子集摘录；法定适用以官方发布全文为准。"
+    },
+    {
+      "id": "CASE-KENDALL",
+      "url": "https://www.cambridgeredevelopment.org/",
+      "source_type": "agent_inferred_from_public_data",
+      "title_zh": "肯戴尔广场创新区（美国剑桥）：剑桥再开发局公开资料",
+      "title_en": "Kendall Square innovation district (Cambridge, USA): Cambridge Redevelopment Authority public materials",
+      "retrieved": "2026-08-24",
+      "license": "public-webpage-facts-only",
+      "usage": "案例对照表第1行：实验室与街道零距离加速成果转化的经验综述。",
+      "limitations": "公开介绍网页的事实性综述，未复制受版权保护图文；仅作经验参考，不作规范依据，细节以其官方规划文件为准。"
+    },
+    {
+      "id": "CASE-KINGS-CROSS",
+      "url": "https://www.kingscross.co.uk/",
+      "source_type": "agent_inferred_from_public_data",
+      "title_zh": "国王十字再开发区（英国伦敦）：King's Cross Central 官方网站",
+      "title_en": "King's Cross redevelopment (London, UK): King's Cross Central official site",
+      "retrieved": "2026-08-24",
+      "license": "public-webpage-facts-only",
+      "usage": "案例对照表第2行：遗产场所作为科技区身份锚点的经验综述。",
+      "limitations": "开发主体官方宣传网页，含营销口径；仅作经验参考，不作规范依据。"
+    },
+    {
+      "id": "CASE-ONE-NORTH",
+      "url": "https://www.jtc.gov.sg/find-space/one-north",
+      "source_type": "agent_inferred_from_public_data",
+      "title_zh": "纬壹科技城（新加坡）：JTC 裕廊集团官方园区页",
+      "title_en": "one-north (Singapore): JTC Corporation official estate page",
+      "retrieved": "2026-08-24",
+      "license": "public-webpage-facts-only",
+      "usage": "案例对照表第3行：工作—居住—学习—游憩混合留住人才的经验综述。",
+      "limitations": "政府法定机构公开页面；园区规划细节以新加坡官方规划文件为准，仅作经验参考。"
+    },
+    {
+      "id": "CASE-NANSHAN",
+      "url": "https://www.szns.gov.cn/",
+      "source_type": "agent_inferred_from_public_data",
+      "title_zh": "深圳南山区科技创新集群：南山区人民政府门户网站",
+      "title_en": "Shenzhen Nanshan innovation cluster: Nanshan District People's Government portal",
+      "retrieved": "2026-08-24",
+      "license": "public-webpage-facts-only",
+      "usage": "案例对照表第4行：硬件供应链邻近性价值的经验综述。",
+      "limitations": "政府门户公开信息的事实性综述；仅作经验参考，不作规范依据。"
+    },
+    {
+      "id": "CASE-STATION-F",
+      "url": "https://stationf.co/",
+      "source_type": "agent_inferred_from_public_data",
+      "title_zh": "Station F 超级孵化器（法国巴黎）：官方网站",
+      "title_en": "Station F super-incubator (Paris, France): official site",
+      "retrieved": "2026-08-24",
+      "license": "public-webpage-facts-only",
+      "usage": "案例对照表第5行：超级孵化器旗舰效应的经验综述。",
+      "limitations": "运营主体官方宣传网页，含营销口径；仅作经验参考，不作规范依据。"
+    },
+    {
+      "id": "CASE-CORNELL-TECH",
+      "url": "https://tech.cornell.edu/",
+      "source_type": "agent_inferred_from_public_data",
+      "title_zh": "康奈尔科技校区（美国纽约罗斯福岛）：官方网站",
+      "title_en": "Cornell Tech campus (Roosevelt Island, New York, USA): official site",
+      "retrieved": "2026-08-24",
+      "license": "public-webpage-facts-only",
+      "usage": "案例对照表第6行：校企共址模式的经验综述。",
+      "limitations": "高校官方网页的事实性综述；仅作经验参考，不作规范依据。"
+    },
+    {
+      "id": "CASE-SHIBUYA",
+      "url": "https://shibuya-startup-support.jp/",
+      "source_type": "agent_inferred_from_public_data",
+      "title_zh": "涩谷创业生态（日本东京）：涩谷区官方创业支持平台",
+      "title_en": "Shibuya startup ecosystem (Tokyo, Japan): Shibuya City official startup support platform",
+      "retrieved": "2026-08-24",
+      "license": "public-webpage-facts-only",
+      "usage": "案例对照表第7行：轨道枢纽上盖创业生态的经验综述。",
+      "limitations": "区政府公开平台的事实性综述；仅作经验参考，不作规范依据。"
+    },
+    {
+      "id": "CASE-MISSION-BAY",
+      "url": "https://sfocii.org/projects/mission-bay",
+      "source_type": "agent_inferred_from_public_data",
+      "title_zh": "Mission Bay 再开发区（美国旧金山）：OCII 官方项目页",
+      "title_en": "Mission Bay redevelopment (San Francisco, USA): OCII official project page",
+      "retrieved": "2026-08-24",
+      "license": "public-webpage-facts-only",
+      "usage": "案例对照表第8行：单一功能园区生活配套滞后导致空心化的警示性经验综述。",
+      "limitations": "再开发管理机构公开项目页；仅作警示性经验参考，不作规范依据。"
+    }
+  ]
+}

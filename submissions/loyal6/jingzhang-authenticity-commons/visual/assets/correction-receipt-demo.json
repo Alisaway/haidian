@@ -10,8 +10,28 @@
     "test_material": "clearly marked synthetic AI reconstruction",
     "controlled_mislabel": "presented as an original Jing-Zhang historical record",
     "live_public_release": false,
+    "original_channel_ids": ["CHANNEL-SIGN-01", "CHANNEL-WEB-01"],
     "paper_case_id": "CASE-DEMO-001"
   },
+  "verification_layers": {
+    "V1_trace": "synthetic source declaration, version, purpose, expiry and both drill channels recorded",
+    "V2_review": "independent archive-review role separates provenance, detector output and human factual judgement",
+    "V3_action": "pause, same-channel correction, product retest, procurement update and asset/data recovery"
+  },
+  "three_area_relay": [
+    {
+      "area": "beijing_ai_origin_community",
+      "actions": ["screenless intake", "channel inventory", "human pause", "independent fact review", "public correction"]
+    },
+    {
+      "area": "zhongzhiyuan_ai_acceleration_area",
+      "actions": ["publishing workflow failure retest", "failure-boundary update"]
+    },
+    {
+      "area": "dazhongsi_ai_industry_cluster",
+      "actions": ["procurement dossier update", "exit test", "temporary display and data recovery"]
+    }
+  ],
   "original_channels": [
     {
       "id": "CHANNEL-SIGN-01",
@@ -29,12 +49,12 @@
     }
   ],
   "timeline": [
-    {"time": "T+00", "event": "controlled synthetic mislabel appears in two drill channels"},
-    {"time": "T+05", "event": "human steward pauses both channels"},
-    {"time": "T+20", "event": "independent archive-review role separates provenance, detection and human judgement"},
-    {"time": "T+35", "event": "correction returns to both original channels"},
-    {"time": "T+50", "event": "publishing workflow receives product retest task"},
-    {"time": "T+60", "event": "temporary display, cached data and test material are recovered or cleared"}
+    {"time": "T+00", "area": "beijing_ai_origin_community", "event": "visitor reports a controlled synthetic mislabel through the screenless counter and both drill channels are inventoried"},
+    {"time": "T+05", "area": "beijing_ai_origin_community", "event": "human steward pauses both channels"},
+    {"time": "T+20", "area": "beijing_ai_origin_community", "event": "independent archive-review role separates provenance, detection and human factual judgement"},
+    {"time": "T+35", "area": "beijing_ai_origin_community", "event": "correction returns to both original channels and is publicly acknowledged"},
+    {"time": "T+50", "area": "zhongzhiyuan_ai_acceleration_area", "event": "publishing workflow receives a failure-retest task"},
+    {"time": "T+60", "area": "dazhongsi_ai_industry_cluster", "event": "procurement evidence is updated, exit is tested, and the temporary display, cached data and test material are recovered or cleared"}
   ],
   "receipt": {
     "synthetic_or_field_status": "synthetic_drill_not_field_result",
@@ -49,6 +69,7 @@
       "coverage_ratio": 1.0
     },
     "product_retest_task": "RETEST-PUBLISH-001",
+    "procurement_update": "PROCUREMENT-DEMO-001 marked modify_and_retest_before_use",
     "asset_data_recovery_record": {
       "temporary_label_restored": true,
       "offline_cache_cleared": true,
@@ -58,11 +79,12 @@
     "disposition": "modify_and_retest_before_any_live_use"
   },
   "fail_closed_tests": [
-    {"removed_field": "accountable_role", "expected_state": "pause", "result": "pass"},
-    {"removed_field": "original_channels", "expected_state": "pause", "result": "pass"},
-    {"removed_field": "independent_reviewer", "expected_state": "pause", "result": "pass"},
-    {"removed_field": "asset_data_recovery_record", "expected_state": "retire", "result": "pass"}
+    {"removed_field": "accountable_role", "expected_state": "pause"},
+    {"removed_field": "original_channels", "expected_state": "pause"},
+    {"removed_field": "independent_reviewer", "expected_state": "pause"},
+    {"removed_field": "asset_data_recovery_record", "expected_state": "retire"}
   ],
+  "test_results_ref": "visual/assets/correction-engine-results.json",
   "limits": [
     "This is a controlled synthetic drill, not a real incident or measured service performance.",
     "No universal truth score or automated adverse decision is produced.",

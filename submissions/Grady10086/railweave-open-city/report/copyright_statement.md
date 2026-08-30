@@ -2,9 +2,9 @@
 
 ## 1. 适用范围 / Scope
 
-本声明覆盖 RailWeave（轨迹织城）v2.4 的中英文正文、参与者设计 GeoJSON、结构化协议与合成案例、AI辅助空间织法比选记录、信息设计、离线 HTML、A3 文册、A0 展板、图件、三张 AI 生成概念图及其本地衍生格式、封面和短视频。部分文字、数据整理、代码、图件和媒体编排使用 AI 辅助，由提交人复核并对投稿内容负责。AI 辅助不替代政府部门、有权主体、专业人员或受影响公众的判断。
+本声明覆盖 RailWeave（轨迹织城）本次提交的中英文正文、参与者设计 GeoJSON、结构化协议与合成案例、AI辅助空间织法比选记录、信息设计、离线 HTML、A3 文册、A0 展板、图件、三张 AI 生成概念图及其本地衍生格式、封面和短视频。部分文字、数据整理、代码、图件和媒体编排使用 AI 辅助，由提交人复核并对投稿内容负责。AI 辅助不替代政府部门、有权主体、专业人员或受影响公众的判断。
 
-This statement covers the Chinese and English narratives, participant-designed GeoJSON, structured protocols and synthetic cases, the AI-assisted spatial-weave option record, information design, offline HTML, A3 booklets, A0 boards, figures, three AI-generated concept images and their locally derived formats, cover, and short videos in RailWeave v2.4. AI assisted parts of the writing, data organisation, code, figures, and media assembly. The submitter reviewed the package and remains responsible for the submission. AI assistance does not replace the judgement of public authorities, authorised entities, professionals, or affected publics.
+This statement covers the Chinese and English narratives, participant-designed GeoJSON, structured protocols and synthetic cases, the AI-assisted spatial-weave option record, information design, offline HTML, A3 booklets, A0 boards, figures, three AI-generated concept images and their locally derived formats, cover, and short videos in this RailWeave submission. AI assisted parts of the writing, data organisation, code, figures, and media assembly. The submitter reviewed the package and remains responsible for the submission. AI assistance does not replace the judgement of public authorities, authorised entities, professionals, or affected publics.
 
 参与者原创且有权许可的文字、数据结构、代码、图形编排和设计表达按 CC BY 4.0 提供。该许可只适用于提交人能够授予的权利，不改变第三方资料、OpenStreetMap 数据、字体、软件工具或政府公开材料的原有权利，也不保证纯 AI 生成部分在各司法辖区具有著作权或排他性。任何复用者仍须核验来源、署名、适用许可和事实状态。
 
@@ -12,11 +12,11 @@ Participant-authored text, data structures, code, graphic composition, and desig
 
 ## 2. 三张 AI 生成概念图 / Three AI-generated concept images
 
-三张图由 v2.2 编制过程中使用的 OpenAI 图像生成工具，根据提交人提供的原创文字提示生成，并在 v2.4 中继续按原权利边界复用。生成结果经本地等内容格式转换后，提交包仅保留 WebP；这些 WebP 不含可供独立核验的 prompt 或精确模型版本元数据，因此本声明不臆造具体模型代号。下列英文为实际提交给生成工具的完整提示词，逐字登记。中文说明仅供阅读，未作为生成输入。
+三张图由本成果编制过程中使用的 OpenAI 图像生成工具，根据提交人提供的原创文字提示生成，并在本次提交中按原权利边界使用。生成结果经本地等内容格式转换后，提交包仅保留 WebP；这些 WebP 不含可供独立核验的 prompt 或精确模型版本元数据，因此本声明不臆造具体模型代号。下列英文为实际提交给生成工具的完整提示词，逐字登记。中文说明仅供阅读，未作为生成输入。
 
-The three images were created during preparation of v2.2 with an OpenAI image-generation tool from original text prompts supplied by the submitter and are reused in v2.4 under the same rights boundary. After a local like-for-like format conversion, the submission retains only WebP files. These WebP files contain no independently recoverable prompt or precise model-version metadata, so this statement does not invent a model identifier. The English text below is the complete prompt actually submitted to the generation tool and is recorded verbatim. The Chinese notes are for reading only and were not generation inputs.
+The three images were created during preparation of this work with an OpenAI image-generation tool from original text prompts supplied by the submitter and are used in this submission under the same rights boundary. After a local like-for-like format conversion, the submission retains only WebP files. These WebP files contain no independently recoverable prompt or precise model-version metadata, so this statement does not invent a model identifier. The English text below is the complete prompt actually submitted to the generation tool and is recorded verbatim. The Chinese notes are for reading only and were not generation inputs.
 
-### 2.2 众智园开放验证示范园 / Zhongzhiyuan Open Validation Demonstration Park
+### 2.1 众智园开放验证示范园 / Zhongzhiyuan Open Validation Demonstration Park
 
 文件 / Files:
 
@@ -68,9 +68,9 @@ The three images are not current-condition photographs, field surveys, evidence 
 
 ## 4. 地图、公共资料与第三方权利 / Maps, public sources, and third-party rights
 
-v2.3 空间图件嵌入经筛选的 OpenStreetMap L4 矢量快照，不使用地图瓦片或商业底图。路网、步骑、轨道、站点与水系快照日期为 2026-08-11，建筑为 2026-07-08，POI 为 2026-05-06；每张相关图件均保留 `© OpenStreetMap contributors` 和 ODbL 1.0 署名，许可信息见 <https://www.openstreetmap.org/copyright>。建筑轮廓仅作为方位线索，不构成建筑普查或拆改留依据；仅加载具名京张公园多边形以暴露其与临时范围的错位，不据此判断业态、容量、产权或法定边界。上述 L4 对象不写入参与者正式 GeoJSON 或指标，不得用于认定规划控制、产权、逐栋现状、站口或工程线位。
+本次提交的空间图件嵌入经筛选的 OpenStreetMap L4 矢量快照，不使用地图瓦片或商业底图。路网、步骑、轨道、站点与水系快照日期为 2026-08-11，建筑为 2026-07-08，POI 为 2026-05-06；每张相关图件均保留 `© OpenStreetMap contributors` 和 ODbL 1.0 署名，许可信息见 <https://www.openstreetmap.org/copyright>。建筑轮廓仅作为方位线索，不构成建筑普查或拆改留依据；仅加载具名京张公园多边形以暴露其与临时范围的错位，不据此判断业态、容量、产权或法定边界。上述 L4 对象不写入参与者正式 GeoJSON 或指标，不得用于认定规划控制、产权、逐栋现状、站口或工程线位。
 
-The v2.3 spatial figures embed selected OpenStreetMap L4 vector snapshots and use no map tiles or commercial basemap. Roads, walking and cycling, rail, station, and water snapshots are dated 2026-08-11; buildings are dated 2026-07-08; POIs are dated 2026-05-06. Every relevant figure retains `© OpenStreetMap contributors` and ODbL 1.0 attribution; licence information is available at <https://www.openstreetmap.org/copyright>. Building footprints are orientation leads, not a building survey or retain–alter–demolish basis. Only named Jing-Zhang park polygons are loaded to expose their discrepancy with the provisional extent; they do not establish programme, capacity, rights, or a statutory boundary. These L4 objects do not enter participant-generated formal GeoJSON or indicators and may not establish planning controls, ownership, building-level conditions, station entrances, or engineering alignments.
+The spatial figures in this submission embed selected OpenStreetMap L4 vector snapshots and use no map tiles or commercial basemap. Roads, walking and cycling, rail, station, and water snapshots are dated 2026-08-11; buildings are dated 2026-07-08; POIs are dated 2026-05-06. Every relevant figure retains `© OpenStreetMap contributors` and ODbL 1.0 attribution; licence information is available at <https://www.openstreetmap.org/copyright>. Building footprints are orientation leads, not a building survey or retain–alter–demolish basis. Only named Jing-Zhang park polygons are loaded to expose their discrepancy with the provisional extent; they do not establish programme, capacity, rights, or a statutory boundary. These L4 objects do not enter participant-generated formal GeoJSON or indicators and may not establish planning controls, ownership, building-level conditions, station entrances, or engineering alignments.
 
 政府网页、法规、政策、公开标准和机构官网只按 `sources.json` 登记的用途、尺度和限制进行事实摘要或机制比较。未复制受限制的新闻图片、商业地图瓦片、企业商标、第三方案例图纸、长段受保护文本或同行方案的文字、图件、schema、代码和测试数据。引用不表示原发布者或案例机构认可本方案。
 
@@ -78,9 +78,9 @@ Government webpages, laws, policies, public standards, and institutional website
 
 ## 5. 字体、软件、双语与验证边界 / Fonts, software, bilingual outputs, and verification boundary
 
-图件和 PDF 使用本地可用字体进行排版或嵌入，不随包单独分发字体文件；字体权利归各权利人所有。浏览器成果使用本地或系统字体栈，不依赖远程字体。生成、渲染、转换和验证软件仍受其各自许可约束；软件输出的开放许可不等于软件本身被重新许可。
+图件和 PDF 使用本地可用字体进行排版或嵌入，未在提交包中作为独立字体文件分发。四份离线 HTML 共用 `visual/assets/offline-cjk-font.css` 内嵌的中文字体子集，确保在不具备中文系统字体的干净浏览器中仍能阅读。该子集源自 **Noto Sans CJK SC Regular 2.004**（源字体版权：© 2014–2021 Adobe），官方源文件为 <https://github.com/notofonts/noto-cjk/blob/f8d157532fbfaeda587e826d4cd5b21a49186f7c/Sans/OTF/SimplifiedChinese/NotoSansCJKsc-Regular.otf>；源 Git blob 为 `dc15562470b4f842321894787a0d066879ccff8b`，源文件 SHA-256 为 `2c76254f6fc379fddfce0a7e84fb5385bb135d3e399294f6eeb6680d0365b74b`。使用 fontTools 4.63.0 与 Brotli 1.2.0，按四份最终 HTML 所需字符并保留少量基础拉丁及常用替代、排版符号生成 WOFF2 子集；子集 SHA-256 为 `8bcb797105e7f01b2aefbd6284d97d694a4877afdf71140449203fcc10ed27b8`，完整源 OTF 不随包分发。字体及该修改子集采用 **SIL Open Font License 1.1**；完整许可文本、来源、工具、范围与校验值均置于上述 CSS 的可读文件头中。该字体仅解决离线字形可用性，不改变网页内容或证据等级。生成、渲染、转换和验证软件仍受其各自许可约束；软件输出的开放许可不等于软件本身被重新许可。
 
-Figures and PDFs use locally available fonts for layout or embedding; font files are not separately redistributed in the package, and font rights remain with their respective owners. Browser artifacts use local or system font stacks and do not depend on remote fonts. Generation, rendering, conversion, and verification software remain subject to their own licences; an open licence applied to an output does not relicense the software itself.
+Figures and PDFs use locally available fonts for layout or embedding; no standalone font file is distributed in this package. The four offline HTML pages share a Chinese-font subset embedded in `visual/assets/offline-cjk-font.css`, so the pages remain readable in a clean browser without CJK system fonts. The subset derives from **Noto Sans CJK SC Regular 2.004** (source font copyright © 2014–2021 Adobe), official source <https://github.com/notofonts/noto-cjk/blob/f8d157532fbfaeda587e826d4cd5b21a49186f7c/Sans/OTF/SimplifiedChinese/NotoSansCJKsc-Regular.otf>; source Git blob `dc15562470b4f842321894787a0d066879ccff8b`, source SHA-256 `2c76254f6fc379fddfce0a7e84fb5385bb135d3e399294f6eeb6680d0365b74b`. fontTools 4.63.0 and Brotli 1.2.0 produced a WOFF2 subset covering the characters required by the four final HTML pages, with a small set of basic Latin and common replacement/typographic characters retained; subset SHA-256 `8bcb797105e7f01b2aefbd6284d97d694a4877afdf71140449203fcc10ed27b8`. The full source OTF is not distributed. The font and modified subset remain under the **SIL Open Font License 1.1**; the complete licence, source, tool, scope, and checksums are retained in the human-readable CSS header. The subset restores offline glyph availability only and changes neither content nor evidence status. Generation, rendering, conversion, and verification software remain subject to their own licences; an open licence applied to an output does not relicense the software itself.
 
 中英文正文、图件、HTML、A3/A0 和视频说明基于同一设计意图与证据层生成。翻译不改变资料权利、证据等级、临时边界或未决事项。若语言版本之间存在实质差异，应回到带来源的结构化文件和人工复核，不得选择更有利的译文扩大主张。
 

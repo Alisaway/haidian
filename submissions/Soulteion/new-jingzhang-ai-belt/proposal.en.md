@@ -9,10 +9,22 @@ license: "COMMUNITY-DISPLAY-ONLY"
 summary: "Taking the self-reliance spirit of the zigzag railway as its origin, the proposal reshapes the Jing-Zhang Heritage Park into a north-south 'human-centered AI public spine', with Zhongzhiyuan, the Beijing AI Origin Community and Dazhongsi as the three cores, and the Zhongguancun technology-service wing and Xiaoyuehe scenario wing as the two wings, forming an 'one-spine three-cores, four-belt two-wings, multi-node network' AI innovation belt."
 tracks: ["ai-traffic-walkability", "enterprise-services-ecosystem", "civic-agent-governance"]
 scenarios: ["ai-traffic-walkability", "enterprise-service-copilot", "public-safety-operations-review"]
-iteration: "v1.2"
+iteration: "v1.5"
 ---
 
 # New Jing-Zhang AI Innovation Belt: From the Centennial Zigzag Railway to a Human-Centered AI City
+
+## Executive Summary (one page)
+
+**Core concept**. Taking the self-reliance spirit of the centennial zigzag railway as its origin, the proposal reshapes the Jing-Zhang Heritage Park into a "**human-centered AI public spine**" and organizes an "one-spine three-cores, four-belt two-wings, multi-node network" AI innovation belt around it [source:AGENT-TASKBOOK] [source:OFFICIAL-ANNOUNCEMENT].
+
+**Spatial framework**. Three levels cascade down: the coordinated research area (~43.6 km², industry and future-city research) → the overall design area (~11.4 km², regulatory-plan-level urban design: AI R&D 22.3%, residential & community 27.8%, commercial 15.9%, green & plaza 28.1%) → the key areas (~368.4 ha, implementation-plan-level design for Zhongzhiyuan, the Origin Community, and Dazhongsi) [metric:rnd_land_ratio] [metric:residential_land_ratio] [metric:key_area_count].
+
+**Innovation mechanisms**. A three-cores-two-wings collaboration loop (university incubation → open-source collaboration → enterprise conversion → scenario validation → global dissemination → back to incubation); AI-native carriers operate on an "occupiable, recallable, human-reviewable" interface logic — 12 scenario cards (including 3 industry test-and-validation cards), the human-centered public spine, four factor channels of the Zhongguancun service wing, and the five-segment Xiaoyuehe public experience path [depth:scenario_cards] [depth:scenario_open_operation].
+
+**Implementation path**. Three phases (Dazhongsi first → central corridor → Zhongzhiyuan full chain) plus 6 action packages (JZ-01 to JZ-06), each carrying scale ranges, capital magnitudes, participating actors, and acceptance indicators (Section 10.1), expressed through pilot delivery contracts of "who is responsible, how it is accepted, when it is handed back" [depth:phasing_implementation].
+
+**Expression and evidence**. Geometry / metrics / three matrices are machine-verifiable; the three key areas recompute to ~369.3 ha under provisional boundaries versus ~368.4 ha in the announcement (~0.9 ha deviation; recompute once official geometry is supplied); all spatial conclusions are concept suggestions and do not constitute statutory plans, government approval, investment commitments, or engineering feasibility conclusions [depth:metrics_recalculation] [source:AGENT-TASKBOOK].
 
 ## Design Basis and Source List
 
@@ -45,6 +57,8 @@ Composed of three polygons, this layer reaches urban-design depth equivalent to 
 The three levels cascade: the coordinated research layer determines the industry chain and synergy loop, the overall design layer translates them into land use, transport, blue-green space and character, and the key areas verify buildability of buildings, public space, and AI scenarios at parcel level [depth:three_level_scope_framework] [depth:overall_spatial_structure].
 
 ![Three-level scope and spatial working framework](assets/figures/land-use-structure.png)
+
+![One-spine three-cores four-belt two-wings structure prototype](assets/figures/spatial-prototype.en.png)
 
 ## Coordinated Research Area: Industry and Future City Research
 
@@ -116,6 +130,20 @@ The taskbook lists the "Zhongguancun technology-service wing support mechanism" 
 
 The wing serves the three cores rather than itself: when Zhongzhiyuan lacks evaluation authority, the wing imports evaluators; when the Origin Community lacks a capital entry, the wing links tech finance; when Dazhongsi lacks international reception, the wing configures the factors. The mechanism is expressed as a conceptual pathway, not as specific investment, recruitment, or policy commitments, and is to be deepened by professional teams after ownership and implementing-body confirmation [depth:ai_ecosystem_case_studies].
 
+### 3.6 Differentiation vs. Conventional Approaches
+
+To avoid a "generic collage", this section sets out the key mechanisms of the proposal against their conventional counterparts, line by line, for cross-checking against the package evidence [source:AGENT-TASKBOOK]:
+
+| Item | Conventional approach | This proposal | Evidence |
+| --- | --- | --- | --- |
+| Heritage use | Single-purpose heritage display strip or heritage park activation | The zigzag's two rails morph into a pair of facing "Ren" figures as a wayfinding motif; the heritage park is elevated into a "human-centered AI public spine" hosting slow mobility, AI art, and test scenarios as one composite public axis | [depth:spatial_storyline] [data:geometry/green_space.geojson#GREEN-001] |
+| Industry synergy | Three districts recruit and loop independently | A three-cores-two-wings collaboration loop (university incubation → open-source → conversion → scenario validation → global dissemination → back to incubation); the service wing acts only as a factor backend and does not stack industry mass | [depth:ai_ecosystem_case_studies] [data:geometry/land_use.geojson#LU-001] |
+| Scenario expression | Scenario checklist + one big screen | 12 scenario cards, each linked to spatial layers, operational data, privacy boundaries, human review, operators, and risks, including 3 dedicated industry test-and-validation cards | [depth:scenario_cards] [depth:ai_scenario_space_operation_map] |
+| AI grounding | Pasting "AI labels" onto conventional plans | Scenarios run on an "occupiable, recallable, human-reviewable" interface logic: test benches, data sandboxes, booking platforms, and human-review boundaries are written into each card | [depth:scenario_open_operation] |
+| Area basis | Citing announcement figures as coverage claims | Proactively discloses the ~369.3 ha provisional recomputation versus ~368.4 ha in the announcement (~0.9 ha deviation) and states a recalculation upon official boundaries | [metric:site_area_sqm] [depth:metrics_recalculation] |
+| Cultural wayfinding | Brand logo and spatial signage mixed | Separates the belt brand layer (Logo system) from the spatial layer (cultural signage system); they share the "Ren" motif but differ in level, scope, and licensing boundaries | [depth:brand_identity_system] [depth:signage_system_direction] |
+
+Three of these — the three-cores-two-wings collaboration loop, the four-type review boundary on scenario cards, and the proactive disclosure of the provisional-boundary deviation — are the differentiating mechanisms of this proposal versus comparable entries; the remaining rows show how the proposal restrains and calibrates conventional practice rather than starting from scratch.
 
 ## Overall Design Area: Urban Renewal and Regulatory-Plan-Level Urban Design
 
@@ -136,7 +164,7 @@ Land use is organized into five dominant functions [data:geometry/land_use.geojs
 | Code | Function | Area (thousand sqm) | Share | Design intent |
 | --- | --- | --- | --- | --- |
 | 0802 | AI R&D land | 2545.6 | 22.3% | Core carrier of Zhongzhiyuan, Origin Community, central R&D belt [metric:rnd_land_ratio] |
-| 05 | Commercial/service land | 1810.0 | 15.9% | Dazhongsi intelligent economy, Zhichun Road service belt [metric:commercial_land_ratio] |
+| 0901/0902 | Commercial/service land | 1810.0 | 15.9% | Dazhongsi intelligent economy, Zhichun Road service belt [metric:commercial_land_ratio] |
 | 0701/0702 | Residential & community | 3176.8 | 27.8% | Talent housing, community AI service network [metric:residential_land_ratio] |
 | 0804 | Education land | 674.0 | 5.9% | University-adjacent conversion interface [metric:education_land_ratio] |
 | 1401/1403 | Green & squares | 3206.5 | 28.1% | Human public spine, blue-green network [metric:green_ratio] [metric:public_space_ratio] |
@@ -317,18 +345,24 @@ Signage and symbol system: a unified "human figure" signage motif with three col
 
 **Boundary between the Logo system and the cultural signage system**. To avoid confusing the belt-wide brand with cultural spatial wayfinding [source:AGENT-TASKBOOK], this proposal separates them by layer and scope: the **belt-wide Logo system** (Section 3.2, the rust-red/blue "human-figure" Logo) is a brand-layer asset for the belt name, the three core names, and communications, carrying external identity and IP unity; the **cultural signage system** (this section's "human-figure" three-color icons, bench signage columns, etc.) is a spatial-layer asset for on-site orientation and scenario guidance in parks, streets, and plazas. Both share the "human" motif but belong to different layers: the brand layer fixes the belt's identity, the spatial layer serves on-site wayfinding; the signage graphics are self-drawn concepts, not copies of the Logo wordmark, and no corporate or third-party marks are reused in public space — keeping the cultural signage system and the overall Logo system distinct and non-substitutable [depth:brand_identity_system] [depth:signage_system_direction].
 
+![Retain/renovate/update/new-build renewal structure with phasing](assets/figures/renewal-structure.en.png)
+
 ## Renewal Projects, Implementation Policy, and Phasing
 
 ### 10.1 Renewal Project List (examples)
 
-| No. | Project | Type | Location | Dependency | Phase |
-| --- | --- | --- | --- | --- | --- |
-| JZ-01 | Public spine slow-mobility gap stitching | public space | the spine | road redlines, under-bridge space | Phase 1 [data:geometry/phasing.geojson#PHASE-001] |
-| JZ-02 | Zhongzhiyuan full-stack innovation buildings | industry renewal | Zhongzhiyuan | ownership, planning conditions | Phase 2 |
-| JZ-03 | Origin Plaza and open-source monument | public space | Origin Community | site, heritage | Phase 1 |
-| JZ-04 | Dazhongsi four-quadrant pedestrian loop | station TOD | Dazhongsi | station works | Phase 1 |
-| JZ-05 | Xiaoyuehe scenario empowerment test belt | scenario facilities | east wing | blue line, municipal | Phase 2 |
-| JZ-06 | Global AI week public route | operations | the belt | event permits | Phase 3 |
+Each project is stated with four elements — "scale range + capital magnitude + participating actors + acceptance indicators" — all as conceptual estimates for later feasibility study, not investment commitments [depth:phasing_implementation]:
+
+| No. | Project | Type | Location | Dependency | Scale range (concept) | Capital magnitude (concept) | Participating actors (suggested) | Acceptance indicators (suggested) | Phase |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| JZ-01 | Public spine slow-mobility gap stitching | public space | the spine | road redlines, under-bridge space | ~3–5 gaps, ~2–4 km slow-mobility segments | CNY 10M level (renovation) | district urban-management dept. + sub-district + heritage-park operator | 100% gap connectivity, barrier-free compliance | Phase 1 [data:geometry/phasing.geojson#PHASE-001] |
+| JZ-02 | Zhongzhiyuan full-stack innovation buildings | industry renewal | Zhongzhiyuan | ownership, planning conditions | ~20–40万 m² renovation/update mass | CNY 1B level (phased) | park operator + research institutes + private capital | occupancy rate, compute-access rate, evaluation ground in service | Phase 2 |
+| JZ-03 | Origin Plaza and open-source monument | public space | Origin Community | site, heritage | ~1–3 ha plaza and supporting facilities | CNY 10M level | sub-district + university foundation + developer community | annual open-source events, honor-wall signatures | Phase 1 |
+| JZ-04 | Dazhongsi four-quadrant pedestrian loop | station TOD | Dazhongsi | station works | four quadrants, ~1–2 km pedestrian loop | CNY 100M level | rail builder + district platform | transfer walk time, forecourt accessibility | Phase 1 |
+| JZ-05 | Xiaoyuehe scenario empowerment test belt | scenario facilities | east wing | blue line, municipal | ~2–4 test nodes, ~2–3 km belt | CNY 100M level (per node) | district science dept. + scenario operator + enterprises | scenarios in open operation, test-booking platform live | Phase 2 |
+| JZ-06 | Global AI week public route | operations | the belt | event permits | 4 seasons, ~8–15 flagship events/year | CNY 10M level (annual) | convention operator + international comms team | event count, participation, international channel coverage | Phase 3 |
+
+Scale ranges and capital magnitudes are conceptual orders of magnitude for feasibility assessment; actual figures follow feasibility study and project approval documents. Phasing uses the three-stage skeleton: pilot operations first, physical construction second, full-chain closure third.
 
 ### 10.2 Implementation Policy and Phasing
 
@@ -337,6 +371,14 @@ Signage and symbol system: a unified "human figure" signage motif with three col
 - **Phase 3 (Zhongzhiyuan full chain)**: full-stack innovation system completed, forming the closed three-cores-two-wings loop [data:geometry/phasing.geojson#PHASE-001] [depth:phasing_implementation].
 
 All phases are conceptual suggestions to be deepened by professional teams after ownership, funding, implementing-body, and approval-path confirmation.
+
+**Pilot delivery contract**. To make feasibility verifiable, the first action packages (JZ-01/JZ-03/JZ-04, Phase 1) are stated as pilot delivery contracts with "who is responsible, how it is accepted, when it is handed back" in one place [depth:renewal_project_list]:
+
+- **Who is responsible**: district urban-management department leads, sub-district and operator support; the responsible body is recorded in the project-initiation statement;
+- **How it is accepted**: verified item by item against the acceptance-indicator column of Section 10.1; event-type projects are verified by event count and participation; space-type projects by objective indicators such as connectivity and accessibility;
+- **When it is handed back**: pilot period 12–18 months; thereafter the district urban-management department organizes an evaluation to decide continuation as routine operations, scope adjustment, or termination, with the evaluation opinion publicly inspectable.
+
+The delivery contract itself is a conceptual mechanism, not an administrative commitment; its value is translating abstract phasing into a checkable pilot boundary that professional and operations teams can pick up directly.
 
 ### 10.3 Global AI Innovation Event System and Long-Term Operations (agent.6)
 
@@ -372,7 +414,7 @@ Core indicators are recomputed from geometry in EPSG:4548 [depth:metrics_recalcu
 
 `compliance_matrix.json` maps every mandatory task in announcement sections 1.3, 1.4, 1.5 and agent.1-agent.6; `standard_matrix.json` covers all mandatory professional standards [standard:PROJECT-OFFICIAL-ANNOUNCEMENT] [standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK]; `design_depth_matrix.json` covers all required design-depth items [depth:compliance_matrix] [depth:standard_matrix] [depth:design_depth_matrix].
 
-**Expression index**. The machine-auditable evidence (geometry/metrics/three matrices), drawings (`drawings/a3-booklet.pdf` reading version, `drawings/a0-boards.pdf` review boards), the interactive webpage (`visual/index.html`, with columns for overview map, task coverage, core metrics, AI scenarios, and implementation logic), and the offline reading version (`report/proposal.html`) together form the complete expression layer; all figures are derived from this package's GeoJSON and metrics with unified bilingual style and do not replace the authority of the structured data [depth:metrics_recalculation].
+**Expression index**. The machine-auditable evidence (geometry/metrics/three matrices), drawings (`drawings/a3-booklet.pdf` reading version, `drawings/a0-boards.pdf` review boards), the interactive webpage (`visual/index.html`, with columns for overview map, task coverage, core metrics, AI scenarios, and implementation logic), and the offline reading version (`report/proposal.html`) together form the complete expression layer; all figures are derived from this package's GeoJSON and metrics with unified bilingual style and do not replace the authority of the structured data [depth:metrics_recalculation] As of v1.5, a machine-readable governance data layer `visual/assets/governance/*.json` is added (action-package-ledger: package ledger line-by-line consistent with Table 10.1; role-spec: participating actors; measurement-protocol: measurement protocol for the three core visual metrics; validation-report: four-gate self-check summary), turning "feasibility" and "verifiability" from prose and tables into structured data consumable by tools; two bilingual mechanism figures are added: `spatial-prototype` (one-spine three-cores four-belt two-wings structure prototype) and `renewal-structure` (retain/renovate/update/new-build renewal structure with the three phase bands)..
 
 ![Core metrics recalculation and evidence chain](assets/figures/metrics-evidence.png)
 
@@ -394,7 +436,6 @@ Key bibliography below; the complete machine index is in `sources.json` and the 
 - Qualification Pre-Announcement for the International Urban Design Open Call of the Centennial Jing-Zhang AI Innovation Belt (Haidian Branch, Beijing Municipal Commission of Planning and Natural Resources, 2026-05-09)
 - Agent Open-Call Taskbook for the Centennial Jing-Zhang AI Innovation Belt Urban Design (user-provided cleared material)
 - Measures for the Administration of Urban Design (MOHURD, 2017)
-- Urban Design Technical Guidelines (MOHURD, 2021)
 - Guideline for Land Use Classification of Territorial Spatial Survey, Planning and Use Control (Ministry of Natural Resources, 2023)
 - Beijing Master Plan (2016-2035) (Beijing Municipal Government, 2017)
 - Public reports and planning materials on the Jing-Zhang Railway Heritage Park

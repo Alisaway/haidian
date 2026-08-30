@@ -1,0 +1,142 @@
+{
+  "schema_version": "1.0.0",
+  "status": "conceptual_pre_fieldwork",
+  "evidence_boundary": "All quantities are design-envelope values unless explicitly marked observed. No field observation, permit, owner consent, operator appointment, procurement quote, or professional sign-off is claimed.",
+  "concept": {
+    "name_zh": "京张织补场",
+    "name_en": "JINGZHANG CIVIC WEAVE",
+    "decision_rule_zh": "AI服务只有在无障碍、无AI等价路径、数据最小化、具名人工负责和可撤回五道门均通过后，才可取得公共空间的限时试用权。",
+    "decision_rule_en": "An AI service receives a time-limited right to use public space only after passing accessibility, non-AI equivalence, data minimisation, named human accountability, and reversibility gates."
+  },
+  "gates": [
+    {"id":"G1","name_zh":"无障碍连续","pass_evidence":"Licensed accessibility audit and route walk-through; zero blocking break on the protected route.","stop_condition":"Any user must enter mixed traffic or cannot reach the same destination."},
+    {"id":"G2","name_zh":"无AI等价","pass_evidence":"Same-task manual route completed without account, device, biometric data, or AI output.","stop_condition":"AI shutdown prevents access to the underlying public service."},
+    {"id":"G3","name_zh":"数据最小","pass_evidence":"Published data inventory, retention period, processor, purpose, deletion route, and privacy review.","stop_condition":"Unlisted personal-data collection or unresolved high-risk privacy finding."},
+    {"id":"G4","name_zh":"人工负责","pass_evidence":"Named accountable operator per shift, visible contact, incident log, and appeal handoff.","stop_condition":"No authorised human can pause the service or decide an appeal."},
+    {"id":"G5","name_zh":"可撤回","pass_evidence":"Timed removal drill restores the baseline path and leaves no inaccessible or unsafe residue.","stop_condition":"Removal cannot restore the baseline service within the approved closure window."}
+  ],
+  "spatial_prototypes": [
+    {"id":"SP-A","name_zh":"轨旁公共客厅","envelope":"18 m x 24 m maximum trial envelope; protected 3 m through-route retained","site_types":["heritage-park edge","station forecourt"],"permanent_assets":["shade trees subject to landscape review","drainage-ready permeable base","power isolation point"],"reversible_assets":["seating modules","information rail","bookable service bay"],"forbidden_without_professional_review":["heritage-fabric attachment","bridge or tunnel works","road-redline change"]},
+    {"id":"SP-B","name_zh":"首层转换间","envelope":"existing ground-floor bay; no structural intervention at pilot stage","site_types":["campus-enterprise edge","community-service frontage"],"permanent_assets":["accessible threshold subject to survey","fire-compliant service route"],"reversible_assets":["open-source clinic","human service desk","test console"],"forbidden_without_professional_review":["change of approved use","structural demolition","unverified fire-load increase"]},
+    {"id":"SP-C","name_zh":"路缘验证台","envelope":"6 m x 12 m controlled curb or plaza bay; emergency path unchanged","site_types":["station interface","logistics/service edge"],"permanent_assets":["none required for first trial"],"reversible_assets":["removable barriers","manual stop station","charging cabinet subject to electrical review"],"forbidden_without_professional_review":["public-road autonomous operation","fixed charging works","loss of accessible kerb space"]}
+  ],
+  "projects": [
+    {"id":"P01","name_zh":"遗产公园连续通行基线","prototype":"SP-A","key_area":"belt-wide","first_30_days":"day/night/rain route audit; accessibility and conflict log","day_100_output":"one protected-route trial and public issue register","accountable_role":"public-space asset owner","partners":["accessibility professional","park operator","district transport liaison"],"resource_band":"S","permits_or_consents":["site access","temporary works","event safety if programmed"],"acceptance":["100% protected route continuity in test envelope","all observed conflicts logged and dispositioned"],"stop":"protected route is narrowed, blocked, or made dependent on an AI service"},
+    {"id":"P02","name_zh":"众智园安全验证院","prototype":"SP-C","key_area":"zhongzhiyuan_ai_acceleration_area","first_30_days":"operator and risk workshop; tabletop stop drill","day_100_output":"closed-site low-speed test with manual takeover","accountable_role":"authorised test-site operator","partners":["equipment provider","independent safety reviewer","emergency liaison"],"resource_band":"M","permits_or_consents":["owner consent","safety plan","insurance","equipment and electrical review"],"acceptance":["manual stop reachable and tested","no release beyond controlled envelope","incident and near-miss ledger published in aggregate"],"stop":"uncontained route departure, unavailable stop operator, or unresolved serious near miss"},
+    {"id":"P03","name_zh":"AI原点开源转换间","prototype":"SP-B","key_area":"beijing_ai_origin_community","first_30_days":"service-task census and no-AI baseline","day_100_output":"weekly open clinic with human desk and rights-cleared demo","accountable_role":"facility operator","partners":["university liaison","legal/IP service","accessibility reviewer"],"resource_band":"S","permits_or_consents":["owner consent","use and fire review","event management"],"acceptance":["same-task manual path available during every session","100% demos have source and rights notes"],"stop":"service requires personal profiling, unlicensed material, or unavailable human assistance"},
+    {"id":"P04","name_zh":"大钟寺站前换乘客厅","prototype":"SP-A","key_area":"dazhongsi_ai_industry_cluster","first_30_days":"pedestrian desire-line count and accessible-route audit","day_100_output":"temporary seating, wayfinding and staffed service trial outside transport clearance","accountable_role":"site public-space manager","partners":["station liaison","traffic professional","maintenance contractor"],"resource_band":"M","permits_or_consents":["land and station-interface consent","temporary works","crowd and fire review"],"acceptance":["station access and emergency paths remain unobstructed","manual wayfinding works with all digital elements off"],"stop":"trial increases crowd conflict, blocks station operations, or cannot be staffed"},
+    {"id":"P05","name_zh":"小月河雨洪与慢行织补","prototype":"SP-A","key_area":"xiaoyuehe_scenario_empowerment_wing","first_30_days":"drainage, tree and path survey","day_100_output":"one reversible shade/rain-garden mock-up outside protected water and green controls","accountable_role":"landscape asset owner","partners":["water professional","landscape architect","maintenance operator"],"resource_band":"M","permits_or_consents":["water and green-space review","utility clearance","maintenance agreement"],"acceptance":["no reduction in accessible path continuity","maintenance responsibility and seasonal removal plan signed"],"stop":"water, tree, utility, or flood-safety conflict is unresolved"},
+    {"id":"P06","name_zh":"公共服务双路驿站","prototype":"SP-B","key_area":"belt-wide","first_30_days":"select one real public-information task and measure manual baseline","day_100_output":"staffed AI-assisted information trial with identical manual route","accountable_role":"service-providing public institution","partners":["frontline staff","legal/privacy reviewer","user representatives"],"resource_band":"S","permits_or_consents":["institution authorisation","privacy and content review","complaint workflow"],"acceptance":["no-account manual completion remains available","all consequential answers handed to authorised staff"],"stop":"AI output becomes the sole route or makes an eligibility/medical/legal decision"},
+    {"id":"P07","name_zh":"三核贡献凭证墙","prototype":"SP-A","key_area":"three key areas","first_30_days":"define contribution categories, nomination and appeal rules","day_100_output":"non-commercial pilot display with verifiable public contributions","accountable_role":"independent programme curator","partners":["heritage curator","community representatives","rights reviewer"],"resource_band":"S","permits_or_consents":["display approval","copyright and privacy clearance","content moderation"],"acceptance":["every displayed claim has a source and consent record","appeal route visible"],"stop":"pay-to-rank, unauthorised identity use, or misleading endorsement"},
+    {"id":"P08","name_zh":"织补场年度开放周","prototype":"SP-A/SP-B/SP-C","key_area":"belt-wide","first_30_days":"publish call, spatial capacity and gate template","day_100_output":"one small, capped, insured open-week rehearsal","accountable_role":"programme office proposed for professional study","partners":["site operators","community panel","safety and accessibility professionals"],"resource_band":"M","permits_or_consents":["event approvals","site-by-site operator consent","insurance","crowd and emergency plans"],"acceptance":["every event has a named operator and shutdown plan","post-event restoration accepted by asset owner"],"stop":"any venue lacks an accountable operator, approved capacity, or restoration plan"}
+  ],
+  "scenarios": [
+    {"id":"S01","name_zh":"慢行断点共查","type":"public_service","prototype":"SP-A","primary_persona":"wheelchair user","ai_role":"cluster public reports; never infer individual mobility status","non_ai_baseline":"paper/phone report and staffed route audit","operator":"park operator"},
+    {"id":"S02","name_zh":"低速机器人闭场验证","type":"industry_validation","prototype":"SP-C","primary_persona":"maintenance worker","ai_role":"perception and path planning inside a closed envelope","non_ai_baseline":"manual cart performs the same task","operator":"authorised test-site operator"},
+    {"id":"S03","name_zh":"模型安全公开评测","type":"industry_validation","prototype":"SP-B","primary_persona":"developer","ai_role":"run rights-cleared benchmark tasks","non_ai_baseline":"human review of benchmark and release decision","operator":"independent evaluation host"},
+    {"id":"S04","name_zh":"低碳算力负荷演练","type":"industry_validation","prototype":"SP-B","primary_persona":"facility manager","ai_role":"forecast a trial load; no grid-control authority","non_ai_baseline":"engineer-approved operating schedule","operator":"facility operator"},
+    {"id":"S05","name_zh":"开源门诊","type":"innovation_service","prototype":"SP-B","primary_persona":"open-source maintainer","ai_role":"documentation and issue triage","non_ai_baseline":"human clinic and printed guide","operator":"facility operator"},
+    {"id":"S06","name_zh":"校企问题翻译台","type":"innovation_service","prototype":"SP-B","primary_persona":"student founder","ai_role":"structure a problem statement","non_ai_baseline":"mentor workshop","operator":"university-enterprise liaison"},
+    {"id":"S07","name_zh":"公共服务导航","type":"public_service","prototype":"SP-B","primary_persona":"older resident","ai_role":"explain public information; no decision or diagnosis","non_ai_baseline":"staffed desk and telephone route","operator":"service-providing institution"},
+    {"id":"S08","name_zh":"京张记忆导览","type":"culture","prototype":"SP-A","primary_persona":"visitor","ai_role":"optional multilingual narration sourced from cleared records","non_ai_baseline":"physical bilingual signs","operator":"heritage curator"},
+    {"id":"S09","name_zh":"无障碍导向复核","type":"public_service","prototype":"SP-A","primary_persona":"low-vision visitor","ai_role":"optional audio navigation after professional audit","non_ai_baseline":"tactile/visual signs and staffed assistance","operator":"public-space asset owner"},
+    {"id":"S10","name_zh":"站前拥挤提示","type":"mobility","prototype":"SP-A","primary_persona":"commuter","ai_role":"aggregate non-identifying flow estimation only if authorised","non_ai_baseline":"staff observation and fixed signs","operator":"station/site manager"},
+    {"id":"S11","name_zh":"贡献凭证展","type":"culture_governance","prototype":"SP-A","primary_persona":"research contributor","ai_role":"assist metadata search; no ranking authority","non_ai_baseline":"curated catalogue and appeal channel","operator":"independent curator"},
+    {"id":"S12","name_zh":"开放周排程助手","type":"operation","prototype":"SP-A/SP-B/SP-C","primary_persona":"event organiser","ai_role":"draft capacity-aware timetable","non_ai_baseline":"authorised organiser signs the schedule","operator":"programme office proposed for study"}
+  ],
+  "personas": [
+    {"id":"U01","name_zh":"轮椅与助行器使用者","protected_need":"continuous route, turning space, resting and staffed assistance"},
+    {"id":"U02","name_zh":"老年及低数字技能居民","protected_need":"no-account manual service and readable signs"},
+    {"id":"U03","name_zh":"日常通勤者与骑行者","protected_need":"predictable through-route and no event blockage"},
+    {"id":"U04","name_zh":"开源开发者与研究者","protected_need":"rights-cleared test tasks, attribution and appeal"},
+    {"id":"U05","name_zh":"初创团队与企业测试人员","protected_need":"clear entry, insurance, data and exit rules"},
+    {"id":"U06","name_zh":"一线服务与维护人员","protected_need":"authority to stop, safe workload and incident support"},
+    {"id":"U07","name_zh":"访客、儿童照护者与国际参与者","protected_need":"legible bilingual routes and non-digital fallback"}
+  ],
+  "first_release": {
+    "project_id": "P03",
+    "candidate_location": "One existing ground-floor bay inside the provisional Beijing AI Origin Community; exact address remains unselected pending owner consent, fire/access survey, and official boundary confirmation.",
+    "single_decision_owner": "The legally authorised facility operator; no programme office or AI system may substitute for this role.",
+    "baseline_sample": "Six observation days: four weekdays and two weekend days; three daily windows; at least 60 same-task attempts split between manual and assisted routes; include wheelchair/mobility-aid and low-digital-skill participants through accessible recruitment.",
+    "effect_evaluation": {
+      "allocation": "Block-randomize 60 same-task attempts: 30 staffed manual-route attempts and 30 AI-assisted-route attempts, balanced within each time window.",
+      "strata": "36 general-user attempts, 12 low-digital-skill attempts, and 12 wheelchair or mobility-aid attempts; split each stratum equally between routes.",
+      "evaluation_role": "Exploratory feasibility sample only. The 60 attempts cannot establish statistical noninferiority or justify expansion.",
+      "descriptive_continuation_signals": "Report observed completion-rate differences against descriptive signals of -5 percentage points overall and -10 points within each priority stratum; median completion time or staff interventions per completed task should improve by at least 10%. Passing any signal authorizes only design refinement, never scale.",
+      "confirmatory_requirement": "Before any expansion, an independent statistician must preregister the primary outcome, one-sided alpha, at least 80% power, expected staffed-route completion, attrition, confidence-interval method, and resulting total and stratum sample sizes. Expansion requires the adequately powered confirmatory result plus every safety gate.",
+      "missing_data": "Withdrawal, missing outcome, or route crossover counts as incomplete in the primary analysis; also publish an as-treated sensitivity table.",
+      "frontline_workload": "Observed frontline minutes per completed task must not rise by more than 10%; safety and human stop authority override every descriptive signal."
+    },
+    "day_100_thresholds": [
+      "100% sessions retain a staffed, no-account, non-AI route for the same task",
+      "0 blocked accessible-route observations inside the trial envelope",
+      "100% displayed demos carry source, rights, and named-human-owner cards",
+      "100% incidents and near misses are dispositioned before the next session",
+      "removal drill restores the baseline room within one approved closure window"
+    ],
+    "review_and_permits": ["owner consent","approved-use check","fire and egress review","licensed accessibility review","event/insurance path","privacy and content review"],
+    "resource_composition_not_quote": {
+      "staffing_and_training_percent": 40,
+      "reversible_fitout_percent": 25,
+      "accessibility_fire_rights_review_percent": 15,
+      "insurance_admin_percent": 10,
+      "independent_evaluation_percent": 10
+    }
+  },
+  "landmarks": [
+    {"id":"LM-N","key_area":"zhongzhiyuan_ai_acceleration_area","name_zh":"停机标","function":"A visible manual stop station, red boundary frame and aggregate near-miss ledger at the closed test yard.","non_spectacle_rule":"No autonomous public-road demo and no claim of zero risk."},
+    {"id":"LM-C","key_area":"beijing_ai_origin_community","name_zh":"开源原点桌","function":"A staffed common table where every demo exposes source, rights, human owner and appeal route.","non_spectacle_rule":"No pay-to-rank, biometric check-in or corporate logo wall."},
+    {"id":"LM-S","key_area":"dazhongsi_ai_industry_cluster","name_zh":"无AI时钟","function":"A station-forecourt display that regularly turns digital assistance off and times completion of the physical/manual route.","non_spectacle_rule":"No obstruction of station, fire or accessible paths."}
+  ],
+  "component_library": [
+    {"id":"C1","name_zh":"连续基线","role":"3 m protected through-route with tactile/visual continuity"},
+    {"id":"C2","name_zh":"织补框","role":"painted/removable trial envelope; never a statutory boundary"},
+    {"id":"C3","name_zh":"红色停机标","role":"human stop authority and visible operator contact"},
+    {"id":"C4","name_zh":"双路服务台","role":"AI-assisted and same-task human service side by side"},
+    {"id":"C5","name_zh":"凭证轨","role":"source, consent, limitation and appeal metadata"},
+    {"id":"C6","name_zh":"可撤座椅与遮阴","role":"resting without narrowing the protected path"}
+  ],
+  "honor_system": {
+    "unit": "Verifiable public contribution, not person or company popularity",
+    "required_fields": ["contribution","public source","consent","independent curator","limitation","appeal status"],
+    "forbidden": ["pay-to-rank","facial recognition","commercial leaderboard","implied government endorsement"]
+  },
+  "culture_storyline": [
+    {"step":"REMEMBER","space":"heritage path","carrier":"cleared railway timeline plus physical bilingual signs","claim_boundary":"only facts traceable to official or cleared records"},
+    {"step":"QUESTION","space":"three threshold rooms","carrier":"public problem and risk ledger","claim_boundary":"no solution presented as approved"},
+    {"step":"MAKE","space":"controlled prototype","carrier":"open clinic or bounded test","claim_boundary":"named human decides release"},
+    {"step":"RETURN","space":"contribution wall and baseline path","carrier":"evidence, appeal and restoration record","claim_boundary":"failure remains visible rather than edited out"}
+  ],
+  "annual_operation": [
+    {"cycle":"Q1 LISTEN","output":"field baseline, public task call, owner/operator map","release_gate":"no installation"},
+    {"cycle":"Q2 TEST","output":"one closed prototype and stop/restoration drill","release_gate":"G1-G5 evidence"},
+    {"cycle":"Q3 OPEN","output":"capped civic open week with staffed routes","release_gate":"site permits and insurance"},
+    {"cycle":"Q4 DECIDE","output":"public evidence review and adopt/revise/withdraw record","release_gate":"no automatic renewal"}
+  ],
+  "conversion_pathway": [
+    "public task and site owner submit a problem",
+    "independent gate review defines one bounded trial",
+    "operator completes baseline, consent, permit and insurance",
+    "100-day evidence is published without personal data",
+    "asset owner, service owner, professionals and public representative adopt, revise or withdraw"
+  ],
+  "alternatives": [
+    {"id":"ALT-A","name_zh":"集中式AI地标馆","strength":"high visibility and controlled operation","weakness":"high sunk cost, weak everyday reach, model and programme obsolescence","decision":"rejected as the primary strategy"},
+    {"id":"ALT-B","name_zh":"全线智能设施铺设","strength":"continuous brand presence","weakness":"privacy, maintenance, public-space clutter, and dependency before evidence","decision":"rejected"},
+    {"id":"ALT-C","name_zh":"分布式织补场","strength":"small reversible pilots, site-specific adoption, baseline service preserved","weakness":"slower visibility and greater operator coordination","decision":"selected because it minimises irreversible error under missing official and field data"}
+  ],
+  "resource_bands": {
+    "S":"Temporary fit-out and staffed trial; working order-of-magnitude below CNY 1 million, not a quote.",
+    "M":"Public-realm mock-up or multi-party trial; working order-of-magnitude CNY 1-5 million, not a quote.",
+    "L":"Capital or network work above CNY 5 million; excluded from first 100-day release pending professional study and procurement."
+  },
+  "field_evidence": {
+    "observations_completed": 0,
+    "operator_appointments_confirmed": 0,
+    "permits_confirmed": 0,
+    "quotes_received": 0,
+    "professional_signoffs": 0,
+    "release_status": "HOLD",
+    "next_required_evidence":["official polygons and controls","owner and operator map","accessibility and movement survey","utilities and fire constraints","community and frontline-staff engagement","trial insurance and permit pathway"]
+  }
+}

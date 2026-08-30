@@ -1,6 +1,6 @@
-# RailWeave 2.2 Video Transcript
+# RailWeave Video Transcript
 
-- 00:00:00.000 — RailWeave 2.2 joins spatial prototypes and delivery evidence to coordinate innovation, renewal and public service.
+- 00:00:00.000 — RailWeave joins spatial prototypes and delivery evidence to coordinate innovation, renewal and public service.
 - 00:00:04.500 — One axis, three corridors and three hubs connect demand, validation and conversion.
 - 00:00:09.000 — Zhongzhiyuan prioritises controlled, independent and reproducible testing.
 - 00:00:13.500 — AI Origin starts from a shared ground floor for participation, real demand and PoC.

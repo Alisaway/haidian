@@ -1,0 +1,155 @@
+{
+ "schema_version": "0.1.0",
+ "sources": [
+  {
+   "id": "SITE-PACKAGE",
+   "path": "brief/site-package/",
+   "source_type": "official_public",
+   "usage": "Project brief, enums, allowed design space, ranges, and schemas."
+  },
+  {
+   "id": "SOURCE-REGISTRY",
+   "path": "data/source_registry.json",
+   "source_type": "repository_public_registry",
+   "usage": "Public/cleared/provisional source usability registry; distinguishes formal-ready, background-only, provisional-only, and needs-review materials."
+  },
+  {
+   "id": "PROCESSED-FACT-PACK",
+   "path": "data/processed/agent_fact_pack.md",
+   "source_type": "repository_processed_reference",
+   "usage": "Agent-readable navigation layer for scopes, required tasks, source-use boundaries, and missing-data checklist; not a new authority source."
+  },
+  {
+   "id": "BOUNDARY-SOURCE",
+   "path": "brief/site-package/geometry/provisional_boundaries.geojson",
+   "source_type": "agent_inferred_from_public_data",
+   "usage": "Submitted site boundary geometry source (provisional)."
+  },
+  {
+   "id": "KEY-AREA-SOURCE",
+   "path": "brief/site-package/geometry/provisional_boundaries.geojson",
+   "source_type": "agent_inferred_from_public_data",
+   "usage": "Three required detailed-design key area boundaries (provisional)."
+  },
+  {
+   "id": "OFFICIAL-ANNOUNCEMENT",
+   "url": "https://ghzrzyw.beijing.gov.cn/zhengwuxinxi/tzgg/hd/202605/t20260509_4643047.html",
+   "source_type": "official_public",
+   "usage": "Official announcement tasks, scope levels, key areas, language, and deliverable context."
+  },
+  {
+   "id": "AGENT-TASKBOOK",
+   "path": "brief/site-package/agent_taskbook.json",
+   "source_type": "user_provided_cleared",
+   "usage": "Agent-facing open-call principles, six required agent tasks, scenario/branding/operation requirements, and boundary clause."
+  },
+  {
+   "id": "GENERATIVE-AI-INTERIM",
+   "title_zh": "生成式人工智能服务管理暂行办法",
+   "path": "brief/site-package/standards/references/generative-ai-interim-measures.md",
+   "source_type": "official_public",
+   "usage": "场景合规背景参照（生成式AI标识、内容治理、投诉渠道的现行边界）；不作为法定控制结论。"
+  },
+  {
+   "id": "BARRIER-FREE-LAW",
+   "title_zh": "中华人民共和国无障碍环境建设法",
+   "path": "brief/site-package/standards/references/barrier-free-environment-law.md",
+   "source_type": "official_public",
+   "usage": "公共空间无障碍与人工服务边界的背景参照（按第39条列举场景理解）。"
+  },
+  {
+   "id": "ISSUE-846",
+   "title_zh": "Issue #846 临时边界与OSM背景交叉核对",
+   "path": "https://github.com/open-city-ai/haidian/issues/846",
+   "source_type": "repository_public_background",
+   "usage": "临时边界精度限制的背景核查记录；不用于升级或替代官方边界。"
+  },
+  {
+   "id": "ELDERLY-SMART-TECH",
+   "title_zh": "国办发〔2020〕45号 老年人智能技术实施方案",
+   "path": "brief/site-package/standards/references/elderly-smart-tech-plan-2020-45.md",
+   "source_type": "official_public",
+   "usage": "适老化场景的政策背景参照；不写成现行法定义务。"
+  },
+  {
+   "id": "CASE-SF-OSS",
+   "title_zh": "案例1·旧金山湾区开源生态（开放标准与产业信任）",
+   "path": "https://www.linuxfoundation.org/research",
+   "source_type": "public_background",
+   "publisher": "Linux Foundation",
+   "retrieved": "2026-08-24",
+   "usage": "背景参照：开源标准组织如何通过开放治理形成产业信任。仅为概念背景，不构成本方案任何落地事实或数据依据。"
+  },
+  {
+   "id": "CASE-ZURICH-AUDIT",
+   "title_zh": "案例2·苏黎世市算法注册与审计实践",
+   "path": "https://www.stadt-zuerich.ch/prd/de/index/statistik/open_government_data.html",
+   "source_type": "public_background",
+   "publisher": "苏黎世市政府（公开信息）",
+   "retrieved": "2026-08-24",
+   "usage": "背景参照：公共部门算法透明度与审计的公开实践方向。概念背景，不写成已落地制度移植。"
+  },
+  {
+   "id": "CASE-SG-AIVERIFY",
+   "title_zh": "案例3·新加坡 AI Verify 治理工具箱",
+   "path": "https://aiverifyfoundation.sg/",
+   "source_type": "public_background",
+   "publisher": "AI Verify Foundation（新加坡）",
+   "retrieved": "2026-08-24",
+   "usage": "背景参照：治理工具箱如何降低企业合规成本。概念背景，不构成本方案技术选型或实施承诺。"
+  },
+  {
+   "id": "CASE-TORONTO-DATATRUST",
+   "title_zh": "案例4·数据信托研究实践（多伦多方向）",
+   "path": "https://foundation.mozilla.org/en/research/library/data-trusts/",
+   "source_type": "public_background",
+   "publisher": "Mozilla Foundation",
+   "retrieved": "2026-08-24",
+   "usage": "背景参照：数据信托作为可信数据流通制度的方向性研究。概念背景，不构成本方案数据治理制度设计。"
+  },
+  {
+   "id": "CASE-PARIS-ETHICS",
+   "title_zh": "案例5·巴黎市人工智能伦理章程与公共审议",
+   "path": "https://www.paris.fr/pages/paris-engage-pour-une-ia-ethique-29610",
+   "source_type": "public_background",
+   "publisher": "巴黎市政府（公开信息）",
+   "retrieved": "2026-08-24",
+   "usage": "背景参照：城市级AI伦理公共审议的组织形式。概念背景，不构成本方案公众参与制度安排。"
+  },
+  {
+   "id": "CASE-SZ-CERT",
+   "title_zh": "案例6·深圳智能终端检测认证体系（产品出海可信凭证）",
+   "path": "https://www.sz.gov.cn/",
+   "source_type": "public_background",
+   "publisher": "深圳市政府公开信息",
+   "retrieved": "2026-08-24",
+   "usage": "背景参照：检测认证基础设施作为产业出海信任凭证的方向。概念背景，不构成本方案检测认证能力建设承诺。"
+  },
+  {
+   "id": "FONT-NOTO-SANS-SC",
+   "title_zh": "渲染字体 Noto Sans SC 2.004（SIL OFL 1.1，子集嵌入）",
+   "source_type": "open_license_asset",
+   "publisher": "Adobe / Google Fonts (Noto project)",
+   "version": "2.004; variable wght 100-900; PDF/figures use static instances 400/700",
+   "license": "SIL Open Font License 1.1",
+   "license_url": "http://scripts.sil.org/OFL",
+   "redistribution": "permitted - OFL 1.1 allows use, embedding, redistribution and modification incl. subsetting; copyright notice (c) 2014-2021 Adobe retained in font name table",
+   "embedding": "HTML: 809-glyph subset woff2 embedded as base64 data URI (offline); PDF: matplotlib-embedded NotoSansSC-Regular/Bold subsets; PNG figures: same embedded subsets",
+   "retrieved": "2026-08-25",
+   "usage": "本包全部中英文文本（HTML/PDF/图件）统一渲染字体，替代系统字体 Microsoft YaHei（其许可不允许再分发嵌入）；HTML 以 809 字形子集 woff2 base64 内嵌（离线），PDF/图件内嵌 NotoSansSC-Regular/Bold 子集；最终 Logo/字标字体由专业团队深化阶段另行清权。",
+   "url": "https://fonts.google.com/noto/specimen/Noto+Sans+SC"
+  },
+  {
+   "id": "FONT-ALIMAMA-FANGYUANTI",
+   "title_zh": "字标方向字体 阿里妈妈方圆体 VF（免费授权，原样使用）",
+   "url": "https://fonts.alimama.com/",
+   "source_type": "open_license_asset",
+   "publisher": "淘宝（中国）软件有限公司（阿里妈妈）",
+   "version": "VF wght 200-700 / BEVL 1-100",
+   "license": "阿里妈妈方圆体法律声明（免费普通许可，商用/非商用/嵌入式使用允许）",
+   "redistribution": "许可允许下载、安装、使用与嵌入式使用；禁止拆分、修改、二次创作与有偿转让——本包仅原样用于 Logo/字标方向稿，未修改",
+   "usage": "Logo/字标方向稿字标字体（原样使用，不子集化、不修改）；渲染字体另用 Noto Sans SC（SIL OFL 1.1）。最终 Logo 字体由专业团队深化阶段另行清权。",
+   "retrieved": "2026-08-25"
+  }
+ ]
+}

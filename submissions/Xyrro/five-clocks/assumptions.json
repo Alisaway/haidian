@@ -1,0 +1,107 @@
+{
+  "schema_version": "0.1.0",
+  "assumptions": [
+    {
+      "id": "A-CONTROLS-001",
+      "status": "pending_professional_confirmation",
+      "statement": "Detailed regulatory controls, road redlines, ownership, municipal utilities, and engineering constraints must be confirmed from official attachments before statutory use.",
+      "impact": "The package can be reviewed as a formal AI submission only for provided official boundaries and submitted design layers; statutory controls still need professional confirmation."
+    },
+    {
+      "id": "A-BND-001",
+      "status": "pending_professional_confirmation",
+      "statement": "全部空间图层基于仓库临时粗略边界（provisional_rough）生成；官方红线、三处重点区精确polygon未公开。R-02复算另发现所供临时几何存在系统性西偏：包内概念主脊到OSM铁路几何的垂距中位数约1,247米（均值1,061、最大2,447米，61采样），实测线位大部分位于临时范围西缘之外；另一参赛方案独立报告约906米同向偏差。此为所供临时数据的局限，非本方案构造误差。",
+      "impact": "所有面积、比例与落位仅为概念方案口径；official polygon 公布后，site/key_areas/land_use/green/public/buildings/phasing 全部图层与相关指标须整体复算。预留线位与断口定位以实测（OSM快照）线位为参照，而非临时主脊；官方红线公布后统一改正。"
+    },
+    {
+      "id": "A-CLOCK-001",
+      "status": "pending_professional_confirmation",
+      "statement": "五层换代周期（河钟500年+/线钟100年/块钟50年/面钟15-30年/器钟0.5-5年）为设计假设，不是实证测量。",
+      "impact": "周期数字用于组织管控工具与变更程序的相对关系（难度与层速成反比），不构成对任何具体设施寿命的预测。"
+    },
+    {
+      "id": "A-ROW-001",
+      "status": "pending_professional_confirmation",
+      "statement": "3条东西向预留线位与1条纵向慢行冗余线为概念走廊，仅表达联通意图与宽度区间，不是道路工程线位。",
+      "impact": "线位保护图则为概念建议，供控规调整与交通专项深化；不得据此推定道路红线。"
+    },
+    {
+      "id": "A-EASE-001",
+      "status": "pending_professional_confirmation",
+      "statement": "L3贯通公共通道地役权为概念示意（\"某科研院落群（示意）\"），不指认任何真实权属单位；设立以权属方自愿与法定程序为前提。",
+      "impact": "颗粒度导则对存量不强制；权属方不同意即转入下一候选群组（见 R-06 退出条件）。"
+    },
+    {
+      "id": "A-LEASE-001",
+      "status": "pending_professional_confirmation",
+      "statement": "L5租约制的押金分级、费率与恢复保证金均为演示口径；押金池托管须由持牌金融机构承担并满足监管合规（待补条件）。",
+      "impact": "资金闭环测算仅示意制度逻辑，不构成金融产品设计或财政承诺。"
+    },
+    {
+      "id": "A-GRAIN-001",
+      "status": "computed_pending_official_recheck",
+      "statement": "R-02街块颗粒普查已在2026-08-21 OSM快照上完成复算（v5脚本：缓冲抓取+0.012°、strict/inclusive双口径、隧道段剔除、分线走廊测量；镜像 maps.mail.ru overpass）。数字描述该快照的街道网拓扑，不是法定权属边界；官方路网与红线数据公布后整体复核。",
+      "impact": "superblock_area_share=0.8478（inclusive下界0.6898）、median_block_area_ha=0.662、superblock_count=66、ew_crossing_count=8（京包线地面段）已记入metrics并用于诊断章；口径限制随每次引用注明。"
+    },
+    {
+      "id": "A-SEC-001",
+      "status": "pending_professional_confirmation",
+      "statement": "三种弹性标准断面与断面冗余率基于公开街道影像与规范经验拟定，未做现场测量。",
+      "impact": "section_redundancy_ratio 记为待复算；断面图集为概念图，供市政与交通专业校核。"
+    },
+    {
+      "id": "A-COND-001",
+      "status": "pending_professional_confirmation",
+      "statement": "综合管廊余量（电力/光缆/冷却/给排水）现状不明，需专项评估（R-09）。",
+      "impact": "corridor_conduit_headroom_years 记为待评估；\"管廊余量年限\"目标区间为设计意向。"
+    },
+    {
+      "id": "A-PARITY-001",
+      "status": "pending_professional_confirmation",
+      "statement": "非AI等价路径覆盖率按本方案12张场景卡的租约条款统计（12/12含等价路径条款），是设计文档口径而非运营实测。",
+      "impact": "运营期覆盖率以年度底盘日演练与租约年审为准。"
+    },
+    {
+      "id": "A-DIVERSITY-001",
+      "status": "pending_professional_confirmation",
+      "statement": "speed_diversity_index（按层分类的香农多样性）需要园区租户及其产品换代周期登记数据，当前无公开数据。",
+      "impact": "指标口径为原创设计假设；试点期由租约登记系统采集后首次计算。"
+    },
+    {
+      "id": "A-PAVING-001",
+      "status": "pending_professional_confirmation",
+      "statement": "技术年表带一期长度1000米为设计声明（主脊南段），非已批准工程。",
+      "impact": "timeline_paving_length_m 为设计量；实施以遗址公园运营主体与文物、绿化部门意见为准。"
+    },
+    {
+      "id": "A-FUND-001",
+      "status": "pending_professional_confirmation",
+      "statement": "租约费+押金池收益→公共空间维护基金的资金闭环为概念测算（演示口径）。",
+      "impact": "任何资金安排均需财政、金融监管与运营主体确认；不构成投资测算。"
+    },
+    {
+      "id": "A-ASSEMBLY-001",
+      "status": "pending_professional_confirmation",
+      "statement": "25年一届复线大会（2026基线→2051→2076→2101→2126）是制度设计建议，无既有法定程序对应。",
+      "impact": "centennial_review_interval_years=25 为设计声明；落地需地方立法或政策创设，方案已将其列为最高不确定性风险。"
+    },
+    {
+      "id": "A-LU-001",
+      "status": "pending_professional_confirmation",
+      "statement": "用地镶嵌图（land_use.geojson）是在临时边界上的概念设计模型：走廊绿地、蓝绿界面、留白与功能组团表达五速结构意图，不对应任何审定地块。",
+      "impact": "所有用地面积与比例为低置信度设计模型值；不得读作控规用地方案。"
+    },
+    {
+      "id": "A-PHASE-001",
+      "status": "pending_professional_confirmation",
+      "statement": "四期分期（0-1年/1-5年/5-25年/25年+）为概念时序，一期项目均为零施工或可逆轻量动作。",
+      "impact": "分期不构成开发时序承诺；各期项目均附退出条件。"
+    },
+    {
+      "id": "A-IMPL-COST-001",
+      "status": "design_assumption",
+      "statement": "四项机制（复线大会/押金池托管/跨权属地役权/跨区互认）实施卡中的成本模型均为量级区间估计：届会会务约为一次法定听证程序的量级；押金托管费按市场化存管服务费率区间；地役权补偿与维护费按同类通行协议区间；跨区互认为联席评审行政成本（低）。全部为概念方案的成本假设，非报价或预算承诺，落地前须由主管主体与专业机构核定。 Cost models in the four mechanism implementation cards are order-of-magnitude range estimates (Assembly ≈ one statutory-hearing procedure; custody at market custody-fee ranges; easement compensation per comparable passage agreements; mutual recognition = low joint-review administrative cost). Design assumptions of a conceptual proposal, not quotes or budget commitments; to be verified by the competent bodies before implementation.",
+      "impact": "实施卡成本行 / cost lines of the implementation cards"
+    }
+  ]
+}

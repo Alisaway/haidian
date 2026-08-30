@@ -171,6 +171,30 @@ footer .offline-badge{display:inline-flex;align-items:center;gap:6px;background:
   section{padding:32px 0}
   .sec-head h2{font-size:22px}
 }
+/* ===== 滚动动画 ===== */
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+/* ===== 图片灯箱 ===== */
+.lightbox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(10,20,30,.92);z-index:9999;justify-content:center;align-items:center;flex-direction:column}
+.lightbox.open{display:flex}
+.lightbox img{max-width:92%;max-height:88vh;border-radius:4px;box-shadow:0 0 40px rgba(0,0,0,.5)}
+.lightbox .lb-close{position:absolute;top:16px;right:24px;color:#fff;font-size:32px;cursor:pointer;line-height:1;user-select:none}
+.lightbox .lb-caption{color:#c8d8e8;font-size:14px;margin-top:12px;text-align:center;max-width:80%}
+
+/* ===== Tab 切换 ===== */
+.tab-bar{display:flex;gap:4px;margin-bottom:20px;border-bottom:2px solid var(--line)}
+.tab-btn{padding:10px 20px;border:none;background:none;font-size:14px;font-weight:600;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all .2s}
+.tab-btn.active{color:var(--blue);border-bottom-color:var(--copper)}
+.tab-btn:hover{color:var(--blue)}
+.tab-panel{display:none}
+.tab-panel.active{display:block;animation:tabFade .3s ease}
+@keyframes tabFade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* ===== 返回顶部 ===== */
+.back-top{position:fixed;bottom:32px;right:32px;width:44px;height:44px;border-radius:50%;background:var(--blue);color:#fff;border:none;cursor:pointer;font-size:20px;box-shadow:0 4px 16px rgba(0,0,0,.2);opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;z-index:50}
+.back-top.show{opacity:1;pointer-events:auto}
+.back-top:hover{transform:translateY(-3px);background:var(--blue-light)}
 </style>
 </head>
 <body>
@@ -562,12 +586,12 @@ footer .offline-badge{display:inline-flex;align-items:center;gap:6px;background:
       </div>
       <div class="metric-card" data-metric="green_ratio" data-value="0.123423">
         <div class="m-label">绿地比例</div>
-        <div class="m-value">12.3%</div>
+        <div class="m-value">12.34%</div>
         <div class="m-unit">green_ratio</div>
       </div>
       <div class="metric-card" data-metric="public_space_ratio" data-value="0.073281">
         <div class="m-label">公共空间比例</div>
-        <div class="m-value">7.3%</div>
+        <div class="m-value">7.33%</div>
         <div class="m-unit">public_space_ratio</div>
       </div>
       <div class="metric-card">
@@ -762,5 +786,118 @@ footer .offline-badge{display:inline-flex;align-items:center;gap:6px;background:
   </div>
 </footer>
 
+<!-- ===== 返回顶部按钮 ===== -->
+<button class="back-top" id="backTop" aria-label="返回顶部">↑</button>
+
+<!-- ===== 图片灯箱 ===== -->
+<div class="lightbox" id="lightbox">
+  <span class="lb-close" id="lbClose">&times;</span>
+  <img id="lbImg" src="" alt="">
+  <div class="lb-caption" id="lbCaption"></div>
+</div>
+
+<script>
+// ===== 平滑滚动导航 =====
+document.querySelectorAll('nav a[href^="#"]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    var target = document.querySelector(this.getAttribute('href'));
+    if(target){
+      e.preventDefault();
+      target.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+  });
+});
+
+// ===== 导航高亮 =====
+var navLinks = document.querySelectorAll('nav a[href^="#"]');
+var sections = [];
+navLinks.forEach(function(link){
+  var id = link.getAttribute('href').slice(1);
+  var sec = document.getElementById(id);
+  if(sec) sections.push({id:id, el:sec, link:link});
+});
+
+// ===== 滚动触发动画 =====
+var fadeEls = document.querySelectorAll('section .sec-head, section .scope-card, section .figure-box, section .scn-card, section table');
+fadeEls.forEach(function(el){ el.classList.add('fade-in'); });
+
+var observer = new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+    }
+  });
+}, {threshold:0.1, rootMargin:'0px 0px -60px 0px'});
+
+fadeEls.forEach(function(el){ observer.observe(el); });
+
+// ===== 导航高亮 + 返回顶部 =====
+var backTop = document.getElementById('backTop');
+window.addEventListener('scroll', function(){
+  var scrollY = window.scrollY;
+  sections.forEach(function(s){
+    var rect = s.el.getBoundingClientRect();
+    if(rect.top < 120 && rect.bottom > 120){
+      navLinks.forEach(function(l){ l.classList.remove('active'); });
+      s.link.classList.add('active');
+    }
+  });
+  if(scrollY > 600){
+    backTop.classList.add('show');
+  } else {
+    backTop.classList.remove('show');
+  }
+});
+
+backTop.addEventListener('click', function(){
+  window.scrollTo({top:0, behavior:'smooth'});
+});
+
+// ===== 图片灯箱 =====
+var lightbox = document.getElementById('lightbox');
+var lbImg = document.getElementById('lbImg');
+var lbCaption = document.getElementById('lbCaption');
+var lbClose = document.getElementById('lbClose');
+
+document.querySelectorAll('.figure-box img').forEach(function(img){
+  img.style.cursor = 'zoom-in';
+  img.addEventListener('click', function(){
+    lbImg.src = this.src;
+    var fig = this.closest('.figure-box');
+    var cap = fig ? fig.querySelector('figcaption') : null;
+    lbCaption.textContent = cap ? cap.textContent.trim() : '';
+    lightbox.classList.add('open');
+  });
+});
+
+lbClose.addEventListener('click', function(){
+  lightbox.classList.remove('open');
+});
+lightbox.addEventListener('click', function(e){
+  if(e.target === lightbox){
+    lightbox.classList.remove('open');
+  }
+});
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){
+    lightbox.classList.remove('open');
+  }
+});
+
+// ===== Tab 切换（重点区域） =====
+var tabBtns = document.querySelectorAll('.tab-btn');
+if(tabBtns.length > 0){
+  tabBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var target = this.getAttribute('data-tab');
+      document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+      document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+      this.classList.add('active');
+      var panel = document.getElementById(target);
+      if(panel) panel.classList.add('active');
+    });
+  });
+}
+</script>
 </body>
 </html>

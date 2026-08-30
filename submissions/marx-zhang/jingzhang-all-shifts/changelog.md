@@ -1,5 +1,55 @@
 # 方案迭代记录
 
+## v4.6 - 2026-08-28（官方边界发布后的独立复算工作包）
+
+- **复算工作簿**：新增 `visual/assets/official-boundary-recalculation-workbook.json`，冻结当前临时几何与指标基线，登记官方总体边界/三处重点区的输入契约、来源与 SHA-256、CRS/几何 QA、等面积复算公式、指标 delta、受影响交付物、责任角色、状态机与停止条件。
+- **执行手册**：新增 `assets/media/official-boundary-recalculation-runbook.md`，把未来的登记、验证、替换、复算、视觉抽查和证据链复核组织成可独立执行的工作包；当前保持 `not_activated`，不替换临时 polygon。
+- **边界**：正式边界尚未进入本包；专题图层缺失时仍保持 `conceptual` 或 `unknown`，不把官方边界升级为法定控制、外部协议等级、实施授权、政府承诺或官方背书。
+
+## v4.5 - 2026-08-28（复审修复：英文入口 CJK 切换标签）
+
+- **双语入口**：为英文 `report/proposal.en.html` 与 `visual/index.en.html` 同步内嵌包内可分发的 CJK 字符子集，覆盖中文版本、中文文字稿及权利说明等切换标签，避免离线环境出现方框字形。
+- **复核**：英文页面继续保留正常英文入口，并对中文切换标签、文字稿链接和离线字体数据进行一致性检查；未新增外部网络依赖。
+- **边界**：本次只修复离线可读性，继续保持 `optional_crosswalk_concept_only`；不宣称现场证据、外部等级、实施授权或官方依据。
+
+## v4.4 - 2026-08-27（复审修复：离线字体与概念状态标识）
+
+- **离线字体**：中文 `report/proposal.html` 与 `visual/index.html` 内嵌仅覆盖实际用字的 Noto Sans CJK SC 字符子集，并附许可证与来源说明；离线查看不再依赖维护者系统字体或 CDN。
+- **概念状态**：在封面图及中英文 A0/A3 首页首屏加入醒目的双语标识：生成式概念表现 / GENERATIVE CONCEPT VISUAL，以及“非现场影像、非设计定稿、非官方依据 / NOT A SITE IMAGE · NOT FINAL DESIGN · NOT OFFICIAL EVIDENCE”。
+- **边界**：本次修复只提升可读性与状态披露，继续保持 `optional_crosswalk_concept_only`；不宣称现场证据、外部等级、实施授权或官方依据。
+
+## v4.3 - 2026-08-27（评审修复：视觉渲染、任务书映射与长期运营）
+
+- **视觉修复**：英文核心图改为标题自动缩放、长标签自动换行，修复 `land-use-structure`、`key-areas`、`mobility-bluegreen`、`metrics-evidence` 等图面越界；离线报告与展示页补充多级 CJK 系统字体 fallback。
+- **任务书映射**：新增 `visual/assets/taskbook-operations-package.json`，保留三大定位、五大功能、三区两翼原名，登记空间主持、机制、角色、当前证据与概念状态。
+- **协同与生态**：补齐北纬社区、未来科学城、怀柔科学城、经开区、京津冀五类区域接口触发器；新增土地、空间、产业、资金、人才、算力、数据、场景八层生态图谱。
+- **测试与文化**：统一登记 3 张产业测试卡；新增东西缝合、南北连续和京张—中关村—AI 新文化公共体验图 `assets/figures/spatial-culture-route*.png`，并为文化链补充公开来源锚点。
+- **长期运营**：补齐活动品牌/IP、开发者社区、场景征集、公共体验、国际传播、伙伴进入、试点评估、转化路径，以及 G0—G4 资产所有者/运营者/劳动者代表/无障碍代表/数据治理/独立审计角色和资源负荷登记。
+- **边界**：所有内容继续保持 `optional_crosswalk_concept_only`；区域协同、资源、场景、文化节点和运营机制均不写成外部等级、实施授权、政府承诺、合作协议或官方边界。
+
+## v4.2 - 2026-08-27（独立证据链复核登记）
+
+- **复核登记**：新增 `visual/assets/evidence-chain-review.json`，以 8 条主张逐条绑定来源 ID、当前字节快照、指标解释、责任角色和停止条件，并区分包内结构证据与待外部确认。
+- **防越界**：所有登记主张保持 `optional_crosswalk_concept_only`；临时几何、设计目标和协议字段不被写成现场事实、外部等级、正式采用、实施授权或官方背书。
+- **离线校验**：新增 `check-evidence-chain.js`、一个完整链条正例和一个外部正式采用负例；当前复核包含 9 个快照、8 条主张，正例通过、负例按预期拒绝。
+- **后续触发**：正式边界发布、几何变化、G1 证据缺失、人工交接失败、数据边界越界或协议越界时，按登记的停止条件暂停相关主张并重新复核。
+
+## v4.1 - 2026-08-22（本地协议快照与可离线 crosswalk fixture）
+
+- **快照**：将 SEB v0.5.0 规范、Switchback v0.3.0 规范与 schema 按字节快照放入 `visual/assets/protocol_snapshots/`，并登记来源提交、SHA-256、许可与署名边界。
+- **fixture**：新增一个可通过的组件级 crosswalk 正例和一个必须拒绝的外部等级冒认负例；字段范围限定为 `ai_off_path`、`human_handoff`、`gate_id`、`operating_mode`、`responsible_role`。
+- **校验**：新增零依赖 `check-protocol-crosswalk.js`，验证快照完整性、source-of-record、登记状态、字段映射和安全边界。
+- **体积**：移除与 `metrics-evidence` 内容逐字节相同的 `implementation-operations` 重复图像，并将原有中英文引用切换到保留资产；不改变展示像素或图注语义，以满足仓库 40 MiB 提交包上限。
+- **边界**：仍为 `optional_crosswalk_concept_only`；不认领外部开放等级，不声明现场数据、性能结果、部署授权或官方背书，也不改变几何与既有 G0-G4 口径。
+
+## v4.0 - 2026-08-20（证据锚点与协议交叉映射）
+
+- **锚点**：移除不存在的 `constraints.geojson#CONSTRAINTS` 引用；空约束图层不推导法定控制。
+- **位置**：`PROV-KEY-003` 未与大钟寺站、道路或地块官方几何锚定；不改临时 polygon。
+- **协议**：SEB v0.5.0 `node_schema` 与 Switchback v0.3.0 `status/gate/review` 映射至 G0–G4、90 天试点和三处审计包，仅作可选对照。
+- **登记**：机器资产记录快照、哈希、许可、字段和三处 `concept_only`；5 分钟、1/7 个工作日与 90 天是设计目标。
+
+
 ## v2.0 - 2026-08-12
 
 - 将第一阶段的概念与证据板，深化为“总体母图—街区肌理—重点区平面/剖面—公共首层—运营门槛”的城市形态表达。

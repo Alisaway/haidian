@@ -1,0 +1,290 @@
+{
+  "schema_version": "0.1.0",
+  "units": {
+    "length": "m",
+    "area": "sqm"
+  },
+  "metrics": {
+    "site_area_sqm": {
+      "status": "known",
+      "value": 11412825.386,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "polygon_area(provisional_site_boundary, EPSG:4548)",
+      "confidence": "medium",
+      "assumptions": [
+        "Provisional boundary, not an official redline."
+      ]
+    },
+    "green_space_area_sqm": {
+      "status": "known",
+      "value": 1255908.493,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/green_space.geojson"
+      ],
+      "formula": "union(conceptual green polygons, EPSG:4548)",
+      "confidence": "low",
+      "assumptions": []
+    },
+    "public_space_area_sqm": {
+      "status": "known",
+      "value": 36150.0,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "union(conceptual public-space polygons, EPSG:4548)",
+      "confidence": "low",
+      "assumptions": []
+    },
+    "building_footprint_area_sqm": {
+      "status": "known",
+      "value": 111600.0,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "union(conceptual reuse-first envelopes, EPSG:4548)",
+      "confidence": "low",
+      "assumptions": []
+    },
+    "green_ratio": {
+      "status": "known",
+      "value": 0.110044,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/green_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "green_space_area_sqm / site_area_sqm",
+      "confidence": "low",
+      "assumptions": []
+    },
+    "public_space_ratio": {
+      "status": "known",
+      "value": 0.003167,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "public_space_area_sqm / site_area_sqm",
+      "confidence": "low",
+      "assumptions": []
+    },
+    "land_use_park_green_share": {
+      "status": "known",
+      "value": 0.2731,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/land_use.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "sum(1401 area) / total land-use polygon area (single caliber A)",
+      "confidence": "medium",
+      "assumptions": [
+        "Caliber A: land-use classification share; differs from green_ratio (caliber B) by statistical object; both recalculated after official data."
+      ]
+    },
+    "road_network_length_m": {
+      "status": "known",
+      "value": 10154.351,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson"
+      ],
+      "formula": "sum(conceptual paths, EPSG:4548)",
+      "confidence": "low",
+      "assumptions": []
+    },
+    "key_area_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "count(area_id in key_areas.geojson)",
+      "confidence": "medium",
+      "assumptions": []
+    },
+    "land_use_zone_count": {
+      "status": "known",
+      "value": 27,
+      "unit": "count",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "count(land_use.geojson features)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "building_unit_count": {
+      "status": "known",
+      "value": 12,
+      "unit": "count",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "count(buildings.geojson features)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "landmark_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "count(scenario_type == ai_landmark)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "scenario_node_count": {
+      "status": "known",
+      "value": 8,
+      "unit": "count",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "count(public_space scenario nodes + landmarks)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "industry_test_scenario_count": {
+      "status": "known",
+      "value": 5,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(industry test protocol rows in proposal.md)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "scenario_card_count": {
+      "status": "known",
+      "value": 12,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(scenario card rows in proposal.md)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "persona_count": {
+      "status": "known",
+      "value": 5,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(representative user groups)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "global_case_count": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "sources.json"
+      ],
+      "formula": "count(global ecosystem mechanism cases)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "phase_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/phasing.geojson"
+      ],
+      "formula": "count(phasing polygons)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "annual_program_count": {
+      "status": "known",
+      "value": 4,
+      "unit": "count",
+      "source_files": [
+        "metrics.json",
+        "proposal.md"
+        ,"proposal.en.md"
+      ],
+      "formula": "count(annual_programs)",
+      "confidence": "high",
+      "assumptions": []
+    }
+  },
+  "annual_programs": [
+    {
+      "activity_id": "AP01",
+      "brand_zh": "VIS·JZ 开放系统日",
+      "brand_en": "VIS·JZ Open Systems Day",
+      "frequency": "once_per_year_date_pending",
+      "target_users": "residents; youth; developers; visitors",
+      "spatial_node": "L1 Visual Hub / AI Origin Community; exact venue pending",
+      "raci_owner": "R community operations; A annual-operations owner; C accessibility/legal; I public",
+      "resource_prerequisites": "written venue permission; paper cards; staffed service; bilingual editing; budget and host unknown/to_verify",
+      "bilingual_touchpoints": "L1 bilingual wayfinding; offline paper card; web index; public review-back",
+      "privacy_accessibility_boundary": "no identity or trajectory collection; paper/staffed entry; wheelchair, child and older-user check",
+      "kpi": ">=90% wayfinding task completion; one public review-back",
+      "stage_gate": "G1 rights, notice, accessibility and T1/T4 plan complete",
+      "cancellation_exit": "missing permission, staff fallback or access condition; withdraw AP01 and retain reason"
+    },
+    {
+      "activity_id": "AP02",
+      "brand_zh": "水线慢行体验周",
+      "brand_en": "Waterline Mobility Week",
+      "frequency": "once_per_year_season_pending",
+      "target_users": "older people; accessibility users; families; night walkers",
+      "spatial_node": "L2 Signage Gallery to Xiaoyuehe Wing; exact route pending",
+      "raci_owner": "R scenario owner; A accessibility lead; C community/safety; I public review",
+      "resource_prerequisites": "human site walk; light/obstacle baseline; paper alternative route; data and venue unknown/to_verify",
+      "bilingual_touchpoints": "Waterline bilingual node signs; large-print/audio card; web route note",
+      "privacy_accessibility_boundary": "anonymous aggregates of error types only; human route check; no camera or location tracking",
+      "kpi": "T1 completion >=90%; T2 contrast target; zero glare complaints in 10 readings",
+      "stage_gate": "G2 site permission and professional fire/traffic/accessibility review plus T1/T2",
+      "cancellation_exit": "route mismatch, glare, safety or obstacle risk unresolved; withdraw components and return to staff service"
+    },
+    {
+      "activity_id": "AP03",
+      "brand_zh": "三节点季度复盘",
+      "brand_en": "Three-Node Quarterly Review",
+      "frequency": "four_times_per_year_quarter_end",
+      "target_users": "operators; design/planning professionals; community representatives; developers",
+      "spatial_node": "L1/L2/L3 narrative review; online/offline venue pending",
+      "raci_owner": "R data steward; A operations/compliance owner; C visual/culture/ethics; I public",
+      "resource_prerequisites": "anonymous logs; version wall; public sources; human chair; interfaces and staffing unknown/to_verify",
+      "bilingual_touchpoints": "bilingual changelog; Narrative Hall review page; public summary",
+      "privacy_accessibility_boundary": "anonymous aggregates and source levels only; captions, large print and paper; no personal case display",
+      "kpi": "100% versions have source/gate/exit records; >=95% items backlinkable",
+      "stage_gate": "G1 source, retention/deletion date, human review and T4 scan pass",
+      "cancellation_exit": "source failure, sensitive inference or unexplained output; delete related item and pause release"
+    },
+    {
+      "activity_id": "AP04",
+      "brand_zh": "铁路—AI 叙视节",
+      "brand_en": "Rail-to-AI Narrative Festival",
+      "frequency": "once_per_year_theme_pending",
+      "target_users": "students; cultural participants; international visitors; residents",
+      "spatial_node": "L3 Narrative Hall; Dazhongsi/Xiaoyuehe carrier pending",
+      "raci_owner": "R culture editor; A communications owner; C history review/community/legal; I developers",
+      "resource_prerequisites": "verified history entries; authorized narrative; bilingual layout; human guide; tenure and partners unknown/to_verify",
+      "bilingual_touchpoints": "timeline cards; bilingual landmark notes; downloadable transcript; staffed interpretation",
+      "privacy_accessibility_boundary": "no unlicensed portrait, mark or paper image; captions, large print and quiet hours; no face/voice biometrics",
+      "kpi": "100% historical entries backlinkable; T3 icon comprehension >=80%",
+      "stage_gate": "G3 history/rights/accessibility review; T3/T4 pass; withdrawal drill complete",
+      "cancellation_exit": "insufficient history evidence or permission, misleading risk or public rejection; remove item and return to research"
+    }
+  ]
+}

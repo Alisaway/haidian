@@ -1,0 +1,47 @@
+{
+  "schema_version": "0.1.0",
+  "assumptions": [
+    {
+      "id": "A-PROV-BOUNDARY-001",
+      "status": "pending_official_data",
+      "statement": "The submitted site boundary and the three key-area polygons are repository provisional rough geometry (official_boundary=false, geometry_role=provisional_constraint, boundary_precision=provisional_rough), inferred from the announcement's textual extents and approximate areas. They are not official redlines and must not support approval, precise-area, or statutory-control claims.",
+      "impact": "All areas and ratios derived from these polygons (site_area_sqm, green/public ratios, land-use areas, key-area areas, phasing areas) are low-confidence interim design-model values.",
+      "recalculation_trigger": "When official or cleared boundary/key-area geometry is published with recorded source, CRS, and conversion method, regenerate land_use, roads, green_space, public_space, buildings, phasing, all figures, drawings, visual pages, and recompute every area metric in EPSG:4548 as a whole package."
+    },
+    {
+      "id": "A-CONTROLS-001",
+      "status": "pending_professional_confirmation",
+      "statement": "Detailed regulatory controls (FAR, building height, coverage, setbacks), road redlines, rail alignments, blue lines, heritage control lines, ownership, municipal utilities, flood/fire conditions, and engineering constraints are not published in the public site package and must be confirmed from official attachments before statutory use.",
+      "impact": "floor_area_ratio, total_floor_area_sqm, and building_height_max_m remain unknown with reasons; geometry/constraints.geojson deliberately stays empty with a declared data gap; all intensity, redline, demolition, and engineering statements in the proposal are conceptual recommendations only.",
+      "recalculation_trigger": "When approved regulatory conditions or official design-brief attachments are released, recalculate control-dependent metrics and re-express intensity and height zoning through professional teams."
+    },
+    {
+      "id": "A-DESIGN-MODEL-001",
+      "status": "declared_design_assumption",
+      "statement": "All design layers (land use partition, buildings, roads, green space, public space, phasing) are agent-generated conceptual design proposals inside the provisional boundary. The 20 building footprints represent conceptual renewal/new-build clusters only and do not survey existing building stock; the ~37.7 km road network is a conceptual micro-circulation and slow-mobility suggestion, not road redlines.",
+      "impact": "building_footprint_area_sqm and building_density cover conceptual clusters only; road_centerline_length_m measures conceptual routes; none of these describe existing conditions.",
+      "recalculation_trigger": "Replace with surveyed base data and professional design once official base maps and building surveys become available."
+    },
+    {
+      "id": "A-STATION-001",
+      "status": "declared_design_assumption",
+      "statement": "Metro station positions (Dazhongsi, Qinghua East Road West, Xueyuan Road corridor stations) shown in figures and the visual page are indicative approximations from public context for conceptual station-city integration discussion; they are not surveyed station coordinates or rail alignments.",
+      "impact": "Transit-connection lines and forecourt plaza locations are conceptual anchors only.",
+      "recalculation_trigger": "Adopt official rail and station data when the official drawing package is available."
+    },
+    {
+      "id": "A-CASES-001",
+      "status": "declared_background_limitation",
+      "statement": "The six global AI ecosystem cases (Station F, one-north, Kendall Square, King's Cross Knowledge Quarter, Zhangjiang AI Island, MaRS) are cited from public institutional pages as background and mechanism references only; figures such as '~200 ha' follow the institutions' own public descriptions and were not independently surveyed.",
+      "impact": "Cases support mechanism design narrative only and never support planning-control conclusions for this site.",
+      "recalculation_trigger": "Not applicable; refresh citations if institutional pages change."
+    },
+    {
+      "id": "A-WATER-001",
+      "status": "pending_official_data",
+      "statement": "Qinghe and Xiaoyue River relationships are expressed as indicative annotations only; river blue lines, flood-control, and ecological management conditions are unpublished.",
+      "impact": "All waterfront and green-wedge suggestions are conceptual directions requiring professional deepening.",
+      "recalculation_trigger": "Incorporate official blue-line and flood data when published."
+    }
+  ]
+}

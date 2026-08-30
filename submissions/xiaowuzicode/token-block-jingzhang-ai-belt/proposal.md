@@ -6,7 +6,7 @@ language: "en"
 chinese_translation: "included"
 translation_file: "proposal.zh.md"
 license: "COMMUNITY-DISPLAY-ONLY"
-iteration: "v1.6"
+iteration: "v1.15"
 summary: "On single-track railways a driver could enter a section only while holding its token, and no second token was released until the first came back. Token Block applies that hundred-year-old safety rule to urban AI governance: the Jing-Zhang heritage corridor becomes one continuously operated, publicly bookable AI test track — one token, one section, returned before the next is issued — with three stations, two switches, and an evidence chain that lets any professional team recompute every claim."
 summary_zh: "单线铁路上，司机必须持有区间令牌才能进入，令牌未归还前发不出第二枚。本方案把这条百年行车安全规则用于城市AI治理：把京张遗址公园全线做成一条持续运营、公众可预约的AI测试轨道——一枚令牌，一个区间，归还之后才发下一枚——三站两岔、一线到底，并附可被专业团队逐项复算的证据链。全部空间建议均为概念建议，不替代法定规划。"
 tracks: ["jingzhang-heritage-narrative", "ai-origin-community", "civic-agent-governance"]
@@ -15,13 +15,13 @@ scenarios: ["ai-traffic-walkability", "ai-cultural-guide", "ai-health-service-na
 
 
 
+![Concept impression of the corridor — one line, three stations, two switches](assets/figures/concept-hero-wide.jpg)
+
+*AI-generated concept impression (gpt-image-2), layout referenced from `geometry/*.geojson`; full provenance and limits are registered per image in `manifest.json`.*
+
 # Token Block — Centennial Jing-Zhang AI Innovation Belt
 
 **京张令牌 · 百年京张AI创新带**
-
-![Concept impression of the corridor — one line, three stations, two switches](assets/figures/concept-hero-wide.jpg)
-
-*Concept impression, AI-generated (gpt-image-2) with its layout referenced from this package's `geometry/*.geojson`. It conveys spatial character only and carries no quantitative claims: it is not a survey basis, not an as-built view, and every number in this package remains recomputable from the machine-readable files.*
 
 A century ago the Jing-Zhang line was built to *carry* things. This proposal argues that the same alignment should now *run* things.
 
@@ -43,9 +43,9 @@ Every spatial move below is a conceptual suggestion, a reference scheme, or mate
 
 This package is built from the machine-readable brief in this repository, not from a private data set. The design basis is the official announcement's task structure and scope definitions [source:OFFICIAL-ANNOUNCEMENT], the agent-facing open-call taskbook with its ten co-creation principles and six required tasks [source:AGENT-TASKBOOK], and the registered site package of enums, ranges, schemas and allowed design space [source:SITE-PACKAGE]. Source usability was screened against the public registry before any evidence was cited [source:SOURCE-REGISTRY], and the processed navigation layer was used to organise scopes, tasks and gaps into a work list rather than as a new authority [source:PROCESSED-FACT-PACK].
 
-Beyond the repository package, the design leans on eight public documents, each used within its registered limits. Six set the regulatory and inclusive frame: the national urban design measures and the regulatory-plan preparation rules define what “regulatory-plan depth” obliges and why unknown control indicators stay unknown [source:MOHURD-URBAN-DESIGN-MEASURES] [source:MOHURD-CONTROL-PLANNING-MEASURES]; the national land-use classification guide supplies the vocabulary of the land-use plan [source:MNR-LAND-USE-GUIDE]; the interim measures for generative AI services anchor the scenario admission review [source:GENAI-INTERIM-MEASURES]; and the barrier-free environment law together with the plan on smart-technology difficulties of the elderly set the statutory floor under the step-free continuity and non-digital equivalence indicators [source:BARRIER-FREE-LAW] [source:ELDERLY-SMART-TECH-PLAN].
+Beyond the repository package, the design leans on eight public documents, each used within its registered limits. Six set the regulatory and inclusive frame: the national urban design measures and the regulatory-plan preparation rules define what “regulatory-plan depth” obliges and why unknown control indicators stay unknown [source:MOHURD-URBAN-DESIGN-MEASURES] [source:MOHURD-CONTROL-PLANNING-MEASURES]; the national land-use classification guide supplies the vocabulary of the land-use plan [source:MNR-LAND-USE-GUIDE]; the interim measures for generative AI services anchor the scenario admission review [source:GENAI-INTERIM-MEASURES]; and the barrier-free environment law sets binding accessibility obligations, within its scope of application, under the step-free continuity indicator [source:BARRIER-FREE-LAW]; the plan on smart-technology difficulties of the elderly is used as background-only policy context, and the all-scenario no-digital-precondition and staffed-equivalent rule behind the non-digital equivalence indicator is this proposal's own commitment, not a statutory requirement [source:ELDERLY-SMART-TECH-PLAN].
 
-The building-design depth provisions define the documentation depth the key-area packages must eventually reach [source:ARCH-DESIGN-DEPTH-2016]. The token block rule itself is cited as widely documented railway operating history, not as a claim about the Jing-Zhang line's own equipment [source:RAILWAY-TOKEN-HISTORY], and the declared scenarios are drawn from the repository scenario registry [source:SCENARIO-REGISTRY].
+The building-design depth provisions define the documentation depth the key-area packages must eventually reach — cited as a background reference outside the supplied source registry, with its access record and limits registered in `sources.json` [source:ARCH-DESIGN-DEPTH-2016]. The token block rule itself is cited as widely documented railway operating history — a background qualitative reference, not a claim about the Jing-Zhang line's own equipment [source:RAILWAY-TOKEN-HISTORY] — and the declared scenarios are drawn from the repository scenario registry [source:SCENARIO-REGISTRY].
 
 The single most important disclosure in this package is about geometry. **No official redline exists in the public package.** The submitted overall-design boundary [data:geometry/site_boundary.geojson#SITE-001] and the three key-area polygons [data:geometry/key_areas.geojson#PROV-KEY-001] are the repository's provisional rough boundaries [source:BOUNDARY-SOURCE] [source:KEY-AREA-SOURCE]. They carry `official_boundary=false`, `geometry_role="provisional_constraint"` and `boundary_precision="provisional_rough"`. They are usable for generation, visualisation, discussion and intake self-check. They are **not** an official redline, not an approval basis, and not a precise-area basis. When official polygons are published, the site boundary, key areas, land use, roads, green space, public space, buildings, phasing and every derived metric must be recomputed together — not patched file by file.
 
@@ -77,7 +77,20 @@ The transmission between levels is explicit and checkable. The line is divided i
 
 **Three areas, two wings, one loop.** The synergy is designed as a closed circuit, not an adjacency diagram. Research capability originates at the Zero-Kilometre Station's campus edge, is hardened into standards, evaluation and full-stack autonomy at the Marshalling Yard, is tested in public along the line under the test-track protocol, is converted into products and international exposure at the Arrival Yard, and is fed back by the two switches — the Zhongguancun technology service wing supplying capital, IP, legal and global-allocation services at S5, the Xiaoyuehe scenario-empowerment wing supplying real everyday demand and real users at S2. A loop with a feedback path is the difference between an innovation district and an innovation *system*.
 
-**Eight global references, read for mechanism rather than for imagery.** Kendall Square shows what happens when a campus edge is allowed to become a commercial-conversion zone rather than a buffer. Station F shows single-operator concentration producing a legible front door. The King's Cross knowledge quarter shows heritage infrastructure carrying research institutions without becoming a museum. Yangjae AI Hub shows a public-sector-led single-purpose AI address. Zhangjiang AI Island shows a compact waterfront cluster used as a permanent exhibition of its own industry. Shenzhen Bay shows service-facility density as the actual attractor. Shibuya QWS shows a station-integrated open-membership innovation room. Tel Aviv shows an academia-to-startup pipeline that works because the distance is short. These are qualitative design references drawn from publicly known international practice; **this package makes no quantitative claim about any of them**, cites none of them as authoritative data, and uses none of them to justify a numeric target. The transferable mechanism is the same in all eight: shorten the distance between where knowledge is made and where it is used, and make that distance publicly visible.
+**Case-study table — eight global references, read for mechanism rather than for imagery.**
+
+| Reference | Mechanism read | What Token Block transfers |
+| --- | --- | --- |
+| Kendall Square | A campus edge allowed to become a commercial-conversion zone rather than a buffer | The Zero-Kilometre Station's campus-facing interface (S4) |
+| Station F | Single-operator concentration producing a legible front door | One Line Operator, one booking calendar |
+| King's Cross knowledge quarter | Heritage infrastructure carrying research institutions without becoming a museum | The heritage park as a working test track, not an exhibit |
+| Yangjae AI Hub | A public-sector-led single-purpose AI address | The belt as one nameable public AI address |
+| Zhangjiang AI Island | A compact cluster used as a permanent exhibition of its own industry | The arrival board publishing what the line produces |
+| Shenzhen Bay | Service-facility density as the actual attractor | Service wings stitched in at the two switches (S2/S5) |
+| Shibuya QWS | A station-integrated open-membership innovation room | Platform plazas as open interfaces at the three stations |
+| Tel Aviv | An academia-to-startup pipeline that works because the distance is short | The whole belt as a distance-shortening instrument |
+
+These are background qualitative references drawn from publicly known international practice — not registry-reviewed formal evidence; **this package makes no quantitative claim about any of them**, cites none of them as authoritative data, and uses none of them to justify a numeric target. The transferable mechanism is the same in all eight: shorten the distance between where knowledge is made and where it is used, and make that distance publicly visible. The ecosystem map itself is the closed loop above — origination (S4) → hardening (S6) → public verification (line) → conversion (S1) → feedback (S2/S5) — drawn to geometry in the spatial-structure figure below.
 
 **Naming and identity: the mark is the plan.** The belt's name is **Token Block｜京张令牌**, and its identity is a single device — a solid rule broken by three gaps. That device is not a graphic invented to sit above the plan; it *is* the plan reduced to one line. The three gaps are the three key areas at their true relative positions along the corridor, and the two diamonds above the rule are the two wings. The construction rule therefore has a hard constraint that no design refresh may relax: **change the number or position of the gaps and you have changed the scheme, not the logo.** The naming system extends the same railway lexicon into wayfinding — kilometre marks along the spine, platform edges at stations, switch markers at the wings, and an arrival board that publishes what the line has produced. Signage is specified as physical, high-contrast and multi-modal, never as an app. The identity is a direction for professional teams to develop, not a registered trademark; no third-party typeface, image or mark is used [source:AGENT-TASKBOOK] [standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK] [data:geometry/key_areas.geojson#PROV-KEY-001].
 
@@ -93,7 +106,7 @@ The transmission between levels is explicit and checkable. The line is divided i
 | Beiwei community | Talent and community service within Haidian | A public, bookable front door for capability made nearby | Everyday demand and a resident population that keeps scenarios honest |
 | Beijing-Tianjin-Hebei | Regional scenario-opening network | A replicable operating protocol, not a one-off district | Scale, diversity of context, and destinations for a mature scenario |
 
-The mechanism is deliberately not co-location but **through-running**: a capability originated at Huairou, engineered at Future Science City and manufactured at E-Town can book a window on this line to be tried in front of real people, and a scenario proven here can be handed on for scale deployment. The belt's comparative advantage is neither the largest floor plate nor the cheapest rent — it is being the only place in the network where a capability meets an ordinary street under published rules. Specific cooperation arrangements between these clusters are conceptual suggestions requiring confirmation by the relevant authorities and operators; nothing here is an agreed programme [source:AGENT-TASKBOOK] [depth:overall_spatial_structure].
+The mechanism is deliberately not co-location but **through-running**: a capability originated at Huairou, engineered at Future Science City and manufactured at E-Town can book a window on this line to be tried in front of real people, and a scenario proven here can be handed on for scale deployment. The belt's comparative advantage is neither the largest floor plate nor the cheapest rent — it is the proposed role of a place in this network where a capability meets an ordinary street under published rules — a concept-stage aim, not an established or exclusive status. Specific cooperation arrangements between these clusters are conceptual suggestions requiring confirmation by the relevant authorities and operators; nothing here is an agreed programme [source:AGENT-TASKBOOK] [depth:overall_spatial_structure].
 
 **Future urban form.** The belt's answer to "how does AI change the city" is not a smart-city dashboard. It is that the city becomes *bookable*. A test-track protocol means a segment of public space can be reserved, instrumented, operated under published rules for a defined window, and then returned to ordinary public use — the same way a rail line allocates paths. This gives industry a real environment, gives residents a predictable and revocable arrangement, and gives government an auditable record. Land, space, capital, talent, compute, data and scenario supply are organised around that single mechanism [depth:overall_spatial_structure].
 
@@ -127,7 +140,7 @@ All three carry the same caveat: the polygons are provisional, so parcel-level c
 
 **The token protocol.** Every scenario below runs under one published protocol, built directly on the railway token rule: **one token, one section, returned before the next is issued.** A token grants a named operator exclusive use of one bookable segment for one window, and carries with it a stated data boundary, a human review point, and a defined end date after which the space returns to ordinary public use. The interlock is the important part — a segment cannot issue a second token while the first is out, which is what stops an "open scenario district" from silently becoming a permanently occupied one. No scenario in this package requires non-public data, individual profiling, or a designated vendor as a precondition. No scenario claims approved operating status.
 
-**Five-plus user personas and what each needs from space.**
+**Eight user personas (taskbook minimum: five) and what each needs from space.**
 
 | Persona | What they need | Where the belt answers it | Privacy and review boundary |
 | --- | --- | --- | --- |
@@ -175,7 +188,7 @@ North–south, the main line greenway runs the full length of the spine as a con
 
 Two honesty constraints apply. First, road area and road area ratio are `unknown`, because redline widths and cross-sections are not published — a centreline length cannot be converted into an area without them. Second, how each stitch physically crosses the corridor — at grade, over, or under — is an engineering question this package explicitly does not answer; the stitches are located and justified, not engineered [data:geometry/constraints.geojson#TRACK-S3].
 
-Municipal and new-infrastructure strategy follows the same track logic: edge compute, distributed energy and service platforms are proposed as *station equipment* attached to the three stations and two switches rather than as a uniform grid, so that capacity is added where it is used and where it can be publicly accounted for. Utilities capacity, drainage, flood control, fire access and energy load are prerequisites for deepening, not conclusions of this package [depth:municipal_new_infrastructure].
+Municipal and new-infrastructure strategy follows the same track logic: edge compute, distributed energy and service platforms are proposed as *station equipment* attached to the three stations and two switches rather than as a uniform grid, so that capacity is added where it is used and where it can be publicly accounted for. Edge-compute stops and data-element services share the token ledger's public accounting fields (see the measurement plans), so compute and data provision are audited by the same instrument as space. Utilities capacity, drainage, flood control, fire access and energy load are prerequisites for deepening, not conclusions of this package [depth:municipal_new_infrastructure].
 
 ![Slow mobility, rail connection, blue-green continuity and AI scenario nodes](assets/figures/mobility-bluegreen.png)
 
@@ -224,7 +237,7 @@ Phasing separates the *submission* calendar from the *implementation* path. Phas
 
 The separation is the point. The Line Operator has an incentive to fill the calendar; the Switch Council has standing to empty it; the Admission Panel decides on grounds neither of them controls. Every admission is published with its data boundary, its human review point and its end date. These are proposed governance arrangements for professional and operating teams to develop, not an approved institutional design.
 
-**The first ninety days, concretely.** The pilot is the Zero-Kilometre Station platform plaza (S4) plus the adjoining first segment of the Running Section (S3) — chosen because it needs no engineering condition, sits on the most public address, and is where the campus edge already generates demand [data:geometry/constraints.geojson#TRACK-S4]. Day 90 should be able to show, physically on site: the Zero-Kilometre Marker installed as a temporary structure; one published booking calendar with at least three completed windows drawn from scenario cards 02, 03 and 05; one open-source release event held on the plaza; the step-free continuity of the pilot segment surveyed and any break recorded; and one published review of what went wrong. Nothing on that list requires a regulatory condition, a land transaction or a construction permit, which is precisely why it is the first phase.
+**The first ninety days, concretely.** The pilot is the Zero-Kilometre Station platform plaza (S4) plus the adjoining first segment of the Running Section (S3) — chosen because it can start under public-space authorisation with reversible light fittings — subject to item-by-item verification of safety, fire egress, step-free continuity, rail-adjacency and heritage conditions through gates G0–G2 — sits on the most public address, and is where the campus edge already generates demand [data:geometry/constraints.geojson#TRACK-S4]. Day 90 should be able to show, physically on site: the Zero-Kilometre Marker installed as a temporary structure; one published booking calendar with at least three completed windows drawn from scenario cards 02, 03 and 05; one open-source release event held on the plaza; the step-free continuity of the pilot segment surveyed and any break recorded; and one published review of what went wrong. Nothing on that list depends on a regulatory-plan condition or a land transaction; each item still requires public-space authorisation and the safety, fire, accessibility, rail and heritage verifications registered as preconditions in the delivery frame, and any failed verification pauses or rolls the item back through G0–G2 — which is precisely why this, and only this, is the first phase.
 
 **Indicators, with how they are measured.** These are proposed monitoring indicators for the operating team. Baselines do not yet exist and are not invented here; each is recorded in `metrics.json` as `unknown` with its reason.
 
@@ -239,7 +252,56 @@ The separation is the point. The Line Operator has an incentive to fill the cale
 
 **Stop conditions — what would pause or reverse this.** A proposal that cannot say how it fails is not implementable. The line should pause a scenario, or the programme, when: an objection is unresolved past its published deadline; a scenario is found to have collected data outside its declared boundary; the non-digital equivalent is unavailable while the digital one runs; a booking has enclosed a station plaza beyond its published window; the step-free route is broken by an installation; or official regulatory, heritage or rail data arrives that contradicts a spatial assumption in this package. The last one is the most likely, and it is a reason to recompute, not a reason to argue [depth:phasing_implementation] [depth:risk_missing_data] [source:PROCESSED-FACT-PACK].
 
+**The delivery frame at a glance** (registered in `visual/assets/implementation.json`):
+
+| Instrument | Count | What it fixes |
+| --- | --- | --- |
+| First-100-days work packages | [metric:work_package_count] | Precondition, dependency and evidence output per package |
+| Exit gates G0–G4 | [metric:exit_gate_count] | Start, boundary, safety, governance and handover stop rules |
+| Procurement themes | [metric:procurement_theme_count] | Scope categories only — no amounts claimed |
+| Monitoring windows (3/12/36 months) | [metric:monitoring_window_count] | When each performance metric starts accruing real data |
+| Measurement plans | [metric:measurement_plan_count] | Observation source, sampling, statistic, degradation rule, ledger fields |
+
+**From ninety days of narrative to one hundred days of packages.** The pilot description above
+is now carried by a machine-readable delivery frame, `visual/assets/implementation.json`, so that "what happens
+first" can be audited the same way the token protocol is. It registers
+[metric:work_package_count] first-100-days work packages — two line-level packages (the token
+ledger with its first booking window, and the spine walk-through continuity audit) and roughly
+three per key area, from the temporary opening of the Arrival Yard plaza to the zero-kilometre
+pop-up release hall to the marshalling-yard meadow clearing. Every package declares its
+precondition, its dependency and, most importantly, its **evidence output** — the record that
+must exist for the package to count as done, several of which feed the six Class C performance
+metrics directly. Cost is recorded as a relative effort class (light / medium / heavy); absolute
+costs follow once title, existing-building and utility conditions are confirmed.
+
+**Exit gates G0–G4 — the stop conditions, formalised.** The prose stop conditions above are
+registered as [metric:exit_gate_count] executable gates: G0 starts nothing until both governance
+bodies exist; G1 pauses and recomputes when official boundaries contradict an assumption; G2
+rolls an installation back to the last usable state when a safety review fails; G3 revokes the
+token and pauses bookings on a governance breach; G4 is the 100-day handover review — unmet
+evidence outputs mean remediation or an orderly exit in which reversible fittings are removed
+and sites return to public use. Procurement is scoped as [metric:procurement_theme_count]
+themes without amounts, and [metric:monitoring_window_count] monitoring windows at 3, 12 and
+36 months state exactly when each of the six performance metrics starts accruing real data —
+the route by which every `unknown` becomes known.
+
+**Measured, not asserted.** Each of the six performance metrics carries one of
+[metric:measurement_plan_count] registered measurement plans: the observation source (each tied
+to a work-package evidence output), census-or-sample rule, reported statistic, the degradation
+rule that routes it into gates G2–G4, and the public ledger fields its records must carry.
+Baselines are measured in year one; the plans fix methods, and trigger parameters are finalised
+by the Line Operator once the year-one baseline is published.
+
 **Operations and the annual system.** The belt is proposed to run an annual Global AI Week using the line itself as the venue, a rolling scenario-open calendar publishing which segments are bookable, a developer community anchored at the Zero-Kilometre release hall, and a conversion pathway that moves a team from open-source contributor to bookable-track user to tenant. Brand assets accumulate in the belt rather than in any single event: the line, the station names, the marker, the board. All of this is an operating proposal for professional and operating teams to develop — not a confirmed government programme, funding commitment, investment arrangement or approved event schedule.
+
+**International communication copy (proposed, bilingual).** The belt's outward-facing line is
+one sentence in either language: *"One token, one section, returned before the next is issued —
+a vision of opening Beijing's century-old railway to the world as a publicly bookable urban AI test track."*
+「一枚令牌，一个区间，归还之后才发下一枚——让百年京张向世界开放为一条可公开预约的城市AI测试轨道，是本方案提出的愿景。」
+Every use of the copy carries the belt's status vocabulary — *submitted / reviewed / selected /
+implemented* — so that international audiences always see which stage a claim belongs to; the
+attraction-and-conversion path it serves is the contributor → bookable-track user → tenant
+pathway above.
 
 **Offline protocol replay — the rules are executable, not rhetorical.** The token block
 protocol is not only prose: `simulation.json` records [metric:simulation_task_count] synthetic
@@ -259,11 +321,16 @@ and [metric:audit_completeness] audit-complete receipts. Governance coverage is 
 recomputable from the geometry layer: [metric:scenario_data_boundary_count] scenario cards carry
 a declared data boundary and [metric:scenario_human_review_count] carry an uncancellable human
 review point. These replays are synthetic checks of this package's own stated rules — they are
-not field evidence, not a safety proof, and not an approval of any operation.
+not field evidence, not a safety proof, and not an approval of any operation. Beyond the
+synthetic replay, the interactive protocol page itself has been driven in a real headless
+browser: three runs — mouse, keyboard and reduced-motion — recorded eighteen hash-chained event
+receipts (`visual/assets/execution-receipts.json`), including the refusal of a second token
+while one is out and the ordered S1→S6 exclusive occupancy; participant self-test evidence,
+re-runnable from the shipped files.
 
 ## Metrics, Area Recalculation, and Compliance Matrix｜指标体系、面积复算与合规矩阵
 
-Metrics are split into three honest classes. **Class A — recomputable from submitted geometry**: every value below is reproduced by projecting the layers to EPSG:4548 and recomputing, and is checked against `spatial_review.py`. **Class B — pending official regulatory conditions**: floor area ratio, total floor area, building height, road area and road area ratio are recorded as `unknown` with reasons. **Class C — performance indicators** requiring operating data over time, which this package does not pretend to know [depth:metrics_recalculation].
+Metrics are split into three honest classes. **Class A — recomputable from submitted geometry**: every value below is reproduced by projecting the layers to EPSG:4548 and recomputing, and is checked against `spatial_review.py`. **Class B — pending official regulatory conditions**: floor area ratio, total floor area, building height, road area and road area ratio are recorded as `unknown` with reasons. **Class C — performance indicators** requiring operating data over time, with their measurement start dates set by the monitoring windows [depth:metrics_recalculation].
 
 | Metric | Value | Basis |
 | --- | --- | --- |
@@ -313,7 +380,7 @@ The compliance matrix maps all seventeen announcement tasks (1.3, 1.4, 1.5) and 
 - `brief/site-package/design_brief.json`, `agent_taskbook.json`, `allowed_design_space.json`, `enums/`, `ranges/planning_limits.json`, `schemas/`
 - `brief/site-package/standards/standards.json` and the local reference snapshots under `standards/references/`
 - `data/source_registry.json`, `data/processed/agent_fact_pack.md`, `project_scope_summary.csv`, `agent_task_requirements.csv`, `source_use_matrix.csv`, `missing_data_checklist.csv`
-- This package's own evidence: `geometry/*.geojson`, `metrics.json`, `compliance_matrix.json`, `standard_matrix.json`, `design_depth_matrix.json`, `assumptions.json`, `sources.json`, `self_check.json`
+- This package's own evidence: `geometry/*.geojson`, `metrics.json`, `compliance_matrix.json`, `standard_matrix.json`, `design_depth_matrix.json`, `assumptions.json`, `sources.json`, `risk.json`, `simulation.json`, `visual/assets/implementation.json`, `self_check.json`
 - Machine-readable index — sources (1/2): announcement [source:OFFICIAL-ANNOUNCEMENT], taskbook [source:AGENT-TASKBOOK], site package [source:SITE-PACKAGE], registry [source:SOURCE-REGISTRY]
 - Machine-readable index — sources (2/2): [source:PROCESSED-FACT-PACK] [source:BOUNDARY-SOURCE] [source:KEY-AREA-SOURCE]
 - Machine-readable index — standards: [standard:PROJECT-OFFICIAL-ANNOUNCEMENT] [standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK] [standard:MNR-LAND-USE-CLASSIFICATION-GUIDE]

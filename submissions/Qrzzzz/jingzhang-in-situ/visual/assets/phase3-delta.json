@@ -1,0 +1,121 @@
+{
+  "schema_version": "phase3-governance-delta-v1",
+  "authority": {
+    "phase2_frozen_head": "554979e4bc66f21fbdf53e4cde85ed94afe4421c",
+    "phase2_equivalent_rebased_parent": "2264c782d96f57f3ae95f0a6458f5e03e3112b42",
+    "purpose_zh": "只补齐十二场景的运行协议、数据治理、人工接管、故障测试与停止撤场；不改二期空间证据。",
+    "purpose_en": "Complete the operating protocols, data governance, Human Takeover, failure tests, stop, and removal for the twelve scenarios without changing Phase 2 spatial evidence.",
+    "evidence_status": "design-target",
+    "not_claimed": [
+      "legal compliance",
+      "official approval",
+      "operator appointment",
+      "site survey",
+      "accessibility audit",
+      "safety certification",
+      "funding commitment"
+    ]
+  },
+  "brand_name_contract": {
+    "canonical_zh": "京张在场",
+    "canonical_en": "Jing-Zhang In Situ",
+    "logo_variant_rule_zh": "Logo 图形排印可省略连字符，但不得成为正文、元数据、标题或对外名称。",
+    "logo_variant_rule_en": "A graphic logo treatment may omit the hyphen, but prose, metadata, titles, and external naming may not.",
+    "second_project_name_allowed": false
+  },
+  "minimum_delta": [
+    {
+      "existing_field_zh": "十二字段场景责任卡与三旗舰叙事",
+      "existing_field_en": "Twelve-field scenario cards and three flagship narratives",
+      "gap_zh": "字段不完整，缺少统一状态转换、前台可见动作、日志保留、申诉、维护与撤场的机器合同。",
+      "gap_en": "Fields are incomplete and do not yet form machine contracts for shared transitions, visible actions, logging and retention, appeal, maintenance, and removal.",
+      "authoritative_carrier": "phase3-protocol-contracts.json",
+      "generated_consumers": [
+        "proposal.md",
+        "proposal.en.md",
+        "assets/figures/scenario-matrix.png",
+        "assets/figures/scenario-matrix.en.png",
+        "assets/figures/operations-pathway.png",
+        "assets/figures/operations-pathway.en.png",
+        "visual/index.html",
+        "visual/index.en.html",
+        "drawings/a3-booklet.pdf",
+        "drawings/a3-booklet.en.pdf",
+        "drawings/a0-boards.pdf",
+        "drawings/a0-boards.en.pdf"
+      ]
+    },
+    {
+      "existing_field_zh": "来源、假设、角色和合规边界",
+      "existing_field_en": "Sources, assumptions, roles, and compliance boundaries",
+      "gap_zh": "缺少按实际场景拆分的数据类别、目的限定、最小字段、权限、保留删除、本地远程边界、禁止用途和弱势群体等效服务。",
+      "gap_en": "Scenario-specific data categories, purpose limitation, minimum fields, access, retention and deletion, local/remote boundary, prohibited uses, and equivalent service for protected users are missing.",
+      "authoritative_carrier": "phase3-data-governance.json",
+      "generated_consumers": [
+        "proposal.md",
+        "proposal.en.md",
+        "standard_matrix.json",
+        "compliance_matrix.json",
+        "visual/index.html",
+        "visual/index.en.html"
+      ]
+    },
+    {
+      "existing_field_zh": "进入 Gate、评价和退出摘要",
+      "existing_field_en": "Entry gates, evaluation, and exit summaries",
+      "gap_zh": "缺少可观察故障、检测证据、人工接管、停止决策、残余风险与复测条件的独立反方测试。",
+      "gap_en": "Independent adversarial tests are missing observable failure, detection evidence, Human Takeover, stop decision, residual risk, and retest conditions.",
+      "authoritative_carrier": "phase3-red-team.json",
+      "generated_consumers": [
+        "proposal.md",
+        "proposal.en.md",
+        "compliance_matrix.json",
+        "assets/figures/operations-pathway.png",
+        "assets/figures/operations-pathway.en.png",
+        "visual/index.html",
+        "visual/index.en.html"
+      ]
+    },
+    {
+      "existing_field_zh": "F08 三旗舰九支持卡片与 F11 七包首用路径",
+      "existing_field_en": "F08 3+9 cards and F11 seven-package/first-use path",
+      "gap_zh": "F08 不能横向比较 AI/人的权力边界、接管、低技术替代与状态；F11 未完整显示状态、责任、证据、申诉、停止与撤场。",
+      "gap_en": "F08 does not compare AI/human authority, takeover, low-tech alternatives, and lifecycle; F11 does not yet show states, responsibility, evidence, appeal, stop, and removal together.",
+      "authoritative_carrier": "phase3-governance-generator-source.json",
+      "generated_consumers": [
+        "assets/figures/scenario-matrix.png",
+        "assets/figures/scenario-matrix.en.png",
+        "assets/figures/operations-pathway.png",
+        "assets/figures/operations-pathway.en.png",
+        "visual/index.html",
+        "visual/index.en.html",
+        "drawings/a3-booklet.pdf",
+        "drawings/a3-booklet.en.pdf",
+        "drawings/a0-boards.pdf",
+        "drawings/a0-boards.en.pdf"
+      ]
+    }
+  ],
+  "protected_inputs": {
+    "geometry": "geometry/*.geojson byte-frozen",
+    "figures": [
+      "F01-F07",
+      "F09-F10"
+    ],
+    "ids_and_mappings": [
+      "SC01-SC12",
+      "CX01-CX12",
+      "IM01-IM13",
+      "AP1-AP7",
+      "SC01/SC05/SC10 flagships",
+      "SC10+IM06 single first-use trial"
+    ],
+    "phase2_authorities": [
+      "phase2-source-freeze.json",
+      "phase2-generation-contract.json",
+      "phase2-visual-generation-contract.json",
+      "phase2-spatial-evidence-source.json",
+      "rebuild-visuals-source.json"
+    ]
+  }
+}

@@ -44,6 +44,18 @@ python3 scripts/maintainer_review.py \
 精选、正式专业评分或现实实施批准。CI 禁止参赛者创建或修改该文件；维护者应在
 合并投稿后通过独立 PR 添加或更新，并注明对应 PR 与 commit SHA。
 
+AI advisory schema `0.2.1` 延续 `0.2.0` 的两类事项分离：`required_next_actions_zh` 只保存
+当前版本中参与者可关闭、阻断 intake 的修复；`conditional_followups` 保存官方资料
+到位、获得外部授权、进入现场试点或以后实质修改时才触发的事项。后者每项必须显式
+记录 `blocking_now=false`、`trigger` 和 `owner`，保留在 PR 评论和后续 `FEEDBACK.md`
+中，但不阻断当前 intake。归属和触发条件不得通过关键词或子串推断；含混项继续按
+当前修复 fail closed。
+
+`0.2.1` 同时把逐维 `required_repairs_zh` 限为每维最多 4 条、每条最多 600 个字符；
+`pr-comment.md` 必须按维度完整公开所有通过 schema 的当前 repair，不得只给计数或静默
+截断。风险、数据缺口和本地中间材料不进入该 repair 区，条件触发项继续使用独立的
+“不阻断本轮”区块。schema 版本提升会让旧缓存评审失效。
+
 ## 4. 复制 PR 评论
 
 把命令输出复制到 PR comment。maintainer review 的可见结果只在 PR comment 中展示，不进入 `submissions-data.js`、方案卡片或公开展示页。按建议状态处理：
@@ -265,15 +277,22 @@ export HAIDIAN_REVIEW_MODEL="gpt-5.6-sol"
 # 先评审并生成审计材料，不修改 GitHub
 python3 scripts/auto_review_queue.py --limit 10
 
-# 正式回写 review/label；通过 60 分门槛和四项 gate 的 PR 自动合并
+# 正式回写 review/label；同时满足分数、四项 gate 和审核准入状态的 PR 自动合并
 python3 scripts/auto_review_queue.py --limit 10 --concurrency 3 --apply --admin-merge
 ```
 
 固定顺序为：required CI → 单一作者目录 → 固定 head SHA worktree → 本地四项 gate →
-强制退件 → 多模态 100 分评审 → 决策前再次检查 head SHA/CI → review 与标签 →
+强制退件 → 多模态 100 分评审 → 分数门槛与审核准入状态 gate →
+决策前再次检查 head SHA/CI → review 与标签 →
 合并前最后一次检查 head SHA/CI。低于 60 分标记 `review/low-quality`；CI 未成功的
 PR 不调用模型；draft 不进入队列。合并仅表示仓库 intake，展示、精选、正式评分与
 实施决定继续由 `gallery-publication.json` 的独立流程控制。
+自动合并还要求 `recommendation=formal-review-ready`、`can_enter_formal_review=true`、
+参与者 `required_next_actions_zh` 为空；否则 fail closed 为修改请求。
+结构化 `conditional_followups` 不参与当前 intake 阻断，但会作为带触发条件和责任归属的
+advisory 反馈保留。worker 使用受信任主线的 advisory schema；schema 版本变化会使旧缓存
+评审失效，避免沿用已经过时的阻断语义。
+`publication_recommendation` 是独立的展示建议，不改变 60 分 repository intake 门槛。
 worker 每轮按 PR 编号从旧到新处理，避免持续新增投稿使早期稿件饥饿。
 模型调用和本地视觉检查默认三路并行；worktree 创建/清理以及 GitHub review、标签、
 SHA 复核和 merge 使用进程内锁串行执行，避免 Git 引用锁和 base-branch merge 竞态。
@@ -317,7 +336,7 @@ fine-grained token 或 GitHub App，只授予本仓库 Contents/PR 所需权限�
 |---|---|---|
 | `formal-review-ready` | All four gates pass | Eligible for merge and formal professional scoring |
 | `intake-provisional` | May be merged for display but not scoring | Merge for gallery; do not assign professional scores |
-| `request-changes` | One or more gates fail | Post review comment; keep PR open |
+| `request-changes` | One or more gates fail or a current participant-controlled repair remains | Post review comment; keep PR open |
 | `reject` | Mandatory rejection condition | Close PR with explanation |
 
 ### Prohibited artifacts

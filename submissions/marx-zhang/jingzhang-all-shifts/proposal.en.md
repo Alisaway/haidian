@@ -54,7 +54,7 @@ The building rule is “identify before classifying”: retain and open safe, va
 
 ## Detailed Design of Key Areas
 
-The three Shift Yards share one ethic and distinct roles; provisional polygons are only concept locators [data:geometry/key_areas.geojson#PROV-KEY-001] [data:geometry/key_areas.geojson#PROV-KEY-002] [depth:three_key_area_detailed_design].
+The three Shift Yards share one ethic and distinct roles; provisional polygons are only concept locators [depth:three_key_area_detailed_design]. Their north–south order and announced areas organise the working pack but do not anchor a station, road, title, or four-quadrant extent. In particular, `PROV-KEY-003` has not been location-verified against Dazhongsi Station or an official road polygon, so “Dazhongsi Exchange Yard” names a concept role, not the formal extent of the station intersection [data:geometry/key_areas.geojson#PROV-KEY-001] [data:geometry/key_areas.geojson#PROV-KEY-003] [source:KEY-AREA-LOCATION-REVIEW].
 
 ![Three Shift Yards](assets/figures/key-areas.en.png)
 
@@ -88,7 +88,7 @@ Stations use four **non-statutory prototype bands**: S (18–25 sqm), M (45–70
 
 Delivery uses five gates: G0 paid co-design, G1 title/fire/access checks, G2 a 90-day reversible pilot, G3 independent privacy/labor/accessibility audit, and G4 scale—revise—stop. Relative CAPEX/OPEX compares effort, not cost; leads are actor types, not confirmed appointees.
 
-![Delivery, operations and stop conditions](assets/figures/implementation-operations.en.png)
+![Delivery, operations and stop conditions](assets/figures/metrics-evidence.en.png)
 
 Auditable KPIs include staffed-escalation uptime, no-scan completion, median handover time, accessible-route closure hours, paid co-design sessions, appeal SLA and shutdown-drill pass rate. Personal scoring, emotion recognition, covert tracking, automated punishment or missing staffed access triggers shutdown.
 
@@ -180,6 +180,22 @@ To avoid “scenarios without operating evidence”, this upgrade gives the thre
 
 The pack replaces an “efficiency” narrative with five evidence dimensions: access and accessibility; human handover and appeal; data minimisation; labor and safety; and public continuity. Missing staffed access, an access blockage, personal scoring, emotion recognition, covert tracking, automated punishment, a production connection, or a failed safety condition pauses or removes the activity. The complete bilingual run cards and audit fields are in `report/three-area-operations-audit.en.md` and its counterpart; they are working templates awaiting site verification [standard:GENERATIVE-AI-INTERIM-MEASURES] [metric:operations_audit_dimension_count].
 
+## Service Equivalence and Switchback Adoption (Optional Crosswalk)
+
+This package connects SEB v0.5.0 and Switchback Protocol v0.3.0 to the existing G0–G4 working pack as an **optional protocol crosswalk**. They make “service continues when AI is off”, “who takes over”, and “when to pause or switch back” reviewable as fields. They do not constitute official adoption by the organisers, government or a professional body, and no conceptual scene in this package claims an SEB L0–L4 open level [source:SEB-V050-ISSUE] [source:SWITCHBACK-V030-ISSUE] [data:visual/assets/three-area-operations-audit.json#protocol_adoption].
+
+| External field / meaning | Local placement | Adoption boundary |
+| --- | --- | --- |
+| SEB `node_schema` (including five required fields) | Future nodes declare an AI-off/no-scan/paper/cash equivalent route, a findable duty role, a G0–G3 gate and non-production mode | Field semantics only; empty `constraints.geojson` is not a node layer and no coverage result is claimed |
+| Switchback `status` / `gate` / `ascent_grade` | `green_candidate`=fields complete/approval pending; a gated pilot enters yellow only after G2; safety, accessibility, staffed-service or data failure is red and switches back | Local G0–G4 is not external G0–G3 or L0–L4; paper G0 never claims an open level |
+| Switchback `public_review_cycle_days` / `review_options` | A 90-day reversible pilot and quarterly handover audit use renew / reduce / pause / switch_back | Five minutes, 1/7 working days and 90 days are design targets pending verification, not measured results or commitments |
+
+Versions, snapshot commits, SHA-256 values and licence boundaries are in `visual/assets/three-area-operations-audit.json` and `sources.json`; all three areas remain `concept_only`, and protocol fields cannot replace G1, G3 or G4 decisions [source:SEB-V050-ISSUE] [source:SWITCHBACK-V030-ISSUE] [metric:operations_audit_gate_count].
+
+### Independent Evidence-Chain Recheck (Review Register)
+
+For future site or professional review, this package adds an independent offline evidence-chain register: every claim is bound to source IDs, current byte snapshots, metric interpretation, accountable roles and stop conditions, while package-structure evidence is separated from pending external confirmation. It is a review working paper, not an official review decision; the boundary remains `optional_crosswalk_concept_only`, and provisional geometry, design targets and protocol fields are not presented as field facts, external levels, implementation authorisation or official endorsement [source:EVIDENCE-CHAIN-REVIEW] [data:visual/assets/evidence-chain-review.json#claims].
+
 ## AI Innovation Ecosystem, Personas, and AI+ Scenarios
 
 | Persona | Core needs |
@@ -224,7 +240,7 @@ A five-question gate tests safety, heritage/community value, accessibility, low-
 
 The Shift Commons Spine is a complete night-time walking–cycling–rail support chain: even lighting, visible crossings, sheltered stops, accessible guidance, night-transit information, Shift Stations and staffed help [data:geometry/roads.geojson#ROAD-001] [depth:traffic_rail_slow_parking]. It is not a road-redline or signal plan.
 
-Infrastructure is maintenance-first: public equipment ownership and duty are visible, edge processing uses minimum necessary data, and every civic AI system has a physical human button and published shutdown state [depth:municipal_new_infrastructure] [data:geometry/constraints.geojson#CONSTRAINTS]. Cash, staffed, paper and voice channels remain available.
+Infrastructure is maintenance-first: public equipment ownership and duty are visible, edge processing uses minimum necessary data, and every civic AI system has a physical human button and published shutdown state [depth:municipal_new_infrastructure] [standard:GENERATIVE-AI-INTERIM-MEASURES]. Cash, staffed, paper and voice channels remain available. The constraints layer is intentionally empty because no reviewable official controls for planning, heritage, parcels, roads/rail or utilities have been supplied; this section submits no constraint geometry and draws no statutory conclusion from an empty layer [source:SOURCE-REGISTRY] [depth:municipal_new_infrastructure].
 
 ![Round-the-clock mobility, blue-green and support network](assets/figures/mobility-bluegreen.en.png)
 
@@ -250,6 +266,94 @@ The visual language borrows from railway operating logs: deep green infrastructu
 Phasing is “service first, space second, systems last”: 0–12 months begins paid co-design, lightweight stations, staffed handover and night-route audits; years 1–3 adapt safe existing ground floors; later digital expansion waits for formal planning and independent evaluation [data:geometry/phasing.geojson#PHASE-001] [depth:renewal_project_list] [depth:phasing_implementation].
 
 Operations include quarterly handover audits, monthly open-maintenance days, semiannual accessibility and human-fallback drills, and an annual All Shifts City Week. Participation by workers is paid.
+
+## Taskbook Adoption Register: Three Positions, Five Functions, Three Zones and Two Wings
+
+The table preserves the taskbook names and binds each one to a spatial host, mechanism, accountable role type and current evidence. The structured bilingual attachment is `visual/assets/taskbook-operations-package.json`. This is an `optional_crosswalk_concept_only` register: it does not assert an external level, formal adoption, implementation authorisation or confirmed collaboration.
+
+| Taskbook name | Spatial host | Industry/governance mechanism | Accountable role type | Current evidence and status |
+| --- | --- | --- | --- | --- |
+| Centennial Jing-Zhang Cultural Belt | Heritage-park public experience route; Qinghuayuan Station Old Site remains to be verified | Historic resources, public walking and a conservative heritage interface | Heritage reviewer, public-space operator, community representative | Announcement, taskbook and public park sources; field/heritage review pending |
+| Urban AI Life-Experience Belt | Shift Commons Spine, three Shift Yards, twelve Shift Stations, Xiaoyuehe Scenario Wing | No-scan access, staffed handover, night recovery and reversible tests | District operator, worker representative, accessibility representative, service steward | Proposal diagrams, scenario cards and evidence chain; paid co-design and site review pending |
+| AI-Integrated Innovation Belt | Zhongzhiyuan, AI Origin Community, Dazhongsi and Zhongguancun Tech-Service Wing | Open scenario intake, non-personal testing, developer community and conversion interfaces | Open-call steward, asset owner, operator, data-governance reviewer | Taskbook, case mechanisms and proposal; no enterprise, funding or investment commitment |
+| AI Full-stack Self-reliant Innovation System | Zhongzhiyuan AI Self-reliant Innovation Acceleration Area | Open maintenance depot, equipment test lane, paid reskilling and non-production tests | MLOps/maintenance technician, developer, independent reviewer | Concept pack; not a production system |
+| World-class AI Innovation Ecosystem | AI Origin Community + Zhongguancun Tech-Service Wing | Near-campus innovation, conversion, open knowledge and partner-entry rules | Researcher, student, open-call steward, IP reviewer | Taskbook and case mechanisms; no named tenant is asserted |
+| AI+ Scenario-empowerment New Paradigm | Xiaoyuehe Scenario Wing, Shift Stations and public handover desks | Scenario card → spatial host → human review → stop condition | Scenario steward, operator, accessibility and data-governance reviewers | Three registered test cards; not approved deployment |
+| Intelligent AI Vitality City | Dazhongsi AI Industry Cluster, blue-green network and public route | Intelligent-native retail/business, low-disturbance renewal and staffed public service | Small-business operator, courier, visitor and service steward | Concept proposal; transport, title and access review pending |
+| Global Voice for AI Governance | Public Algorithm Duty Board, audit pack and Zhongguancun Tech-Service Wing | Published purpose, data boundary, duty, appeal and shutdown records | Public-interest trustee, data governance and independent audit | Reproducible method material; optional crosswalk concept only |
+
+The **Zhongguancun Tech-Service Wing** is the western interface for global resource, IP/rights clearance and capital-related methods; the **Xiaoyuehe Scenario Wing** is the eastern interface for open scenarios, public experience and feedback. The Shift Commons Spine connects their inputs, spatial hosting, public tests and failure returns. Neither wing is a confirmed institution, partner or funding arrangement.
+
+## Regional Coordination Interfaces: Triggers Without Fabricated Partnerships
+
+Regional coordination follows four steps: public input, role review, conceptual output and a stop condition. Beiliwei Community, Future Science City, Huairou Science City, E-town and Jing-Jin-Ji are discussion interfaces only. No enterprise list, financial arrangement, policy support, transport arrangement or joint brand is implied.
+
+| Interface | Concept trigger | Non-personal input | Auditable output | Boundary |
+| --- | --- | --- | --- | --- |
+| Beiliwei Community | A public, reviewable issue card starts a staffed walk-through | Needs cards, hours, accessibility issues and service failures | Spatial-service adjustment, issue record and stop condition | Does not represent community consent or collect personal traces |
+| Future Science City | Test hypothesis, log fields, reviewer and removal condition are pre-registered | Public method, synthetic sample or authorised equipment log | Reproducible test card, failure modes and spatial-host requirements | No partner, compute or policy support is asserted |
+| Huairou Science City | A versioned, sourced, independently reviewable method appears | Method, licence, scope and limitations | Method peer review, applicability boundary and open questions | No joint lab, funding or technology transfer is asserted |
+| E-town | Data, fire safety, human fallback and non-production conditions pass review | Equipment state, service flow and aggregate failures | Maintenance-space need, handover card and failure path | No production-line access, procurement or investment is asserted |
+| Jing-Jin-Ji | Participants agree in writing on topic, licence and review roles | Standards draft, cultural narrative, non-personal metrics | Bilingual method brief, interface suggestion and unresolved questions | No regional protocol, fiscal support or joint brand is asserted |
+
+## AI Innovation Ecosystem Map: Eight Inputs Into Space and Operations
+
+The map treats land, space, industry, funding, talent, compute, data and scenarios as interfaces rather than already-secured resources. It registers the supplier and user roles, flow, public boundary, test gate, failure handling and feedback to spatial/operational decisions.
+
+| Layer | Supplier → user roles | Flow and public access | Data boundary | Gate and failure handling | Feedback to space/operations |
+| --- | --- | --- | --- | --- | --- |
+| Land | Asset/space information and planning research → professional team, community, operator | Public version, provisional status and non-approval scope → concept host | No unpublished title, redline or control | G1 title/site/fire/access; missing data freezes location claims | Adjust node type and staffed entrance, never infer statutory planning |
+| Space | Designer, asset owner, public-space operator → workers, visitors, developers | Scenario card → component → use record → reversible adjustment; staffed, paper, voice and no-scan access | Record access, handover and failures only; no personal traces | G0 co-design and G1 site review; pause, hand over and remove on failure | Adjust ground-floor interface, route, rest point and maintenance load |
+| Industry | Developer, maintainer, scenario proposer → shops, public service and workers | Open problem → non-production test → human review → method return | No internal enterprise data, personal data or named supplier | Complete card, roles and boundary; failure is not packaged as deployment | Return failure mode to spatial host, job and equipment list |
+| Funding | Open-call or authorised sponsor/grant role → developer, co-designer, operator | Public rules → transparent application → auditable close-out | No unauthorised finance or trade secrets | Authorisation, conflicts, rights and pay; otherwise return | Tune resource categories by paid maintenance hours, not investment estimate |
+| Talent | Developer community, trainer and paid co-design organiser → research, maintenance, care and access users | Need/skill → paid learning → capability record → retraining/exit | No ranking, emotion recognition or worker-profile trade | Informed, paid, optional and human-reviewed; otherwise no recruitment | Update shifts and service SLA by real maintenance load |
+| Compute | Test-environment, equipment and platform role → developer, auditor, scenario operator | Public/synthetic sample → sandbox → human check → archive | No production connection; minimum sample by default | Permission, cost, logs and shutdown; rate-limit, stop and fall back to human | Adjust test hours and equipment hosting |
+| Data | Data governance, scenario proposer and public-source maintainer → service, audit and public users | Source register → minimum input → human review → redacted summary | No personal trace, emotion, performance or unauthorised internal data | Purpose, licence, retention and reliability disclosure; isolate, delete and stop on breach | Shrink data/scenario when false positives or review load rises |
+| Scenarios | Scenario, public-space, test and audit roles → workers, visitors, community, shops and developers | Open intake → G0/G1 → 90-day reversible test → G3 → scale/revise/stop | Non-personal, non-production, withdrawable; no automatic punishment | Three unified cards + independent evidence chain; stop and remove on failure | Return metrics to route, ground floor, staffing and rhythm |
+
+## Three Industry Test Cards: Unified Evidence and Stop Rules
+
+All three tests use non-personal, non-production input and require human review, auditable output and a clear spatial/operational decision impact.
+
+| Test | Hypothesis and non-personal input | Spatial host | Human review and auditable output | Stop condition | Decision impact and wing link |
+| --- | --- | --- | --- | --- | --- |
+| TEST-01 Equipment-first predictive maintenance | Authorised equipment state, fault codes, maintenance windows and synthetic samples; remove names, IDs, traces and performance fields | Zhongzhiyuan Open Maintenance Depot / Equipment Test Lane, a concept type | Technician, operator and data governance review; fault categories, confirmation time and false/true error log, never a worker score | Scoring, covert tracking, unauthorised logs, unexplained output or safety risk | Tune maintenance desk, equipment list and training; Tech-Service Wing supplies method interface, Scenario Wing receives failure feedback |
+| TEST-02 Privacy-preserving shift-route assistance | Anonymous issue cards, aggregate route/access observations, inspections and public transit information; no personal traces | Shift Commons Spine, heritage-park public route and Shift Stations | Accessibility representative, night worker, transport/public-space professional and operator review; route issues, staffed guidance and repair record | Missing human guidance, stored traces, blocked main flow or failed safety audit | Tune guidance, lighting, rest and staffed hours; Scenario Wing receives experience, Tech-Service Wing only shares methods |
+| TEST-03 Human–AI service-continuity handover | Synthetic requests, anonymous failure categories, timestamps and human results; no identity retention | AI Origin Community Handover Desk and staffed Shift Station interface | Service worker, care/access representative, operator and independent reviewer; handover completeness, response time and appeal status | AI closes human access, misses an urgent request, blocks access or fails to disclose unreliability | Tune desk, signs, staffing and training; Scenario Wing opens tests, Tech-Service Wing exchanges methods |
+
+## Agent.4 / Agent.5: Spatial Stitching and the Jing-Zhang–Zhongguancun–AI Culture Chain
+
+East–west stitching is not a new alignment: the western **Zhongguancun Tech-Service Wing** provides public methods, rights clearance and partner-entry conditions; the **Shift Commons Spine** provides the public interface; the eastern **Xiaoyuehe Scenario Wing** receives scenario intake, experience feedback and test returns. The north–south public sequence is Zhongzhiyuan—AI Origin Community—Dazhongsi, not a road, rail or statutory boundary.
+
+![Spatial stitching and Jing-Zhang heritage public-experience route](assets/figures/spatial-culture-route.en.svg)
+
+The culture narrative follows “public source → interpretation → experience → re-review” [source:JZ-PARK-OPENING] [source:JZ-PARK-PHASE2]:
+
+| Narrative layer | Public-source anchor | Experience translation |
+| --- | --- | --- |
+| Jing-Zhang railway heritage resources | Public reports on Jing-Zhang Railway Heritage Park and taskbook requirements | Timestamps, rail lines and station memory; no unauthorised image or heritage-grade claim |
+| Zhongguancun innovation culture | Official announcement and public AI innovation/scenario background | Open knowledge, near-campus innovation, conversion and public access |
+| AI new culture | Taskbook and this package's authored evidence chain | Human fallback, auditable tests, visible maintenance and no worker surveillance |
+| Wayfinding, landmarks and events | Authored diagrams and operations cards | Rail-line wayfinding, Shift Zero Pavilion, Honor Wall, open-maintenance days and bilingual method sharing |
+
+Precise nodes, heritage grade, access conditions and event permissions remain pending verification; only G0/G1 and professional review can move them into later research.
+
+## Agent.6 Long-term Operations and G0–G4 Responsibility/Resource Register
+
+Long-term operation is a repeatable input–output–frequency–exit loop, not a one-off festival. The structured attachment records role-level RACI and resource categories across G0–G4; the operating map is:
+
+| Operating item | Role type | Input → output | Frequency | Exit condition |
+| --- | --- | --- | --- | --- |
+| Event brand/IP | Brand steward + rights reviewer | Public theme/authorisation → bilingual pack and credit record | Annual theme, quarterly review | No release when rights or facts cannot be verified |
+| Developer community | Community steward + worker representative | Public problems/paid seats → reproducible experiments and maintenance knowledge | Monthly open-maintenance day, quarterly audit | Pause without pay, appeal or provenance |
+| Scenario intake/open tests | Scenario steward + data governance | Non-personal application/test card → G0/G1, 90-day test and failure record | Batches; G3 decision | Stop when data, safety or human fallback fails |
+| Public experience | Public-space operator + accessibility representative | Hours/routes/staff/feedback → wayfinding and service receipt | Daily; semiannual drill | Close service when staffed access or route fails |
+| International communication | Editor + independent evidence reviewer | Bilingual chain/licence/status → method brief and links | Quarterly/annual | Do not publish when concept/reviewed/selected/implemented is blurred |
+| Partner entry | Open-call steward + conflict reviewer | Public application/capability/disclosure → role-level task card | Application batches | Return unauthorised, named-supplier or promise language |
+| Pilot evaluation | Independent auditor + operator + worker/access representatives | Shift/failure/appeal/output logs → review and shutdown record | Every 90 days or major event | Stop without independent review or after a red line |
+| Conversion path | Professional design team + operator + asset owner | Official data/survey/authorisation/reviewed concept → next research task | After G4 as project requires | Do not enter implementation without boundary, professional and title confirmation |
+
+G0 requires paid co-design and human facilitation; G1 requires site, title, fire, accessibility and removal conditions; G2 is non-production and reversible only; G3 requires independent privacy, labour, accessibility and spatial-evidence review; G4 supplies professional input to scale, revise or stop. A failed gate is a return path, never an external level or implementation authorisation.
 
 ## Metrics, Area Recalculation, and Compliance Matrix
 

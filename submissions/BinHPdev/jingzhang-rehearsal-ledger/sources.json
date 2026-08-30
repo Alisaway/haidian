@@ -1,0 +1,127 @@
+{
+  "schema_version": "0.1.0",
+  "sources": [
+    {
+      "id": "SITE-PACKAGE",
+      "path": "brief/site-package/",
+      "source_type": "official_public",
+      "usage": "Project brief, enums, allowed design space, ranges, and schemas."
+    },
+    {
+      "id": "SOURCE-REGISTRY",
+      "path": "data/source_registry.json",
+      "source_type": "repository_public_registry",
+      "usage": "Public/cleared/provisional source usability registry; distinguishes formal-ready, background-only, provisional-only, and needs-review materials."
+    },
+    {
+      "id": "PROCESSED-FACT-PACK",
+      "path": "data/processed/agent_fact_pack.md",
+      "source_type": "repository_processed_reference",
+      "usage": "Agent-readable navigation layer for scopes, required tasks, source-use boundaries, and missing-data checklist; not a new authority source."
+    },
+    {
+      "id": "BOUNDARY-SOURCE",
+      "path": "brief/site-package/geometry/provisional_boundaries.geojson",
+      "source_type": "agent_inferred_from_public_data",
+      "usage": "Submitted site boundary geometry source (provisional)."
+    },
+    {
+      "id": "KEY-AREA-SOURCE",
+      "path": "brief/site-package/geometry/provisional_boundaries.geojson",
+      "source_type": "agent_inferred_from_public_data",
+      "usage": "Three required detailed-design key area boundaries (provisional)."
+    },
+    {
+      "id": "OFFICIAL-ANNOUNCEMENT",
+      "url": "https://ghzrzyw.beijing.gov.cn/zhengwuxinxi/tzgg/hd/202605/t20260509_4643047.html",
+      "source_type": "official_public",
+      "usage": "Official announcement tasks, scope levels, key areas, language, and deliverable context."
+    },
+    {
+      "id": "AGENT-TASKBOOK",
+      "path": "brief/site-package/agent_taskbook.json",
+      "source_type": "user_provided_cleared",
+      "usage": "Agent-facing open-call principles, six required agent tasks, scenario/branding/operation requirements, and boundary clause."
+    },
+    {
+      "id": "SEB-OPEN-CONTRIBUTION",
+      "url": "https://github.com/open-city-ai/haidian/issues/2549",
+      "source_type": "user_provided_cleared",
+      "license": "CC BY-SA 4.0",
+      "usage": "Service Equivalence Baseline v0.5.0, an open contribution granted for any proposal to adopt. Basis for the AI-off equivalent baseline in simulation.json; this proposal's instantiation is shared under the same ShareAlike terms."
+    },
+    {
+      "id": "UPSTREAM-ISSUE-1029",
+      "url": "https://github.com/open-city-ai/haidian/issues/1029",
+      "source_type": "agent_inferred_from_public_data",
+      "usage": "Reported centroid discrepancy of PROV-KEY-003 in the provisional geometry (~2.26 km). Basis for treating the southern area as the South Gateway with a registered location-uncertainty area."
+    },
+    {
+      "id": "PARTICIPANT-GENERATED-EVIDENCE",
+      "path": "simulation.json",
+      "source_type": "agent_generated_design",
+      "usage": "Offline synthetic rehearsal ledger, fixed seed 20260824. Not field measurement; no personal data."
+    },
+    {
+      "id": "CASE-BJ-AV-REGULATION",
+      "url": "https://www.beijing.gov.cn/zhengce/dfxfg/202501/t20250103_3980149.html",
+      "source_type": "official_public",
+      "usage": "《北京市自动驾驶汽车条例》(adopted 2024-12-31, in force 2025-04-01), Beijing Municipal Government portal. Cited only for its staged sequence (道路测试→示范应用→道路应用试点), the safety operator's take-over duty (Art. 37) and incident reporting (Art. 40). No figures or commitments are taken from it. Checked accessible 2026-08-25."
+    },
+    {
+      "id": "CASE-BJ-AV-TEST-MEASURES",
+      "url": "https://www.beijing.gov.cn/zhengce/zhengcefagui/202601/t20260120_4448902.html",
+      "source_type": "official_public",
+      "usage": "《北京市自动驾驶汽车道路测试与示范应用办法（试行）》(dated 2025-10-24, published 2026-01-20). Cited for the prerequisite of a third-party closed-site test report and the order 有安全员→无安全员道路测试→示范应用. Checked accessible 2026-08-25."
+    },
+    {
+      "id": "CASE-BJ-ADZ-ETDZ",
+      "url": "https://kfqgw.beijing.gov.cn/zwgkkfq/ztzl/lqztkfq/cxal/qg/202605/t20260521_4660307.html",
+      "source_type": "official_public",
+      "usage": "Beijing Economic-Technological Development Area (BDA) government website, national case page on the construction model of the High-level Autonomous Driving Demonstration Zone. Cited only to locate the zone in the BDA and for its staged road-test/demonstration/operation logic as the coordination interface with 经开区. Area, investment and company figures on the page are deliberately not used. Checked accessible 2026-08-25."
+    },
+    {
+      "id": "CASE-CA-ADM-DIRECTIVE",
+      "url": "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592",
+      "source_type": "official_public",
+      "usage": "Government of Canada, Treasury Board Secretariat, Directive on Automated Decision-Making (effective 2019-04-01; current version 2023). Cited for impact levels I-IV, publication of Algorithmic Impact Assessments before production (s. 6.1.1), human intervention, peer review and recourse (s. 6.4). Access note: the site returns a WAF block page to scripted clients but opens normally in a browser; HTTP 200 confirmed 2026-08-25."
+    },
+    {
+      "id": "CASE-NASA-ASRS",
+      "url": "https://asrs.arc.nasa.gov/",
+      "source_type": "official_public",
+      "usage": "NASA Aviation Safety Reporting System official website. Cited for its stated principles 'Confidential. Voluntary. Non-Punitive.' as the precedent for blame-free failure reporting in the rehearsal ledger. Checked accessible 2026-08-25."
+    },
+    {
+      "id": "CASE-NL-ALGORITHM-REGISTER",
+      "url": "https://algoritmes.overheid.nl/en",
+      "source_type": "official_public",
+      "usage": "Algoritmeregister of the Dutch government (the former City of Amsterdam register URL now redirects here). Cited for the practice of government organisations, including Gemeente Amsterdam, publishing the impactful algorithms they use. Checked accessible 2026-08-25."
+    },
+    {
+      "id": "CASE-HEL-AI-REGISTER",
+      "url": "https://ai.hel.fi/en/ai-register/",
+      "source_type": "official_public",
+      "usage": "City of Helsinki AI Register. Cited as a precedent for a public, resident-facing register of municipal AI systems with feedback. Checked accessible 2026-08-25."
+    },
+    {
+      "id": "CASE-BCN-SUPERBLOCKS",
+      "url": "https://ajuntament.barcelona.cat/superilles/en/",
+      "source_type": "official_public",
+      "usage": "Ajuntament de Barcelona, Superilles (Superblocks) official programme website. Cited for the practice of trialling street changes with lightweight, adjustable interventions before permanent works (Poblenou superblock from 2016) as the precedent for reversible seam pilots. Checked accessible 2026-08-25."
+    },
+    {
+      "id": "CASE-CN-GBF-2020-45",
+      "url": "https://www.gov.cn/zhengce/content/2020-11/24/content_5563804.htm",
+      "source_type": "official_public",
+      "usage": "国务院办公厅《关于切实解决老年人运用智能技术困难的实施方案》(国办发〔2020〕45号), gov.cn. Cited for the requirement to keep traditional service channels in parallel with intelligent services (保留线下办理渠道、不得拒收现金) as the policy basis of the AI-off equivalent baseline. Checked accessible 2026-08-25."
+    },
+    {
+      "id": "FONT-NOTO-SANS-SC",
+      "url": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "source_type": "user_provided_cleared",
+      "license": "SIL Open Font License 1.1",
+      "usage": "Noto Sans SC v2.004 (Copyright 2014-2021 Adobe, Reserved Font Name `Source`). Instanced to weights 400 and 700 with fontTools.varLib.instancer, subset with pyftsubset to the characters this package actually uses, encoded as WOFF2 and embedded as a base64 data: URI in report/proposal.html, report/proposal.en.html, visual/index.html and visual/index.en.html. Embedded rather than linked because the review environment opens the HTML from a file:// URI in headless Chromium, where relative font files are CORS-blocked and remote fonts are forbidden by this repository. As a Modified Version under OFL clause 3 it is not published under the Reserved Font Name; the CSS family is `JZSansSC`. Full licence text is reproduced in report/copyright_statement.md."
+    }
+  ]
+}

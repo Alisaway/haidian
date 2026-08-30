@@ -1,0 +1,162 @@
+{
+  "schema_version": "1.0",
+  "title": "京张相遇公地离线合成复演台账",
+  "summary": "把既有相遇票正例、预期拒绝样例与众智园空间夹具登记为逐条可复算任务。本台账只证明离线规则按预期放行或拒绝，不代表现场可用、安全、获授权、获得公众接受或产生实施绩效。",
+  "status": "validated_offline_synthetic",
+  "method": "使用包内无第三方依赖的 Node.js runner，对固定 JSON Schema 子集、跨字段规则、三份正例、五份预期违规样例与 S01 空间夹具进行确定性离线复演；不联网、不调用在线模型、不使用个人数据。",
+  "replay_command_from_submission_root": "node visual/assets/run-encounter-ticket-validation.js --check",
+  "source_result": "visual/assets/encounter-ticket.validation.json",
+  "identifier_contract": {
+    "scenario_id": "Central repository scenario slug declared in proposal front matter.",
+    "encounter_scenario_id": "Package-local S01–S12 identifier declared in visual/assets/encounter-ticket.scenarios.json.",
+    "source_case_id": "Concrete ticket or spatial-fixture case identifier used by the deterministic replay."
+  },
+  "task_count": 13,
+  "tasks": [
+    {
+      "task_id": "SIM-TICKET-PASS-01",
+      "source_case_id": "SYNTHETIC-TICKET-S01-001",
+      "scenario_id": "enterprise-service-copilot",
+      "encounter_scenario_id": "S01",
+      "outcome": "expected_pass_success",
+      "expected_behavior_zh": "字段、时序、授权、主持与权利条件完整时放行。",
+      "expected_behavior_en": "Release when field, chronology, authority, host, and rights conditions are complete."
+    },
+    {
+      "task_id": "SIM-TICKET-PASS-02",
+      "source_case_id": "SYNTHETIC-TICKET-S02-001",
+      "scenario_id": "ai-cultural-guide",
+      "encounter_scenario_id": "S02",
+      "outcome": "expected_pass_success",
+      "expected_behavior_zh": "有来源、多语与人工转接条件完整时放行。",
+      "expected_behavior_en": "Release when source, multilingual, and human-transfer conditions are complete."
+    },
+    {
+      "task_id": "SIM-TICKET-PASS-03",
+      "source_case_id": "SYNTHETIC-TICKET-S03-001",
+      "scenario_id": "public-safety-operations-review",
+      "encounter_scenario_id": "S03",
+      "outcome": "expected_pass_success",
+      "expected_behavior_zh": "无障碍活动沙箱的合成条件完整时放行。",
+      "expected_behavior_en": "Release when the synthetic accessible-event sandbox conditions are complete."
+    },
+    {
+      "task_id": "SIM-TICKET-REJECT-01",
+      "source_case_id": "NEG-01-INVALID-DATE-FORMAT",
+      "scenario_id": "enterprise-service-copilot",
+      "encounter_scenario_id": "S01",
+      "outcome": "expected_rejection_success",
+      "expected_behavior_zh": "日期格式不合法时拒绝。",
+      "expected_behavior_en": "Reject an invalid date format."
+    },
+    {
+      "task_id": "SIM-TICKET-REJECT-02",
+      "source_case_id": "NEG-02-TIME-ORDER",
+      "scenario_id": "enterprise-service-copilot",
+      "encounter_scenario_id": "S01",
+      "outcome": "expected_rejection_success",
+      "expected_behavior_zh": "开始、结束或删除时间顺序错误时拒绝。",
+      "expected_behavior_en": "Reject an invalid start, end, or deletion chronology."
+    },
+    {
+      "task_id": "SIM-TICKET-REJECT-03",
+      "source_case_id": "NEG-03-PROHIBITED-FIELD",
+      "scenario_id": "enterprise-service-copilot",
+      "encounter_scenario_id": "S01",
+      "outcome": "expected_rejection_success",
+      "expected_behavior_zh": "请求禁止字段或越过最少数据白名单时拒绝。",
+      "expected_behavior_en": "Reject prohibited fields or data outside the minimum-data allowlist."
+    },
+    {
+      "task_id": "SIM-TICKET-REJECT-04",
+      "source_case_id": "NEG-04-AUTHORIZED-WITHOUT-HOST",
+      "scenario_id": "enterprise-service-copilot",
+      "encounter_scenario_id": "S01",
+      "outcome": "expected_rejection_success",
+      "expected_behavior_zh": "没有具名真人主持却声明已授权时拒绝。",
+      "expected_behavior_en": "Reject an authorised state without a named human host."
+    },
+    {
+      "task_id": "SIM-TICKET-REJECT-05",
+      "source_case_id": "NEG-05-PUBLISHED-PENDING-RIGHTS",
+      "scenario_id": "ai-cultural-guide",
+      "encounter_scenario_id": "S02",
+      "outcome": "expected_rejection_success",
+      "expected_behavior_zh": "权利未清却声明公开发布时拒绝。",
+      "expected_behavior_en": "Reject publication while rights remain uncleared."
+    },
+    {
+      "task_id": "SIM-SPATIAL-PASS-01",
+      "source_case_id": "SPATIAL-PASS-01",
+      "scenario_id": "public-safety-operations-review",
+      "encounter_scenario_id": "S01",
+      "outcome": "expected_pass_success",
+      "expected_behavior_zh": "公众路径、隔离、值守、实体急停、AI 关闭旁路与复原六项齐全时通过。",
+      "expected_behavior_en": "Pass when public path, separation, duty holder, physical stop, AI-off bypass, and restoration are all present."
+    },
+    {
+      "task_id": "SIM-SPATIAL-REJECT-01",
+      "source_case_id": "SPATIAL-REJECT-NO-SEPARATION",
+      "scenario_id": "public-safety-operations-review",
+      "encounter_scenario_id": "S01",
+      "outcome": "expected_rejection_success",
+      "expected_behavior_zh": "缺少测试隔离时拒绝。",
+      "expected_behavior_en": "Reject when test separation is missing."
+    },
+    {
+      "task_id": "SIM-SPATIAL-REJECT-02",
+      "source_case_id": "SPATIAL-REJECT-NO-DUTY-HOLDER",
+      "scenario_id": "public-safety-operations-review",
+      "encounter_scenario_id": "S01",
+      "outcome": "expected_rejection_success",
+      "expected_behavior_zh": "缺少具名值守与停止责任时拒绝。",
+      "expected_behavior_en": "Reject when named duty and stop responsibility are missing."
+    },
+    {
+      "task_id": "SIM-SPATIAL-REJECT-03",
+      "source_case_id": "SPATIAL-REJECT-BLOCKED-BYPASS",
+      "scenario_id": "public-safety-operations-review",
+      "encounter_scenario_id": "S01",
+      "outcome": "expected_rejection_success",
+      "expected_behavior_zh": "AI 关闭旁路或退出受阻时拒绝。",
+      "expected_behavior_en": "Reject when the AI-off bypass or exit is blocked."
+    },
+    {
+      "task_id": "SIM-SPATIAL-REJECT-04",
+      "source_case_id": "SPATIAL-REJECT-NO-RESTORATION",
+      "scenario_id": "public-safety-operations-review",
+      "encounter_scenario_id": "S01",
+      "outcome": "expected_rejection_success",
+      "expected_behavior_zh": "没有撤场复原责任与清单时拒绝。",
+      "expected_behavior_en": "Reject when strike-and-restoration responsibility or checklist is missing."
+    }
+  ],
+  "baselines": {
+    "urban_llm_harness": {
+      "status": "validated_offline_synthetic",
+      "claim_scope": "十三条固定验证任务是否出现预期放行或预期拒绝；不是服务成功率或现场绩效。",
+      "replayable": true,
+      "success_rate": 1
+    },
+    "encounter_ticket_contract_replay": {
+      "status": "validated_offline_synthetic",
+      "claim_scope": "固定相遇票与 S01 空间夹具的确定性规则复演。",
+      "replayable": true,
+      "assertions_passed": 18,
+      "assertions_failed": 0,
+      "positive_fixtures_passed": 3,
+      "expected_invalid_tickets_rejected": 5,
+      "spatial_boolean_combinations_checked": 64,
+      "spatial_complete_combinations_passed": 1,
+      "expected_spatial_cases_rejected": 4,
+      "field_release": false
+    }
+  },
+  "limitations": [
+    "No live participant, venue, operator, public service, site condition, accessibility route, or field operation was tested.",
+    "The thirteen task outcomes mean that the deterministic checker produced the expected pass or rejection; they are not thirteen successful urban-service encounters.",
+    "The repository CI treats participant code as static evidence and does not execute it.",
+    "The package runner implements and fail-closes around the keyword subset used by this package; it is not a complete JSON Schema Draft 2020-12 implementation.",
+    "Field release remains blocked pending an authorised operator, a four-party site walk, verified venue conditions, and professional review."
+  ]
+}

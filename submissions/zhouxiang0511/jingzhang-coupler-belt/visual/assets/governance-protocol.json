@@ -1,0 +1,411 @@
+{
+  "schema_version": "1.0.0",
+  "protocol_id": "CEC-12",
+  "title_zh": "共智契约·车钩联锁协议",
+  "title_en": "Co-Intelligence Covenant: Coupler Interlock Protocol",
+  "purpose_zh": "把十二个 AI 场景从概念卡转化为可审计、可停机、可回退的共智运行协议——连接要标准化，退出要自由，安全要兜底。",
+  "purpose_en": "Turns the twelve AI scenarios from conceptual cards into an auditable, pausable, reversible co-intelligence operating protocol: standardize connections, keep exit free, guarantee safety as the backstop.",
+  "identity_system": {
+    "mark": "visual/assets/logo-mark.svg",
+    "name_zh": "京张·共智列车",
+    "name_en": "JingZhang Co-Intelligence Express",
+    "operating_phrase_zh": "连接要标准化，退出要自由，安全要兜底",
+    "operating_phrase_en": "Standardize connections, keep exit free, guarantee safety",
+    "colors": [
+      "#16324F",
+      "#E8A13D",
+      "#8A94A0"
+    ],
+    "accessibility": "status expressed by both text and shape, not color alone"
+  },
+  "governance": {
+    "principle_zh": "城市即列车，AI 即车厢，人是车长——任何智能体接入公共场景前须通过'信号联锁'式人工复核；总开关在人手里。",
+    "principle_en": "The city is a train, AI are carriages, humans are conductors — any agent entering a public scenario must pass signal-interlocking-style human review; the master switch stays in human hands.",
+    "states": [
+      "closed",
+      "observation",
+      "pilot",
+      "open",
+      "pause",
+      "rollback"
+    ],
+    "non_negotiables": [
+      "no_biometric_identification",
+      "no_individual_credit_scoring",
+      "no_automated_admission_denial",
+      "accessible_manual_service_always_available",
+      "public_log_and_appeal_channel_required",
+      "master_switch_in_human_hands"
+    ]
+  },
+  "required_gate_fields": [
+    "id",
+    "name_zh",
+    "name_en",
+    "public_task",
+    "ai_limited_role",
+    "minimum_data",
+    "human_final_authority",
+    "no_ai_fallback",
+    "stop_triggers",
+    "exit_asset"
+  ],
+  "gate_records": [
+    {
+      "id": "SC-01",
+      "name_zh": "车钩广场·开源接口演示场",
+      "name_en": "Coupler Plaza open-interface demo",
+      "public_task": "开源接口与车钩符号的双语展示、现场演示与开发者交流",
+      "ai_limited_role": "演示脚本建议、交互问答辅助",
+      "minimum_data": [
+        "展示与交互日志(匿名聚合)"
+      ],
+      "human_final_authority": "展区负责人",
+      "no_ai_fallback": [
+        "固定展板与人工讲解",
+        "纸质指引"
+      ],
+      "stop_triggers": [
+        "安全事件",
+        "版权争议24小时未处理"
+      ],
+      "exit_asset": [
+        "可拆卸展台",
+        "人工撤场路线"
+      ]
+    },
+    {
+      "id": "SC-02",
+      "name_zh": "信号联锁塔·AI治理体验中心",
+      "name_en": "Interlocking Tower AI governance experience",
+      "public_task": "把'信号联锁'式人工复核机制转译为公众可理解的治理体验",
+      "ai_limited_role": "复核状态可视化、规则问答",
+      "minimum_data": [
+        "复核状态(非个人信息)"
+      ],
+      "human_final_authority": "治理值班员",
+      "no_ai_fallback": [
+        "实体信号灯与人工挂牌",
+        "人工讲解"
+      ],
+      "stop_triggers": [
+        "状态显示与实际不符",
+        "安全事件"
+      ],
+      "exit_asset": [
+        "联锁演示装置可拆除",
+        "人工巡检表"
+      ]
+    },
+    {
+      "id": "SC-03",
+      "name_zh": "始发站台·人才服务大厅",
+      "name_en": "Origin Platform talent service hall",
+      "public_task": "人才/学生的预约咨询、政策匹配与一站式服务",
+      "ai_limited_role": "预约排序建议、政策问答辅助",
+      "minimum_data": [
+        "预约与服务记录(脱敏)"
+      ],
+      "human_final_authority": "服务台经理",
+      "no_ai_fallback": [
+        "现场窗口与人工叫号",
+        "纸质预约"
+      ],
+      "stop_triggers": [
+        "隐私泄露",
+        "服务瘫痪",
+        "投诉超时"
+      ],
+      "exit_asset": [
+        "窗口设施保留",
+        "人工服务台账"
+      ]
+    },
+    {
+      "id": "SC-04",
+      "name_zh": "全栈装配线·算力与中试车间",
+      "name_en": "Full-stack assembly line compute & pilot workshop",
+      "public_task": "企业/工程师的算力使用、模型评测与中试验证",
+      "ai_limited_role": "评测任务调度、基准对比",
+      "minimum_data": [
+        "算力使用与模型评测数据(合规)"
+      ],
+      "human_final_authority": "实验室安全官",
+      "no_ai_fallback": [
+        "人工评测流程",
+        "线下登记"
+      ],
+      "stop_triggers": [
+        "安全近失",
+        "无安全官值守"
+      ],
+      "exit_asset": [
+        "评测设备清单",
+        "数据备份与销毁流程"
+      ]
+    },
+    {
+      "id": "SC-05",
+      "name_zh": "成果市集·AI应用体验街区",
+      "name_en": "Achievements fair AI experience block",
+      "public_task": "公众/企业的 AI 应用体验、小商户公平轮换与消费服务",
+      "ai_limited_role": "摊位轮换建议、需求预测",
+      "minimum_data": [
+        "消费与体验数据(匿名聚合)"
+      ],
+      "human_final_authority": "市集管理委员会",
+      "no_ai_fallback": [
+        "公开抽签轮换",
+        "现金通道"
+      ],
+      "stop_triggers": [
+        "分配偏差",
+        "支付排斥",
+        "商户配额失守"
+      ],
+      "exit_asset": [
+        "共享家具可撤回",
+        "轮换台账"
+      ]
+    },
+    {
+      "id": "SC-06",
+      "name_zh": "铁路记忆AI导览",
+      "name_en": "Railway memory AI guided tour",
+      "public_task": "游客/居民的铁路遗产双语导览与文化记忆体验",
+      "ai_limited_role": "导览路线建议、历史问答辅助",
+      "minimum_data": [
+        "导览日志(匿名)"
+      ],
+      "human_final_authority": "文化讲解员",
+      "no_ai_fallback": [
+        "纸质导览与人工讲解",
+        "固定标识"
+      ],
+      "stop_triggers": [
+        "事实错误",
+        "版权争议"
+      ],
+      "exit_asset": [
+        "导览设施可移除",
+        "档案索引保留"
+      ]
+    },
+    {
+      "id": "SC-07",
+      "name_zh": "机器人低速配送示范线",
+      "name_en": "Robot low-speed delivery demo line",
+      "public_task": "居民/商户的低速配送、无障碍接驳示范",
+      "ai_limited_role": "配送调度、障碍提醒",
+      "minimum_data": [
+        "配送轨迹与事件(匿名聚合)"
+      ],
+      "human_final_authority": "配送安全员",
+      "no_ai_fallback": [
+        "人工配送",
+        "固定时控"
+      ],
+      "stop_triggers": [
+        "交通事故",
+        "路图不符",
+        "危险拥挤"
+      ],
+      "exit_asset": [
+        "配送机器人可撤回",
+        "人工配送预案"
+      ]
+    },
+    {
+      "id": "SC-08",
+      "name_zh": "AI+医疗健康服务驿站",
+      "name_en": "AI+health service station",
+      "public_task": "居民/老人的健康咨询、预诊分流与现场办理",
+      "ai_limited_role": "常见问题预分流、预约建议",
+      "minimum_data": [
+        "健康咨询(授权脱敏,不外传)"
+      ],
+      "human_final_authority": "持证医护人员",
+      "no_ai_fallback": [
+        "人工分诊",
+        "纸质登记"
+      ],
+      "stop_triggers": [
+        "隐私泄露",
+        "误诊风险",
+        "无持证人员"
+      ],
+      "exit_asset": [
+        "医疗设备清点",
+        "数据销毁流程"
+      ]
+    },
+    {
+      "id": "SC-09",
+      "name_zh": "AI+教育实验室",
+      "name_en": "AI+education lab",
+      "public_task": "师生的 AI 学习体验、课程辅助与能力评测",
+      "ai_limited_role": "学习路径建议、练习反馈",
+      "minimum_data": [
+        "学习行为(匿名聚合)"
+      ],
+      "human_final_authority": "授课教师",
+      "no_ai_fallback": [
+        "纸本练习",
+        "人工批改"
+      ],
+      "stop_triggers": [
+        "学生数据追踪",
+        "设备故障"
+      ],
+      "exit_asset": [
+        "教学设备可撤",
+        "成绩档案保留"
+      ]
+    },
+    {
+      "id": "SC-10",
+      "name_zh": "城市智能体应急演练场",
+      "name_en": "City agent emergency drill field",
+      "public_task": "治理机构/企业的应急响应演练与联锁机制测试",
+      "ai_limited_role": "情景推演、资源调度建议",
+      "minimum_data": [
+        "演练数据(受控)"
+      ],
+      "human_final_authority": "应急指挥员",
+      "no_ai_fallback": [
+        "人工演练流程",
+        "固定预案"
+      ],
+      "stop_triggers": [
+        "接管超时",
+        "安全路线中断"
+      ],
+      "exit_asset": [
+        "演练设施清单",
+        "复盘报告归档"
+      ]
+    },
+    {
+      "id": "SC-11",
+      "name_zh": "慢行接驳环·AI交通调度",
+      "name_en": "Slow mobility loop AI traffic dispatch",
+      "public_task": "通勤者/游客的慢行接驳、无障碍路线与出行信息",
+      "ai_limited_role": "接驳调度、路线提示",
+      "minimum_data": [
+        "路况与接驳(匿名聚合)"
+      ],
+      "human_final_authority": "交通值班经理",
+      "no_ai_fallback": [
+        "固定班次",
+        "人工调度"
+      ],
+      "stop_triggers": [
+        "路图不符",
+        "电梯无替代",
+        "危险拥挤"
+      ],
+      "exit_asset": [
+        "接驳设施保留",
+        "人工调度预案"
+      ]
+    },
+    {
+      "id": "SC-12",
+      "name_zh": "开源数据工坊·数字孪生工作台",
+      "name_en": "Open data workshop digital twin workbench",
+      "public_task": "开发者/规划团队的开源数据加工、数字孪生协作",
+      "ai_limited_role": "数据清洗建议、模型辅助",
+      "minimum_data": [
+        "开放数据加工(公开数据)"
+      ],
+      "human_final_authority": "数据管理员",
+      "no_ai_fallback": [
+        "人工数据流程",
+        "本地工具"
+      ],
+      "stop_triggers": [
+        "数据权利争议",
+        "排他准入"
+      ],
+      "exit_asset": [
+        "数据快照备份",
+        "工具链可迁移"
+      ]
+    }
+  ],
+  "field_tests": [
+    {
+      "id": "FT-01",
+      "name_zh": "无障碍任务链测试",
+      "name_en": "Accessible task chain test",
+      "method": "招募不同通行能力参与者,比较人工路线与 AI 建议的关键任务完成率与路线错误率",
+      "threshold": "关键任务全部完成且路线错误率<5%才通过",
+      "note": "获批试点中的验收规则,不宣称已实测"
+    },
+    {
+      "id": "FT-02",
+      "name_zh": "联锁人工复核演练",
+      "name_en": "Interlock human-review drill",
+      "method": "模拟传感器故障与状态冲突,要求人工在限定时间内接管",
+      "threshold": "5分钟内人工接管且安全路线连续才通过",
+      "note": "获批试点中的验收规则,不宣称已实测"
+    },
+    {
+      "id": "FT-03",
+      "name_zh": "无AI基线对照",
+      "name_en": "No-AI baseline comparison",
+      "method": "同人员同场地同时段,比较'无AI'服务与'AI辅助'服务的公平性/可达性/等待指标",
+      "threshold": "AI 需在安全公平可达不降低前提下证明净公共价值,否则撤模型不撤通行",
+      "note": "获批试点中的验收规则,不宣称已实测"
+    }
+  ],
+  "implementation_projects": [
+    {
+      "id": "P01",
+      "name_zh": "首百日底图与权属冻结",
+      "name_en": "First-100-days base map & rights freeze",
+      "phase": "P1",
+      "lead": "participant",
+      "gate": "官方底图/权属/审批问题清单冻结"
+    },
+    {
+      "id": "P02",
+      "name_zh": "首百日连续无障碍骨架",
+      "name_en": "First-100-days continuous accessible spine",
+      "phase": "P1",
+      "lead": "participant",
+      "gate": "路线审计与消防通达通过"
+    },
+    {
+      "id": "P03",
+      "name_zh": "三座可逆示范节点",
+      "name_en": "Three reversible demo nodes",
+      "phase": "P1",
+      "lead": "participant",
+      "gate": "三项现场测试通过,失败则撤回可移动构件"
+    },
+    {
+      "id": "P04",
+      "name_zh": "无AI基线运行",
+      "name_en": "No-AI baseline operation",
+      "phase": "P1",
+      "lead": "participant",
+      "gate": "固定导视/纸本规则/机械钥匙构成可独立运行公共服务"
+    },
+    {
+      "id": "P05",
+      "name_zh": "影子模式比较与公共利益评审",
+      "name_en": "Shadow-mode comparison & public-interest review",
+      "phase": "P1",
+      "lead": "shared",
+      "gate": "公共利益评审组作出保留/退修/撤除决定"
+    }
+  ],
+  "coverage_targets": {
+    "human_authority": 1.0,
+    "manual_fallback": 1.0,
+    "minimum_data": 1.0,
+    "stop_triggers": 1.0,
+    "exit_asset": 1.0
+  }
+}

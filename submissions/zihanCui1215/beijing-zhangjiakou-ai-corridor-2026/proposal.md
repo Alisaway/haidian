@@ -5,7 +5,9 @@ language: "zh"
 license: "CC-BY-4.0"
 proposal_format_version: "2"
 translation_file: "proposal.en.md"
-summary: "以京张铁路遗址公园为空间载体，融合百年铁路文化、中关村创新基因与AI技术革命的未来城市创新带设计方案，覆盖43.6平方公里，构建三带叠加的空间格局。"
+summary: "以京张铁路遗址公园为空间载体，把三核两翼组织成可验证、可接管、可退出的城市AI试验带；每个场景同时交付空间载体、普通服务路径、测量方法和公开回执。"
+tracks: ["jingzhang-heritage-narrative", "ai-origin-community", "civic-agent-governance"]
+iteration: "v8"
 ---
 
 # 百年京张AI创新带城市设计方案
@@ -17,6 +19,18 @@ summary: "以京张铁路遗址公园为空间载体，融合百年铁路文化�
 ## 摘要 / Abstract
 
 百年京张AI创新带是以京张铁路遗址公园为空间载体，融合百年铁路文化、中关村创新基因与AI技术革命的未来城市创新带。本方案统筹研究范围覆盖43.6平方公里（公告口径），总体设计范围（几何复算）为11.41平方公里 [metric:site_area_sqm]，从北五环到北京北站，构建三条带叠加的空间格局：百年京张文化带、都市AI生活体验带、AI融合创新带。
+
+**一页判读：这条带子在地上变成什么。** 方案可按四层理解：**空间层**是一轴三核两翼——7.5 km 遗产主轴承担连续公共空间，众智园/原点/大钟寺三核分别承担全栈验证、近校转化与城市首层应用，两翼接入高校、企业与社区；**服务层**规定每个 AI 场景都保留普通服务路径——推荐关闭后，柜台、导视、绿地与无障碍通行继续成立；**验证层**为 12 张场景卡逐项登记测量对象、对照方式、人工接管与停止条件（scenario_cards.json + check_cards.js）；**运营层**把公开问题经"沙盒—证据—复核—扩点/退出"回到年度公共价值审计（operations.json + check_ops.js）。任何 AI 场景进入公共空间前都要回答六件事：落在哪里、普通服务如何保留、测什么、谁复核、何时接管、怎样退出。
+
+![总体范围、关键片区与证据状态](assets/figures/site-overview.png)
+
+三核各有一句空间承诺，同一套“动词—空间—证据—回退”交付语法，让品牌识别与实施判断共用最短表达：
+
+| 片区 | 核心动词 | 最小可见交付 | 扩展前必须拿出的证据 | AI失效后的城市状态 |
+| --- | --- | --- | --- | --- |
+| 众智园 | **验** | 河岸—测试庭院—标准展廊连续序列 | 红队结果、人工接管记录、同任务能耗 | 普通花园街区与连续步行线 |
+| AI原点 | **转** | 校园接口—转化街—开放大厅连续序列 | 服务前后对照、权利审核、使用者复测 | 普通公共大厅、人工顾问与共享工坊 |
+| 大钟寺 | **用** | 站口—会客厅—体验街—公共绿地连续序列 | 高峰/平峰步行审计、停机演练、投诉记录 | 普通商业服务、人工柜台与公共绿地 |
 
 The Beijing-Zhangjiakou AI Innovation Corridor is a future-oriented urban innovation belt that integrates century-old railway culture, Zhongguancun's innovation DNA, and AI technology revolution, using the Beijing-Zhangjiakou Railway Heritage Park as its spatial carrier. This proposal covers 43.6 km², from North Fifth Ring Road to Beijing North Railway Station, building a three-layered spatial pattern: the Century-Old Beijing-Zhangjiakou Cultural Belt, the Urban AI Life Experience Belt, and the AI Integration Innovation Belt.
 
@@ -96,17 +110,17 @@ The Beijing-Zhangjiakou AI Innovation Corridor is a future-oriented urban innova
 - 年度开源贡献记录≥1000项
 - 全球开发者访问量≥10万人次/年
 
-**中期目标（2030-2035）**：
-- AI产业产值突破500亿元
-- 独角兽企业培育≥10家
-- 年度国际AI会议≥5场
-- 获得碑刻记录的贡献者≥100人
+**中期目标（2030-2035，情景假设非预测承诺，见 assumptions.json）**：
+- AI产业产值500亿元为情景值——放行证据为年度产值审计与在统企业清单，不达标即修正目标而非口径
+- 独角兽培育≥10家为情景值——以孵化器毕业企业与融资公开记录计数
+- 年度国际AI会议≥5场——以实际举办场次与参会名录登记
+- 荣誉墙入选≥100人——以 operations.json 台账与年度公示为准，编号不排名
 
-**远期目标（2035-2040）**：
-- 成为全球AI创新网络TOP10节点
-- 形成可复制推广的AI城市范式
-- 累计开源贡献≥10万项
-- 国际影响力对标硅谷、波士顿
+**远期方向（2035-2040，方向性目标，以阶段门放行而非日历推进）**：
+- 参与全球AI创新网络对话，位次以年度公开可验证指标为准，不预设名次承诺
+- 形成可复制推广的AI城市范式，以至少一个外部城市采纳组件库条目为放行证据
+- 开源贡献累计规模以年度审计口径计数，随荣誉墙台账同步公开
+- 国际影响力以国际参会者占比、外文媒体报道量等可测项逐年公开，不对标口号
 
 ### 2.3 核心指标 / Core Metrics
 
@@ -114,13 +128,13 @@ The Beijing-Zhangjiakou AI Innovation Corridor is a future-oriented urban innova
 |---------|---------|------|------|
 | 空间指标 | 统筹研究范围（公告） | 43.6 | km² |
 | | 总体设计范围（几何复算） | 11.41 | km² |
-| | 绿地率（复算） | 44.4 | % |
+| | 绿地率（复算，去重叠全层） | 44.4 | % |
 | | 容积率（平均，复算） | 1.13 | - |
 | | 建筑密度（平均，复算） | 8.7 | % |
 | 产业指标 | 科研用地（0802）占比（两带合计，几何复算） | 27.6 | % |
 | | 商业服务业用地（05）占比（两带合计，几何复算） | 18.4 | % |
-| 人口指标 | 就业人口容量（按复算GFA测算） | 10-12 | 万人 |
-| | 居住人口容量（按复算GFA测算） | 5-6 | 万人 |
+| 人口指标 | 就业人口容量（情景测算，见 assumptions.json） | 15-20 | 万人 |
+| | 居住人口容量（情景测算，见 assumptions.json） | 8-10 | 万人 |
 | 设施指标 | 教育设施覆盖半径 | 500 | m |
 | | 医疗设施覆盖半径 | 1000 | m |
 | | 公园绿地500m覆盖 | 100 | % |
@@ -129,9 +143,32 @@ The Beijing-Zhangjiakou AI Innovation Corridor is a future-oriented urban innova
 
 ## 三层范围工作框架 / Three-Level Scope Framework
 
-### 统筹研究范围产业与未来城市研究 / Coordinated Research Area: Industry and Future City Research
+三层范围采用“战略—结构—项目—反馈”链路组织，而不是图面比例的简单缩放。统筹研究范围（43.6 km²，公告口径）回答战略问题：海淀的AI能力如何形成跨区域创新网络，研究结论以组织结构与产业生态链呈现 [source:S003]。总体设计范围（11.41 km²，EPSG:4548 几何复算）回答结构问题：三核、两翼、一轴如何在用地条带上落位，边界与复算方法见 [data:geometry/site_boundary.geojson]，总面积与平均容积率取自 [metric:site_area_sqm] 与 [metric:average_far]。三处重点区（合计3.68 km²）回答项目问题：每平方公里级的空间如何被验证（验）、转化（转）、应用（用），分区面积复算见 [data:geometry/key_areas.geojson]。三层之间以指标联动衔接：下层运营数据只用于校正上层假设与试点清单，不直接生成法定规划结论；范围边界当前为临时口径，正式边界以规划主管部门批复文件为准，届时仅重算几何指标，不改动测量规则 [source:S001]。
 
-### 总体设计范围城市更新与控规深度城市设计 / Overall Design Area: Urban Renewal and Regulatory-Plan-Level Urban Design
+
+
+## 统筹研究范围产业与未来城市研究 / Coordinated Research Area: Industry and Future City Research
+
+在43.6平方公里的统筹研究层面，核心问题不是再建几个园区，而是让海淀的AI能力形成跨区域创新网络。本章以组织问题为主线：六环创新链（研究—开源—孵化—验证—规模化—城市反馈）把三类主体接入同一条价值链，两翼共享算力入口、法务知识产权、投融资、会展、教育和生活服务，避免重复建设。
+
+### 全球案例→设计转译（agent.2，8例可核验）[source:S010]
+
+案例不是装饰性引用：每例提取一条与本方案直接相关的经验教训，并落位到本方案的具体设计决定。来源 URL 与逐项分析见 sources.json S010。
+
+| 案例 | 关键事实 | 转译为本方案的设计决定 |
+|------|---------|----------------------|
+| 硅谷沙丘路（美） | 风投集聚但城市空间分裂 | 资本服务嵌入众智园加速器步行圈，不设独立金融区 |
+| 伦敦 King's Cross（英） | 铁路遗产再生成城市核心 | 京张遗址公园作为三核串联主轴，遗产廊道两侧低层过渡 |
+| 柏林 Adlershof（德） | 科研-产业同区共生 | 众智园"实验室-中试-总部"梯度布局，同区转化 |
+| 深圳南山科技园 | 高密度创新但职住失衡 | AI原点社区保留 11.9% 居住用地与低成本工位供给 |
+| 杭州未来科技城 | 政府主导快速集聚 | 本方案以开源社区自治替代单一政府运营（operations.json） |
+| 新加坡 one-north | 功能混合避免睡城 | 11 条带用地混合排布，无单一功能超30%条带 |
+| 柏叶市（日） | 环境技术全城实验 | 三类测试平台+场景卡沙箱机制（SC-07/08 + OPS-3） |
+| 剑桥 Kendall Square（美） | MIT产学研零距离 | 教育用地与科研用地相邻条带、共享实验室节点 |
+
+*转译方法：每例先问"它失败/成功在哪个空间机制"，再把该机制映射到本方案的用地条带、运营结构或场景卡。拒绝"借鉴国际经验"式的泛化引用。*
+
+## 总体设计范围城市更新与控规深度城市设计 / Overall Design Area: Urban Renewal and Regulatory-Plan-Level Urban Design
 
 ### 3.1 空间结构 / Spatial Structure
 
@@ -213,41 +250,9 @@ The Beijing-Zhangjiakou AI Innovation Corridor is a future-oriented urban innova
 
 > 证据索引：[source:S003] [standard:MOHURD-CONTROL-DETAILED-PLANNING] [data:geometry/key_areas.geojson]
 
-## 统筹研究范围产业与未来城市研究 / Coordinated Research Area: Industry and Future City Research
-
-### 产业现状与发展趋势 [source:S003] [source:S006] [source:S010]
-
-统筹研究范围覆盖43.6平方公里（公告口径 [source:S003]），横跨海淀区核心创新走廊。区域内现有中关村科技园区、清华科技园、北京大学科技园等国家级创新载体（名单见来源清单 S006）。企业数量与产值等产业统计口径需以官方年度统计公报为准，本方案不作未经核验的具体数值断言，仅在情景假设层面讨论产业集聚趋势（见 assumptions.json A002）。基于 [data:geometry/land_use.geojson] 的用地分析，现状产业用地占比约28%，主要集中在区域中段和中关村片区。
-
-### 未来城市发展策略 [standard:STD-BEIJING-MP] [standard:MOHURD-URBAN-DESIGN-MEASURES]
-
-以北京城市总体规划为纲 [standard:STD-BEIJING-MP]，落实科技创新中心核心定位。未来城市发展聚焦三大方向：一是AI技术创新策源，依托中关村创新基因建设AI算法、算力、数据三要素集聚区；二是AI+产业融合示范，推动AI与传统制造业、服务业、文化创意产业深度融合；三是智慧城市先行实验，构建数据驱动、智能感知的城市治理新范式 [standard:MOHURD-URBAN-DESIGN-MEASURES]。
-
-### 产业空间布局优化 [data:geometry/key_areas.geojson] [data:geometry/phasing.geojson]
-
-基于 [data:geometry/key_areas.geojson] 的三核空间分析，产业布局形成"三核引领、两翼拓展"的空间格局。三核即众智园AI自主创新加速区（几何复算约1.93 km² [metric:key_area_zhongzhiyuan_sqm]）、北京AI原点社区（约1.04 km² [metric:key_area_ai_origin_sqm]）、大钟寺AI产业聚集区（约0.72 km² [metric:key_area_dazhongsi_sqm]）——三处范围均为依据公告面积约数形成的临时粗略范围（provisional），待组织方发布正式边界后重算。两翼为中关村科技服务翼（向北对接清华园创新节点）与小月河场景赋能翼（向南延伸至西直门枢纽商圈）。分期实施策略详见 [data:geometry/phasing.geojson]，一期约3.42 km² [metric:phase_1_area_sqm] 重点建设AI创新载体，二期约4.57 km² [metric:phase_2_area_sqm] 完善配套体系，三期约3.42 km² [metric:phase_3_area_sqm] 提升城市品质。
-
-## 总体设计范围城市更新与控规深度城市设计 / Overall Design Area: Urban Renewal and Regulatory-Plan-Level Urban Design
-
-### 控规深度指标体系 [standard:MOHURD-CONTROL-DETAILED-PLANNING] [metric:average_far] [metric:building_density]
-
-总体设计范围参照控规深度城市设计方法组织指标体系 [standard:MOHURD-CONTROL-DETAILED-PLANNING]（本方案为概念性城市设计建议，非法定控规成果）。核心指标均按 EPSG:4548 投影对几何数据复算：平均容积率 1.13（详见 [metric:average_far]），建筑密度 8.7%（[metric:building_density]），绿地率 44.4%（[metric:green_ratio]），公共空间配建率 8.2%（[metric:public_space_ratio]）。用地分类参照2023自然资源部标准 [standard:MNR-LAND-USE-CLASSIFICATION-GUIDE]，在 [data:geometry/land_use.geojson] 中以标准化代码标注每一地块用途。
-
-### 城市更新策略 [depth:existing_conditions_diagnosis] [depth:retain_renovate_demolish]
-
-基于 [data:geometry/buildings.geojson] 的建筑质量摸底分析 [depth:existing_conditions_diagnosis]，制定"留、改、拆"三类更新策略：保留历史文化建筑及近年新建品质建筑，改造老旧低效空间为AI创新载体，拆除危房及严重不符合规划的建筑。拆改留比例约为保留55%、改造30%、拆除15% [depth:retain_renovate_demolish]。更新项目清单详见后续章节。
-
-### 空间结构与天际线管控 [standard:MOHURD-URBAN-DESIGN-MEASURES] [depth:height_massing_character]
-
-遵循城市设计管理办法 [standard:MOHURD-URBAN-DESIGN-MEASURES]，构建"三核两翼"空间结构（三核：众智园AI自主创新加速区、北京AI原点社区、大钟寺AI产业聚集区；两翼：中关村科技服务翼、小月河场景赋能翼）。天际线形成三级意象分区（概念性建议，非法定管控）：众智园区约45-95米、大钟寺区约35-80米、AI原点社区约18-45米，铁路遗产廊道两侧建议约100米宽低层过渡带（≤24米）[depth:height_massing_character]。建筑风貌延续京张铁路工业文化特色，在重点区域鼓励采用智能建造技术和AI生成设计方案。
-
-### 用地细分与强度控制 [depth:land_use_layout] [depth:development_intensity_controls]
-
-用地按2023自然资源部标准代码划分 [depth:land_use_layout]，共11类条带分区（见 [data:geometry/land_use.geojson]）。开发强度分区控制 [depth:development_intensity_controls]：大钟寺产业带复算容积率约2.30，众智园约1.89，AI原点社区约0.63，全域平均1.13。公共空间配建率8.2%（[metric:public_space_ratio]），道路用地（1207）占比约9.8%。
-
 ## 重点区域详细设计 / Detailed Design of Key Areas
 
-### 4.1 众智园AI自主创新加速区 / Zhongzhiyuan AI Self-Innovation Acceleration Area
+### 4.1 众智园AI自主创新加速区——英雄序列：河—庭—廊 / Zhongzhiyuan: River–Courtyard–Gallery
 
 **定位陈述 / Positioning Statement**：
 众智园AI自主创新加速区（原正文称"中关村AI加速核心区"，现按任务书与官方边界文件统一命名为"众智园AI自主创新加速区"）是AI硬科技创新的策源地，依托清华、北大等顶尖高校和国家实验室，聚焦大模型、芯片、算法等硬核技术突破，打造从基础研究到产业转化的完整创新链。
@@ -292,7 +297,7 @@ The Beijing-Zhangjiakou AI Innovation Corridor is a future-oriented urban innova
 | 就业人口容量（情景测算） | 3-4 万人 |
 | 高新技术企业占比 | ≥70% |
 
-### 4.2 北京AI原点社区 / Beijing AI Origin Community
+### 4.2 北京AI原点社区——英雄序列：校—街—厅 / Origin: Campus–Street–Hall
 
 **定位陈述 / Positioning Statement**：
 北京AI原点社区是全球开源开发者的精神家园，以开放、共享、协作为核心理念，构建开发者生态、开源社区和人才培养体系，让每一个代码贡献者都能在这里找到归属感和荣誉感。
@@ -342,7 +347,7 @@ The Beijing-Zhangjiakou AI Innovation Corridor is a future-oriented urban innova
 | 培训人才容量 | ≥5000 人/年 |
 | 开源贡献记录 | ≥1000 项/年 |
 
-### 4.3 大钟寺AI产业聚集区 / Dazhongsi AI Industry Cluster
+### 4.3 大钟寺AI产业聚集区——英雄序列：站—厅—街—绿 / Dazhongsi: Station–Hall–Street–Green
 
 **定位陈述 / Positioning Statement**：
 大钟寺AI产业聚集区是AI技术走向产业应用的高地，聚焦AI+医疗、AI+教育、AI+商业等重点领域，构建产业应用、场景验证和商业转化的完整链条，让AI技术真正服务于城市发展和民生改善。
@@ -404,13 +409,44 @@ The Beijing-Zhangjiakou AI Innovation Corridor is a future-oriented urban innova
 
 本方案以中关村国家自主创新示范区为核心依托 [source:S006]，构建覆盖算法研发、算力支撑、数据要素、场景应用全链条的AI创新生态体系 [standard:STD-URBAN-DESIGN]。区域内集聚清华大学、北京大学等顶尖高校AI研究院、智源研究院、启元实验室等国家级AI研究机构，形成从基础理论到工程实现的完整创新链路。基于 [data:geometry/land_use.geojson] 的空间分析，AI创新载体用地约占建设用地总量的12%，容积率均值2.8 [metric:average_far]，在 [depth:overall_spatial_structure] 中明确了三核驱动的空间结构。
 
-### 人才画像 [source:S007]
+### 人才与市民画像（九类，agent.3）[source:S007]
 
-面向AI产业链条上的四类核心人才——算法研究员、工程开发者、创业者和产业投资人——设计差异化的空间需求与服务配套。AI研究者社区配备算力中心、开源协作空间和学术交流设施；创业者社区提供孵化加速器和风投对接服务；投资人社区设置产业基金办公区和项目展示空间 [depth:overall_spatial_structure]。
+五类AI产业画像 + 四类本地生活画像，共同构成本方案的"为谁设计"：
 
-### AI+场景应用 [source:S006] [data:geometry/land_use.geojson]
+| 画像 | 核心诉求 | 空间供给 | 场景卡锚点 |
+|------|---------|---------|-----------|
+| P-researcher 算法研究员 | 算力可达、学术交流密度 | 众智园实验室组团、算力服务节点 | SC-12 |
+| P-developer 工程开发者 | 开源协作、身份认同、低成本工位 | AI原点社区开源工坊、荣誉墙 | SC-05/SC-07 |
+| P-founder 创业者 | 孵化加速、场景准入、资本对接 | 众智园加速器、大钟寺POC展厅 | SC-03 |
+| P-investor 产业投资人 | 项目可见度、尽调效率 | 大钟寺路演厅、产业白皮书发布点 | SC-10 |
+| P-student 学生 | 实习通道、可负担学习空间 | 教育用地共享实验室、文体设施 | SC-02/SC-10 |
+| P-resident 原住民/居民 | 生活不被更新打断、社区话语权 | 社区服务设施连续供给、共治屏 | SC-01/SC-09 |
+| P-elderly 老年人 | 无数字门槛的公共服务 | 康养之家、社区诊所人工兜底 | SC-01/SC-04 |
+| P-child-caregiver 儿童照护者 | 安全通学路径、就近托育 | 教育设施500m覆盖、慢行优先街道 | SC-02 |
+| P-accessibility 残障与数字弱势者 | 非数字替代通道、无障碍环境 | 全场景人工/线下替代（见场景卡降级列） | SC-01/SC-04/SC-09 |
 
-在交通出行、医疗健康、教育文化、商业消费、社区治理、城市运维六大领域部署AI+场景。基于 [data:geometry/land_use.geojson] 中公共管理与商业服务业用地的分布，在每个社区生活圈内至少配置一个AI体验节点。
+*画像体系与 [data:geometry/public_space.geojson] 节点及场景卡（scenario_cards.json）逐一锚定；四类生活画像的参与权由社区共治会保障（operations.json OPS-2，含居民代表 2 席）。*
+
+### AI+场景应用：十二张场景卡（agent.3）[source:S006] [data:geometry/public_space.geojson]
+
+十二张场景卡按"数据源→模型边界→人工复核→失败降级→KPI→退出条件"完整声明，结构化数据随包提交（`visual/assets/scenario_cards.json`，锚点可由 `visual/assets/check_cards.js` 逐卡核验）：
+
+| 卡 | 场景 | 数据源（类别） | 模型能力边界 | 人工复核 | 失败降级 | KPI | 退出条件 |
+|----|------|--------------|-------------|---------|---------|-----|---------|
+| SC-01 | 社区AI诊所 | 脱敏就诊需求汇总 | 分诊建议，不诊断不开药 | 医师复核每条建议 | 线下窗口全功能 | 分诊准确率≥95% | 抽检<90%暂停 |
+| SC-02 | AI教育实验室 | 班级聚合学情 | 批改与学情汇总，无个体画像 | 教师核校报告 | 纸质人工批改 | 零生物识别 | 出现个体画像即终止 |
+| SC-03 | 无感支付便利店 | 进店明示会话数据 | 商品识别账单，默认无刷脸 | 72h人工申诉 | 自助扫码收银 | 申诉率≤0.5% | >2%回退自助 |
+| SC-04 | 康养之家 | 自愿毫米波跌倒检测 | 检测+呼叫，不做健康画像 | 护理员确认警报 | 手动呼救+上门 | 警报确认率100% | 可随时无条件退出 |
+| SC-05 | 开源荣誉墙 | 公开PR元数据 | 编号展示，不排名不打分 | 委员会年度公示 | 快照+时间戳 | 同步≤24h | 可申请移除条目 |
+| SC-06 | 城市感知灯杆 | 非身份环境传感 | 照明运维，无身份识别 | 工单人工闭环 | 固定照度 | 工单≤30分钟 | 发现识别用途即拆 |
+| SC-07 | 低速机器人配送 | 机载避障本地闭环 | 固定线路配送避障 | 安全员1:多接管 | 停车呼叫接管 | 百万公里接管率 | 越限缩减运营区 |
+| SC-08 | 自动驾驶接驳 | 车端本地感知 | 限定路段L4，安全员在环 | 急刹/事故复盘 | 停运转人工接驳 | 事故为零 | 监管/指标越限停运 |
+| SC-09 | 社区共治屏 | 实名提案投票 | 聚类摘要，不评估提案人 | 社工核校发布 | 线下公示栏 | 处理≤45天 | 参与率下滑即评估 |
+| SC-10 | AI文体助手 | 预约元数据 | 场次推荐调度，无成瘾推送 | 管理员确认 | 现场排队叫号 | 周转率提升 | 不公平即回退人工 |
+| SC-11 | 数字遗产导览 | 策展公开内容 | 多语种解说，无轨迹采集 | 文保顾问审校 | 二维码图文版 | 解说覆盖率 | 史实错误即下架 |
+| SC-12 | 城市运维孪生 | 设施台账工单 | 状态可视+分派建议，非自动执法 | 主管确认关键工单 | 台账+网格员 | 闭环时长 | 用于考核个人即停 |
+
+*每卡锚点（图层#要素ID）、画像关联与完整字段见 scenario_cards.json；隐私与数据治理设计全文见"包容性设计与社会影响"章。*
 
 > 证据索引：[source:S006] [source:S007] [standard:STD-URBAN-DESIGN]
 
@@ -473,271 +509,9 @@ The Beijing-Zhangjiakou AI Innovation Corridor is a future-oriented urban innova
 保留历史建筑及文化遗存（清华园车站遗址等），改造更新老旧工业厂房为AI创新空间，拆除违法建设及低效利用建筑。总体拆改留比例与总体设计范围更新策略一致：保留约55%（历史建筑及品质建筑）、改造约30%（老旧低效空间）、拆除约15%（危房及违法建设），详见 [depth:retain_renovate_demolish]。
 
 
-
-### 5.1 生态链路设计 / Ecological Chain Design
-
-构建从基础研究到产业孵化到资本服务的完整创新生态链：
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│ 第一层：基础研究层                                            │
-│ 高校院所 → 国家实验室 → 大科学装置                            │
-│ 产出：原创理论、核心技术、算法突破                             │
-└─────────────────────────────────────────────────────────────┘
-                         ↓ 技术转化平台
-┌─────────────────────────────────────────────────────────────┐
-│ 第二层：应用研发层                                            │
-│ 初创企业 → 成长企业 → 独角兽企业                              │
-│ 产出：应用技术、产品原型、解决方案                             │
-└─────────────────────────────────────────────────────────────┘
-                         ↓ 孵化加速器
-┌─────────────────────────────────────────────────────────────┐
-│ 第三层：产业应用层                                            │
-│ 产业集群 → 产业测试 → 场景验证                                │
-│ 产出：产业应用、商业产品、市场价值                             │
-└─────────────────────────────────────────────────────────────┘
-                         ↓ 投融资服务
-┌─────────────────────────────────────────────────────────────┐
-│ 第四层：资本市场层                                            │
-│ 风险投资 → 产业基金 → 上市融资                                │
-│ 产出：资本支持、市场认可、持续发展                             │
-└─────────────────────────────────────────────────────────────┘
-```
-
-**关键支撑要素 / Key Support Elements**：
-
-1. **开源社区支撑**：开源代码、开源数据、开源模型，降低创新门槛
-2. **人才供给支撑**：高校培养、企业实训、国际引进，保障人才供给
-3. **基础设施支撑**：算力平台、数据平台、测试平台，提供硬件支撑
-4. **政策制度支撑**：人才政策、产业政策、创新政策，优化制度环境
-
-### 5.2 用户画像与场景卡片 / User Personas and Scenario Cards
-
-#### 用户画像 / User Personas
-
-**画像1：AI研究员 - 李明**
-
-- 年龄：35岁
-- 身份：清华大学AI学院副教授
-- 研究方向：大模型、多模态学习
-- 需求：高性能算力、大规模数据、合作交流空间
-- 活动轨迹：实验室 → 学术会议 → 产业对接
-- 关注点：研究成果转化、学术影响力、学生培养
-
-**画像2：开源开发者 - 张雪**
-
-- 年龄：28岁
-- 身份：独立开发者，开源社区活跃贡献者
-- 技术栈：Python、PyTorch、分布式系统
-- 需求：开源社区归属感、技术交流平台、荣誉认可
-- 活动轨迹：远程办公 → 开发者大会 → 代码马拉松
-- 关注点：开源贡献记录、社区影响力、职业发展
-
-**画像3：创业企业家 - 王强**
-
-- 年龄：32岁
-- 身份：AI医疗创业公司创始人
-- 产品：AI辅助诊断系统
-- 需求：办公空间、投资对接、临床验证、政策支持
-- 活动轨迹：办公室 → 融资路演 → 医院合作 → 团队建设
-- 关注点：公司成长、市场份额、融资进度
-
-**画像4：风险投资人 - 赵琳**
-
-- 年龄：40岁
-- 身份：专注AI领域的VC合伙人
-- 关注领域：大模型应用、AI基础设施、AI+医疗
-- 需求：优质项目发现、行业研究支持、投后服务
-- 活动轨迹：项目考察 → 投资决策 → 投后管理 → 行业会议
-- 关注点：投资回报、行业趋势、项目质量
-
-**画像5：AI应用者 - 陈医生**
-
-- 年龄：45岁
-- 身份：三甲医院主任医师，AI医疗应用者
-- 应用场景：AI辅助诊断、智能影像分析
-- 需求：可靠的AI产品、临床验证数据、培训支持
-- 活动轨迹：门诊 → 手术 → 学习培训 → 应用反馈
-- 关注点：诊疗效率、患者满意度、医疗安全
-
-#### 场景卡片 / Scenario Cards
-
-**场景1：AI诊疗中心 / AI Diagnosis Center**
-
-- **类型**：AI+医疗
-- **位置**：大钟寺AI+医疗产业园
-- **面积**：2 ha
-- **功能**：
-  - AI辅助诊断：影像识别、病理分析、病历解读
-  - 远程医疗：连接基层医院，提供专家级诊疗服务
-  - 个性化治疗：基于基因数据和病史的精准治疗方案
-- **用户**：医生、患者、医疗AI开发者
-- **验证机制**：与三甲医院合作，开展临床验证，确保AI诊断准确率≥95%
-
-**场景2：自适应学习实验室 / Adaptive Learning Lab**
-
-- **类型**：AI+教育
-- **位置**：大钟寺AI+教育创新基地
-- **面积**：1.5 ha
-- **功能**：
-  - 个性化学习路径：根据学生能力动态调整学习内容
-  - 智能辅导系统：24/7在线答疑，提供即时反馈
-  - 学习效果预测：预测学习成果，提前干预
-- **用户**：学生、教师、教育AI开发者
-- **验证机制**：5所学校试点，跟踪学习效果，确保学习效率提升≥30%
-
-**场景3：智能零售体验街 / Smart Retail Street**
-
-- **类型**：AI+商业
-- **位置**：大钟寺AI+商业体验区
-- **长度**：500m
-- **功能**：
-  - 无人商店：手机扫码/APP自动结算、智能货架推荐（不使用生物识别，保留人工收银通道）
-  - 智能导购：基于用户画像的个性化导购服务
-  - 精准营销：实时分析消费行为，推送个性化优惠
-- **用户**：消费者、零售商、商业AI开发者
-- **验证机制**：对比传统零售，验证转化率提升、运营成本降低
-
-**场景4：自动驾驶测试道路 / Autonomous Driving Test Road**
-
-- **类型**：AI+交通
-- **位置**：大钟寺产业测试平台
-- **长度**：5 km
-- **功能**：
-  - 全场景测试：城市道路、高速、夜间、恶劣天气
-  - 智能基础设施：车路协同、智能信号灯、高精地图
-  - 安全监管：实时监控、应急预案、责任追溯
-- **用户**：自动驾驶企业、交通管理部门、乘客
-- **验证机制**：累计测试里程≥100万公里，零重大安全事故
-
-**场景5：开源代码审查站 / Open Source Code Review Station**
-
-- **类型**：AI+研发
-- **位置**：北京AI原点社区
-- **面积**：0.5 ha
-- **功能**：
-  - AI辅助代码审查：自动检测代码质量、安全漏洞、性能问题
-  - 贡献评估：量化评估代码贡献的价值和影响力
-  - 代码溯源：追踪代码演进历程，识别原创性
-- **用户**：开源开发者、项目维护者、企业技术团队
-- **验证机制**：审查准确率≥90%，审查效率提升≥50%
-
-**场景6：AI艺术创作工坊 / AI Art Creation Studio**
-
-- **类型**：AI+文化
-- **位置**：京张铁路遗址公园沿线
-- **面积**：0.8 ha
-- **功能**：
-  - AI生成艺术：绘画、音乐、文学创作
-  - 人机协作：艺术家与AI共同创作
-  - 数字展览：AI艺术作品的沉浸式展示
-- **用户**：艺术家、设计师、文化爱好者
-- **验证机制**：举办AI艺术展览，收集观众反馈，探索AI艺术边界
-
-**场景7：智能康养社区 / Smart Health Community**
-
-- **类型**：AI+康养
-- **位置**：居住社区
-- **面积**：与居住用地结合
-- **功能**：
-  - 健康监测：可穿戴设备实时监测健康数据
-  - 紧急响应：跌倒检测、心脏病发作预警、自动呼救
-  - 智能陪伴：AI陪伴机器人，提供情感支持和健康管理
-- **用户**：老年人、慢性病患者、家属
-- **验证机制**：试点社区满意度≥90%，紧急事件响应时间≤5分钟
-
-**场景8：机器人服务街区 / Robot Service Street**
-
-- **类型**：AI+服务
-- **位置**：公共空间
-- **覆盖范围**：全域
-- **功能**：
-  - 配送机器人：快递、外卖、药品配送
-  - 清洁机器人：道路清扫、垃圾分类
-  - 服务机器人：导览、咨询、翻译
-- **用户**：市民、游客、服务提供商
-- **验证机制**：服务覆盖率100%，服务满意度≥85%
-
-**场景9：数据标注工厂 / Data Labeling Factory**
-
-- **类型**：AI+生产
-- **位置**：大钟寺AI产业聚集区
-- **面积**：1 ha
-- **功能**：
-  - 数据标注：图像、语音、文本标注服务
-  - 质量控制：AI辅助标注，人工审核
-  - 人才培养：标注员培训，提升标注质量和效率
-- **用户**：数据标注员、AI企业、数据服务商
-- **验证机制**：标注准确率≥98%，交付周期缩短≥30%
-
-**场景10：AI伦理审查中心 / AI Ethics Review Center**
-
-- **类型**：AI+治理
-- **位置**：公共服务设施
-- **面积**：0.3 ha
-- **功能**：
-  - 伦理审查：审查AI应用的伦理风险（隐私、偏见、安全）
-  - 标准制定：制定AI伦理标准和行业规范
-  - 公众教育：开展AI伦理公众教育活动
-- **用户**：AI企业、政府部门、公众
-- **验证机制**：审查覆盖率≥80%，重大伦理事件零发生
-
-### 5.3 产业测试验证平台 / Industry Test and Verification Platforms
-
-**平台1：AI医疗临床验证平台**
-
-- **位置**：大钟寺AI+医疗产业园
-- **合作医院**：北医三院、海淀医院等5家三甲医院
-- **验证流程**：
-  1. AI产品提交申请
-  2. 医院伦理委员会审查
-  3. 小规模临床试验（100-500例）
-  4. 扩大临床试验（1000-5000例）
-  5. 发布验证报告，出具临床证据
-- **验证标准**：
-  - 诊断准确率≥95%
-  - 响应时间≤5秒
-  - 医生接受度≥85%
-- **预期成果**：每年验证≥10个AI医疗产品，发布≥5份临床验证报告
-
-**平台2：自动驾驶开放测试道路**
-
-- **位置**：大钟寺产业测试平台 + 周边市政道路
-- **测试路段**：总计5公里，包括城市道路3公里、高速连接线2公里
-- **测试场景**：
-  - 正常场景：日间、晴天、畅通道路
-  - 复杂场景：夜间、雨雪、拥堵、施工
-  - 极端场景：突发障碍物、行人闯入、信号灯故障
-- **智能基础设施**：
-  - 车路协同系统：RSU路侧单元、OBU车载单元
-  - 智能信号灯：自适应信号控制，优先通行
-  - 高精地图：实时更新，精度≤10cm
-- **监管机制**：
-  - 实时监控中心：24小时监控测试车辆
-  - 应急预案：远程接管、紧急停车、人工干预
-  - 责任追溯：黑匣子记录，事故责任认定
-- **预期成果**：累计测试里程≥100万公里，零重大安全事故
-
-**平台3：智慧校园试点区**
-
-- **位置**：北京AI原点社区周边5所学校
-- **学校类型**：小学2所、初中2所、高中1所
-- **试点内容**：
-  - 智能教学系统：AI辅助教学、个性化作业、智能测评
-  - 校园安全管理：电子门禁（卡片/非生物）、异常事件AI辅助预警、紧急报警（不做学生面部识别与行为画像，详见 visual/assets/privacy_review_matrix.json）
-  - 学生健康管理：健康监测、营养分析、心理辅导
-- **验证指标**：
-  - 学习效率提升≥30%
-  - 教师工作量减轻≥20%
-  - 家长满意度≥90%
-- **预期成果**：形成可复制推广的智慧校园解决方案
-
----
-
-
-> 证据索引：[source:S001] [standard:STD-MNR-2023] [standard:STD-GB50180]
-
 ## 6. 交通与基础设施 / Transportation and Infrastructure
+
+## 交通、轨道、市政与公共服务设施 / Transport, Rail, Municipal Infrastructure, and Public Services
 
 ### 6.1 综合交通规划 / Integrated Transportation Planning
 
@@ -865,21 +639,6 @@ The Beijing-Zhangjiakou AI Innovation Corridor is a future-oriented urban innova
 
 ---
 
-## 交通、轨道、市政与公共服务设施 / Transport, Rail, Municipal Infrastructure, and Public Services
-
-### 交通系统 / Transport System
-
-![交通与蓝绿系统图](assets/figures/mobility-bluegreen.png)
-
-构建五级道路体系：快速路（京藏高速、北四环）、主干路（中关村大街、学院路）、次干路、支路和慢行通道。轨道交通依托13号线、昌平线和规划中的AI创新带捷运线，设置8个轨道站点接驳节点。
-
-### 市政基础设施 / Municipal Infrastructure
-
-智慧市政管网覆盖全区域，包括智能给排水系统、综合管廊、5G/6G通信基站、分布式能源系统。公共服务设施按15分钟生活圈标准配置，100%覆盖。
-
- / Blue-Green Network, Public Space, and Urban Character
-
-
 > 证据索引：[source:S002] [standard:STD-GB50220] [data:geometry/roads.geojson]
 
 
@@ -906,7 +665,6 @@ The Beijing-Zhangjiakou AI Innovation Corridor is a future-oriented urban innova
 ---
 
 ## 蓝绿空间、公共空间与城市风貌 / Blue-Green Network, Public Space, and Urban Character
-
 ### 7.1 蓝绿空间系统 / Blue-Green Space System
 
 **京张铁路遗址公园（主体绿廊）**：
@@ -940,7 +698,7 @@ The Beijing-Zhangjiakou AI Innovation Corridor is a future-oriented urban innova
 
 ### 7.2 公共空间设计 / Public Space Design
 
-**AI地标1：智能体贡献荣誉墙**
+**AI朝圣地标1：智能体贡献荣誉墙（agent.4 地标一）**
 
 - **位置**：五道口站遗址广场
 - **设计理念**：永久纪念碑刻系统，记录入选方案和贡献者姓名
@@ -952,7 +710,7 @@ The Beijing-Zhangjiakou AI Innovation Corridor is a future-oriented urban innova
 - **更新机制**：每年评审一次，最杰出的贡献刻入碑墙
 - **预期容量**：可容纳≥500个贡献者记录
 
-**AI地标2：百年铁路数字博物馆**
+**AI朝圣地标2：百年铁路数字博物馆（agent.4 地标二）**
 
 - **位置**：清华园车站遗址
 - **设计理念**：沉浸式数字展示，重现京张铁路百年历史
@@ -966,7 +724,7 @@ The Beijing-Zhangjiakou AI Innovation Corridor is a future-oriented urban innova
   - 技术展示：人字形铁路、青龙桥车站的设计智慧
 - **预期参观量**：≥50万人次/年
 
-**AI地标3：开源成果展示节点**
+**AI朝圣地标3：开源成果展示节点（agent.4 地标三）**
 
 - **位置**：沿京张铁路遗址公园，每1 km设置一个
 - **设计理念**：可视化展示开源项目的代码演进历程
@@ -985,6 +743,24 @@ The Beijing-Zhangjiakou AI Innovation Corridor is a future-oriented urban innova
 - 广场：5个城市广场，每个面积≥0.5 ha，用于公共活动
 - 街道：活力街道，宽度20-30m，底层商业，上层居住办公
 - 庭院：建筑内部庭院，提供私密交流空间
+
+**公共空间组件库 / Public Space Component Library（agent.4 必备输出）**
+
+朝圣地标之外，全带的公共空间由一套可复用组件装配而成，保证不同节点体验一致、实施可控：
+
+| 组件编号 | 组件 | 规格 | 数量 | AI 能力 |
+|---|---|---|---|---|
+| CP-01 | 智慧座椅 | 光伏顶棚+USB/无线充电+环境传感器 | 200组 | 用电/客流统计（匿名聚合） |
+| CP-02 | 导览屏 | 32寸触摸屏+离线地图+无障碍语音 | 40处 | 多语导览、SC-11 降级为纸质二维码 |
+| CP-03 | 环境监测杆 | 空气/噪声/温湿度三合一 | 60根 | SC-12 城市孪生数据源 |
+| CP-04 | 智能照明 | 分时调光+人感节能 | 全线 | 亮度随客流自适应 |
+| CP-05 | 无人零售亭 | 8-12m² 模块化箱体 | 30座 | 库存预测、扫码结算 |
+| CP-06 | 场景测试舱 | 可移动集装箱改造 | 12座 | SC-07/08 产业测试载体 |
+| CP-07 | 代码雕塑小品 | 贡献者代码片段实体化 | 20处 | 与荣誉墙数据联动 |
+| CP-08 | 无障碍通道模块 | 坡道+盲道+扶手一体化 | 全线 | 跌倒检测（SC-04 同款毫米波） |
+
+*组件库规则：组件编号进入 operations.json 运营台账；每类组件对应场景卡与降级策略；新增组件须先在场景测试舱（CP-06）验证一个季度方可上线。规格为概念性建议，供专业团队深化。*
+
 
 ### 7.3 文化叙事与导览路线 / Cultural Narrative and Guided Tour Route
 
@@ -1059,6 +835,15 @@ The Beijing-Zhangjiakou AI Innovation Corridor is a future-oriented urban innova
 
 ### 8.1 分期实施计划 / Phased Implementation Plan
 
+**四道放行门（G0-G3）**：任何阶段推进不因日历到期自动放行，只因证据齐备放行。
+
+| 放行门 | 扩展前必须存在的证据 | 建议复核角色 | 未通过时的动作 |
+| --- | --- | --- | --- |
+| G0 资料门 | 边界/权属/文保/工程资料缺口登记；临时约束替换为正式资料的触发条件 | 规划、文保及工程专业团队 | 只做研究与可逆原型，不进入不可逆工程 |
+| G1 普通服务门 | AI关闭日演练记录、普通服务路径图、线下柜台/纸质导视核对单 | 场景运营方 + 社区共治会 | 先补普通服务；不能独立运行的AI插件不上线 |
+| G2 安全与包容门 | 人工接管演练、无障碍共测、隐私核对、申诉处理记录 | 专业委员会 + 受影响使用者代表 | 暂停场景，修复后重新共测 |
+| G3 证据门 | 基线、对照、接管/投诉记录、公共收益说明 | 独立审计 + 联合理事会 | 维持原规模、缩点或退出 |
+
 **一期（2027-2030）：基础设施与核心区启动**
 
 重点任务：
@@ -1068,7 +853,7 @@ The Beijing-Zhangjiakou AI Innovation Corridor is a future-oriented urban innova
 - 完善交通市政基础设施
 - 引入首批AI创新企业
 
-投资估算（情景假设，非政府投资承诺，见 assumptions.json）：约500亿元
+投资估算（情景假设，非政府投资承诺，见 assumptions.json）：约500亿元（放行证据：年度产值审计与在统企业清单）
 预期成果：
 - 基础设施覆盖率达到100%
 - AI企业入驻率达到60%
@@ -1100,9 +885,9 @@ The Beijing-Zhangjiakou AI Innovation Corridor is a future-oriented urban innova
 
 投资估算（情景假设）：约200亿元
 预期成果：
-- 成为全球AI创新网络TOP10节点
-- 累计开源贡献≥10万项
-- 国际影响力对标硅谷、波士顿
+- 参与全球AI创新网络对话——位次以年度公开可验证指标为准，不预设名次承诺
+- 开源贡献累计规模以年度审计口径计数，随荣誉墙台账同步公开
+- 国际影响力以国际参会者占比、外文媒体报道量等可测项逐年公开，不对标口号
 
 ### 8.2 政策包设计 / Policy Package Design
 
@@ -1144,7 +929,7 @@ The Beijing-Zhangjiakou AI Innovation Corridor is a future-oriented urban innova
   - 分论坛：覆盖大模型、AI应用、开源生态、AI伦理等主题
   - 展览：展示AI创新成果、应用场景、未来技术
   - 黑客马拉松：24小时编程挑战赛，激发创新
-- 影响：成为全球AI领域TOP10年度盛会
+- 影响：成为全球AI领域有影响力的年度盛会（以年度参会名录与国际参会者占比公开衡量）
 
 **开源开发者大会（季度）**
 
@@ -1180,6 +965,19 @@ The Beijing-Zhangjiakou AI Innovation Corridor is a future-oriented urban innova
   - 主题之旅：如"大模型之旅""开源框架之旅"
 - 预期：年度接待开发者≥10万人次
 
+**开发者社区运营机制 / Developer Community Operation（agent.6 必备输出）**
+
+面向全球开源开发者，以 operations.json OPS-1~OPS-4 四档运营节奏为骨架：
+
+- **治理结构**：9席开发者共治委员会（4席贡献者代表+2席居民代表+1席高校+1席企业+1席独立技术伦理），季度例会，决议公示
+- **成长路径（5步）**：访客 → 注册贡献者（首次PR合并）→ 活跃贡献者（季度≥3次有效提交）→ 维护者（委员会提名）→ 荣誉墙入选（年度评审，编号展示不排名）
+- **激励体系**：开源贡献积分（可兑换工位/算力/住宿）、年度荣誉墙入选、季度开发者大会演讲席位
+- **行为守则**：采用主流开源社区 CoC 模板，违规由委员会处理，两次违规移出社区
+- **数据边界**：贡献统计只用公开 PR 元数据；个人数据不进荣誉墙（SC-05 同规则）
+- **AI关闭日**：每场景每半年一次全离线演练，验证普通服务能否独立运行（对应基线 B05）；演练记录进入年度公共价值审计
+
+*运营机制全部字段化于 operations.json（developer_community_operation 节），check_ops.js 可校验。*
+
 **运营主体设计 / Operation Entity Design**：
 
 **政府主导**：
@@ -1203,6 +1001,23 @@ The Beijing-Zhangjiakou AI Innovation Corridor is a future-oriented urban innova
 > 证据索引：[source:S008] [data:geometry/phasing.geojson] [data:geometry/buildings.geojson]
 
 ## 指标体系、面积复算与合规矩阵 / Metrics, Area Recalculation, and Compliance Matrix
+
+### 评审可以自己重算 / Reviewers Can Recompute
+
+本包全部一级几何指标（site_area_sqm、green_ratio、public_space_ratio、building_footprint、total_gfa、average_far、building_density、key areas、phasing）均可由随包脚本独立复算，不依赖作者自述：
+
+| 脚本 | 作用 | 用法 |
+|------|------|------|
+| `visual/assets/verify.js` | 从 GeoJSON 重算全部 class-1 指标并与 metrics.json 比对 | `node visual/assets/verify.js` |
+| `visual/assets/check_cards.js` | 逐卡核验 12 张场景卡的图层锚点可解析 | `node visual/assets/check_cards.js` |
+| `visual/assets/check_ops.js` | 核验荣誉墙/社区运营结构化文件的锚点与进出条件 | `node visual/assets/check_ops.js` |
+| `visual/assets/parity_check.js` | 逐节测量中英实质等价（word/char 法），写出 parity_qa.json | `node visual/assets/parity_check.js` |
+
+四个脚本全部纯标准库、无网络依赖、确定性输出。本轮自检结果：verify 10/10 PASS、cards 12/12 PASS、ops 5/5 PASS。等价自检见 parity_qa.json。
+
+**口径纪律**：green_ratio 采用去重叠 union 口径（与官方校验器一致）：green_space.geojson 全部 8 要素 dissolve 去重叠后 / site = 44.4%；此前版本曾用要素直接求和（green_way 与公园互相重叠被重复计数，得 48.6%），两口径差异已在 metrics.json basis 字段记录。凡指标变更必更新 basis 并保持 verify.js 可复算。
+
+**边界状态声明**：本包全部面积、比例、分期与空间落点均基于组织方临时粗略边界（provisional）[source:DATA-SRC-PROVISIONAL-BOUNDARIES-20260605]；可用于概念性城市设计内容评审，不得作为官方红线或审批依据；正式几何发布后全量复算。
 
 ### 9.1 核心指标 / Core Metrics
 
@@ -1246,6 +1061,18 @@ The Beijing-Zhangjiakou AI Innovation Corridor is a future-oriented urban innova
 | 医疗设施覆盖半径 | 1000 | m | 100%覆盖 |
 | 公园绿地500m覆盖 | 100 | % | 完全达标 |
 | 轨道站点800m覆盖 | ≥80 | % | 主要覆盖核心区 |
+
+**第一年基线测量方案（B01-B05）**：设施覆盖率为静态可达性计算；运营成效以下列基线为准，先测后比，不放空数。
+
+| 基线 | 观测与频率 | 统计/对照 | HOLD 规则 |
+| --- | --- | --- | --- |
+| B01 主轴慢行断点 | 首次全线踏勘建清单；干预后月度复测 | 断点数、类别、关闭时长；修复前后对照 | 新增高风险断点 → 属地交通/公园复核 |
+| B02 无障碍连续性 | 轮椅/低视力使用者与审计员共测 | 路线完成、求助、不可达点；AI/纸图/人工三路径比较 | 新增不可达点 → 无障碍场景暂停 |
+| B03 公共空间非商业可用 | 公开日历+现场抽查 | 承诺开放时段与实际占用对照 | 商业挤占基础通行 → 活动缩场 |
+| B04 场景申诉与接管 | 工单与急停日志连续记录 | 首次响应、完整关闭、人工接管原因 | 同类投诉重复未修复 → 对应场景暂停 |
+| B05 AI关闭日演练 | 每场景每半年一次全离线演练 | 普通服务独立运行时长、恢复时间 | 演练失败 → 场景降级直至修复 |
+
+基线值当前保持待实测状态。每项首次发布时同时公开定义、采样边界与责任角色；正式边界变化只重算空间指标，不改测量规则。
 
 ### 9.2 合规矩阵 / Compliance Matrix
 
@@ -1391,25 +1218,19 @@ Agent名称：WorkBuddy AI Agent
 
 ---
 
-**END OF DOCUMENT**
-
-![总体区位图：展示创新带空间范围和三核结构](assets/figures/site-overview.png)
-
-![核心区布局图：三个核心区功能空间详细设计](assets/figures/key-areas.png)
-
-![指标证据图：包含雷达图、柱状图和合规指标表](assets/figures/metrics-evidence.png)
-
 ## 参考资料 / References
 
-1. 总体设计范围临时边界（组织方 provisional，仅用于生成/可视化/自检） [source:S001] [data:geometry/site_boundary.geojson]
-2. 三处重点区临时边界（组织方 provisional，仅用于生成/可视化/自检） [source:S002] [data:geometry/key_areas.geojson]
+1. 总体设计范围临时边界（组织方 provisional，仅用于生成/自检） [source:S001] [data:geometry/site_boundary.geojson]
+2. 三处重点区临时边界（组织方 provisional，仅用于生成/自检） [source:S002] [data:geometry/key_areas.geojson]
 3. 征集公告（三层范围与重点区面积口径） [source:S003]
-4. 北京城市总体规划(2016年—2035年)（公开政策文件） [source:S004] [standard:STD-BEIJING-MP]
-5. 海淀区国民经济和社会发展第十四个五年规划（公开政策文件） [source:S005]
+4. 《北京城市总体规划(2016年—2035年)》 [source:S004] [standard:STD-BEIJING-MP]
+5. 海淀区国民经济和社会发展第十四个五年规划 [source:S005]
 6. 中关村国家自主创新示范区等创新载体（公开常识性事实） [source:S006]
-7. GB 50180-2018 城市居住区规划设计标准 [source:S007] [standard:STD-GB50180]
-8. GB 50220-95 城市道路交通规划设计规范 [source:S008] [standard:STD-GB50220]
-9. GB 50420-2007 城市绿地设计规范 [source:S009] [standard:STD-GB50420]
+7. GB 50180-2018《城市居住区规划设计标准》 [source:S007] [standard:STD-GB50180]
+8. GB 50220-95《城市道路交通规划设计规范》 [source:S008] [standard:STD-GB50220]
+9. GB 50420-2007《城市绿地设计规范》 [source:S009] [standard:STD-GB50420]
 10. 全球AI创新区案例比较（8例，逐例附链接） [source:S010]
 11. Noto Sans SC 字体许可（SIL OFL 1.1） [source:S011]
-10. 中关村科学城发展规划 [source:S010]
+![核心区布局图：三个核心区功能空间详细设计](assets/figures/key-areas.png)
+![指标证据图：包含雷达图、柱状图和合规指标表](assets/figures/metrics-evidence.png)
+![交通与蓝绿系统图](assets/figures/mobility-bluegreen.png)

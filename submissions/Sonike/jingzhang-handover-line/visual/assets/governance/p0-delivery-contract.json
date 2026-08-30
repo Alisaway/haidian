@@ -1,0 +1,232 @@
+{
+  "contract_version": "1.0",
+  "evidence_level": "E2_preregistered_delivery_contract",
+  "activation_state": "not_started",
+  "scope": {
+    "pilot_scenario_id": "SCN-05",
+    "pilot_name_zh": "无障碍路径副驾／人工问路等价服务",
+    "pilot_name_en": "Accessible Route Co-Pilot / Staffed Wayfinding Equivalence",
+    "one_scenario_only": true,
+    "prototype_surface": "visual/index.html#p0-prototype",
+    "field_location": null,
+    "site_boundary": null,
+    "scheduled_start": null,
+    "scheduled_end": null,
+    "decision_boundary_zh": "这是授权后可直接签认和填证的 90 天交付合同，不是已经获批、采购、投保、进场或完成的实施记录。首次只允许 SCN-05 一个场景；在 D90 独立结论前不得扩到第二场景。",
+    "decision_boundary_en": "This is a signable, evidence-ready 90-day delivery contract for use after authorisation, not a record of approval, procurement, insurance, site entry or completed delivery. Only SCN-05 may enter the first pilot; no second scenario may open before an independent D90 decision."
+  },
+  "pre_feasibility_reference": {
+    "source": "visual/assets/governance/p0-pre-feasibility-envelope.json",
+    "evidence_level": "E2_participant_pre_feasibility_screening",
+    "reference_envelope_m": [7.2, 7.2],
+    "reversible_operating_patch_m": [6.0, 6.0],
+    "operational_public_cap_persons": 8,
+    "simultaneous_staff_positions": 3,
+    "queue_cap_persons": 6,
+    "participant_90_day_sensitivity_low_cny": 118042,
+    "participant_90_day_sensitivity_high_cny": 289750,
+    "formal_budget_cny": null,
+    "status": "design_reference_not_field_verified",
+    "boundary_zh": "尺寸、容量、人员费率与成本区间只用于参赛者预可行性筛选；不是现场测量、法定容量、市场询价、保险报价或批准预算。八道进入门的真实证据仍为 0。",
+    "boundary_en": "Dimensions, capacity, labour rates and cost ranges are participant pre-feasibility screening values only, not field measurements, statutory occupancy, market quotations, insurance quotations or an approved budget. Real evidence for the eight entry gates remains zero."
+  },
+  "current_evidence": {
+    "site_authorisation_received": false,
+    "professional_signoff_received": false,
+    "insurance_received": false,
+    "three_quotes_received": false,
+    "sustained_budget_committed": false,
+    "field_rehearsal_completed": false,
+    "real_participant_observations": 0,
+    "real_participant_pass_records": 0,
+    "field_status": "not_started"
+  },
+  "formal_review_boundary": {
+    "source": "visual/assets/governance/review-3825-readiness-matrix.json",
+    "package_result": "CLOSED_FOR_FORMAL_REVIEW",
+    "participant_controlled_open_repair_count": 0,
+    "field_pilot_result": "BLOCKED_EXTERNAL_PRE_PILOT",
+    "public_performance_claim_result": "BLOCKED_UNTIL_24_REAL_TASKS",
+    "rule_zh": "CLOSED 只适用于当前投稿材料交接；八道进入门、真实主体与签字、三方报价、保险、90 天持续预算、专业复核和 24 场真实任务未齐时，现场时钟不启动、智能层保持关闭，也不得发布现场包容性或绩效主张。",
+    "rule_en": "CLOSED applies only to the current submission-material handover. Until all eight entry gates, real actors and signatures, three comparable quotes, insurance, a sustained 90-day budget, professional review and 24 real task sessions exist, the field clock does not start, the smart layer stays off, and no field inclusion or performance claim may be published."
+  },
+  "entry_gates": [
+    {
+      "gate_id": "site_authorisation",
+      "name_zh": "场地与开放边界",
+      "required_evidence": ["有权主体书面授权及授权编号", "可使用边界、时段、容量和撤场恢复责任", "不进入轨道保护、消防疏散或未授权公共通道的图示"],
+      "evidence_received_count": 0,
+      "status": "not_started",
+      "on_fail": "smart_layer_off; no_site_entry; 基础人工服务留在既有获准位置"
+    },
+    {
+      "gate_id": "independent_roles",
+      "name_zh": "唯一问责与独立复核",
+      "required_evidence": ["十项 RACI 工作包逐项签认且每项只有一个 A", "交出、接入、独立复核与异议角色不得由同一人包办", "当班覆盖和缺岗关闭规则"],
+      "evidence_received_count": 0,
+      "status": "not_started",
+      "on_fail": "smart_layer_off; no_acceptance_signature; 只提供基础人工服务"
+    },
+    {
+      "gate_id": "safety_accessibility",
+      "name_zh": "安全与无障碍专业复核",
+      "required_evidence": ["安全、无障碍与应急专业人员的独立现场检查", "连续无障碍路线、坐姿窗口、停用入口和撤场路径实测", "失败项、修复责任与复测记录模板"],
+      "evidence_received_count": 0,
+      "status": "not_started",
+      "on_fail": "smart_layer_off; close_failed_route; 基础人工服务转移到可达位置"
+    },
+    {
+      "gate_id": "insurance_maintenance",
+      "name_zh": "保险、维护与当班能力",
+      "required_evidence": ["覆盖公众使用、临时构件与撤场恢复的保险凭证", "每日开闭场、清洁、维修、备件和故障响应责任", "不少于 90 天的人员与维护资源证明"],
+      "evidence_received_count": 0,
+      "status": "not_started",
+      "on_fail": "smart_layer_off; no_installation_or_same_day_removal; 基础人工服务继续"
+    },
+    {
+      "gate_id": "data_minimisation_deletion",
+      "name_zh": "数据最小化、拒绝与删除",
+      "required_evidence": ["不采集姓名、联系方式、连续位置和人脸的字段清单", "拒绝算法或数据不影响服务的现场脚本", "临时记录当班删除、异议与删除回执流程"],
+      "evidence_received_count": 0,
+      "status": "not_started",
+      "on_fail": "smart_layer_off; collect_no_personal_data; 改用纸本与人工口述基础服务"
+    },
+    {
+      "gate_id": "cost_quotes_sustained_budget",
+      "name_zh": "三方询价与持续预算",
+      "required_evidence": ["十二项构件同口径的三方询价或等同可核依据", "90 天人员、维护、保险、合理便利、补偿与撤场预算", "超支停止线与不追加永久工程的确认"],
+      "evidence_received_count": 0,
+      "status": "not_started",
+      "on_fail": "smart_layer_off; no_procurement; 维持 S 级可移动人工服务"
+    },
+    {
+      "gate_id": "fire_transport_utilities",
+      "name_zh": "消防、交通与市政接口",
+      "required_evidence": ["消防疏散、救援到达和临时构件阻挡检查", "人流、轮椅回转、慢行连续和装卸时段检查", "用电、照明、通信、排水和临时线缆容量及保护检查"],
+      "evidence_received_count": 0,
+      "status": "not_started",
+      "on_fail": "smart_layer_off; no_public_opening; 基础人工服务使用既有安全设施"
+    },
+    {
+      "gate_id": "co_testing_consent_accommodation",
+      "name_zh": "真实共测、同意与合理便利",
+      "required_evidence": ["六类公共群体与交叉需求的招募记录，不留公开个人信息", "知情同意、可随时退出、固定补偿与合理便利安排", "无障碍专业人员主持的失败—修复—复测记录"],
+      "evidence_received_count": 0,
+      "status": "not_started",
+      "on_fail": "smart_layer_off; no_public_claim; 基础人工服务继续且不得宣传包容性已验证"
+    }
+  ],
+  "delivery_stages": [
+    {
+      "stage_id": "PRE-D0",
+      "window_zh": "D-14 至 D0／不满足八门则不开始计时",
+      "status": "not_started",
+      "deliverables": ["八道进入门的逐项证据索引", "十项 RACI 签认和当班表", "三方询价、90 天预算、保险与撤场方案"],
+      "exit_evidence": ["八门 8/8 由独立复核角色标记通过", "所有未知主体、金额和文件编号已由真实证据替换 null"],
+      "rollback": "任一门失败即不进场、smart_layer_off；保留既有基础人工服务，不启动 90 天时钟"
+    },
+    {
+      "stage_id": "D0",
+      "window_zh": "基线与人工底盘日",
+      "status": "not_started",
+      "deliverables": ["先安装有人窗口、触觉地图、固定导视、电话/纸本和物理停用入口", "记录无 AI 路线的任务结果、步骤、时间、求助和安全信息基线", "拍摄不含个人信息的构件与连续路线证据"],
+      "exit_evidence": ["基础人工路线在智能层关闭时独立完成 SCN-05 核心结果", "无障碍与安全专业角色签署 D0 基线表"],
+      "rollback": "人工路线失败则不安装智能层、smart_layer_off；修复基础人工服务后重新做 D0"
+    },
+    {
+      "stage_id": "D1-D30",
+      "window_zh": "人员训练与受控演练",
+      "status": "not_started",
+      "deliverables": ["当班人员演练断电、误导、停用、人工接管、删除、申诉和撤场", "仅用合成夹具校准原型，不录入真实个人资料", "完成 24 个共测任务场次的招募与合理便利排期"],
+      "exit_evidence": ["全部异常注入均能关闭智能层并继续基础人工服务", "独立复核确认共测脚本不诱导、不强迫设备或数据"],
+      "rollback": "任一异常无法接管则 smart_layer_off；保留基础人工服务并退回 D0 修复"
+    },
+    {
+      "stage_id": "D31-D60",
+      "window_zh": "单场景、有人值守的有限共测",
+      "status": "not_started",
+      "deliverables": ["在书面同意和合理便利下完成预注册的真实任务场次", "智能与无 AI 路线以同一核心结果、队列、费用和安全信息比对", "逐条记录失败、异议、修复、复测与停止时长"],
+      "exit_evidence": ["八项预注册验收判据均有原始匿名记录和复算表", "失败项已关闭、修复并由独立角色决定是否复测"],
+      "rollback": "任一必备无障碍或公平项失败即 smart_layer_off；基础人工服务继续且失败记录公开"
+    },
+    {
+      "stage_id": "D61-D90",
+      "window_zh": "独立验收、撤场与扩展决定",
+      "status": "not_started",
+      "deliverables": ["独立角色重算八项判据并给出继续、修复或终止三选一结论", "公开匿名证据索引、投诉与修复账，不公开参与者身份", "当日撤除智能构件并复核地面、通行和临时记录恢复"],
+      "exit_evidence": ["D90 签认结论及不同意见并列留档", "撤场恢复、数据删除和基础人工服务延续三项证据齐备"],
+      "rollback": "未达到全部硬门槛则终止扩展、smart_layer_off；撤除智能构件并保留基础人工服务"
+    }
+  ],
+  "raci_work_packages": [
+    {"work_package_id": "site_authorisation", "responsible_role_ids": ["R-PUBLIC-SPACE"], "accountable_role_id": "R-PUBLIC-SPACE", "consulted_role_ids": ["R-TEST-SAFETY"], "informed_role_ids": ["R-DISSENT"], "assignment_status": "unassigned"},
+    {"work_package_id": "independent_review", "responsible_role_ids": ["R-TEST-SAFETY"], "accountable_role_id": "R-INDEPENDENT-REVIEW", "consulted_role_ids": ["R-DISSENT"], "informed_role_ids": ["R-PUBLIC-SPACE"], "assignment_status": "unassigned"},
+    {"work_package_id": "human_service_floor", "responsible_role_ids": ["R-DISSENT"], "accountable_role_id": "R-SERVICE-OPS", "consulted_role_ids": ["R-PUBLIC-SPACE"], "informed_role_ids": ["R-INDEPENDENT-REVIEW"], "assignment_status": "unassigned"},
+    {"work_package_id": "smart_layer_installation", "responsible_role_ids": ["R-SERVICE-OPS"], "accountable_role_id": "R-TEST-SAFETY", "consulted_role_ids": ["R-PUBLIC-SPACE"], "informed_role_ids": ["R-DISSENT"], "assignment_status": "unassigned"},
+    {"work_package_id": "cotest_recruitment_and_consent", "responsible_role_ids": ["R-SERVICE-OPS"], "accountable_role_id": "R-DISSENT", "consulted_role_ids": ["R-INDEPENDENT-REVIEW"], "informed_role_ids": ["R-PUBLIC-SPACE"], "assignment_status": "unassigned"},
+    {"work_package_id": "data_and_deletion", "responsible_role_ids": ["R-SERVICE-OPS"], "accountable_role_id": "R-INDEPENDENT-REVIEW", "consulted_role_ids": ["R-DISSENT"], "informed_role_ids": ["R-PUBLIC-SPACE"], "assignment_status": "unassigned"},
+    {"work_package_id": "field_rehearsal", "responsible_role_ids": ["R-SERVICE-OPS"], "accountable_role_id": "R-TEST-SAFETY", "consulted_role_ids": ["R-DISSENT"], "informed_role_ids": ["R-INDEPENDENT-REVIEW"], "assignment_status": "unassigned"},
+    {"work_package_id": "complaint_and_dissent", "responsible_role_ids": ["R-SERVICE-OPS"], "accountable_role_id": "R-DISSENT", "consulted_role_ids": ["R-INDEPENDENT-REVIEW"], "informed_role_ids": ["R-PUBLIC-SPACE"], "assignment_status": "unassigned"},
+    {"work_package_id": "acceptance_decision", "responsible_role_ids": ["R-DISSENT"], "accountable_role_id": "R-INDEPENDENT-REVIEW", "consulted_role_ids": ["R-TEST-SAFETY"], "informed_role_ids": ["R-PUBLIC-SPACE", "R-SERVICE-OPS"], "assignment_status": "unassigned"},
+    {"work_package_id": "same_day_rollback_and_restoration", "responsible_role_ids": ["R-SERVICE-OPS", "R-TEST-SAFETY"], "accountable_role_id": "R-PUBLIC-SPACE", "consulted_role_ids": ["R-DISSENT"], "informed_role_ids": ["R-INDEPENDENT-REVIEW"], "assignment_status": "unassigned"}
+  ],
+  "component_schedule": [
+    {"item_id": "P0-C01", "name_zh": "可拆装有人服务桌", "quantity": 1, "unit": "套", "acceptance_check_zh": "不固定于地面；坐姿与站姿均可交流；当日可撤", "procurement_status": "not_quoted", "unit_price_cny": null, "total_price_cny": null},
+    {"item_id": "P0-C02", "name_zh": "坐姿服务与轮椅回转模块", "quantity": 1, "unit": "套", "acceptance_check_zh": "桌下净空、侧向接近和回转不被设备占用", "procurement_status": "not_quoted", "unit_price_cny": null, "total_price_cny": null},
+    {"item_id": "P0-C03", "name_zh": "触觉与高对比路线图", "quantity": 1, "unit": "套", "acceptance_check_zh": "触觉、文字、形状与人工口述指向同一核心结果", "procurement_status": "not_quoted", "unit_price_cny": null, "total_price_cny": null},
+    {"item_id": "P0-C04", "name_zh": "中英大字路线卡", "quantity": 2, "unit": "套", "acceptance_check_zh": "智能与无 AI 版本安全信息逐项一致", "procurement_status": "not_quoted", "unit_price_cny": null, "total_price_cny": null},
+    {"item_id": "P0-C05", "name_zh": "单任务易读卡", "quantity": 24, "unit": "张", "acceptance_check_zh": "一句一步、无倒计时、可由工作人员回读", "procurement_status": "not_quoted", "unit_price_cny": null, "total_price_cny": null},
+    {"item_id": "P0-C06", "name_zh": "固定导视牌", "quantity": 4, "unit": "块", "acceptance_check_zh": "不要求扫码；入口、窗口、停用点和退出方向连续可见", "procurement_status": "not_quoted", "unit_price_cny": null, "total_price_cny": null},
+    {"item_id": "P0-C07", "name_zh": "可触及物理停用控件", "quantity": 1, "unit": "套", "acceptance_check_zh": "坐姿可及；触发后智能层关闭且人工服务继续", "procurement_status": "not_quoted", "unit_price_cny": null, "total_price_cny": null},
+    {"item_id": "P0-C08", "name_zh": "双联纸本值班簿", "quantity": 2, "unit": "本", "acceptance_check_zh": "交出与接入分册，不允许同人代签", "procurement_status": "not_quoted", "unit_price_cny": null, "total_price_cny": null},
+    {"item_id": "P0-C09", "name_zh": "投诉、停用与删除回执", "quantity": 1, "unit": "套", "acceptance_check_zh": "无需个人账号；当场生成编号并说明后续责任", "procurement_status": "not_quoted", "unit_price_cny": null, "total_price_cny": null},
+    {"item_id": "P0-C10", "name_zh": "非消费等候座椅", "quantity": 2, "unit": "把", "acceptance_check_zh": "不与消费绑定；不侵占连续通行和轮椅空间", "procurement_status": "not_quoted", "unit_price_cny": null, "total_price_cny": null},
+    {"item_id": "P0-C11", "name_zh": "低眩光任务照明", "quantity": 1, "unit": "套", "acceptance_check_zh": "照亮文字与停用点，不照向邻里、树冠或通行者面部", "procurement_status": "not_quoted", "unit_price_cny": null, "total_price_cny": null},
+    {"item_id": "P0-C12", "name_zh": "临时线缆防绊与撤场包", "quantity": 1, "unit": "套", "acceptance_check_zh": "无裸露绊点；撤场后地面、通行和排水恢复", "procurement_status": "not_quoted", "unit_price_cny": null, "total_price_cny": null}
+  ],
+  "procurement": {
+    "cost_class": "S",
+    "rfq_status": "not_issued",
+    "quote_slots": [
+      {"slot_id": "QUOTE-1", "vendor": null, "amount_cny": null, "received_at": null},
+      {"slot_id": "QUOTE-2", "vendor": null, "amount_cny": null, "received_at": null},
+      {"slot_id": "QUOTE-3", "vendor": null, "amount_cny": null, "received_at": null}
+    ],
+    "total_budget_cny": null,
+    "sustained_budget_months": null,
+    "participant_sensitivity_reference": "visual/assets/governance/p0-pre-feasibility-envelope.json#participant_cost_sensitivity_90_day",
+    "participant_sensitivity_is_formal_estimate": false,
+    "budget_rule_zh": "报价必须按同一十二项清单比较；人员、合理便利、保险、维护、补偿和撤场不得藏在设备报价之外。参赛者约 12万—29万元／90天的区间只用于检验 S 级范围和敏感变量，不含场地、保险、税费、法定专业服务、永久工程与未查明公用事业；未取得三份可比报价、全部外部项和 90 天持续预算前，total_budget_cny 继续为 null，不采购。"
+  },
+  "preregistered_acceptance_criteria": [
+    {"criterion_id": "same_core_outcome", "measure": "智能与无 AI 路线的必备结果字段一致率", "pass_rule": "全部任务的目的地、关键步骤、风险提示、人工责任与申诉入口 100% 一致", "stop_rule": "任一核心字段缺失即 smart_layer_off", "observed_value": null, "status": "not_observed"},
+    {"criterion_id": "task_success_gap", "measure": "同类任务中无 AI 路线与智能路线的完成率差", "pass_rule": "无 AI 路线不低于智能路线超过 10 个百分点；同时逐群体披露，不以总平均掩盖", "stop_rule": "任一必备群体差值超过 10 个百分点即 smart_layer_off", "observed_value": null, "status": "not_observed"},
+    {"criterion_id": "completion_time_ratio", "measure": "无 AI 路线／智能路线的中位完成时间比", "pass_rule": "总体不大于 1.5，任一必备群体不大于 2.0；等待人工响应计入时间", "stop_rule": "超过阈值即 smart_layer_off 并增配人工服务", "observed_value": null, "status": "not_observed"},
+    {"criterion_id": "queue_and_price_parity", "measure": "队列优先级差和价格附加", "pass_rule": "队列优先级差为 0，拒绝智能服务的价格附加为 0 元", "stop_rule": "出现延后、加价或次级队列即 smart_layer_off", "observed_value": null, "status": "not_observed"},
+    {"criterion_id": "essential_safety_information", "measure": "基础安全信息覆盖率", "pass_rule": "智能、纸本、触觉与人工口述的必备安全信息 100% 对齐", "stop_rule": "任一渠道少一项必备安全信息即 smart_layer_off", "observed_value": null, "status": "not_observed"},
+    {"criterion_id": "device_and_algorithm_refusal", "measure": "无需设备完成率与拒绝算法不受罚率", "pass_rule": "两项均为 100%，全过程不得强制手机、App、扫码、账号或算法记录", "stop_rule": "任一步骤强制设备或拒绝后降级即 smart_layer_off", "observed_value": null, "status": "not_observed"},
+    {"criterion_id": "complaint_stop_receipt", "measure": "要求投诉、停用或删除时的回执生成率", "pass_rule": "每次请求 100% 当场给出纸本或口述编号、责任角色和后续节点", "stop_rule": "无法给出可追踪回执即 smart_layer_off", "observed_value": null, "status": "not_observed"},
+    {"criterion_id": "accessibility_essential_tasks", "measure": "八类无障碍与拒绝模式必备任务", "pass_rule": "8/8 由真实参与者任务和无障碍专业复核共同通过；不以机器计算替代", "stop_rule": "任一必备任务失败即 smart_layer_off，修复复测前不恢复", "observed_value": null, "status": "not_observed"}
+  ],
+  "cotesting_protocol": {
+    "participant_session_minimum": 24,
+    "current_participant_sessions": 0,
+    "required_rubric_groups": ["residents", "youth_talent", "enterprises", "universities", "visitors", "marginalized_groups"],
+    "intersection_rule_zh": "同一参与者可同时属于多类，但六类均须至少有任务记录；至少 8 个场次覆盖低视力/非视觉、行动不便、认知负荷、非中文、无设备或拒绝算法中的一种，且失败记录不得排除。",
+    "access_accommodations": ["无障碍到达", "坐姿服务", "陪同者可参与", "中英或人工翻译", "大字与高对比纸本", "触觉与口述", "不限时并可休息", "无需个人设备", "可拒绝记录", "固定且不因失败扣减的参与补偿"],
+    "consent_rule_zh": "知情同意与服务资格分离；拒绝参与、退出、投诉或要求删除均不影响获得基础服务。",
+    "compensation_amount_cny": null,
+    "compensation_status": "budget_not_approved",
+    "privacy_rule_zh": "公开记录只保留匿名任务编号、群体覆盖、失败类型、修复和复测状态；不公开姓名、联系方式、精确位置、面部、声音或可回推身份的组合字段。"
+  },
+  "field_evidence_templates": [
+    "site-authorisation-index",
+    "signed-raci-roster",
+    "safety-accessibility-checksheet",
+    "three-quote-comparison",
+    "anonymous-task-observation",
+    "failure-fix-retest-ledger",
+    "complaint-stop-delete-receipt",
+    "same-day-restoration-check"
+  ]
+}

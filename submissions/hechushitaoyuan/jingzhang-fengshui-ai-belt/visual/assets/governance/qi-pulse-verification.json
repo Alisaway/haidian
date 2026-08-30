@@ -1,0 +1,221 @@
+{
+ "schema_version": "1.0",
+ "verifier": "qi-pulse-verifier v1.0 (deterministic, package-internal reads only)",
+ "summary": {
+  "total_checks": 30,
+  "passed": 30,
+  "failed": 0
+ },
+ "checks": [
+  {
+   "group": "G1",
+   "id": "SC-COUNT",
+   "desc": "双语各解析出 13 张卡",
+   "status": "PASS",
+   "detail": "zh=13 en=13"
+  },
+  {
+   "group": "G1",
+   "id": "SC-SEQ",
+   "desc": "编号连续 1..13",
+   "status": "PASS",
+   "detail": "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]"
+  },
+  {
+   "group": "G1",
+   "id": "SC-156",
+   "desc": "156 项离线演练逐项复算通过",
+   "status": "PASS",
+   "detail": "recomputed 156/156; stored {'total': 156, 'pass': 156, 'fail': 0}"
+  },
+  {
+   "group": "G1",
+   "id": "SC-METRIC",
+   "desc": "metrics.qi_protocol_check_count = 156",
+   "status": "PASS",
+   "detail": "156"
+  },
+  {
+   "group": "G2",
+   "id": "QP-RULES",
+   "desc": "协议规则 = 7 条",
+   "status": "PASS",
+   "detail": "7"
+  },
+  {
+   "group": "G2",
+   "id": "QP-STEPS",
+   "desc": "四步协议 察气/演气/验气/养气",
+   "status": "PASS",
+   "detail": "[{\"step\": 1, \"name_zh\": \"察气（Observe）\", \"definition_zh\": \"感知与登记：任何新增数据项先登记于对应场景卡的「最小数据与边界」列，注明聚合层级与匿名边界，方可启用。\", \"mandator"
+  },
+  {
+   "group": "G2",
+   "id": "QP-RANGE-ZH",
+   "desc": "正文声明规则范围 QP-1 至 QP-7",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "group": "G2",
+   "id": "QP-RANGE-EN",
+   "desc": "EN 声明规则范围",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "group": "G2",
+   "id": "QP-TESTBED-LINK",
+   "desc": "验收矩阵引言声明四方互为约束且三测试场景均有矩阵行",
+   "status": "PASS",
+   "detail": "rows=['13', '4', '8']"
+  },
+  {
+   "group": "G3",
+   "id": "ROLE-COUNT",
+   "desc": "岗位 = 8 类",
+   "status": "PASS",
+   "detail": "8"
+  },
+  {
+   "group": "G3",
+   "id": "ROLE-DUTY",
+   "desc": "角色含职责描述",
+   "status": "PASS",
+   "detail": "8/8"
+  },
+  {
+   "group": "G3",
+   "id": "ROLE-EXCL",
+   "desc": "互斥或缺岗规则覆盖",
+   "status": "PASS",
+   "detail": "excl=1 vacant=8"
+  },
+  {
+   "group": "G3",
+   "id": "ROLE-MUTEX-STMT",
+   "desc": "正文含『独立复核者与任何运营岗互斥』治理句",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "group": "G3",
+   "id": "ROLE-METRIC",
+   "desc": "metrics.role_count 与角色数一致",
+   "status": "PASS",
+   "detail": "metric=8"
+  },
+  {
+   "group": "G4",
+   "id": "PH-COUNT",
+   "desc": "分期 = 3 期",
+   "status": "PASS",
+   "detail": "['phase_1', 'phase_2', 'phase_3']"
+  },
+  {
+   "group": "G4",
+   "id": "PH-GATES",
+   "desc": "三期均具 进入门/验收门/回滚 表述",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "group": "G4",
+   "id": "PH-GATES-EN",
+   "desc": "EN 三门表述齐备",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "group": "G4",
+   "id": "PH-AREA",
+   "desc": "分期面积几何复算与 metrics 一致(<0.1%)",
+   "status": "PASS",
+   "detail": "phasing_phase_1_area_sqm: geom=4697246 metric=4697245.548; phasing_phase_2_area_sqm: geom=3449336 metric=3449335.858; phasing_phase_3_area_sqm: geom=3266244 metric=3266243.98"
+  },
+  {
+   "group": "G5",
+   "id": "A11Y-COUNT",
+   "desc": "a11y 失配计数跨文件一致",
+   "status": "PASS",
+   "detail": "json=36 metric=36"
+  },
+  {
+   "group": "G5",
+   "id": "A11Y-DIST",
+   "desc": "四条件分布与 metrics 键一致(如登记)",
+   "status": "PASS",
+   "detail": ""
+  },
+  {
+   "group": "G5",
+   "id": "PHASE-RATIO",
+   "desc": "六项分期比率独立重算一致(<0.5%)",
+   "status": "PASS",
+   "detail": "phase_1: green 0.269≈0.2692, public 0.1872≈0.1872; phase_2: green 0.3≈0.2999, public 0.2086≈0.2086; phase_3: green 0.322≈0.3224, public 0.2244≈0.2244"
+  },
+  {
+   "group": "G5",
+   "id": "TOTAL-RATIO",
+   "desc": "总体比率与几何复算一致(<0.5%)",
+   "status": "PASS",
+   "detail": "green 0.293695≈0.2937, public 0.204309≈0.2043"
+  },
+  {
+   "group": "G6",
+   "id": "TAG-DEPTH",
+   "desc": "[depth:] 标签多重集中英全等",
+   "status": "PASS",
+   "detail": "29 vs 29"
+  },
+  {
+   "group": "G6",
+   "id": "TAG-METRIC",
+   "desc": "[metric:] 标签多重集中英全等",
+   "status": "PASS",
+   "detail": "43 vs 43"
+  },
+  {
+   "group": "G6",
+   "id": "TAG-SOURCE",
+   "desc": "[source:] 标签多重集中英全等",
+   "status": "PASS",
+   "detail": "33 vs 33"
+  },
+  {
+   "group": "G6",
+   "id": "TAG-STANDARD",
+   "desc": "[standard:] 标签多重集中英全等",
+   "status": "PASS",
+   "detail": "10 vs 10"
+  },
+  {
+   "group": "G7",
+   "id": "FONT-proposal",
+   "desc": "report/proposal.html CJK 全覆盖且 @font-face 存在",
+   "status": "PASS",
+   "detail": "missing=0"
+  },
+  {
+   "group": "G7",
+   "id": "FONT-proposal.en",
+   "desc": "report/proposal.en.html CJK 全覆盖且 @font-face 存在",
+   "status": "PASS",
+   "detail": "missing=0"
+  },
+  {
+   "group": "G7",
+   "id": "FONT-index",
+   "desc": "visual/index.html CJK 全覆盖且 @font-face 存在",
+   "status": "PASS",
+   "detail": "missing=0"
+  },
+  {
+   "group": "G7",
+   "id": "FONT-index.en",
+   "desc": "visual/index.en.html CJK 全覆盖且 @font-face 存在",
+   "status": "PASS",
+   "detail": "missing=0"
+  }
+ ]
+}

@@ -6,36 +6,125 @@
       "id": "PR-01",
       "name_zh": "普通路径关闭时长",
       "name_en": "ordinary-path closure time",
-      "unit": "minutes",
-      "status": "unknown"
+      "status": "unknown",
+      "numerator_definition": "minutes that an ordinary or accessible route is unavailable because of commissioning",
+      "denominator_definition": "approved public-service minutes in the reporting period",
+      "zero_denominator": "not_applicable",
+      "report_fields": [
+        "closure_minutes",
+        "closure_ratio"
+      ],
+      "directionality": "lower interruption is preferred but no target is preset",
+      "source_event_fields": [
+        "started_at",
+        "ended_at",
+        "route_or_action_ref",
+        "public_access_state"
+      ],
+      "stop_rule_ids": [
+        "IMMEDIATE_SITE_STOP"
+      ],
+      "privacy_aggregation": "aggregate duration only; no personal trace"
     },
     {
       "id": "PR-02",
       "name_zh": "动态运行窗口",
       "name_en": "dynamic operating window",
-      "unit": "minutes",
-      "status": "unknown"
+      "status": "unknown",
+      "numerator_definition": "dynamic operating minutes completed inside the authorised envelope",
+      "denominator_definition": "dynamic operating minutes planned and approved",
+      "zero_denominator": "not_applicable",
+      "report_fields": [
+        "delivered_minutes",
+        "completion_ratio"
+      ],
+      "directionality": "more is not inherently better; safety and public gates dominate",
+      "source_event_fields": [
+        "started_at",
+        "ended_at",
+        "operating_state_ref",
+        "permission_ref"
+      ],
+      "stop_rule_ids": [
+        "IMMEDIATE_SITE_STOP",
+        "DAY90_PILOT_STOP"
+      ],
+      "privacy_aggregation": "aggregate operating time only"
     },
     {
       "id": "PR-03",
       "name_zh": "维护工时",
       "name_en": "maintenance labour",
-      "unit": "person-hours",
-      "status": "unknown"
+      "status": "unknown",
+      "numerator_definition": "person-hours of maintenance caused directly by commissioning",
+      "denominator_definition": "hours of dynamic operation with QA disposition PASS",
+      "zero_denominator": "report raw person-hours and rate as not_applicable",
+      "report_fields": [
+        "maintenance_person_hours",
+        "hours_per_operating_hour"
+      ],
+      "directionality": "lower burden is preferred only for matched scope and service quality",
+      "source_event_fields": [
+        "maintenance_log_ref",
+        "qc_disposition",
+        "started_at",
+        "ended_at"
+      ],
+      "stop_rule_ids": [
+        "INTERVENTION_REMOVE",
+        "DAY90_PILOT_STOP"
+      ],
+      "privacy_aggregation": "role-level labour totals; no worker performance ranking"
     },
     {
       "id": "PR-04",
       "name_zh": "投诉响应时长",
       "name_en": "complaint-response time",
-      "unit": "hours",
-      "status": "unknown"
+      "status": "unknown",
+      "numerator_definition": "elapsed hours from a valid complaint or discomfort report to human acknowledgement",
+      "denominator_definition": "count of valid complaints or discomfort reports",
+      "zero_denominator": "response time is not_applicable, never zero hours",
+      "report_fields": [
+        "valid_report_count",
+        "median_response_hours",
+        "maximum_response_hours"
+      ],
+      "directionality": "lower is preferred; no statutory numeric deadline is claimed",
+      "source_event_fields": [
+        "received_at",
+        "human_acknowledged_at",
+        "case_status"
+      ],
+      "stop_rule_ids": [
+        "IMMEDIATE_SITE_STOP",
+        "PUBLIC_CLAIM_WITHDRAWAL"
+      ],
+      "privacy_aggregation": "publish aggregate times and redacted categories only"
     },
     {
       "id": "PR-05",
-      "name_zh": "预检后换位/转介/取消决策",
-      "name_en": "relocate/referral/cancel decisions after screening",
-      "unit": "count",
-      "status": "unknown"
+      "name_zh": "预检后换位/转介/停止决定",
+      "name_en": "relocate/referral/stop decisions after screening",
+      "status": "unknown",
+      "numerator_definition": "signed human dispositions of RELOCATE or REFER_SPECIALIST, plus separately signed cross-cutting STOP decisions after complete screening",
+      "denominator_definition": "complete screening cases with a signed human disposition or a separately signed cross-cutting STOP decision",
+      "zero_denominator": "not_applicable",
+      "report_fields": [
+        "decision_change_count",
+        "decision_breakdown",
+        "decision_change_ratio"
+      ],
+      "directionality": "neutral; more changes are not automatically better",
+      "source_event_fields": [
+        "campaign_id",
+        "human_disposition_ref",
+        "qc_disposition"
+      ],
+      "stop_rule_ids": [
+        "DAY90_PILOT_STOP",
+        "PUBLIC_CLAIM_WITHDRAWAL"
+      ],
+      "privacy_aggregation": "case counts only; suppress identifiable equipment or user details"
     }
   ]
 }

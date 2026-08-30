@@ -8,7 +8,7 @@
 - 面向智能体开源征集任务书：用户提供清权摘录（`brief/site-package/agent_taskbook.json`），不保存原件。
 - 临时边界与重点区几何：来自仓库维护者登记的 `brief/site-package/geometry/provisional_boundaries.geojson`，标注为 provisional，不得作为官方红线、审批或精确面积依据。
 - 7 个全球案例（ARUP / Punggol / EU TEF / NIST AI RMF / Helsinki Kalasatama / King's Cross / 杭州城市大脑）：仅借鉴运营与治理机制，不移植形象、不引用案例方商标或人物、不声称案例方认可本方案；出处 URL 与限制登记于 `sources.json`。
-- 本方案未使用未清权字体、图片、人物肖像、企业标识、论文图像或版权材料；未使用商业地图瓦片或非公开空间数据。
+- 字体：HTML 与 PDF 按 SIL Open Font License 1.1 内嵌 Noto Sans SC 子集（内嵌族名 HaidianEmbed，不使用保留名；检索于 2026-08-30，登记见 `sources.json` 的 FONT-NOTO-SANS-SC）；图件 PNG 为栅格化文字。除上述 OFL 字体外，未使用未清权字体、图片、人物肖像、企业标识、论文图像或版权材料；未使用商业地图瓦片或非公开空间数据。
 
 ## 边界声明
 
@@ -17,7 +17,7 @@
 ## 生成方法披露
 
 - 几何由脚本基于临时边界程序化生成（EPSG:4326 存储、EPSG:4548 面积复算），仅用于空间容量与功能组合验证。
-- 图件与 HTML 为离线静态产物，不加载任何远程资源、不执行外部脚本、不追踪用户行为。
+- 图件与 HTML 为离线静态产物，不加载任何远程资源、不执行外部脚本、不追踪用户行为；HTML/PDF 通过 base64 数据 URI 内嵌 OFL 字体子集，保证无 CJK 字体的环境下标题、正文与图注不出现缺字方框。
 - 所有 known 指标均可从提交几何或登记来源复算；管控指标（容积率、建筑高度等）缺官方控规条件，保持 unknown 并登记原因。
 
 ## 责任

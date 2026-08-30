@@ -1,58 +1,112 @@
 {
-  "schema_version": "1.3",
-  "variant": "v0.13.g",
-  "title_zh": "三条双轨空间合同与S0-S3四态运行规约 / THREE DUAL-TRACK SPATIAL CONTRACTS & S0-S3 STATES",
-  "status": "spatial_contract_governance",
+  "schema_version": "1.6",
+  "variant": "v0.16.s",
+  "title_zh": "可退出的AI城市 / CLEAN EXIT CITY",
+  "status": "concept_spatial_sidecar_with_clean_exit_lifecycle",
+  "principle": "AI must not only switch off; every sidecar must carry a spatial return state for the ordinary city.",
+  "off_on_rule": "AI OFF is a complete city; AI ON is the same city plus lateral reversible capability. Ordinary route geometry does not change.",
   "contracts": [
     {
-      "id": "SC-01",
-      "name": "ARRIVE WITHOUT APP",
-      "place": "大钟寺 / Dazhongsi Station-City Arrival",
-      "spatial_typology": "站城高密度立体换乘与遗产缝合中庭",
-      "ordinary_baseline": "连续实体无障碍步行走廊 + 50m 视距高对比实体反光/自发光导视 + 50m 范围内实体人工问询岗与宽幅无障碍物理通道 (0% 手机依赖)",
-      "spatial_prerequisite": "换乘主通廊净宽 >= 4.5m，导视安装净高 >= 2.5m，关键决策节点间直线视线通廊，严禁广告商业侵占导视包络线",
-      "optional_ai": "动态客流密度预测、公共大屏分流提示与 Web 自愿无障碍导航辅助",
-      "human_takeover_sla": "网络中断或屏显延迟 > 2s 时 <= 0.1s 切断数字界面，100% 依赖实体反光标志与人工导流台维持 12,000 人次/小时通行",
-      "accountable_actor": "京港地铁/北京地铁运营方 + 北下关街道办事处 + 站城一体化运营联合体",
-      "implementation_phase": "Phase 1 完成实体导视与人工服务台全覆盖；Phase 2+ 接入动态分流算法",
-      "acceptance_metric": "无手机使用者到达成功率 100%",
-      "go_stop_trigger": "若数字屏响应延迟 > 2s 或人流瓶颈密度 > 2.5 人/m2，强制触发 STOP，关闭动态调度并转入纯物理通行模式"
+      "id": "ASC-01",
+      "place": "众智园 / Zhongzhiyuan",
+      "ordinary_route_id": "ROAD-009",
+      "sidecar_type": "test_pocket",
+      "host_feature_ids": [
+        "BLDG-012",
+        "BLDG-013",
+        "PUBLIC-006"
+      ],
+      "ai_off": "work, meal/rest, green spine and public exchange remain continuous",
+      "ai_on_delta": "stoppable test, temporary equipment and replaceable service interfaces attach at side yards/service edges",
+      "remove_test": "remove the sidecar without relocating ROAD-009",
+      "evidence_required": [
+        "field survey of entrances/desire lines",
+        "professional safety review for any real test interface"
+      ],
+      "reality_boundary": "No lane width, speed, emergency-stop timing, bollard design or permit is claimed.",
+      "lifecycle": [
+        "base_city",
+        "attach_optional",
+        "operate_reviewable",
+        "clean_exit_restore"
+      ],
+      "clean_exit_required": true,
+      "ordinary_restore_use": "ordinary campus courtyard, work/rest edge and public exchange",
+      "clean_exit_evidence": [
+        "before/after field check",
+        "host restore-use confirmation",
+        "unresolved project-stage constraints recorded"
+      ]
     },
     {
-      "id": "SC-02",
-      "name": "CARE WITHOUT ACCOUNT",
-      "place": "AI 原点 / AI Origin Long-term Community",
-      "spatial_typology": "细密慢行生活街区 (Woonerf) 与全龄关怀核",
-      "ordinary_baseline": "400m 连续无障碍实体林荫连廊 + 每 200m 实体便民综合驿站 (纸质办事窗口、按键公用电话、铜缆紧急求助铃，免账号免人脸免画像)",
-      "spatial_prerequisite": "便民综合驿站单处占地 >= 15m2，人行遮阴步道净宽 >= 2.5m，沿线全物理扶手与防滑坡道 (坡度 <= 1:12)",
-      "optional_ai": "慢病长者自愿式健康监护、社区共享空间算法预约与智能语音陪伴终端",
-      "human_takeover_sla": "拒绝数字服务或算法宕机时，网格员与社区医生 100% 物理上门/窗口接管",
-      "accountable_actor": "中关村街道办 + 社区居委会 + 海淀区社区卫生服务中心",
-      "implementation_phase": "Phase 1 筑牢 400m 实体林荫步道与便民驿站；Phase 2 开放自愿式健康数据沙盒",
-      "acceptance_metric": "非数字渠道公共服务覆盖率 100%",
-      "go_stop_trigger": "若发生非授权数据泄露或健康误报 >= 2次/月，强制触发 STOP，暂停算法接口并启动社区伦理听证"
+      "id": "ASC-02",
+      "place": "AI 原点 / AI Origin",
+      "ordinary_route_id": "ROAD-010",
+      "sidecar_type": "care_porch",
+      "host_feature_ids": [
+        "BLDG-007",
+        "BLDG-009",
+        "PUBLIC-004"
+      ],
+      "ai_off": "home, human help, shared learning and civic commons remain account-free",
+      "ai_on_delta": "opt-in navigation, service matching and care prompts attach to public-ground-floor/community interfaces",
+      "remove_test": "remove the sidecar without login requirements or relocating ROAD-010",
+      "evidence_required": [
+        "accessibility survey",
+        "service capacity and operating-role confirmation"
+      ],
+      "reality_boundary": "No service radius, accessibility dimension, staffing level or response-time performance is claimed.",
+      "lifecycle": [
+        "base_city",
+        "attach_optional",
+        "operate_reviewable",
+        "clean_exit_restore"
+      ],
+      "clean_exit_required": true,
+      "ordinary_restore_use": "account-free public ground floor, staffed human help and civic commons",
+      "clean_exit_evidence": [
+        "before/after field check",
+        "host restore-use confirmation",
+        "unresolved project-stage constraints recorded"
+      ]
     },
     {
-      "id": "SC-03",
-      "name": "TEST WITHOUT BLOCKING",
-      "place": "众智园 / Zhongzhiyuan Innovation Campus",
-      "spatial_typology": "多孔院落网格与线性科研测试环路",
-      "ordinary_baseline": "科研人员、学生与服务劳动者的通勤、餐饮、绿地漫步等日常公共流线保持独立且 100% 物理畅通 (普通空间绝非试验场)",
-      "spatial_prerequisite": "低速无人车/机器人测试道与步行道采用高差 (+15cm 路缘石) 或绿化硬隔离；单向净宽 >= 1.8m；交叉口设气动升降柱；每 50m 设红色 E-Stop 按钮",
-      "optional_ai": "低速自动配送、具身智能户外感知基准测试与共享算力分时调度",
-      "human_takeover_sla": "拍下 E-Stop 或遇告警，机械隔离柱 <= 0.5s 升起切断动力；测试退出后 10 分钟内恢复普通步行空间",
-      "accountable_actor": "中关村科学城管委会 + 园区物业管理方 + 入驻 AI 企业测试联合体",
-      "implementation_phase": "Phase 1 仅限封闭院落内低速测试；Phase 2 物理隔离验收合格后开放专用测试环路",
-      "acceptance_metric": "测试对普通步行阻滞率为 0%",
-      "go_stop_trigger": "若发生无人设备越界或阻滞人流 >= 1次/周，立即触发 STOP 吊销测试许可，恢复纯校园公共空间"
+      "id": "ASC-03",
+      "place": "大钟寺 / Dazhongsi",
+      "ordinary_route_id": "ROAD-011",
+      "sidecar_type": "arrival_sidecar",
+      "host_feature_ids": [
+        "BLDG-001",
+        "BLDG-002",
+        "PUBLIC-001"
+      ],
+      "ai_off": "fixed wayfinding, staffed help, ordinary waiting/retail and the Jing-Zhang public interface remain usable",
+      "ai_on_delta": "dynamic translation, information and crowd assistance attach laterally",
+      "remove_test": "switch off dynamic information without relocating ROAD-011",
+      "evidence_required": [
+        "verified station entrances and real level data",
+        "passenger-flow, ownership and operating evidence before engineering design"
+      ],
+      "reality_boundary": "PROV-KEY-003 has known absolute-location risk; no station entrance, bridge/tunnel, level, corridor width or throughput is claimed.",
+      "lifecycle": [
+        "base_city",
+        "attach_optional",
+        "operate_reviewable",
+        "clean_exit_restore"
+      ],
+      "clean_exit_required": true,
+      "ordinary_restore_use": "fixed wayfinding, staffed help and ordinary waiting/retail; real station levels remain required",
+      "clean_exit_evidence": [
+        "before/after field check",
+        "host restore-use confirmation",
+        "unresolved project-stage constraints recorded"
+      ]
     }
   ],
-  "black_sky_protocol": {
-    "title_zh": "黑天鹅极端压力测试规约 (Black-Sky Resilience Protocol)",
-    "frequency": "Quarterly (每季度一次)",
-    "duration_hours": 48,
-    "simulation": "全区网络与电力切断极限情景",
-    "acceptance_target": "大钟寺疏散、原点社区照护配药、众智园科研通勤 100% 物理可用"
-  },
-  "principle": "The three dual-track spatial contracts establish that physical C7 baseline infrastructure maintains non-negotiable physical fail-safe priority over soft algorithmic scheduling."
+  "lifecycle": [
+    "base_city",
+    "attach_optional",
+    "operate_reviewable",
+    "clean_exit_restore"
+  ]
 }

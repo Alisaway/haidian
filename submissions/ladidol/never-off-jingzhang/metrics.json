@@ -1,0 +1,363 @@
+{
+  "schema_version": "0.2.0",
+  "units": {
+    "length": "m",
+    "area": "sqm"
+  },
+  "metrics": {
+    "site_area_sqm": {
+      "status": "known",
+      "value": 93882767.665,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "projected EPSG:4548 area of site boundary",
+      "confidence": "low",
+      "assumptions": [
+        "A-PROVISIONAL-GEOMETRY"
+      ],
+      "sampling_fields": "official boundary polygon",
+      "sampling_rule": "Field sample or controlled pilot; do not infer from personal tracking.",
+      "decision_rule": "projected EPSG:4548 area recomputation",
+      "evidence_ref": "geometry/site_boundary.geojson#SITE-001",
+      "evidence_retention": "Store only aggregated or anonymous event records; retain operational evidence for 12 months, then delete raw detail after human review.",
+      "review_owner": "Future professional planning/operations team; participant does not claim implementation authority.",
+      "pause_exit_rule": "If source, responsible person, ordinary fallback or field verification is missing, pause the AI layer and keep the ordinary-service baseline.",
+      "next_gate": "Official geometry/control data or a documented, human-reviewed pilot."
+    },
+    "green_space_area_sqm": {
+      "status": "known",
+      "value": 12802203.277,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/green_space.geojson"
+      ],
+      "formula": "union area of green_space features projected to EPSG:4548",
+      "confidence": "low",
+      "assumptions": [
+        "A-PROVISIONAL-GEOMETRY"
+      ],
+      "sampling_fields": "green-space polygons",
+      "sampling_rule": "Field sample or controlled pilot; do not infer from personal tracking.",
+      "decision_rule": "union area inside official site boundary",
+      "evidence_ref": "geometry/green_space.geojson",
+      "evidence_retention": "Store only aggregated or anonymous event records; retain operational evidence for 12 months, then delete raw detail after human review.",
+      "review_owner": "Future professional planning/operations team; participant does not claim implementation authority.",
+      "pause_exit_rule": "If source, responsible person, ordinary fallback or field verification is missing, pause the AI layer and keep the ordinary-service baseline.",
+      "next_gate": "Official geometry/control data or a documented, human-reviewed pilot."
+    },
+    "public_space_area_sqm": {
+      "status": "known",
+      "value": 6183288.49,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "union area of public_space features projected to EPSG:4548",
+      "confidence": "low",
+      "assumptions": [
+        "A-PROVISIONAL-GEOMETRY",
+        "A-KEY-AREA-ROLES"
+      ],
+      "sampling_fields": "public-space polygons",
+      "sampling_rule": "Field sample or controlled pilot; do not infer from personal tracking.",
+      "decision_rule": "union area inside official site boundary",
+      "evidence_ref": "geometry/public_space.geojson",
+      "evidence_retention": "Store only aggregated or anonymous event records; retain operational evidence for 12 months, then delete raw detail after human review.",
+      "review_owner": "Future professional planning/operations team; participant does not claim implementation authority.",
+      "pause_exit_rule": "If source, responsible person, ordinary fallback or field verification is missing, pause the AI layer and keep the ordinary-service baseline.",
+      "next_gate": "Official geometry/control data or a documented, human-reviewed pilot."
+    },
+    "building_footprint_area_sqm": {
+      "status": "known",
+      "value": 843761.272,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "union area of building footprints projected to EPSG:4548",
+      "confidence": "low",
+      "assumptions": [
+        "A-KEY-AREA-ROLES"
+      ],
+      "sampling_fields": "building footprint polygons",
+      "sampling_rule": "Field sample or controlled pilot; do not infer from personal tracking.",
+      "decision_rule": "union area after official geometry review",
+      "evidence_ref": "geometry/buildings.geojson",
+      "evidence_retention": "Store only aggregated or anonymous event records; retain operational evidence for 12 months, then delete raw detail after human review.",
+      "review_owner": "Future professional planning/operations team; participant does not claim implementation authority.",
+      "pause_exit_rule": "If source, responsible person, ordinary fallback or field verification is missing, pause the AI layer and keep the ordinary-service baseline.",
+      "next_gate": "Official geometry/control data or a documented, human-reviewed pilot."
+    },
+    "green_ratio": {
+      "status": "known",
+      "value": 0.136364,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/site_boundary.geojson",
+        "geometry/green_space.geojson"
+      ],
+      "formula": "green_space_area_sqm / site_area_sqm",
+      "confidence": "low",
+      "assumptions": [
+        "A-PROVISIONAL-GEOMETRY"
+      ],
+      "sampling_fields": "site and green polygons",
+      "sampling_rule": "Field sample or controlled pilot; do not infer from personal tracking.",
+      "decision_rule": "green area / site area",
+      "evidence_ref": "geometry/site_boundary.geojson#SITE-001",
+      "evidence_retention": "Store only aggregated or anonymous event records; retain operational evidence for 12 months, then delete raw detail after human review.",
+      "review_owner": "Future professional planning/operations team; participant does not claim implementation authority.",
+      "pause_exit_rule": "If source, responsible person, ordinary fallback or field verification is missing, pause the AI layer and keep the ordinary-service baseline.",
+      "next_gate": "Official geometry/control data or a documented, human-reviewed pilot."
+    },
+    "public_space_ratio": {
+      "status": "known",
+      "value": 0.065862,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/site_boundary.geojson",
+        "geometry/public_space.geojson"
+      ],
+      "formula": "public_space_area_sqm / site_area_sqm",
+      "confidence": "low",
+      "assumptions": [
+        "A-PROVISIONAL-GEOMETRY",
+        "A-KEY-AREA-ROLES"
+      ],
+      "sampling_fields": "site and public-space polygons",
+      "sampling_rule": "Field sample or controlled pilot; do not infer from personal tracking.",
+      "decision_rule": "public-space area / site area",
+      "evidence_ref": "geometry/site_boundary.geojson#SITE-001",
+      "evidence_retention": "Store only aggregated or anonymous event records; retain operational evidence for 12 months, then delete raw detail after human review.",
+      "review_owner": "Future professional planning/operations team; participant does not claim implementation authority.",
+      "pause_exit_rule": "If source, responsible person, ordinary fallback or field verification is missing, pause the AI layer and keep the ordinary-service baseline.",
+      "next_gate": "Official geometry/control data or a documented, human-reviewed pilot."
+    },
+    "offline_service_coverage": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "proposal.md",
+        "geometry/public_space.geojson"
+      ],
+      "formula": "nodes_with_offline_or_human_baseline / all_service_nodes",
+      "confidence": "low",
+      "assumptions": [
+        "A-KEY-AREA-ROLES"
+      ],
+      "reason": "Requires an operational inventory and field audit.",
+      "sampling_fields": "node checklist and offline-service audit",
+      "sampling_rule": "Field sample or controlled pilot; do not infer from personal tracking.",
+      "decision_rule": "nodes with paper/physical/human fallback / all audited nodes",
+      "evidence_ref": "geometry/public_space.geojson",
+      "evidence_retention": "Store only aggregated or anonymous event records; retain operational evidence for 12 months, then delete raw detail after human review.",
+      "review_owner": "Future professional planning/operations team; participant does not claim implementation authority.",
+      "pause_exit_rule": "If source, responsible person, ordinary fallback or field verification is missing, pause the AI layer and keep the ordinary-service baseline.",
+      "next_gate": "Official geometry/control data or a documented, human-reviewed pilot."
+    },
+    "accessible_route_breaks": {
+      "status": "unknown",
+      "value": null,
+      "unit": "count",
+      "source_files": [
+        "geometry/roads.geojson",
+        "geometry/constraints.geojson"
+      ],
+      "formula": "count of audited accessible-route discontinuities",
+      "confidence": "low",
+      "assumptions": [
+        "A-PROVISIONAL-GEOMETRY"
+      ],
+      "reason": "Requires an accessibility audit on the official transport base.",
+      "sampling_fields": "accessibility audit points and route versions",
+      "sampling_rule": "Field sample or controlled pilot; do not infer from personal tracking.",
+      "decision_rule": "count of verified discontinuities before/after sample",
+      "evidence_ref": "geometry/constraints.geojson#GAP-TRANSPORT-001",
+      "evidence_retention": "Store only aggregated or anonymous event records; retain operational evidence for 12 months, then delete raw detail after human review.",
+      "review_owner": "Future professional planning/operations team; participant does not claim implementation authority.",
+      "pause_exit_rule": "If source, responsible person, ordinary fallback or field verification is missing, pause the AI layer and keep the ordinary-service baseline.",
+      "next_gate": "Official geometry/control data or a documented, human-reviewed pilot."
+    },
+    "care_node_baseline_services": {
+      "status": "unknown",
+      "value": null,
+      "unit": "service-items-per-node",
+      "source_files": [
+        "proposal.md",
+        "geometry/public_space.geojson"
+      ],
+      "formula": "count of shade,rain,water,seating,information,help per care node",
+      "confidence": "low",
+      "assumptions": [
+        "A-KEY-AREA-ROLES"
+      ],
+      "reason": "Requires a verified facility inventory.",
+      "sampling_fields": "care-node service checklist",
+      "sampling_rule": "Field sample or controlled pilot; do not infer from personal tracking.",
+      "decision_rule": "available shade/rain/water/seating/information/help items per node",
+      "evidence_ref": "geometry/public_space.geojson#PUBLIC-CARE-COURT-001",
+      "evidence_retention": "Store only aggregated or anonymous event records; retain operational evidence for 12 months, then delete raw detail after human review.",
+      "review_owner": "Future professional planning/operations team; participant does not claim implementation authority.",
+      "pause_exit_rule": "If source, responsible person, ordinary fallback or field verification is missing, pause the AI layer and keep the ordinary-service baseline.",
+      "next_gate": "Official geometry/control data or a documented, human-reviewed pilot."
+    },
+    "safe_detour_coverage": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/roads.geojson",
+        "geometry/phasing.geojson"
+      ],
+      "formula": "safe alternative route length or node coverage / affected route length or nodes",
+      "confidence": "low",
+      "assumptions": [
+        "A-TRANSPORT-CONCEPT"
+      ],
+      "reason": "Requires an operational route network and event scenarios.",
+      "sampling_fields": "closure and alternative-route logs",
+      "sampling_rule": "Field sample or controlled pilot; do not infer from personal tracking.",
+      "decision_rule": "safe alternative route length or node coverage / affected length or nodes",
+      "evidence_ref": "geometry/roads.geojson#ROUTE-DETOUR-001",
+      "evidence_retention": "Store only aggregated or anonymous event records; retain operational evidence for 12 months, then delete raw detail after human review.",
+      "review_owner": "Future professional planning/operations team; participant does not claim implementation authority.",
+      "pause_exit_rule": "If source, responsible person, ordinary fallback or field verification is missing, pause the AI layer and keep the ordinary-service baseline.",
+      "next_gate": "Official geometry/control data or a documented, human-reviewed pilot."
+    },
+    "human_takeover_minutes": {
+      "status": "unknown",
+      "value": null,
+      "unit": "minutes",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "human service available timestamp - AI pause timestamp",
+      "confidence": "low",
+      "assumptions": [
+        "A-KEY-AREA-ROLES"
+      ],
+      "reason": "Requires a staffed service protocol and time-stamped drills.",
+      "sampling_fields": "pause and human-available timestamps",
+      "sampling_rule": "Field sample or controlled pilot; do not infer from personal tracking.",
+      "decision_rule": "human service available time - AI pause time",
+      "evidence_ref": "proposal.md#5.1",
+      "evidence_retention": "Store only aggregated or anonymous event records; retain operational evidence for 12 months, then delete raw detail after human review.",
+      "review_owner": "Future professional planning/operations team; participant does not claim implementation authority.",
+      "pause_exit_rule": "If source, responsible person, ordinary fallback or field verification is missing, pause the AI layer and keep the ordinary-service baseline.",
+      "next_gate": "Official geometry/control data or a documented, human-reviewed pilot."
+    },
+    "service_recovery_hours": {
+      "status": "unknown",
+      "value": null,
+      "unit": "hours",
+      "source_files": [
+        "proposal.md",
+        "geometry/phasing.geojson"
+      ],
+      "formula": "baseline and optional service restored timestamp - incident end timestamp",
+      "confidence": "low",
+      "assumptions": [
+        "A-KEY-AREA-ROLES"
+      ],
+      "reason": "Requires recovery drills and operations records.",
+      "sampling_fields": "incident end and restoration timestamps",
+      "sampling_rule": "Field sample or controlled pilot; do not infer from personal tracking.",
+      "decision_rule": "baseline and optional service restoration time - incident end",
+      "evidence_ref": "proposal.md#5.1",
+      "evidence_retention": "Store only aggregated or anonymous event records; retain operational evidence for 12 months, then delete raw detail after human review.",
+      "review_owner": "Future professional planning/operations team; participant does not claim implementation authority.",
+      "pause_exit_rule": "If source, responsible person, ordinary fallback or field verification is missing, pause the AI layer and keep the ordinary-service baseline.",
+      "next_gate": "Official geometry/control data or a documented, human-reviewed pilot."
+    },
+    "robot_pause_conflict_events": {
+      "status": "unknown",
+      "value": null,
+      "unit": "events-per-test-period",
+      "source_files": [
+        "proposal.md",
+        "geometry/public_space.geojson"
+      ],
+      "formula": "yield + pause + human handover + retire events during controlled pilot",
+      "confidence": "low",
+      "assumptions": [
+        "A-DATA-MINIMIZATION"
+      ],
+      "reason": "Requires a controlled pilot and event log.",
+      "sampling_fields": "controlled pilot event log",
+      "sampling_rule": "Field sample or controlled pilot; do not infer from personal tracking.",
+      "decision_rule": "yield + pause + takeover + withdrawal events per test period",
+      "evidence_ref": "geometry/public_space.geojson#PUBLIC-TEST-COURT-001",
+      "evidence_retention": "Store only aggregated or anonymous event records; retain operational evidence for 12 months, then delete raw detail after human review.",
+      "review_owner": "Future professional planning/operations team; participant does not claim implementation authority.",
+      "pause_exit_rule": "If source, responsible person, ordinary fallback or field verification is missing, pause the AI layer and keep the ordinary-service baseline.",
+      "next_gate": "Official geometry/control data or a documented, human-reviewed pilot."
+    },
+    "incident_log_completeness": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "proposal.md",
+        "sources.json"
+      ],
+      "formula": "events with source,time,owner,action,recovery,feedback / all recorded events",
+      "confidence": "low",
+      "assumptions": [
+        "A-DATA-MINIMIZATION"
+      ],
+      "reason": "Requires an operational incident-log sample.",
+      "sampling_fields": "anonymized incident records",
+      "sampling_rule": "Field sample or controlled pilot; do not infer from personal tracking.",
+      "decision_rule": "complete events / all recorded events",
+      "evidence_ref": "proposal.md#5.1",
+      "evidence_retention": "Store only aggregated or anonymous event records; retain operational evidence for 12 months, then delete raw detail after human review.",
+      "review_owner": "Future professional planning/operations team; participant does not claim implementation authority.",
+      "pause_exit_rule": "If source, responsible person, ordinary fallback or field verification is missing, pause the AI layer and keep the ordinary-service baseline.",
+      "next_gate": "Official geometry/control data or a documented, human-reviewed pilot."
+    },
+    "inclusive_user_feedback": {
+      "status": "unknown",
+      "value": null,
+      "unit": "structured-feedback-score",
+      "source_files": [
+        "proposal.md",
+        "assumptions.json"
+      ],
+      "formula": "weighted feedback from older adults, children, disabled and non-digital users",
+      "confidence": "low",
+      "assumptions": [
+        "A-DATA-MINIMIZATION"
+      ],
+      "reason": "Requires inclusive user testing after the baseline service is installed.",
+      "sampling_fields": "structured feedback by five persona categories",
+      "sampling_rule": "Field sample or controlled pilot; do not infer from personal tracking.",
+      "decision_rule": "weighted feedback after human-reviewed inclusive test",
+      "evidence_ref": "assumptions.json#A-DATA-MINIMIZATION",
+      "evidence_retention": "Store only aggregated or anonymous event records; retain operational evidence for 12 months, then delete raw detail after human review.",
+      "review_owner": "Future professional planning/operations team; participant does not claim implementation authority.",
+      "pause_exit_rule": "If source, responsible person, ordinary fallback or field verification is missing, pause the AI layer and keep the ordinary-service baseline.",
+      "next_gate": "Official geometry/control data or a documented, human-reviewed pilot."
+    }
+  },
+  "evidence_contract": {
+    "required_fields": [
+      "sampling_fields",
+      "sampling_rule",
+      "decision_rule",
+      "evidence_ref",
+      "evidence_retention",
+      "review_owner",
+      "pause_exit_rule",
+      "next_gate"
+    ],
+    "formal_core_metrics": [
+      "site_area_sqm",
+      "green_ratio",
+      "public_space_ratio"
+    ],
+    "formal_core_status": "known provisional model values; recompute from official geometry when published"
+  }
+}

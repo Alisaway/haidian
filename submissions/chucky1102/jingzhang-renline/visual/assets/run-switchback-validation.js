@@ -2,7 +2,7 @@
 /* RENLINE Switchback Protocol offline validator 折返协议离线校验器
  *
  * Zero external dependencies (Node built-ins only). Implements the card
- * contract rules R1-R4 documented in switchback-protocol.schema.json and
+ * contract rules R1-R5 documented in switchback-protocol.schema.json and
  * cross-checks every geojson_ref anchor against the package geometry.
  *
  * Usage:  node visual/assets/run-switchback-validation.js
@@ -49,6 +49,20 @@ function anchorResolves(ref) {
   return geomCache[file].has(fid);
 }
 
+/* The R5 crosswalk table is read from the protocol file itself, so the published
+ * table is the single source of truth and fixtures are checked against it. */
+let crosswalkCache = null;
+function crosswalk() {
+  if (crosswalkCache) return crosswalkCache;
+  try {
+    const doc = JSON.parse(fs.readFileSync(path.join(ROOT, PROTOCOL), 'utf8'));
+    crosswalkCache = (doc.interop && doc.interop.status_crosswalk && doc.interop.status_crosswalk.rows) || [];
+  } catch (e) {
+    crosswalkCache = [];
+  }
+  return crosswalkCache;
+}
+
 /* Validate one card. Returns a list of violations, each tagged with a rule id. */
 function validateCard(card) {
   const errs = [];
@@ -83,6 +97,30 @@ function validateCard(card) {
   if (card.evidence_status === 'design_target' && !/^G[0-2]$/.test(card.ascent_grade)) {
     errs.push('R4 design_target evidence must not claim ascent grade above G2');
   }
+  // R5: a declared interop open level must match the published crosswalk row AND be
+  // backed by an attained ascent_grade of at least that level's bound grade.
+  // Attainment is not binding: reading ascent_grade as the external gate_id would let
+  // a G0 paper card claim L3. That is the interop-layer twin of an R4 violation.
+  if (card.interop) {
+    const level = card.interop.open_level_id;
+    if (!card.interop.baseline) errs.push('R5 interop declaration requires a baseline id');
+    const row = crosswalk().find(r => r.open_level_id === level);
+    if (!row) {
+      errs.push(`R5 unknown open_level_id: ${level}`);
+    } else {
+      if (card.status !== row.status) {
+        errs.push(`R5 open_level_id ${level} requires status ${row.status}, card declares ${card.status}`);
+      }
+      if (row.gate && card.gate !== row.gate) {
+        errs.push(`R5 open_level_id ${level} requires gate ${row.gate}, card declares ${card.gate || 'none'}`);
+      }
+      const need = Number(String(row.binds_grade).slice(1));
+      const have = Number(String(card.ascent_grade).slice(1));
+      if (Number.isFinite(need) && Number.isFinite(have) && have < need) {
+        errs.push(`R5 open_level_id ${level} binds ${row.binds_grade} but the card has only attained ${card.ascent_grade} (attainment is not binding)`);
+      }
+    }
+  }
   return errs;
 }
 
@@ -93,7 +131,7 @@ function validateProtocolFile(p) {
     if (!(k in doc)) errs.push(`top-level missing: ${k}`);
   }
   if (errs.length) return { errs, cards: 0 };
-  if (doc.schema_version !== '0.2.0') errs.push('schema_version must be 0.2.0');
+  if (doc.schema_version !== '0.3.0') errs.push('schema_version must be 0.3.0');
   const lic = doc.license || {};
   if (lic.spdx_id !== 'CC-BY-4.0' || lic.scope !== 'protocol_spec_only' || lic.attribution_required !== true) {
     errs.push('license block must declare CC-BY-4.0 / protocol_spec_only / attribution_required');
@@ -134,7 +172,7 @@ function main() {
 
   const receipt = {
     validator: 'run-switchback-validation.js',
-    contract: 'switchback-protocol.schema.json (rules R0-R4)',
+    contract: 'switchback-protocol.schema.json (rules R0-R5)',
     result: failed ? 'FAIL' : 'PASS',
     boundary_zh: '校验通过只证明协议逻辑与文件自洽,不证明现场成效、批准或任何政府承诺。',
     boundary_en: 'PASS certifies protocol logic and file self-consistency only — not field performance, approval or government commitment.',

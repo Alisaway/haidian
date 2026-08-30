@@ -1,0 +1,419 @@
+{
+  "schema_version": "0.2.0",
+  "rights_baseline": [
+    "visible notice",
+    "AI opt-out",
+    "substantively equivalent offline route",
+    "human review",
+    "correction and appeal",
+    "emergency stop",
+    "service exit"
+  ],
+  "appeal_standard": "on-site, phone and paper channels; acknowledge within one working day; human response target within five working days; urgent safety matters transfer immediately",
+  "scenarios": [
+    {
+      "id": "SC-01",
+      "domain": "住",
+      "name_zh": "家庭变化住房转换台",
+      "name_en": "Housing transition desk",
+      "category": "human_service",
+      "personas": [
+        "家庭变化者",
+        "租住居民",
+        "线下办理者"
+      ],
+      "space_operation_mapping_zh": "在住类人生支持节点限时运行，由明确的公共/专业运营者负责",
+      "data_categories_zh": [
+        "家庭结构与住房需求",
+        "资格证明最小字段"
+      ],
+      "data_minimization": "collect only fields necessary for this session; no cross-scenario profile or sale/advertising use",
+      "privacy_safety_risk_tier": "high",
+      "retention_and_deletion_zh": "个案结案后30日删除AI工作副本；法定住房档案留在原有业务系统",
+      "human_review_owner_zh": "人工住房顾问",
+      "offline_equivalent_zh": "同一服务点提供纸质/电话/人工路径，不以数字渠道获得优先资格",
+      "appeal_and_correction": "on-site/phone/paper; one-day acknowledgement and five-day human response target",
+      "emergency_stop_zh": "暂停推荐并转人工窗口",
+      "exit_decommission": "publish the reason, notify affected users, export/correct/delete data as requested, remove devices/signage and retain only the authorized audit summary",
+      "audit_record": "purpose, version, operator type, reviewer, incidents, appeals, retention deletion and continue/stop decision",
+      "ai_optional": true,
+      "human_takeover": true,
+      "status": "concept_scenario_pending_legal_professional_operator_and_public_review"
+    },
+    {
+      "id": "SC-02",
+      "domain": "住",
+      "name_zh": "防搬迁租住风险预警",
+      "name_en": "Anti-displacement risk signal",
+      "category": "public_service",
+      "personas": [
+        "家庭变化者",
+        "租住居民",
+        "线下办理者"
+      ],
+      "space_operation_mapping_zh": "在住类人生支持节点限时运行，由明确的公共/专业运营者负责",
+      "data_categories_zh": [
+        "街区级匿名聚合租住变化"
+      ],
+      "data_minimization": "collect only fields necessary for this session; no cross-scenario profile or sale/advertising use",
+      "privacy_safety_risk_tier": "medium",
+      "retention_and_deletion_zh": "仅保留90日聚合趋势，不保留个体画像",
+      "human_review_owner_zh": "住房/法律服务人员",
+      "offline_equivalent_zh": "同一服务点提供纸质/电话/人工路径，不以数字渠道获得优先资格",
+      "appeal_and_correction": "on-site/phone/paper; one-day acknowledgement and five-day human response target",
+      "emergency_stop_zh": "关闭模型预警并启动人工核查",
+      "exit_decommission": "publish the reason, notify affected users, export/correct/delete data as requested, remove devices/signage and retain only the authorized audit summary",
+      "audit_record": "purpose, version, operator type, reviewer, incidents, appeals, retention deletion and continue/stop decision",
+      "ai_optional": true,
+      "human_takeover": true,
+      "status": "concept_scenario_pending_legal_professional_operator_and_public_review"
+    },
+    {
+      "id": "SC-03",
+      "domain": "学",
+      "name_zh": "全龄课程翻译与线下报名",
+      "name_en": "Course translation and offline enrolment",
+      "category": "public_service",
+      "personas": [
+        "儿童与家长",
+        "学习者",
+        "教师"
+      ],
+      "space_operation_mapping_zh": "在学类人生支持节点限时运行，由明确的公共/专业运营者负责",
+      "data_categories_zh": [
+        "联系方式",
+        "课程与无障碍需求"
+      ],
+      "data_minimization": "collect only fields necessary for this session; no cross-scenario profile or sale/advertising use",
+      "privacy_safety_risk_tier": "medium",
+      "retention_and_deletion_zh": "课程结束后30日删除报名辅助副本",
+      "human_review_owner_zh": "教育服务人员",
+      "offline_equivalent_zh": "同一服务点提供纸质/电话/人工路径，不以数字渠道获得优先资格",
+      "appeal_and_correction": "on-site/phone/paper; one-day acknowledgement and five-day human response target",
+      "emergency_stop_zh": "切换纸质目录和人工报名",
+      "exit_decommission": "publish the reason, notify affected users, export/correct/delete data as requested, remove devices/signage and retain only the authorized audit summary",
+      "audit_record": "purpose, version, operator type, reviewer, incidents, appeals, retention deletion and continue/stop decision",
+      "ai_optional": true,
+      "human_takeover": true,
+      "status": "concept_scenario_pending_legal_professional_operator_and_public_review"
+    },
+    {
+      "id": "SC-04",
+      "domain": "学",
+      "name_zh": "少年安全独立路线陪练",
+      "name_en": "Independent route rehearsal for children",
+      "category": "public_service",
+      "personas": [
+        "儿童与家长",
+        "学习者",
+        "教师"
+      ],
+      "space_operation_mapping_zh": "在学类人生支持节点限时运行，由明确的公共/专业运营者负责",
+      "data_categories_zh": [
+        "当次路线与求助事件；不做人脸或连续位置历史"
+      ],
+      "data_minimization": "collect only fields necessary for this session; no cross-scenario profile or sale/advertising use",
+      "privacy_safety_risk_tier": "high",
+      "retention_and_deletion_zh": "正常路线会话结束即删除；安全事件日志30日后复核删除",
+      "human_review_owner_zh": "儿童安全与交通人员",
+      "offline_equivalent_zh": "同一服务点提供纸质/电话/人工路径，不以数字渠道获得优先资格",
+      "appeal_and_correction": "on-site/phone/paper; one-day acknowledgement and five-day human response target",
+      "emergency_stop_zh": "立即停止数字陪练并转成人员陪同",
+      "exit_decommission": "publish the reason, notify affected users, export/correct/delete data as requested, remove devices/signage and retain only the authorized audit summary",
+      "audit_record": "purpose, version, operator type, reviewer, incidents, appeals, retention deletion and continue/stop decision",
+      "ai_optional": true,
+      "human_takeover": true,
+      "status": "concept_scenario_pending_legal_professional_operator_and_public_review"
+    },
+    {
+      "id": "SC-05",
+      "domain": "业",
+      "name_zh": "转岗技能与开放课题匹配",
+      "name_en": "Reskilling and open-brief matching",
+      "category": "public_service",
+      "personas": [
+        "转岗者",
+        "开发者",
+        "企业/课题方"
+      ],
+      "space_operation_mapping_zh": "在业类人生支持节点限时运行，由明确的公共/专业运营者负责",
+      "data_categories_zh": [
+        "自报技能与学习兴趣"
+      ],
+      "data_minimization": "collect only fields necessary for this session; no cross-scenario profile or sale/advertising use",
+      "privacy_safety_risk_tier": "medium",
+      "retention_and_deletion_zh": "90日未使用即删除匹配画像",
+      "human_review_owner_zh": "就业/教育顾问",
+      "offline_equivalent_zh": "同一服务点提供纸质/电话/人工路径，不以数字渠道获得优先资格",
+      "appeal_and_correction": "on-site/phone/paper; one-day acknowledgement and five-day human response target",
+      "emergency_stop_zh": "停用匹配但保留人工课题目录",
+      "exit_decommission": "publish the reason, notify affected users, export/correct/delete data as requested, remove devices/signage and retain only the authorized audit summary",
+      "audit_record": "purpose, version, operator type, reviewer, incidents, appeals, retention deletion and continue/stop decision",
+      "ai_optional": true,
+      "human_takeover": true,
+      "status": "concept_scenario_pending_legal_professional_operator_and_public_review"
+    },
+    {
+      "id": "SC-06",
+      "domain": "业",
+      "name_zh": "端侧模型公开验证",
+      "name_en": "Public edge-model validation",
+      "category": "testing_validation",
+      "personas": [
+        "转岗者",
+        "开发者",
+        "企业/课题方"
+      ],
+      "space_operation_mapping_zh": "在业类人生支持节点限时运行，由明确的公共/专业运营者负责",
+      "data_categories_zh": [
+        "合成或经清权测试输入",
+        "性能与安全日志"
+      ],
+      "data_minimization": "collect only fields necessary for this session; no cross-scenario profile or sale/advertising use",
+      "privacy_safety_risk_tier": "high",
+      "retention_and_deletion_zh": "测试日志30日；安全事件记录依专业审查决定且单独授权",
+      "human_review_owner_zh": "测试安全负责人",
+      "offline_equivalent_zh": "同一服务点提供纸质/电话/人工路径，不以数字渠道获得优先资格",
+      "appeal_and_correction": "on-site/phone/paper; one-day acknowledgement and five-day human response target",
+      "emergency_stop_zh": "场内物理急停、断网、撤出测试设备",
+      "exit_decommission": "publish the reason, notify affected users, export/correct/delete data as requested, remove devices/signage and retain only the authorized audit summary",
+      "audit_record": "purpose, version, operator type, reviewer, incidents, appeals, retention deletion and continue/stop decision",
+      "ai_optional": true,
+      "human_takeover": true,
+      "status": "concept_scenario_pending_legal_professional_operator_and_public_review"
+    },
+    {
+      "id": "SC-07",
+      "domain": "养",
+      "name_zh": "托育照护空位协同",
+      "name_en": "Childcare and care-slot coordination",
+      "category": "public_service",
+      "personas": [
+        "照护者",
+        "儿童/老人",
+        "社会工作者"
+      ],
+      "space_operation_mapping_zh": "在养类人生支持节点限时运行，由明确的公共/专业运营者负责",
+      "data_categories_zh": [
+        "年龄段",
+        "联系方式",
+        "服务时段与无障碍需求"
+      ],
+      "data_minimization": "collect only fields necessary for this session; no cross-scenario profile or sale/advertising use",
+      "privacy_safety_risk_tier": "high",
+      "retention_and_deletion_zh": "服务完成后30日删除调度副本",
+      "human_review_owner_zh": "持证照护服务人员",
+      "offline_equivalent_zh": "同一服务点提供纸质/电话/人工路径，不以数字渠道获得优先资格",
+      "appeal_and_correction": "on-site/phone/paper; one-day acknowledgement and five-day human response target",
+      "emergency_stop_zh": "停止自动调度并由人工逐案确认",
+      "exit_decommission": "publish the reason, notify affected users, export/correct/delete data as requested, remove devices/signage and retain only the authorized audit summary",
+      "audit_record": "purpose, version, operator type, reviewer, incidents, appeals, retention deletion and continue/stop decision",
+      "ai_optional": true,
+      "human_takeover": true,
+      "status": "concept_scenario_pending_legal_professional_operator_and_public_review"
+    },
+    {
+      "id": "SC-08",
+      "domain": "养",
+      "name_zh": "照护者喘息时间交换",
+      "name_en": "Caregiver respite exchange",
+      "category": "public_service",
+      "personas": [
+        "照护者",
+        "儿童/老人",
+        "社会工作者"
+      ],
+      "space_operation_mapping_zh": "在养类人生支持节点限时运行，由明确的公共/专业运营者负责",
+      "data_categories_zh": [
+        "可用时段",
+        "互助承诺",
+        "不采集诊疗细节"
+      ],
+      "data_minimization": "collect only fields necessary for this session; no cross-scenario profile or sale/advertising use",
+      "privacy_safety_risk_tier": "medium",
+      "retention_and_deletion_zh": "交换完成后30日删除；参与者可随时提前删除",
+      "human_review_owner_zh": "社会工作/照护协调员",
+      "offline_equivalent_zh": "同一服务点提供纸质/电话/人工路径，不以数字渠道获得优先资格",
+      "appeal_and_correction": "on-site/phone/paper; one-day acknowledgement and five-day human response target",
+      "emergency_stop_zh": "冻结匹配并人工解除或重排承诺",
+      "exit_decommission": "publish the reason, notify affected users, export/correct/delete data as requested, remove devices/signage and retain only the authorized audit summary",
+      "audit_record": "purpose, version, operator type, reviewer, incidents, appeals, retention deletion and continue/stop decision",
+      "ai_optional": true,
+      "human_takeover": true,
+      "status": "concept_scenario_pending_legal_professional_operator_and_public_review"
+    },
+    {
+      "id": "SC-09",
+      "domain": "医",
+      "name_zh": "基层健康导航",
+      "name_en": "Primary-health navigation",
+      "category": "public_service",
+      "personas": [
+        "居民",
+        "医护/康复人员",
+        "陪护者"
+      ],
+      "space_operation_mapping_zh": "在医类人生支持节点限时运行，由明确的公共/专业运营者负责",
+      "data_categories_zh": [
+        "当次自报症状与服务需求"
+      ],
+      "data_minimization": "collect only fields necessary for this session; no cross-scenario profile or sale/advertising use",
+      "privacy_safety_risk_tier": "very_high",
+      "retention_and_deletion_zh": "AI会话不留存；转诊记录仅进入依法运行的医疗系统",
+      "human_review_owner_zh": "合格医护人员",
+      "offline_equivalent_zh": "同一服务点提供纸质/电话/人工路径，不以数字渠道获得优先资格",
+      "appeal_and_correction": "on-site/phone/paper; one-day acknowledgement and five-day human response target",
+      "emergency_stop_zh": "停止AI输出并立即转人工医护或急救",
+      "exit_decommission": "publish the reason, notify affected users, export/correct/delete data as requested, remove devices/signage and retain only the authorized audit summary",
+      "audit_record": "purpose, version, operator type, reviewer, incidents, appeals, retention deletion and continue/stop decision",
+      "ai_optional": true,
+      "human_takeover": true,
+      "status": "concept_scenario_pending_legal_professional_operator_and_public_review"
+    },
+    {
+      "id": "SC-10",
+      "domain": "医",
+      "name_zh": "康复设备公共安全验证",
+      "name_en": "Public-safety validation of rehabilitation devices",
+      "category": "testing_validation",
+      "personas": [
+        "居民",
+        "医护/康复人员",
+        "陪护者"
+      ],
+      "space_operation_mapping_zh": "在医类人生支持节点限时运行，由明确的公共/专业运营者负责",
+      "data_categories_zh": [
+        "去标识设备遥测",
+        "安全事件"
+      ],
+      "data_minimization": "collect only fields necessary for this session; no cross-scenario profile or sale/advertising use",
+      "privacy_safety_risk_tier": "very_high",
+      "retention_and_deletion_zh": "去标识遥测180日用于独立复核，期限届满删除",
+      "human_review_owner_zh": "康复/设备安全专业负责人",
+      "offline_equivalent_zh": "同一服务点提供纸质/电话/人工路径，不以数字渠道获得优先资格",
+      "appeal_and_correction": "on-site/phone/paper; one-day acknowledgement and five-day human response target",
+      "emergency_stop_zh": "物理急停、隔离设备并启动医疗响应",
+      "exit_decommission": "publish the reason, notify affected users, export/correct/delete data as requested, remove devices/signage and retain only the authorized audit summary",
+      "audit_record": "purpose, version, operator type, reviewer, incidents, appeals, retention deletion and continue/stop decision",
+      "ai_optional": true,
+      "human_takeover": true,
+      "status": "concept_scenario_pending_legal_professional_operator_and_public_review"
+    },
+    {
+      "id": "SC-11",
+      "domain": "游",
+      "name_zh": "热浪与雨雪韧性路线",
+      "name_en": "Heat, rain and snow resilience route",
+      "category": "public_service",
+      "personas": [
+        "儿童",
+        "老年人",
+        "残障使用者"
+      ],
+      "space_operation_mapping_zh": "在游类人生支持节点限时运行，由明确的公共/专业运营者负责",
+      "data_categories_zh": [
+        "天气与设施状态",
+        "匿名路线请求"
+      ],
+      "data_minimization": "collect only fields necessary for this session; no cross-scenario profile or sale/advertising use",
+      "privacy_safety_risk_tier": "low",
+      "retention_and_deletion_zh": "正常会话不留存；设施事件7日后汇总删除",
+      "human_review_owner_zh": "公共空间维护与应急人员",
+      "offline_equivalent_zh": "同一服务点提供纸质/电话/人工路径，不以数字渠道获得优先资格",
+      "appeal_and_correction": "on-site/phone/paper; one-day acknowledgement and five-day human response target",
+      "emergency_stop_zh": "切换固定离线导视与人工巡查",
+      "exit_decommission": "publish the reason, notify affected users, export/correct/delete data as requested, remove devices/signage and retain only the authorized audit summary",
+      "audit_record": "purpose, version, operator type, reviewer, incidents, appeals, retention deletion and continue/stop decision",
+      "ai_optional": true,
+      "human_takeover": true,
+      "status": "concept_scenario_pending_legal_professional_operator_and_public_review"
+    },
+    {
+      "id": "SC-12",
+      "domain": "游",
+      "name_zh": "无障碍通行公开审计",
+      "name_en": "Public accessibility audit",
+      "category": "testing_validation",
+      "personas": [
+        "儿童",
+        "老年人",
+        "残障使用者"
+      ],
+      "space_operation_mapping_zh": "在游类人生支持节点限时运行，由明确的公共/专业运营者负责",
+      "data_categories_zh": [
+        "匿名障碍观察",
+        "经同意的图片或文字"
+      ],
+      "data_minimization": "collect only fields necessary for this session; no cross-scenario profile or sale/advertising use",
+      "privacy_safety_risk_tier": "medium",
+      "retention_and_deletion_zh": "原始观察90日内去标识并删除；保留公开修复结论",
+      "human_review_owner_zh": "无障碍专业团队与残障共创者",
+      "offline_equivalent_zh": "同一服务点提供纸质/电话/人工路径，不以数字渠道获得优先资格",
+      "appeal_and_correction": "on-site/phone/paper; one-day acknowledgement and five-day human response target",
+      "emergency_stop_zh": "停止采集并转现场纸质审计",
+      "exit_decommission": "publish the reason, notify affected users, export/correct/delete data as requested, remove devices/signage and retain only the authorized audit summary",
+      "audit_record": "purpose, version, operator type, reviewer, incidents, appeals, retention deletion and continue/stop decision",
+      "ai_optional": true,
+      "human_takeover": true,
+      "status": "concept_scenario_pending_legal_professional_operator_and_public_review"
+    },
+    {
+      "id": "SC-13",
+      "domain": "文",
+      "name_zh": "京张口述史公共编辑室",
+      "name_en": "Jing-Zhang oral-history newsroom",
+      "category": "cultural_service",
+      "personas": [
+        "居民讲述者",
+        "公众编辑",
+        "国内外访问者"
+      ],
+      "space_operation_mapping_zh": "在文类人生支持节点限时运行，由明确的公共/专业运营者负责",
+      "data_categories_zh": [
+        "经授权的音频、文字、署名与许可范围"
+      ],
+      "data_minimization": "collect only fields necessary for this session; no cross-scenario profile or sale/advertising use",
+      "privacy_safety_risk_tier": "very_high",
+      "retention_and_deletion_zh": "按逐项许可保留；撤回后30日内下架工作副本与公开内容",
+      "human_review_owner_zh": "档案/文史编辑与权利联系人",
+      "offline_equivalent_zh": "同一服务点提供纸质/电话/人工路径，不以数字渠道获得优先资格",
+      "appeal_and_correction": "on-site/phone/paper; one-day acknowledgement and five-day human response target",
+      "emergency_stop_zh": "立即停止发布并冻结相关素材",
+      "exit_decommission": "publish the reason, notify affected users, export/correct/delete data as requested, remove devices/signage and retain only the authorized audit summary",
+      "audit_record": "purpose, version, operator type, reviewer, incidents, appeals, retention deletion and continue/stop decision",
+      "ai_optional": true,
+      "human_takeover": true,
+      "status": "concept_scenario_pending_legal_professional_operator_and_public_review"
+    },
+    {
+      "id": "SC-14",
+      "domain": "文",
+      "name_zh": "中华文明多语内容工坊",
+      "name_en": "Multilingual Chinese-civilization studio",
+      "category": "cultural_service",
+      "personas": [
+        "居民讲述者",
+        "公众编辑",
+        "国内外访问者"
+      ],
+      "space_operation_mapping_zh": "在文类人生支持节点限时运行，由明确的公共/专业运营者负责",
+      "data_categories_zh": [
+        "投稿内容",
+        "来源与许可",
+        "翻译审校记录"
+      ],
+      "data_minimization": "collect only fields necessary for this session; no cross-scenario profile or sale/advertising use",
+      "privacy_safety_risk_tier": "high",
+      "retention_and_deletion_zh": "未采用草稿180日删除；已发布内容按独立许可与撤回条款管理",
+      "human_review_owner_zh": "文史/翻译专家与公众编辑委员会",
+      "offline_equivalent_zh": "同一服务点提供纸质/电话/人工路径，不以数字渠道获得优先资格",
+      "appeal_and_correction": "on-site/phone/paper; one-day acknowledgement and five-day human response target",
+      "emergency_stop_zh": "停止自动发布、撤回内容并启动人工复核",
+      "exit_decommission": "publish the reason, notify affected users, export/correct/delete data as requested, remove devices/signage and retain only the authorized audit summary",
+      "audit_record": "purpose, version, operator type, reviewer, incidents, appeals, retention deletion and continue/stop decision",
+      "ai_optional": true,
+      "human_takeover": true,
+      "status": "concept_scenario_pending_legal_professional_operator_and_public_review"
+    }
+  ]
+}

@@ -6,9 +6,9 @@
 
 ---
 
-## 附录：中英等价与交付完整性审计（v1.2 自审）
+## 附录：中英等价与交付完整性审计（v1.5 复核）
 
-审计时间：2026-08-14（v1.2 复核 A0 重排后）｜ 审计人：排版与字体子任务代理
+审计时间：2026-08-14（v1.2 复核 A0 重排后）；2026-08-26（v1.5 全部条目重跑复核，新增 P0 指标五行）｜ 审计人：排版与字体子任务代理
 范围：`assets/figures/` 12 张图件、`visual/` 两份 HTML、`drawings/` 四份 PDF、`metrics.json` 与 `proposal.md` / `proposal.en.md` 的指标引用。
 所有行均给出验证方式，结果全部为 PASS。本文件可复核：每条验证方式都可原样重跑。
 
@@ -18,12 +18,12 @@
 
 | 图件 | 尺寸 zh = en | 内容等义 | md5 zh ≠ en（两版确证） | 结果 |
 |---|---|---|---|---|
-| site-overview.png / .en.png | 2400×1500 = 2400×1500 | 同一底图与版式，仅语言替换 | 41cd0d5ff0c0 / 885c40f7d81d | PASS |
-| land-use-structure.png / .en.png | 2400×1500 = 2400×1500 | 同上 | 5c15b64604c5 / 35190a9d95a7 | PASS |
-| key-areas.png / .en.png | 2400×1500 = 2400×1500 | 同上 | 424b45d65393 / 495758205daa | PASS |
-| slow-variable-section.png / .en.png | 2400×1500 = 2400×1500 | 同上 | 8837f39d7b73 / f2f9852cca07 | PASS |
-| mobility-bluegreen.png / .en.png | 2400×1500 = 2400×1500 | 同上 | db256e188e11 / 2a8d4efecc4f | PASS |
-| metrics-evidence.png / .en.png | 2400×1500 = 2400×1500 | 同上 | 18e5dd214d62 / 2d4467a8cc6d | PASS |
+| site-overview.png / .en.png | 2400×1500 = 2400×1500 | 同一底图与版式，仅语言替换 | 97331c4976df / 04cca63f9cf8 | PASS（v1.5 重验） |
+| land-use-structure.png / .en.png | 2400×1500 = 2400×1500 | 同上 | 7a049fa70244 / ac6fac8248f0 | PASS（v1.5 重验） |
+| key-areas.png / .en.png | 2400×1500 = 2400×1500 | 同上 | d53b52360ad1 / 74f73e3f73c2 | PASS（v1.5 重绘场景插图） |
+| slow-variable-section.png / .en.png | 2400×1500 = 2400×1500 | 同上 | 67a97a56eb5a / d144d33ff010 | PASS（v1.5 重绘场景插图） |
+| mobility-bluegreen.png / .en.png | 2400×1500 = 2400×1500 | 同上 | ab0724f66e8f / 2b7c9eb50354 | PASS（v1.5 重验） |
+| metrics-evidence.png / .en.png | 2400×1500 = 2400×1500 | 同上 | 70e63d60ef85 / 70fca8b1e5fa | PASS（v1.5 重验） |
 
 12 张 PNG 全部通过 `load()` + `verify()`，无截断、无坏块。zh/en 同由 `fig01–06` 各脚本以同一数据源（geometry/*.geojson、metrics.json）生成，仅文案语言不同。
 
@@ -52,9 +52,9 @@ section id 序列完全一致（7 = 7）；副标题（英文 kicker）两版逐
 | a0-boards.pdf / .en.pdf | 2 = 2 | 1189.0×841.0 mm（A0 横版） | PASS |
 | a3-booklet.pdf / .en.pdf | 6 = 6 | 420.1×296.9 mm（A3 横版） | PASS |
 
-页面内容对应：A0-1 概念与结构 ↔ Concept & Structure；A0-2 深度与证据 ↔ Depth & Evidence；A3 P1–P6 概念/结构/工场/剖面/移动/指标分期逐页对应。四份文件均 ≤ 3MB（1.77–2.58MB）。
+页面内容对应：A0-1 概念与结构 ↔ Concept & Structure；A0-2 深度与证据 ↔ Depth & Evidence；A3 P1–P6 概念/结构/工场/剖面/移动/指标分期逐页对应。四份文件均 ≤ 3MB（v1.5 重出后 1.69–2.51MB）。
 
-v1.2 备注：A0 两页经第二轮重排——页眉右区分别填入「指标速览 METRICS AT A GLANCE」（A0-1）与「合规快照 COMPLIANCE SNAPSHOT」（A0-2）面板，两只钟面板右半加总诀金句块、放行门/留白清单行右端加状态标签（默认否定 DEFAULT·NO / 待补 PENDING）；整页重栅格化 dpi 75→110，图流 JPEG 重压缩（pikepdf），面板正文与注记字号整体上调一档。重排后中英 4 页缩略图逐页复查无大留白、无裁切、无溢出。
+v1.5 备注：fig03 三座工场与 fig04 典型街道剖面的场景插图由手绘线条全部改为实心剪影公共标识（ISO 7001 风格 pictogram）与结构化几何树冠，人物尺度统一（儿童=成人 0.72 倍）；fig01/02/05/06 内容不变，仅按修复后的 CJK 字体回退链重出。v1.2 备注：A0 两页经第二轮重排——页眉右区分别填入「指标速览 METRICS AT A GLANCE」（A0-1）与「合规快照 COMPLIANCE SNAPSHOT」（A0-2）面板，两只钟面板右半加总诀金句块、放行门/留白清单行右端加状态标签（默认否定 DEFAULT·NO / 待补 PENDING）；整页重栅格化 dpi 75→110，图流 JPEG 重压缩（pikepdf），面板正文与注记字号整体上调一档。重排后中英 4 页缩略图逐页复查无大留白、无裁切、无溢出。
 
 ## 4. metrics.json 指标在 proposal.md / proposal.en.md 中引用一致
 
@@ -70,17 +70,22 @@ v1.2 备注：A0 两页经第二轮重排——页眉右区分别填入「指标
 | key_area_count | 3 | 「重点区」×4、三工场表述一致 | "Key Area"/"civic yard"/"workshop" 对应表述 | PASS |
 | scenario_card_count | 12 | 「十二张」×1 + 「12 张」×1 | "Twelve" ×2 + "12 scenario cards" ×1 | PASS |
 | industry_test_count | 3 | 「产业测试」×2 | "industry test" ×2 | PASS |
-| slow_variable_count | 5 | 「五类」×12 + 「五个」×1 | "five/Five slow" ×6（全文 17 处 slow variable） | PASS |
-| exit_gate_count | 4 | 「放行门」×9；G1×2 G2×1 G3×1 G4×2 | "release gates / four gates" 表述；G1×2 G2×1 G3×1 G4×2（编号计数逐字相同） | PASS |
-| slow_variable_baseline | unknown（一年基线后设定） | 「基线」×17 | "baseline/Baseline" ×19 | PASS |
+| slow_variable_count | 5 | 「五类」×16 | "five/Five slow" 对应表述 | PASS（v1.5 重验） |
+| exit_gate_count | 4 | 「放行门」×15；G1×9 G2×14 G3×14 G4×9 | 编号计数逐字相同：G1×9 G2×14 G3×14 G4×9 | PASS（v1.5 重验） |
+| slow_variable_baseline | unknown（一年基线后设定） | 「基线」×37 | "baseline/Baseline" ×40 | PASS（v1.5 重验） |
+| p0_capacity_persons_low/high | 150 / 240 人（自设参数推演） | 「600÷4=150 至 600÷2.5=240 人」×1 | "600÷4=150 to 600÷2.5=240 people" ×1 | PASS（v1.5 新增） |
+| p0_staffing_fte | 5 FTE（自设参数推演） | 「5 FTE」×2 | "5 FTE" ×2 | PASS（v1.5 新增） |
+| p0_rom_cost_low/high_million_cny | 2.16–4.25 百万元（自设单价，非报价） | 「约 216 万元 / 约 425 万元」×1 | "≈¥2.16M / ≈¥4.25M" ×1 | PASS（v1.5 新增） |
+| p0_opex_low/high_million_cny_per_year | 0.90–1.50 百万元/年（自设单价，非报价） | 「约 90–150 万元/年」×1 | "≈¥0.90–1.50M per year" ×1 | PASS（v1.5 新增） |
+| group_specific_acceptance_coverage | 1.0（5/5 适用场景） | 「分群体」×4，判据表逐行可查 | "group-specific" 对应表述 | PASS（v1.5 新增） |
 
 ## 5. 附：字体内嵌等价性
 
-验证方式：`embed_font.py` 对两份 HTML 各自按实际用字子集化；playwright 经本地 http server 截图；另将字体栈改为仅嵌入字体的副本截图，与正常截图一致。
+验证方式：`embed_font.py` 对两份 HTML 各自按实际用字子集化；v1.5 起另注入 Noto Serif CJK SC（SIL OFL 1.1）子集作为衬线兜底；fontTools 解析内嵌 woff2 的 cmap 并与页面全部可见非 ASCII 码点逐一比对；playwright 经本地 http server 截图；另将字体栈改为仅嵌入字体的副本截图，与正常截图一致。
 
-| 文件 | 子集字符数（CJK） | woff2 / base64 | 文件增量 | 结果 |
-|---|---|---|---|---|
-| visual/index.html | 795（691） | 190.9 KB / 254.5 KB | +255.8 KB | PASS |
-| visual/index.en.html | 112（8） | 28.5 KB / 38.0 KB | +39.3 KB | PASS |
+| 文件 | 码点覆盖（v1.5 重验） | 内嵌字体 | 结果 |
+|---|---|---|---|
+| visual/index.html | 689 个可见非 ASCII 码点，缺失 0 | Noto Sans CJK SC 子集 + Noto Serif CJK SC 子集（237 KB woff2） | PASS |
+| visual/index.en.html | 16 个可见非 ASCII 码点，缺失 0 | Noto Sans CJK SC 子集 + Noto Serif CJK SC 子集（36 KB woff2） | PASS |
 
-两版注入的字体栈规则相同（--serif/--sans 栈首、--mono 栈 Menlo 之后），渲染验证一致，HTML 保持完全离线。
+两版注入规则一致：嵌入黑体居于 --sans 栈系统字体之后、--mono 栈 Menlo 之后；--serif 栈以系统衬线（中文页 Songti SC、英文页 Georgia）领衔，v1.5 起新增 Noto Serif CJK SC 子集作为衬线兜底，嵌入黑体仅作最后回退，标题恢复衬线气质且不再以嵌入黑体渲染。渲染验证一致，HTML 保持完全离线。
