@@ -44,7 +44,21 @@ scenarios: ["ai-traffic-walkability", "enterprise-service-copilot", "public-safe
 
 **京张续城 / Jing-Zhang In Place** 是主名称；Logo 方向是两条原创的“铁路缝线 + 可开启复位门”，不使用第三方商标，且与逐点导视严格分开。三大定位是“百年京张文化带、都市 AI 生活体验带、AI 融合创新带”；五大功能是“AI 全栈自主创新体系、世界级 AI 创新生态、AI+ 场景赋能新范式、智能化 AI 活力城市、AI 治理全球话语权”。[source:AGENT-TASKBOOK]
 
-三区两翼不是五个开发项目：众智园对应受控物理验证，AI 原点对应公开侧的可撤协作，大钟寺对应有人工的采用/合规界面；中关村科技服务翼只提出专业服务转介，小月河场景赋能翼只提出可申诉的维护与公共体验反馈。五者以“问题进入—普通空间充分性—深度准入或 NO-BUILD—公共反馈—复位”的回路协同。总体结构是既有城市的多点缝合而非单一形象轴；与北纬社区、未来科学城、怀柔科学城、经开区及京津冀的关系只表述为可供后续专业团队研究的协同议题，不主张机构合作或资源承诺。[data:visual/assets/taskbook-closure.json#reviewer_route]
+三区两翼不是五个开发项目：众智园对应受控物理验证，AI 原点对应公开侧的可撤协作，大钟寺对应有人工的采用/合规界面；中关村科技服务翼只提出专业服务转介，小月河场景赋能翼只提出可申诉的维护与公共体验反馈。五者以“问题进入—普通空间充分性—深度准入或 NO-BUILD—公共反馈—复位”的回路协同。总体结构是既有城市的多点缝合而非单一形象轴。[data:visual/assets/taskbook-closure.json#reviewer_route]
+
+#### 条件区域协同：任务—接口—证据—反馈
+
+五个区域关系不再停留在研究清单，而是统一进入“候选任务 → 建议接口 → 证据请求/交换 → 反馈回京张 → 激活条件”的条件回路。任何节点缺少授权联系人、合法/清权证据、人工责任或退出条件时，回路不激活，京张保持普通城市或 NO-BUILD；这是一套原创的任务接口设计，不是合作事实。[data:visual/assets/taskbook-closure.json#conditional_regional_interfaces]
+
+**共同现状与边界（逐行适用）**：**UNCONTACTED / UNCONFIRMED**；**NO PARTNERSHIP CLAIM**；**NO RESOURCE COMMITMENT**；**NO OPERATOR COMMITMENT**；**NO GOVERNMENT COMMITMENT**。
+
+| 关系节点 | 候选任务 | 建议接口 | 请求/交换证据 | 返回京张 | 激活条件 | 当前状态与不承诺边界 |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **北纬社区** | S06 / S11：日常服务与宁静边界 | 普通城市问题单 + 人工交接桌 | 居民定义的问题、无障碍与非数字兜底、同意和参与代表性 | 公共利益底线；普通空间充分或 NO-BUILD 判定 | 经授权社区联系人、可申诉参与规则、非采集基线均确认 | UNCONTACTED / UNCONFIRMED；上述四项不承诺边界逐项适用 |
+| **未来科学城** | S04：多模态协作交接 | 可撤会话证据包接口 | 有界任务、数据权利、进入条件、人工管理人与复位要求 | 准入矩阵；可复用交接格式；不满足项清单 | 经授权对口方、有界任务、合法/清权数据和人工管理人均到位 | UNCONTACTED / UNCONFIRMED；上述四项不承诺边界逐项适用 |
+| **怀柔科学城** | S01：真实物理任务验证 | 物理任务—安全—复位问题包，不转移设备 | 任务包络、场地/进入许可、运营与安全责任、失败和复位计划 | 最小可撤差异，或普通载体 / NO-BUILD 结论 | 真实任务、经授权载体、运营/安全责任人和受监督排演均确认 | UNCONTACTED / UNCONFIRMED；上述四项不承诺边界逐项适用 |
+| **经开区** | S07：采用与合规复核 | 有人值守的复核/申诉协议交接 | 受影响使用者、复核标准、纸质兜底、争议和停止路径 | 采用证据板；停止/复位规则；缺失权利清单 | 经授权用例、人工复核/申诉路径和非数字服务均成立 | UNCONTACTED / UNCONFIRMED；上述四项不承诺边界逐项适用 |
+| **京津冀** | S12：证据状态与版本变更 | 跨域证据信封 + 适用性差异表 | 来源、版本、适用辖域、合法交换依据、人工权威与回滚条件 | 本地适用 / 不兼容 / 缺证项清单，回写 STATUS × ACTION | 公开或清权任务书、经授权交换路径及各地人工权威均确认 | UNCONTACTED / UNCONFIRMED；上述四项不承诺边界逐项适用 |
 
 综合规划创新不是替代国土空间规划：`STATUS × ACTION` 先判断既有载体可做什么，AI Spatial Admission 再判断该动作是否配得上最小、可撤的专业空间差异；缺少事实、权利或公共利益条件即回到普通空间或 NO-BUILD。[data:visual/assets/taskbook-closure.json#core_grammar]
 
@@ -111,12 +125,14 @@ scenarios: ["ai-traffic-walkability", "enterprise-service-copilot", "public-safe
 
 任务边界以公告、任务书、允许设计空间、标准与来源登记为主控输入。所有定位性事实均被限制在来源支持的时空尺度；国际案例只提供方法启发，不支持京张的项目、合作或空间事实。[source:OFFICIAL-ANNOUNCEMENT] [source:AGENT-TASKBOOK] [source:SOURCE-REGISTRY] 临时总体边界和三处重点区只服务概念、拓扑与表达，不能解释为红线、地块、权属或审批范围。[source:BOUNDARY-SOURCE] [depth:existing_conditions_diagnosis]
 
-![场地状态、证据层级与三层范围](assets/figures/site-overview.png)
+![京张空间判断与条件区域接口：带比例尺、指北针、临时几何警示、三处重点区差异和五节点证据反馈回路](assets/figures/site-overview.png)
 
-> **如何读此图（FIG.01 场地状态与三层范围）**：
-> 1. **看三层嵌套**：确认 43.6 km² 统筹层、11.4 km² 总体层与三处重点区的空间嵌套关系；
-> 2. **识别临时边界**：临时边界（provisional）与待调查约束区（constraints）以虚线表达，未伪造任何官方红线；
-> 3. **确认证据链**：图底标注数据来源与证据层级，保证所有空间主张可追溯、可审计。
+> **如何读此图（FIG.01 京张空间判断 + 条件区域接口）**：
+> 1. **只在技术有效处读比例**：11.4 km² 总体层和三处重点区来自投稿坐标几何，图上给出北向、0–1 km 比例尺、制图 CRS `EPSG:4548` 与 2026-08-30 数据状态；43.6 km² 统筹层只有来源支持的关系尺度，没有可用坐标，因此不画成可量测范围；
+> 2. **先读临时警示**：总体边界和三处重点区均为 `GEOMETRY_DERIVED_PROVISIONAL`，不是官方红线、地块、权属、审批或测量成果；
+> 3. **比较三处空间判断**：众智园处理“水岸—受控载体—区域到达”，AI 原点处理“校园公开侧—普通学习—逐次授权”，大钟寺处理“站城地面连续—骑行/装卸—日常商业”；这些断面均标为 `NTS / NOT TO SCALE / CONCEPT TYPOLOGY`；
+> 4. **沿五行接口回到京张**：北纬社区、未来科学城、怀柔科学城、经开区、京津冀只通过候选任务和证据门返回 STATUS × ACTION；未满足激活条件即不产生空间、资源或运营动作；
+> 5. **按六类证据状态复核**：图面仅使用 `SOURCE_BACKED`、`GEOMETRY_DERIVED_PROVISIONAL`、`DESIGN_RULE`、`DESIGN_ASSUMPTION`、`INDICATIVE`、`UNKNOWN`，不以视觉精度替代现场或法定证据。
 
 ---
 
