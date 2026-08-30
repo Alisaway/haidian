@@ -10,8 +10,27 @@
   "operation_status": "not_run",
   "field_performance": null,
   "current_decision": "do_not_advance",
-  "decision_zh": "当前不得进入现场试点、采购、上线或对公众运行。先完成场地权利、真实需求、普通服务基线、代表性用户参与、依法任命角色及专业核验，再由有权角色重新签发转段决定。",
-  "decision_en": "Do not advance to a field pilot, procurement, launch, or public operation. Site rights, real demand, the ordinary-service baseline, representative-user participation, lawfully appointed roles, and professional verification must be completed before authorised roles issue a new gate decision.",
+  "decision_zh": "原点大厦（原东升大厦）一层候选展厅的既有装修招标人、施工许可、联合验收和一次‘展厅—北门—社区大街’参访链路已有公开记录；上述事实只确定首轮对接与踏勘线索，不构成RailWeave场地授权或无障碍实测。当前仍不得进入现场试点、采购、上线或对公众运行。先完成书面场地接收、真实需求、普通服务基线、代表性用户参与、依法任命角色、专业核验及项目专项报价，再由有权角色重新签发转段决定。",
+  "decision_en": "Public records verify the existing-fit-out procuring entity, construction permit, joint acceptance, and one reported hall → north gate → community street visit for the candidate ground-floor exhibition hall at Origin Building (formerly Dongsheng Building). Those facts establish first-engagement and survey clues only; they constitute neither RailWeave site authorisation nor an accessibility survey. The proposal still must not advance to a field pilot, procurement, launch, or public operation. Written site acceptance, real demand, the ordinary-service baseline, representative-user participation, lawfully appointed roles, professional verification, and project-specific quotations must be completed before authorised roles issue a new gate decision.",
+  "public_candidate_evidence": {
+    "candidate_venue_zh": "海淀区中关村东路8号原点大厦（原东升大厦）裙房一层AI原点社区展厅",
+    "candidate_venue_en": "AI Origin Community exhibition hall, Ground Floor, Podium, Origin Building (formerly Dongsheng Building), 8 Zhongguancun East Road, Haidian",
+    "verified_existing_project_scale_sqm": 1650,
+    "construction_permit": "110108202606050403",
+    "joint_acceptance_notice": "京竣联验（海）字〔2026〕1380号",
+    "joint_acceptance_date": "2026-07-20",
+    "organised_visit_count_in_public_record": 1,
+    "organised_visit_date": "2026-07-29",
+    "source_ids": [
+      "AI-ORIGIN-EXHIBITION-TENDER",
+      "AI-ORIGIN-CONSTRUCTION-PERMIT",
+      "AI-ORIGIN-JOINT-ACCEPTANCE",
+      "AI-ORIGIN-EXHIBITION-OPERATING",
+      "AI-ORIGIN-BUILDING-RENAME"
+    ],
+    "evidence_boundary_zh": "1650平方米是既有装修工程规模，不是S06可用面积；公开记录不证明RailWeave使用权、常态公众开放、现场无障碍连续性、消防适用性、系统容量或责任接收。",
+    "evidence_boundary_en": "The 1,650 m² figure is the scale of the existing fit-out project, not S06 usable area. Public records do not prove RailWeave use rights, routine public opening, continuous field accessibility, fire-safety applicability, system capacity, or acceptance of accountability."
+  },
   "synthetic_evidence": {
     "source_ref": "receipt.json",
     "suite_ref": "synthetic_cases.json",
@@ -61,6 +80,7 @@
   },
   "next_gate": {
     "gate_id": "G0",
+    "gate_passed": false,
     "title_zh": "证据与场地核验",
     "title_en": "Evidence and Site Verification",
     "required_evidence": [
@@ -68,14 +88,14 @@
         "evidence_id": "RDR-G0-01",
         "item_zh": "公开来源、许可和适用边界记录",
         "item_en": "Public-source, licence, and use-boundary record",
-        "current_status": "partially_available_requires_project_specific_confirmation",
+        "current_status": "candidate_venue_public_record_verified_broader_project_confirmation_pending",
         "candidate_receiving_roles": ["CM", "PF"]
       },
       {
         "evidence_id": "RDR-G0-02",
         "item_zh": "正式边界、场地权利、开放时段及现状核验",
         "item_en": "Official boundary, site rights, opening hours, and baseline verification",
-        "current_status": "missing_or_unverified",
+        "current_status": "venue_identity_permit_and_acceptance_verified_rights_hours_and_field_baseline_missing",
         "candidate_receiving_roles": ["IE"]
       },
       {
@@ -103,7 +123,11 @@
         "evidence_id": "RDR-G0-06",
         "item_zh": "退出事项、设备撤离、场地恢复和替代服务资源计划",
         "item_en": "Resource plan for exit actions, equipment removal, site restoration, and alternative service",
-        "current_status": "unpriced_unapproved",
+        "current_status": "public_scope_and_price_comparators_available_project_quantities_quotes_and_approval_missing",
+        "cost_evidence_maturity": "CM2_partial_public_comparators",
+        "project_price_maturity": "CM0_no_project_specific_quote",
+        "valid_project_quote_count": 0,
+        "confirmed_total_cny": null,
         "candidate_receiving_roles": ["IE", "PF", "DO"]
       }
     ],
