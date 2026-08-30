@@ -1,5 +1,19 @@
 # 方案迭代记录 / Changelog
 
+## v97.0 - 2026-08-30
+
+**审阅索引角色边界闭合 / Review-index Role-boundary Closure**
+
+- 已有能力：R96 已明确当前交接索引不存在生成器强制的内嵌完整性结果；PR #4272 在 exact head `cc2a4d6ddc413712037bf90762e8399e2987afef` 完成 96/100、无阻断项评审并进入 canonical main。
+- 真实缺口：修复前，包级指针仍把 `review-handoff-index.json` 称为“逐文件状态注册表”，并声称索引自身覆盖 162 个 manifest 路径、保存 geometry/metrics 哈希和 12/8/3/36 计数；当前索引没有逐文件清单、哈希台账或权利清单。R35 与 R36 两条历史记录也仍用现在时声称索引生成器每次重建都会强制校验。自动 gate 不比较这些角色声明与当前 JSON 结构。
+- 必须冻结：冻结“双轨京张 / Twin-Track Jing-Zhang”、三种不可互换原型、JZ-AIOS、G0—G3、四轴、三载体、证据门、权利边界及 12/8/3/36；不改 proposal、report/visual 页面、图件、媒体、四份 PDF、geometry、metrics、来源判断、现实状态或 0/8 人工双语签署。
+- 本轮实施：把 R97 索引限定为“审阅导航与交接摘要”，明确它不是逐文件注册表、manifest 哈希权威、权利清单、geometry/metrics 冻结台账或外部评审结果；分别指回 manifest 162 路径/161 哈希、file-rights-inventory 162/162 处置、geometry/metrics、合规矩阵和 exact-head 外部评审的真实权威位置。R35/R36 的持续生成器强制说法改为历史执行记录。官方几何、批准、现场基线与结果、现实责任、预算、恢复时间、公众反馈、独立法律/商标审查和人工双语签署继续为 unknown、0、未提供或 NO-GO。
+
+- Existing capability: R96 made explicit that the current handoff index has no generator-enforced embedded integrity result. PR #4272 completed a 96/100 review with no blocker on exact head `cc2a4d6ddc413712037bf90762e8399e2987afef` and entered canonical main.
+- Real gap: before repair, the package pointer still called `review-handoff-index.json` a per-file status registry and claimed that the index itself covered 162 manifest paths and stored geometry/metrics hashes plus the 12/8/3/36 counts. The current index contains no per-file list, hash ledger or rights inventory. Two historical R35/R36 records also still used present tense to claim that the index generator enforced checks on every regeneration. Automated gates do not compare those role claims with the current JSON structure.
+- Frozen boundary: Twin-Track Jing-Zhang, the three non-interchangeable prototypes, JZ-AIOS, G0–G3, four axes, three carriers, evidence gates, rights boundaries and 12/8/3/36 remain frozen. Proposals, report/visual pages, figures, media, all four PDFs, geometry, metrics, source judgements, real-world status and the unsigned 0/8 human bilingual review are unchanged.
+- Implemented this round: limited the R97 index to review navigation and handoff summary, explicitly excluding per-file registry, manifest-hash authority, rights inventory, geometry/metrics freeze ledger and external-review-result roles. It now points separately to the actual authorities for 162 manifest paths/161 hashes, 162/162 path dispositions, geometry/metrics, compliance evidence and exact-head external review. R35/R36 continuous-generator-enforcement wording is now historical execution evidence. Official geometry, approvals, field baselines and outcomes, real accountability, budgets, recovery time, public feedback, independent legal/trademark review and human bilingual sign-off remain unknown, zero, not provided or NO-GO.
+
 ## v96.0 - 2026-08-30
 
 **审阅索引完整性声明修复 / Review-index Integrity-claim Repair**
