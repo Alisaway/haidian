@@ -1,0 +1,405 @@
+{
+  "schema_version": "1.0",
+  "id": "JZAC-P0-ORIGIN-RELAY-01",
+  "iteration": "v1.5-candidate",
+  "status": "participant_preimplementation_reference_not_authorized",
+  "title": {
+    "zh": "P0 共同复核与纠错接力单元：预实施证据包",
+    "en": "P0 Civic Review and Correction Relay Cell: Pre-implementation Evidence Package"
+  },
+  "public_test": {
+    "zh": "一条错误如果不能沿原渠道被纠正，这项AI服务就不能留在京张。",
+    "en": "If an error cannot be corrected through every channel that carried it, the AI service must not remain in Jing-Zhang."
+  },
+  "authority_boundary": {
+    "zh": "本包把既有PILOT-A转成可计算的参赛者参考测试装配，不是场地测绘、建筑方案、消防或无障碍合规结论、正式估算、采购批准或运营承诺。",
+    "en": "This package turns the existing PILOT-A into a computable participant reference test fit. It is not a site survey, building design, fire or accessibility compliance conclusion, formal estimate, procurement approval or operating commitment."
+  },
+  "reference_test_fit": {
+    "host_area": "beijing_ai_origin_community",
+    "geometry_ref": "geometry/key_areas.geojson#PROV-KEY-002",
+    "site_placement": null,
+    "site_placement_status": "not_selected_pending_official_geometry_and_host_permission",
+    "relationship_scale": "1:500 provisional area relationship only",
+    "envelope": {
+      "width_m": 12.0,
+      "depth_m": 8.0,
+      "area_sqm": 96.0,
+      "status": "participant_reference_test_fit_not_measured_site",
+      "derivation": "A separate physical test-fit assumption maps the existing 12 by 8 adjacency pattern to metres for this P0 only; the source diagram remains non-metric."
+    },
+    "zones": [
+      {
+        "id": "P0-Z1",
+        "name_zh": "无屏入口与原渠道更正带",
+        "name_en": "Screenless entry and same-channel correction band",
+        "area_sqm": 24.0,
+        "access": "public"
+      },
+      {
+        "id": "P0-Z2",
+        "name_zh": "受理与等候",
+        "name_en": "Intake and waiting",
+        "area_sqm": 16.0,
+        "access": "public"
+      },
+      {
+        "id": "P0-Z3",
+        "name_zh": "证据解释与离开",
+        "name_en": "Evidence explanation and exit",
+        "area_sqm": 16.0,
+        "access": "public"
+      },
+      {
+        "id": "P0-Z4",
+        "name_zh": "私密独立复核",
+        "name_en": "Private independent review",
+        "area_sqm": 16.0,
+        "access": "review"
+      },
+      {
+        "id": "P0-Z5",
+        "name_zh": "独立复核人员入口与共同校译",
+        "name_en": "Independent reviewer access and civic translation",
+        "area_sqm": 16.0,
+        "access": "review"
+      },
+      {
+        "id": "P0-Z6",
+        "name_zh": "受控记录与恢复存放",
+        "name_en": "Controlled records and recovery store",
+        "area_sqm": 8.0,
+        "access": "restricted"
+      }
+    ],
+    "accessibility_working_envelope": {
+      "continuous_clear_route_design_target_m": 1.5,
+      "turning_circle_design_target_m": 1.5,
+      "status": "participant_design_target_not_verified_compliance",
+      "required_check": "authorized field survey, applicable-code review and co-testing with actual users before any physical release"
+    },
+    "flows": {
+      "public": "screenless entry -> intake -> explanation -> correction receipt -> exit",
+      "controlled_evidence": "records store -> independent review -> channel owner -> retest handover",
+      "recovery": "pause -> isolate material -> correct channels -> remove equipment and cached copies -> sign recovery"
+    },
+    "states": [
+      "daily_public_service",
+      "bounded_review_and_correction",
+      "recovery_or_retirement"
+    ],
+    "drawing_chain": [
+      "1:500 provisional relationship and arrival",
+      "1:100 participant reference test-fit plan",
+      "1:50 public-controlled-recovery flow section",
+      "1:20 screenless counter, paper receipt and removable interface"
+    ]
+  },
+  "operational_screening": {
+    "status": "participant_capacity_screening_not_field_sla",
+    "service_time_assumptions_min": {
+      "screenless_intake": 15,
+      "independent_review": 30,
+      "two_channel_correction": 30,
+      "retest_and_recovery_handover": 30
+    },
+    "stage_capacity_cases_per_hour": {
+      "screenless_intake": 4.0,
+      "independent_review": 2.0,
+      "two_channel_correction": 2.0,
+      "retest_and_recovery_handover": 2.0
+    },
+    "reference_bottleneck_capacity_cases_per_hour": 2.0,
+    "formula": "min(60 / each participant service-time assumption)",
+    "waiting_area_sqm": 16.0,
+    "waiting_density_assumption_sqm_per_person": 2.0,
+    "reference_waiting_limit_persons": 8,
+    "admission_rule": "When the active queue reaches eight people or demand exceeds the two-case-per-hour screening envelope, stop walk-in admission, keep urgent human explanation available, and add appointments or an independent second review seat before reopening.",
+    "field_baseline": null,
+    "field_target": null,
+    "observed": null
+  },
+  "staffing_screening": {
+    "role_class_count": 9,
+    "minimum_concurrent_seats": 5,
+    "minimum_seats": [
+      "case_steward",
+      "original_channel_owner",
+      "independent_reviewer",
+      "evaluation_and_recovery_lead",
+      "host_or_service_owner"
+    ],
+    "independence_constraints": [
+      "original_channel_owner must not serve as independent reviewer for the same case",
+      "material author or supplier must not serve as independent reviewer",
+      "service owner must not approve their own unresolved adverse conclusion"
+    ],
+    "reference_90_day_schedule": {
+      "window_hours": 4,
+      "windows_per_week": 3,
+      "weeks": 13,
+      "open_hours": 156,
+      "reference_staff_hours": 780,
+      "formula": "4 hours x 3 windows x 13 weeks x 5 concurrent seats",
+      "status": "participant_staff_hour_screening_not_roster_commitment"
+    },
+    "annual_fte": null,
+    "annual_fte_reason": "Named operator, opening hours, productive-hour convention, leave, training and relief factors are not authorized."
+  },
+  "procurement_cost_plan": {
+    "currency": null,
+    "formal_estimate": null,
+    "vendor_quote_count": 0,
+    "funding_commitment": null,
+    "status": "share_based_participant_allocation_not_monetary_estimate",
+    "packages": [
+      {
+        "id": "PKG-01",
+        "scope_zh": "调查、权利与授权材料",
+        "scope_en": "Survey, rights and authorization material",
+        "reference_share_percent": 12,
+        "release_evidence": "source, licence, site-use and channel inventory"
+      },
+      {
+        "id": "PKG-02",
+        "scope_zh": "可逆空间适配与无障碍工作包",
+        "scope_en": "Reversible fit-out and accessibility work package",
+        "reference_share_percent": 23,
+        "release_evidence": "surveyed dimensions, applicable-code review, removal and route test"
+      },
+      {
+        "id": "PKG-03",
+        "scope_zh": "离线设备、纸面收据与标识",
+        "scope_en": "Offline equipment, paper receipts and signs",
+        "reference_share_percent": 15,
+        "release_evidence": "asset register, offline test and readable bilingual labels"
+      },
+      {
+        "id": "PKG-04",
+        "scope_zh": "渠道接入、故障注入与回送测试",
+        "scope_en": "Channel connection, failure injection and return testing",
+        "reference_share_percent": 12,
+        "release_evidence": "channel-owner agreement and correction acknowledgement test"
+      },
+      {
+        "id": "PKG-05",
+        "scope_zh": "90天人员、独立复核与运营",
+        "scope_en": "Ninety-day staffing, independent review and operation",
+        "reference_share_percent": 28,
+        "release_evidence": "appointed roster, conflict check, training and operating log"
+      },
+      {
+        "id": "PKG-06",
+        "scope_zh": "退役、数据清理与空间恢复储备",
+        "scope_en": "Retirement, data clearance and spatial-recovery reserve",
+        "reference_share_percent": 10,
+        "release_evidence": "itemized decommissioning and recovery acceptance"
+      }
+    ],
+    "share_total_percent": 100,
+    "monetary_update_rule": "Add low/high CNY bands only after quantities, a dated authoritative or professionally cleared rate basis and owner review are recorded in sources; never label a participant band as a tender price."
+  },
+  "maintenance_and_recovery": [
+    {
+      "cycle": "each_session",
+      "owner": "case_steward",
+      "action": "reconcile case IDs, two-channel inventory and paper receipts; reset synthetic material"
+    },
+    {
+      "cycle": "weekly",
+      "owner": "pilot_steward",
+      "action": "test the no-phone route, channel reachability, expiry dates, printer and offline terminal"
+    },
+    {
+      "cycle": "day_45",
+      "owner": "independent_reviewer",
+      "action": "review conflicts, unresolved cases, accessibility barriers and pause decisions"
+    },
+    {
+      "cycle": "day_70",
+      "owner": "evaluation_and_recovery_lead",
+      "action": "complete missing-role, missing-channel, reviewer-outage and recovery-record failure injections"
+    },
+    {
+      "cycle": "day_90",
+      "owner": "service_owner",
+      "action": "remove temporary equipment, close materials, caches and backups, restore the space and sign adopt/modify/retire"
+    }
+  ],
+  "external_gates": [
+    {
+      "id": "G01",
+      "name_zh": "场地主体与使用许可",
+      "name_en": "Host and site-use permission",
+      "owner": "host_operator",
+      "required_evidence": "named entity, site-use scope, dates and signatory authority",
+      "status": "HOLD"
+    },
+    {
+      "id": "G02",
+      "name_zh": "权属、现状、结构、消防与工程条件",
+      "name_en": "Ownership, existing condition, structure, fire and engineering",
+      "owner": "host_operator",
+      "required_evidence": "authorized survey and competent professional review",
+      "status": "HOLD"
+    },
+    {
+      "id": "G03",
+      "name_zh": "无障碍路线与共同测试",
+      "name_en": "Accessible route and co-testing",
+      "owner": "accessibility_reviewer",
+      "required_evidence": "measured route, applicable-code review and user co-test record",
+      "status": "HOLD"
+    },
+    {
+      "id": "G04",
+      "name_zh": "材料来源、版权与用途授权",
+      "name_en": "Material provenance, copyright and purpose permission",
+      "owner": "data_custodian",
+      "required_evidence": "rights record, permitted purpose, expiry and withdrawal path",
+      "status": "HOLD"
+    },
+    {
+      "id": "G05",
+      "name_zh": "隐私、数据期限与影响复核",
+      "name_en": "Privacy, retention and impact review",
+      "owner": "data_custodian",
+      "required_evidence": "reviewed data protocol, minimization and residual-risk acceptance",
+      "status": "HOLD"
+    },
+    {
+      "id": "G06",
+      "name_zh": "原渠道责任与更正回送协议",
+      "name_en": "Original-channel ownership and correction-return agreement",
+      "owner": "channel_owner",
+      "required_evidence": "complete channel inventory, named owner and acknowledgement method",
+      "status": "HOLD"
+    },
+    {
+      "id": "G07",
+      "name_zh": "独立复核任命与利益冲突",
+      "name_en": "Independent review appointment and conflicts",
+      "owner": "independent_reviewer",
+      "required_evidence": "qualification, appointment, recusal and replacement procedure",
+      "status": "HOLD"
+    },
+    {
+      "id": "G08",
+      "name_zh": "网络安全、离线切换与回滚",
+      "name_en": "Cybersecurity, offline changeover and rollback",
+      "owner": "evaluation_lead",
+      "required_evidence": "bounded interface inventory, offline test, rollback and incident route",
+      "status": "HOLD"
+    },
+    {
+      "id": "G09",
+      "name_zh": "人员、采购、资金与保障",
+      "name_en": "Staffing, procurement, funding and assurance",
+      "owner": "service_owner",
+      "required_evidence": "appointed roster, sourced quantities and rates, funding and insurance basis",
+      "status": "HOLD"
+    },
+    {
+      "id": "G10",
+      "name_zh": "退役与恢复联合验收",
+      "name_en": "Joint decommissioning and recovery acceptance",
+      "owner": "service_owner",
+      "required_evidence": "asset, material, cache, backup and space closure signed by required roles",
+      "status": "HOLD"
+    }
+  ],
+  "conditional_implementation_branches": [
+    {
+      "id": "B01",
+      "trigger_gates": [
+        "G01",
+        "G02"
+      ],
+      "primary": "fixed civic review and correction relay cell",
+      "safe_state": "staffed mobile counter plus a separately bookable private room",
+      "preserves": "screenless intake, privacy, independent review, paper receipt and same-channel correction",
+      "temporarily_loses": "permanent ground-floor spatial identity and fixed controlled store",
+      "prohibition": "do not claim a permanent built Civic Review Hall",
+      "return_condition": "host permission, measured room, engineering and accessibility release"
+    },
+    {
+      "id": "B02",
+      "trigger_gates": [
+        "G01",
+        "G06",
+        "G09"
+      ],
+      "primary": "authorized three-area field relay",
+      "safe_state": "single-site offline tabletop relay with role and receipt handovers",
+      "preserves": "six-moment correction chain, independent review, fail-closed tests and recovery receipt",
+      "temporarily_loses": "real cross-site travel, organization handover and live service evidence",
+      "prohibition": "do not report three-area field performance",
+      "return_condition": "joint host, channel-owner and staffing authorization"
+    },
+    {
+      "id": "B03",
+      "trigger_gates": [
+        "G06",
+        "G08"
+      ],
+      "primary": "machine-readable channel integration",
+      "safe_state": "human-signed per-channel correction ledger",
+      "preserves": "complete channel inventory, accountable owner, version and acknowledgement",
+      "temporarily_loses": "automation and real-time status",
+      "prohibition": "do not claim automatic or instant correction",
+      "return_condition": "reviewed interface, security test and rollback evidence"
+    },
+    {
+      "id": "B04",
+      "trigger_gates": [
+        "G04",
+        "G05",
+        "G08"
+      ],
+      "primary": "bounded connected evidence service",
+      "safe_state": "offline synthetic evidence kit, paper case ID and human custody",
+      "preserves": "public explanation, no-phone route, independent review and fail-closed decision",
+      "temporarily_loses": "live data, remote interfaces and public-channel operation",
+      "prohibition": "do not ingest personal material or open real public channels",
+      "return_condition": "rights, privacy-impact and cybersecurity release"
+    }
+  ],
+  "acceptance_evidence": {
+    "currently_judgeable": [
+      "six reference zones sum to the 96 sqm test-fit envelope",
+      "six procurement shares sum to 100 percent",
+      "all ten external gates remain HOLD and field release is false",
+      "all four safe branches map to explicit gates and preserve the public correction invariant",
+      "synthetic same-channel correction is 2/2",
+      "four missing-field injections produce 4/4 pause or retirement states",
+      "eight RACI actions and nine unappointed role classes remain inspectable"
+    ],
+    "field_dependent": [
+      "named operator and signatories",
+      "measured room, accessible route, engineering and fire conclusions",
+      "actual arrival, queue, service time and staff workload",
+      "actual quantities, rates, quotes, funding and operating cost",
+      "screenless parity, user understanding, appeals and correction time",
+      "real decommissioning and asset, data and space recovery"
+    ],
+    "field_release": false,
+    "current_disposition": "HOLD_CONCEPT_ONLY"
+  },
+  "review_paths": [
+    {
+      "duration": "30_seconds",
+      "question": "What is the non-negotiable public rule?",
+      "evidence": "public test, bidirectional spine and three verification layers"
+    },
+    {
+      "duration": "3_minutes",
+      "question": "Can one pilot be spatially and operationally understood?",
+      "evidence": "P0 test-fit, six moments, capacity screening and ninety-day stages"
+    },
+    {
+      "duration": "15_minutes",
+      "question": "Can a professional team continue without inventing missing approvals?",
+      "evidence": "RACI, packages, maintenance, ten gates, four safe branches and field-dependent evidence"
+    }
+  ]
+}
