@@ -1,0 +1,122 @@
+{
+  "schema_version": "0.1.0",
+  "units": {
+    "length": "m",
+    "area": "sqm"
+  },
+  "metrics": {
+    "site_area_sqm": {
+      "status": "known",
+      "value": 11412825.39,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "polygon_area(provisional_site_boundary, EPSG:4548)",
+      "confidence": "low",
+      "assumptions": [
+        "Provisional boundary only; reproject and recalculate when official geometry arrives."
+      ]
+    },
+    "building_footprint_area_sqm": {
+      "status": "known",
+      "value": 605430.47,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "sum(polygon_area(conceptual_building_footprints), EPSG:4548)",
+      "confidence": "low",
+      "assumptions": [
+        "Conceptual footprints do not represent approved building stock or controls."
+      ]
+    },
+    "green_ratio": {
+      "status": "known",
+      "value": 0.120714,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/green_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "green_space_area / site_area",
+      "confidence": "low",
+      "assumptions": [
+        "Conceptual green-space layer recalculated from submitted provisional geometry (EPSG:4548)."
+      ]
+    },
+    "public_space_ratio": {
+      "status": "known",
+      "value": 0.142495,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "public_space_area / site_area",
+      "confidence": "low",
+      "assumptions": [
+        "Conceptual public-space layer recalculated from submitted provisional geometry (EPSG:4548)."
+      ]
+    },
+    "key_area_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "count(KEY_AREA)",
+      "confidence": "low",
+      "assumptions": [
+        "Key areas are provisional constraints."
+      ]
+    },
+    "scenario_node_count": {
+      "status": "known",
+      "value": 10,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "visual/index.html"
+      ],
+      "formula": "count(scenario_cards)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "industry_test_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(industry_test_scenarios)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "urban_instrument_count": {
+      "status": "known",
+      "value": 4,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(memory, trial, deliberation, growth instruments)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "floor_area_ratio": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "brief/site-package/ranges/planning_limits.json"
+      ],
+      "formula": "total_floor_area / official_site_area",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "Official controls, building floors and official site boundary are not included in the cleared package."
+    }
+  }
+}
