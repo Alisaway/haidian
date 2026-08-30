@@ -1,5 +1,19 @@
 # 方案迭代记录 / Changelog
 
+## v96.0 - 2026-08-30
+
+**审阅索引完整性声明修复 / Review-index Integrity-claim Repair**
+
+- 已有能力：R95 已把独立交接索引与包级镜像指针逐字对齐；PR #4269 在 exact head `3c102dafc50eaa804441fa9928aded890689d58a` 完成 96/100、无阻断项评审并进入 canonical main。
+- 真实缺口：修复前，R33 历史台账仍用现在时声称当前 `review-handoff-index.json` 内含 `evidence_integrity` 且由生成器强制执行；该块已在后续聚焦重构中移除。六道自动闸门不会比较这项叙述与当前索引结构，因此机器读者可能把历史计数误认为当前 exact-head PASS。
+- 必须冻结：冻结“双轨京张 / Twin-Track Jing-Zhang”、三种不可互换原型、JZ-AIOS、G0—G3、四轴、三载体、证据门、权利边界及 12/8/3/36；不改 proposal、report/visual 页面、图件、媒体、四份 PDF、geometry、metrics、来源判断、现实状态或 0/8 人工双语签署。
+- 本轮实施：把 R33 条目标明为历史执行记录和已被聚焦重构取代的结构状态，停止把旧计数表述为当前结果；在 R96 交接索引增加明确的 fail-closed 状态，说明当前不存在生成器强制的内嵌完整性结果，路线、镜像、manifest 哈希、双语结构与 T-02 必须分别执行并绑定最终 exact head，且不能替代外部评审。官方几何、批准、现场基线与结果、现实责任、预算、恢复时间、公众反馈、独立法律/商标审查和人工双语签署继续为 unknown、0、未提供或 NO-GO。
+
+- Existing capability: R95 aligned the standalone handoff index and package-level mirror pointer byte-for-byte. PR #4269 completed a 96/100 review with no blocker on exact head `3c102dafc50eaa804441fa9928aded890689d58a` and entered canonical main.
+- Real gap: before repair, the R33 historical register still used present-tense language claiming that the current `review-handoff-index.json` contained a generator-enforced `evidence_integrity` block. A later focused refactor removed that block. The six deterministic gates do not compare this narrative with the current index structure, so a machine reader could mistake historical counts for a current exact-head PASS.
+- Frozen boundary: Twin-Track Jing-Zhang, the three non-interchangeable prototypes, JZ-AIOS, G0–G3, four axes, three carriers, evidence gates, rights boundaries and 12/8/3/36 remain frozen. Proposals, report/visual pages, figures, media, all four PDFs, geometry, metrics, source judgements, real-world status and the unsigned 0/8 human bilingual review are unchanged.
+- Implemented this round: marked the R33 entry as a historical execution record whose embedded structure was superseded by the focused refactor, and stopped presenting its old counts as current results. The R96 handoff index now states fail-closed that no generator-enforced embedded integrity result is present; route, mirror, manifest-hash, bilingual-structure and T-02 checks must run separately and bind the final exact head, and cannot replace external review. Official geometry, approvals, field baselines and outcomes, real accountability, budgets, recovery time, public feedback, independent legal/trademark review and human bilingual sign-off remain unknown, zero, not provided or NO-GO.
+
 ## v95.0 - 2026-08-30
 
 **交接镜像一致性闭合 / Handoff-mirror Coherence Closure**
