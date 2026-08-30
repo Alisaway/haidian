@@ -76,6 +76,8 @@ JZMA’s AI mechanism is a “memory evidence graph + spatial route + human rele
 | S11 | Developer reproducibility clinic | Z2 / developers | De-identified sample -> eval report | Mentor review; no integration if irreproducible |
 | S12 | Memory-version replay | Z3 / visitors | Published versions -> timeline | Fact/rights sample; rollback on anomaly |
 
+**Five root-cause form items (auditable failure loops)**: JZMA does not treat “AI is present” as completion. Five causes are recorded in every scenario card, node ledger and exit gate: (1) **broken provenance**: without publisher, date or source location, an evidence card stays in the review queue; (2) **broken rights/consent**: if permission is missing or withdrawal cannot be replayed, isolate the source, remove the public version and hand over to staff; (3) **broken spatial landing**: if node, access, title, heritage or operating conditions are unclear, retain only paper/offline rehearsal and do not site it; (4) **broken model-to-human handoff**: if an output is not explainable, semantically equivalent or error-reviewed, automatic release is prohibited and archive, accessibility or curatorial staff take over; (5) **broken public return**: if residents cannot read, appeal, withdraw or receive a non-digital service, pause new content, activate paper, staffed, tactile or audio alternatives and disclose the response. M04/M05/M06/M07/M08/M12, T01-T03 and P01-P14 leave the trace: detect -> block -> human takeover -> public notice -> retest/exit. These are conceptual governance forms, not existing institutions or approvals.
+
 **Six personas**: P01 resident contributor, P02 young researcher/developer, P03 older storyteller, P04 person with accessibility needs, P05 caregiver/child companion, P06 domestic or international visitor. Personas describe service needs, not personal files. **Three industry tests**: T01 consented oral-history transcription with withdrawal, T02 multilingual/accessibility route, T03 provenance-to-display release chain. All start as offline or shadow tests; external baselines are unknown_to_verify.[metric:scenario_card_count] [metric:industry_test_scenario_count] [metric:persona_count]
 
 ## Land Use, Building Scale, and Retain-Renovate-Demolish Strategy
@@ -155,6 +157,26 @@ The three formal visual metrics are recomputed from package geometry and must ma
 | M12 Audit complete | complete records/sample | 1.00 | unknown_to_verify | Each version / manifest | Author / block release |
 
 The compliance matrix covers announcement items and agent.1-agent.6: overall concept, identity, three positionings/five functions/three areas-two wings; six cases and ecosystem map; scenario cards, tests, personas and AI boundary; public space, east-west stitching/north-south continuity, three landmarks, honor display and component library; Jing-Zhang/Zhongguancun/AI culture, wayfinding and international copy; annual activity, developer community, open scenarios and conversion path. Every row points to proposal, geometry, metrics, sources, assumptions, self_check and bilingual display surfaces.[source:DATA-SRC-AGENT-TASKBOOK-20260518]
+
+**13 supplementary review dimensions (evidence anchors)**
+
+| Dimension | Explicit evidence in this package | Deepening interface |
+|---|---|---|
+| Objective alignment | Three positionings, Jing-Zhang/Haidian context, three nodes | Official boundary and site verification |
+| Function match | Five functions, three areas/two wings, Proof-Memory Loop | Specialist roles by area |
+| Brand identity | Memory Line JZMA, original mark, color/type/clear-space rules | Trademark search and application tests |
+| Regional synergy | Zhongguancun service wing, Xiaoyuehe scenario wing and five-region interfaces | Confirm each knowledge/talent/scenario boundary |
+| Planning innovation | Evidence graph + spatial route + human release as withdrawable infrastructure | Interface with statutory planning work |
+| Industry support | Six public cases, eight support factors and T01-T03 tests | Verify public resources and actors |
+| Scenario perceptibility | S01-S12, Z1-Z3 scripts and paper/audio alternatives | On-site accessibility walk-through |
+| Spatial clarity | Site/key-area/road/green/public GeoJSON and five figure families | Recompute after official redlines, title and heritage data |
+| Transferability | P01-P14, role-type RACI, triggers and exit conditions | Professional operations boundary |
+| Expression completeness | Bilingual 13 sections, 14 figures, four PDFs and two offline HTML surfaces | Human publishing and accessibility review |
+| Public compliance | Sources, rights ledger, R0-R3, risk and withdrawal chain | Itemized legal/rights review |
+| International communication | Jing-Zhang Memory · AI Archive Gallery and bilingual storyline | Translation and cross-cultural testing |
+| Long-term operation value | Annual disclosure, memory call, developer clinic and versioned archive | Verify annual resources and maintenance conditions |
+
+This table records the package’s supplied conceptual evidence and next interfaces only; it does not imply confirmed cooperation, funding, approval, operator or implementation.
 
 ## Risk, Copyright, and Compliance
 
