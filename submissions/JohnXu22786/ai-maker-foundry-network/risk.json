@@ -1,0 +1,128 @@
+{
+  "schema_version": "0.1.0",
+  "version": 1,
+  "dimensions": [
+    {
+      "id": "data_privacy",
+      "label": "数据隐私",
+      "score": 4,
+      "note": "试点可能接触个人身份线索或过度画像。",
+      "mitigation": "只保留匿名聚合；关键决策人工复核；发现越界立即停用并删除。",
+      "human_review": "由数据保护、运营和公众代表共同复核后方可进入试点。"
+    },
+    {
+      "id": "implementation_complexity",
+      "label": "实施复杂度",
+      "score": 3,
+      "note": "跨空间、设备、算法和服务流程的接口较多。",
+      "mitigation": "先做可逆小规模试点，设置责任人、回滚点和逐项验收。",
+      "human_review": "由项目管理、工程和场地运营人员复核接口与回滚条件。"
+    },
+    {
+      "id": "public_acceptance",
+      "label": "公众接受度",
+      "score": 3,
+      "note": "不同使用者对智能服务、活动噪声和空间改变的接受程度不一。",
+      "mitigation": "提供人工替代路径、公开说明和反馈闭环；按投诉阈值调整。",
+      "human_review": "由社区、场地管理方和无障碍代表参与复核。"
+    },
+    {
+      "id": "operations_cost",
+      "label": "运维成本",
+      "score": 3,
+      "note": "设备、内容更新、培训和夜间安全会形成持续成本。",
+      "mitigation": "先核定人员工时、维护频次和退出成本，再决定是否扩容。",
+      "human_review": "由运营负责人和财务审阅人复核成本基线。"
+    },
+    {
+      "id": "policy_uncertainty",
+      "label": "政策不确定性",
+      "score": 4,
+      "note": "边界、审批、消防、交通和资金条件尚未形成正式基线。",
+      "mitigation": "所有控制项保持待核，不以概念方案替代主管主体审批。",
+      "human_review": "由主管主体和专业审查单位确认后方可转入实施判断。"
+    },
+    {
+      "id": "spatial_dispute",
+      "label": "空间争议",
+      "score": 4,
+      "note": "地块、设施、公共空间和历史线索的权属或管理范围可能不一致。",
+      "mitigation": "使用 provisional 几何，不锁定地块权利；正式边界确认前不作建设结论。",
+      "human_review": "由权属人、规划和遗产专业人员进行联合复核。"
+    },
+    {
+      "id": "technology_maturity",
+      "label": "技术成熟度",
+      "score": 3,
+      "note": "多模态、边缘设备和数字孪生接口的稳定性需通过现场试验确认。",
+      "mitigation": "采用可降级人工流程，记录误报、漏报和服务中断并设置停止阈值。",
+      "human_review": "由技术负责人和独立安全审阅人复核试验结果。"
+    },
+    {
+      "id": "equity_inclusion",
+      "label": "公平与包容性",
+      "score": 4,
+      "note": "数字能力、语言、年龄和行动能力差异可能造成服务门槛。",
+      "mitigation": "保留线下、低技术和人工通道，按群体分层检查服务可达性。",
+      "human_review": "由无障碍、社区和服务设计专业人员进行公平性复核。"
+    }
+  ],
+  "risks": [
+    {
+      "risk_id": "R01",
+      "title": "provisional boundary",
+      "trigger": "official geometry differs or is unavailable",
+      "mitigation": "freeze spatial conclusions and regenerate",
+      "owner": "G/S",
+      "status": "open_to_verify"
+    },
+    {
+      "risk_id": "R02",
+      "title": "privacy or identity exposure",
+      "trigger": "individual, sensitive or non-public data appears",
+      "mitigation": "delete/minimise, notify, stop service",
+      "owner": "O/S",
+      "status": "open_to_verify"
+    },
+    {
+      "risk_id": "R03",
+      "title": "safety or accessibility failure",
+      "trigger": "incident, route obstruction or missing human fallback",
+      "mitigation": "lock device/route, provide human alternative",
+      "owner": "O/S",
+      "status": "open_to_verify"
+    },
+    {
+      "risk_id": "R04",
+      "title": "bias or unequal access",
+      "trigger": "group performance gap or user complaint is unresolved",
+      "mitigation": "revert to manual process and investigate",
+      "owner": "T/S",
+      "status": "open_to_verify"
+    },
+    {
+      "risk_id": "R05",
+      "title": "rights or permissions gap",
+      "trigger": "unverified font, logo, site, source or data right",
+      "mitigation": "remove asset and block publication",
+      "owner": "O/S",
+      "status": "open_to_verify"
+    },
+    {
+      "risk_id": "R06",
+      "title": "operating failure",
+      "trigger": "no staffing, budget, baseline, approval or two threshold failures",
+      "mitigation": "pause, publish limitation, exit reversible kit",
+      "owner": "A/G",
+      "status": "open_to_verify"
+    },
+    {
+      "risk_id": "R07",
+      "title": "heritage or public-realm conflict",
+      "trigger": "heritage, park, fire or traffic review is not passed",
+      "mitigation": "retain existing condition and stop placement",
+      "owner": "G/S",
+      "status": "open_to_verify"
+    }
+  ]
+}
