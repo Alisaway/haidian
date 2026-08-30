@@ -1,5 +1,15 @@
 # 方案迭代记录 / Iteration Changelog
 
+## v5.2 - 2026-08-30
+
+**Noonline Route Kit.** The self-guided principle is now a first-use physical kit rather than only a route rule. A future verified start panel offers three non-personal modes, MOVE / PAUSE / ACCESS; six repeatable components make starting, walking, pausing, turning, returning and reading a changed condition visible without a phone. The state card uses only CONTINUE, REROUTE, RETURN and PAUSE, and always gives a next action rather than a generic fault message.
+
+**Practical but bounded.** The smallest future exercise is one authorised start, two decisions, one pause-information point and return. The kit is a removable public-information layer, not an installed sign inventory, service route, facility claim or construction drawing. All components remain HOLD until public passage, lawful access, accessible alternative, physical legibility, maintenance and human stop authority are authorised and verified.
+
+**Evidence boundary unchanged.** No route, entry, crossing, seating, shade, water point, indoor place, human service, time, metric, Verified SLA, appointed entity, funding, land right, permit, approval or field condition is upgraded. Optional AI may explain and assist maintenance only after physical information; it cannot require identity, face, personal trajectory, scan, account or route-entry access.
+
+**First-use test and release cards.** A future authorised party can now run five no-personal-data reading tasks before activation and record only COMPLETE / INCOMPLETE / UNCERTAIN. The same artifact adds a release-card schema for KIT-01--06: authorisation, field evidence, maintenance and human stop interface, visible next action, review date and a removal or downgrade response. It reports no field result and cannot release a site condition by itself.
+
 ## v5.1 - 2026-08-30
 
 **Spatial-spine refinement.** The three taskbook positioning bands now have one inspectable spatial grammar. A Level 2 north-south public reading order connects the northern Zhongzhiyuan, central AI Origin and southern Dazhongsi prototypes; two east-west cross-stitches describe how the technology-service and scenario-enablement wings may enter and return after verification. One compact concept diagram and paired bilingual explanation make this relationship visible without treating it as a survey map.
