@@ -1,0 +1,155 @@
+{
+  "schema_version": "noonline-route-kit-v1",
+  "artifact_id": "NRTK-01",
+  "title": "Noonline Route Kit",
+  "status": "concept_only_not_installed",
+  "purpose": "Make a future verified noon-route relation legible to a first-time user without requiring a phone, account, scan, personal data, daily line staffing or live AI.",
+  "first_use_script": [
+    "Read the fixed start panel.",
+    "Choose a fixed mode by symbol, number and words.",
+    "Follow the next physical marker only.",
+    "Use the pause, turn and status cards to continue, reroute, return or pause.",
+    "Use optional AI only after physical information; it cannot replace a marker or promote a condition."
+  ],
+  "modes": [
+    {
+      "id": "MODE-MOVE",
+      "label": "MOVE / brief walk",
+      "symbol": "M",
+      "use_boundary": "A direction-first relation. It does not confirm a measured journey time or continuous service."
+    },
+    {
+      "id": "MODE-PAUSE",
+      "label": "PAUSE / brief stay",
+      "symbol": "P",
+      "use_boundary": "May appear only where a stay opportunity, publicness and maintenance condition are verified. It does not confirm an existing seat, shade, water point or indoor space."
+    },
+    {
+      "id": "MODE-ACCESS",
+      "label": "ACCESS / accessibility first",
+      "symbol": "A",
+      "use_boundary": "May appear only after a lawful, continuous accessible alternative is authorised and verified."
+    }
+  ],
+  "components": [
+    {
+      "id": "KIT-01",
+      "name": "Start Panel",
+      "must_show": ["mode strip", "symbol and number", "return rule", "current status"],
+      "must_not_require": ["scan", "account", "phone", "live AI"]
+    },
+    {
+      "id": "KIT-02",
+      "name": "Mode Strip",
+      "must_show": ["MOVE", "PAUSE", "ACCESS", "word plus symbol plus number"],
+      "must_not_require": ["identity", "location history", "device pairing"]
+    },
+    {
+      "id": "KIT-03",
+      "name": "Walk Marker",
+      "must_show": ["repeated mode symbol", "number", "direction word"],
+      "must_not_require": ["colour-only reading", "app navigation"]
+    },
+    {
+      "id": "KIT-04",
+      "name": "Pause Panel",
+      "must_show": ["continue", "bypass", "return"],
+      "must_not_require": ["existing-facility claim"]
+    },
+    {
+      "id": "KIT-05",
+      "name": "Turn and Return",
+      "must_show": ["continue", "reroute", "return"],
+      "must_not_require": ["algorithmic recommendation"]
+    },
+    {
+      "id": "KIT-06",
+      "name": "Status Card",
+      "allowed_states": ["CONTINUE", "REROUTE", "RETURN", "PAUSE"],
+      "must_show": ["next physical action", "visible status word"],
+      "must_not_require": ["a live service", "an on-site guide"]
+    }
+  ],
+  "minimum_future_exercise": {
+    "relationship": "one authorised start - two decisions - one pause-information point - return",
+    "required_release_checks": ["publicness", "lawful passage", "accessible alternative", "physical-information legibility", "maintenance interface", "human stop authority"],
+    "failure_rule": "When any required check is missing, stale, rejected or unauditable, do not activate the affected component; remove it or keep it HOLD."
+  },
+  "first_use_comprehension_test": {
+    "status": "future_authorised_exercise_only_no_results_recorded",
+    "purpose": "Check whether a first-time reader can understand the physical information language before site activation. This is not a route, safety, accessibility, facility, service, permission or implementation test.",
+    "prohibited_collection": ["name", "identity", "face", "personal trajectory", "device identifier", "behavioural profile"],
+    "allowed_task_results": ["COMPLETE", "INCOMPLETE", "UNCERTAIN"],
+    "tasks": [
+      {
+        "id": "NRTK-T-01",
+        "prompt": "Choose a brief-walk mode from KIT-01 and KIT-02.",
+        "readable_response": "The reader identifies the matching word, symbol and number."
+      },
+      {
+        "id": "NRTK-T-02",
+        "prompt": "Identify the next physical action from KIT-03.",
+        "readable_response": "The reader matches the selected symbol and number to a direction word."
+      },
+      {
+        "id": "NRTK-T-03",
+        "prompt": "Bypass a pause choice and return using KIT-04.",
+        "readable_response": "The reader identifies the visible RETURN rule without assuming a facility."
+      },
+      {
+        "id": "NRTK-T-04",
+        "prompt": "Respond to a changed relation using KIT-05 and KIT-06.",
+        "readable_response": "The reader follows the named reroute marker rather than seeking a digital alert."
+      },
+      {
+        "id": "NRTK-T-05",
+        "prompt": "End the relation using the shared return rule.",
+        "readable_response": "The reader identifies the known return relation without live AI or an on-site guide."
+      }
+    ],
+    "failure_rule": "An INCOMPLETE or UNCERTAIN result leaves the relevant component HOLD until its physical information is revised and rechecked. A COMPLETE result cannot release any separate publicness, legal, accessibility, safety, maintenance, permit or evidence requirement."
+  },
+  "component_release_cards": {
+    "status_values": ["HOLD", "RELEASED", "REMOVED"],
+    "not_appointed_interface": "A future authorised maintenance and human-stop interface; no entity is appointed by this artifact.",
+    "required_fields": ["component_id", "status", "authorisation_reference", "field_evidence_reference", "maintenance_interface", "human_stop_authority", "user_visible_next_action", "failure_response", "review_date", "valid_until"],
+    "shared_release_rule": "A component may move from HOLD only when its applicable authorisation, field evidence, physical legibility, maintenance interface and human stop authority are complete, current and auditable.",
+    "cards": [
+      {
+        "component_id": "KIT-01",
+        "user_visible_next_action": "Choose a mode or return.",
+        "failure_response": "Cover or remove the panel; do not leave an ambiguous start."
+      },
+      {
+        "component_id": "KIT-02",
+        "user_visible_next_action": "Match a mode by word, symbol and number.",
+        "failure_response": "Keep the mode HOLD until wording and symbols are readable without colour alone."
+      },
+      {
+        "component_id": "KIT-03",
+        "user_visible_next_action": "Follow the named next marker.",
+        "failure_response": "Remove the marker or state RETURN when its relation cannot be maintained."
+      },
+      {
+        "component_id": "KIT-04",
+        "user_visible_next_action": "Continue, bypass or return.",
+        "failure_response": "Remove the pause invitation when the related condition is not verified."
+      },
+      {
+        "component_id": "KIT-05",
+        "user_visible_next_action": "Continue, reroute or return.",
+        "failure_response": "Show RETURN or remove the decision point when an alternate relation is unavailable."
+      },
+      {
+        "component_id": "KIT-06",
+        "user_visible_next_action": "Read CONTINUE, REROUTE, RETURN or PAUSE.",
+        "failure_response": "Set PAUSE and remove the affected relation when its status cannot be maintained."
+      }
+    ]
+  },
+  "data_and_ai_boundary": {
+    "prohibited_inputs": ["identity", "face", "personal trajectory"],
+    "optional_ai_role": ["explain", "authorised activity notice", "maintenance support"],
+    "prohibited_ai_role": ["route-entry requirement", "field-evidence authoring", "automatic promotion of unknown or Verified SLA"]
+  }
+}
