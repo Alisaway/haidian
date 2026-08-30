@@ -1,0 +1,855 @@
+{
+  "schema_version": "0.1.0",
+  "module_id": "B5-IMPLEMENTATION-MONITORING",
+  "title_zh": "风险停复与规划版本事件",
+  "status": "research_proposal_runtime_not_instantiated",
+  "generated_at": "2026-08-15",
+  "scope": {
+    "outline_chapters": [
+      "CH14",
+      "CH15"
+    ],
+    "pilot_types": [
+      "spatial",
+      "service_scenario",
+      "governance"
+    ],
+    "metric_categories": [
+      "public_value",
+      "innovation_performance",
+      "spatial_experience",
+      "service_access",
+      "operational_resilience",
+      "ai_risk"
+    ]
+  },
+  "truth_boundary": {
+    "actual_runtime_instance_count": 0,
+    "actual_risk_event_count": 0,
+    "actual_version_event_count": 0,
+    "actual_operator_assignments": "unassigned",
+    "actual_budget": "unknown",
+    "actual_schedule": "unknown",
+    "actual_sla": "unknown",
+    "spatial_inheritance": "All text_only and provisional statuses remain unchanged; this file creates no coordinates or official anchors.",
+    "prohibited_claims": [
+      "不得把候选试点表述为已立项、已批准、已排期或已运行",
+      "不得把建议角色写成已确认机构或责任人",
+      "不得把成本构成写成预算承诺",
+      "不得把活动周期或响应时间写成正式SLA",
+      "不得把暂定片区或文字任务平移为站口、道路、建筑、商铺、公园路线或工程点位",
+      "不得把模型建议、指标变化或台账状态直接写成规划决策"
+    ]
+  },
+  "source_refs": [
+    {
+      "source_id": "PKG-RISK-01",
+      "local_path": "proposal.md",
+      "locator": "#更新项目清单实施政策与分期计划",
+      "use": "试点、分期、资源、停止和退出"
+    },
+    {
+      "source_id": "PKG-RISK-02",
+      "local_path": "proposal.md",
+      "locator": "#指标体系面积复算与合规矩阵",
+      "use": "指标反馈、复算与人工决策"
+    },
+    {
+      "source_id": "PKG-RISK-03",
+      "local_path": "visual/assets/scenario_cards.json",
+      "locator": "scenarios[*].human_gate/stop_conditions/resume_evidence/exit_cleanup",
+      "use": "13场景的人工门、停复退"
+    },
+    {
+      "source_id": "PKG-RISK-04",
+      "local_path": "metrics.json",
+      "locator": "metrics",
+      "use": "状态、公式、责任和决策用途"
+    },
+    {
+      "source_id": "PKG-RISK-05",
+      "local_path": "report/narrative.md",
+      "locator": "附录C—D",
+      "use": "专项审查、责任与发布边界"
+    }
+  ],
+  "lifecycle_states": [
+    {
+      "state_id": "B5-STATE-NOT-CREATED",
+      "meaning_zh": "候选模板存在但真实运行实例未创建",
+      "required_record": "candidate_pilot_record"
+    },
+    {
+      "state_id": "B5-STATE-INTAKE",
+      "meaning_zh": "真实问题、角色、依赖和退出材料由人工受理",
+      "required_record": "opportunity_id_and_intake_record"
+    },
+    {
+      "state_id": "B5-STATE-CONDITIONAL-GO",
+      "meaning_zh": "只允许在明确条件和边界内继续准备，不等于测试批准",
+      "required_record": "signed_conditional_go_decision"
+    },
+    {
+      "state_id": "B5-STATE-NO-GO",
+      "meaning_zh": "不进入试点；保留理由和可复用知识",
+      "required_record": "signed_no_go_decision"
+    },
+    {
+      "state_id": "B5-STATE-TEST-READY",
+      "meaning_zh": "适用闸门、专项审查、人工接管和清理计划齐备",
+      "required_record": "go_decision_and_test_run_id"
+    },
+    {
+      "state_id": "B5-STATE-RUNNING",
+      "meaning_zh": "仅在批准范围、时段和用途内运行",
+      "required_record": "runtime_and_human_oversight_log"
+    },
+    {
+      "state_id": "B5-STATE-DOWNGRADED",
+      "meaning_zh": "关闭AI、动态或现场层，保留经核验的人工/非数字服务",
+      "required_record": "downgrade_event"
+    },
+    {
+      "state_id": "B5-STATE-HUMAN-TAKEOVER",
+      "meaning_zh": "由有权限的人类角色接管核心任务和安全状态",
+      "required_record": "takeover_event_and_outcome"
+    },
+    {
+      "state_id": "B5-STATE-PAUSED",
+      "meaning_zh": "因依赖、风险、事件或证据不足暂停",
+      "required_record": "stop_event_and_resume_conditions"
+    },
+    {
+      "state_id": "B5-STATE-RESUME-REVIEW",
+      "meaning_zh": "根因、修复、复核和剩余风险接受进入人工审查",
+      "required_record": "resume_request_package"
+    },
+    {
+      "state_id": "B5-STATE-RESUMED",
+      "meaning_zh": "经有权限的人类角色书面批准后恢复",
+      "required_record": "resume_approval_ref"
+    },
+    {
+      "state_id": "B5-STATE-EVALUATED",
+      "meaning_zh": "完成独立评估、公众反馈和成本/风险解释",
+      "required_record": "evaluation_report"
+    },
+    {
+      "state_id": "B5-STATE-EXITED",
+      "meaning_zh": "决定不继续或不可可信恢复",
+      "required_record": "exit_decision"
+    },
+    {
+      "state_id": "B5-STATE-CLEANED",
+      "meaning_zh": "数据、设备、内容、空间和访问权限完成清理",
+      "required_record": "exit_cleanup_ref"
+    },
+    {
+      "state_id": "B5-STATE-ARCHIVED",
+      "meaning_zh": "成功、失败、暂停和退出知识完成清权沉淀",
+      "required_record": "versioned_knowledge_asset"
+    }
+  ],
+  "event_types": [
+    {
+      "event_type_id": "B5-EVT-STOP",
+      "name_zh": "停止事件",
+      "required_fields": [
+        "event_id",
+        "runtime_instance_id",
+        "triggered_at",
+        "trigger_ref",
+        "affected_users",
+        "immediate_action",
+        "human_decision_role",
+        "public_status",
+        "resume_conditions"
+      ]
+    },
+    {
+      "event_type_id": "B5-EVT-DOWNGRADE",
+      "name_zh": "降级事件",
+      "required_fields": [
+        "event_id",
+        "runtime_instance_id",
+        "disabled_layer",
+        "remaining_non_digital_service",
+        "human_owner",
+        "review_due_state"
+      ]
+    },
+    {
+      "event_type_id": "B5-EVT-TAKEOVER",
+      "name_zh": "人工接管事件",
+      "required_fields": [
+        "event_id",
+        "runtime_instance_id",
+        "triggered_at",
+        "authorized_human_role",
+        "safe_state_reached",
+        "outcome_ref"
+      ]
+    },
+    {
+      "event_type_id": "B5-EVT-INCIDENT",
+      "name_zh": "风险/伤害事件",
+      "required_fields": [
+        "event_id",
+        "runtime_instance_id",
+        "risk_id",
+        "severity_by_human",
+        "affected_scope",
+        "notification_state",
+        "investigation_ref"
+      ]
+    },
+    {
+      "event_type_id": "B5-EVT-RESUME-REQUEST",
+      "name_zh": "恢复申请",
+      "required_fields": [
+        "event_id",
+        "runtime_instance_id",
+        "stop_event_ref",
+        "root_cause_ref",
+        "fix_evidence_refs",
+        "independent_review_refs",
+        "remaining_risk"
+      ]
+    },
+    {
+      "event_type_id": "B5-EVT-RESUME-APPROVAL",
+      "name_zh": "人工恢复决定",
+      "required_fields": [
+        "event_id",
+        "runtime_instance_id",
+        "resume_request_ref",
+        "human_decision",
+        "decision_role",
+        "approved_scope",
+        "public_notice_ref"
+      ]
+    },
+    {
+      "event_type_id": "B5-EVT-EXIT",
+      "name_zh": "退出事件",
+      "required_fields": [
+        "event_id",
+        "runtime_instance_id",
+        "exit_reason",
+        "human_decision_ref",
+        "cleanup_plan",
+        "alternative_service",
+        "public_status"
+      ]
+    },
+    {
+      "event_type_id": "B5-EVT-CLEANUP",
+      "name_zh": "退出清理完成",
+      "required_fields": [
+        "event_id",
+        "runtime_instance_id",
+        "data_cleanup",
+        "device_cleanup",
+        "space_restoration",
+        "content_withdrawal",
+        "access_revocation",
+        "human_verification"
+      ]
+    },
+    {
+      "event_type_id": "B5-EVT-VERSION-PROPOSAL",
+      "name_zh": "规划版本建议",
+      "required_fields": [
+        "event_id",
+        "trigger_refs",
+        "affected_record_ids",
+        "old_claim",
+        "proposed_claim",
+        "evidence_refs",
+        "model_assistance_disclosure",
+        "proposer_role"
+      ]
+    },
+    {
+      "event_type_id": "B5-EVT-VERSION-DECISION",
+      "name_zh": "规划版本人工决议",
+      "required_fields": [
+        "event_id",
+        "version_proposal_ref",
+        "fact_review",
+        "space_review",
+        "rights_review",
+        "professional_review",
+        "public_explanation_ref",
+        "human_decision",
+        "decision_reason"
+      ]
+    },
+    {
+      "event_type_id": "B5-EVT-VERSION-RELEASE",
+      "name_zh": "规划版本发布/回滚",
+      "required_fields": [
+        "event_id",
+        "version_id",
+        "previous_version_id",
+        "decision_ref",
+        "change_log",
+        "dependency_updates",
+        "rollback_method",
+        "released_by_human"
+      ]
+    }
+  ],
+  "risk_register": [
+    {
+      "risk_id": "RSK-B5-01",
+      "title_zh": "责任主体、权限或值守缺位",
+      "risk_layer": "operations",
+      "related_pilot_ids": [
+        "PILOT-SP-01",
+        "PILOT-SP-02",
+        "PILOT-SC-01",
+        "PILOT-SC-02",
+        "PILOT-GV-01",
+        "PILOT-GV-02"
+      ],
+      "proposed_accountable_role_ids": [
+        "ROLE-PUBLIC-SPONSOR",
+        "ROLE-ZONE-OPERATOR"
+      ],
+      "actual_owner_assignment_status": "unassigned",
+      "start_gate_ids": [
+        "GATE-EVIDENCE",
+        "GATE-PUBLIC"
+      ],
+      "stop_triggers": [
+        "无明确人类责任人",
+        "值守或人工入口不可用",
+        "责任范围与实际运行不一致",
+        "申诉或事件无人处理"
+      ],
+      "degrade_action": "停止招募和AI/动态层，保留安全的纸质、电话或人工转介；无法维持则停运",
+      "human_takeover": "由经授权的人类运营/公共协调角色确认安全状态和替代服务",
+      "resume_required_evidence": [
+        "新的责任链和授权",
+        "排班/容量/升级路径",
+        "积压处理",
+        "接管演练",
+        "公开通知",
+        "人工批准"
+      ],
+      "exit_cleanup": [
+        "关闭入口",
+        "撤销账号权限",
+        "转介替代服务",
+        "发布退出状态",
+        "归档责任缺口"
+      ]
+    },
+    {
+      "risk_id": "RSK-B5-02",
+      "title_zh": "暂定空间被误写成正式选址或超范围运行",
+      "risk_layer": "space",
+      "related_pilot_ids": [
+        "PILOT-SP-01",
+        "PILOT-SP-02",
+        "PILOT-SC-01",
+        "PILOT-SC-02",
+        "PILOT-GV-02"
+      ],
+      "proposed_accountable_role_ids": [
+        "ROLE-ZONE-OPERATOR",
+        "SROLE-SPATIAL-PERMIT"
+      ],
+      "actual_owner_assignment_status": "unassigned",
+      "start_gate_ids": [
+        "GATE-EVIDENCE",
+        "GATE-RIGHTS",
+        "GATE-PUBLIC"
+      ],
+      "stop_triggers": [
+        "使用未授权空间",
+        "从provisional/text_only推导精确点位或路线",
+        "超出批准范围/时段",
+        "影响通行、无障碍、文保或生态"
+      ],
+      "degrade_action": "退回非现场、室内获授权或文字研究；撤除动态/现场层",
+      "human_takeover": "空间权属、运营和专项角色共同确认正常公共使用已恢复",
+      "resume_required_evidence": [
+        "正式锚点",
+        "使用授权",
+        "现场复测",
+        "专项签署",
+        "恢复与撤场演练",
+        "人工批准"
+      ],
+      "exit_cleanup": [
+        "撤设备和临时构件",
+        "恢复地面/通行",
+        "下架错误图件",
+        "更新空间状态",
+        "归档越界原因"
+      ]
+    },
+    {
+      "risk_id": "RSK-B5-03",
+      "title_zh": "数据无授权、用途漂移或无法删除",
+      "risk_layer": "data",
+      "related_pilot_ids": [
+        "PILOT-SP-02",
+        "PILOT-SC-01",
+        "PILOT-SC-02",
+        "PILOT-GV-01"
+      ],
+      "proposed_accountable_role_ids": [
+        "ROLE-DATA",
+        "SROLE-DATA-PRIVACY"
+      ],
+      "actual_owner_assignment_status": "unassigned",
+      "start_gate_ids": [
+        "GATE-RIGHTS",
+        "GATE-DATA"
+      ],
+      "stop_triggers": [
+        "无合法用途/授权",
+        "超出最小字段或用途",
+        "访问越权/泄露",
+        "到期不能删除/返还",
+        "显著再识别风险"
+      ],
+      "degrade_action": "停止采集和访问，切换公开或合成数据；冻结相关模型输出",
+      "human_takeover": "数据责任和隐私专项角色隔离数据、评估影响并通知适用对象",
+      "resume_required_evidence": [
+        "根因和影响范围",
+        "删除/返还凭证",
+        "权限与保留规则修复",
+        "独立安全/隐私复核",
+        "受影响者通知",
+        "人工批准"
+      ],
+      "exit_cleanup": [
+        "删除/返还数据",
+        "撤访问和密钥",
+        "撤回派生结果",
+        "更新数据卡",
+        "保留非敏感事件摘要"
+      ]
+    },
+    {
+      "risk_id": "RSK-B5-04",
+      "title_zh": "模型失实、歧视、漂移或自动越权决定",
+      "risk_layer": "model",
+      "related_pilot_ids": [
+        "PILOT-SC-01",
+        "PILOT-SC-02",
+        "PILOT-GV-01",
+        "PILOT-GV-02"
+      ],
+      "proposed_accountable_role_ids": [
+        "ROLE-TEST",
+        "ROLE-HUMAN-DESK"
+      ],
+      "actual_owner_assignment_status": "unassigned",
+      "start_gate_ids": [
+        "GATE-EVIDENCE",
+        "GATE-TEST",
+        "GATE-PUBLIC"
+      ],
+      "stop_triggers": [
+        "AI作出批准/拒绝/医疗教育/安全/荣誉/规划决定",
+        "输出失实或危险",
+        "不同人群明显不公平",
+        "版本漂移且不能解释/复现",
+        "人工复核被绕过"
+      ],
+      "degrade_action": "关闭AI层并冻结版本，切经核验静态内容或人工流程",
+      "human_takeover": "有权限的人类角色重新判断全部受影响记录，不沿用模型结论",
+      "resume_required_evidence": [
+        "错误复现",
+        "固定模型/提示/数据版本",
+        "修复测试",
+        "分人群评估",
+        "专业/伦理复核",
+        "公开限制",
+        "人工批准"
+      ],
+      "exit_cleanup": [
+        "永久下线AI功能",
+        "纠正/撤回结果",
+        "通知受影响者",
+        "保留非AI服务",
+        "归档失败知识"
+      ]
+    },
+    {
+      "risk_id": "RSK-B5-05",
+      "title_zh": "设备、消防、电气、交通或公共安全风险",
+      "risk_layer": "space_and_device",
+      "related_pilot_ids": [
+        "PILOT-SP-02",
+        "PILOT-SC-02"
+      ],
+      "proposed_accountable_role_ids": [
+        "ROLE-TEST",
+        "SROLE-DEVICE-FIRE",
+        "SROLE-TRAFFIC-RAIL"
+      ],
+      "actual_owner_assignment_status": "unassigned",
+      "start_gate_ids": [
+        "GATE-TEST",
+        "GATE-PUBLIC"
+      ],
+      "stop_triggers": [
+        "伤害或近失",
+        "物理停机/隔离失败",
+        "消防电气条件失效",
+        "设备越界",
+        "应急/人工接管不可用"
+      ],
+      "degrade_action": "立即停机断电、隔离/撤设备，恢复普通公共通行；停止招募",
+      "human_takeover": "现场安全和专业角色完成清场、救助、记录和通知",
+      "resume_required_evidence": [
+        "事件根因",
+        "设备/流程修复",
+        "停机与撤场复演",
+        "消防电气/交通复核",
+        "保险责任",
+        "人工批准"
+      ],
+      "exit_cleanup": [
+        "断电封存或撤除设备",
+        "拆临时边界",
+        "场地复原",
+        "事故/近失归档",
+        "公开退出状态"
+      ]
+    },
+    {
+      "risk_id": "RSK-B5-06",
+      "title_zh": "无障碍、非数字等价或弱势群体权利受损",
+      "risk_layer": "public_service_and_space",
+      "related_pilot_ids": [
+        "PILOT-SP-01",
+        "PILOT-SP-02",
+        "PILOT-SC-01",
+        "PILOT-GV-01",
+        "PILOT-GV-02"
+      ],
+      "proposed_accountable_role_ids": [
+        "ROLE-COMMUNITY",
+        "ROLE-HUMAN-DESK",
+        "SROLE-ACCESSIBILITY"
+      ],
+      "actual_owner_assignment_status": "unassigned",
+      "start_gate_ids": [
+        "GATE-PUBLIC"
+      ],
+      "stop_triggers": [
+        "基本任务必须使用手机/账号",
+        "通行或多感官信息失败",
+        "儿童/老人/残障用户风险未审",
+        "拒绝/退出受阻",
+        "非参与者被迫承担绕行或监控"
+      ],
+      "degrade_action": "关闭数字/设备层，提供人工、纸质、电话或静态同等路径；撤影响通行的组件",
+      "human_takeover": "人工服务和代表性使用者共同确认核心任务与安全恢复",
+      "resume_required_evidence": [
+        "真实使用者参与",
+        "整改记录",
+        "同任务复测",
+        "分人群结果",
+        "非数字排班",
+        "人工批准"
+      ],
+      "exit_cleanup": [
+        "撤问题组件/入口",
+        "保留可用非数字服务",
+        "通知用户",
+        "处理异议",
+        "归档不平等影响"
+      ]
+    },
+    {
+      "risk_id": "RSK-B5-07",
+      "title_zh": "史实、版权、署名、翻译或荣誉记录失真",
+      "risk_layer": "content_and_rights",
+      "related_pilot_ids": [
+        "PILOT-SC-01",
+        "PILOT-GV-02"
+      ],
+      "proposed_accountable_role_ids": [
+        "ROLE-OSS",
+        "SROLE-HISTORY-RIGHTS",
+        "SROLE-HERITAGE-PARK"
+      ],
+      "actual_owner_assignment_status": "unassigned",
+      "start_gate_ids": [
+        "GATE-EVIDENCE",
+        "GATE-RIGHTS",
+        "GATE-PUBLIC"
+      ],
+      "stop_triggers": [
+        "无来源史实",
+        "版权/许可/署名冲突",
+        "译文误导",
+        "自动排名或预置真实荣誉",
+        "纠错/撤回无人处理"
+      ],
+      "degrade_action": "立即下架或隐藏争议内容，停止生成；保留来源明确的静态占位说明",
+      "human_takeover": "史实/权利/编辑角色核验并作发布、纠正、撤回决定",
+      "resume_required_evidence": [
+        "逐条来源",
+        "权利链",
+        "史实与译文复核",
+        "纠错决议",
+        "版本记录",
+        "人工发布批准"
+      ],
+      "exit_cleanup": [
+        "下架内容",
+        "撤授权和缓存",
+        "撤移动展示",
+        "保留纠错决议",
+        "归档版本差异"
+      ]
+    },
+    {
+      "risk_id": "RSK-B5-08",
+      "title_zh": "医疗教育、消费或公共服务能力过度承诺",
+      "risk_layer": "service_and_sector",
+      "related_pilot_ids": [
+        "PILOT-SP-02",
+        "PILOT-SC-01",
+        "PILOT-SC-02"
+      ],
+      "proposed_accountable_role_ids": [
+        "ROLE-DEMAND",
+        "SROLE-MEDICAL-EDU",
+        "SROLE-CONSUMER-FAIRNESS"
+      ],
+      "actual_owner_assignment_status": "unassigned",
+      "start_gate_ids": [
+        "GATE-EVIDENCE",
+        "GATE-APPLICATION",
+        "GATE-PUBLIC"
+      ],
+      "stop_triggers": [
+        "AI替代医疗教育或公共服务决定",
+        "正式目录/责任机构缺失",
+        "消费者告知/普通服务/人工客服失效",
+        "歧视价格或误导宣传",
+        "把测试写成采购应用"
+      ],
+      "degrade_action": "停止AI/测试/宣传，切正式人工入口或普通服务；撤回不实状态",
+      "human_takeover": "正式机构/商户责任与专项角色处理个案、投诉、退款或转介",
+      "resume_required_evidence": [
+        "正式责任机构",
+        "内容/服务目录",
+        "消费/专业复核",
+        "人工入口",
+        "纠错与投诉处理",
+        "人工批准"
+      ],
+      "exit_cleanup": [
+        "停止服务/招募",
+        "删除/返还数据",
+        "处理投诉退款",
+        "撤宣传",
+        "转介正式服务"
+      ]
+    },
+    {
+      "risk_id": "RSK-B5-09",
+      "title_zh": "维护、资源、供应商或全生命周期成本不可持续",
+      "risk_layer": "operations_and_cost",
+      "related_pilot_ids": [
+        "PILOT-SP-01",
+        "PILOT-SP-02",
+        "PILOT-SC-01",
+        "PILOT-SC-02",
+        "PILOT-GV-01",
+        "PILOT-GV-02"
+      ],
+      "proposed_accountable_role_ids": [
+        "ROLE-ZONE-OPERATOR",
+        "ROLE-PUBLIC-SPONSOR"
+      ],
+      "actual_owner_assignment_status": "unassigned",
+      "start_gate_ids": [
+        "GATE-APPLICATION"
+      ],
+      "stop_triggers": [
+        "维护/值守/能源/保险/清理无资源",
+        "关键供应商单点锁定",
+        "成本转嫁用户或公共空间",
+        "连续两个评审周期无负责人/价值证据",
+        "退出成本不可承担"
+      ],
+      "degrade_action": "缩范围/时段，断开联网或转低技术/非AI方案；暂停新增实例",
+      "human_takeover": "运营和公共决策角色复核全生命周期成本、替代方案与机会成本",
+      "resume_required_evidence": [
+        "资源与成本基线",
+        "责任和维护方案",
+        "供应商切换/离线方案",
+        "退出资金/能力",
+        "公众影响复核",
+        "人工批准"
+      ],
+      "exit_cleanup": [
+        "终止服务/合同候选",
+        "撤设备和账号",
+        "转移/导出可携数据",
+        "提供替代服务",
+        "公开停止原因"
+      ]
+    },
+    {
+      "risk_id": "RSK-B5-10",
+      "title_zh": "指标、效果图或模型推断被误作实施和规划事实",
+      "risk_layer": "evidence_and_planning_version",
+      "related_pilot_ids": [
+        "PILOT-SP-01",
+        "PILOT-SP-02",
+        "PILOT-SC-01",
+        "PILOT-SC-02",
+        "PILOT-GV-01",
+        "PILOT-GV-02"
+      ],
+      "proposed_accountable_role_ids": [
+        "ROLE-TEST",
+        "ROLE-PUBLIC-SPONSOR"
+      ],
+      "actual_owner_assignment_status": "unassigned",
+      "start_gate_ids": [
+        "GATE-EVIDENCE"
+      ],
+      "stop_triggers": [
+        "unknown被填为任意数值",
+        "零实例被报告为零风险",
+        "效果图/模拟被当现场证据",
+        "模型直接改规划",
+        "建议主体预算场地SLA被写成承诺",
+        "暂定空间被用于精确指标"
+      ],
+      "degrade_action": "撤回相关文本/图表/版本，恢复unknown/provisional和原始来源；暂停发布",
+      "human_takeover": "事实、空间、专业和公众角色分别复核，人工决定驳回/修正/挂起",
+      "resume_required_evidence": [
+        "来源和公式",
+        "unknown原因",
+        "假设和置信度",
+        "空间状态",
+        "人类解释与决议",
+        "公众可读更正",
+        "版本差异"
+      ],
+      "exit_cleanup": [
+        "撤错误指标/图件",
+        "发布更正",
+        "恢复上一版本",
+        "记录误用原因",
+        "更新自检规则"
+      ]
+    }
+  ],
+  "resume_package_minimum": [
+    "stop_event_ref",
+    "root_cause_analysis_ref",
+    "fix_evidence_refs",
+    "independent_or_specialist_review_refs",
+    "affected_people_notification_ref_if_applicable",
+    "updated_risk_card_ref",
+    "human_takeover_or_shutdown_drill_ref",
+    "remaining_risk_statement",
+    "human_resume_decision_ref",
+    "public_status_update_ref"
+  ],
+  "exit_cleanup_minimum": [
+    "data_deleted_or_returned_and_access_revoked",
+    "device_power_off_removal_or_safe_transfer",
+    "temporary_component_removed_and_space_restored",
+    "content_withdrawn_corrected_or_archived_with_rights",
+    "users_and_affected_parties_notified_if_applicable",
+    "alternative_non_digital_or_formal_service_provided_if_needed",
+    "public_runtime_status_updated",
+    "failure_and_exit_knowledge_deposited_without_sensitive_data"
+  ],
+  "planning_version_workflow": {
+    "principle": "Metric or model output may trigger a version proposal; only a recorded human decision may change the planning version.",
+    "allowed_trigger_types": [
+      "explained_metric_change",
+      "serious_incident_or_repeated_near_miss",
+      "human_takeover_failure_or_long_pause",
+      "official_geometry_rights_role_or_resource_update",
+      "public_objection_or_accessibility_test",
+      "history_rights_or_translation_correction",
+      "non_ai_alternative_outperforms_ai_on_value_cost_or_reliability",
+      "source_standard_taskbook_or_repository_baseline_update"
+    ],
+    "stages": [
+      {
+        "stage_id": "VERSION-STAGE-PROPOSED",
+        "requirements": [
+          "trigger event",
+          "affected IDs",
+          "old/new claim",
+          "evidence",
+          "AI assistance disclosure",
+          "proposer role"
+        ]
+      },
+      {
+        "stage_id": "VERSION-STAGE-REVIEWED",
+        "requirements": [
+          "fact review",
+          "space review",
+          "rights review",
+          "professional review",
+          "public value and cost review",
+          "conflict and uncertainty record"
+        ]
+      },
+      {
+        "stage_id": "VERSION-STAGE-PUBLIC-EXPLAINED",
+        "requirements": [
+          "who benefits",
+          "who bears cost/risk",
+          "unknowns",
+          "non-digital objection channel",
+          "response record"
+        ]
+      },
+      {
+        "stage_id": "VERSION-STAGE-HUMAN-DECIDED",
+        "requirements": [
+          "adopt/conditional_adopt/reject/hold",
+          "authorized human role",
+          "reason",
+          "scope",
+          "dependencies"
+        ]
+      },
+      {
+        "stage_id": "VERSION-STAGE-RELEASED-OR-ROLLED-BACK",
+        "requirements": [
+          "version ID",
+          "change log",
+          "updated metrics/risks/dependencies",
+          "previous version retained",
+          "rollback method",
+          "human release"
+        ]
+      }
+    ],
+    "forbidden_shortcuts": [
+      "模型自动修改正式文本、图件、指标或运行规则",
+      "用单一平均指标触发扩面",
+      "省略反对意见、失败样本、成本或受损人群",
+      "在来源、空间、主体、预算或专业审查仍未知时发布为既定方案"
+    ]
+  },
+  "runtime_instance_registry": [],
+  "risk_events": [],
+  "version_events": [],
+  "empty_registry_note_zh": "上述三个空数组是事实状态，不是待自动补齐字段。只有真实授权、人工闸门和可核证据形成后，才可由后续责任团队创建记录。",
+  "packaged_as": "formal evidence contract; not a runtime record"
+}

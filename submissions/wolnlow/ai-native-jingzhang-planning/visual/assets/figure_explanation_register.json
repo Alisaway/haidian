@@ -1,0 +1,330 @@
+{
+  "schema_version": "1.0.0",
+  "purpose": "为所有中英证据图提供图名、核心判断、京张场地依据、状态限制和证据入口，避免图像文字缺失或视觉精度替代事实精度。",
+  "figure_count": 19,
+  "required_caption_fields": [
+    "title",
+    "core_judgement",
+    "jingzhang_grounding",
+    "status_and_limit",
+    "evidence_entry"
+  ],
+  "figures": [
+    {
+      "figure_id": "FIG-01",
+      "title": "三层范围与一带三区两翼",
+      "zh_path": "assets/figures/site-overview.png",
+      "en_path": "assets/figures/site-overview.en.png",
+      "core_judgement": "三个尺度不是三张互不关联的地图，而是从统筹研究到总体设计再到重点区试验的证据递进。",
+      "jingzhang_grounding": "使用任务文字中的43.6平方公里、约11.4平方公里和三个重点区域角色；不把暂定几何升级为官方边界。",
+      "status_and_limit": "NTS; provisional; relationship diagram; not a statutory map; not deployed.",
+      "evidence_entry": [
+        "proposal.md#三层范围工作框架",
+        "visual/assets/base-map-manifest.json",
+        "assumptions.json"
+      ],
+      "title_en": "Three scales and One Belt–Three Areas–Two Wings",
+      "core_judgement_en": "The three scales form an evidence progression, not three unrelated maps.",
+      "jingzhang_grounding_en": "Uses the brief's 43.6 km², about 11.4 km² and three focus-area roles without upgrading provisional geometry."
+    },
+    {
+      "figure_id": "FIG-02",
+      "title": "稳定公共底盘、可逆场景层与治理版本层",
+      "zh_path": "assets/figures/land-use-structure.png",
+      "en_path": "assets/figures/land-use-structure.en.png",
+      "core_judgement": "AI快变量不能反向锁定遗产、通行、蓝绿和基本公共服务等慢变量。",
+      "jingzhang_grounding": "回应京张遗址公园、既有街区与创新活动在同一走廊叠合的冲突。",
+      "status_and_limit": "Conceptual layer model; no parcel allocation, FAR, ownership or construction inference.",
+      "evidence_entry": [
+        "proposal.md#总体设计范围城市更新与控规深度城市设计",
+        "design_depth_matrix.json"
+      ],
+      "title_en": "Stable public base, reversible scenario layer and version layer",
+      "core_judgement_en": "Fast-changing AI must not lock in heritage, access, blue-green space or basic public services.",
+      "jingzhang_grounding_en": "Responds to the overlap of the railway park, existing neighbourhoods and innovation activities."
+    },
+    {
+      "figure_id": "FIG-03",
+      "title": "三处重点区与六个首期具象点",
+      "zh_path": "assets/figures/key-areas.png",
+      "en_path": "assets/figures/key-areas.en.png",
+      "core_judgement": "每个重点区只选择两个可讨论、可停用的首期服务原型，不以平均铺开代替实施选择。",
+      "jingzhang_grounding": "众智园侧重可信测试，AI原点侧重开源共创，大钟寺侧重需求和公共权益核查。",
+      "status_and_limit": "Text-only or provisional area anchors; no coordinates, buildings, station exits or road alignments.",
+      "evidence_entry": [
+        "proposal.md#重点区域详细设计",
+        "metrics.json",
+        "assumptions.json"
+      ],
+      "title_en": "Three focus areas and six first moves",
+      "core_judgement_en": "Each area starts with two reversible service prototypes rather than uniform build-out.",
+      "jingzhang_grounding_en": "Zhongzhiyuan tests, AI Origin co-creates, and Dazhongsi validates demand and public rights."
+    },
+    {
+      "figure_id": "FIG-04",
+      "title": "交通、蓝绿与公共服务连续性",
+      "zh_path": "assets/figures/mobility-bluegreen.png",
+      "en_path": "assets/figures/mobility-bluegreen.en.png",
+      "core_judgement": "物理连续、服务连续和治理连续必须同时成立；数字服务不能替代通行、休憩与人工入口。",
+      "jingzhang_grounding": "对应铁路公园、小月河、站城转换和三处重点区之间的公共旅程。",
+      "status_and_limit": "Service blueprint; no transport engineering, river-control or accessibility compliance claim.",
+      "evidence_entry": [
+        "proposal.md#交通轨道市政与公共服务设施",
+        "visual/assets/scenario_cards.json"
+      ],
+      "title_en": "Mobility, blue-green and public-service continuity",
+      "core_judgement_en": "Physical, service and governance continuity must work together.",
+      "jingzhang_grounding_en": "Connects railway-park, Xiaoyue River, station-city and focus-area user journeys."
+    },
+    {
+      "figure_id": "FIG-05",
+      "title": "指标—证据—反馈闭环",
+      "zh_path": "assets/figures/metrics-evidence.png",
+      "en_path": "assets/figures/metrics-evidence.en.png",
+      "core_judgement": "指标不是装饰性KPI，而是触发保留、修正、暂停、退出和版本复算的规划反馈。",
+      "jingzhang_grounding": "将三区六点和日周季年运营接入同一状态、责任和事件记录。",
+      "status_and_limit": "Unknown baselines remain unknown; no fabricated performance values.",
+      "evidence_entry": [
+        "proposal.md#指标体系面积复算与合规矩阵",
+        "compliance_matrix.json",
+        "risk.json"
+      ],
+      "title_en": "Metric–evidence–feedback loop",
+      "core_judgement_en": "Metrics trigger retain, revise, pause, exit and recalculation decisions.",
+      "jingzhang_grounding_en": "Places the six first moves and operating calendar in one state and event ledger."
+    },
+    {
+      "figure_id": "FIG-06",
+      "title": "七个规划生产角色与证据闸门",
+      "zh_path": "assets/figures/agent-taskboard.png",
+      "en_path": "assets/figures/agent-taskboard.en.png",
+      "core_judgement": "Agent通过有边界的任务、交接和反证改变规划判断，而不是自动替代规划师。",
+      "jingzhang_grounding": "六类官方任务由统筹角色整合，并在京张公园和大钟寺两次桌面实验中接受人类门否决。",
+      "status_and_limit": "Planning-production workflow; not an organisational commitment or deployed city Agent system.",
+      "evidence_entry": [
+        "proposal.md#六类-agent-任务的实质成果",
+        "visual/index.html#ai-native-method"
+      ],
+      "title_en": "Seven planning-production roles and evidence gates",
+      "core_judgement_en": "Agents change planning through bounded tasks, handoffs and counter-evidence—not automation.",
+      "jingzhang_grounding_en": "Two tabletop tests at the railway park and Dazhongsi record human rejection and plan revision."
+    },
+    {
+      "figure_id": "FIG-07",
+      "title": "全球案例机制与海淀创新接力",
+      "zh_path": "assets/figures/ecosystem-cases.png",
+      "en_path": "assets/figures/ecosystem-cases.en.png",
+      "core_judgement": "案例只迁移机制和成立条件，不复制园区造型、规模或绩效。",
+      "jingzhang_grounding": "将研究、开源、测试、孵化、资本、市场和治理分配到三区两翼的接力关系。",
+      "status_and_limit": "Comparative mechanism research; no claim that named local organisations have committed resources.",
+      "evidence_entry": [
+        "proposal.md#创新生态七个全球案例转译为八段接力",
+        "sources.json"
+      ],
+      "title_en": "Global mechanisms and the Haidian innovation relay",
+      "core_judgement_en": "Cases transfer mechanisms and conditions, not forms, scale or performance.",
+      "jingzhang_grounding_en": "Links research, open source, testing, incubation, capital, market and governance across the belt."
+    },
+    {
+      "figure_id": "FIG-08",
+      "title": "十三张AI原生场景卡总览",
+      "zh_path": "assets/figures/scenario-grid.png",
+      "en_path": "assets/figures/scenario-grid.en.png",
+      "core_judgement": "场景必须同时写清用户任务、空间载体、AI边界、人工接管、非数字替代和退出。",
+      "jingzhang_grounding": "覆盖众智园受控测试、AI原点共创、大钟寺试用以及铁路公园公共文化界面。",
+      "status_and_limit": "Scenario hypotheses; not deployed services and not evidence of local demand.",
+      "evidence_entry": [
+        "proposal.md#13-个场景的进入方式",
+        "visual/index.html#ai-native-method"
+      ],
+      "title_en": "Thirteen AI-native scenario cards",
+      "core_judgement_en": "Every scenario specifies user task, spatial carrier, AI limits, human fallback and exit.",
+      "jingzhang_grounding_en": "Covers controlled testing, co-creation, public culture and demand validation across Jingzhang."
+    },
+    {
+      "figure_id": "FIG-09",
+      "title": "日—周—季—年运营与六段转化",
+      "zh_path": "assets/figures/operations-calendar.png",
+      "en_path": "assets/figures/operations-calendar.en.png",
+      "core_judgement": "活动只有形成问题、项目、测试、应用和公开复盘的转化链，才构成长效运营。",
+      "jingzhang_grounding": "北段可信测试、中段开源协作和南段公众体验共同构成年度旗舰旅程。",
+      "status_and_limit": "Operating proposal; real organisers, budget, venues and baselines remain unknown.",
+      "evidence_entry": [
+        "proposal.md#更新项目清单实施政策与分期计划",
+        "metrics.json"
+      ],
+      "title_en": "Daily–weekly–quarterly–annual operations",
+      "core_judgement_en": "Events matter only when they close the issue-to-project-to-test-to-learning loop.",
+      "jingzhang_grounding_en": "Forms an annual relay from northern testing through central co-creation to southern public review."
+    },
+    {
+      "figure_id": "FIG-10",
+      "title": "八类用户旅程与人工退级",
+      "zh_path": "assets/figures/user-journey.png",
+      "en_path": "assets/figures/user-journey.en.png",
+      "core_judgement": "每类用户都应能到达、理解、选择、获得人工帮助并退出或申诉。",
+      "jingzhang_grounding": "覆盖居民、老年与非数字用户、青年开发者、研究创业团队、运营者和国内外访客。",
+      "status_and_limit": "Method personas only; not demographic statistics, interview results or satisfaction evidence.",
+      "evidence_entry": [
+        "proposal.md#ai医疗教育商业进入街区的边界",
+        "visual/assets/scenario_cards.json"
+      ],
+      "title_en": "Eight user journeys and human fallback",
+      "core_judgement_en": "Every user can arrive, understand, choose, obtain human help, exit and appeal.",
+      "jingzhang_grounding_en": "Covers residents, non-digital users, developers, research teams, operators and visitors."
+    },
+    {
+      "figure_id": "FIG-11",
+      "title": "三个AI地标与十二类可逆组件",
+      "zh_path": "assets/figures/landmark-components.png",
+      "en_path": "assets/figures/landmark-components.en.png",
+      "core_judgement": "AI地标首先是可理解、可纠错的公共服务系统，而非固定科技奇观。",
+      "jingzhang_grounding": "开发者散步道·开源成果里程廊、智能体贡献荣誉墙和京张AI时光站叠加既有铁路公园公共底盘。",
+      "status_and_limit": "Reversible prototype family; no fixed location, heritage approval or construction promise.",
+      "evidence_entry": [
+        "proposal.md#蓝绿空间公共空间与城市风貌",
+        "risk.json"
+      ],
+      "title_en": "Three AI landmarks and twelve reversible components",
+      "core_judgement_en": "AI landmarks are correctable public-service systems, not fixed technology spectacles.",
+      "jingzhang_grounding_en": "Adds three low-impact prototypes to the existing railway-park public base."
+    },
+    {
+      "figure_id": "FIG-12",
+      "title": "命名树、Logo构图语法与视觉候选",
+      "zh_path": "assets/figures/identity-brand.png",
+      "en_path": "assets/figures/identity-brand.en.png",
+      "core_judgement": "项目总标题、概念名、片区名、场景名和活动名按层级管理，视觉以证据之线而非科技炫技组织。",
+      "jingzhang_grounding": "铁路连接、中关村开放创新与AI可追溯性共同形成识别语法。",
+      "status_and_limit": "Candidate identity directions; not a released logo or third-party brand licence.",
+      "evidence_entry": [
+        "proposal.md#概念与视觉系统",
+        "report/copyright_statement.md"
+      ],
+      "title_en": "Naming tree, logo grammar and identity candidates",
+      "core_judgement_en": "One naming hierarchy connects the project title to reversible points and components.",
+      "jingzhang_grounding_en": "Combines railway connection, Zhongguancun openness and AI traceability."
+    },
+    {
+      "figure_id": "FIG-13",
+      "title": "四张完整场景卡与0—4证据成熟度",
+      "zh_path": "assets/figures/scenario-cards-detail.png",
+      "en_path": "assets/figures/scenario-cards-detail.en.png",
+      "core_judgement": "场景从文字核验到受控开放逐级推进，任何一级失败都可退回而不破坏公共底盘。",
+      "jingzhang_grounding": "选取医疗、教育、商业和公共空间代表场景，分别对应京张沿线的日常服务和创新任务。",
+      "status_and_limit": "Maturity ladder is a governance proposal, not deployment status.",
+      "evidence_entry": [
+        "proposal.md#13-个场景的进入方式",
+        "risk.json"
+      ],
+      "title_en": "Four complete scenarios and the 0–4 evidence ladder",
+      "core_judgement_en": "Scenarios advance by evidence and can fall back without damaging the public base.",
+      "jingzhang_grounding_en": "Tests representative health, education, commerce and public-space situations."
+    },
+    {
+      "figure_id": "FIG-14",
+      "title": "三文化、五类导览与纠错回路",
+      "zh_path": "assets/figures/culture-narrative.png",
+      "en_path": "assets/figures/culture-narrative.en.png",
+      "core_judgement": "百年铁路、中关村与AI新文化可以并置解释，但不能补写未经证实的历史因果。",
+      "jingzhang_grounding": "以铁路遗产、创新史和当代开源贡献组织可纸本验证、可更正、可撤回的导览。",
+      "status_and_limit": "Narrative framework; route geometry and third-party rights require verification.",
+      "evidence_entry": [
+        "proposal.md#三种文化的非因果叙事",
+        "visual/assets/culture_sources.json",
+        "report/copyright_statement.md"
+      ],
+      "title_en": "Three cultures, five route types and correction loop",
+      "core_judgement_en": "Railway, Zhongguancun and AI cultures can be interpreted together without inventing causality.",
+      "jingzhang_grounding_en": "Organises sourced heritage, innovation history and open-source contribution into correctable routes."
+    },
+    {
+      "figure_id": "FIG-15",
+      "title": "十五项专业深度合同证据界面",
+      "zh_path": "assets/figures/professional-evidence.png",
+      "en_path": "assets/figures/professional-evidence.en.png",
+      "core_judgement": "每项专业判断都必须显式说明输入、指标、缺口、复算触发和签署责任。",
+      "jingzhang_grounding": "覆盖范围、用地、交通、蓝绿、建筑、更新、公共空间、产业、韧性与治理等京张必要专业接口。",
+      "status_and_limit": "Complete with limitations; no substitute for official data or professional sign-off.",
+      "evidence_entry": [
+        "proposal.md#用地建筑规模与拆改留方案",
+        "compliance_matrix.json"
+      ],
+      "title_en": "Fifteen professional-depth evidence contracts",
+      "core_judgement_en": "Every professional judgement states inputs, metrics, gaps, recalculation and sign-off responsibility.",
+      "jingzhang_grounding_en": "Covers the spatial, mobility, blue-green, building, renewal, industry and governance interfaces Jingzhang needs."
+    },
+    {
+      "figure_id": "FIG-16",
+      "title": "现状遥感底图图册",
+      "zh_path": "assets/figures/base-map-atlas.png",
+      "en_path": "assets/figures/base-map-atlas.en.png",
+      "core_judgement": "遥感只用于观察粗粒度肌理、范围关系和提出待核问题，不用于反推控制线和工程结论。",
+      "jingzhang_grounding": "同一景Sentinel-2背景覆盖统筹范围、总体走廊和众智园、AI原点、大钟寺三个研究视窗。",
+      "status_and_limit": "10 m-class background raster; not cadastral, statutory, engineering or ownership evidence.",
+      "evidence_entry": [
+        "proposal.md#设计依据与资料清单",
+        "sources.json",
+        "report/copyright_statement.md"
+      ],
+      "title_en": "Existing satellite basemap atlas",
+      "core_judgement_en": "Remote sensing supports coarse context and questions, not statutory or engineering inference.",
+      "jingzhang_grounding_en": "One Sentinel-2 scene covers the coordination area, corridor and three study windows."
+    },
+    {
+      "figure_id": "FIG-17",
+      "title": "AI时代城市规划的五组范式转变",
+      "zh_path": "assets/figures/ai-era-paradigm-shift.png",
+      "en_path": "assets/figures/ai-era-paradigm-shift.en.png",
+      "core_judgement": "AI只有把证据、判断、情景、实施和反馈组织成可追溯、可纠错的系统，才真正改变规划。",
+      "jingzhang_grounding": "京张将遗产慢变量、AI快变量、街区公共性与证据缺口置于同一压力测试。",
+      "status_and_limit": "Planning method diagram; not statutory approval, automated decision or implementation evidence.",
+      "evidence_entry": [
+        "proposal.md#面向ai时代的城市规划专业总判断",
+        "visual/index.html#ai-native-method"
+      ],
+      "title_en": "Five planning-paradigm shifts for the AI era",
+      "core_judgement_en": "AI changes planning only when evidence, judgement, scenarios, implementation and feedback form a traceable and correctable system.",
+      "jingzhang_grounding_en": "Jingzhang stress-tests slow heritage variables, fast AI change, neighbourhood public value and evidence gaps together."
+    },
+    {
+      "figure_id": "FIG-18",
+      "title": "AI时代的五维规划对象",
+      "zh_path": "assets/figures/ai-era-planning-object.png",
+      "en_path": "assets/figures/ai-era-planning-object.en.png",
+      "core_judgement": "AI场景必须同时具备空间、任务、接口、时间和治理合同；可变层退出后公共底盘仍完整。",
+      "jingzhang_grounding": "对应京张公园、街区首层、受控测试和公共服务等不同载体的准入、运行与退出要求。",
+      "status_and_limit": "Planning-object framework; not a substitute for statutory plans, permits or professional sign-off.",
+      "evidence_entry": [
+        "proposal.md#面向ai时代的城市规划专业总判断",
+        "visual/index.html#ai-native-method"
+      ],
+      "title_en": "Five-dimensional planning object for the AI era",
+      "core_judgement_en": "Every AI scenario needs space, task, interface, time and governance contracts; the public base remains intact when variable layers exit.",
+      "jingzhang_grounding_en": "Applies admission, operation and exit rules across Jingzhang park, street-level services, controlled testing and public-service settings."
+    },
+    {
+      "figure_id": "FIG-19",
+      "title": "当城市开始思考：京张AI原生城市文明试验场全景愿景",
+      "zh_path": "assets/figures/jingzhang-ai-civilization-panorama-v28.png",
+      "en_path": "assets/figures/jingzhang-ai-civilization-panorama-v28.en.png",
+      "core_judgement": "京张的未来性不来自孤立技术奇观，而来自铁路公共脊梁承载遗产、日常生活、创新协作与可逆AI服务的长期共生。",
+      "jingzhang_grounding": "以铁路遗产、公园连续性、三类重点区任务和普通公众使用为叙事依据，不复原或虚构具体建筑落位。",
+      "status_and_limit": "AI-generated communication concept; not a site photograph, reconstruction, statutory plan, approved location, construction rendering or commitment.",
+      "evidence_entry": [
+        "proposal.md#传播母题当城市开始思考百年京张的ai原生城市文明试验场",
+        "visual/assets/hero_image_manifest.json"
+      ],
+      "title_en": "When the City Begins to Think: panoramic vision of an AI-native Jingzhang",
+      "core_judgement_en": "Jingzhang's future value comes from a public railway spine supporting heritage, everyday life, innovation and reversible AI services—not an isolated technology spectacle.",
+      "jingzhang_grounding_en": "Uses the heritage railway, park continuity, three study-area tasks and ordinary public use as narrative cues without reconstructing or locating specific buildings."
+    }
+  ],
+  "required_caption_fields_en": [
+    "title_en",
+    "core_judgement_en",
+    "jingzhang_grounding_en",
+    "status_and_limit",
+    "evidence_entry"
+  ]
+}

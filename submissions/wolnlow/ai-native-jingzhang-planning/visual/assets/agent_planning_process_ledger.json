@@ -1,0 +1,230 @@
+{
+  "schema_version": "1.0.0",
+  "purpose": "Auditable planning-process ledger showing where agents generated candidates, encountered counter-evidence, and changed outputs; it is not a runtime log or an official approval record.",
+  "iteration": "v2.8",
+  "runtime_status": "tabletop_research_only",
+  "agent_layers": [
+    {
+      "id": "planning_production_agents",
+      "actual_in_this_study": true,
+      "meaning": "source alignment, problem framing, reasoning, spatial translation, risk checks, recalculation"
+    },
+    {
+      "id": "official_six_task_agents",
+      "actual_in_this_study": true,
+      "meaning": "brand, ecosystem, scenario, public space, culture, operations deliverables"
+    },
+    {
+      "id": "urban_operating_agents",
+      "actual_in_this_study": false,
+      "meaning": "future candidate services requiring instance-level authorization and human takeover"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "APL-001",
+      "planning_question": "Can the public repository geometry be treated as an official planning boundary?",
+      "agent_roles": [
+        "evidence_agent",
+        "spatial_agent",
+        "orchestrator"
+      ],
+      "input_refs": [
+        "OFFICIAL-ANNOUNCEMENT",
+        "SITE-PACKAGE",
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "initial_candidate": "Use the submitted polygons as the spatial base for detailed placement.",
+      "counter_evidence_or_gap": "The public package does not provide versioned official polygons with CRS; the geometry is marked provisional and official_boundary=false.",
+      "human_or_orchestrator_decision": "Retain the geometry only for research relationships, NTS display, and reproducible consistency checks.",
+      "adopted_output": "All exact placement, redline, station entrance, ownership, and engineering claims remain prohibited; metrics carry provisional qualifiers.",
+      "rejected_output": "Official-boundary or approval-grade interpretation of submitted geometry.",
+      "status": "adopted_with_limitation",
+      "affected_artifacts": [
+        "proposal.md",
+        "assumptions.json",
+        "metrics.json",
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson"
+      ]
+    },
+    {
+      "event_id": "APL-002",
+      "planning_question": "Should the Developer Walk begin with a permanent AI landmark?",
+      "agent_roles": [
+        "agent.1",
+        "agent.4",
+        "risk_counterevidence_agent",
+        "orchestrator"
+      ],
+      "input_refs": [
+        "AGENT-TASKBOOK",
+        "A-HERITAGE-001",
+        "A-RIGHTS-001",
+        "GAP-SPATIAL-003"
+      ],
+      "initial_candidate": "A permanent landmark as the primary public identity.",
+      "alternatives_generated": [
+        "permanent landmark",
+        "reversible low-tech markers",
+        "thematic walk with no fixed structure"
+      ],
+      "counter_evidence_or_gap": "Park/heritage geometry, everyday-use evidence, rights, maintenance, and removal responsibility are not closed.",
+      "human_or_orchestrator_decision": "Pause the permanent option; retain only a textual task route and movable story stations for later review.",
+      "adopted_output": "Low-dependency, correctable, removable interpretation with ordinary walking preserved.",
+      "rejected_output": "Permanent construction or international-landmark claim.",
+      "status": "downgraded",
+      "affected_artifacts": [
+        "proposal.md",
+        "visual/assets/scenario_cards.json",
+        "assets/figures/landmark-components.png"
+      ]
+    },
+    {
+      "event_id": "APL-003",
+      "planning_question": "Can open maps and provisional geometry produce a Dazhongsi station-city route?",
+      "agent_roles": [
+        "spatial_agent",
+        "problem_framing_agent",
+        "agent.3",
+        "agent.6",
+        "orchestrator"
+      ],
+      "input_refs": [
+        "D2SRC-SHARED-015",
+        "geometry/key_areas.geojson",
+        "A-KEY-AREA-ANCHOR-001",
+        "A-CONTROLS-001"
+      ],
+      "initial_candidate": "Generate and publish an engineering-style route from station entrances through the key area.",
+      "counter_evidence_or_gap": "Station entrances, roads, rights-of-way, scope anchors, and user motives are not verified.",
+      "human_or_orchestrator_decision": "Cancel the route and reopen problem definition through a joint task walk.",
+      "adopted_output": "Five-part checklist: entrances, crossings, cycling, accessibility, and human fallback; no public navigation.",
+      "rejected_output": "Precise route, infrastructure link, or behavioural-motive conclusion.",
+      "status": "rejected_and_reframed",
+      "affected_artifacts": [
+        "proposal.md",
+        "geometry/roads.geojson",
+        "visual/assets/scenario_cards.json"
+      ]
+    },
+    {
+      "event_id": "APL-004",
+      "planning_question": "Can railway, Zhongguancun, and AI culture be presented as one causal history?",
+      "agent_roles": [
+        "evidence_agent",
+        "agent.5",
+        "risk_counterevidence_agent",
+        "orchestrator"
+      ],
+      "input_refs": [
+        "visual/assets/culture_sources.json",
+        "visual/assets/culture_nodes.json",
+        "A-HERITAGE-001"
+      ],
+      "initial_candidate": "A linear narrative from autonomous railway construction to innovation and open-source AI.",
+      "counter_evidence_or_gap": "The three layers have separately sourced histories; a direct causal chain is not established.",
+      "human_or_orchestrator_decision": "Separate fact, contemporary interpretation, and dispute/correction layers.",
+      "adopted_output": "Non-causal three-culture narrative with source, rights, bilingual, correction, and withdrawal fields.",
+      "rejected_output": "Unverified historical inevitability or institutional endorsement.",
+      "status": "reframed",
+      "affected_artifacts": [
+        "proposal.md",
+        "visual/assets/culture_nodes.json",
+        "assets/figures/culture-narrative.png"
+      ]
+    },
+    {
+      "event_id": "APL-005",
+      "planning_question": "How should seven global AI ecosystem cases inform Haidian?",
+      "agent_roles": [
+        "agent.2",
+        "evidence_agent",
+        "orchestrator"
+      ],
+      "input_refs": [
+        "D2SRC-B2-001",
+        "D2SRC-B2-006",
+        "D2SRC-B2-009",
+        "D2SRC-B2-011",
+        "D2SRC-B2-014",
+        "D2SRC-B2-016",
+        "D2SRC-B2-020"
+      ],
+      "initial_candidate": "Compare case features and select a best-practice model.",
+      "counter_evidence_or_gap": "Institutional mandates, funding, scale, property conditions, and outcomes are not transferable.",
+      "human_or_orchestrator_decision": "Translate only mechanisms and entry conditions into an eight-step local hand-off chain.",
+      "adopted_output": "Issue–research/open source–accountable resources–test–review–incubation–application–knowledge settlement.",
+      "rejected_output": "Copied campus model, local performance forecast, or named partnership commitment.",
+      "status": "translated_with_limits",
+      "affected_artifacts": [
+        "proposal.md",
+        "sources.json",
+        "assets/figures/ecosystem-cases.png"
+      ]
+    },
+    {
+      "event_id": "APL-006",
+      "planning_question": "How can AI+medical, education, and commerce enter a public street safely?",
+      "agent_roles": [
+        "agent.3",
+        "risk_counterevidence_agent",
+        "agent.6",
+        "orchestrator"
+      ],
+      "input_refs": [
+        "AGENT-TASKBOOK",
+        "A-DATA-PRIVACY-001",
+        "visual/assets/scenario_cards.json"
+      ],
+      "initial_candidate": "Use personalized AI services to improve convenience.",
+      "counter_evidence_or_gap": "Diagnosis, admission, ranking, pricing, credit, and dispute decisions create rights and accountability risks.",
+      "human_or_orchestrator_decision": "Limit AI to public-information explanation, routing, voluntary single-service trials, and draft support.",
+      "adopted_output": "Human decision, informed refusal, paper/human equivalent, complaint route, ordinary-service fallback, stop and clearing.",
+      "rejected_output": "Automated high-risk eligibility, ranking, diagnosis, pricing, or final decision.",
+      "status": "scope_restricted",
+      "affected_artifacts": [
+        "proposal.md",
+        "visual/assets/scenario_cards.json",
+        "assumptions.json"
+      ]
+    },
+    {
+      "event_id": "APL-007",
+      "planning_question": "Can unknown operating baselines be filled to make the implementation plan look complete?",
+      "agent_roles": [
+        "agent.6",
+        "evidence_agent",
+        "orchestrator"
+      ],
+      "input_refs": [
+        "metrics.json",
+        "A-B5-RUNTIME-001",
+        "A-B6-CONTRACT-001"
+      ],
+      "initial_candidate": "Provide target values for all monitoring fields.",
+      "counter_evidence_or_gap": "No real opportunity_id, test_run_id, owner, denominator, baseline, target, or event exists.",
+      "human_or_orchestrator_decision": "Keep runtime values unknown/null and publish formulas, proposed roles, triggers, and stop conditions only.",
+      "adopted_output": "Fifteen parent metric contracts and explicit external evidence requirements.",
+      "rejected_output": "Invented baseline, zero-event interpretation, target, or implementation performance.",
+      "status": "unknown_preserved",
+      "affected_artifacts": [
+        "metrics.json",
+        "proposal.md",
+        "design_depth_matrix.json"
+      ]
+    }
+  ],
+  "method_acceptance": {
+    "conditions": [
+      "traceable",
+      "correctable",
+      "human_takeover",
+      "safe_exit",
+      "version_feedback",
+      "accountable"
+    ],
+    "current_conclusion": "A reviewable tabletop planning path exists; real-world effectiveness remains unproven until field, professional, public, and operating evidence is added."
+  }
+}

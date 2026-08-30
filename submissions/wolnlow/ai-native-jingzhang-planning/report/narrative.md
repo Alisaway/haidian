@@ -2,13 +2,25 @@
 
 ## 1. 项目思考
 
-京张铁路创新带不是在既有城市设计上附加几项 AI 设施，而是一次面向 AI 时代的规划范式试验。项目同时面对百年铁路遗产、中关村创新网络、城市更新和快速迭代的智能体技术，因此方案必须先回答证据从哪里来、谁可以改变结论、哪些空间可以试用、何时必须由人接管，以及失败如何停止、清理和复盘。
+京张铁路创新带不是在既有城市设计上附加几项 AI 设施，而是一次面向 AI 时代的规划范式试验。项目有两个嵌套对象：京张的空间、生态、场景和运营是直接对象；AI Agent如何以可复用、可审计、可迭代的方式参与城市规划是根本对象。京张因同时面对百年铁路遗产、中关村创新网络、城市更新、公共利益、资料缺口和快速迭代的智能体技术，成为检验这条路径的现实试验场。
+
+本方案不以“自动完成规划”为目标，而让Agent沿来源准入、底数图谱、识别推演、空间场景、实施运营、监测治理、分众发布和版本回写参与完整规划链。Agent负责生成可追踪候选、反证、影响和复盘草案；人类负责来源准入、公共价值取舍、法定审定、专业安全、空间权利与正式发布。场地成果和方法成果同等重要，评价标准是可追溯性、场地针对性、公共价值、可逆性和持续学习能力，而非文本、图片或自动化数量。
+
+AI进入规划必须同时运行“证据—计算”和“价值—协商”两条回路。Agent可以处理来源、规则、叠合、模拟、政策传导和版本差异，却不能从可见行为自动断言不可见动机，也不能替公众设定价值权重。真实受影响者、社区规划师、专业人员和具名责任主体通过访谈、共同走查、少数意见保留、申诉和人工决定完成价值回路；机器输出的动机只保留为待核假设。[source:LIANG-PLAN-FUTURE-I-20260828] [source:LIANG-PLAN-FUTURE-II-20260829]
+
+全文不是从点位清单出发，而沿“时代变化—传统断点—Agent增强—人类边界—京张验证—结果反证”展开。城市认知、问题定义、逻辑推演、空间转译、公众协商、实施治理和成果表达构成七个切入角度；六个具象点只用于检验框架能否在不同场地矛盾中成立，不代表研究以点位数量或设计细度为中心。
+
+“Agent”统一分为三层：规划生产Agent参与来源、诊断、推演、空间转译与复算；官方六类任务Agent组织品牌、生态、场景、公共空间、文化与运营成果；城市运行Agent是未来进入街区服务和治理的候选系统。前两层是本次研究工作方式，第三层尚未运行；三者不能相互冒充。
+
+京张以场地矛盾而非概念名称验证方法：遗产和公园底盘要求低侵入叠加，AI原点社区要求开放前台和可纠错协作，众智园要求公众界面与受控测试分离，大钟寺要求在空间锚点不完整时由共同走查取代工程路线。开发者散步道和大钟寺四象限两次桌面实验已经记录“候选—缺口—人工门—退级”的过程；它们证明Agent的价值首先是暴露错误确定性，而不是增加方案数量。
+
+从城市规划专业角度，AI时代不是否定用地、交通、生态和法定底线，而是在稳定公共底盘之上增加任务网络、服务接口、时间节律和治理协议四类显性规划对象。一个AI场景必须同时回答空间、任务、接口、时间和治理；任一可变层退出后，公共通行、休憩、无障碍和普通服务仍必须成立。法定与专业底座设定不可突破的边界，战略与城市设计在边界内组织多情景，运营协议只验证获授权的小样，运行数据不能自动代替法定决定。
 
 本方案把《项目研究总纲 V2.0》转译为五个连续动作：建立七类底数与数据图谱；由多 Agent 并行完成问题、目标、对策和反证识别；把工作、生活、学习、公共交往和治理变化转成“稳定公共底盘 + 可逆场景”；用日/周/季/年活动和六段转化链组织长期运营；把同一份判断转成专业报告、公众页面、双语图件和机器可读文件。`verified`、`background`、`design_proposal`、`provisional` 和 `unknown` 不得混写。
 
 ## 2. 空间与创新链
 
-三层范围分别承担生态统筹、总体城市更新和重点区域详细设计。总体概念为“京张智脉共生带”：京张铁路遗址公园提供历史与公共空间主轴，众智园 AI 自主创新加速区、北京 AI 原点社区和大钟寺 AI 产业聚集区承担不同的创新接力角色，中关村科技服务翼与小月河场景赋能翼负责专业服务、公共场景和知识回流。该结构是研究关系，不替代法定红线、控规、权属或工程线位。
+三层范围分别承担生态统筹、总体城市更新和重点区域详细设计。工作概念“京张智脉共生带”以京张铁路遗址公园为历史与公共空间主轴，以众智园 AI 自主创新加速区、北京 AI 原点社区和大钟寺 AI 产业集聚区为三类创新区域，以中关村科技服务翼与小月河场景赋能翼承担专业服务、公共场景和知识回流，形成“一带三区两翼”。该结构是待公众测试和授权的研究关系，不替代法定红线、控规、权属或工程线位。
 
 生态接力遵循“真实问题—研究/开源—资源与责任—受控测试—应用或延期—知识沉淀”的闭环。众智园首先提供可信测试站和全栈接口台；AI 原点社区提供开源共创客厅和成果转化门诊；大钟寺先做需求方评审和单项服务试用。所有资源、活动、算力、机构和运营主体均需要后续授权或实证，不从片区名称推导既成事实。
 
@@ -55,7 +67,7 @@
 | agent.1 | 总体概念与品牌；回答“创新带如何被命名、识别和记住” | 总纲、文化事实、空间状态、六任务关系 | “京张智脉共生带”、L0-L5命名树、Logo构图语法、双语术语、权利清单 | 名称层级清楚；中英可读；候选可撤回；无未授权商标/字体/图像 | 不改项目总名；不写成注册、批准品牌或建设方案 | 候选研究完成；权利/发布待核 |
 | agent.2 | 全球生态与运营；回答“研究、开源、测试、应用如何接力” | 七案例、官方任务、主体和资源缺口 | 7案例机制表、8段生态接力、三区两翼职责、19项活动、六段转化 | 每案有事实/机制/迁移条件；活动有角色、依赖、指标、停复 | 不编机构、资本、算力、投资、日期或运营承诺 | 机制研究完成；主体/运行待核 |
 | agent.3 | AI 场景与用户；回答“新生活和工作方式如何进入街区” | 用户假设、问题图谱、行业边界、空间状态 | 8类用户旅程、13场景卡、服务蓝图、隐私/人工门/退级、四类产业测试 | 每卡有问题、需求、目标、数据、空间、指标、停止、恢复和非数字通道 | 不把画像写成本地统计；不做医疗、教育、交通或投资终审 | 候选场景完成；现场验证待核 |
-| agent.4 | 公共空间与地标；回答“遗址公园如何成为可参与的 AI 公共空间” | 文化、交通、生态缺口；场景卡；空间状态 | 12类组件、开发者散步道、开源展示廊、贡献荣誉墙候选、公共性冲突表 | 文保、通行、无障碍、权利、维护、撤除条件显式；可逆小样优先 | 不从暂定几何画正式路线、桥隧、文保线或永久地标 | 候选研究完成；官方锚点/签署待核 |
+| agent.4 | 公共空间与地标；回答“遗址公园如何成为可参与的 AI 公共空间” | 文化、交通、生态缺口；场景卡；空间状态 | 12类组件、“开发者散步道·开源成果里程廊”、贡献荣誉墙、AI时光站候选、公共性冲突表 | 文保、通行、无障碍、权利、维护、撤除条件显式；可逆小样优先 | 不从暂定几何画正式路线、桥隧、文保线或永久地标 | 候选研究完成；官方锚点/签署待核 |
 | agent.5 | 文化叙事与国际传播；回答“铁路、中关村、AI 如何形成不虚构的共同叙事” | B1事实、权威来源、历史异文、品牌规范 | 非因果文化图谱、5类路线、双语工作译文、纠错/权利台账 | 事实绑定来源、时点、尺度、权利和纠错入口；中英可复核 | 不虚构历史因果、人物、路线、荣誉、国际背书或无授权图像 | 叙事研究完成；专家/权利复核待核 |
 | agent.6 | 实施监测与专业深度；回答“如何试、如何停、如何复算” | B5/B6、三情景、专项角色、风险事件 | 6项候选试点、15项父指标+39子指标、停复版本协议、15项专业接口、合规矩阵 | 每项有首期/增强/退出、owner、基线状态、公式、复算和签署点 | 合同不等于专业完成；不填投资、面积、容量或运行绩效 | 合同研究完成；专业签署/运行待核 |
 
@@ -81,7 +93,9 @@
 
 总控 Agent 只有三种发布决定：`GO`（证据和权利满足，可按当前状态发布）、`CONDITIONAL GO`（可研究展示，但必须显著披露限制）、`NO-GO`（缺少事实、空间、权利、安全或专业条件，停止对外升级）。本包的正式几何和真实运行均保持 `CONDITIONAL GO` 或 `NO-GO`，不以图面完成度替代外部核验。
 
-## 5. 五道人类门
+## 5. 规划决策五门与成果发布五门
+
+规划生产采用G-Fact、G-Value、G-Spatial、G-Pilot、G-Release，分别控制事实升级、价值取舍、空间准入、试点启动和对外发布。以下五门只用于成果发布与权利审查：
 
 - **G-Fact 事实门**：来源、时点、尺度、异文与反证可回读；
 - **G-Spatial 空间门**：边界、拓扑、权属、路权、文保、交通、市政与无障碍不被越权推断；
@@ -112,9 +126,9 @@
 
 - **问题**：一条铁路遗产与 AI 创新带如何拥有统一、可传播且可撤回的识别系统？
 - **输入/证据**：总纲三层任务、文化事实表、空间状态、六任务关系；`SOURCE-REGISTRY`、`AGENT-TASKBOOK`、`A-HERITAGE-001`、`A-RIGHTS-001`。
-- **推导**：将空间战略、公共叙事、三区两翼、场景、活动和点位拆成 L0—L5 六级；名称同时标识状态和权利，不把口号当空间总名。
-- **结论/成果**：空间战略名锁定“京张智脉共生带”；“自主·共创之路”为 L1 公共叙事口号；Logo 采用铁路连接线、开源节点、公共入口、版本开口的中性构图语法，当前为候选。
-- **空间/指标**：一带三核两翼；`key_area_count`、双语术语一致率和权利完整率作为发布前检查，不宣称注册或批准。
+- **推导**：统一为L0研究总标题、L1空间战略、L2公共叙事、L3三区两翼、L4场景/活动、L5点位/组件；三大定位是跨层评价目标。名称同时标识状态和权利，不把口号当空间总名。
+- **结论/成果**：“京张智脉共生带”为待公众测试与授权的空间战略工作名；“自主·共创之路”为L2公共叙事工作口号；Logo 采用铁路连接线、开源节点、公共入口、版本开口的中性构图语法，当前为可撤回候选。
+- **空间/指标**：一带三区两翼；`key_area_count`、双语术语一致率和权利完整率作为发布前检查，不宣称注册或批准。
 - **人工门/未决**：G-Fact、G-Rights、G-Brand；商标、字体、历史图像许可和最终 VI 需人工复核。
 
 ## Agent.2｜全球生态与运营
@@ -140,7 +154,7 @@
 - **问题**：京张铁路遗址公园如何让 AI 创新被看见、被理解、被质疑，而不是增加一组孤立设备？
 - **输入/证据**：公共空间、遗产、无障碍、场景和权利缺口；`GREEN-001`、`PUBLIC-001`、`A-HERITAGE-001`、`A-KEY-AREA-ANCHOR-001`。
 - **推导**：先稳定公共底盘（通行、遮阴、休息、纸质信息），再叠加可撤组件和人工讲解，最后才讨论有限开放；所有组件有撤回和维护条件。
-- **结论/成果**：提出开发者散步道、开源成果展示廊、智能体贡献荣誉墙三类 AI 地标候选，以及 12 类公共空间组件；均为 NTS/text-only 候选，不绑定暂定坐标。
+- **结论/成果**：提出“开发者散步道·开源成果里程廊”、智能体贡献荣誉墙、京张AI时光站三类 AI 地标候选，以及 12 类公共空间组件；均为 NTS/text-only 候选，不绑定暂定坐标。
 - **空间/指标**：公共空间比例工作值、无障碍连续性、展示许可完整率、维护响应、撤除时间；不画正式文保线、桥隧或永久地标。
 - **人工门/未决**：G-Spatial、G-Rights、G-Release；需公园管理、文保、通行和无障碍专业复核。
 
@@ -157,14 +171,14 @@
 
 - **问题**：规划如何从概念变成可试、可停、可复算、可学习的实施闭环？
 - **输入/证据**：6 项候选试点、15 项父指标+39 项子指标、10 类风险、11 类版本事件、15 项专业合同；`A-B5-RUNTIME-001`、`A-B6-CONTRACT-001`、`A-RECALC-001`。
-- **推导**：每个试点拆首期—增强—退出；每个指标写 owner、频率、公式、停阈值、非数字采集和复算触发；每次版本变化触发全量检查。
+- **推导**：每个试点拆首期—增强—退出；每个指标保留公式、拟议责任、非数字采集和复算触发，实际 owner、频率、目标和阈值仍为 `unknown/unassigned`；每次版本变化触发全量检查。
 - **结论/成果**：JZ-01—JZ-06 项目台账、日/周/季/年运营闭环、四层停复协议、15 项横向专业接口和逐条合规矩阵。
 - **空间/指标**：`key_area_count`、`selected_detail_point_count`、`activity_ledger_count`、`monitoring_parent_metric_count`；运行机会、基线、目标、专业签署和实际事件保持 unknown/not_created。
 - **人工门/未决**：G-Spatial、G-Fact、G-Release；合同完成不等于专业完成，必须由专业责任人、运营主体和正式资料签署。
 
 ## 总控 Agent 的整合判断
 
-六张卡不是六套平行概念：Agent.1 锁定识别，Agent.2 组织生态接力，Agent.3 把新生活转为场景，Agent.4 把公共性落实为空间组件，Agent.5 提供可纠错叙事，Agent.6 将原型接入试点、指标和停复。总控只在证据状态一致、空间状态未越权、权利和人工门清楚时发布；冲突保留为版本事件，不通过文字润色消除。
+六张卡不是六套平行概念：Agent.1 管理识别体系及发布状态，Agent.2 组织生态接力，Agent.3 把新生活转为场景，Agent.4 把公共性落实为空间组件，Agent.5 提供可纠错叙事，Agent.6 将原型接入试点、指标和停复。总控只在证据状态一致、空间状态未越权、权利和人工门清楚时发布；冲突保留为版本事件，不通过文字润色消除。
 
 ---
 
@@ -177,7 +191,7 @@
 
 主报告使用七类底数：任务与法定文本、空间几何、遥感/地图背景、文化与权利、生态与案例、用户与场景、运营与专业。每项资产均在配套 `visual/assets/data_asset_register.json` 中保留完整字段：`asset_id / source_or_path / source_level / acquired_or_accessed_at / spatial_scope / time_scope / content_description / current_status / quality / rights / allowed_expression / prohibited_inference / recompute_trigger`。
 
-机器可读的完整场景卡、文化节点与来源、七维人工评审证据导航分别见 `visual/assets/scenario_cards.json`、`visual/assets/culture_nodes.json`、`visual/assets/culture_sources.json` 和 `visual/assets/review_evidence_matrix.json`；它们用于复核和交接，不自填评分。
+机器可读的完整场景卡、文化节点与来源、七维人工评审证据导航分别见 `visual/assets/scenario_cards.json`、`visual/assets/culture_nodes.json`、`visual/assets/culture_sources.json` 和 `visual/assets/review_evidence_matrix.json`；最后一项严格采用官方20/10/15/20/10/10/15权重，并补充13项任务书维度交叉索引，但不自填评分。
 
 ## 2. 证据等级与质量等级
 
@@ -293,9 +307,9 @@ This file turns the six requested task families into auditable research delivera
 |---|---|---|---|---|---|---|
 | orchestrator | Planning orchestrator; integrates 15 chapters, 13 headings and six tasks into a releasable version | Outline V2.0, execution plan, official rules, shared base, red-team findings | Main report, 13-heading view, handoff matrix, manifest, conflict and release ledger | G-Fact/G-Spatial/G-Rights/G-Brand/G-Release; unique IDs, explicit unknowns, readable version/hash | Does not rewrite the outline for a score matrix or replace facts, professional sign-off or official review | Research complete; external gates open |
 | agent.1 | Concept and brand; how the belt is named and remembered | Outline, cultural facts, spatial states, task relations | Jingzhang Zhimo Symbiotic Belt, L0-L5 naming tree, neutral logo grammar, bilingual terms, rights ledger | Clear hierarchy, bilingual readability, retractable candidates, no unlicensed marks/fonts/images | Does not change the project title or claim registration/approval/construction | Candidate research complete; rights/release pending |
-| agent.2 | Ecosystem and operations; how research, open source, testing and application hand off | Seven cases, official tasks, actor/resource gaps | Seven-case mechanism table, eight-link chain, roles for three cores/two wings, 19 activities, six-stage conversion | Every case has fact/mechanism/transfer condition; every activity has role/dependency/metric/stop-resume | No invented institutions, capital, compute, investment, dates or operating promises | Mechanism research complete; actors/runtime pending |
+| agent.2 | Ecosystem and operations; how research, open source, testing and application hand off | Seven cases, official tasks, actor/resource gaps | Seven-case mechanism table, eight-link chain, roles for three areas/two wings, 19 activities, six-stage conversion | Every case has fact/mechanism/transfer condition; every activity has role/dependency/metric/stop-resume | No invented institutions, capital, compute, investment, dates or operating promises | Mechanism research complete; actors/runtime pending |
 | agent.3 | AI scenes and users; how new ways of living and working enter blocks | User assumptions, problem graph, sector boundaries, spatial states | Eight journeys, 13 scene cards, service blueprints, privacy/human gates, four sector tests | Each card has problem, need, goal, data, space, metric, stop, recovery and non-digital channel | Does not turn personas into local statistics or perform medical, education, traffic or investment decisions | Candidate scenes complete; field validation pending |
-| agent.4 | Public space and landmarks; how the railway park becomes participatory AI public space | Cultural, mobility and ecological gaps; scene cards; spatial states | 12 component types, developer walk, open-source gallery, contribution wall candidates, conflict ledger | Heritage, access, accessibility, rights, maintenance and removal conditions are explicit | Does not draw formal routes, bridges, heritage lines or permanent landmarks from provisional geometry | Candidate research complete; official anchor/sign-off pending |
+| agent.4 | Public space and landmarks; how the railway park becomes participatory AI public space | Cultural, mobility and ecological gaps; scene cards; spatial states | 12 component types, Developer Walk and Open-source Milestone Gallery, Contribution Wall, AI Time Station candidates, conflict ledger | Heritage, access, accessibility, rights, maintenance and removal conditions are explicit | Does not draw formal routes, bridges, heritage lines or permanent landmarks from provisional geometry | Candidate research complete; official anchor/sign-off pending |
 | agent.5 | Cultural narrative and international communication; how three cultures meet without fabricated causality | B1 facts, authoritative sources, variants, brand rules | Non-causal cultural graph, five route types, bilingual working copy, correction/rights ledger | Facts tied to source, date, scale, rights and correction entry; bilingual reviewable | No fabricated historical causality, people, routes, honors, international endorsement or unlicensed imagery | Narrative research complete; expert/rights review pending |
 | agent.6 | Implementation, monitoring and professional depth; how to test, stop and recalculate | B5/B6, three scenarios, specialist roles and risk events | Six candidate pilots, 15 parent+39 child metrics, stop/resume protocol, 15 professional interfaces, compliance matrix | Each item has first/upgrade/exit, owner, baseline status, formula, recomputation and sign-off point | A contract is not professional completion; no invented investment, area, capacity or runtime performance | Contract research complete; sign-off/runtime pending |
 
@@ -321,7 +335,9 @@ This file turns the six requested task families into auditable research delivera
 
 The orchestrator has three release decisions: `GO`, `CONDITIONAL GO` and `NO-GO`. This package keeps formal geometry and real runtime at `CONDITIONAL GO` or `NO-GO`; drawing completion never substitutes for external verification.
 
-## 5. Five human gates
+## 5. Planning-decision gates and artifact-release gates
+
+Planning production uses G-Fact, G-Value, G-Spatial, G-Pilot and G-Release to control fact upgrade, value trade-offs, spatial admission, pilot start and public release. The five gates below are specifically for artifact release and rights review:
 
 - **G-Fact:** sources, dates, scales, variants and counter-evidence are readable.
 - **G-Spatial:** boundary, topology, ownership, right-of-way, heritage, mobility, utilities and accessibility are not over-inferred.
@@ -352,16 +368,16 @@ These cards turn “who did what” into a problem–evidence–reasoning–spac
 
 - **Question:** How can a railway-heritage and AI innovation belt have one communicable and retractable identity?
 - **Inputs/evidence:** three-level brief, cultural facts, spatial states and task relations; `SOURCE-REGISTRY`, `AGENT-TASKBOOK`, `A-HERITAGE-001`, `A-RIGHTS-001`.
-- **Reasoning:** split strategy, public narrative, three cores/two wings, scenes, activities and points into L0-L5; identity carries state and rights instead of turning a slogan into a site name.
-- **Conclusion/output:** the spatial strategy is “Jingzhang Smart Pulse Co-living Belt”; “The Line of Ingenuity and Open Co-Creation” is its L1 public narrative; the logo uses neutral railway-link, open-source-node, public-entry and version-opening grammar and remains a candidate.
-- **Space/metrics:** one belt, three cores and two wings; `key_area_count`, bilingual term consistency and rights completeness are release checks, not registration or approval claims.
+- **Reasoning:** use one hierarchy: L0 project title, L1 spatial strategy, L2 public narrative, L3 three areas/two wings, L4 scenarios/activities, and L5 points/components; the three strategic positions are cross-level evaluation goals. Identity carries state and rights instead of turning a slogan into a site name.
+- **Conclusion/output:** the working spatial strategy is “Jingzhang Smart Pulse Co-living Belt”; “The Line of Ingenuity and Open Co-Creation” is its working L2 public narrative; the logo uses neutral railway-link, open-source-node, public-entry and version-opening grammar and remains a retractable candidate.
+- **Space/metrics:** one belt, three areas and two wings; `key_area_count`, bilingual term consistency and rights completeness are release checks, not registration or approval claims.
 - **Gates/unresolved:** G-Fact, G-Rights, G-Brand; marks, fonts, historical images and final VI require human review.
 
 ## Agent.2 | Global ecosystem and operations
 
 - **Question:** How do research, open source, testing, incubation, capital and markets hand off without copying a park model?
 - **Inputs/evidence:** 24 facts from seven global cases, transfer limits and the official taskbook; `D2SRC-B2-*`, `A-ACTOR-001`, `A-B5-RUNTIME-001`.
-- **Reasoning:** extract an eight-link relay—problem card, research/open source, data/compute responsibility, trusted testing, professional/ethics review, incubation/capital, market/public application, knowledge residue—and map it to three cores/two wings.
+- **Reasoning:** extract an eight-link relay—problem card, research/open source, data/compute responsibility, trusted testing, professional/ethics review, incubation/capital, market/public application, knowledge residue—and map it to three areas/two wings.
 - **Conclusion/output:** Zhongzhiyuan handles trusted testing and interfaces, AI Origin handles open source and transfer, Dazhongsi handles demand and product validation; 19 daily/weekly/seasonal/annual activities and a six-stage conversion chain are delivered.
 - **Space/metrics:** activity ledger, `activity_ledger_count`, `monitoring_parent_metric_count`, status visibility and cleanup rate; operators and real opportunity IDs remain unknown.
 - **Gates/unresolved:** G-Fact, G-Spatial, G-Release; no institutions, funds, compute, dates or investment promises are invented.
@@ -380,7 +396,7 @@ These cards turn “who did what” into a problem–evidence–reasoning–spac
 - **Question:** How can the Jingzhang railway park make AI innovation visible, understandable and contestable instead of adding isolated devices?
 - **Inputs/evidence:** public-space, heritage, accessibility, scene and rights gaps; `GREEN-001`, `PUBLIC-001`, `A-HERITAGE-001`, `A-KEY-AREA-ANCHOR-001`.
 - **Reasoning:** secure a public base (access, shade, rest, paper information), then add reversible components and staffed interpretation, and only then consider limited opening; every component has removal and maintenance conditions.
-- **Conclusion/output:** three candidate landmarks—developer walk, open-source results gallery and agent contribution wall—and 12 public-space components; all are NTS/text-only candidates with no provisional coordinate.
+- **Conclusion/output:** three candidate landmarks—the Developer Walk and Open-source Milestone Gallery, Agent Contribution Wall, and Jingzhang AI Time Station—and 12 public-space components; all are NTS/text-only candidates with no provisional coordinate.
 - **Space/metrics:** working public-space ratio, accessible continuity, licence completeness, maintenance response and removal time; no formal heritage line, bridge, tunnel or permanent landmark is drawn.
 - **Gates/unresolved:** G-Spatial, G-Rights, G-Release; park, heritage, access and accessibility professionals must review.
 
@@ -397,7 +413,7 @@ These cards turn “who did what” into a problem–evidence–reasoning–spac
 
 - **Question:** How does a plan become a testable, stoppable, recomputable and learning implementation loop?
 - **Inputs/evidence:** six candidate pilots, 15 parent+39 child metrics, ten risk types, eleven version-event types and 15 professional contracts; `A-B5-RUNTIME-001`, `A-B6-CONTRACT-001`, `A-RECALC-001`.
-- **Reasoning:** split each pilot into first/upgrade/exit; assign owner, frequency, formula, stop threshold, non-digital collection and recomputation trigger; every version change invokes a full check.
+- **Reasoning:** split each pilot into first/upgrade/exit; preserve formula, proposed accountability, non-digital collection and recomputation triggers while actual owner, frequency, target and threshold remain `unknown/unassigned`; every version change invokes a full check.
 - **Conclusion/output:** JZ-01—JZ-06 project ledger, daily/weekly/seasonal/annual loop, four-layer stop/resume protocol, 15 cross-professional interfaces and requirement-by-requirement compliance matrix.
 - **Space/metrics:** `key_area_count`, `selected_detail_point_count`, `activity_ledger_count`, `monitoring_parent_metric_count`; opportunities, baseline, targets, sign-offs and runtime events stay unknown/not_created.
 - **Gates/unresolved:** G-Spatial, G-Fact, G-Release; a completed contract is not professional completion and needs a responsible professional, operator and formal evidence.
