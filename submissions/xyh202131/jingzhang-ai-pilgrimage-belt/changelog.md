@@ -1,5 +1,19 @@
 # 方案迭代记录 / Changelog
 
+## v85.0 - 2026-08-30
+
+**页内跳转定位反馈 / In-page Destination Orientation**
+
+- 已有能力：中英文体验台已提供跳到正文、三种按时长阅读入口、九项粘性主导航、七类角色入口和三处原型入口，并为目标区预留粘性导航偏移。
+- 真实缺口：修复前，页内链接只移动视口，目标 section 或 prototype 没有可见定位反馈；键盘、放大或注意力受限的读者在长页跳转后，可能难以迅速确认落点。
+- 必须冻结：冻结“双轨京张 / Twin-Track Jing-Zhang”、三种不可互换原型、JZ-AIOS、G0—G3、四轴、三载体、证据门、权利边界及 12/8/3/36；不改正文、报告、图件、媒体、四份 PDF、几何、指标或现实状态。
+- 本轮实施：为两种语言的主面板和三处原型增加仅在 URL fragment 命中时出现的高对比定位轮廓；不使用 JavaScript，不改变内容、布局、打印输出或证据层。只闭合长页跳转后的可见方向感。
+
+- Existing capability: both workbenches already provide skip-to-main, three time-based reading entries, nine sticky navigation routes, seven persona entries and three prototype routes, with sticky-header offsets reserved at their destinations.
+- Real gap: before repair, in-page links moved the viewport without visibly identifying the destination panel or prototype. Keyboard, zoomed or attention-limited readers could therefore struggle to confirm where a long-page jump had landed.
+- Must remain frozen: Twin-Track Jing-Zhang, the three non-interchangeable prototypes, JZ-AIOS, G0-G3, four axes, three carriers, evidence gates, rights boundaries and 12/8/3/36. Proposals, reports, figures, media, all four PDFs, geometry, metrics and real-world status remain unchanged.
+- Implemented this round: added a high-contrast orientation outline to main panels and the three prototypes only when their URL fragment is active. No JavaScript is used, and content, layout, print output and the evidence layer remain unchanged. This closes visible orientation after long-page navigation only.
+
 ## v84.0 - 2026-08-30
 
 **高频审阅控件触达闭合 / Review-control Target Closure**
