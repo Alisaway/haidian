@@ -195,8 +195,8 @@ catch (error) { errors.push(`version-stamp-report.json 无法读取：${error.me
 if (figures) {
   if (figures.package_version !== "v2.0" || figures.visible_label !== LABEL) errors.push("图件版本报告不是 v2.0");
   if (figures.legacy_visible_version_allowed !== false) errors.push("图件版本报告未禁止旧可见版本");
-  if (figures.figure_count !== 28 || !Array.isArray(figures.figures) || figures.figures.length !== 28) {
-    errors.push("图件版本报告必须恰含 28 张图件");
+  if (figures.figure_count !== 30 || !Array.isArray(figures.figures) || figures.figures.length !== 30) {
+    errors.push("图件版本报告必须恰含 30 张图件");
   }
   for (const item of figures.figures || []) {
     try {
@@ -210,8 +210,8 @@ try { pdfs = json("visual/assets/governance/pdf-version-report.json"); }
 catch (error) { errors.push(`pdf-version-report.json 无法读取：${error.message}`); }
 if (pdfs) {
   if (pdfs.package_version !== "v2.0" || pdfs.ok !== true) errors.push("PDF 版本报告不是通过状态的 v2.0");
-  if (pdfs.pdf_count !== 4 || pdfs.page_count !== 42 || !Array.isArray(pdfs.pdfs) || pdfs.pdfs.length !== 4) {
-    errors.push("PDF 版本报告必须恰含 4 套、42 页");
+  if (pdfs.pdf_count !== 4 || pdfs.page_count !== 46 || !Array.isArray(pdfs.pdfs) || pdfs.pdfs.length !== 4) {
+    errors.push("PDF 版本报告必须恰含 4 套、46 页");
   }
   if (pdfs.a0_embedded_figure_pixel_matches !== 4) errors.push("PDF 版本报告必须登记 A0 首页内嵌图 4/4 像素一致");
   for (const item of pdfs.pdfs || []) {
@@ -246,6 +246,6 @@ const result = {
 };
 
 if (process.argv.includes("--json")) process.stdout.write(`${JSON.stringify(result, null, 2)}\n`);
-else if (result.ok) process.stdout.write(`PASS  28 张图件、4 套 42 页 PDF、${STATIC.length} 份静态载体及 A0 首页 4 张内嵌图统一为 PACKAGE v2.0\n`);
+else if (result.ok) process.stdout.write(`PASS  30 张图件、4 套 46 页 PDF、${STATIC.length} 份静态载体及 A0 首页 4 张内嵌图统一为 PACKAGE v2.0\n`);
 else for (const error of errors) process.stderr.write(`FAIL  ${error}\n`);
 process.exit(result.ok ? 0 : 1);

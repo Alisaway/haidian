@@ -123,6 +123,16 @@ const EXPECTED_ROLE_CLASSES = Array.from({ length: 12 }, (_, index) => `R${Strin
 const EXPECTED_PROGRAMME_TASKS = Array.from({ length: 12 }, (_, index) => `T${String(index).padStart(2, "0")}`);
 const EXPECTED_QUANTITY_LINES = Array.from({ length: 16 }, (_, index) => `Q${String(index).padStart(2, "0")}`);
 const EXPECTED_HANDOFF_ACCEPTANCE = Array.from({ length: 12 }, (_, index) => `A${String(index + 1).padStart(2, "0")}`);
+const EXPECTED_COMMISSIONING_CHECKS = Array.from({ length: 8 }, (_, index) => `C${String(index + 1).padStart(2, "0")}`);
+const EXPECTED_BASELINE_PERIODS = [
+  "ordinary_public_window", "shift_change_peak", "rain_heat_or_cold",
+  "low_light_or_night", "digital_or_power_outage",
+];
+const EXPECTED_BASELINE_FORMS = [
+  "continuous_route_and_openings", "queue_wait_and_diversion", "no_ai_same_task",
+  "accessibility_and_assistance", "complaint_stop_delete_receipt",
+  "shift_maintenance_and_spares", "removal_restoration_and_reopen",
+];
 const EXPECTED_JURY_PATHS = { "JURY-30S": 30, "JURY-3M": 180, "JURY-15M": 900 };
 const EXPECTED_RUBRIC_DIMENSIONS = [
   "brief_alignment", "originality", "ai_planning_innovation", "implementation_feasibility",
@@ -268,7 +278,8 @@ if (feasibility) {
     ext.occupancy_or_egress_signoff_received === false && ext.named_operator_received === false &&
     ext.market_quotes_received === 0 && ext.insurance_quote_cny === null &&
     ext.approved_budget_cny === null && ext.field_capacity_observations === 0 &&
-    ext.field_maintenance_observations === 0);
+    ext.field_maintenance_observations === 0 && ext.roster_appointment_receipt_count === 0 &&
+    ext.commissioning_execution_count === 0 && ext.future_baseline_observation_count === 0);
 
   const spatial = feasibility.reference_spatial_envelope || {};
   const envelope = spatial.screening_control_envelope || {};
@@ -296,7 +307,12 @@ if (feasibility) {
     roster.pilot_weeks === 13 && roster.public_days_per_week === 5 && roster.public_hours_per_day === 4 &&
     roster.public_open_hours_90_day === 13 * 5 * 4 && roster.simultaneous_role_seats === 3 &&
     roster.staffed_seat_hours_90_day === 13 * 5 * 4 * 3 &&
+    roster.public_open_hours_per_year === 1000 && roster.staffed_seat_hours_per_year === 3000 &&
+    roster.productive_hours_per_fte_year_assumption === 1680 && roster.leave_training_factor === 1.2 &&
+    Math.abs(roster.calculated_minimum_coverage_fte - 2.143) < 0.001 &&
+    roster.planning_coverage_fte === 3 &&
     roster.minimum_roster_headcount_for_break_cover === 4 &&
+    roster.target_uncovered_public_hours === 0 && roster.current_appointed_roster_headcount === 0 &&
     Array.isArray(roster.named_people) && roster.named_people.length === 0 &&
     roster.assignment_status === "unassigned" && Array.isArray(roster.role_seats) && roster.role_seats.length === 3);
 
@@ -372,7 +388,9 @@ if (handoffRegister) {
     ext.named_role_appointment_count === 0 && ext.formal_unit_rate_receipt_count === 0 &&
     ext.vendor_quote_count === 0 && ext.insurance_document_count === 0 &&
     ext.approved_budget_cny === null && ext.professional_signoff_count === 0 &&
-    ext.construction_or_opening_release_count === 0 && ext.field_task_count === 0);
+    ext.construction_or_opening_release_count === 0 && ext.field_task_count === 0 &&
+    ext.valid_two_key_receipt_count === 0 && ext.commissioning_execution_count === 0 &&
+    ext.future_baseline_observation_count === 0);
 
   const nested = handoffRegister.nested_scale_envelopes || {};
   const site = nested.site_screening_window || {};
@@ -428,6 +446,9 @@ if (handoffRegister) {
     exactSet(packages.map((item) => item.package_id), EXPECTED_DELIVERY_PACKAGES) &&
     packages.every((item) => item.status === "HOLD" && Array.isArray(item.gate_ids) &&
       item.gate_ids.length >= 1 && item.gate_ids.every((gateId) => documentaryGateIds.has(gateId))));
+  recordHandoff("六个交付包必须逐包给出数量依据与验收测试",
+    packages.length === 6 && packages.every((item) =>
+      String(item.quantity_basis || "").trim() && String(item.acceptance_test || "").trim()));
 
   const modules = Array.isArray(handoffRegister.implementation_modules)
     ? handoffRegister.implementation_modules : [];
@@ -480,11 +501,57 @@ if (handoffRegister) {
     alternativeBindings.find((item) => item.alternative_id === "ALT-0_EXISTING_HUMAN_FLOOR").pilot_activation_allowed === false &&
     alternativeBindings.filter((item) => item.alternative_id !== "ALT-0_EXISTING_HUMAN_FLOOR")
       .every((item) => item.pilot_activation_allowed === true && String(item.gate_rule || "").includes("G")));
+  recordHandoff("四个替代方案必须给出优势维度与具名回退门",
+    alternativeBindings.length === 4 && alternativeBindings.every((item) =>
+      Array.isArray(item.alternative_advantage_dimensions) && item.alternative_advantage_dimensions.length >= 3 &&
+      Array.isArray(item.fallback_gate_ids) && String(item.gate_rule || "").trim()) &&
+    alternativeBindings.filter((item) => item.alternative_id !== "ALT-2_PUBLIC_HANDOVER_TABLE_REFERENCE")
+      .every((item) => item.fallback_gate_ids.length >= 1 && item.fallback_gate_ids.every((gateId) =>
+        gateId === "ANY_APPLICABLE_GATE_HOLD" || documentaryGateIds.has(gateId))) &&
+    alternativeBindings.find((item) => item.alternative_id === "ALT-2_PUBLIC_HANDOVER_TABLE_REFERENCE")
+      .fallback_gate_ids.length === 0);
 
   const maintenance = handoffRegister.maintenance_and_restoration_binding || {};
   recordHandoff("维护、撤场与恢复不得被写成已实测",
     maintenance.restoration_reserve_ratio === 0.1 && maintenance.same_day_removal_target_hours === 4 &&
     maintenance.field_tested === false && String(maintenance.opening_rule || "").includes("no public opening"));
+
+  const operatingRoster = handoffRegister.operating_roster_coverage || {};
+  recordHandoff("三席四人排班必须有可复算 FTE 且保持未任命",
+    operatingRoster.simultaneous_role_seats === 3 && operatingRoster.public_open_hours_per_year === 1000 &&
+    operatingRoster.staffed_seat_hours_per_year === 3000 &&
+    operatingRoster.productive_hours_per_fte_year_assumption === 1680 &&
+    operatingRoster.leave_training_factor === 1.2 &&
+    Math.abs(operatingRoster.calculated_minimum_coverage_fte - 2.143) < 0.001 &&
+    operatingRoster.planning_coverage_fte === 3 &&
+    operatingRoster.minimum_roster_headcount_for_break_cover === 4 &&
+    operatingRoster.target_uncovered_public_hours === 0 &&
+    operatingRoster.current_named_roster_headcount === 0 &&
+    operatingRoster.appointment_status === "HOLD_UNAPPOINTED");
+
+  const twoKey = handoffRegister.two_key_release_control || {};
+  const keys = Array.isArray(twoKey.keys) ? twoKey.keys : [];
+  recordHandoff("双钥匙放行必须缺一即关且当前回执为零",
+    twoKey.required_key_count === 2 && twoKey.current_valid_key_receipt_count === 0 &&
+    twoKey.current_status === "HOLD_UNAPPOINTED" && twoKey.independent_release_role_id === "R12" &&
+    exactSet(keys.map((item) => item.key_id), ["K-SERVICE-CONTINUITY", "K-RIGHTS-SAFETY-VETO"]) &&
+    keys.every((item) => roleIds.has(item.future_holder_role_id) && item.current_named_holder === null &&
+      item.appointment_receipt === null) && String(twoKey.release_rule || "").includes("smart_layer=off"));
+
+  const commissioning = Array.isArray(handoffRegister.commissioning_and_decommissioning_checks)
+    ? handoffRegister.commissioning_and_decommissioning_checks : [];
+  recordHandoff("八项调试与退役检查必须预定义但保持未执行",
+    exactSet(commissioning.map((item) => item.check_id), EXPECTED_COMMISSIONING_CHECKS) &&
+    commissioning.every((item) => typeof item.site_action === "boolean" &&
+      item.current_status === "HOLD_UNEXECUTED" && item.receipt === null));
+
+  const baseline = handoffRegister.future_field_baseline_protocol || {};
+  recordHandoff("未来现场基线必须覆盖五时段七表且当前值为空",
+    exactSet(baseline.periods, EXPECTED_BASELINE_PERIODS) &&
+    exactSet(baseline.forms, EXPECTED_BASELINE_FORMS) &&
+    exactSet(baseline.required_public_groups, EXPECTED_GROUPS) &&
+    baseline.authorised_participant_count === 0 && baseline.field_observation_count === 0 &&
+    baseline.values === null && String(baseline.publication_rule || "").trim());
 
   const requiredFigureRefs = [
     ["proposal.md", proposalZh, "assets/figures/implementation-handoff.png"],
@@ -753,6 +820,18 @@ const expectedMetrics = {
   implementation_handoff_judgeable_now_count: 8,
   implementation_formal_unit_rate_receipt_count: 0,
   implementation_construction_opening_release_count: 0,
+  p0_staffed_seat_hours_per_year: 3000,
+  p0_calculated_minimum_coverage_fte: 2.143,
+  p0_planning_coverage_fte: 3,
+  p0_minimum_roster_headcount: 4,
+  implementation_package_acceptance_test_count: 6,
+  implementation_named_fallback_gate_binding_count: 4,
+  implementation_two_key_control_count: 2,
+  implementation_two_key_receipt_count: 0,
+  implementation_commissioning_check_count: 8,
+  implementation_commissioning_executed_count: 0,
+  implementation_future_baseline_period_count: 5,
+  implementation_future_baseline_form_count: 7,
 };
 for (const [id, expected] of Object.entries(expectedMetrics)) {
   const value = metrics[id] && metrics[id].value;
@@ -770,7 +849,7 @@ const result = {
   pre_feasibility_checks_valid: validFeasibilityChecks,
   pre_feasibility_checks_expected: 12,
   implementation_handoff_checks_valid: validHandoffChecks,
-  implementation_handoff_checks_expected: 17,
+  implementation_handoff_checks_expected: 23,
   jury_paths_valid: validJuryPaths,
   jury_paths_expected: 3,
   rubric_dimensions_valid: validRubricDimensions,
@@ -788,7 +867,7 @@ const result = {
 
 if (process.argv.includes("--json")) console.log(JSON.stringify(result, null, 2));
 else if (result.ok) {
-  console.log("PASS  SCN-05 单场景 P0：8 门／5 阶段／10 RACI／12 构件／8 验收；预可研 12/12；专业交接 17/17（5 尺度／4 状态／9 项目／6 包／11 模块／12 文件闸门／12 角色／12 条件任务／16 未计价数量／12 交接验收）；评委路径 3/3／评分索引 7/7；6 类公共群体／12 场景硬门槛；资格证据 6/6／评审归类 7/7；离线原型 14/14；真实观察 0");
+  console.log("PASS  SCN-05 单场景 P0：8 门／5 阶段／10 RACI／12 构件／8 验收；预可研 12/12；专业交接 23/23（5 尺度／4 状态／9 项目／6 包逐包验收／11 模块／12 文件闸门／12 角色／三席四人排班／双钥匙／8 调试退役检查／5 时段 × 7 基线表／12 条件任务／16 未计价数量／12 交接验收）；评委路径 3/3／评分索引 7/7；6 类公共群体／12 场景硬门槛；资格证据 6/6／评审归类 7/7；离线原型 14/14；真实观察 0");
 } else {
   console.error("FAIL  P0 可实施性与公共利益就绪包不完整");
   for (const error of errors) console.error(`- ${error}`);

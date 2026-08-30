@@ -122,3 +122,13 @@ For screen readers and plain-text environments. Each entry states four fixed thi
 **Provisional boundary.** The outer 24 m screen tests siting, rescue, conflict and adjacency only; it is neither a selected site nor a new-works extent. The inner dimensions are participant reference envelopes. Formal drawings, site, quantities and appointments await verification by future authorised professionals.
 
 **Cannot be concluded from this figure.** Site rights, named appointments, documentary receipts, real quotations or budget, insurance, professional sign-off, construction or opening, a started fifteen-week clock, or passed field acceptance.
+
+### F/07 Three Seats, Four People, Two Keys and a Future Baseline (`assets/figures/operational-readiness.en.png`)
+
+**Conclusion.** Without a real site, workload, release authority, package acceptance, failure fallback, commissioning/retirement and future sampling forms can still be calculated and frozen in advance. They are transferable design controls, not records of completed operation.
+
+**Key numbers.** 1,000 public hours × three seats = 3,000 staffed seat-hours; `3000 ÷ 1680 × 1.2 = 2.143 FTE`, with 3 planning FTE and minimum four-person break cover; two-key receipts 0/2; all six packages carry a quantity basis and acceptance test; four alternatives state advantages and named fallback gates; commissioning/retirement execution 0/8; the future field baseline spans five periods × seven forms, with authorised participants, observations and values all zero or null.
+
+**Provisional boundary.** FTE, headcount and uncovered-hour targets are participant roster assumptions. The two keys specify future roles. Commissioning checks and baseline forms are blank protocols. Labour rules, appointments, site conditions, professional acceptance and sampling methods require post-authorisation confirmation.
+
+**Cannot be concluded from this figure.** An assembled team, appointment receipts, completed commissioning, observed people, passed field acceptance, real quotations/budget/insurance or an opening approval.
