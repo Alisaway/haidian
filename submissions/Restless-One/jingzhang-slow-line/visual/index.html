@@ -174,19 +174,36 @@
         }
       }
     </style>
-  </head>
+  <!-- V1.3_P0_CSS_START --><style>
+    .hero{min-height:620px;height:auto!important;padding:48px 5vw!important;display:block!important;background:linear-gradient(135deg,#10283c 0%,#173a54 60%,#1f6d8f 100%)!important;}
+    .hero-copy{max-width:1180px!important;margin:0 auto!important;}
+    .p0-hero-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:14px;margin-top:26px;}
+    .p0-hero-card{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.23);border-radius:14px;padding:18px;color:#fff;}
+    .p0-hero-card h3{margin:0 0 9px;color:#f0be3e;font-size:18px;}
+    .p0-hero-card p{margin:0;color:#f6f4ed;line-height:1.55;font-size:15px;}
+    .p0-status{display:inline-flex;gap:9px;flex-wrap:wrap;margin-top:14px;}
+    .p0-status b{padding:7px 10px;border-radius:8px;background:#ba3a35;color:#fff;font-size:13px;letter-spacing:.04em;}
+    .p0-status b.neutral{background:#527f67;}
+    @media(max-width:850px){.p0-hero-grid{grid-template-columns:1fr}.hero{min-height:0}}
+  </style><!-- V1.3_P0_CSS_END -->
+
+</head>
   <body>
     <main>
       <header class="hero">
-        <div class="hero-copy">
-          <div class="eyebrow">京张慢线 · v1.2 评审修复版</div>
-          <h1>京张慢线｜让城市跟上最慢的人</h1>
-          <p class="lead">技术越快，城市越要确认没有人被留在站外。</p>
-          <div class="warning">
-            纯文本生成概念走廊 · 无照片输入 · 非现状记录 · 非精确选址 · 非批准方案
-          </div>
-        </div>
-      </header>
+    <div class="hero-copy">
+      <div class="eyebrow">京张慢线 · v1.3 P0 可实施性</div>
+      <h1>让城市跟上最慢的人</h1>
+      <p class="lead">P0-ALL-STOP-01 · 尺寸可核验、责任可交接、失败可停止、退出可恢复</p>
+      <div class="p0-status"><b>NOT_AUTHORIZED</b><b>HOLD</b><b class="neutral">unassigned/conditional</b><b class="neutral">prices null/TBC</b></div>
+      <div class="p0-hero-grid">
+        <div class="p0-hero-card"><h3>30 秒 P0 摘要</h3><p>216 m² 非定位概念筛查包络；3.0 m 有效慢行净宽；12 项任务、16 行不计价 BOQ、8 类参数化成本。不是现场实测、选址、许可或工程签章。</p></div>
+        <div class="p0-hero-card"><h3>当前包内可判断</h3><p><span data-metric="p0_current_package_pass_count" data-value="6">6 PASS</span> / <span data-metric="p0_current_package_hold_count" data-value="2">2 HOLD</span>。审计与 AI-off 等价仍为 11/12，因此不得请求 G4。</p></div>
+        <div class="p0-hero-card"><h3>仍待现实条件</h3><p><span data-metric="p0_field_check_hold_count" data-value="12">12/12 HOLD</span>：现场使用、真人响应、冲突、环境、居民接受、排班与真实成本。任一群体关键失败，整体 HOLD。</p></div>
+      </div>
+    </div>
+  </header>
+<section class="alt" id="p0-fixed-evidence"><h2>P0 固定评审证据</h2><p>同一数据源生成尺寸/接口图与任务/工程量/成本/验收图；关键信息不再只存在于独立试点附图。</p><div class="grid2"><div class="card"><img src="../assets/figures/key-areas.png" alt="P0 dimensioned launch unit"></div><div class="card"><img src="../assets/figures/metrics-evidence.png" alt="P0 task quantities cost acceptance"></div></div></section>
       <section>
         <h2>先回答：它在哪里，什么必须保留</h2>
         <p>
@@ -365,7 +382,7 @@
       <footer>
         结构化文件是证据层；图片、HTML 与 PDF
         是解释层。官方数据到位后整包复算。<br />COMMUNITY-DISPLAY-ONLY ·
-        Restless-One · v1.2 · 2026-08-29
+        Restless-One · v1.3 · 2026-08-30
       </footer>
     </main>
   </body>
