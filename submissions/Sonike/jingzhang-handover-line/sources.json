@@ -592,7 +592,7 @@
       "spatial_coverage": "不适用",
       "temporal_coverage": "不适用",
       "license_or_reuse_terms": "Python 3.12.13（PSF）；reportlab 4.4.3（BSD）；Pillow 12.3.0（MIT-CMU）；shapely 2.1.2（BSD 3-Clause）；pyproj 3.7.2（MIT）；fontTools 4.60.1（MIT）；Node.js（MIT）；Playwright（Apache-2.0）；qpdf 12.3.2（Apache-2.0）；PyMuPDF 1.27.2.3（AGPL-3.0 或 Artifex 商业许可，二选一）；Ghostscript 10.07.0（AGPL-3.0）；Google Chrome 仅作为本机打印引擎运行、不随成果分发。",
-      "usage": "几何复算、指标复算、图件栅格渲染、PDF 技术内页排版与字体订正，以及 v2.0 四张冠军版首页的 Playwright／Chrome 打印与 qpdf 逐页拼装。",
+      "usage": "几何复算、指标复算、图件栅格渲染、PDF 技术内页排版与字体订正，以及 v2.0 四张投稿材料首页的 Playwright／Chrome 打印与 qpdf 逐页拼装。",
       "usable_for": [
         "核验成果由哪些工具生成及各自许可",
         "判断是否存在需随成果传播的许可义务"
@@ -606,7 +606,7 @@
       "registry_review_status": "not_in_central_registry",
       "usable_for_formal": "not_a_factual_source",
       "usable_for_formal_basis": "participant_self_assessed",
-      "independent_verification": "版本与许可逐个可复算，不依赖本条自述：`python3 -c \"import importlib.metadata as m; print(m.version('reportlab'), m.version('Pillow'), m.version('shapely'), m.version('pyproj'), m.version('fonttools'))\"`；`qpdf --version`；`gs --version`；许可字段用 `python3 -c \"import importlib.metadata as m; print(m.metadata('Pillow')['License-Expression'])\"`。**「未链接进交付物」一侧可反向核验**：`pdffonts drawings/a3-booklet.pdf` 显示嵌入字体只有 OFL 的 NotoSerifSC 与 NotoSansCJKsc-Medium，不含 Apple 字体或任何 AGPL 组件产物；首页生成脚本位于 `visual/assets/governance/build-champion-pdfs.js`。"
+      "independent_verification": "版本与许可逐个可复算，不依赖本条自述：`python3 -c \"import importlib.metadata as m; print(m.version('reportlab'), m.version('Pillow'), m.version('shapely'), m.version('pyproj'), m.version('fonttools'))\"`；`qpdf --version`；`gs --version`；许可字段用 `python3 -c \"import importlib.metadata as m; print(m.metadata('Pillow')['License-Expression'])\"`。**「未链接进交付物」一侧可反向核验**：`pdffonts drawings/a3-booklet.pdf` 显示嵌入字体只有 OFL 的 NotoSerifSC 与 NotoSansCJKsc-Medium，不含 Apple 字体或任何 AGPL 组件产物；首页生成脚本位于 `visual/assets/governance/build-delivery-pdfs.js`。"
     },
     {
       "id": "HAIDIAN-2025-STATISTICAL-BULLETIN",
@@ -1147,7 +1147,7 @@
       "source_locator": "https://raw.githubusercontent.com/notofonts/noto-cjk/main/Sans/OTF/SimplifiedChinese/NotoSansCJKsc-Medium.otf；许可正文 https://github.com/notofonts/noto-cjk/blob/main/Sans/LICENSE",
       "retrieved_at": "2026-08-14",
       "accessed_date": "2026-08-30",
-      "collection_method": "以 FONT-NOTO-RASTER 已登记的官方 NotoSansCJKsc-Medium.otf（sha256 ca094f6b0001fb048ca39ddd797a0cdb0179e1e55c6561e111c49c3e6a61d7b7，16,523,632 字节，Version 2.004）为唯一输入；visual/assets/governance/build-webfont.js 先强制核对原始 sha256，再收集四份 HTML、F/05、F/06、F/07 图件生成器及 PDF 生成器的全部实际字符，用 fontTools 4.63.0 与 Brotli 1.2.0 确定性子集化，生成 286,676 字节 WOFF2（sha256 6a24dc18fd3a44bbb32ff3c589f4cdd154be5513bc1c0ba74a6626b0f1447a6e），并以 data URI 写入包内 CSS。覆盖记录从交付 WOFF2 自身 cmap 反读，共覆盖当前请求的 1,109 个码位（交付 cmap 1,110 个，含必需控制码位）。F/05、F/06 与 F/07 中英六张 PNG 由 `@napi-rs/canvas` 直接注册同一 WOFF2 后栅格化；四套 PDF 的首页与 F/06、F/07 附页由 `build-champion-pdfs.js` 读取同一 CSS 并经 Chromium 子集嵌入。",
+      "collection_method": "以 FONT-NOTO-RASTER 已登记的官方 NotoSansCJKsc-Medium.otf（sha256 ca094f6b0001fb048ca39ddd797a0cdb0179e1e55c6561e111c49c3e6a61d7b7，16,523,632 字节，Version 2.004）为唯一输入；visual/assets/governance/build-webfont.js 先强制核对原始 sha256，再收集四份 HTML、F/05、F/06、F/07 图件生成器及 PDF 生成器的全部实际字符，用 fontTools 4.63.0 与 Brotli 1.2.0 确定性子集化，生成 285,844 字节 WOFF2（sha256 af6dfc6a36d9cf1d5e5abf5574c8046c42e8a61975fdc197d32708f71db53efd），并以 data URI 写入包内 CSS。覆盖记录从交付 WOFF2 自身 cmap 反读，共覆盖当前请求的 1,106 个码位（交付 cmap 1,107 个，含必需控制码位）。F/05、F/06 与 F/07 中英六张 PNG 由 `@napi-rs/canvas` 直接注册同一 WOFF2 后栅格化；四套 PDF 的首页与 F/06、F/07 附页由 `build-delivery-pdfs.js` 读取同一 CSS 并经 Chromium 子集嵌入。",
       "spatial_coverage": "不适用",
       "temporal_coverage": "不适用",
       "license_or_reuse_terms": "SIL Open Font License 1.1。字体版权声明为 © 2014-2021 Adobe；OFL 允许使用、修改、嵌入与再分发。交付子集嵌入本地 CSS，版权通知与官方 Sans/LICENSE 完整正文写入 visual/assets/governance/noto-cjk-subset.rights.json；该字体不受本包作者的 CC BY-NC 4.0 授权支配。",

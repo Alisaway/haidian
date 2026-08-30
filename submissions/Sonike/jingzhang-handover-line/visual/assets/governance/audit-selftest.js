@@ -247,14 +247,14 @@ negInput("公共利益硬门槛删掉访客群体 —— 十二场景仍在、�
       }) }, ["G10"]);
 
 negInput("正式评审修复矩阵把投稿包从 CLOSED 改成仍开放 —— 现场仍 BLOCKED、其余 P0 结构全对也必须拒绝",
-  { "visual/assets/governance/review-3825-readiness-matrix.json": jsonMutated(
-      "visual/assets/governance/review-3825-readiness-matrix.json", (d) => {
+  { "visual/assets/governance/formal-review-readiness-matrix.json": jsonMutated(
+      "visual/assets/governance/formal-review-readiness-matrix.json", (d) => {
         d.package_result = "OPEN_PARTICIPANT_REPAIR";
       }) }, ["G10"]);
 
 negInput("正式评审资格事实把一项改成已观察到拒绝条件 —— 命中清单与投稿闭合状态矛盾时必须拒绝",
-  { "visual/assets/governance/review-3825-readiness-matrix.json": jsonMutated(
-      "visual/assets/governance/review-3825-readiness-matrix.json", (d) => {
+  { "visual/assets/governance/formal-review-readiness-matrix.json": jsonMutated(
+      "visual/assets/governance/formal-review-readiness-matrix.json", (d) => {
         d.eligibility_evidence[0].rejection_condition_observed = true;
       }) }, ["G10"]);
 

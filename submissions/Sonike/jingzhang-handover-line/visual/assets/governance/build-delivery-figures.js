@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 "use strict";
 
+/* Deterministic builder for the package's baseline delivery figures. */
+
 const fs = require("fs");
 const path = require("path");
 const { createCanvas, GlobalFonts } = require("@napi-rs/canvas");

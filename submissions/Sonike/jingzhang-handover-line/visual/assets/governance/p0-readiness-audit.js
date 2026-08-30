@@ -42,7 +42,7 @@ const FEASIBILITY_PATH = "visual/assets/governance/p0-pre-feasibility-envelope.j
 const HANDOFF_PATH = "visual/assets/governance/implementation-handoff-register.json";
 const JURY_INDEX_PATH = "visual/assets/governance/jury-evidence-index.json";
 const PUBLIC_PATH = "visual/assets/governance/public-benefit-gate.json";
-const REVIEW_PATH = "visual/assets/governance/review-3825-readiness-matrix.json";
+const REVIEW_PATH = "visual/assets/governance/formal-review-readiness-matrix.json";
 const PROTOTYPE_PATH = "visual/index.html";
 const PROTOTYPE_LINK = "visual/index.html#p0-prototype";
 const EXPECTED_SCENARIOS = Array.from({ length: 12 }, (_, index) => `SCN-${String(index + 1).padStart(2, "0")}`);
@@ -101,7 +101,7 @@ const EXPECTED_ELIGIBILITY_CHECKS = [
   "settled_government_decision",
 ];
 const EXPECTED_REVIEW_ITEMS = [
-  "R96-01", "R96-02", "R96-03", "R96-04", "R96-05", "R96-06", "R96-07",
+  "RR-01", "RR-02", "RR-03", "RR-04", "RR-05", "RR-06", "RR-07",
 ];
 const EXPECTED_ALTERNATIVES = [
   "ALT-0_EXISTING_HUMAN_FLOOR",
@@ -679,7 +679,7 @@ if (reviewMatrix) {
   }
   const issues = Array.isArray(reviewMatrix.issues) ? reviewMatrix.issues : [];
   if (!exactSet(issues.map((item) => item.review_item_id), EXPECTED_REVIEW_ITEMS)) {
-    errors.push("96 分评审七项后续动作映射不完整");
+    errors.push("七项后续条件映射不完整");
   }
   for (const item of issues) {
     const local = [];
@@ -726,6 +726,31 @@ const readinessPhrases = [
 for (const [name, text, packageStatus, fieldStatus] of readinessPhrases) {
   if (!text.includes(packageStatus) || !text.includes(fieldStatus)) {
     errors.push(`${name} 未明确分离投稿包闭合与现场阻断`);
+  }
+}
+
+const statusClaimFiles = [
+  ["proposal.md", proposalZh],
+  ["proposal.en.md", proposalEn],
+  ["agent.json", readText("agent.json")],
+  ["manifest.json", readText("manifest.json")],
+  ["report/copyright_statement.md", readText("report/copyright_statement.md")],
+  ["assumptions.json", readText("assumptions.json")],
+  ["sources.json", readText("sources.json")],
+  ["compliance_matrix.json", readText("compliance_matrix.json")],
+  ["visual/assets/governance/build-delivery-pdfs.js", readText("visual/assets/governance/build-delivery-pdfs.js")],
+];
+const forbiddenStatusClaims = [
+  ["冠军版", /冠军版/i],
+  ["champion/championship", /champion(?:ship)?/i],
+  ["历史分数 96/100", /\b96\s*\/\s*100\b/i],
+  ["历史 PR #4281", /PR\s*#4281|pull\/4281/i],
+  ["获准入库合并", /获准入库合并|approved\s+for\s+intake\s+and\s+merged/i],
+  ["最新官方评审", /最新官方评审|latest\s+(?:completed\s+)?official\s+review/i],
+];
+for (const [name, text] of statusClaimFiles) {
+  for (const [label, pattern] of forbiddenStatusClaims) {
+    if (pattern.test(text)) errors.push(`${name} 仍含可能暗示获奖或官方认可的状态措辞：${label}`);
   }
 }
 

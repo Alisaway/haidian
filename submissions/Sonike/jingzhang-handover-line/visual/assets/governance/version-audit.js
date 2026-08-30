@@ -37,6 +37,14 @@ const A0_EMBEDDED_FIGURES = [
     figures: ["assets/figures/site-overview.en.png", "assets/figures/key-areas.en.png"],
   },
 ];
+const FORBIDDEN_STATUS_PATTERNS = [
+  ["冠军版", /冠军版/i],
+  ["champion/championship", /champion(?:ship)?/i],
+  ["历史分数 96/100", /\b96\s*\/\s*100\b/i],
+  ["历史 PR #4281", /PR\s*#4281|pull\/4281/i],
+  ["获准入库合并", /获准入库合并|approved\s+for\s+intake\s+and\s+merged/i],
+  ["最新官方评审", /最新官方评审|latest\s+(?:completed\s+)?official\s+review/i],
+];
 
 function resolveIn(rel) {
   if (OVERLAY) {
@@ -221,6 +229,13 @@ if (pdfs) {
     try {
       if (sha256(item.path) !== item.sha256) errors.push(`${item.path}: 与 v2.0 PDF 版本报告哈希不符`);
     } catch (error) { errors.push(`${item.path}: 缺失或不可读`); }
+    const extracted = spawnSync("pdftotext", [resolveIn(item.path), "-"], { encoding: "utf8" });
+    if (extracted.status !== 0) errors.push(`${item.path}: pdftotext 无法核验状态措辞`);
+    else {
+      for (const [label, pattern] of FORBIDDEN_STATUS_PATTERNS) {
+        if (pattern.test(extracted.stdout || "")) errors.push(`${item.path}: 仍含可能暗示获奖或官方认可的状态措辞：${label}`);
+      }
+    }
   }
 }
 
@@ -229,6 +244,9 @@ for (const rel of STATIC) {
     const text = read(rel).toString("utf8");
     if (!text.includes("PACKAGE v2.0")) errors.push(`${rel}: 缺可见 PACKAGE v2.0`);
     if (text.includes("PACKAGE v1.15")) errors.push(`${rel}: 仍含旧可见 PACKAGE v1.15`);
+    for (const [label, pattern] of FORBIDDEN_STATUS_PATTERNS) {
+      if (pattern.test(text)) errors.push(`${rel}: 仍含可能暗示获奖或官方认可的状态措辞：${label}`);
+    }
   } catch (error) { errors.push(`${rel}: 缺失或不可读`); }
 }
 

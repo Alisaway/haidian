@@ -54,7 +54,7 @@ const GLYPH_SOURCES = [
   "visual/assets/governance/build-p0-feasibility-figure.js",
   "visual/assets/governance/build-implementation-handoff-figure.js",
   "visual/assets/governance/build-operational-readiness-figure.js",
-  "visual/assets/governance/build-champion-pdfs.js",
+  "visual/assets/governance/build-delivery-pdfs.js",
 ];
 const REPORT_PAGES = PAGES.slice(0, 2);
 const REPORT_LINK = '<link rel="stylesheet" href="../visual/assets/governance/noto-cjk-subset.css">';

@@ -1850,7 +1850,7 @@
     "G14_HERO_IMAGE_NOT_CROPPED"
   ],
   "formal_review_readiness_boundary": {
-    "source": "visual/assets/governance/review-3825-readiness-matrix.json",
+    "source": "visual/assets/governance/formal-review-readiness-matrix.json",
     "assessment_owner": "participant_self_audit",
     "assessment_scope_zh": "仅判断当前概念投稿包是否已完成参与者可控制的材料修复并可交给正式评委评分；不判断官方接收、获奖、规划审定、采购、现场许可或公众绩效。",
     "assessment_scope_en": "Determines only whether participant-controlled repairs to the current concept-submission package are closed for handover to formal jurors; it does not determine official intake, award status, planning approval, procurement, site permission or public performance.",
@@ -1870,7 +1870,7 @@
   },
   "gate_scope_note_zh": "requirements[].gate_ids 只登记「该闸门失效会使这一条的证据失效」的闸门；对全部 23 条同样成立、无法按条目区分的包级闸门登记在 package_level_gates。闸门定义与判定规则见 visual/assets/governance/package-integrity-gates.json。",
   "gate_scope_note_en": "requirements[].gate_ids lists only the gates whose failure would invalidate that row's evidence; gates that hold identically for all 23 rows are recorded in package_level_gates. Definitions and decision rules live in visual/assets/governance/package-integrity-gates.json.",
-  "cross_reference_derivation_zh": "本表把评委主稿、英文对照稿与结构化证据分成机械推导和实质关联两层。\n\n**机械推导。** `standard_ids` 的下界为：本条 `report_sections` 与 `standard_matrix.json` 各标准 `proposal_sections` 的交集。冠军版把旧版细碎章节归并为官方要求的 13 个主章节后，已重新跑完整交集并补齐所有引用；当前声明总数 130 ＝规则导出 120＋定义性挂接 5＋实质相关性挂接 5。10 条标准均至少被一条要求引用。中英 `report_sections` 按官方 13 个必备章节逐项映射，正文主章节次序完全一致，不依赖机器翻译。\n\n**实质关联。** `geometry_feature_ids` 与 `scenario_ids` 登记要求实际涉及的空间对象和场景，不等同于正文标记的机械抽取；每个几何 ID 都能在声明图层的 `properties.id` 中解析，十二个场景与 `geometry/public_space.geojson` 的场景节点一一对应。`title_en` 为本包自译，组织方仅发布中文标题。",
+  "cross_reference_derivation_zh": "本表把评委主稿、英文对照稿与结构化证据分成机械推导和实质关联两层。\n\n**机械推导。** `standard_ids` 的下界为：本条 `report_sections` 与 `standard_matrix.json` 各标准 `proposal_sections` 的交集。本轮整合版把旧版细碎章节归并为官方要求的 13 个主章节后，已重新跑完整交集并补齐所有引用；当前声明总数 130 ＝规则导出 120＋定义性挂接 5＋实质相关性挂接 5。10 条标准均至少被一条要求引用。中英 `report_sections` 按官方 13 个必备章节逐项映射，正文主章节次序完全一致，不依赖机器翻译。\n\n**实质关联。** `geometry_feature_ids` 与 `scenario_ids` 登记要求实际涉及的空间对象和场景，不等同于正文标记的机械抽取；每个几何 ID 都能在声明图层的 `properties.id` 中解析，十二个场景与 `geometry/public_space.geojson` 的场景节点一一对应。`title_en` 为本包自译，组织方仅发布中文标题。",
   "self_check_expectations": [
     {
       "expectation_id": "DETERMINISTIC_VALIDATION",
@@ -2022,7 +2022,7 @@
     {
       "expectation_id": "P0_IMPLEMENTATION_AND_PUBLIC_VALUE",
       "assertion_zh": "首个 SCN-05 P0 已从概念图深化为可操作离线服务原型、参与者预可研包络、90 天交付合同和逐场景公共利益硬门槛：7.2×7.2m参考外框、6×6m操作面、公众8人＋岗位3席＋排队6人、260开放小时／780岗位工时、约12–29万元／90天与约30–65万元／年的敏感性、四个替代方案、8道进入门、5个阶段、10项RACI、12项构件、8项验收、六类任务书群体与12/12场景公共价值门同时完整；专业交接进一步给出三席四人年度覆盖公式、双钥匙0/2、六包逐包验收、四种具名回退、调试执行0/8和5时段×7表未来基线。真实场地、法定容量、授权、角色、钥匙回执、报价、保险、正式预算、专业签认、调试执行与参与者观察仍如实为未开始/空值/0。",
-      "evidence_in_package": "visual/index.html#p0-prototype；assets/figures/operational-readiness.png；visual/assets/governance/p0-pre-feasibility-envelope.json；visual/assets/governance/implementation-handoff-register.json；visual/assets/governance/jury-evidence-index.json；visual/assets/governance/p0-delivery-contract.json；visual/assets/governance/public-benefit-gate.json；visual/assets/governance/review-3825-readiness-matrix.json；visual/assets/governance/p0-readiness-audit.js",
+      "evidence_in_package": "visual/index.html#p0-prototype；assets/figures/operational-readiness.png；visual/assets/governance/p0-pre-feasibility-envelope.json；visual/assets/governance/implementation-handoff-register.json；visual/assets/governance/jury-evidence-index.json；visual/assets/governance/p0-delivery-contract.json；visual/assets/governance/public-benefit-gate.json；visual/assets/governance/formal-review-readiness-matrix.json；visual/assets/governance/p0-readiness-audit.js",
       "covered_by_self_check_id": null,
       "independent_verification_zh": "`node visual/assets/governance/p0-readiness-audit.js --json` 输出 ok=true、预可研12/12、专业交接23/23、评委路径3/3、评分索引7/7、8/8门、5/5阶段、10/10 RACI、12/12构件、8/8验收、6/6群体、12/12场景公共门、资格证据6/6、评审动作7/7和原型14/14，同时 real_participant_observations=0；改错排班公式、删逐包验收、删具名回退门、伪造双钥匙回执、误标调试已执行或填入未来基线值都会退出1。"
     },
@@ -2043,7 +2043,7 @@
     {
       "expectation_id": "FORMAL_REVIEW_SCOPE_SEPARATION",
       "assertion_zh": "当前投稿材料闭合、正式评委程序、组织方数据、现场启动与公众绩效发布五种状态被分栏记录：参与者可控制的当前开放修复为 0；六项资格事实核对 0 项观察到拒绝条件；真实现场和绩效主张继续保持 BLOCKED，不以虚构授权换取可实施性分数。",
-      "evidence_in_package": "compliance_matrix.json#formal_review_readiness_boundary；visual/assets/governance/review-3825-readiness-matrix.json；visual/assets/governance/p0-delivery-contract.json#formal_review_boundary",
+      "evidence_in_package": "compliance_matrix.json#formal_review_readiness_boundary；visual/assets/governance/formal-review-readiness-matrix.json；visual/assets/governance/p0-delivery-contract.json#formal_review_boundary",
       "covered_by_self_check_id": null,
       "independent_verification_zh": "`node visual/assets/governance/p0-readiness-audit.js --json` 须输出 eligibility_evidence_checks_valid=6、review_items_classified_valid=7、ok=true；把 package_result 改成非 CLOSED、把任一资格事实改成 observed、或把现场 BLOCKED 改成已启动都会退出 1。"
     }

@@ -39,8 +39,8 @@ function fileUrl(file) {
 const copy = {
   zh: {
     lang: "zh-CN",
-    codeA3: "JZ / 01 · 冠军版首页",
-    codeA0: "B / 01 · 冠军版展板",
+    codeA3: "JZ / 01 · 投稿材料首页",
+    codeA0: "B / 01 · 投稿材料展板",
     title: "京张交接线",
     thesis: "一梳三场 · 两翼八支 · 二十单元",
     lead: "把废弃铁路变成一把伸向城市两翼的公共梳：AI 生产空间与可进入、可停用、有人负责的公共服务沿线成对生长。",
@@ -59,8 +59,8 @@ const copy = {
   },
   en: {
     lang: "en",
-    codeA3: "JZ / 01 · CHAMPIONSHIP COVER",
-    codeA0: "B / 01 · CHAMPIONSHIP BOARD",
+    codeA3: "JZ / 01 · SUBMISSION COVER",
+    codeA0: "B / 01 · SUBMISSION BOARD",
     title: "JING-ZHANG HANDOVER LINE",
     thesis: "ONE COMB · THREE YARDS · EIGHT TEETH · TWENTY PAIRED CELLS",
     lead: "Turn the disused railway into a civic comb: AI production space and an enterable, stoppable, staffed public service grow in pairs along one continuous spine.",
@@ -208,7 +208,7 @@ h1{margin:2mm 0 0;line-height:.96;letter-spacing:-.045em}.a3 h1{font-size:${lang
 </body></html>`;
 }
 
-const work = fs.mkdtempSync(path.join(os.tmpdir(), "jingzhang-champion-pdfs-"));
+const work = fs.mkdtempSync(path.join(os.tmpdir(), "jingzhang-delivery-pdfs-"));
 
 function run(command, args) {
   const result = spawnSync(command, args, { encoding: "utf8" });
@@ -251,7 +251,7 @@ async function rebuild(format, lang) {
   const cover = path.join(work, `${format}-${lang}.pdf`);
   const handoffAnnex = path.join(work, `${format}-${lang}-handoff.pdf`);
   const readinessAnnex = path.join(work, `${format}-${lang}-readiness.pdf`);
-  const output = path.join(DRAWINGS, `.${basename}.champion.tmp.pdf`);
+  const output = path.join(DRAWINGS, `.${basename}.delivery.tmp.pdf`);
   fs.writeFileSync(htmlPath, html(lang, format, targetPages));
   fs.writeFileSync(handoffHtmlPath, annexHtml("handoff", lang, format, targetPages - 1, targetPages));
   fs.writeFileSync(readinessHtmlPath, annexHtml("readiness", lang, format, targetPages, targetPages));

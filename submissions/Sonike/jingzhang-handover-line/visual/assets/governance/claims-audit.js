@@ -731,7 +731,7 @@ add("J1", `sources.json 里 ${sup.size} 条已自陈作废的登记，没有被�
     badPtr.length === 0, badPtr.length ? badPtr.join("；") : `作废 ${[...sup].join("、")}；现行条目零处误引`);
 
 /* J2. 矩阵自陈的推导规则。compliance_matrix.json 写着「standard_ids 的下界＝本条
-   report_sections 与 standard_matrix.proposal_sections 的交集」。冠军版把旧版细碎章节
+   report_sections 与 standard_matrix.proposal_sections 的交集」。本轮整合版把旧版细碎章节
    归并成官方 13 个必备章节后重新跑了完整交集；归并会让同章内的相关标准产生更多交集，
    所以同步补齐全部声明。三段分解的规模写死在这里：夹具少几条时「逐条一致」仍会成立
    而总数变小，所以 N 必须来自被审对象之外（同 protocol-check-runner.js 的 EXPECTED_SCALE）。 */

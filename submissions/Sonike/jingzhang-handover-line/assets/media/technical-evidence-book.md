@@ -995,7 +995,7 @@ P0 不是“拿到场地就开工”。以下 **8 道准入门**必须逐门交�
 | 四套 PDF 首页与 F/06、F/07 附页 | Noto Sans CJK SC Medium 字符子集 | SIL OFL 1.1，允许嵌入与再分发 [source:FONT-NOTO-WEB] | `pdffonts` 可见首页与末两页的 Noto Sans CJK 子集均为 `emb=yes` |
 | 30 张栅格图件文字 | Noto Sans CJK SC / Noto Sans；F/05、F/06 与 F/07 复用包内 OFL 字符子集 | SIL OFL 1.1，仅把字形渲染为像素 [source:FONT-NOTO-RASTER] [source:FONT-NOTO-WEB] | 包内完整源字体数为 0：`find <包> -name '*.tt[cf]' -o -name '*.otf'` |
 | 画廊封面文字 | Noto Sans CJK SC / Noto Sans | 同上 [source:FONT-NOTO-COVER] | 同上 |
-| 四份离线 HTML | Noto Sans CJK SC Medium 字符子集 | SIL OFL 1.1，286,676 字节 WOFF2 嵌入包内 CSS data URI，官方许可正文与版权通知另存 JSON [source:FONT-NOTO-WEB] | `node visual/assets/governance/webfont-audit.js` |
+| 四份离线 HTML | Noto Sans CJK SC Medium 字符子集 | SIL OFL 1.1，285,844 字节 WOFF2 嵌入包内 CSS data URI，官方许可正文与版权通知另存 JSON [source:FONT-NOTO-WEB] | `node visual/assets/governance/webfont-audit.js` |
 | 字符编码资源 | Adobe CMap UniGB-UCS2-H | Adobe 公开 CMap，仅作编码、不含字形 [source:FONT-ADOBE-CID] | `pdffonts` 输出中无该项字形嵌入 |
 
 音频由本机语音合成生成、不含真人音色样本 [source:TTS-MACOS-SYNTH]；工具链依赖及其许可逐项登记 [source:TOOLCHAIN-BUILD]。任何外部使用不得暗示政府背书、实施批准、已建成或已完成公众参与 [assumption:A-FONT-001]。
