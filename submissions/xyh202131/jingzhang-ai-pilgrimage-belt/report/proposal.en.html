@@ -168,6 +168,14 @@ code {
 .chapter-index ol { columns: 2; column-gap: 34px; margin: 0; padding-left: 22px; }
 .chapter-index li { break-inside: avoid; margin: 0 0 7px; }
 .chapter-index a { color: #315f87; text-underline-offset: 3px; }
+.mobile-table-note {
+  display: none;
+  margin: -18px 0 28px;
+  padding: 10px 12px;
+  border-left: 4px solid var(--accent);
+  color: var(--muted);
+  background: #f7fafc;
+}
 h2[id] { scroll-margin-top: 18px; }
 @media (max-width: 720px) {
   main { padding: 26px 16px 52px; }
@@ -175,6 +183,7 @@ h2[id] { scroll-margin-top: 18px; }
   h2 { font-size: 21px; }
   .review-toolbar a { flex: 1 1 100%; }
   .chapter-index ol { columns: 1; }
+  .mobile-table-note { display: block; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
@@ -187,6 +196,7 @@ h2[id] { scroll-margin-top: 18px; }
   .proposal-figure, table { break-inside: avoid; }
   .skip-link { display: none; }
   .chapter-index { break-inside: avoid; }
+  .mobile-table-note { display: none; }
 }
 </style>
 </head>
@@ -199,6 +209,7 @@ h2[id] { scroll-margin-top: 18px; }
 <nav class="review-toolbar" aria-label="Complete review-pack shortcuts"><a href="../visual/index.en.html">Return to proposal workbench</a><a href="../drawings/a3-booklet.en.pdf">Open A3 booklet</a><a href="../drawings/a0-boards.en.pdf">Open A0 boards</a><a href="../visual/index.en.html#handoff">Open professional handoff</a><a href="proposal.html" lang="zh-Hans">阅读中文版本</a></nav>
 </section>
 <nav class="chapter-index" aria-label="Report chapter index"><strong>Chapter index · 15 stable destinations</strong><ol><li><a href="#chapter-ruling">Proposal ruling</a></li><li><a href="#chapter-spatial-decision">One spatial decision</a></li><li><a href="#chapter-basis">Design basis and sources</a></li><li><a href="#chapter-scope-framework">Three-level scope</a></li><li><a href="#chapter-research">Coordinated research</a></li><li><a href="#chapter-overall-design">Overall design</a></li><li><a href="#chapter-key-areas">Key-area design</a></li><li><a href="#chapter-ai-ecosystem">AI ecosystem and scenes</a></li><li><a href="#chapter-land-use">Land use and building scale</a></li><li><a href="#chapter-infrastructure">Transport and public services</a></li><li><a href="#chapter-blue-green">Blue-green and public space</a></li><li><a href="#chapter-implementation">Projects, policy and phasing</a></li><li><a href="#chapter-metrics">Metrics and compliance</a></li><li><a href="#chapter-risk">Risk, copyright and compliance</a></li><li><a href="#chapter-references">References</a></li></ol></nav>
+<p class="mobile-table-note" role="note"><strong>Narrow-screen reading:</strong> Data tables retain every column. Swipe horizontally inside a table; the rest of the report continues vertically.</p>
 <h2 id="chapter-ruling">Proposal ruling</h2>
 <ul>
 <li>Chinese name: <strong>双轨京张</strong></li>
