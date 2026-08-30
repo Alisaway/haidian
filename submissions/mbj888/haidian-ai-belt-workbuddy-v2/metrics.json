@@ -272,6 +272,98 @@
       "formula": "content_claim",
       "confidence": "high",
       "assumptions": []
+    },
+    "traffic_baseline_verified": {
+      "status": "unknown",
+      "value": null,
+      "unit": "bool",
+      "source_files": [
+        "geometry/roads.geojson"
+      ],
+      "formula": "traffic_count_and_level_of_service_survey(road_network)",
+      "confidence": "low",
+      "assumptions": [
+        "包内 roads.geojson 仅 3 条 agent 推断中心线（source_type=agent_inferred_from_public_data, confidence=medium），仅用于示意，不能作为交通量或通行能力依据。",
+        "核验需使用官方路网或经审查的交通调查数据；在此之前不计算车流量、饱和度或服务水平。"
+      ],
+      "reason": "现状交通基线未验证：包内无交通量、路段通行能力、信号配时或公共交通供给数据。核验路径：以组织方或交管部门发布的路网与交通调查数据替换示意路网，按路段分车型计数与信号周期计算通行能力及服务水平。依据：官方路网数据、交通调查或经审查的交通模型。责任方：participant（计算）／organizer（提供数据）。触发：方案进入工程设计、交通影响评价或实施论证前。"
+    },
+    "walkability_baseline_verified": {
+      "status": "unknown",
+      "value": null,
+      "unit": "bool",
+      "source_files": [
+        "geometry/roads.geojson",
+        "geometry/public_space.geojson"
+      ],
+      "formula": "pedestrian_catchment_coverage(pedestrian_network, 500m_800m)",
+      "confidence": "low",
+      "assumptions": [
+        "步行可达性需基于真实步行网络（人行道、过街设施、阻隔点），包内示意路网不含人行道与过街设施，不能用于等时圈或覆盖率计算。",
+        "铁路与快速路阻隔为设计判断假设，尚未经步行实测或断点调查验证。"
+      ],
+      "reason": "步行可达性基线未验证：缺少人行道宽度、过街设施位置、阻隔断点与步行流量数据。核验路径：以实测或官方步行网络构建拓扑，按 500m/800m 步行距离计算公共服务与公共空间覆盖率，并标注铁路及快速路阻隔点。依据：实测步行网络、官方道路与市政数据。责任方：participant（计算）／organizer 或权属部门（提供数据）。触发：慢行系统深化、无障碍设计或站点周边详细设计启动前。"
+    },
+    "industry_service_baseline": {
+      "status": "unknown",
+      "value": null,
+      "unit": "bool",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "industry_space_and_service_capacity_inventory(parcels)",
+      "confidence": "low",
+      "assumptions": [
+        "产业空间存量、入驻率、租金水平与公共服务配套容量尚无经审查的普查或台账数据。",
+        "包内产业相关描述为依据公开资料的概念判断，不作为招商、产值或就业测算依据。"
+      ],
+      "reason": "产业服务基线未验证：缺少产业用地台账、建筑存量、入驻企业结构与公共服务设施容量数据。核验路径：以产业用地与建筑普查台账建立存量清单，按可租售面积与配套容量核算承载上限，并与公共服务设施服务半径叠加校核。依据：产业空间普查、建筑台账、公共服务设施专项规划。责任方：participant（核算）／organizer 或产业主管部门（提供数据）。触发：招商策划、产业导入政策设计或运营规模论证前。"
+    },
+    "land_ownership_verified": {
+      "status": "unknown",
+      "value": null,
+      "unit": "bool",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "parcel_ownership_and_building_safety_survey(parcels)",
+      "confidence": "low",
+      "assumptions": [
+        "土地与建筑权属、既有建筑安全鉴定、文化价值评估与地下条件均未开展，包内不做任何权属或拆改留结论。",
+        "留改拆建表述均为概念建议，须以权属调查与建筑鉴定结果为准。"
+      ],
+      "reason": "权属基线未验证：缺少宗地权属、建筑面积与用途、建筑安全鉴定、文保评估及地下管线与地质资料。核验路径：按宗地完成权属与用途核对，开展建筑安全与文化价值鉴定，补做地下条件与管线探测，据此调整留改拆建与分期。依据：不动产权籍调查、房屋安全鉴定报告、文保评估、地下管线探测成果。责任方：shared（权属部门、鉴定机构与 participant）。触发：任何片区进入实施、征收、改造或工程设计前。"
+    },
+    "municipal_capacity_baseline": {
+      "status": "unknown",
+      "value": null,
+      "unit": "bool",
+      "source_files": [
+        "geometry/land_use.geojson",
+        "geometry/phasing.geojson"
+      ],
+      "formula": "municipal_load_by_landuse(water, drainage, power, telecom)",
+      "confidence": "low",
+      "assumptions": [
+        "给水、排水、电力、通信与燃气等市政容量需以人口、建筑面积与用地性质按现行规范指标测算，包内无规范指标与现状管网数据，故不做负荷计算。",
+        "分期开发强度一旦确定，须同步复核市政容量是否可支撑，不足时调整分期或增设设施。"
+      ],
+      "reason": "市政容量基线未验证：缺少现状管网口径、剩余容量、水源与电源条件，以及按规范测算所需的建筑面积与人口基数。核验路径：以审定建筑面积与人口规模为基数，按现行给水、排水、电力、通信与燃气规划规范指标测算负荷，与现状管网剩余容量比对，缺口部分提出设施增容方案。依据：现行市政工程规划规范、现状管网普查与权属单位提供的剩余容量。责任方：participant（测算）／市政权属单位（提供容量与口径）。触发：市政专项规划、分期开发强度确定或任一地块开工前。"
+    },
+    "cost_baseline_verified": {
+      "status": "unknown",
+      "value": null,
+      "unit": "bool",
+      "source_files": [
+        "geometry/phasing.geojson"
+      ],
+      "formula": "cost_estimate_by_phase(unit_rate * quantity)",
+      "confidence": "low",
+      "assumptions": [
+        "按 README L233，投资测算不得写成已确定结论；包内分期与成本内容仅为概念性实施框架，不构成预算或投资依据。",
+        "成本单价、工程量、资金来源与主体承诺尚无正式依据，不做总额或单价估算。"
+      ],
+      "reason": "成本基线未验证：缺少造价指标、工程量、资金来源与主体承诺。核验路径：以北京市现行建设工程造价指标与同类城市更新项目结算数据为单价依据，按分期的建筑、市政、景观与征拆工程量测算，并明确资金来源与主体。依据：现行造价指标、同类项目结算资料、资金来源文件。责任方：participant（测算）／造价咨询机构与资金主体（提供依据）。触发：进入预算编制、投资决策或融资安排前；在此之前成本仅作概念性框架登记。"
     }
   }
 }

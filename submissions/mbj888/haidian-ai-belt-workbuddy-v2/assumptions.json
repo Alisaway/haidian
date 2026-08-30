@@ -58,5 +58,80 @@
     "description": "Design hypothesis pending on-site verification: the living / R&D / showcase segments of AI talent and industry are spatially severed by the railway and expressways. No reviewed public source for current traffic, walkability, industry or public-service baselines was available in the cleared package; the open-call task book cannot serve as evidence of existing site conditions. Treated explicitly as a design hypothesis, not an established site fact, until an on-site survey or reviewed baseline source is obtained.",
     "recalculation_trigger": "On-site survey or reviewed baseline data on traffic / walkability / industry",
     "evidence_status": "pending_verification"
+  },
+  "baseline_traffic_walkability": {
+    "status": "unknown",
+    "value": null,
+    "unit": "bool",
+    "source_files": [
+      "proposal.md",
+      "proposal.en.md",
+      "geometry/roads.geojson"
+    ],
+    "description": "Baseline gap: no reviewed traffic counts, road capacity, signal timing, transit supply, pavement network, crossing facilities, or barrier断点 data. The three road centre-lines in roads.geojson are agent-inferred schematic geometry (confidence=medium) and are not a basis for traffic or walkability calculation. Railway/expressway severance is carried as a design hypothesis only.",
+    "verification_path": "Replace the schematic network with official or surveyed road and pedestrian network data; compute link capacity and level of service from classified counts and signal cycles, and compute 500m/800m pedestrian catchment coverage from a walkable topology with recorded barriers.",
+    "recalculation_trigger": "Official or surveyed traffic / pedestrian network data becomes available",
+    "evidence_status": "pending_verification",
+    "owner": "participant (computation) / organizer or road authority (data)"
+  },
+  "baseline_industry_service": {
+    "status": "unknown",
+    "value": null,
+    "unit": "bool",
+    "source_files": [
+      "proposal.md",
+      "proposal.en.md",
+      "geometry/land_use.geojson"
+    ],
+    "description": "Baseline gap: no reviewed inventory of industrial floor area, occupancy, rents, tenant mix, or public-service facility capacity. Industry-related statements in the proposal are concept judgements from public material and are not a basis for investment, output, or employment estimates.",
+    "verification_path": "Build a stock inventory from parcel and building records; compute carrying capacity from leasable area and facility capacity; overlay with public-service facility service radii for cross-check.",
+    "recalculation_trigger": "Industrial space census or building inventory obtained",
+    "evidence_status": "pending_verification",
+    "owner": "participant (computation) / organizer or industry authority (data)"
+  },
+  "baseline_land_ownership": {
+    "status": "unknown",
+    "value": null,
+    "unit": "bool",
+    "source_files": [
+      "proposal.md",
+      "proposal.en.md",
+      "geometry/key_areas.geojson"
+    ],
+    "description": "Baseline gap: no parcel ownership, floor area or use records, building safety appraisal, heritage value assessment, underground conditions, or utility survey. Retain/renovate/demolish statements are concept suggestions only and must not be read as ownership or demolition conclusions.",
+    "verification_path": "Verify ownership and use parcel by parcel; commission building safety and heritage appraisals; complete underground and utility detection; then revise retain/renovate/demolish and phasing accordingly.",
+    "recalculation_trigger": "Parcel survey, building appraisal, or underground detection initiated",
+    "evidence_status": "pending_verification",
+    "owner": "shared (ownership authority, appraisal body, participant)"
+  },
+  "baseline_municipal_capacity": {
+    "status": "unknown",
+    "value": null,
+    "unit": "bool",
+    "source_files": [
+      "proposal.md",
+      "proposal.en.md",
+      "geometry/land_use.geojson"
+    ],
+    "description": "Baseline gap: no data on existing utility network diameters, residual capacity, water and power source conditions, nor the floor-area and population base required by the applicable municipal planning standards. No load calculation is performed in this package.",
+    "verification_path": "From the approved floor area and population base, compute water, drainage, power, telecom and gas loads under the current municipal planning standards; compare against residual network capacity; identify upgrading works where shortfalls appear.",
+    "recalculation_trigger": "Municipal network inventory and capacity data obtained, or phased intensity fixed",
+    "evidence_status": "pending_verification",
+    "owner": "participant (computation) / utility owners (capacity data)"
+  },
+  "baseline_cost_estimate": {
+    "status": "unknown",
+    "value": null,
+    "unit": "bool",
+    "source_files": [
+      "proposal.md",
+      "proposal.en.md",
+      "geometry/phasing.geojson"
+    ],
+    "description": "Baseline gap and explicit red line: per README L233, investment estimates must not be presented as established conclusions. No unit rates, quantities, funding sources, or commitments exist in this package; phasing and cost content is a conceptual implementation framework only and is not a budget or investment basis.",
+    "verification_path": "Apply current Beijing construction cost indices and comparable urban-regeneration settlement data as unit-rate basis; estimate by phase across building, municipal, landscape and relocation quantities; state funding sources and responsible entities explicitly.",
+    "recalculation_trigger": "Budget preparation, investment decision, or financing arrangement initiated",
+    "evidence_status": "pending_verification",
+    "owner": "participant (estimation) / cost consultant and funding entities (basis)"
   }
 }
