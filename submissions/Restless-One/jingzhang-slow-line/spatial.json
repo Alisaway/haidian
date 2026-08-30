@@ -1,7 +1,7 @@
 {
   "version": 1,
   "disclaimer": "concept-only",
-  "summary": "只表达一条概念慢线、三处可转移慢场与三座公共地标，不包含坐标、红线、权属、工程线位或审定指标。",
+  "summary": "表达一条概念慢线、三处可转移慢场、三座公共地标与一个非定位 P0 条件式全停门；P0 尺寸只作概念筛查和交接，不包含坐标、红线、权属、工程线位、授权或审定指标。",
   "items": [
     {
       "id": "corridor-slow-line",
@@ -113,6 +113,24 @@
       "geometry": {
         "mode": "concept",
         "label": "大钟寺概念节点"
+      }
+    },
+    {
+      "id": "p0-all-stop-01",
+      "type": "node",
+      "title": "P0-ALL-STOP-01 条件式全停门",
+      "title_en": "P0-ALL-STOP-01 Conditional All-Stop Gate",
+      "summary": "非定位、可撤回的尺寸化首启单元；只用于 18 m x 12 m 概念筛查包络、责任、工程量、失败停止和恢复交接，不含坐标或授权。",
+      "summary_en": "Unlocated, reversible, dimensioned launch unit for an 18 m x 12 m concept-screening envelope, accountability, quantities, failure stops, and restoration hand-off; no coordinates or authorization.",
+      "source": "visual/assets/v13-implementation.json + proposal.md",
+      "public_level": "provisional",
+      "linked_scenarios": [
+        "ai-traffic-walkability"
+      ],
+      "order": 8,
+      "geometry": {
+        "mode": "concept",
+        "label": "Unlocated representative all-stop-gate screening relationship; NOT_AUTHORIZED and HOLD"
       }
     }
   ]

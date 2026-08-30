@@ -1,0 +1,503 @@
+{
+  "schema_version": "1.0.0",
+  "package_version": "v1.3-p0-feasibility",
+  "object_id": "P0-ALL-STOP-01",
+  "title_zh": "条件式 P0 全停门首启单元",
+  "title_en": "Conditional P0 All-Stop Gate launch unit",
+  "authorization_state": "NOT_AUTHORIZED",
+  "gate_state": "HOLD",
+  "location_state": "UNLOCATED_CONCEPT_SCREENING_ENVELOPE",
+  "role_assignment_state": "unassigned/conditional",
+  "price_state": "null/TBC",
+  "field_evidence_state": "HOLD_NO_BASELINE",
+  "scope_note_zh": "本文件是非定位、不可放样、不可采购的概念筛查与交接数据源。它不替代测绘、选址、工程设计、专业签章、许可、报价或现场验收。",
+  "scope_note_en": "This file is an unlocated concept-screening and hand-off source. It cannot be set out or procured and does not replace survey, siting, engineering design, professional sign-off, permission, quotation, or field acceptance.",
+  "scales": [
+    {
+      "scale": "1:500",
+      "purpose_zh": "筛查与遗产铁路、既有慢行道、社区界面、绿化缓冲和潜在服务支路的关系",
+      "purpose_en": "Screen the relationship to heritage rail, existing slow route, community edge, green buffer, and a possible service spur",
+      "precision_state": "concept_relationship_only"
+    },
+    {
+      "scale": "1:100",
+      "purpose_zh": "核验净宽、回转、值守视线、机器人停止与构件退距",
+      "purpose_en": "Check clear width, turning, staffed sightline, robot stopping, and component setbacks",
+      "precision_state": "dimensioned_design_assumption"
+    },
+    {
+      "scale": "1:50",
+      "purpose_zh": "核验慢行、触觉/高对比边界、服务区、维护和拆除净空的断面关系",
+      "purpose_en": "Check the section relationship among slow travel, tactile/high-contrast edge, service zone, maintenance, and removal clearance",
+      "precision_state": "dimensioned_design_assumption"
+    },
+    {
+      "scale": "1:20",
+      "purpose_zh": "核验可逆铺装、压重底座、线缆、照明与排水接口的可撤回逻辑",
+      "purpose_en": "Check the reversible surface, weighted base, cable, lighting, and drainage interface",
+      "precision_state": "interface_principle_tbc_professional_detail"
+    }
+  ],
+  "dimensions": [
+    {
+      "dimension_id": "P0-D01",
+      "label_zh": "概念筛查包络",
+      "label_en": "Concept screening envelope",
+      "value": 216,
+      "unit": "sqm",
+      "derivation": "18.0 m x 12.0 m",
+      "basis_zh": "用于比较既有路径、服务区与拆除通道是否能同时容纳的设计假设；不是地块面积或现场实测。",
+      "basis_en": "Design assumption used to test whether the existing route, service zone, and removal access can coexist; not a parcel area or field measurement.",
+      "confirmation_role": "A-P0-RIGHTS + R-P0-SURVEY",
+      "trigger": "candidate site nominated and rights holder permits baseline survey"
+    },
+    {
+      "dimension_id": "P0-D02",
+      "label_zh": "可逆地面范围",
+      "label_en": "Reversible ground zone",
+      "value": 96,
+      "unit": "sqm",
+      "derivation": "12.0 m x 8.0 m service apron within the screening envelope",
+      "basis_zh": "用于不破坏原地面的可拆铺装、标线和服务构件布置；现场材料相容性与排水仍为 TBC。",
+      "basis_en": "Allows demountable surfacing, markings, and service components without assuming ground alteration; material compatibility and drainage remain TBC.",
+      "confirmation_role": "R-P0-ACCESS + R-P0-DRAINAGE + A-P0-RIGHTS",
+      "trigger": "surface, level and drainage baseline complete"
+    },
+    {
+      "dimension_id": "P0-D03",
+      "label_zh": "有效慢行净宽",
+      "label_en": "Effective slow-route clear width",
+      "value": 3,
+      "unit": "m",
+      "derivation": "continuous 18.0 m x 3.0 m unobstructed strip",
+      "basis_zh": "为轮椅、陪同行人与低速会车留出保守操作余量的设计假设；不声称等于法定最小值，须由无障碍、交通和消防角色按现场标准复核。",
+      "basis_en": "Conservative operating assumption allowing a wheelchair, companion, and low-speed passing; not claimed as a statutory minimum and subject to accessibility, traffic, and fire review.",
+      "confirmation_role": "R-P0-ACCESS + R-P0-TRAFFIC + R-P0-FIRE",
+      "trigger": "measured cross-section and applicable public standards confirmed"
+    },
+    {
+      "dimension_id": "P0-D04",
+      "label_zh": "轮椅回转空间",
+      "label_en": "Wheelchair turning space",
+      "value": 1.8,
+      "unit": "m_diameter",
+      "derivation": "one clear circle at the service decision point and one at the staffed desk",
+      "basis_zh": "用于概念平面避免以最小设备尺寸挤压回转的设计假设；最终形状与数值由付费共同设计和无障碍专业复核。",
+      "basis_en": "Concept-plan assumption preventing equipment from consuming turning space; final shape and value require paid co-design and accessibility review.",
+      "confirmation_role": "R-P0-CODESIGN + R-P0-ACCESS",
+      "trigger": "co-design mock-up and measured route test"
+    },
+    {
+      "dimension_id": "P0-D05",
+      "label_zh": "人工服务桌",
+      "label_en": "Staffed service desk",
+      "value": 2.4,
+      "unit": "m_length",
+      "derivation": "2.4 m x 0.8 m demountable module; accessible approach and counter height TBC",
+      "basis_zh": "长度用于容纳纸本、人工办理和急停控制的分区；台面高度、膝部净空和设备型号不得在无障碍复核前冻结。",
+      "basis_en": "Length separates paper information, staffed service, and stop control; counter height, knee clearance, and equipment model cannot be frozen before accessibility review.",
+      "confirmation_role": "R-P0-CODESIGN + R-P0-SERVICE + R-P0-ACCESS",
+      "trigger": "paid mock-up acceptance"
+    },
+    {
+      "dimension_id": "P0-D06",
+      "label_zh": "值守视线",
+      "label_en": "Staffed sightline",
+      "value": 15,
+      "unit": "m",
+      "derivation": "unobstructed concept sight triangle from desk to both route entries and robot stop line",
+      "basis_zh": "用于平面筛查的最大观察距离假设，不是人员响应承诺；遮挡、夜间和真实响应时间必须现场测试。",
+      "basis_en": "Maximum concept observation-distance assumption for plan screening, not a response-time promise; obstruction, night conditions, and actual response require field testing.",
+      "confirmation_role": "R-P0-SERVICE + R-P0-SAFETY",
+      "trigger": "day/night sightline walk-through"
+    },
+    {
+      "dimension_id": "P0-D07",
+      "label_zh": "机器人停靠包络",
+      "label_en": "Robot holding bay",
+      "value": 4.32,
+      "unit": "sqm",
+      "derivation": "2.4 m x 1.8 m marked bay",
+      "basis_zh": "仅用于最坏包络筛查，不对应具体设备；设备外廓、制动、救援和充电条件均为 TBC。",
+      "basis_en": "Worst-envelope screening only and not tied to a device; device dimensions, braking, rescue, and charging remain TBC.",
+      "confirmation_role": "R-P0-SAFETY + R-P0-EQUIPMENT",
+      "trigger": "specific equipment and controlled test protocol proposed"
+    },
+    {
+      "dimension_id": "P0-D08",
+      "label_zh": "机器人不可进入区",
+      "label_en": "Robot no-entry zone",
+      "value": 6.4,
+      "unit": "sqm",
+      "derivation": "3.2 m x 2.0 m buffer between 3.2 m stop line and slow route",
+      "basis_zh": "在算法判断之外提供可见物理边界的设计假设；最终停止距离由受控测试和安全专业方确认，只能增大不能在未复核时缩小。",
+      "basis_en": "Visible physical boundary independent of algorithmic judgment; final stopping distance is set through controlled testing and safety review and cannot be reduced without evidence.",
+      "confirmation_role": "R-P0-SAFETY + R-P0-EQUIPMENT",
+      "trigger": "braking and rescue test passed in a contained site"
+    },
+    {
+      "dimension_id": "P0-D09",
+      "label_zh": "构件至有效路径退距",
+      "label_en": "Component setback from clear route",
+      "value": 0.6,
+      "unit": "m",
+      "derivation": "minimum concept furniture/equipment/sign setback outside the 3.0 m clear strip",
+      "basis_zh": "避免设备、座椅和标识侵入净宽的筛查值；触觉/高对比边界属于路径接口，不按普通家具处理，做法为 TBC。",
+      "basis_en": "Screening value keeping equipment, seating, and signs outside the clear strip; tactile/high-contrast edges are route interfaces, not furniture, and remain TBC in detail.",
+      "confirmation_role": "R-P0-ACCESS + R-P0-MAINTENANCE",
+      "trigger": "full-size tape-out and maintenance walk-through"
+    },
+    {
+      "dimension_id": "P0-D10",
+      "label_zh": "维护/拆除作业净空",
+      "label_en": "Maintenance/removal working clearance",
+      "value": 1.5,
+      "unit": "m",
+      "derivation": "clear working band around demountable frame and equipment cabinet",
+      "basis_zh": "供人工检查、搬运和无损拆除的概念余量；不能占用慢行净宽或既有应急路径。",
+      "basis_en": "Concept allowance for inspection, handling, and non-destructive removal; it cannot consume the slow-route width or any existing emergency route.",
+      "confirmation_role": "R-P0-INSTALL + R-P0-MAINTENANCE + R-P0-FIRE",
+      "trigger": "installation and removal method statement reviewed"
+    },
+    {
+      "dimension_id": "P0-D11",
+      "label_zh": "拆除进出通道",
+      "label_en": "Removal access route",
+      "value": 3,
+      "unit": "m",
+      "derivation": "one 3.0 m clear concept route to the screening-envelope edge",
+      "basis_zh": "按最大可拆模块的人工/小型搬运筛查，不授权车辆进入；实际应急和搬运净宽由现场管理、消防与安装方确认。",
+      "basis_en": "Screens manual or small-plant removal of the largest demountable module and does not authorize vehicle access; actual emergency and handling width requires site-management, fire, and installer confirmation.",
+      "confirmation_role": "R-P0-INSTALL + R-P0-FIRE + A-P0-RIGHTS",
+      "trigger": "logistics and emergency plan accepted"
+    },
+    {
+      "dimension_id": "P0-D12",
+      "label_zh": "可拆遮蔽",
+      "label_en": "Demountable shelter",
+      "value": 17.28,
+      "unit": "sqm",
+      "derivation": "4.8 m x 3.6 m weighted-base canopy; 2.4 m concept clear height",
+      "basis_zh": "只用于平面、断面和工程量计算；风、雪、结构、净高、文保、消防和基础承载均为 TBC，未签放不得安装。",
+      "basis_en": "For plan, section, and quantity calculation only; wind, snow, structure, clearance, heritage, fire, and bearing capacity remain TBC and installation is prohibited before sign-off.",
+      "confirmation_role": "R-P0-STRUCTURE + R-P0-FIRE + A-P0-RIGHTS",
+      "trigger": "site-specific structural and fire review"
+    }
+  ],
+  "tbc_interfaces": [
+    {
+      "interface_id": "P0-I01",
+      "interface": "tactile_surface_and_warning_pattern",
+      "state": "TBC",
+      "confirmation_role": "R-P0-CODESIGN + R-P0-ACCESS",
+      "trigger": "applicable standard and full-size mock-up confirmed"
+    },
+    {
+      "interface_id": "P0-I02",
+      "interface": "high_contrast_values_and_night_readability",
+      "state": "TBC",
+      "confirmation_role": "R-P0-ACCESS + R-P0-LIGHTING",
+      "trigger": "day/night contrast measurement"
+    },
+    {
+      "interface_id": "P0-I03",
+      "interface": "lighting_level_glare_and_power_capacity",
+      "state": "TBC",
+      "confirmation_role": "R-P0-LIGHTING + R-P0-ELECTRICAL",
+      "trigger": "night baseline and electrical capacity verified"
+    },
+    {
+      "interface_id": "P0-I04",
+      "interface": "surface_fall_drainage_and_outfall",
+      "state": "TBC",
+      "confirmation_role": "R-P0-DRAINAGE + A-P0-RIGHTS",
+      "trigger": "level survey and rainfall/drainage baseline"
+    },
+    {
+      "interface_id": "P0-I05",
+      "interface": "emergency_route_width_and_fire_controls",
+      "state": "TBC_NO_REDUCTION_FROM_BASELINE",
+      "confirmation_role": "R-P0-FIRE + A-P0-RIGHTS",
+      "trigger": "measured emergency baseline and fire review"
+    },
+    {
+      "interface_id": "P0-I06",
+      "interface": "power_data_charging_and_cable_protection",
+      "state": "TBC_NO_CABLE_ACROSS_CLEAR_ROUTE",
+      "confirmation_role": "R-P0-ELECTRICAL + R-P0-SAFETY",
+      "trigger": "equipment schedule and capacity check"
+    }
+  ],
+  "roles": [
+    {
+      "role_id": "R-P0-EXEC",
+      "role_zh": "P0 实施协调人",
+      "role_en": "P0 implementation coordinator",
+      "assignment": "unassigned/conditional",
+      "authority": "coordinates tasks and evidence; cannot self-authorize opening"
+    },
+    {
+      "role_id": "A-P0-RIGHTS",
+      "role_zh": "场地权利方/委托责任槽位",
+      "role_en": "Site-rights holder/commissioning accountability slot",
+      "assignment": "unassigned/conditional",
+      "authority": "accountable for final release, removal instruction, ground-restoration acceptance, and records retention; release depends on all required professional evidence"
+    },
+    {
+      "role_id": "R-P0-CODESIGN",
+      "role_zh": "付费无障碍共同设计牵头人",
+      "role_en": "Paid accessibility co-design lead",
+      "assignment": "unassigned/conditional",
+      "authority": "may place the work on immediate HOLD for exclusion, inaccessible equivalence, or safeguarding failure"
+    },
+    {
+      "role_id": "R-P0-SERVICE",
+      "role_zh": "人工服务与接管运营角色",
+      "role_en": "Staffed-service and human-takeover operator",
+      "assignment": "unassigned/conditional",
+      "authority": "executes staffed equivalent service, immediate takeover, opening/closing parity, and may stop operation"
+    },
+    {
+      "role_id": "R-P0-SAFETY",
+      "role_zh": "当班安全/隐私专业角色",
+      "role_en": "On-duty safety/privacy professional",
+      "assignment": "unassigned/conditional",
+      "authority": "independent immediate stop authority; controls incident scene and evidence preservation"
+    },
+    {
+      "role_id": "R-P0-INSTALL",
+      "role_zh": "可拆构件安装与恢复角色",
+      "role_en": "Demountable works installation/restoration role",
+      "assignment": "unassigned/conditional",
+      "authority": "installs, maintains, dismantles, removes waste, restores the surface, and submits as-left records"
+    },
+    {
+      "role_id": "R-P0-EVAL",
+      "role_zh": "独立无障碍/运行评估角色",
+      "role_en": "Independent accessibility/operations evaluator",
+      "assignment": "unassigned/conditional",
+      "authority": "observes without operating the pilot; signs evidence completeness, not government or engineering approval"
+    },
+    {
+      "role_id": "R-P0-SURVEY",
+      "role_zh": "测绘与基线记录专业角色",
+      "role_en": "Survey and baseline-record professional",
+      "assignment": "unassigned/conditional",
+      "authority": "records levels, obstacles, condition, utilities and reinstatement reference only after authorization"
+    }
+  ],
+  "immediate_stop_rule": {
+    "authorized_roles": [
+      "R-P0-CODESIGN",
+      "R-P0-SERVICE",
+      "R-P0-SAFETY"
+    ],
+    "public_activation": "any user or worker may activate a visible physical stop without penalty; restart requires recorded cause, correction, and accountable release",
+    "non_compensation_rule": "any safety-critical group failure, missing equivalent service, or failed exit places the whole unit on HOLD; averages cannot compensate"
+  },
+  "tasks": [
+    {
+      "task_id": "P0-T01",
+      "window": "D00-D05",
+      "responsible_role": "R-P0-EXEC",
+      "accountable_role": "A-P0-RIGHTS",
+      "input_conditions": ["candidate commissioning intent", "all role slots remain unassigned until accepted in writing"],
+      "outputs": ["role-acceptance register", "RACI and immediate-stop register", "audit file index"],
+      "required_gates": ["G0"],
+      "hold_conditions": ["no accountable rights holder", "stop authority refused", "human-takeover role absent"],
+      "recovery_or_exit_evidence": ["dated role acceptance or written no-go", "versioned responsibility register"]
+    },
+    {
+      "task_id": "P0-T02",
+      "window": "D01-D10",
+      "responsible_role": "R-P0-EXEC + R-P0-SURVEY",
+      "accountable_role": "A-P0-RIGHTS",
+      "input_conditions": ["survey access permission", "concept screening criteria"],
+      "outputs": ["1:500 candidate-site relationship", "rights/heritage/fire/utilities constraint log", "screen-in or screen-out note"],
+      "required_gates": ["G0"],
+      "hold_conditions": ["heritage rail crossed", "existing slow route or emergency route narrowed", "rights or utilities unknown"],
+      "recovery_or_exit_evidence": ["screen-out record with reason", "alternative candidate trigger"]
+    },
+    {
+      "task_id": "P0-T03",
+      "window": "D06-D15",
+      "responsible_role": "R-P0-SURVEY",
+      "accountable_role": "A-P0-RIGHTS",
+      "input_conditions": ["T02 screen-in", "authorized site access"],
+      "outputs": ["levels and drainage baseline", "path/obstacle/lighting/noise condition record", "before-condition photo and drawing register"],
+      "required_gates": ["G0"],
+      "hold_conditions": ["baseline cannot be audited", "unsafe access", "official constraint conflicts"],
+      "recovery_or_exit_evidence": ["sealed baseline dataset by appointed professional", "written site rejection"]
+    },
+    {
+      "task_id": "P0-T04",
+      "window": "D11-D22",
+      "responsible_role": "R-P0-CODESIGN",
+      "accountable_role": "A-P0-RIGHTS",
+      "input_conditions": ["paid participation terms", "accessible venue/materials", "T03 baseline"],
+      "outputs": ["task-based co-design record", "dissent and unresolved-issue log", "acceptance-threshold preregistration draft"],
+      "required_gates": ["G1"],
+      "hold_conditions": ["unpaid or token participation", "affected group rejects pilot", "accessible equivalent cannot be defined"],
+      "recovery_or_exit_evidence": ["recruitment correction", "participant-approved no-go or revised brief"]
+    },
+    {
+      "task_id": "P0-T05",
+      "window": "D18-D30",
+      "responsible_role": "R-P0-EXEC + R-P0-SERVICE",
+      "accountable_role": "A-P0-RIGHTS",
+      "input_conditions": ["T03 baseline", "T04 co-design evidence"],
+      "outputs": ["conditional 1:100/1:50/1:20 package", "frozen non-priced BOQ", "staffed-equivalence and opening-parity plan"],
+      "required_gates": ["G1", "G2"],
+      "hold_conditions": ["clear route intersects any object", "desk cannot see route entries and stop line", "AI can open while human service is closed"],
+      "recovery_or_exit_evidence": ["revised clash-free package", "recorded withdrawal if equivalence cannot be staffed"]
+    },
+    {
+      "task_id": "P0-T06",
+      "window": "D21-D40",
+      "responsible_role": "R-P0-SAFETY",
+      "accountable_role": "A-P0-RIGHTS",
+      "input_conditions": ["T05 package", "named competent reviewers"],
+      "outputs": ["permit/approval register", "accessibility/fire/structure/electrical/privacy/safety review record", "data and incident protocol"],
+      "required_gates": ["G0", "G3"],
+      "hold_conditions": ["any required approval missing", "ground penetration proposed without clearance", "personal-data purpose or retention unresolved"],
+      "recovery_or_exit_evidence": ["closed review comments", "formal no-go and protected records"]
+    },
+    {
+      "task_id": "P0-T07",
+      "window": "D31-D45",
+      "responsible_role": "R-P0-EXEC + R-P0-INSTALL",
+      "accountable_role": "A-P0-RIGHTS",
+      "input_conditions": ["T05 BOQ", "T06 conditional professional release"],
+      "outputs": ["supplier-neutral specifications", "installation/maintenance/removal method statements", "rate-null cost workbook and restoration reserve requirement"],
+      "required_gates": ["G2", "G3"],
+      "hold_conditions": ["single-source lock-in without exit", "removal/restoration omitted", "unit rates or funds unverified"],
+      "recovery_or_exit_evidence": ["reissued neutral schedule", "procurement cancellation record"]
+    },
+    {
+      "task_id": "P0-T08",
+      "window": "D41-D52",
+      "responsible_role": "R-P0-INSTALL + R-P0-SERVICE",
+      "accountable_role": "A-P0-RIGHTS",
+      "input_conditions": ["approved mock-up location", "T07 methods"],
+      "outputs": ["off-site/full-size mock-up", "wheelchair turn and desk approach check", "physical stop/human-takeover drill", "defect log"],
+      "required_gates": ["G2", "G3"],
+      "hold_conditions": ["turning/approach fails", "physical stop fails", "defect lacks owner or closure evidence"],
+      "recovery_or_exit_evidence": ["closed defect record", "scrap/rework trace"]
+    },
+    {
+      "task_id": "P0-T09",
+      "window": "D53-D60",
+      "responsible_role": "R-P0-INSTALL + R-P0-SAFETY",
+      "accountable_role": "A-P0-RIGHTS",
+      "input_conditions": ["G0-G3 passed", "T08 defects closed", "installation access"],
+      "outputs": ["installation and as-installed register", "AI-off same-task rehearsal", "malformed-input HOLD test", "opening decision record"],
+      "required_gates": ["G0", "G1", "G2", "G3", "G4"],
+      "hold_conditions": ["route obstruction > 0", "audit completeness < 100%", "AI-off equivalent < 100%", "malformed input does not HOLD"],
+      "recovery_or_exit_evidence": ["corrected rehearsal ledger", "closed/opening refused record", "removal instruction if correction fails"]
+    },
+    {
+      "task_id": "P0-T10",
+      "window": "D61-D75",
+      "responsible_role": "R-P0-SERVICE + R-P0-SAFETY",
+      "accountable_role": "A-P0-RIGHTS",
+      "input_conditions": ["T09 opening release", "registered groups/thresholds/roster", "independent observer"],
+      "outputs": ["time-limited operating log", "disaggregated task records", "takeover/stop/complaint/deletion register"],
+      "required_gates": ["G4"],
+      "hold_conditions": ["any safety-critical failure", "equivalent service unavailable", "any group cannot exit", "roster gap"],
+      "recovery_or_exit_evidence": ["incident package", "human-takeover record", "restart or permanent-stop decision"]
+    },
+    {
+      "task_id": "P0-T11",
+      "window": "D76-D84",
+      "responsible_role": "R-P0-EVAL",
+      "accountable_role": "A-P0-RIGHTS",
+      "input_conditions": ["T10 records", "pre-registered formulas and group thresholds"],
+      "outputs": ["independent evidence audit", "group-by-group decision", "continue/shrink/move/pause/remove recommendation"],
+      "required_gates": ["G4", "G5"],
+      "hold_conditions": ["missing record", "averages mask a failed group", "reviewer not independent"],
+      "recovery_or_exit_evidence": ["qualified/failed evaluation with unresolved items visible", "accountable decision trail"]
+    },
+    {
+      "task_id": "P0-T12",
+      "window": "D85-D90",
+      "responsible_role": "R-P0-INSTALL",
+      "accountable_role": "A-P0-RIGHTS",
+      "input_conditions": ["planned end of window or immediate removal instruction", "T03 baseline", "waste and logistics plan"],
+      "outputs": ["dismantling and waste trace", "after-condition survey", "defect/remediation closure", "ground-restoration acceptance", "public close-out record"],
+      "required_gates": ["G5"],
+      "hold_conditions": ["surface not restored", "waste/asset destination unknown", "baseline comparison or acceptance missing"],
+      "recovery_or_exit_evidence": ["before/after comparison", "remediation invoice/record with rates redacted or TBC as applicable", "signed acceptance by accountable role and independent evidence reviewer"]
+    }
+  ],
+  "boq": [
+    {"boq_id": "P0-Q01", "item_zh": "可拆构架", "item_en": "Demountable frame", "quantity": 1, "unit": "set", "derivation": "6 weighted-base posts + 16.8 m perimeter beams", "unit_rate": null, "price_state": "TBC"},
+    {"boq_id": "P0-Q02", "item_zh": "可拆遮蔽", "item_en": "Demountable shelter", "quantity": 17.28, "unit": "sqm", "derivation": "4.8 m x 3.6 m", "unit_rate": null, "price_state": "TBC"},
+    {"boq_id": "P0-Q03", "item_zh": "可逆地面", "item_en": "Reversible ground treatment", "quantity": 96, "unit": "sqm", "derivation": "12.0 m x 8.0 m service apron", "unit_rate": null, "price_state": "TBC"},
+    {"boq_id": "P0-Q04", "item_zh": "人工服务桌", "item_en": "Staffed service desk", "quantity": 1, "unit": "module", "derivation": "2.4 m x 0.8 m demountable desk", "unit_rate": null, "price_state": "TBC"},
+    {"boq_id": "P0-Q05", "item_zh": "实体急停设施", "item_en": "Physical emergency-stop facilities", "quantity": 2, "unit": "unit", "derivation": "1 public-facing + 1 staff-side; final specification TBC", "unit_rate": null, "price_state": "TBC"},
+    {"boq_id": "P0-Q06", "item_zh": "纸本信息架", "item_en": "Paper information rack", "quantity": 1, "unit": "unit", "derivation": "adjacent to staffed desk and outside clear route", "unit_rate": null, "price_state": "TBC"},
+    {"boq_id": "P0-Q07", "item_zh": "多通道导视点", "item_en": "Multi-channel wayfinding points", "quantity": 5, "unit": "point", "derivation": "2 entries + 1 staffed desk + 1 robot stop + 1 exit/restoration notice", "unit_rate": null, "price_state": "TBC"},
+    {"boq_id": "P0-Q08", "item_zh": "触觉/高对比引导接口", "item_en": "Tactile/high-contrast guidance interface", "quantity": 18, "unit": "linear_m", "derivation": "one continuous route-edge interface; detailed pattern TBC", "unit_rate": null, "price_state": "TBC"},
+    {"boq_id": "P0-Q09", "item_zh": "机器人停止线", "item_en": "Robot stop line", "quantity": 3.2, "unit": "linear_m", "derivation": "full service-spur width", "unit_rate": null, "price_state": "TBC"},
+    {"boq_id": "P0-Q10", "item_zh": "机器人不可进入区标识", "item_en": "Robot no-entry marking", "quantity": 6.4, "unit": "sqm", "derivation": "3.2 m x 2.0 m", "unit_rate": null, "price_state": "TBC"},
+    {"boq_id": "P0-Q11", "item_zh": "座椅与轮椅同伴位", "item_en": "Seating and wheelchair companion bay", "quantity": 3, "unit": "seat_plus_1_bay", "derivation": "3 movable seats and 1 unoccupied companion bay under/near shelter", "unit_rate": null, "price_state": "TBC"},
+    {"boq_id": "P0-Q12", "item_zh": "可拆照明点", "item_en": "Demountable lighting points", "quantity": 4, "unit": "point", "derivation": "plan-count only; illuminance, glare and power TBC", "unit_rate": null, "price_state": "TBC"},
+    {"boq_id": "P0-Q13", "item_zh": "设备接口柜与接口点", "item_en": "Equipment interface cabinet and points", "quantity": 1, "unit": "cabinet_plus_2_points", "derivation": "1 lockable cabinet + 2 protected power/data points; capacities TBC", "unit_rate": null, "price_state": "TBC"},
+    {"boq_id": "P0-Q14", "item_zh": "安装与开场前检查", "item_en": "Installation and pre-opening inspections", "quantity": 1, "unit": "lot_plus_4_inspections", "derivation": "install lot + accessibility/safety/electrical/operations checks", "unit_rate": null, "price_state": "TBC"},
+    {"boq_id": "P0-Q15", "item_zh": "计划维护", "item_en": "Planned maintenance", "quantity": 13, "unit": "weekly_visit", "derivation": "ceil(90 days / 7); daily pre-open checks depend on authorized open days", "unit_rate": null, "price_state": "TBC"},
+    {"boq_id": "P0-Q16", "item_zh": "拆除、清运、地面恢复与验收", "item_en": "Dismantling, removal, ground restoration, and acceptance", "quantity": 1, "unit": "lot", "derivation": "remove all P0 objects + before/after condition comparison + acceptance", "unit_rate": null, "price_state": "TBC"}
+  ],
+  "cost_model": {
+    "currency": null,
+    "estimate_basis_date": null,
+    "quotation_entity": null,
+    "market_unit_rates": null,
+    "formal_total": null,
+    "status": "TBC_NO_MARKET_PRICING",
+    "formula": "C_P0 = C_REV + C_HUMAN + C_CODESIGN + C_ACCESS_SAFETY + C_PRIVACY_EVAL + C_OM + C_REMOVE_RESTORE + C_RESERVE",
+    "components": [
+      {"cost_id": "C_REV", "label_zh": "可逆空间改造", "label_en": "Reversible space works", "formula": "sum(BOQ quantity_i x verified unit_rate_i) + installation labour", "value": null},
+      {"cost_id": "C_HUMAN", "label_zh": "人工服务", "label_en": "Staffed service", "formula": "H_open x r_staff + H_training x r_staff + H_supervision x r_supervisor", "value": null},
+      {"cost_id": "C_CODESIGN", "label_zh": "付费共同设计", "label_en": "Paid co-design", "formula": "N_participants x H_participant x r_participant + access_support + travel + care", "value": null},
+      {"cost_id": "C_ACCESS_SAFETY", "label_zh": "无障碍及安全复核", "label_en": "Accessibility and safety review", "formula": "H_access x r_access + H_safety x r_safety + H_fire x r_fire + H_structure x r_structure", "value": null},
+      {"cost_id": "C_PRIVACY_EVAL", "label_zh": "隐私与独立评估", "label_en": "Privacy and independent evaluation", "formula": "H_privacy x r_privacy + H_independent x r_evaluator", "value": null},
+      {"cost_id": "C_OM", "label_zh": "运维维护", "label_en": "Operations and maintenance", "formula": "W x visits_per_week x H_visit x r_maint + consumables + utilities + incident_allowance", "value": null},
+      {"cost_id": "C_REMOVE_RESTORE", "label_zh": "拆除和场地恢复", "label_en": "Removal and site restoration", "formula": "H_remove x r_remove + A_remediation x r_remediation + waste_trace + acceptance", "value": null},
+      {"cost_id": "C_RESERVE", "label_zh": "预备费/恢复储备", "label_en": "Contingency/restoration reserve", "formula": "max(verified C_REMOVE_RESTORE, p_contingency x subtotal); p_contingency TBC by cost/risk professionals", "value": null}
+    ],
+    "staffing_formula": "FTE_required = confirmed staffed opening hours / operator-confirmed productive hours per FTE",
+    "sensitivity_variables": ["authorized opening hours", "number of open days", "shift overlap", "productive hours per FTE", "paid participant hours and access support", "verified BOQ quantities", "remediation area", "contingency percentage"],
+    "release_condition": "No procurement or budget claim until quantities are checked against a nominated site, every market rate has a source and basis date, roles are assigned, and restoration reserve is ring-fenced."
+  },
+  "acceptance_current_package": [
+    {"metric_id": "P0-A01", "label_zh": "路径连通性", "label_en": "Route connectivity", "formula": "connected entry-to-exit route pairs / 1 required pair", "data_source": "1:100 concept graph in key-areas figure + v13 source", "threshold_status": "SET: 1/1 and zero disconnected segment", "responsible_role": "R-P0-EXEC", "current_status": "PASS_IN_PACKAGE_NOT_FIELD", "trigger_condition": "any plan revision"},
+    {"metric_id": "P0-A02", "label_zh": "障碍或侵占数量", "label_en": "Obstacle/encroachment count", "formula": "count(BOQ objects intersecting the 18.0 m x 3.0 m clear route)", "data_source": "1:100 plan object boxes", "threshold_status": "SET: 0", "responsible_role": "R-P0-ACCESS", "current_status": "PASS_IN_PACKAGE=0", "trigger_condition": "object, setback, or route-width change"},
+    {"metric_id": "P0-A03", "label_zh": "非 AI 等价覆盖", "label_en": "Non-AI equivalent coverage", "formula": "scenario cards with a stated non-AI equivalent / 12 scenario cards", "data_source": "proposal scenario table", "threshold_status": "SET: 12/12", "responsible_role": "R-P0-SERVICE", "current_status": "PASS_TEXT_PROTOCOL=12/12", "trigger_condition": "scenario or service change"},
+    {"metric_id": "P0-A04", "label_zh": "Gate 默认状态", "label_en": "Default Gate state", "formula": "gates default closed / 6 gates", "data_source": "task chain and gate register", "threshold_status": "SET: 6/6 closed before evidence", "responsible_role": "R-P0-EXEC", "current_status": "PASS_IN_PACKAGE=6/6", "trigger_condition": "gate logic change"},
+    {"metric_id": "P0-A05", "label_zh": "审计记录完整度", "label_en": "Audit-record completeness", "formula": "synthetic tasks with complete audit record / 12 tasks", "data_source": "simulation.json", "threshold_status": "SET: 12/12 before G4", "responsible_role": "R-P0-SAFETY", "current_status": "HOLD=11/12", "trigger_condition": "missing record closed and rehearsal rerun"},
+    {"metric_id": "P0-A06", "label_zh": "错误输入触发 HOLD", "label_en": "Malformed input triggers HOLD", "formula": "malformed-input tests resulting in HOLD / malformed-input tests", "data_source": "simulation.json malformed dispatch case", "threshold_status": "SET: 1/1", "responsible_role": "R-P0-SAFETY", "current_status": "PASS_SYNTHETIC=1/1", "trigger_condition": "schema or dispatch change"},
+    {"metric_id": "P0-A07", "label_zh": "AI 关闭后人工任务仍可完成", "label_en": "Human task remains complete with AI off", "formula": "AI-off same-task cases completed through staffed/paper/phone/fixed spatial paths / 12 tasks", "data_source": "simulation.json + proposal", "threshold_status": "SET: 12/12 before G4", "responsible_role": "R-P0-SERVICE", "current_status": "HOLD=11/12", "trigger_condition": "staffed-desk failure corrected and rehearsal rerun"},
+    {"metric_id": "P0-A08", "label_zh": "退出和恢复流程完整", "label_en": "Exit/restoration process completeness", "formula": "specified evidence slots / 6 required slots", "data_source": "P0-T12", "threshold_status": "SET: 6/6 specified; execution remains field HOLD", "responsible_role": "R-P0-INSTALL", "current_status": "PASS_PROCESS_SPECIFIED=6/6", "trigger_condition": "removal method or acceptance role change"}
+  ],
+  "acceptance_field": [
+    {"metric_id": "P0-B01", "label_zh": "轮椅使用者实际完成", "label_en": "Wheelchair-user actual completion", "formula": "successful same-task completions / valid attempts, reported with critical failures", "data_source": "authorized field task log", "threshold_status": "TBC_PAID_CODESIGN_PREREGISTRATION; zero safety-critical failures", "responsible_role": "R-P0-CODESIGN + R-P0-EVAL", "current_status": "HOLD_NO_FIELD_BASELINE", "trigger_condition": "G0-G3 pass and group approves protocol"},
+    {"metric_id": "P0-B02", "label_zh": "低视力/盲人实际完成", "label_en": "Blind/low-vision actual completion", "formula": "successful same-task completions / valid attempts, reported with critical failures", "data_source": "authorized field task log", "threshold_status": "TBC_PAID_CODESIGN_PREREGISTRATION; zero safety-critical failures", "responsible_role": "R-P0-CODESIGN + R-P0-EVAL", "current_status": "HOLD_NO_FIELD_BASELINE", "trigger_condition": "G0-G3 pass and tactile/audio/contrast interfaces confirmed"},
+    {"metric_id": "P0-B03", "label_zh": "无智能手机老人取得人工服务时间", "label_en": "Time for an older person without a smartphone to reach staffed service", "formula": "P90(time from envelope entry to confirmed human assistance)", "data_source": "timestamped authorized field task log", "threshold_status": "TBC_PAID_CODESIGN_PREREGISTRATION", "responsible_role": "R-P0-SERVICE + R-P0-EVAL", "current_status": "HOLD_NO_FIELD_BASELINE", "trigger_condition": "staff roster and opening hours confirmed"},
+    {"metric_id": "P0-B04", "label_zh": "真人响应时间", "label_en": "Human response time", "formula": "P90(time from help request to two-way human response), disaggregated by period", "data_source": "staffed-service log", "threshold_status": "TBC_OPERATOR_AND_CODESIGN_PREREGISTRATION", "responsible_role": "R-P0-SERVICE", "current_status": "HOLD_NO_FIELD_BASELINE", "trigger_condition": "named operator accepts roster"},
+    {"metric_id": "P0-B05", "label_zh": "人流冲突", "label_en": "Pedestrian-flow conflict", "formula": "observed conflicts / valid traversals, with every safety-critical event separately reported", "data_source": "independent manual observation", "threshold_status": "TBC_TRAFFIC_REVIEW; zero safety-critical conflicts", "responsible_role": "R-P0-EVAL + R-P0-SAFETY", "current_status": "HOLD_NO_FIELD_BASELINE", "trigger_condition": "authorized observation plan"},
+    {"metric_id": "P0-B06", "label_zh": "噪声", "label_en": "Noise", "formula": "baseline and operating sound levels by agreed period/location", "data_source": "professional site measurement", "threshold_status": "TBC_ACOUSTIC_BASELINE_AND_APPLICABLE_STANDARD", "responsible_role": "R-P0-SAFETY", "current_status": "HOLD_NO_FIELD_BASELINE", "trigger_condition": "day/night baseline permission"},
+    {"metric_id": "P0-B07", "label_zh": "照明与眩光", "label_en": "Lighting and glare", "formula": "measured task/route illuminance plus glare/contrast review at agreed points", "data_source": "professional night measurement + co-design walk-through", "threshold_status": "TBC_LIGHTING_AND_ACCESSIBILITY_REVIEW", "responsible_role": "R-P0-LIGHTING + R-P0-CODESIGN", "current_status": "HOLD_NO_FIELD_BASELINE", "trigger_condition": "night access and fixture schedule confirmed"},
+    {"metric_id": "P0-B08", "label_zh": "排水", "label_en": "Drainage", "formula": "count of ponding/blockage events plus before/after surface-level and outlet check", "data_source": "level survey, rainfall observation, maintenance log", "threshold_status": "TBC_DRAINAGE_BASELINE; zero blocked accessible route", "responsible_role": "R-P0-DRAINAGE + R-P0-MAINTENANCE", "current_status": "HOLD_NO_FIELD_BASELINE", "trigger_condition": "survey and wet-weather observation available"},
+    {"metric_id": "P0-B09", "label_zh": "微气候", "label_en": "Microclimate", "formula": "shade availability and agreed thermal/wind observations by operating period", "data_source": "site baseline + field observation", "threshold_status": "TBC_CODESIGN_AND_ENVIRONMENTAL_REVIEW", "responsible_role": "R-P0-EVAL", "current_status": "HOLD_NO_FIELD_BASELINE", "trigger_condition": "season/period and method preregistered"},
+    {"metric_id": "P0-B10", "label_zh": "居民接受度", "label_en": "Resident acceptance", "formula": "reported response distribution by affected group; dissent remains visible", "data_source": "authorized, consented engagement record", "threshold_status": "TBC_STAKEHOLDER_PREREGISTRATION; no average may override critical group rejection", "responsible_role": "R-P0-CODESIGN + R-P0-EVAL", "current_status": "HOLD_NO_FIELD_BASELINE", "trigger_condition": "affected parties and consent protocol confirmed"},
+    {"metric_id": "P0-B11", "label_zh": "运营排班覆盖", "label_en": "Operating-roster coverage", "formula": "staffed equivalent hours delivered / authorized digital-service hours", "data_source": "signed roster and attendance log", "threshold_status": "SET: 100% opening parity", "responsible_role": "R-P0-SERVICE", "current_status": "HOLD_NO_OPERATOR", "trigger_condition": "named operator and funded roster"},
+    {"metric_id": "P0-B12", "label_zh": "真实成本完整度", "label_en": "Actual-cost completeness", "formula": "cost components with verified quantity, unit rate, source, basis date, and payer / 8 components", "data_source": "authorized cost plan, quotations, payroll/fees, maintenance and restoration records", "threshold_status": "SET: 8/8 evidence fields complete before cost claim; market values remain TBC", "responsible_role": "A-P0-RIGHTS + appointed cost professional", "current_status": "HOLD_NULL_RATES_AND_NO_FUNDING", "trigger_condition": "site, procurement route, rate sources, basis date, and funding authority confirmed"}
+  ],
+  "movement_conditions": [
+    {"action": "MOVE", "condition": "rights, heritage, emergency, utilities, or drainage conflict cannot be resolved within the envelope", "required_evidence": "screen-out record + alternative candidate baseline"},
+    {"action": "SHRINK", "condition": "service scope or opening time can be reduced without reducing clear route, equivalent service, maintenance, or exit capacity", "required_evidence": "revised dimensions/BOQ/roster + all affected checks rerun"},
+    {"action": "PAUSE", "condition": "temporary roster, audit, weather, lighting, maintenance, complaint, or equipment-control gap", "required_evidence": "stop log + human takeover + cause/repair/restart decision"},
+    {"action": "REMOVE", "condition": "safety-critical failure, missing equivalence, failed exit, repeated unresolved incident, permit withdrawal, or affected-group rejection", "required_evidence": "incident/decision package + T12 removal/restoration records"},
+    {"action": "RESTORE", "condition": "planned day-90 end or any removal instruction", "required_evidence": "before/after condition comparison + defect closure + accountable acceptance + public close-out"}
+  ]
+}

@@ -50,7 +50,7 @@
     },
     "land_use_coverage_ratio": {
       "status": "known",
-      "value": 1.0,
+      "value": 1,
       "unit": "ratio",
       "source_files": [
         "geometry/land_use.geojson",
@@ -415,7 +415,7 @@
     },
     "non_ai_fallback_coverage_ratio": {
       "status": "known",
-      "value": 1.0,
+      "value": 1,
       "unit": "ratio",
       "source_files": [
         "proposal.md"
@@ -659,6 +659,421 @@
         "A-BOUNDARY-001",
         "A-KEYAREAS-001"
       ]
+    },
+    "p0_screening_envelope_area_sqm": {
+      "status": "known",
+      "value": 216,
+      "unit": "sqm",
+      "source_files": [
+        "visual/assets/v13-implementation.json"
+      ],
+      "formula": "18.0 * 12.0",
+      "confidence": "high",
+      "assumptions": [
+        "A-P0-DIM-001"
+      ],
+      "interpretation": "Conditional P0 concept-source value; not a field measurement, approved engineering parameter, supplier quote, or authorization."
+    },
+    "p0_reversible_ground_area_sqm": {
+      "status": "known",
+      "value": 96,
+      "unit": "sqm",
+      "source_files": [
+        "visual/assets/v13-implementation.json"
+      ],
+      "formula": "12.0 * 8.0",
+      "confidence": "high",
+      "assumptions": [
+        "A-P0-DIM-001"
+      ],
+      "interpretation": "Conditional P0 concept-source value; not a field measurement, approved engineering parameter, supplier quote, or authorization."
+    },
+    "p0_clear_route_width_m": {
+      "status": "known",
+      "value": 3,
+      "unit": "m",
+      "source_files": [
+        "visual/assets/v13-implementation.json"
+      ],
+      "formula": "concept effective clear-route width",
+      "confidence": "medium",
+      "assumptions": [
+        "A-P0-DIM-001",
+        "A-P0-SITE-001"
+      ],
+      "interpretation": "Conditional P0 concept-source value; not a field measurement, approved engineering parameter, supplier quote, or authorization."
+    },
+    "p0_wheelchair_turn_diameter_m": {
+      "status": "known",
+      "value": 1.8,
+      "unit": "m",
+      "source_files": [
+        "visual/assets/v13-implementation.json"
+      ],
+      "formula": "concept clear turning-circle diameter",
+      "confidence": "medium",
+      "assumptions": [
+        "A-P0-DIM-001",
+        "A-P0-CODESIGN-001"
+      ],
+      "interpretation": "Conditional P0 concept-source value; not a field measurement, approved engineering parameter, supplier quote, or authorization."
+    },
+    "p0_staffed_desk_length_m": {
+      "status": "known",
+      "value": 2.4,
+      "unit": "m",
+      "source_files": [
+        "visual/assets/v13-implementation.json"
+      ],
+      "formula": "concept demountable desk length",
+      "confidence": "high",
+      "assumptions": [
+        "A-P0-DIM-001"
+      ],
+      "interpretation": "Conditional P0 concept-source value; not a field measurement, approved engineering parameter, supplier quote, or authorization."
+    },
+    "p0_staffed_sightline_m": {
+      "status": "known",
+      "value": 15,
+      "unit": "m",
+      "source_files": [
+        "visual/assets/v13-implementation.json"
+      ],
+      "formula": "maximum concept plan sightline; not response-time performance",
+      "confidence": "medium",
+      "assumptions": [
+        "A-P0-DIM-001",
+        "A-P0-FIELD-001"
+      ],
+      "interpretation": "Conditional P0 concept-source value; not a field measurement, approved engineering parameter, supplier quote, or authorization."
+    },
+    "p0_robot_bay_area_sqm": {
+      "status": "known",
+      "value": 4.32,
+      "unit": "sqm",
+      "source_files": [
+        "visual/assets/v13-implementation.json"
+      ],
+      "formula": "2.4 * 1.8",
+      "confidence": "high",
+      "assumptions": [
+        "A-P0-DIM-001"
+      ],
+      "interpretation": "Conditional P0 concept-source value; not a field measurement, approved engineering parameter, supplier quote, or authorization."
+    },
+    "p0_robot_no_entry_area_sqm": {
+      "status": "known",
+      "value": 6.4,
+      "unit": "sqm",
+      "source_files": [
+        "visual/assets/v13-implementation.json"
+      ],
+      "formula": "3.2 * 2.0",
+      "confidence": "high",
+      "assumptions": [
+        "A-P0-DIM-001"
+      ],
+      "interpretation": "Conditional P0 concept-source value; not a field measurement, approved engineering parameter, supplier quote, or authorization."
+    },
+    "p0_component_setback_m": {
+      "status": "known",
+      "value": 0.6,
+      "unit": "m",
+      "source_files": [
+        "visual/assets/v13-implementation.json"
+      ],
+      "formula": "concept minimum setback outside effective route",
+      "confidence": "medium",
+      "assumptions": [
+        "A-P0-DIM-001",
+        "A-P0-SITE-001"
+      ],
+      "interpretation": "Conditional P0 concept-source value; not a field measurement, approved engineering parameter, supplier quote, or authorization."
+    },
+    "p0_maintenance_clearance_m": {
+      "status": "known",
+      "value": 1.5,
+      "unit": "m",
+      "source_files": [
+        "visual/assets/v13-implementation.json"
+      ],
+      "formula": "concept working clearance around demountable components",
+      "confidence": "medium",
+      "assumptions": [
+        "A-P0-DIM-001",
+        "A-P0-SITE-001"
+      ],
+      "interpretation": "Conditional P0 concept-source value; not a field measurement, approved engineering parameter, supplier quote, or authorization."
+    },
+    "p0_removal_access_width_m": {
+      "status": "known",
+      "value": 3,
+      "unit": "m",
+      "source_files": [
+        "visual/assets/v13-implementation.json"
+      ],
+      "formula": "concept removal-access width; no vehicle authorization",
+      "confidence": "medium",
+      "assumptions": [
+        "A-P0-DIM-001",
+        "A-P0-SITE-001"
+      ],
+      "interpretation": "Conditional P0 concept-source value; not a field measurement, approved engineering parameter, supplier quote, or authorization."
+    },
+    "p0_canopy_area_sqm": {
+      "status": "known",
+      "value": 17.28,
+      "unit": "sqm",
+      "source_files": [
+        "visual/assets/v13-implementation.json"
+      ],
+      "formula": "4.8 * 3.6",
+      "confidence": "medium",
+      "assumptions": [
+        "A-P0-DIM-001",
+        "A-P0-SITE-001"
+      ],
+      "interpretation": "Conditional P0 concept-source value; not a field measurement, approved engineering parameter, supplier quote, or authorization."
+    },
+    "p0_task_chain_count": {
+      "status": "known",
+      "value": 12,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/v13-implementation.json"
+      ],
+      "formula": "count(v13-implementation.tasks)",
+      "confidence": "high",
+      "assumptions": [
+        "A-P0-ROLE-001"
+      ],
+      "interpretation": "Conditional P0 concept-source value; not a field measurement, approved engineering parameter, supplier quote, or authorization."
+    },
+    "p0_role_slot_count": {
+      "status": "known",
+      "value": 8,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/v13-implementation.json"
+      ],
+      "formula": "count(v13-implementation.roles)",
+      "confidence": "high",
+      "assumptions": [
+        "A-P0-ROLE-001"
+      ],
+      "interpretation": "Conditional P0 concept-source value; not a field measurement, approved engineering parameter, supplier quote, or authorization."
+    },
+    "p0_boq_line_count": {
+      "status": "known",
+      "value": 16,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/v13-implementation.json"
+      ],
+      "formula": "count(v13-implementation.boq)",
+      "confidence": "high",
+      "assumptions": [
+        "A-P0-COST-001"
+      ],
+      "interpretation": "Conditional P0 concept-source value; not a field measurement, approved engineering parameter, supplier quote, or authorization."
+    },
+    "p0_tbc_interface_count": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/v13-implementation.json"
+      ],
+      "formula": "count(v13-implementation.tbc_interfaces)",
+      "confidence": "high",
+      "assumptions": [
+        "A-P0-SITE-001"
+      ],
+      "interpretation": "Conditional P0 concept-source value; not a field measurement, approved engineering parameter, supplier quote, or authorization."
+    },
+    "p0_cost_component_count": {
+      "status": "known",
+      "value": 8,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/v13-implementation.json"
+      ],
+      "formula": "count(v13-implementation.cost_model.components)",
+      "confidence": "high",
+      "assumptions": [
+        "A-P0-COST-001"
+      ],
+      "interpretation": "Conditional P0 concept-source value; not a field measurement, approved engineering parameter, supplier quote, or authorization."
+    },
+    "p0_market_rate_known_count": {
+      "status": "known",
+      "value": 0,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/v13-implementation.json"
+      ],
+      "formula": "count(cost rates where verified market rate is non-null)",
+      "confidence": "high",
+      "assumptions": [
+        "A-P0-COST-001"
+      ],
+      "interpretation": "Conditional P0 concept-source value; not a field measurement, approved engineering parameter, supplier quote, or authorization."
+    },
+    "p0_current_package_check_count": {
+      "status": "known",
+      "value": 8,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/v13-implementation.json"
+      ],
+      "formula": "count(v13-implementation.acceptance_current_package)",
+      "confidence": "high",
+      "assumptions": [
+        "A-P0-FIELD-001"
+      ],
+      "interpretation": "Conditional P0 concept-source value; not a field measurement, approved engineering parameter, supplier quote, or authorization."
+    },
+    "p0_current_package_pass_count": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/v13-implementation.json"
+      ],
+      "formula": "count(current package checks with current_status starting PASS)",
+      "confidence": "high",
+      "assumptions": [
+        "A-P0-FIELD-001"
+      ],
+      "interpretation": "Conditional P0 concept-source value; not a field measurement, approved engineering parameter, supplier quote, or authorization."
+    },
+    "p0_current_package_hold_count": {
+      "status": "known",
+      "value": 2,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/v13-implementation.json"
+      ],
+      "formula": "count(current package checks with current_status starting HOLD)",
+      "confidence": "high",
+      "assumptions": [
+        "A-P0-FIELD-001"
+      ],
+      "interpretation": "Conditional P0 concept-source value; not a field measurement, approved engineering parameter, supplier quote, or authorization."
+    },
+    "p0_field_check_hold_count": {
+      "status": "known",
+      "value": 12,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/v13-implementation.json"
+      ],
+      "formula": "count(field checks with current_status starting HOLD)",
+      "confidence": "high",
+      "assumptions": [
+        "A-P0-FIELD-001"
+      ],
+      "interpretation": "Conditional P0 concept-source value; not a field measurement, approved engineering parameter, supplier quote, or authorization."
+    },
+    "p0_gate_default_closed_ratio": {
+      "status": "known",
+      "value": 1,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/v13-implementation.json"
+      ],
+      "formula": "default_closed_gates / 6",
+      "confidence": "high",
+      "assumptions": [
+        "A-PILOT-001",
+        "A-P0-ROLE-001"
+      ],
+      "interpretation": "Conditional P0 concept-source value; not a field measurement, approved engineering parameter, supplier quote, or authorization."
+    },
+    "p0_route_obstruction_count": {
+      "status": "known",
+      "value": 0,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/v13-implementation.json"
+      ],
+      "formula": "count(BOQ object boxes intersecting concept 18.0 m x 3.0 m clear route)",
+      "confidence": "high",
+      "assumptions": [
+        "A-P0-DIM-001"
+      ],
+      "interpretation": "Conditional P0 concept-source value; not a field measurement, approved engineering parameter, supplier quote, or authorization."
+    },
+    "p0_malformed_input_hold_ratio": {
+      "status": "known",
+      "value": 1,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/v13-implementation.json"
+      ],
+      "formula": "malformed-input tests resulting in HOLD / malformed-input tests",
+      "confidence": "high",
+      "assumptions": [
+        "A-SIMULATION-001"
+      ],
+      "interpretation": "Conditional P0 concept-source value; not a field measurement, approved engineering parameter, supplier quote, or authorization."
+    },
+    "p0_exit_evidence_slot_count": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/v13-implementation.json"
+      ],
+      "formula": "count(T12 required exit/restoration evidence slots)",
+      "confidence": "high",
+      "assumptions": [
+        "A-P0-ROLE-001"
+      ],
+      "interpretation": "Conditional P0 concept-source value; not a field measurement, approved engineering parameter, supplier quote, or authorization."
+    },
+    "p0_market_price_total": {
+      "status": "unknown",
+      "value": null,
+      "unit": "currency",
+      "source_files": [
+        "visual/assets/v13-implementation.json"
+      ],
+      "formula": "sum(verified BOQ quantity_i * verified unit_rate_i) + services + reserve",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-P0-COST-001"
+      ],
+      "reason": "All market unit rates, currency, quotation entities, funding commitment, and estimate basis date remain null/TBC."
+    },
+    "p0_staffing_fte": {
+      "status": "unknown",
+      "value": null,
+      "unit": "FTE",
+      "source_files": [
+        "visual/assets/v13-implementation.json"
+      ],
+      "formula": "confirmed staffed opening hours / operator-confirmed productive hours per FTE",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-P0-ROLE-001",
+        "A-P0-COST-001"
+      ],
+      "reason": "No operator, authorized opening hours, roster, or productive-hours assumption has been accepted."
+    },
+    "p0_formal_total_cost": {
+      "status": "unknown",
+      "value": null,
+      "unit": "currency",
+      "source_files": [
+        "visual/assets/v13-implementation.json"
+      ],
+      "formula": "C_P0 = C_REV + C_HUMAN + C_CODESIGN + C_ACCESS_SAFETY + C_PRIVACY_EVAL + C_OM + C_REMOVE_RESTORE + C_RESERVE",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-P0-COST-001"
+      ],
+      "reason": "Quantities are concept-derived but market rates, professional fees, funding, tax basis, and site-specific restoration scope are not available."
     }
   }
 }
