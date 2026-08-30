@@ -1,14 +1,15 @@
 {
   "schema_version": "1.0",
   "audited_at": "2026-08-30",
-  "scope": "all four A0/A3 bilingual PDF deliverables after OFL-font regeneration",
-  "renderer": "Poppler pdftoppm, 1440 px page width",
-  "inspection": "human visual review of all 20 rendered pages plus deterministic page/font/text checks",
+  "scope": "all four A0/A3 bilingual PDF deliverables after OFL-font regeneration and pre-G2 evidence-card repair",
+  "renderer": "Poppler pdftoppm at 72 dpi; full-page PNG review",
+  "inspection": "human visual review of all 60 rendered pages plus deterministic page/font/text checks",
   "files": [
     {
       "path": "drawings/a0-boards.en.pdf",
-      "sha256": "793e2094b15396689c6d6a3cea347ad66aff7c9c3a4fd39e2707b99f32db5f60",
+      "sha256": "6d4c6ea00653401450b96e2501a5a968774e782a56cfc64cda241c64ed679ff0",
       "pages": 5,
+      "expected_pages": 5,
       "page_size": "A0 landscape",
       "font_resources": [
         "/AAAAAA+NotoSansSC-Thin",
@@ -16,14 +17,15 @@
         "/Helvetica-Bold"
       ],
       "prohibited_system_font_resources": [],
-      "extracted_text_characters": 2794,
+      "extracted_text_characters": 3772,
       "replacement_character_count": 0,
       "render_check": "all 5 pages rendered to PNG with Poppler and visually reviewed; no clipping, overlap, blank page or tofu glyph observed"
     },
     {
       "path": "drawings/a0-boards.pdf",
-      "sha256": "19b56f0c75fbd3d254ada08b1fe8ea13270a38f447a4af4bdab08489279627cb",
+      "sha256": "fd0e18670a2e6498fe188dae6851cf14a14f5747c432245d84d19eec3b87cad8",
       "pages": 5,
+      "expected_pages": 5,
       "page_size": "A0 landscape",
       "font_resources": [
         "/AAAAAA+NotoSansSC-Thin",
@@ -32,14 +34,15 @@
         "/Helvetica-Bold"
       ],
       "prohibited_system_font_resources": [],
-      "extracted_text_characters": 1005,
+      "extracted_text_characters": 1403,
       "replacement_character_count": 0,
       "render_check": "all 5 pages rendered to PNG with Poppler and visually reviewed; no clipping, overlap, blank page or tofu glyph observed"
     },
     {
       "path": "drawings/a3-booklet.en.pdf",
-      "sha256": "744ca121209ff68d31b8bbff2c86614977acb1027fa2445d8e61e204d3069ba6",
-      "pages": 5,
+      "sha256": "f44366e33b0674f4f35523cc2ef480219cfe18431a168b4909e6cfea1ed4cb99",
+      "pages": 25,
+      "expected_pages": 25,
       "page_size": "A3 landscape",
       "font_resources": [
         "/AAAAAA+NotoSansSC-Thin",
@@ -47,14 +50,15 @@
         "/Helvetica-Bold"
       ],
       "prohibited_system_font_resources": [],
-      "extracted_text_characters": 2794,
+      "extracted_text_characters": 6893,
       "replacement_character_count": 0,
-      "render_check": "all 5 pages rendered to PNG with Poppler and visually reviewed; no clipping, overlap, blank page or tofu glyph observed"
+      "render_check": "all 25 pages rendered to PNG with Poppler and visually reviewed; no clipping, overlap, blank page or tofu glyph observed"
     },
     {
       "path": "drawings/a3-booklet.pdf",
-      "sha256": "f02098dc332544097fee2ffdbe919ee32a273b52c7031b20c0c11b3d5ee09c7e",
-      "pages": 5,
+      "sha256": "963a81040daa7b762e6cd38946492684b78f7e795617c07ea0d8af3f6e7136c6",
+      "pages": 25,
+      "expected_pages": 25,
       "page_size": "A3 landscape",
       "font_resources": [
         "/AAAAAA+NotoSansSC-Thin",
@@ -63,11 +67,12 @@
         "/Helvetica-Bold"
       ],
       "prohibited_system_font_resources": [],
-      "extracted_text_characters": 1005,
+      "extracted_text_characters": 2754,
       "replacement_character_count": 0,
-      "render_check": "all 5 pages rendered to PNG with Poppler and visually reviewed; no clipping, overlap, blank page or tofu glyph observed"
+      "render_check": "all 25 pages rendered to PNG with Poppler and visually reviewed; no clipping, overlap, blank page or tofu glyph observed"
     }
   ],
   "metrics_figure_check": "Corrected metrics-evidence figure appears in the bilingual board set and visibly separates 15 parent metrics (15 unknown / 0 known) from all 28 metrics.json records (10 known / 18 unknown).",
+  "implementation_public_interest_check": "A0 board 02 now visibly presents the six-project G1-to-G2 evidence slots and C0-C5 affected-person co-definition gate; current states remain blocked/not_started and do not claim operators, budgets, baselines, signatures or completed consultation.",
   "status": "pass"
 }

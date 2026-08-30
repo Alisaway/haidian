@@ -1,16 +1,17 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "tested_at": "2026-08-30T00:00:00Z",
   "browser": "Playwright Chromium 1.58.0",
   "network_mode": "offline clean browser contexts; no reused storage",
-  "scope": "All four current HTML deliverables",
+  "scope": "All four current HTML deliverables at 1440 px desktop and 390 px mobile",
   "checks": [
-    "embedded CJK font load",
+    "embedded cleared CJK font load",
     "body font application",
     "zero external HTTP(S) requests",
     "all images complete with non-zero natural size",
     "zero U+FFFD replacement characters",
-    "visual screenshots of page top and corrected metrics area"
+    "no page-level horizontal overflow at 390 px",
+    "visual screenshots of page top, corrected metrics area and mobile top"
   ],
   "pages": [
     {
@@ -19,14 +20,34 @@
       "font_loaded": true,
       "computed_body_font_family": "\"JZ Offline CJK\", \"Noto Sans CJK SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
       "replacement_character_count": 0,
-      "visible_text_characters": 16129,
+      "visible_text_characters": 17089,
       "image_count": 24,
       "broken_images": [],
       "external_http_requests": [],
       "request_failures": [],
+      "desktop_layout": {
+        "clientWidth": 1440,
+        "scrollWidth": 1440,
+        "bodyScrollWidth": 1440
+      },
+      "mobile": {
+        "font_loaded": true,
+        "replacement_character_count": 0,
+        "image_count": 24,
+        "broken_images": [],
+        "external_http_requests": [],
+        "request_failures": [],
+        "layout": {
+          "clientWidth": 390,
+          "scrollWidth": 390,
+          "bodyScrollWidth": 432
+        },
+        "page_level_horizontal_overflow": false
+      },
       "screenshots": [
         "/Volumes/外挂磁盘/mcpgpt/workspace/jz_cityplan/tmp/review-v29/report-zh-top.png",
-        "/Volumes/外挂磁盘/mcpgpt/workspace/jz_cityplan/tmp/review-v29/report-zh-metrics.png"
+        "/Volumes/外挂磁盘/mcpgpt/workspace/jz_cityplan/tmp/review-v29/report-zh-metrics.png",
+        "/Volumes/外挂磁盘/mcpgpt/workspace/jz_cityplan/tmp/review-v29/report-zh-mobile.png"
       ]
     },
     {
@@ -35,14 +56,34 @@
       "font_loaded": true,
       "computed_body_font_family": "\"JZ Offline CJK\", \"Noto Sans CJK SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
       "replacement_character_count": 0,
-      "visible_text_characters": 48071,
+      "visible_text_characters": 50578,
       "image_count": 24,
       "broken_images": [],
       "external_http_requests": [],
       "request_failures": [],
+      "desktop_layout": {
+        "clientWidth": 1440,
+        "scrollWidth": 1440,
+        "bodyScrollWidth": 1440
+      },
+      "mobile": {
+        "font_loaded": true,
+        "replacement_character_count": 0,
+        "image_count": 24,
+        "broken_images": [],
+        "external_http_requests": [],
+        "request_failures": [],
+        "layout": {
+          "clientWidth": 390,
+          "scrollWidth": 390,
+          "bodyScrollWidth": 421
+        },
+        "page_level_horizontal_overflow": false
+      },
       "screenshots": [
         "/Volumes/外挂磁盘/mcpgpt/workspace/jz_cityplan/tmp/review-v29/report-en-top.png",
-        "/Volumes/外挂磁盘/mcpgpt/workspace/jz_cityplan/tmp/review-v29/report-en-metrics.png"
+        "/Volumes/外挂磁盘/mcpgpt/workspace/jz_cityplan/tmp/review-v29/report-en-metrics.png",
+        "/Volumes/外挂磁盘/mcpgpt/workspace/jz_cityplan/tmp/review-v29/report-en-mobile.png"
       ]
     },
     {
@@ -51,14 +92,34 @@
       "font_loaded": true,
       "computed_body_font_family": "\"JZ Offline CJK\", \"Noto Sans CJK SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
       "replacement_character_count": 0,
-      "visible_text_characters": 7990,
+      "visible_text_characters": 8113,
       "image_count": 27,
       "broken_images": [],
       "external_http_requests": [],
       "request_failures": [],
+      "desktop_layout": {
+        "clientWidth": 1440,
+        "scrollWidth": 1440,
+        "bodyScrollWidth": 1440
+      },
+      "mobile": {
+        "font_loaded": true,
+        "replacement_character_count": 0,
+        "image_count": 27,
+        "broken_images": [],
+        "external_http_requests": [],
+        "request_failures": [],
+        "layout": {
+          "clientWidth": 390,
+          "scrollWidth": 390,
+          "bodyScrollWidth": 390
+        },
+        "page_level_horizontal_overflow": false
+      },
       "screenshots": [
         "/Volumes/外挂磁盘/mcpgpt/workspace/jz_cityplan/tmp/review-v29/visual-zh-top.png",
-        "/Volumes/外挂磁盘/mcpgpt/workspace/jz_cityplan/tmp/review-v29/visual-zh-metrics.png"
+        "/Volumes/外挂磁盘/mcpgpt/workspace/jz_cityplan/tmp/review-v29/visual-zh-metrics.png",
+        "/Volumes/外挂磁盘/mcpgpt/workspace/jz_cityplan/tmp/review-v29/visual-zh-mobile.png"
       ]
     },
     {
@@ -67,43 +128,36 @@
       "font_loaded": true,
       "computed_body_font_family": "\"JZ Offline CJK\", \"Noto Sans CJK SC\", \"PingFang SC\", \"Microsoft YaHei\", sans-serif",
       "replacement_character_count": 0,
-      "visible_text_characters": 18519,
+      "visible_text_characters": 18839,
       "image_count": 27,
       "broken_images": [],
       "external_http_requests": [],
       "request_failures": [],
+      "desktop_layout": {
+        "clientWidth": 1440,
+        "scrollWidth": 1440,
+        "bodyScrollWidth": 1440
+      },
+      "mobile": {
+        "font_loaded": true,
+        "replacement_character_count": 0,
+        "image_count": 27,
+        "broken_images": [],
+        "external_http_requests": [],
+        "request_failures": [],
+        "layout": {
+          "clientWidth": 390,
+          "scrollWidth": 390,
+          "bodyScrollWidth": 390
+        },
+        "page_level_horizontal_overflow": false
+      },
       "screenshots": [
         "/Volumes/外挂磁盘/mcpgpt/workspace/jz_cityplan/tmp/review-v29/visual-en-top.png",
-        "/Volumes/外挂磁盘/mcpgpt/workspace/jz_cityplan/tmp/review-v29/visual-en-metrics.png"
+        "/Volumes/外挂磁盘/mcpgpt/workspace/jz_cityplan/tmp/review-v29/visual-en-metrics.png",
+        "/Volumes/外挂磁盘/mcpgpt/workspace/jz_cityplan/tmp/review-v29/visual-en-mobile.png"
       ]
     }
   ],
-  "status": "pass",
-  "font_cmap_coverage": {
-    "font": "embedded JZ Offline CJK v1 (Noto Sans SC OFL subset)",
-    "source_woff2_sha256": "cab092e9c9874bec3f0cd0db3cc6c62eb308ab1c86c9790dc4293301b565140b",
-    "pages": [
-      {
-        "page": "report/proposal.html",
-        "non_ascii_unique_characters": 871,
-        "missing_codepoints": []
-      },
-      {
-        "page": "report/proposal.en.html",
-        "non_ascii_unique_characters": 12,
-        "missing_codepoints": []
-      },
-      {
-        "page": "visual/index.html",
-        "non_ascii_unique_characters": 641,
-        "missing_codepoints": []
-      },
-      {
-        "page": "visual/index.en.html",
-        "non_ascii_unique_characters": 50,
-        "missing_codepoints": []
-      }
-    ],
-    "status": "pass"
-  }
+  "status": "pass"
 }
