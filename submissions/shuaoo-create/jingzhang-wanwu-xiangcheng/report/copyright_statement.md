@@ -10,7 +10,7 @@
 
 ## 3. 字体
 
-生成环境使用 Noto Sans CJK 系列进行文本渲染。字体文件不随本候选包向用户单独分发；正式投稿工作区须按仓库许可与字体清权规则登记可分发字体或改用已登记开源字体资源。
+中文报告与离线视觉页面把参与者生成的 Noto Sans SC Variable 本提案字符子集直接嵌入各自 HTML。原字体来自 Noto CJK 官方仓库，并按 SIL Open Font License 1.1 使用、修改与再分发；字体来源与[完整许可文本](https://github.com/notofonts/noto-cjk/blob/main/Sans/LICENSE)均在权利台账中登记。页面不依赖 CDN、远程字体或评审环境的 CJK 系统字体；系统字体仅作为次级回退。
 
 ## 4. 数据与地图
 

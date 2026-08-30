@@ -78,6 +78,18 @@ Jing-Zhang does not primarily need more “AI display floor area.” It needs ci
 
 Priority fields include embodied intelligence, public-service agents, low-energy edge systems, spatial intelligence, human–machine interaction, ecological sensing and trustworthy AI operations. Their shared infrastructure is an urban validation chain of **Test Ground + Civic Commons + Everyday District**. Failure is not hidden: “do not procure AI,” “return to a low-tech solution” and “restore ordinary space” are valid outcomes.
 
+### Regional Innovation Interfaces (Concept Proposal)
+
+Regional coordination is not a line on a map or borrowed institutional reputation. Each proposed loop identifies what could be exchanged, the interface role, applicable gate and evidence boundary. The table describes interfaces for future discussion only; it claims no existing partnership, institutional authorisation, government arrangement, procurement, investment or policy commitment. [data:visual/assets/implementation-readiness-register.json#regional_synergy_interfaces]
+
+| Regional node | Proposed exchange | Interface roles | Gate | Evidence boundary |
+| --- | --- | --- | --- | --- |
+| Beiwei Community | Low-digital-burden community service, multilingual communication and accessible-task feedback | Community liaison; accessibility reviewer | G0–G1 | Proposed knowledge interface; no existing partnership or resource commitment |
+| Future Science City | Research methods, measurement protocols and reproducible experimental design | Research-method liaison; independent technical reviewer | G0–G2 | Professional-service interface for discussion; institutional participation is not presumed |
+| Huairou Science City | Complex-system measurement, ecological sensing and scientific-facility safety culture | Science-facility and ecological-measurement liaisons | G0–G2 | No facility performance, testing entitlement or partnership is claimed |
+| Beijing E-Town | Embodied intelligence, manufacturing validation, quality control and retirement/restoration methods | Industrial-testing and quality-accountability liaisons | G1–G2 | No procurement, investment, certification or district partnership |
+| Beijing–Tianjin–Hebei Region | Cross-city talent learning, mobility access, ecological continuity and governance-learning return | Cross-regional planning, ecology and public-service liaisons | G0–G3 | Conceptual regional loop; no government arrangement or established network |
+
 ## International Cases and Innovation Ecosystem
 
 Cases compare mechanisms only. Scale, performance, finance and policy are not transferred. Heritage-led regeneration, research districts and controlled mobility testing inform the first three comparisons. [source:CASE-KINGS-CROSS] [source:CASE-ONE-NORTH] [source:CASE-CETRAN]
@@ -218,6 +230,19 @@ The public-interest floor is: **no AI use, no loss of city.** Inclusion is not c
 The deepest Jing-Zhang legacy is not another graphic of the switchback, but autonomous engineering under difficult conditions: honest survey, acknowledgement of gradient and a workable path. The new Jing-Zhang moves from crossing the landscape to learning to inhabit Earth. The stronger technology becomes, the more clearly it must disclose costs, practise restraint and accept stopping.
 
 The three landmarks are working civic interfaces, not monumental sculpture: Error Square makes technical, accountability and ecological errors equally visible and binds repair to re-entry; Low-Interference Everyday Home limits attention, bodily, neighbourhood and ecological disturbance while keeping screens optional rather than forbidden; Coevolution Threshold lets the public test two independent gates and prevents ecological performance from compensating for unaccountable AI—or AI utility from compensating for damaged life conditions. [metric:landmark_count]
+
+### Honor-Display System and Public-Space Component Library
+
+Honor display does not reward only the fastest, largest or most intelligent system. It also records restraint, stopping, repair, retirement and human takeover. Six components connect the three landmarks as a legible, stoppable and removable concept toolkit; none is an approved facility. [data:visual/assets/implementation-readiness-register.json#public_space_component_library]
+
+| Component | Space and function | L7 / D6 interface | Human / AI-off mode | Installation and removal |
+| --- | --- | --- | --- | --- |
+| Dual-Gate Status Totem | Coevolution Threshold and three-area entries; displays release, HOLD, accountability, stop and repair | Separate, non-compensatory L7 and D6 fields | Paper status cards, staffed explanation desk, fixed stop sign | Freestanding ballast; clear of tactile routes and roots; damage-free removal |
+| Failure and Repair Archive Cabinet | Error Square and Zhongzhiyuan test chain; keeps three kinds of failure receipt | D6 accountability/repair evidence plus L7 damage record | Paper index, staffed access and appeal cards | Mobile and lockable; remove after trial and restore surface |
+| Low-Interference Service Canopy | Low-Interference Everyday Home and AI Origin Community; quiet, shaded and human-first | L7 darkness/quiet plus D6 human takeover | Staffed counter, paper, telephone and fixed low lighting | Light removable frame; no route closure or continuous telemetry |
+| Living-Ground Gauge | Three landmarks and blue-green nodes; shows seven living baselines | Direct L7 reading plus D6 measurement responsibility | Manual sheets, seasonal plots and fixed scales | No root piercing or added night glow; seasonal removal |
+| Honor and Accountability Timeline | Civilizational axis, Error Square and Coevolution Threshold; records contribution and retirement | Named D6 responsibility with before/after L7 repair | Replaceable paper cards, human curation and accessible spoken version | Modular hanging, annual review and trace-free restoration |
+| AI-Off Equivalent Route Marker | Twelve scenario contacts and three-area walking chain | D6 exit/human route plus L7 clear-width protection | Fixed/tactile wayfinding, staffed help and printed map | Reuse existing carriers, preserve clear width, replace one piece at a time |
 
 The annual cultural system includes century marks, living-line and dual-gate-state wayfinding, AI retirement archives, public failure exhibitions, children’s real-world courses and darkness observation. International copy is unified as: **INTELLIGENCE MAY ENTER THE CITY. THE CITY MUST NOT LEAVE THE LIVING WORLD.**
 
