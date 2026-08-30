@@ -6,12 +6,40 @@ proposal_format_version: "2"
 bilingual_contract_version: "1"
 translation_of: "proposal.md"
 license: "COMMUNITY-DISPLAY-ONLY"
-summary: "A status-and-action urban field that keeps the ordinary city complete while admitting only bounded, reversible AI tasks."
+summary: "An urban proposal that protects intergenerational daily life first, then cautiously admits only a few bounded, reversible AI tasks."
 tracks: ["enterprise-services-ecosystem", "ai-traffic-walkability", "civic-agent-governance"]
 scenarios: ["ai-traffic-walkability", "enterprise-service-copilot", "public-safety-operations-review"]
 ---
 
 # Jing-Zhang In Place
+
+![Jing-Zhang In Place: a city path cared for by shade, daily life and a removable temporary element; participant-authored concept image, not site photography or survey evidence](assets/media/cover.webp)
+
+![Original Jing-Zhang In Place identity: a railway seam opens into a reset gate](assets/identity/jingzhang-in-place-mark.svg)
+
+> **Let the future grow; let the city continue.**
+
+## See the city before the technology
+
+**Technology belongs to an era; the city belongs to generations.** Jing-Zhang In Place does not lay an “intelligent corridor” over existing life. It asks, within a city where shade, walking, learning, service, maintenance and small daily commerce already work, when technology is truly worth taking even a little space. The city is not a container for technology; it is the continuity of intergenerational life. Not every technical advance deserves a permanent spatial cost.
+
+That continuity becomes three visible, maintainable relationships:
+
+- **Continuing time**: long-lived streets, trees, walking and public service do not yield to short-cycle equipment;
+- **Continuing life**: people of different ages, abilities, occupations and rhythms retain a route to arrive, pause, ask and leave without an app;
+- **Continuing memory**: Jing-Zhang railway resilience is not copied as an icon. It becomes a responsibility: every exceptional state must be explainable, stoppable and returnable to daily life.
+
+Space is therefore not a homogeneous renewal field. The **long-lived city** carries streets, trees, services and shared memory; the **adaptable city** carries rooms, thresholds and repairable operations; **temporary intelligence** appears only when it is needed, minimally, reversibly and with a human responsibility. Zhongzhiyuan means validation rather than spectacle; AI Origin means co-existence rather than capture; Dazhongsi means judgment rather than automation. `STATUS × ACTION` remains a careful decision skeleton beneath the proposal, not its urban image.
+
+### Three human-centred routes through the proposal
+
+| Route | Begin here | What it makes clear |
+| :--- | :--- | :--- |
+| **30 seconds: a city that can continue** | Cover, three continuities, three temporal layers, three key areas | Why the city comes before technology, and how ordinary life stays whole |
+| **3 minutes: one cautious spatial decision** | FIG.03 key areas, the P0 reference, FIG.05 evidence | Why only S01 reaches P0, and how space stops and returns to ordinary life |
+| **15 minutes: a reviewable chain of responsibility** | Full text, structured sources, assumptions/sources/matrices | What the participant proposes, and what still needs professionals, rights holders and field observation |
+
+### Method foundation: used only when the city permits it
 
 > **Core Thesis**: Jing-Zhang is not a blank line waiting to be filled with AI, but an existing city with unequal statuses, jurisdictions, and cross-sections. The proposal employs `STATUS × ACTION` to establish the baseline spatial floor first, upholding `AI_OFF_CITY` (where ordinary public streets, mixed daily life, step-free routes, and human services operate 100% completely without AI intervention). Across 12 urban tasks, it strictly enforces the "ordinary-space sufficiency test," admitting only S01, S04, and S07—where physical testing, controlled collaboration, and compliance review are demonstrably insufficient in ordinary rooms—as deep spatial packets. The remaining 9 tasks are explicitly NO-BUILD or ordinary carriers. All admitted specialist spaces are equipped with strict Time-To-Live (TTL), absolute human authority, and immediate physical reset mechanisms. [data:visual/assets/ai-spatial-admission.json#admission_chain]
 
@@ -183,6 +211,20 @@ The provisional geometry and contextual station-city relationship are offset. Th
 - **South-east question field**: Is there readable surface continuity among station-city, greenway and public service? Start with physical wayfinding and human help. Any bridge, underpass, interchange or facility is a `CONCEPTUAL_INTERFACE` and remains `PROFESSIONAL_DEEPENING_REQUIRED`.
 
 All three interfaces follow a scale-free `S0 Ordinary City → S1 Admitted Specialist State → S2 Exit/Reset` typology and assert no parcel, dimension, station portal, ownership, engineering or statutory control. Zhongzhiyuan considers carrier-contained removable validation only after conditions are confirmed and returns to ordinary training/work after kit removal. AI Origin considers demountable zoning and human handover only under session authorization and returns to ordinary use after clearing. Dazhongsi considers a temporary review state only after privacy, appeal, paper fallback and staffed review are confirmed and returns to ordinary professional/community service on stop. [data:visual/assets/taskbook-closure.json#validation_scenarios]
+
+### P0 | Zhongzhiyuan: put “validation” inside a returnable chain of responsibility
+
+S01 is the only spatial reference brought to P0. It is neither a selected site, an approved pilot nor a construction document; it is a minimum-condition drawing that helps a future team decide whether it should not happen at all. It discusses only a **12 m × 9 m, zero-coordinate `DESIGN_ASSUMPTION` conceptual envelope**. It is not a claim about surveyed dimensions, clearance, egress, loading, anchorage, power, or approval. [data:visual/assets/p0-s01-reference.json#scope]
+
+**WHY → SPACE → PEOPLE → COMPONENTS → CAPACITY.** Only when a real, bounded, accountable physical task cannot be replaced by simulation, review or an ordinary room is a reversible test edge considered, and it may not take over the public route. Z0 remains an ordinary route; Z1 is human handover; Z2 is removable testing; Z3 separates operator and safety authority; Z4 is booked observation; Z5 is maintenance/reset; Z6 is a still-to-be-professionally-determined buffer. A concept session has **one active task/device, five role positions, four booked observer positions and a total cap of nine**. There is no walk-in queue in Z0, and any observed or approved operational capacity remains `null`. [data:visual/assets/p0-s01-reference.json#zone_logic] [data:visual/assets/p0-s01-reference.json#capacity]
+
+The five role classes are not appointments: test operator; separate human safety authority; public/service handoff steward; maintenance/reset steward; independent observer/reviewer. The eight removable components are not a procurement list: STATUS/reset frame, removable perimeter, floor/interface protection, power/isolation interface, physical stop/control kit, operator/safety console and log, handoff/observer elements, and reset/storage inventory. They create only a minimal future path that cannot diffuse technology into ordinary city life, and only after rights, professional and field conditions exist. [data:visual/assets/p0-s01-reference.json#components]
+
+**OPERATION → STOP → RESET → MAINTENANCE.** The order is fixed: pre-open external gates → ordinary-baseline verification → install/inspect → conditional activation and stop rehearsal → one controlled task → fail-close → human isolation/takeover → remove → restore → independent ordinary-baseline verification. No reset duration is claimed. Any issue is first `QUARANTINED` until independent reset and ordinary baseline have been reconfirmed. [data:visual/assets/p0-s01-reference.json#operation_chain] [data:visual/assets/p0-s01-reference.json#stop_reset_maintenance]
+
+**COST → ALTERNATIVES → HOLD.** The current `market_quotation_count=0`, `approved_budget=null` and `funding_commitment=null`; only relative sensitivity is compared and no money is fabricated. The four peer choices are NO-BUILD, lower-tech reversible arrangement, selected P0 and an alternate linear side-bay. If physical need is not verified, or a lighter option protects the ordinary-city floor equally well, P0 does not advance. All 11 external conditions remain `HOLD_EXTERNAL`; therefore `P0_GO=false`. [data:visual/assets/p0-s01-reference.json#cost_and_alternatives] [data:visual/assets/p0-s01-reference.json#external_hold_gates]
+
+The reference keeps distinct: the participant’s present concept deliverable; surveys, codes, capacity and role confirmation needed from future professionals; and route, handoff, stop and reset evidence requiring field observation. It maintains a bounded cross-reference with PRJ-06’s “one reversible validation pilot,” without turning a concept into a promise. [data:visual/assets/p0-s01-reference.json#acceptance_and_handoff] [data:visual/assets/renewal-project-portfolio.json#PRJ-06]
 
 ![Three key areas and differentiated cross-sections](assets/figures/key-areas.en.png)
 

@@ -1,5 +1,13 @@
 # 方案迭代记录
 
+## JZ-FINAL100 award consolidation - 2026-08-30
+
+- **城市先于技术的表达重排**：中英文首屏以“让未来生长，让城市相续”、续时/续生/续忆、长久城市/可适应城市/暂居智能和众智园—AI 原点—大钟寺的差异化叙事开始；`STATUS × ACTION` 保留为底层判断骨架。
+- **S01 唯一 P0 参考**：新增 `visual/assets/p0-s01-reference.json`，把 WHY—SPACE—PEOPLE—COMPONENTS—CAPACITY—OPERATION—STOP—RESET—MAINTENANCE—COST—ALTERNATIVES—HOLD—HANDOFF 显式闭合；12 m × 9 m 零坐标包络和会话容量均标为 `DESIGN_ASSUMPTION`，11 项条件均为 `HOLD_EXTERNAL`，`P0_GO=false`。
+- **人本视觉识别**：新增原创可复位门识别与参与者定向 AI 概念封面；二者均明确为概念传播资产，不是实景、测绘、审批、运营或工程证据。
+- **双语报告离线字体覆盖修复**：`report/proposal.html` 与 `report/proposal.en.html` 显式加载已登记的包内 Noto Sans SC WOFF2 数据字体并将其置于字体回退链首位；字体子集从四个最终 HTML 表面重新确定性构建，并以 cmap 覆盖检查全部 1,029 个所需可打印字符，使不具备宿主 CJK 字体的离线审阅环境仍可读取标题、摘要、正文、图注与链接。
+- **事实边界未放松**：没有改变临时几何、指标、标准/合规矩阵、12 项任务、15 项项目族、9 项 NO-BUILD 结论或任何外部权利/批准状态；成本、预算、容量、现场表现均维持未知或条件性表达。
+
 ## Final one-shot regional interface and spatial judgment - 2026-08-30
 
 - **一个图面闭合两项缺口**：将既有 FIG.01 双语总览升级为“京张空间判断 + 条件区域接口”；坐标几何部分明确北向、`EPSG:4548`、0–1 km 比例尺、数据状态与临时边界警示，三处真实尺寸未知的断面继续标为 `NTS / NOT TO SCALE / CONCEPT TYPOLOGY`。

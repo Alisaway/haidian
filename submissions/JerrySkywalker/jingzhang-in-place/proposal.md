@@ -6,12 +6,40 @@ proposal_format_version: "2"
 bilingual_contract_version: "1"
 translation_file: "proposal.en.md"
 license: "COMMUNITY-DISPLAY-ONLY"
-summary: "以状态与条件行动组织京张既有城市，在普通城市完整的前提下安排少量可退出的 AI 任务。"
+summary: "以城市的代际连续为先：守住日常生活，再谨慎安排少量可退出的 AI 任务。"
 tracks: ["enterprise-services-ecosystem", "ai-traffic-walkability", "civic-agent-governance"]
 scenarios: ["ai-traffic-walkability", "enterprise-service-copilot", "public-safety-operations-review"]
 ---
 
 # 京张续城 / Jing-Zhang In Place
+
+![京张续城：一条被树荫、日常生活与可撤临时构件共同照看的城市路径；为参与者原创概念图像，不是实景或测绘依据](assets/media/cover.webp)
+
+![京张续城原创识别：铁路缝线打开为可复位的门](assets/identity/jingzhang-in-place-mark.svg)
+
+> **让未来生长，让城市相续。**
+
+## 先看城市，再看技术
+
+**技术属于时代，城市属于世代。** 京张续城不是用一条“智能走廊”覆盖既有生活，而是在树荫、步行、学习、服务、维护和小微日常已经完整成立的城市里，谨慎判断何时技术真的值得占用一点空间。城市不是技术的容器，而是代际生活的连续体；不是每一次技术进步，都值得城市付出永久的空间代价。
+
+方案把这份连续体写成三种可被看见、也可被维护的关系：
+
+- **续时**：长期的街道、绿荫、步行与公共服务不为短周期设备让位；
+- **续生**：不同年龄、能力、职业和节奏的人，都保有不用 App 也能抵达、停留、询问与离开的路径；
+- **续忆**：京张铁路的韧性不被复刻成符号，而被转译为一项责任——每一个例外状态都必须能被解释、停止并还给日常。
+
+因此，空间并非同质更新：**长久城市**承载街道、树木、服务和公共记忆；**可适应城市**容纳可修补的房间、门槛和运营；**暂居智能**只在真正需要时，以最小、可撤、有人负责的方式短暂停留。众智园是“验证”而非展示，AI 原点是“共处”而非占用，大钟寺是“裁决”而非自动化。`STATUS × ACTION` 留在底层作为审慎的判断骨架，而不是城市形象本身。
+
+### 三条人本阅读路线
+
+| 路线 | 先看什么 | 读完会知道什么 |
+| :--- | :--- | :--- |
+| **30 秒：一座可相续的城市** | 封面、三种连续、三层时间、三处重点区 | 城市为何先于技术，普通生活如何保持完整 |
+| **3 分钟：一个谨慎的空间决定** | FIG.03 重点区、P0 参考、FIG.05 证据图 | 为什么只有一项 S01 被推至 P0，空间如何停下并回到日常 |
+| **15 分钟：一条可复核的责任链** | 全文、结构化资料、假设/来源/矩阵 | 哪些内容由参与者提出，哪些仍须专业、权利人和现场确认 |
+
+### 方法底座：只在城市许可时使用
 
 > **一句话主张**：京张不是等待 AI 填满的空白线，而是一座状态、权限与断面不等的既有城市。方案以 `STATUS × ACTION` 先行界定空间底线，坚持 `AI_OFF_CITY`（在无智能层介入时，普通公共街道、混合生活、无障碍路径与人工服务 100% 完整成立），在 12 项城市任务中严格执行“普通空间充分性检验”，仅对物理验证不足、受控协作不足、合规评审不足的 S01、S04、S07 三项准入为深度空间包，其余 9 项均为 NO-BUILD 或普通载体，且所有准入空间均具备严格的 TTL、人工绝对权威与一键物理复位机制。[data:visual/assets/ai-spatial-admission.json#admission_chain]
 
@@ -185,6 +213,20 @@ AI 空间准入不是第二条城市骨架：它只是已经允许的行动内�
 - **东南问题场**：站城、绿廊和公共服务是否存在可读的地面连续？先采用实体导向与人工帮助；桥、下穿、换乘或服务设施均为 `CONCEPTUAL_INTERFACE`，须 `PROFESSIONAL_DEEPENING_REQUIRED`。
 
 三处界面均为 `S0 普通城市 → S1 准入专业状态 → S2 退出/复位` 的无尺度类型学，不主张地块、尺寸、站口、权属、工程或法定控制。众智园仅在已确认条件下考虑载体内可撤验证，并在撤设备后恢复普通培训/工作；AI 原点仅在逐次授权时考虑可撤分区和人工交接，并在清空后恢复普通使用；大钟寺仅在隐私、申诉、纸质兜底和人员复核条件确认时考虑临时复核状态，并在停止后回到普通专业/社区服务。[data:visual/assets/taskbook-closure.json#validation_scenarios]
+
+### P0｜众智园：把“验证”收进一条可退的责任链
+
+S01 是唯一进入 P0 的空间参考；它不是已选场地、已批准试点或施工方案，而是一张帮助专业团队判断“是否根本不该做”的最小条件图。它只在一个 **12 m × 9 m、零坐标的 `DESIGN_ASSUMPTION` 概念包络** 内讨论：并非测量尺寸、净空、疏散、荷载、锚固、电力或审批主张。[data:visual/assets/p0-s01-reference.json#scope]
+
+**WHY → SPACE → PEOPLE → COMPONENTS → CAPACITY。** 当真实、有界且有人负责的物理任务确实无法由仿真、审查或普通房间替代时，才讨论一个不抢占公共路线的可撤测试边。Z0 保持普通路线，Z1 由人工交接，Z2 才是可撤测试，Z3 分开操作与安全权威，Z4 为预约观察，Z5 留给维护/复位，Z6 是尚待专业判断的缓冲。会话概念上只有 **1 项活动任务/设备、5 个角色位、4 个预约观察位、总上限 9**；Z0 不设等候队列，任何经观察或批准的实际容量均为 `null`。[data:visual/assets/p0-s01-reference.json#zone_logic] [data:visual/assets/p0-s01-reference.json#capacity]
+
+五类角色不是任命：测试操作人、与操作人分离的人类安全权威、公共/服务交接人、维护/复位人、独立观察/复核人。八项可撤构件也不是设备清单：STATUS/复位门、可撤周界、地面/接口保护、电力/隔离接口、实体停止/控制包、操作/安全台与日志、交接/观察元素、复位/储存清单。它们只是在未来权利、专业与现场条件都成立时，提供一条不会把技术扩散进普通城市的最小路径。[data:visual/assets/p0-s01-reference.json#components]
+
+**OPERATION → STOP → RESET → MAINTENANCE。** 运行顺序固定为：外部门预开 → 普通基线核验 → 安装/检查 → 条件激活与停止排演 → 一项受控任务 → 失效即关闭 → 人工隔离/接管 → 移除 → 恢复 → 独立普通基线核验。没有复位时长主张；任何问题先进入 `QUARANTINED`，直至独立复位与普通基线被再次确认。[data:visual/assets/p0-s01-reference.json#operation_chain] [data:visual/assets/p0-s01-reference.json#stop_reset_maintenance]
+
+**COST → ALTERNATIVES → HOLD。** 当前 `market_quotation_count=0`、`approved_budget=null`、`funding_commitment=null`；只比较相对敏感性，绝不虚构金额。四个同等候选依次是 NO-BUILD、低技术可撤布置、选定 P0、替代的线性侧湾；只要物理需求未被核实，或更轻的选项同样守住普通城市底线，P0 就不前进。11 项外部条件全部为 `HOLD_EXTERNAL`，所以 `P0_GO=false`。[data:visual/assets/p0-s01-reference.json#cost_and_alternatives] [data:visual/assets/p0-s01-reference.json#external_hold_gates]
+
+这张参考把参与者现在能够交付的概念、仍需专业团队完成的调查/规范/容量/责任确认，以及必须由现场观察证明的路线、交接、停止和复位分开记录；它同时与 PRJ-06 的“一个可撤验证试点”保持受限交叉引用，而不把概念变成承诺。[data:visual/assets/p0-s01-reference.json#acceptance_and_handoff] [data:visual/assets/renewal-project-portfolio.json#PRJ-06]
 
 ![三处重点区与差异化断面](assets/figures/key-areas.png)
 
