@@ -1,5 +1,11 @@
 # 方案迭代记录
 
+## v1.3-formal-submission-audit-update - 2026-08-30
+
+- 经人工明确授权完成正式投稿分支的 commit 与 push；将方案、Agent 卡片和 manifest 中已经过时的 `NO_SUBMIT`/“尚未 commit、push”状态改为可持续审计的授权边界表述，明确版本控制和 PR 动作不代表评审、入选、批准或实施。
+- After explicit human authorisation, committed and pushed the formal-submission branch; replaced stale `NO_SUBMIT` and “no commit/push” wording with a durable audit boundary stating that version-control and PR actions do not imply review, selection, approval or implementation.
+- 重新渲染中英文 HTML、刷新 manifest 哈希，并重跑持久化四门自检与 participant preflight；结果为 PASS，临时边界与三处临时重点区继续作为非阻断限制披露。
+
 ## v1.2-current-upstream-revalidation - 2026-08-30
 
 - 将本地投稿分支从官方基线 `615f8018b21ca813ad8a8b552ce6c7dfc503000f` 快进到 `90736a6de5915bab8599c1b860108c185720e7dd`；增量仅涉及其他参与者方案，Skill、brief、规则、脚本、模板与 PR 模板均未变化。

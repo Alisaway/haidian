@@ -259,7 +259,7 @@ The decisive truth boundaries are: provisional geometry is not an official redli
 
 The risk radar registers data privacy, implementation complexity, public acceptance, operations cost, policy uncertainty, spatial dispute, technology maturity and equity/inclusion. High-risk dimensions require named human review. Without site authorisation, accountable operators, professional review and restoration funding, status remains HOLD. Text, diagrams and GeoJSON are original or generated from registered sources; uncleared fonts, third-party images, portraits and trademarks must not enter the formal package. See the copyright statement and rights ledger. [data:risk.json] [data:visual/assets/rights-ledger.json] [source:SITE-PACKAGE]
 
-The package remains under a `NO_SUBMIT` guard. An authorised personal fork, sparse local workspace and candidate branch are prepared, but no commit, push, pull request, issue, comment, review or upstream write has occurred. The current official local validation state is defined only by `self_check.json`; the package may reach the human PR-authorisation boundary only after all four gates and participant preflight pass. This is a workflow boundary, not a claim of submission, review or selection.
+Version-control and submission-workflow actions are performed only under explicit human authorisation; the current auditable state is defined by the GitHub record and `self_check.json`. Creating a branch, commit, push or pull request records a submission action only and does not mean that the organisers have reviewed, selected, approved or implemented the proposal. Field action and professional approval still require separately identified accountable parties.
 
 ## References
 
