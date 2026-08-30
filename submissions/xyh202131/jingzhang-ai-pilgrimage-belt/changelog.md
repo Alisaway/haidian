@@ -1,5 +1,19 @@
 # 方案迭代记录 / Changelog
 
+## v89.0 - 2026-08-30
+
+**当前评审交接摘要收敛 / Current Review-handoff Summary Convergence**
+
+- 已有能力：权威双语 proposal、成对 report/visual、四份 PDF、全页图谱、证据索引和专业交接材料均已完成；`report/narrative.md` 也已登记为可选评审摘要。
+- 真实缺口：修复前，该摘要仍把 R60—R66 的历史修复写成“当前评审叙事”，未纳入 R67—R88 已完成的审阅入口、图纸全页可见性和键盘落点闭合；评审者可能把过期的修复史误当作当前包状态。
+- 必须冻结：冻结“双轨京张 / Twin-Track Jing-Zhang”、三种不可互换原型、JZ-AIOS、G0—G3、四轴、三载体、证据门、权利边界及 12/8/3/36；不改 proposal、report HTML、visual、图件、媒体、四份 PDF、geometry、metrics 或现实状态。
+- 本轮实施：把可选 narrative 收敛为稳定的双语当前交接页，按“先读什么—当前可审阅成果—唯一专业候选—仍未知—冻结边界”组织，并移除会过期的轮次流水账。所有外部责任、批准、现场、预算、公众反馈、现实结果、法律清权和人工双语签署继续为 0、unknown 或未提供。
+
+- Existing capability: authoritative bilingual proposals, paired reports/visuals, four PDFs, all-page atlases, an evidence index and professional handoff materials were complete; `report/narrative.md` was also declared as an optional review summary.
+- Real gap: before repair, that summary still presented R60–R66 repair history as the “current review narrative” and omitted the R67–R88 review entrances, all-page drawing visibility and keyboard-destination closure, risking a stale account of the current package.
+- Frozen boundary: Twin-Track Jing-Zhang, the three non-interchangeable prototypes, JZ-AIOS, G0–G3, four axes, three carriers, evidence gates, rights boundaries and 12/8/3/36 remain frozen; proposals, report HTML, visuals, figures, media, four PDFs, geometry, metrics and real-world status are unchanged.
+- Implemented this round: converged the optional narrative into a stable bilingual current handoff ordered by reading route, reviewable outcomes, sole professional candidate, unknowns and frozen boundary, removing per-round history that would become stale. All external duties, approvals, field work, budgets, public feedback, real outcomes, legal clearance and human bilingual sign-off remain zero, unknown or not provided.
+
 ## v88.0 - 2026-08-30
 
 **图文报告章节落点可见反馈 / Visible Illustrated-report Chapter Destinations**
