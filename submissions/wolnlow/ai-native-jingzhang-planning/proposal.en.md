@@ -27,7 +27,7 @@ Jingzhang is a stress test rather than a decorative backdrop. Its existing herit
 
 ### Communication theme: When the City Begins to Think — Jingzhang as an AI-Native Urban-Civilisation Testbed
 
-![Panoramic vision of Jingzhang as an AI-native urban-civilisation testbed](assets/figures/jingzhang-ai-civilization-panorama-v28.en.png)
+![Panoramic vision of Jingzhang as an AI-native urban-civilisation testbed](assets/figures/jingzhang-ai-civilization-panorama-v28.png)
 
 “The city begins to think” does not transfer public decisions to algorithms. It describes a civic capacity for traceable evidence, plural problem framing, reversible trials, human takeover, safe exit, and versioned learning. The panorama uses the railway heritage park as a continuous public spine for research, neighbourhood life, cultural exchange, and low-intrusion AI services. It is an AI-generated communication concept—not a site photograph, reconstruction, approved location, or construction commitment. The formal research title remains unchanged.
 

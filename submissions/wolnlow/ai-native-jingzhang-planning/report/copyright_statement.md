@@ -16,7 +16,7 @@ Formal-package figures are project diagrams or generated/composited research vis
 
 AI-generated or AI-assisted visual material expresses relationships, atmosphere, components, or user actions only. It does not prove present conditions, exact placement, ownership, constructability, approval, operation, or performance. Prompts and generation choices cannot upgrade an evidence state.
 
-The panoramic cover asset `jingzhang-ai-civilization-panorama-v28(.en).png` was generated through the OpenAI built-in image-generation tool for this proposal. It contains no intentional logo or readable third-party text and is registered in `visual/assets/hero_image_manifest.json`. It is a communication concept only, not a site photograph, heritage reconstruction, location plan, architectural promise, or evidence of existing/proposed approval.
+The language-neutral panoramic cover asset `jingzhang-ai-civilization-panorama-v28.png` was generated through the OpenAI built-in image-generation tool for this proposal and is shared by the Chinese and English versions. It contains no intentional logo or readable third-party text and is registered in `visual/assets/hero_image_manifest.json`. It is a communication concept only, not a site photograph, heritage reconstruction, location plan, architectural promise, or evidence of existing/proposed approval.
 
 ## 4. Fonts and production chain
 
