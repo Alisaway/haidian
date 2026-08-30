@@ -39,6 +39,7 @@ const exactSet = (actual, expected) =>
 
 const DELIVERY_PATH = "visual/assets/governance/p0-delivery-contract.json";
 const FEASIBILITY_PATH = "visual/assets/governance/p0-pre-feasibility-envelope.json";
+const HANDOFF_PATH = "visual/assets/governance/implementation-handoff-register.json";
 const JURY_INDEX_PATH = "visual/assets/governance/jury-evidence-index.json";
 const PUBLIC_PATH = "visual/assets/governance/public-benefit-gate.json";
 const REVIEW_PATH = "visual/assets/governance/review-3825-readiness-matrix.json";
@@ -108,6 +109,20 @@ const EXPECTED_ALTERNATIVES = [
   "ALT-2_PUBLIC_HANDOVER_TABLE_REFERENCE",
   "ALT-3_BORROWED_INDOOR_ROOM",
 ];
+const EXPECTED_DRAWINGS = Array.from({ length: 5 }, (_, index) => `D${String(index + 1).padStart(2, "0")}`);
+const EXPECTED_DRAWING_SCALES = ["1:500", "1:200", "1:100", "1:50", "1:20"];
+const EXPECTED_RELEASE_STATES = [
+  "S0_EVIDENCE_FREEZE", "S1_P0_HUMAN_FLOOR", "S2_THREE_YARDS_AND_LINKS",
+  "S3_CORRIDOR_OPERATION_AND_RETIREMENT",
+];
+const EXPECTED_DELIVERY_PROJECTS = Array.from({ length: 9 }, (_, index) => `PJ${String(index + 1).padStart(2, "0")}`);
+const EXPECTED_DELIVERY_PACKAGES = Array.from({ length: 6 }, (_, index) => `WP${String(index + 1).padStart(2, "0")}`);
+const EXPECTED_IMPLEMENTATION_MODULES = Array.from({ length: 11 }, (_, index) => `M${String(index + 1).padStart(2, "0")}`);
+const EXPECTED_DOCUMENTARY_GATES = Array.from({ length: 12 }, (_, index) => `G${String(index + 1).padStart(2, "0")}`);
+const EXPECTED_ROLE_CLASSES = Array.from({ length: 12 }, (_, index) => `R${String(index + 1).padStart(2, "0")}`);
+const EXPECTED_PROGRAMME_TASKS = Array.from({ length: 12 }, (_, index) => `T${String(index).padStart(2, "0")}`);
+const EXPECTED_QUANTITY_LINES = Array.from({ length: 16 }, (_, index) => `Q${String(index).padStart(2, "0")}`);
+const EXPECTED_HANDOFF_ACCEPTANCE = Array.from({ length: 12 }, (_, index) => `A${String(index + 1).padStart(2, "0")}`);
 const EXPECTED_JURY_PATHS = { "JURY-30S": 30, "JURY-3M": 180, "JURY-15M": 900 };
 const EXPECTED_RUBRIC_DIMENSIONS = [
   "brief_alignment", "originality", "ai_planning_innovation", "implementation_feasibility",
@@ -116,6 +131,7 @@ const EXPECTED_RUBRIC_DIMENSIONS = [
 
 const delivery = readJSON(DELIVERY_PATH);
 const feasibility = readJSON(FEASIBILITY_PATH);
+const handoffRegister = readJSON(HANDOFF_PATH);
 const juryIndex = readJSON(JURY_INDEX_PATH);
 const publicGate = readJSON(PUBLIC_PATH);
 const reviewMatrix = readJSON(REVIEW_PATH);
@@ -337,6 +353,147 @@ if (feasibility) {
     alternatives.find((item) => item.alternative_id === "ALT-0_EXISTING_HUMAN_FLOOR").pilot_activation_allowed === false &&
     alternatives.filter((item) => item.pilot_activation_allowed === true)
       .every((item) => item.gate_rule === "still_requires_all_eight_entry_gates"));
+}
+
+let validHandoffChecks = 0;
+const recordHandoff = (label, condition, detail) => {
+  if (condition) validHandoffChecks += 1;
+  else errors.push(`专业实施交接 ${label}${detail ? `：${detail}` : ""}`);
+};
+if (handoffRegister) {
+  recordHandoff("主张状态或激活状态不符",
+    handoffRegister.claim_state === "PARTICIPANT_DESIGN_HANDOFF_READY" &&
+    handoffRegister.activation_state === "EXTERNAL_HOLD_NOT_STARTED");
+
+  const ext = handoffRegister.current_external_evidence || {};
+  recordHandoff("外部证据不得被伪装成已取得",
+    ext.official_siting_received === false && ext.site_right_or_access_received === false &&
+    ext.field_measurement_count === 0 && ext.documentary_gate_receipt_count === 0 &&
+    ext.named_role_appointment_count === 0 && ext.formal_unit_rate_receipt_count === 0 &&
+    ext.vendor_quote_count === 0 && ext.insurance_document_count === 0 &&
+    ext.approved_budget_cny === null && ext.professional_signoff_count === 0 &&
+    ext.construction_or_opening_release_count === 0 && ext.field_task_count === 0);
+
+  const nested = handoffRegister.nested_scale_envelopes || {};
+  const site = nested.site_screening_window || {};
+  const court = nested.coordination_court || {};
+  const control = nested.control_envelope || {};
+  const patch = nested.reversible_operating_patch || {};
+  recordHandoff("四级包络算术或非场地边界不一致",
+    site.length_m === 24 && site.width_m === 24 && site.area_sqm === 576 &&
+    site.status === "participant_orientation_screen_not_a_site" &&
+    court.length_m === 12 && court.width_m === 12 && court.area_sqm === 144 &&
+    court.status === "participant_no_fixed_work_coordination_reserve" &&
+    control.length_m === 7.2 && control.width_m === 7.2 && control.area_sqm === 51.84 &&
+    patch.length_m === 6 && patch.width_m === 6 && patch.area_sqm === 36);
+
+  const drawings = Array.isArray(handoffRegister.drawing_chain) ? handoffRegister.drawing_chain : [];
+  recordHandoff("1:500—1:20 五级图纸链不完整",
+    exactSet(drawings.map((item) => item.drawing_id), EXPECTED_DRAWINGS) &&
+    drawings.map((item) => item.scale).join("|") === EXPECTED_DRAWING_SCALES.join("|") &&
+    drawings.every((item) => Array.isArray(item.checks) && item.checks.length >= 5 &&
+      String(item.status || "").startsWith("participant_")));
+
+  const capacity = handoffRegister.capacity_and_open_edge_screen || {};
+  recordHandoff("容量、开口与对角线筛查算术不一致",
+    capacity.operational_public_cap_persons === 8 && capacity.simultaneous_staff_positions === 3 &&
+    capacity.operational_total_cap_persons === 11 && capacity.queue_stop_persons === 6 &&
+    capacity.opposed_opening_count === 2 && capacity.opening_clear_width_m_each === 1.8 &&
+    capacity.combined_opening_target_m === 3.6 &&
+    Math.abs(capacity.control_envelope_half_diagonal_m - 5.091) < 0.001 &&
+    capacity.status === "participant_geometry_screen_not_statutory_occupancy_or_egress");
+
+  const states = Array.isArray(handoffRegister.release_states) ? handoffRegister.release_states : [];
+  const stateIds = new Set(states.map((item) => item.state_id));
+  recordHandoff("四级释放状态必须完整且全部 HOLD",
+    exactSet([...stateIds], EXPECTED_RELEASE_STATES) &&
+    states.every((item) => item.status === "HOLD" && String(item.release_condition || "").trim() &&
+      String(item.rollback || "").trim()));
+
+  const projects = Array.isArray(handoffRegister.delivery_projects) ? handoffRegister.delivery_projects : [];
+  recordHandoff("九项交付项目必须唯一且全部 HOLD",
+    exactSet(projects.map((item) => item.project_id), EXPECTED_DELIVERY_PROJECTS) &&
+    projects.every((item) => stateIds.has(item.release_state) && item.status === "HOLD"));
+
+  const documentaryGates = Array.isArray(handoffRegister.documentary_release_gates)
+    ? handoffRegister.documentary_release_gates : [];
+  const documentaryGateIds = new Set(documentaryGates.map((item) => item.gate_id));
+  recordHandoff("十二道文件闸门必须全部 HOLD 且回执为空",
+    exactSet([...documentaryGateIds], EXPECTED_DOCUMENTARY_GATES) &&
+    documentaryGates.every((item) => item.status === "HOLD" && item.receipt === null &&
+      EXPECTED_GATES.includes(item.maps_to_entry_gate) && String(item.required_receipt || "").trim()));
+
+  const packages = Array.isArray(handoffRegister.delivery_packages) ? handoffRegister.delivery_packages : [];
+  recordHandoff("六个交付包必须绑定有效闸门并保持 HOLD",
+    exactSet(packages.map((item) => item.package_id), EXPECTED_DELIVERY_PACKAGES) &&
+    packages.every((item) => item.status === "HOLD" && Array.isArray(item.gate_ids) &&
+      item.gate_ids.length >= 1 && item.gate_ids.every((gateId) => documentaryGateIds.has(gateId))));
+
+  const modules = Array.isArray(handoffRegister.implementation_modules)
+    ? handoffRegister.implementation_modules : [];
+  recordHandoff("十一项实施模块不完整",
+    exactSet(modules.map((item) => item.module_id), EXPECTED_IMPLEMENTATION_MODULES) &&
+    modules.every((item) => typeof item.removable === "boolean" && String(item.title_zh || "").trim()));
+
+  const roles = Array.isArray(handoffRegister.professional_role_classes)
+    ? handoffRegister.professional_role_classes : [];
+  const roleIds = new Set(roles.map((item) => item.role_id));
+  recordHandoff("十二类专业角色必须全部未任命且无具名主体",
+    exactSet([...roleIds], EXPECTED_ROLE_CLASSES) &&
+    roles.every((item) => item.appointment_status === "unappointed" && item.named_party === null));
+
+  const programme = handoffRegister.conditional_programme || {};
+  const tasks = Array.isArray(programme.tasks) ? programme.tasks : [];
+  recordHandoff("15 周条件工期不得在 T0 前启动",
+    programme.reference_duration_weeks === 15 && programme.absolute_start_date === null &&
+    programme.t0_achieved_at === null && programme.clock_status === "NOT_STARTED_EXTERNAL_HOLD" &&
+    exactSet(tasks.map((item) => item.task_id), EXPECTED_PROGRAMME_TASKS) &&
+    tasks.every((item) => item.status === "HOLD" && roleIds.has(item.accountable_role_id) &&
+      Array.isArray(item.gate_ids) && item.gate_ids.length >= 1 &&
+      item.gate_ids.every((gateId) => documentaryGateIds.has(gateId))));
+
+  const quantitySchedule = handoffRegister.unpriced_quantity_schedule || {};
+  const quantityLines = Array.isArray(quantitySchedule.lines) ? quantitySchedule.lines : [];
+  recordHandoff("十六行数量必须可推导且保持未计价",
+    quantitySchedule.schedule_type === "participant_design_reference_not_formal_boq" &&
+    quantitySchedule.formal_quantity_survey === null && quantitySchedule.formal_estimate_cny === null &&
+    quantitySchedule.rate_source_receipt_count === 0 &&
+    exactSet(quantityLines.map((item) => item.line_id), EXPECTED_QUANTITY_LINES) &&
+    quantityLines.every((item) => Number.isFinite(item.quantity) && item.quantity > 0 &&
+      String(item.unit || "").trim() && String(item.derivation || "").trim() &&
+      item.field_verified_quantity === null && item.unit_rate_cny === null && item.amount_cny === null));
+
+  const acceptance = Array.isArray(handoffRegister.handoff_acceptance_indicators)
+    ? handoffRegister.handoff_acceptance_indicators : [];
+  recordHandoff("十二项交接验收必须区分 8 项现可判与 4 项未来现场项",
+    exactSet(acceptance.map((item) => item.indicator_id), EXPECTED_HANDOFF_ACCEPTANCE) &&
+    acceptance.filter((item) => item.judgeable_now === true).length === 8 &&
+    acceptance.filter((item) => item.judgeable_now === false).length === 4 &&
+    acceptance.every((item) => item.field_result === null) &&
+    acceptance.filter((item) => item.judgeable_now).every((item) => String(item.current_result || "").startsWith("PASS_")) &&
+    acceptance.filter((item) => !item.judgeable_now).every((item) => String(item.current_result || "").startsWith("HOLD_")));
+
+  const alternativeBindings = Array.isArray(handoffRegister.alternative_gate_binding)
+    ? handoffRegister.alternative_gate_binding : [];
+  recordHandoff("四个替代方案必须继续绑定闸门与 A0 回退",
+    exactSet(alternativeBindings.map((item) => item.alternative_id), EXPECTED_ALTERNATIVES) &&
+    alternativeBindings.find((item) => item.alternative_id === "ALT-0_EXISTING_HUMAN_FLOOR").pilot_activation_allowed === false &&
+    alternativeBindings.filter((item) => item.alternative_id !== "ALT-0_EXISTING_HUMAN_FLOOR")
+      .every((item) => item.pilot_activation_allowed === true && String(item.gate_rule || "").includes("G")));
+
+  const maintenance = handoffRegister.maintenance_and_restoration_binding || {};
+  recordHandoff("维护、撤场与恢复不得被写成已实测",
+    maintenance.restoration_reserve_ratio === 0.1 && maintenance.same_day_removal_target_hours === 4 &&
+    maintenance.field_tested === false && String(maintenance.opening_rule || "").includes("no public opening"));
+
+  const requiredFigureRefs = [
+    ["proposal.md", proposalZh, "assets/figures/implementation-handoff.png"],
+    ["proposal.en.md", proposalEn, "assets/figures/implementation-handoff.en.png"],
+  ];
+  recordHandoff("双语正文未引用专业交付梯图",
+    requiredFigureRefs.every(([, text, needle]) => text.includes(needle)) &&
+    fs.existsSync(resolveIn(PKG, "assets/figures/implementation-handoff.png")) &&
+    fs.existsSync(resolveIn(PKG, "assets/figures/implementation-handoff.en.png")));
 }
 
 let validJuryPaths = 0;
@@ -577,6 +734,25 @@ const expectedMetrics = {
   p0_annual_opex_sensitivity_high_cny: 648300,
   p0_alternative_option_count: 4,
   p0_same_day_removal_target_hours: 4,
+  p0_site_screening_window_area_sqm: 576,
+  p0_coordination_court_area_sqm: 144,
+  p0_control_envelope_half_diagonal_m: 5.091,
+  p0_combined_opening_target_m: 3.6,
+  implementation_drawing_scale_count: 5,
+  implementation_release_state_count: 4,
+  implementation_delivery_project_count: 9,
+  implementation_delivery_package_count: 6,
+  implementation_module_count: 11,
+  implementation_documentary_gate_count: 12,
+  implementation_gate_receipt_count: 0,
+  implementation_role_class_count: 12,
+  implementation_named_role_appointment_count: 0,
+  implementation_conditional_task_count: 12,
+  implementation_unpriced_quantity_line_count: 16,
+  implementation_handoff_acceptance_indicator_count: 12,
+  implementation_handoff_judgeable_now_count: 8,
+  implementation_formal_unit_rate_receipt_count: 0,
+  implementation_construction_opening_release_count: 0,
 };
 for (const [id, expected] of Object.entries(expectedMetrics)) {
   const value = metrics[id] && metrics[id].value;
@@ -593,6 +769,8 @@ const result = {
   acceptance_criteria_valid: validAcceptanceCriteria,
   pre_feasibility_checks_valid: validFeasibilityChecks,
   pre_feasibility_checks_expected: 12,
+  implementation_handoff_checks_valid: validHandoffChecks,
+  implementation_handoff_checks_expected: 17,
   jury_paths_valid: validJuryPaths,
   jury_paths_expected: 3,
   rubric_dimensions_valid: validRubricDimensions,
@@ -610,7 +788,7 @@ const result = {
 
 if (process.argv.includes("--json")) console.log(JSON.stringify(result, null, 2));
 else if (result.ok) {
-  console.log("PASS  SCN-05 单场景 P0：8 门／5 阶段／10 RACI／12 构件／8 验收；预可研 12/12；评委路径 3/3／评分索引 7/7；6 类公共群体／12 场景硬门槛；资格证据 6/6／评审归类 7/7；离线原型 14/14；真实观察 0");
+  console.log("PASS  SCN-05 单场景 P0：8 门／5 阶段／10 RACI／12 构件／8 验收；预可研 12/12；专业交接 17/17（5 尺度／4 状态／9 项目／6 包／11 模块／12 文件闸门／12 角色／12 条件任务／16 未计价数量／12 交接验收）；评委路径 3/3／评分索引 7/7；6 类公共群体／12 场景硬门槛；资格证据 6/6／评审归类 7/7；离线原型 14/14；真实观察 0");
 } else {
   console.error("FAIL  P0 可实施性与公共利益就绪包不完整");
   for (const error of errors) console.error(`- ${error}`);

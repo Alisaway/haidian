@@ -15,6 +15,10 @@
  *     --source-font /path/to/NotoSansCJKsc-Medium.otf \
  *     [--license-file /path/to/noto-cjk/Sans/LICENSE]
  *
+ * Reattach and verify an existing, already sufficient subset after rebuilding
+ * report HTML (does not create or expand font glyphs):
+ *   node build-webfont.js --reuse-existing-subset
+ *
  * When --license-file is omitted, the builder reuses the hash-bound full OFL
  * text already present in noto-cjk-subset.rights.json. This keeps an offline
  * rebuild self-contained without weakening the fixed licence checksum.
@@ -30,6 +34,9 @@ const { spawnSync } = require("child_process");
 
 const HERE = __dirname;
 const PKG = path.resolve(HERE, "../../..");
+// Official noto-cjk main/Sans/OTF/SimplifiedChinese binary. Keep the checksum
+// fail-closed: a future upstream binary change must be reviewed and recorded
+// before it can alter the delivered subset.
 const SOURCE_SHA256 = "ca094f6b0001fb048ca39ddd797a0cdb0179e1e55c6561e111c49c3e6a61d7b7";
 const LICENSE_SHA256 = "6a73f9541c2de74158c0e7cf6b0a58ef774f5a780bf191f2d7ec9cc53efe2bf2";
 const FAMILY = "JZHandoverCJK";
@@ -124,6 +131,24 @@ function requiredCodepoints() {
 }
 
 function main() {
+  const reuseExisting = process.argv.includes("--reuse-existing-subset");
+  if (reuseExisting) {
+    prepareReportPages();
+    const wanted = requiredCodepoints();
+    const coveragePath = path.join(PKG, COVERAGE_REL);
+    const coverage = JSON.parse(fs.readFileSync(coveragePath, "utf8"));
+    const covered = new Set(Array.isArray(coverage.codepoints) ? coverage.codepoints : []);
+    const missing = wanted.filter((cp) => !covered.has(cp));
+    if (missing.length) {
+      throw new Error(`现有 WOFF2 缺 ${missing.length} 个码位，必须提供 --source-font 重建：${missing.slice(0, 8).map((cp) => `U+${cp.toString(16).toUpperCase()}`).join(", ")}`);
+    }
+    coverage.pages = PAGES;
+    coverage.requested_codepoint_count = wanted.length;
+    coverage.reuse_verification = "existing subset reattached after report render; every currently visible codepoint is covered; no glyph payload was changed";
+    fs.writeFileSync(coveragePath, `${JSON.stringify(coverage, null, 2)}\n`);
+    process.stdout.write(`reused ${CSS_REL}; all ${wanted.length} requested codepoints are already covered\n`);
+    return;
+  }
   const source = argument("--source-font");
   const licenseFile = optionalArgument("--license-file");
   const python = process.env.PYTHON || "python3";
@@ -198,7 +223,7 @@ function main() {
       source_filename: path.basename(source),
       source_sha256: SOURCE_SHA256,
       source_version: metadata.version,
-      source_url: "https://github.com/notofonts/noto-cjk/tree/main/Sans/OTF/SimplifiedChinese",
+      source_url: "https://raw.githubusercontent.com/notofonts/noto-cjk/main/Sans/OTF/SimplifiedChinese/NotoSansCJKsc-Medium.otf",
       copyright: metadata.copyright,
       licence: metadata.licence,
       rights_path: RIGHTS_REL,

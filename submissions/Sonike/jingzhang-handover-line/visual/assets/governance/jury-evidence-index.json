@@ -22,13 +22,15 @@
       "path_id": "JURY-3M",
       "time_seconds": 180,
       "question_zh": "空间、服务与实施是否形成同一条证据链？",
-      "answer_zh": "依次看总体梳状结构、三场剖面、十二场景接管、P0 空间/班次/成本包络和三期条件门。",
+      "answer_zh": "依次看总体梳状结构、三场剖面、十二场景接管、P0 空间/班次/成本包络，以及从 1:500 到 1:20 的专业交付梯。",
       "evidence_refs": [
         "proposal.md#总体设计范围城市更新与控规深度城市设计",
         "proposal.md#重点区域详细设计",
         "proposal.md#更新项目清单实施政策与分期计划",
         "drawings/a0-boards.pdf#p01",
         "drawings/a0-boards.pdf#p06",
+        "drawings/a0-boards.pdf#p07",
+        "assets/figures/implementation-handoff.png",
         "visual/index.html#p0-prototype"
       ],
       "boundary_zh": "12/12 与 48/48 是合成离线证据；真实授权、主体和专业签认未取得。"
@@ -46,10 +48,12 @@
         "drawings/a3-booklet.pdf#p10",
         "drawings/a3-booklet.pdf#p12",
         "drawings/a3-booklet.pdf#p13",
+        "drawings/a3-booklet.pdf#p14",
         "metrics.json",
         "design_depth_matrix.json",
         "visual/assets/governance/p0-delivery-contract.json",
         "visual/assets/governance/p0-pre-feasibility-envelope.json",
+        "visual/assets/governance/implementation-handoff-register.json",
         "visual/assets/governance/public-service-equivalence-contract.json",
         "assumptions.json",
         "sources.json"
@@ -78,9 +82,9 @@
     },
     {
       "dimension_id": "implementation_feasibility",
-      "focus_zh": "P0 参考空间、容量、三席班次、90 天敏感性成本、维护、备选、八门与五阶段",
-      "primary_refs": ["assets/figures/metrics-evidence.png", "visual/assets/governance/p0-pre-feasibility-envelope.json", "visual/assets/governance/p0-delivery-contract.json", "drawings/a3-booklet.pdf#p01", "drawings/a3-booklet.pdf#p13"],
-      "boundary_ref": "visual/assets/governance/p0-delivery-contract.json#current_evidence"
+      "focus_zh": "P0 参考空间、容量、班次、成本敏感性，以及 5 级图纸、4 级释放、9 项目、6 包、11 模块、12 文件闸门与条件工期",
+      "primary_refs": ["assets/figures/metrics-evidence.png", "assets/figures/implementation-handoff.png", "visual/assets/governance/p0-pre-feasibility-envelope.json", "visual/assets/governance/implementation-handoff-register.json", "visual/assets/governance/p0-delivery-contract.json", "drawings/a3-booklet.pdf#p14"],
+      "boundary_ref": "visual/assets/governance/implementation-handoff-register.json#current_external_evidence"
     },
     {
       "dimension_id": "public_interest_inclusion",
@@ -96,11 +100,11 @@
     },
     {
       "dimension_id": "expression_completeness",
-      "focus_zh": "双语正文、五张核心图、四套图纸、离线原型、指标与证据矩阵",
+      "focus_zh": "双语正文、六张核心图、四套图纸、离线原型、指标与证据矩阵",
       "primary_refs": ["manifest.json", "proposal.en.md", "drawings/a0-boards.en.pdf", "visual/index.en.html", "design_depth_matrix.json"],
       "boundary_ref": "self_check.json"
     }
   ],
-  "consistency_rule_zh": "任一载体如出现比本索引更强的现场、成本、容量或批准主张，以 p0-delivery-contract.json 的 current_evidence 与本文件的 decision_boundary 为上限；不得把阅读索引当作事实来源。",
-  "consistency_rule_en": "If any carrier makes a stronger field, cost, capacity or approval claim than this index, p0-delivery-contract.json current_evidence and this file's decision boundary govern. The reading index is never itself a factual source."
+  "consistency_rule_zh": "任一载体如出现比本索引更强的现场、成本、容量或批准主张，以 p0-delivery-contract.json 与 implementation-handoff-register.json 的 current_external_evidence 为上限；不得把阅读索引当作事实来源。",
+  "consistency_rule_en": "If any carrier makes a stronger field, cost, capacity or approval claim than this index, the current_external_evidence boundaries in p0-delivery-contract.json and implementation-handoff-register.json govern. The reading index is never itself a factual source."
 }

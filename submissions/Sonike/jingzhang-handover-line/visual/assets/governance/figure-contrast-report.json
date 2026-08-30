@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
   "generated_at": "2026-08-24T06:30:00+00:00",
-  "scope": "本包自有视觉系统的 26 张栅格图件文字前景色，以及 F/02 中英栅格图与四套送审 PDF 第 2 页的用地非颜色冗余编码",
-  "scope_en": "foreground text colours of the package's 26 raster figures, plus non-colour land-use redundancy in the bilingual F/02 rasters and page 2 of all four review PDFs",
+  "scope": "本包自有视觉系统的 28 张栅格图件文字前景色，以及 F/02 中英栅格图与四套送审 PDF 第 2 页的用地非颜色冗余编码",
+  "scope_en": "foreground text colours of the package's 28 raster figures, plus non-colour land-use redundancy in the bilingual F/02 rasters and page 2 of all four review PDFs",
   "standard": {
     "name": "WCAG 2.1 SC 1.4.3 Contrast (Minimum)",
     "threshold_normal_text": 4.5,
@@ -71,7 +71,7 @@
       "meets_wcag_aa_normal_text": true
     }
   ],
-  "minimum_text_contrast": 4.6,
+  "minimum_text_contrast": 4.54,
   "all_text_colours_pass_aa": true,
   "superseded_fill_colours_previously_used_as_text": [
     {
@@ -110,6 +110,29 @@
   "change_note_zh": "四色亮版此前被直接用作文字色（最低 1.50:1，最严重处为重点区卡片的复算面积大数字）。2026-08-17 起亮版只用于填充、色条与图例色块，文字改用同色相的深版；色相与语义绑定不变。",
   "change_note_en": "The four bright colours were previously used directly as text (lowest 1.50:1; worst case the recalculated-area figure on the key-area cards). Since 2026-08-17 the bright versions are used only for fills, colour bars and legend swatches; text uses darker variants of the same hues. Hue-to-meaning binding is unchanged.",
   "v2_reverification": "2026-08-23：重画 key-areas.png／key-areas.en.png 时，生成器显式对齐本报告两种底色与七种文字色；RED／TEAL／YELLOW／GREEN 四种亮色只作填充、线、图例色块与非文字符号。黄色停用符号内的 × 改用 COAL，三场编号、责任链、断面总宽与参考断面提示均改用同色相深版。",
+  "p0_handoff_board_reverification": {
+    "verified_at": "2026-08-30",
+    "carriers": [
+      "assets/figures/metrics-evidence.png",
+      "assets/figures/metrics-evidence.en.png",
+      "assets/figures/implementation-handoff.png",
+      "assets/figures/implementation-handoff.en.png"
+    ],
+    "method": "按 WCAG 2.1 相对亮度公式复算 F/05 与 F/06 生成器中每一组实际文字／底色组合；亮色仅在深色卡片上作文字，其余亮色只作线、色条或填充。",
+    "minimum_pair": {
+      "foreground": "#e64b3c",
+      "background": "#171a18",
+      "contrast": 4.54,
+      "usage": "F/05 与 F/06 深色交付卡片上的红色强调数字"
+    },
+    "other_low_pairs": [
+      { "foreground": "#83660a", "background": "#f2eddf", "contrast": 4.64 },
+      { "foreground": "#c72d1e", "background": "#f2eddf", "contrast": 4.7 },
+      { "foreground": "#00746f", "background": "#f2eddf", "contrast": 4.82 },
+      { "foreground": "#5b625d", "background": "#f2eddf", "contrast": 5.36 }
+    ],
+    "all_normal_text_pairs_pass_4_5": true
+  },
   "non_color_redundancy": {
     "status": "implemented_pending_real_user_validation",
     "implemented_at": "2026-08-24T06:30:00+00:00",
