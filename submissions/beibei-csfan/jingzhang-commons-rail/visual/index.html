@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>京张共证廊 · 离线展示</title>
+<style>
+:root{--ink:#1a2332;--muted:#5c6b7a;--line:#d5dde6;--paper:#fff;--soft:#f4f6f8;--olive:#5b7348;--blue:#3d5a73;--ochre:#8a6a32;--brick:#8b4032}
+*{box-sizing:border-box}body{margin:0;font-family:"WenQuanYi Micro Hei","PingFang SC","Noto Sans CJK SC",sans-serif;background:#eef1f4;color:var(--ink);line-height:1.55}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+header{background:#1a2332;color:#fff;border-bottom:4px solid #8a6a32}
+header .wrap{padding:28px 20px 24px}h1{margin:0 0 8px;font-size:28px;font-weight:600}
+.sub{color:#c9d3dc;margin:0 0 12px}.note{font-size:13px;color:#d7c38a}
+section{background:var(--paper);border:1px solid var(--line);margin:16px 0;padding:18px 20px}
+h2{margin:0 0 10px;font-size:18px;border-left:4px solid var(--olive);padding-left:10px}
+h3{margin:14px 0 6px;font-size:15px}p,li{font-size:14px;color:#2c3744}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{border:1px solid var(--line);padding:10px 12px;background:var(--soft)}
+.metric{font-variant-numeric:tabular-nums;font-size:22px;font-weight:600}
+svg{width:100%;height:auto;background:#fbfcfd;border:1px solid var(--line)}
+.legend{display:flex;flex-wrap:wrap;gap:10px;font-size:12px;color:var(--muted);margin-top:8px}
+.sw{display:inline-block;width:10px;height:10px;margin-right:4px;vertical-align:middle}
+table{width:100%;border-collapse:collapse;font-size:13px}th,td{border:1px solid var(--line);padding:6px 8px;text-align:left}
+th{background:var(--soft)}img{max-width:100%;height:auto;border:1px solid var(--line)}
+footer{color:var(--muted);font-size:12px;padding:20px;text-align:center}
+@media(max-width:800px){.grid3,.grid2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<div class="sub">百年京张 AI 创新带 · formal 离线展示 · COMMUNITY-DISPLAY-ONLY</div>
+<h1>京张共证廊</h1>
+<p class="sub">可走、可核、可关。一条公共核验廊串联就绪门 / 共测廊下 / 运营交接厅。</p>
+<p class="note">权威数据以 GeoJSON 与 metrics.json 为准。本页无 CDN、无远程瓦片、无外嵌页面。场地边界为临时约束，非正式红线。</p>
+</div></header>
+<main class="wrap">
+
+<section>
+<h2>总览地图</h2>
+<p>南北共证廊为公共核验脊；三门落在三重点区；虚线为临时场地边界。</p>
+<svg viewBox="0 0 900 420" role="img" aria-label="总览地图、三层范围、重点区域、用地分区、交通慢行、蓝绿公共空间、建筑与更新项目">
+<rect x="40" y="20" width="160" height="380" fill="#eef2f4" stroke="#1a2332" stroke-dasharray="5 4"/>
+<text x="120" y="210" text-anchor="middle" font-size="11" fill="#5c6b7a">统筹 43.6 km²</text>
+<rect x="220" y="30" width="200" height="360" fill="#f7f1e3" stroke="#8a6a32" stroke-dasharray="4 3"/>
+<text x="320" y="48" text-anchor="middle" font-size="11" fill="#8a6a32">总体 11.4 km² · 临时</text>
+<rect x="278" y="50" width="44" height="320" fill="#c5d4b4" stroke="#5b7348"/>
+<text x="300" y="210" text-anchor="middle" font-size="11" fill="#2f3d24" transform="rotate(-90 300 210)">共证廊</text>
+<rect x="460" y="40" width="380" height="100" fill="#e8e3d4" stroke="#8b4032"/>
+<text x="650" y="95" text-anchor="middle" font-size="14">众智园 · 就绪门</text>
+<rect x="460" y="160" width="380" height="100" fill="#d9e0e6" stroke="#3d5a73"/>
+<text x="650" y="215" text-anchor="middle" font-size="14">原点社区 · 共测廊下</text>
+<rect x="460" y="280" width="380" height="100" fill="#e6ddd3" stroke="#8a6a32"/>
+<text x="650" y="335" text-anchor="middle" font-size="14">大钟寺 · 运营交接厅</text>
+<line x1="322" y1="50" x2="322" y2="370" stroke="#1a2332" stroke-width="3"/>
+<text x="80" y="400" font-size="10" fill="#5c6b7a">PROVISIONAL · 非正式红线</text>
+</svg>
+<div class="legend"><span><i class="sw" style="background:#c5d4b4"></i>蓝绿公共空间</span><span><i class="sw" style="background:#f7f1e3"></i>用地分区</span><span><i class="sw" style="background:#1a2332"></i>交通慢行</span><span><i class="sw" style="background:#e8e3d4"></i>建筑与更新项目</span></div>
+<p><img src="../assets/figures/site-overview.png" alt="总体概念图"></p>
+</section>
+
+<section>
+<h2>三层范围</h2>
+<div class="grid3">
+<article class="card"><h3>统筹研究范围</h3><p>43.6 km²：命名、8 个机制案例、两翼接口。不新画红线。</p></article>
+<article class="card"><h3>总体设计范围</h3><p>11.4 km² 临时面：共证廊剖分、慢行、蓝绿、分期。</p></article>
+<article class="card"><h3>重点区域范围</h3><p>368.4 ha：三门差异化详细意图，area_id 固定。</p></article>
+</div>
+</section>
+
+<section>
+<h2>重点区域</h2>
+<div class="grid3">
+<article class="card"><h3>众智园AI自主创新加速区</h3><p>就绪门。测试场贴边，不占无账号断面。</p></article>
+<article class="card"><h3>北京AI原点社区</h3><p>共测廊下。近校测量日与问答墙。</p></article>
+<article class="card"><h3>大钟寺AI产业聚集区</h3><p>运营交接厅。站城步行与班次看板。</p></article>
+</div>
+<p><img src="../assets/figures/key-areas.png" alt="三重点区"></p>
+</section>
+
+<section>
+<h2>用地分区</h2>
+<p>廊 1401，北段 0802，近校 0804 / 0701，中段 09，南段 0901 / 0702。铺满临时边界，设计模型分类。</p>
+<p><img src="../assets/figures/land-use-structure.png" alt="用地与结构"></p>
+</section>
+
+<section>
+<h2>交通慢行</h2>
+<p>无账号慢行主脊约 9,042.827 m，三门东西横联。概念中心线，非道路红线。</p>
+</section>
+
+<section>
+<h2>蓝绿公共空间</h2>
+<p>绿脊 + 北园 + 南边；公共面为慢行断面 + 三门广场。青年第三空间与夜间普通路径写在场景卡。</p>
+<p><img src="../assets/figures/mobility-bluegreen.png" alt="交通与蓝绿"></p>
+</section>
+
+<section>
+<h2>建筑</h2>
+<p>六处概念基底，复算 1,287,206.112 m²，低置信，不是实测轮廓。高度与容积率 unknown。</p>
+</section>
+
+<section>
+<h2>更新项目</h2>
+<p>CG-01 至 CG-10：近廊与三门，中横联与缝合，远两翼接口，条件项为正式几何替换后重算。</p>
+</section>
+
+<section>
+<h2>AI 场景</h2>
+<div class="grid3">
+<article class="card">S01 无账号导览</article><article class="card">S02 就绪门测试</article><article class="card">S03 共测测量日</article>
+<article class="card">S04 班次看板</article><article class="card">S05 青年第三空间</article><article class="card">S06 遗产核对窗</article>
+<article class="card">S07 雨后复盘</article><article class="card">S08 无障碍报修</article><article class="card">S09 夜间普通路径</article>
+<article class="card">S10 年度开放日</article><article class="card">S11 企业接口</article><article class="card">S12 异议窗</article>
+</div>
+</section>
+
+<section>
+<h2>核心指标</h2>
+<div class="grid3">
+<div class="card"><div>site_area_sqm</div><div class="metric" data-metric="site_area_sqm" data-value="11412825.386">11412825.386</div></div>
+<div class="card"><div>green_ratio</div><div class="metric" data-metric="green_ratio" data-value="0.259513">0.259513</div></div>
+<div class="card"><div>public_space_ratio</div><div class="metric" data-metric="public_space_ratio" data-value="0.118607">0.118607</div></div>
+</div>
+<p>算法：场地面积 = site_boundary 在 EPSG:4548 的面积；绿地率 = 绿地并集 / 场地；公共空间率 = 公共并集 / 场地。非正式法定控制值。</p>
+<p><img src="../assets/figures/metrics-evidence.png" alt="指标证据"></p>
+</section>
+
+<section>
+<h2>任务覆盖</h2>
+<p>compliance_matrix 覆盖公告 1.3 / 1.4 / 1.5 与 agent.1–6。standard_matrix 与 design_depth_matrix 证明标准与深度。核心深度项 complete，控规类以 completeness_limited_by 披露缺口。</p>
+</section>
+
+<section>
+<h2>自检状态</h2>
+<p>本页提交前须通过 deterministic / spatial / visual / professional 四门。当前边界：临时约束，intake 可评内容，正式红线到达后全量重算。</p>
+</section>
+
+<section class="grid2">
+<div>
+<h2>来源</h2>
+<p>OFFICIAL-ANNOUNCEMENT、AGENT-TASKBOOK、SITE-PACKAGE、SOURCE-REGISTRY、PROCESSED-FACT-PACK、BOUNDARY-SOURCE、KEY-AREA-SOURCE。详见 sources.json。</p>
+</div>
+<div>
+<h2>假设</h2>
+<p>A-PROVISIONAL-BOUNDARY、A-CONTROLS-001、A-HERITAGE-HINT、A-NO-LOGIN-PATH、A-PRIVACY-MIN。容积率与高度保持 unknown。</p>
+</div>
+</section>
+</main>
+<footer>Jingzhang Commons Gallery · submissions/beibei-csfan/jingzhang-commons-rail · 概念建议，不替代法定规划</footer>
+</body>
+</html>
