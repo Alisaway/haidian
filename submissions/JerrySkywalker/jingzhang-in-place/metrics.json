@@ -195,9 +195,9 @@
       "value": 12.0,
       "unit": "count",
       "source_files": [
-        "simulation.json"
+        "visual/assets/taskbook-closure.json"
       ],
-      "formula": "count(tasks)",
+      "formula": "count(taskbook-closure.scenario_cards)",
       "confidence": "high",
       "assumptions": []
     },
@@ -206,20 +206,20 @@
       "value": 3.0,
       "unit": "count",
       "source_files": [
-        "simulation.json"
+        "visual/assets/taskbook-closure.json"
       ],
-      "formula": "count(tasks where industry_validation=true)",
+      "formula": "count(taskbook-closure.validation_scenarios)",
       "confidence": "high",
       "assumptions": []
     },
     "persona_count": {
       "status": "known",
-      "value": 8.0,
+      "value": 6.0,
       "unit": "count",
       "source_files": [
-        "simulation.json"
+        "visual/assets/taskbook-closure.json"
       ],
-      "formula": "count(personas)",
+      "formula": "count(taskbook-closure.personas)",
       "confidence": "high",
       "assumptions": []
     },
@@ -228,9 +228,42 @@
       "value": 3.0,
       "unit": "count",
       "source_files": [
-        "simulation.json"
+        "visual/assets/taskbook-closure.json"
       ],
-      "formula": "count(tasks where deep_task_packet=true)",
+      "formula": "count(taskbook-closure.scenario_cards where deep_validation=true)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "agent_task_count": {
+      "status": "known",
+      "value": 6.0,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/taskbook-closure.json"
+      ],
+      "formula": "taskbook-closure.count_contract.agent_tasks",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "global_ai_ecosystem_case_count": {
+      "status": "known",
+      "value": 5.0,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/taskbook-closure.json"
+      ],
+      "formula": "count(taskbook-closure.ecosystem_cases)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "ai_pilgrimage_landmark_count": {
+      "status": "known",
+      "value": 3.0,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/taskbook-closure.json"
+      ],
+      "formula": "count(taskbook-closure.landmarks)",
       "confidence": "high",
       "assumptions": []
     },

@@ -14,4 +14,4 @@ The output is rendered with installed Windows system fonts during export. PDFs m
 
 ## AI and human responsibility
 
-The Owner directed the candidate, constraints and working direction. AI/Codex supported public-source research, structured design generation, deterministic production and validation. No unverified credential, public endorsement, implementation commitment or professional sign-off is claimed. Final candidate choice remains `OWNER_DECISION_REQUIRED`.
+The Owner directed the candidate, constraints and working direction. AI/Codex supported public-source research, structured design generation, deterministic production and validation. The Owner selected Jing-Zhang In Place as the participant's final submission candidate. This internal selection is not a competition result, award claim, official adoption, implementation approval, or government endorsement. No unverified credential or professional sign-off is claimed.
