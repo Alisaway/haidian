@@ -1,5 +1,19 @@
 # 方案迭代记录 / Changelog
 
+## v98.0 - 2026-08-30
+
+**三区证据矩阵导航出处刷新 / Key-area Matrix Navigation-provenance Refresh**
+
+- 已有能力：R97 已把当前交接索引限定为审阅导航与交接摘要；PR #4275 在 exact head `1d29344705cd027472a2e54487d0b0f2312581be` 完成 96/100、无阻断项评审并以 merge SHA `674925fc9dae693c9cd99a7a442e0ac0353a00b3` 进入 canonical main。
+- 真实缺口：修复前，三区证据矩阵仍用现在时声称“Round 20 review handoff index”登记当前矩阵、日期与载体角色；实际当前索引为 R97。自动 gate 不比较矩阵回链文字与当前索引合同，因此旧轮次标签会让审阅者误判导航出处和时效性。
+- 必须冻结：冻结“双轨京张 / Twin-Track Jing-Zhang”、三种不可互换原型、JZ-AIOS、G0—G3、四轴、三载体、证据门、权利边界及 12/8/3/36；不改 proposal、report/visual 页面、图件、媒体、四份 PDF、geometry、metrics、来源判断、现实状态或 0/8 人工双语签署。
+- 本轮实施：把三区证据矩阵的导航回链精确绑定到 `JZ-REVIEW-HANDOFF-R97.0`，并将角色限定为“审阅导航与交接摘要”；明确该索引不建立矩阵证据、时效性、成熟度、哈希、权利、现场事实、批准或外部评审状态。官方几何、批准、现场基线与结果、现实责任、预算、恢复时间、公众反馈、独立法律/商标审查和人工双语签署继续为 unknown、0、未提供或 NO-GO。
+
+- Existing capability: R97 limited the current handoff index to review navigation and handoff summary. PR #4275 completed a 96/100 review with no blocker on exact head `1d29344705cd027472a2e54487d0b0f2312581be` and entered canonical main as merge SHA `674925fc9dae693c9cd99a7a442e0ac0353a00b3`.
+- Real gap: before repair, the key-area evidence matrix still claimed in present tense that the “Round 20 review handoff index” registered the current matrix, date and carrier role, while the actual current index is R97. Automated gates do not compare matrix backlink prose with the current index contract, so the obsolete round label could misstate navigation provenance and freshness.
+- Frozen boundary: Twin-Track Jing-Zhang, the three non-interchangeable prototypes, JZ-AIOS, G0–G3, four axes, three carriers, evidence gates, rights boundaries and 12/8/3/36 remain frozen. Proposals, report/visual pages, figures, media, all four PDFs, geometry, metrics, source judgements, real-world status and the unsigned 0/8 human bilingual review are unchanged.
+- Implemented this round: bound the key-area matrix navigation backlink exactly to `JZ-REVIEW-HANDOFF-R97.0` and limited its role to review navigation and handoff summary. The index explicitly establishes no matrix evidence, freshness, maturity, hashes, rights, field truth, approval or external-review status. Official geometry, approvals, field baselines and outcomes, real accountability, budgets, recovery time, public feedback, independent legal/trademark review and human bilingual sign-off remain unknown, zero, not provided or NO-GO.
+
 ## v97.0 - 2026-08-30
 
 **审阅索引角色边界闭合 / Review-index Role-boundary Closure**
