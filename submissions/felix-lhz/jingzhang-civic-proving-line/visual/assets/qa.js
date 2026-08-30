@@ -67,6 +67,29 @@ for(const rel of ['report/proposal.html','report/proposal.en.html']){
   ok(!firstScreen.includes('v16-report')&&!firstScreen.includes('G0 NO-GO'),`${rel} contains legacy first screen`);
 }
 
+const fontRel='visual/assets/font-bundle.json';
+const fontBundle=json(fontRel);
+const fontMeta=json('visual/assets/font-metadata.json');
+const fontGlyphs=json('visual/assets/font-glyphs.json').characters;
+const fontBinary=Buffer.from(fontBundle.data_base64,'base64');
+const fontHash=crypto.createHash('sha256').update(fontBinary).digest('hex');
+ok(fontMeta.family==='JZ Civic CJK','Offline font family must be JZ Civic CJK');
+ok(fontMeta.license==='SIL Open Font License 1.1','Offline font must retain OFL 1.1');
+ok(fontMeta.subset.sha256===fontHash,'Offline font metadata hash mismatch');
+ok(fontBundle.sha256===fontHash,'Offline font bundle hash mismatch');
+ok(fontBinary.length<=480*1024,'Offline font subset exceeds 480 KiB');
+for(const rel of ['report/proposal.html','report/proposal.en.html','visual/index.html','visual/index.en.html']){
+  const html=text(rel);
+  ok(read(rel).length<2*1024*1024,`${rel} exceeds 2 MiB`);
+  ok(html.includes("font-family:'JZ Civic CJK'"),`${rel} missing embedded font family`);
+  const match=html.match(/data:font\/woff2;base64,([A-Za-z0-9+/=]+)/);
+  ok(match,`${rel} missing embedded WOFF2 data URI`);
+  const embeddedHash=crypto.createHash('sha256').update(Buffer.from(match[1],'base64')).digest('hex');
+  ok(embeddedHash===fontHash,`${rel} embeds the wrong font binary`);
+  ok(!html.includes('\uFFFD')&&!html.includes('\u25A1'),`${rel} contains a replacement/tofu character`);
+  for(const character of new Set([...html].filter(c=>c.codePointAt(0)>127)))ok(fontGlyphs.includes(character),`${rel} font subset misses U+${character.codePointAt(0).toString(16).toUpperCase()}`);
+}
+
 const core=['site-overview','land-use-structure','key-areas','mobility-bluegreen','metrics-evidence'];
 for(const suffix of ['', '.en']){
   const hashes=core.map(n=>sha(`assets/figures/${n}${suffix}.png`));
@@ -78,13 +101,13 @@ const total=(function walk(d){return fs.readdirSync(d,{withFileTypes:true}).redu
 ok(total<38*1024*1024,`Package exceeds 38 MiB: ${total}`);
 
 const sources=json('sources.json').sources;
-for(const id of ['BEIJING-BLOCK-PLAN-APPROVED-20260812','BEIJING-JZ-PHASE2-COMPLETE-20260714','GENERATED-RECEIPT-PORCH-V17-DAY','GENERATED-RECEIPT-PORCH-V17-NIGHT']){
+for(const id of ['BEIJING-BLOCK-PLAN-APPROVED-20260812','BEIJING-JZ-PHASE2-COMPLETE-20260714','GENERATED-RECEIPT-PORCH-V17-DAY','GENERATED-RECEIPT-PORCH-V17-NIGHT','SOURCE-HAN-SANS-2.005R']){
   const s=sources.find(x=>x.id===id);ok(s,`Missing source ${id}`);if(s.path)ok(fs.existsSync(path.join(ROOT,s.path)),`Missing asset for ${id}`);if(s.companion_path)ok(fs.existsSync(path.join(ROOT,s.companion_path)),`Missing companion for ${id}`);
 }
 const buildCode=text('visual/assets/build.js')+text('visual/assets/content.js')+text('visual/assets/build-html.js');
 ok(!/Legacy|V1[1-6]_REPORT|function\s+\w+V1[1-6]/.test(buildCode),'Canonical build contains legacy override code');
 ok(!fs.existsSync(path.join(ROOT,'visual/assets/app.js'))&&!fs.existsSync(path.join(ROOT,'visual/assets/styles.css')),'Unused app/styles assets should be removed');
 const listed=new Set(json('manifest.json').files.map(x=>x.path));
-for(const rel of ['visual/assets/prototype-model.json','visual/assets/content.js','visual/assets/build.js','visual/assets/build-html.js','visual/assets/qa.js','assets/figures/jury-summary.png','assets/media/receipt-porch-v17-day.webp','assets/media/receipt-porch-v17-night.webp'])ok(listed.has(rel),`Manifest missing ${rel}`);
+for(const rel of ['visual/assets/prototype-model.json','visual/assets/content.js','visual/assets/build.js','visual/assets/build-html.js','visual/assets/build-font.js','visual/assets/font-render-qa.js','visual/assets/qa.js','visual/assets/font-bundle.json','visual/assets/font-metadata.json','visual/assets/font-glyphs.json','visual/assets/font-license.json','assets/figures/jury-summary.png','assets/media/receipt-porch-v17-day.webp','assets/media/receipt-porch-v17-night.webp'])ok(listed.has(rel),`Manifest missing ${rel}`);
 
-console.log(JSON.stringify({ok:true,schema:'1.14.0',prototypes:3,materials:5,scenarios:12,public_route_width_m:4,states:4,current_stage:'G0_survey_and_permit_preparation',permits:'0/8',baseline:'0/7',core_unique:true,offline:true,package_bytes:total},null,2));
+console.log(JSON.stringify({ok:true,schema:'1.14.0',prototypes:3,materials:5,scenarios:12,public_route_width_m:4,states:4,current_stage:'G0_survey_and_permit_preparation',permits:'0/8',baseline:'0/7',core_unique:true,offline:true,font_family:fontMeta.family,font_bytes:fontBinary.length,package_bytes:total},null,2));
