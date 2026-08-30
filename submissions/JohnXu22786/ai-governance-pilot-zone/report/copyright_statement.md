@@ -5,9 +5,9 @@ All submitted text, geometry, diagrams, PDFs and static HTML are concept materia
 ## Asset rights ledger
 
 1. **Text and structure.** Proposal text, matrices, risk records and geometry metadata are package-authored concept material for competition display (`COMMUNITY-DISPLAY-ONLY`).
-2. **Figures and drawings.** The five figure pairs, PDFs and previews are self-drawn diagrams generated from this package's conceptual geometry and public context. Noto Sans SC is used under SIL OFL 1.1. No identity logo or third-party mark is submitted.
+2. **Figures and drawings.** The five figure pairs, PDFs and previews are self-drawn diagrams generated from this package's conceptual geometry and public context. Noto Sans SC is embedded under SIL OFL 1.1 and recorded as DATA-SRC-NOTO-SANS-SC-20260830. The functional visual system and diagrams are self-drawn and recorded as DATA-SRC-PACKAGE-VISUAL-SYSTEM-SELF-DRAWN-20260830. No identity logo or third-party mark is submitted.
 3. **Public references.** International case references are short factual mechanism citations only; sources.json records the official URL, access date, license/reuse boundary and applicability limit. NIST AI RMF is a voluntary international reference, not an endorsement or Chinese statutory basis.
-4. **Naming boundary.** The package intentionally uses functional descriptions only: Governance Lab, Audit & Impact Hub and Content Marker Walk. These labels and diagram legends are not presented as cleared trademarks, logos, authorized names or registrable assets. Any future public activation requires a qualified rights review.
+4. **Naming boundary.** The package intentionally uses a functional-label hierarchy: AI治理试验带 / AI Governance Pilot Belt, Governance Lab, Audit & Impact Hub, Content Marker Walk, and replaceable activity labels. The palette, font, numbered legends and card/wayfinding layout are a non-branded visual system, not cleared trademarks, logos, authorized names or registrable assets. Any future public activation requires a qualified rights review.
 
 ## Reuse boundary
 
