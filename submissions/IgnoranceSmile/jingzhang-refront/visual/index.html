@@ -49,7 +49,7 @@ a { color:inherit; }
 .visual-label { position:absolute; top:14px; left:14px; max-width:calc(100% - 28px); padding:7px 10px; background:rgba(23,33,36,.92); color:#fff; font-size:10px; font-weight:750; letter-spacing:.09em; text-transform:uppercase; }
 figcaption { margin-top:10px; color:var(--secondary); font-size:12px; line-height:1.45; }
 .evidence-rail { max-width:var(--measure); margin:0 auto; padding:0 var(--pad) 34px; }
-.evidence-rail-inner { border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); padding:13px 0 14px; display:grid; grid-template-columns:minmax(150px,.6fr) repeat(2,minmax(0,1fr)); gap:22px; align-items:start; }
+.evidence-rail-inner { border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); padding:13px 0 14px; display:grid; grid-template-columns:minmax(135px,.52fr) repeat(3,minmax(0,1fr)); gap:18px; align-items:start; }
 .evidence-rail h2 { margin:0; color:var(--rust); font-size:10px; line-height:1.25; letter-spacing:.14em; text-transform:uppercase; }
 .evidence-state { padding-left:14px; border-left:3px solid var(--teal); }
 .evidence-state.pending { border-color:var(--amber); }
@@ -146,7 +146,8 @@ main { overflow:hidden; }
 @media (max-width:1100px) {
   .hero-grid, .operations-grid { grid-template-columns:1fr; }
   .concept-hero { max-width:820px; }
-  .evidence-rail-inner { grid-template-columns:minmax(120px,.6fr) repeat(2,minmax(0,1fr)); }
+  .evidence-rail-inner { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .evidence-rail h2 { grid-column:1/-1; }
   .area-grid, .sections-grid, .hero-diagram-grid { grid-template-columns:1fr; }
   .area p, .section-card p, .hero-diagram h3 { min-height:0; }
   .area { display:grid; grid-template-columns:minmax(0,.7fr) minmax(320px,1.3fr); column-gap:30px; }
@@ -191,6 +192,7 @@ main { overflow:hidden; }
   .evidence-strip { background:#fff; }
 }
 </style>
+  <link rel="stylesheet" href="assets/jingzhang-cjk.css">
 </head>
 <body>
 <a class="skip-link" href="#main">跳到主要内容</a>
@@ -206,9 +208,9 @@ main { overflow:hidden; }
       <figure class="concept-hero"><div class="image-wrap"><img src="assets/hero-ai-origin-concept.webp" alt="AI 原点复面样段概念体验图：成熟乔木下的可撤首层前厅、人工服务台、无障碍通行与独立后勤线" data-figure-key="concept-ai-origin" loading="eager" decoding="async"><span class="visual-label">概念体验图 / 非现状、非批准方案</span></div><figcaption>AI 原点复面样段的日常公共前沿想象。建筑、入口和构筑物为设计意向，不对应经核实的精确现场位置。</figcaption></figure>
     </div>
   </div>
-  <div class="evidence-rail"><div class="evidence-rail-inner"><h2>证据边界</h2><div class="evidence-state"><b>概念设计可推进</b><span>M 为竞赛主方案；空间动作以条件式建议表达。</span></div><div class="evidence-state pending"><b>工程实施待专业核验</b><span>门、柱网、权属、消防、停车与后勤条件未解锁。</span></div></div></div>
+  <div class="evidence-rail"><div class="evidence-rail-inner"><h2>证据边界</h2><div class="evidence-state"><b>概念设计可推进</b><span>M 为竞赛主方案；空间动作以条件式建议表达。</span></div><div class="evidence-state pending"><b>工程实施待专业核验</b><span>门、柱网、权属、消防、停车与后勤条件未解锁。</span></div><div class="evidence-state pending"><b>区域接口待书面协商</b><span>五个接口均为概念建议，不表示既有合作或数据共享。</span></div></div></div>
 </header>
-<nav class="atlas-nav" aria-label="章节导航"><ol><li><a href="#overall">01&nbsp; 总体</a></li><li><a href="#three-fronts">02&nbsp; 三类前沿</a></li><li><a href="#ai-origin">03&nbsp; AI 原点</a></li><li><a href="#sections">04&nbsp; 关键剖面</a></li><li><a href="#scenarios">05&nbsp; AI 场景</a></li><li><a href="#people">06&nbsp; 人物与运营</a></li><li><a href="#metrics">07&nbsp; 指标与边界</a></li></ol></nav>
+<nav class="atlas-nav" aria-label="章节导航"><ol><li><a href="#overall">01&nbsp; 总体</a></li><li><a href="#regional">02&nbsp; 区域接口</a></li><li><a href="#three-fronts">03&nbsp; 三类前沿</a></li><li><a href="#ai-origin">04&nbsp; AI 原点</a></li><li><a href="#sections">05&nbsp; 关键剖面</a></li><li><a href="#scenarios">06&nbsp; AI 场景</a></li><li><a href="#people">07&nbsp; 人物与运营</a></li><li><a href="#metrics">08&nbsp; 指标与边界</a></li></ol></nav>
 <main id="main">
   <section class="plate" id="overall">
     <header class="plate-head"><div class="kicker">01 / OVERALL STRUCTURE</div><div class="plate-title"><h2>一园双面，三区两翼</h2><p class="subtitle">空间母图：既有公共脊、三类复面与两条服务能力翼</p></div></header>
@@ -220,40 +222,47 @@ main { overflow:hidden; }
     <aside class="evidence-strip"><strong>证据边界</strong> · 连线表示服务关系，不表示道路、管线或产权；十五段是分析带，不是法定边界。约 18 km 的双侧界面长度已撤回，待真实双侧折线完整重算。</aside>
   </section>
 
+  <section class="plate" id="regional">
+    <header class="plate-head"><div class="kicker">02 / REGIONAL PROTOCOL MATRIX</div><div class="plate-title"><h2>带外区域协同，从任务单与书面协商开始</h2><p class="subtitle">北纬社区、未来科学城、怀柔科学城、经开区与京津冀被转译为五条非物理接口</p></div></header>
+    <p class="lead">每条接口同时写明拟协同议题、非物理机制、建议责任角色、京张载体、待验证回报与证据状态。对方未确认，全部待书面协商。</p>
+    <figure class="full-figure"><img src="assets/regional-synergy.webp" alt="五个带外区域协同对象的议题、非物理机制、责任角色、载体、回报和证据状态矩阵" data-figure-key="regional-synergy" loading="lazy" decoding="async"><figcaption>任务书只支撑五个对象名称；所有议题、机制、角色、载体与回报都是投稿者概念建议，不证明既有合作、同意、数据共享或实施承诺。</figcaption></figure>
+    <aside class="evidence-strip"><strong>协商边界</strong> · 任务书只支撑五个对象名称；所有议题、机制、角色、载体与回报都是投稿者概念建议，不证明既有合作、同意、数据共享或实施承诺。</aside>
+  </section>
+
   <section class="plate" id="three-fronts">
-    <header class="plate-head"><div class="kicker">02 / THREE FRONTS</div><div class="plate-title"><h2>三种冲突，三种复面</h2><p class="subtitle">每处片区以冲突—空间动作—人工终决—停止条件组织，不复制同一形式</p></div></header>
+    <header class="plate-head"><div class="kicker">03 / THREE FRONTS</div><div class="plate-title"><h2>三种冲突，三种复面</h2><p class="subtitle">每处片区以冲突—空间动作—人工终决—停止条件组织，不复制同一形式</p></div></header>
     <figure class="full-figure"><img src="assets/key-areas.webp" alt="三个重点区的同尺度 OSM 背景与三类复面设计比较" data-figure-key="key-areas" loading="lazy" decoding="async"><figcaption>三个重点区的统一比例尺比较。真实 OSM 命名锚点与仓库临时 polygon 存在错位，图中不做静默平移。</figcaption></figure>
     <div class="area-grid"><article class="area"><span class="eyebrow">01 / 众智园</span><h3>让科研可见，但不越界</h3><h4>科研复面</h4><p>可控观察、安全边界与首层公共前厅。公共可见不等于打开实验室。</p><div class="image-wrap"><img src="assets/hero-research-concept.webp" alt="让科研可见，但不越界的概念体验图，画面为设计意向而非现状证据" data-figure-key="concept-research" loading="lazy" decoding="async"><span class="visual-label">概念体验图 / 非现状、非批准方案</span></div></article><article class="area"><span class="eyebrow">02 / AI 原点</span><h3>把首层变成创新前厅</h3><h4>校城复面</h4><p>首层、院前、公园与后勤系统条件式共存；门诊、服务和日常通行优先。</p><div class="image-wrap"><img src="assets/hero-ai-origin-concept.webp" alt="把首层变成创新前厅的概念体验图，画面为设计意向而非现状证据" data-figure-key="concept-ai-origin" loading="lazy" decoding="async"><span class="visual-label">概念体验图 / 非现状、非批准方案</span></div></article><article class="area"><span class="eyebrow">03 / 大钟寺</span><h3>让抵达与服务在地面相遇</h3><h4>站城复面</h4><p>站口、换乘、社区服务与公园普通通行在 AI-off 状态下仍然可读。</p><div class="image-wrap"><img src="assets/hero-dazhongsi-concept.webp" alt="让抵达与服务在地面相遇的概念体验图，画面为设计意向而非现状证据" data-figure-key="concept-dazhongsi" loading="lazy" decoding="async"><span class="visual-label">概念体验图 / 非现状、非批准方案</span></div></article></div>
     <aside class="evidence-strip"><strong>临时几何</strong> · 三个重点区的统一比例尺比较。真实 OSM 命名锚点与仓库临时 polygon 存在错位，图中不做静默平移。</aside>
   </section>
 
   <section class="plate" id="ai-origin">
-    <header class="plate-head"><div class="kicker">03 / AI ORIGIN DEMONSTRATOR</div><div class="plate-title"><h2>两锚一接点：AI 原点复面样段</h2><p class="subtitle">以 IF-01、IF-02 和 S2 验证首层、院前、公园与后勤能否共存</p></div></header>
+    <header class="plate-head"><div class="kicker">04 / AI ORIGIN DEMONSTRATOR</div><div class="plate-title"><h2>两锚一接点：AI 原点复面样段</h2><p class="subtitle">以 IF-01、IF-02 和 S2 验证首层、院前、公园与后勤能否共存</p></div></header>
     <p class="lead">M “中度复面”是竞赛主方案：在真实 OSM 背景上作参数化、条件式设计。未核实的门、柱网、停车、产权、消防与工程边界以虚线、P?、变量尺寸或备选状态表达。</p>
     <div class="duo uneven"><figure class="diagram"><h3>AI 原点复面样段总平</h3><p class="tech-sub">两锚一接点 / 约 1:2,000 概念关系</p><img src="assets/ai-origin-masterplan.webp" alt="AI 原点复面样段概念总平，标出 IF-01、IF-02、S2、公园脊、主复面与后勤原则线" data-figure-key="ai-origin-masterplan" loading="lazy" decoding="async"><figcaption>AI 原点两锚一接点概念总平，约 1:2,000 关系尺度。与 PROV-KEY-002 不相交，不将临时几何移到真实地图上。</figcaption></figure><figure class="diagram"><h3>首层前沿带—后勤换位</h3><p class="tech-sub">不清空现有日常，只在已核边界中带条件加深</p><img src="assets/ai-origin-ground-floor-strategy.webp" alt="AI 原点 IF-01 和 IF-02 首层前沿带、人工服务、低效硬地 P? 与后勤换位策略平面" data-figure-key="ai-origin-ground-floor-strategy" loading="lazy" decoding="async"><figcaption>首层前沿带—后勤换位策略平面，约 1:500 类型关系。C? 为 OSM 同名轮廓冲突，不当作已核楼座。</figcaption></figure></div>
     <aside class="evidence-strip"><strong>实现边界</strong> · 实现边界：M_CONCEPT_DESIGN=GO；M_ENGINEERING_IMPLEMENTATION=LOCKED。现场核验与专业审查是并行修正任务，不是被图面取代的工程证明。</aside>
   </section>
 
   <section class="plate" id="sections">
-    <header class="plate-head"><div class="kicker">04 / THREE TEST SECTIONS</div><div class="plate-title"><h2>从现状到 L，再到 M：只在条件成立时加深</h2><p class="subtitle">三道类型剖面共同检查前场、普通通行、无障碍、消防、医疗与后勤端点</p></div></header>
+    <header class="plate-head"><div class="kicker">05 / THREE TEST SECTIONS</div><div class="plate-title"><h2>从现状到 L，再到 M：只在条件成立时加深</h2><p class="subtitle">三道类型剖面共同检查前场、普通通行、无障碍、消防、医疗与后勤端点</p></div></header>
     <div class="sections-grid"><article class="section-card"><span class="code">IF-01</span><h3>前场相遇，后场不断</h3><p>创新活动与门诊共享前沿带；落客、消防和后勤保持连续。</p><figure class=""><img src="assets/section-if-01.webp" alt="IF-01 前场相遇，后场不断 现状—L—M 三联类型剖面" data-figure-key="section-if-01" loading="lazy" decoding="async"><figcaption>创新活动与门诊共享前沿带；落客、消防和后勤保持连续。</figcaption></figure></article><article class="section-card"><span class="code">IF-02</span><h3>人始终在场</h3><p>公共服务与人工治理锚点；不设置 AI 展厅。</p><figure class=""><img src="assets/section-if-02.webp" alt="IF-02 人始终在场 现状—L—M 三联类型剖面" data-figure-key="section-if-02" loading="lazy" decoding="async"><figcaption>公共服务与人工治理锚点；不设置 AI 展厅。</figcaption></figure></article><article class="section-card"><span class="code">S2</span><h3>过街成立，接棒才成立</h3><p>东向合法落点未证实前，只表达横向连接测试，不宣称新增贯通。</p><figure class=""><img src="assets/section-s2.webp" alt="S2 过街成立，接棒才成立 现状—L—M 三联类型剖面" data-figure-key="section-s2" loading="lazy" decoding="async"><figcaption>东向合法落点未证实前，只表达横向连接测试，不宣称新增贯通。</figcaption></figure></article></div>
     <aside class="evidence-strip"><strong>S2 / NO-LINK UNTIL PROVEN</strong> · S2 东向合法落点、公共权利、连续无障碍线与消防净空尚未证实。不满足全部条件时，主复面不换侧。</aside>
   </section>
 
   <section class="plate" id="scenarios">
-    <header class="plate-head"><div class="kicker">05 / TEN AI-ENABLED SCENARIOS</div><div class="plate-title"><h2>AI 是可关闭的增强层，人是不可移除的责任层</h2><p class="subtitle">每张场景卡都按“人 → 场所 → AI 动作 → 人工决定 → 关闭/退场”组织，不把概念设计写成已部署服务。</p></div></header>
+    <header class="plate-head"><div class="kicker">06 / TEN AI-ENABLED SCENARIOS</div><div class="plate-title"><h2>AI 是可关闭的增强层，人是不可移除的责任层</h2><p class="subtitle">每张场景卡都按“人 → 场所 → AI 动作 → 人工决定 → 关闭/退场”组织，不把概念设计写成已部署服务。</p></div></header>
     <div class="scenario-grid"><article class="scenario"><span class="sid">SC-01</span><div><h3>看得见的试验，不越界的科研</h3><p>科研协作前台</p><img src="assets/scenario-sc-01.webp" alt="SC-01 看得见的试验，不越界的科研 场景卡" data-figure-key="scenario-sc-01" loading="lazy" decoding="async"></div></article><article class="scenario"><span class="sid">SC-02</span><div><h3>诊疗、创新、检修，不在同一分钟抢一扇门</h3><p>一扇门的多时表</p><img src="assets/scenario-sc-02.webp" alt="SC-02 诊疗、创新、检修，不在同一分钟抢一扇门 场景卡" data-figure-key="scenario-sc-02" loading="lazy" decoding="async"></div></article><article class="scenario"><span class="sid">SC-03</span><div><h3>先到对地方，再谈智能</h3><p>诊疗优先的服务导引</p><img src="assets/scenario-sc-03.webp" alt="SC-03 先到对地方，再谈智能 场景卡" data-figure-key="scenario-sc-03" loading="lazy" decoding="async"></div></article><article class="scenario"><span class="sid">SC-04</span><div><h3>AI 帮你说清楚，人来做决定</h3><p>有人在场的公共服务台</p><img src="assets/scenario-sc-04.webp" alt="SC-04 AI 帮你说清楚，人来做决定 场景卡" data-figure-key="scenario-sc-04" loading="lazy" decoding="async"></div></article><article class="scenario"><span class="sid">SC-05</span><div><h3>配送不抢路，消防不等待</h3><p>同路不同速</p><img src="assets/scenario-sc-05.webp" alt="SC-05 配送不抢路，消防不等待 场景卡" data-figure-key="scenario-sc-05" loading="lazy" decoding="async"></div></article><article class="scenario"><span class="sid">SC-06</span><div><h3>连接是一个被证明的动作</h3><p>只有合法落点才接棒</p><img src="assets/scenario-sc-06.webp" alt="SC-06 连接是一个被证明的动作 场景卡" data-figure-key="scenario-sc-06" loading="lazy" decoding="async"></div></article><article class="scenario"><span class="sid">SC-07</span><div><h3>不用一块屏幕代表一棵树</h3><p>把环境数据变成公共证据</p><img src="assets/scenario-sc-07.webp" alt="SC-07 不用一块屏幕代表一棵树 场景卡" data-figure-key="scenario-sc-07" loading="lazy" decoding="async"></div></article><article class="scenario"><span class="sid">SC-08</span><div><h3>不打开手机，也知道公园在哪里</h3><p>一眼抵达的包容性导行</p><img src="assets/scenario-sc-08.webp" alt="SC-08 不打开手机，也知道公园在哪里 场景卡" data-figure-key="scenario-sc-08" loading="lazy" decoding="async"></div></article><article class="scenario"><span class="sid">SC-09</span><div><h3>公园会说话，但不给游客画像</h3><p>不跟踪你的京张叙事</p><img src="assets/scenario-sc-09.webp" alt="SC-09 公园会说话，但不给游客画像 场景卡" data-figure-key="scenario-sc-09" loading="lazy" decoding="async"></div></article><article class="scenario"><span class="sid">SC-10</span><div><h3>活动可以关闭，空间继续日常</h3><p>可关闭、可恢复的活动节点</p><img src="assets/scenario-sc-10.webp" alt="SC-10 活动可以关闭，空间继续日常 场景卡" data-figure-key="scenario-sc-10" loading="lazy" decoding="async"></div></article></div>
     <aside class="evidence-strip"><strong>治理底线</strong> · 治理底线：可理解、可拒绝、可申诉、有人工作为、可关闭、可退场。必要服务始终保留非 AI 等价路径。</aside>
   </section>
 
   <section class="plate" id="people">
-    <header class="plate-head"><div class="kicker">06 / PEOPLE, TIME AND OPERATIONS</div><div class="plate-title"><h2>让方案在一天里被使用，也能在任何时候关闭</h2><p class="subtitle">四个英雄场景、七类人物验收问题，以及按触发条件组织的 V / L / M / D 分期</p></div></header>
+    <header class="plate-head"><div class="kicker">07 / PEOPLE, TIME AND OPERATIONS</div><div class="plate-title"><h2>让方案在一天里被使用，也能在任何时候关闭</h2><p class="subtitle">四个英雄场景、七类人物验收问题，以及按触发条件组织的 V / L / M / D 分期</p></div></header>
     <div class="hero-diagram-grid"><figure class="hero-diagram"><span class="kicker">HERO-01</span><h3>科研前场：看得见的协作，不穿透的边界</h3><img src="assets/hero-hero-01.webp" alt="科研前场：看得见的协作，不穿透的边界 人物—时间—空间叙事图" data-figure-key="hero-hero-01" loading="lazy" decoding="async"></figure><figure class="hero-diagram"><span class="kicker">HERO-02</span><h3>一日两锚：诊疗、服务与创新轮换同一条前沿</h3><img src="assets/hero-hero-02.webp" alt="一日两锚：诊疗、服务与创新轮换同一条前沿 人物—时间—空间叙事图" data-figure-key="hero-hero-02" loading="lazy" decoding="async"></figure><figure class="hero-diagram"><span class="kicker">HERO-03</span><h3>抵达即城市：站口、桥下与公园在同一张图上被读懂</h3><img src="assets/hero-hero-03.webp" alt="抵达即城市：站口、桥下与公园在同一张图上被读懂 人物—时间—空间叙事图" data-figure-key="hero-hero-03" loading="lazy" decoding="async"></figure><figure class="hero-diagram"><span class="kicker">HERO-04</span><h3>两翼开放测试日：从公共问题到安全退出</h3><img src="assets/hero-hero-04.webp" alt="两翼开放测试日：从公共问题到安全退出 人物—时间—空间叙事图" data-figure-key="hero-hero-04" loading="lazy" decoding="async"></figure></div>
     <div class="operations-grid"><div><figure class="diagram"><h3>人物不是消费者画像，而是空间验收问题</h3><img src="assets/personas.webp" alt="七类人物的需要、不能发生的事和概念验收问题" data-figure-key="personas" loading="lazy" decoding="async"><figcaption>人物画像是概念验收工具，不是调研样本或人口统计。</figcaption></figure></div><div class="operations-stack"><figure class="diagram"><h3>分期由证据触发，不由概念自动升级</h3><img src="assets/phasing-by-triggers.webp" alt="V 验证、L 运营试点、M 中度复面和 D 远期可能的条件分期图" data-figure-key="phasing-by-triggers" loading="lazy" decoding="async"><figcaption>L 为 0—1 年可撤运营试点；M 为竞赛主方案但工程锁定；D 只作远期可能，不是当前承诺。</figcaption></figure><figure class="diagram"><h3>运营是空间的一部分</h3><img src="assets/operations-governance.webp" alt="复面运营桌与可理解、可拒绝、可申诉、人工作为、可关闭、可退场六个治理接口" data-figure-key="operations-governance" loading="lazy" decoding="async"><figcaption>建议的复面运营桌与六个必备治理接口；这是协作机制建议，不是已成立机构。</figcaption></figure></div></div>
   </section>
 
   <section class="plate" id="metrics">
-    <header class="plate-head"><div class="kicker">07 / METRICS, EVIDENCE AND LIMITS</div><div class="plate-title"><h2>从未知基线到可停止的设计成效</h2><p class="subtitle">不把研究计数包装成成效；公共回报按 baseline/TBD—设计底线—核验—停止组织</p></div></header>
+    <header class="plate-head"><div class="kicker">08 / METRICS, EVIDENCE AND LIMITS</div><div class="plate-title"><h2>从未知基线到可停止的设计成效</h2><p class="subtitle">不把研究计数包装成成效；公共回报按 baseline/TBD—设计底线—核验—停止组织</p></div></header>
     <figure class="full-figure metrics-figure"><img src="assets/metrics-evidence.webp" alt="公园净公共空间、普通通行、生态绩效、后勤端点的非退化底线和工程解锁条件" data-figure-key="metrics-evidence" loading="lazy" decoding="async"><figcaption>现场基线尚未建立，因此首页不展示虚构的方案前后数值。71、29/25/17、8 与 1 只作为证据覆盖审计角标；正式面积、比例和性能随官方 polygon 与实测基线到位后重算。</figcaption></figure>
     <p class="content-index">核心指标作为设计成效底线 / 由现场与运营台账核验</p>
     <div class="metric-grid" aria-label="核心指标"><div class="metric"><span>净公共空间</span><strong>≥ 基线 / BASELINE TBD</strong><code>现场基线待建 / 按专业台账核验</code></div><div class="metric"><span>普通通行</span><strong>净宽·时长·能力不降</strong><code>现场基线待建 / 按专业台账核验</code></div><div class="metric"><span>人工等价服务</span><strong>100% AVAILABLE</strong><code>现场基线待建 / 按专业台账核验</code></div></div>

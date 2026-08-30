@@ -6,10 +6,10 @@ proposal_format_version: "2"
 bilingual_contract_version: "1"
 translation_of: "proposal.md"
 license: "COMMUNITY-DISPLAY-ONLY"
-summary: "JINGZHANG RE:FRONT treats the open railway-heritage park as a civic spine and uses two asymmetric fronts to organize a Research Forecourt at Zhongzhiyuan, a Coexistence Foyer at AI Origin, and an Arrival Edge at Dazhongsi. Two service wings mobilize eight ecosystem elements without asserting physical boundaries; four hero scenes, ten project packages, and switch-off and exit floors translate public value into space."
+summary: "JINGZHANG RE:FRONT treats the open railway-heritage park as a civic spine and uses two asymmetric fronts to organize three innovation edges. Two service wings mobilize eight ecosystem elements; five off-site interfaces connect only through briefs, protocols, and public records and all require written negotiation. Four hero scenes, ten project packages, and switch-off and exit floors translate public value into space."
 tracks: ["ai-traffic-walkability", "enterprise-services-ecosystem", "civic-agent-governance"]
 scenarios: ["ai-traffic-walkability", "enterprise-service-copilot", "public-safety-operations-review"]
-iteration: "v0.4-gate3.5"
+iteration: "v0.5-review1"
 ---
 
 # JINGZHANG RE:FRONT / 京张·复面
@@ -60,6 +60,22 @@ The proposal translates the Taskbook's three positionings, five functions, and t
 | Scenario mechanism | Authorised, recoverable nodes and civic thresholds | Compare conflicts and support AI-off and exit drills | Site, operations, safety, accessibility, and community representatives | Reversible public experience without degrading everyday use | Start with operator consent, baseline, human-equivalent service, and shutdown drill; stop when safety, rights, movement, ecology, or public value fails |
 
 The five functions operate as parallel loops rather than a one-way north-to-south industry chain. Jing-Zhang's contribution is not expressed through invented company lists, investment totals, or output values. It first supplies an understandable Research Forecourt, a campus-adjacent service edge, and a station-city arrival surface that does not depend on screens.
+
+### Off-Corridor Regional Coordination Interfaces: Connected by Briefs, Protocols, and Public Records
+
+The Taskbook names Beiwei Community, Future Science City, Huairou Science City, the Economic Development Zone, and Beijing–Tianjin–Hebei as objects of regional-synergy review [source:DATA-SRC-AGENT-TASKBOOK-20260518] [standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK]. This matrix translates those names into negotiable, non-physical interfaces. Except for the counterpart names, every topic, mechanism, role, carrier, and proposed return to test below is a participant-authored concept proposal. It implies no existing partnership, consent, capability commitment, data-sharing arrangement, or confirmed programme.
+
+![Off-Corridor Regional Coordination Interfaces | Connected by Briefs, Protocols, and Public Records](assets/figures/regional-synergy.en.png)
+
+| Counterpart | Proposed topic | Non-physical exchange mechanism | Suggested accountable roles, subject to confirmation | Jing-Zhang spatial / operating carrier | Proposed public or industrial return to test | Evidence status |
+| --- | --- | --- | --- | --- | --- | --- |
+| Beiwei Community (北纬社区) | Accessible public service and non-digital equivalence | De-identified public problem briefs, accessibility task cards, staffed-service records, and AI-off drill records; no personal trajectories, health records, or service-case files | Community liaisons, public-service/accessibility leads, and data stewards on both sides | IF-02 Staffed Service Anchor + L-02 Refront Archive Rack + P10 Refront Operating Table | Test whether basic service remains completable across different levels of digital access; retain reusable task cards | Taskbook-named; participant-authored concept proposal; counterpart unconfirmed; written negotiation required |
+| Future Science City (未来科学城) | Public problem to bounded engineering test and exit | Rights-cleared problem briefs, test protocols, and failure/exit reports; no internal R&D material or uncleared models/data | R&D/engineering liaisons, site operators, safety/accessibility, IP, and data stewards on both sides | P02 Research Forecourt + P09 TVS + L-01 Open Research Measure | Turn public questions into bounded, reviewable tests; publish success, failure, and transfer conditions | Taskbook-named; participant-authored concept proposal; counterpart unconfirmed; written negotiation required |
+| Huairou Science City (怀柔科学城) | Measurement, calibration, and reviewable evidence | Indicator definitions, calibration/version/provenance templates, and anomaly reviews; no uncleared raw experimental data | Science-method/environment liaisons, site operators, data stewards, and public editors on both sides | SC-07 Environmental Evidence TVS + P09 + L-01 | Improve reviewability of environmental and public-realm evidence; retain transferable calibration templates | Taskbook-named; participant-authored concept proposal; counterpart unconfirmed; written negotiation required |
+| Economic Development Zone (经开区; exact counterpart and scope TBD) | Maintainability, human takeover, and exit for equipment and low-speed logistics | De-identified fault taxonomy, maintenance/rollback/exit checklists, and human-takeover records; no vendor designation, procurement, or investment promise | Equipment-engineering/maintenance liaisons, site operators, safety/transport, procurement, and data stewards on both sides | SC-05 Low-Speed Logistics TVS + P09 + P10 | Make maintenance, takeover, and removal explicit validation conditions; produce an auditable acceptance checklist | Taskbook says only “经开区”; participant-authored concept proposal; exact counterpart unconfirmed; written negotiation required |
+| Beijing–Tianjin–Hebei (京津冀) | Cross-regional reproducibility of civic-AI tasks and governance protocols | Bilingual task cards, shared indicator definitions, AI-off/human-takeover/exit protocols, and versioned public results; no cross-regional personal-data pool or copied site geometry | Local operators, public-service/planning reviewers, safety/accessibility leads, and data stewards | L-01 + L-02 + L-03 Civic Record Measures + P10 + proposed JINGZHANG RE:FRONT Open Week | Produce comparable public results and explicit transfer limits; publish success, failure, and exit together | Taskbook-named; participant-authored concept proposal; participating jurisdictions unconfirmed; written negotiation required |
+
+> These interfaces add no road, rail, utility, or land-control line. An interface may move from negotiation to a bounded test only after named accountable persons, written consent, rights-cleared data, purpose and retention limits, a time window, public return, human-equivalent service, an AI-off drill, and exit conditions are agreed.
 
 ### Six Directionally Verified Primary-Source Cases
 

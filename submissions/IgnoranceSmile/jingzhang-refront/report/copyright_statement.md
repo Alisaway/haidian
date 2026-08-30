@@ -32,7 +32,9 @@ The complete normalized prompts, known and unrecorded generation fields, upstrea
 
 ## Fonts and software / 字体与软件
 
-The PDF builder uses the locally installed Noto Sans SC and system Latin fonts as embedded subsets. Raster figures contain rendered text; no standalone font binary is distributed in this submission. Build and validation scripts use repository code plus ReportLab, Pillow, pypdf and Poppler. `visual/index.html` and `visual/index.en.html` are fully offline and load no remote font, script, image, iframe, tracker or API.
+The PDF builder uses locally installed Noto Sans SC and system Latin fonts as embedded PDF subsets. Raster figures contain rendered text. For reliable offline Chinese in the four HTML pages, the package distributes `visual/assets/jingzhang-cjk.css`, which contains a glyph-reduced WOFF2 Modified Version derived from the official Noto Sans CJK SC Regular 2.004 source (`NotoSansCJKsc-Regular.otf`, source SHA-256 `2c76254f6fc379fddfce0a7e84fb5385bb135d3e399294f6eeb6680d0365b74b`). Copyright is © 2014–2021 Adobe. The font is licensed under SIL Open Font License 1.1; the CSS human-readable header carries the copyright, exact upstream URL and hash, subset hash/tool record, Modified Version name, and the complete licence text. No raw `.otf`, `.ttf`, `.woff`, or `.woff2` file is distributed, and no remote font is requested.
+
+PDF 构建器将本地 Noto Sans SC 与系统西文字体以 PDF 子集形式嵌入，栅格图件的文字已转为像素。为保证四份 HTML 在无中文系统字体的离线评审环境中可读，本包发布 `visual/assets/jingzhang-cjk.css`：其中是由官方 Noto Sans CJK SC Regular 2.004 源字体按实际 HTML 字符缩减、转换的 WOFF2 Modified Version。版权为 © 2014–2021 Adobe，许可为 SIL OFL 1.1。CSS 可读头部完整登记了版权、官方源链接与哈希、子集哈希与工具、修改版名称及 OFL 1.1 全文。本包不发布原始 `.otf` / `.ttf` / `.woff` / `.woff2` 文件，也不发起远程字体请求。Build and validation scripts use repository code plus ReportLab, Pillow, pypdf, fontTools and Poppler. The HTML pages load no remote script, image, iframe, tracker or API.
 
 ## Responsibility boundary / 责任边界
 
