@@ -1,5 +1,13 @@
 # 方案迭代记录 / Iteration Changelog
 
+## v5.1 - 2026-08-30
+
+**Spatial-spine refinement.** The three taskbook positioning bands now have one inspectable spatial grammar. A Level 2 north-south public reading order connects the northern Zhongzhiyuan, central AI Origin and southern Dazhongsi prototypes; two east-west cross-stitches describe how the technology-service and scenario-enablement wings may enter and return after verification. One compact concept diagram and paired bilingual explanation make this relationship visible without treating it as a survey map.
+
+**Self-guided route grammar.** Five fixed, non-digital actions now govern every future verified start, decision and return relation: START, WALK, PAUSE, TURN and RETURN. They explain how a person can use the noon route independently, while preserving an optional AI layer and backstage-only human responsibility.
+
+**Evidence boundary unchanged.** The spatial spine neither confirms a continuous corridor, existing entry, lawful crossing, accessible route, facility, maintenance service nor engineering work. Every specific relationship remains HOLD until the applicable public-passage, accessibility, maintenance and professional conditions are authorised and verified. No metric, geometry, Verified SLA, appointed entity, budget, land right, permit, approval or field condition is upgraded.
+
 ## v5.0 - 2026-08-30
 
 **Self-guided noon-route refinement.** The primary public experience is now explicit: a person should be able to enter, walk, pause, decide, reroute and leave through fixed information, public clearways and non-digital decision markers, without booking, scanning, login, a special device or daily line staffing. AI remains an optional explanatory and maintenance-support layer; the Human layer is clarified as background maintenance, exception, stop and professional-verification responsibility rather than a user prerequisite.

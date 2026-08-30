@@ -1,7 +1,7 @@
 ---
 translation_of: "proposal.md"
 language: "en"
-iteration: "v5.0"
+iteration: "v5.1-local-spatial-spine"
 ---
 
 # Jing-Zhang Noonline SLA
@@ -23,6 +23,24 @@ The front stage is not a service that requires check-in, booking, scanning, an a
 This does not confirm any existing route, shade, seat, water point, entry, crossing or service person. It is a concept-use rule: future physical components may be placed at a specific location only after the relevant conditions are authorised and verified. When conditions are absent, the component does not start and self-guided usability is not promoted into a site fact.
 
 For daily users, AI is an optional, side-positioned explanatory layer. It does not lead the route and is not a condition of entering or completing it. Human responsibility is likewise not daily staffing along the line: it is a background layer for maintenance, exception handling, stop decisions and later professional verification. A user should not need to find a person to complete this noon route.
+
+## 0.1 Spatial Spine, Cross-Stitches and Five Self-Guided Actions
+
+The proposal puts the taskbook's three positioning bands into one legible spatial relationship rather than leaving them as slogans. A **north-south public spine** follows the publicly described sequence of northern Zhongzhiyuan, central AI Origin and southern Dazhongsi. At Zhongzhiyuan, the AI-integrated innovation band becomes a research interface where testing is visible but the public clearway cannot be occupied. At AI Origin, the urban AI life-experience band becomes device-free information, staying and questioning. At Dazhongsi, arrival, judgment, short stay and return to ordinary city life form a self-guided resolution. The Centennial Jing-Zhang cultural band is not an applied visual motif: it is the fixed public narrative running through all three prototypes, of connection, maintenance, responsibility and recovery.
+
+This north-south spine is a **Level 2 orientation and public-narrative rule**, not confirmation of a continuously passable corridor, existing service band or approved route. The east-west relationship in the diagram likewise does not propose new roads, bridges, crossings or entries. Its **cross-stitches** describe only a future verified enter-and-return relationship between the Zhongguancun technology-service wing, the Xiaoyue River scenario-enablement wing and the spine. The western wing brings professional service, translation and governance interfaces to a publicly understandable edge; the eastern wing brings ecology, everyday scenarios and public feedback to the same edge. A specific connection may start only after public passage, lawful crossing, an accessible alternative, maintenance and the applicable professional conditions are authorised and verified.
+
+![V5.1 conceptual spatial spine: north-south sequence, east-west cross-stitches, three positioning bands and five self-guided actions; not a survey map, existing route or delivery location](assets/figures/v5_1-spatial-spine-diagram.svg)
+
+To make this relationship usable without a phone, every future verified start, decision and return relation follows the same **five self-guided actions**. They are rules for information and space, not claims that any physical component already exists:
+
+1. **START / Enter**: a fixed start panel explains available conceptual directions and the option to return at any time; QR codes, accounts and live navigation are never the entrance.
+2. **WALK**: repeated number, symbol and written cues give direction along a public clearway; colour is never the only information.
+3. **PAUSE**: non-digital information places the judgment to stay, bypass or return in one readable position, without claiming that a conceptual pause already has a seat, shade or water facility.
+4. **TURN**: every future verified decision point presents continuation, rerouting and return together, rather than handing the decision to algorithmic recommendation.
+5. **RETURN**: the route can always rejoin an intelligible ordinary destination; when passage, maintenance, accessibility or safety fails, physical information first shows a stop, downgrade or alternative relation.
+
+The north-south spine therefore answers how the three prototypes are read as one sequence; the east-west cross-stitches answer how the two wings enter and return to daily life; the five actions answer how a person walks independently without scanning. They may be placed at a specific location only after point-by-point Phase 0 verification. When any condition is absent, the relation remains HOLD and the conceptual spine is not promoted into a site fact.
 
 ## 1. The Problem
 
