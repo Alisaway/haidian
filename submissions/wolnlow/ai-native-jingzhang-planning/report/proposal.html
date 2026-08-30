@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>以构建城市规划新范式命题下的京张铁路创新带AI原生规划新思考 - proposal report</title>
+<link rel="stylesheet" href="../visual/assets/cjk-font.css">
 <style>
 :root {
   --ink: #172033;
@@ -14,9 +15,10 @@
   --accent: #245b8f;
 }
 * { box-sizing: border-box; }
+html, body { max-width: 100%; overflow-x: hidden; }
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  font-family: "JZ Offline CJK", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
   color: var(--ink);
   background: var(--bg);
   line-height: 1.75;
@@ -59,7 +61,7 @@ code {
 }
 .summary { color: var(--muted); font-size: 17px; }
 .translation-link a { color: var(--accent); font-weight: 700; }
-.proposal-table { margin: 20px 0 26px; overflow-x: auto; }
+.proposal-table { margin: 20px 0 26px; min-width: 0; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
 .proposal-table table {
   border-collapse: collapse;
   width: 100%;
@@ -113,7 +115,7 @@ code {
   h2 { font-size: 21px; }
 }
 </style>
-<link rel="stylesheet" href="../visual/assets/cjk-font.css"></head>
+</head>
 <body>
 <main>
 <section class="hero">
@@ -173,14 +175,14 @@ code {
 <h3>创新生态：七个全球案例转译为八段接力</h3>
 <p>全球案例不作为海淀现状统计，而用于比较机制：新加坡 one-north/AI Singapore 提供“近邻载体—限定周期 PoC—治理测试”；加拿大 Mila、Vector Institute 提供“研究—人才—工程—创业转化”；Seoul AI Hub/Yangjae 提供“城市支持—高性能计算—业务验证”；Hub71+ AI 提供分阶段资源释放；STATION F/F/ai 提供半开放前台、受控工作与公众生活；MassRobotics 提供共享实验、原型和安全接管。七案共同说明创新带需要可交接的中层机制；进入海淀前须明确项目ID、交接件、人工责任、许可、受控测试和退出，机构架构、补贴、资本、租金、规模、伙伴和案例绩效均不迁移。<sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="SOURCE-USE-MATRIX" title="来源：SOURCE-USE-MATRIX">来源</sup> <sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="PROJECT-AGENT-OPEN-CALL-TASKBOOK" title="标准：PROJECT-AGENT-OPEN-CALL-TASKBOOK">标准</sup></p>
 <p>案例来源入口：Singapore <code>D2SRC-B2-001—005</code>；Mila <code>D2SRC-B2-006—008</code>；Vector <code>D2SRC-B2-009—010</code>；Seoul <code>D2SRC-B2-011—013</code>；Hub71 <code>D2SRC-B2-014—015</code>；STATION F <code>D2SRC-B2-016—019</code>；MassRobotics <code>D2SRC-B2-020—024</code>。这些 ID 指向随包 <code>sources.json</code> 的逐条定位，不把案例事实外推为海淀统计。</p>
-<p>本地生态链设置八个节点：真实问题卡、研究与开源、算力/数据责任、可信测试、专业与伦理复核、孵化与资本服务、市场/公共应用、失败与知识沉淀。众智园承担可信测试与接口台，北京 AI 原点社区承担开源和成果转化，大钟寺承担需求方和产品化验证；具体机构、资金、算力和运营主体均待授权，不从地名推导承诺。</p>
+<p>本地创新生态的八段主链严格定义为 <strong>R科研 → O开源 → C算力 → D数据 → T测试 → I孵化 → F资本 → M市场</strong>。真实问题是输入而非宣传起点；G治理横梁贯穿全链，K知识沉淀将成败都回写下一轮；专业与伦理复核是可以否决、暂停或降级的闸门，不冒充生态链的一个生产阶段。众智园侧重算力、数据与可信测试接口，北京 AI 原点社区侧重研究、开源与孵化交接，大钟寺侧重需求、资本服务与市场验证；具体机构、资金、算力和运营主体均待授权，不从地名推导承诺。</p>
 <p>区域协同不以“建立联盟”作未经授权的承诺，而以可交接的接口组织。下列对象来自任务书的协同要求，当前均为候选关系：</p>
 <div class="proposal-table"><table><thead><tr><th>区域对象</th><th>候选协同流</th><th>京张承担的接口角色</th><th>进入条件</th><th>禁止推断</th></tr></thead><tbody><tr><td>北纬社区</td><td>青年人才、开放议题、社区体验</td><td>接收问题卡并返回可理解的测试/服务结果</td><td>真实社区议题、授权联系人、非数字参与与回执</td><td>不宣称既有合作、代表居民或已形成活动</td></tr><tr><td>未来科学城</td><td>研究成果、人才与验证需求</td><td>提供开源转译、受控测试和城市问题入口</td><td>清权成果、适用场景、责任主体和IP/数据边界</td><td>不迁移机构使命、资源规模或政策权限</td></tr><tr><td>怀柔科学城</td><td>科学成果与复杂技术的公共解释/应用问题</td><td>把专业成果转成可审查的公共问题和候选场景</td><td>专业解释人、许可、安全与公众价值审查</td><td>不把科研成果直接写成可部署产品</td></tr><tr><td>北京经开区</td><td>制造、产品化与产业场景反馈</td><td>交换测试协议、需求证据、失效和维护记录</td><td>真实项目、质量/安全责任、采购与商业权利边界</td><td>不承诺订单、场地、采购或产业落地</td></tr><tr><td>京津冀</td><td>跨区域问题、标准、人才与知识回流</td><td>沉淀可复用问题卡、场景合同、风险和版本记录</td><td>数据口径、治理权限、成本与受影响群体一致性复核</td><td>不以一地试点外推区域绩效或治理权</td></tr></tbody></table></div>
 <p>每次协同必须产生“输入来源—交接件—接收责任—不得使用项—反馈/退出”记录；没有真实对象和授权时只保留接口设计。</p>
 <h3>概念与视觉系统</h3>
-<p>项目研究总标题保持不变；“京张智脉共生带”是本版总体空间战略工作名，“自主·共创之路”是候选公共叙事母题，均不取代总标题。命名树统一为：L0研究总标题、L1空间战略工作名、L2公共叙事母题、L3三区两翼、L4场景/活动、L5点位/组件；三大定位是跨层评价目标，不另占命名层级。Logo只确定“证据之线”构图语法；名称、商标、语言、权利、无障碍或误读门未过时不作正式品牌，权利冲突、史实错误、状态误导或项目停止时撤牌下线并保留版本。<sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="MOHURD-URBAN-DESIGN-MEASURES" title="标准：MOHURD-URBAN-DESIGN-MEASURES">标准</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="overall_spatial_structure" title="深度：overall_spatial_structure">深度</sup></p>
+<p>项目研究总标题保持不变；“京张智脉共生带”是本版总体空间战略工作名，“自主·共创之路”是候选公共叙事母题，均不取代总标题。命名树统一为：L0研究总标题、L1空间战略工作名、L2公共叙事母题、L3一带三区两翼、L4场景/活动、L5点位/组件；三大定位是跨层评价目标，不另占命名层级。Logo只确定“证据之线”构图语法；名称、商标、语言、权利、无障碍或误读门未过时不作正式品牌，权利冲突、史实错误、状态误导或项目停止时撤牌下线并保留版本。<sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="MOHURD-URBAN-DESIGN-MEASURES" title="标准：MOHURD-URBAN-DESIGN-MEASURES">标准</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="overall_spatial_structure" title="深度：overall_spatial_structure">深度</sup></p>
 <h3>三种文化的非因果叙事</h3>
-<p>铁路文化讲特定时代的工程、知识、组织与公共连接；中关村文化讲研究、制度试验、合作与失败；AI新文化讲来源、许可、版本、贡献、纠错和责任。“自主建造—自主创新—开源共创”仅是当代解释框架，不是直接历史因果。五类导览是到场任务而非已发布路线：区分史实与解释、追踪贡献版本、判断AI责任与拒绝、查看纠错撤回、从中文事实锚进入国际议题；均提供纸质、无障碍和人工入口。</p>
+<p>铁路文化讲特定时代的工程、知识、组织与公共连接；中关村文化讲研究、制度试验、合作与失败；AI新文化讲来源、许可、版本、贡献、纠错和责任。“自主建造—自主创新—开源共创”仅是当代解释框架，不是直接历史因果。五条导览原型是到场任务而非已发布路线：R1“一眼看懂京张”（约30分钟体验目标）、R2“三种文化深读”（约90分钟）、R3“半日共创路”（3—4小时）、R4“无障碍低数字路线”、R5“国际访客线”。它们均保持假设/暂定/纯文字状态，线位、时长、开放条件和第三方权利待现场与专业核验；均提供纸质、无障碍和人工入口。</p>
 <h3>人才画像与未来城市判断</h3>
 <p>八类用户包括研究者、开发者、创业团队、企业访客、附近居民、学生教师、服务提供者和运营者。不同用户共享公共入口，但在受控工作、数据权限和专业服务上分级。AI 时代新增空间需求不是“更多屏幕”，而是短周期协作、可预约测试、人工解释、非数字替代、数据清理、安静使用和可逆设备。</p>
 <h2>总体设计范围城市更新与控规深度城市设计</h2>
@@ -196,8 +198,8 @@ code {
 <p>六个点都是候选研究原型，未指定楼宇、坐标、商户、站口、面积或建设审批；每个点均保留人工服务、纸质入口、申诉和退出清理。</p>
 <h2>AI 创新生态、人才画像与 AI+ 场景</h2>
 <h3>六类 Agent 任务的实质成果</h3>
-<p>本次协作的角色、输入输出、质量门、验收字段、交接协议和统筹Agent八步工作流，见本包允许发布的 [report/narrative.md](report/narrative.md) 附录 A—D；25条数据资产的机器可读登记见 [visual/assets/data_asset_register.json](visual/assets/data_asset_register.json)。这两份入口共同说明方法论和资料边界，不把Agent角色写成已签约机构或把资料缺口写成事实。</p>
-<p>1. <strong>概念与品牌 Agent：</strong> 形成“京张智脉共生带”概念、L0—L5 命名树、Logo 构图语法、双语术语和品牌权利门。 2. <strong>生态 Agent：</strong> 形成七案例机制表、八段创新接力、三区两翼职责、19 项日/周/季/年活动和资源释放闸门。 3. <strong>场景空间 Agent：</strong> 形成 13 张场景卡、8 类用户/旅程、12 类公共空间组件和四类产业测试；所有场景写明 AI 做什么、人工做什么、非数字替代和停止条件。 4. <strong>公共空间 Agent：</strong> 形成“开发者散步道·开源成果里程廊”、智能体贡献荣誉墙、京张AI时光站三个 AI 地标候选；形成故事站、贡献板、可撤导览、人工讲解和无障碍替代组件。 5. <strong>文化 Agent：</strong> 形成铁路—中关村—AI 三文化非因果图谱、五类导览路线、双语工作译文、国际传播门和可纠错/撤回机制。 6. <strong>运营 Agent：</strong> 形成日/周/季/年活动体系、六段转化链、六项试点合同、15 项指标和四层停复事件协议。</p>
+<p>本次协作的角色、输入输出、质量门、验收字段、交接协议和统筹Agent八步工作流，见本包允许发布的 [report/narrative.md](report/narrative.md) 附录 A—D；27条数据资产的机器可读登记见 [visual/assets/data_asset_register.json](visual/assets/data_asset_register.json)。这两份入口共同说明方法论和资料边界，不把Agent角色写成已签约机构或把资料缺口写成事实。</p>
+<p>1. <strong>概念与品牌 Agent：</strong> 形成“京张智脉共生带”概念、L0—L5 命名树、Logo 构图语法、双语术语和品牌权利门。 2. <strong>生态 Agent：</strong> 形成七案例机制表、R/O/C/D/T/I/F/M八段创新主链、G治理横梁、K知识回写、一带三区两翼职责、19 项日/周/季/年活动和资源释放闸门。 3. <strong>场景空间 Agent：</strong> 形成 13 张场景卡、8 类用户/旅程、12 类公共空间组件和四类产业测试；所有场景写明 AI 做什么、人工做什么、非数字替代和停止条件。 4. <strong>公共空间 Agent：</strong> 形成“开发者散步道·开源成果里程廊”、智能体贡献荣誉墙、京张AI时光站三个 AI 地标候选；形成故事站、贡献板、可撤导览、人工讲解和无障碍替代组件。 5. <strong>文化 Agent：</strong> 形成铁路—中关村—AI 三文化非因果图谱、R1—R5五条导览原型、双语工作译文、国际传播门和可纠错/撤回机制。 6. <strong>运营 Agent：</strong> 形成日/周/季/年活动体系、六段转化链、六项试点合同、15 项指标和四层停复事件协议。</p>
 <figure class="proposal-figure"><img src="../assets/figures/six-agents-five-gates.png" alt="六类专业Agent与五道人类决策门"><figcaption>六类专业Agent与五道人类决策门</figcaption></figure>
 <p><em>图24｜六类Agent与五道人类决策门。六类任务并行生成候选，共享证据与知识图谱；事实准入、价值取舍、空间准入、试点启停和成果发布均由人类门控制，任一门可退回、暂停或否决。</em></p>
 <p>六类Agent共同遵守一条人机分界：机器负责显性证据、逻辑关系、条件情景和一致性检查；人负责问题定义、动机理解、价值排序、利益协调和最终责任。众智园用它验证“技术是否可信且可接管”，AI原点社区验证“线上分析是否接受现场与居民纠正”，大钟寺验证“行为数据是否退回共同走查而非直接替人作结论”。</p>
@@ -214,13 +216,14 @@ code {
 <figure class="proposal-figure"><img src="../assets/figures/scenario-cards-detail.png" alt="四张完整场景卡与证据成熟度阶梯"><figcaption>四张完整场景卡与证据成熟度阶梯</figcaption></figure>
 <figure class="proposal-figure"><img src="../assets/figures/culture-narrative.png" alt="三文化五导览纠错回路"><figcaption>三文化五导览纠错回路</figcaption></figure>
 <figure class="proposal-figure"><img src="../assets/figures/professional-evidence.png" alt="十五项专业深度合同证据界面"><figcaption>十五项专业深度合同证据界面</figcaption></figure>
-<p>这些图解由统一注册表、B2活动台账和B3场景/用户数据生成，全部标注为研究图解、暂定空间和未部署；中英对应图件保留同一ID、状态和信息架构。为避免生成图缺字、图意悬空或视觉精度替代事实精度，24组中英图件逐一登记“核心判断—京张场地依据—状态限制—证据入口”，见 <code>visual/assets/figure_explanation_register.json</code>。<sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="visual/assets/canonical_registry.json" title="空间数据：visual/assets/canonical_registry.json">空间数据</sup> <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="visual/assets/data_asset_register.json" title="空间数据：visual/assets/data_asset_register.json">空间数据</sup></p>
+<p>这些图解由统一注册表、B2活动台账和B3场景/用户数据生成，全部标注为研究图解、暂定空间和未部署；中英对应图件保留同一ID、状态和信息架构。为避免生成图缺字、图意悬空或视觉精度替代事实精度，24个图件记录（23组中英配对 + 1幅中英共享无文字全景图）逐一登记“核心判断—京张场地依据—状态限制—证据入口”，见 <code>visual/assets/figure_explanation_register.json</code>。<sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="visual/assets/canonical_registry.json" title="空间数据：visual/assets/canonical_registry.json">空间数据</sup> <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="visual/assets/data_asset_register.json" title="空间数据：visual/assets/data_asset_register.json">空间数据</sup></p>
 <p>为便于逐卡复核，13张场景卡的完整字段、8类用户和阶段门随包保存在 [visual/assets/scenario_cards.json](visual/assets/scenario_cards.json)；铁路—中关村—AI文化节点与权威来源分别保存在 [visual/assets/culture_nodes.json](visual/assets/culture_nodes.json) 和 [visual/assets/culture_sources.json](visual/assets/culture_sources.json)。七个评分维度只提供不自评分的证据导航 [visual/assets/review_evidence_matrix.json](visual/assets/review_evidence_matrix.json)，最终分数由人工评审产生。</p>
 <h3>13 个场景的进入方式</h3>
 <p>13个场景均先以文字、服务蓝图或低保真组件表达，不把概念图当作已部署系统：<code>SCN-B3-01</code>全栈自主创新验证院、<code>02</code>小月河具身智能共生试验窗、<code>03</code>AI原点共创客厅、<code>04</code>青年AI第三空间、<code>05</code>开发者散步道·开源成果里程廊、<code>06</code>智能体贡献荣誉墙、<code>07</code>AI公共服务驿站（医疗、教育与生活服务导航）、<code>08</code>京张AI时光站、<code>09</code>智能原生商业测试廊、<code>10</code>大钟寺四象限智行核查包（待站点锚定）、<code>11</code>京张智脉南部序厅、<code>12</code>全带开放场景测试台、<code>13</code>京张AI城市开源周。每张场景卡均绑定用户、空间状态、数据、隐私、人工门、运营角色、指标、非数字替代和退出条件。<sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="blue_green_public_space" title="深度：blue_green_public_space">深度</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="traffic_rail_slow_parking" title="深度：traffic_rail_slow_parking">深度</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="municipal_new_infrastructure" title="深度：municipal_new_infrastructure">深度</sup></p>
 <h3>AI+医疗、教育、商业进入街区的边界</h3>
 <p>AI+医疗只做公开信息解释、预约分流和人工转接，不做诊断、处方或健康资格判断；AI+教育只做课程信息解释、共学协作和人工咨询，不做录取、考试或学生画像排序；AI+商业只做自愿单项服务试用和权益说明，不做自动定价、信用评估或消费争议终审。三类场景均提供纸质说明、人工窗口、电话/现场申诉和普通服务保底。</p>
 <div class="proposal-table"><table><thead><tr><th>受影响群体</th><th>可获得的公共价值</th><th>主要风险</th><th>拒绝/非数字等价</th><th>谁负责纠偏</th></tr></thead><tbody><tr><td>附近居民、老人和低数字素养者</td><td>更清楚的公共信息、人工转接和可坐读空间</td><td>扫码门槛、噪声、日常通行被活动挤占</td><td>纸质、大字、电话/现场人工，普通服务不依赖AI</td><td>公共服务/场地运营角色与社区规划师</td></tr><tr><td>青年人才和学生教师</td><td>开源共学、问题转介和短周期协作</td><td>画像排序、过度采集、免费劳动或成果权利不清</td><td>不画像参与、匿名/署名选择、人工IP/教育咨询</td><td>教育、开源维护、权利和数据角色</td></tr><tr><td>企业、开发者和创业团队</td><td>可预期的测试、证据成熟度和需求反馈</td><td>把候选写成准入/采购承诺，或风险外溢到公众</td><td>可退出测试、合成/最小数据、线下责任回执</td><td>测试、安全、法务、采购/需求方角色</td></tr><tr><td>高校与科研人员</td><td>真实城市问题入口和公共解释界面</td><td>从研究成果外推部署成熟度</td><td>只提交清权摘要，保留专业复核和撤回</td><td>科研成果责任人、专业与伦理角色</td></tr><tr><td>游客与国际访客</td><td>双语、可纠错的铁路—创新—AI理解路径</td><td>误译、文化误读、只对手机用户开放</td><td>双语纸质、大字摘要、人工讲解和不参与路线</td><td>文化、语言、版权和场地运营角色</td></tr><tr><td>残障人士及其他容易被数据遗漏者</td><td>多感官、无障碍和可申诉的服务入口</td><td>被平均指标掩盖、设备或路线不可达</td><td>触觉/听觉/高对比、人工协助、替代路线</td><td>无障碍专业、公众代表与具名服务责任人</td></tr></tbody></table></div>
+<p>本轮不把“列出六类人群”写成已完成参与，当前现场参与人数、少数意见和分群基线均为<code>unknown/not_started</code>。为使真实受影响者能够改变方案，设立C0责任建立—C1问题共同定义—C2冲突/少数意见台账—C3含“不用AI”的备选比较—C4试点授权/分群基线—C5回执/重开六段协议。严重权利、安全、歧视或无障碍反对不得被平均数抵消，未解决即阻断G2；其他少数意见必须形成独立备选或公开说明。六段规则、三区入场人群、分群基线字段和禁止冒充参与完成的边界见 [visual/assets/public_co_definition_protocol.json](visual/assets/public_co_definition_protocol.json)。</p>
 <p>城市智能体允许检索来源、解释政策、提示缺口、汇总匿名反馈和生成待审草案；规划审批、工程/交通/消防安全、医疗、教育、投资/采购、公共荣誉和个人画像排序全部进入 <code>refuse_and_redirect</code>，由责任主体人工决定。</p>
 <h2>用地、建筑规模与拆改留方案</h2>
 <p>用地、建筑、公共空间和分期图层共同表达空间结构；建筑采用保留、改造、更新、新建候选、待确认五类状态。当前工作指标只反映提交几何的可复算结果，不能替代控规或权属条件。涉及 FAR、高度、密度、退线、拆迁、投资和市政容量的字段保持 <code>unknown/null</code>，并写入责任人和复算触发器。<sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="blue_green_public_space" title="深度：blue_green_public_space">深度</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="renewal_project_list" title="深度：renewal_project_list">深度</sup></p>
@@ -231,10 +234,11 @@ code {
 <figure class="proposal-figure"><img src="../assets/figures/mobility-bluegreen.png" alt="交通、轨道、市政与蓝绿公共空间"><figcaption>交通、轨道、市政与蓝绿公共空间</figcaption></figure>
 <h2>蓝绿空间、公共空间与城市风貌</h2>
 <p>京张铁路遗址公园是公共主轴，蓝绿系统同时服务通行、休息、文化理解、生态维护和低风险创新体验。三个 AI 地标候选不采用永久大体量先行，而采用可撤、可更正、可无障碍使用的公共组件：“开发者散步道·开源成果里程廊”（主题步行、纸质路线及版本/许可/纠错展示）、智能体贡献荣誉墙（经授权的贡献记录，不自动评奖）、京张AI时光站（以可逆时间桌解释审校过的三层文化知识）。</p>
-<p>城市文化导览采用五类路线：铁路与城市记忆、开源贡献、未来生活、公共治理、国际交流。每个故事单元均显示来源、时间、空间粒度、权利、双语、版本和纠错入口；史实争议、肖像/字体/商标权利或日常通行冲突出现时，立即撤下争议内容并保留纸质/人工替代。<sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/green_space.geojson#GREEN-001" title="空间数据：geometry/green_space.geojson#GREEN-001">空间数据</sup> <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/public_space.geojson#PUBLIC-001" title="空间数据：geometry/public_space.geojson#PUBLIC-001">空间数据</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="blue_green_public_space" title="深度：blue_green_public_space">深度</sup></p>
+<p>城市文化导览采用五条可验证原型：R1一眼看懂京张、R2三种文化深读、R3半日共创路、R4无障碍低数字路线、R5国际访客线。每个故事单元均显示来源、时间、空间粒度、权利、双语、版本和纠错入口；路线均为text-only/provisional，史实争议、肖像/字体/商标权利或日常通行冲突出现时，立即撤下争议内容并保留纸质/人工替代。<sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/green_space.geojson#GREEN-001" title="空间数据：geometry/green_space.geojson#GREEN-001">空间数据</sup> <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/public_space.geojson#PUBLIC-001" title="空间数据：geometry/public_space.geojson#PUBLIC-001">空间数据</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="blue_green_public_space" title="深度：blue_green_public_space">深度</sup></p>
 <h2>更新项目清单、实施政策与分期计划</h2>
 <p>资源等级不是人民币报价：S为复用既有空间/人员和低技术材料，M为多专业协作、临时设备或受控实例，L为跨场地长期运营或工程投入；只有取得载体、工程量和市场报价后才形成预算。</p>
 <div class="proposal-table"><table><thead><tr><th>项目</th><th>近期动作</th><th>资源等级/主要成本构成</th><th>许可与启动触发</th><th>退出成本</th></tr></thead><tbody><tr><td>JZ-01 遗址公园慢行断点缝合</td><td>纸质核查、无障碍走查、可撤导视小样</td><td>S→M；走查、设计复核、可撤构件、维护</td><td>公园/道路/文保/无障碍专业通过</td><td>撤牌、恢复地面、公开更正</td></tr><tr><td>JZ-02 众智园可信测试接口</td><td>开放验证桌、项目卡和退出清单</td><td>M；受控载体、人工值守、安全/数据审查、清理</td><td>真实测试需求、责任主体、物理停机和保险/消防条件</td><td>数据/设备清理、通知、场地恢复和事件复盘</td></tr><tr><td>JZ-03 AI原点开源与转化前台</td><td>每周开源桌、成果门诊、人工回执</td><td>S；人工前台、纸质目录、权利/维护工作</td><td>载体开放、维护人、许可和纠错通道</td><td>撤内容、保留来源索引、关闭转介并回执</td></tr><tr><td>JZ-04 大钟寺四象限步行核查</td><td>分时观察、问题单和回访</td><td>S；组织、无障碍支持、记录与专业复核</td><td>站口/路权核验、参与安全和交通专业协议</td><td>删除不当记录、撤路线主张、公开未成原因</td></tr><tr><td>JZ-05 AI公共服务与边缘算力节点</td><td>纸面/离线服务蓝图</td><td>M→L；人工服务、设备、能源网络、隐私安全、持续维护</td><td>正式容量、数据目的、人工接管和普通服务保底</td><td>断开系统、清理数据设备、恢复人工普通服务</td></tr><tr><td>JZ-06 全球AI活动周公共路线</td><td>小规模室内/公共空间桌面演练</td><td>M；活动组织、双语/无障碍、安全、场地和清理</td><td>活动许可、容量、责任、版权与天气/应急方案</td><td>取消通知、退场清理、参与者回执和年度复盘</td></tr></tbody></table></div>
+<p>为了不把“待落实”当作一句空泛免责，JZ-01—06已分别建立实施交接登记：正式载体、具名运营者/负责角色、工程量与全生命周期费用口径、询价/采购依据、分群基线、专业签章、人工接管演练、清理/恢复和投诉重开九类证据槽。本轮具名值和报价仍为<code>null/not_requested</code>，因此六项均保持<code>blocked_pending_external_evidence</code>；只有每一槽均有具名责任、日期、附件和人工决定记录时才能进入G2。项目级需求见 [visual/assets/implementation_handoff_register.json](visual/assets/implementation_handoff_register.json)，该文件证明交接逻辑完整，不证明任何主体、场地、预算、基线、签章或承诺已获得。</p>
 <p>分期按证据成熟度而非固定年限推进：近期G0—G1做补证、真实任务走查、人工服务、纸面/离线原型、合成数据和停止清理演练；增强G2只在正式空间、责任主体、专项审查、全生命周期资源、分群基线、人工接管和退出齐备后创建独立测试实例；G3为可选择的跨节点扩展，公共价值、维护或异常隔离失效即退回独立节点或永久退出。<sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="renewal_project_list" title="深度：renewal_project_list">深度</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="phasing_implementation" title="深度：phasing_implementation">深度</sup> <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/phasing.geojson#PHASE-001" title="空间数据：geometry/phasing.geojson#PHASE-001">空间数据</sup></p>
 <p>参与主体按类型分为规划统筹、GIS/测绘、交通与无障碍、园林与文保、数据与安全、载体运营、开源维护、公共服务和公众代表；每一阶段都以可复核的空间、服务、公共价值、创新绩效、运营韧性和 AI 风险指标决定是否继续，而不是以宣传量或设备数量决定。</p>
 <h2>指标体系、面积复算与合规矩阵</h2>
