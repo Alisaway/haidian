@@ -15,9 +15,9 @@ bilingual_contract_version: "1"
 
 ## Figure Metadata Specification (figure metadata spec)
 
-All overview / district / section / data figures in this proposal (`assets/figures/*.png`, 5 images) are normalized per CJJ/T 97-2003 *Urban Planning Cartographic Standards* + GB/T 20257-2017 *Cartographic Symbols for National Basic-Scale Topographic Maps* + GB 50137-2011 *Code for Classification of Urban Land Use and Planning Construction Land* (see `typesetting_review.md` at repo root):
+All overview / district / section / data figures in this proposal (`assets/figures/*.png`, 5 figure themes × 2 languages = 10 PNG files, plus 10 archived `.v1.png` earlier versions) are normalized per CJJ/T 97-2003 *Urban Planning Cartographic Standards* + GB/T 20257-2017 *Cartographic Symbols for National Basic-Scale Topographic Maps* + GB 50137-2011 *Code for Classification of Urban Land Use and Planning Construction Land* (see `typesetting_review.md` at repo root):
 
-- **Title block** (bottom-right): map name, sheet No. `JZ-OV-01`, scale 1:8000, coordinate system CGCS2000, projection Gauss–Krüger 3° zone 117°E, vertical datum 1985 National Height Datum, design unit lzcapp (open-source, no qualification statement), drawing date 2026-08-09, version v2.4, security class public.
+- **Title block** (bottom-right): map name, sheet No. `JZ-OV-01`, scale 1:8000, coordinate system CGCS2000, projection Gauss–Krüger 3° zone 117°E, vertical datum 1985 National Height Datum, design unit lzcapp (open-source, no qualification statement), drawing date 2026-08-30, version v3.2, security class public.
 - **Wind rose** (top-right): north arrow + winter/summer prevailing wind frequency + main-axis inclination.
 - **Scale bar** (bottom of main map): linear `0 ━━ 500 ━━ 1000 m` + scale note.
 - **Metadata block** (top-right / bottom-left): coordinate system / projection / central meridian / drawing date / data cutoff / data source.
@@ -25,7 +25,7 @@ All overview / district / section / data figures in this proposal (`assets/figur
 - **Standard footnotes** (three numbered lines at bottom): ① 412.5 m interim-boundary offset, ② public participation and accessibility walkthrough are inference, ③ colors/symbols do not constitute a government commitment.
 - **Font**: body and annotation use **Noto Sans CJK SC (SIL OFL 1.1, open-source, commercially usable)** as the primary typeface; PingFang SC (macOS/iOS system font) and Microsoft YaHei (Windows system font) are only used as render fallbacks. Geometry concept drafts are exported with Noto Sans CJK SC embedded to ensure the package is commercially usable and reproducible for review and public display. Open-source font license: [source:FIG-FONT-NOTO-CJK].
 
-**Drawing version**: v2.4 (the 14-point figure-layout spec is declared per v2.4, but reviewer verification shows the title block, metadata block, wind rose and double legend are not fully presented in the current rendered figures, so the self-estimate has been lowered from 5/5 to 2/5; see `metrics.json` `figure_layout_compliance.current_state.compliance_score_self_estimate_0_5 = 5`, meeting the original `planned_state_v2` target). The v1.0 original raster is at [source:FIG-OVERVIEW-V1].
+**Drawing version**: v3.2 (v1.7 to v3.2: five-figure differentiation, EN subtitle cleanup, data-URI subset font embedding for Chinese text in HTML, provisional-boundary stamp, and maximum remediation of title-block / metadata / legend spacing under a 2/5 self-estimate; see `figure_layout_compliance` in `metrics.json` and the v1.8 entry in `changelog.md`). The v1.0 original raster is at [source:FIG-OVERVIEW-V1].
 
 **Figure-source / standard references**: [source:FIG-OVERVIEW-V1] (v1 original overview, [source:FIG-FONT-NOTO-CJK] font), [source:FIG-LAYOUT-SPEC]
  (14-point renovation guide), [source:FIG-STD-CJJ97] (CJJ/T 97-2003 Urban Planning Cartographic Standards), [source:FIG-STD-GB50137] (GB 50137-2011 Land-Use Classification and Planning Construction-Land Standard).

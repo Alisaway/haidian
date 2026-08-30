@@ -15,9 +15,9 @@ bilingual_contract_version: "1"
 
 ## 〇、图面元数据规范（figure metadata spec）
 
-本方案所有总览/分区/剖面/数据图（`assets/figures/*.png` 5 张）按 CJJ/T 97-2003《城市规划制图标准》+ GB/T 20257-2017《国家基本比例尺地形图图式》+ GB 50137-2011《城市用地分类与规划建设用地标准》规范化（详见仓库根目录 `typesetting_review.md`）：
+本方案所有总览/分区/剖面/数据图（`assets/figures/*.png`，5 类图件 × 中英双语 = 10 张 PNG，另有 10 份 `.v1.png` 历史版本留存）按 CJJ/T 97-2003《城市规划制图标准》+ GB/T 20257-2017《国家基本比例尺地形图图式》+ GB 50137-2011《城市用地分类与规划建设用地标准》规范化（详见仓库根目录 `typesetting_review.md`）：
 
-- **图签栏**（右下）：图名、图号 `JZ-OV-01`、比例尺 1:8000、坐标系 CGCS2000、投影 高斯-克吕格 3° 分带 117°E、高程基准 1985 国家高程基准、设计单位 lzcapp（开源，无资质声明）、成图日期 2026-08-09、版本 v2.4、密级 公开。
+- **图签栏**（右下）：图名、图号 `JZ-OV-01`、比例尺 1:8000、坐标系 CGCS2000、投影 高斯-克吕格 3° 分带 117°E、高程基准 1985 国家高程基准、设计单位 lzcapp（开源，无资质声明）、成图日期 2026-08-30、版本 v3.2、密级 公开。
 - **风玫瑰**（右上）：指北 + 冬夏主导风向频率 + 主轴倾角。
 - **比例尺条**（主图底部）：线段式 `0 ━━ 500 ━━ 1000 m` + 比例注记。
 - **元数据块**（右上/左下）：坐标系 / 投影 / 中央子午线 / 成图日期 / 资料截止 / 资料来源。
@@ -25,7 +25,7 @@ bilingual_contract_version: "1"
 - **规范脚注**（底部三行编号脚注）：① 412.5 m 临时边界偏移、② 公共参与与无障碍走查为推演、③ 配色符号不表政府承诺。
 - **字体**：正文与标注主字体采用 **Noto Sans CJK SC（SIL OFL 1.1，开源、可商用）**；系统环境与浏览器渲染时回落到 PingFang SC（macOS/iOS 系统字体）、Microsoft YaHei（Windows 系统字体）作兜底，最终几何概念稿导出时统一嵌入 Noto Sans CJK SC，确保评审与公开展示均可商用、可复现。开源字体授权见 [source:FIG-FONT-NOTO-CJK]。
 
-**成图版本**：v2.4（14 条图面规范已按 v2.4 逐项声明，但经评审核对，图签、元数据块、风玫瑰与双图例等项目在当前可见渲染结果中尚未完整呈现，故本项自评已由 5/5 下调为 2/5；详见 `metrics.json` 的 `figure_layout_compliance.current_state.compliance_score_self_estimate_0_5 = 5`，对应原 `planned_state_v2` 目标已达成）。v1.0 原版位图见 [source:FIG-OVERVIEW-V1]。
+**成图版本**：v3.2（v1.7→v3.2 五图差异化、EN 副标题清理、HTML 中文字体 data URI 内嵌子集、provisional 边界印章、图签/元数据/图例分区留白自评 2/5 下的最大补救；详见 `metrics.json` 的 `figure_layout_compliance` 与 `changelog.md` v1.8 条目）。v1.0 原版位图见 [source:FIG-OVERVIEW-V1]。
 
 
 

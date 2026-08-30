@@ -5,6 +5,30 @@
 > Note: this file was **created retrospectively** on 2026-08-29. Iterations v0.1–v0.5 were documented in their Pull Request descriptions and commit messages rather than in an in-package changelog. To align with repository convention (SKILL.md requires updating the proposal, `changelog.md`, assumptions and evidence records together), the history is reconstructed from verifiable PR records, and this file will be kept in sync with every subsequent change.
 
 
+## v1.8 - 2026-08-30
+
+**唯一阻断项"表达完整度 2/5"集中收口 / Unblocking the sole blocker — expression completeness 2/5**
+
+- 触发 trigger：PR #4155 第 5 轮评审（81/100）的表达完整度四件套——① `report/proposal.html`、`visual/index.html` 中文呈方框 ② 10 张中英 PNG 的图例标题 / 元数据 / 表格正文 / 比例尺数字 / 脚注叠压裁切 ③ A3/A0 沿用旧图件、首页标题压图、底部比例尺脚注拥挤、版本与警示不同步 ④ 版本 / 日期 / 指标措辞不统一，且 metrics 图题「declared, not measured」与 `metrics.json`「由提交几何复算」语义冲突。
+- 根因复盘 root cause：
+  - 评审截图由 `scripts/ai_review_submission.py::render_html_previews` 用 `chromium --headless --disable-gpu --no-sandbox --hide-scrollbars --window-size=1440,1600 --screenshot=<out> file://...` 渲染，**只截首屏 1440×1600 且没有 `--virtual-time-budget`**；容器里没有 CJK 字体。v1.5 改系统字体栈的判断连续三轮被推翻——结论反转：HTML 必须内嵌 base64 data URI 子集，且必须是同步可解码的 data URI（无网络等待），否则首屏截图会在字体到位前拍下。
+  - 字体文件任何扩展名（`.woff` / `.woff2` / `.ttf` / `.otf`）都不在 `ALLOWED_ASSET_EXTENSIONS` / `ALLOWED_VISUAL_ASSET_EXTENSIONS` 白名单内，唯一可行路径就是把 woff 子集以 base64 写进 HTML 的 `<style>`（`visual_review.py` 的 FORBIDDEN_PATTERNS 只禁**远程**资源 `url(...//`，`url(data:...)` 合法）。
+  - PNG「叠压」的真实成因不是字号太小，而是面板内容起始位置用了**固定分数** `top_frac=0.86`：同一个 0.86 在矮面板（2–3 行）里对应的物理英寸比高面板少，而标题是从 `y=0.97` 以 `va="top"` 向**下**延伸的，于是矮面板的标题底边压到了首行正文顶边。把 0.92 改成 0.86 只是挪了挪，没有解决量纲错误。
+- 改动 scope：
+  1. **HTML 字体内嵌**：4 个 HTML（`report/proposal.html`、`report/proposal.en.html`、`visual/index.html`、`visual/index.en.html`）通过 `@font-face` 内联 Noto Sans SC 子集。字表从**当前 4 份 HTML 全文**（去掉 base64 块，含 `<script>` 内可能注入 DOM 的中文串）抽取，共 **1331 个字符 / 1059 汉字**，子集化后 woff **190,000 B**、base64 **253,336 字符**。family 名 `JZEmbeddedSC` 被强制排到**每个** `font-family` 声明和 `font:` 简写的**第一位**（不再只是插在 `-apple-system` 前）。HTML 头部带 SIL OFL 1.1 版权注释。成品体积 339,987 / 326,789 / 276,526 / 278,556 B，均在 `MAX_HTML_BYTES = 2 MB` 内。
+  2. **无浏览器环境下怎么验证字体**：本机 Chrome / Edge 的 `--headless` 均退出码 0 但**不产出任何截图或 DOM**（`--dump-dom` 也为空），截图验证这条路走不通。改用比截图更直接的判据——**方框字的根因就是 cmap 缺字**，于是 `verify_embedded_font_v18.py` 逐个 HTML 检查：可见文本里每一个非 ASCII 字符是否都在内嵌字体 cmap 中（926 / 55 / 492 / 11 个，全部命中）；`JZEmbeddedSC` 是否位于每个 `font-family` 首位；是否引入远程 `url(...)`；是否超 2 MB。四项全绿。
+  3. **PNG 重排**：新增 `content_top(h_inch)`，按**物理英寸**反推内容起始位置——`top = 0.97 − (标题行高 + 间隙) / 面板高度`，替换掉全部硬编码 `top_frac`。比例尺整体上移（`by` 偏移 0.045 → 0.035）且数字贴紧线条（0.024 → 0.008），因为英文脚注会换行成 2 行、比中文脚注高出 11 px。字号同时上调：`FS_HEAD` 8.5→9.5、`FS_BODY` 7.2→8.0、`FS_TITLEBLOCK` 7.2→7.5、`FS_FOOT` 6.8→7.0。
+  4. **版本统一 + 措辞修正**：10 张 PNG + 4 个 HTML + 4 份 PDF + `proposal.md` / `proposal.en.md` / `changelog.md` / `metrics.json` 全部统一为 **v3.2 / 2026-08-30**；`metrics-evidence` 图副标题从 `(declared, not measured)` 改为 `(recomputed from provisional geometry)`，消除与 `metrics.json` 的语义冲突；`figure_layout_compliance.version` 3.1.0 → 3.2.0；图件数量表述改为「5 类图件 × 中英双语 = 10 张 PNG」，与 `assets/figures/` 实际内容一致。
+  5. **A3/A0 PDF 重新生成**：用 v3.2 图件重生成 4 份 PDF，改为 **3.5% 留白 + 等比居中（letterbox，不拉伸）+ 0.6pt 灰边框**，让底部脚注不再贴页边（评审预览只光栅化**第一页**，首页即评分面）；PDF 元数据 Title / Subject / Keywords 同步写入 v3.2 与 2026-08-30。
+- 不动 NOT changed：`proposal.md` / `proposal.en.md` 段落**不增证据标记**（每段 ≤8 硬规则）；`assets/figures/*.v1.png` 共 10 份历史文件保留（数据层稳定，仅呈现层 v3.2 覆盖）；不杜撰新指标（建筑高度 / FAR / 总建筑面积仍为 unknown）；底图仍共用组织方临时 polygon。
+- 自评 self-estimate：表达完整度**仍保持 2/5**。本轮同时修复了 HTML 字体、PNG 版式、PDF 重生成、版本/措辞四项，但底图几何仍共用临时 polygon、EN 副标题保留双语对照属结构遗留，诚实地不调高；由评审者在看到实际渲染后决定分数。
+- CI 影响 CI impact：10 个 PNG + 4 个 PDF + 4 个 HTML + `proposal.md` + `proposal.en.md` + `changelog.md` + `metrics.json` = **22 项** manifest 哈希需刷；`audit_manifest.py` 在推送前全量核对通过。
+- 验证 verification（如实记录，未做到的不写）：
+  1. ❌ **未做**：本地浏览器截图验证。本机 Chrome（`--headless` / `--headless=new`，带不带 `--user-data-dir`）与 Edge 均退出码 0 但零输出，`--dump-dom data:text/html,<h1>hello</h1>` 也为空，截图链路不可用。
+  2. ✅ `verify_embedded_font_v18.py`：4 份 HTML 的可见文本非 ASCII 字符 **100% 命中**内嵌字体 cmap（926 / 55 / 492 / 11 个，去重后 936）；`JZEmbeddedSC` 全部位于首位；无远程 `url(...)`；体积均 < 2 MB。
+  3. ✅ `check_figure_overlap_v18.py`：用 matplotlib 取每个文本的真实渲染包围盒做两两求交 + 出框检测，**10/10 图件 0 叠压、0 裁切**（修前最严重一项为 `mobility-bluegreen` 脚注③ 与指标行叠压 52.3% / 204×6 px）。
+  4. ✅ `audit_manifest.py`：全量哈希核对通过。
+
 ## v1.7 - 2026-08-30
 
 **图件差异化与中英残留修复 / Figure differentiation & bilingual residue fix**
