@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>有门的城市 - proposal report</title>
+<style>
+:root {
+  --ink: #172033;
+  --muted: #667085;
+  --line: #d7dee8;
+  --paper: #ffffff;
+  --bg: #f4f7fa;
+  --accent: #245b8f;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.75;
+}
+main {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 42px 24px 72px;
+  background: var(--paper);
+  min-height: 100vh;
+  box-shadow: 0 0 0 1px rgba(23, 32, 51, 0.05);
+}
+.hero {
+  border-bottom: 3px solid var(--accent);
+  padding-bottom: 24px;
+  margin-bottom: 30px;
+}
+h1 { font-size: 34px; line-height: 1.22; margin: 0 0 10px; }
+h2 { font-size: 25px; margin: 34px 0 12px; border-top: 1px solid var(--line); padding-top: 24px; }
+h3 { font-size: 20px; margin: 26px 0 10px; }
+p, li { font-size: 16px; }
+blockquote {
+  margin: 18px 0;
+  padding: 12px 18px;
+  border-left: 4px solid var(--line);
+  color: var(--muted);
+  background: #f8fafc;
+}
+code {
+  background: #eef2f7;
+  color: #1d4f7a;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+:not(pre) > code {
+  display: inline-block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.summary { color: var(--muted); font-size: 17px; }
+.translation-link a { color: var(--accent); font-weight: 700; }
+.proposal-table { margin: 20px 0 26px; overflow-x: auto; }
+.proposal-table table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 520px;
+  font-size: 15px;
+}
+.proposal-table th, .proposal-table td {
+  border: 1px solid var(--line);
+  padding: 9px 12px;
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.proposal-table th { background: #eef2f7; color: var(--ink); font-weight: 700; }
+.proposal-table tbody tr:nth-child(even) { background: #fafcfe; }
+.proposal-table .align-center { text-align: center; }
+.proposal-table .align-right { text-align: right; }
+.proposal-figure {
+  margin: 22px 0 28px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f8fafc;
+}
+.proposal-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.proposal-figure-link { display: block; }
+.proposal-figure figcaption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+}
+.proposal-figure-open {
+  flex: 0 0 auto;
+  color: var(--accent);
+  font-weight: 700;
+}
+.evidence {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  margin: 0 0.12em;
+  border-bottom: 1px solid #8aa8c3;
+  color: #315f87;
+  font-size: 0.68em;
+  font-weight: 650;
+  line-height: 1.35;
+  vertical-align: super;
+}
+@media (max-width: 720px) {
+  main { padding: 26px 16px 52px; }
+  h1 { font-size: 26px; }
+  h2 { font-size: 21px; }
+  .proposal-figure figcaption { align-items: flex-start; flex-direction: column; }
+  .proposal-figure-open { min-height: 40px; display: inline-flex; align-items: center; }
+}
+</style>
+</head>
+<body>
+<main>
+<section class="hero">
+<h1>有门的城市</h1>
+<p class="summary">从15:30校门真人交接与21:40停电回家两项设计探针出发，先核验普通通行、具名真人责任、无 AI 基线与可关合恢复，再让首期证据包进入完整城市系统。</p>
+<p class="translation-link"><a href="proposal.en.html">Read in English</a></p>
+</section>
+<h2>15:30—21:40｜两个设计探针：先看一个普通家庭的一天</h2>
+<p><strong>15:30，放学探针。</strong> 原定接孩子的家人临时赶不到，孩子先留在学校真人值守的安全等待处；监护人只发起一次临时接应。真正的空间问题不是手机能否弹出提醒，而是校门、安全等待、过街和社区隐私阈值之间，谁在每一段持责，何时完成具名真人交接。<code>SCN-AIO-01</code>以<code>P04 / P05 / P10</code>约束这条链：实体交接前由学校具名真人持责；身份不清、孩子拒绝或接应人无回应时不放行，无回应不等于同意；只有接应真人明确接收并完成实体交接后才转责。Agent不决定放行、不生成通行权，也不能让责任在屏幕上提前跳到下一站。纸面名单、普通电话、安全等待、实体导视、连续步行面和人工护送必须不依赖AI而成立。</p>
+<p><strong>21:40，停电探针。</strong> 同一个家庭仍要从公共和共享空间回家。<code>SCN-AIO-02</code>通过<code>P06 / P10</code>要求屏幕退场：普通／应急照明、固定电话、纸面联系人、机械门、实体导视和具名真人接力必须能独立闭合回家链。家庭、物业、社区各守原责；无人明确接收时，责任不得被推向下一节点。住宅终点不公开，断电期间不补采连续轨迹，恢复供电或网络也不自动恢复已经撤回的临时权限。</p>
+<p><strong>当前不能假装已经取得的证据。</strong> <code>15:30</code>和<code>21:40</code>都是已注册的设计探针，不是已核实的固定放学或故障时刻。其中，15:30仅是注册设计探针，不代表北京或全国幼儿园的典型放学时刻；进入施工前，必须取得目标园所当期作息、分班错峰、延时服务及接送／滞留责任表。当前尚无经核验的真实校门、社区入口、过街位置与净宽、连续无障碍路线、权属和道路／物业／市政责任边界，也没有固定电话、照明、机械旁通、值班机制、机构协议与同口径演练数据的完整现状清单。因此，本方案不释放现实宽度、响应时长、成功率、设施存在或运营就绪结论；官方geometry、FAR、建筑高度、建筑密度、法定绿地率和退界继续为<code>unknown</code>。</p>
+<p><strong>首期可以启动的工作包。</strong> 首期不是建设或运营承诺，而是<code>P04 / P05 / P06 / P10</code>的证据化启动包：共同踏勘校门—过街—社区与停电回家公共／共享段；逐段登记普通通行、传统市政、真人持责、维护、疏通、疏散和人工旁通；以纸面名单、普通电话、机械门和普通／应急照明进行无 AI 盲演；在权属与责任主体确认后，再开展可逆、可撤除的接口设计。未闭合尺度继续保持<code>concept target</code>或<code>unknown</code>，不得进入施工、审批或绩效承诺。</p>
+<p><strong>再进入完整城市系统。</strong> 只有普通底盘、具名责任、现状与法定输入、维护恢复和退出条件逐项闭合，方案才从这两段日常扩展至由43.6 km²统筹研究、11.4 km²总体设计、三重点区与五套城市网络构成的完整城市系统。完整系统仍只连接当次任务、结果、回执与必要故障摘要；<code>P10</code>是分布式真人服务站网络，不是中央大脑，也不接管一个完整的人或家庭。</p>
+<h2>总体主张</h2>
+<p>城市只接一次任务，不接一个完整的人。人的生活连续性是唯一上位目标：私人侧能力可以持续，但公共权限、空间、设备和责任在每个现实场景重新申请；公共端由分域真人节点接收有限任务，并始终保留无AI、人工旁通、维护、恢复与完整退出。 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="AGENT-TASKBOOK" title="来源：AGENT-TASKBOOK">来源</sup> <sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="PROJECT-AGENT-OPEN-CALL-TASKBOOK" title="标准：PROJECT-AGENT-OPEN-CALL-TASKBOOK">标准</sup></p>
+<h2>设计依据与资料清单</h2>
+<p>本方案以官方结构化任务书、公告、标准库、公开来源和已清权的内部设计工件为依据。所有结论分为 official/public source、provisional source、design proposal 与 unknown 四类；来源被登记并不等于主张已经通过专业核验。当前官方仅提供三层范围的文字和面积，未提供精确 polygon，因此本包使用醒目标记的 provisional geometry，并保留统一替换与复算机制。 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="SITE-PACKAGE" title="来源：SITE-PACKAGE">来源</sup> <sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="PROJECT-OFFICIAL-ANNOUNCEMENT" title="标准：PROJECT-OFFICIAL-ANNOUNCEMENT">标准</sup></p>
+<h3>R01｜法定背景只作边界，不作几何或现状替代</h3>
+<div class="proposal-table"><table><thead><tr><th>证据</th><th>公开合同</th><th>来源引用</th></tr></thead><tbody><tr><td><code>STAT-N7-1E-01</code></td><td>官方资料确认更大范围的街区层面控规已获批，涉及 9 个街区、约 16.7 km²；本项目不据此推导竞赛边界或地块控制。</td><td><sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="SRC-N7-1E-STAT-01" title="来源：SRC-N7-1E-STAT-01">来源</sup> <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="SRC-N7-1E-STAT-02" title="来源：SRC-N7-1E-STAT-02">来源</sup></td></tr><tr><td><code>STAT-N7-1E-02</code></td><td>官方转载资料可支持大钟寺与公共服务的方向性背景，但不证明本方案点位、运营者、预算或服务已经落实。</td><td><sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="SRC-N7-1E-STAT-02" title="来源：SRC-N7-1E-STAT-02">来源</sup></td></tr><tr><td><code>STAT-N7-1E-03</code></td><td>官方记录可证明二期实施方案批复、招标程序旁证及所述配套项目的进度事实；它们不等于全部工程或本竞赛方案已落地。</td><td><sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="SRC-N7-1E-STAT-03" title="来源：SRC-N7-1E-STAT-03">来源</sup> <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="SRC-N7-1E-STAT-04" title="来源：SRC-N7-1E-STAT-04">来源</sup> <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="SRC-N7-1E-STAT-05" title="来源：SRC-N7-1E-STAT-05">来源</sup></td></tr></tbody></table></div>
+<figure class="proposal-figure"><a class="proposal-figure-link" href="../assets/figures/site-overview.png" target="_blank" rel="noopener"><img src="../assets/figures/site-overview.png" alt="三层范围、五套网络与证据关系"></a><figcaption><span>三层范围、五套网络与证据关系</span><a class="proposal-figure-open" href="../assets/figures/site-overview.png" target="_blank" rel="noopener">查看原图</a></figcaption></figure>
+<h2>三层范围工作框架</h2>
+<p>43.6 km²统筹研究范围回答产业生态、文化与未来城市战略；11.4 km²总体设计范围把主张翻译为空间网络、项目与指标；368.4 ha三处重点区域以同字段、同深度验证不同副目标。三个层级不相加、不互相替代。11.4 km²是本包三项空间指标的唯一分母。 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="SITE-PACKAGE" title="来源：SITE-PACKAGE">来源</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="three_level_scope_framework" title="深度：three_level_scope_framework">深度</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="site_area_sqm" title="指标：site_area_sqm">指标</sup></p>
+<p>上位层提出的“生活连续性、分域真人接责、非中央公共接口”必须向下落实为五套网络、P01–P10与12张场景；重点区发现的冲突、维护条件和退出要求则反向校正总体层和战略层。当前三层polygon均以公告文字、面积与临时锚点推导，不能把三层面积相加，也不能用重点区边界替代11.4 km²指标分母；官方geometry到达后，九层空间数据、图件和指标必须作为同一版本整体复算。 <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/key_areas.geojson#PROV-KEY-001" title="空间数据：geometry/key_areas.geojson#PROV-KEY-001">空间数据</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="metrics_recalculation" title="深度：metrics_recalculation">深度</sup></p>
+<figure class="proposal-figure"><a class="proposal-figure-link" href="../assets/figures/land-use-structure.png" target="_blank" rel="noopener"><img src="../assets/figures/land-use-structure.png" alt="四类用途支持区与项目组合"></a><figcaption><span>四类用途支持区与项目组合</span><a class="proposal-figure-open" href="../assets/figures/land-use-structure.png" target="_blank" rel="noopener">查看原图</a></figcaption></figure>
+<h2>统筹研究范围产业与未来城市研究</h2>
+<p>“有门的城市”把人的生活连续性设为上位目标：私人侧能力可以连续，进入公共场景时权限、空间、设备与责任重新申请；公共端只接当次任务，不接完整的人、家庭或私人Agent。创新生态由人、公共机构、知识机构、产业主体、四类空间与责任门共同组成，跨区只交换有限任务、结果、回执和必要故障摘要。六个一手来源案例用于比较受控测试、社区服务、分阶段许可、人工监督与运营组织，不直接移植其绩效数字。 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="AGENT-TASKBOOK" title="来源：AGENT-TASKBOOK">来源</sup> <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="CASE-03" title="来源：CASE-03">来源</sup> <sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="PROJECT-AGENT-OPEN-CALL-TASKBOOK" title="标准：PROJECT-AGENT-OPEN-CALL-TASKBOOK">标准</sup></p>
+<h3>6个全球案例与可转化机制</h3>
+<ul>
+<li><strong>Modena Automotive Smart Area（意大利摩德纳）</strong>：在开放城市道路之外设置可控动态试验区，利用联网信号、数字标识、障碍识别与可移除标线，把研究、认证、维护与公共通行分层组织；其价值在于“可控测试边界”，而非复制中央控制室。局限是它仍以研发与认证为主，尚不能证明大规模公共服务绩效。 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="CASE-01" title="来源：CASE-01">来源</sup></li>
+<li><strong>Accessibili-D（美国底特律）</strong>：以11平方英里服务区、电话与App并行预约、无障碍车辆、真人安全员和社区反馈调整站点，把自动驾驶限定为老人和残障人士的社区服务补丁。局限是试点依赖资金、地理范围与真人安全员。 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="CASE-02" title="来源：CASE-02">来源</sup></li>
+<li><strong>SHOW（欧洲20个城市）</strong>：在密集城区、郊区、邻里与受控场地中统一测试固定线路、需求响应、MaaS与物流服务，并用共同指标比较乘客、货运、安全与运营。局限是平均速度较低，事故与冲突仍发生，跨城市结果不能直接移植到单一街区。 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="CASE-03" title="来源：CASE-03">来源</sup></li>
+<li><strong>Punggol自动驾驶接驳（新加坡）</strong>：以固定路线、实体上下客点、公共交通换乘、真人安全员和居民反馈逐步开放，连接住宅、诊所、市场与轨道站。局限是路线与站点约束明显，尚处早期运营阶段。 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="CASE-04" title="来源：CASE-04">来源</sup></li>
+<li><strong>北京亦庄高等级自动驾驶示范区</strong>：通过限定运行域、分阶段许可、路侧设施与交通枢纽连接，把测试、商业服务和监管逐步衔接。局限是公开资料更强调扩张与产业发展，普通无App入口、隐私、地方故障恢复和独立审计仍需补证。 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="CASE-05" title="来源：CASE-05">来源</sup></li>
+<li><strong>Waymo无人驾驶出行服务（美国多城）</strong>：作为专项参照，说明混行服务仍依赖路缘上下客、车队维护、远程协助和限定运行域。它不是公共创新街区范本；公平、空驶、路缘竞争与停电连续性不由本轮证据证明。 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="CASE-06" title="来源：CASE-06">来源</sup></li>
+</ul>
+<h2>总体设计范围城市更新与控规深度城市设计</h2>
+<p>11.4 km²不是三区之间的连线图，而是五套可维护的城市网络：普通通行与慢行、蓝绿与公共空间、真人服务与无AI接力、产业测试/物流/维修/安全归港、能源/通信/恢复。横向权限合同要求每个节点都说明谁发起、为何调用、何时关权、谁接责以及故障后怎样回到普通服务。 <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/roads.geojson#N2B-RD-001" title="空间数据：geometry/roads.geojson#N2B-RD-001">空间数据</sup> <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/public_space.geojson#N2B-PS-001" title="空间数据：geometry/public_space.geojson#N2B-PS-001">空间数据</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="overall_spatial_structure" title="深度：overall_spatial_structure">深度</sup></p>
+<p>城市更新动作不从拆建数量出发，而从普通底盘是否连续开始：先保全无需App的道路、无障碍、传统市政与真人入口，再把既有首层、公共空间和后勤空间改造成可逆接口，最后才讨论新增构筑物。用地、建筑、道路、绿地、公共空间、约束和分期必须共享P、SCN、责任、维护、恢复与退出字段；现阶段缺少法定用地、权属、建筑、轨道出入口和市政容量数据，因此图层只表达可复核的设计结构，不释放FAR、高度、拆除或工程承诺。 <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="retain_renovate_demolish" title="深度：retain_renovate_demolish">深度</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="traffic_rail_slow_parking" title="深度：traffic_rail_slow_parking">深度</sup></p>
+<h2>重点区域详细设计</h2>
+<p>众智园验证可隔离、可维修、可复测的产业底盘；AI原点社区验证教育、医疗、银龄、家庭与停电中的低介入生活连续；大钟寺验证可进入、可拒绝、可申诉、可完整退场的城市前厅。三区各自保留普通公众线、真人服务线、维护/恢复线和本地降级闭环；京张公共脊柱连接三区，但不是第四重点区。 <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/key_areas.geojson#PROV-KEY-001" title="空间数据：geometry/key_areas.geojson#PROV-KEY-001">空间数据</sup> <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/key_areas.geojson#PROV-KEY-002" title="空间数据：geometry/key_areas.geojson#PROV-KEY-002">空间数据</sup> <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/key_areas.geojson#PROV-KEY-003" title="空间数据：geometry/key_areas.geojson#PROV-KEY-003">空间数据</sup></p>
+<h3>P01–P10在三区的挂位</h3>
+<ul>
+<li><strong>P01 蓝绿开放验证环</strong>：串联受控实验、公众观察、蓝绿连续与安全回收的公开边界。 — SCN-ZZY-01, SCN-ZZY-03</li>
+<li><strong>P02 机器天气场＋安全回收港</strong>：在限定设备、版本、路面和时窗内验证雨雪热、积水与表面条件，并在异常时物理归港。 — SCN-ZZY-01</li>
+<li><strong>P03 维修—补能—端侧算力共用后场</strong>：承载备件、低权限诊断、隔离、维修、补能、复测准备、受限端侧算力和人工停机。 — SCN-ZZY-02, SCN-ZZY-03</li>
+<li><strong>P04 15:30 三道慢门安全廊</strong>：把校门—过街—社区的儿童通学组织为三道慢门与真人责任接力。 — SCN-AIO-01</li>
+<li><strong>P05 可见求助门网络</strong>：把学校、社区、卫生服务、普通电话与安全等待点组织成看得见、可找到真人、可拒绝AI的求助入口。 — SCN-AIO-01, SCN-AIO-03</li>
+<li><strong>P06 21:40 家庭—社区连续性节点</strong>：在停电、断网和夜间异常中保留共享侧联络、照明、机械旁通、纸面流程和真人接力，不公开住宅geometry。 — SCN-AIO-02, SCN-AIO-03</li>
+<li><strong>P07 大钟寺站四象限地面缝合</strong>：处理站城换向、普通通行、无障碍过街、非机动车秩序和四象限地面公共空间。 — SCN-DZS-01, SCN-DZS-03</li>
+<li><strong>P08 真人城市前台＋Visitor Agent Landing Hall</strong>：承载多语问询、短期访问、人工申诉、工作委托和到期退场，并保持普通无凭证公共线。 — SCN-DZS-01, SCN-DZS-02</li>
+<li><strong>P09 可逆展演公地＋居民安静脊</strong>：平日服务居民连续生活，活动时限定展开，结束后设施、凭证、临时权限与数据接口共同退场。 — SCN-DZS-02, SCN-DZS-03</li>
+<li><strong>P10 有门·人机公共服务站网络</strong>：以主站、分站和低权限节点承载实体服务，并为P05/P08等空间门提供排班、培训、转办、审计、人工接管与机构协议；不成为中央总控。 — SCN-ZZY-02, SCN-AIO-01, SCN-AIO-02, SCN-AIO-03, SCN-DZS-01, SCN-DZS-03</li>
+</ul>
+<figure class="proposal-figure"><a class="proposal-figure-link" href="../assets/figures/key-areas.png" target="_blank" rel="noopener"><img src="../assets/figures/key-areas.png" alt="三处重点区域的不同副目标"></a><figcaption><span>三处重点区域的不同副目标</span><a class="proposal-figure-open" href="../assets/figures/key-areas.png" target="_blank" rel="noopener">查看原图</a></figcaption></figure>
+<h2>AI 创新生态、人才画像与 AI+ 场景</h2>
+<h3>三条生活回环｜到达、谋生、接责</h3>
+<p>这是覆盖在既有 P01–P10、12 个 SCN 与五套城市网络上的阅读层，不新增项目、场景、法定边界、指标或中央平台。每条回环都从人的主动请求开始，以普通无数字线为底，在具名真人明确接责后转段，并以任务、权限和临时接口关闭收束。<sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="AGENT-TASKBOOK" title="来源：AGENT-TASKBOOK">来源</sup></p>
+<p><strong>外来游客／访客完整服务回环。</strong> 访客只在报名活动、接受邀请、预订行程、主动扫码或到达真人前厅时开启一次临时门：落地前的天气、到达、联网、支付、住宿、行李、会场、餐饮、多语与无障碍信息，随到达任务包进入大钟寺真人城市前厅和可选 Visitor Agent；完成行李、住宿、交通与餐饮安顿后，经可选择的展演与城市总览进入京张公共文化导览，再到众智园的公众观察边和 AI 原点的公共体验边缘，夜间回住处，次日继续或经大钟寺离城，最后关闭临时任务与权限。不开启数字服务的人仍使用普通公共交通、实体导视、纸面地图、普通电话、真人问询和无障碍路线。这是当次任务包，不是长期游客画像；游客不是测试传感器，也不为设备让路；参观真实城市不等于参观真实居民，儿童、老人、患者、家庭与住宅不成为展品。服务点位、营业信息、运营者、路线与接收机构均待现场和机构核验。</p>
+<p><strong>本地商户／青年／银龄经济回环。</strong> 一单真实需求先由商户维护开放服务卡，公共接口只核验资质、安全、认证、投诉与经营事实，用户的私人 Agent 再按这一单的距离、时间、预算、语言、无障碍需求和当前容量临时匹配；用户可直接电话、进店或与商户继续交易。AI 原点周边可承接购买与租赁、安装设置、互联、教学、翻新和小修；复杂故障可再进入众智园诊断、复测、培训与规范更新，把能力和设备送回社区，让下一次本地服务更强。公共 AI 是交换机，不是收费站：不出售“自然推荐”排序，不把广告混入匹配，不强制独家入驻或占有客户关系，基础匹配不以交易额抽成，并保留商户纠错、申诉与轮换曝光。这条回环可能支持青年承担安装、维修、接待、课后助教、活动运营与无障碍改造等有报酬岗位，也可能让退休工程师、教师和社区熟人在资格边界内成为有报酬的导师、复检、课后支持与文化导览能力；银龄经济不只是向老人售卖服务。这是待验证的经济组织提案，不证明平台、商户名录、订单、岗位、收益或运营关系已经存在；资质、容量、付费、保险、劳动关系与公共成本均须另核。</p>
+<p><strong>智慧课堂—接送—课后—家庭链。</strong> 上课前，AI 可帮教师整理教材、共性错题、分层练习和实验模拟；课堂中教师仍是教学中心，不长期盯脸、不生成注意力人格分或无限增长的儿童画像；下课后只把作业、已完成项和确需解释的问题收束成轻量当日学习任务包。家长或其 Agent 查询当天合法、值班且有容量的具名接送责任席位，由家长选择并创建一次性授权；学校具名真人现场核验，孩子仍可拒绝，只有真人对真人完成实体交接后才转责。具名接应人未到时，孩子继续留在学校真人责任范围；步行小组或合规车辆把孩子送至社区课后站后，由课后站具名真人明确接收。饮水、餐点、休息、运动、玩耍与兴趣活动先于可选学习辅助，“今天到这里就够了”也是服务完成。晚间由家长或下一位具名真人明确接收，课后站才结束责任并关闭当日接送任务与临时权限；家庭争执、拖延、情绪和私人生活默认不倒灌学校。真实园校作息、接送与滞留责任、服务准入、背景核验、培训、保险、定价与课后站运营者均待核验。</p>
+<p><strong>政策与城市边界。</strong> 讨论纪要中的“政府约 30% ＋家庭约 70%”只是接送服务共付机制的<strong>非绑定政策原型</strong>，不是预算、定价、补贴承诺或实施比例；若后续采用，必须另行测算、分档、公示与裁决，本版不由此生成任何数值指标。三条回环在众智园、AI 原点与大钟寺之间互相供血，但三区仍分别持有本地责任、降级和退出门；京张只是供普通步行、骑行、文化导览、低权限求助和真人接力使用的非中央公共接口带，不是第四重点区、中央大脑或私域数据脊柱。JZ-03 是断电时的无屏真人接力异常分支，不代替三条日常回环。维护责任穿过游客信息、导视与电话、课堂设备、接送培训、家庭硬件、复杂维修与能力回流，但不另立第四条生活主题。</p>
+<p><strong>三区回环图。</strong> 下图只表达逻辑关系：三处重点区围绕空心中心闭合，京张位于外缘作为非中央公共接口带；三条彩色线是阅读叠加层，不表达位置、距离、路线、法定边界或责任自动转移。</p>
+<figure class="proposal-figure"><a class="proposal-figure-link" href="../assets/figures/life-loops.n7-1f.png" target="_blank" rel="noopener"><img src="../assets/figures/life-loops.n7-1f.png" alt="N7-1f 京张三区与三条生活回环概念拓扑"></a><figcaption><span>N7-1f 京张三区与三条生活回环概念拓扑</span><a class="proposal-figure-open" href="../assets/figures/life-loops.n7-1f.png" target="_blank" rel="noopener">查看原图</a></figcaption></figure>
+<h3>R03｜三区旗舰场景与十二场景同源表</h3>
+<p><code>data/processed/scenes/scene_cards.normalized.v0.2.json</code></p>
+<p>12 张均保持设计场景、证据门开放、current value = null、formal_ready=false；v0.2 只增加公开显影字段，不改 v0.1 canonical fields。</p>
+<h4>众智园</h4>
+<div class="proposal-table"><table><thead><tr><th>场景</th><th>项目</th><th>测量协议</th><th>公开合同</th></tr></thead><tbody><tr><td><strong>SCN-ZZY-01</strong><br>机器天气准入与安全归港</td><td>P01, P02</td><td>MP-M-ZZY-01, MP-M-ZZY-02</td><td>准入不是放行一台机器，而是把限定测试、公众边界、独立急停与物理归港连成可关闭的责任链。<br>仅在具名真人、普通公众通行、独立急停、维护与物理回收均可用时进入限定测试；任一门失效即停止。</td></tr><tr><td><strong>SCN-ZZY-02</strong><br>跨厂牌故障诊断—维修—复测</td><td>P03, P10</td><td>MP-M-PSS-08, MP-M-ZZY-02</td><td>维修闭环可展示，缺失的 M-PSS-08 定义继续阻断采集，不用推测方法或阈值填空。<br>跨厂牌诊断与复测须保留人工维修、纸面记录和独立复核；M-PSS-08 定义注册前不得采集或声称结果。</td></tr><tr><td><strong>SCN-ZZY-03</strong><br>公共样本—隔离沙盒—结果级交付</td><td>P01, P03</td><td>MP-M-PSS-05, MP-M-PSS-07</td><td>公共样本—隔离沙盒—结果级交付是一条最小披露链，当前仍待现场与制度证据。<br>公共样本只进入隔离沙盒并以结果级交付，禁止原始数据外发、跨任务继承或把公众作为训练对象。</td></tr></tbody></table></div>
+<h4>AI 原点</h4>
+<div class="proposal-table"><table><thead><tr><th>场景</th><th>项目</th><th>测量协议</th><th>公开合同</th></tr></thead><tbody><tr><td><strong>SCN-AIO-01</strong><br>15:30 三道慢门真人交接</td><td>P04, P05, P10</td><td>MP-M-AIO-01, MP-M-AIO-02, MP-M-PSS-02, MP-Q3-PEAK-FLOW-WAIT, MP-Q3-GROUND-FLOOR-INTERFACE</td><td>学校侧真人—慢门—过街—社区侧真人—隐私停止线构成 15:30 可关闭交接。<br>15:30 链必须由学校侧真人开启，三道慢门逐段确认，社区侧真人明确接收；追踪或责任未接收即停止。</td></tr><tr><td><strong>SCN-AIO-02</strong><br>21:40 停电后的可关合回家链</td><td>P06, P10</td><td>MP-M-AIO-03A, MP-M-AIO-03B, MP-M-PSS-01, MP-Q3-NIGHT-LIGHTING-USE</td><td>断电—屏幕退场—实体基线—真人接力—家庭隐私停止线构成可关合回家链。<br>21:40 断电时非必要屏幕先退场，应急资源只保照明、求助、通信与疏散，并由真人分段接力；不得读取家庭私域。</td></tr><tr><td><strong>SCN-AIO-03</strong><br>银龄照护的预授权—接管—收束</td><td>P05, P06, P10</td><td>MP-M-AIO-02, MP-M-PSS-07, MP-Q3-GROUND-FLOOR-INTERFACE</td><td>非空间化家庭隐私门—社区求助—最小信息交接—合格接收方—许可关闭构成银龄照护闭环。<br>预授权只覆盖最小任务数据，社区真人先接管，只有合格医疗或照护接收方明确接受后才转交，并以关闭许可收束。</td></tr></tbody></table></div>
+<h4>大钟寺</h4>
+<div class="proposal-table"><table><thead><tr><th>场景</th><th>项目</th><th>测量协议</th><th>公开合同</th></tr></thead><tbody><tr><td><strong>SCN-DZS-01</strong><br>到站访客的多语种城市前厅</td><td>P07, P08, P10</td><td>MP-M-DZS-01A, MP-M-DZS-01B, MP-M-PSS-06A, MP-M-PSS-06B, MP-M-PSS-12, MP-Q3-PEAK-FLOW-WAIT, MP-Q3-GROUND-FLOOR-INTERFACE</td><td>到站入口分出普通无凭证、可选数字、有真人安静线与求助出口，任何接收机构都不能被默认承诺。<br>普通无凭证路线始终成立，数字协助可选且可撤回，同时保留有真人、安静与求助出口；机构责任只在明确接受后发生。</td></tr><tr><td><strong>SCN-DZS-02</strong><br>一次工作委托的五权分离</td><td>P08, P09</td><td>MP-M-DZS-03, MP-M-PSS-05</td><td>一次工作委托以五权分离与完整退出为核心，P08/P09-only 映射冻结。<br>委托、执行、验收、付款与争议处理五权保持分离；只关联 P08/P09，不得回填 P10。</td></tr><tr><td><strong>SCN-DZS-03</strong><br>展演开场—居民静线—完整退场</td><td>P07, P09, P10</td><td>MP-M-DZS-02A, MP-M-DZS-02B, MP-Q3-NIGHT-LIGHTING-USE</td><td>开场、居民静线与完整退场并列成立，所有数值仍待现场基线。<br>展演需同时保留普通通行、居民静线、真人值守与完整退场；噪声、拥挤或退出门失效即停。</td></tr></tbody></table></div>
+<h4>京张公共脊柱（接口层）</h4>
+<div class="proposal-table"><table><thead><tr><th>场景</th><th>项目</th><th>测量协议</th><th>公开合同</th></tr></thead><tbody><tr><td><strong>SCN-JZ-01</strong><br>雨后夜行的三证改道</td><td>P01, P04, P07</td><td>MP-M-PSS-12, MP-Q3-NIGHT-LIGHTING-USE, MP-Q3-PARK-DWELL-HELP</td><td>雨后夜行以三证改道验证公共连续性，保持 interface_only。<br>只作为京张公共连续性接口压力测试，不形成第四重点区；雨后夜行改道必须以实体照明、真人巡查和可退出路线成立。</td></tr><tr><td><strong>SCN-JZ-02</strong><br>冰雪高温下的主脊开合</td><td>P01, P02, P09</td><td>MP-M-ZZY-03A, MP-M-ZZY-03B, MP-Q3-PARK-DWELL-HELP</td><td>主脊开合保持 interface_only，两个未定义指标继续阻断采集。<br>只作为京张接口压力测试；M-ZZY-03A/B 定义注册前不得采集或声称冰雪高温开合性能。</td></tr><tr><td><strong>SCN-JZ-03</strong><br>断电时公共脊柱的无屏接力</td><td>P04, P06, P08, P09</td><td>MP-M-AIO-03A, MP-M-AIO-03B, MP-M-PSS-01, MP-Q3-NIGHT-LIGHTING-USE, MP-Q3-PARK-DWELL-HELP</td><td>实体照明—求助点—普通导视—广播／固定电话—疏散—真人分段接力构成无屏公共脊柱。<br>断电后屏幕退出，应急电只保实体照明、求助、通信与疏散；公园、物业与公共服务真人逐段明确接收，不得扩张到家庭私域。</td></tr></tbody></table></div>
+<h2>用地、建筑规模与拆改留方案</h2>
+<p>用地层只表达四类设计性用途支持区：产业验证、生活连续、公共转译和普通城市连续。建筑图层保持合法的0-feature data gap；项目载体不得冒充建筑。方案统一采用“普通底盘保全—既有首层与公共空间复用—可逆微更新—新建后置”的次序，具体法定用地、FAR、高度、权属、拆除和新建决定保持unknown。 <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/land_use.geojson#N2B-LU-ZZY" title="空间数据：geometry/land_use.geojson#N2B-LU-ZZY">空间数据</sup> <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/buildings.geojson" title="空间数据：geometry/buildings.geojson">空间数据</sup> <sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="MOHURD-CONTROL-DETAILED-PLANNING" title="标准：MOHURD-CONTROL-DETAILED-PLANNING">标准</sup></p>
+<p>四类用途支持区是功能组织，不是法定地类替换；其边界只用于检查P01–P10、场景和城市网络是否有空间承载。建筑层的空值是有意披露的数据缺口：没有已清权的轮廓、高度、结构、用途和权属时，不用示意盒子制造“已深化”的假象。取得专业资料后，应逐栋补入保留、修缮、可逆改造、新建或待核五类状态，并由规划、建筑、消防、无障碍和产权审查共同释放规模与拆改留结论。 <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="development_intensity_controls" title="深度：development_intensity_controls">深度</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="height_massing_character" title="深度：height_massing_character">深度</sup></p>
+<h2>交通、轨道、市政与公共服务设施</h2>
+<p>普通通行不依赖App、账号或数字凭证；公众线、设备线和运维线分开。P10以AI原点主站、众智园维修分站、大钟寺公共服务分站和京张低权限节点构成分域真人网络，不建立完整私域总库。断网、停电、误判和设备损坏时，纸质导视、普通电话、人工窗口、硬急停、机械拖回和传统市政旁通继续可用。 <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/roads.geojson#N2B-RD-004" title="空间数据：geometry/roads.geojson#N2B-RD-004">空间数据</sup> <sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="BARRIER-FREE-ENVIRONMENT-LAW" title="标准：BARRIER-FREE-ENVIRONMENT-LAW">标准</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="traffic_rail_slow_parking" title="深度：traffic_rail_slow_parking">深度</sup> 市政与恢复责任另由独立深度项复核。 <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="municipal_new_infrastructure" title="深度：municipal_new_infrastructure">深度</sup></p>
+<figure class="proposal-figure"><a class="proposal-figure-link" href="../assets/figures/mobility-bluegreen.png" target="_blank" rel="noopener"><img src="../assets/figures/mobility-bluegreen.png" alt="普通通行、蓝绿、维护与离线恢复"></a><figcaption><span>普通通行、蓝绿、维护与离线恢复</span><a class="proposal-figure-open" href="../assets/figures/mobility-bluegreen.png" target="_blank" rel="noopener">查看原图</a></figcaption></figure>
+<h3>R04｜SCN-JZ-03 断电时的无屏接力链</h3>
+<p>实体照明—求助点—普通导视—广播／固定电话—疏散—真人分段接力构成无屏公共脊柱。</p>
+<p><strong>场景：</strong> SCN-JZ-03</p>
+<p><strong>责任链：</strong> 断电／屏幕退场 → 实体照明 (应急电优先保基本照明); 实体照明 → 固定求助点 (照明可达固定求助点); 固定求助点 → 普通实体导视 (求助与普通导视互为备份); 普通实体导视 → 广播／固定电话 (不依赖个人手机或账号); 广播／固定电话 → 连续疏散路线 (通信只服务求助与疏散); 连续疏散路线 → 公园—物业—公共服务真人接力 (真人逐段明确接收，责任不自动转移)</p>
+<p><strong>测量协议：</strong> MP-M-AIO-03A, MP-M-AIO-03B, MP-M-PSS-01, MP-Q3-NIGHT-LIGHTING-USE, MP-Q3-PARK-DWELL-HELP</p>
+<p><strong>项目：</strong> P04, P06, P08, P09</p>
+<h2>蓝绿空间、公共空间与城市风貌</h2>
+<p>京张公共脊柱承担普通步行骑行、蓝绿连续、气候适应、铁路与创新文化阅读、低权限求助和无屏接力。公共空间概念建议包括开发者步行与开源成果展示界面、可纠错可撤下的贡献/荣誉展示节点、铁路工程—维修—AI公共文化导览序列。临时活动和设备必须可完整退场，退场后居民静线与普通公共使用继续存在。 <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/green_space.geojson#N2B-GR-001" title="空间数据：geometry/green_space.geojson#N2B-GR-001">空间数据</sup> <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/public_space.geojson#N2B-PS-001" title="空间数据：geometry/public_space.geojson#N2B-PS-001">空间数据</sup> <sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="MOHURD-URBAN-DESIGN-MEASURES" title="标准：MOHURD-URBAN-DESIGN-MEASURES">标准</sup></p>
+<p>蓝绿与公共空间均从提交geometry复算，但仅代表方案模型，不代表现状绿量、权属或法定绿地率。风貌控制采用“普通界面连续、重点节点可读、技术设施退后、夜间与居民静线优先”的规则，不凭空指定建筑高度；设备基础、机房、广告和临时展演不得切断排水、消防、无障碍和传统维修。待树木、水系、文保、建筑与地下市政资料清权后，相关专业人员还须逐段复核连续性、遮阴、海绵容量、视线和维护通道。 <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="blue_green_public_space" title="深度：blue_green_public_space">深度</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="height_massing_character" title="深度：height_massing_character">深度</sup></p>
+<h2>更新项目清单、实施政策与分期计划</h2>
+<p>P01–P10按“基线保全—可逆接口—受控测试与韧性设施—长期评估”分期。P10只承担跨区说明、接责、投诉、审计与关权支撑，不吞并P05可见求助空间或P08真人前厅。年度运营建议按Q1规则/来源更新、Q2公共场景与无AI演练、Q3测试维修复测、Q4贡献纠错退出复盘循环；这是一套深化建议，不构成政府日历、预算或招商承诺。 <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/phasing.geojson#N2B-PH-00" title="空间数据：geometry/phasing.geojson#N2B-PH-00">空间数据</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="renewal_project_list" title="深度：renewal_project_list">深度</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="phasing_implementation" title="深度：phasing_implementation">深度</sup></p>
+<h3>四阶段实施次序</h3>
+<p>1. 普通通行与传统市政基线保全 2. 可逆接口与既有空间复用 3. 受控测试、韧性设施与真人节点 4. 长期评估、纠错与按证据扩展</p>
+<h3>R06｜P01–P10 责任—启动—停止矩阵</h3>
+<div class="proposal-table"><table><thead><tr><th>项目</th><th>场景</th><th>phase / priority</th><th>公开合同</th></tr></thead><tbody><tr><td><strong>P01</strong></td><td>SCN-ZZY-01, SCN-ZZY-03, SCN-JZ-01, SCN-JZ-02</td><td>Phase 2-3 | after preserving ordinary public/blue-green continuity, add reversible validation interfaces and only then bounded testing</td><td>P01｜先核公众线、蓝绿连续、测试边与回收路；公共空间／园林、测试安全和维护角色到位后，才做小尺度可逆验证。任一未受控交叉或生态／通行冲突即停。</td></tr><tr><td><strong>P02</strong></td><td>SCN-ZZY-01, SCN-JZ-02</td><td>Phase 3 | hard stop, isolation, recovery and maintenance evidence precede any expansion of testing</td><td>P02｜先做一次受限测试的急停—断能—隔离—机械归港演练；设备、时窗、天气／路面、责任与许可齐备后才开。硬急停后不得动力返回。</td></tr><tr><td><strong>P03</strong></td><td>SCN-ZZY-02, SCN-ZZY-03</td><td>Phase 2-3 | repair, isolation, energy and retest capacity precede scaled device operation</td><td>P03｜先核设备、工单、隔离、机电消防、只读诊断、真人复测和申诉结单，再定后场。错配、越权、复测失败或无人接收时继续隔离。</td></tr><tr><td><strong>P04</strong></td><td>SCN-AIO-01, SCN-JZ-01, SCN-JZ-03</td><td>Phase 1-2 | ordinary passage and named human handoff first; reversible safety micro-renewal before optional intelligent assistance</td><td>P04｜先核真实校门、放学时刻和三段真人责任，做实走、4×15 分钟观察与无 AI 交接盲演；孩子拒绝、身份不清、路线不安全或无人接收即回到校侧真人安全等待。</td></tr><tr><td><strong>P05</strong></td><td>SCN-AIO-01, SCN-AIO-03</td><td>Phase 1-2 | reuse existing public-service ground floors and staffed entrances before adding optional digital assistance</td><td>P05｜先盘点真实可见求助门、普通电话、真人窗口与无障碍／消防／维护条件；社区求助不等于医疗接收，专业责任只在合格真人明确接受后转移。</td></tr><tr><td><strong>P06</strong></td><td>SCN-AIO-02, SCN-AIO-03, SCN-JZ-03</td><td>Phase 1-2 | protect ordinary/emergency lighting, mechanical bypass and staffed duty before reversible resilience interfaces</td><td>P06｜先核共享侧照明、备电、机械旁通、电话、纸面联系人和真人值班，再做无 AI 停电盲演；不公开住宅位置，恢复供电也不自动恢复已关权限。</td></tr><tr><td><strong>P07</strong></td><td>SCN-DZS-01, SCN-DZS-03, SCN-JZ-01</td><td>Phase 1-2 | preserve ordinary station-city movement, accessibility and egress before ground stitching</td><td>P07｜先核真实站口、四象限目的地、普通／无障碍路线、过街、疏散和责任分段，逐线实走；任何通行、无障碍、疏散或检修阻断都先停。</td></tr><tr><td><strong>P08</strong></td><td>SCN-DZS-01, SCN-DZS-02, SCN-JZ-03</td><td>Phase 1-2 | establish a credential-free staffed foyer before optional bounded digital access</td><td>P08｜先有无凭证普通公共线和真人／安静线，再试可选数字线；站区、道路、物业、前台与接收机构分段负责。数字拒绝、失效或撤回时普通线继续。</td></tr><tr><td><strong>P09</strong></td><td>SCN-DZS-02, SCN-DZS-03, SCN-JZ-02, SCN-JZ-03</td><td>Phase 3-4 | reversible events only after resident quiet-route, egress, noise, operation and complete-exit evidence closes</td><td>P09｜先核居民静线、普通通行、装卸、疏散、检修和完整退场，再做小尺度可逆活动。任一路线受阻、责任缺位、时窗到期或退场不完整即关闭清场。</td></tr><tr><td><strong>P10</strong></td><td>SCN-ZZY-02, SCN-AIO-01, SCN-AIO-02, SCN-AIO-03, SCN-DZS-01, SCN-DZS-03</td><td>Cross-phase | nodes form with their local spatial projects while always retaining domain separation, human service and offline capability</td><td>P10｜先逐节点核实体入口、普通电话／纸面／真人窗口、排班、转办、投诉、审计、事故与关权；只接当次任务，不接整个人或家庭，不成为中央总控。</td></tr></tbody></table></div>
+<h2>指标体系、面积复算与合规矩阵</h2>
+<p>本包从同一组GeoJSON在EPSG:4548下复算：总体设计范围11,412,825.386 m²，方案蓝绿比例19.839%，方案公共空间比例6.987%。三项均为provisional，不是法定或现状指标；official geometry或方案面变化后必须整包重算。全部服务、响应、安全、满意度和经济指标仍为unknown。 <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="site_area_sqm" title="指标：site_area_sqm">指标</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="green_ratio" title="指标：green_ratio">指标</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="public_space_ratio" title="指标：public_space_ratio">指标</sup></p>
+<h3>R05｜unknown 指标的测量协议与回链</h3>
+<div class="proposal-table"><table><thead><tr><th>metric_id</th><th>value</th><th>status</th></tr></thead><tbody><tr><td><code>site_area_sqm</code></td><td>11,412,825.386 m²</td><td><code>known</code></td></tr><tr><td><code>green_ratio</code></td><td>0.19838764 ratio</td><td><code>known</code></td></tr><tr><td><code>public_space_ratio</code></td><td>0.06986680 ratio</td><td><code>known</code></td></tr><tr><td><code>key_area_count</code></td><td>3 count</td><td><code>known</code></td></tr></tbody></table></div>
+<div class="proposal-table"><table><thead><tr><th>测量协议</th><th>metric_ids</th><th>status_class</th><th>公开合同</th></tr></thead><tbody><tr><td><code>MP-M-AIO-01</code></td><td>M-AIO-01</td><td><code>field_survey_required</code></td><td>M-AIO-01｜校门—过街冲突：按真实放学时刻做 4×15 分钟观察；当前值 null。一次严重安全事件即复核，其余阈值待基线与专业审查。</td></tr><tr><td><code>MP-M-AIO-02</code></td><td>M-AIO-02</td><td><code>field_survey_required</code></td><td>M-AIO-02｜真人接收与按时关权占比：只认具名接收记录和任务后关权审计；当前值 null。</td></tr><tr><td><code>MP-M-AIO-03A</code></td><td>M-AIO-03A</td><td><code>field_survey_required</code></td><td>M-AIO-03A｜断网无 AI 交接闭环率：以盲演和逐段真人回执测量；不采住宅终点；当前值 null。</td></tr><tr><td><code>MP-M-AIO-03B</code></td><td>M-AIO-03B</td><td><code>field_survey_required</code></td><td>M-AIO-03B｜断网无 AI 完整交接 P90 时长：只对安全完成的盲演计时，失败另列；当前值 null。</td></tr><tr><td><code>MP-M-DZS-01A</code></td><td>M-DZS-01A</td><td><code>field_survey_required</code></td><td>M-DZS-01A｜四象限主要目的地无障碍连续路线覆盖率：先核站口、目的地与路线，再实走；当前值 null。</td></tr><tr><td><code>MP-M-DZS-01B</code></td><td>M-DZS-01B</td><td><code>field_survey_required</code></td><td>M-DZS-01B｜四象限无障碍连续路线断点数：按实体、信息、沟通三类逐点去重；当前值 null。</td></tr><tr><td><code>MP-M-DZS-02A</code></td><td>M-DZS-02A</td><td><code>field_survey_required</code></td><td>M-DZS-02A｜访客高峰居民连续通行线阻断次数：先核真实静线与高峰／活动时窗；当前值 null。</td></tr><tr><td><code>MP-M-DZS-02B</code></td><td>M-DZS-02B</td><td><code>field_survey_required</code></td><td>M-DZS-02B｜访客高峰居民连续通行线阻断累计时长：逐次记录发生与清除时间；当前值 null。</td></tr><tr><td><code>MP-M-DZS-03</code></td><td>M-DZS-03</td><td><code>field_survey_required</code></td><td>M-DZS-03｜同时具备退出、真人协助和凭证到期的公共数字接口点位占比：先核真实点位；当前值 null。</td></tr><tr><td><code>MP-M-PSS-01</code></td><td>M-PSS-01</td><td><code>field_survey_required</code></td><td>M-PSS-01｜无 AI 服务闭环率：按服务清单盲测，并以完成或具名人工转办回执收束；当前值 null。</td></tr><tr><td><code>MP-M-PSS-02</code></td><td>M-PSS-02</td><td><code>field_survey_required</code></td><td>M-PSS-02｜人工接管 P90 时长：从请求到具名真人明确接收计时；无人合格接收另作硬失败；当前值 null。</td></tr><tr><td><code>MP-M-PSS-05</code></td><td>M-PSS-05</td><td><code>field_survey_required</code></td><td>M-PSS-05｜权限按时关闭率：按任务结束、撤回或到期逐笔核对；当前值 null。一次未关即停查。</td></tr><tr><td><code>MP-M-PSS-06A</code></td><td>M-PSS-06A</td><td><code>field_survey_required</code></td><td>M-PSS-06A｜AI、人工、离线同类事项完成率最大差：同事项同样本三通道测量；当前值 null。</td></tr><tr><td><code>MP-M-PSS-06B</code></td><td>M-PSS-06B</td><td><code>field_survey_required</code></td><td>M-PSS-06B｜AI、人工、离线同类事项 P90 等待时长最大差：同事项同样本三通道计时；当前值 null。</td></tr><tr><td><code>MP-M-PSS-07</code></td><td>M-PSS-07</td><td><code>field_survey_required</code></td><td>M-PSS-07｜高风险事项合格真人复核覆盖率：依据风险目录、资质／正式授权与复核记录；当前值 null。</td></tr><tr><td><code>MP-M-PSS-08</code></td><td>M-PSS-08</td><td><code>trigger_after_registered_definition</code></td><td>M-PSS-08｜已登记但当前挂载源缺少精确定义与单位；先找回并核验 canonical 定义，期间不采集、不赋值、不设阈值。</td></tr><tr><td><code>MP-M-PSS-12</code></td><td>M-PSS-12</td><td><code>field_survey_required</code></td><td>M-PSS-12｜无障碍服务断点数：从经核入口实走到真人完成服务，并按实体、信息、沟通去重；当前值 null。</td></tr><tr><td><code>MP-M-ZZY-01</code></td><td>M-ZZY-01</td><td><code>field_survey_required</code></td><td>M-ZZY-01｜公众线与受限测试／物流线未受控交叉点数：真实路线逐点分类后计数；当前值 null。一个未受控交叉即阻断测试释放。</td></tr><tr><td><code>MP-M-ZZY-02</code></td><td>M-ZZY-02</td><td><code>field_survey_required</code></td><td>M-ZZY-02｜报警至隔离、归港并真人接管 P90 时长：按分级故障演练计时；硬急停后不得动力返回；当前值 null。</td></tr><tr><td><code>MP-M-ZZY-03A</code></td><td>M-ZZY-03A</td><td><code>trigger_after_registered_definition</code></td><td>M-ZZY-03A｜已登记为蓝绿／气候相关指标，但挂载源缺少精确定义与单位；先找回 canonical 定义，期间不采集、不赋值、不设阈值。</td></tr><tr><td><code>MP-M-ZZY-03B</code></td><td>M-ZZY-03B</td><td><code>trigger_after_registered_definition</code></td><td>M-ZZY-03B｜已登记为蓝绿／气候相关指标，但挂载源缺少精确定义与单位；先找回 canonical 定义，期间不采集、不赋值、不设阈值。</td></tr><tr><td><code>MP-BUILDING-FOOTPRINT-AREA</code></td><td>building_footprint_area_sqm</td><td><code>trigger_after_official_geometry</code></td><td>建筑基底面积｜等待经核建筑轮廓与适用边界后复算；当前值 null，不用示意盒子填空。</td></tr><tr><td><code>MP-FLOOR-AREA-RATIO</code></td><td>floor_area_ratio</td><td><code>trigger_after_official_geometry</code></td><td>FAR｜等待适用控规、正式范围与经核建筑面积；当前值 null，不由方案比例或图面反推。</td></tr><tr><td><code>MP-Q3-PEAK-FLOW-WAIT</code></td><td>—</td><td><code>field_survey_required</code></td><td>高峰人流与等待｜按真实时刻分场景人工计数，不做人脸／身份追踪；当前基线待测。</td></tr><tr><td><code>MP-Q3-GROUND-FLOOR-INTERFACE</code></td><td>—</td><td><code>field_survey_required</code></td><td>首层公共服务界面｜逐点核开放、真人值守、无障碍、消防与维护；当前点位和开放状态待测。</td></tr><tr><td><code>MP-Q3-NIGHT-LIGHTING-USE</code></td><td>—</td><td><code>field_survey_required</code></td><td>夜间照明与实际使用｜按经核公共／共享路线做点测与匿名计数，不记录住宅终点；当前基线待测。</td></tr><tr><td><code>MP-Q3-PARK-DWELL-HELP</code></td><td>—</td><td><code>field_survey_required</code></td><td>公园节点停留／求助｜只做匿名区间观察与具名真人接收回执，不拼接身份或轨迹；当前基线待测。</td></tr><tr><td><code>MP-CONCEPT-TARGET-RELEASE</code></td><td>—</td><td><code>concept_target</code></td><td>concept target｜可表达设计推导，但必须列来源、边界、专业复核与释放条件；不冒充现状或法定值。</td></tr></tbody></table></div>
+<figure class="proposal-figure"><a class="proposal-figure-link" href="../assets/figures/metrics-evidence.png" target="_blank" rel="noopener"><img src="../assets/figures/metrics-evidence.png" alt="三项复算指标与证据链"></a><figcaption><span>三项复算指标与证据链</span><a class="proposal-figure-open" href="../assets/figures/metrics-evidence.png" target="_blank" rel="noopener">查看原图</a></figcaption></figure>
+<h2>风险、版权与合规说明</h2>
+<p>主要风险包括：provisional geometry被误读为官方边界、P10重新中央化、三区以概念替代空间证据、智能构件妨碍传统市政和应急、来源或图片权利不清、对外披露私域坐标、版本变化后沿用旧验收。包内只使用自生成图件和可登记来源；不分发字体，不上传私密截图、住宅终点或个人轨迹。 <sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="GENERATIVE-AI-INTERIM-MEASURES" title="标准：GENERATIVE-AI-INTERIM-MEASURES">标准</sup> <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="PROJECT-STANDARDS-LIBRARY" title="来源：PROJECT-STANDARDS-LIBRARY">来源</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="risk_missing_data" title="深度：risk_missing_data">深度</sup></p>
+<p>风险控制不是在文末加一句免责声明，而是进入空间和运营阶段门：涉及儿童、医疗、住宅和个人轨迹时默认最少披露；测试、物流、活动和智能设施必须有普通公众旁路、真人责任人、硬停机、维护、恢复和撤除条件；高风险项须由相应专业人员与受影响公众复核。版权、来源、模型、图件和转换过程保留版本记录，任何新的官方数据、脚本或账号身份变化都会触发重新渲染、哈希刷新与完整自检。 <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/constraints.geojson" title="空间数据：geometry/constraints.geojson">空间数据</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="risk_missing_data" title="深度：risk_missing_data">深度</sup></p>
+<h2>参考资料</h2>
+<p>真正影响方案判断的材料包括：官方公告、结构化设计任务书、面向智能体任务书、住建部城市设计管理办法、控规编制审批办法、自然资源部用地用海分类指南、无障碍环境建设法，以及六个限用途一手来源案例。完整机器索引见sources.json；案例只支撑机制比较，不支撑本地场地、机构或绩效结论。 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="PROJECT-OFFICIAL-ANNOUNCEMENT" title="来源：PROJECT-OFFICIAL-ANNOUNCEMENT">来源</sup> <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="PROJECT-STANDARDS-LIBRARY" title="来源：PROJECT-STANDARDS-LIBRARY">来源</sup> <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="CASE-01" title="来源：CASE-01">来源</sup></p>
+<p>资料采用按权威等级和允许用途分开登记：官方公告支撑任务与文字范围，组织方结构化文件支撑提交契约，provisional geometry只支撑可替换的空间生成与复算，案例只支撑机制比较，内部设计工件只证明本方案自身的选择。新闻截图、媒体转述、OSM推断与AI猜测不得升级为红线、现状或实施事实；六个上游场景包已按精确字节挂载；其中4张原始来源仍只有中文卡，machine／EN原卡缺口继续开放，不以N3／N6派生桥替代。审阅者可从正文标记进入sources、assumptions、geometry、metrics和矩阵，逐项追踪事实、设计与未知的边界。 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="SOURCE-REGISTRY" title="来源：SOURCE-REGISTRY">来源</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="existing_conditions_diagnosis" title="深度：existing_conditions_diagnosis">深度</sup></p>
+</main>
+</body>
+</html>
