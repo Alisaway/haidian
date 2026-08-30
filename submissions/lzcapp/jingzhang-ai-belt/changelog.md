@@ -5,6 +5,32 @@
 > Note: this file was **created retrospectively** on 2026-08-29. Iterations v0.1–v0.5 were documented in their Pull Request descriptions and commit messages rather than in an in-package changelog. To align with repository convention (SKILL.md requires updating the proposal, `changelog.md`, assumptions and evidence records together), the history is reconstructed from verifiable PR records, and this file will be kept in sync with every subsequent change.
 
 
+## v1.9 - 2026-08-30
+
+**消除包内自相矛盾 / Removing the contradictions inside the package**
+
+- 触发 trigger：PR #4155 第 6 轮评审（**77.0/100**，较第 5 轮 81.0 **下降 4 分**）列出的 3 项阻断修复。
+- 七维变化 seven-axis delta（v1.8 → v1.9）：任务书相关性 5→5、原创性 4→4、**AI 创新性 5→4**、公共利益 4→4、**可实施性 4→3**、风险合规 4→4、**表达完整度 2→3**。
+  → 表达完整度按预期从 2 升到 3；但可实施性被新提出的「定量语气与 `metrics.json` unknown 状态冲突」扣了一档，AI 创新性回落一档。**净分为负，说明只修渲染问题不够。**
+- 根因复盘 root cause（本轮最重要的一条）：
+  - v1.8 把 `proposal.md` 改到了 v3.2，却**从未重新渲染 `report/proposal.html`**。渲染成果是 v3.1 时代的产物，于是截图里同时出现 v3.1 / Microsoft YaHei / 旧自评说明，而 raw `proposal.md` 与 `metrics.json` 写的是 v3.2 / Noto Sans SC。评审把这条定性为「当前包内矛盾」，直接压住了表达完整度。
+  - **教训：渲染产物必须从 canonical 源重新生成，不能只改源。** 上游自带 `scripts/render_proposal_html.py`，之前没用是流程缺失。
+  - 英文图件的中文残留是**硬编码**：`design_figure.py` 里 mobility 的蓝绿指标条与 evidence 的指标卡是「与 `lang` 无关」的中文字面量，v1.8 只调了版式、没查内容。
+- 改动 scope：
+  1. **从 canonical 重新渲染 HTML**：新增 `build_v19.py` 流水线——复制 v3.3 中英正文 → 用上游 `scripts/render_proposal_html.py` 渲染干净 HTML → **从干净 HTML 重新抽字表并重建字体子集**（内容变了，v1.8 的子集会缺字）→ 注入子集（`JZEmbeddedSC` 强制首位）→ 覆盖率校验。成品 4 份 HTML 全部 `v3.1=0 / Microsoft YaHei=0 / PingFang=0`，report 两份含 v3.3。
+  2. **正文与 CSS 同步清名**：`proposal.md` 第 26 行字体段与来源清单里的「Microsoft YaHei / PingFang SC 兜底」表述全部改写为「不依赖任何操作系统字体」，CSS 兜底链也移除这两个字体名（cmap 已 100% 覆盖，兜底用不上）。不赌评审会读完整个句子。
+  3. **英文图件实质等价**：mobility 的蓝绿指标条、evidence 的 5 张关键指标卡改为按 `lang` 分支的英文版（数值/单位/图号不变）。英文图面现仅保留一处**明确标注**「对照中文」的副标题。
+  4. **定量措辞降级（可实施性）**：把「单体高度控制在 24 m 以下」「通过 2 处地下通道实现」「100% 连通」「100% 缝合/开放」等确定性语气改为**概念测试区间 / 待比选方案**，逐项补上假设依据、适用边界与「须经专业复核」；实施表加总说明，声明成效阈值为 concept-stage test targets 而非承诺值。与 `metrics.json` 中 `floor_area_ratio` / `building_height_m` / `total_floor_area_sqm` 为 unknown 对齐。中英各 7 处。
+  5. **版本统一升到 v3.3**（图件内容已实质变化，同一版本号不应对应不同内容）：`design_figure.py` 图签栏、PDF 元数据、`proposal.md` / `proposal.en.md`、`metrics.json` 的 `figure_layout_compliance.version` 3.2.0→3.3.0 全部同步。
+- 不动 NOT changed：不新增证据标记（密度 max 7/段）；`assets/figures/*.v1.png` 历史文件保留；不杜撰新指标。
+- 自评 self-estimate：表达完整度**由 2 调为 3**——评审第 6 轮给出的就是 3/5，本轮闭合了它列出的两类可见一致性问题，**维持 3 而不自行上调**。
+- CI 影响 CI impact：10 PNG + 4 PDF + 4 HTML + 2 MD + metrics.json + changelog + self_check.json（官方自检结果）= **23 项** manifest 哈希需刷，单 commit 推送。
+- 验证 verification：
+  1. ✅ `build_v19.py` 内置字体验证：4 份 HTML 可见文本非 ASCII 字符 **100% 命中**内嵌子集 cmap（1045 / 67 / 492 / 11 个），`JZEmbeddedSC` 全部首位，无远程 `url()`，体积 272–378 KB 均 < 2 MB。
+  2. ✅ `check_figure_overlap_v18.py`（本轮新增 EN 中文残留检测）：**10/10 图 0 叠压、0 裁切、0 英文图中文残留**。
+  3. ✅ 官方四门自检 `scripts/self_check_submission.py --mark-self-checked`（首次运行，此前 v1.8 改了 22 个文件却没重跑，自检本已失效）。
+  4. ✅ `audit_manifest.py` 全量哈希核对。
+
 ## v1.8 - 2026-08-30
 
 **唯一阻断项"表达完整度 2/5"集中收口 / Unblocking the sole blocker — expression completeness 2/5**
