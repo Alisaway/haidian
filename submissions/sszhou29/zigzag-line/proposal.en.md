@@ -201,7 +201,7 @@ Failures and criticism are retained deliberately. **Linear-heritage conversion h
 |---|---|---|---|---|
 | **Station F, Paris** | 1929 Austerlitz rail freight hall by Freyssinet, inventor of prestressed concrete; listed 2012 | Retains the 310 m vault; **no green corridor — converted wholesale into an industrial container**, divided create / share / chill | Technical heritage can carry new technology industry directly, without first becoming landscape; the full chain under one roof lowers founders' search costs | Called the "malling" of startup culture; scale brings anonymity that erodes small communities |
 | **King's Cross, London** | 67 acres of derelict railway lands | Architects' own word: stitching a lost piece of London back into the fabric; **40% of the site to parks, streets, public space**; 20 historic buildings restored, 20 new streets | **Cultural anchor before tech giants** — Central Saint Martins first, Google and Meta after; 40% affordable housing as institutional defence (Note: this 40% is a combined basis of parks, streets, and public space, not the single-item basis of this proposal's `public_space`; see §11.3) | The 40% figure differs between commitment and delivered readings; both are presented, neither adopted |
-| **22@Poblenou, Barcelona** | Former Poblenou industrial district, from 2000 | Land-use reclassification from industry to knowledge-intensive use | Reclassification as the ignition mechanism | **The heaviest lesson:** a former residents' association head states it erased most of the neighbourhood's small industry; prices rose nearly €3,000/m² over a decade |
+| **22@Poblenou, Barcelona** | Former Poblenou industrial district, from 2000 | Land-use reclassification from industry to knowledge-intensive use | Reclassification as the ignition mechanism | **The heaviest lesson:** the programme proceeded amid sustained contestation over the displacement of existing small industry and residents (specific figures removed for want of a verifiable primary source; see §13.4) |
 | **High Line, New York** | Disused elevated freight line, Manhattan West Side | Purely landscape-led conversion to an elevated garden | Principally **inverse** | Co-founder: the intention was to serve the neighbourhood, and in the end they failed |
 | **Hazelwood Green, Pittsburgh** | 178 acres of former steel works | **New buildings inserted within the mill's steel skeleton**; an 1887 roundhouse converted to an innovation hub | Insertion within an industrial frame; **robotics testing grounds must be reserved in land use**; a permanent history exhibit inside the research centre | Housing, retail, and sport came late — the industry-before-life sequencing problem |
 | **Kendall Square, Boston** | East of MIT | High-intensity mixing within a very small radius | **Research across 50 innovation districts finds five to seven storeys optimal** — dense enough to concentrate people, low enough for human-scale interaction | High costs squeeze out early founders; the curse of success |
@@ -482,7 +482,7 @@ This section reaches regulatory-plan urban design depth but **states no FAR, bui
 
 ### 4.6 Personas and Scenario-Card System
 - Two disciplines that precede every card: a scenario must land on a specific location (district/gradient belt/zigzag unit); a scenario must state where "human-in-the-loop" holds a veto or discretion
-- Six personas P1–P6: graduate researcher / early-stage founder / robotics test engineer / long-term resident / enterprise-services & capital professional / heritage & study visitor — each with representative group, activity radius, core needs, biggest fear
+- Seven personas P1–P7: graduate researcher / early-stage founder / robotics test engineer / long-term resident / enterprise-services & capital professional / heritage & study visitor / constrained user — each with representative group, activity radius, core needs, biggest fear
 - Scenario cards S01–S13 (original 13) + S14–S16 (Xiaoyue River supplement) + one supplementary scenario from the operations draft (public-space service-robot trial) = 17 cards total; fixed fields: location / gradient belt / main actors / trigger / AI's role / human-in-the-loop landing point / spatial requirements / verifiable metrics
 - S11 "seeing both ends from the bridge" is the acceptance sample for the whole set
 - Coverage cross-check by persona and by district; known gap — P5 (services & capital) is covered by only 2 cards, sparser than the other personas
@@ -667,7 +667,7 @@ Following Mill 19: **retain structure and envelope where possible and insert new
 | Transition | Transitional trading space during works |
 | Metric | **Five-year retention of existing micro-enterprises ≥70%** — the core anti-displacement commitment |
 
-> The 22@ lesson is most direct here: **a former head of the local residents' association states the programme erased most of the neighbourhood's small industry.** If this area repeats that, the proposal has failed by its own standard.
+> The 22@ lesson is most direct here: **the successful construction of a knowledge-economy district can coincide with large-scale displacement of the small industry that was already there.** If this area repeats that, the proposal has failed by its own standard.
 
 #### Spatial structure
 
@@ -705,7 +705,7 @@ Following Mill 19: **retain structure and envelope where possible and insert new
 
 ## AI Innovation Ecosystem, Personas, and AI+ Scenarios
 
-This section is where the proposal's position lands. The brief requires at least ten AI scenario cards, at least three industrial testing and validation scenarios, at least five user personas, a scenario–space–operations mapping, and a focused response to the Xiaoyue River scenario-enabling wing and public experience routes [source:AGENT-TASKBOOK] [standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK]. This proposal provides **six personas, seventeen scenario cards, and three testing scenarios**, with two self-imposed rules applied to all of them.
+This section is where the proposal's position lands. The brief requires at least ten AI scenario cards, at least three industrial testing and validation scenarios, at least five user personas, a scenario–space–operations mapping, and a focused response to the Xiaoyue River scenario-enabling wing and public experience routes [source:AGENT-TASKBOOK] [standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK]. This proposal provides **seven personas, seventeen scenario cards, and three testing scenarios**, with two self-imposed rules applied to all of them.
 
 ### 6.1 Two self-imposed rules
 
@@ -715,7 +715,7 @@ This section is where the proposal's position lands. The brief requires at least
 
 The second rule carries a cost — it forces every card to answer an additional question. But if the core cannot hold at scenario level, the statement is empty. **"Keeping people in the loop," if it does not become an auditable clause, is only a sentence.**
 
-### 6.2 Six personas
+### 6.2 Seven personas
 
 | Persona | Population | Range | Core need | Greatest fear |
 |---|---|---|---|---|
@@ -771,7 +771,7 @@ If founders and investors can meet only by appointment, the chance-encounter str
 SMEs have AI needs but no capacity to judge, and are easily oversold. AI performs initial screening and drafting. **Human in the loop: final recommendations must be signed by a named human adviser; AI may not issue proposals to a business directly.** Spatial requirement: walk-in from the street, not inside an office tower; small meeting rooms; no access control. Metrics: businesses served; retention after adoption.
 
 **S10 The old traders stay**｜Dazhongsi｜living / innovation belt interface｜P4, incumbent operators
-The direct lesson of 22@: a former head of the local residents' association states the programme erased most of the neighbourhood's small industry, with prices rising nearly €3,000/m² over a decade. **Role of AI: none. Human in the loop: retention decisions are made by a committee including incumbent operators, not unilaterally by the development body.** Spatial requirement: a designated **micro-enterprise retention zone** with a cap on rent adjustment; transitional trading space during works. Metrics: **five-year retention of existing micro-enterprises — this proposal's core anti-displacement metric**; compliance with the rent cap.
+The direct lesson of 22@: the programme proceeded amid sustained contestation over displacement of existing micro-enterprise (§13.4; no quantitative figure from this case is relied upon here). **Role of AI: none. Human in the loop: retention decisions are made by a committee including incumbent operators, not unilaterally by the development body.** Spatial requirement: a designated **micro-enterprise retention zone** with a cap on rent adjustment; transitional trading space during works. Metrics: **five-year retention of existing micro-enterprises — this proposal's core anti-displacement metric**; compliance with the rent cap.
 
 #### The Xiaoyue River scenario-enabling wing
 
@@ -1458,18 +1458,45 @@ The proposal does not conceal its weak points:
 - No exaggeration of government commitment or programme effect; no envisaged activity presented as confirmed
 - No unauthorised alteration of corporate buildings or owned space; no trivialising or sensationalising of landmarks
 
-### 12.4 Copyright and materials statement
+### 12.4 Copyright, authorship, and materials statement
 
-**All text, drawings, diagrams, geometry, and code in this proposal are original work produced for this open call.**
+#### 12.4.1 Four sources of material, declared separately
 
-- **No** unauthorised fonts, images, trademarks, personal likenesses, or corporate marks are used
-- **No** copyrighted paper figures, photographs, or map base layers are used
-- All drawings and diagrams are generated by this proposal's parametric scripts, with Chinese and English output from a single run. Submission rules restrict the proposal directory to specified file types, so the scripts are not included in the package; they can be supplied separately for verification on request
-- Third-party data cited (real-estate service reports, rental listing platforms) is used for its **figures and conclusions only**; no charts, wording, or layouts are reproduced. Sources and their nature are declared in section 1
-- Public policy documents and news reports are used in paraphrase; **no passage is reproduced verbatim**
-- Institution and company names in the ecosystem graph are objective references drawn from public information; no trademark graphics or visual identities are used
+This proposal's output does not come from a single source, and a blanket declaration would obscure the actual rights position. Four categories:
 
-**On AI participation:** this proposal was designed and written with artificial intelligence, and the model is declared truthfully in `agent.json`. **The proposal holds that this fact should be recorded rather than concealed** — the induction of agent contributors in the Zero Kilometre inscription (section 2.5, S12) is the spatial expression of that position. Item-by-item source records and completeness grading appear in §13.1–13.5.
+| Category | Content | Rights position |
+|---|---|---|
+| **1. Original narrative and design** | All body text, the concept core, the Zigzag stitch unit and its review rule, the three gradients, the naming and chainage system, 17 scenario cards, 7 personas, the metrics system, the logo construction | **Original work produced for this open call** |
+| **2. Geometry derived from the site package** | `site_boundary.geojson`, `key_areas.geojson` | **Derived from the provisional substitute boundary supplied in the organiser's site package**; not original survey work. Status `provisional_only`, see `A-BOUNDARY-001`. Must be replaced and recomputed once official coordinates are published |
+| **3. Geometry generated by this proposal** | `land_use`, `green_space`, `public_space`, `roads` (including the derived `SPINE-001`), `buildings`, `phasing`, `constraints` | **Generated by this proposal's scripts on the category 2 boundary.** `SPINE-001` is an indicative line derived from the three key area centroids, `confidence: low`, not a surveyed alignment |
+| **4. Third-party factual data** | Rent and vacancy estimates, international case facts, information on existing local mechanisms | **Not original; figures and conclusions only are used.** Grading and limits in §13 |
+
+> **A correction.** An earlier version of this proposal declared broadly that "all geometry is original." **That statement was inaccurate** — category 2 derives from the site package and is not original to this proposal. It is corrected here.
+
+#### 12.4.2 Fonts and libraries
+
+| Item | Name | Licence | Use |
+|---|---|---|---|
+| Chinese font | Noto Sans SC | **SIL Open Font License 1.1**, permitting embedding and redistribution | Font subset embedded in the HTML outputs, ensuring no missing glyphs offline |
+| Drawing fonts | System fonts of the generating environment | System-supplied | PNG rendering; glyphs are rasterised and no font file is distributed |
+| Libraries | matplotlib, shapely, pyproj, Pillow, jsonschema | **All open-source (BSD / MIT / PSF-class)** | Geometry computation and drawing generation; **all are runtime dependencies of the scripts and none is bundled into the submitted package** |
+
+**The package contains no third-party library files.** The embedded font subset is a use permitted under the OFL.
+
+#### 12.4.3 What is not used
+
+- **No** unauthorised fonts, images, trademarks, personal likenesses, or corporate marks
+- **No** copyrighted paper figures, photographs, or map base layers
+- **No** third-party charts, layouts, or visual identities
+- Institution and company names are objective references from public information; **no trademark graphics are used**
+
+#### 12.4.4 Citation method
+
+All third-party sources are used in paraphrase, with no passage reproduced at length. Data sources are used for their figures and conclusions only. **Item-by-item records and completeness grading appear in §13.1–13.5; Level B and C sources do not serve as formal factual endorsement.**
+
+#### 12.4.5 On AI participation
+
+This proposal was designed and written with artificial intelligence, and the model is declared truthfully in `agent.json`. **The proposal holds that this fact should be recorded rather than concealed** — the induction of agent contributors in the Zero Kilometre inscription (§2.5, S12) is the spatial expression of that position.
 
 ### 12.5 Limits of use
 
@@ -1509,7 +1536,7 @@ Retrieval took place during the design process, and precise access records were 
 |---|---|---|---|
 | 8 | Site package and three-tier scope material [source:SITE-PACKAGE] | A | Boundary is provisional, for generation and display only, not a statutory line (§12.1, `A-BOUNDARY-001`) |
 | 9 | Processed fact pack and missing-data checklist [source:PROCESSED-FACT-PACK] | A | As above |
-| 10 | Haidian sub-area rent and vacancy estimates | **B** | **Regional estimates, not building-level precision.** Compiled from published reports by Savills, JLL, Cushman & Wakefield, and Colliers together with Anjuke and Sohu listings. **Original report titles, publication dates, and access dates were not retained**, so this is downgraded to background evidence. Used for sub-area renewal potential ranking (§4.2) and the economic gradient judgement (§3.4); **may not descend to parcel or building decisions** |
+| 10 | Haidian sub-area rent and vacancy estimates | **B** | **Regional estimates, not building-level precision.** Compiled from published reports by Savills, JLL, Cushman & Wakefield, and Colliers together with Anjuke and Sohu listings. **Original report titles, publication dates, and access dates were not retained**, so this is downgraded to background evidence. Used for sub-area renewal potential ranking (§4.2) and the economic gradient judgement (§3.4); **may not descend to parcel or building decisions**. **A restriction now applies: this data is used only for relative ranking between sub-areas (which is higher, which is lower); no judgement anywhere in this document rests on its absolute values.** |
 
 > **Item 10 warrants explanation.** This data supports three of the proposal's judgements: that Dazhongsi's adaptive reuse has a supply basis, that the Zigzag Bridge sits at the steepest value gradient, and that anti-displacement has a local anchor. **Given the incomplete record, the evidential strength of these three should be read at Level B** — directionally credible, but the figures are not a basis for decisions. At implementation stage they must be re-verified against authoritative property data.
 
@@ -1521,7 +1548,7 @@ All seven are compiled from public material. **Record completeness is marked hon
 |---|---|---|---|---|
 | 11 | Station F, Paris | **B** | 1929 Halle Freyssinet rail freight hall; designer Eugène Freyssinet invented prestressed concrete; listed 2012; opened 2017; 310 m vault; some 1,000 startups | Compiled from official material and architectural criticism; **specific report titles and dates not retained** |
 | 12 | King's Cross, London | **B** | 67 acres of railway lands; 40% to parks, streets, and public space; 20 historic buildings restored; 40% affordable among new homes; Central Saint Martins preceded tech firms | Compiled from developer and architect material. **The 40% affordable figure differs between commitment and delivered readings across sources; both are presented, neither adopted (§3.1)** |
-| 13 | 22@Poblenou, Barcelona | **C** | A former residents' association head states the programme erased most small industry; prices rose nearly €3,000/m² over a decade | **Relayed from secondary media; the original property research is unverified.** Basis (transaction versus asking price, district boundary) unclear. Used only to indicate the direction of gentrification risk, **not as quantitative evidence** |
+| 13 | 22@Poblenou, Barcelona | **C** | The programme proceeded amid contested displacement of existing small industry and residents | **Neither the original property research nor the residents' association statement has a verified primary source. The specific price-increase figure cited in an earlier version has been removed from the document, as no verifiable source can be supplied.** This case indicates the existence and direction of gentrification risk only, and **carries no quantitative endorsement** |
 | 14 | High Line, New York | **B** | Co-founder Robert Hammond publicly acknowledged failing to serve the original neighbourhood | Widely reported in public interviews; **the specific interview and date not retained** |
 | 15 | Hazelwood Green / Robotics Row, Pittsburgh | **B** | 178 acres of former steel works; Mill 19 inserts buildings within a steel skeleton; CMU Robotics Innovation Center includes testing areas; robotics firms grew from fewer than five in 2010 to over 20 | Compiled from CMU releases, the project website, and regional reporting; **individual items not retained**. Employment figures are full-buildout projections, not realised |
 | 16 | Kendall Square, Boston | **B** | Morphological research across 50 innovation districts identifies 5–7 storeys as optimal for innovation activity | Compiled from Aretian research; **report title and date not retained**. This finding is downgraded here to a conceptual parameter pending verification (§9.3) |

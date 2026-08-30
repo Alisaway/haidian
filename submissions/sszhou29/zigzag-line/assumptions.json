@@ -12,6 +12,12 @@
       "status": "pending_professional_confirmation",
       "statement": "Detailed regulatory controls, road redlines, ownership, municipal utilities, and engineering constraints must be confirmed from official attachments before statutory use.",
       "impact": "The package can be reviewed as a formal AI submission only for provided official boundaries and submitted design layers; statutory controls still need professional confirmation."
+    },
+    {
+      "id": "A-CHAINAGE-001",
+      "status": "pending_chainage_coordinate_data",
+      "statement": "Zigzag stitch units' chainage numbering and functional binding are settled (e.g. N4.2 carries the S01 testing ground; see proposal.md §1.7, §5.8), but no chainage-to-coordinate reference dataset exists in the submitted geometry, so no stitch unit has a precise plottable position. assets/figures/mobility-bluegreen.png and assets/figures/stitch-unit-typology.png accordingly show the unit as a type/process diagram rather than a located one, disclosed in-figure rather than fabricated.",
+      "impact": "Stitch-unit positions may not be cited as sited until a chainage-to-coordinate dataset is supplied. Recalculation trigger: once such a dataset is available, scripts_local/build_geometry.py should derive real stitch-unit point geometry from it, and the figures/dashboard re-run to plot actual positions."
     }
   ]
 }
