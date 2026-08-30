@@ -2,20 +2,19 @@
 
 ## 原创与派生范围
 
-- `assets/figures/hero-64k-concept.png` 为H&S人机共创的AI概念意象，仅表达拟议空间气质；不是现场照片、既有条件证据、官方方案或建成承诺。
-- `assets/figures/cover-64k*.png` 为本包离线视觉首页的栅格化派生图。
-- `assets/figures/logo-64k-jingzhang.png` 为参赛者提供的 LOGO 截图资产，用于本包概念识别展示；最终公开、注册或商业使用前需由参赛者确认权利与授权。
-- 其余图件由本团队根据包内GeoJSON、metrics、矩阵、方案文本和公开来源登记重新绘制；不复制参考方案的图件、摄影、品牌或网页布局。
-- A3与A0 PDF由上述本地图件自动排版生成，正文、视觉页和图件均不依赖远程字体、脚本或图像请求。
+- `assets/figures/logo-64k-jingzhang.png` 与 `assets/figures/hero-64k-concept.png` 为本次投稿专用的人机共创资产。参赛者于 2026-08-30 确认提示词由其提供或授权，并授权用于本次开源征集、GitHub 投稿、官方展陈及必要的裁切、缩放与版式派生。
+- `assets/figures/cover-64k*.png`、A3/A0 文件及正文插图为上述资产与包内数据的排版或栅格派生物。
+- 其余图件由本团队根据包内 GeoJSON、metrics、矩阵、方案文本与已登记来源重新绘制；不复制参考投稿的图件、摄影、品牌或网页布局。
+- Noto Sans SC 投稿字符子集以内嵌 WOFF2 data URL 写入两套视觉与报告 HTML，随附 `assets/media/OFL-NotoSansSC.md`（SIL Open Font License 1.1）；用于解决离线中文显示，不依赖远程字体请求。
 
-## 外部来源
+## 逐项台账
 
-历史事实、任务范围、法规与案例只以引用方式使用，标题、出版者、网址、用途与限制记录在 `sources.json`。引用不表示来源机构认可本方案。
+完整的提示词、生成时间、生成服务、输入、人工确认、后处理、文件哈希、字体来源与许可见 `assets/media/asset-rights-ledger.md`。相关来源记录同时写入 `sources.json`。
 
 ## 许可边界
 
-本参赛包沿用 `COMMUNITY-DISPLAY-ONLY` 标记。正式发表、商业传播、工程实施或向第三方再许可前，应由参赛者再次核对征集条款、AI生成内容使用条件和新增素材权利。
+本参赛包沿用 `COMMUNITY-DISPLAY-ONLY` 标记。参赛者对本次征集所需的公开展示与派生排版作出授权确认；该确认不等于官方背书、商标注册结论、独占权保证，也不自动覆盖本征集以外的商业再许可。AI生成素材仍应按生成服务条款与适用法律使用。
 
 ## English summary
 
-The hero is an AI-generated concept visual created for this submission. It is not a site photograph, existing-condition record, official plan or delivery promise. All other figures are newly drawn from package GeoJSON, metrics, matrices, proposal text and registered citations. Reference submissions informed quality benchmarking only; their layouts and assets were not copied. Publication or implementation remains subject to participant review and the applicable competition terms.
+The logo and hero were generated specifically for this submission from disclosed text-only prompts with no reference images. On 30 August 2026, the participant confirmed prompt authority and authorized their use in the open call, GitHub submission, official display, cropping, scaling and layout derivatives. The local Noto Sans SC subset is embedded in the offline HTML under SIL OFL 1.1. The full per-asset ledger is `assets/media/asset-rights-ledger.md`. This statement is not official endorsement, trademark registration advice, exclusivity warranty or blanket commercial relicensing.
