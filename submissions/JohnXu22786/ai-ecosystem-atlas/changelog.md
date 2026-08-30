@@ -23,3 +23,12 @@
 - **双语映射清单**：proposal.en.md↔proposal.md；6×(zh png)↔(.en png)；a0/a3 en pdf↔zh pdf；report/proposal.en.html↔proposal.html；visual/index.en.html↔index.html。
 - **任务书交付物索引**：agent.1（总体概念/功能统筹/协同总图/品牌）→ 统筹研究与品牌章节＋site-overview；agent.2（生态图谱/案例/要素机制）→ AI章节＋ecosystem-map；agent.3（10场景卡/3测试场景）→ AI章节两张表；agent.4（地标/荣誉/组件库）→ 重点区域章节；agent.5（文化系统/导视/国际传播）→ 蓝绿章节与品牌章节；agent.6（活动与长期运营）→ 实施章节，全部标注建议。
 - **来源/权利清单**：见 sources.json（25条）与 report/copyright_statement.md 资产权利清单。
+
+## v1.2 - 2026-08-30 (Repair Round-2)
+
+- **visual/index.en.html**：修复本地图片相对路径中历史遗留的 `.en.en.png` 双后缀错误，修正为 `../assets/figures/*.en.png`，确保 6 张核心图件（site-overview, key-areas, land-use-structure, mobility-bluegreen, ecosystem-map, metrics-evidence）在离线环境下全部正常加载与无损渲染；更新 `lang="en"` 属性与离线资源验证。
+- **drawings/a3-booklet.en.pdf**：修复第 1 页封面标题与副标题溢出页面边界的问题（文本包围盒 x0 从负值调整为 >139pt 安全边距，x1 <648pt，版心居中且自适应折行），调整字号、行距与 PROVISIONAL 警示框边距，经 PyMuPDF 机器检测 0 处溢出、0 处裁切、7 页全部非空。
+- **assets/figures/mobility-bluegreen.en.png**：全面消除残余中文断面与栏目注记，右侧三大结构栏目（Blue-Green Framework / Slow-Traffic Network / Wayfinding & Accessibility）及其要点全部英文本地化，实现 100% 英文纯净度与 0 CJK 字符残留。
+- **assets/figures/site-overview.en.png**：全面消除区域协同框（Regional Synergy Loop）内的残余中文，双翼（Zhongguancun Tech-Service Wing / Xiaoyuehe Scenario-Empowerment Wing）与外围节点（Beiwai Community, Future Science City, Huairou Science City, E-Town, Jing-Jin-Ji）全部规范翻译，图例与注记完全英文。
+- **assets/figures/metrics-evidence.en.png**：重构三栏并列子图布局，指标分类标签规整置于坐标轴侧边，消除警示框与文字标签的遮挡冲突，确保 KPI 区间、核心指标与机制计数三区域标签清晰无重叠。
+- **图件与图纸全量机器质检**：全部 6 组双语图件（12张）与 4 份 A0/A3 PDF 重新确定性渲染，通过文本重叠=0、画布边界溢出=0、边缘裁剪<0.02、油墨密度合格（ink≥0.05~0.35）的机器 QC 验证，四门自检通过。
