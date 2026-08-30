@@ -436,7 +436,7 @@
       "spatial_coverage": "不适用",
       "temporal_coverage": "不适用",
       "license_or_reuse_terms": "PDF 规范规定的基础十四款字体，按字体名引用，不在文件中嵌入或再分发任何字体文件，因此本包不承载这部分字体的授权义务。",
-      "usage": "四套图纸 PDF 既有技术基线页的拉丁文字（A3 第 2—13 页；A0 第 2—6 页；页眉编号、页脚、英文标签）。不含 v2.0 首页、F/06 附页与栅格图件——前两者见 FONT-NOTO-WEB，其余栅格见 FONT-NOTO-RASTER。",
+      "usage": "四套图纸 PDF 既有技术基线页的拉丁文字（A3 第 2—13 页；A0 第 2—6 页；页眉编号、页脚、英文标签）。不含 v2.0 首页、F/06 与 F/07 附页及栅格图件——前三者见 FONT-NOTO-WEB，其余栅格见 FONT-NOTO-RASTER。",
       "usable_for": [
         "证明四套 PDF 技术内页中的拉丁文字与符号不依赖任何需授权的第三方字体文件",
         "说明四套 PDF 技术内页中剩余 emb=no 条目的性质"
@@ -550,7 +550,7 @@
       "registry_review_status": "not_in_central_registry",
       "usable_for_formal": "not_a_factual_source",
       "usable_for_formal_basis": "participant_self_assessed",
-      "independent_verification": "**本条为历史登记，可用「不存在」来核验**：`find assets -name '*.ttc'` → 0；当前 28 张栅格产物的字体见 FONT-NOTO-RASTER 与 FONT-NOTO-WEB。若需确认旧版确曾使用，取 v1.14 及更早 tag 的图件另行比对。"
+      "independent_verification": "**本条为历史登记，可用「不存在」来核验**：`find assets -name '*.ttc'` → 0；当前 30 张栅格产物的字体见 FONT-NOTO-RASTER 与 FONT-NOTO-WEB。若需确认旧版确曾使用，取 v1.14 及更早 tag 的图件另行比对。"
     },
     {
       "id": "FONT-HELVETICA-RASTER",
@@ -592,7 +592,7 @@
       "spatial_coverage": "不适用",
       "temporal_coverage": "不适用",
       "license_or_reuse_terms": "Python 3.12.13（PSF）；reportlab 4.4.3（BSD）；Pillow 12.3.0（MIT-CMU）；shapely 2.1.2（BSD 3-Clause）；pyproj 3.7.2（MIT）；fontTools 4.60.1（MIT）；Node.js（MIT）；Playwright（Apache-2.0）；qpdf 12.3.2（Apache-2.0）；PyMuPDF 1.27.2.3（AGPL-3.0 或 Artifex 商业许可，二选一）；Ghostscript 10.07.0（AGPL-3.0）；Google Chrome 仅作为本机打印引擎运行、不随成果分发。",
-      "usage": "几何复算、指标复算、图件栅格渲染、PDF 技术内页排版与字体订正，以及 v2.0 四张冠军版首页的 Playwright／Chrome 打印与 qpdf 逐页拼装。",
+      "usage": "几何复算、指标复算、图件栅格渲染、PDF 技术内页排版与字体订正，以及 v2.0 四张投稿材料首页的 Playwright／Chrome 打印与 qpdf 逐页拼装。",
       "usable_for": [
         "核验成果由哪些工具生成及各自许可",
         "判断是否存在需随成果传播的许可义务"
@@ -606,7 +606,7 @@
       "registry_review_status": "not_in_central_registry",
       "usable_for_formal": "not_a_factual_source",
       "usable_for_formal_basis": "participant_self_assessed",
-      "independent_verification": "版本与许可逐个可复算，不依赖本条自述：`python3 -c \"import importlib.metadata as m; print(m.version('reportlab'), m.version('Pillow'), m.version('shapely'), m.version('pyproj'), m.version('fonttools'))\"`；`qpdf --version`；`gs --version`；许可字段用 `python3 -c \"import importlib.metadata as m; print(m.metadata('Pillow')['License-Expression'])\"`。**「未链接进交付物」一侧可反向核验**：`pdffonts drawings/a3-booklet.pdf` 显示嵌入字体只有 OFL 的 NotoSerifSC 与 NotoSansCJKsc-Medium，不含 Apple 字体或任何 AGPL 组件产物；首页生成脚本位于 `visual/assets/governance/build-champion-pdfs.js`。"
+      "independent_verification": "版本与许可逐个可复算，不依赖本条自述：`python3 -c \"import importlib.metadata as m; print(m.version('reportlab'), m.version('Pillow'), m.version('shapely'), m.version('pyproj'), m.version('fonttools'))\"`；`qpdf --version`；`gs --version`；许可字段用 `python3 -c \"import importlib.metadata as m; print(m.metadata('Pillow')['License-Expression'])\"`。**「未链接进交付物」一侧可反向核验**：`pdffonts drawings/a3-booklet.pdf` 显示嵌入字体只有 OFL 的 NotoSerifSC 与 NotoSansCJKsc-Medium，不含 Apple 字体或任何 AGPL 组件产物；首页生成脚本位于 `visual/assets/governance/build-delivery-pdfs.js`。"
     },
     {
       "id": "HAIDIAN-2025-STATISTICAL-BULLETIN",
@@ -905,7 +905,7 @@
       "registry_review_status": "not_in_central_registry",
       "usable_for_formal": "background_only",
       "usable_for_formal_basis": "participant_self_assessed",
-      "independent_verification": "转述内容与原页可逐句对读（URL 与检索日已登记）；**「未复用图片、地图、商标」一侧可在包内反向核验**：28 张图件全部由 Pillow/reportlab 或 `@napi-rs/canvas` 程序化绘制，`grep -c 'gpt-image\\|midjourney\\|stable-diffusion' self_check.json` → 0，包内无任何外部图片素材。"
+      "independent_verification": "转述内容与原页可逐句对读（URL 与检索日已登记）；**「未复用图片、地图、商标」一侧可在包内反向核验**：30 张图件全部由 Pillow/reportlab 或 `@napi-rs/canvas` 程序化绘制，`grep -c 'gpt-image\\|midjourney\\|stable-diffusion' self_check.json` → 0，包内无任何外部图片素材。"
     },
     {
       "id": "CASE-KALASATAMA",
@@ -1097,10 +1097,10 @@
       ],
       "not_usable_for": [
         "主张对这些字体的任何权利",
-        "证明 assets/figures/ 下 28 张栅格图件的字形来源（见 FONT-NOTO-RASTER 与 FONT-NOTO-WEB）",
-        "证明四套 PDF 的中文字形来源（技术基线页见 FONT-NOTO-SERIF-SC；首页与 F/06 附页见 FONT-NOTO-WEB）"
+        "证明 assets/figures/ 下 30 张栅格图件的字形来源（见 FONT-NOTO-RASTER 与 FONT-NOTO-WEB）",
+        "证明四套 PDF 的中文字形来源（技术基线页见 FONT-NOTO-SERIF-SC；首页与 F/06、F/07 附页见 FONT-NOTO-WEB）"
       ],
-      "limitations": "本条**仅**覆盖 assets/media/cover.png 一张图；assets/figures/ 下 22 张 PNG 与 2 张 JPEG 的完整字体工具链见 FONT-NOTO-RASTER，F/05 与 F/06 中英共 4 张 PNG 的包内字符子集见 FONT-NOTO-WEB，三条同属 OFL-1.1 家族但由不同生成器渲染，范围不重叠。栅格产物无法反查字形来源，可独立核验的是「包内不含用于重建封面的完整 OTF/TTF 源字体」与上列逐款 sha256。",
+      "limitations": "本条**仅**覆盖 assets/media/cover.png 一张图；assets/figures/ 下 22 张 PNG 与 2 张 JPEG 的完整字体工具链见 FONT-NOTO-RASTER，F/05、F/06 与 F/07 中英共 6 张 PNG 的包内字符子集见 FONT-NOTO-WEB，三条同属 OFL-1.1 家族但由不同生成器渲染，范围不重叠。栅格产物无法反查字形来源，可独立核验的是「包内不含用于重建封面的完整 OTF/TTF 源字体」与上列逐款 sha256。",
       "registry_source_id": null,
       "registry_review_status": "not_in_central_registry",
       "usable_for_formal": "not_a_factual_source",
@@ -1117,25 +1117,25 @@
       "source_locator": "https://github.com/notofonts/noto-cjk（CJK）与 https://github.com/notofonts/notofonts.github.io（拉丁）",
       "retrieved_at": "2026-08-14",
       "accessed_date": "2026-08-16",
-      "collection_method": "当前 28 张栅格产物分两条不重叠的构建链。本条覆盖其中 24 张（22 张 PNG = 11 张图件 × 中英；2 张 JPEG = handover-scene 中英），由 Pillow 12.3.0 在本机栅格化，共加载**六个** OFL 字体文件，逐个记录 sha256 与字节数以便独立核对：NotoSansCJKsc-Medium.otf（ca094f6b0001fb048ca39ddd797a0cdb0179e1e55c6561e111c49c3e6a61d7b7，16,523,632 字节，中文正文字重）、NotoSansCJKsc-Light.otf（e78bbbe1573bbb006156c1198f5c8cd6329470cb6e0b6702c7a3c83913db4abf，16,329,648 字节，中文浅色注记）、NotoSans-Regular.ttf（478c558ea716033cd60c03438f628dfa75694dcf6b5f6d505a2f05fd2b4f3823，621,572 字节）、NotoSans-Bold.ttf（1df075a380fc7cb898acf64c1f7b3b4dd780de3caa860178bf929de35817a913，631,484 字节）、NotoSans-Italic.ttf（467e3f89eeca4108bb8710a2b9e0cf2281ac56d5b0609211a83776d0505eecb5，639,124 字节）、NotoSans-BoldItalic.ttf（1b602a9d6353be42c91df097a4857b69fa2696f26703d7a33b54a15d87c2622c，646,092 字节）。**中文一律取 Medium 档而非 Regular**：Noto Sans CJK 的笔画比原用的 STHeiti 细、字面更小，取 Medium 才与迁移前的图面重量相当。F/05 与 F/06 中英四张 PNG、四份 HTML，以及四套 PDF 的首页与 F/06 附页改由同一官方 OTF 派生、哈希绑定的 WOFF2 子集生成，见 FONT-NOTO-WEB。完整源字体存放在包外工具链目录；画廊封面另见 FONT-NOTO-COVER。",
+      "collection_method": "当前 30 张栅格产物分两条不重叠的构建链。本条覆盖其中 24 张（22 张 PNG = 11 张图件 × 中英；2 张 JPEG = handover-scene 中英），由 Pillow 12.3.0 在本机栅格化，共加载**六个** OFL 字体文件，逐个记录 sha256 与字节数以便独立核对：NotoSansCJKsc-Medium.otf（ca094f6b0001fb048ca39ddd797a0cdb0179e1e55c6561e111c49c3e6a61d7b7，16,523,632 字节，中文正文字重）、NotoSansCJKsc-Light.otf（e78bbbe1573bbb006156c1198f5c8cd6329470cb6e0b6702c7a3c83913db4abf，16,329,648 字节，中文浅色注记）、NotoSans-Regular.ttf（478c558ea716033cd60c03438f628dfa75694dcf6b5f6d505a2f05fd2b4f3823，621,572 字节）、NotoSans-Bold.ttf（1df075a380fc7cb898acf64c1f7b3b4dd780de3caa860178bf929de35817a913，631,484 字节）、NotoSans-Italic.ttf（467e3f89eeca4108bb8710a2b9e0cf2281ac56d5b0609211a83776d0505eecb5，639,124 字节）、NotoSans-BoldItalic.ttf（1b602a9d6353be42c91df097a4857b69fa2696f26703d7a33b54a15d87c2622c，646,092 字节）。**中文一律取 Medium 档而非 Regular**：Noto Sans CJK 的笔画比原用的 STHeiti 细、字面更小，取 Medium 才与迁移前的图面重量相当。F/05、F/06 与 F/07 中英六张 PNG、四份 HTML，以及四套 PDF 的首页与 F/06、F/07 附页改由同一官方 OTF 派生、哈希绑定的 WOFF2 子集生成，见 FONT-NOTO-WEB。完整源字体存放在包外工具链目录；画廊封面另见 FONT-NOTO-COVER。",
       "spatial_coverage": "不适用",
       "temporal_coverage": "不适用",
-      "license_or_reuse_terms": "SIL Open Font License 1.1。OFL 明文允许使用、修改、嵌入与随文档再分发，因此本条 24 张栅格产物的字体权利依据不依赖对任何条款的解释。现行字重共六款，逐款 sha256 如下（用于图件重建的完整源字体存放在仓库之外，仅在渲染阶段读取字形）：NotoSansCJKsc-Medium.otf sha256=ca094f6b0001fb04…6a61d7b7；NotoSansCJKsc-Light.otf sha256=e78bbbe1573bbb00…13db4abf；NotoSans-Regular.ttf sha256=478c558ea716033c…2b4f3823；NotoSans-Bold.ttf sha256=1df075a380fc7cb8…5817a913；NotoSans-Italic.ttf sha256=467e3f89eeca4108…505eecb5；NotoSans-BoldItalic.ttf sha256=1b602a9d6353be42…87c2622c。另四张 PNG 与 HTML/PDF 所分发子集见 FONT-NOTO-WEB。",
-      "usage": "为 22 张 PNG（除 F/05 与 F/06 中英四张之外的 11 张图件 × 中英）与 2 张 JPEG（handover-scene 中英）栅格化文字；中文用 Medium 与 Light 两档，拉丁文用 Regular / Bold / Italic / BoldItalic 四款。",
+      "license_or_reuse_terms": "SIL Open Font License 1.1。OFL 明文允许使用、修改、嵌入与随文档再分发，因此本条 24 张栅格产物的字体权利依据不依赖对任何条款的解释。现行字重共六款，逐款 sha256 如下（用于图件重建的完整源字体存放在仓库之外，仅在渲染阶段读取字形）：NotoSansCJKsc-Medium.otf sha256=ca094f6b0001fb04…6a61d7b7；NotoSansCJKsc-Light.otf sha256=e78bbbe1573bbb00…13db4abf；NotoSans-Regular.ttf sha256=478c558ea716033c…2b4f3823；NotoSans-Bold.ttf sha256=1df075a380fc7cb8…5817a913；NotoSans-Italic.ttf sha256=467e3f89eeca4108…505eecb5；NotoSans-BoldItalic.ttf sha256=1b602a9d6353be42…87c2622c。另六张 PNG 与 HTML/PDF 所分发子集见 FONT-NOTO-WEB。",
+      "usage": "为 22 张 PNG（除 F/05、F/06 与 F/07 中英六张之外的 11 张图件 × 中英）与 2 张 JPEG（handover-scene 中英）栅格化文字；中文用 Medium 与 Light 两档，拉丁文用 Regular / Bold / Italic / BoldItalic 四款。",
       "usable_for": [
         "证明本条 24 张栅格产物的文字字形来自 OFL-1.1 授权字体",
-        "与 FONT-NOTO-WEB 一起证明当前 28 张栅格产物的字体权利链无缺口"
+        "与 FONT-NOTO-WEB 一起证明当前 30 张栅格产物的字体权利链无缺口"
       ],
       "not_usable_for": [
-        "证明 F/05、F/06、四份 HTML 或四套 PDF 首页／附页的字符子集（见 FONT-NOTO-WEB）",
+        "证明 F/05、F/06、F/07、四份 HTML 或四套 PDF 首页／附页的字符子集（见 FONT-NOTO-WEB）",
         "证明四套 PDF 既有技术基线页内嵌字体的权利（见 FONT-NOTO-SERIF-SC）"
       ],
-      "limitations": "本条仅覆盖 assets/figures/ 下 22 张 PNG 与 2 张 JPEG。F/05 与 F/06 中英四张 PNG、四份 HTML、四套 PDF 首页与 F/06 附页单列于 FONT-NOTO-WEB；画廊封面 assets/media/cover.png 单列于 FONT-NOTO-COVER；PDF 既有技术基线页单列于 FONT-NOTO-SERIF-SC，各条**不重叠**。包内不含完整 OTF/TTF 源字体，可用 `find <包> -name '*.tt[cf]' -o -name '*.otf'` 当场核验，结果为 0。2026-08-17 之前的栅格产物由 macOS 系统字体生成，其历史登记见 FONT-STHEITI-RASTER 与 FONT-HELVETICA-RASTER，那两条**不再作为任何现行产物的权利依据**。",
+      "limitations": "本条仅覆盖 assets/figures/ 下 22 张 PNG 与 2 张 JPEG。F/05、F/06 与 F/07 中英六张 PNG、四份 HTML、四套 PDF 首页与 F/06、F/07 附页单列于 FONT-NOTO-WEB；画廊封面 assets/media/cover.png 单列于 FONT-NOTO-COVER；PDF 既有技术基线页单列于 FONT-NOTO-SERIF-SC，各条**不重叠**。包内不含完整 OTF/TTF 源字体，可用 `find <包> -name '*.tt[cf]' -o -name '*.otf'` 当场核验，结果为 0。2026-08-17 之前的栅格产物由 macOS 系统字体生成，其历史登记见 FONT-STHEITI-RASTER 与 FONT-HELVETICA-RASTER，那两条**不再作为任何现行产物的权利依据**。",
       "registry_source_id": null,
       "registry_review_status": "not_in_central_registry",
       "usable_for_formal": "not_a_factual_source",
       "usable_for_formal_basis": "participant_self_assessed",
-      "independent_verification": "六款完整源字体的 sha256 与字节数已在本条 `collection_method` 中逐个登记，可对照 Google Fonts 官方发行版逐字节校验；`find assets -name '*.tt[cf]' -o -name '*.otf'` → 0 确认包内不含完整源字体；`python3 -c \"from PIL import Image;print(Image.open('assets/figures/site-overview.png').size)\"` 确认图件为位图。F/05、F/06、HTML 与 PDF 首页／附页的 WOFF2 权利链另由 FONT-NOTO-WEB 和 `webfont-audit.js` 核验。"
+      "independent_verification": "六款完整源字体的 sha256 与字节数已在本条 `collection_method` 中逐个登记，可对照 Google Fonts 官方发行版逐字节校验；`find assets -name '*.tt[cf]' -o -name '*.otf'` → 0 确认包内不含完整源字体；`python3 -c \"from PIL import Image;print(Image.open('assets/figures/site-overview.png').size)\"` 确认图件为位图。F/05、F/06、F/07、HTML 与 PDF 首页／附页的 WOFF2 权利链另由 FONT-NOTO-WEB 和 `webfont-audit.js` 核验。"
     },
     {
       "id": "FONT-NOTO-WEB",
@@ -1147,13 +1147,13 @@
       "source_locator": "https://raw.githubusercontent.com/notofonts/noto-cjk/main/Sans/OTF/SimplifiedChinese/NotoSansCJKsc-Medium.otf；许可正文 https://github.com/notofonts/noto-cjk/blob/main/Sans/LICENSE",
       "retrieved_at": "2026-08-14",
       "accessed_date": "2026-08-30",
-      "collection_method": "以 FONT-NOTO-RASTER 已登记的官方 NotoSansCJKsc-Medium.otf（sha256 ca094f6b0001fb048ca39ddd797a0cdb0179e1e55c6561e111c49c3e6a61d7b7，16,523,632 字节，Version 2.004）为唯一输入；visual/assets/governance/build-webfont.js 先强制核对原始 sha256，再收集 report/proposal.html、report/proposal.en.html、visual/index.html、visual/index.en.html 的全部实际字符，用 fontTools 4.62.1 与 Brotli 1.2.0 确定性子集化，生成 283,996 字节 WOFF2（sha256 d0210ca0a183100333ecbb222acc537358258a01bc02ba930a6307c1ef4ab869），并以 data URI 写入包内 CSS。覆盖记录从交付 WOFF2 自身 cmap 反读，共覆盖当前请求的 1,091 个码位（交付 cmap 1,092 个，含必需控制码位）。F/05 与 F/06 中英四张 PNG 由 `@napi-rs/canvas` 直接注册同一 WOFF2 后栅格化；四套 PDF 的首页与 F/06 附页由 `build-champion-pdfs.js` 读取同一 CSS 并经 Chromium 子集嵌入。",
+      "collection_method": "以 FONT-NOTO-RASTER 已登记的官方 NotoSansCJKsc-Medium.otf（sha256 ca094f6b0001fb048ca39ddd797a0cdb0179e1e55c6561e111c49c3e6a61d7b7，16,523,632 字节，Version 2.004）为唯一输入；visual/assets/governance/build-webfont.js 先强制核对原始 sha256，再收集四份 HTML、F/05、F/06、F/07 图件生成器及 PDF 生成器的全部实际字符，用 fontTools 4.63.0 与 Brotli 1.2.0 确定性子集化，生成 285,844 字节 WOFF2（sha256 af6dfc6a36d9cf1d5e5abf5574c8046c42e8a61975fdc197d32708f71db53efd），并以 data URI 写入包内 CSS。覆盖记录从交付 WOFF2 自身 cmap 反读，共覆盖当前请求的 1,106 个码位（交付 cmap 1,107 个，含必需控制码位）。F/05、F/06 与 F/07 中英六张 PNG 由 `@napi-rs/canvas` 直接注册同一 WOFF2 后栅格化；四套 PDF 的首页与 F/06、F/07 附页由 `build-delivery-pdfs.js` 读取同一 CSS 并经 Chromium 子集嵌入。",
       "spatial_coverage": "不适用",
       "temporal_coverage": "不适用",
       "license_or_reuse_terms": "SIL Open Font License 1.1。字体版权声明为 © 2014-2021 Adobe；OFL 允许使用、修改、嵌入与再分发。交付子集嵌入本地 CSS，版权通知与官方 Sans/LICENSE 完整正文写入 visual/assets/governance/noto-cjk-subset.rights.json；该字体不受本包作者的 CC BY-NC 4.0 授权支配。",
-      "usage": "四份离线 HTML 共用的包内字体 CSS 与 @font-face；F/05、F/06 中英四张 PNG 的栅格字形；四套 PDF 首页与 F/06 末页附页的嵌入字形。使无 PingFang、Hiragino 或微软雅黑的干净评审浏览器与图件构建环境仍能渲染全部中文与符号。",
+      "usage": "四份离线 HTML 共用的包内字体 CSS 与 @font-face；F/05、F/06、F/07 中英六张 PNG 的栅格字形；四套 PDF 首页与 F/06、F/07 末两页附页的嵌入字形。使无 PingFang、Hiragino 或微软雅黑的干净评审浏览器与图件构建环境仍能渲染全部中文与符号。",
       "usable_for": [
-        "证明四份 HTML、F/05、F/06 与 PDF 首页／附页不依赖宿主机中文字体或联网字体服务",
+        "证明四份 HTML、F/05、F/06、F/07 与 PDF 首页／附页不依赖宿主机中文字体或联网字体服务",
         "证明交付 WOFF2 与其 cmap 覆盖记录、OFL 许可、版权通知及下游载体一一绑定"
       ],
       "not_usable_for": [
@@ -1161,7 +1161,7 @@
         "把字体纳入作者的 CC BY-NC 4.0 授权",
         "证明其余 24 张栅格图件或 PDF 既有技术基线页内嵌字体的来源；这些分别见 FONT-NOTO-RASTER 与 FONT-NOTO-SERIF-SC"
       ],
-      "limitations": "这是静态 Medium 字重的当前交付实际字符子集，不是完整 Noto CJK 字库；增加任何 HTML、F/05、F/06 或 PDF 首页／附页可见字符后，都必须重跑 build-webfont.js、相应图件/PDF 构建器与 webfont-audit.js。CSS 别名 JZHandoverCJK 仅为包内匹配名，不用于推广或暗示 Google、Adobe 或字体贡献者背书。",
+      "limitations": "这是静态 Medium 字重的当前交付实际字符子集，不是完整 Noto CJK 字库；增加任何 HTML、F/05、F/06、F/07 或 PDF 首页／附页可见字符后，都必须重跑 build-webfont.js、相应图件/PDF 构建器与 webfont-audit.js。CSS 别名 JZHandoverCJK 仅为包内匹配名，不用于推广或暗示 Google、Adobe 或字体贡献者背书。",
       "registry_source_id": null,
       "registry_review_status": "not_in_central_registry",
       "usable_for_formal": "not_a_factual_source",
@@ -1181,9 +1181,9 @@
       "spatial_coverage": "不适用（技术标准）",
       "temporal_coverage": "WCAG 2.1 自 2018-06-05 起为 W3C Recommendation",
       "license_or_reuse_terms": "W3C Document License：允许复制与引用标准文本，须保留出处与版权声明。本包只引用阈值数值与相对亮度公式两项事实，未复制标准正文。",
-      "usage": "本包 28 张栅格图件文字前景色的对比度自检基准，以及七类用地在六个载体中不以颜色作为唯一视觉手段的自检基准；测量、纹理映射与真实用户测试边界见 visual/assets/governance/figure-contrast-report.json。",
+      "usage": "本包 30 张栅格图件文字前景色的对比度自检基准，以及七类用地在六个载体中不以颜色作为唯一视觉手段的自检基准；测量、纹理映射与真实用户测试边界见 visual/assets/governance/figure-contrast-report.json。",
       "transformations": [
-        "原文表述：contrast ratio of at least 4.5:1 for text（SC 1.4.3, AA） → 方法：按 WCAG 2.1 相对亮度定义 L = 0.2126R + 0.7152G + 0.0722B（各通道先按 c/12.92 或 ((c+0.055)/1.055)^2.4 线性化），对比度 =(L_亮+0.05)/(L_暗+0.05) → 入库值：既有七种文字色 × 两种底色共 14 个比值，另加 F/05／F/06 实际文字／底色组合；全包最低 4.54 → 单位：无量纲比值"
+        "原文表述：contrast ratio of at least 4.5:1 for text（SC 1.4.3, AA） → 方法：按 WCAG 2.1 相对亮度定义 L = 0.2126R + 0.7152G + 0.0722B（各通道先按 c/12.92 或 ((c+0.055)/1.055)^2.4 线性化），对比度 =(L_亮+0.05)/(L_暗+0.05) → 入库值：既有七种文字色 × 两种底色共 14 个比值，另加 F/05／F/06／F/07 实际文字／底色组合；全包最低 4.54 → 单位：无量纲比值"
       ],
       "usable_for": [
         "判定本包栅格图件的文字前景色是否达到 AA 级正文对比度阈值",

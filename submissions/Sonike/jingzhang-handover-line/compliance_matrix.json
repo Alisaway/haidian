@@ -1850,7 +1850,7 @@
     "G14_HERO_IMAGE_NOT_CROPPED"
   ],
   "formal_review_readiness_boundary": {
-    "source": "visual/assets/governance/review-3825-readiness-matrix.json",
+    "source": "visual/assets/governance/formal-review-readiness-matrix.json",
     "assessment_owner": "participant_self_audit",
     "assessment_scope_zh": "仅判断当前概念投稿包是否已完成参与者可控制的材料修复并可交给正式评委评分；不判断官方接收、获奖、规划审定、采购、现场许可或公众绩效。",
     "assessment_scope_en": "Determines only whether participant-controlled repairs to the current concept-submission package are closed for handover to formal jurors; it does not determine official intake, award status, planning approval, procurement, site permission or public performance.",
@@ -1870,7 +1870,7 @@
   },
   "gate_scope_note_zh": "requirements[].gate_ids 只登记「该闸门失效会使这一条的证据失效」的闸门；对全部 23 条同样成立、无法按条目区分的包级闸门登记在 package_level_gates。闸门定义与判定规则见 visual/assets/governance/package-integrity-gates.json。",
   "gate_scope_note_en": "requirements[].gate_ids lists only the gates whose failure would invalidate that row's evidence; gates that hold identically for all 23 rows are recorded in package_level_gates. Definitions and decision rules live in visual/assets/governance/package-integrity-gates.json.",
-  "cross_reference_derivation_zh": "本表把评委主稿、英文对照稿与结构化证据分成机械推导和实质关联两层。\n\n**机械推导。** `standard_ids` 的下界为：本条 `report_sections` 与 `standard_matrix.json` 各标准 `proposal_sections` 的交集。冠军版把旧版细碎章节归并为官方要求的 13 个主章节后，已重新跑完整交集并补齐所有引用；当前声明总数 130 ＝规则导出 120＋定义性挂接 5＋实质相关性挂接 5。10 条标准均至少被一条要求引用。中英 `report_sections` 按官方 13 个必备章节逐项映射，正文主章节次序完全一致，不依赖机器翻译。\n\n**实质关联。** `geometry_feature_ids` 与 `scenario_ids` 登记要求实际涉及的空间对象和场景，不等同于正文标记的机械抽取；每个几何 ID 都能在声明图层的 `properties.id` 中解析，十二个场景与 `geometry/public_space.geojson` 的场景节点一一对应。`title_en` 为本包自译，组织方仅发布中文标题。",
+  "cross_reference_derivation_zh": "本表把评委主稿、英文对照稿与结构化证据分成机械推导和实质关联两层。\n\n**机械推导。** `standard_ids` 的下界为：本条 `report_sections` 与 `standard_matrix.json` 各标准 `proposal_sections` 的交集。本轮整合版把旧版细碎章节归并为官方要求的 13 个主章节后，已重新跑完整交集并补齐所有引用；当前声明总数 130 ＝规则导出 120＋定义性挂接 5＋实质相关性挂接 5。10 条标准均至少被一条要求引用。中英 `report_sections` 按官方 13 个必备章节逐项映射，正文主章节次序完全一致，不依赖机器翻译。\n\n**实质关联。** `geometry_feature_ids` 与 `scenario_ids` 登记要求实际涉及的空间对象和场景，不等同于正文标记的机械抽取；每个几何 ID 都能在声明图层的 `properties.id` 中解析，十二个场景与 `geometry/public_space.geojson` 的场景节点一一对应。`title_en` 为本包自译，组织方仅发布中文标题。",
   "self_check_expectations": [
     {
       "expectation_id": "DETERMINISTIC_VALIDATION",
@@ -2003,7 +2003,7 @@
       "assertion_zh": "四套图纸的页数与版本印记命中数逐套相等，无旧版本号残留；A0 中英首页的 4 张嵌入栅格与当前 v2.0 源图逐像素一致。",
       "evidence_in_package": "drawings/*.pdf、visual/assets/governance/version-audit.js 与 pdf-version-report.json",
       "covered_by_self_check_id": "VISUAL_PACKAGING",
-      "independent_verification_zh": "`node visual/assets/governance/version-audit.js` 联合 `qpdf --show-npages` 与 `pdftotext` 核得 13/13、13/13、6/6、6/6，`PACKAGE v1.15` 四套均为 0；并从 A0 中英首页抽取 F/01 与 F/03 后逐像素比对，4/4 与当前源图完全一致。"
+      "independent_verification_zh": "`node visual/assets/governance/version-audit.js` 联合 `qpdf --show-npages` 与 `pdftotext` 核得 15/15、15/15、8/8、8/8，`PACKAGE v1.15` 四套均为 0；并从 A0 中英首页抽取 F/01 与 F/03 后逐像素比对，4/4 与当前源图完全一致。"
     },
     {
       "expectation_id": "VISUAL_STATIC",
@@ -2021,29 +2021,29 @@
     },
     {
       "expectation_id": "P0_IMPLEMENTATION_AND_PUBLIC_VALUE",
-      "assertion_zh": "首个 SCN-05 P0 已从概念图深化为可操作离线服务原型、参与者预可研包络、90 天交付合同和逐场景公共利益硬门槛：7.2×7.2m参考外框、6×6m操作面、公众8人＋岗位3席＋排队6人、260开放小时／780岗位工时、约12–29万元／90天与约30–65万元／年的敏感性、四个替代方案、8道进入门、5个阶段、10项RACI、12项构件、8项验收、六类任务书群体与12/12场景公共价值门同时完整；真实场地、法定容量、授权、角色、报价、保险、正式预算、专业签认与参与者观察仍如实为未开始/空值/0。",
-      "evidence_in_package": "visual/index.html#p0-prototype；visual/assets/governance/p0-pre-feasibility-envelope.json；visual/assets/governance/jury-evidence-index.json；visual/assets/governance/p0-delivery-contract.json；visual/assets/governance/public-benefit-gate.json；visual/assets/governance/review-3825-readiness-matrix.json；visual/assets/governance/p0-readiness-audit.js",
+      "assertion_zh": "首个 SCN-05 P0 已从概念图深化为可操作离线服务原型、参与者预可研包络、90 天交付合同和逐场景公共利益硬门槛：7.2×7.2m参考外框、6×6m操作面、公众8人＋岗位3席＋排队6人、260开放小时／780岗位工时、约12–29万元／90天与约30–65万元／年的敏感性、四个替代方案、8道进入门、5个阶段、10项RACI、12项构件、8项验收、六类任务书群体与12/12场景公共价值门同时完整；专业交接进一步给出三席四人年度覆盖公式、双钥匙0/2、六包逐包验收、四种具名回退、调试执行0/8和5时段×7表未来基线。真实场地、法定容量、授权、角色、钥匙回执、报价、保险、正式预算、专业签认、调试执行与参与者观察仍如实为未开始/空值/0。",
+      "evidence_in_package": "visual/index.html#p0-prototype；assets/figures/operational-readiness.png；visual/assets/governance/p0-pre-feasibility-envelope.json；visual/assets/governance/implementation-handoff-register.json；visual/assets/governance/jury-evidence-index.json；visual/assets/governance/p0-delivery-contract.json；visual/assets/governance/public-benefit-gate.json；visual/assets/governance/formal-review-readiness-matrix.json；visual/assets/governance/p0-readiness-audit.js",
       "covered_by_self_check_id": null,
-      "independent_verification_zh": "`node visual/assets/governance/p0-readiness-audit.js --json` 输出 ok=true、预可研12/12、评委路径3/3、评分索引7/7、8/8门、5/5阶段、10/10 RACI、12/12构件、8/8验收、6/6群体、12/12场景公共门、资格证据6/6、评审动作7/7和原型14/14，同时 real_participant_observations=0；改错成本合计、把敏感性写成批准预算、删一档评委路径、删一类群体或一个场景门、把未开始改成已完成、把投稿CLOSED改成开放或把资格事实改成命中都会退出1。"
+      "independent_verification_zh": "`node visual/assets/governance/p0-readiness-audit.js --json` 输出 ok=true、预可研12/12、专业交接23/23、评委路径3/3、评分索引7/7、8/8门、5/5阶段、10/10 RACI、12/12构件、8/8验收、6/6群体、12/12场景公共门、资格证据6/6、评审动作7/7和原型14/14，同时 real_participant_observations=0；改错排班公式、删逐包验收、删具名回退门、伪造双钥匙回执、误标调试已执行或填入未来基线值都会退出1。"
     },
     {
       "expectation_id": "CLAIM_AUDIT",
       "assertion_zh": "正文与交付物中可复算的数值、结构和呈现声明共 69 项，逐条与结构化文件一致。覆盖指标、几何、二十单元、断面算术、双语布局、矩阵引用、来源与许可、四套 PDF 文字层、四个 HTML 的包内 CJK 字体、全载体 v2.0 可见版本、A0 首页内嵌图 4/4 的源图像素绑定、七类用地唯一纹理、十二场景无 AI 等价路线，以及 P0 的实施与公共利益完整性。断言 ID 全集与数量另由不走登记函数的结构性守卫锁定。",
       "evidence_in_package": "visual/assets/governance/claims-audit.js",
       "covered_by_self_check_id": null,
-      "independent_verification_zh": "`node visual/assets/governance/claims-audit.js` 输出「69/69 条声明与包内数据一致」且退出码 0；G6 核四页 HTML 字形与等宽控件，G7 输出 28 图件／4 套 42 页 PDF／A0 内嵌图 4/4 像素一致，G8 输出 7 类 × 6 载体／98 个纹理区域，G9 输出 12/12 无 AI 路线／24 条人工渠道／8/8 需求夹具，G10 输出 8 门／5 阶段／10 RACI／12 构件／8 验收／预可研 12/12／专业交接 17/17／6 群体／12 场景公共门／原型 14/14，并保持真实观察 0。阴性测试见 audit-selftest.js。**该脚本不在 CI 或 preflight 中被调用**，须手动执行。"
+      "independent_verification_zh": "`node visual/assets/governance/claims-audit.js` 输出「69/69 条声明与包内数据一致」且退出码 0；G6 核四页 HTML 字形与等宽控件，G7 输出 30 图件／4 套 46 页 PDF／A0 内嵌图 4/4 像素一致，G8 输出 7 类 × 6 载体／98 个纹理区域，G9 输出 12/12 无 AI 路线／24 条人工渠道／8/8 需求夹具，G10 输出 8 门／5 阶段／10 RACI／12 构件／8 验收／预可研 12/12／专业交接 23/23／6 群体／12 场景公共门／原型 14/14，并保持真实观察 0。阴性测试见 audit-selftest.js。**该脚本不在 CI 或 preflight 中被调用**，须手动执行。"
     },
     {
       "expectation_id": "AUDITOR_SELFTEST",
-      "assertion_zh": "声明审计器、版本审计器、用地纹理审计器、公共服务等价审计器、P0 就绪审计器与协议重跑器共经过 60 例回归测试：2 例正向锁定完整规模与 ID 序列，58 例阴性逐一注入已知缺陷并要求对应检查退出 1。最新五例专门把文件闸门伪装成已放行、角色伪装成已任命、数量表填入单价金额、条件工期伪装成已取得 T0，以及改错控制包络面积，证明参赛者交付结构不能被偷换成现场、主体、报价或已开工事实。所有扰动只写系统临时目录，不改投稿包。",
+      "assertion_zh": "声明审计器、版本审计器、用地纹理审计器、公共服务等价审计器、P0 就绪审计器与协议重跑器共经过 66 例回归测试：2 例正向锁定完整规模与 ID 序列，64 例阴性逐一注入已知缺陷并要求对应检查退出 1。十一例专门覆盖文件闸门、专业任命、数量单价、T0 启动、空间算术、排班公式、逐包验收、具名回退、双钥匙回执、调试执行和未来基线值，证明参赛者交付结构不能被偷换成现场、主体、报价或已执行事实。所有扰动只写系统临时目录，不改投稿包。",
       "evidence_in_package": "visual/assets/governance/audit-selftest.js",
       "covered_by_self_check_id": null,
-      "independent_verification_zh": "`node visual/assets/governance/audit-selftest.js` 输出「60/60 例通过（2 正向 ＋ 58 阴性）」且退出码 0；任何一例未通过即退出 1 并打印该例期望与实得。缺陷注入一律写进系统临时目录，**包内文件不被改动**，跑完即删。**该脚本同样不在 CI 或 preflight 中被调用**，须手动执行；已就此向上游提 Issue #3571 建议 participant_preflight.py 支持运行本节声明的自检命令。"
+      "independent_verification_zh": "`node visual/assets/governance/audit-selftest.js` 输出「66/66 例通过（2 正向 ＋ 64 阴性）」且退出码 0；任何一例未通过即退出 1 并打印该例期望与实得。缺陷注入一律写进系统临时目录，**包内文件不被改动**，跑完即删。**该脚本同样不在 CI 或 preflight 中被调用**，须手动执行；已就此向上游提 Issue #3571 建议 participant_preflight.py 支持运行本节声明的自检命令。"
     },
     {
       "expectation_id": "FORMAL_REVIEW_SCOPE_SEPARATION",
       "assertion_zh": "当前投稿材料闭合、正式评委程序、组织方数据、现场启动与公众绩效发布五种状态被分栏记录：参与者可控制的当前开放修复为 0；六项资格事实核对 0 项观察到拒绝条件；真实现场和绩效主张继续保持 BLOCKED，不以虚构授权换取可实施性分数。",
-      "evidence_in_package": "compliance_matrix.json#formal_review_readiness_boundary；visual/assets/governance/review-3825-readiness-matrix.json；visual/assets/governance/p0-delivery-contract.json#formal_review_boundary",
+      "evidence_in_package": "compliance_matrix.json#formal_review_readiness_boundary；visual/assets/governance/formal-review-readiness-matrix.json；visual/assets/governance/p0-delivery-contract.json#formal_review_boundary",
       "covered_by_self_check_id": null,
       "independent_verification_zh": "`node visual/assets/governance/p0-readiness-audit.js --json` 须输出 eligibility_evidence_checks_valid=6、review_items_classified_valid=7、ok=true；把 package_result 改成非 CLOSED、把任一资格事实改成 observed、或把现场 BLOCKED 改成已启动都会退出 1。"
     }

@@ -62,8 +62,8 @@ const add = (id, claim, pass, actual) => checks.push({ id, claim, pass: !!pass, 
 /* A. metrics.json 的自陈与内部一致性 */
 const valued = Object.values(metrics).filter((m) => m.value !== null && m.value !== undefined).length;
 const pending = Object.keys(metrics).length - valued;
-add("M1", "119 项指标 ＝ 105 已赋值 ＋ 14 待测",
-    Object.keys(metrics).length === 119 && valued === 105 && pending === 14,
+add("M1", "131 项指标 ＝ 117 已赋值 ＋ 14 待测",
+    Object.keys(metrics).length === 131 && valued === 117 && pending === 14,
     `${Object.keys(metrics).length} ＝ ${valued} ＋ ${pending}`);
 
 const phaseSum = val("phase_1_area_sqm") + val("phase_2_area_sqm") + val("phase_3_area_sqm");
@@ -423,7 +423,7 @@ add("G3", "正文的 [depth:] 标记全部能在 design_depth_matrix.json 里解
     badDep.length === 0, badDep.length ? badDep.join("、") : `${usedDep.length} 个全部命中`);
 
 /* G4. PDF 文字层回归守卫。技术内页的 CID 字体必须继续使用恒等 bfrange；v2.0 首页由
-   Chromium 用 OFL Noto Sans CJK SC 生成，首页与 F/06 附页的子集按实际使用字形写稀疏 bfchar／bfrange，
+   Chromium 用 OFL Noto Sans CJK SC 生成，首页与 F/06、F/07 附页的子集按实际使用字形写稀疏 bfchar／bfrange，
    不能也不应强改成恒等映射。两类分别锁定：内页恒等 CMap 数不能减少，首页稀疏 CMap 数
    不能漂移，且稀疏表必须声明 Adobe-Identity-UCS、含实际映射、目标码位不得落入替换符、
    私用区或 CJK 兼容区。这样仍能抓住 2026-08-22 那种 code→字形索引回归，也不会把合法
@@ -432,10 +432,10 @@ add("G3", "正文的 [depth:] 标记全部能在 design_depth_matrix.json 里解
   const zlib = require("zlib");
   const PDFS = ["a0-boards.pdf", "a3-booklet.pdf", "a0-boards.en.pdf", "a3-booklet.en.pdf"];
   const EXPECTED = {
-    "a0-boards.pdf": { identity: 3, sparse: 36 },
-    "a3-booklet.pdf": { identity: 2, sparse: 36 },
-    "a0-boards.en.pdf": { identity: 2, sparse: 10 },
-    "a3-booklet.en.pdf": { identity: 2, sparse: 10 },
+    "a0-boards.pdf": { identity: 3, sparse: 52 },
+    "a3-booklet.pdf": { identity: 2, sparse: 52 },
+    "a0-boards.en.pdf": { identity: 2, sparse: 15 },
+    "a3-booklet.en.pdf": { identity: 2, sparse: 15 },
   };
   const destinationCodepoints = (hex) => {
     if (!hex || hex.length % 4 !== 0) return [];
@@ -506,9 +506,9 @@ add("G3", "正文的 [depth:] 标记全部能在 design_depth_matrix.json 里解
     }
     if (!hasNoto) bad.push(`${name}: v2.0 首页 OFL 字体名缺失`);
   }
-  add("G4", "四套图纸的技术基线页保留恒等 ToUnicode；v2.0 首页与 F/06 附页使用合法稀疏 ToUnicode 与 OFL Noto 子集，目标码位无替换符、私用区或 CJK 兼容区",
-      bad.length === 0 && cmapCount === 101 && identityTotal === 9 && sparseTotal === 92,
-      bad.length ? bad.slice(0, 4).join("；") : `101 个 CMap：技术基线页 9 个恒等映射＋首页／附页 92 个合法稀疏映射`);
+  add("G4", "四套图纸的技术基线页保留恒等 ToUnicode；v2.0 首页与 F/06、F/07 附页使用合法稀疏 ToUnicode 与 OFL Noto 子集，目标码位无替换符、私用区或 CJK 兼容区",
+      bad.length === 0 && cmapCount === 143 && identityTotal === 9 && sparseTotal === 134,
+      bad.length ? bad.slice(0, 4).join("；") : `143 个 CMap：技术基线页 9 个恒等映射＋首页／附页 134 个合法稀疏映射`);
 }
 
 /* G6/G7/G8/G9/G10. 评分器暴露的表达层盲点必须进入总退出码：无系统中文字体时的
@@ -542,7 +542,7 @@ function runNestedAudit(filename) {
   const result = runNestedAudit("version-audit.js");
   const problems = result.parsed && Array.isArray(result.parsed.errors)
     ? result.parsed.errors : [result.stderr || "无法解析 version-audit.js 输出"];
-  add("G7", "28 张图件、四套 42 页 PDF、A0 首页四张内嵌图、四份 HTML 与两份触觉 SVG 的可见投稿包标识统一为 PACKAGE v2.0",
+  add("G7", "30 张图件、四套 46 页 PDF、A0 首页四张内嵌图、四份 HTML 与两份触觉 SVG 的可见投稿包标识统一为 PACKAGE v2.0",
       result.status === 0 && result.parsed && result.parsed.ok === true,
       problems.length ? problems.slice(0, 4).join("；")
         : `${result.parsed.figure_count} 图件／${result.parsed.pdf_count} 套 ${result.parsed.pdf_page_count} 页 PDF／A0 内嵌图 ${result.parsed.a0_embedded_figure_pixel_matches}/4 像素一致／${result.parsed.static_deliverables_checked} 静态载体`);
@@ -572,7 +572,7 @@ function runNestedAudit(filename) {
   const result = runNestedAudit("p0-readiness-audit.js");
   const problems = result.parsed && Array.isArray(result.parsed.errors)
     ? result.parsed.errors : [result.stderr || "无法解析 p0-readiness-audit.js 输出"];
-  add("G10", "SCN-05 单场景 P0 同时具备八门、五阶段、十项 RACI、十二项构件、八项预注册验收、十二组预可研自洽检查、十七组专业实施交接检查、三档评委路径、七项评分证据索引、六类公共群体、十二场景公共利益硬门槛与可操作离线原型；并把参与者敏感性与正式场地、文件回执、任命、报价、保险、预算、专业签认和现场绩效分栏锁定；真实观察仍为 0",
+  add("G10", "SCN-05 单场景 P0 同时具备八门、五阶段、十项 RACI、十二项构件、八项预注册验收、十二组预可研自洽检查、二十三组专业实施交接检查、三档评委路径、七项评分证据索引、六类公共群体、十二场景公共利益硬门槛与可操作离线原型；并把参与者敏感性与正式场地、文件回执、任命、双钥匙回执、调试执行、报价、保险、预算、专业签认和现场绩效分栏锁定；真实观察仍为 0",
       result.status === 0 && result.parsed && result.parsed.ok === true,
       problems.length ? problems.slice(0, 4).join("；")
         : `${result.parsed.entry_gates_valid} 门／${result.parsed.delivery_stages_valid} 阶段／${result.parsed.raci_work_packages_valid} RACI／${result.parsed.component_line_items_valid} 构件／${result.parsed.acceptance_criteria_valid} 验收／预可研 ${result.parsed.pre_feasibility_checks_valid}/${result.parsed.pre_feasibility_checks_expected}／专业交接 ${result.parsed.implementation_handoff_checks_valid}/${result.parsed.implementation_handoff_checks_expected}／评委路径 ${result.parsed.jury_paths_valid}/${result.parsed.jury_paths_expected}／评分索引 ${result.parsed.rubric_dimensions_valid}/${result.parsed.rubric_dimensions_expected}／${result.parsed.public_benefit_groups_valid} 群体／${result.parsed.scenario_public_value_gates_valid} 场景公共门／资格证据 ${result.parsed.eligibility_evidence_checks_valid}／评审归类 ${result.parsed.review_items_classified_valid}／原型 ${result.parsed.prototype_checks_valid}/${result.parsed.prototype_checks_expected}／真实观察 ${result.parsed.real_participant_observations}`);
@@ -731,7 +731,7 @@ add("J1", `sources.json 里 ${sup.size} 条已自陈作废的登记，没有被�
     badPtr.length === 0, badPtr.length ? badPtr.join("；") : `作废 ${[...sup].join("、")}；现行条目零处误引`);
 
 /* J2. 矩阵自陈的推导规则。compliance_matrix.json 写着「standard_ids 的下界＝本条
-   report_sections 与 standard_matrix.proposal_sections 的交集」。冠军版把旧版细碎章节
+   report_sections 与 standard_matrix.proposal_sections 的交集」。本轮整合版把旧版细碎章节
    归并成官方 13 个必备章节后重新跑了完整交集；归并会让同章内的相关标准产生更多交集，
    所以同步补齐全部声明。三段分解的规模写死在这里：夹具少几条时「逐条一致」仍会成立
    而总数变小，所以 N 必须来自被审对象之外（同 protocol-check-runner.js 的 EXPECTED_SCALE）。 */
@@ -989,8 +989,8 @@ add("J2", "compliance_matrix 自陈的 standard_ids 推导规则成立：规则�
    2026-08-22 抓到的一处：11 条假设里 10 条的 `affected_files` 都是具体文件路径（`A-BOUNDARY-001`
    连四张图件都逐一列出），**只有 `A-CONTRAST-001` 写了一个裸目录 `assets/figures/`**。字段名是
    affected_files，机器按它算复算范围时这一项解析不出来。已按 `figure-contrast-report.json` 自陈的
-   范围（28 张栅格图件 ＝ 26 PNG ＋ 2 JPEG）展开成 28 个具体路径，与报告声明逐一对应。
-   规模 11 条假设／106 处文件引用写死参与退出码——某条引用被悄悄删掉时「逐条可解析」仍会成立。 */
+   范围（30 张栅格图件 ＝ 28 PNG ＋ 2 JPEG）展开成 30 个具体路径，与报告声明逐一对应。
+   规模 11 条假设／108 处文件引用写死参与退出码——某条引用被悄悄删掉时「逐条可解析」仍会成立。 */
 {
   const asms = readPkg("assumptions.json").assumptions || [];
   const problems = [];
@@ -1006,11 +1006,11 @@ add("J2", "compliance_matrix 自陈的 standard_ids 推导规则成立：规则�
       if (!a[k]) problems.push(`${a.id}: 缺 ${k}`);
     }
   }
-  add("A2", "assumptions.json 的 11 条假设各带复算触发器与责任角色，且 106 处 affected_files 逐条解析到包内实际文件（不接受目录）",
-      problems.length === 0 && asms.length === 11 && refs === 106,
+  add("A2", "assumptions.json 的 11 条假设各带复算触发器与责任角色，且 108 处 affected_files 逐条解析到包内实际文件（不接受目录）",
+      problems.length === 0 && asms.length === 11 && refs === 108,
       problems.length ? problems.join("；")
-        : (asms.length !== 11 || refs !== 106 ? `实为 ${asms.length} 条假设／${refs} 处引用，应为 11／106`
-           : `11 条假设、106 处引用逐条可解析`));
+        : (asms.length !== 11 || refs !== 108 ? `实为 ${asms.length} 条假设／${refs} 处引用，应为 11／108`
+           : `11 条假设、108 处引用逐条可解析`));
 }
 
 /* Z. 元检查：断言检查清单本身没有缺项。

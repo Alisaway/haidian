@@ -19,7 +19,10 @@
     "approved_budget_cny": null,
     "professional_signoff_count": 0,
     "construction_or_opening_release_count": 0,
-    "field_task_count": 0
+    "field_task_count": 0,
+    "valid_two_key_receipt_count": 0,
+    "commissioning_execution_count": 0,
+    "future_baseline_observation_count": 0
   },
   "nested_scale_envelopes": {
     "site_screening_window": {
@@ -151,12 +154,54 @@
     {"project_id": "PJ09", "title_zh": "智能构件退役、数据关闭与场地恢复", "release_state": "S3_CORRIDOR_OPERATION_AND_RETIREMENT", "status": "HOLD"}
   ],
   "delivery_packages": [
-    {"package_id": "WP01", "title_zh": "官方资料、权属与适用程序回执包", "status": "HOLD", "gate_ids": ["G01", "G02", "G03"]},
-    {"package_id": "WP02", "title_zh": "授权现场、公共路径与权利基线包", "status": "HOLD", "gate_ids": ["G02", "G04", "G06", "G11"]},
-    {"package_id": "WP03", "title_zh": "1:500—1:20 协同设计与独立专业复核包", "status": "HOLD", "gate_ids": ["G03", "G05", "G06", "G07", "G08"]},
-    {"package_id": "WP04", "title_zh": "数量、询价、预算、采购、运营与保险包", "status": "HOLD", "gate_ids": ["G09", "G10"]},
-    {"package_id": "WP05", "title_zh": "场外预装、现场装配与调试回执包", "status": "HOLD", "gate_ids": ["G05", "G06", "G07", "G08", "G12"]},
-    {"package_id": "WP06", "title_zh": "有限运营、独立评估、撤场与恢复关闭包", "status": "HOLD", "gate_ids": ["G10", "G11", "G12"]}
+    {
+      "package_id": "WP01",
+      "title_zh": "官方资料、权属与适用程序回执包",
+      "status": "HOLD",
+      "gate_ids": ["G01", "G02", "G03"],
+      "quantity_basis": "three release-critical documentary receipts plus an applicability index",
+      "acceptance_test": "independent cross-check of extent, site right, restoration duty and authority route"
+    },
+    {
+      "package_id": "WP02",
+      "title_zh": "授权现场、公共路径与权利基线包",
+      "status": "HOLD",
+      "gate_ids": ["G02", "G04", "G06", "G11"],
+      "quantity_basis": "five future observation periods x seven field forms x six required public groups",
+      "acceptance_test": "authorised, disaggregated and anonymised baseline index with zero missing consent or route records"
+    },
+    {
+      "package_id": "WP03",
+      "title_zh": "1:500—1:20 协同设计与独立专业复核包",
+      "status": "HOLD",
+      "gate_ids": ["G03", "G05", "G06", "G07", "G08"],
+      "quantity_basis": "five scaled drawings plus one coordinated interface and assumption-replacement register",
+      "acceptance_test": "same-source geometry, life-safety, accessibility, temporary-works and MEP interface review"
+    },
+    {
+      "package_id": "WP04",
+      "title_zh": "数量、询价、预算、采购、运营与保险包",
+      "status": "HOLD",
+      "gate_ids": ["G09", "G10"],
+      "quantity_basis": "sixteen unpriced lines, three comparable quote slots and one roster/cost sensitivity model",
+      "acceptance_test": "all rates trace to receipts; approved sustained budget, operator, maintenance, insurance and restoration reserve close together"
+    },
+    {
+      "package_id": "WP05",
+      "title_zh": "场外预装、现场装配与调试回执包",
+      "status": "HOLD",
+      "gate_ids": ["G05", "G06", "G07", "G08", "G12"],
+      "quantity_basis": "eleven implementation modules, asset labels and the two-opening/clear-loop screen",
+      "acceptance_test": "off-site configuration, protected assembly, continuous human floor and independently witnessed physical stop"
+    },
+    {
+      "package_id": "WP06",
+      "title_zh": "有限运营、独立评估、撤场与恢复关闭包",
+      "status": "HOLD",
+      "gate_ids": ["G10", "G11", "G12"],
+      "quantity_basis": "eight commissioning checks, one bounded co-test window and one complete removal/restoration closeout",
+      "acceptance_test": "two-key rollback, no-device same-task route, deletion receipt and four-hour removal target independently witnessed"
+    }
   ],
   "implementation_modules": [
     {"module_id": "M01", "title_zh": "双面有人服务岛", "removable": true},
@@ -261,10 +306,34 @@
     {"indicator_id": "A12", "title_zh": "四小时撤场、恢复与数据关闭真实复测", "judgeable_now": false, "current_result": "HOLD_FIELD", "field_result": null}
   ],
   "alternative_gate_binding": [
-    {"alternative_id": "ALT-0_EXISTING_HUMAN_FLOOR", "gate_rule": "automatic fallback whenever any gate remains HOLD", "pilot_activation_allowed": false},
-    {"alternative_id": "ALT-1_MOBILE_CART", "gate_rule": "still requires G02, G04-G12 and a documented G01/G03 applicability route", "pilot_activation_allowed": true},
-    {"alternative_id": "ALT-2_PUBLIC_HANDOVER_TABLE_REFERENCE", "gate_rule": "requires all G01-G12 receipts", "pilot_activation_allowed": true},
-    {"alternative_id": "ALT-3_BORROWED_INDOOR_ROOM", "gate_rule": "requires all applicable G01-G12 receipts plus indoor fire/accessibility confirmation", "pilot_activation_allowed": true}
+    {
+      "alternative_id": "ALT-0_EXISTING_HUMAN_FLOOR",
+      "alternative_advantage_dimensions": ["lowest capital exposure", "no new site or temporary-work risk", "immediate service continuity"],
+      "fallback_gate_ids": ["ANY_APPLICABLE_GATE_HOLD"],
+      "gate_rule": "automatic fallback whenever any applicable gate remains HOLD",
+      "pilot_activation_allowed": false
+    },
+    {
+      "alternative_id": "ALT-1_MOBILE_CART",
+      "alternative_advantage_dimensions": ["smaller footprint", "lower component cost", "same-shift removal to existing storage"],
+      "fallback_gate_ids": ["G07", "G08"],
+      "gate_rule": "use only when the temporary-works or outdoor-interface route fails but every other applicable receipt closes; never bypass G02, G04-G06 or G09-G12",
+      "pilot_activation_allowed": true
+    },
+    {
+      "alternative_id": "ALT-2_PUBLIC_HANDOVER_TABLE_REFERENCE",
+      "alternative_advantage_dimensions": ["two-face parallel handover", "public visibility", "queue and dissent legibility"],
+      "fallback_gate_ids": [],
+      "gate_rule": "reference scheme requires all G01-G12 receipts",
+      "pilot_activation_allowed": true
+    },
+    {
+      "alternative_id": "ALT-3_BORROWED_INDOOR_ROOM",
+      "alternative_advantage_dimensions": ["weather continuity", "controlled lighting", "secure storage"],
+      "fallback_gate_ids": ["G08"],
+      "gate_rule": "use when the outdoor utility/weather interface cannot close, while retaining indoor G05/G06 review and every other applicable receipt",
+      "pilot_activation_allowed": true
+    }
   ],
   "maintenance_and_restoration_binding": {
     "maintenance_source": "p0-pre-feasibility-envelope.json#maintenance_cycles",
@@ -273,6 +342,63 @@
     "same_day_removal_target_hours": 4,
     "field_tested": false,
     "opening_rule": "No approved and ring-fenced restoration reserve, maintenance roster or G10/G12 receipts means no assembly and no public opening."
+  },
+  "operating_roster_coverage": {
+    "simultaneous_role_seats": 3,
+    "public_open_hours_per_year": 1000,
+    "staffed_seat_hours_per_year": 3000,
+    "productive_hours_per_fte_year_assumption": 1680,
+    "leave_training_factor": 1.2,
+    "calculated_minimum_coverage_fte": 2.143,
+    "coverage_fte_formula": "3000 / 1680 * 1.2",
+    "planning_coverage_fte": 3,
+    "minimum_roster_headcount_for_break_cover": 4,
+    "target_uncovered_public_hours": 0,
+    "current_named_roster_headcount": 0,
+    "appointment_status": "HOLD_UNAPPOINTED",
+    "hold_rule": "Three seats, the relief plan and both future keys must be present for every smart-layer window; otherwise the smart layer remains off and the existing staffed human floor continues."
+  },
+  "two_key_release_control": {
+    "required_key_count": 2,
+    "current_valid_key_receipt_count": 0,
+    "current_status": "HOLD_UNAPPOINTED",
+    "independent_release_role_id": "R12",
+    "keys": [
+      {
+        "key_id": "K-SERVICE-CONTINUITY",
+        "future_holder_role_id": "R10",
+        "purpose": "verify staffed human-floor continuity, shift coverage, maintenance and operational rollback",
+        "current_named_holder": null,
+        "appointment_receipt": null
+      },
+      {
+        "key_id": "K-RIGHTS-SAFETY-VETO",
+        "future_holder_role_id": "R11",
+        "purpose": "independently veto unsafe, inaccessible, coercive, over-collecting or unreceipted operation",
+        "current_named_holder": null,
+        "appointment_receipt": null
+      }
+    ],
+    "release_rule": "Both valid independent key receipts plus the R12 opening receipt are required; one missing or one veto keeps smart_layer=off."
+  },
+  "commissioning_and_decommissioning_checks": [
+    {"check_id": "C01", "title_zh": "场外配置、构件编号与备件资产表", "site_action": false, "current_status": "HOLD_UNEXECUTED", "receipt": null},
+    {"check_id": "C02", "title_zh": "获准装配、两处开口与连续环线检查", "site_action": true, "current_status": "HOLD_UNEXECUTED", "receipt": null},
+    {"check_id": "C03", "title_zh": "三席在岗、四人轮休与零漏班演练", "site_action": true, "current_status": "HOLD_UNEXECUTED", "receipt": null},
+    {"check_id": "C04", "title_zh": "无需设备的同任务人工路线与合理便利", "site_action": true, "current_status": "HOLD_UNEXECUTED", "receipt": null},
+    {"check_id": "C05", "title_zh": "双钥匙停用、断电、接管与回滚演练", "site_action": true, "current_status": "HOLD_UNEXECUTED", "receipt": null},
+    {"check_id": "C06", "title_zh": "临时记录删除、投诉与关闭回执核对", "site_action": true, "current_status": "HOLD_UNEXECUTED", "receipt": null},
+    {"check_id": "C07", "title_zh": "队列、开口、导视与异常时段压力检查", "site_action": true, "current_status": "HOLD_UNEXECUTED", "receipt": null},
+    {"check_id": "C08", "title_zh": "完整撤除、地面恢复与人工底盘再开放", "site_action": true, "current_status": "HOLD_UNEXECUTED", "receipt": null}
+  ],
+  "future_field_baseline_protocol": {
+    "periods": ["ordinary_public_window", "shift_change_peak", "rain_heat_or_cold", "low_light_or_night", "digital_or_power_outage"],
+    "required_public_groups": ["residents", "youth_talent", "enterprises", "universities", "visitors", "marginalized_groups"],
+    "forms": ["continuous_route_and_openings", "queue_wait_and_diversion", "no_ai_same_task", "accessibility_and_assistance", "complaint_stop_delete_receipt", "shift_maintenance_and_spares", "removal_restoration_and_reopen"],
+    "authorised_participant_count": 0,
+    "field_observation_count": 0,
+    "values": null,
+    "publication_rule": "No field claim without written authority, method, group coverage, anonymised receipt, failure record and independent review."
   },
   "recalculation_invariants": [
     "24×24=576",
@@ -291,6 +417,18 @@
     "conditional_tasks=12",
     "unpriced_quantity_lines=16",
     "handoff_acceptance_indicators=12",
-    "judgeable_now_indicators=8"
+    "judgeable_now_indicators=8",
+    "3000/1680*1.2=2.142857...",
+    "planning_coverage_fte=3",
+    "minimum_roster_headcount=4",
+    "package_acceptance_tests=6",
+    "named_alternative_gate_bindings=4",
+    "two_key_controls=2",
+    "current_valid_key_receipts=0",
+    "commissioning_checks=8",
+    "commissioning_executed=0",
+    "future_baseline_periods=5",
+    "future_baseline_forms=7",
+    "future_baseline_observations=0"
   ]
 }

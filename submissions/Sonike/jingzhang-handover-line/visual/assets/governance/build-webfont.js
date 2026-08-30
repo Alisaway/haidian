@@ -49,6 +49,13 @@ const PAGES = [
   "visual/index.html",
   "visual/index.en.html",
 ];
+const GLYPH_SOURCES = [
+  ...PAGES,
+  "visual/assets/governance/build-p0-feasibility-figure.js",
+  "visual/assets/governance/build-implementation-handoff-figure.js",
+  "visual/assets/governance/build-operational-readiness-figure.js",
+  "visual/assets/governance/build-delivery-pdfs.js",
+];
 const REPORT_PAGES = PAGES.slice(0, 2);
 const REPORT_LINK = '<link rel="stylesheet" href="../visual/assets/governance/noto-cjk-subset.css">';
 const REPORT_STAMP = '<p class="package-stamp">PACKAGE v2.0</p>';
@@ -120,7 +127,7 @@ function requiredCodepoints() {
   const wanted = new Set();
   for (let cp = 0x20; cp < 0x7f; cp += 1) wanted.add(cp);
   wanted.add(0x00a0);
-  for (const relative of PAGES) {
+  for (const relative of GLYPH_SOURCES) {
     const text = fs.readFileSync(path.join(PKG, relative), "utf8");
     for (const character of text) {
       const cp = character.codePointAt(0);
@@ -143,6 +150,7 @@ function main() {
       throw new Error(`现有 WOFF2 缺 ${missing.length} 个码位，必须提供 --source-font 重建：${missing.slice(0, 8).map((cp) => `U+${cp.toString(16).toUpperCase()}`).join(", ")}`);
     }
     coverage.pages = PAGES;
+    coverage.glyph_sources = GLYPH_SOURCES;
     coverage.requested_codepoint_count = wanted.length;
     coverage.reuse_verification = "existing subset reattached after report render; every currently visible codepoint is covered; no glyph payload was changed";
     fs.writeFileSync(coveragePath, `${JSON.stringify(coverage, null, 2)}\n`);
@@ -228,6 +236,7 @@ function main() {
       licence: metadata.licence,
       rights_path: RIGHTS_REL,
       pages: PAGES,
+      glyph_sources: GLYPH_SOURCES,
       requested_codepoint_count: wanted.length,
       delivered_codepoint_count: metadata.codepoints.length,
       codepoints: metadata.codepoints,

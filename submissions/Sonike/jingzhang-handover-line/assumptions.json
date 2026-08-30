@@ -21,7 +21,7 @@
       ],
       "responsible_role": "R-PUBLIC-SPACE",
       "resolution_evidence": "取得清权后的官方 official polygon（盖章或权威发布），并可核对其坐标系与发布时点。",
-      "recalculation_scope": "九类几何与全部面积/比例/长度指标全量重算；28 张图件与四套 PDF 中所有依赖该边界的图面重出；正文与 HTML 中的面积表述同步订正。",
+      "recalculation_scope": "九类几何与全部面积/比例/长度指标全量重算；30 张图件与四套 PDF 中所有依赖该边界的图面重出；正文与 HTML 中的面积表述同步订正。",
       "risk_statement_zh": "临时边界被误读为正式红线。"
     },
     {
@@ -201,13 +201,13 @@
       "responsible_role": "R-INDEPENDENT-REVIEW",
       "resolution_evidence": "① `pdftoppm -f 6 -l 6 -r 200 drawings/a3-booklet.pdf -` 渲染后该行分隔符为顿号，无 .notdef 方框；抽取结果 `·` 计数 0、`、` 计数 7（2026-08-22 复验仍成立）。② **这一条改过两次，2026-08-22 第二次改动时才真正修好。** 第一次（同日上午）纠正的是它原来那句不实陈述——原文称三引擎抽取「与图面相符」，而 A0 第 1 页当时仍抽成「銺㬪銯㾲」，即它自己所说的「修复前」状态。第一次改动**只把范围写准、没有动 PDF**，并据此写下一个错误结论：「**当前不可修**：这两页正是生成器已丢失／已撤回的那两页，重建即会换掉页面内容。」**那个结论是错的——它把「不能重建页面」当成了「不能修 ToUnicode」，而修法本来就写在本条的 `recalculation_scope` 里，只改字体资源的 ToUnicode 流、根本不触碰页面内容。** 第二次改动执行了那个修法，同时把范围又纠正一次：**受影响的不只是两套中文本的第 1 页，四套图纸里所有用 CID 中文字体排的文字都受影响**，只是英文本里那些字被错映成拉丁与中日韩标点形状的乱码（`ihmfLyg`mf?g`mcnudq?khmd` 应为 `JING-ZHANG HANDOVER LINE`），按「中文乱码字数」扫会漏掉，因此第一次实测误判为「两套英文版无乱码」。修复后的逐页实测（`pdftotext -f N -l N`，判据为码位落在私用区、CJK 扩展 A 或 CJK 兼容表意区的字数）：`a0-boards.pdf` 6 页 **乱码 220 → 0**、可读中文 2040 → 2487；`a3-booklet.pdf` 13 页 **乱码 121 → 0**、可读中文 1810 → 2054；两套英文本的标题与副标题由乱码恢复为 `JING-ZHANG HANDOVER LINE`、`SITE OVERVIEW` 等正确英文。**渲染证明未变**：四套共 38 页在 72 dpi（评审送入的同一分辨率）下逐页重渲染，**38/38 页 PNG 字节完全相同**；`qpdf --check` 四套仍全 PASS；`pdftotext | grep -c 'PACKAGE v1.15'` 仍为 6/6、6/6、13/13、13/13；体积各减 0.3–1.4 KB（恒等 CMap 比原来 215 条映射的表短）。复现命令：`pdftotext -f 1 -l 1 drawings/a0-boards.pdf - | head -3`。**影响**：机器文本抽取、屏幕阅读器与辅助技术现在能读到图纸上的文字；图面与评审视觉输入不受任何影响。 ③ 四套 `qpdf --check` 全 PASS，页数与 `PACKAGE v1.15` 命中数相等（13/13、13/13、6/6、6/6），CID 中文字体未嵌入数为 0（2026-08-22 复验：四套的 CID 子集均 `emb=yes`）。",
       "recalculation_scope": "修法：内容流的 CJK 走十六进制串且编码为 UniGB-UCS2-H，串内即 UCS-2 码位，因此正确的 ToUnicode 是恒等映射——把每个 ToUnicode 流整体换成一条 `<0000><ffff><0000>` 的 bfrange，流长由 fix-qdf 重算；缺字则在十六进制串的 4 位码元边界上把 `00b7` 换成 `3001`，全文恰好 7 处、无过匹配。已验证不可采用的修法：在 `(...)` 字面量里按裸字节替换 `\\x00\\xb7` 一次命中 68 处，全是跨字边界的巧合，会损坏其它文字——CJK 根本不走字面量。",
-      "v2_reverification": "2026-08-30：四套 PDF 的第 1 页为冠军版首页，既有技术基线页内容保持不变，末页新增 F/06 专业实施交接附页；技术基线页内容流中的等长 ASCII 包版本字段为 PACKAGE v2.0，不改变任何几何、图层、字体或 ToUnicode 映射。qpdf --check 四套 PASS，页数 14／14／7／7，共 42 页，纸张 A3 横版／A0 竖版。pdftotext 逐套得到 PACKAGE v2.0 命中数与页数相等，PACKAGE v1.15 均为 0；私用区、CJK 兼容表意区与 U+FFFD 均为 0。pdffonts 显示首页及末页 Noto Sans CJK 子集、技术基线页 NotoSerifSC 均为 emb=yes；新增页标题、主张、图注、指标与边界可检索。另由 version-audit.js 从 A0 中英首页各抽取两张嵌入栅格，解码后与当前 site-overview／key-areas v2.0 源图逐像素比对，4/4 完全一致，故嵌入 PNG 内部虽仍按栅格处理，其可见版本也已纳入机器核验。",
+      "v2_reverification": "2026-08-30：四套 PDF 的第 1 页为投稿材料首页，既有技术基线页内容保持不变，末两页新增 F/06 专业实施交接与 F/07 运营就绪附页；技术基线页内容流中的等长 ASCII 包版本字段为 PACKAGE v2.0，不改变任何几何、图层、字体或 ToUnicode 映射。qpdf --check 四套 PASS，页数 15／15／8／8，共 46 页，纸张 A3 横版／A0 竖版。pdftotext 逐套得到 PACKAGE v2.0 命中数与页数相等，PACKAGE v1.15 均为 0；私用区、CJK 兼容表意区与 U+FFFD 均为 0。pdffonts 显示首页及末两页 Noto Sans CJK 子集、技术基线页 NotoSerifSC 均为 emb=yes；新增页标题、主张、图注、指标与边界可检索。另由 version-audit.js 从 A0 中英首页各抽取两张嵌入栅格，解码后与当前 site-overview／key-areas v2.0 源图逐像素比对，4/4 完全一致，故嵌入 PNG 内部虽仍按栅格处理，其可见版本也已纳入机器核验。",
       "risk_statement_zh": "若后续重建 PDF 而未重跑上述三项核验，两处缺陷可能回归而不被察觉。"
     },
     {
       "id": "A-CONTRAST-001",
       "status": "open",
-      "statement": "本包 28 张栅格图件的文字前景色已按 WCAG 2.1 SC 1.4.3 逐色测量并全部达到 4.5:1 以上（最低 4.54:1，出现在 F/05／F/06 深色卡片上的红色强调字）；11 种填充色的正常与三类色觉模拟 ΔE00 也已逐对量化。三对色值本身仍偏近（红色盲下 0701／1401 为 2.8，蓝色盲下 0702／0803 为 0.4，09／值班黄约 2.3 但分属不同图层角色）。2026-08-24 已在不改 LAND_USE_COLORS、几何、指标与代码的前提下，为七类用地增加七种唯一纹理，并同步覆盖中英 F/02 与四套送审 PDF 第 2 页共六个载体；颜色不再是唯一视觉手段。**仍未完成的是低视力与色觉障碍真实用户共测**，客观计算和包内纹理都不等于真实用户可读性已经验证。",
+      "statement": "本包 30 张栅格图件的文字前景色已按 WCAG 2.1 SC 1.4.3 逐色测量并全部达到 4.5:1 以上（最低 4.54:1，出现在 F/05／F/06／F/07 深色卡片上的红色强调字）；11 种填充色的正常与三类色觉模拟 ΔE00 也已逐对量化。三对色值本身仍偏近（红色盲下 0701／1401 为 2.8，蓝色盲下 0702／0803 为 0.4，09／值班黄约 2.3 但分属不同图层角色）。2026-08-24 已在不改 LAND_USE_COLORS、几何、指标与代码的前提下，为七类用地增加七种唯一纹理，并同步覆盖中英 F/02 与四套送审 PDF 第 2 页共六个载体；颜色不再是唯一视觉手段。**仍未完成的是低视力与色觉障碍真实用户共测**，客观计算和包内纹理都不等于真实用户可读性已经验证。",
       "impact": "直接的色觉混淆风险已由两层非颜色信息缓解：F/02 图斑与图例保留用地代码，七类用地又分别使用竖线、反斜线、短横、横线、正斜线、交叉线与点纹；A0／A3 第 2 页也把同一纹理同步到走廊图斑与图例。六个载体逐像素审计 7 类 × 6 载体、98 个区域全部在位，且原色值仍保留为主填充。该改动不改变几何、面积、比例或语义绑定。仍不能据此声称低视力或色觉障碍真实用户已经验证；配色值本身若要调整，仍须与共用 LAND_USE_COLORS 的全套图纸同批重出。",
       "recalculation_trigger": "满足以下任一条即复核并更新 figure-contrast-report.json、public-service-equivalence-contract.json 与相关载体：(a) 七类用地的任一色值、纹理 ID、纹理周期或载体范围改变；(b) 三对偏近色值中的任一对被提高到 ΔE00 ≥ 10，或改用其他色觉障碍模拟模型（如 Machado 2009）复算得出不同结论；(c) 组织一次含低视力与色觉障碍参与者的可读性共测并留下失败与修复记录；(d) 视觉系统新增第五种语义色；(e) 八类无障碍需求夹具、十二条基础路线或拒绝不降级规则发生变化。",
       "affected_files": [
@@ -242,8 +242,10 @@
         "assets/figures/logo-identity.png",
     "assets/figures/metrics-evidence.en.png",
     "assets/figures/metrics-evidence.png",
-    "assets/figures/implementation-handoff.en.png",
-    "assets/figures/implementation-handoff.png",
+	    "assets/figures/implementation-handoff.en.png",
+	    "assets/figures/implementation-handoff.png",
+	    "assets/figures/operational-readiness.en.png",
+	    "assets/figures/operational-readiness.png",
         "assets/figures/mobility-bluegreen.en.png",
         "assets/figures/mobility-bluegreen.png",
         "assets/figures/renewal-structure.en.png",
@@ -261,7 +263,7 @@
       "resolution_evidence": "2026-08-24 完成两层包内缓解。第一层：`node visual/assets/governance/apply-land-use-patterns.js --json` 首次对六个载体写入 57,987 个纹理像素，再跑为 0（像素幂等）；`node visual/assets/governance/land-use-pattern-audit.js --json` 对 7 类 × 6 载体共 42 对、98 个图斑／构成条／图例区域逐像素核验通过。第二层：`node visual/assets/governance/public-service-equivalence-audit.js --json` 把十二条无 AI 基础路线、24 条人工渠道与八类无障碍需求夹具逐项绑定，结果 12/12、24/24、8/8；同一份合同同时锁定真实观察 0、真实通过 0、field_test_status=not_observed。中英 F/02 与中英 A0／A3 第 2 页均经实际渲染目检；四套 PDF 的文字层、页数、字体、v2.0 页脚与 A0 首页 4/4 嵌图绑定另由既有审计复核。两层证据只证明包内非颜色冗余和设计需求覆盖，不关闭真实用户共测。",
       "recalculation_scope": "本轮采用形状／纹理冗余而不改填充色值：七种原色仍占每类图斑多数像素，深纹理由原色 60% ＋ COAL 40% 确定生成；因此不会让 F/02、F/03 与 A0／A3 的共享色值分叉，也不改变几何、面积、代码或语义。新增的七项指标只分开记录 12/12 基础路线、8/8 设计夹具与真实观察／通过 0/0，不把设计覆盖计作用户测试。若以后改用高区分度色值，须与全部共享 LAND_USE_COLORS 的载体同批重出；若开展真实用户测试，则应由无障碍专业人员主持并保留失败、修复与复测记录。",
       "risk_statement_zh": "风险在于把「对比度达标」或「需求夹具 8/8」误读为「无障碍已验证」。本包在正文、standard_matrix.json 的 WCAG-CONTRAST 条目、figure-contrast-report.json 的 not_claimed 与公共服务等价合同四处同时写明这一条不成立，并把真实观察和真实通过都硬编码为 0，避免设计覆盖被当作真实结果。",
-      "statement_zh": "图件文字与填充色的可辨性已按两项客观指标完成测量，并为七类用地增加逐类唯一的非颜色纹理；未完成的是真实用户测试。（一）28 张栅格图件文字色最低对比度 4.54:1。（二）11 种填充色在正常／绿色盲／红色盲／蓝色盲模拟下的中位 ΔE00 为 38.0／25.2／26.9／55.5。（三）中英 F/02 与四套送审 PDF 第 2 页共六个载体均保留代码或图例，并以七种纹理覆盖全部七类用地。",
+      "statement_zh": "图件文字与填充色的可辨性已按两项客观指标完成测量，并为七类用地增加逐类唯一的非颜色纹理；未完成的是真实用户测试。（一）30 张栅格图件文字色最低对比度 4.54:1。（二）11 种填充色在正常／绿色盲／红色盲／蓝色盲模拟下的中位 ΔE00 为 38.0／25.2／26.9／55.5。（三）中英 F/02 与四套送审 PDF 第 2 页共六个载体均保留代码或图例，并以七种纹理覆盖全部七类用地。",
       "verification_method_zh": "对比度按 WCAG 2.1 相对亮度公式逐色计算；色觉区分度用 Viénot 1999 模拟矩阵加 CIEDE2000；纹理由固定像素谓词生成，`land-use-pattern-audit.js` 直接解码两张 PNG，并以 pdftoppm 按 72 dpi 渲染四套 PDF 第 2 页，逐像素核对原色、纹理色、纹理坐标与图斑／构成条／图例区域覆盖。",
       "verification_result_zh": "三对例外：09 科技服务与商务与值班黄在任何视觉下约 2.3（分处填充与强调两种角色，不在同一图层内比较）；红色盲下 0701 人才生活与 1401 连续公园绿地为 2.8；蓝色盲下 0702 社区服务与 0803 文化公共服务为 0.4。",
       "residual_risk_zh": "F/02 已同时使用代码与七种唯一纹理，A0／A3 第 2 页也把纹理同步到图斑与图例，故颜色不再是唯一视觉手段（WCAG 2.1 SC 1.4.1）。仍保留两条边界：第一，两对用地色值本身在模拟下仍接近；虽然已有最小扰动替代色值可把四种视觉条件下的最小 ΔE00 由 5.92 提到 14.00，但共享 LAND_USE_COLORS 的载体必须同批换色，不能逐图分叉。第二，**低视力与色觉障碍的真实用户测试尚未进行**；包内计算、纹理与目检都不能替代真实参与者共测，本假设因此保持 open。"

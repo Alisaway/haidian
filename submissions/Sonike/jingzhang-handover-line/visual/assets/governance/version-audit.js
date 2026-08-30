@@ -37,6 +37,14 @@ const A0_EMBEDDED_FIGURES = [
     figures: ["assets/figures/site-overview.en.png", "assets/figures/key-areas.en.png"],
   },
 ];
+const FORBIDDEN_STATUS_PATTERNS = [
+  ["冠军版", /冠军版/i],
+  ["champion/championship", /champion(?:ship)?/i],
+  ["历史分数 96/100", /\b96\s*\/\s*100\b/i],
+  ["历史 PR #4281", /PR\s*#4281|pull\/4281/i],
+  ["获准入库合并", /获准入库合并|approved\s+for\s+intake\s+and\s+merged/i],
+  ["最新官方评审", /最新官方评审|latest\s+(?:completed\s+)?official\s+review/i],
+];
 
 function resolveIn(rel) {
   if (OVERLAY) {
@@ -195,8 +203,8 @@ catch (error) { errors.push(`version-stamp-report.json 无法读取：${error.me
 if (figures) {
   if (figures.package_version !== "v2.0" || figures.visible_label !== LABEL) errors.push("图件版本报告不是 v2.0");
   if (figures.legacy_visible_version_allowed !== false) errors.push("图件版本报告未禁止旧可见版本");
-  if (figures.figure_count !== 28 || !Array.isArray(figures.figures) || figures.figures.length !== 28) {
-    errors.push("图件版本报告必须恰含 28 张图件");
+  if (figures.figure_count !== 30 || !Array.isArray(figures.figures) || figures.figures.length !== 30) {
+    errors.push("图件版本报告必须恰含 30 张图件");
   }
   for (const item of figures.figures || []) {
     try {
@@ -210,8 +218,8 @@ try { pdfs = json("visual/assets/governance/pdf-version-report.json"); }
 catch (error) { errors.push(`pdf-version-report.json 无法读取：${error.message}`); }
 if (pdfs) {
   if (pdfs.package_version !== "v2.0" || pdfs.ok !== true) errors.push("PDF 版本报告不是通过状态的 v2.0");
-  if (pdfs.pdf_count !== 4 || pdfs.page_count !== 42 || !Array.isArray(pdfs.pdfs) || pdfs.pdfs.length !== 4) {
-    errors.push("PDF 版本报告必须恰含 4 套、42 页");
+  if (pdfs.pdf_count !== 4 || pdfs.page_count !== 46 || !Array.isArray(pdfs.pdfs) || pdfs.pdfs.length !== 4) {
+    errors.push("PDF 版本报告必须恰含 4 套、46 页");
   }
   if (pdfs.a0_embedded_figure_pixel_matches !== 4) errors.push("PDF 版本报告必须登记 A0 首页内嵌图 4/4 像素一致");
   for (const item of pdfs.pdfs || []) {
@@ -221,6 +229,13 @@ if (pdfs) {
     try {
       if (sha256(item.path) !== item.sha256) errors.push(`${item.path}: 与 v2.0 PDF 版本报告哈希不符`);
     } catch (error) { errors.push(`${item.path}: 缺失或不可读`); }
+    const extracted = spawnSync("pdftotext", [resolveIn(item.path), "-"], { encoding: "utf8" });
+    if (extracted.status !== 0) errors.push(`${item.path}: pdftotext 无法核验状态措辞`);
+    else {
+      for (const [label, pattern] of FORBIDDEN_STATUS_PATTERNS) {
+        if (pattern.test(extracted.stdout || "")) errors.push(`${item.path}: 仍含可能暗示获奖或官方认可的状态措辞：${label}`);
+      }
+    }
   }
 }
 
@@ -229,6 +244,9 @@ for (const rel of STATIC) {
     const text = read(rel).toString("utf8");
     if (!text.includes("PACKAGE v2.0")) errors.push(`${rel}: 缺可见 PACKAGE v2.0`);
     if (text.includes("PACKAGE v1.15")) errors.push(`${rel}: 仍含旧可见 PACKAGE v1.15`);
+    for (const [label, pattern] of FORBIDDEN_STATUS_PATTERNS) {
+      if (pattern.test(text)) errors.push(`${rel}: 仍含可能暗示获奖或官方认可的状态措辞：${label}`);
+    }
   } catch (error) { errors.push(`${rel}: 缺失或不可读`); }
 }
 
@@ -246,6 +264,6 @@ const result = {
 };
 
 if (process.argv.includes("--json")) process.stdout.write(`${JSON.stringify(result, null, 2)}\n`);
-else if (result.ok) process.stdout.write(`PASS  28 张图件、4 套 42 页 PDF、${STATIC.length} 份静态载体及 A0 首页 4 张内嵌图统一为 PACKAGE v2.0\n`);
+else if (result.ok) process.stdout.write(`PASS  30 张图件、4 套 46 页 PDF、${STATIC.length} 份静态载体及 A0 首页 4 张内嵌图统一为 PACKAGE v2.0\n`);
 else for (const error of errors) process.stderr.write(`FAIL  ${error}\n`);
 process.exit(result.ok ? 0 : 1);

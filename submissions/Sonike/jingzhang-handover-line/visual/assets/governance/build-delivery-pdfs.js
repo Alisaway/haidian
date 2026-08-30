@@ -2,7 +2,7 @@
 "use strict";
 
 /*
- * Rebuilds page 1 and appends/replaces one professional-handoff annex page in
+ * Rebuilds page 1 and appends/replaces two professional-handoff annex pages in
  * each review PDF. Audited technical pages 2..n remain byte-for-byte page copies;
  * repeated runs replace the prior annex instead of growing the file indefinitely.
  */
@@ -39,8 +39,8 @@ function fileUrl(file) {
 const copy = {
   zh: {
     lang: "zh-CN",
-    codeA3: "JZ / 01 · 冠军版首页",
-    codeA0: "B / 01 · 冠军版展板",
+    codeA3: "JZ / 01 · 投稿材料首页",
+    codeA0: "B / 01 · 投稿材料展板",
     title: "京张交接线",
     thesis: "一梳三场 · 两翼八支 · 二十单元",
     lead: "把废弃铁路变成一把伸向城市两翼的公共梳：AI 生产空间与可进入、可停用、有人负责的公共服务沿线成对生长。",
@@ -59,8 +59,8 @@ const copy = {
   },
   en: {
     lang: "en",
-    codeA3: "JZ / 01 · CHAMPIONSHIP COVER",
-    codeA0: "B / 01 · CHAMPIONSHIP BOARD",
+    codeA3: "JZ / 01 · SUBMISSION COVER",
+    codeA0: "B / 01 · SUBMISSION BOARD",
     title: "JING-ZHANG HANDOVER LINE",
     thesis: "ONE COMB · THREE YARDS · EIGHT TEETH · TWENTY PAIRED CELLS",
     lead: "Turn the disused railway into a civic comb: AI production space and an enterable, stoppable, staffed public service grow in pairs along one continuous spine.",
@@ -103,6 +103,33 @@ const handoffCopy = {
     ],
     hold: "NAMED APPOINTMENTS 0 · FORMAL RATES 0 · CONSTRUCTION OR OPENING RELEASES 0 · FIELD TASKS 0",
     boundary: "Participant professional-handoff interface—not a survey, formal bill of quantities, quotation, budget, permit, professional sign-off, construction, opening or field-performance record.",
+  },
+};
+
+const readinessCopy = {
+  zh: {
+    lang: "zh-CN",
+    code: "F / 07 · 运营就绪控制附页",
+    title: "三席四人排班，双钥匙才开层",
+    lead: "在没有真实场地时，先把岗位工作量、双重否决、逐包验收、失败回退、调试退役和未来采样表做到可复算、可拒收；所有任命、执行与观察继续保持为零。",
+    cards: [
+      ["3,000 → 2.143 → 3", "岗位小时／FTE 下限／规划 FTE"], ["4 / 0", "最少轮休人数／当前具名人员"],
+      ["2 / 0", "所需独立钥匙／有效回执"], ["6 / 4 / 8 / 5×7", "逐包验收／具名回退／调试检查／未来基线"],
+    ],
+    hold: "任命回执 0 · 有效钥匙 0/2 · 调试执行 0/8 · 授权参与者 0 · 现场观察 0 · 值 NULL",
+    boundary: "参赛者运营准备度设计，不是劳动合同、主体任命、调试记录、现场观察、报价、预算、许可或专业签认。",
+  },
+  en: {
+    lang: "en",
+    code: "F / 07 · OPERATING-READINESS CONTROL ANNEX",
+    title: "THREE SEATS · FOUR PEOPLE · TWO KEYS TO OPEN",
+    lead: "Without a real site, workload, dual veto, package acceptance, failure fallback, commissioning/retirement and future sampling forms are made recalculable and rejectable while appointments, execution and observations remain zero.",
+    cards: [
+      ["3,000 → 2.143 → 3", "seat-hours / FTE floor / planning FTE"], ["4 / 0", "minimum roster people / named people"],
+      ["2 / 0", "required independent keys / valid receipts"], ["6 / 4 / 8 / 5×7", "package tests / fallbacks / checks / future baseline"],
+    ],
+    hold: "APPOINTMENT RECEIPTS 0 · VALID KEYS 0/2 · EXECUTED 0/8 · AUTHORISED PARTICIPANTS 0 · FIELD OBSERVATIONS 0 · VALUES NULL",
+    boundary: "Participant operating-readiness design—not employment, appointment, commissioning record, field observation, quotation, budget, permit or professional sign-off.",
   },
 };
 
@@ -150,13 +177,14 @@ h1{margin:2.4mm 0 0;line-height:.92;letter-spacing:-.055em}.a3 h1{font-size:${la
 </body></html>`;
 }
 
-function annexHtml(lang, format, pageNumber, totalPages) {
-  const t = handoffCopy[lang];
+function annexHtml(kind, lang, format, pageNumber, totalPages) {
+  const t = kind === "readiness" ? readinessCopy[lang] : handoffCopy[lang];
   const isA3 = format === "a3";
   const page = isA3 ? "420mm 297mm" : "841mm 1189mm";
   const size = isA3 ? "width:420mm;height:297mm" : "width:841mm;height:1189mm";
   const fontCss = fs.readFileSync(FONT_CSS, "utf8");
-  const board = fileUrl(path.join(FIGURES, `implementation-handoff${lang === "en" ? ".en" : ""}.png`));
+  const figureBase = kind === "readiness" ? "operational-readiness" : "implementation-handoff";
+  const board = fileUrl(path.join(FIGURES, `${figureBase}${lang === "en" ? ".en" : ""}.png`));
   const cards = t.cards.map(([n, label]) => `<div class="card"><b>${n}</b><span>${label}</span></div>`).join("");
   return `<!doctype html>
 <html lang="${t.lang}"><head><meta charset="utf-8"><style>
@@ -180,7 +208,7 @@ h1{margin:2mm 0 0;line-height:.96;letter-spacing:-.045em}.a3 h1{font-size:${lang
 </body></html>`;
 }
 
-const work = fs.mkdtempSync(path.join(os.tmpdir(), "jingzhang-champion-pdfs-"));
+const work = fs.mkdtempSync(path.join(os.tmpdir(), "jingzhang-delivery-pdfs-"));
 
 function run(command, args) {
   const result = spawnSync(command, args, { encoding: "utf8" });
@@ -211,27 +239,32 @@ async function rebuild(format, lang) {
   const basename = format === "a3" ? `a3-booklet${suffix}.pdf` : `a0-boards${suffix}.pdf`;
   const source = path.join(DRAWINGS, basename);
   const basePages = format === "a3" ? 13 : 6;
-  const targetPages = basePages + 1;
+  const targetPages = basePages + 2;
   const sourcePages = pageCount(source);
-  if (![basePages, targetPages].includes(sourcePages)) {
-    fail(`${basename} has ${sourcePages} pages; expected ${basePages} (base) or ${targetPages} (annex already present)`);
+  if (![basePages, basePages + 1, targetPages].includes(sourcePages)) {
+    fail(`${basename} has ${sourcePages} pages; expected ${basePages} (base), ${basePages + 1} (one annex) or ${targetPages} (two annexes)`);
   }
-  const technicalEndPage = sourcePages === targetPages ? sourcePages - 1 : sourcePages;
+  const technicalEndPage = basePages;
   const htmlPath = path.join(work, `${format}-${lang}.html`);
-  const annexHtmlPath = path.join(work, `${format}-${lang}-annex.html`);
+  const handoffHtmlPath = path.join(work, `${format}-${lang}-handoff.html`);
+  const readinessHtmlPath = path.join(work, `${format}-${lang}-readiness.html`);
   const cover = path.join(work, `${format}-${lang}.pdf`);
-  const annex = path.join(work, `${format}-${lang}-annex.pdf`);
-  const output = path.join(DRAWINGS, `.${basename}.champion.tmp.pdf`);
+  const handoffAnnex = path.join(work, `${format}-${lang}-handoff.pdf`);
+  const readinessAnnex = path.join(work, `${format}-${lang}-readiness.pdf`);
+  const output = path.join(DRAWINGS, `.${basename}.delivery.tmp.pdf`);
   fs.writeFileSync(htmlPath, html(lang, format, targetPages));
-  fs.writeFileSync(annexHtmlPath, annexHtml(lang, format, targetPages, targetPages));
+  fs.writeFileSync(handoffHtmlPath, annexHtml("handoff", lang, format, targetPages - 1, targetPages));
+  fs.writeFileSync(readinessHtmlPath, annexHtml("readiness", lang, format, targetPages, targetPages));
   const browser = await chromium.launch({ executablePath: CHROME, headless: true });
   try {
     await renderPdf(browser, htmlPath, cover);
-    await renderPdf(browser, annexHtmlPath, annex);
+    await renderPdf(browser, handoffHtmlPath, handoffAnnex);
+    await renderPdf(browser, readinessHtmlPath, readinessAnnex);
   } finally {
     await browser.close();
   }
-  run(QPDF, ["--empty", "--pages", cover, "1", source, `2-${technicalEndPage}`, annex, "1", "--", output]);
+  run(QPDF, ["--empty", "--pages", cover, "1", source, `2-${technicalEndPage}`,
+    handoffAnnex, "1", readinessAnnex, "1", "--", output]);
   if (pageCount(output) !== targetPages) fail(`${basename} rebuilt with unexpected page count`);
   fs.renameSync(output, source);
   process.stdout.write(`${source}\n`);
@@ -246,11 +279,15 @@ async function main() {
     ext.named_role_appointment_count === 0 && ext.formal_unit_rate_receipt_count === 0 &&
     ext.vendor_quote_count === 0 && ext.insurance_document_count === 0 &&
     ext.approved_budget_cny === null && ext.professional_signoff_count === 0 &&
-    ext.construction_or_opening_release_count === 0 && ext.field_task_count === 0;
+    ext.construction_or_opening_release_count === 0 && ext.field_task_count === 0 &&
+    ext.valid_two_key_receipt_count === 0 && ext.commissioning_execution_count === 0 &&
+    ext.future_baseline_observation_count === 0;
   if (!externalBoundaryIntact) fail("professional handoff PDF refused: external HOLD/null boundary changed");
   for (const lang of ["zh", "en"]) {
-    const figure = path.join(FIGURES, `implementation-handoff${lang === "en" ? ".en" : ""}.png`);
-    if (!fs.existsSync(figure)) fail(`missing handoff figure: ${figure}`);
+    for (const base of ["implementation-handoff", "operational-readiness"]) {
+      const figure = path.join(FIGURES, `${base}${lang === "en" ? ".en" : ""}.png`);
+      if (!fs.existsSync(figure)) fail(`missing annex figure: ${figure}`);
+    }
   }
   for (const format of ["a3", "a0"]) {
     for (const lang of ["zh", "en"]) await rebuild(format, lang);

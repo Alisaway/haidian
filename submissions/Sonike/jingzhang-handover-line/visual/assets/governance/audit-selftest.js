@@ -247,14 +247,14 @@ negInput("公共利益硬门槛删掉访客群体 —— 十二场景仍在、�
       }) }, ["G10"]);
 
 negInput("正式评审修复矩阵把投稿包从 CLOSED 改成仍开放 —— 现场仍 BLOCKED、其余 P0 结构全对也必须拒绝",
-  { "visual/assets/governance/review-3825-readiness-matrix.json": jsonMutated(
-      "visual/assets/governance/review-3825-readiness-matrix.json", (d) => {
+  { "visual/assets/governance/formal-review-readiness-matrix.json": jsonMutated(
+      "visual/assets/governance/formal-review-readiness-matrix.json", (d) => {
         d.package_result = "OPEN_PARTICIPANT_REPAIR";
       }) }, ["G10"]);
 
 negInput("正式评审资格事实把一项改成已观察到拒绝条件 —— 命中清单与投稿闭合状态矛盾时必须拒绝",
-  { "visual/assets/governance/review-3825-readiness-matrix.json": jsonMutated(
-      "visual/assets/governance/review-3825-readiness-matrix.json", (d) => {
+  { "visual/assets/governance/formal-review-readiness-matrix.json": jsonMutated(
+      "visual/assets/governance/formal-review-readiness-matrix.json", (d) => {
         d.eligibility_evidence[0].rejection_condition_observed = true;
       }) }, ["G10"]);
 
@@ -297,6 +297,34 @@ negP0("四级筛查包络把 7.2 米控制面积改错 —— 图纸链和状态
   (d) => { d.nested_scale_envelopes.control_envelope.area_sqm = 52; },
   "四级包络算术或非场地边界不一致");
 
+negP0("三席排班把可复算覆盖量从 2.143 FTE 改成 2.5 —— 人数看似更保守但已脱离公开公式",
+  (d) => { d.operating_roster_coverage.calculated_minimum_coverage_fte = 2.5; },
+  "三席四人排班必须有可复算 FTE 且保持未任命");
+
+negP0("六个交付包删掉一项验收测试 —— 包号和闸门仍齐全也不得自称可交接",
+  (d) => { delete d.delivery_packages[0].acceptance_test; },
+  "六个交付包必须逐包给出数量依据与验收测试");
+
+negP0("替代方案删掉具名回退门 —— 优势描述仍在也不能形成失败后的可执行选择",
+  (d) => { d.alternative_gate_binding.find((item) => item.alternative_id === "ALT-1_MOBILE_CART").fallback_gate_ids = []; },
+  "四个替代方案必须给出优势维度与具名回退门");
+
+negP0("双钥匙伪造一份任命回执与持有人 —— 其余外部总计仍为零也必须拒绝",
+  (d) => {
+    d.two_key_release_control.current_valid_key_receipt_count = 1;
+    d.two_key_release_control.keys[0].current_named_holder = "invented-holder";
+    d.two_key_release_control.keys[0].appointment_receipt = "invented-key-receipt";
+  },
+  "双钥匙放行必须缺一即关且当前回执为零");
+
+negP0("把一项调试检查标成已执行 —— 没有现场回执时不得用状态词制造演练事实",
+  (d) => { d.commissioning_and_decommissioning_checks[0].current_status = "EXECUTED_PASS"; },
+  "八项调试与退役检查必须预定义但保持未执行");
+
+negP0("未来基线偷偷填入一次观察和值 —— 未获授权的空表不能变成现场证据",
+  (d) => { d.future_field_baseline_protocol.field_observation_count = 1; d.future_field_baseline_protocol.values = { queue_wait_seconds: 42 }; },
+  "未来现场基线必须覆盖五时段七表且当前值为空");
+
 negative("A0 首页内嵌图的预期顺序调换 —— 可搜索页脚全为 v2.0 也必须被像素绑定拦住", () => {
   const script = scriptMutated(VERSION_AUDITOR, (text) => text.replace(
     'figures: ["assets/figures/site-overview.png", "assets/figures/key-areas.png"]',
@@ -336,8 +364,8 @@ negInput("sources.json 把现行登记的指针改回已作废的历史条目 �
   { "sources.json": jsonMutated("sources.json", (d) => {
       const e = d.sources.find((x) => x.id === "FONT-NOTO-COVER");
       e.not_usable_for = e.not_usable_for.map((t) =>
-        t.replace("证明 assets/figures/ 下 28 张栅格图件的字形来源（见 FONT-NOTO-RASTER 与 FONT-NOTO-WEB）",
-                  "证明 assets/figures/ 下 28 张栅格图件的字形来源（中文见 FONT-STHEITI-RASTER）"));
+        t.replace("证明 assets/figures/ 下 30 张栅格图件的字形来源（见 FONT-NOTO-RASTER 与 FONT-NOTO-WEB）",
+                  "证明 assets/figures/ 下 30 张栅格图件的字形来源（中文见 FONT-STHEITI-RASTER）"));
     }) }, ["J1"]);
 
   negInput("compliance_matrix 去掉一条规则导出的 standard_ids（WCAG-CONTRAST）—— 本包 2026-08-22 修掉的 26 处缺失里的一处",
@@ -419,10 +447,10 @@ negInput("场景卡把落点写回「城市交接场维修驿」—— 复刻 20
 negInput("连接段卡片只把里程数字改错 0.5 km —— 落点归属仍对，只有里程对不上几何",
   { [EVIDENCE]: textOf(EVIDENCE).replace("主轴里程约 7.2 km", "主轴里程约 7.7 km") }, ["G5"]);
 
-negInput("英文正文的指标计数退回旧值 110/96 —— 中文写对、英文漏掉十九项专业交接指标，且英文内部算术自洽（110−96＝14）所以只看英文看不出来",
+negInput("英文正文的指标计数退回上一版 119/105 —— 中文写对、英文漏掉十二项运营就绪指标，且英文内部算术自洽（119−105＝14）所以只看英文看不出来",
   { "proposal.en.md": textOf("proposal.en.md")
-      .replace("**119 metrics, 105 of them valued", "**110 metrics, 96 of them valued")
-      .replace("The 105 valued metrics", "The 96 valued metrics") }, ["M9"]);
+      .replace("**131 metrics, 117 of them valued", "**119 metrics, 105 of them valued")
+      .replace("The 117 valued metrics", "The 105 valued metrics") }, ["M9"]);
 
 negInput("正文删掉任务书 required_wording_zh 里的「参考方案」—— 复刻 2026-08-22 补齐前的状态，其余措辞仍在所以读起来毫无异样",
   { "proposal.md": textOf("proposal.md").replace(/参考方案/g, "") }, ["T1"]);
