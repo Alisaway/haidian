@@ -84,6 +84,50 @@
       "assumptions": [
         "The taskbook fixes the count at three, while the exact polygon boundaries remain provisional."
       ]
+    },
+    "standard_scenario_capex_cny": {
+      "status": "known",
+      "value": 1114000000,
+      "unit": "none",
+      "display_unit": "CNY",
+      "source_files": [
+        "visual/assets/economics_model.json"
+      ],
+      "formula": "637000000 + 114000000 + 94000000 + 269000000",
+      "confidence": "low",
+      "assumptions": [
+        "Participant-authored internal concept estimate effective 2026-08-29; not a market quotation, approved estimate, procurement basis or investment conclusion.",
+        "Direct cost, design-management, contingency and activation-fund formula is registered in visual/assets/economics_model.json."
+      ]
+    },
+    "standard_scenario_annual_revenue_cny": {
+      "status": "known",
+      "value": 226000000,
+      "unit": "none",
+      "display_unit": "CNY_per_year",
+      "source_files": [
+        "visual/assets/economics_model.json"
+      ],
+      "formula": "sum(participant-set key-area stabilized revenue envelopes) at 75% occupancy and 70% operable share",
+      "confidence": "low",
+      "assumptions": [
+        "No signed leases, service contracts or third-party forecasts support this internal scenario input."
+      ]
+    },
+    "standard_scenario_annual_noi_cny": {
+      "status": "known",
+      "value": 102000000,
+      "unit": "none",
+      "display_unit": "CNY_per_year",
+      "source_files": [
+        "visual/assets/economics_model.json"
+      ],
+      "formula": "226000000 annual revenue - 124000000 annual operating cost",
+      "confidence": "low",
+      "assumptions": [
+        "Static unlevered payback is 1114000000 / 102000000 = 10.9216 years, displayed as approximately 11 years.",
+        "Sensitivity and exclusions are registered in visual/assets/economics_model.json."
+      ]
     }
   }
 }

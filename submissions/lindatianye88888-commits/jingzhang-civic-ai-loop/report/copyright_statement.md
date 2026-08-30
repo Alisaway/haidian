@@ -6,7 +6,7 @@ The Chinese map-based figures are participant-authored transformations of public
 
 The nine-case AI innovation ecosystem study uses cited public pages from the relevant government, district, park, research-institute or operating organizations. The submission paraphrases public facts and participant-authored mechanism comparisons; it does not redistribute case-study photographs, corporate logos, portraits or third-party diagram assets. Representative provenance, intended use and limitations are recorded under the CASE-* entries in sources.json.
 
-Fonts are locally installed Microsoft YaHei and Arial and are embedded or rasterized only for display in the generated artifacts. All AI-assisted figures are conceptual/synthetic design communication, not evidence of existing conditions, public consent, approval, engineering feasibility or implementation. Official/provisional geometry status and OpenStreetMap attribution remain visible where applicable.
+The offline HTML pages use a character subset of Noto Sans SC, copyright 2014-2021 Adobe with Reserved Font Name “Source”, distributed under the SIL Open Font License 1.1. The complete OFL text and font data are embedded in `visual/assets/noto-sans-sc-subset.css`; the subset is used only to prevent missing Chinese glyphs in the submitted HTML. Arial and locally available fallbacks may be used where applicable. All AI-assisted figures are conceptual/synthetic design communication, not evidence of existing conditions, public consent, approval, engineering feasibility or implementation. Official/provisional geometry status and OpenStreetMap attribution remain visible where applicable.
 
 ## Core experience renderings
 

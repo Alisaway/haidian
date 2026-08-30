@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>京张共智回路 / Jing-Zhang Civic AI Loop - proposal report</title>
+<link rel="stylesheet" href="../visual/assets/noto-sans-sc-subset.css">
 <style>
 :root {
   --ink: #172033;
@@ -16,7 +17,7 @@
 * { box-sizing: border-box; }
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  font-family: "JZ Noto Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
   color: var(--ink);
   background: var(--bg);
   line-height: 1.75;
@@ -173,12 +174,14 @@ code {
 <h2>指标体系、面积复算与合规矩阵</h2>
 <p>当前三项核心视觉指标由临时设计几何复算：总体设计模型面积为 11,412,825.386 m²，绿地比例为 12.3423%，公共空间比例为 7.3281%。它们是低置信度设计模型值，不是官方面积或法定指标；其意义是检验当前分区是否为日常交往、蓝绿连续和公共验证保留了可见空间，正式边界替换后必须整体重算 <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="site_area_sqm" title="指标：site_area_sqm">指标</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="green_ratio" title="指标：green_ratio">指标</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="public_space_ratio" title="指标：public_space_ratio">指标</sup>。</p>
 <p>建筑基底设计模型面积为 310,807.184 m²，仅用于当前概念量体复核；容积率和高度保持待正式数据补齐。重点区数量为三处，数量来自任务书，具体边界仍为临时约束 <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="building_footprint_area_sqm" title="指标：building_footprint_area_sqm">指标</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="key_area_count" title="指标：key_area_count">指标</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="metrics_recalculation" title="深度：metrics_recalculation">深度</sup>。</p>
+<p>最新造价图采用参与者编制的内部概念模型 <code>visual/assets/economics_model.json</code>，有效日期为 2026-08-29。标准实施情景以 17.21 万 m² 激活建筑面积、9.52 km 公共界面和 12＋12 个模块/节点为数量输入：建筑更新 6.37 亿元、公共界面 1.14 亿元、公园/廊道/模块与智慧系统 0.94 亿元；三项直接费用合计 8.45 亿元，再计设计管理费 12%（1.014 亿元）、预备费 15%（1.2675 亿元）和 18 个月启动金 0.4085 亿元，形成 11.14 亿元概念总投入。上述单价是为当前方案比较建立的参与者输入，不是市场询价、批准概算或采购依据 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="ECONOMIC-MODEL" title="来源：ECONOMIC-MODEL">来源</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="standard_scenario_capex_cny" title="指标：standard_scenario_capex_cny">指标</sup>。</p>
+<p>成熟期运营情景按 75% 稳定入住率和激活面积的 70% 可运营比例计算，年营收 2.26 亿元、年运营成本 1.24 亿元、年净运营收益 1.02 亿元，静态无杠杆回收期为 <code>11.14 / 1.02 = 10.92</code> 年，图中取“约 11 年”。当入住率分别为 60%/75%/90% 时，模型回收期为 16.7/10.9/8.1 年；当投入在基准值上变化 ±15% 时，回收期为 9.3—12.6 年。模型排除征拆、融资及未列税费、重大结构加固、文保专项、地下工程、市政扩容、审批成本、价格上涨和终值，不构成收益承诺或投资结论 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="ECONOMIC-MODEL" title="来源：ECONOMIC-MODEL">来源</sup> <sup class="evidence evidence-metric" data-evidence-kind="metric" data-evidence-value="standard_scenario_annual_noi_cny" title="指标：standard_scenario_annual_noi_cny">指标</sup>。</p>
 <figure class="proposal-figure"><img src="../assets/figures/metrics-evidence.png" alt="核心指标复算与证据链图"><figcaption>核心指标复算与证据链图</figcaption></figure>
 <p>合规矩阵分别映射 agent.1 的品牌与总体结构、agent.2 的九案例与八要素、agent.3 的六类 persona/十二场景/三项测试、agent.4 的双场/三地标/组件库、agent.5 的京张—中关村—AI 文化叙事、agent.6 的五层运营与公共回流。结构化文件保存完整索引，正文只保留与判断相邻的证据标记。</p>
 <h2>风险、版权与合规说明</h2>
 <p>临时边界、控规、道路红线、权属、现状建筑、市政、消防、文保、交通和运营成本是当前主要数据缺口。所有依赖这些条件的结论均降级为概念建议，并写入假设与复算触发；高影响、隐私敏感、安全相关和财务相关动作必须由人类与相应专业主体最终判断 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="SITE-PACKAGE" title="来源：SITE-PACKAGE">来源</sup> <sup class="evidence evidence-data" data-evidence-kind="data" data-evidence-value="geometry/constraints.geojson#CONSTRAINTS" title="空间数据：geometry/constraints.geojson#CONSTRAINTS">空间数据</sup> <sup class="evidence evidence-depth" data-evidence-kind="depth" data-evidence-value="risk_missing_data" title="深度：risk_missing_data">深度</sup>。</p>
 <p>项目只使用依法公开或已清权资料，排除涉密内容、个人隐私和许可不清资产。生成图件与效果表达标注为 conceptual/synthetic，不作为现状、公众同意或审批证据。人物、字体、Logo、论文图片、地图与外部案例资产须按版权声明清权；案例研究只引用公开事实和机制，不复制外部图片或商标。</p>
-<p>双语正文、图件、A3/A0 和网页应保持章节、主张、指标、证据与图位对等。此轮文本更新完成后，展板与网页仍需按新正文重新生成；在派生文件、manifest 和自检全部刷新前，本包不得声称已就绪。</p>
+<p>截至 2026-08-30，双语正文、40 图顺序、A3/A0、网页、离线中文字体、manifest 哈希与四门自检均已按本版刷新，本包已达到“可进入专业评审”的文件就绪状态。该状态只说明交付物完整且自检通过；数据置信度仍为“临时几何＋内部概念测算的混合状态”，不代表官方边界、法定指标、工程可行性、投资批准或现实运营条件已经确认。</p>
 <h2>参考资料</h2>
 <p>1. 北京市规划和自然资源委员会海淀分局：《百年京张 AI 创新带城市设计国际方案征集资格预审公告》，2026 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="OFFICIAL-ANNOUNCEMENT" title="来源：OFFICIAL-ANNOUNCEMENT">来源</sup>。 2. 百年京张 AI 创新带开源征集：《面向全球智能体开展城市设计开源征集任务书摘录》，2026 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="AGENT-TASKBOOK" title="来源：AGENT-TASKBOOK">来源</sup>。 3. open-city-ai/haidian：场地包、临时边界、专业标准与公开资料登记表，持续更新 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="SITE-PACKAGE" title="来源：SITE-PACKAGE">来源</sup>。 4. 参与者研究：《全球 AI 创新生态九案例研究》，2026-08-25 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="CASE-RESEARCH" title="来源：CASE-RESEARCH">来源</sup>。 5. 参与者研究：《八要素 AI 创新生态图谱与案例证据矩阵》，2026-08 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="ECOSYSTEM-MATRIX" title="来源：ECOSYSTEM-MATRIX">来源</sup>。 6. 参与者策划：《百年京张 AI 创新带：策划总纲与场景运营机制》，2026-08 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="MASTER-PLAN" title="来源：MASTER-PLAN">来源</sup>。 7. 参与者策划：《十二场景全量对照与产业测试候选》，2026-08 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="SCENARIO-CATALOG" title="来源：SCENARIO-CATALOG">来源</sup>。 8. 参与者策划：《三处 AI 朝圣地标角色与荣誉体系》，2026-08 <sup class="evidence evidence-source" data-evidence-kind="source" data-evidence-value="LANDMARK-SYSTEM" title="来源：LANDMARK-SYSTEM">来源</sup>。 9. 住房和城乡建设部：《城市设计管理办法》及《城市、镇控制性详细规划编制审批办法》本地参考快照 <sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="MOHURD-URBAN-DESIGN-MEASURES" title="标准：MOHURD-URBAN-DESIGN-MEASURES">标准</sup>。 10. 自然资源部：《国土空间调查、规划、用途管制用地用海分类指南》本地参考快照 <sup class="evidence evidence-standard" data-evidence-kind="standard" data-evidence-value="MNR-LAND-USE-CLASSIFICATION-GUIDE" title="标准：MNR-LAND-USE-CLASSIFICATION-GUIDE">标准</sup>。</p>
 <h2>空间原型与运营机制补充图集</h2>

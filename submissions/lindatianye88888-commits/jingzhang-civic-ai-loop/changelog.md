@@ -1,5 +1,12 @@
 # 方案迭代记录
 
+## v1.3 - 2026-08-30
+
+- Added `visual/assets/economics_model.json` as a reproducible register for the confirmed bilingual FIG-10 quantities, concept unit rates, CAPEX/OPEX/revenue formulas, exclusions, sensitivity and low-confidence decision limits.
+- Synchronized the economic model and readiness language across the Chinese/English proposals, `sources.json`, `assumptions.json`, `metrics.json`, the visual pages and `manifest.json`.
+- Removed the stale statement that derived files still required regeneration; all declared bilingual narratives, 40-figure sequences, A3/A0 PDFs, HTML pages, hashes and self-check outputs are refreshed for this version.
+- Embedded a 273 KB Noto Sans SC subset under SIL OFL 1.1 in both offline HTML deliverables and verified complete glyph coverage to eliminate Chinese missing-glyph boxes.
+
 ## v1.2 - 2026-08-30
 
 - Replaced the previously submitted text-figure sets with the user-confirmed final Chinese and English sequences (40 figures per language).
