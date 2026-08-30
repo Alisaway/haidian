@@ -256,7 +256,7 @@ Nodes cover five categories: universities (Tsinghua, Peking, Renmin, Beihang, BI
 
 > **Spatial conclusion:** prioritise the short radius of talent flow — walkable mixed layouts — rather than a local closed loop for goods. **There is no need to build a complete local chip supply chain within the belt.**
 
-**Two: compute should be connected to, not duplicated.** Beijing's public AI computing dispatch platform is already building cross-regional dispatch. Given the long radius of goods, the belt needs **compute access points and dispatch interfaces**, not machine halls in every key area. **This bears directly on land use — it avoids over-reserving land for unnecessary facilities.**
+**Two: compute is better connected to than duplicated.** Public information indicates that a public computing dispatch platform is under development in Beijing (a Level B source, §13.5). **This proposal claims no access permission and does not assert that the platform will be available to this belt**; the point is a proposed mechanism, and actual connection requires separate confirmation. Given the long radius of goods, the belt needs **compute access points and dispatch interfaces**, not machine halls in every key area. **This bears directly on land use — it avoids over-reserving land for unnecessary facilities.**
 
 **Three: the break in the graph is the spatial opportunity.** The most fragile transition is **from technology to capital** — laboratory result to financing. Kendall Square's achievement was compressing precisely this distance. Dazhongsi's "full chain under one roof" is the spatial treatment of that break.
 
@@ -303,7 +303,9 @@ AI scenario enablement and the intelligent, vital city. The Xiaoyue River is amo
 
 > **Nature of the data:** regional estimates for comparative illustration, not building-level precision (sources in section 1).
 >
-> **Basis correction:** Wudaokou vacancy was earlier given as 13% on a "greater Wudaokou" average. Tsinghua Science Park, at roughly 690,000 m² with occupancy near 98% (about 2% vacancy), is the largest single holding and close to fully let; vacancy concentrates in Grade B stock along Chengfu Road, the Wudaokou business area, and newly delivered or refurbishing projects. Corrected to about 6% on a park-core basis.
+> **Basis correction:** Wudaokou vacancy was earlier estimated at 13% on a "greater Wudaokou" average and is now estimated at about 6% on a park-core basis. The difference arises from scope: the wider basis includes Grade B stock along Chengfu Road, the Wudaokou business area, and newly delivered or refurbishing projects; the park-core basis does not.
+>
+> **The specific floor area and occupancy figures for Tsinghua Science Park cited in an earlier version have been removed, as no auditable primary source can be supplied.** The judgement that this sub-area is close to fully let now rests on relative ranking within this estimate set (the lowest-vacancy segment in the district) and **carries no absolute-value endorsement.**
 
 **Three judgements the data confirms:**
 
@@ -582,7 +584,7 @@ The brief assigns each of the three zones and two wings a role. This proposal's 
 - **Lateral:** the Qing River as principal lateral corridor, perpendicular to the line and a natural basis for stitching
 - **Stitch units:** the loosest land conditions on the line, and therefore the most units; N4.2 (the S01 testing ground foot) and N3.6 (S02 heat connection) are fixed
 - **Testing grounds:** must be explicitly reserved in land use, in two types — enclosed test areas and temporarily manageable city side streets (the second purpose of side-street densification, 8.2)
-- **Compute:** access points and dispatch interfaces, **with no independent compute pool built** (basis in the four-flow radius analysis, 3.2)
+- **Compute:** access points and dispatch interfaces, **with no independent compute pool proposed** (feasibility of connection pending confirmation) (basis in the four-flow radius analysis, 3.2)
 
 #### Qing River culture
 
@@ -597,7 +599,7 @@ The brief requires that Qing River culture be revealed and displayed. Qinghe Ter
 
 **This is the proposal's only inverted judgement among the three areas.**
 
-Wudaokou · Tsinghua Science Park runs 6% vacancy, with the park itself at roughly 690,000 m² and occupancy near 98%. **The market has thoroughly endorsed this place; forcing large-scale renewal would damage rather than improve it.**
+Wudaokou · Tsinghua Science Park is the lowest-vacancy segment in this estimate set (about 6%). **If that relative ranking holds, the market has thoroughly endorsed this place, and forcing large-scale renewal would damage rather than improve it.** (A Level B source, §13.3; the judgement rests on relative ranking, not on absolute values.)
 
 | Dimension | Content |
 |---|---|
@@ -741,7 +743,7 @@ Fixed fields: location / gradient belt / personas / trigger / role of AI / **hum
 Autonomous mobility needs real road conditions that closed sites cannot supply. AI conducts testing within designated slots and segments, logging takeover events. **Human in the loop: slots and segments are approved through community deliberation, and residents hold a veto over scheduling**; each test carries an accompanying operator able to take over at any moment. Spatial requirement: a temporarily manageable side street (not an arterial), with an adjacent observation point and signage, clear boundaries, and rapid restoration. Metrics: annual test slots; number and published reasons for resident vetoes; manual takeover rate.
 
 **S02 Where the waste heat goes**｜Zigzag N3.6｜innovation belt (source) → living belt (use)｜P4, P3
-Compute facilities are unavoidable here, and unused waste heat is both waste and heat island. AI performs load forecasting and heat dispatch. **Human in the loop: heating priority is jointly agreed by the community and the operator, with winter household heating taking precedence over compute expansion**; dispatch parameters are publicly inspectable. Spatial requirement: a utility corridor route to the living belt; terminal heat-exchange stations combined with community facilities. Metrics: annual heat recovered; households served; compliance record for the household-priority clause.
+If compute facilities are located within the belt, unrecovered waste heat constitutes both waste and heat island. **This proposal does not assert that compute facilities must be sited here** — whether and where they are located depends on the wider compute network (§3.2). This scenario is conditional and holds only if such facilities are in fact sited here. AI performs load forecasting and heat dispatch. **Human in the loop: heating priority is jointly agreed by the community and the operator, with winter household heating taking precedence over compute expansion**; dispatch parameters are publicly inspectable. Spatial requirement: a utility corridor route to the living belt; terminal heat-exchange stations combined with community facilities. Metrics: annual heat recovered; households served; compliance record for the household-priority clause.
 
 > This is not a technical clause but a position clause. **When compute and households compete for the same energy, this proposal stands with households.**
 
@@ -850,7 +852,7 @@ Visit → Residency → Registration → Retention
 | Registration | Business registration | Connection to existing rent-exemption policy; talent housing eligibility | Survival beyond the agreed period enters retention statistics |
 | Retention | Continuing operation | Priority in scenario opening; enterprise service channel | Counted in the retention metric |
 
-**Each stage requires an explicit threshold and exit assessment**, or residency degenerates into cheap desk space rather than incubation. Compute quotas should connect to Beijing's public AI computing dispatch platform rather than establishing an independent pool within the belt.
+**Each stage requires an explicit threshold and exit assessment**, or residency degenerates into cheap desk space rather than incubation. Compute quotas are **proposed** to connect to existing public dispatch arrangements rather than establishing an independent pool within the belt. **Feasibility requires confirmation with the relevant parties; no arrangement is claimed.**
 
 ### 6.7 Coverage check and gaps
 
@@ -949,7 +951,7 @@ The land-use layer is not drawn category by category and then assembled. It is *
 
 **One. Human activity takes precedence over the movement of things.** From the four-flow radius analysis in 3.2: the goods radius is long, chips and compute dispatch across regions and **need not be located nearby**; the talent radius is shortest and depends on walkability. Land allocation therefore **reserves no land for a complete local industrial chain and prioritises walkable mixed layouts.**
 
-**Two. Connect to compute, don't build it.** The belt needs access points and dispatch interfaces, not machine halls in every key area. **This directly reduces demand for large utility parcels.**
+**Two. Connect to compute rather than build it (proposed, pending confirmation).** The belt needs access points and dispatch interfaces, not machine halls in every key area. **This directly reduces demand for large utility parcels.**
 
 **Three. Temporarily manageable streets are a factor of production.** Densifying side streets serves not only traffic efficiency but the availability of testing ground — only a sufficiently dense network can release closable segments without disrupting principal traffic (S01, S14).
 
@@ -1249,7 +1251,7 @@ Both the rent cap and the community veto depend on legal and policy pathways tha
 
 | Preferred mechanism | Precondition | Alternative if the precondition fails | Basis of the alternative |
 |---|---|---|---|
-| **Rent cap in retention zones** | An instrument capable of capping private leases exists | **Voluntary undertaking plus disclosure**: the delivery body voluntarily commits to a rent-adjustment range in the project agreement, with actual rent movement entering annual public disclosure. Force comes from publicity and reputation, not statute | Requires no new authority; delivery bodies are typically state-owned or park platforms, for whom public undertakings are enforceable in practice |
+| **Rent cap in retention zones** | An instrument capable of capping private leases exists | **Voluntary undertaking plus disclosure**: the delivery body voluntarily commits to a rent-adjustment range in the project agreement, with actual rent movement entering annual public disclosure. Force comes from publicity and reputation, not statute | Requires no new authority. **The assumption that delivery bodies are typically state-owned or park platforms is a general inference, unverified against ownership in this project**; the enforceability of their undertakings requires case-by-case confirmation |
 | **Community veto** | A governance framework can confer binding veto effect | **Prior consultation plus recorded objection**: test applications pass through a community process; community views carry no binding veto, but objections must be recorded in writing and published alongside test results. Three successive objections of the same kind trigger suspension and review for that segment | Builds on existing resident consultation and disclosure mechanisms; creates no new power |
 
 **Both alternatives trade enforceability for publicity.** They are weaker than the preferred mechanisms but can operate immediately within the current framework, and do not preclude upgrading once a preferred mechanism matures.
@@ -1443,6 +1445,7 @@ The proposal does not conceal its weak points:
 | **Folded roofs may conflict with existing controls** | Whether they conflict with Beijing's fifth-elevation controls is unverified | To be adjusted once verified |
 | **The ring-road node involves jurisdiction** | Expressway management rights; feasibility unassessed | Concept only, no engineering conclusion |
 | **Community veto lacks domestic institutional basis** | Its viable pathway within existing community governance is unverified | The proposal's mechanism assumption most in need of reinforcement |
+| **Key figures removed across two revisions** | The 22@ price increase and Tsinghua Science Park's floor area and occupancy were removed for want of auditable sources; related judgements now rest on relative ranking within regional estimates | Removed; the strength of those judgements is correspondingly downgraded to Level B |
 
 ### 12.3 Compliance statement
 
@@ -1536,7 +1539,7 @@ Retrieval took place during the design process, and precise access records were 
 |---|---|---|---|
 | 8 | Site package and three-tier scope material [source:SITE-PACKAGE] | A | Boundary is provisional, for generation and display only, not a statutory line (§12.1, `A-BOUNDARY-001`) |
 | 9 | Processed fact pack and missing-data checklist [source:PROCESSED-FACT-PACK] | A | As above |
-| 10 | Haidian sub-area rent and vacancy estimates | **B** | **Regional estimates, not building-level precision.** Compiled from published reports by Savills, JLL, Cushman & Wakefield, and Colliers together with Anjuke and Sohu listings. **Original report titles, publication dates, and access dates were not retained**, so this is downgraded to background evidence. Used for sub-area renewal potential ranking (§4.2) and the economic gradient judgement (§3.4); **may not descend to parcel or building decisions**. **A restriction now applies: this data is used only for relative ranking between sub-areas (which is higher, which is lower); no judgement anywhere in this document rests on its absolute values.** |
+| 10 | Haidian sub-area rent and vacancy estimates | **B** | **Regional estimates, not building-level precision.** Compiled from published reports by Savills, JLL, Cushman & Wakefield, and Colliers together with Anjuke and Sohu listings. **Original report titles, publication dates, and access dates were not retained**, so this is downgraded to background evidence. Used for sub-area renewal potential ranking (§4.2) and the economic gradient judgement (§3.4); **may not descend to parcel or building decisions**. **A restriction now applies: this data is used only for relative ranking between sub-areas (which is higher, which is lower); no judgement anywhere in this document rests on its absolute values.** **Further removed in this revision:** the specific floor area and occupancy figures for Tsinghua Science Park have been deleted from the document (no auditable primary source). This dataset now supports only relative ranking between sub-areas; no absolute value is used in argument anywhere in the document. |
 
 > **Item 10 warrants explanation.** This data supports three of the proposal's judgements: that Dazhongsi's adaptive reuse has a supply basis, that the Zigzag Bridge sits at the steepest value gradient, and that anti-displacement has a local anchor. **Given the incomplete record, the evidential strength of these three should be read at Level B** — directionally credible, but the figures are not a basis for decisions. At implementation stage they must be re-verified against authoritative property data.
 
@@ -1561,7 +1564,7 @@ All seven are compiled from public material. **Record completeness is marked hon
 | 18 | Zhongguancun Forum and AI Theme Day | Held each March; convenes international academia and investors | Public information; **specific edition and dates not retained** |
 | 19 | Beijing AI innovation districts | The AI Origin Community was among the first designated | Public release; **document name and date not retained** |
 | 20 | Zhongguancun AI North Latitude Community | Over 100,000 m² of capacity; up to three years' rent exemption for qualifying firms | Public reporting; **source not retained** |
-| 21 | Beijing public AI computing dispatch platform | Under construction by multiple parties | Public information; **source not retained** |
+| 21 | Public computing dispatch arrangements | Public information indicates a platform is under development in Beijing | Public information; **source not retained**. **Cited only as an existing mechanism worth connecting to; no claim is made as to availability, access permission, or progress** |
 | 22 | Jing-Zhang Heritage Park phase one | Opened June 2023; 16.8 ha; about 2.5 km; official language includes stitching back a city that had been cut open and turning the city's back into its front; includes a tribute to the switchback gradient | Public reporting; **specific sources not retained**. **This item supports the core claim in §2.2 that the proposal is not original; its record completeness should be noted** |
 | 23 | Former Qinghuayuan Station | Built 1910; first station north of Xizhimen; nameplate written by Zhan Tianyou; entered the relics survey register in 2012; listed as revolutionary heritage in 2021; first station reached by the CPC Central Committee on entering Beijing | Public information; **sources not retained**. **This item directly supports the landmark constraint in §2.5 and must be verified against heritage authority records at implementation stage** |
 | 24 | "Three cities, one district" roles | Zhongguancun Science City as source of original innovation and main arena of self-reliant innovation; Huairou as world-class carrier of original innovation; Future Science City as technology innovation hub and connective point; the BDA absorbing and commercialising results | Compiled from published policy statements and official releases on Beijing's international science and technology innovation centre; **document names and dates not retained**. Used in §3.6 |
