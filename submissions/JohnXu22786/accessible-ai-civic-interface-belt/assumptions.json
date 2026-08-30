@@ -1,0 +1,53 @@
+{
+  "schema_version": "0.2.0",
+  "assumptions": [
+    {
+      "assumption_id": "A-BOUNDARY-001",
+      "statement_zh": "三层官方文字范围与本候选几何不是同一概念",
+      "status": "provisional",
+      "next_verification": "official boundary/redline is not included; recalculate when supplied"
+    },
+    {
+      "assumption_id": "A-CONTROL-001",
+      "statement_zh": "FAR、高度、地下空间、权属、投资和容量均不定案",
+      "status": "unknown",
+      "next_verification": "require regulatory-plan, title, and specialist data"
+    },
+    {
+      "assumption_id": "A-DATA-001",
+      "statement_zh": "案例和统计仅作为公开机制参考，不作为本地现状数据",
+      "status": "to_verify",
+      "next_verification": "verify each public source before external publication"
+    },
+    {
+      "assumption_id": "A-GEOMETRY-001",
+      "statement_zh": "几何为原创临时工作盒，采用 EPSG:4326 输入并投影复算",
+      "status": "provisional",
+      "next_verification": "replace with official geometry and rerun metrics"
+    },
+    {
+      "assumption_id": "A-ACCESS-001",
+      "statement_zh": "无障碍接口需现场测绘、全龄测试和人工服务确认",
+      "status": "to_verify",
+      "next_verification": "run field accessibility audit"
+    },
+    {
+      "assumption_id": "A-PRIVACY-001",
+      "statement_zh": "场景只使用匿名聚合、虚拟/清权公开数据",
+      "status": "provisional",
+      "next_verification": "privacy review before any real-data connection"
+    },
+    {
+      "assumption_id": "A-OPERATIONS-001",
+      "statement_zh": "节点和年度机制没有确认运营主体或预算",
+      "status": "unknown",
+      "next_verification": "co-design RACI and cost envelope"
+    },
+    {
+      "assumption_id": "A-RAIL-001",
+      "statement_zh": "轨道、河道、蓝线、防洪和京张遗产边界关系待官方核验",
+      "status": "unknown",
+      "next_verification": "do not publish as confirmed relationship"
+    }
+  ]
+}
