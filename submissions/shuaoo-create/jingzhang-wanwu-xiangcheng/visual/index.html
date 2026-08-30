@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="京张·万物相成专业城市设计提案离线可视网站。">
+  <title>京张·万物相成｜JINGZHANG COEVOLUTION</title>
+  <style>
+    :root {
+      --ink: #14231f;
+      --ink-soft: #3f514a;
+      --forest: #155b48;
+      --forest-deep: #0d4035;
+      --leaf: #78a76c;
+      --water: #4c8395;
+      --clay: #bd633d;
+      --amber: #d9a23a;
+      --paper: #f6f2e9;
+      --white: #fffdf8;
+      --line: #cbd2c9;
+      --hold: #963f2b;
+      --shadow: 0 18px 54px rgba(13, 64, 53, .12);
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(90deg, rgba(21, 91, 72, .035) 1px, transparent 1px),
+        linear-gradient(rgba(21, 91, 72, .035) 1px, transparent 1px),
+        var(--paper);
+      background-size: 32px 32px;
+      font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", Arial, sans-serif;
+      line-height: 1.65;
+    }
+    img { max-width: 100%; }
+    a { color: inherit; }
+    code { padding: .12rem .35rem; border-radius: .35rem; background: rgba(20,35,31,.08); font-family: Consolas,"Courier New",monospace; font-size: .9em; }
+    .skip-link { position: fixed; left: 1rem; top: -5rem; z-index: 100; padding: .7rem 1rem; border-radius: .5rem; color: #fff; background: var(--forest-deep); }
+    .skip-link:focus { top: 1rem; }
+    .topbar { position: sticky; top: 0; z-index: 30; display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 64px; padding: .65rem clamp(1rem,4vw,4rem); border-bottom: 1px solid rgba(20,35,31,.13); background: rgba(246,242,233,.94); backdrop-filter: blur(14px); }
+    .wordmark { display: flex; align-items: center; gap: .75rem; text-decoration: none; font-weight: 900; letter-spacing: .05em; }
+    .mark { position: relative; width: 34px; height: 34px; flex: 0 0 34px; border: 2px solid var(--forest); border-radius: 50%; }
+    .mark::before,.mark::after { content: ""; position: absolute; top: 50%; width: 13px; height: 2px; background: var(--clay); }
+    .mark::before { left: -7px; }
+    .mark::after { right: -7px; }
+    .topbar nav { display: flex; align-items: center; justify-content: flex-end; gap: .25rem; flex-wrap: wrap; }
+    .topbar nav a { padding: .38rem .65rem; border-radius: 999px; color: var(--ink-soft); font-size: .78rem; font-weight: 800; text-decoration: none; }
+    .topbar nav a:hover,.topbar nav a:focus-visible { color: var(--forest-deep); background: rgba(21,91,72,.09); outline: none; }
+    .lang { border: 1px solid var(--forest); color: var(--forest) !important; }
+    main { overflow: hidden; }
+    .wrap { width: min(1220px,calc(100% - 2rem)); margin-inline: auto; }
+    .hero { position: relative; min-height: calc(100vh - 64px); display: grid; align-items: center; padding: clamp(4rem,8vw,8rem) 0; background: radial-gradient(circle at 82% 24%,rgba(120,167,108,.22),transparent 28%),radial-gradient(circle at 75% 72%,rgba(76,131,149,.15),transparent 32%),linear-gradient(135deg,var(--white),#e6ede4 65%,#dbe7e2); }
+    .hero::before { content: ""; position: absolute; right: -12vw; top: 12%; width: min(58vw,720px); aspect-ratio: 1; border: clamp(38px,6vw,82px) solid rgba(13,64,53,.075); border-radius: 50%; pointer-events: none; }
+    .hero-grid { position: relative; display: grid; grid-template-columns: minmax(0,1.35fr) minmax(280px,.65fr); gap: clamp(2rem,6vw,6rem); align-items: end; }
+    .eyebrow { margin: 0 0 1rem; color: var(--forest); font-size: .79rem; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 9ch; font-size: clamp(3.4rem,10vw,8.8rem); line-height: .92; letter-spacing: -.06em; }
+    .hero-en { display: block; margin-top: 1.3rem; color: var(--forest); font-size: clamp(1.05rem,2vw,1.55rem); font-weight: 900; letter-spacing: .11em; }
+    .manifesto { margin: 2rem 0 0; max-width: 780px; font-size: clamp(1.18rem,2.2vw,1.8rem); font-weight: 850; line-height: 1.45; }
+    .hero-aside { padding: 1.4rem; border: 1px solid rgba(20,35,31,.16); border-radius: var(--radius); background: rgba(255,253,248,.77); box-shadow: var(--shadow); }
+    .status-pill { display: inline-flex; align-items: center; gap: .45rem; padding: .42rem .72rem; border: 1px solid rgba(150,63,43,.3); border-radius: 999px; color: var(--hold); background: #fff2e9; font-size: .78rem; font-weight: 900; }
+    .status-pill::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+    .formula { margin: 1.15rem 0 0; font-size: 1.12rem; font-weight: 900; line-height: 1.8; }
+    .formula span { color: var(--clay); }
+    .hero-note { margin: 1rem 0 0; color: var(--ink-soft); font-size: .9rem; }
+    .section { padding: clamp(4rem,8vw,7.5rem) 0; }
+    .section.tint { background: rgba(255,253,248,.7); }
+    .section.dark { color: #f6f4ed; background: var(--forest-deep); }
+    .section-head { display: grid; grid-template-columns: minmax(210px,.55fr) minmax(0,1.45fr); gap: 2rem; align-items: end; margin-bottom: 2rem; }
+    .section-index { color: var(--clay); font: 900 .78rem/1.2 Consolas,monospace; letter-spacing: .15em; }
+    h2 { margin: .3rem 0 0; font-size: clamp(2.1rem,5vw,4.4rem); line-height: 1; letter-spacing: -.045em; }
+    .section-lead { margin: 0; max-width: 780px; color: var(--ink-soft); font-size: 1.04rem; }
+    .dark .section-lead { color: #d5dfd9; }
+    h3 { margin: 0 0 .7rem; font-size: 1.25rem; line-height: 1.35; }
+    .figure { margin: 0; overflow: hidden; border: 1px solid rgba(20,35,31,.13); border-radius: var(--radius); background: var(--white); box-shadow: var(--shadow); }
+    .figure img { display: block; width: 100%; height: auto; background: #fff; }
+    .figure figcaption { display: grid; grid-template-columns: 1fr auto; gap: 1rem; padding: .95rem 1.15rem; border-top: 1px solid var(--line); color: var(--ink-soft); font-size: .8rem; }
+    .figure figcaption strong { color: var(--ink); }
+    .provisional { color: var(--hold); font-weight: 900; white-space: nowrap; }
+    .scope-grid,.card-grid,.metric-grid,.task-grid,.truth-grid { display: grid; gap: 1rem; }
+    .scope-grid { grid-template-columns: repeat(3,minmax(0,1fr)); margin-top: 1.25rem; }
+    .scope-card,.card,.metric-card,.task-card,.truth-card { border: 1px solid rgba(20,35,31,.14); border-radius: 14px; background: rgba(255,253,248,.88); }
+    .scope-card { padding: 1.35rem; }
+    .scope-card .level { display: block; margin-bottom: .85rem; color: var(--clay); font: 900 .78rem/1 Consolas,monospace; letter-spacing: .12em; }
+    .scope-card p,.card p,.task-card p,.truth-card p { margin: 0; color: var(--ink-soft); }
+    .split { display: grid; grid-template-columns: minmax(0,1.18fr) minmax(300px,.82fr); gap: 1.25rem; align-items: start; }
+    .stack { display: grid; gap: 1rem; }
+    .card { padding: 1.3rem; }
+    .card.accent { border-top: 5px solid var(--forest); }
+    .card.signal { border-top: 5px solid var(--clay); }
+    .card.water { border-top: 5px solid var(--water); }
+    .code-label { display: inline-block; margin-bottom: .7rem; color: var(--clay); font: 900 .74rem/1 Consolas,monospace; letter-spacing: .09em; }
+    .pair-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.25rem; }
+    .topic-panel { padding: 1.5rem; border-radius: var(--radius); color: #fff; background: var(--forest); }
+    .topic-panel.water { background: #315e70; }
+    .topic-panel h3 { font-size: 1.7rem; }
+    .topic-panel p { margin: 0; color: #e8f0eb; }
+    .topic-panel ul { margin-bottom: 0; padding-left: 1.2rem; }
+    .system-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1rem; margin-top: 1.25rem; }
+    .system { position: relative; min-height: 265px; padding: 1.45rem; overflow: hidden; border: 1px solid rgba(255,255,255,.18); border-radius: var(--radius); background: rgba(255,255,255,.07); }
+    .system::after { content: attr(data-number); position: absolute; right: .7rem; bottom: -.65rem; color: rgba(255,255,255,.07); font: 900 6rem/1 Arial,sans-serif; }
+    .system h3 { color: #fff; }
+    .system p { position: relative; z-index: 1; color: #d5dfd9; }
+    .gate-rule { position: relative; z-index: 1; margin-top: 1rem; padding: .85rem; border-left: 4px solid var(--amber); color: #fff7dc; background: rgba(0,0,0,.14); font-weight: 900; }
+    .landmark-row { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; margin-top: 1rem; }
+    .landmark { padding: 1rem 1.2rem; border: 1px solid rgba(255,255,255,.18); border-radius: 12px; background: rgba(255,255,255,.05); }
+    .landmark strong { display: block; color: #fff; }
+    .landmark span { color: #c6d8cf; font-size: .88rem; }
+    .metric-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+    .metric-card { padding: 1.4rem; border-top: 6px solid var(--forest); }
+    .metric-card:nth-child(2) { border-top-color: var(--leaf); }
+    .metric-card:nth-child(3) { border-top-color: var(--water); }
+    .metric-name { display: block; color: var(--ink-soft); font-size: .82rem; font-weight: 800; }
+    .metric-value { display: block; margin: .25rem 0 .4rem; font-size: clamp(2rem,4vw,3.4rem); font-weight: 950; line-height: 1; letter-spacing: -.045em; }
+    .metric-card small { color: var(--ink-soft); }
+    .metric-note { margin: 1rem 0 0; padding: 1rem 1.2rem; border-left: 4px solid var(--clay); background: rgba(189,99,61,.08); color: var(--ink-soft); }
+    .task-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+    .task-card { padding: 1.15rem; }
+    .task-card b { display: block; margin-bottom: .45rem; color: var(--forest); font-size: .82rem; letter-spacing: .04em; }
+    .truth-grid { grid-template-columns: 1.15fr .85fr; }
+    .truth-card { padding: 1.4rem; }
+    .truth-card.alert { border-color: rgba(150,63,43,.32); background: #fff1e8; }
+    .replay-status { display: block; margin: .4rem 0 .8rem; color: var(--hold); font-size: clamp(1.25rem,2.5vw,2rem); font-weight: 950; line-height: 1.25; }
+    .disclosure-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.25rem; }
+    .disclosure { padding: 1.5rem; border: 1px solid rgba(20,35,31,.14); border-radius: var(--radius); background: var(--white); }
+    .disclosure ul { margin-bottom: 0; padding-left: 1.25rem; }
+    .disclosure li + li { margin-top: .55rem; }
+    footer { padding: 2.4rem 0; color: #cad8d1; background: #102c25; }
+    .footer-grid { display: flex; justify-content: space-between; gap: 1.5rem; align-items: flex-end; }
+    footer strong { color: #fff; }
+    footer p { margin: .3rem 0 0; max-width: 720px; font-size: .85rem; }
+    .footer-code { font: 700 .75rem/1.5 Consolas,monospace; text-align: right; }
+    @media (max-width:900px) {
+      .hero-grid,.section-head,.split,.truth-grid { grid-template-columns: 1fr; }
+      .scope-grid,.system-grid,.task-grid { grid-template-columns: 1fr; }
+      .hero-aside { max-width: 620px; }
+      .section-head { align-items: start; }
+      .card-grid { grid-template-columns: 1fr !important; }
+    }
+    @media (max-width:680px) {
+      .topbar { position: relative; align-items: flex-start; flex-wrap: wrap; }
+      .topbar nav { width: 100%; justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; padding-bottom: .1rem; }
+      .hero { min-height: auto; }
+      .pair-grid,.metric-grid,.landmark-row,.disclosure-grid { grid-template-columns: 1fr; }
+      .figure figcaption,.footer-grid { grid-template-columns: 1fr; display: grid; }
+      .footer-code { text-align: left; }
+      .provisional { white-space: normal; }
+    }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior: auto; } }
+    @media print { .topbar { position: static; } .section { break-inside: avoid; } body { background: #fff; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="topbar">
+    <a class="wordmark" href="#top" aria-label="返回万物相成首页"><span class="mark" aria-hidden="true"></span><span>京张·万物相成</span></a>
+    <nav aria-label="主要导航">
+      <a href="#overview">范围</a><a href="#spatial">空间</a><a href="#ai">智能</a><a href="#metrics">指标</a><a href="#audit">审计</a><a class="lang" href="index.en.html" lang="en">EN</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Centennial Jing-Zhang AI Innovation Belt · Professional Design Package</p>
+          <h1>万物相成</h1>
+          <span class="hero-en" lang="en">JINGZHANG COEVOLUTION</span>
+          <p class="manifesto">智能可以进入城市，城市不能退出生命世界。<br>生命有地，智能过双门，万物相成。</p>
+        </div>
+        <aside class="hero-aside" aria-label="提案状态与母公式">
+          <span class="status-pill">本地修订中 · 未形成官方结论</span>
+          <p class="formula">万物依存 <span>×</span> 碳硅相成 <span>×</span> 文明演续</p>
+          <p class="hero-note">本页面是可离线审阅的设计表达层。结构化 JSON、GeoJSON 与校验结果仍是机器审计依据；暂定空间数据不等同于官方边界或法定规划控制。</p>
+        </aside>
+      </div>
+    </section>
+    <section class="section" id="overview">
+      <div class="wrap">
+        <header class="section-head">
+          <div><span class="section-index">01 / TERRITORY</span><h2>总览地图</h2></div>
+          <p class="section-lead">以京张走廊为文明时间轴，以生命连续面为首要空间结构。图面中的边界与重点区均为参赛者暂定设计几何，只服务于方案推演，待主办方正式文件到达后整体重算。</p>
+        </header>
+        <figure class="figure">
+          <img src="../assets/figures/site-overview.png" alt="万物相成总览地图：暂定边界、生命基底、双门记录与三个重点区域" loading="eager">
+          <figcaption><span><strong>阅读顺序：</strong>京张轴线 → 生命连续面 → 城市智能双门记录 → 三个重点区域</span><span class="provisional">PROVISIONAL · 非官方边界</span></figcaption>
+        </figure>
+        <div aria-labelledby="scope-title">
+          <h3 id="scope-title" style="margin-top:2rem">三层范围</h3>
+          <div class="scope-grid">
+            <article class="scope-card"><span class="level">L1 · 协同研究范围</span><h3>廊道与区域关系</h3><p>研究京张文明轴、产业网络、生态连续性与区域创新协作；不把研究联系误写为已批准的行政或投资安排。</p></article>
+            <article class="scope-card"><span class="level">L2 · 总体设计范围</span><h3>11.413 km² 暂定模型</h3><p>以参赛者暂定边界组织用地、交通、蓝绿、公共空间、建筑与项目清单，并保留正式边界触发重算机制。</p></article>
+            <article class="scope-card"><span class="level">L3 · 详细设计范围</span><h3>三个重点区域</h3><p>中关村 AI 加速区、北京 AI 原点社区、大钟寺 AI 产业聚集区均以暂定几何开展空间与场景深化。</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section tint" id="key-areas">
+      <div class="wrap">
+        <header class="section-head"><div><span class="section-index">02 / FOCUS</span><h2>重点区域</h2></div><p class="section-lead">三个区域承担不同的验证尺度：加速区测试产业协同，原点社区测试日常共居，大钟寺片区测试历史空间中的公开审查与再进入责任。</p></header>
+        <div class="split">
+          <figure class="figure">
+            <img src="../assets/figures/key-areas.png" alt="三个重点区域与相成试场、相成社区、相成日常的阶段关系" loading="lazy">
+            <figcaption><span><strong>空间节奏：</strong>相成试场 → 相成社区 → 相成日常</span><span class="provisional">三处几何均待正式文件替换</span></figcaption>
+          </figure>
+          <div class="stack">
+            <article class="card accent"><span class="code-label">KA-01 · COEVOLUTION TESTBED</span><h3>中关村 AI 加速区</h3><p>把研发、试验、审计与公众解释置于同一条可步行验证链中；先验证再扩张，失败必须可见且可退出。</p></article>
+            <article class="card water"><span class="code-label">KA-02 · COEVOLUTION COMMUNITY</span><h3>北京 AI 原点社区</h3><p>将老幼、通勤者、访客、维护者与非人生命的日常条件并列，验证不依赖手机的公共服务与微扰生活。</p></article>
+            <article class="card signal"><span class="code-label">KA-03 · COEVOLUTION THRESHOLD</span><h3>大钟寺 AI 产业聚集区</h3><p>以<strong>相成门槛 / COEVOLUTION THRESHOLD</strong>公开展示 L7、D6、HOLD、责任主体、停止和修复证据。</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="spatial">
+      <div class="wrap">
+        <header class="section-head"><div><span class="section-index">03 / FABRIC</span><h2>用地分区</h2></div><p class="section-lead">用地分区是设计模型而非法定规划。每个分区首先回答空气、水、土壤、根系、阴影、暗夜、安静与生物多样性如何连续，再叠加产业和公共服务。</p></header>
+        <figure class="figure">
+          <img src="../assets/figures/land-use-structure.png" alt="万物相成用地分区与生命基底结构图" loading="lazy">
+          <figcaption><span><strong>结构原则：</strong>连续生命面优先，建设与智能设施在其上接受条件约束</span><span class="provisional">设计模型 · 非法定用地</span></figcaption>
+        </figure>
+        <div class="pair-grid" style="margin-top:1.25rem">
+          <article class="topic-panel"><h3>交通慢行</h3><p>以轨道站点、连续步行、自行车与无障碍路径连接三个重点区；将货运、维护与应急路径作为日常路权的一部分，不把效率提升转嫁给行人和生态。</p><ul><li>轨道接驳与 15 分钟步行圈</li><li>连续无障碍路径与人机分流节点</li><li>AI 关闭时仍可辨识、可通行、可求助</li></ul></article>
+          <article class="topic-panel water"><h3>蓝绿公共空间</h3><p><strong>LIVING GROUND</strong> 是空气、水、土壤、根系、阴影、暗夜、安静和生物多样性的物理连续，不是数字孪生或让自然“发声”的 AI 代理。</p><ul><li>雨洪调蓄、渗透与树冠连通</li><li>暗夜与安静时段的可执行保护</li><li>公共空间保持免消费、免设备进入</li></ul></article>
+        </div>
+        <figure class="figure" style="margin-top:1.25rem">
+          <img src="../assets/figures/mobility-bluegreen.png" alt="交通慢行和蓝绿公共空间协同网络图" loading="lazy">
+          <figcaption><span><strong>复合网络：</strong>慢行、无障碍、应急、雨洪与栖息连续性同步校核</span><span class="provisional">线路位置待勘测与专业深化</span></figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="section tint" id="built-form">
+      <div class="wrap">
+        <header class="section-head"><div><span class="section-index">04 / DELIVERY</span><h2>建筑</h2></div><p class="section-lead">建筑策略以保留优先、修复先行、适应性再利用和可逆介入为顺序。高度、容积率、退界与拆建结论均待正式控制文件和专业团队确认。</p></header>
+        <div class="card-grid" style="grid-template-columns:repeat(3,minmax(0,1fr))">
+          <article class="card accent"><span class="code-label">RETAIN + REPAIR</span><h3>历史与日常骨架</h3><p>保留可用建筑和熟悉路径，以低扰动修缮改善安全、气候适应与无障碍条件。</p></article>
+          <article class="card water"><span class="code-label">ADAPT + SHARE</span><h3>复合公共界面</h3><p>首层与院落为共享服务、维护、申诉和生态观察保留空间，数字服务不能成为进入门槛。</p></article>
+          <article class="card signal"><span class="code-label">REVERSIBLE INSERTION</span><h3>可撤回智能设施</h3><p>新增智能构件需可识别、可停用、可拆换；撤回后不破坏建筑基本使用和生命连续条件。</p></article>
+        </div>
+        <header class="section-head" style="margin-top:4rem"><div><span class="section-index">04B / ACTIONS</span><h2>更新项目</h2></div><p class="section-lead">项目从基线、试验、复核走向日常运营。每一阶段均需明确参与主体、可核指标、停止条件与修复责任；未完成验证不得用后续收益补偿前置失败。</p></header>
+        <div class="scope-grid">
+          <article class="scope-card"><span class="level">G0–G1 · BASELINE / PILOT</span><h3>生命基线与双门原型</h3><p>建立 L7 生命条件基线、D6 智能责任证据与公众可读的 HOLD 状态，开展小规模可撤回测试。</p></article>
+          <article class="scope-card"><span class="level">G2 · REVIEW / REPAIR</span><h3>界面复核与修复</h3><p>在相成界面公开技术、责任和生态偏差；达到停止线时停用、修复并重新进入双门审查。</p></article>
+          <article class="scope-card"><span class="level">G3 · EVERYDAY OPERATION</span><h3>相成日常与长期治理</h3><p>只扩展已经通过双门且可被公众理解的服务，把年度审计、申诉、维护和退出纳入运营预算。</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="section dark" id="ai">
+      <div class="wrap">
+        <header class="section-head"><div><span class="section-index">05 / CIVIC AI</span><h2>AI 场景</h2></div><p class="section-lead">AI 不是生命物种，生命也不是 AI 的数据饲料。十二个场景均以具体公共空间、使用者、维护者、风险、停止条件和恢复路径构成可审查契约。</p></header>
+        <figure class="figure">
+          <img src="../assets/figures/scenarios-overview.png" alt="十二个 AI 场景及城市智能双门状态总图" loading="lazy">
+          <figcaption><span><strong>场景契约：</strong>人、地点、AI 角色、生命条件、责任义务、停止与修复</span><span class="provisional">所有放行状态待实测与主体确认</span></figcaption>
+        </figure>
+        <div class="system-grid">
+          <article class="system" data-number="01"><span class="code-label">LIVING GROUND · L7</span><h3>生命基底</h3><p>七项生命条件独立核验空气、水、土壤、根系、阴影、暗夜/安静与生物多样性，构成任何智能进入城市之前的第一道门。</p></article>
+          <article class="system" data-number="02"><span class="code-label">CIVIC AI DUAL-GATE PROTOCOL · D6</span><h3>城市智能双门制</h3><p>D6 记录身份、目的、数据、责任、停止与修复义务；它不能以高分抵消任何 L7 失败，也不能让未知状态自动通过。</p><div class="gate-rule">L7 与 D6 独立、不可补偿；任一 UNKNOWN/FAIL =&gt; HOLD。</div></article>
+          <article class="system" data-number="03"><span class="code-label">MUTUAL-BECOMING INTERFACE</span><h3>相成界面</h3><p>把人、非人生命、建筑断面和智能系统的接触关系落到可测量空间；偏差必须触发停止、修复和再进入责任。</p></article>
+        </div>
+        <div class="landmark-row">
+          <div class="landmark"><strong>相成门槛 / COEVOLUTION THRESHOLD</strong><span>展示双门状态、责任主体与再进入证据的公共复核节点。</span></div>
+          <div class="landmark"><strong>微扰日常居 / LOW-INTERFERENCE EVERYDAY HOME</strong><span>不强制手机、不连续遥测；人工服务、AI 关闭与普通居住路径始终可用。</span></div>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="metrics">
+      <div class="wrap">
+        <header class="section-head"><div><span class="section-index">06 / EVIDENCE</span><h2>核心指标</h2></div><p class="section-lead">以下三项为提交几何可重算的设计模型输出。数值与页面的机器可读属性一致，但空间依据仍属暂定约束；正式边界替换后必须整体更新。</p></header>
+        <div class="metric-grid">
+          <article class="metric-card" data-metric="site_area_sqm" data-value="11412825.386"><span class="metric-name">暂定设计范围面积 · site_area_sqm</span><strong class="metric-value">11.413 km²</strong><small>精确机器值：11,412,825.386 m²</small></article>
+          <article class="metric-card" data-metric="green_ratio" data-value="0.211579"><span class="metric-name">绿地设计占比 · green_ratio</span><strong class="metric-value">21.1579%</strong><small>由提交的 green_space 几何重算</small></article>
+          <article class="metric-card" data-metric="public_space_ratio" data-value="0.010187"><span class="metric-name">公共空间设计占比 · public_space_ratio</span><strong class="metric-value">1.0187%</strong><small>由提交的 public_space 几何重算</small></article>
+        </div>
+        <p class="metric-note"><strong>限制：</strong>容积率、建筑高度、法定绿地率、退界和拆建控制仍为待正式文件补齐；本页不得用于报批或代替专业测绘。</p>
+        <figure class="figure" style="margin-top:1.25rem">
+          <img src="../assets/figures/metrics-evidence.png" alt="核心指标、证据链与暂定数据状态图" loading="lazy">
+          <figcaption><span><strong>证据链：</strong>GeoJSON → 投影面积重算 → metrics.json → 页面属性</span><span class="provisional">待正式边界触发重算</span></figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="section tint" id="coverage">
+      <div class="wrap">
+        <header class="section-head"><div><span class="section-index">07 / TASKBOOK</span><h2>任务覆盖</h2></div><p class="section-lead">提案把任务书要求分散到人可读叙事、图件、场景契约与机器审计层。这里是阅读入口，不替代结构化覆盖矩阵。</p></header>
+        <div class="task-grid">
+          <article class="task-card"><b>TASK 01</b><h3>命名与视觉识别</h3><p>母公式、品牌语法、标识系统与双门状态表达。</p></article>
+          <article class="task-card"><b>TASK 02</b><h3>AI 生态案例</h3><p>以场景契约连接产业试验、公共价值和退出责任。</p></article>
+          <article class="task-card"><b>TASK 03</b><h3>十二个场景</h3><p>覆盖工作、生活、学习、照护、维护、交通与生态时刻。</p></article>
+          <article class="task-card"><b>TASK 04</b><h3>人群与可达性</h3><p>老幼、通勤者、访客、维护者、行动不便者与非人生命并列。</p></article>
+          <article class="task-card"><b>TASK 05</b><h3>地标与文化叙事</h3><p>相成门槛、误差广场及文明时间轴构成可审查地标。</p></article>
+          <article class="task-card"><b>TASK 06</b><h3>长期运营</h3><p>年度审计、全球社群、维护、申诉、停止、修复与再进入。</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="audit">
+      <div class="wrap">
+        <header class="section-head"><div><span class="section-index">08 / TRUTH STATUS</span><h2>自检状态</h2></div><p class="section-lead">页面更新不构成校验通过。只有对最终文件集完成确定性、空间、视觉与专业四门本地重放并写回自检记录后，才能形成新的本地自检结论。</p></header>
+        <div class="truth-grid">
+          <article class="truth-card alert"><span class="code-label">CURRENT STATE</span><strong class="replay-status">机器可读状态以 self_check.json 为准<br><span lang="en">Machine-readable status: self_check.json</span></strong><p>本页面不独立声称通过、提交、获审或获批；也不声明任何远程 PR、合并或官方认可。</p></article>
+          <article class="truth-card"><span class="code-label">REPLAY GATES</span><h3>最终文件集四门校验</h3><p>确定性与清单完整性、空间拓扑与指标重算、离线视觉包装、专业证据与设计深度。最终状态以 <code>self_check.json</code> 为准。</p></article>
+        </div>
+        <div class="disclosure-grid" style="margin-top:1.25rem">
+          <article class="disclosure"><h3>来源</h3><ul><li>仓库内公开任务书、允许设计空间、数据工作流、标准快照与来源登记表。</li><li>本提交的 <code>sources.json</code>、GeoJSON、指标、合规矩阵、设计深度矩阵与场景登记表。</li><li>所有图件使用包内本地资源；本页面不加载远程字体、脚本、地图瓦片、接口或跟踪代码。</li></ul></article>
+          <article class="disclosure"><h3>假设</h3><ul><li>官方 <code>SITE_BOUNDARY</code> 与三个 <code>KEY_AREA</code> 精确多边形尚未到位，当前几何为低置信度暂定约束。</li><li>法定容积率、高度、退界、绿地率与拆建结论保持待测/待确认，不以设计模型替代。</li><li>场景责任主体、现场基线、生态阈值、运维预算和工程可行性仍需人类与专业团队核验。</li></ul></article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap footer-grid">
+      <div><strong>京张·万物相成 / JINGZHANG COEVOLUTION</strong><p>城市首先是生命系统，然后才是智能系统。本地离线审阅页面；不构成官方规划、审批、实施承诺或提交成功证明。</p></div>
+      <div class="footer-code">LIVING GROUND<br>CIVIC AI DUAL-GATE PROTOCOL<br>MUTUAL-BECOMING INTERFACE</div>
+    </div>
+  </footer>
+</body>
+</html>
