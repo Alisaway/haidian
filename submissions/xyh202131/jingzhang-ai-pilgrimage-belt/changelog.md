@@ -1,5 +1,19 @@
 # 方案迭代记录 / Changelog
 
+## v99.0 - 2026-08-30
+
+**证据日期与导航日期解耦 / Evidence-date and Navigation-date Separation**
+
+- 已有能力：R98 已把三区证据矩阵的包级导航回链精确绑定到 R97 索引；PR #4277 在 exact head `e785b672349bf6e6f42f0c26eb4341809e6b5fc5` 完成 96/100、无阻断项评审并以 merge SHA `64ece60dbba02fce3d3bfb3041c166657f5f6f18` 进入 canonical main。
+- 真实缺口：修复前，矩阵顶层只有 `as_of: 2026-08-14`，但 R98 已在 2026-08-30 更新导航绑定。单一日期既无法说明旧日期只约束证据内容，也无法说明新导航元数据何时绑定；审阅者可能把导航修复误读为证据刷新，或把当前导航误判为 8 月 14 日状态。自动 gate 不检查日期字段的作用域。
+- 必须冻结：冻结“双轨京张 / Twin-Track Jing-Zhang”、三种不可互换原型、JZ-AIOS、G0—G3、四轴、三载体、证据门、权利边界及 12/8/3/36；不改任何矩阵记录、proposal、report/visual 页面、图件、媒体、四份 PDF、geometry、metrics、来源判断、现实状态或 0/8 人工双语签署。
+- 本轮实施：保留 `2026-08-14` 作为已声明的证据内容快照日期，新增 `2026-08-30` 导航绑定日期，并明确后者只记录包级导航指针更新，不刷新记录、来源、现场证据、权利、批准、成熟度、专业接责或外部评审状态。官方几何、批准、现场基线与结果、现实责任、预算、恢复时间、公众反馈、独立法律/商标审查和人工双语签署继续为 unknown、0、未提供或 NO-GO。
+
+- Existing capability: R98 bound the key-area evidence matrix package-navigation backlink exactly to the R97 index. PR #4277 completed a 96/100 review with no blocker on exact head `e785b672349bf6e6f42f0c26eb4341809e6b5fc5` and entered canonical main as merge SHA `64ece60dbba02fce3d3bfb3041c166657f5f6f18`.
+- Real gap: before repair, the matrix exposed only `as_of: 2026-08-14`, although R98 updated its navigation binding on 2026-08-30. One unscoped date could neither show that the older date applies only to evidence content nor date the newer navigation metadata; reviewers could mistake a navigation repair for evidence refresh, or mistake the current navigation pointer for an August 14 state. Automated gates do not check date-field scope.
+- Frozen boundary: Twin-Track Jing-Zhang, the three non-interchangeable prototypes, JZ-AIOS, G0–G3, four axes, three carriers, evidence gates, rights boundaries and 12/8/3/36 remain frozen. Every matrix record, proposal, report/visual page, figure, medium, all four PDFs, geometry, metrics, source judgement, real-world status and the unsigned 0/8 human bilingual review are unchanged.
+- Implemented this round: retained `2026-08-14` as the declared evidence-content snapshot date, added the `2026-08-30` navigation-binding date, and stated that the latter records only a package-navigation pointer update. It refreshes no record, source, field evidence, right, approval, maturity, professional acceptance or external-review status. Official geometry, approvals, field baselines and outcomes, real accountability, budgets, recovery time, public feedback, independent legal/trademark review and human bilingual sign-off remain unknown, zero, not provided or NO-GO.
+
 ## v98.0 - 2026-08-30
 
 **三区证据矩阵导航出处刷新 / Key-area Matrix Navigation-provenance Refresh**
