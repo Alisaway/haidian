@@ -5,6 +5,36 @@
 > Note: this file was **created retrospectively** on 2026-08-29. Iterations v0.1–v0.5 were documented in their Pull Request descriptions and commit messages rather than in an in-package changelog. To align with repository convention (SKILL.md requires updating the proposal, `changelog.md`, assumptions and evidence records together), the history is reconstructed from verifiable PR records, and this file will be kept in sync with every subsequent change.
 
 
+## v1.10 - 2026-08-30
+
+**闭合第 8 轮 3 项阻断：实施措辞与合规口径 / Closing the round-8 blockers**
+
+- 触发 trigger：PR #4155 第 8 轮评审（**81.0/100**，针对 v1.9.1）。第 7 轮（v1.9）曾达 **82.0**，为本系列最高分。
+- 七维轨迹 seven-axis track：
+  | 维度 | v1.8(77.0) | v1.9(82.0) | v1.9.1(81.0) |
+  |---|---|---|---|
+  | 任务书相关性 | 5 | 5 | 5 |
+  | 原创性 | 4 | 4 | 4 |
+  | AI 创新性 | 4 | 5 | 5 |
+  | 可实施性 | 3 | 4 | **3** |
+  | 公共利益 | 4 | 4 | 4 |
+  | 风险合规意识 | 4 | 3 | **3** |
+  | 表达完整度 | 2→3 | 3 | **4** |
+- 根因复盘 root cause（本轮核心教训）：
+  - **v1.9 的措辞降级做得不彻底，只改了 grep 命中处，没按"类别"扫全。** 评审点名「education 17 栋优先保留」，但它的要求原话是「**所有**拆改留、桥隧、地下空间和高度内容须在同一表格单元内标明非现状结论、非开工承诺」。漏掉的两类直接导致可实施性 4→3：
+    1. **表格没改**：JZ-04「4 处路口安全岛 + 2 处地下通道启动」仍是开工语气，与同文已改的「待比选」自相矛盾——评审把这条当作"前后不一致"扣分。
+    2. **同类段落没改**：大钟寺（60–80 m / 35–50 m）与原点社区（50–60 m / 24–35 m）的高度仍是「提高至/降至」的确定性语气；三处重点区的拆改留仍写「保留**现状**…建筑」，而 `metrics.json` 明确 `geometry/buildings.geojson` 是设计分区内的概念基底、不是现状建筑调查。
+  - **风险合规 4→3**：前段登记摘要写「formal 5 / 背景 0 / provisional 1」，后段写「正式可用 7 / background_only 1 / provisional_only 1」——同一文档内两个数字打架；另有「缺少译文只产生 non-blocking warning」与 `proposal_format_version` 2 的强制双语门禁相冲突。
+  > **纪律：评审点名一处时，按该句的适用范围扫全，不要只改被点名的那一行。**
+- 改动 scope：
+  1. **登记口径统一**（风险合规）：`proposal.md` 前段登记摘要改为以 supplied `data/source_registry.json` 为唯一口径的 **9 条 = 正式可用 7 + background_only 1 + provisional_only 1**，并注明参与者自行登记的 26 条外部资料不自动取得维护者 formal 状态。
+  2. **译文门禁表述改正**（风险合规）：改为「`proposal_format_version` 2 下，中英正文、含文字图件、HTML 及 A3/A0 对应件缺失/不完整/畸形/映射错误**均为阻断性包就绪失败**；仅历史 version 1 按兼容规则以 non-blocking warning 评审」。中英同步。
+  3. **实施措辞按类别扫全**（可实施性）：①「教育类建筑（education, 17 栋）优先保留」→「17 个单元来自提交几何的设计基底、**不是现状建筑清点结果**」；②三处重点区的拆改留统一加「**概念待核查清单，非现状建筑盘点**」并加「建议」前缀；③原点社区、大钟寺两处高度改为「**概念测试取值**」并标注非控制指标、非现状结论；④实施表 JZ-03 / JZ-04 的「启动」改为「**待比选概念选项 / 前置核查任务**（非开工承诺）」。中英共 13 处。
+- 不动 NOT changed：图件 PNG、A3/A0 PDF 内容未变（图件版本维持 v3.3）；不新增证据标记（密度 max 7/段）；不杜撰新指标。
+- 自评 self-estimate：表达完整度维持 **3/5**——评审第 8 轮给的是 4/5，本轮修的是可实施性与风险合规两项，未新增表达层改进，故不随评审上调。
+- CI 影响 CI impact：proposal.md / proposal.en.md / 4 份 HTML / self_check.json / manifest.json = **7 项**哈希需刷，单 commit 推送。
+- 验证 verification：✅ 中英各命中 13 处、残留归零；✅ 重跑 `build_v19.py`（重渲染→重抽字表→注入→cmap 覆盖校验）；✅ 官方四门自检 PASS；✅ `audit_manifest.py` 全量核对。
+
 ## v1.9.1 - 2026-08-30
 
 **v1.9 的收尾：消除剩余的可见一致性隐患 / Closing v1.9's remaining consistency risks**
