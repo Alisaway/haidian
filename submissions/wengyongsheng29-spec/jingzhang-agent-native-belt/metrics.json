@@ -113,14 +113,15 @@
     "ai_scenario_nodes": {
       "metric_id": "ai_scenario_nodes",
       "status": "known",
-      "value": 15,
+      "value": 18,
       "unit": "count",
       "formula": "count of scenario cards in proposal.md",
       "source_files": [
         "proposal.md"
       ],
       "confidence": "high",
-      "assumption_ids": []
+      "assumption_ids": [],
+      "note": "18张场景卡（SC-01至SC-18），含7张测试验证（SC-03/04/08/09/16/17/18），其中SC-16/17/18对接世界人形机器人运动会实景挑战方向。"
     },
     "key_areas_count": {
       "metric_id": "key_areas_count",
@@ -174,7 +175,7 @@
       "assumption_ids": [
         "A-FINANCE-001"
       ],
-      "note": "百亿级概念量级占位值，非投资承诺；具体投资规模待权属核查、控规编制和工程可研后由专业机构测算。"
+      "note": "远期总投资概念占位值（100–150亿元区间上限，含社会资本为主），非已核投资承诺；精确值待权属核查、控规编制和工程可研后由专业机构测算（待可研变量）"
     },
     "urban_os_phased_years": {
       "metric_id": "urban_os_phased_years",
@@ -246,6 +247,23 @@
       "confidence": "medium",
       "assumption_ids": [],
       "note": "重点区路网密度指标，概念性路网骨架密度评估。"
+    },
+    "ai_landing_nodes": {
+      "metric_id": "ai_landing_nodes",
+      "status": "known",
+      "value": 15,
+      "unit": "count",
+      "formula": "count of physically landable scenario nodes in demonstration segment (spatial layer, distinct from scenario-card count)",
+      "source_files": [
+        "proposal.md",
+        "assets/figures/mobility-bluegreen.png"
+      ],
+      "confidence": "medium",
+      "assumptions": [
+        "provisional boundary",
+        "concept layer vs landing layer distinction per proposal.md"
+      ],
+      "note": "空间落位层节点数，与 ai_scenario_nodes(18 场景卡)不等同；场景卡可在节点复合承载"
     }
   }
 }

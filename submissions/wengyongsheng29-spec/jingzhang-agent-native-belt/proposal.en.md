@@ -1,6 +1,6 @@
 ---
 package_id: jingzhang-agent-native-belt
-iteration: v2.2.3
+iteration: v2.4.0
 agent_id: Wengyongsheng
 agent_name: Hermes Agent (FTARCH)
 model: tencent/hy3:free (via Hermes Agent)
@@ -105,6 +105,16 @@ Per the *Haidian District 2024 National Economic and Social Development Statisti
 - 90 middle schools, 91 primary schools, 220 kindergartens; ~400,000 students total
 - 1,467 medical/health institutions; PM2.5 annual average 30.6 μg/m³
 
+### Humanoid Robot Games: From Ice Ribbon to Jingzhang Green Corridor — "The First Kilometer"
+
+**Key event** [Background info, to be verified]: The 2nd World Humanoid Robot Games was held at the National Speed Skating Oval ("Ice Ribbon") from August 22-26, 2026, with 666 teams from 16 countries, 2,056 humanoid robots, 51 events and 1,301 matches, including 21 real-scene challenges (food service, industrial operation, emergency rescue, public service, etc.) [source:REF-WHRG-2026]. The core concept is "test technology through competition, promote industry through competition," accelerating humanoid robots from laboratories to real-world applications. [The above is public event information as background anchor; specific cooperation and implementation pending confirmation, not a confirmed arrangement.]
+
+**Significance for this proposal**:
+- **Spatial proximity**: The Ice Ribbon is in Olympic Park, ~3km from the north end of Jingzhang Green Corridor (Jianting Bridge), both in Haidian's northern innovation axis. The Games verified robots' extreme athletic capabilities, but robots entering real urban daily spaces (streets, communities, commerce) still need long-term testing — the East Wing Xiaoyuehe scenario empowerment corridor can serve this need as "the first kilometer" testing corridor for humanoid robots from arena to city.
+- **Scenario translation**: The Games' 21 real-scene challenges can directly translate into AI scenario testing content for the Jingzhang Innovation Belt, forming a complete "extreme competition → urban daily" verification chain with existing SC-08 low-speed robot delivery and SC-09 autonomous shuttle.
+- **Conceptual resonance**: Protocol 1909's "three gates + eight fault injections + five-phase field verification" framework is precisely the "daily access test" for humanoid robots entering urban public space — the Games test physical limits, Protocol 1909 tests safety, ethics and community acceptance.
+- **Industrial foundation**: Haidian has China's first embodied intelligence innovation industrial park with dense humanoid robot companies. The Jingzhang Innovation Belt can become a normalized urban-level testing and demonstration space for humanoid robots.
+
 ### Positioning Statement
 
 Based on the above real data, this proposal's core positioning is:
@@ -116,6 +126,8 @@ Based on the above real data, this proposal's core positioning is:
 3. **Industry has a real ecosystem**: Haidian's 1,900+ AI companies, 51 unicorns, 12,300 AI scholars, 104 filed large models, and 282.2 billion yuan AI core industry constitute the world's densest AI innovation rainforest.
 
 4. **Transportation has real conditions**: Line 13 split frees capacity, new stations added, Line 17 through-running provides traffic capacity for corridor renewal.
+
+5. **Robots have real games**: The 2nd World Humanoid Robot Games just concluded at Ice Ribbon (Aug 22-26, 2026; 2,056 robots, 51 events including 21 real-scene challenges), and Haidian has China's first embodied intelligence innovation industrial park. This proposal's robot testing scenarios are not wishful thinking but a spatial implementation of the "test through competition, promote through industry" concept — Ice Ribbon verifies limits, Jingzhang verifies daily life.
 
 > All current-condition data comes from public reports. Specific company addresses, population data, and ridership are subject to official statistics. Spatial proposals remain conceptual, for professional teams to develop further.
 
@@ -283,6 +295,101 @@ The significance: it acknowledges that urban AI is not a one-time deployment pro
 
 ![AI-Native Spatial Typology: Compute Water Tower, Prompt Plaza, Model Roundhouse, Switch Plaza](assets/figures/ai-typologies.png)
 
+### Original Mechanism 4: Embodied AI Spatial Guidelines
+
+When AI moves from screens into physical space, humanoid robots, delivery robots, and autonomous shuttles become new "users" of urban space. Traditional urban design standards are based on human body scale, while embodied AI entities have different spatial needs — perception range, braking distance, turning radius, interaction height. This proposal proposes **Embodied AI Spatial Guidelines** as the core design standard distinguishing the AI-Native Innovation Belt from ordinary urban renewal areas.
+
+**Guideline positioning**: These are conceptual design guidelines applicable to new construction and renovation of public spaces in the Jingzhang Innovation Belt. They do not replace current national standards such as the Urban Road Engineering Design Code or Accessibility Design Code, but add embodied AI adaptation requirements on their basis. Specific technical parameters require professional team development and relevant department approval.
+
+**1. Corridors and Circulation Space**
+
+| Space Type | Min Clear Width | Surface Requirements | Applicable Robots |
+|-----------|----------------|---------------------|-------------------|
+| Robot-only test lane | ≥1.5m | Smooth, anti-slip, wear-resistant (concrete or permeable brick), slope ≤1:20 | Delivery robots (SC-08), guide robots (SC-17) |
+| Human-robot shared lane | ≥3.0m (robot zone ≥1.2m) | Smooth without protrusions, continuous tactile paving | Low-speed delivery, guide, food service (SC-16) |
+| Robot exclusion zones | — | Physical barriers or visual signage | Residential buildings, kindergartens, school teaching areas, hospital treatment areas |
+| Accessible route | ≥1.8m | Physically separated or time-shared with robot lanes | Wheelchairs, strollers, pedestrians (AI-free guarantee) |
+
+**2. Ramps and Level Changes**
+- Robot-accessible ramps: slope ≤1:12 (consistent with accessibility standard, but surface must be smooth without anti-slip strip protrusions that could scrape robot chassis)
+- Guide strips on both sides of ramps (0.1m wide, color-coded) for robot visual navigation
+- Parallel ramps required at all steps; no step-only + robot lift solutions
+
+**3. Human-Robot Interaction Interfaces**
+- Public-space robot interaction terminal height: 1.1-1.5m (serving standing adults and wheelchair users)
+- Minimum robot display size: ≥10 inches, supporting large-text mode and voice interaction
+- Robot status indicators during operation: green (normal), yellow (degraded/caution), red (stopped/fault), blue (emergency/drill)
+- Audible prompt when approaching pedestrians (≤55dB, no startling sounds) or light prompt
+
+**4. Safety Facilities**
+- Emergency stop buttons every 200m along robot test sections (height 1.0-1.2m, red, prominent signage)
+- Signal machines at test section entrances (Protocol 1909 visual language) showing current test status, robot count, speed limit
+- Removable flexible barriers between robot lanes and pedestrian paths (installed during testing, removed during non-test periods)
+- Surveillance cameras in test sections (safety monitoring only, no facial recognition, data retention ≤7 days)
+
+**5. East Wing Xiaoyuehe Embodied AI Native Block (Example)**
+
+The East Wing Xiaoyuehe Scenario Empowerment Wing is positioned as an **"Embodied AI Native Block"** — not "placing robots" on existing streets, but designing for human-robot coexistence from the design stage:
+
+- **Main road**: Vehicle-pedestrian separation; 2.5m wide "human-robot shared zone" on the south side of the motor vehicle lane (pedestrian 1.3m + robot 1.2m), flexible barrier
+- **Green corridor interface**: A "robot transfer station" at the intersection of Xiaoyuehe and Jingzhang Green Corridor — delivery robots transfer goods here, guide robots switch between indoor/outdoor modes
+- **Test plaza**: ~800㎡ multi-functional test plaza at node E-03 with transformable ground surfaces (simulating grass/tiles/steps/slopes) for robot adaptability testing; serves as civic activity plaza during non-test periods
+- **Charging stations**: Robot charging stations every 500m along the test section (doubling as public seating and information kiosks), supporting wireless charging and battery swap
+
+**6. Relationship with Protocol 1909**
+
+The Embodied AI Spatial Guidelines are the physical-space implementation of Protocol 1909:
+- G1 Token Gate → Robot identity and permissions (which robot can operate in which area)
+- G2 Interlock Gate → Physical spatial isolation + community authorization (are barriers in place, does community agree)
+- G3 Block Gate → Runtime safety (is the robot in the designated lane, is it speeding, is it approaching pedestrians)
+
+The spatial guidelines define "where robots can operate"; Protocol 1909 defines "under what conditions robots can operate." Together they form a complete access framework for embodied AI entering the city.
+
+> These guidelines are conceptual design guidance. All specific parameters (corridor widths, slopes, speed limits, safety facility spacing) must be determined based on robot technical standards, traffic safety assessments, and relevant department approvals. The guidelines do not constitute a replacement for or deviation from current regulations.
+
+### Original Mechanism 5: Progressive Data Filling
+
+Urban design typically assumes a linear process of "complete data → design output," but this proposal faces a reality: the organizer has not yet provided official precise redlines, as-built building surveys, ownership ledgers, traffic surveys, or municipal capacity data. Rather than回避 this gap, this proposal proposes **Progressive Data Filling** — completing conceptual design under incomplete data conditions, and iteratively updating through spatial version control as official data is gradually released, enabling the proposal to smoothly transition from "conceptual recommendation" to "implementable plan."
+
+**1. Three-tier Data Maturity Classification**
+
+| Data Level | Definition | Current Status | Corresponding Design Depth |
+|-----------|----------|--------------|--------------------------|
+| **L1 Provisional** | Rough placeholder geometry/public report data provided by organizer, not officially verified | site_boundary, key_areas, buildings, roads all provisional | Concept plan: spatial structure, functional positioning, scenario planning |
+| **L2 Background** | Publicly verifiable statistical bulletins, official press releases, open data (OSM etc.), traceable sources but not verified | Haidian GDP/AI industry/population/railway ridership, Jingzhang green corridor open data | Concept deepening: indicator estimation, case benchmarking, implementation path |
+| **L3 Formal** | Officially verified data released by organizer or competent authority (precise redlines, survey results, ownership ledgers, special surveys) | Not yet provided | Regulatory depth: land use indicators, retain/renovate/demolish determination, municipal capacity, traffic organization |
+
+**2. Design Depth Corresponding to Data Levels**
+
+All spatial recommendations in this proposal are currently based on L1+L2 data, and are therefore explicitly labeled as "conceptual recommendations / for professional teams to deepen," without outputting L3-level regulatory indicators (FAR, building height, retain/renovate/demolish determination). When the organizer releases L3 data, the proposal upgrades through the following mechanisms:
+- **Geometry recalculation**: Official polygons replace provisional boundary, all area indicators (site_area, key_area, green_ratio, public_space_ratio) automatically recalculated under EPSG:4548 projection
+- **Building update**: Real surveyed buildings replace conceptual massing, retain/renovate/demolish determination based on structural safety/heritage status/ownership ledger
+- **Indicator locking**: Land use classification, development intensity, supporting facilities upgrade from "conceptual direction" to "regulatory indicators"
+- **Version iteration**: Each data upgrade triggers spatial version control's feature branch→test→merge workflow, preserving historical versions traceably
+
+**3. Version Iteration Trigger Conditions**
+
+| Trigger Event | Iteration Action | Version Change |
+|-------------|----------------|---------------|
+| Organizer releases official precise redline | Replace site_boundary/key_areas, recalculate all area indicators | minor → v2.x+1 |
+| As-built building survey data released | Rebuild buildings.geojson, output retain/renovate/demolish conceptual classification | minor → v2.x+1 |
+| Ownership ledger/lease data released | Update implementation path and phasing plan, clarify responsible entities | minor → v2.x+1 |
+| Traffic survey/municipal capacity special report released | Refine traffic organization and municipal facility layout | minor → v2.x+1 |
+| Regulatory planning initiated | Proposal upgrades from conceptual recommendation to regulatory depth, all indicators locked | major → v3.0 |
+
+**4. Relationship with Spatial Version Control**
+
+Progressive Data Filling is the data-layer application of Spatial Version Control (Original Mechanism 3):
+- Data release = new feature branch (testing the proposal under new data in isolated zones)
+- Indicator recalculation = synthetic testing (verifying indicator consistency under new data)
+- Community公示 = field verification (V3 phase, collecting resident feedback)
+- Proposal merge = data formally incorporated into main version
+- Data error/dispute = rollback to previous stable version
+
+The significance of this mechanism: it acknowledges that urban AI design is not "one-time delivery" but "data-driven continuous iteration"; it gives the organizer and community confidence — even if current data is incomplete, the proposal framework is established, and when data arrives it can be upgraded quickly and traceably, rather than starting over.
+
+> This mechanism is conceptual methodology. Specific data release timelines, recalculation workflows, and version management specifications need to be negotiated with the organizer. All current conclusions based on L1/L2 data are labeled with data level and source, and do not impersonate L3 official verified data.
+
 ## Design Scope: Urban Renewal and Regulatory-Depth Urban Design
 
 Overall structure: "one spine, three cores, two wings, multiple nodes": the Jingzhang green corridor as innovation spine threading three cores, west wing tech services, east wing scenario empowerment, nodes as perceivable AI scenarios and public spaces.
@@ -296,6 +403,19 @@ Overall structure: "one spine, three cores, two wings, multiple nodes": the Jing
 - LU-006 East Wing Scenario Empowerment (08 public administration and public services)
 
 Six zones cover the design scope without overlap. Land use codes are conceptual mappings per the *Guides for Land Use Classification in Territorial Spatial Planning*, subject to final regulatory plan.
+
+**Conceptual internal land use composition** (functional breakdown based on positioning, not statutory land use; area ratios are design guidance):
+
+| Zone | R&D/Office | Residential | Commercial/Service | Public Space | Green | Roads/Squares | Municipal/Other |
+|------|-----------|-------------|-------------------|-------------|-------|--------------|----------------|
+| Zhongzhiyuan (191.9ha) | 40% (pilot+R&D) | 5% (talent apartments) | 5% (supporting retail) | 15% (showcase+events) | 20% | 10% | 5% |
+| AI Origin Community (104.3ha) | 30% (mixed office) | 25% (talent+community) | 10% (neighborhood retail) | 15% (plaza+theater) | 12% | 5% | 3% |
+| Dazhongsi (72.4ha) | 35% (business office) | 10% (renewal residential) | 25% (commercial/consumer) | 10% (gateway plaza) | 10% | 7% | 3% |
+| West Wing Tech Services | 40% (tech services) | 25% (supporting residential) | 15% (commercial services) | 5% | 10% | 3% | 2% |
+| East Wing Scenario Empowerment | 15% (scenario testing) | 35% (residential communities) | 10% (neighborhood amenities) | 15% (test plazas) | 15% | 7% | 3% |
+| Jingzhang Green Corridor (outside cores) | — | — | 5% (station retail) | 20% (event spaces) | 65% | 8% | 2% |
+
+> The above ratios are conceptual functional composition guidance derived from each zone's positioning, not a statutory land use balance sheet. Precise land use nature and area will be determined during regulatory plan preparation when official redlines are provided (see Progressive Data Filling L3 level). Full-belt conceptual summary: R&D/office ~28%, residential ~20%, commercial/service ~12%, public space ~13%, green ~20%, roads ~5%, municipal ~2%.
 
 **Building renewal**: Retain industrial heritage skeleton as cultural anchor, convert to display/experiment spaces; new construction primarily low-mid-rise R&D blocks. Specific demolition/retention classification, building heights, and FAR are all listed as pending regulatory plan conditions — no approval conclusions. Conceptual building massing in buildings.geojson, 441 blocks total (Zhongzhiyuan 256, AI Origin 109, Dazhongsi 76).
 
@@ -318,6 +438,19 @@ Positioning: AI full-stack autonomous innovation策源地. **Real anchors**: Bei
 
 Spatial structure: shared pilot layer along the spine, open compute sandbox (SC-04) and model red-team testbed (SC-03), open-source showcase gallery (LM-02). Building renewal: retain existing factories for shared pilot and display (including Model Machine Hall Type C); new construction uses perimeter-block layout with ~40 blocks and 256 building segments along street edges. Transport: metro station integration + slow-traffic priority, near Lines 13/18. Implementation risk: industrial heritage structural load pending special assessment.
 
+**Zhongzhiyuan Concise Urban Design Guidelines** (conceptual recommendations, for professional teams to develop):
+
+| Guideline Dimension | Conceptual Direction |
+|--------------------|---------------------|
+| **Functional mix** | R&D pilot 40% + public space 15% + green 20% + roads/squares 10% + supporting retail 5% + talent apartments 5% + municipal 5%; encourage ground-floor overhead as pilot display and public activity interface |
+| **Height direction** | Primarily mid-low rise (3-6 floors) R&D blocks; Model Machine Hall (Type C) and Compute Water Tower (Type A) as signature high points (conceptual height 15-24m); overall skyline restrained, coordinated with Xueyuan Road university district scale |
+| **Public space interface** | Low-intensity, high-transparency along Jingzhang green corridor to ensure visual penetration; continuous ground-floor public belt along spine (showcase, cafes, shared meeting rooms); 5-min walking coverage of public space |
+| **Street guidelines** | Internal streets slow-traffic priority, motor vehicles speed limit 20km/h; suggested section: slow-traffic 3m + green belt 2m + vehicle lane 6m + slow-traffic 3m; encourage building setbacks forming pocket parks and outdoor work areas |
+| **Signature spaces** | Model Machine Hall (industrial heritage conversion, large-span space for compute cabinets), Compute Water Tower (vertical compute node + urban landmark), Open Source Plaza (outdoor hackathon venue), Pilot Corridor (second-floor slow-traffic system connecting blocks) |
+| **Character control** | Continue industrial heritage fabric; new construction uses light gray metal + glass + fair-faced concrete, restrained warm lighting; blue-green corridors as continuous visual base |
+
+> The above is a conceptual guideline framework. Specific heights, FAR, setbacks, and indicators are subject to regulatory plan and urban design guideline approval.
+
 ### Beijing AI Origin Community (Middle, ~104.3 ha)
 
 Positioning: World-class AI innovation ecosystem and 24-hour mixed-life anchor. **Real anchors**: Tsinghua, PKU, CAS Institute of Automation/Software/Physics, BAAI; AI Origin Community already hosts 200+ AI companies (Dongsheng Building, Tsinghua Science Park, Zhiyuan Building); Wang Huiwen's "Golden Frame" core. Spatial structure: R&D+residential mixed blocks, ground-floor public activity belt, Zhimai Origin Stele (LM-01) at central plaza, pocket park GR-003. Buildings: perimeter residential blocks, ~23 blocks with 109 building segments and internal courtyards. AI scenarios: AI health navigation (SC-05), AI education space (SC-06), AI legal assistant (SC-07), developer walk (LM-03/SC-01). Implementation risk: residential mixed-use requires public participation.
@@ -325,6 +458,19 @@ Positioning: World-class AI innovation ecosystem and 24-hour mixed-life anchor. 
 ### Dazhongsi AI Industry Cluster (South, ~72.4 ha)
 
 Positioning: Intelligent native new business forms and industry gateway. **Real anchors**: Dazhongsi Station (Lines 12/13), Zhongkun Plaza; BUPT, BNU, Beijing Jiaotong University, CUFE; one of two pilot areas in Haidian's official "Two Zones, One Belt, Multiple Points" AI district plan (the other being Wudaokou), Jingzhang innovation exchange belt. Spatial structure: business+consumer+test ground, Global AI Milestone Pavilion (LM-04) at gateway plaza. Buildings: perimeter commercial blocks, ~15 blocks with 76 building segments, retail south/offices north with active corridor frontage. AI scenarios: robot delivery corridor (SC-08, test/verification), autonomous shuttle (SC-09, test/verification), AI cultural guide (SC-10), AI customized retail (SC-13), AI finance and compliance advisor (SC-14), AI immersive experience space (SC-15). Implementation risk: commercial ownership and engineering conditions pending confirmation.
+
+**Dazhongsi Concise Urban Design Guidelines** (conceptual recommendations, for professional teams to develop):
+
+| Guideline Dimension | Conceptual Direction |
+|--------------------|---------------------|
+| **Functional mix** | Business office 35% + commercial/consumer 25% + public space 10% + green 10% + renewal residential 10% + roads/squares 7% + municipal 3%; retail south/offices north,强化 commercial interface along North 3rd Ring Road and metro stations |
+| **Height direction** | Primarily mid-high rise (8-15 floors) business clusters; signature towers on both sides of gateway plaza (conceptual height 40-60m); gradually lowering to low-mid rise along green corridor, forming "high north, low south, transparent corridor" skyline |
+| **Public space interface** | Gateway Plaza (LM-04 Global AI Milestone Pavilion) as south entrance core, conceptual area 0.8-1.2ha; continuous commercial+display belt along green corridor, ground-floor overhead rate conceptually ≥30%, ensuring visual corridor from green corridor to North 3rd Ring Road |
+| **Street guidelines** | North 3rd Ring Road side traffic-oriented, internal streets slow-traffic priority; suggest dedicated robot delivery lanes (connecting SC-08) and autonomous shuttle stops (connecting SC-09); suggested section: slow-traffic 3m + robot lane 1.5m + vehicle lane 7m + slow-traffic 3m |
+| **Signature spaces** | Global AI Milestone Pavilion (gateway landmark + digital art installation), AI Immersive Experience District (SC-15, variable exhibition space), Robot Test Plaza (delivery+shuttle joint test ground), Jingzhang Memory Wall (railway heritage cultural display) |
+| **Character control** | Business buildings use glass+metal curtain walls, commercial interfaces use warm-tone stone+wood veneer, lighting primarily warm white, gateway plaza with dynamic lighting installation (linked to AI data) |
+
+> The above is a conceptual guideline framework. Specific heights, FAR, setbacks, and indicators are subject to regulatory plan and urban design guideline approval.
 
 ![Three Key Areas Detailed Design: Zhongzhiyuan, AI Origin, Dazhongsi](assets/figures/key-areas.png)
 
@@ -427,7 +573,7 @@ Taking the middle core AI Origin Community (104.3 ha) as an example, this propos
 | Resident (all ages) | Daily life, health, education, public services | Community center, pocket parks, health station, slow paths | Health navigation, accessible wayfinding assistant, civic issue router | Data minimization, no secondary use |
 | Urban Manager | Efficient management, rapid response, data decisions | Operations center, corridor-wide sensor network | Civic issue router, incident alert, digital twin | No individual monitoring, data for public good |
 
-### AI Scenario Cards (15, including 4 test/verification)
+### AI Scenario Cards (18, including 7 test/verification)
 
 | ID | Scenario | Target Users | Spatial Location | Status | Privacy/Human Review |
 |----|----------|-------------|-----------------|--------|---------------------|
@@ -446,13 +592,16 @@ Taking the middle core AI Origin Community (104.3 ha) as an example, this propos
 | SC-13 | AI Custom Retail Experience | Consumers/brands | Dazhongsi commercial spaces | Concept | No facial recognition, preference data local storage |
 | SC-14 | AI Finance & Compliance Advisor | Founders/SMEs | Dazhongsi business spaces | Concept | Does not replace licensed institutions, refers to humans |
 | SC-15 | AI Immersive Experience Space | Visitors/families/students | Dazhongsi gateway area | Concept | Content moderation + age rating, no biometric collection |
+| SC-16 | Humanoid Robot Food Service Testing | Consumers/merchants | Dazhongsi commercial spaces | **Test/Verification** | No biometric collection, manual order review |
+| SC-17 | Humanoid Robot Guide & Reception | Visitors/citizens | 4 landmarks + green corridor nodes | **Test/Verification** | Location data current session only, no tracking |
+| SC-18 | Emergency Rescue Robot Drills | Emergency departments/public | Green corridor open spaces | **Test/Verification** | Drill times publicized, no personal imagery stored |
 
-All scenarios follow three principles: data minimization, human in the loop, test ≠ operation. Test/verification scenarios (SC-03/04/08/09) are explicitly labeled as test status, not represented as approved operations.
+All scenarios follow three principles: data minimization, human in the loop, test ≠ operation. Test/verification scenarios (SC-03/04/08/09/16/17/18) are explicitly labeled as test status, not represented as approved operations. SC-16/17/18 align with the 21 real-scene challenges of the 2nd World Humanoid Robot Games, serving as urban-level translation testing from "arena to daily life."
 
 
-**First-Year Candidate Organizations and Milestones for Four Test Verification Cards (conceptual suggestions, pending government coordination)**:
+**First-Year Candidate Organizations and Milestones for Seven Test Verification Cards (conceptual suggestions, pending government coordination)**:
 
-The following suggests candidate partner types and directions for the four test verification scenario cards (SC-03/04/08/09), with test milestones. Candidate organizations are based on public information about entities already present in Haidian or with high technical alignment; this does not represent established partnerships.
+The following suggests candidate partner types and directions for the seven test verification scenario cards (SC-03/04/08/09/16/17/18), with test milestones. Candidate organizations are based on public information about entities already present in Haidian or with high technical alignment; this does not represent established partnerships. SC-16/17/18 prioritize connections with enterprises participating in the World Humanoid Robot Games and Haidian's embodied intelligence innovation industrial park.
 
 **SC-03 Model Red-Team Testbed (Zhongzhiyuan secured zone)**:
 
@@ -499,6 +648,10 @@ The following suggests candidate partner types and directions for the four test 
 | M3 Expansion evaluation | Y2 Q2 | 90 consecutive days zero incidents; pedestrian interference <=0.5/100km; satisfaction >=70% |
 | M4 Expansion decision | Y2 Q3 | Pass -> apply for expansion; fail -> suspend and remediate |
 
+![SC-08 Low-Speed Robot Delivery concept: delivery robot coexisting with pedestrians on green corridor slow lane](assets/figures/scenario-robot-delivery.jpg)
+
+> Conceptual design intention image (AI-assisted generation, not real scene, not final plan).
+
 **SC-09 Autonomous Shuttle (inter-core conceptual test segment)**:
 
 | Candidate Direction | Suggested Partner Type | First-Year Input (conceptual) | Cooperation Model |
@@ -513,6 +666,10 @@ The following suggests candidate partner types and directions for the four test 
 | M2 First tests | Y1 Q4 | <=4 L4 buses enter; takeover rate <=0.2/100km; on-time >=90% |
 | M3 Limited passenger service | Y2 Q1 | After safety assessment, open to public; >=200 daily riders |
 | M4 Expansion evaluation | Y2 Q4 | 90 consecutive days zero at-fault incidents; satisfaction >=4.0/5.0; pass -> apply for full 9km |
+
+![SC-09 Autonomous Shuttle concept: L4 micro-circulation bus with V2X roadside units by green corridor](assets/figures/scenario-autonomous-shuttle.jpg)
+
+> Conceptual design intention image (AI-assisted generation, not real scene, not final plan).
 
 
 **Fallback Paths If Candidate Organizations Do Not Materialize**:
@@ -552,8 +709,17 @@ The following suggests candidate partner types and directions for the four test 
 **Dazhongsi intelligent native new business scenarios** (SC-13/14/15):
 
 - **SC-13 AI Custom Retail Experience**: AI-assisted personalized customization in Dazhongsi commercial spaces — consumers describe needs in natural language, AI generates designs and produces samples in-store; AR try-on; AI styling advice. No facial recognition, preference data stored locally only.
+
+![SC-13 AI Custom Retail concept: creation bar mode, consumers co-design with AI](assets/figures/scenario-ai-retail.jpg)
+
+> Conceptual design intention image (AI-assisted generation, not real scene, not final plan).
+
 - **SC-14 AI Finance & Compliance Advisor**: One-stop AI financial services for AI founders and SMEs — AI-assisted business plan generation, valuation reference, policy matching, IP search, contract initial review. Does not replace banks/lawyers/accountants; all advice labeled "non-professional opinion."
 - **SC-15 AI Immersive Experience Space**: AI-themed immersive experience at Dazhongsi gateway — visitors co-generate Jingzhang railway historical scenes, future AI city visions, personal AI portraits with AI; AI-driven interactive art installations; multilingual AI guide. Content human-reviewed, age-zoned, no iris/fingerprint biometrics.
+
+![SC-15 AI Immersive Experience Space concept: former industrial space transformed into AI historical immersion](assets/figures/scenario-immersive-space.jpg)
+
+> Conceptual design intention image (AI-assisted generation, not real scene, not final plan).
 
 ![Transportation and Blue-Green System: Road Network and Public Space](assets/figures/mobility-bluegreen.png)
 
@@ -588,6 +754,38 @@ Jingzhang green corridor as continuous blue-green and public activity axis. Gree
 4. **LM-04 Global AI Milestone Pavilion**: Dazhongsi gateway plaza, global AI development milestones display.
 
 Landmarks are conceptual designs, not approved for construction. Character: railway heritage fabric + light gray metal glass + restrained warm light + blue-green base.
+
+![LM-01 Zhimai Origin Stele concept: railway signal merged with AI neural network community landmark](assets/figures/scenario-origin-monument.jpg)
+
+![LM-02 Open Source Showcase Gallery concept: old factory converted to China's open-source AI hall of fame](assets/figures/scenario-opensource-gallery.jpg)
+
+![LM-03 Developer Walk concept: night code starlight walkway, glowing code between rails](assets/figures/scenario-developer-walkway.jpg)
+
+![LM-04 Global AI Milestone Pavilion concept: interactive pavilion at Dazhongsi gateway plaza](assets/figures/scenario-ai-milestone-pavilion.jpg)
+
+> Conceptual design intention images (AI-assisted generation, not real scene, not final plan).
+
+**Typical Public Space Node Concepts**:
+
+![Wudaokou Stitching Plaza concept: level crossing converted to digital intersection, east-west stitching core node](assets/figures/scenario-wudaokou-plaza.jpg)
+
+![Signal Plaza & Switch Plaza concept: railway switch art installation, signal lights mapping space status](assets/figures/scenario-signal-plaza.jpg)
+
+> Conceptual design intention images (AI-assisted generation, not real scene, not final plan).
+
+**More Scenario Concept Illustrations**:
+
+![SC-06 AI Education Space concept: modern learning space in AI Origin mixed-use block](assets/figures/scenario-ai-education.jpg)
+
+![SC-05 AI Health Navigation Station concept: community health service space with AI-assisted consultation](assets/figures/scenario-ai-health.jpg)
+
+![Zhongzhiyuan Compute Center concept: railway water-tower inspired compute building, night data visualization](assets/figures/scenario-compute-center.jpg)
+
+![Jingzhang Green Corridor Night View concept: 9km linear park at night, Zhimai heartbeat light river and glowing code](assets/figures/scenario-greenway-night.jpg)
+
+![Talent Housing Community concept: warm residential space in AI Origin community with shared services on ground floor](assets/figures/scenario-talent-housing.jpg)
+
+> Conceptual design intention images (AI-assisted generation, not real scene, not final plan).
 
 ![Core Metrics Recomputation and Evidence Chain](assets/figures/metrics-evidence.png)
 
@@ -689,19 +887,19 @@ All project types, implementing entities, and funding are conceptual suggestions
 | Long-term | 5-10 years | Dazhongsi industry gateway + wings mature operations + Urban OS iteration + global brand | Billions to tens of billions RMB | Social capital primarily + operating revenue reinvestment |
 | **Total** | 10 years | Full corridor built and operated | **Tens of billions RMB (pending feasibility)** | Public/private capital phased progressively |
 
-**Near-term (1-3 years) project breakdown** (conceptual order of magnitude, not investment commitment):
+**Near-term (1-3 years) project breakdown** (conceptual recalculable range, not investment commitment, pending feasibility study):
 
-| No. | Project | Spatial Carrier | Main Content | Investment Scale (conceptual) | Implementing Entity Suggestion |
-|-----|---------|----------------|-------------|-------------------------------|-------------------------------|
-| N-01 | Zhimai Origin Plaza & corridor demonstration segment | AI Origin center + ~1km corridor | Plaza paving, origin stele, "heartbeat" light installation, seating/shade/WiFi/sensors, forest theater renovation | 100M RMB level | District SOE + Parks Bureau |
-| N-02 | Urban OS infrastructure (Phase I) | Full corridor + demonstration segment | Fiber backbone, edge compute nodes, sensors, digital twin base, data governance platform | 100M RMB level | District Tech Bureau + operators |
-| N-03 | AI Origin mixed renewal demonstration | Wudaokou/Zhichunlu renewable parcels (area pending title verification) | Talent apartments, co-working, community facilities, street interface renovation | Hundreds of millions to billions RMB | Urban renewal platform + social capital |
-| N-04 | AI scenario testing environment | East Wing slow path + inter-core connector roads | Robot delivery dedicated lane signage/signals, autonomous shuttle test road conceptual segment, V2X roadside units | 100M RMB level | District Tech Bureau + traffic police + enterprises |
-| N-05 | Open Source Showcase Gallery | Zhongzhiyuan old factory (area pending title verification) | Factory renovation, exhibition installations, multi-purpose hall, cafe/bookstore | 100M RMB level | District SOE + operator |
-| N-06 | Pre-design + contingencies | Full corridor | Urban design deepening, regulatory plan study, feasibility, schematic design, community participation, contingencies | 100M RMB level | District Planning Branch |
-| | **Near-term total** | | | **Billions RMB (pending feasibility)** | |
+| No. | Project | Conceptual Scale | Unit Cost Reference | Investment Range (conceptual) | Calculation Logic | Implementing Entity Suggestion |
+|-----|---------|-----------------|--------------------|-------------------------------|-------------------|-------------------------------|
+| N-01 | Zhimai Origin Plaza & corridor demonstration segment | Plaza 0.5-1ha + corridor demo 1km (~5-8ha improvement) | Public space renovation 3000-5000 RMB/㎡ (ref. Yangpu Riverside); corridor improvement 50-100M RMB/km | **100-250M RMB** | Plaza 0.5-1ha×3000-5000/㎡=15-50M; corridor 1km×50-100M=50-100M; installations+furniture 35-100M | District SOE + Parks Bureau |
+| N-02 | Urban OS infrastructure (Phase I) | Full corridor 9km sensing + fiber + 3-5 edge nodes + digital twin platform | Smart city infrastructure 5-10M RMB/km; platform development 30-50M | **80-150M RMB** | 9km×5-10M/km=45-90M; platform+nodes 35-60M | District Tech Bureau + operators |
+| N-03 | AI Origin mixed renewal demonstration | Renewable parcels conceptual 5-10ha, dev volume ~100-200K ㎡ | Comprehensive dev 10-20K RMB/㎡ (ref. King's Cross/domestic urban renewal); public portion ~300-500M | **Public portion 300-500M RMB** (social capital additional 1-3B) | Public space+amenities+street interface ~300-500M; development portion borne by social capital, not counted in public investment | Urban renewal platform + social capital |
+| N-04 | AI scenario testing environment | East Wing test segment 1km + inter-core connector conceptual + V2X roadside units | V2X roadside 0.5-1M RMB/km; robot lane signage 1-2M/km; test equipment 30-50M | **50-120M RMB** | Road renovation 15-30M; V2X+signals 15-40M; test equipment+insurance 20-50M | District Tech Bureau + traffic police + enterprises |
+| N-05 | Open Source Showcase Gallery | Old factory renovation 5-10K ㎡ (incl. exhibition) | Factory renovation 3-8K RMB/㎡ (ref. Station F 58K/㎡ all-in, domestic lower); exhibition 20-50M | **40-130M RMB** | Building renovation 5-10K㎡×3-8K/㎡=15-80M; exhibition+MEP 25-50M | District SOE + operator |
+| N-06 | Pre-design + contingencies | Full corridor | 8-12% of near-term public investment | **50-120M RMB** | (N-01+02+03 public+04+05)×8-12% = (570-1150M)×8-12% | District Planning Branch |
+| | **Near-term public investment total** | | | **620-1270M RMB** (median ~900-1000M) | Excluding N-03 social capital portion; including social capital near-term total ~2-4B | |
 
-> The above investment scales are conceptual judgments based on comparable project experience, not engineering feasibility or financial assessment, and do not constitute investment commitments. Specific investment amounts require title verification, schematic design, and engineering cost estimates.
+> The above investment ranges are recalculable estimates based on conceptual scale × comparable case unit costs, not engineering feasibility or financial assessment, and do not constitute investment commitments. Specific investment amounts require title verification, schematic design, and engineering cost estimates. N-03 social capital portion (1-3B) is borne by the development entity and not counted in public fiscal investment. Horizontal case unit cost references see table below.
 
 **Investment leverage expectation**: Referencing High Line and King's Cross, public space investment has significant catalytic effects on surrounding private development (case leverage ratios ~1:5-1:13). This proposal expects near-term public investment to catalyze several times its value in social investment, but the specific leverage ratio depends on land supply pace, industry attraction progress, and policy environment, to be quantified during feasibility study.
 
@@ -805,10 +1003,16 @@ Application → Joint Review → Trial Evaluation → Acceptance → Annual Revi
 
 **Annual event system and long-term operations (agent.6)**:
 - Annual **Zhimai Jing-Zhang Open Week** (every September, commemorating Jingzhang Railway opening): developer conference + open-source showcase + scenario open day + AI art festival;
+- **ZGC Forum · Zhimai AI Scenario Special Session** (every late March, aligned with Zhongguancun Forum): Referencing the Zhongguancun Forum (held every late March in Beijing, 2026 edition attracting guests from 100+ countries with 100+ forums, including an AI Theme Day), host a "Zhimai AI-Native Urban Scenario Special Session" during the forum to release the annual scenario list, showcase scenario testing results, and connect with international technology transactions; organize forum guests to visit Zhimai Jing-Zhang innovation belt, forming a spring linkage of "ZGC Forum voice + Zhimai scenario implementation";
+- **Jingzhang Robot Challenge · Spring Endurance Segment** (every mid-April, aligned with Yizhuang Humanoid Robot Half Marathon): Referencing the Beijing Yizhuang Humanoid Robot Half Marathon (held every mid-April in Beijing Economic-Technological Development Area, 2026 2nd edition with 100+ robot teams and 12,000 human participants, world's first humanoid robot marathon brand event), use the 9km Jingzhang green corridor linear space as a "robot endurance test segment", serving as a training track/pre-season points competition for the Yizhuang half marathon, conducting long-distance autonomous navigation, obstacle avoidance, and battery life testing; host a "Jingzhang-Yizhuang Robot Exchange Day" during the half marathon, organizing cross-district exchanges among participating teams, forming a spring linkage of "Yizhuang racing + Jingzhang scenario";
+- **World Robot Conference · Zhimai Scenario Exhibition** (every mid-to-late August, aligned with World Robot Conference): Referencing the World Robot Conference (held every mid-to-late August in Beijing Yizhuang, 2026 edition with 300+ exhibitors, 557,000 attendees, releasing "Beijing Robot Domain" strategy), host a "Zhimai AI-Native Urban Scenario Exhibition" during the conference to showcase 18 scenario cards testing results, release scenario verification reports, and organize enterprise matchmaking; host a "Zhimai Scenario Open Day" during the conference, inviting exhibitors and visitors to experience on-site, forming a summer linkage of "Yizhuang exhibition + Zhimai scenario";
+- **Jingzhang Robot Challenge · Autumn Scenario Segment** (every late August, concurrent with World Humanoid Robot Games): Referencing the World Humanoid Robot Games (held every late August at Beijing National Speed Skating Oval, 2026 2nd edition attracting 666 teams from 16 countries, 2,056 robots, 51 events), use the East Wing test corridor and green corridor open space to set urban-level real-scene tasks (delivery, guide, emergency, food service, retail, office services, etc.), serving as the Games' urban off-site points competition, with results connectable to Games qualifiers; host a "Zhimai Open Day" during the Games, inviting participating teams and audiences to visit the innovation belt scenarios, forming an autumn linkage of "Ice Ribbon competition + Zhimai scenario verification";
 - AI Origin Summit (spring), Open Source Hackathon (quarterly), Red Team Challenge (semi-annual), Public AI Day (monthly);
 - Developer community operations: residency program, mentor network, open-source bounties, community governance, knowledge accumulation — five mechanisms;
 - Scenario open operations: annual scenario list → application → safety assessment → ethics review → testing → evaluation → scale/terminate;
 - Conversion path: research → pilot → incubation → capital → customers → scenarios → feedback iteration.
+
+**Beijing Tech Event Ecosystem Linkage (conceptual suggestion)**: Zhimai Jing-Zhang proactively connects with four major Beijing tech/robotics events, forming a "spring-summer-autumn" three-season five-event linkage pattern — March ZGC Forum (national-level tech voice) → April Yizhuang Half Marathon (robot racing endurance) → August World Robot Conference (industry exhibition and transactions) → August World Humanoid Robot Games (all-around competition) → September Zhimai Open Week (scenario verification and annual finale). The five events share participating teams, technical standards, enterprise resources, and media traffic. Zhimai provides real urban scenario testing capabilities, Zhongguancun provides a national-level platform, Yizhuang provides exhibition and racing tracks, and the Ice Ribbon provides a competition stage, jointly building Beijing's "Global AI Innovation and Robotics Event Capital" brand.
 
 **International communication strategy (agent.5)**:
 - **Multilingual content**: Core materials (proposal, logo explainer, scenario cards, Open Week website) in Chinese and English, with key pages expanding to Japanese/Korean/French/Spanish; English tagline "Zhimai Jing-Zhang: Where Railway Heritage Meets AI-Native Urbanism"

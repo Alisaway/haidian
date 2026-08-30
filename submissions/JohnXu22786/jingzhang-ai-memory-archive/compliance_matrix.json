@@ -1,0 +1,2189 @@
+{
+  "schema_version": "0.1.0",
+  "requirements": [
+    {
+      "requirement_id": "1.3.1",
+      "title_zh": "1.3.1",
+      "mandatory": true,
+      "status": "addressed",
+      "report_sections": [
+        "设计依据与资料清单",
+        "三层范围工作框架"
+      ],
+      "geojson_layers": [
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson",
+        "geometry/land_use.geojson",
+        "geometry/buildings.geojson",
+        "geometry/roads.geojson",
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson",
+        "geometry/constraints.geojson",
+        "geometry/phasing.geojson"
+      ],
+      "metrics": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "scenario_card_count",
+        "industry_test_scenario_count",
+        "persona_count",
+        "global_case_count",
+        "annual_program_count",
+        "phase_count",
+        "archive_provenance_completeness",
+        "audit_record_completeness"
+      ],
+      "drawings": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a3-booklet.en.pdf",
+        "drawings/a0-boards.pdf",
+        "drawings/a0-boards.en.pdf"
+      ],
+      "visual_sections": [
+        "总览地图",
+        "三层范围",
+        "重点区域",
+        "AI场景",
+        "核心指标",
+        "任务覆盖"
+      ],
+      "source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "DATA-SRC-AGENT-TASKBOOK-20260518",
+        "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+        "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+        "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+        "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+        "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+        "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+        "DATA-SRC-ELDERLY-SMART-TECH-PLAN-2020-45",
+        "SRC-CASE-FABLABS",
+        "SRC-CASE-STATIONF",
+        "SRC-CASE-BLOCK71",
+        "SRC-CASE-100-EXPERIMENTS",
+        "SRC-CASE-COMMON-VOICE",
+        "SRC-CASE-EUROPEANA",
+        "DATA-SRC-MOHURD-ARCH-DESIGN-DEPTH-2016",
+        "SRC-JZMA-GEOMETRY-AUTHORED-20260829"
+      ],
+      "standard_ids": [
+        "PROJECT-OFFICIAL-ANNOUNCEMENT",
+        "PROJECT-AGENT-OPEN-CALL-TASKBOOK",
+        "MOHURD-URBAN-DESIGN-MEASURES",
+        "MNR-LAND-USE-CLASSIFICATION-GUIDE",
+        "GENERATIVE-AI-INTERIM-MEASURES",
+        "BARRIER-FREE-ENVIRONMENT-LAW"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-HISTORY-001",
+        "A-CASE-001",
+        "A-OWNERSHIP-001",
+        "A-CONTROLS-001",
+        "A-BASELINE-001",
+        "A-RIGHTS-001",
+        "A-DATA-001",
+        "A-AI-001",
+        "A-OPERATIONS-001",
+        "A-BRAND-001"
+      ],
+      "self_check_ids": [
+        "deterministic_validation",
+        "spatial_review",
+        "visual_packaging",
+        "professional_evidence"
+      ],
+      "evidence_summary_zh": "三大定位以文化记忆、都市AI生活体验、AI融合创新三条线进入总体概念与空间结构。"
+    },
+    {
+      "requirement_id": "1.3.2",
+      "title_zh": "1.3.2",
+      "mandatory": true,
+      "status": "addressed",
+      "report_sections": [
+        "总体设计范围城市更新与控规深度城市设计",
+        "重点区域详细设计"
+      ],
+      "geojson_layers": [
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson",
+        "geometry/land_use.geojson",
+        "geometry/buildings.geojson",
+        "geometry/roads.geojson",
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson",
+        "geometry/constraints.geojson",
+        "geometry/phasing.geojson"
+      ],
+      "metrics": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "scenario_card_count",
+        "industry_test_scenario_count",
+        "persona_count",
+        "global_case_count",
+        "annual_program_count",
+        "phase_count",
+        "archive_provenance_completeness",
+        "audit_record_completeness"
+      ],
+      "drawings": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a3-booklet.en.pdf",
+        "drawings/a0-boards.pdf",
+        "drawings/a0-boards.en.pdf"
+      ],
+      "visual_sections": [
+        "总览地图",
+        "三层范围",
+        "重点区域",
+        "AI场景",
+        "核心指标",
+        "任务覆盖"
+      ],
+      "source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "DATA-SRC-AGENT-TASKBOOK-20260518",
+        "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+        "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+        "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+        "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+        "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+        "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+        "DATA-SRC-ELDERLY-SMART-TECH-PLAN-2020-45",
+        "SRC-CASE-FABLABS",
+        "SRC-CASE-STATIONF",
+        "SRC-CASE-BLOCK71",
+        "SRC-CASE-100-EXPERIMENTS",
+        "SRC-CASE-COMMON-VOICE",
+        "SRC-CASE-EUROPEANA",
+        "DATA-SRC-MOHURD-ARCH-DESIGN-DEPTH-2016",
+        "SRC-JZMA-GEOMETRY-AUTHORED-20260829"
+      ],
+      "standard_ids": [
+        "PROJECT-OFFICIAL-ANNOUNCEMENT",
+        "PROJECT-AGENT-OPEN-CALL-TASKBOOK",
+        "MOHURD-URBAN-DESIGN-MEASURES",
+        "MNR-LAND-USE-CLASSIFICATION-GUIDE",
+        "GENERATIVE-AI-INTERIM-MEASURES",
+        "BARRIER-FREE-ENVIRONMENT-LAW"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-HISTORY-001",
+        "A-CASE-001",
+        "A-OWNERSHIP-001",
+        "A-CONTROLS-001",
+        "A-BASELINE-001",
+        "A-RIGHTS-001",
+        "A-DATA-001",
+        "A-AI-001",
+        "A-OPERATIONS-001",
+        "A-BRAND-001"
+      ],
+      "self_check_ids": [
+        "deterministic_validation",
+        "spatial_review",
+        "visual_packaging",
+        "professional_evidence"
+      ],
+      "evidence_summary_zh": "三区两翼、三层范围和三节点形成研究—总体—详设传导。"
+    },
+    {
+      "requirement_id": "1.3.3",
+      "title_zh": "1.3.3",
+      "mandatory": true,
+      "status": "addressed",
+      "report_sections": [
+        "用地、建筑规模与拆改留方案",
+        "交通、轨道、市政与公共服务设施"
+      ],
+      "geojson_layers": [
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson",
+        "geometry/land_use.geojson",
+        "geometry/buildings.geojson",
+        "geometry/roads.geojson",
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson",
+        "geometry/constraints.geojson",
+        "geometry/phasing.geojson"
+      ],
+      "metrics": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "scenario_card_count",
+        "industry_test_scenario_count",
+        "persona_count",
+        "global_case_count",
+        "annual_program_count",
+        "phase_count",
+        "archive_provenance_completeness",
+        "audit_record_completeness"
+      ],
+      "drawings": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a3-booklet.en.pdf",
+        "drawings/a0-boards.pdf",
+        "drawings/a0-boards.en.pdf"
+      ],
+      "visual_sections": [
+        "总览地图",
+        "三层范围",
+        "重点区域",
+        "AI场景",
+        "核心指标",
+        "任务覆盖"
+      ],
+      "source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "DATA-SRC-AGENT-TASKBOOK-20260518",
+        "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+        "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+        "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+        "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+        "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+        "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+        "DATA-SRC-ELDERLY-SMART-TECH-PLAN-2020-45",
+        "SRC-CASE-FABLABS",
+        "SRC-CASE-STATIONF",
+        "SRC-CASE-BLOCK71",
+        "SRC-CASE-100-EXPERIMENTS",
+        "SRC-CASE-COMMON-VOICE",
+        "SRC-CASE-EUROPEANA",
+        "DATA-SRC-MOHURD-ARCH-DESIGN-DEPTH-2016",
+        "SRC-JZMA-GEOMETRY-AUTHORED-20260829"
+      ],
+      "standard_ids": [
+        "PROJECT-OFFICIAL-ANNOUNCEMENT",
+        "PROJECT-AGENT-OPEN-CALL-TASKBOOK",
+        "MOHURD-URBAN-DESIGN-MEASURES",
+        "MNR-LAND-USE-CLASSIFICATION-GUIDE",
+        "GENERATIVE-AI-INTERIM-MEASURES",
+        "BARRIER-FREE-ENVIRONMENT-LAW"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-HISTORY-001",
+        "A-CASE-001",
+        "A-OWNERSHIP-001",
+        "A-CONTROLS-001",
+        "A-BASELINE-001",
+        "A-RIGHTS-001",
+        "A-DATA-001",
+        "A-AI-001",
+        "A-OPERATIONS-001",
+        "A-BRAND-001"
+      ],
+      "self_check_ids": [
+        "deterministic_validation",
+        "spatial_review",
+        "visual_packaging",
+        "professional_evidence"
+      ],
+      "evidence_summary_zh": "正文、双语图件、GeoJSON、指标、矩阵和风险台账共同提供概念深度。"
+    },
+    {
+      "requirement_id": "1.4.1",
+      "title_zh": "1.4.1",
+      "mandatory": true,
+      "status": "addressed",
+      "report_sections": [
+        "更新项目清单、实施政策与分期计划",
+        "指标体系、面积复算与合规矩阵"
+      ],
+      "geojson_layers": [
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson",
+        "geometry/land_use.geojson",
+        "geometry/buildings.geojson",
+        "geometry/roads.geojson",
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson",
+        "geometry/constraints.geojson",
+        "geometry/phasing.geojson"
+      ],
+      "metrics": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "scenario_card_count",
+        "industry_test_scenario_count",
+        "persona_count",
+        "global_case_count",
+        "annual_program_count",
+        "phase_count",
+        "archive_provenance_completeness",
+        "audit_record_completeness"
+      ],
+      "drawings": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a3-booklet.en.pdf",
+        "drawings/a0-boards.pdf",
+        "drawings/a0-boards.en.pdf"
+      ],
+      "visual_sections": [
+        "总览地图",
+        "三层范围",
+        "重点区域",
+        "AI场景",
+        "核心指标",
+        "任务覆盖"
+      ],
+      "source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "DATA-SRC-AGENT-TASKBOOK-20260518",
+        "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+        "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+        "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+        "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+        "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+        "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+        "DATA-SRC-ELDERLY-SMART-TECH-PLAN-2020-45",
+        "SRC-CASE-FABLABS",
+        "SRC-CASE-STATIONF",
+        "SRC-CASE-BLOCK71",
+        "SRC-CASE-100-EXPERIMENTS",
+        "SRC-CASE-COMMON-VOICE",
+        "SRC-CASE-EUROPEANA",
+        "DATA-SRC-MOHURD-ARCH-DESIGN-DEPTH-2016",
+        "SRC-JZMA-GEOMETRY-AUTHORED-20260829"
+      ],
+      "standard_ids": [
+        "PROJECT-OFFICIAL-ANNOUNCEMENT",
+        "PROJECT-AGENT-OPEN-CALL-TASKBOOK",
+        "MOHURD-URBAN-DESIGN-MEASURES",
+        "MNR-LAND-USE-CLASSIFICATION-GUIDE",
+        "GENERATIVE-AI-INTERIM-MEASURES",
+        "BARRIER-FREE-ENVIRONMENT-LAW"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-HISTORY-001",
+        "A-CASE-001",
+        "A-OWNERSHIP-001",
+        "A-CONTROLS-001",
+        "A-BASELINE-001",
+        "A-RIGHTS-001",
+        "A-DATA-001",
+        "A-AI-001",
+        "A-OPERATIONS-001",
+        "A-BRAND-001"
+      ],
+      "self_check_ids": [
+        "deterministic_validation",
+        "spatial_review",
+        "visual_packaging",
+        "professional_evidence"
+      ],
+      "evidence_summary_zh": "总体概念以记忆基础设施回应全球AI产业高地与朝圣地目标，所有空间为概念建议。"
+    },
+    {
+      "requirement_id": "1.4.2",
+      "title_zh": "1.4.2",
+      "mandatory": true,
+      "status": "addressed",
+      "report_sections": [
+        "参考资料",
+        "设计依据与资料清单"
+      ],
+      "geojson_layers": [
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson",
+        "geometry/land_use.geojson",
+        "geometry/buildings.geojson",
+        "geometry/roads.geojson",
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson",
+        "geometry/constraints.geojson",
+        "geometry/phasing.geojson"
+      ],
+      "metrics": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "scenario_card_count",
+        "industry_test_scenario_count",
+        "persona_count",
+        "global_case_count",
+        "annual_program_count",
+        "phase_count",
+        "archive_provenance_completeness",
+        "audit_record_completeness"
+      ],
+      "drawings": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a3-booklet.en.pdf",
+        "drawings/a0-boards.pdf",
+        "drawings/a0-boards.en.pdf"
+      ],
+      "visual_sections": [
+        "总览地图",
+        "三层范围",
+        "重点区域",
+        "AI场景",
+        "核心指标",
+        "任务覆盖"
+      ],
+      "source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "DATA-SRC-AGENT-TASKBOOK-20260518",
+        "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+        "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+        "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+        "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+        "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+        "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+        "DATA-SRC-ELDERLY-SMART-TECH-PLAN-2020-45",
+        "SRC-CASE-FABLABS",
+        "SRC-CASE-STATIONF",
+        "SRC-CASE-BLOCK71",
+        "SRC-CASE-100-EXPERIMENTS",
+        "SRC-CASE-COMMON-VOICE",
+        "SRC-CASE-EUROPEANA",
+        "DATA-SRC-MOHURD-ARCH-DESIGN-DEPTH-2016",
+        "SRC-JZMA-GEOMETRY-AUTHORED-20260829"
+      ],
+      "standard_ids": [
+        "PROJECT-OFFICIAL-ANNOUNCEMENT",
+        "PROJECT-AGENT-OPEN-CALL-TASKBOOK",
+        "MOHURD-URBAN-DESIGN-MEASURES",
+        "MNR-LAND-USE-CLASSIFICATION-GUIDE",
+        "GENERATIVE-AI-INTERIM-MEASURES",
+        "BARRIER-FREE-ENVIRONMENT-LAW"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-HISTORY-001",
+        "A-CASE-001",
+        "A-OWNERSHIP-001",
+        "A-CONTROLS-001",
+        "A-BASELINE-001",
+        "A-RIGHTS-001",
+        "A-DATA-001",
+        "A-AI-001",
+        "A-OPERATIONS-001",
+        "A-BRAND-001"
+      ],
+      "self_check_ids": [
+        "deterministic_validation",
+        "spatial_review",
+        "visual_packaging",
+        "professional_evidence"
+      ],
+      "evidence_summary_zh": "统筹研究与区域协同用接口假设表达，未核实关系明确为待核验。"
+    },
+    {
+      "requirement_id": "1.4.3",
+      "title_zh": "1.4.3",
+      "mandatory": true,
+      "status": "addressed",
+      "report_sections": [
+        "统筹研究范围产业与未来城市研究",
+        "总体设计范围城市更新与控规深度城市设计"
+      ],
+      "geojson_layers": [
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson",
+        "geometry/land_use.geojson",
+        "geometry/buildings.geojson",
+        "geometry/roads.geojson",
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson",
+        "geometry/constraints.geojson",
+        "geometry/phasing.geojson"
+      ],
+      "metrics": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "scenario_card_count",
+        "industry_test_scenario_count",
+        "persona_count",
+        "global_case_count",
+        "annual_program_count",
+        "phase_count",
+        "archive_provenance_completeness",
+        "audit_record_completeness"
+      ],
+      "drawings": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a3-booklet.en.pdf",
+        "drawings/a0-boards.pdf",
+        "drawings/a0-boards.en.pdf"
+      ],
+      "visual_sections": [
+        "总览地图",
+        "三层范围",
+        "重点区域",
+        "AI场景",
+        "核心指标",
+        "任务覆盖"
+      ],
+      "source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "DATA-SRC-AGENT-TASKBOOK-20260518",
+        "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+        "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+        "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+        "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+        "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+        "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+        "DATA-SRC-ELDERLY-SMART-TECH-PLAN-2020-45",
+        "SRC-CASE-FABLABS",
+        "SRC-CASE-STATIONF",
+        "SRC-CASE-BLOCK71",
+        "SRC-CASE-100-EXPERIMENTS",
+        "SRC-CASE-COMMON-VOICE",
+        "SRC-CASE-EUROPEANA",
+        "DATA-SRC-MOHURD-ARCH-DESIGN-DEPTH-2016",
+        "SRC-JZMA-GEOMETRY-AUTHORED-20260829"
+      ],
+      "standard_ids": [
+        "PROJECT-OFFICIAL-ANNOUNCEMENT",
+        "PROJECT-AGENT-OPEN-CALL-TASKBOOK",
+        "MOHURD-URBAN-DESIGN-MEASURES",
+        "MNR-LAND-USE-CLASSIFICATION-GUIDE",
+        "GENERATIVE-AI-INTERIM-MEASURES",
+        "BARRIER-FREE-ENVIRONMENT-LAW"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-HISTORY-001",
+        "A-CASE-001",
+        "A-OWNERSHIP-001",
+        "A-CONTROLS-001",
+        "A-BASELINE-001",
+        "A-RIGHTS-001",
+        "A-DATA-001",
+        "A-AI-001",
+        "A-OPERATIONS-001",
+        "A-BRAND-001"
+      ],
+      "self_check_ids": [
+        "deterministic_validation",
+        "spatial_review",
+        "visual_packaging",
+        "professional_evidence"
+      ],
+      "evidence_summary_zh": "总体空间以连续慢行记忆轴和三区两翼回路表达，法定控制保持unknown。"
+    },
+    {
+      "requirement_id": "1.5.1.1",
+      "title_zh": "1.5.1.1",
+      "mandatory": true,
+      "status": "addressed",
+      "report_sections": [
+        "AI 创新生态、人才画像与 AI+ 场景",
+        "用地、建筑规模与拆改留方案"
+      ],
+      "geojson_layers": [
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson",
+        "geometry/land_use.geojson",
+        "geometry/buildings.geojson",
+        "geometry/roads.geojson",
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson",
+        "geometry/constraints.geojson",
+        "geometry/phasing.geojson"
+      ],
+      "metrics": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "scenario_card_count",
+        "industry_test_scenario_count",
+        "persona_count",
+        "global_case_count",
+        "annual_program_count",
+        "phase_count",
+        "archive_provenance_completeness",
+        "audit_record_completeness"
+      ],
+      "drawings": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a3-booklet.en.pdf",
+        "drawings/a0-boards.pdf",
+        "drawings/a0-boards.en.pdf"
+      ],
+      "visual_sections": [
+        "总览地图",
+        "三层范围",
+        "重点区域",
+        "AI场景",
+        "核心指标",
+        "任务覆盖"
+      ],
+      "source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "DATA-SRC-AGENT-TASKBOOK-20260518",
+        "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+        "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+        "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+        "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+        "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+        "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+        "DATA-SRC-ELDERLY-SMART-TECH-PLAN-2020-45",
+        "SRC-CASE-FABLABS",
+        "SRC-CASE-STATIONF",
+        "SRC-CASE-BLOCK71",
+        "SRC-CASE-100-EXPERIMENTS",
+        "SRC-CASE-COMMON-VOICE",
+        "SRC-CASE-EUROPEANA",
+        "DATA-SRC-MOHURD-ARCH-DESIGN-DEPTH-2016",
+        "SRC-JZMA-GEOMETRY-AUTHORED-20260829"
+      ],
+      "standard_ids": [
+        "PROJECT-OFFICIAL-ANNOUNCEMENT",
+        "PROJECT-AGENT-OPEN-CALL-TASKBOOK",
+        "MOHURD-URBAN-DESIGN-MEASURES",
+        "MNR-LAND-USE-CLASSIFICATION-GUIDE",
+        "GENERATIVE-AI-INTERIM-MEASURES",
+        "BARRIER-FREE-ENVIRONMENT-LAW"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-HISTORY-001",
+        "A-CASE-001",
+        "A-OWNERSHIP-001",
+        "A-CONTROLS-001",
+        "A-BASELINE-001",
+        "A-RIGHTS-001",
+        "A-DATA-001",
+        "A-AI-001",
+        "A-OPERATIONS-001",
+        "A-BRAND-001"
+      ],
+      "self_check_ids": [
+        "deterministic_validation",
+        "spatial_review",
+        "visual_packaging",
+        "professional_evidence"
+      ],
+      "evidence_summary_zh": "Z1/Z2/Z3三节点均有体验脚本、AI动作、人工兜底与退出条件。"
+    },
+    {
+      "requirement_id": "1.5.1.2",
+      "title_zh": "1.5.1.2",
+      "mandatory": true,
+      "status": "addressed",
+      "report_sections": [
+        "蓝绿空间、公共空间与城市风貌",
+        "更新项目清单、实施政策与分期计划"
+      ],
+      "geojson_layers": [
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson",
+        "geometry/land_use.geojson",
+        "geometry/buildings.geojson",
+        "geometry/roads.geojson",
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson",
+        "geometry/constraints.geojson",
+        "geometry/phasing.geojson"
+      ],
+      "metrics": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "scenario_card_count",
+        "industry_test_scenario_count",
+        "persona_count",
+        "global_case_count",
+        "annual_program_count",
+        "phase_count",
+        "archive_provenance_completeness",
+        "audit_record_completeness"
+      ],
+      "drawings": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a3-booklet.en.pdf",
+        "drawings/a0-boards.pdf",
+        "drawings/a0-boards.en.pdf"
+      ],
+      "visual_sections": [
+        "总览地图",
+        "三层范围",
+        "重点区域",
+        "AI场景",
+        "核心指标",
+        "任务覆盖"
+      ],
+      "source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "DATA-SRC-AGENT-TASKBOOK-20260518",
+        "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+        "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+        "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+        "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+        "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+        "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+        "DATA-SRC-ELDERLY-SMART-TECH-PLAN-2020-45",
+        "SRC-CASE-FABLABS",
+        "SRC-CASE-STATIONF",
+        "SRC-CASE-BLOCK71",
+        "SRC-CASE-100-EXPERIMENTS",
+        "SRC-CASE-COMMON-VOICE",
+        "SRC-CASE-EUROPEANA",
+        "DATA-SRC-MOHURD-ARCH-DESIGN-DEPTH-2016",
+        "SRC-JZMA-GEOMETRY-AUTHORED-20260829"
+      ],
+      "standard_ids": [
+        "PROJECT-OFFICIAL-ANNOUNCEMENT",
+        "PROJECT-AGENT-OPEN-CALL-TASKBOOK",
+        "MOHURD-URBAN-DESIGN-MEASURES",
+        "MNR-LAND-USE-CLASSIFICATION-GUIDE",
+        "GENERATIVE-AI-INTERIM-MEASURES",
+        "BARRIER-FREE-ENVIRONMENT-LAW"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-HISTORY-001",
+        "A-CASE-001",
+        "A-OWNERSHIP-001",
+        "A-CONTROLS-001",
+        "A-BASELINE-001",
+        "A-RIGHTS-001",
+        "A-DATA-001",
+        "A-AI-001",
+        "A-OPERATIONS-001",
+        "A-BRAND-001"
+      ],
+      "self_check_ids": [
+        "deterministic_validation",
+        "spatial_review",
+        "visual_packaging",
+        "professional_evidence"
+      ],
+      "evidence_summary_zh": "三节点由同一记忆轴、缝合联系、公共空间组件和证据状态连续串联。"
+    },
+    {
+      "requirement_id": "1.5.2.1",
+      "title_zh": "1.5.2.1",
+      "mandatory": true,
+      "status": "addressed",
+      "report_sections": [
+        "风险、版权与合规说明",
+        "参考资料"
+      ],
+      "geojson_layers": [
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson",
+        "geometry/land_use.geojson",
+        "geometry/buildings.geojson",
+        "geometry/roads.geojson",
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson",
+        "geometry/constraints.geojson",
+        "geometry/phasing.geojson"
+      ],
+      "metrics": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "scenario_card_count",
+        "industry_test_scenario_count",
+        "persona_count",
+        "global_case_count",
+        "annual_program_count",
+        "phase_count",
+        "archive_provenance_completeness",
+        "audit_record_completeness"
+      ],
+      "drawings": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a3-booklet.en.pdf",
+        "drawings/a0-boards.pdf",
+        "drawings/a0-boards.en.pdf"
+      ],
+      "visual_sections": [
+        "总览地图",
+        "三层范围",
+        "重点区域",
+        "AI场景",
+        "核心指标",
+        "任务覆盖"
+      ],
+      "source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "DATA-SRC-AGENT-TASKBOOK-20260518",
+        "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+        "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+        "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+        "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+        "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+        "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+        "DATA-SRC-ELDERLY-SMART-TECH-PLAN-2020-45",
+        "SRC-CASE-FABLABS",
+        "SRC-CASE-STATIONF",
+        "SRC-CASE-BLOCK71",
+        "SRC-CASE-100-EXPERIMENTS",
+        "SRC-CASE-COMMON-VOICE",
+        "SRC-CASE-EUROPEANA",
+        "DATA-SRC-MOHURD-ARCH-DESIGN-DEPTH-2016",
+        "SRC-JZMA-GEOMETRY-AUTHORED-20260829"
+      ],
+      "standard_ids": [
+        "PROJECT-OFFICIAL-ANNOUNCEMENT",
+        "PROJECT-AGENT-OPEN-CALL-TASKBOOK",
+        "MOHURD-URBAN-DESIGN-MEASURES",
+        "MNR-LAND-USE-CLASSIFICATION-GUIDE",
+        "GENERATIVE-AI-INTERIM-MEASURES",
+        "BARRIER-FREE-ENVIRONMENT-LAW"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-HISTORY-001",
+        "A-CASE-001",
+        "A-OWNERSHIP-001",
+        "A-CONTROLS-001",
+        "A-BASELINE-001",
+        "A-RIGHTS-001",
+        "A-DATA-001",
+        "A-AI-001",
+        "A-OPERATIONS-001",
+        "A-BRAND-001"
+      ],
+      "self_check_ids": [
+        "deterministic_validation",
+        "spatial_review",
+        "visual_packaging",
+        "professional_evidence"
+      ],
+      "evidence_summary_zh": "12场景卡、6画像、3测试和五项AI技术/治理协议完整列出。"
+    },
+    {
+      "requirement_id": "1.5.2.2",
+      "title_zh": "1.5.2.2",
+      "mandatory": true,
+      "status": "addressed",
+      "report_sections": [
+        "三层范围工作框架",
+        "统筹研究范围产业与未来城市研究"
+      ],
+      "geojson_layers": [
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson",
+        "geometry/land_use.geojson",
+        "geometry/buildings.geojson",
+        "geometry/roads.geojson",
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson",
+        "geometry/constraints.geojson",
+        "geometry/phasing.geojson"
+      ],
+      "metrics": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "scenario_card_count",
+        "industry_test_scenario_count",
+        "persona_count",
+        "global_case_count",
+        "annual_program_count",
+        "phase_count",
+        "archive_provenance_completeness",
+        "audit_record_completeness"
+      ],
+      "drawings": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a3-booklet.en.pdf",
+        "drawings/a0-boards.pdf",
+        "drawings/a0-boards.en.pdf"
+      ],
+      "visual_sections": [
+        "总览地图",
+        "三层范围",
+        "重点区域",
+        "AI场景",
+        "核心指标",
+        "任务覆盖"
+      ],
+      "source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "DATA-SRC-AGENT-TASKBOOK-20260518",
+        "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+        "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+        "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+        "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+        "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+        "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+        "DATA-SRC-ELDERLY-SMART-TECH-PLAN-2020-45",
+        "SRC-CASE-FABLABS",
+        "SRC-CASE-STATIONF",
+        "SRC-CASE-BLOCK71",
+        "SRC-CASE-100-EXPERIMENTS",
+        "SRC-CASE-COMMON-VOICE",
+        "SRC-CASE-EUROPEANA",
+        "DATA-SRC-MOHURD-ARCH-DESIGN-DEPTH-2016",
+        "SRC-JZMA-GEOMETRY-AUTHORED-20260829"
+      ],
+      "standard_ids": [
+        "PROJECT-OFFICIAL-ANNOUNCEMENT",
+        "PROJECT-AGENT-OPEN-CALL-TASKBOOK",
+        "MOHURD-URBAN-DESIGN-MEASURES",
+        "MNR-LAND-USE-CLASSIFICATION-GUIDE",
+        "GENERATIVE-AI-INTERIM-MEASURES",
+        "BARRIER-FREE-ENVIRONMENT-LAW"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-HISTORY-001",
+        "A-CASE-001",
+        "A-OWNERSHIP-001",
+        "A-CONTROLS-001",
+        "A-BASELINE-001",
+        "A-RIGHTS-001",
+        "A-DATA-001",
+        "A-AI-001",
+        "A-OPERATIONS-001",
+        "A-BRAND-001"
+      ],
+      "self_check_ids": [
+        "deterministic_validation",
+        "spatial_review",
+        "visual_packaging",
+        "professional_evidence"
+      ],
+      "evidence_summary_zh": "留改拆新逻辑与国土空间分类口径对应，但不作法定结论。"
+    },
+    {
+      "requirement_id": "1.5.2.3",
+      "title_zh": "1.5.2.3",
+      "mandatory": true,
+      "status": "addressed",
+      "report_sections": [
+        "重点区域详细设计",
+        "AI 创新生态、人才画像与 AI+ 场景"
+      ],
+      "geojson_layers": [
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson",
+        "geometry/land_use.geojson",
+        "geometry/buildings.geojson",
+        "geometry/roads.geojson",
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson",
+        "geometry/constraints.geojson",
+        "geometry/phasing.geojson"
+      ],
+      "metrics": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "scenario_card_count",
+        "industry_test_scenario_count",
+        "persona_count",
+        "global_case_count",
+        "annual_program_count",
+        "phase_count",
+        "archive_provenance_completeness",
+        "audit_record_completeness"
+      ],
+      "drawings": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a3-booklet.en.pdf",
+        "drawings/a0-boards.pdf",
+        "drawings/a0-boards.en.pdf"
+      ],
+      "visual_sections": [
+        "总览地图",
+        "三层范围",
+        "重点区域",
+        "AI场景",
+        "核心指标",
+        "任务覆盖"
+      ],
+      "source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "DATA-SRC-AGENT-TASKBOOK-20260518",
+        "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+        "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+        "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+        "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+        "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+        "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+        "DATA-SRC-ELDERLY-SMART-TECH-PLAN-2020-45",
+        "SRC-CASE-FABLABS",
+        "SRC-CASE-STATIONF",
+        "SRC-CASE-BLOCK71",
+        "SRC-CASE-100-EXPERIMENTS",
+        "SRC-CASE-COMMON-VOICE",
+        "SRC-CASE-EUROPEANA",
+        "DATA-SRC-MOHURD-ARCH-DESIGN-DEPTH-2016",
+        "SRC-JZMA-GEOMETRY-AUTHORED-20260829"
+      ],
+      "standard_ids": [
+        "PROJECT-OFFICIAL-ANNOUNCEMENT",
+        "PROJECT-AGENT-OPEN-CALL-TASKBOOK",
+        "MOHURD-URBAN-DESIGN-MEASURES",
+        "MNR-LAND-USE-CLASSIFICATION-GUIDE",
+        "GENERATIVE-AI-INTERIM-MEASURES",
+        "BARRIER-FREE-ENVIRONMENT-LAW"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-HISTORY-001",
+        "A-CASE-001",
+        "A-OWNERSHIP-001",
+        "A-CONTROLS-001",
+        "A-BASELINE-001",
+        "A-RIGHTS-001",
+        "A-DATA-001",
+        "A-AI-001",
+        "A-OPERATIONS-001",
+        "A-BRAND-001"
+      ],
+      "self_check_ids": [
+        "deterministic_validation",
+        "spatial_review",
+        "visual_packaging",
+        "professional_evidence"
+      ],
+      "evidence_summary_zh": "慢行、轨道接口、市政接口和公共服务提供人工与无障碍兜底。"
+    },
+    {
+      "requirement_id": "1.5.2.4",
+      "title_zh": "1.5.2.4",
+      "mandatory": true,
+      "status": "addressed",
+      "report_sections": [
+        "交通、轨道、市政与公共服务设施",
+        "蓝绿空间、公共空间与城市风貌"
+      ],
+      "geojson_layers": [
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson",
+        "geometry/land_use.geojson",
+        "geometry/buildings.geojson",
+        "geometry/roads.geojson",
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson",
+        "geometry/constraints.geojson",
+        "geometry/phasing.geojson"
+      ],
+      "metrics": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "scenario_card_count",
+        "industry_test_scenario_count",
+        "persona_count",
+        "global_case_count",
+        "annual_program_count",
+        "phase_count",
+        "archive_provenance_completeness",
+        "audit_record_completeness"
+      ],
+      "drawings": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a3-booklet.en.pdf",
+        "drawings/a0-boards.pdf",
+        "drawings/a0-boards.en.pdf"
+      ],
+      "visual_sections": [
+        "总览地图",
+        "三层范围",
+        "重点区域",
+        "AI场景",
+        "核心指标",
+        "任务覆盖"
+      ],
+      "source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "DATA-SRC-AGENT-TASKBOOK-20260518",
+        "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+        "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+        "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+        "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+        "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+        "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+        "DATA-SRC-ELDERLY-SMART-TECH-PLAN-2020-45",
+        "SRC-CASE-FABLABS",
+        "SRC-CASE-STATIONF",
+        "SRC-CASE-BLOCK71",
+        "SRC-CASE-100-EXPERIMENTS",
+        "SRC-CASE-COMMON-VOICE",
+        "SRC-CASE-EUROPEANA",
+        "DATA-SRC-MOHURD-ARCH-DESIGN-DEPTH-2016",
+        "SRC-JZMA-GEOMETRY-AUTHORED-20260829"
+      ],
+      "standard_ids": [
+        "PROJECT-OFFICIAL-ANNOUNCEMENT",
+        "PROJECT-AGENT-OPEN-CALL-TASKBOOK",
+        "MOHURD-URBAN-DESIGN-MEASURES",
+        "MNR-LAND-USE-CLASSIFICATION-GUIDE",
+        "GENERATIVE-AI-INTERIM-MEASURES",
+        "BARRIER-FREE-ENVIRONMENT-LAW"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-HISTORY-001",
+        "A-CASE-001",
+        "A-OWNERSHIP-001",
+        "A-CONTROLS-001",
+        "A-BASELINE-001",
+        "A-RIGHTS-001",
+        "A-DATA-001",
+        "A-AI-001",
+        "A-OPERATIONS-001",
+        "A-BRAND-001"
+      ],
+      "self_check_ids": [
+        "deterministic_validation",
+        "spatial_review",
+        "visual_packaging",
+        "professional_evidence"
+      ],
+      "evidence_summary_zh": "绿带为脊、影壁为界、回廊为室，组件库与撤回条件可审计。"
+    },
+    {
+      "requirement_id": "1.5.2.5",
+      "title_zh": "1.5.2.5",
+      "mandatory": true,
+      "status": "addressed",
+      "report_sections": [
+        "指标体系、面积复算与合规矩阵",
+        "风险、版权与合规说明"
+      ],
+      "geojson_layers": [
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson",
+        "geometry/land_use.geojson",
+        "geometry/buildings.geojson",
+        "geometry/roads.geojson",
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson",
+        "geometry/constraints.geojson",
+        "geometry/phasing.geojson"
+      ],
+      "metrics": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "scenario_card_count",
+        "industry_test_scenario_count",
+        "persona_count",
+        "global_case_count",
+        "annual_program_count",
+        "phase_count",
+        "archive_provenance_completeness",
+        "audit_record_completeness"
+      ],
+      "drawings": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a3-booklet.en.pdf",
+        "drawings/a0-boards.pdf",
+        "drawings/a0-boards.en.pdf"
+      ],
+      "visual_sections": [
+        "总览地图",
+        "三层范围",
+        "重点区域",
+        "AI场景",
+        "核心指标",
+        "任务覆盖"
+      ],
+      "source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "DATA-SRC-AGENT-TASKBOOK-20260518",
+        "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+        "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+        "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+        "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+        "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+        "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+        "DATA-SRC-ELDERLY-SMART-TECH-PLAN-2020-45",
+        "SRC-CASE-FABLABS",
+        "SRC-CASE-STATIONF",
+        "SRC-CASE-BLOCK71",
+        "SRC-CASE-100-EXPERIMENTS",
+        "SRC-CASE-COMMON-VOICE",
+        "SRC-CASE-EUROPEANA",
+        "DATA-SRC-MOHURD-ARCH-DESIGN-DEPTH-2016",
+        "SRC-JZMA-GEOMETRY-AUTHORED-20260829"
+      ],
+      "standard_ids": [
+        "PROJECT-OFFICIAL-ANNOUNCEMENT",
+        "PROJECT-AGENT-OPEN-CALL-TASKBOOK",
+        "MOHURD-URBAN-DESIGN-MEASURES",
+        "MNR-LAND-USE-CLASSIFICATION-GUIDE",
+        "GENERATIVE-AI-INTERIM-MEASURES",
+        "BARRIER-FREE-ENVIRONMENT-LAW"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-HISTORY-001",
+        "A-CASE-001",
+        "A-OWNERSHIP-001",
+        "A-CONTROLS-001",
+        "A-BASELINE-001",
+        "A-RIGHTS-001",
+        "A-DATA-001",
+        "A-AI-001",
+        "A-OPERATIONS-001",
+        "A-BRAND-001"
+      ],
+      "self_check_ids": [
+        "deterministic_validation",
+        "spatial_review",
+        "visual_packaging",
+        "professional_evidence"
+      ],
+      "evidence_summary_zh": "风貌、导视、来源状态和文化标识系统有明确分工。"
+    },
+    {
+      "requirement_id": "1.5.3.required",
+      "title_zh": "1.5.3.required",
+      "mandatory": true,
+      "status": "addressed",
+      "report_sections": [
+        "设计依据与资料清单",
+        "三层范围工作框架"
+      ],
+      "geojson_layers": [
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson",
+        "geometry/land_use.geojson",
+        "geometry/buildings.geojson",
+        "geometry/roads.geojson",
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson",
+        "geometry/constraints.geojson",
+        "geometry/phasing.geojson"
+      ],
+      "metrics": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "scenario_card_count",
+        "industry_test_scenario_count",
+        "persona_count",
+        "global_case_count",
+        "annual_program_count",
+        "phase_count",
+        "archive_provenance_completeness",
+        "audit_record_completeness"
+      ],
+      "drawings": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a3-booklet.en.pdf",
+        "drawings/a0-boards.pdf",
+        "drawings/a0-boards.en.pdf"
+      ],
+      "visual_sections": [
+        "总览地图",
+        "三层范围",
+        "重点区域",
+        "AI场景",
+        "核心指标",
+        "任务覆盖"
+      ],
+      "source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "DATA-SRC-AGENT-TASKBOOK-20260518",
+        "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+        "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+        "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+        "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+        "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+        "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+        "DATA-SRC-ELDERLY-SMART-TECH-PLAN-2020-45",
+        "SRC-CASE-FABLABS",
+        "SRC-CASE-STATIONF",
+        "SRC-CASE-BLOCK71",
+        "SRC-CASE-100-EXPERIMENTS",
+        "SRC-CASE-COMMON-VOICE",
+        "SRC-CASE-EUROPEANA",
+        "DATA-SRC-MOHURD-ARCH-DESIGN-DEPTH-2016",
+        "SRC-JZMA-GEOMETRY-AUTHORED-20260829"
+      ],
+      "standard_ids": [
+        "PROJECT-OFFICIAL-ANNOUNCEMENT",
+        "PROJECT-AGENT-OPEN-CALL-TASKBOOK",
+        "MOHURD-URBAN-DESIGN-MEASURES",
+        "MNR-LAND-USE-CLASSIFICATION-GUIDE",
+        "GENERATIVE-AI-INTERIM-MEASURES",
+        "BARRIER-FREE-ENVIRONMENT-LAW"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-HISTORY-001",
+        "A-CASE-001",
+        "A-OWNERSHIP-001",
+        "A-CONTROLS-001",
+        "A-BASELINE-001",
+        "A-RIGHTS-001",
+        "A-DATA-001",
+        "A-AI-001",
+        "A-OPERATIONS-001",
+        "A-BRAND-001"
+      ],
+      "self_check_ids": [
+        "deterministic_validation",
+        "spatial_review",
+        "visual_packaging",
+        "professional_evidence"
+      ],
+      "evidence_summary_zh": "更新项目、政策工具、年度活动、居民意见和开发者社区形成运营闭环。"
+    },
+    {
+      "requirement_id": "1.5.3.1",
+      "title_zh": "1.5.3.1",
+      "mandatory": true,
+      "status": "addressed",
+      "report_sections": [
+        "总体设计范围城市更新与控规深度城市设计",
+        "重点区域详细设计"
+      ],
+      "geojson_layers": [
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson",
+        "geometry/land_use.geojson",
+        "geometry/buildings.geojson",
+        "geometry/roads.geojson",
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson",
+        "geometry/constraints.geojson",
+        "geometry/phasing.geojson"
+      ],
+      "metrics": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "scenario_card_count",
+        "industry_test_scenario_count",
+        "persona_count",
+        "global_case_count",
+        "annual_program_count",
+        "phase_count",
+        "archive_provenance_completeness",
+        "audit_record_completeness"
+      ],
+      "drawings": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a3-booklet.en.pdf",
+        "drawings/a0-boards.pdf",
+        "drawings/a0-boards.en.pdf"
+      ],
+      "visual_sections": [
+        "总览地图",
+        "三层范围",
+        "重点区域",
+        "AI场景",
+        "核心指标",
+        "任务覆盖"
+      ],
+      "source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "DATA-SRC-AGENT-TASKBOOK-20260518",
+        "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+        "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+        "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+        "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+        "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+        "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+        "DATA-SRC-ELDERLY-SMART-TECH-PLAN-2020-45",
+        "SRC-CASE-FABLABS",
+        "SRC-CASE-STATIONF",
+        "SRC-CASE-BLOCK71",
+        "SRC-CASE-100-EXPERIMENTS",
+        "SRC-CASE-COMMON-VOICE",
+        "SRC-CASE-EUROPEANA",
+        "DATA-SRC-MOHURD-ARCH-DESIGN-DEPTH-2016",
+        "SRC-JZMA-GEOMETRY-AUTHORED-20260829"
+      ],
+      "standard_ids": [
+        "PROJECT-OFFICIAL-ANNOUNCEMENT",
+        "PROJECT-AGENT-OPEN-CALL-TASKBOOK",
+        "MOHURD-URBAN-DESIGN-MEASURES",
+        "MNR-LAND-USE-CLASSIFICATION-GUIDE",
+        "GENERATIVE-AI-INTERIM-MEASURES",
+        "BARRIER-FREE-ENVIRONMENT-LAW"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-HISTORY-001",
+        "A-CASE-001",
+        "A-OWNERSHIP-001",
+        "A-CONTROLS-001",
+        "A-BASELINE-001",
+        "A-RIGHTS-001",
+        "A-DATA-001",
+        "A-AI-001",
+        "A-OPERATIONS-001",
+        "A-BRAND-001"
+      ],
+      "self_check_ids": [
+        "deterministic_validation",
+        "spatial_review",
+        "visual_packaging",
+        "professional_evidence"
+      ],
+      "evidence_summary_zh": "P01-P14具有阶段、角色、动作、触发、KPI与暂停/退出动作。"
+    },
+    {
+      "requirement_id": "1.5.3.2",
+      "title_zh": "1.5.3.2",
+      "mandatory": true,
+      "status": "addressed",
+      "report_sections": [
+        "用地、建筑规模与拆改留方案",
+        "交通、轨道、市政与公共服务设施"
+      ],
+      "geojson_layers": [
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson",
+        "geometry/land_use.geojson",
+        "geometry/buildings.geojson",
+        "geometry/roads.geojson",
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson",
+        "geometry/constraints.geojson",
+        "geometry/phasing.geojson"
+      ],
+      "metrics": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "scenario_card_count",
+        "industry_test_scenario_count",
+        "persona_count",
+        "global_case_count",
+        "annual_program_count",
+        "phase_count",
+        "archive_provenance_completeness",
+        "audit_record_completeness"
+      ],
+      "drawings": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a3-booklet.en.pdf",
+        "drawings/a0-boards.pdf",
+        "drawings/a0-boards.en.pdf"
+      ],
+      "visual_sections": [
+        "总览地图",
+        "三层范围",
+        "重点区域",
+        "AI场景",
+        "核心指标",
+        "任务覆盖"
+      ],
+      "source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "DATA-SRC-AGENT-TASKBOOK-20260518",
+        "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+        "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+        "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+        "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+        "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+        "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+        "DATA-SRC-ELDERLY-SMART-TECH-PLAN-2020-45",
+        "SRC-CASE-FABLABS",
+        "SRC-CASE-STATIONF",
+        "SRC-CASE-BLOCK71",
+        "SRC-CASE-100-EXPERIMENTS",
+        "SRC-CASE-COMMON-VOICE",
+        "SRC-CASE-EUROPEANA",
+        "DATA-SRC-MOHURD-ARCH-DESIGN-DEPTH-2016",
+        "SRC-JZMA-GEOMETRY-AUTHORED-20260829"
+      ],
+      "standard_ids": [
+        "PROJECT-OFFICIAL-ANNOUNCEMENT",
+        "PROJECT-AGENT-OPEN-CALL-TASKBOOK",
+        "MOHURD-URBAN-DESIGN-MEASURES",
+        "MNR-LAND-USE-CLASSIFICATION-GUIDE",
+        "GENERATIVE-AI-INTERIM-MEASURES",
+        "BARRIER-FREE-ENVIRONMENT-LAW"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-HISTORY-001",
+        "A-CASE-001",
+        "A-OWNERSHIP-001",
+        "A-CONTROLS-001",
+        "A-BASELINE-001",
+        "A-RIGHTS-001",
+        "A-DATA-001",
+        "A-AI-001",
+        "A-OPERATIONS-001",
+        "A-BRAND-001"
+      ],
+      "self_check_ids": [
+        "deterministic_validation",
+        "spatial_review",
+        "visual_packaging",
+        "professional_evidence"
+      ],
+      "evidence_summary_zh": "指标协议为公式、阈值/范围、未知基线、频率、证据、责任、失败动作七元组。"
+    },
+    {
+      "requirement_id": "1.5.3.3",
+      "title_zh": "1.5.3.3",
+      "mandatory": true,
+      "status": "addressed",
+      "report_sections": [
+        "更新项目清单、实施政策与分期计划",
+        "指标体系、面积复算与合规矩阵"
+      ],
+      "geojson_layers": [
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson",
+        "geometry/land_use.geojson",
+        "geometry/buildings.geojson",
+        "geometry/roads.geojson",
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson",
+        "geometry/constraints.geojson",
+        "geometry/phasing.geojson"
+      ],
+      "metrics": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "scenario_card_count",
+        "industry_test_scenario_count",
+        "persona_count",
+        "global_case_count",
+        "annual_program_count",
+        "phase_count",
+        "archive_provenance_completeness",
+        "audit_record_completeness"
+      ],
+      "drawings": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a3-booklet.en.pdf",
+        "drawings/a0-boards.pdf",
+        "drawings/a0-boards.en.pdf"
+      ],
+      "visual_sections": [
+        "总览地图",
+        "三层范围",
+        "重点区域",
+        "AI场景",
+        "核心指标",
+        "任务覆盖"
+      ],
+      "source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "DATA-SRC-AGENT-TASKBOOK-20260518",
+        "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+        "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+        "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+        "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+        "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+        "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+        "DATA-SRC-ELDERLY-SMART-TECH-PLAN-2020-45",
+        "SRC-CASE-FABLABS",
+        "SRC-CASE-STATIONF",
+        "SRC-CASE-BLOCK71",
+        "SRC-CASE-100-EXPERIMENTS",
+        "SRC-CASE-COMMON-VOICE",
+        "SRC-CASE-EUROPEANA",
+        "DATA-SRC-MOHURD-ARCH-DESIGN-DEPTH-2016",
+        "SRC-JZMA-GEOMETRY-AUTHORED-20260829"
+      ],
+      "standard_ids": [
+        "PROJECT-OFFICIAL-ANNOUNCEMENT",
+        "PROJECT-AGENT-OPEN-CALL-TASKBOOK",
+        "MOHURD-URBAN-DESIGN-MEASURES",
+        "MNR-LAND-USE-CLASSIFICATION-GUIDE",
+        "GENERATIVE-AI-INTERIM-MEASURES",
+        "BARRIER-FREE-ENVIRONMENT-LAW"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-HISTORY-001",
+        "A-CASE-001",
+        "A-OWNERSHIP-001",
+        "A-CONTROLS-001",
+        "A-BASELINE-001",
+        "A-RIGHTS-001",
+        "A-DATA-001",
+        "A-AI-001",
+        "A-OPERATIONS-001",
+        "A-BRAND-001"
+      ],
+      "self_check_ids": [
+        "deterministic_validation",
+        "spatial_review",
+        "visual_packaging",
+        "professional_evidence"
+      ],
+      "evidence_summary_zh": "面积由几何复算；正式边界发布后统一替换、复算、渲染和审计。"
+    },
+    {
+      "requirement_id": "agent.1",
+      "title_zh": "一带总体概念与功能统筹方案设计",
+      "mandatory": true,
+      "status": "addressed",
+      "report_sections": [
+        "三层范围工作框架",
+        "总体设计范围城市更新与控规深度城市设计"
+      ],
+      "geojson_layers": [
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson",
+        "geometry/land_use.geojson",
+        "geometry/buildings.geojson",
+        "geometry/roads.geojson",
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson",
+        "geometry/constraints.geojson",
+        "geometry/phasing.geojson"
+      ],
+      "metrics": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "scenario_card_count",
+        "industry_test_scenario_count",
+        "persona_count",
+        "global_case_count",
+        "annual_program_count",
+        "phase_count",
+        "archive_provenance_completeness",
+        "audit_record_completeness"
+      ],
+      "drawings": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a3-booklet.en.pdf",
+        "drawings/a0-boards.pdf",
+        "drawings/a0-boards.en.pdf"
+      ],
+      "visual_sections": [
+        "总览地图",
+        "三层范围",
+        "重点区域",
+        "AI场景",
+        "核心指标",
+        "任务覆盖"
+      ],
+      "source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "DATA-SRC-AGENT-TASKBOOK-20260518",
+        "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+        "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+        "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+        "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+        "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+        "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+        "DATA-SRC-ELDERLY-SMART-TECH-PLAN-2020-45",
+        "SRC-CASE-FABLABS",
+        "SRC-CASE-STATIONF",
+        "SRC-CASE-BLOCK71",
+        "SRC-CASE-100-EXPERIMENTS",
+        "SRC-CASE-COMMON-VOICE",
+        "SRC-CASE-EUROPEANA",
+        "DATA-SRC-MOHURD-ARCH-DESIGN-DEPTH-2016",
+        "SRC-JZMA-GEOMETRY-AUTHORED-20260829"
+      ],
+      "standard_ids": [
+        "PROJECT-OFFICIAL-ANNOUNCEMENT",
+        "PROJECT-AGENT-OPEN-CALL-TASKBOOK",
+        "MOHURD-URBAN-DESIGN-MEASURES",
+        "MNR-LAND-USE-CLASSIFICATION-GUIDE",
+        "GENERATIVE-AI-INTERIM-MEASURES",
+        "BARRIER-FREE-ENVIRONMENT-LAW"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-HISTORY-001",
+        "A-CASE-001",
+        "A-OWNERSHIP-001",
+        "A-CONTROLS-001",
+        "A-BASELINE-001",
+        "A-RIGHTS-001",
+        "A-DATA-001",
+        "A-AI-001",
+        "A-OPERATIONS-001",
+        "A-BRAND-001"
+      ],
+      "self_check_ids": [
+        "deterministic_validation",
+        "spatial_review",
+        "visual_packaging",
+        "professional_evidence"
+      ],
+      "evidence_summary_zh": "命名、Logo方向、三大定位、五大功能、三区两翼回路与总体图件已在正文和矩阵映射。"
+    },
+    {
+      "requirement_id": "agent.2",
+      "title_zh": "AI全栈自主创新体系与世界级AI创新生态设计",
+      "mandatory": true,
+      "status": "addressed",
+      "report_sections": [
+        "统筹研究范围产业与未来城市研究",
+        "AI 创新生态、人才画像与 AI+ 场景"
+      ],
+      "geojson_layers": [
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson",
+        "geometry/land_use.geojson",
+        "geometry/buildings.geojson",
+        "geometry/roads.geojson",
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson",
+        "geometry/constraints.geojson",
+        "geometry/phasing.geojson"
+      ],
+      "metrics": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "scenario_card_count",
+        "industry_test_scenario_count",
+        "persona_count",
+        "global_case_count",
+        "annual_program_count",
+        "phase_count",
+        "archive_provenance_completeness",
+        "audit_record_completeness"
+      ],
+      "drawings": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a3-booklet.en.pdf",
+        "drawings/a0-boards.pdf",
+        "drawings/a0-boards.en.pdf"
+      ],
+      "visual_sections": [
+        "总览地图",
+        "三层范围",
+        "重点区域",
+        "AI场景",
+        "核心指标",
+        "任务覆盖"
+      ],
+      "source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "DATA-SRC-AGENT-TASKBOOK-20260518",
+        "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+        "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+        "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+        "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+        "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+        "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+        "DATA-SRC-ELDERLY-SMART-TECH-PLAN-2020-45",
+        "SRC-CASE-FABLABS",
+        "SRC-CASE-STATIONF",
+        "SRC-CASE-BLOCK71",
+        "SRC-CASE-100-EXPERIMENTS",
+        "SRC-CASE-COMMON-VOICE",
+        "SRC-CASE-EUROPEANA",
+        "DATA-SRC-MOHURD-ARCH-DESIGN-DEPTH-2016",
+        "SRC-JZMA-GEOMETRY-AUTHORED-20260829"
+      ],
+      "standard_ids": [
+        "PROJECT-OFFICIAL-ANNOUNCEMENT",
+        "PROJECT-AGENT-OPEN-CALL-TASKBOOK",
+        "MOHURD-URBAN-DESIGN-MEASURES",
+        "MNR-LAND-USE-CLASSIFICATION-GUIDE",
+        "GENERATIVE-AI-INTERIM-MEASURES",
+        "BARRIER-FREE-ENVIRONMENT-LAW"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-HISTORY-001",
+        "A-CASE-001",
+        "A-OWNERSHIP-001",
+        "A-CONTROLS-001",
+        "A-BASELINE-001",
+        "A-RIGHTS-001",
+        "A-DATA-001",
+        "A-AI-001",
+        "A-OPERATIONS-001",
+        "A-BRAND-001"
+      ],
+      "self_check_ids": [
+        "deterministic_validation",
+        "spatial_review",
+        "visual_packaging",
+        "professional_evidence"
+      ],
+      "evidence_summary_zh": "6个全球案例、生态图谱、全栈要素、人才与机制进入研究和AI章节。"
+    },
+    {
+      "requirement_id": "agent.3",
+      "title_zh": "AI+场景赋能新范式与智能化AI活力城市设计",
+      "mandatory": true,
+      "status": "addressed",
+      "report_sections": [
+        "AI 创新生态、人才画像与 AI+ 场景"
+      ],
+      "geojson_layers": [
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson",
+        "geometry/land_use.geojson",
+        "geometry/buildings.geojson",
+        "geometry/roads.geojson",
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson",
+        "geometry/constraints.geojson",
+        "geometry/phasing.geojson"
+      ],
+      "metrics": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "scenario_card_count",
+        "industry_test_scenario_count",
+        "persona_count",
+        "global_case_count",
+        "annual_program_count",
+        "phase_count",
+        "archive_provenance_completeness",
+        "audit_record_completeness"
+      ],
+      "drawings": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a3-booklet.en.pdf",
+        "drawings/a0-boards.pdf",
+        "drawings/a0-boards.en.pdf"
+      ],
+      "visual_sections": [
+        "总览地图",
+        "三层范围",
+        "重点区域",
+        "AI场景",
+        "核心指标",
+        "任务覆盖"
+      ],
+      "source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "DATA-SRC-AGENT-TASKBOOK-20260518",
+        "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+        "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+        "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+        "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+        "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+        "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+        "DATA-SRC-ELDERLY-SMART-TECH-PLAN-2020-45",
+        "SRC-CASE-FABLABS",
+        "SRC-CASE-STATIONF",
+        "SRC-CASE-BLOCK71",
+        "SRC-CASE-100-EXPERIMENTS",
+        "SRC-CASE-COMMON-VOICE",
+        "SRC-CASE-EUROPEANA",
+        "DATA-SRC-MOHURD-ARCH-DESIGN-DEPTH-2016",
+        "SRC-JZMA-GEOMETRY-AUTHORED-20260829"
+      ],
+      "standard_ids": [
+        "PROJECT-OFFICIAL-ANNOUNCEMENT",
+        "PROJECT-AGENT-OPEN-CALL-TASKBOOK",
+        "MOHURD-URBAN-DESIGN-MEASURES",
+        "MNR-LAND-USE-CLASSIFICATION-GUIDE",
+        "GENERATIVE-AI-INTERIM-MEASURES",
+        "BARRIER-FREE-ENVIRONMENT-LAW"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-HISTORY-001",
+        "A-CASE-001",
+        "A-OWNERSHIP-001",
+        "A-CONTROLS-001",
+        "A-BASELINE-001",
+        "A-RIGHTS-001",
+        "A-DATA-001",
+        "A-AI-001",
+        "A-OPERATIONS-001",
+        "A-BRAND-001"
+      ],
+      "self_check_ids": [
+        "deterministic_validation",
+        "spatial_review",
+        "visual_packaging",
+        "professional_evidence"
+      ],
+      "evidence_summary_zh": "12场景卡、3测试、6画像、场景—空间—运营映射与隐私人工复核边界完整。"
+    },
+    {
+      "requirement_id": "agent.4",
+      "title_zh": "AI公共空间、智能原生新业态与朝圣地标设计",
+      "mandatory": true,
+      "status": "addressed",
+      "report_sections": [
+        "重点区域详细设计",
+        "蓝绿空间、公共空间与城市风貌"
+      ],
+      "geojson_layers": [
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson",
+        "geometry/land_use.geojson",
+        "geometry/buildings.geojson",
+        "geometry/roads.geojson",
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson",
+        "geometry/constraints.geojson",
+        "geometry/phasing.geojson"
+      ],
+      "metrics": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "scenario_card_count",
+        "industry_test_scenario_count",
+        "persona_count",
+        "global_case_count",
+        "annual_program_count",
+        "phase_count",
+        "archive_provenance_completeness",
+        "audit_record_completeness"
+      ],
+      "drawings": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a3-booklet.en.pdf",
+        "drawings/a0-boards.pdf",
+        "drawings/a0-boards.en.pdf"
+      ],
+      "visual_sections": [
+        "总览地图",
+        "三层范围",
+        "重点区域",
+        "AI场景",
+        "核心指标",
+        "任务覆盖"
+      ],
+      "source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "DATA-SRC-AGENT-TASKBOOK-20260518",
+        "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+        "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+        "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+        "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+        "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+        "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+        "DATA-SRC-ELDERLY-SMART-TECH-PLAN-2020-45",
+        "SRC-CASE-FABLABS",
+        "SRC-CASE-STATIONF",
+        "SRC-CASE-BLOCK71",
+        "SRC-CASE-100-EXPERIMENTS",
+        "SRC-CASE-COMMON-VOICE",
+        "SRC-CASE-EUROPEANA",
+        "DATA-SRC-MOHURD-ARCH-DESIGN-DEPTH-2016",
+        "SRC-JZMA-GEOMETRY-AUTHORED-20260829"
+      ],
+      "standard_ids": [
+        "PROJECT-OFFICIAL-ANNOUNCEMENT",
+        "PROJECT-AGENT-OPEN-CALL-TASKBOOK",
+        "MOHURD-URBAN-DESIGN-MEASURES",
+        "MNR-LAND-USE-CLASSIFICATION-GUIDE",
+        "GENERATIVE-AI-INTERIM-MEASURES",
+        "BARRIER-FREE-ENVIRONMENT-LAW"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-HISTORY-001",
+        "A-CASE-001",
+        "A-OWNERSHIP-001",
+        "A-CONTROLS-001",
+        "A-BASELINE-001",
+        "A-RIGHTS-001",
+        "A-DATA-001",
+        "A-AI-001",
+        "A-OPERATIONS-001",
+        "A-BRAND-001"
+      ],
+      "self_check_ids": [
+        "deterministic_validation",
+        "spatial_review",
+        "visual_packaging",
+        "professional_evidence"
+      ],
+      "evidence_summary_zh": "遗址公园公共空间、东西缝合/南北贯通、3地标、荣誉展示和可撤组件库完整。"
+    },
+    {
+      "requirement_id": "agent.5",
+      "title_zh": "百年京张文化、中关村文化与AI新文化融合叙事设计",
+      "mandatory": true,
+      "status": "addressed",
+      "report_sections": [
+        "设计依据与资料清单",
+        "风险、版权与合规说明"
+      ],
+      "geojson_layers": [
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson",
+        "geometry/land_use.geojson",
+        "geometry/buildings.geojson",
+        "geometry/roads.geojson",
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson",
+        "geometry/constraints.geojson",
+        "geometry/phasing.geojson"
+      ],
+      "metrics": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "scenario_card_count",
+        "industry_test_scenario_count",
+        "persona_count",
+        "global_case_count",
+        "annual_program_count",
+        "phase_count",
+        "archive_provenance_completeness",
+        "audit_record_completeness"
+      ],
+      "drawings": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a3-booklet.en.pdf",
+        "drawings/a0-boards.pdf",
+        "drawings/a0-boards.en.pdf"
+      ],
+      "visual_sections": [
+        "总览地图",
+        "三层范围",
+        "重点区域",
+        "AI场景",
+        "核心指标",
+        "任务覆盖"
+      ],
+      "source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "DATA-SRC-AGENT-TASKBOOK-20260518",
+        "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+        "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+        "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+        "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+        "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+        "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+        "DATA-SRC-ELDERLY-SMART-TECH-PLAN-2020-45",
+        "SRC-CASE-FABLABS",
+        "SRC-CASE-STATIONF",
+        "SRC-CASE-BLOCK71",
+        "SRC-CASE-100-EXPERIMENTS",
+        "SRC-CASE-COMMON-VOICE",
+        "SRC-CASE-EUROPEANA",
+        "DATA-SRC-MOHURD-ARCH-DESIGN-DEPTH-2016",
+        "SRC-JZMA-GEOMETRY-AUTHORED-20260829"
+      ],
+      "standard_ids": [
+        "PROJECT-OFFICIAL-ANNOUNCEMENT",
+        "PROJECT-AGENT-OPEN-CALL-TASKBOOK",
+        "MOHURD-URBAN-DESIGN-MEASURES",
+        "MNR-LAND-USE-CLASSIFICATION-GUIDE",
+        "GENERATIVE-AI-INTERIM-MEASURES",
+        "BARRIER-FREE-ENVIRONMENT-LAW"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-HISTORY-001",
+        "A-CASE-001",
+        "A-OWNERSHIP-001",
+        "A-CONTROLS-001",
+        "A-BASELINE-001",
+        "A-RIGHTS-001",
+        "A-DATA-001",
+        "A-AI-001",
+        "A-OPERATIONS-001",
+        "A-BRAND-001"
+      ],
+      "self_check_ids": [
+        "deterministic_validation",
+        "spatial_review",
+        "visual_packaging",
+        "professional_evidence"
+      ],
+      "evidence_summary_zh": "历史/当前线索/原创概念分层，中关村与AI叙事、导视和双语国际文案有证据边界。"
+    },
+    {
+      "requirement_id": "agent.6",
+      "title_zh": "一带全球AI创新活动体系与长期运营设计",
+      "mandatory": true,
+      "status": "addressed",
+      "report_sections": [
+        "更新项目清单、实施政策与分期计划",
+        "AI 创新生态、人才画像与 AI+ 场景"
+      ],
+      "geojson_layers": [
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson",
+        "geometry/land_use.geojson",
+        "geometry/buildings.geojson",
+        "geometry/roads.geojson",
+        "geometry/green_space.geojson",
+        "geometry/public_space.geojson",
+        "geometry/constraints.geojson",
+        "geometry/phasing.geojson"
+      ],
+      "metrics": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "scenario_card_count",
+        "industry_test_scenario_count",
+        "persona_count",
+        "global_case_count",
+        "annual_program_count",
+        "phase_count",
+        "archive_provenance_completeness",
+        "audit_record_completeness"
+      ],
+      "drawings": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a3-booklet.en.pdf",
+        "drawings/a0-boards.pdf",
+        "drawings/a0-boards.en.pdf"
+      ],
+      "visual_sections": [
+        "总览地图",
+        "三层范围",
+        "重点区域",
+        "AI场景",
+        "核心指标",
+        "任务覆盖"
+      ],
+      "source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "DATA-SRC-AGENT-TASKBOOK-20260518",
+        "DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES",
+        "DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING",
+        "DATA-SRC-MNR-LAND-USE-CLASSIFICATION-202311",
+        "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+        "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+        "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+        "DATA-SRC-ELDERLY-SMART-TECH-PLAN-2020-45",
+        "SRC-CASE-FABLABS",
+        "SRC-CASE-STATIONF",
+        "SRC-CASE-BLOCK71",
+        "SRC-CASE-100-EXPERIMENTS",
+        "SRC-CASE-COMMON-VOICE",
+        "SRC-CASE-EUROPEANA",
+        "DATA-SRC-MOHURD-ARCH-DESIGN-DEPTH-2016",
+        "SRC-JZMA-GEOMETRY-AUTHORED-20260829"
+      ],
+      "standard_ids": [
+        "PROJECT-OFFICIAL-ANNOUNCEMENT",
+        "PROJECT-AGENT-OPEN-CALL-TASKBOOK",
+        "MOHURD-URBAN-DESIGN-MEASURES",
+        "MNR-LAND-USE-CLASSIFICATION-GUIDE",
+        "GENERATIVE-AI-INTERIM-MEASURES",
+        "BARRIER-FREE-ENVIRONMENT-LAW"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-HISTORY-001",
+        "A-CASE-001",
+        "A-OWNERSHIP-001",
+        "A-CONTROLS-001",
+        "A-BASELINE-001",
+        "A-RIGHTS-001",
+        "A-DATA-001",
+        "A-AI-001",
+        "A-OPERATIONS-001",
+        "A-BRAND-001"
+      ],
+      "self_check_ids": [
+        "deterministic_validation",
+        "spatial_review",
+        "visual_packaging",
+        "professional_evidence"
+      ],
+      "evidence_summary_zh": "4项年度活动、开发者社区、场景开放、品牌IP、转化路径、RACI和退出门完整。"
+    }
+  ]
+}

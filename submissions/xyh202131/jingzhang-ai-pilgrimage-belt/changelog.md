@@ -1,5 +1,168 @@
 # 方案迭代记录 / Changelog
 
+## v83.0 - 2026-08-30
+
+**媒体文字替代直达 / Direct Access to Media Text Alternatives**
+
+- 已有能力：中英文体验台中的 54 秒无声概念动态图解均有默认双语字幕、始终可见的静态故事板，并在包内登记了完整双语文字稿与权利说明。
+- 真实缺口：修复前，播放器可以读取 VTT，但页面没有可见的文字稿入口；不播放视频的读者无法主动打开可复制、可由屏幕阅读器线性读取的八镜文字替代，字幕文件也只能由播放器间接访问。
+- 必须冻结：冻结“双轨京张 / Twin-Track Jing-Zhang”、三种不可互换原型、JZ-AIOS、G0—G3、四轴、三载体、证据门、权利边界及 12/8/3/36；不改视频、字幕、文字稿内容、正文、报告、图件、四份 PDF、几何、指标或现实状态。
+- 本轮实施：在两份体验台的动态图解旁增加可见的双语文字稿/权利说明入口和字幕下载入口；两项控制均保留 44px 触达、键盘焦点、离线、减少动态与打印可读性。只闭合既有媒体的无障碍发现路径，不新增媒体、事实、结果或许可结论。
+
+- Existing capability: the 54-second silent conceptual motion diagram in each workbench already provides default bilingual captions, an always-visible static storyboard, and a package-declared bilingual transcript with rights notes.
+- Real gap: before repair, the player could consume the VTT but the page exposed no visible transcript route. Readers who declined playback could not deliberately open the copyable, screen-reader-linear eight-shot text alternative, while the caption file was reachable only indirectly through the player.
+- Must remain frozen: Twin-Track Jing-Zhang, the three non-interchangeable prototypes, JZ-AIOS, G0-G3, four axes, three carriers, evidence gates, rights boundaries and 12/8/3/36. The video, captions, transcript content, proposals, reports, figures, all four PDFs, geometry, metrics and real-world status remain unchanged.
+- Implemented this round: added visible transcript/rights and caption-download routes beside the motion diagram in both workbenches. Both controls preserve 44px targets, keyboard focus, offline use, reduced-motion behaviour and print readability. This closes discovery of existing media alternatives only; it adds no media, fact, result or licence conclusion.
+
+## v82.0 - 2026-08-30
+
+**小屏表格阅读提示 / Narrow-screen Table Reading Cue**
+
+- 已有能力：中英文图文报告均提供 15 章目录、完整审阅包快捷入口和 20 组可内部横向滚动的数据表；表格保留全部专业列，不以移动端摘要替代证据。
+- 真实缺口：390 px 小屏实渲确认页面本身没有横向溢出，但表格最小宽度为 520 px，读者必须在表格内部横向滚动；此前没有可见提示，容易把未显示的右侧列误判为裁切或缺失。
+- 必须冻结：冻结“双轨京张 / Twin-Track Jing-Zhang”、三种不可互换原型、JZ-AIOS、G0—G3、四轴、三载体、证据门、权利边界及 12/8/3/36；不改主张、表格内容、几何、指标、图件、PDF 或现实状态。
+- 本轮实施：在两份图文报告的章节目录后加入仅在小屏显示的双语阅读提示，明确“表格内部横向滚动、页面其他部分纵向阅读”；打印时隐藏提示。未新增数据、媒体、依赖或事实主张。
+
+## v81.0 - 2026-08-30
+
+**图文报告审阅工具栏 / Illustrated-report Review Toolbar**
+
+- 已有能力：中英文体验台首屏已经提供完整审阅包入口，两份图文报告也具备双语切换、15 项章节索引、专业交接深链、离线 CJK、键盘与打印回退。
+- 真实缺口：修复前，从体验台进入长报告后，封面附近只有语言切换；返回对应体验台、打开同语言 A3/A0、进入专业交接都需要滚动查找正文链接或依赖浏览器后退，完整审阅包形成单向入口。
+- 必须冻结：proposal、visual 内容、图件、四份 PDF、9 个几何文件、`metrics.json`、12/8/3/36、G0/NO-GO、临时边界、现实结果 0、责任接受 0 与独立人工双语复核 0/8 均不变。
+- 本轮实施：在两份报告摘要后增加同构语义工具栏，一跳返回对应语言体验台、打开 A3、打开 A0、进入既有专业交接或切换语言；44px 目标、键盘焦点、移动端单列、减少动态、离线和打印规则同步成立。只闭合审阅导航，不新增主张、来源、资产或现实状态。
+
+- Existing capability: both workbench first views already expose the complete review pack, while both illustrated reports provide language switching, a 15-item chapter index, a professional-handoff deep link, package-local CJK, keyboard access and print fallback.
+- Real gap: after entering a long report from the workbench, the area near the cover previously offered only a language switch. Returning to the matching workbench, opening the same-language A3/A0 publications or entering professional handoff required finding links later in the report or relying on browser history, leaving the complete review pack as a one-way entry.
+- Must remain frozen: the proposals, visual content, figures, all four PDFs, nine geometry files, `metrics.json`, 12/8/3/36, G0/NO-GO, provisional boundaries, zero real outcomes, zero accepted duties and 0/8 independent human bilingual review are unchanged.
+- Implemented this round: added a matching semantic toolbar after each report summary, providing one-step routes back to the language-matched workbench, A3 booklet, A0 boards, existing professional handoff and the other language. The controls preserve 44px targets, keyboard focus, single-column mobile reflow, reduced motion, offline operation and print behaviour. This closes review navigation only and adds no claim, source, asset or real-world status.
+
+## v80.0 - 2026-08-30
+
+**图文报告章节索引 / Illustrated-report Chapter Index**
+
+- 已有能力：两份长报告已提供键盘可见的正文跳转、双语切换、语义表格、包内 CJK 字体、离线与打印回退，并可直达既有专业交接入口。
+- 真实缺口：修复前，两份报告各有 15 个二级章节，但除正文根节点外没有章节片段；普通读者、键盘用户与评审者只能线性滚动，无法从封面附近直接进入某一正式章节，也不能复制稳定章节链接。
+- 必须冻结：proposal、visual、图件、四份 PDF、9 个几何文件、`metrics.json`、12/8/3/36、G0/NO-GO、临时边界、现实结果 0、责任接受 0 与独立人工双语复核 0/8 均不变。
+- 本轮实施：在中英文报告封面后增加对应的 15 项语义目录，为每个二级章节配置一一对应的稳定片段，并同步两列桌面、单列移动端、键盘、减少动态与打印规则。只改善报告导航，不新增主张、来源、资产或现实状态。
+
+- Existing capability: both long reports already provide a keyboard-visible content skip, language switch, semantic tables, package-local CJK font, offline and print fallbacks, and a direct route to the existing professional handoff.
+- Real gap: before repair, each report had 15 second-level chapters but no chapter fragments beyond the document root. Ordinary readers, keyboard users and reviewers had to scroll linearly, could not enter a formal chapter directly from near the cover, and could not copy a stable chapter link.
+- Must remain frozen: the proposals, visual pages, figures, all four PDFs, nine geometry files, `metrics.json`, 12/8/3/36, G0/NO-GO, provisional boundaries, zero real outcomes, zero accepted duties and 0/8 independent human bilingual review are unchanged.
+- Implemented this round: added a matching 15-item semantic index after each report cover, assigned one stable fragment to every second-level chapter, and synchronized two-column desktop, one-column mobile, keyboard, reduced-motion and print behaviour. This improves report navigation only and adds no claim, source, asset or real-world status.
+
+## v79.0 - 2026-08-30
+
+**图文报告评审交接深链 / Illustrated-report Review-handoff Deep Link**
+
+- 已有能力：中英文体验台已有稳定的 `#handoff` 专业交接段，收束八问、合成回放和责任门；两份图文报告也保持离线、包内 CJK、零 JavaScript、语义表格和打印可读。
+- 真实缺口：修复前，权威正文中的两处 Markdown 链接没有被仓库报告渲染器转换；最终中英文报告各显示一段原样 `[文字](路径)`，不能点击。即使人工提取路径，报告位于 `report/`，原路径也缺少一级 `../`，且声明的 `#review-handoff` 片段不存在，因此“唯一后台入口”在最终报告中实际断开。
+- 必须冻结：visual、图件、四份 PDF、9 个几何文件、`metrics.json`、12/8/3/36、G0/NO-GO、临时边界、现实结果 0、责任接受 0 与独立人工双语复核 0/8 均不变。
+- 本轮实施：正文改用可审查的显式包内路径；两份最终报告将同一短语生成为真正的相对链接，分别指向既有的 `../visual/index.html#handoff` 与 `../visual/index.en.html#handoff`。只修复证据导航，不新增主张、来源、资产或现实状态。
+
+- Existing capability: both workbenches already have a stable `#handoff` professional-handoff section that converges the eight-question map, synthetic replay and duty gates; both illustrated reports remain offline, package-local CJK, zero-JavaScript, semantically tabulated and printable.
+- Real gap: before repair, the repository report renderer did not convert the two Markdown links in the authoritative proposals. Each final report displayed literal `[label](path)` text that could not be activated. Even a manually extracted path was one `../` short from the `report/` directory, and the claimed `#review-handoff` fragment did not exist, so the single back-stage entry was actually broken in the final report.
+- Must remain frozen: the visual pages, figures, all four PDFs, nine geometry files, `metrics.json`, 12/8/3/36, G0/NO-GO, provisional boundaries, zero real outcomes, zero accepted duties and 0/8 independent human bilingual review are unchanged.
+- Implemented this round: the proposals now expose auditable package-local paths, while each final report turns the same phrase into a real relative link to the existing `../visual/index.html#handoff` or `../visual/index.en.html#handoff` target. This repairs evidence navigation only and adds no claim, source, asset or real-world status.
+
+## v78.0 - 2026-08-30
+
+**离线图文报告语义导航 / Offline Illustrated-report Semantic Navigation**
+
+- 已有能力：中英文体验台已有语义导航、键盘路径与完整审阅包入口，两份图文报告也已恢复包内 CJK 字体并保持离线、零 JavaScript和打印可读。
+- 真实缺口：修复前，两份长报告各有 20 张数据表、76 个表头，但 20/20 表格均无可访问标题、76/76 表头均无显式列范围；页面也没有跳过封面直达正文的入口。视觉阅读可用，但屏幕阅读器必须线性穿过封面，且表格上下文依赖浏览器推断。
+- 必须冻结：proposal、visual、图件、四份 PDF、9 个几何文件、`metrics.json`、12/8/3/36、G0/NO-GO、临时边界、现实结果 0、责任接受 0 与独立人工双语复核 0/8 均不变。
+- 本轮实施：为两份报告增加键盘可见的正文跳转、可聚焦正文目标、20/20 隐藏表题和 76/76 `scope="col"` 列头；打印时隐藏跳转控件。修改只补语义关系，不新增主张、来源、资产或现实状态。
+
+- Existing capability: both workbenches already provide semantic navigation, keyboard routes and a complete-review-pack entry, while both illustrated reports retain package-local CJK rendering, offline operation, zero JavaScript and printable layout.
+- Real gap: before repair, each long report contained 20 data tables and 76 headers, yet 20/20 tables had no accessible caption and 76/76 headers had no explicit column scope. There was also no way to skip the cover and reach the report body. Visual reading worked, but screen-reader users had to traverse the cover linearly and table context depended on browser inference.
+- Must remain frozen: the proposals, visual pages, figures, all four PDFs, nine geometry files, `metrics.json`, 12/8/3/36, G0/NO-GO, provisional boundaries, zero real outcomes, zero accepted duties and 0/8 independent human bilingual review are unchanged.
+- Implemented this round: added a keyboard-visible skip link, a focusable main target, 20/20 hidden table captions and 76/76 `scope="col"` headers to each report; the skip control is suppressed in print. The change adds semantic relationships only, with no new claim, source, asset or real-world status.
+
+## v77.1 - 2026-08-30
+
+**报告离线 CJK 回归修复 / Offline Report CJK Regression Repair**
+
+- PR #4225 exact-head 评审确认两份 report HTML 在本轮重渲后丢失包内 CJK 字体入口；无系统 CJK 字体的评审预览因此出现方框字。字体子集、OFL 声明与两份 visual 的加载链仍然存在，问题不是缺字或新增资产。
+- 在中英文报告中恢复同一个 `../visual/assets/offline-cjk-font.css`；并以 SHA-256 不变的既有 OFL 源字体将四个最终 HTML 的完整字符并集更新为 1162 个码点。两次新进程 WOFF2 构建字节一致，四面缺字为 0，且保持离线、零远程字体、零 JavaScript。修复不改变正文、图件、PDF、几何、指标或现实状态。
+- 12/8/3/36、G0/NO-GO、临时边界、现实结果 0、责任接受 0 与独立人工双语复核 0/8 保持冻结。
+
+- The PR #4225 exact-head review confirmed that the latest report render dropped the package-local CJK font entry from both report HTML files, producing tofu in a review environment without system CJK fonts. The subset, OFL notice and both visual-page loading paths remained present; this was not a missing-glyph or new-asset problem.
+- Restored the same `../visual/assets/offline-cjk-font.css` link in both reports and refreshed the four-final-HTML character union to 1162 code points from the same SHA-256-stable OFL source. Two fresh-process WOFF2 builds are byte-identical, all four surfaces have zero missing glyphs, and operation remains offline with zero remote font and zero JavaScript. The repair changes no proposal text, figure, PDF, geometry, metric or real-world status.
+- The 12/8/3/36 counts, G0/NO-GO, provisional boundaries, zero real outcomes, zero accepted duties and 0/8 independent human bilingual review remain frozen.
+
+## v77.0 - 2026-08-30
+
+**全页图纸审阅图谱 / All-page Drawing Review Atlas**
+
+- 修复前，离线体验台可以直接打开四份完整 PDF，但评审包只独立预览各自第一页；其余 40 页必须另开 PDF 才能确认页数、顺序、版式连续性和中英配对。
+- 从既有四份 PDF 确定性派生四张全页缩略图谱，并在中英文证据段分别展示 A3 14/14 页与 A0 8/8 板；每张图谱回链原尺寸 PDF，并明确小字以原 PDF 为准、图谱不新增设计证据。
+- 本轮不修改四份 PDF、既有设计图件、几何、规划指标或现实状态；proposal、report 与权利登记仅同步新增四个图谱路径后的 162/162 精确包处置事实，T-02 结果仅同步 `sources.json` 的确定性输入哈希。新增图谱仅提高审阅可达性；12/8/3/36、G0/NO-GO、临时边界、现实结果 0、责任接受 0 与独立人工双语复核 0/8 保持冻结。
+
+- Before repair, the offline workbench linked all four complete PDFs directly, but the review packet independently previewed only each first page. The remaining 40 pages required opening the PDFs before page count, order, publication continuity and bilingual pairing could be checked.
+- Deterministically derived four all-page atlases from the existing PDFs. The Chinese and English evidence sections now show their A3 14/14-page and A0 8/8-board sequences, link each atlas back to its full-size PDF, and state that small text remains authoritative only in the source PDF and the atlas adds no design evidence.
+- This round changes no PDF, existing design figure, geometry, planning metric or real-world status; proposal, report and rights registers only synchronize the 162/162 exact-package disposition after adding four atlas paths, while the T-02 result only synchronizes the deterministic input hash for `sources.json`. The atlases improve review reachability only; 12/8/3/36, G0/NO-GO, provisional boundaries, zero real outcomes, zero accepted duties and 0/8 independent human bilingual review remain frozen.
+
+## v76.0 - 2026-08-30
+
+**首屏白话状态判读 / Plain-language First-view Status**
+
+- 修复前，中英文体验台已经在首屏披露 G0、临时粗略几何、非批准、未现场测试与现实结果 0，但三条压缩标签仍要求普通读者理解状态缩写并自行拼接“现在有什么、没有什么、为什么不能启动”。
+- 在两种语言首屏增加四格白话判读：可审阅成果、地图用途边界、现实零状态和当前 NO-GO 裁决。每格同时使用标题与完整句子，不依赖颜色传达意义；桌面四列、窄屏两列、移动端单列和打印均保持可读。
+- 本轮只改善既有状态的快速理解，不新增主张、来源、角色、任务、场景、项目、几何、指标、媒体或现实结果；proposal、report、图件和四份 PDF 不受影响。12/8/3/36、G0/NO-GO、临时边界、现实结果 0、责任接受 0 与独立人工双语复核 0/8 保持冻结。
+
+- Before repair, both workbenches already disclosed G0, provisional rough geometry, no approval, no field test and zero real-world results in the first view. Yet three compressed pills still required an ordinary reader to decode status shorthand and assemble what exists, what does not, and why launch remains forbidden.
+- Added a four-part plain-language reading to both first views: reviewable artefacts, the map-use boundary, real-world zero status and the current NO-GO ruling. Every item uses a heading and complete sentence, so meaning does not depend on colour. It remains readable in four desktop columns, two narrow columns, one mobile column and print.
+- This round improves only rapid understanding of existing status. It adds no claim, source, role, task, scene, project, geometry, metric, media or real-world result; proposals, reports, figures and all four PDFs are unaffected. The 12/8/3/36 counts, G0/NO-GO, provisional boundaries, zero real outcomes, zero accepted duties and 0/8 independent human bilingual review remain frozen.
+
+## v75.0 - 2026-08-30
+
+**原型深链焦点交接 / Prototype Deep-link Focus Transfer**
+
+- 修复前，七张角色卡已经能以精确片段标识跳到正确原型并显示落点提示，但键盘激活后焦点仍回落到页面主体；中英文 14 次角色路径测试均出现地址与视觉落点正确、辅助技术焦点未随行的问题。
+- 为中英文三处既有原型容器增加程序化焦点能力。浏览器处理片段导航时会将焦点交给 VERIFY、CO-CREATE 或 PUBLISH 的实际落点；实现保持零 JavaScript，沿用既有 `:target` 提示，并保留键盘、减少动态与打印兼容。
+- 本轮只修复深链焦点关系，不新增角色、任务、场景、空间裁决、来源、媒体、几何、指标、成熟度或现实结果；proposal、report、图件和四份 PDF 不受影响。12/8/3/36、G0/NO-GO、临时边界、现实结果 0、责任接受 0 和独立人工双语复核 0/8 保持冻结。
+
+- Before repair, all seven persona cards reached the correct prototype through an exact fragment and exposed a visible landing cue, but keyboard activation returned focus to the page body. Across 14 bilingual role-route trials, the URL and visual destination were correct while assistive-technology focus did not follow.
+- Made the three existing prototype containers in each visual language programmatically focusable. Native fragment navigation now transfers focus to the actual VERIFY, CO-CREATE or PUBLISH destination. The implementation remains zero-JavaScript, retains the existing `:target` cue, and preserves keyboard, reduced-motion and print behaviour.
+- This round repairs only the deep-link focus relationship. It adds no role, task, scene, spatial ruling, source, media, geometry, metric, maturity or real-world outcome; proposals, reports, figures and all four PDFs are unaffected. The 12/8/3/36 counts, G0/NO-GO, provisional boundaries, zero real outcomes, zero accepted duties and 0/8 independent human bilingual review remain frozen.
+
+## v74.0 - 2026-08-30
+
+**角色卡精确落点 / Persona-card Exact Destinations**
+
+- 修复前，七张角色卡已经说明对应任务、原型、场景、非 AI 路径和停止条件，但所有“进入原型”按钮都跳到同一个三处体验节顶部；读者仍需再次辨认 VERIFY、CO-CREATE 或 PUBLISH，快速入口没有完成最后一跳。
+- 为中英文三处原型增加稳定的 `prototype-verify`、`prototype-cocreate`、`prototype-publish` 锚点，将七张角色卡分别直达正确原型，并用 `:target` 边框与阴影确认落点。页面保持零 JavaScript、离线、键盘可达、减少动态和打印兼容。
+- 本轮只修复导航关系，不新增角色、任务、场景、空间裁决、来源、媒体、几何、指标、成熟度或现实结果；proposal、report、图件和四份 PDF 不受影响。12/8/3/36、G0/NO-GO、临时边界、现实结果 0、责任接受 0 和独立人工双语复核 0/8 保持冻结。
+
+- Before repair, the seven persona cards already named their task, prototype, scene, non-AI route and stop condition, but every “enter prototype” control landed at the top of the same three-place section. Readers still had to identify VERIFY, CO-CREATE or PUBLISH again, so the quick entry did not complete its final jump.
+- Added stable `prototype-verify`, `prototype-cocreate` and `prototype-publish` destinations to both visual languages, routed all seven persona cards to the correct prototype, and used a `:target` border and shadow to confirm the landing point. The pages remain zero-JavaScript, offline, keyboard-reachable, reduced-motion aware and print-compatible.
+- This round changes navigation only. It adds no role, task, scene, spatial ruling, source, media, geometry, metric, maturity or real-world outcome; proposals, reports, figures and all four PDFs are unaffected. The 12/8/3/36 counts, G0/NO-GO, provisional boundaries, zero real outcomes, zero accepted duties and 0/8 independent human bilingual review remain frozen.
+
+## v73.0 - 2026-08-30
+
+**角色到任务的快速入口 / Persona-to-task Quick Entry**
+
+- 修复前，方案正文已定义开源开发者、高校师生、创业团队、企业服务团队、周边居民、老年人与行动不便者、游客与国际访客七类角色，离线体验台也已展示三处原型和 12 个场景；但首屏只有统一的普通任务路径，不同读者仍需自行判断“我的任务先看哪里”。
+- 在中英文离线体验台增加七张角色入口卡。每张卡只复用既有角色、日常任务、三处不可互换原型、现有场景编号、完整非 AI 路径和停止条件；3 分钟入口与主导航均可键盘直达，桌面四列、1050 px 两列、760 px 单列、44 px 触控目标、减少动态和打印回退同步成立。
+- 角色不是权限等级，也不新增用户画像、个体数据、现场反馈或部署结果。本轮不改 proposal、report、图件、媒体、来源、几何、指标或四份 PDF；geometry、`metrics.json`、12/8/3/36、G0/NO-GO、临时边界、现实结果 0、责任接受 0、独立人工双语复核 0/8 和组件级权利边界保持冻结。
+
+- Before repair, the proposals already defined seven roles—open-source developers, university faculty and students, startup teams, enterprise service teams, nearby residents, older people and people with reduced mobility, and tourists and international visitors—and the offline workbench already exposed three prototypes and 12 scenes. Yet its first view offered only one generic ordinary-task route, leaving each reader to infer where their own task should start.
+- Added seven role-entry cards to both offline visual pages. Every card reuses only an existing role, everyday task, non-exchangeable prototype, scene ID, complete non-AI path and stop condition. The three-minute route and primary navigation are keyboard-reachable, with four desktop columns, two columns at 1050 px, single-column 760 px reflow, 44 px targets, reduced-motion behaviour and print fallback.
+- Roles are not permission tiers and add no user profiling, individual data, field feedback or deployment result. This round changes no proposal, report, figure, media, source, geometry, metric or PDF. Geometry, `metrics.json`, 12/8/3/36, G0/NO-GO, provisional boundaries, zero real outcomes, zero accepted duties, 0/8 independent human bilingual review and component-specific rights boundaries remain frozen.
+
+## v72.0 - 2026-08-30
+
+**完整审阅包首屏入口 / First-view Complete Review Pack**
+
+- 修复前，离线体验台首屏已提供 30 秒、3 分钟和 15 分钟渐进阅读路径，但完整图文报告与 A3/A0 出版物仍只存在于投稿目录或页尾证据区；截止前审阅者无法从首屏一跳进入完整出版工件。
+- 在中英文首屏分别增加完整审阅包入口，直达对应语言的图文报告、A3 手册、A0 展板和证据索引；同步补齐两种语言页尾的出版物链接。入口支持键盘聚焦、44 px 触控目标、390 px 单列回流、减少动态与打印回退。
+- 不新增正文主张、图件、媒体、来源、几何、指标或 PDF。geometry、`metrics.json`、12/8/3/36、G0/NO-GO、临时边界、现实结果 0、责任接受 0、独立人工双语复核 0/8、权利边界和四份 PDF 均保持冻结。
+
+- Before repair, the offline workbench hero already offered 30-second, three-minute and 15-minute progressive routes, but the complete illustrated report and A3/A0 publications remained reachable only through the package tree or the footer evidence area. A deadline reviewer could not enter the full publication set in one step from the first view.
+- Added a complete-review-pack entry to each language's hero, linking directly to the matching illustrated report, A3 booklet, A0 boards and evidence index; both evidence footers now expose the publication links as well. The entries retain keyboard focus, 44 px targets, 390 px single-column reflow, reduced motion and print fallback.
+- No proposal claim, figure, media, source, geometry, metric or PDF is added. Geometry, `metrics.json`, 12/8/3/36, G0/NO-GO, provisional boundaries, zero real outcomes, zero accepted duties, 0/8 independent human bilingual review, rights boundaries and all four PDFs remain frozen.
+
 ## v71.0 - 2026-08-29
 
 **渐进阅读入口 / Progressive Reading Routes**

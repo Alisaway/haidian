@@ -1,0 +1,138 @@
+{
+  "register_id": "open-rail-open-asset-register-v1",
+  "iteration": "v2.10",
+  "generated_at": "2026-08-30",
+  "package_license": "CC-BY-SA-4.0",
+  "purpose_zh": "登记本包可供第三方复用的开放资产，并提供可核验的采用登记入口。服务于『可公开复算的落地经济学』宣称与许可的一致性：复算脚本、成本模型、资金矩阵与几何图层自 v2.10 起以 CC-BY-SA-4.0 开放，任何第三方可在署名并以相同许可分发衍生作品的前提下合法复用。",
+  "purpose_en": "Registers this package's reusable open assets and provides a verifiable adoption entry point. Aligns the 'publicly recomputable implementation economics' claim with the licence: the recompute script, cost model, funding matrices and geometry layers are open under CC-BY-SA-4.0 from v2.10 — any third party may lawfully reuse them with attribution and ShareAlike terms.",
+  "license_grant_zh": "本登记不授予超出包主许可（CC-BY-SA-4.0）的任何权利；采用即表示接受署名（BY）与相同许可（ShareAlike）条款。",
+  "license_grant_en": "This register grants no rights beyond the package licence (CC-BY-SA-4.0); adoption implies acceptance of attribution (BY) and ShareAlike terms.",
+  "assets": [
+    {
+      "asset_id": "OA-FUNDING-MATRIX",
+      "canonical_path": "visual/assets/funding-matrix.json",
+      "paths": ["visual/assets/funding-matrix.json"],
+      "version": "v2.10",
+      "spdx_license": "CC-BY-SA-4.0",
+      "attribution_text": "Funding Matrix by OPEN RAIL / 开源轨道 (deerred643-star, open-rail-jingzhang-ai-commons)",
+      "description_zh": "六类资金矩阵：8 项更新项目 × 六类资金类型（财政/专项债/市场主体/公益/运营反哺/混合）的路径化结构，含每条路径的触发条件与边界。",
+      "description_en": "Six-category funding matrix: path-mapped structure of 8 renewal projects x six funding types (fiscal/special bond/market/philanthropic/operating-revenue/mixed), with trigger conditions and boundaries per path.",
+      "reuse_scope": "data_structure_and_content"
+    },
+    {
+      "asset_id": "OA-PARAMETRIC-COST",
+      "canonical_path": "visual/assets/parametric-cost-model.json",
+      "paths": ["visual/assets/parametric-cost-model.json"],
+      "version": "v2.10",
+      "spdx_license": "CC-BY-SA-4.0",
+      "attribution_text": "Parametric Cost Model by OPEN RAIL / 开源轨道 (deerred643-star, open-rail-jingzhang-ai-commons)",
+      "description_zh": "参数化成本模型：四科目量纲级分解 + 边界几何/容积率/实测人流三参数 ±20% 敏感性检验骨架；参数占位、不输出估算值。",
+      "description_en": "Parametric cost model: four-account dimensional decomposition plus a three-parameter (+/-20%) sensitivity skeleton; parameters are placeholders producing no estimates.",
+      "reuse_scope": "data_structure_and_content"
+    },
+    {
+      "asset_id": "OA-OM-FUNDING-GAP",
+      "canonical_path": "visual/assets/om-funding-gap.json",
+      "paths": ["visual/assets/om-funding-gap.json"],
+      "version": "v2.10",
+      "spdx_license": "CC-BY-SA-4.0",
+      "attribution_text": "O&M Funding-Gap Table by OPEN RAIL / 开源轨道 (deerred643-star, open-rail-jingzhang-ai-commons)",
+      "description_zh": "运维资金缺口表：对具备公开单价基准的科目以 ROM 区间量化年运维成本，全部算术（子项乘积、小计、储备比例、总计、缺口恒等式）由一键复算第 13 项机检；缺口如实登记为全区间（承诺覆盖率 0）。",
+      "description_en": "O&M funding-gap table: ROM-quantified annual O&M costs for accounts with public unit-price benchmarks; all arithmetic (sub-item products, subtotals, reserve ratio, totals, gap identity) machine-checked as recompute item 13; the gap is honestly registered as the full range (commitment coverage 0).",
+      "reuse_scope": "data_structure_and_content"
+    },
+    {
+      "asset_id": "OA-RECOMPUTE-SCRIPT",
+      "canonical_path": "visual/assets/recompute_metrics.js",
+      "paths": ["visual/assets/recompute_metrics.js"],
+      "version": "v2.10",
+      "spdx_license": "CC-BY-SA-4.0",
+      "attribution_text": "Offline Recompute Script by OPEN RAIL / 开源轨道 (deerred643-star, open-rail-jingzhang-ai-commons)",
+      "description_zh": "零依赖 Node.js 单文件离线复算脚本：内联 EPSG:4548 CGS2000 3 度带投影，从包内 GeoJSON 复算全部核心指标并与 metrics.json 对照（含运维缺口表算术机检）。",
+      "description_en": "Zero-dependency single-file Node.js offline recompute script: inlines the EPSG:4548 CGS2000 3-degree GK projection, recomputes all core metrics from package GeoJSON against metrics.json (incl. O&M gap-table arithmetic checks).",
+      "reuse_scope": "code_and_method"
+    },
+    {
+      "asset_id": "OA-GEOMETRY-LAYERS",
+      "canonical_path": "geometry/",
+      "paths": [
+        "geometry/buildings.geojson",
+        "geometry/constraints.geojson",
+        "geometry/green_space.geojson",
+        "geometry/key_areas.geojson",
+        "geometry/land_use.geojson",
+        "geometry/phasing.geojson",
+        "geometry/public_space.geojson",
+        "geometry/roads.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "version": "v2.10",
+      "spdx_license": "CC-BY-SA-4.0",
+      "attribution_text": "Conceptual Geometry Layers by OPEN RAIL / 开源轨道 (deerred643-star, open-rail-jingzhang-ai-commons)",
+      "description_zh": "九个概念性设计图层（EPSG:4548）：建筑肌理、约束、绿地、重点地区、用地、分期、公共空间、道路、边界。全部为概念建议（provisional），官方边界发布后须整体重新推导。",
+      "description_en": "Nine conceptual design layers (EPSG:4548): buildings, constraints, green space, key areas, land use, phasing, public space, roads, boundary. All provisional; official boundary publication requires full re-derivation.",
+      "reuse_scope": "data_content"
+    },
+    {
+      "asset_id": "OA-PRIORITY-EVIDENCE-METHOD",
+      "canonical_path": "assets/media/priority-evidence.md",
+      "paths": ["assets/media/priority-evidence.md"],
+      "version": "v2.10",
+      "spdx_license": "CC-BY-SA-4.0",
+      "attribution_text": "First-Publication Evidence Chain Method by OPEN RAIL / 开源轨道 (deerred643-star, open-rail-jingzhang-ai-commons)",
+      "description_zh": "反抄袭在先权利证据链方法：逐版本登记本地 commit、公开 PR 编号、创建/合并时间与合并 commit，附任何人可独立执行的复核命令；主张边界以公开 GitHub 时间戳为起点。",
+      "description_en": "Anti-plagiarism first-publication evidence chain method: per-version registration of local commits, public PR numbers, creation/merge timestamps and merge commits, with independently runnable verification commands; claims start from public GitHub timestamps.",
+      "reuse_scope": "method_and_format"
+    },
+    {
+      "asset_id": "OA-SEB-ADOPTION-EXAMPLE",
+      "canonical_path": "visual/assets/seb-adoption.json",
+      "paths": ["visual/assets/seb-adoption.json"],
+      "version": "v2.10",
+      "spdx_license": "CC-BY-SA-4.0",
+      "attribution_text": "SEB Adoption Declaration by OPEN RAIL / 开源轨道 (deerred643-star); adopts Service Equivalence Baseline by lqqk7 / EVERY SENSE JING-ZHANG (open-city-ai/haidian Issue #2549)",
+      "description_zh": "SEB 组件级采纳声明示例：边界清晰的组件级采纳写法（采纳范围、主张边界、许可边界、有效性注记）——本文件为方法示范；被采纳的 SEB 规范本身归 lqqk7（CC-BY-SA-4.0）。",
+      "description_en": "Component-level SEB adoption declaration as an example of boundary-clean adoption writing (scope, claim boundary, licence boundary, validity notes). The adopted SEB specification itself remains CC-BY-SA-4.0 by lqqk7.",
+      "reuse_scope": "method_and_format"
+    },
+    {
+      "asset_id": "OA-SWITCHBACK-ADOPTION-EXAMPLE",
+      "canonical_path": "visual/assets/switchback-adoption.json",
+      "paths": ["visual/assets/switchback-adoption.json"],
+      "version": "v2.10",
+      "spdx_license": "CC-BY-SA-4.0",
+      "attribution_text": "Switchback Adoption Declaration by OPEN RAIL / 开源轨道 (deerred643-star); adopts Switchback Protocol by chucky1102 / RENLINE (open-city-ai/haidian Issue #1119)",
+      "description_zh": "折返协议组件级采纳声明示例：五组件命名 + 全带默认值的机器可读运营合约写法。本文件为方法示范；被采纳的折返协议规范本身归 chucky1102（CC-BY-4.0）。",
+      "description_en": "Component-level Switchback Protocol adoption declaration as machine-readable operating-contract writing (five component names + belt-wide defaults). The adopted protocol specification itself remains CC-BY-4.0 by chucky1102.",
+      "reuse_scope": "method_and_format"
+    },
+    {
+      "asset_id": "OA-RIGHTS-INVENTORY-TEMPLATE",
+      "canonical_path": "visual/assets/file-rights-inventory.json",
+      "paths": ["visual/assets/file-rights-inventory.json"],
+      "version": "v2.10",
+      "spdx_license": "CC-BY-SA-4.0",
+      "attribution_text": "File Rights Inventory Method by OPEN RAIL / 开源轨道 (deerred643-star, open-rail-jingzhang-ai-commons)",
+      "description_zh": "全路径逐项许可披露方法：以 manifest 为基准的覆盖率断言 + 三级哈希绑定（manifest blob sha256 → 逐文件 sha256），显式自查声明与三类不变边界。同类实践先例：xyh202131 的 file-rights-inventory（158/158）。",
+      "description_en": "Per-path rights disclosure method: manifest-based coverage assertion plus hash binding (manifest blob sha256 -> per-file sha256) with explicit self-review disclaimer. Prior art of the same practice: xyh202131's file-rights-inventory (158/158).",
+      "reuse_scope": "method_and_format"
+    }
+  ],
+  "adoption_registration": {
+    "four_factors": {
+      "canonical_path": "包内规范路径（如 visual/assets/funding-matrix.json）",
+      "version": "被采用资产版本（如 v2.10）",
+      "exact_commit": "被采用内容所在的公开 commit SHA（upstream/main 合并 commit 或 fork 分支头）",
+      "content_sha256": "该 commit 下该文件的 sha256（git show <commit>:<path> 计算对照 manifest 登记）"
+    },
+    "how_to_register_zh": "建议在 open-city-ai/haidian 仓库开 Issue 登记（场内既有惯例，先例：SEB 规范 Issue #2549、折返协议 Issue #1119），或在采用方自身仓库的公开文档中登记；登记内容含四要素、采用范围（结构/数据/方法）、采用方署名与（如适用）衍生作品的许可声明。",
+    "how_to_register_en": "Register via an Issue on open-city-ai/haidian (field precedent: SEB at Issue #2549, Switchback Protocol at Issue #1119) or in the adopter's own public docs; include the four factors, adoption scope (structure/data/method), adopter attribution and, where applicable, the licence statement of the derivative work.",
+    "verification_zh": "任何人可离线核验：git show <commit>:<path> 输出计算 sha256，与登记的 content_sha256 一致即证明引用指向该 commit 的该文件内容。",
+    "verification_en": "Anyone can verify offline: compute the sha256 of `git show <commit>:<path>`; a match with the registered content_sha256 proves the reference points to that file at that commit."
+  },
+  "adoptions": [],
+  "boundary_zh": "发布资产不等于已被采用：本登记发布时可复用资产 9 项，第三方采用记录 0 条（如实登记，不虚构）。资产中的概念数据为 provisional（不构成规划结论）；采用产生的衍生作品须按 CC-BY-SA-4.0 以相同许可分发并保留署名；被引用的第三方规范（SEB、折返协议）归其原作者与原许可，不因本登记而改变。",
+  "boundary_en": "Publishing assets is not the same as being adopted: at registration this package publishes 9 reusable assets with 0 third-party adoption records (registered honestly, none fabricated). Conceptual data in the assets are provisional (not planning conclusions); derivatives must be distributed under CC-BY-SA-4.0 with attribution retained; referenced third-party specifications (SEB, Switchback Protocol) remain with their original authors and licences.",
+  "honest_positioning_zh": "开放沉淀是全场最弱维（63 包抽样中多数为 COMMUNITY-DISPLAY-ONLY）；本登记把『可被采用』的入口做实，但不宣称任何尚未发生的采用。",
+  "honest_positioning_en": "Open sedimentation is the field's weakest dimension (most of the 63 sampled packages are COMMUNITY-DISPLAY-ONLY); this register makes the adoption entry point real without claiming any adoption that has not happened."
+}

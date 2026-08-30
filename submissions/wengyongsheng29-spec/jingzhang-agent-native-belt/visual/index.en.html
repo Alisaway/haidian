@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Zhimai Jing-Zhang · AI-Native Innovation Belt Concept Proposal</title>
-<link rel="icon" type="image/png" href="assets/logo-icon.png">
+<link rel="icon" type="image/png" href="../assets/logo-transparent.png">
 <style>
 
 
@@ -373,12 +373,12 @@ html,body{height:100%;background:var(--bg);color:var(--text);
 <div class="app"><div class="frame">
   <div class="header">
     <div class="h-left">
-      <div class="h-icon"><img src="assets/logo-transparent.png?v=8" alt="logo" style="width:100%;height:100%;border-radius:6px;object-fit:contain"></div>
+      <div class="h-icon"><img src="../assets/logo-transparent.png?v=8" alt="logo" style="width:100%;height:100%;border-radius:6px;object-fit:contain"></div>
       <span class="h-title">Zhimai Jing-Zhang · AI-Native Innovation Belt Concept Proposal</span>
     </div>
     <div class="h-badge">Provisional · Concept Only</div>
   </div>
-  <div class="content" id="content"></div>
+  <div class="content" id="content"><div class="page active"><div class="cover"><div class="cover-logo"><img src="../assets/logo-transparent.png" alt="logo"></div><div class="cover-title">Zhimai Jing-Zhang</div><div class="cover-sub">AI-Native Innovation Belt · Concept</div><div class="cover-line"></div><div class="cover-en">Zhima Jing-Zhang · An AI-Native Innovation Belt</div><div class="cover-desc">Century-old Jing-Zhang railway heritage park × AI-native innovation × urban design</div><div class="cover-tags"><span class="cover-tag">3 Cores · 1 Axis · 2 Wings</span><span class="cover-tag">18 Scenario Cards · 7 Tests</span><span class="cover-tag">15 Physical Landing Nodes</span><span class="cover-tag">4 Pilgrimage Landmarks</span></div><div style="margin-top:18px;font-size:12px;color:#78716c">Static fallback; full interactive version requires JavaScript. All content is conceptual.</div></div></div></div>
   <div class="footer-bar">
     <button class="nav-btn" id="prevBtn" onclick="turn(-1)">← Prev</button>
     <div class="progress-wrap">
@@ -440,73 +440,12 @@ pin:'<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy=
 check:'<path d="M22 11.08V12a10 10 0 11-5.93-9.14M22 4L12 14.01l-3-3"/>',
 tree:'<path d="M12 22V8M12 8L7 3h10l-5 5zM5 14l7-6 7 6M8 18h8"/>',
 cube:'<path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16zM3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/>',
-tag:'<path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82zM7 7h.01"/>'
+tag:'<path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82zM7 7h.01"/>',
+robot:'<rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4M8 16h.01M16 16h.01"/>'
 };
 function ico(n,s,c){return '<svg width="'+s+'" height="'+s+'" viewBox="0 0 24 24" fill="none" stroke="'+(c||'currentColor')+'" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;display:inline-block">'+(IC[n]||'')+'</svg>';}
 
-const pages=[
-  {_:"cover"},
-  {_:"toc"},
-  {id:"p-overview",title:"Overview Map",icon:"map",
-   body:function(){return '<div class="img-card"><img src="../assets/figures/site-overview.en.png" alt="Overview">'+
-    '<div class="img-caption">Fig.1 Spatial Overview — 3 Cores + 1 Axis + 2 Wings · provisional boundary · North ↑</div></div>'+
-    '<div class="hl">The three cores (Zhongzhi Park / AI Origin / Dazhongsi) string along the Jing-Zhang Railway Heritage Park north to south like beads on a chain;'+
-    'the two wings link westward to Zhongguancun tech services and extend eastward to the Xiaoyue River scenario enablement.</div>';}},
-  {id:"p-baseline",title:"Baseline",icon:"clipboard",sub:"Real current-state anchors from public data — the greenway is built, the AI layer awaits overlay.",
-   body:function(){return '<div class="baseline-grid" style="margin-top:auto">'+
-    '<div class="bl-card gold"><div class="bl-title">'+ico('tree',16)+' Jing-Zhang Greenway Completed</div>'+
-    '<div class="bl-big">9<span class="bl-unit">km</span></div>'+
-    '<div class="bl-desc">Phase 2 opened Aug 2026 · 53 ha · serves 70 communities / 450,000 people<br>Three roads + one greenway, no breakpoints · connects south to the Huilongguan cycleway</div></div>'+
-    '<div class="bl-card purple"><div class="bl-title">'+ico('cpu',16)+' AI Core Industry</div>'+
-    '<div class="bl-big">282.2<span class="bl-unit">B</span></div>'+
-    '<div class="bl-desc">2024 AI core industry scale · ~80% of Beijing · 30% growth<br>1,900+ companies · 51 unicorns · 104 registered foundation models</div></div>'+
-    '<div class="bl-card gold"><div class="bl-title">'+ico('cap',16)+' Talent & R&D</div>'+
-    '<div class="bl-big">12<span class="bl-unit">%+</span></div>'+
-    '<div class="bl-desc">R&D/GDP ratio · GDP 1.29 trillion (1/4 of the city)<br>646 academicians (35.8% nationally) · 2M talents · 92 national key labs</div></div>'+
-    '<div class="bl-card teal"><div class="bl-title">'+ico('rails',16)+' Rail Support</div>'+
-    '<div class="bl-big">Line 13</div>'+
-    '<div class="bl-desc">Xizhimen → Dazhongsi → Zhichunlu → Wudaokou<br>Zhichunlu 310k/day · capacity released after Line 18 opens</div></div>'+
-    '</div>'+
-    '<table class="info-table" style="margin-top:auto">'+
-    '<tr><td>Zhongzhi Park (North) anchor</td><td>Beihang AI School / Embodied AI Institute · CAICT · 8-college 20-school consortium</td></tr>'+
-    '<tr><td>AI Origin (Central) anchor</td><td>Tsinghua / Peking University · CAS (Automation / Software / Physics) · 200+ AI companies (Dongsheng Tower)</td></tr>'+
-    '<tr><td>Dazhongsi (South) anchor</td><td>BUPT / BNU / BJTU · one of two pilot zones of the official AI District</td></tr>'+
-    '<tr><td>Positioning</td><td><b style="color:#b45309">an AI-native layer overlaid on the completed 9 km greenway, not a from-scratch build</b></td></tr>'+
-    '</table>'+
-    '<div class="hl gold">Sources: Beijing Daily / The Beijing News / The Paper / CVSource / 36Kr / Beijing Rail Transit Command Center and other public reports (2025–2026)</div>';}},
-  {id:"p-readiness",title:"Site Analysis",icon:"search",
-   body:function(){return '<div style="display:flex;gap:12px;flex:1;min-height:0">'+
-    '<div style="width:260px;flex:none;display:flex;flex-direction:column;gap:0">'+
-    '<table class="info-table" style="margin:0;background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden">'+
-    '<tr><td>Retained areas</td><td>Campuses / parks / completed research land (green) — Beihang, Tsinghua, PKU, CAS, etc.</td></tr>'+
-    '<tr><td>Renewable plots</td><td>Rail-side, old factories, some commercial offices (gold solid) — subject to title investigation</td></tr>'+
-    '<tr><td>To-be-studied areas</td><td>Plots needing further feasibility study (gold dashed)</td></tr>'+
-    '<tr><td>Stakeholders</td><td>8 types: universities / research institutes, AI companies, residents (450k), merchants, rail / metro, government, open-source community, visitors</td></tr>'+
-    '<tr><td>Engagement path</td><td>Vision co-creation (0-12mo) → co-build & monitor (1-3yr) → share & co-govern (3-10yr)</td></tr>'+
-    '</table>'+
-    '<div class="hl gold" style="margin-top:10px">Renewable land in the three cores must be confirmed after building survey, title investigation, and regulatory-plan adjustment; this map is conceptual only.</div>'+
-    '</div>'+
-    '<div class="img-card" style="flex:1;margin-bottom:0">'+
-    '<img src="../assets/figures/site-readiness.en.png" alt="Three-Core Site Analysis">'+
-    '<div class="img-caption">Fig.8 Three-Core Site Analysis — retained areas, renewable plot classification, real institutional anchors and stakeholders (conceptual, subject to title investigation)</div></div>'+
-    '</div>';}},
-  {id:"p-regional",title:"Regional Synergy",icon:"globe",sub:"Three science cities + E-Town + Beijing-Tianjin-Hebei innovation network · full-stack independent innovation chain",
-   body:function(){return '<div style="display:flex;gap:12px;flex:1;min-height:0">'+
-    '<div style="width:260px;flex:none;display:flex;flex-direction:column;gap:0">'+
-    '<table class="info-table" style="margin:0;background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden">'+
-    '<tr><td>Zhongguancun Science City</td><td>Location of this project; AI original-innovation cradle</td></tr>'+
-    '<tr><td>Future Science City</td><td>AI + energy / life-science joint testing</td></tr>'+
-    '<tr><td>Huairou Science City</td><td>Large scientific facilities → foundation models → scenario validation</td></tr>'+
-    '<tr><td>Beijing E-Town</td><td>R&D in Haidian, testing in E-Town, deployment back to Jing-Zhang</td></tr>'+
-    '<tr><td>Tianjin / Xiong&#39;an</td><td>Supercomputing supplement + 1909 Protocol export</td></tr>'+
-    '</table>'+
-    '<div class="hl" style="margin-top:10px"><b>Full-stack independent chain</b>: chips & compute → frameworks & tools → foundation models & algorithms → scenarios & applications; the four-layer innovation chain organized in Zhongzhi Park</div>'+
-    '</div>'+
-    '<div class="img-card" style="flex:1;margin-bottom:0">'+
-    '<img src="../assets/figures/regional-synergy.en.png" alt="Regional Synergy">'+
-    '<div class="img-caption">Fig.10 Regional Synergy — Zhimai Jing-Zhang with the three science cities, E-Town, and Beijing-Tianjin-Hebei</div></div>'+
-    '</div>';}},
-  {id:"p-metrics",title:"Key Metrics",icon:"chart",sub:"Recomputed precisely from GeoJSON in EPSG:4548 projection.",
+const pages=[{_:"cover"},{_:"toc"},{id:"p-metrics",title:"Key Metrics",icon:"chart",sub:"Recomputed precisely from GeoJSON in EPSG:4548 projection.",
    body:function(){return ''+
     '<div class="metrics-row">'+
     // Donut 1: surface coverage
@@ -564,8 +503,42 @@ const pages=[
     '<div class="mc-value">441</div>'+
     '<div class="mc-desc">~18% density in the three cores (≤35% guideline)</div></div>'+
     '</div></div>'+
-    '<div class="hl">Green ratio per GB/T 51346 (new areas ≥30%), public space per GB 50180, building density per GB 50137. All areas are conceptual; provisional boundary, official_boundary=false.</div>';}},
-  {id:"p-landuse",title:"Land Use",icon:"puzzle",
+    '<div class="hl">Green ratio per GB/T 51346 (new areas ≥30%), public space per GB 50180, building density per GB 50137. All areas are conceptual; provisional boundary, official_boundary=false.</div>';}},{id:"p-overview",title:"Overview Map",icon:"map",sub:"3 Cores + 1 Axis + 2 Wings · provisional boundary · North ↑",
+   body:function(){return '<div style="display:flex;gap:12px;flex:1;min-height:0">'+
+    '<div class="img-card" style="flex:3;margin-bottom:0;display:flex;flex-direction:column;min-height:0">'+
+    '<img src="../assets/figures/site-overview.en.png" alt="Overview" style="flex:1;object-fit:contain;min-height:0;width:100%">'+
+    '<div class="img-caption">Fig.1 Spatial Overview — 3 Cores + 1 Axis + 2 Wings · provisional boundary · North ↑</div></div>'+
+    '<div style="flex:1;display:flex;flex-direction:column;gap:8px;min-height:0;justify-content:center">'+
+    '<div style="padding:12px 14px;background:linear-gradient(135deg,#eff6ff,#dbeafe);border-radius:10px;border-left:3px solid #2563eb"><div style="font-size:13px;font-weight:700;color:#1e40af;margin-bottom:4px">Spatial Structure</div><div style="font-size:11px;color:#1e3a8a;line-height:1.6">3 cores string along Jing-Zhang greenway N-S; west links Zhongguancun, east extends Xiaoyue River scenario enablement</div></div>'+
+    '<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">'+
+    '<div style="padding:8px 10px;background:linear-gradient(135deg,#f0fdf4,#dcfce7);border-radius:8px;text-align:center"><div style="font-size:20px;font-weight:800;color:#059669">9<span style="font-size:11px">km</span></div><div style="font-size:9px;color:#064e3b">Greenway Axis</div></div>'+
+    '<div style="padding:8px 10px;background:linear-gradient(135deg,#faf5ff,#f3e8ff);border-radius:8px;text-align:center"><div style="font-size:20px;font-weight:800;color:#7c3aed">11.4<span style="font-size:11px">km²</span></div><div style="font-size:9px;color:#4c1d95">Design Area</div></div>'+
+    '<div style="padding:8px 10px;background:linear-gradient(135deg,#fef3c7,#fde68a);border-radius:8px;text-align:center"><div style="font-size:20px;font-weight:800;color:#d97706">3</div><div style="font-size:9px;color:#78350f">Cores</div></div>'+
+    '<div style="padding:8px 10px;background:linear-gradient(135deg,#fef2f2,#fee2e2);border-radius:8px;text-align:center"><div style="font-size:20px;font-weight:800;color:#dc2626">2</div><div style="font-size:9px;color:#7f1d1d">Wings</div></div>'+
+    '</div>'+
+    '<div style="padding:8px 12px;background:#fafaf9;border-radius:8px;border:1px solid #e7e5e4"><div style="font-size:10px;color:#57534e;line-height:1.5"><b>Anchors:</b> BUAA/Tsinghua/BUPT + CAS + 1900+ AI firms</div></div>'+
+    '</div></div>';}},{id:"p-baseline",title:"Baseline",icon:"clipboard",sub:"Real current-state anchors from public data — the greenway is built, the AI layer awaits overlay.",
+   body:function(){return '<div class="baseline-grid" style="margin-top:auto">'+
+    '<div class="bl-card gold"><div class="bl-title">'+ico('tree',16)+' Jing-Zhang Greenway Completed</div>'+
+    '<div class="bl-big">9<span class="bl-unit">km</span></div>'+
+    '<div class="bl-desc">Phase 2 opened Aug 2026 · 53 ha · serves 70 communities / 450,000 people<br>Three roads + one greenway, no breakpoints · connects south to the Huilongguan cycleway</div></div>'+
+    '<div class="bl-card purple"><div class="bl-title">'+ico('cpu',16)+' AI Core Industry</div>'+
+    '<div class="bl-big">282.2<span class="bl-unit">B</span></div>'+
+    '<div class="bl-desc">2024 AI core industry scale · ~80% of Beijing · 30% growth<br>1,900+ companies · 51 unicorns · 104 registered foundation models</div></div>'+
+    '<div class="bl-card gold"><div class="bl-title">'+ico('cap',16)+' Talent & R&D</div>'+
+    '<div class="bl-big">12<span class="bl-unit">%+</span></div>'+
+    '<div class="bl-desc">R&D/GDP ratio · GDP 1.29 trillion (1/4 of the city)<br>646 academicians (35.8% nationally) · 2M talents · 92 national key labs</div></div>'+
+    '<div class="bl-card teal"><div class="bl-title">'+ico('rails',16)+' Rail Support</div>'+
+    '<div class="bl-big">Line 13</div>'+
+    '<div class="bl-desc">Xizhimen → Dazhongsi → Zhichunlu → Wudaokou<br>Zhichunlu 310k/day · capacity released after Line 18 opens</div></div>'+
+    '</div>'+
+    '<table class="info-table" style="margin-top:auto">'+
+    '<tr><td>Zhongzhi Park (North) anchor</td><td>Beihang AI School / Embodied AI Institute · CAICT · 8-college 20-school consortium</td></tr>'+
+    '<tr><td>AI Origin (Central) anchor</td><td>Tsinghua / Peking University · CAS (Automation / Software / Physics) · 200+ AI companies (Dongsheng Tower)</td></tr>'+
+    '<tr><td>Dazhongsi (South) anchor</td><td>BUPT / BNU / BJTU · one of two pilot zones of the official AI District</td></tr>'+
+    '<tr><td>Positioning</td><td><b style="color:#b45309">an AI-native layer overlaid on the completed 9 km greenway, not a from-scratch build</b></td></tr>'+
+    '</table>'+
+    '<div class="hl gold">Sources: Beijing Daily / The Beijing News / The Paper / CVSource / 36Kr / Beijing Rail Transit Command Center and other public reports (2025–2026)</div>';}},{id:"p-landuse",title:"Land Use",icon:"puzzle",
    body:function(){return '<div style="display:flex;gap:12px;flex:1;min-height:0">'+
     '<div class="img-card" style="flex:1;margin-bottom:0;display:flex;flex-direction:column">'+
     '<img src="../assets/figures/land-use-structure.en.png" alt="Land Use" style="flex:1;object-fit:contain;min-height:0;width:100%">'+
@@ -587,16 +560,14 @@ const pages=[
     '<tr><td>Roads & Other</td><td>57.8% (659.7 ha)</td></tr>'+
     '</table>'+
     '<div class="hl gold" style="margin-top:10px;font-size:12px">All boundaries are conceptual, not official redlines, subject to professional team study.</div>'+
-    '</div></div>';}},
-  {id:"p-keyareas",title:"Three Cores",icon:"target",
+    '</div></div>';}},{id:"p-keyareas",title:"Three Cores",icon:"target",
    body:function(){return '<div class="img-card"><img src="../assets/figures/key-areas.en.png" alt="Three Cores">'+
     '<div class="img-caption">Fig.3 Three-Core key area detailed design</div></div>'+
     '<table class="info-table">'+
     '<tr><td>Zhongzhi Park (North core)</td><td><b style="color:#1c1917">191.9 ha</b> · AI full-stack independent-innovation accelerator · LLM training pilot / red-team testbed / compute sandbox</td></tr>'+
     '<tr><td>AI Origin Community (Central core)</td><td><b style="color:#1c1917">104.3 ha</b> · 24h mixed innovation community · researchers-entrepreneurs-residents symbiosis</td></tr>'+
     '<tr><td>Dazhongsi (South core)</td><td><b style="color:#1c1917">72.4 ha</b> · AI + commerce / legal / finance consumption scenarios · a public-facing AI culture window</td></tr>'+
-    '</table>';}},
-  {id:"p-axonometric",title:"3D Axonometric Views",icon:"cube",sub:"Spatial analysis axonometrics (data-driven) and concept renderings (AI-generated).",
+    '</table>';}},{id:"p-axonometric",title:"3D Axonometric Views",icon:"cube",sub:"Spatial analysis axonometrics (data-driven) and concept renderings (AI-generated).",
    body:function(){return '<div style="display:flex;flex-direction:column;gap:6px;height:100%;overflow-y:auto;padding:2px">'+
     '<div style="font-size:11px;font-weight:bold;color:#1d4ed8;padding:2px 4px">Spatial Analysis Axonometric · Based on buildings.geojson coordinates</div>'+
     '<div style="display:flex;gap:6px;flex-shrink:0">'+
@@ -627,8 +598,37 @@ const pages=[
     '<b>Analysis axonometrics</b>: 441 buildings at actual coordinates; gold = landmarks, green = corridor. Corresponds to master plan.<br>'+
     '<b>Concept renderings</b>: AI-generated to convey atmosphere and materials; building count/street grid do not match real map.<br>'+
     '<span style="color:#a8a29e">Conceptual spatial expression, not an architectural scheme. provisional boundary, official_boundary=false.</span>'+
-    '</div></div></div>';}},
-  {id:"p-section",title:"Concept Section",icon:"ruler",
+    '</div></div></div>';}},{id:"p-regional",title:"Regional Synergy",icon:"globe",sub:"Three science cities + E-Town + Beijing-Tianjin-Hebei innovation network · full-stack independent innovation chain",
+   body:function(){return '<div style="display:flex;gap:12px;flex:1;min-height:0">'+
+    '<div style="width:260px;flex:none;display:flex;flex-direction:column;gap:0">'+
+    '<table class="info-table" style="margin:0;background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden">'+
+    '<tr><td>Zhongguancun Science City</td><td>Location of this project; AI original-innovation cradle</td></tr>'+
+    '<tr><td>Future Science City</td><td>AI + energy / life-science joint testing</td></tr>'+
+    '<tr><td>Huairou Science City</td><td>Large scientific facilities → foundation models → scenario validation</td></tr>'+
+    '<tr><td>Beijing E-Town</td><td>R&D in Haidian, testing in E-Town, deployment back to Jing-Zhang</td></tr>'+
+    '<tr><td>Tianjin / Xiong&#39;an</td><td>Supercomputing supplement + 1909 Protocol export</td></tr>'+
+    '</table>'+
+    '<div class="hl" style="margin-top:10px"><b>Full-stack independent chain</b>: chips & compute → frameworks & tools → foundation models & algorithms → scenarios & applications; the four-layer innovation chain organized in Zhongzhi Park</div>'+
+    '</div>'+
+    '<div class="img-card" style="flex:1;margin-bottom:0">'+
+    '<img src="../assets/figures/regional-synergy.en.png" alt="Regional Synergy">'+
+    '<div class="img-caption">Fig.10 Regional Synergy — Zhimai Jing-Zhang with the three science cities, E-Town, and Beijing-Tianjin-Hebei</div></div>'+
+    '</div>';}},{id:"p-readiness",title:"Site Analysis",icon:"search",
+   body:function(){return '<div style="display:flex;gap:12px;flex:1;min-height:0">'+
+    '<div style="width:260px;flex:none;display:flex;flex-direction:column;gap:0">'+
+    '<table class="info-table" style="margin:0;background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden">'+
+    '<tr><td>Retained areas</td><td>Campuses / parks / completed research land (green) — Beihang, Tsinghua, PKU, CAS, etc.</td></tr>'+
+    '<tr><td>Renewable plots</td><td>Rail-side, old factories, some commercial offices (gold solid) — subject to title investigation</td></tr>'+
+    '<tr><td>To-be-studied areas</td><td>Plots needing further feasibility study (gold dashed)</td></tr>'+
+    '<tr><td>Stakeholders</td><td>8 types: universities / research institutes, AI companies, residents (450k), merchants, rail / metro, government, open-source community, visitors</td></tr>'+
+    '<tr><td>Engagement path</td><td>Vision co-creation (0-12mo) → co-build & monitor (1-3yr) → share & co-govern (3-10yr)</td></tr>'+
+    '</table>'+
+    '<div class="hl gold" style="margin-top:10px">Renewable land in the three cores must be confirmed after building survey, title investigation, and regulatory-plan adjustment; this map is conceptual only.</div>'+
+    '</div>'+
+    '<div class="img-card" style="flex:1;margin-bottom:0">'+
+    '<img src="../assets/figures/site-readiness.en.png" alt="Three-Core Site Analysis">'+
+    '<div class="img-caption">Fig.8 Three-Core Site Analysis — retained areas, renewable plot classification, real institutional anchors and stakeholders (conceptual, subject to title investigation)</div></div>'+
+    '</div>';}},{id:"p-section",title:"Concept Section",icon:"ruler",
    body:function(){return '<div class="img-card"><img src="../assets/figures/concept-section.en.png" alt="Concept Section">'+
     '<div class="img-caption">Fig.6 Concept Section — N-S skyline and three-core height indication (not an architectural scheme)</div></div>'+
     '<table class="info-table">'+
@@ -637,48 +637,36 @@ const pages=[
     '<tr><td>Dazhongsi (South)</td><td>Commerce & consumption, concept height 30-60m, public-facing AI culture window</td></tr>'+
     '<tr><td>Jing-Zhang Greenway</td><td>Continuous ground-level park + AI data spine; gold dashed line marks railway heritage</td></tr>'+
     '</table>'+
-    '<div class="hl gold">This section is a spatial-intent expression, not an architectural scheme; building heights, massing, and layout are subject to professional-team deepening and regulatory-plan approval.</div>';}},
-  {id:"p-mobility",title:"Mobility & Green",icon:"rails",
+    '<div class="hl gold">This section is a spatial-intent expression, not an architectural scheme; building heights, massing, and layout are subject to professional-team deepening and regulatory-plan approval.</div>';}},{id:"p-mobility",title:"Mobility & Green",icon:"rails",
    body:function(){return '<div class="img-card"><img src="../assets/figures/mobility-bluegreen.en.png" alt="Mobility">'+
     '<div class="img-caption">Fig.4 Mobility & slow traffic and blue-green public space system</div></div>'+
     '<div class="hl">Rail greenway runs N-S + road grid + 4 N-S arterials + 6 E-W collectors + slow path along the railway.'+
-    'Public space is independent from green space: 4 plazas (PS-01~04) + 4 landmark open spaces.</div>';}},
-  {id:"p-original",title:"Original Mechanisms",icon:"zap",sub:"1909 Protocol · AI-native spatial typology · Spatial Version Control",
-   body:function(){return '<div style="display:flex;gap:12px;flex:1;min-height:0">'+
-    '<div class="img-card" style="flex:1;margin-bottom:0;display:flex;flex-direction:column">'+
-    '<img src="../assets/figures/ai-typologies.en.png" alt="AI-Native Spatial Typology" style="flex:1;object-fit:contain;min-height:0">'+
-    '<div class="img-caption">Fig.9 AI-native spatial typology: Compute Water Tower / Prompt Plaza / Model Server Hall / Switch Plaza (2×2 layout)</div></div>'+
-    '<div style="width:240px;flex:none;display:flex;flex-direction:column;gap:0">'+
-    '<div class="hl gold" style="margin:0 0 10px 0"><b>1909 Protocol</b><br><span style="font-size:11px;font-weight:normal">a spatial-interaction protocol modeled on railway signaling</span></div>'+
-    '<table class="info-table" style="margin:0;font-size:12px">'+
-    '<tr><td>Block sections</td><td>Spatial sandbox: AI scenarios have explicit boundaries / time windows / permissions; faults do not propagate</td></tr>'+
-    '<tr><td>Signals</td><td>Spatial status visible: green=running / yellow=testing / red=human / blue=maintenance</td></tr>'+
-    '<tr><td>Interlocking</td><td>Data permissions + physical safety + community authorization interlocked; none may be missing</td></tr>'+
-    '<tr><td>Tokens</td><td>AI agents need encrypted credentials to enter a section; the community can revoke them</td></tr>'+
-    '<tr><td>Control office</td><td>A transparent human-in-the-loop approval desk; citizens may observe and question</td></tr>'+
-    '<tr><td>Zigzag switchback</td><td>Complex problems auto-decomposed and routed, from Zhan Tianyou&#39;s 1909 wisdom</td></tr>'+
-    '</table>'+
-    '<div class="hl purple" style="margin-top:10px;font-size:12px"><b>Spatial Version Control</b><br>Urban AI configuration like git: branch testing → merge rollout → one-click rollback → community fork</div>'+
-    '</div></div>';}},
-  {id:"p-scenarios",title:"AI Scenarios",icon:"cpu",sub:"15 scenario cards / 4 test verifications (orange tags) · spanning research-entrepreneurship-living-governance-commerce-finance-experience.",
-   body:function(){return '<div class="sc-grid" style="grid-template-rows:repeat(5,1fr);gap:8px">'+
-    scCard('SC-01','user','Developer Walk','Researchers / entrepreneurs','tag','Concept proposal')+
-    scCard('SC-02','trophy','Open-Source Showcase Gallery','Researchers / students / public','tag','Concept proposal')+
-    scCard('SC-03','target','Model Red-Team Testbed','AI safety researchers','tag-test','Test verification')+
-    scCard('SC-04','zap','Open Compute Sandbox','Startups / researchers / students','tag-test','Test verification')+
-    scCard('SC-05','heart','AI+ Health Navigation Station','Residents / elderly','tag','Concept proposal')+
-    scCard('SC-06','cap','AI Education Space','Students / teachers','tag','Concept proposal')+
-    scCard('SC-07','scale','AI Public Legal Assistant','Entrepreneurs / residents','tag','Concept proposal')+
-    scCard('SC-08','cpu','Low-Speed Robot Delivery','Residents / merchants','tag-test','Test verification')+
-    scCard('SC-09','truck','Autonomous Shuttle','Commuters / visitors','tag-test','Test verification')+
-    scCard('SC-10','building','AI Culture Guide','Visitors / citizens','tag','Concept proposal')+
-    scCard('SC-11','access','Barrier-Free Travel Assistant','People with disabilities / elderly','tag','Concept proposal')+
-    scCard('SC-12','shuffle','Public Issue Smart Routing','Residents / merchants','tag','Concept proposal')+
-    scCard('SC-13','bag','AI Personalized Retail','Consumers / brands','tag','Concept proposal')+
-    scCard('SC-14','bank','AI Finance & Compliance Advisor','Entrepreneurs / SMEs','tag','Concept proposal')+
-    scCard('SC-15','eye','AI Immersive Experience Space','Visitors / families / students','tag','Concept proposal')+
-    '</div>';}},
-  {id:"p-personas",title:"Personas & Public Interest",icon:"user",sub:"5 core user types · public interest commitments · 3-stage community engagement",
+    'Public space is independent from green space: 4 plazas (PS-01~04) + 4 landmark open spaces.</div>';}},{id:"p-landmarks",title:"Landmarks",icon:"star",
+   body:function(){return '<div style="display:flex;gap:14px;flex:1;min-height:0">'+
+    '<div style="flex:1.6;min-width:0;display:flex;align-items:center;justify-content:center;background:#fafaf9;border-radius:14px;overflow:hidden"><img src="../assets/figures/landmarks-4grid.jpg" alt="Landmarks 4-grid" style="max-width:100%;max-height:100%;object-fit:contain"></div>'+
+    '<div style="flex:0.6;display:flex;flex-direction:column;gap:8px;min-width:0;overflow-y:auto">'+
+    '<div class="lm-card" style="padding:10px 12px"><div class="lm-id" style="font-size:12px">LM-01</div><div class="lm-name" style="font-size:14px;margin:4px 0">Zhimai Origin Stele</div><div class="lm-loc" style="font-size:11px">'+ico('pin',12)+' AI Origin Community central plaza</div><div class="lm-concept" style="font-size:11px;margin-top:4px;line-height:1.5">Marks AI-native innovation start, inscribed &#39;From Zigzag to Network&#39;. Rail-steel + optical fiber, glows at night.</div></div>'+
+    '<div class="lm-card" style="padding:10px 12px"><div class="lm-id" style="font-size:12px">LM-02</div><div class="lm-name" style="font-size:14px;margin:4px 0">Open-Source Gallery</div><div class="lm-loc" style="font-size:11px">'+ico('pin',12)+' Old factory at Zhongzhi Park</div><div class="lm-concept" style="font-size:11px;margin-top:4px;line-height:1.5">Hall of honor for China open-source AI. Preserves fan-shaped depot, exhibits milestones & contributors.</div></div>'+
+    '<div class="lm-card" style="padding:10px 12px"><div class="lm-id" style="font-size:12px">LM-03</div><div class="lm-name" style="font-size:14px;margin:4px 0">Developer Walk</div><div class="lm-loc" style="font-size:11px">'+ico('pin',12)+' Mid greenway</div><div class="lm-concept" style="font-size:11px;margin-top:4px;line-height:1.5">Code Walk of Fame — commits are footprints. Glowing code snippets embedded along ~2km greenway.</div></div>'+
+    '<div class="lm-card" style="padding:10px 12px"><div class="lm-id" style="font-size:12px">LM-04</div><div class="lm-name" style="font-size:14px;margin:4px 0">AI Milestone Pavilion</div><div class="lm-loc" style="font-size:11px">'+ico('pin',12)+' Dazhongsi gateway plaza</div><div class="lm-concept" style="font-size:11px;margin-top:4px;line-height:1.5">Global AI milestones exhibition. From Turing Test to foundation models, interactive citizen education.</div></div>'+
+    '</div></div>'+
+    '<div class="hl gold" style="font-size:14px;padding:14px 18px">Honor system: Code Walk of Fame + AI Hall of Fame + open-source milestones + digital honor wall · new inscriptions each Open Week</div>';}},{id:"p-scenarios",title:"AI Scenarios (Key)",icon:"cpu",sub:"6 key scenarios with AI-generated concept images · 2 test verifications (orange tags)",
+   body:function(){return '<div style="display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:10px;flex:1;min-height:0">'+
+    '<div style="background:#fff;border:1px solid #e7e5e4;border-radius:10px;overflow:hidden;display:flex;flex-direction:column"><img src="../assets/figures/scenario-robot-delivery.jpg" alt="SC-08 Low-speed Robot Delivery" style="width:100%;flex:1;object-fit:contain;min-height:0"><div style="padding:8px 10px;border-top:1px solid #f5f5f4"><div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;font-weight:bold;color:#dc2626">SC-08 Low-Speed Robot Delivery</span><span class="tag-test" style="font-size:10px">Test/Verify</span></div><div style="font-size:10px;color:#78716c;margin-top:3px">East wing slow lane · low speed physical isolation · last-mile delivery</div></div></div>'+
+    '<div style="background:#fff;border:1px solid #e7e5e4;border-radius:10px;overflow:hidden;display:flex;flex-direction:column"><img src="../assets/figures/scenario-autonomous-shuttle.jpg" alt="SC-09 Autonomous Shuttle" style="width:100%;flex:1;object-fit:contain;min-height:0"><div style="padding:8px 10px;border-top:1px solid #f5f5f4"><div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;font-weight:bold;color:#dc2626">SC-09 Autonomous Shuttle</span><span class="tag-test" style="font-size:10px">Test/Verify</span></div><div style="font-size:10px;color:#78716c;margin-top:3px">9km green corridor · real shuttle demand after Line 13 split</div></div></div>'+
+    '<div style="background:#fff;border:1px solid #e7e5e4;border-radius:10px;overflow:hidden;display:flex;flex-direction:column"><img src="../assets/figures/scenario-ai-retail.jpg" alt="SC-13 AI Custom Retail" style="width:100%;flex:1;object-fit:contain;min-height:0"><div style="padding:8px 10px;border-top:1px solid #f5f5f4"><div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;font-weight:bold;color:#7c3aed">SC-13 AI Personalized Retail</span><span class="tag" style="font-size:10px">Concept</span></div><div style="font-size:10px;color:#78716c;margin-top:3px">Dazhongsi commercial · creation bar mode · AR try-on + prototyping</div></div></div>'+
+    '<div style="background:#fff;border:1px solid #e7e5e4;border-radius:10px;overflow:hidden;display:flex;flex-direction:column"><img src="../assets/figures/scenario-immersive-space.jpg" alt="SC-15 AI Immersive Experience" style="width:100%;flex:1;object-fit:contain;min-height:0"><div style="padding:8px 10px;border-top:1px solid #f5f5f4"><div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;font-weight:bold;color:#7c3aed">SC-15 AI Immersive Experience</span><span class="tag" style="font-size:10px">Concept</span></div><div style="font-size:10px;color:#78716c;margin-top:3px">Dazhongsi gateway · railway history + VR · tickets feed community</div></div></div>'+
+    '<div style="background:#fff;border:1px solid #e7e5e4;border-radius:10px;overflow:hidden;display:flex;flex-direction:column"><img src="../assets/figures/scenario-ai-health.jpg" alt="SC-05 AI Health Navigation" style="width:100%;flex:1;object-fit:contain;min-height:0"><div style="padding:8px 10px;border-top:1px solid #f5f5f4"><div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;font-weight:bold;color:#7c3aed">SC-05 AI Health Navigation</span><span class="tag" style="font-size:10px">Concept</span></div><div style="font-size:10px;color:#78716c;margin-top:3px">AI Origin community · AI consultation + remote doctors · no personal data</div></div></div>'+
+    '<div style="background:#fff;border:1px solid #e7e5e4;border-radius:10px;overflow:hidden;display:flex;flex-direction:column"><img src="../assets/figures/scenario-ai-education.jpg" alt="SC-06 AI Education Space" style="width:100%;flex:1;object-fit:contain;min-height:0"><div style="padding:8px 10px;border-top:1px solid #f5f5f4"><div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;font-weight:bold;color:#7c3aed">SC-06 AI Education Space</span><span class="tag" style="font-size:10px">Concept</span></div><div style="font-size:10px;color:#78716c;margin-top:3px">AI Origin mixed block · adjacent to universities · AI teachers + robots</div></div></div>'+
+    '</div>';}},{id:"p-scenarios2",title:"AI Scenarios (Others 1)",icon:"cpu",sub:"6 scenarios with AI-generated concept images · research-entrepreneurship-culture-accessibility",
+   body:function(){return '<div style="display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:10px;flex:1;min-height:0">'+
+    '<div style="background:#fff;border:1px solid #e7e5e4;border-radius:10px;overflow:hidden;display:flex;flex-direction:column"><img src="../assets/figures/scenario-opensource-gallery-interior.jpg" alt="SC-02 Open-Source Showcase" style="width:100%;flex:1;object-fit:contain;min-height:0"><div style="padding:8px 10px;border-top:1px solid #f5f5f4"><div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;font-weight:bold;color:#7c3aed">SC-02 Open-Source Gallery</span><span class="tag" style="font-size:10px">Concept</span></div><div style="font-size:10px;color:#78716c;margin-top:3px">Railway warehouse renovation · code visualization · permanent showcase</div></div></div>'+
+    '<div style="background:#fff;border:1px solid #e7e5e4;border-radius:10px;overflow:hidden;display:flex;flex-direction:column"><img src="../assets/figures/scenario-red-team-testbed.jpg" alt="SC-03 Model Red-Team Testbed" style="width:100%;flex:1;object-fit:contain;min-height:0"><div style="padding:8px 10px;border-top:1px solid #f5f5f4"><div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;font-weight:bold;color:#dc2626">SC-03 Red-Team Testbed</span><span class="tag-test" style="font-size:10px">Test/Verify</span></div><div style="font-size:10px;color:#78716c;margin-top:3px">Zhongzhiyuan compute center · closed environment · AI safety testing</div></div></div>'+
+    '<div style="background:#fff;border:1px solid #e7e5e4;border-radius:10px;overflow:hidden;display:flex;flex-direction:column"><img src="../assets/figures/scenario-compute-center.jpg" alt="SC-04 Open Compute Sandbox" style="width:100%;flex:1;object-fit:contain;min-height:0"><div style="padding:8px 10px;border-top:1px solid #f5f5f4"><div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;font-weight:bold;color:#dc2626">SC-04 Open Compute Sandbox</span><span class="tag-test" style="font-size:10px">Test/Verify</span></div><div style="font-size:10px;color:#78716c;margin-top:3px">Water-tower inspired compute building · free quota · startups/students first</div></div></div>'+
+    '<div style="background:#fff;border:1px solid #e7e5e4;border-radius:10px;overflow:hidden;display:flex;flex-direction:column"><img src="../assets/figures/scenario-ai-culture-guide.jpg" alt="SC-10 AI Culture Guide" style="width:100%;flex:1;object-fit:contain;min-height:0"><div style="padding:8px 10px;border-top:1px solid #f5f5f4"><div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;font-weight:bold;color:#7c3aed">SC-10 AI Culture Guide</span><span class="tag" style="font-size:10px">Concept</span></div><div style="font-size:10px;color:#78716c;margin-top:3px">4 pilgrimage landmarks · session-only location data · no tracking</div></div></div>'+
+    '<div style="background:#fff;border:1px solid #e7e5e4;border-radius:10px;overflow:hidden;display:flex;flex-direction:column"><img src="../assets/figures/scenario-greenway-night.jpg" alt="SC-11 Barrier-Free Assistant" style="width:100%;flex:1;object-fit:contain;min-height:0"><div style="padding:8px 10px;border-top:1px solid #f5f5f4"><div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;font-weight:bold;color:#7c3aed">SC-11 Barrier-Free Assistant</span><span class="tag" style="font-size:10px">Concept</span></div><div style="font-size:10px;color:#78716c;margin-top:3px">All public spaces · local processing no upload · serves 450k residents</div></div></div>'+
+    '<div style="background:#fff;border:1px solid #e7e5e4;border-radius:10px;overflow:hidden;display:flex;flex-direction:column"><img src="../assets/figures/scenario-legal-assistant.jpg" alt="SC-07 AI Legal Assistant" style="width:100%;flex:1;object-fit:contain;min-height:0"><div style="padding:8px 10px;border-top:1px solid #f5f5f4"><div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;font-weight:bold;color:#7c3aed">SC-07 AI Legal Assistant</span><span class="tag" style="font-size:10px">Concept</span></div><div style="font-size:10px;color:#78716c;margin-top:3px">Dazhongsi business space · contract/compliance · for entrepreneurs & residents</div></div></div>'+
+    '</div>';}},{id:"p-personas",title:"Personas & Public Interest",icon:"user",sub:"5 core user types · public interest commitments · 3-stage community engagement",
    body:function(){return '<div class="persona-grid" style="flex:1;align-items:stretch">'+
     '<div class="persona-card" style="display:flex;flex-direction:column;justify-content:center;padding:20px 16px"><div class="persona-icon" style="width:48px;height:48px;margin-bottom:10px">'+ico('cap',24)+'</div>'+
     '<div class="persona-name" style="font-size:16px">AI Researchers</div><div class="persona-role" style="font-size:13px">Universities / Institutes</div>'+
@@ -704,8 +692,23 @@ const pages=[
     '</div>'+
     '<div class="hl teal" style="font-size:14px;padding:14px 18px;line-height:1.8"><b>3-Stage Community Engagement</b>: '+
     '① Vision co-creation (0-12mo) workshops/surveys → ② Co-build & monitor (1-3yr) design reviews/open sites/digital dashboard → '+
-    '③ Share & co-govern (3-10yr) quarterly council voting/feedback/priority voting. Scenarios with >30% opposition are paused.</div>';}},
-  {id:"p-culture",title:"Cultural Narrative",icon:"book",
+    '③ Share & co-govern (3-10yr) quarterly council voting/feedback/priority voting. Scenarios with >30% opposition are paused.</div>';}},{id:"p-original",title:"Original Mechanisms",icon:"zap",sub:"1909 Protocol · AI-native spatial typology · Spatial Version Control",
+   body:function(){return '<div style="display:flex;gap:12px;flex:1;min-height:0">'+
+    '<div class="img-card" style="flex:1;margin-bottom:0;display:flex;flex-direction:column">'+
+    '<img src="../assets/figures/ai-typologies.en.png" alt="AI-Native Spatial Typology" style="flex:1;object-fit:contain;min-height:0">'+
+    '<div class="img-caption">Fig.9 AI-native spatial typology: Compute Water Tower / Prompt Plaza / Model Server Hall / Switch Plaza (2×2 layout)</div></div>'+
+    '<div style="width:240px;flex:none;display:flex;flex-direction:column;gap:0">'+
+    '<div class="hl gold" style="margin:0 0 10px 0"><b>1909 Protocol</b><br><span style="font-size:11px;font-weight:normal">a spatial-interaction protocol modeled on railway signaling</span></div>'+
+    '<table class="info-table" style="margin:0;font-size:12px">'+
+    '<tr><td>Block sections</td><td>Spatial sandbox: AI scenarios have explicit boundaries / time windows / permissions; faults do not propagate</td></tr>'+
+    '<tr><td>Signals</td><td>Spatial status visible: green=running / yellow=testing / red=human / blue=maintenance</td></tr>'+
+    '<tr><td>Interlocking</td><td>Data permissions + physical safety + community authorization interlocked; none may be missing</td></tr>'+
+    '<tr><td>Tokens</td><td>AI agents need encrypted credentials to enter a section; the community can revoke them</td></tr>'+
+    '<tr><td>Control office</td><td>A transparent human-in-the-loop approval desk; citizens may observe and question</td></tr>'+
+    '<tr><td>Zigzag switchback</td><td>Complex problems auto-decomposed and routed, from Zhan Tianyou&#39;s 1909 wisdom</td></tr>'+
+    '</table>'+
+    '<div class="hl purple" style="margin-top:10px;font-size:12px"><b>Spatial Version Control</b><br>Urban AI configuration like git: branch testing → merge rollout → one-click rollback → community fork</div>'+
+    '</div></div>';}},{id:"p-culture",title:"Cultural Narrative",icon:"book",
    body:function(){return '<div class="culture-layers" style="flex:1;justify-content:space-between">'+
     '<div class="cl-item" style="padding:22px 24px"><div class="cl-num" style="font-size:36px;width:50px">01</div><div>'+
     '<div class="cl-title" style="font-size:18px">A Century of Jing-Zhang · 1909</div>'+
@@ -724,28 +727,21 @@ const pages=[
     'Open-Source Gallery (today&#39;s innovation, tomorrow&#39;s heritage) → Developer Walk (code is the road, commits are footprints) → '+
     'Zhimai Origin Stele (from zigzag to network) → Wudaokou Stitch Plaza (level crossing → digital junction) → '+
     'Global AI Milestone Pavilion (from railway to compute, from China to the world)<br>'+
-    'Core motif: <b>From &#39;Zigzag&#39; to &#39;Network&#39; — From Zigzag to Network</b></div>';}},
-  {id:"p-landmarks",title:"Landmarks",icon:"star",
-   body:function(){return '<div class="lm-grid" style="flex:1;grid-template-rows:1fr 1fr;gap:14px">'+
-    '<div class="lm-card" style="padding:24px 26px;display:flex;flex-direction:column;justify-content:center"><div class="lm-id" style="font-size:14px">LM-01</div><div class="lm-name" style="font-size:20px;margin:8px 0 6px">Zhimai Origin Stele</div>'+
-    '<div class="lm-loc" style="font-size:14px;margin-bottom:8px">'+ico('pin',16)+' AI Origin Community central plaza</div>'+
-    '<div class="lm-concept" style="font-size:14px;line-height:1.7">Marks the starting point of AI-native innovation, inscribed with &#39;From Zigzag to Network&#39;.'+
-    'The stele uses rail-steel + optical-fiber composite, glows at night, becoming a spiritual landmark for global AI developers.</div></div>'+
-    '<div class="lm-card" style="padding:24px 26px;display:flex;flex-direction:column;justify-content:center"><div class="lm-id" style="font-size:14px">LM-02</div><div class="lm-name" style="font-size:20px;margin:8px 0 6px">Open-Source Showcase Gallery</div>'+
-    '<div class="lm-loc" style="font-size:14px;margin-bottom:8px">'+ico('pin',16)+' Old factory at Zhongzhi Park entrance</div>'+
-    '<div class="lm-concept" style="font-size:14px;line-height:1.7">A hall of honor for China&#39;s open-source AI achievements — today&#39;s innovation is tomorrow&#39;s heritage.'+
-    'Preserves the fan-shaped locomotive depot&#39;s industrial structure, exhibiting milestones and contributor rosters of China&#39;s open-source AI projects.</div></div>'+
-    '<div class="lm-card" style="padding:24px 26px;display:flex;flex-direction:column;justify-content:center"><div class="lm-id" style="font-size:14px">LM-03</div><div class="lm-name" style="font-size:20px;margin:8px 0 6px">Developer Walk</div>'+
-    '<div class="lm-loc" style="font-size:14px;margin-bottom:8px">'+ico('pin',16)+' Mid greenway</div>'+
-    '<div class="lm-concept" style="font-size:14px;line-height:1.7">A code Walk of Fame for outstanding developers — commits are footprints.'+
-    'Glowing code snippets and developer IDs are embedded in the ground along ~2 km of the greenway, with new inscriptions each Open Week.</div></div>'+
-    '<div class="lm-card" style="padding:24px 26px;display:flex;flex-direction:column;justify-content:center"><div class="lm-id" style="font-size:14px">LM-04</div><div class="lm-name" style="font-size:20px;margin:8px 0 6px">Global AI Milestone Pavilion</div>'+
-    '<div class="lm-loc" style="font-size:14px;margin-bottom:8px">'+ico('pin',16)+' Dazhongsi gateway plaza</div>'+
-    '<div class="lm-concept" style="font-size:14px;line-height:1.7">Exhibits global AI development milestones as a public-facing AI culture window.'+
-    'From the Turing Test to the foundation-model era, interactive pavilions help citizens understand how AI is changing the world.</div></div>'+
+    'Core motif: <b>From &#39;Zigzag&#39; to &#39;Network&#39; — From Zigzag to Network</b></div>';}},{id:"p-brand",title:"Brand System Applications",icon:"palette",sub:"Wayfinding · Public Art · Digital Interfaces · Environmental Graphics & Merch",
+   body:function(){return '<div style="display:flex;gap:14px;flex:1;min-height:0">'+
+    '<div class="img-card" style="flex:1.6;margin-bottom:0;display:flex;flex-direction:column;min-height:0">'+
+    '<img src="../assets/figures/brand-applications.jpg" alt="Brand System Applications" style="flex:1;object-fit:contain;min-height:0;width:100%">'+
+    '<div class="img-caption">Brand system applications — wayfinding/public art/digital interfaces/environmental graphics & merch</div></div>'+
+    '<div style="flex:1;display:flex;flex-direction:column;gap:10px;min-height:0;justify-content:space-between">'+
+    '<div style="padding:12px 14px;background:linear-gradient(135deg,#eff6ff,#dbeafe);border-radius:10px;border-left:3px solid #2563eb"><div style="font-size:13px;font-weight:700;color:#1e40af;margin-bottom:4px">Brand Core Concept</div><div style="font-size:11px;color:#1e3a8a;line-height:1.6">Circular emblem with railway track bifurcation symbolizes the evolution from 1909 Jing-Zhang "zigzag" to 2026 AI "network". Gradient blue-purple palette balances tech and heritage.</div></div>'+
+    '<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">'+
+    '<div style="padding:8px 10px;background:linear-gradient(135deg,#f0fdf4,#dcfce7);border-radius:8px"><div style="font-size:11px;font-weight:700;color:#065f46;margin-bottom:2px">Smart Wayfinding</div><div style="font-size:9px;color:#064e3b;line-height:1.4">Digital signs/directional/multilingual</div></div>'+
+    '<div style="padding:8px 10px;background:linear-gradient(135deg,#faf5ff,#f3e8ff);border-radius:8px"><div style="font-size:11px;font-weight:700;color:#5b21b6;margin-bottom:2px">Public Art</div><div style="font-size:9px;color:#4c1d95;line-height:1.4">Memorial plaza markers/signal art</div></div>'+
+    '<div style="padding:8px 10px;background:linear-gradient(135deg,#fef3c7,#fde68a);border-radius:8px"><div style="font-size:11px;font-weight:700;color:#92400e;margin-bottom:2px">Digital UI</div><div style="font-size:9px;color:#78350f;line-height:1.4">AI kiosks/mini-program/QR services</div></div>'+
+    '<div style="padding:8px 10px;background:linear-gradient(135deg,#fef2f2,#fee2e2);border-radius:8px"><div style="font-size:11px;font-weight:700;color:#991b1b;margin-bottom:2px">Env & Merch</div><div style="font-size:9px;color:#7f1d1d;line-height:1.4">Hoardings/floor projection/T-shirts/mugs</div></div>'+
     '</div>'+
-    '<div class="hl gold" style="font-size:14px;padding:14px 18px">Honor display system: Code Walk of Fame + AI Hall of Fame + open-source milestones + digital honor wall · new inscriptions each Open Week</div>';}},
-  {id:"p-cases",title:"Global Cases Comparison",icon:"globe",
+    '<div style="padding:10px 12px;background:#fafaf9;border-radius:8px;border:1px solid #e7e5e4"><div style="font-size:10px;color:#57534e;line-height:1.5"><b>Principle:</b> Unified brand identity, multi-scale adaptation (street furniture→building facade→merch), recognizable yet context-flexible.</div></div>'+
+    '</div></div>';}},{id:"p-cases",title:"Global Cases Comparison",icon:"globe",
    body:function(){return '<div style="display:flex;gap:12px;flex:1;min-height:0">'+
     '<div class="img-card" style="flex:1;margin-bottom:0;display:flex;flex-direction:column">'+
     '<img src="../assets/figures/metrics-evidence.en.png" alt="Global Cases comparison" style="flex:1;object-fit:contain;min-height:0">'+
@@ -772,11 +768,18 @@ const pages=[
     '<tr><td>Land-use check</td><td>Δ5 m² floating-point error</td></tr>'+
     '</table>'+
     '<div class="hl gold" style="margin-top:10px;font-size:12px"><b>Zhimai Jing-Zhang differentiation</b><br><span style="font-size:11px;font-weight:normal">3 cores + 1 axis + 2 wings · open-source first · public-interest oriented · linear heritage regeneration · AI-native governance</span></div>'+
-    '</div></div>';}},
-  {id:"p-ops",title:"Events & Ops",icon:"calendar",
+    '<div class="hl gold" style="font-size:14px;padding:14px 18px">Honor display system: Code Walk of Fame + AI Hall of Fame + open-source milestones + digital honor wall · new inscriptions each Open Week</div>';}},{id:"p-ops",title:"Events & Ops",icon:"calendar",
    body:function(){return '<div class="ops-grid" style="flex:1;grid-template-rows:1fr 1fr;gap:14px">'+
     '<div class="ops-card" style="padding:24px;display:flex;flex-direction:column;justify-content:center"><div class="ops-icon" style="margin-bottom:10px">'+ico('star',32)+'</div><div class="ops-name" style="font-size:18px">Open Week</div>'+
     '<div class="ops-freq" style="font-size:14px;margin-top:4px">Every September</div><div class="ops-desc" style="font-size:13px;margin-top:6px">Commemorates the Jing-Zhang Railway opening · annual flagship<br>Global developers gather · Code Walk of Fame inscription</div></div>'+
+    '<div class="ops-card" style="padding:24px;display:flex;flex-direction:column;justify-content:center"><div class="ops-icon" style="margin-bottom:10px">'+ico('building',32)+'</div><div class="ops-name" style="font-size:18px">ZGC Forum Special</div>'+
+    '<div class="ops-freq" style="font-size:14px;margin-top:4px">Every late March</div><div class="ops-desc" style="font-size:13px;margin-top:6px">Aligned with Zhongguancun Forum (national-level)<br>Release scenario list · international tech transactions</div></div>'+
+    '<div class="ops-card" style="padding:24px;display:flex;flex-direction:column;justify-content:center"><div class="ops-icon" style="margin-bottom:10px">'+ico('run',32)+'</div><div class="ops-name" style="font-size:18px">Robot Spring Endurance</div>'+
+    '<div class="ops-freq" style="font-size:14px;margin-top:4px">Every mid-April</div><div class="ops-desc" style="font-size:13px;margin-top:6px">Aligned with Yizhuang Humanoid Robot Half Marathon<br>9km green corridor endurance test · training qualifier</div></div>'+
+    '<div class="ops-card" style="padding:24px;display:flex;flex-direction:column;justify-content:center"><div class="ops-icon" style="margin-bottom:10px">'+ico('robot',32)+'</div><div class="ops-name" style="font-size:18px">WRC Scenario Expo</div>'+
+    '<div class="ops-freq" style="font-size:14px;margin-top:4px">Every mid-late August</div><div class="ops-desc" style="font-size:13px;margin-top:6px">Aligned with World Robot Conference (Yizhuang)<br>Scenario results expo · enterprise matchmaking · open day</div></div>'+
+    '<div class="ops-card" style="padding:24px;display:flex;flex-direction:column;justify-content:center"><div class="ops-icon" style="margin-bottom:10px">'+ico('trophy',32)+'</div><div class="ops-name" style="font-size:18px">Robot Autumn Scenario</div>'+
+    '<div class="ops-freq" style="font-size:14px;margin-top:4px">Every late August</div><div class="ops-desc" style="font-size:13px;margin-top:6px">Aligned with World Humanoid Robot Games (Ice Ribbon)<br>Urban real-scene competition · off-site points race</div></div>'+
     '<div class="ops-card" style="padding:24px;display:flex;flex-direction:column;justify-content:center"><div class="ops-icon" style="margin-bottom:10px">'+ico('target',32)+'</div><div class="ops-name" style="font-size:18px">AI Force Summit</div>'+
     '<div class="ops-freq" style="font-size:14px;margin-top:4px">Spring</div><div class="ops-desc" style="font-size:13px;margin-top:6px">Academia-industry-government dialogue<br>Releases annual AI Force Report</div></div>'+
     '<div class="ops-card" style="padding:24px;display:flex;flex-direction:column;justify-content:center"><div class="ops-icon" style="margin-bottom:10px">'+ico('code',32)+'</div><div class="ops-name" style="font-size:18px">Open-Source Hackathon</div>'+
@@ -788,35 +791,40 @@ const pages=[
     '<div class="ops-card" style="padding:24px;display:flex;flex-direction:column;justify-content:center"><div class="ops-icon" style="margin-bottom:10px">'+ico('home',32)+'</div><div class="ops-name" style="font-size:18px">Public AI Day</div>'+
     '<div class="ops-freq" style="font-size:14px;margin-top:4px">Monthly</div><div class="ops-desc" style="font-size:13px;margin-top:6px">AI experience workshops<br>All-age friendly · digital inclusion</div></div>'+
     '</div>'+
-    '<div class="hl" style="font-size:13px;padding:14px 18px;line-height:2"><b>Conversion path</b>: research → pilot → incubation → capital → customer → scenario → feedback iteration<br>'+
+    '<div class="hl" style="font-size:13px;padding:14px 18px;line-height:2"><b>Beijing Tech Event Ecosystem Linkage</b>: March ZGC Forum → April Yizhuang Half Marathon → August World Robot Conference → August World Humanoid Robot Games → September Zhimai Open Week, three seasons five events sharing resources<br>'+
+    '<b>Conversion path</b>: research → pilot → incubation → capital → customer → scenario → feedback iteration<br>'+
     '<b>Five community-operations mechanisms</b>: residency program · mentor network · open-source bounties · community governance · knowledge accumulation<br>'+
     '<b>International communication</b>: bilingual · GitHub/Hugging Face partnerships · overseas developer connections · &#39;railway heritage + AI-native&#39; narrative<br>'+
-    '<b>Attraction & conversion</b>: 2-week matching after Open Week → 1-month landing incentive package (space / compute / talent / capital / scenarios) → 3-month move-in decision</div>';}},
-  {id:"p-roadmap",title:"Roadmap",icon:"map",
+    '<b>Attraction & conversion</b>: 2-week matching after Open Week → 1-month landing incentive package (space / compute / talent / capital / scenarios) → 3-month move-in decision</div>';}},{id:"p-roadmap",title:"Implementation Roadmap",icon:"map",sub:"6 near-term projects · Phased investment · Governance · Key success factors",
    body:function(){return '<div style="display:flex;gap:12px;flex:1;min-height:0">'+
-    '<div style="flex:1;display:flex;flex-direction:column;gap:8px;min-height:0;overflow-y:auto">'+
-    '<div class="img-card" style="margin-bottom:0;display:flex;flex-direction:column">'+
-    '<img src="../assets/figures/implementation-roadmap.en.png" alt="Roadmap" style="width:100%;object-fit:contain">'+
-    '<div class="img-caption">Fig 7 Implementation Roadmap — 6 near-term projects, phased investment, governance</div></div>'+
-    '<div class="img-card" style="margin-bottom:0;display:flex;flex-direction:column">'+
-    '<img src="../assets/figures/ai-verification-protocol.png" alt="AI Verification Protocol" style="width:100%;object-fit:contain">'+
-    '<div class="img-caption">Fig 10 AI Verification Protocol — Three Gates, 8 Fault Injections, 4-Level Degradation, 5-Phase Field Verification</div></div></div>'+
-    '<div style="width:240px;flex:none;display:flex;flex-direction:column;gap:0;overflow-y:auto">'+
-    '<div class="hl blue" style="margin:0 0 8px 0;font-size:12px"><b>6 near-term projects (1-3yr)</b></div>'+
-    '<table class="info-table" style="margin:0;font-size:11px">'+
+    '<div class="img-card" style="flex:1;margin-bottom:0;display:flex;flex-direction:column;min-height:0">'+
+    '<img src="../assets/figures/implementation-roadmap.en.png" alt="Roadmap" style="flex:1;object-fit:contain;min-height:0;width:100%">'+
+    '<div class="img-caption">Fig 7 Implementation Roadmap — 6 near-term projects, phased investment, governance & key success factors</div></div>'+
+    '<div style="width:260px;flex:none;display:flex;flex-direction:column;gap:0;overflow-y:auto">'+
+    '<div class="hl blue" style="margin:0 0 8px 0;font-size:13px"><b>6 near-term projects (1-3yr)</b></div>'+
+    '<table class="info-table" style="margin:0;font-size:12px">'+
     '<tr><td>N-01 Zhimai Origin Plaza</td><td>¥300-500M</td></tr>'+
     '<tr><td>N-02 City OS Phase 1</td><td>¥200-300M</td></tr>'+
     '<tr><td>N-03 AI Origin mixed renewal</td><td>¥500-800M</td></tr>'+
-    '<tr><td>N-04 AI scenario test environment</td><td>¥200-400M</td></tr>'+
-    '<tr><td>N-05 Open-Source Showcase Gallery</td><td>¥200-300M</td></tr>'+
-    '<tr><td>N-06 Preliminaries + contingencies</td><td>¥100-200M</td></tr>'+
+    '<tr><td>N-04 AI scenario test env</td><td>¥200-400M</td></tr>'+
+    '<tr><td>N-05 Open-Source Showcase</td><td>¥200-300M</td></tr>'+
+    '<tr><td>N-06 Preliminaries+contingency</td><td>¥100-200M</td></tr>'+
     '<tr><td><b>Near-term total</b></td><td><b>¥1.5-2.5B</b></td></tr>'+
     '</table>'+
-    '<div class="hl teal" style="margin-top:8px;font-size:11px"><b>Phased investment</b><br>Mid-term 3-5yr: ¥4-6B (government-led + social capital)<br>Long-term 5-10yr: ¥6-10B (social capital-led)</div>'+
-    '<div class="hl purple" style="margin-top:8px;font-size:11px"><b>Governance structure</b><br>leading group + operating platform + expert committee + community council</div>'+
-    '<div class="hl gold" style="margin-top:8px;font-size:11px">Investment figures are conceptual order-of-magnitude estimates, not investment commitments or government decision basis.</div>'+
-    '</div></div>';}},
-  {id:"p-investment",title:"Investment & Risk",icon:"bag",sub:"Conceptual order-of-magnitude estimate (not a commitment) · 8-category risk matrix",
+    '<div class="hl teal" style="margin-top:10px;font-size:12px"><b>Phased investment</b><br>Mid-term 3-5yr: ¥4-6B (gov-led + social capital)<br>Long-term 5-10yr: ¥6-10B (social capital-led)</div>'+
+    '<div class="hl purple" style="margin-top:10px;font-size:12px"><b>Governance</b><br>Leading group + operating platform + expert committee + community council</div>'+
+    '<div class="hl gold" style="margin-top:10px;font-size:11px">Investment figures are conceptual order-of-magnitude estimates, not investment commitments or government decision basis.</div>'+
+    '</div></div>';}},{id:"p-roadmap2",title:"AI Verification Protocol",icon:"check",sub:"Three gates · 8 fault injections · 4 degradation levels · 5-phase field validation",
+   body:function(){return '<div style="display:flex;gap:14px;flex:1;min-height:0">'+
+    '<div class="img-card" style="flex:1.6;margin-bottom:0;display:flex;flex-direction:column;min-height:0">'+
+    '<img src="../assets/figures/ai-verification-protocol.png" alt="AI Verification Protocol" style="flex:1;object-fit:contain;min-height:0;width:100%">'+
+    '<div class="img-caption">Fig 10 AI Verification Protocol — Three Gates, 8 Fault Injections, 4-Level Degradation, 5-Phase Field Validation</div></div>'+
+    '<div style="flex:1;display:flex;flex-direction:column;gap:10px;min-height:0;justify-content:space-between">'+
+    '<div style="padding:12px 14px;background:linear-gradient(135deg,#fef2f2,#fee2e2);border-radius:12px;border-left:4px solid #dc2626"><div style="font-size:14px;font-weight:800;color:#991b1b;margin-bottom:4px">G1 Token Gate</div><div style="font-size:11px;color:#7f1d1d;line-height:1.5">AI agent identity & permission check. Token contains scenario ID/scope/expiry/responsible party. Block: missing/expired/overreach/unsigned.</div></div>'+
+    '<div style="padding:12px 14px;background:linear-gradient(135deg,#fef3c7,#fde68a);border-radius:12px;border-left:4px solid #d97706"><div style="font-size:14px;font-weight:800;color:#92400e;margin-bottom:4px">G2 Interlock Gate</div><div style="font-size:11px;color:#78350f;line-height:1.5">Data permission × physical safety × community authorization all satisfied. Block: data overreach/isolation missing/objection ≥50.</div></div>'+
+    '<div style="padding:12px 14px;background:linear-gradient(135deg,#f0fdf4,#dcfce7);border-radius:12px;border-left:4px solid #059669"><div style="font-size:14px;font-weight:800;color:#065f46;margin-bottom:4px">G3 Block Gate</div><div style="font-size:11px;color:#064e3b;line-height:1.5">Runtime safety monitor. Block: out-of-zone/over-quota/health fail/emergency brake. E-stop every 200m, signal at entrance.</div></div>'+
+    '<div style="padding:10px 14px;background:linear-gradient(135deg,#eff6ff,#dbeafe);border-radius:12px;border-left:4px solid #2563eb"><div style="font-size:12px;font-weight:700;color:#1e40af;margin-bottom:3px">Validation Roadmap</div><div style="font-size:10px;color:#1e3a8a;line-height:1.5">V1 Synthetic (960/960) → V2 Closed场地 (30d) → V3 Limited on-site (0-90d) → V4 Expanded (90-180d, zero at-fault) → V5 Continuous (annual retest). Failure pauses expansion.</div></div>'+
+    '</div></div>';}},{id:"p-investment",title:"Investment & Risk",icon:"bag",sub:"Conceptual order-of-magnitude estimate (not a commitment) · 8-category risk matrix",
    body:function(){return '<div class="phase-grid" style="gap:12px">'+
     '<div class="phase-card p1" style="padding:16px 18px"><div class="phase-label" style="font-size:13px">Near-term 1-3yr</div>'+
     '<div class="phase-value" style="font-size:28px">1.5-2.5<span class="phase-unit">B CNY</span></div>'+
@@ -856,8 +864,7 @@ const pages=[
     '<div class="hl gold" style="margin:0;font-size:13px;padding:14px 16px;line-height:1.9"><b>Revenue Mix (target)</b><br>Government base 40%<br>Sponsorship/services 30%<br>Events/tickets 20%<br>Other 10%<br>Gov share ≤30% by year 5</div>'+
     '<div class="hl purple" style="margin:0;font-size:13px;padding:14px 16px;line-height:1.9"><b>High-risk items (level 4)</b><br>Coordination/O&M/Policy<br>All require human review</div>'+
     '<div class="hl" style="margin:0;font-size:12px;padding:14px 16px;line-height:1.8">All figures are conceptual order-of-magnitude estimates, not investment commitments. Subject to professional feasibility study and government approval.</div>'+
-    '</div></div>';}},
-  {id:"p-governance",title:"Governance & Responsibility",icon:"scale",sub:"Advisory responsibility framework (not government arrangement) · data governance · open-source governance",
+    '</div></div>';}},{id:"p-governance",title:"Governance & Responsibility",icon:"scale",sub:"Advisory responsibility framework (not government arrangement) · data governance · open-source governance",
    body:function(){return '<div style="display:flex;gap:14px;flex:1;min-height:0">'+
     '<div style="flex:1;min-width:0;display:flex;flex-direction:column">'+
     '<table class="gov-table" style="font-size:14px;flex:1">'+
@@ -884,8 +891,255 @@ const pages=[
     'Data interfaces open (anonymized)<br>'+
     '1909 protocol spec open for comment</div>'+
     '<div class="hl gold" style="margin:0;font-size:12px;padding:14px 18px;line-height:1.8">Advisory framework only, not a government arrangement. Final decisions subject to government and statutory procedures.</div>'+
-    '</div></div>';}},
-  {id:"p-compliance",title:"Compliance",icon:"shield",
+    '</div></div>';}},{id:"p-supplement1",title:"Domestic AI Park Comparison",icon:"building",sub:"Zhangjiang / Shenzhen Bay / Hangzhou / Zhongguancun — scale, industry, features & differences",
+   body:function(){return '<div style="display:flex;flex-direction:column;gap:14px;height:100%;min-height:0">'+
+    '<div style="flex:1;display:flex;flex-direction:column;gap:0;min-height:0;overflow-y:auto">'+
+    '<table class="info-table" style="margin:0;font-size:18px;width:100%;height:100%">'+
+    '<tr style="background:#f0f9ff"><th style="padding:16px 14px;text-align:left;font-size:16px">Park</th><th style="padding:16px 14px;text-align:left;font-size:16px">Scale</th><th style="padding:16px 14px;text-align:left;font-size:16px">Industry</th><th style="padding:16px 14px;text-align:left;font-size:16px">Key Feature</th><th style="padding:16px 14px;text-align:left;font-size:16px">Difference</th></tr>'+
+    '<tr><td style="padding:16px 14px"><b>Zhangjiang, Shanghai</b></td><td style="padding:16px 14px">2km² AI Town</td><td style="padding:16px 14px">600+ firms·30k workers·¥114B</td><td style="padding:16px 14px">Full chain·model/compute/data/embodied</td><td style="padding:16px 14px">Industry-led, lacks linear heritage & community</td></tr>'+
+    '<tr><td style="padding:16px 14px"><b>Shenzhen Bay</b></td><td style="padding:16px 14px">6M m² total</td><td style="padding:16px 14px">150+ AI firms·¥100B+ hardware</td><td style="padding:16px 14px">Chip-to-terminal 100m loop·hard tech</td><td style="padding:16px 14px">Commercial park, lacks public space & culture</td></tr>'+
+    '<tr><td style="padding:16px 14px"><b>Hangzhou Future Tech City</b></td><td style="padding:16px 14px">3.43km² AI Town</td><td style="padding:16px 14px">180 firms·¥118B revenue</td><td style="padding:16px 14px">Ali DAMO Academy·Zhejiang Lab·Model Space</td><td style="padding:16px 14px">Platform-driven, lacks open-source & cross-discipline</td></tr>'+
+    '<tr style="background:#fef3c7"><td style="padding:16px 14px"><b>Zhongguancun (this project)</b></td><td style="padding:16px 14px">11.4km² design</td><td style="padding:16px 14px">1900+ firms·¥282B·51 unicorns·104 LLMs</td><td style="padding:16px 14px">Century railway heritage × AI-native × open-source × community</td><td style="padding:16px 14px"><b>Only linear heritage + AI-native + public interest</b></td></tr>'+
+    '</table></div>'+
+    '<div style="flex:none;padding:18px 20px;background:#eff6ff;border-left:4px solid #2563eb;border-radius:0 10px 10px 0">'+
+    '<div style="font-size:15px;color:#1e40af;line-height:1.8"><b>Conclusion:</b> Domestic AI parks are mostly industry-led or commercial park models. This project uses the century-old Jing-Zhang railway heritage as its spatial skeleton, integrating AI-native innovation, open-source governance, and community symbiosis — China\'s first "linear heritage × AI-native × public interest" urban renewal paradigm.</div></div>'+
+    '</div>';}},{id:"p-supplement2",title:"Municipal Capacity Assessment",icon:"zap",sub:"Water / Power / Compute / Comms — conceptual order-of-magnitude estimates, not engineering",
+   body:function(){return '<div style="display:flex;flex-direction:column;gap:14px;height:100%;min-height:0">'+
+    '<div style="flex:1;display:flex;flex-direction:column;gap:0;min-height:0;overflow-y:auto">'+
+    '<table class="info-table" style="margin:0;font-size:18px;width:100%;height:100%">'+
+    '<tr style="background:#f0fdf4"><th style="padding:16px 14px;text-align:left;font-size:16px">Category</th><th style="padding:16px 14px;text-align:left;font-size:16px">Basis</th><th style="padding:16px 14px;text-align:left;font-size:16px">Conceptual Scale</th><th style="padding:16px 14px;text-align:left;font-size:16px">Capacity & Measures</th></tr>'+
+    '<tr><td style="padding:16px 14px"><b>Water</b></td><td style="padding:16px 14px">11.4km²·150k workers·450k residents</td><td style="padding:16px 14px">200L/worker·day + 150L/resident·day ≈ 97,500 m³/day</td><td style="padding:16px 14px">Existing pipe network sufficient; AI cooling air-cooled</td></tr>'+
+    '<tr><td style="padding:16px 14px"><b>Power</b></td><td style="padding:16px 14px">Office 80W/m²·R&D 120W/m²·compute 200W/m²</td><td style="padding:16px 14px">3 cores 368.6ha·avg FAR 2.0 ≈ 150MW peak</td><td style="padding:16px 14px">Need 2-3 new 110kV substations; 15% solar PV</td></tr>'+
+    '<tr><td style="padding:16px 14px"><b>Compute</b></td><td style="padding:16px 14px">Distributed compute towers + enterprise</td><td style="padding:16px 14px">Public ≥500P FLOPS·enterprise ≥2000P</td><td style="padding:16px 14px">Connect to Beijing Supercompute; ≥40% green power</td></tr>'+
+    '<tr><td style="padding:16px 14px"><b>Comms</b></td><td style="padding:16px 14px">Fiber along 9km greenway·5G/6G</td><td style="padding:16px 14px">Backbone ≥10Tbps·12 edge nodes</td><td style="padding:16px 14px">Meets AI low-latency (≤10ms)</td></tr>'+
+    '</table></div>'+
+    '<div style="flex:none;padding:16px 18px;background:#f0fdf4;border-left:4px solid #059669;border-radius:0 10px 10px 0">'+
+    '<div style="font-size:15px;color:#065f46;line-height:1.8"><b>Note:</b> All figures are conceptual order-of-magnitude estimates based on 11.4km² design area and 368.6ha renewable land, pending professional design institute verification.</div></div>'+
+    '</div>';}},{id:"p-supplement3",title:"Municipal Capacity Strategy",icon:"tree",sub:"Distributed compute · Green power · Low-latency comms — implementation path to reduce peak load",
+   body:function(){return '<div style="display:flex;flex-direction:column;gap:14px;height:100%;min-height:0">'+
+    '<div style="flex:1;display:flex;flex-direction:column;gap:12px;min-height:0;overflow-y:auto">'+
+    '<div style="padding:18px 20px;background:#f0fdf4;border-left:4px solid #059669;border-radius:0 10px 10px 0">'+
+    '<div style="font-size:18px;font-weight:bold;color:#065f46;margin-bottom:10px">⚡ Distributed Compute Strategy</div>'+
+    '<div style="font-size:16px;color:#064e3b;line-height:1.9">12 edge compute nodes along the 9km Jing-Zhang greenway, 50-100P FLOPS each, avoiding centralized data center high load; enterprise compute shared via compute water tower, peak shaving ≥30%.</div></div>'+
+    '<div style="padding:18px 20px;background:#eff6ff;border-left:4px solid #2563eb;border-radius:0 10px 10px 0">'+
+    '<div style="font-size:18px;font-weight:bold;color:#1e40af;margin-bottom:10px">☀️ Green Power Strategy</div>'+
+    '<div style="font-size:16px;color:#1e3a8a;line-height:1.9">Rooftop solar PV coverage ≥60% on three-core buildings, annual generation ~120M kWh; connect to Beijing green power trading platform, green power ratio ≥40%; energy storage with 2-hour peak-valley regulation.</div></div>'+
+    '<div style="padding:18px 20px;background:#fef3c7;border-left:4px solid #d97706;border-radius:0 10px 10px 0">'+
+    '<div style="font-size:18px;font-weight:bold;color:#92400e;margin-bottom:10px">🌐 Low-Latency Comms Strategy</div>'+
+    '<div style="font-size:16px;color:#78350f;line-height:1.9">Dual-route fiber backbone along greenway, bandwidth ≥10Tbps; 5G/6G micro-base station spacing ≤200m, AI scenario end-to-end latency ≤10ms; key nodes with satellite backup.</div></div>'+
+    '</div>'+
+    '<div style="flex:none;padding:16px 18px;background:#f5f5f4;border-left:4px solid #78716c;border-radius:0 10px 10px 0">'+
+    '<div style="font-size:15px;color:#44403c;line-height:1.8"><b>Implementation:</b> Phase 1 (1-3yr) 3 edge nodes + PV demo; Phase 2 (3-5yr) full 12-node coverage + green power trading; Phase 3 (5-10yr) intelligent compute scheduling + carbon-neutral operations.</div></div>'+
+    '</div>';}},{id:"p-supplement4",title:"AI Rent & Employment Impact Monitoring",icon:"chart",sub:"5-dimension monitoring · alert thresholds · interventions — prevent gentrification & displacement",
+   body:function(){return '<div style="display:flex;flex-direction:column;gap:14px;height:100%;min-height:0">'+
+    '<div style="flex:1;display:flex;flex-direction:column;gap:0;min-height:0;overflow-y:auto">'+
+    '<table class="info-table" style="margin:0;font-size:17px;width:100%;height:100%">'+
+    '<tr style="background:#faf5ff"><th style="padding:14px 12px;text-align:left;font-size:15px">Dimension</th><th style="padding:14px 12px;text-align:left;font-size:15px">Indicator</th><th style="padding:14px 12px;text-align:left;font-size:15px">Freq</th><th style="padding:14px 12px;text-align:left;font-size:15px">Alert Threshold</th><th style="padding:14px 12px;text-align:left;font-size:15px">Intervention</th></tr>'+
+    '<tr><td style="padding:14px 12px"><b>Rent Level</b></td><td style="padding:14px 12px">Office/commercial/residential rent index</td><td style="padding:14px 12px">Quarterly</td><td style="padding:14px 12px">Increase >20% above regional avg</td><td style="padding:14px 12px">Add affordable housing/rent subsidy/capped space</td></tr>'+
+    '<tr><td style="padding:14px 12px"><b>Employment</b></td><td style="padding:14px 12px">AI job share/local employment rate</td><td style="padding:14px 12px">Semi-annual</td><td style="padding:14px 12px">Local rate <60%</td><td style="padding:14px 12px">Targeted hiring/training/community priority</td></tr>'+
+    '<tr><td style="padding:14px 12px"><b>Displacement</b></td><td style="padding:14px 12px">AI-displaced jobs/retraining success</td><td style="padding:14px 12px">Annual</td><td style="padding:14px 12px">Displacement >15% or retraining <70%</td><td style="padding:14px 12px">Pause scenarios/intensify training/human fallback</td></tr>'+
+    '<tr><td style="padding:14px 12px"><b>Gentrification</b></td><td style="padding:14px 12px">Resident return rate/income gap</td><td style="padding:14px 12px">Annual</td><td style="padding:14px 12px">Return rate <70%</td><td style="padding:14px 12px">≥20% affordable housing/community fund/dividend</td></tr>'+
+    '<tr><td style="padding:14px 12px"><b>SMEs</b></td><td style="padding:14px 12px">Occupancy/survival/rent burden</td><td style="padding:14px 12px">Quarterly</td><td style="padding:14px 12px">Rent burden >30%</td><td style="padding:14px 12px">Tiered rent/compute subsidy/shared space</td></tr>'+
+    '</table></div>'+
+    '<div style="flex:none;padding:16px 18px;background:#faf5ff;border-left:4px solid #7c3aed;border-radius:0 10px 10px 0">'+
+    '<div style="font-size:15px;color:#5b21b6;line-height:1.8"><b>Mechanism:</b> Jointly executed by community council + third-party agency, data transparent; intervention plan within 30 days of alert, implementation within 60 days; annual report public, subject to public oversight.</div></div>'+
+    '</div>';}},{id:"p-supplement5",title:"Robot Accident Liability Matrix & Insurance",icon:"shield",sub:"5 accident types · liability · insurance · coverage · process",
+   body:function(){return '<div style="display:flex;flex-direction:column;gap:14px;height:100%;min-height:0">'+
+    '<div style="flex:1;display:flex;flex-direction:column;gap:0;min-height:0;overflow-y:auto">'+
+    '<table class="info-table" style="margin:0;font-size:17px;width:100%;height:100%">'+
+    '<tr style="background:#fef2f2"><th style="padding:14px 12px;text-align:left;font-size:15px">Accident Type</th><th style="padding:14px 12px;text-align:left;font-size:15px">Liability</th><th style="padding:14px 12px;text-align:left;font-size:15px">Insurance</th><th style="padding:14px 12px;text-align:left;font-size:15px">Coverage</th><th style="padding:14px 12px;text-align:left;font-size:15px">Process</th></tr>'+
+    '<tr><td style="padding:14px 12px"><b>Pedestrian collision</b></td><td style="padding:14px 12px">Operator 70%/Manufacturer 30%</td><td style="padding:14px 12px">Public liability</td><td style="padding:14px 12px">≥¥5M/unit</td><td style="padding:14px 12px">Stop→first aid→report→investigate→compensate</td></tr>'+
+    '<tr><td style="padding:14px 12px"><b>Property damage</b></td><td style="padding:14px 12px">Operator 100%</td><td style="padding:14px 12px">Third-party liability</td><td style="padding:14px 12px">≥¥2M/incident</td><td style="padding:14px 12px">Evidence→assessment→48h payout</td></tr>'+
+    '<tr><td style="padding:14px 12px"><b>Data breach</b></td><td style="padding:14px 12px">Data processor/platform</td><td style="padding:14px 12px">Cyber insurance</td><td style="padding:14px 12px">≥¥10M/incident</td><td style="padding:14px 12px">24h notification→remediation→third-party audit</td></tr>'+
+    '<tr><td style="padding:14px 12px"><b>System failure</b></td><td style="padding:14px 12px">Manufacturer/algorithm provider</td><td style="padding:14px 12px">Product liability</td><td style="padding:14px 12px">≥¥5M/incident</td><td style="padding:14px 12px">Degrade to manual→root cause→recall/update</td></tr>'+
+    '<tr><td style="padding:14px 12px"><b>Premises liability</b></td><td style="padding:14px 12px">Operating platform</td><td style="padding:14px 12px">Premises liability</td><td style="padding:14px 12px">≥¥20M/year</td><td style="padding:14px 12px">Emergency response→isolation→announcement</td></tr>'+
+    '</table></div>'+
+    '<div style="flex:none;padding:16px 18px;background:#fef2f2;border-left:4px solid #dc2626;border-radius:0 10px 10px 0">'+
+    '<div style="font-size:15px;color:#991b1b;line-height:1.8"><b>Insurance Requirement:</b> Test scenarios (SC-08/09/16/17/18) mandatory insurance, operational scenarios 50% higher coverage; all incidents reported to regulators within 24h; establish accident database & feedback mechanism to continuously optimize safety.</div></div>'+
+    '</div>';}},{id:"p-deep1",title:"Zhimai Urban OS & Original Mechanisms",icon:"cpu",sub:"AI-native spatial OS · Embodied AI guidelines · Progressive data filling",
+   body:function(){return '<div style="display:flex;gap:14px;height:100%;min-height:0">'+
+    '<div style="flex:1.4;display:flex;flex-direction:column;gap:0;min-height:0;background:linear-gradient(160deg,#eff6ff,#dbeafe);border-radius:14px;padding:18px 20px;position:relative;overflow:hidden">'+
+    '<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#2563eb,#0284c7,#06b6d4)"></div>'+
+    '<div style="font-size:18px;font-weight:800;color:#1e3a8a;margin-bottom:14px">Zhimai Urban OS Three-Layer Architecture</div>'+
+    '<div style="flex:1;display:flex;flex-direction:column;gap:10px;min-height:0;justify-content:space-between">'+
+    '<div style="display:flex;gap:12px;align-items:flex-start;padding:12px 14px;background:rgba(255,255,255,.7);border-radius:10px;border-left:3px solid #2563eb">'+
+    '<div style="font-size:24px;flex:none">🌐</div><div style="flex:1;min-width:0"><div style="font-size:15px;font-weight:700;color:#1e40af;margin-bottom:4px">Physical Layer — Neural Greenway</div><div style="font-size:13px;color:#1e3a8a;line-height:1.7">9km greenway with distributed sensors, edge compute, fiber backbone and micro-energy grid; streetlights/seats/paving are "city APIs" mountable with AI modules, data anonymized and open.</div></div></div>'+
+    '<div style="display:flex;gap:12px;align-items:flex-start;padding:12px 14px;background:rgba(255,255,255,.7);border-radius:10px;border-left:3px solid #0284c7">'+
+    '<div style="font-size:24px;flex:none">🔌</div><div style="flex:1;min-width:0"><div style="font-size:15px;font-weight:700;color:#0369a1;margin-bottom:4px">Protocol Layer — Space as API</div><div style="font-size:13px;color:#0c4a6e;line-height:1.7">Every building/public space/test scenario follows unified spatial API protocol; developers apply for space resources like software interfaces, deployment cycle compressed from months to days.</div></div></div>'+
+    '<div style="display:flex;gap:12px;align-items:flex-start;padding:12px 14px;background:rgba(255,255,255,.7);border-radius:10px;border-left:3px solid #06b6d4">'+
+    '<div style="font-size:24px;flex:none">👥</div><div style="flex:1;min-width:0"><div style="font-size:15px;font-weight:700;color:#0e7490;margin-bottom:4px">Governance Layer — Human-in-the-Loop</div><div style="font-size:13px;color:#155e75;line-height:1.7">All decisions go through 6-step loop: AI propose→human review→community公示→pilot→evaluate→scale/terminate. AI processes info, humans judge and take responsibility.</div></div></div>'+
+    '</div></div>'+
+    '<div style="flex:1;display:flex;flex-direction:column;gap:12px;min-height:0">'+
+    '<div style="flex:1;display:flex;flex-direction:column;gap:0;min-height:0;background:linear-gradient(160deg,#f0fdf4,#dcfce7);border-radius:14px;padding:16px 18px;position:relative;overflow:hidden">'+
+    '<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#059669,#10b981,#34d399)"></div>'+
+    '<div style="font-size:16px;font-weight:800;color:#065f46;margin-bottom:10px">Embodied AI Spatial Guidelines</div>'+
+    '<div style="flex:1;display:grid;grid-template-columns:1fr 1fr;gap:8px;min-height:0;align-content:center">'+
+    '<div style="padding:8px 10px;background:rgba(255,255,255,.7);border-radius:8px"><div style="font-size:12px;font-weight:700;color:#047857;margin-bottom:3px">Paths</div><div style="font-size:11px;color:#064e3b;line-height:1.5">Test lane ≥1.5m<br>Shared ≥3.0m<br>Accessible ≥1.8m</div></div>'+
+    '<div style="padding:8px 10px;background:rgba(255,255,255,.7);border-radius:8px"><div style="font-size:12px;font-weight:700;color:#047857;margin-bottom:3px">Ramps</div><div style="font-size:11px;color:#064e3b;line-height:1.5">Slope ≤1:12<br>No protrusions<br>Visual guides</div></div>'+
+    '<div style="padding:8px 10px;background:rgba(255,255,255,.7);border-radius:8px"><div style="font-size:12px;font-weight:700;color:#047857;margin-bottom:3px">Interaction</div><div style="font-size:11px;color:#064e3b;line-height:1.5">Height 1.1-1.5m<br>Screen ≥10"<br>4-color status</div></div>'+
+    '<div style="padding:8px 10px;background:rgba(255,255,255,.7);border-radius:8px"><div style="font-size:12px;font-weight:700;color:#047857;margin-bottom:3px">Safety</div><div style="font-size:11px;color:#064e3b;line-height:1.5">E-stop every 200m<br>Signal at entrance<br>Data ≤7 days</div></div>'+
+    '</div></div>'+
+    '<div style="flex:1;display:flex;flex-direction:column;gap:0;min-height:0;background:linear-gradient(160deg,#fef3c7,#fde68a);border-radius:14px;padding:16px 18px;position:relative;overflow:hidden">'+
+    '<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#d97706,#f59e0b,#fbbf24)"></div>'+
+    '<div style="font-size:16px;font-weight:800;color:#92400e;margin-bottom:10px">Progressive Data Filling</div>'+
+    '<div style="flex:1;display:flex;flex-direction:column;gap:8px;min-height:0;justify-content:center">'+
+    '<div style="display:flex;align-items:center;gap:10px;padding:8px 12px;background:rgba(255,255,255,.7);border-radius:8px"><div style="font-size:18px;font-weight:800;color:#d97706;flex:none">L1</div><div style="flex:1;min-width:0"><div style="font-size:12px;font-weight:700;color:#92400e">Provisional (current)</div><div style="font-size:11px;color:#78350f">Rough geometry/public reports → concept</div></div></div>'+
+    '<div style="display:flex;align-items:center;gap:10px;padding:8px 12px;background:rgba(255,255,255,.7);border-radius:8px"><div style="font-size:18px;font-weight:800;color:#f59e0b;flex:none">L2</div><div style="flex:1;min-width:0"><div style="font-size:12px;font-weight:700;color:#92400e">Background</div><div style="font-size:11px;color:#78350f">Public stats/official news/OSM → deepening</div></div></div>'+
+    '<div style="display:flex;align-items:center;gap:10px;padding:8px 12px;background:rgba(255,255,255,.7);border-radius:8px"><div style="font-size:18px;font-weight:800;color:#fbbf24;flex:none">L3</div><div style="flex:1;min-width:0"><div style="font-size:12px;font-weight:700;color:#92400e">Formal (pending)</div><div style="font-size:11px;color:#78350f">Official verified data → regulatory depth</div></div></div>'+
+    '</div></div></div></div>';}},{id:"p-deep2",title:"Humanoid Robot Games & Scenario Deep Dive",icon:"robot",sub:"Ice Ribbon→Jing-Zhang first km · Xiaoyuehe East Wing 5 nodes · AI Origin design guidelines",
+   body:function(){return '<div style="display:flex;flex-direction:column;gap:12px;height:100%;min-height:0">'+
+    '<div style="flex:none;background:linear-gradient(135deg,#581c87,#7c3aed,#6b5ce7);border-radius:14px;padding:16px 22px;position:relative;overflow:hidden;color:#fff">'+
+    '<div style="position:absolute;top:-30px;right:-30px;width:120px;height:120px;background:rgba(255,255,255,.1);border-radius:50%"></div>'+
+    '<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;position:relative;z-index:1">'+
+    '<span style="font-size:22px">🏆</span><span style="font-size:18px;font-weight:800">2nd World Humanoid Robot Games</span><span style="font-size:12px;background:rgba(255,255,255,.2);padding:3px 10px;border-radius:20px">2026.8.22-26 · Ice Ribbon</span></div>'+
+    '<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;position:relative;z-index:1">'+
+    '<div style="text-align:center"><div style="font-size:26px;font-weight:800">16</div><div style="font-size:11px;opacity:.8">Countries</div></div>'+
+    '<div style="text-align:center"><div style="font-size:26px;font-weight:800">666</div><div style="font-size:11px;opacity:.8">Teams</div></div>'+
+    '<div style="text-align:center"><div style="font-size:26px;font-weight:800">2056</div><div style="font-size:11px;opacity:.8">Robots</div></div>'+
+    '<div style="text-align:center"><div style="font-size:26px;font-weight:800">51</div><div style="font-size:11px;opacity:.8">Events (21 real)</div></div>'+
+    '</div>'+
+    '<div style="margin-top:10px;font-size:12px;line-height:1.7;opacity:.9;position:relative;z-index:1"><b>Significance:</b> ①Spatial proximity—Ice Ribbon ~3km from north end, east wing hosts "arena-to-city" first-km test corridor; ②Scenario conversion—21 real challenges become Jing-Zhang AI test content; ③Concept resonance—1909 Protocol 3 gates + 8 fault injections = "daily access test" for robots; ④Industry base—Haidian has China first embodied AI innovation park.</div>'+
+    '</div>'+
+    '<div style="flex:1;display:flex;gap:12px;min-height:0">'+
+    '<div style="flex:1;display:flex;flex-direction:column;gap:0;min-height:0;background:linear-gradient(160deg,#eff6ff,#e0f2fe);border-radius:14px;padding:16px 18px;position:relative;overflow:hidden">'+
+    '<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#0284c7,#0ea5e9,#38bdf8)"></div>'+
+    '<div style="font-size:16px;font-weight:800;color:#075985;margin-bottom:10px">Xiaoyuehe East Wing 5 Nodes</div>'+
+    '<div style="flex:1;display:flex;flex-direction:column;gap:6px;min-height:0;justify-content:space-between">'+
+    '<div style="display:flex;gap:8px;align-items:flex-start;padding:7px 10px;background:rgba(255,255,255,.75);border-radius:8px"><div style="font-size:11px;font-weight:800;color:#0284c7;background:#e0f2fe;padding:2px 6px;border-radius:4px;flex:none">E-01</div><div style="font-size:11px;color:#0c4a6e;line-height:1.5"><b>Embodied AI Test Lane</b> (BUAA-Xueqing): delivery, cleaning, exoskeleton</div></div>'+
+    '<div style="display:flex;gap:8px;align-items:flex-start;padding:7px 10px;background:rgba(255,255,255,.75);border-radius:8px"><div style="font-size:11px;font-weight:800;color:#0284c7;background:#e0f2fe;padding:2px 6px;border-radius:4px;flex:none">E-02</div><div style="font-size:11px;color:#0c4a6e;line-height:1.5"><b>Autonomous Shuttle</b> (Qinghua East): L4 station, V2X units</div></div>'+
+    '<div style="display:flex;gap:8px;align-items:flex-start;padding:7px 10px;background:rgba(255,255,255,.75);border-radius:8px"><div style="font-size:11px;font-weight:800;color:#0284c7;background:#e0f2fe;padding:2px 6px;border-radius:4px;flex:none">E-03</div><div style="font-size:11px;color:#0c4a6e;line-height:1.5"><b>AI Life Lab</b> (Wudaokou): health nav, accessibility, aging</div></div>'+
+    '<div style="display:flex;gap:8px;align-items:flex-start;padding:7px 10px;background:rgba(255,255,255,.75);border-radius:8px"><div style="font-size:11px;font-weight:800;color:#0284c7;background:#e0f2fe;padding:2px 6px;border-radius:4px;flex:none">E-04</div><div style="font-size:11px;color:#0c4a6e;line-height:1.5"><b>Prompt Plaza East</b> (N3 Ring): human-AI co-creation, data viz</div></div>'+
+    '<div style="display:flex;gap:8px;align-items:flex-start;padding:7px 10px;background:rgba(255,255,255,.75);border-radius:8px"><div style="font-size:11px;font-weight:800;color:#0284c7;background:#e0f2fe;padding:2px 6px;border-radius:4px;flex:none">E-05</div><div style="font-size:11px;color:#0c4a6e;line-height:1.5"><b>AI Public Service</b> (south): issue routing, legal, education</div></div>'+
+    '<div style="font-size:11px;color:#0369a1;text-align:center;padding-top:4px;font-style:italic">3km "AI Life Walk" · 5 stations + 3 switch plazas + 2 compute towers</div>'+
+    '</div></div>'+
+    '<div style="flex:1;display:flex;flex-direction:column;gap:0;min-height:0;background:linear-gradient(160deg,#f0fdf4,#dcfce7);border-radius:14px;padding:16px 18px;position:relative;overflow:hidden">'+
+    '<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#059669,#10b981,#34d399)"></div>'+
+    '<div style="font-size:16px;font-weight:800;color:#065f46;margin-bottom:10px">AI Origin Community Design Guidelines</div>'+
+    '<div style="flex:1;display:flex;flex-direction:column;gap:8px;min-height:0;justify-content:space-between">'+
+    '<div><div style="font-size:12px;font-weight:700;color:#047857;margin-bottom:4px">Functional Mix</div><div style="display:grid;grid-template-columns:repeat(5,1fr);gap:4px"><div style="text-align:center;padding:4px 2px;background:rgba(255,255,255,.7);border-radius:6px"><div style="font-size:13px;font-weight:800;color:#059669">35-40%</div><div style="font-size:9px;color:#064e3b">R&D Office</div></div><div style="text-align:center;padding:4px 2px;background:rgba(255,255,255,.7);border-radius:6px"><div style="font-size:13px;font-weight:800;color:#059669">25-30%</div><div style="font-size:9px;color:#064e3b">Talent Apt</div></div><div style="text-align:center;padding:4px 2px;background:rgba(255,255,255,.7);border-radius:6px"><div style="font-size:13px;font-weight:800;color:#059669">10-15%</div><div style="font-size:9px;color:#064e3b">Public Svc</div></div><div style="text-align:center;padding:4px 2px;background:rgba(255,255,255,.7);border-radius:6px"><div style="font-size:13px;font-weight:800;color:#059669">10-15%</div><div style="font-size:9px;color:#064e3b">Commercial</div></div><div style="text-align:center;padding:4px 2px;background:rgba(255,255,255,.7);border-radius:6px"><div style="font-size:13px;font-weight:800;color:#059669">≥15%</div><div style="font-size:9px;color:#064e3b">Green</div></div></div></div>'+
+    '<div><div style="font-size:12px;font-weight:700;color:#047857;margin-bottom:4px">Streets & Transport</div><div style="font-size:11px;color:#064e3b;line-height:1.6">Main greenway ≥80m (ped ≥6m + run ≥3m + veg ≥20m); block grid 80-120m; perimeter loop + underground parking, internal speed 20km/h; e-bus every 5 min.</div></div>'+
+    '<div><div style="font-size:12px;font-weight:700;color:#047857;margin-bottom:4px">Implementation</div><div style="display:flex;gap:4px"><div style="flex:1;text-align:center;padding:5px 4px;background:rgba(255,255,255,.7);border-radius:6px"><div style="font-size:10px;font-weight:800;color:#059669">1-2yr</div><div style="font-size:9px;color:#064e3b">Guidelines+pilot</div></div><div style="flex:1;text-align:center;padding:5px 4px;background:rgba(255,255,255,.7);border-radius:6px"><div style="font-size:10px;font-weight:800;color:#059669">3-4yr</div><div style="font-size:9px;color:#064e3b">Mixed land+apt</div></div><div style="flex:1;text-align:center;padding:5px 4px;background:rgba(255,255,255,.7);border-radius:6px"><div style="font-size:10px;font-weight:800;color:#059669">4-7yr</div><div style="font-size:9px;color:#064e3b">Full operation</div></div></div></div>'+
+    '</div></div></div></div>';}},{id:"p-deep3",title:"Stakeholder Matrix & Community Participation",icon:"users",sub:"8 stakeholder types · 3-phase participation · Risk mitigation & dispute resolution",
+   body:function(){return '<div style="display:flex;flex-direction:column;gap:12px;height:100%;min-height:0">'+
+    '<div style="flex:1;display:flex;gap:14px;min-height:0">'+
+    '<div style="flex:1.3;display:flex;flex-direction:column;gap:0;min-height:0">'+
+    '<div style="padding:12px 16px;background:linear-gradient(135deg,#1e40af,#2563eb);color:#fff;font-size:15px;font-weight:700;border-radius:14px 14px 0 0">8 Stakeholder Types</div>'+
+    '<div style="flex:1;overflow-y:auto;background:var(--card);border:1px solid var(--border);border-top:none;border-radius:0 0 14px 14px">'+
+    '<table class="info-table" style="margin:0;font-size:11px;width:100%">'+
+    '<tr style="background:#f5f5f4;position:sticky;top:0"><th style="padding:8px 6px;text-align:left;font-size:10px">Stakeholder</th><th style="padding:8px 6px;text-align:left;font-size:10px">Core Demand</th><th style="padding:8px 6px;text-align:left;font-size:10px">Resistance</th><th style="padding:8px 6px;text-align:left;font-size:10px">Participation</th></tr>'+
+    '<tr><td style="padding:7px 6px"><b>Universities</b></td><td style="padding:7px 6px">Tech transfer/internships</td><td style="padding:7px 6px">Campus safety/IP</td><td style="padding:7px 6px">Joint committee/labs</td></tr>'+
+    '<tr><td style="padding:7px 6px"><b>AI Firms</b></td><td style="padding:7px 6px">Talent/scenario/clients</td><td style="padding:7px 6px">Data security/secrets</td><td style="padding:7px 6px">Hub/sandbox whitelist</td></tr>'+
+    '<tr><td style="padding:7px 6px"><b>Residents</b></td><td style="padding:7px 6px">Convenience/no disturb</td><td style="padding:7px 6px">Construction/gentrification</td><td style="padding:7px 6px">Council/15-day objection</td></tr>'+
+    '<tr><td style="padding:7px 6px"><b>Merchants</b></td><td style="padding:7px 6px">Foot traffic/stable</td><td style="padding:7px 6px">Renovation loss/rent</td><td style="padding:7px 6px">Reps/subsidies</td></tr>'+
+    '<tr><td style="padding:7px 6px"><b>Rail/Metro</b></td><td style="padding:7px 6px">Operation safety</td><td style="padding:7px 6px">Construction in zone</td><td style="padding:7px 6px">Joint review/station pre-review</td></tr>'+
+    '<tr><td style="padding:7px 6px"><b>Government</b></td><td style="padding:7px 6px">Industry upgrade/tax</td><td style="padding:7px 6px">Cross-dept coord/fiscal</td><td style="padding:7px 6px">Leadership group/one-stop</td></tr>'+
+    '<tr><td style="padding:7px 6px"><b>Developers</b></td><td style="padding:7px 6px">Open API/real data</td><td style="padding:7px 6px">Data closure/lock-in</td><td style="padding:7px 6px">Sandbox/hackathon/hall</td></tr>'+
+    '<tr><td style="padding:7px 6px"><b>Visitors</b></td><td style="padding:7px 6px">AI experience/heritage</td><td style="padding:7px 6px">Over-commercialization</td><td style="padding:7px 6px">Reservation/free hours</td></tr>'+
+    '</table></div></div>'+
+    '<div style="flex:1;display:flex;flex-direction:column;gap:0;min-height:0">'+
+    '<div style="padding:12px 16px;background:linear-gradient(135deg,#7c3aed,#6b5ce7);color:#fff;font-size:15px;font-weight:700;border-radius:14px 14px 0 0">3-Phase Participation Path</div>'+
+    '<div style="flex:1;display:flex;flex-direction:column;gap:0;min-height:0;background:var(--card);border:1px solid var(--border);border-top:none;border-radius:0 0 14px 14px;padding:14px 16px;position:relative">'+
+    '<div style="position:absolute;left:28px;top:20px;bottom:20px;width:2px;background:linear-gradient(to bottom,#7c3aed,#059669,#d97706)"></div>'+
+    '<div style="flex:1;display:flex;flex-direction:column;gap:10px;min-height:0;justify-content:space-between">'+
+    '<div style="display:flex;gap:12px;align-items:flex-start;position:relative">'+
+    '<div style="width:24px;height:24px;border-radius:50%;background:#7c3aed;color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none;z-index:1;margin-top:2px">1</div>'+
+    '<div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:700;color:#5b21b6;margin-bottom:3px">Vision Co-creation <span style="font-size:10px;color:#7c3aed;font-weight:400">0-12mo</span></div><div style="font-size:11px;color:#4c1d95;line-height:1.6">Community group 150-200; 3 workshops+6 focus groups; AI participatory budget; "Zhimai Neighbor" mini-program; 7-day feedback</div></div></div>'+
+    '<div style="display:flex;gap:12px;align-items:flex-start;position:relative">'+
+    '<div style="width:24px;height:24px;border-radius:50%;background:#059669;color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none;z-index:1;margin-top:2px">2</div>'+
+    '<div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:700;color:#065f46;margin-bottom:3px">Co-build Supervision <span style="font-size:10px;color:#059669;font-weight:400">1-3yr</span></div><div style="font-size:11px;color:#064e3b;line-height:1.6">Real-time construction info; 70 observers; 15-day scenario公示; quarterly data report; monthly open day; 2h complaint response</div></div></div>'+
+    '<div style="display:flex;gap:12px;align-items:flex-start;position:relative">'+
+    '<div style="width:24px;height:24px;border-radius:50%;background:#d97706;color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none;z-index:1;margin-top:2px">3</div>'+
+    '<div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:700;color:#92400e;margin-bottom:3px">Shared Governance <span style="font-size:10px;color:#d97706;font-weight:400">3-10yr</span></div><div style="font-size:11px;color:#78350f;line-height:1.6">Quarterly council; 5-10% AI revenue to fund; annual open day ≥5000; training ≥1000/yr; participation ≥30%</div></div></div>'+
+    '</div></div></div></div>'+
+    '<div style="flex:none;padding:14px 18px;background:linear-gradient(135deg,#fef2f2,#fee2e2);border-radius:14px;border:1px solid #fecaca;position:relative;overflow:hidden">'+
+    '<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#dc2626,#ef4444,#f87171)"></div>'+
+    '<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">'+
+    '<span style="font-size:18px">⚠️</span><span style="font-size:15px;font-weight:800;color:#991b1b">Risk Mitigation & Dispute Resolution</span></div>'+
+    '<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px">'+
+    '<div style="padding:8px 10px;background:rgba(255,255,255,.8);border-radius:8px;border-left:3px solid #dc2626"><div style="font-size:11px;font-weight:700;color:#991b1b;margin-bottom:3px">Privacy</div><div style="font-size:10px;color:#7f1d1d;line-height:1.4">Ethics committee review, opt-out anytime</div></div>'+
+    '<div style="padding:8px 10px;background:rgba(255,255,255,.8);border-radius:8px;border-left:3px solid #ea580c"><div style="font-size:11px;font-weight:700;color:#9a3412;margin-bottom:3px">Gentrification</div><div style="font-size:10px;color:#7c2d12;line-height:1.4">Rent alert CPI+2%, ≥70% return rate</div></div>'+
+    '<div style="padding:8px 10px;background:rgba(255,255,255,.8);border-radius:8px;border-left:3px solid #ca8a04"><div style="font-size:11px;font-weight:700;color:#854d0e;margin-bottom:3px">Construction</div><div style="font-size:10px;color:#713f12;line-height:1.4">30-day notice+24h hotline, 2h on-site</div></div>'+
+    '<div style="padding:8px 10px;background:rgba(255,255,255,.8);border-radius:8px;border-left:3px solid #059669"><div style="font-size:11px;font-weight:700;color:#065f46;margin-bottom:3px">AI Safety</div><div style="font-size:10px;color:#064e3b;line-height:1.4">Physical isolation+safety officer+public report</div></div>'+
+    '</div></div></div>';}},{id:"p-deep4",title:"AI Verification Protocol & Fault Injection",icon:"check",sub:"3 gates · 8 fault injections · 4 degradation levels · No-AI fallback · 5-phase validation",
+   body:function(){return '<div style="display:flex;flex-direction:column;gap:10px;height:100%;min-height:0">'+
+    '<div style="flex:none;display:flex;gap:10px">'+
+    '<div style="flex:1;padding:12px 14px;background:linear-gradient(135deg,#fef2f2,#fee2e2);border-radius:12px;border:1px solid #fecaca;position:relative;overflow:hidden"><div style="position:absolute;top:0;left:0;right:0;height:3px;background:#dc2626"></div><div style="font-size:13px;font-weight:800;color:#991b1b;margin-bottom:4px">G1 Token Gate</div><div style="font-size:11px;color:#7f1d1d;line-height:1.5">AI agent identity & permissions: token contains scenario ID/scope/expiry/responsible party. Block: missing/expired/overreach/unsigned</div></div>'+
+    '<div style="flex:1;padding:12px 14px;background:linear-gradient(135deg,#fef3c7,#fde68a);border-radius:12px;border:1px solid #fcd34d;position:relative;overflow:hidden"><div style="position:absolute;top:0;left:0;right:0;height:3px;background:#d97706"></div><div style="font-size:13px;font-weight:800;color:#92400e;margin-bottom:4px">G2 Interlock Gate</div><div style="font-size:11px;color:#78350f;line-height:1.5">Data permission × physical safety × community authorization all satisfied. Block: data overreach/isolation missing/objection ≥50</div></div>'+
+    '<div style="flex:1;padding:12px 14px;background:linear-gradient(135deg,#f0fdf4,#dcfce7);border-radius:12px;border:1px solid #bbf7d0;position:relative;overflow:hidden"><div style="position:absolute;top:0;left:0;right:0;height:3px;background:#059669"></div><div style="font-size:13px;font-weight:800;color:#065f46;margin-bottom:4px">G3 Block Gate</div><div style="font-size:11px;color:#064e3b;line-height:1.5">Runtime safety: within zone/within quota/health OK. Block: out-of-zone/over-quota/health fail/emergency brake</div></div>'+
+    '</div>'+
+    '<div style="flex:1;display:flex;flex-direction:column;gap:0;min-height:0;background:#f8fafc;border-radius:12px;padding:12px 14px;position:relative;overflow:hidden">'+
+    '<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#475569,#64748b,#94a3b8)"></div>'+
+    '<div style="font-size:14px;font-weight:800;color:#334155;margin-bottom:8px">8 Fault Injection Tests (10 each, 10/10 pass)</div>'+
+    '<div style="flex:1;display:grid;grid-template-columns:1fr 1fr;gap:6px;min-height:0;align-content:start">'+
+    '<div style="padding:6px 8px;background:#fff;border-radius:6px;border-left:3px solid #ef4444"><div style="font-size:10px;font-weight:700;color:#991b1b">F01 Missing Token</div><div style="font-size:9px;color:#7f1d1d">→ Deny entry</div></div>'+
+    '<div style="padding:6px 8px;background:#fff;border-radius:6px;border-left:3px solid #f97316"><div style="font-size:10px;font-weight:700;color:#9a3412">F02 Expired Token</div><div style="font-size:9px;color:#7c2d12">→ Renew prompt</div></div>'+
+    '<div style="padding:6px 8px;background:#fff;border-radius:6px;border-left:3px solid #eab308"><div style="font-size:10px;font-weight:700;color:#854d0e">F03 Permission Overreach</div><div style="font-size:9px;color:#713f12">→ Audit log</div></div>'+
+    '<div style="padding:6px 8px;background:#fff;border-radius:6px;border-left:3px solid #84cc16"><div style="font-size:10px;font-weight:700;color:#3f6212">F04 Missing Field</div><div style="font-size:9px;color:#365314">→ Interlock fails</div></div>'+
+    '<div style="padding:6px 8px;background:#fff;border-radius:6px;border-left:3px solid #22c55e"><div style="font-size:10px;font-weight:700;color:#166534">F05 Safety Fail</div><div style="font-size:9px;color:#14532d">→ Close barrier+remote stop</div></div>'+
+    '<div style="padding:6px 8px;background:#fff;border-radius:6px;border-left:3px solid #06b6d4"><div style="font-size:10px;font-weight:700;color:#155e75">F06 Network Outage</div><div style="font-size:9px;color:#164e63">>30s → Local safe mode</div></div>'+
+    '<div style="padding:6px 8px;background:#fff;border-radius:6px;border-left:3px solid #3b82f6"><div style="font-size:10px;font-weight:700;color:#1e40af">F07 Compute Overload</div><div style="font-size:9px;color:#1e3a8a">>200% → Throttle</div></div>'+
+    '<div style="padding:6px 8px;background:#fff;border-radius:6px;border-left:3px solid #8b5cf6"><div style="font-size:10px;font-weight:700;color:#5b21b6">F08 Pedestrian Intrusion</div><div style="font-size:9px;color:#4c1d95">→ ≤1m E-brake (10km/h)</div></div>'+
+    '</div></div>'+
+    '<div style="flex:none;display:flex;gap:10px">'+
+    '<div style="flex:1;padding:10px 12px;background:linear-gradient(135deg,#f0fdf4,#dcfce7);border-radius:10px"><div style="font-size:12px;font-weight:800;color:#065f46;margin-bottom:6px;text-align:center">4 Degradation Levels</div><div style="display:flex;gap:4px"><div style="flex:1;text-align:center;padding:6px 4px;background:#fff;border-radius:6px"><div style="font-size:11px;font-weight:700;color:#059669">L0 Normal</div><div style="font-size:9px;color:#064e3b">Green·AI running</div></div><div style="flex:1;text-align:center;padding:6px 4px;background:#fff;border-radius:6px"><div style="font-size:11px;font-weight:700;color:#d97706">L1 Degraded</div><div style="font-size:9px;color:#78350f">Yellow·limited</div></div><div style="flex:1;text-align:center;padding:6px 4px;background:#fff;border-radius:6px"><div style="font-size:11px;font-weight:700;color:#dc2626">L2 Manual</div><div style="font-size:9px;color:#7f1d1d">Red·manual</div></div><div style="flex:1;text-align:center;padding:6px 4px;background:#fff;border-radius:6px"><div style="font-size:11px;font-weight:700;color:#2563eb">L3 Full Stop</div><div style="font-size:9px;color:#1e3a8a">Blue·all stop</div></div></div></div>'+
+    '<div style="flex:1;padding:10px 12px;background:linear-gradient(135deg,#faf5ff,#f3e8ff);border-radius:10px"><div style="font-size:12px;font-weight:800;color:#5b21b6;margin-bottom:4px">No-AI Equivalent Path</div><div style="font-size:10px;color:#4c1d95;line-height:1.5">Culture→physical map+human guide; Health→community window; Legal→lawyer+12348; Accessibility→tactile+ramps; Feedback→suggestion box+12345. Pedestrian clear width ≥4.0m</div></div>'+
+    '<div style="flex:1;padding:10px 12px;background:linear-gradient(135deg,#f5f5f4,#e7e5e4);border-radius:10px"><div style="font-size:12px;font-weight:800;color:#44403c;margin-bottom:4px">5-Phase Validation</div><div style="font-size:10px;color:#57534e;line-height:1.5">V1 Synthetic (960/960) → V2 Closed场地 (30d) → V3 Limited on-site (0-90d) → V4 Expanded (90-180d, zero at-fault) → V5 Continuous (annual retest). Failure pauses expansion</div></div>'+
+    '</div></div>';}},{id:"p-deep5",title:"Public AI Service Review & Prerequisites",icon:"clipboard",sub:"12 public AI services · 8 review conditions · 5-node process · 6 implementation prerequisites",
+   body:function(){return '<div style="display:flex;flex-direction:column;gap:10px;height:100%;min-height:0">'+
+    '<div style="flex:none;padding:12px 14px;background:linear-gradient(135deg,#eff6ff,#dbeafe);border-radius:12px;position:relative;overflow:hidden">'+
+    '<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#2563eb,#3b82f6,#60a5fa)"></div>'+
+    '<div style="font-size:14px;font-weight:800;color:#1e40af;margin-bottom:8px">12 Proposed Public AI Services</div>'+
+    '<div style="display:grid;grid-template-columns:repeat(6,1fr);gap:6px">'+
+    '<div style="padding:5px 6px;background:#fff;border-radius:6px;text-align:center"><div style="font-size:9px;font-weight:700;color:#2563eb">S01</div><div style="font-size:8px;color:#1e3a8a">Culture Guide</div></div>'+
+    '<div style="padding:5px 6px;background:#fff;border-radius:6px;text-align:center"><div style="font-size:9px;font-weight:700;color:#2563eb">S02</div><div style="font-size:8px;color:#1e3a8a">Dev Walk</div></div>'+
+    '<div style="padding:5px 6px;background:#fff;border-radius:6px;text-align:center"><div style="font-size:9px;font-weight:700;color:#2563eb">S03</div><div style="font-size:8px;color:#1e3a8a">Health Nav</div></div>'+
+    '<div style="padding:5px 6px;background:#fff;border-radius:6px;text-align:center"><div style="font-size:9px;font-weight:700;color:#2563eb">S04</div><div style="font-size:8px;color:#1e3a8a">Education</div></div>'+
+    '<div style="padding:5px 6px;background:#fff;border-radius:6px;text-align:center"><div style="font-size:9px;font-weight:700;color:#2563eb">S05</div><div style="font-size:8px;color:#1e3a8a">Legal Asst</div></div>'+
+    '<div style="padding:5px 6px;background:#fff;border-radius:6px;text-align:center"><div style="font-size:9px;font-weight:700;color:#2563eb">S06</div><div style="font-size:8px;color:#1e3a8a">Accessibility</div></div>'+
+    '<div style="padding:5px 6px;background:#fff;border-radius:6px;text-align:center"><div style="font-size:9px;font-weight:700;color:#2563eb">S07</div><div style="font-size:8px;color:#1e3a8a">Issue Routing</div></div>'+
+    '<div style="padding:5px 6px;background:#fff;border-radius:6px;text-align:center"><div style="font-size:9px;font-weight:700;color:#2563eb">S08</div><div style="font-size:8px;color:#1e3a8a">Custom Retail</div></div>'+
+    '<div style="padding:5px 6px;background:#fff;border-radius:6px;text-align:center"><div style="font-size:9px;font-weight:700;color:#2563eb">S09</div><div style="font-size:8px;color:#1e3a8a">Finance Adv</div></div>'+
+    '<div style="padding:5px 6px;background:#fff;border-radius:6px;text-align:center"><div style="font-size:9px;font-weight:700;color:#2563eb">S10</div><div style="font-size:8px;color:#1e3a8a">Immersive Exp</div></div>'+
+    '<div style="padding:5px 6px;background:#fff;border-radius:6px;text-align:center"><div style="font-size:9px;font-weight:700;color:#dc2626">S11</div><div style="font-size:8px;color:#7f1d1d">Red-team (closed)</div></div>'+
+    '<div style="padding:5px 6px;background:#fff;border-radius:6px;text-align:center"><div style="font-size:9px;font-weight:700;color:#059669">S12</div><div style="font-size:8px;color:#064e3b">Open Sandbox</div></div>'+
+    '</div></div>'+
+    '<div style="flex:1;display:flex;gap:10px;min-height:0">'+
+    '<div style="flex:1;display:flex;flex-direction:column;gap:0;min-height:0;background:linear-gradient(160deg,#f0fdf4,#dcfce7);border-radius:12px;padding:12px 14px;position:relative;overflow:hidden">'+
+    '<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#059669,#10b981,#34d399)"></div>'+
+    '<div style="font-size:14px;font-weight:800;color:#065f46;margin-bottom:8px">8 Review Conditions (all must pass)</div>'+
+    '<div style="flex:1;display:flex;flex-direction:column;gap:5px;min-height:0;justify-content:space-between">'+
+    '<div style="display:flex;gap:8px;align-items:flex-start"><div style="width:18px;height:18px;border-radius:50%;background:#059669;color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none">1</div><div style="font-size:10px;color:#064e3b;line-height:1.4">Responsible unit & funding secured</div></div>'+
+    '<div style="display:flex;gap:8px;align-items:flex-start"><div style="width:18px;height:18px;border-radius:50%;background:#059669;color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none">2</div><div style="font-size:10px;color:#064e3b;line-height:1.4">Manual/physical channel ≥50% service time</div></div>'+
+    '<div style="display:flex;gap:8px;align-items:flex-start"><div style="width:18px;height:18px;border-radius:50%;background:#059669;color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none">3</div><div style="font-size:10px;color:#064e3b;line-height:1.4">Data minimum + retention ≤180d + no biometrics</div></div>'+
+    '<div style="display:flex;gap:8px;align-items:flex-start"><div style="width:18px;height:18px;border-radius:50%;background:#059669;color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none">4</div><div style="font-size:10px;color:#064e3b;line-height:1.4">PIPL: opt-in + guardian consent + no cross-border</div></div>'+
+    '<div style="display:flex;gap:8px;align-items:flex-start"><div style="width:18px;height:18px;border-radius:50%;background:#059669;color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none">5</div><div style="font-size:10px;color:#064e3b;line-height:1.4">Failover ≤15min + quarterly drill</div></div>'+
+    '<div style="display:flex;gap:8px;align-items:flex-start"><div style="width:18px;height:18px;border-radius:50%;background:#059669;color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none">6</div><div style="font-size:10px;color:#064e3b;line-height:1.4">Resident pause right (24h) + expert veto</div></div>'+
+    '<div style="display:flex;gap:8px;align-items:flex-start"><div style="width:18px;height:18px;border-radius:50%;background:#059669;color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none">7</div><div style="font-size:10px;color:#064e3b;line-height:1.4">Fee/status/complaint public公示</div></div>'+
+    '<div style="display:flex;gap:8px;align-items:flex-start"><div style="width:18px;height:18px;border-radius:50%;background:#059669;color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none">8</div><div style="font-size:10px;color:#064e3b;line-height:1.4">Operation log ≥1yr + annual 3rd-party eval</div></div>'+
+    '</div></div>'+
+    '<div style="flex:1;display:flex;flex-direction:column;gap:0;min-height:0;background:linear-gradient(160deg,#fef3c7,#fde68a);border-radius:12px;padding:12px 14px;position:relative;overflow:hidden">'+
+    '<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#d97706,#f59e0b,#fbbf24)"></div>'+
+    '<div style="font-size:14px;font-weight:800;color:#92400e;margin-bottom:10px">5-Node Review Process</div>'+
+    '<div style="flex:1;display:flex;flex-direction:column;gap:0;min-height:0;justify-content:space-between;position:relative">'+
+    '<div style="position:absolute;left:14px;top:15px;bottom:15px;width:2px;background:linear-gradient(to bottom,#d97706,#f59e0b,#fbbf24,#fcd34d,#fde68a)"></div>'+
+    '<div style="display:flex;gap:10px;align-items:center;position:relative"><div style="width:20px;height:20px;border-radius:50%;background:#d97706;color:#fff;font-size:9px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none;z-index:1">1</div><div style="font-size:10px;color:#78350f;font-weight:600">Project Application (task book)</div></div>'+
+    '<div style="display:flex;gap:10px;align-items:center;position:relative"><div style="width:20px;height:20px;border-radius:50%;background:#f59e0b;color:#fff;font-size:9px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none;z-index:1">2</div><div style="font-size:10px;color:#78350f;font-weight:600">Joint Review (8 conditions)</div></div>'+
+    '<div style="display:flex;gap:10px;align-items:center;position:relative"><div style="width:20px;height:20px;border-radius:50%;background:#fbbf24;color:#fff;font-size:9px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none;z-index:1">3</div><div style="font-size:10px;color:#78350f;font-weight:600">Pilot Evaluation (90d + rectify)</div></div>'+
+    '<div style="display:flex;gap:10px;align-items:center;position:relative"><div style="width:20px;height:20px;border-radius:50%;background:#fcd34d;color:#fff;font-size:9px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none;z-index:1">4</div><div style="font-size:10px;color:#78350f;font-weight:600">Acceptance & Handover (O&M)</div></div>'+
+    '<div style="display:flex;gap:10px;align-items:center;position:relative"><div style="width:20px;height:20px;border-radius:50%;background:#fde68a;color:#92400e;font-size:9px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none;z-index:1;border:2px solid #d97706">5</div><div style="font-size:10px;color:#78350f;font-weight:600">Annual Review (eval report)</div></div>'+
+    '<div style="font-size:9px;color:#92400e;font-style:italic;text-align:center;padding-top:4px">Failure pauses; 2yr unqualified → exit</div>'+
+    '</div></div></div>'+
+    '<div style="flex:none;padding:10px 14px;background:linear-gradient(135deg,#fef2f2,#fee2e2);border-radius:12px;position:relative;overflow:hidden">'+
+    '<div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#dc2626,#ef4444,#f87171)"></div>'+
+    '<div style="font-size:13px;font-weight:800;color:#991b1b;margin-bottom:6px">6 Implementation Prerequisites & Responses</div>'+
+    '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px">'+
+    '<div style="padding:6px 8px;background:rgba(255,255,255,.8);border-radius:6px"><div style="font-size:9px;font-weight:700;color:#991b1b;margin-bottom:2px">① Boundary/Ownership</div><div style="font-size:8px;color:#7f1d1d;line-height:1.3">Parcel-by-parcel check + unified base map</div></div>'+
+    '<div style="padding:6px 8px;background:rgba(255,255,255,.8);border-radius:6px"><div style="font-size:9px;font-weight:700;color:#991b1b;margin-bottom:2px">② Slow-walking Breakpoints</div><div style="font-size:8px;color:#7f1d1d;line-height:1.3">1km pilot first + traffic survey + rail coord</div></div>'+
+    '<div style="padding:6px 8px;background:rgba(255,255,255,.8);border-radius:6px"><div style="font-size:9px;font-weight:700;color:#991b1b;margin-bottom:2px">③ Scattered Amenities</div><div style="font-size:8px;color:#7f1d1d;line-height:1.3">3 first-phase nodes + responsibility table</div></div>'+
+    '<div style="padding:6px 8px;background:rgba(255,255,255,.8);border-radius:6px"><div style="font-size:9px;font-weight:700;color:#991b1b;margin-bottom:2px">④ Three Cores Different</div><div style="font-size:8px;color:#7f1d1d;line-height:1.3">Separate project lists + funding balance</div></div>'+
+    '<div style="padding:6px 8px;background:rgba(255,255,255,.8);border-radius:6px"><div style="font-size:9px;font-weight:700;color:#991b1b;margin-bottom:2px">⑤ Low Space Efficiency</div><div style="font-size:8px;color:#7f1d1d;line-height:1.3">Ground-floor reno + time-sharing + removable</div></div>'+
+    '<div style="padding:6px 8px;background:rgba(255,255,255,.8);border-radius:6px"><div style="font-size:9px;font-weight:700;color:#991b1b;margin-bottom:2px">⑥ No Unified Rules</div><div style="font-size:8px;color:#7f1d1d;line-height:1.3">Task book template + review form + 4 pilots</div></div>'+
+    '</div></div></div>';}},{id:"p-compliance",title:"Compliance",icon:"shield",
    body:function(){return '<div class="comp-box" style="padding:28px 32px">'+
     '<div class="comp-title" style="font-size:20px;margin-bottom:16px">'+ico('shield',20)+' Boundary Statement</div>'+
     '<ul class="comp-list">'+
@@ -897,8 +1151,7 @@ const pages=[
     '<li style="font-size:15px;padding:12px 0;line-height:1.8">Test-verification scenarios (red-team / sandbox / delivery / shuttle) are explicitly marked as <b>test status</b>, not stated as approved operation</li>'+
     '</ul></div>'+
     '<div class="foot" style="margin-top:auto;padding-top:16px;font-size:13px">Hermes Agent (FTARCH) · Wengyongsheng · 2026 · open-city.ai/Haidian<br>'+
-    'Zhimai Jing-Zhang · An AI-Native Innovation Belt · CONCEPT ONLY</div>';}}
-];
+    'Zhimai Jing-Zhang · An AI-Native Innovation Belt · CONCEPT ONLY</div>';}}];
 
 var content=document.getElementById("content");
 var pgLabel=document.getElementById("pgLabel");
@@ -918,7 +1171,7 @@ function scCard(id,ic,name,users,tagcls,tagtxt){
 function renderPage(p,i){
   var n=String(i+1).padStart(2,"0"),total=String(pages.length).padStart(2,"0");
   if(p._==="cover")return '<div class="page"><div class="cover">'+
-    '<div class="cover-logo"><img src="assets/logo-transparent.png?v=8" alt="logo"></div>'+
+    '<div class="cover-logo"><img src="../assets/logo-transparent.png?v=8" alt="logo"></div>'+
     '<div class="cover-title">Zhimai Jing-Zhang</div>'+
     '<div class="cover-sub">An AI-Native Innovation Belt · Concept Proposal</div>'+
     '<div class="cover-line"></div>'+
@@ -926,7 +1179,8 @@ function renderPage(p,i){
     '<div class="cover-desc">Jing-Zhang Railway Heritage Park × AI-Native Innovation × Urban Design</div>'+
     '<div class="cover-tags">'+
     '<span class="cover-tag">3 Cores · 1 Axis · 2 Wings</span>'+
-    '<span class="cover-tag">15 AI Scenarios</span>'+
+    '<span class="cover-tag">18 Scenario Cards · 7 Tests</span>'+
+    '<span class="cover-tag">15 Physical Landing Nodes</span>'+
     '<span class="cover-tag">4 Pilgrimage Landmarks</span></div>'+
     '</div></div>';
   if(p._==="toc")return '<div class="page"><div class="pg-head"><div class="pg-icon">'+ico('clipboard',16,'#fff')+'</div>'+
@@ -936,10 +1190,13 @@ function renderPage(p,i){
     tocItem('p-overview','map','Overview Map')+tocItem('p-baseline','clipboard','Site Baseline')+tocItem('p-readiness','search','Site Analysis')+
     tocItem('p-regional','globe','Regional Synergy')+tocItem('p-metrics','chart','Key Metrics')+tocItem('p-landuse','puzzle','Land Use')+
     tocItem('p-keyareas','target','Three Cores')+tocItem('p-axonometric','cube','Axonometric')+tocItem('p-section','ruler','Concept Section')+
-    tocItem('p-mobility','rails','Mobility & Green')+tocItem('p-original','zap','Original Mechanisms')+tocItem('p-scenarios','cpu','AI Scenarios')+tocItem('p-personas','user','Personas')+
-    tocItem('p-culture','book','Cultural Narrative')+tocItem('p-landmarks','star','Pilgrimage Landmarks')+tocItem('p-cases','globe','Global Cases')+
-    tocItem('p-ops','calendar','Operations')+tocItem('p-roadmap','map','Roadmap')+
+    tocItem('p-mobility','rails','Mobility & Green')+tocItem('p-original','zap','Original Mechanisms')+tocItem('p-scenarios','cpu','AI Scenarios (Key)')+tocItem('p-scenarios2','cpu','AI Scenarios (Others 1)')+tocItem('p-scenarios3','cpu','AI Scenarios (Others 2)')+tocItem('p-personas','user','Personas')+
+    tocItem('p-culture','book','Cultural Narrative')+tocItem('p-brand','palette','Brand Applications')+tocItem('p-landmarks','star','Pilgrimage Landmarks')+tocItem('p-cases','globe','Global Cases')+
+    tocItem('p-ops','calendar','Operations')+tocItem('p-roadmap','map','Roadmap')+tocItem('p-roadmap2','check','AI Verification Protocol')+
     tocItem('p-investment','bag','Investment & Risk')+tocItem('p-governance','scale','Governance')+
+    tocItem('p-supplement1','building','Park Comparison')+tocItem('p-supplement2','zap','Municipal Capacity')+
+    tocItem('p-supplement3','tree','Capacity Strategy')+tocItem('p-supplement4','chart','Rent & Employment')+
+    tocItem('p-supplement5','shield','Liability & Insurance')+tocItem('p-deep1','cpu','Urban OS Deep Dive')+tocItem('p-deep2','robot','Robot Games & Scenarios')+tocItem('p-deep3','users','Stakeholders & Participation')+tocItem('p-deep4','check','AI Verification Protocol')+tocItem('p-deep5','clipboard','Service Review & Prerequisites')+
     tocItem('p-compliance','shield','Compliance')+
     '</div>'+
     '<div class="foot">Hermes Agent (FTARCH) · Wengyongsheng · 2026 · open-city.ai/Haidian</div></div>';

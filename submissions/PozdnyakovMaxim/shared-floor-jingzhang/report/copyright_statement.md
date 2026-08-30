@@ -24,3 +24,6 @@ Image receipts:
 - `exchange-hall-evening.jpg` — SHA-256 `bced4cd17cfd49e46c7c845acab1fce2dc92bb7d77c8af83b4207a8ae62553e2`
 
 The package licence is settled as `COMMUNITY-DISPLAY-ONLY`. This is not a pending status: the value is one of the licence options enumerated by the call's own submission validator, so its acceptability is established by the call's own rules rather than by a separate correspondence. On that basis the author grants the organiser, within this call, the right to review, preview in pull requests, archive in the repository and publicly display this package, with attribution retained. Any other reuse, adaptation, sublicensing or implementation requires separate written permission from the author. This statement is not a legal opinion and grants no additional licence. Publication and implementation remain subject to submitting-author approval and applicable track terms.
+
+
+Addendum (2026-08-30): iterations v2.12 through v2.16 — disclosure-endpoint unification, bilingual repairs, booklet page-12 restoration, the juror reading aids and the identity sheet — were produced with Claude Code (Claude Fable 5). The v1.7 local BGE-M3 witness remains unchanged; no new generation of imagery occurred in these iterations beyond deterministic vector drawing from registered package parameters.

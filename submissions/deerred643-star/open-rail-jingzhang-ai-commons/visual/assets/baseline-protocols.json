@@ -1,6 +1,7 @@
 {
-  "schema_note": "v1.7 baseline measurement protocols responding to the inclusiveness review gap. Protocol design only — no field data exists; every indicator stays 'pending_baseline' until measured. Machine-readable companion of proposal.md section '现场基线测量方案'.",
+  "schema_note": "v1.7 baseline measurement protocols responding to the inclusiveness review gap. Protocol design only — no field data exists; every indicator stays 'pending_baseline' until measured. Machine-readable companion of proposal.md section '现场基线测量方案'. P3 extended with tiered first-response SLA in v2.8; binding thresholds live in commitment-thresholds.json.",
   "version": "v1.7",
+  "last_updated": "v2.8",
   "status": "protocol_only_no_field_data",
   "protocols": [
     {
@@ -39,6 +40,11 @@
       "definition": "median hours from receipt to first reply",
       "frequency": "monthly",
       "disclosure": "monthly digest",
+      "sla_tiers": [
+        {"tier_zh": "紧急类（安全相关）", "tier_en": "Urgent (safety-related)", "first_response_zh": "≤4 小时", "first_response_en": "≤4 hours"},
+        {"tier_zh": "普通类（设施与服务）", "tier_en": "Standard (facilities & services)", "first_response_zh": "≤24 小时", "first_response_en": "≤24 hours"},
+        {"tier_zh": "咨询类", "tier_en": "Inquiry", "first_response_zh": "≤48 小时", "first_response_en": "≤48 hours"}
+      ],
       "dependencies": [
         "ticketing log",
         "public reporting template"

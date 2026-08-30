@@ -1,0 +1,78 @@
+{
+  "schema_note": "v2.8 commitment thresholds for P1–P5 responding to the inclusiveness review gap 'pending baseline without boundaries'. Each indicator receives an explicit threshold, an effective condition and a disposition on breach. Thresholds are commitment values that become effective upon measurement — or, for P2 and P5, design constraints effective at pilot launch — and none is a claim of current attainment; before measurement all indicators stay pending_baseline.",
+  "version": "v2.8",
+  "status": "commitment_thresholds_effective_on_measurement",
+  "thresholds": [
+    {
+      "id": "P1",
+      "name_zh": "无障碍节点覆盖率",
+      "name_en": "Accessibility-node coverage",
+      "threshold_zh": "≥95%。",
+      "threshold_en": "≥95%.",
+      "threshold_semantics": "commitment_effective_on_measurement",
+      "effective_condition_zh": "首次季度实测发布后生效。",
+      "effective_condition_en": "Effective after the first quarterly field measurement is published.",
+      "disposition_on_breach_zh": "未达标节点进入整改台账并于下一季度复测；同一节点连续两季度未达标，则该节点场景降级为黄色受控状态。",
+      "disposition_on_breach_en": "Non-compliant nodes enter the rectification ledger and are re-measured the following quarter; a node failing two consecutive quarters downgrades its scenario to the yellow controlled state."
+    },
+    {
+      "id": "P2",
+      "name_zh": "非数字化等价路径可达率",
+      "name_en": "Non-digital equivalent-path availability",
+      "threshold_zh": "100%（逐点位强制）。",
+      "threshold_en": "100% (mandatory at every point).",
+      "threshold_semantics": "design_constraint_effective_at_pilot_launch",
+      "effective_condition_zh": "试点启动即生效（设计约束，非实测指标）。",
+      "effective_condition_en": "Effective at pilot launch as a design constraint, not a measured indicator.",
+      "disposition_on_breach_zh": "任一 AI 服务点缺失等价路径，即暂停该点 AI 服务（与可证伪条件2、失败模式 F3 同源）。",
+      "disposition_on_breach_en": "Any AI service point lacking an equivalent path has its AI service suspended (same origin as falsifiable condition 2 and failure mode F3)."
+    },
+    {
+      "id": "P3",
+      "name_zh": "投诉响应",
+      "name_en": "Complaint response",
+      "threshold_zh": "紧急类首响≤4小时；普通类首响≤24小时；咨询类首响≤48小时（中位时长口径保留）。",
+      "threshold_en": "First response within 4 hours for urgent complaints, 24 hours for routine complaints and 48 hours for enquiries (median-duration definition retained).",
+      "threshold_semantics": "commitment_effective_on_measurement",
+      "effective_condition_zh": "首次月度实测发布后生效。",
+      "effective_condition_en": "Effective after the first monthly field measurement is published.",
+      "disposition_on_breach_zh": "连续两季度劣化触发失败模式 F7，运行监督环节限期整改并公开。",
+      "disposition_on_breach_en": "Worsening for two consecutive quarters triggers failure mode F7; the supervision link imposes a deadline for published rectification."
+    },
+    {
+      "id": "P4",
+      "name_zh": "慢行断点与绕行系数",
+      "name_en": "Walkability breaks and detour ratio",
+      "threshold_zh": "织补节点绕行系数中位数≤1.5。",
+      "threshold_en": "Median detour ratio of stitching nodes ≤1.5.",
+      "threshold_semantics": "commitment_effective_on_measurement",
+      "effective_condition_zh": "首次半年实测发布后生效。",
+      "effective_condition_en": "Effective after the first semi-annual field measurement is published.",
+      "disposition_on_breach_zh": "断点纳入实施卡①准入条件优先排序。",
+      "disposition_on_breach_en": "Breaks enter the priority ordering of the admission criteria of implementation card ①."
+    },
+    {
+      "id": "P5",
+      "name_zh": "无障碍专业审查",
+      "name_en": "Professional accessibility audit",
+      "threshold_zh": "试点节点启动前完成首审，其后每年复审。",
+      "threshold_en": "Initial audit completed before pilot nodes launch; annual re-audit thereafter.",
+      "threshold_semantics": "design_constraint_effective_at_pilot_launch",
+      "effective_condition_zh": "试点启动即生效。",
+      "effective_condition_en": "Effective at pilot launch.",
+      "disposition_on_breach_zh": "未完成首审的节点不得进入试点运营（一票前置）。",
+      "disposition_on_breach_en": "Nodes without a completed initial audit may not enter pilot operation (one-vote precondition)."
+    }
+  ],
+  "linkage": {
+    "falsifiable_condition": "包容性承诺主张（条件7）",
+    "failure_modes": [
+      "F3",
+      "F7"
+    ],
+    "baseline_protocols": "visual/assets/baseline-protocols.json",
+    "source": "SEB-SPEC"
+  },
+  "boundary_zh": "全部阈值为「实测即生效」的承诺值，非当前已达成主张；实测前保持待基线，不以设计模型值冒充；最终核定以属地主管与运营方正式复核为准。",
+  "boundary_en": "All thresholds are commitment values effective upon measurement, not claims of current attainment; they remain pending baseline before measurement, design-model values must not be substituted, and final determination rests on formal review by the district authority and the operator."
+}
