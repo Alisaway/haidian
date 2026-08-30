@@ -1,5 +1,19 @@
 # 方案迭代记录 / Changelog
 
+## v84.0 - 2026-08-30
+
+**高频审阅控件触达闭合 / Review-control Target Closure**
+
+- 已有能力：中英文体验台已提供键盘焦点、移动端 44px 导航、首屏审阅包、全页图纸图谱和媒体文字替代入口。
+- 真实缺口：修复前，桌面端语言切换、九项粘性主导航和两项原尺寸 PDF 入口仅依赖字体与内边距形成高度，没有显式 44px 最小触达约束；字体度量、缩放或系统替代字体变化时，高频审阅路径可能缩到推荐触达线以下。
+- 必须冻结：冻结“双轨京张 / Twin-Track Jing-Zhang”、三种不可互换原型、JZ-AIOS、G0—G3、四轴、三载体、证据门、权利边界及 12/8/3/36；不改正文、报告、图件、四份 PDF、媒体、几何、指标或现实状态。
+- 本轮实施：为两种语言的语言切换、粘性主导航和全页图谱 PDF 入口加入显式 44px 最小高度与居中布局；既有焦点、离线、减少动态、窄屏和打印规则不变。只闭合高频审阅控件的触达几何，不新增内容或事实主张。
+
+- Existing capability: both workbenches already provide keyboard focus, 44px mobile navigation, first-view review-pack links, all-page drawing atlases and direct media text alternatives.
+- Real gap: before repair, the desktop language switch, nine-item sticky navigation and two full-size PDF routes derived their height only from font metrics and padding, with no explicit 44px minimum target. Font substitution, zoom or metric changes could therefore shrink these frequent review paths below the recommended target line.
+- Must remain frozen: Twin-Track Jing-Zhang, the three non-interchangeable prototypes, JZ-AIOS, G0-G3, four axes, three carriers, evidence gates, rights boundaries and 12/8/3/36. Proposals, reports, figures, all four PDFs, media, geometry, metrics and real-world status remain unchanged.
+- Implemented this round: added an explicit 44px minimum height and centred layout to each language switch, sticky primary-navigation item and drawing-atlas PDF route. Existing focus, offline, reduced-motion, narrow-screen and print behaviour remains unchanged. This closes review-control target geometry only and adds no content or factual claim.
+
 ## v83.0 - 2026-08-30
 
 **媒体文字替代直达 / Direct Access to Media Text Alternatives**
