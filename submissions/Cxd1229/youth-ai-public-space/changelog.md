@@ -1,5 +1,13 @@
 # 方案迭代记录
 
+## v3.6 - 2026-08-30
+
+针对第6轮评审（针对 v3.5，73 分）剩余 2 个表达完整度阻断项修复：
+
+- **中文离线 HTML 字体方框**：`report/proposal.html` 此前由渲染脚本重新生成时丢失了内嵌中文字体，离线无中文字体环境下标题/正文/表格/引文/链接显示为方框。现按当前 HTML 实际用字，将开源字体 Noto Sans SC（OFL，Regular 权重）做字形子集并以 base64 `@font-face('EmbeddedSC')` 内嵌、置于字体栈首位；`report/proposal.en.html` 同步内嵌（仅含少量汉字的微型子集）。已用无头浏览器离线渲染逐段确认中文真实显示、零缺字（子集覆盖校验 MISSING=[]）。
+- **英文 A3 封面标题越界裁切**：`drawings/a3-booklet.en.pdf` 封面主标题/副标题单行过长、左右越出安全边距。主标题改两行（Centennial Jingzhang / AI Innovation Belt，44pt）、副标题改两行（26pt）；并为 A3 要点摘要框与 A0 三栏加入按实测字宽的中英文自动折行，清除全部页面的文本越界（程序化边距检查 0 处越界）。
+- 同步重建 `a3-booklet.pdf / a3-booklet.en.pdf / a0-boards.pdf / a0-boards.en.pdf`。
+
 ## v3.5 - 2026-08-30
 
 针对第5轮评审（review-5）的 3 个阻塞项修复：
