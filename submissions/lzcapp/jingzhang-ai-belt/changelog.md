@@ -5,6 +5,22 @@
 > Note: this file was **created retrospectively** on 2026-08-29. Iterations v0.1–v0.5 were documented in their Pull Request descriptions and commit messages rather than in an in-package changelog. To align with repository convention (SKILL.md requires updating the proposal, `changelog.md`, assumptions and evidence records together), the history is reconstructed from verifiable PR records, and this file will be kept in sync with every subsequent change.
 
 
+## v1.9.1 - 2026-08-30
+
+**v1.9 的收尾：消除剩余的可见一致性隐患 / Closing v1.9's remaining consistency risks**
+
+- 触发 trigger：v1.9 推送后做「源与渲染产物一致性」系统排查时发现的三处遗留，均与第 6 轮评审「统一版本号、成图日期」的要求直接相关。
+- 改动 scope：
+  1. **正文不再出现旧版本号字样**。v1.9 的版本说明句里写了「清除渲染成果中残留的 v3.1」，这是叙述修复动作，本无问题——但第 6 轮评审看到「Microsoft YaHei」就直接判为主字体，证明**它不会替我们读完整个句子**。同一个风险不该留第二次，故改为「清除渲染成果中残留的旧版本号」。中英同步。
+  2. **`agent.json` 的 `updated_at` 由 2026-08-11 同步为 2026-08-30**（`created_at` 保持不变，它是创建时间）。此前包内日期存在 8-09 / 8-11 / 8-30 三种，而评审要求统一成图日期。
+  3. 上述改动使文本变化 → 重跑 `build_v19.py` 整条链（重渲染 → **重抽字表重建字体子集** → 注入 → 覆盖率校验），并重跑官方四门自检落盘 `self_check.json`（`can_enter_formal_review: true`、`next_actions: []`）。
+- 排查过但**不改**的事项（记录理由，避免下一轮重复判断）：
+  - 正文写 `11.4 km²` / `27.2%`，图件写 `11.41 km²` / `27.21%`。这是四舍五入精度差而非矛盾（图件值已与 `metrics.json` 的 `site_area_sqm=11412825.386`、`building_density=0.272141` 逐项核对一致），改动会引入新的不一致风险，收益低。
+  - `changelog.md` 中残留的 v3.1 / v3.2 属于历史条目记录，正确且应保留。
+- 不动 NOT changed：图件 PNG、A3/A0 PDF 内容未变（本次只动文本与渲染产物）；不新增证据标记（密度 max 7/段）。
+- CI 影响 CI impact：proposal.md / proposal.en.md / 4 份 HTML / agent.json / self_check.json / manifest.json = **8 项**哈希需刷，单 commit 推送。
+- 验证 verification：✅ 4 份 HTML `v3.1=0 / Microsoft YaHei=0 / PingFang=0`；✅ 字体 cmap 覆盖率 100%（字表随内容重抽，1350 entries）；✅ 官方四门自检 PASS；✅ `audit_manifest.py` 全量核对。
+
 ## v1.9 - 2026-08-30
 
 **消除包内自相矛盾 / Removing the contradictions inside the package**

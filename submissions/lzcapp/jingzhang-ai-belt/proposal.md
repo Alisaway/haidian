@@ -25,7 +25,7 @@ bilingual_contract_version: "1"
 - **规范脚注**（底部三行编号脚注）：① 412.5 m 临时边界偏移、② 公共参与与无障碍走查为推演、③ 配色符号不表政府承诺。
 - **字体**：正文与标注主字体采用 **Noto Sans SC（SIL OFL 1.1，开源、可商用）**，并以 base64 data URI 子集**内嵌于本包 HTML**（family `JZEmbeddedSC`，排在每个 `font-family` 首位），因此评审端离线渲染不依赖任何系统 CJK 字体、也不发出远程字体请求；PNG 图件由同一字体的本地副本栅格化，字形已烧入像素。本包图面与 HTML 均不依赖任何操作系统字体。开源字体授权见 [source:FIG-FONT-NOTO-CJK]。
 
-**成图版本**：v3.3（v1.9 由同一 canonical v3.3 中英正文重新渲染 `report/proposal.html` 与 `report/proposal.en.html`，清除渲染成果中残留的 v3.1、系统字体名与旧自评表述；`mobility-bluegreen` 与 `metrics-evidence` 的英文图件完成实质等价翻译，英文图面仅保留一处明确标注的中文对照副标题；重点区与实施表中的定量空间/工程措辞降级为概念测试区间或待比选方案，与 `metrics.json` 中 FAR、建筑高度、总建筑面积为 unknown 的状态一致。详见 `metrics.json` 的 `figure_layout_compliance` 与 `changelog.md` v1.9 条目）。v1.0 原版位图见 [source:FIG-OVERVIEW-V1]。
+**成图版本**：v3.3（v1.9 由同一 canonical v3.3 中英正文重新渲染 `report/proposal.html` 与 `report/proposal.en.html`，清除渲染成果中残留的旧版本号、系统字体名与旧自评表述；`mobility-bluegreen` 与 `metrics-evidence` 的英文图件完成实质等价翻译，英文图面仅保留一处明确标注的中文对照副标题；重点区与实施表中的定量空间/工程措辞降级为概念测试区间或待比选方案，与 `metrics.json` 中 FAR、建筑高度、总建筑面积为 unknown 的状态一致。详见 `metrics.json` 的 `figure_layout_compliance` 与 `changelog.md` v1.9 条目）。v1.0 原版位图见 [source:FIG-OVERVIEW-V1]。
 
 
 
