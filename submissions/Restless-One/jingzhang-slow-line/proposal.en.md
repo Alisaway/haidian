@@ -10,7 +10,7 @@ license: "COMMUNITY-DISPLAY-ONLY"
 summary: "The Centennial Jing-Zhang AI Innovation Belt becomes a civic line for its slowest users: one line, three slow yards, six all-stop gates, and twelve scenarios that all retain an equivalent non-AI path. Robots learn to stop, smart services learn to wait, and innovation skips no stop. Every spatial move uses repository-provisional geometry and remains a reversible concept requiring co-design and professional development."
 tracks: ["robotics-autonomous-mobility", "ai-public-services", "youth-friendly-public-space"]
 scenarios: ["robot-delivery-low-speed", "ai-health-service-navigation", "ai-traffic-walkability", "enterprise-service-copilot", "ai-cultural-guide", "public-safety-operations-review"]
-iteration: "v1.2-review-repair"
+iteration: "v1.3-p0-feasibility"
 ---
 
 # THE SLOW LINE: Keep pace with the slowest person
@@ -20,6 +20,13 @@ iteration: "v1.2-review-repair"
 > An AI service that works only for people who move quickly, see clearly, own a smartphone, understand Chinese, and have time during the day has not yet reached the city. The Slow Line proposes one plain urban rule: **serve every stop**. Before a robot, smart terminal, or urban agent enters public space, it must say who will find it hardest to use, how an equivalent service works without AI, where a human takes over, and who has authority to stop it.
 
 Every spatial move, project, event, policy, and operating model in this proposal is an open co-creation **concept, reference scheme, or item for professional development**. Nothing replaces formal planning or constitutes a government approval, investment, construction, recruitment, event, or permitting commitment. Repository-provisional geometry is only a generation and self-check container; the entire package must be recalculated when official data arrives.
+
+### 30-second P0 implementation summary
+
+> **P0-ALL-STOP-01 · conditional launch unit · `NOT_AUTHORIZED` · `HOLD`**
+> A 216 m² unlocated concept-screening envelope preserves a 3.0 m effective slow-route width; 12 tasks, 16 non-priced BOQ lines, and 8 cost components. Eight package checks currently show 6 PASS / 2 HOLD, while all 12 field checks remain HOLD. All 8 role slots are unassigned/conditional; market rates, formal total, quotation entity, and basis date are null/TBC. One group safety-critical failure, missing equivalent service, or failed exit keeps the whole unit on HOLD.
+
+Fixed entry points: dimensions and interfaces appear below and in `assets/figures/key-areas.en.png`; tasks, quantities, cost, and acceptance appear in `assets/figures/metrics-evidence.en.png`. These are recomputable hand-off evidence, not field performance, permission, or engineering sign-off. [metric:p0_role_slot_count] [metric:p0_current_package_check_count]
 
 ## Design Basis and Source Inventory
 
@@ -191,7 +198,140 @@ This iteration no longer leaves all twelve cards as generic “next pilots.” I
 
 The six evidence gates are **G0 tenure and statutory permission, G1 accessibility co-design, G2 staffed equivalence and roster, G3 privacy/safety/professional duty, G4 time-limited operation and independent observation, and G5 restoration and public review**. All six default closed and cannot compensate for one another through a total score. The minimum accountability set is the site rights holder, accessibility co-designer, service operator, safety/privacy professional, and independent reviewer; all are currently `unassigned`. Staffing and cost are expressed as hand-off formulae rather than invented prices: `staff required = confirmed staffed opening hours ÷ operator-confirmed productive hours per FTE`; `ROM cost = reversible works + staffed service + paid co-design + safety/privacy review + exit/restoration + contingency confirmed by the professional cost team`.
 
-![90-day All-Stop Gate pilot, six evidence gates, and disaggregated acceptance](assets/figures/pilot-protocol.en.png)
+### v1.3 P0-ALL-STOP-01: dimensioned, accountable, quantified
+
+The stable object ID is `P0-ALL-STOP-01`. It remains a coordinate-free, unlocated concept-screening unit that cannot be set out or procured; its current states are `NOT_AUTHORIZED`, `HOLD`, roles `unassigned/conditional`, prices `null/TBC`. The same object is shown at 1:500 site relation, 1:100 plan, 1:50 section, and 1:20 key interface. The scales communicate drawing relationships and assumptions only, never formal siting or engineering design.
+
+![P0-ALL-STOP-01 site relation, plan, section, key interface, and conditional actions](assets/figures/key-areas.en.png)
+
+#### Dimension register: every number has a basis and confirmation trigger
+
+| ID | Object | Value / derivation | Design-assumption boundary | Confirmation role / trigger |
+| --- | --- | --- | --- | --- |
+| P0-D01 | Concept screening envelope | 18.0 m x 12.0 m [metric:p0_screening_envelope_area_sqm] | Design assumption used to test whether the existing route, service zone, and removal access can coexist; not a parcel area or field measurement. | `A-P0-RIGHTS + R-P0-SURVEY` / candidate site nominated and rights holder permits baseline survey |
+| P0-D02 | Reversible ground zone | 12.0 m x 8.0 m service apron within the screening envelope [metric:p0_reversible_ground_area_sqm] | Allows demountable surfacing, markings, and service components without assuming ground alteration; material compatibility and drainage remain TBC. | `R-P0-ACCESS + R-P0-DRAINAGE + A-P0-RIGHTS` / surface, level and drainage baseline complete |
+| P0-D03 | Effective slow-route clear width | continuous 18.0 m x 3.0 m unobstructed strip [metric:p0_clear_route_width_m] | Conservative operating assumption allowing a wheelchair, companion, and low-speed passing; not claimed as a statutory minimum and subject to accessibility, traffic, and fire review. | `R-P0-ACCESS + R-P0-TRAFFIC + R-P0-FIRE` / measured cross-section and applicable public standards confirmed |
+| P0-D04 | Wheelchair turning space | one clear circle at the service decision point and one at the staffed desk [metric:p0_wheelchair_turn_diameter_m] | Concept-plan assumption preventing equipment from consuming turning space; final shape and value require paid co-design and accessibility review. | `R-P0-CODESIGN + R-P0-ACCESS` / co-design mock-up and measured route test |
+| P0-D05 | Staffed service desk | 2.4 m x 0.8 m demountable module; accessible approach and counter height TBC [metric:p0_staffed_desk_length_m] | Length separates paper information, staffed service, and stop control; counter height, knee clearance, and equipment model cannot be frozen before accessibility review. | `R-P0-CODESIGN + R-P0-SERVICE + R-P0-ACCESS` / paid mock-up acceptance |
+| P0-D06 | Staffed sightline | unobstructed concept sight triangle from desk to both route entries and robot stop line [metric:p0_staffed_sightline_m] | Maximum concept observation-distance assumption for plan screening, not a response-time promise; obstruction, night conditions, and actual response require field testing. | `R-P0-SERVICE + R-P0-SAFETY` / day/night sightline walk-through |
+| P0-D07 | Robot holding bay | 2.4 m x 1.8 m marked bay [metric:p0_robot_bay_area_sqm] | Worst-envelope screening only and not tied to a device; device dimensions, braking, rescue, and charging remain TBC. | `R-P0-SAFETY + R-P0-EQUIPMENT` / specific equipment and controlled test protocol proposed |
+| P0-D08 | Robot no-entry zone | 3.2 m x 2.0 m buffer between 3.2 m stop line and slow route [metric:p0_robot_no_entry_area_sqm] | Visible physical boundary independent of algorithmic judgment; final stopping distance is set through controlled testing and safety review and cannot be reduced without evidence. | `R-P0-SAFETY + R-P0-EQUIPMENT` / braking and rescue test passed in a contained site |
+| P0-D09 | Component setback from clear route | minimum concept furniture/equipment/sign setback outside the 3.0 m clear strip [metric:p0_component_setback_m] | Screening value keeping equipment, seating, and signs outside the clear strip; tactile/high-contrast edges are route interfaces, not furniture, and remain TBC in detail. | `R-P0-ACCESS + R-P0-MAINTENANCE` / full-size tape-out and maintenance walk-through |
+| P0-D10 | Maintenance/removal working clearance | clear working band around demountable frame and equipment cabinet [metric:p0_maintenance_clearance_m] | Concept allowance for inspection, handling, and non-destructive removal; it cannot consume the slow-route width or any existing emergency route. | `R-P0-INSTALL + R-P0-MAINTENANCE + R-P0-FIRE` / installation and removal method statement reviewed |
+| P0-D11 | Removal access route | one 3.0 m clear concept route to the screening-envelope edge [metric:p0_removal_access_width_m] | Screens manual or small-plant removal of the largest demountable module and does not authorize vehicle access; actual emergency and handling width requires site-management, fire, and installer confirmation. | `R-P0-INSTALL + R-P0-FIRE + A-P0-RIGHTS` / logistics and emergency plan accepted |
+| P0-D12 | Demountable shelter | 4.8 m x 3.6 m weighted-base canopy; 2.4 m concept clear height [metric:p0_canopy_area_sqm] | For plan, section, and quantity calculation only; wind, snow, structure, clearance, heritage, fire, and bearing capacity remain TBC and installation is prohibited before sign-off. | `R-P0-STRUCTURE + R-P0-FIRE + A-P0-RIGHTS` / site-specific structural and fire review |
+
+Six site interfaces remain TBC: tactile detail, contrast and night readability, lighting/glare/power, slope/drainage/outfall, emergency width/fire control, and power/data/charging/cable protection. No cable may cross the effective route; P0 cannot reduce the existing emergency width; no penetrating fixing is allowed without heritage, utility, and structural clearance. [metric:p0_tbc_interface_count]
+
+#### Authority and responsibility: execution, release, stop, takeover, removal, and acceptance are separated
+
+- `R-P0-EXEC` — P0 implementation coordinator: `unassigned/conditional`; coordinates tasks and evidence; cannot self-authorize opening
+- `A-P0-RIGHTS` — Site-rights holder/commissioning accountability slot: `unassigned/conditional`; accountable for final release, removal instruction, ground-restoration acceptance, and records retention; release depends on all required professional evidence
+- `R-P0-CODESIGN` — Paid accessibility co-design lead: `unassigned/conditional`; may place the work on immediate HOLD for exclusion, inaccessible equivalence, or safeguarding failure
+- `R-P0-SERVICE` — Staffed-service and human-takeover operator: `unassigned/conditional`; executes staffed equivalent service, immediate takeover, opening/closing parity, and may stop operation
+- `R-P0-SAFETY` — On-duty safety/privacy professional: `unassigned/conditional`; independent immediate stop authority; controls incident scene and evidence preservation
+- `R-P0-INSTALL` — Demountable works installation/restoration role: `unassigned/conditional`; installs, maintains, dismantles, removes waste, restores the surface, and submits as-left records
+- `R-P0-EVAL` — Independent accessibility/operations evaluator: `unassigned/conditional`; observes without operating the pilot; signs evidence completeness, not government or engineering approval
+- `R-P0-SURVEY` — Survey and baseline-record professional: `unassigned/conditional`; records levels, obstacles, condition, utilities and reinstatement reference only after authorization
+
+The site-rights/commissioning slot holds final release accountability but cannot bypass accessibility, fire, structural, electrical, privacy, safety, or independent evidence. Paid co-design, staffed service, and on-duty safety/privacy roles hold equal immediate-stop power; any user or worker may activate the physical stop without penalty. The staffed operator performs takeover; the installation/restoration role dismantles, removes, and restores; the accountable site slot accepts restoration, while the independent evaluator signs evidence completeness only—not government or engineering approval.
+
+#### 90-day delivery task chain
+
+| task_id | Window | Responsible | Accountable | Input/output summary | Gate | HOLD | Recovery or exit evidence |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| P0-T01 | D00-D05 | `R-P0-EXEC` | `A-P0-RIGHTS` | role-acceptance register; RACI and immediate-stop register | G0 | no accountable rights holder; stop authority refused; human-takeover role absent | dated role acceptance or written no-go; versioned responsibility register |
+| P0-T02 | D01-D10 | `R-P0-EXEC + R-P0-SURVEY` | `A-P0-RIGHTS` | 1:500 candidate-site relationship; rights/heritage/fire/utilities constraint log | G0 | heritage rail crossed; existing slow route or emergency route narrowed; rights or utilities unknown | screen-out record with reason; alternative candidate trigger |
+| P0-T03 | D06-D15 | `R-P0-SURVEY` | `A-P0-RIGHTS` | levels and drainage baseline; path/obstacle/lighting/noise condition record | G0 | baseline cannot be audited; unsafe access; official constraint conflicts | sealed baseline dataset by appointed professional; written site rejection |
+| P0-T04 | D11-D22 | `R-P0-CODESIGN` | `A-P0-RIGHTS` | task-based co-design record; dissent and unresolved-issue log | G1 | unpaid or token participation; affected group rejects pilot; accessible equivalent cannot be defined | recruitment correction; participant-approved no-go or revised brief |
+| P0-T05 | D18-D30 | `R-P0-EXEC + R-P0-SERVICE` | `A-P0-RIGHTS` | conditional 1:100/1:50/1:20 package; frozen non-priced BOQ | G1+G2 | clear route intersects any object; desk cannot see route entries and stop line; AI can open while human service is closed | revised clash-free package; recorded withdrawal if equivalence cannot be staffed |
+| P0-T06 | D21-D40 | `R-P0-SAFETY` | `A-P0-RIGHTS` | permit/approval register; accessibility/fire/structure/electrical/privacy/safety review record | G0+G3 | any required approval missing; ground penetration proposed without clearance; personal-data purpose or retention unresolved | closed review comments; formal no-go and protected records |
+| P0-T07 | D31-D45 | `R-P0-EXEC + R-P0-INSTALL` | `A-P0-RIGHTS` | supplier-neutral specifications; installation/maintenance/removal method statements | G2+G3 | single-source lock-in without exit; removal/restoration omitted; unit rates or funds unverified | reissued neutral schedule; procurement cancellation record |
+| P0-T08 | D41-D52 | `R-P0-INSTALL + R-P0-SERVICE` | `A-P0-RIGHTS` | off-site/full-size mock-up; wheelchair turn and desk approach check | G2+G3 | turning/approach fails; physical stop fails; defect lacks owner or closure evidence | closed defect record; scrap/rework trace |
+| P0-T09 | D53-D60 | `R-P0-INSTALL + R-P0-SAFETY` | `A-P0-RIGHTS` | installation and as-installed register; AI-off same-task rehearsal | G0+G1+G2+G3+G4 | route obstruction > 0; audit completeness < 100%; AI-off equivalent < 100%; malformed input does not HOLD | corrected rehearsal ledger; closed/opening refused record; removal instruction if correction fails |
+| P0-T10 | D61-D75 | `R-P0-SERVICE + R-P0-SAFETY` | `A-P0-RIGHTS` | time-limited operating log; disaggregated task records | G4 | any safety-critical failure; equivalent service unavailable; any group cannot exit; roster gap | incident package; human-takeover record; restart or permanent-stop decision |
+| P0-T11 | D76-D84 | `R-P0-EVAL` | `A-P0-RIGHTS` | independent evidence audit; group-by-group decision | G4+G5 | missing record; averages mask a failed group; reviewer not independent | qualified/failed evaluation with unresolved items visible; accountable decision trail |
+| P0-T12 | D85-D90 | `R-P0-INSTALL` | `A-P0-RIGHTS` | dismantling and waste trace; after-condition survey | G5 | surface not restored; waste/asset destination unknown; baseline comparison or acceptance missing | before/after comparison; remediation invoice/record with rates redacted or TBC as applicable; signed acceptance by accountable role and independent evidence reviewer |
+
+The chain contains 12 tasks within D00–D90 and retains G0–G5. All six gates default closed. T09 may request—but never automatically receive—G4 only after route encroachment is zero, audit and AI-off equivalence are both 12/12, and malformed input triggers HOLD in 1/1 tests. The present synthetic ledger remains 11/12 for audit and 11/12 for AI-off equivalence, so P0 remains on HOLD. [metric:p0_task_chain_count] [metric:p0_gate_default_closed_ratio] [metric:p0_route_obstruction_count]
+
+Malformed-input testing must remain 1/1 for triggering HOLD; failure cannot be averaged away by other task results. [metric:p0_malformed_input_hold_ratio]
+
+#### Non-priced bill of quantities
+
+| boq_id | Item | Quantity | Derivation | Pricing state |
+| --- | --- | --- | --- | --- |
+| P0-Q01 | Demountable frame | 1 set | 6 weighted-base posts + 16.8 m perimeter beams | `null/TBC` |
+| P0-Q02 | Demountable shelter | 17.28 sqm | 4.8 m x 3.6 m | `null/TBC` |
+| P0-Q03 | Reversible ground treatment | 96 sqm | 12.0 m x 8.0 m service apron | `null/TBC` |
+| P0-Q04 | Staffed service desk | 1 module | 2.4 m x 0.8 m demountable desk | `null/TBC` |
+| P0-Q05 | Physical emergency-stop facilities | 2 unit | 1 public-facing + 1 staff-side; final specification TBC | `null/TBC` |
+| P0-Q06 | Paper information rack | 1 unit | adjacent to staffed desk and outside clear route | `null/TBC` |
+| P0-Q07 | Multi-channel wayfinding points | 5 point | 2 entries + 1 staffed desk + 1 robot stop + 1 exit/restoration notice | `null/TBC` |
+| P0-Q08 | Tactile/high-contrast guidance interface | 18 linear_m | one continuous route-edge interface; detailed pattern TBC | `null/TBC` |
+| P0-Q09 | Robot stop line | 3.2 linear_m | full service-spur width | `null/TBC` |
+| P0-Q10 | Robot no-entry marking | 6.4 sqm | 3.2 m x 2.0 m | `null/TBC` |
+| P0-Q11 | Seating and wheelchair companion bay | 3 seat_plus_1_bay | 3 movable seats and 1 unoccupied companion bay under/near shelter | `null/TBC` |
+| P0-Q12 | Demountable lighting points | 4 point | plan-count only; illuminance, glare and power TBC | `null/TBC` |
+| P0-Q13 | Equipment interface cabinet and points | 1 cabinet_plus_2_points | 1 lockable cabinet + 2 protected power/data points; capacities TBC | `null/TBC` |
+| P0-Q14 | Installation and pre-opening inspections | 1 lot_plus_4_inspections | install lot + accessibility/safety/electrical/operations checks | `null/TBC` |
+| P0-Q15 | Planned maintenance | 13 weekly_visit | ceil(90 days / 7); daily pre-open checks depend on authorized open days | `null/TBC` |
+| P0-Q16 | Dismantling, removal, ground restoration, and acceptance | 1 lot | remove all P0 objects + before/after condition comparison + acceptance | `null/TBC` |
+
+The 16-line BOQ covers frame, ground, staffed desk, emergency stops, paper, multi-channel wayfinding, seating/shelter, lighting, equipment interfaces, installation, maintenance, and removal/restoration. Every quantity can be recomputed from the 1:100 plan, 1:50 section, 1:20 node, or 90-day tasks. Verified market-rate count is 0; currency, quotation entity, formal total, and estimate basis date remain null/TBC. [metric:p0_boq_line_count] [metric:p0_market_rate_known_count]
+
+#### Parametric cost model: complete formula, no fabricated prices
+
+`C_P0 = C_REV + C_HUMAN + C_CODESIGN + C_ACCESS_SAFETY + C_PRIVACY_EVAL + C_OM + C_REMOVE_RESTORE + C_RESERVE`
+
+- `C_REV` Reversible space works: `sum(BOQ quantity_i x verified unit_rate_i) + installation labour`; value = `null`.
+- `C_HUMAN` Staffed service: `H_open x r_staff + H_training x r_staff + H_supervision x r_supervisor`; value = `null`.
+- `C_CODESIGN` Paid co-design: `N_participants x H_participant x r_participant + access_support + travel + care`; value = `null`.
+- `C_ACCESS_SAFETY` Accessibility and safety review: `H_access x r_access + H_safety x r_safety + H_fire x r_fire + H_structure x r_structure`; value = `null`.
+- `C_PRIVACY_EVAL` Privacy and independent evaluation: `H_privacy x r_privacy + H_independent x r_evaluator`; value = `null`.
+- `C_OM` Operations and maintenance: `W x visits_per_week x H_visit x r_maint + consumables + utilities + incident_allowance`; value = `null`.
+- `C_REMOVE_RESTORE` Removal and site restoration: `H_remove x r_remove + A_remediation x r_remediation + waste_trace + acceptance`; value = `null`.
+- `C_RESERVE` Contingency/restoration reserve: `max(verified C_REMOVE_RESTORE, p_contingency x subtotal); p_contingency TBC by cost/risk professionals`; value = `null`.
+
+Staffing formula: `FTE_required = confirmed staffed opening hours / operator-confirmed productive hours per FTE`. Sensitivity covers opening hours, open days, shift overlap, productive hours per FTE, paid participation/support, BOQ quantities, remediation area, and contingency. Market-price total, required FTE, and formal total all remain unknown/null until a named site, operator, professional cost team, rate sources, basis date, and funding authority exist. [metric:p0_cost_component_count] [metric:p0_market_price_total] [metric:p0_staffing_fte]
+
+The formal total remains null and cannot be inferred from concept quantities as a quotation or funding commitment. [metric:p0_formal_total_cost]
+
+#### Two-layer acceptance A: checkable in the current package
+
+| metric_id | Metric | Formula | Data source | Threshold state | Responsible | Current state | Trigger |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| P0-A01 | Route connectivity | connected entry-to-exit route pairs / 1 required pair | 1:100 concept graph in key-areas figure + v13 source | SET: 1/1 and zero disconnected segment | `R-P0-EXEC` | **PASS_IN_PACKAGE_NOT_FIELD** | any plan revision |
+| P0-A02 | Obstacle/encroachment count | count(BOQ objects intersecting the 18.0 m x 3.0 m clear route) | 1:100 plan object boxes | SET: 0 | `R-P0-ACCESS` | **PASS_IN_PACKAGE=0** | object, setback, or route-width change |
+| P0-A03 | Non-AI equivalent coverage | scenario cards with a stated non-AI equivalent / 12 scenario cards | proposal scenario table | SET: 12/12 | `R-P0-SERVICE` | **PASS_TEXT_PROTOCOL=12/12** | scenario or service change |
+| P0-A04 | Default Gate state | gates default closed / 6 gates | task chain and gate register | SET: 6/6 closed before evidence | `R-P0-EXEC` | **PASS_IN_PACKAGE=6/6** | gate logic change |
+| P0-A05 | Audit-record completeness | synthetic tasks with complete audit record / 12 tasks | simulation.json | SET: 12/12 before G4 | `R-P0-SAFETY` | **HOLD=11/12** | missing record closed and rehearsal rerun |
+| P0-A06 | Malformed input triggers HOLD | malformed-input tests resulting in HOLD / malformed-input tests | simulation.json malformed dispatch case | SET: 1/1 | `R-P0-SAFETY` | **PASS_SYNTHETIC=1/1** | schema or dispatch change |
+| P0-A07 | Human task remains complete with AI off | AI-off same-task cases completed through staffed/paper/phone/fixed spatial paths / 12 tasks | simulation.json + proposal | SET: 12/12 before G4 | `R-P0-SERVICE` | **HOLD=11/12** | staffed-desk failure corrected and rehearsal rerun |
+| P0-A08 | Exit/restoration process completeness | specified evidence slots / 6 required slots | P0-T12 | SET: 6/6 specified; execution remains field HOLD | `R-P0-INSTALL` | **PASS_PROCESS_SPECIFIED=6/6** | removal method or acceptance role change |
+
+Layer A currently records 6 PASS / 2 HOLD across eight checks. The HOLD items are the disclosed audit gap and staffed-desk closure failure. Status changes only after closing the record gap, correcting staffed service, and rerunning the same fixed tasks. Six exit/restoration evidence slots are fully specified, but actual execution remains field evidence. [metric:p0_current_package_pass_count] [metric:p0_current_package_hold_count] [metric:p0_exit_evidence_slot_count]
+
+#### Two-layer acceptance B: field baseline required
+
+| metric_id | Metric | Formula | Data source | Threshold state | Responsible | Current state | Trigger |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| P0-B01 | Wheelchair-user actual completion | successful same-task completions / valid attempts, reported with critical failures | authorized field task log | TBC_PAID_CODESIGN_PREREGISTRATION; zero safety-critical failures | `R-P0-CODESIGN + R-P0-EVAL` | **HOLD_NO_FIELD_BASELINE** | G0-G3 pass and group approves protocol |
+| P0-B02 | Blind/low-vision actual completion | successful same-task completions / valid attempts, reported with critical failures | authorized field task log | TBC_PAID_CODESIGN_PREREGISTRATION; zero safety-critical failures | `R-P0-CODESIGN + R-P0-EVAL` | **HOLD_NO_FIELD_BASELINE** | G0-G3 pass and tactile/audio/contrast interfaces confirmed |
+| P0-B03 | Time for an older person without a smartphone to reach staffed service | P90(time from envelope entry to confirmed human assistance) | timestamped authorized field task log | TBC_PAID_CODESIGN_PREREGISTRATION | `R-P0-SERVICE + R-P0-EVAL` | **HOLD_NO_FIELD_BASELINE** | staff roster and opening hours confirmed |
+| P0-B04 | Human response time | P90(time from help request to two-way human response), disaggregated by period | staffed-service log | TBC_OPERATOR_AND_CODESIGN_PREREGISTRATION | `R-P0-SERVICE` | **HOLD_NO_FIELD_BASELINE** | named operator accepts roster |
+| P0-B05 | Pedestrian-flow conflict | observed conflicts / valid traversals, with every safety-critical event separately reported | independent manual observation | TBC_TRAFFIC_REVIEW; zero safety-critical conflicts | `R-P0-EVAL + R-P0-SAFETY` | **HOLD_NO_FIELD_BASELINE** | authorized observation plan |
+| P0-B06 | Noise | baseline and operating sound levels by agreed period/location | professional site measurement | TBC_ACOUSTIC_BASELINE_AND_APPLICABLE_STANDARD | `R-P0-SAFETY` | **HOLD_NO_FIELD_BASELINE** | day/night baseline permission |
+| P0-B07 | Lighting and glare | measured task/route illuminance plus glare/contrast review at agreed points | professional night measurement + co-design walk-through | TBC_LIGHTING_AND_ACCESSIBILITY_REVIEW | `R-P0-LIGHTING + R-P0-CODESIGN` | **HOLD_NO_FIELD_BASELINE** | night access and fixture schedule confirmed |
+| P0-B08 | Drainage | count of ponding/blockage events plus before/after surface-level and outlet check | level survey, rainfall observation, maintenance log | TBC_DRAINAGE_BASELINE; zero blocked accessible route | `R-P0-DRAINAGE + R-P0-MAINTENANCE` | **HOLD_NO_FIELD_BASELINE** | survey and wet-weather observation available |
+| P0-B09 | Microclimate | shade availability and agreed thermal/wind observations by operating period | site baseline + field observation | TBC_CODESIGN_AND_ENVIRONMENTAL_REVIEW | `R-P0-EVAL` | **HOLD_NO_FIELD_BASELINE** | season/period and method preregistered |
+| P0-B10 | Resident acceptance | reported response distribution by affected group; dissent remains visible | authorized, consented engagement record | TBC_STAKEHOLDER_PREREGISTRATION; no average may override critical group rejection | `R-P0-CODESIGN + R-P0-EVAL` | **HOLD_NO_FIELD_BASELINE** | affected parties and consent protocol confirmed |
+| P0-B11 | Operating-roster coverage | staffed equivalent hours delivered / authorized digital-service hours | signed roster and attendance log | SET: 100% opening parity | `R-P0-SERVICE` | **HOLD_NO_OPERATOR** | named operator and funded roster |
+| P0-B12 | Actual-cost completeness | cost components with verified quantity, unit rate, source, basis date, and payer / 8 components | authorized cost plan, quotations, payroll/fees, maintenance and restoration records | SET: 8/8 evidence fields complete before cost claim; market values remain TBC | `A-P0-RIGHTS + appointed cost professional` | **HOLD_NULL_RATES_AND_NO_FUNDING** | site, procurement route, rate sources, basis date, and funding authority confirmed |
+
+All 12 Layer-B items remain HOLD: there is no real wheelchair/low-vision task evidence, older-person time to staffed help, human response, flow conflict, noise, lighting, drainage, microclimate, resident acceptance, roster, or actual cost data. Synthetic tasks, fictional journeys, and general opinions cannot substitute. Any group safety-critical failure, missing equivalent, or failed exit places the whole unit on HOLD; averages cannot override it. [metric:p0_field_check_hold_count]
+
+![P0 task chain, quantities, cost structure, and two-layer acceptance matrix](assets/figures/metrics-evidence.en.png)
 
 ### Same task, group-by-group acceptance: an average cannot carry a failed person away
 
@@ -308,7 +448,7 @@ Implementation complexity and operating cost are also high. Staff rosters, acces
 
 The proposal’s writing, geometric logo, diagrams, visual pages, and PDF layouts are original outputs for this task; no peer-submission assets are copied. Public sources, international cases, tool versions, and use limitations are listed in `sources.json`. Noto Sans SC is subsetted and embedded in the offline HTML under SIL Open Font License 1.1; PDF and figure text is rasterized. The submission uses `COMMUNITY-DISPLAY-ONLY` and accepts the event announcement’s project-display, review, attribution, and development boundaries; details appear in `report/copyright_statement.md`.
 
-The original proposal was generated by OpenAI GPT-5.6 through the pi coding agent. The v1.0-v1.2 iterations were completed by the Codex desktop agent after re-reading the current rules, public peer-review results, and the original package, using built-in image generation/editing, Pillow, ReportLab, and fonttools to rebuild the presentation layer. Across the iterations, the Agents generated prose, structured data, figures, HTML, and PDFs. The human account owner authorized participation and iteration but did not replace professional review. Relevant human teams retain final responsibility for legal, planning, architectural, mobility, municipal, heritage, operating, and safety judgments.[source:PROCESSED-FACT-PACK] [source:TOOL-OPENAI-IMAGEGEN-20260828]
+The original proposal was generated by OpenAI GPT-5.6 through the pi coding agent. The v1.0-v1.3 iterations were completed by the Codex desktop agent after re-reading the current rules, public peer-review results, and the original package, using built-in image generation/editing, Pillow, ReportLab, and fonttools to rebuild the presentation layer. Across the iterations, the Agents generated prose, structured data, figures, HTML, and PDFs. The human account owner authorized participation and iteration but did not replace professional review. Relevant human teams retain final responsibility for legal, planning, architectural, mobility, municipal, heritage, operating, and safety judgments.[source:PROCESSED-FACT-PACK] [source:TOOL-OPENAI-IMAGEGEN-20260828]
 
 When official redlines, key areas, statutory controls, roads, buildings, tenure, heritage, and utilities arrive, the proposal must record the change in a new branch, rebuild the whole package, and rerun self-checks. A visual basemap swap alone is insufficient, and the present provisional PASS cannot be reused as evidence for a future version.
 
