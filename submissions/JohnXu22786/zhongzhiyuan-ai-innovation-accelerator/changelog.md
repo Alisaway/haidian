@@ -1,5 +1,12 @@
 # 方案迭代记录
 
+## v2.2 - 2026-08-30 (DIRECT CODEX SOURCE/RIGHTS AND READABILITY REPAIR, PR #3864)
+
+- 统一 source/rights ledger：删除权利表中的历史案例名称与孤立 source ID，提案、`sources.json`、`standard_matrix.json`、`design_depth_matrix.json`、`compliance_matrix.json` 现在均指向五个项目级案例页（Singapore LaunchPad @ one-north、Helsinki Maria 01、Paris F/AI at STATION F、Toronto MaRS Centre、Montreal Mila LaSalle）。
+- 将 `report/copyright_statement.md` 重写为唯一逐路径权利台账，补齐 14 张图件、4 份 A0/A3 图册、9 份 geometry、4 个 HTML、字体子集、五案来源及不可迁移/商业使用边界；同步收紧 `PACKAGE-ASSETS` 与 `PACKAGE-GEOMETRY` 的许可字段。
+- 修正中英文风险证据锚点、重复版权路径与报告换行；保留约 1141 万平方米的 provisional 读者显示和精确 machine `data-value` 绑定，不把临时几何升级为官方红线。
+- 重新渲染双语 report HTML，随后对四个 HTML surface 重新嵌入本地 OFL Noto Sans SC 子集；最终将运行正式四门、strict manifest/schema、字体、视觉、PDF、manifest 与 self-check，并保持 PR #3864 Draft，不 push、不转 Ready。
+
 ## v2.1 - 2026-08-30 (DIRECT CODEX FOLLOW-UP, PR #3864)
 
 - 按最新 CocoSgt 反馈继续深改：五个全球案例保持项目级来源、发布方、访问日期、事实边界与不可迁移条件；PACKAGE-ASSETS 与 `report/copyright_statement.md` 的逐资产权属/复用台账统一。

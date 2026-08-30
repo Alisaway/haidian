@@ -251,7 +251,7 @@ iteration: "v2.0"
 
 几何风险:官方边界未发布,现有几何均为 provisional,本方案不声称精确坐标与面积,复算留待官方发布后由专业团队实施。产权与审批风险:存量楼宇产权、轨道保护区、控规条件与现状市政容量均未公开,任何建设与接驳安排须依法完成审批与安全评估。低空与接驳风险:低空航线与接驳线路的许可和审批路径未定型,概念方案不预设结论。数据治理风险:《生成式人工智能服务管理暂行办法》的适用范围为向境内公众提供生成式内容的 AI 服务,不能替代个人信息保护、数据安全或交通、低空领域的具体审查,本方案所述"合规率""人工复核 100%"均为概念目标而非已验证合规结论;正式实施前须完成专项合规审查。名称风险:"链驰谷/ChainScape Valley"及三处节点名称为本次原创概念命名,如与既有名称雷同纯属巧合,不代表关联。品牌在先权利与使用边界:概念阶段未完成正式商标检索,本方案全部名称与标识按内部工作代号处理,未获得清权前不对外注册、不用于外部商业使用;设计成果权属与各图件、字体、几何的复用边界见 `report/copyright_statement.md` 与 `sources.json`。合规说明:本方案为应征概念文本,不构成法定规划结论,不预设法定指标,落地建议均以"概念建议、参考方案、可供专业团队深化研究"表述;AI 与数据应用以匿名聚合与人工复核为底线,禁止过度监控,正文与命名为原创,引用均出自公开渠道。
 
-> **证据锚点**:`[source:DATA-SRC-OFFICIAL-ANNOUNCEMENT]`、`[source:DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES]`、`[source:DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW]`、`[source:DATA-SRC-CONTROLS-001]`(`assumptions.json:A-CONTROLS-001`)、`[data:report/copyright_statement.md]`。
+> **证据锚点**:`[source:DATA-SRC-OFFICIAL-ANNOUNCEMENT]`、`[source:DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES]`、`[source:DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW]`、`[source:DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING]`(`assumptions.json:A-CONTROLS-001`)、`[data:report/copyright_statement.md]`。
 
 ## 参考资料
 
@@ -300,9 +300,9 @@ iteration: "v2.0"
 
 | Asset | Source | License | Reuse boundary |
 | --- | --- | --- | --- |
-| Noto Sans SC (subset, embedded as data URI in four HTML surfaces) | Google Fonts repository, redistributed from `C:/Users/22786/.dsh/haidian-marathon/refs/fonts/NotoSansSC-Static.ttf` | SIL Open Font License 1.1 | Subset embedded inside the four offline HTML previews only; OFL notices preserved; no standalone font redistribution outside the package; no separate font file is shipped in the package |
+| Noto Sans SC (subset, embedded as data URI in four HTML surfaces) | Cleared workspace reference `refs/fonts/NotoSansSC-Static.ttf` | SIL Open Font License 1.1 | Subset embedded inside the four offline HTML previews only; OFL notice preserved; no standalone font redistribution outside the package; no separate font file is shipped in the package |
 | Cited Chinese national standards and laws | Official public sources (`sources.json`) | Official public texts cited for reference | Page chrome and third-party editorial content are not reused; official versions govern |
-| Cited global benchmark cases (Shenzhen Bay S&T Ecological Park, Zhangjiang AI Island, Yunqi Town, Singapore one-north, King's Cross Knowledge Quarter) | Public reference pages listed in `sources.json` (DATA-SRC-CASE-*) | Cited as research hypotheses until verified against project-specific pages | Not a confirmed benchmark replication; case details are research hypotheses only |
+| Cited global benchmark cases (Singapore LaunchPad @ one-north, Helsinki Maria 01, Paris F/AI at STATION F, Toronto MaRS Centre, Montreal Mila LaSalle) | Five project-specific pages listed in `sources.json` (`DATA-SRC-CASE-*`) | Attributed factual paraphrase and concept-level mechanism comparison only; publication date is recorded as “not stated on page” when the page gives no original date | No image, logo, layout, promotional copy, partnership, endorsement, rights clearance, scale/status transfer or benchmark replication is implied |
 | Base map tiles / aerial imagery | None used; all concept figures are drawn from package geometry only | Not applicable | No third-party tiles or aerial imagery embedded |
 
 ## 5. Source registry, provisional labeling and recompute triggers
