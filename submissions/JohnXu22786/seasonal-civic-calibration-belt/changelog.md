@@ -17,3 +17,7 @@
 - 为15项设计深度记录逐项 proof，并新增 P1-P7 operation_packages.json，登记空间载体、候选责任、前置条件、证据、建议KPI、人工替代和停止条件。
 - 按简报要求移除 proposal.md / proposal.en.md 的 YAML front matter；重新生成并检查双语 HTML、图件、A0/A3 PDF 预览，修复核心图节点、标签与页脚重叠/裁切。
 - 运行 honest figure-QC：12张中文主图 ink 与10px edge-clip均通过，文字重叠标记为 not_verified；四门 deterministic/spatial/visual/professional 均通过，临时边界警告保留。
+
+- 2026-08-31: Addressed CocoSgt review 5061244171 by bundling Noto Sans SC locally, adding @font-face declarations and local fallbacks to both report and visual bilingual HTML pages, and refreshing HTML preview evidence. No proposal content, provisional metrics, bilingual mappings or spatial claims were changed.
+
+- 2026-08-31: Honest rendering note: the bundled render_previews.py was run, but this environment lacks Playwright and PyMuPDF, so no fabricated screenshot/PDF preview was produced; existing figure/PDF previews remain unchanged while the HTML source pages and embedded-font coverage were verified locally.
