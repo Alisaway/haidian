@@ -130,3 +130,16 @@
 - 运营绩效保持 unknown，仅把文档覆盖数登记为 known。
 - 案例拆分为官方/第一手来源；所有本地边界、权属、控规、市政和现场绩效缺口持续披露。
 - 未执行 git add、commit、push 或 PR。
+
+## 2026-08-21 · V17
+
+- Restored the buildable civic cross as primary evidence and demoted planning context to a verified base.
+- Established one canonical 4 m route invariant across OPEN / TRIAL / PAUSE / RETIRE.
+- Added canonical view, context, maintenance, camera, priority, stage and next-gate interfaces (schema 1.14.0).
+- Reordered both proposals around spatial conclusion, prototype, ALT decision, next gate and approved context.
+
+## 2026-08-30 · V17.1 offline CJK repair
+
+- Embedded a renamed, OFL-licensed Source Han Sans 2.005R glyph subset in all four HTML deliverables; offline rendering no longer depends on Microsoft YaHei or another host font.
+- Increased first-screen task, metric and evidence labels to a review-readable minimum and standardized the bilingual language link without changing spatial content, PDFs, metrics or geometry.
+- Added deterministic glyph/hash checks and clean-browser 1440×1600 plus mobile screenshot QA; field status and all evidence boundaries remain unchanged.

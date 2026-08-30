@@ -655,6 +655,32 @@
       "formula": "count(ordinary_open_day.steps)",
       "confidence": "high",
       "assumptions": []
+    },
+    "s7_public_route_prototype_width_m": {
+      "status": "known",
+      "value": 4,
+      "unit": "m",
+      "source_files": [
+        "visual/assets/prototype-model.json"
+      ],
+      "formula": "min(s7.public_routes[].clear_width_m)",
+      "confidence": "medium",
+      "assumptions": [
+        "A-S7-PROTOTYPE-DIMENSIONS"
+      ]
+    },
+    "s7_public_route_state_invariant_count": {
+      "status": "known",
+      "value": 4,
+      "unit": "states",
+      "source_files": [
+        "visual/assets/prototype-model.json"
+      ],
+      "formula": "count(OPEN,TRIAL,PAUSE,RETIRE preserving public_route_invariant)",
+      "confidence": "medium",
+      "assumptions": [
+        "A-S7-PROTOTYPE-DIMENSIONS"
+      ]
     }
   }
 }

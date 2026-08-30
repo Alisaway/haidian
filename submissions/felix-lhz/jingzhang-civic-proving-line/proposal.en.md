@@ -6,49 +6,48 @@ proposal_format_version: "2"
 bilingual_contract_version: "1"
 translation_of: "proposal.md"
 license: "COMMUNITY-DISPLAY-ONLY"
-summary: "Build the unbroken public route as an enterable, maintainable, closable and recoverable civic cross; the current implementation gate remains G0 NO-GO."
+summary: "One 4 m prototype public route stays continuous across OPEN, TRIAL, PAUSE and RETIRE; AI occupies one side while the staffed Receipt Porch stays open."
 tracks: ["ai-traffic-walkability", "ai-public-services", "civic-agent-governance"]
 scenarios: ["ai-traffic-walkability", "ai-health-service-navigation", "enterprise-service-copilot", "robot-delivery-low-speed"]
 ---
 
 # JING-ZHANG TWO ANSWERS / 京张双答
 
+> **One public route, four civic states.** At Dazhongsi centre, a **4 m prototype public route** remains continuous through OPEN, TRIAL, PAUSE and RETIRE. AI occupies only a one-sided reversible trial bay; staffed service and the Receipt Porch remain open.[data:visual/assets/prototype-model.json] [metric:s7_public_route_prototype_width_m]
 
-> **Build a civic-adoption layer on the approved spatial structure.** Public information released in August 2026 identifies an approximately 1,668.2 ha block-plan context, a 9 km Jing-Zhang green belt and “**one belt, one axis, two centres and multiple nodes**”, with Dazhongsi as one of the two centres. Phase II supporting works are complete and form a fishbone slow-mobility network.[source:BEIJING-BLOCK-PLAN-APPROVED-20260812] [source:BEIJING-JZ-PHASE2-COMPLETE-20260714]
+The ordinary answer is an admission prerequisite, not a fallback: conventional interchange, wheelchair and tactile routes, shaded waiting, static wayfinding and a staffed desk must work independently. AI may be considered only after a same-task, same-user, same-space comparison; a human committee alone decides adopt / revise / stop. On stopping, equipment leaves through an independent maintenance route without borrowing the public layer.[data:visual/assets/two-answers.json] [depth:overall_spatial_structure]
 
-“One spine, three stations and two wings” is therefore not a competing statutory plan. It is a **selectable, stoppable and removable operating overlay** embedded in the Jing-Zhang green belt and aligned with Dazhongsi centre and the innovation axis. The official 1,668.2 ha context and the 11.4 sq km provisional submission geometry are registered separately and never substituted.[data:visual/assets/spatial-atlas.json] [metric:official_planning_area_ha] [metric:submitted_provisional_area_sqm]
+![One-route four-state jury summary](assets/figures/jury-summary.en.png)
 
-The Dazhongsi Receipt Porch adapts between the existing park, a directional rail interface and an urban-renewal frontage. It remains **G0 NO-GO**: published context is not survey, title, permit, construction or field operation by this proposal. Government-reported public use is context, not participant observation.[data:visual/assets/e2-readiness.json]
+## S7 architectural–public-space prototype
 
-![Approved spatial structure and Jing-Zhang operating overlay](assets/figures/site-overview.en.png)
+The Dazhongsi flagship has five independent, traceable layers: two 4 m public routes; a southeast one-sided trial bay and reversible buffer; a southwest staffed Receipt Porch; tree pits, rain gardens, shaded waiting and an unoccupied egress surface; and a back-of-house route for control, storage, maintenance, waste and retirement. The 1:500 plan, 1:200 lived sections, 1:50/1:20 nodes and same-camera state axonometrics share component IDs.[data:visual/assets/prototype-model.json] [depth:three_key_area_detailed_design]
 
-![Continuous ground interface of approved context, public service and timed trial](assets/figures/land-use-structure.en.png)
+The reversible prototype palette is bolted galvanized steel, perforated-metal shade, dry precast ballast foundations, permeable precast paving and replaceable evidence panels. OPEN runs the public layer only; TRIAL opens one side after permits, posts and baseline close; PAUSE isolates equipment while staff complete the same task; RETIRE removes plug-ins, relays paving and retains public service and review panels. Structure, fire, foundations, drainage and durability await specialist review; all prices remain pending_market_quote.[data:visual/assets/e2-readiness.json]
 
-<!-- V11_DECISION_START -->
-## One Real Spatial Decision
+## Three alternatives, one spatial decision
 
-The Civic Adoption Compiler no longer treats an all-green matrix as excellence. The current proposal generates three spatial alternatives for the same S7 task, users and site, then audits each with identical geometry gates: **ALT-A Central Mixed Bay is rejected, ALT-B Split Bays returns for revision, and ALT-C One-sided Reversible Bay advances.** These reject_design / revise_design / advance_design labels describe design alternatives, not field adoption; only a human committee may later issue adopt / revise / stop.[data:visual/assets/spatial-decision.json] [metric:spatial_alternative_count]
+Under one task, users, site and hard gates, ALT-A central mixing is reject_design because it cuts the public cross and conflicts with fire/removal; ALT-B split bays retain routes but fragment supervision and removal, so revise_design; ALT-C one-sided reversible bay is the sole advance_design. These design-option states are not field adopt / revise / stop decisions; the computation tests geometric consistency only.[data:visual/assets/spatial-decision.json] [metric:spatial_alternative_count]
 
-ALT-A severs the public cross and conflicts with fire access, retirement and staffed E-stop reach, failing six hard gates. ALT-B preserves routes but fragments supervision and retirement, so it returns for revision.[metric:rejected_spatial_alternative_count] [metric:revised_spatial_alternative_count]
+ALT-C route and one-sided trial area come from one local-metric audit.[metric:alt_c_public_route_length_m] [metric:alt_c_trial_area_sqm]
 
-ALT-C keeps the 372-metre concept public route unchanged in trial and concentrates a 2,496-square-metre trial plus a 3,840-square-metre reversible buffer on one side.[metric:alt_c_public_route_length_m] [metric:alt_c_trial_area_sqm] [metric:alt_c_reversible_buffer_area_sqm]
+The reversible buffer and staff-to-e-stop distance use the same inputs. Any change in official base, entrances, title or specialist constraints requires a rerun; drawings and text must follow the result.[metric:alt_c_reversible_buffer_area_sqm] [metric:alt_c_max_estop_staff_distance_m]
 
-ALT-C also limits the furthest E-stop-to-staff distance to a 24.3-metre prototype assumption and is the sole design to advance.[metric:alt_c_max_estop_staff_distance_m] [metric:advanced_spatial_alternative_count] [data:geometry/public_space.geojson#V11-ALT-C-TRIAL-1]
+## Current implementation gate: G0 survey and permit preparation
 
-The figures use a local equidistant approximation centred on the Dazhongsi prototype. They audit design geometry only; they do not establish surveyed conditions, transport performance, fire approval or safety performance. Any change in the official base, station entrance, ownership or professional constraints must rerun the audit, and drawings and prose must follow the calculation.[data:geometry/roads.geojson#V11-ALT-C-BASE-NS] [depth:three_key_area_detailed_design]
-<!-- V11_DECISION_END -->
+The scheme is not labelled “unimplementable”; it is honestly at **G0: enter survey and permit preparation**. The next gate requires site survey, title and rail-interface checks; closure of site, fire, accessibility, temporary power, network, traffic and equipment-safety dependencies; four independent venue, baseline-service, safety and data posts; then seven consecutive ordinary operating days. If any condition is missing, AI trial does not start, while an ordinary open day can still be prepared.[data:visual/assets/e2-readiness.json] [metric:e2_permit_gate_count]
 
-<!-- V12_MEASUREMENT_START -->
-## Measure after selection: three hero contracts and a twelve-scene directory
+Field footfall, safety, efficiency, satisfaction, energy, price and recovery duration remain unknown / not_field_run. Twelve measurement contracts define how to verify; they are not results.[metric:measurement_contract_count] [metric:field_verification_result_count]
 
-The spatial decision answers why ALT-C is selected; measurement contracts answer how the city will know whether AI deserves to remain. All 12/12 contracts stay in structured data, while this review entrance shows only three transferable hero contracts.[data:visual/assets/two-answers.json] [metric:measurement_contract_count]
+## Approved planning context and operating overlay
 
-- **T2 robot passage:** 100 same-route passages per ordinary and trial mode, stratified by wheelchair, visual impairment, walking and day/night; collision, bypass interruption or E-stop failure triggers an immediate stop.
-- **S2 international arrival:** 100 same-task requests per staffed and AI-assisted mode, stratified by language, assistance need and complexity; account-free entry, bilingual staff and review backstage remain open.
-- **S7 transit feeder:** record seven ordinary operating days first, then 100 timed trials only after eight permits and four independent posts close; a broken public route, absent takeover or degraded baseline is zero-tolerance.
+Published 2026 context records an approximately 1,668.2 ha neighbourhood-planning area, a 9 km Jing-Zhang green belt and a “belt–axis–two centres–multiple nodes” structure, with Dazhongsi as one centre; Phase II supporting works are complete and a fishbone slow-mobility network is reported.[source:BEIJING-BLOCK-PLAN-APPROVED-20260812] [source:BEIJING-JZ-PHASE2-COMPLETE-20260714]
 
-The status remains **12 contracts / 0 field results**. Missing samples cannot be imputed as success; non-safety thresholds are registered by the scene committee after a field baseline exists.[metric:field_verification_result_count]
-<!-- V12_MEASUREMENT_END -->
+These facts are the credible base, not the design protagonist. The spine/stations/wings form a stoppable, removable operating layer embedded in the green belt and aligned with Dazhongsi centre and the innovation axis; six stitches align with existing or published slow-mobility directions and are not proposed roads. The official 1,668.2 ha context and the submission's 11.4 sq km provisional geometry stay separate. Government reporting is not participant fieldwork, survey, title or acceptance evidence.[data:visual/assets/spatial-atlas.json] [metric:official_planning_area_ha] [metric:submitted_provisional_area_sqm]
+
+![Jing-Zhang operating overlay on approved context](assets/figures/site-overview.en.png)
+
+![Dazhongsi ground interface—public space—transit—blue-green overlay](assets/figures/land-use-structure.en.png)
 
 ## Design Basis and Source List
 
