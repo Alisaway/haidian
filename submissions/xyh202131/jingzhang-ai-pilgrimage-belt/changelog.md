@@ -1,5 +1,19 @@
 # 方案迭代记录 / Changelog
 
+## v86.0 - 2026-08-30
+
+**主导航焦点交接闭合 / Primary-navigation Focus Transfer**
+
+- 已有能力：中英文体验台的九项主导航已具备 44px 触达、键盘焦点、粘性偏移与 R85 可见落点轮廓；三处原型深链也已能把程序化焦点交给实际原型。
+- 真实缺口：修复前，主导航跳到其余九个段落时只改变 URL 与视口；目标段不可聚焦，辅助技术的当前焦点仍留在导航控件，导致可见落点与阅读上下文不同步。
+- 必须冻结：冻结“双轨京张 / Twin-Track Jing-Zhang”、三种不可互换原型、JZ-AIOS、G0—G3、四轴、三载体、证据门、权利边界及 12/8/3/36；不改正文、报告、图件、媒体、四份 PDF、几何、指标或现实状态。
+- 本轮实施：为两种语言的九个既有主面板增加程序化焦点能力，使浏览器原生片段导航可把焦点交给实际落点；继续保持零 JavaScript、可见 `:target` 轮廓、减少动态、打印和离线行为。只闭合主导航的焦点上下文，不新增内容或事实主张。
+
+- Existing capability: the nine-item primary navigation in both workbenches already provides 44px targets, keyboard focus, sticky offsets and the R85 visible destination outline; the three prototype deep links also transfer programmatic focus to their actual prototypes.
+- Real gap: before repair, primary-navigation jumps to the other nine panels changed only the URL and viewport. Because the target panels were not focusable, assistive-technology focus remained on the navigation control, leaving the visible destination and reading context out of sync.
+- Must remain frozen: Twin-Track Jing-Zhang, the three non-interchangeable prototypes, JZ-AIOS, G0-G3, four axes, three carriers, evidence gates, rights boundaries and 12/8/3/36. Proposals, reports, figures, media, all four PDFs, geometry, metrics and real-world status remain unchanged.
+- Implemented this round: made the nine existing primary panels in each language programmatically focusable so native fragment navigation can transfer focus to the actual destination. Zero JavaScript, the visible `:target` outline, reduced-motion, print and offline behaviour remain intact. This closes primary-navigation focus context only and adds no content or factual claim.
+
 ## v85.0 - 2026-08-30
 
 **页内跳转定位反馈 / In-page Destination Orientation**
