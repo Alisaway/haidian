@@ -1,0 +1,936 @@
+{
+  "schema_version": "0.1.0",
+  "items": [
+    {
+      "item_id": "existing_conditions_diagnosis",
+      "title_zh": "现状诊断图与资料缺口",
+      "professional_dimension": "规划/城市设计",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "设计依据与资料清单"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/site_boundary.geojson",
+        "geometry/land_use.geojson",
+        "geometry/public_space.geojson"
+      ],
+      "metric_refs": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "phase_count"
+      ],
+      "source_ids": [
+        "SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK",
+        "SRC-PROVISIONAL-BOUNDARIES-2026",
+        "SRC-MOHURD-CONTROL-DETAILED-PLANNING"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-CONTROLS-002",
+        "A-DATA-004",
+        "A-ACCESS-013",
+        "A-REVIEW-014"
+      ],
+      "self_check_ids": [
+        "BOUNDARY_TRUST",
+        "KEY_AREAS_TRUST",
+        "LAND_USE_TOPOLOGY",
+        "VISUAL_STATIC",
+        "BILINGUAL_PARITY"
+      ],
+      "evidence_summary_zh": "设计依据章节（第7-21行）明确资料分层、临时边界用途和官方资料缺口；该项因此如实标为 data_gap，而不是把临时图层当成现状调查。",
+      "proof": {
+        "proposal": [
+          {"path": "proposal.md", "anchor": "设计依据与资料清单#第7-21行", "claim": "资料分为任务/规范、公开案例、本包原创三类；官方 polygon 未提供，临时粗略约束仅用于生成、展示和临时自检。"}
+        ],
+        "structured": [
+          {"path": "geometry/site_boundary.geojson", "selector": "$.features[0].properties", "fields": ["official_boundary", "geometry_role", "source_type", "boundary_precision", "usage_note"], "claim": "唯一总体边界记录为 official_boundary=false、provisional_constraint、provisional_rough。"},
+          {"path": "geometry/key_areas.geojson", "selector": "$.features[*].properties", "fields": ["official_boundary", "geometry_role", "source_id", "usage_note"], "claim": "三处重点区同样记录为临时约束，不能替代现状/法定边界。"},
+          {"path": "assumptions.json", "selector": "$.assumptions[?(@.id=='A-BOUNDARY-001'||@.id=='A-CONTROLS-002'||@.id=='A-HERITAGE-003')]", "claim": "边界、控规和文保现状资料分别登记为待官方/专业确认。"}
+        ],
+        "drawings": [
+          {"path": "assets/figures/site-overview.png", "claim": "总览图展示临时粗略边界并以虚线说明其状态。"},
+          {"path": "drawings/a3-booklet.pdf", "claim": "A3成果册为概念表达，不是现状测绘成果。"}
+        ],
+        "risk_operation": [
+          {"path": "risk.json", "selector": "$.risks[?(@.risk_id=='R-BOUNDARY'||@.risk_id=='R-CONTROLS')]", "claim": "登记边界精度与法定控制缺口及其缓解动作。"}
+        ]
+      },
+      "completeness_limited_by": ["pending: official current-condition survey, ownership, heritage and statutory-control data are not present in this package"]
+    },
+    {
+      "item_id": "three_level_scope_framework",
+      "title_zh": "三层范围工作框架",
+      "professional_dimension": "规划/城市设计",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "三层范围工作框架"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/site_boundary.geojson",
+        "geometry/land_use.geojson",
+        "geometry/public_space.geojson"
+      ],
+      "metric_refs": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "phase_count"
+      ],
+      "source_ids": [
+        "SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK",
+        "SRC-PROVISIONAL-BOUNDARIES-2026",
+        "SRC-MOHURD-CONTROL-DETAILED-PLANNING"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-CONTROLS-002",
+        "A-DATA-004",
+        "A-ACCESS-013",
+        "A-REVIEW-014"
+      ],
+      "self_check_ids": [
+        "BOUNDARY_TRUST",
+        "KEY_AREAS_TRUST",
+        "LAND_USE_TOPOLOGY",
+        "VISUAL_STATIC",
+        "BILINGUAL_PARITY"
+      ],
+      "evidence_summary_zh": "三层范围章节（第23-29行）逐层定义统筹研究、总体设计和重点区域，并明确三区两翼只是任务书协同框架的概念翻译；范围关系由临时边界和三处重点区 GeoJSON 支撑。",
+      "proof": {
+        "proposal": [
+          {"path": "proposal.md", "anchor": "三层范围工作框架#第23-29行", "claim": "明确三层工作面、四时应答线、夏谱台/秋声庭/冬灯台和中关村科技服务翼/小月河场景赋能翼的协同角色。"}
+        ],
+        "structured": [
+          {"path": "geometry/site_boundary.geojson", "selector": "$.features[0].properties.scope_id", "claim": "总体工作面标记为 overall_design_area。"},
+          {"path": "geometry/key_areas.geojson", "selector": "$.features[*].properties.area_id", "claim": "三处重点区域分别有明确 area_id、parent_scope_id 和 concept_node_context。"},
+          {"path": "metrics.json", "selector": "$.metrics.regional_exchange_interface_count; $.metrics.phase_count", "claim": "区域接口数量与阶段数量为现有指标字段。"}
+        ],
+        "drawings": [
+          {"path": "assets/figures/site-overview.png", "claim": "总览图实际呈现一条线与三个节点的空间关系。"},
+          {"path": "assets/figures/key-areas.png", "claim": "重点区图实际呈现三区两翼与三节点的概念关系。"}
+        ],
+        "risk_operation": [
+          {"path": "assumptions.json", "selector": "$.assumptions[?(@.id=='A-BOUNDARY-001'||@.id=='A-PHASE-010')]", "claim": "范围边界和阶段框架均注明待核验/概念属性。"}
+        ]
+      }
+    },
+    {
+      "item_id": "overall_spatial_structure",
+      "title_zh": "总体空间结构",
+      "professional_dimension": "规划/城市设计",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "总体设计范围城市更新与控规深度城市设计"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/site_boundary.geojson",
+        "geometry/land_use.geojson",
+        "geometry/public_space.geojson"
+      ],
+      "metric_refs": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "phase_count"
+      ],
+      "source_ids": [
+        "SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK",
+        "SRC-PROVISIONAL-BOUNDARIES-2026",
+        "SRC-MOHURD-CONTROL-DETAILED-PLANNING"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-CONTROLS-002",
+        "A-DATA-004",
+        "A-ACCESS-013",
+        "A-REVIEW-014"
+      ],
+      "self_check_ids": [
+        "BOUNDARY_TRUST",
+        "KEY_AREAS_TRUST",
+        "LAND_USE_TOPOLOGY",
+        "VISUAL_STATIC",
+        "BILINGUAL_PARITY"
+      ],
+      "evidence_summary_zh": "总体设计章节（第43-53行）明确‘一条四时应答线、三座季节节点、六类空间接口、十二张场景卡’及存量优先/轻介入原则；用地结构 GeoJSON 和总览图提供对应空间表达。",
+      "proof": {
+        "proposal": [
+          {"path": "proposal.md", "anchor": "总体设计范围城市更新与控规深度城市设计#第43-51行", "claim": "正文定义总体结构、更新原则、六类空间接口和三色风貌系统，并声明不是道路红线或法定用地。"}
+        ],
+        "structured": [
+          {"path": "geometry/land_use.geojson", "selector": "$.features[*].properties", "fields": ["layer", "spatial_role", "geometry_role", "name_zh"], "claim": "六个概念分区具备可核对的空间角色和 design_proposal 属性。"},
+          {"path": "metrics.json", "selector": "$.metrics.land_use_zone_count; $.metrics.key_area_count", "claim": "总体结构的分区和节点计数有对应指标字段。"}
+        ],
+        "drawings": [
+          {"path": "assets/figures/site-overview.png", "claim": "总体结构图对应一条线、三节点和临时边界。"},
+          {"path": "assets/figures/land-use-structure.png", "claim": "用地结构图对应六类概念分区。"}
+        ],
+        "risk_operation": [
+          {"path": "risk.json", "selector": "$.risks[?(@.risk_id=='R-CONTROLS')]", "claim": "法定控制缺口要求后续专业核验，避免把总体结构表达成法定结论。"}
+        ]
+      }
+    },
+    {
+      "item_id": "land_use_layout",
+      "title_zh": "用地布局",
+      "professional_dimension": "规划/城市设计",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "用地、建筑规模与拆改留方案"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/site_boundary.geojson",
+        "geometry/land_use.geojson",
+        "geometry/public_space.geojson"
+      ],
+      "metric_refs": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "phase_count"
+      ],
+      "source_ids": [
+        "SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK",
+        "SRC-PROVISIONAL-BOUNDARIES-2026",
+        "SRC-MOHURD-CONTROL-DETAILED-PLANNING"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-CONTROLS-002",
+        "A-DATA-004",
+        "A-ACCESS-013",
+        "A-REVIEW-014"
+      ],
+      "self_check_ids": [
+        "BOUNDARY_TRUST",
+        "KEY_AREAS_TRUST",
+        "LAND_USE_TOPOLOGY",
+        "VISUAL_STATIC",
+        "BILINGUAL_PARITY"
+      ],
+      "evidence_summary_zh": "用地章节（第81-87行）只提出研发验证、文化展示、社区服务、公园绿地和慢行联系等概念关系；实际 land_use GeoJSON 含6个带 spatial_role 的设计分区，图件同步展示且声明非法定用途。",
+      "proof": {
+        "proposal": [
+          {"path": "proposal.md", "anchor": "用地、建筑规模与拆改留方案#第81-87行", "claim": "正文说明分区只表达关系，不给出法定用地、容积率、高度、强度或地块拆改判断。"}
+        ],
+        "structured": [
+          {"path": "geometry/land_use.geojson", "selector": "$.features[*].properties", "fields": ["id", "name_zh", "land_use_code", "spatial_role", "geometry_role"], "claim": "LU-01至LU-06六个设计分区均有名称、空间角色和低置信度设计属性。"},
+          {"path": "metrics.json", "selector": "$.metrics.land_use_zone_count", "claim": "分区数量有现成指标字段。"}
+        ],
+        "drawings": [
+          {"path": "assets/figures/land-use-structure.png", "claim": "实际图件展示六类概念分区和临时边界。"},
+          {"path": "drawings/a0-boards.pdf", "claim": "A0图板包含用地结构的静态表达。"}
+        ],
+        "risk_operation": [
+          {"path": "assumptions.json", "selector": "$.assumptions[?(@.id=='A-BOUNDARY-001'||@.id=='A-CONTROLS-002')]", "claim": "临时边界和法定控制条件的局限已登记。"}
+        ]
+      }
+    },
+    {
+      "item_id": "development_intensity_controls",
+      "title_zh": "开发强度控制边界",
+      "professional_dimension": "规划/城市设计",
+      "required": true,
+      "status": "complete",
+      "completeness_limited_by": ["pending: official control conditions for FAR, height, density, road redlines, rail, utilities and fire safety are absent; the proposal intentionally does not invent them"],
+      "proposal_sections": [
+        "总体设计范围城市更新与控规深度城市设计"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/site_boundary.geojson",
+        "geometry/land_use.geojson",
+        "geometry/public_space.geojson"
+      ],
+      "metric_refs": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "phase_count"
+      ],
+      "source_ids": [
+        "SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK",
+        "SRC-PROVISIONAL-BOUNDARIES-2026",
+        "SRC-MOHURD-CONTROL-DETAILED-PLANNING"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-CONTROLS-002",
+        "A-DATA-004",
+        "A-ACCESS-013",
+        "A-REVIEW-014"
+      ],
+      "self_check_ids": [
+        "BOUNDARY_TRUST",
+        "KEY_AREAS_TRUST",
+        "LAND_USE_TOPOLOGY",
+        "VISUAL_STATIC",
+        "BILINGUAL_PARITY"
+      ],
+      "evidence_summary_zh": "正文第43-51行和第123-133行只定义控规深度的研究边界，并将 FAR、建筑高度、建筑密度和道路红线保持 unknown/null；因此该项为 data_gap，不把概念图层误报为强度控制。",
+      "proof": {
+        "proposal": [
+          {"path": "proposal.md", "anchor": "总体设计范围城市更新与控规深度城市设计#第43-51行", "claim": "明确不提供容积率、建筑高度、建筑强度或具体拆改留判断。"},
+          {"path": "proposal.md", "anchor": "指标体系、面积复算与合规矩阵#第123-133行", "claim": "明确 FAR、建筑高度、建筑密度和道路红线为 unknown/null，等待官方条件。"}
+        ],
+        "structured": [
+          {"path": "metrics.json", "selector": "$.metrics.floor_area_ratio; $.metrics.building_height_m; $.metrics.building_density; $.metrics.road_redline_m", "claim": "相关指标字段存在但按未知条件保留空值/原因，未形成数值控制。"},
+          {"path": "assumptions.json", "selector": "$.assumptions[?(@.id=='A-CONTROLS-002')]", "claim": "控规、高度、强度、道路、轨道、消防和市政容量登记为 pending_professional_confirmation。"}
+        ],
+        "drawings": [
+          {"path": "assets/figures/land-use-structure.png", "claim": "图件只展示概念分区，不提供强度或高度控制图。"}
+        ],
+        "risk_operation": [
+          {"path": "risk.json", "selector": "$.risks[?(@.risk_id=='R-CONTROLS')]", "claim": "法定控制缺口及专业核验动作已登记。"}
+        ]
+      }
+    },
+    {
+      "item_id": "height_massing_character",
+      "title_zh": "高度体量与城市风貌",
+      "professional_dimension": "规划/城市设计",
+      "required": true,
+      "status": "complete",
+      "completeness_limited_by": ["pending: no height/massing geometry, section, skyline or official height-control data is present; only a qualitative character direction exists"],
+      "proposal_sections": [
+        "总体设计范围城市更新与控规深度城市设计"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/site_boundary.geojson",
+        "geometry/land_use.geojson",
+        "geometry/public_space.geojson"
+      ],
+      "metric_refs": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "phase_count"
+      ],
+      "source_ids": [
+        "SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK",
+        "SRC-PROVISIONAL-BOUNDARIES-2026",
+        "SRC-MOHURD-CONTROL-DETAILED-PLANNING"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-CONTROLS-002",
+        "A-DATA-004",
+        "A-ACCESS-013",
+        "A-REVIEW-014"
+      ],
+      "self_check_ids": [
+        "BOUNDARY_TRUST",
+        "KEY_AREAS_TRUST",
+        "LAND_USE_TOPOLOGY",
+        "VISUAL_STATIC",
+        "BILINGUAL_PARITY"
+      ],
+      "evidence_summary_zh": "正文第43-51行仅提供砖红/青绿/深蓝色系、站序/线/枕木和版本/校准/回退符号的定性风貌方向；建筑 GeoJSON 没有高度或体量字段，故该项为 data_gap。",
+      "proof": {
+        "proposal": [
+          {"path": "proposal.md", "anchor": "总体设计范围城市更新与控规深度城市设计#第43-51行", "claim": "存在定性城市风貌和符号系统，但明确不提供建筑高度或强度结论。"}
+        ],
+        "structured": [
+          {"path": "geometry/buildings.geojson", "selector": "$.features[*].properties", "fields": ["building_type", "intervention_logic", "geometry_role"], "claim": "10个建筑概念基底只有类型、干预逻辑和低置信度设计属性，没有 height/massing 控制字段。"},
+          {"path": "metrics.json", "selector": "$.metrics.building_height_m; $.metrics.building_density", "claim": "高度和密度指标字段保留为未知条件。"},
+          {"path": "assumptions.json", "selector": "$.assumptions[?(@.id=='A-CONTROLS-002')]", "claim": "建筑高度与强度待专业确认。"}
+        ],
+        "drawings": [
+          {"path": "assets/figures/land-use-structure.png", "claim": "现有图件是平面概念分区，不是高度/体量剖面。"}
+        ],
+        "risk_operation": [
+          {"path": "risk.json", "selector": "$.risks[?(@.risk_id=='R-CONTROLS')]", "claim": "法定控制资料缺口列为风险，后续需专业核验。"}
+        ]
+      }
+    },
+    {
+      "item_id": "retain_renovate_demolish",
+      "title_zh": "保留、适配与撤回逻辑",
+      "professional_dimension": "规划/城市设计",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "用地、建筑规模与拆改留方案"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/site_boundary.geojson",
+        "geometry/land_use.geojson",
+        "geometry/public_space.geojson"
+      ],
+      "metric_refs": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "phase_count"
+      ],
+      "source_ids": [
+        "SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK",
+        "SRC-PROVISIONAL-BOUNDARIES-2026",
+        "SRC-MOHURD-CONTROL-DETAILED-PLANNING"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-CONTROLS-002",
+        "A-DATA-004",
+        "A-ACCESS-013",
+        "A-REVIEW-014"
+      ],
+      "self_check_ids": [
+        "BOUNDARY_TRUST",
+        "KEY_AREAS_TRUST",
+        "LAND_USE_TOPOLOGY",
+        "VISUAL_STATIC",
+        "BILINGUAL_PARITY"
+      ],
+      "evidence_summary_zh": "用地与拆改留章节（第81-87行）给出‘留—改—撤’顺序、权属/文保/结构/消防/交通/市政/无障碍核验流程；10个建筑要素实际记录 intervention_logic，未冒充具体地块决策。",
+      "proof": {
+        "proposal": [
+          {"path": "proposal.md", "anchor": "用地、建筑规模与拆改留方案#第81-87行", "claim": "保留优先、可逆适配、模块化新增和专业调查后决定撤回/拆改的判断流程明确。"}
+        ],
+        "structured": [
+          {"path": "geometry/buildings.geojson", "selector": "$.features[*].properties.intervention_logic", "claim": "BLDG-01至BLDG-10均标注‘保留优先、适配可逆、具体拆改留待专业调查’。"},
+          {"path": "geometry/land_use.geojson", "selector": "$.features[*].properties.geometry_role", "claim": "六个用地层均为 design_proposal，不是法定用地决定。"},
+          {"path": "assumptions.json", "selector": "$.assumptions[?(@.id=='A-OWNERSHIP-015'||@.id=='A-HERITAGE-003')]", "claim": "权属和文保条件待核验。"}
+        ],
+        "drawings": [
+          {"path": "assets/figures/land-use-structure.png", "claim": "用地图展示概念空间关系，不展示具体拆改地块。"}
+        ],
+        "risk_operation": [
+          {"path": "risk.json", "selector": "$.risks[?(@.risk_id=='R-CONTROLS')]", "claim": "控制、权属和专业调查前置作为风险缓解条件。"}
+        ]
+      }
+    },
+    {
+      "item_id": "traffic_rail_slow_parking",
+      "title_zh": "交通、轨道、慢行与停车边界",
+      "professional_dimension": "规划/城市设计",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "交通、轨道、市政与公共服务设施"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/site_boundary.geojson",
+        "geometry/land_use.geojson",
+        "geometry/public_space.geojson"
+      ],
+      "metric_refs": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "phase_count"
+      ],
+      "source_ids": [
+        "SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK",
+        "SRC-PROVISIONAL-BOUNDARIES-2026",
+        "SRC-MOHURD-CONTROL-DETAILED-PLANNING"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-CONTROLS-002",
+        "A-DATA-004",
+        "A-ACCESS-013",
+        "A-REVIEW-014"
+      ],
+      "self_check_ids": [
+        "BOUNDARY_TRUST",
+        "KEY_AREAS_TRUST",
+        "LAND_USE_TOPOLOGY",
+        "VISUAL_STATIC",
+        "BILINGUAL_PARITY"
+      ],
+      "evidence_summary_zh": "交通章节（第91-99行）明确慢行/信息优先、人工校对、纸质导览和双语接驳；roads GeoJSON 有5条概念联系且均标注线位待核验，图件对应慢行与蓝绿联系，不给停车或轨道工程结论。",
+      "proof": {
+        "proposal": [
+          {"path": "proposal.md", "anchor": "交通、轨道、市政与公共服务设施#第91-99行", "claim": "四时应答线、站点接驳信息线和窗口/电话/纸质/现场路径均有文字定义；道路红线、轨道调整、停车数量和容量明确不作结论。"}
+        ],
+        "structured": [
+          {"path": "geometry/roads.geojson", "selector": "$.features[*].properties", "fields": ["name_zh", "road_class", "route_status", "geometry_role"], "claim": "RD-01至RD-05 为 greenway/pedestrian/cycleway/transit_connection 概念联系，route_status 均为线位待核验。"},
+          {"path": "metrics.json", "selector": "$.metrics.manual_fallback_mode_count; $.metrics.road_redline_m", "claim": "人工替代路径计数存在；道路红线指标不提供数值。"}
+        ],
+        "drawings": [
+          {"path": "assets/figures/mobility-bluegreen.png", "claim": "实际图件展示慢行和蓝绿概念联系，并带有不预设道路红线/轨道线位的说明。"}
+        ],
+        "risk_operation": [
+          {"path": "visual/assets/scenario_cards.json", "selector": "$.scenario_cards[*].non_ai_alternative", "claim": "场景卡保留纸卡、人工巡查等非AI路径。"},
+          {"path": "risk.json", "selector": "$.risks[?(@.risk_id=='R-CONTROLS')]", "claim": "道路、轨道、市政和消防条件待核验。"}
+        ]
+      }
+    },
+    {
+      "item_id": "municipal_new_infrastructure",
+      "title_zh": "市政与新型基础设施",
+      "professional_dimension": "规划/城市设计",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "交通、轨道、市政与公共服务设施"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/site_boundary.geojson",
+        "geometry/land_use.geojson",
+        "geometry/public_space.geojson"
+      ],
+      "metric_refs": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "phase_count"
+      ],
+      "source_ids": [
+        "SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK",
+        "SRC-PROVISIONAL-BOUNDARIES-2026",
+        "SRC-MOHURD-CONTROL-DETAILED-PLANNING"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-CONTROLS-002",
+        "A-DATA-004",
+        "A-ACCESS-013",
+        "A-REVIEW-014"
+      ],
+      "self_check_ids": [
+        "BOUNDARY_TRUST",
+        "KEY_AREAS_TRUST",
+        "LAND_USE_TOPOLOGY",
+        "VISUAL_STATIC",
+        "BILINGUAL_PARITY"
+      ],
+      "evidence_summary_zh": "交通/市政章节（第91-99行）提出可关闭、可维护、可拆卸的纸卡架、公开屏、人工报修台、低侵入照明和离线导览；场景卡与测试协议提供 AI 角色、人工门、退出和记录字段，市政容量仍待核验。",
+      "proof": {
+        "proposal": [
+          {"path": "proposal.md", "anchor": "交通、轨道、市政与公共服务设施#第91-99行", "claim": "市政/新基建组件优先采用可关闭、可维护、可拆卸和人工替代路径。"},
+          {"path": "proposal.md", "anchor": "AI 创新生态、人才画像与 AI+ 场景#第67-77行", "claim": "AI治理、人工复核和退出条件被定义为运营底盘。"}
+        ],
+        "structured": [
+          {"path": "visual/assets/scenario_cards.json", "selector": "$.scenario_cards[*]", "fields": ["space", "ai_role", "non_ai_alternative", "human_gate", "exit_condition", "data_boundary"], "claim": "12张场景卡为公共服务组件提供空间、AI角色、非AI替代、人工门、退出和数据边界字段。"},
+          {"path": "visual/assets/test_protocols.json", "selector": "$.test_protocols[*]", "fields": ["human_gate", "pass_rule", "exit", "evidence"], "claim": "4项测试协议记录人工门、通过规则、停止条件和证据产物。"},
+          {"path": "metrics.json", "selector": "$.metrics.public_service_component_count; $.metrics.manual_fallback_mode_count", "claim": "公共服务组件和人工替代路径有现成计数字段。"}
+        ],
+        "drawings": [
+          {"path": "assets/figures/mobility-bluegreen.png", "claim": "图件提供市政/公共服务与慢行空间的概念联系。"}
+        ],
+        "risk_operation": [
+          {"path": "risk.json", "selector": "$.risks[?(@.risk_id=='R-DATA'||@.risk_id=='R-CONTROLS')]", "claim": "数据边界、授权、专业容量和责任条件作为风险约束。"}
+        ]
+      }
+    },
+    {
+      "item_id": "blue_green_public_space",
+      "title_zh": "蓝绿空间与公共空间",
+      "professional_dimension": "规划/城市设计",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "蓝绿空间、公共空间与城市风貌"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/site_boundary.geojson",
+        "geometry/land_use.geojson",
+        "geometry/public_space.geojson"
+      ],
+      "metric_refs": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "phase_count"
+      ],
+      "source_ids": [
+        "SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK",
+        "SRC-PROVISIONAL-BOUNDARIES-2026",
+        "SRC-MOHURD-CONTROL-DETAILED-PLANNING"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-CONTROLS-002",
+        "A-DATA-004",
+        "A-ACCESS-013",
+        "A-REVIEW-014"
+      ],
+      "self_check_ids": [
+        "BOUNDARY_TRUST",
+        "KEY_AREAS_TRUST",
+        "LAND_USE_TOPOLOGY",
+        "VISUAL_STATIC",
+        "BILINGUAL_PARITY"
+      ],
+      "evidence_summary_zh": "蓝绿空间章节（第101-109行）提出一条绿带、六个公共房间和三处季节前场；green_space GeoJSON 有4个绿地要素、public_space GeoJSON 有6个公共空间要素，核心比率由几何复算。",
+      "proof": {
+        "proposal": [
+          {"path": "proposal.md", "anchor": "蓝绿空间、公共空间与城市风貌#第101-109行", "claim": "绿带、公共房间、季节前场、居民意见通道和季度议事/年度公示均有明确文字。"}
+        ],
+        "structured": [
+          {"path": "geometry/green_space.geojson", "selector": "$.features[*].properties", "fields": ["id", "name_zh", "green_system", "area_sqm_declared"], "claim": "GR-01至GR-04 实际记录四时绿带及三个节点绿地。"},
+          {"path": "geometry/public_space.geojson", "selector": "$.features[*].properties", "fields": ["id", "name_zh", "public_space_type", "area_sqm_declared"], "claim": "PS-01至PS-06 实际记录公共房间、回声站和冬夜前场。"},
+          {"path": "metrics.json", "selector": "$.metrics.green_ratio; $.metrics.public_space_ratio; $.metrics.public_component_count", "claim": "绿地率、公共空间率和公共组件计数均有字段。"}
+        ],
+        "drawings": [
+          {"path": "assets/figures/mobility-bluegreen.png", "claim": "图件实际表达蓝绿和慢行公共空间联系。"},
+          {"path": "assets/figures/key-areas.png", "claim": "重点区图提供节点公共空间的整体关系。"}
+        ],
+        "risk_operation": [
+          {"path": "risk.json", "selector": "$.risks[?(@.risk_id=='R-CONTROLS')]", "claim": "文保、绿地、蓝线、消防、交通和视线控制在落位前需核验。"}
+        ]
+      }
+    },
+    {
+      "item_id": "three_key_area_detailed_design",
+      "title_zh": "三处重点区域详细设计",
+      "professional_dimension": "规划/城市设计",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "重点区域详细设计"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/site_boundary.geojson",
+        "geometry/land_use.geojson",
+        "geometry/public_space.geojson"
+      ],
+      "metric_refs": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "phase_count"
+      ],
+      "source_ids": [
+        "SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK",
+        "SRC-PROVISIONAL-BOUNDARIES-2026",
+        "SRC-MOHURD-CONTROL-DETAILED-PLANNING"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-CONTROLS-002",
+        "A-DATA-004",
+        "A-ACCESS-013",
+        "A-REVIEW-014"
+      ],
+      "self_check_ids": [
+        "BOUNDARY_TRUST",
+        "KEY_AREAS_TRUST",
+        "LAND_USE_TOPOLOGY",
+        "VISUAL_STATIC",
+        "BILINGUAL_PARITY"
+      ],
+      "evidence_summary_zh": "重点区域章节（第55-65行）逐一写明夏谱台、秋声庭、冬灯台的空间角色、AI场景、人工/撤回门和东西缝合/南北贯通策略；三处重点区 GeoJSON、场景卡空间字段和重点区图形成交叉证据。",
+      "proof": {
+        "proposal": [
+          {"path": "proposal.md", "anchor": "重点区域详细设计#第55-65行", "claim": "三节点各自的概念接口、公共空间动作、人工签发/撤回和东西/南北联系均有逐项叙述。"}
+        ],
+        "structured": [
+          {"path": "geometry/key_areas.geojson", "selector": "$.features[*].properties", "fields": ["area_id", "name_zh", "package_design_role", "geometry_role"], "claim": "PROV-KEY-001至003分别对应众智园、北京AI原点社区和大钟寺AI产业聚集区。"},
+          {"path": "visual/assets/scenario_cards.json", "selector": "$.scenario_cards[*].space", "claim": "12张场景卡以四时应答线、夏谱台、秋声庭、冬灯台等实际空间字段承载场景。"},
+          {"path": "metrics.json", "selector": "$.metrics.key_area_count; $.metrics.ai_pilgrimage_landmark_count; $.metrics.public_component_count", "claim": "重点区、AI地标和公共组件计数均有字段。"}
+        ],
+        "drawings": [
+          {"path": "assets/figures/key-areas.png", "claim": "重点区图实际展示三区两翼与三节点。"},
+          {"path": "assets/figures/scenario-atlas.png", "claim": "场景图实际展示12张场景卡和4项测试协议索引。"}
+        ],
+        "risk_operation": [
+          {"path": "assumptions.json", "selector": "$.assumptions[?(@.id=='A-HERITAGE-003'||@.id=='A-ACCESS-013'||@.id=='A-OWNERSHIP-015')]", "claim": "文保、无障碍和权属需专业确认，节点不是已确定建筑或设施。"}
+        ]
+      }
+    },
+    {
+      "item_id": "renewal_project_list",
+      "title_zh": "更新项目清单",
+      "professional_dimension": "规划/城市设计",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "更新项目清单、实施政策与分期计划"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/site_boundary.geojson",
+        "geometry/land_use.geojson",
+        "geometry/public_space.geojson"
+      ],
+      "metric_refs": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "phase_count"
+      ],
+      "source_ids": [
+        "SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK",
+        "SRC-PROVISIONAL-BOUNDARIES-2026",
+        "SRC-MOHURD-CONTROL-DETAILED-PLANNING"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-CONTROLS-002",
+        "A-DATA-004",
+        "A-ACCESS-013",
+        "A-REVIEW-014"
+      ],
+      "self_check_ids": [
+        "BOUNDARY_TRUST",
+        "KEY_AREAS_TRUST",
+        "LAND_USE_TOPOLOGY",
+        "VISUAL_STATIC",
+        "BILINGUAL_PARITY"
+      ],
+      "evidence_summary_zh": "实施章节实际列出 P1-P7 七个可转化包、三期时间框架、候选参与角色、转化路径和退出动作；operation_packages.json 逐项目登记空间载体、候选责任、前置条件、证据产物、建议KPI、人工替代和停止条件，因此本项按概念交付登记完整记录。",
+      "proof": {
+        "proposal": [
+          {"path": "proposal.md", "anchor": "更新项目清单、实施政策与分期计划#第111-119行", "claim": "正文列出 P1-P7，并为分期写出前置条件、候选负责人、协作方、证据、公开方式和退出动作。"},
+          {"path": "proposal.md", "anchor": "更新项目清单、实施政策与分期计划#第119行", "claim": "年度活动、国际传播和公开题到专业深化的转化路径有文字证据。"}
+        ],
+        "structured": [
+          {"path": "visual/assets/operation_packages.json", "selector": "$.packages[*]", "fields": ["id", "spatial_carrier", "candidate_lead", "prerequisites", "evidence", "kpi_proposal", "stop_and_fallback"], "claim": "P1至P7 每个项目均登记空间载体、候选责任、前置条件、证据、建议KPI和停止/人工替代动作。"},
+          {"path": "geometry/phasing.geojson", "selector": "$.features[*].properties", "fields": ["phase_number", "name_zh", "phase_gate"], "claim": "PH-1至PH-3 提供三期空间占位和概念门槛，与逐项目登记表交叉核对。"},
+          {"path": "metrics.json", "selector": "$.metrics.delivery_package_count; $.metrics.annual_program_count; $.metrics.phase_count", "claim": "项目包、年度活动和阶段计数字段存在。"}
+        ],
+        "drawings": [
+          {"path": "assets/figures/phasing-implementation.png", "claim": "分期图实际表达三期和转化门槛。"}
+        ],
+        "risk_operation": [
+          {"path": "visual/assets/test_protocols.json", "selector": "$.test_protocols[*].evidence; $.test_protocols[*].stop_conditions", "claim": "T1-T4 提供共测证据产物和停止条件，并与 P3/P4/P5/P6 的交付前置条件交叉核对。"},
+          {"path": "risk.json", "selector": "$.risks[*]", "claim": "风险登记提供整体风险与缓解动作；各项目的具体人工替代和停止动作由 operation_packages.json 分行登记。"}
+        ]
+      }
+    },
+    {
+      "item_id": "phasing_implementation",
+      "title_zh": "分期与实施",
+      "professional_dimension": "规划/城市设计",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "更新项目清单、实施政策与分期计划"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/site_boundary.geojson",
+        "geometry/land_use.geojson",
+        "geometry/public_space.geojson"
+      ],
+      "metric_refs": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "phase_count"
+      ],
+      "source_ids": [
+        "SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK",
+        "SRC-PROVISIONAL-BOUNDARIES-2026",
+        "SRC-MOHURD-CONTROL-DETAILED-PLANNING"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-CONTROLS-002",
+        "A-DATA-004",
+        "A-ACCESS-013",
+        "A-REVIEW-014"
+      ],
+      "self_check_ids": [
+        "BOUNDARY_TRUST",
+        "KEY_AREAS_TRUST",
+        "LAND_USE_TOPOLOGY",
+        "VISUAL_STATIC",
+        "BILINGUAL_PARITY"
+      ],
+      "evidence_summary_zh": "实施章节（第111-119行）给出近期1-3年、中期3-5年、远期5-10年及每期核验/轮换/沉淀动作；phasing GeoJSON 以 PH-1/PH-2/PH-3 和 phase_gate 复现三期结构。",
+      "proof": {
+        "proposal": [
+          {"path": "proposal.md", "anchor": "更新项目清单、实施政策与分期计划#第111-119行", "claim": "三期时间框架、官方边界/权属/文保/无障碍/运营责任前置和阶段性退出动作均有明确文字。"}
+        ],
+        "structured": [
+          {"path": "geometry/phasing.geojson", "selector": "$.features[*].properties", "fields": ["phase_number", "name_zh", "phase_gate", "geometry_role"], "claim": "三个阶段要素实际记录近期/中期/远期及概念阶段门槛。"},
+          {"path": "metrics.json", "selector": "$.metrics.phase_count", "claim": "阶段数量有现成指标字段。"},
+          {"path": "assumptions.json", "selector": "$.assumptions[?(@.id=='A-PHASE-010')]", "claim": "阶段被明确限定为概念时间框架，不是开发时序。"}
+        ],
+        "drawings": [
+          {"path": "assets/figures/phasing-implementation.png", "claim": "图件实际展示三期分段与转化门槛。"}
+        ],
+        "risk_operation": [
+          {"path": "risk.json", "selector": "$.risks[*].mitigation_zh", "claim": "风险缓解动作要求在正式资料和专业责任确认后推进。"}
+        ]
+      }
+    },
+    {
+      "item_id": "metrics_recalculation",
+      "title_zh": "指标复算",
+      "professional_dimension": "规划/城市设计",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "指标体系、面积复算与合规矩阵"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/site_boundary.geojson",
+        "geometry/land_use.geojson",
+        "geometry/public_space.geojson"
+      ],
+      "metric_refs": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "phase_count"
+      ],
+      "source_ids": [
+        "SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK",
+        "SRC-PROVISIONAL-BOUNDARIES-2026",
+        "SRC-MOHURD-CONTROL-DETAILED-PLANNING"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-CONTROLS-002",
+        "A-DATA-004",
+        "A-ACCESS-013",
+        "A-REVIEW-014"
+      ],
+      "self_check_ids": [
+        "BOUNDARY_TRUST",
+        "KEY_AREAS_TRUST",
+        "LAND_USE_TOPOLOGY",
+        "VISUAL_STATIC",
+        "BILINGUAL_PARITY"
+      ],
+      "evidence_summary_zh": "指标章节（第123-135行）给出三项核心视觉指标的几何公式、临时低置信度状态和官方 polygon 发布后的复算触发；metrics.json、三类 GeoJSON 和 visual/index.html 具有同名指标字段/数值。",
+      "proof": {
+        "proposal": [
+          {"path": "proposal.md", "anchor": "指标体系、面积复算与合规矩阵#第123-135行", "claim": "site_area_sqm、green_ratio、public_space_ratio 的公式和临时设计模型限制被逐项写明；FAR、高度、密度和道路红线保持 unknown/null。"}
+        ],
+        "structured": [
+          {"path": "metrics.json", "selector": "$.metrics.site_area_sqm; $.metrics.green_ratio; $.metrics.public_space_ratio", "claim": "三项正式视觉指标有具体数值字段。"},
+          {"path": "geometry/site_boundary.geojson", "selector": "$.features[0].geometry", "claim": "site_area_sqm 的 submitted geometry 来源。"},
+          {"path": "geometry/green_space.geojson", "selector": "$.features[*].geometry", "claim": "green_ratio 的 submitted geometry 来源。"},
+          {"path": "geometry/public_space.geojson", "selector": "$.features[*].geometry", "claim": "public_space_ratio 的 submitted geometry 来源。"},
+          {"path": "visual/index.html", "selector": "[data-metric='site_area_sqm'], [data-metric='green_ratio'], [data-metric='public_space_ratio']", "fields": ["data-value"], "claim": "HTML 工作台存在三项同名 data-value 展示。"}
+        ],
+        "drawings": [
+          {"path": "assets/figures/metrics-evidence.png", "claim": "核心指标证据图展示值、状态和复算触发条件。"}
+        ],
+        "risk_operation": [
+          {"path": "assumptions.json", "selector": "$.assumptions[?(@.id=='A-METRIC-012')]", "claim": "三项指标被限定为 provisional design-model outputs。"},
+          {"path": "risk.json", "selector": "$.risks[?(@.risk_id=='R-BOUNDARY')]", "claim": "临时边界精度风险要求官方 polygon 到位后整体替换并复算。"}
+        ]
+      }
+    },
+    {
+      "item_id": "risk_missing_data",
+      "title_zh": "风险与资料缺口",
+      "professional_dimension": "规划/城市设计",
+      "required": true,
+      "status": "complete",
+      "proposal_sections": [
+        "风险、版权与合规说明"
+      ],
+      "drawing_refs": [
+        "drawings/a3-booklet.pdf",
+        "drawings/a0-boards.pdf"
+      ],
+      "geometry_refs": [
+        "geometry/site_boundary.geojson",
+        "geometry/land_use.geojson",
+        "geometry/public_space.geojson"
+      ],
+      "metric_refs": [
+        "site_area_sqm",
+        "green_ratio",
+        "public_space_ratio",
+        "phase_count"
+      ],
+      "source_ids": [
+        "SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK",
+        "SRC-PROVISIONAL-BOUNDARIES-2026",
+        "SRC-MOHURD-CONTROL-DETAILED-PLANNING"
+      ],
+      "assumption_ids": [
+        "A-BOUNDARY-001",
+        "A-CONTROLS-002",
+        "A-DATA-004",
+        "A-ACCESS-013",
+        "A-REVIEW-014"
+      ],
+      "self_check_ids": [
+        "BOUNDARY_TRUST",
+        "KEY_AREAS_TRUST",
+        "LAND_USE_TOPOLOGY",
+        "VISUAL_STATIC",
+        "BILINGUAL_PARITY"
+      ],
+      "evidence_summary_zh": "风险章节（第137-143行）逐类列出边界、控制、文保/权属、市政、AI成熟度、公众接受度、运营责任、双语和版权风险；risk.json 的3条 risks、5类 dimensions、assumptions.json 的15条假设和 constraints GeoJSON 提供可追溯登记。",
+      "proof": {
+        "proposal": [
+          {"path": "proposal.md", "anchor": "风险、版权与合规说明#第137-143行", "claim": "正文明确资料缺口、版权状态、AI数据治理、人工替代、居民意见通道和专业/政府审定边界。"}
+        ],
+        "structured": [
+          {"path": "risk.json", "selector": "$.risks[*]", "fields": ["risk_id", "category", "severity", "description_zh", "mitigation_zh"], "claim": "R-BOUNDARY、R-CONTROLS、R-DATA 三条风险均有描述和缓解字段。"},
+          {"path": "risk.json", "selector": "$.dimensions[*]", "fields": ["id", "note", "mitigation", "human_review"], "claim": "数据隐私、无障碍、文保等维度保留人工复核说明。"},
+          {"path": "assumptions.json", "selector": "$.assumptions[*]", "claim": "15条假设覆盖边界、控制、数据、品牌、案例、阶段、指标、权属和复核状态。"},
+          {"path": "geometry/constraints.geojson", "selector": "$.features[*].properties", "fields": ["constraint_status", "usage_note"], "claim": "临时边界约束和遗产线索分别标注 unknown/to_verify，且声明非红线或文保范围。"},
+          {"path": "visual/assets/rights_ledger.json", "selector": "$.entries[*]; $.external_asset_rule", "claim": "原创资产许可与不复制外部图片、Logo、肖像、字体和企业标识的规则有登记。"}
+        ],
+        "drawings": [
+          {"path": "assets/figures/metrics-evidence.png", "claim": "图件中的指标状态与复算边界和风险说明一致。"}
+        ],
+        "risk_operation": [
+          {"path": "visual/assets/scenario_cards.json", "selector": "$.boundary", "claim": "场景卡统一记录必要字段、统计匿名化、人工复核和不过度监控边界。"},
+          {"path": "visual/assets/test_protocols.json", "selector": "$.test_protocols[*].human_gate; $.test_protocols[*].exit", "claim": "测试协议记录人工门和退出条件。"}
+        ]
+      }
+    }
+  ]
+}
