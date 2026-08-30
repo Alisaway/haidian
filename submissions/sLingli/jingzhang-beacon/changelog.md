@@ -1,5 +1,24 @@
 # 方案迭代记录
 
+## v1.6.2 - 2026-08-30
+
+### 改动摘要（按官方 AI 评审表达完整度阻断项修复）
+
+- 五组必选图件（中英双语共 10 张）整版重制：右侧说明列采用实测宽度自动换行、图例标题与括注按顺序排版，消除 `land-use-structure.en.png`、`mobility-bluegreen.en.png` 的右缘裁切与 `site-overview`、`key-areas` 的图例标题重叠；指标卡与证据链盒子改为按内容测高，文字不再溢出边框。
+- 数据一致性修正：用地图例 0803/0804 名称对齐 `land_use.geojson` 权威值（0803 文化用地、0804 教育用地），原中英图例互换的口径一并纠正；图例补充各用地分类单元数。
+- A3 文册与 A0 展板（中英共 4 个 PDF）重建：保持 12 页文册、7 块展板的既有结构逐页重排；地图改为按地块纵横比的矢量 SVG；A0 版式按版面尺度放大；更新项目、供给规则、指标大数等版面内容补齐；页眉页脚与临时边界披露保持原口径。
+- CJK 字体内嵌：`report/proposal.html`、`report/proposal.en.html`、`visual/index.html`、`visual/index.en.html` 及全部 PDF 按 SIL OFL 1.1 内嵌 Noto Sans SC 400/700 子集（base64 woff2、data URI、族名 HaidianEmbed、不使用保留名），无 CJK 字体的环境下不再出现方框；字体来源与限制登记于 `sources.json`（FONT-NOTO-SANS-SC）与 `report/copyright_statement.md`。
+- 图件、HTML、PDF 全部由同一组 GeoJSON、metrics 与矩阵派生；provisional 几何与 unknown 控规指标披露口径不变。
+
+### 采纳反馈
+
+- 逐条关闭评审"当前版本逐维修复项"3 项：中文离线渲染字体、英文静态图件裁切与重叠、修复传播至关联 HTML/PDF 并刷新哈希与自检。
+
+### 暂未采纳或待复核事项
+
+- `simulation.json` 仍不提供：48 小时故障演练只有设计剧本（未执行），无可复算任务台账。
+- 同前：官方边界与控规指标缺失，待 official 数据发布后整包重算。
+
 ## v1.6.1 - 2026-08-29
 
 ### 改动摘要（按官方 AI 评审意见修复）
