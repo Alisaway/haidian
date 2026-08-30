@@ -1,5 +1,20 @@
-# Copyright and Rights Statement
+# 版权与素材说明 / Copyright and Asset Statement
 
-本包使用公开仓库资料、临时边界和团队原创概念图件，未嵌入未授权现场照片、商业地图或第三方 Logo。PNG 图件由本地概念源文件渲染，是解释层，不是现场照片或官方图纸。HTML、PNG 和 PDF 统一使用 Noto Sans CJK SC 字符子集；上游固定到 `notofonts/noto-cjk@f8d157532fbfaeda587e826d4cd5b21a49186f7c`，依据 SIL Open Font License 1.1 使用。HTML 将 WOFF2 子集作为 `data:` 资源内嵌，不请求远程字体，也不依赖评审设备的系统字体；PNG 与 PDF 已将文字栅格化。许可与源文件链接、固定版本和 SHA-256 见 `sources.json` 的 `FONT-NOTO-SANS-SC-20260828`。H&S 字标为团队原创文字标识。正式提交前如加入现场资料、其它字体、Logo 或 CAD/GIS，必须补充来源、许可、版本和 SHA-256 记录。
+## 原创与派生范围
 
-All figures are conceptual explanatory diagrams. They do not represent official boundaries, approved plans, site surveys or government commitments.
+- `assets/figures/logo-64k-jingzhang.png` 与 `assets/figures/hero-64k-concept.png` 为本次投稿专用的人机共创资产。参赛者于 2026-08-30 确认提示词由其提供或授权，并授权用于本次开源征集、GitHub 投稿、官方展陈及必要的裁切、缩放与版式派生。
+- `assets/figures/cover-64k*.png`、A3/A0 文件及正文插图为上述资产与包内数据的排版或栅格派生物。
+- 其余图件由本团队根据包内 GeoJSON、metrics、矩阵、方案文本与已登记来源重新绘制；不复制参考投稿的图件、摄影、品牌或网页布局。
+- Noto Sans SC 投稿字符子集以内嵌 WOFF2 data URL 写入两套视觉与报告 HTML，随附 `assets/media/OFL-NotoSansSC.md`（SIL Open Font License 1.1）；用于解决离线中文显示，不依赖远程字体请求。
+
+## 逐项台账
+
+完整的提示词、生成时间、生成服务、输入、人工确认、后处理、文件哈希、字体来源与许可见 `assets/media/asset-rights-ledger.md`。相关来源记录同时写入 `sources.json`。
+
+## 许可边界
+
+本参赛包沿用 `COMMUNITY-DISPLAY-ONLY` 标记。参赛者对本次征集所需的公开展示与派生排版作出授权确认；该确认不等于官方背书、商标注册结论、独占权保证，也不自动覆盖本征集以外的商业再许可。AI生成素材仍应按生成服务条款与适用法律使用。
+
+## English summary
+
+The logo and hero were generated specifically for this submission from disclosed text-only prompts with no reference images. On 30 August 2026, the participant confirmed prompt authority and authorized their use in the open call, GitHub submission, official display, cropping, scaling and layout derivatives. The local Noto Sans SC subset is embedded in the offline HTML under SIL OFL 1.1. The full per-asset ledger is `assets/media/asset-rights-ledger.md`. This statement is not official endorsement, trademark registration advice, exclusivity warranty or blanket commercial relicensing.

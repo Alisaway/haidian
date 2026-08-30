@@ -1,5 +1,5 @@
 ---
-title: "Jingzhang Everyday Commons: A Public Path from Seeing AI to Sharing AI"
+title: "64K × Jingzhang: One Bus, Two Openings — From Railway to Public AI Interface"
 author_github: "longkinght"
 team_name: "H&S"
 co_creation: "two-person human–AI co-creation team"
@@ -8,74 +8,87 @@ translation_of: "proposal.md"
 proposal_format_version: "2"
 bilingual_contract_version: "1"
 license: "COMMUNITY-DISPLAY-ONLY"
-summary: "Three stations and five segments form an understandable, optional, reversible and reviewable everyday AI path, using the Co-Track Protocol and Human–AI Symbiotic Scenarios to connect technology supply, public use and feedback."
+summary: "Using the verified 1994 64K full-function Internet connection as its factual anchor, the proposal translates railway opening and network openness into three stations, five segments and a reversible public-AI interface."
 tracks: ["ai-traffic-walkability", "civic-agent-governance", "enterprise-services-ecosystem"]
 scenarios: ["ai-cultural-guide", "ai-traffic-walkability", "enterprise-service-copilot", "public-safety-operations-review"]
-iteration: "v1.2"
+iteration: "v2.0"
 ---
 
-# Jingzhang Everyday Commons: A Public Path from Seeing AI to Sharing AI
+# 64K × Jingzhang: One Bus, Two Openings — From Railway to Public AI Interface
 
 **Co-creation team: H&S (two co-creators)**
 
-> **JINGZHANG EVERYDAY AI COMMONS** is not another AI showroom. It is an everyday urban path where people can understand, choose, use, refuse and collectively review AI. Every AI public-service path keeps a visible and discoverable human/offline path; every released AI has a frozen stop threshold and an auditable exit record. This is the **Co-Track Protocol - Shared track, every way works**. This is an open co-creation proposal, not a statutory plan; all spatial moves are conceptual suggestions for professional teams to deepen.
+> **64K × JINGZHANG** is not another AI showroom. It translates “opening a route” into “opening a public interface.” The 1909 Jingzhang Railway represents an industrial-era act of autonomous route-making. On 20 April 1994, NCFC used a 64K international leased line to provide China with full-function Internet access [source:HISTORY-NCFC-64K-CAS-20240424]. The 2026 task is to let public AI enter everyday life while remaining understandable, optional, pausable and reviewable. Three stations and five segments carry the spatial system; the **Dual-Mode Bus Protocol** carries governance: one bus, with AI and human/offline modes in parallel, and rollback available at any time. This is an open co-creation proposal, not a statutory plan.
 
-### Reviewer First Look
+![64K × Jingzhang concept visual: retained rail heritage, a public green spine and visible human service](assets/figures/hero-64k-concept.png)
 
-- **One mechanism:** three stations and five segments turn “seeing AI” into optional, reversible public use, with the Co-Track Protocol keeping AI and human/offline paths in parallel.
-- **Strongest evidence:** the package defines ten Human–AI Symbiotic Scenarios, three key-area spatial anchors and a scenario–space–responsibility–metric–stop-condition loop.
-- **Largest limitation:** the boundary, operators, baseline performance and implementation permissions remain provisional and require official data and human review.
-- **Next verification:** test S01 first, publish the result and stop record, then decide whether S06/S07 should proceed.
+*Concept visual only. It communicates spatial character and public-interface intent; it is not a site photograph, existing-condition record or built-outcome promise.*
+
+- **One mechanism:** three stations and five segments turn “seeing AI” into optional, reversible public use, with the Dual-Mode Bus Protocol keeping AI and human/offline paths in parallel.
 
 ## Design Basis and Source List
 
-The proposal uses the qualification announcement and site package as its scope basis [source:DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509] [source:SITE-PACKAGE], and the agent open-call taskbook as its co-creation and six-task basis [source:SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK] [standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK]. Urban-design, regulatory-plan-depth and land-use references come from the local standards snapshot [standard:MOHURD-URBAN-DESIGN-MEASURES] [standard:MOHURD-CONTROL-DETAILED-PLANNING] [standard:MNR-LAND-USE-CLASSIFICATION-GUIDE].
+The official open-call announcement, public site package and agent taskbook define scope and requirements [source:DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509] [source:SITE-PACKAGE] [source:SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK]. Exact official boundaries are not yet public, so all package geometry remains explicitly provisional and cannot be used as a statutory boundary or approval basis [source:DATA-SRC-PROVISIONAL-BOUNDARIES-20260605]. No field visit or interview is claimed.
 
-No precise official boundary is publicly available. This package therefore uses the repository’s provisional boundary, marked `provisional_constraint`; it is not a redline, approval basis or precise-area basis [source:DATA-SRC-PROVISIONAL-BOUNDARIES-20260605] [data:geometry/site_boundary.geojson#SITE-001]. All layers, metrics, drawings and HTML must be recalculated when official polygons are supplied [depth:existing_conditions_diagnosis].
+## 64K Dual Origin: Fact, Metaphor, Spatial Translation
 
-This is a global online call. The team does not present unmade site visits or interviews as facts. Online evidence identifies questions for later field verification: official and primary public sources come first; traceable institutional sources follow; maps, public photographs and comments only surface items to verify. The method and ledger are `assets/media/network-evidence-method.md` and `assets/media/network-evidence-ledger.md`.
+The historical starting point is **20 April 1994, when NCFC used a 64K international leased line to provide China with full-function Internet access** [source:HISTORY-NCFC-64K-CAS-20240424]. A connection becomes infrastructure only when people can use, review and maintain it.
 
-Future population, ridership-scale, POI, control-plan and accessibility inputs follow `assets/media/public-data-retrieval-list.en.md`: record background definitions and pending checks only, and do not state a predicted benefit before human verification.
+![64K × JINGZHANG identity mark: two tracks converging into K](assets/figures/logo-64k-jingzhang.png)
 
-![Three-station/five-segment overview](assets/figures/site-overview.en.png)
+> The mark is a participant-supplied concept identity asset used to explain the design language; it is not presented as official authorization or a final brand lockup.
 
-## Three-Level Scope Framework
+64KB memory, the 8×8 matrix, Demoscene and ROM / RAM / I/O form a **design-metaphor layer**. They turn indexing, reuse and public interfaces under constrained resources into a readable spatial grammar. The 8×8 field is an address table that can keep evolving: ten taskbook scenarios enter the first experience set, while addresses 11–64 form one open field awaiting future public tasks, spatial interfaces and accountable roles.
 
-The coordinated research area is approximately 43.6 km²; the overall design area is approximately 11.4 km²; and the three key areas total approximately 368.4 ha [source:DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509] [metric:site_area_research_sqm] [metric:key_area_total_sqm].
+### Three 64K scales: from minimum unit to an evolving system
 
-The three levels carry different design depths: regional research defines the ecosystem and collaboration logic; overall design translates that logic into structure, renewal, mobility and blue-green space; key-area design tests nodes, scenarios and phasing. All spatial conclusions retain a recalculation path because the boundary remains provisional [data:geometry/key_areas.geojson#KEY-001] [depth:three_level_scope_framework].
+The 64KB, 64 sqm, 64-hour and 8×8 ideas in the concept document are not four engineering specifications. They are a grammar for testing small, reusable units before expanding them. 64KB points to a computing origin; 64 sqm can be an optional concept scale for a minimum prototype lab; 64 hours can be an optional duration for a controlled co-creation sprint; and 8×8 turns scenarios into a public address table. Each remains subject to formal design, property, event-permit and safety confirmation, and none is a statutory area, operating promise or performance metric in this package.
 
-![Three-level scope and public path](assets/figures/land-use-structure.en.png)
+This grammar gives the “64K innovation rule” a spatial consequence: test one reversible public experience with an entrance, human equivalent, accountable role and stop condition before replicating it across stations. `64K → 256K → 1M` is an optional concept gradient for expanding reuse and coordination complexity, not a forecast of building area, investment or industrial scale.
 
-## Coordinated Research Area: Industry and Future City Research
+| Dual-origin language | Spatial translation | Design responsibility |
+|---|---|---|
+| Railway “route opening” | Three stations, five segments, retained traces and continuous accessible interfaces | Secure the ordinary route before adding intelligent services |
+| Network “openness” | Source registry, version history, public status boards and reusable protocols | Every proposal carries a source, version, stop threshold and fallback |
+| ROM / Zhongzhiyuan | Verification kernel: rules, standards, evidence and safety tests | No unverified service enters public use |
+| RAM / AI Origin Community | Civic memory field: learning, care, feedback and daily services | A low-digital-skill user can still complete the same task |
+| I/O / Dazhongsi | City interface: first use, display, consumption and translation | AI advises; a named human role releases |
 
-The single problem is: **the AI innovation belt has technology, industry and scenario supply, but ordinary people face a break between seeing AI and first using, refusing, correcting and jointly verifying it.** The single spatial move is three stations and five segments; the single public mechanism is the **Human–AI Symbiotic Scenario**—a public-service scenario where AI and human/offline paths remain available in parallel. “Symbiotic” does not make AI mandatory or grant it final authority; informed choice, refusal, human takeover, appeal, stopping and exit remain part of every scenario.
+The metaphor layer may evolve while `geometry/`, the three core metrics and matrix schemas remain frozen. Formal geometry later triggers a package-wide recalculation.
 
-A Human–AI Symbiotic Scenario must answer five questions together: what **same public task** both paths complete; what AI reads and produces; how the human/offline path completes the task after refusal or failure; where both paths form **shared space** at an entrance, sign, desk, status board or exit element; and who stops and restores AI against which threshold. An AI-only directory, a disclaimer that merely says “refer to staff if needed”, and an invisible back-office AI process are counterexamples. The complete test is in `assets/media/human-ai-symbiotic-scenario-definition.md`.
+### Taskbook five-function wording × 64K design-translation crosswalk
 
-The three positions are the Centennial Jingzhang Cultural Belt, the Urban AI Everyday-Life Experience Belt and the AI Integration Innovation Belt. The five functions are full-stack AI autonomy, a world-class AI ecosystem, AI+ scenario enablement, an intelligent active city and an open platform for AI governance and public value [standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK] [depth:overall_spatial_structure].
+| Exact Chinese taskbook wording | 64K design translation (not taskbook wording) | Three zones + two wings | Three stations, five segments and scenes | Figure / record |
+|---|---|---|---|---|
+| **AI全栈自主创新体系** (full-stack AI autonomous innovation system) | Foundational research and original innovation; “the first line of code from zero to one” | Zhongzhiyuan AI Autonomous Innovation Acceleration Area | ROM verification station; S05 enterprise service, S06 first AI use, S07 low-speed observation | `key-area-spatial-anchors.en.png`; `s01-s06-s07-transfer-validation.md` |
+| **世界级AI创新生态** (world-class AI innovation ecosystem) | AI talent community and translation; “the first executable program inside 64KB” | AI Origin Community + Zhongguancun Technology Service Wing | RAM commons; S03 community service, S04 learning translation, S08 health navigation, S10 feedback | `three-zones-two-wings-network.en.png`; `regional-coordination-interfaces.en.png` |
+| **AI+场景赋能新范式** (new paradigm of AI+ scenario enablement) | Public experience; “64 pixels compose a first digital image” | Xiaoyuehe Scenario Wing + Jingzhang Heritage Park | Shared dual-mode bus across all stations and segments; S01–S10 retain an AI-advice path and an equivalent human/offline path | `scenario-space-responsibility-gate.en.png`; `co-track-protocol.en.png` |
+| **智能化AI活力城市** (intelligent and vibrant AI city) | Industry landing plus everyday service; “demo to product” | Dazhongsi + AI Origin Community + Xiaoyuehe Wing | I/O translation + RAM commons; S01, S02, S03, S04, S08, S09, S10 | `mobility-bluegreen.en.png`; `site-overview.en.png` |
+| **AI治理全球话语权** (global voice in AI governance) | Technology service and global links; “driver and API” | Zhongzhiyuan + Zhongguancun Technology Service Wing | ROM verification and regional interfaces; version, source, release, stop and exit records | `implementation-closure.en.png`; `regional-coordination-interfaces.en.png` |
 
-The name is Jingzhang Everyday Commons. Its logo direction is **two continuous woven service paths with human-control nodes**: indigo carries the AI path and warm orange carries the human/offline path, while both share one service base. Teal nodes make human choice, anytime switching and traceable return visible. The public line is “Shared track, every way works”; the formal line is “Move together, with a way forward and back”. This is a conceptual identity direction, not an authorized final brand asset [source:SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK].
+The first column preserves the exact `five_functions_zh` strings in the taskbook. Only the later columns are this proposal’s design translation. The metaphors do not create engineering metrics or claim that “world-class” or “global voice” outcomes have already been achieved.
 
-The proposal uses eight main cases with evidence grades A or A-. They remain a background reference layer, not evidence for Jingzhang boundaries, regulatory controls, investment, operators or implementation commitments [source:GLOBAL-CASE-DEEP-RESEARCH-20260811] [metric:ecosystem_case_count]. The transfer is limited to public-space networks, permanent institutional interfaces, staged testing, public registers, scope reduction and stoppable governance. We do not copy names, buildings, visual identity, company lists or operating models.
 
-The evidence register uses the official Kendall Square open-space network, Cortex operator strategy, and current King’s Cross estate-management / facial-recognition policy pages for mechanism comparison only [source:CASE-KENDALL-OPENSPACE-20260827] [source:CASE-CORTEX-STRATEGIC-20260827] [source:CASE-KINGS-CROSS-ESTATE-20260827].
+## Identity and Public Interface
 
-The current City of Toronto Quayside page, EPA Paris-Saclay innovation page and Flinders University’s completed FLEX-trial page support comparisons of re-procurement/fairness monitoring, large-scale urban testing and human takeover. They do not support Jingzhang ridership, safety, construction or investment forecasts [source:CASE-QUAYSIDE-CITY-20260827] [source:CASE-PARIS-SACLAY-INNOVATION-20260827] [source:CASE-TONSLEY-FLEX-20260827].
+The identity is consistently **64K × JINGZHANG**, supported by **One bus, two openings**. The participant confirmed and authorized the newly generated mark: an orange railway track and cyan circuit trace retain a narrow gap at the K / × to express parallel coexistence. Two continuous service paths share one public base: signal orange represents the human/offline path, safe cyan represents AI advice, and carbon black holds the common infrastructure. Prompts, generation service, inputs, post-processing, permission boundaries and file hashes for the mark, hero, font and derived figures are disclosed in `assets/media/asset-rights-ledger.md` [source:ASSET-AI-LOGO-20260830] [source:ASSET-AI-CONCEPT-HERO-20260830] [source:FONT-NOTO-SANS-SC-SUBSET-20260830].
+## Mechanism Protocol: Dual-Mode Bus Protocol
 
-Barcelona City Council’s description of the 22@ innovation hub, the City of Helsinki AI Register and STATION F’s official campus-zone description support comparisons of knowledge transfer, public-AI disclosure and a professional resource desk. None directly proves public access, statutory accountability or operating feasibility for Jingzhang [source:CASE-22BARCELONA-SCIENCE-20260827] [source:CASE-HELSINKI-AI-REGISTER-20260827] [source:CASE-STATIONF-CAMPUS-20260827].
-
-## Mechanism Protocol: Co-Track Protocol - Shared Track, Every Way Works
-
-The Human–AI Symbiotic Scenario is not a city platform that gathers every data stream, nor a digital interface that replaces human service. This transferable public-service protocol is the **Co-Track Protocol**: **Shared track, every way works**. AI and human services share an entrance, interface, feedback loop and minimum data base. Teal human-control nodes make choice explicit, and every AI path has an institutional return loop to a discoverable human equivalent. Public or human-verified input enters AI advice; a named role decides release; spatial interfaces change together; and error triggers human handover, pause, fallback or restoration. The AI interface may advise but may not issue the final release. The formal summary is “Move together, with a way forward and back” [depth:overall_spatial_structure] [source:SCENARIO-GUARDRAILS-20260812].
+The Human–AI Symbiotic Scenario is not a city platform that gathers every data stream, nor a digital interface that replaces human service. This transferable public-service protocol is the **Dual-Mode Bus Protocol**: **One bus, dual modes; rollback anytime**. AI and human services share an entrance, interface, feedback loop and minimum data base (parallel bus). The teal mode-switch node makes choice explicit, and every AI path has an institutional rollback and exit channel to a discoverable human equivalent. Public or human-verified input enters AI advice; a named role decides release; spatial interfaces change together; and error triggers human handover, pause, fallback or restoration. The AI interface may advise but may not issue the final release [depth:overall_spatial_structure] [source:SCENARIO-GUARDRAILS-20260812].
 
 Three counterexamples define the boundary: an AI-only directory has no ordinary path for the same task; “ask staff if necessary” has no discoverable human entry; and a back-office algorithm that produces no visible spatial change has no shared space. S01 currently uses a deterministic rule version, not a large-model simulation. If model inference is introduced later, the model version, input source, evaluation benchmark and human decision must enter the ledger, while algorithmic output still cannot release a public route directly. Acceptance asks whether an error stops the system and whether refusal preserves the task—not whether the interface appears clever.
 
 Every scenario follows a “scenario–space–responsibility–metric–stop condition” loop: define one public task, assign an entrance, wayfinding element, desk or status board, keep the accountable operator and sign-off role pending confirmation, register design guarantees and process checks before performance baselines, and pause AI at a frozen threshold so the human path and exit archive remain available [depth:three_key_area_detailed_design] [metric:non_ai_path_coverage].
 
-There is always a human path beside AI. The same loop also enters the Co-Track Protocol - Version Strata Honor Display System: it records review, pause, takeover and exit as traceable versions rather than claiming an unverified outcome.
+There is always a human path beside AI. The same loop also enters the 64K Version Strata Honor Display System: it records review, pause, takeover and exit as traceable versions rather than claiming an unverified outcome.
 
 ![Scenario, Space, Responsibility, Metric, and Stop Condition](assets/figures/scenario-space-responsibility-gate.en.png)
+
+## Three-Level Scope Framework
+
+The study scope is approximately 43.6 km², the overall design scope approximately 11.4 km², and the three announced key areas total 368.4 ha [source:DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509] [metric:site_area_research_sqm] [metric:key_area_total_sqm]. The study level addresses ecosystem and regional coordination; the overall-design level translates the protocol into spatial structure; and the key-area level defines interfaces, scenarios and staged validation. All package geometry remains provisional until formal polygons arrive [depth:three_level_scope_framework].
+
+![Three-level scope and three-station overview](assets/figures/site-overview.en.png)
 
 ## Overall Design Area: Urban Renewal and Regulatory-Plan-Level Urban Design
 
@@ -87,15 +100,15 @@ The taskbook also names Beiwei Community, Future Science City, Huairou Science C
 
 | Geography | Proposed link to stations/wings | Proposed exchange | Spatial or operating interface | Evidence and confirmation gap |
 |---|---|---|---|---|
-| Beiwei Community | AI Origin Community / Commons | Community needs and age-friendly / low-digital-skill service feedback | Symbiotic Marker template, human-fallback list and community reading interface | Named by taskbook; boundary, participants and collaboration mode unconfirmed |
+| Beiwei Community | AI Origin Community / Commons | Community needs and age-friendly / low-digital-skill service feedback | 64K Scene Marker template, human-fallback list and community reading interface | Named by taskbook; boundary, participants and collaboration mode unconfirmed |
 | Future Science City | Zhongzhiyuan / Verification | Public explanation of research, testable scenes and failure records | Evidence Yard, capability notice and controlled-validation register | Named by taskbook; institutions, projects, data and permissions unconfirmed |
 | Huairou Science City | Zhongzhiyuan + Zhongguancun Technology Services Wing | Translation of science-facility outcomes, public understanding and open methods | Bilingual evidence brief, pre-visit notice and human interpretation interface | Named by taskbook; access, rights and security boundaries unconfirmed |
 | Beijing Economic-Technological Development Area (BDA) | Dazhongsi / Conversion | First product use, manufacturing-scene feedback and safe exit rules | Reversible trial table, version-status sign and incident receipt | Named by taskbook; products, site, permits and accountable roles unconfirmed |
-| Beijing-Tianjin-Hebei | Three stations / collaboration network | Reusable protocols, bilingual cases and public-AI-space methods | Everyday Commons Week, open method kit and Retreat Archive exchange | Named by taskbook; city partners, cycle, funding and publication mechanism unconfirmed |
+| Beijing-Tianjin-Hebei | Three stations / collaboration network | Reusable protocols, bilingual cases and public-AI-space methods | 64K Everyday Week, open method kit and Retreat Archive exchange | Named by taskbook; city partners, cycle, funding and publication mechanism unconfirmed |
 
 ![Regional collaboration interface matrix: five external geographies, proposed interfaces and confirmation gaps](assets/figures/regional-coordination-interfaces.en.png)
 
-![Three Zones, Two Wings, and the Co-Track Network](assets/figures/three-zones-two-wings-network.en.png)
+![Three Zones, Two Wings, and the Dual-Mode Bus Network](assets/figures/three-zones-two-wings-network.en.png)
 
 Renewal follows the sequence understand, test at low risk, review in public, and then decide whether to deepen. Retain, renovate, reversible addition and demolition are options to be evaluated after building, ownership, structural and public-interest studies [depth:retain_renovate_demolish].
 
@@ -133,7 +146,7 @@ The three industry validation scenarios are S05, S06 and S07, testing service tr
 
 ## Agent.1–Agent.6 Task Coverage: Six Requirements on One Spatial Spine
 
-Task coverage does not become another slogan set. Agent.1’s name and logo use two switchable paths; Agent.2’s three positions, five functions and eight case transfers define the ecosystem and research scale; Agent.3’s five personas, ten Human–AI Symbiotic Scenarios and the S05–S07 industry validations enter the three stations and five segments. Agent.4’s public space and landmarks are carried by Evidence Yard, Symbiotic Living Room, First-Use Concourse and the **Co-Track Protocol - Version Strata** honor display system. Agent.5 joins the three reachable landmarks to the Jingzhang cultural narrative; Agent.6 uses three-stage programming, a public-AI register, a failure-case library and an open method kit for long-term operations. The machine mapping remains in the compliance matrix; the narrative keeps the spatial result a reviewer needs to understand [standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK] [depth:agent_taskbook_response].
+Task coverage does not become another slogan set. Agent.1’s name and logo use two switchable paths; Agent.2’s three positions, five functions and eight case transfers define the ecosystem and research scale; Agent.3’s five personas, ten Human–AI Symbiotic Scenarios and the S05–S07 industry validations enter the three stations and five segments. Agent.4’s public space and landmarks are carried by Evidence Yard, Symbiotic Living Room, First-Use Concourse and the **64K Version Strata** honor display system. Agent.5 joins the three reachable landmarks to the Jingzhang cultural narrative; Agent.6 uses three-stage programming, a public-AI register, a failure-case library and an open method kit for long-term operations. The machine mapping remains in the compliance matrix; the narrative keeps the spatial result a reviewer needs to understand [standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK] [depth:agent_taskbook_response].
 
 ## Land Use, Building Scale, and Retain-Renovate-Demolish Strategy
 
@@ -151,32 +164,32 @@ Public-service priorities are enterprise windows, community desks, human health 
 
 ## Blue-Green Network, Public Space, and Urban Character
 
-The heritage park, Xiaoyue River and community spaces form the experience base. The first component library contains Symbiotic Markers, human-route desks, evidence benches, accessible wayfinding spines, low-speed observation lines, review posts, reversible trial tables and version-status boards [data:geometry/public_space.geojson#PS-001] [depth:blue_green_public_space].
+The heritage park, Xiaoyue River and community spaces form the experience base. The first component library contains 64K Scene Markers, human-route desks, evidence benches, accessible wayfinding spines, low-speed observation lines, review posts, reversible trial tables and version-status boards [data:geometry/public_space.geojson#PS-001] [depth:blue_green_public_space].
 
 The three AI pilgrimage landmarks are Evidence Yard, Symbiotic Living Room and First-Use Concourse. They are reachable, understandable and reviewable public nodes, not assumed large buildings or approved permanent installations [metric:ai_landmarks].
 
-The cultural narrative translates self-built railway engineering into autonomous innovation, connection into understandable interfaces, and the switchback into test-feedback-rechoice. Wayfinding is layered as an entrance board with the co-track diagram; station boards showing the current AI/human mode; segment and Symbiotic Marker signs; a **control-node sign** showing the human-equivalent entrance, pause/rollback history and last human-review date; and a feedback sign. Historical facts, site names, fonts and images still require source and rights review [source:SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK].
+The cultural narrative translates self-built railway engineering into autonomous innovation, connection into understandable interfaces, and the switchback into test-feedback-rechoice. Wayfinding is layered as an entrance board with the dual-mode bus diagram; station boards showing the current AI/human mode; segment and 64K Scene Marker signs; a **mode-switch sign** showing the human-equivalent entrance, pause/rollback history and last human-review date; and a feedback sign. Historical facts, site names, fonts and images still require source and rights review [source:SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK].
 
-## Honor Display System: Co-Track Protocol - Version Strata
+## Honor Display System: 64K Version Strata
 
 The proposal replaces a one-off monument with annually layered **Version Strata**. Each publicly reviewed public-AI protocol leaves a touchable version marker and a reviewable scenario sign. A service that fails review or exits voluntarily enters a **Retreat Archive**, recording the offline public good it leaves behind. **We remember not only the AI that was released, but also the AI that was successfully switched off.**
 
 | Honor-display output | Spatial anchor | Visible information and review rule |
 |---|---|---|
-| Agent contribution honor wall | Symbiotic Marker at each scenario entrance | Agent/GitHub, selection year, protocol version, last human-review date and pause/takeover count; a failed annual review removes the live sign but preserves the record |
+| Agent contribution honor wall | 64K Scene Marker at each scenario entrance | Agent/GitHub, selection year, protocol version, last human-review date and pause/takeover count; a failed annual review removes the live sign but preserves the record |
 | AI milestones | “64K Timetable” version milestones in the heritage-park segment | 1909 railway opening and one annual public-AI service version; the 1994 64K event and its spatial relationship require historical and site verification before display |
 | Open-source results node | Evidence Yard at Zhongzhiyuan | Rights-cleared forkable protocols, state-machine source, method kits and failure cases |
 | Global developer honor wall | First-Use Concourse “Fellow Travellers Register” at Dazhongsi | Bilingual names, contribution links and a global reuse map, updated annually with version history |
 
-The four nodes distribute across the three stations and five segments. Everyday Commons Week publishes a new version, refreshes signs and milestones, and releases the Retreat Archive / Offline Dividend Ledger [metric:honor_display_node_count]. Every display carries a version, review date and source. None is an approved construction conclusion; form, location and physical delivery require selection, professional design and approval [standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK].
+The four nodes distribute across the three stations and five segments. 64K Everyday Week publishes a new version, refreshes signs and milestones, and releases the Retreat Archive / Offline Dividend Ledger [metric:honor_display_node_count]. Every display carries a version, review date and source. None is an approved construction conclusion; form, location and physical delivery require selection, professional design and approval [standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK].
 
-![Co-Track Protocol with two woven paths, human-control nodes and version strata](assets/figures/co-track-protocol.en.png)
+![Dual-Mode Bus diagram: parallel bus, mode switch and version strata](assets/figures/co-track-protocol.en.png)
 
 ## Renewal Projects, Implementation Policy, and Phasing
 
 The implementation list is organized into three conceptual stages: Stage 1 “source clearing and baseline”, Stage 2 “low-risk commons use”, and Stage 3 “controlled validation and reuse”. Stage 1 establishes network evidence, provisional boundaries, ordinary-service, accessibility and night/weekend baselines; Stage 2 prioritizes cultural guidance, accessible wayfinding, community-service navigation, paired AI/human routes and public feedback; Stage 3 selects industry, community and public-experience scenes for controlled validation and only reuses outputs with sources, feedback and exit records. Four internal release gates cover source clearing, public-AI registration, human fallback, cross-station review and brand publication. Each stage includes human review, pause, rollback, range shrink, re-evaluation, scale-up and public feedback [depth:renewal_project_list] [depth:phasing_implementation] [source:GLOBAL-CASE-DEEP-RESEARCH-20260811].
 
-S01 is the sole first release slice and now has a 100-day **pilot-ready design**. Days 1–20 establish sources and the ordinary-service baseline; days 21–45 test choice, version conflict, human referral and fallback through 24 synthetic cases; days 46–75 assemble specifications and responsibilities for a Symbiotic Marker, fixed route map, paper route, human/phone help, status board and anonymous receipt; days 76–100 only prepare proposed limited-use, pause, restoration and exit scripts. Its loop is “public/human-verified input—AI suggestion—review by a named human role—synchronized spatial interface—anonymous receipt—correction or fallback”. All actual performance remains unmeasured, and real use cannot begin without site, accessibility, privacy-safety and accountable-entity sign-off. The complete design is `assets/media/s01-100-day-pilot-ready-package.md`; its state machine is `assets/media/s01-symbiotic-protocol.en.md`.
+S01 is the sole first release slice and now has a 100-day **pilot-ready design**. Days 1–20 establish sources and the ordinary-service baseline; days 21–45 test choice, version conflict, human referral and fallback through 24 synthetic cases; days 46–75 assemble specifications and responsibilities for a 64K Scene Marker, fixed route map, paper route, human/phone help, status board and anonymous receipt; days 76–100 only prepare proposed limited-use, pause, restoration and exit scripts. Its loop is “public/human-verified input—AI suggestion—review by a named human role—synchronized spatial interface—anonymous receipt—correction or fallback”. All actual performance remains unmeasured, and real use cannot begin without site, accessibility, privacy-safety and accountable-entity sign-off. The complete design is `assets/media/s01-100-day-pilot-ready-package.md`; its state machine is `assets/media/s01-symbiotic-protocol.en.md`.
 
 ## S01 100-Day Package Acceptance: Two Indicator Types, One Red Line
 
@@ -214,7 +227,7 @@ The implementation closure compresses the three industry-validation scenes into 
 
 ![Scene, space, role, indicator and stop-condition closure](assets/figures/implementation-closure.en.png)
 
-The three-stage activity concept includes a first-use open day, a public-AI register template, human-fallback rehearsal, public ride/observation guidance and evidence-reading sessions in the near term; a cross-station scenario exchange week, developer–community reading sessions, an AI resource desk, city-interface audits and a life-completeness review in the mid term; and an Everyday Commons week, bilingual case library, global public-AI-space dialogue, pause/failure case library, research-urbanisation reflection and open method kits in the long term. Everyday Commons Week also publishes the annual **Retreat Archive**, listing services switched off by frozen thresholds and the offline public goods they leave. Activities, investment, funding, operators and maintenance contracts remain to be confirmed [standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK].
+The three-stage activity concept includes a first-use open day, a public-AI register template, human-fallback rehearsal, public ride/observation guidance and evidence-reading sessions in the near term; a cross-station scenario exchange week, developer–community reading sessions, an AI resource desk, city-interface audits and a life-completeness review in the mid term; and a 64K Everyday week, bilingual case library, global public-AI-space dialogue, pause/failure case library, research-urbanisation reflection and open method kits in the long term. 64K Everyday Week also publishes the annual **Retreat Archive**, listing services switched off by frozen thresholds and the offline public goods they leave. Activities, investment, funding, operators and maintenance contracts remain to be confirmed [standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK].
 
 Dynamic maintenance follows the fixed order “sync main branch → reread official files → inspect Issues/PRs → rebuild derivatives → refresh manifest → rerun four gates”; see `assets/media/dynamic-maintenance-checklist.en.md`.
 
@@ -232,9 +245,9 @@ Green and public-space ratios are concept-level values recalculated from provisi
 
 Key risks are provisional-boundary misreading, missing ownership and controls, privacy and surveillance, accessibility gaps, traffic conflict, heritage misreading, AI-generated-content rights and conceptual suggestions being mistaken for commitments. High-risk scenarios include human review, stop and rollback [depth:risk_missing_data].
 
-This package uses public repository materials, the local provisional boundary and original concept diagrams. PNG figures are explanatory layers, not site photos or official drawings. Final brands, fonts, site photos and CAD/GIS require source, rights and version records. See `report/copyright_statement.md`.
+This package uses public repository materials, the local provisional boundary, participant-authorized AI-generated identity and hero assets, and original diagrams drawn from package data. PNG figures are explanatory layers, not site photos or official drawings. The used assets, font, generation tools, inputs, permissions and versions are itemized in `assets/media/asset-rights-ledger.md`. Any future site photographs, CAD/GIS or third-party brands still require separate clearance. See `report/copyright_statement.md`.
 
-Risk handling follows the sequence label, limit, provide rollback and keep a trace. Boundary risk is controlled by `provisional_constraint`, low-confidence recalculable metrics and an official-data replacement rule; privacy risk by data minimization, account-free access and no face or individual-tracking collection; equity risk by human-equivalent paths, accessible wayfinding, paper/phone entry and appeal; technology risk by low speed, observability, human emergency stop and stop conditions; rights risk by original diagrams, source registration and no unlicensed assets. The Co-Track Protocol requires every scenario to state how the same task continues after AI is switched off; without a named human/offline path, the scenario cannot be published [metric:non_ai_path_coverage]. `sources.json` records use and limitations, `assumptions.json` records impacts, and the three matrices map each task to text, geometry, metrics and drawings [source:SOURCE-REGISTRY] [standard:GENERATIVE-AI-INTERIM-MEASURES] [standard:BARRIER-FREE-ENVIRONMENT-LAW]. None of this replaces field surveys, ownership negotiation, professional review or authority approval.
+Risk handling follows the sequence label, limit, provide rollback and keep a trace. Boundary risk is controlled by `provisional_constraint`, low-confidence recalculable metrics and an official-data replacement rule; privacy risk by data minimization, account-free access and no face or individual-tracking collection; equity risk by human-equivalent paths, accessible wayfinding, paper/phone entry and appeal; technology risk by low speed, observability, human emergency stop and stop conditions; rights risk by original diagrams, source registration and no unlicensed assets. The Dual-Mode Bus Protocol requires every scenario to state how the same task continues after AI is switched off; without a named human/offline path, the scenario cannot be published [metric:non_ai_path_coverage]. `sources.json` records use and limitations, `assumptions.json` records impacts, and the three matrices map each task to text, geometry, metrics and drawings [source:SOURCE-REGISTRY] [standard:GENERATIVE-AI-INTERIM-MEASURES] [standard:BARRIER-FREE-ENVIRONMENT-LAW]. None of this replaces field surveys, ownership negotiation, professional review or authority approval.
 
 ## References
 
@@ -243,3 +256,4 @@ Risk handling follows the sequence label, limit, provide rollback and keep a tra
 3. Repository `brief/site-package` [source:SITE-PACKAGE].
 4. Repository public source registry [source:SOURCE-REGISTRY].
 5. Local snapshots of urban-design, regulatory-plan and land-use standards [standard:MOHURD-URBAN-DESIGN-MEASURES] [standard:MOHURD-CONTROL-DETAILED-PLANNING].
+6. CAS Computer Network Information Center, 30th anniversary of China’s full-function Internet access [source:HISTORY-NCFC-64K-CAS-20240424].
