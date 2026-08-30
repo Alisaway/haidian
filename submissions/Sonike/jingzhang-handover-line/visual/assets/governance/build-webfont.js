@@ -42,6 +42,17 @@ const PAGES = [
   "visual/index.html",
   "visual/index.en.html",
 ];
+const REPORT_PAGES = PAGES.slice(0, 2);
+const REPORT_LINK = '<link rel="stylesheet" href="../visual/assets/governance/noto-cjk-subset.css">';
+const REPORT_STAMP = '<p class="package-stamp">PACKAGE v2.0</p>';
+const REPORT_STAMP_CSS = [
+  ".package-stamp {",
+  "  margin: 12px 0 0;",
+  "  color: var(--accent);",
+  "  font: 700 12px/1.3 ui-monospace, SFMono-Regular, Menlo, Consolas, \"Liberation Mono\", \"JZHandoverCJK\", monospace;",
+  "  letter-spacing: 0.08em;",
+  "}",
+].join("\n");
 
 function sha256(value) {
   return crypto.createHash("sha256").update(value).digest("hex");
@@ -64,6 +75,38 @@ function runPython(python, args) {
     throw new Error([result.stderr, result.stdout].filter(Boolean).join("\n").trim() || `Python 退出 ${result.status}`);
   }
   return result.stdout;
+}
+
+/* The repository's generic Markdown renderer intentionally emits no
+ * submission-specific font or package identity. Restore this package shell
+ * deterministically before collecting glyphs so a later report rebuild cannot
+ * silently drop the offline CJK dependency or the visible v2.0 stamp. */
+function prepareReportPages() {
+  const plainStack = 'font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;';
+  const localStack = 'font-family: "JZHandoverCJK", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;';
+  for (const relative of REPORT_PAGES) {
+    const target = path.join(PKG, relative);
+    let text = fs.readFileSync(target, "utf8");
+    if (!text.includes(REPORT_LINK)) {
+      if (!text.includes("<title>")) throw new Error(`${relative} 缺 <title>，无法插入本地字体链接`);
+      text = text.replace("<title>", `${REPORT_LINK}\n<title>`);
+    }
+    if (!text.includes(localStack)) {
+      if (!text.includes(plainStack)) throw new Error(`${relative} 找不到可验证的 body 字体栈`);
+      text = text.replace(plainStack, localStack);
+    }
+    if (!text.includes(REPORT_STAMP_CSS)) {
+      const cssAnchor = ".translation-link a { color: var(--accent); font-weight: 700; }";
+      if (!text.includes(cssAnchor)) throw new Error(`${relative} 找不到版本标识样式锚点`);
+      text = text.replace(cssAnchor, `${REPORT_STAMP_CSS}\n${cssAnchor}`);
+    }
+    if (!text.includes(REPORT_STAMP)) {
+      const summary = /<p class="summary">[^<]*<\/p>/;
+      if (!summary.test(text)) throw new Error(`${relative} 找不到版本标识内容锚点`);
+      text = text.replace(summary, (match) => `${match}\n${REPORT_STAMP}`);
+    }
+    fs.writeFileSync(target, text);
+  }
 }
 
 function requiredCodepoints() {
@@ -91,6 +134,7 @@ function main() {
   if (sha256(sourceBuffer) !== SOURCE_SHA256) throw new Error("原始 OTF sha256 不匹配");
   if (sha256(Buffer.from(licenseText)) !== LICENSE_SHA256) throw new Error("OFL 正文 sha256 不匹配");
 
+  prepareReportPages();
   const wanted = requiredCodepoints();
   const temporary = fs.mkdtempSync(path.join(os.tmpdir(), "jz-webfont-"));
   const output = path.join(temporary, "NotoSansCJKsc-Medium.subset.woff2");

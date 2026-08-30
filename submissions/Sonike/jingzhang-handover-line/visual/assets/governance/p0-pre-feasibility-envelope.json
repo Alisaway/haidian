@@ -1,0 +1,298 @@
+{
+  "schema_version": "1.0.0",
+  "evidence_level": "E2_participant_pre_feasibility_screening",
+  "activation_state": "design_reference_not_field_verified",
+  "pilot_scenario_id": "SCN-05",
+  "title_zh": "P0 公开交接桌预可行性包络",
+  "title_en": "P0 Public Handover Table pre-feasibility envelope",
+  "decision_boundary_zh": "本文件只检验参赛者提出的 P0 在参考空间、班次、容量、成本敏感性、维护和撤场上是否自洽。尺寸是概念筛选值，费率是参赛者为比较方案而设的敏感性变量，均不是现场测量、规范签认、市场询价、保险报价、批准预算或实施承诺。正式场地、主体、专业签认、三方报价、保险与预算仍由 p0-delivery-contract.json 的八道门阻断。",
+  "decision_boundary_en": "This file tests only whether the participant's P0 is internally coherent across reference space, shifts, capacity, cost sensitivity, maintenance and removal. Dimensions are concept-screening values and rates are participant-set sensitivity variables for comparing options. They are not field measurements, code sign-off, market quotations, insurance quotations, an approved budget or an implementation commitment. The eight gates in p0-delivery-contract.json continue to block any real site, actor, professional sign-off, three-quote procurement, insurance or budget claim.",
+  "current_external_evidence": {
+    "field_location": null,
+    "site_measurement_received": false,
+    "occupancy_or_egress_signoff_received": false,
+    "named_operator_received": false,
+    "market_quotes_received": 0,
+    "insurance_quote_cny": null,
+    "approved_budget_cny": null,
+    "field_capacity_observations": 0,
+    "field_maintenance_observations": 0
+  },
+  "reference_spatial_envelope": {
+    "module_m": 1.2,
+    "screening_control_envelope": {
+      "length_m": 7.2,
+      "width_m": 7.2,
+      "area_sqm": 51.84,
+      "status": "participant_concept_screening"
+    },
+    "reversible_operating_patch": {
+      "length_m": 6.0,
+      "width_m": 6.0,
+      "area_sqm": 36.0,
+      "surface_rule_zh": "只使用既有平整、连续、经授权且不需固定土建的表面；不以铺装、结构或永久管线补齐场地缺陷。",
+      "surface_rule_en": "Use only an existing level, continuous and authorised surface that needs no fixed construction; do not solve site defects with new paving, structure or permanent utilities."
+    },
+    "staffed_service_island": {
+      "length_m": 2.4,
+      "width_m": 1.2,
+      "area_sqm": 2.88,
+      "service_faces": 2,
+      "anchored_to_ground": false
+    },
+    "clear_access_loop_min_m": 1.8,
+    "perimeter_safety_buffer_m": 0.6,
+    "opposite_openings": 2,
+    "opening_clear_width_m_each": 1.8,
+    "turning_circle_count": 2,
+    "turning_circle_diameter_m": 1.5,
+    "weather_rule_zh": "P0 不含新建雨棚；没有既有遮蔽、低眩光照明和可安全撤场条件时，转入室内备选或不启动。",
+    "weather_rule_en": "P0 includes no new canopy. Without existing shelter, low-glare lighting and safe removal conditions, move to the indoor alternative or do not start.",
+    "professional_hold_zh": "以上均为概念筛选尺寸，不是无障碍、消防、疏散或结构合规结论；真实场地须逐项实测并由相应专业角色签认。",
+    "professional_hold_en": "All values are concept-screening dimensions, not accessibility, fire, egress or structural compliance conclusions. A real site must be measured item by item and signed off by the relevant professional roles."
+  },
+  "capacity_and_queue_screening": {
+    "screening_area_per_person_sqm": 2.4,
+    "screening_capacity_formula": "floor(reversible_operating_patch.area_sqm / screening_area_per_person_sqm)",
+    "screening_capacity_persons": 15,
+    "operational_public_cap_persons": 8,
+    "simultaneous_staff_positions": 3,
+    "operational_total_cap_persons": 11,
+    "gross_operating_area_per_capped_person_sqm": 3.273,
+    "queue_cap_persons": 6,
+    "non_consumption_waiting_seats": 2,
+    "companion_is_included_in_public_cap": true,
+    "task_slot_minutes_assumption": 10,
+    "public_window_hours_per_day": 4,
+    "service_faces": 2,
+    "theoretical_task_slots_per_day": 48,
+    "planning_buffer_ratio": 0.75,
+    "buffered_task_slots_per_day": 36,
+    "status": "participant_planning_ceiling_not_observed_performance",
+    "stop_rule_zh": "队列超过 6 人、两处开口任一被占、1.8 米环线或两个回转位任一失效，即暂停新任务并关闭智能层；工作人员改用既有人工服务点分流。",
+    "stop_rule_en": "If the queue exceeds six, either opening is obstructed, or the 1.8 m loop or either turning space fails, pause new tasks and switch off the smart layer; staff divert users to an existing staffed service point.",
+    "professional_hold_zh": "15 人是面积筛选上限，11 人是参赛者提出的更保守运营上限；两者都不是法定人数、消防容量或现场观测值。",
+    "professional_hold_en": "Fifteen is an area-screening ceiling and eleven is the participant's more conservative operating cap. Neither is a statutory occupancy, fire capacity or field observation."
+  },
+  "reference_operating_roster": {
+    "pilot_weeks": 13,
+    "public_days_per_week": 5,
+    "public_hours_per_day": 4,
+    "public_open_hours_90_day": 260,
+    "simultaneous_role_seats": 3,
+    "staffed_seat_hours_90_day": 780,
+    "minimum_roster_headcount_for_break_cover": 4,
+    "named_people": [],
+    "assignment_status": "unassigned",
+    "role_seats": [
+      {
+        "seat_id": "outgoing_service",
+        "role_refs": ["R-SERVICE-OPS"],
+        "duty_zh": "说明当前任务、开放项、失败项和人工底盘，不替接入方签收。",
+        "duty_en": "States the current task, open items, failures and human service floor without accepting on behalf of the incoming role."
+      },
+      {
+        "seat_id": "incoming_wayfinding",
+        "role_refs": ["R-PUBLIC-SPACE"],
+        "duty_zh": "独立复述路线与风险，明确 ACCEPT 或 REFUSE，并保持无 AI 路线可用。",
+        "duty_en": "Independently reproduces route and risk information, records ACCEPT or REFUSE, and keeps the no-AI route available."
+      },
+      {
+        "seat_id": "independent_safety_dissent",
+        "role_refs": ["R-TEST-SAFETY", "R-DISSENT", "R-INDEPENDENT-REVIEW"],
+        "duty_zh": "只负责叫停、异议、队列和无障碍底线；不得同时承担当班服务绩效。",
+        "duty_en": "Owns stop, dissent, queue and accessibility floors only and may not simultaneously own shift service performance."
+      }
+    ],
+    "absence_rule_zh": "三个席位任一缺岗即智能层关闭；两席可维持既有人工问路，但不得继续共测、签收或发布绩效。",
+    "absence_rule_en": "If any of the three seats is absent, the smart layer stays off. Two seats may preserve existing staffed wayfinding but may not continue co-testing, acceptance or performance publication."
+  },
+  "participant_cost_sensitivity_90_day": {
+    "currency": "CNY",
+    "price_basis": "participant_set_sensitivity_variables_not_market_quotes",
+    "formal_budget_cny": null,
+    "insurance_quote_cny": null,
+    "included_cost_lines": [
+      {
+        "line_id": "removable_kit_12_items",
+        "low_cny": 17720,
+        "high_cny": 57000,
+        "formula": "sum(component_sensitivity_schedule.quantity * participant_unit_rate_low_or_high)",
+        "note_zh": "对应 12 条可移动构件；正式采购仍须三方同口径询价。",
+        "note_en": "Covers the twelve removable component lines; formal procurement still requires three comparable quotations."
+      },
+      {
+        "line_id": "three_seat_public_roster",
+        "low_cny": 62400,
+        "high_cny": 124800,
+        "formula": "780 staffed seat-hours * participant labour sensitivity of CNY 80-160 per hour",
+        "note_zh": "费率仅用于敏感性检验，不是工资建议、合同费率或已批准人员预算。",
+        "note_en": "The rate tests sensitivity only and is not a wage recommendation, contract rate or approved staffing budget."
+      },
+      {
+        "line_id": "professional_and_independent_review",
+        "low_cny": 19200,
+        "high_cny": 51200,
+        "formula": "64 role-hours * participant professional-rate sensitivity of CNY 300-800 per hour",
+        "note_zh": "只保留专业工作量的敏感性占位；真实专业范围、资质、工时与费率须另行签认。",
+        "note_en": "A sensitivity placeholder for professional workload only; real scope, qualifications, hours and rates require separate sign-off."
+      },
+      {
+        "line_id": "participant_compensation_and_accommodation",
+        "low_cny": 9800,
+        "high_cny": 29600,
+        "formula": "24 sessions * CNY 200-400 fixed compensation + CNY 5,000-20,000 accommodation sensitivity",
+        "note_zh": "失败、退出或拒绝数据不扣固定补偿；金额须在招募方案与预算批准后确定。",
+        "note_en": "Failure, withdrawal or data refusal may not reduce fixed compensation; amounts are set only after recruitment and budget approval."
+      },
+      {
+        "line_id": "maintenance_and_consumables",
+        "low_cny": 6500,
+        "high_cny": 19500,
+        "formula": "13 weeks * participant maintenance sensitivity of CNY 500-1,500 per week",
+        "note_zh": "覆盖开闭场、清洁、纸本、易损件和故障小修敏感性，不含未查明的市政修复。",
+        "note_en": "Tests opening/closing, cleaning, paper, wear parts and minor-fault sensitivity, excluding unknown utility works."
+      },
+      {
+        "line_id": "restoration_reserve",
+        "low_cny": 2422,
+        "high_cny": 7650,
+        "formula": "10% * (removable kit + maintenance and consumables)",
+        "note_zh": "这是参赛者设置的撤场储备规则，不代表保险或正式预备费。",
+        "note_en": "A participant-set removal reserve rule, not insurance or a formal contingency."
+      }
+    ],
+    "sensitivity_subtotal_low_cny": 118042,
+    "sensitivity_subtotal_high_cny": 289750,
+    "rounded_public_range_zh": "约 12万—29万元／90天",
+    "rounded_public_range_en": "approximately CNY 0.12-0.29 million / 90 days",
+    "excluded_unpriced_external_items": [
+      "场地费或租金",
+      "保险保费与免赔额",
+      "税费",
+      "正式报批、检测与法定专业服务",
+      "既有场地缺陷、永久市政或结构工程",
+      "真实条件确定后的电力、通信与保安增量"
+    ],
+    "decision_rule_zh": "范围只用于比较 P0 是否仍属 S 级、哪些变量最敏感。未计外部项任一不为零、三方报价未齐或 90 天持续预算未批准时，formal_budget_cny 继续为 null，不采购、不进场。",
+    "decision_rule_en": "The range compares whether P0 remains S-class and which variables dominate. If any excluded external item is non-zero, three quotations are incomplete or the 90-day sustained budget is unapproved, formal_budget_cny remains null and no procurement or site entry occurs."
+  },
+  "participant_annual_opex_sensitivity": {
+    "currency": "CNY_per_year",
+    "operating_assumption": "4 public hours/day * 5 days/week * 50 weeks/year * 3 simultaneous role seats",
+    "staffed_seat_hours_per_year": 3000,
+    "subtotal_low_cny_per_year": 300772,
+    "subtotal_high_cny_per_year": 648300,
+    "rounded_public_range_zh": "约 30万—65万元／年",
+    "rounded_public_range_en": "approximately CNY 0.30-0.65 million / year",
+    "excluded_unpriced_external_items": ["场地", "保险", "税费", "公用事业增量", "任何永久工程"],
+    "status": "participant_sensitivity_not_approved_opex"
+  },
+  "component_sensitivity_schedule": [
+    {"item_id": "P0-C01", "quantity": 1, "unit_rate_low_cny": 4000, "unit_rate_high_cny": 12000},
+    {"item_id": "P0-C02", "quantity": 1, "unit_rate_low_cny": 2000, "unit_rate_high_cny": 6000},
+    {"item_id": "P0-C03", "quantity": 1, "unit_rate_low_cny": 3000, "unit_rate_high_cny": 10000},
+    {"item_id": "P0-C04", "quantity": 2, "unit_rate_low_cny": 1000, "unit_rate_high_cny": 3000},
+    {"item_id": "P0-C05", "quantity": 24, "unit_rate_low_cny": 30, "unit_rate_high_cny": 100},
+    {"item_id": "P0-C06", "quantity": 4, "unit_rate_low_cny": 500, "unit_rate_high_cny": 1500},
+    {"item_id": "P0-C07", "quantity": 1, "unit_rate_low_cny": 500, "unit_rate_high_cny": 3000},
+    {"item_id": "P0-C08", "quantity": 2, "unit_rate_low_cny": 100, "unit_rate_high_cny": 300},
+    {"item_id": "P0-C09", "quantity": 1, "unit_rate_low_cny": 200, "unit_rate_high_cny": 1000},
+    {"item_id": "P0-C10", "quantity": 2, "unit_rate_low_cny": 800, "unit_rate_high_cny": 2000},
+    {"item_id": "P0-C11", "quantity": 1, "unit_rate_low_cny": 1000, "unit_rate_high_cny": 4000},
+    {"item_id": "P0-C12", "quantity": 1, "unit_rate_low_cny": 500, "unit_rate_high_cny": 2000}
+  ],
+  "maintenance_cycles": [
+    {"cycle": "before_each_shift", "checks_zh": ["两处开口与 1.8 米环线无阻挡", "停用控件、纸本路线与有人窗口可用", "线缆防绊、低眩光照明和回执编号连续"], "on_fail": "smart_layer_off; no_new_task"},
+    {"cycle": "after_each_shift", "checks_zh": ["删除临时数字记录", "双联值班簿分别签认", "投诉、故障与未决项进入下一班"], "on_fail": "smart_layer_off; unresolved_item_stays_open"},
+    {"cycle": "weekly", "checks_zh": ["触觉与高对比图无脱落污损", "桌椅、导视、紧固与易损件检查", "纸本、合理便利物资与备件补充"], "on_fail": "remove_failed_component; human_floor_continues"},
+    {"cycle": "D0_D30_D60_D90", "checks_zh": ["安全与无障碍复核", "成本、队列、故障和投诉复盘", "继续、修复或终止的独立记录"], "on_fail": "smart_layer_off; no_stage_advance"}
+  ],
+  "rollback_and_restoration": {
+    "same_day_removal_target_hours": 4,
+    "removal_crew_assumption_persons": 4,
+    "removal_person_hours_assumption": 16,
+    "target_status": "participant_target_not_field_tested",
+    "restoration_checks_zh": ["地面无固定件、胶残留和绊点", "排水、通行、触觉路线与消防边界恢复", "临时数字记录删除且纸本按批准规则处置", "既有人工服务位置、时段与责任继续可见"],
+    "failure_rule_zh": "四小时目标未在 D1—30 的授权演练中被真实验证前，不得宣传“可快速撤场”；任一恢复项失败即不开放下一场次。",
+    "failure_rule_en": "Do not advertise rapid removal until the four-hour target is field-tested during an authorised D1-30 rehearsal. If any restoration item fails, the next session does not open."
+  },
+  "alternative_comparison": [
+    {
+      "alternative_id": "ALT-0_EXISTING_HUMAN_FLOOR",
+      "name_zh": "既有有人窗口＋纸本，不启动 P0",
+      "name_en": "Existing staffed counter plus paper; do not start P0",
+      "spatial_requirement": "existing_authorised_service_point",
+      "public_cap_persons": null,
+      "comparative_cost_class": "lowest_no_pilot",
+      "strength_zh": "不新增构件、不制造现场验证假象，保留同一基础服务。",
+      "tradeoff_zh": "不能产生 P0 的共测、队列、撤场或智能对照证据。",
+      "selection_or_fallback_trigger": ["site_authorisation gate fails", "insurance_maintenance gate fails", "cost_quotes_sustained_budget gate fails"],
+      "pilot_activation_allowed": false
+    },
+    {
+      "alternative_id": "ALT-1_MOBILE_CART",
+      "name_zh": "单面移动服务车",
+      "name_en": "Single-face mobile service cart",
+      "screening_control_envelope_m": [3.6, 3.6],
+      "public_cap_persons": 3,
+      "queue_cap_persons": 2,
+      "comparative_cost_class": "lower_than_reference",
+      "strength_zh": "边界小、当班结束即可移入既有室内储存。",
+      "tradeoff_zh": "只有一个服务面，双联角色和轮椅回转更易互相干扰，不能承接 24 场共测的高峰。",
+      "selection_or_fallback_trigger": ["authorised patch is smaller than 6m x 6m", "queue demand remains demonstrably low"],
+      "pilot_activation_allowed": true,
+      "gate_rule": "still_requires_all_eight_entry_gates"
+    },
+    {
+      "alternative_id": "ALT-2_PUBLIC_HANDOVER_TABLE_REFERENCE",
+      "name_zh": "双面公开交接桌（参考方案）",
+      "name_en": "Two-face Public Handover Table (reference scheme)",
+      "screening_control_envelope_m": [7.2, 7.2],
+      "reversible_operating_patch_m": [6.0, 6.0],
+      "public_cap_persons": 8,
+      "queue_cap_persons": 6,
+      "comparative_cost_class": "S_reference",
+      "strength_zh": "两面服务、三席独立角色、连续环线和两处开口能在同一平面被看见与复核。",
+      "tradeoff_zh": "依赖既有遮蔽与 7.2 米控制包络；人员而非设备是主要成本变量。",
+      "selection_or_fallback_trigger": ["all eight gates pass", "6m x 6m reversible patch and two clear openings are professionally confirmed"],
+      "pilot_activation_allowed": true,
+      "gate_rule": "still_requires_all_eight_entry_gates",
+      "selected_for_reference_design": true
+    },
+    {
+      "alternative_id": "ALT-3_BORROWED_INDOOR_ROOM",
+      "name_zh": "借用既有室内公共房间",
+      "name_en": "Borrowed existing indoor public room",
+      "minimum_clear_room_m": [6.0, 6.0],
+      "public_cap_persons": 8,
+      "queue_cap_persons": 4,
+      "comparative_cost_class": "similar_if_no_rent_or_fitout",
+      "strength_zh": "天气、照明、储物和线缆条件较稳定，便于小规模受控共测。",
+      "tradeoff_zh": "城市可见性和路过可达性较弱；若发生租金或装修即退出 S 级参考。",
+      "selection_or_fallback_trigger": ["outdoor weather or utility review fails", "an authorised existing room needs no rent or fit-out"],
+      "pilot_activation_allowed": true,
+      "gate_rule": "still_requires_all_eight_entry_gates"
+    }
+  ],
+  "alternative_decision_rule_zh": "备选方案只改变载体和空间包络，不绕过八道门。若没有任何方案能在既有、已授权且无需永久工程的条件下满足基础人工服务、双联角色、连续通行和撤场恢复，正确决定是 ALT-0：不启动 P0。",
+  "alternative_decision_rule_en": "Alternatives change the carrier and spatial envelope only; none bypasses the eight gates. If no option can preserve staffed basic service, dual-control roles, continuous access and restoration in an existing authorised setting without permanent works, the correct decision is ALT-0: do not start P0.",
+  "recalculation_checks": {
+    "formulas": [
+      "7.2 * 7.2 = 51.84",
+      "6.0 * 6.0 = 36.0",
+      "floor(36.0 / 2.4) = 15",
+      "36.0 / 11 = 3.272727...",
+      "4 * 5 * 13 = 260 public hours",
+      "260 * 3 = 780 staffed seat-hours",
+      "2 * 4 * 60 / 10 = 48 theoretical task slots/day",
+      "48 * 0.75 = 36 buffered planning slots/day",
+      "sum(low cost lines) = 118042",
+      "sum(high cost lines) = 289750",
+      "10% * (17720 + 6500) = 2422",
+      "10% * (57000 + 19500) = 7650"
+    ],
+    "last_recalculated_at": "2026-08-30",
+    "calculation_status": "participant_arithmetic_checked"
+  }
+}

@@ -15,6 +15,21 @@
     "decision_boundary_zh": "这是授权后可直接签认和填证的 90 天交付合同，不是已经获批、采购、投保、进场或完成的实施记录。首次只允许 SCN-05 一个场景；在 D90 独立结论前不得扩到第二场景。",
     "decision_boundary_en": "This is a signable, evidence-ready 90-day delivery contract for use after authorisation, not a record of approval, procurement, insurance, site entry or completed delivery. Only SCN-05 may enter the first pilot; no second scenario may open before an independent D90 decision."
   },
+  "pre_feasibility_reference": {
+    "source": "visual/assets/governance/p0-pre-feasibility-envelope.json",
+    "evidence_level": "E2_participant_pre_feasibility_screening",
+    "reference_envelope_m": [7.2, 7.2],
+    "reversible_operating_patch_m": [6.0, 6.0],
+    "operational_public_cap_persons": 8,
+    "simultaneous_staff_positions": 3,
+    "queue_cap_persons": 6,
+    "participant_90_day_sensitivity_low_cny": 118042,
+    "participant_90_day_sensitivity_high_cny": 289750,
+    "formal_budget_cny": null,
+    "status": "design_reference_not_field_verified",
+    "boundary_zh": "尺寸、容量、人员费率与成本区间只用于参赛者预可行性筛选；不是现场测量、法定容量、市场询价、保险报价或批准预算。八道进入门的真实证据仍为 0。",
+    "boundary_en": "Dimensions, capacity, labour rates and cost ranges are participant pre-feasibility screening values only, not field measurements, statutory occupancy, market quotations, insurance quotations or an approved budget. Real evidence for the eight entry gates remains zero."
+  },
   "current_evidence": {
     "site_authorisation_received": false,
     "professional_signoff_received": false,
@@ -179,7 +194,9 @@
     ],
     "total_budget_cny": null,
     "sustained_budget_months": null,
-    "budget_rule_zh": "报价必须按同一十二项清单比较；人员、合理便利、保险、维护、补偿和撤场不得藏在设备报价之外。未取得三份可比报价与 90 天持续预算前不采购。"
+    "participant_sensitivity_reference": "visual/assets/governance/p0-pre-feasibility-envelope.json#participant_cost_sensitivity_90_day",
+    "participant_sensitivity_is_formal_estimate": false,
+    "budget_rule_zh": "报价必须按同一十二项清单比较；人员、合理便利、保险、维护、补偿和撤场不得藏在设备报价之外。参赛者约 12万—29万元／90天的区间只用于检验 S 级范围和敏感变量，不含场地、保险、税费、法定专业服务、永久工程与未查明公用事业；未取得三份可比报价、全部外部项和 90 天持续预算前，total_budget_cny 继续为 null，不采购。"
   },
   "preregistered_acceptance_criteria": [
     {"criterion_id": "same_core_outcome", "measure": "智能与无 AI 路线的必备结果字段一致率", "pass_rule": "全部任务的目的地、关键步骤、风险提示、人工责任与申诉入口 100% 一致", "stop_rule": "任一核心字段缺失即 smart_layer_off", "observed_value": null, "status": "not_observed"},

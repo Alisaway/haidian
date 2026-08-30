@@ -14,7 +14,6 @@
         "metrics.json",
         "assets/figures/site-overview.png",
         "assets/figures/key-areas.png",
-        "assets/figures/metrics-evidence.png",
         "assets/figures/land-use-structure.png",
         "drawings/a0-boards.pdf",
         "drawings/a3-booklet.pdf",
@@ -127,23 +126,28 @@
     {
       "id": "A-OPERATIONS-001",
       "status": "offline_tabletop_complete_field_authorisation_pending",
-      "statement": "十二个AI场景已完成不连接真实服务的离线接管桌面演练；尚未获得场地、采购、经营或正式部署授权，也未进行现场或公众测试。",
-      "impact": "数字状态机、角色接口和回滚顺序已有 12/12 场景、48/48 断言的可复算记录；它只证明协议可被逐条执行，不证明现场安全、无障碍、服务绩效或获批状态。",
+      "statement": "十二个AI场景已完成不连接真实服务的离线接管桌面演练；SCN-05 另完成参赛者可控的空间、容量、排班、成本敏感性、维护、撤场和替代方案预可研筛查。尚未获得真实场地、采购、经营或正式部署授权，也未进行现场或公众测试。",
+      "impact": "数字状态机、角色接口和回滚顺序已有 12/12 场景、48/48 断言的可复算记录；P0 预可研另有 12/12 组算术与边界检查。前者只证明协议可逐条执行，后者只证明参赛者输入内部自洽；两者都不证明现场安全、法定容量、无障碍、正式造价、服务绩效或获批状态。",
       "recalculation_trigger": "p0-delivery-contract.json 的八道进入门全部取得真实证据且由独立角色复核后，启动 SCN-05 单场景 90 天程序；D0 先验证人工底盘，D31—60 才开展至少 24 个真实任务场次，D90 独立决定继续、修复或终止。未全过不得扩展第二场景。",
       "affected_files": [
         "geometry/public_space.geojson",
         "simulation.json",
         "metrics.json",
         "assets/figures/metrics-evidence.png",
+        "assets/figures/metrics-evidence.en.png",
         "drawings/a3-booklet.pdf",
+        "drawings/a3-booklet.en.pdf",
         "drawings/a0-boards.pdf",
+        "drawings/a0-boards.en.pdf",
         "visual/assets/governance/shift-ledger-suite.json",
         "visual/assets/governance/role-spec.json",
         "visual/assets/governance/measurement-protocol.json",
         "visual/assets/governance/p0-delivery-contract.json",
+        "visual/assets/governance/p0-pre-feasibility-envelope.json",
+        "visual/assets/governance/jury-evidence-index.json",
+        "visual/assets/governance/build-p0-feasibility-figure.js",
         "visual/assets/governance/public-benefit-gate.json",
         "visual/assets/governance/p0-readiness-audit.js",
-        "visual/index.html",
         "visual/index.html",
         "visual/index.en.html",
         "proposal.md",
@@ -152,8 +156,8 @@
         "report/proposal.en.html"
       ],
       "responsible_role": "R-SERVICE-OPS",
-      "participant_controlled_evidence": "simulation.json：十二个场景的智能层关闭、人工接管、合成记录清零与回滚四项断言；12/12 任务成功，48/48 断言通过，现场演练 0/12。",
-      "first_pilot_cost_class": "S / 小型可移动公共界面；不含土建与市政工程。估算公式为构件数量×经复核询价＋人员工时×合规费率＋10%概念预备项，正式金额待授权后至少三方询价。",
+      "participant_controlled_evidence": "simulation.json：十二个场景的智能层关闭、人工接管、合成记录清零与回滚四项断言，12/12任务、48/48断言通过；p0-pre-feasibility-envelope.json：7.2×7.2m参考外框、6×6m操作面、公众8人＋岗位3席＋排队6人、260开放小时／780岗位工时、约12–29万元／90天与约30–65万元／年敏感性、四个替代方案及4人×4小时未实测撤场目标。现场演练仍为0/12。",
+      "first_pilot_cost_class": "S / 小型可移动公共界面；不含固定土建与市政工程。参赛者敏感性公式给出约12–29万元／90天和约30–65万元／年，只用于比较方案与识别人工成本敏感性；场地、保险、税费、法定服务、未知市政和永久工程均未计价。正式金额仍须授权后至少三方同口径询价并取得持续预算。",
       "responsible_organisation_types": [
         "场地资产管理或区属平台类型",
         "场景服务运营类型",
@@ -163,9 +167,9 @@
         "设施维护与现场安全类型"
       ],
       "resolution_evidence": "八门真实证据索引、十项 RACI 签认、十二项构件三方同口径询价、保险与 90 天持续预算、消防交通市政及安全无障碍复核、至少 24 个匿名真实任务场次、八项预注册判据复算、失败—修复—复测、投诉/停用/删除回执和同日撤场恢复记录。",
-      "recalculation_scope": "先把 SCN-05 的角色、报价、预算、授权和 observed_value 从 unassigned/null/not_observed 替换为经授权记录；现场演练由 0/12 变为 1/12、真实观察由 0 变为实数后，逐项重跑服务等价与 P0 就绪审计，再由 D90 独立结论决定是否扩展。",
+      "recalculation_scope": "先以真实场地测量与专业结论替换概念包络，以三方同口径报价、保险、税费和持续预算替换参赛者敏感性变量，再把 SCN-05 的角色、授权和 observed_value 从 unassigned/null/not_observed 替换为经授权记录；现场演练由0/12变为1/12、真实观察由0变为实数后，逐项重跑成本、服务等价与P0就绪审计，再由D90独立结论决定是否扩展。",
       "risk_statement_zh": "场景试点长期化、无法退出。",
-      "statement_zh": "。六个行动包的规模区间由提交几何直接推演（主轴 9.50 公里、二十个更新单元合计基底 221,014.099 ㎡、十二个场景节点为点状），资金量级只给「小额／中额」这类估算类别——**两者都不是预算承诺，也不是询价结果**。P0 已把十二项构件、三个空白报价槽和 90 天预算边界列清，但单价、总价、保险、持续预算与真实主体仍全部为 null/unassigned；具体金额须在授权后由至少三方同口径询价确定。"
+      "statement_zh": "六个行动包的规模区间由提交几何直接推演（主轴9.50公里、二十个更新单元合计基底221,014.099㎡、十二个场景节点为点状），不是工程量清单。P0 以十二项构件敏感性、三席排班、专业复核、合理便利、维护和10%撤场储备形成约12–29万元／90天与约30–65万元／年的参赛者试算；它不是预算承诺或询价结果，且明确排除场地、保险、税费、法定服务、未知市政和永久工程。三个真实报价槽、正式预算、保险与主体仍为null/unassigned，须在授权后取得真实证据。"
     },
     {
       "id": "A-CASES-001",

@@ -38,6 +38,8 @@ const exactSet = (actual, expected) =>
   Array.isArray(actual) && actual.length === expected.length && expected.every((item) => actual.includes(item));
 
 const DELIVERY_PATH = "visual/assets/governance/p0-delivery-contract.json";
+const FEASIBILITY_PATH = "visual/assets/governance/p0-pre-feasibility-envelope.json";
+const JURY_INDEX_PATH = "visual/assets/governance/jury-evidence-index.json";
 const PUBLIC_PATH = "visual/assets/governance/public-benefit-gate.json";
 const REVIEW_PATH = "visual/assets/governance/review-3825-readiness-matrix.json";
 const PROTOTYPE_PATH = "visual/index.html";
@@ -100,8 +102,21 @@ const EXPECTED_ELIGIBILITY_CHECKS = [
 const EXPECTED_REVIEW_ITEMS = [
   "R96-01", "R96-02", "R96-03", "R96-04", "R96-05", "R96-06", "R96-07",
 ];
+const EXPECTED_ALTERNATIVES = [
+  "ALT-0_EXISTING_HUMAN_FLOOR",
+  "ALT-1_MOBILE_CART",
+  "ALT-2_PUBLIC_HANDOVER_TABLE_REFERENCE",
+  "ALT-3_BORROWED_INDOOR_ROOM",
+];
+const EXPECTED_JURY_PATHS = { "JURY-30S": 30, "JURY-3M": 180, "JURY-15M": 900 };
+const EXPECTED_RUBRIC_DIMENSIONS = [
+  "brief_alignment", "originality", "ai_planning_innovation", "implementation_feasibility",
+  "public_interest_inclusion", "risk_compliance", "expression_completeness",
+];
 
 const delivery = readJSON(DELIVERY_PATH);
+const feasibility = readJSON(FEASIBILITY_PATH);
+const juryIndex = readJSON(JURY_INDEX_PATH);
 const publicGate = readJSON(PUBLIC_PATH);
 const reviewMatrix = readJSON(REVIEW_PATH);
 const prototype = readText(PROTOTYPE_PATH);
@@ -217,6 +232,136 @@ if (delivery) {
   if (!exactSet(cotest.required_rubric_groups, EXPECTED_GROUPS)) errors.push("共测未覆盖任务书六类公共群体");
   if (!Array.isArray(cotest.access_accommodations) || cotest.access_accommodations.length < 8) {
     errors.push("共测便利与合理调整少于 8 项");
+  }
+}
+
+let validFeasibilityChecks = 0;
+const recordFeasibility = (label, condition, detail) => {
+  if (condition) validFeasibilityChecks += 1;
+  else errors.push(`P0 预可研 ${label}${detail ? `：${detail}` : ""}`);
+};
+if (feasibility) {
+  recordFeasibility("证据等级或场景不符",
+    feasibility.evidence_level === "E2_participant_pre_feasibility_screening" &&
+    feasibility.activation_state === "design_reference_not_field_verified" &&
+    feasibility.pilot_scenario_id === "SCN-05");
+
+  const ext = feasibility.current_external_evidence || {};
+  recordFeasibility("外部证据边界被越过",
+    ext.field_location === null && ext.site_measurement_received === false &&
+    ext.occupancy_or_egress_signoff_received === false && ext.named_operator_received === false &&
+    ext.market_quotes_received === 0 && ext.insurance_quote_cny === null &&
+    ext.approved_budget_cny === null && ext.field_capacity_observations === 0 &&
+    ext.field_maintenance_observations === 0);
+
+  const spatial = feasibility.reference_spatial_envelope || {};
+  const envelope = spatial.screening_control_envelope || {};
+  const patch = spatial.reversible_operating_patch || {};
+  recordFeasibility("空间包络算术或可逆边界不一致",
+    envelope.length_m === 7.2 && envelope.width_m === 7.2 && envelope.area_sqm === 51.84 &&
+    patch.length_m === 6 && patch.width_m === 6 && patch.area_sqm === 36 &&
+    spatial.clear_access_loop_min_m === 1.8 && spatial.opposite_openings === 2 &&
+    spatial.opening_clear_width_m_each === 1.8 && spatial.turning_circle_count === 2 &&
+    spatial.turning_circle_diameter_m === 1.5 &&
+    spatial.staffed_service_island && spatial.staffed_service_island.anchored_to_ground === false);
+
+  const capacity = feasibility.capacity_and_queue_screening || {};
+  recordFeasibility("容量、队列或排期算术不一致",
+    capacity.screening_capacity_persons === Math.floor(36 / 2.4) &&
+    capacity.operational_public_cap_persons === 8 && capacity.simultaneous_staff_positions === 3 &&
+    capacity.operational_total_cap_persons === 11 && capacity.queue_cap_persons === 6 &&
+    Math.abs(capacity.gross_operating_area_per_capped_person_sqm - 36 / 11) < 0.001 &&
+    capacity.theoretical_task_slots_per_day === 48 && capacity.planning_buffer_ratio === 0.75 &&
+    capacity.buffered_task_slots_per_day === 36 &&
+    capacity.status === "participant_planning_ceiling_not_observed_performance");
+
+  const roster = feasibility.reference_operating_roster || {};
+  recordFeasibility("三席排班算术或未指派边界不一致",
+    roster.pilot_weeks === 13 && roster.public_days_per_week === 5 && roster.public_hours_per_day === 4 &&
+    roster.public_open_hours_90_day === 13 * 5 * 4 && roster.simultaneous_role_seats === 3 &&
+    roster.staffed_seat_hours_90_day === 13 * 5 * 4 * 3 &&
+    roster.minimum_roster_headcount_for_break_cover === 4 &&
+    Array.isArray(roster.named_people) && roster.named_people.length === 0 &&
+    roster.assignment_status === "unassigned" && Array.isArray(roster.role_seats) && roster.role_seats.length === 3);
+
+  const schedule = Array.isArray(feasibility.component_sensitivity_schedule)
+    ? feasibility.component_sensitivity_schedule : [];
+  const deliveryIds = ((delivery && delivery.component_schedule) || []).map((item) => item.item_id);
+  const scheduleIds = schedule.map((item) => item.item_id);
+  const kitLow = schedule.reduce((total, item) => total + item.quantity * item.unit_rate_low_cny, 0);
+  const kitHigh = schedule.reduce((total, item) => total + item.quantity * item.unit_rate_high_cny, 0);
+  recordFeasibility("十二构件敏感性未与交付合同逐项绑定",
+    schedule.length === 12 && exactSet(scheduleIds, deliveryIds) && kitLow === 17720 && kitHigh === 57000);
+
+  const costs = feasibility.participant_cost_sensitivity_90_day || {};
+  const costLines = Array.isArray(costs.included_cost_lines) ? costs.included_cost_lines : [];
+  const costLow = costLines.reduce((total, item) => total + item.low_cny, 0);
+  const costHigh = costLines.reduce((total, item) => total + item.high_cny, 0);
+  const reserve = costLines.find((item) => item.line_id === "restoration_reserve") || {};
+  recordFeasibility("90 天敏感性合计或撤场储备算术不一致",
+    costLines.length === 6 && reserve.low_cny === Math.round(0.1 * (kitLow + 6500)) &&
+    reserve.high_cny === Math.round(0.1 * (kitHigh + 19500)) &&
+    costs.sensitivity_subtotal_low_cny === costLow && costs.sensitivity_subtotal_high_cny === costHigh &&
+    costLow === 118042 && costHigh === 289750);
+  recordFeasibility("敏感性被误写成正式预算或报价",
+    costs.price_basis === "participant_set_sensitivity_variables_not_market_quotes" &&
+    costs.formal_budget_cny === null && costs.insurance_quote_cny === null &&
+    Array.isArray(costs.excluded_unpriced_external_items) && costs.excluded_unpriced_external_items.length >= 6);
+
+  const annual = feasibility.participant_annual_opex_sensitivity || {};
+  recordFeasibility("年度运维敏感性或证据状态不一致",
+    annual.staffed_seat_hours_per_year === 3000 && annual.subtotal_low_cny_per_year === 300772 &&
+    annual.subtotal_high_cny_per_year === 648300 &&
+    annual.status === "participant_sensitivity_not_approved_opex" &&
+    Array.isArray(annual.excluded_unpriced_external_items) && annual.excluded_unpriced_external_items.length === 5);
+
+  const maintenance = Array.isArray(feasibility.maintenance_cycles) ? feasibility.maintenance_cycles : [];
+  recordFeasibility("维护周期不完整",
+    exactSet(maintenance.map((item) => item.cycle), ["before_each_shift", "after_each_shift", "weekly", "D0_D30_D60_D90"]) &&
+    maintenance.every((item) => Array.isArray(item.checks_zh) && item.checks_zh.length >= 3 &&
+      (String(item.on_fail || "").includes("smart_layer_off") || String(item.on_fail || "").includes("remove_failed_component"))));
+
+  const removal = feasibility.rollback_and_restoration || {};
+  recordFeasibility("撤场目标被误写成已实测或恢复检查不完整",
+    removal.same_day_removal_target_hours === 4 && removal.removal_crew_assumption_persons === 4 &&
+    removal.removal_person_hours_assumption === 16 &&
+    removal.target_status === "participant_target_not_field_tested" &&
+    Array.isArray(removal.restoration_checks_zh) && removal.restoration_checks_zh.length === 4);
+
+  const alternatives = Array.isArray(feasibility.alternative_comparison)
+    ? feasibility.alternative_comparison : [];
+  const selected = alternatives.filter((item) => item.selected_for_reference_design === true);
+  recordFeasibility("四个替代方案或八门约束不完整",
+    exactSet(alternatives.map((item) => item.alternative_id), EXPECTED_ALTERNATIVES) &&
+    selected.length === 1 && selected[0].alternative_id === "ALT-2_PUBLIC_HANDOVER_TABLE_REFERENCE" &&
+    alternatives.find((item) => item.alternative_id === "ALT-0_EXISTING_HUMAN_FLOOR").pilot_activation_allowed === false &&
+    alternatives.filter((item) => item.pilot_activation_allowed === true)
+      .every((item) => item.gate_rule === "still_requires_all_eight_entry_gates"));
+}
+
+let validJuryPaths = 0;
+let validRubricDimensions = 0;
+if (juryIndex) {
+  const paths = Array.isArray(juryIndex.review_paths) ? juryIndex.review_paths : [];
+  if (!exactSet(paths.map((item) => item.path_id), Object.keys(EXPECTED_JURY_PATHS))) {
+    errors.push("评委 30 秒／3 分钟／15 分钟路径集合不完整");
+  }
+  for (const item of paths) {
+    const ok = item.time_seconds === EXPECTED_JURY_PATHS[item.path_id] &&
+      Array.isArray(item.evidence_refs) && item.evidence_refs.length >= 4 &&
+      String(item.boundary_zh || "").trim().length > 0;
+    if (!ok) errors.push(`${item.path_id || "未知评委路径"}: 时间、证据或边界不完整`);
+    else validJuryPaths += 1;
+  }
+  const rubric = Array.isArray(juryIndex.rubric_evidence_index) ? juryIndex.rubric_evidence_index : [];
+  if (!exactSet(rubric.map((item) => item.dimension_id), EXPECTED_RUBRIC_DIMENSIONS)) {
+    errors.push("七项评分维度证据索引不完整");
+  }
+  for (const item of rubric) {
+    const ok = Array.isArray(item.primary_refs) && item.primary_refs.length >= 3 &&
+      String(item.boundary_ref || "").trim().length > 0;
+    if (!ok) errors.push(`${item.dimension_id || "未知评分维度"}: 主证据或边界引用不完整`);
+    else validRubricDimensions += 1;
   }
 }
 
@@ -418,6 +563,20 @@ const expectedMetrics = {
   scenario_public_benefit_gate_count: 12,
   offline_service_prototype_route_count: 2,
   planned_equity_cotest_session_min_count: 24,
+  p0_screening_control_envelope_area_sqm: 51.84,
+  p0_reversible_operating_patch_area_sqm: 36,
+  p0_operational_public_cap_persons: 8,
+  p0_simultaneous_staff_position_count: 3,
+  p0_queue_cap_persons: 6,
+  p0_buffered_task_slot_count_per_day: 36,
+  p0_public_open_hours_90_day: 260,
+  p0_staffed_seat_hours_90_day: 780,
+  p0_90_day_cost_sensitivity_low_cny: 118042,
+  p0_90_day_cost_sensitivity_high_cny: 289750,
+  p0_annual_opex_sensitivity_low_cny: 300772,
+  p0_annual_opex_sensitivity_high_cny: 648300,
+  p0_alternative_option_count: 4,
+  p0_same_day_removal_target_hours: 4,
 };
 for (const [id, expected] of Object.entries(expectedMetrics)) {
   const value = metrics[id] && metrics[id].value;
@@ -432,6 +591,12 @@ const result = {
   raci_work_packages_valid: validRaciPackages,
   component_line_items_valid: validBomItems,
   acceptance_criteria_valid: validAcceptanceCriteria,
+  pre_feasibility_checks_valid: validFeasibilityChecks,
+  pre_feasibility_checks_expected: 12,
+  jury_paths_valid: validJuryPaths,
+  jury_paths_expected: 3,
+  rubric_dimensions_valid: validRubricDimensions,
+  rubric_dimensions_expected: 7,
   public_benefit_groups_valid: validGroups,
   scenario_public_value_gates_valid: validScenarioGates,
   cross_cutting_protections_valid: validProtections,
@@ -445,7 +610,7 @@ const result = {
 
 if (process.argv.includes("--json")) console.log(JSON.stringify(result, null, 2));
 else if (result.ok) {
-  console.log("PASS  SCN-05 单场景 P0：8 门／5 阶段／10 RACI／12 构件／8 验收；6 类公共群体／12 场景硬门槛；资格证据 6/6／评审归类 7/7；离线原型 14/14；真实观察 0");
+  console.log("PASS  SCN-05 单场景 P0：8 门／5 阶段／10 RACI／12 构件／8 验收；预可研 12/12；评委路径 3/3／评分索引 7/7；6 类公共群体／12 场景硬门槛；资格证据 6/6／评审归类 7/7；离线原型 14/14；真实观察 0");
 } else {
   console.error("FAIL  P0 可实施性与公共利益就绪包不完整");
   for (const error of errors) console.error(`- ${error}`);
