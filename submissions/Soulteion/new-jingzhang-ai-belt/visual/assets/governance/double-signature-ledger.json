@@ -1,0 +1,22 @@
+{
+  "schema_version": "0.1.0",
+  "title_zh": "双笔签核台账（12 场景全量角色与状态）",
+  "title_en": "Double-Signature Ledger (roles and states for all 12 scenarios)",
+  "concept_note_zh": "与 proposal.md 6.2 场景卡一一对应；开发笔/使用笔角色为设计层指派建议，真实签核事件在试点授权后发生并回填本台账（当前 status 全为 DESIGN_LAYER）。",
+  "ledger": [
+    {"id": "S01", "name_zh": "开源发布厅", "developer_pen_zh": "发布平台技术保障方", "user_pen_zh": "开发者社区代表 + 高校代表", "status": "DESIGN_LAYER", "veto_condition_zh": "发布会无法人工主持或报名渠道缺失"},
+    {"id": "S02", "name_zh": "自主大模型评测场", "developer_pen_zh": "评测平台运营方", "user_pen_zh": "参评模型方代表 + 公众评审代表", "status": "DESIGN_LAYER", "veto_condition_zh": "无公开签核工单可查"},
+    {"id": "S03", "name_zh": "端侧算力驿站", "developer_pen_zh": "算力服务提供方", "user_pen_zh": "初创团队与居民代表", "status": "DESIGN_LAYER", "veto_condition_zh": "电话/现场人工开卡缺失"},
+    {"id": "S04", "name_zh": "AI 慢行导航", "developer_pen_zh": "公园智能导视建设方", "user_pen_zh": "居民/游客代表（轮椅与视障代表优先）", "status": "DESIGN_LAYER", "veto_condition_zh": "定导视+人工问路不可用"},
+    {"id": "S05", "name_zh": "大钟寺国际路演客厅", "developer_pen_zh": "会展技术保障方", "user_pen_zh": "园区企业代表 + 投资人代表", "status": "DESIGN_LAYER", "veto_condition_zh": "纸质资料与人工接待缺失"},
+    {"id": "S06", "name_zh": "清河低碳创新廊", "developer_pen_zh": "环境传感建设方", "user_pen_zh": "周边居民与环境组织代表", "status": "DESIGN_LAYER", "veto_condition_zh": "人工抄表与公示缺失"},
+    {"id": "S07", "name_zh": "近校成果转化街", "developer_pen_zh": "成果转化平台方", "user_pen_zh": "高校师生代表 + 初创团队代表", "status": "DESIGN_LAYER", "veto_condition_zh": "线下成果登记缺失"},
+    {"id": "S08", "name_zh": "数据要素会客厅", "developer_pen_zh": "数据交易机构", "user_pen_zh": "数据供需双方代表 + 合规观察代表", "status": "DESIGN_LAYER", "veto_condition_zh": "线下合规登记与人工审查缺失"},
+    {"id": "S09", "name_zh": "AI 生活服务样板街", "developer_pen_zh": "智能服务建设方", "user_pen_zh": "社区居委会代表 + 居民代表", "status": "DESIGN_LAYER", "veto_condition_zh": "社区服务站人工办理缺失或拒绝不平等"},
+    {"id": "S10", "name_zh": "智能体交通场景模拟", "developer_pen_zh": "智能体企业", "user_pen_zh": "交通管理部门", "status": "DESIGN_LAYER", "veto_condition_zh": "交管未签核不开放测试"},
+    {"id": "S11", "name_zh": "AI 安全治理展示馆", "developer_pen_zh": "治理展示建设方", "user_pen_zh": "行业专家与公众代表", "status": "DESIGN_LAYER", "veto_condition_zh": "案例来源不可考或讲解缺失"},
+    {"id": "S12", "name_zh": "全球 AI 活动周路线", "developer_pen_zh": "活动技术保障方", "user_pen_zh": "活动组委会 + 沿线居民代表", "status": "DESIGN_LAYER", "veto_condition_zh": "居民代表否决则改线或取消"}
+  ],
+  "state_enum_zh": "DESIGN_LAYER（设计层指派，未实测）/ OPEN（两笔齐开放）/ CLOSED_NO_OPEN（缺一笔不开放）/ CLOSED_VETO（否决关闭，回执公开）",
+  "recompute_note_zh": "试点授权后逐场景回填真实签核事件与工单号；每次回填同步更新 proposal.md 6.2 表与 public-service-equivalence-contract.json。"
+}

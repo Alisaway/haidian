@@ -9,7 +9,7 @@ license: "COMMUNITY-DISPLAY-ONLY"
 summary: "Taking the self-reliance spirit of the zigzag railway as its origin, the proposal reshapes the Jing-Zhang Heritage Park into a north-south 'human-centered AI public spine', with Zhongzhiyuan, the Beijing AI Origin Community and Dazhongsi as the three cores, and the Zhongguancun technology-service wing and Xiaoyuehe scenario wing as the two wings, forming an 'one-spine three-cores, four-belt two-wings, multi-node network' AI innovation belt."
 tracks: ["ai-traffic-walkability", "enterprise-services-ecosystem", "civic-agent-governance"]
 scenarios: ["ai-traffic-walkability", "enterprise-service-copilot", "public-safety-operations-review"]
-iteration: "v1.5"
+iteration: "v1.7"
 ---
 
 # New Jing-Zhang AI Innovation Belt: From the Centennial Zigzag Railway to a Human-Centered AI City
@@ -20,11 +20,23 @@ iteration: "v1.5"
 
 **Spatial framework**. Three levels cascade down: the coordinated research area (~43.6 km², industry and future-city research) → the overall design area (~11.4 km², regulatory-plan-level urban design: AI R&D 22.3%, residential & community 27.8%, commercial 15.9%, green & plaza 28.1%) → the key areas (~368.4 ha, implementation-plan-level design for Zhongzhiyuan, the Origin Community, and Dazhongsi) [metric:rnd_land_ratio] [metric:residential_land_ratio] [metric:key_area_count].
 
-**Innovation mechanisms**. A three-cores-two-wings collaboration loop (university incubation → open-source collaboration → enterprise conversion → scenario validation → global dissemination → back to incubation); AI-native carriers operate on an "occupiable, recallable, human-reviewable" interface logic — 12 scenario cards (including 3 industry test-and-validation cards), the human-centered public spine, four factor channels of the Zhongguancun service wing, and the five-segment Xiaoyuehe public experience path [depth:scenario_cards] [depth:scenario_open_operation].
+**Innovation mechanisms**. All AI scenarios are governed by a single accountability protocol — **Double-Signature Verification**: the "Ren" character is written by two independent strokes, and one stroke alone cannot form the character; every scenario must be signed independently by a developer pen (technology provider) and a user pen (representative of the affected users), the scenario opens only with both signatures, stays closed without either, and closes on any veto with a publicly inspectable receipt. AI-native carriers operate on an "occupiable, recallable, reviewable" interface logic — all 12 scenario cards (including 3 industry test-and-validation cards) are tied to the double-signature mechanism, dual-seat review tables line the human-centered public spine, plus four factor channels of the Zhongguancun service wing and the five-segment Xiaoyuehe public experience path [depth:scenario_open_operation] [depth:scenario_cards].
 
 **Implementation path**. Three phases (Dazhongsi first → central corridor → Zhongzhiyuan full chain) plus 6 action packages (JZ-01 to JZ-06), each carrying scale ranges, capital magnitudes, participating actors, and acceptance indicators (Section 10.1), expressed through pilot delivery contracts of "who is responsible, how it is accepted, when it is handed back" [depth:phasing_implementation].
 
 **Expression and evidence**. Geometry / metrics / three matrices are machine-verifiable; the three key areas recompute to ~369.3 ha under provisional boundaries versus ~368.4 ha in the announcement (~0.9 ha deviation; recompute once official geometry is supplied); all spatial conclusions are concept suggestions and do not constitute statutory plans, government approval, investment commitments, or engineering feasibility conclusions [depth:metrics_recalculation] [source:AGENT-TASKBOOK].
+
+## Executive Summary (addendum): Public Bottom Line and One-Minute Overview
+
+**The public bottom line of this proposal is one sentence**: for every AI scenario, the same basic service must remain available after the intelligent layer is switched off. Human windows, paper forms, telephones, and fixed wayfinding exist before the intelligent layer is allowed on; refusing AI must not cause longer queues, surcharges, or degraded service. This is a **self-set inclusive-design baseline of this proposal**, drawing on the legislative spirit of the human-service requirement in the Accessibility Environment Law (source: NPC Standing Committee passed 2023-06-28, gov.cn public; use: background reference; limits: Art.39 applies only to specific public-service sites such as healthcare and social security, and must not be generalized to all public spaces or all AI systems as a universal legal obligation) and the elderly smart-technology policy direction of the State Council plan (source: SC Doc [2020] No.45; use: background reference; limits: 2020-2022 phased targets have expired, does not constitute a legal obligation still in effect in 2026) — human windows, paper forms, telephones and fixed wayfinding exist before the intelligent layer is allowed on [standard:BARRIER-FREE-ENVIRONMENT-LAW] [standard:ELDERLY-SMART-TECH-PLAN-2020-45] [depth:scenario_open_operation].
+
+| What a reviewer needs to see in one minute | This proposal's single answer |
+| --- | --- |
+| Spatial proposition | One spine · three cores · four belts · two wings · multi-node network (Human-centered AI public spine + three key areas + two wings + 9 link corridors) |
+| How AI enters the city | University incubation → open-source collaboration → enterprise conversion → scenario validation → global dissemination → back to incubation; every link must be "recomputable, reviewable, rollback-able" |
+| Why the three key areas differ | Zhongzhiyuan = full-stack innovation; Origin Community = open-source collaboration and talent; Dazhongsi = industry clustering and smart economy; all three share the same scenario-card and recomputation protocol |
+| How it starts | Phase 1 Dazhongsi first (JZ-01/03/04) + 8 pilot condition gates (Section 10.2); pilot operations before physical construction |
+| What happens on failure | The scenario's intelligent layer is switched off, human services continue; once official data arrives, indicators are recomputed as a whole in EPSG:4548; a failed-gate pilot does not expand |
 
 ## Design Basis and Source List
 
@@ -62,14 +74,21 @@ The three levels cascade: the coordinated research layer determines the industry
 
 ## Coordinated Research Area: Industry and Future City Research
 
-### 3.1 Overall Concept: From the "Ren" (Zigzag) Railway to a Human-Centered AI City
+### 3.1 Overall Concept: From the "Ren" (Zigzag) Railway to a Double-Signature Human-Centered AI City
 
-In 1909, the Jing-Zhang Railway opened to traffic; Zhan Tianyou's zigzag ("ren"-shaped) alignment climbed the Badaling mountains, making it China's first trunk railway built under independent Chinese design — the centennial origin of "self-reliance" [source:BJ-MASTER-PLAN]. This proposal develops the **"New Jing-Zhang"** concept: extending the self-reliance spirit of the zigzag railway into a human-centered AI city form — **"the 'ren' character means human-centered"**. Three keywords:
+In 1909, the Jing-Zhang Railway opened to traffic; Zhan Tianyou's zigzag ("ren"-shaped) alignment climbed the Badaling mountains, making it China's first trunk railway built under independent Chinese design — the centennial origin of "self-reliance" [source:BJ-MASTER-PLAN]. The "Ren" character is not decoration: **it is written by two independent strokes — one stroke alone cannot form the character**. The two rails meet at Qinglongqiao station, each bearing load independently; without either, there is no route at all. This proposal translates that mechanical principle into an urban accountability mechanism for the AI era — **Double-Signature Verification**:
 
-- **Centennial Jing-Zhang culture belt**: Qinghuayuan Station and the railway heritage line serve as cultural anchors [source:AGENT-TASKBOOK];
-- **Urban AI living-experience belt**: AI ascends from "industry tool" to "life experience", perceptible and participatory in parks, streets, and communities [source:AGENT-TASKBOOK];
-- **AI-integrated innovation belt**: the three-cores-two-wings skeleton closes the loop of innovation, industry, talent, capital, and data [source:AGENT-TASKBOOK].
+- **Two independent roles**: every AI scenario must be signed by a **developer pen** (technology provider: the builder of the model/system) and a **user pen** (user-side: a representative of the affected residents, enterprises, or institutions) from two different parties; the two pens may not be the same person, each judges independently, and both records are public [source:AGENT-TASKBOOK] [depth:scenario_open_operation];
+- **Three-state rule**: both signatures present → the scenario opens; either missing → the scenario stays closed (the human baseline continues to operate); any veto → the scenario closes with a registered reason and a publicly inspectable receipt;
+- **Spatial expression**: every AI node hosts a "**dual-seat review table**" — a developer seat and a user seat facing each other over a paper ledger, homomorphic with the "Ren"-shaped paving motif of the spine; the no-AI equivalent routes (see the eight requirement fixtures in 6.2) always exist before the intelligent layer is allowed on; this design baseline draws on the Accessibility Environment Law spirit but is limited to this proposal’s voluntary principle [standard:BARRIER-FREE-ENVIRONMENT-LAW].
 
+**"New Jing-Zhang"** (新京张) thereby gains an operational definition: **the "Ren" character of AI entering the city must have both strokes complete** — not "attaching a human-centered slogan", but "the on/off of every intelligent service is co-signed by the developer and the user as two independent roles". Three keywords:
+
+- **Centennial Jing-Zhang cultural belt**: Qinghuayuan station and the Jing-Zhang Railway heritage as cultural anchors, making the "Ren" narrative a civic identity [source:AGENT-TASKBOOK];
+- **Urban AI life-experience belt**: upgrading AI from "industry tool" to "life experience", perceptible and participatory for residents in parks, streets, and communities [source:AGENT-TASKBOOK];
+- **AI-integrated innovation belt**: with the three-district two-wing framework, closing the loop of innovation, industry, talent, capital, and data chains [source:AGENT-TASKBOOK].
+
+The three belts share the same Double-Signature protocol: the cultural belt turns the "Ren" shape into a readable urban language, the life-experience belt places dual-seat review tables in everyday public space, and the innovation belt connects the mechanism to the industry and governance chains — three interfaces of one mechanism, not three slogans in parallel [depth:overall_spatial_structure].
 ### 3.2 Naming System and Logo Direction
 
 The naming system adopts a three-level structure: belt name / core names / node names.
@@ -81,7 +100,7 @@ The naming system adopts a three-level structure: belt name / core names / node 
 | Two wings | 中关村科技服务翼、小月河场景赋能翼 | Zhongguancun Service Wing / Xiaoyuehe Scenario Wing | Service- and scenario-oriented |
 | Spatial brand | 人形AI公共脊 | "Ren" (Human) AI Public Spine | Honoring the railway's zigzag heritage |
 
-Logo direction: using the zigzag railway track as the motif, transform the two rails into two facing "human" figures linked by a chain of luminous nodes, symbolizing "human collaboration × AI intelligence". Colors: railway rust-red (heritage) blended with Haidian innovation blue (AI future), with the tagline "Human-centered, co-created, future-bound". All logo, typography, and graphics are self-drawn concepts with no third-party trademark or font licensing issues [source:AGENT-TASKBOOK] [depth:brand_identity_system].
+Logo direction: using the zigzag railway track as the motif, transform the two rails into two facing "human" figures linked by a chain of luminous nodes, symbolizing "human collaboration × AI intelligence". Colors: railway rust-red (heritage) blended with Haidian innovation blue (AI future), with the tagline "Human-centered, co-created, future-bound". All logo graphics are self-drawn concepts with no third-party trademark issues; typesetting uses the system font Microsoft YaHei (registered in sources.json as FONT-MICROSOFT-YAHEI, subject to the Microsoft EULA, not bundled or redistributed) [source:AGENT-TASKBOOK] [depth:brand_identity_system].
 
 ### 3.3 Five Functions and Three-Areas-Two-Wings Synergy Loop
 
@@ -108,14 +127,14 @@ The three rings interlock: the core ring produces technology assets, the convers
 
 The proposal studies the following global AI innovation ecosystems and extracts transferable spatial and operational mechanisms [source:AGENT-TASKBOOK] [depth:ai_ecosystem_case_studies]:
 
-1. **Silicon Valley (US)**: the Stanford-enterprise-capital "academic spillover" model — the Origin Community should turn university edges into entrepreneurship interfaces;
-2. **Cambridge Science Park (UK)**: university-anchored, low-density garden campus — research land should keep high ecological quality and pedestrian scale;
-3. **Tel Aviv (Israel)**: military R&D spillover and the "startup nation" ecosystem — Zhongzhiyuan should host safety evaluation and dual-use showcases;
-4. **one-north, Singapore**: government-led "industry-city-life" integrated planning — the three areas and two wings need statutory-grade coordination;
-5. **Barcelona 22@**: industrial district renewal into a creative-economy district — Dazhongsi should renew existing stock into intelligent-economy buildings;
-6. **Hangzhou Future City**: scenario opening and talent policy driving agglomeration — the Xiaoyuehe wing needs a "scenario-opening list" mechanism;
-7. **Shenzhen Bay Ecological Technology Park**: anchor enterprises driving clusters — Zhongzhiyuan should reserve flagship spaces for leading firms;
-8. **Tokyo Bay Area**: industry-city integration along an innovation corridor — the heritage-park belt should become a "city-living-room" innovation corridor.
+1. **Silicon Valley (US)**: the Stanford-enterprise-capital "academic spillover" model (source: Saxenian, *Regional Advantage*, Harvard University Press, 1994; use: background comparison only; limits: performance cannot be transplanted to Haidian) — the Origin Community should turn university edges into entrepreneurship interfaces;
+2. **Cambridge Science Park (UK)**: university-anchored, low-density garden campus (source: Cambridge Science Park official site, TTP Group public reports; use: background comparison; limits: land policy differs) — research land should keep high ecological quality and pedestrian scale;
+3. **Tel Aviv (Israel)**: scene-opening and community-collaboration-driven startup ecosystem (source: Wired "Tel Aviv's Startup Ecosystem", 2018; use: background comparison; limits: startup culture and security context differ significantly, no specific mechanisms copied) — Zhongzhiyuan should separate validation from public display, with explicit isolation and human-takeover conditions in test spaces;
+4. **one-north, Singapore**: government-led "industry-city-life" integrated planning (source: JTC Corporation official site; use: background comparison; limits: government-led model differs from this proposal's market-oriented path) — the three areas and two wings need statutory-grade coordination;
+5. **Barcelona 22@**: industrial district renewal into a creative-economy district (source: Ajuntament de Barcelona 22@ plan official documents; use: background comparison; limits: urban renewal regime differs) — Dazhongsi should renew existing stock into intelligent-economy buildings;
+6. **Hangzhou Future City**: scenario opening and talent policy driving agglomeration (source: Hangzhou municipal government public reports; use: background comparison; limits: talent policy context differs from Haidian) — the Xiaoyuehe wing needs a "scenario-opening list" mechanism;
+7. **Shenzhen Bay Ecological Technology Park**: anchor enterprises driving clusters (source: Shenzhen Special Zone Daily, park official site; use: background comparison; limits: industry chain maturity differs) — Zhongzhiyuan should reserve flagship spaces for leading firms;
+8. **Tokyo Bay Area**: industry-city integration along an innovation corridor (source: Tokyo Metropolitan Government Urban Planning Bureau official documents; use: background comparison; limits: coastal conditions differ from this proposal's inland railway heritage context) — the heritage-park belt should become a "city-living-room" innovation corridor.
 
 The common mechanisms — university incubation, scenario openness, capital services, international exchange, garden environments — are translated into this proposal's land use, public-space system, scenario nodes, and operating mechanisms [depth:ai_ecosystem_case_studies].
 
@@ -139,7 +158,7 @@ To avoid a "generic collage", this section sets out the key mechanisms of the pr
 | Heritage use | Single-purpose heritage display strip or heritage park activation | The zigzag's two rails morph into a pair of facing "Ren" figures as a wayfinding motif; the heritage park is elevated into a "human-centered AI public spine" hosting slow mobility, AI art, and test scenarios as one composite public axis | [depth:spatial_storyline] [data:geometry/green_space.geojson#GREEN-001] |
 | Industry synergy | Three districts recruit and loop independently | A three-cores-two-wings collaboration loop (university incubation → open-source → conversion → scenario validation → global dissemination → back to incubation); the service wing acts only as a factor backend and does not stack industry mass | [depth:ai_ecosystem_case_studies] [data:geometry/land_use.geojson#LU-001] |
 | Scenario expression | Scenario checklist + one big screen | 12 scenario cards, each linked to spatial layers, operational data, privacy boundaries, human review, operators, and risks, including 3 dedicated industry test-and-validation cards | [depth:scenario_cards] [depth:ai_scenario_space_operation_map] |
-| AI grounding | Pasting "AI labels" onto conventional plans | Scenarios run on an "occupiable, recallable, human-reviewable" interface logic: test benches, data sandboxes, booking platforms, and human-review boundaries are written into each card | [depth:scenario_open_operation] |
+| AI grounding | Pasting "AI labels" onto conventional plans | Double-Signature Verification: each scenario is signed by developer and user pens as two independent parties; any veto closes the scenario with a public receipt; test benches, data sandboxes, and human-review boundaries are written into each card | [depth:scenario_open_operation] |
 | Area basis | Citing announcement figures as coverage claims | Proactively discloses the ~369.3 ha provisional recomputation versus ~368.4 ha in the announcement (~0.9 ha deviation) and states a recalculation upon official boundaries | [metric:site_area_sqm] [depth:metrics_recalculation] |
 | Cultural wayfinding | Brand logo and spatial signage mixed | Separates the belt brand layer (Logo system) from the spatial layer (cultural signage system); they share the "Ren" motif but differ in level, scope, and licensing boundaries | [depth:brand_identity_system] [depth:signage_system_direction] |
 
@@ -156,6 +175,8 @@ The overall design area forms an "**one-spine three-cores, four-belt two-wings, 
 - **Four belts**: Qinghe ecology belt (north), Zhichun Road innovation-service belt (north-middle), Xiaoyuehe scenario belt (middle), Xueyuan Road technology-service belt (south-middle);
 - **Two wings**: Zhongguancun technology-service wing (west), Xiaoyuehe scenario wing (east);
 - **Multi-node network**: AI scenario nodes around transit stations and public nodes form an operable scenario network [data:geometry/roads.geojson#ROAD-001].
+
+The spatial structure is threaded by the **Double-Signature Verification** mechanism: every AI node along the spine hosts a "**dual-seat review table**" (developer seat and user seat facing each other over a paper ledger), and the "Ren"-shaped paving motif continues the dual-line narrative — **the mechanism is not a slogan pasted onto space, but a section you can walk into**: the user side takes a seat at the review table, opens the work order, and completes one signature or one veto [depth:overall_spatial_structure] [depth:scenario_open_operation].
 
 ### 4.2 Land-Use Layout and Functional Proportions
 
@@ -245,20 +266,46 @@ The full project list appears in Chapter 10 and `compliance_matrix.json`.
 
 Each scenario card maps to spatial layers, target users, operating data, privacy boundaries, human review, operators, visualization layers, and risks [data:geometry/public_space.geojson#PUBLIC-001] [depth:scenario_cards] [depth:ai_scenario_space_operation_map]:
 
-| No. | Scenario card | Spatial carrier | Users | Operating data | Privacy boundary | Human review | Operator | Visualization layer | Risk |
+**Eight requirement fixtures**. To turn "public-interest first" from an adjective into a checkable condition (Co-creation Charter art.1 [source:AGENT-TASKBOOK]), the proposal aligns the six taskbook groups and high-exclusion-risk users with eight requirement fixtures — any scenario that cannot satisfy the corresponding basic route must not open its intelligent layer:
+
+| Fixture | Basic routes that must coexist | Failure action |
+| --- | --- | --- |
+| Non-visual / screen reader | readable real text, tactile or human-aloud readback | no human channel or no same core result → intelligent layer stays off |
+| Keyboard only / no pointer | native keyboard controls, visible focus; no personal device required on site | key actions mouse-only or device-dependent → layer off |
+| Low vision / color-blind | high-contrast text, unique texture or code distinction, large-print paper | key distinction by color alone → layer off |
+| Mobility / wheelchair | continuous accessible walking surface, seated counter/waiting, reachable stop-control entry | route cut by level change, obstacle or machine strip → layer off |
+| Elderly / cognitive load | single-task short-sentence handout, repeat explanations, no forced countdown | depends on complex memory, time limit or degraded help → layer off |
+| Non-Chinese / multilingual | bilingual core carrier, multilingual handouts, human review of rights decisions | rights/stop conditions only in Chinese or machine translation → layer off |
+| No smartphone / no app | fixed wayfinding, attended window, paper, phone or duty log | any step forces phone, app, QR or account → layer off |
+| Refusing algorithms / optional data | human decision, minimal records, appeal and stop receipt | refusal causes delay, surcharge, less safety info or no core result → layer off |
+
+The table states design fixtures, not real user-test results; real participation observations and pass records are both 0, to be replaced by co-tests hosted by accessibility professionals after site authorization. These fixtures are based on this proposal’s self-set inclusive-design baseline, drawing on the spirit of the Accessibility Environment Law human-service requirement, and do not constitute a universal legal-obligation inference for all public spaces or AI systems [depth:scenario_open_operation] [standard:BARRIER-FREE-ENVIRONMENT-LAW].
+
+**Double-signature matrix (examples)**. Developer/user pen roles, signature status, and veto conditions for all 12 scenario cards are registered in full in `visual/assets/governance/double-signature-ledger.json` [depth:scenario_open_operation]. Examples:
+
+| Scenario | Developer pen (technology provider) | User pen (user-side representative) | Not open without either; veto closes |
+| --- | --- | --- | --- |
+| S02 Autonomous model evaluation ground | evaluation-platform operator | participating model parties + public review representative | no public signature work order available |
+| S04 AI slow-mobility navigation | park smart-wayfinding builder | resident/visitor representatives (wheelchair and low-vision reps first) | any veto restores fixed signage + staff directions |
+| S10 Agent traffic-scenario simulation | agent enterprises | traffic management authority | testing not open without traffic authority signature |
+| S12 Global AI Week route | event technical support | event committee + residents along the route | resident veto reroutes or cancels |
+
+Signatures are recorded dual-track via paper work orders plus a public ledger; each work order contains scenario, object, reason, and receipt; any party's veto record is public and is not waived because "the technology demo looks good" [depth:scenario_open_operation].
+
+| No. | Scenario card | Spatial carrier | Users | Operating data | Privacy boundary | Human takeover / no-AI equivalent | Operator | Visualization layer | Fallback space use | Risk |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| S01 | Open-source launch hall | Origin Plaza | developers, universities | registration, check-in (aggregate) | aggregate statistics | human-hosted launches | community operator | public_space + operations panel | event capacity |
-| S02 | Foundation-model evaluation field (**test/validation**) | Zhongzhiyuan | model vendors, evaluators | benchmark corpus, model logs | licensed corpora | expert panel | evaluation platform | public_space + visualization screen | evaluation authority |
-| S03 | Edge-compute stop | along the spine | startups, residents | compute usage (anonymized) | authorized use | service desk | professional operator | public_space + energy panel | compute abuse |
-| S04 | AI slow-mobility navigation | Heritage Park | residents, visitors | origin-destination statistics | low-intrusion sensing, explainable | manual signage patrol | park operator | roads + aggregate heatmap | privacy leakage |
-| S05 | Dazhongsi international roadshow hall | Dazhongsi | firms, investors | event registration, pitch materials | activity consent | human pitch review | convention operator | public_space | commercially sensitive info |
-| S06 | Qinghe low-carbon innovation corridor | Zhongzhiyuan riverside | firms, public | environmental sensing data | environmental data | ecology patrol | park operator | green_space + environment panel | sensor drift |
-| S07 | University conversion street | Origin Community | students, startups | achievement registration, matchmaking logs | results consent | transfer officers | university partner | land_use + conversion dashboard | IP ownership |
-| S08 | Data-factor meeting hall | Dazhongsi | data suppliers/buyers | compliance registration, matchmaking logs | compliant, auditable | compliance review | data exchange | public_space | data compliance |
-| S09 | AI living-service model street | community-commerce junction | residents | service usage (anonymized) | data minimization | human-customer-service fallback | community operator | land_use + service panel | service bias |
-| S10 | Agent traffic scenario simulation (**test/validation**) | eastern Xiaoyuehe belt | agent firms, traffic authority | simulation scenarios, de-identified tracks | de-identified data | traffic authority review | government-enterprise joint | roads + simulation layer | data de-identification |
-| S11 | AI safety-governance hall | Zhongzhiyuan | public, industry | public case index | public cases | expert explanation | governance body | public_space | case freshness |
-| S12 | Global AI week route (**test/validation**) | whole belt | global developers | event registration, participation stats | public events | organizing committee | international team | phasing + route map | international compliance |
+| S01 | Open-source launch hall | Origin Plaza | developers, universities | registration, check-in (aggregate) | aggregate statistics | human-hosted launches; no-AI = notice board + manual registration | community operator | public_space + operations panel | ordinary plaza events and community notices | event capacity |
+| S02 | Foundation-model evaluation field (**test/validation**) | Zhongzhiyuan | model vendors, evaluators | benchmark corpus, model logs | licensed corpora | expert panel; no-AI = paper evaluation records | evaluation platform | public_space + visualization screen | ordinary review room and public demo area | evaluation authority |
+| S03 | Edge-compute stop | along the spine | startups, residents | compute usage (anonymized) | authorized use | service desk; no-AI = phone/in-person activation | professional operator | public_space + energy panel | ordinary seating and charging points | compute abuse |
+| S04 | AI slow-mobility navigation | Heritage Park | residents, visitors | origin-destination statistics | low-intrusion sensing, explainable | manual signage patrol; no-AI = fixed signs + staff directions | park operator | roads + aggregate heatmap | ordinary slow-mobility paths and signposts | privacy leakage |
+| S05 | Dazhongsi international roadshow hall | Dazhongsi | firms, investors | event registration, pitch materials | activity consent | human pitch review; no-AI = paper materials + reception | convention operator | public_space | ordinary exhibition zone and public passage | commercially sensitive info |
+| S06 | Qinghe low-carbon innovation corridor | Zhongzhiyuan riverside | firms, public | environmental sensing data | environmental data | ecology patrol; no-AI = manual meter reading and bulletin | park operator | green_space + environment panel | ordinary waterfront green space | sensor drift |
+| S07 | University conversion street | Origin Community | students, startups | achievement registration, matchmaking logs | results consent | transfer officers; no-AI = offline results registration | university partner | land_use + conversion dashboard | ordinary campus showcase street | IP ownership |
+| S08 | Data-factor meeting hall | Dazhongsi | data suppliers/buyers | compliance registration, matchmaking logs | compliant, auditable | compliance review; no-AI = offline compliance registration | data exchange | public_space | ordinary business meeting space | data compliance |
+| S09 | AI living-service model street | community-commerce junction | residents | service usage (anonymized) | data minimization | human-customer-service fallback; no-AI = community service station | community operator | land_use + service panel | ordinary neighborhood street frontage | service bias |
+| S10 | Agent traffic scenario simulation (**test/validation**) | eastern Xiaoyuehe belt | agent firms, traffic authority | simulation scenarios, de-identified tracks | de-identified data | traffic authority review; no-AI = anonymized paper simulation records | government-enterprise joint | roads + simulation layer | ordinary slow-mobility and green space | data de-identification |
+| S11 | AI safety-governance hall | Zhongzhiyuan | public, industry | public case index | public cases | expert explanation; no-AI = paper case catalog | governance body | public_space | ordinary gallery and reading corner | case freshness |
+| S12 | Global AI week route (**test/validation**) | whole belt | global developers | event registration, participation stats | public events | organizing committee; no-AI = manual check-in and service desk | international team | phasing + route map | ordinary daily mobility and public activities | international compliance |
 
 All scenario cards are placed on the GeoJSON spatial layers in this submission, ensuring scenarios are "perceptible, showcaseable, and promotable" [depth:ai_scenario_space_operation_map].
 
@@ -341,7 +388,7 @@ The proposal builds a three-layer narrative "**rail-track — code — human-cen
 - **Code layer (Zhongguancun culture)**: the "dare to innovate, tolerate failure" spirit continued through open-source, co-creation, and evaluation scenarios;
 - **Human-centered layer (new AI culture)**: the "ren" motif carries AI well-being, human-machine collaboration, and inclusive intelligence as the new cultural claim.
 
-Signage and symbol system: a unified "human figure" signage motif with three color tiers — heritage (rust red), innovation (blue), life (green); international tagline "From the first railway to the first AI city" [depth:signage_system_direction] [depth:spatial_storyline].
+Signage and symbol system: a unified "human figure" signage motif with three color tiers — heritage (rust red), innovation (blue), life (green); international tagline "From the first railway to a human-centered AI city" [depth:signage_system_direction] [depth:spatial_storyline].
 
 **Boundary between the Logo system and the cultural signage system**. To avoid confusing the belt-wide brand with cultural spatial wayfinding [source:AGENT-TASKBOOK], this proposal separates them by layer and scope: the **belt-wide Logo system** (Section 3.2, the rust-red/blue "human-figure" Logo) is a brand-layer asset for the belt name, the three core names, and communications, carrying external identity and IP unity; the **cultural signage system** (this section's "human-figure" three-color icons, bench signage columns, etc.) is a spatial-layer asset for on-site orientation and scenario guidance in parks, streets, and plazas. Both share the "human" motif but belong to different layers: the brand layer fixes the belt's identity, the spatial layer serves on-site wayfinding; the signage graphics are self-drawn concepts, not copies of the Logo wordmark, and no corporate or third-party marks are reused in public space — keeping the cultural signage system and the overall Logo system distinct and non-substitutable [depth:brand_identity_system] [depth:signage_system_direction].
 
@@ -380,6 +427,32 @@ All phases are conceptual suggestions to be deepened by professional teams after
 
 The delivery contract itself is a conceptual mechanism, not an administrative commitment; its value is translating abstract phasing into a checkable pilot boundary that professional and operations teams can pick up directly.
 
+**Eight condition gates for pilot admission**. Pilots (JZ-01/03/04) open by evidence, not by calendar — if any gate is unmet, the intelligent layer stays off and the clock does not start:
+
+| Gate | Required evidence | If unmet |
+| --- | --- | --- |
+| Site | written authorization, use boundary, opening hours | do not enter |
+| Ownership / planning | ownership and regulatory conditions confirmed for renewal/new-build | keep status quo; light public-space improvements only |
+| Safety & accessibility | independent professional review, demobilization and contingency plan | human basic services only |
+| Funding & maintenance | concept magnitudes confirmed at project-initiation level, maintenance duty clear | no physical construction starts |
+| Data | minimization, deletion and retention rules | no collection, no personal records |
+| Fire, traffic & municipal | evacuation, slow-mobility and wheelchair movement, utilities review | not open to the public; existing safe manual facilities only |
+| Heritage | professional confirmation where heritage scope is involved | protected assets untouched |
+| Co-testing & consent | recruitment of six groups, informed consent, fail-fix-retest records | no inclusivity claim; intelligent layer off |
+| Independent double pens | developer pen and user pen assigned to different parties, work orders inspectable | same-person double signature or missing work order → intelligent layer off |
+
+**Seven work steps for one pilot**: ① verify on site the public routes and reachable stop-control entries, and delimit a pilot boundary that leaves no permanent traces; ② stand up human windows, paper, telephones and fixed wayfinding before installing the intelligent layer; ③ the responsible body registers objects, versions, open items and rollback actions; ④ the operator independently re-verifies minimum evidence and accepts or returns; ⑤ inject controlled anomalies such as intelligent-layer disconnection and observe whether human takeover holds; ⑥ shut down the intelligent layer on site and verify the same task is done through the human route; ⑦ demobilize the same day and check deletion of temporary records, continuity of basic services, and ground restoration. This procedure is a reference workflow to be signed after authorization, not a record of executed field work [depth:renewal_project_list] [depth:phasing_implementation].
+
+**Four-role responsibility system (A/R/C/I)**. Every pilot project must assign four responsibility roles; when the role has not been accepted by an authorized party, the status is recorded as "not_authorized" [depth:renewal_project_list]:
+- **A (Accountable)**: the authorized site operator or project-sponsor party bearing ultimate responsibility for safety, compliance, and demobilization;
+- **R (Responsible)**: the named facilitator or site lead responsible for operations, records, and post-event review;
+- **C (Consulted)**: safety, accessibility, data, fire, heritage and other professional-consultation roles providing go/no-go opinions;
+- **I (Informed)**: the role responsible for informing the public, participants, and the community of activity content, data processing, and exit rights.
+
+**Eight pre-start handoff materials**. Before a pilot starts, the following materials must be assembled; if any is missing, the "plan" must not be written as "already running" [depth:renewal_project_list]: (1) authorization record and named A-accountable party; (2) space-time ledger snapshot; (3) capacity, accessibility, and safety walkthrough records; (4) data inventory and deletion plan; (5) content, font, and brand rights register; (6) human-facilitator, emergency-stop, and recovery drill records; (7) non-AI route test; (8) baseline, public notice, and adopt/amend/retire template. 100% of sessions must have a named facilitator and non-AI route in place before start; any safety or rights incident, critical data inaccuracy, non-AI route failure, or vacant A-accountable role triggers an immediate stop and public recovery-record. [depth:renewal_project_list]
+
+**Pre-registered acceptance criteria**. Pilot acceptance does not substitute satisfaction averages for fairness: core results and safety information must align 100%; queue difference and price surcharge for refusing AI are 0; the no-AI route completion rate is no lower than 90% of the AI route; the eight requirement fixtures must pass real-task and professional review together. These are pre-registered thresholds, not observations; all `observed_value` are currently null [depth:metrics_recalculation].
+
 ### 10.3 Global AI Innovation Event System and Long-Term Operations (agent.6)
 
 - **Annual event system**: "New Jing-Zhang AI Innovation Week" (spring roadshows), "Open-Source Co-creation Festival" (summer), "AI Governance Forum" (autumn), "Ren Festival · Release Season" (winter) [source:AGENT-TASKBOOK] [depth:annual_event_system];
@@ -412,6 +485,18 @@ Core indicators are recomputed from geometry in EPSG:4548 [depth:metrics_recalcu
 | Building height | pending official data | m | official planning conditions [metric:building_height_m] | unknown |
 | Statutory green ratio | pending official data | ratio | official planning conditions [metric:green_ratio_official] | unknown |
 
+**Observation layers and evidence boundary**. To avoid conflating "verifiable" with "field-tested", the proposal declares evidence in layers:
+
+| Observation layer | Currently checkable value | Correct reading |
+| --- | ---: | --- |
+| Spatial | ~11.4 km² overall area, 369.3 ha key areas (provisional recomputation), ~19.1 km of 9 link corridors, 12 scenario cards | provisional model quantities, recomputable, not statutory controls |
+| Design coverage | 12/12 scenario cards, 8/8 requirement fixtures, 3/3 industry test/validation scenarios | participant-controlled design-layer evidence, not user testing |
+| Machine verification | four-gate self-check PASS, geometry recomputation consistent, visual metric contract matched within 1ppm | machine audit passed, does not prove field safety or public acceptance |
+| Pilot pre-registration | 8 condition gates, acceptance thresholds (pre-registered) | plans and criteria; all `observed_value` are null |
+| Field evidence | 0/12 field tasks, 0 real-user observations | not authorized, not tested; to be run by professional teams after site authorization |
+
+The proposal claims only the first three layers (spatial + design coverage + machine verification), pre-registers the pilot, and explicitly reports field evidence as 0 — design-layer pass is never presented as field acceptance [depth:metrics_recalculation] [depth:risk_missing_data].
+
 `compliance_matrix.json` maps every mandatory task in announcement sections 1.3, 1.4, 1.5 and agent.1-agent.6; `standard_matrix.json` covers all mandatory professional standards [standard:PROJECT-OFFICIAL-ANNOUNCEMENT] [standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK]; `design_depth_matrix.json` covers all required design-depth items [depth:compliance_matrix] [depth:standard_matrix] [depth:design_depth_matrix].
 
 **Expression index**. The machine-auditable evidence (geometry/metrics/three matrices), drawings (`drawings/a3-booklet.pdf` reading version, `drawings/a0-boards.pdf` review boards), the interactive webpage (`visual/index.html`, with columns for overview map, task coverage, core metrics, AI scenarios, and implementation logic), and the offline reading version (`report/proposal.html`) together form the complete expression layer; all figures are derived from this package's GeoJSON and metrics with unified bilingual style and do not replace the authority of the structured data [depth:metrics_recalculation] As of v1.5, a machine-readable governance data layer `visual/assets/governance/*.json` is added (action-package-ledger: package ledger line-by-line consistent with Table 10.1; role-spec: participating actors; measurement-protocol: measurement protocol for the three core visual metrics; validation-report: four-gate self-check summary), turning "feasibility" and "verifiability" from prose and tables into structured data consumable by tools; two bilingual mechanism figures are added: `spatial-prototype` (one-spine three-cores four-belt two-wings structure prototype) and `renewal-structure` (retain/renovate/update/new-build renewal structure with the three phase bands)..
@@ -421,7 +506,7 @@ Core indicators are recomputed from geometry in EPSG:4548 [depth:metrics_recalcu
 ## Risk, Copyright, and Compliance
 
 - **Data legality**: only public sources and repository-registered materials are used; no non-public government data, corporate proprietary data, or personal privacy data [source:SOURCE-REGISTRY] [depth:existing_conditions_diagnosis];
-- **Copyright**: logo, typography, and graphics are self-drawn concepts; cited announcements, standards, and case information are attributed; no unauthorized trademarks, portraits, or copyrighted images [source:AGENT-TASKBOOK];
+- **Copyright**: logo graphics are self-drawn concepts, typesetting uses system font Microsoft YaHei (EULA-limited, not bundled/redistributed); cited announcements, standards, and case information are attributed; no unauthorized trademarks, portraits, or copyrighted images [source:AGENT-TASKBOOK];
 - **AI generation responsibility**: generated by an AI agent; methods and provenance disclosed in `report/copyright_statement.md` and `sources.json`;
 - **No official-approval/implementation claims**: all spatial conclusions are "conceptual suggestions / reference schemes / material for professional teams to deepen", constituting neither statutory planning, government determinations, investment commitments, nor engineering feasibility conclusions [depth:risk_missing_data];
 - **Pending data**: after official boundaries, planning conditions, as-built buildings, ownership, municipal, and heritage data arrive, area-based metrics, land-use partition, and retain/renovate/new assignments must be recalculated [metric:site_area_sqm];
