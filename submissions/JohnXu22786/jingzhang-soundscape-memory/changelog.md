@@ -42,3 +42,22 @@ Verification (this round, final state): score_rubric.py weighted_pct=97.0, manda
 ## v4.0 - 2026-08-30
 
 Final closeout for PR #3941: corrected the noise-law source binding with a dedicated official source entry marked needs_review; regenerated all bilingual core figures and A0/A3 PDFs with separated title/stamp bands, non-overlapping node labels, distinct ratio/count charts, and bounded English tables; regenerated both proposal HTML surfaces and embedded CJK-capable subsets last. Final self-check and manifest/hash refresh completed after output synchronization; remaining spatial notices are the documented provisional key-area warnings only.
+
+## v5.0 - 2026-08-30
+
+Round-5 repair addressing CocoSgt 73.0 CHANGES_REQUESTED items for PR #3941:
+- proposal.md & proposal.en.md:
+  - Added structured Dazhongsi Native Intelligent Commerce / Business Scenario subsection in Section 4 (target users, AI-assisted commerce/service flow, human fallback & kill-switch, physical carriers, operator type, data boundaries, and pause/exit rules).
+  - Converted regional synergy prose into a structured 5-node Regional Synergy Matrix table covering Beiwai Community, Future Science City, Huairou Science City, E-Town (BDA), and Beijing-Tianjin-Hebei with concept role, shared interface, deliverables, rights & data boundary, and exit mechanism.
+  - Added comprehensive 8-row Agent.2 Innovation Ecosystem mechanism table covering Land, Space, Industry, Capital, Talent, Compute, Data, and Scenarios with demand profile, provider type, allocation mode, input/output, rights boundary, and exit mechanism.
+  - Expanded test protocols TP-01..TP-03 with baseline specifications ("To be set pre-pilot"), validation sampling, threshold governance, human sign-off roles, and pass/pause/exit criteria.
+  - Added stage-gate RACI matrix table in Section 7 covering 6 stage-gates across street office, operations, tech enterprises, residents' council, and expert review panel.
+- Land-use & numerical consistency:
+  - Unified residential land-use percentage to 12.4% across proposal.md, proposal.en.md, visual/index.html, visual/index.en.html, figures, and PDFs, matching the exact EPSG:4548 calculation from land_use.geojson.
+- Figures & PDFs:
+  - Updated metrics-evidence figures (zh + en) with clear percentage labels and axis formatting (11.64%, 0.45%) and eliminated text overlap.
+  - Regenerated all 12 bilingual figures (site-overview, key-areas, land-use-structure, mobility-bluegreen, metrics-evidence, logo-snd-jz in zh and en) and 4 A0/A3 PDFs using Noto Sans SC with PROVISIONAL stamp, scale bar, north arrow, and title >=18pt, labels/legends >=13pt, annotations >=11pt.
+  - Re-rendered offline HTML reports (report/proposal.html, report/proposal.en.html) with embedded font subsets and regenerated all 16 preview images.
+- Verification:
+  - All four gates (Deterministic, Spatial, Visual, Professional) PASS via self_check_submission.py with --mark-self-checked; hashes and manifest.json refreshed.
+
