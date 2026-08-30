@@ -1,0 +1,510 @@
+{
+  "schema_version": "0.1.0",
+  "units": {
+    "length": "m",
+    "area": "sqm"
+  },
+  "metrics": {
+    "site_area_sqm": {
+      "status": "known",
+      "value": 11412825.386,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "polygon_area(submitted_provisional_site_boundary, EPSG:4548)",
+      "confidence": "low",
+      "assumptions": [
+        "Calculated only from the repository provisional rough boundary; this is an interim design-model value, not an official site area or redline.",
+        "Recalculate from the official competition polygon and rebind every derived design layer when it becomes available."
+      ],
+      "precision_sensitive": true
+    },
+    "green_space_area_sqm": {
+      "status": "known",
+      "value": 1408600.768,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/green_space.geojson"
+      ],
+      "formula": "polygon_area(submitted_green_space_design_model, EPSG:4548)",
+      "confidence": "low",
+      "assumptions": [
+        "Interim formal-container design geometry, not a survey of existing green space and not an approved green-space control.",
+        "Rebind and fully recalculate after official boundary, existing-condition survey and ecological baseline are supplied."
+      ]
+    },
+    "green_ratio": {
+      "status": "known",
+      "value": 0.123423,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/green_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "green_space_area_sqm / site_area_sqm",
+      "confidence": "low",
+      "assumptions": [
+        "Interim ratio of two provisional/design-model geometries; not an existing-condition measurement or statutory target.",
+        "Existing ecological performance is a no-regression rule and remains unmeasured."
+      ],
+      "precision_sensitive": true
+    },
+    "public_space_area_sqm": {
+      "status": "known",
+      "value": 836345.643,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "polygon_area(submitted_public_space_design_model, EPSG:4548)",
+      "confidence": "low",
+      "assumptions": [
+        "Interim formal-container design geometry, not a measured inventory of existing ordinary public space.",
+        "Park net public space must not decrease; the measurable baseline is pending survey/as-built evidence."
+      ]
+    },
+    "public_space_ratio": {
+      "status": "known",
+      "value": 0.073281,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "public_space_area_sqm / site_area_sqm",
+      "confidence": "low",
+      "assumptions": [
+        "Interim ratio of two provisional/design-model geometries; not an existing-condition measurement or statutory target.",
+        "Recalculate after the official boundary and a public-space accessibility inventory are available."
+      ],
+      "precision_sensitive": true
+    },
+    "building_footprint_area_sqm": {
+      "status": "known",
+      "value": 310807.184,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "sum(polygon_area(submitted_reference_building_footprints, EPSG:4548))",
+      "confidence": "low",
+      "assumptions": [
+        "The submitted footprint is a formal-container reference geometry and is not the measured RF-06/A building inventory.",
+        "Do not infer floor area, property, retained/renovated/demolished status or construction scale from this value."
+      ]
+    },
+    "building_density": {
+      "status": "known",
+      "value": 0.027233,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/buildings.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "building_footprint_area_sqm / site_area_sqm",
+      "confidence": "low",
+      "assumptions": [
+        "Interim design-model ratio only; approved building-density control and complete existing building footprints are unavailable."
+      ]
+    },
+    "land_use_0802_area_sqm": {
+      "status": "known",
+      "value": 2674562.492,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "sum(polygon_area(feature) where land_use_code='0802')",
+      "confidence": "low",
+      "assumptions": [
+        "Topology-safe concept partition within the provisional formal container; not existing or approved statutory land use."
+      ]
+    },
+    "land_use_1401_area_sqm": {
+      "status": "known",
+      "value": 2589339.239,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "sum(polygon_area(feature) where land_use_code='1401')",
+      "confidence": "low",
+      "assumptions": [
+        "Topology-safe concept partition within the provisional formal container; not existing or approved statutory land use."
+      ]
+    },
+    "land_use_09_area_sqm": {
+      "status": "known",
+      "value": 3366138.181,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "sum(polygon_area(feature) where land_use_code='09')",
+      "confidence": "low",
+      "assumptions": [
+        "Topology-safe concept partition within the provisional formal container; not existing or approved statutory land use."
+      ]
+    },
+    "land_use_0702_area_sqm": {
+      "status": "known",
+      "value": 2782792.823,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "sum(polygon_area(feature) where land_use_code='0702')",
+      "confidence": "low",
+      "assumptions": [
+        "Topology-safe concept partition within the provisional formal container; not existing or approved statutory land use."
+      ]
+    },
+    "key_area_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/key_areas.geojson",
+        "brief/site-package/design_brief.json"
+      ],
+      "formula": "count(required_key_area_ids)",
+      "confidence": "high",
+      "assumptions": [
+        "The official task establishes the count and names; the submitted polygons remain provisional rough constraints."
+      ]
+    },
+    "key_detailed_design_area_geometry_sqm": {
+      "status": "known",
+      "value": 3692893.007,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "area(union(submitted_provisional_key_area_polygons), EPSG:4548)",
+      "confidence": "low",
+      "assumptions": [
+        "Calculated from repository provisional rough polygons and unsuitable for official or precise-area claims.",
+        "The taskbook's announced areas are approximate descriptive values and are not substituted for this geometry calculation."
+      ],
+      "precision_sensitive": true
+    },
+    "phase_reference_area_sqm": {
+      "status": "known",
+      "value": 4587013.573,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/phasing.geojson"
+      ],
+      "formula": "polygon_area(M_concept_reference_phase, EPSG:4548)",
+      "confidence": "low",
+      "assumptions": [
+        "Concept phasing reference only; not an approved development schedule, project boundary or investment commitment."
+      ]
+    },
+    "refront_segment_count": {
+      "status": "known",
+      "value": 15,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(analytical_refront_segments_RF01_to_RF15)",
+      "confidence": "high",
+      "assumptions": [
+        "Analytical corridor bands separated by mapped crossings; not cadastral parcels or statutory planning units."
+      ]
+    },
+    "frontier_family_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(unique dominant spatial types: research refront, campus-city refront, station-city refront)",
+      "confidence": "high",
+      "assumptions": [
+        "The three families are simultaneous dominant spatial types, not a mandatory north-to-south industry lifecycle."
+      ]
+    },
+    "scenario_card_count": {
+      "status": "known",
+      "value": 10,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(SC-01 through SC-10)",
+      "confidence": "high",
+      "assumptions": [
+        "Concept scenarios with explicit human decision and shutdown/exit logic; not deployed or approved services."
+      ]
+    },
+    "hero_scene_count": {
+      "status": "known",
+      "value": 4,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(HERO-01 through HERO-04)",
+      "confidence": "high",
+      "assumptions": [
+        "Three hero scenes test the dominant spatial types and HERO-04 tests the two service wings as one open-test operating day; they can operate concurrently and do not form a lifecycle."
+      ]
+    },
+    "project_package_count": {
+      "status": "known",
+      "value": 10,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(P01 through P10)",
+      "confidence": "high",
+      "assumptions": [
+        "Concept design and operating packages only; not an approved investment, procurement or construction pipeline."
+      ]
+    },
+    "civic_landmark_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(L-01 through L-03)",
+      "confidence": "high",
+      "assumptions": [
+        "Public-record landmark concepts only; exact locations remain conditional on verified civic thresholds, rights and operators."
+      ]
+    },
+    "ecosystem_factor_count": {
+      "status": "known",
+      "value": 8,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "brief/site-package/design_brief.json"
+      ],
+      "formula": "count(land, space, industry, finance, talent, compute, data, scenario mechanism)",
+      "confidence": "high",
+      "assumptions": [
+        "Eight planning and operating factors from the task framework, translated into spatial carriers and decision rules rather than claimed as delivered infrastructure."
+      ]
+    },
+    "persona_count": {
+      "status": "known",
+      "value": 7,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(P-01 through P-07)",
+      "confidence": "high",
+      "assumptions": [
+        "Design personas for concept testing; not survey respondents or population statistics."
+      ]
+    },
+    "ai_origin_anchor_count": {
+      "status": "known",
+      "value": 2,
+      "unit": "count",
+      "source_files": [
+        "geometry/constraints.geojson"
+      ],
+      "formula": "count(IF-01, IF-02)",
+      "confidence": "high",
+      "assumptions": [
+        "Count of concept/evidence anchors; exact doors, modifiable ground-floor extents and engineering boundaries remain unverified."
+      ]
+    },
+    "ai_origin_connection_test_count": {
+      "status": "known",
+      "value": 1,
+      "unit": "count",
+      "source_files": [
+        "geometry/constraints.geojson"
+      ],
+      "formula": "count(S2 conditional connection tests)",
+      "confidence": "high",
+      "assumptions": [
+        "S2 is a test point, not a claimed new through route; the eastward lawful landing remains unverified."
+      ]
+    },
+    "a_evidence_building_count": {
+      "status": "known",
+      "value": 71,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/evidence-building-inventory.json"
+      ],
+      "formula": "count(buildings within the Gate 2 analytical A filter)",
+      "confidence": "medium",
+      "assumptions": [
+        "Frozen-OSM analytical inventory only; not a property, entrance, use, fire or as-built survey."
+      ]
+    },
+    "scheme_tier_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "geometry/phasing.geojson"
+      ],
+      "formula": "count(L, M, D scheme tiers)",
+      "confidence": "high",
+      "assumptions": [
+        "L is the reversible 0-1 year pilot, M the competition main concept and D a non-committed long-term possibility."
+      ]
+    },
+    "non_regression_baseline_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(park public space, ordinary passage capacity, ecological performance baselines)",
+      "confidence": "high",
+      "assumptions": [
+        "Count of mandatory acceptance baselines, not proof that existing baseline values have been measured."
+      ]
+    },
+    "ai_governance_safeguard_count": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(understandable, rejectable, appealable, human-overridable, closable, removable safeguards)",
+      "confidence": "high",
+      "assumptions": [
+        "Mandatory concept governance floor; not evidence that a deployed system has passed governance review."
+      ]
+    },
+    "concept_design_eligible_flag": {
+      "status": "known",
+      "value": 1,
+      "unit": "none",
+      "source_files": [
+        "manifest.json#/validation_claim/extensions/x-gate3-eligibility/data/concept_design_eligible"
+      ],
+      "formula": "1 if concept_design_eligible=true else 0",
+      "confidence": "high",
+      "assumptions": [
+        "User-confirmed Gate 3 concept status; does not imply engineering eligibility."
+      ],
+      "semantic_value": true
+    },
+    "engineering_implementation_verified_flag": {
+      "status": "known",
+      "value": 0,
+      "unit": "none",
+      "source_files": [
+        "manifest.json#/validation_claim/extensions/x-gate3-eligibility/data/engineering_implementation_verified"
+      ],
+      "formula": "1 if engineering_implementation_verified=true else 0",
+      "confidence": "high",
+      "assumptions": [
+        "User-confirmed Gate 3 engineering status; zero means engineering implementation is not verified."
+      ],
+      "semantic_value": false
+    },
+    "m_concept_design_go_flag": {
+      "status": "known",
+      "value": 1,
+      "unit": "none",
+      "source_files": [
+        "manifest.json#/validation_claim/extensions/x-gate3-eligibility/data/M_CONCEPT_DESIGN"
+      ],
+      "formula": "1 if M_CONCEPT_DESIGN=GO else 0",
+      "confidence": "high",
+      "assumptions": [
+        "Authorizes competition concept development only."
+      ],
+      "semantic_value": "GO"
+    },
+    "m_engineering_implementation_locked_flag": {
+      "status": "known",
+      "value": 1,
+      "unit": "none",
+      "source_files": [
+        "manifest.json#/validation_claim/extensions/x-gate3-eligibility/data/M_ENGINEERING_IMPLEMENTATION"
+      ],
+      "formula": "1 if M_ENGINEERING_IMPLEMENTATION=LOCKED else 0",
+      "confidence": "high",
+      "assumptions": [
+        "Locked pending official geometry, property, structure, fire, accessibility, parking, logistics, utilities and non-regression verification."
+      ],
+      "semantic_value": "LOCKED"
+    },
+    "refront_interface_length_m": {
+      "status": "unknown",
+      "value": null,
+      "unit": "m",
+      "source_files": [
+        "proposal.md",
+        "geometry/roads.geojson",
+        "visual/assets/evidence-osm-source.json"
+      ],
+      "formula": "sum(real_east_and_west_interface_polylines_after_full_rebinding_and_verification)",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "A complete, verified two-sided interface polyline is not available. The former approximately 18 km statement is deliberately excluded as a precise metric."
+    },
+    "total_floor_area_sqm": {
+      "status": "unknown",
+      "value": null,
+      "unit": "sqm",
+      "source_files": [
+        "brief/site-package/ranges/planning_limits.json"
+      ],
+      "formula": "sum(verified_building_floor_area)",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "Complete existing floor-area data, approved development controls and verified building information are unavailable."
+    },
+    "floor_area_ratio": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "brief/site-package/ranges/planning_limits.json"
+      ],
+      "formula": "total_floor_area_sqm / official_site_area_sqm",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "Approved FAR controls, official site boundary and verified total floor area are unavailable."
+    },
+    "road_area_sqm": {
+      "status": "unknown",
+      "value": null,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/roads.geojson",
+        "geometry/constraints.geojson"
+      ],
+      "formula": "sum(verified_road_area_polygons)",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "The current package contains a concept centerline only; official road redlines and verified road-area polygons are unavailable."
+    },
+    "road_area_ratio": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/roads.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "road_area_sqm / official_site_area_sqm",
+      "confidence": "unknown",
+      "assumptions": [],
+      "reason": "Road-area geometry and an official site boundary are unavailable."
+    }
+  }
+}

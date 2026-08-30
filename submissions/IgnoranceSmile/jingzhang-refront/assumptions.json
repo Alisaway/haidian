@@ -1,0 +1,95 @@
+{
+  "schema_version": "0.1.0",
+  "assumptions": [
+    {
+      "id": "A-GATE3-STATUS-001",
+      "status": "confirmed_concept_decision",
+      "statement": "Gate 3 is evidence-constrained concept-design deepening and formal submission production: concept_design_eligible=true; engineering_implementation_verified=false; M_CONCEPT_DESIGN=GO; M_ENGINEERING_IMPLEMENTATION=LOCKED.",
+      "impact": "The M scheme may be completed as a conditional competition concept. No item in this package may be read as construction-ready, site-approved, property-cleared, fire-approved, or engineering-verified.",
+      "source_files": [
+        "manifest.json#/validation_claim/extensions/x-gate3-eligibility/data",
+        "proposal.md"
+      ]
+    },
+    {
+      "id": "A-PROVISIONAL-GEOMETRY-001",
+      "status": "provisional_rebinding_required",
+      "statement": "The submitted SITE_BOUNDARY and all three KEY_AREA polygons are repository provisional rough constraints, not official redlines. Their coordinates are retained without silent translation or reshaping.",
+      "impact": "All site, key-area, land-use, building, road, green-space, public-space, phasing and precision-sensitive metrics must be rebound and fully recalculated when official polygons are supplied.",
+      "source_files": [
+        "brief/site-package/geometry/provisional_boundaries.geojson",
+        "brief/site-package/geometry/provisional_boundaries_basis.md"
+      ]
+    },
+    {
+      "id": "A-OSM-REAL-WORLD-001",
+      "status": "parallel_analysis_frame_not_formal_boundary",
+      "statement": "The frozen OSM frame is used for real-world contextual analysis and for RF-06/A, IF-01, IF-02 and S2 evidence. It does not define the competition boundary, property, road redline or engineering scope.",
+      "impact": "The OSM-mapped park and RF-06/A do not spatially coincide with the repository provisional formal polygons. The actual A evidence points remain separate analysis helpers and are not shifted into PROV-KEY-002.",
+      "source_files": [
+        "visual/assets/evidence-osm-source.json",
+        "geometry/constraints.geojson"
+      ]
+    },
+    {
+      "id": "A-ENGINEERING-UNKNOWN-001",
+      "status": "pending_professional_confirmation",
+      "statement": "Doors, column grids, room boundaries, property and lease boundaries, parking capacity and rights, fire access, drop-off, loading, waste, equipment maintenance, utilities, topography and as-built conditions are not verified.",
+      "impact": "Ground-floor plans are interface strategy plans only. Unverified elements use dashed alternatives, variable dimensions and unlock conditions; they cannot be treated as existing facts or approved works.",
+      "source_files": [
+        "visual/assets/evidence-building-inventory.json",
+        "brief/site-package/missing-data.md",
+        "brief/site-package/allowed_design_space.json"
+      ]
+    },
+    {
+      "id": "A-S2-LANDING-001",
+      "status": "conditional_no_link_until_verified",
+      "statement": "S2 Shuangqing Road has a mapped west-side approach, while a lawful eastward public landing, continuous accessible route, traffic condition, property permission and fire compatibility remain unverified.",
+      "impact": "S2 is a connection test point only. No new through route or side-switching action is claimed unless every landing and ordinary-passage condition is verified.",
+      "source_files": [
+        "visual/assets/evidence-osm-source.json#/archive_chunks",
+        "geometry/constraints.geojson"
+      ]
+    },
+    {
+      "id": "A-NONREGRESSION-001",
+      "status": "design_baseline_locked_pending_measurement",
+      "statement": "The concept is governed by three non-regression baselines: park net public space must not decrease, ordinary walking/cycling/accessibility capacity must not decline, and existing ecological performance must not regress.",
+      "impact": "These are acceptance rules, not measured current performance. M engineering implementation remains locked until survey/as-built baselines and independent fire, medical, loading, waste and maintenance routes are verified.",
+      "source_files": [
+        "proposal.md"
+      ]
+    },
+    {
+      "id": "A-PHASING-001",
+      "status": "conditional_concept_sequence",
+      "statement": "L is a reversible 0-1 year operational pilot; M is the selected competition concept; D is a long-term possibility only and is not a present commitment.",
+      "impact": "Calendar windows are discussion references rather than approved schedules. Any failed unlock condition returns the affected action to L or removes it.",
+      "source_files": [
+        "proposal.md",
+        "geometry/phasing.geojson"
+      ]
+    },
+    {
+      "id": "A-AI-GOVERNANCE-001",
+      "status": "mandatory_concept_safeguard",
+      "statement": "Every AI node must be understandable, rejectable, appealable, human-overridable, closable and removable, with a non-AI equivalent route for essential services.",
+      "impact": "This is a governance floor for all ten scenario cards, not a separate brand and not evidence that any service is already deployed or approved.",
+      "source_files": [
+        "proposal.md",
+        "brief/site-package/agent_taskbook.json"
+      ]
+    },
+    {
+      "id": "A-CONTROLS-001",
+      "status": "pending_professional_confirmation",
+      "statement": "Detailed regulatory controls, official road redlines, ownership, heritage controls, municipal utilities and engineering constraints are absent from the cleared site package.",
+      "impact": "Concept-design coverage can be completed with explicit limits, but statutory planning, engineering feasibility and implementation claims remain unavailable until official attachments and professional review are obtained.",
+      "source_files": [
+        "brief/site-package/ranges/planning_limits.json",
+        "brief/site-package/allowed_design_space.json"
+      ]
+    }
+  ]
+}

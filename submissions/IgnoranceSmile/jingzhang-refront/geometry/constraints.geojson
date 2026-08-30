@@ -1,0 +1,173 @@
+{
+  "type": "FeatureCollection",
+  "name": "evidence_constraints_and_parallel_osm_analysis_helpers",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "A-RF06-ANALYSIS-WINDOW",
+      "properties": {
+        "id": "A-RF06-ANALYSIS-WINDOW",
+        "layer": "AI_SERVICE_ZONE",
+        "source_type": "agent_inferred_from_public_data",
+        "confidence": "medium",
+        "geometry_role": "analysis_helper",
+        "area_sqm_declared": 680692.918,
+        "label_zh": "RF-06/A AI原点复面样段 OSM 分析窗口",
+        "label_en": "RF-06/A AI Origin Re:Front OSM analysis window",
+        "analysis_status": "concept_design_eligible",
+        "engineering_implementation_verified": false,
+        "official_boundary": false,
+        "boundary_precision": "analytical_bbox",
+        "source_ids": [
+          "OSM-OVERPASS-JINGZHANG-CONTEXT-20260828"
+        ],
+        "formal_site_intersection": false,
+        "known_spatial_conflict": "该真实 OSM 分析窗口与 PROV-KEY-002 不相交，不将任一几何静默平移到临时 formal polygon。",
+        "usage_note": "仅用于 RF-06/A 实证约束下的概念设计与图面定位；不是竞赛红线、地块、权属或工程边界。"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [116.3278, 39.9907],
+            [116.3352, 39.9907],
+            [116.3352, 40.0004],
+            [116.3278, 40.0004],
+            [116.3278, 39.9907]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "A-IF-01-EVIDENCE-ANCHOR",
+      "properties": {
+        "id": "A-IF-01-EVIDENCE-ANCHOR",
+        "layer": "SCENARIO_NODE",
+        "source_type": "osm",
+        "confidence": "medium",
+        "geometry_role": "analysis_helper",
+        "label_zh": "IF-01 前场相遇，后场不断",
+        "label_en": "IF-01 Front of house meets; back of house continues",
+        "node_role": "primary_refront_evidence_anchor",
+        "mapped_reference": "OSM way/239267084 centroid; Tongfang D building",
+        "source_ids": [
+          "OSM-OVERPASS-JINGZHANG-CONTEXT-20260828",
+          "S10",
+          "S11"
+        ],
+        "known_evidence": "OSM building geometry plus public/institutional evidence of first-floor innovation activity and clinic use.",
+        "unknown_conditions": [
+          "park_facing_door",
+          "column_grid_and_room_extent",
+          "property_and_lease_boundary",
+          "parking_and_dropoff_rights",
+          "medical_emergency_route",
+          "fire_access",
+          "loading_waste_and_equipment_route"
+        ],
+        "concept_action": "Conditional one-structural-bay ground-floor edge, forecourt threshold and independently operable back-of-house routes.",
+        "concept_status": "M_CONCEPT_DESIGN_GO",
+        "engineering_status": "M_ENGINEERING_IMPLEMENTATION_LOCKED",
+        "usage_note": "点坐标只是已映射 D 座建筑质心，不表示现状入口、改造边界或已批工程。"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [116.3328027, 39.9969571]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "A-IF-02-EVIDENCE-ANCHOR",
+      "properties": {
+        "id": "A-IF-02-EVIDENCE-ANCHOR",
+        "layer": "SCENARIO_NODE",
+        "source_type": "osm",
+        "confidence": "medium",
+        "geometry_role": "analysis_helper",
+        "label_zh": "IF-02 人始终在场",
+        "label_en": "IF-02 People remain present",
+        "node_role": "public_service_and_human_governance_anchor",
+        "mapped_reference": "OSM way/1044614690 centroid; mapped community health service station",
+        "source_ids": [
+          "OSM-OVERPASS-JINGZHANG-CONTEXT-20260828",
+          "S8",
+          "S9"
+        ],
+        "known_evidence": "Official directory evidence for the Wangzhuang Road 27 address and service hours plus OSM building geometry.",
+        "unknown_conditions": [
+          "exact_building_match_for_each_public_service",
+          "park_facing_door",
+          "medical_waste_and_emergency_route",
+          "residential_access_control",
+          "fire_access",
+          "parking_and_service_route"
+        ],
+        "concept_action": "Human-staffed service, translation, navigation and appeal support; explicitly not an AI showroom.",
+        "concept_status": "M_CONCEPT_DESIGN_GO",
+        "engineering_status": "M_ENGINEERING_IMPLEMENTATION_LOCKED",
+        "usage_note": "点坐标是 OSM 映射社区卫生服务站建筑质心；官方目录不证明临园门、院内楼栋对应、改造或后勤路线。"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [116.3320575, 39.9948615]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "A-S2-CONNECTION-TEST",
+      "properties": {
+        "id": "A-S2-CONNECTION-TEST",
+        "layer": "SCENARIO_NODE",
+        "source_type": "osm",
+        "confidence": "low",
+        "geometry_role": "analysis_helper",
+        "label_zh": "S2 过街成立，接棒才成立",
+        "label_en": "S2 The relay follows a verified crossing",
+        "node_role": "conditional_cross_connection_test",
+        "mapped_reference": "Approximate endpoint of mapped west-side Shuangqing Road approach",
+        "source_ids": [
+          "OSM-OVERPASS-JINGZHANG-CONTEXT-20260828"
+        ],
+        "known_evidence": "A mapped west-side road approach exists.",
+        "unknown_conditions": [
+          "traffic_signal_and_phase",
+          "measured_clear_width_and_flow",
+          "lawful_eastward_public_landing",
+          "continuous_accessible_route",
+          "property_permission",
+          "parking_service_and_fire_conflicts"
+        ],
+        "connection_status": "NO_LINK_UNTIL_ALL_LANDING_CONDITIONS_VERIFIED",
+        "concept_action": "Compare alternative landings only; no continuous line, new route or side-switch claim is made.",
+        "concept_status": "M_CONCEPT_DESIGN_GO_AS_TEST_ONLY",
+        "engineering_status": "M_ENGINEERING_IMPLEMENTATION_LOCKED",
+        "usage_note": "未知东向落点不创建点、线或面几何，以免将备选状态伪装为现状或已批贯通路线。"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [116.331075, 39.99748]
+      }
+    }
+  ],
+  "data_gap": {
+    "status": "official_constraint_geometry_unavailable",
+    "assumption_ids": [
+      "A-PROVISIONAL-GEOMETRY-001",
+      "A-OSM-REAL-WORLD-001",
+      "A-CONTROLS-001",
+      "A-ENGINEERING-UNKNOWN-001",
+      "A-S2-LANDING-001"
+    ],
+    "missing_layers": [
+      "REGULATORY_CONTROL",
+      "HERITAGE_PROTECTION",
+      "PARCEL",
+      "EXISTING_PRIMARY_ROAD",
+      "EXISTING_RAIL",
+      "EXISTING_WATER"
+    ],
+    "note_zh": "本文件只收录 formal 几何错位披露与 RF-06/A 的分析辅助特征。控规、文保、道路红线、权属、轨道、蓝线、消防及工程边界均未取得，因此不生成 official_constraint。",
+    "note_en": "This file contains only the formal-geometry mismatch disclosure and RF-06/A analysis helpers. Regulatory, heritage, road-redline, cadastral, rail, blue-line, fire and engineering boundaries remain unavailable, so no official_constraint is generated."
+  }
+}
