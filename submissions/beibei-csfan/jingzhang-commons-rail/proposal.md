@@ -10,8 +10,8 @@ license: "COMMUNITY-DISPLAY-ONLY"
 summary: "以一条可走、可核、可关的公共核验廊串联三区漏斗：众智园就绪门、原点共测廊下、大钟寺运营交接厅。边界为仓库临时约束，三项核心指标由本包几何在 EPSG:4548 复算。"
 tracks: ["ai-traffic-walkability", "civic-agent-governance", "youth-friendly-public-space"]
 scenarios: ["ai-traffic-walkability", "ai-cultural-guide", "public-safety-operations-review"]
-iteration: 3
-version: "1.2.0"
+iteration: 4
+version: "1.3.0"
 ---
 
 # 京张共证廊
