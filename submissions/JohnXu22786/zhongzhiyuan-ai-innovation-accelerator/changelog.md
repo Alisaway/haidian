@@ -1,5 +1,10 @@
 # 方案迭代记录
 
+## v2.4 - 2026-08-30 (DIRECT CODEX CURRENT-HEAD CONSISTENCY REPAIR)
+
+- 按官方 82/100 评审逐项复核当前包：将 formal narrative 的“three internal working nodes”改为跨众智园、北京 AI 原点社区、大钟寺 AI 产业集聚区的三片区接口网络，明确三者均为概念映射而非众智园内部已确定点位。
+- 重新核对中英文 proposal、compliance matrix、key-areas/site-overview 图、双语 HTML 与 A3/A0 图册的 L1-L3 归属；当前英文 A3 第1页使用 `site-overview.en.png`，英文第2页使用 `key-areas.en.png`，不再嵌入中文总览图。
+
 ## v2.3 - 2026-08-30 (DIRECT CODEX PR #3864 LATEST COCO REVIEW REPAIR)
 
 - 按最新 CocoSgt 82/100 CHANGES_REQUESTED 复核：三矩阵与 `sources.json` 的五个项目级案例 ID 全包检索无孤立旧案例 ID；未重复改写已正确的矩阵内容。
