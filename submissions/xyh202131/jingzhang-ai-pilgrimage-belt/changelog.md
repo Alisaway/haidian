@@ -1,5 +1,19 @@
 # 方案迭代记录 / Changelog
 
+## v91.0 - 2026-08-30
+
+**交接索引片段路由闭合 / Handoff-index Fragment-route Closure**
+
+- 已有能力：R90 已把可选双语交接摘要指向已登记的 `visual/assets/review-handoff-index.json`；当前中英文 visual 也共享 `task`、`states`、`handoff`和 `evidence` 等稳定可聚焦片段。
+- 真实缺口：修复前，整包结构化 JSON 共保留 39 个指向历史 `#s3/#s4/#s5/#s6/#public-signal-interface/#areas/#limits/#metabolism/#non-ai-first` 的片段引用，而当前中英文 visual 中这些 ID 均不存在。HTML 页面自身的链接审计仍为 PASS，但按交接、双语抽样、合规、场地与证据合同追证会落到不存在的页面位置。
+- 必须冻结：冻结“双轨京张 / Twin-Track Jing-Zhang”、三种不可互换原型、JZ-AIOS、G0—G3、四轴、三载体、证据门、权利边界及 12/8/3/36；不改 proposal、report HTML、visual 页面、图件、媒体、四份 PDF、geometry、metrics、证据内容或现实状态。
+- 本轮实施：把 39 个历史片段按语义定向替换为当前存在的 `#task`、`#prototype`、`#states`、`#projects`、`#handoff`与 `#evidence`，同步交接、双语抽样、合规、场地与证据合同的可复核位置，并将索引的前序评审绑定更新到 PR #4254 的 exact head。官方几何、批准、现场基线与结果、现实责任、预算、恢复时间、公众反馈、独立法律/商标审查和人工双语签署继续为 unknown、0、未提供或 NO-GO。
+
+- Existing capability: R90 redirected the optional bilingual handoff summary to the declared `visual/assets/review-handoff-index.json`; the current Chinese and English visuals also share stable, focusable `task`, `states`, `handoff` and `evidence` fragments.
+- Real gap: before repair, structured JSON across the package still contained 39 fragment references to historical `#s3/#s4/#s5/#s6/#public-signal-interface/#areas/#limits/#metabolism/#non-ai-first` targets, none of which exists in the current paired visuals. The HTML pages' own link audit still passed, but tracing through handoff, bilingual sampling, compliance, site and evidence contracts would land at nonexistent page positions.
+- Frozen boundary: Twin-Track Jing-Zhang, the three non-interchangeable prototypes, JZ-AIOS, G0–G3, four axes, three carriers, evidence gates, rights boundaries and 12/8/3/36 remain frozen. Proposals, report HTML, visual pages, figures, media, all four PDFs, geometry, metrics, evidence content and real-world status are unchanged.
+- Implemented this round: semantically redirected all 39 historical fragments to the existing `#task`, `#prototype`, `#states`, `#projects`, `#handoff` and `#evidence` destinations, synchronized reviewable locations across the handoff, bilingual sampling, compliance, site and evidence contracts, and rebound predecessor-review metadata to PR #4254's exact head. Official geometry, approvals, field baselines and outcomes, real accountability, budgets, recovery time, public feedback, independent legal/trademark review and human bilingual sign-off remain unknown, zero, not provided or NO-GO.
+
 ## v90.0 - 2026-08-30
 
 **离线评审追证入口闭合 / Offline Review Evidence-route Closure**
