@@ -40,6 +40,11 @@
 | assets/figures/component-library.png 及 .en.png | 同上 | 无 | 是 | agent.4 组件库（概念） |
 | assets/figures/culture-signage.png 及 .en.png | 同上 | 无 | 是 | agent.5 导视层级（概念） |
 | assets/figures/operations-calendar.png 及 .en.png | 同上 | 无 | 是 | agent.6 运营节奏（概念） |
+| assets/figures/jingjinji-interfaces.png 及 .en.png | 同上 | 无 | 是 | 京津冀条件接口（概念） |
+| assets/figures/ai-architecture.png 及 .en.png | 同上 | 无 | 是 | 概念 AI 技术架构（未部署） |
+| assets/figures/inclusion-space.png 及 .en.png | 同上 | 无 | 是 | 包容性空间落点（概念） |
+| assets/figures/rights-ledger.png 及 .en.png | 同上 | 无 | 是 | 权利台账可见图（概念） |
+| assets/figures/international-campaign.png 及 .en.png | 同上 | 无 | 是 | 国际传播战役卡（概念） |
 
 无肖像、无未授权商标、无私人室内、无爬取的平台原图。
 
