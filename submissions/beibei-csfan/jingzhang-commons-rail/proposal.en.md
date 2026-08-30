@@ -10,8 +10,8 @@ license: "COMMUNITY-DISPLAY-ONLY"
 summary: "A walkable, verifiable, switch-off public gallery stitches a three-gate funnel: Ready Gate at Zhongzhiyuan, Shared-Measure Gallery at Origin Community, and Operations Handover Hall at Dazhongsi. Boundaries are provisional; three core metrics are recalculated from this package in EPSG:4548."
 tracks: ["ai-traffic-walkability", "civic-agent-governance", "youth-friendly-public-space"]
 scenarios: ["ai-traffic-walkability", "ai-cultural-guide", "public-safety-operations-review"]
-iteration: 2
-version: "1.1.0"
+iteration: 3
+version: "1.2.0"
 ---
 
 # Jingzhang Commons Gallery
@@ -48,7 +48,18 @@ The belt is named 京张共证廊 / Jingzhang Commons Gallery. One structural se
 
 Three positions become space: a global AI highland maps to Ready Gate’s edge-attached test yard; a pilgrimage place maps to three checkable landmarks rather than a light show; a high-quality district maps to the no-login walk section. Among the five functions, innovation and testing sit at Zhongzhiyuan, translation and talent services sit at Origin, consumption and international handover sit at Dazhongsi, cultural checking sits along the gallery, and governance review sits in the annual open day.
 
-The two wings are interfaces only: the Zhongguancun wing offers enterprise-service booking; the Xiaoyuehe wing offers scenario-opening booking. No fake wing redline is drawn. Regional synergy is a functional-division suggestion: Haidian offers a walkable verification gallery; other parks may offer pilot plants, large instruments, or manufacturing interfaces—all marked conceptual.
+The two wings are interfaces only: the Zhongguancun wing offers enterprise-service booking; the Xiaoyuehe wing offers scenario-opening booking. No fake wing redline is drawn. Regional synergy with Beilin Community, Future Science City, Huairou Science City, and the Economic-Technological Development Area is written as a **checkable interface list**, not as signed agreements. Each row names what the Haidian side can offer, what the counterpart might offer, a verifiable action, a stop rule, and what this package does not claim. If site access, test-safety rules, or an event permit are missing, that interface stays closed.
+
+| Partner | Conceptual interface | Haidian side can offer | Counterpart may offer | Verifiable action | Stop rule | This package does not claim |
+| --- | --- | --- | --- | --- | --- | --- |
+| Beilin Community | Everyday living | No-login walk, ordinary night lighting, paper wayfinding | Residential access and daily services | Written interface list + stop rules | No site authorisation → do not enter the compound | No MOU, no changed neighbourhood redline |
+| Future Science City | Pilot verification | Ready Gate edge test yard, booking window | Mid-scale pilot slots | Apply → review → pause six-step | No test-safety rule → stop tests | No investment figure, no firm list |
+| Huairou Science City | Large-instrument narrative | Public-fact windows on the gallery (public fields only) | Instrument-visit booking if they open it | Display only already-public source fields | Tracking or biometrics → close windows | No instrument access, no uncleared archives |
+| Economic-Technological Development Area | Manufacturing translation | Scenario-opening flow, Operations Handover Hall | Manufacturing / pilot line | Translation nodes only after a permit trigger | No permit → no public date | No factory pledge, no investment quota |
+| Zhongguancun wing | Enterprise-service booking | Origin Q&A wall, component library | Enterprise booking window | Human final call; AI only sorts public evidence | Test occupying the spine → stop | No tenant list |
+| Xiaoyuehe wing | Scenario-opening booking | Annual rhythm + six-step opening | Scenario sites | Apply—review—open—monitor—pause—review | No permit → no announced date | No government-set calendar |
+
+All of the above are concept suggestions for professional teams after counterpart authorisation. They do not constitute a closed cross-region collaboration.
 
 Eight ecology cases keep mechanisms only and are mapped onto Zhongzhiyuan, Origin Community, the Zhongguancun wing, and scenario cards. Street widths, fixtures, firm lists, and investment figures are not copied [metric:ecology_case_count].
 
