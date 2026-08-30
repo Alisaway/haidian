@@ -50,3 +50,11 @@
 
 
 - Round 4 (2026-08-30, direct Codex): read CocoSgt 59.0 before editing; unified AGE·JZ nodes, added cooperation/AI validation/implementation-prerequisite matrices, upgraded six case sources to specific primary pages, rewrote data governance as proposed bases pending legal review, rebuilt all bilingual figures and fixed-layout A0/A3 outputs.
+
+## 1.3 - 2026-08-30 - Direct Codex repair for CocoSgt review 5060700524
+
+- Added six first-party global AI ecosystem comparisons and an explicit land/space/industry/funding/talent/compute/data/scenario mechanism map; retained six aging-policy entries as `background_only`.
+- Added the east–west stitch × north–south care-axis spatial response, the Dazhongsi intelligent-native consumer/business interface, named operators, human fallback, and stop conditions in both narratives and the regional figure.
+- Replaced the blanket “anonymized aggregation only” claim with a layered personal-information model across summaries, assumptions, scenario cards, risk text and rights statement.
+- Removed repeated bilingual blocks, split the fused land-use and transport headings, regenerated bilingual figures and real A0/A3 PDFs, and refreshed offline visual surfaces.
+- No remote branch, PR state, review, push or Antigravity path was touched.

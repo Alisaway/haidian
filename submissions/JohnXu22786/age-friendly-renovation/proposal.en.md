@@ -6,13 +6,11 @@ proposal_format_version: "2"
 bilingual_contract_version: "1"
 translation_of: "proposal.md"
 license: "COMMUNITY-DISPLAY-ONLY"
-summary: "AGE Love Loop (AGE·JZ) is an aging-friendly specialized concept along the Centennial Jingzhang AI Innovation Belt: a One-Corridor One-Courtyard One-Pavilion network (Yixinglang age-friendly slow corridor, Yiyangxiaoyuan community day-care court, Zhilingguan digital elder-care pavilion). It covers 5 persona groups, 10 scenario cards (fall-alert, medication-reminder, meal-ordering, digital-assistance, family-linking AI etc.), anonymized aggregation only, human review of key decisions, no over-monitoring; all element mechanisms are concept suggestions; 6 direction-only global cases; three formal core metrics recomputed from this package's geometry. All is provisional concept, no FAR/height/demolition/investment/capacity conclusions, no fabricated official data, recompute when official data is released."
+summary: "AGE Love Loop (AGE·JZ) organizes an aging-friendly renovation and community elder-care network as a One-Corridor One-Courtyard One-Pavilion system: Yixinglang (age-friendly slow corridor next to Zhongzhiyuan), Yiyangxiaoyuan (community care courtyard next to the AI Origin Community), and Zhilingguan (digital elder-care pavilion next to Dazhongsi). It covers 5 persona groups and 10 AI+ scenario cards. Individual-service workflows process personal information only in necessary fields; controller, proposed legal basis, retention/deletion and withdrawal rules remain pending professional review, while anonymized aggregation is used only for statistics; key decisions receive human review and over-monitoring is prohibited. The formal case pool has 6 first-party global AI ecosystem pages; 6 aging-policy entries are background only. Three formal core metrics are recomputed from this package geometry. This is a concept only: no FAR, height, retain/renovate/demolish, unit count, renovation quantity, investment or engineering conclusion is made, no official data is fabricated, and the package is recomputed when official geometry is released."
 tracks: ["ai-traffic-walkability", "enterprise-services-ecosystem", "civic-agent-governance"]
 scenarios: ["ai-traffic-walkability", "enterprise-service-copilot", "public-safety-operations-review"]
 iteration: "v2.0-round3"
 ---
-
-AGE Love Loop (AGE·JZ) is an aging-friendly renovation and community elder-care network concept proposed along the Centennial Jingzhang AI Innovation Belt in Haidian, responding to the taskbook's all-age-friendly living, public-service facilities and urban renewal dimensions as a livelihood application testbed of the AI-integrated innovation belt. It links three original nodes - Yixinglang (age-friendly slow corridor next to Zhongzhiyuan), Yiyangxiaoyuan (community elder-care courtyard next to the Beijing AI Origin Community) and Zhilingguan (digital elder-care pavilion next to Dazhongsi) - into a One-Corridor One-Courtyard One-Pavilion service network that chains mobility, care and digital capability into a perceivable care journey. This is a provisional concept: no planning approval, engineering feasibility or implementation commitment.
 
 ## Design Basis and Source List
 The design basis includes the public call-for-proposals taskbook (agent.1-6), the official seven-dimension review rubric and the submission organization template, plus public policy directions and professional documents. Documented sources are listed in Design Basis; actual referenced data are registered in `sources.json`; unacquired items are marked in assumptions and missing-data notes. Evidence anchors in this narrative use short IDs (date suffix omitted); the full IDs with publisher, published and accessed dates and reuse boundaries are in `sources.json`, e.g. `[source:DATA-SRC-AGENT-TASKBOOK]` corresponds to the taskbook excerpt. [source:DATA-SRC-OFFICIAL-ANNOUNCEMENT], [source:DATA-SRC-AGENT-TASKBOOK], [source:DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES], [source:DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING], [source:DATA-SRC-MNR-LAND-USE-CLASSIFICATION], [source:DATA-SRC-PROVISIONAL-BOUNDARIES]
@@ -22,19 +20,39 @@ The design basis includes the public call-for-proposals taskbook (agent.1-6), th
 ## Three-Level Scope Framework
 Per the official announcement's textual scope: coordinated research area ~43.6 km2 (belt industry and future-city research) - overall design area ~11.4 km2 (urban renewal and regulatory-plan-level urban design) - key areas ~368.4 ha (three key-area detailed designs). This package is a participant provisional model specializing in the three aging-friendly nodes within the overall design area; it replaces no official geometry of any level. The three formal core metrics `site_area_sqm`, `green_ratio` and `public_space_ratio` are recomputed from this package's geometry, not quoted. Until official data (elder population distribution, meal and care demand, existing accessibility asset surveys) are published, values are flagged as assumptions with stated use boundaries and recompute triggers. [source:DATA-SRC-AGENT-TASKBOOK]
 
-## Coordinated Research Area: Industry and Future City Research
+## Industry and Future-City Research at the Coordinating Scale
 Industry and future-city research identifies the livelihood-side combination of aging-friendly renovation with the innovation belt: smart age-tech equipment, rehabilitation aids and health-data services extend the industrial chain, exploring blocks where youth innovation and elderly living coexist. It links the Three Zones Two Wings loop - Zhongzhiyuan AI Accelerator, Beijing AI Origin Community and Dazhongsi AI Industry Cluster as the "three zones"; Zhongguancun Technology-Service Wing and XiaoYue River Scenario-Enabling Wing as the "two wings" - and establishes concept-level coordination with Beiwu community, Future Science City, Huairou Science City, Beijing E-Town and the Beijing-Tianjin-Hebei cluster (to be verified after official data release). Six direction-only global aging-friendly cases are summarized: Beijing old-community adaptation, Shanghai one-touch elder-care call services, Japan's community-based integrated care, Singapore's age-friendly housing, MOHURD home-adaptation orientation and the WHO age-friendly cities framework; each is registered in `sources.json` with "to be verified" status and is not conclusive case evidence. [source:DATA-SRC-PROVISIONAL-BOUNDARIES]
 
-| Case / direction | Region | Type | Lesson (direction only) | Source |
-|---|---|---|---|---|
-| Beijing old-community adaptation | Beijing | micro-renovation policy | government-led renovation, handrails, accessibility | [source:DATA-SRC-CASE-BEIJING] |
-| Shanghai one-touch elder care | Shanghai | community call help | telephone help, human fallback | [source:DATA-SRC-CASE-SHANGHAI] |
-| Japan community-based care | Japan | in-home community care | multi-actor local care network | [source:DATA-SRC-CASE-JAPAN] |
-| Singapore age-friendly housing | Singapore | housing & community | accessible public housing and care facilities | [source:DATA-SRC-CASE-SINGAPORE] |
-| MOHURD home adaptation | China | policy orientation | family care beds and home adaptation checklists | [source:DATA-SRC-CASE-MOHURD-HOME] |
-| WHO age-friendly cities | International | framework | eight-domain framework and assessment tools | [source:DATA-SRC-CASE-WHO] |
 
-## Overall Design Area: Urban Renewal and Regulatory-Plan-Level Urban Design
+### Six global AI innovation ecosystems (formal comparison pool)
+
+Only first-party institutional pages with a stable evidence location are used below. They compare mechanisms; they do not imply a Haidian partnership, capacity, budget or procurement. Facts are paraphrased only; no page graphics, marks or layouts are reused. Local property, data, licensing and public procedures remain gates before transfer.
+
+| Global AI ecosystem | Place | First-party page and evidence anchor | Comparable mechanism (not a transfer) | Actionable AGE·JZ translation | Non-transferable part |
+|---|---|---|---|---|---|
+| AI Singapore 100 Experiments | Singapore | [source:DATA-SRC-AI-ECOSYSTEM-AISINGAPORE-100E]; applied experiments are organized around teams, assessment and handover | Competitive entry, co-funding category, talent/research teams, scenario validation and handover | A conceptual “open call—small pilot category—human assessment—operations handover” for the three nodes | No Singapore funding, timeline, partner or outcome is promised; local eligibility and procurement are pending |
+| UK AI Research Resource (AIRR) | United Kingdom | [source:DATA-SRC-AI-ECOSYSTEM-UK-AIRR]; the government page describes researcher access to AI compute and research resources | Compute access, shared research/industry use, application review and compute–data–scenario boundaries | A Zhilingguan developer-corner gate: eligibility, minimum data, compute quota pending and human review | No UK resource, compute scale or cross-border data flow is implied; equipment, network and licensing are pending |
+| Vector Institute | Toronto, Canada | [source:DATA-SRC-AI-ECOSYSTEM-VECTOR]; the institute describes research, talent, industry adoption and public/industry collaboration | Research–talent–industry intermediary, problem intake, evaluation and knowledge transfer | A “problem pool—talent co-creation—scenario acceptance—knowledge pack” linking universities, specialists, merchants and communities | No Vector participation, brand, course or partner list is claimed; local authorization is pending |
+| Mila | Montreal, Canada | [source:DATA-SRC-AI-ECOSYSTEM-MILA]; public material frames research, talent, social impact and industry collaboration | Research platform, talent network, industry/public-interest collaboration and impact review | A conceptual research interface for silver classrooms, error stratification and human-takeover review | Research capacity, members, funding and governance are not transferred; local ethics and data review remain independent |
+| NUS BLOCK71 | Singapore | [source:DATA-SRC-AI-ECOSYSTEM-NUS-BLOCK71]; NUS describes incubation, co-creation, startup community and cross-region networks | Incubation space, venture support, enterprise/university/developer community and conversion entry | A developer co-creation corner in Zhilingguan and a problem-to-service conversion list in the ZGC tech-service wing | No NUS, BLOCK71 or resident company is claimed; space, tenants and IP arrangements are pending |
+| European AI Factories | European Union | [source:DATA-SRC-AI-ECOSYSTEM-EU-AIFACTORIES]; the EU framework combines compute, data, talent and startup/industry support | Public compute nodes, data/talent support, research/startup access and industrial scenarios | Split “compute–data–talent–scenario” into auditable pilot gates and annual review without pre-committing procurement | No EU facility, cross-border data or funding access is implied; local compute, data and compliance are pending |
+
+### Eight-factor mechanism mapping (conceptual; no implementation commitment)
+
+| Factor | Package action | Responsibility / access | Formal gate and stop condition |
+|---|---|---|---|
+| Land | Candidate nodes and retain-first suggestions inside a provisional boundary | Ownership, planning, heritage and green-line review | No placement without boundary, ownership and heritage confirmation |
+| Space | Yixinglang, Yiyangxiaoyuan, Zhilingguan and the east–west stitch as reversible carriers | Site survey, accessibility audit and public co-review | Adjust/remove when continuity or safety fails |
+| Industry | Three industry tests plus aid, care and digital-assistance problem pool | Operators, licensed parties and specialists sign test protocol | Pause after error, safety event or unresolved complaints |
+| Funding | Conceptual competitive-pilot and annual-operations budget categories only | Budget, procurement and grant eligibility pending; no amount stated | No equipment, staffing or service volume without approved budget |
+| Talent | Universities, developers, volunteers, care workers and residents co-create | Open application, training, volunteer and care qualification review | No scale-up without human-review and training records |
+| Compute | Access interface for the Zhilingguan developer corner and tests | Resource origin, accounts, network and data isolation pending | Stop without resource isolation or anomaly monitoring |
+| Data | Minimum necessary fields, roles, retention/deletion, withdrawal and human alternatives | Controller, legal basis and privacy review pending | Stop on purpose creep, unauthorized access or failed deletion |
+| Scenarios | Ten cards, three industry tests and public annual review | Pilot application, public feedback, human review and KPI | Remove after KPI miss, major safety/service issue or unsuitable site |
+
+The six domestic/international aging-policy and project entries are background reading only and are not counted in the formal pool or treated as cleared, verified or transferable evidence: Beijing old-community adaptation, Shanghai One-Touch, Japan community-based care, Singapore Kampung Admiralty, home adaptation direction, and the WHO age-friendly cities framework. Their state is uniformly `background_only`; see `sources.json`.
+
+## Overall Urban Renewal and Control-Plan-Level Urban Design
 The overall design organizes an age-friendly public-space environment around the relic-park green belt: the Yixinglang slow axis, restful nodes and accessible facilities, reversible growth, streets that can time-share display and science-popularization needs. It advocates renewal-first, keep-renovate-improve, micro-update over large demolition. ![AGE·JZ non-exclusive visual direction](assets/figures/logo-agejz.en.png)
 
 Brand & visual identity (agent.1): primary identity "AGE Love Loop AGE·JZ", logo direction "loop graph" derived from rail imagery; color system of railroad brick red, dusk warm orange and digital cyan; sans-serif Chinese black type with geometric sans Latin; loop-sign wayfinding symbols and hub-dot icon system for guide signs, railing markers, pavement and nodal plaques. The name is an internal working codename; it will not be registered or used externally before prior-rights clearance. FAR, building height and other statutory-control-dependent content remain unknown pending official data. [source:DATA-SRC-MOHURD-CONTROL-DETAILED-PLANNING]
@@ -48,46 +66,61 @@ All node locations are concept points to be re-positioned after site survey, ver
 
 ![Three-node index and design tasks](assets/figures/key-areas.en.png)
 
-## AI Innovation Ecosystem, Personas, and AI+ Scenarios
-![Seven-factor AI innovation ecosystem](assets/figures/ai-ecosystem.en.png)
+### Three-node implementation cards (agent.4 deepening)
+
+| Card item | Yixinglang (Zhongzhiyuan side) | Yiyangxiaoyuan (AI Origin Community side) | Zhilingguan (Dazhongsi side) |
+|---|---|---|---|
+| Site and existing-condition check | Continuous belt, slope/crossing/lighting and ownership to survey; rail/bus proximity is only a candidate condition | Service radius, stock space, ownership and care/meal qualifications pending | Near cultural space and accessible; building, cultural-facility use and digital baseline pending |
+| Space components | Ramps, softened crossings, seats, lighting, help post and honor wall | Day care, meal portioning, health corner, silver classroom, visiting area and honor wall | Device teaching, aid sharing, anti-fraud, human desk and developer corner |
+| Operation and human fallback | Street lead, operator and volunteers; hotline, human dispatch and maintenance log | Community, specialists and resident council; manual care, meal serving and health review | Industry/university/merchant/volunteer group; human guidance plus phone/window consumer service |
+| License and verification | Accessibility works and utility access pending; integrity, response time and continuity KPIs | Care filing, meal sanitation and health-check compliance pending; service and satisfaction KPIs | Aid-device business/disinfection, digital service and data compliance pending; turnover, class/help satisfaction KPIs |
+| Stop/adjust | Slope, ownership or safety unsuitable; adjust/remove after KPI miss | Capacity, license or service quality unsuitable; stop/adjust after KPI miss | Supply, demand or data risk unsuitable; pause after safety event, unresolved complaint or KPI miss |
+
+**Dazhongsi intelligent-native consumer/business service interface (conceptual):** organize digital-assistance consumption, booking, aid and cultural services as “merchant/community need card—developer/operator micro-pilot—human confirmation—public feedback—remove/iterate”. Operators are only pending merchant, community, industry/university alliance and specialist roles; no tenant or signed partnership is stated. Human desk, phone, paper receipt and family/volunteer proxy remain available. Misleading consumption, unauthorized personal-data use, concentrated accessibility complaints or a safety event immediately disables automated recommendation/dispatch, transfers to humans, and triggers investigation, notice and removal logs.
+
+## AI Innovation Ecosystem, Talent Personas and AI+ Scenarios
+![Eight-factor AI innovation ecosystem: land, space, industry, funding, talent, compute, data and scenarios](assets/figures/ai-ecosystem.en.png)
 
 An AI innovation ecosystem atlas organizes AI across transport, industry, space, public services, culture and governance into perceivable scenario cards, with an industry-space mapping (age-tech equipment and rehab-aid industry, cultural content via experience pavilions and silver classrooms, governance guardrails via public services, mobility via the slow axis, spatial scenarios via the component library). Ten scenario cards are fixed (fall-alert, medication-reminder, meal-ordering, digital-assistance, family-linking, one-touch help, accessible-inspection, aid-sharing, silver-classroom and accessible-transit-dispatch AI). ![10 AI+ scenario cards](assets/figures/scenario-cards.en.png)
 
-Five persona groups are structed (isolated elders, disabled/semi-disabled elders and their family caregivers, active young-old, dual-income caregiving families, community volunteers and carers), with service-journey barriers and non-digital fallback channels (human windows, hotline, children's agency, volunteer buddying). AI technical protocols cover model evaluation (benchmark testing on anonymous event samples), data quality (collection minimization, field completeness, lifecycle), error stratification (false-positive/negative rates by group, scenario, period) and runtime monitoring (weekly false-positive rate, response time, failure rate). Data are anonymized-aggregate only; key decisions are human-reviewed; no individual-identifying tracking or over-monitoring. [source:DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES]
+Five persona groups are structed (isolated elders, disabled/semi-disabled elders and their family caregivers, active young-old, dual-income caregiving families, community volunteers and carers), with service-journey barriers and non-digital fallback channels (human windows, hotline, children's agency, volunteer buddying). AI technical protocols cover model evaluation (benchmark testing on anonymous event samples), data quality (collection minimization, field completeness, lifecycle), error stratification (false-positive/negative rates by group, scenario, period) and runtime monitoring (weekly false-positive rate, response time, failure rate). Anonymization/aggregation is used only for statistics; individual services use necessary fields; key decisions receive human review and phone/window/manual alternatives remain available; no individual-identifying tracking or over-monitoring. [source:DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES]
 
-| Scenario card | Name | AI capability | Data & privacy boundary | Operator | Status |
-|---|---|---|---|---|---|
-| SC-01 | One-touch help AI | voice call, emergency dispatch, transit coordination | location & service record only, anonymized | government purchase + operator | pilot |
-| SC-02 | Fall-alert AI | posture anomaly alerts | anonymous event, human review | community + professionals | pilot |
-| SC-03 | Medication-reminder AI | reminder and missed-dose notice | daily record only, de-identified | community + volunteers | pilot |
-| SC-04 | Meal-ordering AI | ordering, portioning, delivery dispatch | minimalized booking, opt-out | merchants + community | scale-up |
-| SC-05 | Digital-assistance AI | phone teaching, service guidance | no imagery retained | universities + volunteers + human | scale-up |
-| SC-06 | Family-linking AI | booking, visiting, reminders | minimalized contacts, opt-out | family + community | pilot |
-| SC-07 | Accessibility-inspection AI | facility/lighting fault inspection | facility imagery only, no over-monitoring | operator + volunteers | pilot |
-| SC-08 | Aid-sharing AI | match, booking, rotation, disinfection | de-identified item records, human review | industry alliance + merchants | pilot |
-| SC-09 | Silver-classroom AI | course recommendation, interest match | anonymous interest tags, filing | universities + volunteers | scale-up |
-| SC-10 | Accessible-transit AI | real-time ride booking and dispatch | trip location & booking only, anonymized | transport + community | pilot |
+| Card | Scenario | Spatial carrier | AI capability | Layered data governance (not “anonymous only”) | Operator | Level |
+|---|---|---|---|---|---|---|
+| SC-01 | One-touch elder-care help | Yixinglang help post and light pole | Voice call, emergency dispatch and transfer coordination | Approximate help point, time and callback are necessary fields; controller/basis pending; delete after verified work-order limit; aggregate statistics only | Public service + operator | Pilot |
+| SC-02 | Fall-alert AI | Yiyangxiaoyuan check corner and public room | Posture anomaly prompt | Short-lived image and minimum event result are separated; no identity recognition; human confirmation; human service remains without screening | Community + specialists | Pilot |
+| SC-03 | Medication reminder AI | Yiyangxiaoyuan and home | Pickup reminder and missed-dose prompt | Minimum pickup/reminder fields; health controller/basis pending; delete at limit; phone/paper reminder alternative | Community + volunteers | Pilot |
+| SC-04 | Meal ordering AI | Meal point and booking channel | Ordering, portioning and delivery dispatch | Service, slot and necessary contact only; platform role/basis pending; delete after completion; phone/window booking and withdrawal | Merchants + community | Expansion |
+| SC-05 | Digital assistance AI | Zhilingguan help desk | Smartphone teaching and service guidance | Business-necessary fields only; no teaching image retained; controller/retention pending; human help is always available | Universities + volunteers + human desk | Expansion |
+| SC-06 | Family-link AI | Zhilingguan and family channel | Booking, visits and reminders | Authorized contact and visit slot minimized; scope/basis pending; stop on withdrawal; personal phone/window route remains | Family + community | Pilot |
+| SC-07 | Age-friendly inspection AI | Three-node public space and corridor | Accessibility and lighting inspection | Facility image and fault fields only; no identity recognition; human repair review; delete at limit | Operator + volunteers | Pilot |
+| SC-08 | Aid-device sharing match | Zhilingguan aid-share zone | Matching, booking rotation and disinfection dispatch | De-identified item, stock and slot; human signs handoff; no secondary use; manual loan remains | Industry alliance + merchants | Pilot |
+| SC-09 | Silver-class recommendation AI | Yiyangxiaoyuan and Dazhongsi cultural space | Course recommendation and interest match | Optional interest preference with notice; no individual behavior profile; deletion/withdrawal pending; manual choice remains | Universities + volunteers | Expansion |
+| SC-10 | Barrier-free transfer dispatch | Yixinglang and rail-station last mile | Transfer booking and dispatch | Trip location, time and booking minimized; role/basis pending; delete after trip; phone booking alternative | Transport operator + community | Pilot |
 
 Three industry test-validation scenarios run in the pilot block first (call-emergency linkage, accessibility-inspection false-positive evaluation, aid-sharing match), with public comment channels and trial markings; they scale up only after validation. [source:DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES]
 
 
-### Three Zones–Two Wings Cooperation Matrix (Conceptual)
+### Three Zones–Two Wings / Three-Node Cooperation Matrix (Conceptual)
+
+**East–west stitch × north–south care axis.** The east–west stitch is a conceptual sequence from the ZGC tech-service wing through Zhongzhiyuan, the AI Origin Community and Dazhongsi to the Xiaoyuehe scenario wing, organizing walkable, pausable and transferable public-service interfaces. The north–south care axis links Yixinglang, Yiyangxiaoyuan and Zhilingguan for care, digital assistance and cultural experience. They meet at a conceptual “loop convergence node” between Yiyangxiaoyuan and Zhilingguan; this is not a real road, red line or coordinate. Placement requires site survey, ownership/heritage/traffic review and public co-review.
 
 | Interface | Exchange resource | Spatial / operating carrier | Verifiable output |
 |---|---|---|---|
-| Zhongzhiyuan–ZGC tech-service wing | Age-tech equipment, model evaluation, aid-device supply and professional leads | Yixinglang pilot segment; Zhilingguan developer corner | Inspection false-positive rate and aid-match success; partners require later confirmation |
-| AI Origin Community–Xiaoyuehe scenario wing | Community needs, co-design feedback and non-digital access | Yiyangxiaoyuan day-care and meal prototype | Journey completion and complaint closure; no existing partnership is assumed |
-| Dazhongsi–cultural service interface | Jingzhang heritage narrative, silver-classroom content and digital assistance | Zhilingguan cultural interface and human desk | Class participation and human-assistance satisfaction; heritage conditions pending |
+| ZGC tech-service wing–Zhongzhiyuan | Age-tech, model evaluation, aid-device supply and professional leads | Yixinglang pilot segment and developer corner | Inspection false-positive rate and aid-match success; partners require confirmation |
+| Zhongzhiyuan–AI Origin Community | Technical talent, resident problem pool and co-design feedback | Yixinglang–Yiyangxiaoyuan north–south care-axis interface | Request response, human takeover and complaint closure; no partnership assumed |
+| AI Origin Community–Dazhongsi | Community care, cultural narrative, digital assistance and meals | Continuous Yiyangxiaoyuan–convergence node–Zhilingguan interface | Cross-node handoff and human-assistance satisfaction; heritage pending |
+| Dazhongsi–Xiaoyuehe scenario wing | Merchant scenarios, consumer services, developer tests and operations | Zhilingguan intelligent-native consumer/business service interface | Open pilot applications, merchant fallback and complaint closure; no tenants claimed |
 | Future Science City / Huairou Science City | Age-tech, research talent and evaluation methods | Three-node pilot protocols | Test reports, error stratification and stop conditions |
 | Beijing E-Town / Beijing-Tianjin-Hebei | Industrial conversion, manufacturing supply and replicable standards | Along-the-belt replication toolkit | Precondition checklist; no signed status is claimed |
 
-The matrix describes potential interfaces only. Government, enterprise and community commitments must be confirmed before pilots.
+The matrix describes potential interfaces only. Intent, data, ownership and partner confirmation are required before pilots; no government, enterprise or community commitment is claimed.
 
 ### Original mechanism–common practice–verification
 
 | Original mechanism | Common practice | Added value here | Verification |
 |---|---|---|---|
-| Three-node human handoff | Single elder-care app or point facility | Mobility–care–digital capability transfer across nodes while retaining phone, human desk and paper fallback | Anonymized work orders: handoff completion, human takeover and opt-out |
+| Three-node human handoff | Single elder-care app or point facility | Mobility–care–digital capability transfer across nodes while retaining phone, human desk and paper fallback | Minimum-necessary work-order fields: handoff completion, human takeover and opt-out; statistics only are aggregated |
 | Reversible public-space library | One-time fixed construction | Seats, shade, temporary ramps and signs change through booking, maintenance and removal logs | Quarterly inventory, resident-council review and removal on failure |
 | AI suggests; humans decide | Black-box automatic decisions | Unified input, output, error strata, human takeover and stop thresholds bound to nodes | Three industry test reports before scale-up |
 
@@ -109,242 +142,11 @@ The matrix describes potential interfaces only. Government, enterprise and commu
 | Processing roles, PIA, retention and opt-out | Not complete | Business flow, privacy-impact assessment and legal review | Controller/processor + counsel |
 | Pilot resources, maintenance and stop conditions | Concept suggestion | Budget categories, RACI, weekly log and quarterly review | Lead street office + operator |
 
+## Land Use, Building Scale, and Retain-Renovate-Demolish Strategy
+Retain, renovate and improve with low intervention: existing buildings, public space and reversible components are candidate concepts only; no demolition quantity, building scale, FAR or height is preset. Ownership, heritage, green-line, structure and fire conditions remain pending. The sequence is survey—small pilot—review—reversible removal.
 
-### Three Zones–Two Wings Cooperation Matrix (Conceptual)
-
-| Interface | Exchange resource | Spatial / operating carrier | Verifiable output |
-|---|---|---|---|
-| Zhongzhiyuan–ZGC tech-service wing | Age-tech equipment, model evaluation, aid-device supply and professional leads | Yixinglang pilot segment; Zhilingguan developer corner | Inspection false-positive rate and aid-match success; partners require later confirmation |
-| AI Origin Community–Xiaoyuehe scenario wing | Community needs, co-design feedback and non-digital access | Yiyangxiaoyuan day-care and meal prototype | Journey completion and complaint closure; no existing partnership is assumed |
-| Dazhongsi–cultural service interface | Jingzhang heritage narrative, silver-classroom content and digital assistance | Zhilingguan cultural interface and human desk | Class participation and human-assistance satisfaction; heritage conditions pending |
-| Future Science City / Huairou Science City | Age-tech, research talent and evaluation methods | Three-node pilot protocols | Test reports, error stratification and stop conditions |
-| Beijing E-Town / Beijing-Tianjin-Hebei | Industrial conversion, manufacturing supply and replicable standards | Along-the-belt replication toolkit | Precondition checklist; no signed status is claimed |
-
-The matrix describes potential interfaces only. Government, enterprise and community commitments must be confirmed before pilots.
-
-### Original mechanism–common practice–verification
-
-| Original mechanism | Common practice | Added value here | Verification |
-|---|---|---|---|
-| Three-node human handoff | Single elder-care app or point facility | Mobility–care–digital capability transfer across nodes while retaining phone, human desk and paper fallback | Anonymized work orders: handoff completion, human takeover and opt-out |
-| Reversible public-space library | One-time fixed construction | Seats, shade, temporary ramps and signs change through booking, maintenance and removal logs | Quarterly inventory, resident-council review and removal on failure |
-| AI suggests; humans decide | Black-box automatic decisions | Unified input, output, error strata, human takeover and stop thresholds bound to nodes | Three industry test reports before scale-up |
-
-### AI validation cards for three industry tests
-
-| Test | Inputs | Outputs | Failure modes and boundary | Human takeover / stop threshold | Node |
-|---|---|---|---|---|---|
-| Call–emergency linkage | Voice call, time and approximate help point | Work order, human callback and transfer suggestion | False alarm, offline mode, inaccurate location; no diagnosis | Human takeover on no answer, location conflict or high-risk event; weekly review | Yixinglang |
-| Accessibility-inspection error test | Facility image, lighting fault log and time period | Repair work order for human verification | Occlusion, low night light and group differences; no identity recognition | Pause if error exceeds pilot threshold for two weeks or cannot be reviewed | Three nodes |
-| Aid-sharing match | De-identified item type, stock and booking window | Candidate match, disinfection and handoff task | Expired stock, missing disinfection proof, mismatch; no automatic release | Human signs handoff and disinfection; pause category after any safety event | Zhilingguan |
-
-### Implementation prerequisites and responsibility
-
-| Prerequisite | Current status | Verification method | Responsibility |
-|---|---|---|---|
-| Ownership, existing buildings and usable space | Unknown / pending | Site survey, ownership and structural records | Participant + authorities |
-| Barrier-free continuity, slopes, crossings and lighting | Unknown / pending | Accessibility audit and user walk-through | Specialists + community |
-| Care, meal, health-check and aid-device qualifications | Unknown / pending | Permit, filing, disinfection and service-contract review | Operator + specialists |
-| Processing roles, PIA, retention and opt-out | Not complete | Business flow, privacy-impact assessment and legal review | Controller/processor + counsel |
-| Pilot resources, maintenance and stop conditions | Concept suggestion | Budget categories, RACI, weekly log and quarterly review | Lead street office + operator |
-
-
-### Three Zones–Two Wings Cooperation Matrix (Conceptual)
-
-| Interface | Exchange resource | Spatial / operating carrier | Verifiable output |
-|---|---|---|---|
-| Zhongzhiyuan–ZGC tech-service wing | Age-tech equipment, model evaluation, aid-device supply and professional leads | Yixinglang pilot segment; Zhilingguan developer corner | Inspection false-positive rate and aid-match success; partners require later confirmation |
-| AI Origin Community–Xiaoyuehe scenario wing | Community needs, co-design feedback and non-digital access | Yiyangxiaoyuan day-care and meal prototype | Journey completion and complaint closure; no existing partnership is assumed |
-| Dazhongsi–cultural service interface | Jingzhang heritage narrative, silver-classroom content and digital assistance | Zhilingguan cultural interface and human desk | Class participation and human-assistance satisfaction; heritage conditions pending |
-| Future Science City / Huairou Science City | Age-tech, research talent and evaluation methods | Three-node pilot protocols | Test reports, error stratification and stop conditions |
-| Beijing E-Town / Beijing-Tianjin-Hebei | Industrial conversion, manufacturing supply and replicable standards | Along-the-belt replication toolkit | Precondition checklist; no signed status is claimed |
-
-The matrix describes potential interfaces only. Government, enterprise and community commitments must be confirmed before pilots.
-
-### Original mechanism–common practice–verification
-
-| Original mechanism | Common practice | Added value here | Verification |
-|---|---|---|---|
-| Three-node human handoff | Single elder-care app or point facility | Mobility–care–digital capability transfer across nodes while retaining phone, human desk and paper fallback | Anonymized work orders: handoff completion, human takeover and opt-out |
-| Reversible public-space library | One-time fixed construction | Seats, shade, temporary ramps and signs change through booking, maintenance and removal logs | Quarterly inventory, resident-council review and removal on failure |
-| AI suggests; humans decide | Black-box automatic decisions | Unified input, output, error strata, human takeover and stop thresholds bound to nodes | Three industry test reports before scale-up |
-
-### AI validation cards for three industry tests
-
-| Test | Inputs | Outputs | Failure modes and boundary | Human takeover / stop threshold | Node |
-|---|---|---|---|---|---|
-| Call–emergency linkage | Voice call, time and approximate help point | Work order, human callback and transfer suggestion | False alarm, offline mode, inaccurate location; no diagnosis | Human takeover on no answer, location conflict or high-risk event; weekly review | Yixinglang |
-| Accessibility-inspection error test | Facility image, lighting fault log and time period | Repair work order for human verification | Occlusion, low night light and group differences; no identity recognition | Pause if error exceeds pilot threshold for two weeks or cannot be reviewed | Three nodes |
-| Aid-sharing match | De-identified item type, stock and booking window | Candidate match, disinfection and handoff task | Expired stock, missing disinfection proof, mismatch; no automatic release | Human signs handoff and disinfection; pause category after any safety event | Zhilingguan |
-
-### Implementation prerequisites and responsibility
-
-| Prerequisite | Current status | Verification method | Responsibility |
-|---|---|---|---|
-| Ownership, existing buildings and usable space | Unknown / pending | Site survey, ownership and structural records | Participant + authorities |
-| Barrier-free continuity, slopes, crossings and lighting | Unknown / pending | Accessibility audit and user walk-through | Specialists + community |
-| Care, meal, health-check and aid-device qualifications | Unknown / pending | Permit, filing, disinfection and service-contract review | Operator + specialists |
-| Processing roles, PIA, retention and opt-out | Not complete | Business flow, privacy-impact assessment and legal review | Controller/processor + counsel |
-| Pilot resources, maintenance and stop conditions | Concept suggestion | Budget categories, RACI, weekly log and quarterly review | Lead street office + operator |
-
-
-### Three Zones–Two Wings Cooperation Matrix (Conceptual)
-
-| Interface | Exchange resource | Spatial / operating carrier | Verifiable output |
-|---|---|---|---|
-| Zhongzhiyuan–ZGC tech-service wing | Age-tech equipment, model evaluation, aid-device supply and professional leads | Yixinglang pilot segment; Zhilingguan developer corner | Inspection false-positive rate and aid-match success; partners require later confirmation |
-| AI Origin Community–Xiaoyuehe scenario wing | Community needs, co-design feedback and non-digital access | Yiyangxiaoyuan day-care and meal prototype | Journey completion and complaint closure; no existing partnership is assumed |
-| Dazhongsi–cultural service interface | Jingzhang heritage narrative, silver-classroom content and digital assistance | Zhilingguan cultural interface and human desk | Class participation and human-assistance satisfaction; heritage conditions pending |
-| Future Science City / Huairou Science City | Age-tech, research talent and evaluation methods | Three-node pilot protocols | Test reports, error stratification and stop conditions |
-| Beijing E-Town / Beijing-Tianjin-Hebei | Industrial conversion, manufacturing supply and replicable standards | Along-the-belt replication toolkit | Precondition checklist; no signed status is claimed |
-
-The matrix describes potential interfaces only. Government, enterprise and community commitments must be confirmed before pilots.
-
-### Original mechanism–common practice–verification
-
-| Original mechanism | Common practice | Added value here | Verification |
-|---|---|---|---|
-| Three-node human handoff | Single elder-care app or point facility | Mobility–care–digital capability transfer across nodes while retaining phone, human desk and paper fallback | Anonymized work orders: handoff completion, human takeover and opt-out |
-| Reversible public-space library | One-time fixed construction | Seats, shade, temporary ramps and signs change through booking, maintenance and removal logs | Quarterly inventory, resident-council review and removal on failure |
-| AI suggests; humans decide | Black-box automatic decisions | Unified input, output, error strata, human takeover and stop thresholds bound to nodes | Three industry test reports before scale-up |
-
-### AI validation cards for three industry tests
-
-| Test | Inputs | Outputs | Failure modes and boundary | Human takeover / stop threshold | Node |
-|---|---|---|---|---|---|
-| Call–emergency linkage | Voice call, time and approximate help point | Work order, human callback and transfer suggestion | False alarm, offline mode, inaccurate location; no diagnosis | Human takeover on no answer, location conflict or high-risk event; weekly review | Yixinglang |
-| Accessibility-inspection error test | Facility image, lighting fault log and time period | Repair work order for human verification | Occlusion, low night light and group differences; no identity recognition | Pause if error exceeds pilot threshold for two weeks or cannot be reviewed | Three nodes |
-| Aid-sharing match | De-identified item type, stock and booking window | Candidate match, disinfection and handoff task | Expired stock, missing disinfection proof, mismatch; no automatic release | Human signs handoff and disinfection; pause category after any safety event | Zhilingguan |
-
-### Implementation prerequisites and responsibility
-
-| Prerequisite | Current status | Verification method | Responsibility |
-|---|---|---|---|
-| Ownership, existing buildings and usable space | Unknown / pending | Site survey, ownership and structural records | Participant + authorities |
-| Barrier-free continuity, slopes, crossings and lighting | Unknown / pending | Accessibility audit and user walk-through | Specialists + community |
-| Care, meal, health-check and aid-device qualifications | Unknown / pending | Permit, filing, disinfection and service-contract review | Operator + specialists |
-| Processing roles, PIA, retention and opt-out | Not complete | Business flow, privacy-impact assessment and legal review | Controller/processor + counsel |
-| Pilot resources, maintenance and stop conditions | Concept suggestion | Budget categories, RACI, weekly log and quarterly review | Lead street office + operator |
-
-
-### Three Zones–Two Wings Cooperation Matrix (Conceptual)
-
-| Interface | Exchange resource | Spatial / operating carrier | Verifiable output |
-|---|---|---|---|
-| Zhongzhiyuan–ZGC tech-service wing | Age-tech equipment, model evaluation, aid-device supply and professional leads | Yixinglang pilot segment; Zhilingguan developer corner | Inspection false-positive rate and aid-match success; partners require later confirmation |
-| AI Origin Community–Xiaoyuehe scenario wing | Community needs, co-design feedback and non-digital access | Yiyangxiaoyuan day-care and meal prototype | Journey completion and complaint closure; no existing partnership is assumed |
-| Dazhongsi–cultural service interface | Jingzhang heritage narrative, silver-classroom content and digital assistance | Zhilingguan cultural interface and human desk | Class participation and human-assistance satisfaction; heritage conditions pending |
-| Future Science City / Huairou Science City | Age-tech, research talent and evaluation methods | Three-node pilot protocols | Test reports, error stratification and stop conditions |
-| Beijing E-Town / Beijing-Tianjin-Hebei | Industrial conversion, manufacturing supply and replicable standards | Along-the-belt replication toolkit | Precondition checklist; no signed status is claimed |
-
-The matrix describes potential interfaces only. Government, enterprise and community commitments must be confirmed before pilots.
-
-### Original mechanism–common practice–verification
-
-| Original mechanism | Common practice | Added value here | Verification |
-|---|---|---|---|
-| Three-node human handoff | Single elder-care app or point facility | Mobility–care–digital capability transfer across nodes while retaining phone, human desk and paper fallback | Anonymized work orders: handoff completion, human takeover and opt-out |
-| Reversible public-space library | One-time fixed construction | Seats, shade, temporary ramps and signs change through booking, maintenance and removal logs | Quarterly inventory, resident-council review and removal on failure |
-| AI suggests; humans decide | Black-box automatic decisions | Unified input, output, error strata, human takeover and stop thresholds bound to nodes | Three industry test reports before scale-up |
-
-### AI validation cards for three industry tests
-
-| Test | Inputs | Outputs | Failure modes and boundary | Human takeover / stop threshold | Node |
-|---|---|---|---|---|---|
-| Call–emergency linkage | Voice call, time and approximate help point | Work order, human callback and transfer suggestion | False alarm, offline mode, inaccurate location; no diagnosis | Human takeover on no answer, location conflict or high-risk event; weekly review | Yixinglang |
-| Accessibility-inspection error test | Facility image, lighting fault log and time period | Repair work order for human verification | Occlusion, low night light and group differences; no identity recognition | Pause if error exceeds pilot threshold for two weeks or cannot be reviewed | Three nodes |
-| Aid-sharing match | De-identified item type, stock and booking window | Candidate match, disinfection and handoff task | Expired stock, missing disinfection proof, mismatch; no automatic release | Human signs handoff and disinfection; pause category after any safety event | Zhilingguan |
-
-### Implementation prerequisites and responsibility
-
-| Prerequisite | Current status | Verification method | Responsibility |
-|---|---|---|---|
-| Ownership, existing buildings and usable space | Unknown / pending | Site survey, ownership and structural records | Participant + authorities |
-| Barrier-free continuity, slopes, crossings and lighting | Unknown / pending | Accessibility audit and user walk-through | Specialists + community |
-| Care, meal, health-check and aid-device qualifications | Unknown / pending | Permit, filing, disinfection and service-contract review | Operator + specialists |
-| Processing roles, PIA, retention and opt-out | Not complete | Business flow, privacy-impact assessment and legal review | Controller/processor + counsel |
-| Pilot resources, maintenance and stop conditions | Concept suggestion | Budget categories, RACI, weekly log and quarterly review | Lead street office + operator |
-
-
-### Three Zones–Two Wings Cooperation Matrix (Conceptual)
-
-| Interface | Exchange resource | Spatial / operating carrier | Verifiable output |
-|---|---|---|---|
-| Zhongzhiyuan–ZGC tech-service wing | Age-tech equipment, model evaluation, aid-device supply and professional leads | Yixinglang pilot segment; Zhilingguan developer corner | Inspection false-positive rate and aid-match success; partners require later confirmation |
-| AI Origin Community–Xiaoyuehe scenario wing | Community needs, co-design feedback and non-digital access | Yiyangxiaoyuan day-care and meal prototype | Journey completion and complaint closure; no existing partnership is assumed |
-| Dazhongsi–cultural service interface | Jingzhang heritage narrative, silver-classroom content and digital assistance | Zhilingguan cultural interface and human desk | Class participation and human-assistance satisfaction; heritage conditions pending |
-| Future Science City / Huairou Science City | Age-tech, research talent and evaluation methods | Three-node pilot protocols | Test reports, error stratification and stop conditions |
-| Beijing E-Town / Beijing-Tianjin-Hebei | Industrial conversion, manufacturing supply and replicable standards | Along-the-belt replication toolkit | Precondition checklist; no signed status is claimed |
-
-The matrix describes potential interfaces only. Government, enterprise and community commitments must be confirmed before pilots.
-
-### Original mechanism–common practice–verification
-
-| Original mechanism | Common practice | Added value here | Verification |
-|---|---|---|---|
-| Three-node human handoff | Single elder-care app or point facility | Mobility–care–digital capability transfer across nodes while retaining phone, human desk and paper fallback | Anonymized work orders: handoff completion, human takeover and opt-out |
-| Reversible public-space library | One-time fixed construction | Seats, shade, temporary ramps and signs change through booking, maintenance and removal logs | Quarterly inventory, resident-council review and removal on failure |
-| AI suggests; humans decide | Black-box automatic decisions | Unified input, output, error strata, human takeover and stop thresholds bound to nodes | Three industry test reports before scale-up |
-
-### AI validation cards for three industry tests
-
-| Test | Inputs | Outputs | Failure modes and boundary | Human takeover / stop threshold | Node |
-|---|---|---|---|---|---|
-| Call–emergency linkage | Voice call, time and approximate help point | Work order, human callback and transfer suggestion | False alarm, offline mode, inaccurate location; no diagnosis | Human takeover on no answer, location conflict or high-risk event; weekly review | Yixinglang |
-| Accessibility-inspection error test | Facility image, lighting fault log and time period | Repair work order for human verification | Occlusion, low night light and group differences; no identity recognition | Pause if error exceeds pilot threshold for two weeks or cannot be reviewed | Three nodes |
-| Aid-sharing match | De-identified item type, stock and booking window | Candidate match, disinfection and handoff task | Expired stock, missing disinfection proof, mismatch; no automatic release | Human signs handoff and disinfection; pause category after any safety event | Zhilingguan |
-
-### Implementation prerequisites and responsibility
-
-| Prerequisite | Current status | Verification method | Responsibility |
-|---|---|---|---|
-| Ownership, existing buildings and usable space | Unknown / pending | Site survey, ownership and structural records | Participant + authorities |
-| Barrier-free continuity, slopes, crossings and lighting | Unknown / pending | Accessibility audit and user walk-through | Specialists + community |
-| Care, meal, health-check and aid-device qualifications | Unknown / pending | Permit, filing, disinfection and service-contract review | Operator + specialists |
-| Processing roles, PIA, retention and opt-out | Not complete | Business flow, privacy-impact assessment and legal review | Controller/processor + counsel |
-| Pilot resources, maintenance and stop conditions | Concept suggestion | Budget categories, RACI, weekly log and quarterly review | Lead street office + operator |
-
-
-### Three Zones–Two Wings Cooperation Matrix (Conceptual)
-
-| Interface | Exchange resource | Spatial / operating carrier | Verifiable output |
-|---|---|---|---|
-| Zhongzhiyuan–ZGC tech-service wing | Age-tech equipment, model evaluation, aid-device supply and professional leads | Yixinglang pilot segment; Zhilingguan developer corner | Inspection false-positive rate and aid-match success; partners require later confirmation |
-| AI Origin Community–Xiaoyuehe scenario wing | Community needs, co-design feedback and non-digital access | Yiyangxiaoyuan day-care and meal prototype | Journey completion and complaint closure; no existing partnership is assumed |
-| Dazhongsi–cultural service interface | Jingzhang heritage narrative, silver-classroom content and digital assistance | Zhilingguan cultural interface and human desk | Class participation and human-assistance satisfaction; heritage conditions pending |
-| Future Science City / Huairou Science City | Age-tech, research talent and evaluation methods | Three-node pilot protocols | Test reports, error stratification and stop conditions |
-| Beijing E-Town / Beijing-Tianjin-Hebei | Industrial conversion, manufacturing supply and replicable standards | Along-the-belt replication toolkit | Precondition checklist; no signed status is claimed |
-
-The matrix describes potential interfaces only. Government, enterprise and community commitments must be confirmed before pilots.
-
-### Original mechanism–common practice–verification
-
-| Original mechanism | Common practice | Added value here | Verification |
-|---|---|---|---|
-| Three-node human handoff | Single elder-care app or point facility | Mobility–care–digital capability transfer across nodes while retaining phone, human desk and paper fallback | Anonymized work orders: handoff completion, human takeover and opt-out |
-| Reversible public-space library | One-time fixed construction | Seats, shade, temporary ramps and signs change through booking, maintenance and removal logs | Quarterly inventory, resident-council review and removal on failure |
-| AI suggests; humans decide | Black-box automatic decisions | Unified input, output, error strata, human takeover and stop thresholds bound to nodes | Three industry test reports before scale-up |
-
-### AI validation cards for three industry tests
-
-| Test | Inputs | Outputs | Failure modes and boundary | Human takeover / stop threshold | Node |
-|---|---|---|---|---|---|
-| Call–emergency linkage | Voice call, time and approximate help point | Work order, human callback and transfer suggestion | False alarm, offline mode, inaccurate location; no diagnosis | Human takeover on no answer, location conflict or high-risk event; weekly review | Yixinglang |
-| Accessibility-inspection error test | Facility image, lighting fault log and time period | Repair work order for human verification | Occlusion, low night light and group differences; no identity recognition | Pause if error exceeds pilot threshold for two weeks or cannot be reviewed | Three nodes |
-| Aid-sharing match | De-identified item type, stock and booking window | Candidate match, disinfection and handoff task | Expired stock, missing disinfection proof, mismatch; no automatic release | Human signs handoff and disinfection; pause category after any safety event | Zhilingguan |
-
-### Implementation prerequisites and responsibility
-
-| Prerequisite | Current status | Verification method | Responsibility |
-|---|---|---|---|
-| Ownership, existing buildings and usable space | Unknown / pending | Site survey, ownership and structural records | Participant + authorities |
-| Barrier-free continuity, slopes, crossings and lighting | Unknown / pending | Accessibility audit and user walk-through | Specialists + community |
-| Care, meal, health-check and aid-device qualifications | Unknown / pending | Permit, filing, disinfection and service-contract review | Operator + specialists |
-| Processing roles, PIA, retention and opt-out | Not complete | Business flow, privacy-impact assessment and legal review | Controller/processor + counsel |
-| Pilot resources, maintenance and stop conditions | Concept suggestion | Budget categories, RACI, weekly log and quarterly review | Lead street office + operator |
-
-## Land Use, Building Scale, and Retain-Renovate-Demolish Strategy## Transport, Rail, Municipal Infrastructure, and Public Services
-The transport concept is slow-traffic-first: the Yixinglang axis runs through all three nodes and opens barrier-free connections to rail stations and bus ends; rest nodes are spaced at concept intervals; time-shared and booking mechanisms manage facilities and vehicles with rotation at peak periods. Rail alignments, municipal pipelines and engineering content are not judged. Municipal utilities are concept-shared (green-power direct supply, waste-heat recovery, chilled-source sharing) as interface hints only, without load, capacity or engineering conclusions, and a future data-and-compute coordination mechanism (concept) is reserved. Public services are configured at district-node-building three levels, compounding meal points, day care, health checks, aid recycling with existing facilities to avoid duplication, and are uniformly connected to resident feedback, annual disclosure and annual community activities. [source:DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES], [metric:road_network_length_m]
+## Transport, Rail, Municipal Infrastructure, and Public Services
+The transport concept is slow-traffic-first: the Yixinglang route links the three nodes and opens barrier-free connections to rail stations and bus ends; facilities and vehicles use time-sharing and booking, with rotation at peak periods and concept-level rest spacing. Rail alignments, pipelines and engineering content are not judged. Utilities are interface hints only, without load, capacity or engineering conclusions. Public services are configured at district–node–building levels, compounding meals, day care, health checks and aid recycling with existing facilities and resident feedback, annual disclosure and community activities.
 
 ## Blue-Green Network, Public Space, and Urban Character
 A green-belt-as-axis, node-parks-as-pearls blue-green system runs along the relic-park belt; facilities integrate with parks in a low-intervention, light, transparent and reversible way without blocking historic remains or view corridors. The three nodes offer public science, experience and honor-display interfaces with human-service fallback. Urban character continues the Jingzhang railway industrial-memory vocabulary in a controlled dialogue with new accessible facilities; the Yixinglang corridor combines shade vegetation with rest seats and upgrades accessible signage, lighting and paving in a low-intervention way, shaping "human warmth + technology texture" rather than viral expression. [source:DATA-SRC-MOHURD-URBAN-DESIGN-MEASURES]
@@ -369,7 +171,7 @@ Suggested core indicators: accessible slow-corridor continuous length, accessibi
 ![Core metrics evidence (ratio and count on separate axes)](assets/figures/metrics-evidence.en.png)
 
 ## Risk, Copyright, and Compliance
-This concept is a research design, not an administrative approval basis, and reaches no FAR, height, capacity, load, retain-renovate-demolish or engineering-feasibility conclusion. Risks (boundary precision, demand forecasting, policy uncertainty, data and privacy boundary, prior-name rights, technical maturity, care qualification and public acceptance) are registered in `assumptions.json`, with response principles of anonymized aggregation, source marking, human review, feedback channels and statutory procedures. Privacy guardrails: every AI scenario keeps anonymized aggregation, human review of key decisions, and no over-monitoring (no individual-identifying tracking); personal-data scenarios require prior disclosure and filing, allow opt-out, and provide complaint and security-incident channels. Scenario-level data governance (emergency location, health checks, booking, family linking, service records) covers minimization, legal basis, permissions, retention, opt-out, human review, complaints and security-incident handling - anonymized aggregation does not replace compliant design of individual services. All cited public materials are marked in `sources.json`; six case entries now carry a primary page, date, fact fields, reuse boundary and comparability note. Graphics, names and text are original or public-domain material; coincidental resemblance to existing marks is possible. The brand name is an internal working codename: no official prior-rights search has been completed at concept stage, and it is restricted from external use and registration until clearance. Material is not distorted; portraits, trademarks, fonts, images, papers or artwork are not used without authorization; multi-department joint review and public assessment are required before formal implementation. [source:DATA-SRC-OFFICIAL-ANNOUNCEMENT], [source:DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES]
+This package does not use the blanket claim “all data is anonymized aggregation”. The three privacy rules are: aggregation/anonymization applies to statistical outputs; individual-service workflows such as help, booking, health, family linking and service work orders process only necessary fields, with controller, proposed legal basis, retention/deletion, withdrawal and access rules pending professional review before deployment; key decisions receive human review, and individual-identifying tracking and over-monitoring are prohibited.
 
 | Data-governance scenario | Controller/necessary fields/proposed basis (pending) | Retention, deletion and non-digital alternative | Human review, complaint and incident |
 |---|---|---|---|
@@ -386,20 +188,3 @@ References are archived by public/internal classification with acquisition dates
 2. Official seven-dimension review rubric: docs_review-rubric.md
 3. Submission organization template: PR_TEMPLATE.md
 4. Public Jingzhang cultural-belt historical materials and Haidian aging-friendly policy reports (sources and verification dates to be supplemented when used)
-
-### Three-Node Implementation Cards (agent.4 deepening)
-
-| Implementation card item | Yixinglang | Yiyangxiaoyuan | Zhilingguan |
-|---|---|---|---|
-| Site selection conditions | continuous belt segment, slope/crossing for slow-mobility; near rail & bus ends | in care service radius, clear property rights; near existing station/building | near Dazhongsi cultural space, accessible, regional digital-service window |
-| Existing-condition verification | slope, crossing, lighting, accessibility asset ledger; to be surveyed | building condition, available space, license, capacity, cost categories; to be verified | stock building, digital-capability baseline, existing cultural-facility use; to be verified |
-| Space components | ramps, softened crossings, rests, lighting, help posts, honor wall | day care, meal, health corner, silver classroom, family visiting, honor wall | teaching area, aid share, anti-fraud, help desk, developer corner |
-| Human fallback | hotline dispatch, volunteer patrol, maintenance log | day-care staff, manual meal serving, health-check review | help-desk duty, volunteer buddying, manual guidance review |
-| Licenses to verify | accessibility renovation design/construction, lighting & utility access | elder-care filing, meal sanitation, health-check compliance | aid-device business & disinfection, digital-service operation, data compliance |
-| Operation responsibility | street lead + operator + volunteers | community + professionals + resident council | industry alliance + merchants + universities + volunteers |
-| Pilot KPI | facility integrity, help response time, corridor length | daily meal count, day-care count, satisfaction | aid turnover, class attendance, help satisfaction |
-| Stop/adjustment condition | slope/property unsuitability, KPI miss, site-safety issue | capacity deficit, license issue, KPI miss | demand change, supply-chain issue, KPI miss |
-
-These implementation cards carry the site-selection, verification, component, human-fallback, license-to-verify, operation, pilot-KPI and stop/adjustment conditions requested by agent.4; all are concept suggestions. [depth:three_key_area_detailed_design], [standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK], [depth:renewal_project_list]
-
-Language note: this English narrative is a faithful summary of the binding Chinese `proposal.md`; statements, indicators, figures, evidence anchors and risk wording were manually cross-checked for substantive equivalence on the round-3 revision (see the pairwise equivalence declaration recorded in the changelog).
