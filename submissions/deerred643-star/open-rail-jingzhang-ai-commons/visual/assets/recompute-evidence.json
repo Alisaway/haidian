@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "generated_at": "2026-08-29T20:18:57Z",
+  "generated_at": "2026-08-30T08:03:37Z",
   "crs": "EPSG:4548",
   "script": "visual/assets/recompute_metrics.js",
   "runtime": "Node.js（仅标准库，零外部依赖，全离线）",
@@ -306,5 +306,5 @@
       "result": "PASS"
     }
   ],
-  "note": "一键复算证据：全部 known 状态指标由包内 GeoJSON 在 EPSG:4548（CGCS2000 / 3-degree Gauss-Kruger CM 117E，脚本内联投影实现）下独立复算并与 metrics.json 对账；floor_area_ratio 与 building_height_control 因官方控规未发布保持 unknown，不以推测值冒充。复算口径与仓库评审脚本一致（EPSG:4326→4548 投影面积/长度）。第 13 项（v2.9）：om-funding-gap.json 运维资金缺口表全量算术一致性——子项乘积、科目小计、储备比例、总计、缺口恒等式、占位纪律与单价来源登记逐项机检。"
+  "note": "一键复算证据：全部 known 状态指标由包内 GeoJSON 在 EPSG:4548（CGCS2000 / 3-degree Gauss-Kruger CM 117E，脚本内联投影实现）下独立复算并与 metrics.json 对账；floor_area_ratio 与 building_height_control 保持 unknown——v3.0 已登记 HD00-1601 等街区控规公开版街区层面基准强度/高度分区（statutory-reconciliation.json），地块级图则数值需读图获取，本包不以推测值冒充。复算口径与仓库评审脚本一致（EPSG:4326→4548 投影面积/长度）。第 13 项（v2.9）：om-funding-gap.json 运维资金缺口表全量算术一致性——子项乘积、科目小计、储备比例、总计、缺口恒等式、占位纪律与单价来源登记逐项机检。"
 }

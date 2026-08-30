@@ -1,6 +1,6 @@
 {
-  "schema_note": "v2.8 operator qualification and naming protocol responding to the implementability review gap 'named operators unresolved'. Establishes a six-dimension selection scoring frame, three authorisation document templates and twelve operator categories mapped to the thirteen scenario cards of proposal.md, converting category-level entities into named accountable operators before pilot approval. Scoring weights and pass thresholds remain pending negotiation; no numeric scores are preset and no real institution is named.",
-  "version": "v2.8",
+  "schema_note": "v3.0 operator qualification and naming protocol responding to the implementability review gap 'named operators unresolved'. Retains the v2.8 frame: a six-dimension selection scoring frame, three authorisation document templates and twelve operator categories mapped to the thirteen scenario cards of proposal.md, converting category-level entities into named accountable operators before pilot approval. v3.0 adds a named_precedents register of three publicly named in-band precedents (public-space joint operation of Jingzhang Railway Heritage Park; the 2022 heritage custody transfer of the Old Qinghuayuan Station site; land-supply implementation in the Dazhongsi pioneer area), evidencing that the category-to-named conversion has real named in-band precedents to follow along the three paths of public-space operation, heritage custody transfer and land-supply implementation. The precedents are path evidence only: they imply no operator commitment or entity designation for any scenario card, whose accountable_operator keeps the established naming_timeline protocol (named before pilot approval and entered in the public register). Scoring weights and pass thresholds remain pending negotiation; no numeric scores are preset, and no real institution is named for any scenario card; real institutions appear only in the named_precedents register as in-band path evidence.",
+  "version": "v3.0",
   "status": "conceptual_protocol_pending_negotiation",
   "selection_scoring": {
     "dimensions": [
@@ -221,6 +221,42 @@
       "naming_timeline": "试点核准前完成，挂接分期计划近期 2026—2029"
     }
   ],
+  "named_precedents": {
+    "note_zh": "带内公开具名先例登记（v3.0 新增）：公共空间运营、文物管理权移交、供地实施三类路径均已在京张带内发生真实具名实践，类别主体→具名主体的转换由此有实名先例可循。先例仅为路径证据：不构成对本包任何场景卡的运营承诺或主体指定，各场景卡的 accountable_operator 仍维持「试点核准前完成具名并登记公开台账」的既有协议（naming_timeline），具名名单以属地主管正式核准为准。",
+    "note_en": "Register of publicly named in-band precedents (added in v3.0): all three paths — public-space operation, heritage custody transfer and land-supply implementation — have seen real named practice inside the Jingzhang band, so the category-to-named conversion now has real named precedents to follow. The precedents are path evidence only: they imply no operator commitment or entity designation for any scenario card of this package, whose accountable_operator keeps the established naming_timeline protocol (named and entered in the public register before pilot approval), with the named roster subject to formal approval by the district authority.",
+    "entries": [
+      {
+        "id": "PRECEDENT-PUBLIC-SPACE-OPERATION",
+        "entity_zh": "海淀区园林绿化局 ＋ 北京海淀市政集团（联合）",
+        "entity_en": "Haidian District Landscaping Bureau + Beijing Haidian Municipal Group (joint)",
+        "path_zh": "公共空间运营：京张铁路遗址公园现行联合运营主体。官方口径「海淀区园林绿化局与海淀市政集团合作，形成了京张铁路遗址公园独特的运营模式」，实行园长负责制。",
+        "path_en": "Public-space operation: the current joint operator of Jingzhang Railway Heritage Park. Official wording: 'the Haidian District Landscaping Bureau and the Haidian Municipal Group cooperate to form the park's distinctive operation model', under a park-director responsibility system.",
+        "source_ref": "JINGZHANG-PARK-OPERATION-MODEL",
+        "source_note_zh": "北京海淀官方发布，2025-12-02。",
+        "source_note_en": "Official release by Beijing Haidian, 2025-12-02."
+      },
+      {
+        "id": "PRECEDENT-HERITAGE-CUSTODY-TRANSFER",
+        "entity_zh": "中国铁路北京局集团有限公司 → 北京市海淀区",
+        "entity_en": "China Railway Beijing Group Co., Ltd. -> Haidian District, Beijing",
+        "path_zh": "文物管理权移交：2022 年清华园车站旧址文物管理权移交海淀区，为央地合作「海淀模式」先例；此后由区文物保护体系接管并完成修缮开放。",
+        "path_en": "Heritage custody transfer: in 2022 the heritage custody of the Old Qinghuayuan Station site was transferred to Haidian District, a central-local cooperation precedent of the 'Haidian model'; the district heritage-protection system has since taken it over and completed restoration and public opening.",
+        "source_ref": "JINGZHANG-PARK-OPERATION-MODEL",
+        "source_note_zh": "同上来源（JINGZHANG-PARK-OPERATION-MODEL）内北京青年报 2024-09-06 转引口径。",
+        "source_note_en": "From the same source (JINGZHANG-PARK-OPERATION-MODEL), as relayed in a Beijing Youth Daily report of 2024-09-06."
+      },
+      {
+        "id": "PRECEDENT-LAND-SUPPLY-IMPLEMENTATION",
+        "entity_zh": "北京海开城市更新建设发展有限责任公司",
+        "entity_en": "Beijing Haikai Urban Renewal Construction and Development Co., Ltd.",
+        "path_zh": "供地实施：大钟寺先导区供地实施主体（蓝景丽家项目 HD00-1603-01 等地块市政交通规划综合方案委托方）。",
+        "path_en": "Land-supply implementation: the land-supply implementing entity of the Dazhongsi pioneer area (commissioning party of the municipal-transport planning synthesis for the Lanjing Lijia project plots including HD00-1603-01).",
+        "source_ref": "DZS-UTILITY-CAPACITY-2025",
+        "source_note_zh": "登记于 sources.json 条目 DZS-UTILITY-CAPACITY-2025。",
+        "source_note_en": "Registered in the sources.json entry DZS-UTILITY-CAPACITY-2025."
+      }
+    ]
+  },
   "linkage": {
     "accountability_chain_zh": "authorisation 与 public_register 两类文书共同构成可问责链「准入」环节的受理要件：未完成具名登记的运营主体不进入运行监督环节，其场景服务点保持未启动状态。",
     "accountability_chain_en": "The authorisation and public_register documents together form the acceptance requirements of the accountability-chain entry gate: operators without completed naming and registration do not enter the supervision stage, and their scenario service points remain unlaunched.",
@@ -228,6 +264,6 @@
     "fulfilment_zh": "本文件的 categories 与 naming_timeline 即该条件兑现的机器可读路径：每类主体在试点核准前完成具名并登记公开台账。",
     "fulfilment_en": "The categories and naming_timeline in this file are the machine-readable fulfilment path of that condition: each category is named and entered in the public register before pilot approval."
   },
-  "boundary_zh": "全部为概念协议（建议/待协商）：遴选权重与及格线未定，不指定任何真实机构，具名名单以属地主管正式核准与公开台账登记为准；本文件不构成任何授权行为。",
-  "boundary_en": "All conceptual and pending negotiation: scoring weights and pass thresholds undefined, no real institution named, and the named roster subject to formal approval by the district authority and public-register entry; this file constitutes no authorisation."
+  "boundary_zh": "全部为概念协议（建议/待协商）：遴选权重与及格线未定；named_precedents 登记的真实机构仅为带内路径证据，不构成对本包任何场景卡的运营承诺或主体指定；各场景卡的具名名单仍以属地主管正式核准与公开台账登记为准；本文件不构成任何授权行为。",
+  "boundary_en": "All conceptual and pending negotiation: scoring weights and pass thresholds undefined; the real institutions registered in named_precedents serve only as in-band path evidence and imply no operator commitment or entity designation for any scenario card; the named roster of each scenario card remains subject to formal approval by the district authority and public-register entry; this file constitutes no authorisation."
 }
