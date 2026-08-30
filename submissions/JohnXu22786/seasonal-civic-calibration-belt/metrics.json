@@ -1,0 +1,383 @@
+{
+  "schema_version": "0.1.0",
+  "units": {
+    "length": "m",
+    "area": "sqm"
+  },
+  "metrics": {
+    "site_area_sqm": {
+      "status": "known",
+      "value": 11412825.385553982,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "area(project_to_EPSG:4548(site_boundary))",
+      "confidence": "low",
+      "assumptions": [
+        "A-BOUNDARY-001",
+        "A-METRIC-012"
+      ]
+    },
+    "green_ratio": {
+      "status": "known",
+      "value": 0.416894393461596,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/green_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "area(union(green_space)) / area(site_boundary), EPSG:4548",
+      "confidence": "low",
+      "assumptions": [
+        "A-BOUNDARY-001",
+        "A-METRIC-012"
+      ]
+    },
+    "public_space_ratio": {
+      "status": "known",
+      "value": 0.006011886892963916,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "area(union(public_space)) / area(site_boundary), EPSG:4548",
+      "confidence": "low",
+      "assumptions": [
+        "A-BOUNDARY-001",
+        "A-METRIC-012"
+      ]
+    },
+    "building_footprint_area_sqm": {
+      "status": "known",
+      "value": 93908.69665173591,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "sum(area(building_footprints), EPSG:4548)",
+      "confidence": "low",
+      "assumptions": [
+        "A-GEOMETRY-011",
+        "A-CONTROLS-002"
+      ]
+    },
+    "key_area_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "count(KEY_AREA features)",
+      "confidence": "high",
+      "assumptions": [
+        "A-DATA-004"
+      ]
+    },
+    "global_case_count": {
+      "status": "known",
+      "value": 7,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/case_studies.json"
+      ],
+      "formula": "count(reference_only global cases)",
+      "confidence": "medium",
+      "assumptions": [
+        "A-DATA-004"
+      ]
+    },
+    "scenario_card_count": {
+      "status": "known",
+      "value": 12,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/scenario_cards.json"
+      ],
+      "formula": "count(scenario_cards)",
+      "confidence": "high",
+      "assumptions": [
+        "A-DATA-004"
+      ]
+    },
+    "industry_test_scenario_count": {
+      "status": "known",
+      "value": 4,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/test_protocols.json"
+      ],
+      "formula": "count(test_protocols)",
+      "confidence": "high",
+      "assumptions": [
+        "A-DATA-004"
+      ]
+    },
+    "persona_count": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/personas.json"
+      ],
+      "formula": "count(personas)",
+      "confidence": "high",
+      "assumptions": [
+        "A-DATA-004"
+      ]
+    },
+    "ai_domain_count": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/scenario_cards.json"
+      ],
+      "formula": "count(distinct AI domains)",
+      "confidence": "high",
+      "assumptions": [
+        "A-DATA-004"
+      ]
+    },
+    "ai_pilgrimage_landmark_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(concept landmarks)",
+      "confidence": "medium",
+      "assumptions": [
+        "A-DATA-004"
+      ]
+    },
+    "regional_exchange_interface_count": {
+      "status": "known",
+      "value": 5,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(candidate regional interfaces)",
+      "confidence": "medium",
+      "assumptions": [
+        "A-DATA-004"
+      ]
+    },
+    "ecosystem_factor_count": {
+      "status": "known",
+      "value": 8,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(ecosystem factors)",
+      "confidence": "medium",
+      "assumptions": [
+        "A-DATA-004"
+      ]
+    },
+    "land_use_zone_count": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "count(LAND_USE features)",
+      "confidence": "high",
+      "assumptions": [
+        "A-DATA-004"
+      ]
+    },
+    "public_component_count": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "count(public rooms)",
+      "confidence": "medium",
+      "assumptions": [
+        "A-DATA-004"
+      ]
+    },
+    "public_service_component_count": {
+      "status": "known",
+      "value": 8,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(public service components)",
+      "confidence": "medium",
+      "assumptions": [
+        "A-DATA-004"
+      ]
+    },
+    "manual_fallback_mode_count": {
+      "status": "known",
+      "value": 4,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/scenario_cards.json"
+      ],
+      "formula": "count(fallback modes)",
+      "confidence": "high",
+      "assumptions": [
+        "A-DATA-004"
+      ]
+    },
+    "non_ai_alternative_coverage_ratio": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/scenario_cards.json"
+      ],
+      "formula": "cards with non_ai_alternative / all cards",
+      "confidence": "medium",
+      "assumptions": [
+        "A-DATA-004"
+      ]
+    },
+    "automated_public_decision_count": {
+      "status": "known",
+      "value": 0,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/scenario_cards.json"
+      ],
+      "formula": "count(automated public decision authorities)",
+      "confidence": "high",
+      "assumptions": [
+        "A-DATA-004"
+      ]
+    },
+    "delivery_package_count": {
+      "status": "known",
+      "value": 7,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(P1-P7)",
+      "confidence": "medium",
+      "assumptions": [
+        "A-DATA-004"
+      ]
+    },
+    "annual_program_count": {
+      "status": "known",
+      "value": 4,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(candidate annual programs)",
+      "confidence": "medium",
+      "assumptions": [
+        "A-DATA-004"
+      ]
+    },
+    "phase_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/phasing.geojson"
+      ],
+      "formula": "count(PHASE features)",
+      "confidence": "high",
+      "assumptions": [
+        "A-DATA-004"
+      ]
+    },
+    "international_communication_asset_count": {
+      "status": "known",
+      "value": 4,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count(bilingual communication asset types)",
+      "confidence": "medium",
+      "assumptions": [
+        "A-DATA-004"
+      ]
+    },
+    "rights_ledger_entry_count": {
+      "status": "known",
+      "value": 15,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/rights_ledger.json"
+      ],
+      "formula": "count(rights ledger entries)",
+      "confidence": "medium",
+      "assumptions": [
+        "A-DATA-004"
+      ]
+    },
+    "floor_area_ratio": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "brief/site-package/ranges/planning_limits.json"
+      ],
+      "formula": "not computed; official planning controls unavailable",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-CONTROLS-002"
+      ],
+      "reason": "Official regulatory controls and gross floor area are not provided."
+    },
+    "building_height_m": {
+      "status": "unknown",
+      "value": null,
+      "unit": "m",
+      "source_files": [
+        "brief/site-package/ranges/planning_limits.json"
+      ],
+      "formula": "not computed; official height controls unavailable",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-CONTROLS-002"
+      ],
+      "reason": "Height controls are not provided."
+    },
+    "building_density": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "brief/site-package/ranges/planning_limits.json"
+      ],
+      "formula": "not computed; official density controls unavailable",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-CONTROLS-002"
+      ],
+      "reason": "Official density controls are not provided."
+    },
+    "road_redline_m": {
+      "status": "unknown",
+      "value": null,
+      "unit": "m",
+      "source_files": [
+        "brief/site-package/ranges/planning_limits.json"
+      ],
+      "formula": "not computed; official road redline unavailable",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-CONTROLS-002"
+      ],
+      "reason": "No official road redline or engineering survey is used."
+    }
+  }
+}

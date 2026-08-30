@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "schema_version": "0.1.0",
+  "risks": [
+    {
+      "risk_id": "R-BOUNDARY",
+      "title_zh": "临时边界精度",
+      "category": "data_gap",
+      "severity": "high",
+      "description_zh": "总体与重点区 polygon 为 provisional rough constraint。",
+      "mitigation_zh": "正文、指标、图件、HTML、矩阵和 self_check 显式标注；官方 polygon 到位后整体替换并复算。"
+    },
+    {
+      "risk_id": "R-CONTROLS",
+      "title_zh": "法定控制缺口",
+      "category": "statutory",
+      "severity": "high",
+      "description_zh": "控规、道路、轨道、文保、权属、市政和消防资料未提供。",
+      "mitigation_zh": "不发布容积率、高度、强度、红线、拆改留、工程或审批结论。"
+    },
+    {
+      "risk_id": "R-DATA",
+      "title_zh": "AI数据边界",
+      "category": "data_boundary",
+      "severity": "high",
+      "description_zh": "真实场景可能触及个人信息、低样本和再识别风险。",
+      "mitigation_zh": "按场景列出业务必要字段、控制者、拟议合法性基础、访问权限、保存/删除和撤回规则；真实试点前由隐私与伦理专业人员核验，统计输出才做匿名化/聚合，并保留人工替代、纠错、删除、申诉和事件响应。"
+    }
+  ],
+  "dimensions": [
+    {
+      "id": "data_privacy",
+      "label": "数据隐私",
+      "score": 4,
+      "note": "统计匿名化与业务必要字段是不同层次，控制者、基础、权限、保存和撤回边界需持续核验。",
+      "mitigation": "建立场景字段清单和分层访问；统计输出才匿名化/聚合，业务服务保留必要字段、人工复核、删除、申诉、撤回和事件响应。",
+      "human_review": "由隐私与伦理专业人员复核后再行测试。"
+    },
+    {
+      "id": "implementation_complexity",
+      "label": "实施复杂度",
+      "score": 4,
+      "note": "多主体、多资料缺口、文保和无障碍条件使实施复杂。",
+      "mitigation": "采用分期、前置条件、影子测试、回退和退出。",
+      "human_review": "由规划、运营和无障碍专业团队联合复核。"
+    },
+    {
+      "id": "public_acceptance",
+      "label": "公众接受度",
+      "score": 4,
+      "note": "季节化场景和数字服务需真实公众共创验证。",
+      "mitigation": "设置议事、公示、纠错、撤回和等价人工替代。",
+      "human_review": "由社区代表和公共利益代表参与评议。"
+    },
+    {
+      "id": "policy_uncertainty",
+      "label": "政策不确定性",
+      "score": 4,
+      "note": "控规、数据开放和活动安排仍待有权主体确认。",
+      "mitigation": "全部表述为概念建议，并记录核验触发条件。",
+      "human_review": "由有权主体和法定专业团队确认边界。"
+    },
+    {
+      "id": "spatial_dispute",
+      "label": "空间争议",
+      "score": 4,
+      "note": "当前空间几何是 provisional design model，不是红线。",
+      "mitigation": "官方 polygon 到位后全量替换并复算指标和图件。",
+      "human_review": "由规划、文保和测绘专业团队复核。"
+    }
+  ]
+}
