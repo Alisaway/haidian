@@ -1,0 +1,345 @@
+{
+  "schema_version": "0.2.0",
+  "package_id": "ai-ecosystem-atlas",
+  "project_id": "centennial-jingzhang-ai-belt",
+  "site_package_version": "0.1.0",
+  "package_type": "professional_design_package",
+  "package_state": "ready_for_review",
+  "submission_stage": "formal",
+  "submission_type": "ai_agent",
+  "agent": {
+    "agent_id": "JohnXu22786",
+    "agent_name": "dsh-haidian-agent",
+    "role": "ai_agent_submission_author",
+    "model": "DeepSeek-V4-Flash via DeepSeek Harness web backend (dsh-x bridge)",
+    "model_family": "deepseek",
+    "model_detail": "deepseek-v4-flash; generation-only prompting. Package assembly, validation and PR opened by a Hermes orchestrator subagent on behalf of JohnXu22786.",
+    "generated_with": "scripts/scaffold_ai_submission.py + deterministic build_package.py + gen_pkg5.py"
+  },
+  "generated_at": "2026-08-24T05:06:00Z",
+  "files": [
+    {
+      "path": "manifest.json",
+      "role": "manifest",
+      "required": true
+    },
+    {
+      "path": "agent.json",
+      "role": "agent_card",
+      "required": true,
+      "sha256": "1c27ed57fa735c244a39bbc963db4348b1666a491c9dcb10a4d2726f2acca917"
+    },
+    {
+      "path": "assets/figures/key-areas.png",
+      "role": "proposal_figure",
+      "required": true,
+      "language": "zh",
+      "title_zh": "重点区域详细设计",
+      "title_en": "Key area detailed design",
+      "sha256": "128179c619b7f4a13b6f18872b726aa432d58bdf0a3df5cfb495282d4a0f9867"
+    },
+    {
+      "path": "assets/figures/land-use-structure.png",
+      "role": "proposal_figure",
+      "required": true,
+      "language": "zh",
+      "title_zh": "概念用地情景区间与留改拆原则",
+      "title_en": "Land-use ranges & R-R-D principles",
+      "sha256": "8f7dfb63e5bc8599ffaef227c67cd507bec90e9d83a1d1b2575250e53ae025de"
+    },
+    {
+      "path": "assets/figures/metrics-evidence.png",
+      "role": "proposal_figure",
+      "required": true,
+      "language": "zh",
+      "title_zh": "核心指标证据",
+      "title_en": "Core metrics evidence",
+      "sha256": "548c08d3c1d56fe16f56bf5f5886b5bac55dde7e86c03300b7e5e8937342480f"
+    },
+    {
+      "path": "assets/figures/mobility-bluegreen.png",
+      "role": "proposal_figure",
+      "required": true,
+      "language": "zh",
+      "title_zh": "慢行与蓝绿公共空间分析",
+      "title_en": "Slow-traffic & blue-green analysis",
+      "sha256": "448faac8361865b7ddd32d49c499a0bc44474789c66facd4bb5424fffbd4e3f2"
+    },
+    {
+      "path": "assets/figures/site-overview.png",
+      "role": "proposal_figure",
+      "required": true,
+      "language": "zh",
+      "title_zh": "总体设计总览",
+      "title_en": "Overall design overview",
+      "sha256": "b4506fb2a8592f01def1eab0313810720504f94c1d0570343adf54c3db090f1d"
+    },
+    {
+      "path": "assumptions.json",
+      "role": "assumptions",
+      "required": true,
+      "sha256": "f81b7314221eab37ca0068b25969180d55950d092f982c615270e87ee72663f7"
+    },
+    {
+      "path": "compliance_matrix.json",
+      "role": "compliance_matrix",
+      "required": true,
+      "sha256": "4523230c2f22c88a7a5378df2b44ef54ebf7c5ccd28f27031751c28d5c947e84"
+    },
+    {
+      "path": "design_depth_matrix.json",
+      "role": "design_depth_matrix",
+      "required": true,
+      "sha256": "58cd0f46e32bc10ea16207356007b34bdf60aef9d6a5b4865e690a562b7ef87f"
+    },
+    {
+      "path": "drawings/a0-boards.pdf",
+      "role": "drawing",
+      "required": true,
+      "language": "zh",
+      "sha256": "4e32ef1b814d5419f6abdaa99a45c2f14fb5ee417d0c5bc4624c874ccfeaeb1a"
+    },
+    {
+      "path": "drawings/a3-booklet.pdf",
+      "role": "drawing",
+      "required": true,
+      "language": "zh",
+      "sha256": "836fca15c3d9518c916e6776b5c3b954d1d574862ff3ee468545c1a30e50963f"
+    },
+    {
+      "path": "geometry/buildings.geojson",
+      "role": "geometry",
+      "required": true,
+      "sha256": "9a3f1450f6a99563a3937af7fd3734c28f25794c876c0199040515753deb60d9"
+    },
+    {
+      "path": "geometry/constraints.geojson",
+      "role": "geometry",
+      "required": true,
+      "sha256": "8b82cb48cd578414d62cc8f59bc5ffdb4b5bb725c4e845ad6374b9da6a6fb109"
+    },
+    {
+      "path": "geometry/green_space.geojson",
+      "role": "geometry",
+      "required": true,
+      "sha256": "d0506379bd3ef2bac2abb044aa4789e1a6a04af91c57e8fba99229431e99d1b6"
+    },
+    {
+      "path": "geometry/key_areas.geojson",
+      "role": "geometry",
+      "required": true,
+      "sha256": "54e0a4a5d5abd8377e49120dee1f85129e737d48aba8b82fa73ab774af04a450"
+    },
+    {
+      "path": "geometry/land_use.geojson",
+      "role": "geometry",
+      "required": true,
+      "sha256": "3b4e36617dc947c73643a5c29f8f595f1ca1a01984ccdd0e0ca854ff5c955ece"
+    },
+    {
+      "path": "geometry/phasing.geojson",
+      "role": "geometry",
+      "required": true,
+      "sha256": "39711c20917fccf174fc01509eb005406d2651da09048f6eee7e42057402b3e6"
+    },
+    {
+      "path": "geometry/public_space.geojson",
+      "role": "geometry",
+      "required": true,
+      "sha256": "101e381dfdce79f7af4441ba0ab3208b044868f4b383da853af0897deafdfc37"
+    },
+    {
+      "path": "geometry/roads.geojson",
+      "role": "geometry",
+      "required": true,
+      "sha256": "018c154463fcb659935b6c13c96bf5ffa7a5b868641cb41193ae1f1dd0de276a"
+    },
+    {
+      "path": "geometry/site_boundary.geojson",
+      "role": "geometry",
+      "required": true,
+      "sha256": "04476500e164b1be1f03284d356854063a03175e977711f8d844b929f80e48f3"
+    },
+    {
+      "path": "metrics.json",
+      "role": "metrics",
+      "required": true,
+      "sha256": "7cba664eef9ac1c3e8eec3ff15d06953cca71e14ee2f32729897c5b6ce2b5686"
+    },
+    {
+      "path": "proposal.en.md",
+      "role": "narrative",
+      "required": true,
+      "language": "en",
+      "translation_of": "proposal.md",
+      "sha256": "74c28712c7694f36a2472633fba11ba68de0aeb325924dfa1d01d61a45595448"
+    },
+    {
+      "path": "proposal.md",
+      "role": "narrative",
+      "required": true,
+      "language": "zh",
+      "sha256": "d3c0bcaf78641b5d7ced0a98884081b6e5fe0be9d0f9ccf88c1462ced33355cb"
+    },
+    {
+      "path": "report/copyright_statement.md",
+      "role": "copyright_statement",
+      "required": true,
+      "sha256": "7aceb52cdf041c6c177913294b23295d52f722075876a1283cf47cd78f5c1a04"
+    },
+    {
+      "path": "report/narrative.md",
+      "role": "narrative",
+      "required": false,
+      "sha256": "ef8b01c509830b3eab613b3f5e7372404738e47b07f189f15cb9d5c49733e4ec"
+    },
+    {
+      "path": "report/proposal.html",
+      "role": "rendered_proposal_html",
+      "required": true,
+      "language": "zh",
+      "sha256": "87ec46bafe560ab641ad63b7e906d7b83334ff124e4746be4c3ff529661e2d99"
+    },
+    {
+      "path": "self_check.json",
+      "role": "self_check",
+      "required": true,
+      "sha256": "fb03c8cbf1715b850dee5db701cf1c0ca0f61e75a068899c7fe710725965ccec"
+    },
+    {
+      "path": "sources.json",
+      "role": "sources",
+      "required": true,
+      "sha256": "437d193cab145e2004fd035129d3eec74f11022eae82ea51c71eed8d75861308"
+    },
+    {
+      "path": "standard_matrix.json",
+      "role": "standard_matrix",
+      "required": true,
+      "sha256": "3bdf3eb2b39777ab5e996f6970714d3f89190196b8fa6d9339ee7c128aa1056a"
+    },
+    {
+      "path": "visual/index.html",
+      "role": "visualization",
+      "required": true,
+      "language": "zh",
+      "sha256": "a16e6aec48964da5186eb6662aa779e0fc7141efe3182af5e69c9cf4f2b8db64"
+    },
+    {
+      "path": "assets/figures/site-overview.en.png",
+      "role": "proposal_figure",
+      "required": true,
+      "language": "en",
+      "translation_of": "assets/figures/site-overview.png",
+      "title_zh": "总体设计总览",
+      "title_en": "Overall design overview",
+      "sha256": "2c19f829e267e7cc214d2362684778090a8442110b6a3f2e8f44b37069564821"
+    },
+    {
+      "path": "assets/figures/land-use-structure.en.png",
+      "role": "proposal_figure",
+      "required": true,
+      "language": "en",
+      "translation_of": "assets/figures/land-use-structure.png",
+      "title_zh": "概念用地情景区间与留改拆原则",
+      "title_en": "Land-use ranges & R-R-D principles",
+      "sha256": "66451e2e08f29f0e51e2c91d85faf063c8c70076e138bf83d08932c4730f591a"
+    },
+    {
+      "path": "assets/figures/key-areas.en.png",
+      "role": "proposal_figure",
+      "required": true,
+      "language": "en",
+      "translation_of": "assets/figures/key-areas.png",
+      "title_zh": "重点区域详细设计",
+      "title_en": "Key area detailed design",
+      "sha256": "7a995b651cad727f8dccb2a6838c5dd661c7903a3ba21e3c80c46d96cb01e43e"
+    },
+    {
+      "path": "assets/figures/mobility-bluegreen.en.png",
+      "role": "proposal_figure",
+      "required": true,
+      "language": "en",
+      "translation_of": "assets/figures/mobility-bluegreen.png",
+      "title_zh": "慢行与蓝绿公共空间分析",
+      "title_en": "Slow-traffic & blue-green analysis",
+      "sha256": "fcf641e82e736b073bd28256009384b85be27b26cf4186b00fcbaa9d7da082cf"
+    },
+    {
+      "path": "assets/figures/metrics-evidence.en.png",
+      "role": "proposal_figure",
+      "required": true,
+      "language": "en",
+      "translation_of": "assets/figures/metrics-evidence.png",
+      "title_zh": "核心指标证据",
+      "title_en": "Core metrics evidence",
+      "sha256": "cac6f7e56e66d3b19eaa9f440e4d6283c6ebc1a212e4644d90330878efc7dff4"
+    },
+    {
+      "path": "assets/figures/ecosystem-map.png",
+      "role": "proposal_figure",
+      "required": true,
+      "language": "zh",
+      "title_zh": "AI创新生态图谱",
+      "title_en": "AI ecosystem map",
+      "sha256": "17378ed2290e16b4f61e4e62f9313b00b8558a872ed8793490322aa382f3478a"
+    },
+    {
+      "path": "assets/figures/ecosystem-map.en.png",
+      "role": "proposal_figure",
+      "required": true,
+      "language": "en",
+      "translation_of": "assets/figures/ecosystem-map.png",
+      "title_zh": "AI创新生态图谱",
+      "title_en": "AI ecosystem map",
+      "sha256": "aae7341015b68d789e7af7d71b13ddec8f0d216ef5270aa792c072ca07890ed4"
+    },
+    {
+      "path": "assets/figures/logo-jz.png",
+      "role": "proposal_figure",
+      "required": true,
+      "language": "neutral",
+      "title_zh": "ATLAS·JZ 概念Logo（原创）",
+      "title_en": "ATLAS·JZ concept logo (original)",
+      "sha256": "be09ecfc5340a81043d0e0fed01f8b8a03082c524e246e3925380cc9470a071c"
+    },
+    {
+      "path": "drawings/a0-boards.en.pdf",
+      "role": "drawing",
+      "required": true,
+      "language": "en",
+      "translation_of": "drawings/a0-boards.pdf",
+      "sha256": "14671a066f204a602b9723fd6e445c6483f41df5559fcf966bc00b80b35cded4"
+    },
+    {
+      "path": "drawings/a3-booklet.en.pdf",
+      "role": "drawing",
+      "required": true,
+      "language": "en",
+      "translation_of": "drawings/a3-booklet.pdf",
+      "sha256": "48be8e93eaa5e1ccf76acb26675ab9ee2d98e1a9aee0ac805209a74d448e5496"
+    },
+    {
+      "path": "report/proposal.en.html",
+      "role": "rendered_proposal_html",
+      "required": true,
+      "language": "en",
+      "translation_of": "report/proposal.html",
+      "sha256": "6f9c31ad024632140abc595ef984026d55725446dc103e12ec38c223c9908e5e"
+    },
+    {
+      "path": "visual/index.en.html",
+      "role": "visualization",
+      "required": true,
+      "language": "en",
+      "translation_of": "visual/index.html",
+      "sha256": "d7c0abac3d3d067ac0aa12cebd8ed8d06de897bf710ca4793f8ea1dcdd695b89"
+    }
+  ],
+  "validation_claim": {
+    "self_checked": true,
+    "known_blockers": [],
+    "data_confidence": "mixed_provisional_and_conceptual",
+    "readiness_contract": "persisted-self-check-v1"
+  }
+}
