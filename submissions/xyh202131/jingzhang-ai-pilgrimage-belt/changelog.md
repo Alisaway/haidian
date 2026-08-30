@@ -1,5 +1,19 @@
 # 方案迭代记录 / Changelog
 
+## v95.0 - 2026-08-30
+
+**交接镜像一致性闭合 / Handoff-mirror Coherence Closure**
+
+- 已有能力：R94 已为中英文审阅者建立精确的 30 秒、3 分钟、15 分钟、专业交接与证据路线；PR #4266 在 exact head `7ea7258264987fde5ca5d15374f55fa16a825604` 完成 96/100、无阻断项评审并进入 canonical main。
+- 真实缺口：修复前，独立 `review-handoff-index.json` 已是 R94，但 `site-grounding-register.json` 的包级验证合同仍把内嵌交接镜像声明为 R93。两者都指向同一路径，自动 gate 却不比较合同标识，因此机器读者无法确认内嵌指针是否对应当前索引。
+- 必须冻结：冻结“双轨京张 / Twin-Track Jing-Zhang”、三种不可互换原型、JZ-AIOS、G0—G3、四轴、三载体、证据门、权利边界及 12/8/3/36；不改 proposal、report/visual 页面、图件、媒体、四份 PDF、geometry、metrics、来源判断、现实状态或 0/8 人工双语签署。
+- 本轮实施：把独立索引与包级验证合同的内嵌指针统一升级为 R95，显式登记目标索引 ID、出版修订号和前序评审绑定，并加入“两个标识必须逐字相等”的 fail-closed 镜像规则；不复制索引正文，不增加事实、媒体或证据成熟度。官方几何、批准、现场基线与结果、现实责任、预算、恢复时间、公众反馈、独立法律/商标审查和人工双语签署继续为 unknown、0、未提供或 NO-GO。
+
+- Existing capability: R94 established exact Chinese and English 30-second, three-minute, 15-minute, professional-handoff and evidence routes. PR #4266 completed a 96/100 review with no blocker on exact head `7ea7258264987fde5ca5d15374f55fa16a825604` and entered canonical main.
+- Real gap: before repair, the standalone `review-handoff-index.json` was R94 while the package-validation contract in `site-grounding-register.json` still declared its embedded handoff mirror as R93. Both pointed to the same path, but automated gates did not compare their contract identifiers, so a machine reader could not prove that the embedded pointer described the current index.
+- Frozen boundary: Twin-Track Jing-Zhang, the three non-interchangeable prototypes, JZ-AIOS, G0–G3, four axes, three carriers, evidence gates, rights boundaries and 12/8/3/36 remain frozen. Proposals, report/visual pages, figures, media, all four PDFs, geometry, metrics, source judgements, real-world status and the unsigned 0/8 human bilingual review are unchanged.
+- Implemented this round: upgraded the standalone index and embedded package-validation pointer to R95, explicitly recorded the target index ID, publication revision and predecessor-review binding, and added a fail-closed rule requiring the two identifiers to match exactly. No index body is duplicated and no fact, media or evidence maturity is added. Official geometry, approvals, field baselines and outcomes, real accountability, budgets, recovery time, public feedback, independent legal/trademark review and human bilingual sign-off remain unknown, zero, not provided or NO-GO.
+
 ## v94.0 - 2026-08-30
 
 **双语精确审阅路由闭合 / Exact Bilingual Review-route Closure**
