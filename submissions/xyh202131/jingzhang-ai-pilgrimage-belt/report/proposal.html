@@ -168,6 +168,11 @@ code {
 .chapter-index ol { columns: 2; column-gap: 34px; margin: 0; padding-left: 22px; }
 .chapter-index li { break-inside: avoid; margin: 0 0 7px; }
 .chapter-index a { color: #315f87; text-underline-offset: 3px; }
+.chapter-index a:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
 .mobile-table-note {
   display: none;
   margin: -18px 0 28px;
@@ -177,6 +182,12 @@ code {
   background: #f7fafc;
 }
 h2[id] { scroll-margin-top: 18px; }
+h2[id]:target,
+h2[id]:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 6px;
+  background: #eef6fb;
+}
 @media (max-width: 720px) {
   main { padding: 26px 16px 52px; }
   h1 { font-size: 26px; }
@@ -197,6 +208,8 @@ h2[id] { scroll-margin-top: 18px; }
   .skip-link { display: none; }
   .chapter-index { break-inside: avoid; }
   .mobile-table-note { display: none; }
+  h2[id]:target,
+  h2[id]:focus-visible { outline: 0; background: transparent; }
 }
 </style>
 </head>

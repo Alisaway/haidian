@@ -1,5 +1,19 @@
 # 方案迭代记录 / Changelog
 
+## v88.0 - 2026-08-30
+
+**图文报告章节落点可见反馈 / Visible Illustrated-report Chapter Destinations**
+
+- 已有能力：中英文图文报告已具备跳到正文、15 项语义章节目录、稳定片段、章节焦点交接、包内 CJK 字体、减少动态与打印回退。
+- 真实缺口：修复前，目录键盘焦点仅依赖浏览器默认表现，落点标题也没有稳定的可见定位状态；键盘、放大或注意力受限的读者在长报告跳转后仍可能难以立即确认当前章节。
+- 必须冻结：冻结“双轨京张 / Twin-Track Jing-Zhang”、三种不可互换原型、JZ-AIOS、G0—G3、四轴、三载体、证据门、权利边界及 12/8/3/36；不改正文、体验台、图件、媒体、四份 PDF、几何、指标或现实状态。
+- 本轮实施：为两种语言的章节目录链接增加高对比键盘焦点，并为 15 个既有章节落点增加片段命中或程序化焦点时的可见轮廓与浅色底。打印时移除这些交互状态；不使用 JavaScript，不改内容、布局或证据层。
+
+- Existing capability: both illustrated reports already provide skip-to-main, a 15-item semantic chapter index, stable fragments, chapter focus transfer, packaged CJK fonts, reduced-motion handling and print fallback.
+- Real gap: before repair, keyboard focus in the chapter index relied only on browser defaults, while destination headings had no stable visible orientation state. Keyboard, zoomed or attention-limited readers could still struggle to confirm the active chapter after a long-report jump.
+- Must remain frozen: Twin-Track Jing-Zhang, the three non-interchangeable prototypes, JZ-AIOS, G0-G3, four axes, three carriers, evidence gates, rights boundaries and 12/8/3/36. Proposals, workbenches, figures, media, all four PDFs, geometry, metrics and real-world status remain unchanged.
+- Implemented this round: added a high-contrast keyboard focus state to chapter-index links in both languages and a visible outline plus subtle background when any of the 15 existing chapter destinations is fragment-targeted or programmatically focused. Print removes these interaction states. No JavaScript is used, and content, layout and the evidence layer remain unchanged.
+
 ## v87.0 - 2026-08-30
 
 **图文报告章节焦点交接闭合 / Illustrated-report Chapter Focus Transfer**
