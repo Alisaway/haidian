@@ -12,11 +12,13 @@ This package is a G0 concept review edition based on repository-provided provisi
 - **3 分钟 / 3 minutes:** 沿 visual 的评审路线查看证据门、普通任务、停止规则、权利边界和专业交接。
 - **15 分钟 / 15 minutes:** 阅读 `report/proposal.html` 或 `report/proposal.en.html`，再用四份 PDF 的全页图谱核对 A3/A0 定页成果。
 - **追证 / Trace evidence:** 进入 `visual/assets/review-handoff-index.json`、结构化登记表、`sources.json`、`assumptions.json`、`self_check.json` 与 `visual/assets/file-rights-inventory.json`；任何摘要都不得替代这些记录。
+- **语言路由 / Language route:** 交接索引为 30 秒、3 分钟、15 分钟、专业交接与证据分别登记中文和英文精确入口；共享 JSON 仍是语言中立证据，不能替代 0/8 的独立人工双语签署。
 
 - **30 seconds:** Open `visual/index.html` or `visual/index.en.html` for the first-screen ruling, the three-area distinction and 12/8/3/36.
 - **3 minutes:** Follow the visual review route through evidence gates, ordinary tasks, stop rules, rights boundaries and professional handoff.
 - **15 minutes:** Read `report/proposal.html` or `report/proposal.en.html`, then use the four PDF all-page atlases to inspect every fixed A3/A0 page.
 - **Trace evidence:** Continue to `visual/assets/review-handoff-index.json`, the structured registers, `sources.json`, `assumptions.json`, `self_check.json` and `visual/assets/file-rights-inventory.json`; no summary overrides those records.
+- **Language route:** The handoff index declares exact Chinese and English destinations for the 30-second, three-minute, 15-minute, professional-handoff and evidence steps. Shared JSON remains language-neutral evidence and does not replace the unsigned 0/8 independent human bilingual review.
 
 ## 当前可审阅成果 / What is reviewable now
 
