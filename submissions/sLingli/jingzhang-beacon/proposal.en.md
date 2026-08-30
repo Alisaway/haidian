@@ -9,7 +9,7 @@ license: "COMMUNITY-DISPLAY-ONLY"
 summary: "Taking the signalling system of the century-old Jing-Zhang Railway as its prototype, JINGZHANG BEACON turns the operating status of an AI city into a public signal language readable by everyone, using green, amber and red signals. A one-spine, three-beacon, two-wing spatial structure makes the three key areas verification, open-source and experience beacons, forming an AI city public interface that is experienceable, verifiable and reversible."
 tracks: ["ai-traffic-walkability", "ai-origin-community", "enterprise-services-ecosystem"]
 scenarios: ["ai-cultural-guide", "ai-traffic-walkability", "enterprise-service-copilot", "public-safety-operations-review"]
-iteration: "v1.6.2"
+iteration: "v1.6.3"
 ---
 
 # JINGZHANG BEACON: Making the Operating Status of an AI City a Public Signal Language
