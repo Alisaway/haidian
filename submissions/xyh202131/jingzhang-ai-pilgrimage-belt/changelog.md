@@ -1,5 +1,19 @@
 # 方案迭代记录 / Changelog
 
+## v93.0 - 2026-08-30
+
+**当前包验证合同闭合 / Current-package Validation-contract Closure**
+
+- 已有能力：R92 已闭合 38 个深层结构引用；当前 manifest、逐路径权利清单和来源治理均以 162 个实际路径为边界，PR #4261 也已在 exact head `d7ebdaab97d3de639f8f3daf6ce4065b2feb3d57` 完成 96/100、无阻断项的正式评审并合入 canonical main。
+- 真实缺口：修复前，`site-grounding-register.json` 的包级验证合同仍声称 actual / manifest / rights 均为 141，并嵌入 R20 交接索引；当前 `review-handoff-index.json` 也仍把 PR #4254 当作最近前序评审。四份 PDF 的权利卡语义层仍为 157/157，A0 可见层及四张全页图集则为 158/158。自动 gate 能验证文件与哈希，却不会比较这些叙述性合同和出版层是否与当前精确包同步。
+- 必须冻结：冻结“双轨京张 / Twin-Track Jing-Zhang”、三种不可互换原型、JZ-AIOS、G0—G3、四轴、三载体、证据门、权利边界及 12/8/3/36；不改 proposal、report/visual 页面、设计图件、媒体、PDF 页数与版式、geometry、metrics、来源判断、证据状态或现实主张。仅允许同步 A3 第 13 页与 A0 第 7 板的当前包权利计数，并据此重建四份 PDF 和四张全页图集。
+- 本轮实施：把包级验证合同同步为 162 个实际路径、162 个 manifest 路径项和 162 条逐路径权利记录；把嵌入交接合同与当前 R93 索引对齐，并将最近前序评审绑定到 PR #4261 的 exact head；把四份 PDF 的可见层与语义层及四张全页图集统一为 162/162。官方几何、批准、现场基线与结果、现实责任、预算、恢复时间、公众反馈、独立法律/商标审查和人工双语签署继续为 unknown、0、未提供或 NO-GO。
+
+- Existing capability: R92 closed 38 deep structured references. The current manifest, path-level rights inventory and source governance are all bounded by 162 actual paths, while PR #4261 completed a 96/100 formal review with no blocker on exact head `d7ebdaab97d3de639f8f3daf6ce4065b2feb3d57` and merged into canonical main.
+- Real gap: before repair, the package-validation contract in `site-grounding-register.json` still claimed 141 actual / manifest / rights paths and embedded the R20 handoff index; the current `review-handoff-index.json` also still treated PR #4254 as the latest predecessor review. The rights card in all four PDFs still said 157/157 in its semantic layer, while the visible A0 layer and all-page atlases said 158/158. Automated gates verify files and hashes but do not compare these narrative and publication contracts with the current exact package.
+- Frozen boundary: Twin-Track Jing-Zhang, the three non-interchangeable prototypes, JZ-AIOS, G0–G3, four axes, three carriers, evidence gates, rights boundaries and 12/8/3/36 remain frozen. Proposals, report/visual pages, design figures, media, PDF page counts and layouts, geometry, metrics, source judgements, evidence states and real-world claims are unchanged. Only the current-package rights count on A3 page 13 and A0 board 7 may be synchronized, with all four PDFs and four all-page atlases rebuilt from that correction.
+- Implemented this round: synchronized the package-validation contract to 162 actual paths, 162 manifest path entries and 162 path-level rights records; aligned the embedded handoff contract with the current R93 index; rebound the latest predecessor review to PR #4261's exact head; and unified the visible and semantic layers of all four PDFs plus all four all-page atlases at 162/162. Official geometry, approvals, field baselines and outcomes, real accountability, budgets, recovery time, public feedback, independent legal/trademark review and human bilingual sign-off remain unknown, zero, not provided or NO-GO.
+
 ## v92.0 - 2026-08-30
 
 **深层结构引用闭合 / Deep Structured-reference Closure**
