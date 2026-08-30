@@ -1,5 +1,19 @@
 # 方案迭代记录 / Changelog
 
+## v83.0 - 2026-08-30
+
+**媒体文字替代直达 / Direct Access to Media Text Alternatives**
+
+- 已有能力：中英文体验台中的 54 秒无声概念动态图解均有默认双语字幕、始终可见的静态故事板，并在包内登记了完整双语文字稿与权利说明。
+- 真实缺口：修复前，播放器可以读取 VTT，但页面没有可见的文字稿入口；不播放视频的读者无法主动打开可复制、可由屏幕阅读器线性读取的八镜文字替代，字幕文件也只能由播放器间接访问。
+- 必须冻结：冻结“双轨京张 / Twin-Track Jing-Zhang”、三种不可互换原型、JZ-AIOS、G0—G3、四轴、三载体、证据门、权利边界及 12/8/3/36；不改视频、字幕、文字稿内容、正文、报告、图件、四份 PDF、几何、指标或现实状态。
+- 本轮实施：在两份体验台的动态图解旁增加可见的双语文字稿/权利说明入口和字幕下载入口；两项控制均保留 44px 触达、键盘焦点、离线、减少动态与打印可读性。只闭合既有媒体的无障碍发现路径，不新增媒体、事实、结果或许可结论。
+
+- Existing capability: the 54-second silent conceptual motion diagram in each workbench already provides default bilingual captions, an always-visible static storyboard, and a package-declared bilingual transcript with rights notes.
+- Real gap: before repair, the player could consume the VTT but the page exposed no visible transcript route. Readers who declined playback could not deliberately open the copyable, screen-reader-linear eight-shot text alternative, while the caption file was reachable only indirectly through the player.
+- Must remain frozen: Twin-Track Jing-Zhang, the three non-interchangeable prototypes, JZ-AIOS, G0-G3, four axes, three carriers, evidence gates, rights boundaries and 12/8/3/36. The video, captions, transcript content, proposals, reports, figures, all four PDFs, geometry, metrics and real-world status remain unchanged.
+- Implemented this round: added visible transcript/rights and caption-download routes beside the motion diagram in both workbenches. Both controls preserve 44px targets, keyboard focus, offline use, reduced-motion behaviour and print readability. This closes discovery of existing media alternatives only; it adds no media, fact, result or licence conclusion.
+
 ## v82.0 - 2026-08-30
 
 **小屏表格阅读提示 / Narrow-screen Table Reading Cue**
