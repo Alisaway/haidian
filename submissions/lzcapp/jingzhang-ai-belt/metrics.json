@@ -170,8 +170,8 @@
   },
   "boundary_offset_note": "提交几何使用的 PROV-SITE-001（约 11.4 km² 总体设计范围）与 OSM 实测京张铁路遗址公园不相交，最近距离约 412.5 m（见上游 issue #846）。该偏移意味着整套空间落点相对真实遗址公园可能存在约 412.5 m 的整体平移；所有面积与比例指标（site_area_sqm、green_space_area_sqm、public_space_area_sqm、building_footprint_area_sqm、green_ratio、public_space_ratio、building_density、key_area_*、phasing_area_sqm）均为 provisional 边界内部复算值，不代表与真实遗址公园对齐后的尺度，不得作为正式控规或红线依据。官方 redline 与遗址公园精确几何发布后须整体重算并对齐。",
   "figure_layout_compliance": {
-    "version": "2.4.0",
-    "status": "implemented; all 5 PNGs normalized to figure_layout v2.4 per CJJ/T 97-2003 + GB/T 20257-2017 + GB 50137-2011; title_block / wind_rose / scale_bar / metadata_block / double_legend all present",
+    "version": "3.3.0",
+    "status": "partially implemented; v1.9 (2026-08-30). This iteration closes the two visible-consistency failures the round-6 review listed for expression completeness: (a) report/proposal.html and report/proposal.en.html are now re-rendered from the same canonical v3.3 bilingual markdown by the upstream scripts/render_proposal_html.py, so the rendered output no longer carries the stale v3.1 label, the system-font names or the old 'not fully presented' self-assessment that contradicted proposal.md and this file; (b) the English figures are now substantively equivalent to the Chinese ones -- the blue-green metric block in mobility-bluegreen and the key-metric cards in metrics-evidence had been hard-coded Chinese regardless of language, and are now translated, leaving only one explicitly labelled Chinese cross-reference subtitle. Also in v1.9: quantitative spatial/engineering wording in the key-area and implementation tables was downgraded to concept test bands or options awaiting comparison, consistent with this file listing floor_area_ratio, building_height_m and total_floor_area_sqm as unknown. Font subset rebuilt from the re-rendered HTML (see verify_embedded_font); figure overlap check reports 0 overlaps / 0 clipped / 0 unexpected Chinese on the .en figures across all 10 figures.",
     "applies_to": [
       "assets/figures/site-overview.png",
       "assets/figures/key-areas.png",
@@ -191,9 +191,9 @@
         "scope": "符号/线型/字级"
       },
       {
-        "id": "GB 50137-2011",
-        "name": "城市用地分类与规划建设用地标准",
-        "scope": "用地色"
+        "id": "MNR-LAND-USE-CLASSIFICATION-GUIDE",
+        "name": "国土空间调查、规划、用途管制用地用海分类指南",
+        "scope": "用地色 (05 湿地 / 07 居住 / 08 公共管理与公共服务 / 14 绿地与开敞空间 / 16 留白; 二级类见 land_use.geojson)"
       },
       {
         "id": "GB/T 13989-2012",
@@ -235,12 +235,12 @@
       ]
     },
     "current_state": {
-      "title_block": "present (JZ-OV-0X, version v2.4, per typesetting_review.md)",
-      "wind_rose": "present (right-top, N + winter/summer freq + 1:8000 caption)",
-      "scale_bar": "present (below plot, linear 0-500-1000m)",
-      "metadata_block": "present (CGCS2000 / 3°GK 117°E / 1985 高程基准)",
-      "double_legend": "present (land-use grouped + structure legend)",
-      "compliance_score_self_estimate_0_5": 5
+      "title_block": "present in v1.8 PNGs (v3.3 / 2026-08-30 / public); title and subtitle drawn on fig, not axes (no wrap overlap); 5 variants have distinct right-column blocks, each block panel title and content rows are now vertically separated (v1.8 fix: title y=0.97, content top_frac=0.86 — eliminates v1.7 '叠压' complaint) v1.8: panel title anchored at y=0.97 (va=top); body rows start at content_top(h) computed in inches, no longer a fixed 0.86.",
+      "wind_rose": "kept on site-overview only in v1.7 (overview is the only figure where site context belongs); other 4 variants drop it (was a source of cross-variant repetition)",
+      "scale_bar": "moved INSIDE axes in v1.7 (bottom-left inset) to eliminate double-scale-bar / footnote-overlap and bottom clipping v1.8: bar raised to 0.035 of map height and numbers moved to 0.008 below the bar so the wrapped 2-line English footnote no longer collides.",
+      "metadata_block": "present in v1.8 PNGs (identical to v1.7 content); now rendered in fraction-based layout (no empty cells from unit-mix bug) and matches title block / figure caption date 2026-08-30 v1.8: overlap with the panel title removed via the inch-derived content_top(); verified programmatically.",
+      "double_legend": "re-differentiated per variant in v1.8: overview=struct+road legend, key-areas=3-area comparison table, land-use-structure=9-row MNR class table (one row per 2nd-tier code, plus TOTAL), mobility-bluegreen=4-level road hierarchy + blue-green metric bars, metrics-evidence=5-metric cards with source/precision notes. Map colour follows MNR 1st-tier (5 colours) keyed by land_use_code first two digits.",
+      "compliance_score_self_estimate_0_5": 3
     },
     "planned_state_v2": {
       "title_block": "present (per typesetting_review.md §1)",
@@ -249,8 +249,10 @@
       "metadata_block": "present (CGCS2000 / 3°GK 117°E / 1985 高程基准)",
       "double_legend": "present (land-use grouped + structure legend)",
       "planned_target_compliance_score_0_5": 5,
-      "note": "achieved at figure_layout v2.4 (all 5 PNGs regenerated)"
+      "note": "5/5 retained as the target pending reviewer confirmation of the regenerated figures"
     },
-    "convention_caveat": "本声明为概念规范,不主张已具备城乡规划编制资质;正式制图须由具备相应资质(乙级及以上)的单位审定;本方案仅作开源仓库收录评审之参考,见 metrics.geometry_topology_note 与 boundary_offset_note。"
+    "convention_caveat": "本声明为概念规范,不主张已具备城乡规划编制资质;正式制图须由具备相应资质(乙级及以上)的单位审定;本方案仅作开源仓库收录评审之参考,见 metrics.geometry_topology_note 与 boundary_offset_note。",
+    "verification_status": "rendered_and_locally_verified",
+    "reviewer_feedback": "PR #4155 review (72/100) noted figure content-design gaps: repetition, missing key-area names, missing road hierarchy, missing core metric values, bilingual residue. v1.6 closes (a)–(c) by regenerating all 10 figure PNGs (see changelog v1.6). Self-estimate kept at 2/5 to remain consistent with proposal.md (2/5); residual gaps (repetition, bilingual residue, provisional-data caveats) are documented above and in the figure footnotes."
   }
 }

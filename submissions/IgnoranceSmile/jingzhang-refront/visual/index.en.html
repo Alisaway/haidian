@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="One park, two fronts, three innovation frontiers. Real cross streets, lawful crossings and civic nodes determine when the active frontage may change sides; adjacent buildings, forecourts and logistics become the second stage of an asymmetric refronting process.">
+  <title>JINGZHANG RE:FRONT — Evidence-Constrained Concept Design Atlas</title>
+  <style>
+:root {
+  --paper:#F1EEE7; --paper-hi:#FAF8F3; --ink:#172124; --rust:#C94D35;
+  --teal:#238C7C; --blue:#3E7186; --amber:#D5A53D; --quiet:#A9ADA8;
+  --secondary:#5F6765; --rule:rgba(23,33,36,.23); --hair:rgba(23,33,36,.11);
+  --measure:1560px; --pad:clamp(22px,5vw,78px);
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; background:var(--paper); }
+body {
+  margin:0; color:var(--ink); background:var(--paper);
+  font-family:"Helvetica Neue",Helvetica,Arial,"PingFang SC","Microsoft YaHei",sans-serif;
+  line-height:1.52; text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased; font-variant-numeric:tabular-nums;
+  overflow-x:hidden;
+}
+img { display:block; max-width:100%; height:auto; }
+a { color:inherit; }
+.skip-link { position:absolute; left:16px; top:-80px; z-index:100; padding:10px 14px; background:var(--ink); color:var(--paper-hi); }
+.skip-link:focus { top:16px; }
+:focus-visible { outline:3px solid var(--amber); outline-offset:4px; }
+.topbar {
+  min-height:46px; padding:10px var(--pad); display:flex; align-items:center;
+  justify-content:space-between; gap:24px; border-bottom:1px solid var(--rule);
+  font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+}
+.lang-switch { text-decoration:none; border-bottom:2px solid var(--rust); padding:2px 0; }
+.hero { max-width:var(--measure); margin:0 auto; padding:clamp(54px,8vw,126px) var(--pad) 44px; }
+.hero-grid { position:relative; display:grid; grid-template-columns:minmax(0,1.07fr) minmax(360px,.93fr); gap:clamp(44px,6vw,96px); align-items:end; }
+.project-lockup { margin:0 0 42px; }
+.project-lockup h1 { margin:0; font-size:clamp(66px,9.2vw,154px); line-height:.82; letter-spacing:-.055em; font-weight:800; }
+.project-lockup .countername { display:block; margin-top:18px; color:var(--rust); font-size:clamp(18px,2.1vw,31px); font-weight:700; letter-spacing:.08em; }
+.claim { margin:0; max-width:920px; font-size:clamp(28px,3.9vw,61px); line-height:1.07; letter-spacing:-.035em; font-weight:650; overflow-wrap:anywhere; word-break:break-word; }
+.claim:before { content:""; display:block; width:86px; border-top:7px solid var(--rust); margin-bottom:28px; }
+.hero-sub { max-width:820px; margin:28px 0 0; color:var(--secondary); font-size:clamp(16px,1.55vw,22px); overflow-wrap:anywhere; word-break:break-word; }
+.concept-hero { margin:0; position:relative; align-self:stretch; display:flex; flex-direction:column; justify-content:flex-end; }
+.concept-hero::before { content:""; position:absolute; z-index:2; left:-22px; top:4%; bottom:12%; width:9px; background:linear-gradient(to bottom,var(--teal) 0 42%,var(--rust) 42% 70%,var(--teal) 70% 100%); }
+.concept-hero::after { content:""; position:absolute; z-index:2; left:-13px; top:57%; width:46px; border-top:2px dashed var(--amber); }
+.concept-hero .image-wrap { position:relative; overflow:hidden; background:var(--quiet); aspect-ratio:16/9; }
+.concept-hero img { width:100%; height:100%; object-fit:cover; }
+.visual-label { position:absolute; top:14px; left:14px; max-width:calc(100% - 28px); padding:7px 10px; background:rgba(23,33,36,.92); color:#fff; font-size:10px; font-weight:750; letter-spacing:.09em; text-transform:uppercase; }
+figcaption { margin-top:10px; color:var(--secondary); font-size:12px; line-height:1.45; }
+.evidence-rail { max-width:var(--measure); margin:0 auto; padding:0 var(--pad) 34px; }
+.evidence-rail-inner { border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); padding:13px 0 14px; display:grid; grid-template-columns:minmax(135px,.52fr) repeat(3,minmax(0,1fr)); gap:18px; align-items:start; }
+.evidence-rail h2 { margin:0; color:var(--rust); font-size:10px; line-height:1.25; letter-spacing:.14em; text-transform:uppercase; }
+.evidence-state { padding-left:14px; border-left:3px solid var(--teal); }
+.evidence-state.pending { border-color:var(--amber); }
+.evidence-state b { display:block; font-size:11px; line-height:1.35; }
+.evidence-state span { display:block; margin-top:2px; color:var(--secondary); font-size:10px; line-height:1.35; }
+.atlas-nav { position:sticky; top:0; z-index:30; background:rgba(241,238,231,.96); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); backdrop-filter:blur(8px); }
+.atlas-nav ol { max-width:var(--measure); margin:0 auto; padding:0 var(--pad); list-style:none; display:flex; overflow:auto; scrollbar-width:thin; }
+.atlas-nav li { flex:0 0 auto; }
+.atlas-nav a { display:block; padding:16px 18px 14px 0; margin-right:24px; text-decoration:none; font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; white-space:nowrap; }
+.atlas-nav a:hover { color:var(--rust); }
+main { overflow:hidden; }
+.plate { max-width:var(--measure); margin:0 auto; padding:clamp(78px,10vw,152px) var(--pad); border-bottom:1px solid var(--rule); }
+.plate-head { display:grid; grid-template-columns:minmax(180px,.36fr) minmax(0,1fr); gap:38px; margin-bottom:clamp(38px,5vw,72px); align-items:start; }
+.kicker { color:var(--rust); font-size:11px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; }
+.plate-title h2 { margin:0; max-width:1080px; font-size:clamp(34px,5.1vw,78px); line-height:.98; letter-spacing:-.045em; font-weight:720; text-wrap:balance; overflow-wrap:anywhere; word-break:break-word; }
+.plate-title .subtitle { max-width:980px; margin:20px 0 0; color:var(--secondary); font-size:clamp(16px,1.7vw,24px); }
+.lead { max-width:970px; margin:0 0 48px 36%; color:var(--secondary); font-size:clamp(16px,1.55vw,22px); }
+.full-figure { margin:0; }
+.full-figure img, .diagram img { width:100%; background:var(--paper-hi); border:1px solid var(--hair); }
+.scope-levels { display:grid; grid-template-columns:repeat(3,1fr); margin:46px 0 0; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); }
+.scope-level { padding:24px 30px 28px 0; }
+.scope-level + .scope-level { padding-left:30px; border-left:1px solid var(--rule); }
+.scope-level .index { color:var(--rust); font-size:11px; font-weight:800; letter-spacing:.12em; }
+.scope-level h3 { margin:20px 0 8px; font-size:clamp(18px,1.8vw,26px); line-height:1.12; }
+.scope-level strong { display:block; color:var(--teal); font-size:14px; }
+.scope-level p { margin:10px 0 0; color:var(--secondary); font-size:13px; }
+.content-index { margin:48px 0 0; padding-top:12px; border-top:1px solid var(--rule); color:var(--secondary); font-size:10px; font-weight:800; letter-spacing:.13em; text-transform:uppercase; }
+.duo { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(24px,3.5vw,56px); margin-top:60px; align-items:start; }
+.duo.uneven { grid-template-columns:minmax(320px,.78fr) minmax(0,1.22fr); }
+.diagram { margin:0; min-width:0; }
+.diagram h3 { margin:0 0 15px; font-size:clamp(22px,2.2vw,34px); line-height:1.08; }
+.diagram .tech-sub { min-height:3.1em; margin:0 0 20px; color:var(--secondary); font-size:14px; }
+.evidence-strip { margin-top:32px; padding:18px 22px 18px 28px; border-left:6px solid var(--amber); background:rgba(213,165,61,.1); color:var(--ink); font-size:13px; }
+.evidence-strip strong { color:#765600; letter-spacing:.04em; }
+.area-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(22px,3vw,46px); margin-top:62px; }
+.area { padding-top:18px; border-top:6px solid var(--teal); }
+.area:nth-child(2) { border-color:var(--rust); }
+.area:nth-child(3) { border-color:var(--blue); }
+.area .eyebrow { color:var(--secondary); font-size:10px; font-weight:800; letter-spacing:.13em; }
+.area h3 { margin:14px 0 10px; font-size:clamp(22px,2.2vw,34px); line-height:1.04; letter-spacing:-.025em; }
+.area h4 { margin:0 0 12px; color:var(--rust); font-size:12px; letter-spacing:.1em; }
+.area p { min-height:6em; margin:0 0 18px; color:var(--secondary); font-size:14px; }
+.area .image-wrap { position:relative; aspect-ratio:16/9; overflow:hidden; background:var(--quiet); }
+.area img { width:100%; height:100%; object-fit:cover; }
+.sections-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(20px,2.8vw,40px); }
+.section-card { padding-top:18px; border-top:5px solid var(--rust); }
+.section-card:nth-child(2) { border-color:var(--blue); }
+.section-card:nth-child(3) { border-color:var(--amber); }
+.section-card .code { font-size:13px; font-weight:850; letter-spacing:.12em; }
+.section-card h3 { margin:12px 0 8px; font-size:clamp(21px,2vw,31px); line-height:1.08; }
+.section-card p { min-height:5.8em; margin:0 0 18px; color:var(--secondary); font-size:13px; }
+.section-card img { width:100%; border:1px solid var(--hair); background:var(--paper-hi); }
+.scenario-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(24px,3vw,44px); counter-reset:scenario; }
+.scenario { display:grid; grid-template-columns:92px minmax(0,1fr); gap:20px; align-items:start; padding-top:18px; border-top:1px solid var(--rule); }
+.scenario .sid { padding-top:5px; color:var(--rust); font-size:13px; font-weight:850; letter-spacing:.08em; }
+.scenario h3 { margin:0 0 5px; font-size:clamp(19px,1.65vw,26px); line-height:1.12; }
+.scenario p { margin:0 0 14px; color:var(--secondary); font-size:12px; letter-spacing:.035em; text-transform:uppercase; }
+.scenario img { width:100%; border:1px solid var(--hair); background:var(--paper-hi); }
+.hero-diagram-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(28px,3vw,50px); margin-bottom:70px; }
+.hero-diagram { margin:0; padding-top:18px; border-top:5px solid var(--teal); }
+.hero-diagram:nth-child(2) { border-color:var(--rust); }
+.hero-diagram:nth-child(3) { border-color:var(--blue); }
+.hero-diagram:nth-child(4) { border-color:var(--amber); }
+.hero-diagram h3 { min-height:4.8em; margin:10px 0 16px; font-size:clamp(18px,1.7vw,25px); line-height:1.16; }
+.hero-diagram img { border:1px solid var(--hair); background:var(--paper-hi); }
+.operations-grid { display:grid; grid-template-columns:1.18fr .82fr; gap:clamp(26px,4vw,62px); align-items:start; }
+.operations-stack { display:grid; gap:42px; }
+.metrics-figure { margin-bottom:58px; }
+.metric-grid { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); }
+.metric { padding:30px 34px 32px 0; }
+.metric + .metric { padding-left:34px; border-left:1px solid var(--rule); }
+.metric span { display:block; color:var(--secondary); font-size:11px; font-weight:750; letter-spacing:.09em; text-transform:uppercase; }
+.metric strong { display:block; margin:12px 0 8px; color:var(--rust); font-size:clamp(30px,4vw,60px); line-height:1; letter-spacing:-.04em; }
+.metric code { color:var(--secondary); font-size:10px; overflow-wrap:anywhere; }
+.model-audit { margin-top:14px; display:flex; flex-wrap:wrap; gap:8px 18px; color:var(--secondary); font-size:10px; line-height:1.5; }
+.model-audit b { color:var(--ink); font-weight:750; }
+.boundary-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(22px,3vw,46px); margin-top:56px; }
+.boundary-block { padding-top:18px; border-top:5px solid var(--ink); }
+.boundary-block:nth-child(2) { border-color:var(--amber); }
+.boundary-block:nth-child(3) { border-color:var(--teal); }
+.boundary-block:nth-child(4) { border-color:var(--rust); }
+.boundary-block h3 { margin:10px 0 12px; font-size:clamp(21px,2vw,30px); }
+.boundary-block p { color:var(--secondary); font-size:14px; }
+.check-counts { display:flex; gap:10px; flex-wrap:wrap; margin-top:18px; }
+.check-count { border:1px solid var(--rule); padding:9px 12px; font-size:12px; font-weight:750; }
+.check-count.pass { border-left:5px solid var(--teal); }
+.check-count.unknown { border-left:5px solid var(--amber); }
+.unlock-list { margin:10px 0 0; padding:0; list-style:none; counter-reset:unlock; }
+.unlock-list li { counter-increment:unlock; position:relative; padding:12px 0 12px 42px; border-top:1px solid var(--hair); color:var(--secondary); font-size:13px; }
+.unlock-list li:before { content:"0" counter(unlock); position:absolute; left:0; top:12px; color:var(--rust); font-size:11px; font-weight:850; }
+.site-footer { max-width:var(--measure); margin:0 auto; padding:40px var(--pad) 60px; display:grid; grid-template-columns:1fr auto; gap:30px; color:var(--secondary); font-size:11px; }
+.site-footer strong { color:var(--ink); letter-spacing:.08em; }
+.print-note { text-transform:uppercase; letter-spacing:.08em; white-space:nowrap; }
+@media (max-width:1100px) {
+  .hero-grid, .operations-grid { grid-template-columns:1fr; }
+  .concept-hero { max-width:820px; }
+  .evidence-rail-inner { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .evidence-rail h2 { grid-column:1/-1; }
+  .area-grid, .sections-grid, .hero-diagram-grid { grid-template-columns:1fr; }
+  .area p, .section-card p, .hero-diagram h3 { min-height:0; }
+  .area { display:grid; grid-template-columns:minmax(0,.7fr) minmax(320px,1.3fr); column-gap:30px; }
+  .area .image-wrap { grid-column:2; grid-row:1/6; }
+}
+@media (max-width:780px) {
+  .plate-head { grid-template-columns:1fr; gap:14px; }
+  .lead { margin-left:0; }
+  .scope-levels, .duo, .duo.uneven, .scenario-grid, .metric-grid, .boundary-grid { grid-template-columns:1fr; }
+  .scope-level + .scope-level, .metric + .metric { border-left:0; border-top:1px solid var(--rule); padding-left:0; }
+  .evidence-rail-inner { grid-template-columns:1fr; gap:10px; }
+  .evidence-state { padding:8px 0 0; border-left:0; border-top:2px solid var(--teal); }
+  .evidence-state.pending { border-color:var(--amber); }
+  .area { display:block; }
+  .scenario { grid-template-columns:70px minmax(0,1fr); }
+  .site-footer { grid-template-columns:1fr; }
+  .print-note { white-space:normal; }
+}
+@media (max-width:520px) {
+  .hero { padding-top:46px; }
+  .project-lockup h1 { font-size:57px; }
+  .project-lockup { margin-bottom:30px; }
+  .claim { font-size:31px; }
+  .atlas-nav a { margin-right:14px; }
+  .plate { padding-top:70px; padding-bottom:74px; }
+  .scenario { grid-template-columns:1fr; gap:6px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  html { scroll-behavior:auto; }
+}
+@media print {
+  @page { size:A3 portrait; margin:14mm; }
+  html, body { background:#fff; }
+  body { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .atlas-nav, .skip-link, .lang-switch { display:none !important; }
+  .topbar { padding:0 0 8mm; }
+  .hero, .evidence-rail, .plate, .site-footer { max-width:none; padding-left:0; padding-right:0; }
+  .hero { padding-top:16mm; }
+  .plate { break-before:page; padding-top:14mm; padding-bottom:12mm; border-bottom:0; }
+  .plate-head { margin-bottom:9mm; }
+  .area, .section-card, .scenario, .hero-diagram, figure, .boundary-block { break-inside:avoid; }
+  .evidence-strip { background:#fff; }
+}
+</style>
+  <link rel="stylesheet" href="assets/jingzhang-cjk.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header>
+  <div class="topbar"><span>CENTENNIAL JING-ZHANG AI INNOVATION BELT / CONCEPT DESIGN ATLAS</span><a class="lang-switch" href="index.html" hreflang="zh-CN">中</a></div>
+  <div class="hero">
+    <div class="hero-grid">
+      <div>
+        <div class="project-lockup"><h1>JINGZHANG RE:FRONT</h1><span class="countername">京张·复面</span></div>
+        <p class="claim">AFTER THE PARK, THE CITY TURNS TO JING-ZHANG AGAIN</p>
+        <p class="hero-sub">One park, two fronts, three innovation frontiers. Real cross streets, lawful crossings and civic nodes determine when the active frontage may change sides; adjacent buildings, forecourts and logistics become the second stage of an asymmetric refronting process.</p>
+      </div>
+      <figure class="concept-hero"><div class="image-wrap"><img src="assets/hero-ai-origin-concept.webp" alt="Concept visualization of the AI Origin demonstrator: a reversible ground-floor civic foyer, staffed desk, accessible daily passage and separate logistics beneath mature trees" data-figure-key="concept-ai-origin" loading="eager" decoding="async"><span class="visual-label">CONCEPT VISUALIZATION / NOT EXISTING OR APPROVED</span></div><figcaption>An imagined everyday civic frontage for the AI Origin Re:Front Demonstrator. Buildings, entrances and structures are design intent and do not represent verified exact site positions.</figcaption></figure>
+    </div>
+  </div>
+  <div class="evidence-rail"><div class="evidence-rail-inner"><h2>EVIDENCE BOUNDARY</h2><div class="evidence-state"><b>CONCEPT DESIGN MAY PROCEED</b><span>M is the competition main scheme; spatial moves remain conditional proposals.</span></div><div class="evidence-state pending"><b>ENGINEERING REQUIRES PROFESSIONAL VERIFICATION</b><span>Doors, grid, rights, fire, parking, and logistics remain unresolved.</span></div><div class="evidence-state pending"><b>REGIONAL INTERFACES REQUIRE WRITTEN NEGOTIATION</b><span>All five are concept proposals, not existing partnerships or data-sharing arrangements.</span></div></div></div>
+</header>
+<nav class="atlas-nav" aria-label="Section index"><ol><li><a href="#overall">01&nbsp; Overall</a></li><li><a href="#regional">02&nbsp; Regional interfaces</a></li><li><a href="#three-fronts">03&nbsp; Three fronts</a></li><li><a href="#ai-origin">04&nbsp; AI Origin</a></li><li><a href="#sections">05&nbsp; Test sections</a></li><li><a href="#scenarios">06&nbsp; AI scenarios</a></li><li><a href="#people">07&nbsp; People + operations</a></li><li><a href="#metrics">08&nbsp; Metrics + limits</a></li></ol></nav>
+<main id="main">
+  <section class="plate" id="overall">
+    <header class="plate-head"><div class="kicker">01 / OVERALL STRUCTURE</div><div class="plate-title"><h2>ONE PARK, TWO FRONTS, THREE ZONES + TWO WINGS</h2><p class="subtitle">A spatial mother diagram for the civic spine, three refront types and two service-capability wings</p></div></header>
+    <p class="lead">Refronting is not a graphic game of alternating left and right. Each segment first identifies an active frontage and a fallback frontage. The active side changes only when a cross street, lawful crossing, civic node and continuous logistics line all hold together.</p>
+    <figure class="full-figure"><img src="assets/site-overview.en.webp" alt="Refront corridor scroll showing fifteen analytical segments, three frontier types and the AI Origin demonstrator" data-figure-key="site-overview" loading="eager" decoding="async"><figcaption>Site overview / three-level scope / fifteen analytical bands. OSM frozen at 2026-08-28T14:20:06Z; the bands are neither parcels nor statutory boundaries.</figcaption></figure>
+    <div class="scope-levels" aria-label="Three-level scope"><article class="scope-level"><span class="index">01</span><h3>COORDINATED RESEARCH AREA</h3><strong>approx. 43.6 km²</strong><p>Strategic research on the AI ecosystem, future city, Three Zones and Two Wings, and Jing-Zhang culture.</p></article><article class="scope-level"><span class="index">02</span><h3>OVERALL DESIGN AREA</h3><strong>approx. 11.4 km²</strong><p>The working layer for urban renewal, park activation, transport, infrastructure and blue-green public space.</p></article><article class="scope-level"><span class="index">03</span><h3>KEY-AREA DESIGN</h3><strong>3 provisional containers</strong><p>Detailed concept work for Zhongzhiyuan, AI Origin and Dazhongsi; all geometry is rebound when official polygons arrive.</p></article></div>
+    <p class="content-index">Land-use zoning / transport and walking-cycling / blue-green public space / buildings and renewal projects</p>
+    <div class="duo"><figure class="diagram"><h3>THREE ZONES + TWO WINGS × EIGHT ENABLERS</h3><p class="tech-sub">Land, space, industry, capital, talent, compute, data and scenario mechanisms share one spatial-accountability map</p><img src="assets/land-use-structure.en.webp" alt="Mechanism diagram for active frontage, fallback frontage, ground-floor frontier band and logistics repositioning" data-figure-key="land-use-structure" loading="lazy" decoding="async"><figcaption>Links represent service relationships, not roads, utilities or ownership; the fifteen segments are analytical bands, not statutory boundaries. The former approximate 18 km claim remains withdrawn pending verified two-sided polylines.</figcaption></figure><figure class="diagram"><h3>THE PARK IS CIVIC GROUND, NOT A DISPLAY STRIP</h3><p class="tech-sub">Ordinary movement, accessibility, blue-green baselines and logistics continuity come first</p><img src="assets/mobility-bluegreen.en.webp" alt="Transport, walking and cycling, blue-green public space, logistics line and conditional S2 landing diagram" data-figure-key="mobility-bluegreen" loading="lazy" decoding="async"><figcaption>S2&#x27;s lawful eastward public landing, public rights, continuous accessible route and fire clearance remain unverified. Until every condition passes, the active frontage does not change sides.</figcaption></figure></div>
+    <aside class="evidence-strip"><strong>EVIDENCE BOUNDARY</strong> · Links represent service relationships, not roads, utilities or ownership; the fifteen segments are analytical bands, not statutory boundaries. The former approximate 18 km claim remains withdrawn pending verified two-sided polylines.</aside>
+  </section>
+
+  <section class="plate" id="regional">
+    <header class="plate-head"><div class="kicker">02 / REGIONAL PROTOCOL MATRIX</div><div class="plate-title"><h2>OFF-CORRIDOR COORDINATION STARTS WITH BRIEFS AND WRITTEN NEGOTIATION</h2><p class="subtitle">Beiwei Community, Future Science City, Huairou Science City, the Economic Development Zone and Beijing–Tianjin–Hebei become five non-physical interfaces</p></div></header>
+    <p class="lead">Each interface states a proposed topic, non-physical mechanism, suggested accountable roles, a Jing-Zhang carrier, a return to test and its evidence status. Every counterpart remains unconfirmed and requires written negotiation.</p>
+    <figure class="full-figure"><img src="assets/regional-synergy.en.webp" alt="Matrix of proposed topics, non-physical mechanisms, accountable roles, carriers, returns and evidence status for five off-corridor counterparts" data-figure-key="regional-synergy" loading="lazy" decoding="async"><figcaption>The Taskbook supports the five counterpart names only. All topics, mechanisms, roles, carriers and returns are participant-authored concept proposals—not evidence of partnership, consent, data sharing or implementation commitment.</figcaption></figure>
+    <aside class="evidence-strip"><strong>NEGOTIATION BOUNDARY</strong> · The Taskbook supports the five counterpart names only. All topics, mechanisms, roles, carriers and returns are participant-authored concept proposals—not evidence of partnership, consent, data sharing or implementation commitment.</aside>
+  </section>
+
+  <section class="plate" id="three-fronts">
+    <header class="plate-head"><div class="kicker">03 / THREE FRONTS</div><div class="plate-title"><h2>THREE CONFLICTS, THREE RE:FRONT TYPES</h2><p class="subtitle">Each area is organised as conflict—spatial action—human decision—stop condition; no single form is copied</p></div></header>
+    <figure class="full-figure"><img src="assets/key-areas.en.webp" alt="Same-scale OSM-context comparison of the three key areas and their refront design types" data-figure-key="key-areas" loading="lazy" decoding="async"><figcaption>Same-scale comparison of the three key areas. Real OSM naming anchors and the repository provisional polygons are spatially displaced; no geometry is silently translated.</figcaption></figure>
+    <div class="area-grid"><article class="area"><span class="eyebrow">01 / ZHONGZHIYUAN</span><h3>MAKE RESEARCH VISIBLE—WITHOUT CROSSING ITS BOUNDARIES</h3><h4>RESEARCH REFRONT</h4><p>Controlled observation, a safe research boundary and a civic ground-floor foyer. Public visibility does not mean opening the laboratory.</p><div class="image-wrap"><img src="assets/hero-research-concept.webp" alt="Concept visualization for MAKE RESEARCH VISIBLE—WITHOUT CROSSING ITS BOUNDARIES; design intent rather than existing-condition evidence" data-figure-key="concept-research" loading="lazy" decoding="async"><span class="visual-label">CONCEPT VISUALIZATION / NOT EXISTING OR APPROVED</span></div></article><article class="area"><span class="eyebrow">02 / AI ORIGIN</span><h3>TURN THE GROUND FLOOR INTO AN INNOVATION FOYER</h3><h4>CAMPUS–CITY REFRONT</h4><p>Ground floor, forecourt, park and logistics coexist conditionally; care, services and ordinary passage remain first.</p><div class="image-wrap"><img src="assets/hero-ai-origin-concept.webp" alt="Concept visualization for TURN THE GROUND FLOOR INTO AN INNOVATION FOYER; design intent rather than existing-condition evidence" data-figure-key="concept-ai-origin" loading="lazy" decoding="async"><span class="visual-label">CONCEPT VISUALIZATION / NOT EXISTING OR APPROVED</span></div></article><article class="area"><span class="eyebrow">03 / DAZHONGSI</span><h3>BRING ARRIVAL AND SERVICE TOGETHER AT GROUND LEVEL</h3><h4>STATION–CITY REFRONT</h4><p>Station threshold, interchange, community services and ordinary park passage remain legible with every AI system off.</p><div class="image-wrap"><img src="assets/hero-dazhongsi-concept.webp" alt="Concept visualization for BRING ARRIVAL AND SERVICE TOGETHER AT GROUND LEVEL; design intent rather than existing-condition evidence" data-figure-key="concept-dazhongsi" loading="lazy" decoding="async"><span class="visual-label">CONCEPT VISUALIZATION / NOT EXISTING OR APPROVED</span></div></article></div>
+    <aside class="evidence-strip"><strong>PROVISIONAL GEOMETRY</strong> · Same-scale comparison of the three key areas. Real OSM naming anchors and the repository provisional polygons are spatially displaced; no geometry is silently translated.</aside>
+  </section>
+
+  <section class="plate" id="ai-origin">
+    <header class="plate-head"><div class="kicker">04 / AI ORIGIN DEMONSTRATOR</div><div class="plate-title"><h2>TWO ANCHORS, ONE TEST: AI ORIGIN RE:FRONT DEMONSTRATOR</h2><p class="subtitle">IF-01, IF-02 and S2 test whether ground floor, forecourt, park and logistics can coexist</p></div></header>
+    <p class="lead">M, the moderate refront, is the competition&#x27;s main scheme: a parametric, conditional design on a real OSM context. Unverified doors, structural grid, parking, property, fire and engineering limits remain dashed, P?, variable or alternative states.</p>
+    <div class="duo uneven"><figure class="diagram"><h3>AI ORIGIN RE:FRONT MASTERPLAN</h3><p class="tech-sub">TWO ANCHORS, ONE TEST / APPROX. 1:2,000 CONCEPT RELATION</p><img src="assets/ai-origin-masterplan.en.webp" alt="AI Origin concept masterplan locating IF-01, IF-02, S2, the park spine, active frontage and a logistics principle line" data-figure-key="ai-origin-masterplan" loading="lazy" decoding="async"><figcaption>Two anchors and one test in an approximately 1:2,000 concept relationship. The AI Origin study frame does not intersect PROV-KEY-002; provisional geometry is not moved onto the real map.</figcaption></figure><figure class="diagram"><h3>GROUND-FLOOR FRONTIER BAND—LOGISTICS REPOSITIONING</h3><p class="tech-sub">DO NOT CLEAR THE EVERYDAY; DEEPEN ONLY WITHIN VERIFIED BOUNDARIES</p><img src="assets/ai-origin-ground-floor-strategy.en.webp" alt="AI Origin IF-01 and IF-02 ground-floor frontier band, staffed service, hardstand P? and logistics-repositioning strategy" data-figure-key="ai-origin-ground-floor-strategy" loading="lazy" decoding="async"><figcaption>Ground-floor frontier band and logistics-repositioning strategy, approximately 1:500 as a type relationship. C? records an OSM name/footprint conflict, not a verified building identity.</figcaption></figure></div>
+    <aside class="evidence-strip"><strong>IMPLEMENTATION BOUNDARY</strong> · Implementation boundary: M_CONCEPT_DESIGN=GO; M_ENGINEERING_IMPLEMENTATION=LOCKED. Field checks and professional review are parallel correction tasks, not engineering proof replaced by a drawing.</aside>
+  </section>
+
+  <section class="plate" id="sections">
+    <header class="plate-head"><div class="kicker">05 / THREE TEST SECTIONS</div><div class="plate-title"><h2>FROM EXISTING TO L, THEN M—DEEPEN ONLY WHEN CONDITIONS HOLD</h2><p class="subtitle">Three type sections test the forecourt, ordinary passage, accessibility, fire, care and logistics endpoints together</p></div></header>
+    <div class="sections-grid"><article class="section-card"><span class="code">IF-01</span><h3>FRONTS MEET; BACKLINES CONTINUE</h3><p>Innovation activity and the clinic share a frontier band; drop-off, fire access and logistics remain continuous.</p><figure class=""><img src="assets/section-if-01.en.webp" alt="IF-01 FRONTS MEET; BACKLINES CONTINUE existing–L–M triptych type section" data-figure-key="section-if-01" loading="lazy" decoding="async"><figcaption>Innovation activity and the clinic share a frontier band; drop-off, fire access and logistics remain continuous.</figcaption></figure></article><article class="section-card"><span class="code">IF-02</span><h3>PEOPLE REMAIN PRESENT</h3><p>A civic service and human-governance anchor, never an AI showroom.</p><figure class=""><img src="assets/section-if-02.en.webp" alt="IF-02 PEOPLE REMAIN PRESENT existing–L–M triptych type section" data-figure-key="section-if-02" loading="lazy" decoding="async"><figcaption>A civic service and human-governance anchor, never an AI showroom.</figcaption></figure></article><article class="section-card"><span class="code">S2</span><h3>THE HANDOVER FOLLOWS A PROVEN CROSSING</h3><p>Until a lawful east landing is verified, this remains a connection test and never a claimed new through-route.</p><figure class=""><img src="assets/section-s2.en.webp" alt="S2 THE HANDOVER FOLLOWS A PROVEN CROSSING existing–L–M triptych type section" data-figure-key="section-s2" loading="lazy" decoding="async"><figcaption>Until a lawful east landing is verified, this remains a connection test and never a claimed new through-route.</figcaption></figure></article></div>
+    <aside class="evidence-strip"><strong>S2 / NO-LINK UNTIL PROVEN</strong> · S2&#x27;s lawful eastward public landing, public rights, continuous accessible route and fire clearance remain unverified. Until every condition passes, the active frontage does not change sides.</aside>
+  </section>
+
+  <section class="plate" id="scenarios">
+    <header class="plate-head"><div class="kicker">06 / TEN AI-ENABLED SCENARIOS</div><div class="plate-title"><h2>AI IS A CLOSABLE AUGMENTATION LAYER; PEOPLE ARE THE NON-REMOVABLE RESPONSIBILITY LAYER</h2><p class="subtitle">Every card follows person → place → AI action → human decision → shutdown/exit. These are concept-design tests, not deployed services.</p></div></header>
+    <div class="scenario-grid"><article class="scenario"><span class="sid">SC-01</span><div><h3>VISIBLE EXPERIMENT, BOUNDED RESEARCH</h3><p>RESEARCH COLLABORATION DESK</p><img src="assets/scenario-sc-01.en.webp" alt="SC-01 scenario card: VISIBLE EXPERIMENT, BOUNDED RESEARCH" data-figure-key="scenario-sc-01" loading="lazy" decoding="async"></div></article><article class="scenario"><span class="sid">SC-02</span><div><h3>CARE, EVENTS AND MAINTENANCE DO NOT COMPETE FOR ONE DOOR</h3><p>MULTIPLE TIMETABLES FOR ONE DOOR</p><img src="assets/scenario-sc-02.en.webp" alt="SC-02 scenario card: CARE, EVENTS AND MAINTENANCE DO NOT COMPETE FOR ONE DOOR" data-figure-key="scenario-sc-02" loading="lazy" decoding="async"></div></article><article class="scenario"><span class="sid">SC-03</span><div><h3>REACH THE RIGHT PLACE BEFORE ADDING INTELLIGENCE</h3><p>CARE-FIRST SERVICE GUIDANCE</p><img src="assets/scenario-sc-03.en.webp" alt="SC-03 scenario card: REACH THE RIGHT PLACE BEFORE ADDING INTELLIGENCE" data-figure-key="scenario-sc-03" loading="lazy" decoding="async"></div></article><article class="scenario"><span class="sid">SC-04</span><div><h3>AI HELPS EXPLAIN; PEOPLE DECIDE</h3><p>STAFFED PUBLIC SERVICE DESK</p><img src="assets/scenario-sc-04.en.webp" alt="SC-04 scenario card: AI HELPS EXPLAIN; PEOPLE DECIDE" data-figure-key="scenario-sc-04" loading="lazy" decoding="async"></div></article><article class="scenario"><span class="sid">SC-05</span><div><h3>DELIVERY DOES NOT TAKE THE PATH; FIRE ACCESS DOES NOT WAIT</h3><p>SAME ROUTE, DIFFERENT SPEEDS</p><img src="assets/scenario-sc-05.en.webp" alt="SC-05 scenario card: DELIVERY DOES NOT TAKE THE PATH; FIRE ACCESS DOES NOT WAIT" data-figure-key="scenario-sc-05" loading="lazy" decoding="async"></div></article><article class="scenario"><span class="sid">SC-06</span><div><h3>A CONNECTION MUST BE PROVEN</h3><p>HAND OVER ONLY AT A LEGAL LANDING</p><img src="assets/scenario-sc-06.en.webp" alt="SC-06 scenario card: A CONNECTION MUST BE PROVEN" data-figure-key="scenario-sc-06" loading="lazy" decoding="async"></div></article><article class="scenario"><span class="sid">SC-07</span><div><h3>DO NOT REPLACE A TREE WITH A SCREEN</h3><p>TURN ENVIRONMENTAL DATA INTO PUBLIC EVIDENCE</p><img src="assets/scenario-sc-07.en.webp" alt="SC-07 scenario card: DO NOT REPLACE A TREE WITH A SCREEN" data-figure-key="scenario-sc-07" loading="lazy" decoding="async"></div></article><article class="scenario"><span class="sid">SC-08</span><div><h3>FIND THE PARK WITHOUT OPENING A PHONE</h3><p>INCLUSIVE ARRIVAL AT A GLANCE</p><img src="assets/scenario-sc-08.en.webp" alt="SC-08 scenario card: FIND THE PARK WITHOUT OPENING A PHONE" data-figure-key="scenario-sc-08" loading="lazy" decoding="async"></div></article><article class="scenario"><span class="sid">SC-09</span><div><h3>THE PARK SPEAKS WITHOUT PROFILING VISITORS</h3><p>A JING-ZHANG STORY THAT DOES NOT TRACK YOU</p><img src="assets/scenario-sc-09.en.webp" alt="SC-09 scenario card: THE PARK SPEAKS WITHOUT PROFILING VISITORS" data-figure-key="scenario-sc-09" loading="lazy" decoding="async"></div></article><article class="scenario"><span class="sid">SC-10</span><div><h3>EVENTS CAN CLOSE; THE SPACE STAYS EVERYDAY</h3><p>CLOSABLE EVENTS, RESTORED DAILY SPACE</p><img src="assets/scenario-sc-10.en.webp" alt="SC-10 scenario card: EVENTS CAN CLOSE; THE SPACE STAYS EVERYDAY" data-figure-key="scenario-sc-10" loading="lazy" decoding="async"></div></article></div>
+    <aside class="evidence-strip"><strong>GOVERNANCE FLOOR</strong> · Governance floor: understandable, rejectable, appealable, human-overridable, closable and removable. Essential services always retain a non-AI equivalent route.</aside>
+  </section>
+
+  <section class="plate" id="people">
+    <header class="plate-head"><div class="kicker">07 / PEOPLE, TIME AND OPERATIONS</div><div class="plate-title"><h2>LET THE PROPOSAL WORK THROUGH A DAY—AND CLOSE AT ANY TIME</h2><p class="subtitle">Four hero sequences, seven persona-based acceptance questions and V / L / M / D phasing governed by triggers rather than promises</p></div></header>
+    <div class="hero-diagram-grid"><figure class="hero-diagram"><span class="kicker">HERO-01</span><h3>RESEARCH FORECOURT: VISIBLE COLLABORATION, BOUNDED RESEARCH</h3><img src="assets/hero-hero-01.en.webp" alt="RESEARCH FORECOURT: VISIBLE COLLABORATION, BOUNDED RESEARCH people–time–space sequence" data-figure-key="hero-hero-01" loading="lazy" decoding="async"></figure><figure class="hero-diagram"><span class="kicker">HERO-02</span><h3>ONE DAY, TWO ANCHORS: CARE, SERVICE AND INNOVATION SHARE ONE EDGE</h3><img src="assets/hero-hero-02.en.webp" alt="ONE DAY, TWO ANCHORS: CARE, SERVICE AND INNOVATION SHARE ONE EDGE people–time–space sequence" data-figure-key="hero-hero-02" loading="lazy" decoding="async"></figure><figure class="hero-diagram"><span class="kicker">HERO-03</span><h3>ARRIVAL BECOMES CITY: STATION, UNDERCROFT AND PARK READ AS ONE</h3><img src="assets/hero-hero-03.en.webp" alt="ARRIVAL BECOMES CITY: STATION, UNDERCROFT AND PARK READ AS ONE people–time–space sequence" data-figure-key="hero-hero-03" loading="lazy" decoding="async"></figure><figure class="hero-diagram"><span class="kicker">HERO-04</span><h3>TWO-WING OPEN TEST DAY: FROM A PUBLIC QUESTION TO A SAFE EXIT</h3><img src="assets/hero-hero-04.en.webp" alt="TWO-WING OPEN TEST DAY: FROM A PUBLIC QUESTION TO A SAFE EXIT people–time–space sequence" data-figure-key="hero-hero-04" loading="lazy" decoding="async"></figure></div>
+    <div class="operations-grid"><div><figure class="diagram"><h3>PERSONAS ARE SPATIAL ACCEPTANCE QUESTIONS, NOT CONSUMER PROFILES</h3><img src="assets/personas.en.webp" alt="Seven personas, their needs, unacceptable outcomes and concept-design acceptance questions" data-figure-key="personas" loading="lazy" decoding="async"><figcaption>Personas are concept-design acceptance tools, not surveyed respondents or population statistics.</figcaption></figure></div><div class="operations-stack"><figure class="diagram"><h3>PHASING IS TRIGGERED BY EVIDENCE, NOT AUTOMATICALLY UPGRADED BY THE CONCEPT</h3><img src="assets/phasing-by-triggers.en.webp" alt="Trigger-based phasing for V verification, L operating pilot, M moderate refront and D long-term possibility" data-figure-key="phasing-by-triggers" loading="lazy" decoding="async"><figcaption>L is a reversible 0–1 year operating pilot; M is the competition main scheme but engineering remains locked; D is a non-committed long-term possibility.</figcaption></figure><figure class="diagram"><h3>OPERATIONS ARE PART OF THE SPACE</h3><img src="assets/operations-governance.en.webp" alt="Refront operations table and six governance interfaces: understandable, rejectable, appealable, human-overridable, closable and removable" data-figure-key="operations-governance" loading="lazy" decoding="async"><figcaption>A proposed refront operations table and six mandatory governance interfaces; this is a collaboration model, not an established institution.</figcaption></figure></div></div>
+  </section>
+
+  <section class="plate" id="metrics">
+    <header class="plate-head"><div class="kicker">08 / METRICS, EVIDENCE AND LIMITS</div><div class="plate-title"><h2>FROM UNKNOWN BASELINES TO STOPPABLE OUTCOMES</h2><p class="subtitle">Research counts are not outcomes; public return follows baseline/TBD—design floor—verification—stop condition</p></div></header>
+    <figure class="full-figure metrics-figure"><img src="assets/metrics-evidence.en.webp" alt="Non-regression baselines and engineering unlock conditions for net public space, ordinary passage, ecology and logistics endpoints" data-figure-key="metrics-evidence" loading="lazy" decoding="async"><figcaption>No field baseline exists yet, so the first view shows no invented before/after values. 71, 29/25/17, 8 and 1 remain evidence-coverage audit notes only; areas, ratios and performance are recalculated when official polygons and measured baselines arrive.</figcaption></figure>
+    <p class="content-index">Core metrics as design outcome floors / verified by field and operating ledgers</p>
+    <div class="metric-grid" aria-label="Core metrics"><div class="metric"><span>NET PUBLIC SPACE</span><strong>≥ BASELINE / TBD</strong><code>FIELD BASELINE TBD / VERIFY BY PROFESSIONAL LEDGER</code></div><div class="metric"><span>ORDINARY MOVEMENT</span><strong>WIDTH · HOURS · CAPACITY ≥ BASE</strong><code>FIELD BASELINE TBD / VERIFY BY PROFESSIONAL LEDGER</code></div><div class="metric"><span>EQUIVALENT HUMAN SERVICE</span><strong>100% AVAILABLE</strong><code>FIELD BASELINE TBD / VERIFY BY PROFESSIONAL LEDGER</code></div></div>
+    <aside class="evidence-strip"><strong>OUTCOME BOUNDARY</strong> · No field baseline exists yet, so the first view shows no invented before/after values. 71, 29/25/17, 8 and 1 remain evidence-coverage audit notes only; areas, ratios and performance are recalculated when official polygons and measured baselines arrive.</aside>
+    <div class="model-audit" aria-label="Provisional geometry audit values"><span>PROVISIONAL SCOPE MODEL <b data-metric="site_area_sqm" data-value="11412825.386">11,412,825 m²</b></span><span>PROVISIONAL GREEN RATIO <b data-metric="green_ratio" data-value="0.123423">0.1234</b></span><span>PROVISIONAL PUBLIC-SPACE RATIO <b data-metric="public_space_ratio" data-value="0.073281">0.0733</b></span></div>
+    <div class="boundary-grid">
+      <article class="boundary-block"><span class="kicker">MATRIX / 23 requirements / 8 standards / 15 depth items</span><h3>TASK COVERAGE</h3><p>The structured package indexes 23 task requirements, 8 professional/governance references and 15 concept-design depth items. &#x27;Complete&#x27; means a design response exists within the current concept boundary; it does not mean engineering implementation is verified.</p></article>
+      <article class="boundary-block"><span class="kicker">self_check.json</span><h3>SELF-CHECK STATUS</h3><p>This page reads self_check.json and reports the current PASS / UNKNOWN counts. Formal status is determined only after all bilingual figures, A0/A3 PDFs, HTML and manifest hashes are complete and the four local gates are rerun.</p><div class="check-counts"><span class="check-count pass">PASS 4</span><span class="check-count unknown">UNKNOWN 0</span></div></article>
+      <article class="boundary-block"><span class="kicker">sources.json</span><h3>SOURCES</h3><p>The authoritative index is sources.json. The visual/assets/evidence-* JSON records form the self-contained closure: announcement and taskbook register, public-source register, frozen 2026-08-28 OSM, the 71-building evidence table, and prompts, hashes and limits for synthetic scenes.</p></article>
+      <article class="boundary-block"><span class="kicker">assumptions.json</span><h3>ASSUMPTIONS</h3><p>Official overall and three key-area polygons, exact redlines, doors and structural grid, property, structure, fire, parking, loading, waste, equipment maintenance, utilities and ecological baselines remain unverified. Every affected layer and metric is corrected in parallel when evidence arrives.</p></article>
+    </div>
+    <article class="boundary-block" style="margin-top:46px"><span class="kicker">GO / NO-GO</span><h3>REMAINING UNLOCK CONDITIONS</h3><ol class="unlock-list"><li>Rebind every geometry, area, ratio and viewport when organizer-issued overall and key-area polygons arrive.</li><li>Keep engineering LOCKED until doors, grid, property, structure, fire, accessibility, parking and logistics are professionally verified.</li><li>Verify S2&#x27;s lawful east public landing, continuous accessible route, and fire/rights compatibility; otherwise retain NO-LINK.</li><li>Establish measured baselines for net park public space, ordinary passage capacity and existing ecological performance.</li></ol></article>
+  </section>
+</main>
+<footer class="site-footer"><div><strong>JINGZHANG RE:FRONT</strong><br>Authoritative data: GeoJSON / metrics.json / sources.json / standard_matrix.json / design_depth_matrix.json / compliance_matrix.json. This page is an offline explanatory layer, not a data source.</div><div class="print-note">OFFLINE / PRINT READY / 2026-08-29</div></footer>
+</body>
+</html>

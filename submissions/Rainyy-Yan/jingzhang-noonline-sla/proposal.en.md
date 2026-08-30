@@ -1,7 +1,7 @@
 ---
 translation_of: "proposal.md"
 language: "en"
-iteration: "v5.1-local-spatial-spine"
+iteration: "v5.2-local-route-kit"
 ---
 
 # Jing-Zhang Noonline SLA
@@ -10,7 +10,7 @@ iteration: "v5.1-local-spatial-spine"
 
 ## Quick Review Entry
 
-This revision only reorders the existing proposal; it adds no factual claim. In **30 seconds**, follow one noon user through enter, walk, pause, decide and leave, without opening a phone, logging in or waiting for staff. In **3 minutes**, see how the three areas respectively support public passage beside research, device-free information and staying, and self-guided arrival judgment. In **15 minutes**, check how WP-01–06 and Phase 0–3 handle HOLD, reroute, downgrade or removal in the background whenever evidence is absent, stale or unauditable. Every depicted relation, component and condition remains conceptual or verification-dependent, not an existing condition, permit or delivery commitment.
+This revision gathers the existing self-guided rules into a legible **Noonline Route Kit**; it adds no factual claim. In **30 seconds**, follow one noon user choosing a brief walk, a pause or accessibility first from a fixed start panel, then entering, walking, pausing, deciding and leaving without opening a phone, logging in or waiting for staff. In **3 minutes**, see how the three areas respectively support public passage beside research, device-free information and staying, and self-guided arrival judgment. In **15 minutes**, check how WP-01–06 and Phase 0–3 handle HOLD, reroute, downgrade or removal in the background whenever evidence is absent, stale or unauditable. Every depicted relation, component and condition remains conceptual or verification-dependent, not an existing condition, permit or delivery commitment.
 
 ![Overall urban structure showing the three zones, two wings, Level 1/2 and the evidence boundary of the Jing-Zhang public connection](assets/figures/v4-figure-01-overall-urban-structure.en.png)
 
@@ -41,6 +41,33 @@ To make this relationship usable without a phone, every future verified start, d
 5. **RETURN**: the route can always rejoin an intelligible ordinary destination; when passage, maintenance, accessibility or safety fails, physical information first shows a stop, downgrade or alternative relation.
 
 The north-south spine therefore answers how the three prototypes are read as one sequence; the east-west cross-stitches answer how the two wings enter and return to daily life; the five actions answer how a person walks independently without scanning. They may be placed at a specific location only after point-by-point Phase 0 verification. When any condition is absent, the relation remains HOLD and the conceptual spine is not promoted into a site fact.
+
+## 0.2 Noonline Route Kit: A First-Use Physical Kit
+
+The **Noonline Route Kit is neither an app nor an inventory of installed signs.** It is a repeatable rule for future verified locations, turning self-guided use from an abstract principle into a choice visible on first arrival. A person begins with the start panel; they do not need to know the project name, download software or understand the background work packages first. Every component combines words, numbering and symbols, so colour is never the only information.
+
+![V5.2 Noonline Route Kit: future verified-start mode choice, six physical marker types, five self-guided actions and route-change states; not an existing facility or installation drawing](assets/figures/v5_2-noonline-route-kit.svg)
+
+The Route Kit has six conceptual components. Each is a removable, updateable public-information layer:
+
+1. **KIT-01 Start Panel**: at a future verified public start, it presents current location, available modes, their symbols, the return rule and current state together. A QR code, account or live navigation may only be optional explanation after the panel, never its replacement.
+2. **KIT-02 Mode Strip**: without entering personal data, a person selects **MOVE / brief walk**, **PAUSE / brief stay** or **ACCESS / accessibility first** from fixed information. These are not ready-made route promises: PAUSE points only to a future verified stay opportunity, and ACCESS appears only once a lawful continuous alternative is verified.
+3. **KIT-03 Walk Marker**: a mode's repeated number, symbol and word follow the public clearway so a person can confirm the selected relation without a phone.
+4. **KIT-04 Pause Panel**: it places continue, bypass and return on one readable face. It may point to a future verified staying choice, but never promotes seating, shade, water or indoor space into an existing fact.
+5. **KIT-05 Turn and Return**: at every future verified decision point, it shows continuation, reroute and return side by side, keeping a path-change decision out of a phone interface.
+6. **KIT-06 Status Card**: it uses only four legible states: **CONTINUE**, **REROUTE**, **RETURN** and **PAUSE**. It must tell a person what to do next, rather than display only a fault notice.
+
+The kit gives a first-time user a minimum script: choose a mode at the start, remember its symbol and number, check only the next physical marker while walking, read the pause information when needed, then continue, reroute, return or pause when the state card changes. AI may explain a reason, activity notice or maintenance issue after the physical marker. It does not collect identity, face or personal trajectory data, and it is never a condition for completing the route.
+
+The smallest future Route Kit exercise is not the entire corridor. It is one authorised **start - two decisions - one pause-information point - return** relationship. Phase 0 must first verify publicness, lawful passage, an accessible alternative, physical-information legibility, a maintenance interface and stop authority. When any item is absent, the relevant card does not start or is immediately removed. The kit thereby makes screen independence both a use experience and a checkable delivery requirement.
+
+### 60-Second First-Use Exercise and Release Cards
+
+Before any site activation, a future authorised verifier may use a **non-site-specific, no-personal-data** first-use exercise to check the information language itself. A first-time reader is asked to complete five tasks in sequence: choose a mode, identify the next walk marker, choose bypass or return at a pause panel, choose reroute when the state changes, and finish with the shared return rule. Each task records only **COMPLETE / INCOMPLETE / UNCERTAIN**. No name, face, trajectory, device or behavioural profile is collected, and this package pre-fills no test result.
+
+![V5.2 Route Kit 60-second first-use exercise: five physical-information reading tasks and the rule that an unclear component remains HOLD; not a site test result, existing route or facility claim](assets/figures/v5_2-route-kit-first-use-test.svg)
+
+Being legible does not mean being operational. Each component release card must still record its KIT ID, current `HOLD / RELEASED / REMOVED` state, required authorisation and field evidence, future maintenance and stop interface, user-visible next action, and removal or downgrade response when a condition fails. No KIT-01-06 component may activate when it is unreadable, lacks applicable release evidence, cannot be maintained, or has no human stop authority. Passing one first-use exercise does not verify lawful passage, continuous accessibility, site safety, a service, permit, implementation, or a Verified SLA upgrade [data:visual/assets/v5_2-noonline-route-kit.json#first_use_comprehension_test] [data:visual/assets/v5_2-noonline-route-kit.json#component_release_cards].
 
 ## 1. The Problem
 

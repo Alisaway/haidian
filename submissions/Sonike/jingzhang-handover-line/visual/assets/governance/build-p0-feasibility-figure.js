@@ -18,12 +18,10 @@ const OUT = path.join(PKG, "assets/figures");
 const envelope = JSON.parse(fs.readFileSync(path.join(HERE, "p0-pre-feasibility-envelope.json"), "utf8"));
 const delivery = JSON.parse(fs.readFileSync(path.join(HERE, "p0-delivery-contract.json"), "utf8"));
 const metrics = JSON.parse(fs.readFileSync(path.join(PKG, "metrics.json"), "utf8")).metrics;
-
-for (const [file, family] of [
-  ["/System/Library/Fonts/Hiragino Sans GB.ttc", "Hiragino Sans GB"],
-  ["/System/Library/Fonts/Supplemental/Arial.ttf", "Arial"],
-]) {
-  try { GlobalFonts.registerFromPath(file, family); } catch (_) {}
+const fontCss = fs.readFileSync(path.join(HERE, "noto-cjk-subset.css"), "utf8");
+const fontMatch = fontCss.match(/base64,([^\)]+)/);
+if (!fontMatch || !GlobalFonts.register(Buffer.from(fontMatch[1], "base64"), "JZHandoverCJK")) {
+  throw new Error("unable to register the package-owned OFL Noto CJK WOFF2 subset");
 }
 
 const C = {
@@ -72,7 +70,7 @@ function checkData() {
   if (envelope.alternative_comparison.length !== 4) fail("alternative count must remain four");
 }
 
-function font(ctx, size, weight = 400, family = "Hiragino Sans GB") {
+function font(ctx, size, weight = 400, family = "JZHandoverCJK") {
   ctx.font = `${weight} ${size}px "${family}"`;
 }
 

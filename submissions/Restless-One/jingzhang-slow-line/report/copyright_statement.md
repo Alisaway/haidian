@@ -7,7 +7,7 @@
 - 非定位概念体验图：`assets/media/slow-line-experience.jpg` 由 OpenAI 内置图像生成能力从零生成。首稿因穿越方向含混和自行车结构错误被视觉复核否决；发布稿重新生成并硬性限定横向车道、纵向正交穿越、机器人停在停止线外，以及一辆无遮挡、机械结构完整的城市自行车。未输入同行图件、现场照片、商标、私有图像或可识别真人。该图是可迁移操作原型，不承担地理或现状说明。
 - 代表性走廊概念图：`assets/media/slow-line-site-grounded.jpg` 由 OpenAI 内置图像生成能力从纯文本生成，没有输入或参考现场照片、网站截图、同行图件、商标、私有图像、可识别真人或精确相机视角。画面只表达平行的遗产铁轨与无障碍慢行道、正交服务支路、停止线后机器人、结构完整自行车及可撤回服务设施；不承担现状、精确选址、工程或批准证明。完整记录见 `sources.json` 的 `TOOL-OPENAI-IMAGEGEN-20260828`。
 - 场地校准图：`assets/figures/site-grounding.png` 及英文版使用 © OpenStreetMap contributors、ODbL 的 2026-08-29 快照绘制方位派生线，并在图内署名。原始快照不随包分发；橙色研究框不是红线，图件不是测绘成果。
-- 软件：Pillow 12.3.0（HPND）、ReportLab、Shapely 2.1.2（BSD-3-Clause）、pyproj 3.7.2（MIT）仅用于本地生成，不随包分发。
+- 软件：Pillow 12.3.0（HPND）、ReportLab、Shapely 2.1.2（BSD-3-Clause）、pyproj 3.7.2（MIT）以及 v1.3 构建使用的 `@napi-rs/canvas`、`pdf-lib` 仅用于本地生成，不随包分发。v1.3 的尺寸图、任务链、工程量、成本结构与验收矩阵均由包内 `visual/assets/v13-implementation.json` 经确定性脚本生成；没有新增外部图像或第三方设计素材。
 - 字体：图件与 PDF 使用本地字体将原创文字栅格化；离线 HTML 将 Noto Sans SC 2.004 按实际字符子集化后以内嵌 TrueType data URI 分发，许可为 SIL Open Font License 1.1。未修改字体名称，未单独分发字体文件；来源、原始文件哈希与子集方法见 `sources.json`。
 - AI 责任：模型与生成环境见 `agent.json`。所有专业、法律、规划、工程与实施判断必须由人类及相应专业团队复核。
 

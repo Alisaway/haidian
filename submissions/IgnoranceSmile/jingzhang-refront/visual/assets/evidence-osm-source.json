@@ -1,0 +1,88 @@
+{
+  "source_id": "OSM-OVERPASS-JINGZHANG-CONTEXT-20260828",
+  "title": "Jingzhang corridor context snapshot",
+  "retrieved_at_utc": "2026-08-28T14:21:00Z",
+  "endpoint": "https://overpass-api.de/api/interpreter",
+  "query_file": "visual/assets/evidence-osm-source.json#/overpass_query",
+  "query_sha256": "80b7c6c38bb31b45767faeb8cb2fc8bef64d65799428ad8d097cbaa195871e4c",
+  "response_file": "reconstruct from ordered archive_chunks after base64 decoding",
+  "compression": "gzip",
+  "gzip_deterministic": true,
+  "archive_sha256": "19d74460fb7fea1666a2f99e3224c1569623c24f62be01daaf6fbaf528390741",
+  "uncompressed_file_name": "jingzhang_context_raw.json",
+  "response_sha256": "9b26681bc94dfaa843e319372f4ebc7d3af9a2a569b9056d44fbf736a7cf721b",
+  "response_size_bytes": 16850476,
+  "overpass_api_version": "0.7.62.11 87bfad18",
+  "osm_base_timestamp": "2026-08-28T14:20:06Z",
+  "bbox_south_west_north_east": [
+    39.925,
+    116.315,
+    40.035,
+    116.375
+  ],
+  "element_count": 24859,
+  "license": "Open Database License (ODbL) 1.0",
+  "license_url": "https://www.openstreetmap.org/copyright",
+  "attribution_text": "OpenStreetMap data © OpenStreetMap contributors",
+  "rights_boundary": "This source snapshot and database-derived evidence remain under ODbL 1.0 and are excluded from the submission-level COMMUNITY-DISPLAY-ONLY licence.",
+  "usage_boundary": "Public-context evidence only. This snapshot does not replace the missing official competition polygon, cadastral data, rights information, site survey, or approval baseline.",
+  "known_limitations": [
+    "OSM is continuously edited and unevenly mapped.",
+    "The two mapped Jingzhang Railway Heritage Park polygons cover only part of the publicly reported nine-kilometre park corridor.",
+    "Building entrances, ground-floor uses, ownership, service access and barrier conditions require field verification.",
+    "The repository provisional competition geometry is retained separately and is not shifted to match OSM."
+  ],
+  "overpass_query": "[out:json][timeout:240];\n(\n  way[\"highway\"](39.925,116.315,40.035,116.375);\n  relation[\"highway\"](39.925,116.315,40.035,116.375);\n  way[\"building\"](39.925,116.315,40.035,116.375);\n  relation[\"building\"](39.925,116.315,40.035,116.375);\n  nwr[\"railway\"](39.925,116.315,40.035,116.375);\n  nwr[\"public_transport\"](39.925,116.315,40.035,116.375);\n  nwr[\"leisure\"=\"park\"](39.925,116.315,40.035,116.375);\n  nwr[\"landuse\"~\"^(grass|recreation_ground|forest|meadow|commercial|retail|residential|education|industrial)$\"](39.925,116.315,40.035,116.375);\n  nwr[\"natural\"~\"^(water|wood|grassland|scrub)$\"](39.925,116.315,40.035,116.375);\n  nwr[\"waterway\"](39.925,116.315,40.035,116.375);\n  nwr[\"barrier\"](39.925,116.315,40.035,116.375);\n  nwr[\"entrance\"](39.925,116.315,40.035,116.375);\n  nwr[\"amenity\"~\"^(university|college|school|research_institute|community_centre|marketplace|hospital|clinic|parking)$\"](39.925,116.315,40.035,116.375);\n);\nout body geom;\n",
+  "overpass_query_sha256": "80b7c6c38bb31b45767faeb8cb2fc8bef64d65799428ad8d097cbaa195871e4c",
+  "archive_chunks": [
+    {
+      "path": "visual/assets/evidence-osm-archive-00.json",
+      "part_index": 0,
+      "decoded_bytes": 360000,
+      "decoded_sha256": "ccc2500d6f57c60629b7b5b0a41b118ec212298f1d19d86b0f4022d53552f2fb"
+    },
+    {
+      "path": "visual/assets/evidence-osm-archive-01.json",
+      "part_index": 1,
+      "decoded_bytes": 360000,
+      "decoded_sha256": "6b2a0c83027030071e70dd3cd465d4545ff310953c6b2c81b2bef4d61f9a0b22"
+    },
+    {
+      "path": "visual/assets/evidence-osm-archive-02.json",
+      "part_index": 2,
+      "decoded_bytes": 360000,
+      "decoded_sha256": "47d928ad76e41ec4f7445211534ad2f2a65b10cff27c1da4c3d9a9d4a6aadd55"
+    },
+    {
+      "path": "visual/assets/evidence-osm-archive-03.json",
+      "part_index": 3,
+      "decoded_bytes": 360000,
+      "decoded_sha256": "2c68e03e2ac545b73630d74ad9d586c73dc644c93643d46c5593e1a463496adb"
+    },
+    {
+      "path": "visual/assets/evidence-osm-archive-04.json",
+      "part_index": 4,
+      "decoded_bytes": 360000,
+      "decoded_sha256": "4326b8018998fe1da9b5d51daa1628580397f2cfbe17783d6b2201e4d64ee58e"
+    },
+    {
+      "path": "visual/assets/evidence-osm-archive-05.json",
+      "part_index": 5,
+      "decoded_bytes": 360000,
+      "decoded_sha256": "52946de3181de025238ddfe72903cb0c155a1ccfcde4ed98f7bded2ea0136c1b"
+    },
+    {
+      "path": "visual/assets/evidence-osm-archive-06.json",
+      "part_index": 6,
+      "decoded_bytes": 360000,
+      "decoded_sha256": "9a692d7be1f670fde5b9e4fe54c75075d4d8d1d06abe413cf1ca2ee3a5330317"
+    },
+    {
+      "path": "visual/assets/evidence-osm-archive-07.json",
+      "part_index": 7,
+      "decoded_bytes": 99554,
+      "decoded_sha256": "de49e7bc5f99cf3549fb3a870faeaef3cfdb92fb7848de37ae909137c363152d"
+    }
+  ],
+  "reconstruction": "Sort archive_chunks by part_index, base64-decode each JSON payload, concatenate bytes, then verify archive_sha256 before gzip decompression."
+}

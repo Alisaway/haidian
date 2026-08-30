@@ -1,0 +1,23 @@
+{
+  "schema_version": "0.1.0",
+  "assumptions": [
+    {
+      "id": "A-BOUNDARY-001",
+      "status": "provisional_only",
+      "statement": "geometry/site_boundary.geojson (and geometry/key_areas.geojson) is a provisional_rough substitute derived from the official announcement's textual four-direction extent and its ~11.4 km² area figure, not an official redline -- the geometry's own properties already declare official_boundary=false and geometry_role=provisional_constraint. Every A-class metric computed from this boundary (site_area_sqm, and by division green_ratio, public_space_ratio) inherits the same provisional status.",
+      "impact": "These figures may be used for AI-agent generation, display, and intake self-check only -- never as a statutory area, an approval basis, or a precise redline. Recalculation trigger: once the organizer publishes official boundary coordinates, geometry/site_boundary.geojson must be replaced with the official geometry and scripts_local/build_geometry.py re-run, so metrics.json, the figures, and the dashboard are refreshed together before any of them is cited as final."
+    },
+    {
+      "id": "A-CONTROLS-001",
+      "status": "pending_professional_confirmation",
+      "statement": "Detailed regulatory controls, road redlines, ownership, municipal utilities, and engineering constraints must be confirmed from official attachments before statutory use.",
+      "impact": "The package can be reviewed as a formal AI submission only for provided official boundaries and submitted design layers; statutory controls still need professional confirmation."
+    },
+    {
+      "id": "A-CHAINAGE-001",
+      "status": "pending_chainage_coordinate_data",
+      "statement": "Zigzag stitch units' chainage numbering and functional binding are settled (e.g. N4.2 carries the S01 testing ground; see proposal.md §1.7, §5.8), but no chainage-to-coordinate reference dataset exists in the submitted geometry, so no stitch unit has a precise plottable position. assets/figures/mobility-bluegreen.png and assets/figures/stitch-unit-typology.png accordingly show the unit as a type/process diagram rather than a located one, disclosed in-figure rather than fabricated.",
+      "impact": "Stitch-unit positions may not be cited as sited until a chainage-to-coordinate dataset is supplied. Recalculation trigger: once such a dataset is available, scripts_local/build_geometry.py should derive real stitch-unit point geometry from it, and the figures/dashboard re-run to plot actual positions."
+    }
+  ]
+}
