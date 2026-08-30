@@ -69,11 +69,11 @@
     },
     {
       "id": "A-HERITAGE-001",
-      "status": "pending_verification",
-      "statement": "Historical railway, heritage, cultural-resource, and public-art claims require authoritative source locators and rights review before precise placement or bilingual publication.",
-      "impact": "Narrative nodes remain text_only or provisional; no unverified fact is placed as a landmark.",
+      "status": "controlled_exclusion",
+      "statement": "The current formal package does not include unlicensed historical photographs, archival excerpts, identifiable portraits or precise heritage placement. Historical claims remain cited text or explicitly provisional interpretation.",
+      "impact": "Current COMMUNITY-DISPLAY-ONLY output is not blocked; introducing archival media, permanent heritage nodes or uncited historical detail reopens G-Fact and G-Rights.",
       "source_ids": [
-        "AGENT-TASKBOOK"
+        "D2SRC-SHARED-021"
       ],
       "affected_objects": [
         "proposal.md",
@@ -83,8 +83,9 @@
         "蓝绿空间、公共空间与城市风貌",
         "风险、版权与合规说明"
       ],
-      "release_gate": "G-Fact+G-Rights",
-      "owner_role": "文化/历史/版权Agent"
+      "release_gate": "G-Fact+G-Rights:pass_by_exclusion_for_current_package",
+      "owner_role": "文化/历史/版权Agent",
+      "current_blocker": false
     },
     {
       "id": "A-ACTOR-001",
@@ -145,21 +146,36 @@
     },
     {
       "id": "A-RIGHTS-001",
-      "status": "pending_verification",
-      "statement": "Logos, fonts, images, portraits, historical excerpts, company names, model names, and translated terms require rights and terminology review.",
-      "impact": "Use neutral descriptors and candidate visual directions until cleared.",
+      "status": "verified_for_declared_use",
+      "statement": "All fonts, figures, satellite backgrounds, generated visuals, composite HTML/PDF outputs, candidate identity elements and third-party textual identifiers actually included in the current formal package are itemized and reviewed in LOCAL-ASSET-RIGHTS-REGISTER-V2.9.",
+      "impact": "The current package is cleared only for COMMUNITY-DISPLAY-ONLY. This does not grant commercial, trademark, construction, governmental-endorsement or third-party sublicensing rights.",
       "source_ids": [
-        "SOURCE-REGISTRY"
+        "D2SRC-SHARED-021",
+        "D2SRC-SHARED-022",
+        "D2SRC-SHARED-023",
+        "D2SRC-SHARED-014",
+        "D2SRC-SHARED-015"
       ],
       "affected_objects": [
         "assets/figures",
-        "visual/index.html"
+        "visual/assets/base_maps",
+        "visual/assets/cjk-font.css",
+        "report/proposal.html",
+        "report/proposal.en.html",
+        "visual/index.html",
+        "visual/index.en.html",
+        "drawings/a3-booklet.pdf",
+        "drawings/a3-booklet.en.pdf",
+        "drawings/a0-boards.pdf",
+        "drawings/a0-boards.en.pdf"
       ],
       "affected_chapters": [
         "风险、版权与合规说明"
       ],
-      "release_gate": "G-Rights+G-Brand",
-      "owner_role": "法律/品牌Agent"
+      "release_gate": "G-Rights:pass_for_current_community_display_only",
+      "owner_role": "法律/品牌Agent",
+      "verification_locator": "visual/assets/asset_rights_register.json",
+      "current_blocker": false
     },
     {
       "id": "A-DATA-PRIVACY-001",
@@ -200,8 +216,46 @@
       ],
       "release_gate": "G-Release",
       "owner_role": "统筹Agent"
+    },
+    {
+      "id": "A-BRAND-PUBLIC-RELEASE-001",
+      "status": "pending_verification",
+      "statement": "Candidate names, logo grammar, fonts and bilingual identity require trademark-conflict, language-ambiguity, accessibility and public-recognition testing before registration, permanent signage or official public release.",
+      "impact": "Not a blocker for the current research/community display; it blocks only future official branding use.",
+      "source_ids": [
+        "D2SRC-SHARED-021"
+      ],
+      "affected_objects": [
+        "assets/figures/identity-brand.png",
+        "assets/figures/identity-brand.en.png"
+      ],
+      "affected_chapters": [
+        "风险、版权与合规说明"
+      ],
+      "release_gate": "G-Brand:future_public_release_only",
+      "owner_role": "法律/品牌/无障碍负责人",
+      "current_blocker": false
+    },
+    {
+      "id": "A-HERITAGE-PUBLICATION-001",
+      "status": "pending_verification",
+      "statement": "Future use of archival images, long historical excerpts, identifiable portraits, permanent cultural nodes or definitive bilingual heritage publication requires item-level source, location, translation and rights review.",
+      "impact": "Not a blocker because those materials are excluded from the current formal package; introduction reopens G-Fact and G-Rights.",
+      "source_ids": [
+        "D2SRC-SHARED-021"
+      ],
+      "affected_objects": [
+        "future archival or heritage publication assets"
+      ],
+      "affected_chapters": [
+        "蓝绿空间、公共空间与城市风貌",
+        "风险、版权与合规说明"
+      ],
+      "release_gate": "G-Fact+G-Rights:future_asset_only",
+      "owner_role": "文化/历史/版权Agent",
+      "current_blocker": false
     }
   ],
-  "generated_at": "2026-08-16",
+  "generated_at": "2026-08-30",
   "assumption_contract_note": "Unknown and pending states are intentional. Resolution requires a named role, source/permission, trigger, and recalculation action."
 }

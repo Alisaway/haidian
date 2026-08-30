@@ -385,43 +385,6 @@
       "notes": "共享底座来源；formal只纳入正文或矩阵实际使用项"
     },
     {
-      "id": "D2SRC-SHARED-010",
-      "formal_target_id": "LOCAL-VISUAL-H0-REGISTRY",
-      "title": "H0概念图视觉资产登记",
-      "publisher": "本项目内部概念研究",
-      "source_type": "P",
-      "status": "approved_with_limitations",
-      "path_or_url": "submissions/wolnlow/ai-native-jingzhang-planning/visual/assets/reference/visual_asset_registry_v0.1.json",
-      "published_or_reference_date": "2026-08-15",
-      "accessed_date": "2026-08-15",
-      "temporal_scope": "dated_snapshot",
-      "spatial_scope": "internal_visual_registry",
-      "spatial_use_allowed": "none",
-      "geometry_generation_allowed": "no",
-      "rights_status": "internal_or_provisional_restricted",
-      "license_or_reuse": "内部概念资产；提示词模型输入来源链不完整故不得进入formal",
-      "supports": [
-        "登记H0概念图文件hash尺寸字节和限制",
-        "作为重新生成前的负面准入记录"
-      ],
-      "does_not_support": [
-        "证明现场现状;官方边界;工程方案;历史事实;正式投稿视觉来源链",
-        "不得把P级状态静默升级为F"
-      ],
-      "locator": "submissions/wolnlow/ai-native-jingzhang-planning/visual/assets/reference/visual_asset_registry_v0.1.json",
-      "gap_ids": [
-        "GAP-VISUAL-001"
-      ],
-      "owner_role": "资料经理;对应章节专业负责人",
-      "human_gate": [
-        "G-Fact",
-        "G-Rights",
-        "G-Release"
-      ],
-      "confidence": "low",
-      "notes": "共享底座来源；formal只纳入正文或矩阵实际使用项"
-    },
-    {
       "id": "D2SRC-SHARED-011",
       "formal_target_id": "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
       "title": "生成式人工智能服务管理暂行办法",
@@ -2668,6 +2631,117 @@
       ],
       "confidence": "medium",
       "notes": "Normative opinion source; preserve expressed need versus inferred motive distinction"
+    },
+    {
+      "id": "D2SRC-SHARED-021",
+      "formal_target_id": "LOCAL-ASSET-RIGHTS-REGISTER-V2.9",
+      "title": "当前正式投稿包逐资产来源与权利登记表",
+      "publisher": "本项目研究组",
+      "source_type": "P",
+      "status": "approved_with_limitations",
+      "path_or_url": "submissions/wolnlow/ai-native-jingzhang-planning/visual/assets/asset_rights_register.json",
+      "published_or_reference_date": "2026-08-30",
+      "accessed_date": "2026-08-30",
+      "temporal_scope": "dated_snapshot",
+      "spatial_scope": "non_spatial_asset_provenance",
+      "spatial_use_allowed": "current_community_display_only",
+      "geometry_generation_allowed": "no",
+      "rights_status": "cleared_for_declared_use",
+      "license_or_reuse": "逐资产列明作者、工具、模型、输入、许可、署名、限制和hash；仅覆盖当前COMMUNITY-DISPLAY-ONLY用途",
+      "supports": [
+        "当前正式包逐资产来源链",
+        "当前声明用途权利审查",
+        "字体和生成视觉生产链"
+      ],
+      "does_not_support": [
+        "商业利用",
+        "商标注册",
+        "政府背书",
+        "施工和审批用途"
+      ],
+      "locator": "visual/assets/asset_rights_register.json",
+      "gap_ids": [],
+      "owner_role": "版权/品牌Agent",
+      "human_gate": [
+        "G-Rights",
+        "G-Brand",
+        "G-Release"
+      ],
+      "confidence": "high",
+      "notes": "61项当前可见/复合资产一文件一记录；无当前未决资产"
+    },
+    {
+      "id": "D2SRC-SHARED-022",
+      "formal_target_id": "FONT-NOTO-SANS-SC-OFL",
+      "title": "Noto Sans SC字体及JZ Offline CJK离线子集许可记录",
+      "publisher": "Google Fonts / Adobe；本项目子集封装",
+      "source_type": "B",
+      "status": "approved",
+      "path_or_url": "submissions/wolnlow/ai-native-jingzhang-planning/visual/assets/cjk-font-license.json",
+      "published_or_reference_date": "2026-08-30",
+      "accessed_date": "2026-08-30",
+      "temporal_scope": "upstream_commit_and_package_snapshot",
+      "spatial_scope": "non_spatial_font_asset",
+      "spatial_use_allowed": "none",
+      "geometry_generation_allowed": "no",
+      "rights_status": "open_license_verified",
+      "license_or_reuse": "SIL Open Font License 1.1；许可全文、上游与子集hash随包保留",
+      "supports": [
+        "四份离线HTML中文显示",
+        "确定性PNG和四份PDF字体生产链"
+      ],
+      "does_not_support": [
+        "移除许可文本",
+        "单独售卖字体",
+        "政府或上游作者背书"
+      ],
+      "locator": "visual/assets/cjk-font-license.json",
+      "gap_ids": [],
+      "owner_role": "版权/排版Agent",
+      "human_gate": [
+        "G-Rights",
+        "G-Release"
+      ],
+      "confidence": "high",
+      "notes": "fontTools子集+WOFF2，内部家族名JZ Offline CJK；每次文本变化重跑cmap覆盖"
+    },
+    {
+      "id": "D2SRC-SHARED-023",
+      "formal_target_id": "OPENAI-GENERATED-OUTPUT-TERMS",
+      "title": "OpenAI Terms of Use与本包生成视觉来源记录",
+      "publisher": "OpenAI；本项目生成视觉清单",
+      "source_type": "B",
+      "status": "approved_with_limitations",
+      "path_or_url": "https://openai.com/policies/terms-of-use/",
+      "published_or_reference_date": "2026-01-01",
+      "accessed_date": "2026-08-30",
+      "temporal_scope": "terms_accessed_2026-08-30",
+      "spatial_scope": "non_spatial_generation_terms",
+      "spatial_use_allowed": "none",
+      "geometry_generation_allowed": "no",
+      "rights_status": "terms_based_output_use_subject_to_input_rights",
+      "license_or_reuse": "生成输出与输入责任按适用条款；当前正式图的工具、模型披露、提示词、输入hash和人工检查见generated_visuals_manifest.json",
+      "supports": [
+        "用户与服务提供方之间的输入/输出安排",
+        "当前生成视觉生产链定位"
+      ],
+      "does_not_support": [
+        "证明输入自动获权",
+        "保证输出唯一",
+        "自动清除第三方权利",
+        "商标适用性",
+        "政府背书"
+      ],
+      "locator": "visual/assets/generated_visuals_manifest.json",
+      "gap_ids": [],
+      "owner_role": "版权/视觉Agent",
+      "human_gate": [
+        "G-Rights",
+        "G-Brand",
+        "G-Release"
+      ],
+      "confidence": "high",
+      "notes": "工具仅返回platform-managed，未虚构具体实际模型版本"
     }
   ],
   "source_registry_note": "D2 candidates are serialized with evidence class, status, rights, scope, prohibited upgrades, gates, and locator. Candidate status is not a claim that the source is official or geometry-generating.",
@@ -2710,7 +2784,6 @@
     "LOCAL-SCENE-NODE-LIBRARY-V0.1": "D2SRC-SHARED-007",
     "LOCAL-SRC-PUBLIC-BRIEF": "D2SRC-SHARED-009",
     "LOCAL-SRC-RESEARCH-OUTLINE-V2": "D2SRC-SHARED-008",
-    "LOCAL-VISUAL-H0-REGISTRY": "D2SRC-SHARED-010",
     "OFFICIAL-ANNOUNCEMENT": "D2SRC-SHARED-001",
     "S-AUH-01": "D2SRC-B2-014",
     "S-AUH-02": "D2SRC-B2-015",
@@ -2735,7 +2808,10 @@
     "S-SG-04": "D2SRC-B2-004",
     "S-SG-05": "D2SRC-B2-005",
     "S-TOR-01": "D2SRC-B2-009",
-    "S-TOR-02": "D2SRC-B2-010"
+    "S-TOR-02": "D2SRC-B2-010",
+    "ASSET-RIGHTS-REGISTER": "D2SRC-SHARED-021",
+    "FONT-NOTO-SANS-SC-OFL": "D2SRC-SHARED-022",
+    "OPENAI-GENERATED-OUTPUT-TERMS": "D2SRC-SHARED-023"
   },
   "source_alias_note": "Aliases preserve legacy IDs used by packaged scenario/culture evidence; canonical review IDs are the mapped sources.json IDs."
 }

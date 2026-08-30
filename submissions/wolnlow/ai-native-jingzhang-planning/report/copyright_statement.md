@@ -1,31 +1,44 @@
 # Copyright, Sources, and Generated-Media Statement
 
-## 1. Text and structured data
+## 1. Declared use and asset-level closure
 
-The proposal text, translations, diagrams, scenario cards, matrices, GeoJSON, JSON, HTML, and PDF composition in this package are original research outputs produced for this submission with AI-assisted drafting and human/orchestrator review. Public facts and background mechanisms are itemized in `sources.json`; their inclusion does not transfer third-party ownership or imply endorsement. The Chinese proposal is the governing text and the English proposal is a working equivalent translation pending final human language review.
+This formal package is released only under `COMMUNITY-DISPLAY-ONLY`. The current deliverable contains **61 visible or published assets**: 52 PNG figures/basemaps, one embedded-font stylesheet, four PDFs, and four HTML pages. Every item is recorded in `visual/assets/asset_rights_register.json` with its hash, creator or generator, tool/model where applicable, inputs, third-party components, permission basis, attribution, allowed use, restrictions, and clearance state. `visual/assets/asset_rights_verification.json` verifies coverage and file hashes. A package-level statement is not used as a substitute for this item-level record.
 
-## 2. Satellite and map background
+Proposal text, translations, project diagrams, scenario cards, matrices, GeoJSON, JSON, HTML composition, and PDF composition were produced for this submission through AI-assisted drafting and human/orchestrator review. Public facts and background mechanisms are itemized in `sources.json`; citation does not transfer third-party ownership or imply endorsement.
 
-- Satellite backgrounds contain modified Copernicus Sentinel data 2026, accessed through Microsoft Planetary Computer. They are used only as 10 m background context and issue-discovery imagery, not as a survey, statutory boundary, ownership, road, station-entrance, or engineering source. See `D2SRC-SHARED-014` in `sources.json` and `visual/assets/base-map-manifest.json`.
-- OpenStreetMap contributor data, where referenced, is used under ODbL attribution requirements only for background place-name/transport lookup and uncertainty checks. It is not used to create formal geometry or approved routes. See `D2SRC-SHARED-015` in `sources.json`.
-- Submitted site and key-area polygons are maintainer-provided/design provisional geometry. Their presence does not create copyright ownership, official-boundary status, or legal authority.
+## 2. Map and earth-observation backgrounds
 
-## 3. Figures, logos, people, and generative media
+- Five basemap images contain modified Copernicus Sentinel-2 L2A data (2026) accessed through Microsoft Planetary Computer. They are attributed in each image, `D2SRC-SHARED-014`, and `visual/assets/base-map-manifest.json`. Use is limited to 10 m contextual imagery and issue discovery—not surveying, statutory boundaries, ownership, road or station-entrance geometry, engineering alignment, or approval evidence.
+- OpenStreetMap contributor data, where referenced, is attributed under ODbL and is limited to background place-name/transport lookup and uncertainty checks. It does not create approved geometry or routes; see `D2SRC-SHARED-015`.
+- Submitted site and key-area polygons are maintainer-provided/design-provisional geometry. They do not establish ownership, official-boundary status, or legal authority.
 
-Formal-package figures are project diagrams or generated/composited research visuals. They are marked as research, NTS, provisional, or not deployed where applicable. No third-party corporate logo, unlicensed historical photograph, identifiable portrait, or public-honor result is asserted as part of the proposal. The “Jingzhang Smart Pulse Co-living Belt” identity and logo grammar are reversible candidates, not registered marks or approved public brands. Any later use of people, institutions, trademarks, archival materials, fonts, model names, or translated terminology requires item-level rights and language review.
+## 3. Generated visuals, brands, marks, people, and heritage media
 
-AI-generated or AI-assisted visual material expresses relationships, atmosphere, components, or user actions only. It does not prove present conditions, exact placement, ownership, constructability, approval, operation, or performance. Prompts and generation choices cannot upgrade an evidence state.
+The ten AI-generated bilingual method diagrams and the shared panoramic cover are registered in `visual/assets/generated_visuals_manifest.json` and `visual/assets/hero_image_manifest.json`. The records include output hashes, dimensions, the OpenAI built-in image-generation route, the model-disclosure limit, hashed textual inputs, final generation specifications, and post-processing. The user requested “GPT Image 2”; the platform tool did not expose an exact backend model identifier, so the record does not invent one. Under the OpenAI Terms of Use, output ownership is assigned to the user to the extent permitted by applicable law; the submission does not claim that output is unique or free from every possible resemblance. Human review found no intentional third-party logo, readable brand, archival photograph, or identifiable real person in these outputs.
 
-The language-neutral panoramic cover asset `jingzhang-ai-civilization-panorama-v28.png` was generated through the OpenAI built-in image-generation tool for this proposal and is shared by the Chinese and English versions. It contains no intentional logo or readable third-party text and is registered in `visual/assets/hero_image_manifest.json`. It is a communication concept only, not a site photograph, heritage reconstruction, location plan, architectural promise, or evidence of existing/proposed approval.
+“京张智脉共生带 / Jingzhang Smart Pulse Co-living Belt”, “当城市开始思考——百年京张的AI原生城市文明试验场 / When the City Begins to Think—A Century of Jingzhang as an AI-Native Urban Civilization Testbed”, and the “evidence line” logo grammar are original **research candidates**, not registered marks, approved public brands, or evidence of endorsement. Company, institution, model, and place names appear only as nominative references in research text; third-party logos are excluded. Trademark conflict, language, accessibility, and public-recognition checks remain a future gate before registration, signage, or commercial/public launch.
 
-## 4. Fonts and production chain
+Unlicensed archival railway photographs, third-party portraits, and protected institutional marks have been removed or excluded from the formal package. Any later heritage photograph, excerpt, portrait, logo, or translated title requires item-level permission and attribution before inclusion.
 
-The offline HTML uses local/system font fallbacks and contains no CDN, remote font, iframe, remote script, tile request, analytics, or API dependency. PDF/PNG/HTML outputs are generated through repository-local Python scripts and bundled dependencies, including Pillow and ReportLab where invoked. Exact artifact hashes are recorded in `manifest.json`; dependency constraints are recorded in the repository requirements files. A regenerated artifact must refresh the manifest and rerun all submission checks.
+Generated or composited visuals communicate relationships, atmosphere, components, or user actions only. They do not prove existing conditions, exact siting, ownership, constructability, approval, deployment, operation, or performance. A prompt or image cannot upgrade an evidence state.
 
-## 5. Permitted display and remaining clearance
+## 4. Offline font and production chain
 
-The package license is `COMMUNITY-DISPLAY-ONLY`. It permits the repository/community display use declared by the submission but does not grant construction, commercial exploitation, trademark registration, sublicensing of third-party sources, or governmental endorsement. Final public release outside that context still requires review of Copernicus/OSM attribution, historical and cultural materials, bilingual equivalence, accessibility, trademarks/fonts, and any newly introduced media.
+All four HTML pages load the package-local `visual/assets/cjk-font.css`, which embeds a renamed/subsetted WOFF2 derived from **Noto Sans SC**. The upstream font is distributed under the SIL Open Font License 1.1; upstream commit, source hash, license text, transformation, embedded-font hash, CSS hash, naming, attribution, and permissions are recorded in `visual/assets/cjk-font-license.json`. The PDF and deterministic PNG production chain was regenerated with the same OFL-cleared Noto Sans SC source; the prior proprietary-system-font dependency was removed.
+
+The HTML contains no CDN, remote font, remote script, remote tile request, iframe, form, analytics, or external API dependency. PNG/PDF/HTML outputs are generated through repository-local Python scripts and bundled libraries. Artifact hashes are recorded in `manifest.json`; any regeneration must refresh the manifest, rights register, bilingual audit, offline-render audit, and submission checks.
+
+## 5. Attribution, permissions, and limits
+
+- **Attribution:** Copernicus Sentinel data and OpenStreetMap contributors are credited where used; Noto Sans SC is credited under SIL OFL 1.1; project-original and generated assets require no public credit beyond this statement for the declared repository/community display.
+- **Allowed now:** review, repository/community display, and non-commercial discussion of this submitted research package.
+- **Not granted:** construction, engineering reliance, statutory use, commercial licensing, trademark registration, governmental endorsement, sublicensing of third-party data, or reuse outside the applicable source licenses and `COMMUNITY-DISPLAY-ONLY` terms.
+- **Future trigger:** newly introduced assets, permanent branding, public signage, commercial reuse, or a scope beyond this repository/community display must pass a new item-level rights and professional review.
 
 ## 中文摘要
 
-本包文字、结构化数据、图解与版式为本次投稿形成的原创研究成果，并使用AI辅助起草与人工/总控复核。公开事实和背景机制逐条登记于`sources.json`。卫星底图含经处理的2026年Copernicus Sentinel数据；OSM仅作背景定位与不确定性核对；二者均不支撑法定边界、权属、道路站口或工程结论。正式包不主张使用未经授权的第三方Logo、历史照片或可识别人像。所有生成式画面只表达关系、氛围、组件或用户动作，不证明现状、精确落位、可建性、批准、运行或绩效。离线HTML不依赖CDN、远程字体、远程脚本、地图瓦片、iframe或API。
+本正式包仅按 `COMMUNITY-DISPLAY-ONLY` 用途发布。当前61项可见/发布资产（52幅PNG、1个内嵌字体样式、4份PDF、4个HTML）均在 `visual/assets/asset_rights_register.json` 逐项登记哈希、作者/生成者、工具与模型、输入来源、第三方要素、许可依据、署名、允许用途、限制和清权状态，并由 `asset_rights_verification.json` 核验覆盖率与文件哈希。
+
+五幅底图使用经处理的2026年Copernicus Sentinel-2 L2A数据；OSM仅用于背景定位和不确定性核对；二者均不支撑法定边界、权属、道路站口、工程路线或审批结论。十幅中英AI方法图与共享全景封面已登记生成路径、输入哈希、提示规格和后处理；平台未暴露确切后端模型名，因此不虚构模型信息。正式包排除了未经授权的历史照片、可识别人像和第三方Logo。
+
+四个HTML使用包内嵌的Noto Sans SC子集字体，依据SIL Open Font License 1.1清权，且不依赖CDN、远程字体、脚本、瓦片、iframe、表单或API；PDF和确定性PNG也已改用同一OFL字体源重新生成。候选名称、传播母题与Logo语法仅为原创研究方向，不是注册商标、正式公共品牌或政府背书；进入注册、导视、商业或更广泛公共发布前必须重新完成逐资产、商标、语言和无障碍审查。所有生成图仅表达关系、氛围、组件或用户动作，不证明现状、精确落位、可建性、批准、部署、运行或绩效。

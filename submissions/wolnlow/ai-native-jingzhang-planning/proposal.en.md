@@ -3,7 +3,7 @@ title: "A New AI-Native Planning Paradigm for the Jingzhang Railway Innovation B
 author_github: "wolnlow"
 language: "en"
 proposal_format_version: "2"
-iteration: "v2.8"
+iteration: "v2.9"
 bilingual_contract_version: "1"
 translation_of: "proposal.md"
 license: "COMMUNITY-DISPLAY-ONLY"
@@ -17,6 +17,10 @@ The project has two nested research objects. Its direct object is the space, eco
 
 AI-native planning here does not mean automated approval or a model generating a final plan in one pass. Agents participate across source admission, evidence graphs, issue/need/goal/strategy reasoning, spatial scenarios, implementation and operations, monitoring and governance, audience-specific release, and version feedback. Each stage retains evidence, counter-evidence, prohibited inference, accountable human decisions, stop conditions, and exit. The proposal must therefore state where evidence comes from, which conclusions are valid, who can change them, where a reversible trial can start, when a person must take over, and how a failure is stopped, cleared, reviewed, and learned from.
 
+![Eight-step AI-native planning loop](assets/figures/ai-native-eight-step-loop.en.png)
+
+*Figure 20. Seven planning-production stages and an eighth audience-specific release stage remain subject to a human-responsibility spine. Any step can return when evidence, space, risk, or rights fail review. This is a method diagram, not automated approval or implementation.*
+
 For AI to enter planning substantively, two classes of questions must remain distinct. Agents can produce reviewable candidates for computable tasks such as source alignment, rule checks, spatial overlays, simulation, policy transmission, and version comparison. Motives, interests, fairness, public value, and unacceptable consequences are contested value questions that require real affected people, community planners, professionals, and named decision-makers. Behavioural data may support a hypothesis for field verification; it cannot prove motivation or define public needs. The proposal therefore combines an evidence-computation loop with a value-deliberation loop, embedding field interviews, joint walks, minority views, appeal, and accountable human decisions in agent contracts. [source:LIANG-PLAN-FUTURE-I-20260828] [source:LIANG-PLAN-FUTURE-II-20260829]
 
 The exploration follows one explicit argument: **changes in the city → breaks in conventional planning → tasks agents can augment → non-delegable human boundaries → Jingzhang site tests → operating evidence that challenges the method**. Seven lenses structure that argument: urban cognition asks how multi-source evidence becomes valid; problem framing asks who is seen or omitted; reasoning keeps counter-evidence and multiple scenarios; spatial translation connects a stable public base with reversible task layers; public deliberation requires real participation rather than simulated publics; implementation governance asks how to trial, stop, take over, and exit; communication asks how different people understand, use, and scrutinise planning. Points and scenarios are samples for testing the framework, not a substitute for it.
@@ -24,6 +28,10 @@ The exploration follows one explicit argument: **changes in the city → breaks 
 The proposal uses “agent” at three clearly separated levels. **Planning-production agents** support source alignment, problem framing, reasoning, spatial translation, and recalculation. **The six official task agents** organise the brand, ecosystem, scenarios, public space, culture, and operations outputs. **Urban operating agents** are future candidate systems for neighbourhood services and governance. The first two levels describe the actual research workflow; the third is a planning object that still requires instance-by-instance trials. They share evidence, accountability, appeal, and exit rules, but a production inference is not an operating service, a task output is not an institutional commitment, and an operating agent cannot become a planning-approval authority.
 
 Jingzhang is a stress test rather than a decorative backdrop. Its existing heritage park and public-space base require low-intrusion overlays; the near-campus, mixed, short-cycle potential of the AI Origin Community calls for open front desks and correction journeys; Zhongzhiyuan requires a separation between public interpretation and controlled testing; and Dazhongsi requires joint task walks rather than engineering routes while station entrances, roads, rights, and motives remain unverified. If official spatial, field-use, or professional evidence contradicts any of these readings, the proposal must reopen problem framing rather than defend an existing image.
+
+![Four urban genes and a public learning loop](assets/figures/ai-native-overall-thinking.en.png)
+
+*Figure 21. Railway memory, the Zhongguancun innovation network, existing public life, and fast-changing AI enter a correctable urban-learning loop through the railway public spine. Concept relationship only; not an official boundary, exact location, or build commitment.*
 
 ### Communication theme: When the City Begins to Think — Jingzhang as an AI-Native Urban-Civilisation Testbed
 
@@ -44,6 +52,10 @@ An AI scenario is therefore not merely a function or device. It is a complete co
 This method does not replace statutory planning. Statutory and professional controls establish non-negotiable rights, spatial, and safety boundaries; strategy and urban design organize scenarios and phased candidates within those boundaries; and operational protocols test only authorized small-scale instances. Runtime evidence may inform the next planning version, but it cannot automatically alter a statutory decision.
 
 The three unified recognitions in Project Research Outline V2.0 become five planning moves: establish seven evidence layers, data graphs, and confidence states; use multiple agents to identify issues, needs, goals, counter-evidence, and responses; translate new forms of work, living, learning, contact, and governance into a stable public base plus reversible scenarios; operate a daily/weekly/quarterly/annual activity rhythm and a six-step conversion chain; and derive one source of truth into a professional report, public interface, bilingual figures, and machine-readable files. Evidence status and limits stay next to each claim. [source:OFFICIAL-ANNOUNCEMENT] [source:AGENT-TASKBOOK] [depth:existing_conditions_diagnosis]
+
+![Five planning actions from the research outline](assets/figures/ai-native-five-actions.en.png)
+
+*Figure 22. Evidence base, identification and inference, space and scenarios, operations and governance, and audience-specific outputs form a two-way loop: professional human review above and public/operational feedback below.*
 
 The central proposition is: **how can a historically public, innovation-dense, spatially complex belt become a city laboratory where real problems are heard, evidence is checked, prototypes are tested safely, people can refuse or appeal, and failure can exit into shared knowledge?** The working concept “Jingzhang Smart Pulse Co-living Belt” is therefore a spatial–scenario–operations learning system, not a final atmosphere image.
 
@@ -96,6 +108,10 @@ The working concept is “Jingzhang Smart Pulse Co-living Belt”: the Jingzhang
 | Coordinating research | How do research, open source, capital, markets, and public life connect? | Issue–research–open-source–test–application–knowledge loop | Case mechanisms, ecosystem graph, cultural narrative |
 | Overall design | How do renewal, industry, public space, mobility, and municipal systems support one another? | One Belt–Three Areas–Two Wings and a blue-green walking loop | Land-use, building, road, blue-green, and phasing figures |
 | Detailed key areas | How do areas become tangible, testable, and reversible? | Two accountable work points per area, tied to users, operators, metrics, and human gates | Six prototype cards, 13 scenario cards, project ledger |
+
+![One Belt–Three Areas–Two Wings and three planning scales](assets/figures/three-scales-spatial-structure.en.png)
+
+*Figure 23. The diagram labels all three working scales, Three Areas–Two Wings, the railway public spine, and six candidate points. NTS concept relationship only; it does not replace official boundaries, roads, station entrances, or engineering alignments.*
 
 The overall spatial reading is derived from land-use, building, road, blue-green, public-space, and phasing layers. Boundary and metric states are shown consistently in figures, tables, and HTML. [data:geometry/land_use.geojson#LU-001] [data:geometry/buildings.geojson#BLDG-001]
 
@@ -179,6 +195,10 @@ The allowed package entry [report/narrative.md](report/narrative.md), Appendices
 5. **Culture agent:** a non-causal railway–Zhongguancun–AI graph, five route types, bilingual working text, international-communication gate, and correction/withdrawal mechanism.
 6. **Operations agent:** daily/weekly/quarterly/annual activity system, six-step conversion chain, six pilot contracts, 15 indicators, and four-layer pause/restart events.
 
+![Six specialist agents and five human decision gates](assets/figures/six-agents-five-gates.en.png)
+
+*Figure 24. Six task agents generate candidates in parallel around a shared evidence and knowledge graph. Fact admission, value trade-off, spatial admission, pilot start/stop, and public release remain human-controlled; any gate may return, pause, or reject.*
+
 All six agents share one human-machine boundary: machines handle explicit evidence, logical relations, conditional scenarios, and consistency checks; people retain problem definition, interpretation of motive, value ranking, interest coordination, and final accountability. Zhongzhiyuan tests whether technology is credible and safely interruptible; AI Origin Community tests whether online analysis can be corrected through field contact and residents; Dazhongsi tests whether behavioural data is returned to joint task walks rather than converted directly into conclusions about people.
 
 Two tabletop agent-planning experiments are recorded. The Developer Walk task generated a permanent landmark, reversible markers, and a no-fixed-structure thematic walk. Because park/heritage geometry, rights, and operations evidence were missing, human gates paused the permanent option and downgraded it to a textual task route and movable story stations. The Dazhongsi station-city task produced route candidates from OSM and provisional geometry. Because entrances, roads, rights-of-way, and motives could not be established from open data, the route was cancelled and replaced by a five-part joint walk covering entrances, crossings, cycling, accessibility, and human fallback. The important output was not two more designs: the agents exposed false certainty and returned planning to a safer evidence level. Seven candidate–counter-evidence–decision–feedback records are in [visual/assets/agent_planning_process_ledger.json](visual/assets/agent_planning_process_ledger.json).
@@ -199,7 +219,7 @@ To make the six tasks reviewable beyond a text summary, four additional research
 ![Three cultures, five routes and correction loop](assets/figures/culture-narrative.en.png)
 ![Fifteen professional-depth contract evidence interface](assets/figures/professional-evidence.en.png)
 
-These diagrams are generated from the canonical registry, B2 activity ledger, and B3 scenario/user data. They are research diagrams with provisional and not-deployed status; bilingual counterparts retain the same IDs, states, and information architecture. To prevent missing labels, unsupported image narratives or visual precision from upgrading factual precision, all 16 bilingual figure pairs register their core judgement, Jingzhang grounding, status limit and evidence entry in `visual/assets/figure_explanation_register.json`. [data:visual/assets/canonical_registry.json] [data:visual/assets/data_asset_register.json]
+These diagrams are generated from the canonical registry, B2 activity ledger, and B3 scenario/user data. They are research diagrams with provisional and not-deployed status; bilingual counterparts retain the same IDs, states, and information architecture. To prevent missing labels, unsupported image narratives or visual precision from upgrading factual precision, all 24 bilingual figure pairs register their core judgement, Jingzhang grounding, status limit and evidence entry in `visual/assets/figure_explanation_register.json`. [data:visual/assets/canonical_registry.json] [data:visual/assets/data_asset_register.json]
 
 For card-level review, the full fields, eight user groups and stage gates for all 13 scenarios are packaged in [visual/assets/scenario_cards.json](visual/assets/scenario_cards.json). Railway–Zhongguancun–AI culture nodes and authoritative sources are packaged in [visual/assets/culture_nodes.json](visual/assets/culture_nodes.json) and [visual/assets/culture_sources.json](visual/assets/culture_sources.json). The seven dimensions have a no-self-scoring evidence navigator at [visual/assets/review_evidence_matrix.json](visual/assets/review_evidence_matrix.json); final points remain a human-review decision.
 
@@ -275,13 +295,15 @@ The compliance matrix maps the official 13 headings, 15 chapters, six agent task
 
 ![Metric recalculation and evidence chain](assets/figures/metrics-evidence.en.png)
 
+The two counts in the figure use different populations. **All 15 operating parent metrics are currently unknown (15 unknown / 0 known).** The 28 records in the full `metrics.json` package comprise 10 known records that are only provisional geometric work values or structural counts, plus 18 unknown records covering runtime, professional sign-off and statutory-control gaps. Known does not mean operating performance, and unknown is never treated as zero; both remain subject to source-triggered recalculation and stop rules. [metric:monitoring_parent_metric_count] [data:visual/assets/review_evidence_matrix.json]
+
 ## Risk, copyright, and compliance
 
 Planning decisions use G-Fact/G-Value/G-Spatial/G-Pilot/G-Release; final artifacts separately pass Fact, Spatial, Rights, Identity and Release gates. The first set controls fact upgrade, value trade-offs, spatial admission and pilot start. The second checks copyright, trademarks, type, portraits, data withdrawal, bilingual terms, accessibility, captions, offline behavior, manifest, hashes and human sign-off. Privacy, copyright, implementation risk and human review records stay next to every high-risk scenario. A failed applicable gate downgrades the output to a research contract, text-only or offline prototype; it does not enter formal site release. [depth:risk_missing_data] [source:MISSING-DATA-CHECKLIST]
 
 AI may retrieve, summarize, compare, flag gaps, draft text for review, and aggregate anonymous feedback. It may not approve planning, allocate public rights, replace engineering safety or medical/education/investment judgment, hide conflicts, or continue service while paused. All formal spatial claims and high-risk decisions retain accountable humans, refusal, appeal, stop, clearing, and recovery.
 
-The package uses a community-display license. Figures, fonts, maps, historic materials, marks, portraits, models/tools, and generation records remain traceable in the source and copyright files. Official boundary, field survey, interviews, professional signatures, named operators, and runtime baselines remain external dependencies; they are not filled by the model. [source:SOURCE-USE-MATRIX]
+This revision closes a one-file-one-record rights chain for the 61 current PNGs, basemaps, offline-font CSS, HTML and PDF composite outputs. Generated visuals retain the tool, model-disclosure boundary, final generation specification, input hash and human review. The Noto Sans SC offline subset and all four PDFs use the SIL OFL 1.1 chain; Sentinel backgrounds retain Copernicus attribution. Candidate names and logo grammar are participant-originated research directions, not registered marks or approved public brands. Third-party names are used only for attribution or factual identification, without logos or endorsement claims. This clearance covers `COMMUNITY-DISPLAY-ONLY`; new assets, commercial use, trademark registration, permanent signage or governmental publication reopen G-Rights/G-Brand. Official boundary, field survey, interviews, professional signatures, named operators, and runtime baselines remain external dependencies; they are not filled by the model. [source:SOURCE-USE-MATRIX] [data:visual/assets/asset_rights_register.json] [data:visual/assets/generated_visuals_manifest.json]
 
 ## References
 

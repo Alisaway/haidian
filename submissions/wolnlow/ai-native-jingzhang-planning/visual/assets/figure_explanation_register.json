@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
-  "purpose": "为所有中英证据图提供图名、核心判断、京张场地依据、状态限制和证据入口，避免图像文字缺失或视觉精度替代事实精度。",
-  "figure_count": 19,
+  "purpose": "为所有中英证据图提供图名、核心判断、京张场地依据、状态限制和证据入口；正式方法图同时完成图内文字，避免空模板或视觉精度替代事实精度。",
+  "figure_count": 24,
   "required_caption_fields": [
     "title",
     "core_judgement",
@@ -318,6 +318,87 @@
       "title_en": "When the City Begins to Think: panoramic vision of an AI-native Jingzhang",
       "core_judgement_en": "Jingzhang's future value comes from a public railway spine supporting heritage, everyday life, innovation and reversible AI services—not an isolated technology spectacle.",
       "jingzhang_grounding_en": "Uses the heritage railway, park continuity, three study-area tasks and ordinary public use as narrative cues without reconstructing or locating specific buildings."
+    },
+    {
+      "figure_id": "FIG-20",
+      "title": "AI原生规划八步闭环",
+      "zh_path": "assets/figures/ai-native-eight-step-loop.png",
+      "en_path": "assets/figures/ai-native-eight-step-loop.en.png",
+      "core_judgement": "Agent参与完整规划链，但每一步都可在证据、空间、风险或权利门前退回。",
+      "jingzhang_grounding": "把京张的资料准入、图谱、识别、场景、实施、监测和分众发布组织为可回写流程。",
+      "status_and_limit": "Method relationship; not automated approval, statutory decision or deployment.",
+      "evidence_entry": [
+        "proposal.md#项目思考从做一套规划转向构建一个可持续学习的城市系统",
+        "visual/assets/agent_planning_process_ledger.json"
+      ],
+      "title_en": "Eight-step AI-native planning loop",
+      "core_judgement_en": "Agents participate across the chain, but every step can return at evidence, spatial, risk or rights review.",
+      "jingzhang_grounding_en": "Organises Jingzhang source admission, graphing, reasoning, scenarios, operations, monitoring and release into a feedback process."
+    },
+    {
+      "figure_id": "FIG-21",
+      "title": "四重城市基因与公共学习回路",
+      "zh_path": "assets/figures/ai-native-overall-thinking.png",
+      "en_path": "assets/figures/ai-native-overall-thinking.en.png",
+      "core_judgement": "铁路遗产、中关村创新、既有公共生活和AI快变量必须以不同时间尺度共同进入城市学习回路。",
+      "jingzhang_grounding": "以铁路公共脊梁组织空间接力、知识交接、公众进入与运行回写。",
+      "status_and_limit": "Concept relationship; not an official boundary, exact location or build commitment.",
+      "evidence_entry": [
+        "proposal.md#项目思考从做一套规划转向构建一个可持续学习的城市系统",
+        "assumptions.json"
+      ],
+      "title_en": "Four urban genes and a public learning loop",
+      "core_judgement_en": "Railway heritage, Zhongguancun innovation, existing public life and fast AI must enter one learning loop at different speeds.",
+      "jingzhang_grounding_en": "Uses the railway public spine to organise spatial relay, knowledge handoff, public entry and operational feedback."
+    },
+    {
+      "figure_id": "FIG-22",
+      "title": "总纲转译为五个规划动作",
+      "zh_path": "assets/figures/ai-native-five-actions.png",
+      "en_path": "assets/figures/ai-native-five-actions.en.png",
+      "core_judgement": "总纲三个统一认识只有被转成证据、识别、空间、运营和成果动作才可验收。",
+      "jingzhang_grounding": "把七类底数、三区六点、六段转化和分众成果纳入同一双向回路。",
+      "status_and_limit": "Research-method diagram; point references are candidate samples, not approvals.",
+      "evidence_entry": [
+        "proposal.md#项目思考从做一套规划转向构建一个可持续学习的城市系统",
+        "compliance_matrix.json"
+      ],
+      "title_en": "Five planning actions from the research outline",
+      "core_judgement_en": "The outline becomes verifiable only through evidence, reasoning, spatial, operational and output actions.",
+      "jingzhang_grounding_en": "Connects seven datasets, three areas/six points, six-stage conversion and audience-specific outputs in one loop."
+    },
+    {
+      "figure_id": "FIG-23",
+      "title": "一带三区两翼与三层尺度",
+      "zh_path": "assets/figures/three-scales-spatial-structure.png",
+      "en_path": "assets/figures/three-scales-spatial-structure.en.png",
+      "core_judgement": "三层尺度通过铁路公共脊梁与三区两翼形成任务和证据递进，而不是三张独立地图。",
+      "jingzhang_grounding": "直接标注众智园、AI原点社区、大钟寺、两翼和六个首期候选点。",
+      "status_and_limit": "NTS concept relationship; no official boundary, road, station entrance or engineering alignment.",
+      "evidence_entry": [
+        "proposal.md#三层范围工作框架",
+        "visual/assets/base-map-manifest.json",
+        "assumptions.json"
+      ],
+      "title_en": "One Belt–Three Areas–Two Wings and three planning scales",
+      "core_judgement_en": "Three scales form a task and evidence progression through the railway spine and differentiated areas.",
+      "jingzhang_grounding_en": "Labels Zhongzhiyuan, AI Origin, Dazhongsi, two wings and six first-move candidates."
+    },
+    {
+      "figure_id": "FIG-24",
+      "title": "六类专业Agent与五道人类决策门",
+      "zh_path": "assets/figures/six-agents-five-gates.png",
+      "en_path": "assets/figures/six-agents-five-gates.en.png",
+      "core_judgement": "六类Agent围绕共享证据并行生成候选，但事实、价值、空间、试点和发布由人类门控制。",
+      "jingzhang_grounding": "六类官方任务以同一证据图谱和退出协议协作，并接受退回、暂停和否决。",
+      "status_and_limit": "Planning-production governance; not an organisational commitment or deployed city-agent system.",
+      "evidence_entry": [
+        "proposal.md#六类-agent-任务的实质成果",
+        "visual/assets/agent_planning_process_ledger.json"
+      ],
+      "title_en": "Six specialist agents and five human decision gates",
+      "core_judgement_en": "Six agents generate candidates around shared evidence; humans retain facts, value, space, pilots and release.",
+      "jingzhang_grounding_en": "The six official tasks share an evidence graph and exit protocol, with return, pause and rejection."
     }
   ],
   "required_caption_fields_en": [
