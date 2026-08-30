@@ -6,18 +6,24 @@
  * Source: visual/assets/v13-implementation.json plus the existing submission files.
  * Outputs: two fixed bilingual figures, bilingual proposal/visual HTML inputs,
  * four PDFs, and synchronized evidence records. No network access is used.
+ * Run with --font-only after render_proposal_html.py to restore offline CJK
+ * coverage without loading the optional canvas/PDF build dependencies.
  */
 
 const fs = require('fs');
 const path = require('path');
-const { createCanvas, GlobalFonts, loadImage } = require('@napi-rs/canvas');
-const { PDFDocument } = require('pdf-lib');
+let createCanvas;
+let GlobalFonts;
+let loadImage;
+let PDFDocument;
 
 const ROOT = path.resolve(__dirname, '..', '..');
 const DATA_PATH = path.join(__dirname, 'v13-implementation.json');
 const DATA = JSON.parse(fs.readFileSync(DATA_PATH, 'utf8'));
 const FIGURES = path.join(ROOT, 'assets', 'figures');
 const DRAWINGS = path.join(ROOT, 'drawings');
+const EMBEDDED_FONT_START = '/* SLOWLINE_EMBEDDED_NOTO_SANS_SC */';
+const EMBEDDED_FONT_END = '/* SLOWLINE_EMBEDDED_NOTO_SANS_SC_END */';
 
 const C = {
   ink: '#14263a',
@@ -41,9 +47,14 @@ const C = {
 const FONT_CJK = '/System/Library/Fonts/STHeiti Medium.ttc';
 const FONT_LATIN = '/System/Library/Fonts/Supplemental/Arial.ttf';
 const FONT_LATIN_BOLD = '/System/Library/Fonts/Supplemental/Arial Bold.ttf';
-if (fs.existsSync(FONT_CJK)) GlobalFonts.registerFromPath(FONT_CJK, 'SlowLineCJK');
-if (fs.existsSync(FONT_LATIN)) GlobalFonts.registerFromPath(FONT_LATIN, 'SlowLineLatin');
-if (fs.existsSync(FONT_LATIN_BOLD)) GlobalFonts.registerFromPath(FONT_LATIN_BOLD, 'SlowLineLatinBold');
+
+function loadBuildDependencies() {
+  ({ createCanvas, GlobalFonts, loadImage } = require('@napi-rs/canvas'));
+  ({ PDFDocument } = require('pdf-lib'));
+  if (fs.existsSync(FONT_CJK)) GlobalFonts.registerFromPath(FONT_CJK, 'SlowLineCJK');
+  if (fs.existsSync(FONT_LATIN)) GlobalFonts.registerFromPath(FONT_LATIN, 'SlowLineLatin');
+  if (fs.existsSync(FONT_LATIN_BOLD)) GlobalFonts.registerFromPath(FONT_LATIN_BOLD, 'SlowLineLatinBold');
+}
 
 function read(rel) {
   return fs.readFileSync(path.join(ROOT, rel), 'utf8');
@@ -61,6 +72,37 @@ function readJson(rel) {
 
 function writeJson(rel, value) {
   write(rel, JSON.stringify(value, null, 2) + '\n');
+}
+
+function embeddedFontCss() {
+  for (const rel of ['visual/index.html', 'visual/index.en.html', 'report/proposal.html', 'report/proposal.en.html']) {
+    const html = read(rel);
+    const start = html.indexOf(EMBEDDED_FONT_START);
+    const end = html.indexOf(EMBEDDED_FONT_END, start);
+    if (start >= 0 && end >= 0) {
+      return html.slice(start, end + EMBEDDED_FONT_END.length);
+    }
+  }
+  throw new Error('Embedded SlowLineSans CSS source is missing.');
+}
+
+function ensureEmbeddedFont(rel, fontCss) {
+  let html = read(rel);
+  const start = html.indexOf(EMBEDDED_FONT_START);
+  const end = html.indexOf(EMBEDDED_FONT_END, start);
+  if (start >= 0 && end >= 0) {
+    html = html.slice(0, start) + fontCss + html.slice(end + EMBEDDED_FONT_END.length);
+  } else {
+    html = html.replace('<style>', `<style>\n    ${fontCss}`);
+  }
+  write(rel, html);
+}
+
+function restoreEmbeddedFonts() {
+  const fontCss = embeddedFontCss();
+  for (const rel of ['report/proposal.html', 'report/proposal.en.html', 'visual/index.html', 'visual/index.en.html']) {
+    ensureEmbeddedFont(rel, fontCss);
+  }
 }
 
 function uniqPush(array, value) {
@@ -1133,6 +1175,12 @@ async function buildPdf(lang, format) {
 }
 
 async function main() {
+  if (process.argv.includes('--font-only')) {
+    restoreEmbeddedFonts();
+    process.stdout.write(JSON.stringify({ ok: true, outputs: ['report/visual HTML font coverage zh/en'] }, null, 2) + '\n');
+    return;
+  }
+  loadBuildDependencies();
   updateAssumptions();
   updateMetrics();
   updateProposal('proposal.md', 'zh');
@@ -1147,6 +1195,7 @@ async function main() {
   await buildMetricsFigure('en');
   updateVisualHtml('visual/index.html', 'zh');
   updateVisualHtml('visual/index.en.html', 'en');
+  restoreEmbeddedFonts();
   await buildPdf('zh', 'A0');
   await buildPdf('en', 'A0');
   await buildPdf('zh', 'A3');

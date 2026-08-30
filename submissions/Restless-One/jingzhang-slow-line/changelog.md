@@ -11,6 +11,7 @@
 - 将尺寸、任务、Gate、BOQ、成本和验收折入固定 `key-areas` 与 `metrics-evidence` 中英图；在双语 HTML 首屏与四份 PDF 第一页加入 30 秒 P0 摘要。
 - A3 第 3/4 页改为同源原生重排：第 3 页专读任务、责任和 Gate，第 4 页专读 BOQ、成本和两层验收，消除重复整图并提升人工翻阅可读性。
 - 增加可重复构建源 `visual/assets/v13-implementation.json` 与脚本 `visual/assets/build-v13.js`，由同一数据源重建图件、正文证据、可视化与 PDF。
+- 回应 PR #4267 的中文 HTML 缺字阻断：为四个中英文 HTML 内嵌同一 Noto Sans SC 字符子集，并在 `build-v13.js --font-only` 中提供无制图依赖的幂等恢复步骤，避免公共报告渲染器重建后丢失离线字体。
 <!-- V1.3_CHANGELOG_END -->
 
 ## v1.2 - 2026-08-29

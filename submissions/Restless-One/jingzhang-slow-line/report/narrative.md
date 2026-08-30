@@ -15,7 +15,7 @@
 
 当前结果刻意不是“全绿”：包内路径、侵占、非 AI 覆盖、Gate 默认关闭、错误输入 HOLD 与退出流程等 6 项成立；审计完整度和 AI-off 人工等价仍为 11/12，因此 2 项 HOLD。现场轮椅/低视力任务、老人取得人工服务用时、真人响应、人流冲突、噪声、照明、排水、微气候、居民接受、排班与真实成本没有基线，12 项继续 HOLD。这个差异是本轮可实施性证据的核心，不以合成任务或虚构旅程替代现实表现。
 
-固定评审入口已改为 `key-areas` 的同源 P0 尺寸图与 `metrics-evidence` 的任务—数量—成本—验收图；视觉 HTML 首屏和 A0/A3 第一页均显示 30 秒摘要。所有派生成果由 `visual/assets/v13-implementation.json` 和 `visual/assets/build-v13.js` 重建，随后再由仓库报告渲染与四门自检收口。
+固定评审入口已改为 `key-areas` 的同源 P0 尺寸图与 `metrics-evidence` 的任务—数量—成本—验收图；视觉 HTML 首屏和 A0/A3 第一页均显示 30 秒摘要。所有派生成果由 `visual/assets/v13-implementation.json` 和 `visual/assets/build-v13.js` 重建；仓库报告渲染完成后，再运行 `node submissions/Restless-One/jingzhang-slow-line/visual/assets/build-v13.js --font-only` 恢复四个 HTML 的离线字体，最后刷新 manifest 并执行四门自检。
 <!-- V1.3_NARRATIVE_END -->
 
 ## 0. 成果阅读入口
