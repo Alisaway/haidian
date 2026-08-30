@@ -36,7 +36,10 @@
 | assets/figures/land-use-structure.png 及 .en.png | 同上 | 无 | 是 | 概念结构图 |
 | assets/figures/key-areas.png 及 .en.png | 同上 | 无 | 是 | 概念分区图 |
 | assets/figures/mobility-bluegreen.png 及 .en.png | 同上 | 无 | 是 | 概念交通蓝绿图 |
-| assets/figures/metrics-evidence.png 及 .en.png | 同上 | 无 | 是 | 指标证据图 |
+| assets/figures/ecosystem-map.png 及 .en.png | 同上 | 无 | 是 | agent.2 生态图谱（概念） |
+| assets/figures/component-library.png 及 .en.png | 同上 | 无 | 是 | agent.4 组件库（概念） |
+| assets/figures/culture-signage.png 及 .en.png | 同上 | 无 | 是 | agent.5 导视层级（概念） |
+| assets/figures/operations-calendar.png 及 .en.png | 同上 | 无 | 是 | agent.6 运营节奏（概念） |
 
 无肖像、无未授权商标、无私人室内、无爬取的平台原图。
 
@@ -55,8 +58,10 @@
 
 ## 6. 字体与工具链
 
-- HTML / PDF：系统回退与文泉驿微米黑（WenQuanYi Micro Hei）
-- 构建：Python 3、官方 `render_proposal_html.py` / `finalize_submission.py` / `self_check_submission.py`
+- HTML 离线中文：文泉驿微米黑（WenQuanYi Micro Hei / Droid Sans Fallback）字符子集以 `data:font/woff2` 内嵌于 `report/proposal.html`、`visual/index.html` 及其英译页，Apache License 2.0。不依赖 CDN，不依赖评审机系统字体，不单独存放 `.woff2` 文件。
+- PDF：PyMuPDF 按 A3/A0 点阵嵌入图件；正文 HTML 由官方 `render_proposal_html.py` 生成后注入 `@font-face`。
+- 图件：`/root/.cursor/skills/draw`（draw_batch / draw.py），制图日期 2026-08-30。
+- 构建：Python 3、官方 `finalize_submission.py` / `refresh_submission_manifest.py` / `self_check_submission.py`
 - 不把密钥写入仓库
 
 ## 7. 联系

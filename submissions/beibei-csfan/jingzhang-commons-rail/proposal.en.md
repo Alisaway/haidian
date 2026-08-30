@@ -10,8 +10,8 @@ license: "COMMUNITY-DISPLAY-ONLY"
 summary: "A walkable, verifiable, switch-off public gallery stitches a three-gate funnel: Ready Gate at Zhongzhiyuan, Shared-Measure Gallery at Origin Community, and Operations Handover Hall at Dazhongsi. Boundaries are provisional; three core metrics are recalculated from this package in EPSG:4548."
 tracks: ["ai-traffic-walkability", "civic-agent-governance", "youth-friendly-public-space"]
 scenarios: ["ai-traffic-walkability", "ai-cultural-guide", "public-safety-operations-review"]
-iteration: 1
-version: "1.0.0"
+iteration: 2
+version: "1.1.0"
 ---
 
 # Jingzhang Commons Gallery
@@ -50,7 +50,20 @@ Three positions become space: a global AI highland maps to Ready Gate’s edge-a
 
 The two wings are interfaces only: the Zhongguancun wing offers enterprise-service booking; the Xiaoyuehe wing offers scenario-opening booking. No fake wing redline is drawn. Regional synergy is a functional-division suggestion: Haidian offers a walkable verification gallery; other parks may offer pilot plants, large instruments, or manufacturing interfaces—all marked conceptual.
 
-Eight ecology cases keep mechanisms only: Barcelona superblocks (tactical public reclaim), Seoul Cheonggyecheon (everyday corridor), Singapore Park Connector (continuous walking), Helsinki MyData (switch-off data), Barcelona Decidim (public review), Copenhagen bicycle streets (ordinary path first), Vienna Seestadt (phased trials), and Taipei open government (evidence windows). In Haidian they become the no-login section, gallery continuity, switch-off rule, objection window, and phasing—not copied street widths or fixtures.
+Eight ecology cases keep mechanisms only and are mapped onto Zhongzhiyuan, Origin Community, the Zhongguancun wing, and scenario cards. Street widths, fixtures, firm lists, and investment figures are not copied [metric:ecology_case_count].
+
+| ID | Public case (mechanism) | Lands in this package | Scenes | Do not copy |
+| --- | --- | --- | --- | --- |
+| C1 | Barcelona superblocks: tactical, reversible public reclaim | Origin gallery public face, youth third space | S05 | Street widths or tactical furniture |
+| C2 | Seoul Cheonggyecheon: everyday walkable corridor | North–south Commons Gallery spine | S01 | Channel engineering |
+| C3 | Singapore Park Connector: continuous walk network | Spine + three gate connectors | S01 S09 | Overseas mileage or sign families |
+| C4 | Helsinki MyData: data that can be switched off | No-login section and objection window | S01 S12 | Claiming a live MyData deployment |
+| C5 | Barcelona Decidim: public review | Human objection window | S12 | Writing it as an adopted statute |
+| C6 | Copenhagen bicycle streets: ordinary path first | No-login slow spine | S01 S09 | Lane geometry or flow pledges |
+| C7 | Vienna Seestadt: phased trials | Near–mid–far partition and Ready Gate windows | S02 S07 | FAR or investment timing |
+| C8 | Taipei open government: evidence windows | Three heritage windows on the gallery | S06 | UI skins or uncleared archives |
+
+The land/space, industry, capital, talent, compute, data, and scenario loop is drawn in the next chapter. No fake wing redline is added at the coordinated layer.
 
 ## Overall Design Area: Urban Renewal and Regulatory-Plan-Level Urban Design
 
@@ -110,6 +123,20 @@ The ecology is not a tenant brochure. Eight case mechanisms, twelve scenario car
 
 Test scenes are at least S02, S03, and S07. AI only organises public evidence and bookings; it does not replace human final calls. After AI is switched off, the spine, gates, hall, and ordinary path still stand.
 
+The factor loop is a concept, not a tenant brochure or fiscal pledge. Capital amounts, compute-room capacity, and firm names stay unknown.
+
+| Factor | Conceptual provider | Use boundary | Human review | Stop rule | Conversion path |
+| --- | --- | --- | --- | --- | --- |
+| Land / space | Park and transport deepening team (concept) | Public section inside the provisional site only | Spatial layers; full recalc after official geometry | Conflict with a future official redline returns the claim to concept | CG-10 full recalc |
+| Industry | Zhongguancun-wing enterprise interface | Appointment tickets; stays outside this polygon | Enterprise desk | Fake wing redline | S11 method interface; no investment figure |
+| Capital | Not supplied | No fiscal or private-capital pledge | — | Delete any invented amount | Later authorised finance work |
+| Talent | Origin near-campus service (concept) | Voluntary, withdrawable | Campus–district joint | Personal-track capture | Measure-day experience, not a job offer |
+| Compute | Ready Gate edge test yard | On-site aggregates; no MW rooms | Safety officer | Fence on the slow spine | Test hours, not a data-centre promise |
+| Data | Public wayfinding and voluntary repair tickets | No biometrics, no personal tracks | Human final call | Writing campus or firm data as already open | S06 evidence windows, S12 objection text |
+| Scenario | Xiaoyuehe-wing booking + gate duty | Apply–review–open–monitor–pause–review | Duty plus safety / heritage advisers | Paid gate cuts the public face | Cards S01–S12; permits separate |
+
+![AI innovation ecosystem map (concept)](assets/figures/ecosystem-map.en.png)
+
 ## Land Use, Building Scale, and Retain-Renovate-Demolish Strategy
 
 Land use tiles the provisional site without gaps or overlaps. The gallery is 1401; north research is 0802; near-campus education is 0804; living is 0701; mid mixed services are 09; south commerce is 0901 with community service 0702 [data:geometry/land_use.geojson#LU-READY-R&D]. These are design-model classes using the MNR code subset, not approved land-use sheets [standard:MNR-LAND-USE-CLASSIFICATION-GUIDE].
@@ -140,7 +167,38 @@ Three pilgrimage landmarks hold only checkable public fields; experiments stay o
 2. Shared-Measure Q&A Wall: public near-campus Q&A and measure-day calendar.
 3. Operations Handover Clock Gallery: shifts, egress, ordinary night path.
 
-Character rules: light ground, thin lines, restrained bands, bilingual labels, north arrow and legend. No cyber neon, glassmorphism, or provisional rectangles as the composition hero. Youth-friendliness is third space and an ordinary night path, not café renderings.
+Honor display is not a corporate trophy wall. The three landmarks show only checkable public fields that can be read without an account [metric:landmark_count]: Ready Gate shows booking windows, fence range, and stop rules; the Shared-Measure Gallery shows public near-campus Q&A and the measure-day calendar; the Clock Gallery shows shifts, egress, and the ordinary night path. All sizes, materials, and furniture are concept suggestions pending official controls and tenure.
+
+Public-space component library (concept; usable without an account):
+
+| Component | Node | Public / test | No-login fallback | Conceptual steward | Stop rule |
+| --- | --- | --- | --- | --- | --- |
+| Verification kiosk | Ready Gate plaza | Public read / test inside | Paper timetable | Park ops + safety officer | Fence on the slow spine |
+| Q&A wall | Origin gallery | Public | Chalk / paper cards | Campus–community | Posted personal data |
+| Clock-gallery shift board | Dazhongsi hall | Public | Analog clock + printed shifts | Station-city ops | Blocking egress |
+| No-login walk section | Full spine | Public | Physical path always open | Park / transport team | Login turnstile |
+| Objection-window desk | Three gate duty points | Public | Paper form | Human reviewer | Automated over-blocking |
+| Shade rest module | Three plazas | Public | Bench without an app | Community duty | Charging for sitting |
+| Accessible repair post | Three plazas | Public | Phone number + paper ticket | Access officer | Treating grades as surveyed |
+| Ordinary night lighting | South green edge | Public | Always-on ordinary lights | Community + lighting | Forced exhibition lighting |
+
+![Public-space component assembly (concept)](assets/figures/component-library.en.png)
+
+Cultural resources use public facts only and are not written as approved heritage works [source:OFFICIAL-ANNOUNCEMENT] [source:AGENT-TASKBOOK].
+
+| Public resource | Spatial carrier | Signage layer | Source boundary |
+| --- | --- | --- | --- |
+| Public Jing-Zhang railway facts | Three gallery windows | Cultural mark; must not replace the belt logo | Announcement and public history; no uncleared images |
+| Zhongguancun open-innovation narrative | Origin Q&A wall | Gate node mark (shared-measure) | Taskbook narrative, not a firm mark |
+| Everyday station-city handover | Handover hall | Gate node mark (operate) | Public station context, not an approved rebuild |
+| Belt identity | Full gallery | Belt logo (rail section + openable door) | This package; no corporate badge |
+| Event brand | Annual Commons Open Day | Event brand, time-limited | Not a fixed government date before a permit |
+
+Mixing rule: the belt logo marks the whole gallery only; cultural marks carry public facts only; the three gate marks distinguish ready / measure / operate; the event brand must not replace the logo. Conceptual landmarks must not be drawn as approved memorials [standard:MOHURD-URBAN-DESIGN-MEASURES].
+
+![Culture resources and signage hierarchy (concept)](assets/figures/culture-signage.en.png)
+
+Character rules: light ground, thin lines, restrained bands, bilingual labels, north arrow and legend. No cyber neon, glassmorphism, or provisional rectangles as the composition hero. Youth-friendliness is third space and an ordinary night path, not café renderings. Title blocks name submitter `beibei-csfan` and “Concept proposal”; they do not invent a client committee or a Formal Plan. Drawing date 2026-08-30.
 
 ## Renewal Projects, Implementation Policy, and Phasing
 
@@ -159,7 +217,25 @@ Phasing faces match the project list. Near, mid, and far polygons come from this
 | CG-09 | Annual Commons Open Day | Full gallery | Recurring | Host + human review | Event permit |
 | CG-10 | Full recalc after official geometry | Whole package | Conditional | Package maintainer | Official polygons |
 
-Long-term operation: the ordinary path stays open; tests use intermittent windows; one annual Commons Open Day versions the review; the objection window keeps a human final call. The failure-review door is S12, not an automated scoreboard.
+The long-term operations pack is a conceptual rhythm, not a government-set calendar. Every session is triggered by event permits, site authorisation, and safety rules [depth:phasing_implementation].
+
+Annual mix (no public date before a permit):
+
+| Cadence | Conceptual event | Place | Roles | Trigger |
+| --- | --- | --- | --- | --- |
+| Daily | No-login walk, shift board, objection-window duty | Gallery + gates | Park duty, human reviewer | None; path always open |
+| Intermittent | Ready Gate bounded test window | Zhongzhiyuan edge | Safety officer, test applicant | Test safety rules |
+| Seasonal | Measure day; after-rain audit walk | Origin gallery / full gallery | Campus–district joint; municipal observer | Site permit; no tracks |
+| Annual | Commons Open Day + failure review (S12) | Full gallery | Host, heritage adviser, access officer | Event permit |
+| Conditional | Public recalc note after official geometry | Whole package | Package maintainer | Official polygons |
+
+Developer-community roles, not a firm roster: package maintainer, scenario applicant, safety reviewer, heritage adviser, access officer, community observer. Scenario opening follows apply → safety/privacy/heritage review → time-boxed open → monitor → pause or stop → versioned review. Landmark upkeep uses the same component table; a damaged or over-reaching piece is taken out of service.
+
+Brand / IP: only 京张共证廊 / Jingzhang Commons Gallery and the time-limited event name Commons Open Day. The belt logo and the event sticker must not be swapped. The international door is bilingual figures plus the English name; no uncleared festival trademark is invented. Conversion stays non-promissory: talent gains measure-day experience, not a job; firms gain an S11 method interface, not investment; developers submit patches through evidence windows, not procurement.
+
+Concept KPIs (internal checks, not official targets): the spine remains walkable with AI off (yes/no); tests never occupy the slow spine (stop count); the objection window ends with a human call (logged items); zero personal-track collection (spot check); CG-10 recalc after official geometry (yes/no). Capital, investment promotion, visitor counts, and output value are not written.
+
+![Annual operations and scenario-opening flow (concept)](assets/figures/operations-calendar.en.png)
 
 ## Metrics, Area Recalculation, and Compliance Matrix
 
