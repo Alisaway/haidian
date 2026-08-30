@@ -277,6 +277,26 @@ The reference removal target is four people for four hours, or sixteen person-ho
 
 The four options alter the carrier and spatial envelope only; none changes the public floor. If no option can preserve staffed service, dual-control roles, continuous access and restoration in an existing authorised setting without permanent works, the correct answer is A0: do not start [metric:p0_alternative_option_count].
 
+#### Professional Handoff Ladder | From 1:500 Screening to the 1:20 Interface
+
+A 6 × 6 m operating patch cannot be pasted directly onto an unknown site. `visual/assets/governance/implementation-handoff-register.json` therefore adds two participant-authored scales outside the existing P0 **only to reject wrong placements**. A 24 × 24 m candidate-position window screens the existing public path, two open edges, loading/rescue, placeholder tree/heritage/metro/utility conflicts and a removal route. A 12 × 12 m no-fixed-work coordination court reserves room for the no-AI bypass, queue diversion, two turning spaces, shift change and removal staging. At 576 m² and 144 m², they are design screens—not new occupation, paving, road redlines, fire-appliance space or real siting [metric:p0_site_screening_window_area_sqm] [metric:p0_coordination_court_area_sqm].
+
+![P0 professional implementation handoff: screen outside-in from 24 m context to 12 m coordination, 7.2 m control and 6 m operating patch; five scaled drawings, nine projects, six packages, eleven modules, twelve external gates, a T00–T11 conditional programme and sixteen unpriced quantity lines all remain on HOLD](assets/figures/implementation-handoff.en.png)
+
+| Drawing level | Question answered now | What remains for real inputs and professional sign-off |
+| --- | --- | --- |
+| **1:500 candidate-position screen** | Whether a 24 × 24 m window can keep continuous passage, two open edges, rescue/loading access and a removal route | Official extent, title, trees, heritage/metro, utilities, rescue and real movement |
+| **1:200 coordination relationship section** | Whether a 12 × 12 m court can retain the no-AI bypass, existing shelter and removal without permanent foundations | Levels, weather, drainage, structure, foundations, lighting, MEP and real shelter |
+| **1:100 P0 control plan** | Whether the 7.2 × 7.2 m control, 6 × 6 m patch, 1.8 m loop, two openings and two turning spaces share one source | Statutory occupancy, fire egress, accessibility compliance and site measurement |
+| **1:50 operating overlay** | Whether eight public users, three role seats, the six-person queue stop and two non-consumption seats avoid mutual obstruction | Real demand, service rate, queue, employment, insurance and field behaviour |
+| **1:20 service interface** | Whether the 2.4 × 1.2 m unanchored two-face island, seated/standing approach, stop, paper/tactile carriers and protected cable can pass to fabricators | Product selection, stability, power, materials, fire, durability and professional details |
+
+The pure geometric centre-to-corner distance of the control envelope is `√(3.6²+3.6²)=5.091 m`; the two 1.8 m openings have a combined target width of 3.6 m. These values let jurors reproduce the geometry only; they are not egress-time, exit-capacity, smoke-control, fire-safety or occupancy conclusions [metric:p0_control_envelope_half_diagonal_m] [metric:p0_combined_opening_target_m]. If any outside screen fails, the scheme may not squeeze the loop, turning, openings or staffed service to force A2 onto the site; it switches to A1/A3 or directly to A0.
+
+The P0 is also placed inside a whole-proposal delivery portfolio: **four conditional release states and nine projects** [metric:implementation_release_state_count] [metric:implementation_delivery_project_count], followed by **six delivery packages and eleven independently rejectable implementation modules** [metric:implementation_delivery_package_count] [metric:implementation_module_count], connect official rebind, the three handover yards, eight links, twenty cells, annual operation and retirement closeout. The existing eight entry gates remain the public-facing start/stop test. The new **twelve documentary gates** merely decompose them into future professional receipts for official base, site right, procedure, public-rights baseline, fire, accessibility, temporary structure, MEP/utilities, budget/procurement, operator/insurance, data/consent and assembly/opening/restoration. Every gate is currently `HOLD`; receipts are **0/12** [metric:implementation_documentary_gate_count] [metric:implementation_gate_receipt_count].
+
+Future responsibility is split into twelve role classes, but named appointments remain **zero** [metric:implementation_role_class_count] [metric:implementation_named_role_appointment_count]. The fifteen-week reference contains `T00–T11` and starts only after a real documentary T0; sixteen quantity lines have derivations and units while field quantities, formal rates and amounts all remain `null` [metric:implementation_conditional_task_count] [metric:implementation_unpriced_quantity_line_count]. Of twelve handoff indicators, eight can now judge only whether IDs, arithmetic, references, gate states and null boundaries close; four must await field access, professional sign-off, twenty-four co-tests and removal/reinstatement. **8/12 judgeable now** must never be relabelled as 8/12 field acceptance [metric:implementation_handoff_acceptance_indicator_count] [metric:implementation_handoff_judgeable_now_count].
+
 #### Eight Gates Before Authorisation
 
 | Gate | Required evidence | If the gate fails |
@@ -306,9 +326,9 @@ The eight criteria do not hide inequity inside satisfaction averages. Core outco
 
 #### Formal-review Handover | Package Closure Is Not Field Permission
 
-The latest official review passed all four deterministic, spatial, visual and professional-evidence gates and scored the package **96/100**, including **5/5** for public interest and inclusion and **4/5** for implementation feasibility. Its seven “next actions” mix full-jury review procedure, organiser-owned official data, future field-entry conditions and a future gate for public-performance claims. `visual/assets/governance/review-3825-readiness-matrix.json` classifies every item so that future implementation responsibilities are not mistaken for a current package omission—and so that actors, authorisation, quotations, insurance, budget, signatures or user data are never fabricated merely to make the proposal look implementable.
+The latest official review before this round (PR #4268) passed all four deterministic, spatial, visual and professional-evidence gates and scored the package **96/100**. All other six dimensions scored **5/5**; the sole remaining gap was implementation feasibility at **4/5**. The outcome was `formal-review-ready`, with no blocking changes, and the package was approved for intake and merged. `visual/assets/governance/review-3825-readiness-matrix.json` preserves that historical fact and classifies the earlier seven “next actions” so future field responsibilities are not mistaken for a current package omission—and so actors, authorisation, quotations, insurance, budget, signatures or user data are never fabricated merely to make the proposal look implementable. The 96 is not this round's self-score, an award, government approval or field permission.
 
-This round adds only implementation evidence the participant can honestly complete now: P0 reference plan and capacity arithmetic, a three-seat roster, 90-day and annual cost sensitivity, maintenance/removal cycles, four trigger-based alternatives, and 30-second/3-minute/15-minute review paths. It does not fill in a real site, actor, quote, insurance, budget, professional sign-off or field observation; the original eight gates continue to block them.
+This round still adds only implementation evidence the participant can honestly complete now. Beyond the P0 reference plan, capacity, roster, cost sensitivity, maintenance/removal, four alternatives and juror paths, it adds the 24×24 m—12×12 m—7.2×7.2 m—6×6 m nested envelopes; a 1:500—1:20 drawing chain; four release states; nine delivery projects; six work packages; eleven modules; twelve documentary gates; twelve professional role classes; the `T00–T11` conditional programme; sixteen unpriced quantity lines; and twelve handoff indicators. It fills in no real site, actor, quotation, insurance, budget, professional sign-off or field observation; the original eight gates and all twelve documentary gates continue to block activation.
 
 | Decision layer | Current state | Who closes it and when | May this submission fill it in? |
 | --- | --- | --- | --- |
@@ -338,7 +358,7 @@ International communication uses one identity—**HANDOVER LINE**. A visitor enc
 
 ## Metrics, Area Recalculation, and Compliance Matrix
 
-`metrics.json` contains **100 metrics, 86 of them valued and 14 pending**. The 86 valued metrics derive from GeoJSON, synthetic rehearsals, design contracts, machine checks or explicitly labelled participant pre-feasibility inputs. Fourteen entries added in this round record only P0 control/operating area, conservative capacity, the three-seat roster, queue stop line, scheduling headroom, cost/operating sensitivity, four alternatives and an untested removal target. None is a formal site, statutory occupancy, market quote, approved budget or delivered performance claim. “8/8 requirement fixtures”, “24 planned sessions”, “approximately CNY 0.12–0.29 million sensitivity” and “zero real observations” remain distinct design-coverage, future-sampling, participant-sensitivity and evidence-boundary values. The fourteen pending items still include statutory intensity, real handover time, rework rounds, public acceptance, field accessibility and operational effect; none is filled by inference [depth:metrics_recalculation].
+`metrics.json` contains **119 metrics, 105 of them valued and 14 pending**. The 105 valued metrics derive from GeoJSON, synthetic rehearsals, design contracts, machine checks or explicitly labelled participant pre-feasibility and professional-handoff inputs. Nineteen newly added metrics record only the nested envelopes, opening and diagonal arithmetic, drawing scales, delivery portfolio, documentary gates, roles, conditional tasks, unpriced quantities and handoff-indicator counts. None is a formal site, statutory occupancy, market quote, approved budget or delivered performance claim. “8/8 requirement fixtures”, “24 planned sessions”, “approximately CNY 0.12–0.29 million sensitivity”, “8/12 handoff indicators judgeable now” and “zero real observations” remain distinct design-coverage, future-sampling, participant-sensitivity, package-closure and evidence-boundary values. The fourteen pending items still include statutory intensity, real handover time, rework rounds, public acceptance, field accessibility and operational effect; none is filled by inference [depth:metrics_recalculation].
 
 | Observation layer | Current verifiable value | Correct reading |
 | --- | ---: | --- |
@@ -346,6 +366,7 @@ International communication uses one identity—**HANDOVER LINE**. A visitor enc
 | Civic base | approx. 19.8% conceptual green, 9.1% public handover surface | Structural proposals, not net existing gain or statutory ratios |
 | Scenarios | 12 scenarios, including 4 industry-validation scenarios | Every one has a human route, stop condition and exit use |
 | P0 pre-feasibility | 51.84 m² control envelope, 36 m² patch, 8 public + 3 seats, queue stop at 6 | Participant concept screening and sensitivity inputs, not site measurement or statutory occupancy |
+| Professional handoff | 5 drawing scales, 4 release states, 9 projects, 6 packages, 11 modules, 12 documentary gates, 12 roles, 12 conditional tasks, 16 unpriced lines and 12 indicators | Handoff interfaces are reviewable; gate receipts, named appointments, formal rates and construction/opening releases all remain zero |
 | Offline evidence | 12/12 tasks, 48/48 takeover assertions, 96 rule checks | Participant-controlled synthetic validation; not field performance |
 | Field evidence | 0/12 | Not authorised, measured or completed |
 
@@ -376,7 +397,7 @@ The machine-readable identifier is `COMMUNITY-DISPLAY-ONLY`. Until the organiser
 
 ### Evidence Navigation
 
-- **Primary reading:** this file, five core figures, A3/A0 books and `visual/index.en.html`.
+- **Primary reading:** this file, six core figures, A3/A0 books and `visual/index.en.html`.
 - **Technical reading:** `assets/media/technical-evidence-book.md`, preserving the complete prior argument, tables and calculation rules.
 - **Machine review:** `metrics.json`, nine `geometry/*.geojson` layers, `assumptions.json`, `sources.json`, three compliance matrices and `simulation.json`.
 - **Protocol evidence:** schemas, synthetic ledgers, rule checks, model shadow test and measurement protocol under `visual/assets/governance/`.

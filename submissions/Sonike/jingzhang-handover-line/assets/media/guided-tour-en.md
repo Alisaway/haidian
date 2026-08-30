@@ -59,7 +59,7 @@ This video introduces no new claim. **Three provenance statements need to be sep
 
 **Licence.** This package carries the `COMMUNITY-DISPLAY-ONLY` identifier; the rights holders additionally grant that **any use complying with CC BY-NC 4.0 (attribution, non-commercial, changes indicated) is licensed**, and the attribution must carry the sentence "this proposal is open co-creation advice and represents no government decision or approval". This paragraph is identical to the risk-and-compliance section of `proposal.md` and to `report/copyright_statement.md`. The audio and video are locally synthesised and procedurally generated, and contain no real likeness, no real voice sample and no third-party material.
 
-## Short Alternative Text for the Five Core Figures
+## Short Alternative Text for the Six Core Figures
 
 For screen readers and plain-text environments. Each entry states four fixed things: the conclusion of the figure, the key numbers on it, the provisional nature of the boundary, and the conclusions that cannot be drawn from it. Alternative text differs from a caption: a caption explains how to read the figure, while alternative text gives someone who cannot see it the same judgement.
 
@@ -112,3 +112,13 @@ For screen readers and plain-text environments. Each entry states four fixed thi
 **Provisional boundary.** Space, occupancy, rates and targets are participant concept-screening or sensitivity inputs. They touch no live service, use no personal information and provide no field, code, quotation or budget evidence.
 
 **Cannot be concluded from this figure.** Site authorisation, statutory occupancy, market prices, insurance, professional sign-off, field safety, measured accessibility, public acceptance or approval by a competent authority.
+
+### F/06 From 1:500 Screening to a 1:20 Interface (`assets/figures/implementation-handoff.en.png`)
+
+**Conclusion.** Participant-controlled spatial screening, scaled drawings, projects, packages, modules, documentary gates, professional roles, conditional programme, unpriced quantities and handoff acceptance now form one transferable design-evidence chain; every action that depends on a real authorised party remains on HOLD.
+
+**Key numbers.** Four nested envelopes at 24 → 12 → 7.2 → 6 m; five drawings at 1:500, 1:200, 1:100, 1:50 and 1:20; four release states, nine projects, six delivery packages and eleven modules; all twelve documentary gates on HOLD with zero receipts; twelve unappointed role classes; an unstarted T00–T11 fifteen-week conditional programme; sixteen derived quantity lines with no formal rate or amount; twelve handoff indicators, eight judgeable from the package and four reserved for future field evidence.
+
+**Provisional boundary.** The outer 24 m screen tests siting, rescue, conflict and adjacency only; it is neither a selected site nor a new-works extent. The inner dimensions are participant reference envelopes. Formal drawings, site, quantities and appointments await verification by future authorised professionals.
+
+**Cannot be concluded from this figure.** Site rights, named appointments, documentary receipts, real quotations or budget, insurance, professional sign-off, construction or opening, a started fifteen-week clock, or passed field acceptance.

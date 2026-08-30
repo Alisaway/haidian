@@ -2,9 +2,9 @@
 "use strict";
 
 /*
- * Rebuilds only page 1 of the four review PDFs. Pages 2..n are copied from the
- * audited technical drawing set, so page references and technical content remain
- * stable while the AI/human review preview receives the v2.0 spatial thesis.
+ * Rebuilds page 1 and appends/replaces one professional-handoff annex page in
+ * each review PDF. Audited technical pages 2..n remain byte-for-byte page copies;
+ * repeated runs replace the prior annex instead of growing the file indefinitely.
  */
 
 const fs = require("fs");
@@ -21,6 +21,7 @@ const CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
 const QPDF = "/opt/homebrew/bin/qpdf";
 const FONT_CSS = path.join(HERE, "noto-cjk-subset.css");
 const FEASIBILITY = JSON.parse(fs.readFileSync(path.join(HERE, "p0-pre-feasibility-envelope.json"), "utf8"));
+const HANDOFF = JSON.parse(fs.readFileSync(path.join(HERE, "implementation-handoff-register.json"), "utf8"));
 
 function fail(message) {
   process.stderr.write(`${message}\n`);
@@ -78,7 +79,34 @@ const copy = {
   },
 };
 
-function html(lang, format) {
+const handoffCopy = {
+  zh: {
+    lang: "zh-CN",
+    code: "F / 06 · 专业实施交接附页",
+    title: "从 1:500 筛查到 1:20 接口",
+    lead: "不是用一张概念桌替代工程设计，而是把场地筛查、专业深化、采购运营与开放关闭拆成可复算、可拒收、可交给未来责任方接续的证据链。",
+    cards: [
+      ["5 / 4", "图纸尺度／释放状态"], ["9 / 6 / 11", "项目／交付包／实施模块"],
+      ["12 HOLD / 0", "文件闸门／当前回执"], ["12 / 16 / 8", "角色／未计价数量／现可判验收"],
+    ],
+    hold: "具名任命 0 · 正式单价 0 · 施工或开放放行 0 · 真实现场任务 0",
+    boundary: "参赛者专业交接接口，不是测绘、正式工程量清单、报价、预算、许可、专业签认、施工、开放或现场绩效。",
+  },
+  en: {
+    lang: "en",
+    code: "F / 06 · PROFESSIONAL IMPLEMENTATION HANDOFF ANNEX",
+    title: "FROM 1:500 SCREENING TO 1:20 INTERFACES",
+    lead: "The concept table does not substitute for engineering design. Siting, coordinated design, procurement, operation, opening and closeout are decomposed into recalculable and rejectable evidence interfaces for future duty holders.",
+    cards: [
+      ["5 / 4", "drawing scales / release states"], ["9 / 6 / 11", "projects / packages / modules"],
+      ["12 HOLD / 0", "documentary gates / receipts"], ["12 / 16 / 8", "roles / unpriced lines / judgeable-now checks"],
+    ],
+    hold: "NAMED APPOINTMENTS 0 · FORMAL RATES 0 · CONSTRUCTION OR OPENING RELEASES 0 · FIELD TASKS 0",
+    boundary: "Participant professional-handoff interface—not a survey, formal bill of quantities, quotation, budget, permit, professional sign-off, construction, opening or field-performance record.",
+  },
+};
+
+function html(lang, format, totalPages) {
   const t = copy[lang];
   const isA3 = format === "a3";
   const page = isA3 ? "420mm 297mm" : "841mm 1189mm";
@@ -118,7 +146,37 @@ h1{margin:2.4mm 0 0;line-height:.92;letter-spacing:-.055em}.a3 h1{font-size:${la
 <main class="plates"><figure class="plate"><figcaption>${t.overall}</figcaption><img src="${overall}"></figure><figure class="plate"><figcaption>${t.sections}</figcaption><img src="${sections}"></figure></main>
 <section class="metrics">${cards}</section>
 <section class="p0"><div><b>${t.p0Label}</b><span>${t.p0Line}</span></div><div class="state">${t.evidenceLine}</div></section>
-<footer class="foot"><div><strong>${t.strip}</strong>${t.boundary}</div><div class="package">${t.package}<br>${isA3 ? "01–13" : "01–06"}</div></footer>
+<footer class="foot"><div><strong>${t.strip}</strong>${t.boundary}</div><div class="package">${t.package}<br>01–${String(totalPages).padStart(2, "0")}</div></footer>
+</body></html>`;
+}
+
+function annexHtml(lang, format, pageNumber, totalPages) {
+  const t = handoffCopy[lang];
+  const isA3 = format === "a3";
+  const page = isA3 ? "420mm 297mm" : "841mm 1189mm";
+  const size = isA3 ? "width:420mm;height:297mm" : "width:841mm;height:1189mm";
+  const fontCss = fs.readFileSync(FONT_CSS, "utf8");
+  const board = fileUrl(path.join(FIGURES, `implementation-handoff${lang === "en" ? ".en" : ""}.png`));
+  const cards = t.cards.map(([n, label]) => `<div class="card"><b>${n}</b><span>${label}</span></div>`).join("");
+  return `<!doctype html>
+<html lang="${t.lang}"><head><meta charset="utf-8"><style>
+${fontCss}
+@page{size:${page};margin:0}*{box-sizing:border-box}html,body{margin:0;${size};overflow:hidden}
+body{--coal:#171a18;--ink:#262b28;--bone:#f2eddf;--paper:#fbf8ef;--grid:#d8d1c2;--muted:#606560;--red:#c72d1e;--redfill:#e64b3c;--cyan:#00746f;--yellow:#83660a;position:relative;color:var(--ink);background:var(--bone);font-family:JZHandoverCJK,sans-serif;background-image:linear-gradient(#d8d1c288 1px,transparent 1px),linear-gradient(90deg,#d8d1c288 1px,transparent 1px)}
+body.a3{padding:12mm 16mm 9mm;background-size:10mm 10mm}body.a0{padding:32mm 42mm 26mm;background-size:20mm 20mm}
+.head{display:grid;grid-template-columns:1fr auto;gap:10mm;align-items:end;border-bottom:1.2mm solid var(--redfill);padding-bottom:4mm}.a3 .head{height:37mm}.a0 .head{height:118mm;padding-bottom:12mm}
+.code{font-weight:800;letter-spacing:.14em;color:var(--red)}.a3 .code{font-size:3.5mm}.a0 .code{font-size:8mm}
+h1{margin:2mm 0 0;line-height:.96;letter-spacing:-.045em}.a3 h1{font-size:${lang === "zh" ? "11.5mm" : "8.3mm"}}.a0 h1{font-size:${lang === "zh" ? "29mm" : "21mm"}}
+.state{align-self:center;padding:2.5mm 4mm;background:var(--coal);color:#f1c64a;font-weight:900;letter-spacing:.08em;text-align:center}.a3 .state{font-size:3.1mm}.a0 .state{padding:7mm 12mm;font-size:7mm}
+.lead{margin:4mm 0;color:var(--muted);font-weight:600;line-height:1.45}.a3 .lead{height:16mm;font-size:${lang === "zh" ? "3.25mm" : "2.65mm"}}.a0 .lead{height:62mm;margin:12mm 0;font-size:${lang === "zh" ? "8mm" : "6.4mm"}}
+.board{margin:0;background:var(--paper);border:.7mm solid var(--coal);padding:2mm;overflow:hidden}.a3 .board{height:153mm}.a0 .board{height:500mm;padding:6mm;border-width:1.4mm}.board img{display:block;width:100%;height:100%;object-fit:contain}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;margin-top:4mm}.a0 .cards{grid-template-columns:repeat(2,1fr);gap:10mm;margin-top:16mm}.card{background:var(--paper);border-top:1.6mm solid var(--redfill);padding:3mm}.card:nth-child(2),.card:nth-child(4){border-color:#00a79f}.a0 .card{min-height:92mm;padding:10mm;border-top-width:4mm}.card b{display:block;color:var(--red);line-height:1}.card:nth-child(2) b,.card:nth-child(4) b{color:var(--cyan)}.a3 .card b{font-size:5.5mm}.a0 .card b{font-size:15mm}.card span{display:block;margin-top:1.5mm;color:var(--muted);font-weight:700;line-height:1.25}.a3 .card span{font-size:${lang === "zh" ? "2.55mm" : "2.15mm"}}.a0 .card span{margin-top:5mm;font-size:${lang === "zh" ? "6.5mm" : "5.4mm"}}
+.hold{margin-top:4mm;padding:3mm 4mm;background:var(--coal);color:#f1c64a;font-weight:800;letter-spacing:.025em}.a3 .hold{font-size:${lang === "zh" ? "2.75mm" : "2.2mm"}}.a0 .hold{margin-top:14mm;padding:9mm 12mm;font-size:${lang === "zh" ? "6.4mm" : "5.2mm"}}
+.foot{position:absolute;left:${isA3 ? "16mm" : "42mm"};right:${isA3 ? "16mm" : "42mm"};bottom:${isA3 ? "8mm" : "25mm"};display:grid;grid-template-columns:1fr auto;gap:12mm;border-top:.6mm solid var(--redfill);padding-top:${isA3 ? "2mm" : "6mm"};color:var(--muted)}.a3 .foot{font-size:${lang === "zh" ? "2.35mm" : "1.95mm"}}.a0 .foot{font-size:${lang === "zh" ? "5.8mm" : "4.8mm"};border-top-width:1.2mm}.page{font-weight:900;color:var(--coal);white-space:nowrap}
+</style></head><body class="${format}">
+<header class="head"><div><div class="code">${t.code}</div><h1>${t.title}</h1></div><div class="state">EXTERNAL HOLD<br>NOT STARTED</div></header>
+<p class="lead">${t.lead}</p><figure class="board"><img src="${board}"></figure><section class="cards">${cards}</section><div class="hold">${t.hold}</div>
+<footer class="foot"><div>${t.boundary}</div><div class="page">PACKAGE v2.0 · ${String(pageNumber).padStart(2, "0")} / ${String(totalPages).padStart(2, "0")}</div></footer>
 </body></html>`;
 }
 
@@ -129,29 +187,71 @@ function run(command, args) {
   if (result.status !== 0) fail(`${command} failed:\n${result.stdout}\n${result.stderr}`);
 }
 
+function pageCount(file) {
+  const result = spawnSync(QPDF, ["--show-npages", file], { encoding: "utf8" });
+  if (result.status !== 0) fail(`${QPDF} --show-npages failed for ${file}:\n${result.stderr}`);
+  const count = Number.parseInt(String(result.stdout || "").trim(), 10);
+  if (!Number.isInteger(count) || count < 1) fail(`invalid page count for ${file}: ${result.stdout}`);
+  return count;
+}
+
+async function renderPdf(browser, htmlPath, pdfPath) {
+  const page = await browser.newPage();
+  try {
+    await page.goto(fileUrl(htmlPath), { waitUntil: "load" });
+    await page.emulateMedia({ media: "print" });
+    await page.pdf({ path: pdfPath, printBackground: true, preferCSSPageSize: true, tagged: true });
+  } finally {
+    await page.close();
+  }
+}
+
 async function rebuild(format, lang) {
   const suffix = lang === "en" ? ".en" : "";
   const basename = format === "a3" ? `a3-booklet${suffix}.pdf` : `a0-boards${suffix}.pdf`;
   const source = path.join(DRAWINGS, basename);
+  const basePages = format === "a3" ? 13 : 6;
+  const targetPages = basePages + 1;
+  const sourcePages = pageCount(source);
+  if (![basePages, targetPages].includes(sourcePages)) {
+    fail(`${basename} has ${sourcePages} pages; expected ${basePages} (base) or ${targetPages} (annex already present)`);
+  }
+  const technicalEndPage = sourcePages === targetPages ? sourcePages - 1 : sourcePages;
   const htmlPath = path.join(work, `${format}-${lang}.html`);
+  const annexHtmlPath = path.join(work, `${format}-${lang}-annex.html`);
   const cover = path.join(work, `${format}-${lang}.pdf`);
+  const annex = path.join(work, `${format}-${lang}-annex.pdf`);
   const output = path.join(DRAWINGS, `.${basename}.champion.tmp.pdf`);
-  fs.writeFileSync(htmlPath, html(lang, format));
+  fs.writeFileSync(htmlPath, html(lang, format, targetPages));
+  fs.writeFileSync(annexHtmlPath, annexHtml(lang, format, targetPages, targetPages));
   const browser = await chromium.launch({ executablePath: CHROME, headless: true });
   try {
-    const page = await browser.newPage();
-    await page.goto(fileUrl(htmlPath), { waitUntil: "load" });
-    await page.emulateMedia({ media: "print" });
-    await page.pdf({ path: cover, printBackground: true, preferCSSPageSize: true, tagged: true });
+    await renderPdf(browser, htmlPath, cover);
+    await renderPdf(browser, annexHtmlPath, annex);
   } finally {
     await browser.close();
   }
-  run(QPDF, ["--empty", "--pages", cover, "1", source, "2-z", "--", output]);
+  run(QPDF, ["--empty", "--pages", cover, "1", source, `2-${technicalEndPage}`, annex, "1", "--", output]);
+  if (pageCount(output) !== targetPages) fail(`${basename} rebuilt with unexpected page count`);
   fs.renameSync(output, source);
   process.stdout.write(`${source}\n`);
 }
 
 async function main() {
+  const ext = HANDOFF.current_external_evidence || {};
+  const externalBoundaryIntact = HANDOFF.claim_state === "PARTICIPANT_DESIGN_HANDOFF_READY" &&
+    HANDOFF.activation_state === "EXTERNAL_HOLD_NOT_STARTED" &&
+    ext.official_siting_received === false && ext.site_right_or_access_received === false &&
+    ext.field_measurement_count === 0 && ext.documentary_gate_receipt_count === 0 &&
+    ext.named_role_appointment_count === 0 && ext.formal_unit_rate_receipt_count === 0 &&
+    ext.vendor_quote_count === 0 && ext.insurance_document_count === 0 &&
+    ext.approved_budget_cny === null && ext.professional_signoff_count === 0 &&
+    ext.construction_or_opening_release_count === 0 && ext.field_task_count === 0;
+  if (!externalBoundaryIntact) fail("professional handoff PDF refused: external HOLD/null boundary changed");
+  for (const lang of ["zh", "en"]) {
+    const figure = path.join(FIGURES, `implementation-handoff${lang === "en" ? ".en" : ""}.png`);
+    if (!fs.existsSync(figure)) fail(`missing handoff figure: ${figure}`);
+  }
   for (const format of ["a3", "a0"]) {
     for (const lang of ["zh", "en"]) await rebuild(format, lang);
   }

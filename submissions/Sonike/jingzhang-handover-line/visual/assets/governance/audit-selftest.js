@@ -90,6 +90,7 @@ const run = (script, env) => {
 };
 const runAuditor = (env) => run(path.join(HERE, AUDITOR), env);
 const runRunner = (env) => run(path.join(HERE, RUNNER), env);
+const runP0 = (env) => run(path.join(HERE, P0_AUDITOR), env);
 const failedIds = (res) => (res.json && res.json.failures ? res.json.failures.map((f) => f.id) : []);
 
 /* ---------------- 用例 ---------------- */
@@ -175,6 +176,18 @@ const negInput = (label, files, wantIds) => negative(label, () => {
   const got = failedIds(r);
   const miss = wantIds.filter((x) => !got.includes(x));
   if (miss.length) return `未报 ${miss.join("、")}，实报 ${got.join("、") || "（无）"}`;
+  return null;
+});
+
+const negP0 = (label, mutate, expectedFragment) => negative(label, () => {
+  const rel = "visual/assets/governance/implementation-handoff-register.json";
+  const dir = overlayWith({ [rel]: jsonMutated(rel, mutate) });
+  const r = runP0({ JZ_AUDIT_OVERLAY: dir });
+  if (r.code === 0) return "仍以退出码 0 通过";
+  const problems = (r.json && r.json.errors) || [];
+  if (!problems.some((item) => item.includes(expectedFragment))) {
+    return `未报「${expectedFragment}」，实报：${problems.slice(0, 4).join("；") || r.stderr.slice(0, 200)}`;
+  }
   return null;
 });
 
@@ -264,6 +277,26 @@ negInput("评委证据索引删掉 3 分钟路径 —— 30 秒和 15 分钟仍�
         d.review_paths = d.review_paths.filter((item) => item.path_id !== "JURY-3M");
       }) }, ["G10"]);
 
+negP0("专业交接文件闸门伪装成已放行并填入回执 —— 外部证据仍写 0 也必须拒绝",
+  (d) => { d.documentary_release_gates[0].status = "RELEASED"; d.documentary_release_gates[0].receipt = "invented-receipt"; },
+  "十二道文件闸门必须全部 HOLD 且回执为空");
+
+negP0("专业角色伪装成已任命具名主体 —— 角色类别仍完整也必须拒绝",
+  (d) => { d.professional_role_classes[0].appointment_status = "appointed"; d.professional_role_classes[0].named_party = "invented-party"; },
+  "十二类专业角色必须全部未任命且无具名主体");
+
+negP0("未计价数量表偷偷填入单价与金额 —— 数量推导不变也必须拒绝",
+  (d) => { d.unpriced_quantity_schedule.lines[0].unit_rate_cny = 100; d.unpriced_quantity_schedule.lines[0].amount_cny = 100; },
+  "十六行数量必须可推导且保持未计价");
+
+negP0("15 周条件工期伪装成已取得 T0 并启动任务 —— 所有任务 ID 仍完整也必须拒绝",
+  (d) => { d.conditional_programme.t0_achieved_at = "2026-08-30"; d.conditional_programme.clock_status = "STARTED"; d.conditional_programme.tasks[0].status = "STARTED"; },
+  "15 周条件工期不得在 T0 前启动");
+
+negP0("四级筛查包络把 7.2 米控制面积改错 —— 图纸链和状态仍完整也必须拒绝",
+  (d) => { d.nested_scale_envelopes.control_envelope.area_sqm = 52; },
+  "四级包络算术或非场地边界不一致");
+
 negative("A0 首页内嵌图的预期顺序调换 —— 可搜索页脚全为 v2.0 也必须被像素绑定拦住", () => {
   const script = scriptMutated(VERSION_AUDITOR, (text) => text.replace(
     'figures: ["assets/figures/site-overview.png", "assets/figures/key-areas.png"]',
@@ -303,8 +336,8 @@ negInput("sources.json 把现行登记的指针改回已作废的历史条目 �
   { "sources.json": jsonMutated("sources.json", (d) => {
       const e = d.sources.find((x) => x.id === "FONT-NOTO-COVER");
       e.not_usable_for = e.not_usable_for.map((t) =>
-        t.replace("证明 assets/figures/ 下 26 张栅格图件的字形来源（见 FONT-NOTO-RASTER）",
-                  "证明 assets/figures/ 下 26 张栅格图件的字形来源（中文见 FONT-STHEITI-RASTER）"));
+        t.replace("证明 assets/figures/ 下 28 张栅格图件的字形来源（见 FONT-NOTO-RASTER 与 FONT-NOTO-WEB）",
+                  "证明 assets/figures/ 下 28 张栅格图件的字形来源（中文见 FONT-STHEITI-RASTER）"));
     }) }, ["J1"]);
 
   negInput("compliance_matrix 去掉一条规则导出的 standard_ids（WCAG-CONTRAST）—— 本包 2026-08-22 修掉的 26 处缺失里的一处",
@@ -386,10 +419,10 @@ negInput("场景卡把落点写回「城市交接场维修驿」—— 复刻 20
 negInput("连接段卡片只把里程数字改错 0.5 km —— 落点归属仍对，只有里程对不上几何",
   { [EVIDENCE]: textOf(EVIDENCE).replace("主轴里程约 7.2 km", "主轴里程约 7.7 km") }, ["G5"]);
 
-negInput("英文正文的指标计数退回旧值 91/77 —— 中文写对、英文没跟着新增的十四项 P0 指标，且英文内部算术自洽（91−77＝14）所以只看英文看不出来",
+negInput("英文正文的指标计数退回旧值 110/96 —— 中文写对、英文漏掉十九项专业交接指标，且英文内部算术自洽（110−96＝14）所以只看英文看不出来",
   { "proposal.en.md": textOf("proposal.en.md")
-      .replace("**100 metrics, 86 of them valued", "**91 metrics, 77 of them valued")
-      .replace("The 86 valued metrics", "The 77 valued metrics") }, ["M9"]);
+      .replace("**119 metrics, 105 of them valued", "**110 metrics, 96 of them valued")
+      .replace("The 105 valued metrics", "The 96 valued metrics") }, ["M9"]);
 
 negInput("正文删掉任务书 required_wording_zh 里的「参考方案」—— 复刻 2026-08-22 补齐前的状态，其余措辞仍在所以读起来毫无异样",
   { "proposal.md": textOf("proposal.md").replace(/参考方案/g, "") }, ["T1"]);
