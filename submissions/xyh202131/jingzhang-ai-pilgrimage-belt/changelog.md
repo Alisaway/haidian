@@ -1,5 +1,19 @@
 # 方案迭代记录 / Changelog
 
+## v92.0 - 2026-08-30
+
+**深层结构引用闭合 / Deep Structured-reference Closure**
+
+- 已有能力：R91 已把 39 个历史 visual 片段路由收敛到当前中英文页面的真实落点；proposal、结构化合同和交接矩阵也已经形成可逐层追证的离线材料链。
+- 真实缺口：修复前，包内仍有 38 个深层结构引用落到已删除的 proposal 章节名、并不存在的 `self_check.json#SCENARIO_PROTOCOL`，或使用 `object.child`、`array[ID]` 这类不可由标准 JSON Pointer 解析的片段。自动 gate 能确认文件存在，却不能保证评审者继续进入该文件后仍能定位到声明对象。
+- 必须冻结：冻结“双轨京张 / Twin-Track Jing-Zhang”、三种不可互换原型、JZ-AIOS、G0—G3、四轴、三载体、证据门、权利边界及 12/8/3/36；不改 proposal、report HTML、visual 页面、图件、媒体、四份 PDF、geometry、metrics、设计事实、证据状态或现实主张。
+- 本轮实施：把 20 个退役 proposal/self-check 锚点重新绑定到当前既有章节或合规矩阵对象，把 18 个点号/方括号选择器改为可直接解析的 RFC 6901 JSON Pointer；逐项确认 38 个新目标均存在且语义保持不变。`sources.json` 字节变化后按原脚本刷新 T-02 确定性输入哈希，合成回放结论保持不变。官方几何、批准、现场基线与结果、现实责任、预算、恢复时间、公众反馈、独立法律/商标审查和人工双语签署继续为 unknown、0、未提供或 NO-GO。
+
+- Existing capability: R91 redirected 39 historical visual fragments to real destinations in the current paired pages; the proposals, structured contracts and handoff matrices already formed an offline chain that could be traced layer by layer.
+- Real gap: before repair, 38 deeper structured references still landed on retired proposal section names, the nonexistent `self_check.json#SCENARIO_PROTOCOL`, or fragments expressed as non-standard `object.child` and `array[ID]` selectors. Automated gates could confirm that a file existed without ensuring that a reviewer entering it could resolve the declared object.
+- Frozen boundary: Twin-Track Jing-Zhang, the three non-interchangeable prototypes, JZ-AIOS, G0–G3, four axes, three carriers, evidence gates, rights boundaries and 12/8/3/36 remain frozen. Proposals, report HTML, visual pages, figures, media, all four PDFs, geometry, metrics, design facts, evidence states and real-world claims are unchanged.
+- Implemented this round: rebound 20 retired proposal/self-check anchors to current existing sections or a compliance-matrix object, and converted 18 dot/bracket selectors into directly resolvable RFC 6901 JSON Pointers; all 38 new targets were individually confirmed to exist without changing their meaning. The original runner refreshed T-02's deterministic input hash after `sources.json` changed, while the synthetic replay conclusion remained unchanged. Official geometry, approvals, field baselines and outcomes, real accountability, budgets, recovery time, public feedback, independent legal/trademark review and human bilingual sign-off remain unknown, zero, not provided or NO-GO.
+
 ## v91.0 - 2026-08-30
 
 **交接索引片段路由闭合 / Handoff-index Fragment-route Closure**
