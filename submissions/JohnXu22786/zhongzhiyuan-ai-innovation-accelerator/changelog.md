@@ -1,5 +1,11 @@
 # 方案迭代记录
 
+## v2.3 - 2026-08-30 (DIRECT CODEX PR #3864 LATEST COCO REVIEW REPAIR)
+
+- 按最新 CocoSgt 82/100 CHANGES_REQUESTED 复核：三矩阵与 `sources.json` 的五个项目级案例 ID 全包检索无孤立旧案例 ID；未重复改写已正确的矩阵内容。
+- 修正 `visual/index.en.html` 的英文可见指标限定语（`about`）与节点表头（`ID / Name`），保持中英指标、节点、协议、限定语和图位等价。
+- 从当前 C 包重新生成 `visual/assets/previews/` 的中英文图件、HTML 与 A0/A3 首页预览；随后刷新 manifest 哈希并重跑正式校验。
+
 ## v2.2 - 2026-08-30 (DIRECT CODEX SOURCE/RIGHTS AND READABILITY REPAIR, PR #3864)
 
 - 统一 source/rights ledger：删除权利表中的历史案例名称与孤立 source ID，提案、`sources.json`、`standard_matrix.json`、`design_depth_matrix.json`、`compliance_matrix.json` 现在均指向五个项目级案例页（Singapore LaunchPad @ one-north、Helsinki Maria 01、Paris F/AI at STATION F、Toronto MaRS Centre、Montreal Mila LaSalle）。
