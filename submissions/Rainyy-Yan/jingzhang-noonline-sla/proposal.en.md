@@ -1,26 +1,34 @@
 ---
 translation_of: "proposal.md"
 language: "en"
-iteration: "v4.9"
+iteration: "v5.0"
 ---
 
 # Jing-Zhang Noonline SLA
 
-> **Treat noon as an urban stress test: AI can enhance a route, but no one should lose an enterable, stayable and helpable public path because they have no phone, no screen, or an offline AI service.**
+> **Make noon a route people can use by themselves: AI can enhance a route, but no one should lose an enterable, stayable, understandable and leaveable public path because they have no phone, no screen, an offline AI service, or no one accompanying them.**
 
 ## Quick Review Entry
 
-This pass only reorders the existing proposal; it adds no factual claim. In **30 seconds**, read the three conceptual spatial-experience scenes as walking, staying, asking and rerouting. In **3 minutes**, see how the three areas respectively carry validation, civic explanation and arrival-time judgment. In **15 minutes**, check how WP-01–06 and Phase 0–3 retain HOLD, reroute, downgrade or removal whenever evidence is absent, stale or unauditable. Every depicted relation, component and condition remains conceptual or verification-dependent, not an existing condition, permit or delivery commitment.
+This revision only reorders the existing proposal; it adds no factual claim. In **30 seconds**, follow one noon user through enter, walk, pause, decide and leave, without opening a phone, logging in or waiting for staff. In **3 minutes**, see how the three areas respectively support public passage beside research, device-free information and staying, and self-guided arrival judgment. In **15 minutes**, check how WP-01–06 and Phase 0–3 handle HOLD, reroute, downgrade or removal in the background whenever evidence is absent, stale or unauditable. Every depicted relation, component and condition remains conceptual or verification-dependent, not an existing condition, permit or delivery commitment.
 
 ![Overall urban structure showing the three zones, two wings, Level 1/2 and the evidence boundary of the Jing-Zhang public connection](assets/figures/v4-figure-01-overall-urban-structure.en.png)
 
 ![Evidence Boundary Map (separate from the overall-structure plate): public taskbook scale, three-zones-two-wings relationship and provisional design expression](assets/figures/site-overview.en.png)
 
+## 0. A Self-Guided Noon Route
+
+The front stage is not a service that requires check-in, booking, scanning, an app download or staff escort. It is a spatial order that lets a person make their own decisions. Public clearways, fixed information, recognisable short-stay positions and non-digital decision markers organise the experience first; a person can choose to continue, pause, reroute or leave.
+
+This does not confirm any existing route, shade, seat, water point, entry, crossing or service person. It is a concept-use rule: future physical components may be placed at a specific location only after the relevant conditions are authorised and verified. When conditions are absent, the component does not start and self-guided usability is not promoted into a site fact.
+
+For daily users, AI is an optional, side-positioned explanatory layer. It does not lead the route and is not a condition of entering or completing it. Human responsibility is likewise not daily staffing along the line: it is a background layer for maintenance, exception handling, stop decisions and later professional verification. A user should not need to find a person to complete this noon route.
+
 ## 1. The Problem
 
 An AI city can mistake being visible to an algorithm for being usable by a person. Noon is a small but candid test window: short walks, heat exposure, waiting, wayfinding, water, rest, crossings and temporary failure occur together. A public route that works only when phones, prediction, booking or test systems work is not reliable urban service.
 
-**Noonline SLA** establishes readable, walkable, stayable and human-handover public space first. AI then adds prediction, explanation, alerts, maintenance support and dynamic adjustment. AI is never a prerequisite for public service [standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK] [standard:BARRIER-FREE-ENVIRONMENT-LAW].
+**Noonline SLA** establishes readable, walkable, stayable and self-guiding public space first. AI then adds prediction, explanation, alerts, maintenance support and dynamic adjustment. Fixed information and spatial order should let a person complete the route independently; human responsibility is a background provision for maintenance, exception handling and stop decisions, rather than a prerequisite for daily use. AI is never a prerequisite for public service [standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK] [standard:BARRIER-FREE-ENVIRONMENT-LAW].
 
 The minimum delivery unit is not the whole 11.4 km² area but six reversible work packages. A package may move from concept to its next phase only when its applicable records for publicness, clearway, accessible alternative, physical information, human stop authority, maintenance, optional-AI boundary and evidence handover are complete. One missing record means HOLD, reroute, downgrade or withdrawal; a model judgment cannot fill a real-world condition [data:visual/assets/v4_3-delivery-readiness-contract.json#release_checks].
 
@@ -44,7 +52,7 @@ Jing-Zhang is therefore not an applied historical image. It is a spatial discipl
 
 43.6 km² is a coordinated research relationship among industry, ecology, rail and public service; c. 11.4 km² is the overall design area. Both are taskbook scale descriptions. Submitted geometry remains provisional and is never an official boundary or regulatory-plan redline [source:DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509] [source:DATA-SRC-PROVISIONAL-BOUNDARIES-20260605].
 
-The system uses 11 concept LineStrings, 12 primary service nodes, 8 secondary supports and 5 manual fallback points. It connects three distinct prototypes in a reversible research → public → market → feedback loop:
+The system uses 11 concept LineStrings, 12 primary service nodes, 8 secondary supports and 5 non-digital decision / exception-responsibility interfaces. It connects three distinct prototypes in a reversible research → public → market → feedback loop. These interfaces are neither five daily staffed posts nor a promise that service staff are in place:
 
 - **Zhongzhiyuan**: Research → Prototype → Test → Validate.
 - **AI Origin**: Understand → Question → Co-create.
@@ -78,17 +86,17 @@ Test permission, safety dimension, existing equipment, public entry and actual s
 
 ## 6. AI Origin: Understand → Question → Co-create
 
-AI Origin is not an AI showroom. It is a civic knowledge room in which the public retains choice. The public entry uses fixed information readable without a phone. N06 is a **heritage interpretation point** about Jing-Zhang connection, maintenance and public responsibility; it must not be read as an existing relic. N05 supports sitting, waiting, talking and human enquiry. AI is optional prediction and explanation at the side; opting out of AI does not mean opting out of the space.
+AI Origin is not an AI showroom. It is a civic knowledge room in which the public retains choice. The public entry uses fixed information readable without a phone. N06 is a **heritage interpretation point** about Jing-Zhang connection, maintenance and public responsibility; it must not be read as an existing relic. N05 supports sitting, waiting, talking and non-digital information judgment. AI is optional prediction and explanation at the side; opting out of AI does not mean opting out of the space.
 
 The key spatial moves are:
 
 - Use a physical knowledge line to connect entry, reading, staying, asking and exit rather than replacing place with screens.
-- Place seating, fixed signs, human help and optional AI separately, so use never requires login.
+- Place seating, fixed signs, non-digital information judgment and optional AI separately, so use never requires login, waiting for staff or a device.
 - Translate Jing-Zhang culture into readable and maintainable everyday information rather than inventing a heritage object.
 
 ![AI Origin civic knowledge room: physical knowledge line, staying, human help and optional AI](assets/figures/v4-figure-03-ai-origin.en.png)
 
-**Concept experience perspective, not a site depiction.** This participant-authored illustration explains how a physical knowledge line, movable seating, human enquiry and optional AI can sit side by side; it confirms no existing building, heritage location, entry, shade or staff. Activation must let a person enter, read, pause, ask and leave using physical information alone. If maintenance, human response or clearway evidence is absent, the interactive layer and related service claim are removed.[source:DESIGN-VISUAL-V4_5] [data:visual/assets/v4_5-reversible-prototype-atlas.json#PRA-02]
+**Concept experience perspective, not a site depiction.** This participant-authored illustration explains how a physical knowledge line, movable seating, non-digital information judgment and optional AI can sit side by side; it confirms no existing building, heritage location, entry, shade or staff. Activation must let a person enter, read, pause, decide and leave using physical information alone. If maintenance, clearway or content evidence is absent, the interactive layer and related service claim are removed. Exception assistance, if set, remains a background responsibility interface and cannot become a required normal-use step.[source:DESIGN-VISUAL-V4_5] [data:visual/assets/v4_5-reversible-prototype-atlas.json#PRA-02]
 
 ![Concept perspective of an AI Origin civic knowledge room without a device gate: physical display, human help and free passage coexist; not a site depiction](assets/media/v4_5-ai-origin-concept-perspective.png)
 
@@ -96,17 +104,17 @@ Public sources support the strategic role of AI Origin and the Jing-Zhang corrid
 
 ## 7. Dazhongsi: Arrive → Decide → Pause → Enter Daily Life
 
-Dazhongsi does not claim to connect a station exit directly to the proposal. It makes the first minute after rail arrival readable, stayable and helpable through a **conceptual station-arrival interface**. Verified context is limited to Dazhongsi Station, its A/B entrances and published in-station accessibility service information [source:EXT-SRC-DAZHONGSI-STATION-202605]. The scheme proceeds from N11 orientation, through N09 short stay and F04 human fallback, to N10 crossing/accessibility decision and an N12 daily-service frontage.
+Dazhongsi does not claim to connect a station exit directly to the proposal. It makes the first minute after rail arrival readable, stayable and self-guiding through a **conceptual station-arrival interface**. Verified context is limited to Dazhongsi Station, its A/B entrances and published in-station accessibility service information [source:EXT-SRC-DAZHONGSI-STATION-202605]. The scheme proceeds from N11 orientation, through N09 short stay and the F04 non-digital decision / exception-responsibility interface, to N10 crossing/accessibility decision and an N12 daily-service frontage.
 
 The key spatial moves are:
 
 - Draw arrival → orientation → short stay → crossing/accessibility decision → daily service frontage as a legible decision sequence.
 - When external crossing, entry, accessible path or duty period is unverified, state reroute / downgrade / suspend instead of pretending station-city continuity.
-- Turn a high-frequency business-noon transfer into a public interface for short pause, wayfinding and human handover.
+- Turn a high-frequency business-noon transfer into a public interface for short pause, wayfinding and self-directed rerouting. Exception responsibility remains a background provision, not a requirement for daily staffing.
 
 ![Dazhongsi conceptual arrival interface: verified station context is visibly separated from an unverified urban transition](assets/figures/v4-figure-04-dazhongsi.en.png)
 
-**Concept experience perspective, not a site depiction.** This view only describes the reversible sequence arrival marker -> human handover -> short pause -> public clearway -> verified alternative or daily-use edge. It confirms no real station exit, crossing, retail, water, accessibility or operating condition. `P0-EXP-03` may be exercised only after lawful passage and an accessible alternative have been authorised and field-verified; when evidence fails, the move reroutes to a verified public edge or suspends its continuity claim.[source:DESIGN-VISUAL-V4_5] [data:visual/assets/v4_5-reversible-prototype-atlas.json#PRA-03]
+**Concept experience perspective, not a site depiction.** This view only describes the reversible sequence arrival marker -> self-guided judgment -> short pause -> public clearway -> verified alternative or daily-use edge. It confirms no real station exit, crossing, retail, water, accessibility or operating condition. `P0-EXP-03` may be exercised only after lawful passage and an accessible alternative have been authorised and field-verified; when evidence fails, the move reroutes to a verified public edge or suspends its continuity claim. Exception responsibility does not mean an on-site, permanently staffed service.[source:DESIGN-VISUAL-V4_5] [data:visual/assets/v4_5-reversible-prototype-atlas.json#PRA-03]
 
 ![Concept perspective of a Dazhongsi arrival and accessible-alternative interface: a wheelchair user moves along a public clearway beside human help and physical decision markers; not a site depiction](assets/media/v4_5-dazhongsi-concept-perspective.png)
 
@@ -114,7 +122,7 @@ External crossings, legal passage, continuous accessible route, public entries a
 
 ## 8. SECTION-01–04 / Space Before AI
 
-Four sections turn a “route” back into usable urban relationships rather than an algorithm path: frontage, stay/service zone, planting or shade reservation, public clearway, fixed information, human help, optional AI, safety buffer and controlled zone each have a position. Dimensions are relative or `TBC after field survey`; none pretend to be construction sections.
+Four sections turn a “route” back into usable urban relationships rather than an algorithm path: frontage, stay/service zone, planting or shade reservation, public clearway, fixed information, non-digital decision markers, optional AI, safety buffer and controlled zone each have a position. Dimensions are relative or `TBC after field survey`; none pretend to be construction sections.
 
 ![SECTION-01–04: relative spatial relationships for the main spine, test interface, knowledge room and rail-arrival edge](assets/figures/v4-figure-05-sections-01-04.en.png)
 
@@ -126,9 +134,9 @@ The innovation chain is not a one-way display chain. Zhongzhiyuan takes research
 
 ## 10. Noonline / AI-OFF
 
-Noonline follows **Physical → Human → Digital → AI**. When AI is on, it can predict crowding, explain routes, flag service state and assist maintenance. When AI degrades, unreliable recommendations stop. When AI is off, fixed wayfinding, physical-route logic, stay reservations, public-entry logic and human-service roles still provide the minimum public service.
+Noonline follows **Physical → Human → Digital → AI**, but the four layers are not four daily user steps. For a user, only the Physical layer must hold: fixed wayfinding, physical-route logic, stay reservations and public-entry logic should support independent entry, judgment and departure. The Human layer is a background provision for maintenance, exception handling and stop responsibility, not an on-line accompaniment role. Digital and AI are optional enhancement layers. When AI is on, it can predict crowding, explain routes, flag service state and assist maintenance. When AI degrades, unreliable recommendations stop. When AI is off, the route’s basic mode of use should not change.
 
-`AI_OFF_TEST = PASS_WITH_PROVISIONAL_PHYSICAL_NETWORK`. It is a pass for the concept network’s physical and human logic when AI is off. It does not confirm that seats, water, entries, crossings or human service exist or operate today [data:visual/assets/noonline-sla-test-results.json#AI_OFF_TEST].
+`AI_OFF_TEST = PASS_WITH_PROVISIONAL_PHYSICAL_NETWORK`. It is a pass for the concept network’s physical-first logic with background responsibility only as an exception when AI is off. It does not confirm that seats, water, entries, crossings or any service staff exist or operate today [data:visual/assets/noonline-sla-test-results.json#AI_OFF_TEST].
 
 ![AI-ON / AI-OFF: layered degradation and human fallback in the three spatial prototypes](assets/figures/v4-figure-06-ai-on-off-resilience.en.png)
 
@@ -227,7 +235,7 @@ Zhongzhiyuan juxtaposes a public clearway, observation/stay edge, safety buffer 
 
 ## AI Innovation Ecosystem, Personas, and AI+ Scenarios
 
-The proposal does not address one generic “AI user.” It serves ordinary pedestrians, short-time noon users, observers, researchers, rail arrivals, maintainers and human-service responsibility roles. AI can assist test-status explanation in Zhongzhiyuan, voluntary knowledge interpretation and feedback at AI Origin, and dynamic alerts or maintenance at Dazhongsi. It does not replace fixed signs, public clearways, human help or reroute judgement. Each scenario retains a physical route for opting out of AI, and an exception triggers stopping, downgrade, reroute or human handover. AI+ is therefore a limited improvement to explainability, maintainability and accountability, rather than a screen added to public space [depth:ai_scenarios] [data:visual/assets/noonline-sla-test-results.json#AI_OFF_TEST].
+The proposal does not address one generic “AI user.” It serves ordinary pedestrians, short-time noon users, observers, researchers, rail arrivals, and background maintenance and exception-responsibility roles. AI can assist test-status explanation in Zhongzhiyuan, voluntary knowledge interpretation and feedback at AI Origin, and dynamic alerts or maintenance at Dazhongsi. It does not replace fixed signs, public clearways, non-digital judgment or self-directed rerouting. Each scenario retains a physical route for opting out of AI, and an exception triggers stopping, downgrade, reroute or background exception handling. AI+ is therefore a limited improvement to explainability, maintainability and accountability, rather than a screen added to public space [depth:ai_scenarios] [data:visual/assets/noonline-sla-test-results.json#AI_OFF_TEST].
 
 ## Land Use, Building Scale, and Retain-Renovate-Demolish Strategy
 

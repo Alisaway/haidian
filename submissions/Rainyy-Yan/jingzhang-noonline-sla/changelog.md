@@ -1,5 +1,11 @@
 # 方案迭代记录 / Iteration Changelog
 
+## v5.0 - 2026-08-30
+
+**Self-guided noon-route refinement.** The primary public experience is now explicit: a person should be able to enter, walk, pause, decide, reroute and leave through fixed information, public clearways and non-digital decision markers, without booking, scanning, login, a special device or daily line staffing. AI remains an optional explanatory and maintenance-support layer; the Human layer is clarified as background maintenance, exception, stop and professional-verification responsibility rather than a user prerequisite.
+
+**Evidence boundary unchanged.** This revision neither confirms an existing route, shade, seating, water point, entry, crossing, accessibility condition nor service person. It names a concept-use rule only: future components may be activated at a specific location only after the applicable authorised verification, public-passage, accessibility and maintenance conditions are present. No metric, geometry, Verified SLA, appointed entity, budget, land right, permit, approval or field condition is upgraded.
+
 ## v4.9.1 - 2026-08-30
 
 **Offline CJK report repair.** The two required report HTML files now explicitly load the already registered, OFL-licensed submission-local Noonline CJK subset and place it before all system fallbacks. This makes Chinese headings, summaries, body text, captions and the Chinese return link readable when a review environment has neither network access nor an installed Chinese system font.
