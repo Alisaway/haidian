@@ -1,0 +1,266 @@
+{
+  "schema_version": "0.1.0",
+  "units": {
+    "length": "m",
+    "area": "sqm"
+  },
+  "metrics": {
+    "site_area_sqm": {
+      "status": "known",
+      "value": 6374567.284,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "projected area of provisional site boundary in EPSG:4548",
+      "confidence": "low",
+      "assumptions": [
+        "A-BOUNDARY-001",
+        "A-GEOMETRY-001"
+      ]
+    },
+    "green_space_area_sqm": {
+      "status": "known",
+      "value": 1022113.664,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/green_space.geojson"
+      ],
+      "formula": "union of conceptual green-space polygons in EPSG:4548",
+      "confidence": "low",
+      "assumptions": [
+        "A-GEOMETRY-001"
+      ]
+    },
+    "public_space_area_sqm": {
+      "status": "known",
+      "value": 379439.826,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "union of conceptual public-space polygons in EPSG:4548",
+      "confidence": "low",
+      "assumptions": [
+        "A-GEOMETRY-001"
+      ]
+    },
+    "building_footprint_area_sqm": {
+      "status": "known",
+      "value": 654529.506,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "union of conceptual retain-first building carriers in EPSG:4548",
+      "confidence": "low",
+      "assumptions": [
+        "A-GEOMETRY-001"
+      ]
+    },
+    "green_ratio": {
+      "status": "known",
+      "value": 0.160342,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/green_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "green_space_area_sqm / site_area_sqm",
+      "confidence": "low",
+      "assumptions": [
+        "A-BOUNDARY-001",
+        "A-GEOMETRY-001"
+      ]
+    },
+    "public_space_ratio": {
+      "status": "known",
+      "value": 0.059524,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/public_space.geojson",
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "public_space_area_sqm / site_area_sqm",
+      "confidence": "low",
+      "assumptions": [
+        "A-BOUNDARY-001",
+        "A-GEOMETRY-001"
+      ]
+    },
+    "road_network_length_m": {
+      "status": "known",
+      "value": 12882.235,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson"
+      ],
+      "formula": "sum of conceptual slow/service interface lines",
+      "confidence": "low",
+      "assumptions": [
+        "A-GEOMETRY-001"
+      ]
+    },
+    "key_area_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "count of provisional key-area features",
+      "confidence": "medium",
+      "assumptions": [
+        "A-BOUNDARY-001"
+      ]
+    },
+    "land_use_zone_count": {
+      "status": "known",
+      "value": 12,
+      "unit": "count",
+      "source_files": [
+        "geometry/land_use.geojson"
+      ],
+      "formula": "count of non-overlapping conceptual research units",
+      "confidence": "medium",
+      "assumptions": [
+        "A-GEOMETRY-001"
+      ]
+    },
+    "building_unit_count": {
+      "status": "known",
+      "value": 12,
+      "unit": "count",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "count of conceptual building carriers",
+      "confidence": "low",
+      "assumptions": [
+        "A-GEOMETRY-001"
+      ]
+    },
+    "landmark_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "count of public_space features with scenario_type=ai_landmark",
+      "confidence": "medium",
+      "assumptions": [
+        "A-DATA-001"
+      ]
+    },
+    "scenario_card_count": {
+      "status": "known",
+      "value": 12,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/scenario_cards.json"
+      ],
+      "formula": "count of scenario cards",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "industry_test_protocol_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/protocols.json"
+      ],
+      "formula": "count of proposed industry test protocols",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "persona_count": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/personas.json"
+      ],
+      "formula": "count of representative personas",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "global_case_count": {
+      "status": "known",
+      "value": 7,
+      "unit": "count",
+      "source_files": [
+        "proposal.md",
+        "sources.json"
+      ],
+      "formula": "count of public mechanism-reference cases",
+      "confidence": "medium",
+      "assumptions": [
+        "A-DATA-001"
+      ]
+    },
+    "phase_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/phasing.geojson"
+      ],
+      "formula": "count of conceptual phasing polygons",
+      "confidence": "low",
+      "assumptions": [
+        "A-OPERATIONS-001"
+      ]
+    },
+    "annual_program_count": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": [
+        "proposal.md"
+      ],
+      "formula": "count of proposed annual-operation program items",
+      "confidence": "low",
+      "assumptions": [
+        "A-OPERATIONS-001"
+      ]
+    },
+    "far_control": {
+      "status": "unknown",
+      "value": null,
+      "unit": "none",
+      "source_files": [],
+      "formula": "not assigned in concept proposal",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-CONTROL-001"
+      ],
+      "reason": "Official regulatory-plan controls are not available in this candidate package."
+    },
+    "height_control_m": {
+      "status": "unknown",
+      "value": null,
+      "unit": "m",
+      "source_files": [],
+      "formula": "not assigned in concept proposal",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-CONTROL-001"
+      ],
+      "reason": "Building-height control requires official regulatory-plan data."
+    },
+    "investment_total": {
+      "status": "unknown",
+      "value": null,
+      "unit": "none",
+      "source_files": [],
+      "formula": "not estimated",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-CONTROL-001"
+      ],
+      "reason": "No investment or ownership data is asserted."
+    }
+  }
+}
