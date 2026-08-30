@@ -4,7 +4,7 @@ All submitted text, geometry, diagrams, PDFs, and static HTML assets are generat
 
 ## Brand / trademark prior-rights boundary
 
-The brand name「颐养智环」「AGE Love Loop / AGE.JZ」and the three node names (颐行廊 / 颐养小院 / 智龄馆) are original concept names. No official trademark or prior-rights search has been completed at concept stage; the names are treated as internal working codenames and are restricted from external use, registration or formal publication until clearance is obtained. Any coincidence with existing marks is unintentional.
+The brand name「颐养智环」「AGE Love Loop / AGE·JZ」and the three node names (颐行廊 / 颐养小院 / 智龄馆) are original concept names. No official trademark or prior-rights search has been completed at concept stage; the names are treated as internal working codenames and are restricted from external use, registration or formal publication until clearance is obtained. Any coincidence with existing marks is unintentional.
 
 ## Fonts
 

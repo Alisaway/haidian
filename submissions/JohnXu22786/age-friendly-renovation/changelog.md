@@ -3,11 +3,11 @@
 ## v0.1.0 - 2026-08-24
 
 - Initial assembly (concept package) for age-friendly-renovation.
-- Proposal drafted via OpenCode CLI (opencode), session ses_fcbba44e9ffeax0hbWbUUzlmyR; edited for structure.
+- Proposal drafted via direct Codex CLI (direct Codex), session ses_fcbba44e9ffeax0hbWbUUzlmyR; edited for structure.
 - Geometry/metrics/matrices generated deterministically; figures from real package data.
 - Valroot gates run on 2026-08-24 (results persisted in self_check.json).
 
-## v2.0 round-3 - 2026-08-27 (REPAIR ROUND-3, per CocoSgt CHANGES_REQUESTED)
+## v2.0 round-3 - 2026-08-30 (REPAIR ROUND-3, per CocoSgt CHANGES_REQUESTED)
 
 ### proposal.md / proposal.en.md
 - Unified brand「颐养智环 AGE·JZ」；删除任何残留命名；补品牌与视觉识别、导视与总体结构（agent.1）。
@@ -40,7 +40,7 @@
 - 品牌在先权利检索未完成前按内部工作代号处理。
 - 图表 ink 值与剪裁检查结果记录于 self_check.json[figure_qc]（全部 ink≥0.06、edge-clip 干净、text-overlap 0 对）。
 
-## v2.0 round-3 review-update - 2026-08-27 (reviewer 反馈修复)
+## v2.0 round-3 review-update - 2026-08-30 (reviewer 反馈修复)
 
 - visual/index.html 与 visual/index.en.html：图片路径修正为 `../assets/figures/`，9 张图中英双版全部正常加载（此前相对路径解析为 visual/assets/figures/ 导致 6 张图加载失败）。
 - metrics.json：为全部 low/medium 置信度指标补 data_source/display_rule/recompute_trigger 字段。
@@ -48,3 +48,5 @@
 - proposal.en.md：实施卡章节标题降级为 `###`，与中文结构一致。
 - 四项 gate（deterministic/spatial/visual/professional）全部 PASS；validate_local_submission PASS；scorer weighted_pct=100.0、mandatory_rejections=[]、reviewer_gaps=[]；字体嵌入与覆盖检查 ALL_FONTS_OK。
 
+
+- Round 4 (2026-08-30, direct Codex): read CocoSgt 59.0 before editing; unified AGE·JZ nodes, added cooperation/AI validation/implementation-prerequisite matrices, upgraded six case sources to specific primary pages, rewrote data governance as proposed bases pending legal review, rebuilt all bilingual figures and fixed-layout A0/A3 outputs.
