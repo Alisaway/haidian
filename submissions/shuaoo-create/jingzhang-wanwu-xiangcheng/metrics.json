@@ -1,0 +1,499 @@
+{
+  "schema_version": "0.1.0",
+  "units": {
+    "length": "m",
+    "area": "sqm"
+  },
+  "metrics": {
+    "site_area_sqm": {
+      "status": "known",
+      "value": 11412825.386,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/site_boundary.geojson"
+      ],
+      "formula": "EPSG:4548 area(PROV-SITE-001)",
+      "confidence": "medium",
+      "assumptions": [
+        "A-OFFICIAL-GEOMETRY-001"
+      ],
+      "provisional_boundary_derived": true
+    },
+    "green_space_area_sqm": {
+      "status": "known",
+      "value": 2414712.666,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/green_space.geojson"
+      ],
+      "formula": "EPSG:4548 area(union green_space)",
+      "confidence": "low",
+      "assumptions": [
+        "A-OFFICIAL-GEOMETRY-001",
+        "A-ECOLOGY-BASELINE-001"
+      ],
+      "design_model": true
+    },
+    "green_ratio": {
+      "status": "known",
+      "value": 0.211579,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/site_boundary.geojson",
+        "geometry/green_space.geojson"
+      ],
+      "formula": "green_space_area_sqm / site_area_sqm",
+      "confidence": "low",
+      "assumptions": [
+        "A-OFFICIAL-GEOMETRY-001",
+        "A-ECOLOGY-BASELINE-001"
+      ],
+      "design_model": true
+    },
+    "public_space_area_sqm": {
+      "status": "known",
+      "value": 116265.579,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "EPSG:4548 area(union public_space)",
+      "confidence": "low",
+      "assumptions": [
+        "A-OFFICIAL-GEOMETRY-001"
+      ],
+      "design_model": true
+    },
+    "public_space_ratio": {
+      "status": "known",
+      "value": 0.010187,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/site_boundary.geojson",
+        "geometry/public_space.geojson"
+      ],
+      "formula": "public_space_area_sqm / site_area_sqm",
+      "confidence": "low",
+      "assumptions": [
+        "A-OFFICIAL-GEOMETRY-001"
+      ],
+      "design_model": true
+    },
+    "building_footprint_sqm": {
+      "status": "known",
+      "value": 400602.653,
+      "unit": "sqm",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "EPSG:4548 area(union concept building footprints)",
+      "confidence": "low",
+      "assumptions": [
+        "A-BUILDINGS-AND-OWNERSHIP-001"
+      ],
+      "concept_massing": true
+    },
+    "building_count": {
+      "status": "known",
+      "value": 180,
+      "unit": "count",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "count(features)",
+      "confidence": "high",
+      "assumptions": [],
+      "concept_count": true
+    },
+    "road_length_m": {
+      "status": "known",
+      "value": 9384.415,
+      "unit": "m",
+      "source_files": [
+        "geometry/roads.geojson"
+      ],
+      "formula": "EPSG:4548 length(union roads)",
+      "confidence": "low",
+      "assumptions": [
+        "A-MOBILITY-BASELINE-001"
+      ],
+      "concept_network": true
+    },
+    "key_area_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/key_areas.geojson"
+      ],
+      "formula": "count(features)",
+      "confidence": "high",
+      "assumptions": [
+        "A-OFFICIAL-GEOMETRY-001"
+      ]
+    },
+    "scenario_count": {
+      "status": "known",
+      "value": 12,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/scenario-contracts.json"
+      ],
+      "formula": "count(scenarios)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "industry_test_count": {
+      "status": "known",
+      "value": 4,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/scenario-contracts.json"
+      ],
+      "formula": "count(industry_test=true)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "persona_count": {
+      "status": "known",
+      "value": 7,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/scenario-contracts.json"
+      ],
+      "formula": "count(personas)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "landmark_count": {
+      "status": "known",
+      "value": 3,
+      "unit": "count",
+      "source_files": [
+        "geometry/public_space.geojson"
+      ],
+      "formula": "count(public_space_type=ai_pilgrimage_landmark)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "dual_gate_record_count": {
+      "status": "known",
+      "value": 12,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/civic-ai-dual-gate-register.json"
+      ],
+      "formula": "count(gate_records)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "living_ground_element_count": {
+      "status": "known",
+      "value": 7,
+      "unit": "count",
+      "source_files": [
+        "geometry/green_space.geojson"
+      ],
+      "formula": "count(features)",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "seven_life_condition_count": {
+      "status": "known",
+      "value": 7,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/seven-life-six-duty-matrix.json"
+      ],
+      "formula": "fixed design framework",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "six_ai_duty_count": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/seven-life-six-duty-matrix.json"
+      ],
+      "formula": "fixed design framework",
+      "confidence": "high",
+      "assumptions": []
+    },
+    "ai_off_path_coverage_ratio": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/scenario-contracts.json"
+      ],
+      "formula": "scenarios_with_ai_off_path / all_scenarios",
+      "confidence": "high",
+      "assumptions": [],
+      "design_contract_not_field_result": true
+    },
+    "human_route_contract_coverage_ratio": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/scenario-contracts.json"
+      ],
+      "formula": "scenarios_with_human_route / all_scenarios",
+      "confidence": "high",
+      "assumptions": [],
+      "design_contract_not_field_result": true
+    },
+    "life_impact_field_coverage_ratio": {
+      "status": "known",
+      "value": 1.0,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/scenario-contracts.json"
+      ],
+      "formula": "scenarios_with_7_life_impact_fields / all_scenarios",
+      "confidence": "high",
+      "assumptions": [],
+      "design_contract_not_field_result": true
+    },
+    "screen_burden": {
+      "status": "unknown",
+      "value": null,
+      "unit": "index",
+      "source_files": [
+        "visual/assets/scenario-contracts.json"
+      ],
+      "formula": "weighted count of mandatory screen interactions per public task",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-IMPLEMENTATION-001"
+      ],
+      "reason": "No authorised field pilot or observed task baseline exists.",
+      "measurement_method": "task walkthrough by persona; report median and worst-case",
+      "required_data": "authorised task observations",
+      "responsible_role_type": "independent accessibility reviewer",
+      "recalculation_trigger": "after authorised baseline survey"
+    },
+    "attention_tax": {
+      "status": "unknown",
+      "value": null,
+      "unit": "index",
+      "source_files": [
+        "visual/assets/scenario-contracts.json"
+      ],
+      "formula": "time + cognitive interruptions demanded by technology",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-IMPLEMENTATION-001"
+      ],
+      "reason": "No validated attention study has been conducted.",
+      "measurement_method": "timed task walk-through plus short cognitive burden survey",
+      "required_data": "authorised participant observations",
+      "responsible_role_type": "human-factors reviewer",
+      "recalculation_trigger": "after authorised pilot"
+    },
+    "life_continuity": {
+      "status": "unknown",
+      "value": null,
+      "unit": "index",
+      "source_files": [
+        "geometry/green_space.geojson",
+        "geometry/constraints.geojson"
+      ],
+      "formula": "continuity of air/water/soil/shade/darkness/quiet/habitat across network",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-ECOLOGY-BASELINE-001"
+      ],
+      "reason": "Seasonal ecology, soil and microclimate baseline is unavailable.",
+      "measurement_method": "GIS connectivity + seasonal field transects",
+      "required_data": "official ecology and seasonal surveys",
+      "responsible_role_type": "ecologist and landscape professional",
+      "recalculation_trigger": "official ecology baseline available"
+    },
+    "darkness_continuity": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/green_space.geojson",
+        "geometry/constraints.geojson"
+      ],
+      "formula": "night habitat route below agreed luminance threshold / target route",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-ECOLOGY-BASELINE-001"
+      ],
+      "reason": "No authorised night illuminance transect exists.",
+      "measurement_method": "seasonal night lux transects",
+      "required_data": "night measurements and ecological threshold review",
+      "responsible_role_type": "lighting and ecology reviewer",
+      "recalculation_trigger": "authorised night survey"
+    },
+    "soil_continuity": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/green_space.geojson"
+      ],
+      "formula": "connected unsealed/root-zone area / target living-ground area",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-ECOLOGY-BASELINE-001"
+      ],
+      "reason": "No official soil, root-zone or impermeable-surface survey exists.",
+      "measurement_method": "soil and root-zone mapping",
+      "required_data": "surveyed soil and tree-root data",
+      "responsible_role_type": "soil scientist and arborist",
+      "recalculation_trigger": "official or cleared survey"
+    },
+    "reversibility": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/scenario-contracts.json",
+        "visual/assets/implementation-readiness-register.json"
+      ],
+      "formula": "elements restored to ordinary baseline within agreed time / all trial elements",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-IMPLEMENTATION-001"
+      ],
+      "reason": "No field installation or restoration drill has occurred.",
+      "measurement_method": "documented removal and baseline restoration audit",
+      "required_data": "authorised prototype and independent close-out review",
+      "responsible_role_type": "restoration steward",
+      "recalculation_trigger": "after first authorised drill"
+    },
+    "biological_externality": {
+      "status": "unknown",
+      "value": null,
+      "unit": "index",
+      "source_files": [
+        "visual/assets/scenario-contracts.json"
+      ],
+      "formula": "normalised energy+heat+water+soil+light+noise+habitat burden",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-LIFE-IMPACT-001"
+      ],
+      "reason": "All seven component values are currently unobserved.",
+      "measurement_method": "pre-registered seven-field impact score with adverse values retained",
+      "required_data": "submetering, thermal, water, soil, light, noise and habitat observations",
+      "responsible_role_type": "independent life-impact reviewer",
+      "recalculation_trigger": "after authorised pilot"
+    },
+    "dual_gate_release_coverage": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/civic-ai-dual-gate-register.json"
+      ],
+      "formula": "authorised public AI scenarios with L7=PASS and D6=PASS / all authorised active public AI scenarios",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-CIVIC-DUAL-GATE-001"
+      ],
+      "reason": "There are no authorised active systems in this concept package.",
+      "measurement_method": "independent audit of both non-compensatory gates and their evidence",
+      "required_data": "authorised deployment inventory",
+      "responsible_role_type": "civic AI dual-gate steward",
+      "recalculation_trigger": "before any real public opening"
+    },
+    "human_route_completeness": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/scenario-contracts.json"
+      ],
+      "formula": "personas completing same task via staffed/non-AI path / all tested personas",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-IMPLEMENTATION-001"
+      ],
+      "reason": "Design contracts exist but no observed user completion data exists.",
+      "measurement_method": "persona-stratified task completion test",
+      "required_data": "authorised user study",
+      "responsible_role_type": "independent accessibility and community reviewer",
+      "recalculation_trigger": "after authorised pilot"
+    },
+    "ai_off_task_completion": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "visual/assets/scenario-contracts.json"
+      ],
+      "formula": "successful ordinary-path tasks during AI-off drill / attempted tasks",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-IMPLEMENTATION-001"
+      ],
+      "reason": "No AI-off field drill has been conducted.",
+      "measurement_method": "planned AI-off exercise with denominator including failures and withdrawals",
+      "required_data": "authorised drill logs",
+      "responsible_role_type": "operations and public-service reviewer",
+      "recalculation_trigger": "after authorised AI-off drill"
+    },
+    "floor_area_ratio": {
+      "status": "unknown",
+      "value": null,
+      "unit": "ratio",
+      "source_files": [
+        "geometry/land_use.geojson",
+        "geometry/buildings.geojson"
+      ],
+      "formula": "total floor area / site area",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-PLANNING-CONTROLS-001",
+        "A-BUILDINGS-AND-OWNERSHIP-001"
+      ],
+      "reason": "Official planning controls, parcels and verified existing buildings are unavailable."
+    },
+    "building_height_limit_m": {
+      "status": "unknown",
+      "value": null,
+      "unit": "m",
+      "source_files": [
+        "geometry/buildings.geojson"
+      ],
+      "formula": "official control value",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-PLANNING-CONTROLS-001"
+      ],
+      "reason": "Official regulatory controls are unavailable; concept massing is not a statutory limit."
+    },
+    "resident_population": {
+      "status": "unknown",
+      "value": null,
+      "unit": "count",
+      "source_files": [],
+      "formula": "official or surveyed population within official boundary",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-OFFICIAL-GEOMETRY-001"
+      ],
+      "reason": "No official boundary-matched population dataset is available."
+    },
+    "capex_cny": {
+      "status": "unknown",
+      "value": null,
+      "unit": "none",
+      "source_files": [
+        "visual/assets/implementation-readiness-register.json"
+      ],
+      "formula": "professional quantity survey after site and scope confirmation",
+      "confidence": "unknown",
+      "assumptions": [
+        "A-COSTS-001"
+      ],
+      "reason": "No official scope, site survey, authorised operator or market-tested quantity/cost basis exists."
+    }
+  }
+}

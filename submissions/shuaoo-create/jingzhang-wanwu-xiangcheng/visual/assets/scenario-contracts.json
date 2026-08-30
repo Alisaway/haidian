@@ -1,0 +1,1123 @@
+{
+  "schema_version": "1.0",
+  "contract_set_id": "SCENARIO-CONTRACTS-01",
+  "personas": [
+    {
+      "id": "P01",
+      "zh": "老年居民与低数字能力者",
+      "en": "Older residents and people with low digital confidence",
+      "need_zh": "不扫码、不注册，也能完成问路、办理与求助。",
+      "need_en": "Complete guidance, service and help without scanning or registration."
+    },
+    {
+      "id": "P02",
+      "zh": "儿童与照护者",
+      "en": "Children and caregivers",
+      "need_zh": "把注意力带回真实世界，并保证真人介入和数据零采集。",
+      "need_en": "Return attention to the physical world with human supervision and zero personal-data capture."
+    },
+    {
+      "id": "P03",
+      "zh": "残障人士与行动不便者",
+      "en": "Disabled and mobility-limited people",
+      "need_zh": "获得连续无障碍路径、等价人工服务与明确停机优先权。",
+      "need_en": "Continuous accessible routes, equivalent human service and clear stop priority."
+    },
+    {
+      "id": "P04",
+      "zh": "普通居民与无手机使用者",
+      "en": "Residents and people without smartphones",
+      "need_zh": "智能关闭后，基础城市仍完整可用。",
+      "need_en": "The ordinary city remains fully usable when AI is off."
+    },
+    {
+      "id": "P05",
+      "zh": "小店与一线运营者",
+      "en": "Small businesses and frontline operators",
+      "need_zh": "知道AI何时工作、谁负责、争议如何转人工以及退出成本。",
+      "need_en": "Know when AI is active, who is accountable, how disputes reach humans and what exit costs exist."
+    },
+    {
+      "id": "P06",
+      "zh": "开发者与企业测试团队",
+      "en": "Developers and enterprise test teams",
+      "need_zh": "在真实城市中获得可失败、可停止、可恢复的测试空间。",
+      "need_en": "Access a real-city test environment that can fail, stop and restore safely."
+    },
+    {
+      "id": "P07",
+      "zh": "维护人员与公共服务人员",
+      "en": "Maintainers and public-service staff",
+      "need_zh": "拥有清晰责任、维护窗口、人工接管和退役恢复流程。",
+      "need_en": "Clear duties, maintenance windows, human takeover and restoration procedures."
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "SC01",
+      "zone": "north",
+      "industry_test": true,
+      "title_zh": "现实礼让训练场",
+      "title_en": "Real-World Courtesy Test",
+      "persona_ids": [
+        "P03",
+        "P06",
+        "P07"
+      ],
+      "need_zh": "配送与服务机器人在儿童、轮椅、骑行者和临时障碍共存的街道中学习减速、避让和停机。",
+      "need_en": "Delivery and service robots learn to slow, yield and stop among children, wheelchairs, cyclists and temporary obstacles.",
+      "life_dependencies": [
+        "AIR",
+        "SHADE_HEAT",
+        "QUIET",
+        "BIODIVERSITY"
+      ],
+      "ai_role_zh": "低速导航、冲突预测和人工接管提示",
+      "ai_role_en": "Low-speed navigation, conflict prediction and human-takeover alerts",
+      "dual_gate_record": "DG-01",
+      "accountable_role_zh": "测试场运营责任人",
+      "accountable_role_en": "Test-ground accountable operator",
+      "minimum_data_zh": "匿名近距障碍类别与设备状态；不采集人脸和身份",
+      "minimum_data_en": "Anonymous near-field obstacle class and device state; no face or identity data",
+      "human_route_zh": "现场安全员与实体停止键",
+      "human_route_en": "On-site safety steward and physical stop button",
+      "ai_off_zh": "人工围挡、普通交通标识与步行优先规则继续工作",
+      "ai_off_en": "Manual barriers, ordinary signs and pedestrian-priority rules remain",
+      "stop_zh": "近失事件、超速、盲道占用或生态缓冲越界即停",
+      "stop_en": "Stop on near-miss, speeding, tactile-path obstruction or habitat-buffer breach",
+      "restore_zh": "机器人撤离，路面恢复普通公共通行",
+      "restore_en": "Remove robots and return the surface to ordinary public passage",
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          116.346,
+          40.0205
+        ]
+      },
+      "expiry_days": 90,
+      "evidence_status": "concept_design_not_field_verified",
+      "observed_value": null,
+      "life_impact": {
+        "energy": {
+          "status": "unknown",
+          "value": null,
+          "unit": "kWh",
+          "measurement_method": "submetered pilot comparison"
+        },
+        "heat": {
+          "status": "unknown",
+          "value": null,
+          "unit": "degC_delta",
+          "measurement_method": "before/after thermal survey"
+        },
+        "water": {
+          "status": "unknown",
+          "value": null,
+          "unit": "litre_or_infiltration",
+          "measurement_method": "site water balance"
+        },
+        "soil": {
+          "status": "unknown",
+          "value": null,
+          "unit": "compaction_or_area",
+          "measurement_method": "soil compaction and root-zone survey"
+        },
+        "light": {
+          "status": "unknown",
+          "value": null,
+          "unit": "lux",
+          "measurement_method": "night illuminance transect"
+        },
+        "noise": {
+          "status": "unknown",
+          "value": null,
+          "unit": "dBA",
+          "measurement_method": "day/night acoustic logging"
+        },
+        "habitat": {
+          "status": "unknown",
+          "value": null,
+          "unit": "index",
+          "measurement_method": "seasonal habitat observation"
+        }
+      }
+    },
+    {
+      "id": "SC02",
+      "zone": "north",
+      "industry_test": false,
+      "title_zh": "断网仍可服务的公共问询",
+      "title_en": "Offline-Equivalent Civic Guidance",
+      "persona_ids": [
+        "P01",
+        "P04",
+        "P07"
+      ],
+      "need_zh": "AI问询失效或居民拒绝使用时，仍能通过纸本地图、人工桌和电话完成同一任务。",
+      "need_en": "When AI guidance fails or is declined, paper maps, a staffed desk and telephone service complete the same task.",
+      "life_dependencies": [
+        "SHADE_HEAT",
+        "QUIET"
+      ],
+      "ai_role_zh": "多语问答与无障碍路线建议",
+      "ai_role_en": "Multilingual Q&A and accessible-route suggestions",
+      "dual_gate_record": "DG-02",
+      "accountable_role_zh": "公共服务台主管",
+      "accountable_role_en": "Public-service desk supervisor",
+      "minimum_data_zh": "即时问题与目的地，不保存身份",
+      "minimum_data_en": "Immediate question and destination, without identity retention",
+      "human_route_zh": "同一地点的有人值守服务台",
+      "human_route_en": "A staffed desk at the same location",
+      "ai_off_zh": "纸质导视、电话和人工服务保持开放",
+      "ai_off_en": "Paper wayfinding, telephone and human service remain open",
+      "stop_zh": "连续误导、语言歧视或人工服务不可达时停用AI层",
+      "stop_en": "Disable the AI layer after repeated misguidance, language bias or unavailable human service",
+      "restore_zh": "撤除数字叠层，保留实体导视与座椅",
+      "restore_en": "Remove the digital overlay while retaining physical signs and seating",
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          116.3505,
+          40.0168
+        ]
+      },
+      "expiry_days": 180,
+      "evidence_status": "concept_design_not_field_verified",
+      "observed_value": null,
+      "life_impact": {
+        "energy": {
+          "status": "unknown",
+          "value": null,
+          "unit": "kWh",
+          "measurement_method": "submetered pilot comparison"
+        },
+        "heat": {
+          "status": "unknown",
+          "value": null,
+          "unit": "degC_delta",
+          "measurement_method": "before/after thermal survey"
+        },
+        "water": {
+          "status": "unknown",
+          "value": null,
+          "unit": "litre_or_infiltration",
+          "measurement_method": "site water balance"
+        },
+        "soil": {
+          "status": "unknown",
+          "value": null,
+          "unit": "compaction_or_area",
+          "measurement_method": "soil compaction and root-zone survey"
+        },
+        "light": {
+          "status": "unknown",
+          "value": null,
+          "unit": "lux",
+          "measurement_method": "night illuminance transect"
+        },
+        "noise": {
+          "status": "unknown",
+          "value": null,
+          "unit": "dBA",
+          "measurement_method": "day/night acoustic logging"
+        },
+        "habitat": {
+          "status": "unknown",
+          "value": null,
+          "unit": "index",
+          "measurement_method": "seasonal habitat observation"
+        }
+      }
+    },
+    {
+      "id": "SC03",
+      "zone": "north",
+      "industry_test": false,
+      "title_zh": "季节与能耗公开的环境智能",
+      "title_en": "Season-Aware Environmental Intelligence",
+      "persona_ids": [
+        "P06",
+        "P07",
+        "P04"
+      ],
+      "need_zh": "建筑与公共空间优先使用遮阳、通风和树冠，AI仅在低技术方案不足时介入。",
+      "need_en": "Buildings and public spaces prioritise shade, ventilation and canopy; AI intervenes only when low-tech measures are insufficient.",
+      "life_dependencies": [
+        "AIR",
+        "WATER",
+        "SHADE_HEAT",
+        "DARKNESS"
+      ],
+      "ai_role_zh": "按需控制通风、遮阳和局部设备",
+      "ai_role_en": "On-demand control of ventilation, shading and local equipment",
+      "dual_gate_record": "DG-03",
+      "accountable_role_zh": "设施能源与生态主管",
+      "accountable_role_en": "Facility energy and ecology steward",
+      "minimum_data_zh": "温湿度、能耗与匿名占用量",
+      "minimum_data_en": "Temperature, humidity, energy use and anonymous occupancy counts",
+      "human_route_zh": "设施控制室与手动开关",
+      "human_route_en": "Facility control room and manual switches",
+      "ai_off_zh": "自然通风、固定遮阳与普通温控继续工作",
+      "ai_off_en": "Natural ventilation, fixed shading and ordinary controls remain",
+      "stop_zh": "能耗或热排放超过试点阈值、自然路径被封闭时停止",
+      "stop_en": "Stop if energy or heat exceeds pilot thresholds or passive routes are blocked",
+      "restore_zh": "撤除可移动设备，恢复被动式空间运行",
+      "restore_en": "Remove movable equipment and restore passive operation",
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          116.3448,
+          40.012
+        ]
+      },
+      "expiry_days": 180,
+      "evidence_status": "concept_design_not_field_verified",
+      "observed_value": null,
+      "life_impact": {
+        "energy": {
+          "status": "unknown",
+          "value": null,
+          "unit": "kWh",
+          "measurement_method": "submetered pilot comparison"
+        },
+        "heat": {
+          "status": "unknown",
+          "value": null,
+          "unit": "degC_delta",
+          "measurement_method": "before/after thermal survey"
+        },
+        "water": {
+          "status": "unknown",
+          "value": null,
+          "unit": "litre_or_infiltration",
+          "measurement_method": "site water balance"
+        },
+        "soil": {
+          "status": "unknown",
+          "value": null,
+          "unit": "compaction_or_area",
+          "measurement_method": "soil compaction and root-zone survey"
+        },
+        "light": {
+          "status": "unknown",
+          "value": null,
+          "unit": "lux",
+          "measurement_method": "night illuminance transect"
+        },
+        "noise": {
+          "status": "unknown",
+          "value": null,
+          "unit": "dBA",
+          "measurement_method": "day/night acoustic logging"
+        },
+        "habitat": {
+          "status": "unknown",
+          "value": null,
+          "unit": "index",
+          "measurement_method": "seasonal habitat observation"
+        }
+      }
+    },
+    {
+      "id": "SC04",
+      "zone": "middle",
+      "industry_test": false,
+      "title_zh": "微扰日常居",
+      "title_en": "Low-Interference Everyday Home",
+      "persona_ids": [
+        "P01",
+        "P02",
+        "P04"
+      ],
+      "need_zh": "让智能退入背景，把人的注意力、身体和感官还给自然光、风、植物与真实邻里。",
+      "need_en": "Move intelligence into the background and return attention, bodies and senses to daylight, air, plants and real neighbours.",
+      "life_dependencies": [
+        "AIR",
+        "WATER",
+        "SOIL",
+        "SHADE_HEAT",
+        "DARKNESS",
+        "QUIET",
+        "BIODIVERSITY"
+      ],
+      "ai_role_zh": "低干扰环境辅助、照护提醒与非强制界面服务",
+      "ai_role_en": "Low-interference environmental assistance, care reminders and non-mandatory interfaces",
+      "dual_gate_record": "DG-04",
+      "accountable_role_zh": "社区公共空间运营者",
+      "accountable_role_en": "Community public-space operator",
+      "minimum_data_zh": "本地即时环境数据；默认不保存个体行为",
+      "minimum_data_en": "Local real-time environmental data; individual behaviour is not retained by default",
+      "human_route_zh": "社区前台和真人邻里服务",
+      "human_route_en": "Community front desk and human neighbourhood service",
+      "ai_off_zh": "门窗、照明、座椅、纸本信息和真人服务全部可用",
+      "ai_off_en": "Windows, lighting, seating, paper information and human service all remain usable",
+      "stop_zh": "屏幕负担增加、个性化监控或真人关系被替代时停用",
+      "stop_en": "Disable if screen burden rises, personalised monitoring appears or human relations are displaced",
+      "restore_zh": "移除数字接口，空间继续作为社区客厅",
+      "restore_en": "Remove digital interfaces; the space remains a community living room",
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          116.3505,
+          39.991
+        ]
+      },
+      "expiry_days": 180,
+      "evidence_status": "concept_design_not_field_verified",
+      "observed_value": null,
+      "life_impact": {
+        "energy": {
+          "status": "unknown",
+          "value": null,
+          "unit": "kWh",
+          "measurement_method": "submetered pilot comparison"
+        },
+        "heat": {
+          "status": "unknown",
+          "value": null,
+          "unit": "degC_delta",
+          "measurement_method": "before/after thermal survey"
+        },
+        "water": {
+          "status": "unknown",
+          "value": null,
+          "unit": "litre_or_infiltration",
+          "measurement_method": "site water balance"
+        },
+        "soil": {
+          "status": "unknown",
+          "value": null,
+          "unit": "compaction_or_area",
+          "measurement_method": "soil compaction and root-zone survey"
+        },
+        "light": {
+          "status": "unknown",
+          "value": null,
+          "unit": "lux",
+          "measurement_method": "night illuminance transect"
+        },
+        "noise": {
+          "status": "unknown",
+          "value": null,
+          "unit": "dBA",
+          "measurement_method": "day/night acoustic logging"
+        },
+        "habitat": {
+          "status": "unknown",
+          "value": null,
+          "unit": "index",
+          "measurement_method": "seasonal habitat observation"
+        }
+      }
+    },
+    {
+      "id": "SC05",
+      "zone": "middle",
+      "industry_test": false,
+      "title_zh": "儿童真实世界探索",
+      "title_en": "Children Explore the Real World",
+      "persona_ids": [
+        "P02",
+        "P07"
+      ],
+      "need_zh": "AI用于提示观察、讲述自然与京张历史，而不是把儿童重新拉回屏幕。",
+      "need_en": "AI prompts observation and tells natural and Jing-Zhang stories without pulling children back to screens.",
+      "life_dependencies": [
+        "SOIL",
+        "SHADE_HEAT",
+        "DARKNESS",
+        "QUIET",
+        "BIODIVERSITY"
+      ],
+      "ai_role_zh": "语音式自然观察提示与离线故事触发",
+      "ai_role_en": "Voice-based nature prompts and offline story triggers",
+      "dual_gate_record": "DG-05",
+      "accountable_role_zh": "儿童活动与安全负责人",
+      "accountable_role_en": "Child activity and safety lead",
+      "minimum_data_zh": "不采集儿童身份、声音或轨迹；只读取设施触发状态",
+      "minimum_data_en": "No child identity, voice or trajectory capture; only device trigger states",
+      "human_route_zh": "带队教师、家长与实体说明牌",
+      "human_route_en": "Teachers, caregivers and physical interpretation panels",
+      "ai_off_zh": "自然材料、游戏设施和实体展板继续完整使用",
+      "ai_off_en": "Natural materials, play elements and physical panels remain fully usable",
+      "stop_zh": "出现儿童数据采集、注意力黏附或真人监督不足时停用",
+      "stop_en": "Stop if child data is collected, attention becomes sticky or human supervision is insufficient",
+      "restore_zh": "撤走可移动设备，恢复不依赖数字界面的自然活动场",
+      "restore_en": "Remove movable devices and restore a nature-play area that does not depend on digital interfaces",
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          116.3445,
+          39.9883
+        ]
+      },
+      "expiry_days": 180,
+      "evidence_status": "concept_design_not_field_verified",
+      "observed_value": null,
+      "life_impact": {
+        "energy": {
+          "status": "unknown",
+          "value": null,
+          "unit": "kWh",
+          "measurement_method": "submetered pilot comparison"
+        },
+        "heat": {
+          "status": "unknown",
+          "value": null,
+          "unit": "degC_delta",
+          "measurement_method": "before/after thermal survey"
+        },
+        "water": {
+          "status": "unknown",
+          "value": null,
+          "unit": "litre_or_infiltration",
+          "measurement_method": "site water balance"
+        },
+        "soil": {
+          "status": "unknown",
+          "value": null,
+          "unit": "compaction_or_area",
+          "measurement_method": "soil compaction and root-zone survey"
+        },
+        "light": {
+          "status": "unknown",
+          "value": null,
+          "unit": "lux",
+          "measurement_method": "night illuminance transect"
+        },
+        "noise": {
+          "status": "unknown",
+          "value": null,
+          "unit": "dBA",
+          "measurement_method": "day/night acoustic logging"
+        },
+        "habitat": {
+          "status": "unknown",
+          "value": null,
+          "unit": "index",
+          "measurement_method": "seasonal habitat observation"
+        }
+      }
+    },
+    {
+      "id": "SC06",
+      "zone": "middle",
+      "industry_test": false,
+      "title_zh": "无障碍共行街角",
+      "title_en": "Accessible Shared Corner",
+      "persona_ids": [
+        "P03",
+        "P01",
+        "P04"
+      ],
+      "need_zh": "在人、轮椅、婴儿车和低速机器交汇处，优先保障净宽、可见性和人工协助。",
+      "need_en": "At a junction of people, wheelchairs, strollers and slow machines, protect clear width, visibility and human assistance first.",
+      "life_dependencies": [
+        "SHADE_HEAT",
+        "QUIET"
+      ],
+      "ai_role_zh": "拥堵提示、路径建议与冲突预警",
+      "ai_role_en": "Congestion alerts, route suggestions and conflict warnings",
+      "dual_gate_record": "DG-06",
+      "accountable_role_zh": "街道公共空间维护者",
+      "accountable_role_en": "Street public-space maintainer",
+      "minimum_data_zh": "匿名人流计数与障碍状态",
+      "minimum_data_en": "Anonymous footfall counts and obstacle states",
+      "human_route_zh": "有人值守的协助点与物理求助按钮",
+      "human_route_en": "Staffed assistance point and physical help button",
+      "ai_off_zh": "连续无障碍路径、普通导视与人工协助保持",
+      "ai_off_en": "Continuous accessible route, ordinary signs and human assistance remain",
+      "stop_zh": "净宽下降、无障碍任务失败或机器优先于人时停用",
+      "stop_en": "Disable if clear width falls, accessibility tasks fail or machines take priority over people",
+      "restore_zh": "移除旁置设备，净空恢复为普通街角",
+      "restore_en": "Remove side-mounted equipment and restore an ordinary clear corner",
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          116.3495,
+          39.9857
+        ]
+      },
+      "expiry_days": 180,
+      "evidence_status": "concept_design_not_field_verified",
+      "observed_value": null,
+      "life_impact": {
+        "energy": {
+          "status": "unknown",
+          "value": null,
+          "unit": "kWh",
+          "measurement_method": "submetered pilot comparison"
+        },
+        "heat": {
+          "status": "unknown",
+          "value": null,
+          "unit": "degC_delta",
+          "measurement_method": "before/after thermal survey"
+        },
+        "water": {
+          "status": "unknown",
+          "value": null,
+          "unit": "litre_or_infiltration",
+          "measurement_method": "site water balance"
+        },
+        "soil": {
+          "status": "unknown",
+          "value": null,
+          "unit": "compaction_or_area",
+          "measurement_method": "soil compaction and root-zone survey"
+        },
+        "light": {
+          "status": "unknown",
+          "value": null,
+          "unit": "lux",
+          "measurement_method": "night illuminance transect"
+        },
+        "noise": {
+          "status": "unknown",
+          "value": null,
+          "unit": "dBA",
+          "measurement_method": "day/night acoustic logging"
+        },
+        "habitat": {
+          "status": "unknown",
+          "value": null,
+          "unit": "index",
+          "measurement_method": "seasonal habitat observation"
+        }
+      }
+    },
+    {
+      "id": "SC07",
+      "zone": "south",
+      "industry_test": false,
+      "title_zh": "小店数字员工公示柜台",
+      "title_en": "Small-Shop Digital Worker Counter",
+      "persona_ids": [
+        "P05",
+        "P04",
+        "P07"
+      ],
+      "need_zh": "顾客随时知道自己是否在与AI交互，并能在同一柜台完成真人咨询、纠错与退款。",
+      "need_en": "Customers always know when they interact with AI and can reach a human for advice, correction and refunds at the same counter.",
+      "life_dependencies": [
+        "QUIET",
+        "SHADE_HEAT"
+      ],
+      "ai_role_zh": "商品问答、排队建议和多语沟通",
+      "ai_role_en": "Product Q&A, queue suggestions and multilingual communication",
+      "dual_gate_record": "DG-07",
+      "accountable_role_zh": "商户经营责任人",
+      "accountable_role_en": "Merchant accountable operator",
+      "minimum_data_zh": "当次问题和交易必要信息，默认不画像",
+      "minimum_data_en": "Session question and transaction-minimum data; no profiling by default",
+      "human_route_zh": "同一柜台真人接管",
+      "human_route_en": "Human takeover at the same counter",
+      "ai_off_zh": "商品标价、人工收银和纸质凭证保持",
+      "ai_off_en": "Prices, staffed payment and paper receipts remain",
+      "stop_zh": "误导交易、拒绝人工、隐性推荐或投诉无法处理时停用",
+      "stop_en": "Disable on misleading transactions, denied human service, hidden recommendations or unresolved complaints",
+      "restore_zh": "移除AI终端，柜台恢复普通经营",
+      "restore_en": "Remove the AI terminal and return the counter to ordinary operation",
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          116.352,
+          39.9482
+        ]
+      },
+      "expiry_days": 180,
+      "evidence_status": "concept_design_not_field_verified",
+      "observed_value": null,
+      "life_impact": {
+        "energy": {
+          "status": "unknown",
+          "value": null,
+          "unit": "kWh",
+          "measurement_method": "submetered pilot comparison"
+        },
+        "heat": {
+          "status": "unknown",
+          "value": null,
+          "unit": "degC_delta",
+          "measurement_method": "before/after thermal survey"
+        },
+        "water": {
+          "status": "unknown",
+          "value": null,
+          "unit": "litre_or_infiltration",
+          "measurement_method": "site water balance"
+        },
+        "soil": {
+          "status": "unknown",
+          "value": null,
+          "unit": "compaction_or_area",
+          "measurement_method": "soil compaction and root-zone survey"
+        },
+        "light": {
+          "status": "unknown",
+          "value": null,
+          "unit": "lux",
+          "measurement_method": "night illuminance transect"
+        },
+        "noise": {
+          "status": "unknown",
+          "value": null,
+          "unit": "dBA",
+          "measurement_method": "day/night acoustic logging"
+        },
+        "habitat": {
+          "status": "unknown",
+          "value": null,
+          "unit": "index",
+          "measurement_method": "seasonal habitat observation"
+        }
+      }
+    },
+    {
+      "id": "SC08",
+      "zone": "south",
+      "industry_test": false,
+      "title_zh": "智能健康转人工站",
+      "title_en": "AI Health-to-Human Handover",
+      "persona_ids": [
+        "P01",
+        "P03",
+        "P04",
+        "P07"
+      ],
+      "need_zh": "AI只做健康导航和非诊断性提示，任何高风险情况立即转交具名真人。",
+      "need_en": "AI provides navigation and non-diagnostic guidance only; any high-risk case is transferred immediately to a named human role.",
+      "life_dependencies": [
+        "AIR",
+        "QUIET",
+        "SHADE_HEAT"
+      ],
+      "ai_role_zh": "服务分流、康复设施导览和风险提示",
+      "ai_role_en": "Service routing, rehabilitation-facility guidance and risk alerts",
+      "dual_gate_record": "DG-08",
+      "accountable_role_zh": "健康服务机构责任人",
+      "accountable_role_en": "Health-service accountable operator",
+      "minimum_data_zh": "当次需求与自愿输入；不留存诊疗结论",
+      "minimum_data_en": "Session need and voluntary input; no diagnostic conclusion retained",
+      "human_route_zh": "现场专业人员、电话和人工预约",
+      "human_route_en": "On-site professional, telephone and staffed booking",
+      "ai_off_zh": "实体导视、人工问询与纸本流程保持",
+      "ai_off_en": "Physical signs, human inquiry and paper procedures remain",
+      "stop_zh": "超出非诊断边界、人工不可达或误导风险时停用",
+      "stop_en": "Disable if it crosses the non-diagnostic boundary, humans are unreachable or risk of misguidance appears",
+      "restore_zh": "撤除智能界面，保留普通健康服务台",
+      "restore_en": "Remove the intelligent interface and retain the ordinary health desk",
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          116.3462,
+          39.947
+        ]
+      },
+      "expiry_days": 180,
+      "evidence_status": "concept_design_not_field_verified",
+      "observed_value": null,
+      "life_impact": {
+        "energy": {
+          "status": "unknown",
+          "value": null,
+          "unit": "kWh",
+          "measurement_method": "submetered pilot comparison"
+        },
+        "heat": {
+          "status": "unknown",
+          "value": null,
+          "unit": "degC_delta",
+          "measurement_method": "before/after thermal survey"
+        },
+        "water": {
+          "status": "unknown",
+          "value": null,
+          "unit": "litre_or_infiltration",
+          "measurement_method": "site water balance"
+        },
+        "soil": {
+          "status": "unknown",
+          "value": null,
+          "unit": "compaction_or_area",
+          "measurement_method": "soil compaction and root-zone survey"
+        },
+        "light": {
+          "status": "unknown",
+          "value": null,
+          "unit": "lux",
+          "measurement_method": "night illuminance transect"
+        },
+        "noise": {
+          "status": "unknown",
+          "value": null,
+          "unit": "dBA",
+          "measurement_method": "day/night acoustic logging"
+        },
+        "habitat": {
+          "status": "unknown",
+          "value": null,
+          "unit": "index",
+          "measurement_method": "seasonal habitat observation"
+        }
+      }
+    },
+    {
+      "id": "SC09",
+      "zone": "north",
+      "industry_test": true,
+      "title_zh": "暗夜友好照明试验",
+      "title_en": "Darkness-Friendly Lighting Test",
+      "persona_ids": [
+        "P04",
+        "P06",
+        "P07"
+      ],
+      "need_zh": "照明只在安全必要范围内工作，不把夜晚、鸟类和居民休息当作可被持续激活的资源。",
+      "need_en": "Lighting operates only where safety requires it and does not treat darkness, birds or residents’ rest as resources for continuous activation.",
+      "life_dependencies": [
+        "DARKNESS",
+        "QUIET",
+        "BIODIVERSITY"
+      ],
+      "ai_role_zh": "低照度按需启闭与匿名存在感知",
+      "ai_role_en": "Low-lux on-demand control with anonymous presence sensing",
+      "dual_gate_record": "DG-09",
+      "accountable_role_zh": "夜间环境与生态负责人",
+      "accountable_role_en": "Night environment and ecology steward",
+      "minimum_data_zh": "匿名存在信号与照度；不采集个体轨迹",
+      "minimum_data_en": "Anonymous presence signal and illuminance; no individual trajectories",
+      "human_route_zh": "夜间巡查员与实体灯控",
+      "human_route_en": "Night steward and physical lighting controls",
+      "ai_off_zh": "基础安全照明按固定低照度工作",
+      "ai_off_en": "Baseline safety lighting operates at fixed low lux",
+      "stop_zh": "光溢出、持续高亮、野生动物干扰或传感越界时停止试验",
+      "stop_en": "Stop on light spill, sustained brightness, wildlife disturbance or sensing overreach",
+      "restore_zh": "拆除试验模块，恢复暗夜基线",
+      "restore_en": "Remove test modules and restore the darkness baseline",
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          116.3523,
+          40.0095
+        ]
+      },
+      "expiry_days": 90,
+      "evidence_status": "concept_design_not_field_verified",
+      "observed_value": null,
+      "life_impact": {
+        "energy": {
+          "status": "unknown",
+          "value": null,
+          "unit": "kWh",
+          "measurement_method": "submetered pilot comparison"
+        },
+        "heat": {
+          "status": "unknown",
+          "value": null,
+          "unit": "degC_delta",
+          "measurement_method": "before/after thermal survey"
+        },
+        "water": {
+          "status": "unknown",
+          "value": null,
+          "unit": "litre_or_infiltration",
+          "measurement_method": "site water balance"
+        },
+        "soil": {
+          "status": "unknown",
+          "value": null,
+          "unit": "compaction_or_area",
+          "measurement_method": "soil compaction and root-zone survey"
+        },
+        "light": {
+          "status": "unknown",
+          "value": null,
+          "unit": "lux",
+          "measurement_method": "night illuminance transect"
+        },
+        "noise": {
+          "status": "unknown",
+          "value": null,
+          "unit": "dBA",
+          "measurement_method": "day/night acoustic logging"
+        },
+        "habitat": {
+          "status": "unknown",
+          "value": null,
+          "unit": "index",
+          "measurement_method": "seasonal habitat observation"
+        }
+      }
+    },
+    {
+      "id": "SC10",
+      "zone": "north",
+      "industry_test": true,
+      "title_zh": "树根与土壤低扰动感知",
+      "title_en": "Low-Impact Root and Soil Sensing",
+      "persona_ids": [
+        "P06",
+        "P07",
+        "P02"
+      ],
+      "need_zh": "智能设施不得因安装、散热或维护压实土壤、切断根系或侵占微生境。",
+      "need_en": "Intelligent installations must not compact soil, sever roots or occupy microhabitats through installation, heat or maintenance.",
+      "life_dependencies": [
+        "WATER",
+        "SOIL",
+        "SHADE_HEAT",
+        "BIODIVERSITY"
+      ],
+      "ai_role_zh": "土壤含水、温度与树体压力趋势提示",
+      "ai_role_en": "Trend alerts for soil moisture, temperature and tree stress",
+      "dual_gate_record": "DG-10",
+      "accountable_role_zh": "园林与设备联合责任人",
+      "accountable_role_en": "Joint landscape and equipment steward",
+      "minimum_data_zh": "环境数据，不采集人",
+      "minimum_data_en": "Environmental data only; no people data",
+      "human_route_zh": "园林巡检和手工土壤观察",
+      "human_route_en": "Landscape inspection and manual soil observation",
+      "ai_off_zh": "树穴、透水地面和人工养护继续工作",
+      "ai_off_en": "Tree pits, permeable surfaces and manual care remain",
+      "stop_zh": "根区施工、土壤压实、设备热害或维护不可达时停止",
+      "stop_en": "Stop on root-zone construction, soil compaction, equipment heat damage or inaccessible maintenance",
+      "restore_zh": "完整拆除，回填透气土并复测根区",
+      "restore_en": "Fully remove, restore aerated soil and retest the root zone",
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          116.3448,
+          40.024
+        ]
+      },
+      "expiry_days": 90,
+      "evidence_status": "concept_design_not_field_verified",
+      "observed_value": null,
+      "life_impact": {
+        "energy": {
+          "status": "unknown",
+          "value": null,
+          "unit": "kWh",
+          "measurement_method": "submetered pilot comparison"
+        },
+        "heat": {
+          "status": "unknown",
+          "value": null,
+          "unit": "degC_delta",
+          "measurement_method": "before/after thermal survey"
+        },
+        "water": {
+          "status": "unknown",
+          "value": null,
+          "unit": "litre_or_infiltration",
+          "measurement_method": "site water balance"
+        },
+        "soil": {
+          "status": "unknown",
+          "value": null,
+          "unit": "compaction_or_area",
+          "measurement_method": "soil compaction and root-zone survey"
+        },
+        "light": {
+          "status": "unknown",
+          "value": null,
+          "unit": "lux",
+          "measurement_method": "night illuminance transect"
+        },
+        "noise": {
+          "status": "unknown",
+          "value": null,
+          "unit": "dBA",
+          "measurement_method": "day/night acoustic logging"
+        },
+        "habitat": {
+          "status": "unknown",
+          "value": null,
+          "unit": "index",
+          "measurement_method": "seasonal habitat observation"
+        }
+      }
+    },
+    {
+      "id": "SC11",
+      "zone": "middle",
+      "industry_test": false,
+      "title_zh": "双门复核与人工申诉台",
+      "title_en": "Dual-Gate Review and Human Appeal Desk",
+      "persona_ids": [
+        "P01",
+        "P03",
+        "P04",
+        "P05",
+        "P07"
+      ],
+      "need_zh": "任何公共AI都有一个真实可找到的位置，说明身份、责任、数据、人工路径和停止方式。",
+      "need_en": "Every public AI has a physical place where identity, accountability, data, human route and stopping method are visible.",
+      "life_dependencies": [
+        "SHADE_HEAT",
+        "QUIET"
+      ],
+      "ai_role_zh": "公开运行状态、解释与申诉路由",
+      "ai_role_en": "Public status display, explanation and appeal routing",
+      "dual_gate_record": "DG-11",
+      "accountable_role_zh": "城市智能双门管理员",
+      "accountable_role_en": "Civic dual-gate steward",
+      "minimum_data_zh": "系统状态与匿名投诉分类",
+      "minimum_data_en": "System status and anonymous complaint category",
+      "human_route_zh": "具名岗位、实体柜台、电话和纸本",
+      "human_route_en": "Named role, physical counter, telephone and paper route",
+      "ai_off_zh": "实体公示、人工受理和纸本申诉继续工作",
+      "ai_off_en": "Physical notice, staffed handling and paper appeal remain",
+      "stop_zh": "无责任主体、无法人工接管或信息不可核验时不得开放",
+      "stop_en": "Do not open without an accountable entity, human takeover or verifiable information",
+      "restore_zh": "双门状态标记转为退役记录，空间继续作为普通公共柜台",
+      "restore_en": "Convert the dual-gate status marker to a retirement record; the space remains an ordinary public counter",
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          116.3476,
+          39.9928
+        ]
+      },
+      "expiry_days": 180,
+      "evidence_status": "concept_design_not_field_verified",
+      "observed_value": null,
+      "life_impact": {
+        "energy": {
+          "status": "unknown",
+          "value": null,
+          "unit": "kWh",
+          "measurement_method": "submetered pilot comparison"
+        },
+        "heat": {
+          "status": "unknown",
+          "value": null,
+          "unit": "degC_delta",
+          "measurement_method": "before/after thermal survey"
+        },
+        "water": {
+          "status": "unknown",
+          "value": null,
+          "unit": "litre_or_infiltration",
+          "measurement_method": "site water balance"
+        },
+        "soil": {
+          "status": "unknown",
+          "value": null,
+          "unit": "compaction_or_area",
+          "measurement_method": "soil compaction and root-zone survey"
+        },
+        "light": {
+          "status": "unknown",
+          "value": null,
+          "unit": "lux",
+          "measurement_method": "night illuminance transect"
+        },
+        "noise": {
+          "status": "unknown",
+          "value": null,
+          "unit": "dBA",
+          "measurement_method": "day/night acoustic logging"
+        },
+        "habitat": {
+          "status": "unknown",
+          "value": null,
+          "unit": "index",
+          "measurement_method": "seasonal habitat observation"
+        }
+      }
+    },
+    {
+      "id": "SC12",
+      "zone": "north",
+      "industry_test": true,
+      "title_zh": "退役与恢复演练",
+      "title_en": "Retirement and Restoration Drill",
+      "persona_ids": [
+        "P06",
+        "P07",
+        "P04"
+      ],
+      "need_zh": "AI系统必须证明自己不仅能上线，也能被完整撤除，并把空间、土壤和服务恢复到普通基线。",
+      "need_en": "An AI system must prove not only that it can launch, but that it can be fully removed and return space, soil and service to an ordinary baseline.",
+      "life_dependencies": [
+        "WATER",
+        "SOIL",
+        "DARKNESS",
+        "QUIET",
+        "BIODIVERSITY"
+      ],
+      "ai_role_zh": "退役清单、残余影响提示和恢复复核",
+      "ai_role_en": "Retirement checklist, residual-impact alerts and restoration verification",
+      "dual_gate_record": "DG-12",
+      "accountable_role_zh": "退役恢复责任人",
+      "accountable_role_en": "Retirement and restoration steward",
+      "minimum_data_zh": "设备清单、材料、能耗和恢复记录",
+      "minimum_data_en": "Equipment inventory, materials, energy and restoration records",
+      "human_route_zh": "专业拆除、公众公示和独立复核",
+      "human_route_en": "Professional removal, public notice and independent review",
+      "ai_off_zh": "普通空间与人工服务先行存在",
+      "ai_off_en": "Ordinary space and human service exist first",
+      "stop_zh": "无法无损拆除、残余数据未清理或生命基底未恢复时不得结项",
+      "stop_en": "Do not close if removal is damaging, residual data remains or living ground is not restored",
+      "restore_zh": "恢复地面、土壤、树根、照明和普通服务，发布退役回执",
+      "restore_en": "Restore surface, soil, roots, lighting and ordinary service; publish a retirement receipt",
+      "location": {
+        "type": "Point",
+        "coordinates": [
+          116.3515,
+          40.0228
+        ]
+      },
+      "expiry_days": 90,
+      "evidence_status": "concept_design_not_field_verified",
+      "observed_value": null,
+      "life_impact": {
+        "energy": {
+          "status": "unknown",
+          "value": null,
+          "unit": "kWh",
+          "measurement_method": "submetered pilot comparison"
+        },
+        "heat": {
+          "status": "unknown",
+          "value": null,
+          "unit": "degC_delta",
+          "measurement_method": "before/after thermal survey"
+        },
+        "water": {
+          "status": "unknown",
+          "value": null,
+          "unit": "litre_or_infiltration",
+          "measurement_method": "site water balance"
+        },
+        "soil": {
+          "status": "unknown",
+          "value": null,
+          "unit": "compaction_or_area",
+          "measurement_method": "soil compaction and root-zone survey"
+        },
+        "light": {
+          "status": "unknown",
+          "value": null,
+          "unit": "lux",
+          "measurement_method": "night illuminance transect"
+        },
+        "noise": {
+          "status": "unknown",
+          "value": null,
+          "unit": "dBA",
+          "measurement_method": "day/night acoustic logging"
+        },
+        "habitat": {
+          "status": "unknown",
+          "value": null,
+          "unit": "index",
+          "measurement_method": "seasonal habitat observation"
+        }
+      }
+    }
+  ],
+  "truth_boundary": "All scenarios are concept contracts. Observed values are null; no field authorisation or live service exists."
+}

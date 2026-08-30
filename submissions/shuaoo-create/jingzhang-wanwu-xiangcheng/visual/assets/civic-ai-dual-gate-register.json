@@ -1,0 +1,521 @@
+{
+  "schema_version": "1.0",
+  "registry_id": "CIVIC-AI-DUAL-GATE-01",
+  "protocol_name_zh": "城市智能双门制",
+  "protocol_name_en": "Civic AI Dual-Gate Protocol",
+  "principle_zh": "生命有地，智能过双门；任一门未知或失败，均不得放行。",
+  "principle_en": "Life has ground and civic AI passes both gates; an unknown or failed gate cannot be released.",
+  "gate_contract": {
+    "life_gate": {
+      "code": "L7",
+      "name_zh": "七项生命条件门",
+      "name_en": "Seven Life-Conditions Gate",
+      "required_result": "PASS"
+    },
+    "duty_gate": {
+      "code": "D6",
+      "name_zh": "六项智能责任门",
+      "name_en": "Six Civic-Intelligence Duties Gate",
+      "required_result": "PASS"
+    },
+    "non_compensatory": true,
+    "unknown_means_hold": true,
+    "release_rule": "L7=PASS AND D6=PASS",
+    "truth_boundary_zh": "双门制是本方案提出的可撤回城市设计规则，不是现行法定许可或已运行制度。",
+    "truth_boundary_en": "The protocol is a reversible participant-authored urban-design rule, not a current statutory permit or operating regime."
+  },
+  "gate_records": [
+    {
+      "gate_record_id": "DG-01",
+      "scenario_id": "SC01",
+      "title_zh": "现实礼让训练场",
+      "title_en": "Real-World Courtesy Test",
+      "where": {
+        "type": "Point",
+        "coordinates": [
+          116.346,
+          40.0205
+        ]
+      },
+      "zone": "north",
+      "status": "CONCEPT_NOT_AUTHORISED",
+      "identify": {
+        "required": true,
+        "display": "AI ACTIVE / HUMAN HERE / STOP HERE"
+      },
+      "responsibility": {
+        "role_type_zh": "测试场运营责任人",
+        "role_type_en": "Test-ground accountable operator",
+        "entity": null,
+        "accepted": false
+      },
+      "minimum_data_zh": "匿名近距障碍类别与设备状态；不采集人脸和身份",
+      "minimum_data_en": "Anonymous near-field obstacle class and device state; no face or identity data",
+      "human_route_zh": "现场安全员与实体停止键",
+      "human_route_en": "On-site safety steward and physical stop button",
+      "ai_off_path_zh": "人工围挡、普通交通标识与步行优先规则继续工作",
+      "ai_off_path_en": "Manual barriers, ordinary signs and pedestrian-priority rules remain",
+      "stop_zh": "近失事件、超速、盲道占用或生态缓冲越界即停",
+      "stop_en": "Stop on near-miss, speeding, tactile-path obstruction or habitat-buffer breach",
+      "repair_restore_zh": "机器人撤离，路面恢复普通公共通行",
+      "repair_restore_en": "Remove robots and return the surface to ordinary public passage",
+      "expiry_days": 90,
+      "life_impact_status": "UNKNOWN_TO_BE_MEASURED",
+      "life_gate_status": "UNKNOWN",
+      "duty_gate_status": "HOLD_UNCONFIRMED_ENTITY",
+      "release_status": "HOLD",
+      "opening_gate": "HOLD_UNTIL_ENTITY_AUTHORISATION_BASELINE_AND_PROFESSIONAL_REVIEW"
+    },
+    {
+      "gate_record_id": "DG-02",
+      "scenario_id": "SC02",
+      "title_zh": "断网仍可服务的公共问询",
+      "title_en": "Offline-Equivalent Civic Guidance",
+      "where": {
+        "type": "Point",
+        "coordinates": [
+          116.3505,
+          40.0168
+        ]
+      },
+      "zone": "north",
+      "status": "CONCEPT_NOT_AUTHORISED",
+      "identify": {
+        "required": true,
+        "display": "AI ACTIVE / HUMAN HERE / STOP HERE"
+      },
+      "responsibility": {
+        "role_type_zh": "公共服务台主管",
+        "role_type_en": "Public-service desk supervisor",
+        "entity": null,
+        "accepted": false
+      },
+      "minimum_data_zh": "即时问题与目的地，不保存身份",
+      "minimum_data_en": "Immediate question and destination, without identity retention",
+      "human_route_zh": "同一地点的有人值守服务台",
+      "human_route_en": "A staffed desk at the same location",
+      "ai_off_path_zh": "纸质导视、电话和人工服务保持开放",
+      "ai_off_path_en": "Paper wayfinding, telephone and human service remain open",
+      "stop_zh": "连续误导、语言歧视或人工服务不可达时停用AI层",
+      "stop_en": "Disable the AI layer after repeated misguidance, language bias or unavailable human service",
+      "repair_restore_zh": "撤除数字叠层，保留实体导视与座椅",
+      "repair_restore_en": "Remove the digital overlay while retaining physical signs and seating",
+      "expiry_days": 180,
+      "life_impact_status": "UNKNOWN_TO_BE_MEASURED",
+      "life_gate_status": "UNKNOWN",
+      "duty_gate_status": "HOLD_UNCONFIRMED_ENTITY",
+      "release_status": "HOLD",
+      "opening_gate": "HOLD_UNTIL_ENTITY_AUTHORISATION_BASELINE_AND_PROFESSIONAL_REVIEW"
+    },
+    {
+      "gate_record_id": "DG-03",
+      "scenario_id": "SC03",
+      "title_zh": "季节与能耗公开的环境智能",
+      "title_en": "Season-Aware Environmental Intelligence",
+      "where": {
+        "type": "Point",
+        "coordinates": [
+          116.3448,
+          40.012
+        ]
+      },
+      "zone": "north",
+      "status": "CONCEPT_NOT_AUTHORISED",
+      "identify": {
+        "required": true,
+        "display": "AI ACTIVE / HUMAN HERE / STOP HERE"
+      },
+      "responsibility": {
+        "role_type_zh": "设施能源与生态主管",
+        "role_type_en": "Facility energy and ecology steward",
+        "entity": null,
+        "accepted": false
+      },
+      "minimum_data_zh": "温湿度、能耗与匿名占用量",
+      "minimum_data_en": "Temperature, humidity, energy use and anonymous occupancy counts",
+      "human_route_zh": "设施控制室与手动开关",
+      "human_route_en": "Facility control room and manual switches",
+      "ai_off_path_zh": "自然通风、固定遮阳与普通温控继续工作",
+      "ai_off_path_en": "Natural ventilation, fixed shading and ordinary controls remain",
+      "stop_zh": "能耗或热排放超过试点阈值、自然路径被封闭时停止",
+      "stop_en": "Stop if energy or heat exceeds pilot thresholds or passive routes are blocked",
+      "repair_restore_zh": "撤除可移动设备，恢复被动式空间运行",
+      "repair_restore_en": "Remove movable equipment and restore passive operation",
+      "expiry_days": 180,
+      "life_impact_status": "UNKNOWN_TO_BE_MEASURED",
+      "life_gate_status": "UNKNOWN",
+      "duty_gate_status": "HOLD_UNCONFIRMED_ENTITY",
+      "release_status": "HOLD",
+      "opening_gate": "HOLD_UNTIL_ENTITY_AUTHORISATION_BASELINE_AND_PROFESSIONAL_REVIEW"
+    },
+    {
+      "gate_record_id": "DG-04",
+      "scenario_id": "SC04",
+      "title_zh": "微扰日常居",
+      "title_en": "Low-Interference Everyday Home",
+      "where": {
+        "type": "Point",
+        "coordinates": [
+          116.3505,
+          39.991
+        ]
+      },
+      "zone": "middle",
+      "status": "CONCEPT_NOT_AUTHORISED",
+      "identify": {
+        "required": true,
+        "display": "AI ACTIVE / HUMAN HERE / STOP HERE"
+      },
+      "responsibility": {
+        "role_type_zh": "社区公共空间运营者",
+        "role_type_en": "Community public-space operator",
+        "entity": null,
+        "accepted": false
+      },
+      "minimum_data_zh": "本地即时环境数据；默认不保存个体行为",
+      "minimum_data_en": "Local real-time environmental data; individual behaviour is not retained by default",
+      "human_route_zh": "社区前台和真人邻里服务",
+      "human_route_en": "Community front desk and human neighbourhood service",
+      "ai_off_path_zh": "门窗、照明、座椅、纸本信息和真人服务全部可用",
+      "ai_off_path_en": "Windows, lighting, seating, paper information and human service all remain usable",
+      "stop_zh": "屏幕负担增加、个性化监控或真人关系被替代时停用",
+      "stop_en": "Disable if screen burden rises, personalised monitoring appears or human relations are displaced",
+      "repair_restore_zh": "移除数字接口，空间继续作为社区客厅",
+      "repair_restore_en": "Remove digital interfaces; the space remains a community living room",
+      "expiry_days": 180,
+      "life_impact_status": "UNKNOWN_TO_BE_MEASURED",
+      "life_gate_status": "UNKNOWN",
+      "duty_gate_status": "HOLD_UNCONFIRMED_ENTITY",
+      "release_status": "HOLD",
+      "opening_gate": "HOLD_UNTIL_ENTITY_AUTHORISATION_BASELINE_AND_PROFESSIONAL_REVIEW"
+    },
+    {
+      "gate_record_id": "DG-05",
+      "scenario_id": "SC05",
+      "title_zh": "儿童真实世界探索",
+      "title_en": "Children Explore the Real World",
+      "where": {
+        "type": "Point",
+        "coordinates": [
+          116.3445,
+          39.9883
+        ]
+      },
+      "zone": "middle",
+      "status": "CONCEPT_NOT_AUTHORISED",
+      "identify": {
+        "required": true,
+        "display": "AI ACTIVE / HUMAN HERE / STOP HERE"
+      },
+      "responsibility": {
+        "role_type_zh": "儿童活动与安全负责人",
+        "role_type_en": "Child activity and safety lead",
+        "entity": null,
+        "accepted": false
+      },
+      "minimum_data_zh": "不采集儿童身份、声音或轨迹；只读取设施触发状态",
+      "minimum_data_en": "No child identity, voice or trajectory capture; only device trigger states",
+      "human_route_zh": "带队教师、家长与实体说明牌",
+      "human_route_en": "Teachers, caregivers and physical interpretation panels",
+      "ai_off_path_zh": "自然材料、游戏设施和实体展板继续完整使用",
+      "ai_off_path_en": "Natural materials, play elements and physical panels remain fully usable",
+      "stop_zh": "出现儿童数据采集、注意力黏附或真人监督不足时停用",
+      "stop_en": "Stop if child data is collected, attention becomes sticky or human supervision is insufficient",
+      "repair_restore_zh": "撤走可移动设备，恢复不依赖数字界面的自然活动场",
+      "repair_restore_en": "Remove movable devices and restore a nature-play area that does not depend on digital interfaces",
+      "expiry_days": 180,
+      "life_impact_status": "UNKNOWN_TO_BE_MEASURED",
+      "life_gate_status": "UNKNOWN",
+      "duty_gate_status": "HOLD_UNCONFIRMED_ENTITY",
+      "release_status": "HOLD",
+      "opening_gate": "HOLD_UNTIL_ENTITY_AUTHORISATION_BASELINE_AND_PROFESSIONAL_REVIEW"
+    },
+    {
+      "gate_record_id": "DG-06",
+      "scenario_id": "SC06",
+      "title_zh": "无障碍共行街角",
+      "title_en": "Accessible Shared Corner",
+      "where": {
+        "type": "Point",
+        "coordinates": [
+          116.3495,
+          39.9857
+        ]
+      },
+      "zone": "middle",
+      "status": "CONCEPT_NOT_AUTHORISED",
+      "identify": {
+        "required": true,
+        "display": "AI ACTIVE / HUMAN HERE / STOP HERE"
+      },
+      "responsibility": {
+        "role_type_zh": "街道公共空间维护者",
+        "role_type_en": "Street public-space maintainer",
+        "entity": null,
+        "accepted": false
+      },
+      "minimum_data_zh": "匿名人流计数与障碍状态",
+      "minimum_data_en": "Anonymous footfall counts and obstacle states",
+      "human_route_zh": "有人值守的协助点与物理求助按钮",
+      "human_route_en": "Staffed assistance point and physical help button",
+      "ai_off_path_zh": "连续无障碍路径、普通导视与人工协助保持",
+      "ai_off_path_en": "Continuous accessible route, ordinary signs and human assistance remain",
+      "stop_zh": "净宽下降、无障碍任务失败或机器优先于人时停用",
+      "stop_en": "Disable if clear width falls, accessibility tasks fail or machines take priority over people",
+      "repair_restore_zh": "移除旁置设备，净空恢复为普通街角",
+      "repair_restore_en": "Remove side-mounted equipment and restore an ordinary clear corner",
+      "expiry_days": 180,
+      "life_impact_status": "UNKNOWN_TO_BE_MEASURED",
+      "life_gate_status": "UNKNOWN",
+      "duty_gate_status": "HOLD_UNCONFIRMED_ENTITY",
+      "release_status": "HOLD",
+      "opening_gate": "HOLD_UNTIL_ENTITY_AUTHORISATION_BASELINE_AND_PROFESSIONAL_REVIEW"
+    },
+    {
+      "gate_record_id": "DG-07",
+      "scenario_id": "SC07",
+      "title_zh": "小店数字员工公示柜台",
+      "title_en": "Small-Shop Digital Worker Counter",
+      "where": {
+        "type": "Point",
+        "coordinates": [
+          116.352,
+          39.9482
+        ]
+      },
+      "zone": "south",
+      "status": "CONCEPT_NOT_AUTHORISED",
+      "identify": {
+        "required": true,
+        "display": "AI ACTIVE / HUMAN HERE / STOP HERE"
+      },
+      "responsibility": {
+        "role_type_zh": "商户经营责任人",
+        "role_type_en": "Merchant accountable operator",
+        "entity": null,
+        "accepted": false
+      },
+      "minimum_data_zh": "当次问题和交易必要信息，默认不画像",
+      "minimum_data_en": "Session question and transaction-minimum data; no profiling by default",
+      "human_route_zh": "同一柜台真人接管",
+      "human_route_en": "Human takeover at the same counter",
+      "ai_off_path_zh": "商品标价、人工收银和纸质凭证保持",
+      "ai_off_path_en": "Prices, staffed payment and paper receipts remain",
+      "stop_zh": "误导交易、拒绝人工、隐性推荐或投诉无法处理时停用",
+      "stop_en": "Disable on misleading transactions, denied human service, hidden recommendations or unresolved complaints",
+      "repair_restore_zh": "移除AI终端，柜台恢复普通经营",
+      "repair_restore_en": "Remove the AI terminal and return the counter to ordinary operation",
+      "expiry_days": 180,
+      "life_impact_status": "UNKNOWN_TO_BE_MEASURED",
+      "life_gate_status": "UNKNOWN",
+      "duty_gate_status": "HOLD_UNCONFIRMED_ENTITY",
+      "release_status": "HOLD",
+      "opening_gate": "HOLD_UNTIL_ENTITY_AUTHORISATION_BASELINE_AND_PROFESSIONAL_REVIEW"
+    },
+    {
+      "gate_record_id": "DG-08",
+      "scenario_id": "SC08",
+      "title_zh": "智能健康转人工站",
+      "title_en": "AI Health-to-Human Handover",
+      "where": {
+        "type": "Point",
+        "coordinates": [
+          116.3462,
+          39.947
+        ]
+      },
+      "zone": "south",
+      "status": "CONCEPT_NOT_AUTHORISED",
+      "identify": {
+        "required": true,
+        "display": "AI ACTIVE / HUMAN HERE / STOP HERE"
+      },
+      "responsibility": {
+        "role_type_zh": "健康服务机构责任人",
+        "role_type_en": "Health-service accountable operator",
+        "entity": null,
+        "accepted": false
+      },
+      "minimum_data_zh": "当次需求与自愿输入；不留存诊疗结论",
+      "minimum_data_en": "Session need and voluntary input; no diagnostic conclusion retained",
+      "human_route_zh": "现场专业人员、电话和人工预约",
+      "human_route_en": "On-site professional, telephone and staffed booking",
+      "ai_off_path_zh": "实体导视、人工问询与纸本流程保持",
+      "ai_off_path_en": "Physical signs, human inquiry and paper procedures remain",
+      "stop_zh": "超出非诊断边界、人工不可达或误导风险时停用",
+      "stop_en": "Disable if it crosses the non-diagnostic boundary, humans are unreachable or risk of misguidance appears",
+      "repair_restore_zh": "撤除智能界面，保留普通健康服务台",
+      "repair_restore_en": "Remove the intelligent interface and retain the ordinary health desk",
+      "expiry_days": 180,
+      "life_impact_status": "UNKNOWN_TO_BE_MEASURED",
+      "life_gate_status": "UNKNOWN",
+      "duty_gate_status": "HOLD_UNCONFIRMED_ENTITY",
+      "release_status": "HOLD",
+      "opening_gate": "HOLD_UNTIL_ENTITY_AUTHORISATION_BASELINE_AND_PROFESSIONAL_REVIEW"
+    },
+    {
+      "gate_record_id": "DG-09",
+      "scenario_id": "SC09",
+      "title_zh": "暗夜友好照明试验",
+      "title_en": "Darkness-Friendly Lighting Test",
+      "where": {
+        "type": "Point",
+        "coordinates": [
+          116.3523,
+          40.0095
+        ]
+      },
+      "zone": "north",
+      "status": "CONCEPT_NOT_AUTHORISED",
+      "identify": {
+        "required": true,
+        "display": "AI ACTIVE / HUMAN HERE / STOP HERE"
+      },
+      "responsibility": {
+        "role_type_zh": "夜间环境与生态负责人",
+        "role_type_en": "Night environment and ecology steward",
+        "entity": null,
+        "accepted": false
+      },
+      "minimum_data_zh": "匿名存在信号与照度；不采集个体轨迹",
+      "minimum_data_en": "Anonymous presence signal and illuminance; no individual trajectories",
+      "human_route_zh": "夜间巡查员与实体灯控",
+      "human_route_en": "Night steward and physical lighting controls",
+      "ai_off_path_zh": "基础安全照明按固定低照度工作",
+      "ai_off_path_en": "Baseline safety lighting operates at fixed low lux",
+      "stop_zh": "光溢出、持续高亮、野生动物干扰或传感越界时停止试验",
+      "stop_en": "Stop on light spill, sustained brightness, wildlife disturbance or sensing overreach",
+      "repair_restore_zh": "拆除试验模块，恢复暗夜基线",
+      "repair_restore_en": "Remove test modules and restore the darkness baseline",
+      "expiry_days": 90,
+      "life_impact_status": "UNKNOWN_TO_BE_MEASURED",
+      "life_gate_status": "UNKNOWN",
+      "duty_gate_status": "HOLD_UNCONFIRMED_ENTITY",
+      "release_status": "HOLD",
+      "opening_gate": "HOLD_UNTIL_ENTITY_AUTHORISATION_BASELINE_AND_PROFESSIONAL_REVIEW"
+    },
+    {
+      "gate_record_id": "DG-10",
+      "scenario_id": "SC10",
+      "title_zh": "树根与土壤低扰动感知",
+      "title_en": "Low-Impact Root and Soil Sensing",
+      "where": {
+        "type": "Point",
+        "coordinates": [
+          116.3448,
+          40.024
+        ]
+      },
+      "zone": "north",
+      "status": "CONCEPT_NOT_AUTHORISED",
+      "identify": {
+        "required": true,
+        "display": "AI ACTIVE / HUMAN HERE / STOP HERE"
+      },
+      "responsibility": {
+        "role_type_zh": "园林与设备联合责任人",
+        "role_type_en": "Joint landscape and equipment steward",
+        "entity": null,
+        "accepted": false
+      },
+      "minimum_data_zh": "环境数据，不采集人",
+      "minimum_data_en": "Environmental data only; no people data",
+      "human_route_zh": "园林巡检和手工土壤观察",
+      "human_route_en": "Landscape inspection and manual soil observation",
+      "ai_off_path_zh": "树穴、透水地面和人工养护继续工作",
+      "ai_off_path_en": "Tree pits, permeable surfaces and manual care remain",
+      "stop_zh": "根区施工、土壤压实、设备热害或维护不可达时停止",
+      "stop_en": "Stop on root-zone construction, soil compaction, equipment heat damage or inaccessible maintenance",
+      "repair_restore_zh": "完整拆除，回填透气土并复测根区",
+      "repair_restore_en": "Fully remove, restore aerated soil and retest the root zone",
+      "expiry_days": 90,
+      "life_impact_status": "UNKNOWN_TO_BE_MEASURED",
+      "life_gate_status": "UNKNOWN",
+      "duty_gate_status": "HOLD_UNCONFIRMED_ENTITY",
+      "release_status": "HOLD",
+      "opening_gate": "HOLD_UNTIL_ENTITY_AUTHORISATION_BASELINE_AND_PROFESSIONAL_REVIEW"
+    },
+    {
+      "gate_record_id": "DG-11",
+      "scenario_id": "SC11",
+      "title_zh": "双门复核与人工申诉台",
+      "title_en": "Dual-Gate Review and Human Appeal Desk",
+      "where": {
+        "type": "Point",
+        "coordinates": [
+          116.3476,
+          39.9928
+        ]
+      },
+      "zone": "middle",
+      "status": "CONCEPT_NOT_AUTHORISED",
+      "identify": {
+        "required": true,
+        "display": "AI ACTIVE / HUMAN HERE / STOP HERE"
+      },
+      "responsibility": {
+        "role_type_zh": "城市智能双门管理员",
+        "role_type_en": "Civic dual-gate steward",
+        "entity": null,
+        "accepted": false
+      },
+      "minimum_data_zh": "系统状态与匿名投诉分类",
+      "minimum_data_en": "System status and anonymous complaint category",
+      "human_route_zh": "具名岗位、实体柜台、电话和纸本",
+      "human_route_en": "Named role, physical counter, telephone and paper route",
+      "ai_off_path_zh": "实体公示、人工受理和纸本申诉继续工作",
+      "ai_off_path_en": "Physical notice, staffed handling and paper appeal remain",
+      "stop_zh": "无责任主体、无法人工接管或信息不可核验时不得开放",
+      "stop_en": "Do not open without an accountable entity, human takeover or verifiable information",
+      "repair_restore_zh": "双门状态标记转为退役记录，空间继续作为普通公共柜台",
+      "repair_restore_en": "Convert the dual-gate status marker to a retirement record; the space remains an ordinary public counter",
+      "expiry_days": 180,
+      "life_impact_status": "UNKNOWN_TO_BE_MEASURED",
+      "life_gate_status": "UNKNOWN",
+      "duty_gate_status": "HOLD_UNCONFIRMED_ENTITY",
+      "release_status": "HOLD",
+      "opening_gate": "HOLD_UNTIL_ENTITY_AUTHORISATION_BASELINE_AND_PROFESSIONAL_REVIEW"
+    },
+    {
+      "gate_record_id": "DG-12",
+      "scenario_id": "SC12",
+      "title_zh": "退役与恢复演练",
+      "title_en": "Retirement and Restoration Drill",
+      "where": {
+        "type": "Point",
+        "coordinates": [
+          116.3515,
+          40.0228
+        ]
+      },
+      "zone": "north",
+      "status": "CONCEPT_NOT_AUTHORISED",
+      "identify": {
+        "required": true,
+        "display": "AI ACTIVE / HUMAN HERE / STOP HERE"
+      },
+      "responsibility": {
+        "role_type_zh": "退役恢复责任人",
+        "role_type_en": "Retirement and restoration steward",
+        "entity": null,
+        "accepted": false
+      },
+      "minimum_data_zh": "设备清单、材料、能耗和恢复记录",
+      "minimum_data_en": "Equipment inventory, materials, energy and restoration records",
+      "human_route_zh": "专业拆除、公众公示和独立复核",
+      "human_route_en": "Professional removal, public notice and independent review",
+      "ai_off_path_zh": "普通空间与人工服务先行存在",
+      "ai_off_path_en": "Ordinary space and human service exist first",
+      "stop_zh": "无法无损拆除、残余数据未清理或生命基底未恢复时不得结项",
+      "stop_en": "Do not close if removal is damaging, residual data remains or living ground is not restored",
+      "repair_restore_zh": "恢复地面、土壤、树根、照明和普通服务，发布退役回执",
+      "repair_restore_en": "Restore surface, soil, roots, lighting and ordinary service; publish a retirement receipt",
+      "expiry_days": 90,
+      "life_impact_status": "UNKNOWN_TO_BE_MEASURED",
+      "life_gate_status": "UNKNOWN",
+      "duty_gate_status": "HOLD_UNCONFIRMED_ENTITY",
+      "release_status": "HOLD",
+      "opening_gate": "HOLD_UNTIL_ENTITY_AUTHORISATION_BASELINE_AND_PROFESSIONAL_REVIEW"
+    }
+  ]
+}
