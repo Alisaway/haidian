@@ -10,8 +10,8 @@ license: "COMMUNITY-DISPLAY-ONLY"
 summary: "A walkable, verifiable, switch-off public gallery stitches a three-gate funnel: Ready Gate at Zhongzhiyuan, Shared-Measure Gallery at Origin Community, and Operations Handover Hall at Dazhongsi. Boundaries are provisional; three core metrics are recalculated from this package in EPSG:4548."
 tracks: ["ai-traffic-walkability", "civic-agent-governance", "youth-friendly-public-space"]
 scenarios: ["ai-traffic-walkability", "ai-cultural-guide", "public-safety-operations-review"]
-iteration: 4
-version: "1.3.0"
+iteration: 5
+version: "1.4.0"
 ---
 
 # Jingzhang Commons Gallery
@@ -60,6 +60,20 @@ The two wings are interfaces only: the Zhongguancun wing offers enterprise-servi
 | Xiaoyuehe wing | Scenario-opening booking | Annual rhythm + six-step opening | Scenario sites | Apply—review—open—monitor—pause—review | No permit → no announced date | No government-set calendar |
 
 All of the above are concept suggestions for professional teams after counterpart authorisation. They do not constitute a closed cross-region collaboration.
+
+The taskbook also asks regional synergy to cover **Beijing–Tianjin–Hebei**, not only Beijing-side parks [standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK]. The next table writes Jin–Ji counterparts as **conditional interfaces** in the same columns as the Beijing-side list. They are not signed agreements, not approved inter-provincial plans, and not investment pledges. The Haidian side only offers public-verification flows and spatial types already in this package. Counterpart venues, instruments, and production lines stay unknown; a row stays closed until authorisation exists.
+
+| Partner | Conceptual interface | Haidian side can offer | Counterpart may offer | Verifiable action | Stop rule | This package does not claim |
+| --- | --- | --- | --- | --- | --- | --- |
+| Tianjin Binhai New Area | Port–manufacturing translation narrative | Handover-hall shift-board method; six-step opening | Port / manufacturing pilot visit if they open it | Exchange only public shift templates and stop rules | No counterpart site authorisation → do not enter | No port rights, freight volumes, or investment quota |
+| Tianjin Haihe innovation belt | Mutual recognition of urban scenes | No-login wayfinding field list; objection-window flow | Binhai / Haihe public-scene booking if open | Written field crosswalk; human final call | Tracking or login-to-walk → close | No federated accounts, no joint app |
+| Hebei Xiong'an New Area | New-town governance contrast | Provisional-geometry recalc method (CG-10); evidence-window format | Reading already-public new-town texts only | Cite only already-public text fields | Using a Xiong'an plan sheet as this package’s redline → stop | No Xiong'an land, no start-area implementation right |
+| Zhangjiakou Jing-Zhang heritage corridor | Mutual check of railway public facts | Three public-fact windows on the gallery | Zhangjiakou-section public facts if they open them | Display only already-public sources | Uncleared images or “approved heritage works” → close windows | No Zhangjiakou parcels, no Winter-Olympics venue rights |
+| Hebei ring-Beijing (Langfang et al., concept) | Everyday commuting interface | South ordinary night path; paper wayfinding | Ring-Beijing interchange facts if operators publish them | Transcribe already-public timetables only; no mobile numbers | No public timetable → write no shift | No new rail, no inter-province bus pledge |
+
+The five Jin–Ji rows plus the six Beijing-side rows make 11 conditional interfaces [metric:regional_interface_count]. Every row stays “closed without authorisation.” Jin–Ji partners are not drawn into this package’s `site_boundary`.
+
+![Beijing–Tianjin–Hebei conditional interfaces (concept, not an official redline)](assets/figures/jingjinji-interfaces.en.png)
 
 Eight ecology cases keep mechanisms only and are mapped onto Zhongzhiyuan, Origin Community, the Zhongguancun wing, and scenario cards. Street widths, fixtures, firm lists, and investment figures are not copied [metric:ecology_case_count].
 
@@ -146,6 +160,20 @@ The factor loop is a concept, not a tenant brochure or fiscal pledge. Capital am
 | Data | Public wayfinding and voluntary repair tickets | No biometrics, no personal tracks | Human final call | Writing campus or firm data as already open | S06 evidence windows, S12 objection text |
 | Scenario | Xiaoyuehe-wing booking + gate duty | Apply–review–open–monitor–pause–review | Duty plus safety / heritage advisers | Paid gate cuts the public face | Cards S01–S12; permits separate |
 
+A conceptual technical stack (not deployed; no vendor; no MW / GPU counts) keeps AI in five layers so the package is not only a governance slogan:
+
+| Layer | What it does | Data boundary | Human gate | Switch-off fallback | Stop rule |
+| --- | --- | --- | --- | --- | --- |
+| L1 Sense | Read public wayfinding breaks, voluntary repair text, aggregated after-rain photos | No tracks, biometrics, or raw mobile numbers | Duty officer decides what enters | Paper repair slip | Discard any personally identifiable field |
+| L2 Organise | Sort public fields into checkable tables (hours, stop rules, fact sources) | L1-cleared fields only | Heritage / access advisers spot-check | Printed timetable | Model rewriting a fact source |
+| L3 Book | Queue test windows and measure days | Booking tickets without portraits | Safety officer opens a window | Paper window card | No test-safety rule → whole layer off |
+| L4 Adjudicate | Objections, blocks, over-reaching tests | Objection text | **Human only**; the model must not close a case | Face-to-face duty desk | Automated over-blocking |
+| L5 Switch-off | After L2–L3 are off, the spine still walks | No leftover account session | Park duty confirms the path is open | Physical slow section | Login gate on the spine |
+
+This stack is a reference architecture, not a live system, and it does not enter a regulatory plan or a tender [depth:overall_spatial_structure].
+
+![Conceptual AI technical architecture (not deployed)](assets/figures/ai-architecture.en.png)
+
 ![AI innovation ecosystem map (concept)](assets/figures/ecosystem-map.en.png)
 
 ## Land Use, Building Scale, and Retain-Renovate-Demolish Strategy
@@ -192,6 +220,21 @@ Public-space component library (concept; usable without an account):
 | Shade rest module | Three plazas | Public | Bench without an app | Community duty | Charging for sitting |
 | Accessible repair post | Three plazas | Public | Phone number + paper ticket | Access officer | Treating grades as surveyed |
 | Ordinary night lighting | South green edge | Public | Always-on ordinary lights | Community + lighting | Forced exhibition lighting |
+
+Inclusion must land on identifiable spatial types, not policy sentences alone. Elevations and gradients are unsurveyed and stay “to be re-measured”; no fake percentages are filled in.
+
+| Persona | Visible place | Spatial type | No-login fallback | Stop rule |
+| --- | --- | --- | --- | --- |
+| Near-campus graduate | Origin gallery plaza + Q&A wall | Gallery public face | Chalk / paper cards | Posting personal data |
+| Shift nurse | Dazhongsi handover hall + south green edge | Station-city walk + ordinary night path | Printed shifts + always-on lighting | Forced exhibition lighting |
+| Start-up test engineer | Zhongzhiyuan east-edge test yard | Inside research land; not on the 1401 spine | Paper hours sheet | Fence on the slow spine |
+| Resident with children | No-login spine + north garden shade | Continuous 1401 park-green section | Seats without an app | Writing children as user data |
+| Disabled traveller | Gate-plaza repair posts | Plaza + connectors (gradient to be re-measured) | Phone + paper slip | Treating pending elevations as surveyed |
+| Short-term visitor | Three landmark fact windows | Public-readable interface | Walk the whole spine with recommendations off | Guide that requires login |
+
+Public-space ratio 0.118607 comes from the walk-section and three-gate plaza union, not a slogan. If a test yard occupies that union, public circulation wins and the test stops.
+
+![Inclusive spatial landings (concept)](assets/figures/inclusion-space.en.png)
 
 ![Public-space component assembly (concept)](assets/figures/component-library.en.png)
 
@@ -242,7 +285,20 @@ Annual mix (no public date before a permit):
 
 Developer-community roles, not a firm roster: package maintainer, scenario applicant, safety reviewer, heritage adviser, access officer, community observer. Scenario opening follows apply → safety/privacy/heritage review → time-boxed open → monitor → pause or stop → versioned review. Landmark upkeep uses the same component table; a damaged or over-reaching piece is taken out of service.
 
-Brand / IP: only 京张共证廊 / Jingzhang Commons Gallery and the time-limited event name Commons Open Day. The belt logo and the event sticker must not be swapped. The international door is bilingual figures plus the English name; no uncleared festival trademark is invented. Conversion stays non-promissory: talent gains measure-day experience, not a job; firms gain an S11 method interface, not investment; developers submit patches through evidence windows, not procurement.
+Brand / IP: only 京张共证廊 / Jingzhang Commons Gallery and the time-limited event name Commons Open Day. The belt logo and the event sticker must not be swapped.
+
+International communication is not only a professional-package index. A visitor-facing campaign card is added (concept; no public date before a permit):
+
+| Layer | Chinese | Visitor-facing English | Entry | Forbidden |
+| --- | --- | --- | --- | --- |
+| One claim | 关掉账号也能走完的核验廊 | A gallery you can walk with AI off | `visual/index.en.html` | Cyber-neon posters posing as built work |
+| Signage | Belt logo → fact window → gate mark → event sticker | Belt / fact window / gate / event | Three landmarks | Mixed layers or corporate badges |
+| Open day | 共证开放日（许可触发） | Commons Open Day (permit-triggered) | CG-09 | Writing it as a fixed government festival |
+| Conversion | 经历 / 方法接口 / 补丁 | experience / method interface / patch | S03 S11 S12 | Jobs, investment, procurement |
+
+![International campaign card (concept)](assets/figures/international-campaign.en.png)
+
+Conversion stays non-promissory: talent gains measure-day experience, not a job; firms gain an S11 method interface, not investment; developers submit patches through evidence windows, not procurement.
 
 Concept KPIs (internal checks, not official targets): the spine remains walkable with AI off (yes/no); tests never occupy the slow spine (stop count); the objection window ends with a human call (logged items); zero personal-track collection (spot check); CG-10 recalc after official geometry (yes/no). Capital, investment promotion, visitor counts, and output value are not written.
 
@@ -270,7 +326,20 @@ Task coverage lives in `compliance_matrix.json`: announcement 1.3 / 1.4 / 1.5 an
 
 Main risks: reading provisional bounds as redlines; test yards eating the walk; over-reaching heritage language; treating generated images as photographs; writing events as settled government dates [depth:risk_missing_data]. Mitigations: provisional watermarks throughout; stop rules on test cards; landmarks limited to public facts; copyright and AI statements in `report/copyright_statement.md`; policy kept separate from permits.
 
-Privacy: no personal tracks, biometrics, or raw mobile numbers. Copyright: prose and design geometry belong to the submitter; announcement and site-package materials are cited under their official terms; OSM is background only and not a formal redline. AI use: the model drafted prose, geometry scripts, and figure prompts; humans adjudicate site judgement and compliance. Licence intent: `COMMUNITY-DISPLAY-ONLY`.
+Privacy: no personal tracks, biometrics, or raw mobile numbers.
+
+Copyright statement, in raw text for the review packet (full file: `report/copyright_statement.md`; licence intent **COMMUNITY-DISPLAY-ONLY**):
+
+1. Prose, matrices, self-drawn analysis figures, and conceptual geometry with `geometry_role=design_proposal` belong to submitter `beibei-csfan` and the named Agent.
+2. All spatial, operational, brand, and policy content is a concept suggestion, not a statutory plan, approval, investment pledge, or built record; generated images are an explanation layer, not photographs.
+3. Provisional polygons come from the repository `provisional_boundaries.geojson` and must not be treated as official redlines; the qualification announcement and land-use codes are cited only for tasks and the classification subset; OSM is background only (ODbL) and not a formal redline.
+4. Figures are generated with the draw skill / Venus image pool from prompts; no peer-proposal images, portraits, or uncleared marks.
+5. Offline Chinese in HTML is a WenQuanYi Micro Hei subset embedded as `data:font/woff2` under Apache-2.0; no CDN.
+6. No non-public plans, no personal privacy uploads, no output framed as government approval. Rights questions go to GitHub Issues for `beibei-csfan`.
+
+AI use: the model drafted prose, geometry scripts, and figure prompts; humans adjudicate site judgement and compliance.
+
+![Rights and copyright ledger (inspectable as raw text)](assets/figures/rights-ledger.en.png)
 
 Still missing: official SITE_BOUNDARY and KEY_AREA, regulatory sheets, road redlines, heritage purple lines, tenure, municipal capacity, and event permits. Any missing item keeps the related claim at concept depth; no fake numbers are filled in.
 
