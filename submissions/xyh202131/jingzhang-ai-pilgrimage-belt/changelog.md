@@ -1,5 +1,19 @@
 # 方案迭代记录 / Changelog
 
+## v90.0 - 2026-08-30
+
+**离线评审追证入口闭合 / Offline Review Evidence-route Closure**
+
+- 已有能力：R89 已把可选双语交接摘要收敛为 30 秒、3 分钟、15 分钟和追证四级阅读路线；包内已有登记并受 manifest 约束的 `visual/assets/review-handoff-index.json`，负责连接普通任务、四态体验、专业交接、权利与来源治理。
+- 真实缺口：修复前，交接摘要的中英文“追证”行都指向不存在的 `visual/assets/evidence-index.json`。确定性 gate 不解析 Markdown 内联代码中的本地路径，因此仍全部通过，但离线评审者按当前交接路线会在最后一步遇到死路；逐项路径复核得到 2 个错误引用、1 个缺失目标。
+- 必须冻结：冻结“双轨京张 / Twin-Track Jing-Zhang”、三种不可互换原型、JZ-AIOS、G0—G3、四轴、三载体、证据门、权利边界及 12/8/3/36；不改 proposal、report HTML、visual、图件、媒体、四份 PDF、geometry、metrics、证据内容或现实状态。
+- 本轮实施：把两处双语错误引用定向改为已登记的 `visual/assets/review-handoff-index.json`，并复核交接页点名的全部本地文件均存在。官方几何、批准、现场基线与结果、现实责任、预算、恢复时间、公众反馈、独立法律/商标审查和人工双语签署继续为 unknown、0、未提供或 NO-GO。
+
+- Existing capability: R89 converged the optional bilingual handoff summary into 30-second, 3-minute, 15-minute and evidence-tracing routes. The package already contains the manifest-governed `visual/assets/review-handoff-index.json`, which connects ordinary tasks, the four-state experience, professional handoff, rights and source governance.
+- Real gap: before repair, both Chinese and English “Trace evidence” lines pointed to the nonexistent `visual/assets/evidence-index.json`. Deterministic gates do not resolve local paths written as Markdown inline code, so they still passed, while an offline reviewer following the current handoff would hit a dead end at the final step. Path-by-path review found two bad references to one missing target.
+- Frozen boundary: Twin-Track Jing-Zhang, the three non-interchangeable prototypes, JZ-AIOS, G0–G3, four axes, three carriers, evidence gates, rights boundaries and 12/8/3/36 remain frozen. Proposals, report HTML, visuals, figures, media, all four PDFs, geometry, metrics, evidence content and real-world status are unchanged.
+- Implemented this round: redirected the two bilingual bad references to the declared `visual/assets/review-handoff-index.json` and rechecked that every local file named by the handoff page exists. Official geometry, approvals, field baselines and outcomes, real accountability, budgets, recovery time, public feedback, independent legal/trademark review and human bilingual sign-off remain unknown, zero, not provided or NO-GO.
+
 ## v89.0 - 2026-08-30
 
 **当前评审交接摘要收敛 / Current Review-handoff Summary Convergence**
