@@ -32,3 +32,9 @@
 - Added planning-depth narrative and perceptible acceptance scripts for morning peak, after-school conflict-buffer use and post-rain cleaning; each ties a spatial cue to a manual baseline, human gate, indicator and reversible action.
 - Rebuilt the bilingual ecosystem atlas so the six global AI cases are visually explicit, added the atlas to both visual HTML surfaces, and regenerated six-page bilingual A0/A3 PDF review artifacts outside the submission's report whitelist.
 - Tightened privacy language so controlled linkable service records are not mislabeled as anonymous aggregates; added the global AI reference rights row and public-web reuse boundary to the asset ledger.
+
+# 2026-08-30 — Direct Codex repair round-6 (CocoSgt 82, source-date chain)
+
+- Confirmed from the package's source records that the six global AI mechanism cases (`CASE-HELSINKI-AI-REGISTER`, `CASE-SINGAPORE-AI-VERIFY`, `CASE-NIST-AI-RMF`, `CASE-AMSTERDAM-ALGORITHM-REGISTER`, `CASE-BARCELONA-DECIDIM`, and `CASE-UK-AI-PLAYBOOK`) were accessed on 2026-08-30; their publisher, public URL, publication date, review status, and reuse boundary remain recorded in `sources.json`.
+- Corrected the metadata time chain by regenerating `manifest.json` at `2026-08-30T07:06:31Z` (UTC), after the recorded 2026-08-30 verification date; refreshed all declared file hashes and reran the persisted self-check without changing proposal content, metrics, geometry, matrices, or source records.
+- Kept the six pet-friendly benchmark cases as the separate `pet_friendly_case_count=6` group; no source date was changed merely to satisfy the validator.
