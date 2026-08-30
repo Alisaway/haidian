@@ -1,5 +1,19 @@
 # 方案迭代记录 / Changelog
 
+## v94.0 - 2026-08-30
+
+**双语精确审阅路由闭合 / Exact Bilingual Review-route Closure**
+
+- 已有能力：R93 已把当前包验证、manifest、逐路径权利、PDF 权利卡和全页图谱统一为 162/162；PR #4263 在 exact head `e4d7241e3787888d1b26ace6f32398ab85f55b29` 完成 96/100、无阻断项评审并进入 canonical main。中英文 proposal、report、visual、A3/A0 和双语交接摘要均已存在。
+- 真实缺口：修复前，机器可读 `review-handoff-index.json` 的 30 秒、3 分钟和五步正式审阅路线只登记中文 `proposal.md`、`visual/index.html` 与中文图件；英文评审者必须自行猜测 `.en` 对应物。人类摘要已经双语，但自动 gate 不检查交接索引是否为两种语言提供精确落点。
+- 必须冻结：冻结“双轨京张 / Twin-Track Jing-Zhang”、三种不可互换原型、JZ-AIOS、G0—G3、四轴、三载体、证据门、权利边界及 12/8/3/36；不改 proposal、report/visual 页面、图件、媒体、四份 PDF、geometry、metrics、来源判断、现实状态或 0/8 人工双语签署。
+- 本轮实施：在现有交接索引中增加中文和英文两条可机器读取的 30 秒、3 分钟、15 分钟、专业交接与证据路线，逐项绑定对应 visual 片段、双语图件、report 章节、A3/A0 PDF 和全页图谱；共享结构化证据继续声明为语言中立。交接摘要同步说明该路由边界。官方几何、批准、现场基线与结果、现实责任、预算、恢复时间、公众反馈、独立法律/商标审查和人工双语签署继续为 unknown、0、未提供或 NO-GO。
+
+- Existing capability: R93 aligned current-package validation, manifest coverage, path-level rights, PDF rights cards and all-page atlases at 162/162. PR #4263 completed a 96/100 review with no blocker on exact head `e4d7241e3787888d1b26ace6f32398ab85f55b29` and entered canonical main. Paired proposals, reports, visuals, A3/A0 publications and the bilingual handoff summary already exist.
+- Real gap: before repair, the machine-readable 30-second, three-minute and five-step formal routes in `review-handoff-index.json` named only Chinese `proposal.md`, `visual/index.html` and Chinese figures. An English reviewer had to infer every `.en` counterpart. The human summary was bilingual, but automated gates do not verify exact destinations for both languages in the handoff index.
+- Frozen boundary: Twin-Track Jing-Zhang, the three non-interchangeable prototypes, JZ-AIOS, G0–G3, four axes, three carriers, evidence gates, rights boundaries and 12/8/3/36 remain frozen. Proposals, report/visual pages, figures, media, all four PDFs, geometry, metrics, source judgements, real-world status and the unsigned 0/8 human bilingual review are unchanged.
+- Implemented this round: added machine-readable Chinese and English routes for the 30-second, three-minute, 15-minute, professional-handoff and evidence steps, binding each to the matching visual fragment, paired figure, report chapter, A3/A0 PDF and all-page atlas. Shared structured evidence remains explicitly language-neutral. The handoff summary now states this route boundary. Official geometry, approvals, field baselines and outcomes, real accountability, budgets, recovery time, public feedback, independent legal/trademark review and human bilingual sign-off remain unknown, zero, not provided or NO-GO.
+
 ## v93.0 - 2026-08-30
 
 **当前包验证合同闭合 / Current-package Validation-contract Closure**
