@@ -1,5 +1,15 @@
 # 方案迭代记录
 
+## v1.5 candidate - 2026-08-30
+
+- Preserved the v1.4.2 public test, bidirectional spine, three verification layers, three-area relay, 11 cases, 15 scenarios, 12 journeys and existing geometry; this is an implementation-evidence revision, not a concept reset.
+- Added one AI Origin P0 Civic Review and Correction Relay Cell as a separate 12 m by 8 m participant reference test fit. The source 12 by 8 adjacency diagram remains non-metric; no measured site, approved area, fire conclusion or accessibility certification is claimed.
+- Added computable participant screening for six zones, a two-case-per-hour bottleneck, an eight-person waiting limit, five concurrent seats, 780 ninety-day staff-hours and a six-package percentage cost structure. Field baselines, annual FTE, currency, quantities, rates, quotes and funding remain null.
+- Added ten external release gates, all `HOLD`, plus four gate-bound safe states. These preserve screenless intake, independent review, same-channel correction and recovery while explicitly prohibiting permanent-space, field-performance, automatic-correction or live-data claims when evidence is absent.
+- Added per-session, weekly, day-45, day-70 and day-90 maintenance/recovery actions; separated currently judgeable package evidence from field-dependent observations.
+- Added 30-second, 3-minute and 15-minute review paths. The peer full-score case in PR #4236 is disclosed only as a method benchmark; no concept, identity, A/B/H mechanism, dimensions, costs or spatial types are copied.
+- Video remains deferred. All new physical and operating values are participant pre-implementation assumptions and cannot release field service without named parties, evidence and signatures.
+
 ## v1.4.2 execution and expression repair - 2026-08-27
 
 - Retained the v1.4 design scope, geometry, metrics, 11 cases, 15 scenarios, 12 journeys, four rights and three-area relay; this is not a concept reset.

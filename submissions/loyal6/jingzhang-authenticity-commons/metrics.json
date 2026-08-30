@@ -307,6 +307,97 @@
       "assumptions": [],
       "reason": "Requires actual retirement events and independent recovery records."
     },
+    "p0_reference_envelope_sqm": {
+      "status": "known",
+      "value": 96.0,
+      "unit": "sqm",
+      "source_files": [
+        "visual/assets/preimplementation-package.json"
+      ],
+      "formula": "12 m participant reference width * 8 m participant reference depth",
+      "confidence": "high",
+      "assumptions": [
+        "Participant reference test fit only; not a measured or selected site and not an approved building area."
+      ]
+    },
+    "p0_reference_capacity_index": {
+      "status": "known",
+      "value": 2.0,
+      "unit": "index",
+      "source_files": [
+        "visual/assets/preimplementation-package.json"
+      ],
+      "formula": "min(60 / 15, 60 / 30, 60 / 30, 60 / 30) participant cases per hour",
+      "confidence": "low",
+      "assumptions": [
+        "Capacity screening from participant service-time assumptions; not a field SLA, observed demand or operator commitment."
+      ]
+    },
+    "p0_reference_staff_hours": {
+      "status": "known",
+      "value": 780,
+      "unit": "none",
+      "source_files": [
+        "visual/assets/preimplementation-package.json"
+      ],
+      "formula": "4 hours * 3 windows per week * 13 weeks * 5 concurrent seats",
+      "confidence": "medium",
+      "assumptions": [
+        "Ninety-day participant staffing screen only; annual FTE and real roster remain unknown."
+      ]
+    },
+    "p0_external_gate_count": {
+      "status": "known",
+      "value": 10,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/preimplementation-package.json"
+      ],
+      "formula": "count(external_gates)",
+      "confidence": "high",
+      "assumptions": [
+        "Gates are participant-defined release controls, not statutory approvals."
+      ]
+    },
+    "p0_external_gate_open_count": {
+      "status": "known",
+      "value": 0,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/preimplementation-package.json"
+      ],
+      "formula": "count(external_gates where status = OPEN)",
+      "confidence": "high",
+      "assumptions": [
+        "No named appointee, authorization, professional sign-off, quote or funding is represented as obtained."
+      ]
+    },
+    "p0_conditional_branch_count": {
+      "status": "known",
+      "value": 4,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/preimplementation-package.json"
+      ],
+      "formula": "count(conditional_implementation_branches)",
+      "confidence": "high",
+      "assumptions": [
+        "Branches are safe operating states, not replacements for the primary three-area spatial scheme."
+      ]
+    },
+    "p0_procurement_package_count": {
+      "status": "known",
+      "value": 6,
+      "unit": "count",
+      "source_files": [
+        "visual/assets/preimplementation-package.json"
+      ],
+      "formula": "count(procurement_cost_plan.packages)",
+      "confidence": "high",
+      "assumptions": [
+        "Scope packages and percentage shares are participant pre-costing structure; monetary values remain null."
+      ]
+    },
     "floor_area_ratio": {
       "status": "unknown",
       "value": null,

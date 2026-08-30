@@ -9,6 +9,7 @@ license: "COMMUNITY-DISPLAY-ONLY"
 summary: "以一句公众判据和一场受控合成演练，把证据南行、纠错北返的双向证据脊变成可自行验证的城市纠错基础设施：错误必须暂停、独立复核、沿原渠道更正，并触发产品重测与空间数据恢复。"
 tracks: ["enterprise-services-ecosystem", "civic-agent-governance", "ai-public-services"]
 scenarios: ["ai-health-service-navigation", "enterprise-service-copilot", "public-safety-operations-review", "ai-cultural-guide", "ai-traffic-walkability"]
+iteration: "v1.5-candidate"
 ---
 
 # 京张验真公地
@@ -111,6 +112,25 @@ PILOT-A不是新的判真模型，而是一场把“受理—暂停—复核—�
 
 `correction-receipt-demo.json`记录合成声明、三层验证、三区接力、六个时刻、逐渠道签收、产品重测、采购更新与空间数据恢复。它是协议样例，不是运营KPI。只有原点的公开更正、众智园的失效重测和大钟寺的退出/恢复全部完成，服务才可进入下一轮；否则保留暂停或直接退役。
 
+### P0共同复核与纠错接力单元：从邻接图到参考测试装配
+
+v1.5不把现有12×8非米制邻接图伪装成测绘平面，而为一次预实施筛查另设一个12米×8米、96平方米的参赛者参考测试装配。它只测试原点社区共同复核厅的空间和运营关系，尚未选择具体房间或地块：24平方米无屏入口与同渠道更正带、16平方米受理等候、16平方米证据解释与离开、16平方米私密独立复核、16平方米独立人员入口与共同校译、8平方米受控记录和恢复存放，六区相加等于参考包络。连续通行和回转均以1.5米作为设计目标，但必须经授权测量、适用规范复核和真实使用者共测，不能据此声称无障碍合规 [data:visual/assets/preimplementation-package.json#reference_test_fit] [metric:p0_reference_envelope_sqm]。
+
+同一参考装配形成1:500临时关系、1:100参考平面、1:50公众—受控—恢复流线和1:20无屏受理台/纸面回执接口的图纸链。服务筛查采用15分钟受理、30分钟独立复核、30分钟两渠道更正、30分钟重测与恢复交接四个参赛者假设，瓶颈为每小时2个案件；16平方米等候区按每人2平方米形成8人参考上限。达到8人或需求超过筛查能力时停止新增现场受理，保留紧急人工解释，再通过预约或增加独立复核席恢复。该数值是工作包络，不是运营基线或服务承诺 [metric:p0_reference_capacity_index] [data:visual/assets/preimplementation-package.json#operational_screening]。
+
+九类责任角色被压缩为五个最低同时席位：案件受理、原渠道责任、独立复核、重测/恢复、场地或服务决策；原渠道责任人、材料作者、供应商和服务责任人不得复核自己的案件。按每次4小时、每周3次、13周、5席计算，90天参考人员量为780席位小时，年度FTE仍为空。六个采购工作包只分配12%调查授权、23%可逆适配与无障碍、15%离线设备与标识、12%渠道接入、28%人员与独立复核、10%退役恢复的参考份额；币种、工程量、单价、总额、报价与资金均为空 [metric:p0_reference_staff_hours] [metric:p0_procurement_package_count]。
+
+十道外部门控制现场释放：场地使用，权属/现状/结构/消防，实际无障碍，材料版权，隐私期限，原渠道协议，独立复核任命，网络安全与离线回滚，人员/采购/资金，退役恢复验收。当前10道门全部为`HOLD`、开放数为0，所以P0只能作为参赛者预实施证据包被评审，不能开放真实服务 [metric:p0_external_gate_count] [metric:p0_external_gate_open_count]。
+
+| 主方案 | 条件化安全状态 | 必须保留 | 明确禁止 | 回到主方案的条件 |
+| --- | --- | --- | --- | --- |
+| 固定共同复核与纠错接力单元 | 人工移动受理台＋另行预约的私密房间 | 无屏受理、独立复核、纸面回执、同渠道更正 | 不宣称建成永久共同复核厅 | 场地许可、实测房间、工程和无障碍放行 |
+| 获授权的三区现场接力 | 单站离线桌面接力 | 六时刻、角色交接、闭锁测试、恢复收据 | 不报告三区现场绩效 | 三区场地主体、渠道责任和人员共同授权 |
+| 机器可读渠道接入 | 人工逐渠道签收台账 | 渠道清单、责任人、前后版本、签收 | 不宣称自动或即时纠错 | 接口复核、安全测试和回滚证据 |
+| 限域联网证据服务 | 离线合成证据包、纸面案件号和人工保管 | 公众解释、无屏路线、独立复核、失败闭锁 | 不接入个人材料或真实公共渠道 | 版权、隐私影响和网络安全放行 |
+
+这些分支不是与主方案并列的低配设计，而是外部门失败时的受限运行态；降低的是运行强度，不是公众纠错权。任何分支都不得删除“暂停—独立复核—同渠道更正—恢复/退役”四项不变量 [metric:p0_conditional_branch_count] [data:visual/assets/preimplementation-package.json#conditional_implementation_branches]。
+
 ## 统筹研究范围产业与未来城市研究
 
 “可信”在本方案中不是证书，而是一份随用途变化、到期失效、允许撤销和申诉的证据档案。企业声明、实测结果、未解决问题、适用范围、人工意见、整改复测和退出条件分栏记录；初创企业可把档案带入孵化，采购者只读取与用途相关的证据，投资与保险角色只能把可复现实验作为参考。科技服务翼不得把证据档案包装成政府认证，公地不得出售个人案件数据或经营黑箱信誉分 [source:AGENT-TASKBOOK] [standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK]。
@@ -129,7 +149,7 @@ PILOT-A不是新的判真模型，而是一场把“受理—暂停—复核—�
 
 **众智园——失效证据场。** 这里不只证明AI“能工作”，而要公开它如何失效。空间剖面由公众观察廊、受控测试场、群体差异测试室、隔离停用区和修复重测区构成；公众流线与许可测试材料分开。日常态提供方法展示和预约受理，测试态限制材料与观察边界，恢复态隔离错误结果、公布局限并完成修复重测。它向南输出的不是一枚认证章，而是一份带失败样本、适用边界、责任人与到期日的档案 [data:geometry/key_areas.geojson#PROV-KEY-001] [data:geometry/public_space.geojson#PUBLIC-005]。
 
-**北京AI原点社区——共同复核厅。** 无屏受理台、证据前厅、私密复核室、共同校译桌和修订回送墙组织成可步行首层。技术证据在这里被翻译成普通人能理解、能质疑的公共语言；被误标的个人和小企业可以暂停标签传播、调阅相关依据并提出独立复核。复核通过后，更正必须返回每个被记录的实体和数字渠道，而不是只修改后台数据库 [data:geometry/key_areas.geojson#PROV-KEY-002] [metric:same_channel_contract_coverage_ratio]。
+**北京AI原点社区——共同复核厅。** 无屏受理台、证据前厅、私密复核室、共同校译桌和修订回送墙组织成可步行首层。技术证据在这里被翻译成普通人能理解、能质疑的公共语言；被误标的个人和小企业可以暂停标签传播、调阅相关依据并提出独立复核。复核通过后，更正必须返回每个被记录的实体和数字渠道，而不是只修改后台数据库。v1.5进一步把这套邻接关系转成独立标注的P0参考测试装配，但没有选择真实房间或把参考面积写入地块指标 [data:geometry/key_areas.geojson#PROV-KEY-002] [metric:same_channel_contract_coverage_ratio] [metric:p0_reference_envelope_sqm]。
 
 **大钟寺——可逆采用门厅。** 可信采购台、全周期成本桌、退出测试位、证据到期墙和无屏恢复窗构成南端空间原型。中小企业在采用AI前比较供应商声明、实测证据、数据迁移、停用、人工替代和恢复成本；证据过期、无法导出数据或无法停止服务时暂停续约。大钟寺向北返回的不是投诉摘要，而是一项带采购后果和重测要求的纠错任务 [data:geometry/key_areas.geojson#PROV-KEY-003] [data:geometry/public_space.geojson#PUBLIC-002]。
 
@@ -210,9 +230,13 @@ PILOT-A不是新的判真模型，而是一场把“受理—暂停—复核—�
 
 现场前需确认场地主体、人员时段、数据规则、无障碍共测和签字机制。当前均为待审草案，签字为空，不假装已经开办服务。共测覆盖无手机受理、低视力读状态、轮椅到达与离开、辅助沟通理解“来源有效不等于事实真实”；自愿参与可退出，记录障碍、修改及复测。指标说明起止事件、分母、失败与未结案的处理方式；基线、现场目标和实测结果均待授权确认 [data:visual/assets/execution-contract.json#measurement]。
 
+P0预实施附件在此基础上增加参考测试装配、容量与排班筛查、六个采购包、五级维护、十道外部门和四个条件化安全状态。每次演练核对案件号、渠道和纸面收据；每周测试无屏路线、渠道可达、到期、打印与离线终端；第45天复核冲突和障碍，第70天完成故障注入，第90天关闭设备、材料、缓存、备份和空间。维护记录不替代真实场地、专业签署或运营绩效 [data:visual/assets/preimplementation-package.json#maintenance_and_recovery]。
+
 ## 指标体系、面积复算与合规矩阵
 
 指标分为“提交包准备度”和“真实运营成效”。前者可以复算：三片区、六站、15场景、12旅程、5个产业验证场景、4项纠错权，以及六站责任、人工路径、回送渠道、暂停/停用/恢复字段是否完整。六站目前均具备结构化合同字段，但这只能证明方案可检查，不能证明现实服务已经存在 [metric:verification_station_count] [metric:station_contract_complete_count] [metric:human_handover_contract_coverage_ratio]。
+
+v1.5新增的可计算准备度包括96平方米参考包络、2案件/小时的参赛者瓶颈筛查、780席位小时、6个采购包、10道外部门且0道开放、4个条件化安全状态。它们来自同一预实施JSON并经过面积、成本份额、门状态、分支映射和人员公式测试；这些是方案内部一致性，不是现场绩效 [metric:p0_reference_envelope_sqm] [metric:p0_external_gate_open_count] [data:visual/assets/preimplementation-package.json#acceptance_evidence]。
 
 后者必须由授权试点建立基线，当前全部保持待实测：人工接管时间、同渠道更正时间、无屏等价完成率、申诉改判率、用户能否理解“来源不等于真相”、数据与资产恢复完成率。未来发布结果时需同时公开不同沟通方式的差异、未解决案件和停止项目，不能只选择成功案例 [metric:human_handover_time_min] [metric:same_channel_correction_time_h] [metric:screenless_parity_completion_ratio]。
 
@@ -226,14 +250,14 @@ PILOT-A不是新的判真模型，而是一场把“受理—暂停—复核—�
 
 主稿、HTML、A3、A0和五幅含文字图均提供英文对应版本；离线网页不加载CDN、远程地图、字体、表单、iframe、跟踪或网络请求。封面为AI生成概念图并已披露；五幅图依据本包GeoJSON、指标和结构化协议派生，PDF使用同一图件排版并已经逐页渲染检查。短视频本轮暂缓，不影响静态专业方案包的完整性。所有空间建议均为专业团队深化材料，不声称官方批准、法定控规、最终权属、确定投资或保证实施。
 
-v1.4候选版不是加量版：它保留v1.2的全球案例、产业生态、场景、人才、文化和长期运营广度，也保留v1.3的一句公众判据与受控合成演练；新增工作只把来源与传播追踪、独立人工事实复核、暂停—更正—重测—采购更新—恢复/退役三层验证落实为跨三区的PILOT-A，并提高空间证据与正常评审尺度下的可读性，不把提案包装成已实施成绩。
+v1.5候选版仍不是加量版：它完整保留v1.4.2的一句公众判据、三区接力、三层验证、案例、场景、人物和总体空间，只把原点P0推进到可复算的预实施工作包。参考尺寸、容量、人员和成本份额均为参赛者假设；十道外部门继续关闭，任何安全分支都不得削弱公众暂停、独立复核、同渠道更正和恢复/退役权利。PR #4236仅作为“可计算范围与外部门分开表达”的公开同业方法参照，JZAC不照搬其概念、标识、A/B/H机制、尺寸、成本或空间类型 [source:PEER-SHARED-FLOOR-4236]。
 
 ### 数据与授权的证据边界
 
 执行附件区分公开纠错回执、受限案件材料和最小审计事件。公开回执不包含案件原件和直接标识；受限材料仅按需授权访问，不默认公开可关联哈希。结案并处理完申诉后30天内删除材料、每90天复核公开及审计记录的必要性，均为待专业审查的建议周期，不是法定期限。删除覆盖原件、派生副本、缓存、导出及备份；备份未清不能声称全部删除，保全例外须记录依据、批准人、复核日与访问限制 [data:visual/assets/execution-contract.json#data_protocol]。
 
-本轮可验证离线字体、协议字段和受控故障测试。真实授权、运营签约、现场共测及工程成本是触发后完成的后续事项，分别列明责任角色和触发条件；它们限制现实启动，不被包装成已取得的证据。新官方几何发布后仍须包级联动复算；本版不改变九个空间图层或法定未知指标 [data:visual/assets/execution-contract.json#conditional_followups]。
+本轮可验证离线字体、协议字段、受控故障测试和P0算术一致性。真实授权、运营签约、现场共测及工程成本是触发后完成的后续事项，分别列明责任角色和触发条件；它们限制现实启动，不被包装成已取得的证据。新官方几何发布后仍须包级联动复算；本版不改变九个空间图层或法定未知指标 [data:visual/assets/execution-contract.json#conditional_followups] [data:visual/assets/preimplementation-package.json#external_gates]。
 
 ## 参考资料
 
-完整来源、权利与使用限制见 `sources.json`；全球案例的迁移边界见 `visual/assets/global-cases.json`；场景、人物、城市纠错权和90天试点分别见 `visual/assets/scenarios.json`、`persona-journeys.json`、`correction-protocol.json`与`pilot-playbook.json`。关键依据包括征集公告、智能体任务书、C2PA、NIST AI RMF/OpenMFC、赫尔辛基AI登记、阿姆斯特丹算法生命周期工具、AI Singapore 100E、芬兰媒介素养和UNESCO Zollverein [source:SITE-PACKAGE] [source:CASE-C04] [source:CASE-C07]。
+完整来源、权利与使用限制见 `sources.json`；全球案例的迁移边界见 `visual/assets/global-cases.json`；场景、人物、城市纠错权、90天试点和P0预实施证据分别见 `visual/assets/scenarios.json`、`persona-journeys.json`、`correction-protocol.json`、`pilot-playbook.json`与`preimplementation-package.json`。关键依据包括征集公告、智能体任务书、C2PA、NIST AI RMF/OpenMFC、赫尔辛基AI登记、阿姆斯特丹算法生命周期工具、AI Singapore 100E、芬兰媒介素养和UNESCO Zollverein [source:SITE-PACKAGE] [source:CASE-C04] [source:CASE-C07]。
