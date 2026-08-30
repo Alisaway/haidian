@@ -1,0 +1,2098 @@
+{
+  "schema_version": "0.1.0",
+  "module_id": "B3-scenario-space",
+  "project_title": "以构建城市规划新范式命题下的京张铁路创新带AI原生规划新思考",
+  "status": "conceptual_proposal_pending_evidence_spatial_and_human_review",
+  "scenario_count": 13,
+  "industry_test_scenario_count": 4,
+  "park_ai_landmark_count": 3,
+  "coverage_summary": {
+    "agent_tasks": [
+      "agent.3",
+      "agent.4"
+    ],
+    "outline_chapters": [
+      "CH03",
+      "CH04",
+      "CH05",
+      "CH08",
+      "CH09",
+      "CH14",
+      "CH15"
+    ],
+    "required_theme_coverage": [
+      "AI+医疗服务导航",
+      "AI+教育与学习",
+      "AI+商业",
+      "AI+交通",
+      "AI+文化",
+      "AI+生活服务"
+    ],
+    "interfaces": [
+      "CH06",
+      "CH07",
+      "CH10",
+      "CH11"
+    ]
+  },
+  "spatial_policy": {
+    "coordinate_policy": "本版本不提供任何新经纬度。provisional key areas仅表示片区级概念归属；站点、道路、公园、建筑和地块任务均使用text_only或待官方锚定。",
+    "forbidden_inference": [
+      "不得由效果图、卫星图、OSM点位或新闻描述反推official boundary、站口、道路红线、地块、建筑或公园实施边界",
+      "不得把候选空间类型写成已确定选址",
+      "不得把概念组件写成工程可行性或已批准建设"
+    ]
+  },
+  "evidence_rules": {
+    "formal_task_sources": [
+      "DATA-SRC-AGENT-TASKBOOK-20260518",
+      "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509"
+    ],
+    "provisional_spatial_source": "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+    "concept_seed": "LOCAL-SCENE-NODE-LIBRARY-V0.1",
+    "important_notice_zh": "所有问题、需求、目标和场景均为证据约束下的研究假设或概念建议；没有调研或正式空间数据支撑的内容不得升级为已验证事实。"
+  },
+  "scenarios": [
+    {
+      "id": "SCN-B3-01",
+      "legacy_node_ids": [
+        "N01"
+      ],
+      "title_zh": "全栈自主创新验证院",
+      "scenario_types": [
+        "产业服务",
+        "封闭测试验证",
+        "开发者社区"
+      ],
+      "agent_task_ids": [
+        "agent.3",
+        "agent.4"
+      ],
+      "outline_chapters": [
+        "CH07",
+        "CH08",
+        "CH14",
+        "CH15"
+      ],
+      "theme_coverage": [
+        "AI产业测试",
+        "AI+创新服务"
+      ],
+      "industry_test_scenario": true,
+      "park_ai_landmark": false,
+      "user_ids": [
+        "USER-B3-RESEARCH-STARTUP",
+        "USER-B3-YOUTH-DEVELOPER",
+        "USER-B3-OPERATOR"
+      ],
+      "problem_hypothesis_zh": "小团队可能面临算力、数据、测试场景、安全与合规入口分散，导致原型验证成本和失败风险上升。",
+      "need_zh": "一个由人工负责、规则透明、可从咨询开始并允许失败退出的低风险验证入口。",
+      "goal_zh": "把技术展示转化为可审查、可停止、可复盘的小规模验证，而不是承诺技术已可部署。",
+      "evidence_state": "conceptual_proposal",
+      "source_refs": [
+        {
+          "source_id": "DATA-SRC-AGENT-TASKBOOK-20260518",
+          "source_use": "formal",
+          "supports": "不少于3个产业测试场景与场景开放机制",
+          "limitations": "不证明现有验证设施或团队需求规模"
+        },
+        {
+          "source_id": "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+          "source_use": "provisional_only",
+          "supports": "众智园片区级概念归属",
+          "limitations": "不锚定园区、建筑或地块"
+        },
+        {
+          "source_id": "LOCAL-SCENE-NODE-LIBRARY-V0.1",
+          "source_use": "needs_review",
+          "supports": "候选动作种子",
+          "limitations": "内部概念，不是事实"
+        }
+      ],
+      "place_anchor": {
+        "mode": "provisional_area_text_only",
+        "ref": "PROV-KEY-001",
+        "description_zh": "众智园AI自主创新加速区内的既有创新载体类型；具体建筑待权属、消防、电力、网络和运营条件核验。",
+        "eligible_space_types": [
+          "可合法开放的既有园区首层",
+          "具有独立安全边界的室内测试空间"
+        ],
+        "prohibited_before_verification": [
+          "指定真实建筑",
+          "开放公共道路测试",
+          "承诺实验室资质",
+          "改造权属空间"
+        ]
+      },
+      "journey_ids": [
+        "JOURNEY-B3-02"
+      ],
+      "spatial_components": [
+        "COMP-B3-03-HUMAN-DESK",
+        "COMP-B3-06-REVERSIBLE-TEST-BOUNDARY",
+        "COMP-B3-10-FEEDBACK-LEDGER"
+      ],
+      "ai_role": [
+        "检查申请材料完整性",
+        "辅助生成风险清单和测试方案草案",
+        "匹配公开可用资源"
+      ],
+      "ai_forbidden_actions": [
+        "自动批准测试",
+        "替代数据、伦理、安全、消防或工程审查",
+        "承诺融资、政策或转化结果"
+      ],
+      "data_boundary": "只处理申请者主动提交且为测试必需的数据；商业秘密与个人数据最小化，访问和保留期限由人工审查确定。",
+      "human_gate": [
+        "数据与伦理审查",
+        "设备与现场安全审查",
+        "消防和载体条件审查",
+        "测试开放/暂停/结束决定"
+      ],
+      "non_digital_alternative": "人工咨询、纸质申请指南、面对面风险说明和书面审查意见。",
+      "operator_role": "候选运营联合体：载体运营人员 + 独立安全/合规专业人员；尚未确定具体机构。",
+      "first_phase": {
+        "action_zh": "开放验证桌",
+        "minimum_scope": "只做咨询、申请分流和文档审查，不开放未经批准的物理测试",
+        "entry_gate": "候选载体和人工责任人通过专业核验"
+      },
+      "enhanced_phase": {
+        "action_zh": "可重组测试舱",
+        "minimum_scope": "限时、限量、封闭、可物理隔离并可人工断电的原型测试",
+        "entry_gate": "空间、消防、设备、数据与保险条件逐项通过"
+      },
+      "stop_conditions": [
+        "材料或数据用途与批准范围不符",
+        "安全装置或人工接管不可用",
+        "出现未预期人员暴露",
+        "责任人缺位"
+      ],
+      "resume_evidence": [
+        "问题闭环记录",
+        "专业人员复核签字",
+        "人工接管与清理演练通过",
+        "重新公告测试边界"
+      ],
+      "exit_cleanup": [
+        "删除或返还测试数据",
+        "移除临时设备与标识",
+        "公开结果摘要和未解决问题",
+        "记录不转化原因"
+      ],
+      "metrics": [
+        {
+          "id": "MET-B3-01-A",
+          "name_zh": "申请至人工反馈的中位时间",
+          "status": "unknown",
+          "collection": "场景台账时间戳",
+          "decision_use": "判断流程是否需简化，不作为自动批准依据"
+        },
+        {
+          "id": "MET-B3-01-B",
+          "name_zh": "通过人工审核并完成退出清理的测试数",
+          "status": "unknown",
+          "collection": "审核与清理记录",
+          "decision_use": "判断运营完整性"
+        },
+        {
+          "id": "MET-B3-01-C",
+          "name_zh": "因安全或证据不足被中止的比例",
+          "status": "unknown",
+          "collection": "停止原因分类",
+          "decision_use": "优化准入而非惩罚失败"
+        }
+      ],
+      "dependencies": [
+        "官方/清权载体资料",
+        "权属与开放许可",
+        "消防/电力/网络条件",
+        "运营与专业审查责任"
+      ],
+      "gate_state": "draft",
+      "title_en": "Full-stack Independent Innovation Validation Hub"
+    },
+    {
+      "id": "SCN-B3-02",
+      "legacy_node_ids": [
+        "N02"
+      ],
+      "title_zh": "小月河具身智能共生试验窗",
+      "scenario_types": [
+        "人机共享慢行",
+        "机器人测试",
+        "河流公共空间"
+      ],
+      "agent_task_ids": [
+        "agent.3",
+        "agent.4"
+      ],
+      "outline_chapters": [
+        "CH08",
+        "CH09",
+        "CH14",
+        "CH15"
+      ],
+      "theme_coverage": [
+        "AI产业测试",
+        "AI+交通",
+        "AI+生活服务"
+      ],
+      "industry_test_scenario": true,
+      "park_ai_landmark": false,
+      "user_ids": [
+        "USER-B3-RESIDENT",
+        "USER-B3-CHILD-CAREGIVER",
+        "USER-B3-OLDER",
+        "USER-B3-ACCESS-NONDIGITAL",
+        "USER-B3-RESEARCH-STARTUP",
+        "USER-B3-OPERATOR"
+      ],
+      "problem_hypothesis_zh": "具身智能试验若直接进入公共慢行空间，可能与儿童、老人、轮椅、步行和骑行产生冲突，并扩大感知和责任风险。",
+      "need_zh": "行人优先、分时限量、可见边界、现场接管和随时退出的公共空间测试制度。",
+      "goal_zh": "先验证治理和空间接口，再讨论扩大测试；不以机器人通行效率压过人的安全与选择。",
+      "evidence_state": "professional_decision_required",
+      "source_refs": [
+        {
+          "source_id": "DATA-SRC-AGENT-TASKBOOK-20260518",
+          "source_use": "formal",
+          "supports": "小月河场景赋能、公共空间与测试验证要求",
+          "limitations": "不提供测试线位、安全参数或工程条件"
+        },
+        {
+          "source_id": "LOCAL-SCENE-NODE-LIBRARY-V0.1",
+          "source_use": "needs_review",
+          "supports": "分时测试窗和人机共享组件种子",
+          "limitations": "未经过行为与安全验证"
+        }
+      ],
+      "place_anchor": {
+        "mode": "text_only_pending_official_anchor",
+        "ref": "小月河沿线候选慢行空间类型",
+        "description_zh": "不提供坐标。须取得河道、绿地、慢行、文保/生态、安全和运营边界后另选可封闭管理的小段。",
+        "eligible_space_types": [
+          "可物理隔离并可绕行的慢行候选段",
+          "不影响应急和无障碍连续性的试验空间"
+        ],
+        "prohibited_before_verification": [
+          "儿童高频活动时段",
+          "无绕行路径",
+          "无法人工停机",
+          "未核实河道或绿地控制的空间"
+        ]
+      },
+      "journey_ids": [
+        "JOURNEY-B3-01",
+        "JOURNEY-B3-05"
+      ],
+      "spatial_components": [
+        "COMP-B3-05-ROBOT-PULLOVER",
+        "COMP-B3-06-REVERSIBLE-TEST-BOUNDARY",
+        "COMP-B3-07-SAFE-CHARGING",
+        "COMP-B3-08-TACTILE-HIGH-CONTRAST"
+      ],
+      "ai_role": [
+        "识别接近冲突并提示降速",
+        "辅助低速调度",
+        "聚合匿名运行事件"
+      ],
+      "ai_forbidden_actions": [
+        "自动决定行人路权",
+        "采集无关人脸或儿童身份",
+        "替代现场安全员",
+        "在未批准区域运行"
+      ],
+      "data_boundary": "只记录测试设备状态、匿名事件和人工接管；默认不识别人，不保留与安全无关的原始影像。",
+      "human_gate": [
+        "交通/公园/生态/无障碍联合审查",
+        "儿童专项安全审查",
+        "测试时现场值守",
+        "发生冲突即时停机"
+      ],
+      "non_digital_alternative": "实体测试公告、地面纹理、物理围挡/暂停袋、现场安全员和完整绕行路线。",
+      "operator_role": "候选责任：公共空间运营者 + 测试团队现场负责人 + 独立安全观察员。",
+      "first_phase": {
+        "action_zh": "分时测试窗",
+        "minimum_scope": "低人流、短时、单类设备、低速、可随时封闭",
+        "entry_gate": "完成官方空间锚定、绕行验证与现场停机演练"
+      },
+      "enhanced_phase": {
+        "action_zh": "人机共享路权组件",
+        "minimum_scope": "只在首期证据表明冲突可控后增加暂停袋、充能和调度",
+        "entry_gate": "公众反馈、安全指标和专业复核同时通过"
+      },
+      "stop_conditions": [
+        "任何伤害或高风险近失事件",
+        "人工接管或停机失败",
+        "越出批准时空边界",
+        "无障碍或儿童通行被阻断",
+        "未经批准的数据采集"
+      ],
+      "resume_evidence": [
+        "事故/近失根因复盘",
+        "设备与空间整改",
+        "第三方安全复核",
+        "公众公告与重新演练"
+      ],
+      "exit_cleanup": [
+        "设备撤场",
+        "临时构件恢复",
+        "删除非必要数据",
+        "公开停止原因与纠正措施"
+      ],
+      "metrics": [
+        {
+          "id": "MET-B3-02-A",
+          "name_zh": "每百测试公里近失与冲突事件",
+          "status": "unknown",
+          "collection": "人工观察+设备事件日志交叉核验",
+          "decision_use": "触发降级或暂停"
+        },
+        {
+          "id": "MET-B3-02-B",
+          "name_zh": "人工接管反应时间",
+          "status": "unknown",
+          "collection": "演练和事件日志",
+          "decision_use": "判定接管是否可靠"
+        },
+        {
+          "id": "MET-B3-02-C",
+          "name_zh": "非测试用户绕行与安全感",
+          "status": "unknown",
+          "collection": "匿名观察和自愿问卷",
+          "decision_use": "判断公共利益是否受损"
+        }
+      ],
+      "dependencies": [
+        "官方河道/绿地/慢行边界",
+        "人流和冲突基线",
+        "测试准入规则",
+        "保险/事故责任",
+        "现场运营能力"
+      ],
+      "gate_state": "draft",
+      "title_en": "Xiaoyue River Embodied Intelligence Coexistence Test Window"
+    },
+    {
+      "id": "SCN-B3-03",
+      "legacy_node_ids": [
+        "M01"
+      ],
+      "title_zh": "AI原点共创客厅",
+      "scenario_types": [
+        "创新服务",
+        "成果首发",
+        "公共客厅"
+      ],
+      "agent_task_ids": [
+        "agent.3",
+        "agent.4"
+      ],
+      "outline_chapters": [
+        "CH07",
+        "CH08",
+        "CH14",
+        "CH15"
+      ],
+      "theme_coverage": [
+        "AI+创新服务",
+        "AI+生活服务"
+      ],
+      "industry_test_scenario": false,
+      "park_ai_landmark": false,
+      "user_ids": [
+        "USER-B3-YOUTH-DEVELOPER",
+        "USER-B3-RESEARCH-STARTUP",
+        "USER-B3-RESIDENT",
+        "USER-B3-VISITOR",
+        "USER-B3-OPERATOR"
+      ],
+      "problem_hypothesis_zh": "创新资源密集不等于公众可理解、团队可找到入口，展示与服务匹配可能彼此割裂。",
+      "need_zh": "有人工服务、免费线下参与、公开来源和可追溯后续状态的共创入口。",
+      "goal_zh": "让创新关系可见、服务入口可达，同时避免AI给投资、政策或合规结论。",
+      "evidence_state": "conceptual_proposal",
+      "source_refs": [
+        {
+          "source_id": "DATA-SRC-AGENT-TASKBOOK-20260518",
+          "source_use": "formal",
+          "supports": "AI原点社区创新生态与场景可感知要求",
+          "limitations": "不证明具体载体与机构承诺"
+        },
+        {
+          "source_id": "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+          "source_use": "provisional_only",
+          "supports": "AI原点社区片区归属",
+          "limitations": "不锚定建筑或首层"
+        }
+      ],
+      "place_anchor": {
+        "mode": "provisional_area_text_only",
+        "ref": "PROV-KEY-002",
+        "description_zh": "AI原点社区内可合法开放的既有创新载体公共首层类型。",
+        "eligible_space_types": [
+          "有无障碍入口且可人工值守的公共首层",
+          "不要求消费或会员注册的共享空间"
+        ],
+        "prohibited_before_verification": [
+          "指定真实楼宇",
+          "承诺入驻机构",
+          "改造未授权产权空间"
+        ]
+      },
+      "journey_ids": [
+        "JOURNEY-B3-03"
+      ],
+      "spatial_components": [
+        "COMP-B3-01-DUAL-WAYFINDING",
+        "COMP-B3-03-HUMAN-DESK",
+        "COMP-B3-04-MODULAR-DISPLAY",
+        "COMP-B3-10-FEEDBACK-LEDGER"
+      ],
+      "ai_role": [
+        "检索已登记公开资源",
+        "辅助合作线索初步匹配",
+        "生成带来源的活动摘要"
+      ],
+      "ai_forbidden_actions": [
+        "投资推荐或信用判断",
+        "自动解释政策为确定资格",
+        "替代专业合规意见",
+        "隐形画像"
+      ],
+      "data_boundary": "只用公开资料和用户主动提供的最小信息；匹配结果默认不公开个人身份。",
+      "human_gate": [
+        "资源与政策信息复核",
+        "活动内容和版权审核",
+        "所有投资/法律/合规建议转专业人员"
+      ],
+      "non_digital_alternative": "人工咨询台、实体资源目录、纸质活动表和现场主持的开源桌。",
+      "operator_role": "候选责任：公共客厅运营人员 + 轮值专业服务人员；具体机构待协商。",
+      "first_phase": {
+        "action_zh": "每周开源桌",
+        "minimum_scope": "公开演示、人工问诊与免费线下座位",
+        "entry_gate": "载体开放、消防、无障碍和运营排班核验"
+      },
+      "enhanced_phase": {
+        "action_zh": "创新关系墙",
+        "minimum_scope": "只显示已授权公开实体和关系，保留修改/撤回入口",
+        "entry_gate": "来源图谱、隐私与内容治理通过"
+      },
+      "stop_conditions": [
+        "信息无法追溯",
+        "被用于投资/政策自动决策",
+        "个人或企业信息未授权公开",
+        "人工服务缺位"
+      ],
+      "resume_evidence": [
+        "来源修正",
+        "授权补齐",
+        "专业人员复核",
+        "线下服务恢复"
+      ],
+      "exit_cleanup": [
+        "撤下错误关系",
+        "删除非必要登记信息",
+        "保留纠错记录",
+        "公布服务中止方式"
+      ],
+      "metrics": [
+        {
+          "id": "MET-B3-03-A",
+          "name_zh": "服务线索完成人工转接率",
+          "status": "unknown",
+          "collection": "匿名服务台账",
+          "decision_use": "评估入口是否有效"
+        },
+        {
+          "id": "MET-B3-03-B",
+          "name_zh": "公开日二次参与率",
+          "status": "unknown",
+          "collection": "自愿匿名签到",
+          "decision_use": "判断社群留存"
+        },
+        {
+          "id": "MET-B3-03-C",
+          "name_zh": "被纠正或撤回的信息比例",
+          "status": "unknown",
+          "collection": "内容版本记录",
+          "decision_use": "评估图谱治理质量"
+        }
+      ],
+      "dependencies": [
+        "候选载体开放条件",
+        "资源目录与来源图谱",
+        "专业服务排班",
+        "隐私/版权治理"
+      ],
+      "gate_state": "draft",
+      "title_en": "AI Origin Co-creation Commons"
+    },
+    {
+      "id": "SCN-B3-04",
+      "legacy_node_ids": [
+        "M02"
+      ],
+      "title_zh": "青年AI第三空间",
+      "scenario_types": [
+        "AI+教育与学习",
+        "青年友好",
+        "夜间公共生活"
+      ],
+      "agent_task_ids": [
+        "agent.3",
+        "agent.4"
+      ],
+      "outline_chapters": [
+        "CH08",
+        "CH14",
+        "CH15"
+      ],
+      "theme_coverage": [
+        "AI+教育",
+        "AI+生活服务"
+      ],
+      "industry_test_scenario": false,
+      "park_ai_landmark": false,
+      "user_ids": [
+        "USER-B3-YOUTH-DEVELOPER",
+        "USER-B3-ACCESS-NONDIGITAL",
+        "USER-B3-OPERATOR"
+      ],
+      "problem_hypothesis_zh": "青年可能缺少低成本、无消费压力、可学习也可社交的长时开放空间。",
+      "need_zh": "先保证免费线下空间、晚间安全与人工主持，再提供自愿的AI学习资源和协作匹配。",
+      "goal_zh": "AI增强人与人的学习协作，不进行教育能力判断、招生筛选或隐形画像。",
+      "evidence_state": "model_inference",
+      "source_refs": [
+        {
+          "source_id": "DATA-SRC-AGENT-TASKBOOK-20260518",
+          "source_use": "formal",
+          "supports": "AI+教育、人才与公共利益场景",
+          "limitations": "不证明本地夜间需求或空间供给缺口"
+        },
+        {
+          "source_id": "LOCAL-SCENE-NODE-LIBRARY-V0.1",
+          "source_use": "needs_review",
+          "supports": "深夜共学和自愿匹配概念",
+          "limitations": "需调研验证"
+        }
+      ],
+      "place_anchor": {
+        "mode": "text_only_pending_official_anchor",
+        "ref": "五道口—清华东路西口创新界面候选空间类型",
+        "description_zh": "仅为文字方向，不提供站点、道路或建筑坐标；待官方空间与载体条件核验。",
+        "eligible_space_types": [
+          "可合法晚间开放的既有首层",
+          "与居住噪声冲突可控的公共空间"
+        ],
+        "prohibited_before_verification": [
+          "指定楼宇",
+          "承诺通宵开放",
+          "未经消防/治安/噪声审查运营"
+        ]
+      },
+      "journey_ids": [
+        "JOURNEY-B3-03"
+      ],
+      "spatial_components": [
+        "COMP-B3-02-INCLUSIVE-SEATING",
+        "COMP-B3-03-HUMAN-DESK",
+        "COMP-B3-08-TACTILE-HIGH-CONTRAST"
+      ],
+      "ai_role": [
+        "用户主动选择后的学习资源导航",
+        "协作任务和小组匹配",
+        "活动排期辅助"
+      ],
+      "ai_forbidden_actions": [
+        "教育能力评分",
+        "招生或就业筛选",
+        "情绪/身份隐形画像",
+        "替代教师或专业咨询"
+      ],
+      "data_boundary": "默认匿名浏览；匹配需主动选择且可立即删除；不采集学习成绩和敏感身份。",
+      "human_gate": [
+        "活动与资源审核",
+        "晚间安全值守",
+        "冲突处理",
+        "教育内容由专业人员确认"
+      ],
+      "non_digital_alternative": "免费线下座位、白板、纸质资源表、现场主持和不注册活动。",
+      "operator_role": "候选责任：青年空间运营人员 + 夜间值守人员 + 轮值教育/社群伙伴。",
+      "first_phase": {
+        "action_zh": "共学客厅",
+        "minimum_scope": "免费线下座位、饮水、白板、明确开放时段和人工值守",
+        "entry_gate": "载体、消防、噪声、治安、无障碍审核"
+      },
+      "enhanced_phase": {
+        "action_zh": "协作节奏室",
+        "minimum_scope": "自愿AI匹配，不影响线下完整参与",
+        "entry_gate": "隐私、内容和退出机制通过测试"
+      },
+      "stop_conditions": [
+        "出现教育筛选或歧视",
+        "晚间值守缺位",
+        "安全/噪声投诉无法处理",
+        "免费使用被消费门槛替代"
+      ],
+      "resume_evidence": [
+        "运营整改",
+        "人工值守恢复",
+        "公平性审查",
+        "公众反馈复核"
+      ],
+      "exit_cleanup": [
+        "删除匹配资料",
+        "保留线下空间或明确停止",
+        "公开未解决问题"
+      ],
+      "metrics": [
+        {
+          "id": "MET-B3-04-A",
+          "name_zh": "无消费参与人次",
+          "status": "unknown",
+          "collection": "匿名人工计数",
+          "decision_use": "验证公共性"
+        },
+        {
+          "id": "MET-B3-04-B",
+          "name_zh": "免费线下座位可用时长",
+          "status": "unknown",
+          "collection": "运营排班与抽样观察",
+          "decision_use": "调整空间供给"
+        },
+        {
+          "id": "MET-B3-04-C",
+          "name_zh": "晚间安全与包容性评价",
+          "status": "unknown",
+          "collection": "自愿分组反馈",
+          "decision_use": "触发运营整改"
+        }
+      ],
+      "dependencies": [
+        "青年需求验证",
+        "候选载体",
+        "晚间运营许可",
+        "人工值守与教育内容治理"
+      ],
+      "gate_state": "draft",
+      "title_en": "Youth AI Third Place"
+    },
+    {
+      "id": "SCN-B3-05",
+      "legacy_node_ids": [
+        "C01"
+      ],
+      "title_zh": "开发者散步道·开源成果里程廊",
+      "scenario_types": [
+        "公园慢行",
+        "开源文化",
+        "创新交往",
+        "AI地标"
+      ],
+      "agent_task_ids": [
+        "agent.3",
+        "agent.4"
+      ],
+      "outline_chapters": [
+        "CH08",
+        "CH09",
+        "CH10",
+        "CH14",
+        "CH15"
+      ],
+      "theme_coverage": [
+        "AI+文化",
+        "AI+生活服务"
+      ],
+      "industry_test_scenario": false,
+      "park_ai_landmark": true,
+      "landmark_id": "LANDMARK-B3-01",
+      "user_ids": [
+        "USER-B3-YOUTH-DEVELOPER",
+        "USER-B3-RESIDENT",
+        "USER-B3-VISITOR",
+        "USER-B3-OLDER",
+        "USER-B3-ACCESS-NONDIGITAL"
+      ],
+      "problem_hypothesis_zh": "创新活动与公园日常可能彼此分离，开源成果也可能只存在于线上或室内。",
+      "need_zh": "一条不依赖手机、可散步交谈、每段内容可核验且不压迫日常休闲的公共文化路径。",
+      "goal_zh": "把开源文化转化为可走、可停、可讨论、可纠错的日常公共体验。",
+      "evidence_state": "professional_decision_required",
+      "source_refs": [
+        {
+          "source_id": "DATA-SRC-AGENT-TASKBOOK-20260518",
+          "source_use": "formal",
+          "supports": "开发者散步道、开源展示、AI朝圣地标",
+          "limitations": "不提供公园精确范围或工程位置"
+        },
+        {
+          "source_id": "LOCAL-SCENE-NODE-LIBRARY-V0.1",
+          "source_use": "needs_review",
+          "supports": "开源故事与漫步协作概念",
+          "limitations": "内容和路线尚未核验"
+        }
+      ],
+      "place_anchor": {
+        "mode": "text_only_pending_official_park_anchor",
+        "ref": "京张遗址公园候选连续开放慢行空间类型",
+        "description_zh": "因公园与PROV-SITE-001存在已知空间不确定性，本版本不画定路线。",
+        "eligible_space_types": [
+          "已确认可连续开放的慢行段",
+          "不占用消防/无障碍/生态控制空间的停留节点"
+        ],
+        "prohibited_before_verification": [
+          "确定每公里位置",
+          "改造遗产构筑物",
+          "侵占绿地或通行",
+          "设置未清权故事内容"
+        ]
+      },
+      "journey_ids": [
+        "JOURNEY-B3-03",
+        "JOURNEY-B3-06"
+      ],
+      "spatial_components": [
+        "COMP-B3-01-DUAL-WAYFINDING",
+        "COMP-B3-02-INCLUSIVE-SEATING",
+        "COMP-B3-04-MODULAR-DISPLAY",
+        "COMP-B3-08-TACTILE-HIGH-CONTRAST",
+        "COMP-B3-09-VERIFIED-PLAQUE"
+      ],
+      "ai_role": [
+        "根据用户明示的时长和主题组织路线",
+        "提供带来源的多层次解释",
+        "辅助无障碍路线提示"
+      ],
+      "ai_forbidden_actions": [
+        "生成无来源人物和历史",
+        "追踪无关位置或社交关系",
+        "替代路线安全和文保审核"
+      ],
+      "data_boundary": "默认不登录、不记录轨迹；个性化路线在本地或会话结束后删除。",
+      "human_gate": [
+        "路线与无障碍安全",
+        "文化史实/署名/版权",
+        "文保/绿地/公园运营",
+        "公众纠错"
+      ],
+      "non_digital_alternative": "实体里程图、纸质折页、可坐读铭牌和人工/志愿者导览。",
+      "operator_role": "候选责任：公园运营者 + 文化内容委员会 + 社群活动运营人员。",
+      "first_phase": {
+        "action_zh": "三处可移动开源故事站",
+        "minimum_scope": "先用可逆展架和坐凳验证内容理解与通行影响，不采用精确里程承诺",
+        "entry_gate": "公园候选点、文保/绿地、版权和通行审查"
+      },
+      "enhanced_phase": {
+        "action_zh": "连续散步道与主题路线",
+        "minimum_scope": "仅在首期不影响日常使用且路线锚定后扩展",
+        "entry_gate": "行为、无障碍、维护和内容治理证据通过"
+      },
+      "stop_conditions": [
+        "阻碍通行或无障碍",
+        "内容失实/侵权",
+        "活动挤占居民日常",
+        "数字导览无法关闭追踪"
+      ],
+      "resume_evidence": [
+        "空间调整",
+        "内容纠错与版权确认",
+        "运营时段整改",
+        "隐私复核"
+      ],
+      "exit_cleanup": [
+        "撤下模块化展架",
+        "保留纠错档案",
+        "恢复场地",
+        "在线路线下架"
+      ],
+      "metrics": [
+        {
+          "id": "MET-B3-05-A",
+          "name_zh": "可追溯故事占比",
+          "status": "unknown",
+          "collection": "内容审校台账",
+          "decision_use": "未达完整来源不得扩展"
+        },
+        {
+          "id": "MET-B3-05-B",
+          "name_zh": "非数字导览完成率",
+          "status": "unknown",
+          "collection": "自愿任务测试",
+          "decision_use": "验证线下等价"
+        },
+        {
+          "id": "MET-B3-05-C",
+          "name_zh": "通行受阻与居民投诉",
+          "status": "unknown",
+          "collection": "现场观察与反馈",
+          "decision_use": "调整或撤除节点"
+        }
+      ],
+      "dependencies": [
+        "official park/heritage geometry",
+        "路线与行为调查",
+        "文化来源与版权",
+        "公园运营许可"
+      ],
+      "gate_state": "draft",
+      "title_en": "Developer Walk and Open-source Milestone Gallery"
+    },
+    {
+      "id": "SCN-B3-06",
+      "legacy_node_ids": [
+        "C02"
+      ],
+      "title_zh": "智能体贡献荣誉墙",
+      "scenario_types": [
+        "AI地标",
+        "开源成果展示",
+        "公共记忆",
+        "荣誉治理"
+      ],
+      "agent_task_ids": [
+        "agent.3",
+        "agent.4"
+      ],
+      "outline_chapters": [
+        "CH09",
+        "CH10",
+        "CH11",
+        "CH14",
+        "CH15"
+      ],
+      "theme_coverage": [
+        "AI+文化"
+      ],
+      "industry_test_scenario": false,
+      "park_ai_landmark": true,
+      "landmark_id": "LANDMARK-B3-02",
+      "user_ids": [
+        "USER-B3-RESIDENT",
+        "USER-B3-YOUTH-DEVELOPER",
+        "USER-B3-RESEARCH-STARTUP",
+        "USER-B3-VISITOR",
+        "USER-B3-OPERATOR"
+      ],
+      "problem_hypothesis_zh": "AI贡献可能被少数品牌、流量和短期热点替代，公共价值、失败、修正和退出记录不可见。",
+      "need_zh": "一个不付费排名、可核验、可纠错、可撤回并记录公共效果的贡献体系。",
+      "goal_zh": "由人类委员会决定公共荣誉，AI只做档案检索和解释。",
+      "evidence_state": "conceptual_proposal",
+      "source_refs": [
+        {
+          "source_id": "DATA-SRC-AGENT-TASKBOOK-20260518",
+          "source_use": "formal",
+          "supports": "贡献荣誉墙与荣誉展示体系",
+          "limitations": "不指定获奖者、企业或实体墙位置"
+        }
+      ],
+      "place_anchor": {
+        "mode": "text_only_pending_official_park_anchor",
+        "ref": "京张遗址公园候选公共活动节点类型",
+        "description_zh": "先形成治理规则和可移动原型，再由official park/heritage条件决定实体载体。",
+        "eligible_space_types": [
+          "可人工值守的公共展示界面",
+          "可无障碍接近且不阻碍通行的活动节点"
+        ],
+        "prohibited_before_verification": [
+          "上墙真实人物/企业",
+          "设置永久构筑物",
+          "未经许可使用商标/肖像/论文图像"
+        ]
+      },
+      "journey_ids": [
+        "JOURNEY-B3-06"
+      ],
+      "spatial_components": [
+        "COMP-B3-04-MODULAR-DISPLAY",
+        "COMP-B3-09-VERIFIED-PLAQUE",
+        "COMP-B3-10-FEEDBACK-LEDGER"
+      ],
+      "ai_role": [
+        "贡献记录归类",
+        "检索来源与修订记录",
+        "多语解释"
+      ],
+      "ai_forbidden_actions": [
+        "决定谁获得荣誉",
+        "依据热度或付费排序",
+        "生成不存在的贡献",
+        "删除批评和失败记录"
+      ],
+      "data_boundary": "仅展示授权公开的贡献、来源、时间和效果；个人信息与利益冲突由人工最小化处理。",
+      "human_gate": [
+        "事实与公共价值审核",
+        "署名/版权/商标审核",
+        "利益冲突申报",
+        "纠错、撤回和复审"
+      ],
+      "non_digital_alternative": "实体贡献牌、纸质年度目录、现场申诉与纠错表。",
+      "operator_role": "候选责任：跨领域人类委员会 + 档案编辑 + 公共空间运营者。",
+      "first_phase": {
+        "action_zh": "可核验贡献牌规则与移动展",
+        "minimum_scope": "先展示少量经过来源/署名/公共价值复核的案例类型，不预置真实获选者",
+        "entry_gate": "荣誉章程、版权和申诉流程通过"
+      },
+      "enhanced_phase": {
+        "action_zh": "持续生长的贡献年轮",
+        "minimum_scope": "实体与数字档案同步展示采纳、修正、失效和退出",
+        "entry_gate": "年度复审与长期维护责任明确"
+      },
+      "stop_conditions": [
+        "事实/署名争议未解决",
+        "利益冲突隐瞒",
+        "侵权",
+        "AI自动排名或付费排名",
+        "申诉无法处理"
+      ],
+      "resume_evidence": [
+        "独立复核",
+        "权利确认",
+        "更正/撤回公开",
+        "委员会重新表决"
+      ],
+      "exit_cleanup": [
+        "撤下争议内容",
+        "保留版本与撤回原因",
+        "停止不再维护的数字入口"
+      ],
+      "metrics": [
+        {
+          "id": "MET-B3-06-A",
+          "name_zh": "贡献记录可追溯率",
+          "status": "unknown",
+          "collection": "档案审查",
+          "decision_use": "低于完整追溯不得展示"
+        },
+        {
+          "id": "MET-B3-06-B",
+          "name_zh": "纠错与申诉闭环率",
+          "status": "unknown",
+          "collection": "公开工单",
+          "decision_use": "评估治理可信度"
+        },
+        {
+          "id": "MET-B3-06-C",
+          "name_zh": "被实际复用或进入试点的贡献数",
+          "status": "unknown",
+          "collection": "人工核验引用链",
+          "decision_use": "判断公共价值，不用于热度排名"
+        }
+      ],
+      "dependencies": [
+        "贡献治理章程",
+        "文化/版权/署名证据",
+        "official park anchor",
+        "长期档案维护责任"
+      ],
+      "gate_state": "draft",
+      "title_en": "Agent Contribution Wall"
+    },
+    {
+      "id": "SCN-B3-07",
+      "legacy_node_ids": [
+        "C03"
+      ],
+      "title_zh": "AI公共服务驿站：医疗、教育与生活服务导航",
+      "scenario_types": [
+        "AI+医疗服务导航",
+        "AI+教育资源导航",
+        "AI+生活服务",
+        "无障碍服务"
+      ],
+      "agent_task_ids": [
+        "agent.3",
+        "agent.4"
+      ],
+      "outline_chapters": [
+        "CH08",
+        "CH09",
+        "CH14",
+        "CH15"
+      ],
+      "theme_coverage": [
+        "AI+医疗",
+        "AI+教育",
+        "AI+生活服务"
+      ],
+      "industry_test_scenario": false,
+      "park_ai_landmark": false,
+      "user_ids": [
+        "USER-B3-OLDER",
+        "USER-B3-CHILD-CAREGIVER",
+        "USER-B3-ACCESS-NONDIGITAL",
+        "USER-B3-RESIDENT",
+        "USER-B3-VISITOR",
+        "USER-B3-OPERATOR"
+      ],
+      "problem_hypothesis_zh": "公共服务信息可能分散且变化快，数字能力或身体条件不同的人难以判断正式入口和可达路线。",
+      "need_zh": "人工值守、来源可核对、非手机可用的正式服务导航；医疗与教育只做入口和旅程准备，不做诊断或筛选。",
+      "goal_zh": "让不同人群更容易到达正式服务，同时严格限制AI的医疗、教育和紧急安全边界。",
+      "evidence_state": "professional_decision_required",
+      "source_refs": [
+        {
+          "source_id": "DATA-SRC-AGENT-TASKBOOK-20260518",
+          "source_use": "formal",
+          "supports": "AI+医疗、教育、生活服务和人工复核场景",
+          "limitations": "不证明设施目录、容量或服务可用"
+        },
+        {
+          "source_id": "DATA-SRC-BARRIER-FREE-ENVIRONMENT-LAW",
+          "source_use": "formal",
+          "supports": "法律列举的特定公共服务事项场所人工指导/办理底线",
+          "limitations": "不得泛化至所有服务或认定具体驿站的法定属性"
+        },
+        {
+          "source_id": "DATA-SRC-ELDERLY-SMART-TECH-PLAN-2020-45",
+          "source_use": "background_only",
+          "supports": "传统服务与智能服务并行背景",
+          "limitations": "不证明本地需求或实施状态"
+        }
+      ],
+      "place_anchor": {
+        "mode": "text_only_pending_official_anchor",
+        "ref": "公园、社区与正式公共服务联系界面的候选空间类型",
+        "description_zh": "具体位置必须依据官方设施名录、无障碍现状、权属和运营条件另行确定。",
+        "eligible_space_types": [
+          "可人工值守并有无障碍入口的公共空间",
+          "与正式服务机构有可验证转接关系的节点"
+        ],
+        "prohibited_before_verification": [
+          "自称医疗或教育机构",
+          "存储病历/成绩",
+          "承诺无障碍路线",
+          "替代紧急呼叫"
+        ]
+      },
+      "journey_ids": [
+        "JOURNEY-B3-04"
+      ],
+      "spatial_components": [
+        "COMP-B3-01-DUAL-WAYFINDING",
+        "COMP-B3-02-INCLUSIVE-SEATING",
+        "COMP-B3-03-HUMAN-DESK",
+        "COMP-B3-08-TACTILE-HIGH-CONTRAST"
+      ],
+      "ai_role": [
+        "检索已核验的正式服务目录",
+        "把用户主动说明的出行需要转成路线检查清单",
+        "多语/字幕辅助"
+      ],
+      "ai_forbidden_actions": [
+        "医疗诊断、分诊结论或用药建议",
+        "教育能力评估、择校/招生筛选",
+        "承诺设施容量或可用性",
+        "替代紧急人工服务"
+      ],
+      "data_boundary": "默认不存储健康、教育和身份信息；需要转接时由用户决定并由人工使用正式渠道。",
+      "human_gate": [
+        "服务目录和开放状态复核",
+        "医疗/教育边界审查",
+        "无障碍现场走查",
+        "紧急问题直接转人工"
+      ],
+      "non_digital_alternative": "人工服务台、纸质/触觉服务地图、大字版路线卡、电话和现场转接。",
+      "operator_role": "候选责任：公共服务信息编辑 + 现场服务人员 + 对应正式机构联络人。",
+      "first_phase": {
+        "action_zh": "人工值守服务台",
+        "minimum_scope": "只提供经核验的服务入口、纸质路线和人工转接",
+        "entry_gate": "官方设施目录、时效维护和现场无障碍审核"
+      },
+      "enhanced_phase": {
+        "action_zh": "无障碍旅程预检",
+        "minimum_scope": "用户主动提供需求后提示坡道、休息、卫生间、过街和人工节点",
+        "entry_gate": "路线逐段现场验证并建立故障更新责任"
+      },
+      "stop_conditions": [
+        "服务信息过期或无法核验",
+        "AI产生诊断/筛选",
+        "无障碍状态与现场不符",
+        "人工或紧急转接不可用",
+        "收集不必要敏感信息"
+      ],
+      "resume_evidence": [
+        "正式来源更新",
+        "现场复核",
+        "人工服务恢复",
+        "敏感数据清理确认"
+      ],
+      "exit_cleanup": [
+        "下架过期路线",
+        "删除会话数据",
+        "保留错误更正记录",
+        "提供线下替代去向"
+      ],
+      "metrics": [
+        {
+          "id": "MET-B3-07-A",
+          "name_zh": "成功转接至正式服务或人工入口的比例",
+          "status": "unknown",
+          "collection": "匿名任务结果",
+          "decision_use": "评估导航而非服务效果"
+        },
+        {
+          "id": "MET-B3-07-B",
+          "name_zh": "非手机用户任务完成率",
+          "status": "unknown",
+          "collection": "现场任务测试",
+          "decision_use": "验证数字/非数字等价"
+        },
+        {
+          "id": "MET-B3-07-C",
+          "name_zh": "服务信息错误与过期率",
+          "status": "unknown",
+          "collection": "人工抽查和纠错台账",
+          "decision_use": "触发下架或更新"
+        }
+      ],
+      "dependencies": [
+        "官方服务设施目录",
+        "正式机构联络机制",
+        "无障碍现场审计",
+        "人工排班与信息更新SLA"
+      ],
+      "gate_state": "draft",
+      "title_en": "AI Public Service Station for Health, Education and Daily-service Navigation"
+    },
+    {
+      "id": "SCN-B3-08",
+      "legacy_node_ids": [
+        "C04"
+      ],
+      "title_zh": "京张AI时光站",
+      "scenario_types": [
+        "AI地标",
+        "历史知识图谱",
+        "文化导览",
+        "公众纠错"
+      ],
+      "agent_task_ids": [
+        "agent.3",
+        "agent.4"
+      ],
+      "outline_chapters": [
+        "CH09",
+        "CH10",
+        "CH14",
+        "CH15"
+      ],
+      "theme_coverage": [
+        "AI+文化"
+      ],
+      "industry_test_scenario": false,
+      "park_ai_landmark": true,
+      "landmark_id": "LANDMARK-B3-03",
+      "user_ids": [
+        "USER-B3-VISITOR",
+        "USER-B3-RESIDENT",
+        "USER-B3-YOUTH-DEVELOPER",
+        "USER-B3-OLDER",
+        "USER-B3-ACCESS-NONDIGITAL"
+      ],
+      "problem_hypothesis_zh": "京张铁路、中关村和AI文化可能被分开陈列，且AI讲解容易掩盖来源与不确定性。",
+      "need_zh": "实体时间图谱与可质疑的AI解释并行，史实、人物、地点和贡献都有来源和纠错入口。",
+      "goal_zh": "让技术解释服从史实和公共记忆治理，而不是制造无来源故事。",
+      "evidence_state": "professional_decision_required",
+      "source_refs": [
+        {
+          "source_id": "DATA-SRC-AGENT-TASKBOOK-20260518",
+          "source_use": "formal",
+          "supports": "百年京张、中关村、AI新文化融合与AI地标",
+          "limitations": "不提供具体史实语料、遗产载体或版权"
+        }
+      ],
+      "place_anchor": {
+        "mode": "text_only_pending_official_park_heritage_anchor",
+        "ref": "具备合法展陈条件的公园/遗产公共节点类型",
+        "description_zh": "在文保范围和建设控制地带未取得前，不指定保留构筑物或改造方式。",
+        "eligible_space_types": [
+          "可逆展陈空间",
+          "不触碰遗产本体且可无障碍接近的公共节点"
+        ],
+        "prohibited_before_verification": [
+          "改造文物或遗产构筑物",
+          "使用未清权档案/肖像",
+          "生成无来源史实"
+        ]
+      },
+      "journey_ids": [
+        "JOURNEY-B3-06"
+      ],
+      "spatial_components": [
+        "COMP-B3-01-DUAL-WAYFINDING",
+        "COMP-B3-04-MODULAR-DISPLAY",
+        "COMP-B3-08-TACTILE-HIGH-CONTRAST",
+        "COMP-B3-10-FEEDBACK-LEDGER"
+      ],
+      "ai_role": [
+        "基于已审校知识图谱的多层次/多语解释",
+        "显示来源、争议和不确定性",
+        "接收纠错并生成待审摘要"
+      ],
+      "ai_forbidden_actions": [
+        "补写无来源史实",
+        "替代历史/遗产专家",
+        "自动采纳公众纠错",
+        "使用未授权人物或档案"
+      ],
+      "data_boundary": "只用已审校公开文化资料；公众纠错可匿名，个人联系方式与内容分离并限期删除。",
+      "human_gate": [
+        "史实和来源审核",
+        "遗产与空间审查",
+        "版权/肖像/署名",
+        "纠错采纳决定"
+      ],
+      "non_digital_alternative": "实体三层时间桌、大字/触觉版、纸质多语摘要和人工讲解。",
+      "operator_role": "候选责任：文化内容委员会 + 遗产专业人员 + 公共空间运营人员。",
+      "first_phase": {
+        "action_zh": "移动式三层时间桌",
+        "minimum_scope": "不改造遗产本体，先验证叙事理解和来源可见性",
+        "entry_gate": "CH10文化事实图谱和版权审核完成"
+      },
+      "enhanced_phase": {
+        "action_zh": "可质疑的AI讲解员",
+        "minimum_scope": "只回答知识图谱覆盖内容并显示不确定性",
+        "entry_gate": "内容安全、纠错治理、多语与无障碍测试通过"
+      },
+      "stop_conditions": [
+        "发现史实错误或侵权",
+        "来源不可显示",
+        "AI虚构或过度确定",
+        "遗产/通行受影响"
+      ],
+      "resume_evidence": [
+        "专家复核",
+        "更正和版本公开",
+        "权利确认",
+        "空间调整"
+      ],
+      "exit_cleanup": [
+        "下架错误内容",
+        "撤离可逆展陈",
+        "保留纠错版本记录",
+        "停止不再维护的AI问答"
+      ],
+      "metrics": [
+        {
+          "id": "MET-B3-08-A",
+          "name_zh": "内容来源可追溯率",
+          "status": "unknown",
+          "collection": "知识图谱审计",
+          "decision_use": "不完整条目不得公开"
+        },
+        {
+          "id": "MET-B3-08-B",
+          "name_zh": "公众纠错处理状态与时长",
+          "status": "unknown",
+          "collection": "公开纠错台账",
+          "decision_use": "评估治理响应"
+        },
+        {
+          "id": "MET-B3-08-C",
+          "name_zh": "不同人群对三层叙事的理解度",
+          "status": "unknown",
+          "collection": "自愿任务测试",
+          "decision_use": "迭代叙事与无障碍表达"
+        }
+      ],
+      "dependencies": [
+        "CH10文化事实图谱",
+        "official heritage/park geometry",
+        "版权和多语审查",
+        "纠错治理"
+      ],
+      "gate_state": "draft",
+      "title_en": "Jingzhang AI Time Station"
+    },
+    {
+      "id": "SCN-B3-09",
+      "legacy_node_ids": [
+        "S01"
+      ],
+      "title_zh": "智能原生商业测试廊",
+      "scenario_types": [
+        "AI+商业",
+        "智能体服务",
+        "消费权益",
+        "短期测试"
+      ],
+      "agent_task_ids": [
+        "agent.3",
+        "agent.4"
+      ],
+      "outline_chapters": [
+        "CH08",
+        "CH09",
+        "CH14",
+        "CH15"
+      ],
+      "theme_coverage": [
+        "AI+商业",
+        "AI产业测试"
+      ],
+      "industry_test_scenario": true,
+      "park_ai_landmark": false,
+      "user_ids": [
+        "USER-B3-RESIDENT",
+        "USER-B3-VISITOR",
+        "USER-B3-RESEARCH-STARTUP",
+        "USER-B3-OPERATOR",
+        "USER-B3-ACCESS-NONDIGITAL"
+      ],
+      "problem_hypothesis_zh": "AI商业展示可能停留在屏幕和营销噱头，并带来不透明数据用途、价格歧视和人工客服不可达。",
+      "need_zh": "一项服务、有限时长、自愿参与、权益可见、随时转人工并公开结果摘要的商业试验。",
+      "goal_zh": "验证真实消费者价值与运营成本，不默认追踪个人，不承诺商业成功。",
+      "evidence_state": "conceptual_proposal",
+      "source_refs": [
+        {
+          "source_id": "DATA-SRC-AGENT-TASKBOOK-20260518",
+          "source_use": "formal",
+          "supports": "大钟寺智能原生消费与商务、产业测试和长期运营",
+          "limitations": "不指定商铺、企业、站点或政策"
+        },
+        {
+          "source_id": "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+          "source_use": "provisional_only",
+          "supports": "大钟寺片区级概念归属",
+          "limitations": "不锚定商业载体"
+        }
+      ],
+      "place_anchor": {
+        "mode": "provisional_area_text_only",
+        "ref": "PROV-KEY-003",
+        "description_zh": "大钟寺AI产业集聚区内自愿参与的既有商业载体类型；具体单元待权属、消防和商户协议。",
+        "eligible_space_types": [
+          "可正常购物且测试可选的既有商业单元",
+          "有人工客服和清晰退出路径的短租空间"
+        ],
+        "prohibited_before_verification": [
+          "指定首店或企业",
+          "默认收集人脸/身份",
+          "个性化价格",
+          "把测试写成已批准运营"
+        ]
+      },
+      "journey_ids": [
+        "JOURNEY-B3-07"
+      ],
+      "spatial_components": [
+        "COMP-B3-01-DUAL-WAYFINDING",
+        "COMP-B3-03-HUMAN-DESK",
+        "COMP-B3-04-MODULAR-DISPLAY",
+        "COMP-B3-10-FEEDBACK-LEDGER"
+      ],
+      "ai_role": [
+        "商品信息解释",
+        "多语和无障碍沟通辅助",
+        "库存/服务流程的聚合分析"
+      ],
+      "ai_forbidden_actions": [
+        "未授权个人画像",
+        "个性化价格歧视",
+        "自动拒绝消费者",
+        "隐藏人工客服或退出方式"
+      ],
+      "data_boundary": "默认不识别个人；只用完成服务所需最小数据，聚合复盘，不跨测试复用。",
+      "human_gate": [
+        "消费权益和广告审核",
+        "数据用途与公平审查",
+        "商户自愿协议",
+        "人工客服和投诉处理"
+      ],
+      "non_digital_alternative": "正常非AI购物流程、纸质权益说明、明确人工客服和现金/常规支付可用性核验。",
+      "operator_role": "候选责任：自愿商户 + 商业运营者 + 消费权益/数据合规审查人员。",
+      "first_phase": {
+        "action_zh": "30天AI首店实验",
+        "minimum_scope": "单项服务、短期、自愿、线下权益说明与人工客服",
+        "entry_gate": "商户/载体/消费权益/数据/消防审核"
+      },
+      "enhanced_phase": {
+        "action_zh": "商业智能体沙盒",
+        "minimum_scope": "只扩展已证明价值且不依赖个人追踪的多语、无障碍和库存协同",
+        "entry_gate": "公平、投诉、运营成本和退出指标通过"
+      },
+      "stop_conditions": [
+        "价格或服务歧视",
+        "数据超范围使用",
+        "人工客服不可达",
+        "误导广告",
+        "投诉无法处理"
+      ],
+      "resume_evidence": [
+        "公平性和数据整改",
+        "客服恢复",
+        "消费者权益复核",
+        "重新告知参与者"
+      ],
+      "exit_cleanup": [
+        "删除测试数据",
+        "撤下AI标识和设备",
+        "恢复普通服务",
+        "公开聚合结果与停止原因"
+      ],
+      "metrics": [
+        {
+          "id": "MET-B3-09-A",
+          "name_zh": "自愿参与与成功退出率",
+          "status": "unknown",
+          "collection": "匿名交易前后选择记录",
+          "decision_use": "判断选择权是否真实"
+        },
+        {
+          "id": "MET-B3-09-B",
+          "name_zh": "人工客服可达时间",
+          "status": "unknown",
+          "collection": "抽样任务测试",
+          "decision_use": "触发服务降级"
+        },
+        {
+          "id": "MET-B3-09-C",
+          "name_zh": "隐私、价格与误导投诉数",
+          "status": "unknown",
+          "collection": "投诉台账",
+          "decision_use": "触发暂停或退出"
+        }
+      ],
+      "dependencies": [
+        "商户与载体自愿",
+        "消费/广告/数据审查",
+        "普通服务保底",
+        "退出和设备清理能力"
+      ],
+      "gate_state": "draft",
+      "title_en": "AI-native Commerce Test Gallery"
+    },
+    {
+      "id": "SCN-B3-10",
+      "legacy_node_ids": [
+        "S02"
+      ],
+      "title_zh": "大钟寺四象限智行核查包（待站点锚定）",
+      "scenario_types": [
+        "AI+交通",
+        "轨道接驳",
+        "无障碍旅程",
+        "慢行缝合"
+      ],
+      "agent_task_ids": [
+        "agent.3",
+        "agent.4"
+      ],
+      "outline_chapters": [
+        "CH08",
+        "CH09",
+        "CH14",
+        "CH15"
+      ],
+      "theme_coverage": [
+        "AI+交通",
+        "AI+生活服务"
+      ],
+      "industry_test_scenario": false,
+      "park_ai_landmark": false,
+      "user_ids": [
+        "USER-B3-RESIDENT",
+        "USER-B3-OLDER",
+        "USER-B3-ACCESS-NONDIGITAL",
+        "USER-B3-VISITOR",
+        "USER-B3-OPERATOR"
+      ],
+      "problem_hypothesis_zh": "大路口四象限连通、站口方向、无障碍电梯和非机动车停放可能影响轨道到产业载体的实际可达性，但当前缺官方站点/道路锚点和现场审计。",
+      "need_zh": "先做人工核查清单和障碍台账，再提供带状态来源的动态路线；不由算法替代交通安全设计。",
+      "goal_zh": "把东西缝合从概念口号转成可验证的旅程问题、微更新条件与人工维护责任。",
+      "evidence_state": "pending_verification",
+      "source_refs": [
+        {
+          "source_id": "DATA-SRC-AGENT-TASKBOOK-20260518",
+          "source_use": "formal",
+          "supports": "大钟寺站周边智能原生场景、东西缝合与交通联系",
+          "limitations": "不提供站口、道路、过街、客流或工程条件"
+        },
+        {
+          "source_id": "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+          "source_use": "provisional_only",
+          "supports": "大钟寺片区级背景",
+          "limitations": "当前key area未站点/道路锚定"
+        }
+      ],
+      "place_anchor": {
+        "mode": "text_only_pending_official_station_road_anchor",
+        "ref": "大钟寺站周边四象限概念任务",
+        "description_zh": "不引用OSM坐标作为方案点位，不自行平移PROV-KEY-003。取得官方站点边界、出口、电梯、道路红线和现场审计后重建。",
+        "eligible_space_types": [
+          "经核验的站口至公共载体旅程",
+          "可逆导视、遮荫、等候和停车微更新点"
+        ],
+        "prohibited_before_verification": [
+          "绘制精确路线",
+          "桥隧/地下/道路工程方案",
+          "承诺电梯状态",
+          "改变交通组织"
+        ]
+      },
+      "journey_ids": [
+        "JOURNEY-B3-04"
+      ],
+      "spatial_components": [
+        "COMP-B3-01-DUAL-WAYFINDING",
+        "COMP-B3-02-INCLUSIVE-SEATING",
+        "COMP-B3-08-TACTILE-HIGH-CONTRAST",
+        "COMP-B3-10-FEEDBACK-LEDGER"
+      ],
+      "ai_role": [
+        "汇总经人工核验的设施运行信息",
+        "按用户明示需求解释路线",
+        "提示信息过期与不确定性"
+      ],
+      "ai_forbidden_actions": [
+        "替代交通安全和无障碍设计",
+        "推断实时可用状态",
+        "生成未核实的无障碍路线",
+        "改变信号或路权"
+      ],
+      "data_boundary": "使用公开/运营授权的设施状态和匿名反馈，不采集连续个人轨迹。",
+      "human_gate": [
+        "站点/道路/交通专业审核",
+        "无障碍现场走查",
+        "设施状态更新",
+        "施工和应急绕行批准"
+      ],
+      "non_digital_alternative": "实体四象限总图、现场方向牌、人工问询、纸质无障碍路线和故障公告。",
+      "operator_role": "候选责任：站点/道路/公共空间各自运营者 + 无障碍信息编辑；具体主体待确认。",
+      "first_phase": {
+        "action_zh": "四象限连通核查清单",
+        "minimum_scope": "人工核查无障碍、遮荫、过街等待、自行车停放和出口导览，不先做工程",
+        "entry_gate": "official station/road anchor与现场许可"
+      },
+      "enhanced_phase": {
+        "action_zh": "可达性动态导航",
+        "minimum_scope": "仅发布有责任人和更新时间的设施状态",
+        "entry_gate": "数据更新SLA和线下同步机制通过"
+      },
+      "stop_conditions": [
+        "路线信息与现场不符",
+        "电梯/过街等关键状态无法更新",
+        "导航导致安全风险",
+        "无障碍路线被阻断"
+      ],
+      "resume_evidence": [
+        "现场重新核验",
+        "运营者确认",
+        "线上线下同步更新",
+        "任务测试通过"
+      ],
+      "exit_cleanup": [
+        "下架过期路线",
+        "撤除误导导视",
+        "保留问题台账",
+        "转为人工问询"
+      ],
+      "metrics": [
+        {
+          "id": "MET-B3-10-A",
+          "name_zh": "人工核验旅程的连续完成率",
+          "status": "unknown",
+          "collection": "分类型用户任务走查",
+          "decision_use": "识别障碍而非证明工程可行"
+        },
+        {
+          "id": "MET-B3-10-B",
+          "name_zh": "设施状态更新时间与错误率",
+          "status": "unknown",
+          "collection": "运营日志与现场抽查",
+          "decision_use": "决定动态导航是否开放"
+        },
+        {
+          "id": "MET-B3-10-C",
+          "name_zh": "非数字导向任务完成率",
+          "status": "unknown",
+          "collection": "首次到访任务测试",
+          "decision_use": "验证线下等价"
+        }
+      ],
+      "dependencies": [
+        "official station/road geometry",
+        "现场交通/无障碍审计",
+        "设施状态责任人",
+        "线上线下同步维护"
+      ],
+      "gate_state": "draft",
+      "title_en": "Dazhongsi Four-Quadrant Mobility Audit Pack (Station Anchor Pending)"
+    },
+    {
+      "id": "SCN-B3-11",
+      "legacy_node_ids": [
+        "S03"
+      ],
+      "title_zh": "京张智脉南部序厅",
+      "scenario_types": [
+        "城市门户",
+        "品牌序厅",
+        "多语文化导览"
+      ],
+      "agent_task_ids": [
+        "agent.3",
+        "agent.4"
+      ],
+      "outline_chapters": [
+        "CH06",
+        "CH09",
+        "CH10",
+        "CH14",
+        "CH15"
+      ],
+      "theme_coverage": [
+        "AI+文化",
+        "AI+生活服务"
+      ],
+      "industry_test_scenario": false,
+      "park_ai_landmark": false,
+      "user_ids": [
+        "USER-B3-VISITOR",
+        "USER-B3-RESIDENT",
+        "USER-B3-OLDER",
+        "USER-B3-ACCESS-NONDIGITAL",
+        "USER-B3-OPERATOR"
+      ],
+      "problem_hypothesis_zh": "创新带可能缺少能快速说明地方历史、当日状态、可走路线和概念/开放边界的公共入口。",
+      "need_zh": "稳定实体品牌与动态内容分离，一分钟形成方向感，离线也能完整使用。",
+      "goal_zh": "把南北贯通的入口做成信息和路线选择服务，不预设已确定南部选址。",
+      "evidence_state": "conceptual_proposal",
+      "source_refs": [
+        {
+          "source_id": "DATA-SRC-AGENT-TASKBOOK-20260518",
+          "source_use": "formal",
+          "supports": "品牌、文化、导览、国际传播和公共体验",
+          "limitations": "不提供南部门户的具体位置或实施载体"
+        }
+      ],
+      "place_anchor": {
+        "mode": "text_only_pending_official_anchor",
+        "ref": "创新带南部公共入口候选空间类型",
+        "description_zh": "不按provisional polygon南端自动选点；需根据实际客流、公共性、权属和交通条件比较候选点。",
+        "eligible_space_types": [
+          "公共可达且可人工值守的入口空间",
+          "不阻碍日常通行的可逆展示位置"
+        ],
+        "prohibited_before_verification": [
+          "指定地块/站口",
+          "设置永久建筑",
+          "将当日生成内容当官方公告"
+        ]
+      },
+      "journey_ids": [
+        "JOURNEY-B3-04",
+        "JOURNEY-B3-06"
+      ],
+      "spatial_components": [
+        "COMP-B3-01-DUAL-WAYFINDING",
+        "COMP-B3-02-INCLUSIVE-SEATING",
+        "COMP-B3-03-HUMAN-DESK",
+        "COMP-B3-04-MODULAR-DISPLAY"
+      ],
+      "ai_role": [
+        "根据用户明示的时间/语言/主题组织路线",
+        "从已核验活动与贡献生成当日信息摘要"
+      ],
+      "ai_forbidden_actions": [
+        "改变CH06稳定品牌规则",
+        "生成无来源文化内容",
+        "把概念或投稿状态写成已实施",
+        "追踪访客"
+      ],
+      "data_boundary": "只用公开且已核验的路线、活动、场景状态；默认不记录访客身份和轨迹。",
+      "human_gate": [
+        "CH06品牌一致性",
+        "CH10文化与多语审核",
+        "CH11活动状态确认",
+        "现场路线与无障碍核验"
+      ],
+      "non_digital_alternative": "稳定实体总图、多语折页、人工咨询和不依赖屏幕的路线入口。",
+      "operator_role": "候选责任：公共入口运营人员 + 品牌/文化/活动内容编辑。",
+      "first_phase": {
+        "action_zh": "一分钟认识京张智脉移动序厅",
+        "minimum_scope": "可移动线性模型、三层文化和三类路线入口",
+        "entry_gate": "候选点公共性、通行、权属和内容审核"
+      },
+      "enhanced_phase": {
+        "action_zh": "每日生成的创新带封面",
+        "minimum_scope": "只生成已核验公开状态摘要，实体品牌保持稳定",
+        "entry_gate": "内容来源、版本和人工发布流程通过"
+      },
+      "stop_conditions": [
+        "路线或活动状态失实",
+        "品牌/文化内容侵权",
+        "阻碍通行",
+        "将概念表述为已实施"
+      ],
+      "resume_evidence": [
+        "状态核验",
+        "内容更正",
+        "空间调整",
+        "人工发布复核"
+      ],
+      "exit_cleanup": [
+        "撤离移动序厅",
+        "下架过期封面",
+        "保留更正记录",
+        "提供其他线下入口"
+      ],
+      "metrics": [
+        {
+          "id": "MET-B3-11-A",
+          "name_zh": "首次访客方向识别任务完成率",
+          "status": "unknown",
+          "collection": "匿名任务测试",
+          "decision_use": "优化信息层级"
+        },
+        {
+          "id": "MET-B3-11-B",
+          "name_zh": "非数字路线选择完成率",
+          "status": "unknown",
+          "collection": "现场观察",
+          "decision_use": "验证线下等价"
+        },
+        {
+          "id": "MET-B3-11-C",
+          "name_zh": "动态内容错误/过期率",
+          "status": "unknown",
+          "collection": "人工内容审计",
+          "decision_use": "决定是否暂停动态封面"
+        }
+      ],
+      "dependencies": [
+        "候选入口比较",
+        "CH06品牌体系",
+        "CH10文化内容",
+        "CH11活动状态接口",
+        "现场运营"
+      ],
+      "gate_state": "draft",
+      "title_en": "Jingzhang Smart Pulse Southern Foyer"
+    },
+    {
+      "id": "SCN-B3-12",
+      "legacy_node_ids": [
+        "O01"
+      ],
+      "title_zh": "全带开放场景测试台",
+      "scenario_types": [
+        "场景治理",
+        "测试申请",
+        "风险台账",
+        "规划反馈"
+      ],
+      "agent_task_ids": [
+        "agent.3",
+        "agent.4"
+      ],
+      "outline_chapters": [
+        "CH04",
+        "CH05",
+        "CH08",
+        "CH11",
+        "CH14",
+        "CH15"
+      ],
+      "theme_coverage": [
+        "AI产业测试",
+        "AI+治理"
+      ],
+      "industry_test_scenario": true,
+      "park_ai_landmark": false,
+      "user_ids": [
+        "USER-B3-RESEARCH-STARTUP",
+        "USER-B3-OPERATOR",
+        "USER-B3-RESIDENT",
+        "USER-B3-YOUTH-DEVELOPER"
+      ],
+      "problem_hypothesis_zh": "场景开放若只有申请入口，没有审查、测试、停止、恢复、评估和清理全周期，会把风险和责任留给公共空间。",
+      "need_zh": "一个公开状态、人工决策、可暂停可退出、结果能回到规划的治理台账。",
+      "goal_zh": "让AI辅助材料和反馈处理，但所有开放、扩大、停止和规划调整由明确的人类责任主体决定。",
+      "evidence_state": "conceptual_proposal",
+      "source_refs": [
+        {
+          "source_id": "DATA-SRC-AGENT-TASKBOOK-20260518",
+          "source_use": "formal",
+          "supports": "场景开放、人工复核、运营与规划迭代",
+          "limitations": "不构成官方审批平台或政府承诺"
+        },
+        {
+          "source_id": "DATA-SRC-GENERATIVE-AI-INTERIM-MEASURES",
+          "source_use": "formal",
+          "supports": "若平台向境内公众提供生成内容时的特定治理背景",
+          "limitations": "仅在适用范围内引用；不得泛化至所有城市AI或推定备案/安全评估完成"
+        }
+      ],
+      "place_anchor": {
+        "mode": "non_spatial_service_with_text_only_offline_desk",
+        "ref": "全带数字台账 + 待确认线下人工窗口",
+        "description_zh": "数字服务不代表官方审批；线下窗口位置待运营主体和载体确认。",
+        "eligible_space_types": [
+          "有明确人工责任和公开流程的线上台账",
+          "可受理纸质申请的线下窗口"
+        ],
+        "prohibited_before_verification": [
+          "自称政府审批系统",
+          "自动批准场景",
+          "接入非公开数据",
+          "无责任人运行"
+        ]
+      },
+      "journey_ids": [
+        "JOURNEY-B3-01",
+        "JOURNEY-B3-02",
+        "JOURNEY-B3-08"
+      ],
+      "spatial_components": [
+        "COMP-B3-03-HUMAN-DESK",
+        "COMP-B3-06-REVERSIBLE-TEST-BOUNDARY",
+        "COMP-B3-10-FEEDBACK-LEDGER"
+      ],
+      "ai_role": [
+        "申请完整性检查",
+        "风险提示和分类",
+        "公众反馈聚类",
+        "生成规划迭代候选摘要"
+      ],
+      "ai_forbidden_actions": [
+        "自动批准/拒绝场景",
+        "替代专业审查",
+        "自动改变规划",
+        "隐藏停止或失败记录"
+      ],
+      "data_boundary": "公开最小状态字段；敏感申请材料分权访问、限期保留；公众反馈匿名化，不将意见标签化为个人画像。",
+      "human_gate": [
+        "场景准入",
+        "数据/伦理/安全/空间专项审查",
+        "暂停/恢复/退出",
+        "规划迭代采纳"
+      ],
+      "non_digital_alternative": "纸质申请、人工咨询、电话查询状态、线下异议和公开纸质结果摘要。",
+      "operator_role": "候选责任：跨专业场景治理秘书处；具体机构、权限和法律地位待确认。",
+      "first_phase": {
+        "action_zh": "场景公开台账原型",
+        "minimum_scope": "只记录目标、对象、期限、数据边界、责任人、停止条件和状态，不开放自动决策",
+        "entry_gate": "治理章程、字段最小化、权限和申诉流程通过"
+      },
+      "enhanced_phase": {
+        "action_zh": "规划反馈订阅",
+        "minimum_scope": "把聚合使用和风险记录转成待人工复核的规划建议",
+        "entry_gate": "指标解释、公众质疑和版本控制通过"
+      },
+      "stop_conditions": [
+        "责任人缺失",
+        "材料泄露或权限越界",
+        "自动决定准入/规划",
+        "停止/清理无法核验",
+        "公众异议无人处理"
+      ],
+      "resume_evidence": [
+        "责任链恢复",
+        "安全与权限整改",
+        "人工复核",
+        "公开问题说明"
+      ],
+      "exit_cleanup": [
+        "关闭申请和接口",
+        "按保留规则删除/返还材料",
+        "公开关闭原因",
+        "导出可审计状态记录"
+      ],
+      "metrics": [
+        {
+          "id": "MET-B3-12-A",
+          "name_zh": "场景状态和责任人公开率",
+          "status": "unknown",
+          "collection": "台账字段审计",
+          "decision_use": "判断是否可继续开放"
+        },
+        {
+          "id": "MET-B3-12-B",
+          "name_zh": "停止项目的数据与设备清理闭环率",
+          "status": "unknown",
+          "collection": "退出核验",
+          "decision_use": "未闭环不得新增同类试验"
+        },
+        {
+          "id": "MET-B3-12-C",
+          "name_zh": "经人工复核进入规划迭代的证据条目数",
+          "status": "unknown",
+          "collection": "版本变更日志",
+          "decision_use": "证明反馈链而非追求数量"
+        }
+      ],
+      "dependencies": [
+        "治理章程与权限",
+        "各专业审查角色",
+        "数据安全与记录保留",
+        "公众申诉",
+        "规划版本管理"
+      ],
+      "gate_state": "draft",
+      "title_en": "Belt-wide Open Scenario Testbed"
+    },
+    {
+      "id": "SCN-B3-13",
+      "legacy_node_ids": [
+        "O02"
+      ],
+      "title_zh": "京张AI城市开源周",
+      "scenario_types": [
+        "年度活动",
+        "真实城市任务",
+        "开发者社区",
+        "90天转化"
+      ],
+      "agent_task_ids": [
+        "agent.3",
+        "agent.4"
+      ],
+      "outline_chapters": [
+        "CH08",
+        "CH09",
+        "CH10",
+        "CH11",
+        "CH14",
+        "CH15"
+      ],
+      "theme_coverage": [
+        "AI+医疗",
+        "AI+教育",
+        "AI+商业",
+        "AI+交通",
+        "AI+文化",
+        "AI+生活服务"
+      ],
+      "industry_test_scenario": false,
+      "park_ai_landmark": false,
+      "user_ids": [
+        "USER-B3-YOUTH-DEVELOPER",
+        "USER-B3-RESEARCH-STARTUP",
+        "USER-B3-RESIDENT",
+        "USER-B3-CHILD-CAREGIVER",
+        "USER-B3-OLDER",
+        "USER-B3-ACCESS-NONDIGITAL",
+        "USER-B3-VISITOR",
+        "USER-B3-OPERATOR"
+      ],
+      "problem_hypothesis_zh": "一次性大会可能与真实公共问题、居民日常和项目后续转化脱节。",
+      "need_zh": "由真实需求主体提出、公众可参与、成果可核验且90天后仍能看到测试/修正/终止状态的活动。",
+      "goal_zh": "把活动转化为社群、场景、公共知识和规划反馈的入口，不承诺项目孵化或城市采用。",
+      "evidence_state": "conceptual_proposal",
+      "source_refs": [
+        {
+          "source_id": "DATA-SRC-AGENT-TASKBOOK-20260518",
+          "source_use": "formal",
+          "supports": "全球AI创新活动体系、开发者社区、场景开放、国际传播和转化链",
+          "limitations": "活动日期、主体、预算和场地均未确定"
+        }
+      ],
+      "place_anchor": {
+        "mode": "multi_site_text_only_pending_host_commitments",
+        "ref": "由北至南的候选园区、高校、社区、公园和商业节点类型",
+        "description_zh": "不画定活动路线或场地；每个场地需分别核验权属、容量、安全、无障碍和日常影响。",
+        "eligible_space_types": [
+          "自愿开放并有责任人的既有场地",
+          "可容纳非数字参与的公共活动节点"
+        ],
+        "prohibited_before_verification": [
+          "公布确定日期/场地/主办方",
+          "把征集任务写成政府采购或承诺",
+          "未经审查开放高风险测试"
+        ]
+      },
+      "journey_ids": [
+        "JOURNEY-B3-03",
+        "JOURNEY-B3-06",
+        "JOURNEY-B3-08"
+      ],
+      "spatial_components": [
+        "COMP-B3-01-DUAL-WAYFINDING",
+        "COMP-B3-03-HUMAN-DESK",
+        "COMP-B3-04-MODULAR-DISPLAY",
+        "COMP-B3-10-FEEDBACK-LEDGER"
+      ],
+      "ai_role": [
+        "需求与能力初步匹配",
+        "多语和无障碍内容辅助",
+        "活动导航",
+        "90天状态汇总"
+      ],
+      "ai_forbidden_actions": [
+        "自动决定获选或资金",
+        "生成虚假需求主体",
+        "以参与数据做个人评分",
+        "把成果写成已落地"
+      ],
+      "data_boundary": "报名与反馈最小化；公开项目状态不公开无必要个人信息；儿童和敏感场景专项处理。",
+      "human_gate": [
+        "真实需求核验",
+        "活动/场地/公共安全",
+        "医疗/教育/儿童/数据专项审查",
+        "知识产权与成果状态发布"
+      ],
+      "non_digital_alternative": "现场报名、纸质任务卡、人工翻译/讲解、实体展示和电话/公告栏跟踪。",
+      "operator_role": "候选责任：CH11活动运营团队 + 各需求主体 + 场地运营者 + 专项审查人员。",
+      "first_phase": {
+        "action_zh": "七天七类开源任务小样",
+        "minimum_scope": "先选少量低风险、公共价值明确、有人负责的任务，不预设七天正式活动已确定",
+        "entry_gate": "真实需求、场地、安全、IP和后续责任通过"
+      },
+      "enhanced_phase": {
+        "action_zh": "90天转化跟踪",
+        "minimum_scope": "公开测试、修正、终止或知识沉淀状态，不以转化率替代公共价值",
+        "entry_gate": "状态责任人和记录机制存在"
+      },
+      "stop_conditions": [
+        "需求主体或后续责任人缺位",
+        "高风险任务未审查",
+        "活动影响居民日常无法缓解",
+        "成果权属争议",
+        "对外夸大实施状态"
+      ],
+      "resume_evidence": [
+        "责任主体重新确认",
+        "安全/IP/数据整改",
+        "居民影响方案通过",
+        "事实状态更正"
+      ],
+      "exit_cleanup": [
+        "活动设备撤场",
+        "个人数据按期删除",
+        "项目状态标为终止/暂停",
+        "成果与贡献归档"
+      ],
+      "metrics": [
+        {
+          "id": "MET-B3-13-A",
+          "name_zh": "具有真实需求主体和后续责任人的任务占比",
+          "status": "unknown",
+          "collection": "活动准入台账",
+          "decision_use": "筛除纯展示任务"
+        },
+        {
+          "id": "MET-B3-13-B",
+          "name_zh": "90天状态可追溯率",
+          "status": "unknown",
+          "collection": "公开状态记录",
+          "decision_use": "判断是否形成运营闭环"
+        },
+        {
+          "id": "MET-B3-13-C",
+          "name_zh": "居民、非专业与无障碍参与可达性",
+          "status": "unknown",
+          "collection": "匿名参与分类与现场走查",
+          "decision_use": "防止活动只服务专业圈层"
+        }
+      ],
+      "dependencies": [
+        "CH11活动品牌与运营",
+        "真实需求主体",
+        "场地/安全/IP/数据审查",
+        "90天状态责任",
+        "CH10文化内容"
+      ],
+      "gate_state": "draft",
+      "title_en": "Jingzhang AI City Open-source Week"
+    }
+  ]
+}

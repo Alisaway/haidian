@@ -1,0 +1,261 @@
+{
+  "schema_version": "0.1.0",
+  "assumptions": [
+    {
+      "id": "A-OFFICIAL-GEOMETRY-001",
+      "status": "data_gap",
+      "statement": "Official site boundary and three key-area polygons are not present in the public package; submitted geometry is provisional_constraint.",
+      "impact": "All area, adjacency, route, and key-area conclusions are discussion-grade only.",
+      "source_ids": [
+        "OFFICIAL-ANNOUNCEMENT",
+        "BOUNDARY-SOURCE",
+        "KEY-AREA-SOURCE"
+      ],
+      "affected_objects": [
+        "geometry/site_boundary.geojson",
+        "geometry/key_areas.geojson"
+      ],
+      "affected_chapters": [
+        "三层范围工作框架",
+        "重点区域详细设计",
+        "指标体系、面积复算与合规矩阵"
+      ],
+      "release_gate": "G-Space",
+      "owner_role": "GIS负责人/注册规划师",
+      "resolution_trigger": "versioned official polygons with CRS and locator",
+      "recalculation_action": "replace full geometry set, rerun topology/area/metrics/HTML/PDF, retain old hashes"
+    },
+    {
+      "id": "A-KEY-AREA-ANCHOR-001",
+      "status": "provisional",
+      "statement": "Three key areas are text-identified and provisionally located; their exact four-sided boundaries and station/road anchors remain unverified.",
+      "impact": "No exact site selection, parcel claim, redline, or construction scope may be inferred.",
+      "source_ids": [
+        "OFFICIAL-ANNOUNCEMENT",
+        "KEY-AREA-SOURCE"
+      ],
+      "affected_objects": [
+        "geometry/key_areas.geojson"
+      ],
+      "affected_chapters": [
+        "重点区域详细设计"
+      ],
+      "release_gate": "G-Space+专业签署",
+      "owner_role": "GIS/交通/文保复核"
+    },
+    {
+      "id": "A-CONTROLS-001",
+      "status": "data_gap",
+      "statement": "Regulatory plan controls, road redlines, ownership, utilities, heritage protection, rail, water, fire, and engineering constraints are absent or not cleared for formal geometry.",
+      "impact": "FAR, height, setbacks, demolition, infrastructure capacity, and statutory controls remain unknown.",
+      "source_ids": [
+        "SITE-PACKAGE",
+        "SOURCE-REGISTRY"
+      ],
+      "affected_objects": [
+        "geometry/constraints.geojson",
+        "metrics.json"
+      ],
+      "affected_chapters": [
+        "总体设计范围城市更新与控规深度城市设计",
+        "用地、建筑规模与拆改留方案",
+        "交通、轨道、市政与公共服务设施",
+        "风险、版权与合规说明"
+      ],
+      "release_gate": "G-Space+专业签署",
+      "owner_role": "规划/建筑/交通/市政/文保专业负责人",
+      "resolution_trigger": "official control attachments",
+      "recalculation_action": "professional overlay and discipline sign-off"
+    },
+    {
+      "id": "A-HERITAGE-001",
+      "status": "controlled_exclusion",
+      "statement": "The current formal package does not include unlicensed historical photographs, archival excerpts, identifiable portraits or precise heritage placement. Historical claims remain cited text or explicitly provisional interpretation.",
+      "impact": "Current COMMUNITY-DISPLAY-ONLY output is not blocked; introducing archival media, permanent heritage nodes or uncited historical detail reopens G-Fact and G-Rights.",
+      "source_ids": [
+        "D2SRC-SHARED-021"
+      ],
+      "affected_objects": [
+        "proposal.md",
+        "assets/figures"
+      ],
+      "affected_chapters": [
+        "蓝绿空间、公共空间与城市风貌",
+        "风险、版权与合规说明"
+      ],
+      "release_gate": "G-Fact+G-Rights:pass_by_exclusion_for_current_package",
+      "owner_role": "文化/历史/版权Agent",
+      "current_blocker": false
+    },
+    {
+      "id": "A-ACTOR-001",
+      "status": "data_gap",
+      "statement": "Named operators, venue owners, specialist reviewers, and activity partners have not been confirmed.",
+      "impact": "Activities and pilots are proposals, not commitments; runtime remains not_created.",
+      "source_ids": [
+        "AGENT-TASKBOOK"
+      ],
+      "affected_objects": [
+        "proposal.md",
+        "B2/B5 ledgers"
+      ],
+      "affected_chapters": [
+        "更新项目清单、实施政策与分期计划",
+        "风险、版权与合规说明"
+      ],
+      "release_gate": "G-Value+G-Pilot",
+      "owner_role": "运营Agent"
+    },
+    {
+      "id": "A-B5-RUNTIME-001",
+      "status": "not_created",
+      "statement": "No real opportunity_id, test_run_id, baseline, target, data owner, or runtime event exists in the package.",
+      "impact": "All monitoring values remain unknown/null and all six pilots remain candidate templates.",
+      "source_ids": [
+        "AGENT-TASKBOOK"
+      ],
+      "affected_objects": [
+        "metrics.json",
+        "proposal.md"
+      ],
+      "affected_chapters": [
+        "更新项目清单、实施政策与分期计划",
+        "指标体系、面积复算与合规矩阵"
+      ],
+      "release_gate": "G-Pilot+G-Value",
+      "owner_role": "运营/试点负责人"
+    },
+    {
+      "id": "A-B6-CONTRACT-001",
+      "status": "contract_only",
+      "statement": "The 15 depth contracts define evidence interfaces and limitations; they do not constitute professional completion or signed design drawings.",
+      "impact": "Professional completion count remains unknown and formal depth is complete-with-limitation only where evidence is present.",
+      "source_ids": [
+        "OFFICIAL-ANNOUNCEMENT"
+      ],
+      "affected_objects": [
+        "design_depth_matrix.json",
+        "drawings"
+      ],
+      "affected_chapters": [
+        "指标体系、面积复算与合规矩阵",
+        "风险、版权与合规说明"
+      ],
+      "release_gate": "专业签署",
+      "owner_role": "各专业负责人"
+    },
+    {
+      "id": "A-RIGHTS-001",
+      "status": "verified_for_declared_use",
+      "statement": "All fonts, figures, satellite backgrounds, generated visuals, composite HTML/PDF outputs, candidate identity elements and third-party textual identifiers actually included in the current formal package are itemized and reviewed in LOCAL-ASSET-RIGHTS-REGISTER-V2.9.",
+      "impact": "The current package is cleared only for COMMUNITY-DISPLAY-ONLY. This does not grant commercial, trademark, construction, governmental-endorsement or third-party sublicensing rights.",
+      "source_ids": [
+        "D2SRC-SHARED-021",
+        "D2SRC-SHARED-022",
+        "D2SRC-SHARED-023",
+        "D2SRC-SHARED-014",
+        "D2SRC-SHARED-015"
+      ],
+      "affected_objects": [
+        "assets/figures",
+        "visual/assets/base_maps",
+        "visual/assets/cjk-font.css",
+        "report/proposal.html",
+        "report/proposal.en.html",
+        "visual/index.html",
+        "visual/index.en.html",
+        "drawings/a3-booklet.pdf",
+        "drawings/a3-booklet.en.pdf",
+        "drawings/a0-boards.pdf",
+        "drawings/a0-boards.en.pdf"
+      ],
+      "affected_chapters": [
+        "风险、版权与合规说明"
+      ],
+      "release_gate": "G-Rights:pass_for_current_community_display_only",
+      "owner_role": "法律/品牌Agent",
+      "verification_locator": "visual/assets/asset_rights_register.json",
+      "current_blocker": false
+    },
+    {
+      "id": "A-DATA-PRIVACY-001",
+      "status": "policy_boundary",
+      "statement": "AI scenarios must minimize data, provide consent/withdrawal and non-digital alternatives, and preserve human escalation.",
+      "impact": "No individual trajectory, medical, education, investment, or safety decision is automated.",
+      "source_ids": [
+        "AGENT-TASKBOOK"
+      ],
+      "affected_objects": [
+        "proposal.md",
+        "visual/index.html"
+      ],
+      "affected_chapters": [
+        "AI 创新生态、人才画像与 AI+ 场景",
+        "风险、版权与合规说明"
+      ],
+      "release_gate": "G-Value+G-Pilot",
+      "owner_role": "治理/隐私负责人"
+    },
+    {
+      "id": "A-RECALC-001",
+      "status": "active",
+      "statement": "Any change to source version, boundary, CRS, rights, professional control, or pilot state triggers full recalculation and release review.",
+      "impact": "Old hashes and superseded outputs are retained; no single-file substitution is accepted.",
+      "source_ids": [
+        "SOURCE-REGISTRY"
+      ],
+      "affected_objects": [
+        "manifest.json",
+        "metrics.json",
+        "drawings",
+        "report"
+      ],
+      "affected_chapters": [
+        "指标体系、面积复算与合规矩阵",
+        "风险、版权与合规说明"
+      ],
+      "release_gate": "G-Release",
+      "owner_role": "统筹Agent"
+    },
+    {
+      "id": "A-BRAND-PUBLIC-RELEASE-001",
+      "status": "pending_verification",
+      "statement": "Candidate names, logo grammar, fonts and bilingual identity require trademark-conflict, language-ambiguity, accessibility and public-recognition testing before registration, permanent signage or official public release.",
+      "impact": "Not a blocker for the current research/community display; it blocks only future official branding use.",
+      "source_ids": [
+        "D2SRC-SHARED-021"
+      ],
+      "affected_objects": [
+        "assets/figures/identity-brand.png",
+        "assets/figures/identity-brand.en.png"
+      ],
+      "affected_chapters": [
+        "风险、版权与合规说明"
+      ],
+      "release_gate": "G-Brand:future_public_release_only",
+      "owner_role": "法律/品牌/无障碍负责人",
+      "current_blocker": false
+    },
+    {
+      "id": "A-HERITAGE-PUBLICATION-001",
+      "status": "pending_verification",
+      "statement": "Future use of archival images, long historical excerpts, identifiable portraits, permanent cultural nodes or definitive bilingual heritage publication requires item-level source, location, translation and rights review.",
+      "impact": "Not a blocker because those materials are excluded from the current formal package; introduction reopens G-Fact and G-Rights.",
+      "source_ids": [
+        "D2SRC-SHARED-021"
+      ],
+      "affected_objects": [
+        "future archival or heritage publication assets"
+      ],
+      "affected_chapters": [
+        "蓝绿空间、公共空间与城市风貌",
+        "风险、版权与合规说明"
+      ],
+      "release_gate": "G-Fact+G-Rights:future_asset_only",
+      "owner_role": "文化/历史/版权Agent",
+      "current_blocker": false
+    }
+  ],
+  "generated_at": "2026-08-30",
+  "assumption_contract_note": "Unknown and pending states are intentional. Resolution requires a named role, source/permission, trigger, and recalculation action."
+}

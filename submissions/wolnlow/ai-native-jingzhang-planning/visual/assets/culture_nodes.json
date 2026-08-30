@@ -1,0 +1,823 @@
+{
+  "schema_version": "0.1.0",
+  "module_id": "B1_culture_brand",
+  "title_zh": "B1文化事实与叙事节点",
+  "generated_date": "2026-08-15",
+  "project_master_title_zh": "以构建城市规划新范式命题下的京张铁路创新带AI原生规划新思考",
+  "project_master_title_policy": "fixed_do_not_replace_with_working_concept_names",
+  "module_status": "research_draft_not_for_final_visual_or_spatial_implementation",
+  "boundary_statement_zh": "本文件区分可由当前来源支撑的文件事实与待验证的叙事假设。所有空间建议均为概念建议、参考方案或可供专业团队深化研究，不替代正式规划，不构成政府审定结论。",
+  "status_definitions": {
+    "evidence_status": {
+      "fact": "可由当前已登记来源支撑的文件事实、任务要求或项目管理决定；不自动等于现场实测、完整历史真相或法定空间结论",
+      "hypothesis": "概念、叙事、翻译、路线、节点或运营候选，必须经证据、权益、空间、语言与人类决策门复核"
+    },
+    "location_status": {
+      "text_only": "只有文字层面的空间类型或地方指向，不绑定任何坐标",
+      "provisional": "只能关联资料包临时范围或重点区polygon，official_boundary=false，不用于精确面积、权属、规划红线或工程落位"
+    }
+  },
+  "verification_policy": {
+    "fact": "source_verified_within_explicit_fact_scope",
+    "hypothesis": "pending_verification",
+    "historical_detail_without_registered_source": "pending_verification_and_prohibited_from_precise_location_or_public_factual_copy"
+  },
+  "source_registry": [
+    {
+      "source_id": "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+      "title_zh": "百年京张AI创新带城市设计国际方案征集资格预审公告",
+      "authority_level": "A0",
+      "review_status": "approved",
+      "usable_for_formal": "yes",
+      "local_path": "参考仓库/haidian-main/brief/site-package/standards/references/project-official-announcement.md",
+      "local_locator": "33-89",
+      "aliases": [
+        "SRC-2026-BJ-GH-QUAL-PREANNOUNCEMENT"
+      ],
+      "restriction_zh": "可支撑项目名、位置、范围文字、面积约值和设计任务；不支撑正式polygon、控规、权属或工程结论"
+    },
+    {
+      "source_id": "DATA-SRC-AGENT-TASKBOOK-20260518",
+      "title_zh": "面向全球智能体开源征集任务书摘录",
+      "authority_level": "CLEARED_USER_DOCUMENT",
+      "review_status": "approved",
+      "usable_for_formal": "yes",
+      "local_path": "参考仓库/haidian-main/brief/site-package/agent_taskbook.json",
+      "local_locator": "positioning_zh; five_functions_zh; three_areas_two_wings; required_agent_tasks.agent.1; required_agent_tasks.agent.5; boundary_clause",
+      "aliases": [
+        "SRC-2026-0518-AGENT-OPEN-CALL-TASKBOOK"
+      ],
+      "restriction_zh": "可支撑Agent任务、命名、品牌、文化、运营和概念边界；不支撑正式空间红线、工程结论或政府承诺"
+    },
+    {
+      "source_id": "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+      "title_zh": "百年京张AI创新带三层范围与三处重点区临时粗略polygon",
+      "authority_level": "PROVISIONAL_REPOSITORY",
+      "review_status": "provisional",
+      "usable_for_formal": "provisional_only",
+      "local_path": "参考仓库/haidian-main/brief/site-package/geometry/provisional_boundaries.geojson",
+      "local_locator": "PROV-RESEARCH-001; PROV-SITE-001; PROV-KEY-SCOPE-001; PROV-KEY-001; PROV-KEY-002; PROV-KEY-003",
+      "aliases": [
+        "SRC-PROVISIONAL-BOUNDARIES-2026"
+      ],
+      "restriction_zh": "只用于临时生成、离线可视化和概念讨论；official_boundary=false"
+    },
+    {
+      "source_id": "LOCAL-SRC-RESEARCH-OUTLINE-V2",
+      "title_zh": "项目研究总纲v2.0",
+      "authority_level": "PROJECT_CONTENT_OUTLINE",
+      "review_status": "project_main_outline",
+      "usable_for_formal": "content_outline_only",
+      "local_path": "项目研究总纲_v2.0.md",
+      "local_locator": "177-184; 210-217; 354-361",
+      "aliases": [],
+      "restriction_zh": "是内容主纲和管理决定依据，不能替代历史一手文献或官方空间数据"
+    },
+    {
+      "source_id": "LOCAL-SRC-PUBLIC-BRIEF",
+      "title_zh": "百年京张AI创新带公开任务说明",
+      "authority_level": "PUBLIC_DRAFT",
+      "review_status": "public_draft",
+      "usable_for_formal": "cross_check_only",
+      "local_path": "参考仓库/haidian-main/brief/public-brief.md",
+      "local_locator": "5-42",
+      "aliases": [],
+      "restriction_zh": "只用于公开任务语境与交叉核对，不单独支撑史实或精确空间结论"
+    }
+  ],
+  "items": [
+    {
+      "node_id": "B1-F001",
+      "node_type": "governance_decision",
+      "title_zh": "项目研究总名称固定",
+      "statement_zh": "项目研究总名称为“以构建城市规划新范式命题下的京张铁路创新带AI原生规划新思考”，任何概念工作名不得取代。",
+      "evidence_status": "fact",
+      "fact_scope": "project_governance_decision",
+      "source_id": "LOCAL-SRC-RESEARCH-OUTLINE-V2",
+      "source_locator": "line 1 and project instruction",
+      "supporting_source_ids": [],
+      "location_status": "text_only",
+      "spatial_scope_zh": "全项目",
+      "rights_status": "project_use_only_pending_final_publication_terms",
+      "use_boundary_zh": "固定中文总名称；英文只能是待人工定稿的工作译名",
+      "dependencies": [],
+      "next_action_zh": "由Root在所有封面、正文和manifest中锁定一致写法"
+    },
+    {
+      "node_id": "B1-F002",
+      "node_type": "official_project_context",
+      "title_zh": "官方征集背景名与位置",
+      "statement_zh": "公开公告的项目名为“百年京张AI创新带城市设计国际方案征集”，项目位置为北京市海淀区。",
+      "evidence_status": "fact",
+      "fact_scope": "official_announcement_text",
+      "source_id": "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+      "source_locator": "project-official-announcement.md:33-39",
+      "supporting_source_ids": [],
+      "location_status": "text_only",
+      "spatial_scope_zh": "北京市海淀区",
+      "rights_status": "official_public_reference",
+      "use_boundary_zh": "只用于说明官方征集背景，不取代B1项目研究总名称",
+      "dependencies": [],
+      "next_action_zh": "正式翻译需官方/专业语言复核"
+    },
+    {
+      "node_id": "B1-F003",
+      "node_type": "scope_system",
+      "title_zh": "三层研究范围",
+      "statement_zh": "公告将工作分为统筹研究范围、总体设计范围和重点区域范围三层。",
+      "evidence_status": "fact",
+      "fact_scope": "official_scope_text_not_geometry",
+      "source_id": "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+      "source_locator": "project-official-announcement.md:51-57",
+      "supporting_source_ids": [
+        "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605"
+      ],
+      "location_status": "text_only",
+      "spatial_scope_zh": "统筹研究/总体设计/重点区域三层文字范围",
+      "rights_status": "official_public_reference",
+      "use_boundary_zh": "不得将文字四至转写为正式official polygon",
+      "dependencies": [
+        "CH03"
+      ],
+      "next_action_zh": "待正式GIS/CAD数据后重新核验所有地图表达"
+    },
+    {
+      "node_id": "B1-F004",
+      "node_type": "positioning_system",
+      "title_zh": "三大定位",
+      "statement_zh": "任务书列出“百年京张文化带、都市AI生活体验带、AI融合创新带”三大定位。",
+      "evidence_status": "fact",
+      "fact_scope": "cleared_task_requirement",
+      "source_id": "DATA-SRC-AGENT-TASKBOOK-20260518",
+      "source_locator": "agent_taskbook.json:positioning_zh",
+      "supporting_source_ids": [],
+      "location_status": "text_only",
+      "spatial_scope_zh": "一带整体",
+      "rights_status": "cleared_for_repo_task_alignment",
+      "use_boundary_zh": "保持中文原术语；英文为工作译名",
+      "dependencies": [
+        "CH06"
+      ],
+      "next_action_zh": "在总体结构图与正文中实质回应，不仅列名"
+    },
+    {
+      "node_id": "B1-F005",
+      "node_type": "function_system",
+      "title_zh": "五大功能",
+      "statement_zh": "任务书列出AI全栈自主创新体系、世界级AI创新生态、AI+场景赋能新范式、智能化AI活力城市、AI治理全球话语权五大功能。",
+      "evidence_status": "fact",
+      "fact_scope": "cleared_task_requirement",
+      "source_id": "DATA-SRC-AGENT-TASKBOOK-20260518",
+      "source_locator": "agent_taskbook.json:five_functions_zh",
+      "supporting_source_ids": [],
+      "location_status": "text_only",
+      "spatial_scope_zh": "一带整体",
+      "rights_status": "cleared_for_repo_task_alignment",
+      "use_boundary_zh": "是功能任务而非已实现成果",
+      "dependencies": [
+        "CH07",
+        "CH08",
+        "CH11"
+      ],
+      "next_action_zh": "由相关章节补入机制、主体、指标与风险"
+    },
+    {
+      "node_id": "B1-F006",
+      "node_type": "key_area_system",
+      "title_zh": "三个重点区自北向南的文字顺序",
+      "statement_zh": "公告的重点区域范围自北向南包括众智园AI自主创新加速区、北京AI原点社区、大钟寺AI产业集聚区。",
+      "evidence_status": "fact",
+      "fact_scope": "official_text_order_not_exact_polygon",
+      "source_id": "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+      "source_locator": "project-official-announcement.md:57",
+      "supporting_source_ids": [
+        "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605"
+      ],
+      "location_status": "provisional",
+      "spatial_scope_zh": "三个重点区临时polygon及官方文字顺序",
+      "rights_status": "official_public_reference",
+      "use_boundary_zh": "不得用于精确节点、红线或工程落位",
+      "dependencies": [
+        "CH03",
+        "CH09"
+      ],
+      "next_action_zh": "待正式空间数据到位后重绘"
+    },
+    {
+      "node_id": "B1-F007",
+      "node_type": "three_areas_two_wings_roles",
+      "title_zh": "三区两翼功能分工",
+      "statement_zh": "清权任务书为AI原点社区、众智园、大钟寺、中关村科技服务翼和小月河场景赋能翼分配了差异化功能。",
+      "evidence_status": "fact",
+      "fact_scope": "cleared_task_role_definition",
+      "source_id": "DATA-SRC-AGENT-TASKBOOK-20260518",
+      "source_locator": "agent_taskbook.json:three_areas_two_wings",
+      "supporting_source_ids": [],
+      "location_status": "text_only",
+      "spatial_scope_zh": "三区两翼功能系统",
+      "rights_status": "cleared_for_repo_task_alignment",
+      "use_boundary_zh": "功能分工不等于已实现的产业或运营成果",
+      "dependencies": [
+        "CH07",
+        "CH11"
+      ],
+      "next_action_zh": "由CH07/11补机制与可实施性"
+    },
+    {
+      "node_id": "B1-F008",
+      "node_type": "culture_task_requirement",
+      "title_zh": "三种文化融合设计任务",
+      "statement_zh": "公告要求挖掘京张铁路历史文化、中关村创新文化，并与AI创新文化相融合。",
+      "evidence_status": "fact",
+      "fact_scope": "official_design_task_not_historical_proof",
+      "source_id": "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+      "source_locator": "project-official-announcement.md:79",
+      "supporting_source_ids": [
+        "DATA-SRC-AGENT-TASKBOOK-20260518"
+      ],
+      "location_status": "text_only",
+      "spatial_scope_zh": "总体设计范围及一带叙事",
+      "rights_status": "official_public_reference",
+      "use_boundary_zh": "该条证明有此设计任务，不证明任何具体历史人物、日期或事件",
+      "dependencies": [
+        "CH03",
+        "CH10"
+      ],
+      "next_action_zh": "建立史实条目并逐条双重复核"
+    },
+    {
+      "node_id": "B1-F009",
+      "node_type": "named_cultural_resources_in_task",
+      "title_zh": "公告点名的文化与蓝绿资源",
+      "statement_zh": "公告在设计任务中提及清华园火车站等文化资源、北影等艺术资源，以及清河、小月河等蓝绿空间。",
+      "evidence_status": "fact",
+      "fact_scope": "resources_named_in_official_design_task_only",
+      "source_id": "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+      "source_locator": "project-official-announcement.md:79; 85",
+      "supporting_source_ids": [],
+      "location_status": "text_only",
+      "spatial_scope_zh": "公告点名资源，未在B1绑定精确坐标",
+      "rights_status": "official_public_reference_no_asset_reuse_right_inferred",
+      "use_boundary_zh": "可作为后续资源调查索引，不支撑权属、保护等级、开放状态或图像授权结论",
+      "dependencies": [
+        "CH03",
+        "CH09"
+      ],
+      "next_action_zh": "补入官方文保/机构/地方文化来源与现场复核"
+    },
+    {
+      "node_id": "B1-F010",
+      "node_type": "agent_5_contract",
+      "title_zh": "agent.5必答契约",
+      "statement_zh": "agent.5要求形成京张铁路历史文化资源系统、中关村创新文化与AI新文化叙事、空间文化系统和表达载体、导视标识符号系统、城市气质和国际传播叙事。",
+      "evidence_status": "fact",
+      "fact_scope": "cleared_agent_requirement",
+      "source_id": "DATA-SRC-AGENT-TASKBOOK-20260518",
+      "source_locator": "agent_taskbook.json:required_agent_tasks[requirement_id=agent.5]",
+      "supporting_source_ids": [],
+      "location_status": "text_only",
+      "spatial_scope_zh": "一带文化系统",
+      "rights_status": "cleared_for_repo_task_alignment",
+      "use_boundary_zh": "不得歪曲历史、把文化作科技装饰、使用未授权材料或混淆文化标识与总Logo",
+      "dependencies": [
+        "CH10"
+      ],
+      "next_action_zh": "与正式compliance matrix和visual index建立双向链接"
+    },
+    {
+      "node_id": "B1-F011",
+      "node_type": "rights_boundary",
+      "title_zh": "未授权素材禁用",
+      "statement_zh": "任务书禁止未经授权使用字体、图片、商标、人物肖像、企业标识和论文图像。",
+      "evidence_status": "fact",
+      "fact_scope": "cleared_submission_boundary",
+      "source_id": "DATA-SRC-AGENT-TASKBOOK-20260518",
+      "source_locator": "agent-open-call-taskbook-0518.md:57-61; 81-85; 109-125",
+      "supporting_source_ids": [],
+      "location_status": "text_only",
+      "spatial_scope_zh": "全部文化和品牌输出",
+      "rights_status": "binding_no_unauthorized_assets",
+      "use_boundary_zh": "未有可复核许可记录时不得进入最终视觉资产",
+      "dependencies": [
+        "CH03",
+        "CH12"
+      ],
+      "next_action_zh": "建立asset-level权利台账"
+    },
+    {
+      "node_id": "B1-F012",
+      "node_type": "spatial_uncertainty",
+      "title_zh": "当前几何为临时粗略范围",
+      "statement_zh": "资料包的三层范围和三个重点区polygon标注为provisional，official_boundary=false。",
+      "evidence_status": "fact",
+      "fact_scope": "repository_geometry_metadata",
+      "source_id": "DATA-SRC-PROVISIONAL-BOUNDARIES-20260605",
+      "source_locator": "provisional_boundaries.geojson:all features",
+      "supporting_source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509"
+      ],
+      "location_status": "provisional",
+      "spatial_scope_zh": "三层范围与三重点区临时图形",
+      "rights_status": "repository_provisional_data",
+      "use_boundary_zh": "只用于临时可视化和概念讨论",
+      "dependencies": [
+        "CH03",
+        "CH09"
+      ],
+      "next_action_zh": "正式geometry到位后整体重绘不局部手工修图"
+    },
+    {
+      "node_id": "B1-F013",
+      "node_type": "terminology_conflict",
+      "title_zh": "大钟寺“集聚/聚集”异文",
+      "statement_zh": "公告范围段使用“大钟寺AI产业集聚区”，同一公告后文和部分结构化文件出现“产业聚集区”。",
+      "evidence_status": "fact",
+      "fact_scope": "source_text_variant",
+      "source_id": "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+      "source_locator": "project-official-announcement.md:57 and 89",
+      "supporting_source_ids": [
+        "DATA-SRC-AGENT-TASKBOOK-20260518"
+      ],
+      "location_status": "provisional",
+      "spatial_scope_zh": "大钟寺重点区名称",
+      "rights_status": "official_public_reference",
+      "use_boundary_zh": "B1暂按范围段与任务书的“集聚区”统一，不声称官方已完成术语纠错",
+      "dependencies": [
+        "CH03",
+        "Root"
+      ],
+      "next_action_zh": "由主编向组织方/最新文件确认正式写法"
+    },
+    {
+      "node_id": "B1-H001",
+      "node_type": "cultural_mainline",
+      "title_zh": "自主建造—自主创新—开源共创",
+      "statement_zh": "将三个历史/当代层组织成一条可追溯、可比较、可纠错的文化主线。",
+      "evidence_status": "hypothesis",
+      "fact_scope": "not_applicable",
+      "source_id": "LOCAL-SRC-RESEARCH-OUTLINE-V2",
+      "source_locator": "project outline:212 and 340",
+      "supporting_source_ids": [
+        "DATA-SRC-AGENT-TASKBOOK-20260518",
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509"
+      ],
+      "location_status": "text_only",
+      "spatial_scope_zh": "一带文化叙事",
+      "rights_status": "project_concept_pending_evidence_review",
+      "use_boundary_zh": "叙事架构不是历史结论；不得在无史料时补写人物、年份或事件",
+      "dependencies": [
+        "CH02",
+        "CH03",
+        "CH10"
+      ],
+      "next_action_zh": "建立史实条目、反证与地方专家审读"
+    },
+    {
+      "node_id": "B1-H002",
+      "node_type": "overall_concept_candidate",
+      "title_zh": "自主·共创之路",
+      "title_en": "The Line of Ingenuity and Open Co-Creation",
+      "statement_zh": "作为B1推荐的总体概念工作名，用“来源—版本—贡献—纠错”统筹品牌、文化、空间与运营。",
+      "evidence_status": "hypothesis",
+      "fact_scope": "not_applicable",
+      "source_id": "LOCAL-SRC-RESEARCH-OUTLINE-V2",
+      "source_locator": "project outline:177-184; 210-217",
+      "supporting_source_ids": [
+        "DATA-SRC-AGENT-TASKBOOK-20260518"
+      ],
+      "location_status": "text_only",
+      "spatial_scope_zh": "一带概念层",
+      "rights_status": "working_name_pending_trademark_name_domain_language_checks",
+      "use_boundary_zh": "不得取代固定项目研究总名称，不得对外声称已批准",
+      "dependencies": [
+        "CH03",
+        "CH05",
+        "CH10"
+      ],
+      "next_action_zh": "做史实、公众理解、国际语义和名称冲突测试"
+    },
+    {
+      "node_id": "B1-H003",
+      "node_type": "generative_visual_system",
+      "title_zh": "证据之线生成式VI",
+      "statement_zh": "用一条开放的不变线作总识别核，地点、时间、活动和经同意的贡献作可追溯变量层。",
+      "evidence_status": "hypothesis",
+      "fact_scope": "not_applicable",
+      "source_id": "LOCAL-SRC-RESEARCH-OUTLINE-V2",
+      "source_locator": "project outline:181-183",
+      "supporting_source_ids": [
+        "DATA-SRC-AGENT-TASKBOOK-20260518"
+      ],
+      "location_status": "text_only",
+      "spatial_scope_zh": "品牌系统和应用层",
+      "rights_status": "concept_only_no_final_assets",
+      "use_boundary_zh": "未过字体、图形、商标、无障碍和公众误读审查前不生产最终Logo",
+      "dependencies": [
+        "CH05",
+        "CH11",
+        "CH12"
+      ],
+      "next_action_zh": "只用自制纯几何形成低保真方向测试"
+    },
+    {
+      "node_id": "B1-H004",
+      "node_type": "area_cultural_role",
+      "title_zh": "AI原点社区：问题与方法起点",
+      "statement_zh": "概念建议在AI原点社区以“原始问题卡”和“方法开源桌”表达问题、方法和可公开贡献的起点。",
+      "evidence_status": "hypothesis",
+      "fact_scope": "not_applicable",
+      "source_id": "DATA-SRC-AGENT-TASKBOOK-20260518",
+      "source_locator": "agent_taskbook.json:three_areas_two_wings[beijing_ai_origin_community]",
+      "supporting_source_ids": [
+        "LOCAL-SRC-RESEARCH-OUTLINE-V2"
+      ],
+      "location_status": "provisional",
+      "spatial_scope_zh": "北京AI原点社区空间类型，暂关联PROV-KEY-002",
+      "rights_status": "concept_only",
+      "use_boundary_zh": "不代表已确定设施、已获场地或已批准运营",
+      "dependencies": [
+        "CH07",
+        "CH09",
+        "CH11"
+      ],
+      "next_action_zh": "验证真实使用者、空间和运营owner"
+    },
+    {
+      "node_id": "B1-H005",
+      "node_type": "area_cultural_role",
+      "title_zh": "众智园：验证与修正文化",
+      "statement_zh": "概念建议用“验证日志窗”和“失败与修正档案”呈现创新的证据、限制、风险和退出条件。",
+      "evidence_status": "hypothesis",
+      "fact_scope": "not_applicable",
+      "source_id": "DATA-SRC-AGENT-TASKBOOK-20260518",
+      "source_locator": "agent_taskbook.json:three_areas_two_wings[zhongzhiyuan_ai_acceleration_area]",
+      "supporting_source_ids": [
+        "LOCAL-SRC-RESEARCH-OUTLINE-V2"
+      ],
+      "location_status": "provisional",
+      "spatial_scope_zh": "众智园AI自主创新加速区空间类型，暂关联PROV-KEY-001",
+      "rights_status": "concept_only",
+      "use_boundary_zh": "不声称任何项目已完成安全验证或治理审查",
+      "dependencies": [
+        "CH07",
+        "CH09",
+        "CH11"
+      ],
+      "next_action_zh": "由CH07提供可展示且可公开的真实验证内容"
+    },
+    {
+      "node_id": "B1-H006",
+      "node_type": "area_cultural_role",
+      "title_zh": "大钟寺：公众体验与可拒绝界面",
+      "statement_zh": "概念建议以“一分钟体验窗”和“人工替代按钮”将经验证的AI成果转译为可理解、可试用、可拒绝的日常体验。",
+      "evidence_status": "hypothesis",
+      "fact_scope": "not_applicable",
+      "source_id": "DATA-SRC-AGENT-TASKBOOK-20260518",
+      "source_locator": "agent_taskbook.json:three_areas_two_wings[dazhongsi_ai_industry_cluster]",
+      "supporting_source_ids": [
+        "LOCAL-SRC-RESEARCH-OUTLINE-V2"
+      ],
+      "location_status": "provisional",
+      "spatial_scope_zh": "大钟寺AI产业集聚区空间类型，暂关联PROV-KEY-003",
+      "rights_status": "concept_only",
+      "use_boundary_zh": "不声称任何AI服务已获批准或已全面可用",
+      "dependencies": [
+        "CH08",
+        "CH09",
+        "CH11"
+      ],
+      "next_action_zh": "使用CH08场景卡的人工通道和停止条件验证"
+    },
+    {
+      "node_id": "B1-H007",
+      "node_type": "wing_cultural_role",
+      "title_zh": "中关村科技服务翼：权益与多语转译",
+      "statement_zh": "概念建议以“权益与许可门诊”和“多语叙事审稿桌”承担开源权益、文化语境与国际读者误读复核。",
+      "evidence_status": "hypothesis",
+      "fact_scope": "not_applicable",
+      "source_id": "DATA-SRC-AGENT-TASKBOOK-20260518",
+      "source_locator": "agent_taskbook.json:three_areas_two_wings[zhongguancun_technology_service_wing]",
+      "supporting_source_ids": [
+        "LOCAL-SRC-RESEARCH-OUTLINE-V2"
+      ],
+      "location_status": "text_only",
+      "spatial_scope_zh": "中关村科技服务翼功能类型，尚无精确几何",
+      "rights_status": "concept_only",
+      "use_boundary_zh": "不声称已存在指定法务、版权或翻译服务机构",
+      "dependencies": [
+        "CH07",
+        "CH10",
+        "CH11"
+      ],
+      "next_action_zh": "明确owner、复核标准、许可模板和服务边界"
+    },
+    {
+      "node_id": "B1-H008",
+      "node_type": "wing_cultural_role",
+      "title_zh": "小月河场景赋能翼：社区讲述与非数字纠错",
+      "statement_zh": "概念建议以“社区口述征集架”和“不扫码纠错信箱”让居民在明示同意、可匿名和可撤回条件下补充地方记忆。",
+      "evidence_status": "hypothesis",
+      "fact_scope": "not_applicable",
+      "source_id": "DATA-SRC-AGENT-TASKBOOK-20260518",
+      "source_locator": "agent_taskbook.json:three_areas_two_wings[xiaoyuehe_scenario_empowerment_wing]",
+      "supporting_source_ids": [
+        "LOCAL-SRC-RESEARCH-OUTLINE-V2"
+      ],
+      "location_status": "text_only",
+      "spatial_scope_zh": "小月河场景赋能翼功能类型，尚无精确几何",
+      "rights_status": "concept_only_pending_consent_privacy_retention_rules",
+      "use_boundary_zh": "不在v0.1收集真实声音、肖像、姓名、账号或精确位置",
+      "dependencies": [
+        "CH08",
+        "CH10",
+        "CH11"
+      ],
+      "next_action_zh": "建立知情同意、保留期、撤回、匿名与人工受理规则"
+    },
+    {
+      "node_id": "B1-H009",
+      "node_type": "route_prototype",
+      "title_zh": "R1一眼看懂京张",
+      "statement_zh": "约30分钟的首次访问路线原型，以证据开端、创新方法、公众共创和纠错出口四类节点说明三种文化的关系。",
+      "evidence_status": "hypothesis",
+      "fact_scope": "not_applicable",
+      "source_id": "LOCAL-SRC-RESEARCH-OUTLINE-V2",
+      "source_locator": "project outline:214",
+      "supporting_source_ids": [
+        "DATA-SRC-AGENT-TASKBOOK-20260518"
+      ],
+      "location_status": "text_only",
+      "spatial_scope_zh": "待CH09实地网络与节点核验后绑定",
+      "rights_status": "concept_only",
+      "use_boundary_zh": "30分钟是体验目标而非实测承诺",
+      "dependencies": [
+        "CH03",
+        "CH08",
+        "CH09"
+      ],
+      "next_action_zh": "复算步行、停留、无障碍和开放时间"
+    },
+    {
+      "node_id": "B1-H010",
+      "node_type": "route_prototype",
+      "title_zh": "R2三种文化深读",
+      "statement_zh": "约90分钟的主题路线原型，比较铁路历史、中关村创新方法和AI开源治理的连续与不可简单类比之处。",
+      "evidence_status": "hypothesis",
+      "fact_scope": "not_applicable",
+      "source_id": "LOCAL-SRC-RESEARCH-OUTLINE-V2",
+      "source_locator": "project outline:212-214",
+      "supporting_source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509"
+      ],
+      "location_status": "text_only",
+      "spatial_scope_zh": "待史实与步行网络核验的一带文化路线",
+      "rights_status": "concept_only",
+      "use_boundary_zh": "90分钟是信息密度目标，不是旅行时间保证",
+      "dependencies": [
+        "CH03",
+        "CH09",
+        "CH10"
+      ],
+      "next_action_zh": "为每个节点建立source_id、争议和权益状态"
+    },
+    {
+      "node_id": "B1-H011",
+      "node_type": "route_prototype",
+      "title_zh": "R3半日共创路",
+      "statement_zh": "约3至4小时的开发者、高校、创业者与城市运营者共创路线，串联问题发布、权益复核、小规模试验、公众反馈与知识归档。",
+      "evidence_status": "hypothesis",
+      "fact_scope": "not_applicable",
+      "source_id": "LOCAL-SRC-RESEARCH-OUTLINE-V2",
+      "source_locator": "project outline:214; 224-225",
+      "supporting_source_ids": [
+        "DATA-SRC-AGENT-TASKBOOK-20260518"
+      ],
+      "location_status": "provisional",
+      "spatial_scope_zh": "三区两翼功能串联，尚无正式线路",
+      "rights_status": "concept_only",
+      "use_boundary_zh": "不声称已有活动主体、已批场地或已开放测试",
+      "dependencies": [
+        "CH07",
+        "CH08",
+        "CH09",
+        "CH11"
+      ],
+      "next_action_zh": "明确主体、场地、审核、资源、指标与退出"
+    },
+    {
+      "node_id": "B1-H012",
+      "node_type": "route_prototype",
+      "title_zh": "R4无障碍低数字路线",
+      "statement_zh": "为老年人、残障人士、儿童陪同者与非智能手机用户提供大字文本、触觉编码、人工讲解与纸质纠错的分段路线。",
+      "evidence_status": "hypothesis",
+      "fact_scope": "not_applicable",
+      "source_id": "LOCAL-SRC-RESEARCH-OUTLINE-V2",
+      "source_locator": "project outline:208; 216; 361",
+      "supporting_source_ids": [
+        "DATA-SRC-AGENT-TASKBOOK-20260518"
+      ],
+      "location_status": "text_only",
+      "spatial_scope_zh": "待无障碍现状核验的空间类型",
+      "rights_status": "concept_only",
+      "use_boundary_zh": "不声称现有设施已符合无障碍要求",
+      "dependencies": [
+        "CH08",
+        "CH09"
+      ],
+      "next_action_zh": "与真实用户和无障碍专业人员共同测试"
+    },
+    {
+      "node_id": "B1-H013",
+      "node_type": "route_prototype",
+      "title_zh": "R5国际访客线",
+      "statement_zh": "从中文原名和北京海淀的地方语境出发，再转向创新方法、开源权益、AI治理与参与邀请。",
+      "evidence_status": "hypothesis",
+      "fact_scope": "not_applicable",
+      "source_id": "LOCAL-SRC-RESEARCH-OUTLINE-V2",
+      "source_locator": "project outline:214; 217",
+      "supporting_source_ids": [
+        "DATA-SRC-AGENT-TASKBOOK-20260518"
+      ],
+      "location_status": "text_only",
+      "spatial_scope_zh": "待绑定的国际访客文化路线",
+      "rights_status": "concept_only_working_translation",
+      "use_boundary_zh": "不使用未复核翻译，不将本地历史简化为通用科技园区故事",
+      "dependencies": [
+        "CH03",
+        "CH09",
+        "CH10"
+      ],
+      "next_action_zh": "完成中英人工审读和国际用户误读测试"
+    },
+    {
+      "node_id": "B1-H014",
+      "node_type": "narrative_spatial_node",
+      "title_zh": "证据轨枕",
+      "title_en": "Evidence Sleeper",
+      "statement_zh": "一个同时显示中英文、事实/假设、source_id、版本、不确定性与纠错方式的导览节点原型。",
+      "evidence_status": "hypothesis",
+      "fact_scope": "not_applicable",
+      "source_id": "LOCAL-SRC-RESEARCH-OUTLINE-V2",
+      "source_locator": "project outline:213-216",
+      "supporting_source_ids": [
+        "DATA-SRC-AGENT-TASKBOOK-20260518"
+      ],
+      "location_status": "text_only",
+      "spatial_scope_zh": "京张遗址公园及周边文化路线上的可达空间类型，尚未落点",
+      "rights_status": "concept_only_no_railway_emblem_or_copyrighted_image",
+      "use_boundary_zh": "“轨枕”是功能隐喻，不表示可以改造真实铁路遗存",
+      "dependencies": [
+        "CH03",
+        "CH09",
+        "CH10"
+      ],
+      "next_action_zh": "验证文保、安全、材料、无障碍和线下可读性"
+    },
+    {
+      "node_id": "B1-H015",
+      "node_type": "narrative_spatial_node",
+      "title_zh": "共创签",
+      "title_en": "Contribution Tag",
+      "statement_zh": "一个按问题、方法、数据、代码、翻译、纠错和维护分类的贡献记录节点，不以AI热度或社交影响力自动排名。",
+      "evidence_status": "hypothesis",
+      "fact_scope": "not_applicable",
+      "source_id": "LOCAL-SRC-RESEARCH-OUTLINE-V2",
+      "source_locator": "project outline:205; 216; 224-225",
+      "supporting_source_ids": [
+        "DATA-SRC-AGENT-TASKBOOK-20260518"
+      ],
+      "location_status": "text_only",
+      "spatial_scope_zh": "开源成果展示、公共活动或数字导览界面的节点类型",
+      "rights_status": "concept_only_pending_consent_license_and_withdrawal_rules",
+      "use_boundary_zh": "不使用未经同意的实名、肖像、账号或贡献内容",
+      "dependencies": [
+        "CH07",
+        "CH09",
+        "CH11"
+      ],
+      "next_action_zh": "明确贡献资格、许可、审核、撤回、争议和反游戏化机制"
+    },
+    {
+      "node_id": "B1-H016",
+      "node_type": "narrative_spatial_node",
+      "title_zh": "纠错台",
+      "title_en": "Correction Desk",
+      "statement_zh": "数字与线下双通道受理公众对文化条目的质疑、补充和来源建议，AI只做聚类与对照，人类主编定案并保留版本。",
+      "evidence_status": "hypothesis",
+      "fact_scope": "not_applicable",
+      "source_id": "LOCAL-SRC-RESEARCH-OUTLINE-V2",
+      "source_locator": "project outline:216; 356-361",
+      "supporting_source_ids": [
+        "DATA-SRC-AGENT-TASKBOOK-20260518"
+      ],
+      "location_status": "text_only",
+      "spatial_scope_zh": "导览终端、人工服务点或纸质受理点的节点类型",
+      "rights_status": "concept_only_pending_privacy_retention_editorial_governance",
+      "use_boundary_zh": "不自动修改史实，默认匿名，只收集最小必要信息",
+      "dependencies": [
+        "CH02",
+        "CH04",
+        "CH10",
+        "CH11"
+      ],
+      "next_action_zh": "明确主编、复核人、响应状态、版本发布与申诉机制"
+    },
+    {
+      "node_id": "B1-H017",
+      "node_type": "narrative_spatial_node",
+      "title_zh": "双语故事窗",
+      "title_en": "Bilingual Story Window",
+      "statement_zh": "一个保留中文原名、地方语境、来源和异议，同时为首次访客、研究者和简明阅读者提供不同信息密度的文化节点。",
+      "evidence_status": "hypothesis",
+      "fact_scope": "not_applicable",
+      "source_id": "LOCAL-SRC-RESEARCH-OUTLINE-V2",
+      "source_locator": "project outline:214-217",
+      "supporting_source_ids": [
+        "DATA-SRC-AGENT-TASKBOOK-20260518"
+      ],
+      "location_status": "text_only",
+      "spatial_scope_zh": "导览入口、文化节点、网页或纸质路线卡的表达类型",
+      "rights_status": "concept_only_working_translation",
+      "use_boundary_zh": "不使用未授权图像和未复核的机器翻译作定稿",
+      "dependencies": [
+        "CH03",
+        "CH10",
+        "CH12"
+      ],
+      "next_action_zh": "建立中英审读、简明中文、语音、字幕与替代文本规则"
+    },
+    {
+      "node_id": "B1-H018",
+      "node_type": "ai_guide_service",
+      "title_zh": "有来源的多角色AI导览",
+      "statement_zh": "AI导览按语言、角色、时长与无障碍需求组织已审文本，每次回答显示事实/假设、source_id、版本、不确定性和人工求助/纠错入口。",
+      "evidence_status": "hypothesis",
+      "fact_scope": "not_applicable",
+      "source_id": "LOCAL-SRC-RESEARCH-OUTLINE-V2",
+      "source_locator": "project outline:215-216; 356-361",
+      "supporting_source_ids": [
+        "DATA-SRC-AGENT-TASKBOOK-20260518"
+      ],
+      "location_status": "text_only",
+      "spatial_scope_zh": "离线网页、导览终端、纸质与人工服务的组合",
+      "rights_status": "concept_only_pending_model_data_and_editorial_governance",
+      "use_boundary_zh": "不自由生成未审历史，不保存非必要个人轨迹，不取代人工讲解与纠错",
+      "dependencies": [
+        "CH02",
+        "CH03",
+        "CH04",
+        "CH08",
+        "CH11"
+      ],
+      "next_action_zh": "用虚拟事实集做引用、幻觉、争议、人工接管与退出测试"
+    },
+    {
+      "node_id": "B1-H019",
+      "node_type": "international_working_copy",
+      "title_zh": "国际传播核心工作文案",
+      "title_en": "A living civic line where railway memory, Zhongguancun innovation and open AI co-creation meet.",
+      "statement_zh": "英文工作文案以地方历史、创新方法和公共共创为顺序，不以通用未来城口号取代北京海淀的具体语境。",
+      "evidence_status": "hypothesis",
+      "fact_scope": "not_applicable",
+      "source_id": "LOCAL-SRC-RESEARCH-OUTLINE-V2",
+      "source_locator": "project outline:217",
+      "supporting_source_ids": [
+        "DATA-SRC-OFFICIAL-ANNOUNCEMENT-20260509",
+        "DATA-SRC-AGENT-TASKBOOK-20260518"
+      ],
+      "location_status": "text_only",
+      "spatial_scope_zh": "一带国际传播文本",
+      "rights_status": "original_working_copy_pending_language_trademark_advertising_review",
+      "use_boundary_zh": "非官方英文、非已批准口号、非已发布品牌文案",
+      "dependencies": [
+        "CH03",
+        "CH10",
+        "CH11"
+      ],
+      "next_action_zh": "进行历史、文化语境、语言、广告与国际用户误读复核"
+    },
+    {
+      "node_id": "B1-H020",
+      "node_type": "identity_architecture",
+      "title_zh": "总Logo与文化导视的两层识别架构",
+      "statement_zh": "一带总Logo负责项目识别，文化导视以路线码、故事编号、证据状态和版本负责信息导航，二者有亲属规则但不共用主标识。",
+      "evidence_status": "hypothesis",
+      "fact_scope": "not_applicable",
+      "source_id": "LOCAL-SRC-RESEARCH-OUTLINE-V2",
+      "source_locator": "project outline:181-182; 215",
+      "supporting_source_ids": [
+        "DATA-SRC-AGENT-TASKBOOK-20260518"
+      ],
+      "location_status": "text_only",
+      "spatial_scope_zh": "总品牌和文化导视应用层",
+      "rights_status": "concept_only_no_final_mark",
+      "use_boundary_zh": "不得把文化路线标识冒充总Logo，不得使用未授权字体、徽记或图像",
+      "dependencies": [
+        "CH06",
+        "CH10",
+        "CH12"
+      ],
+      "next_action_zh": "用并置测试验证项目识别与文化导航不混淆"
+    }
+  ]
+}
