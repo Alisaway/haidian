@@ -665,13 +665,13 @@
         "independent_file_audits": 0
       },
       "review_handoff_index": {
-        "contract_id": "JZ-REVIEW-HANDOFF-R95.0",
-        "target_index_id": "JZ-REVIEW-HANDOFF-R95.0",
-        "target_publication_revision": "95.0",
+        "contract_id": "JZ-REVIEW-HANDOFF-R96.0",
+        "target_index_id": "JZ-REVIEW-HANDOFF-R96.0",
+        "target_publication_revision": "96.0",
         "path": "visual/assets/review-handoff-index.json",
         "as_of": "2026-08-30",
         "purpose": "Package-level review navigation and per-file status registry; navigation only, creates no evidence and changes no maturity or rights state.",
-        "predecessor_review_binding": "PR #4266 / 7ea7258264987fde5ca5d15374f55fa16a825604 / 96/100 / no blocking modification / merged to canonical main",
+        "predecessor_review_binding": "PR #4269 / 3c102dafc50eaa804441fa9928aded890689d58a / 96/100 / no blocking modification / merged to canonical main",
         "mirror_consistency_rule": "contract_id and target_index_id must equal review-handoff-index.json index_id byte-for-byte; any mismatch is stale and fails the contributor-side mirror audit.",
         "inventory_note": "The index registry covers all 162 manifest path entries; the frozen geometry/metrics hashes and 12/8/3/36 counts recorded inside it must stay equal to this package_validation_contract."
       },
@@ -902,7 +902,9 @@
       "evidence_integrity_r33": {
         "contract_id": "JZ-EVIDENCE-INTEGRITY-R33",
         "executed_at": "2026-08-15",
-        "method": "The review handoff index generator now enforces, on every regeneration, five machine-checkable invariants: every [source:…]/[assumption:…]/[metric:…] marker resolves to a record in sources.json/assumptions.json/metrics.json; every [data:…] marker resolves to a package file on disk (fragment ignored); zh/en marker value multisets are identical per kind; zh/en heading counts are equal; every reading-route entry-point anchor exists in both visual pages. Any violation fails regeneration.",
+        "record_semantics": "historical_execution_record",
+        "current_status": "superseded_by_focused_index_refactor",
+        "method": "At R33, the review handoff index generator enforced five machine-checkable invariants during that regeneration: every [source:…]/[assumption:…]/[metric:…] marker resolved to a record in sources.json/assumptions.json/metrics.json; every [data:…] marker resolved to a package file on disk (fragment ignored); zh/en marker value multisets were identical per kind; zh/en heading counts were equal; every reading-route entry-point anchor existed in both visual pages. This method statement is historical and is not a claim about the current generator or exact head.",
         "baseline_findings": {
           "source_markers_resolved": "50/50 per language",
           "assumption_markers_resolved": "23/23 per language",
@@ -915,7 +917,8 @@
           "ledger_parent_refs": "all resolve (bare names are ledger-directory-relative, fragments are JSON pointers)",
           "source_rights_evidence_mapping": "50/50 both directions"
         },
-        "result": "review-handoff-index.json now carries an evidence_integrity block recording these checks with generator_enforced=true; regeneration passed with 0 violations",
+        "result": "At R33, review-handoff-index.json carried an evidence_integrity block recording these checks with generator_enforced=true, and that regeneration passed with 0 violations. A later focused-index refactor removed the block; these counts are historical and do not describe the current exact head.",
+        "current_route": "visual/assets/review-handoff-index.json#/integrity_claim_status states the current fail-closed truth: no generator-enforced embedded integrity result is present, and separately executed checks must bind the final exact head.",
         "certification_note": "Structural machine checks only; they do not certify translation semantics, field evidence or rights clearance."
       },
       "html_publication_metadata_r33": {
