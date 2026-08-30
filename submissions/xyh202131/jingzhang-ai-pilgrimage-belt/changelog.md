@@ -1,5 +1,19 @@
 # 方案迭代记录 / Changelog
 
+## v100.0 - 2026-08-30
+
+**前序评审出处闭合 / Predecessor-review Provenance Closure**
+
+- 已有能力：R99 已把证据内容日期与导航绑定日期解耦；PR #4278 在 exact head `eb1ff0d05a5be8e81fd2554342ea9ebba69b57db` 完成 96/100、无阻断项评审，并以 merge SHA `6d4c930f8302c433f961081fcda741a1bf00ac30` 进入实时 canonical main。
+- 真实缺口：修复前，当前交接索引及其包级镜像仍把 PR #4272 / R96 写成“前序评审”，落后于已合并的 R97—R99；自动 gate 不比较前序评审出处，审阅者可能把三轮前的 exact head 误读为最近评审依据。
+- 必须冻结：冻结“双轨京张 / Twin-Track Jing-Zhang”、三种不可互换原型、JZ-AIOS、G0—G3、四轴、三载体、证据门、权利边界及 12/8/3/36；不改 proposal、report/visual 页面、图件、媒体、四份 PDF、geometry、metrics、来源判断、现实状态或 0/8 人工双语签署。
+- 本轮实施：把交接索引、包级镜像和三区矩阵导航回链统一绑定到 `JZ-REVIEW-HANDOFF-R100.0`，并把前序评审精确更新为 PR #4278 的 reviewed head 与 canonical merge SHA。该记录只证明前序版本的仓库评审，不预填新 exact head 的外部结论，也不建立矩阵证据、时效性、成熟度、权利、现场事实或批准。官方几何、批准、现场基线与结果、现实责任、预算、恢复时间、公众反馈、独立法律/商标审查和人工双语签署继续为 unknown、0、未提供或 NO-GO。
+
+- Existing capability: R99 separated the evidence-content date from the navigation-binding date. PR #4278 completed a 96/100 review with no blocking modification on exact head `eb1ff0d05a5be8e81fd2554342ea9ebba69b57db` and entered live canonical main as merge SHA `6d4c930f8302c433f961081fcda741a1bf00ac30`.
+- Real gap: before repair, the current handoff index and its package mirror still named PR #4272 / R96 as the predecessor review, lagging the merged R97-R99 sequence. Automated gates do not compare predecessor-review provenance, so a reviewer could mistake a three-round-old exact head for the latest reviewed basis.
+- Frozen boundary: Twin-Track Jing-Zhang, the three non-interchangeable prototypes, JZ-AIOS, G0-G3, four axes, three carriers, evidence gates, rights boundaries and 12/8/3/36 remain frozen. Proposals, report/visual pages, figures, media, all four PDFs, geometry, metrics, source judgements, real-world status and the unsigned 0/8 human bilingual review are unchanged.
+- Implemented this round: aligned the handoff index, package mirror and key-area matrix navigation backlink on `JZ-REVIEW-HANDOFF-R100.0`, and updated predecessor-review provenance to PR #4278's reviewed head and canonical merge SHA. This records only the predecessor package's repository review; it does not prefill an external verdict for the new exact head or establish matrix evidence, freshness, maturity, rights, field truth or approval. Official geometry, approvals, field baselines and outcomes, real accountability, budgets, recovery time, public feedback, independent legal/trademark review and human bilingual sign-off remain unknown, zero, not provided or NO-GO.
+
 ## v99.0 - 2026-08-30
 
 **证据日期与导航日期解耦 / Evidence-date and Navigation-date Separation**
