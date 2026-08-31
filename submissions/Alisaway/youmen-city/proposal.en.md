@@ -4,10 +4,10 @@ author_github: Alisaway
 language: en
 proposal_format_version: '2'
 bilingual_contract_version: '1'
-translation_of: proposal.md
 translation_file: proposal.md
+translation_of: proposal.md
 license: COMMUNITY-DISPLAY-ONLY
-summary: Two design probes—15:30 school-to-community handoff and 21:40 outage journey home—test ordinary access, named human responsibility, the non-AI baseline and closable recovery before the Phase 1 evidence package enters the wider city system.
+summary: An urban design proposal for the Century-old Jing-Zhang AI Innovation Belt. Let human life remain continuous, and let personal AI move with the person across the city; public facilities are called by task and permission, and can be maintained, returned, and exited.
 tracks:
 - ai-traffic-walkability
 - ai-public-services
@@ -18,34 +18,238 @@ scenarios:
 - enterprise-service-copilot
 - public-safety-operations-review
 - ai-cultural-guide
-iteration: v0.4
+iteration: v0.5
 ---
+
 # A City with Doors
 
-<!-- N7-1e R02 first-read-design-probes:start -->
-## 15:30–21:40 | Two design probes in one ordinary household day
+## 01｜Project Thesis: Personal AI Moves with the Person Across the City, and Public Capabilities Open by Task
 
-**15:30, after-school probe.** The family member expected to collect the child cannot arrive. The child stays at a safe, staffed school-side waiting point while the guardian opens one temporary handoff. The spatial problem is not whether a phone can send an alert. It is who remains responsible at the school gate, safe waiting point, crossing and community privacy threshold, and when responsibility may pass to another named human. `SCN-AIO-01`, through `P04 / P05 / P10`, keeps named school staff responsible. If identity is unclear, the child refuses, or the receiver does not respond, no handoff occurs; silence is not consent. Responsibility moves only after the named receiving adult explicitly accepts and completes the physical handoff. An Agent cannot authorize release, create a right of passage or make responsibility jump ahead on a screen. Paper lists, an ordinary telephone, safe waiting, physical wayfinding, a continuous walking surface and human escort must work without AI.
+A City with Doors is an urban design proposal for the **Century-old Jing-Zhang AI Innovation Belt**. It is not about “adding more smart devices to the city,” but about a more specific question:
 
-**21:40, outage probe.** The same household still needs a way home through public and shared space. `SCN-AIO-02`, through `P06 / P10`, makes screens recede. Ordinary and emergency lighting, a fixed telephone, paper contacts, mechanical doors, physical signs and named human help must be able to close the journey. Household, property and community actors keep their own duties; responsibility does not move when no one has explicitly received it. The home endpoint is not published, no continuous household trajectory is backfilled after the outage, and restored power or connectivity does not reactivate withdrawn temporary permission.
+> **When personal AI accompanies a person into real urban systems such as schools, communities, hotels, meetings, experimental grounds, and public transport, what may it call upon, under what authority, who is responsible for maintaining those facilities, when must borrowed facilities be returned, and how does the personal AI exit the relevant system when the task ends?**
 
-**Evidence we do not yet have.** `15:30` and `21:40` are registered design probes, not verified operating times. In particular, 15:30 is only a registered design probe, not a typical kindergarten dismissal time for Beijing or China as a whole; before construction-stage work begins, the target kindergarten's current timetable, staggered class-release arrangement, extended-hours service and pickup/late-stay responsibility table must be obtained. Real school and community entrances, crossing location and clear width, continuous accessible routes, ownership and road/property/municipal boundaries remain unverified. So do the actual availability of fixed telephones, lighting, mechanical bypass, duty rosters, institutional agreements and comparable drill records. The proposal therefore releases no existing width, response time, success rate, facility-availability or operating-readiness claim. Official geometry, FAR, building height, building density, statutory green ratio and setbacks remain `unknown`.
+The proposal’s overall thesis is:
 
-**The first work package.** Phase 1 is an evidence-building package for `P04 / P05 / P06 / P10`, not a construction or operating promise. It conducts joint walkthroughs of the school–crossing–community chain and the public/shared outage route; records ordinary access, conventional utilities, named responsibility, maintenance, clearance, egress and manual bypass segment by segment; runs non-AI blind drills with paper lists, ordinary telephones, mechanical doors and ordinary/emergency lighting; and begins reversible-interface design only after owners and responsible parties confirm the conditions. Unclosed dimensions remain `concept target` or `unknown` and cannot enter construction, approval or performance commitments.
+> **Let human life remain continuous, and let personal AI move with the person across the city; public facilities are called by task and permission, and can be maintained, returned, and exited.**
 
-**Only then does the wider city system begin.** Once ordinary infrastructure, named responsibility, existing and statutory inputs, maintenance, recovery and exit conditions are closed, these two daily episodes can open into the wider city system across the 43.6 km² coordination area, the 11.4 km² overall design area, the three key areas and five urban networks. The wider system still exchanges only the bounded task, result, receipt and necessary fault summary. `P10` remains a distributed staffed service-station network—not a central brain and not a receiver of a whole person or household.
+What remains continuous is the person’s personal AI and the task being carried out. What the city opens temporarily are passage, wayfinding, compute, energy, robots, Docks, handoff lockers, and public-service interfaces. Personal memory and root privileges remain on the person’s side; the public side receives only the information, permissions, and receipts necessary to complete the current task.
 
-<!-- N7-1e R02 first-read-design-probes:end -->
+![Figure F01｜Conceptual overview of A City with Doors: personal AI moves with the person along the Jing-Zhang Public Spine](assets/figures/youmen-p01-hero.en.png)
 
-## Overall Proposition
+*Figure F01｜Design judgment: one Jing-Zhang Public Spine connects three urban roles—“Home, Window, and Workshop.” Personal AI maintains task continuity, while public bodies such as R6 and Docks open only by task. Read the three key spaces and the public spine between them first, then the two sets of lines for personal AI and public facilities. The figure demonstrates the spatial relationships of the overall thesis; it does not represent statutory boundaries, actual distances, precise siting, or a construction scheme. Source: existing presentation page P01.*
 
-The city accepts one bounded task, not a complete person. Continuity of human life is the sole upper-level objective: private-side capability may persist, but public permission, space, device access and responsibility reset in each real setting; distributed staffed nodes accept limited tasks while non-AI access, manual bypass, maintenance, recovery and full exit remain available. [source:AGENT-TASKBOOK] [standard:PROJECT-AGENT-OPEN-CALL-TASKBOOK]
+## 02｜The Real City: Three Scales and the Current Boundary Status
+
+This proposal works at three scales that must neither be conflated nor substituted for one another:
+
+| Scale | Area | Question Answered at This Scale |
+| --- | ---: | --- |
+| Strategic coordination study area | **43.6 km²** | How the Century-old Jing-Zhang AI Innovation Belt can coordinate industry, culture, and the future city |
+| Overall urban design area | **11.4 km²** | How ordinary urban fabric, the Jing-Zhang Public Spine, and the three key spaces connect |
+| Three key detailed-design areas | **approx. 368.4 ha** | How the AI Origin Community, Dazhongsi, and Zhongzhiyuan translate the overall thesis into specific spaces and tasks |
+
+> **Boundary Status Note**  
+> This proposal uses a conceptual / provisional spatial demonstrator. It does not claim statutory planning boundaries, ownership boundaries, construction drawings, or exact areas; the whole package will be rebound, redrawn, and recalculated once official geometry is available.
+
+This does not mean that design cannot proceed at the current stage. At this stage, the conceptual key-area spatial demonstrator, facility systems, task paths, permission boundaries, and chains of responsibility can all be completed. The following, however, must remain pending verification: parcel boundaries, statutory road boundary lines, existing buildings, underground municipal infrastructure, ownership, statutory planning metrics, specific capacities, and precise siting.
+
+**The current proposal identifies three design gaps:**
+
+1. Personal AI can continue working on devices, but as it enters different urban spaces, there is no unified, legible method for making task requests, calling facilities, and withdrawing permissions when they expire.
+2. Transport, wayfinding, energy, networks, compute, robots, and service facilities remain fragmented across the city and have yet to coordinate around a person’s task chain.
+3. Many smart-city narratives describe only “how to activate” a system, without also designing for docking, maintenance, fault recovery, return, migration, and exit.
+
+![Figure F02｜Three scales and boundary status: known area values, provisional geometry, and unknown geometry](assets/figures/youmen-city-scope.en.png)
+
+*Figure F02｜Design judgment: 43.6 km², 11.4 km², and approximately 368.4 ha are three working scales that must not be conflated. Read the three area and evidence-status tiers on the left first; then read the 11.4 km² provisional working boundary and three provisional coarse polygons within the EPSG:4326 coordinate frame on the right. At present, the 43.6 km² scale has only an area value and no usable outline, so no outline has been invented in the figure; the roads / green_space / public_space source layers are currently empty, so no lines have been added. The figure demonstrates the three scales, the relative positions of the three areas, and the subsequent rebinding mechanism. It does not represent statutory boundaries, ownership, an existing-conditions base map, road or parcel boundaries, exact areas, or construction siting. Source: the current working GeoJSON files `site_boundary.geojson` and `key_areas.geojson`, together with the scale descriptions in this proposal; redrawn for this iteration and not sourced from an existing presentation page.*
+
+## 03｜Overall Spatial Structure: One Public Spine, Three Urban Roles
+
+The city’s structure consists of ordinary urban fabric, one Jing-Zhang Public Spine, and three key spaces.
+
+- **Ordinary urban fabric is the base.** Ordinary roads, public transport, walking and cycling, conventional municipal infrastructure, staffed services, and AI-independent access must remain viable at all times.
+- **Jing-Zhang is the public spine.** It connects the three areas and carries active mobility, blue-green systems, low-power wayfinding, backup power, N2, Docks, R6 task branches, and the minimum fault-recovery baseline.
+- **The AI Origin Community is “Home.”** It supports long-term living, learning, follow-up care, shared family tasks, and independent household thresholds.
+- **Dazhongsi is the “Window.”** It supports visitor arrival, short-term service packages, urban experience, exchange, and continued collaboration.
+- **Zhongzhiyuan is the “Workshop.”** It supports research and development, compute, experimentation, testing, repair, retesting, and readmission.
+
+Transport and active mobility enable people to arrive; blue-green systems keep public space usable in everyday life and under a changing climate; energy, networks, and compute maintain task checkpoints; robots, Docks, handoff lockers, and entrance halls form a borrowable “public body”; permissions, responsibility, maintenance, and receipts allow public capabilities to be opened and also taken back.
+
+![Figure F03｜Conceptual overall spatial structure: ordinary urban fabric provides the base, while one spine organizes Home, Window, and Workshop](assets/figures/youmen-overall-structure.en.png)
+
+*Figure F03｜Design judgment: ordinary urban fabric provides an urban base that remains viable without AI; within the conceptual overall structure, the Jing-Zhang Public Spine connects the public interfaces of the AI Origin Community as “Home,” Dazhongsi as “Window,” and Zhongzhiyuan as “Workshop.” Personal AI moves with the person and maintains task continuity, while transport, active mobility, blue-green systems, energy, networks, compute, and public bodies provide support only under the corresponding TASK gates. Read the one-spine, three-area structure first; then see how ordinary urban fabric provides the base; finally, read the seven types of support and “request—call—receipt—return—permission withdrawal / exit.” This figure is a provisional spatial demonstrator. It demonstrates only the overall structure and call relationships; it does not represent statutory boundaries, ownership boundaries, the actual order or direct adjacency of the three areas, exact routes, distances, facility quantities, capacities, siting, operators, or construction schemes. Source: the provisional spatial anchors in F02, the role and mechanism semantics of existing presentation pages P01 / P05, and the overall structure described in this proposal; redrawn for this iteration, without treating the graphic placement in P01 / P05 as real geography.*
+
+## 04｜Home, Window, and Workshop: Not Metaphors, but Three Permission Environments
+
+| Spatial Role | Corresponding Area | Primary Tasks | Capabilities Opened by the City | Boundary and Exit |
+| --- | --- | --- | --- | --- |
+| **Home** | AI Origin Community | Long-term living, learning, follow-up care, and shared family tasks | School and community interfaces, N2, safe waiting, public wayfinding, and shared courtyards | Shared family tasks can be coordinated, but the three people’s personal AIs are not merged; public bodies stop at each independent household threshold |
+| **Window** | Dazhongsi | Arrival, accommodation, conferences, dining, urban experience, and external collaboration | Visitor service packages, transport and hotel credentials, Docks, R6, handoff lockers, and multilingual wayfinding | Permissions open for the 36-hour visit and specific tasks; they close when the task is completed, the public body returns to its Dock, or the visitor leaves, and are not renewed automatically |
+| **Workshop** | Zhongzhiyuan | Research and development, joint experiments, compute scheduling, testing, repair, and retesting | Compute, microgrid / UPS, controlled experimental courtyards, R6, and maintenance and logistics back-of-house | Temporary experiment permissions are opened for defined segments; faulted equipment is isolated first and readmitted only after it passes retesting |
+
+Together, the three spaces demonstrate that **personal AI can maintain task continuity, while different spaces have different permissions for calling facilities, different facility responsibilities, and different methods of exit.** The same AI need not become another AI in every area; nor does the city need to copy a person’s entire private domain into public systems.
+
+## 05｜Jing-Zhang Public Spine: Calling Facilities Along the Spine, Not Central Takeover
+
+The Jing-Zhang Public Spine is neither a “smart corridor” that funnels private data into a central system, nor a fourth key area. It is a band of public interfaces where ordinary passage remains open at all times, task facilities respond on demand, and the system can operate in reduced mode when faults occur.
+
+Along the spine, a personal AI completes five actions: read public status → request TASK permission → call facilities → receive the task receipt → withdraw permission / exit. The public side discloses only facility status, weather, faults, and the available service range. It neither receives a complete personal profile nor obtains root privileges for the personal AI.
+
+![Figure F05｜Jing-Zhang Public Spine: personal AI calls facilities along the spine, and public bodies respond by task](assets/figures/youmen-jingzhang-spine.en.png)
+
+*Figure F05｜Design judgment: ordinary passage, public facilities, R6 / Dock, and the minimum fault-recovery baseline are organized in layers along the same spine. Read the personal AI’s five-step call sequence at the top first, then the three areas and facility nodes in the middle, and finally the four-step fault-recovery sequence at the bottom. It demonstrates a calling mechanism in which “tasks remain continuous and facilities open temporarily”; it does not represent the actual alignment, number of facilities, station spacing, capacity, or statutory locations. Source: existing presentation page P05.*
+
+Public capabilities along the spine include:
+
+- **R6 task branch:** low-speed operation within designated zones, handoff, and return to base for maintenance;
+- **Dock:** docking, charging, energy replenishment, caching, cleaning, and receipts;
+- **Low-power wayfinding:** remains legible offline and provides routes and fault notices;
+- **Rain shelter, drinking water, and ordinary services:** remain available regardless of whether AI is used;
+- **N2 and backup power:** support offline wayfinding, screen-free assistance, and checkpoints for critical tasks;
+- **Human takeover points:** engage only when anomalies, disputes, or professional responsibility require them; they do not replace the personal AI’s normal task flow.
+
+## 06｜Home: Continuous Life Across Three Generations
+
+**People and tasks**
+
+- **Xiaohe: a nine-year-old student.** She lives and attends school here, and on this day needs to complete the day’s learning, after-school handoff, and journey home.
+- **Mother: an office worker who commutes and may need to work late at short notice.** She was originally responsible for pickup, but initiates a change at 17:05 because she has to work late.
+- **Grandmother: an older adult who lives independently and attends her follow-up medical appointment on her own.** She has her own personal AI and receives one-time pickup permission only for this shared task.
+
+The three personal AIs remain independent. Family-shared intelligence coordinates only the shared task of “picking up Xiaohe”; it neither reads nor merges the entirety of the three people’s lives.
+
+![Figure F07｜AI Origin Community: at 17:05, a three-generation family’s pickup task reconnects](assets/figures/youmen-origin-home.en.png)
+
+*Figure F07｜Design judgment: the school, N2, community interface, and two independent household thresholds connect within the same pickup task. Read the green personal-AI path in the main diagram first, then the orange temporary-reassignment node and blue public interface at 17:05, and finally the four-step sequence of change on the right. It demonstrates that a shared family task can be coordinated temporarily while the personal AIs, household thresholds, and long-term permissions remain independent; it does not represent the actual school gate, roads, home locations, or a fixed school dismissal time. Source: existing presentation page P07.*
+
+**Change—consequence—design mechanism at 17:05**
+
+1. The mother’s personal AI issues a task change;
+2. Family-shared intelligence temporarily reassigns only this pickup task to the grandmother;
+3. The grandmother receives one-time pickup permission, while N2 provides wayfinding, safe waiting, and backup power;
+4. The school issues a handoff receipt at the school gate;
+5. Once Xiaohe has been picked up, the temporary permission is returned and withdrawn;
+6. R6 / Dock serves only within public and shared boundaries and stops at the independent household threshold.
+
+Responsibility is assigned segment by segment along the real-world task: the school is responsible for the handoff at the school gate; the N2 operator is responsible for wayfinding at the node and facility status; the grandmother assumes responsibility for this pickup once she has explicitly accepted it; and the property manager and household each maintain their own spatial boundaries. The personal AI sustains understanding, reminders, rescheduling, and receipts, but cannot create real-world access permission out of thin air.
+
+## 07｜Window: Mira’s 36-Hour Visit
+
+**Mira is a visiting scholar staying for 36 hours.** She comes here to understand the demonstration area, attend meetings, experience the urban system, and carry the visit forward into subsequent collaboration. Her personal AI remains on her own device throughout, continuously handling transport, hotel, conference services, dining, materials, routes, and the return journey; the city does not require her to hand her complete personal AI over to a public platform.
+
+![Figure F10｜Dazhongsi: at 12:20, Mira’s personal AI borrows a public robotic body](assets/figures/youmen-dazhongsi-window.en.png)
+
+*Figure F10｜Design judgment: the station concourse / Dock, hotel and conference front-of-house, merchant and exchange front-of-house, and residents’ quiet circulation route together form the city’s window. Read Mira’s personal-AI task flow first, then the one-time R6 branch for item collection—handoff locker—return to Dock, and finally the four-step task change on the right. It demonstrates that visitor services remain continuous with the person while a public robotic body is made available only within a specific task window; it does not represent actual merchant, hotel, or station-concourse locations, operating relationships, or a fixed 36-hour itinerary. Source: existing presentation page P10.*
+
+**Change—consequence—design mechanism from 11:40 to 12:20**
+
+After the meeting venue changes at short notice, Mira’s personal AI simultaneously reschedules the meeting room, route, lunch, materials, and return journey. At 12:20, it requests a one-time robotic task for “item collection—handoff locker—return to Dock”:
+
+1. The Dock verifies the item, route, area, and validity period;
+2. R6 receives only the permissions required to complete item collection and handoff;
+3. The robot does not cross the residents’ quiet circulation route or the guest-room private domain;
+4. Upon completion, it returns to the Dock, writes back the task status, and clears the task-specific cache; its task permissions are then withdrawn;
+5. Mira reconfirms whether to proceed into a Zhongzhiyuan collaboration task; permission is not renewed automatically.
+
+The personal AI is responsible for the continuity of the visit task. The hotel, conference services, merchants, Dock, and R6 operator are each responsible for the services and facilities they open. Disputes and faults are routed to the corresponding operator, rather than forcing Mira to explain her entire itinerary again across multiple systems.
+
+## 08｜Workshop: A-Cen’s Joint Experiment Day
+
+**A-Cen is a young engineer conducting a joint experiment.** He comes to Zhongzhiyuan to coordinate compute, test space, equipment, external teams, and testing permissions, and to complete a reproducible experiment with provisions for repair and readmission—not merely a one-off demonstration.
+
+![Figure F12｜Zhongzhiyuan: at 13:20, A-Cen’s personal AI saves the latest experimental checkpoint before switching to campus backup power](assets/figures/youmen-zhongzhiyuan-workshop.en.png)
+
+*Figure F12｜Design judgment: the public knowledge front-of-house, controlled experimental courtyard, compute / microgrid nodes, and maintenance and logistics back-of-house are arranged by degree of openness. Read the personal AI’s main task flow first, then the two facility branches for compute / UPS and R6, and finally the fault loop on the right. It demonstrates that an experimental task can remain continuous across compute, power, test space, and maintenance while permissions and equipment remain controlled in segments; it does not represent actual capacity, equipment brands, campus boundaries, or engineering siting. Source: existing presentation page P12.*
+
+**Change—consequence—design mechanism at 13:20**
+
+When the power fluctuates, A-Cen’s personal AI does not force the experiment onward. It first saves the latest checkpoint and then reschedules public resources:
+
+1. Write the latest task status and experiment checkpoint;
+2. The microgrid / UPS takes over critical loads;
+3. Defer lower-priority training workloads;
+4. R6 shuts down safely and writes back its status;
+5. The fault log accompanies the equipment into the maintenance and logistics back-of-house;
+6. The equipment regains restricted experimental permission only after inspection, repair, and retesting are complete;
+7. Temporary permissions are withdrawn when the task receipt is issued.
+
+A-Cen and the experiment lead are responsible for experimental judgments; the compute and microgrid operators are responsible for resource status and switching; the R6 operator is responsible for shutdown, retrieval, and the maintenance loop; and external teams receive permissions only within the scope of that day’s experiment. The personal AI connects resources and tasks, but cannot expand the temporary permissions for a single joint experiment into long-term access across the campus.
+
+## 09｜Public Body: Borrowing, Docking, Maintenance, and Return
+
+Personal AI is not the same thing as a hardware carrier or a public robot. Personal AI belongs to the person and can remain continuous across devices and spaces; robots, elevators, lockers, lobbies, Docks, and compute nodes belong to the city or their operators and are borrowed only within the scope of a task.
+
+![Figure F14｜Personal AI does not change owners; it only borrows a pair of hands from the city](assets/figures/youmen-public-body.en.png)
+
+*Figure F14｜Design judgment: a personal device, a time-limited credential, a public body and facilities, and a return dock form the four-step closed loop of a single borrowing process. Read the green personal-AI main line first, then the red and blue task branches, and finally the initiate—borrow a body—execute—return sequence on the right. It demonstrates that the public side receives only a time-limited credential, while full memory, long-term access credentials, and root privileges remain within the private domain; it does not represent specific device protocols, insurance contracts, or operating entities as already in place. Source: existing presentation page P14.*
+
+Every call to a public body must include all of the following:
+
+1. **Task description:** what is to be done, for whom, and who initiated it;
+2. **Time-limited credential:** the object, area, route, facilities, and validity period covered;
+3. **Execution boundary:** homes, guest rooms, and other private domains are off-limits by default;
+4. **Status receipt:** completion, failure, fault, human takeover, or termination;
+5. **Return action:** return to the Dock, cleaning, recharging, and clearing the task-specific cache;
+6. **Maintenance loop:** diagnosis, isolation, repair, retesting, and readmission;
+7. **Verifiable permission withdrawal:** access closes when the task ends, the person withdraws permission, or the credential expires.
+
+## 10｜Fault Recovery, Migration with Permission Withdrawal, and Evidence Boundaries
+
+### 10.1 District Power Outage: The City Scales Down to Minimum Viable Operation
+
+![Figure F15｜At 21:40, personal AI saves the task; the city retains only passage, assistance, and critical services](assets/figures/youmen-resilience.en.png)
+
+*Figure F15｜Design judgment: during a power outage, AI Origin Community, Dazhongsi, Zhongzhiyuan, and Jing-Zhang each retain their critical service loops, while tasks resume from checkpoints saved by personal AI. Read the illuminated critical paths first, then the four area nodes and the recovery sequence on the right. It demonstrates that “power restored” does not mean “restart”: power, networks, Docks, and permissions must each be verified; it does not represent backup-power capacity, duration, the technical approach, or specific siting as having undergone professional calculation. Source: existing presentation page P15.*
+
+The recovery sequence is: safe switchover → reduced-mode operation → recovery verification → trusted resumption. Ordinary streets, manual door opening, telephones, public-address systems, and physical wayfinding form the AI-independent baseline; personal AI continues from the most recent checkpoint, but permissions that have expired or been withdrawn do not automatically reopen when power returns.
+
+### 10.2 Device Replacement and Migration: AI Continues, While the Old Carrier’s Permissions Reset to Zero
+
+![Figure F16｜When the device changes, personal AI continues working; permissions on the old carrier reset to zero at the same time](assets/figures/youmen-migration-revoke.en.png)
+
+*Figure F16｜Design judgment: the person’s private domain, the migration Dock, return of public carriers, and the maintenance and logistics back-of-house form a migration—permission-withdrawal closed loop. Read the personal-AI main line from the old device to the new one first, then the public-carrier return and maintenance branch, and finally the four migration steps on the right. It demonstrates that migration is recoverable and permission withdrawal can be verified, while the public side does not hold the sole recovery key; it does not represent a specific cryptographic scheme, carrier product, or service contract as having been determined. Source: existing presentation page P16.*
+
+The person confirms the migration and holds the recovery key; the new carrier restores only the state and collaborative relationships required for the most recent task; after receipt, permission withdrawal, and clearing the task-specific cache, the old carrier enters a separate maintenance process. AI migration is not the same as sending hardware for repair. The public side may assist with verification and transfer, but it neither stores the full contents of the private domain nor holds the sole recovery key.
+
+### 10.3 Evidence Boundary for This Iteration
+
+- **What can already be demonstrated:** the overall thesis, the three spatial roles, the logic of task-based calls, the character task chains, the closed loop for borrowing a public body, the power-outage recovery sequence, and the principles of migration and permission withdrawal now form a coherent narrative.
+- **What still cannot be demonstrated:** official geometry, ownership, the actual facility inventory, capacity, cost, operators, insurance, technical protocols, statutory planning metrics, construction siting, and actual performance.
+- **Prerequisites for the next release:** rebinding to the official base map, site surveys, professional load and municipal-infrastructure verification, confirmation of operating responsibilities, a minimum pilot-site exercise, AI-independent baseline testing, and a permission-withdrawal audit.
+
+![Figure F18｜Twelve checks connect the three task lines, Jing-Zhang fault rerouting, and the evidence ledger](assets/figures/youmen-evidence-phasing.en.png)
+
+*Figure F18｜Design judgement: Nine task nodes across three everyday routes and three Jing-Zhang fault reroutings form twelve checks; at right, a scene–space–evidence ledger, three co-sourced recalculated metrics, and figure status close the loop. First read the three task lines for Zhongzhiyuan, AI Origin, and Dazhongsi on the left; then see how J1–J3 reroute across lines; finally read the five evidence endpoints on the right and their coordinated replacement when official geometry arrives. It demonstrates that scenes, space, permissions, and evidence can reuse one source, that work resumes only after verification, and that permission closes when a task ends; it does not represent the engineering sequence of Phases 0–4, formal boundaries, metric values, or a construction plan as already determined.*
+
+## 11｜How to Build, Validate, and Close Out
+
+Implementation does not begin by filling the city with smart devices. It begins with the baseline urban fabric and the minimum verifiable task.
+
+| Stage | Main Actions | Gate That Must Be Passed at This Stage |
+| --- | --- | --- |
+| **Stage 0｜Rebinding** | Once official geometry is available, redraw the three-scale extents and the overall structure, and recalculate all spatial indicators | The sources for boundaries, ownership, roads, buildings, and municipal infrastructure are traceable |
+| **Stage 1｜Preserve the Base** | Verify ordinary access, walking and cycling, staffed services, mechanical bypasses, lighting, and conventional municipal infrastructure | Access, assistance, and exit remain available independently of AI |
+| **Stage 2｜Build the Interfaces** | Deploy N2, Docks, handoff lockers, low-power wayfinding, task credentials, and checkpoints in a reversible manner | Every interface has a defined object, permission, responsibility, maintenance arrangement, and shutdown condition |
+| **Stage 3｜Validate at Limited Scale** | Validate pickup reassignment, the 36-hour visit, the joint experiment, and R6 borrowing separately | Routes are legible, facilities are findable, permissions expire, and faulted assets can be recovered |
+| **Stage 4｜Retest and Expand** | Conduct drills for power-outage recovery, post-repair retesting, migration and permission withdrawal, complaints, and disputes | A failed operation can be stopped; repairs must be reverified, and “recovery” does not automatically renew permission |
+
+Every pilot must record at least five kinds of evidence at the same time: whether the task was completed, whether the route was traversable, whether the facilities were usable, whether permissions closed on time, and whether return and recovery were possible after a fault. Data that does not close the loop remains marked as unknown; conceptual diagrams must not be used to infer actual performance.
+
+Ultimately, the entire city returns to the same sentence:
+
+> **What remains continuous is the person’s personal AI and the task at hand; what opens temporarily is the city’s public capabilities.**
+
+---
+
+# Formal Submission Contract and Evidence Layer
+
+The following layer only maps the preceding 01–11 human-reading sequence to existing sources, spatial records, P01–P10, twelve SCN records, metrics, and compliance files. It does not rewrite the thesis or add projects, scenes, statutory boundaries, geometry, or metrics.
 
 ## Design Basis and Source List
 
 The proposal uses the official structured brief, public announcement, standards library, public sources and cleared internal design artifacts. Every claim is separated into official/public source, provisional source, design proposal or unknown. A registered source is not automatically a professionally verified claim. Exact official polygons are not available; the package therefore uses visibly labelled provisional geometry with a single replacement and recalculation path. [source:SITE-PACKAGE] [standard:PROJECT-OFFICIAL-ANNOUNCEMENT]
 
-<!-- N7-1e R01 statutory-source-boundary:start -->
 ### R01 | Statutory background is a boundary, not geometry or an existing-condition substitute
 
 | Evidence | Public contract | Source refs |
@@ -53,7 +257,6 @@ The proposal uses the official structured brief, public announcement, standards 
 | `STAT-N7-1E-01` | Official material confirms an approved street-level plan for nine districts and approximately 16.7 km²; this project does not derive competition boundaries or parcel controls from it. | [source:SRC-N7-1E-STAT-01] [source:SRC-N7-1E-STAT-02] |
 | `STAT-N7-1E-02` | The government reprint supports directional Dazhongsi and public-service context, but not project sites, operators, budgets or service readiness. | [source:SRC-N7-1E-STAT-02] |
 | `STAT-N7-1E-03` | Official records evidence the Phase II approval, tender procedure and reported progress of the described supporting works; they do not prove completion of all works or this competition proposal. | [source:SRC-N7-1E-STAT-03] [source:SRC-N7-1E-STAT-04] [source:SRC-N7-1E-STAT-05] |
-<!-- N7-1e R01 statutory-source-boundary:end -->
 
 ![Three-level scope, five networks and evidence](assets/figures/site-overview.en.png)
 
@@ -61,7 +264,7 @@ The proposal uses the official structured brief, public announcement, standards 
 
 The 43.6 km² strategic area addresses industry, culture and future-city strategy; the 11.4 km² design area translates the proposition into spatial networks, projects and metrics; the 368.4 ha of three key areas tests differentiated local proofs at equal depth. The levels are not added together or substituted for one another. The 11.4 km² layer is the sole denominator for the three spatial metrics. [source:SITE-PACKAGE] [depth:three_level_scope_framework] [metric:site_area_sqm]
 
-The upper-level propositions of life continuity, distributed human acceptance of responsibility and a non-central public interface must translate downward into the five networks, P01–P10 and twelve scenes. Conflicts, maintenance conditions and exit requirements found in the key areas must in turn correct the overall-design and strategic layers. All three current polygons are derived from announcement wording, stated area and provisional anchors: their areas must not be added, and a key-area boundary must not replace the 11.4 km² metric denominator. When official geometry arrives, all nine spatial datasets, figures and metrics must be recalculated together as one version. [data:geometry/key_areas.geojson#PROV-KEY-001] [depth:metrics_recalculation]
+All three current polygons are derived from announcement wording, stated area and provisional anchors: their areas must not be added, and a key-area boundary must not replace the 11.4 km² metric denominator. When official geometry arrives, all nine spatial datasets, figures and metrics must be recalculated together as one version. [data:geometry/key_areas.geojson#PROV-KEY-001] [depth:metrics_recalculation]
 
 ![Four support zones and project portfolio](assets/figures/land-use-structure.en.png)
 
@@ -88,6 +291,8 @@ Urban renewal does not begin with a demolition or new-build count. It first prot
 
 Zhongzhiyuan tests an isolatable, repairable and retestable industrial base; the AI Origin Community tests low-intervention continuity across education, healthcare, older-adult care, households and outages; Dazhongsi tests a staffed urban foyer that can be entered, refused, appealed and fully exited. Each area retains an ordinary public route, staffed service route, maintenance/recovery route and local degraded mode. The Jing-Zhang spine links them without becoming a fourth key area. [data:geometry/key_areas.geojson#PROV-KEY-001] [data:geometry/key_areas.geojson#PROV-KEY-002] [data:geometry/key_areas.geojson#PROV-KEY-003]
 
+`15:30` and `21:40` are registered design probes, not verified operating times.
+
 ### P01-P10 across the Three Areas
 
 - **P01 Blue-Green Open Validation Loop**: separates the public observation edge from the device-testing boundary — SCN-ZZY-01, SCN-ZZY-03
@@ -102,32 +307,16 @@ Zhongzhiyuan tests an isolatable, repairable and retestable industrial base; the
 - **P10 Youmen Human–Machine Public-Service Station Network**: uses distributed main, branch and low-permission nodes for staffed service, scheduling, training, referral, audit, human takeover and institutional agreements; it does not become a central command system — SCN-ZZY-02, SCN-AIO-01, SCN-AIO-02, SCN-AIO-03, SCN-DZS-01, SCN-DZS-03
 
 ![Differentiated objectives of the three key areas](assets/figures/key-areas.en.png)
-<!-- N7-1e note: prior key-areas caption retired by R03 -->
 
 ## AI Innovation Ecosystem, Personas, and AI+ Scenarios
 
-<!-- N7-1f three-life-loops:start -->
-### Three Everyday Loops | Arrival, Livelihood, and Responsibility
-
-This is a reading layer across the existing P01-P10 portfolio, twelve SCN records and five urban networks. It creates no new project, scene, statutory boundary, metric or central platform. Each loop begins with a person's active request, retains an ordinary non-digital route, changes hands only after explicit acceptance by a named human, and closes its task, permissions and temporary interfaces at the end. [source:AGENT-TASKBOOK]
-
-**Complete service loop for an arriving visitor.** A visitor opens one temporary door only by registering for an event, accepting an invitation, opting in while booking, actively scanning, or asking for the service at a staffed arrival foyer. A pre-arrival task pack may then carry weather, arrival, connectivity, payment, lodging, luggage, venue, food, multilingual and accessibility information into the Dazhongsi staffed urban foyer and optional Visitor Agent. After luggage, lodging, transport and food are settled, the visit may continue through an optional event and city overview, the Jing-Zhang public-culture route, Zhongzhiyuan's public observation edge and the AI Origin Community's public-experience edge; it then returns to the place of stay at night, continues the next day or leaves through Dazhongsi, and finally closes the temporary task and permissions. A person who does not open digital service still has ordinary public transport, physical signs, paper maps, ordinary telephones, staffed enquiries and accessible routes. This is a task pack, not a lasting visitor profile. Visitors are not test sensors and do not yield to devices. Visiting a real city does not mean viewing real residents: children, older people, patients, households and homes are not exhibits. Service locations, opening information, operators, routes and receiving institutions remain subject to field and institutional verification.
+This is an evidence-mapping layer across the existing P01-P10 portfolio, twelve SCN records and five urban networks. It creates no new project, scene, statutory boundary, metric or central platform. [source:AGENT-TASKBOOK]
 
 **Local merchant, youth and older-adult economy loop.** One real need begins with an open service card maintained by the merchant. The public interface verifies only qualifications, safety, certification, complaint and operating facts; the user's private Agent may then make a temporary match for that order using distance, time, budget, language, accessibility needs and current capacity. The user remains free to telephone, walk in or trade with the merchant directly. Shops around the AI Origin Community may handle purchase and rental, installation, setup, interoperability, teaching, refurbishment and small repairs; complex faults may move to Zhongzhiyuan for diagnosis, retest, training and standards updates, after which equipment and capability return to the community and strengthen the next local service. Public AI is an exchange, not a toll gate: it does not sell “organic” ranking, mix advertising into matching, require exclusive listing, capture the customer relationship or charge the basic match as a share of transaction value, and it retains merchant correction, appeal and rotating exposure. This loop could support paid work for younger people in installation, repair, reception, after-school assistance, event operations and accessibility retrofit. It could also let retired engineers, teachers and trusted community members return, within qualification boundaries, as paid mentors, reviewers, after-school supporters and cultural guides. The older-adult economy is not only a market that sells services to older people. This is an economic-organisation proposal to test, not evidence that a platform, merchant register, orders, jobs, revenue or operating relationships already exist; qualifications, capacity, payment, insurance, employment status and public cost all require separate verification.
 
-**Smart classroom—pickup—after-school—household chain.** Before class, AI may help a teacher organise materials, shared misconceptions, differentiated exercises and experiment simulations. The teacher remains the centre of the classroom; the system does not persistently watch faces, create personality-like attention scores or accumulate an unlimited child profile. After class, only assignments, completed items and questions that genuinely need explanation form a lightweight same-day learning task pack. A guardian or private Agent checks the named pickup-responsibility seats that are lawful, on duty and available that day; the guardian chooses one and creates a single-use authorization. Named school staff verify the person in the physical setting, the child may still refuse, and responsibility moves only through a human-to-human physical handoff. If the named receiver does not appear, the child remains within staffed school responsibility. A walking group or compliant vehicle reaches the community after-school station, where another named human explicitly accepts responsibility. Water, food, rest, movement, play and interests come before optional learning assistance; “enough for today” also counts as completed service. In the evening, the station ends its duty and closes the pickup task and temporary permissions only after a guardian or next named human explicitly receives the child. Household disagreement, delay, emotion and private life do not flow back into school by default. Actual school timetables, pickup and late-stay duties, eligibility, background checks, training, insurance, pricing and after-school operators remain to be verified.
-
-**Policy and urban boundaries.** The discussion note's “about 30% public + about 70% household” split is recorded only as a **non-binding policy prototype** for co-paying pickup services. It is not a budget, price, subsidy commitment or implementation ratio. Any later use requires separate costing, tiering, disclosure and decision; this revision creates no numerical metric from it. The three loops feed one another across Zhongzhiyuan, the AI Origin Community and Dazhongsi, but each area retains its own responsibility, degraded mode and exit gates. Jing-Zhang remains a non-central public interface strip for ordinary walking and cycling, cultural orientation, low-permission help and human relay—not a fourth key area, central brain or private-data spine. JZ-03 is the exceptional screenless human-relay branch for an outage, not a replacement for the three everyday loops. Maintenance crosses visitor information, signs and telephones, classroom equipment, pickup training, household hardware, complex repair and capability return, but it does not become a fourth headline loop.
-
-**Three-area loop figure.** The figure expresses logical relationships only: three key areas close around an empty centre, with Jing-Zhang on the outer edge as a non-central public interface band. The three coloured paths are reading overlays; they do not represent position, distance, routes, statutory boundaries or automatic transfer of responsibility.
-
-![N7-1f conceptual topology of the three areas and three everyday loops](assets/figures/life-loops.n7-1f.en.png)
-<!-- N7-1f three-life-loops:end -->
-
-<!-- N7-1e R03 three-area-scene-linkage:start -->
 ### R03 | Three-area flagships and the twelve-scene single source
 
-`data/processed/scenes/scene_cards.normalized.v0.2.json`
+[source:N7-1D-12SCN-RAW-SOURCE-LOCK]
 
 All twelve remain design scenarios with evidence gates open, current value = null and formal_ready=false; v0.2 adds public-display fields only and does not change the v0.1 canonical fields.
 
@@ -162,7 +351,6 @@ All twelve remain design scenarios with evidence gates open, current value = nul
 | **SCN-JZ-01**<br>Three-Evidence Rerouting for a Rainy Night Walk | P01, P04, P07 | MP-M-PSS-12, MP-Q3-NIGHT-LIGHTING-USE, MP-Q3-PARK-DWELL-HELP | Rainy-night movement uses three-evidence rerouting to test public continuity and remains interface_only.<br>This is only a Jing-Zhang public-continuity interface pressure test, not a fourth key area; rainy-night rerouting depends on physical lighting, human patrol and an exitable route. |
 | **SCN-JZ-02**<br>Opening and Closure of the Public Spine in Ice, Snow and Heat | P01, P02, P09 | MP-M-ZZY-03A, MP-M-ZZY-03B, MP-Q3-PARK-DWELL-HELP | Public-spine opening remains interface_only, with two undefined metrics continuing to block collection.<br>This remains a Jing-Zhang interface pressure test; no ice, snow or heat opening-performance collection or claim is allowed before M-ZZY-03A/B definitions are registered. |
 | **SCN-JZ-03**<br>Screenless Relay along the Public Spine during a Power Outage | P04, P06, P08, P09 | MP-M-AIO-03A, MP-M-AIO-03B, MP-M-PSS-01, MP-Q3-NIGHT-LIGHTING-USE, MP-Q3-PARK-DWELL-HELP | Physical lighting—help point—ordinary signs—broadcast/fixed phone—egress—segmented human relay form a screenless public spine.<br>After outage, screens withdraw and emergency power preserves physical lighting, help, communication and evacuation only; park, property and public-service humans explicitly accept segments without expanding into household private domains. |
-<!-- N7-1e R03 three-area-scene-linkage:end -->
 
 ## Land Use, Building Scale, and Retain-Renovate-Demolish Strategy
 
@@ -175,20 +363,6 @@ The four support zones organise functions; they do not replace statutory land-us
 Ordinary movement does not depend on an app, account or digital credential; public, device and maintenance routes are separated. P10 is a distributed staffed network with a primary station in the AI Origin Community, repair branch in Zhongzhiyuan, public-service branch in Dazhongsi and low-permission Jing-Zhang nodes. It does not create a complete private-domain database. Paper wayfinding, telephones, staffed counters, hard stops, mechanical recovery and traditional municipal bypasses remain available during outages and errors. [data:geometry/roads.geojson#N2B-RD-004] [standard:BARRIER-FREE-ENVIRONMENT-LAW] [depth:traffic_rail_slow_parking] Municipal and recovery responsibilities are reviewed separately. [depth:municipal_new_infrastructure]
 
 ![Ordinary movement, blue-green, maintenance and offline recovery](assets/figures/mobility-bluegreen.en.png)
-
-<!-- N7-1e R04 jz03-outage-handoff:start -->
-### R04 | SCN-JZ-03 screenless relay during an outage
-
-Physical lighting—help point—ordinary signs—broadcast/fixed phone—egress—segmented human relay form a screenless public spine.
-
-**Scene：** SCN-JZ-03
-
-**Responsibility chain：** Outage / screens withdraw → Physical lighting (Emergency power prioritizes basic lighting); Physical lighting → Fixed help point (Lighting leads to a fixed help point); Fixed help point → Ordinary physical signs (Help and ordinary signs back each other up); Ordinary physical signs → Broadcast / fixed phone (No dependence on a personal phone or account); Broadcast / fixed phone → Continuous egress route (Communication serves help and evacuation only); Continuous egress route → Park—property—public-service human relay (Humans explicitly accept each segment; responsibility never transfers automatically)
-
-**Protocols：** MP-M-AIO-03A, MP-M-AIO-03B, MP-M-PSS-01, MP-Q3-NIGHT-LIGHTING-USE, MP-Q3-PARK-DWELL-HELP
-
-**Projects：** P04, P06, P08, P09
-<!-- N7-1e R04 jz03-outage-handoff:end -->
 
 ## Blue-Green Network, Public Space, and Urban Character
 
@@ -207,28 +381,10 @@ P01-P10 follow four phases: baseline protection, reversible interfaces, controll
 3. Controlled tests, resilience facilities and staffed nodes
 4. Long-term evaluation, correction and evidence-based expansion
 
-<!-- N7-1e R06 responsibility-trigger-matrix:start -->
-### R06 | P01-P10 responsibility, start and stop matrix
-
-| Projects | Scene | phase / priority | Public contract |
-| --- | --- | --- | --- |
-| **P01** | SCN-ZZY-01, SCN-ZZY-03, SCN-JZ-01, SCN-JZ-02 | Phase 2-3 \| after preserving ordinary public/blue-green continuity, add reversible validation interfaces and only then bounded testing | P01 \| Verify the public line, blue-green continuity, test edge and recovery route first. Only then may public-space/landscape, test-safety and maintenance roles open a small reversible pilot; any uncontrolled crossing or ecological/access conflict stops it. |
-| **P02** | SCN-ZZY-01, SCN-JZ-02 | Phase 3 \| hard stop, isolation, recovery and maintenance evidence precede any expansion of testing | P02 \| First drill hard stop, de-energisation, isolation and mechanical recovery for one bounded test. Open only with verified device, window, weather/surface, responsibility and permission; powered return is prohibited after a hard stop. |
-| **P03** | SCN-ZZY-02, SCN-ZZY-03 | Phase 2-3 \| repair, isolation, energy and retest capacity precede scaled device operation | P03 \| Verify equipment, work orders, isolation, MEP/fire, read-only diagnosis, human retest and appeal closure before locating the backstage. Mismatch, excess authority, failed retest or absent receiver keeps the item isolated. |
-| **P04** | SCN-AIO-01, SCN-JZ-01, SCN-JZ-03 | Phase 1-2 \| ordinary passage and named human handoff first; reversible safety micro-renewal before optional intelligent assistance | P04 \| Verify the real gate, timetable and three-segment human responsibility, then walk, observe four 15-minute windows and run a no-AI handoff drill. Refusal, unclear identity, unsafe route or absent receiver returns the child to staffed school-side waiting. |
-| **P05** | SCN-AIO-01, SCN-AIO-03 | Phase 1-2 \| reuse existing public-service ground floors and staffed entrances before adding optional digital assistance | P05 \| First inventory real visible help gates, ordinary phones, staffed windows and accessibility/fire/maintenance conditions. Community help is not medical receipt; professional responsibility moves only after explicit acceptance by a qualified human. |
-| **P06** | SCN-AIO-02, SCN-AIO-03, SCN-JZ-03 | Phase 1-2 \| protect ordinary/emergency lighting, mechanical bypass and staffed duty before reversible resilience interfaces | P06 \| Verify shared-side lighting, backup power, mechanical bypass, phones, paper contacts and human duty, then run a no-AI outage drill. Publish no residence location, and restored power does not reactivate closed permission. |
-| **P07** | SCN-DZS-01, SCN-DZS-03, SCN-JZ-01 | Phase 1-2 \| preserve ordinary station-city movement, accessibility and egress before ground stitching | P07 \| Verify real exits, four-quadrant destinations, ordinary/accessible routes, crossings, egress and responsibility segments, then walk every route. Any access, accessibility, egress or maintenance obstruction stops the work. |
-| **P08** | SCN-DZS-01, SCN-DZS-02, SCN-JZ-03 | Phase 1-2 \| establish a credential-free staffed foyer before optional bounded digital access | P08 \| Establish credential-free ordinary passage and staffed/quiet assistance before testing an optional digital line. Station, road, property, desk and receiving institution own separate segments; ordinary passage continues when digital service is refused, fails or is withdrawn. |
-| **P09** | SCN-DZS-02, SCN-DZS-03, SCN-JZ-02, SCN-JZ-03 | Phase 3-4 \| reversible events only after resident quiet-route, egress, noise, operation and complete-exit evidence closes | P09 \| Verify the resident quiet route, ordinary passage, loading, egress, maintenance and complete exit before a small reversible event. Any blocked route, missing owner, expired window or incomplete exit closes and clears it. |
-| **P10** | SCN-ZZY-02, SCN-AIO-01, SCN-AIO-02, SCN-AIO-03, SCN-DZS-01, SCN-DZS-03 | Cross-phase \| nodes form with their local spatial projects while always retaining domain separation, human service and offline capability | P10 \| Verify each physical interface, ordinary phone/paper/staffed window, roster, referral, complaint, audit, incident and closure locally. Accept only the bounded task—not a whole person or household—and never become central command. |
-<!-- N7-1e R06 responsibility-trigger-matrix:end -->
-
 ## Metrics, Area Recalculation, and Compliance Matrix
 
 Using one GeoJSON bundle in EPSG:4548, the package recomputes an overall design area of 11,412,825.386 m², a proposed blue-green ratio of 19.839%, and a proposed public-space ratio of 6.987%. All are provisional rather than statutory or existing-condition metrics and must be recomputed after any geometry change. All service, response, safety, satisfaction and economic metrics remain unknown. [metric:site_area_sqm] [metric:green_ratio] [metric:public_space_ratio]
 
-<!-- N7-1e R05 metric-evidence-protocols:start -->
 ### R05 | Measurement protocols and backlinks for unknown metrics
 
 | metric_id | value | status |
@@ -237,38 +393,6 @@ Using one GeoJSON bundle in EPSG:4548, the package recomputes an overall design 
 | `green_ratio` | 0.19838764 ratio | `known` |
 | `public_space_ratio` | 0.06986680 ratio | `known` |
 | `key_area_count` | 3 count | `known` |
-
-| Protocols | metric_ids | status_class | Public contract |
-| --- | --- | --- | --- |
-| `MP-M-AIO-01` | M-AIO-01 | `field_survey_required` | M-AIO-01 \| School-gate/crossing conflicts: four 15-minute observations tied to a verified timetable; current value null. One serious safety event triggers review; other thresholds await a baseline and professional review. |
-| `MP-M-AIO-02` | M-AIO-02 | `field_survey_required` | M-AIO-02 \| Explicit human acceptance and timely permission closure: only named acceptance records and post-task closure audits count; current value null. |
-| `MP-M-AIO-03A` | M-AIO-03A | `field_survey_required` | M-AIO-03A \| No-AI handoff closure rate during outages: measured by blind drills and segment-level human receipts, without recording a home endpoint; current value null. |
-| `MP-M-AIO-03B` | M-AIO-03B | `field_survey_required` | M-AIO-03B \| P90 duration of complete no-AI handoff during outages: time only safely completed blind drills and list failures separately; current value null. |
-| `MP-M-DZS-01A` | M-DZS-01A | `field_survey_required` | M-DZS-01A \| Accessible continuous-route coverage to major destinations in four quadrants: verify entrances, destinations and routes before walkthroughs; current value null. |
-| `MP-M-DZS-01B` | M-DZS-01B | `field_survey_required` | M-DZS-01B \| Breaks on accessible continuous routes across four quadrants: deduplicate physical, information and communication breaks point by point; current value null. |
-| `MP-M-DZS-02A` | M-DZS-02A | `field_survey_required` | M-DZS-02A \| Interruptions to the resident continuous route during visitor peaks: first verify the route and peak/event windows; current value null. |
-| `MP-M-DZS-02B` | M-DZS-02B | `field_survey_required` | M-DZS-02B \| Cumulative duration of resident-route interruptions during visitor peaks: timestamp each start and clearance; current value null. |
-| `MP-M-DZS-03` | M-DZS-03 | `field_survey_required` | M-DZS-03 \| Share of public digital-interface points with exit, human assistance and credential expiry: verify real points first; current value null. |
-| `MP-M-PSS-01` | M-PSS-01 | `field_survey_required` | M-PSS-01 \| No-AI service closure rate: blind-test the service register and close by completion or a named human referral receipt; current value null. |
-| `MP-M-PSS-02` | M-PSS-02 | `field_survey_required` | M-PSS-02 \| P90 human-takeover time: time request to explicit named-human acceptance; absence of an eligible receiver is a hard failure; current value null. |
-| `MP-M-PSS-05` | M-PSS-05 | `field_survey_required` | M-PSS-05 \| On-time permission-closure rate: audit every task end, withdrawal and expiry; current value null. One unclosed permission triggers stop and review. |
-| `MP-M-PSS-06A` | M-PSS-06A | `field_survey_required` | M-PSS-06A \| Maximum completion-rate gap across AI, human and offline channels: test the same task and sample in all three; current value null. |
-| `MP-M-PSS-06B` | M-PSS-06B | `field_survey_required` | M-PSS-06B \| Maximum P90 waiting-time gap across AI, human and offline channels: time the same task and sample in all three; current value null. |
-| `MP-M-PSS-07` | M-PSS-07 | `field_survey_required` | M-PSS-07 \| Qualified human-review coverage for high-risk cases: use the risk register, qualifications/formal authority and review records; current value null. |
-| `MP-M-PSS-08` | M-PSS-08 | `trigger_after_registered_definition` | M-PSS-08 \| Registered, but its exact definition and unit are absent from the mounted sources. Recover and verify the canonical definition before collection; assign no value or threshold meanwhile. |
-| `MP-M-PSS-12` | M-PSS-12 | `field_survey_required` | M-PSS-12 \| Accessibility service breaks: walk from a verified entrance to completed human service and deduplicate physical, information and communication breaks; current value null. |
-| `MP-M-ZZY-01` | M-ZZY-01 | `field_survey_required` | M-ZZY-01 \| Uncontrolled crossings between public and restricted test/logistics routes: count after point-by-point classification of verified routes; current value null. One uncontrolled crossing blocks test release. |
-| `MP-M-ZZY-02` | M-ZZY-02 | `field_survey_required` | M-ZZY-02 \| P90 from fault alert to isolation, safe return and human takeover: time graded drills; powered return is prohibited after a hard stop; current value null. |
-| `MP-M-ZZY-03A` | M-ZZY-03A | `trigger_after_registered_definition` | M-ZZY-03A \| Registered as a blue-green/climate-related metric, but its exact definition and unit are absent from the mounted sources. Recover the canonical definition before collection; assign no value or threshold meanwhile. |
-| `MP-M-ZZY-03B` | M-ZZY-03B | `trigger_after_registered_definition` | M-ZZY-03B \| Registered as a blue-green/climate-related metric, but its exact definition and unit are absent from the mounted sources. Recover the canonical definition before collection; assign no value or threshold meanwhile. |
-| `MP-BUILDING-FOOTPRINT-AREA` | building_footprint_area_sqm | `trigger_after_official_geometry` | Building footprint area \| Recompute only after verified building outlines and the applicable boundary arrive; current value null, with no illustrative boxes used as data. |
-| `MP-FLOOR-AREA-RATIO` | floor_area_ratio | `trigger_after_official_geometry` | FAR \| Await applicable regulatory controls, official scope and verified floor area; current value null and never inferred from proposal ratios or drawings. |
-| `MP-Q3-PEAK-FLOW-WAIT` | — | `field_survey_required` | Peak flow and waiting \| Manual, scenario-specific counts tied to verified schedules, with no face or identity tracking; baseline pending. |
-| `MP-Q3-GROUND-FLOOR-INTERFACE` | — | `field_survey_required` | Ground-floor public-service interfaces \| Verify access, human staffing, accessibility, fire/egress and maintenance point by point; sites and opening status pending. |
-| `MP-Q3-NIGHT-LIGHTING-USE` | — | `field_survey_required` | Night lighting and actual use \| Point measurements and anonymous counts along verified public/shared routes, without home endpoints; baseline pending. |
-| `MP-Q3-PARK-DWELL-HELP` | — | `field_survey_required` | Park-node dwell/help \| Use anonymous interval observation and named-human acceptance receipts only, without identity or trajectory linkage; baseline pending. |
-| `MP-CONCEPT-TARGET-RELEASE` | — | `concept_target` | Concept target \| A design inference may be shown only with source, boundary, professional review and release conditions; it is not an existing or statutory value. |
-<!-- N7-1e R05 metric-evidence-protocols:end -->
 
 ![Three recomputed metrics and evidence chain](assets/figures/metrics-evidence.en.png)
 
