@@ -1,5 +1,13 @@
 # Change log
 
+## v0.8 - 2026-08-31（官网合规最终装配＋PR #4300 评审闭合）
+
+- 以 2026-08-31 Work 完整 formal 包为展示基线：纳入最新版 proposal、英文镜像、高清图片、A3/A0 与 18 页中英补充展示；不改 geometry、canonical SCN 或指标值。
+- 增补 PR #4300 评审显影层：三大定位、五大功能、三区两翼、8 要素生态/产业—空间图谱、区域协作、品牌/Logo 方向、三类地标、荣誉/组件/文化导视、Agent.6 RACI、P01–P10＋12 SCN 统一运营责任矩阵与人才/企业转换路径。
+- 中文 report/visual 改为离线 CJK fallback：主层由 Ubuntu/Debian `fonts-noto-cjk` 的 Noto Sans CJK SC Regular（SIL OFL 1.1）按本方案实际可见字符生成并改名为 `Youmen CJK Review Subset`，另保留两份仓库内已公开分发的 OFL 子集作次级 fallback；不依赖 CDN 或评审机系统中文字体。
+- 外部协作、资金、运营主体、点位与专业深化继续标为 design proposal / proposed / unknown，不新增已落实承诺。
+- `self_check.json` 保持原内容；新 head 的重型 spatial / visual / professional gates 由 GitHub trusted `submission-validation` 复跑。
+
 ## v0.7 - 2026-08-30（提交身份闭合与正式门前装配）
 
 - 依据已认证 GitHub 会话，将投稿目录与中英文 `author_github` 从可逆占位符迁移为 `Alisaway`。
