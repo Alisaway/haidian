@@ -77,17 +77,19 @@
     },
     {
       "assumption_id": "N51-A01",
-      "statement": "The GitHub contributor identity is pending reinstatement; the package path and author_github use a reversible placeholder.",
-      "status": "known_blocker",
-      "reason": "GitHub account suspension under support review",
-      "release_condition": "run apply_github_identity.py after the exact GitHub login is confirmed"
+      "statement": "The GitHub contributor identity is verified as Alisaway; the submission path and author identity are finalized at submissions/Alisaway/youmen-city.",
+      "status": "closed",
+      "reason": "The current formal package records verified_Alisaway at the final submission path.",
+      "release_condition": "closed; reopen only if the contributor identity or submission path changes",
+      "evidence_ref": "manifest.json#validation_claim.extensions.x-n7-control.data.github_identity"
     },
     {
       "assumption_id": "N51-A02",
-      "statement": "Package state remains scaffold until the official repository self-check and finalization scripts run successfully.",
-      "status": "known_blocker",
-      "reason": "public main was read, but its executable worktree is not mounted in this runtime",
-      "release_condition": "run official scripts in a current clone after identity replacement"
+      "statement": "Official repository validation and finalization have completed successfully; package_state is ready_for_review and the persisted self-check passes all four gates.",
+      "status": "closed",
+      "reason": "manifest.json records ready_for_review and self_check.json records can_enter_formal_review=true with all four blocking gates PASS.",
+      "release_condition": "closed; reopen only if a later repository check fails or package_state is downgraded",
+      "evidence_ref": "self_check.json#can_enter_formal_review"
     },
     {
       "assumption_id": "N51-A03",
